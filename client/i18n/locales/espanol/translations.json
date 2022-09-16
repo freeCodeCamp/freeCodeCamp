@@ -113,6 +113,7 @@
     "claim-legacy": "Una vez que hayas obtenido las siguientes certificaciones de FreeCodeCamp, podrás reclamar la {{cert}}:",
     "for": "Ajustes de cuenta de {{username}}",
     "sound-mode": "Esto agrega un placentero sonido de guitarra acústica en todo el sitio web. Obtendrás reacciones musicales a medida que escribas en el editor, completes desafíos, obtengas certificados y mucho más.",
+    "sound-volume": "Campfire Volume:",
     "username": {
       "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
