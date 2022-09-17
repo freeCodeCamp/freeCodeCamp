@@ -138,7 +138,7 @@
     "@types/react-instantsearch-dom": "6.12.1",
     "@types/react-monaco-editor": "0.16.0",
     "@types/react-redux": "7.1.24",
-    "@types/react-responsive": "8.0.4",
+    "@types/react-responsive": "8.0.5",
     "@types/react-spinkit": "3.0.7",
     "@types/react-test-renderer": "17.0.2",
     "@types/react-transition-group": "4.4.5",
