@@ -43,7 +43,7 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
     "@types/jest": "27.5.2",
-    "autoprefixer": "10.4.8",
+    "autoprefixer": "10.4.11",
     "babel-loader": "8.2.5",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
