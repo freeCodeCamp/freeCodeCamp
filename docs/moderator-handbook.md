@@ -185,14 +185,6 @@ For the first spam post of a legitimate user (ie. whose intent isn't to spam the
 
 As a moderator, you can ask questions and report incidents in the [mod-team forum section](https://forum.freecodecamp.org/c/mod-team/4).
 
-### Dealing with Flagged Posts
-
-1. If a flag has been raised against a user who is posting spam, moderators may take appropriate action (see [moderation guide](https://meta.discourse.org/t/discourse-moderation-guide/63116) to get a list of available actions) by following the steps mentioned in the [dealing with spam](#dealing-with-spam) section. 
-
-2. If a flag has been raised against a user who is breaking the code of conduct in any way....??? (copy paste from the moderating discord COC section?)
-
-3. If a flag has been raised because a post is a duplicate made by the same user, the duplicate post should be merged with the older post and then unlisted. Ideally, use the **Duplicate Topics** "Canned reply" to let the user know why their post has been unlisted.
-
 ### Dealing with Off-Topic Conversations
 
 Posts or topics that seem to be in the wrong place can be recategorized or renamed to whatever would be appropriate.
@@ -203,7 +195,7 @@ Again, if you have any problems or questions, make a post with your actions in t
 
 ### Dealing with Posted Solutions
 
-When a user posts a solution to any of the questions, Remove it and either, kindly let them know that solutions are not permitted on the forum in your own words or, use the **Solution Instead of Help** "Canned reply".
+When a user posts a solution to any of the questions, remove it and either, kindly let them know that solutions are not permitted on the forum in your own words or, use the **Solution Instead of Help** "Canned reply".
 
 ### Underage Users
 
