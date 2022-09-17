@@ -22,7 +22,7 @@ socket.on('disconnect', () => {
 
 **注:** `'disconnect'` とまったく同様に、ソケットがサーバーへエミットできる他のすべてのイベントについても、「socket」を定義しているコネクションリスナーの中で処理する必要があります。
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

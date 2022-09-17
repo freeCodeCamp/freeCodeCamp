@@ -8,10 +8,10 @@ dashedName: exercise-tracker
 
 # --description--
 
-Construye una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <https://exercise-tracker.freecodecamp.rocks/>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
+Crea una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks/</a>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
--   Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) y completa tu proyecto localmente.
--   Usa [nuestro proyecto de inicio en Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker) para completar tu proyecto.
+-   Clone este repositorio de <a href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank" rel="noopener noreferrer nofollow"> GitHub</a> y complete estos desafíos localmente.
+-   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
 Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
@@ -309,7 +309,7 @@ async (getUserInput) => {
 };
 ```
 
-Una solicitud `GET` a `/api/users/:id/logs` devolverá el objeto de usuario con un arreglo `log` de todos los ejercicios añadidos.
+Una solicitud `GET` a `/api/users/:_id/logs` devolverá el objeto de usuario con un arreglo `log` de todos los ejercicios añadidos.
 
 ```js
 async(getUserInput) => {
@@ -353,7 +353,7 @@ async(getUserInput) => {
 };
 ```
 
-Cada elemento en el arreglo `log` que es devuelto desde `GET /api/users/:id/logs` es un objeto que debe tener las propiedades `description`, `duration` y `date`.
+Cada elemento en el arreglo `log` que es devuelto desde `GET /api/users/:_id/logs` es un objeto que debe tener las propiedades `description`, `duration` y `date`.
 
 ```js
 async(getUserInput) => {
@@ -400,7 +400,7 @@ async(getUserInput) => {
 };
 ```
 
-La propiedad `description` de cualquier objeto en el arreglo `log` que es devuelto desde `GET /api/users/:id/logs` debe ser una cadena.
+La propiedad `description` de cualquier objeto en el arreglo `log` que es devuelto desde `GET /api/users/:_id/logs` debe ser una cadena.
 
 ```js
 async(getUserInput) => {
@@ -447,7 +447,7 @@ async(getUserInput) => {
 };
 ```
 
-La propiedad `duration` de cualquier objeto en el arreglo `log` que es devuelto desde `GET /api/users/:id/logs` debe ser un número.
+La propiedad `duration` de cualquier objeto en el arreglo `log` que es devuelto desde `GET /api/users/:_id/logs` debe ser un número.
 
 ```js
 async(getUserInput) => {
@@ -494,7 +494,7 @@ async(getUserInput) => {
 };
 ```
 
-La propiedad `date` de cualquier objeto en el arrelgo `log` que es devuelto desde `GET /api/users/:id/logs` debe ser una cadena.. Utiliza el formato `dateString` de la API `Date`.
+La propiedad `date` de cualquier objeto en el arrelgo `log` que es devuelto desde `GET /api/users/:_id/logs` debe ser una cadena. Utiliza el formato `dateString` de la API `Date`.
 
 ```js
 async(getUserInput) => {

@@ -10,7 +10,7 @@ freeCodeCamp se ejecuta en una moderna plataforma de JavaScript. Si estás inter
 
 Sí - Puedes contribuir cualquiera de los más de 30 idiomas que hemos habilitado en nuestra plataforma de traducción.
 
-Tenemos traducciones hechas por usuarios nativos en algunos idiomas. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
+Tenemos traducciones hechas por usuarios nativos en algunos idiomas. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo acerca de esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
 Si estás interesado en ayudar a traducir, por favor asegúrate de [leer esta guía](how-to-translate-files.md) primero.
 
@@ -24,7 +24,7 @@ Para ayudarnos a crear vídeos educacionales para nuestro canal de YouTube, pued
 
 ### Cómo puedo reportar un nuevo error?
 
-If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
+Si piensas que has encontrado un error, primero lea el artículo ["Como reportar un error"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) y siga las instrucciones.
 
 Si estás seguro de que es un error nuevo, crea un tema de GitHub nuevo.  Asegúrate de incluir tanta información como sea posible para que podamos reproducir el error.  Tenemos una plantilla de informe predefinida para ayudarte con esto.
 
@@ -32,7 +32,7 @@ Ten en cuenta que estos temas de GitHub son para debates y problemas relacionado
 
 ### ¿Cómo puedo reportar un problema de seguridad?
 
-Por favor, no crees Tema de GitHub para problemas de seguridad. Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
+Por favor, no crees Tema de GitHub para problemas de seguridad. En su lugar, [siga nuestra política de seguridad](https://contribute.freecodecamp.org/#/security).
 
 ### Soy estudiante. ¿Puedo trabajar en una característica para los créditos académicos?
 
@@ -92,11 +92,15 @@ Echa un vistazo a nuestro [Manual de Moderadores](moderator-handbook.md) para un
 **Siéntete libre de pedir ayuda en:**
 
 - La categoria de `Contributors` de [nuestro foro de comunidad](https://forum.freecodecamp.org/c/contributors).
-- The `#Contributors` channel on [our chat server](https://discord.gg/PRyKn3Vbay).
+- El canal `#Contributors` de
 
-Estamos encantados de ayudarte a contribuir en cualquiera de los temas en los que quieras trabajar. Si nos hace preguntas sobre los issue threads, estaremos encantados de aclararlo. Asegúrate de buscar tu pregunta antes de publicar una nueva.
-
-Gracias de antemano por ser amable y paciente. Recuerda, esta comunidad es manejada principalmente por voluntarios.
+nuestro servidor de chat<1>.</li> </ul> 
+  
+  Estamos encantados de ayudarte a contribuir en cualquiera de los temas en los que quieras trabajar. Si nos hace preguntas sobre los issue threads, estaremos encantados de aclararlo. Asegúrate de buscar tu pregunta antes de publicar una nueva.
+  
+  Gracias de antemano por ser amable y paciente. Recuerda, esta comunidad es manejada principalmente por voluntarios.
+  
+  
 
 ### Asistencia adicional
 

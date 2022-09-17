@@ -1,75 +1,75 @@
-# How to work on documentation
+# Cómo trabajar en la documentación
 
-## Work on the content of the docs
+## Trabajar en el contenido de los documentos
 
-To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). When your changes are merged, they will be made available automatically at the documentation site.
+Para trabajar en las pautas de contribución, puedes editar o agregar archivos al directorio `docs`, [disponible aquí](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). Cuando tus cambios se fusionen, automáticamente estarán disponibles en el sitio de documentación.
 
-### How to create an internal link
+### Cómo crear un enlace interno
 
-If you want to create a link targeting a different section of the contributing guidelines, follow this format:
+Si desea crear un enlace dirigido a una sección diferente de las pautas de contribución, siga el siguiente formato:
 
 ```md
 [Link text](target-file-name.md#target-section-heading-id)
 
-// If the target section is within the same page, you can omit the file name
+// Si la sección de destino está dentro de la misma página, puedes omitir el nombre del archivo
 [Link text](#target-section-heading-id)
 ```
 
-Make sure you include the file extension (`.md`). Don't specify the full URL or append `/` before the file name.
+Asegurate de incluir la extensión del archivo(`.md`). No especifique la URL completa o añada `/` antes del nombre del archivo.
 
-This is necessary to make these links work for the translated version of the document. Otherwise, they will redirect to the English version of the page regardless of the language.
+Esto es necesario para que estos enlaces funcionen en la versión traducida del documento. De lo contrario, serán redirigidos a la versión de la pagina en inglés independientemente del idioma.
 
-#### Translating docs with internal links
+#### Traduciendo archivos con enlaces internos
 
-When you work on translating docs on Crowdin, make sure to replace the `#target-section-heading-id` with the id on the translated document. [Learn more about translating docs here](how-to-translate-files.md#translate-documentation).
+Cuando traduces documentos en Crowdin, asegurate de reemplazar el `#target-section-heading-id` con el id del documento traducido. [Más información sobre la traducción de documentos aquí](how-to-translate-files.md#translate-documentation).
 
-## Work on the docs theme
+## Trabajar en el tema de los documentos
 
-> [!NOTE] A quick reminder that you do not need to set up anything for working on the content for the documentation site.
+> [!NOTE] Recuerda que no necesitas establecer nada para trabajar en el contenido para el sitio de documentación.
 > 
-> To work on the contributing guidelines, see [work on the docs content](#work-on-the-docs-content) section.
+> Para trabajar en las directrices de contribución, consulte [trabajar en la sección de contenido de documentos](#work-on-the-docs-content).
 
-### Structure of the docs website
+### Estructura de los documentos de la página web
 
-The site is generated using [`docsify`](https://docsify.js.org) and served using GitHub pages.
+El sitio es generado con [`docsify`](https://docsify.js.org) y hosteado por medio de GitHub pages.
 
-Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
+Normalmente no necesitarías modificar ninguna configuración ni compilar el sitio localmente. En caso de que te interese, así es como funciona:
 
 - El código de la página de inicio para este sitio está disponible en [`docs/index.html`](index.html).
 - Servimos este archivo como SPA utilizando `docsify` y GitHub Pages.
-- The `docsify` script generates the content of `markdown` files in the `docs` directory on demand.
+- El script `docsify` genera el contenido de los archivos `lenguaje de marcado` en el directorio `docs` en linea.
 - La página de inicio se genera a partir del [`_coverpage.md`](_coverpage.md).
 - La barra de navegación lateral es generada desde [`_sidebar.md`](_sidebar.md).
 
-### Serving the documentation site locally
+### Ejecutando el sitio de documentación localmente
 
-Clone freeCodeCamp:
+Clonar freeCodeCamp:
 
 ```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
 ```
 
-Install `docsify`:
+Instalar `docsify`:
 
 ```console
 npm install -g docsify
 ```
 
-and serve the `/docs` directory
+y sirve el directorio `/docs`
 
 ```console
 docsify serve docs
 ```
 
-Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+Alternativamente, si has instalado freeCodeCamp localmente (ver la guía de instalación local), agrupamos el CLI con las herramientas de desarrollo para que puedas ejecutar cualquiera de los siguientes comandos según sea necesario desde la raíz del repositorio:
 
-#### Serve and launch the documentation site only
+#### Ejecutar y lanzar solo el sitio de documentación
 
 ```console
 npm run docs:serve
 ```
 
-#### Serve the documentation site alongside freeCodeCamp locally:
+#### Servir el sitio de documentación junto a freeCodeCamp local:
 
 ```console
 npm run develop
