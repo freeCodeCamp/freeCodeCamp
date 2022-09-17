@@ -171,15 +171,17 @@ Forum moderators can delete users' posts. You should only do this for the follow
 
 1. Someone has posted a pornographic or graphically violent image.
 2. Someone has posted a link or code that is malicious in nature and could harm other campers who click on it.
-3. Someone has flooded a thread with a lot of spam messages.
+3. Someone has flooded a thread with a lot of spam messages or is an obvious spam-bot or spammer from the outset (as determined by the pattern of posting once for example then adding a spam link to their post later on to try to defeat the automated spam detection).
 
 ### Dealing with Spam
 
-For the first spam post of a user, send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then quietly block the user from posting (using the silence option on the User Admin panel). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Check the box in the private message indicating that your message is a "formal warning."
+For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then quietly block the user from posting (using the silence option on the User Admin panel). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Check the box in the private message indicating that your message is a "formal warning."
 
-1. FreeCodeCamp's spam filter requires a user to take a certain amount of time to ask their question, If they click on the "Create post" button before that, they might get flagged for review for being potential spam. In that case, it is the responsibility of the moderators to approve their post if they are a genuine user and need help.
+#### Some notable situations:
 
-2. If the user is an obvious spam bot, for example, their first and only post is a link to a malicious site minutes after signing up, delete their account.
+1. FreeCodeCamp's spam filter requires a user to take a certain amount of time to ask their question. If they click on the "Create post" button before that, they or their post might get flagged for review for being potential spam. In that case, it is the responsibility of the moderators to approve their post if they are a genuine user and need help. The same applies if the post is flagged as spam by another user. The moderator must make a determination either to agree with the flag and take suitable action or disagree and restore the post.
+
+2. If the user is an obvious spam bot, for example, their first and only post is a link to a malicious/self-promoting site minutes after signing up, delete their account.
 
 As a moderator, you can ask questions and report incidents in the [mod-team forum section](https://forum.freecodecamp.org/c/mod-team/4).
 
