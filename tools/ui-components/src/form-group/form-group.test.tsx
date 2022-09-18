@@ -15,7 +15,6 @@ describe('<FormGroup />', () => {
   }),
     it('provided controlId to label and control', () => {
       render(
-        // add form-label to the test when form-label is created
         <FormGroup data-testid='test-id'>
           <label htmlFor='test-id'>label</label>
           <FormControl />

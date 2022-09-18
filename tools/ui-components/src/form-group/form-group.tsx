@@ -1,32 +1,25 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from 'react';
 
 import { FormGroupProps } from './types';
 
 const FormGroup = React.forwardRef<HTMLLabelElement, FormGroupProps>(
-  ({ children, className, validationState, controlId }): JSX.Element => {
+  (
+    { children, className, validationState, controlId },
+    isValid
+  ): JSX.Element => {
     const defaultClasses = 'mb-3.5';
 
-    const formControlId: Node = document
-      .querySelector(children)
-      ?.getAttribute('htmlFor');
-
-    const config = {
-      attributes: true,
-      childList: true,
-      characterData: true
-    };
-
-    const callback = (mutations: MutationRecord[]) => {
-      mutations.forEach(mutation => {
-        if (mutation.type === 'childList') {
-          return null;
-        }
-      });
-    };
-
-    const observer = new MutationObserver(callback);
-
-    observer.observe(formControlId, config);
+    useEffect(() => {
+      const controlLabel = document
+        .querySelector('input')
+        ?.getAttribute('value');
+      if (controlLabel === isValid) {
+        validationState = ['success'];
+      } else {
+        validationState = ['warning'];
+      }
+    }, [validationState]);
 
     const classes = [defaultClasses, className, validationState].join(' ');
 
