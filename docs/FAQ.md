@@ -81,7 +81,7 @@ community, and live by our [code of conduct](https://www.freecodecamp.org/news/c
 Here are some recommended paths for some of our platforms:
 
 - To be a **Discord/Chat** moderator, have an active presence in our chat and
-  have positive engagements with others, while also learning and practising how
+  have positive engagements with others, while also learning and practicing how
   to deal with potential conflicts that may arise.
 - To be a **Forum** moderator, similar to a chat moderator, have an active
   presence and engage with other forum posters, supporting others in their
