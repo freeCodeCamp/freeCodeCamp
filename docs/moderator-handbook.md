@@ -171,7 +171,8 @@ Forum moderators can delete users' posts. You should only do this for the follow
 
 1. Someone has posted a pornographic or graphically violent image.
 2. Someone has posted a link or code that is malicious in nature and could harm other campers who click on it.
-3. Someone has flooded a thread with a lot of spam messages or is an obvious spam-bot or spammer from the outset (as determined by the pattern of posting once for example then adding a spam link to their post later on to try to defeat the automated spam detection).
+3. Someone has flooded a thread with a lot of spam messages.
+4. An account has been created, beyond reasonable doubt, to spam.
 
 ### Dealing with Spam
 
