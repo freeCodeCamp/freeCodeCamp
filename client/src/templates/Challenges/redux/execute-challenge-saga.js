@@ -36,6 +36,7 @@ import {
 } from '../../../utils/challenge-request-helpers';
 import { actionTypes } from './action-types';
 import {
+  portalDocumentSelector,
   challengeDataSelector,
   challengeMetaSelector,
   challengeTestsSelector,
@@ -243,7 +244,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
-        yield call(updatePreview, buildData, document, proxyLogger);
+        const portalDocument = yield select(portalDocumentSelector);
+        const finalDocument = portalDocument || document;
+
+        yield call(updatePreview, buildData, finalDocument, proxyLogger);
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {
           proxyLogger,

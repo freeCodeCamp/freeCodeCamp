@@ -127,7 +127,7 @@ Ahora que has instalado los requisitos previos, sigue[nuestra guía de configura
 
 ## Enlaces útiles
 
-- [Configuración de desarrollador de WSL2 con Ubuntu 20.04, Node.js, MongoDB, VS Code y Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - un artículo de Mrugesh Mohapatra (desarrollador de Staff en freeCodeCamp.org)
+- [Una configuración de desarrollador de WSL2 con Ubuntu 20.04, Node.js, MongoDB, VS Code y Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - un artículo de Mrugesh Mohapatra (Staff Developer en freeCodeCamp.org)
 - Preguntas frecuentes sobre:
   - [Subsistema de Windows para Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop para Windows](https://docs.docker.com/docker-for-windows/faqs)

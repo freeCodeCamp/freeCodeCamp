@@ -25,6 +25,19 @@ NO incluyas comillas (individuales o dobles) en el resultado.
 
 # --hints--
 
+Su función debe devolver un valor para el conteo y el texto (`Bet` o `Hold`) con un carácter de espacio entre ellos.
+
+```js
+assert(//
+  (function () {
+    count = 0;
+    let out = cc(10);
+    const hasSpace = /-?\d+ (Bet|Hold)/.test('' + out);
+    return hasSpace;
+  })()
+);
+```
+
 La secuencia de cartas 2, 3, 4, 5, 6 debe devolver la cadena `5 Bet`
 
 ```js

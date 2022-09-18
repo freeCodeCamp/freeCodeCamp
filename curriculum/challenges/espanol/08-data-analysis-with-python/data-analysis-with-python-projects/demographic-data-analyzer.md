@@ -8,71 +8,125 @@ dashedName: demographic-data-analyzer
 
 # --description--
 
-Trabajarás [este proyecto utilizando nuestro código inicial Replit](https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer).
+Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
 
 Todavía estamos desarrollando la parte interactiva del currículo de Python. Por el momento, aquí hay algunos videos en el canal de YouTube de freeCodeCamp.org que te enseñaran todo lo que necesitas saber para completar este proyecto:
 
-- [Curso de vídeo de Python para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-- [Curso de vídeo para aprender Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso de video de Python para todos< /a>(14 horas)</p></li> 
+  
+  <li>
+    <p spaces-before="0">
+      <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">Cómo analizar datos con Python Pandas</a> (10 horas)
+    </p>
+  </li></ul>
 
-# --instructions--
+<h1 spaces-before="0">
+  --instructions--
+</h1>
 
-En este desafío debe analizar los datos demográficos usando Pandas. Se le da un conjunto de datos demográficos que fueron extraidos de la base de datos del censo de 1994. Aquí hay un ejemplo de cómo se debería ver:
+<p spaces-before="0">
+  En este desafío debe analizar los datos demográficos usando Pandas. Se le da un conjunto de datos demográficos que fueron extraidos de la base de datos del censo de 1994. Aquí hay un ejemplo de cómo se debería ver:
+</p>
 
-```markdown
-|    |   age | workclass        |   fnlwgt | education   |   education-num | marital-status     | occupation        | relationship   | race   | sex    |   capital-gain |   capital-loss |   hours-per-week | native-country   | salary   |
+<pre><code class="markdown">|    |   age | workclass        |   fnlwgt | education   |   education-num | marital-status     | occupation        | relationship   | race   | sex    |   capital-gain |   capital-loss |   hours-per-week | native-country   | salary   |
 |---:|------:|:-----------------|---------:|:------------|----------------:|:-------------------|:------------------|:---------------|:-------|:-------|---------------:|---------------:|-----------------:|:-----------------|:---------|
-|  0 |    39 | State-gov        |    77516 | Bachelors   |              13 | Never-married      | Adm-clerical      | Not-in-family  | White  | Male   |           2174 |              0 |               40 | United-States    | <=50K    |
-|  1 |    50 | Self-emp-not-inc |    83311 | Bachelors   |              13 | Married-civ-spouse | Exec-managerial   | Husband        | White  | Male   |              0 |              0 |               13 | United-States    | <=50K    |
-|  2 |    38 | Private          |   215646 | HS-grad     |               9 | Divorced           | Handlers-cleaners | Not-in-family  | White  | Male   |              0 |              0 |               40 | United-States    | <=50K    |
-|  3 |    53 | Private          |   234721 | 11th        |               7 | Married-civ-spouse | Handlers-cleaners | Husband        | Black  | Male   |              0 |              0 |               40 | United-States    | <=50K    |
-|  4 |    28 | Private          |   338409 | Bachelors   |              13 | Married-civ-spouse | Prof-specialty    | Wife           | Black  | Female |              0 |              0 |               40 | Cuba             | <=50K    |
-```
+|  0 |    39 | State-gov        |    77516 | Bachelors   |              13 | Never-married      | Adm-clerical      | Not-in-family  | White  | Male   |           2174 |              0 |               40 | United-States    | &lt;=50K    |
+|  1 |    50 | Self-emp-not-inc |    83311 | Bachelors   |              13 | Married-civ-spouse | Exec-managerial   | Husband        | White  | Male   |              0 |              0 |               13 | United-States    | &lt;=50K    |
+|  2 |    38 | Private          |   215646 | HS-grad     |               9 | Divorced           | Handlers-cleaners | Not-in-family  | White  | Male   |              0 |              0 |               40 | United-States    | &lt;=50K    |
+|  3 |    53 | Private          |   234721 | 11th        |               7 | Married-civ-spouse | Handlers-cleaners | Husband        | Black  | Male   |              0 |              0 |               40 | United-States    | &lt;=50K    |
+|  4 |    28 | Private          |   338409 | Bachelors   |              13 | Married-civ-spouse | Prof-specialty    | Wife           | Black  | Female |              0 |              0 |               40 | Cuba             | &lt;=50K    |
+</code></pre>
 
-Debes usar Pandas para responder a las siguientes preguntas:
+<p spaces-before="0">
+  Debes usar Pandas para responder a las siguientes preguntas:
+</p>
 
-- ¿Cuántas personas de cada raza están representadas en este dataset? Esta debería ser una Pandas series con nombres de raza como las etiquetas de índice. (columna `race`)
-- ¿Cuál es la edad promedio de los hombres?
-- ¿Cuál es el porcentaje de personas que tienen un grado de licenciatura?
-- ¿Que porcentaje de personas con una educación avanzada (`Bachelors`, `Masters` o `Doctorate`) generan mas de 50k?
-- ¿Que porcentaje de personas sin una educación avanzada generan mas de 50k?
-- ¿Cuál es el mínimo número de horas que una persona trabaja por semana?
-- ¿Qué porcentaje de personas que trabajan el minimo de horas por semana tienen un salario de mas de 50k?
-- ¿Qué país tiene el mas alto porcentaje de personjas que ganan >50k y cual es ese porcentaje?
-- Identifica la ocupacion mas popular de aquellos que ganan >50k en India.
+<ul>
+  <li>
+    ¿Cuántas personas de cada raza están representadas en este dataset? Esta debería ser una Pandas series con nombres de raza como las etiquetas de índice. (columna <code>race</code>)
+  </li>
+  <li>
+    ¿Cuál es la edad promedio de los hombres?
+  </li>
+  <li>
+    ¿Cuál es el porcentaje de personas que tienen un grado de licenciatura?
+  </li>
+  <li>
+    ¿Que porcentaje de personas con una educación avanzada (<code>Bachelors</code>, <code>Masters</code> o <code>Doctorate</code>) generan mas de 50k?
+  </li>
+  <li>
+    ¿Que porcentaje de personas sin una educación avanzada generan mas de 50k?
+  </li>
+  <li>
+    ¿Cuál es el mínimo número de horas que una persona trabaja por semana?
+  </li>
+  <li>
+    ¿Qué porcentaje de personas que trabajan el minimo de horas por semana tienen un salario de mas de 50k?
+  </li>
+  <li>
+    ¿Qué país tiene el mas alto porcentaje de personjas que ganan >50k y cual es ese porcentaje?
+  </li>
+  <li>
+    Identifica la ocupacion mas popular de aquellos que ganan >50k en India.
+  </li>
+</ul>
 
-Utilice el código de inicio en el archivo `demographic_data_analyzer`. Actualice el código para que todas las variables definidas como "None" se establezcan al cálculo o código apropiado. Redondea todos los decimales a la décima más cercana.
+<p spaces-before="0">
+  Utilice el código de inicio en el archivo <code>demographic_data_analyzer</code>. Actualice el código para que todas las variables definidas como "None" se establezcan al cálculo o código apropiado. Redondea todos los decimales a la décima más cercana.
+</p>
 
-Las pruebas unitarias están escritas para ti en `test_module.py`.
+<p spaces-before="0">
+  Las pruebas unitarias están escritas para ti en <code>test_module.py</code>.
+</p>
 
-## Desarrollo
+<h2 spaces-before="0">
+  Desarrollo
+</h2>
 
-Para el desarrollo, puedes utilizar `main.py` para probar tus funciones. Haz clic en el botón "run" y se ejecutará `main.py`.
+<p spaces-before="0">
+  Para el desarrollo, puedes utilizar <code>main.py</code> para probar tus funciones. Haz clic en el botón "run" y se ejecutará <code>main.py</code>.
+</p>
 
-## Pruebas
+<h2 spaces-before="0">
+  Pruebas
+</h2>
 
-Importamos las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que presiones el botón "run".
+<p spaces-before="0">
+  Importamos las pruebas de <code>test_module.py</code> a <code>main.py</code> para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que presiones el botón "run".
+</p>
 
-## Envío
+<h2 spaces-before="0">
+  Envío
+</h2>
 
-Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
+<p spaces-before="0">
+  Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
+</p>
 
-## Fuente de datos
+<h2 spaces-before="0">
+  Fuente de datos
+</h2>
 
-Dua, D. y Graff, C. (2019). [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml). Irvine, CA: University of California, School of Information and Computer Science.
+<p spaces-before="0">
+  Dua, D. y Graff, C. (2019). <a href="http://archive.ics.uci.edu/ml" target="_blank" rel="noopener noreferrer nofollow">UCI Machine Learning Repositorio</a>. Irvine, CA: University of California, School of Information and Computer Science.
+</p>
 
-# --hints--
+<h1 spaces-before="0">
+  --hints--
+</h1>
 
-Debería pasar todas las pruebas de Python.
+<p spaces-before="0">
+  Debería pasar todas las pruebas de Python.
+</p>
 
-```js
+<pre><code class="js">
+</code></pre>
 
-```
+<h1 spaces-before="0">
+  --solutions--
+</h1>
 
-# --solutions--
-
-```py
-  # Python challenges don't need solutions,
+<pre><code class="py">  # Python challenges don't need solutions,
   # because they would need to be tested against a full working project.
   # Please check our contributing guidelines to learn more.
-```
+</code></pre>

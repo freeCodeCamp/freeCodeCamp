@@ -135,4 +135,6 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           headless: true
-          spec: ${{ matrix.spec }}
+          spec: |
+            ${{ matrix.spec }}
+            cypress/integration/default/**/*.js

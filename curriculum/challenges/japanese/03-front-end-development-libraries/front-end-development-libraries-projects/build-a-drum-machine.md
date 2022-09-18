@@ -14,7 +14,7 @@ dashedName: build-a-drum-machine
 
 このプロジェクトを完了するために、HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、および jQuery を自在に組み合わせて利用することができます。 このセクションはフロントエンドフレームワークの学習を目的としていますので、React などのフロントエンドフレームワークを使用してください。 上記以外の他のテクノロジーは推奨されません。使用する場合は自己責任で行ってください。 Angular や Vue などの他のフロントエンドフレームワークのサポートを検討していますが、現時点ではサポートされていません。 このプロジェクトで推奨される一連のテクノロジーを使用している場合の不具合報告については、freeCodeCamp にて報告を受け入れ、修正するよう努めます。 コーディングの成功を祈ります！
 
-**ユーザーストーリー 1:** 対応する `id="drum-machine"` を持ち、他のすべての要素を収める、外側のコンテナを表示できます。
+**ユーザーストーリー 1:** 対応する `id="drum-machine"` を持ち、他のすべての要素を収める、外側のコンテナーを表示できます。
 
 **ユーザーストーリー 2:** `#drum-machine` の中に、対応する `id="display"` を持つ要素を表示できます。
 
@@ -27,6 +27,18 @@ dashedName: build-a-drum-machine
 **ユーザーストーリー 6:** それぞれの `.drum-pad` に関連付けられているトリガーキーを押すと、その子の `audio` 要素に含まれているオーディオクリップがトリガーされます。たとえば、`Q` キーを押すと文字列 `Q` を含むドラムパッドがトリガーされ、`W` キーを押すと文字列 `W` を含むドラムパッドがトリガーされる、などとなります。
 
 **ユーザーストーリー 7:** `.drum-pad` がトリガーされると、関連するオーディオクリップを説明する文字列が、`#display` 要素の内側のテキストとして表示されます (文字列はそれぞれ一意にする必要があります)。
+
+ドラムマシンに使用できるオーディオサンプルの例は次のとおりです。
+
+- [Heater 1](https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3)
+- [Heater 2](https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3)
+- [Heater 3](https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3)
+- [Heater 4](https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3)
+- [Clap](https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3)
+- [Open-HH](https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3)
+- [Kick-n'-Hat](https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3)
+- [Kick](https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3)
+- [Closed-HH](https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3)
 
 <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">この CodePen テンプレートを使用して</a> あなたのプロジェクトを構築することができます。`Save` をクリックすると、あなた用の pen を作成することができます。 または、下記の CDN リンクを使用して、使い慣れている環境でテストを実行することもできます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 

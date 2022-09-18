@@ -28,8 +28,8 @@ Lo anterior mostrará la cadena `Hello` en la consola y devolverá la cadena `Wo
 
 Modifica la función `abTest` para que cuando `a` o `b` sean menores que `0` la función salga inmediatamente con un valor `undefined`.
 
-**Sugerencia**  
-Recuerda que [`undefined` es una palabra clave](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), no una cadena.
+**Pista**  
+Recuerda que <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow"><code>undefined</code> es una palabra clave</a>, no una cadena.
 
 # --hints--
 

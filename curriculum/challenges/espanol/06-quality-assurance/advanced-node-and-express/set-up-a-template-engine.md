@@ -10,25 +10,25 @@ dashedName: set-up-a-template-engine
 
 Trabajar en estos desafíos implica escribir tu código usando uno de los siguientes métodos:
 
-- Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-advancednode/) y completa estos desafíos localmente.
-- Usa [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-advancednode) para completar estos desafíos.
+- Clone este repositorio de <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow"> GitHub</a> y complete estos desafíos localmente.
+- Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto de inicio Replit</a> para completar estos desafíos.
 - Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
 Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`.
 
 Un motor de plantillas te permite usar plantillas estáticas (como las escritas en *Pug*) en tu aplicación. En tiempo de ejecución, el motor de plantillas reemplaza variables en un archivo de plantilla con valores reales que pueden ser suministrados por tu servidor. Luego transforma la plantilla en un archivo HTML estático que se envía al cliente. Este enfoque hace más fácil el diseño de una página HTML y permite mostrar variables en la página sin necesidad de hacer una llamada API desde el cliente.
 
-Añade `pug@~3.0.0` como una dependencia en tu archivo `package.json`.
+`pug@~3.0.0` ya ha sido instalado, y se muestra como una dependencia en tu archivo `package.json`.
 
 Express necesita saber qué motor de plantillas está utilizando. Utilizaremos el método `set` para asignar `pug` como el valor de `view engine` de la propiedad: `app.set('view engine', 'pug')`
 
-La página no se cargará hasta que procese correctamente el archivo de índice en el directorio `views/pug`.
+Tu página estará en blanco hasta que proceses correctamente el archivo de índice en el directorio `views/pug`.
 
-Cambia el argumento de la sentencia `res.render()` en la ruta `/` para que sea la ruta del archivo al directorio `views/pug`. La ruta puede ser una ruta relativa (relativa a las vistas), o una ruta absoluta, y no requiere una extensión de archivo.
+Para renderizar la plantilla `pug`, necesitas usar `res.render()` en la ruta `/`. Pasa la ruta del archivo al directorio `views/pug` como argumento al método. La ruta puede ser una ruta relativa (relativa a las vistas), o una ruta absoluta, y no requiere una extensión de archivo.
 
-Si todo ha ido según lo previsto, ¡la página de inicio de tu aplicación dejará de mostrar el mensaje "`Pug template is not defined.`" y ahora mostrará un mensaje indicando que has renderizado con éxito la plantilla Pug!
+Si todo salió según lo planeado, la página de inicio de tu aplicación ya no estará en blanco y mostrará un mensaje indicando que has renderizado correctamente la plantilla Pug!
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
+Envía tu página cuando creas que lo has hecho bien. Si te estás encontrando errores, puedes <a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">mirar el proyecto completado hasta este punto</a>.
 
 # --hints--
 

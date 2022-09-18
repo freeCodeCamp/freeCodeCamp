@@ -14,7 +14,7 @@ Si consiglia di utilizzare [Titolo convenzionale e messaggi](https://www.convent
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
+Ogni volta in cui apri una Pull Request (PR), puoi usare la seguente lista per determinare il tipo (type), l'ambito (scope) (opzionale), e la descrizione.
 
 **Tipo:**
 
@@ -31,14 +31,14 @@ Puoi selezionare un ambito da [questo elenco di etichette](https://github.com/fr
 
 **Descrizione:**
 
-Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
+Scrivila breve (meno di 30 caratteri) e semplice; puoi aggiungere ulteriori informazioni nella casella di descrizione PR e nei commenti.
 
 Alcuni esempi di buoni titoli PR sarebbero:
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`
 - `fix(api,client): prevent CORS errors on form submission`
-- `docs(i18n): fix links to be relative instead of absolute`
+- `docs(i18n): correggi i link affinché siano relativi invece che assoluti`
 
 ## Proporre una Pull Request
 
@@ -54,7 +54,7 @@ Alcuni esempi di buoni titoli PR sarebbero:
 
 3. Fai la pull request dal tuo ramo al ramo `main` di freeCodeCamp.
 
-4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
+4. Includi un riassunto più dettagliato delle modifiche apportate e di come sono d'aiuto nel corpo della tua PR.
 
    - Ti sarà presentato un modello di pull request. Questa è una lista di controllo che avresti dovuto seguire prima di aprire la pull request.
 

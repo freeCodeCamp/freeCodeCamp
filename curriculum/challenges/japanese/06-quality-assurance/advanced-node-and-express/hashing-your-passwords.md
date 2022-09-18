@@ -10,7 +10,7 @@ dashedName: hashing-your-passwords
 
 情報セキュリティのセクションに話を戻しますが、プレーンテキストのパスワードを保存することは*決して安全ではありません*。 ここでは、この問題を解決するために BCrypt を実装します。
 
-`bcrypt@~5.0.0` を依存関係として追加し、サーバーで require してください。 2 つの重要な箇所でハッシュを処理する必要があります。1 つは、新しいアカウントの登録/保存を処理する箇所で、もう 1 つは、ログイン時にパスワードが正しいことを確認する箇所です。
+すでに `bcrypt@~5.0.0` が依存関係として追加されているので、サーバーで require します。 2 つの重要な箇所でハッシュを処理する必要があります。1 つは、新しいアカウントの登録/保存を処理する箇所で、もう 1 つは、ログイン時にパスワードが正しいことを確認する箇所です。
 
 現在の登録ルート上では、`password: req.body.password` のように、ユーザーのパスワードをデータベースへ挿入しています。 この代わりにハッシュの保存を実装する簡単な方法として、データベース ロジックの前に `const hash = bcrypt.hashSync(req.body.password, 12);` を追加し、データベースに保存する `req.body.password` を `password: hash` に置き換えることができます。
 
@@ -24,7 +24,7 @@ if (!bcrypt.compareSync(password, user.password)) {
 
 これで、パスワードを保存する必要がある場合に、最も重要なセキュリティ機能の1つを実装できます！
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

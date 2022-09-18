@@ -9,7 +9,7 @@ dashedName: returning-boolean-values-from-functions
 
 # --description--
 
-Podrás recordar que en [Comparación con el operador de igualdad](/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator) todos los operadores de comparación devuelven un valor booleano `true`, o `false`.
+Puede recordar de la <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener noreferrer nofollow">comparación con el operador de igualdad</a> que todos los operadores de comparación devuelven un valor booleano `true` o `false`.
 
 A veces la gente usa una sentencia `if/else` para hacer una comparación, como esta:
 

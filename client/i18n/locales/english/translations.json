@@ -113,6 +113,7 @@
     "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
     "for": "Account Settings for {{username}}",
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
+    "sound-volume": "Campfire Volume:",
     "username": {
       "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
       "is too short": "Username \"{{username}}\" is too short",
@@ -286,6 +287,7 @@
     "percent-complete": "{{percent}}% complete",
     "tried-rsa": "If you've already tried the <0>Read-Search-Ask</0> method, then you can ask for help on the freeCodeCamp forum.",
     "rsa": "Read, search, ask",
+    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
     "reset": "Reset this lesson?",
     "reset-warn": "Are you sure you wish to reset this lesson? The editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone",
@@ -449,7 +451,10 @@
     "and": "and",
     "change-theme": "Sign in to change theme.",
     "translation-pending": "Help us translate",
-    "certification-project": "Certification Project"
+    "certification-project": "Certification Project",
+    "iframe-preview": "{{title}} preview",
+    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
+    "document-notfound": "document not found"
   },
   "icons": {
     "gold-cup": "Gold Cup",
@@ -484,6 +489,12 @@
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter to submit.",
     "running-tests": "Running tests",
+    "hide-preview": "Hide the preview",
+    "move-preview-to-new-window": "Move the preview to a new window and focus it",
+    "move-preview-to-main-window": "Move the preview to this window and close the external preview window",
+    "close-external-preview-window": "Close the external preview window",
+    "show-preview": "Show the preview in this window",
+    "open-preview-in-new-window": "Open the preview in a new window and focus it",
     "step": "Step",
     "steps": "Steps",
     "steps-for": "Steps for {{blockTitle}}"
