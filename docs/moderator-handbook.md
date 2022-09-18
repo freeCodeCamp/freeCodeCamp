@@ -201,7 +201,7 @@ When a user posts a solution to any of the questions, remove it and either, kind
 
 Our [Terms of Service](https://freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. If a user reveals that they are under the age of 13, send them the below message and delete their forum account (if deletion is not available, suspending the account is sufficient).
 
-**Email `support[at]freecodecamp.org` to delete the user's freeCodeCamp account as well (providing the email address and user id to support).**
+**Email `support[at]freecodecamp.org` to delete the user's freeCodeCamp account as well (providing the email address and username of the offending forum account).**
 
 ```markdown
 SUBJECT: Users under 13 are not allowed to use the forum per our Terms of Service.
