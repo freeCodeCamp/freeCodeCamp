@@ -12,7 +12,7 @@ Yes - You can contribute to any of the 30+ languages we have enabled on our tran
 
 We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
-If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
+If you are interested in contributing to translations please make sure you [read this guide](how-to-translate-files.md) first.
 
 ### Can I contribute articles to freeCodeCamp News or videos to freeCodeCamp's YouTube channel?
 
@@ -63,7 +63,7 @@ We typically do not assign issues to anyone other than long-time contributors. I
 1. Скоріш за все ми об'єднаємо перший пул реквест з подальшими, які стосуються цієї проблеми.
 2. Якщо декілька користувачів одночасно відкривають пул реквести для однієї проблеми, ми надаватимемо пріоритет тому, який найкраще її вирішує. На що ми звертаємо увагу:
    - Чи входять туди тести?
-   - Чи враховані всі сценарії використання?
+   - Did you catch all use cases?
    - Чи ви переконалися, що всі тести виконуються і працюють локально?
 3. Також ми даємо пріоритет тим пул реквестам, які дотримуються наших рекомендацій.
    - Ви стежили за списком пул реквестів?
@@ -78,7 +78,7 @@ First and foremost, we would need you to be an active participant in the communi
 Here are some recommended paths for some of our platforms:
 
 - To be a **Discord/Chat** moderator, have an active presence in our chat and have positive engagements with others, while also learning and practicing how to deal with potential conflicts that may arise.
-- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even given feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
+- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
 - To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
 
 Altogether, be respectful to others. We are humans all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.

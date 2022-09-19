@@ -1,121 +1,121 @@
-# How to Translate freeCodeCamp's resources
+# Як перекладати ресурси freeCodeCamp
 
-## Prepare yourself for contributions
+## Приготуйтеся до своєї участі
 
-> The freeCodeCamp Localization Roadmap – There Are No Speed Limits
+> Детальний план локалізації freeCodeCamp: жодних обмежень швидкості
 
-> [!TIP] You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay).
+> [!TIP] Ви можете почати з цього [оголошення](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). Ми рекомендуємо приєднатися до [форуму](https://forum.freecodecamp.org/c/contributors/3) та [чат-серверу Discord](https://discord.gg/PRyKn3Vbay).
 
-You can translate as much as you want, when you want. It's only a matter of how much time and energy you are willing to invest as a volunteer translator.
+Ви можете перекладати скільки завгодно і коли завгодно. Єдине, що має значення – це скільки часу та сил ви готові приділити перекладу у ролі волонтера-перекладача.
 
-We just ask that you understand the following:
+Будь ласка, ознайомтеся з наступним:
 
-1. **Translations are a team effort.**
+1. **Переклад – це командна робота.**
 
-   Translating freeCodeCamp's resources is one of the most fun and rewarding experiences as a contributor, and it works best if you involve your friends and colleagues who speak the same world language as you.
+   Переклад ресурсів freeCodeCamp – один із найцікавіших та найцінніших досвідів. Ще краще, якщо ви залучаєте своїх друзів та колег, які говорять тією самою мовою, що і ви.
 
-   You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin and other tools make it easy to contribute translations, but it's still a lot of work.
+   Ви можете почати з цього [оголошення](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). Але перш ніж розпочати перекладати, ми рекомендуємо приєднатися до [форуму](https://forum.freecodecamp.org/c/contributors/3) та [чат-серверу Discord](https://discord.gg/PRyKn3Vbay). Завдяки Crowdin та іншим інструментам перекладати легко, але це однаково передбачає багато роботи.
 
-   We want you to enjoy contributing and not burn out or lose interest.
+   Ми хочемо, щоб ви насолоджувалися внеском, який робите, але не вигорали та не втрачали інтерес.
 
-   A small group of 4-5 individuals is a good size to start your niche for your world language. You can then recruit even more friends to join the team.
+   Невелика група з 4-5 осіб – це хороші умови для початку. Згодом ви зможете залучити до команди ще більше друзів.
 
-2. **It costs quite a lot to spin servers for each language.**
+2. **Функціонування мовних серверів коштує досить багато.**
 
-   On the surface it might not seem how complicated the technical stack is, but it costs quite a lot to keep the engines running. This includes provisioning additional servers and dedicating staff to look after them.
+   На перший погляд не видно наскільки складним є технічний стек, але підтримувати роботу – досить дорого. Сюди входить надання додаткових серверів та виділення персоналу для догляду за ними.
 
-   freeCodeCamp.org is committed to providing these for free as always, however we need to prioritize resources for those who need them the most. The last thing we want is to shutdown servers for a language if the translation activity dies off & things become outdated.
+   freeCodeCamp.org прагне забезпечити їх безоплатно, однак нам потрібно надати пріоритет тим, хто найбільше їх потребує. Ми не хочемо закривати мовні сервери, якщо діяльність перекладу припиниться і зникне попит на певну мову.
 
-   For translating the curriculum, once a language reaches at least a few certifications we can begin deploying the language live on [`/learn`](https://www.freecodecamp.org/learn), while you continue to translate the remaining certifications.
+   Щодо перекладу навчальної програми: як тільки буде перекладено принаймні декілька сертифікацій, їх буде опубліковано на [`/learn`](https://www.freecodecamp.org/learn), а ви продовжуватимете перекладати інші сертифікації.
 
-   For example, we would want to deploy at least the entire front-end certifications suite when we ship a new world language for the first time.
+   Наприклад, перш ніж представити нову мову, ми б хотіли мати перекладеними принаймні сертифікації front-end.
 
-3. **But what about the languages not listed on the translation platform?**
+3. **Але як щодо мов, яких немає на перекладацькій платформі?**
 
-   We have looked at our user base and added 30+ most widely spoken languages to the list of enabled languages on the translations platform. Some languages like Chinese and Spanish are already deployed live on **"/learn"** at this moment.
+   Ми переглянули нашу базу користувачів і додали 30+ найпоширеніших мов до списку дозволених мов на перекладацькій платформі. Деякі мови, такі як китайська та іспанська, вже опубліковані на **"/learn"**.
 
-   Unfortunately, the list does not include hundreds of languages out there. We get dozens of requests from contributors like you every day who want to help translate the site into a language they speak.
+   На жаль, наш список не містить сотень мов. Щодня ми отримуємо десятки запитів від учасників, які хочуть допомогти перекласти сайт своєю мовою.
 
-   We are definitely looking forward to adding more languages to the list, but as you may already guess, it would only be feasible if we get enough momentum around a world language.
+   Ми, безумовно, з нетерпінням чекаємо додавання до цього списку нових мов. Але, як ви вже здогадуєтесь, це здійсниться лише в тому випадку, якщо ми отримаємо достатній потенціал стосовно тієї мови.
 
-   If you would like us to include a new world language, we recommend getting your friends excited about this.
+   Якщо ви хочете, щоб ми зарахували нову мову, радимо залучити до цього своїх друзів.
 
-   Once you have a small group of people (at least 4-5) interested and committed, we can hop on a call. We will explain all the details and walk you through some of the tools and processes.
+   Якщо у вас є невелика група людей (принаймні 4-5), зацікавлених і відданих справі, ми можемо зв'язатись через дзвінок. Ми пояснимо всі деталі та ознайомимо з деякими інструментами й процесами.
 
-## Overview of Crowdin
+## Загальне про Crowdin
 
-It's our dream to provide you with the resources to learn, no matter the world language you speak. To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
+Наша мрія – це надати навчальні матеріали незалежно від того, якою мовою ви розмовляєте. Аби впоратися із цією непростою задачею, ми інтегрували нашу відкриту базу коду та навчальної програми на [Crowdin](https://crowdin.com/) – інструмент для локалізації.
 
-> [!NOTE] We use a different tool and workflow for translating [news articles](https://www.freecodecamp.org/news). If you are interested in translating articles, read [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and reach out to your Language Lead.
+> [!NOTE] У нас інший інструмент та робочий процес для перекладу [публікацій](https://www.freecodecamp.org/news). Якщо ви зацікавлені у перекладі публікацій, прочитайте [це оголошення](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) та зверніться до свого мовного керівника.
 
-The translation workflow is split into two main activities:
+Перекладацький процес поділяється на два основних:
 
-- **Translating** curriculum files, documentation and UI elements like buttons, labels, etc.:
+- **Переклад** файлів навчальної програми, документації та елементів інтерфейсу (кнопки, мітки тощо):
 
-  As a translator you can sign up on [our translation platform](https://translate.freecodecamp.org) and contribute translations in any of the 30+ languages enabled in there.
+  Перекладачі можуть долучитися до [нашої перекладацької платформи](https://translate.freecodecamp.org) та зробити свій внесок, перекладаючи 30+ доступними мовами.
 
-- **Proofreading** the translations for all of the above.
+- **Редагування** перекладених текстів.
 
-  Proofreaders verify that the community contributed translations are uniform in tone and free of common issues like typos, etc. In short, they ensure that the quality of translations is high. Note that we do not use machine translations for a reason.
+  Редактори підтверджують, що переклади, запропоновані спільнотою, написані в одному стилі та не містять помилок. Тобто вони забезпечують високу якість перекладу. Зверніть увагу, що ми не використовуємо машинний переклад.
 
-> [!WARNING] We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
+> [!WARNING] Ми більше не використовуємо GitHub для перекладу файлів. Якщо ви вже перекладали раніше, перейдіть на нашу [перекладацьку платформу](https://translate.freecodecamp.org/).
 
 ## Початок роботи
 
-First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). We post regular updates about translating resources and answer a lot of your queries in there.
+По-перше, привітайтесь у нашому [Discord](https://discord.gg/PRyKn3Vbay). Саме тут ми регулярно публікуємо оновлення щодо перекладу та відповідаємо на багато ваших запитань.
 
-Next, head to our [translation platform](https://translate.freecodecamp.org/) and login (if you have not contributed to translations before, you will need to create an account).
+Потім перейдіть на нашу [перекладацьку платформу](https://translate.freecodecamp.org/) та увійдіть (якщо ви раніше не перекладали на цій платформі, потрібно створити новий обліковий запис).
 
-Finally, go through the detailed walk-thru below to understand the translation tools and workflows at your disposal.
+Ознайомтеся з детальним описом нижче, щоб розібратись з інструментами та робочим процесом.
 
-Happy translating.
+Щасливого перекладу!
 
-## Select a Project and File
+## Оберіть проєкт та файл
 
-Once you visit the translation platform, you should see multiple "projects" available for translation:
+На платформі ви побачите декілька «проєктів», доступних для перекладу:
 
-1. [Contributing documentation](https://translate.freecodecamp.org/contributing-docs) project, which contains the files for this documentation site.
-2. [Coding Curriculum](https://translate.freecodecamp.org/curriculum) project, which contains our challenge files for our curriculum.
-3. [Learn User Interface](https://translate.freecodecamp.org/learn-ui) project which contains strings for UI elements like buttons, labels, etc. for our learning platform.
+1. [Contributing documentation](https://translate.freecodecamp.org/contributing-docs), що містить файли з документацією сайту.
+2. [Coding Curriculum](https://translate.freecodecamp.org/curriculum), що містить файли із завданнями навчальної програми.
+3. [Learn User Interface](https://translate.freecodecamp.org/learn-ui), що містить елементи інтерфейсу, як-от кнопки, мітки тощо.
 
-Select any project you want to contribute to, and you will see a list of available languages for translation.
+Виберіть будь-який проєкт, до якого ви хочете долучитися. Ви побачите список доступних мов для перекладу.
 
 ![Image - List of available languages](https://contribute.freecodecamp.org/images/crowdin/languages.png)
 
-Select the language you want to work on, and you will see the complete file tree.
+Оберіть мову, над якою хочете працювати, і тоді побачите повне дерево файлів.
 
 ![Image - List of available files](https://contribute.freecodecamp.org/images/crowdin/file-tree.png)
 
-Each file and folder will show a progress bar. The **blue** portion of the progress bar indicates what percentage of the file has been translated, while the **green** portion of the progress bar indicates what percentage of the file has been approved by the proofreading team.
+Кожен файл і папка мають індикатор виконання. **Синя** частина індикатору показує відсоток файлу, який вже перекладено, а **зелена** – відсоток, який вже затверджено.
 
-Select a file to work on and Crowdin will open the editor view.
+Виберіть файл, після чого Crowdin відкриє редактор.
 
-> [!NOTE] When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
+> [!NOTE] Коли відкриється редактор, вам необхідно натиснути на значок налаштувань (зубчасте колесо) і встановити «HTML tags displaying» на «SHOW». Це допоможе бачити `<code></code>` замість `<0></0>`.
 
-## Translate Curriculum
+## Перекладайте навчальну програму
 
 ![Image - Editor View](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
-Crowdin separates a document into translatable "strings", usually sentences. Each string is translated individually. Referring to the image above:
+Crowdin розділяє документ на «рядки», зазвичай на речення. Кожен такий рядок перекладається окремо. Посилаючись на зображення вище:
 
-1. A string highlighted in green already has a proposed translation.
-2. A string highlighted in red does _not_ have a proposed translation.
-3. A string with greyed out text is not translatable. This is the case for code blocks and other content that must not be translated. You will be unable to select these strings in the editor.
-4. If a contributor has proposed a translation to a string, Crowdin will display those proposals here. You will not be able to save an identical translation - instead, if a translation is accurate, you should click the `+` icon to "upvote" it. An inaccurate translation can be "downvoted" with the `-` icon.
-5. Crowdin will recommend translations based on Translation Memory (TM) or Machine Translation (MT). Translation Memory refers to similar or identical strings that we have translated/approved in other files. Machine Translation refers to translations recommended by their integrated library.
-6. This is the editor pane, where you may write your proposed translation for the selected string.
-7. The currently selected string in the editor will be highlighted in yellow.
-8. Here you will see tags indicating the state of the string. `Done` means the string has at least one proposed translation. `Todo` means the string does not have any proposed translations.
-9. Here you can see the comments window. If you have questions or concerns about a particular string, you can leave a comment on the string here for other translators to see.
-10. These two "pane" buttons will hide the left (document) and right (comments) views.
+1. Рядок, виділений зеленим, вже має запропонований переклад.
+2. Рядок, виділений червоним, _не_ має запропонованого перекладу.
+3. Рядок з сірим текстом не перекладається. Цей стосується коду та іншого контенту, який не потрібно перекладати. Ви не зможете обрати ці рядки у редакторі.
+4. Якщо хтось вже запропонував переклад рядка, Crowdin зобразить всі варіанти тут. Ви не зможете зберегти ідентичний переклад. Проте, якщо ви бачите, що переклад точний, натисніть `+`, щоб проголосувати за нього. Якщо переклад неточний – можна проголосувати проти нього, натиснувши `-` icon.
+5. Crowdin пропонуватиме переклади на основі пам’яті перекладів (TM) або машинного перекладу (MT). Пам’ять перекладів посилається на схожі або ідентичні рядки, які вже перекладено/затверджено в інших файлах. Машинний переклад посилається на переклади, рекомендовані інтегрованою бібліотекою.
+6. Це вікно редактора, де ви можете писати переклад вибраного рядка.
+7. Поточний вибраний рядок в редакторі буде виділено жовтим кольором.
+8. Тут ви побачите теґи, що вказують на статус рядка. `Done` означає, що рядок має принаймні один запропонований переклад. `Todo` означає, що рядок не має жодних запропонованих перекладів.
+9. Це вікно для коментарів. Якщо ви маєте запитання або зауваження щодо конкретного рядка, то можете залишити коментарі тут, щоб інші перекладачі могли їх бачити.
+10. Ці дві кнопки приховують ліве (документ) і праве (коментарі) вікна.
 
-> [!NOTE] If you see a hidden string that includes translations, please notify us in the [Discord](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
+> [!NOTE] Якщо ви бачите прихований рядок, який містить переклад, будь ласка, повідомте нам в [Discord](https://discord.gg/PRyKn3Vbay), щоб ми видалили переклад з памʼяті.
 
-When you have completed a translation for a string, select the `Save` button to store your translation on Crowdin. Other contributors will then be able to vote on your translation and proofreaders will be able to approve it.
+Коли ви завершили переклад рядка, натисніть `Save`, щоб зберегти переклад у Crowdin. Інші учасники зможуть проголосувати за ваш переклад, а редактори зможуть його затвердити.
 
-You are welcome to translate as many strings as you like - there are no additional steps required when you complete a full file or propose a new translation. Clicking the `Save` button is all that is needed to store a translation.
+Ви можете перекласти стільки рядків, скільки вам завгодно: інші кроки від вас не вимагаються. Щоб зберегти переклад, потрібно тільки натиснути `Save`.
 
-> [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
+> [!NOTE] Якщо ви бачите якісь неточності в оригінальному файлі англійською мовою, будь ласка, не виправляйте їх у процесі перекладу. Натомість залиште коментар або створіть GitHub issue.
 
 ## Translate the Learn Interface
 
