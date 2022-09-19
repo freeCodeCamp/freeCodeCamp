@@ -5,7 +5,7 @@ import {
   FormControl,
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
-import { findIndex, find, isEqual } from 'lodash-es';
+import { findIndex, find, isEqual, omit } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { Component, FormEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
@@ -130,7 +130,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       return false;
     }
     const edited = find(portfolio, createFindById(id));
-    return isEqual(original, edited);
+    return isEqual(omit(original, ['isSaved']), omit(edited, ['isSaved']));
   };
 
   // TODO: Check if this function is required or not
