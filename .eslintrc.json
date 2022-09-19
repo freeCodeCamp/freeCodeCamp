@@ -41,6 +41,10 @@
   },
   "overrides": [
     {
+      "files": ["**/*.json"],
+      "extends": ["plugin:json/recommended"]
+    },
+    {
       "files": ["**/*.ts?(x)"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
