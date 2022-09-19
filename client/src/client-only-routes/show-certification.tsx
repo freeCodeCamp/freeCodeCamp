@@ -176,20 +176,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     setIsDonationClosed(true);
   };
 
-  const handleProcessing = (
-    duration: string,
-    amount: number,
-    action: string
-  ) => {
-    props.executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `certificate ${action}`,
-        label: duration,
-        value: amount
-      }
-    });
+  const handleProcessing = () => {
     setIsDonationSubmitted(true);
   };
 
@@ -269,6 +256,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             defaultTheme={Themes.Default}
             handleProcessing={handleProcessing}
             isMinimalForm={true}
+            paymentContext='certificate'
           />
         </Col>
       </Row>

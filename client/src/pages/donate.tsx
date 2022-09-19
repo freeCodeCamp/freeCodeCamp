@@ -68,18 +68,6 @@ function DonatePage({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function handleProcessing(duration: string, amount: number, action: string) {
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `donate page ${action}`,
-        label: duration,
-        value: amount
-      }
-    });
-  }
-
   return showLoading ? (
     <Loader fullScreen={true} />
   ) : (
@@ -110,7 +98,7 @@ function DonatePage({
               <DonationText />
               <Row>
                 <Col xs={12}>
-                  <DonateForm handleProcessing={handleProcessing} />
+                  <DonateForm paymentContext='donate page' />
                 </Col>
               </Row>
               <Spacer size={3} />

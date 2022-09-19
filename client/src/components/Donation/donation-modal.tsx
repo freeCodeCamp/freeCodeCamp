@@ -56,20 +56,7 @@ function DonateModal({
 }: DonateModalProps): JSX.Element {
   const [closeLabel, setCloseLabel] = React.useState(false);
   const { t } = useTranslation();
-  const handleProcessing = (
-    duration: string,
-    amount: number,
-    action: string
-  ) => {
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `Modal ${action}`,
-        label: duration,
-        value: amount
-      }
-    });
+  const handleProcessing = () => {
     setCloseLabel(true);
   };
 
@@ -158,6 +145,7 @@ function DonateModal({
             <DonateForm
               handleProcessing={handleProcessing}
               isMinimalForm={true}
+              paymentContext='modal'
             />
           </Col>
         </Row>

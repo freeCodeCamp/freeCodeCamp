@@ -10,18 +10,12 @@ import {
 import envData from '../../../../config/env.json';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
 import { Themes } from '../settings/theme';
-import { PayPalButtonScriptLoader } from './paypal-button-script-loader';
+import { DonationApprovalData, PostPayment } from './types';
+import PayPalButtonScriptLoader from './paypal-button-script-loader';
 
 type PaypalButtonProps = {
-  addDonation: (data: AddDonationData) => void;
-  isSignedIn: boolean;
   donationAmount: number;
   donationDuration: string;
-  handleProcessing: (
-    duration: string,
-    amount: number,
-    action: string
-  ) => unknown;
   isDonating: boolean;
   onDonationStateChange: ({
     redirecting,
@@ -35,13 +29,13 @@ type PaypalButtonProps = {
     error: string | null;
   }) => void;
   isPaypalLoading: boolean;
-  skipAddDonation?: boolean;
   t: (label: string) => string;
   ref?: Ref<PaypalButton>;
   theme: Themes;
   isSubscription?: boolean;
   handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
   isMinimalForm: boolean | undefined;
+  postPayment: (arg0: PostPayment) => void;
 };
 
 type PaypalButtonState = {
@@ -49,17 +43,6 @@ type PaypalButtonState = {
   duration: string;
   planId: string | null;
 };
-
-export interface AddDonationData {
-  redirecting: boolean;
-  processing: boolean;
-  success: boolean;
-  error: string | null;
-  loading?: {
-    stripe: boolean;
-    paypal: boolean;
-  };
-}
 
 const {
   paypalClientId,
@@ -82,7 +65,6 @@ export class PaypalButton extends Component<
   };
   constructor(props: PaypalButtonProps) {
     super(props);
-    this.handleApproval = this.handleApproval.bind(this);
   }
 
   static getDerivedStateFromProps(
@@ -104,26 +86,6 @@ export class PaypalButton extends Component<
     // }
     return { ...configurationObj };
   }
-
-  handleApproval = (data: AddDonationData, isSubscription: boolean): void => {
-    const { amount, duration } = this.state;
-    const { isSignedIn = false } = this.props;
-
-    // If the user is signed in and the payment is subscritipn call the api
-    if (isSignedIn && isSubscription) {
-      this.props.addDonation(data);
-    }
-
-    this.props.handleProcessing(duration, amount, 'Paypal payment submission');
-
-    // Show success anytime because the payment has gone through paypal
-    this.props.onDonationStateChange({
-      redirecting: false,
-      processing: false,
-      success: true,
-      error: data.error ? data.error : null
-    });
-  };
 
   render(): JSX.Element | null {
     const { duration, planId, amount } = this.state;
@@ -177,8 +139,8 @@ export class PaypalButton extends Component<
           isMinimalForm={isMinimalForm}
           isPaypalLoading={isPaypalLoading}
           isSubscription={isSubscription}
-          onApprove={(data: AddDonationData) => {
-            this.handleApproval(data, isSubscription);
+          onApprove={(data: DonationApprovalData) => {
+            this.props.postPayment({ paymentProvider: 'paypal', data });
           }}
           onCancel={() => {
             this.props.onDonationStateChange({

@@ -5,17 +5,18 @@ import {
 } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
 import PatreonLogo from '../../assets/images/components/patreon-logo';
+import { PostPayment } from './types';
 
 const { patreonClientId }: { patreonClientId: string | null } = envData as {
   patreonClientId: string | null;
 };
 
 interface PatreonButtonProps {
-  postPatreonRedirect: () => void;
+  postPayment: (arg0: PostPayment) => void;
 }
 
 const PatreonButton = ({
-  postPatreonRedirect
+  postPayment
 }: PatreonButtonProps): JSX.Element | null => {
   if (
     !patreonClientId ||
@@ -36,7 +37,7 @@ const PatreonButton = ({
       className='patreon-button link-button'
       data-patreon-widget-type='become-patron-button'
       href={href}
-      onClick={postPatreonRedirect}
+      onClick={() => postPayment({ paymentProvider: 'patreon' })}
       rel='noreferrer'
       target='_blank'
     >
