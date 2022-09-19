@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Алгоритми JavaScript та структури даних (бета-версія)",
-    "intro": [
-      "заповнювач",
-      "заповнювач"
-    ],
+    "intro": ["заповнювач", "заповнювач"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Проєкт «Створіть шифр Цезаря»",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "Проєкт «Створіть касовий апарат»",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "Проєкт «Створіть перевірку паліндрома»",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Проєкт «Створіть конвертер римських чисел»",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Проєкт «Створіть валідатор мобільного номера»",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Вивчіть основи JavaScript, створивши рольову гру",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Вивчіть валідацію форм, створивши лічильник калорій",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Вивчіть функційне програмування, створивши електронну таблицю",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "Інформаційна панель D3",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
