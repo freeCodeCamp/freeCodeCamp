@@ -19,13 +19,13 @@
     "one-time-url": "https://paypal.me/freecodecamp"
   },
   "nav": {
-    "forum": "https://forum.freecodecamp.org/",
+    "forum": "https://forum.freecodecamp.org/c/ukrainian/",
     "news": "https://freecodecamp.org/news/"
   },
   "help": {
-    "HTML-CSS": "HTML-CSS",
-    "JavaScript": "JavaScript",
-    "Python": "Python",
-    "Backend Development": "Backend Development"
+    "HTML-CSS": "Ukrainian/HTML-CSS",
+    "JavaScript": "Ukrainian/JavaScript",
+    "Python": "Ukrainian/Python",
+    "Backend Development": "Ukrainian/programming-help"
   }
 }
