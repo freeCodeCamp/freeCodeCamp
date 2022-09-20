@@ -180,7 +180,7 @@ For the first spam post of a legitimate user (ie. whose intent isn't to spam the
 
 #### Notable Situations:
 
-1. FreeCodeCamp's spam filter requires a user to take a certain amount of time to ask their question. If they click on the "Create post" button before that, they or their post might get flagged for review for being potential spam. In that case, it is the responsibility of the moderators to approve their post if they are a genuine user and need help. The same applies if the post is flagged as spam by another user. The moderator must make a determination either to agree with the flag and take suitable action or disagree and restore the post.
+1.  The _"min first post typing time"_ spam filter requires a low-level user to take a certain amount of time to create a post. If they click on the "Create post" button before that, their post might get flagged for review, and their account will get a note.
 
 2. If the user is an obvious spam bot, for example, their first and only post is a link to a malicious/self-promoting site minutes after signing up, delete their account.
 
