@@ -125,7 +125,6 @@ function updateMyPortfolio(...args) {
   ];
   const buildUpdate = body => {
     const portfolio = body?.portfolio?.map(elem => _.pick(elem, portfolioKeys));
-    console.log(JSON.stringify(portfolio));
     return { portfolio };
   };
   const validate = ({ portfolio }) => portfolio?.every(isPortfolioElement);

@@ -95,15 +95,16 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     e.preventDefault();
     const target = e.target as HTMLInputElement;
     const id = target?.id || undefined;
-    if (id) {
-      this.setState(state => ({
-        portfolio: state.portfolio.map(item =>
-          item.id === id ? { ...item, isSaved: true } : item
-        )
-      }));
-    }
     const { updatePortfolio } = this.props;
-    const { portfolio } = this.state;
+    let { portfolio } = this.state;
+    if (id) {
+      portfolio = portfolio.map(item =>
+        item.id === id ? { ...item, isSaved: true } : item
+      );
+      this.setState({
+        portfolio
+      });
+    }
     return updatePortfolio({ portfolio });
   };
 
