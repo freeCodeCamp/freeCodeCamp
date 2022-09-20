@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Algoritmi e Strutture Dati JavaScript (Beta)",
-    "intro": [
-      "segnaposto",
-      "segnaposto"
-    ],
+    "intro": ["segnaposto", "segnaposto"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Crea un cifrario di Cesare",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "Crea un registro di cassa",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "Crea un verificatore di palindromi",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Crea un convertitore di numeri romani",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Crea un validatore di numeri telefonici",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Impara JavaScript Base creando un gioco di ruolo",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Impara la validazione dei moduli creando un contatore di calorie",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Impara programmazione funzionale creando un foglio di calcolo",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "Dashboard D3",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
