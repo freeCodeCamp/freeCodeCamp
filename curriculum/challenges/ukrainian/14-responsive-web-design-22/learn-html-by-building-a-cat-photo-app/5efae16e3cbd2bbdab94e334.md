@@ -1,6 +1,6 @@
 ---
 id: 5efae16e3cbd2bbdab94e334
-title: Step 31
+title: Крок 31
 challengeType: 0
 dashedName: step-31
 ---
