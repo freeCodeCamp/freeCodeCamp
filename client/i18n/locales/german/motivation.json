@@ -39,8 +39,7 @@
     "Hasta la vista, Herausforderung!",
     "Bingo!",
     "Steuermann, Warp Neun. Aktivieren!",
-    "Pikachu wählt dich!",
-
+    "Pikachu wählt dich!"
   ],
   "motivationalQuotes": [
     {
@@ -198,6 +197,6 @@
     {
       "quote": "Ich habe nicht versagt. Ich habe nur 10.000 Wege gefunden, die nicht funktionierten.",
       "author": "Thomas A. Edison"
-    },
+    }
   ]
 }

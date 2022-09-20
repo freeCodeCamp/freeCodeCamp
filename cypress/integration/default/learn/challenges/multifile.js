@@ -2,9 +2,10 @@ import translations from '../../../../../client/i18n/locales/english/translation
 const location =
   '/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-2';
 const selectors = {
-  testButton: '#test-button',
+  testButton: '[data-cy=run-tests-button]',
   monacoTabs: '.monaco-editor-tabs',
-  signInButton: '#action-buttons-container a[href$="/signin"]'
+  signInButton: '#action-buttons-container a[href$="/signin"]',
+  submitButton: '[data-cy=submit-button]'
 };
 
 describe('Challenge with multifile editor', () => {
@@ -27,13 +28,34 @@ describe('Challenge with multifile editor', () => {
       .contains('Check Your Code');
   });
 
+  it('resets the lower jaw when prompted', () => {
+    cy.get('[data-cy=failing-test-feedback]').should('not.exist');
+
+    cy.contains('Check Your Code').click();
+    cy.get('[data-cy=failing-test-feedback]').should('be.visible');
+    cy.contains('Restart Step').click();
+    cy.get('[data-cy=reset-modal-confirm').click();
+
+    cy.get('[data-cy=failing-test-feedback]').should('not.exist');
+  });
+
   // Page will change after this test. If your test requires page used in previous
   // tests make sure it is above this one
   it('prompts unauthenticated user to sign in to save progress', () => {
+    cy.visit(location);
     cy.focused().type('{end}{enter}<meta charset="UTF-8" />{ctrl+enter}');
     cy.get(selectors.signInButton).contains(translations.learn['sign-in-save']);
+    cy.contains(translations.learn['congratulations']);
     cy.get(selectors.signInButton).click();
     cy.go('back');
     cy.get(selectors.signInButton).should('not.exist');
+  });
+
+  it('focuses the submit button after testing a valid solution', () => {
+    cy.visit(location);
+    cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
+    cy.get(selectors.submitButton).should('not.be.focused');
+    cy.get(selectors.testButton).click();
+    cy.get(selectors.submitButton).should('be.focused');
   });
 });

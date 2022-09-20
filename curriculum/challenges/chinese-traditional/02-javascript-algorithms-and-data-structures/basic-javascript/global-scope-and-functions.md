@@ -17,7 +17,7 @@ dashedName: global-scope-and-functions
 
 使用 `let` 或 `const`，在任何函數之外聲明一個名爲 `myGlobal` 的全局變量。 並給它一個初始值 `10`。
 
-在函數 `fun1` 中，***不要*** 使用 `let` 或 `const` 關鍵字，將 `5` 分配給 `oopsGlobal` 。
+在函數 `fun1`中，賦值 `5` 給 `oopsGlobal`，***不使用*** `var`、`let` 或 `const` 關鍵字。
 
 # --hints--
 

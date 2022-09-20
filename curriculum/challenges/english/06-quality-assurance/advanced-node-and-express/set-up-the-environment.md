@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 Now that the *http* server is mounted on the *express app*, you need to listen from the *http* server. Change the line with `app.listen` to `http.listen`.
 
-The first thing needing to be handled is listening for a new connection from the client. The <dfn>on</dfn> keyword does just that- listen for a specific event. It requires 2 arguments: a string containing the title of the event that's emitted, and a function with which the data is passed though. In the case of our connection listener, we use *socket* to define the data in the second argument. A socket is an individual client who is connected.
+The first thing needing to be handled is listening for a new connection from the client. The <dfn>on</dfn> keyword does just that- listen for a specific event. It requires 2 arguments: a string containing the title of the event that's emitted, and a function with which the data is passed through. In the case of our connection listener, we use *socket* to define the data in the second argument. A socket is an individual client who is connected.
 
 To listen for connections to your server, add the following within your database connection:
 

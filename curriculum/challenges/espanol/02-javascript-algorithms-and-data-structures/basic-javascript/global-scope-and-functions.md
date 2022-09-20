@@ -17,7 +17,7 @@ Las variables que se declaran sin las palabras clave `let` o `const` se crean au
 
 Usando `let` o `const`, declara una variable global llamada `myGlobal` fuera de cualquier función. Inicialízala con un valor de `10`.
 
-Dentro de la función `fun1`, asigna `5` a `oopsGlobal` ***sin*** usar las palabras clave `let` o `const`.
+Dentro de la función `fun1`, asigna `5` a `oopsGlobal` ***sin usar*** las palabras clave `var`, `let` o `const`.
 
 # --hints--
 

@@ -1,8 +1,8 @@
 ---
 id: 5dfa371beacea3f48c6300af
-title: ステップ 18
+title: ステップ 19
 challengeType: 0
-dashedName: step-18
+dashedName: step-19
 ---
 
 # --description--

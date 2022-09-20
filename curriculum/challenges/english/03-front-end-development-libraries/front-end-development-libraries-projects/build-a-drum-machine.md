@@ -28,6 +28,18 @@ You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and
 
 **User Story #7:** When a `.drum-pad` is triggered, a string describing the associated audio clip is displayed as the inner text of the `#display` element (each string must be unique).
 
+Here are some audio samples you can use for your drum machine:
+
+- [Heater 1](https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3)
+- [Heater 2](https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3)
+- [Heater 3](https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3)
+- [Heater 4](https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3)
+- [Clap](https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3)
+- [Open-HH](https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3)
+- [Kick-n'-Hat](https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3)
+- [Kick](https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3)
+- [Closed-HH](https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3)
+
 You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Once you're done, submit the URL to your working project with all its tests passing.

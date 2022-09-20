@@ -28,6 +28,12 @@ ourStr += "I come second.";
 
 # --hints--
 
+`myStr` 應該在兩個字符串之間有一個空格字符。
+
+```js
+assert(/sentence\. This/.test(myStr));
+```
+
 `myStr` 的值應該是字符串 `This is the first sentence. This is the second sentence.`
 
 ```js

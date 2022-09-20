@@ -19,7 +19,7 @@ dashedName: build-a-tribute-page
 1. Du solltest innerhalb des `#img-div`-Elements ein Element mit zugehöriger `id="img-caption"` sehen, der einen Text enthält, der das in `#img-div` angezeigte Bild beschreibt.
 1. Du solltest ein Element mit zugehöriger `id="tribute-info"` sehen, welches das Thema der Gedenkseite beschreibenden Textinhalt enthält
 1. Du solltest ein `a`-Element mit zugehöriger `id="tribute-link"` sehen, welches auf eine externe Seite verweist, die zusätzliche Informationen über das Thema der Gedenkseite enthält. TIPP: Du musst deinem Element ein Attribut von `target` zuweisen und es auf `_blank` setzen, damit der Link in einem neuen Tab geöffnet werden kann
-1. Dein `#image` sollte die `max-width` und `height` Eigenschaften verwenden, um die Größenänderung responsiv zu gestalten, daher relativ zur Breite des übergeordneten Elements, ohne dessen Originalgröße zu überschreiten
+1. Dein `#image` sollte die `max-width`- und `height`-Eigenschaften verwenden, um die Größenänderung responsiv zu gestalten, d. h. relativ zur Breite des Elternelements, ohne dessen Originalgröße zu überschreiten
 1. Dein `img`-Element sollte innerhalb des Elternelements zentriert werden
 
 Erfülle die folgenden User Stories und bestehe alle Tests, um dieses Projekt abzuschließen. Gib dem Ganzen deinen persönlichen Stil. Viel Spaß beim Programmieren!

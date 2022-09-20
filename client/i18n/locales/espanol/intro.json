@@ -70,8 +70,8 @@
     "title": "(Nuevo) Diseño Web Responsivo",
     "intro": [
       "En esta certificación de Diseño Web Responsivo, aprenderás los lenguajes que los desarrolladores usan para construir páginas web: HTML (Lenguaje de Marcado de Hipertexto) para el contenido, y CSS (hojas de estilo en cascada) para el diseño.",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a photo gallery with Flexbox, and a magazine article layout with CSS Grid."
+      "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderás técnicas modernas como variables CSS, mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un sitio de cuestionarios.",
+      "Por último, aprenderás cómo hacer páginas web que respondan a diferentes tamaños de pantalla, mediante la construcción de una galería de fotos con Flexbox, y un diseño de artículos de revista con CSS Grid."
     ],
     "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o extensiones de modo oscuro pueden interferir con las pruebas. Si tienes algun problema, te recomendamos deshabilitar las extensiones que modifiquen el contenido de la página, mientras tomas el curso.",
     "blocks": {
@@ -308,7 +308,7 @@
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
-        "title": "Build a Caesars Cipher Project",
+        "title": "Construye un proyecto de cifrado cesar",
         "intro": [
           "",
           ""
@@ -606,8 +606,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB y Mongoose",
         "intro": [
-          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, MongoDB is a non-relational or \"NoSQL\" database. This means MongoDB stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
-          "Mongoose is a popular npm package for interacting with MongoDB. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with MongoDB. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
+          "MongoDB es una aplicación de base de datos que almacena documentos JSON (o registros) que puede usar en su aplicación. A diferencia de SQL, otro tipo de base de datos, MongoDB es una base de datos no relacional o \"NoSQL\". Esto significa que MongoDB almacena todos los datos asociados dentro de un registro, en lugar de almacenarlos en muchas tablas preestablecidas como en una base de datos SQL.",
+          "Mongoose es un paquete npm popular para interactuar con MongoDB. Con Mongoose, puede usar objetos de JavaScript sin formato en lugar de JSON, lo que facilita el trabajo con MongoDB. Además, le permite crear planos para sus documentos llamados esquemas, para que no guarde accidentalmente el tipo de datos incorrecto y provoque errores más adelante.",
           "En los cursos de MongoDB y Mongoose, aprenderás los fundamentos para trabajar con datos persistentes, incluyendo cómo configurar un modelo, guardar, eliminar y encontrar documentos en la base de datos."
         ]
       },
@@ -805,7 +805,7 @@
         "intro": [
           "Sube tu nivel de habilidad de resolución creativa de problemas con estas tareas de programación gratis de la clásica librería de Rosetta Code.",
           "Estos desafíos pueden resultar difíciles, pero empujarán tu lógica de algoritmos a nuevas alturas.",
-          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Atributo: Código Rosetta</a>"
         ]
       },
       "project-euler": {

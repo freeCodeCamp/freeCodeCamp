@@ -1,22 +1,22 @@
-# The Official freeCodeCamp Language Lead Handbook
+# Das offizielle freeCodeCamp-Language Lead-Handbuch
 
-This handbook will help you set up and use the tools for your localization efforts.
+Dieses Handbuch hilft dir dabei, die Tools für deine Lokalisierungsvorhaben einzurichten und zu nutzen.
 
-## How to invite new contributors to Ghost
+## Wie du neue Mitwirkende zu Ghost einlädst
 
-Ghost allows you to set contributors with different levels of authorizations.
+Ghost ermöglicht es dir, Mitwirkende mit verschiedenen Berechtigungsstufen festzulegen.
 
-Most of your invites will be for the "Contributor" level. This level allows the user to create drafts. Select this role when inviting a new translator.
+Die meisten Ihrer Einladungen werden für die Stufe "Contributor " sein. Auf dieser Ebene kann der Benutzer Entwürfe erstellen. Wähle diese Rolle, wenn du einen neuen Übersetzer einlädst.
 
-The "Author" level allows the user to create Drafts and publish them.
+Die Stufe "Author" ermöglicht es dem Benutzer, Entwürfe zu erstellen und diese zu veröffentlichen.
 
-The "Editor" level allows the user to access all Drafts and publish them. Select this role when inviting a new proofreader.
+Auf der Ebene "Editor" hat der Benutzer Zugriff auf alle Entwürfe und kann sie veröffentlichen. Wähle diese Rolle, wenn du einen neuen Korrekturleser (proofreader) einlädst.
 
-The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
+Die Stufe "Administrator" ist für freeCodeCamp-Mitarbeiter und Language Leads reserviert.
 
-## How to mention the original author of a translated article
+## Wie man den Originalautor eines übersetzten Artikels erwähnt
 
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
+Der ursprüngliche Autor und der ursprüngliche Artikel werden automatisch verlinkt, indem dieser Code dem Abschnitt Code Injection -> head in den Entwurfs-Einstellungen auf Ghost hinzugefügt wird.
 
 ```html
 <script>
@@ -24,28 +24,28 @@ The original author and the original article are linked automatically adding thi
 </script>
 ```
 
-With `link` being the link of the original article.
+`Link` ist der Link zum Originalartikel.
 
-## How to update trending articles
+## Wie man angesagte Artikel aktualisiert
 
-> [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on google results.
+> [!TIP] Die Artikel in der Fußzeile mindestens einmal im Monat zu ändern, führt zu einer Verbesserung der Google-Ergebnisse für die verlinkten Artikel.
 
-There are two places in which to change the trending articles.
+Es gibt zwei Stellen, an denen du die angesagten Artikel ändern kannst.
 
-- [The curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/)
-- [The CDN repository](https://github.com/freeCodeCamp/cdn)
+- [Das Curriculum-Repository](https://github.com/freeCodeCamp/freeCodeCamp/)
+- [Das CDN-Repository](https://github.com/freeCodeCamp/cdn)
 
-For each article you will need to create a shorter title to use in the footer.
+Für jeden Artikel musst du einen kürzeren Titel erstellen, den du in der Fußzeile (Footer) verwenden kannst.
 
-### Change trending articles in the curriculum
+### Änderung angesagter Artikel im Lehrplan (Curriculum)
 
-The trending articles in the curriculum footer can be changed by editing the file at `client/i18n/locales/<language>/trending.json`.
+Die angesagte  Artikel in der Fußzeile des Lehrplans können durch Bearbeiten der Datei `client/i18n/locales/<language>/trending.json` geändert werden.
 
-This file is a `*.json` file that has the shape of an object with property keys in the shape `article0title` and `article0link`.
+Diese Datei ist eine `*.json`-Datei, die die Form eines Objekts mit Eigenschaftsschlüsseln in der Form `article0title` und `article0link` hat.
 
-Each number rapresents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
+Jede Zahl steht für einen der 30 Artikel in der Fußzeile. Achte darauf, dass der Titel und der Link richtig zugeordnet sind.
 
-This is an example of how part of the `trending.json` file has to look.
+Dies ist ein Beispiel dafür, wie ein Teil der Datei `trending.json` aussehen muss.
 
 ```json
 {
@@ -65,13 +65,13 @@ This is an example of how part of the `trending.json` file has to look.
 }
 ```
 
-You will want to [build the translated client locally](how-to-test-translations-locally.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
+Du solltest [den übersetzten Client lokal einrichten](how-to-enable-new-languages.md), um zu sehen, ob die Titel die richtige Länge haben. Jeder Titel muss in einer einzigen Zeile bleiben und darf nicht in eine neue Zeile übergehen.
 
-### How to update the trending articles in the cdn
+### Wie man angesagte Artikel im cdn aktualisiert
 
-The file in the cdn repository is the file `universal/trending/<language>.yaml`.
+Die Datei im cdn-Repository ist die Datei `universal/trending/<language>.yaml`.
 
-This file is shaped differently, for example here the file content for the first 6 articles:
+Diese Datei ist unterschiedlich aufgebaut, zum Beispiel hier der Inhalt der ersten 6 Artikel:
 
 ```yaml
 article0title: 'Unire CSV con Python'
@@ -88,27 +88,27 @@ article5title: 'Cosa è API?'
 article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/'
 ```
 
-You can convert from one format to the other carefully changing it manually. Or you can use [the script in this repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
+Du kannst von einem Format in ein anderes konvertieren, indem du es vorsichtig manuell ändern. Oder du kannst [das Skript in diesem Repl](https://replit.com/@Ieahleen/convert-json-to-yaml) verwenden.
 
-> [!TIP] A new workflow is being worked on, there will be only one place to change in the future.
+> [!TIP] Es wird an einem neuen Arbeitsablauf gearbeitet, sodass es in Zukunft nur noch eine Stelle gibt, an der Änderungen vorgenommen werden müssen.
 
-## How to translate the info boxes headers in the documentation
+## Wie man die Überschriften der Infoboxen in der Dokumentation übersetzt
 
-You can find these boxes all around the documentation:
+Du findest diese Boxen überall in der Dokumentation:
 
-> [!NOTE] I am a note box
+> [!NOTE] Ich bin eine Notizbox
 
-> [!TIP] I am a tip box
+> [!TIP] Ich bin eine Tippbox
 
-> [!WARNING] I am a warning box
+> [!WARNING] Ich bin eine Warnbox
 
-> [!ATTENTION] I am an attention box
+> [!ATTENTION] Ich bin eine Aufmerksamkeitsbox
 
-By default, their headers appear in English even in the translated docs.
+Standardmäßig erscheinen die Kopfzeilen auch in den übersetzten Dokumenten auf Englisch.
 
-You can have the headers translated in the docs in your language by changing the file `docs/index.html`, in this way:
+Du kannst die Kopfzeilen in den Dokumenten in deine Sprache übersetzen lassen, indem du die Datei `docs/index.html` auf diese Weise änderst:
 
-Inside the `script` element there is an object, find the `flexibleAlerts` property, which has this shape:
+Innerhalb des `script` Elements gibt es ein Objekt, die `flexibleAlerts` Eigenschaft, die diese Form hat:
 
 ```js
 flexibleAlerts: {
@@ -135,9 +135,9 @@ flexibleAlerts: {
 }
 ```
 
-Inside the object of the label property, before the `'/'` property, you would add a new property for your language, like `/i18n/<language>/`.
+Innerhalb des Objekts der Label-Eigenschaft, vor der `'/'`-Eigenschaft, fügst du eine neue Eigenschaft für deine Sprache hinzu, wie `/i18n/<language>/`.
 
-For example, adding the translations for Portuguese would appear like this:
+Das Hinzufügen der Übersetzungen für Portugiesisch würde zum Beispiel so aussehen:
 
 ```js
 flexibleAlerts: {
@@ -168,11 +168,11 @@ flexibleAlerts: {
 }
 ```
 
-## How to translate the motivational quotes
+## Wie man die motivierenden Zitate übersetzt
 
-The motivational quotes can be found in the [curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/) in the `/client/i18n/locales/<language>/motivation.json` file.
+Die motivierenden Zitate befinden sich im [Curriculum-Repository](https://github.com/freeCodeCamp/freeCodeCamp/) in der Datei `/client/i18n/locales/<language>/motivation.json`.
 
-This file has a general structure of:
+Diese Datei hat folgende allgemeine Struktur:
 
 ```json
 {
@@ -181,11 +181,11 @@ This file has a general structure of:
 }
 ```
 
-The compliments are the short sentences that appear at the completion of a challenge.
+Die Komplimente sind die kurzen Sätze, die am Ende einer Aufgabe erscheinen.
 
-You don't need to directly translate the sentences used in English, you can write a set of short sentences that are appropriate to show at the completion of a challenge.
+Du musst die Sätze nicht direkt aus dem Englischen übersetzen, sondern kannst eine Reihe von kurzen Sätzen schreiben, die sich eignen, um sie am Ende einer Aufgabe zu zeigen.
 
-The `compliments` array is an array of strings, so for example you would write:
+Das `compliments`-Array ist ein Array aus Strings, also würdest du zum Beispiel schreiben:
 
 ```json
 {
@@ -194,11 +194,11 @@ The `compliments` array is an array of strings, so for example you would write:
 }
 ```
 
-> [!TIP] You should start with at least a dozen compliments to have some variety when users complete challenges.
+> [!TIP] Du solltest mit mindestens einem Dutzend Komplimenten beginnen, um eine gewisse Abwechslung zu schaffen, wenn die Benutzer die Aufgaben abschließen.
 
-The motivational quotes are the quotes that appear at https://freecodecamp.org/learn.
+Die Motivationszitate sind die Zitate, die auf https://freecodecamp.org/learn erscheinen.
 
-The `motivationalQuotes` array is an array of objects, these objects should include a `quote` property and an `author` property. like this:
+Das `motivationalQuotes`-Array ist ein Array aus Objekten. Diese Objekte sollten eine `quote`-Eigenschaft und eine `author`-Eigenschaft enthalten. Wie hier:
 
 ```json
 {
@@ -216,64 +216,64 @@ The `motivationalQuotes` array is an array of objects, these objects should incl
 }
 ```
 
-> [!TIP] You should start with at least a dozen quotes, to have some variety. A new quote is shown every time the user reload the page.
+> [!TIP] Du solltest mit mindestens einem Dutzend Zitaten beginnen, um eine gewisse Vielfalt zu haben. Jedes Mal, wenn der Benutzer die Seite neu lädt, wird ein neues Zitat angezeigt.
 
-## How to update the common links
+## Wie man allgemeine Links aktualisiert
 
-We maintain a file of common links used throughout our [curriculum site](https://github.com/freecodecamp/freecodecamp) in the `/client/i18n/locales/<language>/links.json` file.
+In der Datei `/client/i18n/locales/<language>/links.json` wird eine Datei mit allgemeinen Links geführt, die auf unserer [Lehrplan-Website](https://github.com/freecodecamp/freecodecamp) verwendet wird.
 
-Some of these links will not change - but you should update the `/news` article links to point to your language's translated version of that article when it is published.
+Einige dieser Links werden sich nicht ändern - aber du solltest die `/news`-Artikel-Links aktualisieren, damit sie auf die übersetzte Version des Artikels in deiner Sprache verweisen, wenn er veröffentlicht wird.
 
-You should also update the `help` categories to point to your language's subforum (usually `language/category`, like `Italiano/HTML-CSS`). This will allow campers to create "help posts" in the correct forum location.
+Du solltest auch die `help`-Kategorien aktualisieren, um auf das Unterforum deiner Sprache zu verweisen (normalerweise `language/category`, wie `Italiano/HTML-CSS`). Dies ermöglicht es freeCodeCamp-Benutzern, 'Hilfeanfragen' im richtigen Forum zu erstellen.
 
-## How to update the site meta-data
+## So aktualisierst du die Metadaten der Website
 
-The site meta-data is in the `/client/i18n/locales/<language>/meta-tags.json` file. This file has five keys: `title`, `description`, `social-description`, `keywords`, and `youre-unsubscribed`.
+Die Metadaten der Website befinden sich in der Datei `/client/i18n/locales/<language>/meta-tags.json`. Diese Datei hat 5 Schlüssel:`title`, `description`, `social-description`, `keywords`, und `youre-unsubscribed`.
 
-The `youre-unsubscribed` value should be directly translated. The other values will need to be translated as closely as possible, while also considering common search terms and phrases used in your language.
+Der Wert `youre-unsubscribed` sollte direkt übersetzt werden. Die anderen Werte müssen so genau wie möglich übersetzt werden, wobei auch die in deiner Sprache üblichen Suchbegriffe und Phrasen berücksichtigt werden müssen.
 
-If you need help with this, reach out to us in the [contributor chat](https://discord.gg/PRyKn3Vbay)
+Wenn du dabei Hilfe benötigst, wende dich an uns im ["Contributor" Chat](https://discord.gg/PRyKn3Vbay)
 
-## Pre-Translate Workflow on Crowdin
+## Vorübersetzungs-Workflow auf Crowdin
 
-The Pre-Translate workflow can be used to apply translations from the Translation Memory to strings.
+Der Vorübersetzungs-Workflow kann verwendet werden, um Übersetzungen aus dem Translation Memory auf Strings anzuwenden.
 
-> [!TIP] Really useful to restore a lot of translations from the Translation Memory in bulk when a lot of files have been updated.
+> [!TIP] Diese Funktion ist sehr nützlich, um viele Übersetzungen aus dem Translation Memory in großen Mengen wiederherzustellen, wenn viele Dateien aktualisiert worden sind.
 
-You can find the Pre-Translation workflow at the top of the page in the console of a project. If you see "Go to console" in the upper right corner, click there first.
+Du findest den Vorübersetzungs-Workflow oben auf der Seite in der Konsole eines Projekts. Wenn du in der oberen rechten Ecke "Go to console" siehst, klicke zuerst darauf.
 
-![go to console button](./images/crowdin/pre-translate2.png)
+![Gehe zur Konsole-Schaltfläche](./images/crowdin/pre-translate2.png)
 
-![pre-translate workflow](./images/crowdin/pre-translate1.png)
+![Vorübersetzungs-Workflow](./images/crowdin/pre-translate1.png)
 
-You can choose "From Machine Translation" or "From Translation Memory". Choose "Translation Memory" to recover translations from memory.
+Du kannst "From Machine Translation" oder "From Translation Memory" wählen. Wähle "Translation Memory", um Übersetzungen aus dem Speicher wiederherzustellen.
 
-Then there are three steps to complete:
+Dann sind drei Schritte zu absolvieren:
 
-1. Files. Choose which files to translate, you can do all the project, or specific folders or files.
-2. Languages. Set your language here.
-3. Existing Translations. The best combination here is "100% match" and "Apply to untranslated strings only". Do not approve automatically, as it's always best to have a human eye on things.
+1. Dateien. Wähle die zu übersetzenden Dateien aus. Du kannst das gesamte Projekt oder bestimmte Ordner oder Dateien übersetzen.
+2. Sprachen. Stelle hier deine Sprache ein.
+3. Vorhandene Übersetzungen. Die beste Kombination ist hier "100% match" und "Apply to untranslated strings only". Genehmige nicht automatisch, denn es ist immer besser, ein menschliches Auge auf die Dinge zu werfen.
 
-![pre-translate existing translations](./images/crowdin/pre-translate3.png)
+![Vorübersetzung bestehender Übersetzungen](./images/crowdin/pre-translate3.png)
 
-When you have finished setting this, press the Pre-Translate button and wait. It will alert you once it has finished. The time it takes depends on how many untranslated strings are in the chosen files.
+Wenn du diese Einstellung abgeschlossen hast, drücke den Button Pre-Translate und warte. Sobald der Vorgang abgeschlossen ist, wirst du benachrichtigt. Wie lange das dauert, hängt davon ab, wie viele unübersetzte Strings in den ausgewählten Dateien enthalten sind.
 
-## How to update Crowdin Glossary
+## Wie man das Crowdin Glossar aktualisiert
 
-> [!TIP] An updated glossary helps in having an homogeneous translation of technical terms.
+> [!TIP] Ein aktualisiertes Glossar hilft, eine einheitliche Übersetzung von Fachbegriffen zu erhalten.
 
-The Crowdin Glossary is kept in the [crowdin-glossaries](https://github.com/freeCodeCamp/crowdin-glossaries) repository.
+Das Crowdin-Glossar wird im [crowdin-glossaries](https://github.com/freeCodeCamp/crowdin-glossaries)-Repository aufbewahrt.
 
-In the `glossaries` folder there are various `*.csv` (comma separated values) files, one for each of the crowdin projects that have a glossary that can be updated from this workflow.
+Im Ordner `glossaries` befinden sich verschiedene `*.csv`-Dateien (kommagetrennte Werte), eine für jedes Crowdin-Projekt, das ein Glossar hat, das über diesen Workflow aktualisiert werden kann.
 
-The `client.csv` file is for the Learn User Interface project, the `curriculum.csv` file is for the Coding Curriculum project, the `docs.csv` file is for the Contributing Documentation project.
+Die `client.csv`-Datei ist für das Projekt "Learn User Interface", die `curriculum.csv`-Datei ist für das Projekt "Coding Curriculum", die `docs.csv`-Datei ist für das Projekt "Contributing Documentation".
 
-To update the Crowdin Glossaries you need to clone this repo locally. Open the `.csv` file with an appropriate program, for example Microsoft Excel.
+Um die Crowdin Glossare zu aktualisieren, musst du dieses Repo lokal klonen. Öffnen die `.csv`-Datei mit einem geeigneten Programm, zum Beispiel Microsoft Excel.
 
-In the `.csv` file you will find that the English language occupies the first three columns, `Term:English` is the column for the English term, `Description:English` is the column for the English description, and `Part:English` is for the part of speech (e.g., noun, verb etc.) of the term.
+In der `.csv`-Datei siehst du, dass die englische Sprache die ersten drei Spalten belegt, `Term:English` ist die Spalte für den englischen Begriff, `Description:English` ist die Spalte für die englische Beschreibung, und `Part:English` steht für die Wortart (z. B. Substantiv, Verb usw.) des Begriffs.
 
-Then, each target language has two columns. If you translate to Dothraki, you will be interested in the columns `Term:Dothraki` and `Description:Dothraki`. The column `Term:Dothraki` is for the translation of the term in Dothraki, and the column `Description:Dothraki` is for a description of the term in Dothraki.
+Dann hat jede Zielsprache zwei Spalten. Wenn du ins Dothrakische übersetzt, wirst du an den Spalten `Term:Dothraki` und `Description:Dothraki` interessiert sein. Die Spalte `Term:Dothraki` ist für die Übersetzung des Begriffs in Dothraki, und die Spalte `Description:Dothraki` ist für die Beschreibung des Begriffs in Dothraki.
 
-> [!TIP] In programs like Microsoft Excel you can hide the columns of the other languages to free up screen real-estate and see the English columns and the target language columns near each other.
+> [!TIP] In Programmen wie Microsoft Excel kannst du die Spalten der anderen Sprachen ausblenden, um Bildschirmfläche freizugeben und die englischen Spalten und die Spalten der Zielsprache nebeneinander zu sehen.
 
-After you have made the changes and saved the file, you will need to make a PR with the proposed changes. After the PR is accepted, you will need to run the GitHub Action workflow to update the Crowdin Glossary. Your glossary changes will not have immediate effects, but they will come.
+Nachdem du die Änderungen vorgenommen und die Datei gespeichert hast, musst du einen PR mit den vorgeschlagenen Änderungen erstellen. Nachdem der PR angenommen wurde, musst du den GitHub Action-Workflow ausführen, um das Crowdin-Glossar zu aktualisieren. Deine Änderungen im Glossar werden sich nicht sofort auswirken, aber sie werden kommen.

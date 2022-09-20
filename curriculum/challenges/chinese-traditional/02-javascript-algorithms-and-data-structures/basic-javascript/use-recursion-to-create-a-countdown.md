@@ -8,7 +8,7 @@ dashedName: use-recursion-to-create-a-countdown
 
 # --description--
 
-在上一個[挑戰](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion)，學習了怎樣用遞歸來代替 `for` 循環。 現在來學習一個更復雜的函數，函數返回一個從 `1` 到傳遞給函數的指定數字的連續數字數組。
+在上一個<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion" target="_blank" rel="noopener noreferrer nofollow">挑戰</a>中，你學習了怎樣用遞歸來代替 `for` 循環。 現在來學習一個更復雜的函數，函數返回一個從 `1` 到傳遞給函數的指定數字的連續數字數組。
 
 正如上一個挑戰提到的，會有一個 <dfn>base case</dfn>。 base case 告訴遞歸函數什麼時候不再需要調用其自身。 這是簡單 情況，返回得到的值。 還有 <dfn>recursive call</dfn>，繼續用不同的參數調用自身。 如果函數無誤，一直執行直到 base case 爲止。
 

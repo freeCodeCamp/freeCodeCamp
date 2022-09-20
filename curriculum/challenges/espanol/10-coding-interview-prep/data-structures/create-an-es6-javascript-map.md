@@ -1,6 +1,6 @@
 ---
 id: 587d825b367417b2b2512c8d
-title: Create an ES6 JavaScript Map
+title: Crea un Mapa ES6 JavaScript
 challengeType: 1
 forumTopicId: 301635
 dashedName: create-an-es6-javascript-map
@@ -8,21 +8,29 @@ dashedName: create-an-es6-javascript-map
 
 # --description--
 
-The new version of JavaScript provides us with a built-in Map object which provides much of the functionality we wrote by hand in the last challenge. This Map object, although similar to regular JavaScript objects, provides some useful functionality that normal objects lack. For example, an ES6 Map tracks the insertion order of items that are added to it. Here is a more complete overview of its methods: `.has(key)` returns true or false based on the presence of a key `.get(key)` returns the value associated with a key `.set(key, value)` sets a new key, value pair `.delete(key)` removes a key, value pair `.clear()` removes all key, value pairs `.entries()` returns an array of all the keys in insertion order `.values()` returns an array of all the values in insertion order
+La nueva version de JavaScript os proporciona un objeto de Mapa integrado que proporciona muchas de las funcionalidades que escribimos a mano en el último desafío. Este objeto mapa, aunque similar a los objetos JavaScript regulares, provee algunas funcionalidades útiles que los objetos normales no tienen. Por ejemplo, un Mapa ES6 ratrea el orden de inserción de los elementos que se le añaden. Aquí hay un resumen más completo de sus métodos:
+
+- `.has(key)` devuelve true o false basado en la presencia de una clave
+- `.get(key)` devuelve el valor asociado a una clave
+- `.set(key, value)` establece un nuevo par clave, valor
+- `.delete(key)` elimina un par clave, valor
+- `.clear()` elimina todos los pares clave, valor
+- `.entries()` devuelve un arreglo de todas las claves en orden de inserción
+- `.values()` devuelve un arreglo de todos los valores en orden de inserción
 
 # --instructions--
 
-Define a JavaScript Map object and assign to it a variable called myMap. Add the key, value pair `freeCodeCamp`, `Awesome!` to it.
+Define un objeto Mapar JavaScript y asignalo a una variable llamada myMap. Agrega el par clave, valor `freeCodeCamp`, `Awesome!` a el.
 
 # --hints--
 
-The myMap object should exist.
+El objeto `myMap` debe existir.
 
 ```js
 assert(typeof myMap === 'object');
 ```
 
-myMap should contain the key value pair `freeCodeCamp`, `Awesome!`.
+`myMap` debe contener el par clave valor `freeCodeCamp`, `Awesome!`.
 
 ```js
 assert(myMap.get('freeCodeCamp') === 'Awesome!');
@@ -39,5 +47,7 @@ assert(myMap.get('freeCodeCamp') === 'Awesome!');
 # --solutions--
 
 ```js
-// solution required
+const myMap = new Map();
+
+myMap.set("freeCodeCamp", "Awesome!");
 ```

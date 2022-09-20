@@ -1,41 +1,41 @@
-# Courses VSCode Extension
+# Kurse VSCode Erweiterung
 
-This details the maintenance guidelines for the [freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension) repository which contains the source code for the [freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses) extension.
+Dies beschreibt die Wartungsrichtlinien für das [freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension) Repository, das den Quellcode für die [freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses) Erweiterung enthält.
 
-## Publishing the Extension
+## Veröffentlichung der Erweiterung
 
-A GitHub Action automagically publishes the extension to the Visual Studio Marketplace, on the release of a new GitHub Release.
+Eine GitHub-Aktion veröffentlicht automatisch die Erweiterung im Visual Studio Marketplace bei der Veröffentlichung einer neuen GitHub-Version.
 
-1. Package a new version of the extension:
+1. Packe eine neue Version der Erweiterung:
 
 ```bash
 npm run pack -- <tag_type>
 ```
 
-Where `<tag_type>` is one of: `major`, `minor`, `patch`.
+Dabei ist `<tag_type>` eines von: `major`, `minor`, `patch`.
 
-2. Push the new version to `main`:
+2. Schiebe die neue Version nach `main`:
 
 ```bash
 git commit -am "<tag_type>(<version>): <description>"
 git push
 ```
 
-Optionally, you can push directly to `upstream/main`, but opening a new PR is recommended for a sanity check.
+Optional kannst du direkt zu `upstream/main` pushen, aber es wird empfohlen, einen neuen PR zu eröffnen, um die Richtigkeit zu überprüfen.
 
-3. Create a new GitHub Release using the GitHub UI:
+3. Erstelle eine neues GitHub-Release über die GitHub-Benutzeroberfläche:
 
-- Correctly increment the version number, when creating a new tag.
-- Upload the `.vsix` file with the release.
-- Publish the release, and confirm the action succeeded.
+- Erhöhe die Versionsnummer korrekt, wenn du einen neuen Tag erstellst.
+- Lade die `.vsix`-Datei mit dem Release hoch.
+- Veröffentliche das Release und bestätige, dass die Aktion erfolgreich war.
 
-> [!NOTE] Creating a release requires write access to the `freeCodeCamp/courses-vscode-extension` repository.
+> [!NOTE] Das Erstellen einer Version erfordert Schreibzugriff auf das `freeCodeCamp/courses-vscode-extension` Repository.
 
-## Manually Publishing the Extension
+## Manuelles Veröffentlichen der Erweiterung
 
-A manual upload to the Visual Studio Marketplace can be achieved, by following these steps:
+Ein manueller Upload auf den Visual Studio Marketplace kann mit den folgenden Schritten durchgeführt werden:
 
-1. Visit https://marketplace.visualstudio.com/ and sign in
-2. Navigate to the [freeCodeCamp Publisher page](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
-3. Select the relevant extension, and select `Update`
-4. Upload the file from your local files
+1. Besuche https://marketplace.visualstudio.com/ und melde dich an
+2. Navigiere zur [freeCodeCamp Publisher Seite](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
+3. Wähle die entsprechende Erweiterung aus und wähle `Update`
+4. Lade die Datei aus deinen lokalen Dateien hoch

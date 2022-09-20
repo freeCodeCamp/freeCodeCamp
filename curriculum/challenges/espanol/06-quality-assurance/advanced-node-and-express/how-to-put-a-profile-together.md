@@ -24,7 +24,7 @@ Además, en `profile.pug`, añade un enlace que haga referencia a la ruta `/logo
 a(href='/logout') Logout
 ```
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a).
+Envía tu página cuando creas que lo has hecho bien. Si te estás encontrando errores, puedes <a href="https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a" target="_blank" rel="noopener noreferrer nofollow">mirar el proyecto completado hasta este punto</a>.
 
 # --hints--
 
