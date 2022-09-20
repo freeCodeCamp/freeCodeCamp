@@ -178,7 +178,7 @@ Forum moderators can delete users' posts. You should only do this for the follow
 
 For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then quietly block the user from posting (using the silence option on the User Admin panel). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Check the box in the private message indicating that your message is a "formal warning."
 
-#### Some notable situations:
+#### Notable Situations:
 
 1. FreeCodeCamp's spam filter requires a user to take a certain amount of time to ask their question. If they click on the "Create post" button before that, they or their post might get flagged for review for being potential spam. In that case, it is the responsibility of the moderators to approve their post if they are a genuine user and need help. The same applies if the post is flagged as spam by another user. The moderator must make a determination either to agree with the flag and take suitable action or disagree and restore the post.
 
