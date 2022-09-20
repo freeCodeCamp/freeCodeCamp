@@ -46,7 +46,7 @@ Al renombrar una certificación, es probable que desees renombrar el súper bloq
 1. En el archivo `meta.json` de esa carpeta, cambia los valores en `name`, `dashedName` y `challengeOrder` al nuevo nombre de certificado.
 1. En `curriculum/challenges/english/12-certificate`, cambia el nombre de la carpeta `{superBlock}-certificate` y el archivo YAML dentro de ella, por el nuevo nombre.
 1. En el archivo YAML, cambia el `title` por el nuevo nombre.
-1. Renombra el archivo y la carpeta del paso 3 para el resto de los lenguajes del currículo.
+1. Rename the file and folder from step 3 for the rest of the curriculum languages.
 1. Actualiza `client/src/redux/index.ts` para que utilice el `title` correcto.
 1. Como alternativa, actualiza el `certSlug` para el súper bloque en el mismo archivo.  **Ten en cuenta** que renombrar un `certSlug` cambiará el URL para las certificaciones y solo debe hacerse con consideración.
 1. Actualiza el `title` en `client/src/resources/cert-and-project-map.ts` por el nuevo valor. **Ten en cuenta que** cambiar el `title` aquí **romperá** la página del súper bloque asociada a la certificación. Depende del título del súper Bloque para que coincida con el título de la certificación. Es probable que desees renombrar el súper bloque al mismo tiempo.
@@ -60,7 +60,7 @@ Al renombrar una certificación, es probable que desees renombrar el súper bloq
 
 > [!NOTE] Cuando renombras un súper bloque, el nuevo nombre de carpeta es usado como la ruta y debe considerarse el nombre "correcto". Todos los demás valores deben actualizarse para reflejar ese cambio.
 
-Además, es probable que desees renombrar el certificado y el bloque  `{superBlock}-projects` cuando renombres un súper bloque, ya que todos comparten un nombre. Para renombrar solamente un súper bloque necesitas:
+Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all share a name. Para renombrar solamente un súper bloque necesitas:
 
 1. Renombrar la carpeta del super bloque en el directorio `curriculum/challenges/english`.
 1. Renombra la carpeta súper bloque en _todos_ los otros directorios `curriculum/challenges/{language}`.
