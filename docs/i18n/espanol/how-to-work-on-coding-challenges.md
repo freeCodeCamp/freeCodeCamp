@@ -252,7 +252,7 @@ Si toma más de dos minutos completar el desafío, tienes dos opciones:
 
 La regla de los 2 minutos le obliga a usted, el diseñador del desafío, a hacer sus instrucciones concisas, su código semilla claro y sus pruebas directas.
 
-Hacemos un seguimiento del tiempo que tardan los campistas en resolver los cambios y utilizamos esta información para identificar los desafíos que deben simplificarse o dividirse.
+We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
 
 ### Modularidad
 
