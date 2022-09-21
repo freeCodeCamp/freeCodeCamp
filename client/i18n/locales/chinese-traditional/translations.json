@@ -113,6 +113,7 @@
     "claim-legacy": "當你獲得下列 freeCodeCamp 認證之後，你可以申請 {{cert}}:",
     "for": "{{username}} 賬號設置",
     "sound-mode": "爲整個網站添加做令人愉快的吉他原聲音樂。在編輯器輸入、完成挑戰、申請認證等時刻，您將獲得音樂反饋。",
+    "sound-volume": "Campfire Volume:",
     "username": {
       "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
       "is too short": "用戶名 \"{{username}}\" 太短",
@@ -451,6 +452,7 @@
     "change-theme": "登錄以更改主題。",
     "translation-pending": "幫我們翻譯",
     "certification-project": "認證項目",
+    "iframe-preview": "{{title}} preview",
     "iframe-alert": "通常，此鏈接會將你帶到另一個網站！一切正常，這個鏈接指向：{{externalLink}}。",
     "document-notfound": "找不到文件"
   },
@@ -487,6 +489,12 @@
     "breadcrumb-nav": "麪包屑導航",
     "submit": "按下 Ctrl + Enter 鍵提交。",
     "running-tests": "正在運行測試",
+    "hide-preview": "Hide the preview",
+    "move-preview-to-new-window": "Move the preview to a new window and focus it",
+    "move-preview-to-main-window": "Move the preview to this window and close the external preview window",
+    "close-external-preview-window": "Close the external preview window",
+    "show-preview": "Show the preview in this window",
+    "open-preview-in-new-window": "Open the preview in a new window and focus it",
     "step": "步驟",
     "steps": "步驟",
     "steps-for": "{{blockTitle}} 的步驟"

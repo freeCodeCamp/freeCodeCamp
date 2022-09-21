@@ -14,7 +14,7 @@ Recomendamos usar [titulos y mensajes convencionales](https://www.conventionalco
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
+Al abrir una Pull Request(PR), puedes utilizar la siguiente guía para determinar su tipo, alcance (opcional) y descripción.
 
 **Tipo:**
 
@@ -31,14 +31,14 @@ Puede seleccionar un ámbito de [esta lista de etiquetas](https://github.com/fre
 
 **Descripción:**
 
-Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
+Mantenlo corto (menos de 30 caracteres) y sencillo, puedes agregar más información en la caja de descripción de la PR y comentarios.
 
 Algunos ejemplos de buenos títulos de PR serían:
 
 - `fix(a11y): contraste mejorado en la barra de búsqueda`
 - `feat: se agregan más test a los retos de HTML y CSS`
 - `fix(api,client): evitar errores CORS en el envío de formularios`
-- `docs(i18n): fix links to be relative instead of absolute`
+- `docs(i18n): se arreglan los enlaces para que sean relativos en lugar de absolutos`
 
 ## Proponer una Pull Request
 
@@ -54,7 +54,7 @@ Algunos ejemplos de buenos títulos de PR serían:
 
 3. Envía el pull request de tu rama a la rama `main` de freeCodeCamp.
 
-4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
+4. Incluye un resumen más detallado de los cambios que has realizado y de cómo tus cambios son útiles en el cuerpo de tus PR.
 
    - Se le presentará una plantilla de pull request. Esta es una lista de verificación que debería haber seguido antes de abrir la solicitud de pull request.
 
@@ -76,7 +76,7 @@ Algunos ejemplos de buenos títulos de PR serían:
 
 Nuestros moderadores ahora echarán un vistazo y te dejarán tus comentarios. Por favor, sea paciente con los demás moderadores y respete su tiempo. Todos los pull requests son revisados a su debido tiempo.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+Y como siempre, sientase libre de hacer preguntas en la [categoría de 'Contribuidores' de nuestro foro](https://forum.freecodecamp.org/c/contributors) o [en la sala de chat de contribuidores](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Si vas a contribuir con más PRs, te recomendamos que leas las directrices ["haciendo cambios y sincronizando"](how-to-setup-freecodecamp-locally.md#making-changes-locally) para evitar la necesidad de borrar tu bifurcación.
 

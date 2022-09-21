@@ -9,6 +9,7 @@ import {
   ChallengeFiles,
   ResizeProps
 } from '../../../redux/prop-types';
+import PreviewPortal from '../components/preview-portal';
 import ActionRow from './action-row';
 
 type Pane = { flex: number };
@@ -36,6 +37,7 @@ interface DesktopLayoutProps {
   superBlock: string;
   testOutput: ReactElement;
   visibleEditors: { [key: string]: boolean };
+  windowTitle: string;
 }
 
 const reflexProps = {
@@ -45,7 +47,8 @@ const reflexProps = {
 const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const [showInstructions, setShowInstructions] = useState(true);
   const [showNotes, setShowNotes] = useState(false);
-  const [showPreview, setShowPreview] = useState(true);
+  const [showPreviewPane, setShowPreviewPane] = useState(true);
+  const [showPreviewPortal, setShowPreviewPortal] = useState(false);
   const [showConsole, setShowConsole] = useState(false);
 
   const togglePane = (pane: string): void => {
@@ -53,8 +56,13 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       case 'showInstructions':
         setShowInstructions(!showInstructions);
         break;
-      case 'showPreview':
-        setShowPreview(!showPreview);
+      case 'showPreviewPane':
+        if (!showPreviewPane && showPreviewPortal) setShowPreviewPortal(false);
+        setShowPreviewPane(!showPreviewPane);
+        break;
+      case 'showPreviewPortal':
+        if (!showPreviewPortal && showPreviewPane) setShowPreviewPane(false);
+        setShowPreviewPortal(!showPreviewPortal);
         break;
       case 'showConsole':
         setShowConsole(!showConsole);
@@ -63,9 +71,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         setShowNotes(!showNotes);
         break;
       default:
-        setShowInstructions(false);
+        setShowInstructions(true);
         setShowConsole(false);
-        setShowPreview(false);
+        setShowPreviewPane(true);
+        setShowPreviewPortal(false);
         setShowNotes(false);
     }
   };
@@ -88,12 +97,14 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     preview,
     hasEditableBoundaries,
     superBlock,
-    visibleEditors
+    visibleEditors,
+    windowTitle
   } = props;
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
-  const displayPreview = showPreview && hasPreview;
+  const displayPreviewPane = hasPreview && showPreviewPane;
+  const displayPreviewPortal = hasPreview && showPreviewPortal;
   const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
   const displayConsole = showConsole;
   const displayEditor = Object.entries(visibleEditors).some(
@@ -119,7 +130,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showNotes={showNotes}
           showInstructions={showInstructions}
           hasPreview={hasPreview}
-          showPreview={showPreview}
+          showPreviewPane={showPreviewPane}
+          showPreviewPortal={showPreviewPortal}
           superBlock={superBlock}
           showBreadcrumbs={false}
           togglePane={togglePane}
@@ -160,19 +172,19 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               </ReflexElement>
             )}
 
-            {(displayPreview || displayConsole) && (
+            {(displayPreviewPane || displayConsole) && (
               <ReflexSplitter propagate={true} {...resizeProps} />
             )}
 
-            {(displayPreview || displayConsole) && (
+            {(displayPreviewPane || displayConsole) && (
               <ReflexElement flex={1} {...resizeProps}>
                 <ReflexContainer orientation='horizontal'>
-                  {displayPreview && (
+                  {displayPreviewPane && (
                     <ReflexElement flex={previewPane.flex} {...resizeProps}>
                       {preview}
                     </ReflexElement>
                   )}
-                  {displayConsole && displayPreview && (
+                  {displayConsole && displayPreviewPane && (
                     <ReflexSplitter propagate={true} {...resizeProps} />
                   )}
                   {displayConsole && (
@@ -193,6 +205,11 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
       <Segment />
       <GoogleTagManager />
+      {displayPreviewPortal && (
+        <PreviewPortal togglePane={togglePane} windowTitle={windowTitle}>
+          {preview}
+        </PreviewPortal>
+      )}
     </>
   );
 };

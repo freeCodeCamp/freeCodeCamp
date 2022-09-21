@@ -18,7 +18,7 @@ dashedName: how-to-use-passport-strategies
 
 この時点で、ユーザー名とパスワードをフォームへ入力すると、ホームページ `/` にリダイレクトされ、サーバーのコンソールに `'User {USERNAME} attempted to log in.'` と表示されます。これは、今の段階では、登録されていないユーザーをログインさせないためです。
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

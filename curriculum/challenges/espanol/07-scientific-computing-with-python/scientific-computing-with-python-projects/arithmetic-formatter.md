@@ -8,7 +8,7 @@ dashedName: arithmetic-formatter
 
 # --description--
 
-Estarás [trabajando en este proyecto con nuestro código inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter).
+Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
 
 # --instructions--
 
@@ -64,7 +64,7 @@ La función devolverá la conversión correcta si los problemas suministrados es
   - Cada número (operando) debe contener solo dígitos. De lo contrario, la función devolverá: `Error: Numbers must only contain digits.`
   - Cada operando (también conocido como número en cada lado del operador) tiene un máximo de cuatro dígitos de ancho. De lo contrario, la cadena de error devuelta será: `Error: Numbers cannot be more than four digits.`
 - Si el usuario proporcionó el formato correcto de los problemas, la conversión que devuelva seguirá estas reglas:
-  - Debe haber un solo espacio entre el operador y el más largo de los dos operandos, el operador estará en la misma línea que el segundo operando, ambos operandos estarán en el mismo orden proporcionado (el primero será el superior y el segundo el inferior.
+  - Debe haber un solo espacio entre el operador y el más largo de los dos operandos, el operador estará en la misma línea que el segundo operando, ambos operandos estarán en el mismo orden proporcionado (el primero será el superior y el segundo el inferior).
   - Los números deben estar alineados a la derecha.
   - Debe haber cuatro espacios entre cada problema.
   - Debe haber guiones en la parte inferior de cada problema. Los guiones deben recorrer toda la longitud de cada problema individualmente. (El ejemplo anterior muestra el aspecto que debe tener.)

@@ -19,7 +19,6 @@
   - [Work on documentation](how-to-work-on-the-docs-theme.md)
   - [Work on the component library](how-to-work-on-the-component-library.md)
 - **Additional Guides**
-  - [Test translations locally](how-to-test-translations-locally.md)
   - [Understand the curriculum file structure](curriculum-file-structure.md)
   - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
   - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
@@ -32,6 +31,7 @@
   - [Language Lead Handbook](language-lead-handbook.md)
   - [DevOps Handbook](devops.md)
   - [Courses VSCode Extension](courses-vscode-extension.md)
+  - [Enable New Language](how-to-enable-new-languages.md)
 
 ---
 

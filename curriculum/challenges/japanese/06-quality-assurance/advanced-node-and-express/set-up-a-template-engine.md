@@ -10,25 +10,25 @@ dashedName: set-up-a-template-engine
 
 チャレンジに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
-- [GitHub レポジトリ](https://github.com/freeCodeCamp/boilerplate-advancednode/)をクローンし、ローカル環境でチャレンジを完了させる。
-- [Replit 始動プロジェクト](https://replit.com/github/freeCodeCamp/boilerplate-advancednode)を使用してチャレンジを完了させる。
+- <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でプロジェクトを完了させる。
+- <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、チャレンジを完了させる。
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
 完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。
 
 テンプレートエンジンを使用すると、(*Pug* で記述するような) 静的なテンプレートファイルをアプリで使用できます。 実行時にテンプレートエンジンによって、テンプレートファイル内の変数がサーバーから提供される実際の値に置き換えられます。 そして、テンプレートが静的な HTML ファイルに変換され、クライアントへ送信されます。 このアプローチにより、HTML ページの設計が容易になり、クライアントから API 呼び出しを行うことなく、ページに変数を表示することができます。
 
-`pug@~3.0.0` を `package.json` ファイルに依存関係として追加してください。
+すでに `pug@~3.0.0` がインストールされており、プロジェクトの `package.json` ファイルに依存関係としてリストされています。
 
 どのテンプレートエンジンを使用しているかを Express に知らせる必要があります。 `set` メソッドを使用して、`view engine` プロパティの値として `pug` を割り当ててください (`app.set('view engine', 'pug')` と記述します)。
 
-`views/pug` ディレクトリ内でインデックスファイルが正しくレンダーされるまで、ページは読み込まれません。
+`views/pug` ディレクトリ内でインデックスファイルが正しくレンダーされるまで、ページは空です。
 
-`/` ルートの `res.render()` 宣言の引数を、`views/pug` ディレクトリへのファイルパスに変更してください。 パスは相対パス (ビューを基準) または絶対パスであり、ファイル拡張子を必要としません。
+`pug` テンプレートをレンダーするには、`/` ルートで `res.render()` を使用する必要があります。 `views/pug` ディレクトリのファイルパスをメソッドの引数として渡します。 パスは相対パス (ビューを基準) または絶対パスで指定でき、ファイル拡張子を必要としません。
 
-すべてが順調にいけば、アプリのホームページに「`Pug template is not defined.`」というメッセージが表示されなくなり、Pug テンプレートが正常にレンダーされたことを示すメッセージが表示されます！
+すべての処理に問題がなければ、アプリのホームページが空でなくなり、Pug テンプレートが正常にレンダーされたことを示すメッセージが表示されます。
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 
