@@ -8,7 +8,7 @@ const publicSB = orderedSuperBlockInfo
 describe('Test challenges in mobile', () => {
   for (let superBlock of publicSB) {
     for (let currBlock of Object.values(currData[superBlock]['blocks'])) {
-      describe(`Block ${currBlock['meta']['name']}`, () => {
+      describe(`SuperBlock: ${superBlock} - Block: ${currBlock['meta']['name']}`, () => {
         for (let currChallenge of currBlock['challenges']) {
           it(`Challenge: ${currChallenge['title']}(${currChallenge['id']})`, () => {
             cy.visit(
