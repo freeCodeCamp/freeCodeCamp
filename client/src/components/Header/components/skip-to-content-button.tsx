@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./skip-to-content-button.css";
+import React, { useState } from 'react';
+import './skip-to-content-button.css';
 
 const SkipToContentButton = (): JSX.Element => {
   const [showSkipButton, setShowSkipButton] = useState(false);
@@ -7,11 +7,11 @@ const SkipToContentButton = (): JSX.Element => {
   return (
     <div
       className={`skip-to-content-button ${
-        showSkipButton ? "show-skip-button" : "hide-skip-button"
+        showSkipButton ? 'show-skip-button' : 'hide-skip-button'
       }`}
     >
       <a
-        href={"#content-start"}
+        href={'#content-start'}
         onFocus={() => setShowSkipButton(true)}
         onBlur={() => setShowSkipButton(false)}
       >
