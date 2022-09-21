@@ -1,4 +1,3 @@
-import dedent from 'dedent';
 import i18next from 'i18next';
 import { ofType } from 'redux-observable';
 import { tap, mapTo } from 'rxjs/operators';
@@ -54,49 +53,41 @@ function createQuestionEpic(action$, state$, { window }) {
       const projectFormValues = Object.entries(
         projectFormValuesSelector(state)
       );
-      const endingText = dedent(
-        `${i18next.t('forum-help.browser-info')}\n\n${i18next.t(
-          'forum-help.user-agent',
-          { userAgent }
-        )}\n\n${i18next.t('forum-help.challenge')} ${i18next.t(
-          `intro:${superBlock}.blocks.${block}.title`
-        )} - ${challengeTitle}\n\n${i18next.t(
-          'forum-help.challenge-link'
-        )}\n${challengeUrl}`
-      );
 
-      let textMessage = dedent(`${i18next.t(
-        'forum-help.whats-happening'
-      )}\n${i18next.t('forum-help.describe')}\n\n
-        ${
-          projectFormValues.length
-            ? `${i18next.t('forum-help.camper-project')}\n`
-            : i18next.t('forum-help.camper-code')
-        }
-        ${
-          projectFormValues
-            ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n`)
-            ?.join('') || filesToMarkdown(challengeFiles)
-        }\n\n
-        ${endingText}`);
+      const browserInfoHeading = i18next.t('forum-help.browser-info');
+      const userAgentHeading = i18next.t('forum-help.user-agent', {
+        userAgent
+      });
+      const challengeHeading = i18next.t('forum-help.challenge');
+      const blockTitle = i18next.t(`intro:${superBlock}.blocks.${block}.title`);
+      const challengeLinkHeading = i18next.t('forum-help.challenge-link');
+      const endingText = `${browserInfoHeading}\n\n${userAgentHeading}\n\n${challengeHeading} ${blockTitle} - ${challengeTitle}\n\n${challengeLinkHeading}\n${challengeUrl}`;
 
-      const altTextMessage = dedent(
-        `${i18next.t('forum-help.whats-happening')}\n\n\n\n${i18next.t(
-          'forum-help.camper-code'
-        )}\n\n${i18next.t('forum-help.warning')}\n\n${i18next.t(
-          'forum-help.too-long-one'
-        )}\n\n${i18next.t('forum-help.too-long-two')}\n\n${i18next.t(
-          'forum-help.too-long-three'
-        )}\n\n\`\`\`\n${i18next.t('forum-help.add-code-one')}\n${i18next.t(
-          'forum-help.add-code-two'
-        )}\n${i18next.t('forum-help.add-code-three')}\n\n\`\`\`\n${endingText}`
-      );
+      const camperCodeHeading = i18next.t('forum-help.camper-code');
 
-      const titleText = dedent(
-        `${i18next.t(
-          `intro:${superBlock}.blocks.${block}.title`
-        )} - ${challengeTitle}`
-      );
+      const whatsHappeningHeading = i18next.t('forum-help.whats-happening');
+      const describe = i18next.t('forum-help.describe');
+      const projectOrCodeHeading = projectFormValues.length
+        ? `${i18next.t('forum-help.camper-project')}\n`
+        : camperCodeHeading;
+      const markdownCodeOrLinks =
+        projectFormValues
+          ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n\n`)
+          ?.join('') || filesToMarkdown(challengeFiles);
+      const textMessage = `${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}\n\n${markdownCodeOrLinks}${endingText}`;
+
+      const warning = i18next.t('forum-help.warning');
+      const tooLongOne = i18next.t('forum-help.too-long-one');
+      const tooLongTwo = i18next.t('forum-help.too-long-two');
+      const tooLongThree = i18next.t('forum-help.too-long-three');
+      const addCodeOne = i18next.t('forum-help.add-code-one');
+      const addCodeTwo = i18next.t('forum-help.add-code-two');
+      const addCodeThree = i18next.t('forum-help.add-code-three');
+      const altTextMessage = `${whatsHappeningHeading}\n\n${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
+
+      const titleText = `${i18next.t(
+        `intro:${superBlock}.blocks.${block}.title`
+      )} - ${challengeTitle}`;
 
       const category = window.encodeURIComponent(
         i18next.t('links:help.' + helpCategory || 'Help')
