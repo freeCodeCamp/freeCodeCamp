@@ -114,6 +114,9 @@ const ActionRow = ({
             <button
               aria-expanded={!!showPreviewPortal}
               onClick={() => togglePane('showPreviewPortal')}
+              className={
+                showPreviewPortal ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+              }
             >
               <span className='sr-only'>{getPreviewBtnsSrText().portal}</span>
               <FontAwesomeIcon icon={faExternalLinkAlt} />

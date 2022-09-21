@@ -187,7 +187,7 @@ const LowerJaw = ({
             <Button
               block={true}
               href={`${apiLocation}/signin`}
-              className='btn-cta'
+              className='btn btn-primary btn-cta'
             >
               {t('learn.sign-in-save')}
             </Button>
@@ -195,7 +195,7 @@ const LowerJaw = ({
           <button
             id='test-button'
             data-cy='run-tests-button'
-            className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
+            className={`btn btn-primary ${challengeIsCompleted ? 'sr-only' : ''}`}
             aria-hidden={testBtnAriaHidden}
             onClick={tryToExecuteChallenge}
           >
@@ -208,7 +208,7 @@ const LowerJaw = ({
             id='submit-button'
             data-cy='submit-button'
             aria-hidden={!challengeIsCompleted}
-            className='btn-block btn'
+            className='btn btn-primary'
             onClick={tryToSubmitChallenge}
             ref={submitButtonRef}
           >
@@ -219,11 +219,13 @@ const LowerJaw = ({
     );
   };
 
+  const feedbackContent = renderTestFeedbackContainer()
+
   return (
     <div className='action-row-container'>
-      {/* {!isRunningTests && feedbackContent && (
+      {!isRunningTests && !!feedbackContent && (
         <div
-          style={runningTests ? { height: `${testFeedbackheight}px` } : {}}
+          style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
           className={`test-feedback`}
           id='test-feedback'
           aria-live='assertive'
@@ -231,17 +233,8 @@ const LowerJaw = ({
         >
           {feedbackContent}
         </div>
-      )} */}
+      )}
       {renderButtons()}
-      <div
-        style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
-        className={`test-feedback`}
-        id='test-feedback'
-        aria-live='assertive'
-        ref={testFeedbackRef}
-      >
-        {renderTestFeedbackContainer()}
-      </div>
     </div>
   );
 };
