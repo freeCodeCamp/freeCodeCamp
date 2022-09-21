@@ -195,7 +195,9 @@ const LowerJaw = ({
           <button
             id='test-button'
             data-cy='run-tests-button'
-            className={`btn btn-primary ${challengeIsCompleted ? 'sr-only' : ''}`}
+            className={`btn btn-primary ${
+              challengeIsCompleted ? 'sr-only' : ''
+            }`}
             aria-hidden={testBtnAriaHidden}
             onClick={tryToExecuteChallenge}
           >
@@ -219,7 +221,7 @@ const LowerJaw = ({
     );
   };
 
-  const feedbackContent = renderTestFeedbackContainer()
+  const feedbackContent = renderTestFeedbackContainer();
 
   return (
     <div className='action-row-container'>
