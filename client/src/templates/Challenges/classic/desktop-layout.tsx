@@ -1,5 +1,5 @@
 import { first } from 'lodash-es';
-import React, { useState, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import { GoogleTagManager } from '../../../analytics/google-tag-manater';
@@ -10,6 +10,7 @@ import {
   ResizeProps
 } from '../../../redux/prop-types';
 import ActionRow from './action-row';
+import { useDesktopLayoutState } from './use-desktop-layout-state';
 
 type Pane = { flex: number };
 
@@ -43,32 +44,10 @@ const reflexProps = {
 };
 
 const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
-  const [showInstructions, setShowInstructions] = useState(true);
-  const [showNotes, setShowNotes] = useState(false);
-  const [showPreview, setShowPreview] = useState(true);
-  const [showConsole, setShowConsole] = useState(false);
-
-  const togglePane = (pane: string): void => {
-    switch (pane) {
-      case 'showInstructions':
-        setShowInstructions(!showInstructions);
-        break;
-      case 'showPreview':
-        setShowPreview(!showPreview);
-        break;
-      case 'showConsole':
-        setShowConsole(!showConsole);
-        break;
-      case 'showNotes':
-        setShowNotes(!showNotes);
-        break;
-      default:
-        setShowInstructions(false);
-        setShowConsole(false);
-        setShowPreview(false);
-        setShowNotes(false);
-    }
-  };
+  const {
+    layoutState: { showInstructions, showNotes, showPreview, showConsole },
+    togglePane
+  } = useDesktopLayoutState();
 
   const getChallengeFile = () => {
     const { challengeFiles } = props;
