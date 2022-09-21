@@ -33,8 +33,6 @@ function LandingTop({ pageName }: LandingTopProps): JSX.Element {
           <h1
             className='big-heading'
             data-test-label={`${pageName}-header`}
-            id='content-start'
-            tabIndex={-1}
           >
             {t('landing.big-heading-1')}
           </h1>

@@ -209,7 +209,9 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
               removeFlashMessage={removeFlashMessage}
             />
           ) : null}
-          {fetchState.complete && children}
+          <div id='content-start' tabIndex={-1}>
+            {fetchState.complete && children}
+          </div>
         </div>
         {showFooter && <Footer />}
       </div>

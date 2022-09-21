@@ -161,12 +161,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       <Grid>
         <main>
           <Spacer size={2} />
-          <h1
-            className='text-center'
-            style={{ overflowWrap: 'break-word' }}
-            id='content-start'
-            tabIndex={-1}
-          >
+          <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
             {t('settings.for', { username: username })}
           </h1>
           <About
