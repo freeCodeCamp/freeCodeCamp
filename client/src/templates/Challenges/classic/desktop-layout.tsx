@@ -11,7 +11,10 @@ import {
 } from '../../../redux/prop-types';
 import PreviewPortal from '../components/preview-portal';
 import ActionRow from './action-row';
-import { DesktopLayoutPanels, useDesktopLayoutState } from './use-desktop-layout-state';
+import {
+  DesktopLayoutPanels,
+  useDesktopLayoutState
+} from './use-desktop-layout-state';
 
 type Pane = { flex: number };
 
@@ -47,7 +50,13 @@ const reflexProps = {
 
 const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const {
-    layoutState: { showInstructions, showNotes, showPreviewPane, showPreviewPortal, showConsole },
+    layoutState: {
+      showInstructions,
+      showNotes,
+      showPreviewPane,
+      showPreviewPortal,
+      showConsole
+    },
     togglePane
   } = useDesktopLayoutState();
 
@@ -178,7 +187,15 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       <Segment />
       <GoogleTagManager />
       {displayPreviewPortal && (
-        <PreviewPortal togglePane={() => togglePane(DesktopLayoutPanels.PreviewPortal)} windowTitle={windowTitle}>
+        <PreviewPortal
+          togglePane={() => {
+            togglePane({
+              panel: DesktopLayoutPanels.PreviewPortal,
+              setVisible: false
+            });
+          }}
+          windowTitle={windowTitle}
+        >
           {preview}
         </PreviewPortal>
       )}

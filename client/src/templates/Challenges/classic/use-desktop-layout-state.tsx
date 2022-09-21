@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useRef } from 'react';
 
 const STORAGE_KEY = 'fcc:desktop:layout:state';
 
@@ -22,7 +22,7 @@ const defaultLayoutState: DesktopLayoutState = {
   [DesktopLayoutPanels.Instructions]: true,
   [DesktopLayoutPanels.Notes]: false,
   [DesktopLayoutPanels.PreviewPane]: true,
-  [DesktopLayoutPanels.PreviewPortal]: true,
+  [DesktopLayoutPanels.PreviewPortal]: false,
   [DesktopLayoutPanels.Console]: false
 };
 
@@ -38,20 +38,44 @@ const readFromStorage = (
   }
 };
 
+type LayoutReducerAction =
+  | DesktopLayoutPanels
+  | {
+      panel: DesktopLayoutPanels;
+      setVisible: boolean;
+    };
+
 const layoutReducer = (
   state: DesktopLayoutState,
-  panel: DesktopLayoutPanels
+  action: LayoutReducerAction
 ) => {
+  let panel: DesktopLayoutPanels,
+    setVisible = undefined;
+  if (typeof action === 'string') {
+    panel = action;
+  } else {
+    panel = action.panel;
+    setVisible = action.setVisible;
+  }
+
   const nextState = {
     ...state,
-    [panel]: !state[panel]
+    [panel]: setVisible ?? !state[panel]
   };
 
-  if (panel === DesktopLayoutPanels.PreviewPane && nextState[DesktopLayoutPanels.PreviewPane] && nextState[DesktopLayoutPanels.PreviewPortal]) {
+  if (
+    panel === DesktopLayoutPanels.PreviewPane &&
+    nextState[DesktopLayoutPanels.PreviewPane] &&
+    nextState[DesktopLayoutPanels.PreviewPortal]
+  ) {
     nextState[DesktopLayoutPanels.PreviewPortal] = false;
   }
 
-  if (panel === DesktopLayoutPanels.PreviewPortal && nextState[DesktopLayoutPanels.PreviewPortal] && nextState[DesktopLayoutPanels.PreviewPane]) {
+  if (
+    panel === DesktopLayoutPanels.PreviewPortal &&
+    nextState[DesktopLayoutPanels.PreviewPortal] &&
+    nextState[DesktopLayoutPanels.PreviewPane]
+  ) {
     nextState[DesktopLayoutPanels.PreviewPane] = false;
   }
 
@@ -61,10 +85,9 @@ const layoutReducer = (
 };
 
 export const useDesktopLayoutState = () => {
-  const [layoutState, dispatch] = useReducer(
-    layoutReducer,
-    readFromStorage(defaultLayoutState)
-  );
+  const initState = useRef(readFromStorage(defaultLayoutState));
+
+  const [layoutState, dispatch] = useReducer(layoutReducer, initState.current);
 
   return {
     layoutState,
