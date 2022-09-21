@@ -92,9 +92,13 @@ function DonatePage({
               <Row>
                 <Col className={'text-center'} xs={12}>
                   {isDonating ? (
-                    <h2>{t('donate.thank-you')}</h2>
+                    <h2 id='content-start' tabIndex={-1}>
+                      {t('donate.thank-you')}
+                    </h2>
                   ) : (
-                    <h2>{t('donate.help-more')}</h2>
+                    <h2 id='content-start' tabIndex={-1}>
+                      {t('donate.help-more')}
+                    </h2>
                   )}
                   <Spacer />
                 </Col>

@@ -24,7 +24,9 @@ function renderMessage(
   return isSessionUser ? (
     <>
       <FullWidthRow>
-        <h2 className='text-center'>{t('profile.you-not-public')}</h2>
+        <h2 id='content-start' tabIndex={-1} className='text-center'>
+          {t('profile.you-not-public')}
+        </h2>
       </FullWidthRow>
       <FullWidthRow>
         <p className='alert alert-info'>{t('profile.you-change-privacy')}</p>
@@ -34,7 +36,12 @@ function renderMessage(
   ) : (
     <>
       <FullWidthRow>
-        <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
+        <h2
+          id='content-start'
+          tabIndex={-1}
+          className='text-center'
+          style={{ overflowWrap: 'break-word' }}
+        >
           {t('profile.username-not-public', { username: username })}
         </h2>
       </FullWidthRow>

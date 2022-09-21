@@ -108,7 +108,9 @@ function Camper({
         website={website}
       />
       <br />
-      <h2 className='text-center username'>@{username}</h2>
+      <h2 className='text-center username' id='content-start' tabIndex={-1}>
+        @{username}
+      </h2>
       {name && <p className='text-center name'>{name}</p>}
       {location && <p className='text-center location'>{location}</p>}
       {isDonating && (

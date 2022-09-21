@@ -18,7 +18,7 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
       aria-label={t('aria.breadcrumb-nav')}
     >
       <ol>
-        <li className='breadcrumb-left'>
+        <li className='breadcrumb-left' id='content-start' tabIndex={-1}>
           <Link
             state={{ breadcrumbBlockClick: block }}
             to={`/learn/${superBlock}`}
