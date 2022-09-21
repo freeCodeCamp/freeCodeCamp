@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import BreadCrumb from '../components/bread-crumb';
 import EditorTabs from './editor-tabs';
+import { DesktopLayoutPanels } from './use-desktop-layout-state';
 
 interface ActionRowProps {
   block: string;
@@ -14,7 +15,7 @@ interface ActionRowProps {
   showInstructions: boolean;
   showPreview: boolean;
   superBlock: string;
-  togglePane: (pane: string) => void;
+  togglePane: (pane: DesktopLayoutPanels) => void;
   showBreadcrumbs?: boolean;
 }
 
@@ -46,7 +47,7 @@ const ActionRow = ({
             className={
               showInstructions ? 'btn-tab-primary' : 'btn-tab-primary--outline'
             }
-            onClick={() => togglePane('showInstructions')}
+            onClick={() => togglePane(DesktopLayoutPanels.Instructions)}
           >
             {t('learn.editor-tabs.instructions')}
           </button>
@@ -57,7 +58,7 @@ const ActionRow = ({
           className={
             showConsole ? 'btn-tab-primary' : 'btn-tab-primary--outline'
           }
-          onClick={() => togglePane('showConsole')}
+          onClick={() => togglePane(DesktopLayoutPanels.Console)}
         >
           {t('learn.editor-tabs.console')}
         </button>
@@ -67,7 +68,7 @@ const ActionRow = ({
             className={
               showNotes ? 'btn-tab-primary' : 'btn-tab-primary--outline'
             }
-            onClick={() => togglePane('showNotes')}
+            onClick={() => togglePane(DesktopLayoutPanels.Notes)}
           >
             {t('learn.editor-tabs.notes')}
           </button>
@@ -78,7 +79,7 @@ const ActionRow = ({
             className={
               showPreview ? 'btn-tab-primary' : 'btn-tab-primary--outline'
             }
-            onClick={() => togglePane('showPreview')}
+            onClick={() => togglePane(DesktopLayoutPanels.Preview)}
           >
             {t('learn.editor-tabs.preview')}
           </button>
