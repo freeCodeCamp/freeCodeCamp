@@ -10,7 +10,7 @@ dashedName: authentication-strategies
 
 ストラテジーとは、ユーザーを認証する方法です。 ローカルに保存された情報に基づいてユーザーを認証できるようにするためのストラテジーを使用したり (初めてユーザーに登録してもらう場合)、Google や GitHub などのさまざまなプロバイダーからユーザーを認証できるようにするためのストラテジーを使用したりできます。 このプロジェクトでは、Passport というミドルウェアを使用します。 Passport はユーザー名とパスワード、GitHub、Google などを使用する認証をサポートしている包括的なストラテジーのセットを提供します。
 
-`passport-local@~1.0.0` を依存関係として追加し、次のようにサーバーに追加します: `const LocalStrategy = require('passport-local');`
+すでに `passport-local@~1.0.0` が依存関係として追加されているので、次のようにサーバーに追加します: `const LocalStrategy = require('passport-local');`
 
 ここでPassportに対して、いくつかの設定を定義してインスタンス化した LocalStrategy オブジェクトを **use** するよう伝える必要があります。 このオブジェクト (および今後すべてのもの) はデータベース接続に依存するため、必ずデータベース接続でカプセル化してください！
 
@@ -34,7 +34,7 @@ passport.use(new LocalStrategy(
 
 次のステップでは、フォームデータに基づいてユーザーを検証するための認証ストラテジーを実際に呼び出す方法を設定します！
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

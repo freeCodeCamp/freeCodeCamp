@@ -5,21 +5,24 @@ const STORAGE_KEY = 'fcc:desktop:layout:state';
 export enum DesktopLayoutPanels {
   Instructions = 'showInstructions',
   Notes = 'showNotes',
-  Preview = 'showPreview',
+  PreviewPane = 'showPreviewPane',
+  PreviewPortal = 'showPreviewPortal',
   Console = 'showConsole'
 }
 
 interface DesktopLayoutState {
   [DesktopLayoutPanels.Instructions]: boolean;
   [DesktopLayoutPanels.Notes]: boolean;
-  [DesktopLayoutPanels.Preview]: boolean;
+  [DesktopLayoutPanels.PreviewPane]: boolean;
+  [DesktopLayoutPanels.PreviewPortal]: boolean;
   [DesktopLayoutPanels.Console]: boolean;
 }
 
 const defaultLayoutState: DesktopLayoutState = {
   [DesktopLayoutPanels.Instructions]: true,
   [DesktopLayoutPanels.Notes]: false,
-  [DesktopLayoutPanels.Preview]: true,
+  [DesktopLayoutPanels.PreviewPane]: true,
+  [DesktopLayoutPanels.PreviewPortal]: true,
   [DesktopLayoutPanels.Console]: false
 };
 
@@ -43,6 +46,14 @@ const layoutReducer = (
     ...state,
     [panel]: !state[panel]
   };
+
+  if (panel === DesktopLayoutPanels.PreviewPane && nextState[DesktopLayoutPanels.PreviewPane] && nextState[DesktopLayoutPanels.PreviewPortal]) {
+    nextState[DesktopLayoutPanels.PreviewPortal] = false;
+  }
+
+  if (panel === DesktopLayoutPanels.PreviewPortal && nextState[DesktopLayoutPanels.PreviewPortal] && nextState[DesktopLayoutPanels.PreviewPane]) {
+    nextState[DesktopLayoutPanels.PreviewPane] = false;
+  }
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(nextState));
 

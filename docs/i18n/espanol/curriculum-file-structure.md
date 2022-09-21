@@ -7,9 +7,9 @@ Nuestro contenido instructivo principal se encuentra dentro del directorio conve
 Hay algunos términos que utilizamos cuando hablamos del contenido de nuestro currículo.
 
 - `certification` : Cuando se hace referencia a una certificación en este caso, se está hablando del certificado real que los usuarios reclaman.  Que es independiente del nombre del súper bloque.
-- `superBlock` : Un súper bloque es la colección de desafíos del nivel superior. Each superblock corresponds to a certification in the curriculum (e.g. Responsive Web Design).
-- `block` : Un bloque es una sección dentro de un súper bloque. A block corresponds to a group of challenges in a given certification (e.g. Basic HTML and HTML5)
-- `challenge` : A challenge is a single lesson within the curriculum (e.g. Say Hello to HTML Elements)
+- `superBlock` : Un súper bloque es la colección de desafíos del nivel superior. Cada súper bloque corresponde a una certificacion en el currículo (p. ej. Diseño Web Responsivo).
+- `block` : Un bloque es una sección dentro de un súper bloque. Un bloque corresponde a un grupo de desafíos en una certificacion determinada (p. ej. HTML Básico y HTML5)
+- `challenge`: Un desafío es una sola lección dentro del currículo (p. ej. Di hola a los Elementos HTML)
 
 ## Árbol de archivos
 
@@ -46,7 +46,7 @@ Al renombrar una certificación, es probable que desees renombrar el súper bloq
 1. En el archivo `meta.json` de esa carpeta, cambia los valores en `name`, `dashedName` y `challengeOrder` al nuevo nombre de certificado.
 1. En `curriculum/challenges/english/12-certificate`, cambia el nombre de la carpeta `{superBlock}-certificate` y el archivo YAML dentro de ella, por el nuevo nombre.
 1. En el archivo YAML, cambia el `title` por el nuevo nombre.
-1. Renombra el archivo y la carpeta del paso 3 para el resto de los lenguajes del currículo.
+1. Rename the file and folder from step 3 for the rest of the curriculum languages.
 1. Actualiza `client/src/redux/index.ts` para que utilice el `title` correcto.
 1. Como alternativa, actualiza el `certSlug` para el súper bloque en el mismo archivo.  **Ten en cuenta** que renombrar un `certSlug` cambiará el URL para las certificaciones y solo debe hacerse con consideración.
 1. Actualiza el `title` en `client/src/resources/cert-and-project-map.ts` por el nuevo valor. **Ten en cuenta que** cambiar el `title` aquí **romperá** la página del súper bloque asociada a la certificación. Depende del título del súper Bloque para que coincida con el título de la certificación. Es probable que desees renombrar el súper bloque al mismo tiempo.
@@ -60,7 +60,7 @@ Al renombrar una certificación, es probable que desees renombrar el súper bloq
 
 > [!NOTE] Cuando renombras un súper bloque, el nuevo nombre de carpeta es usado como la ruta y debe considerarse el nombre "correcto". Todos los demás valores deben actualizarse para reflejar ese cambio.
 
-Además, es probable que desees renombrar el certificado y el bloque  `{superBlock}-projects` cuando renombres un súper bloque, ya que todos comparten un nombre. Para renombrar solamente un súper bloque necesitas:
+Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all share a name. Para renombrar solamente un súper bloque necesitas:
 
 1. Renombrar la carpeta del super bloque en el directorio `curriculum/challenges/english`.
 1. Renombra la carpeta súper bloque en _todos_ los otros directorios `curriculum/challenges/{language}`.

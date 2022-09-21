@@ -1,6 +1,6 @@
 ---
 id: 587d8254367417b2b2512c70
-title: Create and Add to Sets in ES6
+title: Crear y añadir Sets en ES6
 challengeType: 1
 forumTopicId: 301636
 dashedName: create-and-add-to-sets-in-es6
@@ -8,34 +8,34 @@ dashedName: create-and-add-to-sets-in-es6
 
 # --description--
 
-Now that you have worked through ES5, you are going to perform something similar in ES6. This will be considerably easier. ES6 contains a built-in data structure `Set` so many of the operations you wrote by hand are now included for you. Let's take a look:
+Ahora que has trabajado a través de ES5, vas a hcer algo similar en ES6. Esto será considerablemente fácil. ES6 contiene una estructura de datos integrada `Set` muchas de las operaciones que escribiste a mano ahora están disponibles para tí. Echemos un vistazo:
 
-To create a new empty set:
+Para crear un nuevo set vacío:
 
 ```js
 var set = new Set();
 ```
 
-You can create a set with a value:
+Tu puedes crear un set con un valor:
 
 ```js
 var set = new Set(1);
 ```
 
-You can create a set with an array:
+Puedes crear un set con un arreglo:
 
 ```js
 var set = new Set([1, 2, 3]);
 ```
 
-Once you have created a set, you can add the values you wish using the `add` method:
+Una vez que hayas creado un set, puedes añadir los valores que desees usando el método `add`:
 
 ```js
 var set = new Set([1, 2, 3]);
 set.add([4, 5, 6]);
 ```
 
-As a reminder, a set is a data structure that cannot contain duplicate values:
+Como un recordatorio, un set es una estructura de datos que no puede contener valores duplicados:
 
 ```js
 var set = new Set([1, 2, 3, 1, 2, 3]);
@@ -44,11 +44,11 @@ var set = new Set([1, 2, 3, 1, 2, 3]);
 
 # --instructions--
 
-For this exercise, return a set with the following values: `1, 2, 3, 'Taco', 'Cat', 'Awesome'`
+Para este ejercicio, devuelve un set con los siguientes valores:`1, 2, 3, 'Taco', 'Cat', 'Awesome'`
 
 # --hints--
 
-Your `Set` should only contain the values `1, 2, 3, Taco, Cat, Awesome`.
+Tu `Set` debe contener solamente los valores `1, 2, 3, Taco, Cat, Awesome`.
 
 ```js
 assert(

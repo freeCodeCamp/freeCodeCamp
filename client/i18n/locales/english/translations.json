@@ -113,6 +113,7 @@
     "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
     "for": "Account Settings for {{username}}",
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
+    "sound-volume": "Campfire Volume:",
     "username": {
       "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
       "is too short": "Username \"{{username}}\" is too short",
@@ -488,6 +489,12 @@
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter to submit.",
     "running-tests": "Running tests",
+    "hide-preview": "Hide the preview",
+    "move-preview-to-new-window": "Move the preview to a new window and focus it",
+    "move-preview-to-main-window": "Move the preview to this window and close the external preview window",
+    "close-external-preview-window": "Close the external preview window",
+    "show-preview": "Show the preview in this window",
+    "open-preview-in-new-window": "Open the preview in a new window and focus it",
     "step": "Step",
     "steps": "Steps",
     "steps-for": "Steps for {{blockTitle}}"

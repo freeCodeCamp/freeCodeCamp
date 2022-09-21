@@ -47,7 +47,7 @@ app.route('/register')
   );
 ```
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 **注:** これ以降、*ピクチャー・イン・ピクチャー*対応ブラウザーの使用に関連する問題が生じる可能性があります。 エディター内でアプリのプレビューができるオンライン IDE を使用している場合は、新しいタブでこのプレビューを開くことを推奨します。
 
