@@ -86,7 +86,7 @@ export class Header extends React.Component<
         <Helmet>
           <style>
             {
-              ':root{--header-height: 38px; --search-box-form: 38; --lang-menu-height: 22.5rem;}'
+              ':root{--header-height: 38px; --search-box-form: 38px; --lang-menu-height: 22.5rem;}'
             }
           </style>
         </Helmet>
