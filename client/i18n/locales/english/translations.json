@@ -113,6 +113,7 @@
     "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
     "for": "Account Settings for {{username}}",
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
+    "sound-volume": "Campfire Volume:",
     "username": {
       "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
       "is too short": "Username \"{{username}}\" is too short",
@@ -319,11 +320,11 @@
     "not-started": "Not started",
     "hint": "Hint",
     "test": "Test",
-    "sorry-try-again":"Sorry, your code does not pass. Try again.",
-    "sorry-keep-trying":"Sorry, your code does not pass. Keep trying.",
-    "sorry-getting-there":"Sorry, your code does not pass. You're getting there.",
-    "sorry-hang-in-there":"Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup":"Sorry, your code does not pass. Don't give up.",
+    "sorry-try-again": "Sorry, your code does not pass. Try again.",
+    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
+    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
+    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
+    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up.",
     "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
@@ -386,7 +387,7 @@
     "how-efficient": "How efficient is freeCodeCamp?",
     "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable nonprofits. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
     "help-millions": "However, on a budget of only a few hundred thousand dollars per year, we have been able to help millions of people.",
-    "how-one-time":"How can I make a one-time donation?",
+    "how-one-time": "How can I make a one-time donation?",
     "one-time": "If you'd prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use <0>this link to donate whatever amount feels right through PayPal</0>.",
     "wire-transfer": "You can also send money to freeCodeCamp directly through a wire transfer. If you need our wire details, email Quincy at quincy@freecodecamp.org",
     "does-crypto": "Does freeCodeCamp accept donations in Bitcoin or other cryptocurrencies?",

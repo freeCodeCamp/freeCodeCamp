@@ -8,7 +8,7 @@ dashedName: use-recursion-to-create-a-countdown
 
 # --description--
 
-En el [desafío anterior](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion), aprendiste como usar la recursión para reemplazar un bucle `for`. Ahora, echemos un vistazo a una función más compleja que devuelve un arreglo de enteros consecutivos empezando con `1` hasta el número pasado a la función.
+En un <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion" target="_blank" rel="noopener noreferrer nofollow">reto anterior</a>, aprendiste a utilizar la recursividad para sustituir un bucle `for`. Ahora, echemos un vistazo a una función más compleja que devuelve un arreglo de enteros consecutivos empezando con `1` hasta el número pasado a la función.
 
 Como se menciona en el desafío anterior, habrá un <dfn>caso base</dfn>. El caso base le dice a la función recursiva cuando no necesita llamarse a sí misma. Es un caso simple donde el valor de retorno ya se conoce. También habrá una <dfn>llamada recursiva</dfn> la cual ejecuta la función original con argumentos diferentes. Si la función se escribe correctamente, eventualmente el caso base será alcanzado.
 

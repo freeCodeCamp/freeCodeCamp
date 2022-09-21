@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 Agora que o servidor *http* está montado na aplicação do *Express*, você precisa escutar o servidor *http*. Altere a linha com `app.listen` para `http.listen`.
 
-A primeira coisa que precisa ser tratada é escutar uma nova conexão do client. A palavra-chave <dfn>on</dfn> faz isso - escuta um evento específico. Ela requer 2 argumentos: uma string contendo o título do evento que é emitido e uma função com a qual os dados são passados. No caso do nosso listener de conexão, usamos o *socket* para definir os dados no segundo argumento. Um socket é um client individual que está conectado.
+A primeira coisa que precisa ser tratada é escutar uma nova conexão do client. A palavra-chave <dfn>on</dfn> faz isso - escuta um evento específico. Ela requer 2 argumentos: uma string contendo o título do evento que é emitido e uma função pela qual os dados são passados. No caso do nosso listener de conexão, usamos o *socket* para definir os dados no segundo argumento. Um socket é um client individual que está conectado.
 
 Para escutar as conexões do servidor, adicione o seguinte na sua conexão do banco de dados:
 

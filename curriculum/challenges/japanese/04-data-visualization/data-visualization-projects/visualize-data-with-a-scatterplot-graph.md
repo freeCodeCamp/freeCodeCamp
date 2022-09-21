@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-scatterplot-graph
 
 # --description--
 
-**目標:** こちらに示したものと同様の機能を持つアプリを構築してください: <https://codepen.io/freeCodeCamp/full/bgpXyK>
+**目標:** こちらと似た機能を持つアプリを構築してください: <a href="https://codepen.io/freeCodeCamp/full/bgpXyK" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/bgpXyK</a>
 
 下記のユーザーストーリーを満たして、すべてのテストに合格してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなた独自のスタイルを加えましょう。
 
@@ -46,7 +46,7 @@ HTML、JavaScript、CSS、および D3 の SVG ベースのビジュアライゼ
 
 このプロジェクトを完了するために必要なデータセットはこちらにあります: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json`
 
-プロジェクトを構築するには、<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>こちらの CodePen テンプレート</a>を使用し、`Save` をクリックして独自のペンを作成します。 または、下記の CDN リンクを使用して、使い慣れている環境でテストを実行することもできます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+<a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">この CodePen テンプレートを使用して</a> あなたのプロジェクトを構築することができます。`Save` をクリックすると、あなた用の pen を作成することができます。 または、下記の CDN リンクを使用して、使い慣れている環境でテストを実行することもできます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 完了したら、すべてのテストに合格した作業プロジェクトの URL を送信してください。
 
