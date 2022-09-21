@@ -217,10 +217,10 @@ button.nav-link[aria-disabled='true'] {
   overflow-y: auto;
   scrollbar-width: auto;
 
-  /* Ensure lang menu scrolls if there is not enough height to display all of it (this ensures keyboard accessibility). 38px is the height of search form since it is inserted between header and main menu. */
+  /* Ensure lang menu scrolls if there is not enough height to display all of it (this ensures keyboard accessibility).*/
   height: min(
     var(--lang-menu-height),
-    calc(100vh - 38px - var(--header-height))
+    calc(100vh - var(--search-box-form) - var(--header-height))
   );
 }
 
@@ -451,7 +451,7 @@ button.nav-link[aria-disabled='true'] {
 
 .universal-nav-right .fcc_searchBar .ais-SearchBox-form {
   width: 100vw;
-  height: 38px;
+  height: var(--search-box-form);
   max-width: unset;
   padding: 0 15px;
   left: 0;
