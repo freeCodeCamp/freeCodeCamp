@@ -108,7 +108,8 @@
   "dependencies": {
     "dotenv": "10.0.0",
     "gatsby-plugin-s3": "^0.3.8",
-    "invariant": "2.2.4"
+    "invariant": "2.2.4",
+    "react-gtm-module": "^2.0.11"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",
