@@ -46,7 +46,7 @@ Ao renomear uma certificação, você provavelmente vai querer renomear o superb
 1. No arquivo `meta.json` daquela pasta, renomeie os valores em `name`, `dashedName` e `challengeOrder` para o novo nome do certificado.
 1. Em `curriculum/challenges/english/12-certificate`, renomeie a pasta `{superBlock}-certificate` e o arquivo YAML dentro dela com o novo nome.
 1. No arquivo YAML, altere o `title` para o novo nome.
-1. Rename the file and folder from step 3 for the rest of the curriculum languages.
+1. Renomeie o arquivo e a pasta da etapa 3 para o resto dos idiomas do currículo.
 1. Atualize `client/src/redux/index.ts` para que ele use o `title` correto.
 1. Como opção, atualize o `certSlug` para o superbloco do mesmo arquivo. **Note** que renomear um `certSlug` mudará o URL para as certificações e somente deverá ser feito depois de se pensar muito sobre o assunto.
 1. Atualize o `title` em `client/src/resources/cert-and-project-map.ts` com o novo valor. **Note** que mudar o `title` aqui **quebrará** a página do superbloco da certificação associada. Ela depende do título do superbloco para encontrar fazer a correspondência com o título da certificação. Você provavelmente vai querer renomear o superbloco ao mesmo tempo.
@@ -60,7 +60,7 @@ Ao renomear uma certificação, você provavelmente vai querer renomear o superb
 
 > [!NOTE] Ao renomear um superbloco, o novo nome de pasta é usado como o caminho e deve ser considerado o nome "correto". Todos os outros valores deverão ser atualizados para refletir essa mudança.
 
-Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all share a name. Faça o seguinte para renomear somente um superbloco:
+Além disso, você provavelmente vai querer renomear o certificado e o bloco `{superBlock}-projects` quando renomear um superbloco, já que todos compartilham um mesmo nome. Faça o seguinte para renomear somente um superbloco:
 
 1. Renomeie a pasta do superbloco no diretório `curriculum/challenges/english`.
 1. Renomeie a pasta do superbloco em _todos_ os outros diretórios `curriculum/challenges/{language}`.
