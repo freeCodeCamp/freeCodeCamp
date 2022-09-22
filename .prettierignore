@@ -7,6 +7,8 @@ curriculum/challenges/**/*
 config/**/*.json
 config/i18n.js
 config/certification-settings.js
+config/superblock-order.js
+config/superblock-order.test.js
 docs/i18n
 utils/block-nameify.js
 utils/block-nameify.test.js

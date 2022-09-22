@@ -1,0 +1,25 @@
+import i18next from 'i18next';
+import { SuperBlocks } from '../../../config/certification-settings';
+
+// these are keys from i18n translations.json files
+enum SuperBlockI18nKeys {
+  Certification = 'learn.cert-map-estimates.certs',
+  Challenges = 'learn.cert-map-estimates.challenges'
+}
+
+// the keys above are used to create the last word for superBlock titles used
+// on the map and window. e.g. Responsive Web Design Certification
+// or Legacy Responsive Web Design Challenges
+const superBlocksWithoutLastWord = [SuperBlocks.CodingInterviewPrep];
+
+export function getSuperBlockTitleForMap(superBlock: SuperBlocks) {
+  const i18nSuperBlock = i18next.t(`intro:${superBlock}.title`);
+
+  if (superBlocksWithoutLastWord.includes(superBlock)) {
+    return i18nSuperBlock;
+  } else {
+    return i18next.t([SuperBlockI18nKeys.Certification], {
+      title: i18nSuperBlock
+    });
+  }
+}
