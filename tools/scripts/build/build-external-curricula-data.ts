@@ -26,7 +26,7 @@ interface Block {
 export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.RespWebDesignNew, public: true },
   { dashedName: SuperBlocks.RespWebDesign, public: true },
-  { dashedName: SuperBlocks.JsAlgoDataStruct, public: false },
+  { dashedName: SuperBlocks.JsAlgoDataStruct, public: true },
   { dashedName: SuperBlocks.FrontEndDevLibs, public: false },
   { dashedName: SuperBlocks.DataVis, public: false },
   { dashedName: SuperBlocks.BackEndDevApis, public: false },
