@@ -69,7 +69,7 @@ jobs:
           start: npx serve
           wait-on: http://localhost:3000
           wait-on-timeout: 1200
-          config: baseUrl=http://localhost:3000/mobile/mobile-app/generated-tests/
+          config: retries=3,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/mobile/mobile-app/generated-tests/
           browser: chrome
           headless: true
           spec: cypress/integration/mobile-learn/test-challenges.js
