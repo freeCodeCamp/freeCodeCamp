@@ -4,22 +4,22 @@
     "intro": [
       "In questo corso di Web Design Responsivo conoscerai i linguaggi usati per costruire le pagine web: HTML (Hypertext Markup Language) per il contenuto, e CSS (Cascade Style Sheets) per il design.",
       "Per prima cosa, costruirai un'app di foto per gatti per imparare le basi di HTML e CSS. Poi apprenderai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un modulo web.",
-      "Infine imparerai a fare pagine web adattabili a diverse misure di schermo costruendo una card Twitter con Flexbox, e un complesso layout per blog in CSS Grid."
+      "Infine, imparerai a realizzare pagine web adattabili a diverse misure di schermo costruendo una card Twitter con Flexbox, e un complesso layout per blog con CSS Grid."
     ],
     "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e le estensioni per la modalità scura, possono interferire con i test. In caso di problemi, ti consigliamo di disabilitare le estensioni che modificano il contenuto o il layout delle pagine durante il corso.",
     "blocks": {
       "basic-html-and-html5": {
         "title": "HTML Base e HTML5",
         "intro": [
-          "HTML è un linguaggio markup che utilizza una sintassi o notazione speciale che descrive la struttura di una pagina web al browser. Gli elementi HTML solitamente hanno un tag di apertura e di chiusura che danno significato al contenuto in essi racchiuso. Per esempio, diversi elementi possono descrivere il testo come titolo, paragrafo, o voce di una lista.",
-          "In questo corso, costruirai un'app per foto di gatti per imparare ad usare alcuni dei più comuni elementi HTML — i mattoni di ogni pagina web."
+          "HTML è un linguaggio di markup che utilizza una sintassi o notazione speciale che descrive la struttura di una pagina web al browser. Gli elementi HTML solitamente hanno un tag di apertura e di chiusura che danno significato al contenuto in essi racchiuso. Per esempio, diversi elementi possono descrivere il testo come un titolo, un paragrafo o la voce di una lista.",
+          "In questo corso, costruirai un'app per foto di gatti per imparare a usare alcuni dei più comuni elementi HTML — i mattoni di ogni pagina web."
         ]
       },
       "basic-css": {
         "title": "CSS Base",
         "intro": [
-          "CSS o Cascading Style Sheet, dice al browser come disporre il testo ed altri contenuti che hai scritto in HTML. Con CSS, puoi controllare il colore, font, dimensione, spaziatura, e molti altri aspetti degli elementi HTML.",
-          "Ora che hai descritto la struttura della tua app di foto di gatti, dagli un po' di stile con CSS."
+          "CSS o Cascading Style Sheet, dice al browser come disporre il testo e altri contenuti che hai scritto in HTML. Con CSS, puoi controllare il colore, font, dimensione, spaziatura e molti altri aspetti degli elementi HTML.",
+          "Ora che hai descritto la struttura della tua app di foto di gatti, dalle un po' di stile con CSS."
         ]
       },
       "applied-visual-design": {
@@ -32,28 +32,28 @@
       "applied-accessibility": {
         "title": "Accessibilità Applicata",
         "intro": [
-          "Nello sviluppo web, con accessibilità ci si riferisce al contenuto web e all'UI (User Interface, cioè interfaccia utente) che deve essere comprensibile, navigabile ed interattiva per una grande varietà di utenti. Questo include persone con disabilità visive, uditive, motorie o cognitive.",
+          "Nello sviluppo web, con accessibilità ci si riferisce al contenuto web e all'UI (User Interface, cioè interfaccia utente) che deve essere comprensibile, navigabile e interattiva per una grande varietà di utenti. Questo include persone con disabilità visive, uditive, motorie o cognitive.",
           "In questo corso imparerai le migliori pratiche per costruire pagine web accessibili a tutti."
         ]
       },
       "responsive-web-design-principles": {
         "title": "Principi di Web Design Responsivo",
         "intro": [
-          "Ci sono molti dispositivi che possono accedere al web, di tutte le forme e dimensioni. Il Web design responsivo è la pratica di creare design flessibili per siti web che possano adattarsi alle diverse dimensioni, orientazioni, e risoluzioni degli schermi.",
-          "In questo corso, imparerai come utilizzare CSS per rendere più belle le tue pagine web, a prescindere da che dispositivo venga utilizzato per accedervi."
+          "Ci sono molti dispositivi che possono accedere al web, di tutte le forme e dimensioni. Il Web design responsivo è la pratica di creare design flessibili per siti web che possano adattarsi alle diverse dimensioni, orientazioni e risoluzioni degli schermi.",
+          "In questo corso, imparerai come utilizzare CSS per rendere più belle le tue pagine web, a prescindere dal dispositivo utilizzato per accedervi."
         ]
       },
       "css-flexbox": {
-        "title": "La Flexbox CSS",
+        "title": "CSS Flexbox",
         "intro": [
-          "Flexbox è un metodo di layout potente e ben supportato he è stato introdotto con l'ultima versione di CSS: CSS3. Con flexbox, è facile centrare gli elementi nella pagina e creare interfacce utente dinamiche che si rimpiccioliscono e si espandono automaticamente.",
+          "Flexbox è un metodo di layout potente e ben supportato che è stato introdotto con l'ultima versione di CSS: CSS3. Con flexbox, è facile centrare gli elementi nella pagina e creare interfacce utente dinamiche che si rimpiccioliscono e si espandono automaticamente.",
           "In questo corso, imparerai le basi di flexbox e dei layout dinamici costruendo una card di Twitter."
         ]
       },
       "css-grid": {
-        "title": "La griglia CSS",
+        "title": "CSS Grid",
         "intro": [
-          "La griglia (grid) CSS è un nuovo standard che rende facile costruire layout responsivi complessi. Funziona trasformando un elemento HTML in una griglia, lasciandoti inserire elementi figli ovunque al suo interno.",
+          "CSS grid, o griglia CSS, è un nuovo standard che rende facile costruire layout responsivi complessi. Funziona trasformando un elemento HTML in una griglia, lasciandoti inserire elementi figli ovunque al suo interno.",
           "In questo corso imparerai le basi della griglia CSS costruendo vari layout complessi, incluso un blog."
         ]
       },
@@ -71,7 +71,7 @@
     "intro": [
       "In questo corso certificato di Web Design Responsivo imparerai i linguaggi che gli sviluppatori utilizzano per creare le pagine web. HTML (Hypertext Markup Language) per i contenuti e CSS (Cascading Style Sheets) per il design.",
       "Per prima cosa, costruirai un'app con foto di gatti per imparare le basi di HTML e CSS. Poi apprenderai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un quiz.",
-      "Infine, imparerai come fare pagine web che rispondono a diverse dimensioni dello schermo costruendo una galleria di foto con Flexbox e il layout di un articolo di rivista con CSS Grid."
+      "Infine, imparerai a realizzare pagine web adattabili a diverse misure di schermo costruendo una galleria di foto con Flexbox e il layout di un articolo di rivista con CSS Grid."
     ],
     "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e le estensioni per la modalità scura, possono interferire con i test. In caso di problemi, ti consigliamo di disabilitare le estensioni che modificano il contenuto o il layout delle pagine durante il corso.",
     "blocks": {
@@ -79,7 +79,7 @@
         "title": "Pagina Tributo",
         "intro": [
           "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
-          "Per questo progetto, costruirai una pagina di tributo per un soggetto di tua scelta, immaginario o reale."
+          "Per questo progetto, costruirai una pagina tributo per un soggetto di tua scelta, immaginario o reale."
         ]
       },
       "build-a-personal-portfolio-webpage-project": {
@@ -93,7 +93,7 @@
         "title": "Landing page di un prodotto",
         "intro": [
           "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
-          "Per questo progetto, costruirete una pagina di destinazione del prodotto per commercializzare un prodotto di vostra scelta."
+          "Per questo progetto, costruirai una landing page per commercializzare un prodotto di tua scelta."
         ]
       },
       "build-a-survey-form-project": {
@@ -107,27 +107,27 @@
         "title": "Pagina di documentazione tecnica",
         "intro": [
           "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
-          "Per questo progetto, si costruirà una pagina di documentazione tecnica che servirà come istruzione o riferimento per un argomento."
+          "Per questo progetto, si costruirà una pagina di documentazione tecnica che fungerà da istruzioni o riferimento per un argomento."
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
         "title": "Impara l’HTML progettando una app per foto di gatti",
         "intro": [
           "I tag HTML danno a una pagina web la sua struttura. Puoi usare tag HTML per aggiungere foto, pulsanti e altri elementi alla tua pagina web.",
-          "In questo corso, imparerai i tag HTML più comuni costruendo la tua app di foto di gatto."
+          "In questo corso, imparerai i tag HTML più comuni costruendo la tua app con foto di gatti."
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "Impara le basi del CCS realizzando un menù del bar",
+        "title": "Impara le basi del CCS realizzando il menù di un bar",
         "intro": [
           "CSS dice al browser come visualizzare la tua pagina web. Puoi usare CSS per impostare il colore, il carattere, la dimensione e altri aspetti degli elementi HTML.",
-          "In questo corso, imparerai CSS progettando una pagina del menu per una pagina web di un bar."
+          "In questo corso, imparerai CSS progettando una pagina del menu per la pagina web di un bar."
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "Impara il modello CSS Box realizzando un dipinto di Rothko",
+        "title": "Impara il Box Model CSS realizzando un dipinto di Rothko",
         "intro": [
-          "Ogni elemento HTML è una propria scatola – con una propria spaziatura e un bordo. Questo si chiama Box Model.",
+          "Ogni elemento HTML costituisce una scatola – con la propria spaziatura e un bordo. Questo si chiama Box Model (o modello a scatola).",
           "In questo corso, userai CSS e il Box Model per creare i tuoi pezzi d'arte rettangolari in stile Rothko."
         ]
       },
@@ -142,38 +142,38 @@
         "title": "Impara i moduli HTML realizzando un modulo di registrazione",
         "intro": [
           "Puoi utilizzare moduli HTML per raccogliere informazioni da persone che visitano la tua pagina web.",
-          "In questo corso, imparerai i moduli HTML costruendo una pagina di registrazione. Imparerai come controllare quali tipi di dati le persone possono digitare nella tua forma e alcuni nuovi strumenti CSS per stilare la tua pagina."
+          "In questo corso, imparerai i moduli HTML costruendo una pagina di registrazione. Imparerai come controllare i tipi di dati che le persone possono digitare nel tuo modulo e alcuni nuovi strumenti CSS per impostare lo stile della tua pagina."
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
         "title": "Impara l'accessibilità realizzando un Quiz",
         "intro": [
           "L'accessibilità rende la tua pagina web facile da usare per tutte le persone – anche le persone con disabilità.",
-          "In questo corso, costruirete una pagina web di quiz. Imparerete strumenti di accessibilità come shortcut da tastiera, attributi ARIA e progettate le migliori pratiche."
+          "In questo corso, costruirai una pagina web di un quiz. Conoscerai strumenti di accessibilità come scorciatoie da tastiera, attributi ARIA e le migliori pratiche di progettazione."
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
         "title": "Impara il CSS intermedio realizzando un dipinto di Picasso",
         "intro": [
-          "In questo corso, imparerai a usare alcune tecniche CSS intermedie codificando la tua pagina web del dipinto di Picasso. Imparerai le icone SVG, posizionamento CSS e rivederai le altre abilità CSS che hai imparato."
+          "In questo corso, imparerai a usare alcune tecniche CSS intermedie codificando la tua pagina web con un dipinto di Picasso. Conoscerai le icone SVG, il posizionamento CSS e rivederai le altre abilità CSS che hai imparato."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
         "title": "Impara il Design Responsivo creando un pianoforte",
         "intro": [
-          "Design responsivo dice alle tue pagine che aspetto devono avere su schermi di diverse dimensioni.",
-          "In questo corso, utilizzerai CSS e Responsive Design per creare un pianoforte. Scopri anche di più sulle query multimediali e sugli pseudo selettori."
+          "Il design responsivo dice alle tue pagine che aspetto devono avere su schermi di diverse dimensioni.",
+          "In questo corso, utilizzerai CSS e il design responsivo per creare un pianoforte. Scoprirai anche di più sulle media query e sugli pseudo selettori."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
         "title": "Impara il Flexbox CSS costruendo una fotogallery",
         "intro": [
           "Flexbox ti aiuta a progettare la tua pagina web in modo che vada bene su qualsiasi dimensione dello schermo.",
-          "In questo corso, utilizzerai Flexbox per creare una pagina web della galleria fotografica reattiva."
+          "In questo corso, utilizzerai Flexbox per creare una pagina web di una galleria fotografica reattiva."
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "Impara la griglia CSS creando una rivista",
+        "title": "Impara CSS Grid creando una rivista",
         "intro": [
           "La griglia CSS ti dà il controllo sulle righe e le colonne della tua pagina web.",
           "In questo corso, creerai un articolo della rivista. Imparerai come usare la griglia CSS, inclusi concetti come le righe della griglia e le colonne della griglia."

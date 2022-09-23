@@ -245,7 +245,7 @@ Se levar mais do que dois minutos para completar um desafio, você tem duas opç
 
 A regra dos 2 minutos força quem criou o desafio a deixar as instruções resumidas, o código fornecido limpo e seus testes diretos.
 
-We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
+Acompanhamos o tempo que leva para os usuários resolverem os desafios e usamos essa informação para identificar desafios que precisem ser simplificados ou divididos.
 
 ### Modularidade
 
