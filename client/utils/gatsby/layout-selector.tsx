@@ -11,7 +11,7 @@ interface LayoutSelectorProps {
   element: JSX.Element;
   props: {
     location: { pathname: string };
-    pageContext: { challengeMeta?: { block?: string; superBlock?: string } };
+    pageContext?: { challengeMeta?: { block?: string; superBlock?: string } };
   };
 }
 export default function layoutSelector({
@@ -38,8 +38,8 @@ export default function layoutSelector({
         pathname={pathname}
         showFooter={false}
         isChallenge={true}
-        block={props.pageContext.challengeMeta?.block}
-        superBlock={props.pageContext.challengeMeta?.superBlock}
+        block={props.pageContext?.challengeMeta?.block}
+        superBlock={props.pageContext?.challengeMeta?.superBlock}
       >
         {element}
       </DefaultLayout>
