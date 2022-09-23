@@ -89,8 +89,10 @@ interface EditorProps {
   initialExt: string;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
+  isMobileLayout: boolean;
   isResetting: boolean;
   isSignedIn: boolean;
+  isUsingKeyboardInTablist: boolean;
   openHelpModal: () => void;
   openResetModal: () => void;
   output: string[];
@@ -373,6 +375,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor: editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
   ) => {
+    const { isMobileLayout, isUsingKeyboardInTablist } = props;
     // TODO this should *probably* be set on focus
     editorRef.current = editor;
     dataRef.current.editor = editor;
@@ -405,11 +408,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
-    // Users who are using screen readers should not have to move focus from
-    // the editor to the description every time they open a challenge.
-    if (props.canFocus && !accessibilityMode) {
-      focusIfTargetEditor();
-    } else focusOnHotkeys();
+
+    // Focus should not automatically leave the 'Code' tab when using a keyboard
+    // to navigate the tablist.
+    if (!isMobileLayout || !isUsingKeyboardInTablist) {
+      // Users who are using screen readers should not have to move focus from
+      // the editor to the description every time they open a challenge.
+      if (props.canFocus && !accessibilityMode) {
+        focusIfTargetEditor();
+      } else focusOnHotkeys();
+    }
     // Removes keybind for intellisense
     // Private method - hopefully changes with future version
     // ref: https://github.com/microsoft/monaco-editor/issues/102
