@@ -403,7 +403,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     );
   }
 
-  renderEditor({isMobileLayout, isUsingKeyboardInTablist }: RenderEditorArgs) {
+  renderEditor({ isMobileLayout, isUsingKeyboardInTablist }: RenderEditorArgs) {
     const {
       pageContext: {
         projectPreview: { showProjectPreview }
