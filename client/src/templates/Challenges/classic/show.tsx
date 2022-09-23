@@ -511,7 +511,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
             <DesktopLayout
-              block={block}
               challengeFiles={challengeFiles}
               challengeType={challengeType}
               editor={this.renderEditor()}
@@ -525,7 +524,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               notes={this.renderNotes(notes)}
               preview={this.renderPreview()}
               resizeProps={this.resizeProps}
-              superBlock={superBlock}
               testOutput={this.renderTestOutput()}
               windowTitle={windowTitle}
             />

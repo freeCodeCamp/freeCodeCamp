@@ -15,7 +15,7 @@ const SkipToContentButton = (): JSX.Element => {
         onFocus={() => setShowSkipButton(true)}
         onBlur={() => setShowSkipButton(false)}
       >
-        Skip To Content
+        Skip Navigation
       </a>
     </div>
   );
