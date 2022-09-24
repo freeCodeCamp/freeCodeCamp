@@ -21,7 +21,7 @@ var SpaceShuttle = function(targetPlanet){
 var zeus = new SpaceShuttle('Jupiter');
 ```
 
-The `class` syntax simply replaces the `constructor` function creation:
+The `class` syntax simply replaces the keyword `function` with `construction`. 
 
 ```js
 class SpaceShuttle {
