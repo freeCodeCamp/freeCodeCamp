@@ -8,7 +8,7 @@ dashedName: build-a-25--5-clock
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/XpKrrW>.
+**Objective:** Build an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/XpKrrW>.
 
 Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
 
@@ -1210,18 +1210,65 @@ assert.strictEqual(
 
 # --seed--
 
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<App />, document.getElementById('root'))
+```
+
 ## --seed-contents--
 
 ```html
-
+<!DOCTYPE html>
+<html>
+  <body>
+    <!--Change code below this line-->
+      <p>Hello from HTML!</p>
+    <!--Change code above this line-->
+  </body>
+</html>
 ```
 
 ```css
 
 ```
 
+```jsx
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+        <div>
+            { /* Change code below this line */ }
+            <Timer />
+            { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+class Timer extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+          { /* Change code below this line */ }
+          <p>Hello from JSX !</p>
+          { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+```
+
 # --solutions--
 
-```js
+```jsx
 // solution required
 ```

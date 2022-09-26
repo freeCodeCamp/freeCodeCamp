@@ -220,13 +220,24 @@ export const embedFilesInHtml = async function (challengeFiles) {
       const style = contentDocument.createElement('style');
       style.classList.add('fcc-injected-styles');
       style.innerHTML = stylesCss?.contents;
-
       link.parentNode.replaceChild(style, link);
+    } else if (stylesCss?.contents) {
+      // automatic linking of style contents to html
+      const style = contentDocument.createElement('style');
+      style.classList.add('fcc-injected-styles');
+      style.innerHTML = stylesCss?.contents;
+      contentDocument.head.appendChild(style);
     }
     if (script) {
-      const script = (contentDocument.createElement('script').innerHTML =
-        scriptJs?.contents);
-      link.parentNode.replaceChild(script, link);
+      const newScript = contentDocument.createElement('script');
+      newScript.innerHTML = scriptJs?.contents;
+      script.parentNode.replaceChild(newScript, script);
+    }
+    if (indexJsx?.contents) {
+      // automatic linking of jsx to html
+      const newScript = contentDocument.createElement('script');
+      newScript.innerHTML = indexJsx?.contents;
+      contentDocument.head.appendChild(newScript);
     }
     return {
       contents: documentElement.innerHTML

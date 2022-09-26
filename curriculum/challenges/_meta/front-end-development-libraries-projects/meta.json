@@ -4,8 +4,27 @@
   "dashedName": "front-end-development-libraries-projects",
   "order": 6,
   "time": "150 hours",
-  "template": "",
-  "required": [],
+  "template": "<body><div id='root'></div>${ source || '' }</body>",
+  "required": [
+    {
+      "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"
+    },
+    {
+      "src": "https://code.jquery.com/jquery-3.6.0.min.js"
+    },
+    {
+      "src": "https://unpkg.com/react@16.4.0/umd/react.production.min.js"
+    },
+    {
+      "src": "https://unpkg.com/react-dom@16.4.0/umd/react-dom.production.min.js"
+    },
+    {
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js"
+    },
+    {
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.7/react-redux.min.js"
+    }
+  ],
   "superBlock": "front-end-development-libraries",
   "challengeOrder": [
     [

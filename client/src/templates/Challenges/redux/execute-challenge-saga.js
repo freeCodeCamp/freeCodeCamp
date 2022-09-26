@@ -175,7 +175,7 @@ function* buildChallengeData(challengeData, options) {
   }
 }
 
-function* executeTests(testRunner, tests, testTimeout = 5000) {
+function* executeTests(testRunner, tests, testTimeout = 70000) {
   const testResults = [];
   for (let i = 0; i < tests.length; i++) {
     const { text, testString } = tests[i];
