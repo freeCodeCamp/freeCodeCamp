@@ -22,7 +22,7 @@ function filesToMarkdown(challengeFiles = {}) {
 
     const fileExtension = challengeFile.ext;
     const fileName = challengeFile.name;
-    const fileType = fileExtension;
+    const fileType = fileExtension === 'js' ? 'javascript' : fileExtension;
     let fileDescription;
 
     if (!moreThanOneFile) {
