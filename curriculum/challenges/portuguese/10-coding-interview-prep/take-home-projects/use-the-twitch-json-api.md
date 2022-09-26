@@ -8,9 +8,11 @@ dashedName: use-the-twitch-json-api
 
 # --description--
 
-**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/Myvqmo/>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://codepen.io/freeCodeCamp/full/Myvqmo/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.
 
-Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+A API do Twitch é uma API RESTful que permite que os desenvolvedores criem integrações criativas para uma comunidade mais ampla do Twitch.
+
+Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
 **História de usuário:** posso ver se o freeCodeCamp está atualmente transmitindo no Twitch.tv.
 
@@ -18,15 +20,13 @@ Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_
 
 **História de usuário:** se um usuário do Twitch estiver transmitindo atualmente, posso ver detalhes adicionais sobre o que ele está transmitindo.
 
-**Dica:** a documentação relevante sobre a API de JSON do Twitch.tv está aqui: <https://dev.twitch.tv/docs/api/reference/#get-streams>.
-
 **Dica:** aqui está um array de nomes de usuários do Twitch.tv de pessoas que regularmente fazem streaming: `["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]`
 
-**ATUALIZAÇÃO:** devido a uma mudança nas condições de uso da API, o Twitch.tv agora requer uma chave de API, mas nós construímos uma solução alternativa. Use <https://twitch-proxy.freecodecamp.rocks/> ao invés do URL base da API do Twitch (ou seja, `https://api.twitch.tv/helix` ) e você ainda poderá obter informações da conta, sem a necessidade de se cadastrar para uma chave de API.
+**ATUALIZAÇÃO:** devido a uma mudança nas condições de uso da API, o Twitch.tv agora requer uma chave de API, mas nós construímos uma solução alternativa. Use <a href="https://twitch-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://twitch-proxy.freecodecamp.rocks/</a> ao invés do URL base da API do Twitch e você ainda poderá obter informações da conta, sem a necessidade de se cadastrar para uma chave de API.
 
 Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 
-Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">fórum freeCodeCamp</a>.
 
 # --solutions--
 

@@ -8,7 +8,7 @@ dashedName: probability-calculator
 
 # --description--
 
-Estarás [trabajando en este proyecto con nuestro código inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator).
+Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
 
 # --instructions--
 
@@ -37,7 +37,7 @@ A continuación, crea una función `experiment` en `prob_calculator.py` (no dent
 
 La función `experiment` debe devolver una probabilidad.
 
-Por ejemplo, digamos que quieres determinar la probabilidad de obtener al menos 2 bolas rojas y 1 bola verde cuando dibujas 5 bolas de un sombrero que contiene 6 negras, 4 rojos y 3 verdes. Para hacer esto, realizamos `N` experimentos, cuántas veces `M` obtenemos al menos 2 bolas rojas y 1 bola verde, y estimar la probabilidad como `M/N`. Cada experimento consiste en comenzar con un sombrero que contiene las bolas especificadas, dibujar una serie de bolas, y comprobar si conseguimos las bolas que estábamos tratando de dibujar.
+Por ejemplo, digamos que quieres determinar la probabilidad de obtener al menos 2 bolas rojas y 1 bola verde cuando dibujas 5 bolas de un sombrero que contiene 6 negras, 4 rojos y 3 verdes. Para hacer esto, realizarás `N` experimentos, contarás cuantas `M` veces obtienes al menos 2 bolas rojas y 1 bola verde, y estimarás la probabilidad como `M/N`. Cada experimento consiste en comenzar con un sombrero que contiene las bolas especificadas, dibujar una serie de bolas, y comprobar si conseguimos las bolas que estábamos tratando de dibujar.
 
 Así es como se llamaría la función de `experiment` basada en el ejemplo anterior con 2000 experimentos:
 

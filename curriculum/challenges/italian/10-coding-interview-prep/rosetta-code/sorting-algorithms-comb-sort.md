@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8005
 title: Algoritmi di Ordinamento/Comb Sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
 ---
@@ -10,19 +10,13 @@ dashedName: sorting-algorithmscomb-sort
 
 Implementa un *comb sort*.
 
-Il **Comb Sort** è una variante del [Bubble Sort](https://rosettacode.org/wiki/Bubble Sort).
+L'algoritmo **Comb Sort** è una variante di Bubble Sort.
 
-Come lo [Shell sort](https://rosettacode.org/wiki/Shell sort), il Comb Sort aumenta lo spazio utilizzato nei confronti e negli scambi.
+Come Shell Sort, Comb Sort aumenta gli spazi usati nelle comparazioni e negli scambi.
 
 Dividere il divario per $(1-e^{-\\varphi})^{-1} \\ca. 1.247330950103979$ funziona meglio, ma 1.3 può essere più pratico.
 
 Alcune implementazioni usano l'insertion sort una volta che il divario è inferiore a una certa quantità.
-
-**Vedi anche**
-
-<ul>
-  <li>l'articolo Wikipedia: <a href='https://en.wikipedia.org/wiki/Comb sort' target='_blank'>Comb sort</a>.</li>
-</ul>
 
 Varianti:
 

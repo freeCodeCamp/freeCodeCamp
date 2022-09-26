@@ -1,7 +1,7 @@
 ---
 id: 5900f4081000cf542c50ff1a
 title: '問題 155: キャパシタ回路を数え上げる'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301786
 dashedName: problem-155-counting-capacitor-circuits
 ---

@@ -11,24 +11,19 @@
   top: -999em;
 }
 
-#challenge-page-tabs .nav-tabs {
-  margin-left: 2px;
-  display: flex;
+.monaco-editor .editor-widget {
+  display: none !important;
 }
 
-#challenge-page-tabs .nav-tabs > li {
-  flex: 1;
-  text-align: center;
+.monaco-menu .monaco-action-bar.vertical .action-item:nth-last-child(n + 5),
+.monaco-menu .monaco-action-bar.vertical .action-item:last-child,
+.monaco-menu .monaco-action-bar.vertical .action-label.separator {
+  display: none !important;
 }
 
-#challenge-page-tabs .nav-tabs > li > a {
-  padding: 5px 10px;
-  text-decoration: none;
-  font-size: 0.8em;
-}
-
-#challenge-page-tabs .nav-tabs > li > a:hover {
-  color: var(--gray-85);
+.action-row {
+  padding: 10px;
+  border-bottom: 1px solid var(--quaternary-background);
 }
 
 #challenge-page-tabs .tab-content {
@@ -45,20 +40,6 @@
     100vh - var(--header-height, 0px) - var(--flash-message-height, 0px) - 24px -
       16px
   );
-}
-
-#challenge-page-tabs .tab-pane {
-  height: 100%;
-  overflow: hidden;
-}
-
-#challenge-page-tabs .nav-tabs > li.active > a {
-  color: var(--quaternary-color);
-  background-color: var(--quaternary-background);
-}
-
-.monaco-editor .editor-widget {
-  display: none !important;
 }
 
 .monaco-editor,
@@ -79,40 +60,35 @@
   display: none !important;
 }
 
-.monaco-editor-tabs {
+.restart-step-tab {
+  margin: 0 auto;
+}
+
+#mobile-layout .nav-tabs {
+  margin-left: 2px;
   display: flex;
-  padding: 0px 10px;
-  background-color: var(--primary-background);
-  border-bottom: 2px solid var(--primary-color);
 }
 
-.monaco-editor-tab {
-  position: relative;
-  top: 2px;
-  padding: 4px 16px;
-  border: 2px solid var(--primary-color);
-  border-left: none;
-  background-color: var(--secondary-background);
+#mobile-layout .nav-tabs > li {
+  flex: 1;
+  text-align: center;
 }
 
-button.monaco-editor-tab:hover {
-  color: var(--quaternary-color);
-  background-color: var(--quaternary-background);
+#mobile-layout .nav-tabs > li > a {
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 0.8em;
 }
 
-.monaco-editor-tab:first-child {
-  border-left: 2px solid var(--primary-color);
+#mobile-layout .nav-tabs > li > a:hover {
+  color: var(--gray-85);
 }
 
-.monaco-editor-tab-selected {
-  background-color: var(--primary-background);
-  border-bottom: 2px solid var(--primary-background);
-}
-
-.monaco-editor-tab[aria-expanded='true'] {
-  border-color: var(--secondary-color);
-  background-color: var(--secondary-color);
-  color: var(--secondary-background);
+#mobile-layout .tab-content {
+  height: calc(
+    100vh - var(--header-height, 0px) - var(--flash-message-height, 0px) - 69px
+  );
+  overflow-y: auto;
 }
 
 .action-row {
@@ -125,12 +101,15 @@ button.monaco-editor-tab:hover {
   border-bottom: none;
   background-color: var(--secondary-background);
   gap: 8px;
+  display: flex;
 }
 
-.action-row .monaco-editor-tabs .monaco-editor-tab {
-  top: 0;
+#mobile-layout .monaco-editor-tabs {
+  padding: 10px;
+  width: 100%;
 }
 
-.monaco-editor .squiggly-hint {
-  background: none !important;
+#mobile-layout .monaco-editor-tabs button {
+  flex: 1;
+  max-width: 50%;
 }

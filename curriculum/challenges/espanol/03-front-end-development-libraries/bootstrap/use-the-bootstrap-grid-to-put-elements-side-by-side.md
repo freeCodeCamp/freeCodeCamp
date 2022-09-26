@@ -14,7 +14,7 @@ Bootstrap tiene diferentes atributos de ancho de columna que usa dependiendo cua
 
 Tomemos por ejemplo la clase de Bootstrap `col-md-*`. Aquí, `md` significa mediano y `*` es un número que especifica cuántas columnas de ancho deben tener los elementos. En este caso, el ancho de columna de un elemento en una pantalla de tamaño mediano, como una laptop, está siendo especificado.
 
-En el 'Cat Photo App' que estamos armando, vamos a usar `col-xs-*`, donde `xs` significa extra pequeño ("extra small" como una pantalla de teléfono), y `*` es el número de columnas que va a tomar el elemento en anchura.
+En el 'Cat Photo App' que estamos creando, vamos a usar `col-xs-*`, donde `xs` significa extra pequeño ("extra small" como una pantalla de teléfono), y `*` es el número de columnas que va a tomar el elemento en anchura.
 
 Pon los botones `Like`, `Info` y `Delete` lado a lado, anidando los tres dentro de un elemento `<div class="row">`, luego, cada uno de ellos dentro de un elemento `<div class="col-xs-4">`.
 

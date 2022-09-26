@@ -1,7 +1,7 @@
 ---
 id: 5e6dd15004c88cf00d2a78b3
 title: Loop over multiple arrays simultaneously
-challengeType: 5
+challengeType: 1
 forumTopicId: 385279
 dashedName: loop-over-multiple-arrays-simultaneously
 ---

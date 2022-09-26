@@ -151,10 +151,12 @@ window.onload = () => {
   });
 };
 
+--fcc-editable-region--
 const update = event => {
   const element = event.target;
   const value = element.value.replace(/\s/g, "");
 };
+--fcc-editable-region--
 
 
 </script>

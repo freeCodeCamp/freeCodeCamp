@@ -19,6 +19,7 @@ export { ns };
 
 const initialState = {
   canFocusEditor: true,
+  attempts: 0,
   visibleEditors: {},
   challengeFiles: [],
   challengeMeta: {
@@ -42,8 +43,10 @@ const initialState = {
     help: false,
     video: false,
     reset: false,
-    projectPreview: false
+    projectPreview: false,
+    shortcuts: false
   },
+  portalDocument: false,
   projectFormValues: {},
   successMessage: 'Happy Coding!'
 };
@@ -117,12 +120,21 @@ export const previewMounted = createAction(actionTypes.previewMounted);
 export const projectPreviewMounted = createAction(
   actionTypes.projectPreviewMounted
 );
+
+export const storePortalDocument = createAction(
+  actionTypes.storePortalDocument
+);
+export const removePortalDocument = createAction(
+  actionTypes.removePortalDocument
+);
+
 export const challengeMounted = createAction(actionTypes.challengeMounted);
 export const checkChallenge = createAction(actionTypes.checkChallenge);
 export const executeChallenge = createAction(actionTypes.executeChallenge);
 export const resetChallenge = createAction(actionTypes.resetChallenge);
 export const stopResetting = createAction(actionTypes.stopResetting);
 export const submitChallenge = createAction(actionTypes.submitChallenge);
+export const resetAttempts = createAction(actionTypes.resetAttempts);
 
 export const setEditorFocusability = createAction(
   actionTypes.setEditorFocusability
@@ -152,6 +164,7 @@ export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isProjectPreviewModalOpenSelector = state =>
   state[ns].modal.projectPreview;
+export const isShortcutsModalOpenSelector = state => state[ns].modal.shortcuts;
 export const isResettingSelector = state => state[ns].isResetting;
 
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
@@ -160,12 +173,14 @@ export const successMessageSelector = state => state[ns].successMessage;
 export const projectFormValuesSelector = state =>
   state[ns].projectFormValues || {};
 
+export const portalDocumentSelector = state => state[ns].portalDocument;
+
 export const challengeDataSelector = state => {
   const { challengeType } = challengeMetaSelector(state);
   let challengeData = { challengeType };
   if (
     challengeType === challengeTypes.js ||
-    challengeType === challengeTypes.bonfire
+    challengeType === challengeTypes.jsProject
   ) {
     challengeData = {
       ...challengeData,
@@ -209,6 +224,7 @@ export const challengeDataSelector = state => {
   return challengeData;
 };
 
+export const attemptsSelector = state => state[ns].attempts;
 export const canFocusEditorSelector = state => state[ns].canFocusEditor;
 export const visibleEditorsSelector = state => state[ns].visibleEditors;
 
@@ -306,9 +322,14 @@ export const reducer = handleActions(
           testString
         })),
         consoleOut: [],
-        isResetting: true
+        isResetting: true,
+        attempts: 0
       };
     },
+    [actionTypes.resetAttempts]: state => ({
+      ...state,
+      attempts: 0
+    }),
     [actionTypes.stopResetting]: state => ({
       ...state,
       isResetting: false
@@ -331,7 +352,14 @@ export const reducer = handleActions(
       ...state,
       isBuildEnabled: false
     }),
-
+    [actionTypes.storePortalDocument]: (state, { payload }) => ({
+      ...state,
+      portalDocument: payload
+    }),
+    [actionTypes.removePortalDocument]: state => ({
+      ...state,
+      portalDocument: false
+    }),
     [actionTypes.updateSuccessMessage]: (state, { payload }) => ({
       ...state,
       successMessage: payload
@@ -352,7 +380,8 @@ export const reducer = handleActions(
     }),
     [actionTypes.executeChallenge]: state => ({
       ...state,
-      currentTab: 3
+      currentTab: 3,
+      attempts: state.attempts + 1
     }),
     [actionTypes.setEditorFocusability]: (state, { payload }) => ({
       ...state,

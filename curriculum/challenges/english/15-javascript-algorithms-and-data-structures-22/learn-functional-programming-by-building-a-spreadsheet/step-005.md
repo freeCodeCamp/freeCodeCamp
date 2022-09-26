@@ -71,7 +71,9 @@ function add(x, y) {
   return x + y;
 }
 
+--fcc-editable-region--
 const addVar = add;
+--fcc-editable-region--
 
 const infixToFunction = {};
 

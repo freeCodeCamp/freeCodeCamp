@@ -81,7 +81,9 @@ const spreadsheetFunctions = {
   "": x => x
 };
 
+--fcc-editable-region--
 
+--fcc-editable-region--
 </script>
 ```
 

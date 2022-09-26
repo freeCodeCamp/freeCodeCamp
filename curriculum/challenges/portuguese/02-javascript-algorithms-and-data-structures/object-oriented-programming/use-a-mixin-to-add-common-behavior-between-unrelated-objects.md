@@ -20,7 +20,7 @@ let flyMixin = function(obj) {
 };
 ```
 
-O `flyMixin` recebe qualquer objeto e da a ele o método `fly`.
+O `flyMixin` recebe qualquer objeto e dá a ele o método `fly`.
 
 ```js
 let bird = {

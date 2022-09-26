@@ -1,13 +1,15 @@
 ---
 id: 5efae0543cbd2bbdab94e333
-title: Step 29
+title: Step 30
 challengeType: 0
-dashedName: step-29
+dashedName: step-30
 ---
 
 # --description--
 
-To improve accessibility of the image you just added, add an `alt` attribute with the text `Five cats looking around a field.`
+To improve accessibility of the image you just added, add an `alt` attribute with the text:
+
+`Five cats looking around a field.`
 
 # --hints--
 
@@ -17,7 +19,7 @@ Your `figure` element should have an opening tag. Opening tags have this syntax:
 assert(document.querySelectorAll('figure').length === 2);
 ```
 
-Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
 ```js
 assert(code.match(/<\/figure>/g).length === 2);

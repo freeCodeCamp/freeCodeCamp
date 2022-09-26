@@ -61,9 +61,11 @@ assert(code.replace(/\s/g, '').match(/\+["']:\(x,y\)=>x\+y/));
 
 const addVar = (x, y) => x + y;
 
+--fcc-editable-region--
 const infixToFunction = {
   "+": addVar
 };
+--fcc-editable-region--
 
 
 </script>

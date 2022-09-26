@@ -149,8 +149,10 @@ function goTown() {
   update(locations[0]);
 }
 
+--fcc-editable-region--
 function goStore() {
 }
+--fcc-editable-region--
 
 function goCave() {
   console.log("Going to cave.");

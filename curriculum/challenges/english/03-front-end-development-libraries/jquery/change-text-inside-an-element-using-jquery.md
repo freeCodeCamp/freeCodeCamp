@@ -22,7 +22,7 @@ jQuery also has a similar function called `.text()` that only alters text withou
 
 Change the button with id `target4` by emphasizing its text.
 
-[View our news article for &lt;em>](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element) to learn the difference between `<i>` and `<em>` and their uses.
+<a href="https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element" target="_blank" rel="noopener noreferrer nofollow">View our news article for &lt;em&gt;</a> to learn the difference between `<i>` and `<em>` and their uses.
 
 Note that while the `<i>` tag has traditionally been used to emphasize text, it has since been adopted for use as a tag for icons. The `<em>` tag is now widely accepted as the tag for emphasis. Either will work for this challenge.
 

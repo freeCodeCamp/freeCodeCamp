@@ -1,7 +1,7 @@
 ---
 id: 5900f5001000cf542c510013
 title: '問題 403: 放物線と線で囲まれた格子点'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302071
 dashedName: problem-403-lattice-points-enclosed-by-parabola-and-line
 ---

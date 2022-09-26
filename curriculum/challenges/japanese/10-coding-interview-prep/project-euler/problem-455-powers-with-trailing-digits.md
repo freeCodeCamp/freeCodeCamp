@@ -1,7 +1,7 @@
 ---
 id: 5900f5331000cf542c510046
 title: '問題 455: 累乗の下位桁'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302129
 dashedName: problem-455-powers-with-trailing-digits
 ---

@@ -1,8 +1,7 @@
 import { first } from 'lodash-es';
-import React, { useState, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
-import { challengeTypes } from '../../../../utils/challenge-types';
 import { GoogleTagManager } from '../../../analytics/google-tag-manater';
 import { Segment } from '../../../analytics/segment';
 import {
@@ -10,7 +9,12 @@ import {
   ChallengeFiles,
   ResizeProps
 } from '../../../redux/prop-types';
+import PreviewPortal from '../components/preview-portal';
 import ActionRow from './action-row';
+import {
+  DesktopLayoutPanels,
+  useDesktopLayoutState
+} from './use-desktop-layout-state';
 
 type Pane = { flex: number };
 
@@ -37,6 +41,7 @@ interface DesktopLayoutProps {
   superBlock: string;
   testOutput: ReactElement;
   visibleEditors: { [key: string]: boolean };
+  windowTitle: string;
 }
 
 const reflexProps = {
@@ -44,31 +49,16 @@ const reflexProps = {
 };
 
 const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
-  const [showInstructions, setShowInstructions] = useState(true);
-  const [showNotes, setShowNotes] = useState(false);
-  const [showPreview, setShowPreview] = useState(true);
-  const [showConsole, setShowConsole] = useState(false);
-
-  const togglePane = (pane: string): void => {
-    switch (pane) {
-      case 'showInstructions':
-        setShowInstructions(!showInstructions);
-        break;
-      case 'showPreview':
-        setShowPreview(!showPreview);
-        break;
-      case 'showConsole':
-        setShowConsole(!showConsole);
-        break;
-      case 'showNotes':
-        setShowNotes(!showNotes);
-        break;
-      default:
-        setShowConsole(false);
-        setShowPreview(false);
-        setShowNotes(false);
-    }
-  };
+  const {
+    layoutState: {
+      showInstructions,
+      showNotes,
+      showPreviewPane,
+      showPreviewPortal,
+      showConsole
+    },
+    togglePane
+  } = useDesktopLayoutState();
 
   const getChallengeFile = () => {
     const { challengeFiles } = props;
@@ -77,7 +67,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const {
     block,
-    challengeType,
     resizeProps,
     instructions,
     editor,
@@ -89,14 +78,14 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     preview,
     hasEditableBoundaries,
     superBlock,
-    visibleEditors
+    visibleEditors,
+    windowTitle
   } = props;
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
-  const isMultifileCertProject =
-    challengeType === challengeTypes.multifileCertProject;
-  const displayPreview = showPreview && hasPreview;
+  const displayPreviewPane = hasPreview && showPreviewPane;
+  const displayPreviewPortal = hasPreview && showPreviewPortal;
   const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
   const displayConsole = showConsole;
   const displayEditor = Object.entries(visibleEditors).some(
@@ -117,12 +106,13 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         <ActionRow
           block={block}
           hasNotes={hasNotes}
-          isMultifileCertProject={isMultifileCertProject}
+          isProjectBasedChallenge={projectBasedChallenge}
           showConsole={showConsole}
           showNotes={showNotes}
           showInstructions={showInstructions}
           hasPreview={hasPreview}
-          showPreview={showPreview}
+          showPreviewPane={showPreviewPane}
+          showPreviewPortal={showPreviewPortal}
           superBlock={superBlock}
           showBreadcrumbs={false}
           togglePane={togglePane}
@@ -163,19 +153,19 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               </ReflexElement>
             )}
 
-            {(displayPreview || displayConsole) && (
+            {(displayPreviewPane || displayConsole) && (
               <ReflexSplitter propagate={true} {...resizeProps} />
             )}
 
-            {(displayPreview || displayConsole) && (
+            {(displayPreviewPane || displayConsole) && (
               <ReflexElement flex={1} {...resizeProps}>
                 <ReflexContainer orientation='horizontal'>
-                  {displayPreview && (
+                  {displayPreviewPane && (
                     <ReflexElement flex={previewPane.flex} {...resizeProps}>
                       {preview}
                     </ReflexElement>
                   )}
-                  {displayConsole && displayPreview && (
+                  {displayConsole && displayPreviewPane && (
                     <ReflexSplitter propagate={true} {...resizeProps} />
                   )}
                   {displayConsole && (
@@ -196,6 +186,19 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
       <Segment />
       <GoogleTagManager />
+      {displayPreviewPortal && (
+        <PreviewPortal
+          togglePane={() => {
+            togglePane({
+              panel: DesktopLayoutPanels.PreviewPortal,
+              setVisible: false
+            });
+          }}
+          windowTitle={windowTitle}
+        >
+          {preview}
+        </PreviewPortal>
+      )}
     </>
   );
 };

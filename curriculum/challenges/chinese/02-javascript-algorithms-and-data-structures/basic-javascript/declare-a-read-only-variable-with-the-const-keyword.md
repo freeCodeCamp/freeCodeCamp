@@ -25,7 +25,7 @@ FAV_PET = "Dogs";
 
 # --instructions--
 
-更改代码，以便使用 `let` 或 `const` 声明所有变量。 当你想要改变变量时使用 `let`，当你想要变量保持不变时使用 `const`。 此外，重命名使用 `const` 声明的变量以符合惯例。
+更改代码，以便使用 `let` 或 `const` 声明所有变量。 当你想要改变变量时使用 `let`，当你想要变量保持不变时使用 `const`。 此外，重命名使用 `const` 声明的变量以符合惯例。 请勿更改分配给变量的字符串。
 
 # --hints--
 
@@ -45,8 +45,13 @@ assert.notMatch(code, /(fCC)/);
 `FCC` 应该是一个用 `const` 声明的常量。
 
 ```js
-assert.equal(FCC, 'freeCodeCamp');
 assert.match(code, /const\s+FCC/);
+```
+
+分配给 `FCC` 的字符串不应更改。
+
+```js
+assert.equal(FCC, 'freeCodeCamp');
 ```
 
 `fact` 应该用 `let` 声明。

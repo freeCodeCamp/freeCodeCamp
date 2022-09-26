@@ -260,14 +260,17 @@ export function isValidChallengeCompletion(req, res, next) {
 
   if (!ObjectID.isValid(id)) {
     log('isObjectId', id, ObjectID.isValid(id));
+    console.debug('isObjectId', id, ObjectID.isValid(id));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
   if ('challengeType' in req.body && !isNumeric(String(challengeType))) {
     log('challengeType', challengeType, isNumeric(challengeType));
+    console.debug('challengeType', challengeType, isNumeric(challengeType));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
   if ('solution' in req.body && !isURL(solution)) {
-    log('isObjectId', id, ObjectID.isValid(id));
+    log('solution', solution, !isURL(solution));
+    console.debug('solution', solution, !isURL(solution));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
   return next();

@@ -1,7 +1,7 @@
 ---
 id: 5900f4cd1000cf542c50ffe0
 title: '問題 353: 危険な月'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302013
 dashedName: problem-353-risky-moon
 ---

@@ -10,7 +10,7 @@ import { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { dasherize } from '../../../../../utils/slugs';
-import { isProject } from '../../../../utils/challenge-types';
+import { isFinalProject } from '../../../../utils/challenge-types';
 import Login from '../../../components/Header/components/Login';
 import { isSignedInSelector, executeGA } from '../../../redux';
 import { AllChallengeNode, ChallengeFiles } from '../../../redux/prop-types';
@@ -265,7 +265,7 @@ export class CompletionModalInner extends Component<
 }
 
 interface Options {
-  isCertificationBlock: boolean;
+  isFinalProjectBlock: boolean;
 }
 
 interface CertificateNode {
@@ -329,9 +329,7 @@ const useCurrentBlockIds = (
     .filter(edge => edge.node.challenge.block === block)
     .map(edge => edge.node.challenge.id);
 
-  return options?.isCertificationBlock
-    ? currentCertificateIds
-    : currentBlockIds;
+  return options?.isFinalProjectBlock ? currentCertificateIds : currentBlockIds;
 };
 
 const CompletionModal = (props: CompletionModalsProps) => {
@@ -339,7 +337,7 @@ const CompletionModal = (props: CompletionModalsProps) => {
     props.block || '',
     props.certification || '',
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    { isCertificationBlock: isProject(props.challengeType) }
+    { isFinalProjectBlock: isFinalProject(props.challengeType) }
   );
   return <CompletionModalInner currentBlockIds={currentBlockIds} {...props} />;
 };

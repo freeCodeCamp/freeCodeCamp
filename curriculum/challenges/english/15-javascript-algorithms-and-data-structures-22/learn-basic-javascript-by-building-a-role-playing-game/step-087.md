@@ -245,8 +245,10 @@ function sellWeapon() {
   }
 }
 
+--fcc-editable-region--
 function fightSlime() {
 }
+--fcc-editable-region--
 
 function fightBeast() {
 }

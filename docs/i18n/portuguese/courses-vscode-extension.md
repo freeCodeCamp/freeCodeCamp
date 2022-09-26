@@ -4,40 +4,32 @@ Aqui detalharemos as diretrizes de manutenção para o [freeCodeCamp/courses-vsc
 
 ## Publicando a extensão
 
-Uma GitHub Action publica automaticamente a extensão no Visual Studio Marketplace, em pushes para a branch `prod`.
+Uma GitHub Action publica automaticamente a extensão no Visual Studio Marketplace, no lançamento de uma nova GitHub Release.
 
-Certifique-se de ter feito o check-out na branch `main`.
-
-```bash
-git checkout main
-```
-
-Atualize o repositório local com `upstream` e dê um reset em `main`.
+1. Pacote de uma nova versão da extensão:
 
 ```bash
-git fetch upstream
-git reset --hard upstream/main
+npm run pack -- <tag_type>
 ```
 
-Faça o check-out na branch `prod`.
+Onde `<tag_type>` é: `major`, `minor` ou `patch`.
+
+2. Faça o push da nova versão para `main`:
 
 ```bash
-git checkout prod
+git commit -am "<tag_type>(<version>): <description>"
+git push
 ```
 
-Faça o merge dos commits desejados para implantação em `prod`.
+Como opção, você pode fazer o push diretamente para `upstream/main`, mas abrir um novo PR é recomendado para fins de verificação de sanidade.
 
-```bash
-git merge main
-```
+3. Crie uma GitHub Release usando a UI do GitHub:
 
-Envie a branch local para `upstream`.
+- Incremente corretamente o número da versão ao criar uma nova tag.
+- Faça o upload do arquivo `.vsix` com a release.
+- Publique a release e confirme que a action foi um sucesso.
 
-```bash
-git push upstream
-```
-
-> [!NOTE] O envio para `upstream` requer acesso de gravação ao repositório `freeCodeCamp/courses-vscode-extension`.
+> [!NOTE] Criar uma release exige acesso de escrita ao repositório `freeCodeCamp/courses-vscode-extension`.
 
 ## Publicando a extensão manualmente
 

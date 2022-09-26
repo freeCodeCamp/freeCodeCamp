@@ -1,8 +1,8 @@
 ---
 id: 5dfb5ecbeacea3f48c6300b1
-title: Step 20
+title: Step 21
 challengeType: 0
-dashedName: step-20
+dashedName: step-21
 ---
 
 # --description--
@@ -16,7 +16,11 @@ Use list item (`li`) elements to create items in a list. Here is an example of l
 </ul>
 ```
 
-Nest three list items within the `ul` element to display three things cats love: `cat nip`, `laser pointers` and `lasagna`.
+Within the `ul` element nest three list items to display three things cats love:
+
+`cat nip`
+`laser pointers`
+`lasagna` 
 
 # --hints--
 

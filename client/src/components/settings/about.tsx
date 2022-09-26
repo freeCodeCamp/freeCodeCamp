@@ -14,6 +14,7 @@ import BlockSaveButton from '../helpers/form/block-save-button';
 import SoundSettings from './sound';
 import ThemeSettings, { Themes } from './theme';
 import UsernameSettings from './username';
+import KeyboardShortcutsSettings from './keyboard-shortcuts';
 
 type FormValues = {
   name: string;
@@ -30,10 +31,12 @@ type AboutProps = {
   picture: string;
   points: number;
   sound: boolean;
+  keyboardShortcuts: boolean;
   submitNewAbout: (formValues: FormValues) => void;
   t: TFunction;
   toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
+  toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   username: string;
 };
 
@@ -198,10 +201,12 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     const {
       currentTheme,
       sound,
+      keyboardShortcuts,
       username,
       t,
       toggleNightMode,
-      toggleSoundMode
+      toggleSoundMode,
+      toggleKeyboardShortcuts
     } = this.props;
     return (
       <div className='about-settings'>
@@ -260,6 +265,10 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             toggleNightMode={toggleNightMode}
           />
           <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
+          <KeyboardShortcutsSettings
+            keyboardShortcuts={keyboardShortcuts}
+            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+          />
         </FullWidthRow>
       </div>
     );

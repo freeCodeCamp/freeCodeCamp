@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7ec4
 title: JortSort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302293
 dashedName: jortsort
 ---
 
 # --description--
 
-jortSort è un set di strumenti di ordinamento che permette all'utente di fare il lavoro e garantisce l'efficienza perché non è necessario riordinare nuovamente. È stato originariamente presentato da Jenn "Moneydollars" Schiffer al prestigioso [JSConf](https://www.youtube.com/watch?v=pj4U_W0OFoE).
+jortSort è un set di strumenti di ordinamento che permette all'utente di fare il lavoro e garantisce l'efficienza perché non è necessario riordinare nuovamente. È stato originariamente presentato da Jenn "Moneydollars" Schiffer al prestigioso JSConf2014.
 
 jortSort dovrebbe essere una funzione che prende un singolo array di oggetti comparabili come argomento. Esso ordina l'array in ordine crescente e confronta l'array ordinato con l'array originariamente fornito. Se gli array corrispondono (cioè l'array originale è già stato ordinato), la funzione restituisce true. Se gli array non corrispondono (cioè l'array originale non è stato ordinato), la funzione restituisce false.
 

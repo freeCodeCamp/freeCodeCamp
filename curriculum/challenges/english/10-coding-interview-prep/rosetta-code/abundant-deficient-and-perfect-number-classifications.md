@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339acd
 title: 'Abundant, deficient and perfect number classifications'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302221
 dashedName: abundant-deficient-and-perfect-number-classifications
 ---

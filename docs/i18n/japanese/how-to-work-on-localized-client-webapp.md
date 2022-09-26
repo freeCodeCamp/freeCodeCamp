@@ -77,7 +77,7 @@ i18n フレームワークとツールがどのように機能するかを理解
 
 - `meta-tags.json` ファイルには、Web サイトのメタタグ情報に関する情報が含まれています。
 
-  これらのファイルの変更は通常、スタッフチームによって行われます。 異常が表示された場合は、[contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) に連絡することをお勧めします。
+  これらのファイルの変更は通常、スタッフチームによって行われます。 If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 ## 世界の言語でクライアントアプリをテストする
 

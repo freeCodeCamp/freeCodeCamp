@@ -127,7 +127,9 @@ const evalFormula = x => {
     : evalFormula(functionExpanded);
 };
 
+--fcc-editable-region--
 window.onload = () => { };
+--fcc-editable-region--
 
 
 </script>

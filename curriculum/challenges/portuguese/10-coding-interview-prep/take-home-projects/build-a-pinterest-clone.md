@@ -8,9 +8,9 @@ dashedName: build-a-pinterest-clone
 
 # --description--
 
-**Objetivo:** criar uma aplicação no [Replit](https://replit.com/) que tenha função semelhante a esta: <https://build-a-pinterest-clone.freecodecamp.rocks/>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://build-a-pinterest-clone.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://build-a-pinterest-clone.freecodecamp.rocks/</a>.
 
-Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
 **História de usuário:** como usuário autenticado, posso fazer login com o GitHub.
 
@@ -24,11 +24,11 @@ Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_
 
 **História de usuário:** como um usuário não autenticado, se eu enviar uma imagem com o vínculo não funcional, ela será substituída por uma imagem temporária. (é possível usar o jQuery para detectar imagens sem o link funcional)
 
-**Dica:** o [Masonry.js](https://masonry.desandro.com/) é uma biblioteca que permite grades de imagens no estilo Pinterest.
+**Dica:** o Masonry.js é uma biblioteca que permite grades de imagens no estilo Pinterest.
 
 Depois de terminar de implementar essas histórias de usuários, digite o URL para sua aplicação ao vivo e, como opção, seu repositório do GitHub. Então, clique no botão "Eu completei este desafio".
 
-Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum do freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">fórum freeCodeCamp</a>.
 
 # --solutions--
 

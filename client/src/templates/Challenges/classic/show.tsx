@@ -11,6 +11,7 @@ import store from 'store';
 import { editor } from 'monaco-editor';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
+import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
 import {
   ChallengeFiles,
@@ -135,7 +136,6 @@ interface ReflexLayout {
   testsPane: { flex: number };
 }
 
-const MAX_MOBILE_WIDTH = 767;
 const REFLEX_LAYOUT = 'challenge-layout';
 const BASE_LAYOUT = {
   codePane: { flex: 1 },
@@ -144,6 +144,15 @@ const BASE_LAYOUT = {
   previewPane: { flex: 1 },
   notesPane: { flex: 0.7 },
   testsPane: { flex: 0.3 }
+};
+
+// Used to prevent monaco from stealing mouse/touch events on the upper jaw
+// content widget so they can trigger their default actions. (Issue #46166)
+const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
+  const target = e.target as HTMLElement;
+  if (target?.closest('.editor-upper-jaw')) {
+    e.stopPropagation();
+  }
 };
 
 // Component
@@ -196,7 +205,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   onStopResize(event: HandlerProps) {
-    // @ts-expect-error TODO: Apparently, name does not exist on type
     const { name, flex } = event.component.props;
 
     // Only interested in tracking layout updates for ReflexElement's
@@ -232,6 +240,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       }
     } = this.props;
     this.initializeComponent(title);
+    // Bug fix for the monaco content widget and touch devices/right mouse
+    // click. (Issue #46166)
+    document.addEventListener('mousedown', handleContentWidgetEvents, true);
+    document.addEventListener('contextmenu', handleContentWidgetEvents, true);
+    document.addEventListener('touchstart', handleContentWidgetEvents, true);
+    document.addEventListener('touchmove', handleContentWidgetEvents, true);
+    document.addEventListener('touchend', handleContentWidgetEvents, true);
   }
 
   componentDidUpdate(prevProps: ShowClassicProps) {
@@ -309,6 +324,15 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const { createFiles, cancelTests } = this.props;
     createFiles([]);
     cancelTests();
+    document.removeEventListener('mousedown', handleContentWidgetEvents, true);
+    document.removeEventListener(
+      'contextmenu',
+      handleContentWidgetEvents,
+      true
+    );
+    document.removeEventListener('touchstart', handleContentWidgetEvents, true);
+    document.removeEventListener('touchmove', handleContentWidgetEvents, true);
+    document.removeEventListener('touchend', handleContentWidgetEvents, true);
   }
 
   getChallenge = () => this.props.data.challengeNode.challenge;
@@ -441,8 +465,12 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       t
     } = this.props;
 
+    const blockNameTitle = this.getBlockNameTitle(t);
+    const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+
     return (
       <Hotkeys
+        challengeType={challengeType}
         editorRef={this.editorRef as React.RefObject<HTMLElement>}
         executeChallenge={executeChallenge}
         innerRef={this.containerRef}
@@ -452,7 +480,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         usesMultifileEditor={usesMultifileEditor}
       >
         <LearnLayout>
-          <Helmet title={`${this.getBlockNameTitle(t)} | freeCodeCamp.org`} />
+          <Helmet title={windowTitle} />
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
               editor={this.renderEditor(hasEditableBoundaries)}
@@ -490,6 +518,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               superBlock={superBlock}
               testOutput={this.renderTestOutput()}
               visibleEditors={visibleEditors}
+              windowTitle={windowTitle}
             />
           </Media>
           <CompletionModal
@@ -498,7 +527,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             certification={certification}
             superBlock={superBlock}
           />
-          <HelpModal />
+          <HelpModal challengeTitle={title} challengeBlock={blockName} />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
           {/* TODO: Decide if this is still needed */}

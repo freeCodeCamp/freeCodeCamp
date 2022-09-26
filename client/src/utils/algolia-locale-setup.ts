@@ -35,8 +35,13 @@ const algoliaIndices = {
     searchPage: 'https://www.freecodecamp.org/news/search/'
   },
   japanese: {
-    name: 'news',
+    name: 'news-ja',
     searchPage: 'https://www.freecodecamp.org/japanese/news/search/'
+  },
+  // TODO: Replace with German news when we have more useful resources on that instance
+  german: {
+    name: 'news',
+    searchPage: 'https://www.freecodecamp.org/news/search/'
   }
 };
 

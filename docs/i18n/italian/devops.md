@@ -197,7 +197,7 @@ Attualmente una versione beta test pubblica è disponibile al seguente indirizzo
 
 Il team di sviluppo fa un merge dei cambiamenti dal ramo `prod-staging` a `prod-current` quando rilascia dei cambiamenti. Il commit superiore dovrebbe essere quello che si vede live sul sito.
 
-È possibile identificare la versione esatta distribuita visitando i registri di compilazione e distribuzione disponibili nella sezione stato. In alternativa puoi scriverci nella [chat room dei contributori](https://chat.freecodecamp.org/channel/contributors) per una conferma.
+È possibile identificare la versione esatta distribuita visitando i registri di compilazione e distribuzione disponibili nella sezione stato. In alternativa puoi scriverci nella [chat room dei contributori](https://discord.gg/PRyKn3Vbay) per una conferma.
 
 ### Limitazioni note
 
@@ -466,7 +466,7 @@ Fare il provisioning delle VM con il codice
 
    ```console
    cd api-server
-   pm2 start "DEBUG=fcc* node lib/production-start.js"  -i max --max-memory-restart 600M --name org
+   pm2 reload ecosystem.config.js
    ```
 
 ### Log e monitoraggio
@@ -537,8 +537,8 @@ Fare provisioning delle VM con il codice
 
    ```console
    npm i -g npm@8
-   npm i -g pm2
-   npm install -g serve
+   npm i -g pm2@4
+   npm install -g serve@13
    pm2 install pm2-logrotate
    pm2 startup
    ```
@@ -555,11 +555,11 @@ Fare provisioning delle VM con il codice
    > Todo: questo setup deve essere spostato a S3 o Azure Blob storage 
    > 
    > ```console
-   >    echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
+   >    echo "serve -c ../serve.json -p 50505 www" > client-start-primary.sh
    >    chmod +x client-start-primary.sh
    >    pm2 delete client-primary
    >    pm2 start  ./client-start-primary.sh --name client-primary
-   >    echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
+   >    echo "serve -c ../serve.json -p 52525 www" > client-start-secondary.sh
    >    chmod +x client-start-secondary.sh
    >    pm2 delete client-secondary
    >    pm2 start  ./client-start-secondary.sh --name client-secondary

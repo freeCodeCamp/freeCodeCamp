@@ -1,7 +1,7 @@
 ---
 id: 5900f36e1000cf542c50fe81
 title: 'Problem 2: Even Fibonacci Numbers'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301838
 dashedName: problem-2-even-fibonacci-numbers
 ---

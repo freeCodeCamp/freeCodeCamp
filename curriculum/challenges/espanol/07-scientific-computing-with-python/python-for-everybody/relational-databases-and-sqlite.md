@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f170b6c005b0e76f08a
-title: Base de datos relaciones y SQLite
+title: Base de datos relacionales y SQLite
 challengeType: 11
 videoId: QlNod5-kFpA
 bilibiliIds:
@@ -10,6 +10,12 @@ bilibiliIds:
 dashedName: relational-databases-and-sqlite
 ---
 
+# --description--
+
+<a href="https://www.sqlite.org/download.html" target="_blank" rel="noopener noreferrer nofollow">Descargar SQLite</a>  
+<a href="https://sqlitebrowser.org/dl/" target="_blank" rel="noopener noreferrer nofollow">Descargar el navegador DB para SQLite</a>  
+<a href="https://www.sqlite.org/famous.html" target="_blank" rel="noopener noreferrer nofollow">uso de SQLite</a>
+
 # --question--
 
 ## --text--
@@ -18,7 +24,7 @@ dashedName: relational-databases-and-sqlite
 
 ## --answers--
 
-index
+índice
 
 ---
 

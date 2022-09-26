@@ -26,7 +26,7 @@ Sigue agregándolos hasta que no existan más errores, y tu archivo de servidor 
 
 Ahora haz lo mismo en tu archivo auth.js con todas las cosas relacionadas con la autenticación como la serialización y la configuración de la estrategia local y bórralas de tu archivo del servidor. Asegúrate de agregar las dependencias y llamar a `auth(app, myDataBase)` en el servidor en el mismo lugar.
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar un ejemplo del proyecto completado [aquí](https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
 
 # --hints--
 

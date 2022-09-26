@@ -1,7 +1,7 @@
 ---
 id: 5900f5241000cf542c510036
 title: '問題 437: フィボナッチ原始根'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302108
 dashedName: problem-437-fibonacci-primitive-roots
 ---

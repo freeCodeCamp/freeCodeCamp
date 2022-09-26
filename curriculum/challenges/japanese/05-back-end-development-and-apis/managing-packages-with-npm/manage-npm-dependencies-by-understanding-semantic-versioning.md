@@ -20,11 +20,11 @@ SemVer を理解しておくと、外部の依存関係を使用するソフト�
 
 # --instructions--
 
-package.json ファイルの依存関係セクションで、 moment の `version` を変更して、MAJOR バージョンを 2、MINOR バージョンを 10、PATCH バージョンを 2 にしてください。
+`package.json` ファイルの依存関係セクションで、`@freecodecamp/example` のバージョンを変更して、MAJOR バージョンを 1 に、MINOR バージョンを 2 に、PATCH バージョンを 13 にしてください。
 
 # --hints--
 
-「dependencies」に「moment」を含める必要があります。
+`"dependencies"` に `"@freecodecamp/example"` を含める必要があります。
 
 ```js
 (getUserInput) =>
@@ -33,8 +33,8 @@ package.json ファイルの依存関係セクションで、 moment の `versio
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -43,7 +43,7 @@ package.json ファイルの依存関係セクションで、 moment の `versio
   );
 ```
 
-「moment」のバージョンを「2.10.2」にする必要があります。
+`"@freecodecamp/example"` のバージョンは `"1.2.13"` である必要があります。
 
 ```js
 (getUserInput) =>
@@ -51,9 +51,9 @@ package.json ファイルの依存関係セクションで、 moment の `versio
     (data) => {
       var packJson = JSON.parse(data);
       assert.equal(
-        packJson.dependencies.moment,
-        '2.10.2',
-        'Wrong version of "moment". It should be 2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        '1.2.13',
+        'Wrong version of "@freecodecamp/example". It should be 1.2.13'
       );
     },
     (xhr) => {

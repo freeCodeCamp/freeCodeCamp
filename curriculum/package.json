@@ -25,16 +25,16 @@
     "delete-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-step",
     "lint": "ts-node --project ../tsconfig.json lint-localized",
     "update-step-titles": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
-    "test": "mocha --delay --exit --reporter progress --bail",
-    "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
+    "test": "ts-node ../node_modules/mocha/bin/mocha --delay --exit --reporter progress --bail",
+    "test:full-output": "cross-env FULL_OUTPUT=true ts-node ../node_modules/mocha/bin/mocha --delay --reporter progress"
   },
   "devDependencies": {
-    "@babel/core": "7.17.10",
+    "@babel/core": "7.19.1",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.17.10",
-    "@babel/preset-typescript": "7.16.7",
-    "@babel/register": "7.17.7",
-    "acorn": "8.7.1",
+    "@babel/preset-env": "7.19.1",
+    "@babel/preset-typescript": "7.18.6",
+    "@babel/register": "7.18.9",
+    "acorn": "8.8.0",
     "acorn-jsx": "5.3.2",
     "babel-plugin-dynamic-import-node": "2.3.3",
     "babel-plugin-lodash": "3.3.4",

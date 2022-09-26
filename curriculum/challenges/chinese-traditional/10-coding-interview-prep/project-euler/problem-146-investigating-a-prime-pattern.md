@@ -1,7 +1,7 @@
 ---
 id: 5900f3fe1000cf542c50ff11
 title: '問題 146：素數模式的研究'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301775
 dashedName: problem-146-investigating-a-prime-pattern
 ---

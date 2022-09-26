@@ -32,6 +32,12 @@ Build `myStr` from the strings `This is the start.` and `This is the end.` using
 
 # --hints--
 
+`myStr` should have a single space character between the two strings.
+
+```js
+assert(/start\. This/.test(myStr));
+```
+
 `myStr` should have a value of the string `This is the start. This is the end.`
 
 ```js

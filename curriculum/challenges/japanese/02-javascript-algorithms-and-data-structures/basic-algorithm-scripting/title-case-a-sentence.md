@@ -1,7 +1,7 @@
 ---
 id: ab6137d4e35944e21037b769
 title: 文章をタイトルケースに変換
-challengeType: 5
+challengeType: 1
 forumTopicId: 16088
 dashedName: title-case-a-sentence
 ---

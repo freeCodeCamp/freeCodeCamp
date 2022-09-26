@@ -1,7 +1,7 @@
 ---
 id: 5900f4c81000cf542c50ffdb
 title: 'Problema 348: Soma de um quadrado e de um cubo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302007
 dashedName: problem-348-sum-of-a-square-and-a-cube
 ---

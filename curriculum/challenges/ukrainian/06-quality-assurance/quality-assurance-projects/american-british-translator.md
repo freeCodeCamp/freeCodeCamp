@@ -8,10 +8,10 @@ dashedName: american-british-translator
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <https://american-british-translator.freecodecamp.rocks/>. Робота над цим проєктом включатиме написання коду, використовуючи один з таких методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a>. Робота над цим проєктом включатиме написання коду, використовуючи один з таких методів:
 
--   Клонувати [цей репозиторій GitHub ](https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/) і частково завершити ваш проєкт.
--   Використати [наш стартовий проєкт Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator), щоб завершити свій проєкт.
+-   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
+-   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Для завершення проєкту, використайте вибраний вами розробник сайту. Переконайтеся, що зберегли усі файли з нашого репозиторію GitHub.
 
 Коли ви завершили, переконайтеся, що ця демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу у поле `Solution Link`. При необхідності, також введіть посилання на джерело коду вашого проєкту у полі `GitHub Link`.

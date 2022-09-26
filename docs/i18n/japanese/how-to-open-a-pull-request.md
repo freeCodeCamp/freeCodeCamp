@@ -14,7 +14,7 @@
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-プルリクエスト (PR) をオープンする際、以下を使用して、その種類、スコープ (任意)、説明を決定することができます。
+Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
 **種類:**
 
@@ -31,14 +31,14 @@
 
 **説明:**
 
-簡潔に (30文字未満) 記述します。PR の説明欄やコメントに詳細情報を追加できます。
+Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
 
 良い PR のタイトルの例としては、次のようなものがあります。
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`
 - `fix(api,client): prevent CORS errors on form submission`
-- `docs(i18n): Chinese translation of local setup`
+- `docs(i18n): fix links to be relative instead of absolute`
 
 ## プルリクエストを提案する
 
@@ -54,7 +54,7 @@
 
 3. ブランチから freeCodeCamp の `main` ブランチへ、プルリクエストを送信します。
 
-4. PR の本文には、行った変更とその理由の詳細情報を記述してください。
+4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
 
    - プルリクエストテンプレートが表示されます。 これはプルリクエストを開く前に行うべきチェックリストです。
 
@@ -76,7 +76,7 @@
 
 モデレーターが内容を見て、フィードバックします。 仲間のモデレーターの時間を尊重し、しばらくお待ちください。 すべてのプルリクエストは、いずれレビューされます。
 
-[フォーラムの 'Contributors' カテゴリ](https://forum.freecodecamp.org/c/contributors) または [Contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) へいつでもお気軽にお問合せください。
+[フォーラムの「Contributors」カテゴリ](https://forum.freecodecamp.org/c/contributors) または [「contributors」チャットルーム](https://discord.gg/PRyKn3Vbay) へいつでもお気軽にお問合せください。
 
 > [!TIP] 他のプルリクエストも提供する場合は、フォークの削除を避けるため、[変更と同期](how-to-setup-freecodecamp-locally.md#ローカルで変更を行う) のガイドラインをご覧になることを推奨します。
 

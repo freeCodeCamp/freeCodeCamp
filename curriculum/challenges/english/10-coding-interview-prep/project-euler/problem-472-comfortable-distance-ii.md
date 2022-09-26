@@ -1,7 +1,7 @@
 ---
 id: 5900f5451000cf542c510057
 title: 'Problem 472: Comfortable Distance II'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302149
 dashedName: problem-472-comfortable-distance-ii
 ---

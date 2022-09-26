@@ -1,7 +1,7 @@
 ---
 id: 5900f38b1000cf542c50fe9e
 title: 'Problema 31: somme di monete'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301965
 dashedName: problem-31-coin-sums
 ---

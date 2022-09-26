@@ -1,15 +1,17 @@
 ---
 id: 5dfa371beacea3f48c6300af
-title: Step 18
+title: Step 19
 challengeType: 0
-dashedName: step-18
+dashedName: step-19
 ---
 
 # --description--
 
 L'aggiunta alla pagina un elemento d'intestazione di rango inferiore, denota l'inizio una nuova sottosezione.
 
-Dopo l'ultimo elemento `h2` del secondo elemento `section`, aggiungi un elemento `h3` con il testo `Things cats love:`.
+Dopo l'ultimo elemento `h2` del secondo elemento `section`, aggiungi un elemento `h3` con il testo:
+
+`Things cats love:`
 
 # --hints--
 

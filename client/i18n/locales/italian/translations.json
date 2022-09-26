@@ -50,7 +50,8 @@
     "reset-lesson": "Resetta questa lezione",
     "run": "Avvia",
     "run-test": "Esegui i test (Ctrl + Invio)",
-    "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code": "Verifica il tuo codice (Ctrl + Invio)",
+    "check-code-2": "Verifica il tuo codice",
     "reset": "Resetta",
     "reset-code": "Resetta tutto il codice",
     "help": "Guida",
@@ -70,7 +71,11 @@
     "start-coding": "Inizia a programmare!",
     "go-to-settings": "Vai alle impostazioni per richiedere la tua certificazione",
     "click-start-course": "Inizia il corso",
-    "click-start-project": "Inizia il progetto"
+    "click-start-project": "Inizia il progetto",
+    "change-language": "Cambia lingua",
+    "cancel-change": "Annulla modifica",
+    "resume-project": "Riprendi progetto",
+    "start-project": "Avvia il progetto"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -101,13 +106,14 @@
   },
   "settings": {
     "share-projects": "Condividi i tuoi progetti non-freeCodeCamp, articoli o pull request accettate.",
-    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
+    "privacy": "Le impostazioni di questa sezione ti permettono di controllare quello che viene mostrato sul tuo portfolio pubblico di freeCodeCamp. Premi salva per salvare le tue modifiche.",
     "data": "Per vedere quali dati teniamo nel tuo account, clicca sul pulsante \"Scarica i tuoi dati\" qui sotto",
     "disabled": "Le tue certificazioni saranno disabilitate, se impostato su privato.",
     "private-name": "Il tuo nome non apparirà sulle certificazioni, se impostato su privato.",
     "claim-legacy": "Una volta che avrai ottenuto le seguenti certificazioni gratuite di freeCodeCamp, sarai in grado di richiedere la {{cert}}:",
     "for": "Impostazioni Account per {{username}}",
     "sound-mode": "Questo aggiunge i piacevoli suoni di una chitarra acustica nel sito. Suonerà mentre scrivi nell'editor, completi sfide, ottieni certificazioni, e altro.",
+    "sound-volume": "Volume Campfire:",
     "username": {
       "contains invalid characters": "Il nome utente \"{{username}}\" contiene caratteri non validi",
       "is too short": "Il nome utente \"{{username}}\" è troppo corto",
@@ -143,7 +149,8 @@
       "my-timeline": "La mia cronologia",
       "my-donations": "Le mie donazioni",
       "night-mode": "Modalità Notturna",
-      "sound-mode": "Modalità Campfire"
+      "sound-mode": "Modalità Campfire",
+      "keyboard-shortcuts": "Abilita le scorciatoie da tastiera"
     },
     "headings": {
       "certs": "Certificazioni",
@@ -269,7 +276,7 @@
     "solution-link": "Link alla soluzione",
     "github-link": "Link GitHub",
     "submit-and-go": "Invia e vai alla prossima sfida",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "Congratulazioni, hai superato i test. Invia in tuo codice per continuare.",
     "i-completed": "Ho completato questa sfida",
     "test-output": "Il risultato del tuo test andrà qui",
     "running-tests": "// test in corso",
@@ -280,14 +287,14 @@
     "percent-complete": "{{percent}}% completato",
     "tried-rsa": "Se hai già provato il metodo <0>Leggi-Cerca-Chiedi</0>, allora puoi chiedere aiuto sul forum freeCodeCamp.",
     "rsa": "Leggi, cerca, chiedi",
+    "rsa-forum": "<strong>Prima di creare un nuovo post</strong> per favore, controlla se <0>la tua domanda ha già una risposta sul forum</0>.",
     "reset": "Vuoi resettare questa lezione?",
     "reset-warn": "Sei sicuro di voler resettare questa lezione? Gli editor e i test saranno resettati.",
     "reset-warn-2": "Questa operazione non potrà essere annullata",
     "scrimba-tip": "Suggerimento: Se il mini-browser copre il codice, fare clic e trascinalo per spostarlo. Inoltre, sentiti libero di fermare e modificare il codice nel video in qualsiasi momento.",
     "chal-preview": "Anteprima della sfida",
     "cert-map-estimates": {
-      "certs": "Certificazione {{title}} (300 ore)",
-      "coding-prep": "{{title}} (migliaia di ore di sfide)"
+      "certs": "Certificazione {{title}}"
     },
     "editor-tabs": {
       "info": "Informazioni",
@@ -296,6 +303,7 @@
       "restart": "Inizia da capo",
       "restart-step": "Ricomincia step",
       "console": "Console",
+      "instructions": "Istruzioni",
       "notes": "Note",
       "preview": "Anteprima"
     },
@@ -310,13 +318,14 @@
     "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1.",
     "completed": "Completato",
     "not-started": "Non iniziato",
-    "hint": "Hint",
+    "hint": "Suggerimento",
     "test": "Test",
-    "sorry-try-again": "Sorry, your code does not pass. Try again.",
-    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
-    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
-    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
+    "sorry-try-again": "Il tuo codice non è corretto. Riprova.",
+    "sorry-keep-trying": "Il tuo codice non è corretto. Continua a provare.",
+    "sorry-getting-there": "Il tuo codice non è corretto. Ci sei quasi.",
+    "sorry-hang-in-there": "Il tuo codice non è corretto. Tieni duro.",
+    "sorry-dont-giveup": "Il tuo codice non è corretto. Non arrenderti.",
+    "challenges-completed": "{{completedCount}} di {{totalChallenges}} sfide completate"
   },
   "donate": {
     "title": "Supporta il nostro no profit",
@@ -324,7 +333,6 @@
     "redirecting": "Reindirizzamento...",
     "thanks": "Grazie per la donazione",
     "thank-you": "Grazie per essere un sostenitore.",
-    "thank-you-2": "Grazie per essere un sostenitore di freeCodeCamp. Al momento hai una donazione ricorrente.",
     "additional": "Puoi effettuare una donazione una tantum aggiuntiva di qualsiasi importo utilizzando questo link: <0>{{url}}</0>",
     "help-more": "Aiutaci a fare di più",
     "error": "Qualcosa è andato storto con la tua donazione.",
@@ -443,7 +451,10 @@
     "and": "e",
     "change-theme": "Accedi per modificare il tema.",
     "translation-pending": "Aiutaci a tradurlo",
-    "certification-project": "Progetto della certificazione"
+    "certification-project": "Progetto della certificazione",
+    "iframe-preview": "Anteprima {{title}}",
+    "iframe-alert": "Solitamente questo link ti porterebbe su un altro sito web! Funziona. Questo è un link per {{externalLink}}",
+    "document-notfound": "documento non trovato"
   },
   "icons": {
     "gold-cup": "Coppa d'Oro",
@@ -452,8 +463,10 @@
     "donate": "Dona con PayPal",
     "fail": "Test Fallito",
     "not-passed": "Non Superato",
+    "waiting": "Attendi",
     "passed": "Superato",
-    "hint": "Hint",
+    "failed": "Non corretto",
+    "hint": "Suggerimento",
     "heart": "Cuore",
     "initial": "Iniziale",
     "info": "Informazioni introduttive",
@@ -474,8 +487,17 @@
     "last-page": "Va all'ultima pagina",
     "primary-nav": "primario",
     "breadcrumb-nav": "percorso",
-    "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "submit": "Usa Ctrl + Invio per inviare.",
+    "running-tests": "Test in corso",
+    "hide-preview": "Nascondi l'anteprima",
+    "move-preview-to-new-window": "Sposta l'anteprima in una nuova finestra e selezionala",
+    "move-preview-to-main-window": "Sposta l'anteprima in questa finestra e chiudi la finestra di anteprima esterna",
+    "close-external-preview-window": "Chiudi la finestra di anteprima esterna",
+    "show-preview": "Mostra l'anteprima in questa finestra",
+    "open-preview-in-new-window": "Apri l'anteprima in una nuova finestra e selezionala",
+    "step": "Step",
+    "steps": "Step",
+    "steps-for": "Step per {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
@@ -681,5 +703,16 @@
     "delete-p3": "Avrai bisogno di creare un nuovo token per salvare progressi futuri nelle sezioni del curriculum che usano una macchina virtuale.",
     "no-thanks": "No grazie, vorrei tenere il mio token",
     "yes-please": "Sì per favore, vorrei eliminare il mio token"
+  },
+  "shortcuts": {
+    "title": "Scorciatoie da tastiera",
+    "table-header-action": "Azione",
+    "table-header-key": "Tasti",
+    "navigation-mode": "Modalità Di Navigazione",
+    "execute-challenge": "Esegui Sfida",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus sul pannello delle istruzioni",
+    "navigate-previous": "Passa all'esercizio precedente",
+    "navigate-next": "Passa all'esercizio successivo"
   }
 }

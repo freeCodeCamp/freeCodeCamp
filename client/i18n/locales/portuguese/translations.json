@@ -50,7 +50,8 @@
     "reset-lesson": "Reiniciar esta aula",
     "run": "Executar",
     "run-test": "Execute os testes (Ctrl + Enter)",
-    "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code": "Verifique seu código (Ctrl + Enter)",
+    "check-code-2": "Verifique seu código",
     "reset": "Redefinir",
     "reset-code": "Redefinir todo o código",
     "help": "Ajuda",
@@ -70,7 +71,11 @@
     "start-coding": "Comece a programar!",
     "go-to-settings": "Vá para as configurações para solicitar sua certificação",
     "click-start-course": "Iniciar o curso",
-    "click-start-project": "Iniciar o projeto"
+    "click-start-project": "Iniciar o projeto",
+    "change-language": "Alterar idioma",
+    "cancel-change": "Cancelar alteração",
+    "resume-project": "Retomar projeto",
+    "start-project": "Iniciar o projeto"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -101,13 +106,14 @@
   },
   "settings": {
     "share-projects": "Compartilhe seus projetos que não sejam do freeCodeCamp, artigos ou pull requests aceitas.",
-    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
+    "privacy": "As configurações nesta seção permitem que você controle o que é mostrado no seu portfólio público do freeCodeCamp. Pressione Save para salvar suas alterações.",
     "data": "Para ver quais dados mantemos sobre sua conta, clique no botão \"Baixar seus dados\" abaixo",
     "disabled": "Suas certificações serão desabilitadas ao configurar como privado.",
     "private-name": "Seu nome não aparecerá nas certificações, se isto estiver definido como privado.",
     "claim-legacy": "Após receber os seguintes certificados do freeCodeCamp, você poderá reivindicar o(s) {{cert}}:",
     "for": "Configurações de conta para {{username}}",
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
+    "sound-volume": "Volume do modo fogueira:",
     "username": {
       "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
       "is too short": "O nome de usuário \"{{username}}\" é muito curto",
@@ -143,7 +149,8 @@
       "my-timeline": "Minha linha do tempo",
       "my-donations": "Minhas doações",
       "night-mode": "Modo noturno",
-      "sound-mode": "Modo fogueira"
+      "sound-mode": "Modo fogueira",
+      "keyboard-shortcuts": "Habilitar teclas de atalho"
     },
     "headings": {
       "certs": "Certificações",
@@ -269,7 +276,7 @@
     "solution-link": "Link da solução",
     "github-link": "Link do GitHub",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "Parabéns, o código passou. Envie o código para continuar.",
     "i-completed": "Já completei este desafio",
     "test-output": "O resultado do seu código vai aparecer aqui",
     "running-tests": "// executando testes",
@@ -280,14 +287,14 @@
     "percent-complete": "{{percent}}% completo",
     "tried-rsa": "Se você já tentou usar o método de <0>ler, pesquisar e perguntar</0>, então pode pedir ajuda no fórum freeCodeCamp.",
     "rsa": "Leia, pesquise, pergunte",
+    "rsa-forum": "<strong>Antes de fazer uma nova publicação</strong>, certifique-se de que sua pergunta <0>ainda não foi respondida no fórum</0>.",
     "reset": "Reiniciar esta aula?",
     "reset-warn": "Tem certeza de que deseja reiniciar esta lição? Os editores e testes serão reiniciados.",
     "reset-warn-2": "Isto não pode ser desfeito",
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
     "chal-preview": "Pré-visualização do desafio",
     "cert-map-estimates": {
-      "certs": "Certificação {{title}} (300 horas)",
-      "coding-prep": "{{title}} (milhares de horas de desafios)"
+      "certs": "Certificação {{title}}"
     },
     "editor-tabs": {
       "info": "Informações",
@@ -296,6 +303,7 @@
       "restart": "Reiniciar",
       "restart-step": "Reiniciar etapa",
       "console": "Console",
+      "instructions": "Instruções",
       "notes": "Observações",
       "preview": "Pré-visualizar"
     },
@@ -310,13 +318,14 @@
     "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as histórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1.",
     "completed": "Concluído",
     "not-started": "Não iniciado",
-    "hint": "Hint",
-    "test": "Test",
-    "sorry-try-again": "Sorry, your code does not pass. Try again.",
-    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
-    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
-    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
+    "hint": "Dica",
+    "test": "Teste",
+    "sorry-try-again": "Desculpe, seu código não passou nos testes. Tente novamente.",
+    "sorry-keep-trying": "Desculpe, seu código não passou nos testes. Continue tentando.",
+    "sorry-getting-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
+    "sorry-hang-in-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
+    "sorry-dont-giveup": "Desculpe, seu código não passou nos testes. Não desista.",
+    "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafios concluídos"
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -324,7 +333,6 @@
     "redirecting": "Redirecionando...",
     "thanks": "Agradecemos por sua doação",
     "thank-you": "Obrigado pelo seu apoio.",
-    "thank-you-2": "Obrigado por apoiar o freeCodeCamp. Você tem uma doação recorrente registrada.",
     "additional": "Você pode fazer uma doação adicional de qualquer valor usando este link: <0>{{url}}</0>",
     "help-more": "Ajude-nos a fazer mais",
     "error": "Algo deu errado com a sua doação.",
@@ -443,7 +451,10 @@
     "and": "e",
     "change-theme": "Faça login para mudar o tema.",
     "translation-pending": "Ajude-nos a traduzir",
-    "certification-project": "Projeto de certificação"
+    "certification-project": "Projeto de certificação",
+    "iframe-preview": "Visualização de {{title}}",
+    "iframe-alert": "Normalmente, este link levaria você para outro site da web! Funciona. Esse é um link para: {{externalLink}}",
+    "document-notfound": "documento não encontrado"
   },
   "icons": {
     "gold-cup": "Taça de ouro",
@@ -452,8 +463,10 @@
     "donate": "Doar com PayPal",
     "fail": "Exame não concluído com sucesso",
     "not-passed": "Não aprovado",
+    "waiting": "Aguardando",
     "passed": "Aprovado",
-    "hint": "Hint",
+    "failed": "Falhou",
+    "hint": "Dica",
     "heart": "Coração",
     "initial": "Inicial",
     "info": "Informações introdutórias",
@@ -474,8 +487,17 @@
     "last-page": "Ir para a última página",
     "primary-nav": "primário",
     "breadcrumb-nav": "breadcrumb",
-    "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "submit": "Use Ctrl + Enter para enviar.",
+    "running-tests": "Executando testes",
+    "hide-preview": "Ocultar a visualização",
+    "move-preview-to-new-window": "Mover a visualização para uma nova janela e focá-la",
+    "move-preview-to-main-window": "Mover a visualização para esta janela e fechar a janela de visualização externa",
+    "close-external-preview-window": "Fechar a janela de visualização externa",
+    "show-preview": "Mostrar a visualização nesta janela",
+    "open-preview-in-new-window": "Abrir a visualização em uma nova janela e focá-la",
+    "step": "Passo",
+    "steps": "Passos",
+    "steps-for": "Passos para {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",
@@ -681,5 +703,16 @@
     "delete-p3": "Você precisa criar um novo token para salvar seu progresso futuro nas seções de currículo que usam uma máquina virtual.",
     "no-thanks": "Não, obrigado. Eu gostaria de manter meu token",
     "yes-please": "Sim, eu gostaria de excluir meu token"
+  },
+  "shortcuts": {
+    "title": "Atalhos do teclado",
+    "table-header-action": "Ação",
+    "table-header-key": "Tecla(s)",
+    "navigation-mode": "Modo de navegação",
+    "execute-challenge": "Executar desafio",
+    "focus-editor": "Foco no editor",
+    "focus-instructions-panel": "Foco no painel de instruções",
+    "navigate-previous": "Navegar para o exercício anterior",
+    "navigate-next": "Navegar para o próximo exercício"
   }
 }

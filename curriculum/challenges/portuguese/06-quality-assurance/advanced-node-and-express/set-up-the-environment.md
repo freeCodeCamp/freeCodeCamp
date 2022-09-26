@@ -10,7 +10,7 @@ dashedName: set-up-the-environment
 
 Os desafios a seguir farão uso do arquivo `chat.pug`. Assim, em seu arquivo `routes.js`, adicione uma rota de GET apontando para `/chat`, que faz uso de `ensureAuthenticated` e renderiza `chat.pug`, com `{ user: req.user }` passado como argumento para a resposta. Agora, altere a rota `/auth/github/callback` existente para definir `req.session.user_id = req.user.id`e redirecione para `/chat`.
 
-Adicione `socket.io@~2.3.0` como uma dependência e solicite/instancie-o no servidor definido como `http` (que vem integrado ao Node.js), conforme segue:
+`socket.io@~2.3.0` já foi adicionado como uma dependência, então solicite/instancie-o no servidor com `http` (que vem integrado ao Node.js), conforme segue:
 
 ```javascript
 const http = require('http').createServer(app);
@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 Agora que o servidor *http* está montado na aplicação do *Express*, você precisa escutar o servidor *http*. Altere a linha com `app.listen` para `http.listen`.
 
-A primeira coisa que precisa ser tratada é escutar uma nova conexão do client. A palavra-chave <dfn>on</dfn> faz isso - escuta um evento específico. Ela requer 2 argumentos: uma string contendo o título do evento que é emitido e uma função com a qual os dados são passados. No caso do nosso listener de conexão, usamos o *socket* para definir os dados no segundo argumento. Um socket é um client individual que está conectado.
+A primeira coisa que precisa ser tratada é escutar uma nova conexão do client. A palavra-chave <dfn>on</dfn> faz isso - escuta um evento específico. Ela requer 2 argumentos: uma string contendo o título do evento que é emitido e uma função pela qual os dados são passados. No caso do nosso listener de conexão, usamos o *socket* para definir os dados no segundo argumento. Um socket é um client individual que está conectado.
 
 Para escutar as conexões do servidor, adicione o seguinte na sua conexão do banco de dados:
 
@@ -42,7 +42,7 @@ Agora, tente carregar o aplicativo e autentique-se. Você deve ver no console do
 
 **Observação:** `io()` só funciona ao se conectar a um socket hospedado no mesmo url/servidor. Para se conectar a um socket externo hospedado em outro lugar, você usaria `io.connect('URL');`.
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1).
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

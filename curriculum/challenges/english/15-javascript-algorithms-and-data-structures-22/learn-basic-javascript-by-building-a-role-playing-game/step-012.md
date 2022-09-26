@@ -133,9 +133,11 @@ let currentWeapon = 0;
 let fighting;
 let monsterHealth;
 let inventory = ["stick"];
+--fcc-editable-region--
 
 const button1 = document.querySelector('#button1');
   
+--fcc-editable-region--
 </script>
 ```
 

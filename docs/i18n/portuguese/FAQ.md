@@ -10,9 +10,9 @@ O freeCodeCamp é executado em uma stack de JavaScript moderna. Se estiver inter
 
 Sim. Você pode contribuir com qualquer um dos mais de 30 idiomas disponíveis em nossa plataforma de tradução.
 
-Temos traduções enviadas por usuários ao vivo em alguns idiomas. Pretendemos traduzir o freeCodeCamp para vários idiomas. Você pode ler mais sobre isso em nosso [anúncio aqui](https://www.freecodecamp.org/news/world-language-translation-effort).
+Temos traduções enviadas por usuários ao vivo em alguns idiomas. Pretendemos traduzir o freeCodeCamp para vários idiomas. Você pode ler mais sobre isso em nosso [anúncio aqui](https://www.freecodecamp.org/portuguese/news/como-ajudar-a-traduzir-o-freecodecamp-para-seu-idioma/).
 
-Se você está interessado em contribuir com as traduções, certifique-se de [ler este guia](how-to-translate-files.md) primeiro.
+If you are interested in contributing to translations please make sure you [read this guide](how-to-translate-files.md) first.
 
 ### Posso contribuir com artigos para o editorial do freeCodeCamp ou com vídeos para o canal do YouTube do CodeCamp?
 
@@ -24,7 +24,7 @@ Para nos ajudar a fazer vídeos educacionais para nosso canal do YouTube, você 
 
 ### Como posso relatar um novo erro?
 
-Se você acha que encontrou um erro, primeiro leia o artigo ["Socorro, encontrei um erro"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) e siga suas instruções.
+Se você acha que encontrou um erro, primeiro leia o artigo ["Como relatar um erro"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) e siga suas instruções.
 
 Se você está confiante de que é um novo erro, vá em frente e crie uma nova issue no GitHub. Certifique-se de incluir o máximo de informações possível para que possamos reproduzir o erro. Temos um modelo predefinido de issue para ajudar você.
 
@@ -63,7 +63,7 @@ Tipicamente, não atribuímos issues para ninguém além de contribuidores de lo
 1. É muito provável que façamos o merge do primeiro pull request que resolve a issue.
 2. No caso de vários colaboradores abrindo um pull request para a mesma issue, ao mesmo tempo, daremos prioridade ao pull request que melhor resolve a issue. Algumas coisas que consideramos:
    - Você incluiu testes?
-   - Você usou todos os casos de uso?
+   - Did you catch all use cases?
    - Você garantiu que todos os testes passaram e confirmou que tudo está funcionando localmente?
 3. Por último, damos prioridade aos pull requests que seguem as nossas orientações recomendadas.
    - Você seguiu a checklist do pull request?
@@ -78,7 +78,7 @@ Primeiro e mais importante, precisamos que você seja um participante ativo da c
 Aqui estão alguns caminhos recomendados para algumas de nossas plataformas:
 
 - Para ser um moderador do **Discord/Chat**, tenha uma presença ativa em nosso chat e compromissos positivos com os outros, ao mesmo tempo em que aprende e pratica como lidar com conflitos em potencial que possam surgir.
-- Para ser um moderador do **fórum**, similar a um moderador de chat, tenha uma presença ativa e interaja com as outras pessoas que publicam no fórum, apoie-os em sua jornada de aprendizado e dê feedback quando perguntarem. Dê uma olhada no [Manual do líder do subfórum](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) para obter mais informações.
+- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Dê uma olhada no [Manual do líder do subfórum](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) para obter mais informações.
 - Para ser um moderador do **GitHub**, ajude a processar as issues levantadas no GitHub para ver se elas são válidas e (idealmente) tente propor soluções para essas issues a serem resolvidas por outras pessoas (ou por você mesmo).
 
 No conjunto, seja respeitoso com os outros. Somos seres humanos de todo o mundo. Tendo isso em mente, considere também usar uma linguagem de incentivo ou de apoio e esteja atento à comunicação intercultural.
@@ -92,7 +92,7 @@ Dê uma olhada no nosso [Manual do Moderador](moderator-handbook.md) para obter 
 **Fique à vontade para pedir ajuda em:**
 
 - A categoria `Contributors` do [fórum da nossa comunidade](https://forum.freecodecamp.org/c/contributors).
-- O canal `#Contributors` em nosso [servidor](https://chat.freecodecamp.org/channel/contributors).
+- O canal `#Contributors` em nosso [servidor](https://discord.gg/PRyKn3Vbay).
 
 Estamos animados em ajudar você a contribuir com qualquer tópico que desejar. Se você nos perguntar algo relacionado às issues, vamos ficar felizes em esclarecer. Certifique-se de pesquisar sua pergunta antes de postar uma nova.
 

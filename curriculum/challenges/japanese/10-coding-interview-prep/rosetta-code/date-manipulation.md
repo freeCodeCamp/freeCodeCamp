@@ -1,7 +1,7 @@
 ---
 id: 5966c21cf732a95f1b67dd28
 title: 日付操作
-challengeType: 5
+challengeType: 1
 forumTopicId: 302244
 dashedName: date-manipulation
 ---

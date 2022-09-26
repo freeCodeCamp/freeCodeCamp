@@ -1,45 +1,37 @@
-# Courses VSCode Extension
+# VSCode 拡張機能「Courses」について
 
-This details the maintenance guidelines for the [freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension) repository which contains the source code for the [freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses) extension.
+ここでは、[freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension) リポジトリのメンテナンス方針について説明します。このリポジトリには、[freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses) 拡張機能のソースコードが含まれています。
 
-## Publishing the Extension
+## 拡張機能を公開する
 
-A GitHub Action automagically publishes the extension to the Visual Studio Marketplace, on pushes to the `prod` branch.
+A GitHub Action automagically publishes the extension to the Visual Studio Marketplace, on the release of a new GitHub Release.
 
-Ensure the `main` branch is checked out.
-
-```bash
-git checkout main
-```
-
-Update the local repository with `upstream`, and reset `main`.
+1. Package a new version of the extension:
 
 ```bash
-git fetch upstream
-git reset --hard upstream/main
+npm run pack -- <tag_type>
 ```
 
-Checkout the `prod` branch.
+Where `<tag_type>` is one of: `major`, `minor`, `patch`.
+
+2. Push the new version to `main`:
 
 ```bash
-git checkout prod
+git commit -am "<tag_type>(<version>): <description>"
+git push
 ```
 
-Merge the commits wanted for deployment into `prod`.
+Optionally, you can push directly to `upstream/main`, but opening a new PR is recommended for a sanity check.
 
-```bash
-git merge main
-```
+3. Create a new GitHub Release using the GitHub UI:
 
-Push the local branch to `upstream`.
+- Correctly increment the version number, when creating a new tag.
+- Upload the `.vsix` file with the release.
+- Publish the release, and confirm the action succeeded.
 
-```bash
-git push upstream
-```
+> [!NOTE] Creating a release requires write access to the `freeCodeCamp/courses-vscode-extension` repository.
 
-> [!NOTE] Pushing to `upstream` requires write access to the `freeCodeCamp/courses-vscode-extension` repository.
-
-## Manually Publishing the Extension
+## 拡張機能を手動で公開する
 
 A manual upload to the Visual Studio Marketplace can be achieved, by following these steps:
 

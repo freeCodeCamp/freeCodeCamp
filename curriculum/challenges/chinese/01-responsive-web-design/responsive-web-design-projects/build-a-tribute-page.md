@@ -24,6 +24,8 @@ dashedName: build-a-tribute-page
 
 完成需求并通过下面的所有测试来完成这个项目。 赋予它你自己的个人风格。 编程愉快！
 
+**注意：** 请在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以链接你的样式表并应用你的 CSS
+
 # --hints--
 
 你的页面应该包含一个 `main` 元素，且它有一个值为`main` 的`id`属性。
@@ -145,7 +147,7 @@ const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
-你的 `#image` 元素应该具有 `max-width` 值为 `100%`。
+你的 `#image` 应该具有 `max-width` 值为 `100%`。
 
 ```js
 const img = document.getElementById('image');
@@ -154,7 +156,7 @@ const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
-你的 `#image` 元素应该具有 `height` 值为 `auto`。
+你的 `#image` 应该具有 `height` 值为 `auto`。
 
 ```js
 // taken from the testable-projects repo
@@ -168,7 +170,7 @@ img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
 assert(heightValue === 'auto')
 ```
 
-你的 `#image` 元素应该在其父元素内居中。
+你的 `#image` 应该在其父元素内居中。
 
 ```js
 // taken from the testable-projects repo

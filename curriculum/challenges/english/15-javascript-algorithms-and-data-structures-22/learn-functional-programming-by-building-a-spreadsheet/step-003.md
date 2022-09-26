@@ -59,9 +59,11 @@ assert(add(1, 2) === 3 && add(100, 2000) === 2100);
 ```html
 <script>
 
+--fcc-editable-region--
 function add(x, y) {
 
 }
+--fcc-editable-region--
 
 const infixToFunction = {};
 

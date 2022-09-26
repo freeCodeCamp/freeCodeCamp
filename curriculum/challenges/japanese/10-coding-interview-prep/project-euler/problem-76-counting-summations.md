@@ -1,7 +1,7 @@
 ---
 id: 5900f3b81000cf542c50fecb
 title: '問題 76: 和を数え上げる'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302189
 dashedName: problem-76-counting-summations
 ---

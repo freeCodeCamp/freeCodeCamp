@@ -1,7 +1,7 @@
 ---
 id: 5900f4621000cf542c50ff75
 title: 'Problema 246: Tangenti a un ellisse'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301893
 dashedName: problem-246-tangents-to-an-ellipse
 ---

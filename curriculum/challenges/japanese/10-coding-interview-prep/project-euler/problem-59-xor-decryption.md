@@ -1,7 +1,7 @@
 ---
 id: 5900f3a81000cf542c50feba
 title: '問題 59: XOR 復号'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302170
 dashedName: problem-59-xor-decryption
 ---

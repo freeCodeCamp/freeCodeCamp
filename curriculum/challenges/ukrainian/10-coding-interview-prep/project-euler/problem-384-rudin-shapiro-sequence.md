@@ -1,7 +1,7 @@
 ---
 id: 5900f4ed1000cf542c50fffe
 title: 'Завдання 384: послідовність Рудіна-Шапіро'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302048
 dashedName: problem-384-rudin-shapiro-sequence
 ---

@@ -7,9 +7,9 @@
 カリキュラム内容を説明する際に使用する用語がいくつかあります。
 
 - `certification`: この場合、ユーザーが求める実際の認定講座を意味します。 これは、スーパーブロック名とは別のものです。
-- `superBlock`: スーパーブロックは、チャレンジの最上位レベルのコレクションです。 各スーパーブロックは、カリキュラム内の各認定講座に相当します (例:  レスポンシブ Web デザイン)。
-- `block`: ブロックは、スーパーブロック内のセクションです。 ブロックは、特定の認定講座のチャレンジグループに相当します (例: HTML と HTML5 の基礎)。
-- `challenge`: チャレンジは、カリキュラム内の単一のレッスンです (例:  はじめての HTML 要素)
+- `superBlock`: スーパーブロックは、チャレンジの最上位レベルのコレクションです。 Each superblock corresponds to a certification in the curriculum (e.g. Responsive Web Design).
+- `block`: ブロックは、スーパーブロック内のセクションです。 A block corresponds to a group of challenges in a given certification (e.g. Basic HTML and HTML5)
+- `challenge` : A challenge is a single lesson within the curriculum (e.g. Say Hello to HTML Elements)
 
 ## ファイルツリー
 
@@ -46,7 +46,7 @@ curriculum/
 1. フォルダの `meta.json` ファイル内で、`name`、`dashedName`、`challengeOrder` の値を新しい認定講座名に変更します。
 1. `curriculum/challenges/english/12-certificate` 内で、`{superBlock}-certificate` フォルダ名と、その中の YAML ファイル名を変更します。
 1. YAML ファイルの `title` 名を変更します。
-1. 残りのカリキュラム言語について、手順 3 に従いファイル名とフォルダ名を変更します。
+1. Rename the file and folder from step 3 for the rest of the curriculum languages.
 1. `client/src/redux/index.ts` を更新して、正しい `title` を使用してください。
 1. 必要に応じて、同じファイル内のスーパーブロックの `certSlug` を更新します。**注:** `certSlug` 名を変更すると、認定講座の URL が変更されるため、慎重に変更します。
 1. `client/src/resources/cert-and-project-map.ts` 内の `title` を新しい値に更新してください。**注:** ここで `title` を変更すると、関連する認定講座のスーパーブロックのページ が **壊れます**。 そのページは、スーパーブロックのタイトルに依存しており、認定講座タイトルと一致します。 スーパーブロック名も同時に変更したい場合があるからです。
@@ -60,10 +60,10 @@ curriculum/
 
 > [!NOTE] スーパーブロック名を変更すると、新しいフォルダ名がパスとして使用され、「正しい」フォルダ名とみなされます。 その変更を反映するために、その他のすべての値を更新する必要があります。
 
-スーパーブロック名は共有されており、スーパーブロック名を変更する際、認定講座名と `{superBlock}-projects` ブロック名を変更することも検討するでしょう。 以下は、スーパーブロック名のみを変更するための手順です。
+Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all share a name. 以下は、スーパーブロック名のみを変更するための手順です。
 
 1. スーパーブロックのフォルダ名を `curriculum/challenges/english` ディレクトリに変更します。
-1. _他の_すべての `curriculum/challenges/{language}` ディレクトリのスーパーブロックフォルダ名を変更します。
+1. _他の_ すべての `curriculum/challenges/{language}` ディレクトリのスーパーブロックフォルダ名を変更します。
 1. スーパーブロック内の各ブロックについて、`meta.json` ファイル内の `superBlock` の値をその dashedName に更新します。 ここでは、フォルダ名を変更する必要はありません。 ブロック名変更時に、フォルダ名を変更します。
 1. `client/src/pages/learn` 内のスーパーブロックのフォルダ名を変更します。
 1. 上記フォルダの `index.md` ファイルを更新し、`title` と `superBlock` の値を新しい名前に変更します。

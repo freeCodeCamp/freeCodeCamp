@@ -119,12 +119,14 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 
+--fcc-editable-region--
 const locations = [
   {
     name: "town square",
     "button text": ["Go to store", "Go to cave", "Fight dragon"]
   }
 ];
+--fcc-editable-region--
 
 // initialize buttons
 button1.onclick = goStore;

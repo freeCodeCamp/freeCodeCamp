@@ -127,6 +127,7 @@ const evalFormula = x => {
     : evalFormula(functionExpanded);
 };
 
+--fcc-editable-region--
 window.onload = () => {
   const container = document.getElementById("container");
   const createLabel = name => {
@@ -139,6 +140,7 @@ window.onload = () => {
   letters.forEach(createLabel);
   range(1, 99);
 };
+--fcc-editable-region--
 
 
 </script>

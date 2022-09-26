@@ -86,7 +86,12 @@ function FormFields(props: FormFieldsProps): JSX.Element {
               return (
                 <FormGroup key={key} className='embedded'>
                   {type === 'hidden' ? null : (
-                    <ControlLabel htmlFor={key}>{label}</ControlLabel>
+                    <ControlLabel htmlFor={key}>
+                      {label}
+                      {required.includes(name) && (
+                        <span className='required-star'>*</span>
+                      )}
+                    </ControlLabel>
                   )}
                   <FormControl
                     componentClass={type === 'textarea' ? type : 'input'}

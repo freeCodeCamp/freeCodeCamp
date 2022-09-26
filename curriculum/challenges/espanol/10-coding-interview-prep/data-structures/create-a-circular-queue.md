@@ -1,6 +1,6 @@
 ---
 id: 587d8255367417b2b2512c75
-title: Create a Circular Queue
+title: Crear un Cola Circular
 challengeType: 1
 forumTopicId: 301625
 dashedName: create-a-circular-queue
@@ -8,9 +8,9 @@ dashedName: create-a-circular-queue
 
 # --description--
 
-In this challenge you will be creating a Circular Queue. A circular queue is a queue that writes to the end of a collection then begins overwriting itself at the beginning of the collection. This type of data structure is useful in certain situations. For example, a circular queue can be used for streaming media. Once the queue is full, new media data will overwrite old data.
+En este desafío crearás un cola circular. Una cola circular es una cola que escribe al final de una colección luego comienza a sobreecribirse al principio de la colección. Este tipo de estructura de datos es útil en ciertas situaciones. Por ejemplo, una cola circular puede ser usada para streaming de medios. Una vez que la cola esté llena, los nuevos datos de multimedia reescribirán a los datos antiguos.
 
-A good way to illustrate this concept is with an array of length `5`:
+Una buena forma de ilustrar este concepto es con un arreglo de longitud `5`:
 
 ```js
 [null, null, null, null, null]
@@ -18,7 +18,7 @@ A good way to illustrate this concept is with an array of length `5`:
  ^Write @ 0
 ```
 
-Here the read and write are both at position `0`. Now the queue gets 3 new records `a`, `b`, and `c`. Our queue now looks like:
+Aquí la lectura y escritura están ambos en la posición `0`. Ahora la cola obtiene 3 nuevos registros `a`,`b`, y `c`. Nuestra cola ahora luce así:
 
 ```js
 [a, b, c, null, null]
@@ -26,7 +26,7 @@ Here the read and write are both at position `0`. Now the queue gets 3 new recor
           ^Write @ 3
 ```
 
-As the read head reads, it can remove values or keep them:
+Como la lectura lee el encabezado, puede eliminar los valores o mantenerlos:
 
 ```js
 [null, null, null, null, null]
@@ -34,7 +34,7 @@ As the read head reads, it can remove values or keep them:
                    ^Write @ 3
 ```
 
-Now we write the values `d`, `e`, and `f` to the queue. Once the write reaches the end of the array it loops back to the beginning:
+Ahora escribimos los valores `d`,`e`, y `f` a la cola. Una vez que la escritura alcance el final del arreglo vuelve al inicio:
 
 ```js
 [f, null, null, d, e]
@@ -42,21 +42,21 @@ Now we write the values `d`, `e`, and `f` to the queue. Once the write reaches t
     ^Write @ 1
 ```
 
-This approach requires a constant amount of memory but allows files of a much larger size to be processed.
+Esta aproximación requiere una constante cantidad de memoria pero permite procesar archivos de un tamaño muy grande.
 
 # --instructions--
 
-In this challenge we will implement a circular queue. The circular queue should provide `enqueue` and `dequeue` methods which allow you to read from and write to the queue. The class itself should also accept an integer argument which you can use to specify the size of the queue when created. We've written the starting version of this class for you in the code editor.
+En este desafío implementaremos una cola circular. La cola circular debe proporcionar los métodos `enqueue` y `dequeue` que permitan leer y escribir en la cola. La clase misma debe también aceptar un argumento entero el cual puedes usar para especificar el tamaño de la cola cuado sea creada. Hemos escrito la versión inicial de esta clase para tí en el editor de código.
 
-When you enqueue items to the queue, the write pointer should advance forward and loop back to the beginning once it reaches the end of the queue. The `enqueue` method should return the item you enqueued if it is successful; otherwise it will return `null`.
+Cuando añades elementos a la cola, el puntero de escritura debe avazar hacia adelante y volver al inicio una vez que llegue al final de la cola. El método `enqueue` debe devolver el elemento que añadido a la cola si es exitoso; de lo contrario devolverá `null`.
 
-Likewise, the read pointer should advance forward as you dequeue items. When you dequeue an item, that item should be returned. If you cannot dequeue an item, you should return `null`.
+De la misma forma, el puntero de lectura debe avanzar hacia adelante mientras elimines elementos de la cola. Cuando elimines un elemento de la cola, ese elemento debe ser devuelto. Si tu no puedes eliminar el elemento de la cola, debes devolver `null`.
 
-The write pointer should not be allowed to move past the read pointer (our class won't let you overwrite data you haven't read yet) and the read pointer should not be able to advance past data you have written.
+El puntero de escritura no debe sobrepasar el puntero de lectura ( nuestra clase no permitirá sobreescribir datos sin haberlo leído antes) y el puntero de lectura no debe avanzar más que sobre los datos que se han escrito.
 
 # --hints--
 
-The `enqueue` method should add items to the circular queue.
+El método `enqueue` debe agregar elementos a la cola circular.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-You should not enqueue items past the read pointer.
+No debes agregar elementos más allá del puntero de lectura.
 
 ```js
 assert(
@@ -89,7 +89,7 @@ assert(
 );
 ```
 
-The `dequeue` method should dequeue items from the queue.
+El método `dequeue` debe remover elementos de la cola.
 
 ```js
 assert(
@@ -105,7 +105,7 @@ assert(
 );
 ```
 
-After an item is dequeued, its position in the queue should be reset to `null`.
+Después de que un elemento sea removido de la cola, su posición en la cola debe volver a `null`.
 
 ```js
 assert(
@@ -122,7 +122,7 @@ assert(
 );
 ```
 
-Trying to dequeue past the write pointer should return `null` and does not advance the write pointer.
+Al tratar de eliminar un elemento más allá del puntero de lectura debe devolver `null` y no avanzará el puntero de escritura.
 
 ```js
 assert(

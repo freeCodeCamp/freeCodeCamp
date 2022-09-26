@@ -1,14 +1,14 @@
 ---
 id: 59713bd26bdeb8a594fb9413
 title: Contar moedas
-challengeType: 5
+challengeType: 1
 forumTopicId: 302238
 dashedName: count-the-coins
 ---
 
 # --description--
 
-Existem quatro tipos de moedas comuns no dinheiro dos [EUA](https://en.wikipedia.org/wiki/United_States):
+Existem quatro tipos de moedas comuns nos EUA:
 
 <ul>
   <li>quarters (25 centavos)</li>

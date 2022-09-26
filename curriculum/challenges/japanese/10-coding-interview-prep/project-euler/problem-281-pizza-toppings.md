@@ -1,7 +1,7 @@
 ---
 id: 5900f4861000cf542c50ff98
 title: '問題 281: ピザのトッピング'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301932
 dashedName: problem-281-pizza-toppings
 ---
