@@ -57,7 +57,7 @@ class WorkerExecutor {
     }
   }
 
-  execute(data, timeout = 1000) {
+  execute(data, timeout = 150000) {
     const task = eventify({});
     task._execute = function (getWorker) {
       getWorker().then(
