@@ -64,15 +64,20 @@ function* postChargeSaga({
       yield call(postChargeStripe, payload);
     } else if (paymentProvider === 'stripe card') {
       const optimizedPayload = { paymentMethodId, amount, duration };
-      const { error } = yield call(postChargeStripeCard, optimizedPayload);
+      const {
+        data: { error }
+      } = yield call(postChargeStripeCard, optimizedPayload);
       if (error) {
-        return yield stripeCardErrorHandler(
+        yield stripeCardErrorHandler(
           error,
           handleAuthentication,
           error.client_secret,
           paymentMethodId,
           optimizedPayload
         );
+
+        // the authentication does not throw and error, add a donation
+        yield call(addDonation, { amount, duration });
       }
     } else if (paymentProvider === 'paypal') {
       // If the user is signed in and the payment goes through call api
@@ -85,16 +90,28 @@ function* postChargeSaga({
       yield put(postChargeComplete());
       yield call(setDonationCookie);
     }
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: stringifyDonationEvents(paymentContext, paymentProvider),
-        label: duration,
-        value: amount
-      }
-    });
+    yield put(
+      executeGA({
+        type: 'event',
+        data: {
+          category: 'Donation',
+          action: stringifyDonationEvents(paymentContext, paymentProvider),
+          label: duration,
+          value: amount
+        }
+      })
+    );
   } catch (error) {
+    // add donation error
+    // const data =
+    //   error.response && error.response.data
+    //     ? error.response.data
+    //     : {
+    //         message: defaultDonationErrorMessage
+    //       };
+    // yield put(addDonationError(data.message));
+    //post stripe card
+    // const errorMessage = error.message || defaultDonationErrorMessage;
     const err =
       error.response && error.response.data
         ? error.response.data.error
