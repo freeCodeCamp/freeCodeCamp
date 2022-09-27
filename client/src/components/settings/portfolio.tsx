@@ -84,30 +84,33 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       });
     };
 
-  handleSubmit = (e?: React.FormEvent<HTMLFormElement>, id?: string) => {
-    e?.preventDefault();
-    const { updatePortfolio } = this.props;
+  handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
+    e.preventDefault();
+    this.updateItem(id);
+  };
+
+  updateItem = (id: string) => {
     const { portfolio, unsavedItemId } = this.state;
     if (unsavedItemId === id) {
       this.setState({ unsavedItemId: null });
     }
-    return updatePortfolio({ portfolio });
+    this.props.updatePortfolio({ portfolio });
   };
 
   handleAdd = () => {
     const item = createEmptyPortfolioItem();
-    return this.setState(state => ({
+    this.setState(state => ({
       portfolio: [item, ...state.portfolio],
       unsavedItemId: item.id
     }));
   };
 
   handleRemoveItem = (id: string) => {
-    return this.setState(
+    this.setState(
       state => ({
         portfolio: state.portfolio.filter(p => p.id !== id)
       }),
-      () => this.handleSubmit(undefined, id)
+      () => this.updateItem(id)
     );
   };
 
