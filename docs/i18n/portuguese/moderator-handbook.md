@@ -169,11 +169,11 @@ Moderadores do fórum podem apagar as postagens dos usuários. Você só deve fa
 1. Alguém postou uma imagem pornográfica ou graficamente violenta.
 2. Alguém postou um link ou código de natureza maliciosa que pode prejudicar os(as) outros(as) usuários(as) freeCodeCamp que clicarem nele.
 3. Alguém lotou um tópico com muitas mensagens de spam.
-4. An account has been created, beyond a reasonable doubt, to spam.
+4. Uma conta foi criada, sem qualquer sombra de dúvida, com o intuito de fazer spam.
 
 ### Lidando com spam
 
-For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. Deixe uma observação no perfil do usuário explicando a ação que você tomou. Se o problema persistir, então bloqueie silenciosamente o usuário de postar (usando a opção de silêncio no painel de Administração de Usuário). Envie ao usuário um aviso com o [Código de Conduta](https://code-of-conduct.freecodecamp.org). Marque a opção na mensagem privada que indica que a sua mensagem é um "aviso formal."
+Para o primeiro post de spam de um usuário legítimo (ou seja, cuja intenção não é fazer spam no fórum, mas sim  de aprender/contribuir), envie uma mensagem explicando o problema e remova o link ou post apropriadamente. Deixe uma observação no perfil do usuário explicando a ação que você tomou. Se o problema persistir, então bloqueie silenciosamente o usuário de postar (usando a opção de silêncio no painel de Administração de Usuário). Envie ao usuário um aviso com o [Código de Conduta](https://code-of-conduct.freecodecamp.org). Marque a opção na mensagem privada que indica que a sua mensagem é um "aviso formal."
 
 Como moderador, você pode fazer perguntas e relatar incidentes na [seção do fórum da equipe de moderadores](https://forum.freecodecamp.org/c/mod-team/4).
 
@@ -189,9 +189,9 @@ Novamente, se você tiver algum problema ou dúvida, faça uma postagem com suas
 
 When a user posts a solution to any of the questions, remove it and either, kindly let them know that solutions are not permitted on the forum in your own words or, use the **Solution Instead of Help** "Canned reply".
 
-### Underage Users
+### Usuários menores de idade
 
-Our [Terms of Service](https://freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. If a user reveals that they are under the age of 13, send them the message (below), suspend the account then **Email `support[at]freecodecamp.org` to delete the user's freeCodeCamp /learn and forum accounts as well (providing a link to the offending forum account).**
+Nossos [termos de serviço](https://freecodecamp.org/terms) requerem que os usuários do freeCodeCamp tenham, pelo menos, 13 anos de idade. If a user reveals that they are under the age of 13, send them the message (below), suspend the account then **Email `support[at]freecodecamp.org` to delete the user's freeCodeCamp /learn and forum accounts as well (providing a link to the offending forum account).**
 
 ```markdown
 ASSUNTO: Usuários com menos de 13 anos não têm permissão para usar o fórum de acordo com os nossos Termos de Serviço.
@@ -205,7 +205,7 @@ Obrigado(a) pela compreensão.
 
 ### Moderating Via Cell-phone
 
-Moderating the forum is possible via a cell-phone but you may encounter some usage quirks. This is not an exhaustive list.
+É possível moderar o fórum por um celular, mas você pode encontrar algumas peculiaridades. This is not an exhaustive list.
 
 - When trying to include a "Canned reply" in a response, if the menu doesn't open (after clicking on the gear), click on the text area first then try it again.
 - The moderator's 'wrench' is at the bottom of the view-port but if you click it and cannot see the "Select Posts" button because it has scrolled out of view, you may need to try to scroll to it, though sometimes that doesn't work in which case moving to a desktop/laptop monitor may be needed.
@@ -213,9 +213,9 @@ Moderating the forum is possible via a cell-phone but you may encounter some usa
 
 ## Moderando no Facebook
 
-If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
+Se você ver algo que pareça quebrar nosso [código de conduta](https://code-of-conduct.freecodecamp.org/), exclua imediatamente.
 
-Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. You should delete such posts, but not necessarily ban the person. Hopefully, the user will come to understand that what they posted was inappropriate because the post was deleted.
+Às vezes, as pessoas publicarão coisas que acham engraçadas. Elas não percebem que o que disseram ou compartilharam pode ser interpretado como ofensivo. Você deve excluir essas publicações, mas não necessariamente banir a pessoa. Hopefully, the user will come to understand that what they posted was inappropriate because the post was deleted.
 
 But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language. In that case, you should strongly consider blocking the member from the Facebook group.
 
@@ -269,7 +269,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
    - For mild and unintentional violations of the [Code of Conduct](https://code-of-conduct.freecodecamp.org):
 
-     Moderator: This is a friendly reminder for everyone to follow the [Code of Conduct](https://code-of-conduct.freecodecamp.org): https://code-of-conduct.freecodecamp.org/
+     Moderador: este é um lembrete amigável para que todos sigam o [código de conduta](https://code-of-conduct.freecodecamp.org): https://code-of-conduct.freecodecamp.org/
 
 6. **Não se gabe por ser um moderador**
 
@@ -303,7 +303,7 @@ If you are approved, we will add you to our moderator teams on [GitHub](https://
 
 ## Como nós retiramos moderadores inativos
 
-Please note that we will frequently remove moderators whom we think are inactive. When we do this, we will send the following message:
+Observe que, frequentemente, removeremos moderadores que pensamos estarem inativos. When we do this, we will send the following message:
 
 ```markdown
 Essa é uma mensagem padrão notificando que você não parece ter sido um moderador ativo recentemente. Sendo assim, estamos removendo você do nosso time de moderadores. Nós agradecemos profundamente sua ajuda no passado.
@@ -357,14 +357,14 @@ These are some of the standard reply templates that you may use while reviewing 
 
 > Você pode fazer seu próprio modelo com a funcionalidade embutida do GitHub chamada [saved replies](https://github.com/settings/replies/) ou usar as citadas abaixo.
 
-### Thank You
+### Obrigado
 
 ```markdown
 Thank you for your contribution to the page! 👍
 We are happy to accept these changes and look forward to future contributions. 🎉
 ```
 
-### Thank you and congrats
+### Obrigado e parabéns
 
 > Para agradecer e encorajar colaboradores de primeira viagem.
 
