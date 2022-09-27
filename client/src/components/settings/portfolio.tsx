@@ -5,7 +5,7 @@ import {
   FormControl,
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
-import { findIndex, find, isEqual, omit } from 'lodash-es';
+import { findIndex, find, isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
@@ -19,7 +19,6 @@ import SectionHeader from './section-header';
 import PreventableButton from './PreventableButton';
 
 type PortfolioItem = {
-  isSaved: boolean;
   id: string;
   description: string;
   image: string;
@@ -28,7 +27,6 @@ type PortfolioItem = {
 };
 
 type PortfolioProps = {
-  isSaved: boolean;
   picture?: string;
   portfolio: PortfolioItem[];
   t: TFunction;
@@ -38,16 +36,16 @@ type PortfolioProps = {
 
 type PortfolioState = {
   portfolio: PortfolioItem[];
+  unsavedItemId: string | null;
 };
 
-function createEmptyPortfolioItem() {
+function createEmptyPortfolioItem(): PortfolioItem {
   return {
     id: nanoid(),
     title: '',
     description: '',
     url: '',
-    image: '',
-    isSaved: false
+    image: ''
   };
 }
 
@@ -63,7 +61,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const { portfolio = [] } = props;
 
     this.state = {
-      portfolio: [...portfolio]
+      portfolio: [...portfolio],
+      unsavedItemId: null
     };
   }
 
@@ -86,26 +85,21 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       });
     };
 
-  handleSubmit = (e?: React.FormEvent<HTMLFormElement>) => {
+  handleSubmit = (e?: React.FormEvent<HTMLFormElement>, id?: string) => {
     e?.preventDefault();
-    const target = e?.currentTarget;
-    const id = target?.id;
     const { updatePortfolio } = this.props;
-    let { portfolio } = this.state;
-    if (id) {
-      portfolio = portfolio.map(item =>
-        item.id === id ? { ...item, isSaved: true } : item
-      );
-      this.setState({
-        portfolio
-      });
+    const { portfolio, unsavedItemId } = this.state;
+    if (unsavedItemId === id) {
+      this.setState({ unsavedItemId: null });
     }
     return updatePortfolio({ portfolio });
   };
 
   handleAdd = () => {
+    const item = createEmptyPortfolioItem();
     return this.setState(state => ({
-      portfolio: [createEmptyPortfolioItem(), ...state.portfolio]
+      portfolio: [item, ...state.portfolio],
+      unsavedItemId: item.id
     }));
   };
 
@@ -114,7 +108,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       state => ({
         portfolio: state.portfolio.filter(p => p.id !== id)
       }),
-      () => this.handleSubmit()
+      () => this.handleSubmit(undefined, id)
     );
   };
 
@@ -126,7 +120,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       return false;
     }
     const edited = find(portfolio, createFindById(id));
-    return isEqual(omit(original, ['isSaved']), omit(edited, ['isSaved']));
+    return isEqual(original, edited);
   };
 
   // TODO: Check if this function is required or not
@@ -225,7 +219,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     return (
       <div key={id}>
         <FullWidthRow>
-          <form id={id} onSubmit={this.handleSubmit}>
+          <form onSubmit={e => this.handleSubmit(e, id)}>
             <FormGroup
               controlId={`${id}-title`}
               validationState={
@@ -322,7 +316,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   render() {
     const { t } = this.props;
-    const { portfolio = [] } = this.state;
+    const { portfolio = [], unsavedItemId: unsavedItem } = this.state;
     return (
       <section id='portfolio-settings'>
         <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
@@ -336,7 +330,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <PreventableButton
             handleAdd={this.handleAdd}
             t={t}
-            portfolio={portfolio}
+            isDisabled={unsavedItem !== null}
           />
         </FullWidthRow>
         <Spacer size={2} />
