@@ -1,7 +1,7 @@
 ---
 id: 5900f4dd1000cf542c50ffef
 title: '問題 368: ケンプナーのような級数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302029
 dashedName: problem-368-a-kempner-like-series
 ---

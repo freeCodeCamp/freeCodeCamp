@@ -22,7 +22,7 @@ O Helmet ajuda você a proteger seus aplicativos do Express, definindo vários c
 
 Todo o código para estas aulas vai para o arquivo `myApp.js` entre as linhas de código que fornecemos para você começar. Não altere nem exclua o código que adicionamos para você.
 
-Instale a versão `3.21.3` do Helmet e, em seguida, solicite-a. Você pode instalar uma versão específica de um pacote com o `npm install --save-exact package@version` ou adicionando-a ao seu `package.json` diretamente.
+A versão `3.21.3` do Helmet já foi instalada, então solicite-a como `helmet` no `myApp.js`.
 
 # --hints--
 

@@ -8,46 +8,46 @@ dashedName: convert-celsius-to-fahrenheit
 
 # --description--
 
-Алгоритм конвертації градусів за Цельсієм у градуси за Фаренгейтом, це температура за Цельсієм помножена на `9/5`, плюс `32`.
+Формула для конвертації Цельсію до Фаренгейта: температура в Цельсіях помножена на `9/5` плюс `32`.
 
-Ви отримуєте змінну `celsius`, що відповідає температурі за Цельсієм. Використовуйте вже визначену змінну `fahrenheit` і призначте їй температуру за Фаренгейтом, еквівалентну заданій температурі за Цельсієм. Використовуйте алгоритм запропонований вище для конвертації температури за Цельсієм у температуру за Фаренгейтом.
+Ви отримуєте змінну `celsius`, що відповідає температурі за Цельсієм. Використовуйте вже визначену змінну `fahrenheit` і призначте їй температуру за Фаренгейтом, еквівалентну заданій температурі за Цельсієм. Використовуйте запропоновану вище формулу для конвертації температури за Цельсієм у температуру за Фаренгейтом.
 
 # --hints--
 
-`convertToF(0)` має повернути число
+`convertCtoF(0)` має повернути число
 
 ```js
-assert(typeof convertToF(0) === 'number');
+assert(typeof convertCtoF(0) === 'number');
 ```
 
-`convertToF(-30)` має повертати значення `-22`
+`convertCtoF(-30)` має повертати значення `-22`
 
 ```js
-assert(convertToF(-30) === -22);
+assert(convertCtoF(-30) === -22);
 ```
 
-`convertToF(-10)` має повертати значення `14`
+`convertCtoF(-10)` має повертати значення `14`
 
 ```js
-assert(convertToF(-10) === 14);
+assert(convertCtoF(-10) === 14);
 ```
 
-`convertToF(0)` має повертати значення `32`
+`convertCtoF(0)` має повертати значення `32`
 
 ```js
-assert(convertToF(0) === 32);
+assert(convertCtoF(0) === 32);
 ```
 
-`convertToF(20)` має повертати значення `68`
+`convertCtoF(20)` має повертати значення `68`
 
 ```js
-assert(convertToF(20) === 68);
+assert(convertCtoF(20) === 68);
 ```
 
-`convertToF(30)` має повертати значення `86`
+`convertCtoF(30)` має повертати значення `86`
 
 ```js
-assert(convertToF(30) === 86);
+assert(convertCtoF(30) === 86);
 ```
 
 # --seed--
@@ -55,22 +55,21 @@ assert(convertToF(30) === 86);
 ## --seed-contents--
 
 ```js
-function convertToF(celsius) {
+function convertCtoF(celsius) {
   let fahrenheit;
   return fahrenheit;
 }
 
-convertToF(30);
+convertCtoF(30);
 ```
 
 # --solutions--
 
 ```js
-function convertToF(celsius) {
+function convertCtoF(celsius) {
   let fahrenheit = celsius * 9/5 + 32;
-
   return fahrenheit;
 }
 
-convertToF(30);
+convertCtoF(30);
 ```

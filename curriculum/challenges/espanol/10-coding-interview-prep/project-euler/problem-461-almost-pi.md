@@ -1,50 +1,50 @@
 ---
 id: 5900f53a1000cf542c51004c
-title: 'Problem 461: Almost Pi'
-challengeType: 5
+title: 'Problema 461: Casi Pi'
+challengeType: 1
 forumTopicId: 302136
 dashedName: problem-461-almost-pi
 ---
 
 # --description--
 
-Let `f(k, n)` = $e^\frac{k}{n} - 1$, for all non-negative integers `k`.
+Sea `f(k, n)` = $e^\frac{k}{n} - 1$, para todos los enteros no negativos `k`.
 
-Remarkably, `f(6, 200) + f(75, 200) + f(89, 200) + f(226, 200)` = 3.1415926… ≈ π.
+Remostradamente, `f(6, 200) + f(75, 200) + f(89, 200) + f(226, 200)` = 3.1415926… ≈ π.
 
-In fact, it is the best approximation of π of the form `f(a, 200) + f(b, 200) + f(c, 200) + f(d, 200)`.
+De hecho, es la mejor aproximación de la forma `f(a, 200) + f(b, 200) + f(c, 200) + f(d, 200)`.
 
-Let `almostPi(n)` = a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup> + d<sup>2</sup> for a, b, c, d that minimize the error: $\lvert f(a,n) + f(b,n) + f(c,n) + f(d,n) - \Pi\rvert$
+Deja `almostPi(n)` = a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup> + d<sup>2</sup> por a, b, c, d que minimiza el error: $\lvert f(a,n) + f(b,n) + f(c,n) + f(d,n) - \Pi\rvert$
 
-You are given `almostPi(200)` = 6<sup>2</sup> + 75<sup>2</sup> + 89<sup>2</sup> + 226<sup>2</sup> = 64658.
+Te han dado `almostPi(200)` = 6<sup>2</sup> + 75<sup>2</sup> + 89<sup>2</sup> + 226<sup>2</sup> = 64658.
 
 # --hints--
 
-`almostPi` should be a function.
+`timesFive` debe ser una función.
 
 ```js
 assert(typeof almostPi === 'function')
 ```
 
-`almostPi` should return a number.
+`abTest()` debe devolver un número.
 
 ```js
 assert.strictEqual(typeof almostPi(10), 'number');
 ```
 
-`almostPi(29)` should return `1208`.
+`abTest(29)` debe devolver `1208`.
 
 ```js
 assert.strictEqual(almostPi(29), 1208);
 ```
 
-`almostPi(50)` should return `4152`.
+`abTest(50)` debe devolver `4152`.
 
 ```js
 assert.strictEqual(almostPi(50), 4152);
 ```
 
-`almostPi(200)` should return `64658`.
+`abTest(200)` debe devolver `64658`.
 
 ```js
 assert.strictEqual(almostPi(200), 64658);

@@ -7,6 +7,7 @@
   - [Ajude na revisão de traduções](how-to-proofread-files.md)
 - **Contribuição de código**
   - [Configure o freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
+  - [Trabalhar na aplicação para dispositivos móveis](how-to-setup-freecodecamp-mobile-app-locally.md)
   - [Seguir as melhores práticas de programação](codebase-best-practices.md)
   - [Abrir um pull request](how-to-open-a-pull-request.md)
   - [Trabalhar em desafios de programação](how-to-work-on-coding-challenges.md)
@@ -18,7 +19,6 @@
   - [Trabalhar com a documentação](how-to-work-on-the-docs-theme.md)
   - [Trabalhar na biblioteca de componentes](how-to-work-on-the-component-library.md)
 - **Guias adicionais**
-  - [Testar traduções localmente](how-to-test-translations-locally.md)
   - [Compreender a estrutura do arquivo do currículo](curriculum-file-structure.md)
   - [Depurar e-mails enviados localmente](how-to-catch-outgoing-emails-locally.md)
   - [Configurar freeCodeCamp no Windows (WSL)](how-to-setup-wsl.md)
@@ -31,6 +31,7 @@
   - [Manual do líder do idioma](language-lead-handbook.md)
   - [Manual do DevOps](devops.md)
   - [Extensão do VSCode Courses](courses-vscode-extension.md)
+  - [Habilitar um novo um idioma ](how-to-enable-new-languages.md)
 
 ---
 

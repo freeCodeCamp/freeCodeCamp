@@ -25,6 +25,19 @@ NON includere virgolette (singole o doppie) nell'output.
 
 # --hints--
 
+La tua funzione dovrebbe restituire un valore per count e del testo (`Bet` o `Hold`) con uno spazio tra di loro.
+
+```js
+assert(//
+  (function () {
+    count = 0;
+    let out = cc(10);
+    const hasSpace = /-?\d+ (Bet|Hold)/.test('' + out);
+    return hasSpace;
+  })()
+);
+```
+
 La sequenza di carte 2, 3, 4, 5, 6 dovrebbe restituire la stringa `5 Bet`
 
 ```js

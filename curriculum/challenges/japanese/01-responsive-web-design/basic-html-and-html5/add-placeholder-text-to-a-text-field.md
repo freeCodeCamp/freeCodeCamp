@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08830
-title: テキストフィールドにプレイスホルダ―テキストを追加する
+title: テキストフィールドにプレイスホルダーテキストを追加する
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 forumTopicId: 16647
@@ -9,9 +9,9 @@ dashedName: add-placeholder-text-to-a-text-field
 
 # --description--
 
-プレイスホルダ―テキストは、ユーザーが何かを入力する前に `input` 要素に表示されているテキストです。
+プレイスホルダーテキストは、ユーザーが何かを入力する前に `input` 要素に表示されているテキストです。
 
-次のようにしてプレイスホルダ―テキストを作成できます。
+次のようにしてプレイスホルダーテキストを作成できます。
 
 ```html
 <input type="text" placeholder="this is placeholder text">

@@ -1,7 +1,7 @@
 ---
 id: 5900f5361000cf542c510049
 title: '問題 458: "Project" の順列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302132
 dashedName: problem-458-permutations-of-project
 ---

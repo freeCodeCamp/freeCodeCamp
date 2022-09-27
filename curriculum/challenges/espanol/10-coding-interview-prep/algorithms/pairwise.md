@@ -1,64 +1,64 @@
 ---
 id: a3f503de51cfab748ff001aa
-title: Pairwise
-challengeType: 5
+title: Emparejamiento inteligente
+challengeType: 1
 forumTopicId: 301617
 dashedName: pairwise
 ---
 
 # --description--
 
-Given an array `arr`, find element pairs whose sum equal the second argument `arg` and return the sum of their indices.
+Dado un arreglo `arr`, encuentra pares de elementos que sumen igual al segundo argumento `arg` y regresa la suma de sus índices.
 
-You may use multiple pairs that have the same numeric elements but different indices. Each pair should use the lowest possible available indices. Once an element has been used it cannot be reused to pair with another element. For instance, `pairwise([1, 1, 2], 3)` creates a pair `[2, 1]` using the 1 at index 0 rather than the 1 at index 1, because 0+2 &lt; 1+2.
+Podrías utilizar múltiples pares que tengan los mismo elementos numéricos, pero con diferentes índices. Cada par debe usar los índices más bajos posibles. Una vez un elemento se ha utilizado, no se puede emprejar otra vez con otro elemento. Por ejemplo `pairwise([1, 1, 2], 3)` crea un par `[2, 1]` usando el 1 del índice 0, en vez del 1 de el índice 1, por qué la suma de los indíces 0 + 2 &lt; (es menor que) 1+2.
 
-For example `pairwise([7, 9, 11, 13, 15], 20)` returns `6`. The pairs that sum to 20 are `[7, 13]` and `[9, 11]`. We can then write out the array with their indices and values.
+Por ejemplo `pairwise([7, 9, 11, 13, 15], 20)` devuelve `6`. Los pares que suman 20 son `[7, 13]` y `[9, 11]`. Para llegar a la soulción podríamos escribir el arreglo con sus índices y valores.
 
 <div style='margin-left: 2em;'>
 
-| Index | 0 | 1 | 2  | 3  | 4  |
+| Índice | 0 | 1 | 2 | 3 | 4 |
 | ----- | - | - | -- | -- | -- |
-| Value | 7 | 9 | 11 | 13 | 15 |
+| Valor | 7 | 9 | 11 | 13 | 15
 
 </div>
 
-Below we'll take their corresponding indices and add them.
+A continuación tomaremos los índices correspondientes a los pares y los sumamos.
 
 <div style='margin-left: 2em;'>
 
 7 + 13 = 20 → Indices 0 + 3 = 3  
-9 + 11 = 20 → Indices 1 + 2 = 3  
-3 + 3 = 6 → Return `6`
+9 + 11 = 20 → Índices 1 + 2 = 3  
+3 + 3 = 6 → Devuelve `6`
 
 </div>
 
 # --hints--
 
-`pairwise([1, 4, 2, 3, 0, 5], 7)` should return 11.
+`pairwise([1, 4, 2, 3, 0, 5], 7)` debe devolver 11.
 
 ```js
 assert.deepEqual(pairwise([1, 4, 2, 3, 0, 5], 7), 11);
 ```
 
-`pairwise([1, 3, 2, 4], 4)` should return 1.
+`pairwise([1, 3, 2, 4], 4)` debe devolver 1.
 
 ```js
 assert.deepEqual(pairwise([1, 3, 2, 4], 4), 1);
 ```
 
-`pairwise([1, 1, 1], 2)` should return 1.
+`pairwise([1, 1, 1], 2)` debe devolver 1.
 
 ```js
 assert.deepEqual(pairwise([1, 1, 1], 2), 1);
 ```
 
-`pairwise([0, 0, 0, 0, 1, 1], 1)` should return 10.
+`pairwise([0, 0, 0, 0, 1, 1], 1)` debe devolver 10.
 
 ```js
 assert.deepEqual(pairwise([0, 0, 0, 0, 1, 1], 1), 10);
 ```
 
-`pairwise([], 100)` should return 0.
+`pairwise([], 100)` debería devolver 0.
 
 ```js
 assert.deepEqual(pairwise([], 100), 0);

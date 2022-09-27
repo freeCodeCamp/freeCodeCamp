@@ -12,30 +12,30 @@ dashedName: build-a-tribute-page
 
 **Історія користувача:**
 
-1. Ваша пам'ятна сторінка має містити елемент `main` з відповідним `main` `id`, який містить всі інші елементи
-1. Ви повинні бачити елемент з `title` `id`, який містить ряд (текст), що описує предмет пам'ятної сторінки (наприклад, «Доктор Норман Борлаґ»)
-1. Ви повинні побачити елемент `figure` або `div` з `img-div` `id`
+1. Ваша пам'ятна сторінка повинна містити елемент `main` з відповідним `id` зі значенням `main`, який містить всі інші елементи
+1. Ви повинні бачити елемент з `id` зі значенням `title`, який містить рядок (наприклад, текст), що описує предмет пам'ятної сторінки (наприклад, «Доктор Норман Борлаґ»)
+1. Ви повинні побачити елемент `figure` або `div` з `id` зі значенням `img-div`
 1. В межах елемента `#img-div` ви маєте бачити елемент `img` з відповідним `id="image"`
-1. В межах елемента `#img-div` ви маєте бачити елемент з відповідним `id="img-caption"`, який містить текст, що описує зображення, показане у `#img-div`
+1. В межах елемента `#img-div` ви маєте бачити елемент з відповідним `id="img-caption"`, який містить текст, що описує зображення, показане в `#img-div`
 1. Ви маєте бачити елемент з відповідним `id="tribute-info"`, який містить текст, що описує предмет пам'ятної сторінки
-1. Ви маєте бачити елемент з відповідним `id="tribute-link"`, який посилає на зовнішній сайт, що містить додаткову інформацію про предмет пам'ятної сторінки. ПІДКАЗКА: ви повинні надати своєму елементу атрибут `target` і встановити `_blank`, щоб ваше посилання відкривалося у новій вкладці
-1. Ваш `#image` має використовувати властивості `max-width` та `height`, щоб змінювати розмір відповідно до ширини батьківського елемента, не перевищуючи початковий розмір
+1. Ви маєте бачити елемент `a` з відповідним `id="tribute-link"`, який посилає на зовнішній сайт, що містить додаткову інформацію про предмет пам'ятної сторінки. ПІДКАЗКА: ви повинні надати своєму елементу атрибут `target` та встановити його на `_blank`, щоб ваше посилання відкривалося в новій вкладці
+1. Ваш `#image` повинен використовувати властивості `max-width` та `height`, щоб змінювати розмір відповідно до ширини батьківського елемента, не перевищуючи початковий розмір
 1. Ваш елемент `img` повинен бути зцентрованим відповідно до батьківського елемента
 
-Виконайте розповідь користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
+Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
 
 **Примітка:** Переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
 
 # --hints--
 
-Ви повинні мати елемент `main` з `main` `id`.
+Ви повинні мати елемент `main` з `id` зі значенням `main`.
 
 ```js
 const el = document.getElementById('main')
 assert(!!el && el.tagName === 'MAIN')
 ```
 
-Ваші `#img-div`, `#image`, `#img-caption`, `#tribute-info` та `#tribute-link` мають наслідувати `#main`.
+Ваші `#img-div`, `#image`, `#img-caption`, `#tribute-info` та `#tribute-link` повинні бути нащадками `#main`.
 
 ```js
 const el1 = document.querySelector('#main #img-div')
@@ -46,14 +46,14 @@ const el5 = document.querySelector('#main #tribute-link')
 assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
 ```
 
-Ви повинні мати елемент з `title` `id`.
+Ви повинні мати елемент з `id` зі значенням `title`.
 
 ```js
 const el = document.getElementById('title')
 assert(!!el)
 ```
 
-Ваш `#title` не має бути порожнім.
+Ваш `#title` не повинен бути порожнім.
 
 ```js
 const el = document.getElementById('title')
@@ -61,63 +61,63 @@ assert(!!el && el.innerText.length > 0)
 
 ```
 
-Ви повинні мати елемент `figure` або `div` з `img-div` `id`.
+Ви повинні мати елемент `figure` або `div` з `id` зі значенням `img-div`.
 
 ```js
 const el = document.getElementById('img-div')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
 ```
 
-Ви повинні мати елемент `img` з `image` `id`.
+Ви повинні мати елемент `img` з `id` зі значенням `image`.
 
 ```js
 const el = document.getElementById('image')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Ваш `#image` має наслідувати `#img-div`.
+Ваш `#image` повинен бути нащадком `#img-div`.
 
 ```js
 const el = document.querySelector('#img-div #image')
 assert(!!el)
 ```
 
-Ви повинні мати елемент `figcaption` або `div` з `img-caption` `id`.
+Ви повинні мати елемент `figcaption` або `div` з `id` зі значенням `img-caption`.
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGCAPTION'))
 ```
 
-Ваш `#img-caption` повинен наслідувати `#img-div`.
+Ваш `#img-caption` повинен бути нащадком `#img-div`.
 
 ```js
 const el = document.querySelector('#img-div #img-caption')
 assert(!!el)
 ```
 
-Ваш `#img-caption` не має бути порожнім.
+Ваш `#img-caption` не повинен бути порожнім.
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Ви повинні мати елемент з `tribute-info` `id`.
+Ви повинні мати елемент з `id` зі значенням `tribute-info`.
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el)
 ```
 
-Ваш `#tribute-info` не має бути порожнім.
+Ваш `#tribute-info` не повинен бути порожнім.
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Ви повинні мати елемент `a` з `tribute-link` `id`.
+Ви повинні мати елемент `a` з `id` зі значенням `tribute-link`.
 
 ```js
 const el = document.getElementById('tribute-link')
@@ -131,14 +131,14 @@ const el = document.getElementById('tribute-link')
 assert(!!el && !!el.href && el.href.length > 0)
 ```
 
-Ваш `#tribute-link` повинен мати атрибут `target` з налаштуванням `_blank`.
+Ваш `#tribute-link` повинен мати атрибут `target` зі значенням `_blank`.
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.target === '_blank')
 ```
 
-Ваш елемент `img` повинен мати `block` `display`.
+Ваш елемент `img` повинен мати `display` зі значенням `block`.
 
 ```js
 const img = document.getElementById('image');
@@ -147,7 +147,7 @@ const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
-Ваш `#image` повинен мати `100%` `max-width`.
+Ваш `#image` повинен мати `max-width` зі значенням `100%`.
 
 ```js
 const img = document.getElementById('image');
@@ -156,7 +156,7 @@ const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
-Ваш `#image` повинен мати `auto` `height`.
+Ваш `#image` повинен мати `height` зі значенням `auto`.
 
 ```js
 // taken from the testable-projects repo

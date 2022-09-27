@@ -1,8 +1,8 @@
 ---
 id: 5efae0543cbd2bbdab94e333
-title: Step 29
+title: Step 30
 challengeType: 0
-dashedName: step-29
+dashedName: step-30
 ---
 
 # --description--
@@ -19,7 +19,7 @@ L'elemento `figure` dovrebbe avere un tag di apertura. I tag di apertura hanno q
 assert(document.querySelectorAll('figure').length === 2);
 ```
 
-L'elemento `ol` dovrebbe avere un tag di chiusura. I tag di chiusura hanno un carattere`/` subito dopo il carattere `<`.
+L'elemento `figure` dovrebbe avere un tag di chiusura. I tag di chiusura hanno un carattere`/` subito dopo il carattere `<`.
 
 ```js
 assert(code.match(/<\/figure>/g).length === 2);

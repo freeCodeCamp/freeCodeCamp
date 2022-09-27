@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Algoritmos e estruturas de dados em JavaScript (Beta)",
-    "intro": [
-      "placeholder",
-      "placeholder"
-    ],
+    "intro": ["placeholder", "placeholder"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Projeto de criação da Cifra de César",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "Projeto de criação de Caixa registradora",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "Projeto de criação de Verificador de palíndromo",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Projeto de criação de Conversor de números romanos",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Projeto de criação de Validador de números de telefone",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Aprenda JavaScript básico criando um jogo de RPG",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Aprenda validação de formulários construindo um contador de calorias",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprenda programação funcional criando uma planilha",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "Painel do D3",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -606,8 +576,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB e Mongoose",
         "intro": [
-          "O MongoDB é uma aplicação de banco de dados que armazena documentos JSON (ou registros) que podem ser usados em sua aplicação. Ao contrário do SQL, outro tipo de banco de dados, o Mongo é um banco de dados não relacional ou \"NoSQL\". Isto significa que o Mongo armazena todos os dados associados dentro de um registro, em vez de armazená-los em muitas tabelas predefinidas, como em um banco de dados SQL.",
-          "O Mongoose é um pacote popular do npm que é frequentemente instalado junto com MongoDB. Com o Mongoose, você pode usar objetos JavaScript simples em vez de JSON, o que torna mais fácil trabalhar com o Mongo. Além disso, ele permite que você crie projetos para seus documentos, chamados schemas, para que você não salve acidentalmente o tipo errado de dados e cause bugs mais tarde.",
+          "O MongoDB é uma aplicação de banco de dados que armazena documentos JSON (ou registros) que podem ser usados em sua aplicação. Ao contrário do SQL, outro tipo de banco de dados, o MongoDB é um banco de dados não relacional ou \"NoSQL\". Isto significa que o MongoDB armazena todos os dados associados dentro de um registro, em vez de armazená-los em muitas tabelas predefinidas, como em um banco de dados SQL.",
+          "O Mongoose é um pacote popular do npm para a interação com o MongoDB. Com o Mongoose, você pode usar objetos JavaScript simples em vez de JSON, o que torna mais fácil trabalhar com o MongoDB. Além disso, ele permite que você crie projetos para seus documentos, chamados schemas, para que você não salve acidentalmente o tipo errado de dados e cause bugs mais tarde.",
           "Nos cursos de MongoDB e Mongoose, você aprenderá os fundamentos de trabalhar com dados persistentes, incluindo como configurar um modelo, salvar, excluir e buscar documentos no banco de dados."
         ]
       },
@@ -804,7 +774,8 @@
         "title": "Rosetta Code",
         "intro": [
           "Aumente o nível de suas habilidades criativas de resolução de problemas com essas tarefas de programação gratuitas da biblioteca clássica do Rosetta Code.",
-          "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares."
+          "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares.",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
       },
       "project-euler": {

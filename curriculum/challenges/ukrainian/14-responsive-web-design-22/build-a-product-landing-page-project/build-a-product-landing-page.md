@@ -12,43 +12,43 @@ dashedName: build-a-product-landing-page
 
 **Історія користувача:**
 
-1. Ваша посадкова сторінка продукту повинна містити елемент `header` з відповідним `id="header"`
+1. Ваша посадкова сторінка продукту повинна мати елемент `header` з відповідним `id="header"`
 1. Можна побачити зображення в межах елемента `header` з відповідним `id="header-img"` (на місце зображення чудово підійде логотип)
 1. В межах елемента `#header` видно елемент `nav` з відповідним `id="nav-bar"`
 1. Можна побачити щонайменше три активні елементи всередині елемента `nav`, кожен класу `nav-link`
 1. Якщо натиснути на кнопку `.nav-link` в елементі `nav`, ви перейдете на відповідну секцію посадкової сторінки
-1. Вмонтоване відео можна переглянути з `id="video"`
+1. Ви можете переглянути вмонтоване відео з `id="video"`
 1. Посадкова сторінка має елемент `form` з відповідним `id="form"`
-1. В межах форми наявне поле `input` з `id="email"`, де можна ввести електронну адресу
-1. Поле введення `#email` повинне містити текст наповнювача, щоб користувач розумів його призначення
+1. В межах форми є поле `input` з `id="email"`, де можна ввести електронну адресу
+1. Поле введення `#email` повинне мати текст наповнювача, щоб користувач розумів його призначення
 1. Поле введення `#email` використовує перевірку HTML5, щоб переконатись, що введений текст є електронною адресою
-1. В межах форми наявна кнопка `input` для надсилання з відповідним `id="submit"`
+1. В межах форми є кнопка `input` для відправки з відповідним `id="submit"`
 1. Якщо натиснути на елемент `#submit`, електронну пошту надіслано на статистичну сторінку (використовуйте альтернативу URL: `https://www.freecodecamp.com/email-submit`)
 1. Навігаційна панель завжди повинна знаходитись у верхній частині вюпорту
 1. Посадкова сторінка продукту повинна містити щонайменше один медіазапит
 1. Посадкова сторінка продукту повинна використовувати CSS flexbox хоча б раз
 
-Виконайте розповідь користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
+Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
 
 **Примітка:** Переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
 
 # --hints--
 
-Ви повинні мати елемент `header` з `header` `id`.
+Ви повинні мати елемент `header` з `id` зі значенням `header`.
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-Ви повинні мати елемент `img` з `header-img` `id`.
+Ви повинні мати елемент `img` з `id` зі значенням `header-img`.
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Ваш `#header-img` повинен наслідувати `#header`.
+Ваш `#header-img` повинен бути нащадком `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
@@ -62,21 +62,21 @@ const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-Значення `src` `#header-img` повинне бути активним URL (починається з `http`).
+Значення `src` вашого `#header-img` повинне бути активним URL (починається з `http`).
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-Ви повинні мати елемент `nav` з `nav-bar` `id`.
+Ви повинні мати елемент `nav` з `id` зі значенням `nav-bar`.
 
 ```js
 const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Ваш `#nav-bar` повинен наслідувати `#header`.
+Ваш `#nav-bar` повинен бути нащадком `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
@@ -100,7 +100,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Кожен елемент `.nav-link` повинен посилати на відповідний елемент посадкової сторінки (має `href` зі значенням іншого ідентифікатора, наприклад `#footer`).
+Кожен елемент `.nav-link` повинен посилати на відповідний елемент посадкової сторінки (має `href` зі значенням ідентифікатора іншого елемента, наприклад `#footer`).
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -111,14 +111,14 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Ви повинні мати елемент `video` або `iframe` з `video` `id`.
+Ви повинні мати елемент `video` або `iframe` з `id` зі значенням `video`.
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-Ваше `#video` повинне мати атрибут `src`.
+Ваш `#video` повинен мати атрибут `src`.
 
 ```js
 let el = document.getElementById('video')
@@ -133,21 +133,21 @@ if (sourceElement) {
 assert(el.hasAttribute('src'));
 ```
 
-Ви повинні мати елемент `form` з `form` `id`.
+Ви повинні мати елемент `form` з `id` зі значенням `form`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-Ви повинні мати елемент `input` з `email` `id`.
+Ви повинні мати елемент `input` з `id` зі значенням `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Ваш `#email` повинен наслідувати `#form`.
+Ваш `#email` повинен бути нащадком `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #email')
@@ -161,42 +161,42 @@ const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Ваш `#email` повинен використовувати перевірку HTML5, встановивши `email` `type`.
+Ваш `#email` повинен використовувати перевірку HTML5, встановивши `type` на `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-Ви повинні мати елемент `input` з `submit` `id`.
+Ви повинні мати елемент `input` з `id` зі значенням `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Ваш `#submit` повинен наслідувати `#form`.
+Ваш `#submit` повинен бути нащадком `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-Ваш `#submit` повинен мати `submit` `type`.
+Ваш `#submit` повинен мати `type` зі значенням `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Ваше `#form` повинне мати атрибут `action` для `https://www.freecodecamp.com/email-submit`.
+Ваш `#form` повинен мати атрибут `action` зі значенням `https://www.freecodecamp.com/email-submit`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-Ваш `#email` повинен мати атрибут `name` для `email`.
+Ваш `#email` повинен мати атрибут `name` зі значенням `email`.
 
 ```js
 const el = document.getElementById('email')

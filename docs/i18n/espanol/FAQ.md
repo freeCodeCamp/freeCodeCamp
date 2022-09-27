@@ -10,9 +10,9 @@ freeCodeCamp se ejecuta en una moderna plataforma de JavaScript. Si estás inter
 
 Sí - Puedes contribuir cualquiera de los más de 30 idiomas que hemos habilitado en nuestra plataforma de traducción.
 
-Tenemos traducciones hechas por usuarios nativos en algunos idiomas. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo acerca de esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/world-language-translation-effort).
+Tenemos traducciones hechas por usuarios nativos en algunos idiomas. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo acerca de esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
-Si estás interesado en ayudar a traducir, por favor asegúrate de [leer esta guía](how-to-translate-files.md) primero.
+If you are interested in contributing to translations please make sure you [read this guide](how-to-translate-files.md) first.
 
 ### Puedo contribuír con artículos a las Noticias de freeCodeCamp o con vídeos al canal de YouTube de freeCodeCamp?
 
@@ -24,7 +24,7 @@ Para ayudarnos a crear vídeos educacionales para nuestro canal de YouTube, pued
 
 ### Cómo puedo reportar un nuevo error?
 
-Si crees que has encontrado un error, primero lee el artículo ["Ayuda, he encontrado un bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) y sigue sus instrucciones.
+Si piensas que has encontrado un error, primero lea el artículo ["Como reportar un error"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) y siga las instrucciones.
 
 Si estás seguro de que es un error nuevo, crea un tema de GitHub nuevo.  Asegúrate de incluir tanta información como sea posible para que podamos reproducir el error.  Tenemos una plantilla de informe predefinida para ayudarte con esto.
 
@@ -32,7 +32,7 @@ Ten en cuenta que estos temas de GitHub son para debates y problemas relacionado
 
 ### ¿Cómo puedo reportar un problema de seguridad?
 
-Por favor, no crees Tema de GitHub para problemas de seguridad. Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
+Por favor, no crees Tema de GitHub para problemas de seguridad. En su lugar, [siga nuestra política de seguridad](https://contribute.freecodecamp.org/#/security).
 
 ### Soy estudiante. ¿Puedo trabajar en una característica para los créditos académicos?
 
@@ -63,7 +63,7 @@ Por lo general, no asignamos los temas a nadie más que a los colaboradores con 
 1. Lo más probable es que fusionemos el primer pull request que aborde el tema o problema.
 2. En el caso de múltiples colaboradores abriendo un pull request para el mismo problema más o menos al mismo tiempo, daremos prioridad al pull request que aborde mejor la cuestión. Algunas de las cosas que consideramos:
    - ¿Has incluido pruebas?
-   - ¿Has detectado todos los casos de usos?
+   - Did you catch all use cases?
    - ¿Te aseguraste de que pasaran todas las pruebas, y confirmaste que todo funciona localmente?
 3. Por último, damos prioridad a los pull requests que siguen nuestras directrices recomendadas.
    - ¿Has seguido la lista de verificación de pull request?
@@ -78,7 +78,7 @@ En primer lugar, necesitamos que seas un participante activo en la  comunidad, y
 Aquí hay algunas rutas para algunas de nuestras plataformas:
 
 - Para ser un moderador de **Discord/Chat**, hay que tener una presencia activa en nuestro chat y tener tratos positivos con los demás, mientras que también aprender y practicar cómo para hacer frente a los posibles conflictos que puedan surgir.
-- Para ser moderador del **Foro**, similar a un moderador de chat, debe de tener una presencia activa y participar en otras publicaciones del foro, apoyando a otros en su camino de aprendizaje, e incluso dar retroalimentación cuando se le pregunte. Echa un vistazo a [El manual del líder del subforo](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) para más información.
+- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Echa un vistazo a [El manual del líder del subforo](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) para más información.
 - Para ser un moderador de **GitHub**, ayuda para procesar problemas de GitHub que son planteados para ver si son válidos e (idealmente) tratar de proponer soluciones para estos problemas que deben ser recogidos por otros (o por ti mismo).
 
 En total, sé respetuoso con los demás. Somos seres humanos en todo el mundo. Con esto en mente, por favor considera usar un lenguaje animado o de apoyo y ser consciente de la comunicación intercultural.
@@ -92,11 +92,15 @@ Echa un vistazo a nuestro [Manual de Moderadores](moderator-handbook.md) para un
 **Siéntete libre de pedir ayuda en:**
 
 - La categoria de `Contributors` de [nuestro foro de comunidad](https://forum.freecodecamp.org/c/contributors).
-- The `#Contributors` channel on [our chat server](https://discord.gg/PRyKn3Vbay).
+- El canal `#Contributors` de
 
-Estamos encantados de ayudarte a contribuir en cualquiera de los temas en los que quieras trabajar. Si nos hace preguntas sobre los issue threads, estaremos encantados de aclararlo. Asegúrate de buscar tu pregunta antes de publicar una nueva.
-
-Gracias de antemano por ser amable y paciente. Recuerda, esta comunidad es manejada principalmente por voluntarios.
+nuestro servidor de chat<1>.</li> </ul> 
+  
+  Estamos encantados de ayudarte a contribuir en cualquiera de los temas en los que quieras trabajar. Si nos hace preguntas sobre los issue threads, estaremos encantados de aclararlo. Asegúrate de buscar tu pregunta antes de publicar una nueva.
+  
+  Gracias de antemano por ser amable y paciente. Recuerda, esta comunidad es manejada principalmente por voluntarios.
+  
+  
 
 ### Asistencia adicional
 

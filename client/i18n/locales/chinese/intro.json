@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "JavaScript 算法和数据结构项目（Beta 测试版本）",
-    "intro": [
-      "占位符",
-      "占位符"
-    ],
+    "intro": ["占位符", "占位符"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
-        "title": "构建一个凯撒密码项目",
-        "intro": [
-          "",
-          ""
-        ]
+        "title": "构建一个恺撒密码项目",
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "构建一个收银机项目",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "构建一个回文检测器项目",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "搭建一个罗马数字转换器项目",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "构建一个电话号码检验器项目",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "通过构建角色扮演游戏来学习 JavaScript",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "通过构建卡路里计数器来学习表单验证",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "通过构建电子表格学习函数式编程",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "D3 面板",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -606,7 +576,7 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB 和 Mongoose",
         "intro": [
-          "MongoDB 是一个存储你可以在应用程序中使用的 JSON 文件（或记录）的数据库应用程序。不同于SQL，另一种类型的数据库。Mongo 是一个非关系型或 “NoSQL” 数据库。这意味着 Mongo 将所有相关数据存储在一个记录中，而不是像 SQL 数据库中那样在许多预设表中存储数据。",
+          "MongoDB 是一个存储 JSON 文件（或记录）的数据库程序，你可以在自己的程序中使用这些 JSON 文件。与 SQL——另一种类型的数据库——所不同的是，MongoDB 是一个非关系型数据库，也被称为 “NoSQL”。这意味着 MongoDB 将所有相关数据都存储在一个记录中，而不是像 SQL 数据库中那样把数据存储在许多预设表中。",
           "Mongoose 是一个广泛使用的 npm 包，通常和 Mongo 一起安装。通过 Mongoose，你可以使用 JavaScript 对象而不是 JSON ，这样就更容易与 Mongo 配合使用。此外，它允许你创建文件架构，即 schema，所以你不会意外地保存错误的数据类型并出现 bug。",
           "在 MongoDB 和 Mongoose 课程中，你将学习处理数据的基本知识，包括如何建立模型，保存、删除并在数据库中查找文档。"
         ]
@@ -804,7 +774,8 @@
         "title": "罗塞塔代码",
         "intro": [
           "通过完成经典的罗塞塔代码库中的这些免费编程任务来提升你的创造性问题解决能力。",
-          "这些挑战可能很困难，但是它们会将进一步提升你的算法逻辑。"
+          "这些挑战可能很困难，但是它们会将进一步提升你的算法逻辑。",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>属性：Rosetta 代码</a>"
         ]
       },
       "project-euler": {

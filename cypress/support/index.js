@@ -12,6 +12,7 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
+import 'cypress-plugin-stripe-elements';
 
 // Import commands.js using ES2015 syntax:
 import './commands';
@@ -24,7 +25,13 @@ Cypress.on('uncaught:exception', err => {
   // Rapidly cy.visiting pages seems to cause uncaught exceptions. It remains
   // unclear why this is happening, but we need to ignore them in testing so
   // that we can test other behaviour.
-  if (err.name === 'NS_ERROR_UNEXPECTED' || err.name === 'ChunkLoadError') {
+  if (
+    err.name === 'NS_ERROR_UNEXPECTED' ||
+    err.name === 'ChunkLoadError' ||
+    // paypal sdk error
+    (err.name === 'TypeError' &&
+      err.message.includes('removeEventListener is not a function'))
+  ) {
     return false;
   }
   // We are still interested in other errors.

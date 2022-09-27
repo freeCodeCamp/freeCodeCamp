@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8002
 title: Algoritmi di ordinamento/Bogosort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302311
 dashedName: sorting-algorithmsbogosort
 ---

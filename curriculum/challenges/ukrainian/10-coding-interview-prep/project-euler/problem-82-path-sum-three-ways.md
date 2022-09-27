@@ -1,7 +1,7 @@
 ---
 id: 5900f3be1000cf542c50fed1
 title: 'Завдання 82: Сума шляхів: три способи'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302196
 dashedName: problem-82-path-sum-three-ways
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e03
 title: Desvio padrão acumulado
-challengeType: 5
+challengeType: 1
 forumTopicId: 302240
 dashedName: cumulative-standard-deviation
 ---
@@ -33,7 +33,7 @@ e o desvio-padrão da população é igual à raiz quadrada da variância:
 
 $$\sigma ={\sqrt {4}}=2$$
 
-Escreva uma função que receba um array de números como parâmetro e retorne o desvio padrão da série.
+Escreva uma função que recebe um array de números como parâmetro e retorna o <a href="https://rosettacode.org/wiki/Standard_deviation" target="_blank" rel="noopener noreferrer nofollow">desvio padrão</a> da série.
 
 # --hints--
 

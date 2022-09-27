@@ -157,6 +157,10 @@
   cursor: pointer;
 }
 
+#nav-lang-menu li:first-child {
+  border-bottom: 0.1rem solid var(--gray-45) !important;
+}
+
 button.nav-link:focus {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
@@ -208,7 +212,6 @@ button.nav-link[aria-disabled='true'] {
   overflow-y: auto;
   scrollbar-width: auto;
   /* lang menu should always be full height */
-  height: 19.9rem;
 }
 
 /* main menu must be at least as tall as lang menu (when displayed) 
@@ -239,6 +242,10 @@ button.nav-link[aria-disabled='true'] {
 
 .nav-lang-menu .nav-link:hover {
   background-color: var(--gray-10) !important;
+}
+
+.nav-lang-menu li:first-child .nav-link:hover {
+  color: var(--love-dark) !important;
 }
 
 .nav-lang-button {
@@ -496,6 +503,16 @@ button.nav-link[aria-disabled='true'] {
   outline: none;
 }
 
+#toggle-button-nav .menu-btn-text,
+#universal-nav .login-btn-text {
+  display: inline-block;
+}
+
+#toggle-button-nav .menu-btn-icon,
+.login-btn-icon {
+  display: none;
+}
+
 @media (max-width: 980px) {
   .universal-nav-middle {
     flex: none;
@@ -506,7 +523,7 @@ button.nav-link[aria-disabled='true'] {
   }
 
   .universal-nav-right {
-    flex: 1 0 50%;
+    flex: 1 0 auto;
     display: flex;
     justify-content: flex-end;
   }
@@ -558,31 +575,41 @@ button.nav-link[aria-disabled='true'] {
   .universal-nav-right .fcc_searchBar .ais-Hits {
     width: calc(100% - 30px);
   }
+  #universal-nav .signup-btn {
+    padding: 4px 6px;
+  }
+  #toggle-button-nav .menu-btn-text,
+  #universal-nav .login-btn-text {
+    display: none;
+  }
+
+  #toggle-button-nav .menu-btn-icon,
+  #universal-nav .login-btn-icon {
+    display: inline-block;
+  }
+  .toggle-button-nav {
+    padding: 2px 8px;
+  }
+  #universal-nav-logo svg {
+    display: block;
+    width: auto;
+    height: 18px;
+    margin: 10px 0;
+  }
 }
 
-@media (max-width: 455px) {
+@media (max-width: 450px) {
   .universal-nav {
     padding: 0 5px;
   }
-
   .universal-nav {
     padding: 0 5px;
   }
-
   .nav-link-sign-in {
     display: flex;
   }
-
-  .navatar .signup-btn {
-    display: none;
-  }
-
-  .navatar {
-    display: none;
-  }
-
   #universal-nav-logo {
-    max-width: 60%;
+    left: 8px;
   }
 }
 
@@ -590,5 +617,11 @@ button.nav-link[aria-disabled='true'] {
   #universal-nav-logo {
     max-width: none;
     left: -170px;
+  }
+  #universal-nav-logo svg {
+    display: block;
+    width: auto;
+    height: 24px;
+    margin: 7px 0;
   }
 }

@@ -1,7 +1,7 @@
 ---
 id: 5900f3fe1000cf542c50ff11
 title: 'Problema 146: Indagare un modello di numeri primi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301775
 dashedName: problem-146-investigating-a-prime-pattern
 ---

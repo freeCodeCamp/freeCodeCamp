@@ -1,7 +1,7 @@
 ---
 id: 5900f4591000cf542c50ff6b
 title: 'Problem 236: Luxury Hampers'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301881
 dashedName: problem-236-luxury-hampers
 ---

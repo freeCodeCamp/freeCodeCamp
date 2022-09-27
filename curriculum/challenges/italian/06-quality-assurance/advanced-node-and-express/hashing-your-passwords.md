@@ -10,7 +10,7 @@ dashedName: hashing-your-passwords
 
 Tornando alla sezione sulla sicurezza delle informazioni, potresti ricordare che memorizzare le password non è *mai* una buona cosa. Ora è tempo di implementare BCrypt per risolvere questo problema.
 
-Aggiungi `bcrypt@~5.0.0` come dipendenza, e richiedilo nel tuo server. Dovrai gestire l'hashing in 2 aree chiave: dove gestisci la registrazione/salvataggio di un nuovo account, e quando controlli per vedere se una password è corretta al momento dell'accesso.
+`bcrypt@~5.0.0` è già stato aggiunto come dipendenza, quindi richiedilo nel tuo server. Dovrai gestire l'hashing in 2 aree chiave: dove gestisci la registrazione/salvataggio di un nuovo account, e quando controlli per vedere se una password è corretta al momento dell'accesso.
 
 Attualmente sul nostro percorso di registrazione, inserisci la password di un utente nel database in questo modo: `password: req.body.password`. Un modo semplice per implementare il salvataggio di un hash invece è quello di aggiungere quanto segue prima della logica del database `const hash = bcrypt.hashSync(req.body.password, 12);`, e sostituire `req.body.password` nel database salvando solo `password: hash`.
 

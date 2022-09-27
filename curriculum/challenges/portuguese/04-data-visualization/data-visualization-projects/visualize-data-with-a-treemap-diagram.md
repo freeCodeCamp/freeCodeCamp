@@ -20,7 +20,7 @@ Você pode usar HTML, JavaScript, CSS e a biblioteca de visualização D3, basea
 
 **História de usuário nº 3: ** meu treemap deve ter elementos `rect` com uma `class="tile"` que representa os dados.
 
-**História de usuário nº 4:** deve haver pelo menos 4 cores diferentes de preenchimento usadas para os blocos.
+**História de usuário nº 4:** deve haver pelo menos 2 cores diferentes de preenchimento usadas para os blocos.
 
 **História de usuário nº 5:** cada bloco deve ter as propriedades `data-name`, `data-category` e `data-value` contendo os valores de `name`, `category` e `value` correspondentes.
 

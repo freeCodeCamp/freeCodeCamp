@@ -1,7 +1,7 @@
 ---
 id: 5900f4c21000cf542c50ffd4
 title: 'Problema 340: Função maluca'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301999
 dashedName: problem-340-crazy-function
 ---

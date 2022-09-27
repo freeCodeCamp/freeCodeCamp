@@ -1,7 +1,7 @@
 ---
 id: 5900f53d1000cf542c510050
 title: 'Завдання 465: Полярні багатокутники'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302140
 dashedName: problem-465-polar-polygons
 ---

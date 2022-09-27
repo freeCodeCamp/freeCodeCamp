@@ -1,7 +1,7 @@
 ---
 id: 5900f5151000cf542c510028
 title: 'Завдання 425: З’єднання простих чисел'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302095
 dashedName: problem-425-prime-connection
 ---

@@ -2,7 +2,7 @@
 id: 5900f4351000cf542c50ff47
 title: >-
   Завдання 200: Знайдіть 200-тий доведений простий ск'юб, що містить суміжний підрядок "200"
-challengeType: 5
+challengeType: 1
 forumTopicId: 301840
 dashedName: >-
   problem-200-find-the-200th-prime-proof-sqube-containing-the-contiguous-sub-string-200

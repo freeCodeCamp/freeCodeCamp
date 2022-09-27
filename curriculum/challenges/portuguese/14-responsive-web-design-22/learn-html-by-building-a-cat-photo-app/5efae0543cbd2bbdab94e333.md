@@ -1,8 +1,8 @@
 ---
 id: 5efae0543cbd2bbdab94e333
-title: Passo 29
+title: Passo 30
 challengeType: 0
-dashedName: step-29
+dashedName: step-30
 ---
 
 # --description--
@@ -19,7 +19,7 @@ O elemento `figure` deve ter uma tag de abertura. As tags de abertura têm essa 
 assert(document.querySelectorAll('figure').length === 2);
 ```
 
-O elemento `ol` deve ter uma tag de fechamento. As tags de fechamento têm um caractere `/` logo após o caractere `<`.
+O elemento `figure` deve ter uma tag de fechamento. As tags de fechamento têm um caractere `/` logo após o caractere `<`.
 
 ```js
 assert(code.match(/<\/figure>/g).length === 2);

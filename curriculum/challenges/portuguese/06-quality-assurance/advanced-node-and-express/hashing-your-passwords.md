@@ -10,7 +10,7 @@ dashedName: hashing-your-passwords
 
 Voltando à seção de segurança da informação, você poderá ver que armazenar senhas em texto simples (plain text) *nunca* é uma boa ideia. Agora é a hora de implementar o BCrypt para resolver este problema.
 
-Adicione o `bcrypt@~5.0.0` como dependência e solicite-o no servidor. Você precisará lidar com hashing em 2 áreas principais: onde você trata do registro/salvamento de uma nova conta e onde você verifica se uma senha está correta no login.
+`bcrypt@~5.0.0` já foi adicionado como dependência, então solicite-o no servidor. Você precisará lidar com hashing em 2 áreas principais: onde você trata do registro/salvamento de uma nova conta e onde você verifica se uma senha está correta no login.
 
 No momento, na rota de registro, você insere a senha de um usuário no banco de dados, da seguinte forma: `password: req.body.password`. Uma maneira fácil de implementar o salvamento de um hash, em vez disso, é adicionar a instrução `const hash = bcrypt.hashSync(req.body.password, 12);` antes da lógica do seu banco de dados e substituir o `req.body.password` no banco de dados, salvando apenas `password: hash`.
 

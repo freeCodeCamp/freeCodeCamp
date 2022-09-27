@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c158
-title: Introduzir o Pandas
+title: Introdução ao Pandas
 challengeType: 11
 videoId: 0xACW-8cZU0
 bilibiliIds:

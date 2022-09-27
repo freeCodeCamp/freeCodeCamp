@@ -1,7 +1,7 @@
 ---
 id: 5900f36f1000cf542c50fe82
 title: '问题 3：最大素数因子'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301952
 dashedName: problem-3-largest-prime-factor
 ---

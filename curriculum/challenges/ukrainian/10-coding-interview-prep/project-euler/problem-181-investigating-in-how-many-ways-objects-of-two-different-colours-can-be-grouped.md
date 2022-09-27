@@ -2,7 +2,7 @@
 id: 5900f4231000cf542c50ff34
 title: >-
   Завдання 181: Скількома способами можна згрупувати об'єкти двох різних кольорів
-challengeType: 5
+challengeType: 1
 forumTopicId: 301817
 dashedName: >-
   problem-181-investigating-in-how-many-ways-objects-of-two-different-colours-can-be-grouped

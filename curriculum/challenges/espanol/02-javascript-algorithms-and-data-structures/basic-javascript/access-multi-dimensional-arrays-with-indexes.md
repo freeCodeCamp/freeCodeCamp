@@ -21,12 +21,12 @@ const arr = [
   [[10, 11, 12], 13, 14]
 ];
 
-arr[3];
-arr[3][0];
-arr[3][0][1];
+const subarray = arr[3];
+const nestedSubarray = arr[3][0];
+const element = arr[3][0][1];
 ```
 
-`arr[3]` es `[[10, 11, 12], 13, 14]`, `arr[3][0]` es `[10, 11, 12]` y `arr[3][0][1]` es `11`.
+En este ejemplo, `subarray` tiene el valor `[[10, 11, 12], 13, 14]`, `nestedSubarray` tiene el valor `[10, 11, 12]`, y `element` tiene el valor `11`.
 
 **Nota:** No debe haber ningún espacio entre el nombre del arreglo y los corchetes, ni `array [0][0]` o `array [0] [0]` están permitidos. Aunque JavaScript pueda procesar esto correctamente, puedes confundir a otros programadores al leer tu código.
 

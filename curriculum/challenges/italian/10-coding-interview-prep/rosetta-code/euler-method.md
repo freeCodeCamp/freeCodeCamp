@@ -1,7 +1,7 @@
 ---
 id: 59880443fb36441083c6c20e
 title: Metodo di Eulero
-challengeType: 5
+challengeType: 1
 forumTopicId: 302258
 dashedName: euler-method
 ---

@@ -118,6 +118,7 @@ interface ShowClassicProps {
 interface ShowClassicState {
   layout: ReflexLayout;
   resizing: boolean;
+  usingKeyboardInTablist: boolean;
 }
 
 interface ReflexLayout {
@@ -127,6 +128,11 @@ interface ReflexLayout {
   notesPane: { flex: number };
   previewPane: { flex: number };
   testsPane: { flex: number };
+}
+
+interface RenderEditorArgs {
+  isMobileLayout: boolean;
+  isUsingKeyboardInTablist: boolean;
 }
 
 const REFLEX_LAYOUT = 'challenge-layout';
@@ -167,12 +173,20 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     // layout: Holds the information of the panes sizes for desktop view
     this.state = {
       layout: this.getLayoutState(),
-      resizing: false
+      resizing: false,
+      usingKeyboardInTablist: false
     };
 
     this.containerRef = React.createRef();
     this.editorRef = React.createRef();
     this.instructionsPanelRef = React.createRef();
+
+    this.updateUsingKeyboardInTablist =
+      this.updateUsingKeyboardInTablist.bind(this);
+  }
+
+  updateUsingKeyboardInTablist(usingKeyboardInTablist: boolean): void {
+    this.setState({ usingKeyboardInTablist });
   }
 
   getLayoutState(): ReflexLayout {
@@ -389,7 +403,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     );
   }
 
-  renderEditor() {
+  renderEditor({ isMobileLayout, isUsingKeyboardInTablist }: RenderEditorArgs) {
     const {
       pageContext: {
         projectPreview: { showProjectPreview }
@@ -416,6 +430,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             this.editorRef as MutableRefObject<editor.IStandaloneCodeEditor>
           }
           initialTests={tests}
+          isMobileLayout={isMobileLayout}
+          isUsingKeyboardInTablist={isUsingKeyboardInTablist}
           resizeProps={this.resizeProps}
           title={title}
           usesMultifileEditor={usesMultifileEditor}
@@ -476,6 +492,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       t
     } = this.props;
 
+    const blockNameTitle = this.getBlockNameTitle(t);
+    const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+
     return (
       <Hotkeys
         challengeType={challengeType}
@@ -488,10 +507,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         usesMultifileEditor={usesMultifileEditor}
       >
         <LearnLayout>
-          <Helmet title={`${this.getBlockNameTitle(t)} | freeCodeCamp.org`} />
+          <Helmet title={windowTitle} />
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
-              editor={this.renderEditor()}
+              editor={this.renderEditor({
+                isMobileLayout: true,
+                isUsingKeyboardInTablist: this.state.usingKeyboardInTablist
+              })}
               guideUrl={getGuideUrl({ forumTopicId, title })}
               hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
@@ -502,6 +524,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               notes={this.renderNotes(notes)}
               preview={this.renderPreview()}
               testOutput={this.renderTestOutput()}
+              // eslint-disable-next-line @typescript-eslint/unbound-method
+              updateUsingKeyboardInTablist={this.updateUsingKeyboardInTablist}
               usesMultifileEditor={usesMultifileEditor}
               videoUrl={this.getVideoUrl()}
             />
@@ -511,7 +535,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               block={block}
               challengeFiles={challengeFiles}
               challengeType={challengeType}
-              editor={this.renderEditor()}
+              editor={this.renderEditor({
+                isMobileLayout: false,
+                isUsingKeyboardInTablist: this.state.usingKeyboardInTablist
+              })}
               hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
               hasPreview={this.hasPreview()}
@@ -524,6 +551,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               resizeProps={this.resizeProps}
               superBlock={superBlock}
               testOutput={this.renderTestOutput()}
+              windowTitle={windowTitle}
             />
           </Media>
           <CompletionModal
@@ -532,7 +560,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             certification={certification}
             superBlock={superBlock}
           />
-          <HelpModal />
+          <HelpModal challengeTitle={title} challengeBlock={blockName} />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
           <ProjectPreviewModal

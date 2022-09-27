@@ -1,7 +1,7 @@
 ---
 id: 5900f3b91000cf542c50fecc
 title: 'Problema 77: somme di numeri primi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302190
 dashedName: problem-77-prime-summations
 ---

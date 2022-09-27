@@ -20,7 +20,7 @@ Lo `store` di Redux è un oggetto che detiene e gestisce lo `state` dell'applica
 
 Dichiara una variabile `store` e assegnala al metodo `createStore()`, passando il `reducer` come argomento.
 
-**Nota:** Il codice nell'editor utilizza la sintassi predefinita degli argomenti ES6 per inizializzare questo stato in modo da contenere un valore di `5`. Se non hai familiarità con gli argomenti predefiniti, puoi fare riferimento alla <a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener noreferrer nofollow">sezione ES6 nel Curriculum</a> che copre questo argomento.
+**Nota:** Il codice nell'editor utilizza la sintassi predefinita degli argomenti ES6 per inizializzare questo stato in modo da contenere un valore di `5`. Se non hai familiarità con gli argomenti predefiniti, puoi fare riferimento alla <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener noreferrer nofollow">sezione ES6 nel Curriculum</a> che tratta questo argomento.
 
 # --hints--
 

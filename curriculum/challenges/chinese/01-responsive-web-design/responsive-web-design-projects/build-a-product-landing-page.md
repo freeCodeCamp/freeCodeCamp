@@ -8,7 +8,7 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**目标：** 构建一个功能类似于 <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a> 的应用程序
+**目标：** 构建一个功能类似于 <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a> 的应用程序
 
 **需求：**
 
@@ -34,63 +34,63 @@ dashedName: build-a-product-landing-page
 
 # --hints--
 
-你应该有一个 `id` 为 `header` 的 `header` 元素
+你应该有一个 `id` 为 `header` 的 `header` 元素。
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-你应该有一个 `id` 为 `header-img` 的 `img` 元素
+你应该有一个 `id` 为 `header-img` 的 `img` 元素。
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-你的 `#header-img` 元素应该是 `#header` 元素的子元素
+你的 `#header-img` 元素应该是 `#header` 元素的子元素。
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
 assert(els.length > 0)
 ```
 
-你的 `#header-img` 元素应该有一个 `src` 属性
+你的 `#header-img` 应该有一个 `src` 属性。
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-你的 `#header-img` 元素的 `src` 属性应该有一个有效的 URL（以 `http` 开头）
+你的 `#header-img` 的 `src` 值应该是一个有效的 URL（以 `http` 开头）。
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-你应该有一个 `id` 为 `nav-bar` 的 `nav` 元素
+你应该有一个 `nav` 元素，其 `id` 为 `nav-bar`。
 
 ```js
 const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-你的 `#nav-bar` 元素应该是 `#header` 元素的子元素
+你的 `#nav-bar` 应该是 `#header` 的后代。
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
 assert(els.length > 0)
 ```
 
-在 `#nav-bar` 内，你应该有至少三个 `.nav-link` 元素
+`#nav-bar` 中应该至少有 3 个 `.nav-link` 元素。
 
 ```js
 const els = document.querySelectorAll('#nav-bar .nav-link')
 assert(els.length >= 3)
 ```
 
-每个 `.nav-link` 元素应该有一个 `href` 元素
+每个 `.nav-link` 元素都应该有一个 `href` 属性。
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -100,7 +100,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-每个 `.nav-link` 元素应该链接到登陆页面上的相应元素（有一个 `href` 具有另一个元素的 id 的值，例如： `#footer`）
+每个 `.nav-link` 元素都应该链接到登录页上的相应元素（有一个 `href` 值是另一个元素的 id。例如 `#footer`）。
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -111,14 +111,14 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-你应该有一个 `id` 为 `video` 的 `video` 或 `iframe` 元素
+你应该有一个 `video` 或 `iframe` 元素，其中 `id` 为 `video`。
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-你的 `#video` 元素应该有一个 `src` 属性
+你的 `#video` 应该有一个 `src` 属性。
 
 ```js
 let el = document.getElementById('video')
@@ -133,77 +133,77 @@ if (sourceElement) {
 assert(el.hasAttribute('src'));
 ```
 
-你应该有一个 `id` 为 `form` 的 `form` 元素
+你应该有一个 `form` 元素，其 `id` 为 `form`。
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-你应该有一个 `id` 为 `email` 的 `input` 元素
+你应该有一个 `input` 元素，其中 `id` 为 `email`。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-你的 `#email` 元素应该是 `#form` 元素的子元素
+你的 `#email` 应该是 `#form` 的后代。
 
 ```js
 const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-你的 `#email` 元素应该有 `placeholder` 属性与占位符文本
+你的 `#email` 应该具有带有占位符文本的 `placeholder` 属性。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-你的 `#email` 元素应该使用 HTML5 验证，方法是设置 `type` 为 `email`
+你的 `#email` 应该通过将其 `type` 设置为 `email` 来使用 HTML5 验证。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-你应该有一个 `id` 为 `submit` 的 `input` 元素
+你应该有一个 `input` 元素，其中 `id` 为`submit`。
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-你的 `#submit` 元素应该是 `#form` 元素的子元素
+你的 `#submit` 应该是 `#form` 的后代。
 
 ```js
 const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-你的 `#submit` 元素应该具有 `type` 为 `submit`
+你的 `#submit` 应该具有 `submit` 的 `type`。
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-你的 `#form` 元素应该有值为 `https://www.freecodecamp.com/email-submit` 的 `action` 属性
+你的 `#form` 应该具有 `action` 属性为 `https://www.freecodecamp.com/email-submit`。
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-你的 `#email` 元素应该具有值为 `email` 的 `name` 属性
+你的 `#email` 元素应该具有值为 `email` 的 `name` 属性。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.name === 'email')
 ```
 
-你的 `#nav-bar` 元素应该始终位于视口的顶部
+你的 `#nav-bar` 应该始终位于视口的顶部。
 
 ```js
 (async () => {
@@ -243,7 +243,7 @@ assert(!!el && el.name === 'email')
 })();
 ```
 
-你的产品登陆页面至少要有一个媒体查询
+你的产品登陆页面至少要有一个媒体查询。
 
 ```js
 const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
@@ -251,7 +251,7 @@ const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
 assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-你的产品登陆页面应该至少使用一次 CSS Flexbox
+你的产品登陆页面应该至少使用一次 CSS Flexbox。
 
 ```js
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
@@ -281,7 +281,7 @@ assert(usesFlex)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Product Landing Page</title>
   </head>
   <body>

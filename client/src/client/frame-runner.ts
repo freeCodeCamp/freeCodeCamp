@@ -1,6 +1,6 @@
 import '@babel/polyfill';
 import jQuery from 'jquery';
-import curriculumHelpers from '../utils/curriculum-helpers';
+import * as helpers from '@freecodecamp/curriculum-helpers';
 
 declare global {
   interface Window {
@@ -83,17 +83,15 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     return o;
   };
 
-  // eslint-disable-next-line no-inline-comments
   const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
   const assert = chai.assert;
-  const __helpers = curriculumHelpers;
+  const __helpers = helpers;
   /* eslint-enable @typescript-eslint/no-unused-vars */
 
   let Enzyme;
   if (e.loadEnzyme) {
     /* eslint-disable prefer-const */
     let Adapter16;
-    /* eslint-disable no-inline-comments */
 
     [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
       import(/* webpackChunkName: "enzyme" */ 'enzyme'),
@@ -119,7 +117,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         // document ready:
         $(() => {
           try {
-            // eslint-disable-next-line no-eval
             const test: unknown = eval(testString);
             resolve(test);
           } catch (err) {

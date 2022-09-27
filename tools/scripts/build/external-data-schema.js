@@ -19,6 +19,7 @@ const blockSchema = Joi.object({}).keys({
 });
 
 const subSchema = Joi.object({}).keys({
+  intro: Joi.array(),
   blocks: Joi.object({}).pattern(Joi.string(), Joi.object().concat(blockSchema))
 });
 

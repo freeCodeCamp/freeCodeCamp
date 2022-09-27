@@ -1,7 +1,7 @@
 ---
 id: 5900f5361000cf542c510049
 title: 'Problem 458: Permutations of Project'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302132
 dashedName: problem-458-permutations-of-project
 ---

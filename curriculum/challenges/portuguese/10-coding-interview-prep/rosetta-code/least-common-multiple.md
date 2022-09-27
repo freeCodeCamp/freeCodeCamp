@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7edf
 title: Mínimo múltiplo comum
-challengeType: 5
+challengeType: 1
 forumTopicId: 302301
 dashedName: least-common-multiple
 ---

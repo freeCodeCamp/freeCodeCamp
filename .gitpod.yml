@@ -14,6 +14,10 @@ ports:
     onOpen: ignore
   - port: 9230 # client node debug
     onOpen: ignore
+  - port: 3200 # challenge editor api
+    visibility: public
+  - port: 3300 # challenge editor client
+    visibility: public
 
 tasks:
   - before: |
@@ -22,6 +26,8 @@ tasks:
       export HOME_LOCATION=$(gp url 8000)
       export API_LOCATION=$(gp url 3000)
       export CYPRESS_BASE_URL=$(gp url 8000)
+      export REACT_APP_CHALLENGE_EDITOR_API_LOCATION=$(gp url 3200)
+      export CHALLENGE_EDITOR_CLIENT_LOCATION=$(gp url 3300)
       ' >> ~/.bashrc;
       exit;
 
@@ -39,13 +45,13 @@ tasks:
       cp sample.env .env &&
       npm ci &&
       gp sync-done npm-ci &&
-      gp await-port 27017 &&
+      gp ports await 27017 &&
       npm run seed &&
       mongo --eval "db.fsyncLock(); db.fsyncUnlock()"
     command: >
       npm run create:config &&
       npm run build:curriculum &&
-      gp await-port 27017 &&
+      gp ports await 27017 &&
       npm run develop:server
 
   - name: client
@@ -56,7 +62,7 @@ tasks:
       npm run predevelop &&
       cd ..
     command: >
-      gp await-port 3000 &&
+      gp ports await 3000 &&
       cd ./client &&
       npm run develop -- -H '0.0.0.0'
     openMode: split-right
@@ -82,5 +88,5 @@ github:
 
 vscode:
   extensions:
-    - dbaeumer.vscode-eslint@2.1.8
-    - esbenp.prettier-vscode@6.4.0
+    - dbaeumer.vscode-eslint@2.2.6
+    - esbenp.prettier-vscode@9.8.0

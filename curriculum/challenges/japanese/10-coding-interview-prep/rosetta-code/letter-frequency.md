@@ -1,7 +1,7 @@
 ---
 id: 5e4ce2bbac708cc68c1df25f
 title: 文字の出現頻度
-challengeType: 5
+challengeType: 1
 forumTopicId: 385263
 dashedName: letter-frequency
 ---

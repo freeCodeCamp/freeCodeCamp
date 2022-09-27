@@ -13,8 +13,8 @@ Prima, visita il file `config/i18n/all-langs.ts` per aggiungere la lingua alle l
 - `availableLangs`: Aggiungi il nome testuale della lingua agli array `client` e `curriculum`. Questo è il valore che sarà usato nel file `.env` più tardi.
 - `auditedCerts`: Aggiungi il nome testuale della lingua come _chiave_, e aggiungi un array di variabili `SuperBlocks.{cert}` come _valori_. Questo dice al client quali certificazioni sono completamente tradotte.
 - `i18nextCodes`: questi sono i codici ISO per le varie lingue. Dovrai aggiungere il codice ISO appropriato per la lingua che stai attivando. Questi devono essere unici per ogni lingua.
-- `LangNames`: These are the display names for the language selector in the navigation menu.
-- `LangCodes`: These are the language codes used for formatting dates and numbers. Questi devono essere codici Unicode CLDR invece di codici ISO.
+- `LangNames`: Questi sono i nomi delle lingue visualizzati nel menù di navigazione.
+- `LangCodes`: Questi sono i codici delle lingue usati per formattare date e numeri. Questi devono essere codici Unicode CLDR invece di codici ISO.
 
 Per esempio, se vuoi attivare la lingua Dothraki, il tuo oggetto `all-langs.js` dovrebbe essere come segue:
 
@@ -96,7 +96,7 @@ export enum LangCodes = {
 
 Poi, apri il file `client/src/utils/algolia-locale-setup.ts`. Questi dati sono usati dalla barra di ricerca che carica gli articoli in `/news`. Anche se è poco probabile che tu stia testando questa funzione, se questi dati mancano per la tua lingua possono esserci degli errori nel costruire il codebase localmente.
 
-Aggiungi un oggetto per la tua lingua all'oggetto `algoliaIndices`. You should use the the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
+Aggiungi un oggetto per la tua lingua all'oggetto `algoliaIndices`. Dovresti usare gli stessi valori dell'oggetto `english` per testare in locale, sostituendo la chiave `english` con il valore della tua lingua in `availableLangs`.
 
 > [!NOTE] Se abbiamo già distribuito un'istanza della pubblicazione nella tua lingua target, puoi aggironare i valori per riflettere le istanze live. Altrimenti, usa i valori della pubblicazione inglese.
 

@@ -14,7 +14,7 @@ Recomendamos usar [título e mensagens convencionais](https://www.conventionalco
 > 
 > `fix(learn): testes para o desafio de ciclo do...while`
 
-Quando estiver abrindo um Pull Request (PR), você pode usar a referência abaixo para determinar o tipo, escopo (opcional) e a descrição.
+Sempre que abrir um Pull Request (PR), você pode usar a referência abaixo para determinar o tipo, escopo (opcional) e a descrição.
 
 **Tipo:**
 
@@ -38,7 +38,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 - `fix(a11y): contraste melhorado da barra de pesquisa`
 - `feat: adicionar mais testes aos desafios de HTML e CSS`
 - `fix(api,cliente): prevenir erros CORS no envio do formulário`
-- `docs(i18n): tradução para chinês da configuração local`
+- `docs(i18n): correção dos links para relativos em vez de absolutos`
 
 ## Propondo um Pull Request
 
@@ -54,7 +54,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
 3. Envie o pull request da sua branch para a branch `main` do freeCodeCamp.
 
-4. No corpo de seu PR, inclua um resumo mais detalhado das alterações feitas e o motivo.
+4. Inclua um resumo mais detalhado das alterações feitas e como suas alterações são úteis no corpo do PR.
 
    - Será apresentado um modelo de pull request. É uma checklist que você deve seguir antes de abrir o pull request.
 

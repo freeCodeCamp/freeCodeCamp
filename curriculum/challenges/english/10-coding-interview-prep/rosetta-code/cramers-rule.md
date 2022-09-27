@@ -1,16 +1,16 @@
 ---
 id: 59713da0a428c1a62d7db430
 title: Cramer's rule
-challengeType: 5
+challengeType: 1
 forumTopicId: 302239
 dashedName: cramers-rule
 ---
 
 # --description--
 
-<a href="https://rosettacode.org/wiki/Cramer%27s_rule" target="_blank" rel="noopener noreferrer nofollow">Cramer's rule</a> is a formula for solving a system of linear equations by using the determinates of matrixes formed from subsets of the coefficients and right hand side values.
+<a href="https://rosettacode.org/wiki/Cramer%27s_rule" target="_blank" rel="noopener noreferrer nofollow">Cramer's rule</a> is a formula for solving a system of linear equations by using the determinants of matrices formed from subsets of the coefficients and right hand side values.
 
-The determinate of a matrix with 2 rows and two columns is given by:
+The determinant of a matrix with 2 rows and two columns is given by:
 
 $\begin{aligned}|A|={\begin{vmatrix}a&b\\\c&d\end{vmatrix}}=ad-bc.\end{aligned}$
 

@@ -151,7 +151,7 @@ Ahora que tienes una copia local de freeCodeCamp, puedes seguir estas instruccio
 
 Si tiene problemas, primero realice una búsqueda web para su problema y compruebe si ya ha sido respondida. Si no encuentra una solución, por favor busque en nuestra página [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) para una solución e infórmese del problema si aún no ha sido reportado.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://discord.gg/PRyKn3Vbay).
+Y como siempre, sientase libre de hacer preguntas en la categoría ['Contributors' en nuestro foro](https://forum.freecodecamp.org/c/contributors) o en [nuestro servidor de chat](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Puedes optar por no ejecutar freeCodeCamp localmente si simplemente estas editando archivos. Por ejemplo, realizar un `rebase`, or resolver conflictos `merge`.
 > 
@@ -244,13 +244,13 @@ npm run develop
 
 Este único comando lanzará todos los servicios, incluyendo el servidor API y las aplicaciones cliente disponibles para que usted trabaje.
 
-> [!NOTE] Una vez listo, abre tu navegador y ** visita <http://localhost:8000>**. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+> [!NOTE] Una vez listo, abre tu navegador y ** visita <http://localhost:8000>**. Si la aplicación se carga, inicia sesión. Enhorabuena, ¡ya está todo listo! Ahora tienes una copia de toda la plataforma de aprendizaje de freeCodeCamp funcionando en tu máquina local.
 
 > [!TIP] La URL de la API es `http://localhost:3000`. La aplicación Gatsby corre en  `http://localhost:8000`
 
-> While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
+> Mientras está conectado, si visita <http://localhost:3000/explorer> debería ver las APIs disponibles.
 
-> [!WARNING] Clearing your cookies or running `npm run seed:certified-user` will log you out, and you will have to sign in again.
+> [!WARNING] Al borrar las cookies o ejecutar `npm run seed:certified-user` se cerrará la sesión, y tendrás que volver a iniciar sesión.
 
 ## Iniciar sesión con un usuario local
 
@@ -498,7 +498,7 @@ Si estás en un sistema operativo diferente y/o todavía tienes problemas, consu
 
 > [!WARNING]
 > 
-> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
+> Evita crear propuestas de GitHub para problemas de requisitos previos. Están fuera del alcance de este proyecto.
 
 ### Problemas con la interfaz de usuario, fuentes, errores de compilación, etc.
 
@@ -568,10 +568,10 @@ Si obtiene errores durante la instalación de las dependencias, por favor asegú
 
 La primera configuración puede tardar un rato dependiendo del ancho de banda de su red. Tenga paciencia, y si todavía está atascado le recomendamos usar GitPod en lugar de una configuración sin conexión.
 
-> [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
+> [!NOTE] Si está utilizando dispositivos Apple con chip M1 para ejecutar la aplicación localmente, se sugiere utilizar Node v14.7 o superior. De lo contrario, podría tener problemas con dependencias como Sharp.
 
 ## Obteniendo ayuda
 
-If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+Si estás atascado y necesitas ayuda, siéntete libre de hacer preguntas en la categoría de ['Contributors' en nuestro foro](https://forum.freecodecamp.org/c/contributors) o en [la sala de chat de contribuidores](https://discord.gg/PRyKn3Vbay).
 
 Puede haber un error en la consola de su navegador o en Bash / Terminal / Command Line que le ayudará a identificar el problema. Proporcione este mensaje de error en la descripción de su problema para que otros puedan identificar el problema más fácilmente y ayudarle a encontrar una solución.

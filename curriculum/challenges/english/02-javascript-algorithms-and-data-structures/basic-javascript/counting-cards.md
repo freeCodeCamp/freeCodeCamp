@@ -26,6 +26,19 @@ Do NOT include quotes (single or double) in the output.
 
 # --hints--
 
+Your function should return a value for count and the text (`Bet` or `Hold`) with one space character between them.
+
+```js
+assert(//
+  (function () {
+    count = 0;
+    let out = cc(10);
+    const hasSpace = /-?\d+ (Bet|Hold)/.test('' + out);
+    return hasSpace;
+  })()
+);
+```
+
 Cards Sequence 2, 3, 4, 5, 6 should return the string `5 Bet`
 
 ```js

@@ -50,49 +50,49 @@ Cada componente es diferente, pero en general un componente debería:
 - Estilo internamente basado en sus accesorios (los consumidores no deben necesitar reponer el componente con el accesorio `className`)
 - Utilizar el sistema de estilo incorporado desde Tailwind, en lugar de tener estilos personalizados
 
-### Using colors
+### Uso de los colores
 
-There are two color "layers" in the component library:
+Hay dos "capas" de color en la biblioteca de componentes:
 
-- The base layer, where the color names describe what the colors are, e.g. `gray00`, `blue50`
-- The semantic layer, where the color names describe what the colors are for, e.g. `foreground-primary`, `background-danger`
+- La capa base, donde los nombres de los colores describen lo que son los colores, por ejemplo, `gray00`, `blue50`
+- La capa semántica, donde los nombres de los colores describen para qué sirven, por ejemplo,  `foreground-primary`, `background-danger`
 
-Generally when using colors in a component, you should choose semantic variables over the base ones. There are exceptions, however, specifically when you are styling the component's states such as hover, active, disabled, etc. In these cases, we recommend using the base variables directly instead of creating new semantic variables, since each component can have different styles for their states.
+Generalmente, cuando se utilizan colores en un componente, se deben elegir variables semánticas en lugar de las básicas. Sin embargo, hay excepciones, específicamente cuando se estilan los estados del componente, tales como hover, active, disabled, etc. En estos casos, recomendamos utilizar directamente las variables base en lugar de crear nuevas variables semánticas, ya que cada componente puede tener diferentes estilos para sus estados.
 
-> [!NOTE] Color definition can be found in the [`colors.css` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). A color is only available for use if it is added to the [`tailwind.config.js` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) under the `colors` property.
+> [!NOTE] La definición del color se encuentra en el [archivo `colors.css`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). Un color sólo está disponible para su uso si se añade al [archivo `tailwind.config.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) bajo la propiedad `colors`.
 
 ### Enlaces útiles
 
-- [Tailwind CSS Configuration](https://tailwindcss.com/docs/configuration)
-- [React Bootstrap v0.33 Docs](https://react-bootstrap-v3.netlify.app)
-- [Bootstrap 3.3.7 stylesheet](https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css)
-- [React Bootstrap current implementation](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
-- [React Bootstrap current tests](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
+- [Configuración del CSS de Tailwind](https://tailwindcss.com/docs/configuration)
+- [Documentación de React Bootstrap v0.33](https://react-bootstrap-v3.netlify.app)
+- [Hoja de estilo de Bootstrap 3.3.7](https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css)
+- [Implementación actual de React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
+- [Pruebas actuales de React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
 
 ## Mostrar los casos de uso en el Storybook
 
-Use cases of the component should be added to the Storybook file (`.stories.tsx`).
+Los casos de uso del componente deben añadirse al archivo Storybook (`.stories.tsx`).
 
-To start Storybook, run the following command from the root directory:
+Para iniciar Storybook, ejecute el siguiente comando desde el directorio raíz:
 
 ```bash
 npm run storybook
 ```
 
-The Storybook page is available on [http://localhost:6006](http://localhost:6006).
+La página Storybook está disponible en [http://localhost:6006](http://localhost:6006).
 
 ## Escribir pruebas unitarias
 
-We use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) to write unit tests. The tests should assert that the components behave as expected and are accessible.
+Usamos [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) para escribir pruebas unitarias. Las pruebas deben afirmar que los componentes se comportan como se espera y son accesibles.
 
-To run tests against the component library, run the following command from the root directory:
+Para ejecutar pruebas a la biblioteca de componentes, ejecute el siguiente comando desde el directorio raíz:
 
 ```bash
 npm run test-ui-components
 ```
 
-### Useful links
+### Enlaces útiles
 
-- [Testing for Accessibility](https://testing-library.com/docs/dom-testing-library/api-accessibility)
-- [Order of priority of React Testing Library's queries](https://testing-library.com/docs/queries/about/#priority)
-- [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+- [Pruebas de Accesibilidad](https://testing-library.com/docs/dom-testing-library/api-accessibility)
+- [Orden de prioridad de las consultas de React Testing Library](https://testing-library.com/docs/queries/about/#priority)
+- [Errores comunes con la biblioteca de pruebas de React](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)

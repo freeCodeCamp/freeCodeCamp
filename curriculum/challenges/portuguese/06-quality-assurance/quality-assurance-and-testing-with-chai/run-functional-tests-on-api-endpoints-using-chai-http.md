@@ -37,7 +37,7 @@ Além disso, observe o parâmetro `done` na função de callback do teste. Cham�
 
 # --instructions--
 
-Dentro de `tests/2_functional-tests.js`, altere o teste `'Test GET /hello with no name'` (`// #1`) para afirmar o `status` e o `text` da resposta para fazer o teste passar. Não altere os argumentos passados para as assertivas.
+Dentro de `tests/2_functional-tests.js`, altere o teste `'Test GET /hello with no name'` (`// #1`) para afirmar o `status` e o `text` da resposta para fazer o teste passar. Não altere os argumentos passados às afirmações.
 
 Não deve haver consulta de URL. Não deve haver consulta de name no URL. O endpoint responde com `hello Guest`.
 

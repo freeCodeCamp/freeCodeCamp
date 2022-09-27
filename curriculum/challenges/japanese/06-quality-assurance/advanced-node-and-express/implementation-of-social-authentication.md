@@ -18,7 +18,7 @@ dashedName: implementation-of-social-authentication
 
 OAuth を使用したストラテジーでは、少なくとも*クライアント ID* と*クライアント シークレット*が必要です。サービスはこれらを使用して、認証リクエストが誰からのものか、またそれが有効かどうかを確認します。 これらは、認証を実装しようとしている GitHub などのサイトから取得され、アプリに固有のものです。これらの情報は**共有すべきではありません**。したがって、公開リポジトリにアップロードしたり、コード内に直接書き込んだりしないでください。 通常は、それらを `.env` ファイルに保存し、`process.env.GITHUB_CLIENT_ID` などのように参照します。 このチャレンジでは、GitHub ストラテジーを使用します。
 
-GitHub からの*クライアント ID とシークレット*の取得は、「開発者設定」のアカウントプロファイル設定で実行され、その後は「[OAuth アプリケーション](https://github.com/settings/developers)」で実行されます。 「Register a new application (新しいアプリを登録する)」をクリックし、アプリに名前を付け、URL を Replit のホームページに貼り付けます (**プロジェクトコードの URL ではありません**)。最後に、コールバック URL をホームページと同じ URL に貼り付けますが、`/auth/github/callback` を追加します。 ユーザーはここにリダイレクトされ、GitHub で認証された後、処理が行われます。 返された情報を `'GITHUB_CLIENT_ID'` および `'GITHUB_CLIENT_SECRET'` として `.env` ファイルに保存します。
+GitHub からの*クライアント ID とシークレット*の取得は、「開発者設定 (Developer settings)」のアカウントプロファイル設定で実行され、その後は「<a href="https://github.com/settings/developers" target="_blank" rel="noopener noreferrer nofollow">OAuth アプリケーション (OAuth Apps)</a>」で実行されます。 「Register a new application (新しいアプリを登録する)」をクリックし、アプリに名前を付け、URL を Replit のホームページに貼り付けます (**プロジェクトコードの URL ではありません**)。最後に、コールバック URL をホームページと同じ URL に貼り付けますが、`/auth/github/callback` を追加します。 ユーザーはここにリダイレクトされ、GitHub で認証された後、処理が行われます。 返された情報を `'GITHUB_CLIENT_ID'` および `'GITHUB_CLIENT_SECRET'` として `.env` ファイルに保存します。
 
 `routes.js` ファイルで、`showRegistration: true` の後に、`showSocialAuth: true` をホームページルートに追加します。 GET リクエストを受け付けるルートを 2 つ作成します。それらは、`/auth/github` と `/auth/github/callback` です。 1 つ目は、Passport を呼び出して `'github'` を認証するだけです。 2 つ目は、Passport を呼び出して `'github'` を認証した結果失敗し、`/` へリダイレクトした後、リダイレクトが成功した場合は `/profile` へリダイレクトします(前回のプロジェクトと同様です)。
 
@@ -31,7 +31,7 @@ app.route('/login')
   });
 ```
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを <a href="https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e</a> で確認できます。
 
 # --hints--
 
