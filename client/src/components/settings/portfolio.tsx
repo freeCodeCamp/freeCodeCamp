@@ -7,7 +7,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual, omit } from 'lodash-es';
 import { nanoid } from 'nanoid';
-import React, { Component, FormEvent } from 'react';
+import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 
@@ -55,11 +55,6 @@ function createFindById(id: string) {
   return (p: PortfolioItem) => p.id === id;
 }
 
-const mockEvent = {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  preventDefault() {}
-};
-
 class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
   static displayName: string;
   constructor(props: PortfolioProps) {
@@ -91,10 +86,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       });
     };
 
-  handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const target = e.target as HTMLInputElement;
-    const id = target?.id || undefined;
+  handleSubmit = (e?: React.FormEvent<HTMLFormElement>) => {
+    e?.preventDefault();
+    const target = e?.currentTarget;
+    const id = target?.id;
     const { updatePortfolio } = this.props;
     let { portfolio } = this.state;
     if (id) {
@@ -119,7 +114,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       state => ({
         portfolio: state.portfolio.filter(p => p.id !== id)
       }),
-      () => this.handleSubmit(mockEvent as FormEvent<Element>)
+      () => this.handleSubmit()
     );
   };
 
