@@ -1,0 +1,26 @@
+.input-help-box {
+  max-width: 320px;
+  margin-top: -11px;
+}
+
+.input-message {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.input-message > svg {
+  margin-right: 7px;
+}
+
+.input-message.is-error {
+  color: var(--tc-red-100);
+}
+
+.input-message.is-warn {
+  color: var(--tc-legacy-120);
+}

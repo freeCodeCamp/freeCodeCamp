@@ -5,11 +5,12 @@ import {
   FormGroup,
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
-import { kebabCase } from 'lodash-es';
+import { kebabCase, set } from 'lodash-es';
 import normalizeUrl from 'normalize-url';
-import React from 'react';
+import React, { Fragment, useState } from 'react';
 import { Field } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
+import Warning from '../../assets/icons/warning';
 import { FormOptions } from './form';
 import {
   editorValidator,
@@ -18,6 +19,7 @@ import {
   fCCValidator,
   httpValidator
 } from './form-validators';
+import './form-field.css';
 
 type FormFieldsProps = {
   formFields: { name: string; label: string }[];
@@ -35,6 +37,10 @@ function FormFields(props: FormFieldsProps): JSX.Element {
     isEditorLinkAllowed = false,
     isLocalLinkAllowed = false
   } = options;
+
+  const [blured, setBlured] = useState<boolean[]>([]);
+  const markAsBlured = (index: number) =>
+    setBlured(prevState => set([...prevState], index, true));
 
   const nullOrWarning = (
     value: string,
@@ -59,14 +65,21 @@ function FormFields(props: FormFieldsProps): JSX.Element {
     const message: string = (error ||
       validationError ||
       validationWarning) as string;
+
+    const hasError = error || validationError;
+    const classNames = [
+      'input-message',
+      hasError && 'is-error',
+      !hasError && 'is-warn'
+    ]
+      .filter(Boolean)
+      .join(' ');
     return message ? (
-      <HelpBlock>
-        <Alert
-          bsStyle={error || validationError ? 'danger' : 'info'}
-          closeLabel={t('buttons.close')}
-        >
+      <HelpBlock className='input-help-box'>
+        <div className={classNames}>
+          <Warning />
           {message}
-        </Alert>
+        </div>
       </HelpBlock>
     ) : null;
   };
@@ -74,7 +87,7 @@ function FormFields(props: FormFieldsProps): JSX.Element {
     <>
       {formFields
         .filter(formField => !ignored.includes(formField.name))
-        .map(({ name, label }) => (
+        .map(({ name, label }, i) => (
           // TODO: verify if the value is always a string
           <Field key={`${kebabCase(name)}-field`} name={name}>
             {({ input: { value, onChange }, meta: { pristine, error } }) => {
@@ -84,33 +97,37 @@ function FormFields(props: FormFieldsProps): JSX.Element {
                 name in placeholders ? placeholders[name] : '';
               const isURL = types[name] === 'url';
               return (
-                <FormGroup key={key} className='embedded'>
-                  {type === 'hidden' ? null : (
-                    <ControlLabel htmlFor={key}>
-                      {label}
-                      {required.includes(name) && (
-                        <span className='required-star'>*</span>
-                      )}
-                    </ControlLabel>
-                  )}
-                  <FormControl
-                    componentClass={type === 'textarea' ? type : 'input'}
-                    id={key}
-                    name={name}
-                    onChange={onChange}
-                    placeholder={placeholder}
-                    required={required.includes(name)}
-                    rows={4}
-                    type={type}
-                    value={value as string}
-                  />
-                  {nullOrWarning(
-                    value as string,
-                    !pristine && error,
-                    isURL,
-                    name
-                  )}
-                </FormGroup>
+                <Fragment key={key}>
+                  <FormGroup className='embedded'>
+                    {type === 'hidden' ? null : (
+                      <ControlLabel htmlFor={key}>
+                        {label}
+                        {required.includes(name) && (
+                          <span className='required-star'>*</span>
+                        )}
+                      </ControlLabel>
+                    )}
+                    <FormControl
+                      componentClass={type === 'textarea' ? type : 'input'}
+                      id={key}
+                      name={name}
+                      onChange={onChange}
+                      placeholder={placeholder}
+                      required={required.includes(name)}
+                      rows={4}
+                      type={type}
+                      value={value as string}
+                      onBlur={() => markAsBlured(i)}
+                    />
+                  </FormGroup>
+                  {blured[i] &&
+                    nullOrWarning(
+                      value as string,
+                      !pristine && error,
+                      isURL,
+                      name
+                    )}
+                </Fragment>
               );
             }}
           </Field>
