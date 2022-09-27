@@ -16,7 +16,6 @@ import { hasProtocolRE } from '../../utils';
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
-import PreventableButton from './PreventableButton';
 
 type PortfolioItem = {
   id: string;
@@ -327,11 +326,16 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         </FullWidthRow>
         <FullWidthRow>
           <ButtonSpacer />
-          <PreventableButton
-            handleAdd={this.handleAdd}
-            t={t}
-            isDisabled={unsavedItem !== null}
-          />
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='primary'
+            disabled={unsavedItem !== null}
+            onClick={this.handleAdd}
+            type='button'
+          >
+            {t('buttons.add-portfolio')}
+          </Button>
         </FullWidthRow>
         <Spacer size={2} />
         {portfolio.length ? portfolio.map(this.renderPortfolio) : null}
