@@ -5,7 +5,7 @@ import {
   FormControl,
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
-import { findIndex, find, isEqual } from 'lodash-es';
+import { findIndex, find, isEqual, omit } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { Component, FormEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
@@ -16,8 +16,10 @@ import { hasProtocolRE } from '../../utils';
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
+import PreventableButton from './PreventableButton';
 
 type PortfolioValues = {
+  isSaved: boolean;
   id: string;
   description: string;
   image: string;
@@ -26,6 +28,7 @@ type PortfolioValues = {
 };
 
 type PortfolioProps = {
+  isSaved: boolean;
   picture?: string;
   portfolio: PortfolioValues[];
   t: TFunction;
@@ -43,7 +46,8 @@ function createEmptyPortfolio() {
     title: '',
     description: '',
     url: '',
-    image: ''
+    image: '',
+    isSaved: false
   };
 }
 
@@ -89,8 +93,18 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const target = e.target as HTMLInputElement;
+    const id = target?.id || undefined;
     const { updatePortfolio } = this.props;
-    const { portfolio } = this.state;
+    let { portfolio } = this.state;
+    if (id) {
+      portfolio = portfolio.map(item =>
+        item.id === id ? { ...item, isSaved: true } : item
+      );
+      this.setState({
+        portfolio
+      });
+    }
     return updatePortfolio({ portfolio });
   };
 
@@ -117,7 +131,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       return false;
     }
     const edited = find(portfolio, createFindById(id));
-    return isEqual(original, edited);
+    return isEqual(omit(original, ['isSaved']), omit(edited, ['isSaved']));
   };
 
   // TODO: Check if this function is required or not
@@ -213,11 +227,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     );
     const { state: descriptionState, message: descriptionMessage } =
       this.getDescriptionValidation(description);
-
     return (
       <div key={id}>
         <FullWidthRow>
-          <form onSubmit={this.handleSubmit}>
+          <form id={id} onSubmit={this.handleSubmit}>
             <FormGroup
               controlId={`${id}-title`}
               validationState={
@@ -325,15 +338,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         </FullWidthRow>
         <FullWidthRow>
           <ButtonSpacer />
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            onClick={this.handleAdd}
-            type='button'
-          >
-            {t('buttons.add-portfolio')}
-          </Button>
+          <PreventableButton
+            handleAdd={this.handleAdd}
+            t={t}
+            portfolio={portfolio}
+          />
         </FullWidthRow>
         <Spacer size={2} />
         {portfolio.length ? portfolio.map(this.renderPortfolio) : null}
