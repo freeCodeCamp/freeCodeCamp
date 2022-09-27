@@ -18,7 +18,7 @@ import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
 import PreventableButton from './PreventableButton';
 
-type PortfolioValues = {
+type PortfolioItem = {
   isSaved: boolean;
   id: string;
   description: string;
@@ -30,17 +30,17 @@ type PortfolioValues = {
 type PortfolioProps = {
   isSaved: boolean;
   picture?: string;
-  portfolio: PortfolioValues[];
+  portfolio: PortfolioItem[];
   t: TFunction;
-  updatePortfolio: (obj: { portfolio: PortfolioValues[] }) => void;
+  updatePortfolio: (obj: { portfolio: PortfolioItem[] }) => void;
   username?: string;
 };
 
 type PortfolioState = {
-  portfolio: PortfolioValues[];
+  portfolio: PortfolioItem[];
 };
 
-function createEmptyPortfolio() {
+function createEmptyPortfolioItem() {
   return {
     id: nanoid(),
     title: '',
@@ -52,7 +52,7 @@ function createEmptyPortfolio() {
 }
 
 function createFindById(id: string) {
-  return (p: PortfolioValues) => p.id === id;
+  return (p: PortfolioItem) => p.id === id;
 }
 
 const mockEvent = {
@@ -110,7 +110,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   handleAdd = () => {
     return this.setState(state => ({
-      portfolio: [createEmptyPortfolio(), ...state.portfolio]
+      portfolio: [createEmptyPortfolioItem(), ...state.portfolio]
     }));
   };
 
@@ -211,9 +211,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
   }
 
   renderPortfolio = (
-    portfolio: PortfolioValues,
+    portfolio: PortfolioItem,
     index: number,
-    arr: PortfolioValues[]
+    arr: PortfolioItem[]
   ) => {
     const { t } = this.props;
     const { id, title, description, url, image } = portfolio;
