@@ -19,16 +19,21 @@ function filesToMarkdown(challengeFiles = {}) {
     if (!challengeFile) {
       return fileString;
     }
-    let fileName;
-    const fileType = challengeFile.ext;
+
+    const fileExtension = challengeFile.ext;
+    const fileName = challengeFile.name;
+    const fileType = fileExtension === 'js' ? 'javascript' : fileExtension;
+    let fileDescription;
+
     if (!moreThanOneFile) {
-      fileName = '';
-    } else if (fileType === 'html') {
-      fileName = `<!-- file: ${challengeFile.name}.${challengeFile.ext} -->\n`;
+      fileDescription = '';
+    } else if (fileExtension === 'html') {
+      fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
     } else {
-      fileName = `/* file: ${challengeFile.name}.${challengeFile.ext} */\n`;
+      fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
     }
-    return `${fileString}\`\`\`${fileType}\n${fileName}${challengeFile.contents}\n\`\`\`\n\n`;
+
+    return `${fileString}\`\`\`${fileType}\n${fileDescription}${challengeFile.contents}\n\`\`\`\n\n`;
   }, '\n');
 }
 
