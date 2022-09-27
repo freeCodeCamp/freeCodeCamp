@@ -318,7 +318,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   render() {
     const { t } = this.props;
-    const { portfolio = [], unsavedItemId: unsavedItem } = this.state;
+    const { portfolio = [], unsavedItemId } = this.state;
     return (
       <section id='portfolio-settings'>
         <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
@@ -333,7 +333,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             block={true}
             bsSize='lg'
             bsStyle='primary'
-            disabled={unsavedItem !== null}
+            disabled={unsavedItemId !== null}
             onClick={this.handleAdd}
             type='button'
           >
