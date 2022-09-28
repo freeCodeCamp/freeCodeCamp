@@ -15,6 +15,7 @@ export { ns };
 
 const initialState = {
   canFocusEditor: true,
+  attempts: 0,
   visibleEditors: {},
   challengeFiles: [],
   challengeMeta: {
@@ -147,9 +148,14 @@ export const reducer = handleActions(
           testString
         })),
         consoleOut: [],
-        isResetting: true
+        isResetting: true,
+        attempts: 0
       };
     },
+    [actionTypes.resetAttempts]: state => ({
+      ...state,
+      attempts: 0
+    }),
     [actionTypes.stopResetting]: state => ({
       ...state,
       isResetting: false
@@ -200,7 +206,8 @@ export const reducer = handleActions(
     }),
     [actionTypes.executeChallenge]: state => ({
       ...state,
-      currentTab: 3
+      currentTab: 3,
+      attempts: state.attempts + 1
     }),
     [actionTypes.setEditorFocusability]: (state, { payload }) => ({
       ...state,

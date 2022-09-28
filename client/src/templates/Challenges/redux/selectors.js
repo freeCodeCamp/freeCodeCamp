@@ -82,5 +82,6 @@ export const challengeDataSelector = state => {
   return challengeData;
 };
 
+export const attemptsSelector = state => state[ns].attempts;
 export const canFocusEditorSelector = state => state[ns].canFocusEditor;
 export const visibleEditorsSelector = state => state[ns].visibleEditors;

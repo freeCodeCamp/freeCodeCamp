@@ -8,15 +8,13 @@ dashedName: set-up-passport
 
 # --description--
 
-¡Es hora de configurar *Passport* para que finalmente podamos empezar a permitir que un usuario se registre o inicie sesión en una cuenta! Además de Passport, usaremos Express-session para manejar sesiones. El uso de este middleware guarda el session id como cookie en el cliente y nos permite acceder a los datos de sesión utilizando ese id en el servidor. De esta manera mantenemos la información de la cuenta personal fuera de la cookie utilizada por el cliente para verificar a nuestro servidor que están autenticados y solo mantenemos la *clave* para acceder a los datos almacenados en el servidor.
+¡Es hora de configurar *Passport* para que finalmente podamos empezar a permitir que un usuario se registre o inicie sesión en una cuenta! Además de Passport, usaremos Express-session para manejar sesiones. La sesión express tiene muchas funciones avanzadas que puedes usar, pero por ahora solo vamos a usar lo básico! Usar este middleware te guarda el id de la sesión como una cookie en el cliente y nos permite acceder a los datos de la sesión usando ese id en el servidor. De esta manera guardamos información personal de la cuenta fuera de la cookie usada por el cliente para verificar en nuestro servidor que están autentificadas y mantener la *llave* para acceder a los datos guardados en el servidor.
 
-Para configurar Passport para su uso en tu proyecto, necesitarás añadirlo primero como dependencia en tu package.json. `passport@~0.4.1`
+`passport@~0.4.1` y `express-session@~1.17.1` ya están instalados, y los dos están apuntados como dependencias en tu archivo `package.json`.
 
-Además, agrega también Express-session como dependencia. Express-session tiene un montón de características avanzadas que puedes usar, pero por ahora solo vamos a usar lo básico! `express-session@~1.17.1`
+Necesitarás configurar la configuración de sesión ahora e inicializar Passport. Asegurate de primero crear las variables 'session' y 'passport' para requerir 'express-session' y 'passport' respectivamente.
 
-Necesitarás configurar la configuración de sesión ahora e inicializar Passport. Asegúrate de crear primero las variables 'session' y 'passport' para requerir 'express-session' y 'passport' respectivamente.
-
-Para configurar tu aplicación express para usar la sesión definiremos sólo algunas opciones básicas. Asegúrate de añadir 'SESSION_SECRET' a tu archivo .env y darle un valor aleatorio. ¡Esto se utiliza para calcular el hash utilizado para cifrar tu cookie!
+Para configurar tu aplicación express para usar la sesión definiremos sólo algunas opciones básicas. Asegúrate de agregar 'SESSION_SECRET' a tu archivo .env y dale un valor aleatorio. ¡Esto es usado para computar el hash usado para encriptar tus cookie!
 
 ```js
 app.use(session({
@@ -29,7 +27,7 @@ app.use(session({
 
 También puedes seguir adelante y decirle a tu aplicación express que **usé** 'passport.initialize()' y 'passport.session()'. (Por ejemplo, `app.use(passport.initialize());`)
 
-Envía tu página cuando creas que lo has hecho bien. Si estás experimentando errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c).
+Envía tu página cuando pienses que la tengas correcto. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
 
 # --hints--
 
@@ -103,7 +101,7 @@ La aplicación Express debe usar nuevas dependencias.
   );
 ```
 
-Debe establecerse correctamente el secreto de sesión y sesión.
+La sesión y el secreto de la sesión deben estar configurados correctamente.
 
 ```js
 (getUserInput) =>

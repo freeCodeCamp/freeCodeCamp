@@ -43,6 +43,7 @@ export const actionTypes = createTypes(
     'resetChallenge',
     'stopResetting',
     'submitChallenge',
+    'resetAttempts',
 
     'setEditorFocusability',
     'toggleVisibleEditor'

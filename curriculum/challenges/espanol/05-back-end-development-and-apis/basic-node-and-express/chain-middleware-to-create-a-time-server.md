@@ -8,7 +8,7 @@ dashedName: chain-middleware-to-create-a-time-server
 
 # --description--
 
-Un middleware se puede montar en una ruta especifica usando `app.METHOD(path, middlewareFunction)`. El middleware también se puede encadenar dentro de la definición de la ruta.
+Un middleware se puede montar en una ruta especifica usando `app.METHOD(path, middlewareFunction)`. El middleware también se puede encadenar dentro de una definición de ruta.
 
 Veamos el siguiente ejemplo:
 
@@ -49,7 +49,7 @@ El endpoint /now debe tener el middleware montado
   );
 ```
 
-El endpoint /now debe devolver un tiempo que es +/- 20 segundos a partir de este momento
+El endpoint `/now` debe devolver la hora actual.
 
 ```js
 (getUserInput) =>

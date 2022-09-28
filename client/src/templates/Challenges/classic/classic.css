@@ -110,3 +110,13 @@
   flex: 1;
   max-width: 50%;
 }
+
+/* Focus indicator for tab panel */
+.nav-tabs [role='tab']:focus {
+  outline: 2px solid var(--blue-mid);
+  outline-offset: -2px;
+}
+
+.nav-tabs [role='tab']:focus:not(:focus-visible) {
+  outline: none;
+}

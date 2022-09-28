@@ -90,7 +90,7 @@
 
 .nav-list li {
   width: 100%;
-  height: 2.2rem;
+  height: 2.5rem;
 }
 
 .nav-link {
@@ -125,11 +125,16 @@
 }
 
 .nav-link:not([aria-disabled='true']):hover {
-  color: var(--theme-color) !important;
+  color: var(--theme-color);
   text-decoration: none;
-  background-color: var(--gray-10) !important;
+  background-color: var(--gray-10);
   cursor: pointer;
   outline: none !important;
+}
+
+a.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
+  background-color: var(--danger-background);
+  color: var(--danger-color);
 }
 
 .nav-link-header,
@@ -211,13 +216,25 @@ button.nav-link[aria-disabled='true'] {
   top: 0;
   overflow-y: auto;
   scrollbar-width: auto;
-  /* lang menu should always be full height */
+
+  /* Ensure lang menu scrolls if there is not enough height to display all of it (this ensures keyboard accessibility).*/
+  height: min(
+    var(--lang-menu-height),
+    calc(100vh - var(--search-box-form) - var(--header-height))
+  );
+}
+
+@media (min-width: 601px) {
+  /* Search form is no longer between header and main menu. */
+  .nav-lang-menu {
+    height: min(var(--lang-menu-height), calc(100vh - var(--header-height)));
+  }
 }
 
 /* main menu must be at least as tall as lang menu (when displayed) 
    unless there isn't enough view port height */
 .nav-list.display-lang-menu {
-  min-height: min(19.9rem, calc(100vh - var(--header-height)));
+  min-height: min(var(--lang-menu-height), calc(100vh - var(--header-height)));
 }
 
 .nav-lang-menu > button:hover {
@@ -228,24 +245,6 @@ button.nav-link[aria-disabled='true'] {
   color: #fff;
   background-color: inherit;
   padding-top: 0;
-}
-
-.nav-lang-menu .nav-link:focus {
-  color: #000;
-  background-color: var(--gray-10);
-  outline: none;
-}
-
-.nav-lang-menu .nav-link:focus:not(:focus-visible) {
-  background-color: inherit;
-}
-
-.nav-lang-menu .nav-link:hover {
-  background-color: var(--gray-10) !important;
-}
-
-.nav-lang-menu li:first-child .nav-link:hover {
-  color: var(--love-dark) !important;
 }
 
 .nav-lang-button {
@@ -452,7 +451,7 @@ button.nav-link[aria-disabled='true'] {
 
 .universal-nav-right .fcc_searchBar .ais-SearchBox-form {
   width: 100vw;
-  height: 38px;
+  height: var(--search-box-form);
   max-width: unset;
   padding: 0 15px;
   left: 0;

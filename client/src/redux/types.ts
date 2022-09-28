@@ -1,7 +1,6 @@
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import { ns as MainApp } from './action-types';
 
-// Shaun: Is this fine as in "rootReducer" you imported both reducer and namespace together from same file for easier updation
 export const FlashApp = 'flash';
 
 export type FlashMessageArg = {

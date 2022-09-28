@@ -169,10 +169,11 @@ Forum moderators can delete users' posts. 以下の場合にのみ、投稿を�
 1. ポルノやグラフィカルに暴力的な画像を投稿している
 2. 本質的に悪意のあるリンクやコードを投稿し、それをクリックする他のキャンパーに害を与える可能性がある
 3. Someone has flooded a thread with a lot of spam messages.
+4. An account has been created, beyond a reasonable doubt, to spam.
 
 ### Dealing with Spam
 
-最初のスパム投稿については、問題を説明するメッセージを送信し、必要に応じてリンクや投稿を削除します。 ユーザーのプロフィール欄に、あなたが行ったアクションを説明するメモを残してください。 問題が解決しない場合は、(ユーザー管理パネルのサイレンスオプションを使用して) ユーザーの投稿をブロックします。 Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). プライベートメッセージのボックスにチェックを入れ、メッセージが「正式な警告」であることを示します。
+For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. ユーザーのプロフィール欄に、あなたが行ったアクションを説明するメモを残してください。 問題が解決しない場合は、(ユーザー管理パネルのサイレンスオプションを使用して) ユーザーの投稿をブロックします。 Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). プライベートメッセージのボックスにチェックを入れ、メッセージが「正式な警告」であることを示します。
 
 As a moderator, you can ask questions and report incidents in the [mod-team forum section](https://forum.freecodecamp.org/c/mod-team/4).
 
@@ -184,11 +185,13 @@ Posts or topics that seem to be in the wrong place can be recategorized or renam
 
 Again, if you have any problems or questions, make a post with your actions in the `"Staff"` category, and tag another moderator if you want them to review your moderating actions.
 
-### 未成年のユーザー
+### Dealing with Posted Solutions
 
-Our [Terms of Service](https://freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. ユーザーが 13 歳未満であることを明らかにした場合、以下のメッセージをユーザーに送信し、そのフォーラムアカウントを削除します (削除できない場合は、アカウントを停止するだけで十分です)。
+When a user posts a solution to any of the questions, remove it and either, kindly let them know that solutions are not permitted on the forum in your own words or, use the **Solution Instead of Help** "Canned reply".
 
-**ユーザーの freeCodeCamp アカウントも削除するには、`support[at]freecodecamp.org` にメールしてください。**
+### Underage Users
+
+Our [Terms of Service](https://freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. If a user reveals that they are under the age of 13, send them the message (below), suspend the account then **Email `support[at]freecodecamp.org` to delete the user's freeCodeCamp /learn and forum accounts as well (providing a link to the offending forum account).**
 
 ```markdown
 SUBJECT: Users under 13 are not allowed to use the forum per our Terms of Service.
@@ -200,17 +203,25 @@ Please rejoin once you have reached at least 13 years of age.
 Thank you for understanding.
 ```
 
+### Moderating Via Cell-phone
+
+Moderating the forum is possible via a cell-phone but you may encounter some usage quirks. This is not an exhaustive list.
+
+- When trying to include a "Canned reply" in a response, if the menu doesn't open (after clicking on the gear), click on the text area first then try it again.
+- The moderator's 'wrench' is at the bottom of the view-port but if you click it and cannot see the "Select Posts" button because it has scrolled out of view, you may need to try to scroll to it, though sometimes that doesn't work in which case moving to a desktop/laptop monitor may be needed.
+- Sometimes clicking on the three-dot menu below a post can hide the reply icon. Reload the page to get it back.
+
 ## Facebook をモデレートする
 
-私たちの [行動規範](https://code-of-conduct.freecodecamp.org/) に違反するようなものがあれば、すぐに削除してください。
+If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
 
-自分が面白いと思うことを投稿する人が時々います。 彼らは、自分たちが言ったこと、シェアしたことが攻撃的だと解釈され得ることに気づいていません。 そのような投稿は削除する必要がありますが、必ずしもその人のアクセスを禁じるわけではありません。 投稿が削除されることにより、ユーザーは投稿内容が不適切だったと気づくことになるでしょう。
+Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. You should delete such posts, but not necessarily ban the person. Hopefully, the user will come to understand that what they posted was inappropriate because the post was deleted.
 
-しかし、それが文化的な違いや英語での誤解では説明できない酷い犯罪である場合もあります。 その場合、Facebook グループからメンバーをブロックすることを検討するべきです。
+But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language. In that case, you should strongly consider blocking the member from the Facebook group.
 
 ## Moderating Discord
 
-モデレーターは、以下のように、チャットサーバー上の [行動規範](https://code-of-conduct.freecodecamp.org/) の違反に対処します。
+Here's how moderators deal with violations of our [Code of Conduct](https://code-of-conduct.freecodecamp.org/) on our chat server:
 
 > [!NOTE] Camperbot serves as our moderation bot, and all of the commands use Discord's native slash command interface. You can see a list of all of the commands by typing `/` in any channel.
 
@@ -231,7 +242,7 @@ Thank you for understanding.
    キャンパーに関わる懸念事項に対して個人的に対処する必要のある場合があるかもしれません。 これは、DM を通じて行うべきではありません。あなたがあることを主張し、キャンパーがそれとは別のことを主張する状況につながる可能性があります。 代わりに、bot の機能を使用してプライベートディスカッションを作成してください。
 
    - Call the `/private` command, where `target` is the camper you want to open a private channel with.
-   - bot は新しいチャンネルを作成し、上述のキャンパーと `Your Friendly Moderator` の役割を持つすべてのモデレーターをディスカッションに追加します。 透明性を保つため、すべてのモデレーターをチャンネルに追加しますが、支援を求めない限り、このコマンドを呼び出すモデレーターがキャンパーと接触する唯一の人であるべきです。
+   - The bot will create a new channel, and add the mentioned camper and all moderators with the `Your Friendly Moderator` role. While all moderators are added to the channel for transparency, the moderator who calls this command should be the only one to interact with the camper unless they request assistance.
    - When the conversation is complete, click the `❌ Close` button _on the first message in the private channel_ to have the bot close and delete that channel.
 
 4. **Deleting messages**
@@ -282,7 +293,7 @@ Thank you for understanding.
 
 ## How to Become a Moderator
 
-皆さんが、長い期間一貫してコミュニティの人を支援しているとします。 In that case, our moderator team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). モデレーターになるための近道はありません。
+Suppose you are helping people in the community consistently over time. In that case, our moderator team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
 
 If you are approved, we will add you to our moderator teams on [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [forum](https://forum.freecodecamp.org/g/moderators), chat, etc.
 
@@ -292,7 +303,7 @@ If you are approved, we will add you to our moderator teams on [GitHub](https://
 
 ## How We Retire Inactive Moderators
 
-Please note that we will frequently remove moderators whom we think are inactive. 削除すると、次のようなメッセージが送信されます。
+Please note that we will frequently remove moderators whom we think are inactive. When we do this, we will send the following message:
 
 ```markdown
 This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our moderator team. これまでのご支援に深く感謝いたします。
@@ -302,43 +313,43 @@ If you think we did this in error, or once you're ready to come back and contrib
 
 ## How Our Contributors Room Works
 
-Anyone is welcome in the [contributors room on our chat server](https://discord.gg/PRyKn3Vbay). 学習グループなど、様々な方法でコミュニティに貢献しているモデレーターやキャンパーのための専用のチャットルームです。
+Anyone is welcome in the [contributors room on our chat server](https://discord.gg/PRyKn3Vbay). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
 
-We assume contributors will read anything in this room that directly mentions them with an **@username**. 他はすべて任意ですが、自由に誰かの投稿を読んだり交流したりしてください。
+We assume contributors will read anything in this room that directly mentions them with an **@username**. Everything else is optional, but feel free to read anything anyone posts in there and interact.
 
 ## Dealing with Solicitors
 
-freeCodeCamp と連携またはブランド提携したい団体から、アプローチを受ける場合があります。 そのようなことを求めていると気が付いたら、**その団体と話しをするのは止めて**、`team[at]freecodecamp.org` にメールを書くように伝えてください。
+You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
 
-私たちは、いつもこのような提案を受けています。スタッフは、そのような関係が私たちのコミュニティにとって価値があるのかどうか (ほとんどの場合そうではありません) を判断するのに最適な立場にあります。
+We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
 ## Dealing with (Mental) Health Inquiries
 
-ユーザーが医療アドバイスを求めたり、メンタルヘルスの問題でサポートを求めたりする状況に遭遇することがあります。
+You may come across situations where users seek medical advice or are dealing with mental health issues and are looking for support.
 
-ポリシー上、これらの問題について個人的に話すことは避けるべきです。 もしその状況が freeCodeCamp に反映された場合、私たちはその会話を記録します。 私たちは医療の専門家ではないこと、そしてユーザー自身で専門的な支援を見つけることを推奨していることを明確にしてください。
+As a matter of policy, you should avoid talking privately about these matters. Should the situation reflect back to freeCodeCamp, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help.
 
 As difficult as it sometimes can be, avoid giving any tips or advice and rather point the user in the direction of seeking professional help!
 
-If this happens on our chat server: Create a private channel for the user and the moderator team. bot の `private` コマンドで作成することができます。
+If this happens on our chat server: Create a private channel for the user and the moderator team. This can be done with the bot's `private` command.
 
 - The user is guaranteed some privacy.
 - Public chat is no longer disrupted.
 - Other team members can pitch in, should you feel uncomfortable dealing with the situation yourself.
 
-参考URL:
+Helpful URLs:
 
 http://suicide.org/international-suicide-hotlines.html
 
 ## A Note on Free Speech
 
-人々は、「言論の自由」として述べた攻撃的または扇情的な何かを擁護しようとする場合があります。
+Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
 This XKCD comic summarizes perfectly most communities' thoughts on free speech.
 
 <div align="center"><img src='./images/github/xkcd-free-speech.png' width="400" height="400" /></div>
 
-お読みいただきありがとうございます。また、開発者コミュニティを支援してくださってありがとうございます！
+Thanks for reading this, and thanks for helping the developer community!
 
 ## 返信テンプレート
 
@@ -353,7 +364,7 @@ Thank you for your contribution to the page! 👍
 We are happy to accept these changes and look forward to future contributions. 🎉
 ```
 
-### お礼と祝福
+### Thank you and congrats
 
 > For thanking and encouraging first-time contributors.
 
@@ -364,7 +375,7 @@ Thank you for your contribution to the page! 👍
 We are happy to accept these changes and look forward to future contributions. 📝
 ```
 
-### ビルドエラー
+### Build Error
 
 ```markdown
 Hey @username
@@ -378,7 +389,7 @@ Once you resolve these issues, we will be able to review your PR and merge it. �
 Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
-### フォークの同期
+### Syncing Fork
 
 > When PR is not up to date with the `main` branch.
 
@@ -426,9 +437,9 @@ If you're not familiar with the merge conflict process, feel free to look over G
 Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
-¹ 新規コントリビューターにマージ競合が発生した場合、メンテナーがその競合を解決します。
+¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
 
-### 重複
+### Duplicate
 
 > When PR is repetitive or a duplicate.
 
@@ -470,7 +481,7 @@ We are closing this pull request. Please suggest links and other details to add 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### 無効な Issue をクローズする
+### Closing Invalid Issues
 
 > When an issue relates to the camper's code.
 

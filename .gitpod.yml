@@ -45,13 +45,13 @@ tasks:
       cp sample.env .env &&
       npm ci &&
       gp sync-done npm-ci &&
-      gp await-port 27017 &&
+      gp ports await 27017 &&
       npm run seed &&
       mongo --eval "db.fsyncLock(); db.fsyncUnlock()"
     command: >
       npm run create:config &&
       npm run build:curriculum &&
-      gp await-port 27017 &&
+      gp ports await 27017 &&
       npm run develop:server
 
   - name: client
@@ -62,7 +62,7 @@ tasks:
       npm run predevelop &&
       cd ..
     command: >
-      gp await-port 3000 &&
+      gp ports await 3000 &&
       cd ./client &&
       npm run develop -- -H '0.0.0.0'
     openMode: split-right
@@ -88,5 +88,5 @@ github:
 
 vscode:
   extensions:
-    - dbaeumer.vscode-eslint@2.1.8
-    - esbenp.prettier-vscode@6.4.0
+    - dbaeumer.vscode-eslint@2.2.6
+    - esbenp.prettier-vscode@9.8.0

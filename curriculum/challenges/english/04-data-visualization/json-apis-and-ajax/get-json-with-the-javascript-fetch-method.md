@@ -15,10 +15,10 @@ Here is the code for making a GET request to `/json/cats.json`
 ```js
 
 fetch('/json/cats.json')
-	.then(response => response.json())
-	.then(data => {
-		document.getElementById('message').innerHTML = JSON.stringify(data);
-	})
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('message').innerHTML = JSON.stringify(data);
+  })
 
 ```
 

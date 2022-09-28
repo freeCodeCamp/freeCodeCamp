@@ -41,6 +41,8 @@ interface MultifileEditorProps {
   initialEditorContent?: string;
   initialExt?: string;
   initialTests: Test[];
+  isMobileLayout: boolean;
+  isUsingKeyboardInTablist: boolean;
   output?: string[];
   resizeProps: ResizeProps;
   title: string;
@@ -80,6 +82,8 @@ const MultifileEditor = (props: MultifileEditorProps) => {
     description,
     editorRef,
     initialTests,
+    isMobileLayout,
+    isUsingKeyboardInTablist,
     resizeProps,
     title,
     visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx },
@@ -146,6 +150,8 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     editorRef={editorRef}
                     fileKey={key as FileKey}
                     initialTests={initialTests}
+                    isMobileLayout={isMobileLayout}
+                    isUsingKeyboardInTablist={isUsingKeyboardInTablist}
                     resizeProps={resizeProps}
                     contents={props.contents ?? ''}
                     dimensions={props.dimensions ?? { height: 0, width: 0 }}

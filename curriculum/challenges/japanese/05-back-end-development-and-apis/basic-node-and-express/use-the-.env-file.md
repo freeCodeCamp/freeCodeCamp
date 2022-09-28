@@ -18,11 +18,11 @@ dashedName: use-the--env-file
 
 プロジェクトディレクトリのルートに `.env` ファイルを作成し、変数 `MESSAGE_STYLE=uppercase` を保存してください。
 
-次に、前回のチャレンジで作成した `/json` GET ルートハンドラーで、`process.env.MESSAGE_STYLE` が `uppercase` に等しい場合に、レスポンスオブジェクトのメッセージを大文字に変換してください。 レスポンスオブジェクトは、 `MESSAGE_STYLE` の値に応じて、`{"message": "Hello json"}` または `{"message": "HELLO JSON"}` のいずれかにする必要があります。
+次に、前のチャレンジで作成した `/json` GET ルートハンドラーで、`process.env.MESSAGE_STYLE` にアクセスし、変数が `uppercase` に等しい場合にレスポンスオブジェクトの `message` を大文字に変換してください。 レスポンスオブジェクトは、 `MESSAGE_STYLE` の値に応じて、`{"message": "Hello json"}` または `{"message": "HELLO JSON"}` のいずれかにする必要があります。
 
 ** 注: ** Replit を使用している場合は、 `.env` ファイルを作成することはできません。 代わりに、組み込みの <dfn>SECRETS</dfn> タブを使用して変数を追加してください。
 
-ローカル環境で作業している場合は、`dotenv` パッケージが必要です。 このパッケージにより、環境変数が `.env` ファイルから `process.env` に読み込まれます。 `npm install dotenv` でインストールしてください。 次に、 `myApp.js` ファイルの先頭で、`require('dotenv').config()` を使用して変数をインポートして読み込んでください。
+ローカル環境で作業している場合は、`dotenv` パッケージが必要です。 このパッケージにより、環境変数が `.env` ファイルから `process.env` に読み込まれます。 `dotenv` パッケージはすでにインストールされており、プロジェクトの `package.json` ファイルに含まれています。 `myApp.js` ファイルの先頭で、`require('dotenv').config()` を使用して変数をインポートして読み込んでください。
 
 # --hints--
 

@@ -245,7 +245,7 @@ Se servono più di due minuti a completare la sfida hai due possibilità:
 
 La regola dei due minuti obbliga te, designer della sfida, a rendere le tue istruzioni concise, il tuo codice seed chiaro, e i tuoi test diretti.
 
-Teniamo traccia di quanto tempo serve ai camper per risolvere le sfide e usiamo questa informazione per identificare sfide che devono essere semplificate o divise.
+Teniamo traccia di quanto tempo serve agli utenti per risolvere le sfide e usiamo questa informazione per identificare sfide che devono essere semplificate o divise.
 
 ### Modularità
 
