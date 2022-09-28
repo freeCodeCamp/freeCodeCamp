@@ -117,69 +117,69 @@ Crowdin розділяє документ на «рядки», зазвичай 
 
 > [!NOTE] Якщо ви бачите якісь неточності в оригінальному файлі англійською мовою, будь ласка, не виправляйте їх у процесі перекладу. Натомість залиште коментар або створіть GitHub issue.
 
-## Translate the Learn Interface
+## Перекладайте навчальний інтерфейс
 
-Our `/learn` interface relies on JSON files loaded into an i18n plugin to generate translated text. This translation effort is split across both Crowdin and GitHub.
+Наш інтерфейс `/learn` покладається на файли JSON, завантажені в плагін i18n, що створений для перекладеного тексту. Цей переклад розподілений між Crowdin та GitHub.
 
-### On GitHub
+### На GitHub
 
-The `links.json`, `meta-tags.json`, `motivation.json`, and `trending.json` files contain information that needs to be updated to reflect your language. However, we cannot load these into Crowdin, as the content isn't something that would be a one-to-one translation.
+Файли `links.json`, `meta-tags.json`, `motivation.json` та `trending.json` містять інформацію, яку потрібно оновити на вашу мову. Однак ми не можемо завантажити їх у Crowdin, оскільки вони не є прямим перекладом.
 
-These files will most likely be maintained by your language lead but you are welcome to [read about how to translate them](language-lead-handbook.md).
+Ймовірно, за цими файлами слідкує мовний керівник. Але ви можете [прочитати, як їх перекладати](language-lead-handbook.md).
 
-### On Crowdin
+### На Crowdin
 
-> [!ATTENTION] Do not edit the following files through a GitHub PR.
+> [!ATTENTION] Не редагуйте наведені нижче файли через GitHub PR.
 
-The `intro.json` and `translations.json` files are both translated on Crowdin, in the Learn User Interface project. Translating these can be a bit tricky, as each individual JSON value appears as its own string and sometimes the context is missing.
+Обидва файли `intro.json` та `translations.json` перекладають у проєкті «Learn User Interface» на Crowdin. Перекласти їх може бути дещо складно, оскільки кожне значення JSON зображається як окремий рядок, а контекст іноді відсутній.
 
-However, the `Context` information provided in Crowdin can help understand where the string fits in to the larger structure.
+Однак Crowdin може надати більше `контексту` про те, де вписується рядок.
 
 ![Image with an arrow pointing to Crowdin's context information](https://contribute.freecodecamp.org/images/crowdin/context.png)
 
-If you have any questions about where a string fits in to the prose, reach out to us in our [contributor chat](https://discord.gg/PRyKn3Vbay).
+Якщо у вас є запитання щодо розташування рядка, напишіть нам у [contributor chat](https://discord.gg/PRyKn3Vbay).
 
-## Translate Documentation
+## Перекладайте документацію
 
-Translating our contributing documentation is a similar flow to translating our curriculum files.
+Переклад нашої документації схожий до перекладу файлів навчальної програми.
 
-> [!NOTE] Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
+> [!NOTE] Наша документація підтримує `docsify` та у нас є спеціальний аналіз для таких повідомлень. Якщо ви бачите рядки, які починаються з `[!NOTE]`, `[!WARNING]` або `[!TIP]` – ці слова НЕ перекладаються.
 
-### How to translate documentation with internal links
+### Як перекладати документацію з внутрішніми посиланнями
 
-When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
+Коли ви працюєте над документацією, стежте за внутрішніми посиланнями, які спрямовані на інший розділ документації.
 
-Make sure to replace the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
+Обов’язково замініть ідентифікатор цільового розділу (частина після `#`) на ідентифікатор перекладеного документа. Японською це буде виглядати так:
 
-Before translation
+До перекладу
 
 ```
-// in HTML
+// в HTML
 <a href="target-file-name.md#target-section-heading-id">Link text</a>
 <a href="#target-section-heading-id">Link text</a>
 
-// in Markdown
+// в Markdown
 [Link text](target-file-name.md#target-section-heading-id)
 [Link text](#target-section-heading-id)
 ```
 
-After translation
+Після перекладу
 
 ```
-// in HTML
+// в HTML
 <a href="target-file-name.md#翻訳後の-id">翻訳後のリンクテキスト</a>
 <a href="#翻訳後の-id">翻訳後のリンクテキスト</a>
 
-// in Markdown
+// в Markdown
 [翻訳後のリンクテキスト](target-file-name.md#翻訳後の-id)
 [翻訳後のリンクテキスト](#翻訳後の-id)
 ```
 
-The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
+Файли в документації написані в Markdown, але на Crowdin вони будуть зображатися як теги HTML.
 
-You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+Ви можете дізнатися, як `docsify` перетворює рядок вашою мовою на ідентифікатор, переглянувши перекладені сторінки. Якщо переклад ще не виконано, ви можете переглянути його, [запустивши сайт документації локально](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
 
-You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
+Ви можете дізнатися більше про [внутрішні посилання в наших документах тут](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
 
 ## Translate the LearnToCode RPG
 
@@ -193,72 +193,72 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 - Do not translate the `nointeract` keyword at the end of the sentence.
 - If we try to use fullwidth parentheses `（）`, a QA warning will show. To avoid the QA warning, use halfwidth parentheses `()`
 
-### Examples
+### Приклади
 
 ---
 
-#### Before translation
+#### До перекладу
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- це рядок, який потрібно перекласти. дивіться переклад нижче
 ```
 
-#### After translation
+#### Після перекладу
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
-Note: The `[]` and `{}` tags should be left intact.
+Примітка: теги `[]` та `{}` повинні бути без змін.
 
 ---
 
-#### Before translation
+#### До перекладу
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
-new "{icon=icon-fast-forward} Skip" <-- translate this line, see below
+new "{icon=icon-fast-forward} Skip" <-- перекладіть цей рядок, дивіться нижче
 ```
 
-#### After translation
+#### Після перекладу
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} 跳过"
 ```
 
-Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be left intact.
+Примітка: префікс `new` та тег `{icon=icon-fast-forward}` повинні бути без змін.
 
 ---
 
-#### Before translation
+#### До перекладу
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 ```
 
-#### After translation
+#### Після перекладу
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
 ```
 
-Note: `layla @ neutral` and `[player_name]` are left unchanged.
+Примітка: `layla @ neutral` та `[player_name]` повинні бути без змін.
 
 ---
 
-#### Before translation
+#### До перекладу
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
 player "Maybe this is all a dream?" nointeract
 ```
 
-#### After translation
+#### Після перекладу
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
