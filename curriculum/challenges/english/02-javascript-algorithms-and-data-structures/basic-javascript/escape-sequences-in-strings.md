@@ -78,14 +78,6 @@ assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(){
-if (myStr !== undefined){
-console.log('myStr:\n' + myStr);}})();
-```
-
 ## --seed-contents--
 
 ```js
