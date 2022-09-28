@@ -37,15 +37,14 @@ function PrivacySettings({
   t,
   user
 }: PrivacyProps): JSX.Element {
-  const [privacyValues, setPrivacyValues] = useState(user.profileUI);
+  const [privacyValues, setPrivacyValues] = useState({ ...user.profileUI });
+
   const [madeChanges, setMadeChanges] = useState(false);
 
-  function toggleFlag(flag: string): () => void {
+  function toggleFlag(flag: keyof ProfileUI): () => void {
     return () => {
-      privacyValues[flag as keyof ProfileUI] =
-        !privacyValues[flag as keyof ProfileUI];
       setMadeChanges(true);
-      setPrivacyValues({ ...privacyValues });
+      setPrivacyValues({ ...privacyValues, [flag]: !privacyValues[flag] });
     };
   }
 
