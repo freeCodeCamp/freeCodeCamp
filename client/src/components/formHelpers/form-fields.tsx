@@ -1,5 +1,4 @@
 import {
-  Alert,
   ControlLabel,
   FormControl,
   FormGroup,
@@ -9,7 +8,6 @@ import { kebabCase, set } from 'lodash-es';
 import normalizeUrl from 'normalize-url';
 import React, { Fragment, useState } from 'react';
 import { Field } from 'react-final-form';
-import { useTranslation } from 'react-i18next';
 import Warning from '../../assets/icons/warning';
 import { FormOptions } from './form';
 import {
@@ -27,7 +25,6 @@ type FormFieldsProps = {
 };
 
 function FormFields(props: FormFieldsProps): JSX.Element {
-  const { t } = useTranslation();
   const { formFields, options = {} }: FormFieldsProps = props;
   const {
     ignored = [],
