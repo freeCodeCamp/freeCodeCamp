@@ -1,0 +1,12 @@
+[default]
+address = "127.0.0.1"
+port = 3001
+ident = "Rocket"
+log_level = "debug"
+cli_colors = true
+
+[default.shutdown]
+ctrlc = true
+
+[release]
+address = "https://api.freecodecamp.org"

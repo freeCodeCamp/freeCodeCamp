@@ -1,0 +1,19 @@
+[package]
+name = "new-api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = "0.5.0-rc.2"
+serde = { version = "1.0", features = ["derive"] }
+mongodb = "2.3.0"
+dotenv = "0.15.0"
+
+[dependencies.rocket_db_pools]
+version = "0.1.0-rc.2"
+features = ["mongodb"]
+
+[default.databases.freecodecamp]
+url = "mongodb://localhost:27017/freecodecamp"
