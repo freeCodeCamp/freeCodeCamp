@@ -12,7 +12,7 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 `isOk()` 用来测试值是否为真值，`isNotOk()` 用来测试值是否为假值。
 
-可以在[过滤数组中的假值](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer)这个挑战中了解更多关于真值和假值的信息。
+可以在[过滤数组中的假值](https://platform-ui.topcoder.com/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer)这个挑战中了解更多关于真值和假值的信息。
 
 # --instructions--
 

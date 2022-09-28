@@ -29,7 +29,7 @@ Das obige Beispiel zeigt den String `Hello` in der Konsole an und gibt den Strin
 Ändere die Funktion `abTest` so, dass die Funktion sofort mit einem Wert von `undefined` beendet wird, wenn `a` oder `b` kleiner als `0` sind.
 
 **Hinweis:**  
-Denk daran, dass <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow"><code>undefined</code> ein Schlüsselwort</a> und kein String ist.
+Denk daran, dass <a href="https://platform-ui.topcoder.com/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow"><code>undefined</code> ein Schlüsselwort</a> und kein String ist.
 
 # --hints--
 

@@ -12,7 +12,7 @@ Como recordatorio, este proyecto está siendo construido con base en el siguient
 
 `isOk()` prueba un valor verdadero y `isNotOk()` prueba un valor falso.
 
-Para aprender más sobre los valores verdaderos y falsos, prueba nuestro desafío de <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer" target="_blank" rel="noopener noreferrer nofollow">Falsy Bouncer</a>.
+Para aprender más sobre los valores verdaderos y falsos, prueba nuestro desafío de <a href="https://platform-ui.topcoder.com/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer" target="_blank" rel="noopener noreferrer nofollow">Falsy Bouncer</a>.
 
 # --instructions--
 

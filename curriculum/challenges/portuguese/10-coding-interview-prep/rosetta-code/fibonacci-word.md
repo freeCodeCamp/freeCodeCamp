@@ -16,7 +16,7 @@ Forme a F_Word<sub>3</sub>  como  F_Word<sub>2</sub>   concatenada com a  F_Word
 Forme a F_Word<sub>n</sub>  como  F_Word<sub>n-1</sub>  concatenada com a  F_word <sub>n-2</sub>
 </pre>
 
-É necessário o cálculo de entropia neste desafio, <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">como mostrado neste desafio do Rosetta Code</a>
+É necessário o cálculo de entropia neste desafio, <a href="https://platform-ui.topcoder.com/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">como mostrado neste desafio do Rosetta Code</a>
 
 # --instructions--
 
