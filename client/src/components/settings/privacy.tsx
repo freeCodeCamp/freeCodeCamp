@@ -130,6 +130,7 @@ function PrivacySettings({
           />
           <ToggleSetting
             action={t('settings.labels.my-timeline')}
+            explain={t('settings.disabled')}
             flag={!privacyValues['showTimeLine']}
             flagName='showTimeLine'
             offLabel={t('buttons.public')}

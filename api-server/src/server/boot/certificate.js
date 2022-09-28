@@ -391,7 +391,7 @@ function createShowCert(app) {
           ]
         });
       }
-      const { isLocked, showCerts, showName } = user.profileUI;
+      const { isLocked, showCerts, showName, showTimeLine } = user.profileUI;
 
       if (!user.name) {
         return res.json({
@@ -445,6 +445,18 @@ function createShowCert(app) {
             {
               type: 'info',
               message: 'flash.not-honest',
+              variables: { username: username }
+            }
+          ]
+        });
+      }
+
+      if (!showTimeLine) {
+        return res.json({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.timeline-private',
               variables: { username: username }
             }
           ]
