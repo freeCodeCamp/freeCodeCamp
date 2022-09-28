@@ -84,7 +84,11 @@ export class Header extends React.Component<
     return (
       <>
         <Helmet>
-          <style>{':root{--header-height: 38px}'}</style>
+          <style>
+            {
+              ':root{--header-height: 38px; --search-box-form: 38px; --lang-menu-height: 22.5rem;}'
+            }
+          </style>
         </Helmet>
         <header>
           <UniversalNav

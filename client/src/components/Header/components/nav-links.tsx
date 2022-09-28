@@ -1,13 +1,5 @@
-/* eslint-disable jsx-a11y/no-onchange */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable react/prop-types */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import {
   faCheckSquare,
@@ -16,7 +8,7 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { Component, Fragment, createRef, Ref } from 'react';
+import React, { Component, Fragment, createRef } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import envData from '../../../../../config/env.json';
@@ -33,25 +25,40 @@ import { Link } from '../../helpers';
 import { Themes } from '../../settings/theme';
 import LanguageGlobe from '../../../assets/icons/language-globe';
 
-const { clientLocale, radioLocation, apiLocation } = envData;
+interface NavigationLocationApi {
+  clientLocale: string;
+  radioLocation: string;
+  apiLocation: string;
+}
+
+const { clientLocale, radioLocation, apiLocation } =
+  envData as NavigationLocationApi;
 
 const locales = availableLangs.client.filter(
   lang => !hiddenLangs.includes(lang)
 );
 
+interface NavlinkStates {
+  arg: Record<string, unknown>;
+}
+
 export interface NavLinksProps {
-  displayMenu?: boolean;
-  isLanguageMenuDisplayed?: boolean;
-  fetchState?: { pending: boolean };
-  i18n: Object;
+  displayMenu: boolean;
+  isLanguageMenuDisplayed: boolean;
+  fetchState: { pending: boolean };
+  i18n: Record<string, unknown>;
   t: TFunction;
   hideMenu: () => void;
-  toggleNightMode: (x: any) => any;
-  user?: Record<string, unknown>;
+  toggleNightMode: (theme: Themes) => Themes;
+  user?: {
+    isDonating: boolean;
+    username: string;
+    theme: Themes;
+  };
   navigate?: (location: string) => void;
-  showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
-  hideLanguageMenu?: () => void;
-  menuButtonRef: Ref<HTMLButtonElement>;
+  showLanguageMenu: (elementToFocus: HTMLButtonElement) => void;
+  hideLanguageMenu: () => void;
+  menuButtonRef: React.RefObject<HTMLButtonElement>;
 }
 
 const mapDispatchToProps = {
@@ -59,11 +66,11 @@ const mapDispatchToProps = {
   toggleNightMode: (theme: Themes) => updateUserFlag({ theme })
 };
 
-export class NavLinks extends Component<NavLinksProps, {}> {
+export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
   static displayName: string;
   langButtonRef: React.RefObject<HTMLButtonElement>;
-  firstLangOptionRef: React.RefObject<HTMLElement>;
-  lastLangOptionRef: React.RefObject<HTMLElement>;
+  firstLangOptionRef: React.RefObject<HTMLButtonElement>;
+  lastLangOptionRef: React.RefObject<HTMLButtonElement>;
 
   constructor(props: NavLinksProps) {
     super(props);
@@ -79,34 +86,50 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     this.handleBlur = this.handleBlur.bind(this);
   }
 
-  toggleTheme(currentTheme = Themes.Default, toggleNightMode: any) {
+  toggleTheme(
+    currentTheme = Themes.Default,
+    toggleNightMode: (theme: Themes) => Themes
+  ) {
     toggleNightMode(
       currentTheme === Themes.Night ? Themes.Default : Themes.Night
     );
   }
 
-  getPreviousMenuItem(target: HTMLElement): HTMLElement {
+  getPreviousMenuItem(target: HTMLButtonElement): HTMLButtonElement {
     const { menuButtonRef } = this.props;
     const previousSibling =
-      target.closest('.nav-list > li')?.previousElementSibling;
+      target?.closest('.nav-list > li')?.previousElementSibling;
     return previousSibling?.querySelector('a, button') ?? menuButtonRef.current;
   }
 
   handleLanguageChange = (event: React.MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
-    const { hideMenu, hideLanguageMenu, menuButtonRef, navigate } = this.props;
-    const newLanguage = event.target.dataset.value as string;
+    interface LanguageChange {
+      hideMenu: (() => void) | undefined;
+      hideLanguageMenu: (() => void) | undefined;
+      menuButtonRef: React.RefObject<HTMLButtonElement>;
+      navigate?: (pathProp: string) => void;
+    }
+
+    const {
+      hideMenu,
+      hideLanguageMenu,
+      menuButtonRef,
+      navigate
+    }: LanguageChange = this.props;
+
+    const newLanguage = event.currentTarget.dataset.value as string;
     // If user selected cancel then close menu and put focus on button
     if (newLanguage === 'exit-lang-menu') {
       // Set focus to language button first so we don't lose focus
       // for screen readers.
-      this.langButtonRef.current.focus();
+      this.langButtonRef.current?.focus();
       hideLanguageMenu();
       return;
     }
     // Put focus on menu button first so we don't lose focus
     // for screen readers.
-    menuButtonRef.current.focus();
+    menuButtonRef.current?.focus();
     hideMenu();
     // If user selected the current language then we just close the menu
     if (newLanguage === clientLocale) {
@@ -116,14 +139,15 @@ export class NavLinks extends Component<NavLinksProps, {}> {
       clientLocale,
       lang: newLanguage
     });
-
-    return navigate(path);
+    if (typeof navigate !== 'undefined') {
+      return navigate(path);
+    }
   };
 
   handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
     const { menuButtonRef, hideMenu } = this.props;
     if (event.key === 'Escape') {
-      menuButtonRef.current.focus();
+      menuButtonRef.current?.focus();
       hideMenu();
       event.preventDefault();
     }
@@ -143,24 +167,34 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     event: React.KeyboardEvent<HTMLButtonElement>
   ): void => {
     const { menuButtonRef, showLanguageMenu, hideMenu } = this.props;
-    /* eslint-disable @typescript-eslint/naming-convention */
-    const doKeyPress = {
+
+    interface DoKeyPressProp {
+      Escape: () => void;
+      ArrowDown: () => void;
+      ArrowUp: () => void;
+    }
+
+    // eslint naming convention should be ignored in key press function, because following the name convention harms accessiblity.
+
+    const DoKeyPress: DoKeyPressProp = {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       Escape: () => {
-        menuButtonRef.current.focus();
+        menuButtonRef.current?.focus();
         hideMenu();
         event.preventDefault();
       },
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       ArrowDown: () => {
         showLanguageMenu(this.firstLangOptionRef.current);
         event.preventDefault();
       },
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       ArrowUp: () => {
         showLanguageMenu(this.lastLangOptionRef.current);
         event.preventDefault();
       }
     };
-    /* eslint-enable @typescript-eslint/naming-convention */
-    doKeyPress[event.key]?.();
+    DoKeyPress[event.key]?.();
   };
 
   handleLanguageMenuKeyDown = (
@@ -168,15 +202,15 @@ export class NavLinks extends Component<NavLinksProps, {}> {
   ): void => {
     const { hideLanguageMenu, hideMenu } = this.props;
     const focusFirstLanguageMenuItem = () => {
-      this.firstLangOptionRef.current.focus();
+      this.firstLangOptionRef.current?.focus();
       event.preventDefault();
     };
     const focusLastLanguageMenuItem = () => {
-      this.lastLangOptionRef.current.focus();
+      this.lastLangOptionRef.current?.focus();
       event.preventDefault();
     };
-    /* eslint-disable @typescript-eslint/naming-convention */
-    const doKeyPress = {
+    const DoKeyPress = {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       Tab: () => {
         if (!event.shiftKey) {
           // Let the Tab work as normal.
@@ -194,33 +228,37 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           }, 200);
           return;
         }
-        // Because FF adds an extra tab stop to the lang menu (because it
+        // Because FF adds an extra Tab stop to the lang menu (because it
         // is scrollable) we need to manually focus the previous menu item.
         this.getPreviousMenuItem(this.langButtonRef.current).focus();
         hideLanguageMenu();
         event.preventDefault();
       },
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       ArrowUp: () => {
-        const arrowUpItemToFocus =
+        const ArrowUpItemToFocus =
           event.target === this.firstLangOptionRef.current
             ? this.lastLangOptionRef.current
-            : (event.target.parentNode.previousSibling
-                .firstChild as HTMLElement);
-        arrowUpItemToFocus.focus();
+            : (event.currentTarget.parentNode?.previousSibling
+                ?.firstChild as HTMLElement);
+        ArrowUpItemToFocus?.focus();
         event.preventDefault();
       },
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       ArrowDown: () => {
-        const arrowDownItemToFocus =
+        const ArrowDownItemToFocus =
           event.target === this.lastLangOptionRef.current
             ? this.firstLangOptionRef.current
-            : (event.target.parentNode.nextSibling.firstChild as HTMLElement);
-        arrowDownItemToFocus.focus();
+            : (event.currentTarget.parentNode?.nextSibling
+                ?.firstChild as HTMLElement);
+        ArrowDownItemToFocus?.focus();
         event.preventDefault();
       },
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       Escape: () => {
         // Set focus to language button first so we don't lose focus
         // for screen readers.
-        this.langButtonRef.current.focus();
+        this.langButtonRef.current?.focus();
         hideLanguageMenu();
         event.preventDefault();
       },
@@ -229,8 +267,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
       End: focusLastLanguageMenuItem,
       PageDown: focusLastLanguageMenuItem
     };
-    /* eslint-enable @typescript-eslint/naming-convention */
-    doKeyPress[event.key]?.();
+    DoKeyPress[event.key]?.();
   };
 
   // Added to the last item in the nav menu. Will close the menu if
@@ -302,7 +339,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
                 className='nav-link'
                 onKeyDown={this.handleMenuKeyDown}
                 sameTab={false}
-                to={`/${username}`}
+                to={`/${username as string}`}
               >
                 {t('buttons.profile')}
               </Link>
@@ -365,7 +402,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
             }
             onClick={() => {
               if (username) {
-                this.toggleTheme(String(theme), toggleNightMode);
+                this.toggleTheme(String(theme) as Themes, toggleNightMode);
               }
             }}
             onKeyDown={this.handleMenuKeyDown}
