@@ -4,7 +4,7 @@ import {
   MenuItem
 } from '@freecodecamp/react-bootstrap';
 import React from 'react';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
 
@@ -25,15 +25,7 @@ export function SolutionDisplayWidget({
 }: Props) {
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
-
-  const showOrViewText =
-    displayContext === 'settings' ? (
-      <Trans i18nKey='buttons.view-solution'>
-        <span className='sr-only'>Solution</span>
-      </Trans>
-    ) : (
-      t('buttons.view')
-    );
+  const viewText = t('buttons.view');
 
   const ShowFilesSolutionForCertification = (
     <button
@@ -74,13 +66,10 @@ export function SolutionDisplayWidget({
       bsStyle='primary'
       className='btn-invert'
       data-cy={dataCy}
-      title='view code button'
       id={`btn-for-${id}`}
       onClick={showUserCode}
     >
-      <Trans i18nKey='buttons.view-code'>
-        <span className='sr-only'>Code</span>
-      </Trans>
+      {viewText}
     </Button>
   );
   const ShowMultifileProjectSolution = (
@@ -93,14 +82,10 @@ export function SolutionDisplayWidget({
         title={t('buttons.view')}
       >
         <MenuItem bsStyle='primary' onClick={showUserCode}>
-          <Trans i18nKey='buttons.view-code'>
-            <span className='sr-only'>Code</span>
-          </Trans>
+          {viewText}
         </MenuItem>
         <MenuItem bsStyle='primary' onClick={showProjectPreview}>
-          <Trans i18nKey='buttons.view-project'>
-            <span className='sr-only'>Project</span>
-          </Trans>
+          {viewText}
         </MenuItem>
       </DropdownButton>
     </div>
@@ -113,7 +98,7 @@ export function SolutionDisplayWidget({
         bsStyle='primary'
         className='btn-invert'
         id={`dropdown-for-${id}`}
-        title={showOrViewText}
+        title={viewText}
       >
         <MenuItem
           bsStyle='primary'
@@ -142,10 +127,9 @@ export function SolutionDisplayWidget({
       href={solution}
       id={`btn-for-${id}`}
       rel='noopener noreferrer'
-      title='project link'
       target='_blank'
     >
-      {showOrViewText}
+      {viewText}
     </Button>
   );
   const MissingSolutionComponent =

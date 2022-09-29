@@ -57,7 +57,7 @@ describe('<TimeLine />', () => {
   it('Render button when only solution is present', () => {
     // @ts-expect-error
     render(<TimeLine {...propsForOnlySolution} />, store);
-    const showViewButton = screen.getByTitle(/project link/i);
+    const showViewButton = screen.getByRole('link', { name: 'buttons.view' });
     expect(showViewButton).toHaveAttribute(
       'href',
       'https://github.com/freeCodeCamp/freeCodeCamp'
@@ -84,8 +84,10 @@ describe('<TimeLine />', () => {
     // @ts-expect-error
     render(<TimeLine {...propsForOnlySolution} />, store);
 
-    const button = screen.getByTitle(/view code button/i);
-    expect(button).toBeInTheDocument();
+    const viewButtons = screen.getAllByRole('button', { name: 'buttons.view' });
+    viewButtons.forEach(button => {
+      expect(button).toBeInTheDocument();
+    });
   });
 });
 
