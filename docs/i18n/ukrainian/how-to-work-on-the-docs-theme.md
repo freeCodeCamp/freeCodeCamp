@@ -75,4 +75,4 @@ npm run docs:serve
 npm run develop
 ```
 
-> Документаційний сайт повинен бути доступний на <http://localhost:3200>
+> Документаційний сайт повинен бути доступний на <http://localhost:3400>
