@@ -294,7 +294,7 @@ After you have made the changes and saved the file, you will need to make a PR w
 
 If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
 
-In crowdin, individuate the `User management" on the left handside menu.
+In Crowdin, individuate the `User management` on the left hand side menu.
 
 This will open the user management tools, you will be able to see the list of all the users.
 
