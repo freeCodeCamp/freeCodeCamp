@@ -75,4 +75,4 @@ npm run docs:serve
 npm run develop
 ```
 
-> ドキュメントサイトは <http://localhost:3200> で利用できます。
+> ドキュメントサイトは <http://localhost:3400> で利用できます。
