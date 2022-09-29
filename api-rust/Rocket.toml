@@ -9,4 +9,9 @@ cli_colors = true
 ctrlc = true
 
 [release]
-address = "https://api.freecodecamp.org"
+address = "127.0.0.1"
+log_level = "normal"
+
+
+[default.databases.freecodecamp]
+url = "mongodb://localhost:27017/freecodecamp"

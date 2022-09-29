@@ -1,5 +1,5 @@
 [package]
-name = "new-api"
+name = "api-rust"
 version = "0.1.0"
 edition = "2021"
 

@@ -9,13 +9,12 @@ mod models;
 use api::catchers::not_found;
 use api::routes::{challenges_completed, index};
 use boot::mongodb_boot::MongoBoot;
+use rocket_db_pools::Database;
 
 #[launch]
 async fn rocket() -> _ {
-    let db = MongoBoot::init().await;
     rocket::build()
-        // .manage(db)
-        .attach(db)
+        .attach(MongoBoot::init())
         .mount("/", routes![index, challenges_completed])
         .register("/", catchers![not_found])
 }

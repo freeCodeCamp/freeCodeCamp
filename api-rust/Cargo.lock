@@ -67,6 +67,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "api-rust"
+version = "0.1.0"
+dependencies = [
+ "dotenv",
+ "mongodb",
+ "rocket",
+ "rocket_db_pools",
+ "serde",
+]
+
+[[package]]
 name = "async-stream"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -997,17 +1008,6 @@ dependencies = [
  "tokio",
  "tokio-util",
  "version_check",
-]
-
-[[package]]
-name = "new-api"
-version = "0.1.0"
-dependencies = [
- "dotenv",
- "mongodb",
- "rocket",
- "rocket_db_pools",
- "serde",
 ]
 
 [[package]]
