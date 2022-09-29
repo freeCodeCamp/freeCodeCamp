@@ -12,7 +12,7 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 `isOk()` перевіряє правдиве значення, а `isNotOk()` перевіряє хибне значення.
 
-Щоб дізнатися більше про правдиві й хибні значення, перейдіть на завдання [Хибний вибивало](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer).
+Щоб дізнатися більше про правдиві й хибні значення, перейдіть на завдання [Хибний вибивало](https://platform-ui.topcoder.com/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer).
 
 # --instructions--
 
