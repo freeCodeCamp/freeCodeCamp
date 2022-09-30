@@ -140,7 +140,9 @@ async function setup() {
       process.env.npm_config_filename &&
       process.env.npm_config_superblock)
   ) {
-    throw new Error(`Please do not use both a block and superblock as input.`);
+    throw new Error(
+      `Please do not use more than one of: superblock, block, filename.`
+    );
   }
 
   // liveServer starts synchronously
