@@ -261,10 +261,6 @@ export type User = {
   isCheater: boolean;
   isDonating: boolean;
   isHonest: boolean;
-  isGithub: boolean;
-  isLinkedIn: boolean;
-  isTwitter: boolean;
-  isWebsite: boolean;
   joinDate: string;
   linkedin: string;
   location: string;

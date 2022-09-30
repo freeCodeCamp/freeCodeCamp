@@ -9,7 +9,7 @@ dashedName: assignment-with-a-returned-value
 
 # --description--
 
-如果你还记得我们在[使用赋值运算符存储值](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator)中的讨论的话，等号右侧的所有操作都会在赋值之前完成。 这意味着我们可以获取函数的返回值，并将其赋值给一个变量。
+如果你还记得我们在这一节<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">使用赋值运算符存储值</a>中的讨论，赋值之前，先完成等号右边的操作。 这意味着我们可以获取函数的返回值，并将其赋值给一个变量。
 
 假设我们有一个预先定义的函数 `sum` ，它将两个数相加，然后：
 

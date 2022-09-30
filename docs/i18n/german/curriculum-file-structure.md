@@ -7,9 +7,9 @@ Unsere wichtigsten Lehrinhalte befinden sich in dem Verzeichnis mit dem aussagek
 Es gibt ein paar Begriffe, die wir verwenden, wenn wir über unsere Studienplaninhalte sprechen.
 
 - `certification` : Wenn in diesem Fall von einer Zertifizierung die Rede ist, geht es um das eigentliche Zertifikat, das die Nutzer/innen beantragen. Das ist unabhängig vom Namen des SuperBlocks.
-- `superBlock` : Ein Superblock ist die oberste Ebene einer Sammlung von Aufgaben. Each superblock corresponds to a certification in the curriculum (e.g. Responsive Web Design).
-- `block` : Ein Block ist ein Abschnitt innerhalb eines Superblocks. A block corresponds to a group of challenges in a given certification (e.g. Basic HTML and HTML5)
-- `challenge` : A challenge is a single lesson within the curriculum (e.g. Say Hello to HTML Elements)
+- `superBlock` : Ein Superblock ist die oberste Ebene einer Sammlung von Aufgaben. Jeder Superblock entspricht einer Zertifizierung im Lehrplan (z.B. Responsive Web Design).
+- `block` : Ein Block ist ein Abschnitt innerhalb eines Superblocks. Ein Block entspricht einer Gruppe von Aufgaben in einer bestimmten Zertifizierung (z. B. Grundlegendes HTML und HTML5)
+- `challenge` : Eine Aufgabe ist eine einzelne Lektion innerhalb des Lehrplans (z.B. Sag Hallo zu HTML-Elementen)
 
 ## Dateibaum
 
@@ -46,7 +46,7 @@ Wenn du eine Zertifizierung umbenennst, willst du wahrscheinlich auch den zugeh�
 1. Benenne in der Datei `meta.json` dieses Ordners die Werte in `name`, `dashedName` und `challengeOrder` in den neuen Zertifikatsnamen um.
 1. Benenne den Ordner `{superBlock}-certificate` und die darin enthaltene YAML-Datei in `curriculum/challenges/english/12-certificate` in den neuen Namen um.
 1. Ändere den `title` in der YAML-Datei in den neuen Namen um.
-1. Benenne die Datei und den Ordner aus Schritt 3 für die übrigen Studienplansprachen um.
+1. Rename the file and folder from step 3 for the rest of the curriculum languages.
 1. Aktualisiere `client/src/redux/index.ts`, um den richtigen `title` zu benutzen.
 1. Optional aktualisiere den `certSlug` für den superblock in der gleichen Datei. **Beachte**, dass das Umbenennen eines `certSlug` die URL für die Zertifizierung ändern wird und sollte deshalb nur nach sorgfältiger Überlegung durchgeführt werden.
 1. Aktualisiere den `title` in `client/src/resources/cert-and-project-map.ts` auf den neuen Wert. **Beachte**, dass das Ändern des `title` hier **die SuperBlock-Seite für die zugehörige Zertifizierung unterbricht**. Er ist darauf angewiesen, dass der SuperBlock-Titel mit dem Titel der Zertifizierung übereinstimmt. Wahrscheinlich willst du den SuperBlock gleichzeitig umbenennen.
@@ -60,7 +60,7 @@ Wenn du eine Zertifizierung umbenennst, willst du wahrscheinlich auch den zugeh�
 
 > [!NOTE] Wenn du einen SuperBlock umbenennst, wird der neue Ordnername als Pfad verwendet und sollte als "richtiger" Name betrachtet werden. Alle anderen Werte sollten aktualisiert sein, um diese Veränderung widerzuspiegeln.
 
-Außerdem wirst du wahrscheinlich das Zertifikat und den `{superBlock}-projects`-Block umbenennen wollen, wenn du einen superBlock umbenennst, da sie alle einen gemeinsamen Namen haben. Um nur einen superBlock umzubenennen, musst du:
+Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all share a name. Um nur einen superBlock umzubenennen, musst du:
 
 1. Benenne den Ordner superBlock im Verzeichnis `curriculum/challenges/english` um.
 1. Benenne den superBlock Ordner in _allen_ anderen `curriculum/challenges/{language}` Verzeichnissen um.

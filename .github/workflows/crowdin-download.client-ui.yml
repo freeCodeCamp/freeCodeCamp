@@ -238,6 +238,12 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
+      # Format JSON
+      - name: Format JSON
+        run: |
+          npm ci
+          npx prettier --write client/i18n/locales/**/*.json
+
       # Create Commit
       - name: Commit Changes
         uses: freecodecamp/crowdin-action@main

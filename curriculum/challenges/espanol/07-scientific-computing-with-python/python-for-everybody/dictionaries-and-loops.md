@@ -14,7 +14,7 @@ dashedName: dictionaries-and-loops
 
 Más recursos:
 
-\- [Ejercicio](https://www.youtube.com/watch?v=PrhZ9qwBDD8)
+\- <a href="https://www.youtube.com/watch?v=PrhZ9qwBDD8" target="_blank" rel="noopener noreferrer nofollow">Ejercicio</a>
 
 # --question--
 

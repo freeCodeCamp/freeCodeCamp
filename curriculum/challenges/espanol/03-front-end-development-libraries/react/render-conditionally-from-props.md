@@ -123,7 +123,7 @@ Cada vez que se hace clic en el botón, el contador debe incrementarse por un va
 })();
 ```
 
-Cuando el componente `GameOfChance` se monta por primera vez en el DOM y cada vez que se hace clic en el botón, un solo elemento `h1` debe ser devuelto, el cual renderiza aleatoriamente `You Win!` o `You Lose!`.
+Cuando el componente `GameOfChance` se monta primero en el DOM y cada vez que se hace clic en el botón a partir de entonces, un solo `h1` debe devolverse un elemento que represente aleatoriamente `You Win!` o `You Lose!`. Nota: esto puede fallar aleatoriamente. Si eso sucede, inténtalo de nuevo.
 
 ```js
 (() => {
@@ -265,6 +265,11 @@ class GameOfChance extends React.Component {
 # --solutions--
 
 ```jsx
+// We want this to be deterministic for testing purposes.
+const randomSequence = [true, false, false, true, true, false, false, true, true, false];
+let index = 0;
+const fiftyFifty = () => randomSequence[index++ % randomSequence.length];
+
 class Results extends React.Component {
   constructor(props) {
     super(props);
@@ -290,11 +295,10 @@ class GameOfChance extends React.Component {
     });
   }
   render() {
-    const expression = Math.random() >= 0.5;
     return (
       <div>
         <button onClick={this.handleClick}>Play Again</button>
-        <Results fiftyFifty={expression} />
+        <Results fiftyFifty={fiftyFifty()} />
         <p>{'Turn: ' + this.state.counter}</p>
       </div>
     );

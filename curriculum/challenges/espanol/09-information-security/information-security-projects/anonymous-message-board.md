@@ -8,12 +8,12 @@ dashedName: anonymous-message-board
 
 # --description--
 
-Construye una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <https://anonymous-message-board.freecodecamp.rocks/>.
+Construye una aplicación full stack JavaScript similar a este: <a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://anonymous-message-board.freecodecamp.rocks/</a>.
 
 Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
--   Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-project-messageboard/) y completa tu proyecto localmente.
--   Usa [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard) para completar tu proyecto.
+-   Clona <a href="https://github.com/freeCodeCamp/boilerplate-project-messageboard/" target="_blank" rel="noopener noreferrer nofollow">este repositorio GitHub</a> y completa el proyecto localmente.
+-   Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">nuestra plantilla en Replit</a> para completar tu proyecto.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio GitHub.
 
 Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.

@@ -10,7 +10,7 @@ dashedName: authentication-strategies
 
 Una estrategia es una manera de autenticar a un usuario. Puedes utilizar una estrategia para permitir que los usuarios se autentiquen basándose en la información guardada localmente (si les haces registrarse primero) o desde una variedad de proveedores como Google o GitHub. Para este proyecto, usaremos el agente intermedio Passport. Passport provee un comprensivo set de estrategias que soportan la autenticación usando un nombre de usuario y una contraseña, GitHub, Google, y más.
 
-Agrega `passport-local@~1.0.0` como dependencia y agrégalo a tu servidor de la siguiente manera: `const LocalStrategy = require('passport-local');`
+`passport-local@~1.0.0` ya ha sido añadido como una dependencia, así que añádela a tu servidor de la siguiente manera: `const LocalStrategy = require('passport-local');`
 
 Ahora tendrás que decirle a passport que **use** un objeto LocalStrategy instanciado con algunas configuraciones definidas. ¡Asegúrate que esto (al igual que todo lo que se haga a partir de ahora) esté encapsulado en la conexión a la base de datos, ya que depende de ella!
 
@@ -34,7 +34,7 @@ Muchas estrategias se configuran con diferentes ajustes, pero generalmente es f�
 
 En el siguiente paso, ¡configuraremos cómo llamar a la estrategia de autenticación para validar un usuario basado en los datos del formulario!
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
 
 # --hints--
 

@@ -100,7 +100,8 @@
     "Yippee!",
     "Cowabunga!",
     "Moon Prism Power!",
-    "Plus Ultra!"
+    "Plus Ultra!",
+    "Everything's coming up Milhouse!"
   ],
   "motivationalQuotes": [
     {
@@ -174,6 +175,10 @@
     {
       "quote": "There is only one corner of the universe you can be certain of improving, and that's your own self.",
       "author": "Aldous Huxley"
+    },
+    {
+      "quote": "I am thankful for my struggle because, without it, I wouldn't have stumbled across my strength.",
+      "author": "Alex Elle"
     },
     {
       "quote": "The most common way people give up their power is by thinking they don't have any.",
@@ -256,6 +261,10 @@
       "author": "Carl Sagan"
     },
     {
+      "quote": "When you have a dream, you've got to grab it and never let go.",
+      "author": "Carol Burnett"
+    },
+    {
       "quote": "If you're not making mistakes, then you're not making decisions.",
       "author": "Catherine Cook"
     },
@@ -270,6 +279,14 @@
     {
       "quote": "It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change.",
       "author": "Charles Darwin"
+    },
+    {
+      "quote": "The details are not the details. They make the design.",
+      "author": "Charles Eames"
+    },
+    {
+      "quote": "Creativity is more than just being different. Anybody can plan weird. That's easy. What's hard is to be as simple as Bach. Making the simple, awesomely simple, that's creativity.",
+      "author": "Charles Mingus"
     },
     {
       "quote": "Life is 10% what happens to you and 90% how you react to it.",
@@ -304,12 +321,20 @@
       "author": "Dennis Ritchie"
     },
     {
+      "quote": "The way I see it, if you want the rainbow, you gotta put up with the rain!",
+      "author": "Dolly Parton"
+    },
+    {
       "quote": "Computers are good at following instructions, but not at reading your mind.",
       "author": "Donald Knuth"
     },
     {
       "quote": "A good programmer is someone who always looks both ways before crossing a one-way street.",
       "author": "Doug Linder"
+    },
+    {
+      "quote": "Creativity is a wild mind and a disciplined eye.",
+      "author": "Dorothy Parker"
     },
     {
       "quote": "Tough times never last, but tough people do.",
@@ -450,6 +475,10 @@
     {
       "quote": "The most exciting phrase to hear in science, the one that heralds discoveries, is not 'Eureka!' but 'Now that's funny…'",
       "author": "Isaac Asimov"
+    },
+    {
+      "quote": "What you do makes a difference. And you have to decide what kind of difference you want to make.",
+      "author": "Jane Goodall"
     },
     {
       "quote": "We are all failures. At least the best of us are.",
@@ -593,6 +622,10 @@
     },
     {
       "quote": "Nothing will work unless you do.",
+      "author": "Maya Angelou"
+    },
+    {
+      "quote": "You can't use up creativity. The more you use, the more you have.",
       "author": "Maya Angelou"
     },
     {
@@ -752,6 +785,10 @@
       "author": "Unknown"
     },
     {
+      "quote": "Look at usual things with unusual eyes.",
+      "author": "Vico Magistetti"
+    },
+    {
       "quote": "Even if you fall on your face, you're still moving forward.",
       "author": "Victor Kiam"
     },
@@ -761,6 +798,10 @@
     },
     {
       "quote": "I dream my painting and I paint my dream.",
+      "author": "Vincent van Gogh"
+    },
+    {
+      "quote": "Great things are done by a series of small things brought together.",
       "author": "Vincent van Gogh"
     },
     {

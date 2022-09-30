@@ -80,31 +80,36 @@
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a tribute page for a subject of your choosing, fictional or real."
-        ] },
+        ]
+      },
       "build-a-personal-portfolio-webpage-project": {
         "title": "Personal Portfolio Webpage",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build your own personal portfolio page."
-        ] },
+        ]
+      },
       "build-a-product-landing-page-project": {
         "title": "Product Landing Page",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a product landing page to market a product of your choice."
-        ] },
+        ]
+      },
       "build-a-survey-form-project": {
         "title": "Survey Form",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a survey form to collect data from your users."
-        ] },
+        ]
+      },
       "build-a-technical-documentation-page-project": {
         "title": "Technical Documentation Page",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a technical documentation page to serve as instruction or reference for a topic."
-        ] },
+        ]
+      },
       "learn-html-by-building-a-cat-photo-app": {
         "title": "Learn HTML by Building a Cat Photo App",
         "intro": [
@@ -181,24 +186,34 @@
           "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line height, and position your text using CSS."
         ]
       },
-      "learn-css-transforms-by-building-a-penguin": { "title": "Learn CSS Transforms by Building a Penguin", "intro": [
-        "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
-        "In this course, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
-      ] },
-      "learn-css-animation-by-building-a-ferris-wheel": { "title": "Learn CSS Animation by Building a Ferris Wheel", "intro": [
-        "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
-        "In this course, you'll build a Ferris wheel. You'll learn how to use CSS to animate elements, transform them, and adjust their speed."
-      ] },
-      "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": { "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet", "intro": [
-        "You can use CSS pseudo selectors to change specific HTML elements.",
-        "In this course, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
-      ] },
+      "learn-css-transforms-by-building-a-penguin": {
+        "title": "Learn CSS Transforms by Building a Penguin",
+        "intro": [
+          "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
+          "In this course, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
+        ]
+      },
+      "learn-css-animation-by-building-a-ferris-wheel": {
+        "title": "Learn CSS Animation by Building a Ferris Wheel",
+        "intro": [
+          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
+          "In this course, you'll build a Ferris wheel. You'll learn how to use CSS to animate elements, transform them, and adjust their speed."
+        ]
+      },
+      "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
+        "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
+        "intro": [
+          "You can use CSS pseudo selectors to change specific HTML elements.",
+          "In this course, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+        ]
+      },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
         "title": "Learn CSS Colors by Building a Set of Colored Markers",
         "intro": [
           "Selecting the correct colors for your webpage can greatly improve the aesthetic appeal to your readers.",
           "In this course, you'll build a set of colored markers. You'll learn different ways to set color values and how to pair colors with each other."
-      ] }
+        ]
+      }
     }
   },
   "javascript-algorithms-and-data-structures": {
@@ -286,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "JavaScript Algorithms and Data Structures (Beta)",
-    "intro": [
-      "placeholder",
-      "placeholder"
-    ],
+    "intro": ["placeholder", "placeholder"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Build a Caesars Cipher Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "Build a Cash Register Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "Build a Palindrome Checker Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Build a Roman Numeral Converter Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Build a Telephone Number Validator Project",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Learn Basic JavaScript by Building a Role Playing Game",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Learn Form Validation by Building a Calorie Counter",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Learn Functional Programming by Building a Spreadsheet",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -448,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "D3 Dashboard",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },

@@ -127,7 +127,7 @@ Ora che hai installato i pre-requisiti, segui [la nostra guida per settare freeC
 
 ## Link Utili
 
-- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
+- [Un setup di WSL2 per lo sviluppo con Ubuntu 20.04, Node.js, MongoDB, VS Code e Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - un articolo di Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
 - Domande frequenti su:
   - [Sottosistema Windows per Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop per Windows](https://docs.docker.com/docker-for-windows/faqs)

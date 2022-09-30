@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі стартового проєкту на [ Replit ](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) або клонується з [GitHub ](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Коли ви протестуєте `PUT` запит, ви часто будете посилати дані разом з ним. Дані, які ви включаєте до вашого `PUT` запиту, називаються тілом запиту.
 

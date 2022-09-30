@@ -42,7 +42,7 @@ myDataBase.findOneAndUpdate(
 
 これでアプリにログインできるはずです。試してみてください！
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

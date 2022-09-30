@@ -9,7 +9,7 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --description--
 
-Нагадуємо, що цей проект створюється на основі наступного початкового проекту [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec) або копіюється з [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Міжсайтовий скриптинг (XSS) - це частий тип атаки, під час якої зловмисні скрипти потрапляють на вразливі сторінки, з метою крадіжки конфіденційних даних, таких як сеансові файли кукі або паролі.
 

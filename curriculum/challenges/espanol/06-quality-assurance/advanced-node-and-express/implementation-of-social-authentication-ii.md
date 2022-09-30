@@ -8,7 +8,7 @@ dashedName: implementation-of-social-authentication-ii
 
 # --description--
 
-La última parte de configurar tu autentificación de GitHub es crear la propia estrategia. Para esto, necesitarás agregar la dependencia de `passport-github@~1.1.0` a tu proyecto y requiérelo en tu `auth.js` como `GithubStrategy` así: `const GitHubStrategy = require('passport-github').Strategy;`. No olvides requerir y configurar `dotenv` para usar tus variables de entorno.
+La última parte de configurar tu autentificación de GitHub es crear la propia estrategia. `passport-github@~1.1.0` ya ha sido añadido como dependencia, así que requiérelo en tu archivo `auth.js` como `GithubStrategy` así: `const GitHubStrategy = require('passport-github').Strategy;`. No olvides requerir y configurar `dotenv` para usar tus variables de entorno.
 
 Para configurar la estrategia de GitHub, debes decirle a Passport que utilice una instancia de `GitHubStrategy`, que acepta 2 argumentos: un objeto (que contiene `clientID`, `clientSecret`, y `callbackURL`) y una función a ser llamada cuando un usuario es autentificado con éxito, que determinará si el usuario es nuevo y qué campos guardar inicialmente en el objeto de base de datos del usuario. Esto es común en muchas estrategias, pero algunas pueden requerir más información como se indica en el README de GitHub de esa estrategia específica. Por ejemplo, Google requiere un *ámbito* también que determina qué tipo de información está pidiendo que se le devuelva y pide al usuario que apruebe dicho acceso.
 
@@ -31,7 +31,7 @@ passport.use(new GitHubStrategy({
 
 ¡Tu autenticación aún no será exitosa, y en realidad arrojará un error sin la lógica de la base de datos y el callback, pero debería registrar tu perfil de GitHub en tu consola si lo intentas!
 
-Envía tu página cuando creas que la tienes correcta. Si te encuentras con errores, puedes consultar el proyecto completado hasta este punto [Aquí](https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6).
+Envía tu página cuando creas que la tienes correcta. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
 
 # --hints--
 

@@ -10,7 +10,7 @@ dashedName: hashing-your-passwords
 
 Volviendo a la sección de seguridad de la información, puedes recordar que almacenar contraseñas en texto plano *nunca* está bien. Ahora es el momento de implementar BCrypt para resolver este problema.
 
-Agrega `bcrypt@~5.0.0` como dependencia, y requiérelo en tu servidor. Necesitarás manejar el hashing en 2 áreas clave: donde manejas el registro/guardado de una nueva cuenta, y cuando compruebas que una contraseña es correcta al iniciar sesión.
+`bcrypt@~5.0.0` Ha sido agregado como una dependencia, así que requiérelo en tu servidor. Necesitarás manejar el hashing en 2 áreas clave: donde manejas el registro/guardado de una nueva cuenta, y cuando compruebas que una contraseña es correcta al iniciar sesión.
 
 Actualmente en nuestra ruta de registro, se inserta la contraseña de un usuario en la base de datos así: `password: req.body.password`. Una forma sencilla de implementar el guardado de un hash en su lugar es agregar lo siguiente antes de tu lógica de base de datos `const hash = bcrypt.hashSync(req.body.password, 12);`, y sustituir el `req.body.password` en el guardado de la base de datos por sólo `password: hash`.
 
@@ -24,7 +24,7 @@ if (!bcrypt.compareSync(password, user.password)) {
 
 ¡Eso es todo lo que se necesita para implementar una de las características de seguridad más importantes cuando tienes que almacenar contraseñas!
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
 
 # --hints--
 

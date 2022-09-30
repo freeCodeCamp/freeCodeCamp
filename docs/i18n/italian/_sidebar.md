@@ -19,7 +19,6 @@
   - [Lavorare sulla documentazione](how-to-work-on-the-docs-theme.md)
   - [Lavorare sulla libreria dei componenti](how-to-work-on-the-component-library.md)
 - **Guide aggiuntive**
-  - [Testare traduzioni in locale](how-to-test-translations-locally.md)
   - [Capire la struttura dei file del curriculum](curriculum-file-structure.md)
   - [Fare il debug delle email in uscita localmente](how-to-catch-outgoing-emails-locally.md)
   - [Settare freeCodeCamp su Windows (WSL)](how-to-setup-wsl.md)
@@ -32,6 +31,7 @@
   - [Manuale del Leader di lingua](language-lead-handbook.md)
   - [Manuale di DevOps](devops.md)
   - [Estensione di VSCode per i corsi](courses-vscode-extension.md)
+  - [Attivare una nuova lingua](how-to-enable-new-languages.md)
 
 ---
 

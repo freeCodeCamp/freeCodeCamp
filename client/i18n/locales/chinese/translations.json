@@ -113,6 +113,7 @@
     "claim-legacy": "当你获得下列 freeCodeCamp 认证之后，你可以申请 {{cert}}:",
     "for": "{{username}} 账号设置",
     "sound-mode": "为整个网站添加做令人愉快的吉他原声音乐。在编辑器输入、完成挑战、申请认证等时刻，您将获得音乐反馈。",
+    "sound-volume": "Campfire Volume:",
     "username": {
       "contains invalid characters": "用户名 \"{{username}}\" 含有无效字符",
       "is too short": "用户名 \"{{username}}\" 太短",
@@ -275,7 +276,7 @@
     "solution-link": "解决方案链接",
     "github-link": "GitHub 链接",
     "submit-and-go": "提交并访问下一个挑战",
-    "congratulations": "Congratulations, your code passes. Submit your code to continue.",
+    "congratulations": "恭喜，你的代码已通过。请提交你的代码以继续。",
     "i-completed": "我已经完成这个挑战",
     "test-output": "你的测试输出将在这里显示",
     "running-tests": "// 运行测试",
@@ -286,6 +287,7 @@
     "percent-complete": "完成 {{percent}}%",
     "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读-搜索-提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
     "rsa": "阅读，搜索，提问",
+    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
     "reset": "重置这一节课程？",
     "reset-warn": "你确定要重置这一节课程吗？编辑器和测试将被重置。",
     "reset-warn-2": "这个操作不可撤销",
@@ -429,7 +431,7 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 900+ 篇教程",
+    "placeholder": "搜索 1,000+ 篇教程",
     "see-results": "查看 {{searchQuery}} 的所有结果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？试试使用页面上的搜索框。",
@@ -450,8 +452,9 @@
     "change-theme": "登录以更改主题。",
     "translation-pending": "帮我们翻译",
     "certification-project": "认证项目",
-    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
-    "document-notfound": "document not found"
+    "iframe-preview": "{{title}} preview",
+    "iframe-alert": "通常，此链接会将你带到另一个网站！一切正常，这个链接指向：{{externalLink}}。",
+    "document-notfound": "找不到文件"
   },
   "icons": {
     "gold-cup": "金奖杯",
@@ -486,6 +489,12 @@
     "breadcrumb-nav": "面包屑导航",
     "submit": "按下 Ctrl + Enter 键提交。",
     "running-tests": "正在运行测试",
+    "hide-preview": "Hide the preview",
+    "move-preview-to-new-window": "Move the preview to a new window and focus it",
+    "move-preview-to-main-window": "Move the preview to this window and close the external preview window",
+    "close-external-preview-window": "Close the external preview window",
+    "show-preview": "Show the preview in this window",
+    "open-preview-in-new-window": "Open the preview in a new window and focus it",
     "step": "步骤",
     "steps": "步骤",
     "steps-for": "{{blockTitle}} 的步骤"

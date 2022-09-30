@@ -16,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v3
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
 
       - name: Use Node.js v${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -36,7 +36,7 @@ jobs:
       - name: Create Comment
         # Run if the validate challenge files step fails, specifically. Note that we need the failure() call for this step to trigger if the action fails.
         if: ${{ failure() && steps.validate.conclusion == 'failure' }}
-        uses: actions/github-script@d50f485531ba88479582bc2da03ff424389af5c1 # tag=v6
+        uses: actions/github-script@c713e510dbd7d213d92d41b7a7805a986f4c5c66 # tag=v6
         with:
           github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
           script: |

@@ -2,19 +2,19 @@
 
 ## Prepárate para las contribuciones
 
-> The freeCodeCamp Localization Roadmap – There Are No Speed Limits
+> Guía de orientación de freeCodeCamp - Sin límites de velocidad
 
-> [!TIP] You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay).
+> [!TIP] Puedes comenzar leyendo [este anuncio](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). Recomendamos unirte a [nuestro foro de la comunidad](https://forum.freecodecamp.org/c/contributors/3) y al [servidor de Discord](https://discord.gg/PRyKn3Vbay).
 
-You can translate as much as you want, when you want. It's only a matter of how much time and energy you are willing to invest as a volunteer translator.
+Puedes traducir tanto como quieras, y cuando quieras. Es solo cuestión de cuánto tiempo y energía estás dispuesto a invertir como traductor voluntario.
 
-We just ask that you understand the following:
+solo queremos que entiendas lo siguiente:
 
 1. **Las traducciones son un esfuerzo de equipo.**
 
    Traducir los recursos de freeCodeCamp es una de las experiencias más divertidas y gratificantes como colaborador, y funciona mejor si involucras a tus amigos y colegas que hablan el mismo idioma que tú.
 
-   You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin and other tools make it easy to contribute translations, but it's still a lot of work.
+   Puedes comenzar leyendo [este anuncio](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). Recomendamos te unas al [foro de la comunidad](https://forum.freecodecamp.org/c/contributors/3) y al [servidor de Discord](https://discord.gg/PRyKn3Vbay) con tus amigos, y muestres tu interés antes de comenzar a traducir. Crowdin y otras herramientas facilitan contribuir con traducciones, sin embargo, sigue siendo bastante de trabajo.
 
    Queremos que disfrutes contribuyendo y no te canses o pierdas interés.
 
@@ -26,7 +26,7 @@ We just ask that you understand the following:
 
    freeCodeCamp.org está comprometido a ofrecerlos gratis como siempre. Sin embargo, debemos priorizar los recursos para aquellos que más lo necesitan. Lo último que queremos es cerrar los servidores de un idioma si la actividad de traducción se apaga y las cosas se vuelven obsoletas.
 
-   For translating the curriculum, once a language reaches at least a few certifications we can begin deploying the language live on [`/learn`](https://www.freecodecamp.org/learn), while you continue to translate the remaining certifications.
+   Al traducir el currículo, una vez que un idioma alcance al menos unas cuantas certificaciones, podremos comenzar a implementar el idioma en [`/learn`](https://www.freecodecamp.org/learn), mientras continúas traduciendo las certificaciones restantes.
 
    Por ejemplo, nos gustaría implementar al menos toda la suite de certificaciones de front-end cuando enviamos un nuevo idioma por primera vez.
 
@@ -42,13 +42,13 @@ We just ask that you understand the following:
 
    Una vez que tengas un pequeño grupo de personas (al menos 4-5) interesadas y comprometidas, podemos llamar. Te explicaremos todos los detalles y te guiaremos a través de algunas de las herramientas y procesos.
 
-## Overview of Crowdin
+## Vista previa de Crowdin
 
-It's our dream to provide you with the resources to learn, no matter the world language you speak. To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
+Nuestro sueño es brindate los recursos para aprender, sin importar el idioma que hables. Para que nos ayuden con este gran esfuerzo, hemos integrado nuestro código-báse de código-abierto y nuestro currículo con [Crowdin](https://crowdin.com/) - Una herramienta que nos ayuda a localizar nuestro código-base.
 
-> [!NOTE] We use a different tool and workflow for translating [news articles](https://www.freecodecamp.org/news). If you are interested in translating articles, read [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and reach out to your Language Lead.
+> [!NOTE] Utilizamos una herramienta y un flujo de trabajo diferentes para traducir [artículos de noticias](https://www.freecodecamp.org/news). Si te interesa traducir artículos, lee [este anuncio](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) y contacta al traductor lider de tu idioma.
 
-The translation workflow is split into two main activities:
+El flujo de trabajo de traducción se divide en dos actividades principales:
 
 - **Traduciendo** archivos de currículo, documentación y elementos de interfaz de usuario como botones, etiquetas, etc.:
 
@@ -58,11 +58,11 @@ The translation workflow is split into two main activities:
 
   Los revisores verifican que las traducciones aportadas por la comunidad sean uniformes en el tono y libres de problemas comunes como errores tipográficos, etc. En resumen, aseguran que la calidad de las traducciones sea alta. Ten en cuenta que no utilizamos traducciones automáticas por una razón.
 
-> [!WARNING] We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
+> [!WARNING] Ya no estamos usando GitHub para traducir archivos directamente. Si fuiste colaborador y estás regresando, entonces dirígete a nuestra [plataforma de traducción](https://translate.freecodecamp.org/).
 
-## Getting started
+## Comenzando
 
-First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). Publicamos actualizaciones regulares sobre los recursos de traducción y respondemos a muchas de tus consultas allí.
+Primero, asegúrate de decir "Hola" en nuestro [Discord](https://discord.gg/PRyKn3Vbay). Publicamos actualizaciones regulares sobre los recursos de traducción y respondemos a muchas de tus consultas allí.
 
 A continuación, dirígete a nuestro [plataforma de traducción](https://translate.freecodecamp.org/) e inicia sesión (si no has contribuido a traducciones anteriormente, deberás crear una cuenta).
 
@@ -70,7 +70,7 @@ Por último, ve a través del recorrido detallado a continuación para comprende
 
 Feliz traducción.
 
-## Select a Project and File
+## Selecciona un Proyecto y un Archivo
 
 Una vez que visites la plataforma de traducción, verás varios "proyectos" disponibles para traducción:
 
@@ -90,9 +90,9 @@ Cada archivo y carpeta mostrará una barra de progreso. La parte **azul** de la 
 
 Selecciona un archivo para trabajar y Crowdin abrirá la vista de edición.
 
-> [!NOTE] When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
+> [!NOTE] Cuando se abra la vista de edición, deberás hacer clic en el icono de configuración (que se muestra como un engranaje) y cambiar la configuración ''HTML tags displaying (Mostrar etiquetas HTML)" por "SHOW (Mostrar)". Esto asegurará que puedas ver las etiquetas como `<code></code>` en lugar de `<0></0>`.
 
-## Translate Curriculum
+## Traducir el Currículo
 
 ![Imagen - Vista de edición](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
@@ -109,49 +109,49 @@ Crowdin separa un documento en "cadenas" traducibles, normalmente oraciones. Cad
 9. Aquí puedes ver la ventana de comentarios. Si tienes preguntas o inquietudes sobre una cadena en particular, puedes dejar aquí un comentario sobre la cadena para que lo vean otros traductores.
 10. Estos dos botones de "panel" ocultarán las vistas izquierda (documento) y derecha (comentarios).
 
-> [!NOTE] If you see a hidden string that includes translations, please notify us in the [Discord](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
+> [!NOTE] Si observas una cadena oculta que incluye traducciones, por favor notifícanos en el [Discord](https://discord.gg/PRyKn3Vbay) para que podemos eliminar esa traducción de la memoria.
 
 Cuando hayas completado la traducción de una cadena, pulsa el botón `Save` (guardar) para almacenar tu traducción en Crowdin. Luego, otros contribuyentes podrán votar tu traducción y el equipo de revisores podrán aprobarla.
 
 Eres bienvenido a traducir tantas cadenas como desees, no se requieren pasos adicionales cuando completas todo un archivo o propones una nueva traducción. Hacer clic en el botón `Save` es todo lo que se necesita para almacenar una traducción.
 
-> [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
+> [!NOTE] Si ves algo en el archivo fuente en inglés que sea inexacto o incorrecto, por favor no lo corrijas a través del flujo de traducción. En su lugar, deja un comentario en la cadena para notificarnos que hay una discrepancia, o crea un issue en GitHub.
 
-## Translate the Learn Interface
+## Traducir la Interfaz de Aprendizaje
 
-Our `/learn` interface relies on JSON files loaded into an i18n plugin to generate translated text. This translation effort is split across both Crowdin and GitHub.
+Nuestra interfaz `/learn` se basa en archivos JSON cargados en un plugin i18n para generar texto traducido. Este esfuerzo de traducción está dividido entre Crowdin y GitHub.
 
-### On GitHub
+### En GitHub
 
-The `links.json`, `meta-tags.json`, `motivation.json`, and `trending.json` files contain information that needs to be updated to reflect your language. However, we cannot load these into Crowdin, as the content isn't something that would be a one-to-one translation.
+Los archivos `links.json`, `meta-tags.json`, `motivación.json` y `trending.json` contienen información que necesita ser actualizada para reflejar tu idioma. Sin embargo, no podemos cargarlos en Crowdin, ya que el contenido no es algo que sea una traducción uno-a-uno.
 
-These files will most likely be maintained by your language lead but you are welcome to [read about how to translate them](language-lead-handbook.md).
+Estos archivos probablemente serán mantenidos por el líder de tu idioma, pero serás bienvenido a [leer sobre cómo traducirlos](language-lead-handbook.md).
 
-### On Crowdin
+### En Crowdin
 
-> [!ATTENTION] Do not edit the following files through a GitHub PR.
+> [!ATTENTION] No edites los siguientes archivos a través de un PR de GitHub.
 
-The `intro.json` and `translations.json` files are both translated on Crowdin, in the Learn User Interface project. Translating these can be a bit tricky, as each individual JSON value appears as its own string and sometimes the context is missing.
+Los archivos `intro.json` y `translations.json` están traducidos en Crowdin, en el proyecto Learn User Interface. Traducir estos puede ser un poco complicado, ya que cada valor JSON individual aparece como su propia cadena y a veces falta contexto.
 
-However, the `Context` information provided in Crowdin can help understand where the string fits in to the larger structure.
+Sin embargo, la información de `Contexto` proporcionada en Crowdin puede ayudar a entender dónde se ajusta la cadena a la estructura más grande.
 
-![Image with an arrow pointing to Crowdin's context information](https://contribute.freecodecamp.org/images/crowdin/context.png)
+![Imagen con una flecha que apunta a la información contextual de Crowdin](https://contribute.freecodecamp.org/images/crowdin/context.png)
 
-If you have any questions about where a string fits in to the prose, reach out to us in our [contributor chat](https://discord.gg/PRyKn3Vbay).
+Si tienes alguna pregunta sobre donde encaja una cadena en el texto, contacta con nosotros en nuestro [chat de colaborador](https://discord.gg/PRyKn3Vbay).
 
-## Translate Documentation
+## Traducir la Documentación
 
-Translating our contributing documentation is a similar flow to translating our curriculum files.
+Traducir nuestra documentación de contribución es un flujo similar a la traducción de nuestros archivos de currículum.
 
-> [!NOTE] Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
+> [!NOTE] Nuestra documentación de contribución esta basada en `docsify`, y tenemos una  forma especial de procesar los cuadros de mensaje como este. Si ves cadenas que comiencen con `[!NOTE]`, `[!WARNING]` o ` [!TIP]`, estas palabras NO deben traducirse.
 
-### How to translate documentation with internal links
+### Cómo traducir la documentación con enlaces internos
 
-When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
+Cuando trabajes en la traducción de la documentación, ten en cuenta los enlaces internos que apuntan a una sección diferente de la documentación.
 
-Make sure to replace the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
+Asegúrate de reemplazar el id de la sección de destino (la parte después de `#`) con el id en el documento traducido. Por ejemplo, se verá así en japonés:
 
-Before translation
+Antes de traducir
 
 ```
 // in HTML
@@ -163,7 +163,7 @@ Before translation
 [Link text](#target-section-heading-id)
 ```
 
-After translation
+Después de traducir
 
 ```
 // in HTML
@@ -175,15 +175,15 @@ After translation
 [翻訳後のリンクテキスト](#翻訳後の-id)
 ```
 
-The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
+Los archivos reales de la documentación están escritos en Markdown, pero aparecerán como etiquetas HTML en Crowdin.
 
-You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+Puedes averiguar cómo `docsify` convierte una cadena en tu idioma en un id mirando las páginas traducidas. Si la traducción no está desplegada todavía, puedes previsualizarla [ejecutar el sitio de la documentación localmente](how-to-work-on-the-docs-theme.md#ejecutar-el-sitio-de-la-documentación-localmente).
 
-You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
+Puedes obtener más información sobre [enlaces internos en nuestra documentación aquí](how-to-work-on-the-docs-theme.md#como-crear-un-enlace-interno).
 
-## Translate the LearnToCode RPG
+## Traducir el LearnToCode RPG
 
-The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
+El LearnToCode RPG se ejecuta en Ren'Py, el cual utiliza una sintaxis especial para las cadenas traducidas: (Ver [ documentación de texto Ren'Py](https://www.renpy.org/doc/html/text.html))
 
 - Las oraciones a traducir están siempre entre `""`. Estos son diálogos o cadenas de interfaz de usuario. Las palabras clave que vienen antes o después del diálogo son palabras clave de control del motor del juego y se explicarán en detalle en las reglas posteriores. Tenga en cuenta que esta primera regla rige todas las reglas posteriores enumeradas.
 - En el caso de `new "..."` No traduzcas la palabra clave `new`.
@@ -193,7 +193,7 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 - No traduzca la palabra clave `nointeract` al final de la oración.
 - Si intentamos usar paréntesis de ancho completo `()`, se mostrará una advertencia de QA. Para evitar la advertencia de QA, utilice paréntesis de ancho medio `()`
 
-### Examples
+### Ejemplos
 
 ---
 
@@ -201,7 +201,7 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- esta es la línea que necesita traducirse. ver traducción a continuación
 ```
 
 #### Después de traducir
@@ -211,7 +211,7 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
-Note: The `[]` and `{}` tags should be left intact.
+Nota: Las etiquetas `[]` y `{}` deben dejarse intactas.
 
 ---
 
@@ -219,7 +219,7 @@ Note: The `[]` and `{}` tags should be left intact.
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
-new "{icon=icon-fast-forward} Skip" <-- translate this line, see below
+new "{icon=icon-fast-forward} Skip" <-- traducir esta línea, ver abajo
 ```
 
 #### Después de traducir
@@ -229,7 +229,7 @@ old "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} 跳过"
 ```
 
-Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be left intact.
+Nota: De nuevo, el prefijo `new` y la etiqueta `{icon=icon-fast-forward}` deben dejarse intactos.
 
 ---
 
@@ -247,7 +247,7 @@ layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy
 layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
 ```
 
-Note: `layla @ neutral` and `[player_name]` are left unchanged.
+Nota: `layla @ neutral` y `[player_name]` se quedan sin cambios.
 
 ---
 
@@ -267,71 +267,71 @@ player "也许这都是一场梦？" nointeract
 
 ---
 
-### A Note on How Crowdin Segments a Sentence
+### Una observación sobre cómo Crowdin segmenta una oración
 
-Pay attention to how Crowdin segments a line of dialogue wrapped between opening and closing quotes `""`. When we are translating the dialogue, we need to make sure to retain the opening and closing quotes, even if the quotes appear in different segments.
+Presta atención a cómo Crowdin segmenta una línea de diálogo envuelta entre comillas de apertura y cierre `""`. Cuando traducimos el diálogo, tenemos que asegurarnos de mantener las comillas de apertura y cierre, incluso si las comillas aparecen en diferentes segmentos.
 
-This is the line to be translated:
+Esta es la línea a traducir:
 
 ```renpy
 player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
 ```
 
-Crowdin segments it into three parts like below:
+Crowdin lo segmenta en tres partes como a continuación:
 
-<img width="836" alt="Screen Shot 2022-01-23 at 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
+<img width="836" alt="Captura de pantalla 2022-01-23 a las 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
 
 ```renpy
 # original
 player @ surprised "{b}Full-stack{/b}
-# translated, keeping the opening quotes `"`
+# traducido, manteniendo las comiilas de apertura `"`
 player @ surprised "{b}全栈{/b}
 ```
 
-<img width="750" alt="Screen Shot 2022-01-23 at 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
+<img width="750" alt="Captura de pantalla 2022-01-23 a las 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
 
 ```renpy
 # original
 What is that?
-# translated, no quotes on either side
+# traducido, sin comillas en ninguno de los lados.
 这是什么？
 ```
 
-<img width="857" alt="Screen Shot 2022-01-23 at 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
+<img width="857" alt="Captura de pantalla 2022-01-23 a las 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
 
 ```renpy
 # original
 I better take notes so I can learn more about it."
-# translated, keeping the closing quotes `"`
+# traducido, manteniendo las comillas de cierre `"`
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
-## Rate Translations
+## Calificar traducciones
 
-Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
+Crowdin te permite calificar las traducciones propuestas existentes. Si intentas guardar una traducción, es posible que veas un mensaje que indica que no puedes guardar una traducción duplicada, esto significa que otro contribuyente ha propuesto una traducción idéntica. Si estás de acuerdo con esa traducción, haz clic en el botón `+` para votar a favor de la traducción.
 
-If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
+Si ves una traducción que es inexacta o no proporciona la misma claridad que la cadena original, haz clic en el botón `-` para votar en contra de la traducción.
 
-Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+Crowdin usa estos votos para dar una puntuación a cada traducción propuesta para una cadena, lo que ayuda al equipo de revisión a determinar qué traducción es la mejor para cada cadena.
 
-## Quality Assurance Checks
+## Comprobaciones de aseguración de la calidad
 
-We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+Hemos habilitado algunos pasos de control de la calidad que verificarán que una traducción sea lo más precisa posible, esto ayuda a nuestro equipo de revisión a comprobar las traducciones propuestas.
 
-When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
+Cuando intentes guardar una traducción, puede que aparezca un mensaje de advertencia con una notificación con respecto a tu traducción propuesta.
 
-![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
+![Imagen - Mensaje de advertencia de QA](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
+Este mensaje aparece cuando el sistema de QA de Crowdin ha identificado un posible error en la traducción propuesta. En este ejemplo, hemos modificado el texto de una etiqueta `<code>` y Crowdin lo ha capturado.
 
-> [!WARNING] You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
+> [!WARNING] Tienes la opción de guardar una traducción a pesar de los errores. Si lo haces, al hacer clic en "Save Anyway (Guardar de todos modos)", también debes etiquetar a un miembro del equipo de revisión o encargado del proyecto y explicar por qué el mensaje de QA debe ignorarse en este caso.
 
-## Translation Best Practices
+## Mejores prácticas de traducción
 
-Follow these guidelines to ensure our translations are as accurate as possible:
+Sigue estas pautas para asegurarte de que nuestras traducciones sean lo más precisas posible:
 
 - No traduzca el contenido con etiquetas de `<code>`. Estas etiquetas indican texto que se encuentra en código y que debe dejarse en inglés.
 - No agregues contenido adicional. Si sientes que un desafío requiere cambios en el contenido de texto o información adicional, debería proponer los cambios a través de un problema de GitHub o una pull request que modifique el archivo en inglés.
 - No cambiar el orden del contenido.
 
-If you have any questions, feel free to reach out to us in our [Discord](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.
+Si tienes alguna duda, siéntete libre de pedir ayuda en nuestro [Discord](https://discord. gg/PRyKn3Vbay) y con gusto te ayudaremos.

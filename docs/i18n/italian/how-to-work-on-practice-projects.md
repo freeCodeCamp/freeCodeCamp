@@ -42,7 +42,7 @@ Inserisci nell'input il numero di step che vuoi aggiungere. Poi, cliccando sul p
 
 #### Inserire uno step
 
-Inserisci il numero _dopo_ il quale vuoi aggiungere uno step. Per esempio, se vuoi aggiungere uno step dopo lo `step-12`, inserisci `12`. Poi, clicca sul pulsante `Insert Step` per aggiungere lo step. Gli step successivi verranno riordinati.
+Inserisci il numero dello step che vuoi eliminare. Poi, clicca sul pulsante `Insert Step` per aggiungere lo step. Gli step successivi verranno riordinati.
 
 #### Eliminare uno step
 

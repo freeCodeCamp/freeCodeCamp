@@ -15,7 +15,6 @@ import {
   putUpdateMyAbout,
   putUpdateMyProfileUI,
   putUpdateMyUsername,
-  putUpdateUserFlag,
   putUpdateMySocials,
   putUpdateMyHonesty,
   putUpdateMyQuincyEmail,
@@ -32,8 +31,6 @@ import {
   certTypeIdMap
 } from '../../../../config/certification-settings';
 import {
-  updateUserFlagComplete,
-  updateUserFlagError,
   validateUsernameComplete,
   validateUsernameError,
   submitNewAboutComplete,
@@ -87,18 +84,6 @@ function* submitProfileUISaga({ payload }) {
     yield put(createFlashMessage(data));
   } catch (e) {
     yield put(submitProfileUIError);
-  }
-}
-
-function* updateUserFlagSaga({ payload: update }) {
-  try {
-    const { data } = yield call(putUpdateUserFlag, update);
-    yield put(updateUserFlagComplete({ ...data, payload: update }));
-    yield put(
-      createFlashMessage({ ...data, variables: { theme: update.theme } })
-    );
-  } catch (e) {
-    yield put(updateUserFlagError(e));
   }
 }
 
@@ -235,7 +220,6 @@ function* verifyCertificationSaga({ payload }) {
 
 export function createSettingsSagas(types) {
   return [
-    takeEvery(types.updateUserFlag, updateUserFlagSaga),
     takeEvery(types.updateMySocials, updateMySocialsSaga),
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
     takeEvery(types.updateMySound, updateMySoundSaga),

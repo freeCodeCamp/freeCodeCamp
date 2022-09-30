@@ -8,7 +8,7 @@ dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 
 # --description--
 
-Нагадуємо, що цей проект створюється на основі наступного початкового проекту [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec) або копіюється з [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Ваша сторінка може бути задана `<frame>` або `<iframe>` без вашої згоди. З-поміж інших атак, це може призвести до атак клікджекінгу. Клікджекінг - це механізм обману інтернет-користувача, при якому користувач заманюється на зовні знайому йому сторінку, яка вже змінена хакером. Такий механізм можливий, якщо вашу сторінку використовують в зловмисних цілях за допомогою перенаправлення iframing. У такій ситуації хакер розміщує поверх видимої сторінки невидимий шар. Невидимі елементи управління (кнопки, посилання) запускають ворожий скрипт. Це проміжне програмне забезпечення встановлює заголовок X-Frame-Options. Воно обмежує дії хакерів, які можуть перенаправити вашу сторінку. Доступні три режими: DENY, SAMEORIGIN і ALLOW-FROM.
 

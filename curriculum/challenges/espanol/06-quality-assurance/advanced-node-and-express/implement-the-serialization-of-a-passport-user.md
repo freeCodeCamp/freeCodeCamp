@@ -10,7 +10,7 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 Ahora mismo, no estamos cargando un objeto de usuario real ya que no hemos configurado nuestra base de datos. Esto puede hacerse de muchas maneras, pero para nuestro proyecto nos conectaremos a la base de datos una vez cuando iniciemos el servidor y mantendremos una conexión persistente durante todo el ciclo de vida de la aplicación. Para hacer esto, agrega la cadena de conexión de tu base de datos (por ejemplo: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) a la variable de entorno `MONGO_URI`. Esto se utiliza en el archivo `connection.js`.
 
-*Si tienes problemas para configurar una base de datos gratuita en MongoDB Atlas, consulta [tutorial](https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/).*
+*Si tienes problemas para configurar una base de datos gratuita en MongoDB Atlas, consulta este <a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">tutorial</a>.*
 
 Ahora queremos conectarnos a nuestra base de datos y empezar a escuchar las peticiones. El propósito de esto es no permitir peticiones antes de que nuestra base de datos esté conectada o si hay un error en la base de datos. Para lograr esto, querrás englobar tu serialización y las rutas de tu aplicación en el siguiente código:
 
@@ -40,7 +40,7 @@ myDB(async client => {
 
 Asegúrate de descomentar el código `myDataBase` en `deserializeUser`, y edita tu `done(null, null)` para incluir el `doc`.
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7).
+Envía tu página cuando creas que lo has hecho bien. Si te estás encontrando errores, puedes <a href="https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7" target="_blank" rel="noopener noreferrer nofollow">mirar el proyecto completado hasta este punto</a>.
 
 # --hints--
 

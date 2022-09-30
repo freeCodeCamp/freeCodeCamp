@@ -124,7 +124,8 @@ const createFrame =
     const frame = document.createElement('iframe');
     frame.id = id;
     if (typeof title === 'string') {
-      frame.title = title;
+      frame.title = i18next.t('misc.iframe-preview', { title });
+      frame.lang = 'en';
     }
     return {
       ...frameContext,
@@ -268,7 +269,8 @@ const writeContentToFrame = (frameContext: Context) => {
 
 export const createMainPreviewFramer = (
   document: Document,
-  proxyLogger: ProxyLogger
+  proxyLogger: ProxyLogger,
+  frameTitle: string
 ) =>
   createFramer(
     document,
@@ -276,7 +278,7 @@ export const createMainPreviewFramer = (
     initMainFrame,
     proxyLogger,
     undefined,
-    'preview'
+    frameTitle
   );
 
 export const createProjectPreviewFramer = (
