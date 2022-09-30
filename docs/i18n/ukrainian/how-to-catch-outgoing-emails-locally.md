@@ -67,7 +67,7 @@ First, install [Go](https://golang.org).
 Run the following commands to install GO on Debian-based systems like Ubuntu and Linux Mint.
 
 ```bash
-sudo apt-get install golang
+sudo apt-get встановити golang
 ```
 
 Run the following commands to install GO on RPM-based systems like CentOS, Fedora, Red Hat Linux, etc.
