@@ -242,7 +242,9 @@ const initialData: EditorProperties = {
 
 const Editor = (props: EditorProps): JSX.Element => {
   const { t } = useTranslation();
-  const { editorRef, initTests, resetAttempts } = props;
+  const propsRef = useRef<EditorProps>(props);
+  console.log(propsRef.current);
+  const { editorRef, initTests, resetAttempts } = propsRef.current;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -273,9 +275,9 @@ const Editor = (props: EditorProps): JSX.Element => {
   // reference to *those* props. If we want it to use the latest props, we can
   // use a ref, since it will be updated on every render.
   const testRef = useRef<Test[]>([]);
-  testRef.current = props.tests;
+  testRef.current = propsRef.current.tests;
   const attemptsRef = useRef<number>(0);
-  attemptsRef.current = props.attempts;
+  attemptsRef.current = propsRef.current.attempts;
 
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
@@ -313,7 +315,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   const getEditableRegionFromRedux = () => {
-    const { challengeFiles, fileKey } = props;
+    const { challengeFiles, fileKey } = propsRef.current;
     const edRegBounds = challengeFiles?.find(
       challengeFile => challengeFile.fileKey === fileKey
     )?.editableRegionBoundaries;
@@ -321,7 +323,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
-    const { challengeFiles, fileKey, usesMultifileEditor } = props;
+    const { challengeFiles, fileKey, usesMultifileEditor } = propsRef.current;
 
     monacoRef.current = monaco;
     defineMonacoThemes(monaco, { usesMultifileEditor });
@@ -360,7 +362,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   // Updates the model if the contents has changed. This is only necessary for
   // changes coming from outside the editor (such as code resets).
   const resetEditorValues = () => {
-    const { challengeFiles, fileKey } = props;
+    const { challengeFiles, fileKey } = propsRef.current;
     const { model } = dataRef.current;
 
     const initialContents = challengeFiles?.find(
@@ -375,7 +377,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor: editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
   ) => {
-    const { isMobileLayout, isUsingKeyboardInTablist } = props;
+    const { isMobileLayout, isUsingKeyboardInTablist } = propsRef.current;
     // TODO this should *probably* be set on focus
     editorRef.current = editor;
     dataRef.current.editor = editor;
@@ -618,7 +620,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     outputNode: HTMLDivElement,
     editor: editor.IStandaloneCodeEditor
   ) {
-    const { output } = props;
+    const { output } = propsRef.current;
     const isChallengeComplete = challengeIsComplete();
     const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
 
@@ -680,7 +682,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
-    const { description, title, isChallengeCompleted } = props;
+    const { description, title, isChallengeCompleted } = propsRef.current;
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
       : document.createElement('h1');
@@ -762,14 +764,14 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function focusOnHotkeys() {
-    const currContainerRef = props.containerRef.current;
+    const currContainerRef = propsRef.current.containerRef.current;
     if (currContainerRef) {
       currContainerRef.focus();
     }
   }
 
   const onChange = (editorValue: string) => {
-    const { updateFile, fileKey } = props;
+    const { updateFile, fileKey } = propsRef.current;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
     // follow that directly? We could subscribe to changes to that and redraw if
     // those imply that the positions have changed (i.e. if the content height
@@ -905,7 +907,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function focusIfTargetEditor() {
     const { editor } = dataRef.current;
-    const { canFocusOnMountRef } = props;
+    const { canFocusOnMountRef } = propsRef.current;
     if (!editor || !canFocusOnMountRef.current) return;
     if (!props.usesMultifileEditor) {
       // Only one editor? Focus it.
@@ -1119,7 +1121,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }, [props.challengeFiles, props.isResetting]);
 
   useEffect(() => {
-    const { showProjectPreview, previewOpen } = props;
+    const { showProjectPreview, previewOpen } = propsRef.current;
     if (!previewOpen && showProjectPreview) {
       const description = document.getElementsByClassName(
         'description-container'
@@ -1166,7 +1168,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
   }
 
-  const { theme } = props;
+  const { theme } = propsRef.current;
   const editorTheme = theme === Themes.Night ? 'vs-dark-custom' : 'vs-custom';
   return (
     <Suspense fallback={<Loader timeout={600} />}>
