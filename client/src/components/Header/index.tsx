@@ -6,7 +6,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import UniversalNav from './components/universal-nav';
-import SkipToContentButton from './components/skip-to-content-button';
 
 import './header.css';
 
@@ -88,7 +87,9 @@ export class Header extends React.Component<
           <style>{':root{--header-height: 38px}'}</style>
         </Helmet>
         <header>
-          <SkipToContentButton />
+          <a href='#content-start' className='skip-to-content-button'>
+            Skip To Content
+          </a>
           <UniversalNav
             displayMenu={displayMenu}
             fetchState={fetchState}

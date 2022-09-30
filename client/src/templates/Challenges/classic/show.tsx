@@ -349,17 +349,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   renderInstructionsPanel({ showToolPanel }: { showToolPanel: boolean }) {
     const {
       block,
-      challengeType,
       description,
       forumTopicId,
       instructions,
-      superBlock,
       title,
       translationPending
     } = this.getChallenge();
 
-    const showBreadCrumbs =
-      challengeType !== challengeTypes.multifileCertProject;
     return (
       <SidePanel
         block={block}
@@ -372,10 +368,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         }
         challengeTitle={
           <ChallengeTitle
-            block={block}
             isCompleted={this.props.isChallengeCompleted}
-            showBreadCrumbs={showBreadCrumbs}
-            superBlock={superBlock}
             translationPending={translationPending}
           >
             {title}
