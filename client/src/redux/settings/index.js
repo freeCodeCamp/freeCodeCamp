@@ -56,13 +56,6 @@ export const updateMyEmail = createAction(types.updateMyEmail);
 export const updateMyEmailComplete = createAction(types.updateMyEmailComplete);
 export const updateMyEmailError = createAction(types.updateMyEmailError);
 
-export const updateUserFlag = createAction(types.updateUserFlag);
-export const updateUserFlagComplete = createAction(
-  types.updateUserFlagComplete,
-  checkForSuccessPayload
-);
-export const updateUserFlagError = createAction(types.updateUserFlagError);
-
 export const updateMySocials = createAction(types.updateMySocials);
 export const updateMySocialsComplete = createAction(
   types.updateMySocialsComplete,
