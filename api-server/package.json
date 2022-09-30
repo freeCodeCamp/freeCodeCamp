@@ -1,6 +1,6 @@
 {
   "name": "@freecodecamp/api-server",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "license": "BSD-3-Clause",
   "private": true,

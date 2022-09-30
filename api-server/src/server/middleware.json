@@ -39,6 +39,8 @@
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
     "./middlewares/flash-cheaters": {},
+    "./middlewares/version-handler": {},
+    "./middlewares/version-set-cookie": {},
     "./middlewares/passport-login": {}
   },
   "files": {},
@@ -46,6 +48,7 @@
     "./middlewares/sentry-error-handler": {},
     "./middlewares/csurf-error-handler": {},
     "./middlewares/error-handlers": {},
+    "./middlewares/version-handler": {},
     "strong-error-handler": {
       "params": {
         "debug": false,
