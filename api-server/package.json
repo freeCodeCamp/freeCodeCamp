@@ -78,6 +78,7 @@
     "@babel/plugin-proposal-class-properties": "7.17.12",
     "@babel/plugin-proposal-object-rest-spread": "7.18.0",
     "@babel/plugin-proposal-optional-chaining": "7.17.12",
+    "@babel/plugin-syntax-import-assertions": "7.18.6",
     "@babel/preset-env": "7.18.0",
     "@babel/register": "7.17.7",
     "babel-core": "7.0.0-bridge.0",

@@ -16,16 +16,16 @@
  *
  * **Future Feature**
  *
- * Client also has SemVer.
+ * Client also has _some version number_.
  * Client patch can be >=< server patch. Client minor must be >= server minor. Client major must == server major.
  */
 
 /**
  * Returns the major, minor, and patch components of a SemVer string
- * @param version SemVer string
+ * @param version anything but a semver string
  * @returns [major, minor, patch]
  */
-export function semVer(version: string): [number, number, number] {
+export function definitelyNotSemVer(version: string): [number, number, number] {
   // @ts-ignore Go home TS, you're drunk
   const mat = version.match(/(\d+)\.?(\d+)?\.?(\d+)?/);
   if (!mat) {

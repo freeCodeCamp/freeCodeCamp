@@ -27,7 +27,7 @@ function getCSRFToken() {
   return token ?? '';
 }
 
-// TODO: Default version to '1.0.0'?
+// TODO: Default version to '1'?
 function getVersionToken() {
   const token =
     typeof window !== 'undefined' ? cookies.get('version_token') : null;
