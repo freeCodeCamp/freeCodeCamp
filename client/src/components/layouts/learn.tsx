@@ -50,6 +50,8 @@ type LearnLayoutProps = {
   user: User;
   tryToShowDonationModal: () => void;
   children?: React.ReactNode;
+  hasEditableBoundaries?: boolean;
+  usesMultifileEditor?: boolean;
 };
 
 function LearnLayout({
@@ -57,7 +59,9 @@ function LearnLayout({
   fetchState,
   user,
   tryToShowDonationModal,
-  children
+  children,
+  hasEditableBoundaries,
+  usesMultifileEditor
 }: LearnLayoutProps): JSX.Element {
   useEffect(() => {
     tryToShowDonationModal();
