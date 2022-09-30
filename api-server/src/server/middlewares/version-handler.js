@@ -1,5 +1,4 @@
-import { definitelyNotSemVer } from '../../../../utils/versioning.js';
-import apiPackage from '../../../package.json' assert { type: 'json' };
+const { version } = require('../../../package.json');
 
 // TODO: I have no idea what I have done in the `middleware.json` file, but it might be working.
 export default function versionHandler() {
@@ -10,14 +9,7 @@ export default function versionHandler() {
       return next();
     }
 
-    // eslint-disable-next-line no-unused-vars
-    const [serverMajor, serverMinor, _serverPatch] = definitelyNotSemVer(
-      apiPackage.version
-    );
-    // eslint-disable-next-line no-unused-vars
-    const [clientMajor, clientMinor, _clientPatch] =
-      definitelyNotSemVer(clientVersion);
-    if (clientMajor < serverMajor || clientMinor < serverMinor) {
+    if (Number(version) > Number(clientVersion)) {
       res.status(418);
     }
     next();

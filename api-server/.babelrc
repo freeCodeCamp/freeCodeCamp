@@ -12,7 +12,6 @@
   "plugins": [
     "babel-plugin-transform-function-bind",
     "@babel/plugin-proposal-object-rest-spread",
-    "@babel/plugin-proposal-optional-chaining",
-    "@babel/plugin-syntax-import-assertions"
+    "@babel/plugin-proposal-optional-chaining"
   ]
 }
