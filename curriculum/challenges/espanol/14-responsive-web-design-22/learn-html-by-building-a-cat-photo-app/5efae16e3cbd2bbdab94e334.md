@@ -1,8 +1,8 @@
 ---
 id: 5efae16e3cbd2bbdab94e334
-title: Paso 30
+title: Paso 31
 challengeType: 0
-dashedName: step-30
+dashedName: step-31
 ---
 
 # --description--
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-El elemento `figcaption` debe tener el texto `Cats hate other cats.` Has omitido una palabra o tienes un error tipográfico.
+El elemento `figcaption` debe tener el texto `Cats hate other cats.` Has omitido una palabra o tienes en error tipográfico.
 
 ```js
 assert(

@@ -1,8 +1,8 @@
 ---
 id: 60fad6dfcc0d930a59becf12
-title: 步骤 37
+title: 步骤 41
 challengeType: 0
-dashedName: step-37
+dashedName: step-41
 ---
 
 # --description--
@@ -37,34 +37,34 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Registration Form</title>
-      <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Registration Form</h1>
     <p>Please fill out this form with the required information</p>
     <form action='https://register-demo.freecodecamp.org'>
       <fieldset>
-        <label>Enter Your First Name: <input type="text" name="first-name" required /></label>
-        <label>Enter Your Last Name: <input type="text" name="last-name" required /></label>
-        <label>Enter Your Email: <input type="email" name="email" required /></label>
-        <label>Create a New Password: <input type="password" name="password" pattern="[a-z0-5]{8,}" required /></label>
+        <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
+        <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>
+        <label for="email">Enter Your Email: <input id="email" name="email" type="email" required /></label>
+        <label for="new-password">Create a New Password: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
       </fieldset>
       <fieldset>
-        <label><input type="radio" name="account-type" /> Personal Account</label>
-        <label><input type="radio" name="account-type" /> Business Account</label>
-        <label>
-          <input type="checkbox" name="terms" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
-              </label>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" /> Personal Account</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" /> Business Account</label>
+        <label for="terms-and-conditions" name="terms-and-conditions">
+          <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+        </label>
       </fieldset>
       <fieldset>
-        <label>Upload a profile picture: <input type="file" name="file" /></label>
-        <label>Input your age (years): <input type="number" name="age" min="13" max="120" />
-              </label>
-        <label>How did you hear about us?
-          <select name="referrer">
+        <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
+        <label for="age">Input your age (years): <input id="age" type="number" name="age" min="13" max="120" /></label>
+        <label for="referrer">How did you hear about us?
+          <select id="referrer" name="referrer">
             <option value="">(select one)</option>
             <option value="1">freeCodeCamp News</option>
             <option value="2">freeCodeCamp YouTube Channel</option>
@@ -72,9 +72,9 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
             <option value="4">Other</option>
           </select>
         </label>
-        <label>Provide a bio:
-          <textarea name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
-              </label>
+        <label for="bio">Provide a bio:
+          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+        </label>
       </fieldset>
       <input type="submit" value="Submit" />
     </form>
@@ -89,14 +89,14 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #1b1b32;
-    color: #f5f6f7;
+  color: #f5f6f7;
 
 }
 --fcc-editable-region--
 
 label {
-    display: block;
-    margin: 0.5rem 0;
+  display: block;
+  margin: 0.5rem 0;
 }
 
 ```

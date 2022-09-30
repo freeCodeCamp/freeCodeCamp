@@ -245,7 +245,7 @@ If it takes longer than two minutes to complete the challenge, you have two opti
 
 The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
-We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
+We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
 
 ### Modularity
 

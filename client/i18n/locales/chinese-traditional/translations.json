@@ -113,6 +113,7 @@
     "claim-legacy": "當你獲得下列 freeCodeCamp 認證之後，你可以申請 {{cert}}:",
     "for": "{{username}} 賬號設置",
     "sound-mode": "爲整個網站添加做令人愉快的吉他原聲音樂。在編輯器輸入、完成挑戰、申請認證等時刻，您將獲得音樂反饋。",
+    "sound-volume": "Campfire Volume:",
     "username": {
       "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
       "is too short": "用戶名 \"{{username}}\" 太短",

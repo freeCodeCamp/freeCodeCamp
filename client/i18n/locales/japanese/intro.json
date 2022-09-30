@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "JavaScript アルゴリズムとデータ構造 (ベータ版)",
-    "intro": [
-      "プレイスホルダー",
-      "プレイスホルダー"
-    ],
+    "intro": ["プレイスホルダー", "プレイスホルダー"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "シーザー暗号解析器作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "キャッシュレジスター作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "回文チェッカー作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "ローマ数字コンバーター作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "電話番号バリデーター作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "JavaScript の基礎の学習: ロールプレイングゲームを作る",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "フォームの検証の学習: カロリー計算機を作る",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "関数型プログラミングの学習: スプレッドシートを作る",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "D3 ダッシュボード",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },

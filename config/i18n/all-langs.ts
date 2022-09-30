@@ -206,7 +206,7 @@ export enum LangCodes {
 /**
  * This array contains languages that should NOT appear in the language selector.
  */
-export const hiddenLangs = ['german'];
+export const hiddenLangs = [];
 
 // locale is sourced from a JSON file, so we use getLangCode and getLangName to
 // find the associated enum values

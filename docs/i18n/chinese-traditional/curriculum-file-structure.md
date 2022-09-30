@@ -46,7 +46,7 @@ When renaming a certification, you will likely want to rename the associated sup
 1. In the `meta.json` file of that folder, rename the values in `name`, `dashedName`, and `challengeOrder` to the new cert name.
 1. In `curriculum/challenges/english/12-certificate`, rename the `{superBlock}-certificate` folder, and the YAML file within it, to the new name.
 1. In the YAML file, change the `title` to the new name.
-1. Rename the file and folder from step 3 for the rest curriculum languages.
+1. Rename the file and folder from step 3 for the rest of the curriculum languages.
 1. Update `client/src/redux/index.ts` to use the correct `title`.
 1. Optionally, update the `certSlug` for the superblock in the same file. **Note** that renaming a `certSlug` will change the URL for certifications and should only be done with careful consideration.
 1. Update the `title` in `client/src/resources/cert-and-project-map.ts` to the new value. **Note** that changing the `title` here **will break** the superBlock page for the associated certification. It relies on the superBlock title to match the certification title. You will likely want to rename the superBlock at the same time.
@@ -60,7 +60,7 @@ When renaming a certification, you will likely want to rename the associated sup
 
 > [!NOTE] When you rename a superBlock, the new folder name is used as the path and should be considered the "correct" name. All other values should be updated to reflect that change.
 
-Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all shares a name. To rename only a superBlock you need to:
+Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all share a name. To rename only a superBlock you need to:
 
 1. Rename the superBlock folder in the `curriculum/challenges/english` directory.
 1. Rename the superBlock folder in _all_ other `curriculum/challenges/{language}` directories.

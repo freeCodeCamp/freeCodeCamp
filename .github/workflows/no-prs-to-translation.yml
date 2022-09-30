@@ -34,11 +34,4 @@ jobs:
               })
             } else if (isDev.status === 200) {
               core.setFailed('This PR appears to touch translated curriculum files, but since you are on the dev team there is no message.');
-            } else {
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: 'WAIT! This message serves as a sanity check. You should *only* see this message if the PR was created as part of a Crowdin download action.'
-              })
             }

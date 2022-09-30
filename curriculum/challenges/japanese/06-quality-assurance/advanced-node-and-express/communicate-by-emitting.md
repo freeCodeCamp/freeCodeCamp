@@ -38,7 +38,7 @@ socket.on('user count', function(data) {
 
 ここで、アプリを読み込んで認証を実行してみてください。クライアントコンソールに、現在のユーザー数である「1」が表示されるはずです。 より多くのクライアントを読み込んで認証し、数字が増えるのを確認してください。
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

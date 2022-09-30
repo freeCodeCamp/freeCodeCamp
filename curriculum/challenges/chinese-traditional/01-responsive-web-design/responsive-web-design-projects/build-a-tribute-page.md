@@ -8,17 +8,17 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**目標：** 構建一個功能類似於 <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a> 的應用程序
+**目標：** 構建一個功能類似於 <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a> 的應用程序
 
 **需求：**
 
-1. 你的致敬頁面應該有一個 `id="main"` 的元素，該元素包含所有其他元素
+1. 你的致敬頁應該包含一個 `id` 爲 `main` 的 `main` 元素，它應該包含所有其他元素
 1. 你應該會看到一個 `id` 爲 `title` 的元素，其中包含一個字符串（即文本），描述了致敬頁面的主題（例如 “Dr. Norman Borlaug”)
 1. 你應該有一個 `id` 爲 `img-div` 的 `figure` 或 `div` 元素
-1. 在 `img-div` 元素中，你應該看到一個 `id="image"` 的 `img` 元素
-1. 在`img-div`元素內，你應該看到一個 `id="img-caption"` 的元素，其中包含對 `img-div` 中圖像的文本描述
+1. 在 `#img-div` 元素中，你應該看到一個 `id="image"` 的 `img` 元素
+1. 在 `#img-div` 元素內，你應該看到一個 `id="img-caption"` 的元素，其中包含對 `#img-div` 中圖像的文本描述
 1. 你應該看到一個 `id="tribute-info"` 的元素，其中包含描述致敬頁主題的文本內容
-1. 你應該看到一個 `id="tribute-link"` 的元素，它鏈接到一個包含有關致敬頁主題額外信息的外部網頁。 提示：你必須爲元素提供 `target` 屬性，並設置其爲 `_blank`，以便可以在新選項卡中打開鏈接。
+1. 你應該看到一個帶有相應 `id="tribute-link"` 的 `a` 元素，該元素鏈接到外部站點，其中包含有關致敬頁面主題的附加信息。 提示：你必須爲元素提供 `target` 屬性，並設置其爲 `_blank`，以便可以在新選項卡中打開鏈接。
 1. 你的 `#image` 應該使用 `max-width` 和 `height` 屬性來響應式調整大小，相對於其父元素的寬度，但不超過其原始大小
 1. 你的 `img` 元素應該在其父元素內居中
 
@@ -28,7 +28,7 @@ dashedName: build-a-tribute-page
 
 # --hints--
 
-你的頁面應該包含一個 `main` 元素，且它有一個值爲`main` 的`id`屬性。
+你應該有一個 `main` 元素且該元素的 `id` 爲 `main`.
 
 ```js
 const el = document.getElementById('main')
@@ -53,7 +53,7 @@ const el = document.getElementById('title')
 assert(!!el)
 ```
 
-你的 `#title` 不應爲空。
+你的 `#title` 元素不應爲空。
 
 ```js
 const el = document.getElementById('title')
@@ -82,7 +82,7 @@ const el = document.querySelector('#img-div #image')
 assert(!!el)
 ```
 
-你應該有一個 `id` 爲 `img-caption` 的 `figcaption` 或 `div` 元素。
+你應該有一個 `id` 爲 `img-caption` 的 `figcaption` 元素或 `div` 元素。
 
 ```js
 const el = document.getElementById('img-caption')
@@ -170,7 +170,7 @@ img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
 assert(heightValue === 'auto')
 ```
 
-你的 `#image` 應該在其父元素內居中。
+你的 `#image` 應該在其父元素內居中.
 
 ```js
 // taken from the testable-projects repo
@@ -207,14 +207,14 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico"
       rel="stylesheet"
-      type="text/css"
+
     />
     <link
       href="https://fonts.googleapis.com/css?family=Lobster"
       rel="stylesheet"
-      type="text/css"
+
     />
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" />
     <title>Tribute Page</title>
   </head>
   <body>

@@ -42,7 +42,7 @@ myDataBase.findOneAndUpdate(
 
 Deberías ser capaz de iniciar sesión en tu aplicación ahora... ¡pruébalo!
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
 
 # --hints--
 
