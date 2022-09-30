@@ -181,9 +181,9 @@ async function setup() {
   ];
 
   // the next few statements will filter challenges based on command variables
-  if (process.env.npm_config_filename) {
-    const filter = process.env.npm_config_filename;
-    console.log(`\nFile name being tested: ${filter}`);
+  if (process.env.npm_config_dashedname) {
+    const filter = process.env.npm_config_dashedname;
+    console.log(`\nDashed name being tested: ${filter}`);
     challenges = challenges.filter(
       challenge => challenge.dashedName === filter
     );
