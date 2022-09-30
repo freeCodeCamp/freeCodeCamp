@@ -9,6 +9,7 @@ import type {
   SavedChallengeFile,
   User
 } from '../redux/prop-types';
+import { handleClientRefresh } from './client-refresh';
 
 const { apiLocation } = envData;
 
@@ -26,6 +27,13 @@ function getCSRFToken() {
   return token ?? '';
 }
 
+// TODO: Default version to '1.0.0'?
+function getVersionToken() {
+  const token =
+    typeof window !== 'undefined' ? cookies.get('version_token') : null;
+  return token ?? '';
+}
+
 export interface ResponseWithData<T> {
   response: Response;
   data: T;
@@ -34,7 +42,18 @@ export interface ResponseWithData<T> {
 // TODO: Might want to handle flash messages as close to the request as possible
 // to make use of the Response object (message, status, etc)
 async function get<T>(path: string): Promise<ResponseWithData<T>> {
-  const response = await fetch(`${base}${path}`, defaultOptions);
+  const options: RequestInit = {
+    ...defaultOptions,
+    headers: {
+      Version: getVersionToken()
+    }
+  };
+  const response = await fetch(new URL(path, base), options);
+
+  // Client version is teapot. Reload page to sync with server
+  if (response.status === 418) {
+    return handleClientRefresh<ResponseWithData<T>>(response);
+  }
 
   return combineDataWithResponse(response);
 }
@@ -75,12 +94,19 @@ async function request<T>(
     method,
     headers: {
       'CSRF-Token': getCSRFToken(),
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      Version: getVersionToken()
     },
     body: JSON.stringify(body)
   };
 
-  const response = await fetch(`${base}${path}`, options);
+  const response = await fetch(new URL(path, base), options);
+
+  // Client version is teapot. Reload page to sync with server
+  if (response.status === 418) {
+    return handleClientRefresh<ResponseWithData<T>>(response);
+  }
+
   return combineDataWithResponse(response);
 }
 
