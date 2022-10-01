@@ -249,7 +249,7 @@
     "language": "Sprache:"
   },
   "learn": {
-    "heading": "Willkommen zum Studienplan von freeCodeCamp.",
+    "heading": "Willkommen zum Lehrplan von freeCodeCamp.",
     "welcome-1": "Willkommen zurück, {{name}}.",
     "welcome-2": "Willkommen auf freeCodeCamp.org",
     "start-at-beginning": "Wenn Programmieren ganz neu für dich ist, schlagen wir vor, <0>am Anfang zu beginnen</0>.",
@@ -475,7 +475,7 @@
     "magnifier": "Lupe"
   },
   "aria": {
-    "fcc-curriculum": "freeCodeCamp Studienplan",
+    "fcc-curriculum": "freeCodeCamp Lehrplan",
     "answer": "Antwort",
     "linkedin": "Link zu {{username}}'s LinkedIn-Account",
     "github": "Link zu {{username}}'s GitHub-Account",
@@ -700,7 +700,7 @@
     "delete-title": "Meinen Benutzer-Token löschen",
     "delete-p1": "Dein Benutzer-Token wird verwendet, um deinen Fortschritt in den Studienabschnitten zu speichern, die eine virtuelle Maschine verwenden. Wenn du den Verdacht hast, dass er kompromittiert wurde, kannst du ihn löschen, ohne dass der Fortschritt verloren geht. Ein neuer Token wird automatisch erstellt, wenn du das nächste Mal ein Projekt öffnest.",
     "delete-p2": "Wenn du vermutest, dass dein Token kompromittiert wurde, kannst du ihn löschen, um ihn unbrauchbar zu machen. Der Fortschritt bei bereits eingereichten Lektionen geht nicht verloren.",
-    "delete-p3": "Du musst einen neuen Token erstellen, um zukünftige Fortschritte in den Studienplanabschnitten zu speichern, die eine virtuelle Maschine verwenden.",
+    "delete-p3": "Du musst einen neuen Token erstellen, um zukünftige Fortschritte in den Lehrplanabschnitten zu speichern, die eine virtuelle Maschine verwenden.",
     "no-thanks": "Nein danke, ich möchte meinen Token behalten",
     "yes-please": "Ja, ich möchte mein Token löschen"
   },
