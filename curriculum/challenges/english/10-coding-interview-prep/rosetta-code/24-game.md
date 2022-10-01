@@ -51,7 +51,7 @@ assert(isValidSolution_(solve24(testCases_[0])));
 assert(isValidSolution_(solve24(testCases_[1])));
 ```
 
-`solve24("6789")` should return `(6*8)/(9-7)`. `(8*6)/(9-7)`, or a similar valid string
+`solve24("6789")` should return `(6*8)/(9-7)`, `(8*6)/(9-7)`, or a similar valid string
 
 ```js
 assert(isValidSolution_(solve24(testCases_[2])));

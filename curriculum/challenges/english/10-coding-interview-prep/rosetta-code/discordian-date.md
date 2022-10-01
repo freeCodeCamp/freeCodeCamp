@@ -26,7 +26,7 @@ Holidays: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
 
 Convert a given date from the Gregorian calendar to the Discordian calendar.
 
-Note that in the Discordian calendar (Chaos 1, 3188 YOLD) is (January 1, 2022), in the Gregorian calendar.
+Note that the day Chaos 1, 3188 YOLD in the Discordian calendar is the day January 1, 2022 in the Gregorian calendar.
 
 # --hints--
 
