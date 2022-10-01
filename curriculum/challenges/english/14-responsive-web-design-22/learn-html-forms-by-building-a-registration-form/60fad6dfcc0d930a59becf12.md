@@ -54,12 +54,16 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
         <label for="new-password">Create a New Password: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
       </fieldset>
       <fieldset>
-        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" /> Personal Account</label>
-        <label for="business-account"><input id="business-account" type="radio" name="account-type" /> Business Account</label>
+        <legend>
+          Account Type
+        </legend>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" checked /> Personal </label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type"  /> Business </label>
         <label for="terms-and-conditions" name="terms-and-conditions">
           <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
         </label>
       </fieldset>
+      
       <fieldset>
         <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
         <label for="age">Input your age (years): <input id="age" type="number" name="age" min="13" max="120" /></label>
@@ -76,7 +80,8 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
           <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
         </label>
       </fieldset>
-      <input type="submit" value="Submit" />
+      <br>
+      <input type="submit" value="Submit" id="btn" />
     </form>
   </body>
 </html>
@@ -97,6 +102,10 @@ body {
 label {
   display: block;
   margin: 0.5rem 0;
+}
+
+#btn{
+  margin-left:3px;
 }
 
 ```
