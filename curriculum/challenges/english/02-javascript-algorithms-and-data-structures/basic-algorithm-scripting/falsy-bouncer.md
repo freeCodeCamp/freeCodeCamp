@@ -39,7 +39,8 @@ assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 ```js
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
 ```
-`Orginal array should not be mutated`.
+
+You should not mutate `arr`.
 
 ```js
 const arr = ['a', false, 0, 'Naomi'];
