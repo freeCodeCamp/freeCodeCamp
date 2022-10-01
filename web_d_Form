@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION FORM</title>
+</head>
+<style>
+    body
+    {
+        background-image:url(bg.jpg);
+        background-size: cover;
+    }
+    </style>
+<body>
+    <h2>ENTER YOUR DETIALS</h2>
+    <form action="s.html">
+        <fieldset>
+            <legend>
+                <strong>
+                    ENTER YOUR NAME:
+                </strong>
+            </legend>
+            FIRST NAME:
+            <input type="text" name="first name">
+            <br><br>
+            LAST NAME:
+            <input type="text" name="last name">
+            <br><br>
+            AGE:
+            <input type="radio" name="age">under 18<input type="radio" name="age" checked>over18
+            <br>
+            <br>
+               <td>
+                QUALIFICATION:
+                </td>
+            <select>
+                <option value="MBA">MBA</option>
+                <option value="MCA">MCA</option>
+                <option value="BBA">BBA</option>
+                <option value="B.COM">B.COM</option>
+                <option value="BA">BA</option>
+            </select>
+            <br>
+            <br>
+            <td>
+                    SPORTS:
+            </td>
+            <input type="checkbox" name="interested" value="cricket">cricket<input type="checkbox" name="interested" value="football">football
+            
+        </fieldset>
+    </form>
+</body>
+</html>
