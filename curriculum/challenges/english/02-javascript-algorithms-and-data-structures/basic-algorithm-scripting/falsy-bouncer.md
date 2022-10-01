@@ -8,7 +8,7 @@ dashedName: falsy-bouncer
 
 # --description--
 
-Remove all falsy values from an array.
+Remove all falsy values from an array. Do not mutate original array.
 
 Falsy values in JavaScript are `false`, `null`, `0`, `""`, `undefined`, and `NaN`.
 
@@ -38,6 +38,21 @@ assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 
 ```js
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
+```
+
+`bouncer method should not mutate original array`
+
+```js
+assert.strictEqual(() => {
+  const arr = [null, NaN, 1, 2, undefined];
+
+  const oldLength = arr.length;
+
+  bouncer(arr);
+
+  return oldLength === arr.length;
+
+}, true);
 ```
 
 # --seed--
