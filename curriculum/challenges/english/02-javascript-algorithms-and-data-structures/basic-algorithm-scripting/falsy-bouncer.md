@@ -42,12 +42,9 @@ assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
 `Orginal array should not be mutated`.
 
 ```js
-assert(
-  (function () {
-  let arr = [7, "ate", "", false, null, NaN, 1, 2, undefined];
-  bouncer(arr);
-  return arr.sort().toString() == [7, "ate", "", false, null, NaN, 1, 2, undefined].sort().toString()
-  })());
+const arr = ['a', false, 0, 'Naomi'];
+bouncer(arr);
+assert.deepEqual(arr, ['a', false, 0, 'Naomi'])
 ```
 # --seed--
 
