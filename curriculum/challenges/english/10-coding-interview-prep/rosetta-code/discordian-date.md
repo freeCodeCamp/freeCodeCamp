@@ -8,9 +8,9 @@ dashedName: discordian-date
 
 # --description--
 
-The Gregorian calendar is a solar calendar with 12 months of 28–31 days each. The year in both calendars consists of 365 days, with a leap day added to February in the leap years except for three centurial years every 400 years.
+The Gregorian calendar is a solar calendar with 12 months of 28–31 days each. The year in both calendars consists of 365 days, with a leap day added to February in a leap year (except for three centurial years every 400 years).
 
-The <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">Discordian calendar</a> is aligned with the Gregorian calendar and begins on January 1. Its week consists of five days, there are 73 weeks per year. Every fourth year in the Discordian calendar, an extra day is inserted between Chaos 59 and Chaos 60.
+The <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">Discordian calendar</a> is aligned with the Gregorian calendar and begins on January 1. Its week consists of five days, whereas there are 73 weeks per year. Every fourth year in the Discordian calendar, an extra day is inserted between Chaos 59 and Chaos 60.
 
 The months, weekdays, and events in the Discordian calendar are given by:
 
