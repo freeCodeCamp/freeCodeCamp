@@ -43,7 +43,7 @@ Os artigos em destaque no rodapé do currículo podem ser alterados, editando o 
 
 Esse é um arquivo `*.json`, que tem a forma de um objeto com chaves de propriedade na forma `article0title` e `article0link`.
 
-Cada número apresenta um dos 30 artigos do rodapé. Veriifique se a correspondência entre o título e o link está correta.
+Cada número apresenta um dos 30 artigos do rodapé. Verifique se a correspondência entre o título e o link está correta.
 
 Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.json`.
 
@@ -237,7 +237,7 @@ Se você precisar de ajuda com isso, entre em contato conosco no [chat dos colab
 
 O fluxo de trabalho de pré-tradução pode ser usado para aplicar traduções da memória de tradução às frases.
 
-> [!TIP] É bastante útil restaurar muitas traduções da memória de tradução ao mesmo tempo quando muitos arquivos foram atualizados.
+> [!TIP] É bastante útil restaurar muitas traduções da memória de tradução ao mesmo tempo, quando muitos arquivos foram atualizados.
 
 Você pode encontrar o fluxo de trabalho de pré-tradução no topo da página no console de um projeto. Se você ver "Go to console", no canto superior direito, clique lá primeiro.
 
