@@ -44,7 +44,7 @@ The trending articles in the curriculum footer can be changed by editing the fil
 
 This file is a `*.json` file that has the shape of an object with property keys in the shape `article0title` and `article0link`.
 
-Each number rapresents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
+Each number represents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
 
 This is an example of how part of the `trending.json` file has to look.
 
