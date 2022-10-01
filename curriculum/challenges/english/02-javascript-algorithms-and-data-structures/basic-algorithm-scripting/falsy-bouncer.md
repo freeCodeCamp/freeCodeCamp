@@ -40,6 +40,14 @@ assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
 ```
 
+`bouncer method should not mutate original array`
+
+```js
+const array = ['a', false, 1, undefined];
+bouncer(array);
+assert.deepEqual(array, ['a', false, 1, undefined])
+```
+
 # --seed--
 
 ## --seed-contents--
