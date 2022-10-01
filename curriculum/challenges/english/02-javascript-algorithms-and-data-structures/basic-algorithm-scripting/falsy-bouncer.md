@@ -47,6 +47,7 @@ const arr = ['a', false, 0, 'Naomi'];
 bouncer(arr);
 assert.deepEqual(arr, ['a', false, 0, 'Naomi'])
 ```
+
 # --seed--
 
 ## --seed-contents--
