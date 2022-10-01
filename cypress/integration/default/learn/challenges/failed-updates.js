@@ -27,7 +27,11 @@ describe('failed update flushing', () => {
 
   it('should resubmit failed updates, check they are stored, then flush', () => {
     store.set(failedUpdatesKey, failedUpdates);
-    cy.request('http://localhost:3000/user/get-session-user')
+    cy.request('http://localhost:3000/user/get-session-user', {
+      failOnStatusCode: false
+    })
+      .its('status')
+      .to.eq(418)
       .its('body.user.developmentuser.completedChallenges')
       .then(completedChallenges => {
         const completedIds = completedChallenges.map(challenge => challenge.id);
