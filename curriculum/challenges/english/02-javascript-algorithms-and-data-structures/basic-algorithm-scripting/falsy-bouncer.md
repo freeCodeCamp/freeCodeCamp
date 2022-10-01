@@ -43,16 +43,10 @@ assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
 `bouncer method should not mutate original array`
 
 ```js
-assert.strictEqual(() => {
-  const arr = [null, NaN, 1, 2, undefined];
-
-  const oldLength = arr.length;
-
-  bouncer(arr);
-
-  return oldLength === arr.length;
-
-}, true);
+const arr = [null, NaN, 1, 2, undefined];
+const oldLength = arr.length;
+bouncer(arr);
+assert.strictEqual(oldLength, arr.length);
 ```
 
 # --seed--
