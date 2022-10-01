@@ -26,10 +26,11 @@ Implement a function that takes a string of four digits as its argument, with ea
 
 | Example input                 | Example output            |
 | ----------------------------- | ------------------------- |
-| <code>solve24("4878");</code> | <code>(7-8/8)\*4</code>   |
+| <code>solve24("4878");</code> | <code>(7*8)/(8-4)</code>   |
 | <code>solve24("1234");</code> | <code>3\*1\*4\*2</code>   |
 | <code>solve24("6789");</code> | <code>(6\*8)/(9-7)</code> |
 | <code>solve24("1127");</code> | <code>(1+7)\*(2+1)</code> |
+| <code>solve24("3458");</code> | <code>(5+4)\*(8/3)</code> |
 
 # --hints--
 
@@ -39,7 +40,7 @@ Implement a function that takes a string of four digits as its argument, with ea
 assert(typeof solve24 === 'function');
 ```
 
-`solve24("4878")` should return `(7-8/8)*4`, `4*(7-8/8)`, or a similar valid string
+`solve24("4878")` should return `(7*8)/(8-4)`, `(8*7)/(8-4)`, or a similar valid string
 
 ```js
 assert(isValidSolution_(solve24(testCases_[0])));
@@ -51,7 +52,7 @@ assert(isValidSolution_(solve24(testCases_[0])));
 assert(isValidSolution_(solve24(testCases_[1])));
 ```
 
-`solve24("6789")` should return `(6*8)/(9-7)`. `(8*6)/(9-7)`, or a similar valid string
+`solve24("6789")` should return `(6*8)/(9-7)`, `(8*6)/(9-7)`, or a similar valid string
 
 ```js
 assert(isValidSolution_(solve24(testCases_[2])));
@@ -63,6 +64,13 @@ assert(isValidSolution_(solve24(testCases_[2])));
 assert(isValidSolution_(solve24(testCases_[3])));
 ```
 
+`solve24("3458")` should return `(5+4)*(8/3)` or a similar valid string
+
+```js
+assert(isValidSolution_(solve24(testCases_[4])));
+```
+
+
 # --seed--
 
 ## --after-user-code--
@@ -72,7 +80,8 @@ const testCases_ = [
   '4878',
   '1234',
   '6789',
-  '1127'
+  '1127',
+  '3458'
 ];
 
 const OPERATORS_ = {
