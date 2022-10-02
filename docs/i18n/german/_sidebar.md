@@ -8,13 +8,13 @@
 - **Mitwirkung am Code**
   - [freeCodeCamp lokal einrichten](how-to-setup-freecodecamp-locally.md)
   - [Arbeite an der mobilen App mit](how-to-setup-freecodecamp-mobile-app-locally.md)
-  - [Befolge die besten Programmierpraktiken (best practices)](codebase-best-practices.md)
+  - [Befolge die Best Practices](codebase-best-practices.md)
   - [Eröffne einen Pull Request](how-to-open-a-pull-request.md)
   - [Arbeite an den Programmieraufgaben](how-to-work-on-coding-challenges.md)
   - [Arbeite an Praxisprojekten](how-to-work-on-practice-projects.md)
   - [Arbeite an den Tutorials mit CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
   - [Arbeite an der lokalisierten Client-Web-App](how-to-work-on-localized-client-webapp.md)
-  - [Arbeite an den Cypress Tests](how-to-add-cypress-tests.md)
+  - [Arbeite an den Cypress-Tests](how-to-add-cypress-tests.md)
   - [Arbeite an den Videoaufgaben](how-to-help-with-video-challenges.md)
   - [Arbeite an der Dokumentation](how-to-work-on-the-docs-theme.md)
   - [Arbeite an der Komponentenbibliothek](how-to-work-on-the-component-library.md)
@@ -28,9 +28,9 @@
 
 - **Handbücher** (für Mitarbeiter & Moderatoren)
   - [Moderatorenhandbuch](moderator-handbook.md)
-  - [Language Lead Handbuch](language-lead-handbook.md)
+  - [Language-Lead-Handbuch](language-lead-handbook.md)
   - [DevOps-Handbuch](devops.md)
-  - [Kurse VSCode Erweiterung](courses-vscode-extension.md)
+  - [Kurse VSCode-Erweiterung](courses-vscode-extension.md)
   - [Eine neue Sprache aktivieren](how-to-enable-new-languages.md)
 
 ---
