@@ -24,36 +24,36 @@ Most of files for translating the platform are located in the [`client/i18n`](ht
   ├── configForTests.js
   ├── config.js
   ├── locales
-  │   ├── chinese
-  │   │   ├── intro.json
-  │   │   ├── links.json
-  │   │   ├── meta-tags.json
-  │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   ├── chinese
+  │   │   ├── intro.json
+  │   │   ├── links.json
+  │   │   ├── meta-tags.json
+  │   │   ├── motivation.json
+  │   │   ├── translations.json
+  │   │   └── trending.json
   ... ...
-  │   ├── dothraki
-  │   │   ├── intro.json
-  │   │   ├── links.json
-  │   │   ├── meta-tags.json
-  │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   ├── dothraki
+  │   │   ├── intro.json
+  │   │   ├── links.json
+  │   │   ├── meta-tags.json
+  │   │   ├── motivation.json
+  │   │   ├── translations.json
+  │   │   └── trending.json
   ... ...
-  │   ├── english
-  │   │   ├── intro.json
-  │   │   ├── links.json
-  │   │   ├── meta-tags.json
-  │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
-  │   └── espanol
-  │       ├── intro.json
-  │       ├── links.json
-  │       ├── meta-tags.json
-  │       ├── motivation.json
-  │       ├── translations.json
-  │       └── trending.json
+  │   ├── english
+  │   │   ├── intro.json
+  │   │   ├── links.json
+  │   │   ├── meta-tags.json
+  │   │   ├── motivation.json
+  │   │   ├── translations.json
+  │   │   └── trending.json
+  │   └── espanol
+  │       ├── intro.json
+  │       ├── links.json
+  │       ├── meta-tags.json
+  │       ├── motivation.json
+  │       ├── translations.json
+  │       └── trending.json
   ├── locales.test.js
   ├── schema-validation.js
   └── validate-keys.ts
