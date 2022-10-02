@@ -66,3 +66,49 @@
   font-style: normal;
   font-display: fallback;
 }
+
+/*Hack with Slashed Zero*/
+
+@font-face {
+  font-family: 'Hack-ZeroSlash';
+  src: url('../../../static/fonts/hack-zeroslash/hack-regular-webfont.woff2')
+      format('woff2'),
+    url('../../../static/fonts/hack-zeroslash/hack-regular-webfont.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Hack-ZeroSlash';
+  src: url('../../../static/fonts/hack-zeroslash/hack-bold-webfont.woff2')
+      format('woff2'),
+    url('../../../static/fonts/hack-zeroslash/hack-bold-webfont.woff')
+      format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Hack-ZeroSlash';
+  src: url('../../../static/fonts/hack-zeroslash/hack-bolditalic-webfont.woff2')
+      format('woff2'),
+    url('../../../static/fonts/hack-zeroslash/hack-bolditalic-webfont.woff')
+      format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Hack-ZeroSlash';
+  src: url('../../../static/fonts/hack-zeroslash/hack-italic-webfont.woff2')
+      format('woff2'),
+    url('../../../static/fonts/hack-zeroslash/hack-italic-webfont.woff')
+      format('woff');
+  font-style: italic;
+  font-weight: normal;
+  font-display: fallback;
+}
