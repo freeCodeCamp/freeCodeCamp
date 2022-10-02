@@ -42,26 +42,26 @@
 
 @font-face {
   font-family: 'Hack-ZeroSlash';
-  src: url('../../../static/fonts/hack-zeroslash/hack-regular-webfont.woff2')
+  src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff2')
       format('woff2'),
-    url('../../../static/fonts/hack-zeroslash/hack-regular-webfont.woff')
+    url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff')
       format('woff');
 }
 
 @font-face {
   font-family: 'Hack-ZeroSlash';
-  src: url('../../../static/fonts/hack-zeroslash/hack-bold-webfont.woff2')
+  src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff2')
       format('woff2'),
-    url('../../../static/fonts/hack-zeroslash/hack-bold-webfont.woff')
+    url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff')
       format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Hack-ZeroSlash';
-  src: url('../../../static/fonts/hack-zeroslash/hack-bolditalic-webfont.woff2')
+  src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-BoldItalic.woff2')
       format('woff2'),
-    url('../../../static/fonts/hack-zeroslash/hack-bolditalic-webfont.woff')
+    url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-BoldItalic.woff')
       format('woff');
   font-weight: bold;
   font-style: italic;
@@ -69,9 +69,9 @@
 
 @font-face {
   font-family: 'Hack-ZeroSlash';
-  src: url('../../../static/fonts/hack-zeroslash/hack-italic-webfont.woff2')
+  src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff2')
       format('woff2'),
-    url('../../../static/fonts/hack-zeroslash/hack-italic-webfont.woff')
+    url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff')
       format('woff');
   font-style: italic;
 }

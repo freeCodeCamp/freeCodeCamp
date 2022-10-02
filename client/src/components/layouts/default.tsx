@@ -8,9 +8,9 @@ import { createSelector } from 'reselect';
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
 import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
-import hackZeroSlashBoldURL from '../../../static/fonts/hack-zeroslash/hack-bold-webfont.woff';
-import hackZeroSlashItalicURL from '../../../static/fonts/hack-zeroslash/hack-italic-webfont.woff';
-import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/hack-regular-webfont.woff';
+import hackZeroSlashBoldURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff';
+import hackZeroSlashItalicURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff';
+import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff';
 import { isBrowser } from '../../../utils';
 import {
   fetchUser,
