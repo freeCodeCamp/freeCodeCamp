@@ -32,7 +32,7 @@ jobs:
           path: client-config
 
       - name: Use Node.js 16.x
-        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
+        uses: actions/setup-node@969bd2663942d722d85b6a8626225850c2f7be4b # tag=v3
         with:
           node-version: 16.x
           cache: 'npm'

@@ -15,7 +15,7 @@ A análise de dados é o ato de transformar dados brutos e confusos em informaç
 
 Mais recursos:
 
-\- <a href="https://www.freecodecamp.org/news/what-is-data-analysis/" rel="noopener noreferrer nofollow">Artigo do editorial</a>
+\- <a href="https://www.freecodecamp.org/portuguese/news/o-que-e-analise-de-dados/" rel="noopener noreferrer nofollow">Artigo do editorial</a>
 
 # --question--
 

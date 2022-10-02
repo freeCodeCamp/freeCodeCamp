@@ -19,13 +19,13 @@
     "one-time-url": "https://paypal.me/freecodecamp"
   },
   "nav": {
-    "forum": "https://forum.freecodecamp.org/",
+    "forum": "https://forum.freecodecamp.org/c/german/",
     "news": "https://freecodecamp.org/news/"
   },
   "help": {
-    "HTML-CSS": "HTML-CSS",
-    "JavaScript": "JavaScript",
-    "Python": "Python",
-    "Backend Development": "Backend Development"
+    "HTML-CSS": "German/HTML-CSS",
+    "JavaScript": "German/JavaScript",
+    "Python": "German/Python",
+    "Backend Development": "German/Backend-Development"
   }
 }

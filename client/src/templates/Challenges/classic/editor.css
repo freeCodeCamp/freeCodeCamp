@@ -45,6 +45,8 @@ textarea.inputarea {
   background-color: var(--secondary-background);
   padding: 1rem;
   border: 2px solid var(--quaternary-background);
+  /* the max-width is set to keep the characters in a line at below ~70 to help
+  with readability */
   max-width: 600px;
 }
 

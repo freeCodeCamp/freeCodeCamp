@@ -49,7 +49,7 @@ app.get('/user', function(req, res, next) {
   );
 ```
 
-/now エンドポイントで、今から +/- 20 秒の時間を返す必要があります。
+`/now` エンドポイントは、現在の時刻を返す必要があります。
 
 ```js
 (getUserInput) =>

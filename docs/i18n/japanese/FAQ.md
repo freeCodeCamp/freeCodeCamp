@@ -12,7 +12,7 @@ freeCodeCamp は、モダンな JavaScript スタック上で動作します。 
 
 ユーザーが行った翻訳が既に存在する言語もあります。 freeCodeCamp を世界の主要な言語にローカライズしていく予定です。 You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
-翻訳への貢献にご興味がありましたら、まず [ガイド](how-to-translate-files.md) をお読みください。
+If you are interested in contributing to translations please make sure you [read this guide](how-to-translate-files.md) first.
 
 ### freeCodeCamp ニュースの記事や、freeCodeCamp YouTube チャンネルの動画に貢献することはできますか？
 
@@ -63,7 +63,7 @@ If you think you've found a bug, first read the ["How to Report a Bug"](https://
 1. Issue に対処する最初のプルリクエストをマージする可能性が最も高いです。
 2. 複数のコントリビューターが同じ Issue に対してプルリクエストを同時にオープンした場合、 最善の対処をするプルリクエストを優先します。 考慮事項:
    - テストを含めましたか？
-   - ユースケースを全部含めましたか？
+   - Did you catch all use cases?
    - すべてのテストに合格し、すべてがローカルで動作することを確認しましたか？
 3. 最後に、推奨ガイドラインに従ったプルリクエストを優先します。
    - プルリクエストのチェックリストに従って確認しましたか？
@@ -78,7 +78,7 @@ If you think you've found a bug, first read the ["How to Report a Bug"](https://
 いくつかのプラットフォームで推奨されるパスを以下に示します。
 
 - **Discord／チャット**  のモデレーターになるには、チャットに積極的に参加し、発生する可能性のある潜在的な衝突への対処方法を学ぶとともに実践しながら、他の人と積極的に関わってください。
-- **フォーラム** のモデレーターになるには、チャットモデレーター同様、積極的に参加します。学びながら他の人を支援し、質問を受けた際にはフィードバックを返して、他のフォーラム投稿者と関わってください。 詳細については、[サブフォーラムリーダーハンドブック](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) をご覧ください。
+- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. 詳細については、[サブフォーラムリーダーハンドブック](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) をご覧ください。
 - **GitHub** モデレーターになるには、提起された GitHub Issue の処理を手伝います。それらが有効であるかどうかを確認し、(理想的には) Issue に対するソリューションを提案して、他の人 (または自分自身) が対応できる状態にします。
 
 つまり、他の人に敬意を払ってください。 人々は世界中から集まっています。 これを念頭に置いて、励ましの言葉または応援する言葉を使用し、異文化間のコミュニケーションを意識してください。

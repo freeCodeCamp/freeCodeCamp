@@ -65,7 +65,7 @@ describe('<certification />', () => {
 
     expect(
       screen.getByRole('link', {
-        name: 'buttons.show-solution'
+        name: 'buttons.view'
       })
     ).toHaveAttribute('href', 'https://github.com/freeCodeCamp/freeCodeCamp');
   });
@@ -88,8 +88,10 @@ describe('<certification />', () => {
   it('rendering the correct button when files is present', () => {
     renderWithRedux(<CertificationSettings {...propsForOnlySolution} />);
 
-    const button = screen.getByText('buttons.show-code');
-    expect(button).toBeInTheDocument();
+    const viewButtons = screen.getAllByRole('button', { name: 'buttons.view' });
+    viewButtons.forEach(button => {
+      expect(button).toBeInTheDocument();
+    });
   });
 });
 

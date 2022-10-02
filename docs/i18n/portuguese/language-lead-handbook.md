@@ -65,7 +65,7 @@ Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.j
 }
 ```
 
-Você vai querer [fazer a build do client traduzido localmente](how-to-test-translations-locally.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
+Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
 
 ### Como atualizar os artigos em destaque no cdn
 
@@ -276,3 +276,17 @@ Depois delas, cada idioma-alvo tem duas colunas. Se você traduzir para o Dothra
 > [!TIP] Em programas como o Microsoft Excel, você pode ocultar as colunas dos outros idiomas para liberar espaço em tela e ver as colunas em inglês e as colunas do idioma de destino ao lado umas das outras.
 
 Após ter feito as alterações e salvo o arquivo, você precisará fazer um PR com as alterações propostas. Depois de o PR ter sido aceito, você precisará executar o fluxo de trabalho do GitHub Action para atualizar o glossário do Crowdin. Suas alterações no glossário não terão efeitos imediatos, mas aparecerão em breve.
+
+## How to Promote a Contributor to Proofreader
+
+If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
+
+In Crowdin, individuate the `User management` on the left hand side menu.
+
+This will open the user management tools, you will be able to see the list of all the users.
+
+Search for the user that will become contributor. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+
+The user is now a proofreader.
+
+> [!TIP] The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.

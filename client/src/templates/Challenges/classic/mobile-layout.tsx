@@ -14,6 +14,7 @@ interface MobileLayoutProps {
   instructions: JSX.Element;
   notes: ReactElement;
   preview: JSX.Element;
+  updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
   videoUrl: string;
   usesMultifileEditor: boolean;
@@ -43,6 +44,10 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       currentTab: tab
     });
   };
+
+  handleKeyDown = () => this.props.updateUsingKeyboardInTablist(true);
+
+  handleClick = () => this.props.updateUsingKeyboardInTablist(false);
 
   render() {
     const { currentTab } = this.state;
@@ -74,7 +79,10 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           activeKey={currentTab}
           defaultActiveKey={currentTab}
           id='mobile-layout'
+          onKeyDown={this.handleKeyDown}
+          onMouseDown={this.handleClick}
           onSelect={this.switchTab}
+          onTouchStart={this.handleClick}
         >
           {!hasEditableBoundaries && (
             <TabPane
@@ -86,6 +94,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           )}
           <TabPane
             eventKey={Tab.Editor}
+            tabIndex='0'
             title={i18next.t('learn.editor-tabs.code')}
             {...editorTabPaneProps}
           >

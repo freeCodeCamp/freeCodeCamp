@@ -127,7 +127,7 @@ Nachdem du nun die Voraussetzungen erfüllt hast, folge [unserem Leitfaden zur l
 
 ## Nützliche Links
 
-- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
+- [Ein WSL2 Dev Setup mit Ubuntu 20.04, Node.js, MongoDB, VS Code und Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - ein Artikel von Mrugesh Mohapatra (Staff Developer bei freeCodeCamp.org)
 - Häufig gestellte Fragen zu:
   - [Windows Subsystem für Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop für Windows](https://docs.docker.com/docker-for-windows/faqs)

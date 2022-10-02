@@ -14,46 +14,58 @@ interface LowerJawProps {
   openHelpModal: () => void;
   tryToExecuteChallenge: () => void;
   tryToSubmitChallenge: () => void;
-  showFeedback?: boolean;
   isEditorInFocus?: boolean;
-  challengeHasErrors?: boolean;
   testsLength?: number;
-  attemptsNumber?: number;
+  attempts: number;
   openResetModal: () => void;
   isSignedIn: boolean;
+  updateContainer: () => void;
 }
 
 const LowerJaw = ({
   openHelpModal,
   challengeIsCompleted,
-  challengeHasErrors,
   hint,
   tryToExecuteChallenge,
   tryToSubmitChallenge,
-  attemptsNumber,
+  attempts,
   testsLength,
   isEditorInFocus,
   openResetModal,
-  isSignedIn
+  isSignedIn,
+  updateContainer
 }: LowerJawProps): JSX.Element => {
-  const [previousHint, setpreviousHint] = useState('');
+  const hintRef = React.useRef('');
   const [runningTests, setRunningTests] = useState(false);
-  const [testFeedbackheight, setTestFeedbackheight] = useState(0);
+  const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
+  const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
-  const [testBtnariaHidden, setTestBtnariaHidden] = useState(false);
+  const [testBtnAriaHidden, setTestBtnAriaHidden] = useState(false);
   const { t } = useTranslation();
   const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
-    if (attemptsNumber && attemptsNumber > 0) {
+    // prevent unnecessary updates:
+    if (attempts === currentAttempts) return;
+    // Attempts should only be zero when the step is reset, so we should reset
+    // the state here.
+    if (attempts === 0) {
+      setCurrentAttempts(0);
+      setRunningTests(false);
+      setTestBtnAriaHidden(false);
+      setIsFeedbackHidden(false);
+      hintRef.current = '';
+    } else if (attempts > 0 && hint) {
       //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
-
-      //allow the lower jaw height to be picked up by the editor.
-      setTimeout(() => {
-        setRunningTests(true);
-      }, 200);
+      setRunningTests(true);
+      //to prevent the changing attempts value from immediately triggering a new
+      //render, the rendered component only depends on currentAttempts. Since
+      //currentAttempts is updated with when the feedback is hidden, the screen
+      //reader should only read out the new message.
+      setCurrentAttempts(attempts);
+      hintRef.current = hint;
 
       //display the test feedback contents.
       setTimeout(() => {
@@ -61,50 +73,35 @@ const LowerJaw = ({
         setIsFeedbackHidden(false);
       }, 300);
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [attemptsNumber]);
+  }, [attempts, hint, currentAttempts]);
 
   useEffect(() => {
-    // only save error hints
-    if (challengeHasErrors && hint && previousHint !== hint) {
-      setpreviousHint(hint);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [challengeHasErrors, hint]);
-
-  useEffect(() => {
-    if (challengeIsCompleted && submitButtonRef?.current) {
-      submitButtonRef.current.focus();
+    if (challengeIsCompleted) {
+      if (!isEditorInFocus) submitButtonRef?.current?.focus();
       setTimeout(() => {
-        setTestBtnariaHidden(true);
+        setTestBtnAriaHidden(true);
       }, 500);
     }
 
-    setTestBtnariaHidden(challengeIsCompleted);
-
+    setTestBtnAriaHidden(challengeIsCompleted);
+    // Since submitButtonRef changes every render, we have to ignore it here or,
+    // once the challenges is completed, every render (including ones triggered
+    // by typing in the editor) will focus the button.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeIsCompleted]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (testFeedbackRef.current) {
-      setTestFeedbackheight(testFeedbackRef.current.clientHeight);
+      setTestFeedbackHeight(testFeedbackRef.current.clientHeight);
     }
+    // Every render could change the shape of the jaw, so this effect will let
+    // monaco know it might need to resize
+    updateContainer();
   });
 
-  /*
-    Return early in lifecycle based on the earliest available conditions to help the editor
-    calculate the correct editor gap for the lower jaw.
-
-    For consistency, use the persisted version if the conditions has been met before.
-  */
-  const earliestAvailableHint = hint || previousHint;
-
   const renderTestFeedbackContainer = () => {
-    if (attemptsNumber === 0) {
-      return '';
-    } else if (runningTests) {
+    if (runningTests) {
       return <span className='sr-only'>{t('aria.running-tests')}</span>;
     } else if (challengeIsCompleted) {
       const submitKeyboardInstructions = isEditorInFocus ? (
@@ -128,13 +125,17 @@ const LowerJaw = ({
           </div>
         </div>
       );
-    } else if (earliestAvailableHint) {
-      const hintDescription = `<h2 class="hint">${t(
-        'learn.hint'
-      )}</h2> ${earliestAvailableHint}`;
+    } else if (hintRef.current) {
+      const hintDescription = `<h2 class="hint">${t('learn.hint')}</h2> ${
+        hintRef.current
+      }`;
       return (
         <>
-          <div className='test-status fade-in' aria-hidden={isFeedbackHidden}>
+          <div
+            data-cy='failing-test-feedback'
+            className='test-status fade-in'
+            aria-hidden={isFeedbackHidden}
+          >
             <div className='status-icon' aria-hidden='true'>
               <span>
                 <Fail />
@@ -158,6 +159,8 @@ const LowerJaw = ({
           </div>
         </>
       );
+    } else {
+      return null;
     }
   };
 
@@ -169,16 +172,14 @@ const LowerJaw = ({
       'learn.sorry-hang-in-there',
       'learn.sorry-dont-giveup'
     ];
-    return attemptsNumber
-      ? sentenceArray[attemptsNumber % sentenceArray.length]
-      : sentenceArray[0];
+    return sentenceArray[currentAttempts % sentenceArray.length];
   };
 
   const renderContextualActionRow = () => {
     const isAttemptsLargerThanTest =
-      attemptsNumber &&
+      currentAttempts &&
       testsLength &&
-      (attemptsNumber >= testsLength || attemptsNumber >= 3);
+      (currentAttempts >= testsLength || currentAttempts >= 3);
 
     if (isAttemptsLargerThanTest && !challengeIsCompleted) {
       return (
@@ -225,8 +226,9 @@ const LowerJaw = ({
           ) : null}
           <button
             id='test-button'
+            data-cy='run-tests-button'
             className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
-            aria-hidden={testBtnariaHidden}
+            aria-hidden={testBtnAriaHidden}
             onClick={tryToExecuteChallenge}
           >
             {showDesktopButton
@@ -235,6 +237,7 @@ const LowerJaw = ({
           </button>
           <button
             id='submit-button'
+            data-cy='submit-button'
             aria-hidden={!challengeIsCompleted}
             className='btn-block btn'
             onClick={tryToSubmitChallenge}
@@ -251,7 +254,7 @@ const LowerJaw = ({
     <div className='action-row-container'>
       {renderButtons()}
       <div
-        style={runningTests ? { height: `${testFeedbackheight}px` } : {}}
+        style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
         className={`test-feedback`}
         id='test-feedback'
         aria-live='assertive'

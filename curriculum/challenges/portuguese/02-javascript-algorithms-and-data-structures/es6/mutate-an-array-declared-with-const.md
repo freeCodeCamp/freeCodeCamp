@@ -23,7 +23,7 @@ s[2] = 45;
 console.log(s);
 ```
 
-`s = [1, 2, 3]` resultará em um erro. `console.log` exibirá o valor `[5, 6, 45]`.
+`s = [1, 2, 3]` resultará em um erro. Depois de comentar essa linha, o `console.log` exibirá o valor `[5, 6, 45]`.
 
 Como você pode ver, você pode alterar o objeto `[5, 6, 7]` e a variável `s` ainda apontará para o array alterado `[5, 6, 45]`. Assim como em qualquer outro array, os elementos dentro de `s` também são mutáveis. Mas como `const` foi usado, você não pode usar o identificador da variável `s` para apontar para uma matriz diferente (ou qualquer outro valor) usando o operador de atribuição.
 

@@ -15,7 +15,7 @@ Se i valori confrontati non sono dello stesso tipo, l'operatore di uguaglianza e
 
 **Esempi**
 
-`3 == '3'` restituisce `true` perché JavaScript esegue la conversione di tipo da string a number. `3 === '3'` restituisce false perché i tipi sono diversi e la conversione di tipo non viene eseguita.
+`3 == '3'` restituisce `true` perché JavaScript esegue la conversione di tipo da string a number. `3 === '3'` restituisce `false` perché i tipi sono diversi e la conversione di tipo non viene eseguita.
 
 **Nota:** In JavaScript, è possibile determinare il tipo di una variabile o di un valore con l'operatore `typeof`, come segue:
 

@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "JavaScript-Algorithmen und Datenstrukturen (Beta)",
-    "intro": [
-      "Platzhalter",
-      "Platzhalter"
-    ],
+    "intro": ["Platzhalter", "Platzhalter"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Erstelle ein Caesar-Verschlüsselung Projekt",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "Erstelle ein Registrierkassenprojekt",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "Erstelle ein Palindromprüfer Projekt",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Erstelle ein Projekt zur Umwandlung römischer Ziffern",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Erstelle ein Telefonnummernvalidierungsprojekt",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Lerne die Grundlagen von JavaScript durch die Entwicklung eines Rollenspiels",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Lerne die Formularvalidierung anhand eines Kalorienzählers",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Lerne die funktionale Programmierung durch das Erstellen einer Tabellenkalkulation",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "D3 Dashboard",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },

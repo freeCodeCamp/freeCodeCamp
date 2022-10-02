@@ -7,7 +7,7 @@ isPrivate: true
 tests:
   - 
     id: bd7158d8c442eddfaeb5bd18
-    title: Erstellung einer Tributseite
+    title: Erstelle einer Tributseite
   - 
     id: 587d78af367417b2b2512b03
     title: Erstellung eines Umfrageformulars
