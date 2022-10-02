@@ -38,35 +38,6 @@
   font-display: fallback;
 }
 
-/* roboto mono */
-
-@font-face {
-  font-family: 'Roboto Mono';
-  src: url('../../../static/fonts/roboto-mono/RobotoMono-Regular.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: 'Roboto Mono';
-  src: url('../../../static/fonts/roboto-mono/RobotoMono-Italic.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: italic;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: 'Roboto Mono';
-  src: url('../../../static/fonts/roboto-mono/RobotoMono-Bold.woff')
-    format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: fallback;
-}
-
 /* hack zeroslash */
 
 @font-face {
