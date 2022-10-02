@@ -11,18 +11,30 @@ const defaultClassNames = [
   'text-left'
 ];
 
+const computeClassNames = ({
+  condensed,
+  striped
+}: {
+  condensed: boolean;
+  striped: boolean;
+}) => {
+  const classNames = [...defaultClassNames];
+  if (condensed) classNames.push('[&_td]:p-1 [&_th]:p-1');
+  else classNames.push('[&_td]:p-2 [&_th]:p-2');
+  if (striped)
+    classNames.push('[&>tbody>tr:nth-of-type(odd)]:bg-background-tertiary');
+
+  return classNames.join(' ');
+};
+
 export const Table = React.forwardRef<HTMLTableElement, TableProps>(
-  ({ striped, condensed, ...props }, ref) => {
-    const classNames = [...defaultClassNames];
-
-    if (condensed) classNames.push('table-children:p-1');
-    else classNames.push('table-children:p-2');
-
-    if (striped) classNames.push('table-striped:bg-background-tertiary');
-
-    const table = (
-      <table {...props} ref={ref} className={classNames.join(' ')} />
+  ({ striped = false, condensed = false, ...props }, ref) => {
+    const classNames = React.useMemo(
+      () => computeClassNames({ condensed, striped }),
+      [condensed, striped]
     );
+
+    const table = <table {...props} ref={ref} className={classNames} />;
 
     return table;
   }
