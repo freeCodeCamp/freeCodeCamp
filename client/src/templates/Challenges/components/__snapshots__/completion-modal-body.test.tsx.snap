@@ -82,6 +82,11 @@ exports[`<CompletionModalBody /> matches snapshot 1`] = `
         </div>
       </div>
     </div>
+    <div>
+      <h3>
+        learn.project-complete
+      </h3>
+    </div>
   </div>
 </div>
 `;
