@@ -277,16 +277,16 @@ Depois delas, cada idioma-alvo tem duas colunas. Se você traduzir para o Dothra
 
 Após ter feito as alterações e salvo o arquivo, você precisará fazer um PR com as alterações propostas. Depois de o PR ter sido aceito, você precisará executar o fluxo de trabalho do GitHub Action para atualizar o glossário do Crowdin. Suas alterações no glossário não terão efeitos imediatos, mas aparecerão em breve.
 
-## How to Promote a Contributor to Proofreader
+## Como promover um colaborador a revisor
 
-If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
+Se você considerar que um colaborador pode se tornar um revisor de Crowdin, você pode dar a ele a função de revisor deste modo:
 
-In Crowdin, individuate the `User management` on the left hand side menu.
+No Crowdin, você individualiza `User management` (gerenciamento do usuário) no menu do lado esquerdo.
 
-This will open the user management tools, you will be able to see the list of all the users.
+Isto abrirá as ferramentas de gerenciamento de usuário, você será capaz de ver a lista de todos os usuários.
 
-Search for the user that will become contributor. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+Procure pelo usuário que se tornará um colaborador. Use o menu de três pontos na linha do usuário para abrir um menu e selecione "Add to team" (Adicionar à equipe). As equipes de revisão têm o nome padrão de `Proof Readers (<language>)`. Você pode pesquisar a equipe usando o nome do idioma. Depois de selecionar a equipe, use o botão "ADD" na parte inferior da página para finalizar.
 
-The user is now a proofreader.
+O usuário agora é um revisor.
 
-> [!TIP] The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.
+> [!TIP] O revisor recém-promovido pode se beneficiar de ler a documentação em [How to Proofread Files](how-to-proofread-files.md).
