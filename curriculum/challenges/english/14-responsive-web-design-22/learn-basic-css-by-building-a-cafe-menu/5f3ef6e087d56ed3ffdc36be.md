@@ -45,13 +45,13 @@ assert($('.established').css('font-style') === 'italic');
   </head>
   <body>
     <div class="menu">
---fcc-editable-region--
-      <header>
-        <h1>CAMPER CAFE</h1>
-        <p>Est. 2020</p>
-      </header>
---fcc-editable-region--
       <main>
+--fcc-editable-region--
+        <header>
+          <h1>CAMPER CAFE</h1>
+          <p>Est. 2020</p>
+        </header>
+--fcc-editable-region--
         <section>
           <h2>Coffee</h2>
           <article class="item">
