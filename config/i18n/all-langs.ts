@@ -53,6 +53,7 @@ export const auditedCerts = {
     SuperBlocks.DataAnalysisPy
   ],
   chinese: [
+    SuperBlocks.RespWebDesignNew,
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs,
@@ -65,6 +66,7 @@ export const auditedCerts = {
     SuperBlocks.MachineLearningPy
   ],
   'chinese-traditional': [
+    SuperBlocks.RespWebDesignNew,
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs,
