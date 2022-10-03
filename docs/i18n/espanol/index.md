@@ -2,7 +2,7 @@ La comunidad [freeCodeCamp.org](https://freecodecamp.org) es posible gracias a m
 
 > [!NOTE] Antes de continuar, por favor tómate 2 minutos para leer nuestro [Código de Conducta](https://www.freecodecamp.org/code-of-conduct). Lo hacemos cumplir estrictamente en toda nuestra comunidad para que contribuir a freeCodeCamp.org sea una experiencia segura e inclusiva para todos.
 
-Te invitamos a crear, actualizar y corregir errores en nuestro [plan curricular](#curriculum), ayúdanos a corregir errores en  la [plataforma de aprendizaje](#learning-platform) de freeCodeCamp, o [ayúdanos a traducir](#translations) freeCodeCamp.org a deferentes idiomas.
+Te invitamos a crear, actualizar y corregir errores en nuestro [Plan de estudios](#plan-de-estudios), ayúdanos a corregir errores en  la [plataforma de aprendizaje](#plataforma-de-aprendizaje) de freeCodeCamp, o [ayúdanos a traducir](#traducciones) freeCodeCamp.org a deferentes idiomas.
 
 Respondemos a las preguntas más comunes sobre cómo contribuir [nuestras FAQ del colaborador](FAQ.md).
 
