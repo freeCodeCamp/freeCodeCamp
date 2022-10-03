@@ -209,7 +209,8 @@
               }
 
               if (
-                vm.route.path.search('Arabic' || 'Hebrew') === -1
+                vm.route.path.search('Arabic') === -1 &&
+                vm.route.path.search('Hebrew') === -1
               ) {
                 for (
                   let counter = 0,
