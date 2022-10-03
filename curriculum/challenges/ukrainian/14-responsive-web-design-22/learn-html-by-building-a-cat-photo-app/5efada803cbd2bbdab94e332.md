@@ -1,8 +1,8 @@
 ---
 id: 5efada803cbd2bbdab94e332
-title: Крок 28
+title: Крок 29
 challengeType: 0
-dashedName: step-28
+dashedName: step-29
 ---
 
 # --description--

@@ -15,7 +15,7 @@ jobs:
   has-translation:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/github-script@d50f485531ba88479582bc2da03ff424389af5c1 # tag=v6
+      - uses: actions/github-script@7dff1a87643417cf3b95bb10b29f4c4bc60d8ebd # tag=v6
         with:
           github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
           script: |
@@ -34,11 +34,4 @@ jobs:
               })
             } else if (isDev.status === 200) {
               core.setFailed('This PR appears to touch translated curriculum files, but since you are on the dev team there is no message.');
-            } else {
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: 'WAIT! This message serves as a sanity check. You should *only* see this message if the PR was created as part of a Crowdin download action.'
-              })
             }

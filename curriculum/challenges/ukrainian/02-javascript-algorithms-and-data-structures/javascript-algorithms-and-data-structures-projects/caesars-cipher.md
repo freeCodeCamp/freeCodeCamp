@@ -10,9 +10,9 @@ dashedName: caesars-cipher
 
 Одним з найпростіших і найпоширеніших <dfn>шифрів</dfn> є <dfn>шифр Цезаря</dfn>, також відомий як <dfn>шифр зсуву</dfn>. У шифрі зсуву кожна літера заміняється на ту, що віддалена від неї в алфавіті на сталу кількість позицій.
 
-Поширеним різновидом шифру Цезаря є алгоритм [ROT13](https://en.wikipedia.org/wiki/ROT13) який заміняє літеру 13 буквою в абетці після неї. Таким чином, `A ↔ N`, `B ↔ O` і так далі.
+Часто використовують шифр <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a>, який зміщує літеру на 13 місць. Таким чином, `A ↔ N`, `B ↔ O` і так далі.
 
-Напишіть функцію, у якій вхідними даними буде рядок, закодований шифром [ROT13](https://en.wikipedia.org/wiki/ROT13), а вихідними даними - розшифрований рядок.
+Напишіть функцію, яка приймає закодований рядок <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a> як вхідні дані та повертає декодований.
 
 У шифрі використовуються тільки великі літери. Не потрібно замінювати неалфавітні символи (тобто, пробіли, знаки пунктуації), але їх треба переносити до шифру.
 

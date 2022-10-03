@@ -14,19 +14,19 @@ dashedName: data-visualization-mailing-lists
 
 Más recursos:
 
-\- [Ejercicio: Geodatos](https://www.youtube.com/watch?v=KfhslNzopxo)
+\- <a href="https://www.youtube.com/watch?v=KfhslNzopxo" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Geodatos</a>
 
-\- [Ejercicio: Gmane Model](https://www.youtube.com/watch?v=wSpl1-7afAk)
+\-<a href="https://www.youtube.com/watch?v=wSpl1-7afAk" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Modelo Gmane</a>
 
-\- [Ejercicio: Gmane Spider](https://www.youtube.com/watch?v=H3w4lOFBUOI)
+\-<a href="https://www.youtube.com/watch?v=H3w4lOFBUOI" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Araña Gmane</a>
 
-\- [Ejercicio: Gmane Viz](https://www.youtube.com/watch?v=LRqVPMEXByw)
+\- <a href="https://www.youtube.com/watch?v=LRqVPMEXByw" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Gmane Viz</a>
 
-\- [Ejercicio: Page Rank](https://www.youtube.com/watch?v=yFRAZBkBDBs)
+\- <a href="https://www.youtube.com/watch?v=yFRAZBkBDBs" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Rango de la página</a>
 
-\- [Ejercicio: Page Spider](https://www.youtube.com/watch?v=sXedPQ_AnWA)
+\-<a href="https://www.youtube.com/watch?v=sXedPQ_AnWA" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Araña de página</a>
 
-\- [Ejercicio: Page Viz](https://www.youtube.com/watch?v=Fm0hpkxsZoo)
+\-<a href="https://www.youtube.com/watch?v=Fm0hpkxsZoo" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Página Viz</a>
 
 # --question--
 

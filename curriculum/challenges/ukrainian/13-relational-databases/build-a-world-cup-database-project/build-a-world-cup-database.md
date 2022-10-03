@@ -1,6 +1,6 @@
 ---
 id: 5f9771307d4d22b9d2b75a94
-title: Build a World Cup Database
+title: Створіть базу даних «Чемпіонат світу»
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-world-cup-database
@@ -9,15 +9,15 @@ dashedName: build-a-world-cup-database
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics.
+Це один з обов'язкових проєктів для отримання сертифікату. У цьому проєкті ви створите скрипт Bash, який вводить інформацію з ігор чемпіонату світу в PostgreSQL, а потім запитує базу даних для отримання статистики.
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `worldcup.sql` file, as well as your `insert_data.sh` and `queries.sh` files, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Важливо:** після проходження всіх тестів проєкту збережіть звалище своєї бази даних у файлі `worldcup.sql`, а також свої файли `insert_data.sh` та `queries.sh`, щоб ви могли виконати крок 2. Там будуть інструкції, як це зробити у віртуальній машині.
 
 # --notes--
 
-Required files: `worldcup.sql`, `insert_data.sh`, `queries.sh`
+Необхідні файли: `worldcup.sql`, `insert_data.sh`, `queries.sh`
 
 # --hints--
 

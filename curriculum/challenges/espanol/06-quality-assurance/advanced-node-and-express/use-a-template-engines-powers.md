@@ -44,7 +44,7 @@ Para pasarlos desde nuestro servidor, debes agregar un objeto como segundo argum
 
 !Debe verse así: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Ahora actualiza tu página y debes ver esos valores representados en tu vista en el lugar correcto como se establece en tu archivo `index.pug`!
 
-Envía tu página cuando creas que la tienes correcta. Si te encuentras con errores, puedes consultar el [proyecto completado hasta este momento](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871).
+Envía tu página cuando creas que la tienes correcta. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
 
 # --hints--
 

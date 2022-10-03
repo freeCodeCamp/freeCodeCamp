@@ -65,7 +65,7 @@ Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.j
 }
 ```
 
-Você vai querer [fazer a build do client traduzido localmente](how-to-test-translations-locally.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
+Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
 
 ### Como atualizar os artigos em destaque no cdn
 
@@ -276,3 +276,17 @@ Depois delas, cada idioma-alvo tem duas colunas. Se você traduzir para o Dothra
 > [!TIP] Em programas como o Microsoft Excel, você pode ocultar as colunas dos outros idiomas para liberar espaço em tela e ver as colunas em inglês e as colunas do idioma de destino ao lado umas das outras.
 
 Após ter feito as alterações e salvo o arquivo, você precisará fazer um PR com as alterações propostas. Depois de o PR ter sido aceito, você precisará executar o fluxo de trabalho do GitHub Action para atualizar o glossário do Crowdin. Suas alterações no glossário não terão efeitos imediatos, mas aparecerão em breve.
+
+## Como promover um colaborador a revisor
+
+Se você considerar que um colaborador pode se tornar um revisor de Crowdin, você pode dar a ele a função de revisor deste modo:
+
+No Crowdin, você individualiza `User management` (gerenciamento do usuário) no menu do lado esquerdo.
+
+Isto abrirá as ferramentas de gerenciamento de usuário, você será capaz de ver a lista de todos os usuários.
+
+Procure pelo usuário que se tornará um colaborador. Use o menu de três pontos na linha do usuário para abrir um menu e selecione "Add to team" (Adicionar à equipe). As equipes de revisão têm o nome padrão de `Proof Readers (<language>)`. Você pode pesquisar a equipe usando o nome do idioma. Depois de selecionar a equipe, use o botão "ADD" na parte inferior da página para finalizar.
+
+O usuário agora é um revisor.
+
+> [!TIP] O revisor recém-promovido pode se beneficiar de ler a documentação em [How to Proofread Files](how-to-proofread-files.md).

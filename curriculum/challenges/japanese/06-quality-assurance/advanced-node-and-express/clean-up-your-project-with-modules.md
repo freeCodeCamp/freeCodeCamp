@@ -26,7 +26,7 @@ module.exports = function (app, myDataBase) {
 
 続いて auth.js ファイルでも同じ作業をしてください。ファイルには、シリアル化やローカルストラテジーの設定など、認証に関連するすべてのものが含まれています。そして、サーバーファイルからそれらを消去してください。 サーバーの同じ場所で、依存関係を追加し、`auth(app, myDataBase)` を呼び出してください。
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、完了したプロジェクトを[こちら](https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 561add10cb82ac38a17213bd
-title: Сертифікація «Full Stack»
+title: Застаріла сертифікація «Full Stack»
 certification: legacy-full-stack
 challengeType: 7
 isPrivate: true
@@ -22,4 +22,4 @@ tests:
     title: Сертифікація «API та мікросервіси»
   - 
     id: 561add10cb82ac38a17213bc
-    title: Сертифікація «Інформаційна безпека та забезпечення якості»
+    title: Застаріла сертифікація «Інформаційна безпека та забезпечення якості»
