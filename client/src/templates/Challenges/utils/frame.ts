@@ -93,8 +93,11 @@ const createHeader = (id = mainPreviewId) => `
     }, false);
     document.addEventListener('submit', function(e) {
       const action = e.target.getAttribute('action');
-      if (!action || !action.match(/https?:\\/\\//)) {
-        e.preventDefault();
+      e.preventDefault();
+      if (action || action.match(/https?:\\/\\//)) {
+        window.parent.window.alert(
+          i18nContent.t('misc.iframe-form-submit-alert', { externalLink: action  })
+        )
       }
     }, false);
   </script>
