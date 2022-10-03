@@ -279,6 +279,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
+    fontFamily: 'Hack-ZeroSlash',
     scrollBeyondLastLine: true,
     selectionHighlight: false,
     overviewRulerBorder: false,
