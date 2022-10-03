@@ -149,7 +149,9 @@ export const languagesWithAuditedBetaReleases = [
   'english',
   'portuguese',
   'italian',
-  'ukrainian'
+  'ukrainian',
+  'chinese',
+  'chinese-traditional'
 ];
 
 // ---------------------------------------------------------------------------
