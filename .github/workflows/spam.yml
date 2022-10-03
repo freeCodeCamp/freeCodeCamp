@@ -5,7 +5,7 @@ on:
       - labeled
 
 jobs:
-  has-translation:
+  is-spam:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/github-script@7dff1a87643417cf3b95bb10b29f4c4bc60d8ebd # tag=v6
