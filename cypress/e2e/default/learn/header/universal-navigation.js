@@ -11,6 +11,7 @@ const selectors = {
   'navigation-list': '.nav-list',
   'toggle-button': '.toggle-button-nav',
   'language-menu': '.nav-lang-menu',
+  'exit-lang-menu': "[data-value='exit-lang-menu']",
   'sign-in-button': "[data-test-label='landing-small-cta']",
   'avatar-link': '.avatar-nav-link',
   'avatar-container': '.avatar-container'
@@ -61,6 +62,24 @@ describe('Language menu', () => {
       .should('be.visible')
       .contains(LangNames[clientLocale])
       .should('have.attr', 'aria-current', 'true');
+  });
+});
+
+describe('Language menu with keyboard', () => {
+  before(() => {
+    cy.get(selectors['exit-lang-menu']).click();
+    cy.get(selectors['navigation-list']).contains('Change Language').blur();
+  });
+
+  it('should show language options.', () => {
+    cy.get(selectors['navigation-list'])
+      .contains('Change Language')
+      .type('{enter}');
+    cy.get(selectors['language-menu']).should('be.visible');
+  });
+  it('should navigate through all used languages.', () => {
+    navigateLanguagesWithKey('downArrow');
+    navigateLanguagesWithKey('upArrow');
   });
 });
 
@@ -124,4 +143,27 @@ const testLink = (item, selector = 'navigation-list', checkParent) => {
     .contains(item)
     .should('have.attr', 'href')
     .and('contain', links[item.replaceAll(' ', '-').toLowerCase()]);
+};
+
+const navigateLanguagesWithKey = direction => {
+  const directions = ['downArrow', 'upArrow'];
+  if (!directions.includes(direction)) {
+    throw new Error(
+      'Invalid direction: ' + direction + '\nMust be one of: ' + directions
+    );
+  }
+  const availableLangNames = availableLangs.client
+    .filter(lang => !hiddenLangs.includes(lang))
+    .map(lang => LangNames[lang]);
+
+  if (direction === 'upArrow') {
+    availableLangNames.reverse();
+    // remove the first element, as it will be the focused language
+    availableLangNames.shift();
+  }
+
+  availableLangNames.forEach(langName => {
+    cy.focused().type(`{${direction}}`);
+    cy.focused().contains(langName);
+  });
 };
