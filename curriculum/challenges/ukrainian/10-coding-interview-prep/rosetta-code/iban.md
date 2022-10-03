@@ -95,10 +95,10 @@ function isValid(iban) {
     iban = __helpers.removeWhiteSpace(iban)
     if (!iban.match(/^[\dA-Z]+$/)) return false
     var len = iban.length
-    if (len != ibanLen[iban.substr(0,2)]) return false
-    iban = iban.substr(4) + iban.substr(0,4)
+    if (len != ibanLen[iban.substring(0,2)]) return false
+    iban = iban.substring(4) + iban.substring(0,4)
     for (var s='', i=0; i<len; i+=1) s+=parseInt(iban.charAt(i),36)
-    for (var m=s.substr(0,15)%97, s=s.substr(15); s; s=s.substr(13)) m=(m+s.substr(0,13))%97
+    for (var m=s.substring(0,15)%97, s=s.substring(15); s; s=s.substring(13)) m=(m+s.substring(0,13))%97
     return m == 1
 }
 ```

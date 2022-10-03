@@ -114,8 +114,8 @@ function removeParenthesesHelper(ans, i) {
 
 //Replace a character at a given index for the provided character
 function replaceChar(origString, replaceChar, index) {
-  let firstPart = origString.substr(0, index);
-  let lastPart = origString.substr(index + 1);
+  let firstPart = origString.substring(0, index);
+  let lastPart = origString.substring(index + 1);
   let newString = firstPart + replaceChar + lastPart;
   return newString;
 }
