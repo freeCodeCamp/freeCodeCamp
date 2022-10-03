@@ -1,6 +1,5 @@
 const { isEmpty } = require('lodash');
 
-// TODO: secure with tests
 function getLines(contents, range) {
   if (isEmpty(range)) {
     return '';
