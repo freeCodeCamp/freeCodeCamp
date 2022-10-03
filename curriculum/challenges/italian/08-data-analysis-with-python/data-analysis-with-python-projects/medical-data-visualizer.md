@@ -26,20 +26,20 @@ Le righe nel set di dati rappresentano i pazienti e le colonne rappresentano inf
 
 Nome del file: medical_examination.csv
 
-|                 Caratteristica                 | Tipo Di Variabile |  Variabile  |                              Tipo Di Valore                              |
-|:----------------------------------------------:|:-----------------:|:-----------:|:------------------------------------------------------------------------:|
-|                      Età                       |  Dato oggettivo   |     age     |                               int (giorni)                               |
-|                    Altezza                     |  Dato oggettivo   |   height    |                                 int (cm)                                 |
-|                      Peso                      |  Dato oggettivo   |   weight    |                                float (kg)                                |
-|                     Genere                     |  Dato oggettivo   |   gender    |                           codice di categoria                            |
-|              Pressione sistolica               |   Dato da esami   |    ap_hi    |                                   int                                    |
-|         Pressione sanguigna diastolica         |   Dato da esami   |    ap_lo    |                                   int                                    |
-|                  Colesterolo                   |   Dato da esami   | cholesterol | 1: normale, 2: al di sopra del normale, 3: molto al di sopra del normale |
-|                    Glucosio                    |   Dato da esami   |    gluc     | 1: normale, 2: al di sopra del normale, 3: molto al di sopra del normale |
-|                    Fumatore                    |  Dato soggettivo  |    smoke    |                                 binario                                  |
-|              Assunzione di alcol               |  Dato soggettivo  |    alco     |                                 binario                                  |
-|                Attività fisica                 |  Dato soggettivo  |   active    |                                 binario                                  |
-| Presenza o assenza di malattie cardiovascolari | Variabile target  |   cardio    |                                 binario                                  |
+|                 Caratteristica                 | Tipo Di Variabile |   Variabile   |                              Tipo Di Valore                              |
+|:----------------------------------------------:|:-----------------:|:-------------:|:------------------------------------------------------------------------:|
+|                      Età                       |  Dato oggettivo   |     `age`     |                               int (giorni)                               |
+|                    Altezza                     |  Dato oggettivo   |   `height`    |                                 int (cm)                                 |
+|                      Peso                      |  Dato oggettivo   |   `weight`    |                                float (kg)                                |
+|                     Genere                     |  Dato oggettivo   |   `gender`    |                           codice di categoria                            |
+|              Pressione sistolica               |   Dato da esami   |    `ap_hi`    |                                   int                                    |
+|         Pressione sanguigna diastolica         |   Dato da esami   |    `ap_lo`    |                                   int                                    |
+|                  Colesterolo                   |   Dato da esami   | `cholesterol` | 1: normale, 2: al di sopra del normale, 3: molto al di sopra del normale |
+|                    Glucosio                    |   Dato da esami   |    `gluc`     | 1: normale, 2: al di sopra del normale, 3: molto al di sopra del normale |
+|                    Fumatore                    |  Dato soggettivo  |    `smoke`    |                                 binario                                  |
+|              Assunzione di alcol               |  Dato soggettivo  |    `alco`     |                                 binario                                  |
+|                Attività fisica                 |  Dato soggettivo  |   `active`    |                                 binario                                  |
+| Presenza o assenza di malattie cardiovascolari | Variabile target  |   `cardio`    |                                 binario                                  |
 
 ## Compiti
 
