@@ -152,6 +152,9 @@ We also have 4 legacy certifications dating back to our 2015 curriculum, which a
 - Legacy Data Visualization Certification
 - Legacy Back End Development Certification
 - Legacy Information Security and Quality Assurance Certification
+  <br />
+  <br />
+  **Projects**: [Build a Tribute Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page),[Build a Survey Form](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form),[Build a Product Landing Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page),[Build a Technical Documentation Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page),[Build a Personal Portfolio WebPage](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
 
 ### The Learning Platform
 
