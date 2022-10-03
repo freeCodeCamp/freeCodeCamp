@@ -278,7 +278,7 @@ function largeSum(arr) {
 
   sum = sum.toString(10);
 
-  sum = sum.substr(0, 1) + sum.substr(2);
+  sum = sum.substring(0, 1) + sum.substring(2);
 
   let firstTen = sum.slice(0, 10);
   return parseInt(firstTen, 10);
