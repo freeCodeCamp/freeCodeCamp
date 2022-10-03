@@ -44,10 +44,9 @@ assert(
 assert.deepStrictEqual(rangeOfNumbers(1, 5), [1, 2, 3, 4, 5]);
 ```
 
-`rangeOfNumbers(6, 9)` should return `[6, 7, 8, 9]` and not abuse the global space.
+`rangeOfNumbers(6, 9)` should return `[6, 7, 8, 9]`.
 
 ```js
-rangeOfNumbers(1, 3)
 assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
 ```
 
@@ -55,6 +54,13 @@ assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
 
 ```js
 assert.deepStrictEqual(rangeOfNumbers(4, 4), [4]);
+```
+
+Global variables should not be used to cache the array.
+
+```js
+rangeOfNumbers(1, 3)
+assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
 ```
 
 # --seed--

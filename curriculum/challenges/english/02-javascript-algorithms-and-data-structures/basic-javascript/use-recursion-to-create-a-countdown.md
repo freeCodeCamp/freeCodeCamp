@@ -49,10 +49,9 @@ assert.isEmpty(countdown(-1));
 assert.deepStrictEqual(countdown(10), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
 ```
 
-`countdown(5)` should return `[5, 4, 3, 2, 1]` and not abuse the global space
+`countdown(5)` should return `[5, 4, 3, 2, 1]`
 
 ```js
-countdown(1)
 assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
 ```
 
@@ -70,6 +69,13 @@ You should use recursion to solve this problem.
 assert(
   countdown.toString().match(/countdown\s*\(.+\)/)
 );
+```
+
+Global variables should not be used to cache the array.
+
+```js
+countdown(1)
+assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
 ```
 
 # --seed--
