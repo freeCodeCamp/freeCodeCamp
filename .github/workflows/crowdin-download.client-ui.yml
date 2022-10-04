@@ -243,12 +243,7 @@ jobs:
       # writes.
       - name: Format JSON
         run: |
-          pwd
-          whoami
-          groups $(whoami)
-          ls -l client/i18n
-          ls -l client/i18n/locales
-          ls -l client/i18n/locales/chinese
+          sudo chown -R $(whoami): client/i18n/locales
           npx --yes prettier --write client/i18n/locales/**/*.json
 
       # Create Commit
