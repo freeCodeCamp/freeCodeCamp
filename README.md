@@ -6,6 +6,7 @@
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 [![Discord](https://img.shields.io/discord/692816967895220344)](https://discord.gg/PRyKn3Vbay)
 [![i18n - Build Validation](https://github.com/KOSASIH/freeCodeCamp/actions/workflows/i18n-builds.yml/badge.svg)](https://github.com/KOSASIH/freeCodeCamp/actions/workflows/i18n-builds.yml)
+[![CI - Run CodeQL Analysis](https://github.com/KOSASIH/freeCodeCamp/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/KOSASIH/freeCodeCamp/actions/workflows/codeql-analysis.yml)
 
 ## freeCodeCamp.org's open-source codebase and curriculum
 
