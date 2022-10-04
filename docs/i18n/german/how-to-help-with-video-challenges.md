@@ -67,11 +67,11 @@ Du findest die Markdown-Dateien für die Videoaufgaben auf den folgenden Seiten 
 
 Wähle eine Aufgaben-Markdown-Datei aus den obigen Optionen aus.
 
-### Überfliege das Video, das mit der Aufgabe verbunden ist, und erstelle eine Multiple-Choice-Frage.
+### Skim through the video associated with the challenge and create a multiple-choice question
 
-Finde zunächst die videoId.
+First, find the `videoId`.
 
-Im folgenden Code aus dem Header einer Videoaufgaben-Markdown-Datei lautet die videoId zum Beispiel "nVAaxZ34khk". Auf GitHub sollten die Informationen in einem Tabellenformat dargestellt werden.
+For example, in the following code from the header of a video challenge markdown file, the `videoId` is "nVAaxZ34khk". Auf GitHub sollten die Informationen in einem Tabellenformat dargestellt werden.
 
 ````
 ---
@@ -80,12 +80,12 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Als Nächstes rufst du das YouTube-Video mit dieser Video-ID auf. Die URL für das Video lautet dann:
-https://www.youtube.com/watch?v=[videoId] (ersetze `videoId` in der URL durch die ID des Videos - ohne eckige Klammern)
+Als Nächstes rufst du das YouTube-Video mit dieser Video-ID auf. The URL for the video will be:
+https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
 
-Im obigen Beispiel lautet die URL https://www.youtube.com/watch?v=nVAaxZ34khk
+In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Überfliege das YouTube-Video mit dieser videoId und überlege dir eine Multiple-Choice-Frage, die auf dem Inhalt des Videos basiert.
+Skim the YouTube video with that `videoId` and think of a multiple-choice question based on the content of the video.
 
 ### Füge die Frage zur Markdown-Datei hinzu.
 
