@@ -50,6 +50,7 @@
     "reset-lesson": "Reset this lesson",
     "run": "Run",
     "run-test": "Run the Tests (Ctrl + Enter)",
+    "run-test-2": "Run the Tests",
     "check-code": "Check Your Code (Ctrl + Enter)",
     "check-code-2": "Check Your Code",
     "reset": "Reset",
