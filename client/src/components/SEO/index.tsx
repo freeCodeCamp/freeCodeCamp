@@ -90,6 +90,7 @@ export const query = graphql`
   query SEO {
     site {
       siteMetadata {
+        title
         siteUrl
       }
     }
