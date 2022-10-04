@@ -238,11 +238,18 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-      # Format JSON
+      ###### Format JSON #####
+      # Crowdin gives the files read-only permissions, so we first have to allow
+      # writes.
       - name: Format JSON
         run: |
-          npm ci
-          npx prettier --write client/i18n/locales/**/*.json
+          pwd
+          whoami
+          groups $(whoami)
+          ls -l client/i18n
+          ls -l client/i18n/locales
+          ls -l client/i18n/locales/chinese
+          npx --yes prettier --write client/i18n/locales/**/*.json
 
       # Create Commit
       - name: Commit Changes
