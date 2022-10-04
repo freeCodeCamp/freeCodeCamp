@@ -517,7 +517,7 @@ npm run develop
 
 ショートカットを使用することもできます。
 
-```
+```console
 npm run clean-and-develop
 ```
 
@@ -525,7 +525,7 @@ npm run clean-and-develop
 
 対話モードで `git clean` を使用してください。
 
-```
+```console
 git clean -ifdX
 ```
 
