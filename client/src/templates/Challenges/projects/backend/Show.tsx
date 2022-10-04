@@ -219,7 +219,7 @@ class BackEnd extends Component<BackEndProps> {
 
     const isChallengeComplete = tests.every(test => test.pass && !test.err);
     const submitBtnLabel: string = !isChallengeComplete
-      ? `${t('buttons.run-test')}${testsRunning ? ' ...' : ''}`
+      ? `${t('buttons.run-test-2')}${testsRunning ? ' ...' : ''}`
       : t('buttons.submit-and-go');
 
     const blockNameTitle = `${t(
