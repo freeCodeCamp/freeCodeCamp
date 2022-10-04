@@ -1,0 +1,23 @@
+{
+  "entryFiles": [
+    "client/gatsby-*.js",
+    "client/src/pages/*.tsx",
+    "client/src/templates/Challenges/**/{s,S}how.tsx",
+    "client/src/templates/Introduction/**/{intro,super-block-intro}.tsx"
+  ],
+  "filePatterns": [
+    "client/**/*.{js,ts,tsx}",
+    "!client/static/misc/*.js",
+    "!client/i18n/schema-validation.ts",
+    "!client/plugins/**",
+    "!client/postcss.config.js",
+    "!client/src/client/frame-runner.ts",
+    "!client/src/client/workers/**",
+    "!client/webpack-workers.js",
+    "!**/*.test.{js,ts,tsx}",
+    "!**/i18n/config-for-tests.ts",
+    "!**/__mocks__/**",
+    "!**/__fixtures/**",
+    "!**/node_modules/**"
+  ]
+}
