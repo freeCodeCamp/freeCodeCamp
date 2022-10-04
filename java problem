@@ -1,0 +1,1 @@
+Create a program calledDetermineAge that asks for the last two digits of the year in which a Peel student was born (for example,89 for 1989) and the last two digits of the current year (for example, 06 for 2006).  It should then calculate the student’s age.  The program must also work for those born after the year 2000.
