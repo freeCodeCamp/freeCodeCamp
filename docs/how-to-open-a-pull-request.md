@@ -55,7 +55,7 @@ Some examples of good PR titles would be:
 1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
    <details>
-   <summary>See a screenshot</summary>
+   <summary>See screenshot</summary>
 
    ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
@@ -66,7 +66,7 @@ Some examples of good PR titles would be:
    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
    <details>
-   <summary>See a screenshot</summary>
+   <summary>See screenshot</summary>
 
    ![Image - Comparing forks when making a pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
