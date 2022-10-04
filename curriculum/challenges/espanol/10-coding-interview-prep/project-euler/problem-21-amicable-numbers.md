@@ -1,48 +1,48 @@
 ---
 id: 5900f3811000cf542c50fe94
-title: 'Problem 21: Amicable numbers'
-challengeType: 5
+title: 'Problema 21: Número amigos'
+challengeType: 1
 forumTopicId: 301851
 dashedName: problem-21-amicable-numbers
 ---
 
 # --description--
 
-Let d(`n`) be defined as the sum of proper divisors of `n` (numbers less than `n` which divide evenly into `n`).
+Se define d(`n`) como la suma de los divisores propios de `n` (números menores que `n` los cuales dividen de forma exacta a `n`).
 
-If d(`a`) = `b` and d(`b`) = `a`, where `a` ≠ `b`, then `a` and `b` are an amicable pair and each of `a` and `b` are called amicable numbers.
+Si d(`a`) = `b` y d(`b`) = `a`, donde `a` ≠ `b`, entonces `a` y `b` forman un par de números amigos, siendo `a` y `b` números amigos.
 
-For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
+Por ejemplo, los divisores propios de 220 son 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 y 110; por tanto d(220) = 284. Los divisores propios de 284 son 1, 2, 4, 71 y 142; así pues d(284) = 220.
 
-Evaluate the sum of all the amicable numbers under `n`.
+Evalúa la suma de todos los números amigos por debajo de `n`.
 
 # --hints--
 
-`sumAmicableNum(1000)` should return a number.
+`sumAmicableNum(1000)` debe devolver un número.
 
 ```js
 assert(typeof sumAmicableNum(1000) === 'number');
 ```
 
-`sumAmicableNum(1000)` should return 504.
+`sumAmicableNum(1000)` debe devolver 504.
 
 ```js
 assert.strictEqual(sumAmicableNum(1000), 504);
 ```
 
-`sumAmicableNum(2000)` should return 2898.
+`sumAmicableNum(2000)` debe devolver 2898.
 
 ```js
 assert.strictEqual(sumAmicableNum(2000), 2898);
 ```
 
-`sumAmicableNum(5000)` should return 8442.
+`sumAmicableNum(5000)` debe devolver 8442.
 
 ```js
 assert.strictEqual(sumAmicableNum(5000), 8442);
 ```
 
-`sumAmicableNum(10000)` should return 31626.
+`sumAmicableNum(10000)` debe devolver 31626.
 
 ```js
 assert.strictEqual(sumAmicableNum(10000), 31626);
