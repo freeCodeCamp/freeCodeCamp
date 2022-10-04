@@ -5,7 +5,7 @@ import {
   ChallengeFile as PropTypesChallengeFile,
   ChallengeMeta
 } from '../../../redux/prop-types';
-import { concatHtml } from '../rechallenge/builders.js';
+import { concatHtml } from '../rechallenge/builders';
 import { getTransformers, embedFilesInHtml } from '../rechallenge/transformers';
 import {
   createTestFramer,
@@ -19,15 +19,17 @@ import {
 } from './frame';
 import createWorker from './worker-executor';
 
+export interface ConcatHTMLOptions {
+  required: { src: string; link?: string }[];
+  template?: string;
+  contents?: string;
+}
+
 const _concatHtml = ({
   required,
   template,
   contents
-}: {
-  required: { src: string }[];
-  template?: string;
-  contents?: string;
-}): string => {
+}: ConcatHTMLOptions): string => {
   return concatHtml({ required, template, contents });
 };
 
