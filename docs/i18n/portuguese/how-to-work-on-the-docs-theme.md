@@ -75,4 +75,4 @@ npm run docs:serve
 npm run develop
 ```
 
-> The documentation site should be available at <http://localhost:3400>
+> O site da documentação deve estar disponível em <http://localhost:3400>
