@@ -243,7 +243,7 @@ jobs:
       # writes.
       - name: Format JSON
         run: |
-          chmod 664 client/i18n/locales/**/*.json
+          sudo chmod 664 client/i18n/locales/**/*.json
           npx --yes prettier --write client/i18n/locales/**/*.json
 
       # Create Commit
