@@ -20,6 +20,8 @@ We learned this in the previous challenge.
 
 *Note that the backslash itself must be escaped in order to display as a backslash.*
 
+*Carriage return `\r` and newline `\n` are defined separately according to the ASCII standard, which was originally developed for teleprinters. On a teleprinter, the carriage return would move the print head back to the start position, while newline would advance the paper reel by one line. In Javascript, to advance to the next line of a string, it is convention to use newline `\n`.*
+
 # --instructions--
 
 Assign the following three lines of text into the single variable `myStr` using escape sequences.
