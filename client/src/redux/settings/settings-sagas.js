@@ -1,61 +1,61 @@
 import { omit } from 'lodash-es';
 import {
   call,
+  debounce,
   put,
   select,
-  takeLatest,
   takeEvery,
-  debounce
+  takeLatest
 } from 'redux-saga/effects';
 import store from 'store';
 
+import {
+  certTypeIdMap,
+  certTypes
+} from '../../../../config/certification-settings';
 import { createFlashMessage } from '../../components/Flash/redux';
+import { certMap } from '../../resources/cert-and-project-map';
 import {
   getUsernameExists,
   putUpdateMyAbout,
-  putUpdateMyProfileUI,
-  putUpdateMyUsername,
-  putUpdateMySocials,
   putUpdateMyHonesty,
-  putUpdateMyQuincyEmail,
-  putVerifyCert,
+  putUpdateMyKeyboardShortcuts,
   putUpdateMyPortfolio,
-  putUpdateMyTheme,
+  putUpdateMyProfileUI,
+  putUpdateMyQuincyEmail,
+  putUpdateMySocials,
   putUpdateMySound,
-  putUpdateMyKeyboardShortcuts
+  putUpdateMyTheme,
+  putUpdateMyUsername,
+  putVerifyCert
 } from '../../utils/ajax';
-import { certMap } from '../../resources/cert-and-project-map';
-import { completedChallengesSelector } from '..';
+import { completedChallengesSelector } from '../selectors';
 import {
-  certTypes,
-  certTypeIdMap
-} from '../../../../config/certification-settings';
-import {
-  validateUsernameComplete,
-  validateUsernameError,
   submitNewAboutComplete,
   submitNewAboutError,
   submitNewUsernameComplete,
   submitNewUsernameError,
   submitProfileUIComplete,
   submitProfileUIError,
-  verifyCertComplete,
-  verifyCertError,
-  updateMySocialsComplete,
-  updateMySocialsError,
-  updateMyHonestyError,
   updateMyHonestyComplete,
+  updateMyHonestyError,
+  updateMyKeyboardShortcutsComplete,
+  updateMyKeyboardShortcutsError,
+  updateMyPortfolioComplete,
+  updateMyPortfolioError,
   updateMyQuincyEmailComplete,
   updateMyQuincyEmailError,
-  updateMyPortfolioError,
-  updateMyPortfolioComplete,
-  updateMyThemeComplete,
-  updateMyThemeError,
+  updateMySocialsComplete,
+  updateMySocialsError,
   updateMySoundComplete,
   updateMySoundError,
-  updateMyKeyboardShortcutsComplete,
-  updateMyKeyboardShortcutsError
-} from './';
+  updateMyThemeComplete,
+  updateMyThemeError,
+  validateUsernameComplete,
+  validateUsernameError,
+  verifyCertComplete,
+  verifyCertError
+} from './actions';
 
 function* submitNewAboutSaga({ payload }) {
   try {

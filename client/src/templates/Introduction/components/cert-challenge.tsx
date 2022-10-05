@@ -12,12 +12,12 @@ import {
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
-  userFetchStateSelector,
   isSignedInSelector,
+  userFetchStateSelector,
   currentCertsSelector
-} from '../../../redux';
+} from '../../../redux/selectors';
 import { User, Steps } from '../../../redux/prop-types';
-import { verifyCert } from '../../../redux/settings';
+import { verifyCert } from '../../../redux/settings/actions';
 import { certMap } from '../../../resources/cert-and-project-map';
 
 interface CertChallengeProps {

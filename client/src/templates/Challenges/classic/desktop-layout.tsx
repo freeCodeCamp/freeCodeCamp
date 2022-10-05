@@ -14,7 +14,6 @@ import ActionRow from './action-row';
 type Pane = { flex: number };
 
 interface DesktopLayoutProps {
-  block: string;
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
@@ -33,7 +32,6 @@ interface DesktopLayoutProps {
   notes: ReactElement;
   preview: ReactElement;
   resizeProps: ResizeProps;
-  superBlock: string;
   testOutput: ReactElement;
   windowTitle: string;
 }
@@ -83,7 +81,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   };
 
   const {
-    block,
     challengeType,
     resizeProps,
     instructions,
@@ -95,7 +92,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     notes,
     preview,
     hasEditableBoundaries,
-    superBlock,
     windowTitle
   } = props;
 
@@ -121,7 +117,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     <div className='desktop-layout'>
       {(projectBasedChallenge || isMultifileCertProject) && (
         <ActionRow
-          block={block}
           hasNotes={hasNotes}
           isProjectBasedChallenge={projectBasedChallenge}
           showConsole={showConsole}
@@ -129,7 +124,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showInstructions={showInstructions}
           showPreviewPane={showPreviewPane}
           showPreviewPortal={showPreviewPortal}
-          superBlock={superBlock}
           togglePane={togglePane}
         />
       )}

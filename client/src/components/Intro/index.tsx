@@ -39,7 +39,7 @@ const Intro = ({
     return (
       <>
         <Spacer />
-        <h1 className='text-center '>
+        <h1 className='text-center'>
           {name
             ? `${t('learn.welcome-1', { name: name })}`
             : `${t('learn.welcome-2')}`}

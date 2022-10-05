@@ -1,6 +1,6 @@
 const selectors = {
   defaultOutput: '.output-text',
-  editor: 'div.monaco-editor textarea',
+  editor: 'div.monaco-editor',
   hotkeys: '.default-layout > div',
   runTestsButton: 'button:contains("Run the Tests")'
 };
@@ -51,11 +51,7 @@ describe('Classic challenge', function () {
   });
 
   it('shows test output when the tests are triggered by the keyboard', () => {
-    // first wait for the editor to load
-    cy.get(selectors.editor, {
-      timeout: 15000
-    })
-      .focus()
+    focusEditor()
       .type('{ctrl}{enter}')
       .then(() => {
         cy.get(selectors.defaultOutput)
@@ -90,38 +86,33 @@ describe('jQuery challenge', function () {
 describe('Custom output for JavaScript objects', function () {
   beforeEach(() => {
     cy.visit(locations.js);
-    cy.get(selectors.editor, {
-      timeout: 15000
-    })
-      .first()
-      .click()
-      .focused()
-      .type('{ctrl}a')
-      .clear();
+    focusEditor().type('{ctrl}a').clear();
   });
 
   it('Set object', () => {
-    cy.get(selectors.editor)
-      .first()
-      .click()
-      .focused()
-      .type(
-        'const set = new Set();{enter}set.add(1);{enter}set.add("set");{enter}set.add(10);{enter}console.log(set);'
-      );
+    focusEditor().type(
+      'const set = new Set();{enter}set.add(1);{enter}set.add("set");{enter}set.add(10);{enter}console.log(set);'
+    );
     cy.get(selectors.defaultOutput).should('contain', 'Set(3) {1, set, 10}');
   });
 
   it('Map object', () => {
-    cy.get(selectors.editor)
-      .first()
-      .click()
-      .focused()
-      .type(
-        'const map = new Map();{enter}map.set("first", 1);{enter}map.set("second", 2);{enter}map.set("other", "map");{enter}console.log(map);'
-      );
+    focusEditor().type(
+      'const map = new Map();{enter}map.set("first", 1);{enter}map.set("second", 2);{enter}map.set("other", "map");{enter}console.log(map);'
+    );
     cy.get(selectors.defaultOutput).should(
       'contain',
       'Map(3) {first => 1, second => 2, other => map})'
     );
   });
 });
+
+function focusEditor() {
+  return cy
+    .get(selectors.editor, {
+      timeout: 15000 // first wait for the editor to load
+    })
+    .first()
+    .click()
+    .focused();
+}
