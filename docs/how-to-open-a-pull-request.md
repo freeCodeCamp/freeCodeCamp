@@ -6,10 +6,11 @@ We expect our contributors to be aware of the process specific to this project. 
 
 Some examples of this are:
 
-1. Do not edit off of GitHub–while you can, it's not a good idea.
+1. Do not edit files directly through GitHub – while you can, it's not a good idea.
 2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
-3. Use the correct way to link PRs in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
+3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
 4. Use mentions in comments or review requests to a minimum or not. We understand you are excited about contributing, and our maintainers will get back to you as soon as they get a chance.
+5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
 
 > [!NOTE]
 > Your PR should be targeting changes to the curriculum in English only. Read [this guide](index.md#translations) instead for contributing to translations.
