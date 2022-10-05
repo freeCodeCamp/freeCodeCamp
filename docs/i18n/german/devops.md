@@ -459,7 +459,7 @@ Bereitstellung von VMs mit dem Code
 7. Errichte den Server.
 
    ```console
-   npm run create:config && npm run build:curriculum && npm run build:server
+   npm run prebuild && npm run build:curriculum && npm run build:server
    ```
 
 8. Starte Instanzen
