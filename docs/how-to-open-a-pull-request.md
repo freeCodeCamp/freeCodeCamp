@@ -13,7 +13,7 @@ Some examples of this are:
 5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
 
 > [!NOTE]
-> Your PR should be targeting changes to the curriculum in English only. Read [this guide](index.md#translations) instead for contributing to translations.
+> Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
 
 ## Prepare a good PR title
 
