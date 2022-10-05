@@ -459,7 +459,7 @@ Fare il provisioning delle VM con il codice
 7. Fai il build del server
 
    ```console
-   npm run create:config && npm run build:curriculum && npm run build:server
+   npm run prebuild && npm run build:curriculum && npm run build:server
    ```
 
 8. Avvia le istanze
