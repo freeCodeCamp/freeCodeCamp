@@ -6,6 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+actix-identity = "0.5.2"
+actix-session = { version = "0.7", features = ["cookie-session"] }
 actix-web = "4"
 dotenv = "0.15.0"
 fcc = { path = "../fcc" }

@@ -10,9 +10,9 @@ use actix_web::{
 // use fcc::models::challenge_model::CompletedChallenge;
 use futures_util::future::LocalBoxFuture;
 
-pub struct Send200ToNonUser;
+pub struct RequestAuthorization;
 
-impl<S: 'static, B> Transform<S, ServiceRequest> for Send200ToNonUser
+impl<S: 'static, B> Transform<S, ServiceRequest> for RequestAuthorization
 where
     S: Service<ServiceRequest, Response = ServiceResponse<B>, Error = Error>,
     S::Future: 'static,
@@ -21,22 +21,22 @@ where
     type Response = ServiceResponse<B>;
     type Error = Error;
     type InitError = ();
-    type Transform = Send200ToNonUserMiddleware<S>;
+    type Transform = RequestAuthorizationMiddleware<S>;
     type Future = Ready<Result<Self::Transform, Self::InitError>>;
 
     fn new_transform(&self, service: S) -> Self::Future {
-        ready(Ok(Send200ToNonUserMiddleware {
+        ready(Ok(RequestAuthorizationMiddleware {
             service: Rc::new(service),
         }))
     }
 }
 
-pub struct Send200ToNonUserMiddleware<S> {
+pub struct RequestAuthorizationMiddleware<S> {
     // This is special: We need this to avoid lifetime issues.
     service: Rc<S>,
 }
 
-impl<S, B> Service<ServiceRequest> for Send200ToNonUserMiddleware<S>
+impl<S, B> Service<ServiceRequest> for RequestAuthorizationMiddleware<S>
 where
     S: Service<ServiceRequest, Response = ServiceResponse<B>, Error = Error> + 'static,
     S::Future: 'static,

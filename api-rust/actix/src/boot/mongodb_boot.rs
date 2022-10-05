@@ -40,4 +40,21 @@ impl MongoWrapper {
             Err(DbError::ConnectionFailure)
         }
     }
+
+    pub async fn get_user_by_id(&self, id: &str) -> Result<User, DbError> {
+        let filter = doc! { "_id": id };
+        if let Ok(query) = self
+            .get_collection(DB_NAME, USER)
+            .find_one(filter, None)
+            .await
+        {
+            if let Some(user_detail) = query {
+                Ok(user_detail)
+            } else {
+                Err(DbError::UserNotFound)
+            }
+        } else {
+            Err(DbError::ConnectionFailure)
+        }
+    }
 }
