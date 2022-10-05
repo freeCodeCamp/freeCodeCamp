@@ -13,7 +13,7 @@ Zufallszahlen sind nützlich, um zufälliges Verhalten zu erzeugen.
 
 JavaScript hat eine Funktion `Math.random()`, die eine zufällige Dezimalzahl zwischen `0` (einschließlich) und `1` (ausschließlich) erzeugt. So kann `Math.random()` eine `0` zurückgeben, aber niemals eine `1`.
 
-**Hinweis:** Wie bei <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">Speichern von Werten mit dem Zuweisungsoperator</a> werden alle Funktionsaufrufe aufgelöst, bevor `return` ausgeführt wird, sodass wir den Wert der `Math.random()`-Funktion mittels `return` zurückgeben können.
+**Hinweis:** Wie bei <a href="https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">Speichern von Werten mit dem Zuweisungsoperator</a> werden alle Funktionsaufrufe aufgelöst, bevor `return` ausgeführt wird, sodass wir den Wert der `Math.random()`-Funktion mittels `return` zurückgeben können.
 
 # --instructions--
 

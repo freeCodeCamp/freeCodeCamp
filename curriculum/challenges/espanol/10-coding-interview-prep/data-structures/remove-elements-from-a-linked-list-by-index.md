@@ -14,7 +14,7 @@ Escribamos un método `removeAt` que elimine el `element` en un `index` dado. El
 
 Una técnica común utilizada para iterar a través de los elementos de una lista enlazada involucra un <dfn>'runner'</dfn>, o centinel, que 'puntos' en los nodos que está comparando el código. En nuestro caso, comenzando en el `head` de nuestra lista, comenzamos con una variable `currentIndex` que comienza en `0`. El `currentIndex` debería incrementarse por uno para cada nodo que pasamos.
 
-Al igual que con el método `remove(element)`, que ya <a href="/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list" target="_blank" rel="noopener noreferrer nofollow">expusimos en una lección previa</a>, hay que llevar cuidado de no dejar huérfano el resto de la lista cuando eliminamos un nodo con el método `removeAt(index)`. Mantenemos nuestros nodos contiguos asegurándonos de que el nodo que tiene referencia al nodo eliminado tenga una referencia al siguiente nodo.
+Al igual que con el método `remove(element)`, que ya <a href="https://platform-ui.topcoder.com/learn/freeCodeCamp/coding-interview-prep/data-structures/remove-elements-from-a-linked-list" target="_blank" rel="noopener noreferrer nofollow">expusimos en una lección previa</a>, hay que llevar cuidado de no dejar huérfano el resto de la lista cuando eliminamos un nodo con el método `removeAt(index)`. Mantenemos nuestros nodos contiguos asegurándonos de que el nodo que tiene referencia al nodo eliminado tenga una referencia al siguiente nodo.
 
 # --instructions--
 

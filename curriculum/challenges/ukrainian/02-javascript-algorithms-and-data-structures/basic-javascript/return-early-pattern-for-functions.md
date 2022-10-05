@@ -29,7 +29,7 @@ myFun();
 Модифікуйте функцію `abTest` і тому, якщо `a` або `b` дорівнюватиме менше `0`, функція відразу вийде зі значенням `undefined`.
 
 **Підказка**  
-Пам'ятайте, що [`undefined` - це ключове слово](https://platform-ui.topcoder.com/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), а не рядок.
+Пам'ятайте, що [`undefined` - це ключове слово](https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), а не рядок.
 
 # --hints--
 

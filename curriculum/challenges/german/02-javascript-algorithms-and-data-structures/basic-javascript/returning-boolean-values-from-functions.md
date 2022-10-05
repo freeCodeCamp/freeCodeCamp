@@ -9,7 +9,7 @@ dashedName: returning-boolean-values-from-functions
 
 # --description--
 
-Du erinnerst dich vielleicht aus dem <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener noreferrer nofollow">Vergleich mit dem Gleichheitsoperator</a> daran, dass alle Vergleichsoperatoren einen booleschen `true` oder `false` Wert zurückgeben.
+Du erinnerst dich vielleicht aus dem <a href="https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener noreferrer nofollow">Vergleich mit dem Gleichheitsoperator</a> daran, dass alle Vergleichsoperatoren einen booleschen `true` oder `false` Wert zurückgeben.
 
 Manchmal wird eine `if/else`-Anweisung verwendet, um einen Vergleich durchzuführen, wie hier:
 

@@ -8,7 +8,7 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-如果你不熟悉 `const`，请查看[这个挑战](/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword)。
+如果你不熟悉 `const`，请查看[这个挑战](https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword)。
 
 `const` 声明在现代 JavaScript 中有很多用例。
 
