@@ -18,8 +18,8 @@ import {
   LangCodes,
   hiddenLangs
 } from '../../../../../config/i18n/all-langs';
-import { hardGoTo as navigate } from '../../../redux';
-import { updateMyTheme } from '../../../redux/settings';
+import { hardGoTo as navigate } from '../../../redux/actions';
+import { updateMyTheme } from '../../../redux/settings/actions';
 import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
 import { Themes } from '../../settings/theme';

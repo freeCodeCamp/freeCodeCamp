@@ -14,15 +14,17 @@ import robotoRegularURL from '../../../static/fonts/roboto-mono/RobotoMono-Regul
 import { isBrowser } from '../../../utils';
 import {
   fetchUser,
-  isSignedInSelector,
   onlineStatusChange,
   serverStatusChange,
+  executeGA
+} from '../../redux/actions';
+import {
+  isSignedInSelector,
+  userSelector,
   isOnlineSelector,
   isServerOnlineSelector,
-  userFetchStateSelector,
-  userSelector,
-  executeGA
-} from '../../redux';
+  userFetchStateSelector
+} from '../../redux/selectors';
 import { UserFetchState, User } from '../../redux/prop-types';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';

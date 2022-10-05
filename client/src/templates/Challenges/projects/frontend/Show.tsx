@@ -18,11 +18,11 @@ import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/help-modal';
 import {
   challengeMounted,
-  isChallengeCompletedSelector,
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues
-} from '../../redux';
+} from '../../redux/actions';
+import { isChallengeCompletedSelector } from '../../redux/selectors';
 import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';

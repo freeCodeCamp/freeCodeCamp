@@ -1,19 +1,21 @@
-import { call, takeEvery, put, select } from 'redux-saga/effects';
-import { postSaveChallenge, mapFilesToChallengeFiles } from '../utils/ajax';
+import { call, put, select, takeEvery } from 'redux-saga/effects';
+
+import { challengeTypes } from '../../utils/challenge-types';
+import { createFlashMessage } from '../components/Flash/redux';
+import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import {
   challengeDataSelector,
   challengeMetaSelector
-} from '../templates/Challenges/redux';
-import { createFlashMessage } from '../components/Flash/redux';
-import { challengeTypes } from '../../utils/challenge-types';
-import { FlashMessages } from '../components/Flash/redux/flash-messages';
+} from '../templates/Challenges/redux/selectors';
+import { mapFilesToChallengeFiles, postSaveChallenge } from '../utils/ajax';
 import {
-  standardizeRequestBody,
-  getStringSizeInBytes,
   bodySizeFits,
-  MAX_BODY_SIZE
+  getStringSizeInBytes,
+  MAX_BODY_SIZE,
+  standardizeRequestBody
 } from '../utils/challenge-request-helpers';
-import { saveChallengeComplete, savedChallengesSelector } from './';
+import { saveChallengeComplete } from './actions';
+import { savedChallengesSelector } from './selectors';
 
 export function* saveChallengeSaga() {
   const { id, challengeType } = yield select(challengeMetaSelector);

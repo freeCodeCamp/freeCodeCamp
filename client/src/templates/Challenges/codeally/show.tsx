@@ -19,22 +19,21 @@ import CompletionModal from '../components/completion-modal';
 import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/Hotkeys';
+import { hideCodeAlly, tryToShowCodeAlly } from '../../../redux/actions';
 import {
   completedChallengesSelector,
-  isSignedInSelector,
-  hideCodeAlly,
   partiallyCompletedChallengesSelector,
   showCodeAllySelector,
-  tryToShowCodeAlly,
+  isSignedInSelector,
   userTokenSelector
-} from '../../../redux';
+} from '../../../redux/selectors';
 import {
   challengeMounted,
-  isChallengeCompletedSelector,
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues
-} from '../redux';
+} from '../redux/actions';
+import { isChallengeCompletedSelector } from '../redux/selectors';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import {
   ChallengeNode,
