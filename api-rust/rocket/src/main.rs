@@ -4,7 +4,6 @@ extern crate rocket;
 // Add modules to crate
 mod api;
 mod boot;
-mod models;
 
 use api::catchers::not_found;
 use api::routes::{challenges_completed, index};

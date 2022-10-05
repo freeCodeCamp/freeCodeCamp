@@ -4,7 +4,7 @@ use rocket_db_pools::mongodb::{self};
 use rocket_db_pools::{Connection, Database};
 use serde::{Deserialize, Serialize};
 
-use crate::models::user_model::User;
+use fcc::models::user_model::User;
 
 use super::{DB_NAME, USER};
 

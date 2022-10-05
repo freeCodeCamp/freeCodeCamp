@@ -1,10 +1,8 @@
+use fcc::models::{challenge_model::CompletedChallenge, user_model::User};
 use rocket::serde::json::Json;
 use rocket_db_pools::Connection;
 
-use crate::{
-    boot::mongodb_boot::{MongoBoot, MongoWrapper},
-    models::{challenge_model::CompletedChallenge, user_model::User},
-};
+use crate::boot::mongodb_boot::{MongoBoot, MongoWrapper};
 
 #[get("/")]
 pub fn index() -> &'static str {
