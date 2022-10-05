@@ -1,13 +1,13 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 
 import { getSessionUser, getUserProfile } from '../utils/ajax';
-import { jwt } from './cookieValues';
 import {
-  fetchUserComplete,
-  fetchUserError,
+  fetchProfileForUserComplete,
   fetchProfileForUserError,
-  fetchProfileForUserComplete
-} from './';
+  fetchUserComplete,
+  fetchUserError
+} from './actions';
+import { jwt } from './cookieValues';
 
 function* fetchSessionUser() {
   if (!jwt) {
