@@ -203,6 +203,8 @@ npm ci
 ローカルでアプリケーションを実行できるようにする前に、MongoDB サービスを開始する必要があります。
 
 > [!NOTE] デフォルトと異なった設定で MongoDB を動作させない限りは、`.env` ファイル内に `MONGOHQ_URL` の値として格納された URL はうまく機能するはずです。 カスタム設定を使用している場合は、必要に応じてこの値を変更します。
+> 
+> If you followed along with the [Windows 10 via WSL2 Setup Guide](how-to-setup-wsl.md), then you should be able to skip this step if the MongoDB server from that guide is already running. You can confirm this by checking that you can reach `http://localhost:27017` on your local machine.
 
 別のターミナルで MongoDB サーバーを起動します。
 

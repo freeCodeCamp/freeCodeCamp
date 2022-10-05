@@ -65,10 +65,6 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
     calendar,
     completedChallenges,
     githubProfile,
-    isLinkedIn,
-    isGithub,
-    isTwitter,
-    isWebsite,
     linkedin,
     twitter,
     website,
@@ -89,10 +85,6 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
         about={showAbout ? about : ''}
         githubProfile={githubProfile}
         isDonating={showDonation ? isDonating : false}
-        isGithub={isGithub}
-        isLinkedIn={isLinkedIn}
-        isTwitter={isTwitter}
-        isWebsite={isWebsite}
         joinDate={showAbout ? joinDate : ''}
         linkedin={linkedin}
         location={showLocation ? location : ''}

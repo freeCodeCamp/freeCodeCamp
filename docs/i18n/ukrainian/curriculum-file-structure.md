@@ -46,7 +46,7 @@ curriculum/
 1. У файлі `meta.json` тієї теки, змініть значення в `name`, `dashedName` і `challengeOrder` на нову назву.
 1. У `curriculum/challenges/english/12-certificate`, перейменуйте теку `{superBlock}-certificate` і файл YAML у ній.
 1. У файлі YAML, змініть `title` на нову назву.
-1. Rename the file and folder from step 3 for the rest of the curriculum languages.
+1. Перейменуйте файл та папку з кроку 3 для решти мов навчальної програми.
 1. Оновіть `client/src/redux/index.ts`, щоб використовувати правильний `title`.
 1. За бажанням оновіть і `certSlug` для суперблока в цьому ж файлі. **Зауважте**, що перейменування  `certSlug` змінить URL-адресу для сертифікатів, тому це слід робити обачно.
 1. Оновіть `title` в `client/src/resources/cert-and-project-map.ts` на нові значення. **Зверніть увагу**, що зміна `title` тут **зруйнує** сторінку superBlock для відповідної сертифікації. Це пов'язано із тим, що назва superBlock має відповідати назві сертифікації. Бажано одночасно змінити й назву суперблоку.
@@ -60,7 +60,7 @@ curriculum/
 
 > [!NOTE] Під час перейменування суперблоку, нове ім’я теки використовується як шлях і його слід вважати «вірним» ім’ям. Усі інші значення слід оновити, щоб показати цю зміну.
 
-Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all share a name. Виконайте наступні кроки, щоб перейменувати лише superBlock:
+Коли ви перейменовуєте суперблок, потрібно перейменувати сертифікат та блок `{superBlock}-projects`, оскільки вони мають спільну назву. Виконайте наступні кроки, щоб перейменувати лише superBlock:
 
 1. Перейменуйте теку superBlock у каталозі `curriculum/challenges/english`.
 1. Перейменуйте теку superBlock у _всіх_ інших каталогах `curriculum/challenges/{language}`.

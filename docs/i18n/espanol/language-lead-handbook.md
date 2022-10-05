@@ -16,7 +16,7 @@ El nivel "Administrador" está reservado para el personal de freeCodeCamp y los 
 
 ## Cómo mencionar al autor original de un artículo traducido
 
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
+El autor original y el artículo original están vinculados automáticamente agregando este código a la Inyección de Código -> sección principal en la Configuración de Borradores en Ghost.
 
 ```html
 <script>
@@ -26,9 +26,9 @@ The original author and the original article are linked automatically adding thi
 
 Con `link` siendo el enlace del artículo original.
 
-## How to update trending articles
+## Cómo actualizar artículos en tendencia
 
-> [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on google results.
+> [!TIP] Cambiar los artículos en el pie de la página al menos una vez al mes significaria darle un impulso a los artículos vinculados con los resultados de Google.
 
 Hay dos lugares en los que cambiar las tendencias de artículos.
 
@@ -277,3 +277,17 @@ Then, each target language has two columns. If you translate to Dothraki, you wi
 > [!TIP] In programs like Microsoft Excel you can hide the columns of the other languages to free up screen real-estate and see the English columns and the target language columns near each other.
 
 After you have made the changes and saved the file, you will need to make a PR with the proposed changes. After the PR is accepted, you will need to run the GitHub Action workflow to update the Crowdin Glossary. Your glossary changes will not have immediate effects, but they will come.
+
+## How to Promote a Contributor to Proofreader
+
+If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
+
+In Crowdin, individuate the `User management` on the left hand side menu.
+
+This will open the user management tools, you will be able to see the list of all the users.
+
+Search for the user that will become contributor. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+
+The user is now a proofreader.
+
+> [!TIP] The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.

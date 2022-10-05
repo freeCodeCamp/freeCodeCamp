@@ -176,20 +176,20 @@
         "title": "Impara CSS Grid creando una rivista",
         "intro": [
           "La griglia CSS ti dà il controllo sulle righe e le colonne della tua pagina web.",
-          "In questo corso, creerai un articolo della rivista. Imparerai come usare la griglia CSS, inclusi concetti come le righe della griglia e le colonne della griglia."
+          "In questo corso, creerai un articolo di una rivista. Imparerai come usare la griglia CSS, inclusi concetti come le righe della griglia e le colonne della griglia."
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
         "title": "Impara la Tipografia costruendo un'etichetta nutrizionale",
         "intro": [
-          "La tipografia è l'arte di stilare il testo per essere facilmente leggibile e soddisfarne lo scopo.",
-          "In questo corso, userai la tipografia per creare una pagina web di etichette nutrizionali. Imparerai come disegnare il testo, regolare l'altezza della linea e posizionare il testo usando il CSS."
+          "La tipografia è l'arte modellare lo stile del testo in modo che sia facilmente leggibile e adatto al suo scopo.",
+          "In questo corso, userai la tipografia per creare una pagina web con un'etichetta nutrizionale. Imparerai come dare stile al testo, regolare l'altezza delle righe e posizionare il testo usando il CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
         "title": "Impara le trasformazioni CSS costruendo un pinguino",
         "intro": [
-          "Puoi trasformare gli elementi HTML per creare design piacevoli che attirano l'occhio del tuo lettore. Puoi usare trasformazioni per ruotare elementi, cambiargli dimensione, e altro.",
+          "Puoi trasformare gli elementi HTML per creare design piacevoli che attirano l'occhio del tuo lettore. Puoi usare le trasformazioni per ruotare elementi, cambiarne le dimensioni, e altro.",
           "In questo corso, costruirai un pinguino. Userai le trasformazioni CSS per posizionare e ridimensionare le parti del tuo pinguino, creare un background e animare il tuo lavoro."
         ]
       },
@@ -208,10 +208,10 @@
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
-        "title": "Impara i colori CSS creando un set di evidenziatori colorati",
+        "title": "Impara i colori CSS creando un set di pennarelli colorati",
         "intro": [
-          "Selezionare il colore corretto per la tua pagina web può migliorare grandemente l'attrazione estetica ai tuoi lettori.",
-          "In questo corso creerai un set di evidenziatori colorati. Imparerari metodi diversi per settare i valori dei colori e come accoppiare i colori assieme."
+          "Selezionare il colore corretto per la tua pagina web può renderla molto più gradevole per i tuoi lettori.",
+          "In questo corso creerai un set di pennarelli colorati. Imparerai metodi diversi per impostare i valori dei colori e come accoppiare i colori."
         ]
       }
     }
