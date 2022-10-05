@@ -41,6 +41,30 @@ File name: medical_examination.csv
 | Physical activity | Subjective Feature | `active` | binary |
 | Presence or absence of cardiovascular disease | Target Variable | `cardio` | binary |
 
+## Comment Description
+
+The first column corresponds to the comment number and the second column provides information.
+
+| Comment number | Comment Information |
+|---|---|
+| 1 | Import data |
+| 2 | Add 'overweight' column |
+| 3 | Normalize data by making 0 always good and 1 always bad. If the value of 'cholesterol' or 'gluc' is 1, make the value 0. If the value is more than 1, make the value 1 |
+| 4 | Draw Categorical Plot |
+| 5 | Create DataFrame for cat plot using `pd.melt` using just the values from 'cholesterol', 'gluc', 'smoke', 'alco', 'active', and 'overweight' |
+| 6 | Group and reformat the data to split it by 'cardio'. Show the counts of each feature. You will have to rename one of the columns for the catplot to work correctly |
+| 7 | Draw the catplot with 'sns.catplot()' |
+| 8 | Get the figure for the output |
+| 9 | Do not modify the next two lines |
+| 10 | Draw Heat Map |
+| 11 | Clean the data |
+| 12 | Calculate the correlation matrix |
+| 13 | Generate a mask for the upper triangle |
+| 14 | Set up the matplotlib figure |
+| 15 | Draw the heatmap with 'sns.heatmap()' |
+| 16 | Do not modify the next two lines |
+
+
 ## Tasks
 
 Create a chart similar to `examples/Figure_1.png`, where we show the counts of good and bad outcomes for the `cholesterol`, `gluc`, `alco`, `active`, and `smoke` variables for patients with cardio=1 and cardio=0 in different panels.
