@@ -16,11 +16,9 @@ Quotes are not the only characters that can be <dfn>escaped</dfn> inside a strin
 
 We learned this in the previous challenge.
 
-<table class='table table-striped'><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\'</code></td><td>single quote</td></tr><tr><td><code>\"</code></td><td>double quote</td></tr><tr><td><code>\\</code></td><td>backslash</td></tr><tr><td><code>\n</code></td><td>newline</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\b</code></td><td>word boundary</td></tr><tr><td><code>\f</code></td><td>form feed</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\'</code></td><td>single quote</td></tr><tr><td><code>\"</code></td><td>double quote</td></tr><tr><td><code>\\</code></td><td>backslash</td></tr><tr><td><code>\n</code></td><td>newline</td><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\b</code></td><td>word boundary</td></tr><tr><td><code>\f</code></td><td>form feed</td></tr></tbody></table>
 
 *Note that the backslash itself must be escaped in order to display as a backslash.*
-
-*Carriage return `\r` and newline `\n` are defined separately according to the ASCII standard, which was originally developed for teleprinters. On a teleprinter, the carriage return would move the print head back to the start position, while newline would advance the paper reel by one line. In Javascript, to advance to the next line of a string, it is convention to use newline `\n`.*
 
 # --instructions--
 
