@@ -10,12 +10,11 @@ import { modalDefaultDonation } from '../../../../config/donation-settings';
 import Cup from '../../assets/icons/cup';
 import Heart from '../../assets/icons/heart';
 
+import { closeDonationModal, executeGA } from '../../redux/actions';
 import {
-  closeDonationModal,
   isDonationModalOpenSelector,
-  recentlyClaimedBlockSelector,
-  executeGA
-} from '../../redux';
+  recentlyClaimedBlockSelector
+} from '../../redux/selectors';
 import { isLocationSuperBlock } from '../../utils/path-parsers';
 import { playTone } from '../../utils/tone';
 import { Spacer } from '../helpers';

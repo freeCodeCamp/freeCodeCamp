@@ -2,7 +2,7 @@ import { Component, ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { storePortalDocument, removePortalDocument } from '../redux';
+import { storePortalDocument, removePortalDocument } from '../redux/actions';
 
 interface PreviewPortalProps {
   children: ReactElement | null;

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
-import { deleteUserToken } from '../../redux';
+import { deleteUserToken } from '../../redux/actions';
 import { ButtonSpacer, FullWidthRow, Spacer } from '../helpers';
 
 import './user-token.css';
