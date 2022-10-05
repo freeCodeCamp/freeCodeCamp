@@ -17,3 +17,4 @@ futures-util = { version = "0.3.24", default-features = false, features = [
 mongodb = "2.3"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1"
+env_logger = "0.9.1"
