@@ -26,6 +26,7 @@ import {
   userFetchStateSelector
 } from '../../redux/selectors';
 import { UserFetchState, User } from '../../redux/prop-types';
+import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
@@ -84,6 +85,9 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   children: ReactNode;
   pathname: string;
   showFooter?: boolean;
+  isChallenge?: boolean;
+  block?: string;
+  superBlock?: string;
   t: TFunction;
   useTheme?: boolean;
 }
@@ -133,6 +137,9 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
+      isChallenge = false,
+      block,
+      superBlock,
       t,
       theme = 'default',
       user,
@@ -211,7 +218,17 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
               removeFlashMessage={removeFlashMessage}
             />
           ) : null}
-          {fetchState.complete && children}
+          {isChallenge && (
+            <div className='breadcrumbs-demo'>
+              <BreadCrumb
+                block={block as string}
+                superBlock={superBlock as string}
+              />
+            </div>
+          )}
+          <div id='content-start' tabIndex={-1}>
+            {fetchState.complete && children}
+          </div>
         </div>
         {showFooter && <Footer />}
       </div>

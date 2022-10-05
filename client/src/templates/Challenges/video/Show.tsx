@@ -218,9 +218,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
             <Row>
               <Spacer />
               <ChallengeTitle
-                block={block}
                 isCompleted={isChallengeCompleted}
-                superBlock={superBlock}
                 translationPending={translationPending}
               >
                 {title}

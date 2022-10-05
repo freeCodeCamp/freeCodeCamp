@@ -256,9 +256,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
                 <ChallengeTitle
-                  block={block}
                   isCompleted={isChallengeCompleted}
-                  superBlock={superBlock}
                   translationPending={translationPending}
                 >
                   {title}
