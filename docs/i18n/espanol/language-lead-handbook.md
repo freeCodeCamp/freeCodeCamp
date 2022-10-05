@@ -16,7 +16,7 @@ El nivel "Administrador" está reservado para el personal de freeCodeCamp y los 
 
 ## Cómo mencionar al autor original de un artículo traducido
 
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
+El autor original y el artículo original están vinculados automáticamente agregando este código a la Inyección de Código -> sección principal en la Configuración de Borradores en Ghost.
 
 ```html
 <script>
@@ -26,9 +26,9 @@ The original author and the original article are linked automatically adding thi
 
 Con `link` siendo el enlace del artículo original.
 
-## How to update trending articles
+## Cómo actualizar artículos en tendencia
 
-> [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on google results.
+> [!TIP] Cambiar los artículos en el pie de la página al menos una vez al mes significaria darle un impulso a los artículos vinculados con los resultados de Google.
 
 Hay dos lugares en los que cambiar las tendencias de artículos.
 
