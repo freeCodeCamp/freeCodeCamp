@@ -24,7 +24,7 @@ Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use 
 
 **UPDATE:** Due to a change in conditions on API usage, Twitch.tv requires an API key, but we've built a workaround. Use <https://twitch-proxy.freecodecamp.rocks/> instead of Twitch's API base URL (i.e. `https://api.twitch.tv/helix` ) and you'll still be able to get account information, without needing to sign up for an API key.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+When you are finished, include a link to your project on CodePen and click the "Submit and go to my next challenge" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
 

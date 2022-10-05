@@ -18,7 +18,7 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 
 **User Story:** I can choose whether I want to play as X or O.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+When you are finished, include a link to your project on CodePen and click the "Submit and go to my next challenge" button.
 
 You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 

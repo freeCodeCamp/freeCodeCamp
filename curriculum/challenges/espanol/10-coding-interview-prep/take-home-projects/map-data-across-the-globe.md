@@ -20,7 +20,7 @@ Fulfill the following [user stories](https://en.wikipedia.org/wiki/User_story). 
 
 **Hint:** Here's a dataset you can use to build this: <https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json>
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+When you are finished, include a link to your project on CodePen and click the "Submit and go to my next challenge" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
 

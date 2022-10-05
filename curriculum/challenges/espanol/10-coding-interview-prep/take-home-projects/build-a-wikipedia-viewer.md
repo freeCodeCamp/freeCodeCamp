@@ -22,7 +22,7 @@ Hint #2: Here's an entry on using Wikipedia's API: `https://www.mediawiki.org/wi
 
 Hint #3: Use this [link](https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm) to experiment with Wikipedia's API.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+When you are finished, include a link to your project on CodePen and click the "Submit and go to my next challenge" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
 

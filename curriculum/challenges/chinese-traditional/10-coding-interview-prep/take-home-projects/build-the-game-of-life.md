@@ -28,7 +28,7 @@ Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use 
 
 **Hint:** Here's an overview of Conway's Game of Life with rules for your reference: [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+When you are finished, include a link to your project on CodePen and click the "Submit and go to my next challenge" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
 
