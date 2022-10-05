@@ -59,16 +59,6 @@
 
 @font-face {
   font-family: 'Hack-ZeroSlash';
-  src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-BoldItalic.woff2')
-      format('woff2'),
-    url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-BoldItalic.woff')
-      format('woff');
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Hack-ZeroSlash';
   src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff2')
       format('woff2'),
     url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff')

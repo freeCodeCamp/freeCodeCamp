@@ -8,7 +8,6 @@ import { createSelector } from 'reselect';
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
 import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
-import hackZeroSlashBoldItalicURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-BoldItalic.woff';
 import hackZeroSlashBoldURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff';
 import hackZeroSlashItalicURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff';
 import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff';
@@ -194,13 +193,6 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
             as='font'
             crossOrigin='anonymous'
             href={hackZeroSlashItalicURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={hackZeroSlashBoldItalicURL}
             rel='preload'
             type='font/woff'
           />
