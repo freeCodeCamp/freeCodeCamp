@@ -26,7 +26,7 @@ dashedName: build-a-light-bright-app
 
 **User Story:** I can click on the 'Reset All' button to remove all the colors from the circles.
 
-When you are finished, include a link to your project on CodePen and click the "Submit and go to my next challenge" button.
+When you are finished, include a link to your project on CodePen and click the "Submit and go to next step" button.
 
 You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
