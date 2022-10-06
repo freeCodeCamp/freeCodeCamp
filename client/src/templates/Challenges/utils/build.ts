@@ -19,20 +19,6 @@ import {
 } from './frame';
 import createWorker from './worker-executor';
 
-export interface ConcatHTMLOptions {
-  required: { src: string; link?: string }[];
-  template?: string;
-  contents?: string;
-}
-
-const _concatHtml = ({
-  required,
-  template,
-  contents
-}: ConcatHTMLOptions): string => {
-  return concatHtml({ required, template, contents });
-};
-
 interface ChallengeFile extends PropTypesChallengeFile {
   source: string;
   index: string;
@@ -224,7 +210,7 @@ export function buildDOMChallenge(
         return {
           challengeType:
             challengeTypes.html || challengeTypes.multifileCertProject,
-          build: _concatHtml({
+          build: concatHtml({
             required: finalRequires,
             template,
             contents
@@ -267,7 +253,7 @@ export function buildJSChallenge(
 export function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
-    build: _concatHtml({ required: frameRunner }),
+    build: concatHtml({ required: frameRunner }),
     sources: { url }
   };
 }

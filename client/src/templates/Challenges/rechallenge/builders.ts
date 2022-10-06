@@ -1,5 +1,10 @@
 import { template as _template } from 'lodash-es';
-import { ConcatHTMLOptions } from '../utils/build';
+
+interface ConcatHTMLOptions {
+  required: { src: string; link?: string }[];
+  template?: string;
+  contents?: string;
+}
 
 export function concatHtml({
   required = [],
