@@ -219,9 +219,9 @@
   "javascript-algorithms-and-data-structures": {
     "title": "Algoritmi e Strutture Dati in JavaScript",
     "intro": [
-      "Mentre HTML e CSS controllano il contenuto e lo stile della pagina, JavaScript viene utilizzato per renderla interattiva. Nella Certificazione Algoritmi e Strutture Dati in JavaScript, imparerai le basi di JavaScript, incluse variabili, array, oggetti, cicli e funzioni.",
-      "Una volta che avrai appreso le basi, applicherai questa conoscenza creando algoritmi per manipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
-      "Lungo il percorso, imparerai anche due importanti stili di programmazione o paradigmi: Programmazione Orientata agli Oggetti (Object Oriented Programming, OOP) e Programmazione Funzionale (Functional Programming, FP)."
+      "Mentre HTML e CSS controllano il contenuto e lo stile della pagina, JavaScript viene utilizzato per renderla interattiva. Nella Certificazione Algoritmi e Strutture Dati in JavaScript, imparerai le basi di JavaScript, tra cui variabili, array, oggetti, loop e funzioni.",
+      "Una volta che avrai appreso le basi, applicherai queste conoscenze creando algoritmi per manipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
+      "Lungo il percorso, imparerai anche due importanti stili di programmazione o paradigmi: la Programmazione Orientata agli Oggetti (Object Oriented Programming, OOP) e la Programmazione Funzionale (Functional Programming, FP)."
     ],
     "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e gli script-blocker, possono interferire con i test. In caso di problemi, ti raccomandiamo di disabilitare le estensioni che modificano o bloccano il contenuto delle pagine durante il corso.",
     "blocks": {
@@ -229,7 +229,7 @@
         "title": "JavaScript Base",
         "intro": [
           "JavaScript è un linguaggio si scripting che viene utilizzato per rendere interattive le pagine web. È una delle principali tecnologie del web, insieme ad HTML e CSS, ed è supportato da tutti i browser moderni.",
-          "In questo corso, imparerai i concetti di base della programmazione in JavaScript. Inizierai dalle strutture dati di base come numeri e stringhe. Poi imparerai a lavorare con array, oggetti, funzioni, cicli, istruzioni if/else, e molto altro."
+          "In questo corso, imparerai i concetti di base della programmazione in JavaScript. Inizierai dalle strutture dati di base come numeri e stringhe. Poi imparerai a lavorare con array, oggetti, funzioni, loop, istruzioni if/else e molto altro."
         ]
       },
       "es6": {
@@ -237,7 +237,7 @@
         "intro": [
           "ECMAScript o ES è una versione standardizzata di JavaScript. Dato che tutti i maggiori browser seguono queste specifiche, i termini ECMAScript e JavaScript sono intercambiabili.",
           "La maggior parte del JavaScript che hai appreso finora era in ES5 (ECMAScript 5), che fu definito nel 2009. Anche se puoi ancora scrivere programmi in ES5, JavaScript è in costante evoluzione, e vengono rilasciate ogni anno nuove funzionalità.",
-          "ES6, rilasciato nel 2015, ha aggiunto molte nuove potenti funzionalità al linguaggio. In questo corso conoscerai queste funzionalità, inclusi funzioni freccia, destrutturazione, classi, promise e moduli."
+          "ES6, rilasciato nel 2015, ha aggiunto molte nuove potenti funzionalità al linguaggio. In questo corso conoscerai queste funzionalità, tra cui funzioni freccia, destrutturazione, classi, promise e moduli."
         ]
       },
       "regular-expressions": {
@@ -259,7 +259,7 @@
         "title": "Strutture Dati Base",
         "intro": [
           "I dati possono essere memorizzati e letti in molti modi. Conosci già alcune strutture di dati JavaScript comuni — array e oggetti.",
-          "In questo corso Strutture Dati Base imparerai di più sulle differenze tra array e oggetti, e quali utilizzare in diverse situazioni. Imparerai anche come utilizzare utili metodi JS come <code>splice()</code> e <code>Object.keys()</code> per accedere e manipolare i dati."
+          "In questo corso Strutture Dati Base imparerai di più sulle differenze tra array e oggetti, e quali utilizzare in diverse situazioni. Imparerai anche come utilizzare utili metodi JS come <code>splice()</code> e <code>Object.keys()</code> per accedere a dei dati e manipolarli."
         ]
       },
       "basic-algorithm-scripting": {
@@ -274,14 +274,14 @@
         "title": "Programmazione Orientata agli Oggetti",
         "intro": [
           "La Programmazione Orientata agli Oggetti (OOP, o Object Oriented Programming), è uno dei principali approcci al processo di sviluppo del software. In OOP, gli oggetti e le classi sono utilizzati per organizzare il codice per descrivere le cose e cosa possono fare.",
-          "In questo corso, imparerai i principi di base di OOP in JavaScript includendo la parola chiave <code>this</code>, le catene di prototipi, i costruttori e l'ereditarietà."
+          "In questo corso, imparerai i principi di base di OOP in JavaScript, tra cui la parola chiave <code>this</code>, le catene di prototipi, i costruttori e l'ereditarietà."
         ]
       },
       "functional-programming": {
         "title": "Programmazione Funzionale",
         "intro": [
           "La programmazione funzionale è un altro approccio popolare allo sviluppo del software. Nella programmazione funzionale, il codice è organizzato in funzioni di base più piccole che possono essere combinate per costruire programmi complessi.",
-          "In questo corso, imparerai i concetti fondamentali della Programmazione Funzionale, comprese le funzioni pure, come evitare le mutazioni, e come scrivere codice più pulito con metodi come <code>.map()</code> and <code>.filter()</code>."
+          "In questo corso, imparerai i concetti fondamentali della Programmazione Funzionale, comprese le funzioni pure, come evitare le mutazioni, e come scrivere codice più pulito con metodi come <code>.map()</code> e <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
