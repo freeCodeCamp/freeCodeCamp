@@ -30,7 +30,7 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 
 **User Story:** If one of the two people in the room get disconnected, they can reconnect to the same room and continue chatting.
 
-Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
+Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "Submit and go to my next challenge" button.
 
 You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
