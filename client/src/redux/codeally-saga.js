@@ -1,13 +1,10 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
+
 import { createFlashMessage } from '../components/Flash/redux';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import { postUserToken } from '../utils/ajax';
-import {
-  isSignedInSelector,
-  showCodeAlly,
-  updateUserToken,
-  userTokenSelector
-} from './';
+import { showCodeAlly, updateUserToken } from './actions';
+import { isSignedInSelector, userTokenSelector } from './selectors';
 
 const startProjectErrMessage = {
   type: 'danger',

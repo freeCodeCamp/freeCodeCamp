@@ -1,23 +1,22 @@
 import { combineReducers } from 'redux';
 
+import { reducer as flash } from '../components/Flash/redux';
 import {
-  reducer as flash,
-  FlashApp as flashNameSpace
-} from '../components/Flash/redux';
-import {
-  reducer as search,
-  ns as searchNameSpace
+  ns as searchNameSpace,
+  reducer as search
 } from '../components/search/redux';
 import {
-  reducer as challenge,
-  ns as challengeNameSpace
+  ns as challengeNameSpace,
+  reducer as challenge
 } from '../templates/Challenges/redux';
 import {
-  reducer as curriculumMap,
-  ns as curriculumMapNameSpace
+  ns as curriculumMapNameSpace,
+  reducer as curriculumMap
 } from '../templates/Introduction/redux';
-import { reducer as settings, ns as settingsNameSpace } from './settings';
-import { reducer as app, MainApp as appNameSpace } from './';
+import { ns as appNameSpace } from './action-types';
+import { ns as settingsNameSpace, reducer as settings } from './settings';
+import { FlashApp as flashNameSpace } from './types';
+import { reducer as app } from './';
 
 export default combineReducers({
   [appNameSpace]: app,

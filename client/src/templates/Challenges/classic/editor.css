@@ -28,7 +28,8 @@ textarea.inputarea {
 
 .breadcrumbs-demo {
   font-size: 16px;
-  margin: 0 0 1.2rem;
+  margin: 0;
+  padding: 10px;
 }
 
 .editor-upper-jaw,
