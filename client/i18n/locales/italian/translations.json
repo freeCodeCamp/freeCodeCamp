@@ -428,7 +428,7 @@
   },
   "search": {
     "label": "Cerca",
-    "placeholder": "Search 9,000+ tutorials",
+    "placeholder": "Cerca tra più di 200 articoli",
     "see-results": "Vedi tutti i risultati per {{searchQuery}}",
     "no-tutorials": "Nessun tutorial trovato",
     "try": "Cerchi qualcosa? Prova la barra di ricerca su questa pagina.",
@@ -553,7 +553,7 @@
     "complete-project-first": "Devi prima completare il progetto.",
     "local-code-save-error": "Oops, il codice non è stato salvato, il local storage del tuo browser potrebbe essere pieno.",
     "local-code-saved": "Salvato! Il tuo codice è stato salvato nel local storage del tuo browser.",
-    "timeline-private": "{{username}} has chosen to make their timeline private. They will need to make their timeline public in order for others to be able to view their certification.",
+    "timeline-private": "{{username}} ha scelto di rendere privata la propria cronologia. Dovrà rendere pubblica la propria cronologia per rendere la propria certificazione visibile agli altri.",
     "code-saved": "Il tuo codice è stato salvato nel database. Sarà qui quando torni.",
     "code-save-error": "C'è stato un errore provando asalvare il tuo codice.",
     "code-save-less": "Rallenta! Il tuo codice non è stato salvato. Prova di nuovo tra qualche secondo.",
