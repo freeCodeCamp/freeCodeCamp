@@ -169,7 +169,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-testing-library": "4.12.4",
     "execa": "5.1.1",
-    "exportman": "0.0.2",
+    "exportman": "0.0.6",
     "faker": "5.5.3",
     "husky": "7.0.4",
     "jest": "27.5.1",
