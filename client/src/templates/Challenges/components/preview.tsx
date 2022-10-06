@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { mainPreviewId } from '../utils/frame';
+import { mainPreviewId, setPreviewScrollPosition } from '../utils/frame';
 
 import './preview.css';
 
@@ -28,6 +28,12 @@ function Preview({
   useEffect(() => {
     setIframeStatus(disableIframe);
   }, [disableIframe]);
+
+  useEffect(() => {
+    return () => {
+      setPreviewScrollPosition(0);
+    };
+  }, []);
 
   const id = previewId ?? mainPreviewId;
 

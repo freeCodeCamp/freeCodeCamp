@@ -267,7 +267,37 @@ const writeContentToFrame = (frameContext: Context) => {
     createHeader(frameContext.element.id) + frameContext.build,
     frameContext.document
   );
+
+  const iframe = document.getElementById(
+    frameContext.element.id
+  ) as HTMLIFrameElement;
+
+  registerScrollEventListner(iframe);
+
+  if (getPreviewScrollPosition()) {
+    restorePreviewScrollPosition(iframe, getPreviewScrollPosition());
+  }
   return frameContext;
+};
+
+let previewScrollPosition = 0;
+export const getPreviewScrollPosition = () => previewScrollPosition;
+export const setPreviewScrollPosition = (position: number) =>
+  (previewScrollPosition = position);
+
+const registerScrollEventListner = (iframe: HTMLIFrameElement) => {
+  iframe?.contentDocument?.addEventListener('scroll', event => {
+    const target = event.target as Document;
+    setPreviewScrollPosition(target.body.scrollTop);
+  });
+};
+
+const restorePreviewScrollPosition = (
+  iframe: HTMLIFrameElement,
+  position: number
+) => {
+  if (iframe.contentDocument?.body)
+    iframe.contentDocument.body.scrollTop = position;
 };
 
 export const createMainPreviewFramer = (
