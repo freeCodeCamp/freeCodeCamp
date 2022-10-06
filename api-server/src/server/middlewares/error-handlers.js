@@ -42,7 +42,7 @@ export default function prodErrorHandler() {
 
     // parse res type
     const accept = accepts(req);
-    // prioritise returning json
+    // prioritize returning json
     const type = accept.type('json', 'html', 'text');
 
     const redirectTo = handled.redirectTo || `${origin}/`;

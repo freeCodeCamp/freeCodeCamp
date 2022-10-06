@@ -13,7 +13,7 @@ import { removeCookies } from '../utils/getSetAccessToken';
 import { ifNoUser401, ifNoUserRedirectHome } from '../utils/middleware';
 import {
   getProgress,
-  normaliseUserFields,
+  normalizeUserFields as normalizeUserFields,
   userPropsForSession
 } from '../utils/publicUserProps';
 import { getRedirectParams } from '../utils/redirection';
@@ -168,7 +168,7 @@ function createReadSessionUser(app) {
               isLinkedIn: !!user.linkedin,
               isTwitter: !!user.twitter,
               isWebsite: !!user.website,
-              ...normaliseUserFields(user),
+              ...normalizeUserFields(user),
               joinDate: user.id.getTimestamp(),
               userToken: encodedUserToken
             }

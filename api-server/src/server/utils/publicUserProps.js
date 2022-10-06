@@ -64,7 +64,7 @@ export const userPropsForSession = [
   'donationEmails'
 ];
 
-export function normaliseUserFields(user) {
+export function normalizeUserFields(user) {
   const about = user.bio && !user.about ? user.bio : user.about;
   const picture = user.picture || '';
   const twitter =

@@ -24,7 +24,7 @@ import {
   removeCookies
 } from '../../server/utils/getSetAccessToken';
 import {
-  normaliseUserFields,
+  normalizeUserFields as normalizeUserFields,
   getProgress,
   publicUserProps
 } from '../../server/utils/publicUserProps';
@@ -40,7 +40,7 @@ import {
 } from '../utils';
 
 const log = debugFactory('fcc:models:user');
-const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
+const BROWNIE_POINTS_TIMEOUT = [1, 'hour'];
 const nanoidCharSet =
   '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const nanoid = customAlphabet(nanoidCharSet, 21);
@@ -397,7 +397,6 @@ export default function initializeUser(User) {
 
   User.about = function about(username, cb) {
     if (!username) {
-      // Zalgo!!
       return nextTick(() => {
         cb(null, {});
       });
@@ -805,7 +804,7 @@ export default function initializeUser(User) {
           points: progressTimestamps.length,
           completedChallenges,
           ...getProgress(progressTimestamps, timezone),
-          ...normaliseUserFields(user),
+          ...normalizeUserFields(user),
           joinDate: user.id.getTimestamp()
         };
 
@@ -864,7 +863,7 @@ export default function initializeUser(User) {
     }
     let temp = moment();
     const browniePoints = temp.subtract
-      .apply(temp, BROWNIEPOINTS_TIMEOUT)
+      .apply(temp, BROWNIE_POINTS_TIMEOUT)
       .valueOf();
     const user$ = findUser({ where: { username: receiver } });
 

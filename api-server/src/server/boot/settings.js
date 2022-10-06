@@ -144,7 +144,7 @@ function updateMyAbout(req, res, next) {
     body: { name, location, about, picture }
   } = req;
   log(name, location, picture, about);
-  // prevent dataurls from being stored
+  // prevent data urls from being stored
   const update = isURL(picture, { require_protocol: true })
     ? { name, location, about, picture }
     : { name, location, about };
