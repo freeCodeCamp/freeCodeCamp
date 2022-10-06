@@ -57,7 +57,7 @@ textarea.inputarea {
 
 .description-container h1 {
   color: var(--secondary-color);
-  font-family: Roboto Mono, monospace;
+  font-family: Hack-ZeroSlash, monospace;
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.1;
