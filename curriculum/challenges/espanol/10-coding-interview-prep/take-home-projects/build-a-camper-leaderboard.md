@@ -20,7 +20,7 @@ Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use 
 
 **Hint:** To get the 30 most recent forum posts: <https://forum-proxy.freecodecamp.rocks/latest>.
 
-When you are finished, include a link to your project on CodePen and click the "Submit and go to my next challenge" button.
+When you are finished, include a link to your project on CodePen and click the "Submit and go to next step" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
 

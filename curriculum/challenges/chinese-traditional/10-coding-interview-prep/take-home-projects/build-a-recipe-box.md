@@ -26,7 +26,7 @@ Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use 
 
 **Hint:** You should prefix your local storage keys on CodePen, i.e. `_username_recipes`
 
-When you are finished, include a link to your project on CodePen and click the "Submit and go to my next challenge" button.
+When you are finished, include a link to your project on CodePen and click the "Submit and go to next step" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
 
