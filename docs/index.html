@@ -166,12 +166,13 @@
         plugins: [
           function (hook, vm) {
             hook.beforeEach(function (markdown) {
+              let dynamicText;
               // -- ignore the translations list page
               if (vm.route.file === '_translations.md') return markdown;
 
               // -- add "Update this translation" link for all i18n language pages
               if (vm.route.path.search('i18n') !== -1) {
-                var dynamicText =
+                dynamicText =
                   '[<i class="far fa-edit"></i> Update the translation](' +
                   'https://translate.freecodecamp.org/contributing-docs' +
                   ') or [visit the English version](' +
@@ -182,7 +183,7 @@
 
               // -- add "Edit this guide on GitHub" link for all English language pages
               if (vm.route.path.search('i18n') === -1) {
-                var dynamicText =
+                dynamicText =
                   '[<i class="far fa-edit"></i> Edit this guide on GitHub](' +
                   'https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/' +
                   vm.route.file +
@@ -196,13 +197,13 @@
                 vm.route.path.search('Hebrew') !== -1
               ) {
                 for (
-                  var counter = 0,
+                  let counter = 0,
                     elements =
                       document.getElementsByClassName('markdown-section');
                   counter < elements.length;
                   counter++
                 ) {
-                  var item = elements[counter];
+                  const item = elements[counter];
                   item.dir = 'rtl';
                 }
               }
@@ -212,13 +213,13 @@
                 vm.route.path.search('Hebrew') === -1
               ) {
                 for (
-                  var counter = 0,
+                  let counter = 0,
                     elements =
                       document.getElementsByClassName('markdown-section');
                   counter < elements.length;
                   counter++
                 ) {
-                  var item = elements[counter];
+                  const item = elements[counter];
                   item.dir = 'ltr';
                 }
               }
