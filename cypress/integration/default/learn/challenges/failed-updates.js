@@ -27,19 +27,18 @@ describe('failed update flushing', () => {
 
   it('should resubmit failed updates, check they are stored, then flush', () => {
     store.set(failedUpdatesKey, failedUpdates);
-    cy.request('http://localhost:3000/user/get-session-user', {
-      failOnStatusCode: false
-    })
-      .its('status')
-      .to.eq(418)
-      .its('body.user.developmentuser.completedChallenges')
-      .then(completedChallenges => {
-        const completedIds = completedChallenges.map(challenge => challenge.id);
+    cy.request({
+      url: 'http://localhost:3000/user/get-session-user',
+      headers: { version: '1' }
+    }).then(res => {
+      const completedChallenges =
+        res.body.user.developmentuser.completedChallenges;
+      const completedIds = completedChallenges.map(challenge => challenge.id);
 
-        failedUpdates.forEach(failedUpdate => {
-          expect(completedIds).not.to.include(failedUpdate.payload.id);
-        });
+      failedUpdates.forEach(failedUpdate => {
+        expect(completedIds).not.to.include(failedUpdate.payload.id);
       });
+    });
 
     cy.intercept('http://localhost:3000/modern-challenge-completed').as(
       'completed'
@@ -49,7 +48,10 @@ describe('failed update flushing', () => {
     cy.wait('@completed');
     // if we don't wait for both requests to complete, we have a race condition
     cy.wait('@completed');
-    cy.request('http://localhost:3000/user/get-session-user')
+    cy.request({
+      url: 'http://localhost:3000/user/get-session-user',
+      headers: { version: '1' }
+    })
       .its('body.user.developmentuser.completedChallenges')
       .then(completedChallenges => {
         const completedIds = completedChallenges.map(challenge => challenge.id);
