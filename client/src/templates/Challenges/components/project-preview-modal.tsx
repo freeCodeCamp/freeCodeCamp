@@ -6,9 +6,9 @@ import type { CompletedChallenge } from '../../../redux/prop-types';
 import {
   closeModal,
   setEditorFocusability,
-  isProjectPreviewModalOpenSelector,
   projectPreviewMounted
-} from '../redux';
+} from '../redux/actions';
+import { isProjectPreviewModalOpenSelector } from '../redux/selectors';
 import { projectPreviewId } from '../utils/frame';
 import Preview from './preview';
 

@@ -459,7 +459,7 @@ Provisionando MVs com o código
 7. Compile o servidor
 
    ```console
-   npm run create:config && npm run build:curriculum && npm run build:server
+   npm run prebuild && npm run build:curriculum && npm run build:server
    ```
 
 8. Inicie instâncias
