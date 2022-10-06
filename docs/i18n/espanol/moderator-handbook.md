@@ -471,6 +471,26 @@ Cerramos esta solicitud de extracción. Sugiera enlaces y otros detalles para ag
 Si consideras que nos hemos equivocado cerrando esta incidencia, por favor solicita su reapertura y añade más aclaraciones. Thank you and happy coding.
 ```
 
+### Adding comment about newbie mistakes
+
+```markdown
+As a new contributor, we encourage you to read our [contributing guidelines](https://contribute.freecodecamp.org).
+
+We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+
+Some examples of this are:
+
+1. Do not edit files directly through GitHub – while you can, it's not a good idea.
+2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
+3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
+4. Keep mentions and review requests to a minimum. We understand you are excited about contributing, and our maintainers will get back to you as soon as they get a chance.
+5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
+
+We appreciate you taking the time to help us, and we hope to see more contributions from you.
+
+Happy Contributing.
+```
+
 ### Closing Invalid Issues
 
 > When an issue relates to the camper's code.
@@ -478,31 +498,31 @@ Si consideras que nos hemos equivocado cerrando esta incidencia, por favor solic
 ```markdown
 Gracias por reportar este problema. 
 
-Este es un mensaje estándar que le notifica que esta cuestión parece ser una solicitud de ayuda. En lugar de pedir ayuda aquí, por favor haga clic en el botón \*\*"Ayuda"\*\* en el desafío en freeCodeCamp, que te ayudará a crear una pregunta en la parte correcta del foro. Los voluntarios en el foro generalmente responden a preguntas en unas pocas horas y pueden ayudar a determinar si hay un problema con tu código o con las pruebas del desafío.
+This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for help"** option, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
 
-Si los miembros del foro determinan que no hay ningún problema con su código, puede solicitar que se vuelva a abrir este problema.
+If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
 
-Gracias, y feliz programación.
+Thank you and happy coding.
 ```
 
 > When an issue is duplicate of an earlier issue.
 
 ```markdown
-Gracias por reportar este problema. 
+Gracias por reportar elproblema. 
 
-Este es un mensaje estándar para notificarle que esta incidencia parece muy similar a la incidencia #XXXXX, así que la cerraremos como duplicada. 
+This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so we are closing it as a duplicate.
 
-Si consideras que me equivoco al cerrar este issue, solicita volver a abrirlo y añade más aclaraciones. Gracias, y feliz programación.
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
 > When an issue is fixed in staging.
 
 ```markdown
-Gracias por reportar elproblema. 
+Thank you for reporting this issue.
 
-Este es un mensaje estándar que le notifica que el problema que ha mencionado aquí está presente en la producción, pero que ya ha sido arreglado en la etapa. Esto significa que la próxima vez que llevemos nuestra rama provisional a producción, este problema debería solucionarse. Debido a esto, estoy cerrando este problema.
+This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
 
-Si consideras que nos hemos equivocado cerrando esta incidencia, por favor solicita su reapertura y añade más aclaraciones. Gracias, y feliz programación.
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
 ### `first timer only` Issues
@@ -510,18 +530,19 @@ Si consideras que nos hemos equivocado cerrando esta incidencia, por favor solic
 > When an issue is deemed to be eligible for first-time code contributors.
 
 ```markdown
-Gracias por reportar elproblema. 
+Thanks for opening this issue.
 
-This looks like something that can be fixed by "first-time" code contributors to this repository. Estos son los archivos que debería buscar para trabajar en una solución:
+This looks like something that can be fixed by "first-time" code contributors to this repository. Here are the files that you should be looking at to work on a fix:
 
-Lista de archivos: ...
+List of files:
+
+1. ...
 2. ...
 3. ...
 
-Por favor, asegúrate de leer nuestras [directrices para contribuir](https://contribute.freecodecamp.org/#/), priorizamos a los colaboradores siguiendo que siguen las instrucciones de nuestras guías. Únete a nosotros en [nuestra sala de chat] (https://discord.gg/PRyKn3Vbay) o [en el foro] (https://forum.freecodecamp.org/c/contributors/3) si necesitas ayuda para contribuir, nuestros moderadores te guiarán a través de esto.
+Please make sure you read our [guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in our [chat room](https://discord.gg/PRyKn3Vbay) or our [forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing; our moderators will guide you through this.
 
+Sometimes we may get more than one pull request. We typically accept the most quality contribution followed by the one that is made first.
 
-A veces, podemos recibir más de una solicitud de extracción. Normalmente aceptamos la contribución de mayor calidad, seguida de la que se hace primero.
-
-Contribuyendo felizmente.
+Happy contributing.
 ```
