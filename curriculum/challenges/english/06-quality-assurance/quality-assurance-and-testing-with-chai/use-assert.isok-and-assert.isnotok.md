@@ -12,7 +12,7 @@ As a reminder, this project is being built upon the following starter project on
 
 `isOk()` will test for a truthy value, and `isNotOk()` will test for a falsy value.
 
-To learn more about truthy and falsy values, try our <a href="https://platform-ui.topcoder.com/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer" target="_blank" rel="noopener noreferrer nofollow">Falsy Bouncer</a> challenge.
+To learn more about truthy and falsy values, try our <a href="https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer" target="_blank" rel="noopener noreferrer nofollow">Falsy Bouncer</a> challenge.
 
 # --instructions--
 

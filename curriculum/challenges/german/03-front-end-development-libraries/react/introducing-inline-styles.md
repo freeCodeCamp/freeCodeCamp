@@ -8,7 +8,7 @@ dashedName: introducing-inline-styles
 
 # --description--
 
-Es gibt noch weitere komplexe Konzepte, die deinem React-Code mächtige Fähigkeiten verleihen. Vielleicht fragst du dich aber auch, wie du die JSX-Elemente, die du in React erstellst, stylen kannst. Du weißt wahrscheinlich, dass es nicht genau die gleiche Arbeit sein wird wie mit HTML, aufgrund von <a href="/learn/front-end-development-libraries/react/define-an-html-class-in-jsx" target="_blank" rel="noopener noreferrer nofollow"> der Art und Weise, wie du Klassen auf JSX-Elemente </a> anwendest.
+Es gibt noch weitere komplexe Konzepte, die deinem React-Code mächtige Fähigkeiten verleihen. Vielleicht fragst du dich aber auch, wie du die JSX-Elemente, die du in React erstellst, stylen kannst. Du weißt wahrscheinlich, dass es nicht genau die gleiche Arbeit sein wird wie mit HTML, aufgrund von <a href="https://platform-ui.topcoder.com/learn/freeCodeCamp/front-end-development-libraries/react/define-an-html-class-in-jsx" target="_blank" rel="noopener noreferrer nofollow"> der Art und Weise, wie du Klassen auf JSX-Elemente </a> anwendest.
 
 Wenn du Stile aus einem Stylesheet importierst, ist es nicht viel anders. Du wendest eine Klasse mit dem Attribut `className` auf dein JSX-Element an und wendest Stile auf die Klasse in deinem Stylesheet an. Eine andere Möglichkeit ist die Anwendung von Inline-Styles, die in der ReactJS-Entwicklung sehr verbreitet sind.
 

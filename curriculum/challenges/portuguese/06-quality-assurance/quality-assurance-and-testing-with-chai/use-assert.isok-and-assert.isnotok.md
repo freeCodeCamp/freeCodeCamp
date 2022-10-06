@@ -12,7 +12,7 @@ Lembrando que este projeto está sendo construído a partir do <a href="https://
 
 `isOk()` testará se um valor é verdadeiro e `isNotOk()` testará se um valor é falso.
 
-Para saber mais sobre valores verdadeiros e falsos, experimente nosso <a href="https://platform-ui.topcoder.com/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer" target="_blank" rel="noopener noreferrer nofollow">desafio</a> Remover falsos.
+Para saber mais sobre valores verdadeiros e falsos, experimente nosso <a href="https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer" target="_blank" rel="noopener noreferrer nofollow">desafio</a> Remover falsos.
 
 # --instructions--
 

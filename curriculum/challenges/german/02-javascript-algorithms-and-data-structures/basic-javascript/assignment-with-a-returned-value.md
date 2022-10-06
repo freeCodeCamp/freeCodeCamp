@@ -9,7 +9,7 @@ dashedName: assignment-with-a-returned-value
 
 # --description--
 
-Wenn du dich an unsere Diskussion über das <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">Speichern von Werten mit dem Zuweisungsoperator</a> erinnerst, wird alles rechts vom Gleichheitszeichen aufgelöst, bevor der Wert zugewiesen wird. Das bedeutet, wir können den Rückgabewert einer Funktion nehmen und ihn einer Variablen zuweisen.
+Wenn du dich an unsere Diskussion über das <a href="https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">Speichern von Werten mit dem Zuweisungsoperator</a> erinnerst, wird alles rechts vom Gleichheitszeichen aufgelöst, bevor der Wert zugewiesen wird. Das bedeutet, wir können den Rückgabewert einer Funktion nehmen und ihn einer Variablen zuweisen.
 
 Angenommen, wir haben eine Funktion `sum` vordefiniert, die zwei Zahlen addiert, dann ruft:
 
