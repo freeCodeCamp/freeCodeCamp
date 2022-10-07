@@ -63,7 +63,6 @@ $RECYCLE.BIN/
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -171,6 +170,7 @@ utils/slugs.test.js
 utils/index.js
 
 ### vim ###
+
 # Swap
 [._]*.s[a-v][a-z]
 !*.svg  # comment out if you don't need vector files
@@ -186,8 +186,10 @@ Sessionx.vim
 # Temporary
 .netrwhist
 *~
+
 # Auto-generated tag files
 tags
+
 # Persistent undo
 [._]*.un~
 
