@@ -5,7 +5,7 @@
     "client/src/templates/Challenges/**/{s,S}how.tsx",
     "client/src/templates/Introduction/**/{intro,super-block-intro}.tsx"
   ],
-  "filePatterns": [
+  "projectFiles": [
     "client/**/*.{js,ts,tsx}",
     "!client/static/misc/*.js",
     "!client/i18n/schema-validation.ts",
