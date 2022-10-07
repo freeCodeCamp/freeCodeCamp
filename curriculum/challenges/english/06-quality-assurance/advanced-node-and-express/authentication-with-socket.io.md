@@ -72,75 +72,61 @@ Submit your page when you think you've got it right. If you're running into erro
 `passport.socketio` should be a dependency.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'passport.socketio',
-        'Your project should list "passport.socketio" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'passport.socketio',
+    'Your project should list "passport.socketio" as a dependency'
   );
+}
 ```
 
 `cookie-parser` should be a dependency.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'cookie-parser',
-        'Your project should list "cookie-parser" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'cookie-parser',
+    'Your project should list "cookie-parser" as a dependency'
   );
+}
 ```
 
 passportSocketIo should be properly required.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require\((['"])passport\.socketio\1\)/gi,
-        'You should correctly require and instantiate "passport.socketio"'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require\((['"])passport\.socketio\1\)/gi,
+    'You should correctly require and instantiate "passport.socketio"'
   );
+}
 ```
 
 passportSocketIo should be properly setup.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io\.use\(\s*\w+\.authorize\(/,
-        'You should register "passport.socketio" as socket.io middleware and provide it correct options'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io\.use\(\s*\w+\.authorize\(/,
+    'You should register "passport.socketio" as socket.io middleware and provide it correct options'
   );
+}
 ```
 
 # --solutions--

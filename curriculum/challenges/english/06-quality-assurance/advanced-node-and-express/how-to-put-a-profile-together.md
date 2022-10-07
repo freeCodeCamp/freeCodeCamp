@@ -8,15 +8,17 @@ dashedName: how-to-put-a-profile-together
 
 # --description--
 
-Now that we can ensure the user accessing the `/profile` is authenticated, we can use the information contained in `req.user` on our page!
+Now that you can ensure the user accessing the `/profile` is authenticated, you can use the information contained in `req.user` on your page.
 
-Pass an object containing the property `username` and value of `req.user.username` as the second argument for the render method of the profile view. Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
+Pass an object containing the property `username` and value of `req.user.username` as the second argument for the render method of the profile view.
+
+Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
 
 ```pug
 h2.center#welcome Welcome, #{username}!
 ```
 
-This creates an `h2` element with the class '`center`' and id '`welcome`' containing the text '`Welcome,`' followed by the username.
+This creates an `h2` element with the class `center` and id `welcome` containing the text `Welcome, ` followed by the username.
 
 Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user.
 
@@ -28,22 +30,19 @@ Submit your page when you think you've got it right. If you're running into erro
 
 # --hints--
 
-You should correctly add a Pug render variable to /profile.
+You should correctly add a Pug render variable to `/profile`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /username:( |)req.user.username/gi,
-        'You should be passing the variable username with req.user.username into the render function of the profile page'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /username:( |)req.user.username/,
+    'You should be passing the variable username with req.user.username into the render function of the profile page'
   );
+}
 ```
 
 # --solutions--

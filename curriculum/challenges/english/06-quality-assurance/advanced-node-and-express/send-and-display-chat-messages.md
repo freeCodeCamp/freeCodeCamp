@@ -35,37 +35,31 @@ Submit your page when you think you've got it right. If you're running into erro
 Server should listen for `'chat message'` and then emit it properly.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*name.*message/gis,
-        'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*username.*message/s,
+    'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'
   );
+}
 ```
 
 Client should properly handle and display the new data from event `'chat message'`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")chat message('|")[^]*messages.*li/gis,
-        'You should append a list item to #messages on your client within the "chat message" event listener to display the new message'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")chat message('|")[^]*messages.*li/s,
+    'You should append a list item to #messages on your client within the "chat message" event listener to display the new message'
   );
+}
 ```
 
 # --solutions--

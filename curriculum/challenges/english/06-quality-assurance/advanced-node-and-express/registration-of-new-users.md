@@ -8,16 +8,25 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Now we need to allow a new user on our site to register an account. On the `res.render` for the home page add a new variable to the object passed along--`showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file! This form is set up to **POST** on `/register`, so this is where we should set up to accept the **POST** and create the user object in the database.
+Now you need to allow a new user on your site to register an account. In the `res.render` for the home page add a new variable to the object passed along - `showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file. This form is set up to **POST** on `/register`, so this is where you should set up to accept the **POST** request, and create the user object in the database.
 
-The logic of the registration route should be as follows: Register the new user > Authenticate the new user > Redirect to /profile
+The logic of the registration route should be as follows:
 
-The logic of step 1, registering the new user, should be as follows: Query database with a findOne command > if user is returned then it exists and redirect back to home *OR* if user is undefined and no error occurs then 'insertOne' into the database with the username and password, and, as long as no errors occur, call *next* to go to step 2, authenticating the new user, which we've already written the logic for in our POST */login* route.
+1. Register the new user
+2. Authenticate the new user
+3. Redirect to `/profile`
+
+The logic of step 1 should be as follows:
+
+1. Query database with a `findOne`
+2. If there is an error, call `next` with the error
+3. If user is returned, redirect back to home
+4. If user is undefined and no error occurs, then `insertOne` into the database with the username and password, and, as long as no errors occur, call `next` to go to step 2, authenticating the new user, which you already wrote the logic for in your `POST /login` route.
 
 ```js
 app.route('/register')
   .post((req, res, next) => {
-    myDataBase.findOne({ username: req.body.username }, function(err, user) {
+    myDataBase.findOne({ username: req.body.username }, (err, user) => {
       if (err) {
         next(err);
       } else if (user) {
@@ -56,24 +65,21 @@ Submit your page when you think you've got it right. If you're running into erro
 You should register route and display on home.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /showRegistration:( |)true/gi,
-        'You should be passing the variable showRegistration as true to your render function for the homepage'
-      );
-      assert.match(
-        data,
-        /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
-        'You should have a route accepted a post request on register that querys the db with findone and the query being username: req.body.username'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /showRegistration:( |)true/gi,
+    'You should be passing the variable showRegistration as true to your render function for the homepage'
   );
+  assert.match(
+    data,
+    /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
+    'You should have a route accepted a post request on register that querys the db with findone and the query being username: req.body.username'
+  );
+}
 ```
 
 Registering should work.
