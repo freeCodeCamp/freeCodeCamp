@@ -37,15 +37,15 @@ We have unit tests for testing our challenge solutions, Server APIs and Client U
 
 Together these tests help in preventing issues from repeating themselves and ensure we do not introduce a bug while working on another bug or a feature.
 
-#### Deploying Changes - Pushing changes to servers.
+#### Deploying Changes-Pushing changes to servers
 
 We have configured continuous delivery software to push changes to our development and production servers.
 
-Once the changes are pushed to the protected release branches, a build pipeline is automatically triggered for the branch. The build pipelines are responsible for building artifacts and keeping them in a cold storage for later use.
+Once the changes are pushed to the protected release branches, a build pipeline is automatically triggered for the branch. The building pipelines are responsible for building artifacts and keeping them in cold storage for later use.
 
-The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers and going live.
+The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers, and going live.
 
-Status of builds and releases are [available here](#build-test-and-deployment-status).
+The current status of builds and releases is [available here]. (#build-test-and-deployment-status).
 
 ## Trigger a build, test and deploy
 
