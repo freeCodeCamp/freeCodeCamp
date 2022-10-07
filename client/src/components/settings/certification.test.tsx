@@ -86,12 +86,19 @@ describe('<certification />', () => {
   });
 
   it('rendering the correct button when files is present', () => {
-    renderWithRedux(<CertificationSettings {...propsForOnlySolution} />);
+    renderWithRedux(<CertificationSettings {...propsForMultifileProject} />);
 
-    const viewButtons = screen.getAllByRole('button', { name: 'buttons.view' });
-    viewButtons.forEach(button => {
-      expect(button).toBeInTheDocument();
-    });
+    expect(
+      screen.getByRole('menuitem', {
+        name: 'buttons.view-code'
+      })
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByRole('menuitem', {
+        name: 'buttons.view-project'
+      })
+    ).toBeInTheDocument();
   });
 });
 
@@ -272,6 +279,25 @@ const propsForOnlySolution = {
           path
         }
       ]
+    }
+  ]
+};
+
+const propsForMultifileProject = {
+  ...defaultTestProps,
+  completedChallenges: [
+    {
+      id: '587d78af367417b2b2512b03',
+      challengeFiles: [
+        {
+          contents,
+          ext,
+          fileKey,
+          name,
+          path
+        }
+      ],
+      challengeType: 14
     }
   ]
 };
