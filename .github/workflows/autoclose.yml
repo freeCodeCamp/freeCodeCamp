@@ -14,6 +14,11 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
+            const files = await github.rest.pulls.listFiles({
+              owner: context.payload.repository.owner.login,
+              repo: context.payload.repository.name,
+              pull_number: context.payload.pull_request.number,
+            });
             if (
               files.data.length !== 1 ||
               files.data[0].filename !== ".gitignore"
