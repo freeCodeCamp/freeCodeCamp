@@ -47,7 +47,6 @@ Cypress.Commands.add('preserveSession', () => {
 });
 
 Cypress.Commands.add('setPrivacyTogglesToPublic', () => {
-  console.log('Hello there');
   cy.get('#privacy-settings')
     .find('.toggle-not-active')
     .each(element => {

@@ -59,6 +59,8 @@
     "cypress:dev:watch": "npm run cypress -- open",
     "cypress:prd:run": "npm run cypress -- run --spec cypress/e2e/default/**/*.js",
     "cypress:prd:watch": "npm run cypress -- open",
+    "cypress:install": "cypress install && echo 'for use with ./cypress-install.js'",
+    "cypress:install-build-tools": "sh ./cypress-install.sh",
     "predevelop": "npm-run-all create:*",
     "develop": "npm-run-all build:curriculum -p develop:*",
     "develop:client": "npm run build:curriculum && cd ./client && npm run develop",
