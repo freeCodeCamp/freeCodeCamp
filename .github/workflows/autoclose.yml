@@ -14,38 +14,45 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const isMod = await github.rest.teams.getMembershipForUserInOrg({
-              org: "freeCodeCamp",
-              team_slug: "moderators",
-              username: context.payload.pull_request.user.login
-            }).catch(() => ({status: 404}));
-            const files = await github.rest.pulls.listFiles({
+            if (
+              files.data.length !== 1 || 
+              files.data[0].filename !== ".gitignore"
+            ) {
+              return;
+            }
+            const creator = context.payload.sender.login
+            const opts = github.rest.issues.listForRepo.endpoint.merge({
+              ...context.issue,
+              creator,
+              state: 'all'
+            })
+            const issues = await github.paginate(opts)
+
+            for (const issue of issues) {
+              if (issue.number === context.issue.number) {
+                continue
+              }
+
+              if (issue.pull_request) {
+                return // Creator is already a contributor.
+              }
+            }
+            core.setFailed("Invalid PR detected.");
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "Thank you for opening this pull request.\n\nThis is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.\n\nThank you and happy coding.",
+            });
+            await github.rest.pulls.update({
               owner: context.payload.repository.owner.login,
               repo: context.payload.repository.name,
               pull_number: context.payload.pull_request.number,
+              state: "closed"
             });
-            if (
-              files.data.length === 1 &&
-              files.data[0].filename === ".gitignore" &&
-              isMod.status !== 200
-            ) {
-              core.setFailed("Invalid PR detected.");
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: "Thank you for opening this pull request.\n\nThis is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.\n\nThank you and happy coding.",
-              });
-              await github.rest.pulls.update({
-                owner: context.payload.repository.owner.login,
-                repo: context.payload.repository.name,
-                pull_number: context.payload.pull_request.number,
-                state: "closed"
-              });
-              await github.rest.issues.addLabels({
-                owner: context.payload.repository.owner.login,
-                repo: context.payload.repository.name,
-                issue_number: context.issue.number,
-                labels: ["spam"]
-              });
-            }
+            await github.rest.issues.addLabels({
+              owner: context.payload.repository.owner.login,
+              repo: context.payload.repository.name,
+              issue_number: context.issue.number,
+              labels: ["spam"]
+            });
