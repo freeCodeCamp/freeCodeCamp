@@ -28,11 +28,14 @@ jobs:
             });
             const issues = await github.paginate(opts);
 
+            // iterate through issues
             for (const issue of issues) {
+              // if the issue is this one, keep looking
               if (issue.number === context.issue.number) {
                 continue;
               }
 
+              // if the issue is actually a PR, they're not a first timer
               if (issue.pull_request) {
                 return // Creator is already a contributor.
               }
