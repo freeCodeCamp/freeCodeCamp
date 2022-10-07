@@ -1,55 +1,28 @@
 ---
-id: 62a3b365f1cdeb33efc2502e
-title: Крок 23
+id: 62a3bb9aeefe4b3fc43c6d7b
+title: Крок 31
 challengeType: 0
-dashedName: step-23
+dashedName: step-31
 ---
 
 # --description--
 
-Ви оголошували змінні за допомогою ключового слова `var`. Однак у сучасному JavaScript краще використовувати ключове слово `let`. Воно виправляє незвичну поведінку `var`, яка могла ускладнити налагодження коду.
+`button1` – це змінна, яку не буде перевизначено. Якщо ви збираєтесь присвоїти нове значення змінної, краще використати ключове слово `const` замість `let`, щоб оголосити її. Це дозволить JavaScript видавати помилку, якщо ви випадково перевизначите її.
 
-Змініть всі ключові слова `var` на `let`.
+Змініть ключове слово змінної `button1` на `const`.
 
 # --hints--
 
-Вам не потрібні ключові слова `var` у своєму коді.
+Ваша змінна `button1` повинна бути оголошена за допомогою `const`.
 
 ```js
-assert.notMatch(code, /var/);
+assert.match(code, /const button1/);
 ```
 
-Ви повинні використати ключове слово `let`, щоб оголосити змінну `xp`.
+Ваша змінна `button1` повинна мати значення вашого елемента `#button1`.
 
 ```js
-assert.match(code, /let xp/);
-```
-
-Ви повинні використати ключове слово `let`, щоб оголосити змінну `health`.
-
-```js
-assert.match(code, /let health/);
-```
-
-Ви повинні використати ключове слово `let`, щоб оголосити змінну `gold`.
-
-```js
-assert.match(code, /let gold/);
-```
-
-Ви повинні використати ключове слово `let`, щоб оголосити змінну `currentWeapon`.
-
-```js
-assert.match(code, /let currentWeapon/);
-```
-
-Ви не повинні змінювати значення своїх змінних.
-
-```js
-assert.equal(xp, 0);
-assert.equal(health, 100);
-assert.equal(gold, 50);
-assert.equal(currentWeapon, 0);
+assert.deepEqual(button1, document.querySelector("#button1"));
 ```
 
 # --seed--
@@ -63,7 +36,6 @@ assert.equal(currentWeapon, 0);
     <meta charset="utf-8">
     <link rel="stylesheet" href="./styles.css">
     <title>RPG - Dragon Repeller</title>
-    <script src="./script.js"></script>
 </head>
 <body>
     <div id="game">
@@ -85,6 +57,7 @@ assert.equal(currentWeapon, 0);
             Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>
 ```
@@ -129,10 +102,15 @@ body {
 ```
 
 ```js
+let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
+let fighting;
+let monsterHealth;
+let inventory = ["stick"];
+
 --fcc-editable-region--
-var xp = 0;
-var health = 100;
-var gold = 50;
-var currentWeapon = 0;
+let button1 = document.querySelector("#button1");
 --fcc-editable-region--
 ```
