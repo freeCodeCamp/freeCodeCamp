@@ -28,7 +28,8 @@ textarea.inputarea {
 
 .breadcrumbs-demo {
   font-size: 16px;
-  margin: 0 0 1.2rem;
+  margin: 0;
+  padding: 10px;
 }
 
 .editor-upper-jaw,
@@ -45,6 +46,8 @@ textarea.inputarea {
   background-color: var(--secondary-background);
   padding: 1rem;
   border: 2px solid var(--quaternary-background);
+  /* the max-width is set to keep the characters in a line at below ~70 to help
+  with readability */
   max-width: 600px;
 }
 
@@ -54,7 +57,7 @@ textarea.inputarea {
 
 .description-container h1 {
   color: var(--secondary-color);
-  font-family: Roboto Mono, monospace;
+  font-family: Hack-ZeroSlash, monospace;
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.1;

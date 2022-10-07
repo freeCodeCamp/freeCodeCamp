@@ -1,4 +1,4 @@
-# The Official freeCodeCamp Language Lead Handbook
+# Офіційний довідник мовного керівника freeCodeCamp
 
 This handbook will help you set up and use the tools for your localization efforts.
 
@@ -14,9 +14,9 @@ The "Editor" level allows the user to access all Drafts and publish them. Select
 
 The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
-## How to mention the original author of a translated article
+## Як вказати автора перекладеної статті
 
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
+Автор та оригінал статті прив'язуються автоматично, коли цей код додано до Code Injection -> головна секція в налаштуваннях чернеток на ghost.
 
 ```html
 <script>
@@ -24,7 +24,7 @@ The original author and the original article are linked automatically adding thi
 </script>
 ```
 
-With `link` being the link of the original article.
+Де `link` – посилання на оригінал статті.
 
 ## How to update trending articles
 
@@ -65,7 +65,7 @@ This is an example of how part of the `trending.json` file has to look.
 }
 ```
 
-You will want to [build the translated client locally](how-to-test-translations-locally.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
+You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
 
 ### How to update the trending articles in the cdn
 
@@ -226,13 +226,13 @@ Some of these links will not change - but you should update the `/news` article 
 
 You should also update the `help` categories to point to your language's subforum (usually `language/category`, like `Italiano/HTML-CSS`). This will allow campers to create "help posts" in the correct forum location.
 
-## How to update the site meta-data
+## Як оновити метадані сайту
 
-The site meta-data is in the `/client/i18n/locales/<language>/meta-tags.json` file. This file has five keys: `title`, `description`, `social-description`, `keywords`, and `youre-unsubscribed`.
+Метадані сайту знаходяться в файлі `/client/i18n/locales/<language>/meta-tags.json`. Цей файл має п'ять ключів: `title`, `description`, `social-description`, `keywords` та `youre-unsubscribed`.
 
-The `youre-unsubscribed` value should be directly translated. The other values will need to be translated as closely as possible, while also considering common search terms and phrases used in your language.
+Значення `youre-unsubscribed` повинне бути перекладене прямо. Інші значення потрібно перекладати якомога ближче, зважаючи на поширені пошукові запити вашої мови.
 
-If you need help with this, reach out to us in the [contributor chat](https://discord.gg/PRyKn3Vbay)
+Якщо вам потрібна допомога, зв'яжіться з нами в [contributor chat](https://discord.gg/PRyKn3Vbay)
 
 ## Pre-Translate Workflow on Crowdin
 
@@ -277,3 +277,17 @@ Then, each target language has two columns. If you translate to Dothraki, you wi
 > [!TIP] In programs like Microsoft Excel you can hide the columns of the other languages to free up screen real-estate and see the English columns and the target language columns near each other.
 
 After you have made the changes and saved the file, you will need to make a PR with the proposed changes. After the PR is accepted, you will need to run the GitHub Action workflow to update the Crowdin Glossary. Your glossary changes will not have immediate effects, but they will come.
+
+## How to Promote a Contributor to Proofreader
+
+If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
+
+In Crowdin, individuate the `User management` on the left hand side menu.
+
+This will open the user management tools, you will be able to see the list of all the users.
+
+Search for the user that will become contributor. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+
+The user is now a proofreader.
+
+> [!TIP] The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.

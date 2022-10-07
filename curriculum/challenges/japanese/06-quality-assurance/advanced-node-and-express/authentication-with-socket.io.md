@@ -10,7 +10,7 @@ dashedName: authentication-with-socket-io
 
 今の時点で、誰がウェブソケットに接続しているかを判断することはできません。 `req.user` にはユーザーオブジェクトが含まれていますが、そうなっているのはユーザーがウェブサーバーとやり取りするときだけであり、ウェブソケットでは `req` (リクエスト) がないため、ユーザーデータはありません。 誰がウェブソケットに接続しているのかを知るための方法の 1 つとして、Passport セッションを含む Cookie を解析してデコードした後、デシリアライズしてユーザーオブジェクトを取得することができます。 幸い、 NPM にはまさにこのためのパッケージがあり、複雑な作業をシンプルにしてくれます！
 
-`passport.socketio@~3.7.0`、`connect-mongo@~3.2.0` および `cookie-parser@~1.4.5` を依存関係として追加し、それらをそれぞれ `passportSocketIo`、`MongoStore` および `cookieParser` として require してください。 また、前に require した `express-session` から、新しいメモリストアを初期化する必要があります。 次のようになります。
+すでに `passport.socketio@~3.7.0`、`connect-mongo@~3.2.0`、`cookie-parser@~1.4.5` が依存関係として追加されています。 それぞれ `passportSocketIo`、`MongoStore`、`cookieParser` として require します。 また、前に require した `express-session` から、新しいメモリストアを初期化する必要があります。 次のようになります。
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -65,7 +65,7 @@ console.log('user ' + socket.request.user.name + ' connected');
 
 接続したサーバーコンソールにログインします！
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、[こちら](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254)でここまでのプロジェクトを確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを <a href="https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254</a> で確認できます。
 
 # --hints--
 

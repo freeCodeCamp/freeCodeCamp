@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { closeModal, isShortcutsModalOpenSelector } from '../redux';
-import { updateMyKeyboardShortcuts } from '../../../redux/settings';
-import { userSelector } from '../../../redux';
+import { closeModal } from '../redux/actions';
+import { isShortcutsModalOpenSelector } from '../redux/selectors';
+import { updateMyKeyboardShortcuts } from '../../../redux/settings/actions';
+import { userSelector } from '../../../redux/selectors';
 import { User } from '../../../redux/prop-types';
 import KeyboardShortcutsSettings from '../../../components/settings/keyboard-shortcuts';
 

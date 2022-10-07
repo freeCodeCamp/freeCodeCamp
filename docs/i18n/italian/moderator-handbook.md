@@ -169,10 +169,11 @@ I moderatori del forum possono cancellare i post degli utenti. Dovresti farlo so
 1. Qualcuno ha postato immagini pornografiche o graficamente violente.
 2. Qualcuno ha postato un link o del codice di natura malevola e che potrebbe danneggiare altri camper che ci cliccano sopra.
 3. Qualcuno ha inondato un thread con un sacco di spam.
+4. Un account è stato creato, oltre ogni ragionevole dubbio, per spammare.
 
 ### Affrontare lo spam
 
-Al primo post di spam di un utente, mandagli un messaggio spiegando il problema e rimuovi il link o il post come appropriato. Lascia una nota sul profilo dell'utente spiegando le azioni che hai intrapreso. Se il problema persiste, allora impedisci tranquillamente all'utente di postare (usando l'opzione silenzia sul pannello Amministratore Utente). Invia un avvertimento all'utente con il [Codice di Condotta](https://code-of-conduct.freecodecamp.org). Spunta la casella nel messaggio privato che indica che il tuo messaggio è un "ammonimento formale."
+Per il primo post di spam di un utente legittimo (il cui intento non è di mandare spam nel forum ma di imparare e contribuire al forum), invia un messaggio spiegando il problema e rimuovi il link o il post dove opportuno. Lascia una nota sul profilo dell'utente spiegando le azioni che hai intrapreso. Se il problema persiste, allora impedisci tranquillamente all'utente di postare (usando l'opzione silenzia sul pannello Amministratore Utente). Invia un avvertimento all'utente con il [Codice di Condotta](https://code-of-conduct.freecodecamp.org). Spunta la casella nel messaggio privato che indica che il tuo messaggio è un "ammonimento formale."
 
 Come moderatore, puoi fare domande e riportare incidenti nella [sezione dedicata allo staff nel forum](https://forum.freecodecamp.org/c/mod-team/4).
 
@@ -184,11 +185,13 @@ In circostanze eccezionali, può essere appropriato per un moderatore dividere u
 
 Di nuovo, se hai problemi o domande, fai un post con le tue azioni nella categoria Staff e tagga un altro moderatore se vuoi che riveda le tue azioni di moderazione.
 
+### Affrontare le soluzioni postate
+
+Quando un utente posta una soluzione a una qualsiasi domanda, rimuovila e fagli sapere che le soluzioni non sono ammesse sul forum con le tue parole o usando la risposta predefinita **Solution Instead of Help**.
+
 ### Utenti Minorenni
 
-I nostri [Termini di servizio](https://freecodecamp.org/terms) richiedono che gli utenti di freeCodeCamp abbiano almeno 13 anni. Se un utente rivela di avere meno di 13 anni, mandagli il messaggio sottostante e cancella il suo account (se la cancellazione non è disponibile, sospendere l'account è sufficiente).
-
-**Manda anche un'email a `support[at]freecodecamp.org` per eliminare l'account dell'utente.**
+I nostri [Termini di servizio](https://freecodecamp.org/terms) richiedono che gli utenti di freeCodeCamp abbiano almeno 13 anni. Se un utente rivela di avere meno di 13 anni, inviagli il messaggio (qui sotto), sospendi il suo account e poi **manda un email a `support[at]freecodecamp.org` per cancellare gli account freeCodeCamp /learn e forum dell'utente (fornendo un link dell'account forum in questione).**
 
 ```markdown
 OGGETTO: Gli utenti al di sotto dei 13 anni di età non possono utilizzare il forum per i nostri Termini di Servizio.
@@ -200,6 +203,14 @@ Per favore, iscriviti nuovamente una volta compiuti 13 anni di età.
 Grazie per la comprensione.
 ```
 
+### Moderazione via cellulare
+
+La moderazione del forum è possibile anche via cellulare ma potresti incontrare qualche stranezza di utilizzo. Questa non è una lista completa.
+
+- Quando provi a includere una "risposta pronta" in una risposta, se il menu non si apre (dopo aver cliccato sull'ingranaggio), clicca sull'area del testo e poi riprova.
+- La 'chiave inglese' del moderatore è nella parte inferiore del viewport ma se ci clicchi su e non riesci a vedere il pulsante "Select Posts" perché è fuori dal campo visivo, potresti aver di scorrere le opzioni, ma a volte ciò non funziona e in tal caso potrebbe essere necessario spostarsi su un monitor fisso o di un portatile.
+- A volte cliccare sul menu con tre puntini sotto un post può nascondere l'icona reply. Ricarica la pagina per recuperarla.
+
 ## Moderazione di Facebook
 
 Se vedi qualcosa che sembra violare il nostro [Codice di Condotta](https://code-of-conduct.freecodecamp.org/), dovresti eliminarlo immediatamente.
@@ -208,97 +219,85 @@ Alcune volte le persone posteranno cose che credono essere divertenti. Non reali
 
 A meno che non sia un'offesa oltraggiosa che non può essere ragionevolmente attribuita a una differenza culturale o a un fraintendimento della lingua inglese. In tal caso, dovresti fortemente considerare di bloccare il membro dal gruppo Facebook.
 
-## Moderare le chat
+## Moderare Discord
 
 Ecco come i moderatori affrontano le violazioni al [Codice di Condotta](https://code-of-conduct.freecodecamp.org/) sulla nostra chat:
 
+> [!NOTE] Camperbot agisce come bot di moderazione e tutti i comandi utilizzano l'interfaccia di comando di Discord con la barra obliqua (slash). Puoi vedere la lista dei comandi digitando `/` in qualsiasi canale.
+
 1. **Assicurati che l'utente abbia violato intenzionalmente il [Codice di Condotta](https://code-of-conduct.freecodecamp.org).**
 
-   Non tutte le violazioni del [Codice di Condotta](https://code-of-conduct.freecodecamp.org) sono intenzionali. Un nuovo camper potrebbe postare una grossa quantità di codice con l'intento di aiutare, inconsapevole che questo può essere considerato spam. In questi casi puoi chiedergli di incollare il codice tramite servizi come CodePen o Pastebin.
+   Non tutte le violazioni del [Codice di Condotta](https://code-of-conduct.freecodecamp.org) sono intenzionali. Un nuovo utente potrebbe postare una grossa quantità di codice con l'intento di aiutare, inconsapevole che questo può essere deleterio per la conversazione. In questi casi puoi chiedergli di incollare il codice tramite servizi come CodePen o Pastebin.
 
 2. **Se un utente viola chiaramente e intenzionalmente il [Codice di Condotta](https://code-of-conduct.freecodecamp.org), il moderatore procederà come segue:**
 
-   Silenzia o espelle dalla chat la persona incriminata. Per espellere o silenziare qualcuno, clicca con il tasto sinistro sulla sua immagine del profilo, seleziona i tre puntini e seleziona "Rimuovi dalla stanza" o "Silenzia l'utente" per impedirgli di mandare altri messaggi. Dopodiché, riporta un breve riepilogo dell'evento sul canale #mod-log. Ecco un esempio di come potrebbe apparire un tale riepilogo:
+   Per violazioni minori, può essere emesso un avviso con il comando `/warn`. Per violazioni più importanti, puoi rimuovere un membro dal server temporaneamente con il comando `/kick`, o permanentemente con il comando `/ban`. In alcuni casi, un membro potrebbe aver solo bisogno di tempo per calmarsi e riflettere - il comando `/mute` ti permette di impedirgli di dialogare con la community per un determinato periodo. Un membro su cui è stato usato il comando mute può vedere le conversazioni, ma non può pubblicare messaggi o aggiungere reazioni.
 
-   ```
-   Kicked: _@username_
-   Reason(s): _Spamming, trolling_
-   Evidence: _One or more links to the offending message(s)_
-   ```
+   Tutti i comandi di moderazione richiederanno un parametro `reason`, che dovrebbe essere una breve spiegazione del perché l'azione è stata intrapresa. Le azioni di moderazione effettuate con il bot saranno registrate in `#mod-log`, che ci permette di rimanere tutti nella stessa pagina. Dovremmo evitare di utilizzare gli strumenti di moderazione integrati di Discord, in quanto non saranno registrati.
+
+   > [!WARNING] La ragione fornita al comando di moderazione sarà anche inclusa nel messaggio di notifica all'utente. Per favore, ricorda di essere professionale.
 
 3. **Creare una discussione privata**
 
    Potrebbero esserci situazioni in cui hai bisogno di rivolgerti a un camper in privato. Questo non dovrebbe essere fatto tramite messaggi diretti, che possono portare a situazioni in cui tu sostieni una cosa e il camper ne sostiene un'altra. Invece, usa la funzione del bot per creare una discussione privata:
 
-   - Chiama il comando `!fCC private username`, dove `username` è lo username del camper.
-   - Il bot creerà un nuovo canale, e vi aggiungerà il camper menzionato e tutti i moderatori con il ruolo `Your Friendly Moderator`. Anche se vengono aggiunti al canale tutti i moderatori per trasparenza, il moderatore che ha chiamato il comando dovrebbe essere l'unico ad interagire con il camper a meno che non abbia bisogno di assistenza.
-   - Quando la conversazione è completa, chiama il comando `!fCC close` _nel canale privato_ per fare in modo che il bot chiuda ed elimini quel canale.
+   - Chiama il comando `/private`, dove `target` è l'utente con cui vuoi aprire un canale privato.
+   - Il bot creerà un nuovo canale, e vi aggiungerà l'utente menzionato e tutti i moderatori con il ruolo `Your Friendly Moderator`. Anche se vengono aggiunti al canale tutti i moderatori per trasparenza, il moderatore che ha chiamato il comando dovrebbe essere l'unico ad interagire con l'utente a meno che non abbia bisogno di assistenza.
+   - Quando la conversazione è conclusa, clicca il pulsante `❌ Close` _sul primo messaggio nel canale privato_ per fare in modo che il bot chiuda e cancelli il canale.
 
 4. **Cancellare i messaggi**
 
-   I moderatori possono cancellare i messaggi sulla chat. Si dovrebbe esercitare questa facoltà solo in quattro specifiche circostanze:
+   Il nostro bot di moderazione è configurato per registrare automaticamente i messaggi eliminati nel canale `#mod-log`. Se un messaggio non è in linea con il nostro Codice di Condotta o non appropriato per la nostra comunità, in genere puoi eliminarlo con certezza.
 
-   - Qualcuno ha postato immagini pornografiche o graficamente violente.
+   Nota che se il messaggio contiene contenuti che violano i termini di servizio di Discord, dovrai segnalarlo tramite https://dis.gd/report **prima** di eliminarlo.
 
-   - Qualcuno ha postato un link o del codice di natura malevola e che potrebbe danneggiare altri camper che ci cliccano sopra.
+5. **Non minacciare di prendere provvedimenti**
 
-   - Qualcuno ha inondato la chat con un sacco di messaggi di spam al punto tale (solitamente utilizzando bot) di rendere la chat completamente inutilizzabile.
+   Se un utente infrange il [Codice di Condotta](https://code-of-conduct.freecodecamp.org), non minacciarlo di intraprendere un'azione da moderatore e non avvertirlo mai in pubblico. Invece, parlagli privatamente usando il comando `/private` del bot o usa i comandi di moderazione del bot.
 
-   - Qualcuno ha postato una pubblicità e/o un messaggio/immagine di autopromozione (social media).
+   Se una violazione era chiaramente involontaria e non richiede una sospensione o una conversazione privata, rendi l'utente consapevole delle sue azioni senza farlo sembrare un ammonimento.
 
-   In tutte le altre situazioni - anche quelle in cui il [Codice di Condotta](https://code-of-conduct.freecodecamp.org) viene violato - i moderatori non devono cancellare i messaggi dato che costituiscono una cronologia importante. Quando cancelli un messaggio, assicurati di averne fatto prima lo screenshot! Lo screenshot può essere riportato sul canale @mod-log.
+   Per esempio:
 
-   > [!NOTE] Se il messaggio contiene materiale di cui sarebbe illegale fare lo lo screenshot, copia il link al messaggio - fornisci quel link a @raisedadead per inoltrarlo al team di Affidabilità e Sicurezza di Discord.
-
-5. **Non usare @all, @everyone, o @here**
-
-   Non usare **@all**, **@everyone**, o **@here** in qualsiasi circostanza! Ogni singola persona nella chat riceverà una notifica. In alcuni casi, decine di migliaia di persone.
-
-   Invece, se vuoi che le persone vedano un annuncio, puoi fissarlo in cima al canale per permettere a tutti di vederlo.
-
-6. **Non minacciare di prendere provvedimenti**
-
-   Se un utente infrange il [Codice di Condotta](https://code-of-conduct.freecodecamp.org), non minacciarlo di intraprendere un'azione da moderatore e non avvertirlo mai in pubblico. Invece, parlagli privatamente usando il comando `private` del bot. Nessun altro all'interno della chat ha bisogno di sapere che hai bannato/sospeso una persona. Se una violazione era chiaramente involontaria e non richiede una sospensione o una conversazione privata, rendi il camper consapevole delle sue azioni senza farlo sembrare un ammonimento. Ad esempio:
-
-   - Un camper posta un muro di testo per chiedere aiuto:
+   - Un utente posta un muro di testo per chiedere aiuto:
 
      Moderatore: **@username** Per favore usa CodePen o Pastebin quando posti una grande quantità di codice.
 
-   - O, se devi proprio spiegare il perché:
+   - O se devi proprio spiegare il perché:
 
-     Moderatore: **@username** Per favore usa CodePen o Pastebin quando riporti grandi quantità di codice, perché disturba la chat per tutti e può essere considerato spam secondo il [Codice di Condotta](https://code-of-conduct.freecodecamp.org).
+     Moderatore: **@username** Per favore usa CodePen o Pastebin quando riporti grandi quantità di codice, perché disturba la chat per tutti e può essere considerato spam secondo il nostro [Codice di Condotta](https://code-of-conduct.freecodecamp.org).
 
    - Per violazioni minori e non intenzionali del [Codice di Condotta](https://code-of-conduct.freecodecamp.org):
 
      Moderatore: Questo è un promemoria amichevole per invitare tutti a seguire il [Codice di Condotta](https://code-of-conduct.freecodecamp.org): https://code-of-conduct.freecodecamp.org/
 
-7. **Non vantarti di essere un moderatore**
+6. **Non vantarti di essere un moderatore**
 
-   Non vederti come al di sopra della comunità. **Fai parte della community.**E la community si è affidata a te per proteggere qualcosa di raro che tutti condividiamo: un luogo _accogliente_ per i nuovi sviluppatori.
+   Non vederti come se fossi al di sopra della comunità. **Fai parte della community.**E la community si è affidata a te per proteggere qualcosa di raro che tutti condividiamo: un luogo _accogliente_ per i nuovi sviluppatori.
 
-   Se ti vanti di essere un moderatore, le persone potrebbero sentirsi a disagio intorno a te, nello stesso modo in cui si sentono a disagio accanto ad un agente di polizia, anche quando non hanno fatto niente di male. Questa è semplicemente la natura umana.
+   Se ti vanti di essere un moderatore, le persone potrebbero sentirsi a disagio intorno a te, nello stesso modo in cui si sentono a disagio accanto a un agente di polizia, anche quando non hanno fatto niente di male. Questa è semplicemente la natura umana.
 
-8. **Non contraddire gli altri moderatori**
+7. **Non contraddire gli altri moderatori**
 
    Se sei in disaccordo con l'azione di un moderatore, parla con loro in privato o faglielo presente nel canale #mod-chat. Non scavalcare mai l'azione di un moderatore e non contraddire mai gli altri moderatori pubblicamente. Invece, discuti a mente fredda su `#mod-chat` e convinci il moderatore che egli stesso dovrebbe annullare il ban o cambiare il proprio punto di vista.
 
    _Ricorda: siamo tutti nella stessa squadra. Vogliamo dare dignità al ruolo dei moderatori ed essere un fronte unito._
 
-9. **Parla con gli altri moderatori**
+8. **Parla con gli altri moderatori**
 
-   Abbiamo una stanza solo per i moderatori. Usala! Se ti senti a disagio nel gestire una determinata situazione, chiedi aiuto ad altri moderatori. Se pensi che qualcosa dovrebbe essere discusso, fallo. Fai parte di una squadra, e noi apprezziamo il contributo di ogni membro! Anche se sei totalmente in disaccordo con qualcosa presente in queste linee guida o nel [Codice di Condotta](https://code-of-conduct.freecodecamp.org)!
+   Abbiamo una stanza `#mod-chat` solo per i moderatori. Usala! Se ti senti a disagio nel gestire una determinata situazione, chiedi aiuto ad altri moderatori. Se pensi che qualcosa dovrebbe essere discusso, fallo. Fai parte di una squadra, e noi apprezziamo il contributo di ogni membro! Anche se sei totalmente in disaccordo con qualcosa presente in queste linee guida o nel [Codice di Condotta](https://code-of-conduct.freecodecamp.org)!
 
-10. **Inattività temporanea**
+9. **Inattività temporanea**
 
-    `Temporaneamente inattivo` Se non sarai attivo come Moderatore per un po' a causa di vacanze, malattia o qualsiasi altro motivo, assicurati di farlo sapere agli altri nel canale #mod-chat. In questo modo sapremo se possiamo contare sul fatto che sei regolarmente attivo sul server oppure no.
+   Se non sarai attivo come Moderatore per un po' a causa di vacanze, malattia o qualsiasi altro motivo, assicurati di farlo sapere agli altri nel canale `#mod-chat`. In questo modo sapremo se possiamo contare sul fatto che sei regolarmente attivo sul server oppure no.
 
 ## Come diventare un moderatore
 
-Supponi di stare aiutando le persone con costanza nel tempo. In questo caso, il nostro Team dei Moderatori se ne accorgerà e uno di loro ti suggerirà come possibile moderatore al [nostro staff](https://forum.freecodecamp.org/g/Team). Per diventare moderatore non ci sono scorciatoie.
+Supponiamo che tu stia aiutando le persone della community con costanza nel tempo. In questo caso, il nostro Team dei Moderatori se ne accorgerà e uno di loro ti suggerirà come possibile moderatore al [nostro staff](https://forum.freecodecamp.org/g/Team). Per diventare moderatore non ci sono scorciatoie.
 
 Se verrai approvato, ti aggiungeremo al nostro Team dei Moderatori su [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), sul [forum](https://forum.freecodecamp.org/g/moderators) e sulla chat.
 
-> [!NOTE] Per GitHub: Dopo essere stato accettato come moderatore, riceverai l'invito a una repository Github. Dovrai andare all'[invito all'Organizzazione GitHub di freeCodeCamp](https://github.com/orgs/freeCodeCamp/invitation) per essere in grado di accettare l'invito.
+> [!NOTE] Per GitHub: Dopo essere stato accettato come moderatore, riceverai l'invito a un repository Github. Dovrai andare all'[invito all'Organizzazione GitHub di freeCodeCamp](https://github.com/orgs/freeCodeCamp/invitation) per essere in grado di accettare l'invito.
 > 
 > Questo è necessario per consentirci di darti i permessi di scrittura su alcuni dei nostri repository.
 
@@ -314,7 +313,7 @@ If you think we did this in error, or once you're ready to come back and contrib
 
 ## Come funzionano le stanze dei contributori
 
-Chiunque è il benvenuto nella [stanza dei contributori sul nostro server di chat](https://discord.gg/PRyKn3Vbay). È la chat room designata per i moderatori e per i camper che contribuiscono alla nostra comunità in altri modi, anche attraverso i gruppi di studio.
+Chiunque è il benvenuto nella [stanza dei contributori sul nostro server di chat](https://discord.gg/PRyKn3Vbay). È la chat room designata per i moderatori e per gli utenti che contribuiscono alla nostra comunità in altri modi, anche attraverso i gruppi di studio.
 
 Diamo per assodato che i contributori leggano qualunque messaggio in cui siano nominati direttamente con **@username**. Tutto il resto è opzionale, ma sentiti libero di leggere qualunque cosa venga postata da chiunque, e interagire.
 
@@ -328,7 +327,7 @@ Riceviamo proposte del genere continuamente e lo staff è nella posizione miglio
 
 Potresti incontrare situazioni in cui gli utenti ricercano consigli medici o stanno affrontando problemi di salute mentale e cercano supporto.
 
-Per una questioni di policy, dovesti evitare di parlare di questi temi privatamente. Se la situazione dovesse riflettersi su freeCodeCamp, vogliamo che le conversazioni siano registrate. Chiarifica che non siamo medici professionisti ed incoraggia l'utente a cercare aiuto professionale.
+Per una questione di principio, dovesti evitare di parlare di questi temi privatamente. Se la situazione dovesse riflettersi su freeCodeCamp, vogliamo che le conversazioni siano registrate. Chiarisci che non siamo medici professionisti e incoraggia l'utente a cercare aiuto professionale.
 
 Per quanto a volte sia difficile, evita di dare suggerimenti o consigli diversi dall'indirizzare l'utente verso l'aiuto professionale!
 
@@ -336,7 +335,7 @@ Se questo accade sul server delle chat: Crea un canale privato per l'utente e il
 
 - All'utente viene garantita privacy.
 - La chat pubblica non è più interrotta.
-- Altri membri del team possono contribuire, nel caso tu sia a disagio nell'affrontare la situazione da solo
+- Altri membri del team possono contribuire, nel caso tu sia a disagio nell'affrontare la situazione da solo.
 
 URL utili:
 
@@ -367,7 +366,7 @@ Thank you for your contribution to the page! We are happy to accept these change
 
 ### Ringraziamenti e congratulazioni
 
-> Per ringraziare ed incoraggiare chi contribuisce per la prima volta.
+> Per ringraziare e incoraggiare chi contribuisce per la prima volta.
 
 ```markdown
 Hi @username. Congrats on your first pull request (PR)! 🎉
@@ -390,9 +389,9 @@ Once you resolve these issues, we will be able to review your PR and merge it. �
 Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
-### Sincronizzare le fork
+### Sincronizzare il fork
 
-> Quando la PR non è allineata con il ramo `main`.
+> Quando la PR non è allineata con il branch `main`.
 
 ````markdown
 Hey @username
@@ -413,7 +412,7 @@ git pull upstream main
 
 Se stai usando una GUI, puoi semplicemente cercare il comando `Add a new remote...` e usare il link `git://github.com/freeCodeCamp/freeCodeCamp.git` visto sopra.
 
-Una volta che avrai sincronizzato il fork e superato la build, saremo in grado di rivedere la tua PR e farne il merge. 😊
+Una volta che avrai sincronizzato il fork e superato il build, saremo in grado di rivedere la tua PR e farne il merge. 😊
 
 ---
 
@@ -482,7 +481,27 @@ We are closing this pull request. Please suggest links and other details to add 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### Chiudere le issue non valide
+### Adding comment about newbie mistakes
+
+```markdown
+As a new contributor, we encourage you to read our [contributing guidelines](https://contribute.freecodecamp.org).
+
+We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+
+Some examples of this are:
+
+1. Do not edit files directly through GitHub – while you can, it's not a good idea.
+2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
+3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
+4. Keep mentions and review requests to a minimum. We understand you are excited about contributing, and our maintainers will get back to you as soon as they get a chance.
+5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
+
+We appreciate you taking the time to help us, and we hope to see more contributions from you.
+
+Happy Contributing.
+```
+
+### Closing Invalid Issues
 
 > Quando un issue è inerente al codice del camper.
 
@@ -516,7 +535,7 @@ This is a standard message notifying you that the problem you mentioned here is 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### `first timer only` Issue
+### `first timer only` Issues
 
 > Quando un'issue è ritenuta idonea per chi contribuisce al codice per la prima volta.
 

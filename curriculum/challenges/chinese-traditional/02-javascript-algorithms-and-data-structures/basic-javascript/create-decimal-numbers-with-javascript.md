@@ -11,7 +11,7 @@ dashedName: create-decimal-numbers-with-javascript
 
 我們也可以把小數存儲到變量中。 小數有時候也被稱作<dfn>浮點數</dfn>或者 <dfn>floats</dfn>。
 
-**提示：** 不是所有的實數都可以用浮點數（<dfn>floating point</dfn>）來表示。 因爲可能產生四捨五入的錯誤， [點擊這裏瞭解細節](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems)。
+**注意：** 當你計算數字時，它們是以有限的精確度計算的。 使用浮點數的運算可能產生不同於預期結果的結果。 如果你生成了一個非預期的結果，請在 <a href="https://forum.freecodecamp.org/" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp 論壇</a>上創建一個話題進行說明。
 
 # --instructions--
 

@@ -11,10 +11,10 @@ import Map from '../components/Map';
 import { Spacer } from '../components/helpers';
 import LearnLayout from '../components/layouts/learn';
 import {
-  userFetchStateSelector,
   isSignedInSelector,
-  userSelector
-} from '../redux';
+  userSelector,
+  userFetchStateSelector
+} from '../redux/selectors';
 
 interface FetchState {
   pending: boolean;

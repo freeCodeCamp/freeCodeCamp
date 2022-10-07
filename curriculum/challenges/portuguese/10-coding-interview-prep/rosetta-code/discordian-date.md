@@ -26,7 +26,7 @@ Feriados: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
 
 Converta uma determinada data do calendário gregoriano para o calendário discordiano.
 
-Observe que, no calendário discordiano, (1º do caos de 3188 YOLD) é equivalente a (1º de janeiro de 2022) no calendário gregoriano.
+Observe que o dia Chaos 1, 3188 YOLD (1º do Caos de 3188) do calendário discordiano é o dia 1 de janeiro de 2022 do calendário gregoriano.
 
 # --hints--
 

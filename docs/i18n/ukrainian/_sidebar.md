@@ -19,7 +19,6 @@
   - [Працюйте над документацією](how-to-work-on-the-docs-theme.md)
   - [Працюйте над компонентною бібліотекою](how-to-work-on-the-component-library.md)
 - **Додаткові інструкції**
-  - [Тестування перекладів локально](how-to-test-translations-locally.md)
   - [Ознайомлення зі структурою файлів навчальної програми](curriculum-file-structure.md)
   - [Налагодження вихідних електронних листів локально](how-to-catch-outgoing-emails-locally.md)
   - [Встановлення freeCodeCamp на Windows (WSL)](how-to-setup-wsl.md)
@@ -32,6 +31,7 @@
   - [Довідник мовного керівника](language-lead-handbook.md)
   - [Довідник DevOps](devops.md)
   - [Розширення курсів VSCode](courses-vscode-extension.md)
+  - [Додавання нової мови](how-to-enable-new-languages.md)
 
 ---
 

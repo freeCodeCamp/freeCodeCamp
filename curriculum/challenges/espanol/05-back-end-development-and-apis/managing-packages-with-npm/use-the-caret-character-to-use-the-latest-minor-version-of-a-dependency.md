@@ -10,7 +10,7 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 Similar a cómo la tilde que aprendimos en el último desafío permite a npm instalar la última PATCH para una dependencia, el caret (`^`) permite a npm instalar futuras actualizaciones también. La diferencia es que el caret permitirá tanto actualizaciones MINOR como PATCHes.
 
-Tu versión actual de moment debe ser "~2.10.0" lo que permite a npm instalar la última versión 2.10.x. Si se usara el caret (^) como prefijo de versión en su lugar, npm permitiría actualizar a cualquier versión 2.x.x.
+Tu versión actual de `@freecodecamp/example` debería ser "~1.2.13" que permite a npm instalar a la última versión 1.2.x. Si se usa el símbolo caret (^) como prefijo de versión en su lugar, npm permitiría actualizar a cualquier versión de 1.x.x.
 
 ```json
 "package": "^1.3.8"
@@ -20,13 +20,13 @@ Esto permitiría actualizaciones a cualquier version 1.x.x del paquete.
 
 # --instructions--
 
-Usa el caret (`^`) para anteponer la versión de moment en tus dependencias y permitir a npm actualizarlo a cualquier nueva versión MINOR.
+Usa el caret (`^`) para fijar la versión de `@freecodecamp/example` en su lugar y permitir a npm actualizarla a cualquier versión anterior.
 
 **Nota:** Los números de versión no deben ser cambiados.
 
 # --hints--
 
-"dependencies" debe incluir "moment"
+`"dependencies"` debería incluir `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ Usa el caret (`^`) para anteponer la versión de moment en tus dependencias y pe
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ Usa el caret (`^`) para anteponer la versión de moment en tus dependencias y pe
   );
 ```
 
-la versión de "moment" debe coincidir con "2.x.x"
+La versión de `"@freecodecamp/example"` debería coincidir con `"^1.x.x"`.
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ la versión de "moment" debe coincidir con "2.x.x"
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^\^2\./,
-        'Wrong version of "moment". It should be ^2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\^1\./,
+        'Wrong version of "@freecodecamp/example". It should be ^1.2.13'
       );
     },
     (xhr) => {
