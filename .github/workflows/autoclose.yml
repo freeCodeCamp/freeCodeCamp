@@ -14,38 +14,48 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const patches = [
-              "@@ -63,7 +63,6 @@ $RECYCLE.BIN/\n # Icon must end with two \\r\n Icon\n \n-\n # Thumbnails\n ._*\n ",
-              "@@ -63,7 +63,6 @@ $RECYCLE.BIN/\n # Icon must end with two \\r\n Icon\n \n-\n # Thumbnails\n ._*\n \n@@ -165,7 +164,6 @@ config/curriculum.json\n config/i18n/all-langs.js\n config/certification-settings.js\n \n-\n ### vim ###\n # Swap\n [._]*.s[a-v][a-z]",
-              "@@ -165,7 +165,6 @@ config/curriculum.json\n config/i18n/all-langs.js\n config/certification-settings.js\n \n-\n ### vim ###\n # Swap\n [._]*.s[a-v][a-z]"
-            ];
-            const files = await github.rest.pulls.listFiles({
+            if (
+              files.data.length !== 1 ||
+              files.data[0].filename !== ".gitignore"
+            ) {
+              return;
+            }
+            const creator = context.payload.sender.login;
+            const opts = github.rest.issues.listForRepo.endpoint.merge({
+              ...context.issue,
+              creator,
+              state: 'all'
+            });
+            const issues = await github.paginate(opts);
+
+            // iterate through issues
+            for (const issue of issues) {
+              // if the issue is this one, keep looking
+              if (issue.number === context.issue.number) {
+                continue;
+              }
+
+              // if the issue is actually a PR, they're not a first timer
+              if (issue.pull_request) {
+                return // Creator is already a contributor.
+              }
+            }
+            core.setFailed("Invalid PR detected.");
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "Thank you for opening this pull request.\n\nThis is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.\n\nThank you and happy coding.",
+            });
+            await github.rest.pulls.update({
               owner: context.payload.repository.owner.login,
               repo: context.payload.repository.name,
               pull_number: context.payload.pull_request.number,
+              state: "closed"
             });
-            if (
-              files.data.length === 1 &&
-              files.data[0].filename === ".gitignore" &&
-              patches.includes(files.data[0].patch)
-            ) {
-              core.setFailed("Invalid PR detected.");
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: "Thank you for opening this pull request.\n\nThis is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.\n\nThank you and happy coding.",
-              });
-              await github.rest.pulls.update({
-                owner: context.payload.repository.owner.login,
-                repo: context.payload.repository.name,
-                pull_number: context.payload.pull_request.number,
-                state: "closed"
-              });
-              await github.rest.issues.addLabels({
-                owner: context.payload.repository.owner.login,
-                repo: context.payload.repository.name,
-                issue_number: context.issue.number,
-                labels: ["spam"]
-              });
-            }
+            await github.rest.issues.addLabels({
+              owner: context.payload.repository.owner.login,
+              repo: context.payload.repository.name,
+              issue_number: context.issue.number,
+              labels: ["spam"]
+            });
