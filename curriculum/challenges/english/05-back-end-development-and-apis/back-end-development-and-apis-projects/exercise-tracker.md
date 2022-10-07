@@ -64,9 +64,9 @@ You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
-  const url = getUserInput('url');
   assert(
-    !/.*\/exercise-tracker\.freecodecamp\.rocks/.test(getUserInput('url'))
+    !/.*\/exercise-tracker\.freecodecamp\.rocks/.test(getUserInput('url')
+    )
   );
 };
 ```
