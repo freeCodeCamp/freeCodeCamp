@@ -1,6 +1,6 @@
 ### I am new to GitHub and Open Source. Where should I start?
 
-Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
+Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open-source contribution tips.
 
 ### What do I need to know to contribute to the codebase?
 
@@ -36,9 +36,9 @@ Please don't create GitHub issues for security issues. Instead, please [follow o
 
 ### I am a student. Can I work on a feature for academic credits?
 
-Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions from volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
+Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull requests and code contributions from volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
 
-We request you to plan ahead and work on code contributions with this in mind.
+We request you plan ahead and work on code contributions with this in mind.
 
 ### What do these different labels that are tagged on issues mean?
 
@@ -80,7 +80,7 @@ community, and live by our [code of conduct](https://www.freecodecamp.org/news/c
 
 Here are some recommended paths for some of our platforms:
 
-- To be a **Discord/Chat** moderator, have an active presence in our chat and
+- To be a **Discord/Chat** moderator, have an active presence in our chat, and
   have positive engagements with others, while also learning and practicing how
   to deal with potential conflicts that may arise.
 - To be a **Forum** moderator, similar to a chat moderator, have an active
