@@ -18,7 +18,7 @@ freeCodeCamp es una comunidad inclusiva y necesitamos mantenerla de esa manera.
 
 Tenemos un solo [Código de Conducta](https://code-of-conduct.freecodecamp.org) que gobierna toda nuestra comunidad. Cuantas menos reglas, mas fácil serán de recordar. Puedes leerlas y memorizarlas [aquí](https://code-of-conduct.freecodecamp.org).
 
-> [!NOTE] As a moderator we would add you to one or more teams on GitHub, our community forums & chat servers. If you are missing access on a platform that you would like to moderate, please [reach out to a staff member](FAQ.md#additional-assistance).
+> [!NOTE] Como moderador, te añadiríamos a uno o más equipos en GitHub, nuestros foros de la comunidad & servidores de chat. Si no tienes acceso a una plataforma que te gustaría moderar, por favor [ponte en contacto con uno de los miembros del personal](FAQ.md#additional-assistance).
 
 ## Moderando GitHub
 
@@ -29,7 +29,7 @@ Las moderadoras tienen dos responsabilidades principales en GiHub:
 
 ### Moderando conflictos (issues) de GitHub
 
-We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) repository as a common issue tracker for all of our repositories. We get new issues every day, all of which need to be triaged, labeled, and addressed. Hay tambien una gran seccion para empezar a ayudar con proyectos de origen-abierto (open-source).
+Utilizamos nuestro repositorio principal [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) como un rastreador de problemas común para todos nuestros repositorios. Todos los días recibimos nuevos problemas, que hay que clasificar, etiquetar y tratar. Hay tambien una gran seccion para empezar a ayudar con proyectos de origen-abierto (open-source).
 
 #### Problema de clasificación
 
