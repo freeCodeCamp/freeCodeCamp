@@ -15,22 +15,22 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             if (
-              files.data.length !== 1 || 
+              files.data.length !== 1 ||
               files.data[0].filename !== ".gitignore"
             ) {
               return;
             }
-            const creator = context.payload.sender.login
+            const creator = context.payload.sender.login;
             const opts = github.rest.issues.listForRepo.endpoint.merge({
               ...context.issue,
               creator,
               state: 'all'
-            })
-            const issues = await github.paginate(opts)
+            });
+            const issues = await github.paginate(opts);
 
             for (const issue of issues) {
               if (issue.number === context.issue.number) {
-                continue
+                continue;
               }
 
               if (issue.pull_request) {
