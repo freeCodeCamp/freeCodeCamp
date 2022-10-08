@@ -24,7 +24,7 @@ The freeCodeCamp forum is actually a Discourse forum and follows many of the sam
 
 ### Shadow a Mod
 
-All moderator actions can be followed by reviewing the [action logs](https://forum.freecodecamp.org/admin/logs/staff_action_logs). The actions taken by automated tools like 'akistmet' or 'system' can mostly be ignored until they result in a post that needs to be reviewed. Posts to be reviewed will show up in the [Review](https://forum.freecodecamp.org/review) area of the forum.
+All moderator actions can be followed by reviewing the [action logs](https://forum.freecodecamp.org/admin/logs/staff_action_logs). The actions taken by automated tools like `akistmet` or `system` can mostly be ignored until they result in a post that needs to be reviewed. Posts to be reviewed will show up in the [Review](https://forum.freecodecamp.org/review) area of the forum.
 
 For the first week or so you will want to pay attention to what is getting flagged and what is being reviewed, and compare that to the actions being taken upon the flagged posts. You may see the system account flag a post because the user created it too quickly. In many cases, the moderators will unflag the post by clicking on the "Approve Post" button or mark it as "Not Spam" (depending on the flag type).
 
