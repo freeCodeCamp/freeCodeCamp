@@ -114,7 +114,7 @@
     "@babel/preset-react": "7.18.6",
     "@babel/preset-typescript": "7.18.6",
     "@testing-library/cypress": "8.0.3",
-    "@testing-library/dom": "8.18.1",
+    "@testing-library/dom": "8.19.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/user-event": "13.5.0",
     "@types/chai": "4.3.3",
