@@ -1,31 +1,28 @@
 import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
-import { of, empty } from 'rxjs';
-import { switchMap, retry, catchError, concat, tap } from 'rxjs/operators';
+import { empty, of } from 'rxjs';
+import { catchError, concat, retry, switchMap, tap } from 'rxjs/operators';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
+import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
-  userSelector,
-  isSignedInSelector,
   submitComplete,
   updateComplete,
   updateFailed
-} from '../../../redux';
-
-import postUpdate$ from '../utils/post-update';
+} from '../../../redux/actions';
+import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
-import { actionTypes as submitActionTypes } from '../../../redux/action-types';
+import postUpdate$ from '../utils/post-update';
 import { actionTypes } from './action-types';
+import { closeModal, updateSolutionFormValues } from './actions';
 import {
-  projectFormValuesSelector,
+  challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
-  closeModal,
-  challengeFilesSelector,
-  updateSolutionFormValues
-} from './';
+  projectFormValuesSelector
+} from './selectors';
 
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(

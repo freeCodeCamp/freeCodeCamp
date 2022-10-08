@@ -10,7 +10,7 @@ dashedName: problem-148-exploring-pascals-triangle
 
 パスカルの三角形の最初の 7 段には 7 で割り切れる要素がないことを、簡単に確認できます。
 
-```
+```markup
             1
           1   1
         1   2   1

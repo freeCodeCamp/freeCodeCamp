@@ -69,9 +69,9 @@ Pick a challenge markdown file from the options above.
 
 ### Skim through the video associated with the challenge and create a multiple-choice question
 
-First, find the videoId.
+First, find the `videoId`.
 
-For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
+For example, in the following code from the header of a video challenge markdown file, the `videoId` is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
 
 ````
 ---
@@ -85,7 +85,7 @@ https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the
 
 In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim the YouTube video with that videoId and think of a multiple-choice question based on the content of the video.
+Skim the YouTube video with that `videoId` and think of a multiple-choice question based on the content of the video.
 
 ### Add the question to the markdown file
 

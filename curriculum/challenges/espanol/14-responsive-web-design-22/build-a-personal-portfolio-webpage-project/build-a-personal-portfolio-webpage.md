@@ -91,7 +91,7 @@ Tu elemento `#navbar` debe contener al menos un elemento `a` cuyo atributo `href
 
 ```js
 const links = [...document.querySelectorAll('#navbar a')].filter(
-  (nav) => (nav?.getAttribute('href') || '').substr(0, 1) === '#'
+  (nav) => (nav?.getAttribute('href') || '').substring(0, 1) === '#'
 );
 
 assert.isAbove(

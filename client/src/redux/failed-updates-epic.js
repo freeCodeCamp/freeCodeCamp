@@ -1,12 +1,12 @@
 import { ofType } from 'redux-observable';
-import { merge, empty } from 'rxjs';
+import { empty, merge } from 'rxjs';
 import {
-  tap,
+  catchError,
   filter,
-  map,
   ignoreElements,
+  map,
   switchMap,
-  catchError
+  tap
 } from 'rxjs/operators';
 import store from 'store';
 import { v4 as uuid } from 'uuid';
@@ -15,11 +15,8 @@ import { backEndProject } from '../../utils/challenge-types';
 import { isGoodXHRStatus } from '../templates/Challenges/utils';
 import postUpdate$ from '../templates/Challenges/utils/post-update';
 import { actionTypes } from './action-types';
-import {
-  serverStatusChange,
-  isServerOnlineSelector,
-  isSignedInSelector
-} from './';
+import { serverStatusChange } from './actions';
+import { isServerOnlineSelector, isSignedInSelector } from './selectors';
 
 const key = 'fcc-failed-updates';
 

@@ -24,12 +24,12 @@ import { debounce } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
+import { saveChallenge } from '../../../redux/actions';
 import {
-  userSelector,
-  saveChallenge,
   isDonationModalOpenSelector,
-  isSignedInSelector
-} from '../../../redux';
+  isSignedInSelector,
+  userSelector
+} from '../../../redux/selectors';
 import {
   ChallengeFiles,
   Dimensions,
@@ -45,24 +45,26 @@ import {
   isFinalProject
 } from '../../../../utils/challenge-types';
 import {
-  canFocusEditorSelector,
-  challengeMetaSelector,
-  consoleOutputSelector,
   executeChallenge,
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  challengeTestsSelector,
   submitChallenge,
   initTests,
-  isResettingSelector,
   stopResetting,
-  isProjectPreviewModalOpenSelector,
   openModal,
-  isChallengeCompletedSelector,
-  attemptsSelector,
   resetAttempts
-} from '../redux';
+} from '../redux/actions';
+import {
+  attemptsSelector,
+  canFocusEditorSelector,
+  challengeMetaSelector,
+  consoleOutputSelector,
+  challengeTestsSelector,
+  isResettingSelector,
+  isProjectPreviewModalOpenSelector,
+  isChallengeCompletedSelector
+} from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
 import LowerJaw from './lower-jaw';
 
@@ -279,6 +281,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
+    fontFamily: 'Hack-ZeroSlash, monospace',
     scrollBeyondLastLine: true,
     selectionHighlight: false,
     overviewRulerBorder: false,

@@ -81,18 +81,28 @@ i18n フレームワークとツールがどのように機能するかを理解
 
 ## 世界の言語でクライアントアプリをテストする
 
-クライアントアプリは、[言語リスト](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5) にある言語でテストできます。
+You can test the client app in any language available in the [list of languages here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.ts).
 
 ```js
-  const availableLangs = {
-    client: ['english', 'espanol', 'chinese'],
-    ...
-  };
+  export const availableLangs = {
+  client: [
+    'english',
+    'espanol',
+    'chinese',
+    'chinese-traditional',
+    'italian',
+    'portuguese',
+    'ukrainian',
+    'japanese',
+    'german'
+  ],
+  ...
+};
 ```
 
 新しい言語をテストするには、言語名をタイトルとしたフォルダを他の言語の隣に作成し、JSON ファイルを別の言語から新しいフォルダにコピーします。
 
-上記の [`config/i18n/all-langs.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.js) ファイルにあるように、`client` 配列に言語を追加します。
+Add the language to the `client` array as seen above in the [`config/i18n/all-langs.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.ts) file.
 
 次に、同じファイルのコメント指示に従って、必要に応じて残りの変数を追加 / 更新します。
 

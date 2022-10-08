@@ -11,9 +11,11 @@ import { createSelector } from 'reselect';
 import { challengeTypes } from '../../../../utils/challenge-types';
 
 import './tool-panel.css';
-import { openModal, executeChallenge, challengeMetaSelector } from '../redux';
+import { openModal, executeChallenge } from '../redux/actions';
+import { challengeMetaSelector } from '../redux/selectors';
 
-import { saveChallenge, isSignedInSelector } from '../../../redux';
+import { saveChallenge } from '../../../redux/actions';
+import { isSignedInSelector } from '../../../redux/selectors';
 
 const mapStateToProps = createSelector(
   challengeMetaSelector,

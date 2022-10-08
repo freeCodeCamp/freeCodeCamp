@@ -38,31 +38,30 @@
   font-display: fallback;
 }
 
-/* roboto mono */
+/* hack zeroslash */
 
 @font-face {
-  font-family: 'Roboto Mono';
-  src: url('../../../static/fonts/roboto-mono/RobotoMono-Regular.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: fallback;
+  font-family: 'Hack-ZeroSlash';
+  src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff2')
+      format('woff2'),
+    url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff')
+      format('woff');
 }
 
 @font-face {
-  font-family: 'Roboto Mono';
-  src: url('../../../static/fonts/roboto-mono/RobotoMono-Italic.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: italic;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: 'Roboto Mono';
-  src: url('../../../static/fonts/roboto-mono/RobotoMono-Bold.woff')
-    format('woff');
+  font-family: 'Hack-ZeroSlash';
+  src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff2')
+      format('woff2'),
+    url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff')
+      format('woff');
   font-weight: bold;
-  font-style: normal;
-  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Hack-ZeroSlash';
+  src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff2')
+      format('woff2'),
+    url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff')
+      format('woff');
+  font-style: italic;
 }
