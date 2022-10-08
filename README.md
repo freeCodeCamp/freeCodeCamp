@@ -10,7 +10,7 @@
 
 [freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 40,000 people get their first developer job.
 
-Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Our full-stack web development and machine learning curriculum are completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ Our full-stack web development and machine learning curriculum is completely fre
 - [Reporting Bugs and Issues](#reporting-bugs-and-issues)
 - [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
 - [Contributing](#contributing)
-- [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
+- [Platform, Build, and Deployment Status](#platform-build-and-deployment-status)
 - [License](#license)
 
 ### Certifications
@@ -130,7 +130,7 @@ Here are our ten core certifications:
 - [Python for Penetration Testing](https://www.freecodecamp.org/learn/information-security/#python-for-penetration-testing)
   <br />
   <br />
-  **Projects**: [Stock Price Checker](https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker), [Anonymous Message Board](https://www.freecodecamp.org/learn/information-security/information-security-projects/anonymous-message-board), [Port Scanner](https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner), [SHA-1 Password Cracker](https://www.freecodecamp.org/learn/information-security/information-security-projects/sha-1-password-cracker), [Secure Real Time Multiplayer Game ](https://www.freecodecamp.org/learn/information-security/information-security-projects/secure-real-time-multiplayer-game)
+  **Projects**: [Stock Price Checker](https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker), [Anonymous Message Board](https://www.freecodecamp.org/learn/information-security/information-security-projects/anonymous-message-board), [Port Scanner](https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner), [SHA-1 Password Cracker](https://www.freecodecamp.org/learn/information-security/information-security-projects/sha-1-password-cracker), [Secure Real-Time Multiplayer Game ](https://www.freecodecamp.org/learn/information-security/information-security-projects/secure-real-time-multiplayer-game)
 
 #### 10. [Machine Learning with Python Certification](https://www.freecodecamp.org/learn/machine-learning-with-python/)
 
@@ -146,7 +146,7 @@ Once you have earned the Responsive Web Design, Algorithms and Data Structures, 
 
 #### Legacy Certifications
 
-We also have 4 legacy certifications dating back to our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
+We also have 4 legacy certifications dating back to our 2015 curriculum, which is still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
 
 - Legacy Front End Development Certification
 - Legacy Data Visualization Certification
