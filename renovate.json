@@ -11,23 +11,23 @@
       "enabled": false
     },
     {
-      "groupName": "Cypress",
-      "matchPackageNames": ["@testing-library/cypress", "cypress"],
+      "groupName": " Cypress ",
+      "matchPackageNames": [" @testing-library/cypress ", " cypress "],
       "automerge": true
     },
     {
-      "matchPackageNames": ["normalize-url"],
-      "allowedVersions": "<5.0.0"
+      "matchPackageNames": [" normalize-url "],
+      "allowedVersions": "< 5.0.0 "
     },
     {
-      "groupName": "CodeSee",
-      "matchPackagePrefixes": ["@codesee/"],
+      "groupName": " CodeSee ",
+      "matchPackagePrefixes": [" @codesee/ "],
       "automerge": true
     },
     {
-      "groupName": "Stripe",
-      "matchPackagePrefixes": ["@stripe/"]
+      "groupName": " Stripe ",
+      "matchPackagePrefixes": [" @stripe/ "]
     }
   ],
-  "ignorePaths": ["api-server"]
+  "ignorePaths": [" api-server "]
 }
