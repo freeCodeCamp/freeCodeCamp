@@ -31,10 +31,10 @@ You may notice moderators performing a procedure called 'split topic'. Which can
 
 Another useful feature that becomes enabled for all moderators is the ability to post a "Canned Reply" which is a pre-formed response that was worked out with the Mod team in order to quickly respond to some well-known and repetitive scenarios. These include:
 
-- welcoming a new forum member who has posted code without a question -> "Welcome - remind question"
-- reminding members not to post code solutions but to provide hints and tips instead -> "Solutions Instead of Help"
-- responding to a situation where someone's code works for you but not for them -> "Browser Issues"
-- encouraging members to open github issues when a possible bug is found -> "Bug Report"
+- Welcoming a new forum member who has posted code without a question -> "Welcome - remind question"
+- Reminding members not to post code solutions but to provide hints and tips instead -> "Solutions Instead of Help"
+- Responding to a situation where someone's code works for you but not for them -> "Browser Issues"
+- Encouraging members to open GitHub issues when a possible bug is found -> "Bug Report"
 
 There are quite a few more which should either be self-explanatory or if not, they should be explained in a post in the Mod team subforum.
 
