@@ -1,10 +1,11 @@
-### I am new to GitHub and Open Source. Where should I start?
+### 我是 GitHub 和開源的新手。 我應該從哪裡開始？
 
-Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
+請閱讀我們的 [“如何為開源指南做出貢獻”](https://github.com/freeCodeCamp/how-to-contribute-to-open-source)指南。 這些指南對初學者來說相對的友好一些，初學者可以好好參考因為
+裡面包含了很多對開源貢獻技巧。
 
-### What do I need to know to contribute to the codebase?
+### 我需要懂哪些技能才能為代碼庫做出貢獻？
 
-freeCodeCamp runs on a modern JavaScript stack. If you're interested in contributing to our codebase, you will need some familiarity with JavaScript and some of the technologies we use like Node.js, MongoDB, OAuth 2.0, React, Gatsby, and Webpack.
+freeCodeCamp主要是在JavaScript相關技術上運行。 如果您有興趣為我們的代碼庫做出貢獻，您需要熟悉 JavaScript 和一些我們使用的相關技術，例如 Node.js、MongoDB、OAuth 2.0、React、Gatsby 和 Webpack。
 
 ### Can I translate freeCodeCamp's resources?
 
