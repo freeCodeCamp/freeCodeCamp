@@ -12,7 +12,7 @@
 
 Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
-## Table of Contents
+## Content's table
 
 - [Certifications](#certifications)
 - [The Learning Platform](#the-learning-platform)
@@ -22,7 +22,7 @@ Our full-stack web development and machine learning curriculum is completely fre
 - [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
 - [License](#license)
 
-### Certifications
+### Certifications for the courses
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginner programmer around 300 hours to earn.
 
