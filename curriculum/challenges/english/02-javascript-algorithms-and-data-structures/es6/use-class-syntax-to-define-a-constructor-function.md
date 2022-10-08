@@ -30,7 +30,7 @@ class SpaceShuttle {
 // Implicit constructor 
 class Rocket {
   launch() {
-    console.log("To the moon!") ;
+    console.log("To the moon!");
   }
 }
 
