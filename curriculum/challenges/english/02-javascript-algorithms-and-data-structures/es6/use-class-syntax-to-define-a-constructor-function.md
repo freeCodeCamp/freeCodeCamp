@@ -23,7 +23,7 @@ class SpaceShuttle {
     this.targetPlanet = targetPlanet;
   }
   takeOff() {
-    console.log("To " + this.targetPlanet + "!") ;
+    console.log("To " + this.targetPlanet + "!");
   }
 }
 
