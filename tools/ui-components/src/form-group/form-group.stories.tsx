@@ -15,27 +15,6 @@ const story = {
   }
 };
 
-// function getValidationForConfirmEmail() {
-//   const { confirmNewEmail, newEmail } = emailForm;
-//   if (!maybeEmailRE.test(newEmail)) {
-//     return {
-//       state: null,
-//       message: ''
-//     };
-//   }
-//   const isMatch = newEmail === confirmNewEmail;
-//   if (maybeEmailRE.test(confirmNewEmail)) {
-//     return {
-//       state: isMatch ? 'success' : 'error',
-//       message: isMatch ? '' : t('validation.email-mismatch')
-//     };
-//   } else {
-//     return {
-//       state: null,
-//       message: ''
-//     };
-//   }
-// }
 const Template: Story<FormGroupProps> = ({
   controlId,
   className,
