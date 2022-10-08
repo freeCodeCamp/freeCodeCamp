@@ -30,7 +30,7 @@ For the first week or so you will want to pay attention to what is getting flagg
 
 Commonly, spam flags can also be raised by members or moderators. Common duplicitous behaviour would involve opening an account, making a post that seems harmless, then editing that post later on to add a link to an external site for the purpose of advertising it. In this case, usually the member account is fairly new and has only made this one post thus far, which indicates that the account was opened for the sole purpose of spamming the community. The decision should be made to delete the account after the first offence in this case. The same applies for accounts whose first post is deemed to be spam.
 
-You may notice moderators performing a procedure called 'split topic'. Which can be interpreted as either a moderator has split a post that was made in error into the tail-end of a topic that is aleady closed into its own thread for eg.; or a moderator merged duplicate topics that a single user has created for the same fCC challenge. Watching this procedure will highlight different actions and their causes.
+You may notice moderators performing a procedure called 'split topic'. This may be a case where a moderator has split a post that was made erroneously on an existing topic into a new topic, or a moderator merged duplicate topics that a single user has created for the same question. Watching this procedure will highlight different actions and their causes.
 
 Another useful feature that becomes enabled for all moderators is the ability to post a "Canned Reply" which is a pre-formed response that was worked out with the Mod team in order to quickly respond to some well-known and repetitive scenarios. These include:
 
