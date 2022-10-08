@@ -213,3 +213,6 @@ tools/ui-components/dist
 
 ### Rust ###
 target
+
+### API Node ###
+api-node/build

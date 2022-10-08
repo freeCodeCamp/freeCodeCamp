@@ -45,6 +45,7 @@
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "project": [
+          "./api-node/tsconfig.json",
           "./tsconfig.json",
           "./config/tsconfig.json",
           "./tools/ui-components/tsconfig.json",

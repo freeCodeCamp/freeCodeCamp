@@ -1,5 +1,6 @@
 {
   "include": [
+    "api-node/src/**/*",
     "client/i18n/**/*",
     "client/plugins/**/*",
     "client/src/**/*",
