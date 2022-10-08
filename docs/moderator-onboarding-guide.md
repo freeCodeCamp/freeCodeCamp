@@ -13,7 +13,10 @@ The first thing you may notice after being given moderator status on the forum i
 
 Some of the new tools will appear inside a new menu item that looks like a wrench. Some will appear as new tabs or buttons, or even new enabled options within the forum menus.
 
-To get familiar with the new tools and powers you can combine one or more of the following methods during your first week with this elevated role. (The first two of which are the most important.)
+To get familiar with the new tools and powers, you can combine one or more of the following methods during your first week with this elevated role:
+
+> [!TIP]
+> The first two are the most important.
 
 ### Become Familiar with the Discourse Admin Tools
 
