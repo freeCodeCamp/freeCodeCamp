@@ -32,7 +32,7 @@ Commonly, spam flags can also be raised by members or moderators. Common duplici
 
 You may notice moderators performing a procedure called 'split topic'. This may be a case where a moderator has split a post that was made erroneously on an existing topic into a new topic, or a moderator merged duplicate topics that a single user has created for the same question. Watching this procedure will highlight different actions and their causes.
 
-Another useful feature that becomes enabled for all moderators is the ability to post a "Canned Reply" which is a pre-formed response that was worked out with the Mod team in order to quickly respond to some well-known and repetitive scenarios. These include:
+Another useful feature that becomes enabled for all moderators is the ability to post a "Canned Reply" which is a pre-written response that was worked out with the mod team in order to quickly respond to some well-known and repetitive scenarios. These include:
 
 - Welcoming a new forum member who has posted code without a question -> "Welcome - remind question"
 - Reminding members not to post code solutions but to provide hints and tips instead -> "Solutions Instead of Help"
