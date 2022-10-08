@@ -11,7 +11,13 @@ This guide will help new moderators get up-and-running with the processes and pr
 
 The first thing you may notice after being given moderator status on the forum is that your interface will look somewhat different with new admin tools to explore and access to the Mod-Team subforum as well.
 
-To get familiar with the new tools and powers you can combine one or more of the following methods during your first week with this elevated role.
+Some of the new tools will appear inside a new menu item that looks like a wrench. Some will appear as new tabs or buttons or even new enabled options within the forum menus.
+
+To get familiar with the new tools and powers you can combine one or more of the following methods during your first week with this elevated role. (The first two of which are the most important.)
+
+### Become Familiar with the Discourse Admin Tools
+
+The freeCodeCamp forum is actually a Discourse forum and follows many of the same guidelines of other forums built on Discourse. To begin to get familiar with Discourse and the moderation role, start by reading Discourse's [new user guide](https://meta.discourse.org/t/discourse-new-user-guide/96331) then read Discourse's [new moderator guide](https://meta.discourse.org/t/discourse-moderation-guide/63116).
 
 ### Shadow a Mod
 
@@ -19,9 +25,18 @@ All moderator actions can be followed by reviewing the [action logs](https://for
 
 For the first week or so you will want to pay attention to what is getting flagged and what is being reviewed and compare that to the actions being taken upon the flagged posts. So you may see the system account flag a post because the user created it too quickly. In many cases, the moderators will unflag the post by clicking on the "Approve Post" button or mark it as "Not Spam" (depending on the flag type).
 
-Other actions you may see moderators do is a 'split topic'. Which can be interpreted as either a moderator has split a post that was made in error into the tail-end of a topic that is aleady closed into its own thread for eg or a moderator merging duplicate topics that a single user has created for the same fCC challenge. Watching this procedure will highlight different actions and their causes.
+Commonly, spam flags can also be raised by members or moderators. Common duplicitious behaviour would involve opening an account, making a post that seems harmless, then editing that post later on to add a link to an external site for the purpose of advertising it. In this case, usually the member account is fairly new and has only made this one post thus far, which indicates that the account was opened for the sole purpose of spamming the community. The decision should be made to delete the account after the first offence in this case. The same applies for accounts whose first post is deemed to be spam.
 
-### Become Familiar with the Discourse Admin Tools
+You may notice moderators performing a procedure called 'split topic'. Which can be interpreted as either a moderator has split a post that was made in error into the tail-end of a topic that is aleady closed into its own thread for eg.; or a moderator merged duplicate topics that a single user has created for the same fCC challenge. Watching this procedure will highlight different actions and their causes.
+
+Another useful feature that becomes enabled for all moderators is the ability to post a "Canned Reply" which is a pre-formed response that was worked out with the Mod team in order to quickly respond to some well-known and repetitive scenarios. These include:
+
+- welcoming a new forum member who has posted code without a question -> "Welcome - remind question"
+- reminding members not to post code solutions but to provide hints and tips instead -> "Solutions Instead of Help"
+- responding to a situation where someone's code works for you but not for them -> "Browser Issues"
+- encouraging members to open github issues when a possible bug is found -> "Bug Report"
+
+There are quite a few more which should either be self-explanatory or if not, they should be explained in a post in the Mod team subforum.
 
 ### Read Mod-Team Subforum Posts
 
