@@ -20,7 +20,7 @@ To get familiar with the new tools and powers, you can combine one or more of th
 
 ### Become Familiar with the Discourse Admin Tools
 
-The freeCodeCamp forum is actually a Discourse forum and follows many of the same guidelines of other forums built on Discourse. To begin to get familiar with Discourse and the moderation role, start by reading Discourse's [new user guide](https://meta.discourse.org/t/discourse-new-user-guide/96331) then read Discourse's [new moderator guide](https://meta.discourse.org/t/discourse-moderation-guide/63116).
+The freeCodeCamp forum is actually a Discourse forum and follows many of the same guidelines of other forums built on Discourse. To begin to get familiar with Discourse and the moderation role, start by reading Discourse's [new user guide](https://meta.discourse.org/t/discourse-new-user-guide/96331) and Discourse's [new moderator guide](https://meta.discourse.org/t/discourse-moderation-guide/63116).
 
 ### Shadow a Mod
 
