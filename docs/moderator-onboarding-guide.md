@@ -1,6 +1,6 @@
 # The Official freeCodeCamp Moderator Onboarding Guide
 
-This guide will help new moderators get up-and-running with the processes and procedures followed by experienced moderators on the fCC community forum and other official communities that we foster.
+This guide will help new moderators get up and running with the processes and procedures followed by experienced moderators on the freeCodeCamp community forum and other official communities that we foster.
 
 > [!NOTE]
 > If you haven't read [The Moderator Handbook](https://contribute.freecodecamp.org/#/moderator-handbook) yet, you should start there first.
