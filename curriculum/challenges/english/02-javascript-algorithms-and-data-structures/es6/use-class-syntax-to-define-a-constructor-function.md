@@ -36,7 +36,7 @@ class Rocket {
 
 const zeus = new SpaceShuttle('Jupiter');
 // prints To Jupiter! in console
-zeus.takeOff() 
+zeus.takeOff();
 
 const atlas = new Rocket();
 // prints To the moon! in console
