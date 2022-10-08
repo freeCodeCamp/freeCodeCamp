@@ -40,7 +40,7 @@ zeus.takeOff();
 
 const atlas = new Rocket();
 // prints To the moon! in console
-atlas.launch() 
+atlas.launch();
 ```
 
 It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.
