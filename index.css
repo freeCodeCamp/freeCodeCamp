@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+    outline:none;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background:url("images/space.jpeg");
+    /* object-fit: contain; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  
+  /* #canvas {
+    width: 100%;
+    height: 1000px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #sun {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(251, 196, 28, 1) 0%,
+      rgba(251, 181, 3, 1) 30%,
+      rgba(250, 144, 2, 1) 50%,
+      rgba(250, 135, 4, 1) 70%,
+      rgba(234, 49, 3, 1) 85%,
+      rgba(194, 15, 4, 1) 100%
+    );
+    transform: translate(-50%, -50%);
+   box-shadow: 0 0 200px 200px #fbc31c05, 0 0 40px 5px rgba(251, 195, 28, 0.6);
+  }
+   */
+
+   #main{
+    color:white;
+    font-size: 170px;
+    font-weight: bold;
+    animation: upDown 1s 1;
+    text-align: center;
+    margin-bottom:0px;
+    height:400px;
+    font-family: Cambria;
+   }
+  
+   @keyframes upDown {
+      0%{
+        font-size: 170px;
+      }
+      50%{
+        font-size: 195px;
+      }
+      100%{
+        font-size: 170px;
+      }
+   }
+
+   #arrowDown{
+      color:white;
+      font-size: 35px;
+      font-weight: bold;
+      margin-top: 100px;
+      animation: down 1s infinite;
+      animation-delay: 1900ms;
+      text-align: center;
+      margin-left: 50%;
+      cursor: pointer;
+   }
+
+   @keyframes down {
+      from{
+        margin-top:0px;
+      }
+   }
+
+   #info{
+    color:white;
+    font-family: calibri;
+    font-size: 45px;
+    
+    
+   }
+
+   #info_below{
+    color:white;
+    font-size:30px;
+    font-family: calibri;
+    font-style: italic;
+   }
+   
+  #planets{
+    margin-top:80px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:50vh;
+    width:100%;
+  }
+
+
+ 
+  #sun {
+    height: 145px;
+    width:145px;
+    border-radius: 50%;
+    background-position: center;
+  }
+  #sun:hover{
+    box-shadow: 5px 5px 40px rgba(223, 86, 12, 0.5);
+  }
+
+  #moon {
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: -2px;
+    
+  }
+ 
+
+  
+  #mercury {
+    height: 25px;
+    width: 25px;
+    animation: spin 100s infinite ;
+    border-radius: 50%;
+    background-position: center;
+  }
+  
+  #venus {
+    height: 35px;
+    width: 35px;
+    animation: spin 200s infinite ;
+    border-radius: 50%;
+    background-position: center;
+  }
+  
+  #earth {
+    height: 54px;
+    width: 54px;
+    animation: spin 60s infinite ;
+    border-radius: 50%;
+    background-position: center;
+    -moz-box-shadow: 0 0 5px #fff;
+    -webkit-box-shadow: 0 0 5px #fff;
+    box-shadow: 0px 0px 5px #fff;
+  }
+  
+  #mars {
+    height: 29px;
+    width: 29px;
+    animation: spin 70s infinite ;
+    border-radius: 50%;
+    background-position: center;
+  }
+  
+  #jupiter {
+    height: 110px;
+    width: 110px;
+    animation: spin 30s infinite ;
+    border-radius: 50%;
+    background-position: center;
+  }
+  
+  #saturn {
+    height: 100px;
+    width: 100px;
+    border-radius: 0%;
+    animation: spin 40s infinite ;
+    border-radius: 50%;
+    background-position: center;
+  }
+  
+  #uranus {
+    height: 70px;
+    width: 70px;
+    animation: spin 55s infinite ;
+    border-radius: 50%;
+    background-position: center;
+    object-fit: contain;
+  }
+  
+  #neptune {
+    height: 63px;
+    width: 63px;
+    animation: spin 50s infinite ;
+    border-radius: 50%;
+    background-position: center;
+  }
+
+  .object_planet{
+    margin-left: 50px;
+    cursor: pointer;
+    transition-duration: 1s;
+  }
+
+  .object_planet:hover{
+    transform: scale(1.3);
+    box-shadow: 5px 5px 40px rgba(242, 238, 238, 0.5);
+  }
+  @keyframes spin{
+    0%{ transform: rotate(0deg) }
+    100%{ transform: rotate(360deg) }
+  }
+
+  #input{
+    border-color: white;
+    color: white;
+    height:40px;
+    width:500px;
+    background-color: transparent;
+    font-size: 22px;
+    text-align: center;
+  }
+  ::placeholder { 
+    color:white;
+    opacity: 1; 
+  }
+  #msg{
+    color:red;
+    margin-top: -1px;
+    font-family: calibri;
+    font-weight: bold;
+  }
+
+  #result{
+    color:white;
+    font-size:50px;
+    font-family: calibri;
+    margin-top: 80px;
+  }
+
+  .special{
+    color:rgb(231, 35, 35);
+    /* text-shadow:1px 1px 10px rgb(231, 35, 35), 1px 1px 10px rgb(231, 35, 35); */
+  }
