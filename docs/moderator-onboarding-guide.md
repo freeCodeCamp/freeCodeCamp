@@ -39,7 +39,7 @@ Another useful feature that becomes enabled for all moderators is the ability to
 - Responding to a situation where someone's code works for you but not for them -> "Browser Issues"
 - Encouraging members to open GitHub issues when a possible bug is found -> "Bug Report"
 
-There are quite a few more which should either be self-explanatory or if not, they should be explained in a post in the Mod team subforum.
+There are more, which you can read through to become familiar with their respective uses. You can also find discussion around the templates in the mod-team subforum, and you are welcome to ask questions if you aren't sure how a template should be used.
 
 ### Read Mod-Team Subforum Posts
 
