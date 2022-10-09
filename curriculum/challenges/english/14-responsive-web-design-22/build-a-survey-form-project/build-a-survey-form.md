@@ -91,7 +91,7 @@ const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-Your `#name` should be a descedant of `#survey-form`.
+Your `#name` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name')
@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Your `#email` should be a descedant of `#survey-form`
+Your `#email` should be a descendant of `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #email')
