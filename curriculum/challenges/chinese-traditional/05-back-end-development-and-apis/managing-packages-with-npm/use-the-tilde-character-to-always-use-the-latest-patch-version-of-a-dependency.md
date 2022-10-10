@@ -18,15 +18,15 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --instructions--
 
-在 package.json 文件中，當前規則是 npm 將 moment 升級到特定版本（2.10.2）。 但是現在，要允許使用最新的 2.10.x 版本。
+在 package.json 文件中，你當前關於 npm 如何升級 `@freecodecamp/example` 的規則是使用特定版本（1.2.13）。 但現在，你想允許最新的 1.2.x 版本。
 
-在依賴項中，給 moment 的版本號添加波浪號（`~`）前綴，允許 npm 將其更新爲最新的修訂版。
+在依賴項中使用波浪號（`~`）字符作爲 `@freecodecamp/example` 版本的前綴，並允許 npm 將其更新爲任何新的*補丁*發佈。
 
 **注意：**原來的版本號不用更改。
 
 # --hints--
 
-“dependencies”字段中應包含“moment”
+`"dependencies"` 應包括 `"@freecodecamp/example"`。
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
   );
 ```
 
-“moment”的版本號應該是“~2.10.2”
+`"@freecodecamp/example"` 版本應匹配 `"~1.2.13"`。
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^\~2\.10\.2/,
-        'Wrong version of "moment". It should be ~2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\~1\.2\.13/,
+        'Wrong version of "@freecodecamp/example". It should be ~1.2.13'
       );
     },
     (xhr) => {
