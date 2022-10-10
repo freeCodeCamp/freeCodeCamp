@@ -10,13 +10,13 @@ Estas instrucciones le indicarán cómo utilizar nuestra herramienta de edición
 
 ### Iniciar el Editor
 
-Para iniciar el editor, asegúrese de estar en el directorio raíz de freecodecamp. Then, run `npm run challenge-editor` to start both the client and the API that powers the editor.
+Para iniciar el editor, asegúrese de estar en el directorio raíz de freecodecamp. Luego, ejecute `npm run challenge-editor` para iniciar tanto el cliente como la API que alimenta el editor.
 
-The client will run on port `3300`, so you can access it at `http://localhost:3300`. The API runs on port `3200`, to avoid conflicts with the learn client and server. This will allow you to run the freeCodeCamp application at the same time as the editor, so you can test your changes locally.
+El cliente se ejecutará en el puerto `3300`, por lo que puede acceder a él en `http://localhost:3300`. La API se ejecuta en el puerto `3200` para evitar conflictos con el cliente y el servidor de aprendizaje. Esto le permitirá ejecutar la aplicación freeCodeCamp al mismo tiempo que el editor, para que pueda probar sus cambios localmente.
 
-### Navigating the Editor
+### Navegando por el Editor
 
-The default view will list the available `superblocks` - these are the certifications. Click on the certification link you want to work on.
+La vista predeterminada mostrará una lista de los `superbloques` disponibles: estas son las certificaciones. Click on the certification link you want to work on.
 
 This will take you to the list of blocks. These are the practice projects. Click on the project link you want to work on.
 
@@ -126,7 +126,7 @@ npm ejecuta delete-step X # donde X es el número de paso a ser eliminado.
 
 A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
 
-#### How to run script
+#### Como ejecutar un script
 
 1. Redirígete al directorio del proyecto.
 2. Ejecuta el siguiente comando npm:

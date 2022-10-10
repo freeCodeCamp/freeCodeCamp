@@ -81,7 +81,7 @@ If you think you've found a bug, first read the ["How to Report a Bug"](https://
 - To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. 詳細については、[サブフォーラムリーダーハンドブック](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) をご覧ください。
 - **GitHub** モデレーターになるには、提起された GitHub Issue の処理を手伝います。それらが有効であるかどうかを確認し、(理想的には) Issue に対するソリューションを提案して、他の人 (または自分自身) が対応できる状態にします。
 
-つまり、他の人に敬意を払ってください。 人々は世界中から集まっています。 これを念頭に置いて、励ましの言葉または応援する言葉を使用し、異文化間のコミュニケーションを意識してください。
+つまり、他の人に敬意を払ってください。 We are humans from all around the world. これを念頭に置いて、励ましの言葉または応援する言葉を使用し、異文化間のコミュニケーションを意識してください。
 
 **一定期間、着実に** 上記を実行し、仲間のモデレーターがあなたを推薦した場合に、スタッフから連絡が来て、モデレーターチームに加わることができます。 オープンソース作業はボランティアであり、私たちの時間は限られています。 皆様も、おそらく同じだと思います。 したがって、24 時間年中無休でコミュニティに参加するのではなく、**着実に** 取り組んでいただきたいです。
 
@@ -100,6 +100,6 @@ If you think you've found a bug, first read the ["How to Report a Bug"](https://
 
 ### その他の支援
 
-スタック、コードベースのアーキテクチャー、翻訳などについて質問がある場合は、[フォーラムの](https://forum.freecodecamp.org/g/team) スタッフチームまでお気軽にご連絡ください。
+If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
 
 **`dev[at]freecodecamp.org` にて、開発者スタッフにメールでお問い合わせいただけます。**

@@ -1,11 +1,14 @@
 import { nanoid } from 'nanoid';
 
-import { FlashState, State } from '../../../redux/types';
+import {
+  FlashState,
+  State,
+  FlashApp,
+  FlashMessageArg
+} from '../../../redux/types';
 import { playTone } from '../../../utils/tone';
 import { Themes } from '../../settings/theme';
 import { FlashMessages } from './flash-messages';
-
-export const FlashApp = 'flash';
 
 export const sagas = [];
 
@@ -18,12 +21,6 @@ enum FlashActionTypes {
   CreateFlashMessage = 'createFlashMessage',
   RemoveFlashMessage = 'removeFlashMessage'
 }
-
-export type FlashMessageArg = {
-  type: string;
-  message: FlashMessages;
-  variables?: Record<string, unknown>;
-};
 
 const initialState = {
   message: {

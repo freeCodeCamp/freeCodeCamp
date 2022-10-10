@@ -14,7 +14,7 @@ import {
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
 import ProjectPreviewModal from '../templates/Challenges/components/project-preview-modal';
 
-import { openModal } from '../templates/Challenges/redux';
+import { openModal } from '../templates/Challenges/redux/actions';
 
 import '../components/layouts/project-links.css';
 import { regeneratePathAndHistory } from '../../../utils/polyvinyl';

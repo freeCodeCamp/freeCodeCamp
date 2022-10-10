@@ -1,8 +1,9 @@
 import { ofType } from 'redux-observable';
-import { mapTo, filter } from 'rxjs/operators';
+import { filter, mapTo } from 'rxjs/operators';
 
 import { actionTypes as types } from './action-types';
-import { serverStatusChange, isServerOnlineSelector } from './';
+import { serverStatusChange } from './actions';
+import { isServerOnlineSelector } from './selectors';
 
 export default function updateCompleteEpic(action$, state$) {
   return action$.pipe(

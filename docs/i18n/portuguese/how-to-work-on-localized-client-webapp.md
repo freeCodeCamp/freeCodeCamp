@@ -81,18 +81,28 @@ Alguns desses arquivos estão traduzidos na nossa plataforma de tradução (Crow
 
 ## Testando o cliente web em um idioma mundial
 
-Você pode testar o client app em qualquer linguagem disponível nessa [lista de idiomas aqui](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5).
+You can test the client app in any language available in the [list of languages here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.ts).
 
 ```js
-  const availableLangs = {
-    client: ['english', 'espanol', 'chinese'],
-    ...
-  };
+  export const availableLangs = {
+  client: [
+    'english',
+    'espanol',
+    'chinese',
+    'chinese-traditional',
+    'italian',
+    'portuguese',
+    'ukrainian',
+    'japanese',
+    'german'
+  ],
+  ...
+};
 ```
 
 Se você estiver testando um idioma novo, crie uma pasta com o nome do idioma como título próximo dos outros idiomas e copie os arquivos JSON de outro idioma para a sua pasta.
 
-Adicione o idioma para o array `client` como mostrado acima no arquivo [`config/i18n/all-langs.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.js).
+Add the language to the `client` array as seen above in the [`config/i18n/all-langs.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.ts) file.
 
 A seguir, siga as instruções nos comentários dentro do mesmo arquivo para adicionar/atualizar o rest das variáveis se necessário.
 
