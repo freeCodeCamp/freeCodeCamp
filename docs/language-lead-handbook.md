@@ -16,9 +16,13 @@ The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
 ### How are the articles built
 
-We are using a JAMStack app built with Ghost & 11ty & lots of love from the community. Ghost allows for easy management system and tool for drafting and send articles to our database.
+We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
 
-The database send the newly created articles to /news, which 11ty renders them to static HTML content. This process usually takes couple of hours. If you are interested in knowing more, check out the [/news repo](https://github.com/freeCodeCamp/news#build).
+[Ghost](https://ghost.org) acts as our content management platform, and [11ty](https://11ty.dev) builds the articles into static assets – plain HTML, JavaScript, and CSS. Only these static assets are deployed to our servers.
+
+This process is automated and runs periodically. If you publish something now, it will be available on the news site in a few hours.
+
+You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
 
 ## How to mention the original author of a translated article
 
