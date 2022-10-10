@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { Component, useEffect } from 'react';
 
 import { FormGroupProps } from './types';
@@ -6,14 +7,14 @@ import { FormGroupProps } from './types';
 const FormGroup = React.forwardRef<HTMLLabelElement, FormGroupProps>(
   ({ children, className, validationState, controlId }): JSX.Element => {
     const defaultClasses = 'mb-3.5';
-    let variantClass;
+    let variantClass = '';
     useEffect(() => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const setDefaultClass = (validValue: string) => {
+      const setDefaultClass = (validValue?: string) => {
         if (validValue === 'success') return (variantClass = 'success');
         else if (validValue === 'warning') return (variantClass = 'warning');
         else if (validValue === 'error') return (variantClass = 'error');
       };
+      setDefaultClass(validationState);
     }, [validationState]);
 
     const classes = [defaultClasses, variantClass, className].join(' ');
