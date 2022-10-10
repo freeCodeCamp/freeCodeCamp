@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b40
-title: Confrontare gli ambiti di applicazione delle parole chiave var e let
+title: Confrontare la visibilità delle parole chiave var e let
 challengeType: 1
 forumTopicId: 301195
 dashedName: compare-scopes-of-the-var-and-let-keywords
@@ -12,7 +12,7 @@ Se non hai familiarità con `let`, vedi questa <a href="/learn/javascript-algori
 
 Quando si dichiara una variabile con la parola chiave `var`, essa viene dichiarata globalmente, o localmente se dichiarata all'interno di una funzione.
 
-La parola chiave `let` si comporta allo stesso modo, ma con alcune funzioni extra. Quando si dichiara una variabile con la parola chiave `let` all'interno di un blocco, di una dichiarazione o di un'espressione, il suo ambito di applicazione è limitato a tale blocco, dichiarazione o espressione.
+La parola chiave `let` si comporta allo stesso modo, ma con alcune funzioni extra. Quando si dichiara una variabile con la parola chiave `let` all'interno di un blocco, di una dichiarazione o di un'espressione, la sua visibilità è limitata a tale blocco, dichiarazione o espressione.
 
 Per esempio:
 
@@ -27,7 +27,7 @@ console.log(i);
 
 Qui la console mostrerà i valori `[0, 1, 2]` e `3`.
 
-Con la parola chiave `var`, `i` viene dichiarata globalmente. Quindi, quando `i++` viene eseguito, aggiorna la variabile globale. Questo codice è simile al seguente:
+Con la parola chiave `var`, `i` viene dichiarata globalmente. Quindi, l'esecuzione di `i++` aggiorna la variabile globale. Questo codice è simile al seguente:
 
 ```js
 var numArray = [];
@@ -41,7 +41,7 @@ console.log(i);
 
 Qui la console mostrerà i valori `[0, 1, 2]` e `3`.
 
-Questo comportamento causerà problemi se dovessi creare una funzione e memorizzarla per un uso successivo all'interno di un ciclo `for` che utilizza la variabile `i`. Questo perché la funzione memorizzata si riferirà sempre al valore della variabile globale `i` aggiornata.
+Questo comportamento causerà problemi se dovessi creare una funzione e memorizzarla per un uso successivo all'interno di un loop `for` che utilizza la variabile `i`. Questo perché la funzione memorizzata si riferirà sempre al valore della variabile globale `i` aggiornata.
 
 ```js
 var printNumTwo;
@@ -57,7 +57,7 @@ console.log(printNumTwo());
 
 Qui la console mostrerà il valore `3`.
 
-Come puoi vedere, `printNumTwo()` stampa 3 e non 2. Questo perché il valore assegnato a `i` è stato aggiornato e `printNumTwo()` restituisce la variabile globale `i` e non il valore `i` che aveva quando la funzione è stata creata nel ciclo. La parola chiave `let` non segue questo comportamento:
+Come puoi vedere, `printNumTwo()` stampa 3 e non 2. Questo perché il valore assegnato a `i` è stato aggiornato e `printNumTwo()` restituisce la variabile globale `i` e non il valore `i` che aveva quando la funzione è stata creata nel loop. La parola chiave `let` non segue questo comportamento:
 
 ```js
 let printNumTwo;
@@ -72,15 +72,15 @@ console.log(printNumTwo());
 console.log(i);
 ```
 
-Qui la console mostrerà il valore `2` e un l'errore `i is not defined` (i non è definita).
+Qui la console mostrerà il valore `2` e l'errore `i is not defined` (i non è definita).
 
-`i` non è definita perché non è stata dichiarata nell'ambito globale. È dichiarata solo all'interno della condizione del ciclo `for`. `printNumTwo()` ha restituito il valore corretto perché tre variabili `i` differenti con valori univoci (0, 1, e 2) sono state create dalla parola chiave `let` all'interno della dichiarazione del ciclo.
+`i` non è definita perché non è dichiarata globalmente. È dichiarata solo all'interno dell'istruzione del loop `for`. `printNumTwo()` ha restituito il valore corretto perché tre variabili `i` differenti con valori univoci (0, 1, e 2) sono state create con la parola chiave `let` all'interno del'istruzione del loop.
 
 # --instructions--
 
-Correggi il codice in modo che la variabile `i` dichiarata nella condizione dell'`if` sia una variabile separata dalla `i` dichiarata nella prima riga della funzione. Assicurati di non usare la parola chiave `var` in nessun punto del tuo codice.
+Correggi il codice in modo che la variabile `i` dichiarata nell'istruzione `if` sia una variabile separata dalla `i` dichiarata nella prima riga della funzione. Assicurati di non usare la parola chiave `var` in nessun punto del tuo codice.
 
-Questo esercizio è progettato per illustrare la differenza tra il modo in cui le parole chiave `var` e `let` assegnano l'ambito alla variabile dichiarata. Quando si programma una funzione simile a quella utilizzata in questo esercizio, è spesso meglio usare nomi di variabili diversi per evitare confusione.
+Questo esercizio è progettato per illustrare la differenza tra il modo in cui le parole chiave `var` e `let` assegnano la visibilità alla variabile dichiarata. Quando si programma una funzione simile a quella utilizzata in questo esercizio, è spesso meglio usare nomi di variabili diversi per evitare confusione.
 
 # --hints--
 
@@ -90,7 +90,7 @@ Questo esercizio è progettato per illustrare la differenza tra il modo in cui l
 assert(!code.match(/var/g));
 ```
 
-La variabile `i` dichiarata nella condizione dell'`if` dovrebbe essere uguale alla stringa `block scope`.
+La variabile `i` dichiarata nell'istruzione `if` dovrebbe essere uguale alla stringa `block scope`.
 
 ```js
 assert(code.match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));

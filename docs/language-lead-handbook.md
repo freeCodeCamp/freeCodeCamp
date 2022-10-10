@@ -14,6 +14,16 @@ The "Editor" level allows the user to access all Drafts and publish them. Select
 
 The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
+### How are the articles built
+
+We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
+
+[Ghost](https://ghost.org) acts as our content management platform, and [11ty](https://11ty.dev) builds the articles into static assets – plain HTML, JavaScript, and CSS. Only these static assets are deployed to our servers.
+
+This process is automated and runs periodically. If you publish something now, it will be available on the news site in a few hours.
+
+You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
+
 ## How to mention the original author of a translated article
 
 The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.

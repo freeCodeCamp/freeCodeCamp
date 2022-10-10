@@ -18,13 +18,13 @@ import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
 import { Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
+import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  hardGoTo as navigate,
   userTokenSelector
-} from '../redux';
+} from '../redux/selectors';
 import { User } from '../redux/prop-types';
 import {
   submitNewAbout,
@@ -36,7 +36,7 @@ import {
   updateMyTheme,
   updateMyKeyboardShortcuts,
   verifyCert
-} from '../redux/settings';
+} from '../redux/settings/actions';
 
 const { apiLocation } = envData;
 

@@ -10,7 +10,7 @@ dashedName: problem-148-exploring-pascals-triangle
 
 可以輕易證明，帕斯卡三角形前七行中，沒有一個數字可以被 7 整除。
 
-```
+```markup
             1
           1   1
         1   2   1

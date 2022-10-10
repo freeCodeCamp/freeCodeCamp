@@ -7,8 +7,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
 import envData from '../../../../../config/env.json';
-import { executeGA } from '../../../redux';
-import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
+import { executeGA } from '../../../redux/actions';
+import { createQuestion, closeModal } from '../redux/actions';
+import { isHelpModalOpenSelector } from '../redux/selectors';
 
 import './help-modal.css';
 
