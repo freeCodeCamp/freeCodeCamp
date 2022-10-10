@@ -7,12 +7,11 @@ dashedName: discordian-date
 ---
 
 # --description--
+Il calendario Gregoriano è un calendario solare con 12 mesi di 28-31 giorni ognuno. Una settimana consiste in sette giorni e ci sono 52 settimane e 1 giorno ogni anno. L'anno è composto da 365 giorni con un giorno bisestile aggiunto a febbraio in ogni anno bisestile. Un anno bisestile si verifica ogni quattro anni, tranne per i primi tre anni secolari di ogni 400 anni.
 
-Il calendario Gregoriano è un calendario solare con 12 mesi di 28-31 giorni ognuno. L'anno in entrambi i calendari consiste di 365 giorni, con un giorno bisestile aggiunto a febbraio negli anni bisestili eccetto per 3 anni centenari ogni quattrocento anni.
+Il <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">calendario Discordiano</a> è allineato con il calendario Gregoriano e inizia il primo di gennaio. Una settimana consiste di cinque giorni e ci sono 73 settimane in un anno. L'anno è composto da 365 giorni, con una giornata in più inserita tra Caos 59 e Caos 60 ogni anno bisestile.
 
-Il <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">calendario Discordiano</a> è allineato con il calendario Gregoriano e inizia il primo di Gennaio. La sua settimana consiste in cinque giorni, ci sono 73 settimane in un anno. Ogni quattro anni nel calendario Discordiano, un giorno extra è inserito tra Chaos 59 e Chaos 60.
-
-I mesi, i giorni della settimana, e gli eventi nel calendario Discordiano sono dati da:
+I mesi, i giorni della settimana, gli eventi apostolici e i giorni sacri nel calendario Discordiano sono:
 
 Settimane: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
 
@@ -26,7 +25,7 @@ Giorni sacri: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
 
 Converti una certa data dal calendario Discordiano al calendario Gregoriano.
 
-Nota che il giorno Chaos 1, 3188 YOLD nel calendario Discordiano è il giorno primo gennaio 2022 nel calendario Gregoriano.
+Nota che il giorno Chaos 1, 3188 YOLD nel calendario Discordiano è il giorno 1 gennaio 2022 del calendario Gregoriano.
 
 # --hints--
 

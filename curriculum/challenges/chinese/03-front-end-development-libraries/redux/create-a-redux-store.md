@@ -20,7 +20,7 @@ Redux `store` 是一个保存和管理应用程序状态的`state`， 可以使�
 
 声明一个 `store` 变量并把它分配给 `createStore()` 方法，然后把 `reducer` 作为一个参数传入即可。
 
-**注意**: 编辑器中的代码使用 ES6 默认参数语法将 state 的值初始化为 `5`， 如果你不熟悉默认参数，你可以参考[ES6 全部课程](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions)，它里面涵盖了这个内容。
+**注意**: 编辑器中的代码使用 ES6 默认参数语法将 state 的值初始化为 `5`， 如果你不熟悉默认参数，可以参考 <a href="https://chinese.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener noreferrer nofollow">课程中的 ES6 部分</a>，其中涵盖了这个主题。
 
 # --hints--
 

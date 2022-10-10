@@ -8,9 +8,9 @@ dashedName: build-a-random-quote-machine
 
 # --description--
 
-**目标：** 在 [CodePen.io](https://codepen.io) 上实现一个功能类似 <https://codepen.io/freeCodeCamp/full/qRZeGZ> 的 App。
+**目标：** 构建一个应用，功能和 <a href="https://codepen.io/freeCodeCamp/full/qRZeGZ" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/qRZeGZ</a> 类似。
 
-在满足以下 [需求](https://en.wikipedia.org/wiki/User_story) 并能通过所有测试的前提下， 赋予它你自己的个人风格。
+完成以下需求，并且通过所有测试。 可以使用你需要的任何库或 API。 赋予它你自己的个人风格。
 
 可以使用 HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、jQuery 来完成这个挑战。 但鉴于这个章节的学习内容与前端框架相关，推荐使用一款前端框架（比如 React）来完成这个挑战；不推荐使用前面没有提到的技术，否则风险自负。 不推荐使用前面没有提到的技术，否则风险自担。 我们有计划新增其他前端框架课程，例如 Angular 和 Vue，不过目前还没有这些内容。 我们会接受并尝试修复你在使用推荐技术栈创建项目时报告的问题。 编码愉快！
 
@@ -36,7 +36,7 @@ dashedName: build-a-random-quote-machine
 
 **需求 11：** 具有 `#quote-box` 属性的包裹元素应该水平居中。 请在浏览器缩放尺寸为 100% 且页面窗口最大化时运行测试。
 
-你可以<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>使用这个 CodePen 模板</a>，点击 `Save` 创建即可你自己的项目 或者可以在任何喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+你可以<a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">使用 CodePen 模版</a>创建你的新项目，点击 `Save` 即可创建你的新项目。 或者可以在任何喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
 
 一旦完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
 
