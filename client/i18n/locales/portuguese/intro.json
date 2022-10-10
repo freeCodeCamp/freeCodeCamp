@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Algoritmos e estruturas de dados em JavaScript (Beta)",
-    "intro": [
-      "placeholder",
-      "placeholder"
-    ],
+    "intro": ["placeholder", "placeholder"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Projeto de criação da Cifra de César",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "Projeto de criação de Caixa registradora",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "Projeto de criação de Verificador de palíndromo",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Projeto de criação de Conversor de números romanos",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Projeto de criação de Validador de números de telefone",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Aprenda JavaScript básico criando um jogo de RPG",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Aprenda validação de formulários construindo um contador de calorias",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprenda programação funcional criando uma planilha",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "Painel do D3",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },

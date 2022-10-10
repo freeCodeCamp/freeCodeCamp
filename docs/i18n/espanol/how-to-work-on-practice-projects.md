@@ -1,22 +1,22 @@
 # Cómo Trabajar en Proyectos de Práctica
 
-Our practice projects use a step-based approach to teach concepts to campers. A project will consist of multiple files, which we refer to as **"steps"**. These files are named by the challenge ID, to avoid issues with the translation flow. Unfortunately, this makes it difficult to find the file associated with a specific step.
+Nuestros proyectos de práctica utilizan un enfoque basado en pasos para enseñar conceptos a los campistas. Un proyecto constará de múltiples archivos, a los que nos referimos como **"pasos"**. Estos archivos son nombrados por el ID de desafío, para evitar problemas con el flujo de traducción. Desafortunadamente, esto hace difícil encontrar el archivo asociado a un paso específico.
 
-We've built a challenge editor tool that helps remedy this. This tool allows you to navigate the available projects, and the steps for each project (in order). There's also an embedded code editor you can use to work on the files directly.
+Hemos creado una herramienta de edición de desafíos que ayuda a remediar eso. Esta herramienta permite navegar los proyectos disponibles y los pasos para cada proyecto (en orden). También hay un editor de código embebido que se puede utilizar para trabajar directamente sobre los archivos.
 
-## Using the Challenge Editor
+## Utilizando el editor de desafíos
 
-These instructions will tell you how to use our challenge editor tool to work on the practice projects.
+Estas instrucciones le indicarán cómo utilizar nuestra herramienta de edición de desafíos para trabajar en los proyectos de práctica.
 
-### Starting the Editor
+### Iniciar el Editor
 
-To start the editor, make sure you are in the root freecodecamp directory. Then, run `npm run challenge-editor` to start both the client and the API that powers the editor.
+Para iniciar el editor, asegúrese de estar en el directorio raíz de freecodecamp. Luego, ejecute `npm run challenge-editor` para iniciar tanto el cliente como la API que alimenta el editor.
 
-The client will run on port `3300`, so you can access it at `http://localhost:3300`. The API runs on port `3200`, to avoid conflicts with the learn client and server. This will allow you to run the freeCodeCamp application at the same time as the editor, so you can test your changes locally.
+El cliente se ejecutará en el puerto `3300`, por lo que puede acceder a él en `http://localhost:3300`. La API se ejecuta en el puerto `3200` para evitar conflictos con el cliente y el servidor de aprendizaje. Esto le permitirá ejecutar la aplicación freeCodeCamp al mismo tiempo que el editor, para que pueda probar sus cambios localmente.
 
-### Navigating the Editor
+### Navegando por el Editor
 
-The default view will list the available `superblocks` - these are the certifications. Click on the certification link you want to work on.
+La vista predeterminada mostrará una lista de los `superbloques` disponibles: estas son las certificaciones. Click on the certification link you want to work on.
 
 This will take you to the list of blocks. These are the practice projects. Click on the project link you want to work on.
 
@@ -42,7 +42,7 @@ Enter the number of steps you want to add in the input. Then, clicking the butto
 
 #### Insert Step
 
-Enter the step number that you want to add a step _after_. For example, if you want to add a step after `step-12`, enter `12`. Then, click the `Insert Step` button to add the step. The following steps will be re-ordered.
+Enter the step number that you want to add. Then, click the `Insert Step` button to add the step. The following steps will be re-ordered.
 
 #### Delete Step
 
@@ -126,7 +126,7 @@ npm ejecuta delete-step X # donde X es el número de paso a ser eliminado.
 
 A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
 
-#### How to run script
+#### Como ejecutar un script
 
 1. Redirígete al directorio del proyecto.
 2. Ejecuta el siguiente comando npm:

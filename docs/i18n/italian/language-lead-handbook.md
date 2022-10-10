@@ -65,7 +65,7 @@ Questo è un esempio di come deve essere una parte del file `trending.json`.
 }
 ```
 
-Dovrai [fare il build in locale del client tradotto](how-to-test-translations-locally.md) per vedere se i titoli hanno la giusta lunghezza. Ogni titolo deve rimanere su una sola riga e non andare sulla successiva.
+Dovrai [fare il build in locale del client tradotto](how-to-enable-new-languages.md) per vedere se i titoli hanno la giusta lunghezza. Ogni titolo deve rimanere su una sola riga e non andare sulla successiva.
 
 ### Come aggiornare gli articoli di tendenza nel cdn
 
@@ -277,3 +277,17 @@ Poi, ogni lingua ha due colonne. Se traduci in Dothraki, sarai interessato alle 
 > [!TIP] In programmi come Microsoft Excel puoi nascondere le colonne delle altre lingue per liberare spazio sullo schermo e vedere le colonne per l'inglese e per la tua lingua affiancate.
 
 Dopo aver apportato le modifiche e salvato il file, dovrai effettuare una PR con le modifiche proposte. Una volta che la PR è stata accettata, dovrai eseguire le procedure GitHub Action per aggiornare il glossario. I cambiamenti apportati al glossario non saranno immediati.
+
+## How to Promote a Contributor to Proofreader
+
+If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
+
+In Crowdin, individuate the `User management` on the left hand side menu.
+
+This will open the user management tools, you will be able to see the list of all the users.
+
+Search for the user that will become contributor. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+
+The user is now a proofreader.
+
+> [!TIP] The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.

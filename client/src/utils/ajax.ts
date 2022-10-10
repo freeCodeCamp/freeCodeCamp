@@ -297,15 +297,6 @@ export function putUpdateMyProfileUI(
   return put('/update-my-profileui', { profileUI });
 }
 
-// Update should contain only one flag and one new value
-// It's possible to constrain to only one key with TS, but is overkill for this
-// https://stackoverflow.com/a/60807986
-export function putUpdateUserFlag(
-  update: Record<string, string>
-): Promise<ResponseWithData<void>> {
-  return put('/update-user-flag', update);
-}
-
 export function putUpdateMySocials(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {

@@ -12,8 +12,9 @@ Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-
 
 Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Video corso Python for Everybody</a> (14 ore)
-- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Video corso Learn Python</a>
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Video corso Python per tutti</a>(14 ore)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow"> Come analizzare i dati con Python Pandas </a>(10 ore)
 
 # --instructions--
 
@@ -25,20 +26,20 @@ Le righe nel set di dati rappresentano i pazienti e le colonne rappresentano inf
 
 Nome del file: medical_examination.csv
 
-|                 Caratteristica                 | Tipo Di Variabile |  Variabile  |                              Tipo Di Valore                              |
-|:----------------------------------------------:|:-----------------:|:-----------:|:------------------------------------------------------------------------:|
-|                      Età                       |  Dato oggettivo   |     age     |                               int (giorni)                               |
-|                    Altezza                     |  Dato oggettivo   |   height    |                                 int (cm)                                 |
-|                      Peso                      |  Dato oggettivo   |   weight    |                                float (kg)                                |
-|                     Genere                     |  Dato oggettivo   |   gender    |                           codice di categoria                            |
-|              Pressione sistolica               |   Dato da esami   |    ap_hi    |                                   int                                    |
-|         Pressione sanguigna diastolica         |   Dato da esami   |    ap_lo    |                                   int                                    |
-|                  Colesterolo                   |   Dato da esami   | cholesterol | 1: normale, 2: al di sopra del normale, 3: molto al di sopra del normale |
-|                    Glucosio                    |   Dato da esami   |    gluc     | 1: normale, 2: al di sopra del normale, 3: molto al di sopra del normale |
-|                    Fumatore                    |  Dato soggettivo  |    smoke    |                                 binario                                  |
-|              Assunzione di alcol               |  Dato soggettivo  |    alco     |                                 binario                                  |
-|                Attività fisica                 |  Dato soggettivo  |   active    |                                 binario                                  |
-| Presenza o assenza di malattie cardiovascolari | Variabile target  |   cardio    |                                 binario                                  |
+|                 Caratteristica                 | Tipo Di Variabile |   Variabile   |                              Tipo Di Valore                              |
+|:----------------------------------------------:|:-----------------:|:-------------:|:------------------------------------------------------------------------:|
+|                      Età                       |  Dato oggettivo   |     `age`     |                               int (giorni)                               |
+|                    Altezza                     |  Dato oggettivo   |   `height`    |                                 int (cm)                                 |
+|                      Peso                      |  Dato oggettivo   |   `weight`    |                                float (kg)                                |
+|                     Genere                     |  Dato oggettivo   |   `gender`    |                           codice di categoria                            |
+|              Pressione sistolica               |   Dato da esami   |    `ap_hi`    |                                   int                                    |
+|         Pressione sanguigna diastolica         |   Dato da esami   |    `ap_lo`    |                                   int                                    |
+|                  Colesterolo                   |   Dato da esami   | `cholesterol` | 1: normale, 2: al di sopra del normale, 3: molto al di sopra del normale |
+|                    Glucosio                    |   Dato da esami   |    `gluc`     | 1: normale, 2: al di sopra del normale, 3: molto al di sopra del normale |
+|                    Fumatore                    |  Dato soggettivo  |    `smoke`    |                                 binario                                  |
+|              Assunzione di alcol               |  Dato soggettivo  |    `alco`     |                                 binario                                  |
+|                Attività fisica                 |  Dato soggettivo  |   `active`    |                                 binario                                  |
+| Presenza o assenza di malattie cardiovascolari | Variabile target  |   `cardio`    |                                 binario                                  |
 
 ## Compiti
 

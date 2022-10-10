@@ -1,11 +1,11 @@
-# Responsible Disclosure - Hall of Fame
+# Відповідальне розкриття інформації – Зала слави
 
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. If you are interested in contributing to the security of our platform, please read our [security policy outlined here](security.md).
+Ми цінуємо будь-яке відповідальне розкриття інформації, що може вплинути на цілісність наших платформ та користувачів. Якщо ви зацікавлені в тому, щоб зробити свій внесок до безпеки нашої платформи, ознайомтесь з нашою [політикою безпеки](security.md).
 
-While we do not offer any bounties or swags at the moment, we are grateful to these awesome people for helping us keep the platform safe for everyone:
+Поки ми не пропонуємо жодних щедрот на даний момент, ми вдячні цим неймовірним людям, що допомагають нам зберегти платформу безпечною для всіх:
 
-- Mehul Mohan from [codedamn](https://codedamn.com) ([@mehulmpt](https://twitter.com/mehulmpt)) - [Vulnerability Fix](https://github.com/freeCodeCamp/freeCodeCamp/blob/bb5a9e815313f1f7c91338e171bfe5acb8f3e346/client/src/components/Flash/index.js)
-- Peter Samir https://www.linkedin.com/in/peter-samir/
-- Laurence Tennant ([@hyperreality](https://github.com/hyperreality)) working with IncludeSecurity.com - [GHSA-cc3r-grh4-27gj](https://github.com/freeCodeCamp/freeCodeCamp/security/advisories/GHSA-cc3r-grh4-27gj)
+- Мехул Мохан з [codedamn](https://codedamn.com) ([@mehulmpt](https://twitter.com/mehulmpt)) – [Виправлення вразливості](https://github.com/freeCodeCamp/freeCodeCamp/blob/bb5a9e815313f1f7c91338e171bfe5acb8f3e346/client/src/components/Flash/index.js)
+- Пітер Самір https://www.linkedin.com/in/peter-samir/
+- Лоуренс Теннант ([@hyperreality](https://github.com/hyperreality)) працює з IncludeSecurity.com – [GHSA-c3r-grh4-27gj](https://github.com/freeCodeCamp/freeCodeCamp/security/advisories/GHSA-cc3r-grh4-27gj)
 
-> ### Thank you for your contributions :pray:
+> ### Дякуємо за ваш вклад :pray:

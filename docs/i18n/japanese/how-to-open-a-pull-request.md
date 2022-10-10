@@ -2,11 +2,21 @@
 
 プルリクエスト (PR) を使用すると、GitHubのフォークから freeCodeCamp.org のメインリポジトリに変更を送信できます。 コードを変更したら、以下のガイドラインに従ってPRを開くことができます。
 
-> [!NOTE] PR は英語で書きます。 翻訳に貢献する方法については、[こちら](index.md#翻訳) をご覧ください。
+We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+
+Some examples of this are:
+
+1. Do not edit files directly through GitHub – while you can, it's not a good idea.
+2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
+3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
+4. Keep mentions and review requests to a minimum. We understand you are excited about contributing, and our maintainers will get back to you as soon as they get a chance.
+5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
+
+> [!NOTE] Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
 
 ## 良いPRタイトルを用意する
 
-コミットやプルリクエストには、 [慣習に従ったタイトルやメッセージ](https://www.conventionalcommits.org/) を使用することをお勧めします。 規約には以下の形式があります。
+We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
 > `<type>([optional scope(s)]): <description>`
 > 
@@ -16,7 +26,7 @@
 
 Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
-**種類:**
+**Type:**
 
 | 種類    | 選択するタイミング                        |
 |:----- |:-------------------------------- |
@@ -25,15 +35,15 @@ Whenever you open a Pull Request(PR), you can use the below to determine the typ
 | chore | レッスンのコード、テスト、または検証に関連しない変更時      |
 | docs  | `/docs` ディレクトリまたは貢献ガイドラインなどへの変更時 |
 
-**スコープ:**
+**Scope:**
 
-[ラベルリスト](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope) からスコープを選択できます。
+You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
-**説明:**
+**Description:**
 
 Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
 
-良い PR のタイトルの例としては、次のようなものがあります。
+Some examples of good PR titles would be:
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`
@@ -42,17 +52,27 @@ Keep it short (less than 30 characters) and simple; you can add more information
 
 ## プルリクエストを提案する
 
-1. 編集がコミットされると、フォークの GitHub ページにプルリクエストを作成するように求められます。
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![画像 - GitHub 上の Compare & pull request プロンプト](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   <details>
+   <summary>See screenshot</summary>
 
-2. デフォルトで、プルリクエストはすべて freeCodeCamp メインリポジトリ、`main` ブランチに対して行います。
+   ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
-   プルリクエストを上げるときは、Base Fork が freeCodeCamp/freeCodeCamp に設定されていることを確認してください。
+   </details>
 
-   ![画像 - プルリクエストを作成する際にフォークを比較する](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
+2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
 
-3. ブランチから freeCodeCamp の `main` ブランチへ、プルリクエストを送信します。
+   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
+
+   <details>
+   <summary>See screenshot</summary>
+
+   ![Image - Comparing forks when making a pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
+
+   </details>
+
+3. Submit the pull request from your branch to freeCodeCamp's `main` branch.
 
 4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
 
@@ -64,7 +84,7 @@ Keep it short (less than 30 characters) and simple; you can add more information
 
      > 例: `Closes #123` と記入すると、Issue 123 がクローズされます。
 
-5. サイトのローカルコピーでテスト済みかどうかを表示します。
+5. Indicate if you have tested on a local copy of the site or not.
 
    - これは、ドキュメントやチャレンジの説明のようなテキストコンテンツを編集するだけでなく、変更を加える場合に、非常に重要です。 ローカルテストを必要とする変更の例としては、ページの機能やレイアウトを変更する可能性のある JavaScript、CSS、または HTML などが挙げられます。
 
@@ -74,30 +94,30 @@ Keep it short (less than 30 characters) and simple; you can add more information
 
 > :tada: PR の作成おめでとうございます。時間をかけて貢献してくださったことに心から感謝します。
 
-モデレーターが内容を見て、フィードバックします。 仲間のモデレーターの時間を尊重し、しばらくお待ちください。 すべてのプルリクエストは、いずれレビューされます。
+Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
-[フォーラムの「Contributors」カテゴリ](https://forum.freecodecamp.org/c/contributors) または [「contributors」チャットルーム](https://discord.gg/PRyKn3Vbay) へいつでもお気軽にお問合せください。
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] 他のプルリクエストも提供する場合は、フォークの削除を避けるため、[変更と同期](how-to-setup-freecodecamp-locally.md#ローカルで変更を行う) のガイドラインをご覧になることを推奨します。
 
 ## プルリクエストでの競合
 
-リポジトリ上で多くのコントリビューターが作業し、レビューとマージの保留中であるPRを壊す可能性がある変更が発生することで、競合が起こります。
+Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-大半の場合、リベースを必要としないかもしれません。すべてのコミットをスカッシュしているからです。しかしながら、リベースが要求された場合、以下を実行する必要があります。
+More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
 
 ### 通常のバグ修正と機能について
 
-開発ブランチ `main` の通常のバグや機能に取り組んでいる場合は、簡単なリベースを行うことができます。
+When you are working on regular bugs and features on our development branch `main`, you are able to do a simple rebase:
 
-1. ローカルコピーをリベースする
+1. Rebase your local copy:
 
    ```console
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
-2. 競合を解決し、コミットを追加/編集する
+2. Resolve any conflicts and add / edit commits
 
    ```console
    # Either
@@ -109,7 +129,7 @@ Keep it short (less than 30 characters) and simple; you can add more information
    git commit --amend --no-edit
    ```
 
-3. 変更を PR に押し戻す
+3. Push back your changes to the PR
 
    ```console
    git push --force origin <pr-branch>
@@ -117,9 +137,9 @@ Keep it short (less than 30 characters) and simple; you can add more information
 
 ### 今後のカリキュラムと機能について
 
-今後のカリキュラム `next-*` ブランチの機能に取り組んでいる場合は、Cherry Pick を行う必要があります。
+When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
 
-1. アップストリームがローカルと同期していることを確認する
+1. Make sure your upstream comes in sync with your local:
 
    ```console
    git checkout main
@@ -128,9 +148,9 @@ Keep it short (less than 30 characters) and simple; you can add more information
    git reset --hard upstream/next-python-projects
    ```
 
-2. バックアップを取る
+2. Take backup
 
-   a. バックアップ後に、ローカルブランチを削除する (ローカルにまだある場合):
+   a. Either delete your local branch after taking a backup (if you still have it locally):
 
    ```console
    git checkout <pr-branch-name>
@@ -146,7 +166,7 @@ Keep it short (less than 30 characters) and simple; you can add more information
    git branch -D <pr-branch-name>
    ```
 
-   b. または、PR ブランチのバックアップのみを行う (ローカルにない場合):
+   b. Or just a backup of your pr branch (if you do not have it locally):
 
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
@@ -155,14 +175,14 @@ Keep it short (less than 30 characters) and simple; you can add more information
    #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
    ```
 
-3. クリーンスレートで始める
+3. Start off with a clean slate:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-4. 競合を解決し、クリーンアップし、実行テストをインストールする
+4. Resolve any conflicts, and cleanup, install run tests
 
    ```console
    npm run clean
@@ -176,7 +196,7 @@ Keep it short (less than 30 characters) and simple; you can add more information
 
    ```
 
-5. すべてがうまくいっているようであれば、PRに押し戻す
+5. If everything looks good push back to the PR
 
    ```console
    git push --force origin <pr-branch-name>

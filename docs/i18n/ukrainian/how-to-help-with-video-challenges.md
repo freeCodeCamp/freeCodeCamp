@@ -1,16 +1,16 @@
-# Допомога з відеозавданнями
+# Як допомогти з відеозавданнями
 
-Відеозавдання - це новий тип завдання в навчальній програмі freeCodeCamp.
+Відеозавдання – це новий тип завдань у навчальній програмі freeCodeCamp.
 
-Відеозавдання - це маленька частина повноформатного відео-курсу на певну тему. Сторінка з відеозавданням містить Youtube відео. Кожна сторінка завдання має одне запитання з декількома варіантами відповідей, що стосуються відео. Користувач повинен відповісти правильно на питання перед тим, як перейти до наступного відеозавдання в курсі.
+Відеозавдання – це маленька частина повноформатного відеокурсу на певну тему. Сторінка з відеозавданням містить відео з Youtube. Кожна сторінка має одне запитання з декількома варіантами відповідей, що стосуються відео. Користувач повинен відповісти правильно на питання перед тим, як перейти до наступного відеозавдання в курсі.
 
-Сторінки з відеозавданнями створюються членами команди freeCodeCamp. YouTube відео також завантажуються членами команди freeCodeCamp. Багато відеозавдань ще не мають запитань, пов'язаних з ними.
+Сторінки з відеозавданнями створюються членами команди freeCodeCamp. Відео на YouTube також завантажуються членами команди freeCodeCamp. Багато відеозавдань ще не мають запитань, пов'язаних з ними.
 
-Ви можете допомогти, створиши запитання з декількома варіантами відповіді, повʼязаних з розділом відео, та додавши ці питання до файлів markdown для відеозавдань.
+Ви можете допомогти, створивши запитання з декількома варіантами відповіді, повʼязаних з розділами відео, та додавши ці питання до markdown-файлів для відеозавдань.
 
-## Challenge Template
+## Зразок завдання
 
-Нижче наведено зразок того, як виглядають файли завдання markdown.
+Нижче наведено зразок того, як виглядають markdown-файли завдання.
 
 ````md
 ---
@@ -35,23 +35,23 @@ Challenge description text, in markdown
 
 ## --text--
 
-The question text goes here.
+Запитання повинне бути тут.
 
 ## --answers--
 
-Answer 1
+Відповідь 1
 
 ---
 
-Answer 2
+Відповідь 2
 
 ---
 
-More answers
+Інші відповіді
 
 ## --video-solution--
 
-Номер правильної відповіді знаходиться тут.
+Номер правильної відповіді повинен бути тут.
 ````
 
 ## Creating questions for video challenges
@@ -69,9 +69,9 @@ Pick a challenge markdown file from the options above.
 
 ### Skim through the video associated with the challenge and create a multiple-choice question
 
-First, find the videoId.
+First, find the `videoId`.
 
-For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
+For example, in the following code from the header of a video challenge markdown file, the `videoId` is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
 
 ````
 ---
@@ -85,7 +85,7 @@ https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the
 
 In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim the YouTube video with that videoId and think of a multiple-choice question based on the content of the video.
+Skim the YouTube video with that `videoId` and think of a multiple-choice question based on the content of the video.
 
 ### Add the question to the markdown file
 
@@ -125,16 +125,16 @@ Add/Update the question text under the part that shows:
 ## --text--
 ```
 
-Add/Update answers (`Answer 1`, `Answer 2`, and so on) under `## --answers--`. Make sure to update the number under `## --video-solution--` with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
+Add/Update answers (`Answer 1`, `Answer 2`, and so on) under `## --answers--`. Make sure to update the number under `## --video-solution--` with the correct answer number. You can add more possible answers using the same format. Запитання та відповіді можуть бути в лапках.
 
-### Question examples
+### Приклади запитань
 
 ````md
 # --question--
 
 ## --text--
 
-What does this JavaScript code log to the console?
+Що виведе на консоль даний код JavaScript?
 
 ```js
 console.log('hello world');
@@ -164,7 +164,7 @@ hello world
 
 ## --text--
 
-What will print out after running this code:
+Що виведеться на екран після цього коду:
 
 ```py
 width = 15
@@ -196,8 +196,8 @@ print(height/3)
 
 3 ````
 
-For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+Більше прикладів ви можете побачити в markdown-файлах даного відеокурсу. Всі завдання вже мають запитання: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Open a pull request
+## Відкрийте пул реквест
 
 After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

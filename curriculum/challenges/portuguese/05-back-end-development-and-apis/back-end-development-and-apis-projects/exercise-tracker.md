@@ -79,7 +79,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   assert.isTrue(res.ok);
   if(!res.ok) {
@@ -96,7 +96,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -164,7 +164,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substingr(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -198,7 +198,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -237,7 +237,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -276,7 +276,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -309,7 +309,7 @@ async (getUserInput) => {
 };
 ```
 
-Uma solicitação de `GET` a `/api/users/:id/logs` retornará o objeto do usuário com um array `log` de todos os exercícios adicionados.
+Uma solicitação de `GET` a `/api/users/:_id/logs` retornará o objeto do usuário com um array `log` de todos os exercícios adicionados.
 
 ```js
 async(getUserInput) => {
@@ -319,7 +319,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   })
   if(res.ok){
     const {_id, username} = await res.json();
@@ -353,7 +353,7 @@ async(getUserInput) => {
 };
 ```
 
-Cada item no array `log` que é retornado de `GET /api/users/:id/logs` é um objeto que deve ter as propriedades `description`, uma `duration` e uma `date`.
+Cada item no array `log` que é retornado de `GET /api/users/:_id/logs` é um objeto que deve ter as propriedades `description`, uma `duration` e uma `date`.
 
 ```js
 async(getUserInput) => {
@@ -363,7 +363,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -400,7 +400,7 @@ async(getUserInput) => {
 };
 ```
 
-A propriedade `description` de qualquer objeto no array `log` retornada de `GET /api/users/:id/logs` deve ser uma string.
+A propriedade `description` de qualquer objeto no array `log` retornada de `GET /api/users/:_id/logs` deve ser uma string.
 
 ```js
 async(getUserInput) => {
@@ -410,7 +410,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -447,7 +447,7 @@ async(getUserInput) => {
 };
 ```
 
-A propriedade `duration` de qualquer objeto no array `log` que é retornada de `GET /api/users/:id/logs` deve ser um número.
+A propriedade `duration` de qualquer objeto no array `log` que é retornada de `GET /api/users/:_id/logs` deve ser um número.
 
 ```js
 async(getUserInput) => {
@@ -457,7 +457,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -494,7 +494,7 @@ async(getUserInput) => {
 };
 ```
 
-A propriedade `date` de qualquer objeto no array `log` retornada de `GET /api/users/:id/logs` deve ser uma string. Use o formato `dateString` da API `Date`.
+A propriedade `date` de qualquer objeto no array `log` retornada de `GET /api/users/:_id/logs` deve ser uma string. Use o formato `dateString` da API `Date`.
 
 ```js
 async(getUserInput) => {
@@ -504,7 +504,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -549,7 +549,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();

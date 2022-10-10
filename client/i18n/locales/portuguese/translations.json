@@ -6,9 +6,6 @@
     "first-lesson": "Ir para a primeira aula",
     "close": "Fechar",
     "edit": "Editar",
-    "show-code": "Exibir código",
-    "show-solution": "Exibir solução",
-    "show-project": "Mostrar o projeto",
     "frontend": "Front-end",
     "backend": "Back-end",
     "view": "Visualizar",
@@ -113,6 +110,7 @@
     "claim-legacy": "Após receber os seguintes certificados do freeCodeCamp, você poderá reivindicar o(s) {{cert}}:",
     "for": "Configurações de conta para {{username}}",
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
+    "sound-volume": "Volume do modo fogueira:",
     "username": {
       "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
       "is too short": "O nome de usuário \"{{username}}\" é muito curto",
@@ -286,6 +284,7 @@
     "percent-complete": "{{percent}}% completo",
     "tried-rsa": "Se você já tentou usar o método de <0>ler, pesquisar e perguntar</0>, então pode pedir ajuda no fórum freeCodeCamp.",
     "rsa": "Leia, pesquise, pergunte",
+    "rsa-forum": "<strong>Antes de fazer uma nova publicação</strong>, certifique-se de que sua pergunta <0>ainda não foi respondida no fórum</0>.",
     "reset": "Reiniciar esta aula?",
     "reset-warn": "Tem certeza de que deseja reiniciar esta lição? Os editores e testes serão reiniciados.",
     "reset-warn-2": "Isto não pode ser desfeito",
@@ -429,7 +428,7 @@
   },
   "search": {
     "label": "Pesquisar",
-    "placeholder": "Pesquisar entre mais de 8.000 tutoriais",
+    "placeholder": "Buscar entre os mais de 350 tutoriais",
     "see-results": "Ver todos os resultados para {{searchQuery}}",
     "no-tutorials": "Nenhum tutorial foi encontrado",
     "try": "Procurando algo? Tente a barra de pesquisa nesta página.",
@@ -450,8 +449,9 @@
     "change-theme": "Faça login para mudar o tema.",
     "translation-pending": "Ajude-nos a traduzir",
     "certification-project": "Projeto de certificação",
-    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
-    "document-notfound": "document not found"
+    "iframe-preview": "Visualização de {{title}}",
+    "iframe-alert": "Normalmente, este link levaria você para outro site da web! Funciona. Esse é um link para: {{externalLink}}",
+    "document-notfound": "documento não encontrado"
   },
   "icons": {
     "gold-cup": "Taça de ouro",
@@ -486,6 +486,12 @@
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter para enviar.",
     "running-tests": "Executando testes",
+    "hide-preview": "Ocultar a visualização",
+    "move-preview-to-new-window": "Mover a visualização para uma nova janela e focá-la",
+    "move-preview-to-main-window": "Mover a visualização para esta janela e fechar a janela de visualização externa",
+    "close-external-preview-window": "Fechar a janela de visualização externa",
+    "show-preview": "Mostrar a visualização nesta janela",
+    "open-preview-in-new-window": "Abrir a visualização em uma nova janela e focá-la",
     "step": "Passo",
     "steps": "Passos",
     "steps-for": "Passos para {{blockTitle}}"
@@ -547,6 +553,7 @@
     "complete-project-first": "Você precisa completar o projeto primeiro.",
     "local-code-save-error": "Opa, seu código não salvou, o armazenamento local do seu navegador pode estar cheio.",
     "local-code-saved": "Salvo! Seu código foi salvo no armazenamento local do seu navegador.",
+    "timeline-private": "{{username}} escolheu deixar sua linha do tempo privada e precisa torná-la pública para que outros possam ver a sua certificação.",
     "code-saved": "Seu código foi salvo no banco de dados. Ele estará aqui quando você voltar.",
     "code-save-error": "Ocorreu um erro ao tentar salvar seu código.",
     "code-save-less": "Devagar! O código não foi salvo. Tente novamente em alguns segundos.",

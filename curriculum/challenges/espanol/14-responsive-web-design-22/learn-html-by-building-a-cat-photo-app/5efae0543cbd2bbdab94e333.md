@@ -1,8 +1,8 @@
 ---
 id: 5efae0543cbd2bbdab94e333
-title: Paso 29
+title: Paso 30
 challengeType: 0
-dashedName: step-29
+dashedName: step-30
 ---
 
 # --description--
@@ -19,7 +19,7 @@ Tu elemento `figure` debe tener una etiqueta de apertura. Las etiquetas de apert
 assert(document.querySelectorAll('figure').length === 2);
 ```
 
-Tu elemento `ol` debe tener una etiqueta de cierre. Las etiquetas de cierre tiene una `/` después del carácter `<`.
+Tu elemento `figure` debe tener una etiqueta de cierre. Las etiquetas de cierre tiene una `/` después del carácter `<`.
 
 ```js
 assert(code.match(/<\/figure>/g).length === 2);

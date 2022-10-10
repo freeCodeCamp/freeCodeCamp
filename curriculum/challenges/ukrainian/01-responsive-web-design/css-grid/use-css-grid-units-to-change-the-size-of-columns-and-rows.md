@@ -31,7 +31,7 @@ grid-template-columns: auto 50px 10% 2fr 1fr;
 
 # --hints--
 
-Клас `container` повинен мати властивість `grid-template-columns`, яка має три стовпці шириною `1fr, 100px, and 2fr`.
+Ваш клас `container` повинен мати властивість `grid-template-columns`, яка має три стовпці шириною `1fr`, `100px` та `2fr`.
 
 ```js
 assert(

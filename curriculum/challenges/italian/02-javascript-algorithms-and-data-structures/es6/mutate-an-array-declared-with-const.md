@@ -12,7 +12,7 @@ Se non hai familiarità con `const`, controlla <a href="/learn/javascript-algori
 
 La dichiarazione `const` ha molti casi di utilizzo nel JavaScript moderno.
 
-Alcuni sviluppatori preferiscono assegnare tutte le loro variabili usando `const` come impostazione predefinita, a meno che non sappiano che dovranno riassegnare il valore. Solo in quel caso usano `let`.
+Alcuni sviluppatori preferiscono assegnare tutte le loro variabili usando `const` come impostazione predefinita, a meno che non sappiano di doverne riassegnare il valore. Solo in quel caso usano `let`.
 
 Tuttavia, è importante capire che gli oggetti (inclusi gli array e le funzioni) assegnati a una variabile utilizzando `const` sono ancora mutabili. L'utilizzo della dichiarazione `const` impedisce solo la riassegnazione dell'identificatore della variabile.
 
@@ -23,7 +23,7 @@ s[2] = 45;
 console.log(s);
 ```
 
-`s = [1, 2, 3]` comporterà un errore. Il comando `console.log` mostrerà il valore `[5, 6, 45]`.
+`s = [1, 2, 3]` comporterà un errore. Dopo aver trasformato la riga in un commento, il `console.log` mostrerà il valore `[5, 6, 45]`.
 
 Come puoi vedere, puoi mutare l'oggetto `[5, 6, 7]` stesso e la variabile `s` punterà ancora all'array alterato `[5, 6, 45]`. Come tutti gli array, gli elementi in `s` sono mutabili, ma poiché è stata usata `const`, non è possibile utilizzare l'identificatore di variabile `s` per puntare ad un array diverso utilizzando l'operatore di assegnazione.
 

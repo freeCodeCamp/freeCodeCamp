@@ -22,7 +22,7 @@ Para asegurarse de que los clientes tienen continuamente el recuento actualizado
 
 **Nota:** Al igual que `'disconnect'`, todos los demás eventos que un socket puede emitir al servidor deben ser manejados dentro del oyente de conexión donde tenemos definido 'socket'.
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa).
+Envía tu página cuando creas que lo has hecho bien. Si te estás encontrando errores, puedes <a href="https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa" target="_blank" rel="noopener noreferrer nofollow">mirar el proyecto completado hasta este momento</a>.
 
 # --hints--
 

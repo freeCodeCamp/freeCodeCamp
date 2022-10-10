@@ -17,7 +17,8 @@ export const availableLangs = {
     'italian',
     'portuguese',
     'ukrainian',
-    'japanese'
+    'japanese',
+    'german'
   ],
   curriculum: [
     'english',
@@ -27,7 +28,8 @@ export const availableLangs = {
     'italian',
     'portuguese',
     'ukrainian',
-    'japanese'
+    'japanese',
+    'german'
   ]
 };
 
@@ -51,6 +53,7 @@ export const auditedCerts = {
     SuperBlocks.DataAnalysisPy
   ],
   chinese: [
+    SuperBlocks.RespWebDesignNew,
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs,
@@ -63,6 +66,7 @@ export const auditedCerts = {
     SuperBlocks.MachineLearningPy
   ],
   'chinese-traditional': [
+    SuperBlocks.RespWebDesignNew,
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs,
@@ -104,6 +108,7 @@ export const auditedCerts = {
     SuperBlocks.RelationalDb
   ],
   ukrainian: [
+    SuperBlocks.RespWebDesignNew,
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs,
@@ -129,6 +134,11 @@ export const auditedCerts = {
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.RelationalDb
+  ],
+  german: [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs
   ]
 };
 
@@ -140,7 +150,10 @@ export const auditedCerts = {
 export const languagesWithAuditedBetaReleases = [
   'english',
   'portuguese',
-  'italian'
+  'italian',
+  'ukrainian',
+  'chinese',
+  'chinese-traditional'
 ];
 
 // ---------------------------------------------------------------------------
@@ -159,7 +172,8 @@ export const i18nextCodes = {
   italian: 'it',
   portuguese: 'pt-BR',
   ukrainian: 'uk',
-  japanese: 'ja'
+  japanese: 'ja',
+  german: 'de'
 };
 
 // These are for the language selector dropdown menu in the footer
@@ -172,7 +186,8 @@ export enum LangNames {
   italian = 'Italiano',
   portuguese = 'Português',
   ukrainian = 'Українська',
-  japanese = '日本語'
+  japanese = '日本語',
+  german = 'Deutsch'
 }
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -187,9 +202,15 @@ export enum LangCodes {
   italian = 'it',
   portuguese = 'pt-BR',
   ukrainian = 'uk',
-  japanese = 'ja'
+  japanese = 'ja',
+  german = 'de'
 }
 /* eslint-enable @typescript-eslint/naming-convention */
+
+/**
+ * This array contains languages that should NOT appear in the language selector.
+ */
+export const hiddenLangs = [];
 
 // locale is sourced from a JSON file, so we use getLangCode and getLangName to
 // find the associated enum values

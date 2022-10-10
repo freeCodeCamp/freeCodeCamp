@@ -1,6 +1,6 @@
 ---
 id: 587d8250367417b2b2512c5f
-title: Create a Stack Class
+title: Crea una Clase Pila
 challengeType: 1
 forumTopicId: 301633
 dashedName: create-a-stack-class
@@ -8,15 +8,15 @@ dashedName: create-a-stack-class
 
 # --description--
 
-In the last section, we talked about what a stack is and how we can use an array to represent a stack. In this section, we will be creating our own stack class. Although you can use arrays to create stacks, sometimes it is best to limit the amount of control we have with our stacks. Apart from the `push` and `pop` method, stacks have other useful methods. Let's add a `peek`, `isEmpty`, and `clear` method to our stack class.
+En la última sección, hablamos sobre lo que es una pila y como podemos usar un arreglo para representar una pila. En esta sección, crearemos nuestra propia clase pila. Aunque puedes usar arreglos para crear pilas, a veces es mejor limitar la cantidad de control que tenemos con nuestras pilas. Aparte de los métodos `push` y `pop`, las pilas tienen otros métodos. Añadamos métodos `peek`, `isEmpty`, y `clear` para nuestra clase pila.
 
 # --instructions--
 
-Write a `push` method that pushes an element to the top of the stack, a `pop` method that removes and returns the element on the top of the stack, a `peek` method that looks at the top element in the stack, an `isEmpty` method that checks if the stack is empty, and a `clear` method that removes all elements from the stack. Normally stacks don't have this, but we've added a `print` helper method that console logs the collection.
+Escribe un método `push` que ponga un elemento en el tope de la pila, un método `pop` que elimine y devuelva el elemento del tope de la pila, un método `peek` que muestre el elemento del tope de la pila, un método `isEmpty` que compruebe si la pila esta vacía, y un método `clear` que elimine todos los elementos de la pila. Normalmente las pilas no tienen esto, pero hemos añadido un método ayudante `print` que registre en consola la colección.
 
 # --hints--
 
-Your `Stack` class should have a `push` method.
+La clase `Stack` debe tener un método `push`.
 
 ```js
 assert(
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-Your `Stack` class should have a `pop` method.
+La clase `Stack` debe tener un método `pop`.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-Your `Stack` class should have a `peek` method.
+La clase `Stack` debe tener un método `peek`.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-Your `Stack` class should have a `isEmpty` method.
+La clase `Stack` debe tener un método `isEmpty`.
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-Your `Stack` class should have a `clear` method.
+La clase `Stack` debe tener un método `clear`.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-The `peek` method should return the top element of the stack
+El método `peek` debe devolver el elemento del tope de la pila
 
 ```js
 assert(
@@ -84,7 +84,7 @@ assert(
 );
 ```
 
-The `pop` method should remove and return the top element of the stack
+El método `pop` debe eliminar y devolver el elemento del tope de la pila
 
 ```js
 assert(
@@ -97,7 +97,7 @@ assert(
 );
 ```
 
-The `isEmpty` method should return true if a stack does not contain any elements
+El método `isEmpty` debe devolver true si la pila no contiene elementos
 
 ```js
 assert(
@@ -108,7 +108,7 @@ assert(
 );
 ```
 
-The `clear` method should remove all element from the stack
+El método `clear` debe eliminar todos los elementos de la pila
 
 ```js
 assert(

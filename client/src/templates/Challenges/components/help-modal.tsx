@@ -1,3 +1,5 @@
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, withTranslation } from 'react-i18next';
@@ -5,8 +7,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
 import envData from '../../../../../config/env.json';
-import { executeGA } from '../../../redux';
-import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
+import { executeGA } from '../../../redux/actions';
+import { createQuestion, closeModal } from '../redux/actions';
+import { isHelpModalOpenSelector } from '../redux/selectors';
 
 import './help-modal.css';
 
@@ -16,6 +19,8 @@ interface HelpModalProps {
   executeGA: (attributes: { type: string; data: string }) => void;
   isOpen?: boolean;
   t: (text: string) => string;
+  challengeTitle: string;
+  challengeBlock: string;
 }
 
 const { forumLocation } = envData;
@@ -31,12 +36,22 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 const RSA = forumLocation + '/t/19514';
 
+const generateSearchLink = (title: string, block: string) => {
+  const query = /^step\s*\d*$/i.test(title)
+    ? encodeURIComponent(`${block} - ${title}`)
+    : encodeURIComponent(title);
+  const search = `${forumLocation}/search?q=${query}`;
+  return search;
+};
+
 export function HelpModal({
   closeHelpModal,
   createQuestion,
   executeGA,
   isOpen,
-  t
+  t,
+  challengeBlock,
+  challengeTitle
 }: HelpModalProps): JSX.Element {
   if (isOpen) {
     executeGA({ type: 'modal', data: '/help-modal' });
@@ -61,6 +76,21 @@ export function HelpModal({
             </a>
           </Trans>
         </h3>
+        <div className='alert alert-danger'>
+          <FontAwesomeIcon icon={faExclamationCircle} />
+          <p>
+            <Trans i18nKey='learn.rsa-forum'>
+              <a
+                href={generateSearchLink(challengeTitle, challengeBlock)}
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                placeholder
+              </a>
+              placeholder
+            </Trans>
+          </p>
+        </div>
         <Button
           block={true}
           bsSize='lg'

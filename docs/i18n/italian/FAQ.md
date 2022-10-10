@@ -12,7 +12,7 @@ Sì, puoi contribuire a ognuna delle oltre 30 lingue abilitate sulla nostra piat
 
 Abbiamo le traduzioni fatte dagli utenti live in alcune lingue. Abbiamo intenzione di localizzare freeCodeCamp nelle lingue più usate nel mondo. Puoi leggere tutto su questo argomento in questo [articolo](https://www.freecodecamp.org/italian/news/come-aiutare-a-tradurre-freecodecamp-nella-tua-lingua/).
 
-Se sei interessato a contribuire alla traduzione per favore assicurati di [leggere questa guida](how-to-translate-files.md) come prima cosa.
+Se sei interessato a contribuire alla traduzione, per favore assicurati di [leggere questa guida](how-to-translate-files.md) prima di tutto.
 
 ### Posso contribuire agli articoli alla pubblicazione di freeCodeCamp o ai video del canale YouTube?
 
@@ -81,7 +81,7 @@ Ecco alcuni percorsi consigliati per alcune delle nostre piattaforme:
 - Per essere un moderatore del **Forum**, in maniera simile ai moderatori della chat, abbi una presenza attiva e interagisci con gli utenti, supportando gli altri nel loro percorso di crescita e dando feedback quando richiesto. Dai un occhiata al [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) per maggiori informazioni.
 - Per essere un moderatore su **GitHub**, aiuta a processare le issue su GitHub che sono create per vedere se sono valide e (idealmente) prova a proporre soluzioni per queste issue che possono essere applicate da altri (o da te stesso).
 
-Nel complesso, rispetta gli altri. Siamo tutti umani. Con questo in mente, per favore considera anche l'uso di un linguaggio incoraggiante e supportivo e tieni a mente la comunicazione tra culture diverse.
+Nel complesso, rispetta gli altri. We are humans from all around the world. Con questo in mente, per favore considera anche l'uso di un linguaggio incoraggiante e supportivo e tieni a mente la comunicazione tra culture diverse.
 
 Se metti in pratica quando sopra **con costanza** e i nostri moderatori ti raccomandano, un membro dello staff si farà avanti e ti darà il benvenuto nel team dei moderatori. Il lavoro open source è un lavoro volontario e il nostro tempo è limitato. Riconosciamo che questo è probabilmente vero anche nel tuo caso. Quindi sottolineiamo di essere  **consistenti** piuttosto che impegnarsi nella comunità 24/7.
 
@@ -100,6 +100,6 @@ Ti ringraziamo in anticipo per essere educato e paziente. Ricordati che questa c
 
 ### Assistenza aggiuntiva
 
-Se hai domande sullo stack, sull'architettura del database, sulle traduzioni, o su qualsiasi altra cosa, sentiti libero di rivolgerti al nostro team dello staff [sul forum](https://forum.freecodecamp.org/g/team).
+If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
 
 **Puoi scrivere una mail allo staff di sviluppo a: `dev[at]freecodecamp.org`**

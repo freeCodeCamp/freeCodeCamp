@@ -19,7 +19,7 @@ const myFunc = function() {
 }
 ```
 
-ES6 ci fornisce lo zucchero sintattico di non dover scrivere funzioni anonime in questo modo. Invece, puoi usare la **sintassi delle funzioni freccia**:
+ES6 ci fornisce lo zucchero sintattico così da non dover scrivere funzioni anonime in questo modo. Invece, puoi usare la **sintassi delle funzioni freccia**:
 
 ```js
 const myFunc = () => {

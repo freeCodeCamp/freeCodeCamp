@@ -10,7 +10,7 @@ dashedName: set-up-the-environment
 
 以降のチャレンジでは `chat.pug` ファイルを使用します。 そこで、`routes.js` ファイルで、`/chat` を指す GET ルートを追加してください。/chat は、`ensureAuthenticated` を利用し、レスポンスへの引数として渡された `{ user: req.user }` を使用して `chat.pug` をレンダーします。 次に、既存の `/auth/github/callback` ルートを変更して、`req.session.user_id = req.user.id` を設定し、`/chat` にリダイレクトしてください。
 
-`socket.io@~2.3.0` を依存関係として追加し、(Node.js に組み込まれている) `http`を使用して、以下のようにサーバーでソケットの require を定義しインスタンス化してください。
+すでに `socket.io@~2.3.0` が依存関係として追加されているので、(Node.js に組み込まれている) `http` を使用して、以下のようにサーバーでソケットの require を定義しインスタンス化してください。
 
 ```javascript
 const http = require('http').createServer(app);
@@ -42,7 +42,7 @@ let socket = io();
 
 **注:** `io()` は、同じ url またはサーバー上でホストされているソケットに接続している場合にのみ動作します。 他の場所でホストされている外部ソケットに接続するには、`io.connect('URL');` を使用します。
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

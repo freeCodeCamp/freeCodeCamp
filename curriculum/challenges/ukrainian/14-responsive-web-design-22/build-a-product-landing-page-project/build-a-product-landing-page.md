@@ -28,7 +28,7 @@ dashedName: build-a-product-landing-page
 1. Посадкова сторінка продукту повинна містити щонайменше один медіазапит
 1. Посадкова сторінка продукту повинна використовувати CSS flexbox хоча б раз
 
-Виконайте розповідь користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
+Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
 
 **Примітка:** Переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
 
@@ -254,12 +254,15 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 Посадкова сторінка продукту повинна використовувати CSS flexbox хоча б раз.
 
 ```js
+const hasFlex = (rule) => ["flex", "inline-flex"].includes(rule.style?.display)
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
 const cssRules = new __helpers.CSSHelp(document).styleSheetToCssRulesArray(stylesheet)
-const usesFlex = cssRules.find(rule => {
-  return rule.style?.display === 'flex' || rule.style?.display === 'inline-flex'
+const mediaRules = new __helpers.CSSHelp(document).getCSSRules('media')
+const usesFlex = cssRules.find(rule => hasFlex(rule))
+const usesFlexMedia = mediaRules.find(mediaRule => {
+  return [...mediaRule.cssRules].find(rule => hasFlex(rule))
 })
-assert(usesFlex)
+assert(usesFlex || usesFlexMedia)
 ```
 
 # --seed--

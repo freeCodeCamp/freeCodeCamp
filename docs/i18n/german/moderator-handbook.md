@@ -1,8 +1,8 @@
 # Das offizielle freeCodeCamp Moderator Handbuch
 
-Dieses Handbuch hilft dir, verschiedene Orte in unserer Community zu moderieren. Dazu gehören Unterhaltungen und Interaktionen in Issues & Pull-Request-Threads auf GitHub, das Community-Forum, die Chatrooms und andere offizielle Communities, die wir pflegen.
+Dieses Handbuch hilft dir, verschiedene Orte in unserer Community zu moderieren. This covers conversations and interactions in issues and pull request threads on GitHub, the community forum, the chat rooms, and other official communities that we foster.
 
-> [!NOTE] Alle freeCodeCamp-Moderatoren sind Community-weite Moderatoren. Das bedeutet, dass wir dir zutrauen, jeden dieser Orte zu beaufsichtigen.
+> [!NOTE] Alle freeCodeCamp-Moderatoren sind Community-weite Moderatoren. That means we trust you to oversee any of these places.
 
 Du kannst auf jeder der Plattformen, die dich am meisten interessieren, als Moderator/in tätig sein. Einige Moderatoren helfen nur auf GitHub, während andere nur im Forum helfen. Einige Moderatoren sind überall aktiv.
 
@@ -12,24 +12,24 @@ Unterm Strich wollen wir, dass es dir Spaß macht, Moderator/in zu sein, und das
 
 Als Moderator/in ist das Temperament wichtiger als die technischen Fähigkeiten.
 
-Hör zu. Sei hilfsbereit. Missbrauche deine Macht nicht.
+Hör zu. Be helpful. Missbrauche deine Macht nicht.
 
 Das freeCodeCamp ist eine inklusive Community, und das soll auch so bleiben.
 
-Wir haben einen einzigen Verhaltenskodex, der für unsere gesamte Community gilt. Je weniger Regeln, desto einfacher ist es, sich sie zu merken. Du kannst die Regeln [hier](https://code-of-conduct.freecodecamp.org) lesen und sie dir einprägen.
+We have a single [Code of Conduct](https://code-of-conduct.freecodecamp.org) that governs our entire community. Je weniger Regeln, desto einfacher ist es, sich sie zu merken. Du kannst die Regeln [hier](https://code-of-conduct.freecodecamp.org) lesen und sie dir einprägen.
 
-> [!NOTE] Als Moderator/in würden wir dich einem oder mehreren Teams auf GitHub, unseren Community-Foren & Chats hinzufügen. Wenn du keinen Zugang zu einer Plattform hast, die du gerne moderieren würdest, wende dich bitte [an einen unserer Mitarbeiter (Staff)](FAQ.md#additional-assistance).
+> [!NOTE] As a moderator we would add you to one or more teams on GitHub, our community forums & chat servers. If you are missing access on a platform that you would like to moderate, please [reach out to a staff member](FAQ.md#additional-assistance).
 
 ## GitHub moderieren
 
 Auf GitHub haben Moderatoren zwei Hauptaufgaben:
 
-1. Bearbeitung und Beantwortung von Problemen
-2. Prüfen und Zusammenführen von Pull-Requests (auch bekannt als QA).
+1. Triaging and responding to issues.
+2. Reviewing and merging pull requests (aka QA).
 
 ### GitHub Issues moderieren
 
-Wir nutzen unser Haupt-Repository [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) als gemeinsamen Issue Tracker für alle unsere Repositories. Jeden Tag bekommen wir neue Issues, die alle bearbeitet, gekennzeichnet und adressiert werden müssen. Das ist auch ein guter Ort, um mit Beiträgen zur Open-Source-Codebasis anzufangen.
+We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) repository as a common issue tracker for all of our repositories. We get new issues every day, all of which need to be triaged, labeled, and addressed. Das ist auch ein guter Ort, um mit Beiträgen zur Open-Source-Codebasis anzufangen.
 
 #### Triage von Issues
 
@@ -39,13 +39,13 @@ Du kannst uns helfen, die Issues zu ordnen und einzuteilen, indem du Labels aus 
 
 Bitte achte besonders auf die Label `"help wanted"` und `"first timers only"`. Diese sollen zu Threads hinzugefügt werden, von denen du denkst, dass sie für potenzielle Mitwirkende geöffnet werden können, um einen Pull-Request zu erstellen.
 
-Das `"first timer only"` Label sollte auf ein triviales Problem (z. B. einen Tippfehler) angewendet werden und zusätzliche Informationen enthalten. Du kannst diese [Antwortvorlage](moderator-handbook.md#first-timer-only-issues) für die Triage verwenden.
+A `"first timers only"` label should be applied to a trivial issue (ie a typo fix) and should include additional information. Du kannst diese [Antwortvorlage](moderator-handbook.md#first-timer-only-issues) für die Triage verwenden.
 
 #### Schließen veralteter, inaktiver Issues und Pull-Requests
 
 - Veraltete Issues oder PRs sind solche, die seit 21 Tagen (3 Wochen nach der letzten Aktivität) keine Aktivität vom Autor erfahren haben, aber erst nachdem ein Moderator weitere Informationen/Änderungen angefordert hat.
 
-- Aktivität ist definiert als: Kommentare, die eine Aktualisierung der PR und Triages anfordern, wie  `status: update needed` Label etc.
+- Activity is defined as: Comments requesting an update on the PR and triages like `status: update needed` label, etc.
 
 - Wenn der Beitragende um zusätzliche Hilfe oder sogar Zeit bittet, kann das oben Gesagte gelockert und nach einer Antwort erneut überprüft werden. In jedem Fall sollten die Moderatoren nach bestem Wissen und Gewissen den Status der ausstehenden PR klären.
 
@@ -57,29 +57,29 @@ Pull Requests (PRs) sind die Art und Weise, wie Mitwirkende Änderungen an das f
 
 #### Arten von Pull Requests
 
-1. **Bearbeitung der Aufgabeninstruktionen**
+1. **Challenge instruction edits**
 
-   Das sind Änderungen am Text der Aufgaben - der Beschreibung, den Instruktionen oder dem Testtext.
+   These are changes to the text of challenges - the description, instructions, or test text.
 
    Du kannst sie auch direkt auf GitHub überprüfen und entscheiden, ob du sie zusammenführen möchtest. Wir müssen hier etwas vorsichtiger sein, denn Millionen von Menschen werden diesem Text begegnen, wenn sie den freeCodeCamp-Studienplan durcharbeiten. Macht der Pull-Request den Text klarer, ohne ihn viel länger zu machen? Sind die Änderungen relevant und nicht übermäßig pedantisch? Denke daran, dass unser Ziel ist, dass die Aufgaben so deutlich und so kurz wie möglich sind. Sie sind nicht der Ort für unklare Details. Die Mitwirkenden könnten versuchen, Links zu Ressourcen zu den Aufgaben hinzuzufügen.
 
    Mit diesen [Antwortvorlagen](moderator-handbook.md#closing-invalid-pull-requests) kannst du ungültige Pull-Requests schließen und darauf antworten.
 
-   Wenn die Änderung gut aussieht, sorge bitte dafür, dass du eine Genehmigung mit einem "LGTM"-Kommentar hinterlässt. Sobald ein Pull Request mindestens zwei Genehmigungen (einschließlich deiner) von den Moderatoren oder dem Entwicklungsteam erhält, kannst du ihn zusammenführen.
+   If the changes look good, please ensure to leave an approval with a "LGTM" (Looks Good To Me) comment. Sobald ein Pull Request mindestens zwei Genehmigungen (einschließlich deiner) von den Moderatoren oder dem Entwicklungsteam erhält, kannst du ihn zusammenführen.
 
-2. **Bearbeitung des Aufgabencodes**
+2. **Challenge code edits**
 
-   Dabei handelt es sich um Änderungen am Code in einer Aufgabe - dem Aufgabenstartcode, der Aufgabenlösung und den Teststrings.
+   These are changes to the code in a challenge - the challenge seed, challenge solution, and test strings.
 
-   Diese Pull Requests müssen von GitHub heruntergeladen werden und auf dem eigenen Computer oder Gitpod getestet werden, um sicherzustellen, dass die Tests immer noch mit der aktuellen Lösung bestanden werden können und dass der neue Code keine Fehler einführt.
+   These pull requests need to be pulled down from GitHub and tested on your local computer or Gitpod to make sure the challenge tests can still be passed with the current solution and to make sure the new code doesn't introduce any errors.
 
    Einige Mitwirkende werden versuchen, zusätzliche Tests hinzuzufügen, um spitzfindige Sonderfälle abzudecken. Wir müssen aufpassen, dass wir die Aufgabe nicht zu kompliziert machen. Diese Aufgaben und ihre Tests sollten so einfach und intuitiv wie möglich sein. Abgesehen von den Algorithmusaufgaben und dem Abschnitt zur Interviewvorbereitung sollten die Teilnehmer/innen in der Lage sein, jede Aufgabe innerhalb von etwa 2 Minuten zu lösen.
 
    Mit diesen [Antwortvorlagen](moderator-handbook.md#closing-invalid-pull-requests) kannst du ungültige Pull-Requests schließen und darauf antworten.
 
-   Wenn die Änderung gut aussieht, sorge bitte dafür, dass du eine Genehmigung mit einem "LGTM"-Kommentar hinterlässt. Sobald ein Pull-Request mindestens zwei Genehmigungen (einschließlich deiner) von den Moderatoren oder dem Entwicklungsteam erhält, kannst du ihn zusammenführen.
+   If the changes look good, please ensure to leave an approval with a "LGTM" comment. Sobald ein Pull-Request mindestens zwei Genehmigungen (einschließlich deiner) von den Moderatoren oder dem Entwicklungsteam erhält, kannst du ihn zusammenführen.
 
-3. **Änderungen der Plattform**
+3. **Platform changes**
 
    Diese Code-Bearbeitungen ändern die Funktionalität der freeCodeCamp-Plattform selbst.
 
@@ -105,11 +105,11 @@ Vergewissere dich vor dem Zusammenführen eines Pull Requests, dass GitHub alle 
 
 > [!WARNING] Das Zusammenführen eines PRs, der die CI/CD-Prüfungen nicht besteht, kann für alle Beteiligten, einschließlich des Entwicklungsteams und der Mitwirkenden, zu Schwierigkeiten führen.
 
-##### Umgang mit Merge-Konflikten:
+##### Handling Merge Conflicts:
 
-Manchmal kommt es zu einem Merge-Konflikt.
+Sometimes there will be a merge conflict.
 
-Das bedeutet, dass ein anderer Pull-Request eine Änderung an demselben Teil der Datei vorgenommen hat. GitHub hat ein Tool, mit dem du diese Merge-Konflikte direkt auf GitHub lösen kannst. Du kannst versuchen, diese Konflikte zu lösen. Benutze einfach dein gutes Urteilsvermögen.
+Das bedeutet, dass ein anderer Pull-Request eine Änderung an demselben Teil der Datei vorgenommen hat. GitHub hat ein Tool, mit dem du diese Merge-Konflikte direkt auf GitHub lösen kannst. Du kannst versuchen, diese Konflikte zu lösen. Use your best judgment.
 
 Die Änderungen des Pull-Requests stehen oben und die des main-Branch unten. Manchmal gibt es dort überflüssige Informationen, die gelöscht werden können. Bevor du fertig bist, stelle sicher, dass du die `<<<<<`, `======` und `>>>>>>` löschst, die Git hinzufügt, um Merge-Konflikte anzuzeigen.
 
@@ -119,13 +119,13 @@ Wenn du dir unsicher bist, frag bitte einen der anderen Moderatoren oder das Ent
 
 Wenn der Pull-Request so aussieht, dass er zusammengeführt werden kann (und keine weiteren Genehmigungen benötigt - denk daran, dass wir mindestens zwei benötigen), kannst du ihn zusammenführen. Achte darauf, dass du die Standardoption **"Squash and Merge"** verwendest. Dadurch werden alle Pull-Request-Commits zu einem einzigen Commit zusammengefasst, wodurch die Git-Historie viel einfacher zu lesen ist.
 
-> Dann solltest du den Pull-Request kommentieren und dich auf deine persönliche Art und Weise bei dem Mitwirkenden bedanken.
+> You should then comment on the pull request, thanking the contributor in your own personal way!
 
 Wenn der Autor des Pull-Requests zum ersten Mal beiträgt, solltest du ihm auch zu seinem ersten zusammengefassten Pull-Request für das Repository gratulieren. Du kannst in der oberen rechten Ecke des PR-Body nachsehen, ob es sich um einen "first-time" Mitwirkenden handelt. Es wird `First-time contributor` angezeigt, wie unten dargestellt:
 
 <details>
    <summary>
-      Badge "First time contributor" für den ersten Beitrag eines Pull-Requests (Screenshot)
+      First-time contributor badge on pull requests (screenshot)
    </summary>
 
    <br>
@@ -136,25 +136,25 @@ Wenn der Pull-Request nicht bereit zum Zusammenführen zu sein scheint, kannst d
 
 Wenn du eine zweite Meinung zu einem Pull-Request benötigst, hinterlasse deine Kommentare zu dem Pull-Request und füge dann das Label "discussing" zu dem Pull-Request hinzu.
 
-##### Schließen eines ungültigen Pull-Requests:
+##### Closing an Invalid Pull Request:
 
-Oft ist ein Pull-Request mit wenig Aufwand verbunden. Das erkennst du in der Regel sofort daran, dass der Mitwirkende sich nicht die Mühe gemacht hat, die Kontrollkästchen in der Pull-Request-Vorlage zu markieren oder einen allgemeinen Pull-Request-Titel wie "made changes" oder "Update index.md" verwendet hat.
+Oft ist ein Pull-Request mit wenig Aufwand verbunden. You can usually tell this immediately when the contributor didn't bother checking the checkboxes in the Pull Request Template or used a generic pull request title like "Made changes" or "Update index.md".
 
 Es gibt auch Situationen, in denen der/die Mitwirkende versucht, einen Link zu seiner/ihrer Website hinzuzufügen, eine von ihm/ihr erstellte Bibliothek einzubinden oder eine unseriöse Bearbeitung vorzunehmen, die niemandem außer ihm/ihr selbst hilft.
 
-Mit diesen [Antwortvorlagen](moderator-handbook.md#closing-invalid-pull-requests) kannst du ungültige Pull-Requests schließen und darauf antworten.
+You can close these invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
-#### Weitere Richtlinien für Moderatoren auf GitHub
+#### Other Guidelines for Moderators on GitHub
 
 Obwohl du Schreibzugriff auf das freeCodeCamp-Repository hast, **solltest du niemals Code direkt in die freeCodeCamp-Repositories pushen**. Der gesamte Code sollte in Form eines Pull-Requests von einem Fork des Repositorys in die Codebasis von freeCodeCamp gelangen.
 
 Außerdem solltest du niemals deine eigenen PRs akzeptieren. Sie müssen von einem anderen Moderator überprüft werden, genau wie jeder andere PR.
 
-Wenn du feststellst, dass jemand gegen den [Verhaltenskodex](https://code-of-conduct.freecodecamp.org) auf GitHub verstößt oder Pull-Requests mit bösartigem Inhalt oder Code öffnet, schicke eine E-Mail an `support[at]freecodecamp.org` mit einem Link zu dem betreffenden Pull-Request, damit wir in Erwägung ziehen können, die betreffende Person komplett aus der GitHub-Organisation von freeCodeCamp zu verbannen.
+If you notice anyone breaking the [Code of Conduct](https://code-of-conduct.freecodecamp.org) on GitHub issues, or opening pull requests with malicious content or code, email `support[at]freecodecamp.org` with a link to the offending pull request, and we can consider banning them from freeCodeCamp's GitHub organization entirely.
 
 ## Das Forum moderieren
 
-Als Moderator/in trägst du dazu bei, dass unsere Community ein angenehmer Ort ist, an dem jeder lernen und Hilfe bekommen kann. Du bearbeitest markierte Beiträge und kümmerst dich um Spam, Off-Topic und andere unangemessene Unterhaltungen.
+As a moderator, you help keep our community an enjoyable place for anyone to learn and get help. Du bearbeitest markierte Beiträge und kümmerst dich um Spam, Off-Topic und andere unangemessene Unterhaltungen.
 
 Sobald du ein Moderator im Forum bist, wirst du blaue Moderatorenhinweise zu Forenmitgliedern sehen, wie z. B. "Dies ist das erste Mal, dass [person] gepostet hat - heißen wir sie in der Community willkommen!" oder "[person] hat schon lange nicht mehr gepostet - heißen wir sie wieder willkommen."
 
@@ -162,212 +162,211 @@ Sobald du ein Moderator im Forum bist, wirst du blaue Moderatorenhinweise zu For
 
 Das sind Gelegenheiten für dich, sie willkommen zu heißen und ihnen das Gefühl zu geben, etwas Besonderes zu sein. Man weiß nie, welche Person, die nur am Rande beteiligt ist, unser nächster Superhelfer wird, der vielen anderen Menschen auf ihrem Weg zum Programmieren hilft. Selbst die kleinste Freundlichkeit kann eine Kaskade von guten Taten auslösen.
 
-### Lösche Forenbeiträge
+### Deleting Forum Posts
 
-Forum-Moderatoren können Beiträge von Nutzern löschen. Du solltest dies nur in den folgenden Fällen tun:
+Forum moderators can delete users' posts. Du solltest dies nur in den folgenden Fällen tun:
 
 1. Jemand hat ein pornografisches oder grafisch gewalttätiges Bild gepostet.
 2. Jemand hat einen Link oder Code gepostet, der bösartig ist und anderen Teilnehmern, die darauf klicken, schaden könnte.
-3. Jemand hat einen Thread mit vielen Spam-Nachrichten überflutet.
+3. Someone has flooded a thread with a lot of spam messages.
+4. An account has been created, beyond a reasonable doubt, to spam.
 
-### Umgang mit Spam
+### Dealing with Spam
 
-Beim ersten Spam-Posting eines Nutzers schickst du ihm eine Nachricht, in der du das Problem erklärst, und entfernst den Link oder das Posting, falls nötig. Hinterlasse eine Notiz im Profil des Nutzers, in der du die von dir ergriffene Maßnahme erklärst. Wenn das Problem weiterhin besteht, sperre den/die Benutzer/in stillschweigend für Beiträge (mit der Stille-Option im Benutzer-Administrationsbereich). Schicke dem Nutzer eine Verwarnung mit dem Verhaltenskodex. Aktiviere das Kästchen in der privaten Nachricht, das angibt, dass deine Nachricht eine "formelle Warnung" ist.
+For the first spam post of a legitimate user (ie. whose intent isn't to spam the forum but to learn/contribute to the forum), send them a message explaining the problem, and remove the link or post as appropriate. Hinterlasse eine Notiz im Profil des Nutzers, in der du die von dir ergriffene Maßnahme erklärst. Wenn das Problem weiterhin besteht, sperre den/die Benutzer/in stillschweigend für Beiträge (mit der Stille-Option im Benutzer-Administrationsbereich). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Aktiviere das Kästchen in der privaten Nachricht, das angibt, dass deine Nachricht eine "formelle Warnung" ist.
 
-Als Moderator kannst du im Bereich [staff forum ](https://forum.freecodecamp.org/c/mod-team/4) Fragen stellen und Vorfälle melden.
+As a moderator, you can ask questions and report incidents in the [mod-team forum section](https://forum.freecodecamp.org/c/mod-team/4).
 
-### Umgang mit Off-Topic-Gesprächen
+### Dealing with Off-Topic Conversations
 
-Beiträge oder Themen, die am falschen Ort zu sein scheinen, können neu kategorisiert oder umbenannt werden, was immer angemessen ist.
+Posts or topics that seem to be in the wrong place can be recategorized or renamed to whatever would be appropriate.
 
 In Ausnahmefällen kann es für einen Moderator angemessen sein, eine Diskussion in mehrere Threads aufzuteilen.
 
-Auch hier gilt: Wenn du Probleme oder Fragen hast, schreibe einen Beitrag mit deinen Aktionen in der Kategorie Staff und markiere einen anderen Moderator, wenn du möchtest, dass er deine Moderationsaktionen überprüft.
+Again, if you have any problems or questions, make a post with your actions in the `"Staff"` category, and tag another moderator if you want them to review your moderating actions.
 
-### Minderjährige Nutzer
+### Dealing with Posted Solutions
 
-Unsere [Nutzungsbedingungen](https://www.freecodecamp.org/terms) verlangen, dass freeCodeCamp-Nutzer mindestens 13 Jahre alt sind. Wenn ein/e Nutzer/in preisgibt, dass er/sie unter 13 Jahre alt ist, schicke ihm/ihr die unten stehende Nachricht und lösche sein/ihr Forumskonto (wenn eine Löschung nicht möglich ist, reicht die Sperrung des Kontos).
+When a user posts a solution to any of the questions, remove it and either, kindly let them know that solutions are not permitted on the forum in your own words or, use the **Solution Instead of Help** "Canned reply".
 
-**Schicke eine E-Mail an `support[at]freecodecamp.org`, um auch das freeCodeCamp-Konto des Nutzers zu löschen.**
+### Underage Users
+
+Our [Terms of Service](https://freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. If a user reveals that they are under the age of 13, send them the message (below), suspend the account then **Email `support[at]freecodecamp.org` to delete the user's freeCodeCamp /learn and forum accounts as well (providing a link to the offending forum account).**
 
 ```markdown
-SUBJECT: Users under 13 are not allowed to use the forum per Terms of Service
+SUBJECT: Users under 13 are not allowed to use the forum per our Terms of Service.
 
-It has come to our attention that you are under 13 years of age. Per the [freeCodeCamp terms of service](https://www.freecodecamp.org/news/terms-of-service), you must be at least 13 years old to use the site or the forum. We will be deleting both your freeCodeCamp account and your forum account. This restriction keeps us in compliance with United States laws.
+It has come to our attention that you are under 13 years of age. Per the [freeCodeCamp Terms of Service](https://freecodecamp.org/terms), you must be at least 13 years old to use the site or the forum. We will be deleting both your freeCodeCamp account and your forum account. This restriction keeps us in compliance with United States laws.
 
 Please rejoin once you have reached at least 13 years of age.
 
 Thank you for understanding.
 ```
 
+### Moderating Via Cell-phone
+
+Moderating the forum is possible via a cell-phone but you may encounter some usage quirks. This is not an exhaustive list.
+
+- When trying to include a "Canned reply" in a response, if the menu doesn't open (after clicking on the gear), click on the text area first then try it again.
+- The moderator's 'wrench' is at the bottom of the view-port but if you click it and cannot see the "Select Posts" button because it has scrolled out of view, you may need to try to scroll to it, though sometimes that doesn't work in which case moving to a desktop/laptop monitor may be needed.
+- Sometimes clicking on the three-dot menu below a post can hide the reply icon. Reload the page to get it back.
+
 ## Facebook moderieren
 
-Wenn du etwas siehst, das gegen unseren [Verhaltenskodex](https://code-of-conduct.freecodecamp.org/) zu verstoßen scheint, solltest du es sofort löschen.
+If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
 
-Manchmal posten Menschen Dinge, die sie für lustig halten. Sie erkennen nicht, dass das, was sie gesagt oder geteilt haben, als beleidigend interpretiert werden könnte. Du solltest solche Beiträge löschen, aber nicht unbedingt die Person verbannen. Hoffentlich begreift der/die NutzerIn, dass das, was er/sie gepostet hat, unangemessen war, denn der Beitrag wurde gelöscht.
+Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. You should delete such posts, but not necessarily ban the person. Hopefully, the user will come to understand that what they posted was inappropriate because the post was deleted.
 
-Aber wenn es eine ungeheuerliche Beleidigung ist, welche nicht auf einen kulturellen Unterschied oder einem Missverständnis in der englischen Sprache zurückgeführt werden kann. Dann solltest du in diesem Fall ernsthaft in Erwägung ziehen, das Mitglied aus der Facebook-Gruppe zu sperren.
+But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language. In that case, you should strongly consider blocking the member from the Facebook group.
 
-## Chat moderieren
+## Moderating Discord
 
-Hier erfährst du, wie die Moderatoren mit Verstößen gegen unseren [Verhaltenskodex](https://code-of-conduct.freecodecamp.org/) auf unserem Chat-Server umgehen:
+Here's how moderators deal with violations of our [Code of Conduct](https://code-of-conduct.freecodecamp.org/) on our chat server:
 
-1. **Vergewissere dich, dass der/die Nutzer/in die Absicht hatte, gegen den Verhaltenskodex zu verstoßen.**
+> [!NOTE] Camperbot serves as our moderation bot, and all of the commands use Discord's native slash command interface. You can see a list of all of the commands by typing `/` in any channel.
 
-   Nicht alle Verstöße gegen den Verhaltenskodex waren so beabsichtigt. Ein neuer Teilnehmer könnte eine große Menge an Code posten und um Hilfe bitten, ohne zu wissen, dass dies als Spamming angesehen werden kann. In diesen Fällen kannst du sie einfach bitten, ihren Code mit Diensten wie CodePen oder Pastebin einzufügen.
+1. **Make sure the user intended to violate the [Code of Conduct](https://code-of-conduct.freecodecamp.org).**
 
-2. **Wenn der/die Teilnehmer/in eindeutig und absichtlich gegen den Verhaltenskodex verstößt, wird der/die Moderator/in wie folgt vorgehen:**
+   Not all violations of the [Code of Conduct](https://code-of-conduct.freecodecamp.org) were intended as such. A new camper might post a large amount of code for help, unaware that this can be disruptive to conversation. In diesen Fällen kannst du sie einfach bitten, ihren Code mit Diensten wie CodePen oder Pastebin einzufügen.
 
-   Wirf die beleidigende Person aus dem Chatraum oder schalte sie stumm. Um jemanden hinauszuwerfen oder stumm zu schalten, klickst du mit der linken Maustaste auf sein Profilbild, wählst die drei Punkte und wählst "Remove from room", um ihn hinauszuwerfen, oder "Mute user", um ihn am Senden von Nachrichten zu hindern. Dann berichte eine kurze Zusammenfassung des Ereignisses im Channel #mod-log. Hier ist ein Beispiel dafür, wie eine solche Zusammenfassung aussehen könnte:
+2. **If the camper clearly and intentionally violates the [Code of Conduct](https://code-of-conduct.freecodecamp.org), the moderator will proceed as follows:**
 
-   ```
-   Kicked: _@username_
-   Reason(s): _Spamming, trolling_
-   Evidence: _One or more links to the offending message(s)_
-   ```
+   For minor offences, a warning may be issued with the `/warn` command. For more egregious offences, you can remove the member from the server temporarily with the `/kick` command, or permanently with the `/ban` command. In some cases, a member may just need some time to cool off and collect their thoughts - the `/mute` command allows you to prevent them from engaging with our community for a set period of time. A muted member can see the conversation, but cannot post messages or add reactions.
 
-3. **Eine private Diskussion erstellen**
+   All moderation commands will take a `reason` parameter, which should be a short explanation of why the action was taken. Moderation actions done with the bot will be logged in `#mod-log`, which allows us all to stay on the same page. As such, we should avoid using Discord's built-in moderation tools, as they will not be logged.
+
+   > [!WARNING] The reason provided to a moderation command will also be included in the DM notification to the camper. Please remember to be professional here.
+
+3. **Creating a private discussion**
 
    Es kann Situationen geben, in denen du ein Anliegen mit einem Teilnehmer unter vier Augen besprechen musst. Dies sollte nicht über DMs geschehen, da dies zu Situationen führen kann, in denen du eine Sache behauptest und der Teilnehmer eine andere. Nutze stattdessen die Funktionen des Bots, um eine private Diskussion zu führen:
 
-   - Rufe den Befehl `!fCC private username` auf, wobei `username` der Chat-Benutzername des Teilnehmers ist.
-   - Der Bot erstellt einen neuen Channel und fügt den genannten Camper und alle Moderatoren mit der Rolle `Your Friendly Moderator` hinzu. Obwohl alle Moderatoren zur Transparenz in den Kanal aufgenommen werden, sollte der Moderator, der diesen Befehl aufruft, der einzige sein, der mit dem Teilnehmer interagiert, es sei denn, er bittet um Hilfe.
-   - Wenn die Konversation beendet ist, rufst du den `!fCC close`-Befehl _im privaten Channel_ auf, damit der Bot diesen Channel schließt und löscht.
+   - Call the `/private` command, where `target` is the camper you want to open a private channel with.
+   - The bot will create a new channel, and add the mentioned camper and all moderators with the `Your Friendly Moderator` role. While all moderators are added to the channel for transparency, the moderator who calls this command should be the only one to interact with the camper unless they request assistance.
+   - When the conversation is complete, click the `❌ Close` button _on the first message in the private channel_ to have the bot close and delete that channel.
 
-4. **Nachrichten löschen**
+4. **Deleting messages**
 
-   Moderatoren können Nachrichten auf unserem Chat-Server löschen. Sie sollten diese Fähigkeit nur in vier ganz bestimmten Situationen nutzen:
+   Our moderation bot is configured to log deleted messages automatically in the `#mod-log` channel. If a message is not in line with our Code of Conduct, or otherwise not appropriate for our community, you are generally safe to delete it.
 
-   - Jemand hat ein pornografisches oder grafisch gewalttätiges Bild gepostet.
+   Note that if the message contains content that violates Discord's terms of service, you'll want to report it via https://dis.gd/report **prior to** deleting it.
 
-   - Jemand hat einen Link oder Code gepostet, der bösartig ist und anderen Teilnehmern, die darauf klicken, schaden könnte.
+5. **Don’t threaten to take action**
 
-   - Jemand hat den Chat mit so vielen Spam-Nachrichten überflutet (meist durch Bots), dass der Chat komplett unbrauchbar ist.
+   If a camper breaks the [Code of Conduct](https://code-of-conduct.freecodecamp.org), don’t threaten to take moderator action, and never warn them in public. Instead, talk to them privately using the bot's `/private` command, or use the bot's moderation commands.
 
-   - Jemand hat eine Werbung und/oder eine selbstdarstellende Nachricht/ein selbstdarstellendes Bild (soziale Medien) gepostet.
+   If a violation was clearly unintended and doesn't warrant moderation action or private conversation, make the offending camper aware of their actions without making it come across as a warning.
 
-   In allen anderen Situationen - auch bei Verstößen gegen den Verhaltenskodex - sollten die Moderatoren die Nachrichten nicht löschen, da sie wichtige historische Aufzeichnungen sind. Wenn du eine Nachricht löschst, solltest du vorher einen Screenshot davon machen! Der Screenshot kann im Channel #mod-log geloggt werden.
+   For example:
 
-   > [!NOTE] Wenn die Nachricht Material enthält, von dem es illegal wäre, einen Screenshot zu machen, kopiere stattdessen den Link der Nachricht und leite ihn an @raisedadead weiter, der ihn an das Team für Vertrauen und Sicherheit von Discord weiterleitet.
+   - Camper posts a wall of code to request help:
 
-5. **Verwende nicht @all oder @here**
+     Moderator: **@username** Please use CodePen or Pastebin when posting large amounts of code.
 
-   Verwende unter keinen Umständen @all oder @here! Jede einzelne Person in diesem Chatraum erhält eine Benachrichtigung. In manchen Fällen sind es Zehntausende von Menschen.
+   - Or if you really have to explain why:
 
-   Wenn du möchtest, dass die Leute eine Ankündigung sehen, kannst du sie stattdessen an den Kanal anheften, damit alle sie lesen können.
+     Moderator: **@username** Please use CodePen or Pastebin when posting large amounts of code, because it disrupts the chat for everyone and could be considered spamming according to our [Code of Conduct](https://code-of-conduct.freecodecamp.org).
 
-6. **Droh nicht mit Maßnahmen**
+   - For mild and unintentional violations of the [Code of Conduct](https://code-of-conduct.freecodecamp.org):
 
-   Wenn ein/e Teilnehmer/in gegen den Verhaltenskodex verstößt, drohe ihm/ihr nicht mit Maßnahmen des Moderators/der Moderatorin und verwarne ihn/sie nie in der Öffentlichkeit. Sprich stattdessen privat mit ihnen, indem du den Befehl `private` des Bots benutzt. Niemand sonst in diesem Channel muss wissen, dass du die Person gebannt/suspendiert hast. Wenn ein Verstoß eindeutig unbeabsichtigt war und keine Suspendierung oder ein Gespräch unter vier Augen rechtfertigt, solltest du den/die betreffende/n Teilnehmer/in auf sein/ihr Verhalten aufmerksam machen, ohne dass es wie eine Verwarnung wirkt. Zum Beispiel:
+     Moderator: This is a friendly reminder for everyone to follow the [Code of Conduct](https://code-of-conduct.freecodecamp.org): https://code-of-conduct.freecodecamp.org/
 
-   - Der Teilnehmer postet viele Codezeilen und bittet um Hilfe:
+6. **Don’t brag about being a moderator**
 
-     Moderator: @Benutzername Bitte benutze CodePen oder Pastebin, wenn du große Mengen an Code postest.
+   Do not see yourself as above the community. **You are the community.** And the community has trusted you to help protect something rare that we all share - a _welcoming_ place for new developers.
 
-   - Oder wenn du wirklich erklären musst, warum:
+   If you brag about being a moderator, people may feel uneasy around you, in the same way that people may feel uneasy around a police officer, even if they’re doing nothing wrong. This is just human nature.
 
-     Moderator: @Benutzername Bitte benutze CodePen oder Pastebin, wenn du große Mengen an Code postest, denn das stört den Chat für alle und könnte laut unserem Verhaltenskodex als Spamming angesehen werden.
+7. **Don’t contradict other moderators**
 
-   - Für leichte und unbeabsichtigte Verstöße gegen den Verhaltenskodex:
+   If you disagree with a moderator's action, talk with them in private or bring it up in the #mod-chat channel. Never override a moderator's action, and never contradict the other moderator(s) publicly. Instead, have a cool-headed discussion in `#mod-chat` and convince the moderator that they themselves should reverse their ban or change their PoV (Point of View).
 
-     Moderator: Dies ist eine freundliche Erinnerung an alle, den Verhaltenskodex zu befolgen: https://code-of-conduct.freecodecamp.org/
+   _Remember: We’re all on the same team. We want to dignify the role of moderators and present a unified front._
 
-7. **Gib nicht damit an, ein Moderator zu sein**
+8. **Talk with other moderators**
 
-   Sieh dich nicht als über der Community stehend an. Du bist die Community. Und die Community hat dir vertraut, dass du dabei hilfst, etwas Seltenes zu schützen, das wir alle teilen - einen _einladenden_ Ort für neue Entwickler.
+   We have a `#mod-chat` room for moderators only. Use it! If you feel uncomfortable with handling a certain situation, ask other moderators for help. If you think something should be discussed, do it. You're part of the team, and we value every team member's input! Even if you totally disagree with anything in these guidelines or the [Code of Conduct](https://code-of-conduct.freecodecamp.org)!
 
-   Wenn du damit angibst, Moderator zu sein, fühlen sich die Leute in deiner Nähe vielleicht unwohl, so wie sich die Leute in der Nähe von Polizisten unwohl fühlen, auch wenn sie nichts Unrechtes tun. Das ist einfach die menschliche Natur.
+9. **Temporarily inactive**
 
-8. **Widersprich nicht anderen Moderatoren**
+   If you're not going to be active as a Moderator for a while due to vacation, illness, or any other reason, make sure to let the others know in the `#mod-chat` channel. This is so we know if we can count on you to be regularly active on the server or not.
 
-   Wenn du mit der Handlung eines Moderators nicht einverstanden bist, sprich mit ihm unter vier Augen oder sprich es im #mod-chat-Kanal an. Setze dich niemals über die Entscheidung eines Moderators hinweg und widerspreche niemals öffentlich den anderen Moderatoren. Führe stattdessen eine sachliche Diskussion im `#mod-chat` und überzeuge den Moderator davon, dass er seinen Bann rückgängig machen oder seinen Standpunkt ändern sollte.
+## How to Become a Moderator
 
-   Denk daran: Wir sind alle im selben Team. Wir wollen die Rolle der Moderatoren würdigen und eine einheitliche Front präsentieren.
+Suppose you are helping people in the community consistently over time. In that case, our moderator team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
 
-9. **Sprich mit anderen Moderatoren**
+If you are approved, we will add you to our moderator teams on [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [forum](https://forum.freecodecamp.org/g/moderators), chat, etc.
 
-   Wir haben einen Raum nur für Moderatoren. Benutze ihn! Wenn du dich mit einer bestimmten Situation unwohl fühlst, bitte andere Moderatoren um Hilfe. Wenn du denkst, dass etwas diskutiert werden sollte, dann tu es. Du bist Teil des Teams, und wir schätzen den Beitrag jedes Teammitglieds! Auch wenn du mit diesen Richtlinien oder dem Verhaltenskodex überhaupt nicht einverstanden bist!
-
-10. **Vorübergehend inaktiv**
-
-    Wenn du wegen Urlaub, Krankheit oder aus einem anderen Grund eine Weile nicht als Moderator aktiv sein wirst, lass es die anderen im `#mod-chat` Kanal wissen. So wissen wir, ob wir auf dich zählen können, dass du regelmäßig auf dem Server aktiv bist oder nicht.
-
-## Wie man Moderator wird
-
-Angenommen, du hilfst den Menschen in deiner Community über einen längeren Zeitraum hinweg. In diesem Fall wird unser Moderatorenteam darauf aufmerksam und einer von ihnen wird dich gegenüber [unseren Mitarbeitern](https://forum.freecodecamp.org/g/Team) als möglichen Moderator erwähnen. Es gibt keine Abkürzungen, um Moderator/in zu werden.
-
-Wenn du zugelassen wirst, fügen wir dich zu unseren Moderatorenteams auf [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), im [Forum](https://forum.freecodecamp.org/g/moderators) und im Chat etc. hinzu.
-
-> [!NOTE] Für GitHub: Nachdem du als Moderator akzeptiert wurdest, erhältst du eine Einladung zum Github-Repository. Du musst auf [freeCodeCamp GitHub Organisation Invitation](https://github.com/orgs/freeCodeCamp/invitation) gehen, um die Einladung zu akzeptieren.
+> [!NOTE] For GitHub: After you've been accepted as a moderator, you will receive a Github repository invitation. You'll need to head over towards [freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
 > 
-> Dies ist erforderlich, damit wir dir Schreibzugriff auf einige unserer Repositories geben können.
+> This is required for us to be able to give you write access to some of our repositories.
 
-## Wie wir inaktive Moderatoren entfernen
+## How We Retire Inactive Moderators
 
-Bitte beachte, dass wir häufig Moderatoren entfernen, von denen wir glauben, dass sie inaktiv sind. Wenn wir das tun, senden wir die folgende Nachricht:
+Please note that we will frequently remove moderators whom we think are inactive. When we do this, we will send the following message:
 
 ```markdown
-This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our Moderator team. We deeply appreciate your help in the past.
+This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our moderator team. We deeply appreciate your help in the past.
 
-If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting me know.
+If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting us know.
 ```
 
-## Wie unser Chatraum für Mitwirkende funktioniert
+## How Our Contributors Room Works
 
-Anyone is welcome in the [Contributors room on our chat server](https://discord.gg/PRyKn3Vbay). Er ist der Chatraum für Moderatoren und andere Teilnehmer, die auf verschiedene Weise zu unserer Community beitragen, z. B. durch Lerngruppen.
+Anyone is welcome in the [contributors room on our chat server](https://discord.gg/PRyKn3Vbay). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
 
-Wir gehen davon aus, dass Mitwirkende alles in diesem Raum lesen, wo sie direkt mit einem `@Benutzername` erwähnt werden. Alles andere ist freiwillig, aber du kannst gerne alles lesen, was dort gepostet wird, und dich einbringen.
+We assume contributors will read anything in this room that directly mentions them with an **@username**. Everything else is optional, but feel free to read anything anyone posts in there and interact.
 
-## Der Umgang mit Anwälten
+## Dealing with Solicitors
 
-Es kann sein, dass du von Organisationen angesprochen wirst, die eine Partnerschaft oder ein Co-Branding mit dem freeCodeCamp anstreben. Sobald du merkst, dass sie das wollen, **hör bitte auf, mit ihnen zu reden** und sag ihnen, sie sollen eine E-Mail an `team[at]freecodecamp.org` schicken.
+You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
 
-Wir bekommen ständig solche Vorschläge, und die Mitarbeiter/innen sind am besten in der Lage zu beurteilen, ob sich eine solche Beziehung für unsere Community lohnt (und das ist sie selten).
+We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
-## Umgang mit Anfragen zur (psychischen) Gesundheit
+## Dealing with (Mental) Health Inquiries
 
-Es kann sein, dass du auf Situationen triffst, in denen Nutzerinnen und Nutzer medizinischen Rat suchen oder mit psychischen Problemen zu kämpfen haben und nach Unterstützung suchen.
+You may come across situations where users seek medical advice or are dealing with mental health issues and are looking for support.
 
-Grundsätzlich solltest du es vermeiden, über diese Angelegenheiten privat zu sprechen. Sollte die Situation auf das freeCodeCamp zurückfallen, wollen wir das Gespräch bzw. die Gespräche dokumentiert haben. Stelle klar, dass wir keine medizinischen Fachleute sind und dass du die Nutzer/innen ermutigst, sich professionelle Hilfe zu suchen.
+As a matter of policy, you should avoid talking privately about these matters. Should the situation reflect back to freeCodeCamp, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help.
 
-So schwierig es auch manchmal sein kann, vermeide es, irgendwelche Tipps oder Ratschläge zu geben, außer den Nutzer auf professionelle Hilfe zu verweisen!
+As difficult as it sometimes can be, avoid giving any tips or advice and rather point the user in the direction of seeking professional help!
 
-Wenn dies auf unserem Chat-Server passiert: Erstelle einen privaten Kanal für den Nutzer und das Mod-Team. Das kannst du mit dem Befehl `private` des Bots machen.
+If this happens on our chat server: Create a private channel for the user and the moderator team. This can be done with the bot's `private` command.
 
-- Dem Nutzer wird eine gewisse Privatsphäre garantiert
-- Der öffentliche Chat wir nicht länger unterbrochen
-- Andere Teammitglieder können einspringen, wenn es dir unangenehm ist, die Situation selbst zu bewältigen
+- The user is guaranteed some privacy.
+- Public chat is no longer disrupted.
+- Other team members can pitch in, should you feel uncomfortable dealing with the situation yourself.
 
-Hilfreiche URLs:
+Helpful URLs:
 
-http://www.suicide.org/international-suicide-hotlines.html
+http://suicide.org/international-suicide-hotlines.html
 
-## Eine Anmerkung zur Redefreiheit
+## A Note on Free Speech
 
-Manchmal verteidigen Menschen etwas Beleidigendes oder Hetzerisches, das sie gesagt haben, als "freie Meinungsäußerung".
+Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
-Dieser XKCD-Comic fasst die Gedanken der meisten Communities zur Redefreiheit perfekt zusammen. Wenn also jemand etwas im Namen der "Redefreiheit" verteidigt, kannst du es ihm gerne schicken.
+This XKCD comic summarizes perfectly most communities' thoughts on free speech.
 
-<div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" height="400" /></div>
+<div align="center"><img src='./images/github/xkcd-free-speech.png' width="400" height="400" /></div>
 
-Danke, dass du das gelesen hast, und danke, dass du der Entwickler-Community hilfst!
+Thanks for reading this, and thanks for helping the developer community!
 
 ## Antwortvorlagen
 
-Dies sind einige der Standard-Antwortvorlagen, die du bei der Überprüfung von Pull-Requests und der Bearbeitung von Issues und Pull-Requests verwenden kannst.
+These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues/pull requests.
 
-> Du kannst deine eigenen mit der in GitHub eingebauten [**Saved replies**](https://github.com/settings/replies/) Funktion erstellen oder die untenstehenden verwenden.
+> You can make your own saved replies with GitHub's built-in [saved replies](https://github.com/settings/replies/) feature or use the ones below.
 
-### Dankeschön
+### Thank You
 
 ```markdown
 Thank you for your contribution to the page! 👍
 We are happy to accept these changes and look forward to future contributions. 🎉
 ```
 
-### Danke und herzlichen Glückwunsch
+### Thank you and congrats
 
-> Für die Danksagung und Ermutigung von erstmalig Mitwirkenden.
+> For thanking and encouraging first-time contributors.
 
 ```markdown
 Hi @username. Congrats on your first pull request (PR)! 🎉
@@ -376,7 +375,7 @@ Thank you for your contribution to the page! 👍
 We are happy to accept these changes and look forward to future contributions. 📝
 ```
 
-### Build-Fehler
+### Build Error
 
 ```markdown
 Hey @username
@@ -390,9 +389,9 @@ Once you resolve these issues, we will be able to review your PR and merge it. �
 Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
-### Fork synchronisieren
+### Syncing Fork
 
-> Wenn der PR nicht mit dem `main`-Branch auf dem neuesten Stand ist.
+> When PR is not up to date with the `main` branch.
 
 ````markdown
 Hey @username
@@ -417,7 +416,7 @@ Once you sync your fork and pass the build, we will be able to review your PR an
 
 ---
 
-Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
+Feel free to reference the ["Syncing a fork"](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
 ````
 
 ### Merge Conflicts
@@ -438,11 +437,11 @@ If you're not familiar with the merge conflict process, feel free to look over G
 Dit is ook goeie praktyk op GitHub om 'n kort beskrywing van jou veranderinge te skryf wanneer jy 'n PR skep. 📝
 ````
 
-¹ Wenn ein erstmaliger Mitwirkender einen Merge-Konflikt hat, werden die Maintainer den Konflikt für ihn auflösen.
+¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
 
-### Duplikat
+### Duplicate
 
-> Wenn eine PR sich wiederholt oder ein Duplikat ist.
+> When PR is repetitive or a duplicate.
 
 ```markdown
 Hey @username
@@ -455,12 +454,12 @@ Thanks again! 😊
 
 ---
 
-If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+If you have any questions, feel free to ask questions on the ["Contributors" category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 ```
 
-### Ungültige Pull-Requests schließen
+### Closing Invalid Pull Requests
 
-> Wenn PR ungültig ist.
+> When PR is invalid.
 
 ```markdown
 Hey @username
@@ -472,19 +471,39 @@ This is a standard message notifying you that we've reviewed your pull request a
 Thank you and happy coding.
 ```
 
-> Wenn ein PR Links zu externen Ressourcen hinzufügt.
+> When PR adds links to external resources.
 
 ```markdown
 Thank you for your pull request.
 
 We are closing this pull request. Please suggest links and other details to add the challenge's corresponding guide post through [a forum topic](https://forum.freecodecamp.org/new-topic?category=Contributors&title=&body=**What%20is%20your%20hint%20or%20solution%20suggestion%3F**%0A%0A%0A%0A%0A**Challenge%3A**%0A%0A%0A**Link%20to%20the%20challenge%3A**) instead.
 
-If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### Ungültige Issues schließen
+### Adding comment about newbie mistakes
 
-> Wenn sich ein Issue auf den Code des Teilnehmers bezieht.
+```markdown
+As a new contributor, we encourage you to read our [contributing guidelines](https://contribute.freecodecamp.org).
+
+We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+
+Some examples of this are:
+
+1. Do not edit files directly through GitHub – while you can, it's not a good idea.
+2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
+3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
+4. Keep mentions and review requests to a minimum. We understand you are excited about contributing, and our maintainers will get back to you as soon as they get a chance.
+5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
+
+We appreciate you taking the time to help us, and we hope to see more contributions from you.
+
+Happy Contributing.
+```
+
+### Closing Invalid Issues
+
+> When an issue relates to the camper's code.
 
 ```markdown
 Thank you for reporting this issue.
@@ -496,7 +515,7 @@ If the forum members determine there is nothing wrong with your code, you can re
 Thank you and happy coding.
 ```
 
-> Wenn eine Issue ein Duplikat eines früheren Issue ist
+> When an issue is duplicate of an earlier issue.
 
 ```markdown
 Thank you for reporting this issue.
@@ -506,7 +525,7 @@ This is a standard message notifying you that this issue appears to be very simi
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-> Wenn ein Problem während des Staging gelöst wird.
+> When an issue is fixed in staging.
 
 ```markdown
 Thank you for reporting this issue.
@@ -516,14 +535,14 @@ This is a standard message notifying you that the problem you mentioned here is 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### Issue nur für erstmalige Mitwirkende
+### `first timer only` Issues
 
-> Wenn ein Issue als geeignet für den ersten Codebeitrag eingestuft wird.
+> When an issue is deemed to be eligible for first-time code contributors.
 
 ```markdown
 Thanks for opening this issue.
 
-This looks like something that can be fixed by "first time" code contributors to this repository. Here are the files that you should be looking at to work on a fix:
+This looks like something that can be fixed by "first-time" code contributors to this repository. Here are the files that you should be looking at to work on a fix:
 
 List of files:
 
@@ -531,7 +550,7 @@ List of files:
 2. ...
 3. ...
 
-Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://discord.gg/PRyKn3Vbay) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
+Please make sure you read our [guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in our [chat room](https://discord.gg/PRyKn3Vbay) or our [forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing; our moderators will guide you through this.
 
 Sometimes we may get more than one pull request. We typically accept the most quality contribution followed by the one that is made first.
 

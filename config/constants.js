@@ -73,6 +73,7 @@ let blocklist = [
   'field-guide',
   'forgot',
   'forum',
+  'freecodecamp',
   'get-help',
   'get-pai',
   'guide',

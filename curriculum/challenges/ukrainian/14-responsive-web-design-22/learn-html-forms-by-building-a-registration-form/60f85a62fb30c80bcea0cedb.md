@@ -1,8 +1,8 @@
 ---
 id: 60f85a62fb30c80bcea0cedb
-title: Крок 23
+title: Крок 24
 challengeType: 0
-dashedName: step-23
+dashedName: step-24
 ---
 
 # --description--
@@ -49,10 +49,10 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
     <p>Please fill out this form with the required information</p>
     <form action='https://register-demo.freecodecamp.org'>
       <fieldset>
-        <label>Enter Your First Name: <input type="text" required /></label>
-        <label>Enter Your Last Name: <input type="text" required /></label>
-        <label>Enter Your Email: <input type="email" required /></label>
-        <label>Create a New Password: <input type="password" pattern="[a-z0-5]{8,}" required /></label>
+        <label for="first-name">Enter Your First Name: <input id="first-name" type="text" required /></label>
+        <label for="last-name">Enter Your Last Name: <input id="last-name" type="text" required /></label>
+        <label for="email">Enter Your Email: <input id="email" type="email" required /></label>
+        <label for="new-password">Create a New Password: <input id="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
       </fieldset>
 --fcc-editable-region--
       <fieldset>
