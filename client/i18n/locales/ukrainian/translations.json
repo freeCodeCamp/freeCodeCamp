@@ -9,6 +9,8 @@
     "frontend": "Front End",
     "backend": "Back End",
     "view": "Перегляд",
+    "view-code": "View Code",
+    "view-project": "View Project",
     "show-cert": "Показати сертифікацію",
     "claim-cert": "Отримати сертифікацію",
     "save-progress": "Зберегти прогрес",
