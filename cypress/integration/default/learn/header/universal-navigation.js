@@ -1,9 +1,9 @@
+import envData from '../../../../../config/env.json';
 import {
   availableLangs,
   hiddenLangs,
   LangNames
 } from '../../../../../config/i18n/all-langs';
-import envData from '../../../../../config/env.json';
 
 const { clientLocale } = envData;
 
@@ -13,7 +13,10 @@ const selectors = {
   'language-menu': '.nav-lang-menu',
   'sign-in-button': "[data-test-label='landing-small-cta']",
   'avatar-link': '.avatar-nav-link',
-  'avatar-container': '.avatar-container'
+  'avatar-container': '.avatar-container',
+  menuBotton: '#toggle-button-nav',
+  menu: '.display-menu',
+  changeLangButton: '#nav-lang-button'
 };
 
 const links = {
@@ -40,6 +43,129 @@ describe('Default Navigation Menu', () => {
     testLink('Forum');
     testLink('News');
     testLink('Radio');
+  });
+});
+
+describe('Main menu', () => {
+  it('should focus on menu item after menu is expanded', () => {
+    cy.visit(links.curriculum);
+    cy.get(selectors.menuBotton).click();
+    cy.get(selectors.menu).children().first().should('be.focused');
+  });
+
+  it('should focus on menu button after menu is closed', () => {
+    cy.get(selectors.menu).trigger('keydown', { keyCode: 27 }); // esc key code 27
+    cy.get(selectors.menuBotton).should('be.focused');
+  });
+
+  it('should open language menu when focused on change language on up arrow key press', () => {
+    cy.get(selectors.menuBotton).click();
+    cy.get(selectors.menu)
+      .children('li')
+      .last()
+      .find(selectors.changeLangButton)
+      .focus();
+
+    cy.get('body').type('{upArrow}');
+
+    cy.get(selectors['language-menu'])
+      .children('li')
+      .last()
+      .find('button')
+      .should('be.focused');
+
+    cy.get(selectors.menuBotton).click();
+  });
+
+  it('should open language menu when focused on change language on down arrow key press', () => {
+    cy.get(selectors.menuBotton).click();
+    cy.get(selectors.menu)
+      .children('li')
+      .last()
+      .find(selectors.changeLangButton)
+      .focus();
+
+    cy.get('body').type('{downArrow}');
+
+    cy.get(selectors['language-menu'])
+      .children('li')
+      .first()
+      .find('button')
+      .should('be.focused');
+
+    cy.get(selectors.menuBotton).click();
+  });
+
+  it('should move up/down language options with keyboard', () => {
+    cy.get(selectors.menuBotton).click();
+
+    cy.get(selectors.menu)
+      .children('li')
+      .last()
+      .find(selectors.changeLangButton)
+      .focus();
+
+    for (let i = 0; i < 3; i++) {
+      cy.get('body').type('{downArrow}');
+
+      cy.get(selectors['language-menu'])
+        .children('li')
+        .eq(i)
+        .find('button')
+        .should('be.focused');
+    }
+
+    cy.get(selectors.menuBotton).click();
+  });
+
+  it('should focus last item if focus is on first item', () => {
+    cy.get(selectors.menuBotton).click();
+
+    cy.get(selectors.menu)
+      .children('li')
+      .last()
+      .find(selectors.changeLangButton)
+      .focus();
+
+    cy.get('body').type('{downArrow}');
+    cy.get('body').type('{upArrow}');
+
+    cy.get(selectors['language-menu'])
+      .children('li')
+      .last()
+      .find('button')
+      .should('be.focused');
+
+    cy.get(selectors.menuBotton).click();
+  });
+
+  it('should focus on first item if focus is on last item', () => {
+    cy.get(selectors.menuBotton).click();
+
+    cy.get(selectors.menu)
+      .children('li')
+      .last()
+      .find(selectors.changeLangButton)
+      .focus();
+
+    cy.get('body').type('{upArrow}');
+    cy.get('body').type('{downArrow}');
+
+    cy.get(selectors['language-menu'])
+      .children('li')
+      .first()
+      .find('button')
+      .should('be.focused');
+  });
+
+  it('should focus change language option', () => {
+    cy.get('body').type('{esc}');
+
+    cy.get(selectors.menu)
+      .children('li')
+      .last()
+      .find(selectors.changeLangButton)
+      .focus();
   });
 });
 
