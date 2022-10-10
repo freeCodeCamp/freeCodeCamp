@@ -9,6 +9,8 @@
     "frontend": "前端",
     "backend": "后端",
     "view": "查看",
+    "view-code": "View Code",
+    "view-project": "View Project",
     "show-cert": "显示认证",
     "claim-cert": "申请认证",
     "save-progress": "保存进度",
