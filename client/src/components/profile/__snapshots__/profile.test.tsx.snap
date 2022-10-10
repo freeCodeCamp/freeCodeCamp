@@ -262,17 +262,33 @@ exports[`<Profile/> renders correctly 1`] = `
         </div>
       </div>
       <br />
-      <h2
-        class="text-center username"
+      <div
+        class="row"
       >
-        @
-        string
-      </h2>
-      
-      
-      
-      
-      <br />
+        <h2
+          class="text-center username"
+        >
+          @
+          string
+        </h2>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col-lg-5 col-lg-offset-4"
+        >
+          
+          
+          
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        
+        <br />
+      </div>
     </div>
     <div
       class="spacer"

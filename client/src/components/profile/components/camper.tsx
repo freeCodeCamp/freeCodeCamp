@@ -96,38 +96,85 @@ function Camper({
         website={website}
       />
       <br />
-      <h2 className='text-center username'>@{username}</h2>
-      {name && <p className='text-center name'>{name}</p>}
-      {location && <p className='text-center location'>{location}</p>}
-      {isDonating && (
-        <p className='text-center supporter'>
-          <FontAwesomeIcon icon={faHeart} /> {t('profile.supporter')}
-        </p>
-      )}
-      {about && <p className='bio text-center'>{about}</p>}
-      {joinDate && (
-        <p className='bio text-center'>
-          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
-        </p>
-      )}
-      {yearsTopContributor.filter(Boolean).length > 0 && (
-        <div>
-          <br />
-          <p className='text-center yearsTopContributor'>
-            <FontAwesomeIcon icon={faAward} />{' '}
-            <Link to={t('links:top-contributors')}>
-              {t('profile.contributor')}
-            </Link>
-          </p>
-          <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
-        </div>
-      )}
-      <br />
-      {typeof points === 'number' ? (
-        <p className='text-center points'>
-          {t('profile.total-points', { count: points })}
-        </p>
-      ) : null}
+      <Row>
+        <h2 className='text-center username'>@{username}</h2>
+      </Row>
+      <Row>
+        <Col lg={5} lgOffset={4}>
+          {name && (
+            <>
+              <Col lg={4} xs={6}>
+                <p className='text-right name'>
+                  <strong>{t('settings.labels.name')}:</strong>
+                </p>
+              </Col>
+              <Col lg={8} xs={6}>
+                <p className='text-left name'>{name}</p>
+              </Col>
+            </>
+          )}
+          {location && (
+            <>
+              <Col lg={4} xs={6}>
+                <p className='text-right location'>
+                  <strong>{t('settings.labels.location')}:</strong>
+                </p>
+              </Col>
+              <Col lg={8} xs={6}>
+                <p className='text-left location'>{location}</p>
+              </Col>
+            </>
+          )}
+          {isDonating && (
+            <Col>
+              <p className='text-center supporter'>
+                <FontAwesomeIcon icon={faHeart} /> {t('profile.supporter')}
+              </p>
+            </Col>
+          )}
+          {about && (
+            <>
+              <Col lg={4} xs={6}>
+                <p className='text-right bio'>
+                  <strong>{t('settings.labels.about')}:</strong>
+                </p>
+              </Col>
+              <Col lg={8} xs={6}>
+                <p className='text-left bio'>{about}</p>
+              </Col>
+            </>
+          )}
+        </Col>
+      </Row>
+      <Row>
+        {joinDate && (
+          <Col>
+            <p className='bio text-center'>
+              <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
+            </p>
+          </Col>
+        )}
+        {yearsTopContributor.filter(Boolean).length > 0 && (
+          <div>
+            <br />
+            <p className='text-center yearsTopContributor'>
+              <FontAwesomeIcon icon={faAward} />{' '}
+              <Link to={t('links:top-contributors')}>
+                {t('profile.contributor')}
+              </Link>
+            </p>
+            <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
+          </div>
+        )}
+        <br />
+        {typeof points === 'number' ? (
+          <Col>
+            <p className='text-center points'>
+              {t('profile.total-points', { count: points })}
+            </p>
+          </Col>
+        ) : null}
+      </Row>
     </div>
   );
 }
