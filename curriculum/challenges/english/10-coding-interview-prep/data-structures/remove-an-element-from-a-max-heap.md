@@ -87,6 +87,21 @@ assert(
 The `remove` method should remove the greatest element from the max heap while maintaining the max heap property.
 
 ```js
+function isHeap(arr, i, n) {
+  if (i >= (n - 1) / 2) {
+    return true;
+  }
+  if (
+    arr[i] >= arr[2 * i + 1] &&
+    arr[i] >= arr[2 * i + 2] &&
+    isHeap(arr, 2 * i + 1, n) &&
+    isHeap(arr, 2 * i + 2, n)
+  ) {
+    return true;
+  }
+  return false;
+}
+
 assert(
   (function () {
     var test = false;
@@ -95,16 +110,20 @@ assert(
     } else {
       return false;
     }
-    test.insert(30);
-    test.insert(300);
-    test.insert(500);
-    test.insert(10);
-    let result = [];
-    result.push(test.remove());
-    result.push(test.remove());
-    result.push(test.remove());
-    result.push(test.remove());
-    return result.join('') == '5003003010';
+  test.insert(2);
+  test.insert(15);
+  test.insert(3);
+  test.insert(7);
+  test.insert(12);
+  test.insert(7);
+  test.insert(10);
+  test.insert(90);
+  test.remove()
+  let arr;
+  test.print()[0]===null?arr=test.print().slice(1):arr=test.print()
+  return isHeap(arr, 0, arr.length - 1)
+  ? true
+  : false
   })()
 );
 ```
