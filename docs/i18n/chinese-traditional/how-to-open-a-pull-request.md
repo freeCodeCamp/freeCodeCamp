@@ -9,7 +9,10 @@ Some examples of this are:
 1. Do not edit files directly through GitHub – while you can, it's not a good idea.
 2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
 3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
-4. Keep mentions and review requests to a minimum. We understand you are excited about contributing, and our maintainers will get back to you as soon as they get a chance.
+4. Do not "@mention" or request someone for reviews too many times.
+
+   We understand you are excited about contributing. As much as a maintainer will love to get back to you, they are busy people looking after hundreds of requests just like yours. Be patient, someone will get to you sooner or later.
+
 5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
 
 > [!NOTE] Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
