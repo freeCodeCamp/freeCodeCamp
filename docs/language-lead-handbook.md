@@ -14,6 +14,12 @@ The "Editor" level allows the user to access all Drafts and publish them. Select
 
 The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
+### How are the articles built
+
+We are using a JAMStack app built with Ghost & 11ty & lots of love from the community. Ghost allows for easy management system and tool for drafting and send articles to our database.
+
+The database send the newly created articles to /news, which 11ty renders them to static HTML content. This process usually takes couple of hours. If you are interested in knowing more, check out the [/news repo](https://github.com/freeCodeCamp/news#build).
+
 ## How to mention the original author of a translated article
 
 The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
