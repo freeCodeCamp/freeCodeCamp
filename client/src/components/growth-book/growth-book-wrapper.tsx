@@ -1,5 +1,29 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 import React, { ReactNode, useEffect } from 'react';
 import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
+
+import { connect } from 'react-redux';
+
+import { createSelector } from 'reselect';
+
+import {
+  isSignedInSelector,
+  completedChallengesSelector
+} from '../../redux/selectors';
+
+import envData from '../../../../config/env.json';
+import {
+  prodGrowthbookKey,
+  devGrowthbookKey
+} from '../../../../config/growthbook-settings';
+
+const { deploymentEnv }: { deploymentEnv: 'staging' | 'live' } = envData as {
+  deploymentEnv: 'staging' | 'live';
+};
 
 const growthbook = new GrowthBook({
   trackingCallback: (experiment, result) => {
@@ -10,15 +34,14 @@ const growthbook = new GrowthBook({
   }
 });
 
-import { connect } from 'react-redux';
-
-import { createSelector } from 'reselect';
-
-import { isSignedInSelector } from '../../redux/selectors';
-
-const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
-  isSignedIn
-}));
+const mapStateToProps = createSelector(
+  isSignedInSelector,
+  completedChallengesSelector,
+  (isSignedIn, completedChallenges) => ({
+    isSignedIn,
+    completedChallenges
+  })
+);
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 
@@ -32,35 +55,48 @@ interface GrowthBookWrapper extends StateProps {
 //   dateUpdated: string;
 // }
 
-const GrowthBookWrapper = ({ children, isSignedIn }: GrowthBookWrapper) => {
+const GrowthBookWrapper = ({
+  children,
+  isSignedIn,
+  completedChallenges
+}: GrowthBookWrapper) => {
   useEffect(() => {
-    // Load feature definitions from API
-    // In production, we recommend putting a CDN in front of the API endpoint
-    void fetch(
-      'https://api.gb.freecodecamp.org/api/features/key_prod_740cf9417e8af5aa'
-    )
-      .then(res => res.json())
-      .then(json => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-        growthbook.setFeatures(json.features);
-      });
+    if (isSignedIn) {
+      console.log('singedIN');
+      console.log(completedChallenges);
+      // Load feature definitions from API
+      // In production, we recommend putting a CDN in front of the API endpoint
+      const growthBookKey =
+        deploymentEnv === 'staging' ? devGrowthbookKey : prodGrowthbookKey;
 
-    // TODO: replace with real targeting attributes
-    growthbook.setAttributes({
-      id: 'foo',
-      deviceId: 'foo',
-      company: 'foo',
-      signedin: true,
-      employee: true,
-      country: 'foo',
-      browser: 'foo',
-      url: 'foo',
-      local: 'foo',
-      startdate: 123,
-      challengeCompleted: 123
-    });
-  }, []);
-  console.log(isSignedIn);
+      const apiEndPoint = `https://api.gb.freecodecamp.org/api/features/${growthBookKey}`;
+
+      void fetch(apiEndPoint)
+        .then(res => res.json())
+        .then(json => {
+          console.log(json);
+
+          growthbook.setFeatures(json.features);
+        });
+
+      // TODO: replace with real targeting attributes
+      growthbook.setAttributes({
+        id: 'foo',
+        deviceId: 'foo',
+        company: 'foo',
+        signedin: true,
+        employee: true,
+        country: 'foo',
+        browser: 'foo',
+        url: 'foo',
+        local: 'foo',
+        startdate: 123,
+        completedChallengesLength: completedChallenges.length
+      });
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSignedIn]);
 
   return (
     <GrowthBookProvider growthbook={growthbook}>{children}</GrowthBookProvider>
