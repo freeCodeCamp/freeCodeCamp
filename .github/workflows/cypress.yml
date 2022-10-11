@@ -68,7 +68,7 @@ jobs:
         node-version: [16.x]
         include:
           - browsers: electron
-            spec: cypress/integration/learn/challenges/projects.js
+            spec: cypress/e2e/default/learn/challenges/projects.js
     services:
       mongodb:
         image: mongo:4
@@ -126,7 +126,7 @@ jobs:
         run: npm run seed
 
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           start: npm run start-ci
@@ -137,4 +137,4 @@ jobs:
           headless: true
           spec: |
             ${{ matrix.spec }}
-            cypress/integration/default/**/*.js
+            cypress/e2e/default/**/*.js
