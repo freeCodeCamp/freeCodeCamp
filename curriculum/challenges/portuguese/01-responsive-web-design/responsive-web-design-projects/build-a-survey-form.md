@@ -91,7 +91,7 @@ const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-O elemento `#name` deve ser um descendente de `#survey-form`.
+O elemento `#name` deve estar aninhado dentro de `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name')
@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-O elemento `#email` deve ser um descendente de `#survey-form`
+O elemento `#email` deve estar aninhado dentro de `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #email')
@@ -133,7 +133,7 @@ const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-O elemento `#number` deve ser um descendente de `#survey-form`.
+O elemento `#number` deve estar aninhado dentro de `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number')
@@ -203,21 +203,21 @@ const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-O elemento `#name-label` deve ser um descendente de `#survey-form`.
+O elemento `#name-label` deve estar aninhado dentro de `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-O elemento `#email-label` deve ser um descendente de `#survey-form`.
+O elemento `#email-label` deve estar aninhado dentro de `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-O elemento `#number-label` deve ser um descendente de `#survey-form`.
+O elemento `#number-label` deve estar aninhado dentro de `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number-label')

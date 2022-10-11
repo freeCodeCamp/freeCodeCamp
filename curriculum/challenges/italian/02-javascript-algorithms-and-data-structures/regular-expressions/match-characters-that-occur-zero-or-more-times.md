@@ -8,7 +8,7 @@ dashedName: match-characters-that-occur-zero-or-more-times
 
 # --description--
 
-L'ultima sfida ha usato il segno più `+` per cercare caratteri che compaiono una o più volte. C'è anche un'opzione che riconosce i caratteri che sono presenti zero o più volte.
+L'ultima sfida ha usato il segno più `+` per cercare caratteri che compaiono una o più volte. C'è anche un'opzione che riconosce i caratteri che si verificano zero o più volte.
 
 Il simbolo per farlo è l'asterisco: `*`.
 

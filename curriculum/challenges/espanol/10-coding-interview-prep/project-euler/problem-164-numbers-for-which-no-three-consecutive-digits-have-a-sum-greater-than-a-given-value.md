@@ -1,8 +1,8 @@
 ---
 id: 5900f4111000cf542c50ff23
 title: >-
-  Problema N° 164: Números para los que no hay tres dígitos consecutivos tienen una suma mayor que un valor dado
-challengeType: 1
+  Problem 164: Numbers for which no three consecutive digits have a sum greater than a given value
+challengeType: 5
 forumTopicId: 301798
 dashedName: >-
   problem-164-numbers-for-which-no-three-consecutive-digits-have-a-sum-greater-than-a-given-value
@@ -10,14 +10,14 @@ dashedName: >-
 
 # --description--
 
-¿Cuántos números de 20 dígitos $n$ (sin cero) existen de tal manera que no hay tres dígitos consecutivos de $n$ con una suma mayor de 9?
+How many 20 digit numbers n (without any leading zero) exist such that no three consecutive digits of n have a sum greater than 9?
 
 # --hints--
 
-`consecutiveDigitsSum()` deveria retornar `378158756814587`.
+`euler164()` should return 378158756814587.
 
 ```js
-assert.strictEqual(consecutiveDigitsSum(), 378158756814587);
+assert.strictEqual(euler164(), 378158756814587);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(consecutiveDigitsSum(), 378158756814587);
 ## --seed-contents--
 
 ```js
-function consecutiveDigitsSum() {
+function euler164() {
 
   return true;
 }
 
-consecutiveDigitsSum();
+euler164();
 ```
 
 # --solutions--
