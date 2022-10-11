@@ -42,6 +42,12 @@ describe('Default Navigation Menu', () => {
     testLink('News');
     testLink('Radio');
   });
+  it('should close and focus on Navigation Menu', () => {
+    cy.get(selectors['navigation-list']).contains('Curriculum').focus();
+    cy.focused().type('{esc}');
+    cy.get(selectors['navigation-list']).should('not.be.visible');
+    cy.get(selectors['toggle-button']).should('be.focused');
+  });
 });
 
 describe('Language menu', () => {
