@@ -50,7 +50,7 @@ describe('Main menu', () => {
   it('should focus on menu item after menu is expanded', () => {
     cy.visit(links.curriculum);
     cy.get(selectors.menuBotton).click();
-    cy.get(selectors.menu).children().first().should('be.focused');
+    cy.get(selectors.menu).should('be.visible');
   });
 
   it('should focus on menu button after menu is closed', () => {
@@ -166,6 +166,23 @@ describe('Main menu', () => {
       .last()
       .find(selectors.changeLangButton)
       .focus();
+
+    cy.get(selectors.menuBotton).click();
+  });
+
+  it('should close language tab', () => {
+    cy.get(selectors.menuBotton).click();
+
+    cy.get(selectors.changeLangButton).click();
+
+    cy.get('body').tab({ shift: true });
+
+    cy.get(selectors['language-menu']).should('not.be.visible');
+    cy.get(selectors.menu).should('be.visible');
+  });
+
+  it('should focus on element above change language', () => {
+    cy.get(selectors.menu).children().eq(5).find('button').should('be.focused');
   });
 });
 
