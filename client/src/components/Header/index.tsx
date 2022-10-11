@@ -5,7 +5,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import { UniversalNav } from './components/universal-nav';
+import UniversalNav from './components/universal-nav';
 
 import './header.css';
 
@@ -114,3 +114,4 @@ export class Header extends React.Component<
 
 Header.displayName = 'Header';
 
+export default Header;

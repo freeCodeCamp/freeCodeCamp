@@ -13,7 +13,7 @@ import { createSelector } from 'reselect';
 import { SuperBlocks } from '../../../../config/certification-settings';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/Login';
-import { Map } from '../../components/Map';
+import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
 import { tryToShowDonationModal } from '../../redux/actions';
 import {
