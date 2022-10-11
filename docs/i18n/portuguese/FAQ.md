@@ -81,7 +81,7 @@ Aqui estão alguns caminhos recomendados para algumas de nossas plataformas:
 - Para ser um moderador do **fórum**, similar a um moderador de chat, tenha uma presença ativa e interaja com as outras pessoas que publicam no fórum, apoie-os em sua jornada de aprendizado e dê feedback quando perguntarem. Dê uma olhada no [Manual do líder do subfórum](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) para obter mais informações.
 - Para ser um moderador do **GitHub**, ajude a processar as issues levantadas no GitHub para ver se elas são válidas e (idealmente) tente propor soluções para essas issues a serem resolvidas por outras pessoas (ou por você mesmo).
 
-No conjunto, seja respeitoso com os outros. We are humans from all around the world. Tendo isso em mente, considere também usar uma linguagem de incentivo ou de apoio e esteja atento à comunicação intercultural.
+No conjunto, seja respeitoso com os outros. Somos seres humanos de todo o mundo. Tendo isso em mente, considere também usar uma linguagem de incentivo ou de apoio e esteja atento à comunicação intercultural.
 
 Se você praticar o que foi dito acima **consistentemente por algum tempo** e se nossos companheiros moderadores recomendarem você, um membro da equipe entrará em contato e fará sua inclusão na equipe de moderadores. O trabalho em código aberto é trabalho voluntário e nosso tempo é limitado. Reconhecemos que isso é provavelmente também é verdade no seu caso. Por isso, enfatizamos a importância de ser **consistente** em vez de se envolver na comunidade em tempo integral.
 
@@ -100,6 +100,6 @@ Agradecemos antecipadamente por ser educado(a) e paciente. Lembre-se – esta co
 
 ### Assistência adicional
 
-If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
+Se você tiver dúvidas sobre a stack, a arquitetura do código, as traduções ou qualquer outra coisa, pode entrar em contato com nossa equipe [no fórum](https://forum.freecodecamp.org/g/team).
 
 **Você pode enviar um e-mail para nossa equipe de desenvolvimento: `dev[at]freecodecamp.org`**
