@@ -14,15 +14,15 @@ O nível "Editor" permite ao usuário acessar todos os rascunhos e publicá-los.
 
 O nível "Administrator" (Administrador) é reservado para funcionários e líderes de idiomas do freeCodeCamp.
 
-### How are the articles built
+### Como são feitos os artigos
 
-We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
+Usamos uma abordagem baseada em [JAMStack](https://www.google.com/search?q=what+is+jamstack) para criar e implementar os artigos. Esta estratégia faz com que um site estático seja armazenado em cache e servido a partir de uma CDN rapidamente.
 
-[Ghost](https://ghost.org) acts as our content management platform, and [11ty](https://11ty.dev) builds the articles into static assets – plain HTML, JavaScript, and CSS. Only these static assets are deployed to our servers.
+O [Ghost](https://ghost.org) atua como nossa plataforma de gerenciamento de conteúdo. O [11ty](https://11ty.dev) compila os artigos na forma de recursos estáticos – HTML, JavaScript e CSS. Apenas esses recursos estáticos são implantados em nossos servidores.
 
-This process is automated and runs periodically. If you publish something now, it will be available on the news site in a few hours.
+Esse processo é automatizado e executado periodicamente. Se você publicar algo agora, estará disponível no site de notícias dentro de algumas horas.
 
-You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
+Você pode encontrar as agendas de compilação e o status atualizado aqui: https://github.com/freeCodeCamp/news#build
 
 ## Como mencionar o autor original de um artigo traduzido
 
