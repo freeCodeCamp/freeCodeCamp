@@ -1,8 +1,8 @@
 ---
 id: 5f3ef6e087d56ed3ffdc36be
-title: Step 62
+title: Step 61
 challengeType: 0
-dashedName: step-62
+dashedName: step-61
 ---
 
 # --description--
@@ -47,10 +47,8 @@ assert($('.established').css('font-style') === 'italic');
     <div class="menu">
       <main>
 --fcc-editable-region--
-        <header>
-          <h1>CAMPER CAFE</h1>
-          <p>Est. 2020</p>
-        </header>
+        <h1>CAMPER CAFE</h1>
+        <p>Est. 2020</p>
 --fcc-editable-region--
         <section>
           <h2>Coffee</h2>
