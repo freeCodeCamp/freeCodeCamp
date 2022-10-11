@@ -73,8 +73,8 @@ assert(document.querySelector('img').parentNode.nodeName === 'A');
 ```html
 <html>
   <body>
+    <h1>CatPhotoApp</h1>
     <main>
-      <h1>CatPhotoApp</h1>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
       <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>

@@ -50,11 +50,11 @@ assert($('main').children('section').length === 2);
   </head>
   <body>
     <div class="menu">
+      <header>
+        <h1>CAMPER CAFE</h1>
+        <p>Est. 2020</p>
+      </header>
       <main>
-        <header>
-          <h1>CAMPER CAFE</h1>
-          <p>Est. 2020</p>
-        </header>
 --fcc-editable-region--
         <section>
           <h2>Coffee</h2>
