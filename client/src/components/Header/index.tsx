@@ -91,6 +91,9 @@ export class Header extends React.Component<
           </style>
         </Helmet>
         <header>
+          <a href='#content-start' className='skip-to-content-button'>
+            Skip To Content
+          </a>
           <UniversalNav
             displayMenu={displayMenu}
             fetchState={fetchState}

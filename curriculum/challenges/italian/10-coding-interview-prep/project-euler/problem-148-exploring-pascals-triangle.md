@@ -10,7 +10,7 @@ dashedName: problem-148-exploring-pascals-triangle
 
 Possiamo facilmente verificare che nessuna delle voci nelle prime sette righe del triangolo di Pascal è divisibile per 7:
 
-```
+```markup
             1
           1   1
         1   2   1

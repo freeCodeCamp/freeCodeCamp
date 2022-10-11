@@ -14,6 +14,16 @@ O nível "Editor" permite ao usuário acessar todos os rascunhos e publicá-los.
 
 O nível "Administrator" (Administrador) é reservado para funcionários e líderes de idiomas do freeCodeCamp.
 
+### Como são feitos os artigos
+
+Usamos uma abordagem baseada em [JAMStack](https://www.google.com/search?q=what+is+jamstack) para criar e implementar os artigos. Esta estratégia faz com que um site estático seja armazenado em cache e servido a partir de uma CDN rapidamente.
+
+O [Ghost](https://ghost.org) atua como nossa plataforma de gerenciamento de conteúdo. O [11ty](https://11ty.dev) compila os artigos na forma de recursos estáticos – HTML, JavaScript e CSS. Apenas esses recursos estáticos são implantados em nossos servidores.
+
+Esse processo é automatizado e executado periodicamente. Se você publicar algo agora, estará disponível no site de notícias dentro de algumas horas.
+
+Você pode encontrar as agendas de compilação e o status atualizado aqui: https://github.com/freeCodeCamp/news#build
+
 ## Como mencionar o autor original de um artigo traduzido
 
 O autor original e o artigo original são vinculados automaticamente, adicionando este código à seção de cabeçalho Code Injection -> em Draft Setiings (Configurações de rascunho) no Ghost.

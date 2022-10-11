@@ -26,6 +26,8 @@ export function SolutionDisplayWidget({
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
   const viewText = t('buttons.view');
+  const viewCode = t('buttons.view-code');
+  const viewProject = t('buttons.view-project');
 
   const ShowFilesSolutionForCertification = (
     <button
@@ -82,10 +84,10 @@ export function SolutionDisplayWidget({
         title={t('buttons.view')}
       >
         <MenuItem bsStyle='primary' onClick={showUserCode}>
-          {viewText}
+          {viewCode}
         </MenuItem>
         <MenuItem bsStyle='primary' onClick={showProjectPreview}>
-          {viewText}
+          {viewProject}
         </MenuItem>
       </DropdownButton>
     </div>

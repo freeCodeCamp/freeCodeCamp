@@ -9,7 +9,7 @@
     "react": "16.14.0",
     "react-codemirror2": "7.2.1",
     "react-dom": "16.14.0",
-    "react-router-dom": "6.4.1",
+    "react-router-dom": "6.4.2",
     "react-scripts": "5.0.1",
     "typescript": "4.8.4"
   },
