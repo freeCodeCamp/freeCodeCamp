@@ -1,50 +1,50 @@
-# The Official freeCodeCamp Moderator Onboarding Guide
+# O manual oficial de integração de moderadores do freeCodeCamp
 
-This guide will help new moderators get up and running with the processes and procedures followed by experienced moderators on the freeCodeCamp community forum and other official communities that we foster.
+Este guia ajudará novos moderadores a implementarem os processos e procedimentos seguidos por moderadores experientes no fórum da comunidade do freeCodeCamp e em outras comunidades oficiais que abrigamos.
 
-> [!NOTE] If you haven't read [The Moderator Handbook](https://contribute.freecodecamp.org/#/moderator-handbook) yet, you should start there first.
+> [!NOTE] Se você ainda não leu [O Manual do Moderador](https://contribute.freecodecamp.org/#/moderator-handbook), comece lendo esse manual primeiro.
 
-## The Forum
+## O fórum
 
-### First Steps
+### Primeiros passos
 
-The first thing you may notice after being given moderator status on the forum is that your interface will look somewhat different, with new admin tools to explore and access to the Mod-Team subforum.
+A primeira coisa que você pode notar após receber o status de moderador no fórum é que sua interface ficará um pouco diferente, com novas ferramentas de administrador para explorar e acesso ao subfórum Mod-Team.
 
-Some of the new tools will appear inside a new menu item that looks like a wrench. Some will appear as new tabs or buttons, or even new enabled options within the forum menus.
+Algumas das novas ferramentas aparecerão dentro de um novo item de menu que se parece com uma chave inglesa. Outras aparecerão como novas guias, botões ou, até mesmo, novas opções ativadas nos menus do fórum.
 
-To get familiar with the new tools and powers, you can combine one or more of the following methods during your first week with this elevated role:
+Para se familiarizar com as novas ferramentas e poderes, você pode combinar um ou mais dos seguintes métodos durante sua primeira semana com essa função elevado:
 
-> [!TIP] The first two are the most important.
+> [!TIP] Os dois primeiros são os mais importantes.
 
-### Become Familiar with the Discourse Admin Tools
+### Familiarize-se com as ferramentas administrativas do Discourse
 
-The freeCodeCamp forum is actually a Discourse forum and follows many of the same guidelines of other forums built on Discourse. To begin to get familiar with Discourse and the moderation role, start by reading Discourse's [new user guide](https://meta.discourse.org/t/discourse-new-user-guide/96331) and Discourse's [new moderator guide](https://meta.discourse.org/t/discourse-moderation-guide/63116).
+O fórum do freeCodeCamp é, na verdade, um fórum do Discourse e segue muitas das mesmas orientações de outros fóruns criados na plataforma. Para começar a se familiarizar com o Discourse e o papel de moderação, primeiro leia o [novo guia do usuário](https://meta.discourse.org/t/discourse-new-user-guide/96331) e o [novo guia do moderador](https://meta.discourse.org/t/discourse-moderation-guide/63116) do Discourse.
 
-### Shadow a Mod
+### Acompanhe de perto um moderador
 
-All moderator actions can be followed by reviewing the [action logs](https://forum.freecodecamp.org/admin/logs/staff_action_logs). The actions taken by automated tools like `akistmet` or `system` can mostly be ignored until they result in a post that needs to be reviewed. Posts to be reviewed will show up in the [Review](https://forum.freecodecamp.org/review) area of the forum.
+Todas as ações dos moderadores podem ser seguidas analisando os [logs de ação](https://forum.freecodecamp.org/admin/logs/staff_action_logs). As ações tomadas por ferramentas automatizadas como o `akistmet` ou o `system` podem ser, em grande parte, ignoradas até que resultem em uma postagem que precisa ser analisada. Publicações a serem revisadas aparecerão na área do fórum chamada [Review](https://forum.freecodecamp.org/review).
 
-For the first week or so you will want to pay attention to what is getting flagged and what is being reviewed, and compare that to the actions being taken upon the flagged posts. You may see the system account flag a post because the user created it too quickly. In many cases, the moderators will unflag the post by clicking on the "Approve Post" button or mark it as "Not Spam" (depending on the flag type).
+Na primeira semana, aproximadamente, você vai querer prestar atenção ao que está sendo sinalizado e ao que está sendo analisado. Compare isso com as ações que estão sendo tomadas sobre os posts sinalizados. Você pode ver a conta do sistema sinalizar uma publicação porque o usuário a criou muito rapidamente. Em muitos casos, os moderadores desmarcarão a publicação clicando no botão "Approve post" ou a marcarão como "Not Spam" (dependendo do tipo de sinalização).
 
-Commonly, spam flags can also be raised by members or moderators. Common duplicitous behaviour would involve opening an account, making a post that seems harmless, then editing that post later on to add a link to an external site for the purpose of advertising it. In this case, usually the member account is fairly new and has only made this one post thus far, which indicates that the account was opened for the sole purpose of spamming the community. The decision should be made to delete the account after the first offence in this case. The same applies for accounts whose first post is deemed to be spam.
+Comumente, sinalizações de spam também podem ser levantadas por membros ou moderadores. Comportamento comum e dúbio envolve a abertura de uma conta, criar uma publicação que parece inofensiva, editando essa postagem mais tarde para adicionar um link para um site externo com o objetivo de fazer publicidade. Nesse caso, geralmente, a conta do membro é bastante nova e só fez essa única publicação até agora, o que indica que a conta foi aberta com o único propósito de fazer spam à comunidade. A decisão a ser tomada deverá ser excluir a conta depois do primeiro delito, nesse caso. O mesmo se aplica às contas cuja primeira publicação é considerada spam.
 
-You may notice moderators performing a procedure called 'split topic'. This may be a case where a moderator has split a post that was made erroneously on an existing topic into a new topic, or a moderator merged duplicate topics that a single user has created for the same question. Watching this procedure will highlight different actions and their causes.
+Você pode notar que os moderadores executam um procedimento chamado 'dividir o tópico' (split topic). Esse pode ser um caso em que um moderador dividiu uma publicação que foi erroneamente feita em um tópico existente em um novo tópico, ou um moderador mesclou tópicos duplicados que um único usuário criou para a mesma pergunta. Acompanhar esse procedimento destacará as diferentes ações e suas causas.
 
-Another useful feature that becomes enabled for all moderators is the ability to post a "Canned Reply" which is a pre-written response that was worked out with the mod team in order to quickly respond to some well-known and repetitive scenarios. These include:
+Outro recurso útil que é ativado para todos os moderadores é a habilidade de publicar uma "resposta automatizada" (canned reply), que é uma resposta pré-escrita desenvolvida pela equipe de moderadores para responder rapidamente a alguns cenários conhecidos e repetitivos. Elas incluem:
 
-- Welcoming a new forum member who has posted code without a question -> "Welcome - remind question"
-- Reminding members not to post code solutions but to provide hints and tips instead -> "Solutions Instead of Help"
-- Responding to a situation where someone's code works for you but not for them -> "Browser Issues"
-- Encouraging members to open GitHub issues when a possible bug is found -> "Bug Report"
+- Dar as boas-vindas a um novo membro do fórum que postou código sem uma pergunta -> "Welcome - remind question"
+- Lembrar aos membros de que não devem publicar soluções de código, mas fornecer dicas e sugestões -> "Solutions instead of help"
+- Responder a uma situação em que o código de alguém funciona para você mas não para eles -> "Browser Issues"
+- Incentivar membros a abrir issues no GitHub quando um possível erro for encontrado -> "Bug Report"
 
-There are more, which you can read through to become familiar with their respective uses. You can also find discussion around the templates in the mod-team subforum, and you are welcome to ask questions if you aren't sure how a template should be used.
+Há mais respostas do tipo, as quais podem ser lidas para ajudar a se familiarizar com as respectivas utilizações. Você também pode encontrar discussões sobre os templates no subfórum Mod-Team. Fique à vontade para fazer perguntas se não tiver certeza de como um template deve ser usado.
 
-### Read Mod-Team Subforum Posts
+### Ler as publicações do sub-fórum Mod-Team
 
-The Mod-Team subforum contains a number of posts from past and current moderators discussing the different requirements and/or challenges of moderating the forum.
+O subfórum Mod-Team contém várias publicações de moderadores passados e atuais discutindo as diferentes exigências e/ou desafios de moderação do fórum.
 
-Reading back through these posts can help to uncover some of the underlying goals and processes that concern forum moderators. Some of the threads may also shed some light on handling of spam and inappropriate content on the forum.
+Ler essas publicações pode ajudar a descobrir algumas das metas e processos subjacentes, que dizem respeito aos moderadores do fórum. Alguns dos tópicos também podem lançar alguma luz sobre o tratamento de spam e conteúdo impróprio no fórum.
 
-## Where to Ask for Help
+## Onde pedir ajuda
 
-To get help dealing with a situation that you are either uncomfortable with or unsure of how to handle, discuss with your fellow moderators on either the [Mod-Team Subforum](https://forum.freecodecamp.org/c/mod-team/4) or the [#mod-chat](https://discord.com/channels/692816967895220344/693157007418720277) on Discord.
+Para obter ajuda para lidar com uma situação com a qual você está desconfortável ou incerto sobre como lidar, discuta com seus colegas moderadores no [sub-fórum Mod-Team](https://forum.freecodecamp.org/c/mod-team/4) ou no [#mod-chat](https://discord.com/channels/692816967895220344/693157007418720277) no Discord.

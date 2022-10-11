@@ -481,27 +481,27 @@ We are closing this pull request. Please suggest links and other details to add 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### Adding comment about newbie mistakes
+### Adicionando comentário sobre erros de iniciante
 
 ```markdown
-As a new contributor, we encourage you to read our [contributing guidelines](https://contribute.freecodecamp.org).
+Como um novo colaborador, encorajamos você a ler nossas [diretrizes de contribuição](https://contribute.freecodecamp.org).
 
-We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+Esperamos que nossos colaboradores estejam cientes do processo específico deste projeto. Seguindo as orientações religiosamente, você ganha o respeito de outros mantenedores e poupa tempo a todos.
 
-Some examples of this are:
+Alguns exemplos disso são:
 
-1. Do not edit files directly through GitHub – while you can, it's not a good idea.
-2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
-3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
-4. Keep mentions and review requests to a minimum. We understand you are excited about contributing, and our maintainers will get back to you as soon as they get a chance.
-5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
+1. Não edite arquivos diretamente no GitHub – apesar de você poder, não é uma boa ideia.
+2. Certifique-se de seguir a lista de verificação de PRs e não apenas saia marcando as coisas; caso contrário, não levaremos você a sério.
+3. Utilize a maneira correta de ligar issues na descrição do PR, atualizando o `XXXXXX`. Não adicione apenas números de issues em todo e qualquer lugar e que quiser.
+4. Mantenha as menções e pedidos de revisão no mínimo. Compreendemos que você está entusiasmado em contribuir, e os nossos mantenedores retornarão você assim que tiverem uma chance.
+5. Não trabalhe diretamente no seu branch `main` - crie um novo branch para as alterações em que está trabalhando.
 
-We appreciate you taking the time to help us, and we hope to see more contributions from you.
+Agradecemos por você usar seu tempo para nos ajudar, e esperamos ver mais contribuições de você.
 
-Happy Contributing.
+Boas contribuições.
 ```
 
-### Closing Invalid Issues
+### Fechando issues inválidas
 
 > Quando uma issue se refere ao código do usuário do freeCodeCamp.
 
@@ -535,7 +535,7 @@ This is a standard message notifying you that the problem you mentioned here is 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### `first timer only` Issues
+### Issues de `first timer only`
 
 > Quando uma issue é considerada eligível pela primeira vez como contribuição ao código.
 
@@ -557,12 +557,12 @@ Sometimes we may get more than one pull request. We typically accept the most qu
 Happy contributing.
 ```
 
-### Requests for Assignment
+### Solicitações de atribuição
 
 ```md
-We typically do not assign issues. Instead, we accept the first pull request that comprehensively solves the issue.
+Normalmente, não atribuímos issues. Em vez disso, aceitamos o primeiro pull request que resolve o problema como um todo.
 
-Issues labelled with `help wanted` or `first timers only` are open for contributions.
+Issues rotuladas com `help wanted` ou `first timers only` estão abertas para contribuições.
 
-Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/). We prioritize contributors following the instructions in our guide. Join us in [our chat room](https://discord.gg/PRyKn3Vbay) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing - our community will be happy to assist you.
+Certifique-se de ler [nossas diretrizes para contribuição](https://contribute.freecodecamp.org/#/). Priorizamos os colaboradores de acordo com as instruções em nosso guia. Faça parte de [nossa sala de bate-papo](https://discord.gg/PRyKn3Vbay) ou [do fórum](https://forum.freecodecamp.org/c/contributors/3) caso precise de ajuda com suas contribuições. Nossos moderadores orientarão você pelo processo.
 ```

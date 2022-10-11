@@ -67,11 +67,11 @@ Os arquivos markdown dos desafios estão localizadas no currículo em:
 
 Escolha um arquivo dentre as opções acima. 
 
-### Skim through the video associated with the challenge and create a multiple-choice question
+### Explore o vídeo associado ao desafio e crie uma questão de múltipla escolha
 
-First, find the `videoId`.
+Primeiro, localize o `videoId`.
 
-For example, in the following code from the header of a video challenge markdown file, the `videoId` is "nVAaxZ34khk". No GitHub, a informação deve estar contida em formato tabular.
+Por exemplo, no código a seguir a partir do cabeçalho de um arquivo markdown de desafio de vídeo, o `videoId` é "nVAaxZ34khk". No GitHub, a informação deve estar contida em formato tabular.
 
 ````
 ---
@@ -80,12 +80,12 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Em seguida, acesse o vídeo no YouTube correspondente com aquele `videoId`. The URL for the video will be:
-https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
+Em seguida, acesse o vídeo no YouTube correspondente com aquele `videoId`. A URL do vídeo será:
+https://www.youtube.com/watch?v=[videoId]  (troque `videoId` na URL pelo ID do vídeo - sem colchetes)
 
-In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
+No exemplo acima, a URL seria https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim the YouTube video with that `videoId` and think of a multiple-choice question based on the content of the video.
+Assista ao vídeo no YouTube daquele `videoId` e pense em uma questão de múltipla escolha baseada em seu conteúdo.
 
 ### Adicione a pergunta ao arquivo markdown
 
