@@ -53,6 +53,7 @@ describe('Default Navigation Menu', () => {
 
 describe('Language menu', () => {
   it('should render all used languages.', () => {
+    cy.focused().click();
     cy.get(selectors['navigation-list']).contains('Change Language').click();
     testAllLanguages();
     cy.get(selectors['language-menu'])
@@ -113,11 +114,35 @@ describe('Language Menu with keyboard', () => {
     cy.focused().type('{downArrow}');
     cy.get(langMenuOptionSelector).first().should('be.focused');
   });
-  it('should close language options and focus on Language Menu option', () => {
+  it('should close language options and focus on Change Language option', () => {
     cy.focused().type('{esc}');
+    cy.get(selectors['language-menu']).should('not.be.visible');
     cy.get(selectors['navigation-list'])
       .contains('Change Language')
       .should('be.focused');
+  });
+  it('should close language options with SHIFT+TAB', () => {
+    cy.focused().click();
+    // cy.tab() doesn't accept tabindex="-1" elements as focusable
+    // https://github.com/kuceb/cypress-plugin-tab/issues/18
+    // It is better to use .tab() on focused language option
+    // cy.focused().tab({ shift: true }); // uncomment this line when the issue is fixed
+    cy.get('body').tab({ shift: true }); // remove this line when the above issue is fixed
+
+    cy.get(selectors['language-menu']).should('not.be.visible');
+    cy.get(selectors['navigation-list'])
+      .contains('Sign in to change theme.')
+      .should('be.focused');
+  });
+
+  // cy.tab() doesn't accept tabindex="-1" elements as focusable
+  // https://github.com/kuceb/cypress-plugin-tab/issues/18
+  // Also, doing .tab() from element other than language option doesn't yield the expected result
+  it.skip('should close language options with TAB and focus on next tabbale element', () => {
+    cy.get(selectors['navigation-list']).contains('Change Language').click();
+    cy.focused().tab();
+    cy.get(selectors['language-menu']).should('not.be.visible');
+    cy.get(selectors['sign-in-button']).should('be.focused');
   });
 });
 
