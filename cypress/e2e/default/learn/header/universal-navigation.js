@@ -12,6 +12,7 @@ const selectors = {
   'toggle-button': '.toggle-button-nav',
   'language-menu': '.nav-lang-menu',
   'exit-lang-menu': "[data-value='exit-lang-menu']",
+  'lang-menu-option': 'button.nav-lang-menu-option',
   'sign-in-button': "[data-test-label='landing-small-cta']",
   'avatar-link': '.avatar-nav-link',
   'avatar-container': '.avatar-container'
@@ -42,7 +43,7 @@ describe('Default Navigation Menu', () => {
     testLink('News');
     testLink('Radio');
   });
-  it('should close and focus on Navigation Menu', () => {
+  it('should close Menu and focus on Menu button', () => {
     cy.get(selectors['navigation-list']).contains('Curriculum').focus();
     cy.focused().type('{esc}');
     cy.get(selectors['navigation-list']).should('not.be.visible');
@@ -71,21 +72,52 @@ describe('Language menu', () => {
   });
 });
 
-describe('Language menu with keyboard', () => {
+describe('Language Menu with keyboard', () => {
   before(() => {
     cy.get(selectors['exit-lang-menu']).click();
     cy.get(selectors['navigation-list']).contains('Change Language').blur();
   });
 
-  it('should show language options.', () => {
+  const langMenuOptionSelector =
+    selectors['language-menu'] + ' ' + selectors['lang-menu-option'];
+
+  it('should open Language Menu with ENTER key', () => {
     cy.get(selectors['navigation-list'])
       .contains('Change Language')
       .type('{enter}');
     cy.get(selectors['language-menu']).should('be.visible');
   });
-  it('should navigate through all used languages.', () => {
+  it('should open Language Menu with UP arrow key', () => {
+    cy.get(selectors['exit-lang-menu']).click();
+    cy.focused().type('{upArrow}');
+    cy.get(selectors['language-menu']).should('be.visible');
+    cy.get(langMenuOptionSelector).last().should('be.focused');
+  });
+  it('should open Language Menu with DOWN arrow key', () => {
+    cy.get(selectors['exit-lang-menu']).click();
+    cy.focused().type('{downArrow}');
+    cy.get(selectors['language-menu']).should('be.visible');
+    cy.get(langMenuOptionSelector).first().should('be.focused');
+  });
+  it('should navigate through language options with UP and DOWN keys', () => {
     navigateLanguagesWithKey('downArrow');
     navigateLanguagesWithKey('upArrow');
+  });
+  it('should move to last language option', () => {
+    cy.get(langMenuOptionSelector).first().focus();
+    cy.focused().type('{upArrow}');
+    cy.get(langMenuOptionSelector).last().should('be.focused');
+  });
+  it('should move to first language option', () => {
+    cy.get(langMenuOptionSelector).last().focus();
+    cy.focused().type('{downArrow}');
+    cy.get(langMenuOptionSelector).first().should('be.focused');
+  });
+  it('should close language options and focus on Language Menu option', () => {
+    cy.focused().type('{esc}');
+    cy.get(selectors['navigation-list'])
+      .contains('Change Language')
+      .should('be.focused');
   });
 });
 
