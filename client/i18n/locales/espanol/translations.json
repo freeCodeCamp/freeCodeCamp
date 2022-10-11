@@ -9,6 +9,8 @@
     "frontend": "Front End",
     "backend": "Back End",
     "view": "Ver",
+    "view-code": "View Code",
+    "view-project": "View Project",
     "show-cert": "Mostrar certificación",
     "claim-cert": "Solicitar certificación",
     "save-progress": "Guardar progreso",

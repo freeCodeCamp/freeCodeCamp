@@ -9,6 +9,8 @@
     "frontend": "フロントエンド",
     "backend": "バックエンド",
     "view": "表示",
+    "view-code": "View Code",
+    "view-project": "View Project",
     "show-cert": "認定証を表示",
     "claim-cert": "認定証を取得",
     "save-progress": "進行状況を保存",

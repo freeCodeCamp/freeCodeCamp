@@ -10,8 +10,6 @@ jobs:
   do-everything:
     name: Build
     runs-on: ubuntu-20.04
-    strategy:
-      fail-fast: false
     services:
       mongodb:
         image: mongo:4
@@ -57,7 +55,7 @@ jobs:
         run: cp client-config/serve.json client/public/serve.json
 
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           start: npm run start-ci
@@ -66,4 +64,4 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: chrome
           headless: true
-          spec: cypress/integration/third-party/*.js
+          spec: cypress/e2e/third-party/*.js

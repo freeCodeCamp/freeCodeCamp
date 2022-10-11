@@ -1,7 +1,19 @@
 import { template as _template } from 'lodash-es';
 
-export function concatHtml({ required = [], template, contents } = {}) {
-  const embedSource = template ? _template(template) : ({ source }) => source;
+interface ConcatHTMLOptions {
+  required: { src: string; link?: string }[];
+  template?: string;
+  contents?: string;
+}
+
+export function concatHtml({
+  required = [],
+  template,
+  contents
+}: ConcatHTMLOptions) {
+  const embedSource = template
+    ? _template(template)
+    : ({ source }: { source: ConcatHTMLOptions['contents'] }) => source;
   const head = required
     .map(({ link, src }) => {
       if (link && src) {
@@ -19,5 +31,5 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
     })
     .join('\n');
 
-  return `<head>${head}</head>${embedSource({ source: contents })}`;
+  return `<head>${head}</head>${embedSource({ source: contents }) || ''}`;
 }

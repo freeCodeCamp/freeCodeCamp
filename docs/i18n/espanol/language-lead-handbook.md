@@ -14,6 +14,16 @@ El nivel "Editor" permite al usuario acceder a todos los Borradores y publicarlo
 
 El nivel "Administrador" está reservado para el personal de freeCodeCamp y los líderes de idiomas.
 
+### How are the articles built
+
+We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
+
+[Ghost](https://ghost.org) acts as our content management platform, and [11ty](https://11ty.dev) builds the articles into static assets – plain HTML, JavaScript, and CSS. Only these static assets are deployed to our servers.
+
+This process is automated and runs periodically. If you publish something now, it will be available on the news site in a few hours.
+
+You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
+
 ## Cómo mencionar al autor original de un artículo traducido
 
 El autor original y el artículo original están vinculados automáticamente agregando este código a la Inyección de Código -> sección principal en la Configuración de Borradores en Ghost.
