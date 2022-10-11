@@ -1,8 +1,8 @@
 ---
 id: 5f3ef6e0e0c3feaebcf647ad
-title: Step 48
+title: Step 47
 challengeType: 0
-dashedName: step-48
+dashedName: step-47
 ---
 
 # --description--
@@ -45,10 +45,8 @@ assert($('h2')[1].innerText.match(/Desserts/i));
   <body>
     <div class="menu">
       <main>
-        <header>
-          <h1>CAMPER CAFE</h1>
-          <p>Est. 2020</p>
-        </header>
+        <h1>CAMPER CAFE</h1>
+        <p>Est. 2020</p>
         <section>
           <h2>Coffee</h2>
           <article class="item">
