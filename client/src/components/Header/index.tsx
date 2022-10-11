@@ -114,4 +114,3 @@ export class Header extends React.Component<
 
 Header.displayName = 'Header';
 
-export default Header;

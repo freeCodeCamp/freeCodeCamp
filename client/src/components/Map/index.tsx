@@ -183,4 +183,3 @@ export function Map({
 
 Map.displayName = 'Map';
 
-export default Map;

@@ -109,4 +109,3 @@ export const UniversalNav = ({
 };
 
 UniversalNav.displayName = 'UniversalNav';
-export default UniversalNav;
