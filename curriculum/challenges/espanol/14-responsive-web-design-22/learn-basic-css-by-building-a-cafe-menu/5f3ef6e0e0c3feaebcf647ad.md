@@ -44,11 +44,11 @@ assert($('h2')[1].innerText.match(/Desserts/i));
   </head>
   <body>
     <div class="menu">
+      <header>
+        <h1>CAMPER CAFE</h1>
+        <p>Est. 2020</p>
+      </header>
       <main>
-        <header>
-          <h1>CAMPER CAFE</h1>
-          <p>Est. 2020</p>
-        </header>
         <section>
           <h2>Coffee</h2>
           <article class="item">
