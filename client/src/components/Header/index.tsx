@@ -5,7 +5,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import UniversalNav from './components/universal-nav';
+import { UniversalNav } from './components/universal-nav';
 
 import './header.css';
 

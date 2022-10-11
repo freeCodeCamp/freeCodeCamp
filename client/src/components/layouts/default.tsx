@@ -32,7 +32,7 @@ import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
 import Footer from '../Footer';
-import Header from '../Header';
+import { Header } from '../Header';
 import OfflineWarning from '../OfflineWarning';
 
 // preload common fonts
