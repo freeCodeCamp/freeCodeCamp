@@ -66,7 +66,8 @@ const SEO: React.FC<SEOProps> = ({ title, children }) => {
         provider: {
           '@type': 'Organization',
           name: 'freeCodeCamp',
-          sameAs: 'https://en.wikipedia.org/wiki/FreeCodeCamp'
+          sameAs: 'https://freecodecamp.org',
+          nonprofitStatus: 'Nonprofit501c3'
         }
       }
     });
