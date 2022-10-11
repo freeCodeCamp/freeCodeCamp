@@ -230,6 +230,9 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       challenge => challenge.id === challengeId
     );
 
+    const breadcrumbs = document.querySelector('.breadcrumbs-demo');
+    showCodeAlly && breadcrumbs?.remove();
+
     return showCodeAlly ? (
       <LearnLayout>
         <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
