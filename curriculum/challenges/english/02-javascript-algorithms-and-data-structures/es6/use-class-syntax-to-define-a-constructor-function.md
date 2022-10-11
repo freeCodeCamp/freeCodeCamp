@@ -14,7 +14,7 @@ It should be noted that the `class` syntax is just syntax, and not a full-fledge
 
 In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
 
-In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
+In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
 
 ```js
 // Explicit constructor
