@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-bar-chart
 
 # --description--
 
-**Objetivo:** crea una app que sea funcionalmente similar a esta: <a href="https://bar-chart.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://bar-chart.freecodecamp.rocks</a>.
+**Objetivo** Crea una aplicación que funcione similar a esto: <a href="https://codepen.io/freeCodeCamp/full/GrZVaM" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/GrZVaM</a>.
 
 Completa las historias de usuario a continuación y obtén todas las pruebas para aprobar. Utiliza cualquier librería o API que necesites. Dale tu propio estilo.
 

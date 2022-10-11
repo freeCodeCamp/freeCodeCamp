@@ -1,14 +1,14 @@
 ---
 id: 5900f3881000cf542c50fe9b
-title: 'Problema 28: Diagonales de la espiral numérica'
-challengeType: 1
+title: 'Problem 28: Number spiral diagonals'
+challengeType: 5
 forumTopicId: 301930
 dashedName: problem-28-number-spiral-diagonals
 ---
 
 # --description--
 
-Comenzando por el 1 y moviéndose hacia la derecha en sentido horario, se genera una espiral de dimensiones 5 por 5, como se muestra a continuación:
+Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
 
 <div style='padding-left: 4em;'>
   <div style='color: red; display: inline;'>21</div> 22 23 24 <div style='color: red; display: inline;'>25</div><br>
@@ -18,37 +18,37 @@ Comenzando por el 1 y moviéndose hacia la derecha en sentido horario, se genera
   <div style='color: red; display: inline;'>17</div> 16 15 14 <div style='color: red; display: inline;'>13</div><br>
 </div>
 
-Se comprueba que la suma de los números en ambas diagonales es 101.
+It can be verified that the sum of the numbers on the diagonals is 101.
 
-¿Cuál es la suma de los números en las diagonales de una espiral `n` por `n` formada de la misma manera?
+What is the sum of the numbers on the diagonals in an `n` by `n` spiral formed in the same way?
 
 # --hints--
 
-`spiralDiagonals(101)` debe devolver un número.
+`spiralDiagonals(101)` should return a number.
 
 ```js
 assert(typeof spiralDiagonals(101) === 'number');
 ```
 
-`spiralDiagonals(101)` debe devolver 692101.
+`spiralDiagonals(101)` should return 692101.
 
 ```js
 assert(spiralDiagonals(101) == 692101);
 ```
 
-`spiralDiagonals(303)` debe devolver 18591725.
+`spiralDiagonals(303)` should return 18591725.
 
 ```js
 assert(spiralDiagonals(303) == 18591725);
 ```
 
-`spiralDiagonals(505)` debe devolver 85986601.
+`spiralDiagonals(505)` should return 85986601.
 
 ```js
 assert(spiralDiagonals(505) == 85986601);
 ```
 
-`spiralDiagonals(1001)` debe devolver 669171001.
+`spiralDiagonals(1001)` should return 669171001.
 
 ```js
 assert(spiralDiagonals(1001) == 669171001);

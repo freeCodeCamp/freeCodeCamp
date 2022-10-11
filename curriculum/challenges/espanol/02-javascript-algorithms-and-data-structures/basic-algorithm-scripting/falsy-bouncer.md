@@ -8,7 +8,7 @@ dashedName: falsy-bouncer
 
 # --description--
 
-Elimina todos los valores falsos de un arreglo. Devuelve un nuevo arreglo; no alteres el arreglo original.
+Quita todos los valores falsos de un arreglo.
 
 Los valores falsos en JavaScript son `false`, `null`, `0`, `""`, `undefined` y `NaN`.
 
@@ -38,14 +38,6 @@ assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 
 ```js
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
-```
-
-No debes alterar `arr`.
-
-```js
-const arr = ['a', false, 0, 'Naomi'];
-bouncer(arr);
-assert.deepEqual(arr, ['a', false, 0, 'Naomi'])
 ```
 
 # --seed--
