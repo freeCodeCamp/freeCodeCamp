@@ -8,10 +8,10 @@ dashedName: file-metadata-microservice
 
 # --description--
 
-构建一个 JavaScript 的全栈应用，在功能上与这个应用相似：<https://file-metadata-microservice.freecodecamp.rocks/>。 在这个项目中，你将使用以下方法之一编写你的代码：
+构建一个功能类似于此的全栈 JavaScript 应用程序：<a href="https://file-metadata-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://file-metadata-microservice.freecodecamp.rocks</a>。 在这个项目中，你将使用以下方法之一编写你的代码：
 
--   克隆 [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-filemetadata/) 并在本地完成项目。
--   使用[我们的 Replit 初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata)来完成你的项目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-filemetadata/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
 -   使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
 完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 字段中提交它的 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。

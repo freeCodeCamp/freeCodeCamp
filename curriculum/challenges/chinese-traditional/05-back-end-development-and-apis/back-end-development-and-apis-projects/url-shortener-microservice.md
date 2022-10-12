@@ -8,10 +8,10 @@ dashedName: url-shortener-microservice
 
 # --description--
 
-構建一個 JavaScript 的全棧應用，在功能上與這個應用相似：<https://url-shortener-microservice.freecodecamp.rocks/>。 在這個項目中，你將使用以下方法之一編寫你的代碼：
+構建一個功能類似於此的全棧 JavaScript 應用程序：<a href="https://url-shortener-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://url-shortener-microservice.freecodecamp.rocks</a>。 在這個項目中，你將使用以下方法之一編寫你的代碼：
 
--   克隆 [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-filemetadata/) 並在本地完成項目。
--   使用[我們的 Replit 初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener)來完成你的項目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-urlshortener/" target="_blank" rel="noopener noreferrer nofollow">這個 GitHub 倉庫</a>，並在本地完成你的項目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
 完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 字段中提交它的 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
