@@ -4,68 +4,56 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import React, { ReactNode, useEffect } from 'react';
+import sha1 from 'sha-1';
 import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 
 import { connect } from 'react-redux';
 
 import { createSelector } from 'reselect';
 
-import {
-  isSignedInSelector,
-  completedChallengesSelector
-} from '../../redux/selectors';
+import { isSignedInSelector, userSelector } from '../../redux/selectors';
 
 import envData from '../../../../config/env.json';
 import {
   prodGrowthbookKey,
   devGrowthbookKey
 } from '../../../../config/growthbook-settings';
+import { User } from '../../redux/prop-types';
 
-const { deploymentEnv }: { deploymentEnv: 'staging' | 'live' } = envData as {
+const {
+  deploymentEnv,
+  clientLocale
+}: { deploymentEnv: 'staging' | 'live'; clientLocale: string } = envData as {
   deploymentEnv: 'staging' | 'live';
+  clientLocale: string;
 };
 
-const growthbook = new GrowthBook({
-  trackingCallback: (experiment, result) => {
-    console.log({
-      experimentId: experiment.key,
-      variationId: result.variationId
-    });
-  }
-});
+const growthbook = new GrowthBook();
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
-  completedChallengesSelector,
-  (isSignedIn, completedChallenges) => ({
+  userSelector,
+  (isSignedIn, user) => ({
     isSignedIn,
-    completedChallenges
+    user
   })
 );
 
 type StateProps = ReturnType<typeof mapStateToProps>;
-
 interface GrowthBookWrapper extends StateProps {
   children: ReactNode;
+  user: User;
+  isSignedIn: boolean;
 }
-
-// interface GrowthBookResponse {
-//   status: number;
-//   features: object;
-//   dateUpdated: string;
-// }
 
 const GrowthBookWrapper = ({
   children,
   isSignedIn,
-  completedChallenges
+  user
 }: GrowthBookWrapper) => {
   useEffect(() => {
     if (isSignedIn) {
-      console.log('singedIN');
-      console.log(completedChallenges);
-      // Load feature definitions from API
-      // In production, we recommend putting a CDN in front of the API endpoint
+      const { joinDate, completedChallenges } = user;
       const growthBookKey =
         deploymentEnv === 'staging' ? devGrowthbookKey : prodGrowthbookKey;
 
@@ -74,27 +62,16 @@ const GrowthBookWrapper = ({
       void fetch(apiEndPoint)
         .then(res => res.json())
         .then(json => {
-          console.log(json);
-
           growthbook.setFeatures(json.features);
         });
-
-      // TODO: replace with real targeting attributes
       growthbook.setAttributes({
-        id: 'foo',
-        deviceId: 'foo',
-        company: 'foo',
-        signedin: true,
-        employee: true,
-        country: 'foo',
-        browser: 'foo',
-        url: 'foo',
-        local: 'foo',
-        startdate: 123,
+        id: sha1(user.email),
+        staff: true,
+        clientLocal: clientLocale,
+        joinDateUnix: Date.parse(joinDate),
         completedChallengesLength: completedChallenges.length
       });
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSignedIn]);
 
