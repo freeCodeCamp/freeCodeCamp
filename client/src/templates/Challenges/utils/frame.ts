@@ -34,6 +34,10 @@ export interface TestRunnerConfig {
   removeComments?: boolean;
 }
 
+export type IframeEvent<T> = Event & {
+  target: T;
+};
+
 export type ProxyLogger = (msg: string) => void;
 
 type InitFrame = (
@@ -285,18 +289,24 @@ export const setPreviewScrollPosition = (position: number) =>
   (previewScrollPosition = position);
 
 const registerScrollEventListner = (iframe: HTMLIFrameElement) => {
-  iframe.contentDocument?.addEventListener('scroll', event => {
-    const target = event.target as Document;
-    setPreviewScrollPosition(target.body.scrollTop);
-  });
+  iframe.contentDocument?.addEventListener(
+    'scroll',
+    (event: IframeEvent<Document>) => {
+      const { target } = event;
+      if (target.body.scrollTop) {
+        setPreviewScrollPosition(target.body.scrollTop);
+      }
+    }
+  );
 };
 
 const restorePreviewScrollPosition = (
   iframe: HTMLIFrameElement,
   position: number
 ) => {
-  if (iframe.contentDocument?.body)
+  if (iframe.contentDocument?.body) {
     iframe.contentDocument.body.scrollTop = position;
+  }
 };
 
 export const createMainPreviewFramer = (
