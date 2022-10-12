@@ -52,13 +52,13 @@ const mapStateToProps = createSelector(
     tests: Test[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
-    testsRunningSelector: boolean
+    testsRunning: boolean
   ) => ({
     tests,
     output,
     isChallengeCompleted,
     isSignedIn,
-    testsRunningSelector
+    testsRunning
   })
 );
 
@@ -217,6 +217,7 @@ class BackEnd extends Component<BackEndProps> {
       updateSolutionFormValues
     } = this.props;
 
+    const hasTests = tests.length > 0;
     const isChallengeComplete = tests.every(test => test.pass && !test.err);
     const submitBtnLabel: string = !isChallengeComplete
       ? `${t('buttons.run-test-2')}${testsRunning ? ' ...' : ''}`
@@ -260,16 +261,18 @@ class BackEnd extends Component<BackEndProps> {
                   buttonLabel={submitBtnLabel}
                 />
                 <br />
-                <Output
-                  defaultOutput={`/**
+                {hasTests && (
+                  <Output
+                    defaultOutput={`/**
 *
 * ${t('learn.test-output')}
 *
 *
 */`}
-                  output={output}
-                />
-                <TestSuite tests={tests} />
+                    output={output}
+                  />
+                )}
+                {hasTests && <TestSuite tests={tests} />}
                 <Spacer />
               </Col>
             </Row>
