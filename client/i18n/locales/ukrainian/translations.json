@@ -453,6 +453,7 @@
     "certification-project": "Сертифікаційний проєкт",
     "iframe-preview": "Передперегляд {{title}}",
     "iframe-alert": "Зазвичай це посилання перенесло б вас на інший вебсайт! Воно працює. Це посилання на: {{externalLink}}",
+    "iframe-form-submit-alert": "Normally this form would be submitted! It works. This will be submitted to: {{externalLink}}",
     "document-notfound": "документ не знайдено"
   },
   "icons": {
