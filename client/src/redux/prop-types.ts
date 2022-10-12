@@ -215,14 +215,6 @@ export type AllChallengeNode = {
   ];
 };
 
-type AllMarkdownRemark = {
-  edges: [
-    {
-      node: MarkdownRemark;
-    }
-  ];
-};
-
 export type ResizeProps = {
   onStopResize: (arg0: HandlerProps) => void;
   onResize: () => void;
