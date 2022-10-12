@@ -34,10 +34,6 @@ export interface TestRunnerConfig {
   removeComments?: boolean;
 }
 
-export type IframeEvent<T> = Event & {
-  target: T;
-};
-
 export type ProxyLogger = (msg: string) => void;
 
 type InitFrame = (
