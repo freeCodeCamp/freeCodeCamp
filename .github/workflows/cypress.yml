@@ -64,11 +64,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browsers: [chrome, firefox, electron]
+        browsers: [chrome, firefox]
         node-version: [16.x]
-        include:
-          - browsers: electron
-            spec: cypress/e2e/default/learn/challenges/projects.js
+
     services:
       mongodb:
         image: mongo:4

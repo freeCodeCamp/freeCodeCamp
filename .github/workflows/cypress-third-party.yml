@@ -2,13 +2,13 @@ name: CI - Cypress (e2e) 3rd party donation tests
 on:
   push:
     branches:
-      - main
+      - 'prod-*'
     paths-ignore:
       - 'docs/**'
 
 jobs:
   do-everything:
-    name: Build
+    name: Build & Test
     runs-on: ubuntu-20.04
     services:
       mongodb:
