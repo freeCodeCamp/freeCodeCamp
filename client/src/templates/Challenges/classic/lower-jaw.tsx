@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import {
+  faArrowRotateBack,
+  faHandHoldingHand
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button } from '@freecodecamp/react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import Fail from '../../../assets/icons/fail';
-import LightBulb from '../../../assets/icons/lightbulb';
-import GreenPass from '../../../assets/icons/green-pass';
-import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
+import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+import Fail from '../../../assets/icons/fail';
+import GreenPass from '../../../assets/icons/green-pass';
+import LightBulb from '../../../assets/icons/lightbulb';
 
 interface LowerJawProps {
   hint?: string;
@@ -181,7 +186,7 @@ const LowerJaw = ({
       testsLength &&
       (currentAttempts >= testsLength || currentAttempts >= 3);
 
-    if (isAttemptsLargerThanTest && !challengeIsCompleted) {
+    if (!isAttemptsLargerThanTest && !challengeIsCompleted) {
       return (
         <div>
           <hr />
@@ -189,10 +194,19 @@ const LowerJaw = ({
             className='btn-block btn fade-in'
             id='help-button'
             onClick={openHelpModal}
+            title={t('buttons.ask-for-help')}
+            aria-label={t('buttons.ask-for-help')}
           >
+            <FontAwesomeIcon icon={faHandHoldingHand} />{' '}
             {t('buttons.ask-for-help')}
           </button>
-          <button className='btn-block btn fade-in' onClick={openResetModal}>
+          <button
+            className='btn-block btn fade-in'
+            onClick={openResetModal}
+            title={t('learn.editor-tabs.restart-step')}
+            aria-label={t('learn.editor-tabs.restart-step')}
+          >
+            <FontAwesomeIcon icon={faArrowRotateBack} />{' '}
             {t('learn.editor-tabs.restart-step')}
           </button>
         </div>
@@ -201,7 +215,13 @@ const LowerJaw = ({
       return (
         <div>
           <hr />
-          <button className='btn-block btn fade-in' onClick={openResetModal}>
+          <button
+            className='btn-block btn fade-in'
+            onClick={openResetModal}
+            title={t('learn.editor-tabs.restart-step')}
+            aria-label={t('learn.editor-tabs.restart-step')}
+          >
+            <FontAwesomeIcon icon={faArrowRotateBack} />{' '}
             {t('learn.editor-tabs.restart-step')}
           </button>
         </div>
