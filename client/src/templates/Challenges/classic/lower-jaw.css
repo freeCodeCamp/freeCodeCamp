@@ -1,0 +1,8 @@
+.lower-jaw-btn-icon {
+  line-height: 0;
+  margin-right: 2px;
+}
+
+.lower-jaw-btn-icon:last-child {
+  margin-right: 0;
+}
