@@ -10,7 +10,7 @@ dashedName: problem-148-exploring-pascals-triangle
 
 We can easily verify that none of the entries in the first seven rows of Pascal's triangle are divisible by 7:
 
-```
+```markup
             1
           1   1
         1   2   1

@@ -36,6 +36,7 @@
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off",
     "import/order": "error",
+    "import/no-cycle": [2, { "maxDepth": 2 }],
     "react/prop-types": "off",
     "no-only-tests/no-only-tests": "error"
   },

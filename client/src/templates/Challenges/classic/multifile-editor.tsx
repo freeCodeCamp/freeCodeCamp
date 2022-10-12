@@ -3,12 +3,15 @@ import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { editor } from 'monaco-editor';
-import { isDonationModalOpenSelector, userSelector } from '../../../redux';
+import {
+  userSelector,
+  isDonationModalOpenSelector
+} from '../../../redux/selectors';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
   visibleEditorsSelector
-} from '../redux';
+} from '../redux/selectors';
 import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
 import {

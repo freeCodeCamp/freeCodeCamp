@@ -40,25 +40,25 @@ assert(typeof diophantineEquation(7) === 'number');
 
 `diophantineEquation(7)` dovrebbe restituire `5`.
 
-```
+```js
 assert.strictEqual(diophantineEquation(7), 5);
 ```
 
 `diophantineEquation(100)` dovrebbe restituire `61`.
 
-```
+```js
 assert.strictEqual(diophantineEquation(100), 61);
 ```
 
 `diophantineEquation(409)` dovrebbe restituire `409`.
 
-```
+```js
 assert.strictEqual(diophantineEquation(409), 409);
 ```
 
 `diophantineEquation(500)` dovrebbe restituire `421`.
 
-```
+```js
 assert.strictEqual(diophantineEquation(500), 421);
 ```
 

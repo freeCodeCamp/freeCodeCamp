@@ -481,6 +481,26 @@ We are closing this pull request. Please suggest links and other details to add 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
+### Adicionando comentário sobre erros de iniciante
+
+```markdown
+Como um novo colaborador, encorajamos você a ler nossas [diretrizes de contribuição](https://contribute.freecodecamp.org).
+
+Esperamos que nossos colaboradores estejam cientes do processo específico deste projeto. Seguindo as orientações religiosamente, você ganha o respeito de outros mantenedores e poupa tempo a todos.
+
+Alguns exemplos disso são:
+
+1. Não edite arquivos diretamente no GitHub – apesar de você poder, não é uma boa ideia.
+2. Certifique-se de seguir a lista de verificação de PRs e não apenas saia marcando as coisas; caso contrário, não levaremos você a sério.
+3. Utilize a maneira correta de ligar issues na descrição do PR, atualizando o `XXXXXX`. Não adicione apenas números de issues em todo e qualquer lugar e que quiser.
+4. Mantenha as menções e pedidos de revisão no mínimo. Compreendemos que você está entusiasmado em contribuir, e os nossos mantenedores retornarão você assim que tiverem uma chance.
+5. Não trabalhe diretamente no seu branch `main` - crie um novo branch para as alterações em que está trabalhando.
+
+Agradecemos por você usar seu tempo para nos ajudar, e esperamos ver mais contribuições de você.
+
+Boas contribuições.
+```
+
 ### Fechando issues inválidas
 
 > Quando uma issue se refere ao código do usuário do freeCodeCamp.
@@ -532,7 +552,17 @@ List of files:
 
 Please make sure you read our [guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in our [chat room](https://discord.gg/PRyKn3Vbay) or our [forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing; our moderators will guide you through this.
 
-Às vezes, podemos obter mais de um pull request. Nós tipicamente aceitamos a contribuição mais qualificada seguida pela que foi feita primeiro.
+Sometimes we may get more than one pull request. We typically accept the most quality contribution followed by the one that is made first.
 
-Boas contribuições.
+Happy contributing.
+```
+
+### Solicitações de atribuição
+
+```md
+Normalmente, não atribuímos issues. Em vez disso, aceitamos o primeiro pull request que resolve o problema como um todo.
+
+Issues rotuladas com `help wanted` ou `first timers only` estão abertas para contribuições.
+
+Certifique-se de ler [nossas diretrizes para contribuição](https://contribute.freecodecamp.org/#/). Priorizamos os colaboradores de acordo com as instruções em nosso guia. Faça parte de [nossa sala de bate-papo](https://discord.gg/PRyKn3Vbay) ou [do fórum](https://forum.freecodecamp.org/c/contributors/3) caso precise de ajuda com suas contribuições. Nossos moderadores orientarão você pelo processo.
 ```

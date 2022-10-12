@@ -8,7 +8,7 @@ dashedName: use-destructuring-assignment-to-pass-an-object-as-a-functions-parame
 
 # --description--
 
-In alcuni casi, è possibile destrutturare l'oggetto in un argomento funzione.
+In alcuni casi, è possibile destrutturare l'oggetto in un argomento di una funzione.
 
 Considera il codice qui sotto:
 
@@ -19,7 +19,7 @@ const profileUpdate = (profileData) => {
 }
 ```
 
-Questo destruttura efficacemente l'oggetto passato alla funzione. Questo può anche essere fatto sul posto:
+Questo codice destruttura efficacemente l'oggetto passato alla funzione. Può anche essere fatto sul posto:
 
 ```js
 const profileUpdate = ({ name, age, nationality, location }) => {

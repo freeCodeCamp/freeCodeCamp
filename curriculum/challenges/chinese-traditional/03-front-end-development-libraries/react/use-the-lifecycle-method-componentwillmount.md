@@ -10,7 +10,7 @@ dashedName: use-the-lifecycle-method-componentwillmount
 
 React 組件有幾種特殊方法，可以在組件生命週期的特定點執行操作。 這些稱爲生命週期方法或生命週期鉤子，允許在特定時間點捕獲組件。 這可以在渲染之前、更新之前、接收 props 之前、卸載之前等等。 以下是一些主要生命週期方法的列表： `componentWillMount()` `componentDidMount()` `shouldComponentUpdate()` `componentDidUpdate()` `componentWillUnmount()` 接下來的幾節課將講述這些生命週期方法的一些基本用例。
 
-**注意：** `componentWillMount` 生命週期方法會在版本 16.X 廢棄在版本 17 移除。 [(來源)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
+**注意：** `componentWillMount` 生命週期方法會在版本 16.X 廢棄在版本 17 移除。 在這篇<a href="https://www.freecodecamp.org/news/how-to-safely-use-reacts-life-cycles-with-fiber-s-async-rendering-fd4469ebbd8f/" target="_blank" rel="noopener noreferrer nofollow">文章</a>中瞭解更多。
 
 # --instructions--
 
