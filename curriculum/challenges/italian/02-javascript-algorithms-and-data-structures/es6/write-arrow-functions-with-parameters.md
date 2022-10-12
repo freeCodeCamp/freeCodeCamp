@@ -8,7 +8,7 @@ dashedName: write-arrow-functions-with-parameters
 
 # --description--
 
-Proprio come con una normale funzione, è possibile passare gli argomenti ad una funzione freccia.
+Proprio come con una normale funzione, è possibile passare degli argomenti a una funzione freccia.
 
 ```js
 const doubler = (item) => item * 2;

@@ -14,7 +14,7 @@ Durante el día se forma una cadena trinaria (Trinary string) para cada niño qu
 
 Aunque hay 83 cadenas trinarias posibles durante 4 días, exactamente 43 cadenas llevarían a un premio:
 
-```
+```markup
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
 OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO
 AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL

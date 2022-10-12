@@ -9,7 +9,10 @@ import { isChallenge } from '../../src/utils/path-parsers';
 
 interface LayoutSelectorProps {
   element: JSX.Element;
-  props: { location: { pathname: string } };
+  props: {
+    location: { pathname: string };
+    pageContext?: { challengeMeta?: { block?: string; superBlock?: string } };
+  };
 }
 export default function layoutSelector({
   element,
@@ -31,7 +34,13 @@ export default function layoutSelector({
     );
   } else if (isChallenge(pathname)) {
     return (
-      <DefaultLayout pathname={pathname} showFooter={false}>
+      <DefaultLayout
+        pathname={pathname}
+        showFooter={false}
+        isChallenge={true}
+        block={props.pageContext?.challengeMeta?.block}
+        superBlock={props.pageContext?.challengeMeta?.superBlock}
+      >
         {element}
       </DefaultLayout>
     );

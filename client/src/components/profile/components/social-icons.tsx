@@ -13,10 +13,6 @@ import './social-icons.css';
 interface SocialIconsProps {
   email?: string;
   githubProfile: string;
-  isGithub: boolean;
-  isLinkedIn: boolean;
-  isTwitter: boolean;
-  isWebsite: boolean;
   linkedin: string;
   show?: boolean;
   twitter: string;
@@ -81,18 +77,8 @@ function TwitterIcon(handle: string, username: string): JSX.Element {
 }
 
 function SocialIcons(props: SocialIconsProps): JSX.Element | null {
-  const {
-    githubProfile,
-    isLinkedIn,
-    isGithub,
-    isTwitter,
-    isWebsite,
-    linkedin,
-    twitter,
-    username,
-    website
-  } = props;
-  const show = isLinkedIn || isGithub || isTwitter || isWebsite;
+  const { githubProfile, linkedin, twitter, username, website } = props;
+  const show = linkedin || githubProfile || website || twitter;
   if (!show) {
     return null;
   }
@@ -100,10 +86,10 @@ function SocialIcons(props: SocialIconsProps): JSX.Element | null {
   return (
     <Row>
       <Col className='text-center social-media-icons' sm={6} smOffset={3}>
-        {isLinkedIn ? LinkedInIcon(linkedin, username) : null}
-        {isGithub ? GithubIcon(githubProfile, username) : null}
-        {isWebsite ? WebsiteIcon(website, username) : null}
-        {isTwitter ? TwitterIcon(twitter, username) : null}
+        {linkedin ? LinkedInIcon(linkedin, username) : null}
+        {githubProfile ? GithubIcon(githubProfile, username) : null}
+        {website ? WebsiteIcon(website, username) : null}
+        {twitter ? TwitterIcon(twitter, username) : null}
       </Col>
     </Row>
   );

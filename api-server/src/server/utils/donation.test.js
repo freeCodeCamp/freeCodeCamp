@@ -79,12 +79,12 @@ describe('donation', () => {
         Authorization: `Bearer ${mockAccessToken}`
       }
     };
-    const successVerificationResponce = {
+    const successVerificationResponse = {
       data: {
         verification_status: 'SUCCESS'
       }
     };
-    const failedVerificationResponce = {
+    const failedVerificationResponse = {
       data: {
         verification_status: 'FAILED'
       }
@@ -92,7 +92,7 @@ describe('donation', () => {
 
     it('calls paypal for Webhook verification', async () => {
       axios.post.mockImplementationOnce(() =>
-        Promise.resolve(successVerificationResponce)
+        Promise.resolve(successVerificationResponse)
       );
 
       await expect(
@@ -112,7 +112,7 @@ describe('donation', () => {
     });
     it('throws error if verification not successful', async () => {
       axios.post.mockImplementationOnce(() =>
-        Promise.resolve(failedVerificationResponce)
+        Promise.resolve(failedVerificationResponse)
       );
 
       await expect(

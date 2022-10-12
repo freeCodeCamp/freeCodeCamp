@@ -16,7 +16,7 @@ dashedName: use-array-map-to-dynamically-render-elements
 
 代码编辑器完成了 `MyToDoList` 组件的大部分设置。 如果完成了受控表单挑战，这些代码中的一些应该看起来很熟悉。 你会注意到一个 `textarea` 和一个 `button`，以及一些跟踪它们状态的方法，但是页面当前还没有任何东西被渲染。
 
-在 `constructor` 中，创建一个 `this.state` 对象并定义两个 state：`userInput` 应该初始化为空字符串，`toDoList` 应该初始化为空数组。 接下来，删除 `items` 变量旁边 `render()` 方法中的注释。 取而代之的是，将存储在组件内部 state 中的 `toDoList` 数组一一遍历并相应的动态呈现 `li` 元素中。 尝试在 `textarea` 中输入 `eat, code, sleep, repeat`，然后点击按钮，看看会发生什么。
+在 `constructor` 中，创建一个 `this.state` 对象并定义两个 state：`userInput` 应该初始化为空字符串，`toDoList` 应该初始化为空数组。 接下来，在 `render()` 方法中删除 `items` 变量的 `null` 值。 取而代之的是，将存储在组件内部 state 中的 `toDoList` 数组一一遍历并相应的动态呈现 `li` 元素中。 尝试在 `textarea` 中输入 `eat, code, sleep, repeat`，然后点击按钮，看看会发生什么。
 
 **注意：** 像这样的映射操作创建的所有兄弟子元素都需要提供唯一的 `key` 属性。 别担心，这是下一个挑战的主题。
 

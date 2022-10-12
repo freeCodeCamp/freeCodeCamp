@@ -1,5 +1,13 @@
-import { FlashApp, FlashMessageArg } from '../components/Flash/redux';
-import { MainApp } from '.';
+import { FlashMessages } from '../components/Flash/redux/flash-messages';
+import { ns as MainApp } from './action-types';
+
+export const FlashApp = 'flash';
+
+export type FlashMessageArg = {
+  type: string;
+  message: FlashMessages;
+  variables?: Record<string, unknown>;
+};
 
 export interface State {
   [FlashApp]: FlashState;
