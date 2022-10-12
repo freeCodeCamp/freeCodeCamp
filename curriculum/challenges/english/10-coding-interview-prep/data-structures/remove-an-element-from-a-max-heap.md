@@ -110,18 +110,13 @@ assert(
     } else {
       return false;
     }
-  test.insert(2);
-  test.insert(15);
-  test.insert(3);
-  test.insert(7);
-  test.insert(12);
-  test.insert(7);
-  test.insert(10);
-  test.insert(90);
-  test.remove()
+  const vals=[ 2, 15, 3, 7, 12, 7, 10, 90 ]
+  vals.forEach(val=>test.insert(val))
+  const max=Math.max(...vals)
+  const val=test.remove()
   let arr;
   test.print()[0]===null?arr=test.print().slice(1):arr=test.print()
-  return isHeap(arr, 0, arr.length - 1)
+  return isHeap(arr, 0, arr.length - 1) && max === val
   ? true
   : false
   })()
