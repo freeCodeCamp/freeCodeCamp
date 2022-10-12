@@ -137,7 +137,7 @@ export const createPassportCallbackAuthenticator =
           return res.redirectWithFlash(`${redirectBase}/learn`);
         }
 
-        if (!user && !userInfo) {
+        if (!user || !userInfo) {
           return res.redirect('/signin');
         }
 
