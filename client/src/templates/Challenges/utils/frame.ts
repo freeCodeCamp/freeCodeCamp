@@ -268,14 +268,13 @@ const writeContentToFrame = (frameContext: Context) => {
     frameContext.document
   );
 
-  const iframe = document.getElementById(
-    frameContext.element.id
-  ) as HTMLIFrameElement;
-
-  registerScrollEventListner(iframe);
+  registerScrollEventListner(frameContext.element);
 
   if (getPreviewScrollPosition()) {
-    restorePreviewScrollPosition(iframe, getPreviewScrollPosition());
+    restorePreviewScrollPosition(
+      frameContext.element,
+      getPreviewScrollPosition()
+    );
   }
   return frameContext;
 };
@@ -286,7 +285,7 @@ export const setPreviewScrollPosition = (position: number) =>
   (previewScrollPosition = position);
 
 const registerScrollEventListner = (iframe: HTMLIFrameElement) => {
-  iframe?.contentDocument?.addEventListener('scroll', event => {
+  iframe.contentDocument?.addEventListener('scroll', event => {
     const target = event.target as Document;
     setPreviewScrollPosition(target.body.scrollTop);
   });
