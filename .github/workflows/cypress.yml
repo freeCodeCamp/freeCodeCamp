@@ -64,9 +64,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browsers: [chrome, firefox]
+        browsers: [chrome, firefox, electron]
         node-version: [16.x]
-
+        include:
+          - browsers: electron
+            spec: cypress/e2e/default/learn/challenges/projects.js
+          - browsers: chrome
+            spec: cypress/e2e/default/**/*.js
+          - browsers: firefox
+            spec: cypress/e2e/default/**/*.js
     services:
       mongodb:
         image: mongo:4
@@ -133,6 +139,4 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           headless: true
-          spec: |
-            ${{ matrix.spec }}
-            cypress/e2e/default/**/*.js
+          spec: ${{ matrix.spec }}
