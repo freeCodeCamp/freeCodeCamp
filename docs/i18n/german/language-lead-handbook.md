@@ -14,15 +14,15 @@ Auf der Ebene "Editor" hat der Benutzer Zugriff auf alle Entwürfe und kann sie 
 
 Die Stufe "Administrator" ist für freeCodeCamp-Mitarbeiter und Language Leads reserviert.
 
-### How are the articles built
+### Wie Artikel erstellt werden
 
-We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
+Wir verwenden einen [JAMStack](https://www.google.com/search?q=what+is+jamstack)-basierten Ansatz zur Erstellung und Bereitstellung der Artikel. Diese Strategie sorgt für eine schnelle statische Website, die von einem CDN zwischengespeichert und bereitgestellt wird.
 
-[Ghost](https://ghost.org) acts as our content management platform, and [11ty](https://11ty.dev) builds the articles into static assets – plain HTML, JavaScript, and CSS. Only these static assets are deployed to our servers.
+[Ghost](https://ghost.org) fungiert als unsere Content-Management-Plattform, und [11ty](https://11ty.dev) erstellt aus den Artikeln statische Inhalte - einfaches HTML, JavaScript und CSS. Nur diese statischen Inhalte werden auf unseren Servern bereitgestellt.
 
-This process is automated and runs periodically. If you publish something now, it will be available on the news site in a few hours.
+Dieser Prozess ist automatisiert und läuft regelmäßig ab. Wenn du jetzt etwas veröffentlichst, wird es in ein paar Stunden auf der Nachrichtenseite verfügbar sein.
 
-You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
+Die aktuellen Zeitpläne und den Status kannst du hier einsehen: https://github.com/freeCodeCamp/news#build
 
 ## Wie man den Originalautor eines übersetzten Artikels erwähnt
 
@@ -288,16 +288,16 @@ Dann hat jede Zielsprache zwei Spalten. Wenn du ins Dothrakische übersetzt, wir
 
 Nachdem du die Änderungen vorgenommen und die Datei gespeichert hast, musst du einen PR mit den vorgeschlagenen Änderungen erstellen. Nachdem der PR angenommen wurde, musst du den GitHub Action-Workflow ausführen, um das Crowdin-Glossar zu aktualisieren. Deine Änderungen im Glossar werden sich nicht sofort auswirken, aber sie werden kommen.
 
-## How to Promote a Contributor to Proofreader
+## Wie man einen Mitwirkenden zum Korrekturleser (Proofreader) befördert
 
-If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
+Wenn du der Meinung bist, dass ein Mitwirkender ein Crowdin-Korrekturleser werden könnte, kannst du ihm auf diese Weise die Rolle des Korrekturlesers übertragen:
 
-In Crowdin, individuate the `User management` on the left hand side menu.
+In Crowdin wählst du `User management` im Menü auf der linken Seite aus.
 
-This will open the user management tools, you will be able to see the list of all the users.
+Dadurch wird die Benutzerverwaltung geöffnet, in der du die Liste aller Benutzer sehen kannst.
 
-Search for the user that will become contributor. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+Suche nach dem Benutzer, der zum Mitwirkenden werden soll. Verwende das Menü mit den drei Punkten in der Benutzerzeile, um ein Menü zu öffnen und wähle "Add to team". Die Korrekturleserteams haben den Standardnamen `Proof Readers(<Sprache>)`, du kannst das Team über den Namen der Sprache suchen. Wenn du das Team ausgewählt hast, benutze den Button "ADD" unten auf der Seite, um den Vorgang abzuschließen.
 
-The user is now a proofreader.
+Der Benutzer ist jetzt ein Korrekturleser.
 
-> [!TIP] The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.
+> [!TIP] Der neu beförderte Korrekturleser könnte vom Lesen der [Korrekturlesen von Übersetzungen](how-to-proofread-files.md)-Dokumentation profitieren.
