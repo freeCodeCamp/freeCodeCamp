@@ -186,13 +186,6 @@ assert.deepEqual(convertToRoman(2014), 'MMXIV');
 assert.deepEqual(convertToRoman(3999), 'MMMCMXCIX');
 ```
 
-Global variables should not be used.
-
-```js
-convertToRoman(1)
-assert.deepEqual(convertToRoman(44), 'XLIV');
-```
-
 # --seed--
 
 ## --seed-contents--
