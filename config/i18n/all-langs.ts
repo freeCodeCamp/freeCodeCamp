@@ -29,7 +29,8 @@ export const availableLangs = {
     'portuguese',
     'ukrainian',
     'japanese',
-    'german'
+    'german',
+    'Hindi'
   ]
 };
 
