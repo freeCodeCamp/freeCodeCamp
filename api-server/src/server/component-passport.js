@@ -118,17 +118,13 @@ export const createPassportCallbackAuthenticator =
           return next(err);
         }
 
-        if (!user && !userInfo) {
-          return res.redirect('/signin');
-        }
-
         const state = req && req.query && req.query.state;
         // returnTo, origin and pathPrefix are audited by getReturnTo
         let { returnTo, origin, pathPrefix } = getReturnTo(state, jwtSecret);
         const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
 
-        if (!user && userInfo == 'access_denied') {
-          const { error_description } = req.query;
+        const { error, error_description } = req.query;
+        if (error === 'access_denied') {
           const blockedByLaw =
             error_description === 'Access denied from your location';
 
@@ -139,6 +135,10 @@ export const createPassportCallbackAuthenticator =
 
           req.flash('info', dedent`${error_description}.`);
           return res.redirectWithFlash(`${redirectBase}/learn`);
+        }
+
+        if (!user && !userInfo) {
+          return res.redirect('/signin');
         }
 
         const { accessToken } = userInfo;
