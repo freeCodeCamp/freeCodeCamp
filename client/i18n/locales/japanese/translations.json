@@ -453,6 +453,7 @@
     "certification-project": "認定プロジェクト",
     "iframe-preview": "{{title}} のプレビュー",
     "iframe-alert": "このリンクは通常の環境では他のウェブサイトを開きます。正しく動作しています。これは {{externalLink}} へのリンクです。",
+    "iframe-form-submit-alert": "Normally this form would be submitted! It works. This will be submitted to: {{externalLink}}",
     "document-notfound": "ドキュメントが見つかりませんでした"
   },
   "icons": {

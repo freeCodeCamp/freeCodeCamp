@@ -453,6 +453,7 @@
     "certification-project": "Projeto de certificação",
     "iframe-preview": "Visualização de {{title}}",
     "iframe-alert": "Normalmente, este link levaria você para outro site da web! Funciona. Esse é um link para: {{externalLink}}",
+    "iframe-form-submit-alert": "Normally this form would be submitted! It works. This will be submitted to: {{externalLink}}",
     "document-notfound": "documento não encontrado"
   },
   "icons": {

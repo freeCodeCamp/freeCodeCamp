@@ -453,6 +453,7 @@
     "certification-project": "认证项目",
     "iframe-preview": "{{title}} 预览",
     "iframe-alert": "通常，此链接会将你带到另一个网站！一切正常，这个链接指向：{{externalLink}}。",
+    "iframe-form-submit-alert": "Normally this form would be submitted! It works. This will be submitted to: {{externalLink}}",
     "document-notfound": "找不到文件"
   },
   "icons": {
