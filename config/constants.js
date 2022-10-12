@@ -49,6 +49,7 @@ let blocklist = [
   'all-stories',
   'api',
   'backend-challenge-completed',
+  'blocked',
   'bonfire',
   'cats.json',
   'challenge-completed',
