@@ -134,14 +134,14 @@ setup()
 async function setup() {
   if (
     (process.env.npm_config_superblock && process.env.npm_config_block) ||
-    (process.env.npm_config_superblock && process.env.npm_config_filename) ||
-    (process.env.npm_config_block && process.env.npm_config_filename) ||
+    (process.env.npm_config_superblock && process.env.npm_config_id) ||
+    (process.env.npm_config_block && process.env.npm_config_id) ||
     (process.env.npm_config_block &&
-      process.env.npm_config_filename &&
+      process.env.npm_config_id &&
       process.env.npm_config_superblock)
   ) {
     throw new Error(
-      `Please do not use more than one of: superblock, block, filename.`
+      `Please do not use more than one of: superblock, block, id.`
     );
   }
 
@@ -183,12 +183,10 @@ async function setup() {
   ];
 
   // the next few statements will filter challenges based on command variables
-  if (process.env.npm_config_dashedname) {
-    const filter = process.env.npm_config_dashedname;
-    console.log(`\nDashed name being tested: ${filter}`);
-    challenges = challenges.filter(
-      challenge => challenge.dashedName === filter
-    );
+  if (process.env.npm_config_id) {
+    const filter = process.env.npm_config_id;
+    console.log(`\nChallenged ID being tested: ${filter}`);
+    challenges = challenges.filter(challenge => challenge.id === filter);
 
     if (!challenges.length) {
       throw new Error(`No challenges found with file name "${filter}"`);
@@ -284,7 +282,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
-  if (!process.env.npm_config_block && !process.env.npm_config_filename) {
+  if (!process.env.npm_config_block && !process.env.npm_config_id) {
     describe('Assert meta order', function () {
       /** This array can be used to skip a superblock - we'll use this
        * when we are working on the new project-based curriculum for
