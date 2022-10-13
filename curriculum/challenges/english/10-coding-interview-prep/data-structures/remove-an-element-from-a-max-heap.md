@@ -110,15 +110,19 @@ assert(
     } else {
       return false;
     }
-  const vals=[ 2, 15, 3, 7, 12, 7, 10, 90 ]
-  vals.forEach(val=>test.insert(val))
-  const max=Math.max(...vals)
-  const val=test.remove()
-  let arr;
-  test.print()[0]===null?arr=test.print().slice(1):arr=test.print()
-  return isHeap(arr, 0, arr.length - 1) && max === val
-  ? true
-  : false
+ let arr;
+  const [result, vals] = [[], [2, 15, 3, 7, 12, 7, 10, 90]];
+  vals.forEach((val) => test.insert(val));
+  for (let i = 0; i < vals.length; i++) {
+    result.push(test.remove());
+    test.print()[0] === null
+      ? (arr = test.print().slice(1))
+      : (arr = test.print());
+    if (!isHeap(arr, 0, arr.length - 1)) {
+      return false;
+    }
+  }
+  return result.join('') === vals.sort((a,b)=>a>b?-1:1).join('')
   })()
 );
 ```
