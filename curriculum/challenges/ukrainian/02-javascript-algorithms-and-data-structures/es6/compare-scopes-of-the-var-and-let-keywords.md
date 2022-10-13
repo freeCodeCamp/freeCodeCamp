@@ -8,7 +8,7 @@ dashedName: compare-scopes-of-the-var-and-let-keywords
 
 # --description--
 
-Якщо ви ще не знаєте про `let`, див. <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords" target="_blank" rel="noopener noreferrer nofollow">це завдання про різницю між <code>let</code> та <code>var</code></a>.
+Якщо ви ще не знаєте про `let`, див. <a href="https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords" target="_blank" rel="noopener noreferrer nofollow">це завдання про різницю між <code>let</code> та <code>var</code></a>.
 
 Коли ви задаєте змінну з ключовим словом `var`, вона стане глобальною або локальною, якщо буде оголошена у рамках функції.
 

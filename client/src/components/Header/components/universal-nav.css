@@ -157,6 +157,10 @@
   cursor: pointer;
 }
 
+#nav-lang-menu li:first-child {
+  border-bottom: 0.1rem solid var(--gray-45) !important;
+}
+
 button.nav-link:focus {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
@@ -208,7 +212,6 @@ button.nav-link[aria-disabled='true'] {
   overflow-y: auto;
   scrollbar-width: auto;
   /* lang menu should always be full height */
-  height: 19.9rem;
 }
 
 /* main menu must be at least as tall as lang menu (when displayed) 
@@ -239,6 +242,10 @@ button.nav-link[aria-disabled='true'] {
 
 .nav-lang-menu .nav-link:hover {
   background-color: var(--gray-10) !important;
+}
+
+.nav-lang-menu li:first-child .nav-link:hover {
+  color: var(--love-dark) !important;
 }
 
 .nav-lang-button {

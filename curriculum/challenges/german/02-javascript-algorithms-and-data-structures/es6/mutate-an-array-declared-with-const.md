@@ -8,7 +8,7 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-Wenn du mit `const` nicht vertraut bist, schau dir <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener noreferrer nofollow">diese Aufgabe über das <code>const</code>-Schlüsselwort</a> an.
+Wenn du mit `const` nicht vertraut bist, schau dir <a href="https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener noreferrer nofollow">diese Aufgabe über das <code>const</code>-Schlüsselwort</a> an.
 
 Die `const`-Deklaration hat viele Anwendungsfälle in modernem JavaScript.
 

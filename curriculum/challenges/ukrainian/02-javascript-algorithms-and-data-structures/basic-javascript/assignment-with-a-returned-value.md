@@ -9,7 +9,7 @@ dashedName: assignment-with-a-returned-value
 
 # --description--
 
-Якщо Ви пригадаєте з нашого обговорення [Storing Values with the Assignment Operator](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), все, що знаходиться справа від знака рівності визначається ще до того, як присвоюється значення. Це означає, що ми можемо взяти повернене значення функції та присвоїти її змінній.
+Якщо Ви пригадаєте з нашого обговорення [Storing Values with the Assignment Operator](https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), все, що знаходиться справа від знака рівності визначається ще до того, як присвоюється значення. Це означає, що ми можемо взяти повернене значення функції та присвоїти її змінній.
 
 Припустимо, у нас уже є визначена функція `sum`, яка додає два числа, тоді:
 

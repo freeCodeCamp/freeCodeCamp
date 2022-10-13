@@ -22,7 +22,7 @@ dashedName: build-a-pong-game
 
 **User Story:** The game keeps track of the player and computer's score.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+When you are finished, include a link to your project on CodePen and click the "Submit and go to next step" button.
 
 You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 

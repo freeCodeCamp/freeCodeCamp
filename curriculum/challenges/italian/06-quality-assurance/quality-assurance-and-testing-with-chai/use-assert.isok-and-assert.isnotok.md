@@ -12,7 +12,7 @@ Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza
 
 `isOk()` verificherà se un valore è veritiero e `isNotOk()` verificherà se un valore è falso.
 
-Per saperne di più sui valori veritieri e falsi, prova la nostra sfida <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer" target="_blank" rel="noopener noreferrer nofollow">Falsy Bouncer</a>.
+Per saperne di più sui valori veritieri e falsi, prova la nostra sfida <a href="https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer" target="_blank" rel="noopener noreferrer nofollow">Falsy Bouncer</a>.
 
 # --instructions--
 

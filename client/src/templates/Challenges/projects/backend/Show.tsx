@@ -21,8 +21,6 @@ import {
 import ChallengeDescription from '../../components/Challenge-Description';
 import Hotkeys from '../../components/Hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
-import CompletionModal from '../../components/completion-modal';
-import HelpModal from '../../components/help-modal';
 import Output from '../../components/output';
 import TestSuite from '../../components/test-suite';
 import {
@@ -33,12 +31,12 @@ import {
   initConsole,
   initTests,
   isChallengeCompletedSelector,
+  testsRunningSelector,
   updateChallengeMeta,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  submitChallenge
 } from '../../redux';
-import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
-import ProjectToolPanel from '../tool-panel';
 
 import '../../components/test-frame.css';
 
@@ -48,16 +46,19 @@ const mapStateToProps = createSelector(
   challengeTestsSelector,
   isChallengeCompletedSelector,
   isSignedInSelector,
+  testsRunningSelector,
   (
     output: string[],
     tests: Test[],
     isChallengeCompleted: boolean,
-    isSignedIn: boolean
+    isSignedIn: boolean,
+    testsRunning: boolean
   ) => ({
     tests,
     output,
     isChallengeCompleted,
-    isSignedIn
+    isSignedIn,
+    testsRunning
   })
 );
 
@@ -67,7 +68,8 @@ const mapDispatchToActions = {
   initConsole,
   initTests,
   updateChallengeMeta,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  submitChallenge
 };
 
 // Types
@@ -86,8 +88,10 @@ interface BackEndProps {
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
+  submitChallenge: () => void;
   t: TFunction;
   tests: Test[];
+  testsRunning: boolean;
   title: string;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
@@ -175,9 +179,16 @@ class BackEnd extends Component<BackEndProps> {
   }
 
   handleSubmit(): void {
-    this.props.executeChallenge({
-      showCompletionModal: false
-    });
+    const { tests, submitChallenge } = this.props;
+    const isChallengeComplete = tests.every(test => test.pass && !test.err);
+
+    if (isChallengeComplete) {
+      submitChallenge();
+    } else {
+      this.props.executeChallenge({
+        showCompletionModal: false
+      });
+    }
   }
 
   render() {
@@ -185,14 +196,11 @@ class BackEnd extends Component<BackEndProps> {
       data: {
         challengeNode: {
           challenge: {
-            fields: { blockName },
             challengeType,
-            forumTopicId,
             title,
             description,
             instructions,
             translationPending,
-            certification,
             superBlock,
             block
           }
@@ -205,8 +213,15 @@ class BackEnd extends Component<BackEndProps> {
       },
       t,
       tests,
+      testsRunning,
       updateSolutionFormValues
     } = this.props;
+
+    const hasTests = tests.length > 0;
+    const isChallengeComplete = tests.every(test => test.pass && !test.err);
+    const submitBtnLabel: string = !isChallengeComplete
+      ? `${t('buttons.run-test-2')}${testsRunning ? ' ...' : ''}`
+      : t('buttons.submit-and-go');
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
@@ -243,30 +258,23 @@ class BackEnd extends Component<BackEndProps> {
                   // eslint-disable-next-line @typescript-eslint/unbound-method
                   onSubmit={this.handleSubmit}
                   updateSolutionForm={updateSolutionFormValues}
-                />
-                <ProjectToolPanel
-                  guideUrl={getGuideUrl({ forumTopicId, title })}
+                  buttonLabel={submitBtnLabel}
                 />
                 <br />
-                <Output
-                  defaultOutput={`/**
+                {hasTests && (
+                  <Output
+                    defaultOutput={`/**
 *
 * ${t('learn.test-output')}
 *
 *
 */`}
-                  output={output}
-                />
-                <TestSuite tests={tests} />
+                    output={output}
+                  />
+                )}
+                {hasTests && <TestSuite tests={tests} />}
                 <Spacer />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
-              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
         </LearnLayout>

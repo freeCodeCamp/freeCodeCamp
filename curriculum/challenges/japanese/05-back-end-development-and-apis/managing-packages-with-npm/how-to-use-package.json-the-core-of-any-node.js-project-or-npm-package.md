@@ -10,11 +10,11 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 チャレンジに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
-- [GitHub レポジトリ](https://github.com/freeCodeCamp/boilerplate-npm/)をクローンし、ローカル環境でチャレンジを完了させる。
-- [Replit 始動プロジェクト](https://replit.com/github/freeCodeCamp/boilerplate-npm)を使用してチャレンジを完了させる。
+- <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でプロジェクトを完了させる。
+- <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、チャレンジを完了させる。
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、`GitHub Link` フィールドでプロジェクトのソースコードへのリンクを送信してください。
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。
 
 `package.json` ファイルは、Node.js プロジェクトまたは npm パッケージの中心となります。 HTML ドキュメントの &lt;head> セクションでウェブページの内容を記述するのと同じように、このファイルにはプロジェクトに関する情報を保存します。 ファイルは単一の JSON オブジェクトで構成され、そこに情報がキーと値のペアで保存されます。 必須のフィールドは「name」と「version」の 2 つのみですが、将来のユーザーや保守作業者に役立つように、プロジェクトに関する追加情報を記述しておくことをお勧めします。
 

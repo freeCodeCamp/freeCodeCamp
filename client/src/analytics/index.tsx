@@ -7,8 +7,10 @@ import envData from '../../../config/env.json';
 
 const { deploymentEnv } = envData;
 
-const analyticsId =
-  deploymentEnv === 'staging' ? devAnalyticsId : prodAnalyticsId;
+const analyticsId: string =
+  deploymentEnv === 'staging'
+    ? (devAnalyticsId as string)
+    : (prodAnalyticsId as string);
 
 ReactGA.initialize(analyticsId);
 

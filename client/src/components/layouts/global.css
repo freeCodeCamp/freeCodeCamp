@@ -500,6 +500,10 @@ fieldset[disabled] .btn-primary.focus {
 strong {
   color: var(--secondary-color);
 }
+.required-star {
+  color: red;
+  margin-left: 3px;
+}
 
 .form-group.embedded {
   border: 1px solid var(--tc-black-40);

@@ -20,7 +20,7 @@ Der Redux `store` ist ein Objekt, das den Zustand (`state`) der Anwendung hält 
 
 Deklariere eine `store`-Variable und weise sie der `createStore()`-Methode zu, indem du den `reducer` als Argument übergibst.
 
-**Hinweis:** Der Code im Editor verwendet die ES6-Standardargumentsyntax, um diesen Zustand mit einem Wert von `5` zu initialisieren. Wenn du mit Standardargumenten nicht vertraut bist, kannst auf <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener noreferrer nofollow">ES6-Abschnitt in den Lehrinhalten </a> zurückgreifen, in dem dieses Thema behandelt wird.
+**Hinweis:** Der Code im Editor verwendet die ES6-Standardargumentsyntax, um diesen Zustand mit einem Wert von `5` zu initialisieren. Wenn du mit Standardargumenten nicht vertraut bist, kannst auf <a href="https://platform-ui.topcoder.com/learn/freeCodeCamp/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener noreferrer nofollow">ES6-Abschnitt in den Lehrinhalten </a> zurückgreifen, in dem dieses Thema behandelt wird.
 
 # --hints--
 

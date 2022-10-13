@@ -97,7 +97,6 @@ class TcIntegrationLayout extends Component<TcIntegrationLayoutProps> {
 
     window.addEventListener('online', this.updateOnlineStatus);
     window.addEventListener('offline', this.updateOnlineStatus);
-    window.addEventListener('click', this.externalLinkHandler);
   }
 
   componentDidUpdate(prevProps: TcIntegrationLayoutProps) {
@@ -112,64 +111,6 @@ class TcIntegrationLayout extends Component<TcIntegrationLayoutProps> {
     window.removeEventListener('online', this.updateOnlineStatus);
     window.removeEventListener('offline', this.updateOnlineStatus);
   }
-
-  externalLinkHandler = (event: MouseEvent) => {
-    // prettier is the worst
-
-    // if we're not clicking an anchor tag, there's nothing to do
-    const eventTarget = event.target as HTMLElement;
-    const anchorTag = eventTarget.closest('a');
-    if (!anchorTag) {
-      return;
-    }
-
-    // if the target of the click isn't external, there's nothing to do
-    const target = anchorTag;
-    const url = new URL(target.href);
-    if (url.host === window.location.host) {
-      return;
-    }
-
-    // stop the click so we can alter it
-    event.stopPropagation();
-    event.preventDefault();
-
-    // if this is a freecodecamp lesson, change its domain and path
-    const fccHost = 'freecodecamp.org';
-    if (url.host.endsWith(fccHost)) {
-      // TODO: it would be nice to not require that the FCC
-      // app knows about the paths in the platform UI, but
-      // creating a way to share this info would be complex and
-      // time consuming, so we can handle it when we get another
-      // provider.
-
-      // set the pathname for the 2 flavors of lesson URL
-      const platformPathPrefix = 'learn/freecodecamp';
-      const learnPrefix = '/learn/';
-      let updateHost = false;
-      if (url.host === `learn.${fccHost}`) {
-        url.pathname = `${platformPathPrefix}${url.pathname}`;
-        updateHost = true;
-      } else if (
-        url.host === `www.${fccHost}` &&
-        url.pathname.startsWith(learnPrefix)
-      ) {
-        url.pathname = url.pathname.replace(
-          learnPrefix,
-          `/${platformPathPrefix}/`
-        );
-        updateHost = true;
-      }
-
-      // set the host to the iframe's parent domain
-      if (updateHost) {
-        url.host = new URL(document.referrer).host;
-      }
-    }
-
-    // now open the url in a new tab
-    window.open(url, '_blank');
-  };
 
   updateOnlineStatus = () => {
     const { onlineStatusChange } = this.props;

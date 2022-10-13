@@ -20,7 +20,7 @@ Fulfill the following [user stories](https://en.wikipedia.org/wiki/User_story). 
 
 **Hint:** You can create a spritesheet of national flags at <https://www.flag-sprites.com>.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+When you are finished, include a link to your project on CodePen and click the "Submit and go to next step" button.
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
 

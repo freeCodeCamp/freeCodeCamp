@@ -20,10 +20,15 @@ function filesToMarkdown(challengeFiles = {}) {
     if (!challengeFile) {
       return fileString;
     }
-    const fileName = moreThanOneFile
-      ? `/* file: ${challengeFile.name}.${challengeFile.ext} */\n`
-      : '';
+    let fileName;
     const fileType = challengeFile.ext;
+    if (!moreThanOneFile) {
+      fileName = '';
+    } else if (fileType === 'html') {
+      fileName = `<!-- file: ${challengeFile.name}.${challengeFile.ext} -->\n`;
+    } else {
+      fileName = `/* file: ${challengeFile.name}.${challengeFile.ext} */\n`;
+    }
     return `${fileString}\`\`\`${fileType}\n${fileName}${challengeFile.contents}\n\`\`\`\n\n`;
   }, '\n');
 }

@@ -113,6 +113,7 @@
     "claim-legacy": "Sobald du die folgenden freeCodeCamp Zertifizierungen erworben hast, kannst du das {{cert}} beanspruchen:",
     "for": "Kontoeinstellungen für {{username}}",
     "sound-mode": "Das sorgt für den angenehmen Klang der Akustikgitarre auf der gesamten Website. Du bekommst musikalisches Feedback, wenn du im Editor tippst, Aufgaben löst, Zertifizierungen beantragst und vieles mehr.",
+    "sound-volume": "Campfire Volume:",
     "username": {
       "contains invalid characters": "Der Benutzername \"{{username}}\" enthält ungültige Zeichen",
       "is too short": "Der Benutzername \"{{username}}\" ist zu kurz",
@@ -286,7 +287,7 @@
     "percent-complete": "{{percent}}% abgeschlossen",
     "tried-rsa": "Wenn du die <0>Lesen-Suchen-Fragen</0> Methode bereits ausprobiert hast, kannst du im freeCodeCamp-Forum um Hilfe bitten.",
     "rsa": "Lesen, suchen, fragen",
-    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
+    "rsa-forum": "<strong>Bevor du einen neuen Beitrag schreibst</strong> schau bitte nach, ob deine Frage <0>bereits im Forum beantwortet wurde</0>.",
     "reset": "Diese Lektion zurücksetzen?",
     "reset-warn": "Bist du dir sicher, dass du diese Lektion zurücksetzen möchtest? Die Editoren und Tests werden zurückgesetzt.",
     "reset-warn-2": "Dies kann nicht rückgängig gemacht werden",
@@ -451,6 +452,7 @@
     "change-theme": "Anmelden, um das Theme zu ändern.",
     "translation-pending": "Hilf uns, zu übersetzen",
     "certification-project": "Zertifizierungsprojekt",
+    "iframe-preview": "{{title}} Vorschau",
     "iframe-alert": "Normalerweise würde dieser Link dich auf eine andere Website führen! Er funktioniert. Dies ist ein Link zu: {{externalLink}}",
     "document-notfound": "Dokument wurde nicht gefunden"
   },
@@ -487,6 +489,12 @@
     "breadcrumb-nav": "Breadcrumb",
     "submit": "Verwende Strg + Enter zum Absenden.",
     "running-tests": "Tests werden durchgeführt",
+    "hide-preview": "Vorschau ausblenden",
+    "move-preview-to-new-window": "Verschiebe die Vorschau in ein neues Fenster und fokussiere sie",
+    "move-preview-to-main-window": "Verschiebe die Vorschau in dieses Fenster und schließe das externe Vorschaufenster",
+    "close-external-preview-window": "Schließe das externe Vorschaufenster",
+    "show-preview": "Zeige die Vorschau in diesem Fenster",
+    "open-preview-in-new-window": "Öffne die Vorschau in einem neuen Fenster und fokussiere sie",
     "step": "Schritt",
     "steps": "Schritte",
     "steps-for": "Schritte für {{blockTitle}}"

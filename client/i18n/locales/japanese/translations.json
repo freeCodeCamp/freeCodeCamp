@@ -113,6 +113,7 @@
     "claim-legacy": "以下の freeCodeCamp 認定証を取得すると、 {{cert}} を受け取ることができます。",
     "for": "{{username}} さんのアカウント設定",
     "sound-mode": "これは快適なアコースティックギターの音をウェブサイトの至る所へ追加します。エディターにタイプしたり、チャレンジを完了したり、認定証を請求したり、その他いろいろなことをする度に音のフィードバックを受け取ります。",
+    "sound-volume": "Campfire Volume:",
     "username": {
       "contains invalid characters": "ユーザー名 \"{{username}}\" に無効な文字が含まれています",
       "is too short": "ユーザー名 \"{{username}}\" は短すぎます",
@@ -451,6 +452,7 @@
     "change-theme": "テーマを変更するにはサインインしてください。",
     "translation-pending": "翻訳にご協力ください。",
     "certification-project": "認定プロジェクト",
+    "iframe-preview": "{{title}} preview",
     "iframe-alert": "このリンクは通常の環境では他のウェブサイトを開きます。正しく動作しています。これは {{externalLink}} へのリンクです。",
     "document-notfound": "ドキュメントが見つかりませんでした"
   },
@@ -487,6 +489,12 @@
     "breadcrumb-nav": "パンくずリスト",
     "submit": "提出するには Ctrl + Enter を押してください。",
     "running-tests": "テスト実行中",
+    "hide-preview": "Hide the preview",
+    "move-preview-to-new-window": "Move the preview to a new window and focus it",
+    "move-preview-to-main-window": "Move the preview to this window and close the external preview window",
+    "close-external-preview-window": "Close the external preview window",
+    "show-preview": "Show the preview in this window",
+    "open-preview-in-new-window": "Open the preview in a new window and focus it",
     "step": "ステップ",
     "steps": "ステップ一覧",
     "steps-for": "「{{blockTitle}}」のステップ一覧"

@@ -60,7 +60,9 @@ import {
   isProjectPreviewModalOpenSelector,
   openModal,
   isChallengeCompletedSelector,
-  testsRunningSelector
+  testsRunningSelector,
+  attemptsSelector,
+  resetAttempts
 } from '../redux';
 import GreenPass from '../../../assets/icons/green-pass';
 import Code from '../../../assets/icons/code';
@@ -74,6 +76,7 @@ const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 const currentYear = new Date().getFullYear();
 
 interface EditorProps {
+  attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
@@ -101,6 +104,7 @@ interface EditorProps {
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
   stopResetting: () => void;
+  resetAttempts: () => void;
   tests: Test[];
   theme: Themes;
   title: string;
@@ -134,6 +138,7 @@ interface EditorProperties {
 }
 
 const mapStateToProps = createSelector(
+  attemptsSelector,
   canFocusEditorSelector,
   challengeMetaSelector,
   consoleOutputSelector,
@@ -146,6 +151,7 @@ const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   testsRunningSelector,
   (
+    attempts: number,
     canFocus: boolean,
     { challengeType }: { challengeType: number },
     output: string[],
@@ -158,6 +164,7 @@ const mapStateToProps = createSelector(
     isChallengeCompleted: boolean,
     testsRunning: boolean
   ) => ({
+    attempts,
     canFocus: open ? false : canFocus,
     challengeType,
     previewOpen,
@@ -182,6 +189,7 @@ const mapDispatchToProps = {
   submitChallenge,
   initTests,
   stopResetting,
+  resetAttempts,
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset')
 };
@@ -241,7 +249,7 @@ const initialData: EditorProperties = {
 
 const Editor = (props: EditorProps): JSX.Element => {
   const { t } = useTranslation();
-  const { editorRef, initTests } = props;
+  const { editorRef, initTests, resetAttempts } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -267,18 +275,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     noteIndex: 0,
     shouldPlay: store.get('fcc-sound') as boolean | undefined
   });
-  const attemptRef = useRef<{ attempts: number }>({ attempts: 0 });
 
   // since editorDidMount runs once with the initial props object, it keeps a
   // reference to *those* props. If we want it to use the latest props, we can
   // use a ref, since it will be updated on every render.
   const testRef = useRef<Test[]>([]);
   testRef.current = props.tests;
-
-  // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
-  // available files into that order.  i.e. if it's just one file it will
-  // automatically be first, but  if there's jsx and js (for some reason) it
-  //  will be [jsx, js].
+  const attemptsRef = useRef<number>(0);
+  attemptsRef.current = props.attempts;
 
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
@@ -346,9 +350,13 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     if (player.current.shouldPlay && !player.current.sampler) {
       void import('tone').then(tone => {
-        player.current.sampler = new tone.Sampler(
-          editorToneOptions
-        ).toDestination();
+        const newSound = new tone.Sampler(editorToneOptions).toDestination();
+        player.current.sampler = newSound;
+
+        const storedVolume = (store.get('soundVolume') as number) ?? 50;
+        const calculateDecibel = -60 * (1 - storedVolume / 100);
+
+        newSound.volume.value = calculateDecibel;
       });
     }
 
@@ -381,6 +389,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (hasEditableRegion()) {
       initializeDescriptionAndOutputWidgets();
       addContentChangeListener();
+      resetAttempts();
       showEditableRegion(editor);
     }
 
@@ -602,30 +611,31 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function tryToExecuteChallenge() {
     props.executeChallenge();
-    attemptRef.current.attempts++;
   }
 
   const tryToSubmitChallenge = submitChallengeDebounceRef.current;
 
-  function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
+  function createLowerJaw(
+    outputNode: HTMLDivElement,
+    editor: editor.IStandaloneCodeEditor
+  ) {
     const { output } = props;
     const isChallengeComplete = challengeIsComplete();
     const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
+
     ReactDOM.render(
       <LowerJaw
-        openHelpModal={props.openHelpModal}
         tryToExecuteChallenge={tryToExecuteChallenge}
         hint={output[1]}
-        testsLength={props.tests.length}
-        attemptsNumber={attemptRef.current.attempts}
+        attempts={attemptsRef.current}
         challengeIsCompleted={isChallengeComplete}
-        challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
         isEditorInFocus={isEditorInFocus}
         isRunningTests={props.testsRunning}
+        isSignedIn={props.isSignedIn}
+        updateContainer={() => updateOutputViewZone(outputNode, editor)}
       />,
-      outputNode,
-      callback
+      outputNode
     );
   }
 
@@ -634,13 +644,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor || !dataRef.current.outputNode) return;
 
     const outputNode = dataRef.current.outputNode;
-    createLowerJaw(outputNode, () => {
-      if (dataRef.current.outputNode) {
-        updateOutputViewZone(outputNode, editor);
-      }
-    });
+    createLowerJaw(outputNode, editor);
   };
 
+  // TODO: there's a potential performance gain to be had by only updating when
+  // the outputViewZone has actually changed.
   const updateOutputViewZone = (
     outputNode: HTMLDivElement,
     editor: editor.IStandaloneCodeEditor
@@ -1084,14 +1092,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     return tests.every(test => test.pass && !test.err);
   }
 
-  function challengeHasErrors() {
-    const tests = testRef.current;
-    return tests.some(test => test.err);
-  }
-
-  function resetAttampts() {
-    attemptRef.current.attempts = 0;
-  }
+  // We need to set initialize the tests, but only once
+  useEffect(() => {
+    initTests(props.initialTests);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // runs every update to the editor and when the challenge is reset
   useEffect(() => {
@@ -1121,7 +1126,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         initializeDescriptionAndOutputWidgets();
         updateDescriptionZone();
         showEditableRegion(editor);
-        resetAttampts();
         resetMarginDecorations();
       }
     }

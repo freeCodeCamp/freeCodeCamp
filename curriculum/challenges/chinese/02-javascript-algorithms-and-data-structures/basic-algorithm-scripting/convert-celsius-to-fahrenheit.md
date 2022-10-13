@@ -14,40 +14,40 @@ dashedName: convert-celsius-to-fahrenheit
 
 # --hints--
 
-`convertToF(0)` 应返回一个数字。
+`convertCtoF(0)` 应该返回一个数字
 
 ```js
-assert(typeof convertToF(0) === 'number');
+assert(typeof convertCtoF(0) === 'number');
 ```
 
-`convertToF(-30)` 应返回 `-22`。
+`convertCtoF(-30)` 应该返回 `-22` 的值
 
 ```js
-assert(convertToF(-30) === -22);
+assert(convertCtoF(-30) === -22);
 ```
 
-`convertToF(-10)` 应返回 `14`。
+`convertCtoF(-10)` 应该返回 `14` 的值
 
 ```js
-assert(convertToF(-10) === 14);
+assert(convertCtoF(-10) === 14);
 ```
 
-`convertToF(0)` 应返回 `32`。
+`convertCtoF(0)` 应该返回 `32` 的值
 
 ```js
-assert(convertToF(0) === 32);
+assert(convertCtoF(0) === 32);
 ```
 
-`convertToF(20)` 应返回 `68`。
+`convertCtoF(20)` 应该返回 `68` 的值
 
 ```js
-assert(convertToF(20) === 68);
+assert(convertCtoF(20) === 68);
 ```
 
-`convertToF(30)` 应返回 `86`。
+`convertCtoF(30)` 应该返回 `86` 的值
 
 ```js
-assert(convertToF(30) === 86);
+assert(convertCtoF(30) === 86);
 ```
 
 # --seed--
@@ -55,22 +55,21 @@ assert(convertToF(30) === 86);
 ## --seed-contents--
 
 ```js
-function convertToF(celsius) {
+function convertCtoF(celsius) {
   let fahrenheit;
   return fahrenheit;
 }
 
-convertToF(30);
+convertCtoF(30);
 ```
 
 # --solutions--
 
 ```js
-function convertToF(celsius) {
+function convertCtoF(celsius) {
   let fahrenheit = celsius * 9/5 + 32;
-
   return fahrenheit;
 }
 
-convertToF(30);
+convertCtoF(30);
 ```

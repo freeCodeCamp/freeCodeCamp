@@ -34,12 +34,15 @@ export const actionTypes = createTypes(
 
     'previewMounted',
     'projectPreviewMounted',
+    'storePortalDocument',
+    'removePortalDocument',
     'challengeMounted',
     'checkChallenge',
     'executeChallenge',
     'resetChallenge',
     'stopResetting',
     'submitChallenge',
+    'resetAttempts',
 
     'setEditorFocusability',
     'toggleVisibleEditor'

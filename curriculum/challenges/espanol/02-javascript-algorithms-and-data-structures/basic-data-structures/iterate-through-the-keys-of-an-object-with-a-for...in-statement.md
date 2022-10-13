@@ -16,7 +16,7 @@ for (let user in users) {
 }
 ```
 
-Esto registrará `Alan`, `Jeff`, `Sarah`, y `Ryan`, cada valor en su propia línea.
+Esto devolvería `Alan`, `Jeff`, y `Sarah` - cada valor en su propia línea.
 
 En esta sentencia, definimos una variable `user`, y como puedes ver, esta variable se restablece durante cada iteración a cada una de las claves del objeto a medida que la sentencia hace un bucle a través del objeto, dando como resultado que el nombre de cada usuario se imprima en la consola.
 

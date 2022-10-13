@@ -18,7 +18,7 @@ Si la autentificación fue exitosa, el user object se guardará en `req.user`.
 
 En este punto, si introduces un nombre de usuario y una contraseña en el formulario, debe redirigirse a la página de inicio `/`, y la consola de tu servidor debe mostrar `'User {USERNAME} attempted to log in.'`, ya que actualmente no podemos iniciar la sesión de un usuario que no está registrado.
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
 
 # --hints--
 
