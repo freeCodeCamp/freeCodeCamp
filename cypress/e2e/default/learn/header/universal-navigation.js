@@ -43,7 +43,8 @@ describe('Default Navigation Menu', () => {
     testLink('News');
     testLink('Radio');
   });
-  it('should close Menu and focus on Menu button', () => {
+
+  it('should close the menu and focus on the Menu button when the Esc key is pressed while the navigation menu is expanded and an item in the menu is focused', () => {
     cy.get(selectors['navigation-list']).contains('Curriculum').focus();
     cy.focused().type('{esc}');
     cy.get(selectors['navigation-list']).should('not.be.visible');
@@ -53,7 +54,7 @@ describe('Default Navigation Menu', () => {
 
 describe('Language menu', () => {
   it('should render all used languages.', () => {
-    cy.focused().click();
+    cy.get(selectors['toggle-button']).should('be.visible').click();
     cy.get(selectors['navigation-list']).contains('Change Language').click();
     testAllLanguages();
     cy.get(selectors['language-menu'])
@@ -73,7 +74,7 @@ describe('Language menu', () => {
   });
 });
 
-describe('Language Menu with keyboard', () => {
+describe('Language menu keyboard accessibility', () => {
   before(() => {
     cy.get(selectors['exit-lang-menu']).click();
     cy.get(selectors['navigation-list']).contains('Change Language').blur();
@@ -82,46 +83,53 @@ describe('Language Menu with keyboard', () => {
   const langMenuOptionSelector =
     selectors['language-menu'] + ' ' + selectors['lang-menu-option'];
 
-  it('should open Language Menu with ENTER key', () => {
+  it('should open the language menu with the ENTER key', () => {
     cy.get(selectors['navigation-list'])
       .contains('Change Language')
       .type('{enter}');
     cy.get(selectors['language-menu']).should('be.visible');
   });
-  it('should open Language Menu with UP arrow key', () => {
+
+  it('should open the language menu with the Up arrow key and place focus on the last item in the menu', () => {
     cy.get(selectors['exit-lang-menu']).click();
     cy.focused().type('{upArrow}');
     cy.get(selectors['language-menu']).should('be.visible');
     cy.get(langMenuOptionSelector).last().should('be.focused');
   });
-  it('should open Language Menu with DOWN arrow key', () => {
+
+  it('should open the language menu with the Down arrow key and place focus on the first item in the menu', () => {
     cy.get(selectors['exit-lang-menu']).click();
     cy.focused().type('{downArrow}');
     cy.get(selectors['language-menu']).should('be.visible');
     cy.get(langMenuOptionSelector).first().should('be.focused');
   });
-  it('should navigate through language options with UP and DOWN keys', () => {
+
+  it('should be possible to move keyboard focus with the Up and Down arrow keys when the language menu is open', () => {
     navigateLanguagesWithKey('downArrow');
     navigateLanguagesWithKey('upArrow');
   });
-  it('should move to last language option', () => {
+
+  it('should move focus to the last menu item when the first menu item is focused and the Up arrow key is pressed', () => {
     cy.get(langMenuOptionSelector).first().focus();
     cy.focused().type('{upArrow}');
     cy.get(langMenuOptionSelector).last().should('be.focused');
   });
-  it('should move to first language option', () => {
+
+  it('should move focus to the first menu item when the last menu item is focused and the Down arrow key is pressed', () => {
     cy.get(langMenuOptionSelector).last().focus();
     cy.focused().type('{downArrow}');
     cy.get(langMenuOptionSelector).first().should('be.focused');
   });
-  it('should close language options and focus on Change Language option', () => {
+
+  it('should close the language menu and focus on the Change Language button when focus is on a language menu item and the Esc key is pressed', () => {
     cy.focused().type('{esc}');
     cy.get(selectors['language-menu']).should('not.be.visible');
     cy.get(selectors['navigation-list'])
       .contains('Change Language')
       .should('be.focused');
   });
-  it('should close language options with SHIFT+TAB', () => {
+
+  it('should close the language options menu and put focus on the item above the Choose Language button when focus is on a language menu item and the Shift + Tab keys are pressed', () => {
     cy.focused().click();
     // cy.tab() doesn't accept tabindex="-1" elements as focusable
     // https://github.com/kuceb/cypress-plugin-tab/issues/18
@@ -138,7 +146,7 @@ describe('Language Menu with keyboard', () => {
   // cy.tab() doesn't accept tabindex="-1" elements as focusable
   // https://github.com/kuceb/cypress-plugin-tab/issues/18
   // Also, doing .tab() from element other than language option doesn't yield the expected result
-  it.skip('should close language options with TAB and focus on next tabbale element', () => {
+  it.skip('should focus on the next tabbable element when focus is on a language menu item and the Tab key is pressed', () => {
     cy.get(selectors['navigation-list']).contains('Change Language').click();
     cy.focused().tab();
     cy.get(selectors['language-menu']).should('not.be.visible');
