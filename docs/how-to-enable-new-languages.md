@@ -288,9 +288,13 @@ Once these are in place, you should be able to run `npm run develop` to view you
 
 News sources trending links and article titles from the [CDN repo](https://github.com/freeCodeCamp/cdn) during the build and adds them to the footer.
 
+Clone the CDN repo and create a new branch.
+
 In the [`build/universal/trending`](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) directory, create a new file and name it `language.yaml`. For example, if you are launching Dothraki News, name the file `dothraki.yaml`.
 
-Then copy the contents of the `english.yaml` trending file and paste it into the new YAML file you just created. The contents will look something like this:
+Then copy the contents of the [`english.yaml`](https://github.com/freeCodeCamp/cdn/blob/main/build/universal/trending/english.yaml) trending file and paste it into the new YAML file you just created.
+
+The contents will look something like this:
 
 ```yaml
 article0title: 'Learn JavaScript'
@@ -299,18 +303,22 @@ article1title: 'Linux ln Example'
 article1link: 'https://www.freecodecamp.org/news/linux-ln-how-to-create-a-symbolic-link-in-linux-example-bash-command'
 article2title: 'JS document.ready()'
 article2link: 'https://www.freecodecamp.org/news/javascript-document-ready-jquery-example/'
- ...
+article3title: ...
+article3link: ...
+  ...
 ```
 
-Open a PR with these changes and tag `@freeCodeCamp/dev-team` for review.
+Open a PR to the CDN repo with these changes and tag `@freeCodeCamp/dev-team` for review.
 
 ## Prep the News Repo for the New Language
 
 ### Modify the Main Config File
 
-Open `config/index.js` file and add the new language as a lowercase string to the `locales` array.
+The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost instance, builds the site, and deploys it.
 
-Visit the `config/index.js` file to add the new language and configure the necessary values. There are a few objects and arrays to modify:
+Clone the News repo and create a new branch.
+
+Open the `config/index.js` file to add the new language and configure the necessary values. There are a few objects and arrays to modify:
 
 - `locales`: This array contains the active and upcoming News languages. These are the values that are used in the `.env` file to choose the Ghost instance and UI to use for each build. Add the text name of the new language in lowercase to this array.
 - `localeCodes`: This object is a map of ISO codes for each language, and is used to configure i18next before building the UI. To add a new language, use the lowercase language name as the _key_ and the ISO 639-1 language code as the _value_.
@@ -342,7 +350,7 @@ const algoliaIndices = {
 ```
 
 > [!NOTE]
-> Dothraki does not actually have an ISO 639-1 code, so `do` is just used as an example.
+> Note that the values above are in alphabetic order. Also, Dothraki does not actually have an ISO 639-1 code, so `do` is just used as an example.
 
 ### Add the i18next JSON Files for the New Language
 
