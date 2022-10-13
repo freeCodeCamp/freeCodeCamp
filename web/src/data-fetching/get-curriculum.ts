@@ -40,6 +40,7 @@ export interface Challenge {
   id: string;
   dashedName: string;
   description: string;
+  challangePoints: number;
   challengeFiles: { contents: string; ext: string }[];
 }
 
