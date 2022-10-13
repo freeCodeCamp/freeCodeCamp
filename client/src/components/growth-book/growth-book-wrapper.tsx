@@ -1,38 +1,24 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
 import React, { ReactNode, useEffect } from 'react';
 import sha1 from 'sha-1';
-import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
-
+import {
+  FeatureDefinition,
+  GrowthBook,
+  GrowthBookProvider
+} from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
-
 import { createSelector } from 'reselect';
-
 import { isSignedInSelector, userSelector } from '../../redux/selectors';
-
 import envData from '../../../../config/env.json';
 import { User } from '../../redux/prop-types';
 
-const {
-  clientLocale,
-  growthbookUri
-}: {
-  clientLocale: string;
-  growthbookUri: string;
-} = envData as {
-  clientLocale: string;
-  growthbookUri: string;
-};
+const { clientLocale, growthbookUri } = envData;
 
 const growthbook = new GrowthBook();
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
   userSelector,
-  (isSignedIn, user) => ({
+  (isSignedIn, user: User) => ({
     isSignedIn,
     user
   })
@@ -45,21 +31,22 @@ interface GrowthBookWrapper extends StateProps {
   isSignedIn: boolean;
 }
 
+void (async () => {
+  const res = await fetch(growthbookUri);
+  const data = (await res.json()) as {
+    features: Record<string, FeatureDefinition>;
+  };
+  growthbook.setFeatures(data.features);
+})();
+
 const GrowthBookWrapper = ({
   children,
   isSignedIn,
   user
 }: GrowthBookWrapper) => {
-  void fetch(growthbookUri)
-    .then(res => res.json())
-    .then(json => {
-      growthbook.setFeatures(json.features);
-    });
-
   useEffect(() => {
     if (isSignedIn) {
       const { joinDate, completedChallenges } = user;
-
       growthbook.setAttributes({
         id: sha1(user.email),
         staff: true,
