@@ -2,7 +2,7 @@ import React from 'react';
 import { Alert } from '@freecodecamp/react-bootstrap';
 import { useFeature } from '@growthbook/growthbook-react';
 
-const ResearchBannerx = (): JSX.Element | '' => {
+const ResearchBannerx = (): JSX.Element | null => {
   const feature = useFeature('show-research-recruitment-alert');
   return feature.on ? (
     <Alert>
@@ -22,9 +22,7 @@ const ResearchBannerx = (): JSX.Element | '' => {
         .
       </p>
     </Alert>
-  ) : (
-    ''
-  );
+  ) : null;
 };
 
 ResearchBannerx.displayName = 'ResearchBannerx';
