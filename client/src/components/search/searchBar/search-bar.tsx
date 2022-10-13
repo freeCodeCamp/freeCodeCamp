@@ -53,7 +53,7 @@ type SearchBarState = {
   hits: Array<Hit>;
 };
 
-export class SearchBar extends Component<SearchBarProps, SearchBarState> {
+class SearchBar extends Component<SearchBarProps, SearchBarState> {
   static displayName: string;
   constructor(props: SearchBarProps) {
     super(props);

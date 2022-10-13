@@ -31,7 +31,6 @@ export const updateChallengeMeta = createAction(
 export const updateFile = createAction(actionTypes.updateFile);
 export const updateConsole = createAction(actionTypes.updateConsole);
 export const updateLogs = createAction(actionTypes.updateLogs);
-export const updateJSEnabled = createAction(actionTypes.updateJSEnabled);
 export const updateSolutionFormValues = createAction(
   actionTypes.updateSolutionFormValues
 );
@@ -41,7 +40,6 @@ export const updateSuccessMessage = createAction(
 
 export const logsToConsole = createAction(actionTypes.logsToConsole);
 
-export const lockCode = createAction(actionTypes.lockCode);
 export const unlockCode = createAction(actionTypes.unlockCode);
 export const disableBuildOnError = createAction(
   actionTypes.disableBuildOnError
@@ -66,7 +64,6 @@ export const removePortalDocument = createAction(
 );
 
 export const challengeMounted = createAction(actionTypes.challengeMounted);
-export const checkChallenge = createAction(actionTypes.checkChallenge);
 export const executeChallenge = createAction(actionTypes.executeChallenge);
 export const resetChallenge = createAction(actionTypes.resetChallenge);
 export const stopResetting = createAction(actionTypes.stopResetting);

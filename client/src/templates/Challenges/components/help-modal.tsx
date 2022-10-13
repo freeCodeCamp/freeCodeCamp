@@ -44,7 +44,7 @@ const generateSearchLink = (title: string, block: string) => {
   return search;
 };
 
-export function HelpModal({
+function HelpModal({
   closeHelpModal,
   createQuestion,
   executeGA,

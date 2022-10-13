@@ -4,7 +4,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from '../../redux/createStore';
 
-import { CertificationSettings } from './certification';
+import CertificationSettings from './certification';
 
 jest.mock('../../analytics');
 

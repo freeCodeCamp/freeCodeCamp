@@ -23,13 +23,11 @@ const types = createTypes(
 
 export const toggleSearchDropdown = createAction(types.toggleSearchDropdown);
 export const toggleSearchFocused = createAction(types.toggleSearchFocused);
-export const updateSearchIndexName = createAction(types.updateSearchIndexName);
 export const updateSearchQuery = createAction(types.updateSearchQuery);
 
 export const isSearchDropdownEnabledSelector = state =>
   state[ns].isSearchDropdownEnabled;
 export const isSearchBarFocusedSelector = state => state[ns].isSearchBarFocused;
-export const searchIndexNameSelector = state => state[ns].indexName;
 export const searchQuerySelector = state => state[ns].query;
 
 export const reducer = handleActions(

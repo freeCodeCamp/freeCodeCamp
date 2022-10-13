@@ -153,7 +153,7 @@ const initialState = {
   }
 };
 
-export class CertificationSettings extends Component {
+class CertificationSettings extends Component {
   constructor(props) {
     super(props);
 

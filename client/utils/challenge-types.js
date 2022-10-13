@@ -60,12 +60,6 @@ exports.isCodeAllyPractice = challengeType => {
   return challengeType === codeAllyPractice;
 };
 
-// turn challengeType to file ext
-exports.pathsMap = {
-  [html]: 'html',
-  [js]: 'js',
-  [jsProject]: 'js'
-};
 // determine the component view for each challenge
 exports.viewTypes = {
   [html]: 'classic',

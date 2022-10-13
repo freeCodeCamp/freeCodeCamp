@@ -105,7 +105,3 @@ export const deleteUserTokenComplete = createAction(
 export const hideCodeAlly = createAction(actionTypes.hideCodeAlly);
 export const showCodeAlly = createAction(actionTypes.showCodeAlly);
 export const tryToShowCodeAlly = createAction(actionTypes.tryToShowCodeAlly);
-
-export const updateCurrentChallengeId = createAction(
-  actionTypes.updateCurrentChallengeId
-);

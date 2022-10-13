@@ -35,30 +35,16 @@ export interface FlashState {
   message: { id: string } & FlashMessageArg;
 }
 
-export interface DefaultFetchState {
+interface DefaultFetchState {
   pending: boolean;
   complete: boolean;
   errored: boolean;
   error: null | string;
 }
 
-export interface DefaultDonationFormState {
+interface DefaultDonationFormState {
   redirecting: boolean;
   processing: boolean;
   success: boolean;
   error: null | string;
 }
-
-export const defaultFetchState = {
-  pending: true,
-  complete: false,
-  errored: false,
-  error: null
-};
-
-export const defaultDonationFormState = {
-  redirecting: false,
-  processing: false,
-  success: false,
-  error: ''
-};

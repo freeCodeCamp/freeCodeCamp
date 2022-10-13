@@ -42,7 +42,7 @@ interface NavlinkStates {
   arg: Record<string, unknown>;
 }
 
-export interface NavLinksProps {
+interface NavLinksProps {
   displayMenu: boolean;
   isLanguageMenuDisplayed: boolean;
   fetchState: { pending: boolean };
@@ -66,7 +66,7 @@ const mapDispatchToProps = {
   toggleNightMode: (theme: Themes) => updateMyTheme({ theme })
 };
 
-export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
+class NavLinks extends Component<NavLinksProps, NavlinkStates> {
   static displayName: string;
   langButtonRef: React.RefObject<HTMLButtonElement>;
   firstLangOptionRef: React.RefObject<HTMLButtonElement>;

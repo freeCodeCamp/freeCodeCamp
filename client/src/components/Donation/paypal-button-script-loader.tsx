@@ -66,7 +66,7 @@ declare global {
   }
 }
 
-export class PayPalButtonScriptLoader extends Component<
+class PayPalButtonScriptLoader extends Component<
   PayPalButtonScriptLoaderProps,
   PayPalButtonScriptLoaderState
 > {

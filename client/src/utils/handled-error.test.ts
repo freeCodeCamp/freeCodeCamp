@@ -2,7 +2,6 @@ import { isObject } from 'lodash-es';
 
 import {
   isHandledError,
-  wrapHandledError,
   unwrapHandledError,
   handledErrorSymbol
 } from './handled-error';
@@ -30,25 +29,6 @@ describe('client/src utilities', () => {
         handledError[handledErrorSymbol] = {};
 
         expect(isHandledError(handledError)).toEqual(true);
-      });
-    });
-
-    describe('wrapHandledError', () => {
-      // this is testing implementation details 👎
-      // we need to make these tests more robust 💪
-      it('returns an error with a handledError property', () => {
-        const handledError = wrapHandledError(
-          new Error() as HandledError,
-          mockHandledErrorData
-        );
-        expect(handledErrorSymbol in handledError).toEqual(true);
-      });
-      it('assigns error handling details to the handledError property', () => {
-        const handledError = wrapHandledError(
-          new Error() as HandledError,
-          mockHandledErrorData
-        );
-        expect(handledError[handledErrorSymbol]).toEqual(mockHandledErrorData);
       });
     });
 

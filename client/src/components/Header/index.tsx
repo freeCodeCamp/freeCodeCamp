@@ -9,11 +9,11 @@ import UniversalNav from './components/universal-nav';
 
 import './header.css';
 
-export interface HeaderProps {
+interface HeaderProps {
   fetchState: { pending: boolean };
   user: Record<string, any>;
 }
-export class Header extends React.Component<
+class Header extends React.Component<
   HeaderProps,
   { displayMenu: boolean; isLanguageMenuDisplayed: boolean }
 > {

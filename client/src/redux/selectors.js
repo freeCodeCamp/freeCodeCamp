@@ -215,5 +215,3 @@ export const userSelector = state => {
 
   return state[MainApp].user[username] || {};
 };
-
-export const sessionMetaSelector = state => state[MainApp].sessionMeta;

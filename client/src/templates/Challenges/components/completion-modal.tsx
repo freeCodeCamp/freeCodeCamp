@@ -118,7 +118,7 @@ interface CompletionModalInnerState {
   completedPercent: number;
 }
 
-export class CompletionModalInner extends Component<
+class CompletionModalInner extends Component<
   CompletionModalsProps,
   CompletionModalInnerState
 > {

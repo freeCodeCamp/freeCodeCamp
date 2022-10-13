@@ -31,6 +31,3 @@ export const isLocationSuperBlock = (
 ): boolean => {
   return /^\/learn\/[\w-]+\/$/.test(location?.pathname ?? '');
 };
-
-const pathParsers = { isLanding, isChallenge };
-export default pathParsers;

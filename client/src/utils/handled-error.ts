@@ -21,15 +21,3 @@ export function unwrapHandledError(
 ): ErrorData | Record<string, never> {
   return handledErrorSymbol in err ? err[handledErrorSymbol] : {};
 }
-
-export function wrapHandledError(
-  err: Error,
-  { type, message, redirectTo }: ErrorData
-): HandledError {
-  (err as HandledError)[handledErrorSymbol] = {
-    type,
-    message,
-    redirectTo
-  };
-  return err as HandledError;
-}

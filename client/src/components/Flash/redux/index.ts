@@ -10,8 +10,6 @@ import { playTone } from '../../../utils/tone';
 import { Themes } from '../../settings/theme';
 import { FlashMessages } from './flash-messages';
 
-export const sagas = [];
-
 export const flashMessageSelector = (state: State): FlashState['message'] =>
   state[FlashApp].message;
 

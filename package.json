@@ -105,7 +105,9 @@
   },
   "dependencies": {
     "dotenv": "10.0.0",
-    "invariant": "2.2.4"
+    "gatsby-link": "^4.24.1",
+    "invariant": "2.2.4",
+    "react-instantsearch-core": "^6.36.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",

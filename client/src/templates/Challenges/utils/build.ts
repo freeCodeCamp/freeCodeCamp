@@ -185,7 +185,7 @@ async function getDOMTestRunner(
     runTestInTestFrame(document, testString, testTimeout);
 }
 
-export function buildDOMChallenge(
+function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
   { usesTestRunner } = { usesTestRunner: false }
 ) {
@@ -222,7 +222,7 @@ export function buildDOMChallenge(
   }
 }
 
-export function buildJSChallenge(
+function buildJSChallenge(
   { challengeFiles }: { challengeFiles: ChallengeFiles },
   options: BuildOptions
 ) {
@@ -250,7 +250,7 @@ export function buildJSChallenge(
   }
 }
 
-export function buildBackendChallenge({ url }: BuildChallengeData) {
+function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
     build: concatHtml({ required: frameRunner }),

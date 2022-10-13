@@ -60,4 +60,3 @@ const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
 };
 
 SearchBarOptimized.displayName = 'SearchBarOptimized';
-export default SearchBarOptimized;

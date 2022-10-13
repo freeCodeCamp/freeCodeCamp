@@ -60,7 +60,7 @@ interface BlockProps {
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
-export class Block extends Component<BlockProps> {
+class Block extends Component<BlockProps> {
   static displayName: string;
   constructor(props: BlockProps) {
     super(props);
