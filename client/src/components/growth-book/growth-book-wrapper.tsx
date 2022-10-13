@@ -14,18 +14,17 @@ import { createSelector } from 'reselect';
 import { isSignedInSelector, userSelector } from '../../redux/selectors';
 
 import envData from '../../../../config/env.json';
-import {
-  prodGrowthbookKey,
-  devGrowthbookKey
-} from '../../../../config/growthbook-settings';
 import { User } from '../../redux/prop-types';
 
 const {
-  deploymentEnv,
-  clientLocale
-}: { deploymentEnv: 'staging' | 'live'; clientLocale: string } = envData as {
-  deploymentEnv: 'staging' | 'live';
+  clientLocale,
+  growthbookUri
+}: {
   clientLocale: string;
+  growthbookUri: string;
+} = envData as {
+  clientLocale: string;
+  growthbookUri: string;
 };
 
 const growthbook = new GrowthBook();
@@ -51,19 +50,16 @@ const GrowthBookWrapper = ({
   isSignedIn,
   user
 }: GrowthBookWrapper) => {
+  void fetch(growthbookUri)
+    .then(res => res.json())
+    .then(json => {
+      growthbook.setFeatures(json.features);
+    });
+
   useEffect(() => {
     if (isSignedIn) {
       const { joinDate, completedChallenges } = user;
-      const growthBookKey =
-        deploymentEnv === 'staging' ? devGrowthbookKey : prodGrowthbookKey;
 
-      const apiEndPoint = `https://api.gb.freecodecamp.org/api/features/${growthBookKey}`;
-
-      void fetch(apiEndPoint)
-        .then(res => res.json())
-        .then(json => {
-          growthbook.setFeatures(json.features);
-        });
       growthbook.setAttributes({
         id: sha1(user.email),
         staff: true,
