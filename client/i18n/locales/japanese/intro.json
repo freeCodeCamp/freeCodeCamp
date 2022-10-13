@@ -342,7 +342,7 @@
     "title": "フロントエンド開発ライブラリ",
     "intro": [
       "今やあなたは HTML、CSS、そして JavaScript に精通しているので、業界内で最も一般的なフロントエンドライブラリのいくつかを学習することで技能を向上させましょう。",
-      "フロントエンド開発ライブラリ認定講座では、Bootstrap でサイトを素早く整える方法を学習します。Sassで CSS スタイルに論理を加え、そして拡張する方法についても学習します。",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "後ほど、ショッピングカートや他のアプリケーションを構築しながら、強力なシングルページアプリケーション (SPA) を React と Redux で作成する方法を学習します。"
     ],
     "note": "",

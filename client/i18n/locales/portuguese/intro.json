@@ -342,7 +342,7 @@
     "title": "Bibliotecas de desenvolvimento em front-end",
     "intro": [
       "Agora que você está familiarizado com HTML, CSS e JavaScript, melhore suas habilidades aprendendo algumas das bibliotecas front-end mais populares do setor.",
-      "Na certificação de bibliotecas de desenvolvimento em front-end, você aprenderá a estilizar seu site rapidamente com Bootstrap. Você também aprenderá a adicionar a lógica aos seus estilos CSS e a ampliá-los com Sass.",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "Mais tarde, você construirá um carrinho de compras e outras aplicações para aprender a criar Aplicativos de Página Única (Single Page Applications - SPA) poderosos com React e Redux."
     ],
     "note": "",
