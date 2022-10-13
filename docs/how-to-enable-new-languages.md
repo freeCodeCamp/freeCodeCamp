@@ -281,3 +281,93 @@ Once these are in place, you should be able to run `npm run develop` to view you
 
 > [!ATTENTION]
 > While you may perform translations locally for the purpose of testing, we remind everyone that translations should _not_ be submitted through GitHub and should only be done through Crowdin. Be sure to reset your local codebase after you are done testing.
+
+# Deploying New Languages on `/news`
+
+## Add a YAML File for Trending Articles
+
+News sources trending links and article titles from the [CDN repo](https://github.com/freeCodeCamp/cdn) during the build and adds them to the footer.
+
+In the [`build/universal/trending`](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) directory, create a new file and name it `language.yaml`. For example, if you are launching Dothraki News, name the file `dothraki.yaml`.
+
+Then copy the contents of the `english.yaml` trending file and paste it into the new YAML file you just created. The contents will look something like this:
+
+```yaml
+article0title: 'Learn JavaScript'
+article0link: 'https://www.freecodecamp.org/news/learn-javascript-free-js-courses-for-beginners/'
+article1title: 'Linux ln Example'
+article1link: 'https://www.freecodecamp.org/news/linux-ln-how-to-create-a-symbolic-link-in-linux-example-bash-command'
+article2title: 'JS document.ready()'
+article2link: 'https://www.freecodecamp.org/news/javascript-document-ready-jquery-example/'
+ ...
+```
+
+Open a PR with these changes and tag `@freeCodeCamp/dev-team` for review.
+
+## Prep the News Repo for the New Language
+
+### Modify the Main Config File
+
+Open `config/index.js` file and add the new language as a lowercase string to the `locales` array.
+
+Visit the `config/index.js` file to add the new language and configure the necessary values. There are a few objects and arrays to modify:
+
+- `locales`: This array contains the active and upcoming News languages. These are the values that are used in the `.env` file to choose the Ghost instance and UI to use for each build. Add the text name of the new language in lowercase to this array.
+- `localeCodes`: This object is a map of ISO codes for each language, and is used to configure i18next before building the UI. To add a new language, use the lowercase language name as the _key_ and the ISO 639-1 language code as the _value_.
+- `algoliaIndices`: This object is a map of Algolia indicies for each language. To add a new language, use the lowercase language name as the _key_, and `news-` followed by the lowercase ISO 639-1 language code as the _value_.
+
+> [!NOTE]
+> If you are unsure about the string to use while setting `algoliaIndicies, send a message to Kris (@scissorsneedfoodtoo), or someone else with access to Algolia, and ask them to check.
+
+For example, if you are launching Dothraki News, here are what the objects / arrays above should look like:
+
+```js
+const locales = ['arabic', 'bengali', 'chinese', 'english', 'dothraki'];
+
+const localeCodes = {
+  arabic: 'ar',
+  bengali: 'bn',
+  chinese: 'zh',
+  english: 'en',
+  dothraki: 'do'
+};
+
+const algoliaIndices = {
+  arabic: 'news-ar',
+  bengali: 'news-bn',
+  chinese: 'news-zh',
+  english: 'news',
+  dothraki: 'news-do'
+};
+```
+
+> [!NOTE]
+> Dothraki does not actually have an ISO 639-1 code, so `do` is just used as an example.
+
+### Add the i18next JSON Files for the New Language
+
+Next, go to the `config/i18n/locales` directory, create a new folder, and give it the name of the new language you're adding. For example, if you're launching Dothraki News, create a new folder named `dothraki`.
+
+Then go to the `english` directory, copy the `links.json` and `meta-tags.json` files, and paste them into your new folder.
+
+In your new folder, create a file called `serve.json` and add the following:
+
+```json
+{
+  "redirects": []
+}
+```
+
+> [!NOTE]
+> You do not need to create a `translation.json` file. This file will be downloaded from Crowdin before the new language launches.
+
+Then commit and push your branch directly to the News repo.
+
+For example, if you forked the News repo and your branch is named `feat/add-dothraki-localization-files`, use the command `git push --set-upstream upstream feat/add-dothraki-localization-files`.
+
+> [!NOTE]
+> You need to be on one of the teams with access to the News repo to push branches directly to News. Currently, only the dev, i18n, and staff teams are allowed to do this.
+
+Finally, open a PR and tag `@freeCodeCamp/dev-team` for review.
+
+Once both your PRs to the CDN and News repo are merged, staff will create a couple more PRs to enable the new language and launch the site.
