@@ -31,25 +31,24 @@ interface GrowthBookWrapper extends StateProps {
   isSignedIn: boolean;
 }
 
-void (async () => {
-  const res = await fetch(growthbookUri);
-  const data = (await res.json()) as {
-    features: Record<string, FeatureDefinition>;
-  };
-  growthbook.setFeatures(data.features);
-})();
-
 const GrowthBookWrapper = ({
   children,
   isSignedIn,
   user
 }: GrowthBookWrapper) => {
+  void (async () => {
+    const res = await fetch(growthbookUri);
+    const data = (await res.json()) as {
+      features: Record<string, FeatureDefinition>;
+    };
+    growthbook.setFeatures(data.features);
+  })();
   useEffect(() => {
     if (isSignedIn) {
       const { joinDate, completedChallenges } = user;
       growthbook.setAttributes({
         id: sha1(user.email),
-        staff: true,
+        staff: user.email.includes('@freecodecamp'),
         clientLocal: clientLocale,
         joinDateUnix: Date.parse(joinDate),
         completedChallengesLength: completedChallenges.length
