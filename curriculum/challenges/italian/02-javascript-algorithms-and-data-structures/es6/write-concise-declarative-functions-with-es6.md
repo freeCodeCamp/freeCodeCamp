@@ -8,7 +8,7 @@ dashedName: write-concise-declarative-functions-with-es6
 
 # --description--
 
-Quando si definiscono le funzioni all'interno degli oggetti in ES5, dobbiamo usare la parola chiave `function` come segue:
+Quando si definiscono le funzioni all'interno degli oggetti in ES5, occorre usare la parola chiave `function` come segue:
 
 ```js
 const person = {

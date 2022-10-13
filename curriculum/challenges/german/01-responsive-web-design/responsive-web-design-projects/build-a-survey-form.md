@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Deine `#email` sollte ein Nachfahre von `#survey-form` sein
+Deine `#email` sollte ein Nachfolger von `#survey-form` sein
 
 ```js
 const el = document.querySelector('#survey-form #email')
