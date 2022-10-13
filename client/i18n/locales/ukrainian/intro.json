@@ -342,7 +342,7 @@
     "title": "Бібліотеки Front End",
     "intro": [
       "Тепер, коли ви вже знайомі з HTML, CSS та JavaScript, піднімімо ваш рівень навичок, вивчаючи декілька найбільш популярних бібліотек верстки в галузі.",
-      "У курсі «Бібліотеки Front End» ви навчитеся швидко стилізувати свій сайт за допомогою Bootstrap. Також ви навчитеся покращувати свої стилі CSS та розширювати їх за допомогою Sass.",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "Згодом ви розробите кошик для покупок та інші застосунки, щоб навчитися створювати потужні односторінкові застосунки (SPAs) з React та Redux."
     ],
     "note": "",
