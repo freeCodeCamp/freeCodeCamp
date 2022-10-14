@@ -308,7 +308,7 @@ article3link: ...
   ...
 ```
 
-Open a PR to the CDN repo with these changes and tag `@freeCodeCamp/dev-team` for review.
+Open a PR to the CDN repo with these changes for review.
 
 ## Prep the News Repo for the New Language
 
