@@ -10,7 +10,7 @@ import {
 import envData from '../../../../config/env.json';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
 import { Themes } from '../settings/theme';
-import PayPalButtonScriptLoader from './paypal-button-script-loader';
+import { PayPalButtonScriptLoader } from './paypal-button-script-loader';
 
 type PaypalButtonProps = {
   addDonation: (data: AddDonationData) => void;
