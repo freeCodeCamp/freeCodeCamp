@@ -265,13 +265,9 @@ jobs:
           npm run build:curriculum
           npm run build:server
 
-      - name: Format Files
+      - name: Lint and Format Files
         run: |
-          npm run format
-
-      - name: Lint Files
-        run: |
-          npm run lint
+          npm run format:curriculum
 
       # We do not need to run tests because they are run after the PR is created.
 
