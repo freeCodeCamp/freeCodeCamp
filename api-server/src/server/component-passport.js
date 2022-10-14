@@ -118,6 +118,25 @@ export const createPassportCallbackAuthenticator =
           return next(err);
         }
 
+        const state = req && req.query && req.query.state;
+        // returnTo, origin and pathPrefix are audited by getReturnTo
+        let { returnTo, origin, pathPrefix } = getReturnTo(state, jwtSecret);
+        const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
+
+        const { error, error_description } = req.query;
+        if (error === 'access_denied') {
+          const blockedByLaw =
+            error_description === 'Access denied from your location';
+
+          // Do not show any error message, instead redirect to the blocked page, with details.
+          if (blockedByLaw) {
+            return res.redirectWithFlash(`${redirectBase}/blocked`);
+          }
+
+          req.flash('info', dedent`${error_description}.`);
+          return res.redirectWithFlash(`${redirectBase}/learn`);
+        }
+
         if (!user || !userInfo) {
           return res.redirect('/signin');
         }
@@ -139,11 +158,6 @@ we recommend using your email address: ${user.email} to sign in instead.
           setAccessTokenToResponse({ accessToken }, req, res);
           req.login(user);
         }
-
-        const state = req && req.query && req.query.state;
-        // returnTo, origin and pathPrefix are audited by getReturnTo
-        let { returnTo, origin, pathPrefix } = getReturnTo(state, jwtSecret);
-        const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
 
         // TODO: getReturnTo could return a success flag to show a flash message,
         // but currently it immediately gets overwritten by a second message. We

@@ -2,7 +2,7 @@
 
 Um pull request (PR) permite que você envie alterações do seu fork do GitHub para o repositório principal do freeCodeCamp.org. Depois de terminar de fazer alterações no código, você pode seguir essas diretrizes para abrir um PR.
 
-Esperamos que nossos colaboradores estejam cientes do processo específico deste projeto. Seguindo as orientações religiosamente, ganha-vos o respeito de outros mantenedores e poupa tempo a todos.
+Esperamos que nossos colaboradores estejam cientes do processo específico deste projeto. Seguindo as orientações religiosamente, você terá o respeito de outros mantenedores e poupará o tempo de todos.
 
 Alguns exemplos disso são:
 
