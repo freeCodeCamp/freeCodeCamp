@@ -42,7 +42,7 @@ interface NavlinkStates {
   arg: Record<string, unknown>;
 }
 
-export interface NavLinksProps {
+interface NavLinksProps {
   displayMenu: boolean;
   isLanguageMenuDisplayed: boolean;
   fetchState: { pending: boolean };
