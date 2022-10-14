@@ -170,3 +170,17 @@ textarea.inputarea {
     opacity: 1;
   }
 }
+
+.lower-jaw-icon-bar {
+  overflow: hidden;
+}
+
+.lower-jaw-btn-icon {
+  line-height: 0;
+  margin-right: 10px;
+  float: right;
+}
+
+.lower-jaw-btn-icon:first-child {
+  margin-right: 0;
+}
