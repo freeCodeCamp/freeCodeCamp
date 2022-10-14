@@ -36,13 +36,15 @@ const GrowthBookWrapper = ({
   isSignedIn,
   user
 }: GrowthBookWrapper) => {
-  void (async () => {
-    const res = await fetch(growthbookUri);
-    const data = (await res.json()) as {
-      features: Record<string, FeatureDefinition>;
-    };
-    growthbook.setFeatures(data.features);
-  })();
+  if (growthbookUri) {
+    void (async () => {
+      const res = await fetch(growthbookUri);
+      const data = (await res.json()) as {
+        features: Record<string, FeatureDefinition>;
+      };
+      growthbook.setFeatures(data.features);
+    })();
+  }
   useEffect(() => {
     if (isSignedIn) {
       const { joinDate, completedChallenges } = user;

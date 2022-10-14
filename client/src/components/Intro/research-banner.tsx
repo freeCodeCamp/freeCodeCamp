@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from '@freecodecamp/react-bootstrap';
+import { Alert, Button } from '@freecodecamp/react-bootstrap';
 import { useFeature } from '@growthbook/growthbook-react';
 
 const ResearchBannerx = (): JSX.Element | null => {
@@ -7,20 +7,20 @@ const ResearchBannerx = (): JSX.Element | null => {
   return feature.on ? (
     <Alert>
       <p>
-        freeCodeCamp is collaborating with Stanford and the University of
-        Pennsylvania to study how people learn to code and build positive
+        <b>Launching Oct 19</b>: freeCodeCamp is teaming up with researchers
+        from Stanford and UPenn to study how to help people build strong coding
         habits.{' '}
       </p>
-      <p style={{ marginBottom: 10, marginTop: 10 }}>
+      <p style={{ marginBottom: 20, marginTop: 14 }}>
         Would you like to get involved? You’ll get free coaching from experts.{' '}
       </p>
-      <p>
-        You can{' '}
-        <a href={'https://wharton.qualtrics.com/jfe/form/SV_57rJfXROkQDDU2y'}>
-          learn more about HabitLab’s first beta cohort here
-        </a>
-        .
-      </p>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button
+          href={'https://wharton.qualtrics.com/jfe/form/SV_57rJfXROkQDDU2y'}
+        >
+          Learn about HabitLab
+        </Button>
+      </div>
     </Alert>
   ) : null;
 };
