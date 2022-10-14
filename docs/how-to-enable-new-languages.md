@@ -355,7 +355,7 @@ const algoliaIndices = {
 
 Next, go to the `config/i18n/locales` directory, create a new folder, and give it the name of the new language you're adding. For example, if you're launching Dothraki News, create a new folder named `dothraki`.
 
-Then go to the `english` directory, copy the `links.json` and `meta-tags.json` files, and paste them into your new folder.
+Then go to the `english` directory, copy the JSON files, and paste them into your new folder.
 
 In your new folder, create a file called `serve.json` and add the following:
 
