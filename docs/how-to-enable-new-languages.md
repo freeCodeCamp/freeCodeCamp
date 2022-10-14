@@ -364,10 +364,6 @@ In your new folder, create a file called `serve.json` and add the following:
   "redirects": []
 }
 ```
-
-> [!NOTE]
-> You do not need to create a `translation.json` file. This file will be downloaded from Crowdin before the new language launches.
-
 Then commit and push your branch directly to the News repo.
 
 For example, if you forked the News repo and your branch is named `feat/add-dothraki-localization-files`, use the command `git push --set-upstream upstream feat/add-dothraki-localization-files`.
