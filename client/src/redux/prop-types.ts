@@ -119,7 +119,7 @@ export type MarkdownRemark = {
 
 type Question = { text: string; answers: string[]; solution: number };
 type Fields = { slug: string; blockName: string; tests: Test[] };
-export type Required = {
+type Required = {
   link: string;
   raw: boolean;
   src: string;
@@ -215,14 +215,6 @@ export type AllChallengeNode = {
   ];
 };
 
-export type AllMarkdownRemark = {
-  edges: [
-    {
-      node: MarkdownRemark;
-    }
-  ];
-};
-
 export type ResizeProps = {
   onStopResize: (arg0: HandlerProps) => void;
   onResize: () => void;
@@ -243,7 +235,7 @@ export type ChallengeTest = {
   testString: string;
 };
 
-export type CertTest = {
+type CertTest = {
   id: string;
   title: string;
 };
@@ -295,7 +287,7 @@ export type ProfileUI = {
   showTimeLine: boolean;
 };
 
-export type ClaimedCertifications = {
+type ClaimedCertifications = {
   is2018DataVisCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;
@@ -315,7 +307,7 @@ export type ClaimedCertifications = {
   isMachineLearningPyCertV7: boolean;
 };
 
-export type SavedChallenges = SavedChallenge[];
+type SavedChallenges = SavedChallenge[];
 
 export type SavedChallenge = {
   id: string;
@@ -367,7 +359,7 @@ export type Portfolio = {
   description?: string;
 };
 
-export type FileKeyChallenge = {
+type FileKeyChallenge = {
   contents: string;
   ext: Ext;
   head: string;

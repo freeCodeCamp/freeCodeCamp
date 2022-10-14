@@ -15,7 +15,7 @@ const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
   isSignedIn
 }));
 
-export interface LoginProps {
+interface LoginProps {
   block?: boolean;
   children?: ReactNode;
   'data-test-label'?: string;

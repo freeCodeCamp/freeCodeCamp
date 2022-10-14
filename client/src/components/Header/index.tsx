@@ -9,7 +9,7 @@ import UniversalNav from './components/universal-nav';
 
 import './header.css';
 
-export interface HeaderProps {
+interface HeaderProps {
   fetchState: { pending: boolean };
   user: Record<string, any>;
 }
