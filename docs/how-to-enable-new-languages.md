@@ -340,7 +340,7 @@ const localeCodes = {
   bengali: 'bn',
   chinese: 'zh',
   english: 'en',
-  dothraki: 'do'
+  dothraki: 'mis'
 };
 
 const algoliaIndices = {
@@ -348,12 +348,8 @@ const algoliaIndices = {
   bengali: 'news-bn',
   chinese: 'news-zh',
   english: 'news',
-  dothraki: 'news-do'
+  dothraki: 'news-mis'
 };
-```
-
-> [!NOTE]
-> Note that the values above are in alphabetic order. Also, Dothraki does not actually have an ISO 639-1 code, so `do` is just used as an example.
 
 ### Add the i18next JSON Files for the New Language
 
