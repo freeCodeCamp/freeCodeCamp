@@ -313,10 +313,7 @@ Open a PR to the CDN repo with these changes for review.
 ## Prep the News Repo for the New Language
 
 > [!WARN]
-> Pull requests to the news repo *must* come from the same repo. You should not work off of a fork for this step.
-
-> [!WARN]
-> Pull requests to the news repo *must* come from the same repo. You should not work off of a fork for this step.
+> Pull requests to the news repo _must_ come from the same repo. You should not work off of a fork for this step.
 
 ### Modify the Main Config File
 
@@ -353,6 +350,7 @@ const algoliaIndices = {
   english: 'news',
   dothraki: 'news-mis'
 };
+```
 
 ### Add the i18next JSON Files for the New Language
 
@@ -367,6 +365,7 @@ In your new folder, create a file called `serve.json` and add the following:
   "redirects": []
 }
 ```
+
 Then commit and push your branch directly to the News repo.
 
 For example, if you forked the News repo and your branch is named `feat/add-dothraki-localization-files`, use the command `git push --set-upstream upstream feat/add-dothraki-localization-files`.
