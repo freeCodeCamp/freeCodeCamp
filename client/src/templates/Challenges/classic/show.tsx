@@ -38,21 +38,23 @@ import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
 import {
   cancelTests,
-  challengeFilesSelector,
   challengeMounted,
-  challengeTestsSelector,
-  consoleOutputSelector,
   createFiles,
   executeChallenge,
   initConsole,
   initTests,
-  isChallengeCompletedSelector,
   previewMounted,
   updateChallengeMeta,
   openModal,
   setEditorFocusability
-} from '../redux';
-import { savedChallengesSelector } from '../../../redux';
+} from '../redux/actions';
+import {
+  challengeFilesSelector,
+  challengeTestsSelector,
+  consoleOutputSelector,
+  isChallengeCompletedSelector
+} from '../redux/selectors';
+import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -363,17 +365,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   renderInstructionsPanel({ showToolPanel }: { showToolPanel: boolean }) {
     const {
       block,
-      challengeType,
       description,
       forumTopicId,
       instructions,
-      superBlock,
       title,
       translationPending
     } = this.getChallenge();
 
-    const showBreadCrumbs =
-      challengeType !== challengeTypes.multifileCertProject;
     return (
       <SidePanel
         block={block}
@@ -386,10 +384,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         }
         challengeTitle={
           <ChallengeTitle
-            block={block}
             isCompleted={this.props.isChallengeCompleted}
-            showBreadCrumbs={showBreadCrumbs}
-            superBlock={superBlock}
             translationPending={translationPending}
           >
             {title}
@@ -532,7 +527,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
             <DesktopLayout
-              block={block}
               challengeFiles={challengeFiles}
               challengeType={challengeType}
               editor={this.renderEditor({
@@ -549,7 +543,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               notes={this.renderNotes(notes)}
               preview={this.renderPreview()}
               resizeProps={this.resizeProps}
-              superBlock={superBlock}
               testOutput={this.renderTestOutput()}
               windowTitle={windowTitle}
             />

@@ -1,5 +1,13 @@
-import { FlashApp, FlashMessageArg } from '../components/Flash/redux';
-import { MainApp } from '.';
+import { FlashMessages } from '../components/Flash/redux/flash-messages';
+import { ns as MainApp } from './action-types';
+
+export const FlashApp = 'flash';
+
+export type FlashMessageArg = {
+  type: string;
+  message: FlashMessages;
+  variables?: Record<string, unknown>;
+};
 
 export interface State {
   [FlashApp]: FlashState;
@@ -27,14 +35,14 @@ export interface FlashState {
   message: { id: string } & FlashMessageArg;
 }
 
-export interface DefaultFetchState {
+interface DefaultFetchState {
   pending: boolean;
   complete: boolean;
   errored: boolean;
   error: null | string;
 }
 
-export interface DefaultDonationFormState {
+interface DefaultDonationFormState {
   redirecting: boolean;
   processing: boolean;
   success: boolean;

@@ -20,11 +20,11 @@ dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
 
 # --instructions--
 
-在 package.json 文件的依賴項中，修改 moment 的`version`，讓它的主版本是 2，次版本號是 10，修訂號是 2。
+在 `package.json` 文件的依賴項部分，更改 `@freecodecamp/example` 的版本以匹配 MAJOR 版本爲 1、MINOR 版本爲 2 和 PATCH 版本爲 13
 
 # --hints--
 
-“dependencies”字段應該包含“moment”
+`"dependencies"` 應包括 `"@freecodecamp/example"`。
 
 ```js
 (getUserInput) =>
@@ -33,8 +33,8 @@ dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -43,7 +43,7 @@ dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
   );
 ```
 
-“moment”的版本號應該是“2.10.2”
+`"@freecodecamp/example"` 版本應爲 `"1.2.13"`。
 
 ```js
 (getUserInput) =>
@@ -51,9 +51,9 @@ dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
     (data) => {
       var packJson = JSON.parse(data);
       assert.equal(
-        packJson.dependencies.moment,
-        '2.10.2',
-        'Wrong version of "moment". It should be 2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        '1.2.13',
+        'Wrong version of "@freecodecamp/example". It should be 1.2.13'
       );
     },
     (xhr) => {

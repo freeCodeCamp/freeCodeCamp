@@ -14,6 +14,16 @@ The "Editor" level allows the user to access all Drafts and publish them. Select
 
 The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
+### How are the articles built
+
+We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
+
+[Ghost](https://ghost.org) acts as our content management platform, and [11ty](https://11ty.dev) builds the articles into static assets – plain HTML, JavaScript, and CSS. Only these static assets are deployed to our servers.
+
+This process is automated and runs periodically. If you publish something now, it will be available on the news site in a few hours.
+
+You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
+
 ## Як вказати автора перекладеної статті
 
 Автор та оригінал статті прив'язуються автоматично, коли цей код додано до Code Injection -> головна секція в налаштуваннях чернеток на ghost.
@@ -277,3 +287,17 @@ Then, each target language has two columns. If you translate to Dothraki, you wi
 > [!TIP] In programs like Microsoft Excel you can hide the columns of the other languages to free up screen real-estate and see the English columns and the target language columns near each other.
 
 After you have made the changes and saved the file, you will need to make a PR with the proposed changes. After the PR is accepted, you will need to run the GitHub Action workflow to update the Crowdin Glossary. Your glossary changes will not have immediate effects, but they will come.
+
+## How to Promote a Contributor to Proofreader
+
+If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
+
+In Crowdin, individuate the `User management` on the left hand side menu.
+
+This will open the user management tools, you will be able to see the list of all the users.
+
+Search for the user that will become contributor. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+
+The user is now a proofreader.
+
+> [!TIP] The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.

@@ -6,7 +6,7 @@ html {
 
 body {
   height: 100%;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Hack-ZeroSlash', monospace;
   color: var(--secondary-color);
   background: var(--secondary-background);
 }
@@ -62,21 +62,21 @@ h1 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Hack-ZeroSlash', monospace;
   margin: 0.6rem 0;
 }
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.25rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Hack-ZeroSlash', monospace;
   margin: 0.6rem 0;
 }
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.1rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Hack-ZeroSlash', monospace;
   margin: 0 0 0.6rem;
 }
 
@@ -89,7 +89,7 @@ th {
   color: var(--secondary-color);
   font-weight: 400;
   font-size: 1rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Hack-ZeroSlash', monospace;
   margin: 0 0 1.2rem;
 }
 
@@ -418,7 +418,7 @@ code {
   background-color: var(--quaternary-background);
   color: var(--tertiary-color);
   border-radius: 0;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Hack-ZeroSlash', monospace;
   overflow-wrap: anywhere;
 }
 

@@ -18,11 +18,11 @@ dashedName: use-the--env-file
 
 在項目根目錄創建一個 `.env` 文件，並存儲變量 `MESSAGE_STYLE=uppercase`。
 
-當向 `/json` 發 GET 請求時，如果 `process.env.MESSAGE_STYLE` 的值爲 `uppercase`，那麼上一次挑戰中的路由處理程序返回的對象的消息則應該大寫。 響應對象應該是 `{"message": "Hello json"}` or `{"message": "HELLO JSON"}`，取決於 `MESSAGE_STYLE` 的值。
+然後，在你在上個挑戰中創建的 `/json` GET 路由處理程序中訪問 `process.env.MESSAGE_STYLE`，並且如果變量等於 `uppercase`，將響應對象的 `message` 轉換爲大寫。 響應對象應該是 `{"message": "Hello json"}` or `{"message": "HELLO JSON"}`，取決於 `MESSAGE_STYLE` 的值。
 
 **注意：** 如果你正在使用 Replit，你無法創建一個 `.env` 文件。 相反，使用內置的 <dfn>SECRETS</dfn> 標籤添加變量。
 
-如果你在本地工作，你將需要 `dotenv` 包。 它將環境變量從你的 `.env` 文件加載到 `process.env` 中。 使用 `npm install dotenv` 安裝它。 然後，在 `myApp.js` 文件的頂部，使用 `require('dotenv').config()` 導入和加載變量。
+如果你在本地工作，你將需要 `dotenv` 包。 它將環境變量從你的 `.env` 文件加載到 `process.env` 中。 `dotenv` 包已經安裝，並且在你項目的 `package.json` 文件中。 在 `myApp.js` 文件的頂部，使用 `require('dotenv').config()` 導入並加載變量。
 
 # --hints--
 

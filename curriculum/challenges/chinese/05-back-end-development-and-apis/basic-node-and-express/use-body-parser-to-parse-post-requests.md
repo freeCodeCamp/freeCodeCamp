@@ -22,11 +22,11 @@ Content-Length: 20
 name=John+Doe&age=25
 ```
 
-正如你所看到的，正文被编码成类似查询字符串的形式， 这是 HTML 表单使用的默认格式。 我们还可以通过 Ajax 使用 JSON 来处理具有更复杂结构的数据。 还有另一种类型的编码：multipart/form-data， 它被用来上传二进制文件。 在本练习中，我们将使用 URL 编码请求正文。 要解析来自 POST 请求的数据，你必须安装 `body-parser` 包， 这个包包含一套可以解码不同格式数据的中间件。
+正如你所看到的，正文被编码成类似查询字符串的形式， 这是 HTML 表单使用的默认格式。 我们还可以通过 Ajax 使用 JSON 来处理具有更复杂结构的数据。 还有另一种类型的编码：multipart/form-data， 它被用来上传二进制文件。 在本练习中，你将使用 URL 编码的正文。 要解析来自 POST 请求的数据，你必须使用 `body-parser` 包。 这个包包含一套可以解码不同格式数据的中间件。
 
 # --instructions--
 
-在 `package.json` 中安装 `body-parser` 模块， 然后在文件顶部 `require` 进来， 用变量 `bodyParser` 保存它。 通过中间件的 `bodyParser.urlencoded({extended: false})` 方法处理 URL 编码数据， 将通过先前的方法调用返回的函数传递到 `app.use()`。 中间件通常挂载在所有需要它的路由之前。
+`body-parser` 已经安装并且在你项目的 `package.json` 文件中。 在 `myApp.js` 文件的顶部包含（`require`）它，并将其存储在名为 `bodyParser` 的变量中。 `bodyParser.urlencoded({extended: false})` 返回处理 URL 编码数据的中间件。 将上一个方法调用返回的函数传递给 `app.use()`。 像往常一样，中间件必须在所有依赖它的路由之前安装。
 
 **注意：** `extended` 是一个配置选项, 告诉 `body-parser` 需要使用哪个解析。 当 `extended=false` 时，它使用经典编码 `querystring` 库。 当 `extended=true`时，它使用 `qs` 库进行解析。
 

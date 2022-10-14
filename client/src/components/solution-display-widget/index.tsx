@@ -25,11 +25,9 @@ export function SolutionDisplayWidget({
 }: Props) {
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
-
-  const showOrViewText =
-    displayContext === 'settings'
-      ? t('buttons.show-solution')
-      : t('buttons.view');
+  const viewText = t('buttons.view');
+  const viewCode = t('buttons.view-code');
+  const viewProject = t('buttons.view-project');
 
   const ShowFilesSolutionForCertification = (
     <button
@@ -73,7 +71,7 @@ export function SolutionDisplayWidget({
       id={`btn-for-${id}`}
       onClick={showUserCode}
     >
-      {t('buttons.show-code')}
+      {viewText}
     </Button>
   );
   const ShowMultifileProjectSolution = (
@@ -86,10 +84,10 @@ export function SolutionDisplayWidget({
         title={t('buttons.view')}
       >
         <MenuItem bsStyle='primary' onClick={showUserCode}>
-          {t('buttons.show-code')}
+          {viewCode}
         </MenuItem>
         <MenuItem bsStyle='primary' onClick={showProjectPreview}>
-          {t('buttons.show-project')}
+          {viewProject}
         </MenuItem>
       </DropdownButton>
     </div>
@@ -102,7 +100,7 @@ export function SolutionDisplayWidget({
         bsStyle='primary'
         className='btn-invert'
         id={`dropdown-for-${id}`}
-        title={showOrViewText}
+        title={viewText}
       >
         <MenuItem
           bsStyle='primary'
@@ -133,7 +131,7 @@ export function SolutionDisplayWidget({
       rel='noopener noreferrer'
       target='_blank'
     >
-      {showOrViewText}
+      {viewText}
     </Button>
   );
   const MissingSolutionComponent =

@@ -16,12 +16,12 @@ import { createSelector } from 'reselect';
 import Login from '../components/Header/components/Login';
 
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
+import { reportUser } from '../redux/actions';
 import {
-  isSignedInSelector,
   userFetchStateSelector,
-  userSelector,
-  reportUser
-} from '../redux';
+  isSignedInSelector,
+  userSelector
+} from '../redux/selectors';
 import { UserFetchState } from '../redux/prop-types';
 
 interface ShowUserProps {

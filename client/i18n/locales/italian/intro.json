@@ -176,20 +176,20 @@
         "title": "Impara CSS Grid creando una rivista",
         "intro": [
           "La griglia CSS ti dà il controllo sulle righe e le colonne della tua pagina web.",
-          "In questo corso, creerai un articolo della rivista. Imparerai come usare la griglia CSS, inclusi concetti come le righe della griglia e le colonne della griglia."
+          "In questo corso, creerai un articolo di una rivista. Imparerai come usare la griglia CSS, inclusi concetti come le righe della griglia e le colonne della griglia."
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
         "title": "Impara la Tipografia costruendo un'etichetta nutrizionale",
         "intro": [
-          "La tipografia è l'arte di stilare il testo per essere facilmente leggibile e soddisfarne lo scopo.",
-          "In questo corso, userai la tipografia per creare una pagina web di etichette nutrizionali. Imparerai come disegnare il testo, regolare l'altezza della linea e posizionare il testo usando il CSS."
+          "La tipografia è l'arte modellare lo stile del testo in modo che sia facilmente leggibile e adatto al suo scopo.",
+          "In questo corso, userai la tipografia per creare una pagina web con un'etichetta nutrizionale. Imparerai come dare stile al testo, regolare l'altezza delle righe e posizionare il testo usando il CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
         "title": "Impara le trasformazioni CSS costruendo un pinguino",
         "intro": [
-          "Puoi trasformare gli elementi HTML per creare design piacevoli che attirano l'occhio del tuo lettore. Puoi usare trasformazioni per ruotare elementi, cambiargli dimensione, e altro.",
+          "Puoi trasformare gli elementi HTML per creare design piacevoli che attirano l'occhio del tuo lettore. Puoi usare le trasformazioni per ruotare elementi, cambiarne le dimensioni, e altro.",
           "In questo corso, costruirai un pinguino. Userai le trasformazioni CSS per posizionare e ridimensionare le parti del tuo pinguino, creare un background e animare il tuo lavoro."
         ]
       },
@@ -208,10 +208,10 @@
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
-        "title": "Impara i colori CSS creando un set di evidenziatori colorati",
+        "title": "Impara i colori CSS creando un set di pennarelli colorati",
         "intro": [
-          "Selezionare il colore corretto per la tua pagina web può migliorare grandemente l'attrazione estetica ai tuoi lettori.",
-          "In questo corso creerai un set di evidenziatori colorati. Imparerari metodi diversi per settare i valori dei colori e come accoppiare i colori assieme."
+          "Selezionare il colore corretto per la tua pagina web può renderla molto più gradevole per i tuoi lettori.",
+          "In questo corso creerai un set di pennarelli colorati. Imparerai metodi diversi per impostare i valori dei colori e come accoppiare i colori."
         ]
       }
     }
@@ -219,9 +219,9 @@
   "javascript-algorithms-and-data-structures": {
     "title": "Algoritmi e Strutture Dati in JavaScript",
     "intro": [
-      "Mentre HTML e CSS controllano il contenuto e lo stile della pagina, JavaScript viene utilizzato per renderla interattiva. Nella Certificazione Algoritmi e Strutture Dati in JavaScript, imparerai le basi di JavaScript, incluse variabili, array, oggetti, cicli e funzioni.",
-      "Una volta che avrai appreso le basi, applicherai questa conoscenza creando algoritmi per manipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
-      "Lungo il percorso, imparerai anche due importanti stili di programmazione o paradigmi: Programmazione Orientata agli Oggetti (Object Oriented Programming, OOP) e Programmazione Funzionale (Functional Programming, FP)."
+      "Mentre HTML e CSS controllano il contenuto e lo stile della pagina, JavaScript viene utilizzato per renderla interattiva. Nella Certificazione Algoritmi e Strutture Dati in JavaScript, imparerai le basi di JavaScript, tra cui variabili, array, oggetti, loop e funzioni.",
+      "Una volta che avrai appreso le basi, applicherai queste conoscenze creando algoritmi per manipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
+      "Lungo il percorso, imparerai anche due importanti stili di programmazione o paradigmi: la Programmazione Orientata agli Oggetti (Object Oriented Programming, OOP) e la Programmazione Funzionale (Functional Programming, FP)."
     ],
     "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e gli script-blocker, possono interferire con i test. In caso di problemi, ti raccomandiamo di disabilitare le estensioni che modificano o bloccano il contenuto delle pagine durante il corso.",
     "blocks": {
@@ -229,7 +229,7 @@
         "title": "JavaScript Base",
         "intro": [
           "JavaScript è un linguaggio si scripting che viene utilizzato per rendere interattive le pagine web. È una delle principali tecnologie del web, insieme ad HTML e CSS, ed è supportato da tutti i browser moderni.",
-          "In questo corso, imparerai i concetti di base della programmazione in JavaScript. Inizierai dalle strutture dati di base come numeri e stringhe. Poi imparerai a lavorare con array, oggetti, funzioni, cicli, istruzioni if/else, e molto altro."
+          "In questo corso, imparerai i concetti di base della programmazione in JavaScript. Inizierai dalle strutture dati di base come numeri e stringhe. Poi imparerai a lavorare con array, oggetti, funzioni, loop, istruzioni if/else e molto altro."
         ]
       },
       "es6": {
@@ -237,7 +237,7 @@
         "intro": [
           "ECMAScript o ES è una versione standardizzata di JavaScript. Dato che tutti i maggiori browser seguono queste specifiche, i termini ECMAScript e JavaScript sono intercambiabili.",
           "La maggior parte del JavaScript che hai appreso finora era in ES5 (ECMAScript 5), che fu definito nel 2009. Anche se puoi ancora scrivere programmi in ES5, JavaScript è in costante evoluzione, e vengono rilasciate ogni anno nuove funzionalità.",
-          "ES6, rilasciato nel 2015, ha aggiunto molte nuove potenti funzionalità al linguaggio. In questo corso conoscerai queste funzionalità, inclusi funzioni freccia, destrutturazione, classi, promise e moduli."
+          "ES6, rilasciato nel 2015, ha aggiunto molte nuove potenti funzionalità al linguaggio. In questo corso conoscerai queste funzionalità, tra cui funzioni freccia, destrutturazione, classi, promise e moduli."
         ]
       },
       "regular-expressions": {
@@ -259,7 +259,7 @@
         "title": "Strutture Dati Base",
         "intro": [
           "I dati possono essere memorizzati e letti in molti modi. Conosci già alcune strutture di dati JavaScript comuni — array e oggetti.",
-          "In questo corso Strutture Dati Base imparerai di più sulle differenze tra array e oggetti, e quali utilizzare in diverse situazioni. Imparerai anche come utilizzare utili metodi JS come <code>splice()</code> e <code>Object.keys()</code> per accedere e manipolare i dati."
+          "In questo corso Strutture Dati Base imparerai di più sulle differenze tra array e oggetti, e quali utilizzare in diverse situazioni. Imparerai anche come utilizzare utili metodi JS come <code>splice()</code> e <code>Object.keys()</code> per accedere a dei dati e manipolarli."
         ]
       },
       "basic-algorithm-scripting": {
@@ -274,14 +274,14 @@
         "title": "Programmazione Orientata agli Oggetti",
         "intro": [
           "La Programmazione Orientata agli Oggetti (OOP, o Object Oriented Programming), è uno dei principali approcci al processo di sviluppo del software. In OOP, gli oggetti e le classi sono utilizzati per organizzare il codice per descrivere le cose e cosa possono fare.",
-          "In questo corso, imparerai i principi di base di OOP in JavaScript includendo la parola chiave <code>this</code>, le catene di prototipi, i costruttori e l'ereditarietà."
+          "In questo corso, imparerai i principi di base di OOP in JavaScript, tra cui la parola chiave <code>this</code>, le catene di prototipi, i costruttori e l'ereditarietà."
         ]
       },
       "functional-programming": {
         "title": "Programmazione Funzionale",
         "intro": [
           "La programmazione funzionale è un altro approccio popolare allo sviluppo del software. Nella programmazione funzionale, il codice è organizzato in funzioni di base più piccole che possono essere combinate per costruire programmi complessi.",
-          "In questo corso, imparerai i concetti fondamentali della Programmazione Funzionale, comprese le funzioni pure, come evitare le mutazioni, e come scrivere codice più pulito con metodi come <code>.map()</code> and <code>.filter()</code>."
+          "In questo corso, imparerai i concetti fondamentali della Programmazione Funzionale, comprese le funzioni pure, come evitare le mutazioni, e come scrivere codice più pulito con metodi come <code>.map()</code> e <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
@@ -342,7 +342,7 @@
     "title": "Librerie di sviluppo Front End",
     "intro": [
       "Ora che hai familiarità con HTML, CSS, e JavaScript, aumenta le tue competenze conoscendo alcune delle più popolari librerie di front-end del settore.",
-      "Nella Certificazione Librerie di Sviluppo Front End imparerai come stilizzare rapidamente il tuo sito con Bootstrap. Imparerai anche come aggiungere la logica ai tuoi stili CSS e ad estenderli con Sass.",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "Più tardi, costruirai un carrello e altre applicazioni per imparare a creare potenti applicazioni a pagina singola (Single Page Application, SPA) con React e Redux."
     ],
     "note": "",

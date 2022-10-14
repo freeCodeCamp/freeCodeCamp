@@ -203,6 +203,8 @@ npm ci
 Antes de executar o aplicativo localmente, você precisará iniciar o serviço MongoDB.
 
 > [!NOTE] A menos que você tenha o MongoDB executando em uma configuração diferente da padrão, a URL armazenada como valor para `MONGOHQ_URL` no arquivo `.env` funcionará. Se você está usando uma configuração diferente, modifique este valor caso necessário.
+> 
+> Se você seguiu as instruções de [Windows 10 via WSL2 Setup Guide](how-to-setup-wsl.md), será capaz de pular este passo se o servidor do MongoDB daquele guia já estiver em execução. Você pode confirmar isso verificando se pode acessar `http://localhost:27017` em seu computador local.
 
 Inicie o servidor do MongoDB em um terminal separado:
 

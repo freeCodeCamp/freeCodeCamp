@@ -22,7 +22,7 @@ const SearchBarOptimized = Loadable(
 
 const MAX_MOBILE_WIDTH = 980;
 
-export interface UniversalNavProps {
+interface UniversalNavProps {
   displayMenu?: boolean;
   isLanguageMenuDisplayed?: boolean;
   fetchState?: { pending: boolean };

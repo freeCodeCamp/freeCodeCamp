@@ -8,7 +8,7 @@ dashedName: introducing-inline-styles
 
 # --description--
 
-還有其他複雜的概念可以爲 React 代碼增加強大的功能。 但是，你可能會想知道更簡單的問題，比如：如何對在 React 中創建的 JSX 元素添加樣式。 你可能知道，由於[將 class 應用於 JSX 元素的方式](/learn/front-end-development-libraries/react/define-an-html-class-in-jsx)與 HTML 中的使用並不完全相同。
+還有其他複雜的概念可以爲 React 代碼增加強大的功能。 但是，你可能會想知道更簡單的問題，比如：如何對在 React 中創建的 JSX 元素添加樣式。 你可能知道，鑑於<a href="/learn/front-end-development-libraries/react/define-an-html-class-in-jsx" target="_blank" rel="noopener noreferrer nofollow">將 class 應用於 JSX 元素的方式</a>，它與使用 HTML 並不完全相同。
 
 如果從樣式表導入樣式，它就沒有太大的不同。 使用 `className` 屬性將 class 應用於 JSX 元素，並將樣式應用於樣式表中的 class。 另一種選擇是使用內聯樣式，這在 ReactJS 開發中非常常見。
 

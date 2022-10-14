@@ -34,7 +34,7 @@ socket.on('user', data => {
 });
 ```
 
-完成上述要求后，你可以在下方提交你的页面链接。 如果你遇到了问题，可以参考 [这里](https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286) 的答案。
+完成上述要求后，你可以在下方提交你的页面链接。 如果你在运行时遇到错误，可以点击此处查看 <a href="https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286" target="_blank" rel="noopener noreferrer nofollow">已执行项目的当前进度</a>。
 
 # --hints--
 

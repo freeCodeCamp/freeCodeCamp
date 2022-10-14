@@ -14,6 +14,16 @@ Auf der Ebene "Editor" hat der Benutzer Zugriff auf alle Entwürfe und kann sie 
 
 Die Stufe "Administrator" ist für freeCodeCamp-Mitarbeiter und Language Leads reserviert.
 
+### Wie Artikel erstellt werden
+
+Wir verwenden einen [JAMStack](https://www.google.com/search?q=what+is+jamstack)-basierten Ansatz zur Erstellung und Bereitstellung der Artikel. Diese Strategie sorgt für eine schnelle statische Website, die von einem CDN zwischengespeichert und bereitgestellt wird.
+
+[Ghost](https://ghost.org) fungiert als unsere Content-Management-Plattform, und [11ty](https://11ty.dev) erstellt aus den Artikeln statische Inhalte - einfaches HTML, JavaScript und CSS. Nur diese statischen Inhalte werden auf unseren Servern bereitgestellt.
+
+Dieser Prozess ist automatisiert und läuft regelmäßig ab. Wenn du jetzt etwas veröffentlichst, wird es in ein paar Stunden auf der Nachrichtenseite verfügbar sein.
+
+Die aktuellen Zeitpläne und den Status kannst du hier einsehen: https://github.com/freeCodeCamp/news#build
+
 ## Wie man den Originalautor eines übersetzten Artikels erwähnt
 
 Der ursprüngliche Autor und der ursprüngliche Artikel werden automatisch verlinkt, indem dieser Code dem Abschnitt Code Injection -> head in den Entwurfs-Einstellungen auf Ghost hinzugefügt wird.
@@ -277,3 +287,17 @@ Dann hat jede Zielsprache zwei Spalten. Wenn du ins Dothrakische übersetzt, wir
 > [!TIP] In Programmen wie Microsoft Excel kannst du die Spalten der anderen Sprachen ausblenden, um Bildschirmfläche freizugeben und die englischen Spalten und die Spalten der Zielsprache nebeneinander zu sehen.
 
 Nachdem du die Änderungen vorgenommen und die Datei gespeichert hast, musst du einen PR mit den vorgeschlagenen Änderungen erstellen. Nachdem der PR angenommen wurde, musst du den GitHub Action-Workflow ausführen, um das Crowdin-Glossar zu aktualisieren. Deine Änderungen im Glossar werden sich nicht sofort auswirken, aber sie werden kommen.
+
+## Wie man einen Mitwirkenden zum Korrekturleser (Proofreader) befördert
+
+Wenn du der Meinung bist, dass ein Mitwirkender ein Crowdin-Korrekturleser werden könnte, kannst du ihm auf diese Weise die Rolle des Korrekturlesers übertragen:
+
+In Crowdin wählst du `User management` im Menü auf der linken Seite aus.
+
+Dadurch wird die Benutzerverwaltung geöffnet, in der du die Liste aller Benutzer sehen kannst.
+
+Suche nach dem Benutzer, der zum Mitwirkenden werden soll. Verwende das Menü mit den drei Punkten in der Benutzerzeile, um ein Menü zu öffnen und wähle "Add to team". Die Korrekturleserteams haben den Standardnamen `Proof Readers(<Sprache>)`, du kannst das Team über den Namen der Sprache suchen. Wenn du das Team ausgewählt hast, benutze den Button "ADD" unten auf der Seite, um den Vorgang abzuschließen.
+
+Der Benutzer ist jetzt ein Korrekturleser.
+
+> [!TIP] Der neu beförderte Korrekturleser könnte vom Lesen der [Korrekturlesen von Übersetzungen](how-to-proofread-files.md)-Dokumentation profitieren.

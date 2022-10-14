@@ -84,8 +84,10 @@ describe('<TimeLine />', () => {
     // @ts-expect-error
     render(<TimeLine {...propsForOnlySolution} />, store);
 
-    const button = screen.getByText('buttons.show-code');
-    expect(button).toBeInTheDocument();
+    const viewButtons = screen.getAllByRole('button', { name: 'buttons.view' });
+    viewButtons.forEach(button => {
+      expect(button).toBeInTheDocument();
+    });
   });
 });
 

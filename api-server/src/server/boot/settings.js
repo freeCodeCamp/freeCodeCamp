@@ -115,23 +115,14 @@ function updateMyEmail(req, res, next) {
 // }
 
 function updateMyPortfolio(...args) {
-  const portfolioKeys = [
-    'id',
-    'title',
-    'description',
-    'url',
-    'image',
-    'isSaved'
-  ];
+  const portfolioKeys = ['id', 'title', 'description', 'url', 'image'];
   const buildUpdate = body => {
     const portfolio = body?.portfolio?.map(elem => _.pick(elem, portfolioKeys));
     return { portfolio };
   };
   const validate = ({ portfolio }) => portfolio?.every(isPortfolioElement);
   const isPortfolioElement = elem =>
-    Object.values(elem).every(
-      val => typeof val == 'string' || typeof val === 'boolean'
-    );
+    Object.values(elem).every(val => typeof val == 'string');
   createUpdateUserProperties(buildUpdate, validate)(...args);
 }
 
