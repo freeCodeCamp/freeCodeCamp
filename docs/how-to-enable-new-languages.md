@@ -284,11 +284,15 @@ Once these are in place, you should be able to run `npm run develop` to view you
 
 # Deploying New Languages on `/news`
 
-## Add a YAML File for Trending Articles
+To deploy News for a new language, you'll need to create two PRs. One PR will be to the [CDN repo](https://github.com/freeCodeCamp/cdn), and the other will be to the [News repo](https://github.com/freeCodeCamp/news).
 
-News sources trending links and article titles from the [CDN repo](https://github.com/freeCodeCamp/cdn) during the build and adds them to the footer.
+## Prep the CDN Repo for the New Language
 
-Clone the CDN repo and create a new branch.
+News sources trending links and article titles from our CDN during the build and adds them to the footer. News also fetches dayjs files from the CDN during the build to localize dates and times for each language.
+
+### Add a YAML File for Trending Articles
+
+Clone the [CDN repo](https://github.com/freeCodeCamp/cdn) and create a new branch.
 
 In the [`build/universal/trending`](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) directory, create a new file and name it `language.yaml`. For example, if you are launching Dothraki News, name the file `dothraki.yaml`.
 
@@ -308,16 +312,46 @@ article3link: ...
   ...
 ```
 
-Open a PR to the CDN repo with these changes for review.
+### Add a dayjs file for the New Language
+
+In the [`build/news-assets/dayjs/1.10.4/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) directory, create a new file and name it `isocode.min.js`. For example, if you are launching Dothraki News, name the file `mis.min.js`.
+
+Then, visit [this cdnjs link](https://cdnjs.com/libraries/dayjs/1.10.4) with all available dayjs v1.10.4 files, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/locale/isocode.min.js` link for the new language, and open it in a new tab.
+
+Copy the dayjs code from the new tab into the new file you created. The code will look something like this:
+
+```js
+!(function (e, n) {
+  'object' == typeof exports && 'undefined' != typeof module
+    ? (module.exports = n())
+    : 'function' == typeof define && define.amd
+    ? define(n)
+    : (e.dayjs_locale_en = n());
+})(this, function () {
+  'use strict';
+  return {
+    name: 'en',
+    weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
+      '_'
+    ),
+    months:
+      'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+        '_'
+      )
+  };
+});
+```
+
+Then open a PR to the CDN repo to add both the YAML and dayjs files for review.
 
 ## Prep the News Repo for the New Language
+
+The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost instance, the files you added to the CDN, builds News, and deploys it.
 
 > [!WARN]
 > Pull requests to the news repo _must_ come from the same repo. You should not work off of a fork for this step.
 
 ### Modify the Main Config File
-
-The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost instance, builds the site, and deploys it.
 
 Clone the News repo and create a new branch.
 
