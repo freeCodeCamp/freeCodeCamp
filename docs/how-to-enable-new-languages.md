@@ -359,7 +359,7 @@ Open the `config/index.js` file to add the new language and configure the necess
 
 - `locales`: This array contains the active and upcoming News languages. These are the values that are used in the `.env` file to choose the Ghost instance and UI to use for each build. Add the text name of the new language in lowercase to this array.
 - `localeCodes`: This object is a map of ISO codes for each language, and is used to configure i18next before building the UI. To add a new language, use the lowercase language name as the _key_ and the ISO 639-1 language code as the _value_.
-- `algoliaIndices`: This object is a map of Algolia indicies for each language. To add a new language, use the lowercase language name as the _key_, and `news-` followed by the lowercase ISO 639-1 language code as the _value_.
+- `algoliaIndices`: This object is a map of Algolia indices for each language. To add a new language, use the lowercase language name as the _key_, and `news-` followed by the lowercase ISO 639-1 language code as the _value_.
 
 > [!NOTE]
 > If you are unsure about the string to use while setting `algoliaIndicies`, send a message to Kris (@scissorsneedfoodtoo), or someone else with access to Algolia, and ask them to check.
