@@ -5,7 +5,8 @@ const selectors = {
   testButton: '[data-cy=run-tests-button]',
   monacoTabs: '.monaco-editor-tabs',
   signInButton: '#action-buttons-container a[href$="/signin"]',
-  submitButton: '[data-cy=submit-button]'
+  submitButton: '[data-cy=submit-button]',
+  resetCodeButton: '[data-cy=reset-code-button]'
 };
 
 describe('Challenge with multifile editor', () => {
@@ -33,7 +34,7 @@ describe('Challenge with multifile editor', () => {
 
     cy.contains('Check Your Code').click();
     cy.get('[data-cy=failing-test-feedback]').should('be.visible');
-    cy.contains('Restart Step').click();
+    cy.get(selectors.resetCodeButton).click();
     cy.get('[data-cy=reset-modal-confirm').click();
 
     cy.get('[data-cy=failing-test-feedback]').should('not.exist');
