@@ -358,7 +358,7 @@ Next, go to the `config/i18n/locales` directory, create a new folder, and give i
 
 Then go to the `english` directory, copy the JSON files, and paste them into your new folder.
 
-In your new folder, create a file called `serve.json` and add the following:
+In your new folder, open the `serve.json` file and replace its contents with the following:
 
 ```json
 {
