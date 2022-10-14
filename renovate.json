@@ -1,33 +1,35 @@
 {
-  "extends": ["github>freecodecamp/renovate-config"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>renovatebot/.github"],
+  "assignees": ["rarkins", "viceice"],
+  "semanticCommitScope": "deps",
+  "automergeType": "pr",
+  "prCreation": "immediate",
+  "dockerfile": {
+    "semanticCommitType": "build"
+  },
   "packageRules": [
     {
-      "groupName": "Monaco Editor",
       "matchPackageNames": [
-        "monaco-editor",
-        "monaco-editor-webpack-plugin",
-        "react-monaco-editor"
+        "mcr.microsoft.com/vscode/devcontainers/typescript-node"
       ],
+      "extends": ["schedule:monthly"]
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "semanticCommitType": "build"
+    },
+    {
+      "matchPackageNames": ["semantic-release"],
+      "semanticCommitType": "build"
+    },
+    {
+      "matchPackageNames": ["@types/jest"],
+      "groupName": "jest monorepo"
+    },
+    {
+      "matchPaths": ["**/__fixtures__/**"],
       "enabled": false
-    },
-    {
-      "groupName": "Cypress",
-      "matchPackageNames": ["@testing-library/cypress", "cypress"],
-      "automerge": true
-    },
-    {
-      "matchPackageNames": ["normalize-url"],
-      "allowedVersions": "<5.0.0"
-    },
-    {
-      "groupName": "CodeSee",
-      "matchPackagePrefixes": ["@codesee/"],
-      "automerge": true
-    },
-    {
-      "groupName": "Stripe",
-      "matchPackagePrefixes": ["@stripe/"]
     }
-  ],
-  "ignorePaths": ["api-server"]
+  ]
 }
