@@ -312,6 +312,9 @@ Open a PR to the CDN repo with these changes and tag `@freeCodeCamp/dev-team` fo
 
 ## Prep the News Repo for the New Language
 
+> [!WARN]
+> Pull requests to the news repo *must* come from the same repo. You should not work off of a fork for this step.
+
 ### Modify the Main Config File
 
 The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost instance, builds the site, and deploys it.
