@@ -46,7 +46,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: zh-CN
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -82,7 +83,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: es-EM
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -111,7 +113,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: it
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -140,7 +143,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: pt-BR
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -169,7 +173,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: uk
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -198,7 +203,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: ja
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -227,7 +233,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: de
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
