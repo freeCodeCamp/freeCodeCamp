@@ -15,6 +15,10 @@ jobs:
   i18n-download-curriculum-translations:
     name: Curriculum
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [16.x]
+      fail-fast: true
 
     steps:
       - name: Checkout Source Files
@@ -238,6 +242,39 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
+      # Validate the Download #
+      # All languages should go ABOVE this. #
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@969bd2663942d722d85b6a8626225850c2f7be4b # tag=v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Set Environment variables
+        run: |
+          cp sample.env .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
+
+      - name: Build Source Files
+        run: |
+          echo npm version $(npm -v)
+          npm ci
+          npm run create:config
+          npm run build:curriculum
+          npm run build:server
+
+      - name: Format Files
+        run: |
+          npm run format
+
+      - name: Lint Files
+        run: |
+          npm run lint
+
+      # We do not need to run tests because they are run after the PR is created.
+
       # Create Commit
       - name: Commit Changes
         uses: freecodecamp/crowdin-action@main
@@ -248,9 +285,7 @@ jobs:
           GH_BRANCH: 'i18n-sync-curriculum'
           GH_MESSAGE: 'chore(i18n,learn): processed translations'
 
-      # Generate PR #
-      # All languages should go ABOVE this. #
-
+      # Create PR
       - name: Create PR
         uses: freecodecamp/crowdin-action@main
         env:
