@@ -316,9 +316,9 @@ article3link: ...
 
 In the [`build/news-assets/dayjs/1.10.4/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) directory, create a new file and name it `isocode.min.js`. For example, if you are launching Dothraki News, name the file `mis.min.js`.
 
-Then, visit [this cdnjs link](https://cdnjs.com/libraries/dayjs/1.10.4) with all available dayjs v1.10.4 files, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/locale/isocode.min.js` link for the new language, and open it in a new tab.
+Then, visit [this page on cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) with all available dayjs v1.10.4 files, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/locale/isocode.min.js` link for the new language, and open it in a new tab.
 
-Copy the dayjs code from the new tab into the new file you created. The code will look something like this:
+Copy the dayjs code from the new tab into the new file you created. The code will be similar to this, but minified:
 
 ```js
 !(function (e, n) {
@@ -362,7 +362,7 @@ Open the `config/index.js` file to add the new language and configure the necess
 - `algoliaIndices`: This object is a map of Algolia indicies for each language. To add a new language, use the lowercase language name as the _key_, and `news-` followed by the lowercase ISO 639-1 language code as the _value_.
 
 > [!NOTE]
-> If you are unsure about the string to use while setting `algoliaIndicies, send a message to Kris (@scissorsneedfoodtoo), or someone else with access to Algolia, and ask them to check.
+> If you are unsure about the string to use while setting `algoliaIndicies`, send a message to Kris (@scissorsneedfoodtoo), or someone else with access to Algolia, and ask them to check.
 
 For example, if you are launching Dothraki News, here are what the objects / arrays above should look like:
 
