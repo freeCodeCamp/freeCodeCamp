@@ -368,8 +368,6 @@ In your new folder, create a file called `serve.json` and add the following:
 
 Then commit and push your branch directly to the News repo.
 
-For example, if you forked the News repo and your branch is named `feat/add-dothraki-localization-files`, use the command `git push --set-upstream upstream feat/add-dothraki-localization-files`.
-
 > [!NOTE]
 > You need to be on one of the teams with access to the News repo to push branches directly to News. Currently, only the dev, i18n, and staff teams are allowed to do this.
 
