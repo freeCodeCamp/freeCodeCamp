@@ -17,22 +17,22 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
 
       - name: Checkout mobile
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
         with:
           repository: freeCodeCamp/mobile
           path: mobile
 
       - name: Use Node.js 16.x
-        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
           node-version: 16.x
           cache: 'npm'
 
       - name: Setup Flutter 3.0.x
-        uses: subosito/flutter-action@9d48f4efd5460d7013af812069d08b23f37aed20 # tag=v2
+        uses: subosito/flutter-action@dbf1fa04f4d2e52c33185153d06cdb5443aa189d # tag=v2
         with:
           flutter-version: '3.0.x'
           channel: 'stable'
