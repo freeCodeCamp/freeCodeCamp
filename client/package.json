@@ -36,9 +36,9 @@
     "@babel/plugin-proposal-export-default-from": "7.18.10",
     "@babel/plugin-proposal-function-bind": "7.18.9",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.19.3",
+    "@babel/preset-env": "7.19.4",
     "@babel/preset-react": "7.18.6",
-    "@babel/standalone": "7.19.3",
+    "@babel/standalone": "7.19.5",
     "@fortawesome/fontawesome-svg-core": "6.2.0",
     "@fortawesome/free-brands-svg-icons": "6.2.0",
     "@fortawesome/free-solid-svg-icons": "6.2.0",
@@ -129,7 +129,7 @@
     "validator": "13.7.0"
   },
   "devDependencies": {
-    "@babel/types": "7.19.3",
+    "@babel/types": "7.19.4",
     "@codesee/babel-plugin-instrument": "0.389.0",
     "@codesee/tracker": "0.389.0",
     "@testing-library/jest-dom": "5.16.5",
