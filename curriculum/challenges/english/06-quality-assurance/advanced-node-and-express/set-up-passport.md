@@ -8,13 +8,13 @@ dashedName: set-up-passport
 
 # --description--
 
-It's time to set up *Passport* so you can finally start allowing a user to register or login to an account! In addition to Passport, we will use Express-session to handle sessions. Express-session has a ton of advanced features you can use, but for now you are just going to use the basics! Using this middleware saves the session id as a cookie in the client, and allows us to access the session data using that id on the server. This way, you keep personal account information out of the cookie used by the client to tell to your server clients are authenticated and keep the *key* to access the data stored on the server.
+It's time to set up *Passport* so you can finally start allowing a user to register or login to an account! In addition to Passport, you will use Express-session to handle sessions. Express-session has a ton of advanced features you can use, but for now you are just going to use the basics! Using this middleware saves the session id as a cookie in the client, and allows us to access the session data using that id on the server. This way, you keep personal account information out of the cookie used by the client to tell to your server clients are authenticated and keep the *key* to access the data stored on the server.
 
 `passport@~0.4.1` and `express-session@~1.17.1` are already installed, and are both listed as dependencies in your `package.json` file.
 
-You will need to set up the session settings and initialize Passport. Be sure to first create the variables `session` and `passport` to require `express-session` and `passport` respectively.
+You will need to set up the session settings and initialize Passport. First, create the variables `session` and `passport` to require `express-session` and `passport` respectively.
 
-To set up your express app to use the session, define the following options.
+Then, set up your express app to use the session by defining the following options:
 
 ```javascript
 app.use(session({
@@ -27,7 +27,7 @@ app.use(session({
 
 Be sure to add `SESSION_SECRET` to your `.env` file, and give it a random value. This is used to compute the hash used to encrypt your cookie!
 
-Tell your express app to **use** `passport.initialize()` and `passport.session()`.
+After you do all that, tell your express app to **use** `passport.initialize()` and `passport.session()`.
 
 Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 

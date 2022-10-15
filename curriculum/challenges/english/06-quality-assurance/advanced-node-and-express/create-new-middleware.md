@@ -23,7 +23,7 @@ function ensureAuthenticated(req, res, next) {
 };
 ```
 
-Add `ensureAuthenticated` as a middleware to the request for the profile page before the argument to the get request containing the function that renders the page.
+Create the above middleware function, then pass `ensureAuthenticated` as middleware to requests for the profile page before the argument to the get request.
 
 ```javascript
 app

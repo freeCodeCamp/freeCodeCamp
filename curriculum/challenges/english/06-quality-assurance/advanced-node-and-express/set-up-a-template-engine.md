@@ -26,9 +26,9 @@ Express needs to know which template engine you are using. Use the `set` method 
 app.set('view engine', 'pug');
 ```
 
-Also, set the `views` property of your `app` to point to the `./views/pug` directory. This tells Express to render all views relative to that directory.
+After that, add another `set` method that sets the `views` property of your `app` to point to the `./views/pug` directory. This tells Express to render all views relative to that directory.
 
-To render the `pug` template, you need to use `res.render()`, passing `index` as the first arugument.
+Finally, use `res.render()` in the route for your home page, passing `index` as the first argument. This will render the `pug` template.
 
 If all went as planned, your app home page will no longer be blank. Instead, it will display a message indicating you've successfully rendered the Pug template!
 

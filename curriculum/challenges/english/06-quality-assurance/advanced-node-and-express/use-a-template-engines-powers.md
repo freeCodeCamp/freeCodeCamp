@@ -12,7 +12,7 @@ One of the greatest features of using a template engine is being able to pass va
 
 In your Pug file, you're able to use a variable by referencing the variable name as `#{variable_name}` inline with other text on an element or by using an equal sign on the element without a space such as `p=variable_name` which assigns the variable's value to the p element's text.
 
-Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site. Read the Pug documentation for more information on usage and syntax.
+Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site.
 
 Take the following Pug code for example: 
  
@@ -42,7 +42,7 @@ The above yields the following HTML:
 
 Your `index.pug` file included in your project, uses the variables `title` and `message`.
 
-To pass those along from your server, you need to add an object as a second argument to your `res.render` call with the variables and their values. For example, pass this object along, setting the variables for your index view: `{title: 'Hello', message: 'Please login'}`
+Pass those from your server to the pug file by adding an object as a second argument to your `res.render` call with the variables and their values. Give the `title` a value of `Hello` and `message` a value of `Please login`.
 
 It should look like:
 
