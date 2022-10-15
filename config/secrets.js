@@ -45,7 +45,7 @@ module.exports = {
   cookieSecret: COOKIE_SECRET,
   jwtSecret: JWT_SECRET,
   sessionSecret: SESSION_SECRET,
-
+//social platform working backend with Javascript
   auth0: {
     clientID: AUTH0_CLIENT_ID,
     clientSecret: AUTH0_CLIENT_SECRET,
