@@ -1,4 +1,7 @@
-name: CI - Cypress (e2e) 3rd party donation tests
+name: CI - E2E - 3rd party donation tests
+
+# These are only run on prod-* branches to test the 3rd party donation flow
+
 on:
   push:
     branches:
