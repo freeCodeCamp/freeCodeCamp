@@ -8,7 +8,7 @@ jobs:
   is-spam:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/github-script@7dff1a87643417cf3b95bb10b29f4c4bc60d8ebd # tag=v6
+      - uses: actions/github-script@d556feaca394842dc55e4734bf3bb9f685482fa0 # tag=v6
         with:
           github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
           script: |
