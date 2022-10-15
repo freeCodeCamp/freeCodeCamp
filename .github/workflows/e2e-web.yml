@@ -1,4 +1,4 @@
-name: CI - Cypress (e2e) tests
+name: CI - E2E - Web browser
 on:
   push:
     paths-ignore:

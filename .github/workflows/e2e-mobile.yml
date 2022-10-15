@@ -1,0 +1,73 @@
+name: CI - E2E - Mobile (webview) Browser
+on:
+  workflow_dispatch:
+  # push:
+  #   paths-ignore:
+  #     - 'docs/**'
+  #   branches-ignore:
+  #     - 'renovate/**'
+  # pull_request:
+  #   paths-ignore:
+  #     - 'docs/**'
+
+jobs:
+  mobile-test:
+    name: Test curriculum for mobile app
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+
+      - name: Checkout mobile
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        with:
+          repository: freeCodeCamp/mobile
+          path: mobile
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+
+      - name: Setup Flutter 3.0.x
+        uses: subosito/flutter-action@9d48f4efd5460d7013af812069d08b23f37aed20 # tag=v2
+        with:
+          flutter-version: '3.0.x'
+          channel: 'stable'
+          cache: true
+          cache-key: flutter-3.0.x
+          cache-path: ${{ runner.tool_cache }}/flutter
+
+      - name: Set freeCodeCamp Environment Variables
+        run: cp sample.env .env
+
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run create:config
+          npm run build:curriculum
+
+      - name: Generate mobile test files
+        run: |
+          cd mobile/mobile-app
+          echo "DEVELOPMENTMODE=true" > .env
+          echo "NEWSURL=https://www.freecodecamp.org/news/ghost/api/v3/content/" >> .env
+          flutter pub get
+          flutter test test/widget_test.dart
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
+          start: npx serve
+          wait-on: http://localhost:3000
+          wait-on-timeout: 1200
+          config: retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/mobile/mobile-app/generated-tests/
+          browser: chrome
+          headless: true
+          spec: cypress/integration/mobile-learn/test-challenges.js
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
