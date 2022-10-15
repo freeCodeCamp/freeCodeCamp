@@ -32,7 +32,7 @@ jobs:
           cache: 'npm'
 
       - name: Setup Flutter 3.0.x
-        uses: subosito/flutter-action@9d48f4efd5460d7013af812069d08b23f37aed20 # tag=v2
+        uses: subosito/flutter-action@dbf1fa04f4d2e52c33185153d06cdb5443aa189d # tag=v2
         with:
           flutter-version: '3.0.x'
           channel: 'stable'
