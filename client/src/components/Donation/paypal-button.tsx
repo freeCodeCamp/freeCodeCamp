@@ -1,5 +1,7 @@
 import React, { Component, Ref } from 'react';
 import { createSelector } from 'reselect';
+import {connect} from 'react-redux'
+import {withTranslation} from 'react-i18next'
 import {
   paypalConfigurator,
   paypalConfigTypes,
@@ -209,5 +211,17 @@ export class PaypalButton extends Component<
   }
 }
 
+const mapStateToProps = createSelector(
+  userSelector,
+  signInLoadingSelector,
+  ({ isDonating }: { isDonating: boolean }, showLoading: boolean) => ({
+    isDonating,
+    showLoading
+  })
+);
+
 PaypalButton.displayName = 'PaypalButton';
+
+export default connect(mapStateToProps)(withTranslation()(PaypalButton));
+
 
