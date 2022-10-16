@@ -22,7 +22,7 @@ Our full-stack web development and machine learning curriculum is completely fre
 - [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
 - [License](#license)
 
-### Certifications
+## Certifications
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginner programmer around 300 hours to earn.
 
@@ -36,7 +36,7 @@ The one exception to this is if we discover violations of our [Academic Honesty 
 
 Here are our ten core certifications:
 
-#### 1. [Responsive Web Design Certification](https://www.freecodecamp.org/learn/2022/responsive-web-design/)
+### 1. [Responsive Web Design Certification](https://www.freecodecamp.org/learn/2022/responsive-web-design/)
 
 - [Learn HTML by Building a Cat Photo App](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app)
 - [Learn Basic CSS by Building a Cafe Menu](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-basic-css-by-building-a-cafe-menu)
@@ -57,7 +57,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Survey Form](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form), [Tribute Page](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page), [Technical Documentation Page](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page), [Product Landing Page](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page), [Personal Portfolio Webpage](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-personal-portfolio-webpage-project/build-a-personal-portfolio-webpage)
 
-#### 2. [JavaScript Algorithms and Data Structures Certification](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+### 2. [JavaScript Algorithms and Data Structures Certification](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
 
 - [Basic JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript)
 - [ES6](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#es6)
@@ -72,7 +72,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Palindrome Checker](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker),[ Roman Numeral Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter), [Caesar's Cipher](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher), [Telephone Number Validator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator), [Cash Register](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register)
 
-#### 3. [Front End Libraries Certification](https://www.freecodecamp.org/learn/front-end-development-libraries/)
+### 3. [Front End Libraries Certification](https://www.freecodecamp.org/learn/front-end-development-libraries/)
 
 - [Bootstrap](https://www.freecodecamp.org/learn/front-end-development-libraries/#bootstrap)
 - [jQuery](https://www.freecodecamp.org/learn/front-end-development-libraries/#jquery)
@@ -84,7 +84,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Random Quote Machine](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine), [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer), [Drum Machine](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-drum-machine), [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator), [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock)
 
-#### 4. [Data Visualization Certification](https://www.freecodecamp.org/learn/data-visualization/)
+### 4. [Data Visualization Certification](https://www.freecodecamp.org/learn/data-visualization/)
 
 - [Data Visualization with D3](https://www.freecodecamp.org/learn/data-visualization/#data-visualization-with-d3)
 - [JSON APIs and Ajax](https://www.freecodecamp.org/learn/data-visualization/#json-apis-and-ajax)
@@ -92,7 +92,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Bar Chart](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart), [Scatterplot Graph](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph), [Heat Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map), [Choropleth Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map), [Treemap Diagram](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
 
-#### 5. [APIs and Microservices Certification](https://www.freecodecamp.org/learn/back-end-development-and-apis/)
+### 5. [APIs and Microservices Certification](https://www.freecodecamp.org/learn/back-end-development-and-apis/)
 
 - [Managing Packages with Npm](https://www.freecodecamp.org/learn/back-end-development-and-apis/#managing-packages-with-npm)
 - [Basic Node and Express](https://www.freecodecamp.org/learn/back-end-development-and-apis/#basic-node-and-express)
@@ -101,7 +101,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Timestamp Microservice](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice), [Request Header Parser](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice), [URL Shortener](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/url-shortener-microservice), [Exercise Tracker](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker), [File Metadata Microservice](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice)
 
-#### 6. [Quality Assurance Certification](https://www.freecodecamp.org/learn/quality-assurance/)
+### 6. [Quality Assurance Certification](https://www.freecodecamp.org/learn/quality-assurance/)
 
 - [Quality Assurance and Testing with Chai](https://www.freecodecamp.org/learn/quality-assurance/#quality-assurance-and-testing-with-chai)
 - [Advanced Node and Express](https://www.freecodecamp.org/learn/quality-assurance/#advanced-node-and-express)
@@ -109,14 +109,14 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Metric-Imperial Converter](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter), [Issue Tracker](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/issue-tracker), [Personal Library](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/personal-library), [Sudoku Solver](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/sudoku-solver), [American British Translator](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/american-british-translator)
 
-#### 7. [Scientific Computing with Python Certification](https://www.freecodecamp.org/learn/scientific-computing-with-python/)
+### 7. [Scientific Computing with Python Certification](https://www.freecodecamp.org/learn/scientific-computing-with-python/)
 
 - [Introduction to Python for Everybody](https://www.freecodecamp.org/learn/scientific-computing-with-python/#python-for-everybody)
   <br />
   <br />
   **Projects**: [Arithmetic Formatter](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/arithmetic-formatter), [Time Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/time-calculator), [Budget App](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/budget-app), [Polygon Area Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/polygon-area-calculator), [Probability Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/probability-calculator)
 
-#### 8. [Data Analysis with Python Certification](https://www.freecodecamp.org/learn/data-analysis-with-python/)
+### 8. [Data Analysis with Python Certification](https://www.freecodecamp.org/learn/data-analysis-with-python/)
 
 - [Data Analysis with Python Course](https://www.freecodecamp.org/learn/data-analysis-with-python/#data-analysis-with-python-course)
 - [NumPy](https://www.freecodecamp.org/learn/data-analysis-with-python/#numpy)
@@ -124,7 +124,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Mean-Variance-Standard Deviation Calculator](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/mean-variance-standard-deviation-calculator), [Demographic Data Analyzer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer), [Medical Data Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer), [Page View Time Series Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/page-view-time-series-visualizer), [Sea Level Predictor](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor)
 
-#### 9. [Information Security Certification](https://www.freecodecamp.org/learn/information-security/)
+### 9. [Information Security Certification](https://www.freecodecamp.org/learn/information-security/)
 
 - [Information Security with HelmetJS](https://www.freecodecamp.org/learn/information-security/#information-security-with-helmetjs)
 - [Python for Penetration Testing](https://www.freecodecamp.org/learn/information-security/#python-for-penetration-testing)
@@ -132,7 +132,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Stock Price Checker](https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker), [Anonymous Message Board](https://www.freecodecamp.org/learn/information-security/information-security-projects/anonymous-message-board), [Port Scanner](https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner), [SHA-1 Password Cracker](https://www.freecodecamp.org/learn/information-security/information-security-projects/sha-1-password-cracker), [Secure Real Time Multiplayer Game ](https://www.freecodecamp.org/learn/information-security/information-security-projects/secure-real-time-multiplayer-game)
 
-#### 10. [Machine Learning with Python Certification](https://www.freecodecamp.org/learn/machine-learning-with-python/)
+### 10. [Machine Learning with Python Certification](https://www.freecodecamp.org/learn/machine-learning-with-python/)
 
 - [TensorFlow](https://www.freecodecamp.org/learn/machine-learning-with-python/#tensorflow)
 - [How Neural Networks Work](https://www.freecodecamp.org/learn/machine-learning-with-python/#how-neural-networks-work)
