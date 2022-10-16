@@ -63,7 +63,7 @@ assert($('p').attr('tabindex') == '0');
       <label for="username">Username:</label>
       <input type="text" id="username" name="username"><br>
       <fieldset>
-        <legend>What level ninja are you?</legend>
+        <legend>What level of ninja are you?</legend>
         <input id="newbie" type="radio" name="levels" value="newbie">
         <label for="newbie">Newbie Kitten</label><br>
         <input id="intermediate" type="radio" name="levels" value="intermediate">
@@ -115,7 +115,7 @@ assert($('p').attr('tabindex') == '0');
       <label for="username">Username:</label>
       <input type="text" id="username" name="username"><br>
       <fieldset>
-        <legend>What level ninja are you?</legend>
+        <legend>What level of ninja are you?</legend>
         <input id="newbie" type="radio" name="levels" value="newbie">
         <label for="newbie">Newbie Kitten</label><br>
         <input id="intermediate" type="radio" name="levels" value="intermediate">

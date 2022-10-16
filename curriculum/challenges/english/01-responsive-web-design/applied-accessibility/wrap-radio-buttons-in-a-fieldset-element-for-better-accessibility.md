@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-Your code should have a `legend` tag around the text asking what level ninja a user is.
+Your code should have a `legend` tag around the text asking what level of ninja a user is.
 
 ```js
 assert($('legend').length == 1);
@@ -64,7 +64,7 @@ Your code should not have any `div` tags.
 assert($('div').length == 0);
 ```
 
-Your code should no longer have a `p` tag around the text asking what level ninja a user is.
+Your code should no longer have a `p` tag around the text asking what level of ninja a user is.
 
 ```js
 assert($('p').length == 4);
@@ -88,7 +88,7 @@ assert($('p').length == 4);
 
       <!-- Only change code below this line -->
       <div>
-        <p>What level ninja are you?</p>
+        <p>What level of ninja are you?</p>
         <input id="newbie" type="radio" name="levels" value="newbie">
         <label for="newbie">Newbie Kitten</label><br>
         <input id="intermediate" type="radio" name="levels" value="intermediate">
@@ -134,7 +134,7 @@ assert($('p').length == 4);
       <input type="text" id="email" name="email">
 
       <fieldset>
-        <legend>What level ninja are you?</legend>
+        <legend>What level of ninja are you?</legend>
         <input id="newbie" type="radio" name="levels" value="newbie">
         <label for="newbie">Newbie Kitten</label><br>
         <input id="intermediate" type="radio" name="levels" value="intermediate">
