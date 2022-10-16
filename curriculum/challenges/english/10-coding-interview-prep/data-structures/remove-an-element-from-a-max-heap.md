@@ -110,21 +110,19 @@ assert(
     } else {
       return false;
     }
- let arr;
- let max = Infinity;
+  let max = Infinity;
   const [result, vals] = [[], [2, 15, 3, 7, 12, 7, 10, 90]];
   vals.forEach((val) => test.insert(val));
   for (let i = 0; i < vals.length; i++) {
+    const curHeap = test.print();
+    const arr = curHeap[0] === null ? curHeap.slice(1) : curHeap;
+    if (!isHeap(arr, 0, arr.length - 1)) {
+      return false;
+    }
     const removed = test.remove();
     if(removed > max) return false
     max = removed;
     result.push(removed);
-    test.print()[0] === null
-      ? (arr = test.print().slice(1))
-      : (arr = test.print());
-    if (!isHeap(arr, 0, arr.length - 1)) {
-      return false;
-    }
   }
   return true
   })()
