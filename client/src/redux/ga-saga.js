@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { all, call, select, takeEvery } from 'redux-saga/effects';
 
 import { aBTestConfig } from '../../../config/donation-settings';

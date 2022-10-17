@@ -66,7 +66,6 @@ class InternetSettings extends Component<InternetProps, InternetState> {
       twitter !== originalValues.twitter ||
       website !== originalValues.website
     ) {
-      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: { githubProfile, linkedin, twitter, website }
       });

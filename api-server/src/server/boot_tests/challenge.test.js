@@ -51,7 +51,6 @@ describe('boot/challenge', () => {
       expect(result).toHaveProperty('updateData.$push.completedChallenges');
     });
 
-    // eslint-disable-next-line max-len
     it('preserves file contents if the completed challenge is a JS Project', () => {
       const jsChallengeId = 'aa2e6f85cab2ab736c9a9b24';
       const completedChallenge = {
@@ -96,7 +95,6 @@ describe('boot/challenge', () => {
       );
     });
 
-    // eslint-disable-next-line max-len
     it('does not attempt to update progressTimestamps for a previously completed challenge', () => {
       const completedChallengeId = 'aaa48de84e1ecc7c742e1124';
       const completedChallenge = {
@@ -116,7 +114,6 @@ describe('boot/challenge', () => {
       expect(hasProgressTimestamps).toBe(false);
     });
 
-    // eslint-disable-next-line max-len
     it('provides a progressTimestamps update for new challenge completion', () => {
       expect.assertions(2);
       const { updateData } = buildUserUpdate(
@@ -167,7 +164,6 @@ describe('boot/challenge', () => {
       });
     }, 10000);
 
-    // eslint-disable-next-line max-len
     it('returns the first challenge url if the provided id does not relate to a challenge', async () => {
       const challengeUrlResolver = await createChallengeUrlResolver(
         mockAllChallenges,
@@ -332,7 +328,6 @@ describe('boot/challenge', () => {
       expect(res.redirect).toHaveBeenCalledWith(mockLearnUrl);
     });
 
-    // eslint-disable-next-line max-len
     it('redirects to the url provided by the challengeUrlResolver', async () => {
       const challengeUrlResolver = await createChallengeUrlResolver(
         mockAllChallenges,
@@ -356,7 +351,6 @@ describe('boot/challenge', () => {
       expect(res.redirect).toHaveBeenCalledWith(expectedUrl);
     });
 
-    // eslint-disable-next-line max-len
     it('redirects to the first challenge for users without a currentChallengeId', async () => {
       const challengeUrlResolver = await createChallengeUrlResolver(
         mockAllChallenges,

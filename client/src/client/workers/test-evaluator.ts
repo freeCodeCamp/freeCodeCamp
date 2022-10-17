@@ -98,7 +98,6 @@ ctx.onmessage = async (e: TestEvaluatorEvent) => {
     // This can be reassigned by the eval inside the try block, so it should be declared as a let
     // eslint-disable-next-line prefer-const
     let __userCodeWasExecuted = false;
-    /* eslint-disable no-eval */
     try {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.

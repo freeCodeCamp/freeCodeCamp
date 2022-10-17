@@ -169,10 +169,8 @@ it('Worker executor should emit LOG events', async () => {
     postMessage: function (data) {
       setImmediate(() => {
         for (let i = 0; i < 3; i++) {
-          // eslint-disable-next-line no-unused-expressions
           this.onmessage && this.onmessage({ data: { type: 'LOG', data: i } });
         }
-        // eslint-disable-next-line no-unused-expressions
         this.onmessage && this.onmessage({ data: `${data} processed` });
         setImmediate(
           () =>

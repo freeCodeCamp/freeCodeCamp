@@ -1,7 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable react/prop-types */
 // @ts-nocheck
 import Loadable from '@loadable/component';
 import React, { Ref } from 'react';

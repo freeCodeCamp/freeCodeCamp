@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import axios from 'axios';
 import debug from 'debug';
 import isEmail from 'validator/lib/isEmail';

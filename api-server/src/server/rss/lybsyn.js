@@ -31,7 +31,6 @@ export function getLybsynFeed() {
               'item_body_short'
             ])
           )
-          /* eslint-disable camelcase */
           .map(
             ({ full_item_url, item_title, release_date, item_body_short }) => ({
               title: item_title,

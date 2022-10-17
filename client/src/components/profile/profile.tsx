@@ -61,7 +61,6 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
       showPortfolio = false,
       showTimeLine = false
     },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     calendar,
     completedChallenges,
     githubProfile,
@@ -96,7 +95,6 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
-      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}

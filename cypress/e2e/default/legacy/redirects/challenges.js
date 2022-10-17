@@ -2,12 +2,10 @@ const locations = {
   chalSuper: '/challenges/responsive-web-design/',
   chalBlock: '/challenges/responsive-web-design/basic-html-and-html5',
   chalChallenge:
-    // eslint-disable-next-line max-len
     '/challenges/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements',
   learnSuper: '/learn/responsive-web-design/',
   learnBlock: '/learn/responsive-web-design/basic-html-and-html5/',
   learnChallenge:
-    // eslint-disable-next-line max-len
     '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
 };
 
@@ -42,7 +40,6 @@ describe('challenges/superblock/block/challenge redirect', function () {
 
     cy.title().should(
       'eq',
-      // eslint-disable-next-line max-len
       'Basic HTML and HTML5: Say Hello to HTML Elements | freeCodeCamp.org'
     );
     cy.location().should(loc => {

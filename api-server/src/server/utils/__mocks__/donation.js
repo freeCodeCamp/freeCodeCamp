@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 export const mockCancellationHook = {
   headers: {
     host: 'a47fb0f4.ngrok.io',

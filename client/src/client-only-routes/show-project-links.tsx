@@ -144,7 +144,6 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const challengeData: CompletedChallenge | null = completedChallenge
     ? {
         ...completedChallenge,
-        // // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         challengeFiles:
           completedChallenge?.challengeFiles?.map(regeneratePathAndHistory) ??
           null

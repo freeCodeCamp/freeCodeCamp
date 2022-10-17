@@ -120,7 +120,6 @@ describe('request-authorization', () => {
         const invalidJWT = jwt.sign({ accessToken }, invalidJWTSecret);
         const req = mockReq({
           path: '/some-path/that-needs/auth',
-          // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: invalidJWT }
         });
         const res = mockRes();
@@ -140,7 +139,6 @@ describe('request-authorization', () => {
         );
         const req = mockReq({
           path: '/some-path/that-needs/auth',
-          // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: invalidJWT }
         });
         const res = mockRes();
@@ -157,7 +155,6 @@ describe('request-authorization', () => {
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
           path: '/some-path/that-needs/auth',
-          // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: validJWT }
         });
         const res = mockRes();

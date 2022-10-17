@@ -30,7 +30,6 @@ describe('getSetAccessToken', () => {
     describe('cookies', () => {
       it('returns `invalid token` error for malformed tokens', () => {
         const invalidJWT = jwt.sign({ accessToken }, invalidJWTSecret);
-        // eslint-disable-next-line camelcase
         const req = mockReq({ cookie: { jwt_access_token: invalidJWT } });
         const result = getAccessTokenFromRequest(req, validJWTSecret);
 
@@ -42,7 +41,6 @@ describe('getSetAccessToken', () => {
           { accessToken: { ...accessToken, created: theBeginningOfTime } },
           validJWTSecret
         );
-        // eslint-disable-next-line camelcase
         const req = mockReq({ cookie: { jwt_access_token: invalidJWT } });
         const result = getAccessTokenFromRequest(req, validJWTSecret);
 
@@ -52,7 +50,6 @@ describe('getSetAccessToken', () => {
       it('returns a valid access token with no errors ', () => {
         expect.assertions(2);
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
-        // eslint-disable-next-line camelcase
         const req = mockReq({ cookie: { jwt_access_token: validJWT } });
         const result = getAccessTokenFromRequest(req, validJWTSecret);
 
@@ -88,7 +85,6 @@ describe('getSetAccessToken', () => {
   });
 
   describe('removeCookies', () => {
-    // eslint-disable-next-line max-len
     it('removes four cookies set in the lifetime of an authenticated session', () => {
       // expect.assertions(4);
       const req = mockReq();

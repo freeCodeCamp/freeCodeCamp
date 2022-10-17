@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -114,7 +113,6 @@ export class PayPalButtonScriptLoader extends Component<
       prevProps.style.height !== this.props.style.height ||
       prevProps.isMinimalForm !== this.props.isMinimalForm
     ) {
-      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ isSdkLoaded: false });
       this.loadScript(this.state.isSubscription, true);
     }

@@ -37,7 +37,6 @@ const ImageLoader = ({
       offsetVertical={offsetVertical}
       width={width}
     >
-      {/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */}
       <img
         alt={alt}
         className={fullClassName}

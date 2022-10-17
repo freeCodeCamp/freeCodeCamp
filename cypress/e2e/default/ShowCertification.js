@@ -15,7 +15,6 @@ describe('A certification,', function () {
         .should('have.attr', 'href')
         .and(
           'match',
-          // eslint-disable-next-line max-len
           /https:\/\/www\.linkedin\.com\/profile\/add\?startTask=CERTIFICATION_NAME&name=Responsive Web Design&organizationId=4831032&issueYear=\d\d\d\d&issueMonth=\d\d?&certUrl=https:\/\/freecodecamp\.org\/certification\/certifieduser\/responsive-web-design/
         );
     });
