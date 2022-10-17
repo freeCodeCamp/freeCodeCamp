@@ -314,7 +314,10 @@ article3link: ...
 
 ### Add a dayjs file for the New Language
 
-In the [`build/news-assets/dayjs/1.10.4/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) directory, create a new file and name it `isocode.min.js`. For example, if you are launching Dothraki News, name the file `mis.min.js`.
+In the [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) directory, create a new file and name it `isocode.min.js`. For example, if you are launching Dothraki News, name the file `mis.min.js`.
+
+> [!NOTE]
+> The version number will change as the dependencies are updated.
 
 Then, visit [this page on cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) with all available dayjs v1.10.4 files, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/locale/isocode.min.js` link for the new language, and open it in a new tab.
 
