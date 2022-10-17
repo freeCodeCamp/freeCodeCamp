@@ -9,8 +9,8 @@
     "frontend": "Front End",
     "backend": "Back End",
     "view": "Visualizza",
-    "view-code": "View Code",
-    "view-project": "View Project",
+    "view-code": "Visualizza il Codice",
+    "view-project": "Visualizza il Progetto",
     "show-cert": "Mostra la Certificazione",
     "claim-cert": "Richiedi la Certificazione",
     "save-progress": "Salva l'avanzamento",
@@ -453,7 +453,7 @@
     "certification-project": "Progetto della certificazione",
     "iframe-preview": "Anteprima {{title}}",
     "iframe-alert": "Solitamente questo link ti porterebbe su un altro sito web! Funziona. Questo è un link per {{externalLink}}",
-    "iframe-form-submit-alert": "Normally this form would be submitted! It works. This will be submitted to: {{externalLink}}",
+    "iframe-form-submit-alert": "Normalmente questo modulo sarebbe stato inviato! Funziona. Sarà inviato a: {{externalLink}}",
     "document-notfound": "documento non trovato"
   },
   "icons": {
