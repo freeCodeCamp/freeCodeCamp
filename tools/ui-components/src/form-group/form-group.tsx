@@ -1,18 +1,17 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import React, { Component, useEffect } from 'react';
 
 import { FormGroupProps } from './types';
+let variantClass = '';
 
-const FormGroup = React.forwardRef<HTMLLabelElement, FormGroupProps>(
+const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
   ({ children, className, validationState, controlId }): JSX.Element => {
     const defaultClasses = 'mb-3.5';
-    let variantClass = '';
     useEffect(() => {
       const setDefaultClass = (validValue?: string) => {
-        if (validValue === 'success') return (variantClass = 'success');
-        else if (validValue === 'warning') return (variantClass = 'warning');
-        else if (validValue === 'error') return (variantClass = 'error');
+        if (validValue === 'success') return (variantClass = 'has-success');
+        else if (validValue === 'warning')
+          return (variantClass = 'has-warning');
+        else if (validValue === 'error') return (variantClass = 'has-error');
       };
       setDefaultClass(validationState);
     }, [validationState]);
