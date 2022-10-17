@@ -4,6 +4,7 @@
   "extends": "../tsconfig-base.json",
   "compilerOptions": {
     "noEmit": false,
-    "module": "CommonJS"
+    "module": "ESNext",
+    "target": "ES5"
   }
 }

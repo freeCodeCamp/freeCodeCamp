@@ -1,10 +1,11 @@
-import preFormattedBlockNames from './preformatted-block-names.json';
+import preFormattedBlockNames from './preformatted-block-names.json' assert { type: 'json' };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
 
-export function blockNameify(phrase: string): string {
-  const preFormatted =
-    (preFormattedBlockNames as Record<string, string>)[phrase] || '';
+export function blockNameify(
+  phrase: keyof typeof preFormattedBlockNames
+): string {
+  const preFormatted = preFormattedBlockNames[phrase] || '';
   if (preFormatted) {
     return preFormatted;
   }
