@@ -45,7 +45,7 @@ function palindromicSums(limit) {
   return true;
 }
 
-palindromicSums(100000000);
+palindromicSums(100);
 ```
 
 # --solutions--
