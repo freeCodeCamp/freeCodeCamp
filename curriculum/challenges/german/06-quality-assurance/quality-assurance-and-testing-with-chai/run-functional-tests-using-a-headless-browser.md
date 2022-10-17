@@ -1,6 +1,6 @@
 ---
 id: 587d8250367417b2b2512c5d
-title: Run Functional Tests Using a Headless Browser
+title: Funktionstests mit einem Headless Browser ausführen
 challengeType: 2
 forumTopicId: 301595
 dashedName: run-functional-tests-using-a-headless-browser
@@ -10,11 +10,11 @@ dashedName: run-functional-tests-using-a-headless-browser
 
 As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-On the page there's an input form. It sends data to the `PUT /travellers` endpoint as an AJAX request.
+Auf der Seite befindet sich ein Eingabeformular. Es sendet Daten an den `PUT /travellers` Endpunkt als AJAX Anfrage.
 
-When the request successfully completes, the client code appends a `<div>` containing the information in the response to the DOM.
+Wenn die Anfrage erfolgreich abgeschlossen wurde, fügt der Client-Code einen `<div>` an, der die Informationen in der Antwort auf das DOM enthält.
 
-Here's an example of how to use Zombie.js to interact with the form:
+Hier ist ein Beispiel für die Verwendung von Zombie.js zur Interaktion mit dem Formular:
 
 ```js
 test('Submit the surname "Polo" in the HTML form', function (done) {
@@ -36,32 +36,32 @@ Within the `then` callback, the `pressButton` method of the `browser` object is 
 
 Then, once a response is received from the AJAX request, a few assertions are made confirming:
 
-1.  The status of the response is `200`
-2.  The text within the `<span id='name'></span>` element matches `'Marco'`
-3.  The text within the `<span id='surname'></span>` element matches `'Polo'`
+1.  Der Status der Antwort ist `200`
+2.  Der Text innerhalb des `<span id='name'></span>` Elements entspricht `'Marco'`
+3.  Der Text innerhalb des `<span id='surname'></span>` Elements entspricht `'Polo'`
 4.  There is `1` `<span id='dates'></span>` element.
 
-Finally, the `done` callback is invoked, which is needed due to the asynchronous test.
+Schließlich wird der `done` Callback aufgerufen, der aufgrund des asynchronen Tests benötigt wird.
 
 # --instructions--
 
 Within `tests/2_functional-tests.js`, in the `'Submit the surname "Colombo" in the HTML form'` test (`// #5`), automate the following:
 
-1.  Fill in the form with the surname `Colombo`
-2.  Press the submit button
+1.  Fülle das Formular mit dem Nachnamen `Colombo` aus
+2.  Klicke auf den "Bestätigen" Button
 
-And within the `pressButton` callback:
+Und innerhalb des `pressButton` Callback:
 
 1.  Assert that status is OK `200`
-2.  Assert that the text inside the element `span#name` is `'Cristoforo'`
-3.  Assert that the text inside the element `span#surname` is `'Colombo'`
-4.  Assert that the element(s) `span#dates` exist and their count is `1`
+2.  Prüfe, ob der Text innerhalb des Elements `span#name` `'Cristoforo'` ist
+3.  Prüfe, ob der Text innerhalb des Elements `span#surname` `'Colombo'` ist
+4.  Überprüfe, ob das/die Element(e) `span#dates` existieren und deren Zahl `1` ist
 
-Do not forget to remove the `assert.fail()` call.
+Vergiss nicht, den `assert.fail()`-Aufruf zu entfernen.
 
 # --hints--
 
-All tests should pass.
+Alle Tests sollten bestanden werden.
 
 ```js
 (getUserInput) =>
@@ -75,7 +75,7 @@ All tests should pass.
   );
 ```
 
-You should assert that the headless browser request succeeded.
+Du solltest überprüfen, ob die Anfrage des Headless Browsers erfolgreich war.
 
 ```js
 (getUserInput) =>
@@ -89,7 +89,7 @@ You should assert that the headless browser request succeeded.
   );
 ```
 
-You should assert that the text inside the element `span#name` is `'Cristoforo'`.
+Prüfe, ob der Text innerhalb des Elements `span#name` `'Cristoforo'` ist.
 
 ```js
 (getUserInput) =>
@@ -105,7 +105,7 @@ You should assert that the text inside the element `span#name` is `'Cristoforo'`
   );
 ```
 
-You should assert that the text inside the element `span#surname` is `'Colombo'`.
+Prüfe, ob der Text innerhalb des Elements `span#surname` `'Colombo'` ist.
 
 ```js
 (getUserInput) =>
@@ -121,7 +121,7 @@ You should assert that the text inside the element `span#surname` is `'Colombo'`
   );
 ```
 
-You should assert that the element `span#dates` exist and its count is 1.
+Du solltest überprüfen, ob das Element `span#dates` existiert und seine Anzahl 1 ist.
 
 ```js
 (getUserInput) =>

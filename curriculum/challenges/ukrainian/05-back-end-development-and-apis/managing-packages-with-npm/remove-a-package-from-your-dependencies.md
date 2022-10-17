@@ -12,17 +12,17 @@ dashedName: remove-a-package-from-your-dependencies
 
 Але що робити, якщо Ви бажаєте видалити більше не потрібний зовнішній пакет? Певно, Ви вже здогадалися, треба просто видалити відповідну пару "ключ-значення" цього пакету із залежностей.
 
-Видалення інших полів package.json також здійснюється цим методом
+This same method applies to removing other fields in your package.json as well.
 
 # --instructions--
 
-Видаліть пакет moment із залежностей.
+Remove the `@freecodecamp/example` package from your dependencies.
 
 **Примітка:** Переконайтесь, що після видалення пакету у Вас вказано правильну кількість ком.
 
 # --hints--
 
-"dependencies" не має містити "moment"
+`"dependencies"` should not include `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -31,8 +31,8 @@ dashedName: remove-a-package-from-your-dependencies
       var packJson = JSON.parse(data);
       assert.notProperty(
         packJson.dependencies,
-        'moment',
-        '"dependencies" still includes "moment"'
+        '@freecodecamp/example',
+        '"dependencies" still includes "@freecodecamp/example"'
       );
     },
     (xhr) => {

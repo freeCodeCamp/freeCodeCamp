@@ -14,7 +14,7 @@ dashedName: build-your-own-functions
 
 更多资源
 
-\- [练习](https://www.youtube.com/watch?v=ksvGhDsjtpw)
+\- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
 
 # --question--
 

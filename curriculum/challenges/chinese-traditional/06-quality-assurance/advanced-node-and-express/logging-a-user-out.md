@@ -30,11 +30,11 @@ app.use((req, res, next) => {
 });
 ```
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考[這裏](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b)的答案。
+完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-`req.Logout` 應在 `/logout` 路由中調用。
+`req.logout()` should be called in your `/logout` route.
 
 ```js
 (getUserInput) =>

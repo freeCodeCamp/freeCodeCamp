@@ -22,7 +22,7 @@ dashedName: remove-an-element-from-a-max-heap
 
 # --hints--
 
-MaxHeap データ構造が存在する必要があります。
+The `MaxHeap` data structure should exist.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-MaxHeap に print というメソッドが必要です。
+`MaxHeap` should have a method called `print`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-MaxHeap に insert というメソッドが必要です。
+`MaxHeap` should have a method called `insert`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-MaxHeap に remove というメソッドが必要です。
+`MaxHeap` should have a method called `remove`.
 
 ```js
 assert(
@@ -84,7 +84,7 @@ assert(
 );
 ```
 
-remove メソッドは max heap プロパティを維持しながら最大ヒープから最大要素を削除する必要があります。
+The `remove` method should remove the greatest element from the max heap while maintaining the max heap property.
 
 ```js
 assert(

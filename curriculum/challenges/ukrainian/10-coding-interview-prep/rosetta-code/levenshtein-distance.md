@@ -1,14 +1,14 @@
 ---
 id: 5e4ce2eaac708cc68c1df260
 title: Відстань Левенштейна
-challengeType: 5
+challengeType: 1
 forumTopicId: 385264
 dashedName: levenshtein-distance
 ---
 
 # --description--
 
-У інформаційній теорії та комп'ютерних науках **відстань Левенштейна** — це [метрика](https://en.wikipedia.org/wiki/string metric), яка вимірює відмінність між двома послідовностями (тобто [відстань редагування](https://en.wikipedia.org/wiki/edit distance)). Відстань Левенштейна між двома рядками визначається як мінімальна кількість операцій вставки, видалення або заміни, необхідних для перетворення одного рядка в інший.
+In information theory and computer science, the **Levenshtein distance** is a metric for measuring the amount of difference between two sequences (i.e. an edit distance). Відстань Левенштейна між двома рядками визначається як мінімальна кількість операцій вставки, видалення або заміни, необхідних для перетворення одного рядка в інший.
 
 Наприклад:
 

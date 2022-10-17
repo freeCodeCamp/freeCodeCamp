@@ -16,34 +16,20 @@ Suppose those with 15 letters or less are listed in alphabetical order and numbe
 
 The list would include:
 
-$$\begin{align}
-  & 1: \text{a} \\\\
-  & 2: \text{aa} \\\\
-  & 3: \text{aaa} \\\\
-  & 4: \text{aaaa} \\\\
-  & 5: \text{aaaaa} \\\\
-  & 6: \text{aaaaaa} \\\\
-  & 7: \text{aaaaaac} \\\\
-  & 8: \text{aaaaaacd} \\\\
-  & 9: \text{aaaaaacde} \\\\
-  & 10: \text{aaaaaacdee} \\\\
-  & 11: \text{aaaaaacdeee} \\\\
-  & 12: \text{aaaaaacdeeee} \\\\
-  & 13: \text{aaaaaacdeeeee} \\\\
-  & 14: \text{aaaaaacdeeeeee} \\\\
-  & 15: \text{aaaaaacdeeeeeef} \\\\
-  & 16: \text{aaaaaacdeeeeeeg} \\\\
-  & 17: \text{aaaaaacdeeeeeeh} \\\\
-  & \ldots \\\\
-  & 28: \text{aaaaaacdeeeeeey} \\\\
-  & 29: \text{aaaaaacdeeeeef} \\\\
-  & 30: \text{aaaaaacdeeeeefe} \\\\
-  & \ldots \\\\
-  & 115246685191495242: \text{euleoywuttttsss} \\\\
-  & 115246685191495243: \text{euler} \\\\
-  & 115246685191495244: \text{eulera} \\\\
-  & ... \\\\
-  & 525069350231428029: \text{ywuuttttssssrrr} \\\\
+$$\begin{align}   & 1: \text{a} \\\\
+  & 2: \text{aa} \\\\   & 3: \text{aaa} \\\\
+  & 4: \text{aaaa} \\\\   & 5: \text{aaaaa} \\\\
+  & 6: \text{aaaaaa} \\\\   & 7: \text{aaaaaac} \\\\
+  & 8: \text{aaaaaacd} \\\\   & 9: \text{aaaaaacde} \\\\
+  & 10: \text{aaaaaacdee} \\\\   & 11: \text{aaaaaacdeee} \\\\
+  & 12: \text{aaaaaacdeeee} \\\\   & 13: \text{aaaaaacdeeeee} \\\\
+  & 14: \text{aaaaaacdeeeeee} \\\\   & 15: \text{aaaaaacdeeeeeef} \\\\
+  & 16: \text{aaaaaacdeeeeeeg} \\\\   & 17: \text{aaaaaacdeeeeeeh} \\\\
+  & \ldots \\\\   & 28: \text{aaaaaacdeeeeeey} \\\\
+  & 29: \text{aaaaaacdeeeeef} \\\\   & 30: \text{aaaaaacdeeeeefe} \\\\
+  & \ldots \\\\   & 115246685191495242: \text{euleoywuttttsss} \\\\
+  & 115246685191495243: \text{euler} \\\\   & 115246685191495244: \text{eulera} \\\\
+  & ... \\\\   & 525069350231428029: \text{ywuuttttssssrrr} \\\\
 \end{align}$$
 
 Define $P(w)$ as the position of the word $w$.
@@ -54,15 +40,11 @@ We can see that $P(w)$ and $W(p)$ are inverses: $P(W(p)) = p$ and $W(P(w)) = w$.
 
 Examples:
 
-$$\begin{align}
-  & W(10) = \text{ aaaaaacdee} \\\\
-  & P(\text{aaaaaacdee}) = 10 \\\\
-  & W(115246685191495243) = \text{ euler} \\\\
-  & P(\text{euler}) = 115246685191495243 \\\\
-\end{align}$$
+$$\begin{align}   & W(10) = \text{ aaaaaacdee} \\\\
+  & P(\text{aaaaaacdee}) = 10 \\\\   & W(115246685191495243) = \text{ euler} \\\\
+  & P(\text{euler}) = 115246685191495243 \\\\ \end{align}$$
 
-Find
-$$W(P(\text{legionary}) + P(\text{calorimeters}) - P(\text{annihilate}) + P(\text{orchestrated}) - P(\text{fluttering})).$$
+Find $$W(P(\text{legionary}) + P(\text{calorimeters}) - P(\text{annihilate}) + P(\text{orchestrated}) - P(\text{fluttering})).$$
 
 Give your answer using lowercase characters (no punctuation or space).
 

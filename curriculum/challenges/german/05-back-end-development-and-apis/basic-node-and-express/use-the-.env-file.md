@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf2
-title: Use the .env File
+title: Verwende .env-Dateien
 challengeType: 2
 forumTopicId: 301521
 dashedName: use-the--env-file
@@ -8,25 +8,25 @@ dashedName: use-the--env-file
 
 # --description--
 
-The `.env` file is a hidden file that is used to pass environment variables to your application. This file is secret, no one but you can access it, and it can be used to store data that you want to keep private or hidden. For example, you can store API keys from external services or your database URI. You can also use it to store configuration options. By setting configuration options, you can change the behavior of your application, without the need to rewrite some code.
+Die `.env`-Datei ist eine versteckte Datei, mit der Umgebungsvariablen an eine Anwendung übergeben werden. Diese Datei wird versteckt – niemand außer dir kann auf diese zugreifen, mit ihr kannst du Daten speichern, die du privat oder versteckt halten möchtest. Beispielsweise kannst du API-Schlüssel externer Dienste, oder deine Datenbank-URL speichern. Zudem kannst du Konfigurationsmöglichkeiten speichern. Indem du Konfigurationsmöglichkeiten einstellst, veränderst du das Verhalten deiner Anwendung – ohne den Code umzuschreiben.
 
-The environment variables are accessible from the app as `process.env.VAR_NAME`. The `process.env` object is a global Node object, and variables are passed as strings. By convention, the variable names are all uppercase, with words separated by an underscore. The `.env` is a shell file, so you don’t need to wrap names or values in quotes. It is also important to note that there cannot be space around the equals sign when you are assigning values to your variables, e.g. `VAR_NAME=value`. Usually, you will put each variable definition on a separate line.
+Die Umgebungsvariablen sind innerhalb der App unter `process.env.VAR_NAME` aufrufbar. Das `process.env`-Objekt ist ein globales Node-Objekt, Variablen werden als Strings übergeben. Konventionell werden die Variablennamen alle in Großbuchstaben geschrieben, wobei die Wörter durch einen Unterstrich getrennt werden. `.env` ist eine Shell-Datei, somit musst du Namen oder Werte nicht in Anführungszeichen setzen. Es ist auch wichtig zu beachten, dass um das Gleichheitszeichen kein Leerzeichen stehen darf, wenn du deinen Variablen Werte zuordnest – `VAR_NAME=value`. Normalerweise wird jede Variablendefinition in eine eigene Zeile gesetzt.
 
 # --instructions--
 
-Let's add an environment variable as a configuration option.
+Lass uns eine Umgebungsvariable als Konfigurationsoption setzen.
 
-Create a `.env` file in the root of your project directory, and store the variable `MESSAGE_STYLE=uppercase` in it.
+Erstelle eine `.env`-Datei im Hauptverzeichnis deines Projekts, speichere in dieser anschließend die Variabel `MESSAGE_STYLE=uppercase`.
 
-Then, in the `/json` GET route handler you created in the last challenge access `process.env.MESSAGE_STYLE` and transform the response object's `message` to uppercase if the variable equals `uppercase`. The response object should either be `{"message": "Hello json"}` or `{"message": "HELLO JSON"}`, depending on the `MESSAGE_STYLE` value.
+Greife nun in dem `/json`-GET-Route-Handler, den du in der letzten Aufgabe erstellt hast, auf`process.env.MESSAGE_STYLE` zu und verwandle das Antwort-Objekt der `message` in Großbuchstaben, wenn die Variable `uppercase` entspricht. Das Antwortobjekt sollte entweder `{"message": "Hello json"}` oder `{"message": "HELLO JSON"}` sein, je nachdem welchen Wert du für `MESSAGE_STYLE` gesetzt hast.
 
-**Note:** If you are using Replit, you cannot create a `.env` file. Instead, use the built-in <dfn>SECRETS</dfn> tab to add the variable.
+**Hinweis:** Nutzt du Replit, kannst du keine `.env`-Datei erstellen. Benutze stattdessen den eingebauten <dfn>SECRETS</dfn>-Tab, um eine Variabel hinzuzufügen.
 
-If you are working locally, you will need the `dotenv` package. It loads environment variables from your `.env` file into `process.env`. The `dotenv` package has already been installed, and is in your project's `package.json` file. At the top of your `myApp.js` file, import and load the variables with `require('dotenv').config()`.
+Wenn du lokal arbeitest, benötigst du das `dotenv`-Paket. Dieses lädt Umgebungsvariablen deiner `.env`-Datei in `process.env`. Das `dotenv`-Paket wurde bereits installiert und befindet sich in deiner `package.json`-Projektdatei. At the top of your `myApp.js` file, import and load the variables with `require('dotenv').config()`.
 
 # --hints--
 
-The response of the endpoint `/json` should change according to the environment variable `MESSAGE_STYLE`
+Die Antwort deines `/json`-Endpunkts sollte – abhängig von deiner Umgebungsvariable `MESSAGE_STYLE` – variieren
 
 ```js
 (getUserInput) =>

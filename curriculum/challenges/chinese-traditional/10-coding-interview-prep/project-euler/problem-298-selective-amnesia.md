@@ -1,27 +1,40 @@
 ---
 id: 5900f4971000cf542c50ffa9
-title: 'Problem 298: Selective Amnesia'
-challengeType: 5
+title: '問題 298：選擇性健忘症'
+challengeType: 1
 forumTopicId: 301950
 dashedName: problem-298-selective-amnesia
 ---
 
 # --description--
 
-Larry and Robin play a memory game involving of a sequence of random numbers between 1 and 10, inclusive, that are called out one at a time. Each player can remember up to 5 previous numbers. When the called number is in a player's memory, that player is awarded a point. If it's not, the player adds the called number to his memory, removing another number if his memory is full.
+拉里（Larry）和羅賓（Robin）玩着一場記憶遊戲，其中涉及一個隨機數序列，介於1到10之間（含1和10），每次被召喚一個。 每個玩家最多可以記住 5 個先前的數字。 當被叫號碼在玩家的記憶中時，該玩家將獲得積分。 如果不是，玩家將被叫號碼添加到他的記憶中，如果他的記憶已滿，則刪除另一個號碼。
 
-Both players start with empty memories. Both players always add new missed numbers to their memory but use a different strategy in deciding which number to remove: Larry's strategy is to remove the number that hasn't been called in the longest time. Robin's strategy is to remove the number that's been in the memory the longest time.
+兩位選手都從空白的記憶開始。 兩個玩家總是在他們的記憶中添加新的錯過的號碼，但在決定刪除哪個號碼時使用不同的策略：拉里的策略是刪除最長時間沒有被叫到的號碼。 Robin 的策略是刪除記憶中最長時間的數字。
 
-Example game:Turn Callednumber Larry'smemory Larry'sscore Robin'smemory Robin'sscore 1 1 1 0 1 0 2 2 1,2 0 1,2 0 3 4 1,2,4 0 1,2,4 0 4 6 1,2,4,6 0 1,2,4,6 0 5 1 1,2,4,6 1 1,2,4,6 1 6 8 1,2,4,6,8 1 1,2,4,6,8 1 7 10 1,4,6,8,10 1 2,4,6,8,10 1 8 2 1,2,6,8,10 1 2,4,6,8,10 2 9 4 1,2,4,8,10 1 2,4,6,8,10 3 10 1 1,2,4,8,10 2 1,4,6,8,10 3
+Example game:
 
-Denoting Larry's score by L and Robin's score by R, what is the expected value of |L-R| after 50 turns? Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
+| Turn | Called number | Larry's memory | Larry's score | Robin's memory | Robin's score |
+| ---- | ------------- | --------------:| ------------- | -------------- | ------------- |
+| 1    | 1             |              1 | 0             | 1              | 0             |
+| 2    | 2             |            1,2 | 0             | 1,2            | 0             |
+| 3    | 4             |          1,2,4 | 0             | 1,2,4          | 0             |
+| 4    | 6             |        1,2,4,6 | 0             | 1,2,4,6        | 0             |
+| 5    | 1             |        1,2,4,6 | 1             | 1,2,4,6        | 1             |
+| 6    | 8             |      1,2,4,6,8 | 1             | 1,2,4,6,8      | 1             |
+| 7    | 10            |     1,4,6,8,10 | 1             | 2,4,6,8,10     | 1             |
+| 8    | 2             |     1,2,6,8,10 | 1             | 2,4,6,8,10     | 2             |
+| 9    | 4             |     1,2,4,8,10 | 1             | 2,4,6,8,10     | 3             |
+| 10   | 1             |     1,2,4,8,10 | 2             | 1,4,6,8,10     | 3             |
+
+Denoting Larry's score by $L$ and Robin's score by $R$, what is the expected value of $|L - R|$ after 50 turns? 使用 x.xxxxxxxx 格式將答案四捨五入到小數點後八位。
 
 # --hints--
 
-`euler298()` should return 1.76882294.
+`selectiveAmnesia()` should return `1.76882294`.
 
 ```js
-assert.strictEqual(euler298(), 1.76882294);
+assert.strictEqual(selectiveAmnesia(), 1.76882294);
 ```
 
 # --seed--
@@ -29,12 +42,12 @@ assert.strictEqual(euler298(), 1.76882294);
 ## --seed-contents--
 
 ```js
-function euler298() {
+function selectiveAmnesia() {
 
   return true;
 }
 
-euler298();
+selectiveAmnesia();
 ```
 
 # --solutions--

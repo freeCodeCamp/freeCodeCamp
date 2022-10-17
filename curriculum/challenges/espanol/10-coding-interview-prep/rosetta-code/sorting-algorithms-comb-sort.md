@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8005
 title: Sorting algorithms/Comb sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
 ---
@@ -10,19 +10,13 @@ dashedName: sorting-algorithmscomb-sort
 
 Implement a *comb sort*.
 
-The **Comb Sort** is a variant of the [Bubble Sort](https://rosettacode.org/wiki/Bubble Sort).
+The **Comb Sort** is a variant of the Bubble Sort.
 
-Like the [Shell sort](https://rosettacode.org/wiki/Shell sort), the Comb Sort increases the gap used in comparisons and exchanges.
+Like the Shell sort, the Comb Sort increases the gap used in comparisons and exchanges.
 
 Dividing the gap by $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ works best, but 1.3 may be more practical.
 
 Some implementations use the insertion sort once the gap is less than a certain amount.
-
-**Also see**
-
-<ul>
-  <li>the Wikipedia article: <a href='https://en.wikipedia.org/wiki/Comb sort' target='_blank'>Comb sort</a>.</li>
-</ul>
 
 Variants:
 

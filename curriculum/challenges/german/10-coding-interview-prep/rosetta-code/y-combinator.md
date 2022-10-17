@@ -14,7 +14,7 @@ The Y combinator is itself a stateless function that, when applied to another st
 
 # --instructions--
 
-Define the stateless Y combinator function and use it to compute the factorials. The `factorial(N)` function is already given to you. 
+Define the stateless Y combinator function and use it to compute the factorials. The `factorial(N)` function is already given to you.
 
 # --hints--
 

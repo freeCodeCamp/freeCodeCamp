@@ -8,15 +8,15 @@ dashedName: compare-the-properties-of-two-elements
 
 # --description--
 
-請注意，本項目在[這個 Replit 項目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，在標有 `#8` 的 `Comparisons` 套件裏，將每個 `assert` 改成 `assert.isAbove` 或 `assert.isAtMost` 方法，讓測試通過（結果應該返回 `true`）。 不要改變傳入斷言的參數。
+Within `tests/1_unit-tests.js` under the test labelled `#8` in the `Comparisons` suite, change each `assert` to either `assert.isAbove` or `assert.isAtMost` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
 # --hints--
 
-不應有未通過的測試
+All tests should pass.
 
 ```js
 (getUserInput) =>
@@ -30,7 +30,7 @@ dashedName: compare-the-properties-of-two-elements
   );
 ```
 
-請爲第一個斷言選擇正確的方法 — `isAbove` 或 `isAtMost`。
+You should choose the correct method for the first assertion - `isAbove` vs. `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ dashedName: compare-the-properties-of-two-elements
   );
 ```
 
-請爲第二個斷言選擇正確的方法 — `isAbove` 或 `isAtMost`。
+You should choose the correct method for the second assertion - `isAbove` vs. `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ dashedName: compare-the-properties-of-two-elements
   );
 ```
 
-請爲第三個斷言選擇正確的方法 — `isAbove` 或 `isAtMost`。
+You should choose the correct method for the third assertion - `isAbove` vs. `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -80,7 +80,7 @@ dashedName: compare-the-properties-of-two-elements
   );
 ```
 
-請爲第四個斷言選擇正確的方法 — `isAbove` 或 `isAtMost`。
+You should choose the correct method for the fourth assertion - `isAbove` vs. `isAtMost`.
 
 ```js
 (getUserInput) =>

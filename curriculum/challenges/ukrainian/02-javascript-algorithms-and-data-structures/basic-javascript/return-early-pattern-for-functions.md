@@ -28,8 +28,8 @@ myFun();
 
 Модифікуйте функцію `abTest` і тому, якщо `a` або `b` дорівнюватиме менше `0`, функція відразу вийде зі значенням `undefined`.
 
-**Підказка**  
-Пам'ятайте, що [`undefined` - це ключове слово](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), а не рядок.
+**Hint**  
+Remember that <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow"><code>undefined</code> is a keyword</a>, not a string.
 
 # --hints--
 

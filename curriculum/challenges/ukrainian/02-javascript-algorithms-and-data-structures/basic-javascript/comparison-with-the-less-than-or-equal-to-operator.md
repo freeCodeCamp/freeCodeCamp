@@ -14,64 +14,62 @@ dashedName: comparison-with-the-less-than-or-equal-to-operator
 **Наприклад:**
 
 ```js
-4   <= 5
-'7' <= 7
-5   <= 5
-3   <= 2
-'8' <= 4
+4   <= 5 // true
+'7' <= 7 // true
+5   <= 5 // true
+3   <= 2 // false
+'8' <= 4 // false
 ```
-
-Відповідно, ці вирази будуть оцінені як `true`, `true`, `true`, `false`, та `false`.
 
 # --instructions--
 
-Додайте оператор "менше або рівне до вказаних рядків, щоб оператор повернення спрацював.
+Add the less than or equal to operator to the indicated lines so that the return statements make sense.
 
 # --hints--
 
-`testLessOrEqual(0)` повинен повернути рядок `Smaller Than or Equal to 12`
+`testLessOrEqual(0)` should return the string `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(0) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(11)` повинен повернути рядок `Smaller Than or Equal to 12`
+`testLessOrEqual(11)` should return the string `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(11) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(12)` повинен повернути рядок `Smaller Than or Equal to 12`
+`testLessOrEqual(12)` should return the string `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(12) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(23)` повинен повернути рядок `Smaller Than or Equal to 24`
+`testLessOrEqual(23)` should return the string `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(23) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(24)` повинен повернути рядок `Smaller Than or Equal to 24`
+`testLessOrEqual(24)` should return the string `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(24) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(25)` повинен повернути рядок `More Than 24`
+`testLessOrEqual(25)` should return the string `More Than 24`
 
 ```js
 assert(testLessOrEqual(25) === 'More Than 24');
 ```
 
-`testLessOrEqual(55)` повинен повернути рядок `More Than 24`
+`testLessOrEqual(55)` should return the string `More Than 24`
 
 ```js
 assert(testLessOrEqual(55) === 'More Than 24');
 ```
 
-Оператор `<=` потрібно використати принаймні двічі
+You should use the `<=` operator at least twice
 
 ```js
 assert(code.match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);

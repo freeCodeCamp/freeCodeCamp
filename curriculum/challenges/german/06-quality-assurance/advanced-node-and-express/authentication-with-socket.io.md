@@ -39,7 +39,7 @@ Previously, when we configured the `session` middleware, we didn't explicitly se
 
 Be sure to add the `key` with the cookie name to the `session` middleware that matches the Socket.IO key. Also, add the `store` reference to the options, near where we set `saveUninitialized: true`. This is necessary to tell Socket.IO which session to relate to.
 
-<hr>
+<hr />
 
 Now, define the `success`, and `fail` callback functions:
 

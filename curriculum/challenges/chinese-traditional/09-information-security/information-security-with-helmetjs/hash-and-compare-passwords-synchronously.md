@@ -8,7 +8,7 @@ dashedName: hash-and-compare-passwords-synchronously
 
 # --description--
 
-請注意，本項目在 [這個 Repl.it 項目](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt) 的基礎上進行開發。 你也可以從 [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/) 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 同步執行哈希運算是非常簡單的，但這會在哈希計算量大並且次數多的情況下造成延遲。 用這個方法哈希就像調用函數一樣簡單。
 

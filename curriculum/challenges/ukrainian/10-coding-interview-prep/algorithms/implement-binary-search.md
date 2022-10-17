@@ -37,7 +37,7 @@ const testArray = [
 
 # --hints--
 
-`binarySearch` should be a function.
+`binarySearch` має бути функцією.
 
 ```js
 assert(typeof binarySearch == 'function');

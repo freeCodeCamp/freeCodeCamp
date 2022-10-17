@@ -8,17 +8,17 @@ dashedName: understand-bcrypt-hashes
 
 # --description--
 
-У наступних завданнях ви будете працювати з новим початковим проєктом, який відрізняється від попереднього. Ви можете знайти новий початковий проект на [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt)або скопіювати його з [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+У наступних завданнях ви будете працювати з новим початковим проєктом, який відрізняється від попереднього. You can find the new starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or clone it from <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Функція BCrypt відзначається своєю надійністю. Хеш - це, по суті, "відбиток" початкових даних, який завжди лишається унікальним. Така функція виконується шляхом введення початкових даних в алгоритм і виведення фіксованого результату довжини. Щоб ускладнити процес і зробити його безпечнішим, ви можете застосувати випадково згенерований модифікатор *salt* для хешу. Випадкова генерація хешу включає в себе додавання випадкових даних до початкових даних перед процесом хешування, що ускладнює крадіжку хешу.
 
-Функція BCrypt завжди виглядає як код `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm`, що має структуру. Перший невеликий біт даних `$2a` визначає, який алгоритм хешу був використаний. Наступна частина `$13` визначає *cost*. Cost показує наскільки важко вичислити хеш. Цей елемент розміщений на логарифмічній шкалі 2^cost і визначає скільки разів дані проходять крізь алгоритм хешування. Наприклад, якщо cost дорівнює 10, ви можете перетворити 10 паролів за секунду на середньостатистичному комп'ютері, однак при значенні cost 15 - це займе 3 секунди за один результат... і, відповідно, при значенні 31, процес займе кілька днів, щоб отримати готовий хеш. Значення cost 12 вважається найбезпечнішим на сьогодні. Остання частина хешу `$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` виглядає як один великий рядок чисел, періодів і букв, але насправді це дві окремі деталі. Перші 22 символи це згенерований модифікатор у вигляді простого тексту, решта - перетворений пароль!
+BCrypt hashes will always look like `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` which does have a structure. Перший невеликий біт даних `$2a` визначає, який алгоритм хешу був використаний. Наступна частина `$13` визначає *cost*. Cost показує наскільки важко вичислити хеш. Цей елемент розміщений на логарифмічній шкалі 2^cost і визначає скільки разів дані проходять крізь алгоритм хешування. For example, at a cost of 10 you are able to hash 10 passwords a second on an average computer, however at a cost of 15 it takes 3 seconds per hash... and to take it further, at a cost of 31 it would take multiple days to complete a hash. Значення cost 12 вважається найбезпечнішим на сьогодні. Остання частина хешу `$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` виглядає як один великий рядок чисел, періодів і букв, але насправді це дві окремі деталі. Перші 22 символи це згенерований модифікатор у вигляді простого тексту, решта - перетворений пароль!
 
 # --instructions--
 
-Щоб почати використовувати BCrypt, додайте його як пакет у код вашого проєкту і запускайте його за допомогою значення 'bcrypt' на вашому сервері.
+Add all your code for these lessons in the `server.js` file between the code we have started you off with. Do not change or delete the code we have added for you.
 
-Додайте весь ваш код для цих уроків в файл `server.js` між рядками коду, з якого ми почали. Не змінюйте і не видаляйте код, який ми додали для вас.
+BCrypt has already been added as a dependency, so require it as `bcrypt` in your server.
 
 Підтвердіть свою сторінку, коли зрозумієте, що все працює коректно.
 

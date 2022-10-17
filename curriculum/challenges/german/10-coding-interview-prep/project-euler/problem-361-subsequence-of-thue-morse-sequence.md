@@ -20,10 +20,8 @@ We define $\\{A_n\\}$ as the sorted sequence of integers such that the binary ex
 
 The first several terms of $A_n$ are given as follows:
 
-$$\begin{array}{cr}
-  n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12 & \ldots \\\\
-  A_n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 9 & 10 & 11 & 12 & 13 & 18 & \ldots
-\end{array}$$
+$$\begin{array}{cr}   n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12 & \ldots \\\\
+  A_n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 9 & 10 & 11 & 12 & 13 & 18 & \ldots \end{array}$$
 
 We can also verify that $A_{100} = 3251$ and $A_{1000} = 80\\,852\\,364\\,498$.
 

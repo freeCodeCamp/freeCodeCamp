@@ -91,7 +91,7 @@ const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-你的 `#name` 元素應該是 `#survey-form` 元素的子元素。
+Your `#name` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name')
@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-你的 `#email` 元素應該是 `#survey-form` 元素的子元素。
+Your `#email` should be a descendant of `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #email')
@@ -133,7 +133,7 @@ const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-你的 `#number` 元素應該是 `#survey-form` 元素的子元素。
+Your `#number` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number')
@@ -203,21 +203,21 @@ const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-你的 `#name-label` 元素應該是 `#survey-form` 元素的子元素。
+Your `#name-label` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-你的 `#email-label` 元素應該是 `#survey-form` 元素的子元素。
+Your `#email-label` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-你的 `#number-label` 元素應該是 `#survey-form` 元素的子元素。
+Your `#number-label` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number-label')

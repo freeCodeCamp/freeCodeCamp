@@ -89,7 +89,7 @@ function isSelfDescribing(n) {
     if (digits.length != count.length) {
         return false;
     }
-    
+
     for (let i=0; i< digits.length; i++){
       if (digits[i] !== count[i]) {
         return false;

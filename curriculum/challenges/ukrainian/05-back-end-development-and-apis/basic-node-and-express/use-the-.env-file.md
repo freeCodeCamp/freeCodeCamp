@@ -18,11 +18,11 @@ dashedName: use-the--env-file
 
 Створіть файл `.env` в основі каталогу вашого проєкту та збережіть в ньому змінну `MESSAGE_STYLE=uppercase`.
 
-Потім, в обробнику маршруту `/json` GET, який ви створили в останній задачі, перетворіть повідомлення об'єкта-відповіді у верхній регістр, якщо `process.env.MESSAGE_STYLE` дорівнює `uppercase`. Об'єкт відповіді має бути `{"message": "Hello json"}` або `{"message": "HELLO JSON"}`, в залежності від значення `MESSAGE_STYLE`.
+Then, in the `/json` GET route handler you created in the last challenge access `process.env.MESSAGE_STYLE` and transform the response object's `message` to uppercase if the variable equals `uppercase`. Об'єкт відповіді має бути `{"message": "Hello json"}` або `{"message": "HELLO JSON"}`, в залежності від значення `MESSAGE_STYLE`.
 
 **Примітка:** Якщо ви використовуєте Replit, ви не можете створити файл `.env`. Замість цього використовуйте вбудовану вкладку <dfn>SECRETS</dfn> для додавання змінної.
 
-При локальній роботі вам знадобиться пакет `dotenv`. Він завантажує змінні середовища з вашого `.env` файлу в `process.env`. Встановіть його з `npm install dotenv`. Тоді, зверху вашого `myApp.js` файлу, оберіть імпортувати та завантажити змінні з `require('dotenv').config()`.
+При локальній роботі вам знадобиться пакет `dotenv`. Він завантажує змінні середовища з вашого `.env` файлу в `process.env`. The `dotenv` package has already been installed, and is in your project's `package.json` file. At the top of your `myApp.js` file, import and load the variables with `require('dotenv').config()`.
 
 # --hints--
 

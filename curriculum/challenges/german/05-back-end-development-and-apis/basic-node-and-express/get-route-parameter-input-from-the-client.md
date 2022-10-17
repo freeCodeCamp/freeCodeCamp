@@ -8,17 +8,17 @@ dashedName: get-route-parameter-input-from-the-client
 
 # --description--
 
-When building an API, we have to allow users to communicate to us what they want to get from our service. For example, if the client is requesting information about a user stored in the database, they need a way to let us know which user they're interested in. One possible way to achieve this result is by using route parameters. Route parameters are named segments of the URL, delimited by slashes (/). Each segment captures the value of the part of the URL which matches its position. The captured values can be found in the `req.params` object.
+Beim Aufbau einer API müssen wir den Nutzern die Möglichkeit geben, uns mitzuteilen, was sie von unserem Dienst erwarten. Wenn der Kunde beispielsweise Informationen über einen in der Datenbank gespeicherten Nutzer anfordert, muss er uns mitteilen, an welchem Nutzer er interessiert ist. Eine Möglichkeit, dieses Ergebnis zu erreichen, ist die Verwendung von Routenparametern. Routenparameter sind benannte Segmente der URL, die durch Schrägstriche (/) getrennt sind. Jedes Segment erfasst den Wert des Teils der URL, der seiner Position entspricht. Die erfassten Werte sind im Objekt `req.params` zu finden.
 
 <blockquote>route_path: '/user/:userId/book/:bookId'<br>actual_request_URL: '/user/546/book/6754' <br>req.params: {userId: '546', bookId: '6754'}</blockquote>
 
 # --instructions--
 
-Build an echo server, mounted at the route `GET /:word/echo`. Respond with a JSON object, taking the structure `{echo: word}`. You can find the word to be repeated at `req.params.word`. You can test your route from your browser's address bar, visiting some matching routes, e.g. `your-app-rootpath/freecodecamp/echo`.
+Erstelle einen Echo-Server, der über die Route `GET /:word/echo` eingebunden wird. Antworte mit einem JSON-Objekt, das die Struktur `{echo: word}` hat. Das zu wiederholende Wort findest du unter `req.params.word`. Du kannst deine Route in der Adressleiste deines Browsers testen, indem du einige passende Routen besuchst, z.B. `your-app-rootpath/freecodecamp/echo`.
 
 # --hints--
 
-Test 1 : Your echo server should repeat words correctly
+Test 1: Dein Echo-Server sollte Wörter korrekt wiederholen
 
 ```js
 (getUserInput) =>
@@ -36,7 +36,7 @@ Test 1 : Your echo server should repeat words correctly
   );
 ```
 
-Test 2 : Your echo server should repeat words correctly
+Test 2: Dein Echo-Server sollte Wörter korrekt wiederholen
 
 ```js
 (getUserInput) =>

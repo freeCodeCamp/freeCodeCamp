@@ -1,7 +1,7 @@
 ---
 id: 5900f3c11000cf542c50fed3
-title: 'Problem 84: Monopoly odds'
-challengeType: 5
+title: '问题 84：垄断赔率'
+challengeType: 1
 forumTopicId: 302198
 dashedName: problem-84-monopoly-odds
 ---

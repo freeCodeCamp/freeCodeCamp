@@ -10,11 +10,11 @@ dashedName: build-a-telephone-number-validator
 
 Return `true` if the passed string looks like a valid US phone number.
 
-The user may fill out the form field any way they choose as long as it has the format of a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):
+Der Benutzer kann das Formularfeld auf jede beliebige Weise ausfüllen, solange es das Format einer gültigen US-Nummer hat. The following are examples of valid formats for US numbers (refer to the tests below for other variants):
 
 <blockquote>555-555-5555<br>(555)555-5555<br>(555) 555-5555<br>555 555 5555<br>5555555555<br>1 555 555 5555</blockquote>
 
-For this challenge you will be presented with a string such as `800-692-7753` or `8oo-six427676;laskdjf`. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is `1`. Return `true` if the string is a valid US phone number; otherwise return `false`.
+For this challenge you will be presented with a string such as `800-692-7753` or `8oo-six427676;laskdjf`. Your job is to validate or reject the US phone number based on any combination of the formats provided above. Die Vorwahl ist erforderlich. If the country code is provided, you must confirm that the country code is `1`. Return `true` if the string is a valid US phone number; otherwise return `false`.
 
 # --hints--
 
@@ -24,7 +24,7 @@ For this challenge you will be presented with a string such as `800-692-7753` or
 assert(typeof telephoneCheck('555-555-5555') === 'boolean');
 ```
 
-`telephoneCheck("1 555-555-5555")` should return `true`.
+`telephoneCheck("1 555-555-5555")` sollte `true` zurückgeben.
 
 ```js
 assert(telephoneCheck('1 555-555-5555') === true);
@@ -186,7 +186,7 @@ assert(telephoneCheck('(555)5(55?)-5555') === false);
 assert(telephoneCheck('55 55-55-555-5') === false);
 ```
 
-`telephoneCheck("11 555-555-5555")` should return `false`.
+`telephoneCheck("11 555-555-5555")` sollte `false` zurückgeben.
 
 ```js
 assert(telephoneCheck('11 555-555-5555') === false);

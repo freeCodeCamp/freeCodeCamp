@@ -22,7 +22,7 @@ socket.on('disconnect', () => {
 
 **Примітка:** Як і `'disconnect'`, всі інші події, які сокет може передавати на сервер слід обробити в процесі підключення слухача де ми маємо 'сокет'.
 
-Підтвердіть вашу сторінку, якщо все зрозуміло. Якщо сталась якась помилка, ви маєте змогу перевірити зроблений проєкт до цього етапу [тут](https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa).
+Підтвердіть вашу сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

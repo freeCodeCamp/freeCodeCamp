@@ -1,7 +1,7 @@
 ---
 id: 5900f4e01000cf542c50fff2
 title: '問題 371: ナンバープレート'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302033
 dashedName: problem-371-licence-plates
 ---
@@ -14,7 +14,7 @@ dashedName: problem-371-licence-plates
 
 移動中に見た 2 枚のナンバープレートの数字の合計が 1000 になったら勝ちです。
 
-例: `MIC-012` と `HAN-988` の組み合わせは勝ちで、`RYU-500` と `SET-500` でも勝ちになります (1 回の移動中に見たものであれば)。
+例: `MIC-012` and `HAN-988` is a win and `RYU-500` and `SET-500` too (as long as he sees them in the same trip).
 
 勝つために見る必要のあるナンバープレートの枚数の期待値を求めなさい。 回答は、四捨五入して小数第 8 位まで示すこと。
 

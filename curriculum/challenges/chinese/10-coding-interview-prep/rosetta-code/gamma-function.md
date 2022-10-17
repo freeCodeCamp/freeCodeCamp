@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7e76
 title: Gamma function
-challengeType: 5
+challengeType: 1
 forumTopicId: 302271
 dashedName: gamma-function
 ---
 
 # --description--
 
-Implement one algorithm (or more) to compute the [Gamma](https://en.wikipedia.org/wiki/Gamma function) ($\\Gamma$) function (in the real field only).
+Implement one algorithm (or more) to compute the Gamma function (in the real field only).
 
 The Gamma function can be defined as:
 

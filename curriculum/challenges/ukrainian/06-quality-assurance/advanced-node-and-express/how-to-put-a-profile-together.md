@@ -24,7 +24,7 @@ h2.center#welcome Welcome, #{username}!
 a(href='/logout') Logout
 ```
 
-Відправте сторінку, якщо все було виконано правильно. Якщо ви натрапили на помилки, ви можете перевірити виконання проєкту до цього етапу [here](https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a).
+Відправте сторінку, якщо все було виконано правильно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

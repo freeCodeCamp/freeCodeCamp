@@ -1,14 +1,20 @@
 ---
 id: 596e457071c35c882915b3e4
 title: 文字列リストの比較
-challengeType: 5
+challengeType: 1
 forumTopicId: 302235
 dashedName: compare-a-list-of-strings
 ---
 
 # --description--
 
-任意の多くの文字列 [リスト](https://en.wikipedia.org/wiki/List_(abstract_data_type) "wp: List\_(abstract_data_type)") が与えられた場合、以下の各条件で関数を作成します。
+A list is a ordered set of values that may contain duplicates. Here is an example:
+
+```js
+const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
+```
+
+Given a list of arbitrarily many strings, implement a function for each of the following conditions:
 
 <ul>
   <li>それらがすべて語彙として等しいかどうかをテストします</li>
@@ -17,73 +23,73 @@ dashedName: compare-a-list-of-strings
 
 # --hints--
 
-`allEqual` という関数です。
+`allEqual` should be a function.
 
 ```js
 assert(typeof allEqual === 'function');
 ```
 
-`azSorted` という関数です。
+`azSorted` should be a function.
 
 ```js
 assert(typeof azSorted === 'function');
 ```
 
-`allEqual(["AA", "AA", "AA", "AA"])` は真を返します。
+`allEqual(["AA", "AA", "AA", "AA"])` should return true.
 
 ```js
 assert(allEqual(testCases[0]));
 ```
 
-`azSorted(["AA", "AA", "AA", "AA"])` は偽を返します。
+`azSorted(["AA", "AA", "AA", "AA"])` should return false.
 
 ```js
 assert(!azSorted(testCases[0]));
 ```
 
-`allEqual(["AA", "ACB", "BB", "CC"])` は偽を返します。
+`allEqual(["AA", "ACB", "BB", "CC"])` should return false.
 
 ```js
 assert(!allEqual(testCases[1]));
 ```
 
-`azSorted(["AA", "ACB", "BB", "CC"])` は真を返します。
+`azSorted(["AA", "ACB", "BB", "CC"])` should return true.
 
 ```js
 assert(azSorted(testCases[1]));
 ```
 
-`allEqual([])` は真を返します。
+`allEqual([])` should return true.
 
 ```js
 assert(allEqual(testCases[2]));
 ```
 
-`azSorted([])` は真を返します。
+`azSorted([])` should return true.
 
 ```js
 assert(azSorted(testCases[2]));
 ```
 
-`allEqual(["AA"])` は真を返します。
+`allEqual(["AA"])` should return true.
 
 ```js
 assert(allEqual(testCases[3]));
 ```
 
-`azSorted(["AA"])` は真を返します。
+`azSorted(["AA"])` should return true.
 
 ```js
 assert(azSorted(testCases[3]));
 ```
 
-`allEqual(["BB", "AA"])` は偽を返します。
+`allEqual(["BB", "AA"])` should return false.
 
 ```js
 assert(!allEqual(testCases[4]));
 ```
 
-`azSorted(["BB", "AA"])` は偽を返します。
+`azSorted(["BB", "AA"])` should return false.
 
 ```js
 assert(!azSorted(testCases[4]));

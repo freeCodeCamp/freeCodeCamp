@@ -1,6 +1,6 @@
 ---
 id: 5895f70cf9fc0f352b528e65
-title: Set up Passport
+title: Passport einrichten
 challengeType: 2
 forumTopicId: 301565
 dashedName: set-up-passport
@@ -8,7 +8,7 @@ dashedName: set-up-passport
 
 # --description--
 
-It's time to set up *Passport* so we can finally start allowing a user to register or login to an account! In addition to Passport, we will use Express-session to handle sessions. Express-session has a ton of advanced features you can use, but for now we're just going to use the basics! Using this middleware saves the session id as a cookie in the client and allows us to access the session data using that id on the server. This way we keep personal account information out of the cookie used by the client to verify to our server they are authenticated and just keep the *key* to access the data stored on the server.
+It's time to set up *Passport* so we can finally start allowing a user to register or login to an account! Zusätzlich zu Passport werden wir Express-session verwenden, um Sitzungen zu verwalten. Express-session has a ton of advanced features you can use, but for now we're just going to use the basics! Using this middleware saves the session id as a cookie in the client and allows us to access the session data using that id on the server. This way we keep personal account information out of the cookie used by the client to verify to our server they are authenticated and just keep the *key* to access the data stored on the server.
 
 `passport@~0.4.1` and `express-session@~1.17.1` are already installed, and are both listed as dependencies in your `package.json` file.
 

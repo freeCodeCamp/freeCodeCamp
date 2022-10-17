@@ -14,11 +14,11 @@ dashedName: networking-web-scraping-with-python
 
 Додаткові ресурси:
 
-\- [Відео-урок: socket1](https://www.youtube.com/watch?v=dWLdI43W-g)
+\- <a href="https://www.youtube.com/watch?v=dWLdI143W-g" target="_blank" rel="noopener noreferrer nofollow">Exercise: socket1</a>
 
-\- [Відео-урок: urllib](https://www.youtube.com/watch?v=8yis2DvbBkI)
+\- <a href="https://www.youtube.com/watch?v=8yis2DvbBkI" target="_blank" rel="noopener noreferrer nofollow">Exercise: urllib</a>
 
-\- [Відео-урок: urllinks](https://www.youtube.com/watch?v=g9flPDG9nnY)
+\- <a href="https://www.youtube.com/watch?v=g9flPDG9nnY" target="_blank" rel="noopener noreferrer nofollow">Exercise: urllinks</a>
 
 # --question--
 

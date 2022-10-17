@@ -14,7 +14,7 @@ dashedName: strings-and-lists
 
 Додаткові ресурси:
 
-\- [Відео-урок](https://www.youtube.com/watch?v=-9TfJF2dwHI)
+\- <a href="https://www.youtube.com/watch?v=-9TfJF2dwHI" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
 
 # --question--
 

@@ -8,30 +8,30 @@ dashedName: problem-220-heighway-dragon
 
 # --description--
 
-Let $D_0$ be the two-letter string "Fa". For $n ≥ 1$, derive $D_n$ from $D_{n - 1}$ by the string-rewriting rules:
+Lasse $D_0$ die zweibuchstabige Zeichenfolge "Fa" sein. For $n ≥ 1$, derive $D_n$ from $D_{n - 1}$ by the string-rewriting rules:
 
 - "a" → "aRbFR"
 - "b" → "LFaLb"
 
-Thus, $D_0$ = "Fa", $D_1$ = "FaRbFR", $D_2$ = "FaRbFRRLFaLbFR", and so on.
+Somit ist $D_0$ = "Fa", $D_1$ = "FaRbFR", $D_2$ = "FaRbFRRLFaLbFR", und so weiter.
 
-These strings can be interpreted as instructions to a computer graphics program, with "F" meaning "draw forward one unit", "L" meaning "turn left 90 degrees", "R" meaning "turn right 90 degrees", and "a" and "b" being ignored. The initial position of the computer cursor is (0,0), pointing up towards (0,1).
+Diese Zeichenketten können als Anweisungen an ein Computergrafikprogramm interpretiert werden, wobei "F" für "eine Einheit vorwärts ziehen", "L" für "90 Grad nach links drehen", "R" für "90 Grad nach rechts drehen" steht und "a" und "b" ignoriert werden. Die Ausgangsposition des Computer-Cursors ist (0,0), er zeigt nach oben in Richtung (0,1).
 
-Then $D_n$ is an exotic drawing known as the Heighway Dragon of order $n$. For example, $D_{10}$ is shown below; counting each "F" as one step, the highlighted spot at (18,16) is the position reached after 500 steps.
+Dann ist $D_n$ eine exotische Zeichnung, bekannt als der Heighway-Drache der Ordnung $n$. Zum Beispiel ist $D_{10}$ unten dargestellt; jedes "F" wird als ein Schritt gezählt, die hervorgehobene Stelle bei (18,16) ist die Position, die nach 500 Schritten erreicht wurde.
 
-<img class="img-responsive center-block" alt="drawing of the Heighway Dragon after 500 steps" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="Zeichnung des Heighway Dragon nach 500 Schritten" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px;" />
 
-What is the position of the cursor after ${10}^{12}$ steps in $D_{50}$? Give your answer as a string in the form `x,y` with no spaces.
+Wie ist die Position des Cursors nach ${10}^{12}$ Schritten in $D_{50}$? Gib deine Antwort als String in der Form `x,y` ohne Leerzeichen an.
 
 # --hints--
 
-`heighwayDragon()` should return a string.
+`heighwayDragon()` sollte einen String zurückgeben.
 
 ```js
 assert(typeof heighwayDragon() === 'string');
 ```
 
-`heighwayDragon()` should return the string `139776,963904`.
+`heighwayDragon()` sollte den String `139776,963904` zurückgeben.
 
 ```js
 assert.strictEqual(heighwayDragon(), '139776,963904');

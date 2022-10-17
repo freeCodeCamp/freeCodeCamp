@@ -14,7 +14,7 @@ dashedName: intermediate-strings
 
 更多資料：
 
-[練習](https://www.youtube.com/watch?v=1bSqHot-KwE)
+\- <a href="https://www.youtube.com/watch?v=1bSqHot-KwE" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
 
 # --question--
 

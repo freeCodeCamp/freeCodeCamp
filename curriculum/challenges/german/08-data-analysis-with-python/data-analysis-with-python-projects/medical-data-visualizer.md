@@ -8,38 +8,38 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode an diesem Projekt arbeiten</a>.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+Wir sind noch dabei, den interaktiven Teil des Python-Kurses zu entwickeln. Hier sind erstmal einige Videos auf dem freeCodeCamp.org YouTube-Kanal, die dir alles beibringen, was du wissen musst, um dieses Projekt abzuschließen:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Videokurs: Python für jedermann</a> (14 Stunden)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">Wie man Daten mit Python-Pandas analysiert </a> (10 Stunden)
 
 # --instructions--
 
-In this project, you will visualize and make calculations from medical examination data using matplotlib, seaborn, and pandas. The dataset values were collected during medical examinations.
+In diesem Projekt wirst du mit Hilfe von matplotlib, seaborn und pandas Berechnungen aus medizinischen Untersuchungsdaten visualisieren und durchführen. Die Datensatzwerte wurden bei medizinischen Untersuchungen gesammelt.
 
-## Data description
+## Datenbeschreibung
 
-The rows in the dataset represent patients and the columns represent information like body measurements, results from various blood tests, and lifestyle choices. You will use the dataset to explore the relationship between cardiac disease, body measurements, blood markers, and lifestyle choices.
+Die Zeilen des Datensatzes repräsentieren Patienten und die Spalten stellen Informationen wie Körpermessungen, Ergebnisse verschiedener Bluttests und Lebensweisen dar. Du wirst den Datensatz verwenden, um die Beziehung zwischen Herzkrankheiten, Körpermessungen, Blutmarkern und Lebensweisen zu erforschen.
 
-File name: medical_examination.csv
+Dateiname: medical_examination.csv
 
-| Feature | Variable Type | Variable      | Value Type |
-|:-------:|:------------:|:-------------:|:----------:|
-| Age | Objective Feature | `age` | int (days) |
-| Height | Objective Feature | `height` | int (cm) |
-| Weight | Objective Feature | `weight` | float (kg) |
-| Gender | Objective Feature | `gender` | categorical code |
-| Systolic blood pressure | Examination Feature | `ap_hi` | int |
-| Diastolic blood pressure | Examination Feature | `ap_lo` | int |
-| Cholesterol | Examination Feature | `cholesterol` | 1: normal, 2: above normal, 3: well above normal |
-| Glucose | Examination Feature | `gluc` | 1: normal, 2: above normal, 3: well above normal |
-| Smoking | Subjective Feature | `smoke` | binary |
-| Alcohol intake | Subjective Feature | `alco` | binary |
-| Physical activity | Subjective Feature | `active` | binary |
-| Presence or absence of cardiovascular disease | Target Variable | `cardio` | binary |
+|                 Merkmal                  |    Variablentyp     |   Variable    |                       Wert                       |
+|:----------------------------------------:|:-------------------:|:-------------:|:------------------------------------------------:|
+|                  Alter                   |  Objective Feature  |     `age`     |                    int (Tage)                    |
+|                  Größe                   |  Objective Feature  |   `height`    |                     int (cm)                     |
+|                 Gewicht                  |  Objective Feature  |   `weight`    |                    float (kg)                    |
+|                Geschlecht                |  Objective Feature  |   `gender`    |                  Kategorie-Code                  |
+|          Systolischer Blutdruck          | Examination Feature |    `ap_hi`    |                       int                        |
+|         Diastolischer Blutdruck          | Examination Feature |    `ap_lo`    |                       int                        |
+|               Cholesterin                | Examination Feature | `cholesterol` | 1: normal, 2: above normal, 3: well above normal |
+|                 Glucose                  | Examination Feature |    `gluc`     | 1: normal, 2: above normal, 3: well above normal |
+|                 Rauchen                  | Subjective Feature  |    `smoke`    |                      binary                      |
+|              Alkoholkonsum               | Subjective Feature  |    `alco`     |                      binary                      |
+|          Körperliche Aktivität           | Subjective Feature  |   `active`    |                      binary                      |
+| Leiden unter Herz-Kreislauf-Erkrankungen |   Target Variable   |   `cardio`    |                      binary                      |
 
 ## Tasks
 

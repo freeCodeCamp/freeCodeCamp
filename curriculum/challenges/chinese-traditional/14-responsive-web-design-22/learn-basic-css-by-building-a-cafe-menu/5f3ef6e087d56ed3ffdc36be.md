@@ -1,8 +1,8 @@
 ---
 id: 5f3ef6e087d56ed3ffdc36be
-title: 步驟 62
+title: Step 61
 challengeType: 0
-dashedName: step-62
+dashedName: step-61
 ---
 
 # --description--
@@ -45,13 +45,11 @@ assert($('.established').css('font-style') === 'italic');
   </head>
   <body>
     <div class="menu">
+      <main>
 --fcc-editable-region--
-      <header>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
-      </header>
 --fcc-editable-region--
-      <main>
         <section>
           <h2>Coffee</h2>
           <article class="item">

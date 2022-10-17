@@ -22,13 +22,13 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --instructions--
 
-Додайте версію пакету "2.14.0" у поле `dependencies` вашого файлу package.json.
+Add version "1.1.0" of the `@freecodecamp/example` package to the `dependencies` field of your `package.json` file.
 
-**Примітка:** Момент - це зручна бібліотека для дій з часом і днями.
+**Note:** `@freecodecamp/example` is a faux package used as a learning tool.
 
 # --hints--
 
-"взаємозв'язки" повинні включати "момент"
+`"dependencies"` should include `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -37,8 +37,8 @@ dashedName: expand-your-project-with-external-packages-from-npm
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -47,7 +47,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
   );
 ```
 
-версія "момент" повинна бути "2.14.0"
+`"@freecodecamp/example"` version should be `"1.1.0"`.
 
 ```js
 (getUserInput) =>
@@ -55,9 +55,9 @@ dashedName: expand-your-project-with-external-packages-from-npm
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^[\^\~]?2\.14\.0/,
-        'Wrong version of "moment" installed. It should be 2.14.0'
+        packJson.dependencies["@freecodecamp/example"],
+        /^[\^\~]?1\.1\.0/,
+        'Wrong version of "@freecodecamp/example" installed. It should be 1.1.0'
       );
     },
     (xhr) => {

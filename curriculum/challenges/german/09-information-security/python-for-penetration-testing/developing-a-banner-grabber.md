@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94db3
-title: Developing a Banner Grabber
+title: Entwicklung eines Banner-Grabbers
 challengeType: 11
 videoId: CeGW761BIsA
 bilibiliIds:

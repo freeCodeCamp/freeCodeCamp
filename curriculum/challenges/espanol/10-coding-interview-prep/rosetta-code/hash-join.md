@@ -1,19 +1,19 @@
 ---
 id: 5956795bc9e2c415eb244de1
 title: Hash join
-challengeType: 5
+challengeType: 1
 forumTopicId: 302284
 dashedName: hash-join
 ---
 
 # --description--
 
-An [inner join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join "wp: Join\_(SQL)#Inner_join") is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the [nested loop join](https://en.wikipedia.org/wiki/Nested loop join "wp: Nested loop join") algorithm, but a more scalable alternative is the [hash join](https://en.wikipedia.org/wiki/hash join "wp: hash join") algorithm.
+An inner join is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the nested loop join algorithm, but a more scalable alternative is the hash join algorithm.
 
 The "hash join" algorithm consists of two steps:
 
 <ol>
-  <li><strong>Hash phase:</strong> Create a <a href='https://en.wikipedia.org/wiki/Multimap' title='wp: Multimap' target='_blank'>multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
+  <li><strong>Hash phase:</strong> Create a multimap from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
   <ul>
     <li>The multimap must support hash-based lookup which scales better than a simple linear search, because that's the whole point of this algorithm.</li>
     <li>Ideally we should create the multimap for the smaller table, thus minimizing its creation time and memory size.</li>
@@ -53,7 +53,7 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
             <table>
               <tr>
                 <th style="padding: 4px; margin: 5px;">Age</th>
-                <th style="padding: 4px; margin: 5px;">Name</th>
+                <th style="padding: 4px; margin: 5px;">Nombre</th>
               </tr>
               <tr>
                 <td style="padding: 4px; margin: 5px;">27</td>
@@ -127,7 +127,7 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
   </tr>
 </table>
 
-**Output**
+**Resultado**
 
 | A_age | A_name | B_character | B_nemesis |
 | ----- | ------ | ----------- | --------- |

@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-値 ["a", "b", "c"] を含む Set と値 ["c", "d"] を含む Set の和集合は、値 ["a", "b", "c", "d"] を含む新しい Set を返す必要があります。
+The union of a `Set` containing values `["a", "b", "c"]` and a `Set` containing values `["c", "d"]` should return a new `Set` containing values `["a", "b", "c", "d"]`.
 
 ```js
 assert(
