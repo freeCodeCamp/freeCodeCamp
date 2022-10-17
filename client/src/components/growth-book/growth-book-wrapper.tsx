@@ -11,7 +11,10 @@ import { isSignedInSelector, userSelector } from '../../redux/selectors';
 import envData from '../../../../config/env.json';
 import { User } from '../../redux/prop-types';
 
-const { clientLocale, growthbookUri } = envData;
+const { clientLocale, growthbookUri } = envData as {
+  clientLocale: string;
+  growthbookUri: string | null;
+};
 
 const growthbook = new GrowthBook();
 
@@ -27,8 +30,6 @@ const mapStateToProps = createSelector(
 type StateProps = ReturnType<typeof mapStateToProps>;
 interface GrowthBookWrapper extends StateProps {
   children: ReactNode;
-  user: User;
-  isSignedIn: boolean;
 }
 
 const GrowthBookWrapper = ({
