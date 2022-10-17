@@ -40,7 +40,7 @@ assert.strictEqual(palindromicSums(540),1570);
 ## --seed-contents--
 
 ```js
-function palindromicSums(num) {
+function palindromicSums(limit) {
 
   return true;
 }
