@@ -1,9 +1,10 @@
-const preFormattedBlockNames = require('./preformatted-block-names.json');
+import preFormattedBlockNames from './preformatted-block-names.json';
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
 
-exports.blockNameify = function blockNameify(phrase) {
-  const preFormatted = preFormattedBlockNames[phrase] || '';
+export function blockNameify(phrase: string): string {
+  const preFormatted =
+    (preFormattedBlockNames as Record<string, string>)[phrase] || '';
   if (preFormatted) {
     return preFormatted;
   }
@@ -19,4 +20,4 @@ exports.blockNameify = function blockNameify(phrase) {
       return word.charAt(0).toUpperCase() + word.slice(1);
     })
     .join(' ');
-};
+}
