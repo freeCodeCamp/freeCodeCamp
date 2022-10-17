@@ -365,7 +365,7 @@ Open the `config/index.js` file to add the new language and configure the necess
 - `algoliaIndices`: This object is a map of Algolia indices for each language. To add a new language, use the lowercase language name as the _key_, and `news-` followed by the lowercase ISO 639-1 language code as the _value_.
 
 > [!NOTE]
-> If you are unsure about the string to use while setting `algoliaIndicies`, send a message to Kris (@scissorsneedfoodtoo), or someone else with access to Algolia, and ask them to check.
+> If you are unsure about the string to use while setting `algoliaIndices`, send a message to Kris (@scissorsneedfoodtoo), or someone else with access to Algolia, and ask them to check.
 
 For example, if you are launching Dothraki News, here are what the objects / arrays above should look like:
 
