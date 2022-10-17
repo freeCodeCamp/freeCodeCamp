@@ -5,7 +5,8 @@ const selectors = {
   testButton: '[data-cy=run-tests-button]',
   monacoTabs: '.monaco-editor-tabs',
   signInButton: '#action-buttons-container a[href$="/signin"]',
-  submitButton: '[data-cy=submit-button]'
+  submitButton: '[data-cy=submit-button]',
+  instructionContainer: '.action-row-container'
 };
 
 describe('Challenge with multifile editor', () => {
@@ -56,6 +57,15 @@ describe('Challenge with multifile editor', () => {
     cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
     cy.get(selectors.submitButton).should('not.be.focused');
     cy.get(selectors.testButton).click();
+    cy.get(selectors.submitButton).should('be.focused');
+  });
+
+  it('checks hotkeys when instruction is focused', () => {
+    cy.reload();
+    cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
+    cy.get(selectors.instructionContainer)
+      .click('topRight')
+      .trigger('keydown', { ctrlKey: true, keyCode: 13 }); // keyCode : 13 enter key
     cy.get(selectors.submitButton).should('be.focused');
   });
 });
