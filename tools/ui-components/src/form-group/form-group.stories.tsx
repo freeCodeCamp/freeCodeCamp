@@ -15,6 +15,10 @@ const story = {
   }
 };
 
+// I have cleared the errors in form-group, so the error in the story
+// is from this part of the code, I am using Story the wrong way
+// which leads to error in rendering 🤔
+
 const Template: Story<FormGroupProps> = ({
   controlId,
   className,
