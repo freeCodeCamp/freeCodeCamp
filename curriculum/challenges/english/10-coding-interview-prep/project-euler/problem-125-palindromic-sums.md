@@ -51,36 +51,29 @@ palindromicSums(100000000);
 # --solutions--
 
 ```js
+function isPalindrome(num) {
+  return num
+    .toString()
+    .split('')
+    .every((digit, i, arr) => digit === arr[arr.length - 1 - i]);
+}
 
-function IsPalindrome(num){
-    const number = num;
-    let reversed = 0;
-    while(num > 0){
-      let remainder = num % 10;
-      reversed = reversed * 10 + remainder;
-      num = Math.trunc(num/ 10);
-      
+function palindromicSums(limit) {
+  let sumOfPalindromes = 0;
+  const sqrtLimit = Math.sqrt(limit);
+  const list = new Set();
+
+  for (let i = 1; i <= sqrtLimit; i++) {
+    let sumOfSquares = i * i;
+    for (let j = i + 1; j <= sqrtLimit; j++) {
+      sumOfSquares += j * j;
+      if (sumOfSquares > limit) break;
+      if (isPalindrome(sumOfSquares) && !list.has(sumOfSquares)) {
+        sumOfPalindromes += sumOfSquares;
+        list.add(sumOfSquares);
+      }
     }
-    return reversed === number;
   }
-
-function palindromicSums(limit){
-    const sqrtLimit = Math.sqrt(limit)
-    let sum = 0;
-    const list = new Set();
-    for (let i = 1; i <= sqrtLimit; i++){
-      let number = i*i;
-      for (let j = i + 1; j <= sqrtLimit; j++){ 
-        number += j * j;
-         if (number > limit) break;
-          if (IsPalindrome(number) && !list.has(number)){
-             sum += number;
-             list.add(number);                        
-         }
-  
-     }
- }
-   return sum;
- }
-
+  return sumOfPalindromes;
+}
 ```
