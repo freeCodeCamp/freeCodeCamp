@@ -9,10 +9,11 @@ const ResearchBannerx = (): JSX.Element | null => {
       <p>
         <b>Launching Oct 19</b>: freeCodeCamp is teaming up with researchers
         from Stanford and UPenn to study how to help people build strong coding
-        habits.{' '}
+        habits.
       </p>
       <p style={{ marginBottom: 20, marginTop: 14 }}>
-        Would you like to get involved? You’ll get free coaching from experts.{' '}
+        Would you like to get involved? You’ll get free coaching from our
+        scientists.
       </p>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Button
