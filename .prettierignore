@@ -8,6 +8,8 @@ config/**/*.json
 config/i18n/all-langs.js
 config/certification-settings.js
 docs/i18n
+utils/block-nameify.js
+utils/block-nameify.test.js
 utils/slugs.js
 utils/slugs.test.js
 utils/index.js
