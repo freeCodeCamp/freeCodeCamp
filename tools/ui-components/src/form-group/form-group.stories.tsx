@@ -1,7 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { Button } from '../button';
-import { FormControl } from '../form-control';
+
 import { FormGroup, FormGroupProps } from '.';
 
 const story = {
@@ -15,35 +14,8 @@ const story = {
   }
 };
 
-// I have cleared the errors in form-group, so the error in the story
-// is from this part of the code, I am using Story the wrong way
-// which leads to error in rendering 🤔
-
-const Template: Story<FormGroupProps> = ({
-  controlId,
-  className,
-  validationState
-}) => {
-  return (
-    <div>
-      {/* when a function runs and confirm a value it should push vaidation state into formGroup */}
-      <Button onClick={() => (validationState = 'success')}>Success</Button>
-      <Button onClick={() => (validationState = 'warning')}>Warning</Button>
-      <Button onClick={() => (validationState = 'error')}>Error</Button>
-      <FormGroup
-        controlId={controlId}
-        className={className}
-        validationState={validationState}
-      >
-        <FormControl
-          type={'text'}
-          placeholder='Hello World'
-          value='Hello World'
-          required={true}
-        />
-      </FormGroup>
-    </div>
-  );
+const Template: Story<FormGroupProps> = args => {
+  return <FormGroup {...args} />;
 };
 
 export const Default = Template.bind({});
