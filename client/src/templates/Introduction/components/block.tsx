@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { withTranslation, TFunction } from 'react-i18next';
 import { ProgressBar } from '@freecodecamp/react-bootstrap';
+import React, { Component } from 'react';
+import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
@@ -8,23 +8,30 @@ import { createSelector } from 'reselect';
 import { SuperBlocks } from '../../../../../config/certification-settings';
 import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
+import {
+  isCodeAllyPractice,
+  isFinalProject
+} from '../../../../utils/challenge-types';
 import Caret from '../../../assets/icons/caret';
 import DropDown from '../../../assets/icons/dropdown';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Link, Spacer } from '../../../components/helpers';
 import { executeGA } from '../../../redux/actions';
-import { completedChallengesSelector } from '../../../redux/selectors';
-import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
-import { playTone } from '../../../utils/tone';
-import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
 import {
-  isCodeAllyPractice,
-  isFinalProject
-} from '../../../../utils/challenge-types';
-import Challenges from './challenges';
+  ChallengeNode,
+  CompletedChallenge,
+  User
+} from '../../../redux/prop-types';
+import {
+  completedChallengesSelector,
+  userSelector
+} from '../../../redux/selectors';
+import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
+import { playTone } from '../../../utils/tone';
 import '../intro.css';
+import { makeExpandedBlockSelector, toggleBlock } from '../redux';
+import Challenges from './challenges';
 
 const { curriculumLocale } = envData;
 
@@ -37,9 +44,15 @@ const mapStateToProps = (
   return createSelector(
     expandedSelector,
     completedChallengesSelector,
-    (isExpanded: boolean, completedChallenges: CompletedChallenge[]) => ({
+    userSelector,
+    (
+      isExpanded: boolean,
+      completedChallenges: CompletedChallenge[],
+      user: User
+    ) => ({
       isExpanded,
-      completedChallengeIds: completedChallenges.map(({ id }) => id)
+      completedChallengeIds: completedChallenges.map(({ id }) => id),
+      user
     })
   )(state as Record<string, unknown>);
 };
@@ -54,6 +67,7 @@ interface BlockProps {
   executeGA: typeof executeGA;
   isExpanded: boolean;
   superBlock: SuperBlocks;
+  user: User;
   t: TFunction;
   toggleBlock: typeof toggleBlock;
 }
@@ -69,8 +83,15 @@ export class Block extends Component<BlockProps> {
   }
 
   handleBlockClick(): void {
-    const { blockDashedName, toggleBlock, executeGA } = this.props;
-    void playTone('block-toggle');
+    const {
+      blockDashedName,
+      toggleBlock,
+      executeGA,
+      user: { sound }
+    } = this.props;
+
+    if (sound) void playTone('block-toggle');
+
     executeGA({
       type: 'event',
       data: {
