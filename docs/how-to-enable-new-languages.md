@@ -312,7 +312,9 @@ article3link: ...
   ...
 ```
 
-### Add a dayjs file for the New Language
+### Add a dayjs Locale File for the New Language
+
+By default, dayjs only includes English as a locale. To enable it to work with other languages, you need to add a new dayjs locale file to the CDN.
 
 In the [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) directory, create a new file and name it `isocode.min.js`. For example, if you are launching Dothraki News, name the file `mis.min.js`.
 
@@ -321,7 +323,10 @@ In the [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeC
 
 Then, visit [this page on cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) with all available dayjs files for the version we're using, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/<version>/locale/isocode.min.js` link for the new language, and open it in a new tab.
 
-Copy the dayjs code from the new tab into the new file you created. The code will be similar to this, but minified:
+> [!NOTE]
+> You only need to add the .../dayjs/\<version\>/_locale_/isocode.min.js locale file. You do not need to add any other dayjs files.
+
+Copy the dayjs locale code from the new tab into the new file you created. For example, here is an un-minified version of the English locale code for dayjs:
 
 ```js
 !(function (e, n) {
