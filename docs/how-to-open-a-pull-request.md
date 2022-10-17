@@ -188,7 +188,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    git cherry-pick <commit-hash>
    ```
 
-4. Resolve any conflicts, and cleanup, install run tests
+4. Resolve any conflicts, cleanup, install dependencies and run tests
 
    ```console
    npm run clean
@@ -199,7 +199,6 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    # example:
 
    # npm run test:curriculum --superblock=python-for-everybody
-
    ```
 
 5. If everything looks good push back to the PR
