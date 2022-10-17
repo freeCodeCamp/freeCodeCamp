@@ -10,7 +10,7 @@ dashedName: how-to-put-a-profile-together
 
 Now that you can ensure the user accessing the `/profile` is authenticated, you can use the information contained in `req.user` on your page.
 
-Pass an object containing the property `username` and value of `req.user.username` as the second argument for the render method of the profile view.
+Pass an object containing the property `username` and value of `req.user.username` as the second argument for the `render` method of the profile view.
 
 Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
 
@@ -20,7 +20,7 @@ h2.center#welcome Welcome, #{username}!
 
 This creates an `h2` element with the class `center` and id `welcome` containing the text `Welcome, ` followed by the username.
 
-Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user.
+Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user:
 
 ```pug
 a(href='/logout') Logout

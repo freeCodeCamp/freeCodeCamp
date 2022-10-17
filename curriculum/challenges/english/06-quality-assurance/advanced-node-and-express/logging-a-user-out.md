@@ -49,7 +49,7 @@ async (getUserInput) => {
 }
 ```
 
-Logout should redirect to the home page.
+`/logout` should redirect to the home page.
 
 ```js
 async (getUserInput) => {

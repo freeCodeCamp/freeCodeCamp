@@ -8,7 +8,7 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Now you need to allow a new user on your site to register an account. In the `res.render` for the home page add a new variable to the object passed along - `showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file. This form is set up to **POST** on `/register`, so create that route and have add the user object to the database by following the logic below.
+Now you need to allow a new user on your site to register an account. In the `res.render` for the home page add a new variable to the object passed along - `showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file. This form is set up to **POST** on `/register`, so create that route and have it add the user object to the database by following the logic below.
 
 The logic of the registration route should be as follows:
 
@@ -62,7 +62,7 @@ Submit your page when you think you've got it right. If you're running into erro
 
 # --hints--
 
-You should register route and display on home.
+You should have a `/register` route and display a registration form on the home page.
 
 ```js
 async (getUserInput) => {
@@ -77,7 +77,7 @@ async (getUserInput) => {
   assert.match(
     data,
     /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
-    'You should have a route accepted a post request on register that querys the db with findone and the query being username: req.body.username'
+    'You should have a route that accepts a POST request on /register that queries the db with findOne and the query being username: req.body.username'
   );
 }
 ```

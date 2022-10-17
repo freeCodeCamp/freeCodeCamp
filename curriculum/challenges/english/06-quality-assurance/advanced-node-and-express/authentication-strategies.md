@@ -16,15 +16,15 @@ A strategy is a way of authenticating a user. You can use a strategy for allowin
 const LocalStrategy = require('passport-local');
 ```
 
-Tell passport to **use** an instantiated `LocalStrategy` object with a few settings defined. Make sure this (as well as everything from this point on) is encapsulated in the database connection since it relies on it!
+Tell passport to **use** an instantiated `LocalStrategy` object with a few settings defined. Make sure this (as well as everything from this point on) is encapsulated in the database connection since it relies on it!:
 
 ```javascript
 passport.use(new LocalStrategy((username, password, done) => {
   myDataBase.findOne({ username: username }, (err, user) => {
     console.log(`User ${username} attempted to log in.`);
-    if (err) { return done(err); }
-    if (!user) { return done(null, false); }
-    if (password !== user.password) { return done(null, false); }
+    if (err) return done(err);
+    if (!user) return done(null, false);
+    if (password !== user.password) return done(null, false);
     return done(null, user);
   });
 }));
@@ -34,7 +34,7 @@ This is defining the process to use when you try to authenticate someone locally
 
 Many strategies are set up using different settings. Generally, it is easy to set it up based on the README in that strategy's repository. A good example of this is the GitHub strategy where you don't need to worry about a username or password because the user will be sent to GitHub's auth page to authenticate. As long as they are logged in and agree then GitHub returns their profile for you to use.
 
-In the next step, you will set up how to actually call the authentication strategy to validate a user based on form data!
+In the next step, you will set up how to actually call the authentication strategy to validate a user based on form data.
 
 Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
@@ -55,7 +55,7 @@ async (getUserInput) => {
 }
 ```
 
-Passport-local should be correctly required and setup.
+Passport-local should be correctly required and set up.
 
 ```js
 async (getUserInput) => {

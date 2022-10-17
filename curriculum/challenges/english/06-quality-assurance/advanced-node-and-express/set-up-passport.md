@@ -8,13 +8,13 @@ dashedName: set-up-passport
 
 # --description--
 
-It's time to set up *Passport* so you can finally start allowing a user to register or login to an account! In addition to Passport, you will use Express-session to handle sessions. Express-session has a ton of advanced features you can use, but for now you are just going to use the basics! Using this middleware saves the session id as a cookie in the client, and allows us to access the session data using that id on the server. This way, you keep personal account information out of the cookie used by the client to tell to your server clients are authenticated and keep the *key* to access the data stored on the server.
+It's time to set up *Passport* so you can finally start allowing a user to register or log in to an account. In addition to Passport, you will use Express-session to handle sessions. Express-session has a ton of advanced features you can use, but for now you are just going to use the basics. Using this middleware saves the session id as a cookie in the client, and allows us to access the session data using that id on the server. This way, you keep personal account information out of the cookie used by the client to tell to your server clients are authenticated and keep the *key* to access the data stored on the server.
 
 `passport@~0.4.1` and `express-session@~1.17.1` are already installed, and are both listed as dependencies in your `package.json` file.
 
 You will need to set up the session settings and initialize Passport. First, create the variables `session` and `passport` to require `express-session` and `passport` respectively.
 
-Then, set up your express app to use the session by defining the following options:
+Then, set up your Express app to use the session by defining the following options:
 
 ```javascript
 app.use(session({

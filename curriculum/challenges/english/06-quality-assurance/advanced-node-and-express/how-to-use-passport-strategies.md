@@ -10,7 +10,7 @@ dashedName: how-to-use-passport-strategies
 
 In the `index.pug` file supplied, there is a login form. It is hidden because of the inline JavaScript `if showLogin` with the form indented after it.
 
-In the `res.render` for that page, add a new variable to the object `showLogin: true`. When you refresh your page, you should then see the form! This form is set up to **POST** on `/login`. So, this is where you should set up to accept the POST request and authenticate the user.
+In the `res.render` for that page, add a new variable to the object, `showLogin: true`. When you refresh your page, you should then see the form! This form is set up to **POST** on `/login`. So, this is where you should set up to accept the POST request and authenticate the user.
 
 For this challenge, you should add the route `/login` to accept a POST request. To authenticate on this route, you need to add a middleware to do so before then sending a response. This is done by just passing another argument with the middleware before with your response. The middleware to use is `passport.authenticate('local')`.
 
@@ -24,7 +24,7 @@ Submit your page when you think you've got it right. If you're running into erro
 
 # --hints--
 
-All steps should be correctly implemented in the server.js.
+All steps should be correctly implemented in `server.js`.
 
 ```js
 async (getUserInput) => {
