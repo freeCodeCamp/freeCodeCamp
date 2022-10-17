@@ -413,6 +413,6 @@ Then commit and push your branch directly to the News repo.
 > [!NOTE]
 > You need to be on one of the teams with access to the News repo to push branches directly to News. Currently, only the dev, i18n, and staff teams are allowed to do this.
 
-Finally, open a PR and tag `@freeCodeCamp/dev-team` for review.
+Finally, open a PR for review.
 
 Once both your PRs to the CDN and News repo are merged, staff will create a couple more PRs to enable the new language and launch the site.
