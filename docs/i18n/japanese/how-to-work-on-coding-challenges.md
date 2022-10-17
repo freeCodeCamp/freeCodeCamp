@@ -10,7 +10,7 @@ freeCodeCamp カリキュラムのバージョン 7.0 では、[多くの繰り�
 
 これらのチャレンジを生み出すには、大きな創造性と細部へのこだわりが必要です。 たくさんの助けを得ることができます。 アイデアを出し合ったりチャレンジを実演したりできる貢献者チーム全体がサポートしてくれます。
 
-[フォーラムの 'Contributors' カテゴリ](https://forum.freecodecamp.org/c/contributors) または [Contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) へいつでもお気軽にお問合せください。
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 皆さんのご支援により、今後何百万もの人々がコーディングを学ぶのに役立つインタラクティブなコーディングカリキュラムを設計することができます。
 
@@ -245,7 +245,7 @@ title: Challenge Title
 
 2 分ルールにより、命令を簡潔にし、シードコードを明確にし、テストを容易にすることが、チャレンジ設計者に求められます。
 
-キャンパーが変更を解決するまでにかかる時間を確認し、その情報を使用して簡略化や分割が必要なチャレンジを特定します。
+We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
 
 ### モジュール化
 

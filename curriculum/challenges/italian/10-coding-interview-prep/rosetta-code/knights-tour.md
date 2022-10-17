@@ -1,18 +1,18 @@
 ---
 id: 5a23c84252665b21eecc7ed5
 title: Tour del cavallo
-challengeType: 5
+challengeType: 1
 forumTopicId: 302297
 dashedName: knights-tour
 ---
 
 # --description--
 
-[Problema del Tour del Cavallo](https://en.wikipedia.org/wiki/Knight%27s_tour): Hai una scacchiera vuota `w` \* `h`, tranne che per un singolo cavallo su una qualche casella. Il cavallo deve eseguire una sequenza di mosse permesse che lo portano a visitare ogni casella sulla scacchiera esattamente una sola volta. Nota che *non è* un requisito che il tour sia "chiuso", cioè il cavallo non deve terminare a distanza di una mossa dalla sua posizione di partenza.
+Il problema del giro del cavallo: hai una scacchiera `width`\*`height` vuota tranne che per un singolo cavallo su una casella. Il cavallo deve eseguire una sequenza di mosse permesse che lo portano a visitare ogni casella sulla scacchiera esattamente una sola volta. Nota che *non è* un requisito che il tour sia "chiuso", cioè il cavallo non deve terminare a distanza di una mossa dalla sua posizione di partenza.
 
 # --instructions--
 
-Scrivi una funzione che richiede `w` e `h` come parametri e restituisce il numero di posizioni iniziali da dove è possibile completare quanto richiesto sopra.
+Scrivi una funzione che prende `width` (larghezza) e `height` (altezza) come parametri e restituisce il numero di posizioni iniziali dove è possibile completare l'azione menzionata sopra.
 
 # --hints--
 
@@ -63,7 +63,7 @@ assert.equal(knightTour(8, 6), 48);
 ## --seed-contents--
 
 ```js
-function knightTour(w, h) {
+function knightTour(width, height) {
 
 }
 ```
@@ -71,7 +71,7 @@ function knightTour(w, h) {
 # --solutions--
 
 ```js
-function knightTour(w, h) {
+function knightTour(width, height) {
   function createBoards(rows, columns) {
     const board = [];
     const visited = [];
@@ -210,11 +210,11 @@ function knightTour(w, h) {
     [1, -2]
   ];
 
-  const [baseBoard, baseVisited] = createBoards(h, w);
+  const [baseBoard, baseVisited] = createBoards(height, width);
   fillAllowedMovesCounts(baseBoard);
   let solvedCount = 0;
-  for (let row = 0; row < h; row++) {
-    for (let column = 0; column < w; column++) {
+  for (let row = 0; row < height; row++) {
+    for (let column = 0; column < width; column++) {
       if (solveStart(baseBoard, baseVisited, row, column)) {
         solvedCount++;
       }

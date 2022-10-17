@@ -10,19 +10,23 @@ dashedName: install-and-set-up-mongoose
 
 你可以采用下面的任意一种编写代码的方式来完成这些挑战：
 
-- 克隆 [这个 GitHub 仓库](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) 并在本地完成项目。
-- 使用[我们的 Replit 上的初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose)来完成项目。
+- 克隆<a href="https://github.com/freeCodeCamp/boilerplate-mongomongoose/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成这些挑战。
+- 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成这些挑战。
 - 使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
 完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 字段中提交它的 URL。
 
 在这个挑战中，你将建立一个 MongoDB Atlas 数据库并导入连接到它所需的软件包。
 
-按照<a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' rel='noopener noreferrer' target='_blank'>这篇教程</a>在 MongoDB Atlas 创建一个托管数据库。
+按照<a href='https://chinese.freecodecamp.org/news/get-started-with-mongodb-atlas/' target="_blank" rel="noopener noreferrer nofollow">这篇教程</a>在 MongoDB Atlas 创建一个托管数据库。
 
 # --instructions--
 
-将 `mongodb@~3.6.0` 和 `mongoose@~5.4.0` 添加到项目的 `package.json` 中。 然后，在 `myApp.js` 文件中请求 `mongoose`。 创建一个 `.env` 文件，给它添加一个 `MONGO_URI` 变量。 变量的值为你的 MongoDB Atlas 数据库 URI。 应用单引号或双引号包裹 URI。请记住，环境变量 `=` 两边不能有空格。 例如，`MONGO_URI='VALUE'`。 完成后，使用下面的代码来连接数据库。
+`mongoose@^5.11.15` 已添加到你项目的 `package.json` 文件中。 首先，在 `myApp.js` 中请求 mongoose 为 `mongoose`。 接下来，创建一个 `.env` 文件并向其中添加一个 `MONGO_URI` 变量。 变量的值为你的 MongoDB Atlas 数据库 URI。 应用单引号或双引号包裹 URI。请记住，环境变量 `=` 两边不能有空格。 例如，`MONGO_URI='VALUE'`。
+
+**注意：** 如果你使用的是 Replit，则无法创建 `.env` 文件。 相反，使用内置的 <dfn>SECRETS</dfn> 选项卡来添加变量。 在使用 <em>SECRETS</em> 选项卡时，<em>不要</em>将值括在引号中。
+
+完成后，使用以下语法连接到数据库：
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -30,22 +34,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --hints--
 
-“mongodb” 应在 package.json 中作为依赖项定义。
-
-```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/file/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(packJson.dependencies, 'mongodb');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
-```
-
-“mongoose” 应在 package.json 中作为依赖项定义。
+“mongoose version ^5.11.15” 依赖项应该在 package.json
 
 ```js
 (getUserInput) =>
@@ -53,6 +42,11 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
     (data) => {
       var packJson = JSON.parse(data);
       assert.property(packJson.dependencies, 'mongoose');
+      assert.match(
+        packJson.dependencies.mongoose,
+        /^\^5\.11\.15/,
+        'Wrong version of "mongoose". It should be ^5.11.15'
+      );
     },
     (xhr) => {
       throw new Error(xhr.responseText);

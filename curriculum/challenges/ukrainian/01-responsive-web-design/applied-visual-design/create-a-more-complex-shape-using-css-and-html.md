@@ -28,15 +28,15 @@ dashedName: create-a-more-complex-shape-using-css-and-html
 
 # --instructions--
 
-Перетворіть елемент на екрані на серце. У селекторі `heart::after` замініть фоновий колір `background-color` на `pink` і встановіть значення `border-radius` на 50%.
+Перетворіть елемент на екрані на серце. У селекторі `.heart::after` змініть `background-color` на `pink` та `border-radius` на 50%.
 
 Потім оберіть елемент з класом `heart` (тільки `heart`) і заповніть властивість `transform`. Використовуйте функцію `rotate()` з -45 градусами.
 
-Нарешті, у селекторі `heart::before` встановіть його властивість `content` на порожній рядок.
+Зрештою, у селекторі `.heart::before` встановіть властивість `content` на порожній рядок.
 
 # --hints--
 
-Властивість `background-color` селектора `heart::after` має бути `pink`.
+Селектор `.heart::after` повинен мати властивість `background-color` зі значенням `pink`.
 
 ```js
 const heartAfter = code.match(/\.heart::after\s*{[\s\S]+?[^\}]}/g)[0];
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-`border-radius` селектора `heart::after` повинен мати значення 50%.
+Властивість `border-radius` селектора `.heart::after` повинна мати значення 50%.
 
 ```js
 assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2);
@@ -57,7 +57,7 @@ assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2);
 assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi));
 ```
 
-Елемент `content` селектора `heart::before` має бути порожнім рядком.
+`content` селектора `.heart::before` повинен бути порожнім рядком.
 
 ```js
 assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));

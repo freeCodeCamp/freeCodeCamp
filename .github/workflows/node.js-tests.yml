@@ -1,4 +1,6 @@
 name: CI - Node.js Test Current
+env:
+  NODE_OPTIONS: '--max_old_space_size=6144'
 on:
   push:
     branches-ignore:
@@ -20,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
 
       - name: Check number of lockfiles
         run: |
@@ -31,7 +33,7 @@ jobs:
           fi
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -66,10 +68,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -100,10 +102,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -136,10 +138,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
 

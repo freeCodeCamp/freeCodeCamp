@@ -1,7 +1,7 @@
 ---
 id: 5900f5021000cf542c510014
 title: 'Problema 405: Colocação retangular de ladrilhos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302073
 dashedName: problem-405-a-rectangular-tiling
 ---

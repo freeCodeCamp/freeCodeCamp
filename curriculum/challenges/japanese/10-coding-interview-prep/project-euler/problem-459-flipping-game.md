@@ -1,7 +1,7 @@
 ---
 id: 5900f5371000cf542c51004a
 title: '問題 459: 裏返しゲーム'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302133
 dashedName: problem-459-flipping-game
 ---

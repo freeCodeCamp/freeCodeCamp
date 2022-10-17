@@ -1,7 +1,7 @@
 ---
 id: a8e512fbe388ac2f9198f0fa
 title: 找出包含特定鍵值對的對象
-challengeType: 5
+challengeType: 1
 forumTopicId: 16092
 dashedName: wherefore-art-thou
 ---
@@ -93,6 +93,15 @@ assert.deepEqual(
 ```js
 assert.deepEqual(
   whatIsInAName([{ a: 1, b: 2, c: 3 }], { a: 1, b: 9999, c: 3 }),
+  []
+);
+```
+
+`whatIsInAName([{"a": 1, "b": 2, "c": 3, "d": 9999}], {"a": 1, "b": 9999, "c": 3})` 應該返回 `[]`。
+
+```js
+assert.deepEqual(
+  whatIsInAName([{ a: 1, b: 2, c: 3, d: 9999 }], { a: 1, b: 9999, c: 3 }),
   []
 );
 ```

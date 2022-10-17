@@ -1,7 +1,7 @@
 ---
 id: 5900f5151000cf542c510028
 title: 'Problema 425: Conexão de números primos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302095
 dashedName: problem-425-prime-connection
 ---

@@ -7,9 +7,9 @@ Nuestro contenido instructivo principal se encuentra dentro del directorio conve
 Hay algunos términos que utilizamos cuando hablamos del contenido de nuestro currículo.
 
 - `certification` : Cuando se hace referencia a una certificación en este caso, se está hablando del certificado real que los usuarios reclaman.  Que es independiente del nombre del súper bloque.
-- `superBlock` : Un súper bloque es la colección de desafíos del nivel superior. Cada súper bloque corresponde a una certificación en el currículo (p. ej. Diseño Web Responsivo).
-- `block` : Un bloque es una sección dentro de un súper bloque. Un bloque corresponde a un grupo de desafíos en una certificación determinada (p. ej. HTML básico y HTML5)
-- `challenge` : Un desafío es una sola lección dentro del currículo (p. ej. Di hola a los elementos HTML)
+- `superBlock` : Un súper bloque es la colección de desafíos del nivel superior. Cada súper bloque corresponde a una certificacion en el currículo (p. ej. Diseño Web Responsivo).
+- `block` : Un bloque es una sección dentro de un súper bloque. Un bloque corresponde a un grupo de desafíos en una certificacion determinada (p. ej. HTML Básico y HTML5)
+- `challenge`: Un desafío es una sola lección dentro del currículo (p. ej. Di hola a los Elementos HTML)
 
 ## Árbol de archivos
 

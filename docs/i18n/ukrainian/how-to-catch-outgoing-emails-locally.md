@@ -1,11 +1,11 @@
 > **Note:** This is an **optional** step and is required only when working with email workflows
 
-- [Introduction](#introduction)
+- [Вступ](#introduction)
 - [Installing MailHog](#installing-mailhog)
 - [Using MailHog](#using-mailhog)
 - [Useful Links](#useful-links)
 
-## Introduction
+## Вступ
 
 Some email workflows, like updating a user's email, requires the back-end api-server to send outgoing emails. MailHog is an alternative to using an email service provider to send actual email messages. It is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
 
@@ -67,7 +67,7 @@ First, install [Go](https://golang.org).
 Run the following commands to install GO on Debian-based systems like Ubuntu and Linux Mint.
 
 ```bash
-sudo apt-get install golang
+sudo apt-get встановити golang
 ```
 
 Run the following commands to install GO on RPM-based systems like CentOS, Fedora, Red Hat Linux, etc.

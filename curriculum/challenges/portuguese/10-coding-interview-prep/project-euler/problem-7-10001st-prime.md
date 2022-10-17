@@ -1,7 +1,7 @@
 ---
 id: 5900f3731000cf542c50fe86
 title: 'Problema 7: 10001º número primo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302182
 dashedName: problem-7-10001st-prime
 ---

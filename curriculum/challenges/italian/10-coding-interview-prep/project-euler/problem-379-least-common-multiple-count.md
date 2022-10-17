@@ -1,7 +1,7 @@
 ---
 id: 5900f4e81000cf542c50fffa
 title: 'Problema 379: conteggio del minimo comune multiplo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302041
 dashedName: problem-379-least-common-multiple-count
 ---

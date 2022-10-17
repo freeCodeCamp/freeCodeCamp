@@ -8,7 +8,7 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**目標:** <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a> と同様の機能を持つアプリを構築します
+**目標:** <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a> と似た機能を持つアプリを構築します
 
 **ユーザーストーリー:**
 
@@ -20,7 +20,7 @@ dashedName: build-a-product-landing-page
 1. `id="video"` を持つ、プロダクトの埋め込み動画を見ることができます
 1. プロダクトランディングページには `id="form"` を持つ `form` 要素が必要です
 1. フォーム内には、E メールアドレスが入力可能な `id="email"` を持つ `input` フィールドが必要です
-1. `#email` 入力フィールドには、フィールドの用途をユーザーに知らせるためのプレイスホルダ―テキストが必要です
+1. `#email` 入力フィールドには、フィールドの用途をユーザーに知らせるためのプレイスホルダーテキストが必要です
 1. `#email` 入力フィールドは、入力されたテキストがメールアドレスであるか確認するために HTML5 のバリデーションを使用します
 1. フォーム内には、`id="submit"` を持つ送信ボタンの `input` が必要です
 1. `#submit` 要素をクリックすると、email の情報が静的ページに送信されます (このモック URL を使用してください: `https://www.freecodecamp.com/email-submit`)
@@ -34,63 +34,63 @@ dashedName: build-a-product-landing-page
 
 # --hints--
 
-`id` が `header` である `header` 要素が 1 つ必要です
+`id` が `header` である `header` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-`id` が `header-img` である `img` 要素が 1 つ必要です
+`id` が `header-img` である `img` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-`#header-img` は `#header` の子孫要素である必要があります
+`#header-img` は `#header` の子孫要素である必要があります。
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
 assert(els.length > 0)
 ```
 
-`#header-img` には `src` 属性が必要です
+`#header-img` には `src` 属性が必要です。
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-`#header-img` の `src` の値は (`http` から始まる) 有効な URL である必要があります
+`#header-img` の `src` の値は (`http` から始まる) 有効な URL である必要があります。
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-`id` が `nav-bar` である `nav` 要素が 1 つ必要です
+`id` が `nav-bar` である `nav` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-`#nav-bar` は `#header` の子孫要素である必要があります
+`#nav-bar` は `#header` の子孫要素である必要があります。
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
 assert(els.length > 0)
 ```
 
-`#nav-bar` の中に最低 3 つの `.nav-link` 要素が必要です
+`#nav-bar` の中に最低 3 つの `.nav-link` 要素が必要です。
 
 ```js
 const els = document.querySelectorAll('#nav-bar .nav-link')
 assert(els.length >= 3)
 ```
 
-各 `.nav-link` 要素には `href` 属性が必要です
+各 `.nav-link` 要素には `href` 属性が必要です。
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -100,7 +100,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-各 `.nav-link` 要素は、ランディングページ内の対応する要素にリンクされている必要があります (対応する要素の id (例えば `#footer`) が値に設定された `href` を持つ必要があります。)
+各 `.nav-link` 要素は、ランディングページ内の対応する要素にリンクされている必要があります (対応する要素の id (例えば `#footer`) が値に設定された `href` を持つ必要があります) 。
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -111,14 +111,14 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-`id` が `video` である、`video` または `iframe` 要素が 1 つ必要です
+`id` が `video` である、`video` または `iframe` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-`#video` には `src` 属性が必要です
+`#video` には `src` 属性が必要です。
 
 ```js
 let el = document.getElementById('video')
@@ -133,77 +133,77 @@ if (sourceElement) {
 assert(el.hasAttribute('src'));
 ```
 
-`id` が `form` である `form` 要素が 1 つ必要です
+`id` が `form` である `form` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-`id` の値が `email` に設定されている `input` 要素が 1 つ必要です
+`id` の値が `email` に設定されている `input` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-`#email` は `#form` の子孫要素である必要があります
+`#email` は `#form` の子孫要素である必要があります。
 
 ```js
 const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-`#email` は、プレイスホルダ―テキストが設定された `placeholder` 属性を持つ必要があります
+`#email` は、プレイスホルダーテキストが設定された `placeholder` 属性を持つ必要があります。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-`#email` は、`type` を `email` に設定することによって、HTML5 のバリデーションが使用されている必要があります
+`#email` は、`type` を `email` に設定することによって、HTML5 のバリデーションが使用されている必要があります。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-`id` が `submit` である `input` 要素が 1 つ必要です
+`id` が `submit` である `input` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-`#submit` は `#form` の子孫要素である必要があります
+`#submit` は `#form` の子孫要素である必要があります。
 
 ```js
 const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-`#submit` は `type` が `submit` に設定されている必要があります
+`#submit` は `type` が `submit` に設定されている必要があります。
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-`#form` の `action` 属性には `https://www.freecodecamp.com/email-submit` を設定する必要があります
+`#form` の `action` 属性には `https://www.freecodecamp.com/email-submit` を設定する必要があります。
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-`#email` の `name` 属性は `email` である必要があります
+`#email` の `name` 属性は `email` である必要があります。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.name === 'email')
 ```
 
-`#nav-bar` は常にビューポートの上部にある必要があります
+`#nav-bar` は常にビューポートの上部にある必要があります。
 
 ```js
 (async () => {
@@ -243,7 +243,7 @@ assert(!!el && el.name === 'email')
 })();
 ```
 
-プロダクトランディングページに、少なくとも 1 つのメディアクエリが使われている必要があります
+プロダクトランディングページには、少なくとも 1 つのメディアクエリが使われている必要があります。
 
 ```js
 const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
@@ -251,15 +251,18 @@ const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
 assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-プロダクトランディングページに、少なくとも 1 つの CSS フレックスボックスが使われている必要があります
+プロダクトランディングページには、少なくとも 1 つの CSS フレックスボックスが使われている必要があります。
 
 ```js
+const hasFlex = (rule) => ["flex", "inline-flex"].includes(rule.style?.display)
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
 const cssRules = new __helpers.CSSHelp(document).styleSheetToCssRulesArray(stylesheet)
-const usesFlex = cssRules.find(rule => {
-  return rule.style?.display === 'flex' || rule.style?.display === 'inline-flex'
+const mediaRules = new __helpers.CSSHelp(document).getCSSRules('media')
+const usesFlex = cssRules.find(rule => hasFlex(rule))
+const usesFlexMedia = mediaRules.find(mediaRule => {
+  return [...mediaRule.cssRules].find(rule => hasFlex(rule))
 })
-assert(usesFlex)
+assert(usesFlex || usesFlexMedia)
 ```
 
 # --seed--
@@ -281,7 +284,7 @@ assert(usesFlex)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Product Landing Page</title>
   </head>
   <body>

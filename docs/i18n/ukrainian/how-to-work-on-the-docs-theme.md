@@ -1,54 +1,78 @@
-# Як працювати з темою документації
+# Як працювати над документацією
 
-> [!NOTE] A quick reminder that you do not need to setup anything for working on the content for the documentation site.
+## Робота над вмістом документації
+
+Щоб працювати над рекомендаціями щодо внеску, ви можете редагувати або додавати файли в каталозі `docs`, [доступному тут](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). Коли ваші зміни об'єднані, вони стануть автоматично доступними на документаційному сайті.
+
+### Як створити внутрішнє посилання
+
+Якщо ви хочете створити внутрішнє посилання, націлене на інший розділ рекомендацій щодо внеску, слідуйте цьому формату:
+
+```md
+[Link text](target-file-name.md#target-section-heading-id)
+
+// Якщо цільовий розділ знаходиться на тій же сторінці, ви можете опустити назву файлу
+[Link text](#target-section-heading-id)
+```
+
+Переконайтеся, що включили розширення файлу (`.md`). Не вказуйте повну URL-адресу або додайте `/` перед назвою файлу.
+
+Це обов'язково для того, щоб посилання працювали для перекладеної версії документа. В іншому випадку вони перенаправлятимуть на англійську версію сторінки, незалежно від мови.
+
+#### Переклад документації з внутрішніми посиланнями
+
+Коли ви працюєте над перекладом документації на Crowdin, не забудьте змінити `#target-section-heading-id` на ідентифікацію в перекладеному документі. [Дізнатись більше про переклад документації](how-to-translate-files.md#translate-documentation).
+
+## Робота над темою документації
+
+> [!NOTE] Швидке нагадування, що вам не потрібно нічого налаштовувати для роботи над вмістом документації.
 > 
-> To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). When your changes are merged, it will be made available automatically at the documentation site.
+> Щоб працювати над рекомендаціями щодо внеску, див. розділ [робота над вмістом документації](#work-on-the-docs-content).
 
-## Структура веб-сайту для документації
+### Структура вебсайту документації
 
-The site is generated using [`docsify`](https://docsify.js.org), and served using GitHub pages.
+Сайт створений з використанням [`docsify`](https://docsify.js.org) та обслуговується завдяки GitHub Pages.
 
-Typically you would not need to change any configuration or build the site locally. Хочете дізнатись більше? Ось як це працює:
+Зазвичай вам не потрібно буде змінювати конфігурації або створювати сайт локально. Хочете дізнатись більше? Ось як це працює:
 
-- The homepage's source for this site is available in [`docs/index.html`](index.html).
-- We serve this file as a SPA using `docsify` and GitHub Pages.
-- The `docsify` script generates the content of `markdown` files in `docs` directory on demand.
-- The homepage is generated from the [`_coverpage.md`](_coverpage.md).
-- the sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
+- Джерело домашньої сторінки для цього сайту доступне в [`docs/index.html`](index.html).
+- Ми обслуговуємо цей файл як SPA, використовуючи `docsify` та GitHub Pages.
+- Скрипт `docsify` генерує вміст файлів `markdown` в каталозі `docs` за запитом.
+- Домашня сторінка генерується з [`_coverpage.md`](_coverpage.md).
+- Навігація бічної панелі генерується з [`_sidebar.md`](_sidebar.md).
 
-## Serving the documentation site locally
+### Обслуговування документаційного сайту локально
 
-Clone freeCodeCamp:
+Клонуйте freeCodeCamp:
 
 ```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-docsify serve docs
 ```
 
-Install `docsify`:
+Встановіть `docsify`:
 
 ```console
 npm install -g docsify
 ```
 
-and serve the `/docs` directory
+та обслужіть каталог `/docs`
 
 ```console
 docsify serve docs
 ```
 
-Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+Іншим чином, якщо ви встановили freeCodeCamp локально (див. посібник з локального налаштування), ми зібрали CLI з інструментами веброзробки, щоб ви могли запустити будь-яку з наведених нижче команд, необхідних з кореня репозиторію:
 
-### Serve and launch the documentation site only
+#### Обслужити та запустити лише документаційний сайт
 
 ```console
 npm run docs:serve
 ```
 
-### Serve the documentation site alongside freeCodeCamp locally:
+#### Обслужити документаційний сайт поряд з freeCodeCamp локально:
 
 ```console
 npm run develop
 ```
 
-> The documentation site should be available at <http://localhost:3200>
+> The documentation site should be available at <http://localhost:3400>

@@ -16,7 +16,7 @@ Implementiamo pure un metodo che fa l'opposto: un metodo `elementAt` che accetta
 
 # --instructions--
 
-Scrivi un metodo `isEmpty` che verifica se la lista concatenata è vuota, un metodo `indexOf` che restituisce l'`index` di un dato elemento, e un metodo `elementAt` che restituisce l'`element` al dato `index.`
+Scrivi un metodo `isEmpty` che verifica se la lista concatenata è vuota, un metodo `indexOf` che restituisce l'`index` di un dato elemento, e un metodo `elementAt` che restituisce l'`element` al dato `index`.
 
 # --hints--
 

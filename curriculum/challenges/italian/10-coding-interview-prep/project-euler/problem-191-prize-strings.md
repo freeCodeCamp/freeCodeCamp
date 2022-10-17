@@ -1,7 +1,7 @@
 ---
 id: 5900f42b1000cf542c50ff3e
 title: 'Problema 191: Stringhe Premio'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301829
 dashedName: problem-191-prize-strings
 ---
@@ -14,7 +14,7 @@ Durante un periodo di n-giorni viene formata una stringa ternaria per ogni bambi
 
 Anche se ci sono ottantuno stringhe ternarie che possono essere formate per un periodo di 4 giorni, esattamente quarantatre stringhe porterebbero a un premio:
 
-```
+```markup
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
 OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO
 AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL

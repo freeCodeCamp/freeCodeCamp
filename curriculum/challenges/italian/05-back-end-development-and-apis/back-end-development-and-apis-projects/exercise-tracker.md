@@ -8,10 +8,10 @@ dashedName: exercise-tracker
 
 # --description--
 
-Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <https://exercise-tracker.freecodecamp.rocks/>. Lavorare su questo progetto ti porterà a scrivere il tuo codice utilizzando uno dei seguenti metodi:
+Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks/</a>. Lavorare su questo progetto ti porterà a scrivere il tuo codice utilizzando uno dei seguenti metodi:
 
--   Clonare [questa repository GitHub](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) e completa il tuo progetto localmente.
--   Usare [la nostra bozza di progetto su Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker) per completare il tuo progetto.
+-   Clonare <a href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank" rel="noopener noreferrer nofollow">questa repository GitHub</a> e completa il tuo progetto localmente.
+-   Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare il tuo progetto.
 -   Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
 Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
@@ -79,7 +79,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   assert.isTrue(res.ok);
   if(!res.ok) {
@@ -96,7 +96,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -164,7 +164,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -198,7 +198,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -237,7 +237,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -276,7 +276,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -309,7 +309,7 @@ async (getUserInput) => {
 };
 ```
 
-Una richiesta `GET` a `/api/users/:id/logs` restituisce un oggetto utente con un arraa `log` di tutti gli esercizi aggiunti.
+Una richiesta `GET` a `/api/users/:_id/logs` restituisce un oggetto utente con un array `log` di tutti gli esercizi aggiunti.
 
 ```js
 async(getUserInput) => {
@@ -319,7 +319,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   })
   if(res.ok){
     const {_id, username} = await res.json();
@@ -353,7 +353,7 @@ async(getUserInput) => {
 };
 ```
 
-Ogni elemento nell'array `log` restituito da `GET /api/users/:id/logs` è un oggetto che dovrebbe avere proprietà `description`, `duration`, e `date`.
+Ogni elemento nell'array `log` restituito da `GET /api/users/:_id/logs` è un oggetto che dovrebbe avere proprietà `description`, `duration` e `date`.
 
 ```js
 async(getUserInput) => {
@@ -363,7 +363,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -400,7 +400,7 @@ async(getUserInput) => {
 };
 ```
 
-La proprietà `description` di ogni oggetto nell'array `log` restituito da `GET /api/users/:id/logs` dovrebbe essere una stringa.
+La proprietà `description` di ogni oggetto nell'array `log` restituito da `GET /api/users/:_id/logs` dovrebbe essere una stringa.
 
 ```js
 async(getUserInput) => {
@@ -410,7 +410,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -447,7 +447,7 @@ async(getUserInput) => {
 };
 ```
 
-La proprietà `duration` di ogni oggetto nell'array `log` restituito da `GET /api/users/:id/logs` dovrebbe essere un numero.
+La proprietà `duration` di ogni oggetto nell'array `log` restituito da `GET /api/users/:_id/logs` dovrebbe essere un numero.
 
 ```js
 async(getUserInput) => {
@@ -457,7 +457,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -494,7 +494,7 @@ async(getUserInput) => {
 };
 ```
 
-La proprietà `date` di ogni oggetto nell'array `log` restituito da `GET /api/users/:id/logs` dovrebbe essere una stringa. Usa il formato `dateString` dell'API `Date`.
+La proprietà `date` di ogni oggetto nell'array `log` restituito da `GET /api/users/:_id/logs` dovrebbe essere una stringa. Usa il formato `dateString` dell'API `Date`.
 
 ```js
 async(getUserInput) => {
@@ -504,7 +504,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -549,7 +549,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();

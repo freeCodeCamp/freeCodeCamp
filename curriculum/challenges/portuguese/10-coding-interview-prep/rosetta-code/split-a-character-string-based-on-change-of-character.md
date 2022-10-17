@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc801d
 title: Dividir a string de caracteres com base na mudança de caractere
-challengeType: 5
+challengeType: 1
 forumTopicId: 302322
 dashedName: split-a-character-string-based-on-change-of-character
 ---

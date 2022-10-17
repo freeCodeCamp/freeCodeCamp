@@ -8,10 +8,10 @@ dashedName: personal-library
 
 # --description--
 
-Створіть повний пакет JavaScript додаток, функціонально схожий до <https://personal-library.freecodecamp.rocks/>. Робота над цим проєктом бути включати написання коду одним із таких методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://personal-library.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://personal-library.freecodecamp.rocks/</a>. Робота над цим проєктом бути включати написання коду одним із таких методів:
 
--   Клонувати [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-library) та локально завершити ваш проєкт.
--   Використати [наш стартовий проєкт](https://replit.com/github/freeCodeCamp/boilerplate-project-library), щоб завершити ваш проєкт.
+-   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
+-   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Для завершення проєкту використайте вибраний вами розробник сайтів. Не забудьте включити всі файли із нашого репо-сервера GitHub.
 
 Коли ви завершили, переконайтеся, ця демоверсія вашого проєкту розміщена у відкритому місці. Потім введіть URL-адресу у поле `Solution Link`. Додатково, також вкажіть посилання на вхідний код вашого проєкту у полі `GitHub Link`.

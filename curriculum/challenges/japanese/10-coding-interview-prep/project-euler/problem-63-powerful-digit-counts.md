@@ -1,7 +1,7 @@
 ---
 id: 5900f3ab1000cf542c50febe
 title: '問題 63: 累乗の桁数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302175
 dashedName: problem-63-powerful-digit-counts
 ---

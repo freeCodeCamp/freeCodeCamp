@@ -151,7 +151,7 @@ Ora che disponi di una copia locale di freeCodeCamp, potrai seguire queste istru
 
 Se incontri un problema, fai prima una ricerca del problema sul web per vedere se ha già una risposta. Se non riesce a trovare una soluzione, ti preghiamo di fare una ricerca nelle nostra pagina delle [Issues su GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues) per trovare una soluzione o segnalare il problema se non è ancora stato fatto.
 
-E come sempre, fai liberamente le tue domande nella [categoria 'Contributors' sul forum](https://forum.freecodecamp.org/c/contributors) o [sul server di chat](https://chat.freecodecamp.org/home).
+E come sempre, fai liberamente le tue domande nella [categoria 'Contributors' sul forum](https://forum.freecodecamp.org/c/contributors) o [sul server di chat](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Puoi saltare l'esecuzione di freeCodeCamp localmente se stai semplicemente modificando i file. Per esempio, facendo un `rebase`, o risolvendo dei conflitti di `merge`.
 > 
@@ -203,6 +203,8 @@ npm ci
 Prima di poter eseguire l'applicazione localmente, è necessario avviare il servizio MongoDB.
 
 > [!NOTE] A meno che tu non abbia MongoDB in esecuzione in un setup differente dal default, l'URL salvato come `MONGOHQ_URL` nel file `.env` dovrebbe andare bene. Se usi una configurazione personalizzata, modifica il valore come necessario.
+> 
+> If you followed along with the [Windows 10 via WSL2 Setup Guide](how-to-setup-wsl.md), then you should be able to skip this step if the MongoDB server from that guide is already running. You can confirm this by checking that you can reach `http://localhost:27017` on your local machine.
 
 Avvia il server MongoDB in un terminale separato:
 
@@ -572,6 +574,6 @@ La prima configurazione può richiedere un po' di tempo a seconda della larghezz
 
 ## Ottenere Aiuto
 
-Se sei bloccato e hai bisogno di aiuto, poni liberamente le tue domande nella [categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://chat.freecodecamp.org/channel/contributors).
+Se sei bloccato e hai bisogno di aiuto, poni liberamente le tue domande nella [categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://discord.gg/PRyKn3Vbay).
 
 Potrebbe esserci un errore nella console del browser o in Bash / Terminale / Linea di comando che ti aiuterà a identificare il problema. Fornisci questo messaggio di errore nella descrizione del problema in modo che gli altri possano identificare più facilmente il problema e aiutarti a risolverlo.

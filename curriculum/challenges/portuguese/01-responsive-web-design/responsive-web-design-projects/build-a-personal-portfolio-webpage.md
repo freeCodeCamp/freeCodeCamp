@@ -91,7 +91,7 @@ O elemento `#navbar` deve conter pelo menos um elemento `a`, cujo atributo `href
 
 ```js
 const links = [...document.querySelectorAll('#navbar a')].filter(
-  (nav) => (nav?.getAttribute('href') || '').substr(0, 1) === '#'
+  (nav) => (nav?.getAttribute('href') || '').substring(0, 1) === '#'
 );
 
 assert.isAbove(
@@ -172,11 +172,11 @@ O elemento `#navbar` deve estar sempre na parte superior da viewport.
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Personal Portfolio</title>
 </head>
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <!--Font Reference-->
 <nav id="navbar">
   <a href="#projects">Projects</a> |

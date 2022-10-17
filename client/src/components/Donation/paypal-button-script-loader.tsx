@@ -206,7 +206,3 @@ export class PayPalButtonScriptLoader extends Component<
     );
   }
 }
-
-PayPalButtonScriptLoader.displayName = 'PayPalButtonScriptLoader';
-
-export default PayPalButtonScriptLoader;

@@ -1,7 +1,7 @@
 ---
 id: 5900f4d01000cf542c50ffe3
 title: 'Problema 356: Le più grandi radici dei polinomi cubici'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302016
 dashedName: problem-356-largest-roots-of-cubic-polynomials
 ---

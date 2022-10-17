@@ -4,7 +4,7 @@
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
-[![Rocket.Chat](https://chat.freecodecamp.org/api/v1/shield.svg?type=online&icon=false&name=Chat)](https://chat.freecodecamp.org/)
+[![Discord](https://img.shields.io/discord/692816967895220344)](https://discord.gg/PRyKn3Vbay)
 
 ## freeCodeCamp.org's open-source codebase and curriculum
 
@@ -146,7 +146,7 @@ Once you have earned the Responsive Web Design, Algorithms and Data Structures, 
 
 #### Legacy Certifications
 
-We also have 4 legacy certifications dating back to our 2015 curriculum, which is still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
+We also have 4 legacy certifications dating back to our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
 
 - Legacy Front End Development Certification
 - Legacy Data Visualization Certification
@@ -161,8 +161,8 @@ Our community also has:
 
 - A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
-- A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about math and computer science.
-- A [chat server](https://chat.freecodecamp.org/home) where you can hang out and talk with developers and people who are learning to code.
+- A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about mathematics and computer science.
+- A [Discord server](https://discord.gg/Z7Fm39aNtZ) where you can hang out and talk with developers and people who are learning to code.
 
 > #### [Join the community here](https://www.freecodecamp.org/signin).
 
@@ -174,7 +174,9 @@ If you're confident it's a new bug and have confirmed that someone else is facin
 
 ### Reporting Security Issues and Responsible Disclosure
 
-[Our security policy is available here.](https://contribute.freecodecamp.org/#/security)
+We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+
+> #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
 
 ### Contributing
 

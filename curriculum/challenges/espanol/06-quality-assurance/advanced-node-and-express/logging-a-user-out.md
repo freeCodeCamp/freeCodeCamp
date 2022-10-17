@@ -30,11 +30,11 @@ app.use((req, res, next) => {
 });
 ```
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
 
 # --hints--
 
-`req.Logout` debe ser llamado en la ruta `/logout`.
+`req.logout()` debe ser llamado en la ruta `/logout`.
 
 ```js
 (getUserInput) =>

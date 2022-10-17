@@ -1,7 +1,7 @@
 ---
 id: 594faaab4e2a8626833e9c3d
 title: Tokenizzare una stringa con escaping
-challengeType: 5
+challengeType: 1
 forumTopicId: 302338
 dashedName: tokenize-a-string-with-escaping
 ---

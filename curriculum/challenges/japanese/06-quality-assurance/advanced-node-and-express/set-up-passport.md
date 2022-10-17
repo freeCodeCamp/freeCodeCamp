@@ -8,15 +8,13 @@ dashedName: set-up-passport
 
 # --description--
 
-ここで *Passport* を設定して、最終的にユーザーのアカウント登録やログインができるようにしましょう！ Passport の他に、express-session を使用してセッションを処理します。 このミドルウェアを使用してセッション id をクライアントの Cookie として保存しておき、サーバーでその id を使用してセッションデータにアクセスすることができます。 クライアントではサーバーへのユーザー認証に Cookie を使用しますが、この方法によって個人のアカウント情報が Cookie に入り込むのを防ぎ、*キー*を通じてのみサーバーに保存されているデータにアクセスするようになります。
+ここで *Passport* を設定して、最終的にユーザーのアカウント登録やログインができるようにしましょう！ Passport の他に、express-session を使用してセッションを処理します。 express-session はたくさんの高度な機能を備えていますが、ここでは基本的な機能のみを使用します。 このミドルウェアを使用してセッション id をクライアントの Cookie として保存しておき、サーバーでその id を使用してセッションデータにアクセスすることができます。 クライアントではサーバーへのユーザー認証に Cookie を使用しますが、この方法によって個人のアカウント情報が Cookie に入り込むのを防ぎ、*キー*を通じてのみサーバーに保存されているデータにアクセスするようになります。
 
-Passport をプロジェクトで使用できるように設定するには、まず package.json に依存関係として追加する必要があります。 `passport@~0.4.1`
-
-また、express-session を依存関係として追加してください。 express-session はたくさんの高度な機能を備えていますが、ここでは基本的な機能のみを使用します。 `express-session@~1.17.1`
+すでに `passport@~0.4.1` と `express-session@~1.17.1` がインストールされており、どちらも `package.json` ファイルで依存関係としてリストされています。
 
 ここでセッション設定を行い、Passport を初期化する必要があります。 最初に変数 「session」と「passport」を作成し、「express-session」と「passport」をそれぞれ require してください。
 
-セッションを使用するように Express アプリを設定するため、いくつかの基本的なオプションを定義します。 必ず.envファイルに「SESSION_SECRET」を追加し、ランダムな値を指定してください。 この値を使用して、Cookie の暗号化に使用されるハッシュを計算します！
+セッションを使用するように Express アプリを設定するため、いくつかの基本的なオプションを定義します。 必ず .env ファイルに「SESSION_SECRET」を追加し、ランダムな値を指定してください。 この値を使用して、Cookie の暗号化に使用されるハッシュを計算します！
 
 ```js
 app.use(session({
@@ -29,7 +27,7 @@ app.use(session({
 
 また、Express アプリに「passport.initialize()」と「passport.session()」を **use** するよう指示してください (たとえば、`app.use(passport.initialize());` などとします)。
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

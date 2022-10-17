@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c14c
-title: Introduzir a análise de dados
+title: Introdução à análise de dados
 challengeType: 11
 videoId: VJrP2FUzKP0
 bilibiliIds:
@@ -15,7 +15,7 @@ A análise de dados é o ato de transformar dados brutos e confusos em informaç
 
 Mais recursos:
 
-\- <a href="https://www.freecodecamp.org/news/what-is-data-analysis/" rel="noopener noreferrer nofollow">Artigo do editorial</a>
+\- <a href="https://www.freecodecamp.org/portuguese/news/o-que-e-analise-de-dados/" rel="noopener noreferrer nofollow">Artigo do editorial</a>
 
 # --question--
 

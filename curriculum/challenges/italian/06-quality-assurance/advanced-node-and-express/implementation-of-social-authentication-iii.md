@@ -42,7 +42,7 @@ myDataBase.findOneAndUpdate(
 
 Ora dovresti essere in grado di accedere alla tua app, provala!
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se stai avendo errori, puoi vedere <a href="https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 

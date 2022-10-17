@@ -1,18 +1,18 @@
 ---
 id: 59637c4d89f6786115efd814
 title: Successione Q di Hofstadter
-challengeType: 5
+challengeType: 1
 forumTopicId: 302287
 dashedName: hofstadter-q-sequence
 ---
 
 # --description--
 
-La [successione Q di Hofstadter](https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence "wp: Hofstadter_sequence#Hofstadter_Q_sequence") è definita come:
+La sequenza Q di Hofstadter è definita come:
 
 $Q(1)=Q(2)=1, \\\\ Q(n)=Q\\big(n-Q(n-1)\\big)+Q\\big(n-Q(n-2)), \\quad n>2.$
 
-È definita come la [successione di Fibonacci](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence"), ma mentre il termine successivo nella successione di Fibonacci è la somma dei due termini precedenti, nella successione Q i due termini precedenti ti dicono fino a che punto tornare nella sequenza Q per trovare i due numeri da sommare per generare il prossimo termine della successione.
+È definita nello stesso modo della sequenza di Fibonacci, ma mentre il termine successivo nella sequenza di Fibonacci è la somma dei due termini precedenti, nella sequenza Q i due termini precedenti ti dicono fino a che punto tornare nella sequenza Q per trovare i due numeri da sommare per fare il prossimo termine della sequenza.
 
 # --instructions--
 

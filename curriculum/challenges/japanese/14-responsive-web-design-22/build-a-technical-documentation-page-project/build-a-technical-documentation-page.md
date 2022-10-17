@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**目標:** <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank">https://technical-documentation-page.freecodecamp.rocks</a> と同様の機能を持つアプリを構築します
+**目標:** <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a> と似た機能を持つアプリを構築します
 
 **ユーザーストーリー:**
 
@@ -248,7 +248,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Technical Documentation Page</title>
   </head>
   <body>

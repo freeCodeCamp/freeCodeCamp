@@ -1,7 +1,8 @@
 import React, { RefObject } from 'react';
 import { useTranslation } from 'react-i18next';
-
-export interface MenuButtonProps {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+interface MenuButtonProps {
   className?: string;
   displayMenu?: boolean;
   innerRef?: RefObject<HTMLButtonElement>;
@@ -47,7 +48,11 @@ const MenuButton = ({
       onClick={handleClick}
       ref={innerRef}
     >
-      {t('buttons.menu')}
+      <span className='menu-btn-icon'>
+        <FontAwesomeIcon icon={faBars} />
+        <span className='sr-only'>{t('buttons.menu')}</span>
+      </span>
+      <span className='menu-btn-text'>{t('buttons.menu')}</span>
     </button>
   );
 };

@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 # --description--
 
-Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Repl.it</a>, o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Mocha te permite comprobar operaciones asíncronas como llamadas a los endpoints de la API con un complemento llamado `chai-http`.
 

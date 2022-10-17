@@ -8,7 +8,7 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**目標：** 構建一個功能類似於 <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a> 的應用程序
+**目標：** 構建一個功能類似於 <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a> 的應用程序
 
 **需求：**
 
@@ -254,12 +254,15 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 你的產品登陸頁面應該至少使用一次 CSS Flexbox。
 
 ```js
+const hasFlex = (rule) => ["flex", "inline-flex"].includes(rule.style?.display)
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
 const cssRules = new __helpers.CSSHelp(document).styleSheetToCssRulesArray(stylesheet)
-const usesFlex = cssRules.find(rule => {
-  return rule.style?.display === 'flex' || rule.style?.display === 'inline-flex'
+const mediaRules = new __helpers.CSSHelp(document).getCSSRules('media')
+const usesFlex = cssRules.find(rule => hasFlex(rule))
+const usesFlexMedia = mediaRules.find(mediaRule => {
+  return [...mediaRule.cssRules].find(rule => hasFlex(rule))
 })
-assert(usesFlex)
+assert(usesFlex || usesFlexMedia)
 ```
 
 # --seed--
@@ -281,7 +284,7 @@ assert(usesFlex)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Product Landing Page</title>
   </head>
   <body>

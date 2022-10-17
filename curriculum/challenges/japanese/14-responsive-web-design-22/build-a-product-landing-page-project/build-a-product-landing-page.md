@@ -8,7 +8,7 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**目標:** <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a> と同様の機能を持つアプリを構築します
+**目標:** <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a> と似た機能を持つアプリを構築します
 
 **ユーザーストーリー:**
 
@@ -20,7 +20,7 @@ dashedName: build-a-product-landing-page
 1. `id="video"` を持つ、プロダクトの埋め込み動画を見ることができます
 1. プロダクトランディングページには `id="form"` を持つ `form` 要素が必要です
 1. フォーム内には、E メールアドレスが入力可能な `id="email"` を持つ `input` 欄が必要です
-1. `#email` 入力欄には、その用途をユーザーに知らせるためのプレイスホルダ―テキストが必要です
+1. `#email` 入力欄には、その用途をユーザーに知らせるためのプレイスホルダーテキストが必要です
 1. `#email` 入力欄は、入力されたテキストがメールアドレスであるか確認するために HTML5 のバリデーションを使用します
 1. フォーム内には、`id="submit"` を持つ送信ボタンの `input` が必要です
 1. `#submit` 要素をクリックすると、email の情報が静的ページに送信されます (このモック URL を使用してください: `https://www.freecodecamp.com/email-submit`)
@@ -154,7 +154,7 @@ const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-`#email` は、プレイスホルダ―テキストが設定された `placeholder` 属性を持つ必要があります。
+`#email` は、プレイスホルダーテキストが設定された `placeholder` 属性を持つ必要があります。
 
 ```js
 const el = document.getElementById('email')
@@ -254,12 +254,15 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 プロダクトランディングページには、少なくとも 1 つの CSS フレックスボックスが使われている必要があります。
 
 ```js
+const hasFlex = (rule) => ["flex", "inline-flex"].includes(rule.style?.display)
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
 const cssRules = new __helpers.CSSHelp(document).styleSheetToCssRulesArray(stylesheet)
-const usesFlex = cssRules.find(rule => {
-  return rule.style?.display === 'flex' || rule.style?.display === 'inline-flex'
+const mediaRules = new __helpers.CSSHelp(document).getCSSRules('media')
+const usesFlex = cssRules.find(rule => hasFlex(rule))
+const usesFlexMedia = mediaRules.find(mediaRule => {
+  return [...mediaRule.cssRules].find(rule => hasFlex(rule))
 })
-assert(usesFlex)
+assert(usesFlex || usesFlexMedia)
 ```
 
 # --seed--
@@ -281,7 +284,7 @@ assert(usesFlex)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Product Landing Page</title>
   </head>
   <body>

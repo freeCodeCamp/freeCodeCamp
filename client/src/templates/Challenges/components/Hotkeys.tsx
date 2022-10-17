@@ -5,16 +5,19 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { ChallengeFiles, Test, User } from '../../../redux/prop-types';
 
-import { userSelector } from '../../../redux';
+import { userSelector } from '../../../redux/selectors';
+import {
+  setEditorFocusability,
+  submitChallenge,
+  openModal
+} from '../redux/actions';
 import {
   canFocusEditorSelector,
-  setEditorFocusability,
   challengeFilesSelector,
-  submitChallenge,
-  challengeTestsSelector,
-  openModal
-} from '../redux';
+  challengeTestsSelector
+} from '../redux/selectors';
 import './hotkeys.css';
+import { isFinalProject } from '../../../../utils/challenge-types';
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
@@ -53,6 +56,7 @@ const keyMap = {
 interface HotkeysProps {
   canFocusEditor: boolean;
   challengeFiles: ChallengeFiles;
+  challengeType?: number;
   children: React.ReactElement;
   editorRef?: React.RefObject<HTMLElement>;
   executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
@@ -70,6 +74,7 @@ interface HotkeysProps {
 
 function Hotkeys({
   canFocusEditor,
+  challengeType,
   children,
   instructionsPanelRef,
   editorRef,
@@ -96,7 +101,11 @@ function Hotkeys({
 
       const testsArePassing = tests.every(test => test.pass && !test.err);
 
-      if (usesMultifileEditor) {
+      if (
+        usesMultifileEditor &&
+        typeof challengeType == 'number' &&
+        !isFinalProject(challengeType)
+      ) {
         if (testsArePassing) {
           submitChallenge();
         } else {

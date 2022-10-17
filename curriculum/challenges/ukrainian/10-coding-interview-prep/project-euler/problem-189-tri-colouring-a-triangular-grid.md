@@ -1,7 +1,7 @@
 ---
 id: 5900f4291000cf542c50ff3c
 title: 'Задача 189: Заповнення трикутної сітки трьома кольорами'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301825
 dashedName: problem-189-tri-colouring-a-triangular-grid
 ---

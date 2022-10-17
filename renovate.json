@@ -23,6 +23,10 @@
       "groupName": "CodeSee",
       "matchPackagePrefixes": ["@codesee/"],
       "automerge": true
+    },
+    {
+      "groupName": "Stripe",
+      "matchPackagePrefixes": ["@stripe/"]
     }
   ],
   "ignorePaths": ["api-server"]

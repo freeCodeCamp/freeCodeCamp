@@ -18,7 +18,7 @@ Se l'autenticazione è riuscita, l'oggetto utente verrà salvato in `req.user`.
 
 A questo punto, se inserisci un nome utente e una password nel modulo, esso dovrebbe reindirizzare alla home page `/`, e la console del tuo server dovrebbe mostrare `'User {USERNAME} attempted to log in.'`, dato che al momento non possiamo effettuare il login di un utente che non è registrato.
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se dovessi incontrare degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se stai avendo errori, puoi vedere <a href="https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 

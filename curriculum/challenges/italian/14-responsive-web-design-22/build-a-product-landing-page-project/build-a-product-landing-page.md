@@ -34,14 +34,14 @@ Soddisfa le user story e supera tutti i test qui sotto per completare questo pro
 
 # --hints--
 
-Dovresti avere un elemento `header` con un `id` del valore `header`.
+Dovresti avere un elemento `header` con un `id` del valore di `header`.
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-Dovresti avere un elemento `img` con un attributo `id` del valore `header-img`.
+Dovresti avere un elemento `img` con un attributo `id` del valore di `header-img`.
 
 ```js
 const el = document.getElementById('header-img')
@@ -69,7 +69,7 @@ const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-Dovresti avere un elemento `nav` con un `id` del valore `nav-bar`.
+Dovresti avere un elemento `nav` con un `id` del valore di `nav-bar`.
 
 ```js
 const el = document.getElementById('nav-bar')
@@ -111,7 +111,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Dovresti avere un elemento `video` o `iframe` con un `id` del valore `video`.
+Dovresti avere un elemento `video` o `iframe` con un `id` del valore di `video`.
 
 ```js
 const el = document.getElementById('video')
@@ -133,14 +133,14 @@ if (sourceElement) {
 assert(el.hasAttribute('src'));
 ```
 
-Dovresti avere un elemento `form` con un attributo `id` del valore `form`.
+Dovresti avere un elemento `form` con un attributo `id` del valore di `form`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-Dovresti avere un elemento `input` con un `id` del valore `email`.
+Dovresti avere un elemento `input` con un `id` del valore di `email`.
 
 ```js
 const el = document.getElementById('email')
@@ -168,7 +168,7 @@ const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-Dovresti avere un elemento `input` con un `id` del valore `submit`.
+Dovresti avere un elemento `input` con un `id` del valore di `submit`.
 
 ```js
 const el = document.getElementById('submit')
@@ -254,12 +254,15 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 La tua pagina dovrebbe usare CSS Flexbox almeno una volta.
 
 ```js
+const hasFlex = (rule) => ["flex", "inline-flex"].includes(rule.style?.display)
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
 const cssRules = new __helpers.CSSHelp(document).styleSheetToCssRulesArray(stylesheet)
-const usesFlex = cssRules.find(rule => {
-  return rule.style?.display === 'flex' || rule.style?.display === 'inline-flex'
+const mediaRules = new __helpers.CSSHelp(document).getCSSRules('media')
+const usesFlex = cssRules.find(rule => hasFlex(rule))
+const usesFlexMedia = mediaRules.find(mediaRule => {
+  return [...mediaRule.cssRules].find(rule => hasFlex(rule))
 })
-assert(usesFlex)
+assert(usesFlex || usesFlexMedia)
 ```
 
 # --seed--
@@ -281,7 +284,7 @@ assert(usesFlex)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Product Landing Page</title>
   </head>
   <body>

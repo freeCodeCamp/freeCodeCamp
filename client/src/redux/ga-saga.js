@@ -1,14 +1,15 @@
 /* eslint-disable camelcase */
-import { takeEvery, call, all, select } from 'redux-saga/effects';
+import { all, call, select, takeEvery } from 'redux-saga/effects';
+
 import { aBTestConfig } from '../../../config/donation-settings';
 import ga from '../analytics';
-import {
-  emailSelector,
-  completionCountSelector,
-  completedChallengesSelector,
-  recentlyClaimedBlockSelector
-} from '../redux';
 import { emailToABVariant } from '../utils/A-B-tester';
+import {
+  completedChallengesSelector,
+  completionCountSelector,
+  emailSelector,
+  recentlyClaimedBlockSelector
+} from './selectors';
 
 const GaTypes = { event: ga.event, page: ga.pageview, modal: ga.modalview };
 

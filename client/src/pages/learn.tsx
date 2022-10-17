@@ -11,10 +11,10 @@ import Map from '../components/Map';
 import { Spacer } from '../components/helpers';
 import LearnLayout from '../components/layouts/learn';
 import {
-  userFetchStateSelector,
   isSignedInSelector,
-  userSelector
-} from '../redux';
+  userSelector,
+  userFetchStateSelector
+} from '../redux/selectors';
 
 interface FetchState {
   pending: boolean;
@@ -100,7 +100,13 @@ export default connect(mapStateToProps, null)(LearnPage);
 
 export const query = graphql`
   query FirstChallenge {
-    challengeNode(challenge: { order: { eq: 0 }, challengeOrder: { eq: 0 } }) {
+    challengeNode(
+      challenge: {
+        superOrder: { eq: 0 }
+        order: { eq: 0 }
+        challengeOrder: { eq: 0 }
+      }
+    ) {
       challenge {
         fields {
           slug

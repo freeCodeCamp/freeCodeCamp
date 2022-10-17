@@ -1,57 +1,61 @@
 import { omit } from 'lodash-es';
 import {
   call,
+  debounce,
   put,
   select,
-  takeLatest,
   takeEvery,
-  debounce
+  takeLatest
 } from 'redux-saga/effects';
 import store from 'store';
 
+import {
+  certTypeIdMap,
+  certTypes
+} from '../../../../config/certification-settings';
 import { createFlashMessage } from '../../components/Flash/redux';
+import { certMap } from '../../resources/cert-and-project-map';
 import {
   getUsernameExists,
   putUpdateMyAbout,
-  putUpdateMyProfileUI,
-  putUpdateMyUsername,
-  putUpdateUserFlag,
-  putUpdateMySocials,
   putUpdateMyHonesty,
-  putUpdateMyQuincyEmail,
-  putVerifyCert,
+  putUpdateMyKeyboardShortcuts,
   putUpdateMyPortfolio,
+  putUpdateMyProfileUI,
+  putUpdateMyQuincyEmail,
+  putUpdateMySocials,
+  putUpdateMySound,
   putUpdateMyTheme,
-  putUpdateMySound
+  putUpdateMyUsername,
+  putVerifyCert
 } from '../../utils/ajax';
-import { certMap } from '../../resources/cert-and-project-map';
-import { completedChallengesSelector } from '..';
+import { completedChallengesSelector } from '../selectors';
 import {
-  updateUserFlagComplete,
-  updateUserFlagError,
-  validateUsernameComplete,
-  validateUsernameError,
   submitNewAboutComplete,
   submitNewAboutError,
   submitNewUsernameComplete,
   submitNewUsernameError,
   submitProfileUIComplete,
   submitProfileUIError,
-  verifyCertComplete,
-  verifyCertError,
-  updateMySocialsComplete,
-  updateMySocialsError,
-  updateMyHonestyError,
   updateMyHonestyComplete,
+  updateMyHonestyError,
+  updateMyKeyboardShortcutsComplete,
+  updateMyKeyboardShortcutsError,
+  updateMyPortfolioComplete,
+  updateMyPortfolioError,
   updateMyQuincyEmailComplete,
   updateMyQuincyEmailError,
-  updateMyPortfolioError,
-  updateMyPortfolioComplete,
+  updateMySocialsComplete,
+  updateMySocialsError,
+  updateMySoundComplete,
+  updateMySoundError,
   updateMyThemeComplete,
   updateMyThemeError,
-  updateMySoundComplete,
-  updateMySoundError
-} from './';
+  validateUsernameComplete,
+  validateUsernameError,
+  verifyCertComplete,
+  verifyCertError
+} from './actions';
 
 function* submitNewAboutSaga({ payload }) {
   try {
@@ -83,18 +87,6 @@ function* submitProfileUISaga({ payload }) {
   }
 }
 
-function* updateUserFlagSaga({ payload: update }) {
-  try {
-    const { data } = yield call(putUpdateUserFlag, update);
-    yield put(updateUserFlagComplete({ ...data, payload: update }));
-    yield put(
-      createFlashMessage({ ...data, variables: { theme: update.theme } })
-    );
-  } catch (e) {
-    yield put(updateUserFlagError(e));
-  }
-}
-
 function* updateMySocialsSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMySocials, update);
@@ -123,6 +115,16 @@ function* updateMyThemeSaga({ payload: update }) {
     yield put(createFlashMessage({ ...data }));
   } catch (e) {
     yield put(updateMyThemeError);
+  }
+}
+
+function* updateMyKeyboardShortcutsSaga({ payload: update }) {
+  try {
+    const { data } = yield call(putUpdateMyKeyboardShortcuts, update);
+    yield put(updateMyKeyboardShortcutsComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
+  } catch (e) {
+    yield put(updateMyKeyboardShortcutsError);
   }
 }
 
@@ -169,24 +171,28 @@ function* validateUsernameSaga({ payload }) {
 
 function* verifyCertificationSaga({ payload }) {
   // check redux if can claim cert before calling backend
-  const completedChallenges = yield select(completedChallengesSelector);
   const currentCert = certMap.find(cert => cert.certSlug === payload);
-  const currentCertIds = currentCert?.projects.map(project => project.id);
+  const completedChallenges = yield select(completedChallengesSelector);
   const certTitle = currentCert?.title || payload;
 
-  const flash = {
-    type: 'info',
-    message: 'flash.incomplete-steps',
-    variables: { name: certTitle }
-  };
+  // (20/06/2022) Full Stack client-side validation is already done here:
+  // https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/src/components/settings/certification.js#L309
+  if (currentCert?.id !== certTypeIdMap[certTypes.fullStack]) {
+    const flash = {
+      type: 'info',
+      message: 'flash.incomplete-steps',
+      variables: { name: certTitle }
+    };
 
-  const canClaimCert = currentCertIds.every(id =>
-    completedChallenges.find(challenge => challenge.id === id)
-  );
+    const currentCertIds = currentCert?.projects?.map(project => project.id);
+    const canClaimCert = currentCertIds.every(id =>
+      completedChallenges.find(challenge => challenge.id === id)
+    );
 
-  if (!canClaimCert) {
-    yield put(createFlashMessage(flash));
-    return;
+    if (!canClaimCert) {
+      yield put(createFlashMessage(flash));
+      return;
+    }
   }
 
   // redux says challenges are complete, call back end
@@ -214,11 +220,11 @@ function* verifyCertificationSaga({ payload }) {
 
 export function createSettingsSagas(types) {
   return [
-    takeEvery(types.updateUserFlag, updateUserFlagSaga),
     takeEvery(types.updateMySocials, updateMySocialsSaga),
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
     takeEvery(types.updateMySound, updateMySoundSaga),
     takeEvery(types.updateMyTheme, updateMyThemeSaga),
+    takeEvery(types.updateMyKeyboardShortcuts, updateMyKeyboardShortcutsSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
     takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),

@@ -8,7 +8,7 @@ dashedName: use-recursion-to-create-a-countdown
 
 # --description--
 
-In una [sfida precedente](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion), hai imparato come usare la ricorsione per sostituire un ciclo `for`. Ora, diamo un'occhiata a una funzione più complessa che restituisce un array di interi consecutivi a partire da `1` in base al numero passato alla funzione.
+In una <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion" target="_blank" rel="noopener noreferrer nofollow">sfida precedente</a>, hai imparato come usare la ricorsione per sostituire un ciclo `for`. Ora, diamo un'occhiata a una funzione più complessa che restituisce un array di interi consecutivi a partire da `1` in base al numero passato alla funzione.
 
 Come accennato nella sfida precedente, ci sarà un <dfn>caso base</dfn>. Il caso base dice alla funzione ricorsiva quando non ha più bisogno di chiamare sé stessa. Si tratta di un caso semplice in cui il valore da restituire è già noto. Ci sarà anche una chiamata <dfn>ricorsiva</dfn> che esegue la funzione originale con argomenti diversi. Se la funzione è scritta correttamente, alla fine sarà raggiunto il caso base.
 

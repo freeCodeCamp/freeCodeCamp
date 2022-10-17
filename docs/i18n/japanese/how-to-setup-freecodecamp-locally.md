@@ -104,7 +104,7 @@ npm -v
 
 これで、freeCodeCamp リポジトリ全体がプロジェクトディレクトリにダウンロードされます。
 
-注: `--depth=1` は、最新の履歴 / コミットのみでフォークのシャロ―クローンを作成します。
+注: `--depth=1` は、最新の履歴 / コミットのみでフォークのシャロークローンを作成します。
 
 ## 親からの同期を設定する
 
@@ -151,7 +151,7 @@ freeCodeCamp のローカルコピーができたので、これらの指示に�
 
 問題が発生した場合は、まず Web 検索を実行し、既に解決済みであるかどうかを確認します。 解決策が見つからない場合、[GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) ページを検索し、まだ報告されていない Issue を報告してください。
 
-そして、[フォーラムの 'Contributors' カテゴリ](https://forum.freecodecamp.org/c/contributors) または [チャットサーバー](https://chat.freecodecamp.org/home) へいつでもお気軽にお問い合わせください。
+そして、[フォーラムの「Contributors」カテゴリ](https://forum.freecodecamp.org/c/contributors) または [チャットサーバー](https://discord.gg/PRyKn3Vbay) へいつでもお気軽にお問い合わせください。
 
 > [!TIP] ファイルを編集するだけの場合は、freeCodeCamp のローカルでの実行をスキップしてもかまいません。 例えば、`rebase` の実行や、`merge` の競合の解決を行う場合です。
 > 
@@ -203,6 +203,8 @@ npm ci
 ローカルでアプリケーションを実行できるようにする前に、MongoDB サービスを開始する必要があります。
 
 > [!NOTE] デフォルトと異なった設定で MongoDB を動作させない限りは、`.env` ファイル内に `MONGOHQ_URL` の値として格納された URL はうまく機能するはずです。 カスタム設定を使用している場合は、必要に応じてこの値を変更します。
+> 
+> If you followed along with the [Windows 10 via WSL2 Setup Guide](how-to-setup-wsl.md), then you should be able to skip this step if the MongoDB server from that guide is already running. You can confirm this by checking that you can reach `http://localhost:27017` on your local machine.
 
 別のターミナルで MongoDB サーバーを起動します。
 
@@ -222,7 +224,7 @@ mongod
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
 ```
 
-Make sure to replace `3.6` with the version you have installed
+必ず `3.6` をインストールしたバージョンに置き換えてください。
 
   <!-- tabs:end -->
 
@@ -498,7 +500,7 @@ Google、Stack Overflow、Stack Exchange などのリソースに関する特定
 
 > [!WARNING]
 > 
-> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
+> 必要条件の問題のために GitHub issue を作成しないでください。 それらはこのプロジェクトの範囲外です。
 
 ### UI、フォント、ビルドエラーなどに関する問題
 
@@ -568,10 +570,10 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 最初の設定では、ネットワーク帯域幅に応じて時間がかかることがあります。 それでも設定できない場合は、オフライン設定ではなく GitPod を使用することを推奨します。
 
-> [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
+> [!NOTE] M1 チップを搭載した Apple デバイスを使用してアプリケーションをローカルで実行する場合は、Node v14.7 以上を使用することをお勧めします。 さもなければ、Sharp のような依存関係に関連する問題が発生する可能性があります
 
 ## ヘルプ
 
-問題がありサポートが必要な場合は、[フォーラムの 'Contributors' カテゴリ](https://forum.freecodecamp.org/c/contributors) または [contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors)でお気軽にお尋ねください。
+問題がありサポートが必要な場合は、[フォーラムの「Contributors」カテゴリ](https://forum.freecodecamp.org/c/contributors) または [「contributors」チャットルーム](https://discord.gg/PRyKn3Vbay)でお気軽にお尋ねください。
 
 ブラウザのコンソールやBash / ターミナル / コマンドラインで、問題を特定するのに役立つエラーが表示されている可能性があります。 問題の説明にこのエラーメッセージを提供することで、他の人がより簡単に問題を特定し、解決策を見つけることができます。

@@ -15,7 +15,7 @@ Isso também é útil quando você está mudando o comportamento de um link usan
 
 # --instructions--
 
-O valor atual do atributo `href` é um link que aponta para "`https://www.freecatphotoapp.com`. Substitua o valor do atributo `href` por um `#`, também conhecido como símbolo de hash, para criar um link inativo.
+O valor atual do atributo `href` é um link que aponta para "`https://www.freecatphotoapp.com`". Substitua o valor do atributo `href` por um `#`, também conhecido como símbolo de hash, para criar um link inativo.
 
 Por exemplo: `href="#"`
 

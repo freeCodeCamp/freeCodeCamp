@@ -1,7 +1,7 @@
 ---
 id: 5956795bc9e2c415eb244de1
 title: União de hashes
-challengeType: 5
+challengeType: 1
 forumTopicId: 302284
 dashedName: hash-join
 ---

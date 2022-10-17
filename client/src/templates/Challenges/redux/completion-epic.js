@@ -1,43 +1,34 @@
 import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
-import { of, empty } from 'rxjs';
-import {
-  switchMap,
-  retry,
-  catchError,
-  concat,
-  filter,
-  finalize
-} from 'rxjs/operators';
+import { empty, of } from 'rxjs';
+import { catchError, concat, retry, switchMap, tap } from 'rxjs/operators';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
+import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
-  userSelector,
-  isSignedInSelector,
   submitComplete,
   updateComplete,
   updateFailed
-} from '../../../redux';
-
-import postUpdate$ from '../utils/post-update';
+} from '../../../redux/actions';
+import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
+import postUpdate$ from '../utils/post-update';
 import { actionTypes } from './action-types';
+import { closeModal, updateSolutionFormValues } from './actions';
 import {
-  projectFormValuesSelector,
+  challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
-  closeModal,
-  challengeFilesSelector,
-  updateSolutionFormValues
-} from './';
+  projectFormValuesSelector
+} from './selectors';
 
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
-    switchMap(({ points, savedChallenges }) => {
-      // TODO: do this all in ajax.ts
+    switchMap(({ data }) => {
+      const { savedChallenges, points } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -162,7 +153,6 @@ export default function completionEpic(action$, state$) {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
       const { nextChallengePath, challengeType, superBlock } = meta;
-      const closeChallengeModal = of(closeModal('completion'));
 
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
@@ -178,20 +168,23 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      const pathToNavigateTo = async () => {
-        return await findPathToNavigateTo(nextChallengePath, superBlock);
+      const pathToNavigateTo = () => {
+        return findPathToNavigateTo(nextChallengePath, superBlock);
       };
 
       return submitter(type, state).pipe(
-        concat(closeChallengeModal),
-        filter(Boolean),
-        finalize(async () => navigate(await pathToNavigateTo()))
+        tap(res => {
+          if (res.type !== submitActionTypes.updateFailed) {
+            navigate(pathToNavigateTo());
+          }
+        }),
+        concat(of(closeModal('completion')))
       );
     })
   );
 }
 
-async function findPathToNavigateTo(nextChallengePath, superBlock) {
+function findPathToNavigateTo(nextChallengePath, superBlock) {
   if (nextChallengePath.includes(superBlock)) {
     return nextChallengePath;
   } else {

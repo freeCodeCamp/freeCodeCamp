@@ -1,7 +1,7 @@
 ---
 id: 5900f3cc1000cf542c50fedf
 title: '问题 96：数独'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302213
 dashedName: problem-96-su-doku
 ---

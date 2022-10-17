@@ -1,7 +1,7 @@
 ---
 id: 5900f3d91000cf542c50feea
 title: 'Problema 107: Rede mínima'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301731
 dashedName: problem-107-minimal-network
 ---

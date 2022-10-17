@@ -212,6 +212,8 @@ Before you can run the application locally, you will need to start the MongoDB s
 
 > [!NOTE]
 > Unless you have MongoDB running in a setup different than the default, the URL stored as the `MONGOHQ_URL` value in the `.env` file should work fine. If you are using a custom configuration, modify this value as needed.
+>
+> If you followed along with the [Windows 10 via WSL2 Setup Guide](how-to-setup-wsl.md), then you should be able to skip this step if the MongoDB server from that guide is already running. You can confirm this by checking that you can reach `http://localhost:27017` on your local machine.
 
 Start the MongoDB server in a separate terminal:
 

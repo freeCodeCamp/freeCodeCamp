@@ -1,7 +1,7 @@
 ---
 id: 5900f37d1000cf542c50fe90
 title: '問題 17: 数を表す単語の文字数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301804
 dashedName: problem-17-number-letter-counts
 ---

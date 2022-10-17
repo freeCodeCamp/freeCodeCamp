@@ -91,7 +91,7 @@ const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-Your `#name` should be a descedant of `#survey-form`.
+Your `#name` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name')
@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Your `#email` should be a descedant of `#survey-form`
+Your `#email` should be a descendant of `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #email')
@@ -133,7 +133,7 @@ const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#number` should be a descedant of `#survey-form`.
+Your `#number` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number')
@@ -182,42 +182,42 @@ const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-Your `#name-label` should not be empty.
+Your `#name-label` should contain text that describes the input.
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#email-label` should not be empty.
+Your `#email-label` should contain text that describes the input.
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#number-label` should not be empty.
+Your `#number-label` should contain text that describes the input.
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#name-label` should be a descedant of `#survey-form`.
+Your `#name-label` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-Your `#email-label` should be a descedant of `#survey-form`.
+Your `#email-label` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-Your `#number-label` should be a descedant of `#survey-form`.
+Your `#number-label` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number-label')
@@ -380,7 +380,7 @@ assert(!!el)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Survey Form</title>
   </head>
   <body>

@@ -1,7 +1,7 @@
 ---
 id: 5ea281203167d2b0bdefca00
 title: Números lúdicos
-challengeType: 5
+challengeType: 1
 forumTopicId: 385282
 dashedName: ludic-numbers
 ---

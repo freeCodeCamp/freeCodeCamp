@@ -8,7 +8,7 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-Se você não estiver familiarizado com `const`, confira [este desafio](/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword).
+Se você não estiver familiarizado com `const`, confira <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener noreferrer nofollow">este desafio sobre a palavra-chave <code>const</code></a>.
 
 Variáveis declaradas com `const` têm muitos casos de uso no JavaScript moderno.
 
@@ -23,7 +23,7 @@ s[2] = 45;
 console.log(s);
 ```
 
-`s = [1, 2, 3]` resultará em um erro. `console.log` exibirá o valor `[5, 6, 45]`.
+`s = [1, 2, 3]` resultará em um erro. Depois de comentar essa linha, o `console.log` exibirá o valor `[5, 6, 45]`.
 
 Como você pode ver, você pode alterar o objeto `[5, 6, 7]` e a variável `s` ainda apontará para o array alterado `[5, 6, 45]`. Assim como em qualquer outro array, os elementos dentro de `s` também são mutáveis. Mas como `const` foi usado, você não pode usar o identificador da variável `s` para apontar para uma matriz diferente (ou qualquer outro valor) usando o operador de atribuição.
 

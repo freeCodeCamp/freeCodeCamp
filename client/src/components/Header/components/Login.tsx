@@ -1,11 +1,13 @@
 import { Button } from '@freecodecamp/react-bootstrap';
-import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import React, { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import envData from '../../../../../config/env.json';
-import { isSignedInSelector } from '../../../redux';
+import { isSignedInSelector } from '../../../redux/selectors';
 
 const { apiLocation, homeLocation } = envData;
 
@@ -13,9 +15,9 @@ const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
   isSignedIn
 }));
 
-export interface LoginProps {
+interface LoginProps {
   block?: boolean;
-  children?: unknown;
+  children?: ReactNode;
   'data-test-label'?: string;
   isSignedIn?: boolean;
 }
@@ -36,7 +38,11 @@ const Login = ({
       data-test-label={dataTestLabel}
       href={href}
     >
-      {children || t('buttons.sign-in')}
+      <span className='login-btn-icon'>
+        <FontAwesomeIcon icon={faRightToBracket} />
+        <span className='sr-only'> {t('buttons.sign-in')}</span>
+      </span>
+      <span className='login-btn-text'>{children || t('buttons.sign-in')}</span>
     </Button>
   );
 };

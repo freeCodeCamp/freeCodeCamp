@@ -1,7 +1,7 @@
 ---
 id: 5900f42b1000cf542c50ff3e
 title: '問題 191: 賞付きの文字列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301829
 dashedName: problem-191-prize-strings
 ---
@@ -14,7 +14,7 @@ n 日間、生徒ごとに、L (遅刻), O (出席), A (欠席) を使用して 
 
 4 日間では 81 通りの 3 進文字列が考えられ、受賞する文字列は次の 43 通りです。
 
-```
+```markup
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
 OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO
 AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL

@@ -1,7 +1,7 @@
 ---
 id: 579e2a2c335b9d72dd32e05c
 title: Метод Slice та Splice. Метод Slice () копіює задану частину масиву і повертає цю скопійовану частина у вигляді нового масиву. Вихідний масив при цьому не змінюється. Метод Splice () додає і видаляє елементи з масиву, змінюючи його
-challengeType: 5
+challengeType: 1
 forumTopicId: 301148
 dashedName: slice-and-splice
 ---

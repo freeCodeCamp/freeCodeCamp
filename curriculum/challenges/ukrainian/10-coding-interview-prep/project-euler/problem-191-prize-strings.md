@@ -1,7 +1,7 @@
 ---
 id: 5900f42b1000cf542c50ff3e
 title: 'Завдання 191: Призові стрічки'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301829
 dashedName: problem-191-prize-strings
 ---
@@ -14,7 +14,7 @@ dashedName: problem-191-prize-strings
 
 Хоча за 4 дні можна створити вісімдесят один тризначний рядок, рівно сорок три приведуть до призу:
 
-```
+```markup
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
 OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO
 AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL

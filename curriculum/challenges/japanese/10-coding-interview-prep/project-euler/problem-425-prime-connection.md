@@ -1,7 +1,7 @@
 ---
 id: 5900f5151000cf542c510028
 title: '問題 425: 素数の親類関係'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302095
 dashedName: problem-425-prime-connection
 ---

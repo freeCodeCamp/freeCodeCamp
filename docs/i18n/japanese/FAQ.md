@@ -10,9 +10,9 @@ freeCodeCamp は、モダンな JavaScript スタック上で動作します。 
 
 はい。翻訳プラットフォームで有効になっている 30 以上の言語を貢献できます。
 
-ユーザーが行った翻訳が既に存在する言語もあります。 freeCodeCamp を世界の主要な言語にローカライズしていく予定です。 詳細については、[お知らせ](https://www.freecodecamp.org/news/world-language-translation-effort) をご覧ください。
+ユーザーが行った翻訳が既に存在する言語もあります。 freeCodeCamp を世界の主要な言語にローカライズしていく予定です。 You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
-翻訳への貢献にご興味がありましたら、まず [ガイド](how-to-translate-files.md) をお読みください。
+If you are interested in contributing to translations please make sure you [read this guide](how-to-translate-files.md) first.
 
 ### freeCodeCamp ニュースの記事や、freeCodeCamp YouTube チャンネルの動画に貢献することはできますか？
 
@@ -24,7 +24,7 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 
 ### 新しいバグはどのように報告すればいいですか？
 
-バグを発見した場合は、最初に [「ヘルプ: バグを発見しました」](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) の記事を読んで、その指示に従ってください。
+If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
 
 新しいバグだという確信がある場合は、GitHub Issue を作成してください。 バグを再現できるように、できるだけ多くの情報を含めるようにしてください。 これをサポートするために、事前に定義された Issue 用テンプレートがあります。
 
@@ -32,7 +32,7 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 
 ### セキュリティ問題はどのように報告すればいいですか？
 
-セキュリティ問題のために GitHub Issue を作成しないでください。 Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
+セキュリティ問題のために GitHub Issue を作成しないでください。 代わりに、[こちらのセキュリティポリシー](https://contribute.freecodecamp.org/#/security)に従ってください。
 
 ### 私は学生です。 単位取得を目的として、機能に関して貢献することはできますか？
 
@@ -63,7 +63,7 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 1. Issue に対処する最初のプルリクエストをマージする可能性が最も高いです。
 2. 複数のコントリビューターが同じ Issue に対してプルリクエストを同時にオープンした場合、 最善の対処をするプルリクエストを優先します。 考慮事項:
    - テストを含めましたか？
-   - ユースケースを全部含めましたか？
+   - Did you catch all use cases?
    - すべてのテストに合格し、すべてがローカルで動作することを確認しましたか？
 3. 最後に、推奨ガイドラインに従ったプルリクエストを優先します。
    - プルリクエストのチェックリストに従って確認しましたか？
@@ -73,15 +73,15 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 
 コミュニティモデレーターは、私たちのヒーローです。 モデレーターの自発的な貢献により、freeCodeCamp は安全で快適なコミュニティになっています。
 
-何よりもまず、コミュニティの積極的な参加者となり、[行動規範](https://www.freecodecamp.org/news/code-of-conduct/) を強制するだけでなくその規範に従って行動する必要があります。
+何よりもまず、コミュニティの積極的な参加者となり、[行動規範](https://www.freecodecamp.org/japanese/news/code-of-conduct/) を強制するだけでなくその規範に従って行動する必要があります。
 
 いくつかのプラットフォームで推奨されるパスを以下に示します。
 
 - **Discord／チャット**  のモデレーターになるには、チャットに積極的に参加し、発生する可能性のある潜在的な衝突への対処方法を学ぶとともに実践しながら、他の人と積極的に関わってください。
-- **フォーラム** のモデレーターになるには、チャットモデレーター同様、積極的に参加します。学びながら他の人を支援し、質問を受けた際にはフィードバックを返して、他のフォーラム投稿者と関わってください。 詳細については、[サブフォーラムリーダーハンドブック](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) をご覧ください。
+- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. 詳細については、[サブフォーラムリーダーハンドブック](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) をご覧ください。
 - **GitHub** モデレーターになるには、提起された GitHub Issue の処理を手伝います。それらが有効であるかどうかを確認し、(理想的には) Issue に対するソリューションを提案して、他の人 (または自分自身) が対応できる状態にします。
 
-つまり、他の人に敬意を払ってください。 人々は世界中から集まっています。 これを念頭に置いて、励ましの言葉または応援する言葉を使用し、異文化間のコミュニケーションを意識してください。
+つまり、他の人に敬意を払ってください。 We are humans from all around the world. これを念頭に置いて、励ましの言葉または応援する言葉を使用し、異文化間のコミュニケーションを意識してください。
 
 **一定期間、着実に** 上記を実行し、仲間のモデレーターがあなたを推薦した場合に、スタッフから連絡が来て、モデレーターチームに加わることができます。 オープンソース作業はボランティアであり、私たちの時間は限られています。 皆様も、おそらく同じだと思います。 したがって、24 時間年中無休でコミュニティに参加するのではなく、**着実に** 取り組んでいただきたいです。
 
@@ -92,7 +92,7 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 **以下に、お気軽にお問い合わせください。**
 
 - [コミュニティフォーラム](https://forum.freecodecamp.org/c/contributors) の `Contributors` カテゴリ
-- [チャットサーバー](https://chat.freecodecamp.org/channel/contributors) の `#Contributors`チャンネル
+- [チャットサーバーの ](https://discord.gg/PRyKn3Vbay) `#Contributors` チャンネル
 
 取り組みたいトピックに貢献するお手伝いをさせていただけることを嬉しく思います。 関連する問題のスレッドについて質問をいただいた場合は、喜んで明確にします。 新しい質問を投稿する前に、必ずその質問を検索してください。
 
@@ -100,6 +100,6 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 
 ### その他の支援
 
-スタック、コードベースのアーキテクチャー、翻訳などについて質問がある場合は、[フォーラムの](https://forum.freecodecamp.org/g/team) スタッフチームまでお気軽にご連絡ください。
+If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
 
 **`dev[at]freecodecamp.org` にて、開発者スタッフにメールでお問い合わせいただけます。**

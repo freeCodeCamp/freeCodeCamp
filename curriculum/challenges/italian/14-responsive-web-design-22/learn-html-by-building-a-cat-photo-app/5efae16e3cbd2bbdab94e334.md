@@ -1,8 +1,8 @@
 ---
 id: 5efae16e3cbd2bbdab94e334
-title: Step 30
+title: Step 31
 challengeType: 0
-dashedName: step-30
+dashedName: step-31
 ---
 
 # --description--
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-L'elemento `figcaption` dovrebbe avere il testo `Cats hate other cats.` Hai omesso una parola o hai refuso.
+Il testo dell'elemento `figcaption` dovrebbe essere `Cats hate other cats.` Hai omesso una parola o hai un refuso.
 
 ```js
 assert(

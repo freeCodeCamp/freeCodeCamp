@@ -1,7 +1,7 @@
 ---
 id: 5900f44b1000cf542c50ff5e
 title: 'Problema 223: Triângulos quase retos I'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301866
 dashedName: problem-223-almost-right-angled-triangles-i
 ---

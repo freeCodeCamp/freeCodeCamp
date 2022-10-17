@@ -1,8 +1,8 @@
 ---
 id: 5dfb5ecbeacea3f48c6300b1
-title: Step 20
+title: Step 21
 challengeType: 0
-dashedName: step-20
+dashedName: step-21
 ---
 
 # --description--
@@ -16,7 +16,9 @@ Usa gli elementi list item (`li`) per creare punti in una lista. Ecco un esempio
 </ul>
 ```
 
-Annida tre elementi list item all'interno dell'elemento `ul` per visualizzare tre cose che i gatti amano: `cat nip`, `laser pointers` e `lasagna`.
+Dentro l'elemento `ul` annida tre elementi `li` per mostrare tre cose che piacciono ai gatti:
+
+`cat nip` `laser pointers` `lasagna`
 
 # --hints--
 

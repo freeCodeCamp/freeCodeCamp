@@ -25,6 +25,19 @@ dashedName: counting-cards
 
 # --hints--
 
+関数はカウントの値とテキスト (`Bet` または `Hold`) を返す必要があり、カウントとテキストの間にはスペースが 1 つ必要です。
+
+```js
+assert(//
+  (function () {
+    count = 0;
+    let out = cc(10);
+    const hasSpace = /-?\d+ (Bet|Hold)/.test('' + out);
+    return hasSpace;
+  })()
+);
+```
+
 カードの並びが 2、3、4、5、6 の場合は文字列 `5 Bet` を返す必要があります。
 
 ```js

@@ -77,22 +77,32 @@ Alguns desses arquivos estão traduzidos na nossa plataforma de tradução (Crow
 
 - O arquivo `meta-tags.json` contém as informações para a tag meta do nosso site.
 
-  Mudanças nesses arquivos são tipicamente feitos pelo time da staff. Se você vir algo fora do ordinário, nós recomendamos que você nos contate na [sala de chat dos contribuidores](https://chat.freecodecamp.org/channel/contributors).
+  Mudanças nesses arquivos são tipicamente feitos pelo time da staff. Se você vir algo fora do ordinário, nós recomendamos que você nos contate na [sala de chat dos contribuidores](https://discord.gg/PRyKn3Vbay).
 
 ## Testando o cliente web em um idioma mundial
 
-Você pode testar o client app em qualquer linguagem disponível nessa [lista de idiomas aqui](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5).
+Você pode testar o client app em qualquer linguagem disponível nessa [lista de idiomas aqui](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.ts).
 
 ```js
-  const availableLangs = {
-    client: ['english', 'espanol', 'chinese'],
-    ...
-  };
+  export const availableLangs = {
+  client: [
+    'english',
+    'espanol',
+    'chinese',
+    'chinese-traditional',
+    'italian',
+    'portuguese',
+    'ukrainian',
+    'japanese',
+    'german'
+  ],
+  ...
+};
 ```
 
 Se você estiver testando um idioma novo, crie uma pasta com o nome do idioma como título próximo dos outros idiomas e copie os arquivos JSON de outro idioma para a sua pasta.
 
-Adicione o idioma para o array `client` como mostrado acima no arquivo [`config/i18n/all-langs.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.js).
+Adicione o idioma ao array `client` como mostrado acima no arquivo [`config/i18n/all-langs.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.ts).
 
 A seguir, siga as instruções nos comentários dentro do mesmo arquivo para adicionar/atualizar o rest das variáveis se necessário.
 

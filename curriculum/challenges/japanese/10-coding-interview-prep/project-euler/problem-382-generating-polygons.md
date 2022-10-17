@@ -1,7 +1,7 @@
 ---
 id: 5900f4eb1000cf542c50fffd
 title: '問題 382: 多角形を生成する'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302046
 dashedName: problem-382-generating-polygons
 ---

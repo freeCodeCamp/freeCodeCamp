@@ -1,7 +1,7 @@
 ---
 id: 5900f48d1000cf542c50ffa0
 title: '問題 289: オイラー閉路'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301940
 dashedName: problem-289-eulerian-cycles
 ---

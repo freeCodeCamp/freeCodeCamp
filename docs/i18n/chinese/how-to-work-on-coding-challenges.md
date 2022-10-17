@@ -10,7 +10,7 @@ Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [
 
 Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
@@ -245,7 +245,7 @@ If it takes longer than two minutes to complete the challenge, you have two opti
 
 The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
-We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
+We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
 
 ### Modularity
 

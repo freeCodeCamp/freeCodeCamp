@@ -1,7 +1,7 @@
 ---
 id: 5900f4a11000cf542c50ffb4
 title: '問題 309: 整数のはしご'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301963
 dashedName: problem-309-integer-ladders
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f48d1000cf542c50ff9f
 title: '問題 288: 巨大な階乗'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301939
 dashedName: problem-288-an-enormous-factorial
 ---

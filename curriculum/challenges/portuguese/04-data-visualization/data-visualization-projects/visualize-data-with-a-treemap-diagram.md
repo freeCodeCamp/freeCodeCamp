@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-treemap-diagram
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://codepen.io/freeCodeCamp/full/KaNGNR" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/KaNGNR</a>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://treemap-diagram.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://treemap-diagram.freecodecamp.rocks</a>.
 
 Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
@@ -20,7 +20,7 @@ Você pode usar HTML, JavaScript, CSS e a biblioteca de visualização D3, basea
 
 **História de usuário nº 3: ** meu treemap deve ter elementos `rect` com uma `class="tile"` que representa os dados.
 
-**História de usuário nº 4:** deve haver pelo menos 4 cores diferentes de preenchimento usadas para os blocos.
+**História de usuário nº 4:** deve haver pelo menos 2 cores diferentes de preenchimento usadas para os blocos.
 
 **História de usuário nº 5:** cada bloco deve ter as propriedades `data-name`, `data-category` e `data-value` contendo os valores de `name`, `category` e `value` correspondentes.
 

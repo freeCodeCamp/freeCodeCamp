@@ -17,7 +17,8 @@ import {
 
 import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/campers-image';
-import { signInLoadingSelector, userSelector, executeGA } from '../redux';
+import { executeGA } from '../redux/actions';
+import { signInLoadingSelector, userSelector } from '../redux/selectors';
 
 export interface ExecuteGaArg {
   type: string;
@@ -101,7 +102,7 @@ function DonatePage({
               </Row>
               {isDonating ? (
                 <Alert data-cy='donate-alert' closeLabel={t('buttons.close')}>
-                  <p data-cy='donate.thank-you'>{t('donate.thank-you-2')}</p>
+                  <p data-cy='donate.thank-you'>{t('donate.thank-you')}</p>
                   <br />
                   <DonationOptionsAlertText />
                 </Alert>

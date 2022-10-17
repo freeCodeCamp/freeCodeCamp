@@ -10,7 +10,7 @@ Beachte, dass wir für Version 7.0 des freeCodeCamp-Studienplan zu einem [vollst
 
 Um diese Aufgaben zu lösen, braucht es viel Kreativität und Liebe zum Detail. Es gibt viele Möglichkeiten, dir zu helfen. Du bekommst Unterstützung von einem ganzen Team von Mitwirkenden, an die du deine Ideen weitergeben und deine Aufgaben demonstrieren kannst.
 
-Und wie immer kannst du Fragen in der [Kategorie 'Contributors' in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) stellen.
+Und wie immer kannst du deine Fragen in der [Kategorie "Contributors" in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im ["Contributors"-Chatraum](https://discord.gg/PRyKn3Vbay) stellen.
 
 Mit deiner Hilfe können wir einen interaktiven Studienplan entwickeln, der Millionen von Menschen dabei helfen wird, in den nächsten Jahren das Programmieren zu lernen.
 
@@ -245,7 +245,7 @@ Wenn du länger als zwei Minuten brauchst, um die Aufgabe zu lösen, hast du zwe
 
 Die 2-Minuten-Regel zwingt dich, als Aufgabenersteller, deine Anweisungen kurz und präzise zu formulieren, deinen Startcode klar zu formulieren und deine Tests eindeutig zu gestalten.
 
-Wir verfolgen, wie lange die Teilnehmer/innen brauchen, um die Aufgaben zu lösen und nutzen diese Informationen, um Aufgaben zu identifizieren, die vereinfacht oder aufgeteilt werden müssen.
+Wir verfolgen, wie lange die Teilnehmer brauchen, um die Aufgaben zu lösen, und nutzen diese Informationen, um Aufgaben zu identifizieren, die vereinfacht oder aufgeteilt werden müssen.
 
 ### Modularität
 
