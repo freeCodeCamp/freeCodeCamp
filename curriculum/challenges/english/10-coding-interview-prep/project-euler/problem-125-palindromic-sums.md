@@ -16,7 +16,7 @@ Find the sum of all the numbers less than the limit that are both palindromic an
 
 # --hints--
 
- `palindromicSums(100000000)` should return `2906969179`.
+`palindromicSums(100000000)` should return `2906969179`.
 
 ```js
 assert.strictEqual(palindromicSums(100000000), 2906969179);
