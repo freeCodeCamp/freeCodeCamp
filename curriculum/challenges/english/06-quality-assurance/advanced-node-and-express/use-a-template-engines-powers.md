@@ -42,12 +42,12 @@ The above yields the following HTML:
 
 Your `index.pug` file included in your project, uses the variables `title` and `message`.
 
-Pass those from your server to the pug file by adding an object as a second argument to your `res.render` call with the variables and their values. Give the `title` a value of `Hello` and `message` a value of `Please login`.
+Pass those from your server to the Pug file by adding an object as a second argument to your `res.render` call with the variables and their values. Give the `title` a value of `Hello` and `message` a value of `Please log in`.
 
 It should look like:
 
 ```javascript
-res.render('index', { title: 'Hello', message: 'Please login' });
+res.render('index', { title: 'Hello', message: 'Please log in' });
 ```
 
 Now refresh your page, and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
@@ -65,7 +65,7 @@ async (getUserInput) => {
   const data = await res.text();
   assert.match(
     data,
-    /pug-variable("|')>Please login/gi,
+    /pug-variable("|')>Please log in/gi,
     'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
   );
 }
