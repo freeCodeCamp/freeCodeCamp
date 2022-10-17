@@ -319,7 +319,7 @@ In the [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeC
 > [!NOTE]
 > The version number will change as the dependencies are updated.
 
-Then, visit [this page on cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) with all available dayjs v1.10.4 files, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/locale/isocode.min.js` link for the new language, and open it in a new tab.
+Then, visit [this page on cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) with all available dayjs files for the version we're using, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/<version>/locale/isocode.min.js` link for the new language, and open it in a new tab.
 
 Copy the dayjs code from the new tab into the new file you created. The code will be similar to this, but minified:
 
