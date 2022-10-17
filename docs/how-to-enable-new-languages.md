@@ -288,7 +288,7 @@ To deploy News for a new language, you'll need to create two PRs. One PR will be
 
 ## Prep the CDN Repo for the New Language
 
-News sources trending links and article titles from our CDN during the build and adds them to the footer. News also fetches dayjs files from the CDN during the build to localize dates and times for each language.
+News sources trending links and article titles from our CDN during the build and adds them to the footer. News also fetches Day.js files from the CDN during the build to localize dates and times for each language.
 
 ### Add a YAML File for Trending Articles
 
@@ -312,21 +312,21 @@ article3link: ...
   ...
 ```
 
-### Add a dayjs Locale File for the New Language
+### Add a Day.js Locale File for the New Language
 
-By default, dayjs only includes English as a locale. To enable it to work with other languages, you need to add a new dayjs locale file to the CDN.
+By default, Day.js only includes English as a locale. To enable it to work with other languages, you need to add a new Day.js locale file to the CDN.
 
 In the [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) directory, create a new file and name it `isocode.min.js`. For example, if you are launching Dothraki News, name the file `mis.min.js`.
 
 > [!NOTE]
 > The version number will change as the dependencies are updated.
 
-Then, visit [this page on cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) with all available dayjs files for the version we're using, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/<version>/locale/isocode.min.js` link for the new language, and open it in a new tab.
+Then, visit [this page on cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) with all available Day.js files for the version we're using, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/<version>/locale/isocode.min.js` link for the new language, and open it in a new tab.
 
 > [!NOTE]
-> You only need to add the .../dayjs/\<version\>/_locale_/isocode.min.js locale file. You do not need to add any other dayjs files.
+> You only need to add the .../dayjs/\<version\>/_locale_/isocode.min.js locale file. You do not need to add any other Day.js files.
 
-Copy the dayjs locale code from the new tab into the new file you created. For example, here is an un-minified version of the English locale code for dayjs:
+Copy the Day.js locale code from the new tab into the new file you created. For example, here is an un-minified version of the English locale code for Day.js:
 
 ```js
 !(function (e, n) {
@@ -350,7 +350,7 @@ Copy the dayjs locale code from the new tab into the new file you created. For e
 });
 ```
 
-Then open a PR to the CDN repo to add both the YAML and dayjs files for review.
+Then open a PR to the CDN repo to add both the YAML and Day.js files for review.
 
 ## Prep the News Repo for the New Language
 
