@@ -1,5 +1,4 @@
 import store from 'store';
-import * as Tone from 'tone';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
 import { Themes } from '../../components/settings/theme';
 
@@ -63,14 +62,15 @@ type ToneStates = keyof typeof toneUrls;
 export async function playTone(state: ToneStates): Promise<void> {
   const playSound = !!store.get('fcc-sound');
   if (playSound && toneUrls[state]) {
-    const player = new Tone.Player(toneUrls[state]).toDestination();
+    const audio = new Audio(toneUrls[state]);
 
     const storedVolume = (store.get('soundVolume') as number) ?? 50;
-    const calculateDecibel = -60 * (1 - storedVolume / 100);
 
-    player.volume.value = calculateDecibel;
+    // volume range [0-1], 0 -> muted, 100 -> loudest
+    const volume = storedVolume / 100;
 
-    await Tone.loaded();
-    player.start();
+    audio.volume = volume;
+
+    await audio.play();
   }
 }
