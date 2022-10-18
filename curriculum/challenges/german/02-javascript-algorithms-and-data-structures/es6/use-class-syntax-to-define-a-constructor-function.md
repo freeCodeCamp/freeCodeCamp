@@ -12,24 +12,35 @@ ES6 bietet eine neue Syntax zum Erstellen von Objekten, die das Schlüsselwort <
 
 Es ist zu beachten, dass die Syntax `class` nur eine Syntax ist und keine vollwertige klassenbasierte Implementierung eines objektorientierten Paradigmas, anders als in Sprachen wie Java, Python, Ruby usw.
 
-In ES5 definieren wir normalerweise eine Funktion `constructor` und verwenden das Schlüsselwort `new`, um ein Objekt zu instanziieren.
+In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
+
+In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
 
 ```js
-var SpaceShuttle = function(targetPlanet){
-  this.targetPlanet = targetPlanet;
-}
-var zeus = new SpaceShuttle('Jupiter');
-```
-
-Die Syntax `class` ersetzt einfach die Erstellung der Funktion `constructor`:
-
-```js
+// Explicit constructor
 class SpaceShuttle {
   constructor(targetPlanet) {
     this.targetPlanet = targetPlanet;
   }
+  takeOff() {
+    console.log("To " + this.targetPlanet + "!");
+  }
 }
+
+// Implicit constructor 
+class Rocket {
+  launch() {
+    console.log("To the moon!");
+  }
+}
+
 const zeus = new SpaceShuttle('Jupiter');
+// prints To Jupiter! in console
+zeus.takeOff();
+
+const atlas = new Rocket();
+// prints To the moon! in console
+atlas.launch();
 ```
 
 Es ist zu beachten, dass das Schlüsselwort `class` eine neue Funktion deklariert, zu der ein Konstruktor hinzugefügt wird. Dieser Konstruktor wird aufgerufen, wenn `new` aufgerufen wird, um ein neues Objekt zu erstellen.

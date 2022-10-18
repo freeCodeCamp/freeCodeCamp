@@ -1,18 +1,18 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
 title: Роздати карти для FreeCell
-challengeType: 5
+challengeType: 1
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
 ---
 
 # --description--
 
-*FreeCell* - це гра в пасьянс, представлена Полем Альфілем для системи PLATO у 1978. Джим Хорн, представник Microsoft, змінив її ім'я на FreeCell та реалізував гру для системи [DOS](https://rosettacode.org/wiki/DOS "DOS"), а згодом і для [Windows](https://rosettacode.org/wiki/Windows "Windows"). Ця версія представила 32000 нумерованих роздач.
+*FreeCell* - це гра в пасьянс, представлена Полем Альфілем для системи PLATO у 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for DOS, then Windows. Ця версія представила 32000 нумерованих роздач.
 
 Як тільки гра стала популярною, Джим Хорн розкрив її алгоритм, що дало початок реалізації нових версій FreeCell, які відтворювали роздачі Microsoft. Нумерація роздач сягала від 1 до 32000. Нові версії від Microsoft мають близько 1 мільйону роздач, нумерованих від 1 до 1000000; а деякі варіації дозволяють нумерацію і поза межами цього діапазону.
 
-Алгоритм використовує цей [лінійний конгурентний генератор](https://rosettacode.org/wiki/linear congruential generator "linear congruential generator") від Microsoft C:
+The algorithm uses this linear congruential generator from Microsoft C:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
@@ -24,7 +24,7 @@ dashedName: deal-cards-for-freecell
 
 <ol>
   <li>Введіть загальну кількість роздач у RNG (random number generator).
-  </li><li>Створіть <a href='https://rosettacode.org/wiki/array' title='array' target='_blank'>масив</a> з 52 карт: туз трефи, туз бубни, туз чирви, туз піки, двійка трефи, двійка бубни і т.д. по усім рангам: Туз, 2, 3, 4, 5, 6, 7, 8, 9, 10, Валет, Дама, Король. Індекси масивів від 0 до 51, з тузом трефи на 0 та королем піки на 51.</li>
+  </li><li>Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. Індекси масивів від 0 до 51, з тузом трефи на 0 та королем піки на 51.</li>
   <li>Поки масив не стане пустим:</li>
   <li>Оберіть випадкову карту із індексом ≡ наступне випадкове число (довжина масиву модулів).</li>
     <ul>
@@ -79,8 +79,6 @@ dashedName: deal-cards-for-freecell
 
 Напишіть функцію, щоб дізнатись номер роздачі та роздати карти в такому ж порядку, як у алгоритмі. Функція має видати двовимірний масив, що представляє собою дошку FreeCell.
 
-Роздачі також можна перевірити у [ рішеннях до 1000000 FreeCell ігор](https://freecellgamesolutions.com/). (Знайдіть відеорішення, що покаже початкову роздачу.)
-
 # --hints--
 
 `dealFreeCell` має бути функцією.
@@ -89,25 +87,25 @@ dashedName: deal-cards-for-freecell
 assert(typeof dealFreeCell === 'function');
 ```
 
-`dealFreeCell(seed)` має видати об'єкт.
+`dealFreeCell(seed)` should return an object.
 
 ```js
 assert(typeof dealFreeCell(1) === 'object');
 ```
 
-`dealFreeCell(seed)` має видати масив довжиною 7.
+`dealFreeCell(seed)` should return an array of length 7.
 
 ```js
 assert(dealFreeCell(1).length === 7);
 ```
 
-`dealFreeCell(1)` має видати масив ідентичний до прикладу "Гра #1"
+`dealFreeCell(1)` should return an array identical to example "Game #1"
 
 ```js
 assert.deepEqual(dealFreeCell(1), game1);
 ```
 
-`dealFreeCell(617)` має видати масив ідентичний до прикладу "Гра #617"
+`dealFreeCell(617)` should return an array identical to example "Game #617"
 
 ```js
 assert.deepEqual(dealFreeCell(617), game617);

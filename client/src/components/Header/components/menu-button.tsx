@@ -2,7 +2,7 @@ import React, { RefObject } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-export interface MenuButtonProps {
+interface MenuButtonProps {
   className?: string;
   displayMenu?: boolean;
   innerRef?: RefObject<HTMLButtonElement>;

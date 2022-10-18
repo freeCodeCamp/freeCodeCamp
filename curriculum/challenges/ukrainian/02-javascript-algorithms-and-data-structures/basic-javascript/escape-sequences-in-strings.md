@@ -11,12 +11,12 @@ dashedName: escape-sequences-in-strings
 
 Лапки - не єдині символи, що можуть бути <dfn>екрановані</dfn> в рядку. Існує дві причини використовувати екрановані символи:
 
-1.  Щоб дозволити вам використовувати символи, які ви не можете інакше вводити, такі як повернення каретки.
+1.  To allow you to use characters you may not otherwise be able to type out, such as a newline.
 2.  Щоб дозволити вам відобразити декілька лапок в рядку без неправильного тлумачення JavaScript того, що ви маєте на увазі.
 
 Ми вивчили це в попередньому завданні.
 
-<table class='table table-striped'><thead><tr><th>Код</th><th>При виведенні буде</th></tr></thead><tbody><tr><td><code>\'</code></td><td>одинарні лапки</td></tr><tr><td><code>\"</code></td><td>подвійні лапки</td></tr><tr><td><code>\\</code></td><td>зворотня коса риска</td></tr><tr><td><code>\n</code></td><td>новий рядок</td></tr><tr><td><code>\r</code></td><td>повернення каретки</td></tr><tr><td><code>\t</code></td><td>вкладка</td></tr><tr><td><code>\b</code></td><td>границі слова</td></tr><tr><td><code>\f</code></td><td>розрив сторінки</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Код</th><th>При виведенні буде</th></tr></thead><tbody><tr><td><code>\'</code></td><td>одинарні лапки</td></tr><tr><td><code>\"</code></td><td>подвійні лапки</td></tr><tr><td><code>\\</code></td><td>зворотня коса риска</td></tr><tr><td><code>\n</code></td><td>новий рядок</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\b</code></td><td>границі слова</td></tr><tr><td><code>\f</code></td><td>розрив сторінки</td></tr></tbody></table>
 
 *Зверніть увагу, що сама зворотня коса риска повинна бути екранована для того, щоб вона відображалась.*
 
@@ -77,14 +77,6 @@ assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(){
-if (myStr !== undefined){
-console.log('myStr:\n' + myStr);}})();
-```
 
 ## --seed-contents--
 

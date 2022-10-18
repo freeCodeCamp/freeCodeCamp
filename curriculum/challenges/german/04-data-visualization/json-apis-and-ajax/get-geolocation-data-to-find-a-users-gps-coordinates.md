@@ -26,11 +26,11 @@ if (navigator.geolocation){
 }
 ```
 
-Er prüft zunächst, ob das Objekt `navigator.geolocation` existiert. Wenn dies der Fall ist, wird die Methode `getCurrentPosition` für dieses Objekt aufgerufen, die eine asynchrone Anfrage nach der Position des Nutzers startet. Wenn die Anfrage erfolgreich ist, wird die Callback-Funktion in der Methode ausgeführt. Diese Funktion greift auf die Werte für Breiten- und Längengrad des `position`-Objekts mithilfe von Punktnotation zu und aktualisiert die HTML.
+Er prüft zunächst, ob das Objekt `navigator.geolocation` existiert. Wenn dies der Fall ist, wird die Methode `getCurrentPosition` für dieses Objekt aufgerufen, die eine asynchrone Anfrage nach der Position des Nutzers startet. Wenn die Anfrage erfolgreich ist, wird die Callback-Funktion in der Methode ausgeführt. This function accesses the `position` object's values for latitude and longitude using dot notation and updates the HTML.
 
 # --instructions--
 
-Füge den Beispielcode innerhalb des `script`-Tags ein, um den aktuellen Standort des Nutzers abzurufen und in die HTML einzufügen.
+Add the example code inside the `script` tags to check a user's current location and insert it into the HTML.
 
 # --hints--
 

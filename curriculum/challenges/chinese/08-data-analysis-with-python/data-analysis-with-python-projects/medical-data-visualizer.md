@@ -8,12 +8,13 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-你将通过使用我们的[Replit 入门代码](https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer)来完成本项目。
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
 我们仍在开发 Python 课程的交互式教学部分。 目前，你可以在 YouTube 上通过 freeCodeCamp.org 上传的一些视频学习这个项目相关的知识。
 
-- [Python for Everybody 视频课程](https://www.freecodecamp.org/news/python-for-everybody/)（14 小时）
-- [Learn Python 视频课程](https://www.freecodecamp.org/news/learn-python-video-course/)（10 小时）
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -25,20 +26,20 @@ dashedName: medical-data-visualizer
 
 文件名：medical_examination.csv
 
-|    项目    | 变量类型 |     变量名     |         变量值类型         |
-|:--------:|:----:|:-----------:|:---------------------:|
-|    年龄    | 客观特征 |     age     |      int (days)       |
-|    身高    | 客观特征 |   height    |       int (cm)        |
-|    体重    | 客观特征 |   weight    |      float (kg)       |
-|    性别    | 客观特征 |   gender    |         分类编码          |
-|   收缩压    | 检测特征 |    ap_hi    |          int          |
-|   舒张压    | 检测特征 |    ap_lo    |          int          |
-|   胆固醇    | 检测特征 | cholesterol | 1：正常，2：高于正常，3：远远高于正常值 |
-|   血糖值    | 检测特征 |    gluc     | 1：正常，2：高于正常，3：远远高于正常值 |
-|   吸烟问题   | 主观特征 |    smoke    |        binary         |
-|   饮酒量    | 主观特征 |    alco     |        binary         |
-|   体育活动   | 主观特征 |   active    |        binary         |
-| 是否有心血管疾病 | 目标变量 |   cardio    |        binary         |
+|    项目    | 变量类型 |      变量名      |         变量值类型         |
+|:--------:|:----:|:-------------:|:---------------------:|
+|    年龄    | 客观特征 |     `age`     |      int (days)       |
+|    身高    | 客观特征 |   `height`    |       int (cm)        |
+|    体重    | 客观特征 |   `weight`    |      float (kg)       |
+|    性别    | 客观特征 |   `gender`    |         分类编码          |
+|   收缩压    | 检测特征 |    `ap_hi`    |          int          |
+|   舒张压    | 检测特征 |    `ap_lo`    |          int          |
+|   胆固醇    | 检测特征 | `cholesterol` | 1：正常，2：高于正常，3：远远高于正常值 |
+|   血糖值    | 检测特征 |    `gluc`     | 1：正常，2：高于正常，3：远远高于正常值 |
+|   吸烟问题   | 主观特征 |    `smoke`    |        binary         |
+|   饮酒量    | 主观特征 |    `alco`     |        binary         |
+|   体育活动   | 主观特征 |   `active`    |        binary         |
+| 是否有心血管疾病 | 目标变量 |   `cardio`    |        binary         |
 
 ## 任务
 

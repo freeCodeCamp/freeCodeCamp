@@ -10,20 +10,20 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 Bei funktionalem Programmieren geht es um das Erstellen und Benutzen von nicht mutierenden Funktionen.
 
-In der letzten Aufgabe wurde die `concat`-Methode vorgestellt, mit der man Arrays miteinander kombinieren kann, ohne die ursprünglichen Arrays zu verändern. Vergleiche die `concat`- mit der `push`-Methode. `push` fügt ein Element am Ende desselben Arrays hinzu, für das es aufgerufen wird, was das Array verändert. Hier ist ein Beispiel:
+The last challenge introduced the `concat` method as a way to merge arrays into a new array without mutating the original arrays. Vergleiche die `concat`- mit der `push`-Methode. `push` adds items to the end of the same array it is called on, which mutates that array. Hier ist ein Beispiel:
 
 ```js
 const arr = [1, 2, 3];
-arr.push([4, 5, 6]);
+arr.push(4, 5, 6);
 ```
 
-`arr` hätte nun den modifizierten Wert `[1, 2, 3, [4, 5, 6]]`, was nicht dem praktischen Programmierweg entspricht.
+`arr` would have a modified value of `[1, 2, 3, 4, 5, 6]`, which is not the functional programming way.
 
-`concat` bietet eine Möglichkeit, neue Elemente an das Ende eines Arrays anzuhängen, ohne dass es zu veränderlichen Auswirkungen kommt.
+`concat` offers a way to merge new items to the end of an array without any mutating side effects.
 
 # --instructions--
 
-Ändere die `nonMutatingPush`-Funktion so, dass sie `concat` anstelle von `push` verwendet, um `newItem` dem Ende von `original` hinzuzufügen. Die Funktion sollte ein Array zurückgeben.
+Change the `nonMutatingPush` function so it uses `concat` to merge `newItem` to the end of `original` without mutating `original` or `newItem` arrays. Die Funktion sollte ein Array zurückgeben.
 
 # --hints--
 

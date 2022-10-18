@@ -1,14 +1,14 @@
 ---
 id: 59667989bf71cf555dd5d2ff
-title: S-Expressions
-challengeType: 5
+title: S-表达式
+challengeType: 1
 forumTopicId: 302303
 dashedName: s-expressions
 ---
 
 # --description--
 
-[S-Expressions](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") are one convenient way to parse and store data.
+<a href="https://rosettacode.org/wiki/S-expressions" target="_blank" rel="noopener noreferrer nofollow">S-Expressions</a> are one convenient way to parse and store data.
 
 # --instructions--
 
@@ -24,25 +24,25 @@ Handling escaped quotes inside a string is optional; thus "`(foo"bar)`" may be t
 
 For this, the reader need not recognize `\` for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
 
-Note that with the exception of `()"` (`\` if escaping is supported) and whitespace, there are no special characters. Anything else is allowed without quotes.
+Note that with the exception of `()"` (`\` if escaping is supported) and whitespace, there are no special characters. 其他任何内容都是允许的，不带引号。
 
-The reader should be able to read the following input
+读者应该能够阅读以下输入
 
 <pre>((data "quoted data" 123 4.5)
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-and turn it into a native data structure. (See the [Pike](https://rosettacode.org/wiki/S-Expressions#Pike "\#Pike"), [Python](https://rosettacode.org/wiki/S-Expressions#Python "\#Python") and [Ruby](https://rosettacode.org/wiki/S-Expressions#Ruby "\#Ruby") implementations for examples of native data structures.)
+and turn it into a native data structure.
 
 # --hints--
 
-`parseSexpr` should be a function.
+`parseSexpr` 是一个函数。
 
 ```js
 assert(typeof parseSexpr === 'function');
 ```
 
-`parseSexpr('(data1 data2 data3)')` should return `['data1', 'data2', 'data3']`
+`parseSexpr('(data1 data2 data3)')` 应该返回 `['data1', 'data2', 'data3']`
 
 ```js
 assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution);

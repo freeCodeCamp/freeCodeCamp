@@ -8,7 +8,7 @@ dashedName: probability-calculator
 
 # --description--
 
-你将通过使用我们的[Replit 入门代码](https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator)来完成本项目。
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
 # --instructions--
 
@@ -37,7 +37,7 @@ hat3 = Hat(red=5, orange=4, black=1, blue=0, pink=2, striped=9)
 
 `experiment` 函数应该返回一个概率。
 
-例如，假设你想确定当你从一个包含 6 个黑球、4 个红球和 3 个绿球的帽子中抽出 5 个球时，至少得到 2 个红球和 1 个绿球的概率。 为此，我们进行 `N` 次实验，记录其中我们至少得到 2 个红球和 1 个绿球的次数 `M`，并估计概率为`M/N`。 每个实验都包括从一顶装有指定球的帽子开始，抽取一些球，然后检查我们是否得到了我们想要得到的球。
+For example, if you want to determine the probability of getting at least two red balls and one green ball when you draw five balls from a hat containing six black, four red, and three green. To do this, you will perform `N` experiments, count how many times `M` you get at least two red balls and one green ball, and estimate the probability as `M/N`. Each experiment consists of starting with a hat containing the specified balls, drawing several balls, and checking if you got the balls you were attempting to draw.
 
 以下是基于上面的示例调用 `experiment` 函数的方法，其中包含 2000 个实验：
 

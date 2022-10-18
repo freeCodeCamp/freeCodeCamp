@@ -42,6 +42,13 @@ assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
 ```
 
+Global variables should not be used.
+
+```js
+steamrollArray([1, {}, [3, [[4]]]])
+assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4])
+```
+
 # --seed--
 
 ## --seed-contents--

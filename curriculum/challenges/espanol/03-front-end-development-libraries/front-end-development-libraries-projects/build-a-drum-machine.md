@@ -8,7 +8,7 @@ dashedName: build-a-drum-machine
 
 # --description--
 
-**Objetivo:** Crea una aplicación que sea funcionalmente similar a esta: <a href="https://codepen.io/freeCodeCamp/full/MJyNMd" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/MJyNMd</a>.
+**Objetivo:**Construye una aplicación que sea funcionalmente similar a esta: <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a>.
 
 Completa las historias de usuario a continuación y obtén todas las pruebas para aprobar. Utiliza cualquier librería o API que necesites. Dale tu propio estilo.
 

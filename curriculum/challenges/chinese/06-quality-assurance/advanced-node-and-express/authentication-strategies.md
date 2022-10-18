@@ -8,9 +8,9 @@ dashedName: authentication-strategies
 
 # --description--
 
-策略是认证用户的一种方式。 如果你让用户在注册时填写了用户信息，那你就可以基于这些信息进行验证。或者也可以引入第三方登录，如 Google 或者 Github。 对于这个项目的验证策略，我们会采用自己搭建的方式完成。 可以[点击这里](http://passportjs.org/)访问 Passport 网站，查看数以百计的策略。
+策略是认证用户的一种方式。 如果你让用户在注册时填写了用户信息，那你就可以基于这些信息进行验证。或者也可以引入第三方登录，如 Google 或者 Github。 在这个项目中，我们将使用 Passport 中间件。 Passport 提供了一套全面的策略，支持使用用户名和密码、GitHub、谷歌等进行认证。
 
-引入 `passport-local@~1.0.0` 作为依赖，然后将它添加到服务器，就像这样：`const LocalStrategy = require('passport-local');`
+`passport-local@~1.0.0` has already been added as a dependency, so add it to your server as follows: `const LocalStrategy = require('passport-local');`
 
 然后，需要让 passport **使用**一个实例化的 LocalStrategy 对象，这个对象的一些设置已完成。 请注意，接下来的所有代码都应写在连接数据库的回调中，因为它们的执行都依赖数据库。
 
@@ -34,7 +34,7 @@ passport.use(new LocalStrategy(
 
 在下一个挑战中，我们会基于表单数据调用上面写好的验证策略。
 
-完成上述要求后，请提交你的页面链接。 如果你遇到任何问题，可以参考[这里](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b)的答案。
+完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，可以点击此处查看<a href="https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b" target="_blank" rel="noopener noreferrer nofollow">已执行项目的当前进度</a>。
 
 # --hints--
 

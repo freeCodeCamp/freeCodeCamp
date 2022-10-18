@@ -8,7 +8,7 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 # --description--
 
-請注意，本項目在[這個 Repl.it 項目](https://replit.com/github/freeCodeCamp/boilerplate-infosec)的基礎上進行開發。 你也可以從[GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/)上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 如果你正在爲你的網站發佈更新，而你希望用戶總是下載較新的版本，你可以（嘗試）在客戶的瀏覽器上禁用緩存。 它在開發中也很有用。 緩存具有性能優勢，你將失去這些優勢，因此只有在真正需要時才使用此選項。
 

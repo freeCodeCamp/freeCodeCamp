@@ -1,14 +1,14 @@
 ---
 id: 5eb3e4aa847216613aa81983
 title: Semiprime
-challengeType: 5
+challengeType: 1
 forumTopicId: 385318
 dashedName: semiprime
 ---
 
 # --description--
 
-Semiprime numbers are natural numbers that are products of exactly two (possibly equal) [prime numbers](https://rosettacode.org/wiki/prime_number).
+Semiprime numbers are natural numbers that are products of exactly two (possibly equal) <a href="https://rosettacode.org/wiki/prime_number" target="_blank" rel="noopener noreferrer nofollow">prime numbers</a>.
 
 <pre>1679  =  23 x 73</pre>
 

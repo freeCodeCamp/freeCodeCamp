@@ -8,10 +8,10 @@ dashedName: american-british-translator
 
 # --description--
 
-构建一个 JavaScript 的全栈应用，在功能上与这个应用相似：<https://american-british-translator.freecodecamp.rocks/>。 可以采用下面的任意一种方式完成这个挑战：
+Build a full stack JavaScript app that is functionally similar to this: <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a>. 可以采用下面的任意一种方式完成这个挑战：
 
--   克隆 [这个 GitHub 仓库](https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/) 并在本地完成项目。
--   使用[我们的 Replit 初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator)来完成你的项目。
+-   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
+-   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   使用您选择的站点生成器来完成项目。 并确保包含了我们 GitHub 仓库的所有文件。
 
 当完成本项目，请确认有一个可以公开访问的正常运行 demo 。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以将项目的源码提交到 `GitHub Link` 中。

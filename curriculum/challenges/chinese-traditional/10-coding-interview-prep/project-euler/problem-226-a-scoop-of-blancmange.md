@@ -1,27 +1,29 @@
 ---
 id: 5900f4511000cf542c50ff62
 title: 'Problem 226: A Scoop of Blancmange'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301869
 dashedName: problem-226-a-scoop-of-blancmange
 ---
 
 # --description--
 
-The blancmange curve is the set of points (x,y) such that 0 ≤ x ≤ 1 and ,where s(x) = the distance from x to the nearest integer.
+The blancmange curve is the set of points ($x$,$y$) such that $0 ≤ x ≤ 1$ and $\displaystyle y = \sum_{n = 0}^{\infty} \frac{s(2^nx)}{2^n}$, where $s(x)$ is the distance from $x$ to the nearest integer.
 
-The area under the blancmange curve is equal to ½, shown in pink in the diagram below.
+The area under the blancmange curve is equal to $\frac{1}{2}$, shown in pink in the diagram below.
 
-Let C be the circle with centre (¼,½) and radius ¼, shown in black in the diagram.
+<img class="img-responsive center-block" alt="diagram of blancmange curve, with circle C shown on diagram" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px;" />
 
-What area under the blancmange curve is enclosed by C?Give your answer rounded to eight decimal places in the form 0.abcdefgh
+Let $C$ be the circle with centre ($\frac{1}{4}$,$\frac{1}{2}$) and radius $\frac{1}{4}$, shown in black in the diagram.
+
+What area under the blancmange curve is enclosed by $C$? Give your answer rounded to eight decimal places in the form 0.abcdefgh
 
 # --hints--
 
-`euler226()` should return 0.11316017.
+`scoopOfBlancmange()` should return `0.11316017`.
 
 ```js
-assert.strictEqual(euler226(), 0.11316017);
+assert.strictEqual(scoopOfBlancmange(), 0.11316017);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler226(), 0.11316017);
 ## --seed-contents--
 
 ```js
-function euler226() {
+function scoopOfBlancmange() {
 
   return true;
 }
 
-euler226();
+scoopOfBlancmange();
 ```
 
 # --solutions--

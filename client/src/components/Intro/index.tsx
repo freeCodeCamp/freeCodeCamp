@@ -6,6 +6,7 @@ import { Link, Spacer, Loader } from '../helpers';
 import IntroDescription from './components/IntroDescription';
 
 import './intro.css';
+import ResearchBannerx from './research-banner';
 
 interface IntroProps {
   complete?: boolean;
@@ -55,6 +56,7 @@ const Intro = ({
             </span>
           </blockquote>
         </div>
+        <ResearchBannerx />
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (
           <div className='intro-description'>
             <Spacer />

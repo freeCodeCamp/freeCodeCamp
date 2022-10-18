@@ -62,12 +62,6 @@ assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function() { return "myStr = " + myStr; })();
-```
-
 ## --seed-contents--
 
 ```js

@@ -8,9 +8,9 @@ dashedName: build-a-roguelike-dungeon-crawler-game
 
 # --description--
 
-**Ціль:** Створіть [CodePen.io](https://codepen.io) застосунок, який функціонально схожий на цей: <https://codepen.io/freeCodeCamp/full/apLXEJ/>.
+**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/apLXEJ/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/apLXEJ/</a>.
 
-Виконайте наведені нижче [історії користувача](https://en.wikipedia.org/wiki/User_story). Використовуйте необхідні Вам бібліотеки або API. Виконайте завдання у власному стилі.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні Вам бібліотеки або API. Оформте за власним стилем.
 
 **Історія користувача:** у мене є здоров'я, рівень і зброя. Я можу підібрати кращу зброю. Я можу підбирати ліки.
 
@@ -32,7 +32,7 @@ dashedName: build-a-roguelike-dungeon-crawler-game
 
 Після виконання завдання, прикріпіть посилання на Ваш проєкт на CodePen і натисніть на кнопку "Я виконав(ла) це завдання".
 
-Ви можете отримати відгук про ваш проєкт, поділившись ним на [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

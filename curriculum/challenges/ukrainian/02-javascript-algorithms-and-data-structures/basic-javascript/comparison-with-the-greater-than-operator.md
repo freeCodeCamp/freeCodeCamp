@@ -16,21 +16,19 @@ dashedName: comparison-with-the-greater-than-operator
 **Приклади**
 
 ```js
-5   >  3
-7   > '3'
-2   >  3
-'1' >  9
+5   >  3  // true
+7   > '3' // true
+2   >  3  // false
+'1' >  9  // false
 ```
-
-По-порядку, ці вирази оцінюватимуться як `true`, `true`, `false`, та `false`.
 
 # --instructions--
 
-Додайте оператор «більше ніж» до вказаних рядків, щоб оператор повернення спрацював.
+Add the greater than operator to the indicated lines so that the return statements make sense.
 
 # --hints--
 
-`GreaterThan(0)` має повернути рядок `10 або Under`
+`testGreaterThan(0)` має повернути рядок `10 or Under`
 
 ```js
 assert(testGreaterThan(0) === '10 or Under');
@@ -72,7 +70,7 @@ assert(testGreaterThan(101) === 'Over 100');
 assert(testGreaterThan(150) === 'Over 100');
 ```
 
-Ви повинні використати оператор `>` принаймні двічі
+You should use the `>` operator at least twice
 
 ```js
 assert(code.match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);

@@ -1,18 +1,18 @@
 ---
 id: 5a23c84252665b21eecc7ed5
 title: Задача про хід коня
-challengeType: 5
+challengeType: 1
 forumTopicId: 302297
 dashedName: knights-tour
 ---
 
 # --description--
 
-[Knight's Tour](https://en.wikipedia.org/wiki/Knight%27s_tour) Задача: У вас є порожня `w` \* `h` шахівниця з одним конем на якомусь полі. Кінь повинен виконати послідовність ходів таким чином, щоб побувати на кожному полі шахівниці лише раз. Зауважте, що йому *не* не обов'язково пройти весь маршрут, а отже кінь не повинен закінчити гру, зробивши один хід від початкової позиції.
+Knight's Tour Problem: You have an empty `width` \* `height` chessboard, but for a single knight on some square. Кінь повинен виконати послідовність ходів таким чином, щоб побувати на кожному полі шахівниці лише раз. Зауважте, що йому *не* не обов'язково пройти весь маршрут, а отже кінь не повинен закінчити гру, зробивши один хід від початкової позиції.
 
 # --instructions--
 
-Напишіть функцію, яка бере `w` і `h` як параметри й повертає кількість початкових позицій звідти, де можливо виконати завдання, про яке йшлося вище.
+Write a function that takes `width` and `height` as parameters and returns the number of initial positions from where it is possible to achieve the task stated above.
 
 # --hints--
 
@@ -63,7 +63,7 @@ assert.equal(knightTour(8, 6), 48);
 ## --seed-contents--
 
 ```js
-function knightTour(w, h) {
+function knightTour(width, height) {
 
 }
 ```
@@ -71,7 +71,7 @@ function knightTour(w, h) {
 # --solutions--
 
 ```js
-function knightTour(w, h) {
+function knightTour(width, height) {
   function createBoards(rows, columns) {
     const board = [];
     const visited = [];
@@ -210,11 +210,11 @@ function knightTour(w, h) {
     [1, -2]
   ];
 
-  const [baseBoard, baseVisited] = createBoards(h, w);
+  const [baseBoard, baseVisited] = createBoards(height, width);
   fillAllowedMovesCounts(baseBoard);
   let solvedCount = 0;
-  for (let row = 0; row < h; row++) {
-    for (let column = 0; column < w; column++) {
+  for (let row = 0; row < height; row++) {
+    for (let column = 0; column < width; column++) {
       if (solveStart(baseBoard, baseVisited, row, column)) {
         solvedCount++;
       }

@@ -1,8 +1,8 @@
 ---
 id: 5f3ef6e0e0c3feaebcf647ad
-title: Крок 48
+title: Крок 47
 challengeType: 0
-dashedName: step-48
+dashedName: step-47
 ---
 
 # --description--
@@ -44,11 +44,9 @@ assert($('h2')[1].innerText.match(/Desserts/i));
   </head>
   <body>
     <div class="menu">
-      <header>
+      <main>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
-      </header>
-      <main>
         <section>
           <h2>Coffee</h2>
           <article class="item">

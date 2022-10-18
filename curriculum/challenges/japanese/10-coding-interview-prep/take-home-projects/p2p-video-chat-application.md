@@ -8,9 +8,9 @@ dashedName: p2p-video-chat-application
 
 # --description--
 
-**目標:** <https://p2p-video-chat-application.freecodecamp.rocks/> と同じような機能を持つ、[Replit](https://replit.com/) アプリを構築してください。
+**Objective:** Build an app that is functionally similar to this: <a href="https://p2p-video-chat-application.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://p2p-video-chat-application.freecodecamp.rocks/</a>.
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を実装してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
+Fulfill the below user stories and get all of the tests to pass. 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
 
 **ユーザーストーリー:** アプリに到着すると同時に、ブラウザはカメラとマイクにアクセスするためにダイアログを表示します。
 
@@ -32,7 +32,7 @@ dashedName: p2p-video-chat-application
 
 これらのユーザーストーリーの実装を終えたら、動作可能なアプリの URL を入力し、必要に応じて GitHub リポジトリの URL を入力してください。 それから「このチャレンジを完了しました」ボタンをクリックしてください。
 
-[freeCodeCamp フォーラム](https://forum.freecodecamp.org/c/project-feedback/409)でプロジェクトを共有することにより、フィードバックを得ることができます。
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

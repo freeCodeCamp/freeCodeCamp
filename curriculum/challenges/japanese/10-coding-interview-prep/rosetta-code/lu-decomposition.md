@@ -1,20 +1,20 @@
 ---
 id: 5e6decd8ec8d7db960950d1c
 title: LU 分解
-challengeType: 5
+challengeType: 1
 forumTopicId: 385280
 dashedName: lu-decomposition
 ---
 
 # --description--
 
-[LU 分解](https://en.wikipedia.org/wiki/LU decomposition) で説明されているように、すべての正方行列 $A$ は、下三角行列 $L$ と上三角行列 $U$ の積に分解できます。
+Every square matrix $A$ can be decomposed into a product of a lower triangular matrix $L$ and a upper triangular matrix $U$. This is known as the LU decomposition.
 
 $A = LU$
 
 これはガウスの消去法の修正版です。
 
-[コレスキー分解](http://rosettacode.org/wiki/Cholesky decomposition) が正定値対称行列に対してのみ機能するのに対し、より一般的な LU 分解は任意の正方行列に対して機能します。
+While the Cholesky decomposition only works for symmetric, positive definite matrices, the more general LU decomposition works for any square matrix.
 
 $L$ と $U$ を計算するためのアルゴリズムはいくつかあります。
 

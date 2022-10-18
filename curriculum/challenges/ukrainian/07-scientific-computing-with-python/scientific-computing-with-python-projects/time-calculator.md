@@ -8,29 +8,23 @@ dashedName: time-calculator
 
 # --description--
 
-Ви маєте [виконати цей проєкт за допомогою нашого стартового коду Replit](https://replit.com/github/freeCodeCamp/boilerplate-time-calculator).
-
-Ми й досі в процесі розробки інтерактивної складової навчального курсу Python. Наразі можете ознайомитись із наступними відео на YouTube каналі freeCodeCamp.org. У них ви знайдете все необхідне для завершення цього проєкту:
-
-- [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 годин)
-
-- [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 години)
+Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-time-calculator" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
 # --instructions--
 
-Напишіть функцію з назвою `add_time`, яка приймає два обов'язкових параметри та один необов'язковий параметр:
+Write a function named `add_time` that takes in two required parameters and one optional parameter:
 
-- початок часу в 12-годинному форматі годинника (закінчується на AM чи PM)
-- проміжок часу, який позначає кількість годин та хвилин
-- (необов'язкове) перший день тижня (без урахування регістру)
+- a start time in the 12-hour clock format (ending in AM or PM)
+- a duration time that indicates the number of hours and minutes
+- (optional) a starting day of the week, case insensitive
 
-Функція має додати проміжок часу до початку часу та повернути результат.
+The function should add the duration time to the start time and return the result.
 
-Якщо результат буде наступним днем, то він має показати `(next day)` після часу. Якщо результат буде за декілька днів, то він має показати `(n days later)` після часу, де "n" — це кількість днів.
+If the result will be the next day, it should show `(next day)` after the time. If the result will be more than one day later, it should show `(n days later)` after the time, where "n" is the number of days later.
 
-Якщо функції задано довільний параметр першого дня тижня, то вивід має показувати день тижня з результату. День тижня у виводі має показуватися перед часом та після кількості днів.
+If the function is given the optional starting day of the week parameter, then the output should display the day of the week of the result. The day of the week in the output should appear after the time and before the number of days later.
 
-Нижче наведені приклади різних випадків, які має опрацьовувати функція. Слідкуйте за інтервалами та пунктуацією в результатах.
+Below are some examples of different cases the function should handle. Pay close attention to the spacing and punctuation of the results.
 
 ```py
 add_time("3:00 PM", "3:10")
@@ -52,23 +46,23 @@ add_time("6:30 PM", "205:12")
 # Returns: 7:42 AM (9 days later)
 ```
 
-Не імпортуйте бібліотеки Python. Припускаймо, що початок часу завжди валідний. Мінути у проміжку часу будуть цілим числом меншим за 60, але години можуть бути будь-яким числом.
+Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.
 
 ## Розробка
 
-Запишіть свій код в `time_calculator.py`. Для розробки, ви можете використати `main.py`, щоб перевірити вашу функцію `time_calculator()`. Натисніть кнопку "run" і `main.py` запуститься.
+Write your code in `time_calculator.py`. For development, you can use `main.py` to test your `time_calculator()` function. Натисніть кнопку «запустити» і `main.py` запуститься.
 
 ## Тестування
 
-Розділи з тестами для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично кожного разу, коли ви натиснете клавішу "run".
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. Тести запустяться автоматично, коли ви натиснете на кнопку «запустити».
 
 ## Надсилання
 
-Скопіюйте URL-адресу вашого проєкту і відправте його до freeCodeCamp.
+Copy your project's URL and submit it to freeCodeCamp.
 
 # --hints--
 
-Функція повинна правильно додавати час і пройти тестування.
+It should correctly add times and pass all tests.
 
 ```js
 

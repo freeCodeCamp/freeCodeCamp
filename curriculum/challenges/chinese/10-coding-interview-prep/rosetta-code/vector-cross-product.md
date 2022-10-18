@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad2
 title: Vector cross product
-challengeType: 5
+challengeType: 1
 forumTopicId: 302342
 dashedName: vector-cross-product
 ---
@@ -12,7 +12,7 @@ A vector is defined as having three dimensions as being represented by an ordere
 
 # --instructions--
 
-Write a function that takes two vectors (arrays) as input and computes their cross product. Your function should return `null` on invalid inputs such as vectors of different lengths.
+Write a function that takes two vectors (arrays) as input and computes their cross product. 该函数应该在无效输入（例如不同长度的向量）上返回 `null`。
 
 # --hints--
 

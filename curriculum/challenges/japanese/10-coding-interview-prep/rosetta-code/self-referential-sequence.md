@@ -1,14 +1,14 @@
 ---
 id: 5eb3e4a21f462f409d656c73
 title: 自己参照数列
-challengeType: 5
+challengeType: 1
 forumTopicId: 385317
 dashedName: self-referential-sequence
 ---
 
 # --description--
 
-自己参照数列を生成する方法はいくつかあります。 特によく知られた例の 1 つである ( [読み上げ数列](https://rosettacode.org/wiki/Look-and-say sequence)) は、正の整数から始め、次いで隣接する同じ数字のまとまりを数え上げ、連結することにより、次の項を生成します。
+自己参照数列を生成する方法はいくつかあります。 One very common one (the <a href="https://rosettacode.org/wiki/Look-and-say_sequence" target="_blank" rel="noopener noreferrer nofollow">Look-and-say sequence</a>) is to start with a positive integer, then generate the next term by concatenating enumerated groups of adjacent alike digits:
 
 <pre>0, 10, 1110, 3110, 132110, 1113122110, 311311222110 ...</pre>
 

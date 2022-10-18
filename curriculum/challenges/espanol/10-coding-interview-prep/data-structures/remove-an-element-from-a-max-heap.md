@@ -8,11 +8,11 @@ dashedName: remove-an-element-from-a-max-heap
 
 # --description--
 
-Now that we can add elements to our heap let's see how we can remove elements. Removing and inserting elements both require similar logic. In a max heap you will usually want to remove the greatest value, so this involves simply extracting it from the root of our tree. This will break the heap property of our tree, so we must reestablish it in some way. Typically, for a max heap this is done in the following way:
+Ahora que podemos añadir elementos a nuestra pila veamos cómo podemos eliminar los elementos. Quitar e insertar elementos requieren una lógica similar. En un montón máximo normalmente querrá eliminar el mayor valor, por lo que esto implica simplemente extraerlo de la raíz de nuestro árbol. This will break the heap property of our tree, so we must reestablish it in some way. Typically, for a max heap this is done in the following way:
 
 <ol>
   <li>Move the last element in the heap into the root position.</li>
-  <li>If either child of the root is greater than it, swap the root with the child of greater value.</li>
+  <li>Si cualquiera de los dos hijos de la raíz es mayor que ella, intercambia la raíz con el hijo de mayor valor.</li>
   <li>Continue swapping until the parent is greater than both children or you reach the last level in the tree.</li>
 </ol>
 
@@ -22,7 +22,7 @@ Instructions: Add a method to our max heap called `remove`. This method should r
 
 # --hints--
 
-The MaxHeap data structure should exist.
+The `MaxHeap` data structure should exist.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called print.
+`MaxHeap` should have a method called `print`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called insert.
+`MaxHeap` should have a method called `insert`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called remove.
+`MaxHeap` should have a method called `remove`.
 
 ```js
 assert(
@@ -84,7 +84,7 @@ assert(
 );
 ```
 
-The remove method should remove the greatest element from the max heap while maintaining the max heap property.
+The `remove` method should remove the greatest element from the max heap while maintaining the max heap property.
 
 ```js
 assert(
@@ -114,21 +114,29 @@ assert(
 ## --seed-contents--
 
 ```js
-var MaxHeap = function() {
-  this.heap = [null];
-  this.insert = (ele) => {
-    var index = this.heap.length;
-    var arr = [...this.heap];
-    arr.push(ele);
-    while (ele > arr[Math.floor(index / 2)] && index > 1) {
-      arr[index] = arr[Math.floor(index / 2)];
-      arr[Math.floor(index / 2)] = ele;
-      index = arr[Math.floor(index / 2)];
+var MaxHeap = function () {
+  this.heap = [];
+  this.parent = index => {
+    return Math.floor((index - 1) / 2);
+  }
+  this.insert = element => {
+    this.heap.push(element);
+    this.heapifyUp(this.heap.length - 1);
+  }
+  this.heapifyUp = index => {
+    let currentIndex = index,
+    parentIndex = this.parent(currentIndex);
+    while (currentIndex > 0 && this.heap[currentIndex] > this.heap[parentIndex]) {
+      this.swap(currentIndex, parentIndex);
+      currentIndex = parentIndex;
+      parentIndex = this.parent(parentIndex);
     }
-    this.heap = arr;
+  }
+  this.swap = (index1, index2) => {
+    [this.heap[index1], this.heap[index2]] = [this.heap[index2], this.heap[index1]];
   }
   this.print = () => {
-    return this.heap.slice(1);
+    return this.heap;
   }
   // Only change code below this line
 

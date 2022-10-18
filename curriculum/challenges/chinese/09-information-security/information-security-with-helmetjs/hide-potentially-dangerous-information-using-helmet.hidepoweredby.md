@@ -8,7 +8,7 @@ dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby
 
 # --description--
 
-请注意，本项目在[这个 Repl.it 项目](https://replit.com/github/freeCodeCamp/boilerplate-infosec)的基础上进行开发。你也可以从 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 如果黑客发现你的网站是用 Express 搭建的，那么他们就可以利用 Express 或 Node 现存的漏洞来攻击你的网站。 `X-Powered-By: Express` 默认在来自 Express 的每个请求中被发送。 使用 `helmet.hidePoweredBy()` 中间件来移除 X-Powered-By 头。
 

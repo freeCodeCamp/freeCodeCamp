@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-choropleth-map
 
 # --description--
 
-**目標:** こちらと似た機能を持つアプリを構築してください: <a href="https://codepen.io/freeCodeCamp/full/EZKqza" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/EZKqza</a>
+**目標:** こちらと似た機能を持つアプリを構築してください: <a href="https://choropleth-map.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://choropleth-map.freecodecamp.rocks</a>
 
 下記のユーザーストーリーを満たして、すべてのテストに合格してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなた独自のスタイルを加えましょう。
 
