@@ -185,7 +185,7 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
    git cherry-pick <commit-hash>
    ```
 
-4. Beseitige alle Konflikte und räume auf, installiere Tests und führe sie durch
+4. Resolve any conflicts, cleanup, install dependencies and run tests
 
    ```console
    npm run clean
