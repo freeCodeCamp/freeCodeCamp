@@ -80,6 +80,7 @@
     "format:prettier": "prettier --write .",
     "hooks:install": "node node_modules/husky/husky.js install",
     "hooks:uninstall": "node node_modules/husky/husky.js uninstall",
+    "knip": "knip -c config/knip/knip.json --dir client --include files",
     "knip:client": "knip -c config/knip/knip.json --dir client",
     "prelint": "npm run -w=client predevelop",
     "lint": "npm-run-all create:* -p lint:*",

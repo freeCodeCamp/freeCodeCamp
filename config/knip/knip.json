@@ -3,6 +3,7 @@
     "exclude": ["dependencies"],
     "entryFiles": [
       "gatsby-*.js",
+      "src/html.tsx",
       "src/pages/*.tsx",
       "src/templates/Challenges/**/{s,S}how.tsx",
       "src/templates/Introduction/**/{intro,super-block-intro}.tsx"
@@ -20,7 +21,8 @@
       "!**/i18n/config-for-tests.ts",
       "!**/__mocks__/**",
       "!**/__fixtures/**",
-      "!**/node_modules/**"
+      "!**/node_modules/**",
+      "!**/*.d.ts"
     ]
   }
 }
