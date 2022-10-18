@@ -173,14 +173,18 @@ textarea.inputarea {
 
 .lower-jaw-icon-bar {
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
 }
-
-.lower-jaw-btn-icon {
+.lower-jaw-icon-bar > button {
   line-height: 0;
   margin-right: 10px;
-  float: right;
 }
 
-.lower-jaw-btn-icon:first-child {
+.lower-jaw-icon-bar > button:focus {
+  outline: 2px solid var(--blue-mid);
+}
+
+.lower-jaw-icon-bar > button:last-child {
   margin-right: 0;
 }

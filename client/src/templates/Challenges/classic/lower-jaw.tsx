@@ -189,7 +189,7 @@ const LowerJaw = ({
         <hr />
         <div className='lower-jaw-icon-bar'>
           <button
-            className='btn fade-in lower-jaw-btn-icon'
+            className='btn fade-in'
             title={t('buttons.reset-code')}
             aria-label={t('buttons.reset-code')}
             data-cy='reset-code-button'
@@ -200,7 +200,7 @@ const LowerJaw = ({
 
           {isAttemptsLargerThanTest && !challengeIsCompleted ? (
             <button
-              className='btn fade-in lower-jaw-btn-icon'
+              className='btn fade-in'
               id='get-help-button'
               title={t('buttons.get-help')}
               aria-label={t('buttons.get-help')}
