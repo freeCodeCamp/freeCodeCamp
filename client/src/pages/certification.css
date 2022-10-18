@@ -192,6 +192,11 @@
   .certification-namespace header {
     height: 160px;
   }
+  
+  .certification-namespace * {
+    margin: 0;
+    padding: 0;
+  }
 
   .certification-namespace .logo {
     margin-left: 0;
