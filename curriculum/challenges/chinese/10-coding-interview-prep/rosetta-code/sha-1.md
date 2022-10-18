@@ -1,7 +1,7 @@
 ---
 id: 5eb3e4b5f629b9a07429a5d2
 title: SHA-1
-challengeType: 5
+challengeType: 1
 forumTopicId: 385326
 dashedName: sha-1
 ---
@@ -16,7 +16,7 @@ BitTorrent 使用 SHA-1 来验证下载内容。
 
 Git 和 Mercurial 使用 SHA-1 摘要来核验提交内容。
 
-美国政府标准 [FIPS 180-1](https://rosettacode.org/wiki/SHA-1/FIPS-180-1) 了定义 SHA-1。
+A US government standard, <a href="https://rosettacode.org/wiki/SHA-1/FIPS-180-1" target="_blank" rel="noopener noreferrer nofollow">FIPS 180-1</a>, defines SHA-1.
 
 # --instructions--
 

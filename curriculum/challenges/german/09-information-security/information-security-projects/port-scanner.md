@@ -1,6 +1,6 @@
 ---
 id: 5e46f979ac417301a38fb932
-title: Port Scanner
+title: Portscanner
 challengeType: 10
 forumTopicId: 462372
 helpCategory: Python
@@ -9,15 +9,15 @@ dashedName: port-scanner
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode</a> an diesem Projekt arbeiten.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+Wir sind noch dabei, den interaktiven Teil des Python-Kurses zu entwickeln. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
-- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Lerne ausführlich die Python-Grundlagen </a> (4 Stunden)
 
-- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Python-Kurs für Fortgeschrittene</a> (6 Stunden)
 
 # --instructions--
 

@@ -16,15 +16,12 @@ We call the convex area enclosed by two circles a lenticular hole if:
 
 Consider the circles:
 
-$$\begin{align}
-  & C_0: x^2 + y^2 = 25 \\\\
-  & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\
-  & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65
-\end{align}$$
+$$\begin{align}   & C_0: x^2 + y^2 = 25 \\\\
+  & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
 
 The circles $C_0$, $C_1$ and $C_2$ are drawn in the picture below.
 
-<img class="img-responsive center-block" alt="C_0, C_1 and C_2 circles" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="C_0, C_1 and C_2 circles" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
 
 $C_0$ and $C_1$ form a lenticular hole, as well as $C_0$ and $C_2$.
 

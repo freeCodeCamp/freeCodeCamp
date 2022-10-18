@@ -23,7 +23,7 @@ myTest();
 console.log(loc);
 ```
 
-Виклик функції `myTest()` відображатиме рядок `foo` в консолі. Рядок `console.log(loc)` видасть помилку, тому що `loc` не є визначеним за діапазоном функції.
+Виклик функції `myTest()` відображатиме рядок `foo` в консолі. The `console.log(loc)` line (outside of the `myTest` function) will throw an error, as `loc` is not defined outside of the function.
 
 # --instructions--
 

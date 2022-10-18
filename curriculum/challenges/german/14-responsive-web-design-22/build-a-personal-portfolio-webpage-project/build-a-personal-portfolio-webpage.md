@@ -13,11 +13,11 @@ dashedName: build-a-personal-portfolio-webpage
 **User Stories:**
 
 1. Dein Portfolio sollte einen Begrüßungsbereich mit einer `id` von `welcome-section` besitzen
-1. Der Begrüßungsbereich sollte ein `h1` Element mit Text enthalten
+1. Der Begrüßungsbereich sollte ein `h1`-Element mit Text enthalten
 1. Dein Portfolio sollte einen Projektabschnitt mit einer `id` von `projects` besitzen
 1. Der Projektabschnitt sollte mindestens ein Element mit einer `class` von `project-tile` besitzen, um das Projekt zu halten
 1. Der Projektabschnitt sollte mindestens einen Link zu einem Projekt enthalten
-1. Dein Portfolio sollte eine Navigationsleiste mit einer Id von `navbar` haben
+1. Dein Portfolio sollte eine Navigationsleiste mit einer ID von `navbar` haben
 1. Die Navigationsleiste sollte mindestens einen auswählbaren Link haben, der zu verschiedenen Bereichen der Seite navigiert
 1. Dein Portfolio sollte einen Link mit der ID `profile-link` haben, der dein GitHub- oder freeCodeCamp-Profil in einem neuen Tab öffnet
 1. Dein Portfolio sollte mindestens eine Media Query (Medienabfrage) enthalten
@@ -37,7 +37,7 @@ const el = document.getElementById('welcome-section')
 assert(!!el);
 ```
 
-Dein `#welcome-section` Element sollte ein `h1` Element beinhalten.
+Your `#welcome-section` element should contain an `h1` element.
 
 ```js
 assert.isAbove(
@@ -47,7 +47,7 @@ assert.isAbove(
 );
 ```
 
-Du solltest keine leeren `h1` Elemente innerhalb des `#welcome-section` Elements haben.
+Du solltest keine leeren `h1`-Elemente innerhalb des `#welcome-section`-Elements haben.
 
 ```js
 assert.isAbove(
@@ -74,7 +74,7 @@ assert.isAbove(
 );
 ```
 
-Dein `#projects` Element sollte mindestens ein `a` Element beinhalten.
+Dein `#projects`-Element sollte mindestens ein `a`-Element beinhalten.
 
 ```js
 assert.isAbove(document.querySelectorAll('#projects a').length, 0);
@@ -87,11 +87,11 @@ const el = document.getElementById('navbar');
 assert(!!el);
 ```
 
-Dein `#navbar` Element sollte mindestens ein `a` Element, dessen `href` Attribut mit `#` beginnt, haben.
+Dein `#navbar`-Element sollte mindestens ein `a`-Element, dessen `href`-Attribut mit `#` beginnt, haben.
 
 ```js
 const links = [...document.querySelectorAll('#navbar a')].filter(
-  (nav) => (nav?.getAttribute('href') || '').substr(0, 1) === '#'
+  (nav) => (nav?.getAttribute('href') || '').substring(0, 1) === '#'
 );
 
 assert.isAbove(
@@ -101,14 +101,14 @@ assert.isAbove(
 );
 ```
 
-Dein Portfolio sollte ein `a` Element mit einer `id` von `profile-link` haben.
+Dein Portfolio sollte ein `a`-Element mit einer `id` von `profile-link` haben.
 
 ```js
 const el = document.getElementById('profile-link');
 assert(!!el && el.tagName === 'A')
 ```
 
-Dein `#profile-link` Element sollte ein `target` Attribut von `_blank` haben.
+Dein `#profile-link`-Element sollte ein `target`-Attribut von `_blank` haben.
 
 ```js
 const el = document.getElementById('profile-link');
@@ -123,7 +123,7 @@ const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
 assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-Dein `#navbar` Element sollte immer oben im Viewport liegen.
+Dein `#navbar`-Element sollte immer oben im Viewport liegen.
 
 ```js
 (async () => {

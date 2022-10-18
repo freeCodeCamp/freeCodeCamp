@@ -1,6 +1,6 @@
 ---
 id: 587d7fb6367417b2b2512c09
-title: Create and Save a Record of a Model
+title: Erstellen und Speichern eines Datensatzes für ein Modell
 challengeType: 2
 forumTopicId: 301536
 dashedName: create-and-save-a-record-of-a-model
@@ -8,7 +8,7 @@ dashedName: create-and-save-a-record-of-a-model
 
 # --description--
 
-In this challenge you will have to create and save a record of a model.
+In dieser Aufgabe musst du einen Datensatz für ein Modell erstellen und speichern.
 
 # --instructions--
 

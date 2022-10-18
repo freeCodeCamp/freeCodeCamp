@@ -10,7 +10,7 @@ dashedName: hashing-your-passwords
 
 回過頭來看信息安全，你也許記得在數據庫中存儲明文密碼是*絕對*禁止的。 現在，我們需要引入 BCrypt 來解決這個問題。
 
-添加 `bcrypt@~5.0.0` 作爲依賴，並在服務端使用它。 你需要在兩個步驟中使用哈希運算：註冊和保存新賬戶，以及登錄時檢查密碼是否正確。
+`bcrypt@~5.0.0` has already been added as a dependency, so require it in your server. 你需要在兩個步驟中使用哈希運算：註冊和保存新賬戶，以及登錄時檢查密碼是否正確。
 
 目前處理註冊的路由中，我們是這樣把密碼添加到數據庫的：`password: req.body.password`。 保存哈希值的一個簡單方式是在數據庫邏輯中添加 `const hash = bcrypt.hashSync(req.body.password, 12);`，然後把 `req.body.password` 替換爲 `password: hash`。
 
@@ -24,7 +24,7 @@ if (!bcrypt.compareSync(password, user.password)) {
 
 當你需要存儲密碼時，這樣做可以有效地提升網站的安全性。
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考[這裏](https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564)的答案。
+完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

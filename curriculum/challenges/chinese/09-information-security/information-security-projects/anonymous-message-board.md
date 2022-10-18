@@ -8,12 +8,12 @@ dashedName: anonymous-message-board
 
 # --description--
 
-构建一个功能上与此相似的全栈式 JavaScript 应用程序：<https://anonymous-message-board.freecodecamp.rocks/>。
+Build a full stack JavaScript app that is functionally similar to this: <a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://anonymous-message-board.freecodecamp.rocks/</a>.
 
 在这个项目中，你将使用以下方法之一编写你的代码：
 
--   克隆[这个 GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-messageboard/) 并在本地完成你的项目。
--   使用 [我们的 Replit 启动项目](https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard)来完成你的项目。
+-   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-messageboard/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
+-   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
 完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以提交一个指向项目源码的 `GitHub Link`。

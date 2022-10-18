@@ -16,12 +16,9 @@ The least common multiple, or $lcm$, of a list is the smallest natural number di
 
 Let $f(G, L, N)$ be the number of lists of size $N$ with $gcd ≥ G$ and $lcm ≤ L$. For example:
 
-$$\begin{align}
-  & f(10, 100, 1) = 91 \\\\
-  & f(10, 100, 2) = 327 \\\\
-  & f(10, 100, 3) = 1135 \\\\
-  & f(10, 100, 1000)\bmod {101}^4 = 3\\,286\\,053
-\end{align}$$
+$$\begin{align}   & f(10, 100, 1) = 91 \\\\
+  & f(10, 100, 2) = 327 \\\\   & f(10, 100, 3) = 1135 \\\\
+  & f(10, 100, 1000)\bmod {101}^4 = 3\\,286\\,053 \end{align}$$
 
 Find $f({10}^6, {10}^{12}, {10}^{18})\bmod {101}^4$.
 

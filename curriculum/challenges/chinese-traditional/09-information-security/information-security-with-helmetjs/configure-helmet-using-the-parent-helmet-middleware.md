@@ -8,7 +8,7 @@ dashedName: configure-helmet-using-the-parent-helmet-middleware
 
 # --description--
 
-請注意，本項目在[這個 Repl.it 項目](https://replit.com/github/freeCodeCamp/boilerplate-infosec)的基礎上進行開發。你也可以從 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `app.use(helmet())` 將自動包括上面介紹的所有中間件，除了 `noCache()` 和 `contentSecurityPolicy()`，但如果有必要，這些可以被啓用。 你也可以使用配置對象，單獨禁用或配置任何其他中間件。
 

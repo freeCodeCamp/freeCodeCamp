@@ -24,7 +24,7 @@ dashedName: create-a-hash-table
 
 # --hints--
 
-HashTable データ構造が存在する必要があります。
+The `HashTable` data structure should exist.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-HashTable に add メソッドが必要です。
+The `HashTable` should have an `add` method.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-HashTable に lookup メソッドが必要です。
+The `HashTable` should have a `lookup` method.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-HashTable に remove メソッドが必要です。
+The `HashTable` should have a `remove` method.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-add メソッドはキーと値のペアを追加し、lookup メソッドは与えられたキーに関連付けられた値を返す必要があります。
+The `add` method should add key value pairs and the `lookup` method should return the values associated with a given key.
 
 ```js
 assert(
@@ -95,7 +95,7 @@ assert(
 );
 ```
 
-remove メソッドはキーを入力として受け入れ、関連付けられたキーと値のペアを削除する必要があります。
+The `remove` method should accept a key as input and should remove the associated key value pair.
 
 ```js
 assert(
@@ -113,7 +113,7 @@ assert(
 );
 ```
 
-remove メソッドは、キーと値の正しいペアのみを削除する必要があります。
+The `remove` method should only remove the correct key value pair.
 
 ```js
 assert(

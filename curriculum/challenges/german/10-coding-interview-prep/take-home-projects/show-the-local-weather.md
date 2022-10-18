@@ -12,7 +12,7 @@ dashedName: show-the-local-weather
 
 **Rule #1:** Don't look at the example project's code. Figure it out for yourself.
 
-**Rule #2:** Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+**Regel #2:** Erfülle die folgenden User Stories und bestehe alle Tests. Verwende Bibliotheken und APIs deiner Wahl. Gib dem Ganzen deinen persönlichen Stil.
 
 **User Story:** I can see the weather in my current location.
 

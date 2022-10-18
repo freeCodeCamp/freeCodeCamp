@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c167
-title: Python Iteration and Modules
+title: Python Iteration und Module
 challengeType: 11
 videoId: XzosGWLafrY
 bilibiliIds:
@@ -12,18 +12,18 @@ dashedName: python-iteration-and-modules
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Anstatt, wie in dem Video gezeigt, notebooks.ai zu verwenden, kannst du auch Google Colab verwenden.*
 
-More resources:
+Weitere Ressourcen:
 
--  <a href="https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes" target="_blank" rel="noopener noreferrer nofollow">Notebooks on GitHub</a>
+-  <a href="https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes" target="_blank" rel="noopener noreferrer nofollow">Notebooks auf GitHub</a>
 -  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">How to open Notebooks from GitHub using Google Colab.</a>
 
 # --question--
 
 ## --text--
 
-How would you iterate over and print the keys and values of a dictionary named `user`?
+Wie würdest du die Schlüssel und Werte eines Wörterbuchs mit dem Namen `user` iterieren und ausgeben?
 
 ## --answers--
 

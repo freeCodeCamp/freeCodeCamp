@@ -16,11 +16,11 @@ Let $T(n)$ be the sum of all balanced numbers less than $10^n$.
 
 Thus: $T(1) = 45$, $T(2) = 540$ and $T(5) = 334\\,795\\,890$.
 
-Find $T(47)\\,mod\\,3^{15}$
+Finde $T(47)\\,mod\\,3^{15}$
 
 # --hints--
 
-`balancedNumbers()` should return `6273134`.
+`balancedNumbers()` sollte `6273134` zurückgeben.
 
 ```js
 assert.strictEqual(balancedNumbers(), 6273134);

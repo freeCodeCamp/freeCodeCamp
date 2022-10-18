@@ -19,21 +19,19 @@ dashedName: access-array-data-with-indexes
 
 ```js
 const array = [50, 60, 70];
-array[0];
+console.log(array[0]);
 const data = array[1];
 ```
 
-`array[0]` становить `50`, і`data` має значення `60`.
-
-**Примітка:** ніколи не вставляйте пробіл між ім'ям масиву і квадратними дужками, наприклад `array [0]`. Хоча JavaScript прочитає це правильно, але це може створити труднощі для інших програмістів, які читатимуть ваш код.
+The `console.log(array[0])` prints `50`, and `data` has the value `60`.
 
 # --instructions--
 
-Створіть змінну з назвою `myData` і встановіть її значення рівне до першому елементу `myArray`, використовуючи квадратні дужки.
+Create a variable called `myData` and set it to equal the first value of `myArray` using bracket notation.
 
 # --hints--
 
-Змінна `myData` повинна дорівнювати першому значенню `myArray`.
+The variable `myData` should equal the first value of `myArray`.
 
 ```js
 assert(
@@ -51,7 +49,7 @@ assert(
 );
 ```
 
-До даних в змінній `myArray` слід отримати доступ за допомогою індексу у квадратних дужках.
+The data in variable `myArray` should be accessed using bracket notation.
 
 ```js
 assert(

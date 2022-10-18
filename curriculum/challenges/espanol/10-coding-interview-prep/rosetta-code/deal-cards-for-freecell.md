@@ -1,18 +1,18 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
 title: Deal cards for FreeCell
-challengeType: 5
+challengeType: 1
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
 ---
 
 # --description--
 
-*FreeCell* is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for [DOS](https://rosettacode.org/wiki/DOS "DOS"), then [Windows](https://rosettacode.org/wiki/Windows "Windows"). This version introduced 32000 numbered deals.
+*FreeCell* is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for DOS, then Windows. This version introduced 32000 numbered deals.
 
 As the game became popular, Jim Horne disclosed the algorithm, and other implementations of FreeCell began to reproduce the Microsoft deals. These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.
 
-The algorithm uses this [linear congruential generator](https://rosettacode.org/wiki/linear congruential generator "linear congruential generator") from Microsoft C:
+The algorithm uses this linear congruential generator from Microsoft C:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
@@ -20,11 +20,11 @@ The algorithm uses this [linear congruential generator](https://rosettacode.org/
   <li>$rand_n$ is in range 0 to 32767.</li>
 </ul>
 
-The algorithm follows:
+A continuación el algoritmo:
 
 <ol>
   <li>Seed the RNG with the number of the deal.
-  </li><li>Create an <a href='https://rosettacode.org/wiki/array' title='array' target='_blank'>array</a> of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
+  </li><li>Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
   <li>Until the array is empty:</li>
   <li>Choose a random card at index ≡ next random number (mod array length).</li>
     <ul>
@@ -35,7 +35,7 @@ The algorithm follows:
   <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
 </ol>
 
-**Example:**
+**Por ejemplo:**
 
 **Order to deal cards**
 
@@ -61,7 +61,7 @@ The algorithm follows:
 ]
 ```
 
-**Game #617**
+**Juego nº 617**
 
 ```js
 [
@@ -78,8 +78,6 @@ The algorithm follows:
 # --instructions--
 
 Write a function to take a deal number and deal cards in the same order as this algorithm. The function must return a two dimensional array representing the FreeCell board.
-
-Deals can also be checked against [FreeCell solutions to 1000000 games](https://freecellgamesolutions.com/). (Summon a video solution, and it displays the initial deal.)
 
 # --hints--
 

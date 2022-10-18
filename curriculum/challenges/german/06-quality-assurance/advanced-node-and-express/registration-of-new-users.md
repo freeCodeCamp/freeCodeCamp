@@ -8,9 +8,9 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Now we need to allow a new user on our site to register an account. On the `res.render` for the home page add a new variable to the object passed along--`showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file! This form is set up to **POST** on `/register`, so this is where we should set up to accept the **POST** and create the user object in the database.
+Now we need to allow a new user on our site to register an account. On the `res.render` for the home page add a new variable to the object passed along--`showRegistration: true`. Wenn du deine Seite aktualisierst, solltest du das Registrierungsformular sehen, das bereits in deiner `index.pug` Datei erstellt wurde! This form is set up to **POST** on `/register`, so this is where we should set up to accept the **POST** and create the user object in the database.
 
-The logic of the registration route should be as follows: Register the new user > Authenticate the new user > Redirect to /profile
+Die Logik des Registrierungswegs sollte folgendermaßen aussehen: Registrierung des neuen Benutzers > Authentifizierung des neuen Benutzers > Weiterleitung zu /profile
 
 The logic of step 1, registering the new user, should be as follows: Query database with a findOne command > if user is returned then it exists and redirect back to home *OR* if user is undefined and no error occurs then 'insertOne' into the database with the username and password, and, as long as no errors occur, call *next* to go to step 2, authenticating the new user, which we've already written the logic for in our POST */login* route.
 
@@ -76,7 +76,7 @@ You should register route and display on home.
   );
 ```
 
-Registering should work.
+Die Registrierung sollte funktionieren.
 
 ```js
 async (getUserInput) => {
@@ -104,7 +104,7 @@ async (getUserInput) => {
 };
 ```
 
-Login should work.
+Login sollte funktionieren.
 
 ```js
 async (getUserInput) => {
@@ -153,7 +153,7 @@ async (getUserInput) => {
 };
 ```
 
-Logout should work.
+Logout sollte funktionieren.
 
 ```js
 (getUserInput) =>
@@ -171,7 +171,7 @@ Logout should work.
   );
 ```
 
-Profile should no longer work after logout.
+Das Profil sollte nach dem Abmelden nicht mehr funktionieren.
 
 ```js
 (getUserInput) =>

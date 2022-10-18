@@ -12,30 +12,30 @@ dashedName: reading-data-from-databases
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Anstatt, wie in dem Video gezeigt, notebooks.ai zu verwenden, kannst du auch Google Colab verwenden.*
 
-More resources:
+Weitere Ressourcen:
 
--  <a href="https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas" target="_blank" rel="noopener noreferrer nofollow">Notebooks on GitHub</a>
+-  <a href="https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas" target="_blank" rel="noopener noreferrer nofollow">Notebooks auf GitHub</a>
 -  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">How to open Notebooks from GitHub using Google Colab.</a>
 
 # --question--
 
 ## --text--
 
-What method does a `Cursor` instance have and what does it allow?
+Welche Methode hat eine `Cursor` Instanz und was erlaubt diese?
 
 ## --answers--
 
-The `Cursor` instance has a `.run()` method which allows you to run SQL queries.
+Die `Cursor`-Instanz hat eine `.run()`-Methode, mit der man SQL-Queries ausführen kann.
 
 ---
 
-The `Cursor` instance has a `.select()` method which allows you to select records.
+Die `Cursor`-Instanz hat eine `.select()`-Methode, mit der man Datensätze auswählen kann.
 
 ---
 
-The `Cursor` instance has an `.execute()` method which will receive SQL parameters to run against the database.
+Die `Cursor`-Instanz hat eine `.execute()`-Methode, die SQL-Parameter erhält, welche in der Datenbank geprüft werden.
 
 ## --video-solution--
 

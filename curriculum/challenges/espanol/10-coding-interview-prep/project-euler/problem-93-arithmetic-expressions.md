@@ -1,7 +1,7 @@
 ---
 id: 5900f3ca1000cf542c50fedc
-title: 'Problem 93: Arithmetic expressions'
-challengeType: 5
+title: 'Problema N° 93: Expresiones aritméticas'
+challengeType: 1
 forumTopicId: 302210
 dashedName: problem-93-arithmetic-expressions
 ---
@@ -10,7 +10,7 @@ dashedName: problem-93-arithmetic-expressions
 
 By using each of the digits from the set, {1, 2, 3, 4}, exactly once, and making use of the four arithmetic operations (+, −, \*, /) and brackets/parentheses, it is possible to form different positive integer targets.
 
-For example,
+Por ejemplo,
 
 <div style='margin-left: 4em;'>
   8 = (4 * (1 + 3)) / 2<br>

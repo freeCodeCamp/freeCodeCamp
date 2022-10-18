@@ -18,15 +18,15 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --instructions--
 
-У файлі package.json вашим поточним правилом для моменту оновлення npm є використання конкретної версії (2.10.2). Але тепер ви захочете останню версію 2.10.x.
+In the package.json file, your current rule for how npm may upgrade `@freecodecamp/example` is to use a specific version (1.2.13). But now, you want to allow the latest 1.2.x version.
 
-Використовуйте символ тильди (`~`), щоб встановити префікс версії моменту у ваших залежностях і дозволити npm оновити його до будь-якого оновлення версії PATCH.
+Use the tilde (`~`) character to prefix the version of `@freecodecamp/example` in your dependencies, and allow npm to update it to any new _patch_ release.
 
 **Примітка:** Номери версій не слід змінювати.
 
 # --hints--
 
-"dependencies" повинні містити "moment"
+`"dependencies"` should include `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
   );
 ```
 
-версія "moment" повинна бути "~2.10.2"
+`"@freecodecamp/example"` version should match `"~1.2.13"`.
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^\~2\.10\.2/,
-        'Wrong version of "moment". It should be ~2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\~1\.2\.13/,
+        'Wrong version of "@freecodecamp/example". It should be ~1.2.13'
       );
     },
     (xhr) => {

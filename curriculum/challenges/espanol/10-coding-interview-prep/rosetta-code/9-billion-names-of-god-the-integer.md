@@ -1,14 +1,14 @@
 ---
 id: 5949b579404977fbaefcd736
 title: 9 billion names of God the integer
-challengeType: 5
+challengeType: 1
 forumTopicId: 302219
 dashedName: 9-billion-names-of-god-the-integer
 ---
 
 # --description--
 
-This task is a variation of the [short story by Arthur C. Clarke](https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary "wp: The Nine Billion Names of God#Plot_summary").
+This task is a variation of the short story by Arthur C. Clarke.
 
 (Solvers should be aware of the consequences of completing this task.)
 

@@ -16,63 +16,61 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 **Наприклад**
 
 ```js
-6   >=  6
-7   >= '3'
-2   >=  3
-'7' >=  9
+6   >=  6  // true
+7   >= '3' // true
+2   >=  3  // false
+'7' >=  9  // false
 ```
-
-У такому ж порядку, як вони є, ці вирази будуть оцінені, як `true`, `true`, `false`, і `false`.
 
 # --instructions--
 
-Додайте оператор "більше ніж дорівнює" до зазначених рядків, щоб оператор повернення мав сенс.
+Add the greater than or equal to operator to the indicated lines so that the return statements make sense.
 
 # --hints--
 
-`testGreaterOrEqual(0)` повинен повернути рядок `Less than 10`
+`testGreaterOrEqual(0)` має повертати рядок `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(0) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(9)` повинен повернути рядок `Less than 10`
+`testGreaterOrEqual(9)` має повертати рядок `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(9) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(10)` повинен повернути рядок `10 or Over`
+`testGreaterOrEqual(10)` має повертати рядок `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(10) === '10 or Over');
 ```
 
-`testGreaterOrEqual(11)` повинен повернути рядок `10 or Over`
+`testGreaterOrEqual(11)` має повертати рядок `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(11) === '10 or Over');
 ```
 
-`testGreaterOrEqual(19)` повинен повернути рядок `10 or Over`
+`testGreaterOrEqual(19)` має повертати рядок `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(19) === '10 or Over');
 ```
 
-`testGreaterOrEqual(100)` повинен повернути рядок `20 or Over`
+`testGreaterOrEqual(100)` має повертати рядок `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(100) === '20 or Over');
 ```
 
-`testGreaterOrEqual(21)` повинен повернути рядок `20 or Over`
+`testGreaterOrEqual(21)` має повертати рядок `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(21) === '20 or Over');
 ```
 
-Слід використовувати оператор `>=` принаймні двічі
+You should use the `>=` operator at least twice
 
 ```js
 assert(code.match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);

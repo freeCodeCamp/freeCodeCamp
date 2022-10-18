@@ -12,7 +12,7 @@ A robot moves in a series of one-fifth circular arcs (72°), with a free choice 
 
 One of 70932 possible closed paths of 25 arcs starting northward is
 
-<img class="img-responsive center-block" alt="closed path of 25 arcs, starting northward" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="closed path of 25 arcs, starting northward" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;" />
 
 Given that the robot starts facing North, how many journeys of 70 arcs in length can it take that return it, after the final arc, to its starting position?
 
@@ -20,7 +20,7 @@ Given that the robot starts facing North, how many journeys of 70 arcs in length
 
 # --hints--
 
-`robotWalks()` should return `331951449665644800`.
+`robotWalks()` sollte `331951449665644800` zurückgeben.
 
 ```js
 assert.strictEqual(robotWalks(), 331951449665644800);

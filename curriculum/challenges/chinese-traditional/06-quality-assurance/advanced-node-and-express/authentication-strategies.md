@@ -8,9 +8,9 @@ dashedName: authentication-strategies
 
 # --description--
 
-策略是認證用戶的一種方式。 如果你讓用戶在註冊時填寫了用戶信息，那你就可以基於這些信息進行驗證。或者也可以引入第三方登錄，如 Google 或者 Github。 對於這個項目的驗證策略，我們會採用自己搭建的方式完成。 可以[點擊這裏](http://passportjs.org/)訪問 Passport 網站，查看數以百計的策略。
+策略是認證用戶的一種方式。 如果你讓用戶在註冊時填寫了用戶信息，那你就可以基於這些信息進行驗證。或者也可以引入第三方登錄，如 Google 或者 Github。 在這個項目中，我們將使用 Passport 中間件。 Passport 提供了一套全面的策略，支持使用用戶名和密碼、GitHub、谷歌等進行認證。
 
-引入 `passport-local@~1.0.0` 作爲依賴，然後將它添加到服務器，就像這樣：`const LocalStrategy = require('passport-local');`
+`passport-local@~1.0.0` has already been added as a dependency, so add it to your server as follows: `const LocalStrategy = require('passport-local');`
 
 然後，需要讓 passport **使用**一個實例化的 LocalStrategy 對象，這個對象的一些設置已完成。 請注意，接下來的所有代碼都應寫在連接數據庫的回調中，因爲它們的執行都依賴數據庫。
 
@@ -34,7 +34,7 @@ passport.use(new LocalStrategy(
 
 在下一個挑戰中，我們會基於表單數據調用上面寫好的驗證策略。
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到任何問題，可以參考[這裏](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b)的答案。
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，可以點擊此處查看<a href="https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b" target="_blank" rel="noopener noreferrer nofollow">已執行項目的當前進度</a>。
 
 # --hints--
 

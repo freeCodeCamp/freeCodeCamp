@@ -8,7 +8,7 @@ dashedName: build-a-drum-machine
 
 # --description--
 
-**Aufgabe:** Erstelle eine Anwendung, die eine ähnliche Funktionalität wie <a href="https://codepen.io/freeCodeCamp/full/MJyNMd" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/MJyNMd</a> aufweist.
+**Objective:** Build an app that is functionally similar to this: <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a>.
 
 Erfülle die folgenden User Stories und bestehe alle Tests. Verwende Bibliotheken und APIs deiner Wahl. Gib dem Ganzen deinen persönlichen Stil.
 
@@ -28,9 +28,21 @@ Du kannst eine beliebige Mischung aus HTML, JavaScript, CSS, Bootstrap, SASS, Re
 
 **User Story #7:** Wenn ein `.drum-pad` ausgelöst wird, wird ein String, der den zugehörigen Audioclip beschreibt, als innerer Text des `#display`-Elements angezeigt (jede Zeichenfolge muss eindeutig sein).
 
-Du kannst dein Projekt erstellen, indem du diese CodePen-Vorlage <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow"></a> verwendest und auf `Save` klickst, um deinen eigenen Pen zu erstellen. Oder du kannst diesen CDN-Link verwenden, um die Tests in jeder beliebigen Umgebung auszuführen: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Here are some audio samples you can use for your drum machine:
 
-Sobald du fertig bist, übermittle die URL zu deinem Arbeitsprojekt, wenn alle Tests bestanden sind.
+- [Heater 1](https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3)
+- [Heater 2](https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3)
+- [Heater 3](https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3)
+- [Heater 4](https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3)
+- [Clap](https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3)
+- [Offene Hi-Hat](https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3)
+- [Kick-n'-Hat](https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3)
+- [Kick](https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3)
+- [Geschlossene Hi-Hat](https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3)
+
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --solutions--
 

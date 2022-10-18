@@ -22,7 +22,7 @@ dashedName: remove-an-element-from-a-max-heap
 
 # --hints--
 
-Повинна існувати структура даних MaxHeap.
+The `MaxHeap` data structure should exist.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-У MaxHeap повинен бути метод під назвою print.
+`MaxHeap` повинен мати метод під назвою `print`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-У MaxHeap повинен бути метод під назвою insert.
+`MaxHeap` повинен мати метод під назвою `insert`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-У MaxHeap повинен бути метод під назвою remove.
+`MaxHeap` повинен мати метод під назвою `remove`.
 
 ```js
 assert(
@@ -84,7 +84,7 @@ assert(
 );
 ```
 
-Метод remove має видаляти найбільший елемент з незростаючої купи, зберігаючи при цьому властивість купи.
+The `remove` method should remove the greatest element from the max heap while maintaining the max heap property.
 
 ```js
 assert(

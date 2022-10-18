@@ -375,7 +375,7 @@ function pickEight() {
 --fcc-editable-region--
 function pick(guess) {
   let numbers = [];
-  
+
 }
 --fcc-editable-region--
 ```

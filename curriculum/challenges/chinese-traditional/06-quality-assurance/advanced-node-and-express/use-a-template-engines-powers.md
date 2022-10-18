@@ -12,19 +12,43 @@ dashedName: use-a-template-engines-powers
 
 在 Pug 文件中，你可以用變量名來調用變量，比如寫成 `#{variable_name}` 來實現行內調用，或像 `p=variable_name` 把元素與變量直接寫在一起，這表示 p 元素的內容等價於這個變量。
 
-建議大家在 [Pug 的 README](https://github.com/pugjs/pug) 裏看看它的語法和用法，這樣你寫出的代碼會相對簡練。 另外要注意，Pug 使用縮進來表示嵌套的代碼塊。
+ Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site. Read the Pug documentation for more information on usage and syntax.
 
-在 pug 的 'index.pug' 文件中，我們使用了 *title* 和 *message* 兩個變量。
+ Here is an example:
 
-爲了從服務器傳遞這些信息，你需要給 *res.render* 的第二個參數傳入一個對象，其中包含變量對應的值。 比如，如果你想傳遞對象 `{title: 'Hello', message: 'Please login'}` 到你的主頁，
+ ```html
+ <!--Typing this using Pug-->
+ head
+    script(type='text/javascript').
+      if (foo) bar(1 + 5);
+  body
+    if youAreUsingPug
+        p You are amazing
+      else
+        p Get on it!
 
-看起來應該像這樣：`res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});`。現在刷新頁面，你應該看到那些值就像在 index.pug 文件中一樣被渲染在頁面上正確的位置。
+<!--will lead to creating this code-->
+  <head>
+    <script type="text/javascript">
+      if (foo) bar(1 + 5);
+    </script>
+  </head>
+  <body>
+    <p>You are amazing</p>
+  </body>
+  ```
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考 [這裏](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871) 的答案。
+Looking at our pug file `index.pug` included in your project, we used the variables `title` and `message`.
+
+To pass those along from our server, you will need to add an object as a second argument to your `res.render` with the variables and their values. For example, pass this object along setting the variables for your index view: `{title: 'Hello', message: 'Please login'}`
+
+It should look like: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
+
+Submit your page when you think you've got it right. If you're running into errors, you can check out the <a href="https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871" target="_blank" rel="noopener noreferrer nofollow">project completed up to this point</a>.
 
 # --hints--
 
-Pug 應正確地展示變量。
+Pug should correctly render variables.
 
 ```js
 (getUserInput) =>

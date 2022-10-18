@@ -8,10 +8,10 @@ dashedName: sudoku-solver
 
 # --description--
 
-構建一個 JavaScript 的全棧應用，在功能上與這個應用相似：<https://sudoku-solver.freecodecamp.rocks/>。 可以採用下面的任意一種方式完成這個挑戰：
+Build a full stack JavaScript app that is functionally similar to this: <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a>. 可以採用下面的任意一種方式完成這個挑戰：
 
--   克隆 [GitHub 倉庫](https://github.com/freecodecamp/boilerplate-project-sudoku-solver) 並在本地完成你的項目。
--   使用[我們的 Replit 初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver)來完成你的項目。
+-   Clone <a href="https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
+-   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
 完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 框中提交你的項目 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
@@ -270,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/check` 的對象缺失 `puzzle`、`coordinate` 或 `value`，返回的值將是 `{ error: Required field(s) missing }`
+If the object submitted to `/api/check` is missing `puzzle`, `coordinate` or `value`, the returned value will be `{ error: 'Required field(s) missing' }`
 
 ```js
 async (getUserInput) => {
@@ -324,7 +324,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/check` 的 `value` 不是一個介於 1 到 9 之間的數字，則返回的值將是 `{ error: 'Invalid value' }`
+If the `value` submitted to `/api/check` is not a number between 1 and 9, the returned value will be `{ error: 'Invalid value' }`
 
 ```js
 async (getUserInput) => {
@@ -353,9 +353,11 @@ async (getUserInput) => {
   try {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
-    const units = getTests.filter((el) => el.context.includes('UnitTests'));
-    assert.isAtLeast(units.length, 12, 'At least 12 tests passed');
-    units.forEach((test) => {
+    const unitTests = getTests.filter((test) => {
+      return !!test.context.match(/Unit\s*Tests/gi);
+    });
+    assert.isAtLeast(unitTests.length, 12, 'At least 12 tests passed');
+    unitTests.forEach((test) => {
       assert.equal(test.state, 'passed', 'Test in Passed State');
       assert.isAtLeast(
         test.assertions.length,
@@ -369,18 +371,18 @@ async (getUserInput) => {
 };
 ```
 
-所有 14 項功能測試都已完成並通過。 請參閱 `/tests/2_functional-tests.js` 來了解你應該編寫的測試的功能。
+所有 14 項功能測試都已完成並通過。 See `/tests/2_functional-tests.js` for the expected functionality you should write tests for.
 
 ```js
 async (getUserInput) => {
   try {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
-    const funcs = getTests.filter((el) =>
-      el.context.includes('Functional Tests')
-    );
-    assert.isAtLeast(funcs.length, 14, 'At least 14 tests passed');
-    funcs.forEach((test) => {
+    const functTests = getTests.filter((test) => {
+      return !!test.context.match(/Functional\s*Tests/gi);
+    });
+    assert.isAtLeast(functTests.length, 14, 'At least 14 tests passed');
+    functTests.forEach((test) => {
       assert.equal(test.state, 'passed', 'Test in Passed State');
       assert.isAtLeast(
         test.assertions.length,

@@ -1,47 +1,47 @@
 ---
 id: 62a8ad8e01d7cb0deae5ec66
-title: Step 56
+title: Крок 56
 challengeType: 0
 dashedName: step-56
 ---
 
 # --description--
 
-Create another property in your object called `button functions`. Give this property an array containing the three functions assigned to the `onclick` properties in the `goTown` function. Remember that these functions are variables, not strings, and should not be wrapped in quotes.
+Створіть іншу властивість у своєму об'єкті під назвою `button functions`. Надайте цій властивості масив, що містить три функції, призначені до властивостей `onclick` у функції `goTown`. Пам'ятайте, що ці функції є змінними, а не рядками, і не повинні бути оточені лапками.
 
 # --hints--
 
-Your first `locations` object should have a `button functions` property.
+Ваш перший об’єкт `locations` повинен мати властивість `button functions`.
 
 ```js
 assert.isDefined(locations[0]["button functions"]);
 ```
 
-Your `button functions` property should be an array.
+Ваша властивість `button functions` повинна бути масивом.
 
 ```js
 assert.isArray(locations[0]["button functions"]);
 ```
 
-Your `button functions` property should have three values in it.
+Ваша властивість `button functions` повинна мати три значення всередині.
 
 ```js
 assert.lengthOf(locations[0]["button functions"], 3);
 ```
 
-Your first `button functions` array value should be the function `goStore`.
+Першим значенням масиву `button functions` повинна бути функція `goStore`.
 
 ```js
 assert.equal(locations[0]["button functions"][0], goStore);
 ```
 
-Your second `button functions` array value should be the function `goCave`.
+Другим значенням масиву `button functions` повинна бути функція `goCave`.
 
 ```js
 assert.equal(locations[0]["button functions"][1], goCave);
 ```
 
-Your third `button functions` array value should be the function `fightDragon`.
+Третім значенням масиву `button functions` повинна бути функція `fightDragon`.
 
 ```js
 assert.equal(locations[0]["button functions"][2], fightDragon);

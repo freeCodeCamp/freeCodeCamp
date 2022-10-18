@@ -8,14 +8,14 @@ dashedName: stock-price-checker
 
 # --description--
 
-<https://stock-price-checker.freecodecamp.rocks/> と同様の機能を持つフルスタック JavaScript アプリを構築してください。
+Build a full stack JavaScript app that is functionally similar to this: <a href="https://stock-price-checker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker.freecodecamp.rocks/</a>.
 
-信頼できる株価 API の利用にはすべて API キーが必要になるため、ここでは回避策を用意しました。 <https://stock-price-checker-proxy.freecodecamp.rocks/> を使用すれば、登録して自分のキーを取得しなくても最新の株価情報を得ることができます。
+信頼できる株価 API の利用にはすべて API キーが必要になるため、ここでは回避策を用意しました。 Use <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker-proxy.freecodecamp.rocks/</a> to get up-to-date stock price information without needing to sign up for your own key.
 
 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
--   [ GitHub リポジトリ](https://github.com/freeCodeCamp/boilerplate-project-stockchecker/)をクローンし、ローカル環境でプロジェクトを完了させる。
--   [Replit 始動プロジェクト](https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker)を使用して、プロジェクトを完了させる。
+-   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
+-   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
 完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、`GitHub Link` フィールドでプロジェクトのソースコードへのリンクを送信してください。

@@ -8,7 +8,7 @@ dashedName: build-a-javascript-calculator
 
 # --description--
 
-**目標：** 構建一個應用，功能和 <a href="https://codepen.io/freeCodeCamp/full/wgGVVX" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/wgGVVX</a> 類似。
+**Objective:** Build an app that is functionally similar to this: <a href="https://javascript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://javascript-calculator.freecodecamp.rocks/</a>.
 
 完成以下需求，並且通過所有測試。 可以使用你需要的任何庫或 API。 賦予它你自己的個人風格。
 

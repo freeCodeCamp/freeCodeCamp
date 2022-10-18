@@ -1,6 +1,6 @@
 ---
 id: 5895f70df9fc0f352b528e6a
-title: Create New Middleware
+title: Neue Middleware erstellen
 challengeType: 2
 forumTopicId: 301551
 dashedName: create-new-middleware
@@ -8,9 +8,9 @@ dashedName: create-new-middleware
 
 # --description--
 
-As is, any user can just go to `/profile` whether they have authenticated or not, by typing in the url. We want to prevent this, by checking if the user is authenticated first before rendering the profile page. This is the perfect example of when to create a middleware.
+As is, any user can just go to `/profile` whether they have authenticated or not, by typing in the url. We want to prevent this, by checking if the user is authenticated first before rendering the profile page. Dies ist das perfekte Beispiel für die Erstellung einer Middleware.
 
-The challenge here is creating the middleware function `ensureAuthenticated(req, res, next)`, which will check if a user is authenticated by calling passport's `isAuthenticated` method on the `request` which, in turn, checks if `req.user` is defined. If it is, then `next()` should be called, otherwise, we can just respond to the request with a redirect to our homepage to login. An implementation of this middleware is:
+The challenge here is creating the middleware function `ensureAuthenticated(req, res, next)`, which will check if a user is authenticated by calling passport's `isAuthenticated` method on the `request` which, in turn, checks if `req.user` is defined. If it is, then `next()` should be called, otherwise, we can just respond to the request with a redirect to our homepage to login. Eine Implementierung dieser Middleware ist:
 
 ```js
 function ensureAuthenticated(req, res, next) {
@@ -58,7 +58,7 @@ Middleware ensureAuthenticated should be implemented and on our /profile route.
   );
 ```
 
-A Get request to /profile should correctly redirect to / since we are not authenticated.
+Eine Get-Anfrage an /profile sollte korrekt an / weitergeleitet werden, da wir nicht authentifiziert sind.
 
 ```js
 (getUserInput) =>

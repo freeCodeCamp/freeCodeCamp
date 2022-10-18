@@ -11,32 +11,33 @@ dashedName: introduction-to-data-analysis
 ---
 
 # --description--
+Data analysis is the act of turning raw, messy data into useful insights by cleaning the data up, transforming it, manipulating it, and inspecting it.
 
-Додаткові ресурси:
+More resources:
 
-\- [Презентація](https://docs.google.com/presentation/d/1cUIt8b2ySz-85_ykfeuuWsurccwTAuFPn782pZBzFsU/edit?usp=sharing)
+\- <a href="https://www.freecodecamp.org/news/what-is-data-analysis/" rel="noopener noreferrer nofollow">News article</a>
 
 # --question--
 
 ## --text--
 
-Що з нижчепереліченого **не** є частиною аналізу даних?
+Which of the following is **not** part of Data Analysis?
 
 ## --answers--
 
-Створення статистичних моделей та візуалізація даних.
+Building statistical models and data visualizations.
 
 ---
 
-Обрання бажаних висновків для аналізу.
+Picking a desired conclusion for the analysis.
 
 ---
 
-Виправлення некоректних значень і видалення хибних даних.
+Fixing incorrect values and removing invalid data.
 
 ---
 
-Структурування даних.
+Transforming data into an appropriate data structure.
 
 ## --video-solution--
 

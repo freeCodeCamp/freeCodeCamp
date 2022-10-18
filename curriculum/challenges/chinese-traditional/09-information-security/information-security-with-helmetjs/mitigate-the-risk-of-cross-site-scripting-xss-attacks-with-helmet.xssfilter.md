@@ -9,7 +9,7 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --description--
 
-請注意，本項目在 [這個 Repl.it 項目](https://replit.com/github/freeCodeCamp/boilerplate-infosec) 的基礎上進行開發。你也可以從 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 跨站腳本（XSS）是一種常見的攻擊類型，惡意腳本被注入到易受攻擊的頁面，目的是竊取敏感數據，如會話 cookies 或密碼。
 

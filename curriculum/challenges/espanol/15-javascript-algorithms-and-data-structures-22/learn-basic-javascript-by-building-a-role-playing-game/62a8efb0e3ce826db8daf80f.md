@@ -1,6 +1,6 @@
 ---
 id: 62a8efb0e3ce826db8daf80f
-title: Step 131
+title: Paso 131
 challengeType: 0
 dashedName: step-131
 ---
@@ -285,7 +285,7 @@ function defeatMonster() {
   xp += monsters[fighting].level;
   goldText.innerText = gold;
   xpText.innerText = xp;
-  
+
 }
 --fcc-editable-region--
 

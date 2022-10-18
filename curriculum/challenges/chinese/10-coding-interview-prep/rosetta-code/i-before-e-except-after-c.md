@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7eb0
-title: I before E except after C
-challengeType: 5
+title: I 在 E 之前，除了 C 之后
+challengeType: 1
 forumTopicId: 302288
 dashedName: i-before-e-except-after-c
 ---
 
 # --description--
 
-The phrase ["I before E, except after C"](https://en.wikipedia.org/wiki/I before E except after C) is a widely known mnemonic which is supposed to help when spelling English words.
+**<a href="http://www.rosettacode.org/wiki/I_before_E_except_after_C" target="_blank" rel="noopener noreferrer nofollow">"I before E, except after C"</a>** is a general rule for English language spelling. If one is unsure whether a word is spelled with the digraph `ei` or `ie`, the rhyme suggests that the correct order is `ie` unless the preceding letter is `c`, in which case it may be `ei`.
 
 Using the words provided, check if the two sub-clauses of the phrase are plausible individually:
 
@@ -21,7 +21,7 @@ Using the words provided, check if the two sub-clauses of the phrase are plausib
   </li>
 </ol>
 
-If both sub-phrases are plausible then the original phrase can be said to be plausible.
+如果两个子短语都是合理的，则原始短语可以说是合理的。
 
 # --instructions--
 
@@ -29,49 +29,49 @@ Write a function that accepts a word and check if the word follows this rule. Th
 
 # --hints--
 
-`IBeforeExceptC` should be a function.
+`IBeforeExceptC` 应该是一个函数。
 
 ```js
 assert(typeof IBeforeExceptC == 'function');
 ```
 
-`IBeforeExceptC("receive")` should return a boolean.
+`IBeforeExceptC("receive")` 应该返回一个布尔值。
 
 ```js
 assert(typeof IBeforeExceptC('receive') == 'boolean');
 ```
 
-`IBeforeExceptC("receive")` should return `true`.
+`IBeforeExceptC("receive")` 应该返回 `true`。
 
 ```js
 assert.equal(IBeforeExceptC('receive'), true);
 ```
 
-`IBeforeExceptC("science")` should return `false`.
+`IBeforeExceptC("science")` 应该返回 `false`。
 
 ```js
 assert.equal(IBeforeExceptC('science'), false);
 ```
 
-`IBeforeExceptC("imperceivable")` should return `true`.
+`IBeforeExceptC("imperceivable")` 应该返回 `true`。
 
 ```js
 assert.equal(IBeforeExceptC('imperceivable'), true);
 ```
 
-`IBeforeExceptC("inconceivable")` should return `true`.
+`IBeforeExceptC("inconceivable")` 应该返回 `true`。
 
 ```js
 assert.equal(IBeforeExceptC('inconceivable'), true);
 ```
 
-`IBeforeExceptC("insufficient")` should return `false`.
+`IBeforeExceptC("insufficient")` 应该返回 `false`.
 
 ```js
 assert.equal(IBeforeExceptC('insufficient'), false);
 ```
 
-`IBeforeExceptC("omniscient")` should return `false`.
+`IBeforeExceptC("omniscient")` 应该返回 `false`.
 
 ```js
 assert.equal(IBeforeExceptC('omniscient'), false);

@@ -14,18 +14,15 @@ For this problem we shall be interested in values of $x$ for which $A_{F}(x)$ is
 
 Surprisingly
 
-$$\begin{align}
-A_F(\frac{1}{2}) & = (\frac{1}{2}) × 1 + {(\frac{1}{2})}^2 × 1 + {(\frac{1}{2})}^3 × 2 + {(\frac{1}{2})}^4 × 3 + {(\frac{1}{2})}^5 × 5 + \cdots \\\\
-                 & = \frac{1}{2} + \frac{1}{4} + \frac{2}{8} + \frac{3}{16} + \frac{5}{32} + \cdots \\\\
-                 & = 2
-\end{align}$$
+$$\begin{align} A_F(\frac{1}{2}) & = (\frac{1}{2}) × 1 + {(\frac{1}{2})}^2 × 1 + {(\frac{1}{2})}^3 × 2 + {(\frac{1}{2})}^4 × 3 + {(\frac{1}{2})}^5 × 5 + \cdots \\\\
+                 & = \frac{1}{2} + \frac{1}{4} + \frac{2}{8} + \frac{3}{16} + \frac{5}{32} + \cdots \\\\ & = 2 \end{align}$$
 
 The corresponding values of $x$ for the first five natural numbers are shown below.
 
-| $x$                       | $A_F(x)$ |
-|---------------------------|----------|
-| $\sqrt{2} − 1$            | $1$      |
-| $\frac{1}{2}$             | $2$      |
+| $x$                         | $A_F(x)$ |
+| --------------------------- | -------- |
+| $\sqrt{2} − 1$             | $1$      |
+| $\frac{1}{2}$              | $2$      |
 | $\frac{\sqrt{13} − 2}{3}$ | $3$      |
 | $\frac{\sqrt{89} − 5}{8}$ | $4$      |
 | $\frac{\sqrt{34} − 3}{5}$ | $5$      |

@@ -1,7 +1,7 @@
 ---
 id: 5900f4691000cf542c50ff7b
 title: 'Problem 252: Convex Holes'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301900
 dashedName: problem-252-convex-holes
 ---
@@ -12,9 +12,12 @@ Given a set of points on a plane, we define a convex hole to be a convex polygon
 
 As an example, the image below shows a set of twenty points and a few such convex holes. The convex hole shown as a red heptagon has an area equal to 1049694.5 square units, which is the highest possible area for a convex hole on the given set of points.
 
-For our example, we used the first 20 points (T2k−1, T2k), for k = 1,2,…,20, produced with the pseudo-random number generator:
+<img class="img-responsive center-block" alt="set of twenty points and convex holes on plane" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
 
-S0 = 290797 Sn+1 = Sn2 mod 50515093 Tn = ( Sn mod 2000 ) − 1000
+For our example, we used the first 20 points ($T_{2k − 1}$, $T_{2k}$), for $k = 1, 2, \ldots, 20$, produced with the pseudo-random number generator:
+
+$$\begin{align}   S_0 & = 290\\,797 \\\\
+  S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50\\,515\\,093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
 
 i.e. (527, 144), (−488, 732), (−454, −947), …
 
@@ -22,10 +25,10 @@ What is the maximum area for a convex hole on the set containing the first 500 p
 
 # --hints--
 
-`euler252()` should return 104924.
+`convexHoles()` should return `104924`.
 
 ```js
-assert.strictEqual(euler252(), 104924);
+assert.strictEqual(convexHoles(), 104924);
 ```
 
 # --seed--
@@ -33,12 +36,12 @@ assert.strictEqual(euler252(), 104924);
 ## --seed-contents--
 
 ```js
-function euler252() {
+function convexHoles() {
 
   return true;
 }
 
-euler252();
+convexHoles();
 ```
 
 # --solutions--

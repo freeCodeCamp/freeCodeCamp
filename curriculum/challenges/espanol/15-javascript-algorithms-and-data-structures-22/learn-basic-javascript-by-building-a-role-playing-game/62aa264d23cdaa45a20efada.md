@@ -1,6 +1,6 @@
 ---
 id: 62aa264d23cdaa45a20efada
-title: Step 162
+title: Paso 162
 challengeType: 0
 dashedName: step-162
 ---
@@ -375,7 +375,7 @@ function pickEight() {
 --fcc-editable-region--
 function pick(guess) {
   let numbers = [];
-  
+
 }
 --fcc-editable-region--
 ```

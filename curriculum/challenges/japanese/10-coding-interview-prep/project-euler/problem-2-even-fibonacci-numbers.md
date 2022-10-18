@@ -1,7 +1,7 @@
 ---
 id: 5900f36e1000cf542c50fe81
 title: '問題 2: 偶数のフィボナッチ数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301838
 dashedName: problem-2-even-fibonacci-numbers
 ---
@@ -22,7 +22,7 @@ dashedName: problem-2-even-fibonacci-numbers
 assert(typeof fiboEvenSum(10) === 'number');
 ```
 
-この関数は `even` 値を返す必要があります。
+Your function should return an even value.
 
 ```js
 assert.equal(fiboEvenSum(10) % 2 === 0, true);

@@ -1,8 +1,7 @@
 ---
 id: 5900f4161000cf542c50ff29
 title: >-
-  Problem 170: Find the largest 0 to 9 pandigital that can be formed by
-  concatenating products
+  Problem 170: Find the largest 0 to 9 pandigital that can be formed by concatenating products
 challengeType: 1
 forumTopicId: 301805
 dashedName: >-
@@ -13,10 +12,8 @@ dashedName: >-
 
 Take the number 6 and multiply it by each of 1273 and 9854:
 
-$$\begin{align}
-  & 6 × 1273 = 7638 \\\\
-  & 6 × 9854 = 59124 \\\\
-\end{align}$$
+$$\begin{align}   & 6 × 1273 = 7638 \\\\
+  & 6 × 9854 = 59124 \\\\ \end{align}$$
 
 By concatenating these products we get the 1 to 9 pandigital 763859124. We will call 763859124 the "concatenated product of 6 and (1273, 9854)". Notice too, that the concatenation of the input numbers, 612739854, is also 1 to 9 pandigital.
 

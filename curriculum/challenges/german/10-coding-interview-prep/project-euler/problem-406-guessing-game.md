@@ -32,12 +32,9 @@ Let $C(n, a, b)$ be the worst-case cost achieved by an optimal strategy for the 
 
 Here are a few examples:
 
-$$\begin{align}
-  & C(5, 2, 3) = 5 \\\\
-  & C(500, \sqrt{2}, \sqrt{3}) = 13.220\\,731\\,97\ldots \\\\
-  & C(20\\,000, 5, 7) = 82 \\\\
-  & C(2\\,000\\,000, √5, √7) = 49.637\\,559\\,55\ldots \\\\
-\end{align}$$
+$$\begin{align}   & C(5, 2, 3) = 5 \\\\
+  & C(500, \sqrt{2}, \sqrt{3}) = 13.220\\,731\\,97\ldots \\\\   & C(20\\,000, 5, 7) = 82 \\\\
+  & C(2\\,000\\,000, √5, √7) = 49.637\\,559\\,55\ldots \\\\ \end{align}$$
 
 Let $F_k$ be the Fibonacci numbers: $F_k = F_{k - 1} + F_{k - 2}$ with base cases $F_1 = F_2 = 1$.
 

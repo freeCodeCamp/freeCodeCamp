@@ -8,21 +8,15 @@ dashedName: probability-calculator
 
 # --description--
 
-Ви маєте [виконати цей проєкт за допомогою нашого стартового коду Replit](https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator).
-
-Ми й досі в процесі розробки інтерактивної складової навчального курсу Python. Наразі можете ознайомитись із наступними відео на YouTube каналі freeCodeCamp.org. У них ви знайдете все необхідне для завершення цього проєкту:
-
-- [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 годин)
-
-- [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 години)
+Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
 # --instructions--
 
-Уявімо, що у капелюсі лежить 5 синіх кульок, 4 червоні та 2 зелені кульки. Яка ймовірність того, що з 4 кульок, які ви витягнете, принаймні 1 буде червоною та 2 зеленими? І хоча можливо прорахувати вірогідність за допомогою вищої математики, легше буде написати програму для виконання великої кількості експериментів для оцінки приблизної вірогідності.
+Suppose there is a hat containing 5 blue balls, 4 red balls, and 2 green balls. What is the probability that a random draw of 4 balls will contain at least 1 red ball and 2 green balls? While it would be possible to calculate the probability using advanced mathematics, an easier way is to write a program to perform a large number of experiments to estimate an approximate probability.
 
-Для цього проєкту, напишіть програму, яка визначатиме вірогідність випадкового діставання певних кульок із капелюха.
+For this project, you will write a program to determine the approximate probability of drawing certain balls randomly from a hat.
 
-Спершу створіть клас `Hat` в `prob_calculator.py`. Клас має взяти змінну кількість аргументів, яка вточнюватиме кількість кульок усіх кольорів із капелюха. Наприклад, клас об'єкту можна створити такими способами:
+First, create a `Hat` class in `prob_calculator.py`. The class should take a variable number of arguments that specify the number of balls of each color that are in the hat. For example, a class object could be created in any of these ways:
 
 ```py
 hat1 = Hat(yellow=3, blue=2, green=6)
@@ -30,22 +24,22 @@ hat2 = Hat(red=5, orange=4)
 hat3 = Hat(red=5, orange=4, black=1, blue=0, pink=2, striped=9)
 ```
 
-Капелюх завжди створюється з принаймні однією кулькою. Аргументи, які передаються в об'єкт капелюха, під час створення мають конвертуватися в приклад змінної `contents`. `contents` має бути списком рядків з елементами для кожної кульки у капелюсі. Кожний елемент списку має бути назвою кольору, яка позначатиме кожну кульку певного кольору. Наприклад, якщо ваш капелюх `{"red": 2, "blue": 1}`, `contents` має бути `["red", "red", "blue"]`.
+A hat will always be created with at least one ball. The arguments passed into the hat object upon creation should be converted to a `contents` instance variable. `contents` should be a list of strings containing one item for each ball in the hat. Each item in the list should be a color name representing a single ball of that color. For example, if your hat is `{"red": 2, "blue": 1}`, `contents` should be `["red", "red", "blue"]`.
 
-Клас `Hat` повинен мати метод `draw`, який приймає аргумент з позначенням кількості кульок, які можна витягти з капелюха. Цей метод має випадково витягати кульки з `contents` та повертати ці кульки списком рядків. Кульки не повинні повертатися до капелюха після того, як їх витягли (як в експерименті з урною без заміни). Якщо кількість кульок, яку треба витягти, перевищує доступну кількість, поверніть усі кульки.
+The `Hat` class should have a `draw` method that accepts an argument indicating the number of balls to draw from the hat. This method should remove balls at random from `contents` and return those balls as a list of strings. The balls should not go back into the hat during the draw, similar to an urn experiment without replacement. If the number of balls to draw exceeds the available quantity, return all the balls.
 
-Потім створіть функцію `experiment` в `prob_calculator.py` (не в класі `Hat`). Ця функція повинна приймати наступні аргументи:
+Next, create an `experiment` function in `prob_calculator.py` (not inside the `Hat` class). Ця функція повинна приймати наступні аргументи:
 
-- `hat`: об'єкт капелюха з кульками, який має скопійований у функцію.
-- `expected_balls`: об'єкт, який вказує на точну кількість кульок, котру треба вийняти з капелюха для експерименту. Наприклад, щоб визначити вірогідність того, що ви витягнете 2 сині кульки та 1 червону кульку з капелюха, встановіть `expected_balls` на `{"blue":2, "red":1}`.
-- `num_balls_drawn`: кількість кульок, які треба витягти з капелюха в кожному експерименті.
-- `num_experiments`: кількість експериментів, які треба провести. (Чим більше експериментів було проведено, тим точнішою буде приблизна вірогідність.)
+- `hat`: A hat object containing balls that should be copied inside the function.
+- `expected_balls`: An object indicating the exact group of balls to attempt to draw from the hat for the experiment. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
+- `num_balls_drawn`: The number of balls to draw out of the hat in each experiment.
+- `num_experiments`: The number of experiments to perform. (The more experiments performed, the more accurate the approximate probability will be.)
 
-`experiment` функція має повертати вірогідність.
+The `experiment` function should return a probability.
 
-Допустимо, ви хочете визначити вірогідність витягти щонайменше 2 червоні кульки та 1 зелену кульку, коли ви витягаєте 5 кульок з капелюха, де лежить 6 чорних, 4 червоні та 3 зелені кульки. Для цього нам треба виконати `N` експериментів, порахуйте скільки разів `M` ми можемо витягти принаймні 2 червоні кульки та 1 зелену кульку. Вирахуйте вірогідність як `M/N`. Кожен експеримент складається з: капелюха (з певними кульками), витягування певної кількості кульок та перевірка, чи ми витягли необхідні кульки.
+For example, if you want to determine the probability of getting at least two red balls and one green ball when you draw five balls from a hat containing six black, four red, and three green. To do this, you will perform `N` experiments, count how many times `M` you get at least two red balls and one green ball, and estimate the probability as `M/N`. Each experiment consists of starting with a hat containing the specified balls, drawing several balls, and checking if you got the balls you were attempting to draw.
 
-Ось так ви можете викликати функцію `experiment` з 2000 експериментів (з прикладу зверху):
+Here is how you would call the `experiment` function based on the example above with 2000 experiments:
 
 ```py
 hat = Hat(black=6, red=4, green=3)
@@ -55,27 +49,27 @@ probability = experiment(hat=hat,
                   num_experiments=2000)
 ```
 
-Оскільки все базується на випадкових витяганнях, то вірогідність буде злегка відрізнятися з кожним новим запуском коду.
+Since this is based on random draws, the probability will be slightly different each time the code is run.
 
-*Підказка: спробуйте використати вже імпортовані модулі зверху `prob_calculator.py`. Не ініціалізуйте випадкове початкове значення в `prob_calculator.py`.*
+*Hint: Consider using the modules that are already imported at the top of `prob_calculator.py`. Do not initialize random seed within `prob_calculator.py`.*
 
 ## Розробка
 
-Запишіть свій код в `prob_calculator.py`. Для розробки, ви можете використати `main.py` для перевірки вашого коду. Натисніть кнопку "run" і `main.py` запуститься.
+Write your code in `prob_calculator.py`. For development, you can use `main.py` to test your code. Натисніть кнопку «запустити» і `main.py` запуститься.
 
-Boilerplate містить команду `import` для `copy` та `random` модулів. Спробуйте використати їх у своєму проєкті.
+The boilerplate includes `import` statements for the `copy` and `random` modules. Consider using those in your project.
 
 ## Тестування
 
-Розділи з тестами для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично кожного разу, коли ви натиснете клавішу "run".
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. Тести запустяться автоматично, коли ви натиснете на кнопку «запустити».
 
 ## Надсилання
 
-Скопіюйте URL-адресу вашого проєкту і відправте його до freeCodeCamp.
+Copy your project's URL and submit it to freeCodeCamp.
 
 # --hints--
 
-Програма повинна правильно вираховувати ймовірності та пройти тестування.
+It should correctly calculate probabilities and pass all tests.
 
 ```js
 

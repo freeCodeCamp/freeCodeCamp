@@ -26,7 +26,7 @@ The file `RPS.py` shows an example function that you will need to update. The ex
 
 ## Development
 
-Do not modify `RPS_game.py`. Write all your code in `RPS.py`. For development, you can use `main.py` to test your code. 
+Do not modify `RPS_game.py`. Write all your code in `RPS.py`. For development, you can use `main.py` to test your code.
 
 `main.py` imports the game function and bots from `RPS_game.py`.
 
@@ -48,7 +48,7 @@ play(player, quincy, 1000, verbose=True)
 
 Click the "run" button and `main.py` will run.
 
-## Testing 
+## Testing
 
 The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. If you uncomment the last line in `main.py`, the tests will run automatically whenever you hit the "run" button.
 

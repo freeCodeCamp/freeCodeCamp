@@ -15,7 +15,7 @@ dashedName: practice-comparing-different-values
 
 **Наприклад:**
 
-`3 == '3'` повертає результат `true` тому, що JavaScript конвертує рядок у число. `3 === '3'` повертає результат false, оскільки ці типи є різними і конвертація не виконується.
+`3 == '3'` повертає результат `true` тому, що JavaScript конвертує рядок у число. `3 === '3'` returns `false` because the types are different and type conversion is not performed.
 
 **Примітка:** В JavaScript, ви можете визначити тип змінної або значення за допомогою оператора `typeof`, наступним чином:
 

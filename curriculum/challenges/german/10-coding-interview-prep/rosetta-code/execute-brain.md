@@ -8,54 +8,54 @@ dashedName: execute-brain
 
 # --description--
 
-Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
+Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. Weitere Details werden unten angegeben:
 
 RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
 
 Below are links to each of the versions of RCBF.
 
-An implementation need only properly implement the following instructions:
+Eine Implementierung muss lediglich die folgenden Anweisungen ordnungsgemäß implementieren:
 
-| Command           | Description                                                                        |
-| ----------------- | ---------------------------------------------------------------------------------- |
-| <code>></code>    | Move the pointer to the right                                                      |
-| <code>&lt;</code> | Move the pointer to the left                                                       |
-| <code>+</code>    | Increment the memory cell under the pointer                                        |
-| <code>-</code>    | Decrement the memory cell under the pointer                                        |
-| <code>.</code>    | Output the character signified by the cell at the pointer                          |
-| <code>,</code>    | Input a character and store it in the cell at the pointer                          |
-| <code>\[</code>   | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
-| <code>]</code>    | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
+| Befehl                    | Beschreibung                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------- |
+| <code>></code> | Bewege den Zeiger nach rechts                                                               |
+| <code>&lt;</code> | Bewege den Zeiger nach links                                                                |
+| <code>+</code> | Increment the memory cell under the pointer                                                 |
+| <code>-</code> | Decrement the memory cell under the pointer                                                 |
+| <code>.</code> | Output the character signified by the cell at the pointer                                   |
+| <code>,</code> | Input a character and store it in the cell at the pointer                                   |
+| <code>\[</code> | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
+| <code>]</code> | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
 
 Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
 
 # --hints--
 
-`brain(bye)` should return a string
+`brain(bye)` sollte einen String zurückgeben
 
 ```js
 assert(typeof brain(bye) === 'string');
 ```
 
-`brain("++++++[>++++++++++<-]>+++++.")` should return "A"
+`brain("++++++[>++++++++++<-]>+++++.")` sollte "A" zurückgeben
 
 ```js
 assert.equal(brain('++++++[>++++++++++<-]>+++++.'), 'A');
 ```
 
-`brain(bye)` should return `Goodbye, World!\r\n`
+`brain(bye)` sollte `Goodbye, World!\r\n` zurückgeben
 
 ```js
 assert.equal(brain(bye), 'Goodbye, World!\r\n');
 ```
 
-`brain(hello)` should return `Hello World!\n`
+`brain(hello)` sollte `Hello World!\n` zurückgeben
 
 ```js
 assert.equal(brain(hello), 'Hello World!\n');
 ```
 
-`brain(fib)` should return `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89`
+`brain(fib)` sollte `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89` zurückgeben
 
 ```js
 assert.equal(brain(fib), '1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89');
