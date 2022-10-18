@@ -12,19 +12,43 @@ dashedName: use-a-template-engines-powers
 
 У вашому файлі Pug ви можете використовувати змінну, посилаючись на ім'я змінної як `#{variable_name}` в рядку з іншим текстом в елементі або використовуючи знак рівності в елементі без пробілу, наприклад, `p=variable_name`, що присвоює значення змінної тексту елемента p.
 
-Ми рекомендуємо вивчити синтаксис і структуру Pug [тут](https://github.com/pugjs/pug) у README GitHub. Файл Pug націлений на використання прогалин і вкладок для зображення гніздових елементів і скорочення обсягу коду, необхідного для створення красивого сайту.
+ Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site. Read the Pug documentation for more information on usage and syntax.
 
-Коли йдеться про наш файл pug «index.pug», включений у ваш проєкт, ми використовували змінні *title* і *message*.
+ Here is an example:
 
-Щоб передати їх з нашого сервера, вам потрібно буде додати об'єкт як другий аргумент у ваш *res.render* зі змінними та їх значеннями. Наприклад, передайте цьому об'єкту установку змінних для індексного перегляду: `{title: 'Hello', message: 'Please login'}`
+ ```html
+ <!--Typing this using Pug-->
+ head
+    script(type='text/javascript').
+      if (foo) bar(1 + 5);
+  body
+    if youAreUsingPug
+        p You are amazing
+      else
+        p Get on it!
 
-Це має мати наступний вигляд: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Тепер оновіть свою сторінку. Під час перегляду ви повинні побачити ці значення у потрібному місці, як зазначено у файлі index.pug!
+<!--will lead to creating this code-->
+  <head>
+    <script type="text/javascript">
+      if (foo) bar(1 + 5);
+    </script>
+  </head>
+  <body>
+    <p>You are amazing</p>
+  </body>
+  ```
 
-Якщо вам вдалося, запустіть сторінку. Якщо ви зіткнулися з помилками, можете перевірити завершений до цього етапу проєкт [тут](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871).
+Looking at our pug file `index.pug` included in your project, we used the variables `title` and `message`.
+
+To pass those along from our server, you will need to add an object as a second argument to your `res.render` with the variables and their values. For example, pass this object along setting the variables for your index view: `{title: 'Hello', message: 'Please login'}`
+
+It should look like: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
+
+Submit your page when you think you've got it right. If you're running into errors, you can check out the <a href="https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871" target="_blank" rel="noopener noreferrer nofollow">project completed up to this point</a>.
 
 # --hints--
 
-Файл Pug повинен правильно відображати змінні.
+Pug should correctly render variables.
 
 ```js
 (getUserInput) =>

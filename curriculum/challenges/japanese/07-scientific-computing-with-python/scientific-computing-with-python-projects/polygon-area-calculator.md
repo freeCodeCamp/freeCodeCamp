@@ -8,11 +8,11 @@ dashedName: polygon-area-calculator
 
 # --description--
 
-このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator)を使用して作業を行います。
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
 # --instructions--
 
-In this project you will use object oriented programming to create a Rectangle class and a Square class. The Square class should be a subclass of Rectangle and inherit methods and attributes.
+このプロジェクトでは、オブジェクト指向プログラミングを使用して、Rectangle クラスと Square クラスを作成します。 Square クラスは Rectangle のサブクラスであり、メソッドと属性を継承する必要があります。
 
 ## Rectangle クラス
 
@@ -20,21 +20,21 @@ When a Rectangle object is created, it should be initialized with `width` and `h
 
 - `set_width`
 - `set_height`
-- `get_area`: Returns area (`width * height`)
-- `get_perimeter`: Returns perimeter (`2 * width + 2 * height`)
-- `get_diagonal`: Returns diagonal (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: Returns a string that represents the shape using lines of "\*". The number of lines should be equal to the height and the number of "\*" in each line should be equal to the width. There should be a new line (`\n`) at the end of each line. If the width or height is larger than 50, this should return the string: "Too big for picture.".
-- `get_amount_inside`: Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
+- `get_area`: 面積を返します (`width * height`)
+- `get_perimeter`: 外周を返します (`2 * width + 2 * height`)
+- `get_diagonal`: 対角線を返します(`(width ** 2 + height ** 2) ** .5`)
+- `get_picture`: "\*" の行を使用して図形を表す文字列を返します。 行数は高さと等しく、各行の"\*"の数は幅と等しくする必要があります。 各行の末尾に改行 (`\n`) が必要です。 幅または高さが 50 より大きい場合は、文字列 "Too big for picture." を返す必要があります。
+- `get_amount_inside`: 引数として別の図形 (正方形または長方形) を受け取ります。 渡された図形が、その図形の中に何個収まるかを返します (回転はしません)。 たとえば、幅が 4 で高さが 8 の長方形には、一辺が 4 の正方形が 2つ収まります。
 
 Additionally, if an instance of a Rectangle is represented as a string, it should look like: `Rectangle(width=5, height=10)`
 
 ## Square クラス
 
-The Square class should be a subclass of Rectangle. When a Square object is created, a single side length is passed in. The `__init__` method should store the side length in both the `width` and `height` attributes from the Rectangle class.
+Square クラスは Rectangle のサブクラスである必要があります。 Square オブジェクトが生成されるときは、一辺の長さを渡します。 `__init__` メソッドでは、一辺の長さを Rectangle クラスの `width` 属性と `height` 属性の両方に格納する必要があります。
 
-The Square class should be able to access the Rectangle class methods but should also contain a `set_side` method. If an instance of a Square is represented as a string, it should look like: `Square(side=9)`
+Square クラスは、Rectangle クラスのメソッドにアクセスできる必要があり、加えて `set_side` メソッドも含める必要があります。 If an instance of a Square is represented as a string, it should look like: `Square(side=9)`
 
-Additionally, the `set_width` and `set_height` methods on the Square class should set both the width and height.
+また、Square クラスの `set_width` と `set_height` メソッドでは、幅と高さの両方を設定する必要があります。
 
 ## 使用例
 
@@ -58,7 +58,7 @@ rect.set_width(16)
 print(rect.get_amount_inside(sq))
 ```
 
-That code should return:
+上記のコードは次を返す必要があります。
 
 ```bash
 50
@@ -79,11 +79,11 @@ Square(side=4)
 8
 ```
 
-The unit tests for this project are in `test_module.py`.
+このプロジェクトの単体テストは `test_module.py` にあります。
 
 ## 開発
 
-Write your code in `shape_calculator.py`. For development, you can use `main.py` to test your `shape_calculator()` function. Click the "run" button and `main.py` will run.
+`shape_calculator.py` でコードを記述してください。 開発には `main.py` を使用して `shape_calculator()` 関数をテストすることができます。 Click the "run" button and `main.py` will run.
 
 ## テスト
 
@@ -91,11 +91,11 @@ We imported the tests from `test_module.py` to `main.py` for your convenience. T
 
 ## 提出
 
-Copy your project's URL and submit it to freeCodeCamp.
+プロジェクトの URL をコピーし、freeCodeCamp に提出してください。
 
 # --hints--
 
-It should create a Rectangle class and Square class and pass all tests.
+Rectangle クラスと Square クラスを作成し、すべてのテストに合格する必要があります。
 
 ```js
 

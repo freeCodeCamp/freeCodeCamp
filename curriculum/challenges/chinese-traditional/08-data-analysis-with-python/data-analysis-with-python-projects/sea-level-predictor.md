@@ -8,12 +8,13 @@ dashedName: sea-level-predictor
 
 # --description--
 
-你將通過使用我們的[Replit 入門代碼](https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor)來完成本項目。
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
 我們仍在開發 Python 課程的交互式教學部分。 目前，你可以在 YouTube 上通過 freeCodeCamp.org 上傳的一些視頻學習這個項目相關的知識。
 
-- [Python for Everybody 視頻課程](https://www.freecodecamp.org/news/python-for-everybody/)（14 小時）
-- [Learn Python 視頻課程](https://www.freecodecamp.org/news/learn-python-video-course/)（10 小時）
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -22,10 +23,10 @@ dashedName: sea-level-predictor
 使用數據完成以下任務：
 
 - 使用 Pandas 從 `epa-sea-level.csv` 導入數據。
-- 使用 matplotlib 創建散點圖，使用“Year”列作爲 x 軸，將“CSIRO Adjusted Sea Level”列作爲 y 軸。
+- Use matplotlib to create a scatter plot using the `Year` column as the x-axis and the `CSIRO Adjusted Sea Level` column as the y-axix.
 - 使用 `scipy.stats` 中的 `linregress` 函數來獲得最佳擬合線的斜率和 y 截距。 在散點圖的頂部繪製最佳擬合線。 使線穿過 2050 年以預測 2050 年的海平面上升。
 - 僅使用數據集中從 2000 年到最近一年的數據繪製一條新的最佳擬合線。 如果上升速度繼續與 2000 年一樣，則使該線也經過 2050 年以預測 2050 年的海平面上升。
-- x 標籤應爲 “Year”，y 標籤應爲 “Sea Level (inches)”，標題應爲 “Rise in Sea Level”。
+- The x label should be `Year`, the y label should be `Sea Level (inches)`, and the title should be `Rise in Sea Level`.
 
 單元測試是在 `test_module.py` 下爲你編寫的。
 
@@ -44,7 +45,8 @@ dashedName: sea-level-predictor
 複製項目的 URL 並將其提交給 freeCodeCamp。
 
 ## 數據源
-[Global Average Absolute Sea Level Change](https://datahub.io/core/sea-level-rise), 1880-2014 from the US Environmental Protection Agency using data from CSIRO, 2015; NOAA, 2015.
+
+<a href="https://datahub.io/core/sea-level-rise" target="_blank" rel="noopener noreferrer nofollow">Global Average Absolute Sea Level Change</a>, 1880-2014 from the US Environmental Protection Agency using data from CSIRO, 2015; NOAA, 2015.
 
 
 # --hints--

@@ -8,11 +8,11 @@ dashedName: show-the-local-weather
 
 # --description--
 
-**Мета:** Створити [CodePen.io](https://codepen.io) додаток, який функціонально схожий на цей: <https://codepen.io/freeCodeCamp/full/bELRjV>.
+**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/bELRjV" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/bELRjV</a>.
 
 **Правило #1:** Не дивіться на приклад коду проєкту. Визначте його самі.
 
-**Правило #2:** Виконайте відповідно наведені нижче [історії користувача](https://en.wikipedia.org/wiki/User_story). Використовуйте будь-які потрібні вам бібліотеки чи API (прикладні програмні інтерфейси). Проявіть при цьому свій власний стиль.
+**Правило №2:** виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 **Історія користувача:** Я можу побачити погоду у своєму поточному місцеперебуванні.
 
@@ -20,11 +20,11 @@ dashedName: show-the-local-weather
 
 **Історія користувача:** Я можу натиснути кнопку для перемикання між Фаренгейтом та Цельсієм.
 
-**Примітка:** Тепер багато інтернет-браузерів вимагають безпечне HTTP з'єднання (`https://`), щоб отримати місцеперебування користувача через геолокацію HTML5. Через це ми рекомендуємо використовувати геолокацію HTML5 для того, щоб отримати локацію користувача, а потім використовувати freeCodeCam API погоди <https://weather-proxy.freecodecamp.rocks/>, який використовує безпечне з'єднання HTTP для погоди. Крім цього, упевніться, що з'єднання з [CodePen.io](https://codepen.io) відбувається через `https://`.
+**Примітка:** Тепер багато інтернет-браузерів вимагають безпечне HTTP з'єднання (`https://`), щоб отримати місцеперебування користувача через геолокацію HTML5. For this reason, we recommend using HTML5 Geolocation to get user location and then use the freeCodeCamp Weather API <a href="https://weather-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://weather-proxy.freecodecamp.rocks/</a> which uses an HTTP Secure connection for the weather. Also, be sure to connect to <a href="https://codepen.io" target="_blank" rel="noopener noreferrer nofollow">CodePen.io</a> via `https://`.
 
 Після завершення додайте посилання на ваш проєкт на CodePen та натисніть на кнопку "Завдання виконано".
 
-Ви можете отримати відгук про ваш проєкт, поділившись ним на форумі freeCodeCamp [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

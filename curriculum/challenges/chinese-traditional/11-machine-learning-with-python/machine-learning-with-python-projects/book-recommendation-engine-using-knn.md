@@ -8,19 +8,52 @@ dashedName: book-recommendation-engine-using-knn
 
 # --description--
 
-在這個挑戰中，你將使用 K-近鄰算法創建一個書籍推薦算法。
+You will be <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-book-recommendation-engine/blob/master/fcc_book_recommendation_knn.ipynb" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
 
-你將使用 Book-Crossings 數據集。 該數據集包括 90,000 名用戶對 270,000 冊書籍的 110 萬份評分（評分從 1至 10）。
+After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
 
-你可以[在 Replit 上查看整個項目的具體描述和初始代碼](https://colab.research.google.com/github/freeCodeCamp/boilerplate-book-recommendation-engine/blob/master/fcc_book_recommendation_knn.ipynb)。
+We are still developing the interactive instructional content for the machine learning curriculum. For now, you can go through the video challenges in this certification. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
 
-進入該鏈接後，在你自己的賬戶或本地創建一個筆記本的副本。 一旦你完成項目並通過鏈接中的測試，請在下面提交你的項目鏈接。 如果你提交的是 Google Colaboratory 的鏈接，請確保打開鏈接共享時選擇 “anyone with the link”。
+# --instructions--
 
-我們仍在開發機器學習課程的交互式課程部分。 現在，你可以通過這個認證視頻挑戰。 你可能還需要尋找額外的學習資源，類似於你在現實世界項目上所做的工作。
+In this challenge, you will create a book recommendation algorithm using **K-Nearest Neighbors**.
+
+You will use the <a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/" target="_blank" rel="noopener noreferrer nofollow">Book-Crossings dataset</a>. This dataset contains 1.1 million ratings (scale of 1-10) of 270,000 books by 90,000 users.
+
+After importing and cleaning the data, use `NearestNeighbors` from `sklearn.neighbors` to develop a model that shows books that are similar to a given book. The Nearest Neighbors algorithm measures the distance to determine the “closeness” of instances.
+
+Create a function named `get_recommends` that takes a book title (from the dataset) as an argument and returns a list of 5 similar books with their distances from the book argument.
+
+This code:
+
+```py
+get_recommends("The Queen of the Damned (Vampire Chronicles (Paperback))")
+```
+
+should return:
+
+```py
+[
+  'The Queen of the Damned (Vampire Chronicles (Paperback))',
+  [
+    ['Catch 22', 0.793983519077301], 
+    ['The Witching Hour (Lives of the Mayfair Witches)', 0.7448656558990479], 
+    ['Interview with the Vampire', 0.7345068454742432],
+    ['The Tale of the Body Thief (Vampire Chronicles (Paperback))', 0.5376338362693787],
+    ['The Vampire Lestat (Vampire Chronicles, Book II)', 0.5178412199020386]
+  ]
+]
+```
+
+Notice that the data returned from `get_recommends()` is a list. The first element in the list is the book title passed into the function. The second element in the list is a list of five more lists. Each of the five lists contains a recommended book and the distance from the recommended book to the book passed into the function.
+
+If you graph the dataset (optional), you will notice that most books are not rated frequently. To ensure statistical significance, remove from the dataset users with less than 200 ratings and books with less than 100 ratings.
+
+The first three cells import libraries you may need and the data to use. The final cell is for testing. Write all your code in between those cells.
 
 # --hints--
 
-它應該通過所有的 Python 測試。
+It should pass all Python tests.
 
 ```js
 

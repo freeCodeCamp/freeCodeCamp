@@ -128,14 +128,15 @@ assert(
     if (typeof test.remove !== 'function') {
       return false;
     }
-    test.add(-1);
+    test.add(1);
+    test.add(4);
     test.add(3);
-    test.add(7);
-    test.add(16);
-    test.remove(16);
-    test.remove(7);
+    test.add(2);
+    test.add(6);
+    test.add(8);
+    test.remove(6);
     test.remove(3);
-    return test.inorder().join('') == '-1';
+    return test.inorder().join('') == '1248';
   })()
 );
 ```

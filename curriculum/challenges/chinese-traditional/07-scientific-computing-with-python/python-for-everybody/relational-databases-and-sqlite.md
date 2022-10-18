@@ -10,15 +10,21 @@ bilibiliIds:
 dashedName: relational-databases-and-sqlite
 ---
 
+# --description--
+
+<a href="https://www.sqlite.org/download.html" target="_blank" rel="noopener noreferrer nofollow">Download SQLite</a>  
+<a href="https://sqlitebrowser.org/dl/" target="_blank" rel="noopener noreferrer nofollow">Download DB Browser for SQLite</a>  
+<a href="https://www.sqlite.org/famous.html" target="_blank" rel="noopener noreferrer nofollow">SQLite usage</a>
+
 # --question--
 
 ## --text--
 
-哪個不是數據庫中主要的數據結構？
+哪一個不是數據庫中的主要數據結構？
 
 ## --answers--
 
-指數
+索引
 
 ---
 
@@ -26,11 +32,11 @@ dashedName: relational-databases-and-sqlite
 
 ---
 
-一行
+行
 
 ---
 
-一列
+列
 
 ## --video-solution--
 

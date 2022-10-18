@@ -8,13 +8,13 @@ dashedName: problem-224-almost-right-angled-triangles-ii
 
 # --description--
 
-Let us call an integer sided triangle with sides $a ≤ b ≤ c$ barely obtuse if the sides satisfy $a^2 + b^2 = c^2 - 1$.
+Ein ganzseitiges Dreieck mit den Seiten $a ≤ b ≤ c$ sei gerade stumpf, wenn die Seiten $a^2 + b^2 = c^2 - 1$ erfüllen.
 
-How many barely obtuse triangles are there with perimeter $≤ 75\\,000\\,000$?
+Wie viele gerade stumpfe Dreiecke gibt es mit dem Umfang $≤ 75\\.000\\.000$?
 
 # --hints--
 
-`almostRightAngledTrianglesTwo()` should return `4137330`.
+`almostRightAngledTrianglesTwo()` sollte `4137330` zurückgeben.
 
 ```js
 assert.strictEqual(almostRightAngledTrianglesTwo(), 4137330);

@@ -7,17 +7,17 @@ dashedName: step-131
 
 # --description--
 
-Finish the `defeatMonster` function by calling the `update` function with `locations[4]` as the argument.
+Termina la funzione `defeatMonster` chiamando la funzione `update` con `locations[4]` come argomento.
 
 # --hints--
 
-You should call the `update` function.
+Dovresti chiamare la funzione `update`.
 
 ```js
 assert.match(defeatMonster.toString(), /update/);
 ```
 
-You should pass `locations[4]` as the argument.
+Dovresti passare `locations[4]` come argomento.
 
 ```js
 assert.match(defeatMonster.toString(), /update\(locations\[4\]\)/);
@@ -285,7 +285,7 @@ function defeatMonster() {
   xp += monsters[fighting].level;
   goldText.innerText = gold;
   xpText.innerText = xp;
-  
+
 }
 --fcc-editable-region--
 

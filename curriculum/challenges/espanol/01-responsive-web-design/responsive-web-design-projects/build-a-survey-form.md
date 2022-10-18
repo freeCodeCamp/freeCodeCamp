@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Tú `#email` debe ser un descendiente de `#survey-form`
+Tu `#email` debe ser descendiente de `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #email')

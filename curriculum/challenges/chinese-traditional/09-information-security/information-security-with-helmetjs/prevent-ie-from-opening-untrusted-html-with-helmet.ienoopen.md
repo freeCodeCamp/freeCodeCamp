@@ -8,7 +8,7 @@ dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
 
 # --description--
 
-請注意，本項目在[這個 Repl.it 項目](https://replit.com/github/freeCodeCamp/boilerplate-infosec)的基礎上進行開發。 你也可以從[GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/)上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 有些網站會下載不安全的 HTML 文件。 某些版本的 IE 默認情況下還會在你網站的作用域下打開這些 HTML 文件。 換句話說，這些不安全的 HTML 頁面可以在你的網站做惡意行爲。 我們可以通過中間件來設置 header 中的 X-Download-Options 字段，讓它的值爲 noopen。 這樣就可以防止 IE 在不信任的網站下執行下載的文件。
 

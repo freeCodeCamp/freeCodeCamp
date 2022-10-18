@@ -8,7 +8,7 @@ dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
 
 # --description--
 
-注意点として、このプロジェクトは [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec) にある次のスタータープロジェクトをベースに構築されているか、または [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) からクローンされています。 ブラウザーでコンテンツまたは MIME スニッフィングを使用すると、レスポンスの `Content-Type` ヘッダーを上書きし、暗黙のコンテンツタイプを使用してデータを推測し、処理することが可能になります。 これは便利な場合もありますが、危険な攻撃につながる可能性もあります。 このミドルウェアは、X-Content-Type-Options ヘッダーを `nosniff` に設定することで、提供された `Content-Type` を回避しないようにブラウザーに指示します。
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. ブラウザーでコンテンツまたは MIME スニッフィングを使用すると、レスポンスの `Content-Type` ヘッダーを上書きし、暗黙のコンテンツタイプを使用してデータを推測し、処理することが可能になります。 これは便利な場合もありますが、危険な攻撃につながる可能性もあります。 このミドルウェアは、X-Content-Type-Options ヘッダーを `nosniff` に設定することで、提供された `Content-Type` を回避しないようにブラウザーに指示します。
 
 # --instructions--
 

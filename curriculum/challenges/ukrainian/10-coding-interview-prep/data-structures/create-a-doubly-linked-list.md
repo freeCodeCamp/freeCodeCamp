@@ -20,7 +20,7 @@ dashedName: create-a-doubly-linked-list
 
 # --hints--
 
-Повинна існувати структура даних DoublyLinkedList.
+The `DoublyLinkedList` data structure should exist.
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-У DoublyLinkedList повинен бути метод add.
+`DoublyLinkedList` повинен мати метод під назвою `add`.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-У DoublyLinkedList повинен бути метод remove.
+`DoublyLinkedList` повинен мати метод під назвою `remove`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-Спроба видалення елементу з пустого списку має повертатися як null.
+Removing an item from an empty list should return `null`.
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-Метод add має додавати елементи до списку.
+The `add` method should add items to the list.
 
 ```js
 assert(

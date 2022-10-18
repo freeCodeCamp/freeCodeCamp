@@ -14,58 +14,56 @@ dashedName: comparison-with-the-less-than-operator
 **Наприклад:**
 
 ```js
-2   < 5
-'3' < 7
-5   < 5
-3   < 2
-'8' < 4
+2   < 5 // true
+'3' < 7 // true
+5   < 5 // false
+3   < 2 // false
+'8' < 4 // false
 ```
-
-Відповідно, ці вирази будуть оцінені як `true`, `true`, `false`, `false`, та `false`.
 
 # --instructions--
 
-Додайте оператор "менше ніж" до вказаних рядків, щоб оператор повернення спрацював.
+Add the less than operator to the indicated lines so that the return statements make sense.
 
 # --hints--
 
-`testLessThan(0)` повинен видати рядок `Under 25`
+`testLessThan(0)` повинен повертати рядок `Under 25`
 
 ```js
 assert(testLessThan(0) === 'Under 25');
 ```
 
-`testLessThan(24)` повинен видати рядок `Under 25`
+`testLessThan(24)` повинен повертати рядок `Under 25`
 
 ```js
 assert(testLessThan(24) === 'Under 25');
 ```
 
-`testLessThan(25)` повинен видати рядок `Under 55`
+`testLessThan(25)` повинен повертати рядок `Under 55`
 
 ```js
 assert(testLessThan(25) === 'Under 55');
 ```
 
-`testLessThan(54)` повинен видати рядок `Under 55`
+`testLessThan(54)` повинен повертати рядок `Under 55`
 
 ```js
 assert(testLessThan(54) === 'Under 55');
 ```
 
-`testLessThan(55)` повинен видати рядок `55 or Over`
+`testLessThan(55)` повинен повертати рядок `55 or Over`
 
 ```js
 assert(testLessThan(55) === '55 or Over');
 ```
 
-`testLessThan(99)` повинен видати рядок `55 or Over`
+`testLessThan(99)` повинен повертати рядок `55 or Over`
 
 ```js
 assert(testLessThan(99) === '55 or Over');
 ```
 
-Оператор `<` потрібно використати принаймні двічі
+You should use the `<` operator at least twice
 
 ```js
 assert(code.match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);

@@ -10,7 +10,7 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 截至目前，我們還沒有配置完數據庫，因此還無法加載用戶數據。 實現這個的方式很多，但對於我們的項目，一旦服務器啓動，那麼只要有 app 實例在運行，數據庫就應一直處於連接狀態。 爲此，你需要在環境變量 `MONGO_URI` 中添加你的數據庫地址（比如：`mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`）。 我們會在 `connection.js` 文件中調用它。
 
-*你可以在 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) 創建一個免費的數據庫。*
+*If you are having issues setting up a free database on MongoDB Atlas, check out <a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">tutorial</a>.*
 
 現在我們想要連接到數據庫，然後開始監聽請求。 這樣做的目的是在連接數據庫之前或者出現數據庫錯誤時，不接收任何請求。 要實現這一點，你需要在以下代碼中包含序列化和應用的路由：
 
@@ -40,7 +40,7 @@ myDB(async client => {
 
 記得要取消 `deserializeUser` 中 `myDataBase` 的註釋，並把 `doc` 添加到 `done(null, null)`。
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考[這裏](https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7)的答案。
+完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

@@ -1,14 +1,14 @@
 ---
 id: 5992e222d397f00d21122931
 title: Слово Фібоначчі
-challengeType: 5
+challengeType: 1
 forumTopicId: 302269
 dashedName: fibonacci-word
 ---
 
 # --description--
 
-Слово Фібоначчі можна створити аналогічно послідовності Фібоначчі [як описано тут](https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf):
+The Fibonacci Word Sequence may be created in a manner analogous to the Fibonacci Sequence, but it focuses on iterating concatenation.
 
 <pre>Визначте  F_Слово<sub>1</sub>  як  <strong>1</strong>
 Визначте  F_Слово<sub>2</sub>  як  <strong>0</strong>
@@ -16,9 +16,11 @@ dashedName: fibonacci-word
 Форма   F_Слова<sub>n</sub>  as  F_Слово<sub>n-1</sub>  об'єднана з  F_Словом<sub>n-2</sub>
 </pre>
 
+Entropy calculation is required in this challenge, <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">as shown in this Rosetta Code challenge</a>
+
 # --instructions--
 
-Напишіть функцію для повернення слів Фібоначчі до `n`. `n` буде надано як параметр функції. Функція має повернути масив об'єктів. Об’єкти мають мати такий вигляд: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`.
+Write a function to return the first `n` Fibonacci Words. The number of `n` is provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy. Note that the indices of this sequence start at `1`.
 
 # --hints--
 
@@ -28,16 +30,22 @@ dashedName: fibonacci-word
 assert(typeof fibWord === 'function');
 ```
 
-`fibWord(5)` має повернути масив.
+`fibWord(5)` should return an array.
 
 ```js
 assert(Array.isArray(fibWord(5)));
 ```
 
-`fibWord(5)` має повернути `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.9182958340544896, Word:"010" },{ N:5, Length:5, Entropy:0.9709505944546688, Word:"01001" }]`.
+`fibWord(5)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }]`.
 
 ```js
-assert.deepEqual(fibWord(5), ans);
+assert.deepEqual(fibWord(5), words5);
+```
+
+`fibWord(7)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }, { N:6, Length:8, Entropy:0.954434, Word:'01001010' }, { N:7, Length:13, Entropy:0.9612366, Word:'0100101001001' }]`.
+
+```js
+assert.deepEqual(fibWord(7), words7);
 ```
 
 # --seed--
@@ -45,15 +53,23 @@ assert.deepEqual(fibWord(5), ans);
 ## --after-user-code--
 
 ```js
-let ans=[ { N: 1, Length: 1, Entropy: 0, Word: '1' },
-
+const words5 = [
+  { N: 1, Length: 1, Entropy: 0, Word: '1' },
   { N: 2, Length: 1, Entropy: 0, Word: '0' },
-
   { N: 3, Length: 2, Entropy: 1, Word: '01' },
+  { N: 4, Length: 3, Entropy: 0.91829583, Word: '010' },
+  { N: 5, Length: 5, Entropy: 0.97095059, Word: '01001' }
+];
 
-  { N: 4, Length: 3, Entropy: 0.9182958340544896, Word: '010' },
-
-  { N: 5, Length: 5, Entropy: 0.9709505944546688, Word: '01001' }];
+const words7 = [
+  { N: 1, Length: 1, Entropy: 0, Word: '1' },
+  { N: 2, Length: 1, Entropy: 0, Word: '0' },
+  { N: 3, Length: 2, Entropy: 1, Word: '01' },
+  { N: 4, Length: 3, Entropy: 0.91829583, Word: '010' },
+  { N: 5, Length: 5, Entropy: 0.97095059, Word: '01001' },
+  { N: 6, Length: 8, Entropy: 0.954434, Word: '01001010' },
+  { N: 7, Length: 13, Entropy: 0.9612366, Word: '0100101001001' }
+];
 ```
 
 ## --seed-contents--
@@ -67,55 +83,33 @@ function fibWord(n) {
 # --solutions--
 
 ```js
+// Round to digits
+function roundFloat(num, digits) {
+  return Math.round(num * 10.0**digits) / (10.0**digits);
+}
+
+// Entropy calculation for string with only 0 and 1
+function entropy(word) {
+  function digitEntropy(count) {
+    return count < 1 ? 0
+      : - count / word.length * Math.log2(count / word.length);
+  }
+  const numZeros = word.split('').filter(e => e === '0').length;
+  const numOnes  = word.length - numZeros;
+  return roundFloat(digitEntropy(numZeros) + digitEntropy(numOnes), 8);
+}
+
+// Compute array of Fibonacci words
 function fibWord(n) {
-    function entropy(s) {
-         //create an object containing each individual char
-      //and the amount of iterations per char
-        function prob(s) {
-            var h = Object.create(null);
-            s.split('').forEach(function(c) {
-               h[c] && h[c]++ || (h[c] = 1);
-            });
-            return h;
-        }
-
-        s = s.toString(); //just in case
-        var e = 0, l = s.length, h = prob(s);
-
-        for (var i in h ) {
-            var p = h[i]/l;
-            e -= p * Math.log(p) / Math.log(2);
-        }
-        return e;
-    }
-    var wOne = "1", wTwo = "0", wNth = [wOne, wTwo], w = "", o = [];
-
-    for (var i = 0; i < n; i++) {
-        if (i === 0 || i === 1) {
-            w = wNth[i];
-        } else {
-            w = wNth[i - 1] + wNth[i - 2];
-            wNth.push(w);
-        }
-        var l = w.length;
-        var e = entropy(w);
-
-        if (l <= 21) {
-            o.push({
-                N: i + 1,
-                Length: l,
-                Entropy: e,
-                Word: w
-            });
-        } else {
-            o.push({
-                N: i + 1,
-                Length: l,
-                Entropy: e,
-                Word: "..."
-            });
-        }
-    }
-  return o;
+  return [...Array(n).keys()]
+    .reduce((words, i) => {
+      const word = i === 0 ? "1"
+                 : i === 1 ? "0"
+                 : words[i - 1].Word + words[i - 2].Word;
+      words.push(
+        { N: i + 1, Length: word.length, Entropy: entropy(word), Word: word }
+      );
+      return words;
+    }, []);
 }
 ```

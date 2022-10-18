@@ -10,7 +10,7 @@ dashedName: map-data-across-the-globe
 
 **Objective:** Build an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/mVEJag>.
 
-Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+Erfülle die folgenden User Stories und bestehe alle Tests. Verwende Bibliotheken und APIs deiner Wahl. Gib dem Ganzen deinen persönlichen Stil.
 
 **User Story:** I can see where all Meteorites landed on a world map.
 

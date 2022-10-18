@@ -8,7 +8,7 @@ dashedName: problem-211-divisor-square-sum
 
 # --description--
 
-For a positive integer $n$, let $σ_2(n)$ be the sum of the squares of its divisors. For example,
+For a positive integer $n$, let $σ_2(n)$ be the sum of the squares of its divisors. Zum Beispiel,
 
 $$σ_2(10) = 1 + 4 + 25 + 100 = 130$$
 

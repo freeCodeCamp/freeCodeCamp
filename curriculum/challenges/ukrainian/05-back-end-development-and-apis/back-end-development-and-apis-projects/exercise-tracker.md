@@ -8,10 +8,10 @@ dashedName: exercise-tracker
 
 # --description--
 
-Створіть full stack додаток на JavaScript, який функціонально схожий до цього: <https://exercise-tracker.freecodecamp.rocks/>. Робота над цим проектом залучатиме тебе писати свій код використовуючи один з наступних методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks</a>. Робота над цим проектом залучатиме тебе писати свій код використовуючи один з наступних методів:
 
--   Клонувати [цей репозиторій з GitHub](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) та локально завершити свій проект.
--   Використати [наш проект для початківців на Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker) для завершення свого проекту.
+-   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
+-   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Використати конструктор сайтів на свій вибір для завершення проекту. Впевніться, що ви зберегли всі файли із нашого GitHub репозиторію.
 
 По завершенню переконайтеся, що працююча демоверсія вашого проекту розміщена у відкритому доступі. Потім введіть його URL-адресу в поле `Solution Link`. За бажанням також можете ввести посилання на вихідний код вашого проекту в полі `GitHub Link`.
@@ -79,7 +79,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   assert.isTrue(res.ok);
   if(!res.ok) {
@@ -96,7 +96,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -164,7 +164,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -198,7 +198,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -237,7 +237,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -276,7 +276,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -309,7 +309,7 @@ async (getUserInput) => {
 };
 ```
 
-Запит `GET` на `/api/users/:id/logs` поверне об'єкт користувача з `log`, - масивом всіх доданих вправ.
+A `GET` request to `/api/users/:_id/logs` will return the user object with a `log` array of all the exercises added.
 
 ```js
 async(getUserInput) => {
@@ -319,7 +319,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   })
   if(res.ok){
     const {_id, username} = await res.json();
@@ -353,7 +353,7 @@ async(getUserInput) => {
 };
 ```
 
-Кожен елемент у масиві `log`, який повернувся з `GET /api/users/:id/logs` це об'єкт, який повинен мати `description` `duration` і `date` властивості.
+Each item in the `log` array that is returned from `GET /api/users/:_id/logs` is an object that should have a `description`, `duration`, and `date` properties.
 
 ```js
 async(getUserInput) => {
@@ -363,7 +363,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -400,7 +400,7 @@ async(getUserInput) => {
 };
 ```
 
-Властивість `description` будь-якого об'єкту в масиві `log`, що повернувся з `GET /api/users/:id/logs` повинен бути рядкового типу.
+The `description` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string.
 
 ```js
 async(getUserInput) => {
@@ -410,7 +410,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -447,7 +447,7 @@ async(getUserInput) => {
 };
 ```
 
-Властивість `duration` будь-якого об'єкту в масиві `log`, що повернувся з `GET /api/users/:id/logs`, повинна бути числового типу.
+The `duration` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a number.
 
 ```js
 async(getUserInput) => {
@@ -457,7 +457,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -494,7 +494,7 @@ async(getUserInput) => {
 };
 ```
 
-Властивість `date` будь-якого об'єкту в масиві `log`, що повернувся з `GET /api/users/:id/logs`, повинна бути рядкового типу.. Використовуйте `dateString` формат з `Date` API.
+The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Використовуйте `dateString` формат з `Date` API.
 
 ```js
 async(getUserInput) => {
@@ -504,7 +504,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -549,7 +549,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();

@@ -1,6 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bda
-title: Create a Linear Scale with D3
+title: Erstelle eine lineare Skala mit D3
 challengeType: 6
 forumTopicId: 301483
 dashedName: create-a-linear-scale-with-d3
@@ -8,11 +8,11 @@ dashedName: create-a-linear-scale-with-d3
 
 # --description--
 
-The bar and scatter plot charts both plotted data directly onto the SVG canvas. However, if the height of a bar or one of the data points were larger than the SVG height or width values, it would go outside the SVG area.
+Bei den Balken- und Punktediagrammen werden die Daten direkt im SVG-Canvas dargestellt. Wäre jedoch die Höhe eines Balkens oder eines Datenpunkts größer als die SVG-Höhen- oder Breitenwerte, würde er außerhalb des SVG-Bereichs liegen.
 
-In D3, there are scales to help plot data. `scales` are functions that tell the program how to map a set of raw data points onto the pixels of the SVG canvas.
+In D3 gibt es Skalen, die bei der Darstellung von Daten helfen. `scales` are functions that tell the program how to map a set of raw data points onto the pixels of the SVG canvas.
 
-For example, say you have a 100x500-sized SVG canvas and you want to plot Gross Domestic Product (GDP) for a number of countries. The set of numbers would be in the billion or trillion-dollar range. You provide D3 a type of scale to tell it how to place the large GDP values into that 100x500-sized area.
+For example, say you have a 100x500-sized SVG canvas and you want to plot Gross Domestic Product (GDP) for a number of countries. Die Zahlen wären im Milliarden- oder Billionen-Dollar-Bereich. You provide D3 a type of scale to tell it how to place the large GDP values into that 100x500-sized area.
 
 It's unlikely you would plot raw data as-is. Before plotting it, you set the scale for your entire data set, so that the `x` and `y` values fit your canvas width and height.
 

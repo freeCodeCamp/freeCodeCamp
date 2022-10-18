@@ -1,14 +1,14 @@
 ---
 id: 5900f46e1000cf542c50ff80
 title: '問題 257: 角の二等分線'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301905
 dashedName: problem-257-angular-bisectors
 ---
 
 # --description--
 
-整数の辺長を持つ三角形 $ABC$ が与えられ、辺は $a ≤ b ≤ c$ です ($AB = c$, $BC = a$, $AC = b$)。
+Given is an integer sided triangle $ABC$ with sides $a ≤ b ≤ c$ ($AB = c$, $BC = a$ and $AC = b$).
 
 三角形の角の二等分線は、点 $E$, $F$, $G$ で辺と交わります (下図参照)。
 

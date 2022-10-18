@@ -34,7 +34,7 @@ socket.on('user', data => {
 });
 ```
 
-Відправте сторінку, якщо все було виконано правильно. Якщо виникла помилка, ви можете перевірити виконання проєкту до цього етапу [тут](https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286).
+Відправте сторінку, якщо все було виконано правильно. If you're running into errors, you can check out <a href="https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286" target="_blank" rel="noopener noreferrer nofollow">the project completed up to this point </a>.
 
 # --hints--
 

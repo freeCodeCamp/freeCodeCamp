@@ -47,7 +47,7 @@ app.route('/register')
   );
 ```
 
-Підтвердьте сторінку, якщо все виконано вірно. Якщо сталась якась помилка, ви маєте змогу перевірити зроблений проєкт до цього етапу [тут](https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e).
+Підтвердьте сторінку, якщо все виконано вірно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 **ПРИМІТКА:** З цього моменту можуть виникнути проблеми з використанням браузеру *picture-in-picture*. Якщо ви використовуєте онлайн IDE, який має попередній перегляд програми в редакторі, рекомендується відкрити цей попередній перегляд у новій вкладці.
 

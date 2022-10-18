@@ -9,13 +9,15 @@ dashedName: port-scanner
 
 # --description--
 
-你將通過使用我們的 [Replit 入門代碼](https://replit.com/github/freeCodeCamp/boilerplate-port-scanner) 來完成本項目。
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
 我們仍在開發 Python 課程的交互式教學部分。 目前，你可以在 YouTube 上通過 freeCodeCamp.org 上傳的一些視頻學習這個項目相關的知識。
 
-- [Python for Everybody 視頻課程](https://www.freecodecamp.org/news/python-for-everybody/)（14 小時）
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
-- [Learn Python 視頻課程](https://www.freecodecamp.org/news/learn-python-video-course/)（10 小時）
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
 
 # --instructions--
 

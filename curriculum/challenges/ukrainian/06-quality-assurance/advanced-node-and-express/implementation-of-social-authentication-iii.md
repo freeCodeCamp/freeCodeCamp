@@ -42,7 +42,7 @@ myDataBase.findOneAndUpdate(
 
 Ви повинні мати змогу увійти в ваш додаток прямо зараз — спробуйте!
 
-Підтвердьте сторінку, якщо все виконано вірно. Якщо виникла помилка, ви можете перевірити виконання проєкту до цього етапу [тут](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745).
+Підтвердьте сторінку, якщо все виконано вірно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

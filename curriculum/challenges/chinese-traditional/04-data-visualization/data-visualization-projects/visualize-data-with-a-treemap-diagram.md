@@ -8,9 +8,9 @@ dashedName: visualize-data-with-a-treemap-diagram
 
 # --description--
 
-**目標：** 在 [CodePen.io](https://codepen.io) 上實現一個功能類似 <https://codepen.io/freeCodeCamp/full/KaNGNR> 的 App。
+**Objective:** Build an app that is functionally similar to this: <a href="https://treemap-diagram.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://treemap-diagram.freecodecamp.rocks</a>.
 
-在滿足以下[需求](https://en.wikipedia.org/wiki/User_story)並能通過所有測試的前提下， 你可以根據自己的喜好來美化你的 app。
+完成以下需求，並且通過所有測試。 使用你需要的任何庫或 API。 賦予它你自己的個人風格。
 
 你可以使用 HTML、JavaScript、CSS、以及基於 svg 的 D3 可視化庫來完成這個挑戰。 該任務需要使用 D3 的座標軸屬性生成座標軸，這個屬性會自動生成沿軸的刻度。 這些刻度是通過 D3 測試所必需的，因爲它們的位置是用來確定圖表元素的對齊方式。 你可以在這裏 <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis> 獲取關於生成座標軸的信息。 每次測試查詢的元素都必須是非虛擬 DOM。 如果你使用了前端框架（例如 Vue），那麼對於動態的內容測試結果可能不準確。 我們希望最終能夠兼容這些框架，但 D3 項目目前還不支持它們。
 
@@ -42,7 +42,7 @@ dashedName: visualize-data-with-a-treemap-diagram
 -   **Movie Sales：** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json`
 -   **Video Game Sales：** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json`
 
-你可以<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>使用 CodePen 模板</a>來創建你的項目，點擊 `Save` 即可創建你的項目。 或者你可以在任何你喜歡的環境中使用以下 CDN 鏈接來運行測試：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
+你可以<a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">使用 CodePen 模版</a>創建你的新項目，點擊 `Save` 即可創建你的新項目。 或者你可以在任何你喜歡的環境中使用以下 CDN 鏈接來運行測試：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
 當你完成了本項目，並且該項目所有測試運行通過，請提交項目的 URL。
 

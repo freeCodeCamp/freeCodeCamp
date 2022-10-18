@@ -1,7 +1,7 @@
 ---
 id: 5900f37a1000cf542c50fe8c
 title: 'Problem 13: Large sum'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301757
 dashedName: problem-13-large-sum
 ---
@@ -278,7 +278,7 @@ function largeSum(arr) {
 
   sum = sum.toString(10);
 
-  sum = sum.substr(0, 1) + sum.substr(2);
+  sum = sum.substring(0, 1) + sum.substring(2);
 
   let firstTen = sum.slice(0, 10);
   return parseInt(firstTen, 10);

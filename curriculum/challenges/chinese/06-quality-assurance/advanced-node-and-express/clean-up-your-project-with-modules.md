@@ -26,7 +26,7 @@ module.exports = function (app, myDataBase) {
 
 现在，我们来把 server.js 中与验证相关的代码分离到 auth.js 中，例如序列化，设置验证策略等。 请正确添加依赖，并在 server.js 中调用 `auth(app, myDataBase)`。
 
-完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92)的答案。
+完成上述要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92" target="_blank" rel="noopener noreferrer nofollow">check out an example of the completed project</a>.
 
 # --hints--
 

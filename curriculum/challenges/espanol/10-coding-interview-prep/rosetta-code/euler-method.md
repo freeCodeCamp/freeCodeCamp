@@ -1,14 +1,14 @@
 ---
 id: 59880443fb36441083c6c20e
 title: Euler method
-challengeType: 5
+challengeType: 1
 forumTopicId: 302258
 dashedName: euler-method
 ---
 
 # --description--
 
-Euler's method numerically approximates solutions of first-order ordinary differential equations (ODEs) with a given initial value. It is an explicit method for solving initial value problems (IVPs), as described in [the wikipedia page](https://en.wikipedia.org/wiki/Euler method "wp: Euler method").
+Euler's method numerically approximates solutions of first-order ordinary differential equations (ODEs) with a given initial value. It is an explicit method for solving initial value problems (IVPs), as described in <a href="https://www.freecodecamp.org/news/eulers-method-explained-with-examples/" title="Euler's Method Explained with Examples" target="_blank" rel="noopener noreferrer nofollow">this article</a>.
 
 The ODE has to be provided in the following form:
 
@@ -56,7 +56,7 @@ Newton's cooling law describes how an object of initial temperature $T(t_0) = T_
   <li><big>$\frac{dT(t)}{dt} = -k \, \Delta T$</big></li>
 </ul>
 
-or
+o
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dT(t)}{dt} = -k \, (T(t) - T_R)$</big></li>

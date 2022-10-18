@@ -11,12 +11,12 @@ dashedName: escape-sequences-in-strings
 
 引號不是字符串中唯一可以被轉義（<dfn>escaped</dfn>）的字符。 使用轉義字符有兩個原因：
 
-1.  首先是可以讓你使用無法輸入的字符，例如退格。
+1.  To allow you to use characters you may not otherwise be able to type out, such as a newline.
 2.  其次是可以讓你在一個字符串中表示多個引號，而不會出錯。
 
 我們在之前的挑戰中學到了這個。
 
-<table class='table table-striped'><thead><tr><th>代碼</th><th>輸出</th></tr></thead><tbody><tr><td><code>\'</code></td><td>單引號</td></tr><tr><td><code>\"</code></td><td>雙引號</td></tr><tr><td><code>\\</code></td><td>反斜槓</td></tr><tr><td><code>\n</code></td><td>換行符</td></tr><tr><td><code>\r</code></td><td>回車符</td></tr><tr><td><code>\t</code></td><td>製表符</td></tr><tr><td><code>\b</code></td><td>退格</td></tr><tr><td><code>\f</code></td><td>換頁符</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>代碼</th><th>輸出</th></tr></thead><tbody><tr><td><code>\'</code></td><td>單引號</td></tr><tr><td><code>\"</code></td><td>雙引號</td></tr><tr><td><code>\\</code></td><td>反斜槓</td></tr><tr><td><code>\n</code></td><td>換行符</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\b</code></td><td>退格</td></tr><tr><td><code>\f</code></td><td>換頁符</td></tr></tbody></table>
 
 *請注意，必須對反斜槓本身進行轉義，它才能顯示爲反斜槓。*
 
@@ -77,14 +77,6 @@ assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(){
-if (myStr !== undefined){
-console.log('myStr:\n' + myStr);}})();
-```
 
 ## --seed-contents--
 

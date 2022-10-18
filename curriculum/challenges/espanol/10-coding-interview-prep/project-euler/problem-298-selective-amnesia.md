@@ -1,7 +1,7 @@
 ---
 id: 5900f4971000cf542c50ffa9
 title: 'Problem 298: Selective Amnesia'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301950
 dashedName: problem-298-selective-amnesia
 ---
@@ -12,16 +12,29 @@ Larry and Robin play a memory game involving of a sequence of random numbers bet
 
 Both players start with empty memories. Both players always add new missed numbers to their memory but use a different strategy in deciding which number to remove: Larry's strategy is to remove the number that hasn't been called in the longest time. Robin's strategy is to remove the number that's been in the memory the longest time.
 
-Example game:Turn Callednumber Larry'smemory Larry'sscore Robin'smemory Robin'sscore 1 1 1 0 1 0 2 2 1,2 0 1,2 0 3 4 1,2,4 0 1,2,4 0 4 6 1,2,4,6 0 1,2,4,6 0 5 1 1,2,4,6 1 1,2,4,6 1 6 8 1,2,4,6,8 1 1,2,4,6,8 1 7 10 1,4,6,8,10 1 2,4,6,8,10 1 8 2 1,2,6,8,10 1 2,4,6,8,10 2 9 4 1,2,4,8,10 1 2,4,6,8,10 3 10 1 1,2,4,8,10 2 1,4,6,8,10 3
+Example game:
 
-Denoting Larry's score by L and Robin's score by R, what is the expected value of |L-R| after 50 turns? Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
+| Turn | Called number | Larry's memory | Larry's score | Robin's memory | Robin's score |
+| ---- | ------------- | --------------:| ------------- | -------------- | ------------- |
+| 1    | 1             |              1 | 0             | 1              | 0             |
+| 2    | 2             |            1,2 | 0             | 1,2            | 0             |
+| 3    | 4             |          1,2,4 | 0             | 1,2,4          | 0             |
+| 4    | 6             |        1,2,4,6 | 0             | 1,2,4,6        | 0             |
+| 5    | 1             |        1,2,4,6 | 1             | 1,2,4,6        | 1             |
+| 6    | 8             |      1,2,4,6,8 | 1             | 1,2,4,6,8      | 1             |
+| 7    | 10            |     1,4,6,8,10 | 1             | 2,4,6,8,10     | 1             |
+| 8    | 2             |     1,2,6,8,10 | 1             | 2,4,6,8,10     | 2             |
+| 9    | 4             |     1,2,4,8,10 | 1             | 2,4,6,8,10     | 3             |
+| 10   | 1             |     1,2,4,8,10 | 2             | 1,4,6,8,10     | 3             |
+
+Denoting Larry's score by $L$ and Robin's score by $R$, what is the expected value of $|L - R|$ after 50 turns? Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
 
 # --hints--
 
-`euler298()` should return 1.76882294.
+`selectiveAmnesia()` should return `1.76882294`.
 
 ```js
-assert.strictEqual(euler298(), 1.76882294);
+assert.strictEqual(selectiveAmnesia(), 1.76882294);
 ```
 
 # --seed--
@@ -29,12 +42,12 @@ assert.strictEqual(euler298(), 1.76882294);
 ## --seed-contents--
 
 ```js
-function euler298() {
+function selectiveAmnesia() {
 
   return true;
 }
 
-euler298();
+selectiveAmnesia();
 ```
 
 # --solutions--

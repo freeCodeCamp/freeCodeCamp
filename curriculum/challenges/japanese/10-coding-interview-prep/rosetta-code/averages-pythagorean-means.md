@@ -1,14 +1,14 @@
 ---
 id: 594d966a1467eb84194f0086
 title: 平均/ピタゴラス平均
-challengeType: 5
+challengeType: 1
 forumTopicId: 302227
 dashedName: averagespythagorean-means
 ---
 
 # --description--
 
-$1$ から $10$ を含む整数の集合における全部で3つの [ピタゴラス平均](https://en.wikipedia.org/wiki/Pythagorean means "wp: Pythagorean means") を計算します。
+Compute all three of the <a href="https://en.wikipedia.org/wiki/Pythagorean_means" target="_blank" rel="noopener noreferrer nofollow">Pythagorean means</a> of the set of integers $1$ through $10$ (inclusive).
 
 正の整数の集合において、$A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ を示します。
 

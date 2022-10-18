@@ -8,10 +8,10 @@ dashedName: timestamp-microservice
 
 # --description--
 
-Створіть full stack додаток на JavaScript, який функціонально схожий до цього: <https://timestamp-microservice.freecodecamp.rocks/>. Робота над цим проектом залучатиме тебе писати свій код використовуючи один з наступних методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://timestamp-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://timestamp-microservice.freecodecamp.rocks</a>. Робота над цим проектом залучатиме тебе писати свій код використовуючи один з наступних методів:
 
--   Клонувати [цей репозиторій з GitHub](https://github.com/freeCodeCamp/boilerplate-project-timestamp/) та локально завершити свій проект.
--   Використати [наш проект для початківців на Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp) для завершення свого проекту.
+-   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-timestamp/"  target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
+-   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp"  target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Використати конструктор сайтів на свій вибір для завершення проекту. Впевніться, що ви зберегли всі файли із нашого GitHub репозиторію.
 
 По завершенню переконайтеся, що працююча демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть його URL-адресу в поле `Solution Link`. За бажанням також можете ввести посилання на вихідний код вашого проєкту в полі `GitHub Link`.
@@ -30,7 +30,7 @@ dashedName: timestamp-microservice
 };
 ```
 
-Запит на `/api/:date?` з дійсною датою має повернути об’єкт JSON з `unix` ключем, який є часовою міткою Unix введеної дати в мілісекундах
+A request to `/api/:date?` with a valid date should return a JSON object with a `unix` key that is a Unix timestamp of the input date in milliseconds (as type Number)
 
 ```js
 (getUserInput) =>

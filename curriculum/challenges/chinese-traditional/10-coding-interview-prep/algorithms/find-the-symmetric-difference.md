@@ -1,7 +1,7 @@
 ---
 id: a3f503de51cf954ede28891d
 title: 找到對稱差異
-challengeType: 5
+challengeType: 1
 forumTopicId: 301611
 dashedName: find-the-symmetric-difference
 ---
@@ -54,7 +54,7 @@ assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4, 5]), [3, 4, 5]);
 assert.equal(sym([1, 2, 3], [5, 2, 1, 4, 5]).length, 3);
 ```
 
-`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` 應該返回 `[1, 4, 5]` 。
+`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` should return `[1, 4, 5]`.
 
 ```js
 assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5]);

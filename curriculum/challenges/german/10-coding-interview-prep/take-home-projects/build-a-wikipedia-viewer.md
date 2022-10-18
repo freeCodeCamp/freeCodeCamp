@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd19
-title: Build a Wikipedia Viewer
+title: Erstelle einen Wikipedia-Viewer
 challengeType: 3
 forumTopicId: 302360
 dashedName: build-a-wikipedia-viewer
@@ -12,13 +12,13 @@ dashedName: build-a-wikipedia-viewer
 
 The MediaWiki software powers Wikipedia, and it helps you collect and organize knowledge and make it available to people.
 
-Using the MediaWiki API, replicate the search function and random article function, similar to the example app above. You can use Wikipedia as your data source.
+Using the MediaWiki API, replicate the search function and random article function, similar to the example app above. Du kannst Wikipedia als deine Datenquelle verwenden.
 
-Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+Erfülle die folgenden User Stories und bestehe alle Tests. Verwende Bibliotheken und APIs deiner Wahl. Gib dem Ganzen deinen persönlichen Stil.
 
 **User Story:** I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.
 
-**User Story:** I can click a button to see a random Wikipedia entry.
+**User Story:** Ich kann einen Button klicken, um einen zufälligen Wikipedia-Eintrag zu sehen.
 
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 

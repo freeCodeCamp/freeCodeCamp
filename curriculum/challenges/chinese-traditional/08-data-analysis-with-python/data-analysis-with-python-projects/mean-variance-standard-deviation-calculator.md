@@ -8,12 +8,13 @@ dashedName: mean-variance-standard-deviation-calculator
 
 # --description--
 
-你將通過使用我們的[Replit 入門代碼](https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator)來完成本項目。
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
 我們仍在開發 Python 課程的交互式教學部分。 目前，你可以在 YouTube 上通過 freeCodeCamp.org 上傳的一些視頻學習這個項目相關的知識。
 
-- [Python for Everybody 視頻課程](https://www.freecodecamp.org/news/python-for-everybody/)（14 小時）
-- [Learn Python 視頻課程](https://www.freecodecamp.org/news/learn-python-video-course/)（10 小時）
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 

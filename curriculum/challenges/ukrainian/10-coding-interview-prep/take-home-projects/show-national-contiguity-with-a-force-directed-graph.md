@@ -8,9 +8,9 @@ dashedName: show-national-contiguity-with-a-force-directed-graph
 
 # --description--
 
-**Мета:** створити додаток [CodePen.io](https://codepen.io), який своїми функціями схожий на цей: <https://codepen.io/freeCodeCamp/full/xVopBo>.
+**Objective:** Build an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/XWEONRz>.
 
-Виконайте наступні [історії користувачів](https://en.wikipedia.org/wiki/User_story). Використовуйте необхідні вам бібліотеки чи прикладні програмні інтерфейси. Продемонструйте свій власний неповторний стиль.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 **Історія користувача:** я бачу орієнтований граф, створений силовими алгоритмами, який показує, які країни мають спільні кордони.
 
@@ -22,7 +22,7 @@ dashedName: show-national-contiguity-with-a-force-directed-graph
 
 Після завершення додайте посилання на ваш проєкт на CodePen та натисніть на кнопку "Завдання виконано".
 
-Ви можете отримати відгук про ваш проєкт, поділившись ним на форумі: [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

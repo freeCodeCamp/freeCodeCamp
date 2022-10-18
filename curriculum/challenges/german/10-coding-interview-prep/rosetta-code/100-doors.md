@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acb
-title: 100 doors
+title: 100 Türen
 challengeType: 1
 forumTopicId: 302217
 dashedName: 100-doors
@@ -8,7 +8,7 @@ dashedName: 100-doors
 
 # --description--
 
-There are 100 doors in a row that are all initially closed. You make 100 passes by the doors. The first time through, visit every door and 'toggle' the door (if the door is closed, open it; if it is open, close it). The second time, only visit every 2nd door (i.e., door #2, #4, #6, ...) and toggle it. The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc., until you only visit the 100th door.
+Es gibt 100 Türen in einer Reihe, die zunächst alle geschlossen sind. You make 100 passes by the doors. The first time through, visit every door and 'toggle' the door (if the door is closed, open it; if it is open, close it). The second time, only visit every 2nd door (i.e., door #2, #4, #6, ...) and toggle it. The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc., until you only visit the 100th door.
 
 # --instructions--
 
@@ -16,13 +16,13 @@ Implement a function to determine the state of the doors after the last pass. Re
 
 # --hints--
 
-`getFinalOpenedDoors` should be a function.
+`getFinalOpenedDoors` sollte eine Funktion sein.
 
 ```js
 assert(typeof getFinalOpenedDoors === 'function');
 ```
 
-`getFinalOpenedDoors` should return an array.
+`getFinalOpenedDoors` sollte einen Array zurückgeben.
 
 ```js
 assert(Array.isArray(getFinalOpenedDoors(100)));

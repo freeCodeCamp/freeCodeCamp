@@ -8,9 +8,9 @@ dashedName: build-a-tic-tac-toe-game
 
 # --description--
 
-**目標:** <https://codepen.io/freeCodeCamp/full/KzXQgy/> と同じような機能を持つ、[CodePen.io](https://codepen.io) アプリを構築してください。
+**Objective:** Build an app that is functionally similar to this: <a href="https://codepen.io/freeCodeCamp/full/KzXQgy/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/KzXQgy/</a>.
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を実装してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
+Fulfill the below user stories and get all of the tests to pass. 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
 
 **ユーザーストーリー:** コンピュータでまるばつゲームをプレイできます。
 
@@ -20,7 +20,7 @@ dashedName: build-a-tic-tac-toe-game
 
 完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
 
-[freeCodeCamp フォーラム](https://forum.freecodecamp.org/c/project-feedback/409)でプロジェクトを共有することにより、フィードバックを得ることができます。
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

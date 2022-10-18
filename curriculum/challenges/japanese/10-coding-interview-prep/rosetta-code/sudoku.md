@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc803c
 title: 数独
-challengeType: 5
+challengeType: 1
 forumTopicId: 302329
 dashedName: sudoku
 ---
 
 # --description--
 
-部分的にマスが埋まっている通常の 9x9 の [数独](https://en.wikipedia.org/wiki/Sudoku)ブロックを解き、結果を返します。 空白のマスは `-1` で表します。 [数独のアルゴリズム](https://en.wikipedia.org/wiki/Algorithmics_of_sudoku)は今回の実装に役立つかもしれません。
+Write a function to solve a partially filled-in normal 9x9 Sudoku grid and return the result. 空白のマスは `-1` で表します。
 
 # --hints--
 

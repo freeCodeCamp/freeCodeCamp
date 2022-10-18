@@ -1,8 +1,8 @@
 ---
 id: 5f3cade99dda4e6071a85dfd
-title: 步骤 47
+title: Step 46
 challengeType: 0
-dashedName: step-47
+dashedName: step-46
 ---
 
 # --description--
@@ -50,11 +50,9 @@ assert($('main').children('section').length === 2);
   </head>
   <body>
     <div class="menu">
-      <header>
+      <main>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
-      </header>
-      <main>
 --fcc-editable-region--
         <section>
           <h2>Coffee</h2>

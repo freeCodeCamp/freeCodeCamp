@@ -1,45 +1,39 @@
 ---
 id: 5900f3ec1000cf542c50fefe
 title: 'Problem 127: abc-hits'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301754
 dashedName: problem-127-abc-hits
 ---
 
 # --description--
 
-The radical of n, rad(n), is the product of distinct prime factors of n. For example, 504 = 23 × 32 × 7, so rad(504) = 2 × 3 × 7 = 42.
+$n$ 的根数 $rad(n)$ 是 $n$ 的所有素数因子的积。 如 $504 = 2^3 × 3^2 × 7$，则 $rad(504) = 2 × 3 × 7 = 42$。
 
 We shall define the triplet of positive integers (a, b, c) to be an abc-hit if:
 
-GCD(a, b) = GCD(a, c) = GCD(b, c) = 1
+1. $GCD(a, b) = GCD(a, c) = GCD(b, c) = 1$ 即 a、b、c 两两互质
+2. $a &lt; b$
+3. $a + b = c$
+4. $rad(abc) &lt; c$
 
-a &lt; b
+例如， (5, 27, 32) 为 abc-hit，因为：
 
-a + b = c
+1. $GCD(5, 27) = GCD(5, 32) = GCD(27, 32) = 1$
+2. $5 &lt; 27$
+3. $5 + 27 = 32$
+4. $rad(4320) = 30 &lt; 32$
 
-rad(abc) &lt; c
+可以发现 abc-hits 非常罕见，对于 $c &lt; 1000$，只有 31 个 abc-hits，可得 $\sum{c} = 12523$。
 
-For example, (5, 27, 32) is an abc-hit, because:
-
-GCD(5, 27) = GCD(5, 32) = GCD(27, 32) = 1
-
-5 &lt; 27
-
-5 + 27 = 32
-
-rad(4320) = 30 &lt; 32
-
-It turns out that abc-hits are quite rare and there are only thirty-one abc-hits for c &lt; 1000, with ∑c = 12523.
-
-Find ∑c for c &lt; 120000.
+求 $c &lt; 120000$ 时的 $\sum{c}$。
 
 # --hints--
 
-`euler127()` should return 18407904.
+`abcHits()` 应该返回 `18407904`。
 
 ```js
-assert.strictEqual(euler127(), 18407904);
+assert.strictEqual(abcHits(), 18407904);
 ```
 
 # --seed--
@@ -47,12 +41,12 @@ assert.strictEqual(euler127(), 18407904);
 ## --seed-contents--
 
 ```js
-function euler127() {
+function abcHits() {
 
   return true;
 }
 
-euler127();
+abcHits();
 ```
 
 # --solutions--

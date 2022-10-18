@@ -1,14 +1,14 @@
 ---
 id: 5a7dad05be01840e1778a0d1
 title: FRACTRAN
-challengeType: 5
+challengeType: 1
 forumTopicId: 302270
 dashedName: fractran
 ---
 
 # --description--
 
-[FRACTRAN](https://en.wikipedia.org/wiki/FRACTRAN "wp: FRACTRAN") は、数学者 [ジョン・ホートン・コンウェイ](https://en.wikipedia.org/wiki/John Horton Conway "wp: John Horton Conway") 氏によって発明されたチューリング完全で難解なプログラミング言語です。
+FRACTRAN is a Turing-complete esoteric programming language invented by the mathematician John Horton Conway.
 
 FRACTRAN プログラムは、最初の正の整数入力 $n$ を含む、正の分数$P = (f_1, f_2, \\ldots, f_m)$の順序付きリストです。
 

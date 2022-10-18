@@ -8,13 +8,13 @@ dashedName: create-many-records-with-model-create
 
 # --description--
 
-Sometimes you need to create many instances of your models, e.g. when seeding a database with initial data. `Model.create()` takes an array of objects like `[{name: 'John', ...}, {...}, ...]` as the first argument, and saves them all in the db.
+Manchmal ist es notwendig, viele Instanzen deiner Modelle zu erstellen, z.B. wenn du eine Datenbank mit Anfangsdaten versorgst. `Model.create()` takes an array of objects like `[{name: 'John', ...}, {...}, ...]` as the first argument, and saves them all in the db.
 
 # --instructions--
 
 Modify the `createManyPeople` function to create many people using `Model.create()` with the argument `arrayOfPeople`.
 
-**Note:** You can reuse the model you instantiated in the previous exercise.
+**Hinweis:** Du kannst das Modell, das du in der vorherigen Übung instanziiert hast, wiederverwenden.
 
 # --hints--
 

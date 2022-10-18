@@ -20,7 +20,7 @@ How many numbers $t(n)$ are prime for $n ≤ 50\\,000\\,000$?
 
 # --hints--
 
-`primalityOfNumbers()` should return `5437849`.
+`primalityOfNumbers()` sollte `5437849` zurückgeben.
 
 ```js
 assert.strictEqual(primalityOfNumbers(), 5437849);

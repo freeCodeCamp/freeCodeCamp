@@ -11,7 +11,7 @@ dashedName: build-a-roman-numeral-converter
 Convert the given number into a roman numeral.
 
 | Roman numerals | Arabic numerals |
-|----------------|-----------------|
+| -------------- | --------------- |
 | M              | 1000            |
 | CM             | 900             |
 | D              | 500             |

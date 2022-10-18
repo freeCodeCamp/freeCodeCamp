@@ -14,7 +14,7 @@ dashedName: build-your-own-functions
 
 Додаткові ресурси:
 
-\- [Відео з поясненнями](https://www.youtube.com/watch?v=ksvGhDsjtpw)
+\- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
 
 # --question--
 

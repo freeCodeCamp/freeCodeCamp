@@ -1,6 +1,6 @@
 ---
 id: 587d824a367417b2b2512c45
-title: Anonymous Message Board
+title: Anonymes Nachrichtenbrett
 challengeType: 4
 forumTopicId: 301568
 dashedName: anonymous-message-board
@@ -10,21 +10,21 @@ dashedName: anonymous-message-board
 
 Build a full stack JavaScript app that is functionally similar to this: <a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://anonymous-message-board.freecodecamp.rocks/</a>.
 
-Working on this project will involve you writing your code using one of the following methods:
+Bei der Arbeit an diesem Projekt musst du deinen Code mit einer der folgenden Methoden schreiben:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-messageboard/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Be sure to incorporate all the files from our GitHub repo.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
 
 # --instructions--
 
 1.  Set `NODE_ENV` to test without quotes when ready to write tests and DB to your databases connection string (in `.env`)
 2.  Recommended to create controllers/handlers and handle routing in `routes/api.js`
-3.  You will add any security features to `server.js`
+3.  Füge alle Security-Features zu `server.js` hinzu
 
-Write the following tests in `tests/2_functional-tests.js`:
+Schreibe die folgenden Tests in `tests/2_functional-tests.js`:
 
 -   Creating a new thread: POST request to `/api/threads/{board}`
 -   Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
@@ -39,7 +39,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Du kannst dein eigenes Projekt angeben, nicht die Beispiel-URL.
 
 ```js
 (getUserInput) => {
@@ -61,7 +61,7 @@ async (getUserInput) => {
 };
 ```
 
-Do not allow DNS prefetching.
+DNS-Prefetching nicht erlauben.
 
 ```js
 async (getUserInput) => {
@@ -268,7 +268,7 @@ async (getUserInput) => {
   let res = await fetch(`${url}/api/threads/fcc_test`);
   let threads = await res.json();
   const thread_id = threads[0]._id;
-  
+
   const reply_data = { thread_id, text: "fcc_test_reply", delete_password: "delete_me" };
   await fetch(`${url}/api/replies/fcc_test`, {
     method: 'POST',
@@ -315,7 +315,7 @@ async (getUserInput) => {
   const threads = await res.json();
   const report_id = threads[0]._id;
   const data = { report_id };
-  
+
   res = await fetch(`${url}/api/threads/fcc_test`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
@@ -347,7 +347,7 @@ async (getUserInput) => {
   const thread_id = threads[0]._id;
   const reply_id = threads[0].replies[0]._id;
   const data = { thread_id, reply_id };
-  
+
   res = await fetch(`${url}/api/replies/fcc_test`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
@@ -368,7 +368,7 @@ async (getUserInput) => {
 };
 ```
 
-All 10 functional tests are complete and passing.
+Alle 10 Funktionstests sind abgeschlossen und wurden bestanden.
 
 ```js
 async (getUserInput) => {

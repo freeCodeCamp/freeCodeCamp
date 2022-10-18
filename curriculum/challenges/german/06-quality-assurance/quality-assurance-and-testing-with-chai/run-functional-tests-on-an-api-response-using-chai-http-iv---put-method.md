@@ -10,15 +10,15 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-This exercise is similar to the previous one.
+Diese Übung ist ähnlich zu der vorherigen.
 
-Now that you know how to test a `PUT` request, it's your turn to do it from scratch.
+Jetzt, da du weißt, wie man eine `PUT`-Anfrage testet, bist du an der Reihe, es von Grund auf selbst zu machen.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Send {surname: "da Verrazzano"}'` test (`// #4`) and use the `put` and `send` methods to test the  `'/travellers'` endpoint.
+Innerhalb `tests/2_functional-tests.js`, ändere den `'Send {surname: "da Verrazzano"}'` Test (`// #4`) und verwende die `put` und `send` Methoden, um den `'/travellers'` Endpunkt zu testen.
 
-Send the following JSON object with your PUT request:
+Sende das folgende JSON-Objekt mit deiner PUT-Anfrage:
 
 ```json
 {
@@ -26,18 +26,18 @@ Send the following JSON object with your PUT request:
 }
 ```
 
-Check for the following within the `request.end` callback:
+Überprüfe, ob der `request.end` Callback Folgendes enthält:
 
-1.  The `status` should be `200`
-2.  The `type` should be `application/json`
-3.  The `body.name` should be `Giovanni`
-4.  The `body.surname` should be `da Verrazzano`
+1.  Der `status` sollte `200` betragen
+2.  Der `type` sollte `application/json` sein
+3.  Der `body.name` sollte `Giovanni` sein
+4.  Der `body.surname` sollte `da Verrazzano` sein
 
-Follow the assertion order above - we rely on it. Also, be sure to remove `assert.fail()` once complete.
+Folge der obigen Reihenfolge der Behauptung- wir benötigen sie. Stelle außerdem sicher, dass du `assert.fail()` nach der Fertigstellung entfernst.
 
 # --hints--
 
-All tests should pass
+Alle Tests sollten bestanden werden
 
 ```js
 (getUserInput) =>
@@ -51,7 +51,7 @@ All tests should pass
   );
 ```
 
-You should test for `res.status` to be 200
+Du solltest testen ob der `res.status` 200 beträgt
 
 ```js
 (getUserInput) =>
@@ -67,7 +67,7 @@ You should test for `res.status` to be 200
   );
 ```
 
-You should test for `res.type` to be `'application/json'`
+Du solltest testen ob `res.type` Folgendes ist: `'application/json'`
 
 ```js
 (getUserInput) =>
@@ -83,7 +83,7 @@ You should test for `res.type` to be `'application/json'`
   );
 ```
 
-You should test for `res.body.name` to be `'Giovanni'`
+Du solltest testen ob `res.body.name` Folgendes ist: `'Giovanni'`
 
 ```js
 (getUserInput) =>
@@ -99,7 +99,7 @@ You should test for `res.body.name` to be `'Giovanni'`
   );
 ```
 
-You should test for `res.body.surname` to be `'da Verrazzano'`
+Du solltest testen ob `res.body.surname` Folgendes ist: `'da Verrazzano'`
 
 ```js
 (getUserInput) =>
