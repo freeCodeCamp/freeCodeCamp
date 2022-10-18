@@ -1,5 +1,4 @@
 import store from 'store';
-import * as Tone from 'tone';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
 import { Themes } from '../../components/settings/theme';
 
@@ -62,6 +61,8 @@ type ToneStates = keyof typeof toneUrls;
 
 export async function playTone(state: ToneStates): Promise<void> {
   if (toneUrls[state]) {
+    const Tone = await import('tone');
+
     const player = new Tone.Player(toneUrls[state]).toDestination();
 
     const storedVolume = (store.get('soundVolume') as number) ?? 50;
