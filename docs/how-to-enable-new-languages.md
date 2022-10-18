@@ -415,4 +415,4 @@ Then commit and push your branch directly to the News repo.
 
 Finally, open a PR for review.
 
-Once both your PRs to the CDN and News repo are merged, staff will create a couple more PRs to enable the new language and launch the site.
+Once both your PRs to the CDN and News repo have been approved, they can be merged. Deployment will be handled subsequently by the staff.
