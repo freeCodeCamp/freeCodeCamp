@@ -89,4 +89,4 @@ github:
 vscode:
   extensions:
     - dbaeumer.vscode-eslint@2.2.6
-    - esbenp.prettier-vscode@9.8.0
+    - esbenp.prettier-vscode@9.9.0
