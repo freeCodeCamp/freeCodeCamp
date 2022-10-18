@@ -1,7 +1,7 @@
 import React, { Component, Ref } from 'react';
+import { withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import {connect} from 'react-redux'
-import {withTranslation} from 'react-i18next'
 import {
   paypalConfigurator,
   paypalConfigTypes,
@@ -223,5 +223,3 @@ const mapStateToProps = createSelector(
 PaypalButton.displayName = 'PaypalButton';
 
 export default connect(mapStateToProps)(withTranslation()(PaypalButton));
-
-
