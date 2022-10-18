@@ -37,28 +37,31 @@ const GrowthBookWrapper = ({
   isSignedIn,
   user
 }: GrowthBookWrapper) => {
-  if (growthbookUri) {
-    void (async () => {
+  useEffect(() => {
+    async function initGrowthBook() {
+      if (!growthbookUri) return;
+
+      if (isSignedIn) {
+        const { joinDate, completedChallenges } = user;
+        growthbook.setAttributes({
+          id: sha1(user.email),
+          staff: user.email.includes('@freecodecamp'),
+          clientLocal: clientLocale,
+          joinDateUnix: Date.parse(joinDate),
+          completedChallengesLength: completedChallenges.length
+        });
+      }
+
       const res = await fetch(growthbookUri);
       const data = (await res.json()) as {
         features: Record<string, FeatureDefinition>;
       };
       growthbook.setFeatures(data.features);
-    })();
-  }
-  useEffect(() => {
-    if (isSignedIn) {
-      const { joinDate, completedChallenges } = user;
-      growthbook.setAttributes({
-        id: sha1(user.email),
-        staff: user.email.includes('@freecodecamp'),
-        clientLocal: clientLocale,
-        joinDateUnix: Date.parse(joinDate),
-        completedChallengesLength: completedChallenges.length
-      });
     }
+
+    void initGrowthBook();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isSignedIn]);
+  }, [isSignedIn, growthbookUri]);
 
   return (
     <GrowthBookProvider growthbook={growthbook}>{children}</GrowthBookProvider>
