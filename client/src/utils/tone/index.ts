@@ -66,7 +66,7 @@ export async function playTone(state: ToneStates): Promise<void> {
 
     const storedVolume = (store.get('soundVolume') as number) ?? 50;
 
-    // volume range [0-1], 0 -> muted, 100 -> loudest
+    // volume range [0-1], 0 -> muted, 1 -> loudest
     const volume = storedVolume / 100;
 
     audio.volume = volume;
