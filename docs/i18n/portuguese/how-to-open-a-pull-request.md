@@ -185,7 +185,7 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
    git cherry-pick <commit-hash>
    ```
 
-4. Resolva quaisquer conflitos e limpe, instale testes de execução
+4. Resolve any conflicts, cleanup, install dependencies and run tests
 
    ```console
    npm run clean
