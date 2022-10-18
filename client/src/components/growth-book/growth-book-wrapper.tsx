@@ -52,11 +52,16 @@ const GrowthBookWrapper = ({
         });
       }
 
-      const res = await fetch(growthbookUri);
-      const data = (await res.json()) as {
-        features: Record<string, FeatureDefinition>;
-      };
-      growthbook.setFeatures(data.features);
+      try {
+        const res = await fetch(growthbookUri);
+        const data = (await res.json()) as {
+          features: Record<string, FeatureDefinition>;
+        };
+        growthbook.setFeatures(data.features);
+      } catch (e) {
+        // TODO: report to sentry when it's enabled
+        console.error(e);
+      }
     }
 
     void initGrowthBook();
