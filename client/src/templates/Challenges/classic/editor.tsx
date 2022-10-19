@@ -407,10 +407,33 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility;
     };
 
+    const isTabTrappedPermanently = () => {
+      const tabTrapped = store.get('tabTrappedPermanently') as
+        | boolean
+        | undefined;
+      return tabTrapped === false ? false : true;
+    };
+
+    const setTabTrappedPermanently = (trapped: boolean) => {
+      editor.createContextKey('editorTabMovesFocus', !trapped);
+      store.set('tabTrappedPermanently', trapped);
+      const tabTrappedMessage =
+        'Pressing tab will now insert the tab character permanently';
+      const tabFreeMessage =
+        'Pressing tab will now move focus to the next focusable element permanently';
+      ariaAlert(`${trapped ? tabTrappedMessage : tabFreeMessage}`);
+    };
+
     const accessibilityMode = storedAccessibilityMode();
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
+
+    // By default, Tab will be trapped in the monaco editor, so we only need to
+    // check if the user has permanently turned this off.
+    if (!isTabTrappedPermanently()) {
+      setTabTrappedPermanently(false);
+    }
 
     // Focus should not automatically leave the 'Code' tab when using a keyboard
     // to navigate the tablist.
@@ -512,6 +535,16 @@ const Editor = (props: EditorProps): JSX.Element => {
         editor.updateOptions({
           accessibilitySupport: storedAccessibilityMode() ? 'on' : 'auto'
         });
+      }
+    });
+    editor.addAction({
+      id: 'toggle-tab-key-focus-permanently',
+      label: 'Toggle Tab Key Moves Focus Permanently',
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KEY_M
+      ],
+      run: () => {
+        setTabTrappedPermanently(!isTabTrappedPermanently());
       }
     });
     // Introduced as a work around for a bug in JAWS 2022
