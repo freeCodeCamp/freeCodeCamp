@@ -415,11 +415,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     const setTabTrapped = (trapped: boolean) => {
       editor.createContextKey('editorTabMovesFocus', !trapped);
       store.set('monacoTabTrapped', trapped);
-      const tabTrappedMessage =
-        'Pressing tab will now insert the tab character';
-      const tabFreeMessage =
-        'Pressing tab will now move focus to the next focusable element';
-      ariaAlert(`${trapped ? tabTrappedMessage : tabFreeMessage}`);
+      ariaAlert(
+        `${
+          trapped ? t('editor-alerts.tab-trapped') : t('editor-alerts.tab-free')
+        }`
+      );
     };
 
     const accessibilityMode = storedAccessibilityMode();
