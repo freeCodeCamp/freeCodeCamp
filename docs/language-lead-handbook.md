@@ -308,7 +308,7 @@ In Crowdin, individuate the `User management` on the left hand side menu.
 
 This will open the user management tools, you will be able to see the list of all the users.
 
-Search for the user that will become contributor. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+Search for the user that will become proofreader. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
 
 The user is now a proofreader.
 
