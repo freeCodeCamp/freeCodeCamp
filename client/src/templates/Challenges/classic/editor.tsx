@@ -535,6 +535,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_M, () => {
       setTabTrapped(!isTabTrapped());
     });
+    editor.addCommand(
+      monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M,
+      () => {
+        setTabTrapped(!isTabTrapped());
+      }
+    );
     // Introduced as a work around for a bug in JAWS 2022
     // https://github.com/FreedomScientific/VFO-standards-support/issues/598
     editor.addAction({
