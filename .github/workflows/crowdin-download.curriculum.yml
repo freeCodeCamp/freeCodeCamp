@@ -259,23 +259,18 @@ jobs:
           upload_translations: false
           auto_approve_imported: false
           import_eq_suggestions: false
-
           # downloads
           download_translations: true
           download_language: ar
           skip_untranslated_strings: false
           skip_untranslated_files: false
           export_only_approved: true
-
           push_translations: false
-
           # pull-request
           create_pull_request: false
-
           # global options
           config: './crowdin-config.yml'
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
-
           # Uncomment below to debug
           # dryrun_action: true
 
