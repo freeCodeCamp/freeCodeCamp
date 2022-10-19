@@ -24,6 +24,7 @@ import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
 import { Themes } from '../../settings/theme';
 import LanguageGlobe from '../../../assets/icons/language-globe';
+import { User } from '../../../redux/prop-types';
 
 interface NavigationLocationApi {
   clientLocale: string;
@@ -48,13 +49,10 @@ interface NavLinksProps {
   fetchState: { pending: boolean };
   i18n: Record<string, unknown>;
   t: TFunction;
+  showMenu: () => void;
   hideMenu: () => void;
   toggleNightMode: (theme: Themes) => void;
-  user?: {
-    isDonating: boolean;
-    username: string;
-    theme: Themes;
-  };
+  user?: User;
   navigate?: (location: string) => void;
   showLanguageMenu: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu: () => void;
