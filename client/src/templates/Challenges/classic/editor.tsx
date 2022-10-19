@@ -537,15 +537,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         });
       }
     });
-    editor.addAction({
-      id: 'toggle-tab-key-focus-permanently',
-      label: 'Toggle Tab Key Moves Focus Permanently',
-      keybindings: [
-        monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KEY_M
-      ],
-      run: () => {
-        setTabTrappedPermanently(!isTabTrappedPermanently());
-      }
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_M, () => {
+      setTabTrappedPermanently(!isTabTrappedPermanently());
     });
     // Introduced as a work around for a bug in JAWS 2022
     // https://github.com/FreedomScientific/VFO-standards-support/issues/598
