@@ -2,19 +2,19 @@
 
 ## Bereite dich auf die Teilnahme vor
 
-> The freeCodeCamp Localization Roadmap – There Are No Speed Limits
+> Die freeCodeCamp Lokalisierungs-Roadmap - Es gibt keine Geschwindigkeitsbegrenzungen
 
-> [!TIP] You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay).
+> [!TIP] Du kannst damit beginnen, indem du [diese Ankündigung](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) liest. Wir empfehlen die Teilnahme an [unserem Community-Forum](https://forum.freecodecamp.org/c/contributors/3) und [Discord-Chat-Server](https://discord.gg/PRyKn3Vbay).
 
-You can translate as much as you want, when you want. It's only a matter of how much time and energy you are willing to invest as a volunteer translator.
+Du kannst so viel übersetzen, wie und wann du willst. Es kommt nur darauf an, wie viel Zeit und Energie du bereit bist, als freiwilliger Übersetzer zu investieren.
 
-We just ask that you understand the following:
+Wir bitten dich nur um Verständnis für die folgenden Punkte:
 
 1. **Übersetzungen sind eine Teamleistung.**
 
    Das Übersetzen der freeCodeCamp-Ressourcen ist eine der schönsten und lohnendsten Erfahrungen als Helfer, und es funktioniert am besten, wenn du deine Freunde und Kollegen einbeziehst, die die gleiche Weltsprache sprechen wie du.
 
-   You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin and other tools make it easy to contribute translations, but it's still a lot of work.
+   Du kannst damit beginnen, indem du [diese Ankündigung](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) liest. Wir empfehlen dir, dich mit deinen Freunden in [unserem Community-Forum](https://forum.freecodecamp.org/c/contributors/3) und [Discord-Chat-Server](https://discord.gg/PRyKn3Vbay) anzumelden und dein Interesse zu bekunden, bevor du mit den Übersetzungen beginnst. Crowdin und andere Tools machen es einfach, Übersetzungen beizusteuern, aber es ist immer noch eine Menge Arbeit.
 
    Wir wollen, dass du Spaß am Mitmachen hast und nicht ausbrennst oder das Interesse verlierst.
 
@@ -26,7 +26,7 @@ We just ask that you understand the following:
 
    freeCodeCamp.org verpflichtet sich, diese wie immer kostenlos zur Verfügung zu stellen, aber wir müssen die Ressourcen für diejenigen priorisieren, die sie am meisten brauchen. Das Letzte was wir wollen, ist, dass die Server für eine Sprache abgeschaltet werden, wenn die Übersetzungsaktivität nachlässt & die Inhalte veralten.
 
-   For translating the curriculum, once a language reaches at least a few certifications we can begin deploying the language live on [`/learn`](https://www.freecodecamp.org/learn), while you continue to translate the remaining certifications.
+   Bei der Übersetzung des Lehrplans können wir, sobald eine Sprache mindestens einige Zertifizierungen erreicht hat, damit beginnen, die Sprache auf [`/learn`](https://www.freecodecamp.org/learn) live zu schalten, während du mit der Übersetzung der restlichen Zertifizierungen fortfährst.
 
    Zum Beispiel würden wir zumindest die gesamte Front-End-Zertifizierungssuite bereitstellen wollen, wenn wir eine neue Weltsprache zum ersten Mal ausliefern.
 
@@ -42,13 +42,13 @@ We just ask that you understand the following:
 
    Sobald du eine kleine Gruppe von Leuten hast (mindestens 4-5), die interessiert sind und sich engagieren, können wir einen Versuch starten. Wir erklären dir alle Details und führen dich durch einige der Tools und Prozesse.
 
-## Overview of Crowdin
+## Überblick über Crowdin
 
-It's our dream to provide you with the resources to learn, no matter the world language you speak. To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
+Unser Traum ist es, dich mit den nötigen Ressourcen auszustatten, damit du lernen kannst, egal welche Weltsprache du sprichst. Um uns bei diesem enormen Aufwand zu helfen, haben wir unsere Open-Source-Code-Basis & Lehrplan mit [Crowdin](https://crowdin.com/) integriert - ein Tool, das uns bei der Lokalisierung unserer Code-Basis hilft.
 
-> [!NOTE] We use a different tool and workflow for translating [news articles](https://www.freecodecamp.org/news). If you are interested in translating articles, read [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and reach out to your Language Lead.
+> [!NOTE] Wir verwenden ein anderes Tool und einen anderen Arbeitsablauf für die Übersetzung von [Nachrichtenartikeln](https://www.freecodecamp.org/news). Wenn du an der Übersetzung von Artikeln interessiert bist, lese [diese Ankündigung](https://www.freecodecamp.org/german/news/freecodecamp-in-deine-muttersprache-uebersetzen/) und wende dich an deinen Language Lead.
 
-The translation workflow is split into two main activities:
+Der Übersetzungsworkflow ist in zwei Hauptaktivitäten unterteilt:
 
 - **Übersetzen** von Studienplandateien, Dokumentation und Elementen der Benutzeroberfläche wie Buttons, Labels, etc.:
 
@@ -58,11 +58,11 @@ The translation workflow is split into two main activities:
 
   Korrekturleser überprüfen, ob die von der Community beigesteuerten Übersetzungen einen einheitlichen Ton haben und frei von üblichen Problemen wie Tippfehlern usw. sind. Kurzum, sie sorgen für eine hohe Qualität der Übersetzungen. Beachte, dass wir aus einem gutem Grund keine maschinellen Übersetzungen verwenden.
 
-> [!WARNING] We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
+> [!WARNING] Wir verwenden GitHub nicht mehr, um Dateien direkt zu übersetzen. Wenn du wieder mitarbeiten möchtest, gehe stattdessen zu unserer [Übersetzungsplattform](https://translate.freecodecamp.org/).
 
-## Getting started
+## Erste Schritte
 
-First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). Wir posten regelmäßig Updates über Übersetzungsressourcen und beantworten dort deine Fragen.
+Zuerst solltest du in unserem [Diskord](https://discord.gg/PRyKn3Vbay) "Hallo" sagen. Wir posten regelmäßig Updates über Übersetzungsressourcen und beantworten dort deine Fragen.
 
 Als nächstes gehst du zu unserer [Übersetzungsplattform](https://translate.freecodecamp.org/) und loggst dich ein (wenn du noch nie an Übersetzungen mitgewirkt hast, musst du einen Account erstellen).
 
@@ -70,7 +70,7 @@ Nachfolgend findest du eine ausführliche Anleitung, die dir dabei hilft, die di
 
 Viel Spaß beim Übersetzen.
 
-## Select a Project and File
+## Wähle ein Projekt und eine Datei
 
 Sobald du die Übersetzungsplattform besuchst, solltest du mehrere "Projekte" sehen, die zur Übersetzung verfügbar sind:
 
