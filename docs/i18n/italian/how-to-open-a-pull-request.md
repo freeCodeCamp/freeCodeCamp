@@ -2,34 +2,34 @@
 
 Una pull request (PR) consente di inviare modifiche dal tuo fork su GitHub al repository principale di freeCodeCamp.org. Una volta che hai fatto delle modifiche al codice, puoi seguire queste linee guida per aprire una PR.
 
-We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
+Ci aspettiamo che i nostri contributori siano consapevoli del processo specifico di questo progetto. Seguire scrupolosamente le linee guida ti fa guadagnare il rispetto di chi si occupa della manutenzione e fa risparmiare del tempo a tutti.
 
-Some examples of this are:
+Alcuni esempi di ciò sono:
 
-1. Do not edit files directly through GitHub – while you can, it's not a good idea.
-2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
-3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
-4. Do not "@mention" or request someone for reviews too many times.
+1. Non modificare i file direttamente attraverso GitHub – nonostante sia possibile, non è una buona idea.
+2. Assicurati di seguire la checklist della PR e non solo spuntare le cose; altrimenti, non ti prenderemo sul serio.
+3. Usa il modo corretto per linkare le issue nella descrizione della PR aggiornando `XXXXXX`. Non basta aggiungere numeri di issue dappertutto o ovunque ti pare.
+4. Non "@menzionare" o richiedere qualcuno per la revisione troppe volte.
 
-   We understand you are excited about contributing. As much as a maintainer will love to get back to you, they are busy people looking after hundreds of requests just like yours. Be patient, someone will get to you sooner or later.
+   Sappiamo che sei entusiasta di contribuire. Per quanto a un manutentore faccia piacere risponderti, si tratta di una persona impegnata che si occupa di centinaia di richieste proprio come la tua. Sii paziente, qualcuno ti risponderà prima o poi.
 
-5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
+5. Non lavorare direttamente sul ramo (branch) `main` - crea un nuovo ramo per le modifiche su cui stai lavorando.
 
-> [!NOTE] Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
+> [!NOTE] La tua PR dovrebbe essere rivolta a modifiche del solo curriculum inglese. Per contribuire alle traduzioni invece, leggi [questa guida](index.md#traduzioni).
 
 ## Preparare un buon titolo PR
 
-We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
+Si consiglia di utilizzare [Titolo e messaggi convenzionali](https://www.conventionalcommits.org/) per i commit e le pull request. La convenzione ha il seguente formato:
 
-> `<type>([optional scope(s)]): <description>`
+> `<tipo>([ambito/i opzionale/i]): <descrizione>`
 > 
 > Per esempio:
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
+Ogni volta in cui apri una Pull Request (PR), puoi usare la seguente lista per determinare il tipo (type), l'ambito (scope) (opzionale) e la descrizione.
 
-**Type:**
+**Tipo:**
 
 | Tipo  | Quando selezionare                                                                     |
 |:----- |:-------------------------------------------------------------------------------------- |
@@ -38,46 +38,46 @@ Whenever you open a Pull Request(PR), you can use the below to determine the typ
 | chore | Cambiamenti che non sono legati a codice, test, o testo di una lezione.                |
 | docs  | Modifiche alla directory `/docs` o alle linee guida per i contributi, ecc.             |
 
-**Scope:**
+**Ambito:**
 
-You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
+Puoi selezionare un ambito da [questo elenco di etichette](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
-**Description:**
+**Descrizione:**
 
-Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
+Mantienila breve (meno di 30 caratteri) e semplice; puoi aggiungere ulteriori informazioni nella casella di descrizione PR e nei commenti.
 
-Some examples of good PR titles would be:
+Alcuni esempi di buoni titoli di PR sono:
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`
 - `fix(api,client): prevent CORS errors on form submission`
-- `docs(i18n): correggi i link affinché siano relativi invece che assoluti`
+- `docs(i18n): fix links to be relative instead of absolute`
 
 ## Proporre una Pull Request
 
-1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
+1. Una volta che le modifiche sono state effettuate, ti verrà chiesto di creare una pull request sulla pagina GitHub del tuo fork.
 
    <details>
-   <summary>See screenshot</summary>
+   <summary>Vedi screenshot</summary>
 
    ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
    </details>
 
-2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
+2. Di default, tutte le pull request dovrebbero essere sul repository principale di freeCodeCamp, nel ramo `main`.
 
-   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
+   Assicurati che il tuo Base Fork sia impostato su freeCodeCamp/freeCodeCamp quando sollevi una Pull Request.
 
    <details>
-   <summary>See screenshot</summary>
+   <summary>Vedi screenshot</summary>
 
    ![Image - Comparing forks when making a pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
    </details>
 
-3. Submit the pull request from your branch to freeCodeCamp's `main` branch.
+3. Fai la pull request dal tuo ramo al ramo `main` di freeCodeCamp.
 
-4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
+4. Includi un riassunto più dettagliato delle modifiche apportate e di come sono d'aiuto nel corpo della tua PR.
 
    - Ti sarà presentato un modello di pull request. Questa è una lista di controllo che avresti dovuto seguire prima di aprire la pull request.
 
@@ -85,9 +85,9 @@ Some examples of good PR titles would be:
 
    - Se la PR ha lo scopo di affrontare un'issue GitHub esistente, alla fine del corpo della descrizione della tua PR, usa la parola chiave _Closes_ con il numero dell'issue per [chiudere automaticamente questa issue se la PR è accettata](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-     > Esempio: `Chiude #123` chiuderà l'issue 123
+     > Esempio: `Closes #123` chiuderà l'issue 123
 
-5. Indicate if you have tested on a local copy of the site or not.
+5. Indica se hai testato i tuoi cambiamenti su una copia locale del sito oppure no.
 
    - Questo è molto importante quando si fanno cambiamenti che non sono solo modifiche a contenuto testuale come documentazione o descrizioni di sfide. Esempi di modifiche che hanno bisogno di essere testate localmente includono JavaScript, CSS o HTML che potrebbero cambiare funzionalità o layout di una pagina.
 

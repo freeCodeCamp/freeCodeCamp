@@ -14,15 +14,15 @@ Il livello "Editor" consente all'utente di accedere a tutte le bozze e pubblicar
 
 Il livello "Administrator" è riservato allo staff di freeCodeCamp e ai leader di lingua.
 
-### How are the articles built
+### Come avviene il build degli articoli
 
-We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
+Usiamo un approccio basato su [JAMStack](https://www.google.com/search?q=what+is+jamstack) per il build e il deployment degli articoli. Questa strategia rende un rapido sito statico memorizzato nella cache e servito da un CDN.
 
-[Ghost](https://ghost.org) acts as our content management platform, and [11ty](https://11ty.dev) builds the articles into static assets – plain HTML, JavaScript, and CSS. Only these static assets are deployed to our servers.
+[Ghost](https://ghost.org) costituisce la nostra piattaforma di gestione dei contenuti e [11ty](https://11ty.dev) si occupa del build degli articoli in risorse statiche – semplice HTML, JavaScript e CSS. Solo queste risorse statiche sono distribuite sui nostri server.
 
-This process is automated and runs periodically. If you publish something now, it will be available on the news site in a few hours.
+Questo processo è automatizzato e viene eseguito periodicamente. Se pubblichi qualcosa ora, sarà disponibile sul sito di notizie in poche ore.
 
-You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
+Qui puoi trovare gli orari di build aggiornati e lo stato: https://github.com/freeCodeCamp/news#build
 
 ## Come menzionare l'autore originale di un articolo tradotto
 
@@ -288,16 +288,16 @@ Poi, ogni lingua ha due colonne. Se traduci in Dothraki, sarai interessato alle 
 
 Dopo aver apportato le modifiche e salvato il file, dovrai effettuare una PR con le modifiche proposte. Una volta che la PR è stata accettata, dovrai eseguire le procedure GitHub Action per aggiornare il glossario. I cambiamenti apportati al glossario non saranno immediati.
 
-## How to Promote a Contributor to Proofreader
+## Come Promuovere un Contributore a Revisore
 
-If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
+Se consideri che un contributore potrebbe diventare un revisore di Crowdin, puoi dargli il ruolo di revisore in questo modo:
 
-In Crowdin, individuate the `User management` on the left hand side menu.
+Su Crowdin, individua `User management` sul lato sinistro del menu.
 
-This will open the user management tools, you will be able to see the list of all the users.
+Aprirà gli strumenti di gestione degli utenti e sarai in grado di vedere la lista di tutti gli utenti.
 
-Search for the user that will become contributor. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+Search for the user that will become contributor. Utilizzare il menu a tre punti nella riga dell'utente per aprire un menu e selezionare "Add to team". I team di revisori hanno il nome standard di `Proof Readers (<language>)`, puoi cercare il team usando il nome della lingua. Una volta selezionato il team, utilizza il pulsante "ADD" in fondo alla pagina per finalizzare il processo.
 
-The user is now a proofreader.
+L'utente ora è un revisore.
 
-> [!TIP] The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.
+> [!TIP] I revisori appena promossi possono trarre vantaggio dalla lettura della documentazione [Come revisionare le traduzioni](how-to-proofread-files.md).
