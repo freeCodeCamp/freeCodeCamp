@@ -74,7 +74,8 @@ app.start = _.once(function () {
       app.get('port'),
       app.get('env')
     );
-    log(`connecting to db at ${db.settings.url}`);
+    const severedDbURI = db.settings.url.replace(/(?<=\/\/).+?(?=@)/, '***');
+    log(`connecting to db at ${severedDbURI}`);
   });
 
   process.on('SIGINT', () => {
