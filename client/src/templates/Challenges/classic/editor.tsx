@@ -407,20 +407,18 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility;
     };
 
-    const isTabTrappedPermanently = () => {
-      const tabTrapped = store.get('tabTrappedPermanently') as
-        | boolean
-        | undefined;
+    const isTabTrapped = () => {
+      const tabTrapped = store.get('monacoTabTrapped') as boolean | undefined;
       return tabTrapped === false ? false : true;
     };
 
-    const setTabTrappedPermanently = (trapped: boolean) => {
+    const setTabTrapped = (trapped: boolean) => {
       editor.createContextKey('editorTabMovesFocus', !trapped);
-      store.set('tabTrappedPermanently', trapped);
+      store.set('monacoTabTrapped', trapped);
       const tabTrappedMessage =
-        'Pressing tab will now insert the tab character permanently';
+        'Pressing tab will now insert the tab character';
       const tabFreeMessage =
-        'Pressing tab will now move focus to the next focusable element permanently';
+        'Pressing tab will now move focus to the next focusable element';
       ariaAlert(`${trapped ? tabTrappedMessage : tabFreeMessage}`);
     };
 
@@ -430,9 +428,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
 
     // By default, Tab will be trapped in the monaco editor, so we only need to
-    // check if the user has permanently turned this off.
-    if (!isTabTrappedPermanently()) {
-      setTabTrappedPermanently(false);
+    // check if the user has turned this off.
+    if (!isTabTrapped()) {
+      setTabTrapped(false);
     }
 
     // Focus should not automatically leave the 'Code' tab when using a keyboard
@@ -538,7 +536,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       }
     });
     editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_M, () => {
-      setTabTrappedPermanently(!isTabTrappedPermanently());
+      setTabTrapped(!isTabTrapped());
     });
     // Introduced as a work around for a bug in JAWS 2022
     // https://github.com/FreedomScientific/VFO-standards-support/issues/598
