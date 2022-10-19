@@ -407,10 +407,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility;
     };
 
-    const isTabTrapped = () => {
-      const tabTrapped = store.get('monacoTabTrapped') as boolean | undefined;
-      return tabTrapped === false ? false : true;
-    };
+    const isTabTrapped = () => !!(store.get('monacoTabTrapped') ?? true);
 
     const setTabTrapped = (trapped: boolean) => {
       editor.createContextKey('editorTabMovesFocus', !trapped);
