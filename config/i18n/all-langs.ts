@@ -143,7 +143,7 @@ export const auditedCerts = {
     SuperBlocks.FrontEndDevLibs
   ],
   arabic: [
-    SuperBlocks.RespWebDesign,
+    SuperBlocks.RespWebDesignNew,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs
   ]
