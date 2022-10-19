@@ -250,7 +250,7 @@ jobs:
           import_eq_suggestions: false
           # downloads
           download_translations: true
-          download_language: arabic
+          download_language: ar
           skip_untranslated_files: false
           export_only_approved: true
           push_translations: false
