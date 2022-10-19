@@ -7,11 +7,11 @@ dashedName: step-162
 
 # --description--
 
-After your `numbers` array, create a `while` loop. A <dfn>while</dfn> loop accepts a condition, and will run the code in the block until the condition is no longer true.
+Dopo l'array `numbers`, crea un loop `while`. Un loop <dfn>while</dfn> accetta una condizione ed esegue il codice all'interno del blocco fino al momento in cui la condizione non è più vera.
 
-Your `while` loop should run while `numbers.length` is less than `10`.
+Il loop `while` dovrebbe essere eseguito mentre `numbers.length` è minore di `10`.
 
-Here is an example of a `while` loop that runs while `i` is less than five.
+Ecco un esempio di loop `while` che viene eseguito mentre `i` è minore di cinque.
 
 ```js
 while (i < 5) {
@@ -21,13 +21,13 @@ while (i < 5) {
 
 # --hints--
 
-Your `pick` function should have a `while` loop.
+La funzione `pick` dovrebbe avere un loop `while`.
 
 ```js
 assert.match(pick.toString(), /while\s*\(/);
 ```
 
-Your `while` loop should run while `numbers.length < 10`.
+Il loop `while` dovrebbe essere eseguito mentre `numbers.length < 10`.
 
 ```js
 assert.match(pick.toString(), /while\s*\(\s*numbers.length\s*<\s*10\s*\)/);

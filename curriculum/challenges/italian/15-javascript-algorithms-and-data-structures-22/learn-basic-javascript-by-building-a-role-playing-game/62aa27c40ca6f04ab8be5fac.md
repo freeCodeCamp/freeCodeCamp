@@ -7,7 +7,7 @@ dashedName: step-166
 
 # --description--
 
-A `for` loop runs for a specific number of times. We will break down how a `for` loop runs in the next several steps. For now, copy this loop below and paste it at the end of your `pick` function.
+Un loop `for` viene eseguito per un numero specifico di volte. Nei prossimi step, analizzeremo l'esecuzione di un loop `for`. Per ora, copia il loop qui sotto e incollalo alla fine della funzione `pick`.
 
 ```js
 for (let x = 1; x < 5; x++) {
@@ -17,7 +17,7 @@ for (let x = 1; x < 5; x++) {
 
 # --hints--
 
-You should copy the above loop into your `pick` function.
+Dovresti copiare il loop qui sopra nella funzione `pick`.
 
 ```js
 assert.match(pick.toString(), /for\s*\(\s*(let|var)\s*x\s*=\s*1\s*;\s*x\s*<\s*5\s*;\s*x\s*\+\+\s*\)/);
