@@ -131,7 +131,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
       />
       <a
         className="big-cta-btn btn btn-lg btn-primary btn-block"
-        href="http://localhost:3000/signin"
+        href="https://3000-sboonny-freecodecamp-w975z32jddw.ws-eu71.gitpod.io/signin"
         onClick={[Function]}
         onKeyDown={[Function]}
       >

@@ -11,7 +11,7 @@ exports[`<Map /> snapshot: Map 1`] = `
     >
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-one/"
         >
           <div
@@ -51,7 +51,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-four/"
         >
           <div
@@ -91,7 +91,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-one/"
         >
           <div
@@ -131,7 +131,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-one/"
         >
           <div
@@ -171,7 +171,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-one/"
         >
           <div
@@ -211,7 +211,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-one/"
         >
           <div
@@ -251,7 +251,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-two/"
         >
           <div
@@ -291,7 +291,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-two/"
         >
           <div
@@ -331,7 +331,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-two/"
         >
           <div
@@ -371,7 +371,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-two/"
         >
           <div
@@ -411,7 +411,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-three/"
         >
           <div
@@ -451,7 +451,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-three/"
         >
           <div
@@ -491,7 +491,7 @@ exports[`<Map /> snapshot: Map 1`] = `
       </li>
       <li>
         <a
-          class="btn link-btn btn-lg"
+          class="btn link-btn btn-lg superblock-link"
           href="/learn/super-block-three/"
         >
           <div
