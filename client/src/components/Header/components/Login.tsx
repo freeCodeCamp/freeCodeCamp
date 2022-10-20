@@ -20,13 +20,15 @@ interface LoginProps {
   children?: ReactNode;
   'data-test-label'?: string;
   isSignedIn?: boolean;
+  id?: string;
 }
 
 const Login = ({
   block,
   children,
   'data-test-label': dataTestLabel,
-  isSignedIn
+  isSignedIn,
+  id
 }: LoginProps): JSX.Element => {
   const { t } = useTranslation();
 
@@ -37,6 +39,7 @@ const Login = ({
       className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
       data-test-label={dataTestLabel}
       href={href}
+      id={id}
     >
       <span className='login-btn-icon'>
         <FontAwesomeIcon icon={faRightToBracket} />

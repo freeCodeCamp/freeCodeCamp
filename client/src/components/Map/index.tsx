@@ -49,7 +49,7 @@ function renderLandingMap(nodes: ChallengeNode[]) {
       {nodes.map(({ challenge }, i) => (
         <li key={i}>
           <Link
-            className='btn link-btn btn-lg'
+            className='btn link-btn btn-lg superblock-link'
             to={`/learn/${challenge.superBlock}/`}
           >
             <div style={linkSpacingStyle}>
@@ -76,7 +76,7 @@ function renderLearnMap(
       {nodes.map(({ challenge }, i) => (
         <li key={i}>
           <Link
-            className='btn link-btn btn-lg'
+            className='btn link-btn btn-lg superblock-link'
             to={`/learn/${challenge.superBlock}/`}
           >
             <div style={linkSpacingStyle}>

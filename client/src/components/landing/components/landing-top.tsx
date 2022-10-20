@@ -53,7 +53,7 @@ function LandingTop({ pageName }: LandingTopProps): JSX.Element {
             )}
           </div>
           <Spacer />
-          <BigCallToAction pageName={pageName} />
+          <BigCallToAction pageName={pageName} id='default-layout-button' />
           <CampersImage pageName={pageName} />
           <Spacer />
         </Col>
