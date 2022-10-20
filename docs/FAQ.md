@@ -122,3 +122,8 @@ Thanks in advance for being polite and patient. Remember – this community is r
 If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**
+### Additional Assistance
+
+If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
+
+**You can email our developer staff at: `dev[at]freecodecamp.org`**
