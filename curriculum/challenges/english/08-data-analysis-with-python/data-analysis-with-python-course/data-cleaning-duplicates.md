@@ -26,17 +26,34 @@ More resources:
 The Python method `.duplicated()` returns a boolean Series for your DataFrame. `True` is the return value for rows that:
 
 ## --answers--
+```
+import pandas as pd
+ 
+# making data frame from csv file
+data = pd.read_csv("/content/employees.csv")
+ 
+# sorting by first name
+data.sort_values("First Name", inplace = True)
+ 
+# making a bool series
+bool_series = data["First Name"].duplicated()
+print(bool_series)
 
-contain a duplicate, where the value for the row contains the first occurrence of that value.
+101    False
+327     True
+440     True
+937     True
+137    False
+       ...  
+902     True
+925     True
+946     True
+947     True
+951     True
+Name: First Name, Length: 1000, dtype: bool
 
----
-
-contain a duplicate, where the value for the row is at least the second occurrence of that value.
-
----
-
-contain a duplicate, where the value for the row contains either the first or second occurrence.
-
+```
+Link to Colab: https://colab.research.google.com/drive/1BEpuZ4CUzp4Or3IfG4QuTZ1OKkQR1qZ2?usp=sharing
 ## --video-solution--
 
 2
