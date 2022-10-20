@@ -58,5 +58,4 @@ function redGreenBlueTilesTwo(m, nmin, nmax) {
     cache[m] = solutions;
     return solutions;
  }
- assert.strictEqual(redGreenBlueTilesTwo(m,nmin,nmax), 100808458960497);
 ```
