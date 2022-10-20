@@ -3,7 +3,7 @@ import i18next from 'i18next';
 import React from 'react';
 
 import { SuperBlocks } from '../../../../config/certification-settings';
-import envData from '../../../../config/env.json';
+import { curriculumLocale } from '../../../../config/env.json';
 import { isAuditedCert } from '../../../../utils/is-audited';
 import { generateIconComponent } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
@@ -11,8 +11,6 @@ import { ChallengeNode } from '../../redux/prop-types';
 import { Link, Spacer } from '../helpers';
 
 import './map.css';
-
-const { curriculumLocale } = envData;
 
 interface MapProps {
   currentSuperBlock?: SuperBlocks | null;

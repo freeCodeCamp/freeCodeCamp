@@ -30,6 +30,7 @@ import { UserFetchState, User } from '../../redux/prop-types';
 import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
+import { clientLocale } from '../../../../config/env.json';
 
 import Footer from '../Footer';
 import Header from '../Header';
@@ -95,7 +96,7 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
 
 class DefaultLayout extends Component<DefaultLayoutProps> {
   static displayName = 'DefaultLayout';
-
+  rtlLanguage = ['arabic', 'udru'].includes(clientLocale);
   componentDidMount() {
     const { isSignedIn, fetchUser, pathname, executeGA } = this.props;
     if (!isSignedIn) {
@@ -148,7 +149,7 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
     } = this.props;
 
     return (
-      <div className='page-wrapper'>
+      <div className={`${this.rtlLanguage ? 'rtl-layout' : ''}page-wrapper`}>
         <Helmet
           bodyAttributes={{
             class: useTheme

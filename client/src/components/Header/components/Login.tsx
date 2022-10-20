@@ -6,10 +6,8 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import envData from '../../../../../config/env.json';
+import { apiLocation, homeLocation } from '../../../../../config/env.json';
 import { isSignedInSelector } from '../../../redux/selectors';
-
-const { apiLocation, homeLocation } = envData;
 
 const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
   isSignedIn
