@@ -223,3 +223,24 @@ p.caption {
     padding-bottom: 0;
   }
 }
+
+.rtl-layout .landing-top .big-heading,
+.rtl-layout .landing-top p,
+.rtl-layout .landing-top #default-layout-button .login-btn-text,
+.rtl-layout .landing-top #default-layout-button .login-btn-text,
+.rtl-layout .as-seen-in .big-heading,
+.rtl-layout .container .testimonials .big-heading,
+.rtl-layout .container .testimonials .testimonials-footer,
+.rtl-layout .certification-section .big-heading,
+.rtl-layout .certification-section .map-ui ul li .superblock-link {
+  direction: rtl;
+}
+
+.rtl-layout .map-ui .superblock-link .map-icon {
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+.rtl-layout .map-ui .superblock-link > svg {
+  transform: rotate(180deg);
+}

@@ -96,7 +96,7 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
 
 class DefaultLayout extends Component<DefaultLayoutProps> {
   static displayName = 'DefaultLayout';
-  rtlLanguage = ['arabic', 'udru'].includes(clientLocale);
+  rtlLanguage: boolean = ['arabic', 'udru'].includes(clientLocale);
   componentDidMount() {
     const { isSignedIn, fetchUser, pathname, executeGA } = this.props;
     if (!isSignedIn) {
