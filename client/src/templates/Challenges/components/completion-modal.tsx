@@ -196,7 +196,7 @@ export class CompletionModalInner extends Component<
     return {
       downloadURL: newURL,
       completedPercent,
-      completedProjects: completedProjects
+      completedProjects
     };
   }
 
