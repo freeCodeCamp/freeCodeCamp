@@ -244,8 +244,7 @@ export class CompletionModalInner extends Component<
       superBlock = ''
     } = this.props;
 
-    const { completedPercent } = this.state;
-    const { completedProjects } = this.state;
+    const { completedPercent, completedProjects } = this.state;
 
     if (isOpen) {
       executeGA({ type: 'modal', data: '/completion-modal' });
