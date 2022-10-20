@@ -2,10 +2,9 @@ name: CI - Find Unused Exports, Types and Files
 env:
   NODE_OPTIONS: '--max_old_space_size=6144'
 on:
-  push:
-    branches-ignore:
-      - 'renovate/**'
-  pull_request:
+  schedule:
+    # runs every monday at 08:45 UTC
+    - cron: '45 8 * * 1'
 
 permissions:
   contents: read
