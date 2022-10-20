@@ -481,7 +481,7 @@ We are closing this pull request. Please suggest links and other details to add 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### Adding comment about newbie mistakes
+### Aggiungere un commento riguardo agli errori da principiante
 
 ```markdown
 As a new contributor, we encourage you to read our [contributing guidelines](https://contribute.freecodecamp.org).
@@ -501,9 +501,9 @@ We appreciate you taking the time to help us, and we hope to see more contributi
 Happy Contributing.
 ```
 
-### Closing Invalid Issues
+### Chiudere le issue non valide
 
-> Quando un issue è inerente al codice del camper.
+> Quando una issue è inerente al codice del camper.
 
 ```markdown
 Thank you for reporting this issue.
@@ -525,7 +525,7 @@ This is a standard message notifying you that this issue appears to be very simi
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-> Quando un problema viene risolto durante lo staging.
+> Quando una issue viene risolta durante lo staging.
 
 ```markdown
 Thank you for reporting this issue.
@@ -535,7 +535,7 @@ This is a standard message notifying you that the problem you mentioned here is 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### `first timer only` Issues
+### Issue `first timer only`
 
 > Quando un'issue è ritenuta idonea per chi contribuisce al codice per la prima volta.
 
@@ -557,7 +557,7 @@ Sometimes we may get more than one pull request. We typically accept the most qu
 Happy contributing.
 ```
 
-### Requests for Assignment
+### Richieste di assegnazione
 
 ```md
 We typically do not assign issues. Instead, we accept the first pull request that comprehensively solves the issue.

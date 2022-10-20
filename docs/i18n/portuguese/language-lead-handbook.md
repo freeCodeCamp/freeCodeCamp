@@ -295,7 +295,7 @@ No Crowdin, você individualiza `User management` (gerenciamento do usuário) no
 
 Isto abrirá as ferramentas de gerenciamento de usuário, você será capaz de ver a lista de todos os usuários.
 
-Procure pelo usuário que se tornará um colaborador. Use o menu de três pontos na linha do usuário para abrir um menu e selecione "Add to team" (Adicionar à equipe). As equipes de revisão têm o nome padrão de `Proof Readers (<language>)`. Você pode pesquisar a equipe usando o nome do idioma. Depois de selecionar a equipe, use o botão "ADD" na parte inferior da página para finalizar.
+Search for the user that will become proofreader. Use o menu de três pontos na linha do usuário para abrir um menu e selecione "Add to team" (Adicionar à equipe). As equipes de revisão têm o nome padrão de `Proof Readers (<language>)`. Você pode pesquisar a equipe usando o nome do idioma. Depois de selecionar a equipe, use o botão "ADD" na parte inferior da página para finalizar.
 
 O usuário agora é um revisor.
 
