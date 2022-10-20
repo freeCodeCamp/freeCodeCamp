@@ -60,7 +60,7 @@ Alcuni esempi di buoni titoli di PR sono:
    <details>
    <summary>Vedi screenshot</summary>
 
-   ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![Immagine - Compare & pull request prompt su GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
    </details>
 
@@ -71,7 +71,7 @@ Alcuni esempi di buoni titoli di PR sono:
    <details>
    <summary>Vedi screenshot</summary>
 
-   ![Image - Comparing forks when making a pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
+   ![Immagine - Confrontare i fork quando si effettua una pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
    </details>
 
@@ -97,42 +97,42 @@ Alcuni esempi di buoni titoli di PR sono:
 
 > :tada: Congratulazioni per avere creato un PR e grazie mille per aver dedicato il tuo tempo a contribuire.
 
-Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
+I nostri moderatori ora daranno un'occhiata e ti lasceranno un feedback. Ti preghiamo di essere paziente con i colleghi moderatori e di rispettare il loro tempo. Tutte le pull request sono riviste a tempo debito.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+E come sempre, poni liberamente le tue domande [nella categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Se vuoi contribuire a più di una PR, ti raccomandiamo di leggere la [guida su fare modifiche e sincronizzare](how-to-setup-freecodecamp-locally.md#making-changes-locally) per evitare di dover cancellare il tuo fork.
 
 ## Conflitti su una pull request
 
-Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
+I conflitti possono sorgere perché molti contributori lavorano sul repository e le modifiche possono interrompere la tua PR in attesa di una revisione e di un merge.
 
-More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
+Spesso potresti non aver bisogno di un rebase, perché schiacciamo tutti i commit, tuttavia se è richiesto un rebase, ecco quello che dovresti fare.
 
 ### Per le solite correzioni di bug e funzionalità
 
-When you are working on regular bugs and features on our development branch `main`, you are able to do a simple rebase:
+Quando stai lavorando su normali bug e funzionalità sul nostro ramo di sviluppo `main`, puoi fare un semplice rebase:
 
-1. Rebase your local copy:
+1. Esegui un rebase della tua copia locale:
 
    ```console
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
-2. Resolve any conflicts and add / edit commits
+2. Risolvi eventuali conflitti e aggiungi / modifica i commit
 
    ```console
-   # Either
+   # O
    git add .
    git commit -m "chore: resolve conflicts"
 
-   # Or
+   # O
    git add .
    git commit --amend --no-edit
    ```
 
-3. Push back your changes to the PR
+3. Fai il push dei tuoi cambiamenti alla PR
 
    ```console
    git push --force origin <pr-branch>
@@ -140,9 +140,9 @@ When you are working on regular bugs and features on our development branch `mai
 
 ### Per il curriculum e le caratteristiche future
 
-When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
+Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, devi fare un cherry pick:
 
-1. Make sure your upstream comes in sync with your local:
+1. Assicurati che il tuo upstream sia sincronizzato con il tuo repository locale:
 
    ```console
    git checkout main
@@ -151,41 +151,41 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    git reset --hard upstream/next-python-projects
    ```
 
-2. Take backup
+2. Fai un backup
 
-   a. Either delete your local branch after taking a backup (if you still have it locally):
+   a. Elimina il ramo locale dopo aver effettuato un backup (se lo hai ancora localmente):
 
    ```console
    git checkout <pr-branch-name>
 
-   # example:
+   # esempio:
    # git checkout feat/add-numpy-video-question
 
    git checkout -b <backup-branch-name>
 
-   # example:
+   # esempio:
    #  git checkout -b backup-feat/add-numpy-video-question
 
    git branch -D <pr-branch-name>
    ```
 
-   b. Or just a backup of your pr branch (if you do not have it locally):
+   b. O solo un backup del ramo pr (se non lo hai localmente):
 
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-   # example:
+   # esempio:
    #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
    ```
 
-3. Start off with a clean slate:
+3. Inizia con una slate pulita:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-4. Resolve any conflicts, cleanup, install dependencies and run tests
+4. Risolvi eventuali conflitti, fai pulizia, installa le dipendenze ed esegui i test
 
    ```console
    npm run clean
@@ -199,7 +199,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    ```
 
-5. If everything looks good push back to the PR
+5. Se tutto sembra funzionare fai un push alla PR
 
    ```console
    git push --force origin <pr-branch-name>

@@ -8,7 +8,7 @@ dashedName: arithmetic-formatter
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow"> working on this project with our Replit starter code</a>.
+你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
 # --instructions--
 
@@ -64,7 +64,7 @@ arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
   - 每個數字（操作數）應該只包含數字。 否則，該函數將返回： `Error: Numbers must only contain digits.`
   - 每個操作數（也就是運算符兩側的數字）的寬度最多爲四位。 否則，返回的錯誤字符串將爲： `Error: Numbers cannot be more than four digits.`
 - 如果用戶提供了正確格式的問題，返回的轉換將遵循以下規則：
-  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
+  - 操作符和兩個操作數中最長的一個之間應該有一個空格，操作符將與第二個操作數在同一行，兩個操作數的順序與提供的相同（第一個是上面的，第二個是下面的）。
   - 數字應該右對齊。
   - 每個問題之間應該有四個空格。
   - 每個問題的底部都應該有破折號。 破折號應該單獨沿着每個問題的整個長度延伸。 （上面的例子展示了這應該是什麼樣子。）

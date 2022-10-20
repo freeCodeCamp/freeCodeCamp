@@ -90,9 +90,9 @@ Für jede Datei und jeden Ordner wird ein Fortschrittsbalken angezeigt. Der **bl
 
 Wähle eine Datei aus, an der du arbeiten möchtest und Crowdin öffnet die Editor-Ansicht.
 
-> [!NOTE] When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
+> [!NOTE] Wenn sich die Editoransicht öffnet, musst du auf das Einstellungssymbol (dargestellt als Zahnrad) klicken und die Einstellung 'HTML-Tags anzeigen' auf 'ANZEIGEN' umstellen. Dadurch wird sichergestellt, dass du Tags wie `<code></code>` anstelle von `<0></0>` sehen kannst.
 
-## Translate Curriculum
+## Lehrplan übersetzen
 
 ![Bild - Editoransicht](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
@@ -109,49 +109,49 @@ Crowdin trennt ein Dokument in übersetzbare "Strings", normalerweise Sätze. Je
 9. Hier siehst du das Fenster für die Kommentare. Wenn du Fragen oder Bedenken zu einem bestimmten String hast, kannst du hier einen Kommentar zu dem String hinterlassen, den andere Übersetzer sehen können.
 10. Diese beiden Buttons blenden die linke (Dokument-) und rechte (Kommentar-) Ansicht aus.
 
-> [!NOTE] If you see a hidden string that includes translations, please notify us in the [Discord](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
+> [!NOTE] Wenn du einen versteckten String siehst, die Übersetzungen enthält, teile uns dies bitte im [Discord](https://discord.gg/PRyKn3Vbay) mit, damit wir die Übersetzung aus dem Speicher entfernen können.
 
 Wenn du eine Übersetzung für einen String fertiggestellt hast, wähle den `Save` Button, um deine Übersetzung auf Crowdin zu speichern. Andere Mitwirkende können dann über deine Übersetzung abstimmen und Korrekturleser können sie genehmigen.
 
 Du kannst so viele Strings übersetzen, wie du möchtest - es sind keine zusätzlichen Schritte erforderlich, wenn du eine vollständige Datei fertigstellst oder eine neue Übersetzung vorschlägst. Ein Klick auf den `Save` Button ist alles, was nötig ist, um eine Übersetzung zu speichern.
 
-> [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
+> [!NOTE] Wenn du in der englischen Quelldatei etwas siehst, das ungenau oder falsch ist, korrigiere es bitte nicht im Rahmen des Übersetzungsprozesses. Hinterlasse stattdessen einen Kommentar zu dem String, um uns auf die Unstimmigkeit hinzuweisen, oder erstelle ein Issue auf GitHub.
 
-## Translate the Learn Interface
+## Die Lernoberfläche übersetzen
 
-Our `/learn` interface relies on JSON files loaded into an i18n plugin to generate translated text. This translation effort is split across both Crowdin and GitHub.
+Unsere `/learn`-Oberfläche basiert auf JSON-Dateien, die in ein i18n-Plugin geladen werden, um übersetzten Text zu erzeugen. Diese Übersetzungsarbeit verteilt sich sowohl auf Crowdin als auch auf GitHub.
 
-### On GitHub
+### Auf GitHub
 
-The `links.json`, `meta-tags.json`, `motivation.json`, and `trending.json` files contain information that needs to be updated to reflect your language. However, we cannot load these into Crowdin, as the content isn't something that would be a one-to-one translation.
+Die Dateien `links.json`, `meta-tags.json`, `motivation.json` und `trending.json` enthalten Informationen, die an deine Sprache angepasst werden müssen. Wir können diese jedoch nicht in Crowdin laden, da der Inhalt nicht eins zu eins übersetzt werden kann.
 
-These files will most likely be maintained by your language lead but you are welcome to [read about how to translate them](language-lead-handbook.md).
+Diese Dateien werden höchstwahrscheinlich von deinem Sprachverantwortlichen (Language Lead) gepflegt, aber du kannst gerne [nachlesen, wie du sie übersetzen kannst](language-lead-handbook.md).
 
-### On Crowdin
+### Auf Crowdin
 
-> [!ATTENTION] Do not edit the following files through a GitHub PR.
+> [ATTENTION] Bearbeite die folgenden Dateien nicht über einen GitHub-PR.
 
-The `intro.json` and `translations.json` files are both translated on Crowdin, in the Learn User Interface project. Translating these can be a bit tricky, as each individual JSON value appears as its own string and sometimes the context is missing.
+Die Dateien `intro.json` und `translations.json` werden beide auf Crowdin im Projekt "Learn User Interface" übersetzt. Diese zu übersetzen kann etwas knifflig sein, da jeder einzelne JSON-Wert als eigener String erscheint und manchmal der Kontext fehlt.
 
-However, the `Context` information provided in Crowdin can help understand where the string fits in to the larger structure.
+Die `Context`-Informationen, die Crowdin bereitstellt, können jedoch dabei helfen zu verstehen, wo der String in die größere Struktur eingebunden ist.
 
-![Image with an arrow pointing to Crowdin's context information](https://contribute.freecodecamp.org/images/crowdin/context.png)
+![Bild mit einem Pfeil, der auf die Kontextinformationen von Crowdin verweist](https://contribute.freecodecamp.org/images/crowdin/context.png)
 
-If you have any questions about where a string fits in to the prose, reach out to us in our [contributor chat](https://discord.gg/PRyKn3Vbay).
+Wenn du Fragen dazu hast, wo der zu übersetzende String verwendet wird, frage bitte im [contributor chat](https://discord.gg/PRyKn3Vbay) nach.
 
-## Translate Documentation
+## Dokumentation übersetzen
 
-Translating our contributing documentation is a similar flow to translating our curriculum files.
+Die Übersetzung der Dokumentation für die Mitarbeit ist ein ähnlicher Prozess wie die Übersetzung der Lehrplandateien.
 
-> [!NOTE] Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
+> [!NOTE] Unsere Dokumentation wird von `docsify` unterstützt, und wir haben ein spezielles Parsing für Nachrichtenboxen wie diese hier. Wenn du Strings siehst, die mit `[!NOTE]`, `[!WARNING]` oder `[!TIP]` beginnen, solltest du diese Wörter NICHT übersetzen.
 
-### How to translate documentation with internal links
+### Wie man Dokumentation mit internen Links übersetzt
 
-When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
+Wenn du an der Übersetzung der Dokumentation arbeitest, achte auf interne Links, die auf einen anderen Teil der Dokumentation verweisen.
 
-Make sure to replace the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
+Achte darauf, dass du die ID des Zielabschnitts (der Teil nach `#`) durch die ID des übersetzten Dokuments ersetzt. Auf Japanisch sieht es zum Beispiel so aus:
 
-Before translation
+Vor der Übersetzung
 
 ```
 // in HTML
@@ -163,7 +163,7 @@ Before translation
 [Link text](#target-section-heading-id)
 ```
 
-After translation
+Nach der Übersetzung
 
 ```
 // in HTML
@@ -175,15 +175,15 @@ After translation
 [翻訳後のリンクテキスト](#翻訳後の-id)
 ```
 
-The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
+Die eigentlichen Dateien in der Dokumentation sind in Markdown geschrieben, aber sie erscheinen als HTML-Tags auf Crowdin.
 
-You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+Du kannst herausfinden, wie `docsify` einen String in deiner Sprache in eine ID umwandelt, indem du dir die übersetzten Seiten ansiehst. Wenn die Übersetzung noch nicht bereitgestellt wurde, kannst du dir eine Vorschau anzeigen lassen, indem du [die Dokumentseite lokal aufrufst](how-to-work-on-the-docs-theme.md#Lokale Bereitstellung der Dokumentationsseite).
 
-You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
+Du kannst  [ hier ](how-to-work-on-the-docs-theme.md#Wie man einen internen Link erstellt) mehr über interne Links in unserer Dokumentation erfahren.
 
-## Translate the LearnToCode RPG
+## Übersetze das LearnToCode RPG
 
-The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
+Das LearnToCode RPG läuft auf Ren'Py, das eine spezielle Syntax für übersetzte Strings verwendet: (Siehe [Ren'Py Text Dokumentation](https://www.renpy.org/doc/html/text.html))
 
 - Die zu übersetzenden Sätze stehen immer zwischen `""`. Dies sind Dialoge oder Strings der Benutzeroberfläche. Die Schlüsselwörter, die vor oder nach dem Dialog stehen, sind Schlüsselwörter zur Steuerung der Spiel-Engine und werden in den nachfolgenden Regeln genauer erklärt. Beachte, dass diese erste Regel für alle nachfolgenden Regeln gilt.
 - Im Falle von `new "..."` übersetze nicht das Schlüsselwort `new`.
@@ -193,7 +193,7 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 - Das Schlüsselwort `nointeract` am Ende des Satzes darf nicht übersetzt werden.
 - Wenn wir versuchen, Klammern in voller Breite `（）` zu verwenden, wird eine QA-Warnung angezeigt. Um die QA-Warnung zu vermeiden, verwende Klammern mit halber Breite `()`
 
-### Examples
+### Beispiele
 
 ---
 
@@ -201,17 +201,17 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- Dies ist die Zeile, die übersetzt werden muss. Siehe Übersetzung unten
 ```
 
 #### Nach der Übersetzung
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
+"[player_name]? Was für ein Zufall! Unser VIP-Teammitglied, {a=[vip_profile_url]}[player_name]{/a} wird sich geehrt fühlen, davon zu hören."
 ```
 
-Note: The `[]` and `{}` tags should be left intact.
+Hinweis: Die Tags `[]` und `{}` sollten intakt bleiben.
 
 ---
 
@@ -219,17 +219,17 @@ Note: The `[]` and `{}` tags should be left intact.
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
-new "{icon=icon-fast-forward} Skip" <-- translate this line, see below
+new "{icon=icon-fast-forward} Skip" <-- übersetze diese Zeile, siehe unten
 ```
 
 #### Nach der Übersetzung
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
-new "{icon=icon-fast-forward} 跳过"
+new "{icon=icon-fast-forward} Überspringen"
 ```
 
-Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be left intact.
+Hinweis: Auch hier sollten das Präfix `new` und der Tag `{icon=icon-fast-forward}` intakt bleiben.
 
 ---
 
@@ -244,10 +244,10 @@ layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
-layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
+layla @ neutral "Ha ha, [player_name]，Du bist so witzig. Ich bin sicher, dass dir die Arbeit als Entwickler Spaß machen wird."
 ```
 
-Note: `layla @ neutral` and `[player_name]` are left unchanged.
+Hinweis: `layla @ neutral` und `[player_name]` bleiben unverändert.
 
 ---
 
@@ -262,76 +262,77 @@ player "Maybe this is all a dream?" nointeract
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
-player "也许这都是一场梦？" nointeract
+player "Vielleicht ist das alles nur ein Traum?" nointeract
 ```
 
 ---
 
-### A Note on How Crowdin Segments a Sentence
+### Ein Hinweis dazu, wie Crowdin einen Satz unterteilt
 
-Pay attention to how Crowdin segments a line of dialogue wrapped between opening and closing quotes `""`. When we are translating the dialogue, we need to make sure to retain the opening and closing quotes, even if the quotes appear in different segments.
+Achte darauf, wie Crowdin eine Dialogzeile zwischen öffnenden und schließenden Anführungszeichen `""` unterteilt. Bei der Übersetzung des Dialogs müssen wir darauf achten, dass die einleitenden und abschließenden Anführungszeichen beibehalten werden, auch wenn die Anführungszeichen in verschiedenen Abschnitten vorkommen.
 
-This is the line to be translated:
+Dies ist die zu übersetzende Zeile:
 
 ```renpy
 player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
 ```
 
-Crowdin segments it into three parts like below:
+Crowdin unterteilt es in drei Teile wie unten dargestellt:
 
-<img width="836" alt="Screen Shot 2022-01-23 at 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
+<img width="836" alt="Screenshot 2022-01-23 um 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
 
 ```renpy
-# original
+# Original
 player @ surprised "{b}Full-stack{/b}
-# translated, keeping the opening quotes `"`
+# übersetzt, wobei die einleitenden Anführungszeichen beibehalten werden `"`
 player @ surprised "{b}全栈{/b}
 ```
 
-<img width="750" alt="Screen Shot 2022-01-23 at 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
+<img width="750" alt="Screenshot 2022-01-23 um 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
 
 ```renpy
-# original
+# Original
 What is that?
-# translated, no quotes on either side
+
+# übersetzt, keine Anführungszeichen auf beiden Seiten
 这是什么？
 ```
 
-<img width="857" alt="Screen Shot 2022-01-23 at 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
+<img width="857" alt="Screenshot 2022-01-23 um 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
 
 ```renpy
-# original
+# Original
 I better take notes so I can learn more about it."
-# translated, keeping the closing quotes `"`
+# übersetzt, wobei die abschließenden Anführungszeichen beibehalten werden `"`
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
-## Rate Translations
+## Übersetzungen bewerten
 
-Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
+Crowdin ermöglicht es dir, die vorhandenen Übersetzungsvorschläge zu bewerten. Wenn du versuchst, eine Übersetzung zu speichern, erscheint möglicherweise die Meldung, dass du eine doppelte Übersetzung nicht speichern kannst - dies bedeutet, dass ein anderer Mitwirkender diese identische Übersetzung vorgeschlagen hat. Wenn du mit der Übersetzung einverstanden bist, dann klicke auf die Schaltfläche `+`, um die Übersetzung "hochzustufen".
 
-If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
+Wenn du eine Übersetzung siehst, die ungenau ist oder nicht die gleiche Klarheit wie das Original bietet, klicke auf den `-`-Button, um die Übersetzung "herunterzustufen".
 
-Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+Crowdin nutzt diese Stimmen, um jeder vorgeschlagenen Übersetzung für einen String eine Punktzahl zu geben, die dem Korrekturleseteam hilft, zu entscheiden, welche Übersetzung für den jeweiligen String am besten geeignet ist.
 
-## Quality Assurance Checks
+## Qualitätssicherungsprüfungen
 
-We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+Wir haben einige Qualitätssicherungsschritte aktiviert, die sicherstellen, dass eine Übersetzung so genau wie möglich ist - dies hilft unseren Korrekturlesern bei der Überprüfung vorgeschlagener Übersetzungen.
 
-When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
+Wenn du versuchst, eine Übersetzung zu speichern, erscheint möglicherweise eine Warnmeldung mit einem Hinweis auf deine vorgeschlagene Übersetzung.
 
-![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
+![Bild - QS-Warnmeldung](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
+Diese Meldung wird angezeigt, wenn das Qualitätssicherungssystem von Crowdin einen potenziellen Fehler in der vorgeschlagenen Übersetzung festgestellt hat. In diesem Beispiel haben wir den Text eines `<code>`-Tags geändert und Crowdin hat dies erkannt.
 
-> [!WARNING] You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
+> [!WARNING] Du hast die Möglichkeit, eine Übersetzung trotz Fehlern zu speichern. Wenn du dies tust, indem du auf "Save Anyway" klickst, solltest du auch einen Korrekturleser oder Projektmanager markieren und erklären, warum die QS-Meldung in diesem Fall ignoriert werden muss.
 
-## Translation Best Practices
+## Bewährte Praktiken bei der Übersetzung
 
-Follow these guidelines to ensure our translations are as accurate as possible:
+Befolge diese Richtlinien, um sicherzustellen, dass unsere Übersetzungen so genau wie möglich sind:
 
 - Übersetze nicht den Inhalt innerhalb der `<code>`-Tags. Diese Tags kennzeichnen Text, der im Code vorkommt und in Englisch belassen werden sollte.
 - Füge keine zusätzlichen Inhalte hinzu. Wenn du der Meinung bist, dass eine Aufgabe Änderungen am Textinhalt oder zusätzliche Informationen erfordert, solltest du die Änderungen in einem Issue auf GitHub oder in einem Pull Request vorschlagen, der die englische Datei ändert.
 - Ändere nicht die Reihenfolge des Inhalts.
 
-If you have any questions, feel free to reach out to us in our [Discord](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.
+Wenn du Fragen hast, kannst du uns gerne in unserem [Discord](https://discord.gg/PRyKn3Vbay) ansprechen und wir helfen dir gerne weiter.

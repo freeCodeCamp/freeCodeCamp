@@ -278,23 +278,23 @@ Quando estes arquivos estiverem no local certo, você deve poder usar `npm run d
 
 > [!ATTENTION] Embora você possa realizar as traduções localmente para fins de teste, lembramos a todos que as traduções _não_ devem ser enviadas pelo GitHub e devem ser feitas somente pelo Crowdin. Certifique-se de reiniciar sua base de código local após realizar os testes.
 
-# Deploying New Languages on `/news`
+# Implantar novos idiomas em `/news`
 
-To deploy News for a new language, you'll need to create two PRs. One PR will be to the [CDN repo](https://github.com/freeCodeCamp/cdn), and the other will be to the [News repo](https://github.com/freeCodeCamp/news).
+Para implantar novos idiomas em News, você precisa criar dois PRs. Um PR será para o [repositório do CDN](https://github.com/freeCodeCamp/cdn), enquanto o outro será para o [repositório News](https://github.com/freeCodeCamp/news).
 
-## Prep the CDN Repo for the New Language
+## Preparação do repositório do CDN para o novo idioma
 
-News sources trending links and article titles from our CDN during the build and adds them to the footer. News also fetches Day.js files from the CDN during the build to localize dates and times for each language.
+News busca os links de tendências e títulos de artigos do nosso CDN durante a build e adiciona-os ao rodapé. News também busca os arquivos Day.js do CDN durante a build para fazer a localização das datas e horários para cada idioma.
 
-### Add a YAML File for Trending Articles
+### Adicionar um Arquivo YAML para os artigos populares
 
-Clone the [CDN repo](https://github.com/freeCodeCamp/cdn) and create a new branch.
+Faça a clonagem do repositório [CDN](https://github.com/freeCodeCamp/cdn) e crie um branch.
 
-In the [`build/universal/trending`](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) directory, create a new file and name it `language.yaml`. For example, if you are launching Dothraki News, name the file `dothraki.yaml`.
+No diretório [`build/universal/trending`](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending), crie um arquivo e dê a ele o nome de `language.yaml` (onde "language" é o idioma que você deseja inserir). Por exemplo, se você estiver lançando News em dothraki, nomeie o arquivo `dothraki.yaml`.
 
-Then copy the contents of the [`english.yaml`](https://github.com/freeCodeCamp/cdn/blob/main/build/universal/trending/english.yaml) trending file and paste it into the new YAML file you just created.
+Em seguida, copie o conteúdo do arquivo trending de [`english.yaml`](https://github.com/freeCodeCamp/cdn/blob/main/build/universal/trending/english.yaml) e cole-o no novo arquivo YAML que você acaba de criar.
 
-The contents will look something like this:
+O conteúdo será parecido com isto:
 
 ```yaml
 article0title: 'Learn JavaScript'
@@ -308,19 +308,19 @@ article3link: ...
   ...
 ```
 
-### Add a Day.js Locale File for the New Language
+### Adicionar um arquivo de localização Day.js para o novo idioma
 
-By default, Day.js only includes English as a locale. To enable it to work with other languages, you need to add a new Day.js locale file to the CDN.
+Por padrão, Day.js só inclui inglês como local. Para habilitá-lo para funcionar com outros idiomas, você precisa adicionar um novo arquivo de locale Day.js ao CDN.
 
-In the [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) directory, create a new file and name it `isocode.min.js`. For example, if you are launching Dothraki News, name the file `mis.min.js`.
+No diretório  [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale), crie um arquivo e dê a ele o nome de `isocode.min.js` (onde "isocode" é o c[odigo iso do idioma que você deseja inserir). Por exemplo, se você estiver lançando News em dothraki, nomeie o arquivo `mis.min.js`.
 
-> [!NOTE] The version number will change as the dependencies are updated.
+> [!NOTE] O número da versão mudará já que as dependências são atualizadas.
 
-Then, visit [this page on cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) with all available Day.js files for the version we're using, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/<version>/locale/isocode.min.js` link for the new language, and open it in a new tab.
+Em seguida, visite [esta página no cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) com todos os arquivos Day.js disponíveis para a versão que estamos usando, encontre o link de  `https://cdnjs.cloudflare.com/ajax/libs/dayjs/<version>/locale/isocode.min.js` para o novo idioma, e abra-o em uma nova aba.
 
-> [!NOTE] You only need to add the .../dayjs/\<version\>/_locale_/isocode.min.js locale file. You do not need to add any other Day.js files.
+> [!NOTE] Você só precisa adicionar o arquivo de locale .../dayjs/\<version\>/_locale_/isocode.min.js. Você não precisa adicionar mais nenhum arquivo Day.js.
 
-Copy the Day.js locale code from the new tab into the new file you created. For example, here is an un-minified version of the English locale code for Day.js:
+Copie o código de local de Day.js da nova aba para o novo arquivo que você criou. Por exemplo, aqui está uma versão não minificada do código de localidade do inglês para Day.js:
 
 ```js
 !(function (e, n) {
@@ -344,27 +344,27 @@ Copy the Day.js locale code from the new tab into the new file you created. For 
 });
 ```
 
-Then open a PR to the CDN repo to add both the YAML and Day.js files for review.
+Em seguida, abra um PR para o repositório do CDN para adicionar os arquivos YAML e Day.js para revisão.
 
-## Prep the News Repo for the New Language
+## Preparação do repositório do CDN para o novo idioma
 
-The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost instance, the files you added to the CDN, builds News, and deploys it.
+O [repositório de News](https://github.com/freeCodeCamp/news) puxa dados de uma instância do Ghost, os arquivos que você adicionou ao CDN, faz a build de News e o implementa.
 
-> [!WARN] Pull requests to the news repo _must_ come from the same repo. You should not work off of a fork for this step.
+> [!WARN] Pull requests para o repositório de News _devem_ vir do mesmo repositório. Você não deve trabalhar a partir de um fork nesse passo.
 
-### Modify the Main Config File
+### Modificar o arquivo de configuração principal
 
-Clone the News repo and create a new branch.
+Clonar o repositório News e criar uma branch.
 
-Open the `config/index.js` file to add the new language and configure the necessary values. There are a few objects and arrays to modify:
+Abra o arquivo `config/index.js` para adicionar o novo idioma e configurar os valores necessários. Há alguns objetos e arrays que precisam ser modificados:
 
-- `locales`: This array contains the active and upcoming News languages. These are the values that are used in the `.env` file to choose the Ghost instance and UI to use for each build. Add the text name of the new language in lowercase to this array.
-- `localeCodes`: This object is a map of ISO codes for each language, and is used to configure i18next before building the UI. To add a new language, use the lowercase language name as the _key_ and the ISO 639-1 language code as the _value_.
-- `algoliaIndices`: This object is a map of Algolia indices for each language. To add a new language, use the lowercase language name as the _key_, and `news-` followed by the lowercase ISO 639-1 language code as the _value_.
+- `locales`: esse array contém os idiomas de News ativos e futuros. Esses são os valores usados no arquivo `.env` para escolher a instância e a interface do usuário do Ghost a serem usados em cada build. Adicione o nome textual do novo idioma em minúsculas a esse array.
+- `localeCodes`: esse objeto é um mapa de códigos ISO para cada idioma. Ele é usado para configurar o i18next antes da build da interface de usuário. Para adicionar um novo idioma, use o nome do idioma em minúsculas como _key_ (chave) e o código do idioma ISO 639-1 como o _value_ (valor).
+- `algoliaIndices`: esse objeto é um mapa dos índices do Algolia para cada idioma. Para adicionar um novo idioma, use o nome do idioma em minúsculas como _key_ (chave) e  `news-`, seguido do código do idioma ISO 639-1 como o _value_ (valor).
 
-> [!NOTE] If you are unsure about the string to use while setting `algoliaIndices`, send a message to Kris (@scissorsneedfoodtoo), or someone else with access to Algolia, and ask them to check.
+> [!NOTE] Se você não tem certeza sobre a string a ser usada durante a configuração de `algoliaIndices`, envie uma mensagem para o Kris (@scissorsneedfoodtoo) ou para outra pessoa com acesso ao Algolia, pedindo para que confira para você.
 
-For example, if you are launching Dothraki News, here are what the objects / arrays above should look like:
+Por exemplo, se você estiver lançando News em dothraki, aqui está o modo como os objetos/arrays acima devem parecer:
 
 ```js
 const locales = ['arabic', 'bengali', 'chinese', 'english', 'dothraki'];
@@ -386,13 +386,13 @@ const algoliaIndices = {
 };
 ```
 
-### Add the i18next JSON Files for the New Language
+### Adicionar os arquivos em JSON do i18next para o novo idioma
 
-Next, go to the `config/i18n/locales` directory, create a new folder, and give it the name of the new language you're adding. For example, if you're launching Dothraki News, create a new folder named `dothraki`.
+Em seguida, vá para o diretório `config/i18n/locales`, crie uma pasta e informe o nome do novo idioma que você está adicionando. Por exemplo, se você estiver lançando News em dothraki, crie uma pasta chamada `dothraki`.
 
-Then copy the JSON files from the `english` directory to your new folder.
+Em seguida, copie os arquivos JSON do diretório `english` para a sua nova pasta.
 
-In your new folder, open the `serve.json` file and replace its contents with the following:
+Na sua nova pasta, abra o arquivo `serve.json` e substitua seu conteúdo pelo seguinte:
 
 ```json
 {
@@ -400,10 +400,10 @@ In your new folder, open the `serve.json` file and replace its contents with the
 }
 ```
 
-Then commit and push your branch directly to the News repo.
+Em seguida, faça o commit e o push de sua branch diretamente para o repositório News.
 
-> [!NOTE] You need to be on one of the teams with access to the News repo to push branches directly to News. Currently, only the dev, i18n, and staff teams are allowed to do this.
+> [!NOTE] Você precisa estar em uma das equipes com acesso ao repositório de News para enviar branches diretamente para esse repositório. Atualmente, apenas as equipes de desenvolvimento, i18n e staff podem fazer isso.
 
-Finally, open a PR for review.
+Por fim, abra um PR para análise.
 
-Once both your PRs to the CDN and News repo have been approved, they can be merged. Deployment will be handled subsequently by the staff.
+Uma vez que os PRs para o repositório do CDN e de News tenham sido aprovados, eles podem ser mesclados. A implantação será realizada posteriormente pelos membros da equipe.

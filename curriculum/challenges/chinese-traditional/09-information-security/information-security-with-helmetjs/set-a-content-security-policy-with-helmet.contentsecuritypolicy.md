@@ -8,7 +8,7 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+請注意，本項目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化項目的基礎上進行開發，你也可以從 <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
 
 在這個挑戰中，我們要重點討論現代瀏覽器中一種能有效減輕安全風險和防禦很多種類型常見攻擊的安全防護。 通過設置和配置內容安全策略，你可以防止在頁面中無意中注入任何內容。 這會讓你的應用遠離 XSS 漏洞、惡意追蹤、惡意 frames 和很多其他攻擊。 CSP 通過配置資源白名單來避免這些問題。 你可以給任何一種類型的頁面資源（腳本、樣式文件、字體、frames、媒體文件等）做這個配置。 它支持很多指令，所以網站管理員可以做細緻的控制。 更多詳情請參考 HTML 5 Rocks 和 KeyCDN。 不幸的是，一些舊的瀏覽器不支持 CSP。
 

@@ -8,7 +8,7 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+请注意，本项目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化项目的基础上进行开发，你也可以从 <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
 
 如果你正在为你的网站发布更新，而你希望用户总是下载较新的版本，你可以（尝试）在客户的浏览器上禁用缓存。 它在开发中也很有用。 缓存具有性能优势，你将失去这些优势，因此只有在真正需要时才使用此选项。
 

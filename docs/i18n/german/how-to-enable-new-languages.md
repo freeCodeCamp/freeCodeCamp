@@ -308,19 +308,19 @@ article3link: ...
   ...
 ```
 
-### Füge eine Day.js Locale-Datei für die neue Sprache hinzu
+### Füge eine Day.js Gebietsschemadatei (Locale) für die neue Sprache hinzu
 
-By default, Day.js only includes English as a locale. To enable it to work with other languages, you need to add a new Day.js locale file to the CDN.
+Standardmäßig enthält Day.js nur Englisch als Gebietsschema. Damit es mit anderen Sprachen funktioniert, musst du eine neue Day.js Gebietsschemadatei zum CDN hinzufügen.
 
-In the [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) directory, create a new file and name it `isocode.min.js`. For example, if you are launching Dothraki News, name the file `mis.min.js`.
+Im Verzeichnis [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) erstellst du eine neue Datei und nennst sie `isocode.min.js`. Wenn du zum Beispiel Dothraki News startest, nennst du die Datei `mis.min.js`.
 
-> [!NOTE] The version number will change as the dependencies are updated.
+> [!NOTE] Die Versionsnummer wird sich ändern, wenn die Abhängigkeiten aktualisiert werden.
 
-Then, visit [this page on cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) with all available Day.js files for the version we're using, find the `https://cdnjs.cloudflare.com/ajax/libs/dayjs/<version>/locale/isocode.min.js` link for the new language, and open it in a new tab.
+Dann besuche [diese Seite auf cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) mit allen verfügbaren Day.js-Dateien für die von uns verwendete Version, suche den Link `https://cdnjs.cloudflare.com/ajax/libs/dayjs/<version>/locale/isocode.min.js` für die neue Sprache und öffne ihn in einem neuen Tab.
 
-> [!NOTE] You only need to add the .../dayjs/\<version\>/_locale_/isocode.min.js locale file. You do not need to add any other Day.js files.
+> [!NOTE] Du musst nur die .../dayjs/\<version\>/_locale_/isocode.min.js Locale-Datei hinzufügen. Du musst keine weiteren Day.js-Dateien hinzufügen.
 
-Copy the Day.js locale code from the new tab into the new file you created. For example, here is an un-minified version of the English locale code for Day.js:
+Kopiere den Code des Gebietsschema aus Day.js von dem neuen Tab in die neue Datei, die du erstellt hast. Hier ist zum Beispiel eine ungekürzte Version des englischen Gebietsschemas für Day.js:
 
 ```js
 !(function (e, n) {
@@ -344,27 +344,27 @@ Copy the Day.js locale code from the new tab into the new file you created. For 
 });
 ```
 
-Then open a PR to the CDN repo to add both the YAML and Day.js files for review.
+Erstelle dann einen PR für das CDN-Repository, um sowohl die YAML- als auch die Day.js-Dateien zur Überprüfung hinzuzufügen.
 
-## Prep the News Repo for the New Language
+## Bereite das News Repo auf die neue Sprache vor
 
-The [News repo](https://github.com/freeCodeCamp/news) pulls data from a Ghost instance, the files you added to the CDN, builds News, and deploys it.
+Das [News Repo](https://github.com/freeCodeCamp/news) zieht die Daten von einer Ghost-Instanz, die Dateien, die du dem CDN hinzugefügt hast, erstellt die News und stellt sie bereit.
 
-> [!WARN] Pull requests to the news repo _must_ come from the same repo. You should not work off of a fork for this step.
+> [!WARN] Pull Requests für das News-Repos _müssen_ aus demselben Repo kommen. Du solltest bei diesem Schritt nicht von einem Fork aus arbeiten.
 
-### Modify the Main Config File
+### Anpassung der Hauptkonfigurationsdatei (Main Config)
 
-Clone the News repo and create a new branch.
+Klone das News-Repository und erstelle einen neuen Zweig.
 
-Open the `config/index.js` file to add the new language and configure the necessary values. There are a few objects and arrays to modify:
+Öffne die Datei `config/index.js`, um die neue Sprache hinzuzufügen und die notwendigen Werte zu konfigurieren. Es müssen ein paar Objekte und Arrays geändert werden:
 
-- `locales`: This array contains the active and upcoming News languages. These are the values that are used in the `.env` file to choose the Ghost instance and UI to use for each build. Add the text name of the new language in lowercase to this array.
-- `localeCodes`: This object is a map of ISO codes for each language, and is used to configure i18next before building the UI. To add a new language, use the lowercase language name as the _key_ and the ISO 639-1 language code as the _value_.
-- `algoliaIndices`: This object is a map of Algolia indices for each language. To add a new language, use the lowercase language name as the _key_, and `news-` followed by the lowercase ISO 639-1 language code as the _value_.
+- `locales`: Dieses Array enthält die aktiven und kommenden News-Sprachen. Das sind die Werte, die in der `.env`-Datei verwendet werden, um die Ghost-Instanz und die Benutzeroberfläche für jeden Build zu wählen. Füge den Textnamen der neuen Sprache in Kleinbuchstaben zu diesem Array hinzu.
+- `localeCodes`: Dieses Objekt ist eine Übersicht der ISO-Codes für jede Sprache und wird verwendet, um i18next zu konfigurieren, bevor die Benutzeroberfläche erstellt wird. Um eine neue Sprache hinzuzufügen, verwende den Namen der Sprache in Kleinbuchstaben als _Schlüssel_ und den ISO 639-1 Sprachcode als _Wert_.
+- `algoliaIndices`: Dieses Objekt ist eine Übersicht der Algolia-Indizes für jede Sprache. Um eine neue Sprache hinzuzufügen, verwende den Namen der Sprache in Kleinbuchstaben als _Schlüssel_ und `news-` gefolgt von dem ISO 639-1 Sprachcode in Kleinbuchstaben als _Wert_.
 
-> [!NOTE] If you are unsure about the string to use while setting `algoliaIndices`, send a message to Kris (@scissorsneedfoodtoo), or someone else with access to Algolia, and ask them to check.
+> [!NOTE] Wenn du dir nicht sicher bist, welchen String du beim Setzen von `algoliaIndices` verwenden sollst, schicke eine Nachricht an Kris (@scissorsneedfoodtoo) oder eine andere Person mit Zugang zu Algolia und bitte sie, das zu überprüfen.
 
-For example, if you are launching Dothraki News, here are what the objects / arrays above should look like:
+Wenn du zum Beispiel Dothraki News startest, sollten die oben genannten Objekte / Arrays wie folgt aussehen:
 
 ```js
 const locales = ['arabic', 'bengali', 'chinese', 'english', 'dothraki'];
@@ -386,13 +386,13 @@ const algoliaIndices = {
 };
 ```
 
-### Add the i18next JSON Files for the New Language
+### Füge die i18next JSON-Dateien für die neue Sprache hinzu
 
-Next, go to the `config/i18n/locales` directory, create a new folder, and give it the name of the new language you're adding. For example, if you're launching Dothraki News, create a new folder named `dothraki`.
+Als nächstes gehst du in das Verzeichnis `config/i18n/locales`, erstellst einen neuen Ordner und gibst ihm den Namen der neuen Sprache, die du hinzufügst. Wenn du zum Beispiel Dothraki News startest, erstelle einen neuen Ordner namens `dothraki`.
 
-Then copy the JSON files from the `english` directory to your new folder.
+Kopiere dann die JSON-Dateien aus dem Verzeichnis `english` in deinen neuen Ordner.
 
-In your new folder, open the `serve.json` file and replace its contents with the following:
+Öffne in deinem neuen Ordner die Datei `serve.json` und ersetze ihren Inhalt durch den folgenden:
 
 ```json
 {
@@ -400,10 +400,10 @@ In your new folder, open the `serve.json` file and replace its contents with the
 }
 ```
 
-Then commit and push your branch directly to the News repo.
+Dann commitest und pushst du deinen Zweig direkt in das News-Repository.
 
-> [!NOTE] You need to be on one of the teams with access to the News repo to push branches directly to News. Currently, only the dev, i18n, and staff teams are allowed to do this.
+> [!NOTE] Du musst zu einem der Teams gehören, die Zugriff auf das News-Repository haben, um Zweige direkt zu News zu pushen. Derzeit dürfen nur die Entwickler-, i18n- und Staff-Teams dies tun.
 
-Finally, open a PR for review.
+Eröffne schließlich einen PR zur Überprüfung.
 
-Once both your PRs to the CDN and News repo have been approved, they can be merged. Deployment will be handled subsequently by the staff.
+Sobald die PRs für das CDN und das News Repo genehmigt wurden, können sie zusammengeführt werden. Die Bereitstellung wird anschließend von den Staffs übernommen.

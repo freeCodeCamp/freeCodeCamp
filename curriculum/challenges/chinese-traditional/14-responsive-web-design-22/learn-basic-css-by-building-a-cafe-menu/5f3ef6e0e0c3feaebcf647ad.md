@@ -1,6 +1,6 @@
 ---
 id: 5f3ef6e0e0c3feaebcf647ad
-title: Step 47
+title: 步驟 47
 challengeType: 0
 dashedName: step-47
 ---

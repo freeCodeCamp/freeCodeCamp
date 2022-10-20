@@ -8,7 +8,7 @@ dashedName: hash-and-compare-passwords-asynchronously
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+请注意，本项目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化项目的基础上进行开发，你也可以从 <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
 
 由于哈希运算会占用很大计算机资源，并且会耗费比较多时间，因此比较推荐的做法是异步调用哈希算法，这样就不会因此阻止其它连接或请求了。 异步调用哈希方法非常简单，只需要：
 
