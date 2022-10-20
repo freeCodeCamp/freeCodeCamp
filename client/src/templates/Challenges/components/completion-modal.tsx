@@ -105,7 +105,7 @@ export function getCompletedProjects(
     return currentBlockIds.includes(id);
   });
 
-  return `${completedChallengesInBlock.length} of ${currentBlockIds.length}`;
+  return `${completedChallengesInBlock.length}/${currentBlockIds.length}`;
 }
 
 interface CompletionModalsProps {
