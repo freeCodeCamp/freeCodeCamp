@@ -55,6 +55,7 @@ jobs:
           npm i --prefix=web
           npm run build:curriculum
           npm run lint
+          npm run knip
 
   test:
     name: Test
