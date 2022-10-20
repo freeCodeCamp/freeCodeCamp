@@ -9,15 +9,15 @@ dashedName: sha-1-password-cracker
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
 我們仍在開發 Python 課程的交互式教學部分。 目前，你可以在 YouTube 上通過 freeCodeCamp.org 上傳的一些視頻學習這個項目相關的知識。
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">給所有人的 Python 課程</a>（14 小時）
 
-- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">深入學習 Python 基礎知識</a>（4 小時）
 
-- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Python 中級課程</a>（6 小時）
 
 # --instructions--
 
@@ -43,7 +43,7 @@ You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-pa
 - `da5a4e8cf89539e66097acd2f8af128acae2f8ae` 應該返回 “q1w2e3r4t5”
 - `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` 應該返回 “bubbles1”
 
-`hashlib` 庫已經爲你導入。 You should consider using it in your code. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Learn more about "hashlib" here</a>.
+`hashlib` 庫已經爲你導入。 你應該在你的代碼中使用它。 <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">在此瞭解更多關於 “hashlib” 的信息</a>。
 
 ## 開發
 
