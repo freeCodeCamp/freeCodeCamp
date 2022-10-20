@@ -170,3 +170,21 @@ textarea.inputarea {
     opacity: 1;
   }
 }
+
+.lower-jaw-icon-bar {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+.lower-jaw-icon-bar > button {
+  line-height: 0;
+  margin-right: 10px;
+}
+
+.lower-jaw-icon-bar > button:focus {
+  outline: 2px solid var(--blue-mid);
+}
+
+.lower-jaw-icon-bar > button:last-child {
+  margin-right: 0;
+}
