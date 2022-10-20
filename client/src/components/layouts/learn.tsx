@@ -51,7 +51,6 @@ type LearnLayoutProps = {
   tryToShowDonationModal: () => void;
   children?: React.ReactNode;
   hasEditableBoundaries?: boolean;
-  usesMultifileEditor?: boolean;
 };
 
 function LearnLayout({
@@ -60,8 +59,7 @@ function LearnLayout({
   user,
   tryToShowDonationModal,
   children,
-  hasEditableBoundaries,
-  usesMultifileEditor
+  hasEditableBoundaries
 }: LearnLayoutProps): JSX.Element {
   useEffect(() => {
     tryToShowDonationModal();
@@ -90,7 +88,14 @@ function LearnLayout({
       <Helmet>
         <meta content='noindex' name='robots' />
       </Helmet>
-      <main id='learn-app-wrapper'>{children}</main>
+      <main
+        id='learn-app-wrapper'
+        {...(hasEditableBoundaries && { 'data-has-editable-boundaries': true })}
+      >
+        {children}
+      </main>
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+      /* @ts-ignore  */}
       <DonateModal />
     </>
   );

@@ -115,9 +115,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     // Unlike the desktop layout the mobile version does not have an ActionRow,
     // but still needs a way to switch between the different tabs.
 
-    const showToolPanel =
-      !usesMultifileEditor || (usesMultifileEditor && !hasEditableBoundaries);
-
     return (
       <>
         <Tabs
