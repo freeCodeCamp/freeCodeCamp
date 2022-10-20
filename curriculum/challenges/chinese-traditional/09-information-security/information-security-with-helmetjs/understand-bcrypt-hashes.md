@@ -8,17 +8,17 @@ dashedName: understand-bcrypt-hashes
 
 # --description--
 
-在下面的挑戰中，你將啓動一個新的項目，這個項目與之前的項目不同。 You can find the new starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or clone it from <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+在下面的挑戰中，你將啓動一個新的項目，這個項目與之前的項目不同。 你可以在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上找到新的啓動項目，或者從 <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆它。
 
 BCrypt 哈希值是非常安全的。 哈希值基本上是原始數據的指紋，總是唯一的。 這是通過將原始數據輸入一個算法並返回一個固定長度的結果來實現的。 爲了使這一過程更加複雜和安全，你還可以向你的哈希值 *加鹽*。 對你的哈希加鹽處理包含了在哈希過程之前向原始數據添加隨機數據，這使得破解哈希更加困難。
 
-BCrypt hashes will always look like `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` which does have a structure. 第一小節 `$2a` 說明了該哈希採用什麼算法。 接下來的部分 `$13` 定義了 *成本*。 成本是指計算哈希值需要多少能量。 它在 2^cost 的對數尺度上，決定了數據要通過哈希算法計算多少次。 For example, at a cost of 10 you are able to hash 10 passwords a second on an average computer, however at a cost of 15 it takes 3 seconds per hash... and to take it further, at a cost of 31 it would take multiple days to complete a hash. 通常 cost 爲 12 的哈希運算就已經足夠安全。 哈希結果的最後一部分 `$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` 看起來像是由隨機數字、點和字母組成的字符串，但實際上它有兩部分內容。 前面 22 個字符是加入的鹽，剩下的就是加密過的密碼！
+BCrypt 哈希值類似 `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm`，有一個結構。 第一小節 `$2a` 說明了該哈希採用什麼算法。 接下來的部分 `$13` 定義了 *成本*。 成本是指計算哈希值需要多少能量。 它在 2^cost 的對數尺度上，決定了數據要通過哈希算法計算多少次。 例如，當成本爲 10 時，你能夠在普通計算機上每秒哈希計算 10 個密碼，然而當成本爲 15 時，每次哈希計算需要 3 秒......再進一步說，當成本爲 31 時，完成一次哈希需要好幾天。 通常 cost 爲 12 的哈希運算就已經足夠安全。 哈希結果的最後一部分 `$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` 看起來像是由隨機數字、點和字母組成的字符串，但實際上它有兩部分內容。 前面 22 個字符是加入的鹽，剩下的就是加密過的密碼！
 
 # --instructions--
 
-Add all your code for these lessons in the `server.js` file between the code we have started you off with. Do not change or delete the code we have added for you.
+在 `server.js` 文件中加入這些課程的所有代碼，放在我們開始的代碼之間。 不要改變或刪除我們爲你添加的代碼。
 
-BCrypt has already been added as a dependency, so require it as `bcrypt` in your server.
+BCrypt 已經被添加爲一個依賴項，所以在你的服務器中請求它爲 `bcrypt`。
 
 請在完成挑戰後提交你的頁面。
 
