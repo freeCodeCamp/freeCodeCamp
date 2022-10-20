@@ -41,7 +41,6 @@ redGreenBlueTilesTwo();
 
 ```js
 // solution required
-var m = 50; var nmax = 4; var nmin = 2;
 function redGreenBlueTilesTwo(m, nmin, nmax) {
     //The rest is empty
     var solutions = 1;
