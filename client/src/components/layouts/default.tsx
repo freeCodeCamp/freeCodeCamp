@@ -150,7 +150,7 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
     } = this.props;
 
     return (
-      <div className={`${this.rtlLanguage ? 'rtl-layout' : ''}page-wrapper`}>
+      <div className={`${this.rtlLanguage && 'rtl-layout '}page-wrapper`}>
         <Helmet
           bodyAttributes={{
             class: useTheme
