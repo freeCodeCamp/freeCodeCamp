@@ -41,4 +41,23 @@ redGreenBlueTilesTwo();
 
 ```js
 // solution required
+var m = 50; var nmax = 4; var nmin = 2;
+function redGreenBlueTilesTwo(m, nmin, nmax) {
+    //The rest is empty
+    var solutions = 1;
+ 
+    //we can't fill out more
+    if (nmin > m) return solutions;
+ 
+    if (cache[m] != 0) return cache[m];
+    for (let bs = nmin; bs <= nmax; bs++) {
+        for (let startpos = 0; startpos <= m - bs; startpos++) {
+            solutions += redGreenBlueTilesTwo(m - startpos - bs, nmin, nmax);
+        }
+    }
+ 
+    cache[m] = solutions;
+    return solutions;
+ }
+ assert.strictEqual(redGreenBlueTilesTwo(m,nmin,nmax), 100808458960497);
 ```
