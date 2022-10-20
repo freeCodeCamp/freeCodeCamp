@@ -8,7 +8,7 @@ dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+請注意，本項目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化項目的基礎上進行開發，你也可以從 <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
 
 你的網頁可能在未經你同意的情況下被放在 `<frame>` 或 `<iframe>` 中。 這可能會導致點擊劫持攻擊等情況。 點擊劫持是一種欺騙用戶的技術，使其與用戶認爲不同的頁面進行互動。 這可以通過使用 iframe 的方式，在一個惡意的環境中執行你的頁面而獲得。 在這種情況下，黑客可以在你的頁面上設置一個隱藏層。 隱藏的按鈕可以被用來運行壞的腳本。 該中間件設置 X-Frame-Options 頭。 它限制了誰可以把你的網站放在一個框架裏。 它有三種模式：DENY、SAMEORIGIN 和 ALLOW-FROM。
 

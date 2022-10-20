@@ -37,28 +37,36 @@ const GrowthBookWrapper = ({
   isSignedIn,
   user
 }: GrowthBookWrapper) => {
-  if (growthbookUri) {
-    void (async () => {
-      const res = await fetch(growthbookUri);
-      const data = (await res.json()) as {
-        features: Record<string, FeatureDefinition>;
-      };
-      growthbook.setFeatures(data.features);
-    })();
-  }
+  useEffect(() => {
+    async function setGrowthBookFeatures() {
+      if (!growthbookUri) return;
+
+      try {
+        const res = await fetch(growthbookUri);
+        const data = (await res.json()) as {
+          features: Record<string, FeatureDefinition>;
+        };
+        growthbook.setFeatures(data.features);
+      } catch (e) {
+        // TODO: report to sentry when it's enabled
+        console.error(e);
+      }
+    }
+
+    void setGrowthBookFeatures();
+  }, []);
+
   useEffect(() => {
     if (isSignedIn) {
-      const { joinDate, completedChallenges } = user;
       growthbook.setAttributes({
         id: sha1(user.email),
         staff: user.email.includes('@freecodecamp'),
         clientLocal: clientLocale,
-        joinDateUnix: Date.parse(joinDate),
-        completedChallengesLength: completedChallenges.length
+        joinDateUnix: Date.parse(user.joinDate),
+        completedChallengesLength: user.completedChallenges.length
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isSignedIn]);
+  }, [isSignedIn, user.email, user.joinDate, user.completedChallenges]);
 
   return (
     <GrowthBookProvider growthbook={growthbook}>{children}</GrowthBookProvider>
