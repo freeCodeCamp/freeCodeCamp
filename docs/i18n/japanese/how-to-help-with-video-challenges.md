@@ -67,11 +67,11 @@ forumTopicId: 12345
 
 上記選択肢からチャレンジマークダウンファイルを選択してください。
 
-### チャレンジに関連するビデオに目を通し、多肢選択式の質問を作成してください
+### Skim through the video associated with the challenge and create a multiple-choice question
 
-まず、videoId を見つけてください。
+First, find the `videoId`.
 
-例えば、ビデオチャレンジマークダウンファイルのヘッダーからの以下のコードで、videoIdは「nVAAxZ34khk」です。 GitHub では、情報はテーブル形式で表示されます。
+For example, in the following code from the header of a video challenge markdown file, the `videoId` is "nVAaxZ34khk". GitHub では、情報はテーブル形式で表示されます。
 
 ````
 ---
@@ -80,12 +80,12 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-次に、その `videoId` で YouTube の動画にアクセスします。 ビデオの URL は次のとおりです。
-https://www.youtube.com/watch?v=[videoId] (URL 中の `videoId` をビデオの ID に置き換えます。角括弧は不要。)
+次に、その `videoId` で YouTube の動画にアクセスします。 The URL for the video will be:
+https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
 
-上記例では、URL は https://www.youtube.com/watch?v=nVAaxZ34khk です。
+In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-その videoId でYouTube ビデオに目を通し、ビデオコンテンツに基づいて多肢選択式の質問を考えてください。
+Skim the YouTube video with that `videoId` and think of a multiple-choice question based on the content of the video.
 
 ### マークダウンファイルに質問を追加してください
 

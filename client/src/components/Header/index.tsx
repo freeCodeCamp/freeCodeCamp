@@ -9,7 +9,7 @@ import UniversalNav from './components/universal-nav';
 
 import './header.css';
 
-export interface HeaderProps {
+interface HeaderProps {
   fetchState: { pending: boolean };
   user: Record<string, any>;
 }
@@ -91,6 +91,9 @@ export class Header extends React.Component<
           </style>
         </Helmet>
         <header>
+          <a href='#content-start' className='skip-to-content-button'>
+            Skip To Content
+          </a>
           <UniversalNav
             displayMenu={displayMenu}
             fetchState={fetchState}

@@ -437,7 +437,7 @@ button.nav-link[aria-disabled='true'] {
   max-height: calc(var(--header-height) - 6px);
   padding: 4px 12px;
   margin-left: 2px;
-  font-family: 'Roboto Mono', monospace !important;
+  font-family: 'Hack-ZeroSlash', monospace !important;
   display: flex;
   align-items: center;
   justify-content: center;

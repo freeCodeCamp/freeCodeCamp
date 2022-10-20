@@ -42,7 +42,7 @@ myDataBase.findOneAndUpdate(
 
 你现在应该可以登录你的应用了，试试吧。
 
-完成上述要求后，你可以在下方提交你的页面链接。 如果你遇到了问题，可以参考 [这里](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745) 的答案。
+完成上述要求后，你可以在下方提交你的页面链接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

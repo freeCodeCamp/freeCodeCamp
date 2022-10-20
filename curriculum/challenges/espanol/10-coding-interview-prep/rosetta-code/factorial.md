@@ -1,7 +1,7 @@
 ---
 id: 597b2b2a2702b44414742771
 title: Factorial
-challengeType: 5
+challengeType: 1
 forumTopicId: 302263
 dashedName: factorial
 ---
@@ -15,7 +15,7 @@ Factorial of a number is given by:
 <pre><big>n! = n * (n-1) * (n-2) * ..... * 1</big>
 </pre>
 
-For example:
+Por ejemplo:
 
 <ul>
   <li><code>3! = 3 * 2 * 1 = 6</code></li>

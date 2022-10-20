@@ -12,22 +12,18 @@ import { createSelector } from 'reselect';
 import { dasherize } from '../../../../../utils/slugs';
 import { isFinalProject } from '../../../../utils/challenge-types';
 import Login from '../../../components/Header/components/Login';
-import {
-  isSignedInSelector,
-  executeGA,
-  allowBlockDonationRequests
-} from '../../../redux';
+import { executeGA, allowBlockDonationRequests } from '../../../redux/actions';
+import { isSignedInSelector } from '../../../redux/selectors';
 import { AllChallengeNode, ChallengeFiles } from '../../../redux/prop-types';
 
+import { closeModal, submitChallenge } from '../redux/actions';
 import {
-  closeModal,
-  submitChallenge,
   completedChallengesIds,
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,
   challengeMetaSelector
-} from '../redux';
+} from '../redux/selectors';
 import CompletionModalBody from './completion-modal-body';
 
 import './completion-modal.css';

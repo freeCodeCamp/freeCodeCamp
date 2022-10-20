@@ -10,7 +10,7 @@ dashedName: authentication-with-socket-io
 
 目前，你还无法确定连接到服务器的用户身份。 虽然 `req.user` 包含用户信息，但这个只在用户直接与服务器交互时产生。当用户通过 web socket 与服务器连接时，由于不存在 `req` 对象，我们就无法获取用户数据。 解决这个问题的方法之一是通过读取和解析请求中包含 passport session 的 cookie，然后反序列化，进而获取用户信息对象。 幸运的是，NPM 上有可以让这个复杂的流程简单化的库。
 
-添加 `passport.socketio@~3.7.0`、`connect-mongo@~3.2.0`、`cookie-parser@~1.4.5` 作为依赖，把它们分别赋值给 `passportSocketIo`、`MongoStore`、`cookieParser`。 同时，我们需要从之前引入的 `express-session` 中开辟新的内存空间， 就像这样：
+`passport.socketio@~3.7.0`, `connect-mongo@~3.2.0`, and `cookie-parser@~1.4.5` have already been added as dependencies. Require them as `passportSocketIo`, `MongoStore`, and `cookieParser` respectively. Also, we need to initialize a new memory store, from `express-session` which we previously required. It should look like this:
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -65,7 +65,7 @@ console.log('user ' + socket.request.user.name + ' connected');
 
 它将在服务器控制台记录已连接的用户！
 
-完成以上要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254)的答案。
+完成以上要求后，请提交你的页面链接。 If you're running into errors, you can check out the project up to this point <a href="https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254</a>.
 
 # --hints--
 

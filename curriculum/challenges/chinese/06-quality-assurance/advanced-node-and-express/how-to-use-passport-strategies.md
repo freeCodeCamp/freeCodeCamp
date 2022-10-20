@@ -18,7 +18,7 @@ dashedName: how-to-use-passport-strategies
 
 这时，由于我们还没有实现注册功能，如果你在表单里输入了用户名和密码，路由将会重定向到主页 `/`，在服务端将会打印 `'User {USERNAME} attempted to log in.'`。
 
-完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9)的答案。
+完成上述要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

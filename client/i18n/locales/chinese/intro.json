@@ -342,7 +342,7 @@
     "title": "前端开发库",
     "intro": [
       "你已经熟悉了 HTML、CSS 和 JavaScript。现在学习行业中一些流行的前端库来提升你的技能吧。",
-      "在前端开发库认证中，你将学习如何使用 Bootstrap 快速设置网站样式，以及如何在 CSS 样式中添加逻辑，并使用 Sass 对其进行扩展。",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "稍后，你将建立一个购物车和其他应用程序，学习如何使用 React 和 Redux 创建强大的单页应用程序（SPAs）。"
     ],
     "note": "",

@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import envData from '../../../../../config/env.json';
-import { isSignedInSelector } from '../../../redux';
+import { isSignedInSelector } from '../../../redux/selectors';
 
 const { apiLocation, homeLocation } = envData;
 
@@ -15,7 +15,7 @@ const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
   isSignedIn
 }));
 
-export interface LoginProps {
+interface LoginProps {
   block?: boolean;
   children?: ReactNode;
   'data-test-label'?: string;

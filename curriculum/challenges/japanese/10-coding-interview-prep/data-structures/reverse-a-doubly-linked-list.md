@@ -12,7 +12,7 @@ dashedName: reverse-a-doubly-linked-list
 
 # --hints--
 
-DoublyLinkedList データ構造が存在する必要があります。
+The `DoublyLinkedList` data structure should exist.
 
 ```js
 assert(
@@ -26,7 +26,7 @@ assert(
 );
 ```
 
-DoublyLinkedList に reverse というメソッドが必要です。
+The `DoublyLinkedList` should have a method called `reverse`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-空のリストを逆順にすると、null が返される必要があります。
+Reversing an empty list should return `null`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-reverse メソッドはリストを逆順にする必要があります。
+The `reverse` method should reverse the list.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-リストが逆順になったとき、次の参照と前の参照が正しく維持される必要があります。
+The `next` and `previous` references should be correctly maintained when a list is reversed.
 
 ```js
 assert(

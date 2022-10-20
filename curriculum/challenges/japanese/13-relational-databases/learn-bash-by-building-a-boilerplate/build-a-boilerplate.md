@@ -9,7 +9,7 @@ dashedName: build-a-boilerplate
 
 # --description--
 
-この 170 のレッスンから成るコースでは、コマンドラインのみを使用してウェブサイトのボイラープレートを作成することで、基本のコマンドについて学習します。
+In this 170-lesson course, you will learn terminal commands by creating a website boilerplate using only the command line.
 
 # --instructions--
 

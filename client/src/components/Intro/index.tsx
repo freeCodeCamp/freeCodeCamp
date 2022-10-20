@@ -6,6 +6,7 @@ import { Link, Spacer, Loader } from '../helpers';
 import IntroDescription from './components/IntroDescription';
 
 import './intro.css';
+import ResearchBannerx from './research-banner';
 
 interface IntroProps {
   complete?: boolean;
@@ -39,7 +40,7 @@ const Intro = ({
     return (
       <>
         <Spacer />
-        <h1 className='text-center '>
+        <h1 className='text-center'>
           {name
             ? `${t('learn.welcome-1', { name: name })}`
             : `${t('learn.welcome-2')}`}
@@ -55,6 +56,7 @@ const Intro = ({
             </span>
           </blockquote>
         </div>
+        <ResearchBannerx />
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (
           <div className='intro-description'>
             <Spacer />

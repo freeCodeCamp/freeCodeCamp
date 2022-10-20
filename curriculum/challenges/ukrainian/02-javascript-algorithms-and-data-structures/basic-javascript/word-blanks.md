@@ -9,11 +9,9 @@ dashedName: word-blanks
 
 # --description--
 
-Тепер ми використаємо наші знання про рядки, щоб створити стильну гру у слова [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs), яку ми називаємо "Пропуски в словах". Ви створите (за бажанням гумористичні) речення типу "Заповніть пропуски".
+You are provided sentences with some missing words, like nouns, verbs, adjectives and adverbs. You then fill in the missing pieces with words of your choice in a way that the completed sentence makes sense.
 
-У грі "Пропуски в словах", у вас є речення з пропущеними частинами мови, наприклад, іменниками, дієсловами, прикметниками та прислівниками. Потім ви заповнюєте вибрані вами відсутні фрагменти слів так, аби завершене реченням мало сенс.
-
-Розгляньте це речення - Було дуже **\_\_\_\_**, і ми **\_\_\_\_** себе **\_\_\_\_**. У цьому реченні відсутні три фрагменти: прикметник, дієслово та прислівник; ми можемо додати вибрані нами слова для того, щоб завершити його. Потім ми можемо призначити надіслане речення змінній наступним чином:
+Consider this sentence - It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**. This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -21,11 +19,11 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 
 # --instructions--
 
-У цьому завданні у вас є іменник, дієслово, прикметник та прислівник. Вам потрібно створити завершене речення зі словами на ваш вибір, а також використати ті, які ми надаємо.
+In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.
 
-Вам потрібно використати рядок оператор конкатенації `+`, щоб створити новий, за допомогою наданих змінних: `myNoun`, `myAdjective`, `myVerb`, і `myAdverb`. Потім ви задасте сформованому рядку змінну `wordBlanks`. Не слід змінювати слова, які зазначені як змінні.
+You will need to use the string concatenation operator `+` to build a new string, using the provided variables: `myNoun`, `myAdjective`, `myVerb`, and `myAdverb`. You will then assign the formed string to the `wordBlanks` variable. You should not change the words assigned to the variables.
 
-Вам також потрібно враховувати пропуски у вашому рядку для того, щоб кінцеве речення містило пробіли між усіма словами. У результаті ви маєте отримати завершене речення.
+You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.
 
 # --hints--
 
@@ -35,7 +33,7 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 assert(typeof wordBlanks === 'string');
 ```
 
-Ви не повинні змінювати значення, задані як `myNoun`, `myVerb`, `myAdjective` або `myAdverb`.
+You should not change the values assigned to `myNoun`, `myVerb`, `myAdjective` or `myAdverb`.
 
 ```js
 assert(
@@ -46,7 +44,7 @@ assert(
 );
 ```
 
-Ви не повинні безпосередньо використовувати змінні `собака`, `біг`, `великий`, або `швидко` для того, щоб створити `wordBlanks`.
+You should not directly use the values `dog`, `ran`, `big`, or `quickly` to create `wordBlanks`.
 
 ```js
 const newCode = removeAssignments(code);
@@ -58,7 +56,7 @@ assert(
 );
 ```
 
-`wordBlanks` має містити всі слова, які задані як змінні: `myNoun`, `myVerb`, `myAdjective` і `myAdverb` виокремленими словами, які не є символами (а також будь-якими додатковими словами у вашій madlib).
+`wordBlanks` should contain all of the words assigned to the variables `myNoun`, `myVerb`, `myAdjective` and `myAdverb` separated by non-word characters (and any additional words of your choice).
 
 ```js
 assert(

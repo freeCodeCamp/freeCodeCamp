@@ -100,6 +100,6 @@ Ti ringraziamo in anticipo per essere educato e paziente. Ricordati che questa c
 
 ### Assistenza aggiuntiva
 
-Se hai domande sullo stack, sull'architettura del database, sulle traduzioni, o su qualsiasi altra cosa, sentiti libero di rivolgerti al nostro team dello staff [sul forum](https://forum.freecodecamp.org/g/team).
+Se hai domande sullo stack, sull'architettura del database, sulle traduzioni o su qualsiasi altra cosa, sentiti libero di rivolgerti al nostro team dello staff [sul forum](https://forum.freecodecamp.org/g/team).
 
 **Puoi scrivere una mail allo staff di sviluppo a: `dev[at]freecodecamp.org`**

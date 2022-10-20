@@ -10,20 +10,20 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 函数式编程就是创建和使用具有不变性的函数。
 
-上一个挑战介绍了 `concat` 方法，这是一种在不改变原始数组的前提下，将数组组合成新数组的方法。 将 `concat` 方法与 `push` 方法做比较。 `push` 将元素添加到调用它的数组的末尾，这样会改变该数组。 举个例子：
+The last challenge introduced the `concat` method as a way to merge arrays into a new array without mutating the original arrays. 将 `concat` 方法与 `push` 方法做比较。 `push` adds items to the end of the same array it is called on, which mutates that array. 举个例子：
 
 ```js
 const arr = [1, 2, 3];
-arr.push([4, 5, 6]);
+arr.push(4, 5, 6);
 ```
 
-`arr` 的值被修改为 `[1, 2, 3, [4, 5, 6]]`，这不是函数编程方式。
+`arr` would have a modified value of `[1, 2, 3, 4, 5, 6]`, which is not the functional programming way.
 
-`concat` 方法可以将新项目添加到数组末尾，而不产生副作用。
+`concat` offers a way to merge new items to the end of an array without any mutating side effects.
 
 # --instructions--
 
-修改 `nonMutatingPush` 函数，用 `concat` 替代 `push` 将 `newItem` 添加到 `original` 末尾。 该函数应返回一个数组。
+Change the `nonMutatingPush` function so it uses `concat` to merge `newItem` to the end of `original` without mutating `original` or `newItem` arrays. 该函数应返回一个数组。
 
 # --hints--
 

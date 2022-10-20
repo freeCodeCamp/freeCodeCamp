@@ -1,6 +1,6 @@
 ---
 id: 5e46f7f8ac417301a38fb92a
-title: Medical Data Visualizer
+title: Візуалізатор медичних даних
 challengeType: 10
 forumTopicId: 462368
 dashedName: medical-data-visualizer
@@ -8,12 +8,13 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-You will be [working on this project with our Replit starter code](https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer).
+Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
 We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 
-- [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
-- [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -25,20 +26,20 @@ The rows in the dataset represent patients and the columns represent information
 
 File name: medical_examination.csv
 
-| Feature | Variable Type | Variable      | Value Type |
-|:-------:|:------------:|:-------------:|:----------:|
-| Age | Objective Feature | age | int (days) |
-| Height | Objective Feature | height | int (cm) |
-| Weight | Objective Feature | weight | float (kg) |
-| Gender | Objective Feature | gender | categorical code |
-| Systolic blood pressure | Examination Feature | ap_hi | int |
-| Diastolic blood pressure | Examination Feature | ap_lo | int |
-| Cholesterol | Examination Feature | cholesterol | 1: normal, 2: above normal, 3: well above normal |
-| Glucose | Examination Feature | gluc | 1: normal, 2: above normal, 3: well above normal |
-| Smoking | Subjective Feature | smoke | binary |
-| Alcohol intake | Subjective Feature | alco | binary |
-| Physical activity | Subjective Feature | active | binary |
-| Presence or absence of cardiovascular disease | Target Variable | cardio | binary |
+|                    Feature                    |    Variable Type    |   Variable    |                    Value Type                    |
+|:---------------------------------------------:|:-------------------:|:-------------:|:------------------------------------------------:|
+|                      Age                      |  Objective Feature  |     `age`     |                    int (days)                    |
+|                    Height                     |  Objective Feature  |   `height`    |                     int (cm)                     |
+|                    Weight                     |  Objective Feature  |   `weight`    |                    float (kg)                    |
+|                    Gender                     |  Objective Feature  |   `gender`    |                 categorical code                 |
+|            Systolic blood pressure            | Examination Feature |    `ap_hi`    |                       int                        |
+|           Diastolic blood pressure            | Examination Feature |    `ap_lo`    |                       int                        |
+|                  Cholesterol                  | Examination Feature | `cholesterol` | 1: normal, 2: above normal, 3: well above normal |
+|                    Glucose                    | Examination Feature |    `gluc`     | 1: normal, 2: above normal, 3: well above normal |
+|                    Smoking                    | Subjective Feature  |    `smoke`    |                      binary                      |
+|                Alcohol intake                 | Subjective Feature  |    `alco`     |                      binary                      |
+|               Physical activity               | Subjective Feature  |   `active`    |                      binary                      |
+| Presence or absence of cardiovascular disease |   Target Variable   |   `cardio`    |                      binary                      |
 
 ## Tasks
 
@@ -63,11 +64,11 @@ Unit tests are written for you under `test_module.py`.
 
 ## Development
 
-For development, you can use `main.py` to test your functions. Click the "run" button and `main.py` will run.
+For development, you can use `main.py` to test your functions. Натисніть кнопку «запустити» і `main.py` запуститься.
 
 ## Testing
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+We imported the tests from `test_module.py` to `main.py` for your convenience. Тести запустяться автоматично, коли ви натиснете на кнопку «запустити».
 
 ## Submitting
 
@@ -75,7 +76,7 @@ Copy your project's URL and submit it to freeCodeCamp.
 
 # --hints--
 
-It should pass all Python tests.
+Він повинен пройти усі тести Python.
 
 ```js
 

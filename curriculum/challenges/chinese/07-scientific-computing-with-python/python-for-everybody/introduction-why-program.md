@@ -18,9 +18,9 @@ dashedName: introduction-why-program
 
 更多资源：
 
-\- [Windows 系统安装 Python](https://youtu.be/F7mtLrYzZP8)
+\- <a href="https://youtu.be/F7mtLrYzZP8" target="_blank" rel="noopener noreferrer nofollow">Install Python on Windows</a>
 
-\- [MacOS 系统安装 Python](https://youtu.be/wfLnZP-4sZw)
+\- <a href="https://youtu.be/wfLnZP-4sZw" target="_blank" rel="noopener noreferrer nofollow">Install Python on MacOS</a>
 
 # --question--
 

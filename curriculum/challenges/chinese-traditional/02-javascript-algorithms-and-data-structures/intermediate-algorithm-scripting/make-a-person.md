@@ -137,14 +137,6 @@ assert.strictEqual(
 
 # --seed--
 
-## --after-user-code--
-
-```js
-if(bob){
-  bob = new Person("Bob Ross");
-}
-```
-
 ## --seed-contents--
 
 ```js

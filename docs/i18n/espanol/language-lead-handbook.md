@@ -14,9 +14,19 @@ El nivel "Editor" permite al usuario acceder a todos los Borradores y publicarlo
 
 El nivel "Administrador" está reservado para el personal de freeCodeCamp y los líderes de idiomas.
 
+### How are the articles built
+
+We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
+
+[Ghost](https://ghost.org) acts as our content management platform, and [11ty](https://11ty.dev) builds the articles into static assets – plain HTML, JavaScript, and CSS. Only these static assets are deployed to our servers.
+
+This process is automated and runs periodically. If you publish something now, it will be available on the news site in a few hours.
+
+You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
+
 ## Cómo mencionar al autor original de un artículo traducido
 
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
+El autor original y el artículo original están vinculados automáticamente agregando este código a la Inyección de Código -> sección principal en la Configuración de Borradores en Ghost.
 
 ```html
 <script>
@@ -26,9 +36,9 @@ The original author and the original article are linked automatically adding thi
 
 Con `link` siendo el enlace del artículo original.
 
-## How to update trending articles
+## Cómo actualizar artículos en tendencia
 
-> [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on google results.
+> [!TIP] Cambiar los artículos en el pie de la página al menos una vez al mes significaria darle un impulso a los artículos vinculados con los resultados de Google.
 
 Hay dos lugares en los que cambiar las tendencias de artículos.
 

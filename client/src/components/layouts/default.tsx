@@ -8,22 +8,26 @@ import { createSelector } from 'reselect';
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
 import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
-import robotoBoldURL from '../../../static/fonts/roboto-mono/RobotoMono-Bold.woff';
-import robotoItalicURL from '../../../static/fonts/roboto-mono/RobotoMono-Italic.woff';
-import robotoRegularURL from '../../../static/fonts/roboto-mono/RobotoMono-Regular.woff';
+import hackZeroSlashBoldURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff';
+import hackZeroSlashItalicURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff';
+import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff';
+
 import { isBrowser } from '../../../utils';
 import {
   fetchUser,
-  isSignedInSelector,
   onlineStatusChange,
   serverStatusChange,
+  executeGA
+} from '../../redux/actions';
+import {
+  isSignedInSelector,
+  userSelector,
   isOnlineSelector,
   isServerOnlineSelector,
-  userFetchStateSelector,
-  userSelector,
-  executeGA
-} from '../../redux';
+  userFetchStateSelector
+} from '../../redux/selectors';
 import { UserFetchState, User } from '../../redux/prop-types';
+import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
@@ -82,6 +86,9 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   children: ReactNode;
   pathname: string;
   showFooter?: boolean;
+  isChallenge?: boolean;
+  block?: string;
+  superBlock?: string;
   t: TFunction;
   useTheme?: boolean;
 }
@@ -131,6 +138,9 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
+      isChallenge = false,
+      block,
+      superBlock,
       t,
       theme = 'default',
       user,
@@ -177,21 +187,21 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
           <link
             as='font'
             crossOrigin='anonymous'
-            href={robotoRegularURL}
+            href={hackZeroSlashRegularURL}
             rel='preload'
             type='font/woff'
           />
           <link
             as='font'
             crossOrigin='anonymous'
-            href={robotoBoldURL}
+            href={hackZeroSlashBoldURL}
             rel='preload'
             type='font/woff'
           />
           <link
             as='font'
             crossOrigin='anonymous'
-            href={robotoItalicURL}
+            href={hackZeroSlashItalicURL}
             rel='preload'
             type='font/woff'
           />
@@ -209,7 +219,17 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
               removeFlashMessage={removeFlashMessage}
             />
           ) : null}
-          {fetchState.complete && children}
+          {isChallenge && (
+            <div className='breadcrumbs-demo'>
+              <BreadCrumb
+                block={block as string}
+                superBlock={superBlock as string}
+              />
+            </div>
+          )}
+          <div id='content-start' tabIndex={-1}>
+            {fetchState.complete && children}
+          </div>
         </div>
         {showFooter && <Footer />}
       </div>

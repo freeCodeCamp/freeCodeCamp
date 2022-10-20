@@ -1,14 +1,20 @@
 ---
 id: 596e457071c35c882915b3e4
 title: Compare a list of strings
-challengeType: 5
+challengeType: 1
 forumTopicId: 302235
 dashedName: compare-a-list-of-strings
 ---
 
 # --description--
 
-Given a [list](https://en.wikipedia.org/wiki/List_(abstract_data_type) "wp: List\_(abstract_data_type)") of arbitrarily many strings, implement a function for each of the following conditions:
+A list is a ordered set of values that may contain duplicates. Here is an example:
+
+```js
+const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
+```
+
+Given a list of arbitrarily many strings, implement a function for each of the following conditions:
 
 <ul>
   <li>test if they are all lexically equal</li>

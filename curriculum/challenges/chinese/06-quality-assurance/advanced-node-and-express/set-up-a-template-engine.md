@@ -10,25 +10,25 @@ dashedName: set-up-a-template-engine
 
 你可以采用下面的任意一种方式完成这些挑战：
 
-- 克隆[这个 GitHub 仓库](https://github.com/freeCodeCamp/boilerplate-advancednode/)，在本地完成这些挑战。
-- 使用[我们的 Replit 上的初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-advancednode)来完成项目。
+- Clone <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
+- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
 - 使用一个你选择的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
 完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 框中提交你的项目 URL。
 
 你可以在应用的模版引擎中使用静态模板文件（如那些写在 *Pug* 里的）。 在运行时，模版引擎会用服务端的真实数据替换掉模版文件中的变量， 然后将模版转译成发送给客户端的 HTML 静态文件。 这样可以轻松地构造 HTML 页面，允许在页面直接显示变量内容而不需要从客户端发送 API 请求。
 
-在 `package.json` 文件中添加依赖 `pug@~3.0.0`。
+`pug@~3.0.0` has already been installed, and is listed as a dependency in your `package.json` file.
 
 Express 需要知道你正在使用哪个模板引擎。 我们将使用 `set` 方法来分配 `pug` 作为 `view engine` 属性的值： `app.set('view engine', 'pug')`。
 
-在正确渲染 `views/pug` 目录中的索引文件之后，加载页面。
+Your page will be blank until you correctly render the index file in the `views/pug` directory.
 
-修改 `/` 路由中 `res.render()` 声明的参数为 `views/pug` 目录的文件路径。 这个路径可以是相对路径（相对于 views），也可以是绝对路径，不需要文件扩展。
+To render the `pug` template, you need to use `res.render()` in the `/` route. Pass the file path to the `views/pug` directory as the argument to the method. The path can be a relative path (relative to views), or an absolute path, and does not require a file extension.
 
-如果一切顺利，那么你的应用主页不会再显示信息 “`Pug template is not defined.`”，而是会显示一个信息表明你已经成功渲染 Pug 模版！
+If all went as planned, your app home page will no longer be blank and will display a message indicating you've successfully rendered the Pug template!
 
-完成以上要求后，请提交你的页面链接。 如果你遇到问题，可以查看[这里](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791)的答案。
+完成以上要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

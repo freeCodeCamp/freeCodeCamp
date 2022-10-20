@@ -16,7 +16,7 @@ this.setState({
 });
 ```
 
-React 要求永遠不要直接修改 `state`，而是在 state 發生改變時始終使用 `this.setState()`。 此外，應該注意，React 可以批量處理多個 state 更新以提高性能。 這意味着通過 `setState` 方法進行的 state 更新可以是異步的。 `setState` 方法有一種替代語法可以解決異步問題， 雖然這很少用到，但是最好還是記住它！ 有關詳細信息，請參閱[React 文檔](https://reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous)。
+React 要求永遠不要直接修改 `state`，而是在 state 發生改變時始終使用 `this.setState()`。 此外，應該注意，React 可以批量處理多個 state 更新以提高性能。 這意味着通過 `setState` 方法進行的 state 更新可以是異步的。 `setState` 方法有一種替代語法可以解決異步問題， 雖然這很少用到，但是最好還是記住它！ 請查閱我們的 <a href="https://www.freecodecamp.org/news/what-is-state-in-react-explained-with-examples/" target="_blank" rel="noopener noreferrer nofollow">React 文章</a>瞭解更多詳情。
 
 # --instructions--
 
