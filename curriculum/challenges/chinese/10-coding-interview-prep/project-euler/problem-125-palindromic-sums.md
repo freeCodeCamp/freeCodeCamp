@@ -12,14 +12,27 @@ The palindromic number 595 is interesting because it can be written as the sum o
 
 There are exactly eleven palindromes below one-thousand that can be written as consecutive square sums, and the sum of these palindromes is 4164. Note that $1 = 0^2 + 1^2$ has not been included as this problem is concerned with the squares of positive integers.
 
-Find the sum of all the numbers less than $10^8$ that are both palindromic and can be written as the sum of consecutive squares.
+Find the sum of all the numbers less than the  `limit`  that are both palindromic and can be written as the sum of consecutive squares.
 
 # --hints--
-
-`palindromicSums()` should return `2906969179`.
+`palindromicSums(100000000)` should return `2906969179`.
 
 ```js
-assert.strictEqual(palindromicSums(), 2906969179);
+
+assert.strictEqual(palindromicSums(100000000), 2906969179);
+
+```
+
+`palindromicSums(100)` should return `137`.
+
+```js
+assert.strictEqual(palindromicSums(100), 137);
+```
+
+`palindromicSums(1000)` should return `4164`.
+
+```js
+assert.strictEqual(palindromicSums(1000),4164);
 ```
 
 # --seed--
@@ -27,16 +40,40 @@ assert.strictEqual(palindromicSums(), 2906969179);
 ## --seed-contents--
 
 ```js
-function palindromicSums() {
+function palindromicSums(limit) {
 
   return true;
 }
 
-palindromicSums();
+palindromicSums(100);
 ```
 
 # --solutions--
 
 ```js
-// solution required
+function isPalindrome(num) {
+  return num
+    .toString()
+    .split('')
+    .every((digit, i, arr) => digit === arr[arr.length - 1 - i]);
+}
+
+function palindromicSums(limit) {
+  let sumOfPalindromes = 0;
+  const sqrtLimit = Math.sqrt(limit);
+  const list = new Set();
+
+  for (let i = 1; i <= sqrtLimit; i++) {
+    let sumOfSquares = i * i;
+    for (let j = i + 1; j <= sqrtLimit; j++) {
+      sumOfSquares += j * j;
+      if (sumOfSquares > limit) break;
+      if (isPalindrome(sumOfSquares) && !list.has(sumOfSquares)) {
+        sumOfPalindromes += sumOfSquares;
+        list.add(sumOfSquares);
+      }
+    }
+  }
+  return sumOfPalindromes;
+}
 ```

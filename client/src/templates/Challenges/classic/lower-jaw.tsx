@@ -5,6 +5,9 @@ import { Button } from '@freecodecamp/react-bootstrap';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
+import Help from '../../../assets/icons/help';
+import Reset from '../../../assets/icons/reset';
+
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
 
@@ -181,32 +184,35 @@ const LowerJaw = ({
       testsLength &&
       (currentAttempts >= testsLength || currentAttempts >= 3);
 
-    if (isAttemptsLargerThanTest && !challengeIsCompleted) {
-      return (
-        <div>
-          <hr />
+    return (
+      <div>
+        <hr />
+        <div className='lower-jaw-icon-bar'>
           <button
-            className='btn-block btn fade-in'
-            id='help-button'
-            onClick={openHelpModal}
+            className='btn fade-in'
+            title={t('buttons.reset-code')}
+            aria-label={t('buttons.reset-code')}
+            data-cy='reset-code-button'
+            onClick={openResetModal}
           >
-            {t('buttons.ask-for-help')}
+            <Reset />
           </button>
-          <button className='btn-block btn fade-in' onClick={openResetModal}>
-            {t('learn.editor-tabs.restart-step')}
-          </button>
+
+          {isAttemptsLargerThanTest && !challengeIsCompleted ? (
+            <button
+              className='btn fade-in'
+              id='get-help-button'
+              title={t('buttons.get-help')}
+              aria-label={t('buttons.get-help')}
+              data-cy='get-help-button'
+              onClick={openHelpModal}
+            >
+              <Help />
+            </button>
+          ) : null}
         </div>
-      );
-    } else {
-      return (
-        <div>
-          <hr />
-          <button className='btn-block btn fade-in' onClick={openResetModal}>
-            {t('learn.editor-tabs.restart-step')}
-          </button>
-        </div>
-      );
-    }
+      </div>
+    );
   };
 
   const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;

@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-choropleth-map
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://choropleth-map.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://choropleth-map.freecodecamp.rocks</a>.
+**目標：** 構建一個應用，功能和 <a href="https://choropleth-map.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://choropleth-map.freecodecamp.rocks</a> 類似。
 
 完成以下需求，並且通過所有測試。 你可以使用你需要的任何庫或 API。 賦予它你自己的個人風格。
 

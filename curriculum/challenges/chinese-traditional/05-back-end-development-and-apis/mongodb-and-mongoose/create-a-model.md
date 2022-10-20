@@ -10,9 +10,9 @@ dashedName: create-a-model
 
 **C** RUD 第一小節——CREATE
 
-First of all, we need a Schema. 每一個 Schema 都對應一個 MongoDB 的 collection， 並且在相應的 collection 裏定義 documents 的“樣子”。 Schemas are building blocks for Models. They can be nested to create complex models, but in this case, we'll keep things simple. 我們可以根據模型創建實例，模型實例化後的對象稱爲 documents。
+首先，我們需要一個 Schema。 每一個 Schema 都對應一個 MongoDB 的 collection， 並且在相應的 collection 裏定義 documents 的“樣子”。 Schema 用於組成模型（Model）。 我們甚至可以通過嵌套 Schema 來創建複雜的模型。目前我們先從簡。 我們可以根據模型創建實例，模型實例化後的對象稱爲 documents。
 
-Replit is a real server, and in real servers, the interactions with the database happen in handler functions. 這些函數會在特定事件（比如有人調用了我們的服務器 API）發生時執行。 接下來的挑戰題目即是以此爲基礎。 `done()` 是一個回調函數，它的作用是在一個異步操作（比如對數據庫進行插入、查詢、更新或刪除）執行完成時，通知我們可以繼續執行後續的其它代碼。 這與 Node.js 中的處理方式十分類似，在 Node.js 中，我們會在（異步操作）成功時調用 `done(null, data)`，在失敗時調用 `done(err)`。
+Replit 是一個真實的服務器，在其中，通過 handler 函數和數據庫交互。 這些函數會在特定事件（比如有人調用了我們的服務器 API）發生時執行。 接下來的挑戰題目即是以此爲基礎。 `done()` 是一個回調函數，它的作用是在一個異步操作（比如對數據庫進行插入、查詢、更新或刪除）執行完成時，通知我們可以繼續執行後續的其它代碼。 這與 Node.js 中的處理方式十分類似，在 Node.js 中，我們會在（異步操作）成功時調用 `done(null, data)`，在失敗時調用 `done(err)`。
 
 注意：與遠程服務器進行交互時，我們需要考慮到發生錯誤的可能！
 
