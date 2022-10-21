@@ -41,6 +41,35 @@ type InitFrame = (
   frameConsoleLogger?: ProxyLogger
 ) => (frameContext: Context) => Context;
 
+class ScrollManager {
+  #previewScrollPosition = 0;
+
+  getPreviewScrollPosition = () => {
+    return this.#previewScrollPosition;
+  };
+
+  setPreviewScrollPosition = (position: number) => {
+    this.#previewScrollPosition = position;
+  };
+
+  registerScrollEventListener = (iframe: HTMLIFrameElement) => {
+    iframe.contentDocument?.addEventListener('scroll', event => {
+      const currentTarget = event.currentTarget as Document | null;
+      if (currentTarget?.body.scrollTop) {
+        this.setPreviewScrollPosition(currentTarget?.body.scrollTop);
+      }
+    });
+  };
+
+  restorePreviewScrollPosition = (iframe: HTMLIFrameElement) => {
+    if (iframe.contentDocument?.body) {
+      iframe.contentDocument.body.scrollTop = this.#previewScrollPosition;
+    }
+  };
+}
+
+export const scrollManager = new ScrollManager();
+
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
 export const mainPreviewId = 'fcc-main-frame';
@@ -268,41 +297,12 @@ const writeContentToFrame = (frameContext: Context) => {
     frameContext.document
   );
 
-  registerScrollEventListner(frameContext.element);
+  scrollManager.registerScrollEventListener(frameContext.element);
 
-  if (getPreviewScrollPosition()) {
-    restorePreviewScrollPosition(
-      frameContext.element,
-      getPreviewScrollPosition()
-    );
+  if (scrollManager.getPreviewScrollPosition()) {
+    scrollManager.restorePreviewScrollPosition(frameContext.element);
   }
   return frameContext;
-};
-
-let previewScrollPosition = 0;
-export const getPreviewScrollPosition = () => previewScrollPosition;
-export const setPreviewScrollPosition = (position: number) =>
-  (previewScrollPosition = position);
-
-const registerScrollEventListner = (iframe: HTMLIFrameElement) => {
-  iframe.contentDocument?.addEventListener(
-    'scroll',
-    (event: IframeEvent<Document>) => {
-      const { target } = event;
-      if (target.body.scrollTop) {
-        setPreviewScrollPosition(target.body.scrollTop);
-      }
-    }
-  );
-};
-
-const restorePreviewScrollPosition = (
-  iframe: HTMLIFrameElement,
-  position: number
-) => {
-  if (iframe.contentDocument?.body) {
-    iframe.contentDocument.body.scrollTop = position;
-  }
 };
 
 export const createMainPreviewFramer = (

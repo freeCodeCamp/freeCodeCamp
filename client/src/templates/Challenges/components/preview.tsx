@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { mainPreviewId, setPreviewScrollPosition } from '../utils/frame';
+import { mainPreviewId, scrollManager } from '../utils/frame';
 
 import './preview.css';
 
@@ -31,7 +31,7 @@ function Preview({
 
   useEffect(() => {
     return () => {
-      setPreviewScrollPosition(0);
+      scrollManager.setPreviewScrollPosition(0);
     };
   }, []);
 
