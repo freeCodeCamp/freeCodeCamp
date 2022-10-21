@@ -159,6 +159,7 @@
     "cross-env": "7.0.3",
     "cypress": "10.10.0",
     "cypress-plugin-stripe-elements": "1.0.2",
+    "cypress-plugin-tab": "^1.0.5",
     "docsify-cli": "4.4.4",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.5.0",
