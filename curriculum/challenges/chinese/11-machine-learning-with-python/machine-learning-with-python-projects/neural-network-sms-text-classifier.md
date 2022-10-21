@@ -8,25 +8,25 @@ dashedName: neural-network-sms-text-classifier
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-neural-network-sms-text-classifier/blob/master/fcc_sms_text_classification.ipynb" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+你将<a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-neural-network-sms-text-classifier/blob/master/fcc_sms_text_classification.ipynb" target="_blank" rel="noopener noreferrer nofollow">使用 Google Colaboratory 来完成这个项目</a>。
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+进入该链接后，在你自己的账户或本地创建一个笔记本的副本。 一旦你完成项目并通过测试（包括在该链接），请在下面提交你的项目链接。 如果你提交的是 Google Colaboratory 的链接，请确保打开链接共享时选择 “anyone with the link”。
 
-We are still developing the interactive instructional content for the machine learning curriculum. For now, you can go through the video challenges in this certification. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
+我们仍在开发机器学习课程的交互式课程部分。 现在，你可以通过这个认证中的视频挑战。 你可能还需要寻找额外的学习资源，类似于你在真实世界项目中的工作。
 
 # --instructions--
 
-In this challenge, you need to create a machine learning model that will classify SMS messages as either "ham" or "spam". A "ham" message is a normal message sent by a friend. A "spam" message is an advertisement or a message sent by a company.
+在这个挑战中，你需要创建一个机器学习模型，将短信分类为 “ham” 或 “spam”。 “ham” 消息是朋友发送的正常消息。 “spam” 是一个公司发送的广告或信息。
 
-You should create a function called `predict_message` that takes a message string as an argument and returns a list. The first element in the list should be a number between zero and one that indicates the likeliness of "ham" (0) or "spam" (1). The second element in the list should be the word "ham" or "spam", depending on which is most likely.
+你应该创建一个名为 `predict_message` 的函数，该函数接收一个消息字符串作为参数并返回一个列表。 列表中的第一个元素应该是一个介于 0 和 1 之间的数字，表示 “ham”（0）或 “spam”（1）的可能性。 列表中的第二个元素应该是单词 “ham” 或 “spam”，这取决于哪个最有可能。
 
-For this challenge, you will use the <a href="http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/" target="_blank" rel="noopener noreferrer nofollow">SMS Spam Collection</a> dataset. The dataset has already been grouped into train data and test data.
+对于这个挑战，你将使用 <a href="http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/" target="_blank" rel="noopener noreferrer nofollow">SMS Spam Collection 数据集</a>。 数据集已经被分组为训练数据和测试数据。
 
-The first two cells import the libraries and data. The final cell tests your model and function. Add your code in between these cells.
+前两个单元导入库和数据。 最后一个单元测试你的模型和功能。 在这些单元格之间添加你的代码。
 
 # --hints--
 
-It should pass all Python tests.
+它应该通过所有的 Python 测试。
 
 ```js
 

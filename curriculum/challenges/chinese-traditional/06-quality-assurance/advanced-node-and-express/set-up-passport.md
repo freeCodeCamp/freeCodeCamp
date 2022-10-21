@@ -8,13 +8,13 @@ dashedName: set-up-passport
 
 # --description--
 
-現在我們來創建 *Passport*，最終我們需要用它來實現用戶註冊和登錄。 除了 Passport，我們還會用 Express-session 來處理 session（會話）。 Express-session has a ton of advanced features you can use, but for now we're just going to use the basics! Using this middleware saves the session id as a cookie in the client and allows us to access the session data using that id on the server. This way we keep personal account information out of the cookie used by the client to verify to our server they are authenticated and just keep the *key* to access the data stored on the server.
+現在我們來創建 *Passport*，最終我們需要用它來實現用戶註冊和登錄。 除了 Passport，我們還會用 Express-session 來處理 session（會話）。 Express-session 有許多高級特性，但我們暫時只需要瞭解其基礎功能。 在客戶端，我們可以用這個中間件把 session id 儲存到 cookie。同時，我們可以在服務器上通過這個 id 訪問 session 數據。 通過這種方式，我們無需把用戶的個人賬號信息存到 cookie，來完成用戶的驗證。只需要用這個 id 作爲 *key* 來訪問服務器上用戶的數據即可。
 
-`passport@~0.4.1` and `express-session@~1.17.1` are already installed, and are both listed as dependencies in your `package.json` file.
+`passport@~0.4.1` 和 `express-session@~1.17.1` 已經安裝，並且在你的 `package.json` 文件中均被列爲依賴項。
 
-You will need to set up the session settings now and initialize Passport. Be sure to first create the variables 'session' and 'passport' to require 'express-session' and 'passport' respectively.
+現在，你需要配置 session 並初始化 Passport。 請先創建變量 “session” 和 “passport” 來分別引入 “express-session” 和 “passport”。
 
-To set up your express app to use the session we'll define just a few basic options. Be sure to add 'SESSION_SECRET' to your .env file and give it a random value. This is used to compute the hash used to encrypt your cookie!
+爲了讓 express 應用可以使用 session，我們需要添加一些基礎選項。 請在 .env 文件中添加字段 “SESSION_SECRET”，並給它賦一個隨機值， 便於加密 cookie、計算哈希。
 
 ```js
 app.use(session({
@@ -25,13 +25,13 @@ app.use(session({
 }));
 ```
 
-As well you can go ahead and tell your express app to **use** 'passport.initialize()' and 'passport.session()'. (For example, `app.use(passport.initialize());`)
+還有，我們需要讓 express **使用** “passport.initialize()” 和 “passport.session()”。 （例如，`app.use(passport.initialize());`）。
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c" target="_blank" rel="noopener noreferrer nofollow">查看已執行項目的當前進度</a>。
 
 # --hints--
 
-Passport and Express-session should be dependencies.
+應添加 Passport 和 Express-session 作爲依賴。
 
 ```js
 (getUserInput) =>
@@ -55,7 +55,7 @@ Passport and Express-session should be dependencies.
   );
 ```
 
-Dependencies should be correctly required.
+依賴應正確引入。
 
 ```js
 (getUserInput) =>
@@ -78,7 +78,7 @@ Dependencies should be correctly required.
   );
 ```
 
-Express app should use new dependencies.
+Express app 可以使用新的依賴。
 
 ```js
 (getUserInput) =>
@@ -101,7 +101,7 @@ Express app should use new dependencies.
   );
 ```
 
-Session and session secret should be correctly set up.
+應正確設置 Session 和會話密碼。
 
 ```js
 (getUserInput) =>

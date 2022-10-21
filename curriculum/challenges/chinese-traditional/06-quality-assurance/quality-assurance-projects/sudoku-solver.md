@@ -8,10 +8,10 @@ dashedName: sudoku-solver
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a>. 可以採用下面的任意一種方式完成這個挑戰：
+構建一個 JavaScript 全棧應用，在功能上與 <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a> 類似。 可以採用下面的任意一種方式完成這個挑戰：
 
--   Clone <a href="https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
+-   克隆<a href="https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">這個 GitHub 倉庫</a>，並在本地完成你的項目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
 完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 框中提交你的項目 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
@@ -270,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-If the object submitted to `/api/check` is missing `puzzle`, `coordinate` or `value`, the returned value will be `{ error: 'Required field(s) missing' }`
+如果提交給 `/api/check` 的對象缺失 `puzzle`、`coordinate` 或 `value`，那麼返回的值將是 `{ error: 'Required field(s) missing' }`。
 
 ```js
 async (getUserInput) => {
@@ -324,7 +324,7 @@ async (getUserInput) => {
 };
 ```
 
-If the `value` submitted to `/api/check` is not a number between 1 and 9, the returned value will be `{ error: 'Invalid value' }`
+如果提交給 `/api/check` 的 `value` 不是一個介於 1 到 9 之間的數字，則返回的值將是 `{ error: 'Invalid value' }`。
 
 ```js
 async (getUserInput) => {
@@ -371,7 +371,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 14 項功能測試都已完成並通過。 See `/tests/2_functional-tests.js` for the expected functionality you should write tests for.
+所有 14 項功能測試都已完成並通過。 請參閱 `/tests/2_functional-tests.js` 來了解你應該編寫的測試的功能。
 
 ```js
 async (getUserInput) => {

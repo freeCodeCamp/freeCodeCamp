@@ -10,7 +10,7 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 截至目前，我们还没有配置完数据库，因此还无法加载用户数据。 实现这个的方式很多，但对于我们的项目，一旦服务器启动，那么只要有 app 实例在运行，数据库就应一直处于连接状态。 为此，你需要在环境变量 `MONGO_URI` 中添加你的数据库地址（比如：`mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`）。 我们会在 `connection.js` 文件中调用它。
 
-*If you are having issues setting up a free database on MongoDB Atlas, check out <a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">tutorial</a>.*
+*如果你在 MongoDB Atlas 设置免费数据库时遇到问题，请查看<a href="https://chinese.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">教程</a>。*
 
 现在我们想要连接到数据库，然后开始监听请求。 这样做的目的是在连接数据库之前或者出现数据库错误时，不接收任何请求。 要实现这一点，你需要在以下代码中包含序列化和应用的路由：
 
@@ -40,7 +40,7 @@ myDB(async client => {
 
 记得要取消 `deserializeUser` 中 `myDataBase` 的注释，并把 `doc` 添加到 `done(null, null)`。
 
-完成上述要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7" target="_blank" rel="noopener noreferrer nofollow">查看已执行项目的当前进度</a>。
 
 # --hints--
 

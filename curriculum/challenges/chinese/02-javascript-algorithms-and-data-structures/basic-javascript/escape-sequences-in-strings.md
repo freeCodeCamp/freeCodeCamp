@@ -11,12 +11,12 @@ dashedName: escape-sequences-in-strings
 
 引号不是字符串中唯一可以被转义（<dfn>escaped</dfn>）的字符。 使用转义字符有两个原因：
 
-1.  To allow you to use characters you may not otherwise be able to type out, such as a newline.
+1.  首先是可以让你使用无法输入的字符，例如换行。
 2.  其次是可以让你在一个字符串中表示多个引号，而不会出错。
 
 我们在之前的挑战中学到了这个。
 
-<table class='table table-striped'><thead><tr><th>代码</th><th>输出</th></tr></thead><tbody><tr><td><code>\'</code></td><td>单引号</td></tr><tr><td><code>\"</code></td><td>双引号</td></tr><tr><td><code>\\</code></td><td>反斜杠</td></tr><tr><td><code>\n</code></td><td>换行符</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\b</code></td><td>退格</td></tr><tr><td><code>\f</code></td><td>换页符</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>代码</th><th>输出</th></tr></thead><tbody><tr><td><code>\'</code></td><td>单引号</td></tr><tr><td><code>\"</code></td><td>双引号</td></tr><tr><td><code>\\</code></td><td>反斜杠</td></tr><tr><td><code>\n</code></td><td>换行符</td></tr><tr><td><code>\t</code></td><td>制表符</td></tr><tr><td><code>\r</code></td><td>回车</td></tr><tr><td><code>\b</code></td><td>退格</td></tr><tr><td><code>\f</code></td><td>换页符</td></tr></tbody></table>
 
 *请注意，必须对反斜杠本身进行转义，它才能显示为反斜杠。*
 

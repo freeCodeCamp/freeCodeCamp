@@ -8,13 +8,13 @@ dashedName: implementation-of-social-authentication-ii
 
 # --description--
 
-设置 GitHub 验证的最后一步是创建策略本身。 `passport-github@~1.1.0` has already been added as a dependency, so require it in your `auth.js` file as `GithubStrategy` like this: `const GitHubStrategy = require('passport-github').Strategy;`. 别忘了请求和配置 `dotenv`，使用你的环境变量。
+设置 GitHub 验证的最后一步是创建策略本身。 已经添加 `passport-github@~1.1.0` 作为依赖，在 `auth.js` 中请求它，作为 `GithubStrategy`，像这样：`const GitHubStrategy = require('passport-github').Strategy;`。 别忘了请求和配置 `dotenv`，使用你的环境变量。
 
 为了设置 GitHub 策略，我们需要在 Passport 中使用实例化的 `GitHubStrategy`，它可以接收两个参数：一个对象（包括 `clientID`、`clientSecret` 和 `callbackURL`），以及一个回调函数。在这个回调函数中，我们要处理验证成功时，判断用户是否已经在数据库中存在的逻辑，以及在用户数据库对象中最初保存哪些字段。 这种处理方式适用于绝大部分第三方验证策略，但有些策略会需要我们提供更多的信息，详情请参考相关策略的 GitHub README。 例如，Google 的验证策略会要求你提供一个 *scope*，用于标示用户成功登录后，你需要从返回的对象中获取那些信息。以及，这也需要经过用户同意，你才可以获取到。
 
-The current strategy we are implementing authenticates users using a GitHub account and OAuth 2.0 tokens. The client ID and secret obtained when creating an application are supplied as options when creating the strategy. The strategy also requires a `verify` callback, which receives the access token and optional refresh token, as well as `profile` which contains the authenticated user's GitHub profile. The `verify` callback must call `cb` providing a user to complete authentication.
+当前策略是使用 GitHub 账户和 OAuth 2.0 令牌验证用户。 创建应用程序时获得的客户 ID 和密码在创建策略时作为选项提供。 策略还需要 `verify` 回调，接收访问令牌和可选刷新令牌， 以及包含认证用户的 GitHub 资料的 `profile`。 `verify` 回调必须调用 `cb` 提供用户完成验证。
 
-Here's how your new strategy should look at this point:
+你的新策略应该是这样的：
 
 ```js
 passport.use(new GitHubStrategy({
@@ -29,13 +29,13 @@ passport.use(new GitHubStrategy({
 ));
 ```
 
-Your authentication won't be successful yet, and it will actually throw an error without the database logic and callback, but it should log your GitHub profile to your console if you try it!
+目前，你的验证部分不会成功。由于没有数据库的逻辑和回调函数，你的代码目前还会报错。但如果你试一试，就可以在控制台里看到输出了你的 GitHub 个人信息。
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6" target="_blank" rel="noopener noreferrer nofollow">查看已执行项目的当前进度</a>。
 
 # --hints--
 
-passport-github dependency should be added.
+应正确添加依赖 passport-github。
 
 ```js
 (getUserInput) =>
@@ -54,7 +54,7 @@ passport-github dependency should be added.
   );
 ```
 
-passport-github should be required.
+应正确请求依赖 passport-github。
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ passport-github should be required.
   );
 ```
 
-GitHub strategy should be setup correctly thus far.
+到目前为止，GitHub 策略应正确设置。
 
 ```js
 (getUserInput) =>
