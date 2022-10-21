@@ -1,5 +1,5 @@
 import React from 'react';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'react-i18next';
 import EditorTabs from './editor-tabs';
@@ -88,7 +88,7 @@ const ActionRow = ({
             onClick={() => togglePane('showPreviewPortal')}
           >
             <span className='sr-only'>{getPreviewBtnsSrText().portal}</span>
-            <FontAwesomeIcon icon={faExternalLinkAlt} />
+            <FontAwesomeIcon icon={faWindowRestore} />
           </button>
         </div>
       </div>
