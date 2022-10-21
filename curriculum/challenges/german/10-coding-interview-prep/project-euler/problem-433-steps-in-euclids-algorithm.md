@@ -10,10 +10,8 @@ dashedName: problem-433-steps-in-euclids-algorithm
 
 Let $E(x_0, y_0)$ be the number of steps it takes to determine the greatest common divisor of $x_0$ and $y_0$ with Euclid's algorithm. More formally:
 
-$$\begin{align}
-  & x_1 = y_0, y_1 = x_0\bmod y_0 \\\\
-  & x_n = y_{n - 1}, y_n = x_{n - 1}\bmod y_{n - 1}
-\end{align}$$
+$$\begin{align}   & x_1 = y_0, y_1 = x_0\bmod y_0 \\\\
+  & x_n = y_{n - 1}, y_n = x_{n - 1}\bmod y_{n - 1} \end{align}$$
 
 $E(x_0, y_0)$ is the smallest $n$ such that $y_n = 0$.
 

@@ -12,7 +12,7 @@ Sí - Puedes contribuir cualquiera de los más de 30 idiomas que hemos habilitad
 
 Tenemos traducciones hechas por usuarios nativos en algunos idiomas. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo acerca de esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
-If you are interested in contributing to translations please make sure you [read this guide](how-to-translate-files.md) first.
+Si estás interesado en ayudar a traducir, por favor asegúrate de [leer esta guía](how-to-translate-files.md) primero.
 
 ### Puedo contribuír con artículos a las Noticias de freeCodeCamp o con vídeos al canal de YouTube de freeCodeCamp?
 

@@ -10,7 +10,7 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 Подібно символу тильда, про який ми дізналися в останньому завданні, npm дозволяє встановити найновіший ПАТЧ для залежності, символ карет (`^`) дозволяє npm також встановлювати майбутні оновлення. Відмінність полягає в тому, що символ карет дозволяє і ДРУГОРЯДНІ оновлення, і ПАТЧІ.
 
-Ваша поточна версія моменту повинна бути "~ 2.10.2", що дозволяє npm встановлювати останню версію 2.10.x. Якби ви використовували символ (^) як префікс версії замість цього, npm було б дозволено оновлюватись до будь-якої версії 2.xx.
+Your current version of `@freecodecamp/example` should be "~1.2.13" which allows npm to install to the latest 1.2.x version. If you were to use the caret (^) as a version prefix instead, npm would be allowed to update to any 1.x.x version.
 
 ```json
 "package": "^1.3.8"
@@ -20,13 +20,13 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 # --instructions--
 
-Використовуйте символ (`^`), щоб встановити префікс версії моменту у ваших залежностях і дозволити npm оновити його до будь-якого оновлення ДРУГОРЯДНОЇ версії.
+Use the caret (`^`) to prefix the version of `@freecodecamp/example` in your dependencies and allow npm to update it to any new MINOR release.
 
 **Примітка:** Номери версій не слід змінювати.
 
 # --hints--
 
-"dependencies" повинні містити "moment"
+`"dependencies"` should include `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
   );
 ```
 
-версія "moment" повинна бути "^2.x.x"
+`"@freecodecamp/example"` version should match `"^1.x.x"`.
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^\^2\./,
-        'Wrong version of "moment". It should be ^2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\^1\./,
+        'Wrong version of "@freecodecamp/example". It should be ^1.2.13'
       );
     },
     (xhr) => {

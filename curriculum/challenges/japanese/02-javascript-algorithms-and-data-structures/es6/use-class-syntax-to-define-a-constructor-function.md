@@ -12,24 +12,35 @@ ES6 では、<dfn>class</dfn> キーワードを使用してオブジェクト�
 
 `class` 構文は単なる構文にすぎません。Java、Python、Ruby などの言語とは異なり、オブジェクト指向のパラダイムをクラスベースで本格的に実装するものではないことに注意してください。
 
-ES5 では、通常は `constructor` 関数を定義し、`new` キーワードを使用してオブジェクトをインスタンス化します。
+In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
+
+In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
 
 ```js
-var SpaceShuttle = function(targetPlanet){
-  this.targetPlanet = targetPlanet;
-}
-var zeus = new SpaceShuttle('Jupiter');
-```
-
-`class` 構文は、こうした `constructor` 関数による作成の代わりとなるだけです。
-
-```js
+// Explicit constructor
 class SpaceShuttle {
   constructor(targetPlanet) {
     this.targetPlanet = targetPlanet;
   }
+  takeOff() {
+    console.log("To " + this.targetPlanet + "!");
+  }
 }
+
+// Implicit constructor 
+class Rocket {
+  launch() {
+    console.log("To the moon!");
+  }
+}
+
 const zeus = new SpaceShuttle('Jupiter');
+// prints To Jupiter! in console
+zeus.takeOff();
+
+const atlas = new Rocket();
+// prints To the moon! in console
+atlas.launch();
 ```
 
 `class` キーワードによって、コンストラクターの追加先となる新しい関数を宣言していることに注意してください。 このコンストラクターは、新しいオブジェクトを作成するために `new` が呼び出されるときに呼び出されます。

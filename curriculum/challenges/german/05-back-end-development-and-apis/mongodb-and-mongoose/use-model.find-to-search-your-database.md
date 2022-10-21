@@ -14,7 +14,7 @@ In its simplest usage, `Model.find()` accepts a query document (a JSON object) a
 
 Modify the `findPeopleByName` function to find all the people having a given name, using <code>Model.find() -\> [Person]</code>
 
-Use the function argument `personName` as the search key.
+Verwende das Funktionsargument `personName` als Suchbegriff.
 
 # --hints--
 

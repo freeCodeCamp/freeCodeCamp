@@ -8,19 +8,19 @@ dashedName: problem-210-obtuse-angled-triangles
 
 # --description--
 
-Consider the set $S(r)$ of points ($x$,$y$) with integer coordinates satisfying $|x| + |y| ≤ r$.
+Man betrachte die Menge $S(r)$ von Punkten ($x$,$y$) mit ganzzahligen Koordinaten, die $|x| + |y| ≤ r$ erfüllen.
 
 Let $O$ be the point (0,0) and $C$ the point ($\frac{r}{4}$,$\frac{r}{4}$).
 
-Let $N(r)$ be the number of points $B$ in $S(r)$, so that the triangle $OBC$ has an obtuse angle, i.e. the largest angle $α$ satisfies $90°&lt;α&lt;180°$.
+Lasse $N(r)$ die Anzahl der Punkte $B$ in $S(r)$ sein, sodass das Dreieck $OBC$ einen stumpfen Winkel hat, d.h. der größte Winkel $α$ erfüllt $90°&lt;α&lt;180°$.
 
-So, for example, $N(4)=24$ and $N(8)=100$.
+So ist zum Beispiel $N(4)=24$ und $N(8)=100$.
 
-What is $N(1\\,000\\,000\\,000)$?
+Was ist $N(1\\.000\.000\.000)$?
 
 # --hints--
 
-`obtuseAngledTriangles()` should return `1598174770174689500`.
+`obtuseAngledTriangles()` sollte `1598174770174689500` zurückgeben.
 
 ```js
 assert.strictEqual(obtuseAngledTriangles(), 1598174770174689500);

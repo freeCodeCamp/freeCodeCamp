@@ -1,49 +1,45 @@
 ---
 id: 5900f54a1000cf542c51005c
-title: 'Problem 477: Number Sequence Game'
-challengeType: 5
+title: '問題 477：數字序列遊戲'
+challengeType: 1
 forumTopicId: 302154
 dashedName: problem-477-number-sequence-game
 ---
 
 # --description--
 
-The number sequence game starts with a sequence S of N numbers written on a line.
+The number sequence game starts with a sequence $S$ of $N$ numbers written on a line.
 
-Two players alternate turns. At his turn, a player must select and remove either the first or the last number remaining in the sequence.
+兩名玩家交替輪流。 在輪到他時，玩家必須選擇並刪除序列中剩餘的第一個或最後一個數字。
 
-The player score is the sum of all the numbers he has taken. Each player attempts to maximize his own sum.
+玩家得分是他所取所有數字的總和。 每個玩家都試圖最大化自己的總和。
 
-If N = 4 and S = {1, 2, 10, 3}, then each player maximizes his score as follows:
+If $N = 4$ and $S = \\{1, 2, 10, 3\\}$, then each player maximizes his score as follows:
 
-Player 1: removes the first number (1)
+- Player 1: removes the first number (1)
+- Player 2: removes the last number from the remaining sequence (3)
+- Player 1: removes the last number from the remaining sequence (10)
+- Player 2: removes the remaining number (2)
 
-Player 2: removes the last number from the remaining sequence (3)
+Player 1 score is $1 + 10 = 11$.
 
-Player 1: removes the last number from the remaining sequence (10)
+Let $F(N)$ be the score of player 1 if both players follow the optimal strategy for the sequence $S = \\{s_1, s_2, \ldots, s_N\\}$ defined as:
 
-Player 2: removes the remaining number (2)
+- $s_1 = 0$
+- $s_{i + 1} = ({s_i}^2 + 45)$ modulo $1\\,000\\,000\\,007$
 
-Player 1 score is 1 + 10 = 11.
+The sequence begins with $S = \\{0, 45, 2\\,070, 4\\,284\\,945, 753\\,524\\,550, 478\\,107\\,844, 894\\,218\\,625, \ldots\\}$.
 
-Let F(N) be the score of player 1 if both players follow the optimal strategy for the sequence S = {s1, s2, ..., sN} defined as:
+You are given $F(2) = 45$, $F(4) = 4\\,284\\,990$, $F(100) = 26\\,365\\,463\\,243$, $F(104) = 2\\,495\\,838\\,522\\,951$.
 
-s1 = 0
-
-si+1 = (si2 + 45) modulo 1 000 000 007
-
-The sequence begins with S = {0, 45, 2070, 4284945, 753524550, 478107844, 894218625, ...}.
-
-You are given F(2) = 45, F(4) = 4284990, F(100) = 26365463243, F(104) = 2495838522951.
-
-Find F(108).
+Find $F({10}^8)$.
 
 # --hints--
 
-`euler477()` should return 25044905874565164.
+`numberSequenceGame()` should return `25044905874565164`.
 
 ```js
-assert.strictEqual(euler477(), 25044905874565164);
+assert.strictEqual(numberSequenceGame(), 25044905874565164);
 ```
 
 # --seed--
@@ -51,12 +47,12 @@ assert.strictEqual(euler477(), 25044905874565164);
 ## --seed-contents--
 
 ```js
-function euler477() {
+function numberSequenceGame() {
 
   return true;
 }
 
-euler477();
+numberSequenceGame();
 ```
 
 # --solutions--

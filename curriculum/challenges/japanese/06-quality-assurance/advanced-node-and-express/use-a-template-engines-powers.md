@@ -12,15 +12,39 @@ dashedName: use-a-template-engines-powers
 
 Pug ファイルでは変数を使用することができます。それには、変数名を `#{variable_name}` として参照し、要素上の他のテキストとともにインラインで記述します。または、要素に対して `p=variable_name` のように空白を付けずに等号を使用します (この例では変数の値が p 要素のテキストに割り当てられます)。
 
-Pug のシンタックスと構造については、[こちら](https://github.com/pugjs/pug)の GitHub README をぜひご覧してください。 Pug は、空白とタブを使用してネストされた要素を示し、少ないコード量で美しいサイトを作成することを目標としています。
+ Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site. Read the Pug documentation for more information on usage and syntax.
 
-プロジェクトに含まれている pug ファイル「index.pug」では、変数 *title* と *message* を使用しました。
+ Here is an example:
 
-これらをサーバーから渡すには、*res.render* への 2 番目の引数として、変数とその値を持つオブジェクトを追加する必要があります。 たとえば、インデックスビューの変数を設定するために、`{title: 'Hello', message: 'Please login'}` というオブジェクトを渡すことができます。
+ ```html
+ <!--Typing this using Pug-->
+ head
+    script(type='text/javascript').
+      if (foo) bar(1 + 5);
+  body
+    if youAreUsingPug
+        p You are amazing
+      else
+        p Get on it!
 
-コードは `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` のようになります。これでページを更新すると、index.pug ファイルに配置されているビュー内の正しい場所に、これらの値がレンダーされるはずです！
+<!--will lead to creating this code-->
+  <head>
+    <script type="text/javascript">
+      if (foo) bar(1 + 5);
+    </script>
+  </head>
+  <body>
+    <p>You are amazing</p>
+  </body>
+  ```
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871)で確認できます。
+プロジェクトに含まれている pug ファイル `index.pug` では、変数 `title` と `message` を使用しました。
+
+これらをサーバーから渡すには、`res.render` への 2 番目の引数として、変数とその値を持つオブジェクトを追加する必要があります。 たとえば、インデックスビューの変数を設定するために、`{title: 'Hello', message: 'Please login'}` というオブジェクトを渡すことができます。
+
+コードは `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` のようになります。これでページを更新すると、`index.pug` ファイルに配置されているビュー内の正しい場所に、これらの値がレンダーされるはずです！
+
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

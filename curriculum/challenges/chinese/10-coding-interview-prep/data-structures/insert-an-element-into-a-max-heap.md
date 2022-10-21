@@ -48,7 +48,7 @@ Finally, add a `print` method which returns an array of all the items that have 
 
 # --hints--
 
-The MaxHeap data structure should exist.
+The `MaxHeap` data structure should exist.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called insert.
+`MaxHeap` should have a method called `insert`.
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called print.
+`MaxHeap` should have a method called `print`.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The insert method should add elements according to the max heap property.
+The `insert` method should add elements according to the max heap property.
 
 ```js
 assert(
@@ -110,8 +110,12 @@ assert(
     test.insert(700);
     test.insert(32);
     test.insert(51);
-    let result = test.print();
-    return result.length == 5 ? result[0] == 700 : result[1] == 700;
+    test.insert(800);
+    const result = test.print();
+    const solution = JSON.stringify([null,800,51,700,32,50,100]);
+    const solutionWithoutNull = JSON.stringify([800,51,700,32,50,100]);
+
+    return (result.length == 6) ? (JSON.stringify(result) == solutionWithoutNull) : (JSON.stringify(result) == solution);
   })()
 );
 ```
@@ -133,20 +137,28 @@ var MaxHeap = function() {
 ```js
 var MaxHeap = function() {
     // Only change code below this line
-    this.heap = [null];
-    this.insert = (ele) => {
-        var index = this.heap.length;
-        var arr = [...this.heap];
-        arr.push(ele);
-        while (ele > arr[Math.floor(index / 2)] && index > 1) {
-            arr[index] = arr[Math.floor(index / 2)];
-            arr[Math.floor(index / 2)] = ele;
-            index = arr[Math.floor(index / 2)];
-        }
-        this.heap = arr;
+    this.heap = [];
+    this.parent = index => {
+      return Math.floor((index - 1) / 2);
+    }
+    this.insert = element => {
+      this.heap.push(element);
+      this.heapifyUp(this.heap.length - 1);
+    }
+    this.heapifyUp = index => {
+      let currentIndex = index,
+      parentIndex = this.parent(currentIndex);
+      while (currentIndex > 0 && this.heap[currentIndex] > this.heap[parentIndex]) {
+        this.swap(currentIndex, parentIndex);
+        currentIndex = parentIndex;
+        parentIndex = this.parent(parentIndex);
+      }
+    }
+    this.swap = (index1, index2) => {
+      [this.heap[index1], this.heap[index2]] = [this.heap[index2], this.heap[index1]];
     }
     this.print = () => {
-        return this.heap.slice(1);
+      return this.heap;
     }
     // Only change code above this line
 };

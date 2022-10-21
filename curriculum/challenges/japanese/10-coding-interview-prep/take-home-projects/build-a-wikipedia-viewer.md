@@ -8,23 +8,21 @@ dashedName: build-a-wikipedia-viewer
 
 # --description--
 
-**目標:** [https://codepen.io/freeCodeCamp/full/wGqEga](https://codepen.io/freeCodeCamp/full/wGqEga/) と同じような機能を持つ、[CodePen.io](https://codepen.io) アプリを構築してください。
+**Objective:** Build an app that is functionally similar to this: <a href="https://codepen.io/freeCodeCamp/full/wGqEga/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/wGqEga/</a>.
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を実装してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
+The MediaWiki software powers Wikipedia, and it helps you collect and organize knowledge and make it available to people.
 
-**ユーザーストーリー:** Wikipedia の項目を検索ボックスで検索し、その結果として Wikipedia の項目を参照することができます。
+Using the MediaWiki API, replicate the search function and random article function, similar to the example app above. You can use Wikipedia as your data source.
 
-**ユーザーストーリー:** ボタンをクリックすることで、ランダムに Wikipedia の項目を表示できます。
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-ヒント #1: ランダムに Wikipedia の記事を取得するために使用できる URL はこちらです: `https://en.wikipedia.org/wiki/Special:Random`
+**User Story:** I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.
 
-ヒント #2: Wikipedia の API の使用に関する項目はこちらです: `https://www.mediawiki.org/wiki/API:Main_page`
+**User Story:** I can click a button to see a random Wikipedia entry.
 
-ヒント #3: この[リンク](https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm)を使用して Wikipedia の API を実験してください。
+When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 
-完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
-
-[freeCodeCamp フォーラム](https://forum.freecodecamp.org/c/project-feedback/409)でプロジェクトを共有することにより、フィードバックを得ることができます。
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

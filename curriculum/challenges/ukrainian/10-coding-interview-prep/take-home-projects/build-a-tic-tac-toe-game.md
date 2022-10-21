@@ -8,9 +8,9 @@ dashedName: build-a-tic-tac-toe-game
 
 # --description--
 
-**Ціль:** Створити застосунок[ CodePen.io, ](https://codepen.io) який функціонально схожий на цей [ https://codepen.io/freeCodeCamp/full/KzXQgy/](https://codepen.io/freeCodeCamp/full/KzXQgy/).
+**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/KzXQgy/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/KzXQgy/</a>.
 
-Заповніть, як нижче наведено, [ історії користувача ](https://en.wikipedia.org/wiki/User_story). Використовуйте будь-які потрібні вам бібліотеки чи API (прикладні програмні інтерфейси). Проявіть при цьому свій власний стиль.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 **Історія користувача:** Я можу грати в Хрестики-нулики за допомогою комп'ютера.
 
@@ -20,7 +20,7 @@ dashedName: build-a-tic-tac-toe-game
 
 Після завершення додайте посилання на ваш проєкт на CodePen та натисніть на кнопку "Я виконав це завдання".
 
-Ви можете отримати відгук про ваш проєкт, поділившись ним на форумі - [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

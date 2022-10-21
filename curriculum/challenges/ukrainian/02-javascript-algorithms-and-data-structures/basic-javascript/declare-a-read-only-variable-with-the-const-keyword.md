@@ -21,49 +21,49 @@ FAV_PET = "Dogs";
 
 Змінні, які не передбачають перепризначення, слід називати, використовуючи ключове слово `const`. Це може знадобитися, якщо ви випадково спробуєте перепризначити змінну, яка повинна бути константною.
 
-Як правило, назву пишуть великими літерами, а слова виокремлюють знаком підкреслення.
-
-**Зверніть увагу:** Зазвичай, розробники пишуть назву ідентифікаторів незмінних значень великими літерами, а назви змінних значень (об'єктів та масивів) — маленькими літерами або через camelCase. Ви дізнаєтесь більше про предмети, масиви, незмінні та незмінні цінності в наступних завданнях. Також у наступних завданнях ви побачите приклади використання нижнього та верхнього регістру, а також ідентифікаторів змінної camelCase.
+**Note:** It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays). You will learn more about objects, arrays, and immutable and mutable values in later challenges. Also in later challenges, you will see examples of uppercase, lowercase, or camelCase variable identifiers.
 
 # --instructions--
 
-Змініть код так, щоб усі змінні були оголошені за допомогою `let` або `const`. Використовуйте `let` для змінних значень, а `const` для незмінних значень. Крім того, змініть назву змінної, оголошеної з `const`, відповідно до поширених методів роботи: назви констант мають писатися великими літерами.
+Change the code so that all variables are declared using `let` or `const`. Use `let` when you want the variable to change, and `const` when you want the variable to remain constant. Also, rename variables declared with `const` to conform to common practices. Do not change the strings assigned to the variables.
 
 # --hints--
 
-`var` має бути відсутнім у коді.
+`var` should not exist in your code.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
-Ви повинні змінити `fCC` на верхні регістри.
+You should change `fCC` to all uppercase.
 
 ```js
-(getUserInput) => {
-  assert(getUserInput('index').match(/(FCC)/));
-  assert(!getUserInput('index').match(/fCC/));
-}
+assert.match(code, /(FCC)/);
+assert.notMatch(code, /(fCC)/);
 ```
 
-`FCC` має бути константною змінною, оголошеною з `const`.
+`FCC` should be a constant variable declared with `const`.
 
 ```js
-assert.equal(FCC, 'freeCodeCamp');
 assert.match(code, /const\s+FCC/);
 ```
 
-`fact` має оголошуватися з `let`.
+The string assigned to `FCC` should not be changed.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(let fact)/g));
+assert.equal(FCC, 'freeCodeCamp');
 ```
 
-`console.log` необхідно змінити, щоб вивести на екран змінні `FCC` та `fact`.
+`fact` should be declared with `let`.
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g));
+assert.match(code, /(let\s+fact)/g);
+```
+
+`console.log` should be changed to print the `FCC` and `fact` variables.
+
+```js
+assert.match(code, /console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g);
 ```
 
 # --seed--

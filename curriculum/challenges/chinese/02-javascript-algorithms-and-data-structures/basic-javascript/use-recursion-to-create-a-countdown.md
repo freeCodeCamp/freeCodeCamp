@@ -71,6 +71,13 @@ assert(
 );
 ```
 
+Global variables should not be used to cache the array.
+
+```js
+countdown(1)
+assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
+```
+
 # --seed--
 
 ## --seed-contents--

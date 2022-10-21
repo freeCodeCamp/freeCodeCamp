@@ -1,14 +1,20 @@
 ---
 id: 596e457071c35c882915b3e4
 title: Порівняйте список рядків
-challengeType: 5
+challengeType: 1
 forumTopicId: 302235
 dashedName: compare-a-list-of-strings
 ---
 
 # --description--
 
-Маючи список [list](https://en.wikipedia.org/wiki/List_(abstract_data_type) "wp: List\_(abstract_data_type)") з довільної кількості рядків, реалізуйте функцію для кожної з наступних умов:
+A list is a ordered set of values that may contain duplicates. Here is an example:
+
+```js
+const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
+```
+
+Given a list of arbitrarily many strings, implement a function for each of the following conditions:
 
 <ul>
   <li>перевірте, чи всі вони лексично рівні</li>
@@ -29,61 +35,61 @@ assert(typeof allEqual === 'function');
 assert(typeof azSorted === 'function');
 ```
 
-Функція `allEqual(["AA", "AA", "AA", "AA"])` має повернути true.
+`allEqual(["AA", "AA", "AA", "AA"])` should return true.
 
 ```js
 assert(allEqual(testCases[0]));
 ```
 
-Функція `azSorted(["AA", "AA", "AA", "AA"])` має повернути false.
+`azSorted(["AA", "AA", "AA", "AA"])` should return false.
 
 ```js
 assert(!azSorted(testCases[0]));
 ```
 
-Функція `allEqual(["AA", "ACB", "BB", "CC"])` має повернути false.
+`allEqual(["AA", "ACB", "BB", "CC"])` should return false.
 
 ```js
 assert(!allEqual(testCases[1]));
 ```
 
-Функція `azSorted(["AA", "ACB", "BB", "CC"])` має повернути true.
+`azSorted(["AA", "ACB", "BB", "CC"])` should return true.
 
 ```js
 assert(azSorted(testCases[1]));
 ```
 
-Функція `allEqual([])` має повернути true.
+`allEqual([])` should return true.
 
 ```js
 assert(allEqual(testCases[2]));
 ```
 
-Функція `azSorted([])` має повернути true.
+`azSorted([])` should return true.
 
 ```js
 assert(azSorted(testCases[2]));
 ```
 
-Функція `allEqual(["AA"])` має повернути true.
+`allEqual(["AA"])` should return true.
 
 ```js
 assert(allEqual(testCases[3]));
 ```
 
-Функція `azSorted(["AA"])` має повернути true.
+`azSorted(["AA"])` should return true.
 
 ```js
 assert(azSorted(testCases[3]));
 ```
 
-Функція `allEqual(["BB", "AA"])` має повернути false.
+`allEqual(["BB", "AA"])` should return false.
 
 ```js
 assert(!allEqual(testCases[4]));
 ```
 
-Функція `azSorted(["BB", "AA"])` має повернути false.
+`azSorted(["BB", "AA"])` should return false.
 
 ```js
 assert(!azSorted(testCases[4]));

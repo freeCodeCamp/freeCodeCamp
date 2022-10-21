@@ -18,7 +18,7 @@ dashedName: implementation-of-social-authentication
 
 在 OAuth 驗證策略中，我們至少需要提供 *Client ID* 和 *Client Secret*，這樣第三方平臺就會獲悉驗證請求的來源，以及這個來源是否有效。 爲此，需要去我們使用的第三方驗證平臺（比如 GitHub）獲取這兩個字段的值。 注意，我們獲取到的這個值是唯一的，僅對我們的當前 app 有效——**因此，千萬不要分享給別人**，更不要上傳到公共倉庫或者直接寫在代碼裏。 通常，我們會把它們放在 `.env` 文件裏，並通過 `process.env.GITHUB_CLIENT_ID` 獲取。 對於這次挑戰，我們將會使用 GitHub 作爲驗證平臺。
 
-首先，你需要進入賬戶設置裏的 “developer settings（開發者設置）”板塊，在 '[OAuth applications](https://github.com/settings/developers)' 獲取 *Client ID and Secret*。 點擊 “Register a new application（註冊一個新的應用）”，設置你的應用名稱，然後把你的 Replit 主頁地址（**不是項目代碼的 url**）粘貼到 Homepage URL。然後，回調 url 需要設置成上面 Homepage URL 裏你粘貼的地址，但後面要加上 `/auth/github/callback`。 這樣在用戶通過 Github 驗證後才能跳轉到我們指定的頁面。 在你的 `.env` 文件裏將返回的信息保存爲 `'GITHUB_CLIENT_ID'` 和 `'GITHUB_CLIENT_SECRET'`。
+Obtaining your *Client ID and Secret* from GitHub is done in your account profile settings under 'developer settings', then <a href="https://github.com/settings/developers" target="_blank" rel="noopener noreferrer nofollow">'OAuth applications'</a>. 點擊 “Register a new application（註冊一個新的應用）”，設置你的應用名稱，然後把你的 Replit 主頁地址（**不是項目代碼的 url**）粘貼到 Homepage URL。然後，回調 url 需要設置成上面 Homepage URL 裏你粘貼的地址，但後面要加上 `/auth/github/callback`。 這樣在用戶通過 Github 驗證後才能跳轉到我們指定的頁面。 在你的 `.env` 文件裏將返回的信息保存爲 `'GITHUB_CLIENT_ID'` 和 `'GITHUB_CLIENT_SECRET'`。
 
 在你的 `routes.js` 文件中，添加 `showSocialAuth: true` 到主頁路由，在 `showRegistration: true` 的後面。 然後，爲 `/auth/github` 和 `/auth/github/callback` 創建兩個接收 GET 請求的路由。 第一個只需要通過調用 passport 來驗證 `'github'`。 第二個應該調用 passport 來驗證 `'github'`，但需要在失敗時跳轉回主頁 `/`，成功時跳轉到用戶頁面 `/profile`（跳轉的邏輯與上一個項目中的邏輯一樣）。
 
@@ -31,7 +31,7 @@ app.route('/login')
   });
 ```
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考[這裏](https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e)的答案。
+完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can check out the project up to this point <a href="https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e</a>.
 
 # --hints--
 

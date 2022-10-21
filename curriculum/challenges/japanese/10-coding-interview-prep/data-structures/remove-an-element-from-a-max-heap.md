@@ -22,7 +22,7 @@ dashedName: remove-an-element-from-a-max-heap
 
 # --hints--
 
-MaxHeap データ構造が存在する必要があります。
+The `MaxHeap` data structure should exist.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-MaxHeap に print というメソッドが必要です。
+`MaxHeap` should have a method called `print`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-MaxHeap に insert というメソッドが必要です。
+`MaxHeap` should have a method called `insert`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-MaxHeap に remove というメソッドが必要です。
+`MaxHeap` should have a method called `remove`.
 
 ```js
 assert(
@@ -84,9 +84,24 @@ assert(
 );
 ```
 
-remove メソッドは max heap プロパティを維持しながら最大ヒープから最大要素を削除する必要があります。
+The `remove` method should remove the greatest element from the max heap while maintaining the max heap property.
 
 ```js
+function isHeap(arr, i, n) {
+  if (i >= (n - 1) / 2) {
+    return true;
+  }
+  if (
+    arr[i] >= arr[2 * i + 1] &&
+    arr[i] >= arr[2 * i + 2] &&
+    isHeap(arr, 2 * i + 1, n) &&
+    isHeap(arr, 2 * i + 2, n)
+  ) {
+    return true;
+  }
+  return false;
+}
+
 assert(
   (function () {
     var test = false;
@@ -95,16 +110,21 @@ assert(
     } else {
       return false;
     }
-    test.insert(30);
-    test.insert(300);
-    test.insert(500);
-    test.insert(10);
-    let result = [];
-    result.push(test.remove());
-    result.push(test.remove());
-    result.push(test.remove());
-    result.push(test.remove());
-    return result.join('') == '5003003010';
+  let max = Infinity;
+  const [result, vals] = [[], [2, 15, 3, 7, 12, 7, 10, 90]];
+  vals.forEach((val) => test.insert(val));
+  for (let i = 0; i < vals.length; i++) {
+    const curHeap = test.print();
+    const arr = curHeap[0] === null ? curHeap.slice(1) : curHeap;
+    if (!isHeap(arr, 0, arr.length - 1)) {
+      return false;
+    }
+    const removed = test.remove();
+    if(removed > max) return false
+    max = removed;
+    result.push(removed);
+  }
+  return true
   })()
 );
 ```

@@ -16,7 +16,7 @@ dashedName: search-within-a-linked-list
 
 # --instructions--
 
-リンクリストが空かどうかを調べる `isEmpty` メソッド、与えられた要素の `index` を返す `indexOf` メソッド、および、与えられた `index` にある `element` を返す `elementAt` メソッドを記述してください。
+Write an `isEmpty` method that checks if the linked list is empty, an `indexOf` method that returns the `index` of a given element, and an `elementAt` that returns an `element` at a given `index`.
 
 # --hints--
 

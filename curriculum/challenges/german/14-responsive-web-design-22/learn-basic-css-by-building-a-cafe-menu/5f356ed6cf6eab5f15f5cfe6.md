@@ -1,8 +1,8 @@
 ---
 id: 5f356ed6cf6eab5f15f5cfe6
-title: Schritt 21
+title: Step 20
 challengeType: 0
-dashedName: step-21
+dashedName: step-20
 ---
 
 # --description--
@@ -51,11 +51,9 @@ assert(div.parentElement.tagName === 'BODY');
   </head>
 --fcc-editable-region--
   <body>
-    <header>
+    <main>
       <h1>CAMPER CAFE</h1>
       <p>Est. 2020</p>
-    </header>
-    <main>
       <section>
         <h2>Coffee</h2>
       </section>

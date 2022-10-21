@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c59
-title: Run Functional Tests on API Endpoints using Chai-HTTP II
+title: Funktionstests an API-Endpunkten mit Chai-HTTP II durchführen
 challengeType: 2
 forumTopicId: 301592
 dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
@@ -12,13 +12,13 @@ As a reminder, this project is being built upon the following starter project on
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with your name'` test (`// #2`) to assert the `status` and the `text` of the response to make the test pass.
+Innerhalb von `tests/2_functional-tests.js`, ändere `'Test GET /hello with your name'` Test (`// #2`) um den `status` und den `text` der Antwort geltend zu machen, um den Test zu bestehen.
 
-Send your name as a URL query by appending `?name=<your_name>` to the route. The endpoint responds with `'hello <your_name>'`.
+Sende deinen Namen als URL Query, indem du `?name=<your_name>` an den Pfad anhängst. Der Endpunkt antwortet mit `'hello <your_name>'`.
 
 # --hints--
 
-All tests should pass
+Alle Tests sollten bestanden werden
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass
   );
 ```
 
-You should test for `res.status` == 200
+Du solltest auf `res.status` == 200 testen
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should test for `res.status` == 200
   );
 ```
 
-You should test for `res.text` == `'hello <your_name>'`
+Du solltest auf `res.text` == `'hello <your_name>'` testen
 
 ```js
 (getUserInput) =>

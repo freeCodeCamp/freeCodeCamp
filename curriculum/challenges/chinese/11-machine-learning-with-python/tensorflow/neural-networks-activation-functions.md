@@ -14,7 +14,7 @@ dashedName: neural-networks-activation-functions
 
 ## --text--
 
-哪个激活函数在 -1 和 1 之间切换值？
+Which activation function squishes values between -1 and 1?
 
 ## --answers--
 

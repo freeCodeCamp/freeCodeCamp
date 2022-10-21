@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443eddfaeb5bd0f
-title: Manage a Book Trading Club
+title: Verwalte einen Buchhandelsclub
 challengeType: 4
 forumTopicId: 302364
 dashedName: manage-a-book-trading-club
@@ -10,11 +10,11 @@ dashedName: manage-a-book-trading-club
 
 **Objective:** Build an app that is functionally similar to this: <a href="https://manage-a-book-trading-club.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://manage-a-book-trading-club.freecodecamp.rocks/</a>.
 
-Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+Erfülle die folgenden User Stories und bestehe alle Tests. Verwende Bibliotheken und APIs deiner Wahl. Gib dem Ganzen deinen persönlichen Stil.
 
 **User Story:** I can view all books posted by every user.
 
-**User Story:** I can add a new book.
+**User Story:** Ich kann ein neues Buch hinzufügen.
 
 **User Story:** I can update my settings to store my full name, city, and state.
 

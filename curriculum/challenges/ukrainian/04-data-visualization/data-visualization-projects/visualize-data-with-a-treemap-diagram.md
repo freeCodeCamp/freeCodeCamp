@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-treemap-diagram
 
 # --description--
 
-**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/KaNGNR" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/KaNGNR</a>.
+**Мета:** створити застосунок, функціонально схожий до цього: <a href="https://treemap-diagram.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://treemap-diagram.freecodecamp.rocks</a>.
 
 Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 

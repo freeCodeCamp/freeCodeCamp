@@ -12,7 +12,7 @@ A list is a ordered set of values that may contain duplicates. Here is an exampl
 
 ```js
 const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
-````
+```
 
 Given a list of arbitrarily many strings, implement a function for each of the following conditions:
 

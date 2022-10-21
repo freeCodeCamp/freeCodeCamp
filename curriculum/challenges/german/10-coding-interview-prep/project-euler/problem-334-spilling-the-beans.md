@@ -12,19 +12,14 @@ In Plato's heaven, there exist an infinite number of bowls in a straight line. E
 
 For example, consider two adjacent bowls containing 2 and 3 beans respectively, all other bowls being empty. The following eight moves will finish the game:
 
-<img class="img-responsive center-block" alt="animation of game when two adjacent bowls contains 2 and 3 beans respectivelly" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="animation of game when two adjacent bowls contains 2 and 3 beans respectivelly" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;" />
 
 You are given the following sequences:
 
-$$\begin{align}
-  & t_0 = 123456, \\\\
-  & t_i = \begin{cases}
-         \frac{t_{i - 1}}{2},               & \text{if $t_{i - 1}$ is even} \\\\
-         \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{if $t_{i - 1}$ is odd}
-         \end{cases} \\\\
-         & \qquad \text{where $⌊x⌋$ is the floor function and $\oplus$ is the bitwise XOR operator.} \\\\
-  & b_i = (t_i\bmod 2^{11}) + 1.
-\end{align}$$
+$$\begin{align}   & t_0 = 123456, \\\\
+  & t_i = \begin{cases}          \frac{t_{i - 1}}{2},               & \text{if $t_{i - 1}$ is even} \\\\
+         \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{if $t_{i - 1}$ is odd}          \end{cases} \\\\
+         & \qquad \text{where $⌊x⌋$ is the floor function and $\oplus$ is the bitwise XOR operator.} \\\\ & b_i = (t_i\bmod 2^{11}) + 1. \end{align}$$
 
 The first two terms of the last sequence are $b_1 = 289$ and $b_2 = 145$. If we start with $b_1$ and $b_2$ beans in two adjacent bowls, 3419100 moves would be required to finish the game.
 

@@ -8,19 +8,19 @@ dashedName: problem-184-triangles-containing-the-origin
 
 # --description--
 
-Consider the set $I_r$ of points $(x,y)$ with integer coordinates in the interior of the circle with radius $r$, centered at the origin, i.e. $x^2 + y^2 &lt; r^2$.
+Man betrachte die Menge $I_r$ von Punkten $(x,y)$ mit ganzzahligen Koordinaten im Inneren des Kreises mit Radius $r$, der im Ursprung zentriert ist, d.h. $x^2 + y^2 &lt; r^2$.
 
-For a radius of 2, $I_2$ contains the nine points (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) and (1,-1). There are eight triangles having all three vertices in $I_2$ which contain the origin in the interior. Two of them are shown below, the others are obtained from these by rotation.
+Für einen Radius von 2 enthält $I_2$ die neun Punkte (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) und (1,-1). Es gibt acht Dreiecke, bei denen alle drei Eckpunkte in $I_2$ liegen und die den Ursprung im Inneren enthalten. Zwei davon sind unten abgebildet, die anderen ergeben sich aus diesen durch Rotation.
 
-<img class="img-responsive center-block" alt="circle with radius 2, centered at the origin, with nine marked points and two triangles - (-1,0), (0,1), (1,-1) and (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="Kreis mit Radius 2, zentriert im Ursprung, mit neun markierten Punkten und zwei Dreiecken - (-1,0), (0,1), (1,-1) und (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px;" />
 
-For a radius of 3, there are 360 triangles containing the origin in the interior and having all vertices in $I_3$ and for $I_5$ the number is 10600.
+Für einen Radius von 3 gibt es 360 Dreiecke, die den Ursprung im Inneren enthalten und alle Scheitelpunkte in $I_3$ haben, und für $I_5$ sind es 10600.
 
-How many triangles are there containing the origin in the interior and having all three vertices in $I_{105}$?
+Wie viele Dreiecke gibt es, die den Ursprung im Inneren enthalten und alle drei Scheitelpunkte in $I_{105}$ haben?
 
 # --hints--
 
-`trianglesContainingOrigin()` should return `1725323624056`.
+`trianglesContainingOrigin()` sollte `1725323624056` zurückgeben.
 
 ```js
 assert.strictEqual(trianglesContainingOrigin(), 1725323624056);

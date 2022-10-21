@@ -10,10 +10,8 @@ dashedName: problem-340-crazy-function
 
 For fixed integers $a$, $b$, $c$, define the crazy function $F(n)$ as follows:
 
-$$\begin{align}
-  & F(n) = n - c \\;\text{ for all } n > b \\\\
-  & F(n) = F(a + F(a + F(a + F(a + n)))) \\;\text{ for all } n ≤ b.
-\end{align}$$
+$$\begin{align}   & F(n) = n - c \\;\text{ for all } n > b \\\\
+  & F(n) = F(a + F(a + F(a + F(a + n)))) \\;\text{ for all } n ≤ b. \end{align}$$
 
 Also, define $S(a, b, c) = \displaystyle\sum_{n = 0}^b F(n)$.
 

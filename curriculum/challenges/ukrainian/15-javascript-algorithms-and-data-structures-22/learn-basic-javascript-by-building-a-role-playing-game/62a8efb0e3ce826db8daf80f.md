@@ -1,6 +1,6 @@
 ---
 id: 62a8efb0e3ce826db8daf80f
-title: Step 131
+title: Крок 131
 challengeType: 0
 dashedName: step-131
 ---
@@ -11,7 +11,7 @@ Finish the `defeatMonster` function by calling the `update` function with `locat
 
 # --hints--
 
-You should call the `update` function.
+Ви повинні викликати функцію `update`.
 
 ```js
 assert.match(defeatMonster.toString(), /update/);
@@ -285,7 +285,7 @@ function defeatMonster() {
   xp += monsters[fighting].level;
   goldText.innerText = gold;
   xpText.innerText = xp;
-  
+
 }
 --fcc-editable-region--
 

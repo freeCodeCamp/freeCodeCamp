@@ -160,7 +160,7 @@ span[class~="sr-only"] {
   -webkit-clip-path: inset(50%);
   height: 1px;
   width: 1px;
-  
+
 }
 --fcc-editable-region--
 

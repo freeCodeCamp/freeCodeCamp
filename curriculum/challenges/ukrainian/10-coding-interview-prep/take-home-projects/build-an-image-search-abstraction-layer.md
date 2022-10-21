@@ -8,7 +8,7 @@ dashedName: build-an-image-search-abstraction-layer
 
 # --description--
 
-Створіть full stack додаток, що дозволяє шукати зображення, як тут: <https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10> і завантажувати останні пошукові запити, як тут: <https://image-search-abstraction-layer.freecodecamp.rocks/recent/>. Використовуйте конструктор сайтів на ваш розсуд для завершення проєкту.
+Build a full stack JavaScript app that allows you to search for images like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10</a> and browse recent search queries like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/recent/" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/recent/</a>. Використовуйте конструктор сайтів на ваш розсуд для завершення проєкту.
 
 Тут наведено конкретні історії користувача, які варто реалізувати в даному проєкті:
 

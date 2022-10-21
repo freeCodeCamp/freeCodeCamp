@@ -22,11 +22,11 @@ Content-Length: 20
 name=John+Doe&age=25
 ```
 
-Як ви можете побачити, тіло закодоване як рядок запиту. Це типовий формат, який використовується у HTML-формах. За допомогою Ajax, ви також можете використати JSON для обробки даних, що мають більш складну структуру. Існує також інший тип кодування: multipart/form-data. Цей файл використовується для завантаження бінарних файлів. У цій вправі ви будете використовувати тіло, кодоване посиланням. Щоб аналізувати дані, отримані з POST-запитів, необхідно встановити пакет `body-parser`. Цей пакет дозволяє використовувати низку підпрограмного забезпечення, який може декодувати дані в різних форматах.
+Як ви можете побачити, тіло закодоване як рядок запиту. Це типовий формат, який використовується у HTML-формах. За допомогою Ajax, ви також можете використати JSON для обробки даних, що мають більш складну структуру. Існує також інший тип кодування: multipart/form-data. Цей файл використовується для завантаження бінарних файлів. In this exercise, you will use a URL encoded body. To parse the data coming from POST requests, you must use the `body-parser` package. Цей пакет дозволяє використовувати низку підпрограмного забезпечення, який може декодувати дані в різних форматах.
 
 # --instructions--
 
-Встановіть модуль `body-parser` до вашого `package.json`. Тоді `require` його у верхній частині файлу. Збережіть його у змінній під назвою `bodyParser`. Проміжне програмне забезпечення, що має обробити Url-закодовані дані, повертається за допомогою `bodyParser.urlencoded({extended: false})`. Передайте функцію, повернуту попереднім викликом типу `app.use()`. Зазвичай підпрограмне забезпечення потрібно встановити перед маршрутами, які залежать від нього.
+`body-parser` has already been installed and is in your project's `package.json` file. `require` it at the top of the `myApp.js` file and store it in a variable named `bodyParser`. The middleware to handle URL encoded data is returned by `bodyParser.urlencoded({extended: false})`. Pass the function returned by the previous method call to `app.use()`. As usual, the middleware must be mounted before all the routes that depend on it.
 
 **Note:** `extended` це опція конфігурації, яка вказує `body-parser`, який парсинг необхідно використати. Коли `extended=false` він використовує класичне кодування `querystring` бібліотеки. Коли `extended=true` він використовує `qs` бібліотеку для парсингу.
 

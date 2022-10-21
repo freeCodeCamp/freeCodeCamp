@@ -28,7 +28,7 @@ socket.emit('chat message', messageToSend);
 
 至此，我們已經完成發送信息到所有客戶端的功能。
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考[這裏](https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016)的答案。
+完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

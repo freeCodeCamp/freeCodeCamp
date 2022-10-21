@@ -11,32 +11,33 @@ dashedName: introduction-to-data-analysis
 ---
 
 # --description--
+Data analysis is the act of turning raw, messy data into useful insights by cleaning the data up, transforming it, manipulating it, and inspecting it.
 
-その他のリソース:
+More resources:
 
-\- [スライド](https://docs.google.com/presentation/d/1cUIt8b2ySz-85_ykfeuuWsurccwTAuFPn782pZBzFsU/edit?usp=sharing)
+\- <a href="https://www.freecodecamp.org/news/what-is-data-analysis/" rel="noopener noreferrer nofollow">News article</a>
 
 # --question--
 
 ## --text--
 
-次のうち、**データ分析の一部ではない**ことはどれですか？
+Which of the following is **not** part of Data Analysis?
 
 ## --answers--
 
-統計モデルとデータ可視化を構築すること。
+Building statistical models and data visualizations.
 
 ---
 
-分析にとって望ましい結論を選ぶこと。
+Picking a desired conclusion for the analysis.
 
 ---
 
-不正な値を修正し、無効なデータを削除すること。
+Fixing incorrect values and removing invalid data.
 
 ---
 
-データを適切なデータ構造に変換すること。
+Transforming data into an appropriate data structure.
 
 ## --video-solution--
 

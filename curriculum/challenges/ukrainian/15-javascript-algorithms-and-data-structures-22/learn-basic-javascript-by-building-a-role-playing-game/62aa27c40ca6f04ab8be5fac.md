@@ -1,6 +1,6 @@
 ---
 id: 62aa27c40ca6f04ab8be5fac
-title: Step 166
+title: Крок 166
 challengeType: 0
 dashedName: step-166
 ---
@@ -369,7 +369,7 @@ function pick(guess) {
     numbers.push(Math.floor(Math.random() * 11));
   }
   text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
-  
+
 }
 --fcc-editable-region--
 ```

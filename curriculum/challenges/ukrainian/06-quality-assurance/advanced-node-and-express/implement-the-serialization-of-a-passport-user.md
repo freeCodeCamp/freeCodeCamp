@@ -10,7 +10,7 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 Зараз ми не завантажуємо поточний об’єкт користувача, оскільки ми ще не налаштували нашу базу даних. Це можна зробити багатьма різними способами, але для нашого проєкту ми під'єднаємось до бази даних один раз при запуску сервера і збережемо постійне з'єднання протягом усього життєвого циклу додатку. Для цього додайте рядок з'єднання вашої бази даних (наприклад: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) до змінної середовища `MONGO_URI`. Це використовується у файлі `connection.js`.
 
-*Ви можете створити безкоштовну базу даних на [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).*
+*If you are having issues setting up a free database on MongoDB Atlas, check out <a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">tutorial</a>.*
 
 Тепер ми хочемо підключитися до нашої бази даних, а після того почати створювати запити. Це робимо з метою, щоб заборонити запити до того, як наша база даних буде підключена або якщо у неї виникне помилка. Для досягнення цього вам потрібно включити свою серіалізацію та маршрути додатків у такий код:
 
@@ -40,7 +40,7 @@ myDB(async client => {
 
 Не забудьте розкоментувати код `myDataBase` в `deserializeUser` та відредагувати свій `done(null, null)` для того, щоб включити `doc`.
 
-Відправте сторінку, якщо все було виконано правильно. Якщо ви зіткнулись з помилкою, ви можете перевірити зроблений проєкт до цього етапу [тут](https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7).
+Відправте сторінку, якщо все було виконано правильно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

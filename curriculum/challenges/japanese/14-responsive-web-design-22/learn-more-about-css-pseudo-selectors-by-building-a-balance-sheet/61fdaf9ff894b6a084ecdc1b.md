@@ -1,6 +1,6 @@
 ---
 id: 61fdaf9ff894b6a084ecdc1b
-title: Step 33
+title: ステップ 33
 challengeType: 0
 dashedName: step-33
 ---
@@ -160,7 +160,7 @@ span[class~="sr-only"] {
   -webkit-clip-path: inset(50%);
   height: 1px;
   width: 1px;
-  
+
 }
 --fcc-editable-region--
 

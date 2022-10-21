@@ -1,7 +1,7 @@
 ---
 id: 5900f37d1000cf542c50fe90
 title: 'Problem 17: Number letter counts'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301804
 dashedName: problem-17-number-letter-counts
 ---
@@ -28,13 +28,13 @@ assert(typeof numberLetterCounts(5) === 'number');
 assert.strictEqual(numberLetterCounts(5), 19);
 ```
 
-`numberLetterCounts(150)` should return 1903.
+`numberLetterCounts(150)` 应该返回 1903。
 
 ```js
 assert.strictEqual(numberLetterCounts(150), 1903);
 ```
 
-`numberLetterCounts(1000)` should return 21124.
+`numberLetterCounts(1000)` 应该返回 21124。
 
 ```js
 assert.strictEqual(numberLetterCounts(1000), 21124);

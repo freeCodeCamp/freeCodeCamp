@@ -1,6 +1,6 @@
 ---
 id: 58a25bcff9fc0f352b528e7d
-title: Hash and Compare Passwords Asynchronously
+title: Асинхронне перетворення паролів на дані та їх порівняння
 challengeType: 2
 forumTopicId: 301578
 dashedName: hash-and-compare-passwords-asynchronously
@@ -8,9 +8,9 @@ dashedName: hash-and-compare-passwords-asynchronously
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-As hashing is designed to be computationally intensive, it is recommended to do so asynchronously on your server as to avoid blocking incoming connections while you hash. All you have to do to hash a password asynchronous is call
+Оскільки процес перетворення паролів на дані (хешування) вимагає великого об'єму обчислень, рекомендується виконувати його асинхронно на сервері, щоб запобігти блокуванню вхідних підключень під час хешування. Все, що вам необхідно зробити для асинхронного хешування пароля це ввести
 
 ```js
 bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
@@ -20,9 +20,9 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
 
 # --instructions--
 
-Add this hashing function to your server (we've already defined the variables used in the function for you to use) and log it to the console for you to see! At this point you would normally save the hash to your database.
+Додайте цю функцію хешування на свій сервер (ми вже визначили змінні для вас) та запишіть її в консоль, щоб побачити! Як правило на цьому етапі ви збережете функцію хешування у вашій базі даних.
 
-Now when you need to figure out if a new input is the same data as the hash you would just use the compare function.
+Тепер коли вам необхідно з'ясувати чи нові вхідні дані відповідають даним перетворених паролів, використовуйте функцію порівняння.
 
 ```js
 bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-Add this into your existing hash function (since you need to wait for the hash to complete before calling the compare function) after you log the completed hash and log 'res' to the console within the compare. You should see in the console a hash then 'true' is printed! If you change 'myPlaintextPassword' in the compare function to 'someOtherPlaintextPassword' then it should say false.
+Додайте це до наявної функції хешування (оскільки вам необхідно очікувати закінчення процесу перед тим як запускати функцію порівняння) після того, як ви записали про завершене хешування та ввели 'res' на консолі. На консолі з'являться дані перетворення та значення 'true'! Якщо ви зміните 'myPlaintextPassword' в функції порівняння на 'someOtherPlaintextPassword' - це призведе до помилки.
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {
@@ -43,11 +43,11 @@ bcrypt.hash('passw0rd!', 13, (err, hash) => {
 
 ```
 
-Submit your page when you think you've got it right.
+Підтвердіть вашу сторінку, якщо все зрозуміло.
 
 # --hints--
 
-Async hash should be generated and correctly compared.
+Асинхронне перетворення паролів на дані необхідно правильно згенерувати і правильно синхронізувати.
 
 ```js
 (getUserInput) =>

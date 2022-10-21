@@ -8,11 +8,11 @@ dashedName: build-a-pong-game
 
 # --description--
 
-** Ціль:** Створіть [CodePen.io ](https://codepen.io)застосунок, який функціонально схожий на цей: <https://codepen.io/satyamdev/full/pdMmBp>.
+**Мета:** Створити застосунок, функціонально схожий до цього: <https://codepen.io/satyamdev/full/pdMmBp>.
 
 **Правило #1: ** Не дивіться на зразок коду проєкту. Визначте його самі.
 
-**Правило #2: **Заповніть, як нижче наведено,[ історії користувача ](https://en.wikipedia.org/wiki/User_story). Використовуйте будь-які потрібні вам бібліотеки чи API (прикладні програмні інтерфейси). Проявіть при цьому свій власний стиль.
+**Правило №2:** виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 **Історія користувача:** Я можу керувати ігровою лопаткою.
 
@@ -24,7 +24,7 @@ dashedName: build-a-pong-game
 
 Коли ви завершили, додайте посилання на ваш проєкт на CodePen та натисніть кнопку "Я виконав це завдання".
 
-Ви можете отримати відгук про ваш проєкт, поділившись ним на даному форумі: [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

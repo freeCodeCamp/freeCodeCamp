@@ -8,9 +8,9 @@ dashedName: match-characters-that-occur-one-or-more-times
 
 # --description--
 
-A volte, è necessario riconoscere un carattere (o un gruppo di caratteri) che appare una o più volte in una riga. Questo significa che esso comprare almeno una volta, e può essere ripetuto.
+A volte, è necessario riconoscere un carattere (o un gruppo di caratteri) che appare una o più volte in una riga. Questo significa che esso compare almeno una volta, e può essere ripetuto.
 
-Puoi usare il carattere `+` per verificare se è così. Ricorda, il carattere o il pattern deve essere presente consecutivamente. Cioè, il carattere deve ripetersi uno dopo l'altro.
+Puoi usare il carattere `+` per verificare se è così. Ricorda, il carattere o il pattern deve essere presente consecutivamente. Cioè, i caratteri ripetuti devono essere adiacenti.
 
 Ad esempio, `/a+/g` troverà una corrispondenza in `abc` e restituirà `["a"]`. A causa del `+`, troverà anche una singola corrispondenza in `aabc` e restituirà `["aa"]`.
 

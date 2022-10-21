@@ -1,14 +1,14 @@
 ---
 id: 5ea28156e79528a9ab248f27
 title: Luhn test of credit card numbers
-challengeType: 5
+challengeType: 1
 forumTopicId: 385284
 dashedName: luhn-test-of-credit-card-numbers
 ---
 
 # --description--
 
-The [Luhn test](https://en.wikipedia.org/wiki/Luhn algorithm) is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
+The Luhn test is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
 
 Those companies using credit card numbers that can be validated by the Luhn test have numbers that pass the following test:
 
@@ -44,7 +44,7 @@ s1 + s2 = 70 which ends in zero which means that 49927398716 passes the Luhn tes
 
 # --instructions--
 
-Write a function that will validate a number with the Luhn test. Return true if it's a valid number. Otherwise, return false.
+Write a function that will validate a number with the Luhn test. Return true if it's a valid number. 否则，返回 false。
 
 # --hints--
 

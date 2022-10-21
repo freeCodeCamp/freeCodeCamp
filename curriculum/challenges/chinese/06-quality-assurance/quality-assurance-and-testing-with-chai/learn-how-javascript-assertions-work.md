@@ -10,8 +10,8 @@ dashedName: learn-how-javascript-assertions-work
 
 你可以采用下面的任意一种方式完成这些挑战：
 
-- 克隆[这个 GitHub 仓库](https://github.com/freeCodeCamp/boilerplate-mochachai/)并在本地完成项目。
-- 使用[我们的 Replit 上的初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)来完成项目。
+- Clone <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
+- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
 - 使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
 完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 框中提交你的项目 URL。

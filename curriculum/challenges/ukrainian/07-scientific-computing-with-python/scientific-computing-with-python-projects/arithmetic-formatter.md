@@ -8,16 +8,11 @@ dashedName: arithmetic-formatter
 
 # --description--
 
-Ви маєте [виконати цей проєкт за допомогою нашого стартового коду Replit](https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter).
-
-Ми й досі в процесі розробки інтерактивної складової навчального курсу Python. Наразі можете ознайомитись із наступними відео на YouTube каналі freeCodeCamp.org. У них ви знайдете все необхідне для завершення цього проєкту:
-
-- [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 годин)
-- [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 години)
+Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
 # --instructions--
 
-У початковій школі школярів вчать вирішувати арифметичні приклади вертикально, бо це легше. Наприклад, "235 + 52" перетворюється на:
+Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
 
 ```py
   235
@@ -25,17 +20,17 @@ dashedName: arithmetic-formatter
 -----
 ```
 
-Створіть функцію, яка отримує список рядків з арифметичними завданнями та вводить їх послідовно у вертикальному вигляді. Функція повинна при необхідності брати другий аргумент. Коли другий аргумент встановлено на `True`, відповіді повинні відображатися.
+Create a function that receives a list of strings that are arithmetic problems and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to `True`, the answers should be displayed.
 
 ## Приклад
 
-Виклик функції:
+Function Call:
 
 ```py
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 ```
 
-Виведення:
+Output:
 
 ```py
    32      3801      45      123
@@ -43,13 +38,13 @@ arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 -----    ------    ----    -----
 ```
 
-Виклик функції:
+Function Call:
 
 ```py
 arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 ```
 
-Виведення:
+Output:
 
 ```py
   32         1      9999      523
@@ -60,35 +55,35 @@ arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 
 ## Правила
 
-Функція повернеться до правильного перетворення якщо наявні завдання відформатовані належним чином, в протилежному випадку, це буде **return** **string**, що описує помилку, яка має велике значення для користувача.
+The function will return the correct conversion if the supplied problems are properly formatted, otherwise, it will **return** a **string** that describes an error that is meaningful to the user.
 
 
-- Ситуації, які приводять до помилки:
-  - Якщо ** забагато завдань ** з'являються для функції. Ліміт **five**, що-небудь ще повернеться:`Error: Забагато завдань.`
-  - Відповідні оператори, які приймають функцію **addition** and **subtraction**. Множення і ділення породжує помилку. Інші оператори, які не згадані у цій точці, тестовані не будуть. Отримана помилка буде:`Error: Оператор повинен бути '+' або '-'.`
-  - Кожне число (операнд) повинен містити лише цифри. В іншому випадку, функція буде така:`Error: Числа повинні містити тільки цифри.`
-  - Кожен операнд (також номер один з кожної сторони оператора) максимум може мати по чотири цифри по ширині. В іншому випадку, помилковий рядок видасть наступне:`Error: Числа не можуть бути більше чотирьох цифр.`
-- Якщо користувач подбав про правильний формат проблем, то перетворення буде слідувати наступним правилам:
-  - Повинен бути лише один пробіл між оператором і найдовшим із двох операндів, оператор буде на тому ж рядку, що й другий операнд, обоє операндів будуть в однаковому порядку, як і надано (перший буде зверху, а другий - знизу).
-  - Числа повинні бути вирівняні справа.
-  - Має бути чотири пробіли між кожним завданням.
-  - У нижній частині кожного завдання мають бути тире. Тире повинні йти по всій довжині кожного завдання індивідуально. (Приклад вище показує, як це повинно виглядати.)
+- Situations that will return an error:
+  - If there are **too many problems** supplied to the function. The limit is **five**, anything more will return: `Error: Too many problems.`
+  - The appropriate operators the function will accept are **addition** and **subtraction**. Multiplication and division will return an error. Other operators not mentioned in this bullet point will not need to be tested. The error returned will be: `Error: Operator must be '+' or '-'.`
+  - Each number (operand) should only contain digits. Otherwise, the function will return: `Error: Numbers must only contain digits.`
+  - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be: `Error: Numbers cannot be more than four digits.`
+- If the user supplied the correct format of problems, the conversion you return will follow these rules:
+  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
+  - Numbers should be right-aligned.
+  - There should be four spaces between each problem.
+  - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
 
 ## Розробка
 
-Напишіть свій код на `arithmetic_arranger.py`. Для розробки, ви можете використати `main.py`, щоб перевірити вашу функцію `arithmetic_arranger()`. Натисніть кнопку "run" і `main.py` запуститься.
+Write your code in `arithmetic_arranger.py`. For development, you can use `main.py` to test your `arithmetic_arranger()` function. Натисніть кнопку «запустити» і `main.py` запуститься.
 
 ## Тестування
 
-Розділи з тестами для цього проєкту знаходяться в `test_module.py`. Ми запускаємо тести з `test_module.py` в `main.py` для вашої зручності. Тести запустяться автоматично кожного разу, коли ви натиснете клавішу "run". Як альтернатива, ви можете запустити тести, ввівши у консолях `pytest`.
+The unit tests for this project are in `test_module.py`. We are running the tests from `test_module.py` in `main.py` for your convenience. Тести запустяться автоматично, коли ви натиснете на кнопку «запустити». Alternatively you may run the tests by inputting `pytest` in the console.
 
 ## Надіслати
 
-Скопіюйте URL-адресу вашого проєкту та відправте його.
+Copy your project's URL and submit it below.
 
 # --hints--
 
-Функція повинна правильно відформатувати арифметичні проблеми та пройти тестування.
+It should correctly format an arithmetic problem and pass all tests.
 
 ```js
 

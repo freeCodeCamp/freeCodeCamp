@@ -1,0 +1,27 @@
+{
+  "client":{
+    "dev": true,
+    "exclude": ["dependencies"],
+    "entryFiles": [
+      "gatsby-*.js",
+      "src/pages/*.tsx",
+      "src/templates/Challenges/**/{s,S}how.tsx",
+      "src/templates/Introduction/**/{intro,super-block-intro}.tsx",
+      "src/**/*.test.{js,ts,tsx}"
+    ],
+    "projectFiles": [
+      "src/**/*.{js,ts,tsx}",
+      "!static/misc/*.js",
+      "!i18n/schema-validation.ts",
+      "!plugins/**",
+      "!postcss.config.js",
+      "!src/client/frame-runner.ts",
+      "!src/client/workers/**",
+      "!webpack-workers.js",
+      "!**/i18n/config-for-tests.ts",
+      "!**/__mocks__/**",
+      "!**/__fixtures/**",
+      "!**/node_modules/**"
+    ]
+  }
+}

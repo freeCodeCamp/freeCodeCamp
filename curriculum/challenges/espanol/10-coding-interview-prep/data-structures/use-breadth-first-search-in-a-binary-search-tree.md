@@ -1,6 +1,6 @@
 ---
 id: 587d8258367417b2b2512c7f
-title: Use Breadth First Search in a Binary Search Tree
+title: Usa la busqueda Breadth First en una busqueda de arbol binario
 challengeType: 1
 forumTopicId: 301718
 dashedName: use-breadth-first-search-in-a-binary-search-tree
@@ -8,9 +8,9 @@ dashedName: use-breadth-first-search-in-a-binary-search-tree
 
 # --description--
 
-Here we will introduce another tree traversal method: breadth-first search. In contrast to the depth-first search methods from the last challenge, breadth-first search explores all the nodes in a given level within a tree before continuing on to the next level. Typically, queues are utilized as helper data structures in the design of breadth-first search algorithms.
+Aquí introduciremos otro método de arbol transversal: la busqueda breadth-first. En contraste al método de busqueda depth-first del último reto, la busqueda breadth-first explora todos los nodos en un nivel dado dentro del arbol antes de continuar con el siguiente nivel. Normalmente, las colas son utilizadas como estructuras de datos de apoyo en el diseño de los algoritmos de busqueda breadth-first.
 
-In this method, we start by adding the root node to a queue. Then we begin a loop where we dequeue the first item in the queue, add it to a new array, and then inspect both its child subtrees. If its children are not null, they are each enqueued. This process continues until the queue is empty.
+En este método, empezamos agregando el nodo raíz a la cola. Luego empezamos un ciclo donde obtenemos el primer elemento de la cola, lo agregamos a un nuevo array, y luego inspeccionamos ambos sub-arboles hijos. Si sus hijos no son nulos, entonces ambos serán encolados. Este proceso continua hasta que la cola está vacía.
 
 # --instructions--
 

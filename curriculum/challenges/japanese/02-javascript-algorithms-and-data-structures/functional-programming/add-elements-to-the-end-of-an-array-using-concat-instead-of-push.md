@@ -10,20 +10,20 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 関数型プログラミングで重要なのは、ミューテーションを起こさない関数を作成して使用することです。
 
-前回のチャレンジでは、元の配列をミューテートさせずに配列を新しい配列に結合する方法として、`concat` メソッドを紹介しました。 `concat` を `push` メソッドと比較してみましょう。 `push` は、呼び出された同じ配列の末尾にアイテムを追加し、その配列をミューテートさせます。 例を示します。
+The last challenge introduced the `concat` method as a way to merge arrays into a new array without mutating the original arrays. `concat` を `push` メソッドと比較してみましょう。 `push` adds items to the end of the same array it is called on, which mutates that array. 例を示します。
 
 ```js
 const arr = [1, 2, 3];
-arr.push([4, 5, 6]);
+arr.push(4, 5, 6);
 ```
 
-`arr` の変更後の値は `[1, 2, 3, [4, 5, 6]]` となりますが、これは関数型プログラミングの方法ではありません。
+`arr` would have a modified value of `[1, 2, 3, 4, 5, 6]`, which is not the functional programming way.
 
-`concat` では、ミューテーションの副作用を起こさずに、配列の末尾に新しいアイテムを追加できます。
+`concat` offers a way to merge new items to the end of an array without any mutating side effects.
 
 # --instructions--
 
-`nonMutatingPush` 関数を変更し、`push` の代わりに `concat` を使用して `newItem` を `original` の末尾に追加するようにしてください。 この関数は配列を返す必要があります。
+Change the `nonMutatingPush` function so it uses `concat` to merge `newItem` to the end of `original` without mutating `original` or `newItem` arrays. この関数は配列を返す必要があります。
 
 # --hints--
 

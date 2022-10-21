@@ -24,7 +24,7 @@ h2.center#welcome Welcome, #{username}!
 a(href='/logout') Logout
 ```
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考[這裏](https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a)的答案。
+完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

@@ -10,7 +10,7 @@ dashedName: add-document-elements-with-d3
 
 D3 has several methods that let you add and change elements in your document.
 
-The `select()` method selects one element from the document. It takes an argument for the name of the element you want and returns an HTML node for the first element in the document that matches the name. Here's an example:
+The `select()` method selects one element from the document. Sie nimmt ein Argument für den Namen des gewünschten Elements entgegen und gibt einen HTML-Knoten für das erste Element im Dokument zurück, das dem Namen entspricht. Hier ist ein Beispiel:
 
 ```js
 const anchor = d3.select("a");
@@ -20,11 +20,11 @@ The above example finds the first anchor tag on the page and saves an HTML node 
 
 Two other useful methods are `append()` and `text()`.
 
-The `append()` method takes an argument for the element you want to add to the document. It appends an HTML node to a selected item, and returns a handle to that node.
+The `append()` method takes an argument for the element you want to add to the document. Es hängt einen HTML-Knoten an ein ausgewähltes Element an und gibt ein Handle an diesen Knoten zurück.
 
 The `text()` method either sets the text of the selected node, or gets the current text. To set the value, you pass a string as an argument inside the parentheses of the method.
 
-Here's an example that selects an unordered list, appends a list item, and adds text:
+Hier ist ein Beispiel, das eine ungeordnete Liste auswählt, ein Listenelement anhängt und Text hinzufügt:
 
 ```js
 d3.select("ul")

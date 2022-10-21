@@ -9,7 +9,7 @@ dashedName: build-a-castle
 
 # --description--
 
-この 40 のレッスンから成るコースでは、城の絵を作りながら、ターミナルでファイルを編集する方法を学びます。
+In this 40-lesson course, you will learn how to edit files in the terminal with Nano while building a castle.
 
 # --instructions--
 

@@ -8,19 +8,33 @@ dashedName: linear-regression-health-costs-calculator
 
 # --description--
 
-У цьому завданні ви передбачите витрати на охорону здоров'я, використовуючи алгоритм регресії.
+Ви будете <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-linear-regression-health-costs-calculator/blob/master/fcc_predict_health_costs_with_regression.ipynb" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з Google Colaboratory</a>.
 
-Ви отримаєте набір даних, що містять інформацію про різних людей, враховуючи їхні витрати на охорону здоров'я. Використовуйте ці дані для прогнозування витрат на охорону здоров'я на основі нових даних.
+Перейшовши за цим посиланням, створіть копію блокнота в своєму обліковому записі або локально. Як тільки ви завершили проєкт та пройшли тести (доданий до посилання), здайте посилання на свій проєкт. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
 
-Ви можете отримати доступ до [ вичерпних інструкцій по проєкту та початкового коду для Google Colaboratory](https://colab.research.google.com/github/freeCodeCamp/boilerplate-linear-regression-health-costs-calculator/blob/master/fcc_predict_health_costs_with_regression.ipynb).
+We are still developing the interactive instructional content for the machine learning curriculum. Поки ви можете переглянути відеозавдання цієї сертифікації. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
 
-Перейшовши за цим посиланням, створіть копію блокнота з вашого акаунту або локально. Завершивши проєкт та тестування ( додане за цим посиланням), створіть посилання на проєкт нижче. Якщо ви надаєте посилання на Google Colaboratory, переконайтеся, що ви увімкнули режим доступу "для усіх за цим посиланням"
+# --instructions--
 
-Ми вже ще в процесі розробки інтерактивної навчальної складової для машинного навчального курсу. Наразі ви можете скористатися відео-викликами з цієї сертифікації. Вам також можуть знадобитися додаткові навчальні ресурси, так само як під час роботи із повноцінним проєктом.
+In this challenge, you will predict healthcare costs using a regression algorithm.
+
+You are given a dataset that contains information about different people including their healthcare costs. Use the data to predict healthcare costs based on new data.
+
+The first two cells of this notebook import libraries and the data.
+
+Make sure to convert categorical data to numbers. Use 80% of the data as the `train_dataset` and 20% of the data as the `test_dataset`.
+
+`pop` off the "expenses" column from these datasets to create new datasets called `train_labels` and `test_labels`. Use these labels when training your model.
+
+Create a model and train it with the `train_dataset`. Run the final cell in this notebook to check your model. The final cell will use the unseen `test_dataset` to check how well the model generalizes.
+
+To pass the challenge, `model.evaluate` must return a Mean Absolute Error of under 3500. This means it predicts health care costs correctly within $3500.
+
+The final cell will also predict expenses using the `test_dataset` and graph the results.
 
 # --hints--
 
-Він повинен пройти усі тести Python.
+Потрібно виконати всі тести Python.
 
 ```js
 

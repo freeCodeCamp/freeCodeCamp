@@ -18,7 +18,7 @@ dashedName: implementation-of-social-authentication
 
 Стратегії з OAuth потребують, щоб ви мали принаймні *Client ID* та *Client Secret*, так сервіс перевірить, від кого надходить запит автентифікації та чи є він дійсним. Вони отримані з сайту, з яким ви намагаєтеся здійснити автентифікацію, наприклад, з сайту GitHub і вони є унікальними для вашого застосунку **ВОНИ НЕ Є ДЛЯ ЗАГАЛЬНОГО ДОСТУПУ** і ніколи не повинні бути завантажені в публічне сховище або написані безпосередньо у вашому коді. Поширеною практикою є розміщення їх у файлі `.env` і посилання на них таким чином: `process.env.GITHUB_CLIENT_ID`. Для вирішення цього завдання ми будемо використовувати стратегію GitHub.
 
-Отримання вашого *Client ID and Secret* від GitHub можна зробити в налаштуваннях профілю вашого облікового запису в розділі "Налаштування розробника", потім '[OAuth applications](https://github.com/settings/developers)'. Натисніть "Зареєструвати нову програму", назвіть свій додаток, вставте URL-адресу на свою домашню сторінку Replit (**Not the project code's url**), і, зрештою, для URL-адреси зворотного виклику, вставте ту саму URL-адресу як і домашню сторінку, але з додаванням `/auth/github/callback`. Сюди користувачі будуть переадресовані для обробки після автентифікації на GitHub. Збережіть отриману інформацію як `'GITHUB_CLIENT_ID'` та `'GITHUB_CLIENT_SECRET'` у вашому файлі `.env`.
+Obtaining your *Client ID and Secret* from GitHub is done in your account profile settings under 'developer settings', then <a href="https://github.com/settings/developers" target="_blank" rel="noopener noreferrer nofollow">'OAuth applications'</a>. Натисніть "Зареєструвати нову програму", назвіть свій додаток, вставте URL-адресу на свою домашню сторінку Replit (**Not the project code's url**), і, зрештою, для URL-адреси зворотного виклику, вставте ту саму URL-адресу як і домашню сторінку, але з додаванням `/auth/github/callback`. Сюди користувачі будуть переадресовані для обробки після автентифікації на GitHub. Збережіть отриману інформацію як `'GITHUB_CLIENT_ID'` та `'GITHUB_CLIENT_SECRET'` у вашому файлі `.env`.
 
 У вашому файлі `routes.js` додайте `showSocialAuth: true` до маршруту головної сторінки після `showRegistration: true`. Тепер створіть 2 маршрути, які прийматимуть запити GET: `/auth/github` та `/auth/github/callback`. Перший повинен лише викликати паспорт для автентифікації `'github'`. Другий повинен викликати паспорт для автентифікації `'github'` з помилкою переадресації на `/`, а потім, якщо вдалося, переадресувати на `/profile` (подібно до нашого останнього проєкту).
 
@@ -31,7 +31,7 @@ app.route('/login')
   });
 ```
 
-Підтвердьте сторінку, якщо все зрозуміло. Якщо сталась якась помилка, ви маєте змогу перевірити статус проєкту до цього етапу [тут](https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e).
+Підтвердьте сторінку, якщо все зрозуміло. If you're running into errors, you can check out the project up to this point <a href="https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e</a>.
 
 # --hints--
 

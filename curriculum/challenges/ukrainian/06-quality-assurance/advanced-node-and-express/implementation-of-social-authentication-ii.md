@@ -8,11 +8,13 @@ dashedName: implementation-of-social-authentication-ii
 
 # --description--
 
-Остання частина налаштування автентифікації GitHub – це створення самої стратегії. Для цього вам потрібно буде додати залежність від `passport-github@~1.1.0` до вашого проєкту та викликати її у своєму `auth.js` як `GithubStrategy`, це: `const GitHubStrategy = require('passport-github').Strategy;`. Не забудьте викликати та налаштовувати `dotenv` для використання змінних середовища.
+Остання частина налаштування автентифікації GitHub – це створення самої стратегії. `passport-github@~1.1.0` has already been added as a dependency, so require it in your `auth.js` file as `GithubStrategy` like this: `const GitHubStrategy = require('passport-github').Strategy;`. Не забудьте викликати та налаштовувати `dotenv` для використання змінних середовища.
 
-Щоб налаштувати стратегію GitHub, ви повинні сказати Passport використовувати примірник `GitHubStrategy`, який приймає 2 аргументи: об'єкт (який містить `clientID`, `clientSecret` та `callbackURL`) та функцію, яку слід викликати після успішної автентифікації користувача, яка визначатиме, чи є користувач новим і які поля спочатку зберегти в об’єкті бази даних користувача. Це типово для багатьох стратегій, але деяким може знадобитися більше інформації, як зазначено в цій конкретній стратегії GitHub README. Наприклад, так Google вимагає *scope*, що визначає, яку інформацію просить повернути ваш запит, і просить користувача надати дозвіл на такий доступ. Використання поточної стратегії, яку ми впроваджуємо описане [тут](https://github.com/jaredhanson/passport-github/), але ми все це розглянемо тут, на freeCodeCamp!
+Щоб налаштувати стратегію GitHub, ви повинні сказати Passport використовувати примірник `GitHubStrategy`, який приймає 2 аргументи: об'єкт (який містить `clientID`, `clientSecret` та `callbackURL`) та функцію, яку слід викликати після успішної автентифікації користувача, яка визначатиме, чи є користувач новим і які поля спочатку зберегти в об’єкті бази даних користувача. Це типово для багатьох стратегій, але деяким може знадобитися більше інформації, як зазначено в цій конкретній стратегії GitHub README. Наприклад, так Google вимагає *scope*, що визначає, яку інформацію просить повернути ваш запит, і просить користувача надати дозвіл на такий доступ.
 
-Ось як ваша нова стратегія має виглядати на цьому етапі:
+The current strategy we are implementing authenticates users using a GitHub account and OAuth 2.0 tokens. The client ID and secret obtained when creating an application are supplied as options when creating the strategy. The strategy also requires a `verify` callback, which receives the access token and optional refresh token, as well as `profile` which contains the authenticated user's GitHub profile. The `verify` callback must call `cb` providing a user to complete authentication.
+
+Here's how your new strategy should look at this point:
 
 ```js
 passport.use(new GitHubStrategy({
@@ -27,13 +29,13 @@ passport.use(new GitHubStrategy({
 ));
 ```
 
-Ваша автентифікація ще не є успішною, і насправді видасть помилку без логіки бази даних та зворотного виклику, але вона повинна зареєструвати ваш профіль GitHub на вашій консолі, якщо ви це спробуєте!
+Your authentication won't be successful yet, and it will actually throw an error without the database logic and callback, but it should log your GitHub profile to your console if you try it!
 
-Підтвердьте сторінку, якщо все зрозуміло. Якщо виникла помилка, ви можете перевірити виконання проєкту до цього етапу [тут](https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6).
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-Необхідно додати залежність passport-github.
+passport-github dependency should be added.
 
 ```js
 (getUserInput) =>
@@ -52,7 +54,7 @@ passport.use(new GitHubStrategy({
   );
 ```
 
-Слід вказати passport-github.
+passport-github should be required.
 
 ```js
 (getUserInput) =>
@@ -70,7 +72,7 @@ passport.use(new GitHubStrategy({
   );
 ```
 
-Стратегію GitHub слід правильно налаштувати.
+GitHub strategy should be setup correctly thus far.
 
 ```js
 (getUserInput) =>

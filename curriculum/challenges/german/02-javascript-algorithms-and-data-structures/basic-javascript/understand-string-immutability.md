@@ -11,14 +11,14 @@ dashedName: understand-string-immutability
 
 In JavaScript sind `String`-Werte <dfn>unveränderlich</dfn>, d.h. sie können nach ihrer Erstellung nicht mehr verändert werden.
 
-Zum Beispiel folgender Code:
+For example, the following code will produce an error because the letter `B` in the string `Bob` cannot be changed to the letter `J`:
 
 ```js
 let myStr = "Bob";
 myStr[0] = "J";
 ```
 
-kann den Wert von `myStr` nicht in `Job` ändern, da der Inhalt von `myStr` nicht verändert werden kann. Beachte, dass dies *nicht* bedeutet, dass `myStr` nicht geändert werden kann, sondern nur, dass die einzelnen Zeichen eines <dfn>String-Literal</dfn> nicht geändert werden können. Die einzige Möglichkeit, `myStr` zu ändern, wäre, ihr einen neuen String zuzuweisen, etwa so:
+Note that this does *not* mean that `myStr` could not be re-assigned. The only way to change `myStr` would be to assign it with a new value, like this:
 
 ```js
 let myStr = "Bob";

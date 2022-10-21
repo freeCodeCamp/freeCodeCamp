@@ -14,7 +14,7 @@ dashedName: perform-classic-updates-by-running-find-edit-then-save
 
 Змініть функцію `findEditThenSave`, щоб знайти особу за `_id` (використовуйте будь - який із вищезгаданих методів) з параметром `personId` як ключ пошуку. Додайте `"hamburger"` до списку `favoriteFoods` людини (можна використовувати `Array.push()`). Потім всередині зворотного виклику пошуку - `save()` оновлений`Person`.
 
-**Примітка:** Це може бути складно, якщо у вашій схемі, ви визначили `favoriteFoods` як масив, не вказуючи тип (тобто `[String]`). В такому випадку `favoriteFoods` за замовчуванням приймає змішаний тип, і вам потрібно вручну позначити його як відредагований за допомогою `document.markModified('edited-field')`. Перегляньте [Mongoose documentation](https://mongoosejs.com/docs/schematypes.html#Mixed)
+**Примітка:** Це може бути складно, якщо у вашій схемі, ви визначили `favoriteFoods` як масив, не вказуючи тип (тобто `[String]`). В такому випадку `favoriteFoods` за замовчуванням приймає змішаний тип, і вам потрібно вручну позначити його як відредагований за допомогою `document.markModified('edited-field')`. See our <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">Mongoose article</a>.
 
 # --hints--
 

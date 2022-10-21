@@ -67,11 +67,11 @@ Puoi trovare i file markdown per le sfide video alle seguenti posizioni nel curr
 
 Scegli un file markdown dalle opzioni sopra.
 
-### Skim through the video associated with the challenge and create a multiple-choice question
+### Guarda velocemente il video associato alla sfida e crea una domanda a scelta multipla
 
-First, find the `videoId`.
+Come prima cosa, trova `videoId`.
 
-For example, in the following code from the header of a video challenge markdown file, the `videoId` is "nVAaxZ34khk". Su GitHub, le informazioni dovrebbero essere visibili in una tabella.
+Ad esempio, nel seguente codice preso dall'intestazione di un file di markdown di una sfida video, `videoId` è "nVAaxZ34khk". Su GitHub, le informazioni dovrebbero essere visibili in una tabella.
 
 ````
 ---
@@ -80,12 +80,13 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Come cosa successiva, accedi al video YouYube con quel `videoId`. The URL for the video will be:
-https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
+Come cosa successiva, accedi al video YouYube con quel `videoId`. L'URL di quel video sarà:
+https://www.youtube.com/watch?v=[videoId] (sostituisci `videoId` nell'URL con l'ID del video - senza parentesi quadre)
 
-In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
+Nell'esempio sopra, l'URL è 
+https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim the YouTube video with that `videoId` and think of a multiple-choice question based on the content of the video.
+Guarda velocemente il video YouTube con quel `videoId` e pensa a una domanda a crocette basata sul contenuto del video.
 
 ### Aggiungere la domanda al file markdown
 

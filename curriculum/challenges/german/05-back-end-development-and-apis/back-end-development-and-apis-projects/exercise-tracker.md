@@ -1,6 +1,6 @@
 ---
 id: 5a8b073d06fa14fcfde687aa
-title: Exercise Tracker
+title: Übungs-Tracker
 challengeType: 4
 forumTopicId: 301505
 dashedName: exercise-tracker
@@ -8,19 +8,19 @@ dashedName: exercise-tracker
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks</a>. Working on this project will involve you writing your code using one of the following methods:
+Erstelle eine vollständige JavaScript-Anwendung, die eine ähnliche Funktionalität wie <a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks</a> aufweist. Bei der Arbeit an diesem Projekt musst du deinen Code mit einer der folgenden Methoden schreiben:
 
--   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Klone <a href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank" rel="noopener noreferrer nofollow">dieses GitHub Repo</a> und schließe dein Projekt lokal ab.
+-   Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">unser Replit Starter Projekt</a>, um dein Projekt fertigzustellen.
+-   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Achte darauf, alle Dateien aus unserem GitHub Repo zu integrieren.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
 
 # --instructions--
 
-Your responses should have the following structures.
+Deine Antworten sollten folgende Struktur haben.
 
-Exercise:
+Übung:
 
 ```js
 {
@@ -32,7 +32,7 @@ Exercise:
 }
 ```
 
-User:
+Nutzer:
 
 ```js
 {
@@ -60,7 +60,7 @@ Log:
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Du solltest dein eigenes Projekt bereitstellen, nicht die Beispiel-URL.
 
 ```js
 (getUserInput) => {
@@ -71,7 +71,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can `POST` to `/api/users` with form data `username` to create a new user.
+Du kannst einen `POST` an `/api/users` mit Formulardaten senden, `username` um einen neuen Benutzer zu erstellen.
 
 ```js
 async (getUserInput) => {
@@ -108,7 +108,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users` to get a list of all users.
+Du kannst eine `GET` Anfrage an `/api/users` stellen, um eine Liste aller Benutzer zu erhalten.
 
 ```js
 async(getUserInput) => {
@@ -121,7 +121,7 @@ async(getUserInput) => {
 };
 ```
 
-The `GET` request to `/api/users` returns an array.
+Die `GET` Anfrage an `/api/users` übermittelt ein Array.
 
 ```js
 async(getUserInput) => {
@@ -136,7 +136,7 @@ async(getUserInput) => {
 };
 ```
 
-Each element in the array returned from `GET /api/users` is an object literal containing a user's `username` and `_id`.
+Jedes Element in dem Array, das von `GET /api/users` zurückgegeben wurde, ist ein Objektliteral, das den `username` und die `_id` des Nutzers enthält.
 
 ```js
 async(getUserInput) => {
@@ -156,7 +156,7 @@ async(getUserInput) => {
 };
 ```
 
-You can `POST` to `/api/users/:_id/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used. 
+`POST`-Anfragen an `/api/users/:_id/exercises` können die Formulardaten `description`, `duration` und optional auch `date` enthalten. Wird kein Datum angegeben, wird das aktuelle Datum verwendet.
 
 ```js
 async (getUserInput) => {
@@ -190,7 +190,7 @@ async (getUserInput) => {
 };
 ```
 
-The response returned from `POST /api/users/:_id/exercises` will be the user object with the exercise fields added.
+Die von `POST /api/users/:_id/exercises` zurückgegebene Antwort besteht aus dem Nutzerobjekt mit Übungsfeldern.
 
 ```js
 async (getUserInput) => {
@@ -229,7 +229,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user.
+Du kannst eine `GET`-Anfrage an `/api/users/:_id/logs` übermitteln, um ein vollständiges Übungsprotokoll eines beliebigen Nutzers abzurufen.
 
 ```js
 async (getUserInput) => {
@@ -494,7 +494,7 @@ async(getUserInput) => {
 };
 ```
 
-The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Use the `dateString` format of the `Date` API.
+The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Verwende das Format `dateString` der `Date`-API.
 
 ```js
 async(getUserInput) => {
@@ -541,7 +541,7 @@ async(getUserInput) => {
 };
 ```
 
-You can add `from`, `to` and `limit` parameters to a `GET /api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
+Du kannst die Parameter `from`, `to` und `limit` einer `GET /api/users/:_id/logs`-Anfrage übergeben, um Protokollteile eines beliebigen Benutzers abzurufen. `from` und `to` sind Daten im Format `yyyy-mm-dd`. `limit` ist ein Integer, der angibt, wie viele Protokolle zurückgegeben werden sollen.
 
 ```js
 async (getUserInput) => {
