@@ -78,9 +78,6 @@ export function* executeCancellableChallengeSaga(payload) {
     }
   }
 
-  if (previewTask) {
-    yield cancel(previewTask);
-  }
   // executeChallenge with payload containing {showCompletionModal}
   const task = yield fork(executeChallengeSaga, payload);
   previewTask = yield fork(previewChallengeSaga, { flushLogs: false });
