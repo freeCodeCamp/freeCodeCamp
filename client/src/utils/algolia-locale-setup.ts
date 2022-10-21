@@ -44,8 +44,8 @@ const algoliaIndices = {
     searchPage: 'https://www.freecodecamp.org/news/search/'
   },
   arabic: {
-    name: 'news',
-    searchPage: 'https://www.freecodecamp.org/news/search/'
+    name: 'news-ar',
+    searchPage: 'https://www.freecodecamp.org/arabic/news/search/'
   }
 };
 
