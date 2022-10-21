@@ -1,4 +1,4 @@
-name: CI - Find Unused Exports, Types and Files
+name: CI - Unused Exports, Types and Files
 env:
   NODE_OPTIONS: '--max_old_space_size=6144'
 on:
