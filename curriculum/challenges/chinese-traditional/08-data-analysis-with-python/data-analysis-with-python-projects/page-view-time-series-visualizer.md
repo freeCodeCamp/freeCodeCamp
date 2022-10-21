@@ -22,11 +22,11 @@ dashedName: page-view-time-series-visualizer
 
 使用數據完成以下任務：
 
-- 使用 Pandas 從 “fcc-forum-pageviews.csv” 導入數據。 Set the index to the `date` column.
+- 使用 Pandas 從 “fcc-forum-pageviews.csv” 導入數據。 將索引設置爲 `date` 列。
 - 通過過濾掉頁面瀏覽量位於數據集前 2.5% 或數據集後 2.5% 的日期來清理數據。
-- 創建一個 `draw_line_plot` 函數，該函數使用 Matplotlib 繪製類似於“examples/Figure_1.png”的折線圖。 The title should be `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`. The label on the x axis should be `Date` and the label on the y axis should be `Page Views`.
-- 創建一個 `draw_bar_plot` 函數，用於繪製類似於“examples/Figure_2.png”的條形圖。 它應該顯示按年份分組的每個月的平均每日頁面瀏覽量。 The legend should show month labels and have a title of `Months`. On the chart, the label on the x axis should be `Years` and the label on the y axis should be `Average Page Views`.
-- 創建一個 `draw_box_plot` 函數，該函數使用 Seaborn 繪製兩個相鄰的箱形圖，類似於“examples/Figure_3.png”。 這些箱線圖應顯示值在給定年份或月份內的分佈情況以及隨時間推移的比較情況。 The title of the first chart should be `Year-wise Box Plot (Trend)` and the title of the second chart should be `Month-wise Box Plot (Seasonality)`. Make sure the month labels on bottom start at `Jan` and the x and y axis are labeled correctly. 樣板文件包括準備數據的命令。
+- 創建一個 `draw_line_plot` 函數，該函數使用 Matplotlib 繪製類似於“examples/Figure_1.png”的折線圖。 標題應爲 `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`。 x 軸上的標籤應爲 `Date`，y 軸上的標籤應爲 `Page Views`。
+- 創建一個 `draw_bar_plot` 函數，用於繪製類似於“examples/Figure_2.png”的條形圖。 它應該顯示按年份分組的每個月的平均每日頁面瀏覽量。 圖例應顯示月份標籤並具有 `Months` 標題。 在圖表上，x 軸上的標籤應爲 `Years`，y 軸上的標籤應爲 `Average Page Views`。
+- 創建一個 `draw_box_plot` 函數，該函數使用 Seaborn 繪製兩個相鄰的箱形圖，類似於“examples/Figure_3.png”。 這些箱線圖應顯示值在給定年份或月份內的分佈情況以及隨時間推移的比較情況。 第一個圖表的標題應爲 `Year-wise Box Plot (Trend)`，第二個圖表的標題應爲 `Month-wise Box Plot (Seasonality)`。 確保底部的月份標籤從 `Jan` 開始，並且 x 和 y 軸標記正確。 樣板文件包括準備數據的命令。
 
 對於每個圖表，請確保使用數據框的副本。 單元測試是在 `test_module.py` 下爲你編寫的。
 

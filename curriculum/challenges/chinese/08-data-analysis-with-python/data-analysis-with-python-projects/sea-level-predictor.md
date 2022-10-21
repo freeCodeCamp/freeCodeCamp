@@ -23,10 +23,10 @@ dashedName: sea-level-predictor
 使用数据完成以下任务：
 
 - 使用 Pandas 从 `epa-sea-level.csv` 导入数据。
-- Use matplotlib to create a scatter plot using the `Year` column as the x-axis and the `CSIRO Adjusted Sea Level` column as the y-axix.
+- 使用 matplotlib 创建散点图，使用 `Year` 列作为 x 轴，将 `CSIRO Adjusted Sea Level` 列作为 y 轴。
 - 使用 `scipy.stats` 中的 `linregress` 函数来获得最佳拟合线的斜率和 y 截距。 在散点图的顶部绘制最佳拟合线。 使线穿过 2050 年以预测 2050 年的海平面上升。
 - 仅使用数据集中从 2000 年到最近一年的数据绘制一条新的最佳拟合线。 如果上升速度继续与 2000 年一样，则使该线也经过 2050 年以预测 2050 年的海平面上升。
-- The x label should be `Year`, the y label should be `Sea Level (inches)`, and the title should be `Rise in Sea Level`.
+- x 标签应为 `Year`，y 标签应为 `Sea Level (inches)`，标题应为 `Rise in Sea Level`。
 
 单元测试是在 `test_module.py` 下为你编写的。
 
@@ -46,7 +46,7 @@ dashedName: sea-level-predictor
 
 ## 数据源
 
-<a href="https://datahub.io/core/sea-level-rise" target="_blank" rel="noopener noreferrer nofollow">Global Average Absolute Sea Level Change</a>, 1880-2014 from the US Environmental Protection Agency using data from CSIRO, 2015; NOAA, 2015.
+<a href="https://datahub.io/core/sea-level-rise" target="_blank" rel="noopener noreferrer nofollow">全球平均绝对海平面变化</a>，1880 - 2014 年，来自美国环境保护局，数据来源：CSIRO, 2015; NOAA, 2015。
 
 
 # --hints--

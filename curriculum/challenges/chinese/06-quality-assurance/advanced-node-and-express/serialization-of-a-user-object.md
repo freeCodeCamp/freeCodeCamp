@@ -12,7 +12,7 @@ dashedName: serialization-of-a-user-object
 
 我们需要用到序列化和反序列化的方法来进行配置。 passport 为我们提供了 `passport.serializeUser( OURFUNCTION )` 和 `passport.deserializeUser( OURFUNCTION )` 两个方法。
 
-`serializeUser` 方法接收两个参数，分别是表示用户的对象和一个回调函数。 其中，回调函数的返回值应为这个用户的唯一标识符：最简单的写法就是让它返回用户的 `_id`。 它应当是唯一的，是由 MongoDB 产生的。 类似地，`deserializeUser` 也接收两个参数，分别是在序列化时生成的标识符以及一个回调函数。在回调函数里，我们需要根据根据传入的标识符（比如 \_id）返回表示用户的对象。 为了在 MongoDB 中通过 query（查询语句）获取 `_id` 字段，首先我们需要创建 `const ObjectID = require('mongodb').ObjectID;`；然后调用它：`new ObjectID(THE_ID)`。 `mongodb@~3.6.0` has already been added as a dependency. 你可以在下面的例子中看到：
+`serializeUser` 方法接收两个参数，分别是表示用户的对象和一个回调函数。 其中，回调函数的返回值应为这个用户的唯一标识符：最简单的写法就是让它返回用户的 `_id`。 它应当是唯一的，是由 MongoDB 产生的。 类似地，`deserializeUser` 也接收两个参数，分别是在序列化时生成的标识符以及一个回调函数。在回调函数里，我们需要根据根据传入的标识符（比如 \_id）返回表示用户的对象。 为了在 MongoDB 中通过 query（查询语句）获取 `_id` 字段，首先我们需要创建 `const ObjectID = require('mongodb').ObjectID;`；然后调用它：`new ObjectID(THE_ID)`。 `mongodb@~3.6.0` 已经被添加为依赖项。 你可以在下面的例子中看到：
 
 ```js
 passport.serializeUser((user, done) => {
@@ -28,7 +28,7 @@ passport.deserializeUser((id, done) => {
 
 因此，在我们在下一步中配置 DB 前，`deserializeUser` 会抛出错误。所以，现在请先注释掉上面的代码，在 `deserializeUser` 中仅调用 `done(null, null)` 即可。
 
-完成上述要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/7068a0d09e61ec7424572b366751f048" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://gist.github.com/camperbot/7068a0d09e61ec7424572b366751f048" target="_blank" rel="noopener noreferrer nofollow">查看已执行项目的当前进度</a>。
 
 # --hints--
 

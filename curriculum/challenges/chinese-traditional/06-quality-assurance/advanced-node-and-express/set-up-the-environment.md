@@ -10,7 +10,7 @@ dashedName: set-up-the-environment
 
 在接下來的挑戰中，我們將會用到 `chat.pug` 文件。 首先，在你的 `routes.js` 文件中爲 `/chat` 添加一個處理 GET 請求的路由，並給它傳入 `ensureAuthenticated`。在回調函數中，我們需要讓它渲染 `chat.pug` 文件，並在響應中包含 `{ user: req.user }` 信息。 現在，請修改 `/auth/github/callback` 路由，讓它可以像這樣設置 user_id：`req.session.user_id = req.user.id`，並在設置完成後重定向至 `/chat`。
 
-`socket.io@~2.3.0` has already been added as a dependency, so require/instantiate it in your server as follows with `http` (comes built-in with Nodejs):
+已添加 `socket.io@~2.3.0` 作爲依賴項，在你的服務器中和 `http` （內置在 Nodejs 中）一起導入/實例化，具體如下：
 
 ```javascript
 const http = require('http').createServer(app);
@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 現在我們的 *express 應用*已經包含了 *http* 服務，接下來我們需要監聽 *http* 服務的事件。 爲此，我們需要把 `app.listen` 更新爲 `http.listen`。
 
-需要處理的第一件事是監聽客戶端的新連接。 <dfn>on</dfn> 關鍵字就是監聽這個特定事件。 It requires 2 arguments: a string containing the title of the event that's emitted, and a function with which the data is passed through. 在連接監聽器中，我們用 *socket* 來代表它所包含的數據。 socket 就是指已連接到服務器的客戶端。
+需要處理的第一件事是監聽客戶端的新連接。 <dfn>on</dfn> 關鍵字就是監聽這個特定事件。 它需要 2 個參數：一個包含所發出事件標題的字符串，以及一個用於傳遞數據的函數。 在連接監聽器中，我們用 *socket* 來代表它所包含的數據。 socket 就是指已連接到服務器的客戶端。
 
 爲了可以監聽服務器的連接事件，我們在數據庫連接的部分加入如下代碼：
 
@@ -42,7 +42,7 @@ let socket = io();
 
 **注意：**只有在連接到處於同一個 url/server 上的 socket 時，`io()`纔可以正常執行。 如果需要連接到外部的 socket，就需要這樣調用：`io.connect('URL');`。
 
-完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">查看已執行項目的當前進度</a>。
 
 # --hints--
 
