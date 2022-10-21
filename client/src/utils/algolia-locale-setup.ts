@@ -42,6 +42,10 @@ const algoliaIndices = {
   german: {
     name: 'news',
     searchPage: 'https://www.freecodecamp.org/news/search/'
+  },
+  arabic: {
+    name: 'news-ar',
+    searchPage: 'https://www.freecodecamp.org/arabic/news/search/'
   }
 };
 
