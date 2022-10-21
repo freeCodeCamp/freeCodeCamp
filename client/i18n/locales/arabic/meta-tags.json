@@ -19,6 +19,8 @@
     "html",
     "css",
     "react",
+    "redux",
+    "api",
     "front",
     "back",
     "end",
