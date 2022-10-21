@@ -12,9 +12,9 @@ dashedName: use-a-template-engines-powers
 
 在 Pug 文件中，你可以用變量名來調用變量，比如寫成 `#{variable_name}` 來實現行內調用，或像 `p=variable_name` 把元素與變量直接寫在一起，這表示 p 元素的內容等價於這個變量。
 
- Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site. Read the Pug documentation for more information on usage and syntax.
+ Pug 是關於使用空白和製表符來顯示嵌套元素，並減少製作一個漂亮網站所需的代碼量。 閱讀 Pug 文檔以獲取更多關於使用和語法的信息。
 
- Here is an example:
+ 下面是一個例子：
 
  ```html
  <!--Typing this using Pug-->
@@ -38,17 +38,17 @@ dashedName: use-a-template-engines-powers
   </body>
   ```
 
-Looking at our pug file `index.pug` included in your project, we used the variables `title` and `message`.
+查看在你的項目中的 pug 文件 `index.pug`，我們使用了變量 `title` 和 `message`。
 
-To pass those along from our server, you will need to add an object as a second argument to your `res.render` with the variables and their values. For example, pass this object along setting the variables for your index view: `{title: 'Hello', message: 'Please login'}`
+爲了從服務器傳遞這些信息，你需要給 `res.render` 的第二個參數傳入一個對象，其中包含變量和對應的值。 例如，在設置索引視圖的變量時傳遞此對象：`{title: 'Hello', message: 'Please login'}`。
 
-It should look like: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
+看起來應該像這樣：`res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});`。現在刷新頁面，你應該看到那些值就像在 `index.pug` 文件中一樣被渲染在頁面上正確的位置。
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the <a href="https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871" target="_blank" rel="noopener noreferrer nofollow">project completed up to this point</a>.
+完成上述要求後，你可以在下方提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以查看<a href="https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871" target="_blank" rel="noopener noreferrer nofollow">已執行項目的當前進度</a>。
 
 # --hints--
 
-Pug should correctly render variables.
+Pug 應正確地展示變量。
 
 ```js
 (getUserInput) =>

@@ -12,9 +12,9 @@ ES6 提供了一个新的创建对象的语法，使用关键字 <dfn>class</dfn
 
 值得注意的是，`class` 只是一个语法糖，它并不像 Java、Python 或者 Ruby 这一类的语言一样，严格履行了面向对象的开发规范。
 
-In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
+在 ES5 里面，我们通常会定义一个函数 `constructor`，然后使用 `new` 关键字来实例化一个对象。
 
-In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
+在 ES6 里，`class` 声明有一个 `constructor` 方法，与 `new` 关键字一起被调用。 如果 `constructor` 方法没有明确定义，那么它就被含蓄地定义为没有参数。
 
 ```js
 // Explicit constructor

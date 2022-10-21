@@ -38,7 +38,7 @@ socket.on('user count', function(data) {
 
 现在你可以尝试启动你的 app 并登录，你会看到在客户端的控制台打印出了 “1”，这就表示目前连接到服务器的用户数为 1。 你可以试着通过打开多个 app 来验证数量是否会增加。
 
-完成上述要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5" target="_blank" rel="noopener noreferrer nofollow">查看已执行项目的当前进度</a>。
 
 # --hints--
 
