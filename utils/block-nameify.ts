@@ -1,7 +1,7 @@
 import preFormattedBlockNames from './preformatted-block-names.json';
 
-export function blockNameify(
-  phrase: keyof typeof preFormattedBlockNames
-): string {
+export type BlockNames = keyof typeof preFormattedBlockNames;
+
+export function blockNameify(phrase: BlockNames): string {
   return preFormattedBlockNames[phrase];
 }

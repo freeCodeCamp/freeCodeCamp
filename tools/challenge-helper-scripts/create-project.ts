@@ -6,7 +6,7 @@ import { format } from 'prettier';
 
 import ObjectID from 'bson-objectid';
 import { SuperBlocks } from '../../config/certification-settings';
-import { blockNameify } from '../../utils/block-nameify';
+import { blockNameify, BlockNames } from '../../utils/block-nameify';
 import { createStepFile } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
@@ -26,7 +26,7 @@ type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
 interface CreateProjectArgs {
   superBlock: SuperBlocks;
-  block: string;
+  block: BlockNames;
   helpCategory: string;
   order: number;
   title?: string;
@@ -34,7 +34,7 @@ interface CreateProjectArgs {
 
 async function createProject(
   superBlock: SuperBlocks,
-  block: string,
+  block: BlockNames,
   helpCategory: string,
   order: number,
   title?: string
@@ -227,7 +227,7 @@ void prompt([
   },
   {
     name: 'title',
-    default: ({ block }: { block: string }) => blockNameify(block)
+    default: ({ block }: { block: BlockNames }) => blockNameify(block)
   },
   {
     name: 'helpCategory',
