@@ -26,7 +26,6 @@ const config = {
   plugins: [
     'preval',
     '@babel/plugin-syntax-dynamic-import',
-    '@babel/plugin-syntax-import-assertions',
     'babel-plugin-macros',
     [
       '@babel/plugin-transform-runtime',
