@@ -55,7 +55,6 @@ import {
 
 // How long before bailing out of a preview.
 const previewTimeout = 2500;
-let previewTask;
 
 // when 'run tests' is clicked, do this first
 export function* executeCancellableChallengeSaga(payload) {
@@ -80,14 +79,14 @@ export function* executeCancellableChallengeSaga(payload) {
 
   // executeChallenge with payload containing {showCompletionModal}
   const task = yield fork(executeChallengeSaga, payload);
-  previewTask = yield fork(previewChallengeSaga, { flushLogs: false });
+  yield fork(previewChallengeSaga, { flushLogs: false });
 
   yield take(actionTypes.cancelTests);
   yield cancel(task);
 }
 
 export function* executeCancellablePreviewSaga() {
-  previewTask = yield fork(previewChallengeSaga);
+  yield fork(previewChallengeSaga);
 }
 
 export function* executeChallengeSaga({ payload }) {
