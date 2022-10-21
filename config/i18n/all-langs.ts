@@ -18,7 +18,8 @@ export const availableLangs = {
     'portuguese',
     'ukrainian',
     'japanese',
-    'german'
+    'german',
+    'arabic'
   ],
   curriculum: [
     'english',
@@ -29,7 +30,8 @@ export const availableLangs = {
     'portuguese',
     'ukrainian',
     'japanese',
-    'german'
+    'german',
+    'arabic'
   ]
 };
 
@@ -139,6 +141,11 @@ export const auditedCerts = {
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs
+  ],
+  arabic: [
+    SuperBlocks.RespWebDesignNew,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs
   ]
 };
 
@@ -153,7 +160,8 @@ export const languagesWithAuditedBetaReleases = [
   'italian',
   'ukrainian',
   'chinese',
-  'chinese-traditional'
+  'chinese-traditional',
+  'arabic'
 ];
 
 // ---------------------------------------------------------------------------
@@ -173,7 +181,8 @@ export const i18nextCodes = {
   portuguese: 'pt-BR',
   ukrainian: 'uk',
   japanese: 'ja',
-  german: 'de'
+  german: 'de',
+  arabic: 'ar'
 };
 
 // These are for the language selector dropdown menu in the footer
@@ -187,7 +196,8 @@ export enum LangNames {
   portuguese = 'Português',
   ukrainian = 'Українська',
   japanese = '日本語',
-  german = 'Deutsch'
+  german = 'Deutsch',
+  arabic = 'العربية'
 }
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -203,14 +213,15 @@ export enum LangCodes {
   portuguese = 'pt-BR',
   ukrainian = 'uk',
   japanese = 'ja',
-  german = 'de'
+  german = 'de',
+  arabic = 'ar'
 }
 /* eslint-enable @typescript-eslint/naming-convention */
 
 /**
  * This array contains languages that should NOT appear in the language selector.
  */
-export const hiddenLangs = [];
+export const hiddenLangs = ['arabic'];
 
 // locale is sourced from a JSON file, so we use getLangCode and getLangName to
 // find the associated enum values
