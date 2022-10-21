@@ -1,0 +1,339 @@
+//html
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="https://biorender.com/img/covid/vaccine.png"/>
+    <title>vaccinenearMe.web.app</title>
+  </head>
+  <body>
+    <div class="searchBox">
+      <input type="text" placeholder="Enter your area pincode" id="input" />
+      <button>
+        <img
+          src="https://images.vexels.com/media/users/3/132068/isolated/preview/f9bb81e576c1a361c61a8c08945b2c48-search-icon-by-vexels.png"
+          alt="search"
+        />
+      </button>
+    </div>
+
+    
+    <div class="cards"></div>
+
+    <div class="opening">
+      <h1 style="font-size: 34px; color: #4ee6ff; ">--Find Vaccination Centers near you--</h1>
+      <img src="./images/covid-19-6364174_1280.png" alt="" >
+    </div>
+
+
+    <script src="./javascript/vaccine.js"></script>
+    
+  </body>
+</html>
+
+//css
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 0.5px;
+  font-family: 'Ubuntu',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, right top, from(#0F2027), color-stop(#203A43), to(#2C5364));
+  background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
+}
+
+.searchBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0.5rem;
+  z-index: 100;
+}
+
+.searchBox input {
+  height: 3.2rem;
+  width: 60vw;
+  padding-left: 10px;
+  border-radius: 30px;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.searchBox input:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.searchBox button {
+  height: 3rem;
+  width: 3rem;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  outline: none;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  margin-left: 0.5rem;
+}
+
+.searchBox button:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.searchBox button img {
+  height: 1rem;
+  width: 1rem;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cards .card {
+  background: white;
+  padding: 1rem;
+  min-height: 40vh;
+  min-width: 30vw;
+  margin: 1rem;
+}
+
+.cards .card h1 {
+  color: rgb(35, 35, 97);
+  margin-bottom: 0.5rem;
+}
+
+.cards .card h1 .category {
+  color: black;
+  font-size: smaller;
+}
+
+.cards .card .innerCard {
+  background: -webkit-gradient(linear, left top, right top, from(#DCE35B), to(#45B649));
+  background: linear-gradient(to right, #DCE35B, #45B649);
+  padding: 0.5rem;
+}
+
+.cards .card .innerCard h3 {
+  margin: 0.5rem;
+  color: white;
+}
+
+.cards .card .innerCard h3 .category {
+  color: black;
+}
+
+.opening {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.opening img {
+  margin-top: 7rem;
+  width: 96vw;
+  height: 514px;
+
+
+}
+
+.opening h1 {
+  position: absolute;
+  -webkit-transform: translate(0, 30px);
+          transform: translate(0, 30px);
+  font-size: small;
+}
+
+@media (max-width: 500px) {
+  .cards {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+  .cards::before {
+    content: "Swipe for more";
+    position: fixed;
+    bottom: 1rem;
+    right: 0.5rem;
+    text-align: center;
+    color: white;
+  }
+  .cards .card {
+    min-height: 50vh;
+    min-width: 90vw;
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 9000px) {
+  .opening img {
+    width: 80vw;
+    height: 40px;
+  }
+  /*.opening h1 {
+    font-size: large;
+      
+  }*/
+}
+
+//javascript
+let centers = [];
+const cards = document.querySelector(".cards");
+const searchBtn = document.querySelector(".searchBox").querySelector("button");
+
+let today, d, m, y;
+today = new Date();
+d = today.getDate();
+m = today.getMonth() + 1;
+y = today.getFullYear();
+today = `${d}-${m}-${y}`;
+
+function cowinData(pincode) {
+  let url = `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${pincode}&date=${today}`;
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+  xhr.onload = function () {
+    if (this.status === 200) {
+      let data = JSON.parse(this.responseText);
+      
+      if(data.sessions !== []){
+        data.sessions.map((e, i) => {
+          let centerInfo = [
+            e.name,
+            e.address,
+            e.vaccine,
+            e.date,
+            e.min_age_limit,
+            e.available_capacity,
+            e.block_name,
+            e.district_name,
+            e.slots,
+          ];
+          centers.push(centerInfo);
+          let code = `
+      <div class="card">
+      <h1>
+      <span class="category">Center Name - </span>
+      ${centers[i][0]}
+    </h1>
+    <div class="innerCard">
+    <h3>
+    <span class="category">Center Address - </span>
+    ${centers[i][1]}
+  </h3>
+  <h3>
+    <span class="category">Vaccine Name - </span>
+    ${centers[i][2]}
+  </h3>
+  <h3>
+    <span class="category">Date Of Vaccination - </span>
+    ${centers[i][3]}
+  </h3>
+  <h3>
+    <span class="category">Minimum Age Limit - </span>
+    ${centers[i][4]}
+  </h3>
+  <h3>
+    <span class="category">Available Capacity - </span>
+    ${centers[i][5]}
+  </h3>
+  <h3>
+    <span class="category">Block Name - </span>
+    ${centers[i][6]}
+  </h3>
+  <h3>
+    <span class="category">District Name - </span>
+    ${centers[i][7]}
+  </h3>
+  <h3>
+    <span class="category">Available Slots - </span>
+     ${centers[i][8].join(" | ")}
+  </h3>
+    </div>
+    </div>`;
+          cards.innerHTML += code;
+        });
+        // console.log(data.sessions.length);
+        if(data.sessions.length === 0){
+          alert("No Vaccinations Available")
+        }
+        centers = []
+      } 
+
+
+    } else{
+        alert("Some error occured")
+    }
+  };
+
+  xhr.send();
+}
+
+const input = document.querySelector("#input")
+input.addEventListener("keypress", (e) => {
+    if (e.which === 13) {
+        let pincode = input.value;
+        cards.innerHTML = "";
+        if (pincode === "") {
+            alert("Enter pincode in the search box")
+        } else if (pincode !== "") {
+            cowinData(pincode)
+        }
+}})
+
+searchBtn.addEventListener("click",() => {
+        let pincode = input.value;
+        cards.innerHTML = "";
+        if (pincode === "") {
+            alert("Enter pincode in the search box")
+        } else if (pincode !== "") {
+            cowinData(pincode)
+        }
+})
