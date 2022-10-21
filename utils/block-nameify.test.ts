@@ -8,7 +8,7 @@ describe('blockNameify', () => {
 
   it('should not format prepositions', () => {
     const result = blockNameify('basic-html-and-html5');
-    expect(result).toBe('Basic Html and Html5');
+    expect(result).toBe('Basic HTML and HTML5');
   });
 
   it('should format javascript to JavaScript', () => {
