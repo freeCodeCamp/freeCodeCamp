@@ -38,7 +38,7 @@
     "@babel/polyfill": "7.12.1",
     "@babel/preset-env": "7.19.4",
     "@babel/preset-react": "7.18.6",
-    "@babel/standalone": "7.19.5",
+    "@babel/standalone": "7.19.6",
     "@fortawesome/fontawesome-svg-core": "6.2.0",
     "@fortawesome/free-brands-svg-icons": "6.2.0",
     "@fortawesome/free-solid-svg-icons": "6.2.0",
