@@ -140,7 +140,7 @@
     "chokidar": "3.5.3",
     "copy-webpack-plugin": "9.1.0",
     "core-js": "2.6.12",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.27",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.30",
     "jest-json-schema-extended": "1.0.1",
     "monaco-editor-webpack-plugin": "4.2.0",
     "react-test-renderer": "16.14.0",
