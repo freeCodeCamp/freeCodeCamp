@@ -280,7 +280,7 @@ Update your `.env` file to use your new language for `CLIENT_LOCALE` and `CURRIC
 Once these are in place, you should be able to run `npm run develop` to view your translated version of freeCodeCamp.
 
 > [!TIP]
-> if you ran an English development environment, gatsby may stored English LearnUI string. This will stop it from using your desired langauge LearnUI strings in `.env`, to remove the strings from previous environment use `npm run clean-and-develop`.
+> If you build the client in one language and then want to build it in a different language, you will need to use the command `npm run clean-and-develop` after changing the `.env` file, as Gatsby will cache the first language.
 
 > [!ATTENTION]
 > While you may perform translations locally for the purpose of testing, we remind everyone that translations should _not_ be submitted through GitHub and should only be done through Crowdin. Be sure to reset your local codebase after you are done testing.
