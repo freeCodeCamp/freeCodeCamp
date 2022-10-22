@@ -51,6 +51,8 @@ function createChallengeNode(
 
   // Challenge id should be unique for CertificateNodes, but not for
   // ChallengeNodes
+  // this is imp, must be keep in mind 
+  //my changes on line 54  
   const id =
     internal.type === 'ChallengeNode' ? challenge.fields.slug : challenge.id;
 
