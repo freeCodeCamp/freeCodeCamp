@@ -52,14 +52,15 @@ export function SolutionDisplayWidget({
     </>
   );
   const ShowProjectLinkForCertification = (
-    <a
+    <Button
+      block={true}
       className='btn-invert'
       href={solution ?? ''}
       rel='noopener noreferrer'
       target='_blank'
     >
       {t('certification.project.solution')}
-    </a>
+    </Button>
   );
   const MissingSolutionComponentForCertification = (
     <>{t('certification.project.no-solution')}</>
@@ -157,6 +158,8 @@ export function SolutionDisplayWidget({
           showProjectLink: ShowProjectLink,
           none: MissingSolutionComponent
         };
+
+  console.log(getSolutionDisplayType(completedChallenge));
 
   return displayComponents[getSolutionDisplayType(completedChallenge)];
 }

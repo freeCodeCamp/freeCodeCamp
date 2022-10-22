@@ -229,7 +229,7 @@ export class CertificationSettings extends Component {
         <h3 className='text-center' id={`cert-${certSlug}`}>
           {certName}
         </h3>
-        <Table>
+        <Table striped>
           <thead>
             <tr>
               <th>{t('settings.labels.project-name')}</th>
