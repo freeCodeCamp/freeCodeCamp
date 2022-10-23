@@ -1,0 +1,421 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+/* Navigation */
+
+nav {
+  width: 100%;
+  top: 0;
+  margin-bottom: 0%;
+  height: 11%;
+  background: #f5f5f5;
+  position: fixed;
+  transition: top 0.3s;
+  z-index: 100;
+}
+
+nav img {
+  float: left;
+  width: 20%;
+  max-width: 100%;
+  height: 90%;
+  margin-top: 0.25%;
+  margin-left: 0.25%;
+}
+
+#headings {
+  float: right;
+  margin: 1%;
+  font-family: "Lato", sans-serif;
+  color: #000000;
+  align-items: center;
+  margin-top: 2%;
+}
+
+#headings a {
+  text-decoration: none;
+  color: #000000;
+  padding: 2em;
+  font-size: 1.6vw;
+  align-items: center;
+}
+
+#headings a:hover {
+  color: #1c4b82;
+}
+
+#headings a:active {
+  color: green;
+}
+
+/* index.html - WoodTexture Background Section */
+
+#woodTexture {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#woodTextureImg {
+  margin: 0%;
+  width: 100%;
+  height: 80%;
+  max-width: 100%;
+}
+
+#Caption {
+  color: white;
+  position: absolute;
+  top: 5em;
+  font-size: 3.5vw;
+  float: left;
+  margin: 2%;
+  margin-top: 2%;
+}
+
+#button {
+  position: absolute;
+  top: 37em;
+  padding: 2%;
+  margin-left: 5%;
+  width: 100%;
+  flex: 1;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#button a {
+  padding: 1%;
+  padding-left: 3%;
+  padding-right: 3%;
+  font-size: 2.5vw;
+  background-color: #1c4b82;
+  color: white;
+  border: solid #1c4b82 5px;
+  border-radius: 5%;
+  text-decoration: none;
+}
+
+#button a:hover {
+  filter: brightness(200%);
+}
+
+/* index.html - About Section */
+
+#About {
+  float: left;
+  margin: 10%;
+  margin-bottom: 8%;
+}
+
+#About h1 {
+  float: left;
+  margin: 12%;
+  margin-top: 0%;
+  margin-bottom: 5%;
+  font-size: 5vw;
+  text-align: center;
+  padding: 1em;
+}
+
+#AboutP {
+  float: left;
+  margin: 15%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  font-size: 1.75vw;
+  box-sizing: border-box;
+  line-height: 160%;
+}
+
+/* index.html - Behind the Scenes Section */
+
+.making {
+  width: 100%;
+}
+
+.making h1 {
+  font-size: 4vw;
+  margin-top: 8%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.images {
+  width: 100%;
+  max-width: 100%;
+}
+
+#imagesSet1 {
+  float: left;
+  position: relative;
+  margin-top: 1%;
+  margin-left: 20%;
+  width: 100%;
+  display: flex;
+}
+
+#imagesSet2 {
+  float: left;
+  position: relative;
+  margin-left: 20%;
+  width: 100%;
+  display: flex;
+}
+
+#imagesSet3 {
+  float: left;
+  position: relative;
+  margin-left: 20%;
+  width: 100%;
+  display: flex;
+}
+
+#imagesSet4 {
+  float: left;
+  position: relative;
+  margin-left: 20%;
+  width: 100%;
+  display: flex;
+  margin-bottom: 10%;
+}
+
+#images1,
+#images2,
+#images3,
+#images4,
+#images5,
+#images6,
+#images7,
+#images8,
+#images9,
+#images10,
+#images11,
+#images12 {
+  /* border-radius: 8%; */
+  width: 20%;
+  height: auto;
+  vertical-align: middle;
+  margin: 0.25%;
+}
+
+/* #images11 {
+  border-radius: 8%;
+  margin: 0%;
+  padding: 0%;
+  width: 22%;
+}
+#images12 {
+  border-radius: 8%;
+  margin: 0%;
+  padding: 0%;
+  width: 22%;
+} */
+
+/* index.html - Products Section */
+
+.container{
+  width: 100%;
+}
+
+.container h1{
+  font-size: 4vw;
+  margin-top: 8%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.mySlides {
+  width: 100%;
+  max-width: 100%;
+  margin: 2%;
+  padding: 0%;
+  float: left;
+  position: relative;
+  /* box-sizing: border-box; */
+  /* display: flex; */
+  margin-bottom: 0%;
+  right: -1.5%;
+}
+
+#images13,
+#images14,
+#images15,
+#images16,
+#images17,
+#images18 {
+  border-radius: 0%;
+  width: 15%;
+  height: 15%;
+  vertical-align: middle;
+  margin: 0.10%;
+}
+
+/* index.html - Contact Us Section */
+
+#contact {
+  width: 50%;
+  margin: 2%;
+  margin-left: 25%;
+}
+
+#contact h1 {
+  font-size: 4vw;
+  margin-top: 90%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+#contact form {
+  border: solid black 3px;
+  margin: 5%;
+  padding: 5%;
+  line-height: 160%;
+  font-size: 2vw;
+}
+
+#contact form input {
+  border: solid black 2px;
+  font-size: 1.4vw;
+  width: 60%;
+}
+
+#contact #subject {
+  font-size: 1.4vw;
+  border: solid black 2px;
+  padding: 1.5%;
+  margin: 1%;
+  margin-left: 0.25%;
+  margin-right: 2%;
+  resize: vertical;
+}
+
+#contact #submit {
+  width: 20%;
+  font-size: 1.75vw;
+  padding: 2%;
+  background-color: #1c4b82;
+  color: white;
+  cursor: pointer;
+}
+
+#contact #submit:hover {
+  filter: brightness(250%);
+}
+
+/* index.html - Feedback Section */
+
+#feedback {
+  width: 50%;
+  margin-top: 12%;
+  margin-left: 25%;
+}
+
+#feedback h1 {
+  font-size: 4vw;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+#feedback form {
+  border: solid black 3px;
+  margin: 5%;
+  padding: 5%;
+  line-height: 160%;
+  font-size: 2vw;
+}
+
+#feedback form input {
+  border: solid black 2px;
+  font-size: 1.4vw;
+  width: 60%;
+}
+
+#feedback #commentArea {
+  font-size: 1.4vw;
+  border: solid black 2px;
+  padding: 1.5%;
+  margin: 1%;
+  margin-left: 0.25%;
+  margin-right: 2%;
+  resize: vertical;
+}
+
+#feedback #submit1 {
+  width: 20%;
+  font-size: 1.75vw;
+  padding: 2%;
+  background-color: #1c4b82;
+  color: white;
+  cursor: pointer;
+}
+
+#feedback #submit1:hover {
+  filter: brightness(250%);
+}
+
+/* index.html - Footer */
+
+footer {
+  margin-top: 10%;
+  width: 100%;
+  height: 30%;
+  background-color: black;
+  margin-bottom: 0%;
+  position: relative;
+}
+
+.section1 {
+  position: relative;
+  width: 15%;
+  float: left;
+  display: flex;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 5%;
+  padding-left: 20%;
+  font-size: 1.75vw;
+}
+
+footer a:hover {
+  color: grey;
+  font-size: 2.5vw;
+  text-decoration: underline;
+}
+
+#list1 {
+  padding-top: 20%;
+}
+
+#lList {
+  padding-bottom: 20%;
+}
+
+.section2{
+  margin-bottom: 0%;
+  width: 20%;
+  display: flex;
+  float: left;
+}
+
+.section2 h2{
+  color: #ffffff;
+  position: relative;
+}
