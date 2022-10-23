@@ -1,0 +1,304 @@
+<!--
+layout: html
+title: Sample HTML5 Index Page
+author: upekshaF
+--->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="script.js" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <title>Crince Products</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html"><img src="./images/logo1.png" alt="Logo" /></a>
+      <div id="headings">
+        <a href="index.html">Home</a>
+        <a href="#About">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+    </nav>
+    <!-- Wood Texture Section -->
+    <div id="woodTexture">
+      <img
+        id="woodTextureImg"
+        src="./images/woodTexture.jpeg"
+        alt="Wood Texture"
+      />
+      <div id="Caption">
+        <h1>Manufacturing & Selling Ornamental Wooden Handicrafts</h1>
+      </div>
+      <div id="button">
+        <a href="products.html">Products</a>
+      </div>
+      <div class="Signin">
+        <a href="signin.html">Sign In</a>
+        <a href="signin.html"
+          ><img
+            class="SigninIMG"
+            src="./images/arrow.png"
+            alt="Right Arrow Sign"
+        /></a>
+      </div>
+
+      <!-- Sign in -->
+      <button class="openFormButton" onclick="openForm()">Sign In</button>
+      <div id="myForm" class="signInForm">
+        <form action="signIn.php" class="form-container">
+          <h1>Sign In</h1>
+          <br /><br />
+          <label for="email">Email</label>
+          <input
+            type="text"
+            name="signInEmail"
+            id="signInEmail"
+            placeholder="Email"
+            required
+          />
+          <br /><br />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="signInPassword"
+            id="signInPassword"
+            placeholder="Password"
+            required
+          />
+          <br /><br /><br />
+          <button type="submit" class="signInSubmitButton">Sign In</button>
+          <button
+            type="button"
+            class="signInCancelButton"
+            onclick="closeForm()"
+          >
+            Close
+          </button>
+        </form>
+      </div>
+      <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+      </script>
+    </div>
+    <!-- About us  -->
+    <div id="About">
+      <h1>About Us</h1>
+      <div id="AboutP">
+        <p>
+          CRINCE: Wooden Products is one of the traditional family owned
+          business in Sri lanka. It's a wooden ornaments manufacturing business
+          that has been on going over 45+ years. The speciality of these
+          products are that they are 100% hand-made. We use a variety of wood,
+          ranging from Kithul, Mahogani, Awaranuga, Thekka etc. The ornaments
+          display classic, traditional, and iconic sceneries of Sri Lanka, a
+          Country in South Asia. Personalized ornaments are mostly welcomed as
+          well.
+        </p>
+        <!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+        <div class="elfsight-app-a51e1ec0-569b-4704-af86-428e8059b72a"></div> -->
+      </div>
+    </div>
+    <!-- Behind the Scenes -->
+    <div class="making">
+      <h1>Behind the Scenes</h1>
+      <div class="images">
+        <div id="imagesSet1">
+          <img id="images1" src="./images/wood.jpeg" alt="Wood" lyr: { oxy:
+          '-50%, -50%' }/>
+          <img id="images2" src="./images/wood1.jpeg" alt="Wood" />
+          <img id="images3" src="./images/wood4.jpeg" alt="Wood" />
+        </div>
+        <div id="imagesSet2">
+          <img id="images4" src="./images/wood11.jpeg" alt="Wood" />
+          <img id="images5" src="./images/wood5.jpeg" alt="Wood" />
+          <img id="images6" src="./images/wood9.jpeg" alt="Wood" />
+        </div>
+        <div id="imagesSet3">
+          <img id="images7" src="./images/wood3.jpeg" alt="Wood" />
+          <img id="images8" src="./images/wood7.jpeg" alt="Wood" />
+          <img id="images9" src="./images/wood8.jpeg" alt="Wood" />
+        </div>
+        <div id="imagesSet4">
+          <img id="images10" src="./images/wood10.jpeg" alt="Wood" />
+          <img id="images11" src="./images/wood6.jpeg" alt="Wood" />
+          <img id="images12" src="./images/wood12.jpeg" alt="Wood" />
+        </div>
+      </div>
+    </div>
+    <!-- Products -->
+    <div class="container">
+      <h1>Popular Products</h1>
+      <div class="mySlides">
+        <a href="products.html#p1img"
+          ><img id="images13" src="./images/p1.jpeg" alt="Products"
+        /></a>
+        <a href="products.html#p2img"
+          ><img id="images14" src="./images/p2.jpeg" alt="Products"
+        /></a>
+        <a href="products.html#p3img"
+          ><img id="images15" src="./images/p3.jpeg" alt="Products"
+        /></a>
+        <a href="products.html#p4img"
+          ><img id="images16" src="./images/p4.jpeg" alt="Products"
+        /></a>
+        <a href="products.html#p5img"
+          ><img id="images17" src="./images/p5.jpeg" alt="Products"
+        /></a>
+        <a href="products.html#p6img"
+          ><img id="images18" src="./images/p6.jpeg" alt="Products"
+        /></a>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a> -->
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <div class="caption-container">
+        <p id="pCaption"></p>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./images/p1.jpeg"
+            alt="Product"
+            onclick="currentSlide(1)"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./images/p2.jpeg"
+            alt="Product"
+            onclick="currentSlide(2)"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./images/p3.jpeg"
+            alt="Product"
+            onclick="currentSlide(3)"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./images/p4.jpeg"
+            alt="Product"
+            onclick="currentSlide(4)"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./images/p5.jpeg"
+            alt="Product"
+            onclick="currentSlide(5)"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./images/p6.jpeg"
+            alt="Product"
+            onclick="currentSlide(6)"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Contact Us -->
+    <div id="contact">
+      <h1>Contact Us</h1>
+      <form action="contact.php">
+        <label for="fname">First Name:</label>
+        <input
+          type="text"
+          id="fname"
+          name="firstName"
+          placeholder="First name..."
+        />
+        <br />
+        <label for="lname">Last Name:</label>
+        <input
+          type="text"
+          id="lname"
+          name="lastName"
+          placeholder="Last name..."
+        />
+        <br />
+        <label for="phone">Phone No:</label>
+        <input type="text" id="phone" name="phone" placeholder="Tel-phone..." />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Email..." />
+        <br />
+        <label for="subject">Subject of the Inquiry:</label>
+        <br />
+        <textarea
+          name="subject"
+          id="subject"
+          placeholder="Type your Inquiry..."
+          cols="42.5"
+          rows="10"
+        ></textarea>
+        <br />
+        <button id="submit">Submit</button>
+      </form>
+    </div>
+    <!-- Feedback Form -->
+    <div id="feedback">
+      <h1>Send us your Feedback...</h1>
+      <form action="feedback.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name..." /> <br />
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email1" placeholder="Email" />
+        <br />
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="phone1" placeholder="Phone" />
+        <br />
+        <label for="comment">Comments:</label> <br />
+        <textarea
+          name="commentArea"
+          id="commentArea"
+          cols="42.75"
+          rows="10"
+        ></textarea>
+        <br />
+        <button id="submit1">Submit</button>
+      </form>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <div class="section1">
+        <ul>
+          <a id="list1" href="index.html">Home</a>
+          <a href="#About">About</a>
+          <a href="products.html">Products</a>
+          <a href="#feedback">Feedback</a>
+          <a id="lList" href="#contact">Contact Us</a>
+        </ul>
+      </div>
+      <div class="section2">
+        <ul>
+          <h2>Contact Details</h2>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
