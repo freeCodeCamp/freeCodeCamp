@@ -43,7 +43,17 @@ Here are some hashed passwords to test the function with when `use_salts` is set
 - `da5a4e8cf89539e66097acd2f8af128acae2f8ae` should return "q1w2e3r4t5"
 - `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` should return "bubbles1"
 
+What is hashing?
+Hashing refers to the process of transforming a key or text (or in this case, password) into another value. This transformation occurs by using a hash function, which is a standardized algorithm that converts the key into a bit string of a fixed size. This transformed value is refered to as a hash and is unique to the original key. The hash is then usually displayed as a 40 digit long hexadecimal number. Hashing is an important concept in information security because it allows for a password to be verified and compared to the stored hash at the time of log-in so that the original password never needs to be stored.
+
+What is SHA-1?
+SHA-1 stands for secure hash algorithm 1, which takes a password and produces a 160-bit (or 20 byte hash value). The SHA-1 algorithm was developed by the United States National Security Agency but has not been considered to be secure since 2005. There are other hash algorithms, such as SHA-2, SHA-3, MD2, MD4, and MD5.
+
+What is the purpose of a salt?
+If multiple users have the same password, they will also have the same hash. This makes the pool of hashes smaller and more susceptible to an outsider who can now more easily figure out a common password. In order to increase security, we can add a salt. A salt is randomized data (in this case, a string of characters) that is added to the beginning and end of a password at the time of hashing. The action of salting then creates an even more unqiue input than the basic password, which will then result in a more secure hash.
+
 The `hashlib` library has been imported for you. You should consider using it in your code. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Learn more about "hashlib" here</a>.
+
 
 ## Development
 
