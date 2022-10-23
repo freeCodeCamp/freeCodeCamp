@@ -31,7 +31,7 @@ while True:
     elif user_guess > random_num:
         print("Your guess was greater than the random number.")
     else:
-        print("Your guess was less than the random number.")
+        print("Your guess was less than the random number.");
 
 print("Congrats! You got it right in " + str(num_guess) + " guesses.")
 quit()
