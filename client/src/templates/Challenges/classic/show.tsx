@@ -461,6 +461,11 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         disableIframe={this.state.resizing}
         previewMounted={this.props.previewMounted}
         isMobileLayout={isMobileLayout}
+        withActionRow={
+          this.getChallenge().hasEditableBoundaries ||
+          this.getChallenge().challengeType ===
+            challengeTypes.multifileCertProject
+        }
       />
     );
   }
