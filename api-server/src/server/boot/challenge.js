@@ -275,10 +275,14 @@ export function isValidChallengeCompletion(req, res, next) {
     console.debug('solution', solution, !isURL(solution));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
+
+  console.debug('Challenge is valid.');
   return next();
 }
 
 export function modernChallengeCompleted(req, res, next) {
+  console.debug('modernChallengeCompleted', req.user);
+
   const user = req.user;
   return user
     .getCompletedChallenges$()
@@ -323,6 +327,7 @@ export function modernChallengeCompleted(req, res, next) {
         })
       );
       return Observable.fromPromise(updatePromise).map(() => {
+        console.debug('returning from modern completion');
         return res.json({
           points,
           alreadyCompleted,
