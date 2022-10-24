@@ -56,7 +56,7 @@ Puoi controllare queste impostazioni andando su Settings > Languages & Framework
 
 **Docker Desktop per Windows** ti permette di installare e eseguire database come MongoDB e altri servizi come NGINX. Questo è utile per evitare problemi comuni con l'installazione di MongoDB o altri servizi direttamente su Windows o WSL2.
 
-Segui le istruzioni nella [documentazione ufficiale](https://docs.docker.com/docker-for-windows/install) e installa Docker Desktop per la tua distribuzione Windows.
+Follow the instructions on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
 Ci sono dei requisiti hardware minimi per un'esperienza migliore.
 
