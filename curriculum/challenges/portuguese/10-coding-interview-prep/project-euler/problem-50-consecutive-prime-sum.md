@@ -54,40 +54,56 @@ consecutivePrimeSum(1000000);
 # --solutions--
 
 ```js
-// Initalize prime number list with sieve
-const NUM_PRIMES = 1000000;
-const PRIMES = [2];
-const PRIME_SIEVE = Array(Math.floor((NUM_PRIMES-1)/2)).fill(true);
-(function initPrimes(num) {
-  const upper = Math.floor((num - 1) / 2);
-  const sqrtUpper = Math.floor((Math.sqrt(num) - 1) / 2);
-  for (let i = 0; i <= sqrtUpper; i++) {
-    if (PRIME_SIEVE[i]) {
-      // Mark value in PRIMES array
-      const prime = 2 * i + 3;
-      PRIMES.push(prime);
-      // Mark all multiples of this number as false (not prime)
-      const primeSqaredIndex = 2 * i ** 2 + 6 * i + 3;
-      for (let j = primeSqaredIndex; j < upper; j += prime)
-        PRIME_SIEVE[j] = false;
-    }
-  }
-  for (let i = sqrtUpper + 1; i < upper; i++) {
-    if (PRIME_SIEVE[i])
-      PRIMES.push(2 * i + 3);
-  }
-})(NUM_PRIMES);
+class PrimeSeive {
+  constructor(num) {
+    const seive = Array(Math.floor((num - 1) / 2)).fill(true);
+    const primes = [2];
+    const upper = Math.floor((num - 1) / 2);
+    const sqrtUpper = Math.floor((Math.sqrt(num) - 1) / 2);
 
-function isPrime(num) {
-  if (num === 2)
-    return true;
-  else if (num % 2 === 0)
-    return false
-  else
-    return PRIME_SIEVE[(num - 3) / 2];
-}
+    for (let i = 0; i <= sqrtUpper; i++) {
+      if (seive[i]) {
+        // Mark value in seive array
+        const prime = 2 * i + 3;
+        primes.push(prime);
+        // Mark all multiples of this number as false (not prime)
+        const primeSqaredIndex = 2 * i ** 2 + 6 * i + 3;
+        for (let j = primeSqaredIndex; j < upper; j += prime) {
+          seive[j] = false;
+        }
+      }
+    }
+    for (let i = sqrtUpper + 1; i < upper; i++) {
+      if (seive[i]) {
+        primes.push(2 * i + 3);
+      }
+    }
+
+    this._seive = seive;
+    this._primes = primes;
+  }
+
+  isPrime(num) {
+    return num === 2
+      ? true
+      : num % 2 === 0
+        ? false
+        : this.isOddPrime(num);
+  }
+
+  isOddPrime(num) {
+    return this._seive[(num - 3) / 2];
+  }
+
+  get primes() {
+    return this._primes;
+  }
+};
 
 function consecutivePrimeSum(limit) {
+  // Initalize seive
+  const primeSeive = new PrimeSeive(limit);
+
   // Initalize for longest sum < 100
   let bestPrime = 41;
   let bestI = 0;
@@ -102,20 +118,20 @@ function consecutivePrimeSum(limit) {
     // -- Loop while pushing j towards end of PRIMES list
     //      keeping sum under limit
     while (currSum < limit) {
-      if (isPrime(currSum)) {
+      if (primeSeive.isPrime(currSum)) {
         bestPrime = sumOfCurrRange = currSum;
         bestI = i;
         bestJ = j;
       }
       // -- Increment inner loop
       j++;
-      currSum += PRIMES[j];
+      currSum += primeSeive.primes[j];
     }
     // -- Increment outer loop
     i++;
     j = i + (bestJ - bestI);
-    sumOfCurrRange -= PRIMES[i - 1];
-    sumOfCurrRange += PRIMES[j];
+    sumOfCurrRange -= primeSeive.primes[i - 1];
+    sumOfCurrRange += primeSeive.primes[j];
   }
   // Return
   return bestPrime;

@@ -276,6 +276,8 @@ Aktualisiere deine `.env`-Datei, um deine neue Sprache für `CLIENT_LOCALE` und 
 
 Sobald du diese Einstellungen vorgenommen hast, solltest du `npm run develop` ausführen können, um deine übersetzte Version von freeCodeCamp anzuzeigen.
 
+> [!TIP] If you build the client in one language and then want to build it in a different language, you will need to use the command `npm run clean-and-develop` after changing the `.env` file, as Gatsby will cache the first language.
+
 > [!ATTENTION] Du kannst zwar lokal Übersetzungen zu Testzwecken vornehmen, aber wir erinnern alle daran, dass Übersetzungen _nicht_ über GitHub eingereicht werden sollten und nur über Crowdin erfolgen sollten. Achte darauf, dass du deine lokale Codebasis zurücksetzt, wenn du mit dem Testen fertig bist.
 
 # Neue Sprachen auf `/news` bereitstellen
