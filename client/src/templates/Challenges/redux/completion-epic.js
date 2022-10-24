@@ -65,9 +65,6 @@ function postChallenge(update, username) {
 }
 
 function submitModern(type, state) {
-  console.debug('submitting modern');
-  console.trace();
-
   const challengeType = state.challenge.challengeMeta.challengeType;
   const tests = challengeTestsSelector(state);
   if (
