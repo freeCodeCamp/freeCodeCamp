@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-你的 `#email` 元素應該是 `#survey-form` 元素的子元素。
+Your `#email` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #email')

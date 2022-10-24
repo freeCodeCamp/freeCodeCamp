@@ -1,13 +1,13 @@
 ---
 id: 62aa27c40ca6f04ab8be5fac
-title: Step 166
+title: Passo 166
 challengeType: 0
 dashedName: step-166
 ---
 
 # --description--
 
-A `for` loop runs for a specific number of times. We will break down how a `for` loop runs in the next several steps. For now, copy this loop below and paste it at the end of your `pick` function.
+Um laço `for` é executado por um número específico de vezes. Vamos detalhar como um laço `for` é executado nos próximos passos. Por enquanto, copie este laço abaixo e cole-o no final da função `pick`.
 
 ```js
 for (let x = 1; x < 5; x++) {
@@ -17,7 +17,7 @@ for (let x = 1; x < 5; x++) {
 
 # --hints--
 
-You should copy the above loop into your `pick` function.
+Você deve copiar o laço acima na função `pick`.
 
 ```js
 assert.match(pick.toString(), /for\s*\(\s*(let|var)\s*x\s*=\s*1\s*;\s*x\s*<\s*5\s*;\s*x\s*\+\+\s*\)/);
