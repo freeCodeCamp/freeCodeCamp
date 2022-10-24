@@ -190,7 +190,11 @@ Again, if you have any problems or questions, make a post with your actions in t
 
 ### Dealing with Posted Solutions
 
-When a user posts a solution to any of the questions, remove it and either, kindly let them know that solutions are not permitted on the forum in your own words or, use the **Solution Instead of Help** "Canned reply".
+When a user replies in a help thread specific to the freeCodeCamp curriculum with a solution, remove it and either, kindly let them know that solutions are not permitted in help threads in your own words or, use the **Solution Instead of Help** "Canned reply".
+
+If the OP (Original Poster) replies within a curriculum help thread with their final solution, blur it and use the **Blurred Spoiler Solution** "Canned reply".
+
+If a user creates a topic asking for feedback on a solution, that topic should be moved to the [feedback subforum] if it is not already there and the solution should be blurred. But if the user posts the solution to show if off, unlist the topic.
 
 ### Underage Users
 
