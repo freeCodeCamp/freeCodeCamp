@@ -5,6 +5,5 @@ exports.allowedOrigins = [
   'https://beta.freecodecamp.org',
   'https://chinese.freecodecamp.dev',
   'https://chinese.freecodecamp.org',
-  'https://freecodecamp.topcoder-dev.com',
-  'https://local.topcoder-dev.com'
+  'https://freecodecamp.topcoder-dev.com'
 ];
