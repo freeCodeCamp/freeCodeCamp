@@ -1,6 +1,6 @@
 ---
 id: 61abc7ebf3029b56226de5b6
-title: Implement Binary Search
+title: 实现二分搜索
 challengeType: 1
 forumTopicId: 487618
 dashedName: implement-binary-search
@@ -8,25 +8,25 @@ dashedName: implement-binary-search
 
 # --description--
 
-Binary search is an **O(log(n))** efficiency algorithm for searching a sorted array to find an element. It operates using the following steps:
+二分搜索是一种 **O(log(n))** 效率的算法，用于在已排序的数组以查找元素。 它通过以下步骤运行：
 
-1. Find the middle `value` of a sorted array. If `value == target` return (found it!).
-1. If middle `value < target`, search right half of array in next compare.
-1. If middle `value > target`, search left half of array in next compare.
+1. 查找已排序数组的中间值 `value`。 如果 `value == target`，则返回（找到了！）。
+1. 如果中间值 `value < target`，则在下一次比较中搜索数组的右半部分。
+1. 如果中间值 `value > target`，则在下一次比较中搜索数组的左半部分。
 
-As you can see, you are successively halving an array, which gives you the log(n) efficiency. For this challenge, we want you to show your work - how you got to the target value... the path you took!
+如你所见，你连续将数组减半，这为你提供了 log(n) 效率。 对于这个挑战，我们希望你展示你的工作——你是如何到达目标值的……你走过的路！
 
 # --instructions--
 
-Write a function `binarySearch` that implements the binary search algorithm on an array, returning the path you took (each middle value comparison) to find the target in an array.
+编写一个函数 `binarySearch` 来实现对数组的二分查找算法，返回在数组中查找目标所采用的路径（每个中间值比较）。
 
-The function takes a sorted array of integers and a target value as input. It returns an array containing (in-order) the middle value you found at each halving of the original array until you found the target value. The target value should be the last element of the returned array. If value not is found, return the string `Value Not Found`.
+该函数将一个排序的整数数组和一个目标值作为输入。 它返回一个数组，其中包含（按顺序）你在原始数组的每个减半处找到的中间值，直到你找到目标值。 目标值应该是返回数组的最后一个元素。 如果未找到值，则返回字符串 `Value Not Found`。
 
-For example, `binarySearch([1,2,3,4,5,6,7], 5)` would return `[4,6,5]`.
+例如，`binarySearch([1,2,3,4,5,6,7], 5)` 将返回 `[4,6,5]`。
 
-For this challenge, when halving, you MUST use `Math.floor()` when doing division: `Math.floor(x/2)`. This will give a consistent, testable path.
+对于这个挑战，当减半时，你必须在做除法时使用 `Math.floor()`：`Math.floor(x/2)`。 这将提供一致的、可测试的路径。
 
-**Note:** The following array will be used in tests:
+**注意：** 以下数组将用于测试：
 
 ```js
 const testArray = [
@@ -37,50 +37,50 @@ const testArray = [
 
 # --hints--
 
-`binarySearch` should be a function.
+`binarySearch` 应该是一个函数。
 
 ```js
 assert(typeof binarySearch == 'function');
 ```
 
-`binarySearch(testArray, 0)` should return `[13, 5, 2, 0]`.
+`binarySearch(testArray, 0)` 应该返回 `[13, 5, 2, 0]`。
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 0), [13, 5, 2, 0]);
 ```
 
-`binarySearch(testArray, 1)` should return `[13, 5, 2, 0, 1]`.
+`binarySearch(testArray, 1)` 应该返回 `[13, 5, 2, 0, 1]`。
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 1), [13, 5, 2, 0, 1]);
 ```
 
 
-`binarySearch(testArray, 2)` should return `[13, 5, 2]`.
+`binarySearch(testArray, 2)` 应该返回 `[13, 5, 2]`。
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 2), [13, 5, 2]);
 ```
 
-`binarySearch(testArray, 6)` should return the string `Value Not Found`.
+`binarySearch(testArray, 6)` 应该返回字符串 `Value Not Found`。
 
 ```js
 assert.strictEqual(binarySearch(_testArray, 6), 'Value Not Found');
 ```
 
-`binarySearch(testArray, 11)` should return `[13, 5, 10, 11]`.
+`binarySearch(testArray, 11)` 应该返回 `[13, 5, 10, 11]`。
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 11), [13, 5, 10, 11])
 ```
 
-`binarySearch(testArray, 13)` should return `[13]`.
+`binarySearch(testArray, 13)` 应该返回 `[13]`。
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 13), [13]);
 ```
 
-`binarySearch(testArray, 70)` should return `[13, 19, 22, 49, 70]`.
+`binarySearch(testArray, 70)` 应该返回 `[13, 19, 22, 49, 70]`.
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 70), [13, 19, 22, 49, 70]);

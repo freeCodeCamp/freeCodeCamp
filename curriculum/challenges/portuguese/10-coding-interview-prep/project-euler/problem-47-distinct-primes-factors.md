@@ -67,25 +67,28 @@ distinctPrimeFactors(4, 4);
 # --solutions--
 
 ```js
-// Initalize factor count with seive
-const NUMFACTORS = Array(135000).fill(0);
-(function initFactors(num) {
-  for (let i = 2; i < num; i++)
-    if (NUMFACTORS[i] === 0)
-      for (let j = i; j < num; j += i)
-        NUMFACTORS[j]++;
-})(135000);
-
 function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {
+  const primeLimit = targetNumPrimes * targetConsecutive * 10000;
+  const numFactors = Array(primeLimit).fill(0);
+
   let numConsecutive = 0;
-  let currNumber = 10;
-  while (numConsecutive < targetConsecutive) {
-    if (NUMFACTORS[currNumber] === targetNumPrimes)
+  for (let i = 2; i < primeLimit; i++) {
+    if (numFactors[i] === targetNumPrimes) {
+      // Current number is composite with target num factors
       numConsecutive++;
-    else
+      if (numConsecutive === targetConsecutive) {
+        return i - numConsecutive + 1;
+      }
+    } else {
+      // Current number is not matching composite
       numConsecutive = 0;
-    currNumber++;
+      if (numFactors[i] === 0) {
+        // Current number is prime
+        for (let j = i; j < primeLimit; j += i) {
+          numFactors[j]++;
+        }
+      }
+    }
   }
-  return currNumber - targetConsecutive;
 }
 ```
