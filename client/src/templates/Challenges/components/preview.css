@@ -1,12 +1,23 @@
 .challenge-preview,
 .challenge-preview-frame {
-  height: 100%;
+  height: calc(
+    100vh - var(--header-height, 0px) - var(--breadcrumb-height, 0px) -
+      var(--actionRow-height, 0px)
+  );
   min-height: 70vh;
   width: 100%;
   padding: 0;
   margin: 0;
   border: none;
   background-color: white;
+}
+
+.challenge-preview.mobileLayout,
+.challenge-preview-frame.mobileLayout {
+  height: calc(
+    100vh - var(--header-height, 0px) - var(--breadcrumb-height, 0px) -
+      var(--navTabs-height, 0px)
+  );
 }
 
 .enable-iframe {

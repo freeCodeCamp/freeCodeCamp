@@ -8,7 +8,14 @@
 
 .instructions-panel {
   padding: 0 10px;
-  height: 100%;
+  height: calc(100% - var(--breadcrumb-height, 0px));
   width: 100%;
   overflow-y: auto;
+}
+
+.instructions-panel.mobileLayout {
+  height: calc(
+    100% - var(--breadcrumb-height, 0px) - var(--toolPanelGroup-height, 0px) +
+      var(--navTabs-height, 0px)
+  );
 }

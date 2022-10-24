@@ -72,7 +72,7 @@ export function SidePanel({
 
   return (
     <div
-      className='instructions-panel'
+      className={'instructions-panel' + (showToolPanel ? '' : ' mobileLayout')}
       ref={instructionsPanelRef}
       tabIndex={-1}
     >

@@ -454,12 +454,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     return <Notes notes={notes} />;
   }
 
-  renderPreview() {
+  renderPreview({ isMobileLayout }: { isMobileLayout: boolean }) {
     return (
       <Preview
         className='full-height'
         disableIframe={this.state.resizing}
         previewMounted={this.props.previewMounted}
+        isMobileLayout={isMobileLayout}
       />
     );
   }
@@ -502,7 +503,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         usesMultifileEditor={usesMultifileEditor}
       >
         <LearnLayout>
-          <Helmet title={windowTitle} />
+          <Helmet title={windowTitle}>
+            <style>
+              {
+                ':root{--breadcrumb-height: 44.85px;--navTabs-height: 32.56px;--toolPanelGroup-height: 39.56px;--actionRow-height: 62.71px;}body{overflow-y: hidden}'
+              }
+            </style>
+          </Helmet>
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
               editor={this.renderEditor({
@@ -517,7 +524,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
                 showToolPanel: false
               })}
               notes={this.renderNotes(notes)}
-              preview={this.renderPreview()}
+              preview={this.renderPreview({
+                isMobileLayout: true
+              })}
               testOutput={this.renderTestOutput()}
               // eslint-disable-next-line @typescript-eslint/unbound-method
               updateUsingKeyboardInTablist={this.updateUsingKeyboardInTablist}
@@ -541,7 +550,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               })}
               layoutState={this.state.layout}
               notes={this.renderNotes(notes)}
-              preview={this.renderPreview()}
+              preview={this.renderPreview({
+                isMobileLayout: false
+              })}
               resizeProps={this.resizeProps}
               testOutput={this.renderTestOutput()}
               windowTitle={windowTitle}
