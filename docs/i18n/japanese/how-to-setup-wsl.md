@@ -56,7 +56,7 @@ Windows 10 に [Visual Studio Code](https://code.visualstudio.com) をインス�
 
 **Docker Desktop for Windows** を使用すると、MongoDB のようなデータベースや NGINX などのサービスをインストールして実行できます。 MongoDB やその他のサービスを Windows または WSL2 に直接インストールする際の一般的な落とし穴を避けることができます。
 
-[公式ドキュメント](https://docs.docker.com/docker-for-windows/install) の指示に従って、Docker Desktop for Windows をインストールしてください。
+Follow the instructions on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
 最高の体験を得るための最低限のハードウェア要件があります。
 
