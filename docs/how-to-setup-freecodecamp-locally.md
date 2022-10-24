@@ -485,21 +485,26 @@ After you've committed your changes, check here for [how to open a Pull Request]
 
 A quick reference to the commands that you will need when working locally.
 
-| command                                                        | description                                                                         |
-| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
-| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
-| `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
-| `npm run storybook`                                            | Starts Storybook for component library development.                                 |
-| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `npm run test-client`                                          | Run the client test suite.                                                          |
-| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
-| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
-| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
-| `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
-| `npm run test-server`                                          | Run the server test suite.                                                          |
-| `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
-| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
+| command                                                        | description                                                                                                                                                            |
+| -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.                                                                                          |
+| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.                                                                                                 |
+| `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                                                                                                            |
+| `npm run storybook`                                            | Starts Storybook for component library development.                                                                                                                    |
+| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests.                                                                                    |
+| `npm run test-client`                                          | Run the client test suite.                                                                                                                                             |
+| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                                                                                                         |
+| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                                                                                                                 |
+| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                                                                                                            |
+| `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                                                                                                   |
+| `npm run test-server`                                          | Run the server test suite.                                                                                                                                             |
+| `npm run e2e`                                                  | Run the Cypress end to end tests.                                                                                                                                      |
+| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                                                                                                      |
+| `cd`                                                           | Navigates to directory path given.<br> 'cd ..' moves one directory up.                                                                                                 |
+| `ls`                                                           | Lists all files and directories in directory.                                                                                                                          |
+| `touch`                                                        | Creates a new files.<br> 'touch newfile.html' creates a new html file.                                                                                                 |
+| `grep`                                                         | Finds a word or phrase in a file.<br> 'grep Home street addresses.txt' finds Home street in addresses.txt                                                              |
+| `man`                                                          | Short for manual, this command has many pages of useful information on commands<br>you can use 'man ls' to find different cases or help on using ls or other commands. |
 
 ## Troubleshooting
 
