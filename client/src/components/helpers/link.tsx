@@ -9,7 +9,6 @@ interface LinkProps {
   state?: Record<string, unknown>;
   to: string;
   onClick?: () => void;
-  id?: string;
 }
 
 const Link = ({
