@@ -2,7 +2,7 @@
 
 Our goal is to develop a fun and clear interactive learning experience.
 
-Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people -- a fully interactive, video game-like experience.
 
 We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
 
@@ -20,7 +20,7 @@ You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/c
 
 ## Set up the tooling for the curriculum
 
-Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
+Before you work on the curriculum, you would need to set up an environment to help you test your changes. You can use any option from the below:
 
 - You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
 - Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
@@ -61,7 +61,7 @@ Challenge instruction text, in markdown
 Tests to run against user code, in pairs of markdown text and code block test code.
 
 ```js
-Code for test one
+Code for test number one
 ```
 
 If you want dynamic output based on the user's code, --fcc-expected-- and --fcc-actual-- will be replaced with the expected and actual values of the test's assertion. Take care if you have multiple assertions since the first failing assertion will determine the values of --fcc-expected-- and --fcc-actual--.
@@ -118,7 +118,7 @@ console.log('freeCodeCamp is awesome!');
 
 # --solutions--
 
-Solutions are used for the CI tests to ensure that changes to the hints will still pass as intended
+Solutions are used for the CI tests to ensure that changes to the hints will still pass as intended.
 
 ```js
 // first solution - the language(s) should match the seed.
@@ -158,7 +158,8 @@ More answers
 
 ## --video-solution--
 
-The number for the correct answer goes here.
+The number for the correct answer goes here, with an 'url of video explanation'.
+
 ````
 
 > [!NOTE]
@@ -197,7 +198,7 @@ Once you have your id, put it into the markdown file as the `id` field at the to
 ```yml
 ---
 id: 5a474d78df58bafeb3535d34
-title: Challenge Title
+title: Title of the Coding Challenge
 ```
 
 ## Naming challenges
@@ -218,9 +219,9 @@ Here are some example challenge names:
 
 Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
-Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
+Keep paragraphs short (around 1-4 sentences per paragraph). People are more likely to read several short paragraphs than a wall of text.
 
-Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
+Challenge text should use the second person ("you") to give the text a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
 Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
@@ -251,7 +252,7 @@ We track how long it takes for campers to solve challenges and use this informat
 
 Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
 
-We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
+We can reinforce previously covered concepts through repetition and variations, for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
 
 Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
 
@@ -373,7 +374,7 @@ There are separate comment dictionaries for each language. The [English version 
 Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated. See the comment below as an example. The word `myGlobal` should not be translated.
 
 ```text
-Declare the myGlobal variable below this line
+Declare the myGlobal variable below this line.
 ```
 
 > [!NOTE]
