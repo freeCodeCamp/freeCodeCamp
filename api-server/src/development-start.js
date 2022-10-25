@@ -7,10 +7,12 @@ const SmeeClient = require('smee-client');
 
 const log = createDebugger('fcc:start:development');
 
-if (process.env.WEBHOOK_PROXY_URL) {
+const { WEBHOOK_PROXY_URL, API_LOCATION, DEBUG } = process.env
+
+if (WEBHOOK_PROXY_URL) {
   const paypalPayloadHandler = new SmeeClient({
-    source: process.env.WEBHOOK_PROXY_URL,
-    target: process.env.API_LOCATION + '/hooks/update-paypal',
+    source: WEBHOOK_PROXY_URL,
+    target: API_LOCATION + '/hooks/update-paypal',
     logger: { info: log, error: log }
   });
 
@@ -34,7 +36,7 @@ nodemon({
   watch: path.resolve(__dirname, './server'),
   spawn: true,
   env: {
-    DEBUG: `fcc*,${process.env.DEBUG}`
+    DEBUG: `fcc*,${DEBUG}`
   }
 });
 
