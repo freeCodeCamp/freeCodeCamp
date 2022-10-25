@@ -1,14 +1,11 @@
-import { Link as GatsbyLink } from 'gatsby';
+import { GatsbyLinkProps, Link as GatsbyLink } from 'gatsby';
 import React from 'react';
 
-interface LinkProps {
+interface LinkProps extends Omit<GatsbyLinkProps<string>, 'ref'> {
   children?: React.ReactNode;
-  className?: string;
   external?: boolean;
   sameTab?: boolean;
-  state?: Record<string, unknown>;
   to: string;
-  onClick?: () => void;
 }
 
 const Link = ({
