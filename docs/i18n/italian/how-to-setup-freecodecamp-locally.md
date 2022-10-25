@@ -204,7 +204,7 @@ Prima di poter eseguire l'applicazione localmente, è necessario avviare il serv
 
 > [!NOTE] A meno che tu non abbia MongoDB in esecuzione in un setup differente dal default, l'URL salvato come `MONGOHQ_URL` nel file `.env` dovrebbe andare bene. Se usi una configurazione personalizzata, modifica il valore come necessario.
 > 
-> If you followed along with the [Windows 10 via WSL2 Setup Guide](how-to-setup-wsl.md), then you should be able to skip this step if the MongoDB server from that guide is already running. You can confirm this by checking that you can reach `http://localhost:27017` on your local machine.
+> Se hai seguito la [Guida di configurazione Windows 10 via WSL2](how-to-setup-wsl.md), allora dovresti essere in grado di saltare questo passaggio se il server MongoDB di quella guida è già in esecuzione. Puoi averne conferma controllando di poter raggiungere `http://localhost:27017` sulla tua macchina locale.
 
 Avvia il server MongoDB in un terminale separato:
 

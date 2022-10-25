@@ -10,18 +10,18 @@ dashedName: issue-tracker
 
 Erstelle eine vollständige JavaScript-Anwendung, die eine ähnliche Funktionalität wie <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a> aufweist. Bei der Arbeit an diesem Projekt schreibst du deinen Code mit einer der folgenden Methoden:
 
--   Klone <a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">dieses GitHub Repo</a> und schließe dein Projekt lokal ab.
--   Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow"> dieses Replit Starterprojekt</a> um dein Projekt zu vervollständigen.
--   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Achte darauf, alle Dateien aus unserem GitHub Repo zu integrieren.
+-   Klone <a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">diese GitHub-Repo</a> und schließe dein Projekt lokal ab.
+-   Verwende<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow"> dieses Replit-Starterprojekt</a>, um dein Projekt fertigzustellen.
+-   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Be sure to incorporate all the files from our GitHub repo.
 
 Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
 
 # --instructions--
 
 -   Erfülle die notwendigen Pfade in `/routes/api.js`
--   Erstelle alle funktionalen Tests in `tests/2_functional-tests.js`
--   Kopiere die `sample.env` Datei in `.env` und setze Sie die Variablen entsprechend
--   Entkommentiere `NODE_ENV=test` in deiner `.env` Datei, um die Tests durchzuführen
+-   Create all of the functional tests in `tests/2_functional-tests.js`
+-   Copy the `sample.env` file to `.env` and set the variables appropriately
+-   Entkommentiere `NODE_ENV=test` in deiner `.env`-Datei, um die Tests durchzuführen
 -   Verwende den Befehl `npm run test`, um die Tests in deiner Konsole durchzuführen. Drücke Strg+Umschalt+P (Cmd auf Mac) und gib "open shell" ein, um die Replit-Konsole zu öffnen
 
 Schreibe die folgenden Tests in `tests/2_functional-tests.js`:

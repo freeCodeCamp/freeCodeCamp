@@ -9,13 +9,15 @@ dashedName: sha-1-password-cracker
 
 # --description--
 
-このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker)を使用して作業を行います。
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
 Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
 
-- [「みんなで Python」ビデオコース](https://www.freecodecamp.org/news/python-for-everybody/) (14 時間)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
-- [「Python を学ぶ」ビデオコース](https://www.freecodecamp.org/news/learn-python-video-course/) (10 時間)
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
 
 # --instructions--
 
@@ -41,7 +43,7 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 - `da5a4e8cf89539e66097acd2f8af128acae2f8ae` は "q1w2e3r4t5" を返す
 - `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` は "bubbles1" を返す
 
-`hashlib` ライブラリをあらかじめインポートしてあります。 コードでこのライブラリを使用してみてください。 hashlib の詳細については[こちら](https://docs.python.org/3/library/hashlib.html)を参照してください。
+`hashlib` ライブラリをあらかじめインポートしてあります。 You should consider using it in your code. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Learn more about "hashlib" here</a>.
 
 ## 開発
 

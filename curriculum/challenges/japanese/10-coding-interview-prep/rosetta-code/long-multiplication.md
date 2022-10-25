@@ -1,14 +1,14 @@
 ---
 id: 5e4ce2a1ac708cc68c1df25d
 title: 桁数の多い数字の掛け算
-challengeType: 5
+challengeType: 1
 forumTopicId: 385269
 dashedName: long-multiplication
 ---
 
 # --description--
 
-[桁数の多い数字の掛け算](https://en.wikipedia.org/wiki/long multiplication)を明示的に実装します。
+Explicitly implement long multiplication.
 
 これは任意精度の整数代数に対するアプローチの一つです。
 

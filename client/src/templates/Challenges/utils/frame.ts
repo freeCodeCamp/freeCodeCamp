@@ -41,6 +41,35 @@ type InitFrame = (
   frameConsoleLogger?: ProxyLogger
 ) => (frameContext: Context) => Context;
 
+class ScrollManager {
+  #previewScrollPosition = 0;
+
+  getPreviewScrollPosition = () => {
+    return this.#previewScrollPosition;
+  };
+
+  setPreviewScrollPosition = (position: number) => {
+    this.#previewScrollPosition = position;
+  };
+
+  registerScrollEventListener = (iframe: HTMLIFrameElement) => {
+    iframe.contentDocument?.addEventListener('scroll', event => {
+      const currentTarget = event.currentTarget as Document | null;
+      if (currentTarget?.body.scrollTop) {
+        this.setPreviewScrollPosition(currentTarget?.body.scrollTop);
+      }
+    });
+  };
+
+  restorePreviewScrollPosition = (iframe: HTMLIFrameElement) => {
+    if (iframe.contentDocument?.body) {
+      iframe.contentDocument.body.scrollTop = this.#previewScrollPosition;
+    }
+  };
+}
+
+export const scrollManager = new ScrollManager();
+
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
 export const mainPreviewId = 'fcc-main-frame';
@@ -267,6 +296,12 @@ const writeContentToFrame = (frameContext: Context) => {
     createHeader(frameContext.element.id) + frameContext.build,
     frameContext.document
   );
+
+  scrollManager.registerScrollEventListener(frameContext.element);
+
+  if (scrollManager.getPreviewScrollPosition()) {
+    scrollManager.restorePreviewScrollPosition(frameContext.element);
+  }
   return frameContext;
 };
 

@@ -8,11 +8,11 @@ dashedName: build-a-light-bright-app
 
 # --description--
 
-**目標:** <https://codepen.io/freeCodeCamp/full/eyLYXE> と同じような機能を持つ、[CodePen.io](https://codepen.io) アプリを構築してください。
+**目標:** こちらと似た機能を持つアプリを構築してください: <https://codepen.io/freeCodeCamp/full/eyLYXE>
 
 **ルール #1:** 模範プロジェクトのコードを見ないようにしてください。 自分の力で解いてみてください。
 
-**ルール #2:** 以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を実装してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
+**Rule #2:** Fulfill the below user stories and get all of the tests to pass. 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
 
 **ユーザーストーリー:** マウスカーソルをクリックまたはドラッグして、円に色をつけることができます。
 
@@ -28,7 +28,7 @@ dashedName: build-a-light-bright-app
 
 完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
 
-[freeCodeCamp フォーラム](https://forum.freecodecamp.org/c/project-feedback/409)でプロジェクトを共有することにより、フィードバックを得ることができます。
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

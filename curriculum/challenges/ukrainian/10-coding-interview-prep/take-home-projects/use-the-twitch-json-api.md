@@ -8,25 +8,25 @@ dashedName: use-the-twitch-json-api
 
 # --description--
 
-**Мета:** Створити додаток [CodePen.io](https://codepen.io), який за функціями схожий на цей: [ https://codepen.io/freeCodeCamp/full/Myvqmo/](https://codepen.io/freeCodeCamp/full/Myvqmo/).
+**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/Myvqmo/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.
 
-Виконайте наведені нижче [історії користувача](https://en.wikipedia.org/wiki/User_story). Використовуйте необхідні вам бібліотеки або API. Виконайте завдання у власному стилі.
+The Twitch API is a RESTful API that lets developers build creative integrations for the broader Twitch community.
 
-**Історія користувача:** Я можу бачити чи зараз freeCodeCamp транслюється на Twitch.tv.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
-**Історія користувача:** Я можу натиснути на статус користувача і безпосередньо перейти на канал freeCodeCamp на Twitch.tv.
+**User Story:** I can see whether freeCodeCamp is currently streaming on Twitch.tv.
 
-**Історія користувача:** Якщо користувач Twitch на цей момент проводить трансляцію, я можу подивитись додаткову інформацію про що вона.
+**User Story:** I can click the status output and be sent directly to the freeCodeCamp's Twitch.tv channel.
 
-**Підказка:** Відповідна документація про JSON API на Twitch.tv тут: <https://dev.twitch.tv/docs/api/reference/#get-streams>.
+**User Story:** If a Twitch user is currently streaming, I can see additional details about what they are streaming.
 
 **Підказка:** Ось перелік імен користувачів, хто регулярно проводить трансляції: `["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]`
 
-**UPDATE:** Через зміни в умовах користування API Twitch.tv вимагає ключ доступу API, але ми створили спосіб його обійти. Використовуйте <https://twitch-proxy.freecodecamp.rocks/> замість базового посилання на API Twitch (наприклад, `https://api.twitch.tv/helix` ), і ви теж зможете отримати інформацію облікового запису без реєстрації для отримання ключа доступу API.
+**UPDATE:** Через зміни в умовах користування API Twitch.tv вимагає ключ доступу API, але ми створили спосіб його обійти. Use <a href="https://twitch-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://twitch-proxy.freecodecamp.rocks/</a> instead of Twitch's API base URL and you'll still be able to get account information, without needing to sign up for an API key.
 
 Після завершення додайте посилання на ваш проєкт на CodePen та натисніть на кнопку "Завдання виконано".
 
-Ви можете отримати відгук про ваш проєкт, поділившись ним на форумі: [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

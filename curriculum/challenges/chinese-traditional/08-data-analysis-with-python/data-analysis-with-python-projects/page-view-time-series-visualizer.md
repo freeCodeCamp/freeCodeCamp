@@ -8,12 +8,13 @@ dashedName: page-view-time-series-visualizer
 
 # --description--
 
-你將通過使用我們的[Replit 入門代碼](https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer)來完成本項目。
+你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
 我們仍在開發 Python 課程的交互式教學部分。 目前，你可以在 freeCodeCamp.org 的 YouTube 頻道中通過視頻學習到這個項目相關的所有知識
 
-- [Python for Everybody 視頻課程](https://www.freecodecamp.org/news/python-for-everybody/)（14 小時）
-- [Learn Python 視頻課程](https://www.freecodecamp.org/news/learn-python-video-course/)（10 小時）
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">給所有人的 Python 課程</a>（14 小時）
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">如何使用 Python Pandas 分析數據</a>（10 小時）
 
 # --instructions--
 
@@ -21,11 +22,11 @@ dashedName: page-view-time-series-visualizer
 
 使用數據完成以下任務：
 
-- 使用 Pandas 從 “fcc-forum-pageviews.csv” 導入數據。 將索引設置爲 “date” 列。
+- 使用 Pandas 從 “fcc-forum-pageviews.csv” 導入數據。 將索引設置爲 `date` 列。
 - 通過過濾掉頁面瀏覽量位於數據集前 2.5% 或數據集後 2.5% 的日期來清理數據。
-- 創建一個 `draw_line_plot` 函數，該函數使用 Matplotlib 繪製類似於“examples/Figure_1.png”的折線圖。 標題應爲“Daily freeCodeCamp Forum Page Views 5/2016-12/2019”。 x 軸上的標籤應爲“Date”，y 軸上的標籤應爲“Page Views”。
-- 創建一個 `draw_bar_plot` 函數，用於繪製類似於“examples/Figure_2.png”的條形圖。 它應該顯示按年份分組的每個月的平均每日頁面瀏覽量。 圖例應顯示月份標籤並具有“Months”標題。 在圖表上，x 軸上的標籤應爲“Years”，y 軸上的標籤應爲“Average Page Views”。
-- 創建一個 `draw_box_plot` 函數，該函數使用 Seaborn 繪製兩個相鄰的箱形圖，類似於“examples/Figure_3.png”。 這些箱線圖應顯示值在給定年份或月份內的分佈情況以及隨時間推移的比較情況。 第一個圖表的標題應爲“Year-wise Box Plot (Trend)”，第二個圖表的標題應爲“Month-wise Box Plot (Seasonality)”。 確保底部的月份標籤從“Jan”開始，並且 x 和 x 軸標記正確。 樣板文件包括準備數據的命令。
+- 創建一個 `draw_line_plot` 函數，該函數使用 Matplotlib 繪製類似於“examples/Figure_1.png”的折線圖。 標題應爲 `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`。 x 軸上的標籤應爲 `Date`，y 軸上的標籤應爲 `Page Views`。
+- 創建一個 `draw_bar_plot` 函數，用於繪製類似於“examples/Figure_2.png”的條形圖。 它應該顯示按年份分組的每個月的平均每日頁面瀏覽量。 圖例應顯示月份標籤並具有 `Months` 標題。 在圖表上，x 軸上的標籤應爲 `Years`，y 軸上的標籤應爲 `Average Page Views`。
+- 創建一個 `draw_box_plot` 函數，該函數使用 Seaborn 繪製兩個相鄰的箱形圖，類似於“examples/Figure_3.png”。 這些箱線圖應顯示值在給定年份或月份內的分佈情況以及隨時間推移的比較情況。 第一個圖表的標題應爲 `Year-wise Box Plot (Trend)`，第二個圖表的標題應爲 `Month-wise Box Plot (Seasonality)`。 確保底部的月份標籤從 `Jan` 開始，並且 x 和 y 軸標記正確。 樣板文件包括準備數據的命令。
 
 對於每個圖表，請確保使用數據框的副本。 單元測試是在 `test_module.py` 下爲你編寫的。
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f5231000cf542c510034
 title: 'Завдання 438: Ціла частина розв’язків поліноміального рівняння'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302109
 dashedName: problem-438-integer-part-of-polynomial-equations-solutions
 ---
@@ -19,7 +19,7 @@ dashedName: problem-438-integer-part-of-polynomial-equations-solutions
 
 Ми визначаємо $S(t)$ як суму абсолютних значень цілих чисел у $t$.
 
-За $n = 4$ ми можемо перевірити $\суму S(t) = 2087$ для всіх $n$-tuples, які задовольняють обидві умови.
+For $n = 4$ we can verify that $\sum S(t) = 2087$ for all $n$-tuples $t$ which satisfy both conditions.
 
 Знайти: $\суму S(t)$ за $n = 7$.
 

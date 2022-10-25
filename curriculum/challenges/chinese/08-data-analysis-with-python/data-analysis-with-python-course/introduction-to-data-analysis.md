@@ -11,16 +11,17 @@ dashedName: introduction-to-data-analysis
 ---
 
 # --description--
+数据分析是指通过清理、转换、处理原始数据，从而洞察数据价值的行为。
 
-以下有更多的资料：
+更多资源：
 
-\- [幻灯片](https://docs.google.com/presentation/d/1cUIt8b2ySz-85_ykfeuuWsurccwTAuFPn782pZBzFsU/edit?usp=sharing)
+\- <a href="https://chinese.freecodecamp.org/news/what-is-data-analysis/" rel="noopener noreferrer nofollow">专栏文章</a>
 
 # --question--
 
 ## --text--
 
-以下哪一项 **不是** 数据分析的一部分？
+以下哪一项**不属于**数据分析范畴？
 
 ## --answers--
 
@@ -28,7 +29,7 @@ dashedName: introduction-to-data-analysis
 
 ---
 
-为分析选择所需的结论。
+分析数据并得出结论。
 
 ---
 

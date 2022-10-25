@@ -1,46 +1,46 @@
 ---
 id: 5900f3ca1000cf542c50fedd
 title: 'Problem 94: Almost equilateral triangles'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302211
 dashedName: problem-94-almost-equilateral-triangles
 ---
 
 # --description--
 
-It is easily proved that no equilateral triangle exists with integral length sides and integral area. However, the almost equilateral triangle 5-5-6 has an area of 12 square units.
+很容易证明，不存在同时具有整数边长和整数面积的等边三角形。 但是，存在边长为 5-5-6 的几乎等边三角形，其面积恰为整数 12。
 
-We shall define an <dfn>almost equilateral triangle</dfn> to be a triangle for which two sides are equal and the third differs by no more than one unit.
+我们定义<dfn>几乎等边三角形</dfn>是有两边一样长，且第三边与两边最多相差1的三角形。
 
-Find the sum of the perimeters of all almost equilateral triangles with integral side lengths and area and whose perimeters do not exceed `limit`.
+从周长不超过 `limit` 的三角形中，求出所有边长和面积均为整数的几乎等边三角形的周长之和。
 
 # --hints--
 
-`almostEquilateralTriangles(50)` should return a number.
+`almostEquilateralTriangles(50)` 应该返回一个数字。
 
 ```js
 assert(typeof almostEquilateralTriangles(50) === 'number');
 ```
 
-`almostEquilateralTriangles(50)` should return `66`.
+`almostEquilateralTriangles(50)` 应该返回 `66`。
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(50), 66);
 ```
 
-`almostEquilateralTriangles(10000)` should return `3688`.
+`almostEquilateralTriangles(10000)` 应该返回 `3688`。
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(10000), 3688);
 ```
 
-`almostEquilateralTriangles(10000000)` should return `9973078`.
+`almostEquilateralTriangles(10000000)` 应该返回 `9973078`。
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(10000000), 9973078);
 ```
 
-`almostEquilateralTriangles(1000000000)` should return `518408346`.
+`almostEquilateralTriangles(1000000000)` 应该返回 `518408346`。
 
 ```js
 assert.strictEqual(almostEquilateralTriangles(1000000000), 518408346);

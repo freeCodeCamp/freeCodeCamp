@@ -8,12 +8,13 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer)を使用して作業を行います。
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
 Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
 
-- [「みんなで Python」ビデオコース](https://www.freecodecamp.org/news/python-for-everybody/) (14 時間)
-- [「Python を学ぶ」ビデオコース](https://www.freecodecamp.org/news/learn-python-video-course/) (10 時間)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -25,20 +26,20 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 
 ファイル名: medical_examination.csv
 
-|                            特徴                            | 変数のタイプ |     変数      |             値のタイプ              |
-|:--------------------------------------------------------:|:------:|:-----------:|:------------------------------:|
-|                         Age (年齢)                         | 客観的特徴  |     age     |            int (日数)            |
-|                       Height (身長)                        | 客観的特徴  |   height    |            int (cm)            |
-|                       Weight (体重)                        | 客観的特徴  |   weight    |           float (kg)           |
-|                       Gender (性別)                        | 客観的特徴  |   gender    |            カテゴリコード             |
-|              Systolic blood pressure (最高血圧)              | 検査の特徴  |    ap_hi    |              int               |
-|             Diastolic blood pressure (最低血圧)              | 検査の特徴  |    ap_lo    |              int               |
-|                  Cholesterol (コレステロール値)                  | 検査の特徴  | cholesterol | 1: 正常値、2: 正常値より高い、3: 正常値を優に超える |
-|                      Glucose (血糖値)                       | 検査の特徴  |    gluc     | 1: 正常値、2: 正常値より高い、3: 正常値を優に超える |
-|                       Smoking (喫煙)                       | 主観的特徴  |    smoke    |             binary             |
-|                 Alcohol intake (アルコール摂取)                 | 主観的特徴  |    alco     |             binary             |
-|                Physical activity (身体活動状況)                | 主観的特徴  |   active    |             binary             |
-| Presence or absence of cardiovascular disease (心血管疾患の有無) | 目的の変数  |   cardio    |             binary             |
+|                            特徴                            | 変数のタイプ |      変数       |             値のタイプ              |
+|:--------------------------------------------------------:|:------:|:-------------:|:------------------------------:|
+|                         Age (年齢)                         | 客観的特徴  |     `age`     |            int (日数)            |
+|                       Height (身長)                        | 客観的特徴  |   `height`    |            int (cm)            |
+|                       Weight (体重)                        | 客観的特徴  |   `weight`    |           float (kg)           |
+|                       Gender (性別)                        | 客観的特徴  |   `gender`    |            カテゴリコード             |
+|              Systolic blood pressure (最高血圧)              | 検査の特徴  |    `ap_hi`    |              int               |
+|             Diastolic blood pressure (最低血圧)              | 検査の特徴  |    `ap_lo`    |              int               |
+|                  Cholesterol (コレステロール値)                  | 検査の特徴  | `cholesterol` | 1: 正常値、2: 正常値より高い、3: 正常値を優に超える |
+|                      Glucose (血糖値)                       | 検査の特徴  |    `gluc`     | 1: 正常値、2: 正常値より高い、3: 正常値を優に超える |
+|                       Smoking (喫煙)                       | 主観的特徴  |    `smoke`    |             binary             |
+|                 Alcohol intake (アルコール摂取)                 | 主観的特徴  |    `alco`     |             binary             |
+|                Physical activity (身体活動状況)                | 主観的特徴  |   `active`    |             binary             |
+| Presence or absence of cardiovascular disease (心血管疾患の有無) | 目的の変数  |   `cardio`    |             binary             |
 
 ## タスク
 

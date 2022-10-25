@@ -8,7 +8,7 @@ dashedName: build-a-random-quote-machine
 
 # --description--
 
-**Aufgabe:** Erstelle eine Anwendung, die eine ähnliche Funktionalität wie <a href="https://codepen.io/freeCodeCamp/full/qRZeGZ" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/qRZeGZ</a> aufweist.
+**Objective:** Build an app that is functionally similar to this: <a href="https://random-quote-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://random-quote-machine.freecodecamp.rocks/</a>.
 
 Erfülle die folgenden User Stories und bestehe alle Tests. Verwende Bibliotheken und APIs deiner Wahl. Gib dem Ganzen deinen persönlichen Stil.
 

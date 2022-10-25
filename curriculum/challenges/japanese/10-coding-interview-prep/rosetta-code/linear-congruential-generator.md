@@ -1,14 +1,14 @@
 ---
 id: 5e4ce2f5ac708cc68c1df261
 title: 線形合同法
-challengeType: 5
+challengeType: 1
 forumTopicId: 385266
 dashedName: linear-congruential-generator
 ---
 
 # --description--
 
-[線形合同法](https://en.wikipedia.org/wiki/linear congruential generator) は、 [乱数発生器](http://rosettacode.org/wiki/random number generator)の非常に単純な例です。 すべての線形合同法は次の式を使用します。
+A linear congruential generator (LCG) is an <em>algorithm</em> that yields a sequence of pseudo-randomized numbers calculated with a discontinuous piecewise linear equation. すべての線形合同法は次の式を使用します。
 
 $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
@@ -22,7 +22,7 @@ $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
 $a$、$c$、および $m$ の値を慎重に選択すると、発生器は $0$ から $m -1$ までの整数の一様分布を発生させます。
 
-LCG (線形合同法) の乱数の質は低いです。 $r_n$ と $r\_{n + 1}$ には真の乱数にあるような独立性がありません。 $r_n$ を知っている人は誰でも $r\_{n + 1}$ を予測できるため、LCG は暗号的に安全ではありません。 LCG は [ミラー–ラビン素数判定法](http://rosettacode.org/wiki/Miller-Rabin primality test)や [フリーセルの駆け引き](http://rosettacode.org/wiki/deal cards for FreeCell) のようなシンプルなタスクには十分です。 LCG の利点に、同じ $r_0$ から簡単に数列を再現できることがあります。 式がとても簡単なので、このような数列を異なるプログラミング言語で再現することも可能です。
+<abbr title="linear congruential generator">LCG</abbr> numbers have poor quality. $r_n$ と $r\_{n + 1}$ には真の乱数にあるような独立性がありません。 Anyone who knows $r_n$ can predict $r\_{n + 1}$, therefore <abbr title="linear congruential generator">LCG</abbr> is not cryptographically secure. The <abbr title="linear congruential generator">LCG</abbr> is still good enough for simple tasks like Miller-Rabin primality test, or FreeCell deals. Among the benefits of the <abbr title="linear congruential generator">LCG</abbr>, one can easily reproduce a sequence of numbers, from the same $r_0$. 式がとても簡単なので、このような数列を異なるプログラミング言語で再現することも可能です。
 
 # --instructions--
 

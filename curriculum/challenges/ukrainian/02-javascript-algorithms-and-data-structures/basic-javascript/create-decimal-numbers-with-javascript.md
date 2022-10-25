@@ -11,7 +11,7 @@ dashedName: create-decimal-numbers-with-javascript
 
 Ми можемо зберігати десяткові числа також і у змінних. Десяткові числа іноді називаються числами <dfn>floating point</dfn> або <dfn>floats</dfn>.
 
-**Примітка:** Не всі дійсні числа можуть бути віднесені до <dfn>рухомої коми</dfn>. Це може призвести до помилок заокруглення. [Детальніше Тут](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems).
+**Note:** when you compute numbers, they are computed with finite precision. Operations using floating points may lead to different results than the desired outcome. If you are getting one of these results, open a topic on the <a href="https://forum.freecodecamp.org/" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --instructions--
 

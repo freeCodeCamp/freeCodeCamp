@@ -14,15 +14,15 @@ Il livello "Editor" consente all'utente di accedere a tutte le bozze e pubblicar
 
 Il livello "Administrator" è riservato allo staff di freeCodeCamp e ai leader di lingua.
 
-### How are the articles built
+### Come avviene il build degli articoli
 
-We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
+Usiamo un approccio basato su [JAMStack](https://www.google.com/search?q=what+is+jamstack) per il build e il deployment degli articoli. Questa strategia rende un rapido sito statico memorizzato nella cache e servito da un CDN.
 
-[Ghost](https://ghost.org) acts as our content management platform, and [11ty](https://11ty.dev) builds the articles into static assets – plain HTML, JavaScript, and CSS. Only these static assets are deployed to our servers.
+[Ghost](https://ghost.org) costituisce la nostra piattaforma di gestione dei contenuti e [11ty](https://11ty.dev) si occupa del build degli articoli in risorse statiche – semplice HTML, JavaScript e CSS. Solo queste risorse statiche sono distribuite sui nostri server.
 
-This process is automated and runs periodically. If you publish something now, it will be available on the news site in a few hours.
+Questo processo è automatizzato e viene eseguito periodicamente. Se pubblichi qualcosa ora, sarà disponibile sul sito di notizie in poche ore.
 
-You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
+Qui puoi trovare gli orari di build aggiornati e lo stato: https://github.com/freeCodeCamp/news#build
 
 ## Come menzionare l'autore originale di un articolo tradotto
 
@@ -101,6 +101,76 @@ article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano
 Puoi passare da un formato all'altro cambiandolo con attenzione manualmente. Oppure puoi usare [lo script in questo repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
 
 > [!TIP] Un nuovo workflow è in fase di sviluppo, ci sarà solo un posto in cui apportare modifiche in futuro.
+
+## How to translate articles in the footer links
+
+There are some links listed at the bottom of the footer (About, Alumni Network, Open Source etc.) and some of them can be translated into your language in the same way as other articles.
+
+Articles that can be translated:
+
+- About
+- Support
+- Academic Honesty
+- Code of Conduct
+
+The following articles should **not** be translated:
+
+- Shop
+- Sponsors
+- Privacy Policy
+- Terms of Service
+- Copyright Policy
+
+The following links are pointing to external sites and cannot be translated:
+
+- Alumni Network
+- Open Source
+
+### Change the footer links in the news
+
+Once you have translated and published the articles listed as "can be translated" above, you can update the links in the footer for `/news` by editing the file at `news/config/i18n/locales/<your language>/links.json` in the [freeCodeCamp/news](https://github.com/freeCodeCamp/news) repository.
+
+> [!NOTE] Pull requests to this repository are currently limited to staff only. If you want to update this file, ask someone on the staff team for help.
+
+Update the following part in the file:
+
+```json
+{
+  ...
+  "footer": {
+    "about": "https://www.freecodecamp.org/news/about/",
+    "support": "https://www.freecodecamp.org/news/support/",
+    "honesty": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc": "https://www.freecodecamp.org/news/code-of-conduct/"
+  }
+}
+```
+
+### Change the footer links in the curriculum
+
+When you have translated and published the articles listed as "can be translated" above, as well as when the curriculum in your language is ready for launch, you can update the links in the footer for `/learn` by editing the file at `client/i18n/locales/<your language>/links.json` in the [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) repository.
+
+> [!WARNING] Only "About", "Support", "Academic Honesty", and "Code of Conduct" can be translated. Leave other URLs unchanged.
+
+Update the following part in the file:
+
+```json
+{
+  ...
+  "footer": {
+    "about-url": "https://www.freecodecamp.org/news/about/",
+    "shop-url": "https://www.freecodecamp.org/shop/",
+    "support-url": "https://www.freecodecamp.org/news/support/",
+    "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
+    "honesty-url": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc-url": "https://www.freecodecamp.org/news/code-of-conduct/",
+    "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
+    "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+    "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
+  },
+  ...
+}
+```
 
 ## Come tradurre le intestazioni dei riquadri informativi nella documentazione
 
@@ -288,16 +358,16 @@ Poi, ogni lingua ha due colonne. Se traduci in Dothraki, sarai interessato alle 
 
 Dopo aver apportato le modifiche e salvato il file, dovrai effettuare una PR con le modifiche proposte. Una volta che la PR è stata accettata, dovrai eseguire le procedure GitHub Action per aggiornare il glossario. I cambiamenti apportati al glossario non saranno immediati.
 
-## How to Promote a Contributor to Proofreader
+## Come Promuovere un Contributore a Revisore
 
-If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
+Se consideri che un contributore potrebbe diventare un revisore di Crowdin, puoi dargli il ruolo di revisore in questo modo:
 
-In Crowdin, individuate the `User management` on the left hand side menu.
+Su Crowdin, individua `User management` sul lato sinistro del menu.
 
-This will open the user management tools, you will be able to see the list of all the users.
+Aprirà gli strumenti di gestione degli utenti e sarai in grado di vedere la lista di tutti gli utenti.
 
-Search for the user that will become contributor. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+Cerca l'utente che diventerà revisore. Utilizzare il menu a tre punti nella riga dell'utente per aprire un menu e selezionare "Add to team". I team di revisori hanno il nome standard di `Proof Readers (<language>)`, puoi cercare il team usando il nome della lingua. Una volta selezionato il team, utilizza il pulsante "ADD" in fondo alla pagina per finalizzare il processo.
 
-The user is now a proofreader.
+L'utente ora è un revisore.
 
-> [!TIP] The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.
+> [!TIP] I revisori appena promossi possono trarre vantaggio dalla lettura della documentazione [Come revisionare le traduzioni](how-to-proofread-files.md).

@@ -15,7 +15,7 @@ dashedName: state-name-puzzle
 
 Escreva uma função para resolver o desafio para um array dado de nomes de estados dos EUA reais e para nomes de estados fictícios.
 
-A função deve retornar um array. Cada elemento deve ser um objeto neste formato: `{"from":[],"to":[]}`. O array `"from"` deve conter os nomes originais e o array `"to"` deve conter os nomes resultantes.
+A função deve retornar um array. Cada elemento deve ser um objeto neste formato: `{"from":[],"to":[]}`. O array `from` deve conter os nomes originais e o array `to` deve conter os nomes resultantes.
 
 # --hints--
 

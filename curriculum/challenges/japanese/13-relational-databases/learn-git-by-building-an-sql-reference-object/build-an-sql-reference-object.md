@@ -9,7 +9,7 @@ dashedName: build-an-sql-reference-object
 
 # --description--
 
-この 240 のレッスンから成るコースでは、よく使われる SQL コマンドをデータとして持つオブジェクトを作成しながら、Git がどのようにしてコードの履歴を記録するかを学びます。
+In this 240-lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands.
 
 # --instructions--
 

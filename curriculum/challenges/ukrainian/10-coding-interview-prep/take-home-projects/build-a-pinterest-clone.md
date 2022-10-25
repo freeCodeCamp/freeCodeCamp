@@ -8,9 +8,9 @@ dashedName: build-a-pinterest-clone
 
 # --description--
 
-** Ціль: ** Створити [ Replit](https://replit.com/) застосунок, який функціонально схожий на цей: <https://build-a-pinterest-clone.freecodecamp.rocks/>.
+**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://build-a-pinterest-clone.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://build-a-pinterest-clone.freecodecamp.rocks/</a>.
 
-Заповніть, як нижче наведено,[ історії користувача ](https://en.wikipedia.org/wiki/User_story). Використовуйте будь-які потрібні вам бібліотеки чи API (прикладні програмні інтерфейси). Проявіть при цьому свій власний стиль.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 **Історія користувача:** Як неавторизований користувач, я можу увійти за допомогою GitHub.
 
@@ -24,11 +24,11 @@ dashedName: build-a-pinterest-clone
 
 **Історія користувача:** Як авторизований користувач, якщо я завантажу неробоче зображення, то отримаю в результаті його заміну на зображення-заповнювач. (Ви можете скористатися детектором зламаних зображень jQuery)
 
-**Підказка: **[Masonry.js](https://masonry.desandro.com/) - це бібліотека, яка дозволяє створювати сітки зображень у стилі Pinterest.
+**Hint:** Masonry.js is a library that allows for Pinterest-style image grids.
 
 Як тільки ви завершите імплементацію цих історій користувача, введіть URL-адресу вашого онлайн додатку і, за бажанням, вашого GitHub репозиторію. Тоді натисніть кнопку "Я завершив це завдання".
 
-Ви можете отримати відгук про ваш проєкт, поділившись ним на даному форумі: [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

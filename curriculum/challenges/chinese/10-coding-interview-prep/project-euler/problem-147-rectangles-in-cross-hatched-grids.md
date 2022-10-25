@@ -1,27 +1,31 @@
 ---
 id: 5900f3ff1000cf542c50ff12
-title: 'Problem 147: Rectangles in cross-hatched grids'
-challengeType: 5
+title: '问题 147：交叉对角线网格中的矩形'
+challengeType: 1
 forumTopicId: 301776
 dashedName: problem-147-rectangles-in-cross-hatched-grids
 ---
 
 # --description--
 
-In a 3x2 cross-hatched grid, a total of 37 different rectangles could be situated within that grid as indicated in the sketch.
+如图所示，在 3 x 2 的交叉对角线网格中，共有 37 个不同的矩形可以放置于该网格内。
 
-There are 5 grids smaller than 3x2, vertical and horizontal dimensions being important, i.e. 1x1, 2x1, 3x1, 1x2 and 2x2. If each of them is cross-hatched, the following number of different rectangles could be situated within those smaller grids: 1x1: 1 2x1: 4 3x1: 8 1x2: 4 2x2: 18
+<img class="img-responsive center-block" alt="3 x 2 网格中放置不同矩形的方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px;" />
 
-Adding those to the 37 of the 3x2 grid, a total of 72 different rectangles could be situated within 3x2 and smaller grids.
+从长和宽的角度考虑，有 5 种小于 3 x 2 网格的矩形，即 1 x 1、2 x 1、3 x 1、1 x 2 和 2 x 2。 若画出上述矩形的交叉对角线，则有不同的矩形可以位于这些更小的网格中，对应数量如下：
 
-How many different rectangles could be situated within 47x43 and smaller grids?
+$$\begin{array}{|c|c|} \hline 1 \times 1 & 1  \\\\ \hline 2 \times 1 & 4  \\\\ \hline 3 \times 1 & 8  \\\\ \hline 1 \times 2 & 4  \\\\ \hline 2 \times 2 & 18 \\\\ \hline \end{array}$$
+
+上述个数与 3 x 2 网格中的 37 相加，可得对于 3 x 2 及其更小的网格，共有 72 个不同的矩形可以放置其中。
+
+请求出 47 x 43 及其更小的网格中，可以放置多少个不同的矩形？
 
 # --hints--
 
-`euler147()` should return 846910284.
+`crossHatchedRectangles()` 应该返回 `846910284`。
 
 ```js
-assert.strictEqual(euler147(), 846910284);
+assert.strictEqual(crossHatchedRectangles(), 846910284);
 ```
 
 # --seed--
@@ -29,12 +33,12 @@ assert.strictEqual(euler147(), 846910284);
 ## --seed-contents--
 
 ```js
-function euler147() {
+function crossHatchedRectangles() {
 
   return true;
 }
 
-euler147();
+crossHatchedRectangles();
 ```
 
 # --solutions--

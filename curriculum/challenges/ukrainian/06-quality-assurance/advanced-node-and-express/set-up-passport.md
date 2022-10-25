@@ -8,15 +8,13 @@ dashedName: set-up-passport
 
 # --description--
 
-Час встановити *Passport*, щоб нарешті дозволити користувачеві реєструватися або входити в обліковий запис! Разом з Passport, ми будемо використовувати експрес-сесію (Express-session) для обробки сесій. Використання цього проміжного програмного забезпечення зберігає id сесії як файл cookie в клієнті та дозволяє нам отримувати доступ до даних сесії за допомогою цього id на сервері. Таким чином ми зберігаємо особисту інформацію облікового запису поза файлом cookie, який клієнт використовує для перевірки на нашому сервері їх автентичності, і просто зберігаємо *ключ* для доступу до даних, що зберігаються на сервері.
+Час встановити *Passport*, щоб нарешті дозволити користувачеві реєструватися або входити в обліковий запис! Разом з Passport, ми будемо використовувати експрес-сесію (Express-session) для обробки сесій. Express-session has a ton of advanced features you can use, but for now we're just going to use the basics! Using this middleware saves the session id as a cookie in the client and allows us to access the session data using that id on the server. This way we keep personal account information out of the cookie used by the client to verify to our server they are authenticated and just keep the *key* to access the data stored on the server.
 
-Щоб налаштувати Passport для використання в своєму проекті, вам потрібно буде спочатку додати його як залежність у вашому package.json. `passport@~0.4.1`
+`passport@~0.4.1` and `express-session@~1.17.1` are already installed, and are both listed as dependencies in your `package.json` file.
 
-Крім того, додайте також експрес-сесію як залежність. Експрес-сесія має дуже великий набір розширених функцій, які ви можете використати, але зараз ми збираємося використовувати лише базові функції! `express-session@~1.17.1`
+You will need to set up the session settings now and initialize Passport. Be sure to first create the variables 'session' and 'passport' to require 'express-session' and 'passport' respectively.
 
-Зараз вам потрібно буде встановити налаштування сесії та ініціалізувати Passport. Переконайтеся, що створили змінні 'session' та 'passport', це потрібно для 'express-session' та 'passport'.
-
-Щоб налаштувати експрес-застосунок для використання у сесії, ми визначимо лише декілька основних параметрів. Не забудьте додати 'SESSION_SECRET' до вашого .env файлу і надати йому випадкове значення. Це використовується для обчислення хешу, яке використовується для шифрування вашого cookie!
+To set up your express app to use the session we'll define just a few basic options. Be sure to add 'SESSION_SECRET' to your .env file and give it a random value. This is used to compute the hash used to encrypt your cookie!
 
 ```js
 app.use(session({
@@ -27,13 +25,13 @@ app.use(session({
 }));
 ```
 
-Крім того, ви можете продовжити та повідомити своєму експрес-застосунку **використовувати** 'Passpor.initialize()' та 'Pasort.session()'. (Наприклад, `app.use(passport.initialize());`)
+As well you can go ahead and tell your express app to **use** 'passport.initialize()' and 'passport.session()'. (For example, `app.use(passport.initialize());`)
 
-Відправте сторінку, якщо все було виконано правильно. Якщо виникають помилки, ви можете перевірити виконання проєкту до цього етапу [тут](https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c).
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-Passport і експрес-сесії повинні бути залежностями.
+Passport and Express-session should be dependencies.
 
 ```js
 (getUserInput) =>
@@ -57,7 +55,7 @@ Passport і експрес-сесії повинні бути залежност
   );
 ```
 
-Пов'язані залежності повинні бути правильно заповнені.
+Dependencies should be correctly required.
 
 ```js
 (getUserInput) =>
@@ -80,7 +78,7 @@ Passport і експрес-сесії повинні бути залежност
   );
 ```
 
-Експрес застосунок має використовувати нові залежності.
+Express app should use new dependencies.
 
 ```js
 (getUserInput) =>
@@ -103,7 +101,7 @@ Passport і експрес-сесії повинні бути залежност
   );
 ```
 
-Сесія і секрет сесії мають бути правильно налаштовані.
+Session and session secret should be correctly set up.
 
 ```js
 (getUserInput) =>

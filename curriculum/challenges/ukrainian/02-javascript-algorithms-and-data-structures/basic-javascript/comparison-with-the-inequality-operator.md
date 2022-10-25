@@ -14,18 +14,16 @@ dashedName: comparison-with-the-inequality-operator
 **Наприклад**
 
 ```js
-1 !=  2
-1 != "1"
-1 != '1'
-1 != true
-0 != false
+1 !=  2    // true
+1 != "1"   // false
+1 != '1'   // false
+1 != true  // false
+0 != false // false
 ```
-
-У такому ж порядку, як вони є, ці вирази будуть оцінені, як `true`, `false`, `false`, `false` і `false`.
 
 # --instructions--
 
-Додайте оператора нерівності `!=` до команди `if`, щоб функція повернула рядок `Not Equal`, коли `val` не дорівнює `99`.
+Add the inequality operator `!=` in the `if` statement so that the function will return the string `Not Equal` when `val` is not equivalent to `99`.
 
 # --hints--
 
@@ -59,7 +57,7 @@ assert(testNotEqual('12') === 'Not Equal');
 assert(testNotEqual('bob') === 'Not Equal');
 ```
 
-Слід використовувати оператор `!=`
+You should use the `!=` operator
 
 ```js
 assert(code.match(/(?!!==)!=/));

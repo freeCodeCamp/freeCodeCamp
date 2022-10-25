@@ -22,7 +22,7 @@ Instructions: Add a method to our max heap called `remove`. This method should r
 
 # --hints--
 
-The MaxHeap data structure should exist.
+The `MaxHeap` data structure should exist.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called print.
+`MaxHeap` should have a method called `print`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called insert.
+`MaxHeap` should have a method called `insert`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called remove.
+`MaxHeap` should have a method called `remove`.
 
 ```js
 assert(
@@ -84,9 +84,24 @@ assert(
 );
 ```
 
-The remove method should remove the greatest element from the max heap while maintaining the max heap property.
+The `remove` method should remove the greatest element from the max heap while maintaining the max heap property.
 
 ```js
+function isHeap(arr, i, n) {
+  if (i >= (n - 1) / 2) {
+    return true;
+  }
+  if (
+    arr[i] >= arr[2 * i + 1] &&
+    arr[i] >= arr[2 * i + 2] &&
+    isHeap(arr, 2 * i + 1, n) &&
+    isHeap(arr, 2 * i + 2, n)
+  ) {
+    return true;
+  }
+  return false;
+}
+
 assert(
   (function () {
     var test = false;
@@ -95,16 +110,21 @@ assert(
     } else {
       return false;
     }
-    test.insert(30);
-    test.insert(300);
-    test.insert(500);
-    test.insert(10);
-    let result = [];
-    result.push(test.remove());
-    result.push(test.remove());
-    result.push(test.remove());
-    result.push(test.remove());
-    return result.join('') == '5003003010';
+  let max = Infinity;
+  const [result, vals] = [[], [2, 15, 3, 7, 12, 7, 10, 90]];
+  vals.forEach((val) => test.insert(val));
+  for (let i = 0; i < vals.length; i++) {
+    const curHeap = test.print();
+    const arr = curHeap[0] === null ? curHeap.slice(1) : curHeap;
+    if (!isHeap(arr, 0, arr.length - 1)) {
+      return false;
+    }
+    const removed = test.remove();
+    if(removed > max) return false
+    max = removed;
+    result.push(removed);
+  }
+  return true
   })()
 );
 ```
@@ -114,21 +134,29 @@ assert(
 ## --seed-contents--
 
 ```js
-var MaxHeap = function() {
-  this.heap = [null];
-  this.insert = (ele) => {
-    var index = this.heap.length;
-    var arr = [...this.heap];
-    arr.push(ele);
-    while (ele > arr[Math.floor(index / 2)] && index > 1) {
-      arr[index] = arr[Math.floor(index / 2)];
-      arr[Math.floor(index / 2)] = ele;
-      index = arr[Math.floor(index / 2)];
+var MaxHeap = function () {
+  this.heap = [];
+  this.parent = index => {
+    return Math.floor((index - 1) / 2);
+  }
+  this.insert = element => {
+    this.heap.push(element);
+    this.heapifyUp(this.heap.length - 1);
+  }
+  this.heapifyUp = index => {
+    let currentIndex = index,
+    parentIndex = this.parent(currentIndex);
+    while (currentIndex > 0 && this.heap[currentIndex] > this.heap[parentIndex]) {
+      this.swap(currentIndex, parentIndex);
+      currentIndex = parentIndex;
+      parentIndex = this.parent(parentIndex);
     }
-    this.heap = arr;
+  }
+  this.swap = (index1, index2) => {
+    [this.heap[index1], this.heap[index2]] = [this.heap[index2], this.heap[index1]];
   }
   this.print = () => {
-    return this.heap.slice(1);
+    return this.heap;
   }
   // Only change code below this line
 

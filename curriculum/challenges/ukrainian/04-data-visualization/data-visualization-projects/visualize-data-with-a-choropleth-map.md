@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-choropleth-map
 
 # --description--
 
-**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/EZKqza" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/EZKqza</a>.
+**Мета:** створити застосунок, функціонально схожий до цього: <a href="https://choropleth-map.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://choropleth-map.freecodecamp.rocks</a>.
 
 Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 

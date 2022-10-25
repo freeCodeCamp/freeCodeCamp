@@ -8,9 +8,9 @@ dashedName: p2p-video-chat-application
 
 # --description--
 
-**Мета:** Створити [Replit](https://replit.com/) додаток, який за функціями подібний до цього [ -video-chat-application.freecodecamp.rocks/](https://p2p-video-chat-application.freecodecamp.rocks/).
+**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://p2p-video-chat-application.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://p2p-video-chat-application.freecodecamp.rocks/</a>.
 
-Заповніть подані нижче [ історії користувачів](https://en.wikipedia.org/wiki/User_story). Використовуйте необхідні вам бібліотеки чи прикладні програмні інтерфейси. Продемонструйте свій власний неповторний стиль.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 **Історія користувача:** При поверненні, браузер запропонує мені доступ до камери та мікрофона.
 
@@ -32,7 +32,7 @@ dashedName: p2p-video-chat-application
 
 Як тільки ви виконаєте ці історії користувачів, введіть URL-адресу вашого онлайн додатку і, за можливості, вашого GitHub репозиторію. Тоді натисніть кнопку "Завдання виконано".
 
-Ви можете отримати відгук про ваш проект, поділившись ним на форумі freeCodeCamp [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

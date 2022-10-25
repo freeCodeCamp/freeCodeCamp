@@ -1,14 +1,31 @@
 ---
 id: 59f4eafba0343628bb682785
 title: Discordian date
-challengeType: 5
+challengeType: 1
 forumTopicId: 302250
 dashedName: discordian-date
 ---
 
 # --description--
+The Gregorian calendar is a solar calendar with 12 months of 28-31 days each. A week consists of seven days, and there are 52 weeks and 1 day per year. The year consists of 365 days with a leap day added to February every leap year. A leap year occurs every four years, except for the first three centurial years of every 400 years.
 
-Convert a given date from the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian calendar "wp: Gregorian calendar") to the [Discordian calendar](https://en.wikipedia.org/wiki/Discordian calendar "wp: Discordian calendar").
+The <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">Discordian calendar</a> is aligned with the Gregorian calendar, and begins on January 1. The week consists of five days, and there are 73 weeks per year. The year also consists of 365 days, with an extra day inserted between Chaos 59 and Chaos 60 every leap year.
+
+The months, weekdays, Apostle events, and Holidays in the Discordian calendar are given by:
+
+Seasons: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
+
+Weekdays: `'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange'`.
+
+Apostle: `'Mungday', 'Mojoday', 'Syaday', 'Zaraday', 'Maladay'`.
+
+Holidays: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
+
+# --instructions--
+
+Convert a given date from the Gregorian calendar to the Discordian calendar.
+
+Note that the day Chaos 1, 3188 YOLD in the Discordian calendar is the day January 1, 2022 in the Gregorian calendar.
 
 # --hints--
 

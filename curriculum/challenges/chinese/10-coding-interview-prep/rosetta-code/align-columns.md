@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad0
-title: Align columns
-challengeType: 5
+title: 对齐列
+challengeType: 1
 forumTopicId: 302224
 dashedName: align-columns
 ---
@@ -12,7 +12,7 @@ Given an array of many lines, where fields within a line are delineated by a sin
 
 # --instructions--
 
-Use the following text to test your programs:
+使用以下文本测试您的程序：
 
 ```js
 const testText = [
@@ -29,14 +29,14 @@ const testText = [
 ];
 ```
 
-**Note that:**
+**注意：**
 
 - The example input texts lines may, or may not, have trailing dollar characters.
 - All columns should share the same alignment.
 - Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.
-- Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal. Lines in it should be joined using new line character (`\n`).
-- The minimum space between columns should be computed from the text and not hard-coded.
-- It is not a requirement to add separating characters between or around columns.
+- 输出文本将在纯文本编辑器或基本终端上以等宽字体查看。 Lines in it should be joined using new line character (`\n`).
+- 列之间的最小间距应根据文本计算，而不是硬编码。
+- 不需要在列之间或列周围添加分隔字符。
 
 For example, one of the lines from the `testText`, after jusitifing to the right, left and center respectivelly:
 

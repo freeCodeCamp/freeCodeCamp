@@ -1,20 +1,20 @@
 ---
 id: 5951ed8945deab770972ae56
 title: Ханойські вежі
-challengeType: 5
+challengeType: 1
 forumTopicId: 302341
 dashedName: towers-of-hanoi
 ---
 
 # --description--
 
-Розв'яжіть [Towers of Hanoi](https://en.wikipedia.org/wiki/Towers_of_Hanoi "wp: Towers_of_Hanoi") завдання.
+Solve the Towers of Hanoi problem. The number of objects will be given as the first parameter, followed by the strings used to identify each stack of objects. Create a nested array containing the list of moves, `["source", "destination"]`.
 
-Ваше рішення повинно містити кількість дисків у якості першого параметру та три рядки, що використовуються для ідентифікації кожного з трьох стопок дисків, наприклад, `towerOfHanoi(4, 'A', 'B', 'C')`. Функція має повернути ряд масивів, що містять перелік кроків, джерело - -> призначення.
+For example, the parameters `(4, 'A', 'B', 'C')`, will result in nested array of moves `[['A', 'C'], ['B', 'A']]`, indicating that the 1st move was to move an object from stack `A` to `C` and the 2nd move was to move an object from stack `B` to `A`.
 
-Наприклад, масив `[['A', 'C'], ['B', 'A']]` вказує на те, що 1-й хід полягав у переміщенні диску зі стержня А на С, а другий хід —переміщенні диск зі стержня В на А.
+# --instructions--
 
-<p></p>
+Write a function that returns the moves to stack the objects in a nested array.
 
 # --hints--
 
@@ -24,25 +24,25 @@ dashedName: towers-of-hanoi
 assert(typeof towerOfHanoi === 'function');
 ```
 
-`towerOfHanoi(3, ...)` має повернути 7 ходів.
+`towerOfHanoi(3, ...)` should return 7 moves.
 
 ```js
 assert(res3.length === 7);
 ```
 
-`towerOfHanoi(3, 'A', 'B', 'C')` має повернути `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]`.
+`towerOfHanoi(3, 'A', 'B', 'C')` should return `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]`.
 
 ```js
 assert.deepEqual(towerOfHanoi(3, 'A', 'B', 'C'), res3Moves);
 ```
 
-`towerOfHanoi(5, "X", "Y", "Z")` 10-й хід має бути Y -> X.
+`towerOfHanoi(5, "X", "Y", "Z")` 10th move should be Y -> X.
 
 ```js
 assert.deepEqual(res5[9], ['Y', 'X']);
 ```
 
-`towerOfHanoi(7, 'A', 'B', 'C')` перші десять ходів мають бути `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B'], ['A','C'], ['B','C'], ['B','A']]`
+`towerOfHanoi(7, 'A', 'B', 'C')` first ten moves should be `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B'], ['A','C'], ['B','C'], ['B','A']]`
 
 ```js
 assert.deepEqual(towerOfHanoi(7, 'A', 'B', 'C').slice(0, 10), res7First10Moves);

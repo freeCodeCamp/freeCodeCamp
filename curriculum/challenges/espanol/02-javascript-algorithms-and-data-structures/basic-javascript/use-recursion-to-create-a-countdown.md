@@ -71,6 +71,13 @@ assert(
 );
 ```
 
+No se debe usar variables globales como almacenamiento temporal del array.
+
+```js
+countdown(1)
+assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
+```
+
 # --seed--
 
 ## --seed-contents--
