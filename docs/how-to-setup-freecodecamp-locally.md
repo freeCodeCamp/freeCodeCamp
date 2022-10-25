@@ -166,6 +166,21 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 >
 > [Skip to making changes](#making-changes-locally).
 
+## Running with Docker
+If you have [configured Docker Desktop](how-to-setup-wsl.md), you can launch the application in individual docker containers.
+
+Build the images using the provided dockerfiles.
+```console
+docker build docker/api/Dockerfile api
+docker build docker/web/Dockerfile client
+```
+
+Run the containers using the images built.
+```console
+docker run -it api
+docker run -it client
+```
+
 ### Configuring dependencies
 
 #### Step 1: Set up the environment variable file
