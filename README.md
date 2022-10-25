@@ -14,13 +14,57 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ## Table of Contents
 
-- [Certifications](#certifications)
 - [The Learning Platform](#the-learning-platform)
 - [Reporting Bugs and Issues](#reporting-bugs-and-issues)
 - [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
 - [Contributing](#contributing)
 - [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
 - [License](#license)
+- [Certifications](#certifications)
+
+### The Learning Platform
+
+This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
+
+Our community also has:
+
+- A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
+- A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
+- A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about mathematics and computer science.
+- A [Discord server](https://discord.gg/Z7Fm39aNtZ) where you can hang out and talk with developers and people who are learning to code.
+
+> #### [Join the community here](https://www.freecodecamp.org/signin).
+
+### Reporting Bugs and Issues
+
+If you think you've found a bug, first read the [how to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+
+If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+
+### Reporting Security Issues and Responsible Disclosure
+
+We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+
+> #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
+
+### Contributing
+
+The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
+
+> #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
+
+### Platform, Build, and Deployment Status
+
+The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](https://contribute.freecodecamp.org/#/devops).
+
+### License
+
+Copyright © 2022 freeCodeCamp.org
+
+The content of this repository is bound by the following licenses:
+
+- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
+- The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories thereon are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) license.
 
 ### Certifications
 
@@ -152,47 +196,3 @@ We also have 4 legacy certifications dating back to our 2015 curriculum, which a
 - Legacy Data Visualization Certification
 - Legacy Back End Development Certification
 - Legacy Information Security and Quality Assurance Certification
-
-### The Learning Platform
-
-This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
-
-Our community also has:
-
-- A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
-- A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
-- A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about mathematics and computer science.
-- A [Discord server](https://discord.gg/Z7Fm39aNtZ) where you can hang out and talk with developers and people who are learning to code.
-
-> #### [Join the community here](https://www.freecodecamp.org/signin).
-
-### Reporting Bugs and Issues
-
-If you think you've found a bug, first read the [how to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
-
-If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
-
-### Reporting Security Issues and Responsible Disclosure
-
-We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
-
-> #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
-
-### Contributing
-
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
-
-> #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
-
-### Platform, Build, and Deployment Status
-
-The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](https://contribute.freecodecamp.org/#/devops).
-
-### License
-
-Copyright © 2022 freeCodeCamp.org
-
-The content of this repository is bound by the following licenses:
-
-- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
-- The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories thereon are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) license.
