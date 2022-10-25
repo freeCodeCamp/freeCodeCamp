@@ -1,4 +1,5 @@
 import React from 'react';
+import { clientLocale } from '../../config/env.json';
 
 interface HTMLProps {
   body: string;
@@ -17,8 +18,16 @@ export default function HTML({
   postBodyComponents,
   preBodyComponents
 }: HTMLProps): JSX.Element {
+  const rtlDirectionAttribute = { dtr: 'rtl' };
+  const rtlLanguage: boolean = ['arabic', 'udru'].includes(clientLocale);
+
   return (
-    <html id='__fcc-html' {...htmlAttributes} lang='en'>
+    <html
+      id='__fcc-html'
+      {...(rtlLanguage && rtlDirectionAttribute)}
+      {...htmlAttributes}
+      lang='en'
+    >
       <head>
         <meta charSet='utf-8' />
         <meta content='ie=edge' httpEquiv='x-ua-compatible' />
