@@ -186,19 +186,6 @@ export const i18nextCodes = {
 };
 
 /* eslint-disable @typescript-eslint/naming-convention */
-// These are for language attribute direction in the html element
-export enum LangDirection {
-  english = 'ltr',
-  espanol = 'ltr',
-  chinese = 'ltr',
-  'chinese-traditional' = 'ltr',
-  italian = 'ltr',
-  portuguese = 'ltr',
-  ukrainian = 'ltr',
-  japanese = 'ltr',
-  german = 'ltr',
-  arabic = 'rtl'
-}
 
 // These are for the language selector dropdown menu in the footer
 export enum LangNames {
@@ -237,13 +224,13 @@ export enum LangCodes {
  */
 export const hiddenLangs = ['arabic'];
 
+/**
+ * This array contains languages that use the RTL layouts.
+ */
+export const rtlLangs = ['arabic', 'urdu'];
+
 // locale is sourced from a JSON file, so we use getLangCode to
 // find the associated enum values
-
-export function getLangDirection(locale: PropertyKey) {
-  if (isPropertyOf(LangDirection, locale)) return LangDirection[locale];
-  throw new Error(`${String(locale)} is not a valid locale`);
-}
 
 export function getLangCode(locale: PropertyKey) {
   if (isPropertyOf(LangCodes, locale)) return LangCodes[locale];
