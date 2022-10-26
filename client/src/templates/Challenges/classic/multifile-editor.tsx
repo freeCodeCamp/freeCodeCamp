@@ -124,7 +124,11 @@ const MultifileEditor = (props: MultifileEditorProps) => {
       orientation='horizontal'
       {...reflexProps}
       {...resizeProps}
-      className='editor-container'
+      className={
+        'editor-container' +
+        (isMobileLayout ? ' mobileLayout' : '') +
+        (usesMultifileEditor ? ' withMonacoEditorTabs' : '')
+      }
     >
       <ReflexElement flex={10} {...reflexProps} {...resizeProps}>
         <ReflexContainer orientation='vertical'>

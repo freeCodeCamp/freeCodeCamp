@@ -462,9 +462,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         previewMounted={this.props.previewMounted}
         isMobileLayout={isMobileLayout}
         withActionRow={
-          this.getChallenge().hasEditableBoundaries ||
-          this.getChallenge().challengeType ===
-            challengeTypes.multifileCertProject
+          !isMobileLayout &&
+          (this.getChallenge().hasEditableBoundaries ||
+            this.getChallenge().challengeType ===
+              challengeTypes.multifileCertProject)
         }
       />
     );
@@ -511,7 +512,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <Helmet title={windowTitle}>
             <style>
               {
-                ':root{--breadcrumb-height: 44.85px;--navTabs-height: 32.56px;--toolPanelGroup-height: 39.56px;--actionRow-height: 62.71px;}body{overflow-y: hidden}'
+                ':root{--breadcrumb-height: 45px;--navTabs-height: 33px;--monacoEditorTabs-height: 62px;--toolPanelGroup-height: 40px;--actionRow-height: 63px;}body{overflow-y: hidden}'
               }
             </style>
           </Helmet>

@@ -24,6 +24,25 @@ textarea.inputarea {
 
 .editor-container {
   background: var(--editor-background);
+  height: calc(
+    100vh - var(--header-height, 0px) - var(--breadcrumb-height, 0px) -
+      var(--actionRow-height, 0px)
+  );
+}
+
+.editor-container.mobileLayout {
+  height: calc(
+    100vh - var(--header-height, 0px) - var(--breadcrumb-height, 0px) -
+      var(--navTabs-height, 0px) - var(--toolPanelGroup-height, 0px)
+  );
+}
+
+.editor-container.mobileLayout.withMonacoEditorTabs {
+  height: calc(
+    100vh - var(--header-height, 0px) - var(--breadcrumb-height, 0px) -
+      var(--navTabs-height, 0px) - var(--monacoEditorTabs-height, 0px) -
+      var(--toolPanelGroup-height, 0px)
+  );
 }
 
 .breadcrumbs-demo {
