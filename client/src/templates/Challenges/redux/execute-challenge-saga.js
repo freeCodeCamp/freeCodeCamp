@@ -79,14 +79,9 @@ export function* executeCancellableChallengeSaga(payload) {
 
   // executeChallenge with payload containing {showCompletionModal}
   const task = yield fork(executeChallengeSaga, payload);
-  yield fork(previewChallengeSaga, { flushLogs: false });
 
   yield take(actionTypes.cancelTests);
   yield cancel(task);
-}
-
-export function* executeCancellablePreviewSaga() {
-  yield fork(previewChallengeSaga);
 }
 
 export function* executeChallengeSaga({ payload }) {
@@ -294,7 +289,7 @@ export function createExecuteChallengeSaga(types) {
         types.challengeMounted,
         types.resetChallenge
       ],
-      executeCancellablePreviewSaga
+      previewChallengeSaga
     ),
     takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];
