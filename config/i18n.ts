@@ -185,8 +185,22 @@ export const i18nextCodes = {
   arabic: 'ar'
 };
 
-// These are for the language selector dropdown menu in the footer
 /* eslint-disable @typescript-eslint/naming-convention */
+// These are for language attribute direction in the html element
+export enum LangDirection {
+  english = 'ltr',
+  espanol = 'ltr',
+  chinese = 'ltr',
+  'chinese-traditional' = 'ltr',
+  italian = 'ltr',
+  portuguese = 'ltr',
+  ukrainian = 'ltr',
+  japanese = 'ltr',
+  german = 'ltr',
+  arabic = 'rtl'
+}
+
+// These are for the language selector dropdown menu in the footer
 export enum LangNames {
   english = 'English',
   espanol = 'Español',
@@ -223,16 +237,16 @@ export enum LangCodes {
  */
 export const hiddenLangs = ['arabic'];
 
-// locale is sourced from a JSON file, so we use getLangCode and getLangName to
+// locale is sourced from a JSON file, so we use getLangCode to
 // find the associated enum values
 
-export function getLangCode(locale: PropertyKey) {
-  if (isPropertyOf(LangCodes, locale)) return LangCodes[locale];
+export function getLangDirection(locale: PropertyKey) {
+  if (isPropertyOf(LangDirection, locale)) return LangDirection[locale];
   throw new Error(`${String(locale)} is not a valid locale`);
 }
 
-export function getLangName(locale: PropertyKey) {
-  if (isPropertyOf(LangNames, locale)) return LangNames[locale];
+export function getLangCode(locale: PropertyKey) {
+  if (isPropertyOf(LangCodes, locale)) return LangCodes[locale];
   throw new Error(`${String(locale)} is not a valid locale`);
 }
 
