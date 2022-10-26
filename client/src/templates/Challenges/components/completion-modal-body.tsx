@@ -2,13 +2,16 @@ import BezierEasing from 'bezier-easing';
 import React, { PureComponent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import GreenPass from '../../../assets/icons/green-pass';
+import { certMap } from '../../../resources/cert-and-project-map';
 
 interface CompletionModalBodyProps {
   block: string;
+  completedChallengesInBlock: number;
   completedPercent: number;
-  completedProjects: string;
+  currentChallengeId: string;
   superBlock: string;
   t: TFunction;
+  totalChallengesInBlock: number;
 }
 
 interface CompletionModalBodyState {
@@ -71,10 +74,23 @@ export class CompletionModalBody extends PureComponent<
   }
 
   render(): JSX.Element {
-    const { block, completedPercent, completedProjects, superBlock, t } =
-      this.props;
+    const {
+      block,
+      completedPercent,
+      totalChallengesInBlock,
+      completedChallengesInBlock,
+      currentChallengeId,
+      superBlock,
+      t
+    } = this.props;
     const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-
+    const isCertificationProject = certMap.some(cert => {
+      // @ts-expect-error If `projects` does not exist, no consequences
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+      return cert.projects?.some(
+        (project: { id: string }) => project.id === currentChallengeId
+      );
+    });
     return (
       <>
         <div className='completion-challenge-details'>
@@ -114,13 +130,14 @@ export class CompletionModalBody extends PureComponent<
               </div>
             </div>
           </div>
-          <div>
-            <h3>
+          {isCertificationProject && (
+            <output>
               {t('learn.project-complete', {
-                xOutOfYChallenges: completedProjects
+                completedChallengesInBlock,
+                totalChallengesInBlock
               })}
-            </h3>
-          </div>
+            </output>
+          )}
         </div>
       </>
     );

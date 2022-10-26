@@ -77,35 +77,30 @@ export function getCompletedPercent(
   currentBlockIds: string[] = [],
   currentChallengeId: string
 ): number {
-  completedChallengesIds = completedChallengesIds.includes(currentChallengeId)
-    ? completedChallengesIds
-    : [...completedChallengesIds, currentChallengeId];
-
-  const completedChallengesInBlock = completedChallengesIds.filter(id => {
-    return currentBlockIds.includes(id);
-  });
-
+  const completedChallengesInBlock = getCompletedChallengesInBlock(
+    completedChallengesIds,
+    currentBlockIds,
+    currentChallengeId
+  );
   const completedPercent = Math.round(
-    (completedChallengesInBlock.length / currentBlockIds.length) * 100
+    (completedChallengesInBlock / currentBlockIds.length) * 100
   );
 
   return completedPercent > 100 ? 100 : completedPercent;
 }
 
-export function getCompletedProjects(
-  completedChallengesIds: string[] = [],
-  currentBlockIds: string[] = [],
+function getCompletedChallengesInBlock(
+  completedChallengesIds: string[],
+  currentBlockChallengeIds: string[],
   currentChallengeId: string
-): string {
-  completedChallengesIds = completedChallengesIds.includes(currentChallengeId)
-    ? completedChallengesIds
-    : [...completedChallengesIds, currentChallengeId];
-
-  const completedChallengesInBlock = completedChallengesIds.filter(id => {
-    return currentBlockIds.includes(id);
-  });
-
-  return `${completedChallengesInBlock.length}/${currentBlockIds.length}`;
+) {
+  const currentChallengeAlreadyCompleted =
+    completedChallengesIds.includes(currentChallengeId);
+  return (
+    completedChallengesIds.filter(challengeId =>
+      currentBlockChallengeIds.includes(challengeId)
+    ).length + +currentChallengeAlreadyCompleted
+  );
 }
 
 interface CompletionModalsProps {
@@ -132,7 +127,7 @@ interface CompletionModalsProps {
 interface CompletionModalInnerState {
   downloadURL: null | string;
   completedPercent: number;
-  completedProjects: string;
+  completedChallengesInBlock: number;
 }
 
 export class CompletionModalInner extends Component<
@@ -147,7 +142,7 @@ export class CompletionModalInner extends Component<
     this.state = {
       downloadURL: null,
       completedPercent: 0,
-      completedProjects: ''
+      completedChallengesInBlock: 0
     };
   }
 
@@ -157,7 +152,11 @@ export class CompletionModalInner extends Component<
   ): CompletionModalInnerState {
     const { challengeFiles, isOpen } = props;
     if (!isOpen) {
-      return { downloadURL: null, completedPercent: 0, completedProjects: '' };
+      return {
+        downloadURL: null,
+        completedPercent: 0,
+        completedChallengesInBlock: 0
+      };
     }
     const { downloadURL } = state;
     if (downloadURL) {
@@ -187,16 +186,19 @@ export class CompletionModalInner extends Component<
       ? getCompletedPercent(completedChallengesIds, currentBlockIds, id)
       : 0;
 
-    const completedProjects = getCompletedProjects(
-      completedChallengesIds,
-      currentBlockIds,
-      id
-    );
+    let completedChallengesInBlock = 0;
+    if (currentBlockIds) {
+      completedChallengesInBlock = getCompletedChallengesInBlock(
+        completedChallengesIds,
+        currentBlockIds,
+        id
+      );
+    }
 
     return {
       downloadURL: newURL,
       completedPercent,
-      completedProjects
+      completedChallengesInBlock
     };
   }
 
@@ -236,15 +238,19 @@ export class CompletionModalInner extends Component<
     const {
       block,
       close,
+      currentBlockIds,
+      id,
       isOpen,
-      message,
-      t,
-      title,
       isSignedIn,
-      superBlock = ''
+      message,
+      superBlock = '',
+      t,
+      title
     } = this.props;
 
-    const { completedPercent, completedProjects } = this.state;
+    const { completedPercent, completedChallengesInBlock } = this.state;
+
+    const totalChallengesInBlock = currentBlockIds?.length ?? 0;
 
     if (isOpen) {
       executeGA({ type: 'modal', data: '/completion-modal' });
@@ -272,10 +278,14 @@ export class CompletionModalInner extends Component<
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
           <CompletionModalBody
-            block={block}
-            completedPercent={completedPercent}
-            completedProjects={completedProjects}
-            superBlock={superBlock}
+            {...{
+              block,
+              completedPercent,
+              completedChallengesInBlock,
+              currentChallengeId: id,
+              superBlock,
+              totalChallengesInBlock
+            }}
           />
         </Modal.Body>
         <Modal.Footer>
