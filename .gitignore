@@ -162,7 +162,7 @@ config/client/sass-compile.json
 config/client/frame-runner.json
 config/client/test-evaluator.json
 config/curriculum.json
-config/i18n/all-langs.js
+config/i18n.js
 config/certification-settings.js
 
 ### Generated utils files ###
