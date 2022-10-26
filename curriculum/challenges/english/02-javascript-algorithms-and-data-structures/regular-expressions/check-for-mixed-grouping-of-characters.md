@@ -99,6 +99,6 @@ let result = false; // Change this line
 
 ```js
 let myString = "Eleanor Roosevelt";
-let myRegex = /(Franklin|Eleanor)\s{1}(\S*\s)*Roosevelt/;
+let myRegex = /(Franklin|Eleanor)\s{1}(\S+\s)*Roosevelt/;
 let result = myRegex.test(myString);
 ```
