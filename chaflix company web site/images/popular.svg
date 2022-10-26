@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 87.8">
+  <path fill="#1e0f6d" d="M0 4.7h35L30.3 0H5.1L0 4.7z" data-name="Layer 2"/>
+  <g data-name="Layer 1">
+    <path fill="#1b0760" d="M5.3.2v87l11.9-11.9 12.5 12.5V.2H5.3z"/>
+    <text transform="rotate(90 1.05 12.25)" font-size="15" fill="#fff" font-family="Inter-Bold,Inter" font-weight="700">
+      <tspan letter-spacing="-.01em">P</tspan><tspan x="9.6" y="0">opular</tspan>
+    </text>
+  </g>
+</svg>
