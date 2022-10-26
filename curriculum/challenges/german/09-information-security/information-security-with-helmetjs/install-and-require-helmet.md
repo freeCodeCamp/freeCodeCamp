@@ -8,25 +8,25 @@ dashedName: install-and-require-helmet
 
 # --description--
 
-Working on these challenges will involve you writing your code using one of the following methods:
+Bei der Arbeit an diesen Aufgaben wirst du deinen Code mithilfe folgender Methoden schreiben:
 
-- Clone <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
+- Klone <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">dieses GitHub-Repo</a> und beende diese Aufgaben lokal.
 - Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+- Benutze einen Website-Builder deiner Wahl, um das Projekt abzuschließen. Be sure to incorporate all the files from our GitHub repo.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein.
 
-Helmet helps you secure your Express apps by setting various HTTP headers.
+Helmet hilft, die Express-Anwendungen durch das Setzen verschiedener HTTP-Header zu sichern.
 
 # --instructions--
 
-All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
+Der gesamte Code für diese Lektionen befindet sich in der Datei `myApp.js` zwischen den Codezeilen, mit denen wir begonnen haben. Verändere oder lösche den Code nicht, den wir zur Verfügung gestellt haben.
 
 Helmet version `3.21.3` has already been installed, so require it as `helmet` in `myApp.js`.
 
 # --hints--
 
-`helmet` version `3.21.3` should be in `package.json`
+`helmet` Version `3.21.3` sollte in `package.json` sein
 
 ```js
 (getUserInput) =>

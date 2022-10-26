@@ -14,12 +14,11 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Then submit the URL to it in the `Solution Link` field. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
 
 # --instructions--
 
-1.  Add your MongoDB connection string to `.env` without quotes as `DB`
-    Example: `DB=mongodb://admin:pass@1234.mlab.com:1234/fccpersonallib`
+1.  Add your MongoDB connection string to `.env` without quotes as `DB` Example: `DB=mongodb://admin:pass@1234.mlab.com:1234/fccpersonallib`
 2.  In your `.env` file set `NODE_ENV` to `test`, without quotes
 3.  You need to create all routes within `routes/api.js`
 4.  You will create all functional tests in `tests/2_functional-tests.js`

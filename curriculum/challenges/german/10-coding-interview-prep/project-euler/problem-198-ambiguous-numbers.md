@@ -16,7 +16,7 @@ How many ambiguous numbers $x = \frac{p}{q}$, $0 &lt; x &lt; \frac{1}{100}$, are
 
 # --hints--
 
-`ambiguousNumbers()` should return `52374425`.
+`ambiguousNumbers()` sollte `52374425` zurückgeben.
 
 ```js
 assert.strictEqual(ambiguousNumbers(), 52374425);

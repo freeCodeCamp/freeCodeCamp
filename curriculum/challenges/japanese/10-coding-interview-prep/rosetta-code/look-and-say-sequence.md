@@ -1,14 +1,14 @@
 ---
 id: 5e6dd14797f5ce267c2f19d0
 title: 読み上げ数列
-challengeType: 5
+challengeType: 1
 forumTopicId: 385277
 dashedName: look-and-say-sequence
 ---
 
 # --description--
 
-[読み上げ数列](https://en.wikipedia.org/wiki/Look and say sequence) は、再帰的に定義された数列です。
+The Look and say sequence is a recursively defined sequence of numbers.
 
 数列の定義
 

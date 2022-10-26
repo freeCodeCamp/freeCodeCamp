@@ -26,7 +26,7 @@ module.exports = function (app, myDataBase) {
 
 Тепер зробіть те саме в вашому файлі auth.js з усім, що пов'язане з автентифікацією, як ось серіалізація і налаштування локальної стратегії, і видаліть їх з вашого серверного файлу. Обов'язково додайте залежності і наберіть `auth(app, myDataBase)` на сервері в цьому ж місці.
 
-Підтвердьте вашу сторінку, якщо все зрозуміло. Якщо ви натрапите на помилки, можете перевірити виконання проєкту до цього етапу [тут](https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92).
+Підтвердьте вашу сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92" target="_blank" rel="noopener noreferrer nofollow">check out an example of the completed project</a>.
 
 # --hints--
 

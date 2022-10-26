@@ -8,11 +8,11 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --description--
 
-Нагадуємо, що цей проєкт будується на основі такого початкового проєкту на [ Replit ](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) або клонується з [ GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `isOk()` перевіряє правдиве значення, а `isNotOk()` перевіряє хибне значення.
 
-Щоб дізнатися більше про правдиві й хибні значення, перейдіть на завдання [Хибний вибивало](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer).
+To learn more about truthy and falsy values, try our <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer" target="_blank" rel="noopener noreferrer nofollow">Falsy Bouncer</a> challenge.
 
 # --instructions--
 

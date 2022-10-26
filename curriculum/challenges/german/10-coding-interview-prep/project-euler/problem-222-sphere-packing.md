@@ -8,13 +8,13 @@ dashedName: problem-222-sphere-packing
 
 # --description--
 
-What is the length of the shortest pipe, of internal radius 50mm, that can fully contain 21 balls of radii 30mm, 31mm, ..., 50mm?
+Wie lang ist das kürzeste Rohr mit einem Innenradius von 50 mm, das 21 Kugeln mit den Radien 30 mm, 31 mm, ..., 50 mm vollständig aufnehmen kann?
 
-Give your answer in micrometres (${10}^{-6}$ m) rounded to the nearest integer.
+Gib deine Antwort in Mikrometern (${10}^{-6}$ m) an, gerundet auf die nächste ganze Zahl.
 
 # --hints--
 
-`spherePacking()` should return `1590933`.
+`spherePacking()` sollte `1590933` zurückgeben.
 
 ```js
 assert.strictEqual(spherePacking(), 1590933);

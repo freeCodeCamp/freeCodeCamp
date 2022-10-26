@@ -1,7 +1,7 @@
 ---
 id: 59e0a8df964e4540d5abe599
 title: Brain****の実行
-challengeType: 5
+challengeType: 1
 forumTopicId: 302261
 dashedName: execute-brain
 ---
@@ -10,21 +10,21 @@ dashedName: execute-brain
 
 Brain\*\*\*\*\* インタプリタを実行する関数を作成します。 関数はパラメータとして文字列を取り、出力文字列を返します。 詳細は以下の通りです。
 
-RCBFは ロゼッタコード用に様々な言語で書かれた[Brainf\*\*\*](https://rosettacode.org/wiki/Brainf*** "Brainf\*\*\*") コンパイラおよびインタプリタのセットです。
+RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
 
 以下は、RCBFの各バージョンへのリンクです。
 
 実装には以下の手順を適切に実行する必要があります。
 
-| コマンド                      | 説明                                                         |
-| ------------------------- | ---------------------------------------------------------- |
-| <code>></code> | ポインタを右に移動します                                               |
-| <code>&lt;</code> | ポインタを左に移動します                                               |
-| <code>+</code> | ポインタの下にあるメモリーセルを増やします                                      |
-| <code>-</code> | ポインタの下にあるメモリーセルを減らします                                      |
-| <code>.</code> | ポインターのセルで示された文字を出力します                                      |
-| <code>,</code> | 文字を入力し、ポインタのセルに格納します                                       |
-| <code>\[</code> | ポインタの下のセルが 0 の場合、一致する <code>]</code> をジャンプします     |
+| コマンド                      | 説明                                                          |
+| ------------------------- | ----------------------------------------------------------- |
+| <code>></code> | ポインタを右に移動します                                                |
+| <code>&lt;</code> | ポインタを左に移動します                                                |
+| <code>+</code> | ポインタの下にあるメモリーセルを増やします                                       |
+| <code>-</code> | ポインタの下にあるメモリーセルを減らします                                       |
+| <code>.</code> | ポインターのセルで示された文字を出力します                                       |
+| <code>,</code> | 文字を入力し、ポインタのセルに格納します                                        |
+| <code>\[</code> | ポインタの下のセルが 0 の場合、一致する <code>]</code> をジャンプします      |
 | <code>]</code> | ポインタの下のセルがゼロでない場合、一致する <code>\[</code> にジャンプして戻ります |
 
 セルのサイズに制限はありません。メモリに制限があるかどうかに関わらず、EOF (*E*nd-*O*-*F*ile) のサポートは任意です。

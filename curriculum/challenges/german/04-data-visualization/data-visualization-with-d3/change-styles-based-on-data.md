@@ -1,6 +1,6 @@
 ---
 id: 587d7fa7367417b2b2512bc7
-title: Change Styles Based on Data
+title: Stiländerung basierend auf Daten
 challengeType: 6
 forumTopicId: 301479
 dashedName: change-styles-based-on-data
@@ -8,7 +8,7 @@ dashedName: change-styles-based-on-data
 
 # --description--
 
-D3 is about visualization and presentation of data. It's likely you'll want to change the styling of elements based on the data. You can use a callback function in the `style()` method to change the styling for different elements.
+Bei D3 geht es um die Visualisierung und Darstellung von Daten. Es ist wahrscheinlich, dass du das Format der Elemente auf der Grundlage der Daten ändern wirst. You can use a callback function in the `style()` method to change the styling for different elements.
 
 For example, you may want to color a data point blue if it has a value less than 20, and red otherwise. You can use a callback function in the `style()` method and include the conditional logic. The callback function uses the `d` parameter to represent the data point:
 

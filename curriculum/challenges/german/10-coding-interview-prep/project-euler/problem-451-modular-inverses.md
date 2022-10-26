@@ -14,14 +14,10 @@ There are eight positive numbers less than 15 which are coprime to 15: 1, 2, 4, 
 
 The modular inverses of these numbers modulo 15 are: 1, 8, 4, 13, 2, 11, 7, 14 because
 
-$$\begin{align}
-  & 1  \times 1\bmod 15 = 1 \\\\
-  & 2  \times 8  = 16\bmod 15 = 1 \\\\
-  & 4  \times 4  = 16\bmod 15 = 1 \\\\
-  & 7  \times 13 = 91\bmod 15 = 1 \\\\
-  & 11 \times 11 = 121\bmod 15 = 1 \\\\
-  & 14 \times 14 = 196\bmod 15 = 1
-\end{align}$$
+$$\begin{align}   & 1  \times 1\bmod 15 = 1 \\\\
+  & 2  \times 8  = 16\bmod 15 = 1 \\\\   & 4  \times 4  = 16\bmod 15 = 1 \\\\
+  & 7  \times 13 = 91\bmod 15 = 1 \\\\   & 11 \times 11 = 121\bmod 15 = 1 \\\\
+  & 14 \times 14 = 196\bmod 15 = 1 \end{align}$$
 
 Let $I(n)$ be the largest positive number $m$ smaller than $n - 1$ such that the modular inverse of $m$ modulo $n$ equals $m$ itself.
 

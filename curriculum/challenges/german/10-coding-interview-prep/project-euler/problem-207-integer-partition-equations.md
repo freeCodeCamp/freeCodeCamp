@@ -8,35 +8,29 @@ dashedName: problem-207-integer-partition-equations
 
 # --description--
 
-For some positive integers $k$, there exists an integer partition of the form $4^t = 2^t + k$,
+Für einige positive ganze Zahlen $k$ gibt es eine ganzzahlige Partition der Form $4^t = 2^t + k$,
 
-where $4^t$, $2^t$, and $k$ are all positive integers and $t$ is a real number.
+wobei $4^t$, $2^t$ und $k$ alle positive ganze Zahlen sind und $t$ eine reelle Zahl ist.
 
-The first two such partitions are $4^1 = 2^1 + 2$ and $4^{1.584\\,962\\,5\ldots} = 2^{1.584\\,962\\,5\ldots} + 6$.
+Die ersten beiden dieser Partitionen sind $4^1 = 2^1 + 2$ und $4^{1.584\\,962\\,5\ldots} = 2^{1.584\\,962\\,5\ldots}. + 6$.
 
-Partitions where $t$ is also an integer are called perfect. For any $m ≥ 1$ let $P(m)$ be the proportion of such partitions that are perfect with $k ≤ m$.
+Partitionen, bei denen $t$ ebenfalls eine ganze Zahl ist, nennt man perfekt. Für jedes $m ≥ 1$ sei $P(m)$ der Anteil solcher Partitionen, die mit $k ≤ m$ perfekt sind.
 
-Thus $P(6) = \frac{1}{2}$.
+Somit ist $P(6) = \frac{1}{2}$.
 
-In the following table are listed some values of $P(m)$
+In der folgenden Tabelle sind einige Werte von $P(m)$ aufgeführt
 
-$$\begin{align}
-  & P(5) = \frac{1}{1}    \\\\
-  & P(10) = \frac{1}{2}   \\\\
-  & P(15) = \frac{2}{3}   \\\\
-  & P(20) = \frac{1}{2}   \\\\
-  & P(25) = \frac{1}{2}   \\\\
-  & P(30) = \frac{2}{5}   \\\\
-  & \ldots                \\\\
-  & P(180) = \frac{1}{4}  \\\\
-  & P(185) = \frac{3}{13}
-\end{align}$$
+$$\begin{align}   & P(5) = \frac{1}{1}    \\\\
+  & P(10) = \frac{1}{2}   \\\\   & P(15) = \frac{2}{3}   \\\\
+  & P(20) = \frac{1}{2}   \\\\   & P(25) = \frac{1}{2}   \\\\
+  & P(30) = \frac{2}{5}   \\\\   & \ldots                \\\\
+  & P(180) = \frac{1}{4}  \\\\ & P(185) = \frac{3}{13} \end{align}$$
 
-Find the smallest $m$ for which $P(m) &lt; \frac{1}{12\\,345}$
+Finde die kleinste $m$, für die $P(m) &lt; \frac{1}{12\,345}$
 
 # --hints--
 
-`integerPartitionEquations()` should return `44043947822`.
+`integerPartitionEquations()` sollte `44043947822` zurückgeben.
 
 ```js
 assert.strictEqual(integerPartitionEquations(), 44043947822);

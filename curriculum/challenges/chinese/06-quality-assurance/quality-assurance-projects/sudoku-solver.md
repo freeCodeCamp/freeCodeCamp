@@ -8,10 +8,10 @@ dashedName: sudoku-solver
 
 # --description--
 
-构建一个 JavaScript 的全栈应用，在功能上与这个应用相似：<https://sudoku-solver.freecodecamp.rocks/>。 可以采用下面的任意一种方式完成这个挑战：
+构建一个 JavaScript 全栈应用，在功能上与 <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a> 类似。 可以采用下面的任意一种方式完成这个挑战：
 
--   克隆 [GitHub 仓库](https://github.com/freecodecamp/boilerplate-project-sudoku-solver) 并在本地完成你的项目。
--   使用[我们的 Replit 初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver)来完成你的项目。
+-   克隆<a href="https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
 -   使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
 完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 框中提交你的项目 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
@@ -270,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交给 `/api/check` 的对象缺失 `puzzle`、`coordinate` 或 `value`，返回的值将是 `{ error: Required field(s) missing }`
+如果提交给 `/api/check` 的对象缺失 `puzzle`、`coordinate` 或 `value`，那么返回的值将是 `{ error: 'Required field(s) missing' }`。
 
 ```js
 async (getUserInput) => {
@@ -324,7 +324,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交给 `/api/check` 的 `value` 不是一个介于 1 到 9 之间的数字，则返回的值将是 `{ error: 'Invalid value' }`
+如果提交给 `/api/check` 的 `value` 不是一个介于 1 到 9 之间的数字，则返回的值将是 `{ error: 'Invalid value' }`。
 
 ```js
 async (getUserInput) => {
@@ -353,9 +353,11 @@ async (getUserInput) => {
   try {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
-    const units = getTests.filter((el) => el.context.includes('UnitTests'));
-    assert.isAtLeast(units.length, 12, 'At least 12 tests passed');
-    units.forEach((test) => {
+    const unitTests = getTests.filter((test) => {
+      return !!test.context.match(/Unit\s*Tests/gi);
+    });
+    assert.isAtLeast(unitTests.length, 12, 'At least 12 tests passed');
+    unitTests.forEach((test) => {
       assert.equal(test.state, 'passed', 'Test in Passed State');
       assert.isAtLeast(
         test.assertions.length,
@@ -376,11 +378,11 @@ async (getUserInput) => {
   try {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
-    const funcs = getTests.filter((el) =>
-      el.context.includes('Functional Tests')
-    );
-    assert.isAtLeast(funcs.length, 14, 'At least 14 tests passed');
-    funcs.forEach((test) => {
+    const functTests = getTests.filter((test) => {
+      return !!test.context.match(/Functional\s*Tests/gi);
+    });
+    assert.isAtLeast(functTests.length, 14, 'At least 14 tests passed');
+    functTests.forEach((test) => {
       assert.equal(test.state, 'passed', 'Test in Passed State');
       assert.isAtLeast(
         test.assertions.length,

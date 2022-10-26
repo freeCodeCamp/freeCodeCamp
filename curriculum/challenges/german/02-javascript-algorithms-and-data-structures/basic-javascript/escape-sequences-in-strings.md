@@ -11,12 +11,12 @@ dashedName: escape-sequences-in-strings
 
 Anführungszeichen sind nicht die einzigen Zeichen, die innerhalb eines Strings <dfn>ausgelassen</dfn> werden können. Es gibt zwei Gründe für die Verwendung von Escape-Zeichen:
 
-1.  Um dir die Möglichkeit zu geben, Zeichen zu verwenden, die du sonst nicht eingeben könntest, wie zum Beispiel einen Wagenrücklauf (carriage return).
+1.  To allow you to use characters you may not otherwise be able to type out, such as a newline.
 2.  Damit kannst du mehrere Anführungszeichen in einem String darstellen, ohne dass JavaScript fehlinterpretiert, was du meinst.
 
 Das haben wir in der letzten Herausforderung gelernt.
 
-<table class='table table-striped'><thead><tr><th>Code</th><th>Ausgabe</th></tr></thead><tbody><tr><td><code>\'</code></td><td>einzelnes Anführungszeichen</td></tr><tr><td><code>\"</code></td><td>doppeltes Anführungszeichen</td></tr><tr><td><code>\\</code></td><td>Backslash</td></tr><tr><td><code>\n</code></td><td>Zeilenumbruch</td></tr><tr><td><code>\r</code></td><td>Wagenrücklauf (Carriage Return)</td></tr><tr><td><code>\t</code></td><td>Tabulator</td></tr><tr><td><code>\b</code></td><td>Backspace</td></tr><tr><td><code>\f</code></td><td>Seitenvorschub (Formfeed)</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Code</th><th>Ausgabe</th></tr></thead><tbody><tr><td><code>\'</code></td><td>einzelnes Anführungszeichen</td></tr><tr><td><code>\"</code></td><td>doppeltes Anführungszeichen</td></tr><tr><td><code>\\</code></td><td>Backslash</td></tr><tr><td><code>\n</code></td><td>Zeilenumbruch</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\b</code></td><td>Backspace</td></tr><tr><td><code>\f</code></td><td>Seitenvorschub (Formfeed)</td></tr></tbody></table>
 
 *Bitte beachte, dass das Backslash selbst mit einem Escape-Zeichen versehen werden muss, um als Backslash angezeigt zu werden.*
 
@@ -77,14 +77,6 @@ assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(){
-if (myStr !== undefined){
-console.log('myStr:\n' + myStr);}})();
-```
 
 ## --seed-contents--
 

@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c166
-title: Python Functions and Collections
+title: Python-Funktionen und Sammlungen
 challengeType: 11
 videoId: NzpU17ZVlUw
 bilibiliIds:
@@ -12,30 +12,30 @@ dashedName: python-functions-and-collections
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Anstatt, wie in dem Video gezeigt, notebooks.ai zu verwenden, kannst du auch Google Colab verwenden.*
 
-More resources:
+Weitere Ressourcen:
 
--  <a href="https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes" target="_blank" rel="noopener noreferrer nofollow">Notebooks on GitHub</a>
+-  <a href="https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes" target="_blank" rel="noopener noreferrer nofollow">Notebooks auf GitHub</a>
 -  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">How to open Notebooks from GitHub using Google Colab.</a>
 
 # --question--
 
 ## --text--
 
-What is the main difference between lists and tuples in Python?
+Was ist der Hauptunterschied zwischen Listen und Tuples in Python?
 
 ## --answers--
 
-Tuples are immutable.
+Tuples sind unveränderlich.
 
 ---
 
-Lists are ordered.
+Listen sind sortiert.
 
 ---
 
-Tuples are unordered.
+Tuples sind unsortiert.
 
 ## --video-solution--
 

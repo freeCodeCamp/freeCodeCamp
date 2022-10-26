@@ -11,7 +11,7 @@ dashedName: problem-19-counting-sundays
 You are given the following information, but you may prefer to do some research for yourself.
 
 <ul>
-  <li>1 Jan 1900 was a Monday.</li>
+  <li>Der 1. Januar 1900 war ein Montag.</li>
   <li>Thirty days has September,<br>April, June and November.<br>All the rest have thirty-one,<br>Saving February alone,<br>Which has twenty-eight, rain or shine.<br>And on leap years, twenty-nine.</li>
   <li>A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.</li>
 </ul>
@@ -20,7 +20,7 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 
 # --hints--
 
-`countingSundays(1943, 1946)` should return a number.
+`countingSundays(1943, 1946)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof countingSundays(1943, 1946) === 'number');
@@ -32,13 +32,13 @@ assert(typeof countingSundays(1943, 1946) === 'number');
 assert.strictEqual(countingSundays(1943, 1946), 6);
 ```
 
-`countingSundays(1995, 2000)` should return 10.
+`countingSundays(1995, 2000)` sollte 10 zurückgeben.
 
 ```js
 assert.strictEqual(countingSundays(1995, 2000), 10);
 ```
 
-`countingSundays(1901, 2000)` should return 171.
+`countingSundays(1901, 2000)` sollte 171 zurückgeben.
 
 ```js
 assert.strictEqual(countingSundays(1901, 2000), 171);

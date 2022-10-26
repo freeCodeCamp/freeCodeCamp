@@ -8,14 +8,14 @@ dashedName: stock-price-checker
 
 # --description--
 
-構建一個 JavaScript 的全棧應用，在功能上與這個應用相似：<https://stock-price-checker.freecodecamp.rocks/>。
+構建一個 JavaScript 的全棧應用，在功能上與這個應用相似：<a href="https://stock-price-checker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker.freecodecamp.rocks/</a>。
 
-由於所有可靠的股票價格 API 都需要一個 API 密鑰，我們已經建立了一個解決方案。 使用 [https://stock-price-checer-proxy.freecodecamp.rocks/](https://stock-price-checker-proxy.freecodecamp.rocks/) 獲取最新的股票價格信息，而無需註冊您自己的密鑰。
+由於所有可靠的股票價格 API 都需要一個 API 密鑰，我們已經建立了一個解決方案。 使用 <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker-proxy.freecodecamp.rocks/</a> 獲取最新的股票價格信息，而無需註冊你自己的密鑰。
 
 可以採用下面的任意一種方式完成這個挑戰：
 
--   克隆 [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-stockchecker/) 並在本地完成項目。
--   使用[我們的 Replit 啓動項目](https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker)來完成你的項目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow">這個 GitHub 倉庫</a>，並在本地完成你的項目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
 完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後將 URL 提交到 `Solution Link` 中。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。

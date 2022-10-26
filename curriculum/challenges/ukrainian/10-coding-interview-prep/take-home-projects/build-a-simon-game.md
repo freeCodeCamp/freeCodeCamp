@@ -8,9 +8,9 @@ dashedName: build-a-simon-game
 
 # --description--
 
-**Мета:** Створіть [CodePen.io](https://codepen.io) додаток, який схожий за функціональністю до цього: [https://codepen.io/freeCodeCamp/full/obYBjE](https://codepen.io/freeCodeCamp/full/obYBjE).
+**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/obYBjE" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/obYBjE</a>.
 
-Виконайте наведене нижче [історії користувача](https://en.wikipedia.org/wiki/User_story). Використовуйте необхідні вам бібліотеки або API. Оформіть за вашим власним стилем.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 **Історія користувача:** Я починаю випадковим чином натискати на кнопки.
 
@@ -32,7 +32,7 @@ dashedName: build-a-simon-game
 
 Коли ви закінчите, прикріпіть посилання до вашого проєкту на CodePen і натисніть кнопку: "я виконав це завдання".
 
-Ви можете отримати відгук про ваш проєкт, поділившись ним на [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

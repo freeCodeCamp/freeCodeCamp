@@ -104,6 +104,78 @@ You can convert from one format to the other carefully changing it manually. Or 
 > [!TIP]
 > A new workflow is being worked on, there will be only one place to change in the future.
 
+## How to translate articles in the footer links
+
+There are some links listed at the bottom of the footer (About, Alumni Network, Open Source etc.) and some of them can be translated into your language in the same way as other articles.
+
+Articles that can be translated:
+
+- About
+- Support
+- Academic Honesty
+- Code of Conduct
+
+The following articles should **not** be translated:
+
+- Shop
+- Sponsors
+- Privacy Policy
+- Terms of Service
+- Copyright Policy
+
+The following links are pointing to external sites and cannot be translated:
+
+- Alumni Network
+- Open Source
+
+### Change the footer links in the news
+
+Once you have translated and published the articles listed as "can be translated" above, you can update the links in the footer for `/news` by editing the file at `news/config/i18n/locales/<your language>/links.json` in the [freeCodeCamp/news](https://github.com/freeCodeCamp/news) repository.
+
+> [!NOTE]
+> Pull requests to this repository are currently limited to staff only. If you want to update this file, ask someone on the staff team for help.
+
+Update the following part in the file:
+
+```json
+{
+  ...
+  "footer": {
+    "about": "https://www.freecodecamp.org/news/about/",
+    "support": "https://www.freecodecamp.org/news/support/",
+    "honesty": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc": "https://www.freecodecamp.org/news/code-of-conduct/"
+  }
+}
+```
+
+### Change the footer links in the curriculum
+
+When you have translated and published the articles listed as "can be translated" above, as well as when the curriculum in your language is ready for launch, you can update the links in the footer for `/learn` by editing the file at `client/i18n/locales/<your language>/links.json` in the [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) repository.
+
+> [!WARNING]
+> Only "About", "Support", "Academic Honesty", and "Code of Conduct" can be translated. Leave other URLs unchanged.
+
+Update the following part in the file:
+
+```json
+{
+  ...
+  "footer": {
+    "about-url": "https://www.freecodecamp.org/news/about/",
+    "shop-url": "https://www.freecodecamp.org/shop/",
+    "support-url": "https://www.freecodecamp.org/news/support/",
+    "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
+    "honesty-url": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc-url": "https://www.freecodecamp.org/news/code-of-conduct/",
+    "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
+    "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+    "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
+  },
+  ...
+}
+```
+
 ## How to translate the info boxes headers in the documentation
 
 You can find these boxes all around the documentation:
@@ -308,7 +380,7 @@ In Crowdin, individuate the `User management` on the left hand side menu.
 
 This will open the user management tools, you will be able to see the list of all the users.
 
-Search for the user that will become contributor. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+Search for the user that will become proofreader. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
 
 The user is now a proofreader.
 

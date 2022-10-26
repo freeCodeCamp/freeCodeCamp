@@ -12,7 +12,7 @@ Consider the problem of building a wall out of 2×1 and 3×1 bricks (horizontal�
 
 For example, the following 9×3 wall is not acceptable due to the running crack shown in red:
 
-<img class="img-responsive center-block" alt="9x3 wall with one lined up gap between horizontally-adjacent bricks" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="9x3 wall with one lined up gap between horizontally-adjacent bricks" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px;" />
 
 There are eight ways of forming a crack-free 9×3 wall, written $W(9,3) = 8$.
 
@@ -20,7 +20,7 @@ Calculate $W(32,10)$.
 
 # --hints--
 
-`crackFreeWalls()` should return `806844323190414`.
+`crackFreeWalls()` sollte `806844323190414` zurückgeben.
 
 ```js
 assert.strictEqual(crackFreeWalls(), 806844323190414);

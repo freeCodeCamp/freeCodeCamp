@@ -53,7 +53,8 @@ assert(
 `bicycle.setGear(48)` は、`gear` の値を 48 に変更する必要があります。
 
 ```js
-assert(new bicycle.setGear(48).gear === 48);
+bicycle.setGear(48);
+assert(bicycle.gear === 48);
 ```
 
 # --seed--

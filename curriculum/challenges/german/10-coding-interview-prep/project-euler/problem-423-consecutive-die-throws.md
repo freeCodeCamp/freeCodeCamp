@@ -14,11 +14,8 @@ A 6-sided die is thrown $n$ times. Let $c$ be the number of pairs of consecutive
 
 For example, if $n = 7$ and the values of the die throws are (1, 1, 5, 6, 6, 6, 3), then the following pairs of consecutive throws give the same value:
 
-$$\begin{align}
-  & (\underline{1}, \underline{1}, 5, 6, 6, 6, 3) \\\\
-  & (1, 1, 5, \underline{6}, \underline{6}, 6, 3) \\\\
-  & (1, 1, 5, 6, \underline{6}, \underline{6}, 3)
-\end{align}$$
+$$\begin{align}   & (\underline{1}, \underline{1}, 5, 6, 6, 6, 3) \\\\
+  & (1, 1, 5, \underline{6}, \underline{6}, 6, 3) \\\\ & (1, 1, 5, 6, \underline{6}, \underline{6}, 3) \end{align}$$
 
 Therefore, $c = 3$ for (1, 1, 5, 6, 6, 6, 3).
 

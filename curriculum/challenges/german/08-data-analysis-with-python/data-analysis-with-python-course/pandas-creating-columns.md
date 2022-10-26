@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c15c
-title: Pandas Creating Columns
+title: Pandas Spalten erstellen
 challengeType: 11
 videoId: _sSo2XZoB3E
 bilibiliIds:
@@ -12,18 +12,18 @@ dashedName: pandas-creating-columns
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Anstatt, wie in dem Video gezeigt, notebooks.ai zu verwenden, kannst du auch Google Colab verwenden.*
 
-More resources:
+Weitere Ressourcen:
 
--  <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas" target="_blank" rel="noopener noreferrer nofollow">Notebooks on GitHub</a>
+-  <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas" target="_blank" rel="noopener noreferrer nofollow">Notebooks auf GitHub</a>
 -  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">How to open Notebooks from GitHub using Google Colab.</a>
 
 # --question--
 
 ## --text--
 
-What code would add a "Certificates per month" column to the `certificates_earned` DataFrame like the one below?
+Welcher Code würde eine "Certificates per month" Spalte zu dem `certificates_earned` DataFrame, wie unten gezeigt, hinzufügen?
 
 <pre>      Certificates  Time (in months)  Certificates per month
 Tom               8                16                    0.50

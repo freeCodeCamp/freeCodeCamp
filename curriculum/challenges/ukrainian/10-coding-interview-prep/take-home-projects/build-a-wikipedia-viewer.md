@@ -8,23 +8,21 @@ dashedName: build-a-wikipedia-viewer
 
 # --description--
 
-**Ціль: ** Створіть застосунок[ CodePen.io](https://codepen.io), який функціонально схожий на даний: [ https://codepen.io/freeCodeCamp/full/wGqEga/](https://codepen.io/freeCodeCamp/full/wGqEga/).
+**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/wGqEga/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/wGqEga/</a>.
 
-Заповніть, як нижче наведено,[ історії користувача ](https://en.wikipedia.org/wiki/User_story). Використовуйте будь-які потрібні вам бібліотеки чи API (прикладні програмні інтерфейси). Проявіть при цьому свій власний стиль.
+The MediaWiki software powers Wikipedia, and it helps you collect and organize knowledge and make it available to people.
 
-**Історія користувача:** Я можу здійснювати пошук у Вікіпедії за допомогою пошукового поля та бачити статті, що відповідають запиту.
+Using the MediaWiki API, replicate the search function and random article function, similar to the example app above. You can use Wikipedia as your data source.
 
-**Історія користувача:** Я можу натиснути кнопку, щоб побачити випадковий запис у Вікіпедії.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
-Підказка #1: Ось URL-адреса, яку ви можете використовувати для отримання випадкової статті з Вікіпедії: `https://en.wikipedia.org/wiki/Special:Random`.
+**User Story:** I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.
 
-Підказка #2: Ось матеріал на тему використання API (прикладного програмного інтерфейсу) Вікіпедії: `https://www.mediawiki.org/wiki/API:Main_page`.
+**User Story:** I can click a button to see a random Wikipedia entry.
 
-Підказка #3: Використовуйте це [посилання](https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm), щоб поекспериментувати з API Вікіпедії.
+When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 
-Коли ви завершили, додайте посилання на ваш проєкт на CodePen та натисніть кнопку "Я виконав це завдання".
-
-Ви можете отримати відгук про ваш проєкт, поділившись ним на даному форумі: [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

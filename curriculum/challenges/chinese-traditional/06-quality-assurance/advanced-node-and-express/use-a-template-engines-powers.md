@@ -12,15 +12,39 @@ dashedName: use-a-template-engines-powers
 
 在 Pug 文件中，你可以用變量名來調用變量，比如寫成 `#{variable_name}` 來實現行內調用，或像 `p=variable_name` 把元素與變量直接寫在一起，這表示 p 元素的內容等價於這個變量。
 
-建議大家在 [Pug 的 README](https://github.com/pugjs/pug) 裏看看它的語法和用法，這樣你寫出的代碼會相對簡練。 另外要注意，Pug 使用縮進來表示嵌套的代碼塊。
+ Pug 是關於使用空白和製表符來顯示嵌套元素，並減少製作一個漂亮網站所需的代碼量。 閱讀 Pug 文檔以獲取更多關於使用和語法的信息。
 
-在 pug 的 'index.pug' 文件中，我們使用了 *title* 和 *message* 兩個變量。
+ 下面是一個例子：
 
-爲了從服務器傳遞這些信息，你需要給 *res.render* 的第二個參數傳入一個對象，其中包含變量對應的值。 比如，如果你想傳遞對象 `{title: 'Hello', message: 'Please login'}` 到你的主頁，
+ ```html
+ <!--Typing this using Pug-->
+ head
+    script(type='text/javascript').
+      if (foo) bar(1 + 5);
+  body
+    if youAreUsingPug
+        p You are amazing
+      else
+        p Get on it!
 
-看起來應該像這樣：`res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});`。現在刷新頁面，你應該看到那些值就像在 index.pug 文件中一樣被渲染在頁面上正確的位置。
+<!--will lead to creating this code-->
+  <head>
+    <script type="text/javascript">
+      if (foo) bar(1 + 5);
+    </script>
+  </head>
+  <body>
+    <p>You are amazing</p>
+  </body>
+  ```
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考 [這裏](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871) 的答案。
+查看在你的項目中的 pug 文件 `index.pug`，我們使用了變量 `title` 和 `message`。
+
+爲了從服務器傳遞這些信息，你需要給 `res.render` 的第二個參數傳入一個對象，其中包含變量和對應的值。 例如，在設置索引視圖的變量時傳遞此對象：`{title: 'Hello', message: 'Please login'}`。
+
+看起來應該像這樣：`res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});`。現在刷新頁面，你應該看到那些值就像在 `index.pug` 文件中一樣被渲染在頁面上正確的位置。
+
+完成上述要求後，你可以在下方提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以查看<a href="https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871" target="_blank" rel="noopener noreferrer nofollow">已執行項目的當前進度</a>。
 
 # --hints--
 

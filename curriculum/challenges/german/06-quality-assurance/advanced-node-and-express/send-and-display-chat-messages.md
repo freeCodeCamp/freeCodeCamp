@@ -16,7 +16,7 @@ $('form').submit(function() {
 });
 ```
 
-Within the form submit code, you should emit an event after you define `messageToSend` but before you clear the text box `#m`. The event should be named `'chat message'` and the data should just be `messageToSend`.
+Within the form submit code, you should emit an event after you define `messageToSend` but before you clear the text box `#m`. Das Ereignis sollte `'chat message'` heißen und die Daten sollten einfach `messageToSend` sein.
 
 ```js
 socket.emit('chat message', messageToSend);
@@ -50,7 +50,7 @@ Server should listen for `'chat message'` and then emit it properly.
   );
 ```
 
-Client should properly handle and display the new data from event `'chat message'`.
+Der Client sollte die neuen Daten aus dem Ereignis `'chat message'` richtig verarbeiten und anzeigen.
 
 ```js
 (getUserInput) =>

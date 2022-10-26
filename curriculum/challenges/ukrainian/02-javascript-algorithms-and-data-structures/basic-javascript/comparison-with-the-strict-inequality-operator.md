@@ -14,44 +14,42 @@ dashedName: comparison-with-the-strict-inequality-operator
 **Приклади**
 
 ```js
-3 !==  3
-3 !== '3'
-4 !==  3
+3 !==  3  // false
+3 !== '3' // true
+4 !==  3  // true
 ```
-
-У такому порядку, ці вирази будуть оцінювати, як `false`, `true`,`true`.
 
 # --instructions--
 
-Додайте оператора абсолютної нерівності до команди `if`, щоб функція визначила рядок `Not Equal`, коли `val` не є абсолютно рівним `17`
+Add the strict inequality operator to the `if` statement so the function will return the string `Not Equal` when `val` is not strictly equal to `17`
 
 # --hints--
 
-`testStrictNotEqual(17)` перетворюється в рядку на `Equal`
+`testStrictNotEqual(17)` має повернути рядок `Equal`
 
 ```js
 assert(testStrictNotEqual(17) === 'Equal');
 ```
 
-`testStrictNotEqual("17")` перетворюється в рядку на `Not Equal`
+`testStrictNotEqual("17")` має повернути рядок `Not Equal`
 
 ```js
 assert(testStrictNotEqual('17') === 'Not Equal');
 ```
 
-`testStrictNotEqual(12)` перетворюється в рядку на `Not Equal`
+`testStrictNotEqual(12)` має повернути рядок `Not Equal`
 
 ```js
 assert(testStrictNotEqual(12) === 'Not Equal');
 ```
 
-`testStrictNotEqual("bob")` перетворюється в рядку на `Not Equal`
+`testStrictNotEqual("bob")` має повернути рядок `Not Equal`
 
 ```js
 assert(testStrictNotEqual('bob') === 'Not Equal');
 ```
 
-Вам слід використовувати оператора`!==`
+You should use the `!==` operator
 
 ```js
 assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);

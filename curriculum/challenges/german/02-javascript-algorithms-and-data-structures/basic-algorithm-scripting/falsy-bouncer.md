@@ -8,7 +8,7 @@ dashedName: falsy-bouncer
 
 # --description--
 
-Entferne alle fehlerhaften Werte aus einem Array.
+Entferne alle fehlerhaften Werte aus einem Array. Gibt ein neues Array zurück; verändere nicht das ursprüngliche Array.
 
 Folgendes sind fehlerhafte Werte in JavaScript: `false`, `null`, `0`, `""`, `undefined`, und `NaN`.
 
@@ -38,6 +38,14 @@ assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 
 ```js
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
+```
+
+`arr` sollte nicht verändert werden.
+
+```js
+const arr = ['a', false, 0, 'Naomi'];
+bouncer(arr);
+assert.deepEqual(arr, ['a', false, 0, 'Naomi'])
 ```
 
 # --seed--

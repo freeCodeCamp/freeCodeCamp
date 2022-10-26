@@ -25,39 +25,37 @@ function equalityTest(myVal) {
 Якщо `myVal` рівнозначний `10`, оператор рівності видає `true`, тож код у фігурних дужках виконається, і функція буде `Equal`. В іншому випадку, функція буде `Not Equal`. Для того, щоб JavaScript порівняв два різні <dfn>типи даних</dfn> (наприклад, `numbers` і `strings`), потрібно конвертувати один тип в інший. Це називається Перетворення Типів. Однак, після його виконання поняття порівнюються наступним чином:
 
 ```js
-1   ==  1
-1   ==  2
-1   == '1'
-"3" ==  3
+1   ==  1  // true
+1   ==  2  // false
+1   == '1' // true
+"3" ==  3  // true
 ```
-
-У такому ж порядку, як вони є, ці вирази будуть оцінені, як `true`, `false`, `true`, і `true`.
 
 # --instructions--
 
-Додайте оператор рівності до зазначеного рядка, щоб функція визначила рядок, як `Equal`, коли `val` еквівалентна `12`.
+Add the equality operator to the indicated line so that the function will return the string `Equal` when `val` is equivalent to `12`.
 
 # --hints--
 
-`testEqual(10)` повинен повернути рядок `Not Equal`
+`testEqual(10)` should return the string `Not Equal`
 
 ```js
 assert(testEqual(10) === 'Not Equal');
 ```
 
-`testEqual(12)` повинен повернути рядок `Equal`
+`testEqual(12)` should return the string `Equal`
 
 ```js
 assert(testEqual(12) === 'Equal');
 ```
 
-`testEqual("12")` повинен повернути рядок `Equal`
+`testEqual("12")` should return the string `Equal`
 
 ```js
 assert(testEqual('12') === 'Equal');
 ```
 
-Слід використовувати оператор `==`
+You should use the `==` operator
 
 ```js
 assert(code.match(/==/g) && !code.match(/===/g));

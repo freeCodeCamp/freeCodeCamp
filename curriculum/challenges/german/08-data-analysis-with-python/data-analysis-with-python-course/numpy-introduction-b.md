@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c153
-title: Numpy Introduction B
+title: NumPy Einführung B
 challengeType: 11
 videoId: YIqgrNLAZkA
 bilibiliIds:
@@ -12,11 +12,11 @@ dashedName: numpy-introduction-b
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Anstatt notebooks.ai zu verwenden, wie es im Video gezeigt wird, kannst du stattdessen Google Colab verwenden.*
 
-More resources:
+Weitere Ressourcen:
 
--  <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy" target="_blank" rel="noopener noreferrer nofollow">Notebooks on GitHub</a>
+-  <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy" target="_blank" rel="noopener noreferrer nofollow">Notebooks auf GitHub</a>
 -  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">How to open Notebooks from GitHub using Google Colab.</a>
 
 # --question--
@@ -27,19 +27,19 @@ About how much memory does the integer `5` consume in plain Python?
 
 ## --answers--
 
-32 bits
+32 Bits
 
 ---
 
-20 bytes
+20 Byte
 
 ---
 
-16 bytes
+16 Byte
 
 ---
 
-8 bits
+8 Bits
 
 ## --video-solution--
 

@@ -1,13 +1,13 @@
 ---
 id: 62aa27c40ca6f04ab8be5fac
-title: Step 166
+title: Paso 166
 challengeType: 0
 dashedName: step-166
 ---
 
 # --description--
 
-A `for` loop runs for a specific number of times. We will break down how a `for` loop runs in the next several steps. For now, copy this loop below and paste it at the end of your `pick` function.
+A `for` loop runs for a specific number of times. Desglosaremos cómo se ejecuta un bucle `for` en los siguientes pasos. For now, copy this loop below and paste it at the end of your `pick` function.
 
 ```js
 for (let x = 1; x < 5; x++) {
@@ -369,7 +369,7 @@ function pick(guess) {
     numbers.push(Math.floor(Math.random() * 11));
   }
   text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
-  
+
 }
 --fcc-editable-region--
 ```

@@ -26,25 +26,25 @@ We'll also pass strings with special symbols, such as `2A3*3a2`, `2A3 3a2`, and 
 assert(typeof palindrome('eye') === 'boolean');
 ```
 
-`palindrome("eye")` should return `true`.
+`palindrome("eye")` sollte `true` zurückgeben.
 
 ```js
 assert(palindrome('eye') === true);
 ```
 
-`palindrome("_eye")` should return `true`.
+`palindrome("_eye")` sollte `true` zurückgeben.
 
 ```js
 assert(palindrome('_eye') === true);
 ```
 
-`palindrome("race car")` should return `true`.
+`palindrome("race car")` sollte `true` zurückgeben.
 
 ```js
 assert(palindrome('race car') === true);
 ```
 
-`palindrome("not a palindrome")` should return `false`.
+`palindrome("not a palindrome")` sollte `false` zurückgeben.
 
 ```js
 assert(palindrome('not a palindrome') === false);
@@ -56,43 +56,43 @@ assert(palindrome('not a palindrome') === false);
 assert(palindrome('A man, a plan, a canal. Panama') === true);
 ```
 
-`palindrome("never odd or even")` should return `true`.
+`palindrome("never odd or even")` sollte `true` zurückgeben.
 
 ```js
 assert(palindrome('never odd or even') === true);
 ```
 
-`palindrome("nope")` should return `false`.
+`palindrome("nope")` sollte `false` zurückgeben.
 
 ```js
 assert(palindrome('nope') === false);
 ```
 
-`palindrome("almostomla")` should return `false`.
+`palindrome("almostomla")` sollte `false` zurückgeben.
 
 ```js
 assert(palindrome('almostomla') === false);
 ```
 
-`palindrome("My age is 0, 0 si ega ym.")` should return `true`.
+`palindrome("My age is 0, 0 si ega ym.")` sollte `true` zurückgeben.
 
 ```js
 assert(palindrome('My age is 0, 0 si ega ym.') === true);
 ```
 
-`palindrome("1 eye for of 1 eye.")` should return `false`.
+`palindrome("1 eye for of 1 eye.")` sollte `false` zurückgeben.
 
 ```js
 assert(palindrome('1 eye for of 1 eye.') === false);
 ```
 
-`palindrome("0_0 (: /-\ :) 0-0")` should return `true`.
+`palindrome("0_0 (: /-\ :) 0-0")` sollte `true` zurückgeben.
 
 ```js
 assert(palindrome('0_0 (: /- :) 0-0') === true);
 ```
 
-`palindrome("five|\_/|four")` should return `false`.
+`palindrome("five|\_/|four")` sollte `false` zurückgeben.
 
 ```js
 assert(palindrome('five|_/|four') === false);

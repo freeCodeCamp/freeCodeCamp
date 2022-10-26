@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c165
-title: Python Introduction
+title: Python Einführung
 challengeType: 11
 videoId: PrQV9JkLhb4
 bilibiliIds:
@@ -12,34 +12,34 @@ dashedName: python-introduction
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Anstatt, wie in dem Video gezeigt, notebooks.ai zu verwenden, kannst du auch Google Colab verwenden.*
 
-More resources:
+Weitere Ressourcen:
 
--  <a href="https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes" target="_blank" rel="noopener noreferrer nofollow">Notebooks on GitHub</a>
+-  <a href="https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes" target="_blank" rel="noopener noreferrer nofollow">Notebooks auf GitHub</a>
 -  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">How to open Notebooks from GitHub using Google Colab.</a>
 
 # --question--
 
 ## --text--
 
-How do we define blocks of code in the body of functions in Python?
+Wie definieren wir Code-Blöcke im Körper der Funktionen in Python?
 
 ## --answers--
 
-We use a set of curly braces, one on either side of each new block of our code.
+Wir verwenden ein Set von geschweiften Klammern, eine auf jeder Seite von jedem neuen Block unseres Codes.
 
 ---
 
-We use indentation, usually right-aligned 4 spaces.
+Wir verwenden Einrückungen, in der Regel 4 rechts ausgerichtete Leerzeichen.
 
 ---
 
-We do not denote blocks of code.
+Wir kennzeichnen keine Codeblöcke.
 
 ---
 
-We could use curly braces or indentation to denote blocks of code.
+Wir könnten geschweifte Klammern oder Einrückungen verwenden, um Code-Blöcke zu kennzeichnen.
 
 ## --video-solution--
 

@@ -18,7 +18,7 @@ dashedName: how-to-use-passport-strategies
 
 Зараз, якщо ви введете ім'я користувача і пароль у форму, вас має переадресувати на домашню сторінку `/`, а консоль вашого серверу повинна показувати `'User {USERNAME} attempted to log in.'`, оскільки ми на цей час не можемо увійти в обліковий запис користувача, який не зареєстрований.
 
-Підтвердіть сторінку, якщо все зрозуміло. Якщо сталась якась помилка, ви маєте змогу перевірити статус проєкту до цього етапу [here](https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9).
+Підтвердіть сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
