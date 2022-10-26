@@ -99,7 +99,7 @@ function getCompletedChallengesInBlock(
   return (
     completedChallengesIds.filter(challengeId =>
       currentBlockChallengeIds.includes(challengeId)
-    ).length + +currentChallengeAlreadyCompleted
+    ).length + +(!currentChallengeAlreadyCompleted && 1)
   );
 }
 
