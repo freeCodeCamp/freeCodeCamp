@@ -8,57 +8,57 @@ dashedName: rock-paper-scissors
 
 # --description--
 
-For this challenge, you will create a program to play Rock, Paper, Scissors. A program that picks at random will usually win 50% of the time. To pass this challenge your program must play matches against four different bots, winning at least 60% of the games in each match.
+在这个挑战中，你将创建一个程序来玩石头、剪刀、布。 一个随机选取的程序通常会有 50% 的时间获胜。 要通过这一挑战，你的程序必须与四个不同的机器人进行对战，并达到至少 60% 胜率。
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
 
-We are still developing the interactive instructional part of the machine learning curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+我们仍在开发机器学习课程的交互式课程部分。 现在，你需要使用其他资源来学习如何通过这一挑战。
 
 # --instructions--
 
-In the file `RPS.py` you are provided with a function called `player`. The function takes an argument that is a string describing the last move of the opponent ("R", "P", or "S"). The function should return a string representing the next move for it to play ("R", "P", or "S").
+在文件 `RPS.py` 中，你会看到一个名为 `player` 的函数。 该函数接受一个参数，该参数是一个字符串，描述了对手的最后一步（“R”、“P” 或 “S”）。 该函数应返回一个字符串，表示它要播放的下一步动作（“R”、“P”或“S”）。
 
-A player function will receive an empty string as an argument for the first game in a match since there is no previous play.
+玩家函数将接收一个空字符串作为比赛中第一场比赛的参数，因为之前没有比赛。
 
-The file `RPS.py` shows an example function that you will need to update. The example function is defined with two arguments (`player(prev_play, opponent_history = [])`). The function is never called with a second argument so that one is completely optional. The reason why the example function contains a second argument (`opponent_history = []`) is because that is the only way to save state between consecutive calls of the `player` function. You only need the `opponent_history` argument if you want to keep track of the opponent_history.
+文件 `RPS.py` 显示了一个你需要更新的示例函数。 示例函数使用两个参数定义（`player(prev_play, opponent_history = [])`）。 该函数从不使用第二个参数调用，因此它是完全可选的。 示例函数包含第二个参数（`opponent_history = []`）的原因，是因为这是在连续调用 `player` 函数之间保存状态的唯一方法。 如果你想跟踪对手历史，你只需要 `opponent_history` 参数。
 
-*Hint: To defeat all four opponents, your program may need to have multiple strategies that change depending on the plays of the opponent.*
+*提示：为了打败所有四个对手，你的程序可能需要有多种策略，这些策略会根据对手的棋局而改变。*
 
-## Development
+## 开发
 
-Do not modify `RPS_game.py`. Write all your code in `RPS.py`. For development, you can use `main.py` to test your code.
+不要修改 `RPS_game.py`。 在 `RPS.py` 中编写所有代码。 对于开发，你可以使用 `main.py` 来测试你的代码。
 
-`main.py` imports the game function and bots from `RPS_game.py`.
+`main.py` 从 `RPS_game.py` 导入游戏功能和机器人。
 
-To test your code, play a game with the `play` function. The `play` function takes four arguments:
+要测试你的代码，请使用 `play` 函数玩游戏。 `play` 函数有四个参数：
 
-- two players to play against each other (the players are actually functions)
-- the number of games to play in the match
-- an optional argument to see a log of each game. Set it to `True` to see these messages.
+- 两个玩家互相对战（玩家实际上是函数）
+- 比赛的比赛场数
+- 一个可选参数来查看每场比赛的日志。 将其设置为 `True` 以查看这些消息。
 
 ```py
 play(player1, player2, num_games[, verbose])
 ```
 
-For example, here is how you would call the function if you want `player` and `quincy` to play 1000 games against each other and you want to see the results of each game:
+例如，如果你希望 `player` 和 `quincy` 互相对战 1000 场比赛，并且你想查看每场比赛的结果，你将这样调用该函数：
 
 ```py
 play(player, quincy, 1000, verbose=True)
 ```
 
-Click the "run" button and `main.py` will run.
+单击“运行”按钮，`main.py` 将运行。
 
-## Testing
+## 测试
 
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. If you uncomment the last line in `main.py`, the tests will run automatically whenever you hit the "run" button.
+这个项目的单元测试在 `test_module.py` 中。 为了你的方便，我们将测试从 `test_module.py` 导入到 `main.py`。 如果你移除 `main.py` 中最后一行的注释，则只要你点击“运行”按钮，测试就会自动运行。
 
-## Submitting
+## 提交
 
-Copy your project's URL and submit it below.
+复制项目的 URL 并在下面提交。
 
 # --hints--
 
-It should pass all Python tests.
+它应该通过所有的 Python 测试。
 
 ```js
 

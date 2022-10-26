@@ -15,7 +15,7 @@ dashedName: state-name-puzzle
 
 Write a function to solve the challenge for a given array of actual U.S. state names, and for fictional state names.
 
-The function should return an array. Each element should be an object in this form: `{"from":[],"to":[]}`. The `"from"` array should contain the original names and the `"to"` array should contain the resultant names.
+The function should return an array. Each element should be an object in this form: `{"from":[],"to":[]}`. The `from` array should contain the original names and the `to` array should contain the resultant names.
 
 # --hints--
 

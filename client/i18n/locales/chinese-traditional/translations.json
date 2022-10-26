@@ -453,7 +453,7 @@
     "certification-project": "認證項目",
     "iframe-preview": "{{title}} 預覽",
     "iframe-alert": "通常，此鏈接會將你帶到另一個網站！一切正常，這個鏈接指向：{{externalLink}}。",
-    "iframe-form-submit-alert": "Normally this form would be submitted! It works. This will be submitted to: {{externalLink}}",
+    "iframe-form-submit-alert": "通常這個表單將被提交！工作正常，這將被提交到：{{externalLink}}",
     "document-notfound": "找不到文件"
   },
   "icons": {

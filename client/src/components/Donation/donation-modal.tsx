@@ -42,7 +42,7 @@ type DonateModalProps = {
   activeDonors?: number;
   closeDonationModal: typeof closeDonationModal;
   executeGA: typeof executeGA;
-  location: WindowLocation | undefined;
+  location?: WindowLocation;
   recentlyClaimedBlock: string;
   show: boolean;
 };

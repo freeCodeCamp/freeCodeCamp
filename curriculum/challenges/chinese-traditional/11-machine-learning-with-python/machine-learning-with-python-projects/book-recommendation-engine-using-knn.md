@@ -8,29 +8,29 @@ dashedName: book-recommendation-engine-using-knn
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-book-recommendation-engine/blob/master/fcc_book_recommendation_knn.ipynb" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+你將<a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-book-recommendation-engine/blob/master/fcc_book_recommendation_knn.ipynb" target="_blank" rel="noopener noreferrer nofollow">使用 Google Colaboratory 來完成這個項目</a>。
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+進入該鏈接後，在你自己的賬戶或本地創建一個筆記本的副本。 一旦你完成項目並通過測試（包括在該鏈接），請在下面提交你的項目鏈接。 如果你提交的是 Google Colaboratory 的鏈接，請確保打開鏈接共享時選擇 “anyone with the link”。
 
-We are still developing the interactive instructional content for the machine learning curriculum. For now, you can go through the video challenges in this certification. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
+我們仍在開發機器學習課程的交互式課程部分。 現在，你可以通過這個認證中的視頻挑戰。 你可能還需要尋找額外的學習資源，類似於你在真實世界項目中的工作。
 
 # --instructions--
 
-In this challenge, you will create a book recommendation algorithm using **K-Nearest Neighbors**.
+在這個挑戰中，你將使用 **K-Nearest Neighbors** 創建一個圖書推薦算法。
 
-You will use the <a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/" target="_blank" rel="noopener noreferrer nofollow">Book-Crossings dataset</a>. This dataset contains 1.1 million ratings (scale of 1-10) of 270,000 books by 90,000 users.
+你將使用 <a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/" target="_blank" rel="noopener noreferrer nofollow">Book-Crossings 數據集</a>。 該數據集包括 90,000 名用戶對 270,000 冊書籍的 110 萬份評分（評分從 1 至 10）。
 
-After importing and cleaning the data, use `NearestNeighbors` from `sklearn.neighbors` to develop a model that shows books that are similar to a given book. The Nearest Neighbors algorithm measures the distance to determine the “closeness” of instances.
+導入並清理數據後，使用 `sklearn.neighbors` 中的 `NearestNeighbors` 開發一個模型，顯示與給定書籍相似的書籍。 最近鄰算法測量距離以確定實例的“接近度”。
 
-Create a function named `get_recommends` that takes a book title (from the dataset) as an argument and returns a list of 5 similar books with their distances from the book argument.
+創建一個名爲 `get_recommends` 的函數，它將書名（來自數據集）作爲參數，並返回 5 本書的列表以及它們與書參數的距離。
 
-This code:
+這個代碼：
 
 ```py
 get_recommends("The Queen of the Damned (Vampire Chronicles (Paperback))")
 ```
 
-should return:
+應該返回：
 
 ```py
 [
@@ -45,15 +45,15 @@ should return:
 ]
 ```
 
-Notice that the data returned from `get_recommends()` is a list. The first element in the list is the book title passed into the function. The second element in the list is a list of five more lists. Each of the five lists contains a recommended book and the distance from the recommended book to the book passed into the function.
+請注意，從 `get_recommends()` 返回的數據是一個列表。 列表中的第一個元素是傳遞給函數的書名。 列表中的第二個元素是另外五個列表的列表。 五個列表中的每一個都包含一本推薦書以及從推薦書到傳遞給函數的書的距離。
 
-If you graph the dataset (optional), you will notice that most books are not rated frequently. To ensure statistical significance, remove from the dataset users with less than 200 ratings and books with less than 100 ratings.
+如果你繪製數據集的圖表（可選），你會注意到大多數書籍的評價並不頻繁。 爲了確保統計學上的顯著性，從數據集中刪除評分低於 200 的用戶和評分低於 100 的書籍。
 
-The first three cells import libraries you may need and the data to use. The final cell is for testing. Write all your code in between those cells.
+前三個單元格導入你可能需要的庫和要使用的數據。 最後一個單元用於測試。 在這些單元格之間寫下所有代碼。
 
 # --hints--
 
-It should pass all Python tests.
+它應該通過所有的 Python 測試。
 
 ```js
 
