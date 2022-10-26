@@ -8,7 +8,9 @@ import CompletionModalBody from './completion-modal-body';
 const props = {
   block: 'basic-html-and-html5',
   completedPercent: Math.floor(Math.random() * 101),
-  completedProjects: 'Completed 5 of 10 challenges',
+  completedChallengesInBlock: 2,
+  totalChallengesInBlock: 5,
+  currentChallengeId: '',
   superBlock: SuperBlocks.RespWebDesign
 };
 
