@@ -8,7 +8,7 @@ dashedName: handle-click-events-with-javascript-using-the-onclick-property
 
 # --description--
 
-You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called `DOMContentLoaded`. Here's the code that does this:
+You want your code to execute only once your page has finished loading. لهذا الغرض، يمكنك إرفاق حدث (event) من JavaScript لمستند مسمى `DOMContentLoaded`. إليك كود الذي يفعل ذلك:
 
 ```js
 document.addEventListener('DOMContentLoaded', function() {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-You can implement event handlers that go inside of the `DOMContentLoaded` function. You can implement an `onclick` event handler which triggers when the user clicks on the element with id `getMessage`, by adding the following code:
+يمكنك تنفيذ معالجات الأحداث (event handlers) التي تحدث داخل وظيفة `DOMContentLoaded`. يمكنك تفعيل معالج الحدث `onclick` الذي يُفَعل عندما ينقر المستخدم على العنصر مع معرف `getMessage`، عن طريق إضافة الرمز التالي:
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
@@ -24,17 +24,17 @@ document.getElementById('getMessage').onclick = function(){};
 
 # --instructions--
 
-Add a click event handler inside of the `DOMContentLoaded` function for the element with id of `getMessage`.
+أضف معالج أحداث النقر داخل وظيفة `DOMContentLoaded` للعنصر مع معرف `getMessage`.
 
 # --hints--
 
-Your code should use the `document.getElementById` method to select the `getMessage` element.
+يجب أن تستخدم كودك طريقة `document.getElementById` لتحديد عنصر `getMessage`.
 
 ```js
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
 ```
 
-Your code should add an `onclick` event handler.
+يجب أن تضيف إلى كودك معالج الحدث `onclick`.
 
 ```js
 assert(typeof document.getElementById('getMessage').onclick === 'function');

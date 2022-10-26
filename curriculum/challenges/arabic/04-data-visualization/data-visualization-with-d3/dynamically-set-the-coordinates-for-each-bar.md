@@ -1,6 +1,6 @@
 ---
 id: 587d7fa9367417b2b2512bce
-title: Dynamically Set the Coordinates for Each Bar
+title: تعيين الإحداثيات ديناميكيا لكل شريط
 challengeType: 6
 forumTopicId: 301487
 dashedName: dynamically-set-the-coordinates-for-each-bar
@@ -8,9 +8,9 @@ dashedName: dynamically-set-the-coordinates-for-each-bar
 
 # --description--
 
-The last challenge created and appended a rectangle to the `svg` element for each point in `dataset` to represent a bar. Unfortunately, they were all stacked on top of each other.
+التحدي السابق أنشئت وألحقت مستطيل بعنصر `svg` لكل نقطة في `dataset` لتستعرض شريط. لسوء الحظ، كانوا مكدسين بعضَهم فوق بعض.
 
-The placement of a rectangle is handled by the `x` and `y` attributes. They tell D3 where to start drawing the shape in the `svg` area. The last challenge set them each to 0, so every bar was placed in the upper-left corner.
+يمكنك تحكم في موضع المستطيل بواسطة أستخدام سمات (attributes) تسمى `x` و `y`. لتخبر D3 أين يبدأ في رسم الشكل في منطقة `svg`. The last challenge set them each to 0, so every bar was placed in the upper-left corner.
 
 For a bar chart, all of the bars should sit on the same vertical level, which means the `y` value stays the same (at 0) for all bars. The `x` value, however, needs to change as you add new bars. Remember that larger `x` values push items farther to the right. As you go through the array elements in `dataset`, the `x` value should increase.
 
