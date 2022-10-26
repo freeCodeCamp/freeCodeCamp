@@ -2,7 +2,7 @@ import {
   availableLangs,
   hiddenLangs,
   LangNames
-} from '../../../../../config/i18n/all-langs';
+} from '../../../../../config/i18n';
 import envData from '../../../../../config/env.json';
 
 const { clientLocale } = envData;

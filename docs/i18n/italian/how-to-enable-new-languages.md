@@ -275,7 +275,7 @@ Aggiorna il file `.env` in modo da poter utilizzare la tua lingua per `CLIENT_LO
 
 Una volta che questi saranno in posizione, dovresti essere in grado di eseguire `npm run develop` per vedere la versione tradotta di freeCodeCamp.
 
-> [!TIP] If you build the client in one language and then want to build it in a different language, you will need to use the command `npm run clean-and-develop` after changing the `.env` file, as Gatsby will cache the first language.
+> [!TIP] Se costruisci il client in una lingua e poi vuoi costruirlo in una lingua diversa, dovrai usare il comando `npm run clean-and-develop` dopo aver cambiato il file `.env`, dato che Gatsby memorizzerà nella cache la prima lingua.
 
 > [!ATTENTION] Anche se puoi farei delle traduzioni localmente per i test, ricordiamo che le traduzioni _non_ devono essere inviate attraverso GitHub ma solo tramite Crowdin. Assicurati di resettare il tuo codebase locale dopo che avrai finito con i test.
 
@@ -283,15 +283,15 @@ Una volta che questi saranno in posizione, dovresti essere in grado di eseguire 
 
 Per distribuire News per una nuova lingua, dovrai creare due PR. Una Pr sarà al [repo CDN](https://github.com/freeCodeCamp/cdn), e l'altra sarà al [repo News](https://github.com/freeCodeCamp/news).
 
-## Prep the CDN Repo for the New Language
+## Preparare il Repo CDN per la nuova lingua
 
-News sources trending links and article titles from our CDN during the build and adds them to the footer. News also fetches Day.js files from the CDN during the build to localize dates and times for each language.
+News ottiene i link di tendenza e i titoli degli articoli dal nostro CDN durante il build e li aggiunge al piè di pagina. News recupera anche i file Day.js dal CDN durante il build per localizzare date e orari per ogni lingua.
 
-### Add a YAML File for Trending Articles
+### Aggiungere un file YAML per gli articoli di tendenza
 
-Clone the [CDN repo](https://github.com/freeCodeCamp/cdn) and create a new branch.
+Clona il [repo CDN](https://github.com/freeCodeCamp/cdn) e crea un nuovo branch.
 
-In the [`build/universal/trending`](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) directory, create a new file and name it `language.yaml`. For example, if you are launching Dothraki News, name the file `dothraki.yaml`.
+Nella cartella [`build/universal/trending`](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending), crea un nuovo file e chiamalo `language.yaml`. For example, if you are launching Dothraki News, name the file `dothraki.yaml`.
 
 Then copy the contents of the [`english.yaml`](https://github.com/freeCodeCamp/cdn/blob/main/build/universal/trending/english.yaml) trending file and paste it into the new YAML file you just created.
 

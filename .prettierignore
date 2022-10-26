@@ -5,7 +5,7 @@ client/static
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 config/**/*.json
-config/i18n/all-langs.js
+config/i18n.js
 config/certification-settings.js
 docs/i18n
 utils/block-nameify.js
