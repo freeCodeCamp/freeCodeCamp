@@ -1,3 +1,5 @@
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Button,
   DropdownButton,
@@ -71,7 +73,7 @@ export function SolutionDisplayWidget({
       id={`btn-for-${id}`}
       onClick={showUserCode}
     >
-      {viewText}
+      {viewText} <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
   );
   const ShowMultifileProjectSolution = (
@@ -131,7 +133,7 @@ export function SolutionDisplayWidget({
       rel='noopener noreferrer'
       target='_blank'
     >
-      {viewText}
+      {viewText} <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
   );
   const MissingSolutionComponent =
