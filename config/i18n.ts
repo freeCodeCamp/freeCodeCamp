@@ -227,7 +227,7 @@ export const hiddenLangs = ['arabic'];
 /**
  * This array contains languages that use the RTL layouts.
  */
-export const rtlLangs = ['arabic', 'urdu'];
+export const rtlLangs = ['arabic'];
 
 // locale is sourced from a JSON file, so we use getLangCode to
 // find the associated enum values
