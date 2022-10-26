@@ -12,11 +12,11 @@ Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: 
 
 Ecco le specifiche user story da implementare per questo progetto:
 
-**User Story:** Come utente non autenticato, posso vedere tutti i bar nella mia zona.
+**User Story:** As an unauthenticated user, you can view all bars in your area.
 
-**User Story:** Come utente autenticato, posso aggiungermi a un bar per indicarti dove vado questa sera.
+**User Story:** As an authenticated user, you can add yourself to a bar to indicate you are going there tonight.
 
-**User Story:** Come utente autenticato, puoi rimuovermi da un bar se non vuoi più andare là.
+**User Story:** As an authenticated user, you can remove yourself from a bar if you no longer want to go there.
 
 **User Story:** Come utente non autenticato, quando fai login non devi effettuare di nuovo la ricerca.
 

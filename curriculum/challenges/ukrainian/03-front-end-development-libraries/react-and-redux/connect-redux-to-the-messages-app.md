@@ -14,7 +14,7 @@ dashedName: connect-redux-to-the-messages-app
 
 # --instructions--
 
-Редактор коду вже містить весь написаний вами код у цій секції. Єдина зміна полягає у тому, що компонент React перейменовується на `Presentational`. Створіть новий компонент, який знаходиться у константі під назвою `Container`, який використовує `connect`, щоб під'єднати компонент `Presentational` до Redux. Потім, у `AppWrapper`, відобразіть React Redux компонент `Provider`. Передайте `Provider` Redux `store` у якості пропсу і відобразіть `Container` як дочірній компонент. Коли все буде налаштоване, ви побачите додаток повідомлень виведеним на сторінку знову.
+Редактор коду вже містить весь написаний вами код у цій секції. Єдина зміна полягає у тому, що компонент React перейменовується на `Presentational`. Створіть новий компонент, який знаходиться у константі під назвою `Container`, який використовує `connect`, щоб під'єднати компонент `Presentational` до Redux. Потім, у `AppWrapper`, відобразіть React Redux компонент `Provider`. Передайте `Provider` Redux `store` у якості пропсу і відобразіть `Container` як дочірній компонент. Once everything is set up, you will see the messages app rendered to the page again.
 
 # --hints--
 

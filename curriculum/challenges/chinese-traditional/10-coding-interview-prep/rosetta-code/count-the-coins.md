@@ -46,7 +46,7 @@ assert(typeof countCoins === 'function');
 assert.equal(countCoins(15), 6);
 ```
 
-`countCoins(85)` 應該返回 `163`。
+`countCoins(85)` should return `163`.
 
 ```js
 assert.equal(countCoins(85), 163);

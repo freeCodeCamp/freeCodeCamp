@@ -24,7 +24,7 @@ Controlla l'ortografia delle due variabili utilizzate nel calcolo di netWorkingC
 assert(netWorkingCapital === 2);
 ```
 
-Non ci dovrebbero essere casi di variabili scritte male nel codice.
+There should be no instances of misspelled variables in the code.
 
 ```js
 assert(!code.match(/recievables/g));
@@ -36,7 +36,7 @@ La variabile `receivables` dovrebbe essere dichiarata e utilizzata correttamente
 assert(code.match(/receivables/g).length == 2);
 ```
 
-Non ci dovrebbero essere casi di variabili scritte male nel codice.
+There should be no instances of misspelled variables in the code.
 
 ```js
 assert(!code.match(/payable;/g));

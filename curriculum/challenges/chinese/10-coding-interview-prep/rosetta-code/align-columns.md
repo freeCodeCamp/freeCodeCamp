@@ -38,7 +38,7 @@ const testText = [
 - 列之间的最小间距应根据文本计算，而不是硬编码。
 - 不需要在列之间或列周围添加分隔字符。
 
-For example, one of the lines from the `testText`, after jusitifing to the right, left and center respectivelly:
+For example, one of the lines from the `testText`, after justifying to the right, left and center respectively:
 
 ```js
 '    column        are separated     by     at    least       one space.\n'

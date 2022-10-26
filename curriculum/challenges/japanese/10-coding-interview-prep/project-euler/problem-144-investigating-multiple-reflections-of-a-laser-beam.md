@@ -15,8 +15,8 @@ dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
 その上部には $−0.01 ≤ x ≤ +0.01$ に対応する個所に穴があり、そこから光線が出入りできます。
 
 <div style="text-align: center">
-  <img class="img-responsive center-block" alt="点 (0.0, 10.1) から出発し、点 (1.4, -9.6) でミラーに当たる光線" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
-  <img class="img-responsive center-block" alt="光線の最初の 10 回の反射を示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="light beam starting at point (0.0, 10.1), and impacting the mirror at point (1.4, -9.6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="animation with first 10 reflections of the beam" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
 </div><br>
 
 この問題では、光線はホワイトセルのすぐ外側 (0.0, 10.1) から発射され、まず (1.4, -9.6) でミラーに反射します。

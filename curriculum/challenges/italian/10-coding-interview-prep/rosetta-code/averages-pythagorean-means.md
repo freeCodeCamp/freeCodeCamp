@@ -23,7 +23,7 @@ Mostra che $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)
 
 # --instructions--
 
-Quando scrivi la funzione, assumi che l'input sia un array ordinato inclusivo di tutti i numeri.
+When writing your function, assume the input is an ordered array of all-inclusive numbers.
 
 Per l'output per favore usa un oggetto del seguente formato:
 
