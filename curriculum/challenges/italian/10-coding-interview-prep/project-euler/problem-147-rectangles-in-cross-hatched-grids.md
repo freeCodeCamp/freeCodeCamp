@@ -10,7 +10,7 @@ dashedName: problem-147-rectangles-in-cross-hatched-grids
 
 In una griglia 3x2 a tratteggi incrociati, un totale di 37 rettangoli diversi potrebbe essere situato all'interno di tale griglia come indicato nel disegno.
 
-<img class="img-responsive center-block" alt="modi di posizionare diversi rettangoli all'interno di una griglia 3x2 a tratteggio incrociato" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="ways of situating different rectangles within cross-hatched 3x2 grid" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px;" />
 
 Ci sono 5 griglie più piccole di 3x2, le dimensioni verticali e orizzontali sono importanti, cioè 1x1, 2x1, 3x1, 1x2 e 2x2. Se ciascuno di essi è a tratteggio incrociato, il seguente numero di rettangoli diversi potrebbe essere situato all'interno di tali griglie più piccole:
 

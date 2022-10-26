@@ -12,7 +12,7 @@ Nel paradiso di Platone, esiste un numero infinito di ciotole in linea retta. Og
 
 Ad esempio, considera due ciotole adiacenti contenenti 2 e 3 fagioli rispettivamente, tutte le altre ciotole sono vuote. Le seguenti otto mosse finiranno il gioco:
 
-<img class="img-responsive center-block" alt="animazione della partita quando due ciotole adiacenti contengono rispettivamente 2 e 3 fagioli" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="animation of game when two adjacent bowls contain 2 and 3 beans respectively" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;" />
 
 animazione di una partita con due ciotole adiacenti contenenti rispettivamente 2 e 3 fagioli:
 

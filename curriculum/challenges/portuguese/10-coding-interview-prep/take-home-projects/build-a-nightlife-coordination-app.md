@@ -12,11 +12,11 @@ Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a
 
 Aqui estão as histórias de usuário que você deve implementar para este projeto:
 
-**História de usuário:** como usuário não autenticado, você pode visualizar todas as barras da minha área.
+**História de usuário:** como usuário não autenticado, você pode visualizar todas as barras de sua área.
 
-**História de usuário:** como usuário autenticado, você pode me adicionar a um bar para indicar que eu estarei lá esta noite.
+**História de usuário:** como usuário autenticado, você pode se adicionar a um bar para indicar que estará lá esta noite.
 
-**História de usuário:** como usuário autenticado, você pode me remover de um bar para indicar que eu não quero mais ir lá.
+**História de usuário:** como usuário autenticado, você pode se remover de um bar para indicar que não quer mais ir lá.
 
 **História de usuário:** como um usuário não autenticado, quando você faz o login, você não deve ter que pesquisar novamente.
 
