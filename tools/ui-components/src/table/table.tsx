@@ -8,7 +8,9 @@ const defaultClassNames = [
   'w-full',
   'max-w-full',
   'border-collapse',
-  'text-left'
+  'text-left',
+  'text-foreground-tertiary',
+  '[&_th]:font-normal'
 ];
 
 const computeClassNames = ({
