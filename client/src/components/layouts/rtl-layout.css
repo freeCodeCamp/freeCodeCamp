@@ -1,0 +1,87 @@
+/* 
+breadcrumbs section
+*/
+[dir=rtl] .breadcrumb-left::after {
+  content: '';
+  display: none;
+}
+
+[dir=rtl] .breadcrumb-left::before {
+  background-color: var(--secondary-background);
+  content: '';
+  border-top: calc(1.375rem / 2) solid transparent;
+  border-bottom: calc(1.2rem / 2) solid transparent;
+  border-right: calc(1.1rem / 2) solid var(--quaternary-background);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+[dir=rtl] .challenge-title-breadcrumbs ol {
+  padding-right: 0;
+}
+
+/* 
+
+*/
+[dir=rtl] .monaco-editor-tabs {
+  margin-right: 0;
+}
+
+[dir=rtl] .panel-display-tabs button:first-child,
+.tabs-row > button:first-child {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+[dir=rtl] .map-ui .superblock-link .map-icon {
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+[dir=rtl] .map-ui .superblock-link > svg {
+  transform: rotate(180deg);
+}
+
+/* 
+ intro to courses section
+*/
+
+[dir=rtl] .block-grid .map-title > svg:last-child,
+[dir=rtl] .map-title .course-title:last-of-type {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+[dir=rtl] .map-title .course-title:first-of-type {
+  margin-right: 0.35em;
+  margin-left: auto;
+}
+
+[dir=rtl] .map-title svg:first-of-type {
+  transform: rotate(180deg);
+}
+
+
+/* 
+universal-nav-bar
+and menu secion
+*/
+[dir=rtl] .nav-list {
+  right: auto
+}
+
+.fcc_searchBar .ais-SearchBox-input, .fcc_searchBar .ais-Hits {
+  padding-inline-start: 1em;
+}
+
+@media (max-width: 980px) {
+  [dir=rtl] #universal-nav-logo {
+    left: inherit;
+    right: 17px;
+  }
+  [dir=rtl] .ais-SearchBox-submit {
+    right: .45em;
+  }
+}

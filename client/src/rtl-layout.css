@@ -1,0 +1,64 @@
+/* 
+breadcrumbs section
+*/
+.rtl-layout .breadcrumb-left::after {
+  content: '';
+  display: none;
+}
+
+.rtl-layout .breadcrumb-left::before {
+  background-color: var(--secondary-background);
+  content: '';
+  border-top: calc(1.375rem / 2) solid transparent;
+  border-bottom: calc(1.2rem / 2) solid transparent;
+  border-right: calc(1.1rem / 2) solid var(--quaternary-background);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.rtl-layout .challenge-title-breadcrumbs ol {
+  padding-right: 0;
+}
+
+/* 
+
+*/
+.rtl-layout .monaco-editor-tabs {
+  margin-right: 0;
+}
+
+.rtl-layout .panel-display-tabs button:first-child,
+.tabs-row > button:first-child {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.rtl-layout .map-ui .superblock-link .map-icon {
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+.rtl-layout .map-ui .superblock-link > svg {
+  transform: rotate(180deg);
+}
+
+/* 
+ intro to courses section
+*/
+
+.rtl-layout .block-grid .map-title > svg:last-child,
+.rtl-layout .map-title .course-title:last-of-type {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.rtl-layout .map-title .course-title:first-of-type {
+  margin-right: 0.35em;
+  margin-left: auto;
+}
+
+.rtl-layout .map-title svg:first-of-type {
+  transform: rotate(180deg);
+}
