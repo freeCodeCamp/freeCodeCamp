@@ -9,7 +9,7 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-È possibile pensare a un array <dfn>multi-dimensionale</dfn>, come a un *array di array*. When you use brackets to access your array, the first set of brackets refers to the entries in the outermost (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
+È possibile pensare a un array <dfn>multi-dimensionale</dfn>, come a un *array di array*. Quando utilizzi le parentesi per accedere al tuo array, il primo set di parentesi si riferisce alle voci nell'array più esterno (il primo livello), e ogni coppia di parentesi supplementare si riferisce al livello successivo delle voci all'interno.
 
 **Esempio**
 

@@ -16,7 +16,7 @@ Per questo problema, consideriamo solo le stanze rettangolari con dimensioni int
 
 C'è una regola da seguire quando si posa il tatami: non ci devono essere punti in cui gli angoli di quattro tappeti diversi si incontrano. Per esempio, considerare le due disposizioni qui sotto per una stanza di dimensioni 4×4:
 
-<img class="img-responsive center-block" alt="two arrangements of mats in 4x4 room" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="due disposizioni di tatami in una stanza 4x4" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px;" />
 
 La disposizione a sinistra è accettabile, mentre quello a destra non lo è: una "<strong><span style="color: red;">X</span></strong>" rossa nel mezzo segna il punto in cui si incontrano quattro tatami.
 

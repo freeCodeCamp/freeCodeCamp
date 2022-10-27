@@ -15,8 +15,8 @@ La specifica cella bianca che prenderemo in considerazione è un'ellisse con l'e
 Manca la sezione corrispondente a $−0.01 ≤ x ≤ +0.01$ in alto, permettendo alla luce di entrare e uscire attraverso il foro.
 
 <div style="text-align: center">
-  <img class="img-responsive center-block" alt="light beam starting at point (0.0, 10.1), and impacting the mirror at point (1.4, -9.6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
-  <img class="img-responsive center-block" alt="animation with first 10 reflections of the beam" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="fascio luminoso che parte dal punto (0.0, 10.1) e che attraversa lo specchio al punto (1.4, -9.6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="animazione con le prime 10 riflessioni del fascio" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
 </div><br>
 
 Il fascio luminoso in questo problema inizia dal punto (0.0, 10.1) appena fuori dalla cella bianca e incontra per la prima volta lo specchio a (1.4, -9.6).
