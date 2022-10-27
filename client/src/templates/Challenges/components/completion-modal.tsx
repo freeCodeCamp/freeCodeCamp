@@ -94,13 +94,14 @@ function getCompletedChallengesInBlock(
   currentBlockChallengeIds: string[],
   currentChallengeId: string
 ) {
-  const currentChallengeAlreadyCompleted =
+  const oldCompletionCount = completedChallengesIds.filter(challengeId =>
+    currentBlockChallengeIds.includes(challengeId)
+  ).length;
+
+  const isAlreadyCompleted =
     completedChallengesIds.includes(currentChallengeId);
-  return (
-    completedChallengesIds.filter(challengeId =>
-      currentBlockChallengeIds.includes(challengeId)
-    ).length + +(!currentChallengeAlreadyCompleted && 1)
-  );
+
+  return isAlreadyCompleted ? oldCompletionCount : oldCompletionCount + 1;
 }
 
 interface CompletionModalsProps {
