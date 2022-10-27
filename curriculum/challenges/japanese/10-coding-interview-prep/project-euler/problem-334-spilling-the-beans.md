@@ -12,7 +12,7 @@ dashedName: problem-334-spilling-the-beans
 
 例えば、隣り合う 2 つのボウルにそれぞれ 2 つと 3 つの豆が入っており、他のボウルがすべて空であるとします。 次の 8 回の移動でゲームが終了します。
 
-<img class="img-responsive center-block" alt="隣り合う 2 つのボウルにそれぞれ 2 つと3 つの豆が入っている場合のゲームのアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="animation of game when two adjacent bowls contain 2 and 3 beans respectively" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;" />
 
 次の数列が与えられます。
 

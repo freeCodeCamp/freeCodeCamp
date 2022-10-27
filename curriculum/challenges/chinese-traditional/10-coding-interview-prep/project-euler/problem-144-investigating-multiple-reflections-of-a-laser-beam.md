@@ -15,8 +15,8 @@ dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
 橢圓頂部削去了 $−0.01 ≤ x ≤ +0.01$ 的部分，使得激光束可以通過該部分進入和離開白腔。
 
 <div style="text-align: center">
-  <img class="img-responsive center-block" alt="激光束由點 (0.0, 10.1) 發出，並於點 (1.4, -9.6) 處擊中鏡面" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
-  <img class="img-responsive center-block" alt="激光束前十次反射路徑的動畫" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="light beam starting at point (0.0, 10.1), and impacting the mirror at point (1.4, -9.6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="animation with first 10 reflections of the beam" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
 </div><br>
 
 本題中，激光束從白腔外一點 (0.0, 10.1) 發出，首次接觸鏡面的點爲 (1.4, -9.6)。

@@ -38,7 +38,7 @@ const testText = [
 - 列間の最小スペースは、ハードコーディングせずに、テキストから計算します。
 - 列間または列の周りに区切り文字を追加する必要はありません。
 
-次の例は、 `testText`の行を右揃え、左揃え、中央揃えしたものです。
+For example, one of the lines from the `testText`, after justifying to the right, left and center respectively:
 
 ```js
 '    column        are separated     by     at    least       one space.\n'

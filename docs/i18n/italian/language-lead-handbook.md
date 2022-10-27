@@ -102,6 +102,76 @@ Puoi passare da un formato all'altro cambiandolo con attenzione manualmente. Opp
 
 > [!TIP] Un nuovo workflow è in fase di sviluppo, ci sarà solo un posto in cui apportare modifiche in futuro.
 
+## Come tradurre gli articoli nei link a piè di pagina
+
+Ci sono alcuni link elencati in fondo al piè di pagina (About, Alumni Network, Open Source ecc.) e alcuni di loro possono essere tradotti nella tua lingua allo stesso modo di altri articoli.
+
+Articoli che possono essere tradotti:
+
+- About
+- Support
+- Academic Honesty
+- Code of Conduct
+
+I seguenti articoli **non** dovrebbero essere tradotti:
+
+- Shop
+- Sponsors
+- Privacy Policy
+- Terms of Service
+- Copyright Policy
+
+I seguenti link puntano a siti esterni e non possono essere tradotti:
+
+- Alumni Network
+- Open Source
+
+### Cambiare i link a piè di pagina in news
+
+Una volta che hai tradotto e pubblicato gli articoli elencati come "possono essere tradotti", puoi aggiornare i link a piè di pagina per `/news` modificando il file `news/config/i18n/locales/<your language>/links.json` nel repository [freeCodeCamp/news](https://github.com/freeCodeCamp/news).
+
+> [!NOTE] Le pull request a questo repository sono attualmente limitate allo staff. Se vuoi aggiornare questo file, chiedi aiuto a qualcuno del team dello staff.
+
+Aggiorna la seguente parte nel file:
+
+```json
+{
+  ...
+  "footer": {
+    "about": "https://www.freecodecamp.org/news/about/",
+    "support": "https://www.freecodecamp.org/news/support/",
+    "honesty": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc": "https://www.freecodecamp.org/news/code-of-conduct/"
+  }
+}
+```
+
+### Cambiare i link a piè di pagina nel curriculum
+
+Una volta che hai tradotto e pubblicato gli articoli elencati come "possono essere tradotti", così come quando il curriculum è pronto per il rilascio nella tua lingua, puoi aggiornare i link a piè di pagina per `/learn` modificando il file `client/i18n/locales/<your language>/links.json` nel repository [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp).
+
+> [!WARNING] Solo "About", "Support", "Academic Honesty", e "Code of Conduct" possono essere tradotti. Lascia gli altri URL invariati.
+
+Aggiorna la seguente parte nel file:
+
+```json
+{
+  ...
+  "footer": {
+    "about-url": "https://www.freecodecamp.org/news/about/",
+    "shop-url": "https://www.freecodecamp.org/shop/",
+    "support-url": "https://www.freecodecamp.org/news/support/",
+    "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
+    "honesty-url": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc-url": "https://www.freecodecamp.org/news/code-of-conduct/",
+    "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
+    "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+    "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
+  },
+  ...
+}
+```
+
 ## Come tradurre le intestazioni dei riquadri informativi nella documentazione
 
 Puoi trovare questi riquadri in tutta la documentazione:
@@ -296,7 +366,7 @@ Su Crowdin, individua `User management` sul lato sinistro del menu.
 
 Aprirà gli strumenti di gestione degli utenti e sarai in grado di vedere la lista di tutti gli utenti.
 
-Search for the user that will become proofreader. Utilizzare il menu a tre punti nella riga dell'utente per aprire un menu e selezionare "Add to team". I team di revisori hanno il nome standard di `Proof Readers (<language>)`, puoi cercare il team usando il nome della lingua. Una volta selezionato il team, utilizza il pulsante "ADD" in fondo alla pagina per finalizzare il processo.
+Cerca l'utente che diventerà revisore. Utilizzare il menu a tre punti nella riga dell'utente per aprire un menu e selezionare "Add to team". I team di revisori hanno il nome standard di `Proof Readers (<language>)`, puoi cercare il team usando il nome della lingua. Una volta selezionato il team, utilizza il pulsante "ADD" in fondo alla pagina per finalizzare il processo.
 
 L'utente ora è un revisore.
 
