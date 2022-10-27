@@ -67,7 +67,7 @@ You should register route and display on home.
       assert.match(
         data,
         /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
-        'You should have a route accepted a post request on register that querys the db with findone and the query being username: req.body.username'
+        'You should have a route accepted a post request on register that queries the db with findone and the query being username: req.body.username'
       );
     },
     (xhr) => {

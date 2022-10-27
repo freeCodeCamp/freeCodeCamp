@@ -26,7 +26,7 @@ const getDirs = async projectId => {
     } else {
       const { error } = response;
       console.log(error.errorcode);
-      console.log(error.messsage);
+      console.log(error.message);
     }
   }
   return null;

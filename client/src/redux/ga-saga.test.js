@@ -17,7 +17,7 @@ describe('ga-saga', () => {
     };
     return (
       expectSaga(createGaSaga, actionTypes)
-        // Assert that the `call` with expected paramater will eventually happen.
+        // Assert that the `call` with expected parameter will eventually happen.
         .call(GaTypes.event, mockEventPayload.data)
 
         // Dispatch any actions that the saga will `take`.

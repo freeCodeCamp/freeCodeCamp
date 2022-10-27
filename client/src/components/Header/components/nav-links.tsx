@@ -172,7 +172,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
       ArrowUp: () => void;
     }
 
-    // eslint naming convention should be ignored in key press function, because following the name convention harms accessiblity.
+    // eslint naming convention should be ignored in key press function, because following the name convention harms accessibility.
 
     const DoKeyPress: DoKeyPressProp = {
       // eslint-disable-next-line @typescript-eslint/naming-convention

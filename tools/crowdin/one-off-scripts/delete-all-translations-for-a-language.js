@@ -1,7 +1,7 @@
 /*
 This one-off script can be used to delete all existing translations for a specified language on Crowdin.
 
-Specifying a projectId and lanaguageId in the .env file allows the script to accomplish this task.
+Specifying a projectId and languageId in the .env file allows the script to accomplish this task.
 */
 
 require('dotenv').config({ path: `${__dirname}/../.env` });

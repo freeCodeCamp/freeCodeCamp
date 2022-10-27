@@ -45,7 +45,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const [showPreviewPane, setShowPreviewPane] = useState(true);
   const [showPreviewPortal, setShowPreviewPortal] = useState(false);
   const [showConsole, setShowConsole] = useState(false);
-  const [showInstructions, setShowInstuctions] = useState(true);
+  const [showInstructions, setShowInstructions] = useState(true);
 
   const togglePane = (pane: string): void => {
     switch (pane) {
@@ -64,10 +64,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         setShowNotes(!showNotes);
         break;
       case 'showInstructions':
-        setShowInstuctions(!showInstructions);
+        setShowInstructions(!showInstructions);
         break;
       default:
-        setShowInstuctions(true);
+        setShowInstructions(true);
         setShowConsole(false);
         setShowPreviewPane(true);
         setShowPreviewPortal(false);

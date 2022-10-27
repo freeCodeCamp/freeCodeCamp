@@ -11,7 +11,7 @@ describe('client/src is-email-variation-a', () => {
     const result = emailToABVariant('foo@freecodecamp.org');
     expect(result).toEqual(preSavedResult);
   });
-  it('Distributes A and B variations equaly for 100K random emails', () => {
+  it('Distributes A and B variations equally for 100K random emails', () => {
     let A = 0;
     let B = 0;
     const sampleSize = 100000;
