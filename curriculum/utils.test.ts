@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
 import { SuperBlocks } from '../config/certification-settings';
-import { languagesWithAuditedBetaReleases } from '../config/i18n/all-langs';
+import { languagesWithAuditedBetaReleases } from '../config/i18n';
 import { getSuperOrder, getSuperBlockFromDir } from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });

@@ -16,7 +16,7 @@ dashedName: problem-256-tatami-free-rooms
 
 畳を敷くときは 1 つのルールがあります。4 枚の畳の角が 1 ヵ所に集まってはいけないのです。 例えば、4 × 4 の部屋を次の 2 通りで敷くことを考えます。
 
-<img class="img-responsive center-block" alt="4x4 の部屋に畳を敷く場合の 2 通りの配置" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="two arrangements of mats in 4x4 room" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px;" />
 
 左側の配置は問題ありませんが、右側の配置はルールに反しています。中央の赤い印 "<strong><span style="color: red;">X</span></strong>" は、4 枚の畳の角が集まっている個所を示しています。
 

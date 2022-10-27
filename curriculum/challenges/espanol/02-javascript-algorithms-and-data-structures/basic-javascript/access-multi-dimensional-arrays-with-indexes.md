@@ -9,7 +9,7 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-Se puede pensar que un arreglo <dfn>multidimensional</dfn> es como un *arreglo de arreglos*. Cuando usas corchetes para acceder a tu arreglo, el primer par de corchetes se refiere a las entradas en el arreglo externo (el primer nivel) y cada par adicional de corchetes se refiere al siguiente nivel de entradas.
+Se puede pensar que un arreglo <dfn>multidimensional</dfn> es como un *arreglo de arreglos*. When you use brackets to access your array, the first set of brackets refers to the entries in the outermost (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
 
 **Ejemplo**
 

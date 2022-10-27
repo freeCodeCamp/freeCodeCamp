@@ -2,7 +2,7 @@ import { PassportConfigurator } from '@freecodecamp/loopback-component-passport'
 import dedent from 'dedent';
 import passport from 'passport';
 
-import { availableLangs } from '../../../config/i18n/all-langs';
+import { availableLangs } from '../../../config/i18n';
 import { jwtSecret } from '../../../config/secrets';
 import passportProviders from './passport-providers';
 import { setAccessTokenToResponse } from './utils/getSetAccessToken';

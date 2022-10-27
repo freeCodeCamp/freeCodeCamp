@@ -14,7 +14,7 @@ dashedName: connect-redux-to-the-messages-app
 
 # --instructions--
 
-محرر التعليمات البرمجية لديه كل التعليمات البرمجية التي كتبتها في هذا القسم حتى الآن. التغيير الوحيد هو أن مكون React قد أعيد تسميته إلى `Presentational`. أنشئ مكون جديد محتفظ به في ثابتة تسمى `Container` التي تستخدم `connect` لربط مكون `Presentational` ألى Redux. ثم في `AppWrapper`، انتج مكون React المربوط ألى Redux باسم`Provider`. مرر `Provider` من `store` في Redux كمِيزة (prop) وتنشئ `Container` كفرع. بمجرد إعداد كل شيء، سترى تطبيق الرسائل الذي يتم أنتاجه إلى الصفحة مرة أخرى.
+محرر التعليمات البرمجية لديه كل التعليمات البرمجية التي كتبتها في هذا القسم حتى الآن. التغيير الوحيد هو أن مكون React قد أعيد تسميته إلى `Presentational`. أنشئ مكون جديد محتفظ به في ثابتة تسمى `Container` التي تستخدم `connect` لربط مكون `Presentational` ألى Redux. ثم في `AppWrapper`، انتج مكون React المربوط ألى Redux باسم`Provider`. مرر `Provider` من `store` في Redux كمِيزة (prop) وتنشئ `Container` كفرع. Once everything is set up, you will see the messages app rendered to the page again.
 
 # --hints--
 

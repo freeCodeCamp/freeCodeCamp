@@ -17,7 +17,7 @@ import {
   LangNames,
   LangCodes,
   hiddenLangs
-} from '../../../../../config/i18n/all-langs';
+} from '../../../../../config/i18n';
 import { hardGoTo as navigate } from '../../../redux/actions';
 import { updateMyTheme } from '../../../redux/settings/actions';
 import createLanguageRedirect from '../../create-language-redirect';

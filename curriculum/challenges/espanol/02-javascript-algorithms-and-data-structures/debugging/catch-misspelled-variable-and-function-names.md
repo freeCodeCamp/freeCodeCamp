@@ -24,7 +24,7 @@ Comprueba la ortografía de las dos variables utilizadas en el cálculo de netWo
 assert(netWorkingCapital === 2);
 ```
 
-No debe haber casos de variables mal escritas en el código.
+There should be no instances of misspelled variables in the code.
 
 ```js
 assert(!code.match(/recievables/g));
@@ -36,7 +36,7 @@ La variable `receivables` debe ser declarada y utilizada correctamente en el có
 assert(code.match(/receivables/g).length == 2);
 ```
 
-No debe haber casos de variables mal escritas en el código.
+There should be no instances of misspelled variables in the code.
 
 ```js
 assert(!code.match(/payable;/g));

@@ -38,7 +38,7 @@ const testText = [
 - Lo spazio minimo tra le colonne dovrebbe essere calcolato dal testo e non codificato.
 - Non è un requisito aggiungere caratteri di separazione tra colonne o intorno a colonne.
 
-Ad esempio, una delle righe del `testText`, dopo aver giustificato rispettivamente a destra, sinistra, e centro:
+For example, one of the lines from the `testText`, after justifying to the right, left and center respectively:
 
 ```js
 '    column        are separated     by     at    least       one space.\n'

@@ -10,7 +10,7 @@ dashedName: problem-385-ellipses-inside-triangles
 
 На площині будь-якого трикутника $T$ можна зобразити унікальний еліпс, який повністю розташовується всередині $T$.
 
-<img class="img-responsive center-block" alt="еліпс повністю всередині трикутника" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="ellipse completely inside a triangle" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;" />
 
 Для даного $n$ розглянемо такі трикутники $T$:
 

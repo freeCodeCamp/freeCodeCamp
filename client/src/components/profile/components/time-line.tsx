@@ -7,7 +7,7 @@ import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n/all-langs';
+import { getLangCode } from '../../../../../config/i18n';
 import {
   getCertIds,
   getPathFromID,
