@@ -8,13 +8,21 @@ dashedName: neural-network-sms-text-classifier
 
 # --description--
 
-Під час цього випробування, вам потрібно створити модель машинного навчання, яка класифікуватиме SMS повідомлення як "ham" чи "спам". Повідомлення"ham" це звичайне повідомлення, надіслане другом. Повідомлення "спам" це реклама або повідомлення, надіслане компанією.
+Ви будете <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-neural-network-sms-text-classifier/blob/master/fcc_sms_text_classification.ipynb" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з Google Colaboratory</a>.
 
-Ви можете отримати доступ до [ усіх інструкцій проєкту та початкового коду на Google Colaboratory](https://colab.research.google.com/github/freeCodeCamp/boilerplate-neural-network-sms-text-classifier/blob/master/fcc_sms_text_classification.ipynb).
+Перейшовши за цим посиланням, створіть копію блокнота в своєму обліковому записі або локально. Як тільки ви завершили проєкт та пройшли тести (доданий до посилання), здайте посилання на свій проєкт. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
 
-Перейшовши за цим посиланням, створіть копію блокнота з вашого акаунту або локально. Завершивши проєкт та тестування ( доданий із цим посиланням), створіть посилання на проєкт нижче. Якщо ви надаєте посилання на Google Colaboratory, переконайтеся, що ви увімкнули режим доступу "для усіх за цим посиланням"
+We are still developing the interactive instructional content for the machine learning curriculum. Поки ви можете переглянути відеозавдання цієї сертифікації. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
 
-Ми вже ще в процесі розробки інтерактивної навчальної складової для машинного навчального курсу. Наразі ви можете скористатися відео-викликами з цієї сертифікації. Вам також можуть знадобитися додаткові навчальні ресурси, так само як під час роботи із повноцінним проєктом.
+# --instructions--
+
+В цьому завданні вам потрібно створити модель машинного навчання, яка класифікуватиме SMS повідомлення як «ham» або «спам». Повідомлення «ham» – це звичайне повідомлення, надіслане другом. Повідомлення «spam» – це реклама або повідомлення, надіслане компанією.
+
+Ви повинні створити функцію під назвою `predict_message`, яка приймає рядок повідомлення як аргумент та повертає список. Першим елементом у списку повинне бути число від нуля до одного, яке вказує на ймовірність «ham» (0) або «spam» (1). Другим елементом у списку повинне бути слово «ham» або «spam», залежно від того, що більш ймовірно.
+
+For this challenge, you will use the <a href="http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/" target="_blank" rel="noopener noreferrer nofollow">SMS Spam Collection</a> dataset. The dataset has already been grouped into train data and test data.
+
+The first two cells import the libraries and data. The final cell tests your model and function. Add your code in between these cells.
 
 # --hints--
 

@@ -1,8 +1,8 @@
 ---
 id: 5efada803cbd2bbdab94e332
-title: 步骤 28
+title: 步骤 29
 challengeType: 0
-dashedName: step-28
+dashedName: step-29
 ---
 
 # --description--
@@ -61,8 +61,8 @@ assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/cdn\.freecodecamp\.org\/curriculum\/ca
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->

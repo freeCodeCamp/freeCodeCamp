@@ -8,9 +8,9 @@ dashedName: build-an-image-search-abstraction-layer
 
 # --description--
 
-Build a full stack JavaScript app that allows you to search for images like this: <https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10> and browse recent search queries like this: <https://image-search-abstraction-layer.freecodecamp.rocks/recent/>. Use a site builder of your choice to complete the project.
+Build a full stack JavaScript app that allows you to search for images like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10</a> and browse recent search queries like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/recent/" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/recent/</a>. Utiliza un constructor de sitios de tu elección para completar el proyecto.
 
-Here are the specific user stories you should implement for this project:
+Estas son las historias de usuario específicas que debes implementar para este proyecto:
 
 **User Story:** You can get the image URLs, description and page URLs for a set of images relating to a given search string.
 
@@ -18,7 +18,7 @@ Here are the specific user stories you should implement for this project:
 
 **User Story:** You can get a list of the most recently submitted search strings.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
 
 # --solutions--
 

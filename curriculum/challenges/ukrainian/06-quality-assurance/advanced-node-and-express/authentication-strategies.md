@@ -8,9 +8,9 @@ dashedName: authentication-strategies
 
 # --description--
 
-Стратегія - це процес авторизації користувача. Ви можете вибрати стратегію, яка дозволяє користувачам авторизуватись на основі збережених даних (якщо ви їх вказували) або від різних провайдерів таких, як Google або GitHub. До цього проєкту ми встановимо локальну стратегію. Для того, щоб переглянути перелік сотень стратегій, перейдіть на сайт Passport [сюди](http://passportjs.org/).
+Стратегія - це процес авторизації користувача. Ви можете вибрати стратегію, яка дозволяє користувачам авторизуватись на основі збережених даних (якщо ви їх вказували) або від різних провайдерів таких, як Google або GitHub. For this project, we will use Passport middleware. Passport provides a comprehensive set of strategies that support authentication using a username and password, GitHub, Google, and more.
 
-Вкажіть `passport-local@~1.0.0` як залежний елемент і додайте його на ваш сервер, як показано далі: `const LocalStrategy = require('passport-local');`
+`passport-local@~1.0.0` has already been added as a dependency, so add it to your server as follows: `const LocalStrategy = require('passport-local');`
 
 Далі ви повинні вказати паспорту (passport) **використати (use)** макет об'єкту LocalStrategy із певними вказаними параметрами. Переконайтесь у тому, що це (як і все з цього моменту) інкапсульовано в з'єднанні з базою даних (database), оскільки воно залежить від цього!
 
@@ -34,7 +34,7 @@ passport.use(new LocalStrategy(
 
 Далі ми дізнаємося, як за допомогою стратегії авторизації перевірити користувача на основі заповнених даних!
 
-Відправте вашу сторінку, якщо все зрозуміло. Якщо сталась якась помилка, ви маєте змогу перевірити статус проєкту до цього етапу [ тут ](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b).
+Відправте вашу сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

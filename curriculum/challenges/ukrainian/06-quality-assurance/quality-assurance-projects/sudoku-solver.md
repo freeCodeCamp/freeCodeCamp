@@ -8,10 +8,10 @@ dashedName: sudoku-solver
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до цього: <https://sudoku-solver.freecodecamp.rocks/>. Робота над цим проєктом включатиме написання коду одним з наступних методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a>. Робота над цим проєктом включатиме написання коду одним з наступних методів:
 
--   Клонуйте цей [репозиторій GitHub ](https://github.com/freecodecamp/boilerplate-project-sudoku-solver) і локально завершіть ваш проєкт.
--   Використовуйте [наш Replit проєкт](https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver), щоб завершити ваш проєкт.
+-   Клонуйте <a href="https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
+-   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Для завершення проєкту використовуйте вибраний вами розробник сайтів. Переконайтеся, що зберегли усі файли з нашого репозиторію GitHub.
 
 Коли ви завершили, переконайтеся, що ця демоверсія вашого проєкту розміщена у відкритому місці. Потім введіть URL-адресу у поле `Solution Link`. При необхідності, також введіть посилання на джерело коду вашого проєкту у полі `GitHub Link`.
@@ -270,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо об'єкт представлений в `/api/check` немає `puzzle`, `coordinate` чи `value`, то зворотне значення буде `{ error: Required field(s) missing }`
+If the object submitted to `/api/check` is missing `puzzle`, `coordinate` or `value`, the returned value will be `{ error: 'Required field(s) missing' }`
 
 ```js
 async (getUserInput) => {
@@ -324,7 +324,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо `value` представлене в `/api/check` не є числом між 1 і 9, то зворотне значення буде `{ error: 'Invalid value' }`
+If the `value` submitted to `/api/check` is not a number between 1 and 9, the returned value will be `{ error: 'Invalid value' }`
 
 ```js
 async (getUserInput) => {
@@ -353,9 +353,11 @@ async (getUserInput) => {
   try {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
-    const units = getTests.filter((el) => el.context.includes('UnitTests'));
-    assert.isAtLeast(units.length, 12, 'At least 12 tests passed');
-    units.forEach((test) => {
+    const unitTests = getTests.filter((test) => {
+      return !!test.context.match(/Unit\s*Tests/gi);
+    });
+    assert.isAtLeast(unitTests.length, 12, 'At least 12 tests passed');
+    unitTests.forEach((test) => {
       assert.equal(test.state, 'passed', 'Test in Passed State');
       assert.isAtLeast(
         test.assertions.length,
@@ -369,18 +371,18 @@ async (getUserInput) => {
 };
 ```
 
-Усі 14 функціональних тестів завершено та успішно пройдено. Дивіться `/tests/2_functional-tests.js` для функціональності, для якої вам слід написати тести.
+Усі 14 функціональних тестів завершено та успішно пройдено. See `/tests/2_functional-tests.js` for the expected functionality you should write tests for.
 
 ```js
 async (getUserInput) => {
   try {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
-    const funcs = getTests.filter((el) =>
-      el.context.includes('Functional Tests')
-    );
-    assert.isAtLeast(funcs.length, 14, 'At least 14 tests passed');
-    funcs.forEach((test) => {
+    const functTests = getTests.filter((test) => {
+      return !!test.context.match(/Functional\s*Tests/gi);
+    });
+    assert.isAtLeast(functTests.length, 14, 'At least 14 tests passed');
+    functTests.forEach((test) => {
       assert.equal(test.state, 'passed', 'Test in Passed State');
       assert.isAtLeast(
         test.assertions.length,

@@ -38,18 +38,22 @@ assert(myVar === 10);
 `myVar = myVar - 1;` слід змінити.
 
 ```js
-assert(
-  /let\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code)
-);
+assert(!code.match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
 ```
 
-Вам слід користуватись оператором `--` у `myVar`.
+You should not assign `myVar` with `10`.
+
+```js
+assert(!code.match(/myVar\s*=\s*10.*?;?/));
+```
+
+You should use the `--` operator on `myVar`.
 
 ```js
 assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
 ```
 
-Не слід змінювати код над зазначеним коментарем.
+You should not change code above the specified comment.
 
 ```js
 assert(/let myVar = 11;/.test(code));

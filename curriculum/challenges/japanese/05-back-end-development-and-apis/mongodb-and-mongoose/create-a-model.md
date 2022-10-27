@@ -10,9 +10,9 @@ dashedName: create-a-model
 
 **C**RUD パート I - 作成する
 
-まず最初に、スキーマが必要です。 各スキーマは、MongoDB コレクションにマップされます。 スキーマにより、コレクション内のドキュメントの形状を定義します。 スキーマは、モデルを組み立てるための基礎的な要素になります。 スキーマをネストさせて複雑なモデルを作成することもできますが、この例ではシンプルな構造にします。 モデルにより、ドキュメントと呼ばれるオブジェクトのインスタンスを作成できます。
+First of all, we need a Schema. 各スキーマは、MongoDB コレクションにマップされます。 スキーマにより、コレクション内のドキュメントの形状を定義します。 Schemas are building blocks for Models. They can be nested to create complex models, but in this case, we'll keep things simple. モデルにより、ドキュメントと呼ばれるオブジェクトのインスタンスを作成できます。
 
-Replit は実際のサーバーであり、実際のサーバーではデータベースとのやり取りはハンドラ関数の中で行います。 これらの関数は、何らかのイベントが発生した時に実行されます (たとえば、誰かが API 上のエンドポイントにアクセスしたとき)。 演習でも同じアプローチに従います。 `done()` 関数は、挿入、検索、更新または削除などの非同期操作を完了した後に処理を続行できることを示すコールバック関数です。 Node の規約に従い、成功時には `done(null, data)` を呼び出し、エラー時には `done(err)` を呼び出します。
+Replit is a real server, and in real servers, the interactions with the database happen in handler functions. これらの関数は、何らかのイベントが発生した時に実行されます (たとえば、誰かが API 上のエンドポイントにアクセスしたとき)。 演習でも同じアプローチに従います。 `done()` 関数は、挿入、検索、更新または削除などの非同期操作を完了した後に処理を続行できることを示すコールバック関数です。 Node の規約に従い、成功時には `done(null, data)` を呼び出し、エラー時には `done(err)` を呼び出します。
 
 警告 - リモートサービスとのやり取りではエラーが発生する可能性があります！
 
@@ -38,7 +38,7 @@ age :  number
 favoriteFoods : array of strings (*)
 ```
 
-Mongoose の基本的なスキーマタイプを使用してください。 フィールドを追加したい場合は、required や unique といった単純なバリデーターを使用し、デフォルト値を設定してください。 [Mongoose のドキュメント](http://mongoosejs.com/docs/guide.html) を参照してください。
+Mongoose の基本的なスキーマタイプを使用してください。 フィールドを追加したい場合は、required や unique といった単純なバリデーターを使用し、デフォルト値を設定してください。 <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">Mongoose の記事</a>を参照してください。
 
 次に、`personSchema` から `Person` というモデルを作成してください。
 

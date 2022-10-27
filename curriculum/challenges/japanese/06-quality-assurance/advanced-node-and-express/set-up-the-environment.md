@@ -10,7 +10,7 @@ dashedName: set-up-the-environment
 
 以降のチャレンジでは `chat.pug` ファイルを使用します。 そこで、`routes.js` ファイルで、`/chat` を指す GET ルートを追加してください。/chat は、`ensureAuthenticated` を利用し、レスポンスへの引数として渡された `{ user: req.user }` を使用して `chat.pug` をレンダーします。 次に、既存の `/auth/github/callback` ルートを変更して、`req.session.user_id = req.user.id` を設定し、`/chat` にリダイレクトしてください。
 
-`socket.io@~2.3.0` を依存関係として追加し、(Node.js に組み込まれている) `http`を使用して、以下のようにサーバーでソケットの require を定義しインスタンス化してください。
+すでに `socket.io@~2.3.0` が依存関係として追加されているので、(Node.js に組み込まれている) `http` を使用して、以下のようにサーバーでソケットの require を定義しインスタンス化してください。
 
 ```javascript
 const http = require('http').createServer(app);
@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 *http* サーバーを *Express アプリ*にマウントしたので、*http* サーバーからリッスンする必要があります。 `app.listen` の行を `http.listen` に変更します。
 
-最初の処理として、クライアントからの新しい接続をリッスンします。 <dfn>on</dfn> キーワードがその処理を行い、特定のイベントがないかリッスンします。 ここでは、エミットされたイベントのタイトルを含む文字列と、データを渡すための関数の、2 つの引数が必要です。 コネクションリスナーの場合は、*ソケット*を使用して第 2 引数でデータを定義します。 ソケットとは、接続している個々のクライアントのことです。
+最初の処理として、クライアントからの新しい接続をリッスンします。 <dfn>on</dfn> キーワードがその処理を行い、特定のイベントがないかリッスンします。 It requires 2 arguments: a string containing the title of the event that's emitted, and a function with which the data is passed through. コネクションリスナーの場合は、*ソケット*を使用して第 2 引数でデータを定義します。 ソケットとは、接続している個々のクライアントのことです。
 
 サーバーへの接続をリッスンするには、データベース接続の中に次を追加します。
 
@@ -42,7 +42,7 @@ let socket = io();
 
 **注:** `io()` は、同じ url またはサーバー上でホストされているソケットに接続している場合にのみ動作します。 他の場所でホストされている外部ソケットに接続するには、`io.connect('URL');` を使用します。
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

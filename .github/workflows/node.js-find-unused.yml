@@ -1,0 +1,41 @@
+name: CI - Unused Exports, Types and Files
+env:
+  NODE_OPTIONS: '--max_old_space_size=6144'
+on:
+  schedule:
+    # runs every monday at 08:45 UTC
+    - cron: '45 8 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Find Unused
+    runs-on: ubuntu-20.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Set Environment variables
+        run: |
+          cp sample.env .env
+          cat .env
+
+      - name: Run Checks
+        run: |
+          echo npm version $(npm -v)
+          npm ci
+          npm run knip

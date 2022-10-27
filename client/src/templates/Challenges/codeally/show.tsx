@@ -19,22 +19,21 @@ import CompletionModal from '../components/completion-modal';
 import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/Hotkeys';
+import { hideCodeAlly, tryToShowCodeAlly } from '../../../redux/actions';
 import {
   completedChallengesSelector,
-  isSignedInSelector,
-  hideCodeAlly,
   partiallyCompletedChallengesSelector,
   showCodeAllySelector,
-  tryToShowCodeAlly,
+  isSignedInSelector,
   userTokenSelector
-} from '../../../redux';
+} from '../../../redux/selectors';
 import {
   challengeMounted,
-  isChallengeCompletedSelector,
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues
-} from '../redux';
+} from '../redux/actions';
+import { isChallengeCompletedSelector } from '../redux/selectors';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import {
   ChallengeNode,
@@ -231,6 +230,9 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       challenge => challenge.id === challengeId
     );
 
+    const breadcrumbs = document.querySelector('.breadcrumbs-demo');
+    showCodeAlly && breadcrumbs?.remove();
+
     return showCodeAlly ? (
       <LearnLayout>
         <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
@@ -257,9 +259,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
                 <ChallengeTitle
-                  block={block}
                   isCompleted={isChallengeCompleted}
-                  superBlock={superBlock}
                   translationPending={translationPending}
                 >
                   {title}
@@ -368,7 +368,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                 certification={certification}
                 superBlock={superBlock}
               />
-              <HelpModal />
+              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
         </LearnLayout>

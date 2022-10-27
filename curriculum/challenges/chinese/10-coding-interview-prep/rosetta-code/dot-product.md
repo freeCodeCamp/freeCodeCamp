@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7e1e
 title: Dot product
-challengeType: 5
+challengeType: 1
 forumTopicId: 302251
 dashedName: dot-product
 ---
 
 # --description--
 
-Create a function, to compute the **[dot product](https://en.wikipedia.org/wiki/Dot product)**, also known as the **scalar product** of two vectors.
+Create a function, to compute the **dot product**, also known as the **scalar product** of two vectors.
 
 # --hints--
 

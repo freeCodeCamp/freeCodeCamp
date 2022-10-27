@@ -9,7 +9,7 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-我们可以把<dfn>多维</dfn>数组看作成是*数组中的数组*。 使用方括号表示法访问数组时，第一个方括号访问的是数组的最外层（第一层），第二个方括号访问的是数组的第二层，以此类推。
+我们可以把<dfn>多维</dfn>数组看作成是*数组中的数组*。 When you use brackets to access your array, the first set of brackets refers to the entries in the outermost (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
 
 **例如：**
 
@@ -21,12 +21,12 @@ const arr = [
   [[10, 11, 12], 13, 14]
 ];
 
-arr[3];
-arr[3][0];
-arr[3][0][1];
+const subarray = arr[3];
+const nestedSubarray = arr[3][0];
+const element = arr[3][0][1];
 ```
 
-`arr[3]` 为 `[[10, 11, 12], 13, 14]`，`arr[3][0]` 为 `[10, 11, 12]`，并且 `arr[3][0][1]` 为 `11`。
+在这个例子中，`subarray` 的值为 `[[10, 11, 12], 13, 14]`， `nestedSubarray` 的值为 `[10, 11, 12]`，`element` 的值为 `11` 。
 
 **注意：** 数组名与方括号之间不应该有任何空格，比如 `array [0][0]` 甚至是 `array [0] [0]` 都是不允许的。 尽管 JavaScript 能够正确处理这种情况，但是当其他程序员阅读你写的代码时，这可能让他们感到困惑。
 

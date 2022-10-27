@@ -13,30 +13,30 @@ import About from '../components/settings/about';
 import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
-import Internet from '../components/settings/internet';
+import Internet, { Socials } from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
 import { Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
+import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  hardGoTo as navigate,
   userTokenSelector
-} from '../redux';
+} from '../redux/selectors';
 import { User } from '../redux/prop-types';
 import {
   submitNewAbout,
   updateMyHonesty,
   updateMyPortfolio,
   updateMyQuincyEmail,
+  updateMySocials,
   updateMySound,
   updateMyTheme,
   updateMyKeyboardShortcuts,
-  updateUserFlag,
   verifyCert
-} from '../redux/settings';
+} from '../redux/settings/actions';
 
 const { apiLocation } = envData;
 
@@ -50,7 +50,7 @@ interface ShowSettingsProps {
   toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-  updateInternetSettings: () => void;
+  updateSocials: (formValues: Socials) => void;
   updateIsHonest: () => void;
   updatePortfolio: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
@@ -81,7 +81,7 @@ const mapDispatchToProps = {
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
-  updateInternetSettings: updateUserFlag,
+  updateSocials: (formValues: Socials) => updateMySocials(formValues),
   updateIsHonest: updateMyHonesty,
   updatePortfolio: updateMyPortfolio,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
@@ -138,7 +138,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     navigate,
     showLoading,
     updateQuincyEmail,
-    updateInternetSettings,
+    updateSocials,
     updatePortfolio,
     updateIsHonest,
     verifyCert,
@@ -193,7 +193,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             githubProfile={githubProfile}
             linkedin={linkedin}
             twitter={twitter}
-            updateInternetSettings={updateInternetSettings}
+            updateSocials={updateSocials}
             website={website}
           />
           <Spacer />

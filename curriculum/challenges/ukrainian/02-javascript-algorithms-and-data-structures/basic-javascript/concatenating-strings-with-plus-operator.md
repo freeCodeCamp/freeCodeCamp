@@ -25,32 +25,38 @@ dashedName: concatenating-strings-with-plus-operator
 const ourStr = "I come first. " + "I come second.";
 ```
 
-Рядок ` I come first. I come second.` відображатиметься у консолі.
+The string `I come first. I come second.` would be displayed in the console.
 # --instructions--
 
 Створіть `myStr` з рядків `This is the start.` й `This is the end.` за допомогою `+` оператору. Обов'язково використовуйте пробіл між двома рядками.
 
 # --hints--
 
-`myStr` повинен мати таке ж значення як і рядок `This is the start. This is the end.`
+`myStr` should have a single space character between the two strings.
+
+```js
+assert(/start\. This/.test(myStr));
+```
+
+`myStr` should have a value of the string `This is the start. This is the end.`
 
 ```js
 assert(myStr === 'This is the start. This is the end.');
 ```
 
-Для створення `myStr` потрібно використовувати `+`.
+You should use the `+` operator to build `myStr`.
 
 ```js
 assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
-Для створення `myStr` потрібно використати ключове слово `const`.
+`myStr` should be created using the `const` keyword.
 
 ```js
 assert(/const\s+myStr/.test(code));
 ```
 
-Слід призначити результат для змінної `myStr`.
+You should assign the result to the `myStr` variable.
 
 ```js
 assert(/myStr\s*=/.test(code));

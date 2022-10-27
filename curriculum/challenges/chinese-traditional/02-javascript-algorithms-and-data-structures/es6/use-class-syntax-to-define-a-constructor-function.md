@@ -12,24 +12,35 @@ ES6 提供了一個新的創建對象的語法，使用關鍵字 <dfn>class</dfn
 
 值得注意的是，`class` 只是一個語法糖，它並不像 Java、Python 或者 Ruby 這一類的語言一樣，嚴格履行了面向對象的開發規範。
 
-在 ES5 裏面，我們通常會定義一個構造函數 `constructor`，然後使用 `new` 關鍵字來實例化一個對象：
+在 ES5 裏面，我們通常會定義一個函數 `constructor`，然後使用 `new` 關鍵字來實例化一個對象。
+
+在 ES6 裏，`class` 聲明有一個 `constructor` 方法，與 `new` 關鍵字一起被調用。 如果 `constructor` 方法沒有明確定義，那麼它就被含蓄地定義爲沒有參數。
 
 ```js
-var SpaceShuttle = function(targetPlanet){
-  this.targetPlanet = targetPlanet;
-}
-var zeus = new SpaceShuttle('Jupiter');
-```
-
-`class` 語法只是簡單地替換了構造函數 `constructor` 的寫法：
-
-```js
+// Explicit constructor
 class SpaceShuttle {
   constructor(targetPlanet) {
     this.targetPlanet = targetPlanet;
   }
+  takeOff() {
+    console.log("To " + this.targetPlanet + "!");
+  }
 }
+
+// Implicit constructor 
+class Rocket {
+  launch() {
+    console.log("To the moon!");
+  }
+}
+
 const zeus = new SpaceShuttle('Jupiter');
+// prints To Jupiter! in console
+zeus.takeOff();
+
+const atlas = new Rocket();
+// prints To the moon! in console
+atlas.launch();
 ```
 
 應該注意 `class` 關鍵字聲明瞭一個新的函數，裏面添加了一個構造函數。 當用 `new` 創建一個新的對象時，構造函數會被調用。

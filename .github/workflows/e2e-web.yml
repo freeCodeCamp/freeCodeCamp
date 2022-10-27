@@ -1,0 +1,142 @@
+name: CI - E2E - Web browser
+on:
+  push:
+    paths-ignore:
+      - 'docs/**'
+    branches-ignore:
+      - 'renovate/**'
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+
+jobs:
+  build-client:
+    name: Build
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+
+      - name: Checkout client-config
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+        with:
+          repository: freeCodeCamp/client-config
+          path: client-config
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+
+      - name: Set freeCodeCamp Environment Variables
+        run: cp sample.env .env
+
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Move serve.json to Public Folder
+        run: cp client-config/serve.json client/public/serve.json
+
+      # We tar them for performance reasons - uploading a lot of files is slow.
+      - name: Tar Files
+        run: tar -cf client-artifact.tar client/public
+
+      - name: Upload Client Artifact
+        uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
+        with:
+          name: client-artifact
+          path: client-artifact.tar
+
+      - name: Upload Webpack Stats
+        uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
+        with:
+          name: webpack-stats
+          path: client/public/stats.json
+
+  cypress-run:
+    name: Test
+    runs-on: ubuntu-20.04
+    needs: build-client
+    strategy:
+      fail-fast: false
+      matrix:
+        browsers: [chrome, firefox, electron]
+        node-version: [16.x]
+        include:
+          - browsers: electron
+            spec: cypress/e2e/default/learn/challenges/projects.js
+          - browsers: chrome
+            spec: cypress/e2e/default/**/*.js
+          - browsers: firefox
+            spec: cypress/e2e/default/**/*.js
+    services:
+      mongodb:
+        image: mongo:4
+        ports:
+          - 27017:27017
+      # We need mailhog to catch any emails the api tries to send.
+      mailhog:
+        image: mailhog/mailhog
+        ports:
+          - 1025:1025
+
+    steps:
+      - name: Set Action Environment Variables
+        run: |
+          echo "CYPRESS_RECORD_KEY=${{ secrets.CYPRESS_RECORD_KEY }}" >> $GITHUB_ENV
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Checkout Source Files
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+
+      - uses: actions/download-artifact@9782bd6a9848b53b110e712e20e42d89988822b7 # tag=v3
+        with:
+          name: client-artifact
+
+      - name: Unpack Client Artifact
+        run: |
+          tar -xf client-artifact.tar
+          rm client-artifact.tar
+
+      - name: Downgrade Firefox
+        run: |
+          curl https://ftp.mozilla.org/pub/firefox/releases/101.0/linux-x86_64/en-US/firefox-101.0.tar.bz2 --output firefox-101.0.tar.bz2
+          tar -xjf firefox-101.0.tar.bz2
+          sudo mv firefox /opt/
+          sudo mv /usr/bin/firefox /usr/bin/firefox_old
+          sudo ln -s /opt/firefox/firefox /usr/bin/firefox
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Set freeCodeCamp Environment Variables
+        run: cp sample.env .env
+
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run create:config
+          npm run build:curriculum
+          npm run build:server
+
+      - name: Seed Database
+        run: npm run seed
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
+          start: npm run start-ci
+          wait-on: http://localhost:8000
+          wait-on-timeout: 1200
+          config: baseUrl=http://localhost:8000
+          browser: ${{ matrix.browsers }}
+          headless: true
+          spec: ${{ matrix.spec }}

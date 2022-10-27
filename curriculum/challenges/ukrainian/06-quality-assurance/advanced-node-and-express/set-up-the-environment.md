@@ -10,7 +10,7 @@ dashedName: set-up-the-environment
 
 Наступні завдання використовуватимуть файл `chat.pug`. Отже, у файлі `routes.js` додайте шлях GET, вказавши на `/chat`, що використовує `ensureAuthenticated` і відображає `chat.pug`, передаючи `{ user: req.user }` як аргумент до відповіді. Тепер змініть існуючий шлях `/auth/github/callback`, щоб встановити `req.session.user_id = req.user.id`, і перенаправте до `/chat`.
 
-Додайте `socket.io@~2.3.0` як залежність і запросіть/встановіть її на свій сервер, визначивши наступним чином, із `http` (постачається вбудованою з Nodejs):
+`socket.io@~2.3.0` has already been added as a dependency, so require/instantiate it in your server as follows with `http` (comes built-in with Nodejs):
 
 ```javascript
 const http = require('http').createServer(app);
@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 Тепер, коли сервер *http* встановлений в *експрес застосунку*, чекайте відповіді від сервера *http*. Змініть рядок `app.listen` на `http.listen`.
 
-Спершу необхідно прослухати нове з'єднання від клієнта. Ключове слово <dfn>on</dfn> робить лише це — прослуховує конкретну подію. Йому треба 2 аргумента: рядок, що містить заголовок події, що передається, і функція, якою проходять дані. У випадку нашого слухача зв'язку, скористаємось *socket*, щоб визначити дані в наступному аргументі. Сокет (socket) – це підключений індивідуальний клієнт.
+Спершу необхідно прослухати нове з'єднання від клієнта. Ключове слово <dfn>on</dfn> робить лише це — прослуховує конкретну подію. It requires 2 arguments: a string containing the title of the event that's emitted, and a function with which the data is passed through. У випадку нашого слухача зв'язку, скористаємось *socket*, щоб визначити дані в наступному аргументі. Сокет (socket) – це підключений індивідуальний клієнт.
 
 Щоб прослухати підключення до вашого сервера, додайте до вашого підключення бази даних наступне:
 
@@ -42,7 +42,7 @@ let socket = io();
 
 **Примітка:**`io()` працює лише тоді коли підключений до сокета, який знаходиться на тому ж url/сервері. Щоб підключитись до зовнішнього сокета, який знаходиться в іншому місці, скористайтесь `io.connect('URL');`.
 
-Підтвердіть свою сторінку, коли зрозумієте, що все працює коректно. Якщо ви натрапите на помилки, можете перевірити виконання проєкту до цього етапу [тут](https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1).
+Підтвердіть свою сторінку, коли зрозумієте, що все працює коректно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

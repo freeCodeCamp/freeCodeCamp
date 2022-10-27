@@ -10,7 +10,7 @@ dashedName: authentication-with-socket-io
 
 Actualmente, no puedes determinar quién está conectado a tu web socket. Mientras que `req.user` contiene el objeto user, eso es sólo cuando tu usuario interactúa con el servidor web, y con los web sockets no tienes la `req` (petición) y por lo tanto no hay datos del usuario. Una forma de resolver el problema de saber quién está conectado a tu socket web es analizando (parsing) y decodificando la cookie que contiene la sesión del pasaporte y luego deserializándola para obtener el objeto user. Por suerte, ¡hay un paquete en NPM sólo para esto que convierte una tarea antes compleja en algo sencillo!
 
-Agrega `passport.socketio@~3.7.0`, `connect-mongo@~3.2.0`y `cookie-parser@~1.4.5` como dependencias y requiérelas como `passportSocketIo`, `MongoStore`y `cookieParser` respectivamente. Además, necesitamos inicializar un nuevo almacén de memoria, a partir de `express-session` que requerimos previamente. Debe verse así:
+`passport.socketio@~3.7.0`, `connect-mongo@~3.2.0`, y `cookie-parser@~1.4.5` ya han sido añadidas como dependencias. Requerirlas como `passportSocketIo`, `MongoStore`y `cookieParser` respectivamente. También, necesitamos inicializar un nuevo almacenamiento de memoria, desde `express-session` que previamente requerimos. Debería verse así:
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -65,7 +65,7 @@ console.log('user ' + socket.request.user.name + ' connected');
 
 ¡Se registrará en la consola del servidor quién se ha conectado!
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto <a href="https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254" target="_blank" rel="noopener noreferrer nofollow">aquí</a>.
 
 # --hints--
 

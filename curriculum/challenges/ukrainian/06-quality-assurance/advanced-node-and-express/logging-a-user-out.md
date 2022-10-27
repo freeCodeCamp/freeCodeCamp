@@ -30,11 +30,11 @@ app.use((req, res, next) => {
 });
 ```
 
-Підтвердьте сторінку, якщо все виконано вірно. Якщо виникла помилка, Ви можете перевірити виконаний до цього етапу проєкт [тут](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b).
+Підтвердьте сторінку, якщо все виконано вірно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-`req.Logout` має викликатися у маршруті `/logout`.
+`req.logout()` should be called in your `/logout` route.
 
 ```js
 (getUserInput) =>

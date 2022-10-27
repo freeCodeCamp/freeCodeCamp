@@ -1,7 +1,7 @@
 ---
 id: 5900f39f1000cf542c50feb2
 title: 'Problem 51: Prime digit replacements'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302162
 dashedName: problem-51-prime-digit-replacements
 ---
@@ -56,68 +56,83 @@ primeDigitReplacements(6);
 # --solutions--
 
 ```js
-function primeDigitReplacements(n) {
-  function isNFamily(number, primesMap, n) {
-    const prime = number.toString();
-    const lastDigit = prime[prime.length - 1];
-    return (
-      doesReplacingMakeFamily(prime, '0', primesMap, n) ||
-      (lastDigit !== '1' &&
-        doesReplacingMakeFamily(prime, '1', primesMap, n)) ||
-      doesReplacingMakeFamily(prime, '2', primesMap, n)
-    );
-  }
+class PrimeSeive {
+  constructor(num) {
+    const seive = Array(Math.floor((num - 1) / 2)).fill(true);
+    const upper = Math.floor((num - 1) / 2);
+    const sqrtUpper = Math.floor((Math.sqrt(num) - 1) / 2);
 
-  function doesReplacingMakeFamily(prime, digitToReplace, primesMap, family) {
-    let count = 0;
-    const replaceWith = '0123456789';
-
-    for (let i = 0; i < replaceWith.length; i++) {
-      const nextNumber = parseInt(
-        prime.replace(new RegExp(digitToReplace, 'g'), replaceWith[i]),
-        10
-      );
-
-      if (isPartOfFamily(nextNumber, prime, primesMap)) {
-        count++;
-      }
-    }
-    return count === family;
-  }
-
-  function isPartOfFamily(number, prime, primesMap) {
-    return (
-      isPrime(number, primesMap) && number.toString().length === prime.length
-    );
-  }
-
-  function getSievePrimes(max) {
-    const primesMap = new Array(max).fill(true);
-    primesMap[0] = false;
-    primesMap[1] = false;
-
-    for (let i = 2; i < max; i++) {
-      if (primesMap[i]) {
-        let j = i * i;
-        for (j; j < max; j += i) {
-          primesMap[j] = false;
+    for (let i = 0; i <= sqrtUpper; i++) {
+      if (seive[i]) {
+        // Mark value in seive array
+        const prime = 2 * i + 3;
+        // Mark all multiples of this number as false (not prime)
+        const primeSqaredIndex = 2 * i ** 2 + 6 * i + 3;
+        for (let j = primeSqaredIndex; j < upper; j += prime) {
+          seive[j] = false;
         }
       }
     }
-    return primesMap;
+
+    this._seive = seive;
   }
 
-  function isPrime(num, primesMap) {
-    return primesMap[num];
+  isPrime(num) {
+    return num === 2
+      ? true
+      : num % 2 === 0
+        ? false
+        : this.isOddPrime(num);
   }
 
-  const primesMap = getSievePrimes(1000000);
+  isOddPrime(num) {
+    return this._seive[(num - 3) / 2];
+  }
+};
 
-  for (let number = 1; number < 300000; number++) {
-    if (primesMap[number]) {
-      if (isNFamily(number, primesMap, n)) {
-        return number;
-      }
+function primeDigitReplacements(n) {
+  const primeSeive = new PrimeSeive(n * n * n * 2000);
+
+  function isNFamily(number, n) {
+    const prime = number.toString();
+    const lastDigit = prime[prime.length - 1];
+    return doesReplacingMakeFamily(prime, '0', n) ||
+      doesReplacingMakeFamily(prime, '2', n) ||
+      (lastDigit !== '1' && doesReplacingMakeFamily(prime, '1', n));
+  }
+
+  function doesReplacingMakeFamily(prime, digitToReplace, family) {
+    let miss = 0;
+    const base = parseInt(
+      prime
+        .split('')
+        .map(digit => digit == digitToReplace ? '0' : digit)
+        .join('')
+    );
+    const replacements = parseInt(
+      prime
+        .split('')
+        .map(digit => digit === digitToReplace ? '1' : '0')
+        .join('')
+    );
+    const start = prime[0] === digitToReplace ? 1 : 0;
+    for (let i = start; i < 10; i++) {
+      const nextNumber = base + i * replacements;
+      if (!isPartOfFamily(nextNumber, prime)) miss++;
+      if (10 - start - miss < family) break;
+    }
+    return 10 - start - miss === family;
+  }
+
+  function isPartOfFamily(number, prime) {
+    return (
+      primeSeive.isPrime(number) && number.toString().length === prime.length
+    );
+  }
+
+  for (let number = 1; number < 125000; number++) {
+    if (primeSeive.isPrime(number) && isNFamily(number, n)) {
+      return number;
     }
   }
   return -1;

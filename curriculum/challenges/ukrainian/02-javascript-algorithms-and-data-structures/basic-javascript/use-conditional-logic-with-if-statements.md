@@ -9,13 +9,13 @@ dashedName: use-conditional-logic-with-if-statements
 
 # --description--
 
-команди `If` використовуються для прийняття рішень у коді. Ключове слово `if` наказує JavaScript виконати код у фігурних дужках за певних умов, вказаних у круглих дужках. Ці умови ще називаються умовами `Boolean` і вони можуть бути лише `true` або `false`.
+Інструкції `If` використовуються для прийняття рішень у коді. Ключове слово `if` наказує JavaScript виконати код у фігурних дужках за певних умов, вказаних у круглих дужках. Ці умови ще називаються умовами `Boolean` і вони можуть бути лише `true` або `false`.
 
 Коли умова є оціненою як `true`, програма виконує команду у фігурних дужках. Коли булева умова є оцінена як `false`, команда у фігурних дужках не буде виконана.
 
 **Псевдокод**
 
-<blockquote>якщо (<i>condition is true</i>) {<br>  <i>statement is executed</i><br>}</blockquote>
+<blockquote>if (<i>condition is true</i>) {<br>  <i>statement is executed</i><br>}</blockquote>
 
 **Наприклад:**
 
@@ -33,7 +33,7 @@ test(false);
 
 `test(true)` повертає рядок `It was true`, а `test(false)` повертає рядок `It was false`.
 
-Коли `test` отримує значення `true`, оператор `if` оцінює `myCondition`, щоб побачити чи воно є `true` чи ні. Оскільки це `true`, функція повертає `It was true`. Коли `test` отримує значення `false`, `myCondition` є *not* `true`, команда у фігурних дужках не виконується і функція повертає `It was false`.
+Коли `test` отримує значення `true`, оператор `if` оцінює `myCondition`, щоб побачити чи воно є `true` чи ні. Оскільки це `true`, функція повертає `It was true`. Коли ми викликаємо `test` зі значенням `false`, `myCondition` *не* `true`, інструкція у круглих дужках не виконується та функція повертає `It was false`.
 
 # --instructions--
 

@@ -9,7 +9,7 @@ dashedName: counting-cards
 
 # --description--
 
-У казино грі Blackjack гравець може здобути перевагу над казино, відстежуючи відносне число старших та молодших карт, що залишились в колоді. Це називається [Підрахунок карт](https://en.wikipedia.org/wiki/Card_counting).
+In the casino game Blackjack, a player can determine whether they have an advantage on the next hand over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called Card Counting.
 
 Чим більше старших карт у колоді, тим краще для гравця. Кожній карті присвоєно значення відповідно до нижчеподаної таблиці. Коли рахунок є більшим за нуль, гравець повинен ставити старшу карту. Коли рахунок дорівнює нулю або є меншим, гравець повинен ставити молодшу карту.
 
@@ -25,7 +25,20 @@ dashedName: counting-cards
 
 # --hints--
 
-Послідовність карт 2, 3, 4, 5, 6 має повернути рядок `5 Bet`
+Your function should return a value for count and the text (`Bet` or `Hold`) with one space character between them.
+
+```js
+assert(//
+  (function () {
+    count = 0;
+    let out = cc(10);
+    const hasSpace = /-?\d+ (Bet|Hold)/.test('' + out);
+    return hasSpace;
+  })()
+);
+```
+
+Cards Sequence 2, 3, 4, 5, 6 should return the string `5 Bet`
 
 ```js
 assert(
@@ -44,7 +57,7 @@ assert(
 );
 ```
 
-Послідовність карт 7, 8, 9 має повернути рядок `0 Hold`
+Cards Sequence 7, 8, 9 should return the string `0 Hold`
 
 ```js
 assert(
@@ -61,7 +74,7 @@ assert(
 );
 ```
 
-Послідовність карт 10, J, Q, K, A має повернути рядок `-5 Hold`
+Cards Sequence 10, J, Q, K, A should return the string `-5 Hold`
 
 ```js
 assert(
@@ -80,7 +93,7 @@ assert(
 );
 ```
 
-Послідовність карт 3, 7, Q, 8, A має повернути рядок `-1 Hold`
+Cards Sequence 3, 7, Q, 8, A should return the string `-1 Hold`
 
 ```js
 assert(
@@ -99,7 +112,7 @@ assert(
 );
 ```
 
-Послідовність карт 2, J, 9, 2, 7 має повернути рядок `1 Bet`
+Cards Sequence 2, J, 9, 2, 7 should return the string `1 Bet`
 
 ```js
 assert(
@@ -118,7 +131,7 @@ assert(
 );
 ```
 
-Послідовність карт 2, 2, 10 має повернути рядок `1 Bet`
+Cards Sequence 2, 2, 10 should return the string `1 Bet`
 
 ```js
 assert(
@@ -135,7 +148,7 @@ assert(
 );
 ```
 
-Послідовність карт 3, 2, A, 10, K має повернути рядок `-1 Hold`
+Cards Sequence 3, 2, A, 10, K should return the string `-1 Hold`
 
 ```js
 assert(

@@ -32,7 +32,7 @@
       "applied-accessibility": {
         "title": "応用アクセシビリティ",
         "intro": [
-          "ウェブ開発におけるアクセシビリティとは、幅広いユーザーが理解し、移動し、対話できるコンテンツやUI (ユーザーインターフェース) のことを指します。これには視覚、聴覚、運動、認知に障害がある人も含みます。",
+          "ウェブ開発におけるアクセシビリティとは、幅広いユーザーが理解し、移動し、対話できるコンテンツや UI (ユーザーインターフェース) のことを指します。これには視覚、聴覚、運動、認知に障害がある人も含みます。",
           "このコースでは、誰もがアクセス可能な Web ページを構築するためのベストプラクティスを学びます。"
         ]
       },
@@ -134,8 +134,8 @@
       "learn-css-variables-by-building-a-city-skyline": {
         "title": "CSS 変数の学習: 都市のスカイラインを作成する",
         "intro": [
-          "CSS の変数はスタイルを体系づけたり、それらを再利用するのに役立ちます。",
-          "このコースでは、都市のスカイラインを作成します。CSS の変数の設定方法を学習して、使いたい時にいつでもそれらを再利用できるようにします。"
+          "CSS の変数はスタイルを体系づけたり、再利用するのに役立ちます。",
+          "このコースでは、都市のスカイラインの風景を作成します。CSS 変数の設定方法を学習して、必要に応じて再利用できるようにします。"
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
@@ -180,10 +180,10 @@
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "タイポグラフィの学習: 栄養ラベルを作成する",
+        "title": "タイポグラフィの学習: 栄養成分表示ラベルを作成する",
         "intro": [
-          "タイポグラフィはテキストを読み易く、また目的に合うようにスタイリングする技術です。",
-          "このコースでは、タイポグラフィを用いて栄養ラベルのウェブページを作成します。CSS を用いてテキストを整え、行の高さを調節し、テキストを配置することを学習します。"
+          "タイポグラフィとは、テキストを読み易く、また目的に合うようにスタイリングする技術です。",
+          "このコースでは、タイポグラフィを用いて栄養成分表示ラベルのウェブページを作成します。CSS を用いてテキストを整え、行の高さを調節し、テキストを配置することを学習します。"
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
@@ -201,10 +201,10 @@
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "CSS 疑似セレクターの学習: 貸借対照表を作成する",
+        "title": "CSS 疑似セレクターの学習: バランスシートを作成する",
         "intro": [
           "CSS の疑似セレクターを用いて、特定の HTML 要素を変化させることができます。",
-          "このコースでは、疑似セレクターを用いて貸借対照表を作成します。ウェブページ上でマウスポインタを要素の上に合わせた時に要素のスタイルを変更する方法や、他のイベントを起こす方法を学習します。"
+          "このコースでは、疑似セレクターを用いてバランスシート (貸借対照表) を作成します。ウェブページ上でマウスポインタを要素の上に合わせた時に要素のスタイルを変更する方法や、他のイベントを起こす方法を学習します。"
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "JavaScript アルゴリズムとデータ構造 (ベータ版)",
-    "intro": [
-      "プレイスホルダー",
-      "プレイスホルダー"
-    ],
+    "intro": ["プレイスホルダー", "プレイスホルダー"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "シーザー暗号解析器作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "キャッシュレジスター作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "回文チェッカー作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "ローマ数字コンバーター作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "電話番号バリデーター作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "JavaScript の基礎の学習: ロールプレイングゲームを作る",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "フォームの検証の学習: カロリー計算機を作る",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "関数型プログラミングの学習: スプレッドシートを作る",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -369,7 +342,7 @@
     "title": "フロントエンド開発ライブラリ",
     "intro": [
       "今やあなたは HTML、CSS、そして JavaScript に精通しているので、業界内で最も一般的なフロントエンドライブラリのいくつかを学習することで技能を向上させましょう。",
-      "フロントエンド開発ライブラリ認定講座では、Bootstrap でサイトを素早く整える方法を学習します。Sassで CSS スタイルに論理を加え、そして拡張する方法についても学習します。",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "後ほど、ショッピングカートや他のアプリケーションを構築しながら、強力なシングルページアプリケーション (SPA) を React と Redux で作成する方法を学習します。"
     ],
     "note": "",
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "D3 ダッシュボード",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -606,8 +576,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB と Mongoose",
         "intro": [
-          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, MongoDB is a non-relational or \"NoSQL\" database. This means MongoDB stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
-          "Mongoose is a popular npm package for interacting with MongoDB. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with MongoDB. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
+          "MongoDB はアプリケーションで使用できる JSON ドキュメント (またはレコード) を保管するデータベースアプリケーションです。別の種類のデータベースである SQL とは異なり、MongoDB は非リレーショナル、または \"NoSQL\" データベースです。これは、SQL データベースがあらかじめ定義した多くのテーブルにデータを保管するのと異なり、MongoDB はすべての関連データを一つのレコードの中に保管することを意味します。",
+          "Mongoose は MongoDB とやり取りするためによく使われる npm パッケージです。Mongoose を利用することで、JSON ではなく素の JavaScript オブジェクトを使用できるようになり、MongoDB が使いやすくなります。また、スキーマと呼ばれるドキュメントの設計図を作成することを可能にし、間違った型のデータを保存してしまい後にバグを発生させることを防ぎます。",
           "MongoDB と Mongoose コースでは、モデルを設定する方法や、データベース内のドキュメントを保存、削除、検索する方法など、永続的なデータを扱うことの基本を学習します。"
         ]
       },
@@ -820,7 +790,7 @@
   "misc-text": {
     "certification": "{{cert}} 認定",
     "browse-other": "他の無料の認定講座を閲覧する\n(上から順に受講することをお勧めします)",
-    "courses": "コース",
+    "courses": "コース一覧",
     "steps": "ステップ",
     "expand": "コースを展開",
     "collapse": "コースを閉じる",

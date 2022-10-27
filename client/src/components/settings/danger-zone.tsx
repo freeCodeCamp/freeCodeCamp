@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 
-import { deleteAccount, resetProgress } from '../../redux/settings';
+import { deleteAccount, resetProgress } from '../../redux/settings/actions';
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import DeleteModal from './delete-modal';
 import ResetModal from './reset-modal';

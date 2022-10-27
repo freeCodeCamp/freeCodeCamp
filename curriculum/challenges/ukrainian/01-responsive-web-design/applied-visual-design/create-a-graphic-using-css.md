@@ -15,11 +15,11 @@ dashedName: create-a-graphic-using-css
 
 Щоб створити круглий об'єкт, необхідно задати властивості `border-radius` значення 50%.
 
-Як ви могли помітити в попередньому завданні, властивість `box-shadow` приймає значення: `offset-x`, `offset-y`, `blur-radius`, `spread-radius` і значення кольору. Значення `blur-radius` і `spread-radius` необов'язкові.
+Як ви могли помітити в попередньому завданні, властивість `box-shadow` приймає значення для `offset-x`, `offset-y`, `blur-radius`, `spread-radius` та `color`, в такому ж порядку. Значення `blur-radius` і `spread-radius` необов'язкові.
 
 # --instructions--
 
-Керуйте квадратним елементом у редакторі, щоб створити форму місяця. Спочатку змініть `background-color` на `transparent`, тоді надайте властивості `border-radius` значення 50%, щоб створити круглу форму. Вкінці змініть властивість `box-shadow`, щоб надати властивості `offset-x` значення 25 пікселів, властивості `offset-y` - 10 пікселів, `blur-radius` - 0, `spread-radius` - 0, а за допомогою властивості `blue` встановити колір.
+Керуйте квадратним елементом у редакторі, щоб створити форму місяця. Спочатку змініть `background-color` на `transparent`, тоді надайте властивості `border-radius` значення 50%, щоб створити круглу форму. Зрештою, змініть властивість `box-shadow`, щоб встановити `offset-x` на 25 пікселів, `offset-y` на 10 пікселів, `blur-radius` на 0, `spread-radius` на 0, а `color` на `blue`.
 
 # --hints--
 
@@ -35,7 +35,7 @@ assert(code.match(/background-color:\s*?transparent;/gi));
 assert(code.match(/border-radius:\s*?50%;/gi));
 ```
 
-Значення властивості `box-shadow` повинно мати значення 25 пікселів для `offset-x`, 10 пікселів для `offset-y`, 0 для `blur-radius`, 0 для `spread-radius`, та колір має бути задано за допомогою `blue`.
+Значення властивості `box-shadow` повинне бути 25 пікселів для `offset-x`, 10 пікселів для `offset-y`, 0 для `blur-radius`, 0 для `spread-radius`, а також `blue` для `color`.
 
 ```js
 assert(

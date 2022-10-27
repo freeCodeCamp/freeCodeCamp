@@ -9,7 +9,7 @@ dashedName: returning-boolean-values-from-functions
 
 # --description--
 
-Ви можете пригадати з [Порівняння з оператором рівності](/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator), що всі порівняльні оператори повертають логічне `true` або `false` значення.
+You may recall from <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener noreferrer nofollow">Comparison with the Equality Operator</a> that all comparison operators return a boolean `true` or `false` value.
 
 Інколи люди використовують `if/else` команду для того, щоб зробити порівняння на зразок цього:
 

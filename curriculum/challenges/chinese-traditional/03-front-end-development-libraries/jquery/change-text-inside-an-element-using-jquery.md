@@ -22,7 +22,7 @@ jQuery 還有一個類似的函數 `.text()`，可以在不添加標籤的前提
 
 給 id 爲 `target4` 的按鈕的文本添加強調效果。
 
-查看這篇[關於 &lt;em> 的文章](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element)來了解更多 `<i>` 和 `<em>` 的區別和用法。
+<a href="https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element" target="_blank" rel="noopener noreferrer nofollow">查看我們的專欄文章 &lt;em&gt;</a>來了解 `<i>` 和 `<em>` 及其用途之間的差異。
 
 注意，`<i>` 標籤雖然傳統上用來強調文本，但此後常用作圖標的標籤。 `<em>` 標籤作爲強調標籤現在已被廣泛接受。 可以使用任意一種完成這個挑戰。
 

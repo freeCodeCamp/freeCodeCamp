@@ -87,6 +87,21 @@ assert(
 O método `remove` deve remover o maior elemento do Max Heap ao mesmo tempo em que mantém a propriedade do Max Heap.
 
 ```js
+function isHeap(arr, i, n) {
+  if (i >= (n - 1) / 2) {
+    return true;
+  }
+  if (
+    arr[i] >= arr[2 * i + 1] &&
+    arr[i] >= arr[2 * i + 2] &&
+    isHeap(arr, 2 * i + 1, n) &&
+    isHeap(arr, 2 * i + 2, n)
+  ) {
+    return true;
+  }
+  return false;
+}
+
 assert(
   (function () {
     var test = false;
@@ -95,16 +110,21 @@ assert(
     } else {
       return false;
     }
-    test.insert(30);
-    test.insert(300);
-    test.insert(500);
-    test.insert(10);
-    let result = [];
-    result.push(test.remove());
-    result.push(test.remove());
-    result.push(test.remove());
-    result.push(test.remove());
-    return result.join('') == '5003003010';
+  let max = Infinity;
+  const [result, vals] = [[], [2, 15, 3, 7, 12, 7, 10, 90]];
+  vals.forEach((val) => test.insert(val));
+  for (let i = 0; i < vals.length; i++) {
+    const curHeap = test.print();
+    const arr = curHeap[0] === null ? curHeap.slice(1) : curHeap;
+    if (!isHeap(arr, 0, arr.length - 1)) {
+      return false;
+    }
+    const removed = test.remove();
+    if(removed > max) return false
+    max = removed;
+    result.push(removed);
+  }
+  return true
   })()
 );
 ```

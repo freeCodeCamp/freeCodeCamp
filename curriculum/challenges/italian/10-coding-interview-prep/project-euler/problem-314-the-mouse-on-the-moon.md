@@ -18,7 +18,7 @@ Anche se non è consentito, ma per avere un'idea se questo è qualcosa di meglio
 
 Tuttavia, se si tagliano dal quadrato quattro triangoli con lati 75 m, 75 m e $75\sqrt{2}$ m l'area totale diventa 238750 $\text{m}^2$ e il perimetro diventa $1400 + 300\sqrt{2}$ m. Quindi questo dà un rapporto $\frac{\text{enclosed-area}}{\text{wall-length}}$ di 130.87, che è significativamente migliore.
 
-<img class="img-responsive center-block" alt="immagine che mostra la differenza nell'area racchiusa tra cerchio e quadrato con il taglio di quattro triangoli" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="picture showing difference in enclosed-area between circle and square with cut off four triangles" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
 
 Trova il massimo rapporto $\frac{\text{area-racchiusa}}{\text{lunghezza-muro}}$. Dai la tua risposta arrotondata a 8 posti dopo il punto decimale nella forma abc.defghijk.
 

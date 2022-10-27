@@ -28,7 +28,7 @@ socket.emit('chat message', messageToSend);
 
 この時点でチャットが完全に機能し、すべてのクライアントにメッセージが送信されるはずです！
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 

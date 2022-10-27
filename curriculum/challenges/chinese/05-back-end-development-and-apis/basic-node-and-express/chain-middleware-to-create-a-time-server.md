@@ -8,7 +8,7 @@ dashedName: chain-middleware-to-create-a-time-server
 
 # --description--
 
-使用 `app.METHOD(path, middlewareFunction)` 可以在指定的路由挂载中间件， 也可以在路由定义中链式调用中间件。
+使用 `app.METHOD(path, middlewareFunction)` 可以在指定的路由挂载中间件， 中间件也可以链接在路由定义中。
 
 请看以下示例：
 
@@ -49,7 +49,7 @@ app.get('/user', function(req, res, next) {
   );
 ```
 
-/now 接口应该返回一个现在时间 +/-20 秒的时间
+`/now` 端点应该返回当前时间。
 
 ```js
 (getUserInput) =>

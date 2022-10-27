@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8012
 title: Алгоритми сортування/Сортування по частинах
-challengeType: 5
+challengeType: 1
 forumTopicId: 302318
 dashedName: sorting-algorithmsstooge-sort
 ---
 
 # --description--
 
-Напишіть функцію для виконання [ Сортування по частинах ](https://en.wikipedia.org/wiki/Stooge sort) для масиву цілих чисел. Функція має повернути впорядкований масив.
+Write a function to perform Stooge Sort on an array of integers. Функція має повернути впорядкований масив.
 
 Алгоритм сортування по частинах виглядає наступним чином:
 

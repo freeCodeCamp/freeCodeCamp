@@ -14,13 +14,13 @@ dashedName: create-a-doubly-linked-list
 
 # --instructions--
 
-`Node` オブジェクトが既に用意され、`DoublyLinkedList` が開始しています。 二重リンクリストに、`add`、`remove` と呼ばれる 2 つのメソッドを追加しましょう。 `add` メソッドは与えられた要素をリストに追加する必要があります。`remove` メソッドは、リスト内で、与えられた要素のすべての出現を削除する必要があります。
+`Node` オブジェクトが用意され、`DoublyLinkedList` の最初の部分が書いてあります。 二重リンクリストに、`add`、`remove` と呼ばれる 2 つのメソッドを追加しましょう。 `add` メソッドは与えられた要素をリストに追加する必要があります。`remove` メソッドは、与えられた要素をリストからすべて削除する必要があります。
 
 これらのメソッドを記述する際は、先頭または末尾の要素の削除など、起こり得るエッジケースを慎重に処理してください。 また、空のリスト上で要素を削除すると、`null` が返される必要があります。
 
 # --hints--
 
-DoublyLinkedList データ構造が存在する必要があります。
+The `DoublyLinkedList` data structure should exist.
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-DoublyLinkedList に add というメソッドが必要です。
+The `DoublyLinkedList` should have a method called `add`.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-DoublyLinkedList に remove というメソッドが必要です。
+The `DoublyLinkedList` should have a method called `remove`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-また、空のリストから要素を削除すると、null が返される必要があります。
+Removing an item from an empty list should return `null`.
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-add メソッドはリストに要素を追加する必要があります。
+The `add` method should add items to the list.
 
 ```js
 assert(

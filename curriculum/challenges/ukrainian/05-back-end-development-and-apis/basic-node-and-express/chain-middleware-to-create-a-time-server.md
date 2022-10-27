@@ -8,7 +8,7 @@ dashedName: chain-middleware-to-create-a-time-server
 
 # --description--
 
-Програмне забезпечення можна підключити за певним маршрутом за допомогою `app.METHOD(path, middlewareFunction)`. Підрограмне забезпечення також може бути поєднане всередині визначення маршруту.
+Програмне забезпечення можна підключити за певним маршрутом за допомогою `app.METHOD(path, middlewareFunction)`. Middleware can also be chained within a route definition.
 
 Розглянемо наступний приклад:
 
@@ -49,7 +49,7 @@ app.get('/user', function(req, res, next) {
   );
 ```
 
-/now кінцева точка повинна повернути час, який відтепер складає +/-20 сек
+The `/now` endpoint should return the current time.
 
 ```js
 (getUserInput) =>

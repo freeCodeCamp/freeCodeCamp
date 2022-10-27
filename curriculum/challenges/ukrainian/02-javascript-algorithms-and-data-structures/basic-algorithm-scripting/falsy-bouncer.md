@@ -8,7 +8,7 @@ dashedName: falsy-bouncer
 
 # --description--
 
-Видалити всі неправильні значення з масиву.
+Remove all falsy values from an array. Return a new array; do not mutate the original array.
 
 Неправильні значення в JavaScript: `false`, `null`, `0`, `""`, `undefined`, і `NaN`.
 
@@ -38,6 +38,14 @@ assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 
 ```js
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
+```
+
+You should not mutate `arr`.
+
+```js
+const arr = ['a', false, 0, 'Naomi'];
+bouncer(arr);
+assert.deepEqual(arr, ['a', false, 0, 'Naomi'])
 ```
 
 # --seed--

@@ -12,7 +12,7 @@ Yes - You can contribute to any of the 30+ languages we have enabled on our tran
 
 We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
-If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
+If you are interested in contributing to translations please make sure you [read this guide](how-to-translate-files.md) first.
 
 ### Can I contribute articles to freeCodeCamp News or videos to freeCodeCamp's YouTube channel?
 
@@ -63,7 +63,7 @@ We typically do not assign issues to anyone other than long-time contributors. I
 1. We are most likely to merge the first pull request that addresses the issue.
 2. In the case of multiple contributors opening a pull request for the same issue at around the same time, we will give priority to the pull request that best addresses the issue. Some of the things we consider:
    - Did you include tests?
-   - Did you catch all usecases?
+   - Did you catch all use cases?
    - Did you ensure all tests pass, and confirm everything works locally?
 3. Finally, we give priority to pull requests which follow our recommended guidelines.
    - Did you follow the pull request checklist?
@@ -85,14 +85,14 @@ Here are some recommended paths for some of our platforms:
   to deal with potential conflicts that may arise.
 - To be a **Forum** moderator, similar to a chat moderator, have an active
   presence and engage with other forum posters, supporting others in their
-  learning journey, and even given feedback when asked. Take a look at
+  learning journey, and even giving feedback when asked. Take a look at
   [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326)
   for more information.
 - To be a **GitHub** moderator, help process GitHub issues that are brought up
   to see if they are valid and (ideally) try to propose solutions for these
   issues to be picked up by others (or yourself).
 
-Altogether, be respectful to others. We are humans all around the world. With
+Altogether, be respectful to others. We are humans from all around the world. With
 that in mind, please also consider using encouraging or supportive language and
 be mindful of cross-cultural communication.
 
@@ -119,6 +119,6 @@ Thanks in advance for being polite and patient. Remember – this community is r
 
 ### Additional Assistance
 
-If you have queries about the stack, architecture of the codebase, translations, or anything else feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
+If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**

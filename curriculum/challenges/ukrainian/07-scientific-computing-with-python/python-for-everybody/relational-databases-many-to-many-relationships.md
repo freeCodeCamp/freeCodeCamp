@@ -14,15 +14,15 @@ dashedName: relational-databases-many-to-many-relationships
 
 Додаткові ресурси:
 
-\- [Відео-урок: email](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
+\- <a href="https://www.youtube.com/watch?v=uQ3Qv1z_Vao" target="_blank" rel="noopener noreferrer nofollow">Exercise: Email</a>
 
-\- [Відео-урок: roster](https://www.youtube.com/watch?v=qEkUEAz8j3o)
+\- <a href="https://www.youtube.com/watch?v=qEkUEAz8j3o" target="_blank" rel="noopener noreferrer nofollow">Exercise: Roster</a>
 
-\- [Відео-урок: tracks](https://www.youtube.com/watch?v=I-E7avcPeSE)
+\- <a href="https://www.youtube.com/watch?v=I-E7avcPeSE" target="_blank" rel="noopener noreferrer nofollow">Exercise: Tracks</a>
 
-\- [Відео-урок: twfriends](https://www.youtube.com/watch?v=RZRAoBFIH6A)
+\- <a href="https://www.youtube.com/watch?v=RZRAoBFIH6A" target="_blank" rel="noopener noreferrer nofollow">Exercise: Twfriends</a>
 
-\- [Відео-урок: twspider](https://www.youtube.com/watch?v=xBaJddvJL4A)
+\- <a href="https://www.youtube.com/watch?v=xBaJddvJL4A" target="_blank" rel="noopener noreferrer nofollow">Exercise: Twspider</a>
 
 # --question--
 
