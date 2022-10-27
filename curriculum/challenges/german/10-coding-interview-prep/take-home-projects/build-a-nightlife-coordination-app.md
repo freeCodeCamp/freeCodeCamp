@@ -12,11 +12,11 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 
 Here are the specific user stories you should implement for this project:
 
-**User Story:** As an unauthenticated user, you can view all bars in my area.
+**User Story:** As an unauthenticated user, you can view all bars in your area.
 
-**User Story:** As an authenticated user, you can add myself to a bar to indicate you am going there tonight.
+**User Story:** As an authenticated user, you can add yourself to a bar to indicate you are going there tonight.
 
-**User Story:** As an authenticated user, you can remove myself from a bar if you no longer want to go there.
+**User Story:** As an authenticated user, you can remove yourself from a bar if you no longer want to go there.
 
 **User Story:** As an unauthenticated user, when you login you should not have to search again.
 

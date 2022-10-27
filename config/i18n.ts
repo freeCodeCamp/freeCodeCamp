@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-import { SuperBlocks } from '../certification-settings';
+import { SuperBlocks } from './certification-settings';
 /*
  * List of languages with localizations enabled for builds.
  *

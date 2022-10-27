@@ -24,7 +24,7 @@ dashedName: catch-misspelled-variable-and-function-names
 assert(netWorkingCapital === 2);
 ```
 
-代码中不应存在拼写错误的变量。
+There should be no instances of misspelled variables in the code.
 
 ```js
 assert(!code.match(/recievables/g));
@@ -36,7 +36,7 @@ assert(!code.match(/recievables/g));
 assert(code.match(/receivables/g).length == 2);
 ```
 
-代码中不应存在拼写错误的变量。
+There should be no instances of misspelled variables in the code.
 
 ```js
 assert(!code.match(/payable;/g));

@@ -23,7 +23,7 @@ Compute all three of the <a href="https://en.wikipedia.org/wiki/Pythagorean_mean
 
 # --instructions--
 
-関数を書くときは、入力がすべての包括的数値の規則配列であると想定します。
+When writing your function, assume the input is an ordered array of all-inclusive numbers.
 
 答えは、以下の形式でオブジェクトを出力してください。
 

@@ -12,11 +12,11 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 
 Here are the specific user stories you should implement for this project:
 
-**User Story:** As an unauthenticated user, you can view all bars in my area.
+**User Story:** As an unauthenticated user, you can view all bars in your area.
 
-**用戶故事：** 作爲一名經過身份驗證的用戶，我可以將自己添加到一個欄中，以表明我今晚要去那裏。
+**User Story:** As an authenticated user, you can add yourself to a bar to indicate you are going there tonight.
 
-**用戶故事：** 作爲一名經過身份驗證的用戶，如果我不想再去那裏，我可以將自己從酒吧中刪除。
+**User Story:** As an authenticated user, you can remove yourself from a bar if you no longer want to go there.
 
 **用戶故事：** 作爲未經身份驗證的用戶，當我登錄時，我不需要再次搜索。
 
