@@ -187,11 +187,15 @@ Novamente, se você tiver algum problema ou dúvida, faça uma postagem com suas
 
 ### Lidando com soluções publicadas
 
-Quando um usuário postar uma solução para qualquer uma das perguntas, remova-a e avise gentilmente, com as suas próprias palavras, que soluções não são permitidas no fórum, ou use a resposta pronta: **Solution instead of help**.
+If a user replies in a help thread for the freeCodeCamp curriculum with a solution, remove it and use the **Solution Instead of Help** canned reply (or a similar response in your own words).
+
+If the OP (Original Poster) replies within a freeCodeCamp curriculum help thread with their final solution, blur it and use the **Blurred Spoiler Solution** canned reply.
+
+If a user creates a thread asking for feedback on a solution, move the thread to the feedback subforum and blur the solution, as necessary. If the user is only posting the solution to show if off, then unlist the thread and use the **Solutions Thread** canned reply.
 
 ### Usuários menores de idade
 
-Nossos [termos de serviço](https://freecodecamp.org/terms) requerem que os usuários do freeCodeCamp tenham, pelo menos, 13 anos de idade. Se um usuário revelar que ele tem menos de 13 anos de idade, envie-lhe a mensagem abaixo e suspenda a conta. Em seguida, **envie um email para `support[at]freecodecamp.org` para excluir as contas do usuário de freeCodeCamp/learn e do fórum (fornecendo um link para a conta ilícita do fórum).**
+Our [Terms of Service](https://freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. If a user reveals that they are under the age of 13, send them the message (below), suspend the account then **Email `support[at]freecodecamp.org` to delete the user's freeCodeCamp /learn and forum accounts as well (providing a link to the offending forum account).**
 
 ```markdown
 ASSUNTO: Usuários com menos de 13 anos não têm permissão para usar o fórum de acordo com os nossos Termos de Serviço.
@@ -205,7 +209,7 @@ Obrigado(a) pela compreensão.
 
 ### Moderando via celular
 
-É possível moderar o fórum por um celular, mas você pode encontrar algumas peculiaridades. Esta não é uma lista exaustiva.
+Moderating the forum is possible via a cell-phone but you may encounter some usage quirks. This is not an exhaustive list.
 
 - Ao tentar incluir uma "Resposta pronta" em uma resposta, se o menu não abrir (após clicar na engrenagem), clique na área de texto primeiro e tente novamente.
 - A 'ferramenta de chave' do moderador está na parte inferior da janela de visualização, mas, se você clicar nela e não puder ver o botão "Select Posts" (Selecionar Posts) pelo fato de ele estar fora de visualização, você pode precisar rolar até ele, embora, às vezes, isso não funcione. Neste caso, pode ser necessário passar para um monitor desktop/laptop.
@@ -213,15 +217,15 @@ Obrigado(a) pela compreensão.
 
 ## Moderando no Facebook
 
-Se você ver algo que pareça quebrar nosso [código de conduta](https://code-of-conduct.freecodecamp.org/), exclua imediatamente.
+If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
 
-Às vezes, as pessoas publicarão coisas que acham engraçadas. Elas não percebem que o que disseram ou compartilharam pode ser interpretado como ofensivo. Você deve excluir essas publicações, mas não necessariamente banir a pessoa. Espera-se que o usuário entenda que aquilo que postou foi inapropriado, pois a postagem foi apagada.
+Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. You should delete such posts, but not necessarily ban the person. Hopefully, the user will come to understand that what they posted was inappropriate because the post was deleted.
 
-Mas se é um delito flagrante, isso não pode razoavelmente ser atribuído a uma diferença cultural ou a um mal-entendido da língua inglesa. Nesse caso, você deve considerar fortemente bloquear o membro do grupo do Facebook.
+But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language. In that case, you should strongly consider blocking the member from the Facebook group.
 
 ## Moderando o Discord
 
-É assim que os moderadores lidam com violações do nosso [Código de Conduta](https://code-of-conduct.freecodecamp.org/) em nosso servidor de bate-papo:
+Here's how moderators deal with violations of our [Code of Conduct](https://code-of-conduct.freecodecamp.org/) on our chat server:
 
 > [!NOTE] O Camperbot serve como nosso bot de moderação, e todos os comandos usam a interface de comando nativa do Discord. Você pode ver uma lista de todos os comandos digitando `/` em qualquer canal.
 
@@ -293,9 +297,9 @@ Mas se é um delito flagrante, isso não pode razoavelmente ser atribuído a uma
 
 ## Como se tornar um moderador
 
-Suponha que você esteja ajudando pessoas da comunidade de modo consistente ao longo do tempo. Nesse caso, nosso time de moderadores vai notar você e um deles vai mencionar você como um possível moderador da [nossa equipe](https://forum.freecodecamp.org/g/Team). Não existem atalhos para se tornar um moderador.
+Suppose you are helping people in the community consistently over time. In that case, our moderator team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
 
-Se for aprovado, nós adicionaremos você ao nosso time de moderadores no [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [fórum](https://forum.freecodecamp.org/g/moderators), chat, etc.
+If you are approved, we will add you to our moderator teams on [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [forum](https://forum.freecodecamp.org/g/moderators), chat, etc.
 
 > [!NOTE] GitHub: Depois que foi aceito como moderador, você receberá um convite de repositório do GitHub. Você precisará visitar [freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation) para poder aceitar o convite.
 > 
@@ -303,7 +307,7 @@ Se for aprovado, nós adicionaremos você ao nosso time de moderadores no [GitHu
 
 ## Como nós retiramos moderadores inativos
 
-Observe que, frequentemente, removeremos moderadores que pensamos estarem inativos. Quando fizermos isso, enviaremos a seguinte mensagem:
+Please note that we will frequently remove moderators whom we think are inactive. When we do this, we will send the following message:
 
 ```markdown
 Essa é uma mensagem padrão notificando que você não parece ter sido um moderador ativo recentemente. Sendo assim, estamos removendo você do nosso time de moderadores. Nós agradecemos profundamente sua ajuda no passado.
@@ -313,47 +317,47 @@ Se acha que fizemos isso por engano ou quando você estiver pronto para voltar e
 
 ## Como funciona nossa sala de Colaboradores
 
-Todos são bem-vindos no [chat de colaboradores do nosso servidor](https://discord.gg/PRyKn3Vbay). Esse é o chat destinado aos moderadores e outros usuários do freeCodeCamp que estão contribuindo para nossa comunidade de diversas formas, incluindo através de grupos de estudo.
+Anyone is welcome in the [contributors room on our chat server](https://discord.gg/PRyKn3Vbay). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
 
-Assumimos que os colaboradores lerão qualquer coisa neste chat que os mencione diretamente com um **@username**. Tudo o mais é opcional, mas fique à vontade para ler e interagir com qualquer coisa que alguém poste lá dentro.
+We assume contributors will read anything in this room that directly mentions them with an **@username**. Everything else is optional, but feel free to read anything anyone posts in there and interact.
 
 ## Lidando com solicitantes
 
-Você pode ser abordado por organizações que queiram formar uma parceria com o freeCodeCamp de alguma maneira. Quando você perceber que essa é a intenção deles, **pedimos que pare de conversar com eles** e diga-lhes para enviar um e-mail para `team[at]freecodecamp.org`.
+You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
 
-Recebemos propostas como essa com frequência. A equipe está em melhor posição para julgar se tal relação valerá a pena para nossa comunidade (e raramente vale).
+We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
 ## Lidando com consultas sobre saúde (mental)
 
-Você pode encontrar situações onde os usuários procuram aconselhamento médico ou estão lidando com questões de saúde mental e buscando apoio.
+You may come across situations where users seek medical advice or are dealing with mental health issues and are looking for support.
 
-Como parte de nossa política, você deve evitar falar em privado sobre essas questões. Se a situação em algum ponto refletir o freeCodeCamp, queremos que as conversas fiquem registradas. Deixe claro que nós não somos profissionais da saúde e que você encoraja o usuário a buscar ajuda profissional.
+As a matter of policy, you should avoid talking privately about these matters. Should the situation reflect back to freeCodeCamp, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help.
 
-Apesar de ser difícil às vezes, evite dar quaisquer dicas ou conselhos que não sejam indicar ao usuário buscar ajuda profissional!
+As difficult as it sometimes can be, avoid giving any tips or advice and rather point the user in the direction of seeking professional help!
 
-Se isso ocorrer no nosso servidor de chat: crie um canal privado para o usuário e o time de moderadores. Isso pode ser feito com o comando `private` do bot.
+If this happens on our chat server: Create a private channel for the user and the moderator team. This can be done with the bot's `private` command.
 
 - O usuário tem a privacidade garantida.
 - O chat público não será mais perturbado.
 - Outros membros do time podem contribuir caso você se sinta desconfortável ao lidar com a situação sozinho.
 
-Links úteis:
+Helpful URLs:
 
 http://suicide.org/international-suicide-hotlines.html
 
 ## Uma nota sobre liberdade de expressão
 
-Às vezes, as pessoas vão defender algo ofensivo ou instigante que elas disseram como sendo "liberdade de expressão."
+Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
-Essa tirinha da XKDC resume perfeitamente o pensamento da maioria das comunidades sobre liberdade de expressão.
+This XKCD comic summarizes perfectly most communities' thoughts on free speech.
 
 <div align="center"><img src='./images/github/xkcd-free-speech.png' width="400" height="400" /></div>
 
-Obrigado por ler isto, e obrigado por ajudar a comunidade de desenvolvedores!
+Thanks for reading this, and thanks for helping the developer community!
 
 ## Modelos de resposta
 
-Esses são alguns dos modelos de resposta que você talvez use enquanto estiver revisando issues/pull requests.
+These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues/pull requests.
 
 > Você pode fazer seu próprio modelo com a funcionalidade embutida do GitHub chamada [saved replies](https://github.com/settings/replies/) ou usar as citadas abaixo.
 
@@ -410,13 +414,13 @@ git fetch upstream
 git pull upstream main
 ````
 
-Se você estiver usando uma GUI, basta clicar em `Add a new remote...` e usar o link `git://github.com/freeCodeCamp/freeCodeCamp.git` de cima.
+If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
 
-Após sincronizar seu fork e passar no build, poderemos revisar seu PR e fazer o merge. 😊
+Once you sync your fork and pass the build, we will be able to review your PR and merge it. 😊
 
 ---
 
-Fique à vontade para recorrer ao artigo [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) no GitHub para mais ideias de como manter seu fork atualizado com o repositório upstream. 🔄
+Feel free to reference the ["Syncing a fork"](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
 ````
 
 ### Merge Conflicts
@@ -437,7 +441,7 @@ If you're not familiar with the merge conflict process, feel free to look over G
 Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
-¹ Se é a primeira vez de um colaborador e se ele tem um conflito de merge, os mantenedores resolverão o conflito para ele.
+¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
 
 ### PR duplicado
 
