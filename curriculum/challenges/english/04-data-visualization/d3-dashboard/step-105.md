@@ -15,7 +15,7 @@ d3.values(data[8].followers)
 
 It will be an array with the values of the followers for the three platforms in 2020.
 
-Note that this "d function" has curly brackets. So you could `console.log(values)` in there to see it's value.
+Note that this "d function" has curly brackets. So you could `console.log(values)` in there to see its value.
 
 # --hints--
 
