@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 export interface FormGroupProps extends React.HTMLAttributes<HTMLElement> {
-  children?: ReactNode;
+  componentClass?: typeof React.Component;
   className?: string;
   controlId?: string;
   validationState?: 'success' | 'warning' | 'error';
