@@ -617,10 +617,13 @@ a[class^='ais-'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  position: absolute;
   z-index: 100;
   width: 20px;
   height: 20px;
+}
+.ais-SearchBox-reset,
+.ais-SearchBox-loadingIndicator {
+  position: absolute;
   top: 50%;
   right: 0.3rem;
   -webkit-transform: translateY(-50%);
@@ -629,7 +632,6 @@ a[class^='ais-'] {
 .ais-SearchBox-reset {
   right: 0.3rem;
 }
-.ais-SearchBox-submitIcon,
 .ais-SearchBox-resetIcon,
 .ais-SearchBox-loadingIcon {
   position: absolute;

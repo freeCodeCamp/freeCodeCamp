@@ -484,12 +484,6 @@ button.nav-link[aria-disabled='true'] {
   width: calc(100vw - 17rem);
 }
 
-.universal-nav-right .fcc_searchBar .ais-SearchBox-submit {
-  top: unset;
-  margin-top: 19px;
-  left: 18px;
-}
-
 .ais-SearchBox-input:focus {
   outline: 3px solid var(--blue-mid);
 }

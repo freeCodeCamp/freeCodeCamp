@@ -15,7 +15,7 @@
 }
 
 .ais-SearchBox-input {
-  padding: 0 10px 0 30px;
+  padding: 0 10px 0 10px;
   font-size: 18px;
   display: inline-block;
   margin-top: 6px;
@@ -23,8 +23,10 @@
 }
 
 .ais-SearchBox-submit {
-  left: 0.3rem;
-  top: 59.5%;
+  margin-top: 6px;
+  height: 26px;
+  background-color: var(--gray-75);
+  padding-left: 3px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
@@ -43,6 +45,7 @@
 .fcc_searchBar .ais-SearchBox-form {
   margin-bottom: 0;
   display: flex;
+  flex-direction: row-reverse;
   position: absolute;
   top: var(--header-height);
   right: 5px;
@@ -156,8 +159,5 @@ and arrow keys */
     position: static;
     top: auto;
     right: 15px;
-  }
-  .ais-SearchBox-submit {
-    left: 0.85rem;
   }
 }
