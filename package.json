@@ -176,7 +176,7 @@
     "husky": "7.0.4",
     "jest": "27.5.1",
     "js-yaml": "3.14.1",
-    "knip": "0.8.2",
+    "knip": "0.13.0",
     "lint-staged": "12.5.0",
     "lodash": "4.17.21",
     "markdownlint": "0.26.2",
