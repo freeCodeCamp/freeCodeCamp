@@ -284,6 +284,7 @@
     "sign-in-save": "Melde dich an, um deinen Fortschritt zu speichern",
     "download-solution": "Meine Lösung herunterladen",
     "percent-complete": "{{percent}}% abgeschlossen",
+    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
     "tried-rsa": "Wenn du die <0>Lesen-Suchen-Fragen</0> Methode bereits ausprobiert hast, kannst du im freeCodeCamp-Forum um Hilfe bitten.",
     "rsa": "Lesen, suchen, fragen",
     "rsa-forum": "<strong>Bevor du einen neuen Beitrag schreibst</strong> schau bitte nach, ob deine Frage <0>bereits im Forum beantwortet wurde</0>.",

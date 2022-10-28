@@ -284,6 +284,7 @@
     "sign-in-save": "登錄以保存你的學習進度",
     "download-solution": "下載我的解決方案",
     "percent-complete": "完成 {{percent}}%",
+    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
     "tried-rsa": "如果你已經嘗試了 <0>Read-Search-Ask（閱讀-搜索-提問）</0>方法，那麼你可以在 freeCodeCamp 論壇請求幫助。",
     "rsa": "閱讀，搜索，提問",
     "rsa-forum": "<strong>在發佈新帖子之前</strong> ，請確認你的問題是否<0>已經在論壇上被回答過</0>。",
