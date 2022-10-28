@@ -408,4 +408,6 @@ Dann commitest und pushst du deinen Zweig direkt in das News-Repository.
 
 Eröffne schließlich einen PR zur Überprüfung.
 
-Sobald die PRs für das CDN und das News Repo genehmigt wurden, können sie zusammengeführt werden. Die Bereitstellung wird anschließend von den Staffs übernommen.
+Sobald die PRs für das CDN und das News Repo genehmigt wurden, können sie zusammengeführt werden.
+
+> [!NOTE] Deployment will be handled subsequently by the staff. Here is a sample PR: [freeCodeCamp/news#485](https://github.com/freeCodeCamp/news/pull/485) of how they do it and more details are available in the [staff-wiki](https://staff-wiki.freecodecamp.org/docs/flight-manuals/news-instances#jamstack---news--assets).

@@ -408,4 +408,6 @@ Em seguida, faça o commit e o push de sua branch diretamente para o repositóri
 
 Por fim, abra um PR para análise.
 
-Uma vez que os PRs para o repositório do CDN e de News tenham sido aprovados, eles podem ser mesclados. A implantação será realizada posteriormente pelos membros da equipe.
+Uma vez que os PRs para o repositório do CDN e de News tenham sido aprovados, eles podem ser mesclados.
+
+> [!NOTE] A implantação será realizada posteriormente pelos membros da equipe. Aqui temos uma amostra de PR: [freeCodeCamp/news#485](https://github.com/freeCodeCamp/news/pull/485). Nela, vemos como a equipe faz isso. Mais detalhes estão disponíveis na [Wiki da equipe](https://staff-wiki.freecodecamp.org/docs/flight-manuals/news-instances#jamstack---news--assets).
