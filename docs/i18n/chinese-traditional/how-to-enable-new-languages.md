@@ -408,4 +408,6 @@ Then commit and push your branch directly to the News repo.
 
 Finally, open a PR for review.
 
-Once both your PRs to the CDN and News repo have been approved, they can be merged. Deployment will be handled subsequently by the staff.
+Once both your PRs to the CDN and News repo have been approved, they can be merged.
+
+> [!NOTE] Deployment will be handled subsequently by the staff. Here is a sample PR: [freeCodeCamp/news#485](https://github.com/freeCodeCamp/news/pull/485) of how they do it and more details are available in the [staff-wiki](https://staff-wiki.freecodecamp.org/docs/flight-manuals/news-instances#jamstack---news--assets).
