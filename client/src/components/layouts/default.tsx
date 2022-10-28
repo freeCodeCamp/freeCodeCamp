@@ -35,10 +35,17 @@ import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
 
+import { clientLocale } from '../../../../config/env.json';
+import { rtlLangs } from '../../../../config/i18n';
+
 // preload common fonts
 import './fonts.css';
 import './global.css';
 import './variables.css';
+
+const isRtlLanguage: boolean = rtlLangs.includes(clientLocale);
+
+isRtlLanguage && import('./rtl-layout.css');
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
