@@ -477,7 +477,6 @@ button.nav-link[aria-disabled='true'] {
 
 .universal-nav-right .ais-SearchBox-input {
   width: calc(100vw - 17rem);
-  padding-left: 27px;
 }
 
 .universal-nav-right .fcc_searchBar .ais-Hits {

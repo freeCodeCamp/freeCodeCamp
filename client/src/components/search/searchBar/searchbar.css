@@ -15,7 +15,7 @@
 }
 
 .ais-SearchBox-input {
-  padding: 0 10px 0 10px;
+  padding: 0 10px;
   font-size: 18px;
   display: inline-block;
   margin-top: 6px;
@@ -25,8 +25,10 @@
 .ais-SearchBox-submit {
   margin-top: 6px;
   height: 26px;
+  width: 26px;
   background-color: var(--gray-75);
-  padding-left: 3px;
+  padding-inline: 3px;
+  border-radius: 0px 15px 0px 15px / 0px 10px 0px 10px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
@@ -46,6 +48,7 @@
   margin-bottom: 0;
   display: flex;
   flex-direction: row-reverse;
+  gap: 0.25em;
   position: absolute;
   top: var(--header-height);
   right: 5px;
