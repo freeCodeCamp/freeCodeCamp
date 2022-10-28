@@ -284,6 +284,7 @@
     "sign-in-save": "サインインして進行状況を保存",
     "download-solution": "回答をダウンロード",
     "percent-complete": "{{percent}}% 完了",
+    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
     "tried-rsa": "すでに <0>Read-Search-Ask (読む - 検索する - 質問する)</0> メソッドを試したなら、freeCodeCamp フォーラムで助けを求めることができます。",
     "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
     "rsa-forum": "<strong>新しい投稿を作成する前に</strong>同じ質問が<0>フォーラム</0>で既に回答されていないか確認してください。",
