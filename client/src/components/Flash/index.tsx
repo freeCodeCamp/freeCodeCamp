@@ -42,6 +42,7 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
             closeLabel={t('buttons.close')}
             onDismiss={handleClose}
           >
+
             {t(message, variables)}
           </Alert>
         </CSSTransition>
