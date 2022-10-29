@@ -104,8 +104,17 @@ Our default font has built in letter spacing issue
 
 [dir='rtl'] .login-btn-text,
 [dir='rtl'] .map-ui ul li a,
-[dir='rtl'] .tool-panel-group {
+[dir='rtl'] .tool-panel-group,
+[dir='rtl'] .flash-message {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
+dropdown links 
+*/
+
+[dir='rtl'] .dropdown-menu {
+  text-decoration-skip-ink: all;
 }
 
 /* 
@@ -117,6 +126,14 @@ sections that need to stay left to right
 [dir='rtl'] pre:has(code),
 /* trending articles */
 [dir='rtl'] .trending-guides .trending-guides-row div a,
-[dir='rtl'] .quote-partial {
+[dir='rtl'] .quote-partial,
+[dir='rtl'] .overflow-guard,
+[dir='rtl'] .challenge-preview,
+[dir='rtl'] .output-text {
   direction: ltr;
+}
+
+[dir='rtl'] .description-container,
+[dir='rtl'] .action-row-container {
+  direction: rtl;
 }
