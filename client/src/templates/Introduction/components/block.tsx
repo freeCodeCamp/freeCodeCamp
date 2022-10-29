@@ -58,7 +58,7 @@ interface BlockProps {
   toggleBlock: typeof toggleBlock;
 }
 
-const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
+const mapIconStyle = { height: '15px', marginInline: '10px', width: '15px' };
 
 export class Block extends Component<BlockProps> {
   static displayName: string;
