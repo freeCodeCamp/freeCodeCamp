@@ -141,14 +141,18 @@ textarea.inputarea {
   margin-top: 0.6rem;
 }
 
-.test-feedback > div {
+.test-feedback .test-status,
+.test-feedback .hint-status {
   margin-top: 1rem;
   display: flex;
+  align-items: center;
   flex-direction: row;
 }
 
 .test-status-description,
 .hint-description {
+  display: flex;
+  align-items: center;
   width: 100%;
 }
 
