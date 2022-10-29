@@ -117,7 +117,7 @@ textarea.inputarea {
 }
 
 .test-feedback p {
-  margin: 0.5rem 0 0;
+  margin: 0.45rem 0 0;
   font-family: 'Lato', sans-serif;
 }
 
@@ -138,21 +138,19 @@ textarea.inputarea {
   height: 1.5rem;
   width: auto;
   margin-right: 0.5rem;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .test-feedback .test-status,
 .test-feedback .hint-status {
   margin-top: 1rem;
   display: flex;
-  align-items: center;
   flex-direction: row;
 }
 
 .test-status-description,
 .hint-description {
   display: flex;
-  align-items: center;
   width: 100%;
 }
 
