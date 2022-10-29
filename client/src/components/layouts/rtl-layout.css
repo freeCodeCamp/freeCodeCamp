@@ -92,23 +92,31 @@ and menu secion
   }
 } */
 
-/* 
-Code snippet
-*/
-
-[dir='rtl'] code {
-  direction: ltr;
-}
-
-/* 
-trending articles
-*/
-
-[dir='rtl'] .trending-guides .trending-guides-row div a {
-  direction: ltr;
-}
-
 /* had to change overflow, because it clips the first words of the english articles */
 [dir='rtl'] .footer-container {
   overflow-x: inherit;
+}
+
+/* 
+Call to action buttons need different font
+Our default font has built in letter spacing issue
+*/
+
+[dir='rtl'] .login-btn-text,
+[dir='rtl'] .map-ui ul li a,
+[dir='rtl'] .tool-panel-group {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
+sections that need to stay left to right
+*/
+
+/*Code snippet*/
+[dir='rtl'] code,
+[dir='rtl'] pre:has(code),
+/* trending articles */
+[dir='rtl'] .trending-guides .trending-guides-row div a,
+[dir='rtl'] .quote-partial {
+  direction: ltr;
 }
