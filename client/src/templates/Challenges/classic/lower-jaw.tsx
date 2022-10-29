@@ -149,7 +149,7 @@ const LowerJaw = ({
               <p>{t(sentencePicker())}</p>
             </div>
           </div>
-          <div className='hint-status' aria-hidden={isFeedbackHidden}>
+          <div className='hint-status fade-in' aria-hidden={isFeedbackHidden}>
             <div className='hint-icon' aria-hidden='true'>
               <span>
                 <LightBulb />
