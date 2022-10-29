@@ -452,9 +452,7 @@ button.nav-link[aria-disabled='true'] {
 .universal-nav-right .fcc_searchBar .ais-SearchBox-form {
   width: 100vw;
   height: var(--search-box-form);
-  max-width: unset;
   padding: 0 15px;
-  left: 0;
 }
 
 /* In mobile layout, prevent search input from hanging around if the 
@@ -522,9 +520,7 @@ button.nav-link[aria-disabled='true'] {
 
   .fcc_searchBar .ais-SearchBox-form {
     display: flex;
-    position: absolute;
     top: var(--header-height);
-    left: 15px;
     max-width: calc(100vw - 350px);
   }
 
@@ -554,6 +550,7 @@ button.nav-link[aria-disabled='true'] {
 
   .universal-nav-right .fcc_searchBar .ais-SearchBox-form {
     width: 100%;
+    max-width: 100%;
   }
 
   .display-menu {
