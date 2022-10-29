@@ -9,7 +9,7 @@ dashedName: add-a-submit-button-to-a-form
 
 # --description--
 
-Let's add a `submit` button to your form. Clicking this button will send the data from your form to the URL you specified with your form's `action` attribute.
+Let's add a `submit` button to your form. Clicking on this button will send the data from your form to the URL you specified with your form's `action` attribute.
 
 Here's an example submit button:
 
