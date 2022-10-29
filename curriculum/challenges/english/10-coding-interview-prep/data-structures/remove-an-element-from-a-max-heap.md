@@ -120,9 +120,15 @@ assert(
       return false;
     }
     const removed = test.remove();
-    if(removed > max) return false
+    if (!vals.includes(removed)) return false;
+    if (removed > max) return false
     max = removed;
     result.push(removed);
+  }
+  for (let i = 0; i < vals.length; i++) {
+     if (!result.includes(vals[i])) {
+       return false;
+     }
   }
   return true
   })()
