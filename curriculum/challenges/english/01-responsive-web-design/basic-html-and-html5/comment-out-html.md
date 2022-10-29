@@ -10,6 +10,7 @@ dashedName: comment-out-html
 # --description--
 
 Remember that in order to start a comment, you need to use `<!--` and to end a comment, you need to use `-->`
+NOTE: On Mac computers, you use `cmd` and `/` to comment. For Windows, you use `ctrl` and `/`. 
 
 Here you'll need to end the comment before your `h2` element begins.
 
