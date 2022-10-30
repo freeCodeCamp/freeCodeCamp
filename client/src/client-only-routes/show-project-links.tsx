@@ -91,7 +91,6 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   };
 
   const renderProjectsFor = (certName: string) => {
-    console.log(certName);
     if (certName === 'Legacy Full Stack') {
       const legacyCerts = [
         { title: 'Responsive Web Design' },
