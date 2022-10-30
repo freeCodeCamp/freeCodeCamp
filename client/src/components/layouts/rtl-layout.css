@@ -64,7 +64,14 @@ Intro project buttons and headings
   margin-left: auto;
 }
 
-[dir='rtl'] .map-title svg:first-of-type {
+/* this is used to rotate arrow mark in javascript-algorithms-and-data-structures block
+   the not selector is used to stop it from affecting other section and pages */
+[dir='rtl']
+  .super-block-intro-page
+  .block-ui
+  .block
+  .map-title:not(.title-wrapper, .block-header-button-text)
+  > svg:first-child {
   transform: rotate(180deg);
 }
 
@@ -72,10 +79,10 @@ Intro project buttons and headings
 universal-nav-bar
 and menu secion
 */
-/* 
-[dir=rtl] .nav-list {
-  right: auto
+[dir='rtl'] .nav-list {
+  right: auto;
 }
+/* 
 
 .fcc_searchBar .ais-SearchBox-input, .fcc_searchBar .ais-Hits {
   padding-inline-start: 1.25em;
@@ -98,23 +105,28 @@ and menu secion
 }
 
 /* 
-Call to action buttons need different font
-Our default font has built in letter spacing issue
-*/
-
-[dir='rtl'] .login-btn-text,
-[dir='rtl'] .map-ui ul li a,
-[dir='rtl'] .tool-panel-group,
-[dir='rtl'] .flash-message {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* 
 dropdown links 
 */
 
 [dir='rtl'] .dropdown-menu {
   text-decoration-skip-ink: all;
+}
+
+/* 
+New RWD project challenge
+*/
+
+[dir='rtl'] .tabs-row {
+  gap: 10px;
+}
+
+[dir='rtl'] .panel-display-tabs {
+  margin-right: auto;
+}
+
+[dir='rtl'] .monaco-editor-tabs button:not(:first-child) {
+  border-left: 2px solid;
+  border-right: none;
 }
 
 /* 
@@ -129,7 +141,9 @@ sections that need to stay left to right
 [dir='rtl'] .quote-partial,
 [dir='rtl'] .overflow-guard,
 [dir='rtl'] .challenge-preview,
-[dir='rtl'] .output-text {
+[dir='rtl'] .output-text,
+/* setting table project name */
+[dir='rtl'] .certification-settings .table tbody .project-title {
   direction: ltr;
 }
 
