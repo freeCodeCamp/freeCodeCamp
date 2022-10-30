@@ -27,7 +27,7 @@ The `MaxHeap` data structure should exist.
 ```js
 assert(
   (function () {
-    var test = false;
+    let test = false;
     if (typeof MaxHeap !== 'undefined') {
       test = new MaxHeap();
     }
@@ -41,7 +41,7 @@ assert(
 ```js
 assert(
   (function () {
-    var test = false;
+    let test = false;
     if (typeof MaxHeap !== 'undefined') {
       test = new MaxHeap();
     } else {
@@ -57,7 +57,7 @@ assert(
 ```js
 assert(
   (function () {
-    var test = false;
+    let test = false;
     if (typeof MaxHeap !== 'undefined') {
       test = new MaxHeap();
     } else {
@@ -73,7 +73,7 @@ assert(
 ```js
 assert(
   (function () {
-    var test = false;
+    let test = false;
     if (typeof MaxHeap !== 'undefined') {
       test = new MaxHeap();
     } else {
@@ -104,7 +104,7 @@ function isHeap(arr, i, n) {
 
 assert(
   (function () {
-    var test = false;
+    let test = false;
     if (typeof MaxHeap !== 'undefined') {
       test = new MaxHeap();
     } else {
