@@ -284,6 +284,7 @@
     "sign-in-save": "قم بتسجيل الدخول لحفظ تقدّمك",
     "download-solution": "تنزيل الحل",
     "percent-complete": "{{percent}}% مكتمل",
+    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
     "tried-rsa": "إذا كنت قد جربت طريقة <0>اقرأ-ابحث-اسأل</0>، فيمكنك طلب المساعدة في منتدى freeCodeCamp.",
     "rsa": "اقرأ ، ابحث ، اسأل",
     "rsa-forum": "<strong>قبل إجراء موضوع جديدة</strong> يرجى الاطلاع على ما إذا كان سؤالك <0> قد تم الإجابة عليه فعلًا في المنتدى </0>.",

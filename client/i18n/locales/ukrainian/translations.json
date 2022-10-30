@@ -284,6 +284,7 @@
     "sign-in-save": "Увійдіть, щоб зберегти свій прогрес",
     "download-solution": "Завантажити моє рішення",
     "percent-complete": "виконано {{percent}}%",
+    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
     "tried-rsa": "Якщо ви вже спробували метод <0>читати-шукати-питати</0>, то ви можете звернутися за допомогою на форум freeCodeCamp.",
     "rsa": "Читати, шукати, питати",
     "rsa-forum": "<strong>Перед створенням нового допису,</strong> будь ласка, перевірте, чи на ваше запитання <0>ще не відповіли на форумі</0>.",

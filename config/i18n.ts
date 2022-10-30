@@ -185,8 +185,9 @@ export const i18nextCodes = {
   arabic: 'ar'
 };
 
-// These are for the language selector dropdown menu in the footer
 /* eslint-disable @typescript-eslint/naming-convention */
+
+// These are for the language selector dropdown menu in the footer
 export enum LangNames {
   english = 'English',
   espanol = 'Español',
@@ -223,16 +224,16 @@ export enum LangCodes {
  */
 export const hiddenLangs = ['arabic'];
 
-// locale is sourced from a JSON file, so we use getLangCode and getLangName to
+/**
+ * This array contains languages that use the RTL layouts.
+ */
+export const rtlLangs = ['arabic'];
+
+// locale is sourced from a JSON file, so we use getLangCode to
 // find the associated enum values
 
 export function getLangCode(locale: PropertyKey) {
   if (isPropertyOf(LangCodes, locale)) return LangCodes[locale];
-  throw new Error(`${String(locale)} is not a valid locale`);
-}
-
-export function getLangName(locale: PropertyKey) {
-  if (isPropertyOf(LangNames, locale)) return LangNames[locale];
   throw new Error(`${String(locale)} is not a valid locale`);
 }
 
