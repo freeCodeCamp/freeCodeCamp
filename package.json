@@ -157,7 +157,7 @@
     "babel-eslint": "10.1.0",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
-    "cypress": "10.10.0",
+    "cypress": "10.11.0",
     "cypress-plugin-stripe-elements": "1.0.2",
     "cypress-plugin-tab": "1.0.5",
     "docsify-cli": "4.4.4",
