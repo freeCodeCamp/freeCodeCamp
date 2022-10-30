@@ -89,6 +89,9 @@ a.cert-tag:active {
 }
 
 .course-title {
+  display: flex;
+  gap: var(--icons-spacing);
+  align-items: center;
   font-size: 1.13rem;
   overflow-wrap: break-word;
 }
@@ -117,6 +120,7 @@ a.cert-tag:active {
 .map-title {
   display: flex;
   align-items: center;
+  gap: var(--icons-spacing);
   padding: 18px 0;
   background: transparent;
   border: none;
@@ -137,6 +141,7 @@ button.map-title {
 .map-challenge-wrap > a,
 .map-project-wrap > a {
   display: flex;
+  gap: var(--small-icons-spacing);
 }
 
 .map-project-wrap > a {
@@ -144,7 +149,6 @@ button.map-title {
 }
 
 .map-project-checkmark {
-  margin-right: 7px;
   padding-left: 15px;
 }
 
@@ -212,7 +216,6 @@ button.map-title {
 
 .map-title svg {
   width: 14px;
-  margin-right: 10px;
   flex-shrink: 0;
   fill: var(--color-quaternary) !important;
   stroke: var(--color-quaternary);
@@ -413,6 +416,7 @@ button.map-title {
 .block-header-button-text {
   align-items: center;
   display: flex;
+  gap: var(--icons-spacing);
   flex-direction: row;
   justify-content: space-between;
 }
@@ -426,12 +430,15 @@ button.map-title {
   padding: 25px;
 }
 
+/* this margin is used to center the element. 
+ToDo: find out why, and remove the need for it */
 .block-grid .map-title > svg {
-  margin: 10px;
+  margin-bottom: 4px;
 }
 
 .title-wrapper {
   display: flex;
+  gap: var(--icons-spacing);
   flex-direction: row;
   align-items: center;
   width: 100%;

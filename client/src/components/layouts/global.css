@@ -1,3 +1,8 @@
+:root {
+  --icons-spacing: 10px;
+  --small-icons-spacing: 7px;
+}
+
 html {
   height: 100%;
   font-size: 18px;

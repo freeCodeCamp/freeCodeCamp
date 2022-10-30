@@ -19,7 +19,6 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
         style={
           Object {
             "height": "15px",
-            "marginLeft": "7px",
             "width": "15px",
           }
         }
