@@ -1,13 +1,13 @@
 # The Official freeCodeCamp Moderator Handbook
 
-This handbook will help you moderate different places in our community. This covers conversations and interactions in issues and pull request threads on GitHub, the community forum, the chat rooms, and other official communities that we foster.
+This handbook will help you moderate different places in our community; this covers conversations and interactions in issues and pull request threads on GitHub, the community forum, the chat rooms, and other official communities we foster.
 
 > [!NOTE]
 > All freeCodeCamp moderators are community-wide moderators. That means we trust you to oversee any of these places.
 
 You can serve as a moderator on any of the platforms that are of the most interest to you. Some moderators just help out on GitHub, while others just help out on the forum. Some moderators are active everywhere.
 
-The bottom line is that we want you to enjoy being a moderator, and invest your scarce time in places that are of interest to you.
+The bottom line is that we want you to enjoy being a moderator and invest your scarce time in places that interest to you.
 
 > "With great power comes great responsibility." - Uncle Ben
 
@@ -20,7 +20,7 @@ freeCodeCamp is an inclusive community, and we need to keep it that way.
 We have a single [Code of Conduct](https://code-of-conduct.freecodecamp.org) that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
 
 > [!NOTE]
-> As a moderator we would add you to one or more teams on GitHub, our community forums & chat servers. If you are missing access on a platform that you would like to moderate, please [reach out to a staff member](FAQ.md#additional-assistance).
+> As a moderator, we would add you to one or more teams on GitHub, our community forums & chat servers. If you are missing access to a platform that you would like to moderate, please [contact a staff member](FAQ.md#additional-assistance).
 
 ## Moderating GitHub
 
@@ -41,7 +41,7 @@ You can help us organize and triage the issue reports by applying labels from [t
 
 Please pay special attention to the labels `"help wanted"` and `"first timers only"`. These are to be added to threads that you think can be opened up to potential contributors for making a pull request.
 
-A `"first timers only"` label should be applied to a trivial issue (ie a typo fix) and should include additional information. You can use this [reply template](moderator-handbook.md#first-timer-only-issues) for triage.
+A `"first timers only"` label should be applied to a trivial issue (i.e. a typo fix) and should include additional information. For triage, you can use this [reply template](moderator-handbook.md#first-timer-only-issues).
 
 #### Closing Stale, Outdated, Inactive Issues and Pull Requests
 
@@ -64,23 +64,23 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    These are changes to the text of challenges - the description, instructions, or test text.
 
-   You can also review these right on GitHub and decide whether to merge them. We need to be a bit more careful about these because millions of people will encounter this text as they work through the freeCodeCamp curriculum. Does the pull request make the text more clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and as short as possible. They aren't the place for obscure details. Contributors may try to add links to resources to the challenges.
+   You can also review these on GitHub and decide whether to merge them. We need to be more careful about these because millions of people will encounter this text as they work through the freeCodeCamp curriculum. Does the pull request make the text clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and short as possible. They aren't the place for obscure details. Contributors may try to add links to resources to the challenges.
 
    You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
-   If the changes look good, please ensure to leave an approval with a "LGTM" (Looks Good To Me) comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
+   If the changes look good, please ensure to leave an approval with an "LGTM" (Looks Good To Me) comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
 2. **Challenge code edits**
 
    These are changes to the code in a challenge - the challenge seed, challenge solution, and test strings.
 
-   These pull requests need to be pulled down from GitHub and tested on your local computer or Gitpod to make sure the challenge tests can still be passed with the current solution and to make sure the new code doesn't introduce any errors.
+   These pull requests need to be pulled down from GitHub and tested on your local computer or Gitpod to ensure the challenge tests can still be passed with the current solution and to ensure the new code doesn't introduce any errors.
 
-   Some contributors may try to add additional tests to cover pedantic corner-cases. We need to be careful to not make the challenge too complicated. These challenges and their tests should be as simple and intuitive as possible. Aside from the algorithm challenges and interview prep section, learners should be able to solve each challenge within about 2 minutes.
+   Some contributors may try to add additional tests to cover pedantic corner-cases. We need to be careful not to make the challenge too complicated. These challenges and their tests should be as simple and intuitive as possible. Aside from the algorithm challenges and interview prep section, learners should be able to solve each challenge within about 2 minutes.
 
    You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
-   If the changes look good, please ensure to leave an approval with a "LGTM" comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
+   If the changes look good, please ensure to leave an approval with an "LGTM" comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
 3. **Platform changes**
 
@@ -121,7 +121,7 @@ If you are uncertain, please ask one of the fellow moderators or the dev-team fo
 
 ##### Merging a valid pull request:
 
-If the pull request looks ready to merge (and doesn't require additional approvals - remember we require at least two), you can go ahead and merge it. Be sure to use the default **"Squash and Merge"** option. This will squash all the pull requests commits down into a single commit, making the Git history much easier to read.
+If the pull request looks ready to merge (and doesn't require additional approvals - remember, we require at least two), you can go ahead and merge it. Be sure to use the default **"Squash and Merge"** option. This will squash all the pull request commits down into a single commit, making the Git history much easier to read.
 
 > You should then comment on the pull request, thanking the contributor in your own personal way!
 
