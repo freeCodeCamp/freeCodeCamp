@@ -140,7 +140,7 @@ assert(
 ## --seed-contents--
 
 ```js
-var MaxHeap = function () {
+const MaxHeap = function () {
   this.heap = [];
   this.parent = index => {
     return Math.floor((index - 1) / 2);
