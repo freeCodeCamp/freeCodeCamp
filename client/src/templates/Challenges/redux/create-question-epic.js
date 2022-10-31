@@ -58,11 +58,10 @@ function createQuestionEpic(action$, state$, { window }) {
 
       if (superBlock === '2022/responsive-web-design') {
         const runFiltration = diffFile => {
-          let str = '';
           const onlyChangedLines = diffFile.filter(
             obj => obj.removed || obj.added
           );
-
+          let str = '';
           for (let i = 0; i < onlyChangedLines.length; i++) {
             str += `${onlyChangedLines[i].added ? '- ' : '+ '}${
               onlyChangedLines[i].value
@@ -78,11 +77,14 @@ function createQuestionEpic(action$, state$, { window }) {
           return { ...file, contents: str, isDiff: true };
         };
 
-        const newFiles = challengeFiles.filter(
-          challenge => challenge.seed !== challenge.contents
+        const diffFiles = challengeFiles.reduce(
+          (acc, current) =>
+            current.seed !== current.contents
+              ? [...acc, createDiff(current)]
+              : acc,
+          []
         );
-        const mappedFiles = newFiles.map(file => createDiff(file));
-        challengeFiles.push(...mappedFiles);
+        challengeFiles.push(...diffFiles);
       }
 
       const {
