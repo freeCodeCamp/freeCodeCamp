@@ -351,7 +351,7 @@ Quindi apri una PR al repo CDN per aggiungere i file YAML e Day.js per la revisi
 
 Il [repo News](https://github.com/freeCodeCamp/news) prende i dati da un'istanza di Ghost, i file che hai aggiunto al CDN, fa il build di News e il deployment.
 
-> [!WARN] Le pull request al repo news _devono_ provenire dallo stesso repo. Non dovresti lavorare fuori da un fork per questo passaggio.
+> [!WARN] Le pull request al repo news _devono_ provenire dallo stesso repo. Non dovresti lavorare da un fork per questo passaggio.
 
 ### Modificare il file di configurazione principale
 
@@ -409,4 +409,4 @@ Infine, apri una PR per la revisione.
 
 Una volta che entrambe le PR per i repo CDN e News sono state approvate, è possibile effettuare il merge.
 
-> [!NOTE] Deployment will be handled subsequently by the staff. Here is a sample PR: [freeCodeCamp/news#485](https://github.com/freeCodeCamp/news/pull/485) of how they do it and more details are available in the [staff-wiki](https://staff-wiki.freecodecamp.org/docs/flight-manuals/news-instances#jamstack---news--assets).
+> [!NOTE] Il deployment sarà successivamente gestito dallo staff. Ecco una PR di esempio: [freeCodeCamp/news#485](https://github.com/freeCodeCamp/news/pull/485) su come si fa e altri dettagli disponibili in [staff-wiki](https://staff-wiki.freecodecamp.org/docs/flight-manuals/news-instances#jamstack---news--assets).

@@ -191,7 +191,7 @@ If a user replies in a help thread for the freeCodeCamp curriculum with a soluti
 
 If the OP (Original Poster) replies within a freeCodeCamp curriculum help thread with their final solution, blur it and use the **Blurred Spoiler Solution** canned reply.
 
-If a user creates a thread asking for feedback on a solution, move the thread to the feedback subforum and blur the solution, as necessary. If the user is only posting the solution to show if off, then unlist the thread and use the **Solutions Thread** canned reply.
+If a user creates a thread asking for feedback on a solution, move the thread to the feedback subforum and blur the solution, as necessary. If the user is only posting the solution to show it off, then unlist the thread and use the **Solutions Thread** canned reply.
 
 ### Underage Users
 
