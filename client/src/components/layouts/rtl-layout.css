@@ -137,13 +137,12 @@ sections that need to stay left to right
 [dir='rtl'] code,
 [dir='rtl'] p code,
 /* this selector is for the projects certification code and it doesn't work  */
-[dir='rtl'] #description p code,
+[dir='rtl'] #description p:is(code),
 /* 
-   the selector below is for this URL 
+   the selector below is for table in this URL 
    /javascript-algorithms-and-data-structures/basic-javascript/escape-sequences-in-strings
-   it doesn't work
 */
-[dir='rtl'] #description table tbody tr td code,
+[dir='rtl'] #description table tbody tr td:has(code),
 [dir='rtl'] pre:has(code),
 /* trending articles */
 [dir='rtl'] .trending-guides .trending-guides-row div a,
