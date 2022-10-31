@@ -35,9 +35,6 @@ import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
 
-import { clientLocale } from '../../../../config/env.json';
-import { rtlLangs } from '../../../../config/i18n';
-
 // preload common fonts
 import './fonts.css';
 import './global.css';
