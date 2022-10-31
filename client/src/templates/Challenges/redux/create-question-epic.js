@@ -47,8 +47,7 @@ function createQuestionEpic(action$, state$, { window }) {
     ofType(actionTypes.createQuestion),
     tap(() => {
       const state = state$.value;
-      const challengeFiles = challengeFilesSelector(state);
-
+      const challengeFiles = [...challengeFilesSelector(state)];
       const {
         title: challengeTitle,
         superBlock,
@@ -113,7 +112,7 @@ function createQuestionEpic(action$, state$, { window }) {
       const projectOrCodeHeading = projectFormValues.length
         ? `${i18next.t('forum-help.camper-project')}\n`
         : camperCodeHeading;
-      let markdownCodeOrLinks =
+      const markdownCodeOrLinks =
         projectFormValues
           ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n\n`)
           ?.join('') || filesToMarkdown(challengeFiles);
