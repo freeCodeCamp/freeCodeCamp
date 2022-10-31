@@ -8,18 +8,11 @@
 
 .instructions-panel {
   padding: 0 10px;
-  overflow-y: auto;
-  width: 100%;
-}
-
-.desktop-layout .instructions-panel {
-  height: 100%;
-}
-
-#mobile-layout .instructions-panel {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  overflow-y: auto;
+  width: 100%;
 }

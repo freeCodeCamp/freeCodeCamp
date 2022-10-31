@@ -6,6 +6,10 @@
   flex: 1 1 auto;
 }
 
+#learn-app-wrapper .desktop-layout .reflex-element {
+  height: auto !important;
+}
+
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter,
 #learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
   background-color: var(--quaternary-background);
@@ -18,6 +22,7 @@
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter {
+  height: auto !important;
   width: 5px;
 }
 
