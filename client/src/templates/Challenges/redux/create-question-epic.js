@@ -44,51 +44,42 @@ function createQuestionEpic(action$, state$, { window }) {
     ofType(actionTypes.createQuestion),
     tap(() => {
       const state = state$.value;
-      console.log('the state');
-      console.log(state);
-      const runFiltration = diffFile => {
-        let str = '';
-        const onlyChangedLines = diffFile.filter(
-          obj => obj.removed || obj.added
-        );
-        for (let i = 0; i < onlyChangedLines.length; i++) {
-          str += onlyChangedLines[i].value;
-        }
-        return str;
-      };
-
-      const createDiff = file => {
-        const str = runFiltration(
-          Diff.diffTrimmedLines(file.contents, file.seed)
-        );
-        return { ...file, contents: str };
-      };
-
       const challengeFiles = challengeFilesSelector(state);
-      const newFiles = challengeFiles.filter(
-        challenge => challenge.seed !== challenge.contents
-      );
-      const mappedFiles = newFiles.map(file => createDiff(file));
-      challengeFiles.push(...mappedFiles);
 
-      // const Diffs = Diff.diffLines(diffs[1].contents, diffs[1].seed);
-      // console.log(Diffs);
-      // const mappedNodes = Diffs.map(group => {
-      //   const { value, added, removed } = group;
-      //   let classStyles = '';
-      //   if (added) classStyles = 'color:#0000ff;';
-      //   if (removed) classStyles = 'color:red';
-      //   return `<span style='${classStyles}'>${value}</span>`;
-      // });
-      // const diffString = mappedNodes.join('');
-      // console.log(diffString);
       const {
         title: challengeTitle,
         superBlock,
         block,
         helpCategory
       } = challengeMetaSelector(state);
-      // "2022/responsive-web-design"
+
+      if (superBlock === '2022/responsive-web-design') {
+        const runFiltration = diffFile => {
+          let str = '';
+          const onlyChangedLines = diffFile.filter(
+            obj => obj.removed || obj.added
+          );
+          for (let i = 0; i < onlyChangedLines.length; i++) {
+            str += `${i % 2 === 0 ? '+ ' : '- '}${onlyChangedLines[i].value}${
+              i % 2 !== 0 ? '\n' : ''
+            }`;
+          }
+          return str;
+        };
+
+        const createDiff = file => {
+          const str = runFiltration(
+            Diff.diffTrimmedLines(file.contents, file.seed)
+          );
+          return { ...file, contents: str };
+        };
+
+        const newFiles = challengeFiles.filter(
+          challenge => challenge.seed !== challenge.contents
+        );
+        const mappedFiles = newFiles.map(file => createDiff(file));
+        challengeFiles.push(...mappedFiles);
+      }
 
       const {
         navigator: { userAgent },
@@ -120,11 +111,6 @@ function createQuestionEpic(action$, state$, { window }) {
         projectFormValues
           ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n\n`)
           ?.join('') || filesToMarkdown(challengeFiles);
-
-      // markdownCodeOrLinks +=
-      //   '```\nh1 {\n  text-align: center;\n}\n\n.container {\n  background-color: rgb(255, 255, 255);\n  padding: 10px 0;\n}\n\n.marker {\n  width: 200px;\n  height: 25px;\n  margin: 10px auto;\n}\n\n.red {\n  yodel: rgb(90809, 0, -0807);\n}\n\n.green {\n  background-color: #007F00;\n}\n\n.blue {\n  background-color: hsl(240, 100%, 50%);\n}\n\n```\n\n';
-
-      // "\n```html\n<!-- file: index.html -->\n<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Colored Markers</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n  </head>\n  <body>\n    <h1>CSS Color Markers</h1>\n    <div class=\"container\">\n      <div class=\"marker red\">\n      </div>\n      <div class=\"marker green\">\n      </div>\n      <div class=\"marker blue\">\n      </div>\n    </div>\n  </body>\n</html>\n```\n\n```css\n/* file: styles.css */\nh1 {\n  text-align: center;\n}\n\n.container {\n  background-color: rgb(255, 255, 255);\n  padding: 10px 0;\n}\n\n.marker {\n  width: 200px;\n  height: 25px;\n  margin: 10px auto;\n}\n\n.red {\n  shoogybob: rgb(90809, 0, -0807);\n}\n\n.green {\n  background-color: #007F00;\n}\n\n.blue {\n  background-color: hsl(240, 100%, 50%);\n}\n\n```\n\n"
 
       const textMessage = `${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}\n\n${markdownCodeOrLinks}${endingText}`;
 
