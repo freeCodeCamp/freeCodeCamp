@@ -191,7 +191,7 @@ Se um usuário responder em uma thread de ajuda para o currículo do freeCodeCam
 
 Se o OP (pessoa que publicou o pedido de ajuda original) responder em sua própria thread de ajuda para o currículo do freeCodeCamp com sua solução final, desfoque-a e use a resposta pronta **Blurred Spoiler Solution**.
 
-Se um usuário criar uma thread pedindo feedback de uma solução, mova o tópico para o subfórum de feedback e desfoque a solução, conforme necessário. Se o usuário estiver apenas publicando a solução para se exibir, reitre o tópico das listas e use a resposta pronta **Solutions Thread**.
+Se um usuário criar uma thread pedindo feedback de uma solução, mova o tópico para o subfórum de feedback e desfoque a solução, conforme necessário. If the user is only posting the solution to show it off, then unlist the thread and use the **Solutions Thread** canned reply.
 
 ### Usuários menores de idade
 
