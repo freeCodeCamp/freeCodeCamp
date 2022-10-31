@@ -115,71 +115,79 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   return (
     <div className='desktop-layout'>
-      {(projectBasedChallenge || isMultifileCertProject) && (
-        <ActionRow
-          hasNotes={hasNotes}
-          isProjectBasedChallenge={projectBasedChallenge}
-          showConsole={showConsole}
-          showNotes={showNotes}
-          showInstructions={showInstructions}
-          showPreviewPane={showPreviewPane}
-          showPreviewPortal={showPreviewPortal}
-          togglePane={togglePane}
-        />
-      )}
-      <ReflexContainer orientation='vertical'>
-        {!projectBasedChallenge && showInstructions && (
-          <ReflexElement flex={instructionPane.flex} {...resizeProps}>
-            {instructions}
+      <ReflexContainer>
+        {(projectBasedChallenge || isMultifileCertProject) && (
+          <ReflexElement className='reflexActionRow'>
+            <ActionRow
+              hasNotes={hasNotes}
+              isProjectBasedChallenge={projectBasedChallenge}
+              showConsole={showConsole}
+              showNotes={showNotes}
+              showInstructions={showInstructions}
+              showPreviewPane={showPreviewPane}
+              showPreviewPortal={showPreviewPortal}
+              togglePane={togglePane}
+            />
           </ReflexElement>
         )}
-        {!projectBasedChallenge && showInstructions && (
-          <ReflexSplitter propagate={true} {...resizeProps} />
-        )}
-
-        <ReflexElement flex={editorPane.flex} {...resizeProps}>
-          {challengeFile && (
-            <ReflexContainer
-              key={challengeFile.fileKey}
-              orientation='horizontal'
-            >
-              <ReflexElement
-                flex={codePane.flex}
-                {...reflexProps}
-                {...resizeProps}
-              >
-                {editor}
+        <ReflexElement className='reflexMainContent'>
+          <ReflexContainer orientation='vertical'>
+            {!projectBasedChallenge && showInstructions && (
+              <ReflexElement flex={instructionPane.flex} {...resizeProps}>
+                {instructions}
               </ReflexElement>
-              {displayConsole && (
-                <ReflexSplitter propagate={true} {...resizeProps} />
-              )}
-              {displayConsole && (
-                <ReflexElement
-                  flex={testsPane.flex}
-                  {...reflexProps}
-                  {...resizeProps}
-                >
-                  {testOutput}
-                </ReflexElement>
-              )}
-            </ReflexContainer>
-          )}
-        </ReflexElement>
-        {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
-        {displayNotes && (
-          <ReflexElement flex={notesPane.flex} {...resizeProps}>
-            {notes}
-          </ReflexElement>
-        )}
+            )}
+            {!projectBasedChallenge && showInstructions && (
+              <ReflexSplitter propagate={true} {...resizeProps} />
+            )}
 
-        {displayPreviewPane && (
-          <ReflexSplitter propagate={true} {...resizeProps} />
-        )}
-        {displayPreviewPane && (
-          <ReflexElement flex={previewPane.flex} {...resizeProps}>
-            {preview}
-          </ReflexElement>
-        )}
+            <ReflexElement flex={editorPane.flex} {...resizeProps}>
+              {challengeFile && (
+                <ReflexContainer
+                  key={challengeFile.fileKey}
+                  orientation='horizontal'
+                >
+                  <ReflexElement
+                    flex={codePane.flex}
+                    {...reflexProps}
+                    {...resizeProps}
+                  >
+                    {editor}
+                  </ReflexElement>
+                  {displayConsole && (
+                    <ReflexSplitter propagate={true} {...resizeProps} />
+                  )}
+                  {displayConsole && (
+                    <ReflexElement
+                      flex={testsPane.flex}
+                      {...reflexProps}
+                      {...resizeProps}
+                    >
+                      {testOutput}
+                    </ReflexElement>
+                  )}
+                </ReflexContainer>
+              )}
+            </ReflexElement>
+            {displayNotes && (
+              <ReflexSplitter propagate={true} {...resizeProps} />
+            )}
+            {displayNotes && (
+              <ReflexElement flex={notesPane.flex} {...resizeProps}>
+                {notes}
+              </ReflexElement>
+            )}
+
+            {displayPreviewPane && (
+              <ReflexSplitter propagate={true} {...resizeProps} />
+            )}
+            {displayPreviewPane && (
+              <ReflexElement flex={previewPane.flex} {...resizeProps}>
+                {preview}
+              </ReflexElement>
+            )}
+          </ReflexContainer>
+        </ReflexElement>
       </ReflexContainer>
       {displayPreviewPortal && (
         <PreviewPortal togglePane={togglePane} windowTitle={windowTitle}>

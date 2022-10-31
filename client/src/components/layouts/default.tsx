@@ -220,12 +220,15 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
             />
           ) : null}
           {isChallenge && (
-            <div className='breadcrumbs-demo'>
-              <BreadCrumb
-                block={block as string}
-                superBlock={superBlock as string}
-              />
-            </div>
+            <>
+              <div className='breadcrumbs-demo'>
+                <BreadCrumb
+                  block={block as string}
+                  superBlock={superBlock as string}
+                />
+              </div>
+              <div className='breadcrumbs-demo-spacer' />
+            </>
           )}
           <div id='content-start' tabIndex={-1}>
             {fetchState.complete && children}

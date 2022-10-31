@@ -30,6 +30,12 @@ textarea.inputarea {
   font-size: 16px;
   margin: 0;
   padding: 10px;
+  position: fixed;
+  width: 100%;
+}
+
+.breadcrumbs-demo-spacer {
+  height: 2.5rem;
 }
 
 .editor-upper-jaw,

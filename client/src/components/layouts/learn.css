@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   height: calc(
-    100vh - var(--header-height, 0px) - var(--flash-message-height, 0px)
+    100vh - var(--header-height, 0px) - var(--flash-message-height, 0px) -
+      2.5rem
   );
 }
 
@@ -23,4 +24,12 @@
 
 #learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
   height: 5px;
+}
+
+#learn-app-wrapper .reflexActionRow {
+  flex: 0 0 3.5rem !important;
+}
+
+#learn-app-wrapper .reflexMainContent {
+  flex: 1 1 100% !important;
 }
