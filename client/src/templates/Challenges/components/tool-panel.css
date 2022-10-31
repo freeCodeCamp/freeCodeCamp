@@ -9,13 +9,8 @@
 }
 
 .tool-panel-group-mobile {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   display: flex;
   flex-direction: row-reverse;
-  width: 100%;
-  padding: 0 0 3px;
 }
 
 .tool-panel-group-mobile > .btn-block,

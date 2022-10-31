@@ -10,16 +10,12 @@ interface PreviewProps {
   disableIframe?: boolean;
   previewMounted: () => void;
   previewId?: string;
-  isMobileLayout: boolean;
-  withActionRow: boolean;
 }
 
 function Preview({
   disableIframe,
   previewMounted,
-  previewId,
-  isMobileLayout,
-  withActionRow
+  previewId
 }: PreviewProps): JSX.Element {
   const { t } = useTranslation();
   const [iframeStatus, setIframeStatus] = useState<boolean | undefined>(false);
@@ -42,19 +38,9 @@ function Preview({
   const id = previewId ?? mainPreviewId;
 
   return (
-    <div
-      className={
-        `notranslate challenge-preview ${iframeToggle}-iframe` +
-        (isMobileLayout ? ' mobileLayout' : '') +
-        (withActionRow ? ' withActionRow' : '')
-      }
-    >
+    <div className={`notranslate challenge-preview ${iframeToggle}-iframe`}>
       <iframe
-        className={
-          'challenge-preview-frame' +
-          (isMobileLayout ? ' mobileLayout' : '') +
-          (withActionRow ? ' withActionRow' : '')
-        }
+        className={'challenge-preview-frame'}
         id={id}
         title={t('learn.chal-preview')}
       />

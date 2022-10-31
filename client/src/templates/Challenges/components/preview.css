@@ -1,32 +1,12 @@
 .challenge-preview,
 .challenge-preview-frame {
-  height: calc(
-    100vh - var(--header-height, 0px) - var(--breadcrumb-height, 0px) -
-      var(--flash-message-height, 0px)
-  );
-  min-height: 50vh;
+  height: 100%;
+  min-height: 70vh;
   width: 100%;
   padding: 0;
   margin: 0;
   border: none;
   background-color: white;
-}
-
-.challenge-preview.mobileLayout,
-.challenge-preview-frame.mobileLayout {
-  height: calc(
-    100vh - var(--header-height, 0px) - var(--breadcrumb-height, 0px) -
-      var(--navTabs-height, 0px) - var(--toolPanelGroup-height, 0px) -
-      var(--flash-message-height, 0px)
-  );
-}
-
-.challenge-preview.withActionRow,
-.challenge-preview-frame.withActionRow {
-  height: calc(
-    100vh - var(--header-height, 0px) - var(--breadcrumb-height, 0px) -
-      var(--actionRow-height, 0px) - var(--flash-message-height, 0px)
-  );
 }
 
 .enable-iframe {

@@ -168,7 +168,9 @@ class Project extends Component<ProjectProps> {
         <LearnLayout>
           <Helmet
             title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-          />
+          >
+            <style>{'#learn-app-wrapper{display:initial;}'}</style>
+          </Helmet>
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>

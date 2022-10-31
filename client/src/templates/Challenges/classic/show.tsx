@@ -454,19 +454,12 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     return <Notes notes={notes} />;
   }
 
-  renderPreview({ isMobileLayout }: { isMobileLayout: boolean }) {
+  renderPreview() {
     return (
       <Preview
         className='full-height'
         disableIframe={this.state.resizing}
         previewMounted={this.props.previewMounted}
-        isMobileLayout={isMobileLayout}
-        withActionRow={
-          !isMobileLayout &&
-          (this.getChallenge().hasEditableBoundaries ||
-            this.getChallenge().challengeType ===
-              challengeTypes.multifileCertProject)
-        }
       />
     );
   }
@@ -511,9 +504,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         <LearnLayout>
           <Helmet title={windowTitle}>
             <style>
-              {
-                ':root{--breadcrumb-height: 45px;--navTabs-height: 33px;--monacoEditorTabs-height: 62px;--toolPanelGroup-height: 40px;--actionRow-height: 63px;}body{overflow-y: hidden}'
-              }
+              {':root{--breadcrumb-height: 45px;}' +
+                '.page-wrapper{height: 100%;}' +
+                '.default-layout, #learn-app-wrapper, #content-start, #content-start > div {display: flex;flex-direction: column;min-height: 0;flex: 1 1 auto;}'}
             </style>
           </Helmet>
           <Media maxWidth={MAX_MOBILE_WIDTH}>
@@ -530,9 +523,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
                 showToolPanel: false
               })}
               notes={this.renderNotes(notes)}
-              preview={this.renderPreview({
-                isMobileLayout: true
-              })}
+              preview={this.renderPreview()}
               testOutput={this.renderTestOutput()}
               // eslint-disable-next-line @typescript-eslint/unbound-method
               updateUsingKeyboardInTablist={this.updateUsingKeyboardInTablist}
@@ -556,9 +547,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               })}
               layoutState={this.state.layout}
               notes={this.renderNotes(notes)}
-              preview={this.renderPreview({
-                isMobileLayout: false
-              })}
+              preview={this.renderPreview()}
               resizeProps={this.resizeProps}
               testOutput={this.renderTestOutput()}
               windowTitle={windowTitle}

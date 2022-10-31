@@ -77,8 +77,6 @@ function ProjectPreviewModal({
           previewMounted={() =>
             projectPreviewMounted({ challengeData, showProjectPreview })
           }
-          isMobileLayout={false}
-          withActionRow={false}
         />
       </Modal.Body>
       <Modal.Footer>
