@@ -6,7 +6,7 @@ import { Link, Spacer, Loader } from '../helpers';
 import IntroDescription from './components/IntroDescription';
 
 import './intro.css';
-import ResearchBannerx from './research-banner';
+import LearnAlert from './learn-alert';
 
 interface IntroProps {
   complete?: boolean;
@@ -16,6 +16,7 @@ interface IntroProps {
   pending?: boolean;
   slug?: string;
   username?: string;
+  onDonationAlertClick?: () => void;
 }
 
 const Intro = ({
@@ -24,7 +25,8 @@ const Intro = ({
   pending,
   complete,
   completedChallengeCount,
-  slug
+  slug,
+  onDonationAlertClick
 }: IntroProps): JSX.Element => {
   const { t } = useTranslation();
   if (pending && !complete) {
@@ -56,7 +58,7 @@ const Intro = ({
             </span>
           </blockquote>
         </div>
-        <ResearchBannerx />
+        <LearnAlert onDonationAlertClick={onDonationAlertClick} />
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (
           <div className='intro-description'>
             <Spacer />

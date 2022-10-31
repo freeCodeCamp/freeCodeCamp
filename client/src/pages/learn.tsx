@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { bindActionCreators, Dispatch } from 'redux';
 
 import Intro from '../components/Intro';
 import Map from '../components/Map';
@@ -15,6 +16,8 @@ import {
   userSelector,
   userFetchStateSelector
 } from '../redux/selectors';
+
+import { executeGA } from '../redux/actions';
 
 interface FetchState {
   pending: boolean;
@@ -48,6 +51,7 @@ interface LearnPageProps {
   fetchState: FetchState;
   state: Record<string, unknown>;
   user: User;
+  executeGA: (payload: Record<string, unknown>) => void;
   data: {
     challengeNode: {
       challenge: {
@@ -57,8 +61,12 @@ interface LearnPageProps {
   };
 }
 
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators({ executeGA }, dispatch);
+
 function LearnPage({
   isSignedIn,
+  executeGA,
   fetchState: { pending, complete },
   user: { name = '', completedChallengeCount = 0 },
   data: {
@@ -70,6 +78,16 @@ function LearnPage({
   }
 }: LearnPageProps) {
   const { t } = useTranslation();
+
+  const onDonationAlertClick = () => {
+    executeGA({
+      type: 'event',
+      data: {
+        category: 'Donation Related',
+        action: `learn donation alert click`
+      }
+    });
+  };
 
   return (
     <LearnLayout>
@@ -84,6 +102,7 @@ function LearnPage({
               name={name}
               pending={pending}
               slug={slug}
+              onDonationAlertClick={onDonationAlertClick}
             />
             <Map />
             <Spacer size={2} />
@@ -96,7 +115,7 @@ function LearnPage({
 
 LearnPage.displayName = 'LearnPage';
 
-export default connect(mapStateToProps, null)(LearnPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LearnPage);
 
 export const query = graphql`
   query FirstChallenge {
