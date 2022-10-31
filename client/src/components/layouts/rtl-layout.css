@@ -138,6 +138,7 @@ sections that need to stay left to right
 [dir='rtl'] p code,
 /* this selector is for the projects certification code and it doesn't work  */
 [dir='rtl'] #description p:is(code),
+[dir='rtl'] .reflex-container,
 /* 
    the selector below is for table in this URL 
    /javascript-algorithms-and-data-structures/basic-javascript/escape-sequences-in-strings
