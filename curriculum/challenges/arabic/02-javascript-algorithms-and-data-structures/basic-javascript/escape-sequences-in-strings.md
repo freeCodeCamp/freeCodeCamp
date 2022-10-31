@@ -16,7 +16,7 @@ dashedName: escape-sequences-in-strings
 
 وقد تعلمنا ذلك في التحدي السابق.
 
-<table class='table table-striped'><thead><tr><th>الكود</th><th>الناتج</th></tr></thead><tbody><tr><td><code>\'</code></td><td>single quote</td></tr><tr><td><code>\"</code></td><td>double quote</td></tr><tr><td><code>\\</code></td><td>backslash</td></tr><tr><td><code>\n</code></td><td>newline</td></tr><tr><td><code>\t</code></td><td>مساحة يختارها المستخدم (tab)</td></tr><tr><td><code>\r</code></td><td>إعادة التنقل إلى أول السطر (carriage return)</td></tr><tr><td><code>\b</code></td><td>word boundary</td></tr><tr><td><code>\f</code></td><td>form feed</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>الكود</th><th>الناتج</th></tr></thead><tbody><tr><td><code>\'</code></td><td>single quote</td></tr><tr><td><code>\"</code></td><td>double quote</td></tr><tr><td><code>\\</code></td><td>backslash</td></tr><tr><td><code>\n</code></td><td>newline</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\b</code></td><td>word boundary</td></tr><tr><td><code>\f</code></td><td>form feed</td></tr></tbody></table>
 
 *لاحظ أن يجب أن تكون الخط المائل (backslash) نفسه أحتيالي (escaped) ليتم عرضها كخط مائل backslash.*
 

@@ -1,6 +1,6 @@
 ---
 id: 612e9f1e7e5ccd4fa9ada0be
-title: الخطوة ١٧
+title: الخطوة 17
 challengeType: 0
 dashedName: step-17
 ---

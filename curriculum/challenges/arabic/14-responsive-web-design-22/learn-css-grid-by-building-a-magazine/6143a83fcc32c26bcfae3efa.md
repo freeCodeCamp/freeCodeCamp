@@ -1,6 +1,6 @@
 ---
 id: 6143a83fcc32c26bcfae3efa
-title: الخطوة ١٨
+title: الخطوة 18
 challengeType: 0
 dashedName: step-18
 ---

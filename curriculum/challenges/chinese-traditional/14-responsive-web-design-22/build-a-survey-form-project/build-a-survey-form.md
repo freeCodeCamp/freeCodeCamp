@@ -19,7 +19,7 @@ dashedName: build-a-survey-form
 1. 在表單元素內，你**需要**在 `input` 字段中輸入你的郵箱，該字段的 `id` 爲 `email`
 1. 如果你輸入了格式不正確的郵箱，你將會看見 HTML5 驗證錯誤信息
 1. 在表單中，你可以在 `input` 字段中輸入一個數字，該字段的 `id` 爲 `number`
-1. 如果你在數字輸入框內輸入非數字內容，你會看到 HTML5 驗證錯誤信息
+1. The number input should not accept non-numbers, either by preventing you from typing them or by showing an HTML5 validation error (depending on your browser).
 1. 如果你輸入的數字超出了範圍（使用 `min` 和 `max` 屬性定義），你將會看見 HTML5 驗證錯誤信息
 1. 表單中的名字、郵箱和數字輸入框需有對應的包含描述輸入框用途的 `label` 元素，id 應分別爲 `id="name-label"`、`id="email-label"` 和 `id="number-label"`
 1. 在表單中的名字、郵箱和數字輸入框中，你能看到各自的描述文字作爲佔位符

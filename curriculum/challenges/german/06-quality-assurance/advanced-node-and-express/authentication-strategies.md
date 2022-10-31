@@ -38,7 +38,7 @@ Submit your page when you think you've got it right. If you're running into erro
 
 # --hints--
 
-Passport-local should be a dependency.
+Passport-local sollte eine Abhängigkeit sein.
 
 ```js
 (getUserInput) =>
@@ -57,7 +57,7 @@ Passport-local should be a dependency.
   );
 ```
 
-Passport-local should be correctly required and setup.
+Passport-local sollte korrekt angefordert und eingerichtet werden.
 
 ```js
 (getUserInput) =>

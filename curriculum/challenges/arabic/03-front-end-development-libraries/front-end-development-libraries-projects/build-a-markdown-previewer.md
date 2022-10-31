@@ -1,6 +1,6 @@
 ---
 id: bd7157d8c242eddfaeb5bd13
-title: بناء عارض Markdown
+title: أنشئ عارض Markdown
 challengeType: 3
 forumTopicId: 301372
 dashedName: build-a-markdown-previewer
@@ -8,15 +8,15 @@ dashedName: build-a-markdown-previewer
 
 # --description--
 
-**متطلبات:** كم ببناء تطبيق يشبه وظيفيا إلي <a href="https://markdown-previewer.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://markdown-previewer.freecodecamp.rocks/</a>.
+**متطلبات:** أنشئ تطبيق يشبه وظيفيا إلي <a href="https://markdown-previewer.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://markdown-previewer.freecodecamp.rocks/</a>.
 
 أكمل قصص المستخدم بالأسفل وأجتاز جميع الاختبارات للنجاح. استخدم أي libraries أو APIs تحتاج إليها. أعطيها أسلوبك الشخصي الخاص.
 
 يمكنك استخدام أي مزيج من HTML و JavaScript و CSS و Bootstrap و SASS و React و Redux و jQuery لإكمال هذا المشروع. يجب عليك استخدام frontend framework (مثل React على سبيل المثال) لأن هذا القسم يدور حول تعلم frontend framework. لا ينصح باستخدام التكنولوجيات الإضافية غير المدرجة أعلاه و استخدامها على مسؤوليتك الخاصة. ونحن ننظر في دعم frontend frameworks أخرى، مثل Angular و Vue، ولكنها غير مدعومة حاليا. سنقبل ونحاول إصلاح جميع تقارير المشكلات التي تستخدم حُزْمَة التكنولوجيات المقترحة لهذا المشروع. برمجة سعيدة!
 
-**قصة المستخدم رقم 1:** يمكنني أن أرى عنصر `textarea` مع مطابقة `id="editor"`.
+**قصة المستخدم #1:** يمكنني أن أرى عنصر `textarea` مع مطابقة `id="editor"`.
 
-**قصة المستخدم رقم 2:** يمكنني رؤية عنصر مع `id="preview"`.
+**قصة المستخدم #2:** يمكنني رؤية عنصر مع `id="preview"`.
 
 **قصة المستخدم #3:** عندما أدخل النص في `#editor` عنصر, يتم تحديث عنصر `#preview` عندما أكتب لعرض محتوى النصوص.
 
