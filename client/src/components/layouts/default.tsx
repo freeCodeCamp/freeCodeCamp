@@ -42,10 +42,7 @@ import { rtlLangs } from '../../../../config/i18n';
 import './fonts.css';
 import './global.css';
 import './variables.css';
-
-const isRtlLanguage: boolean = rtlLangs.includes(clientLocale);
-
-isRtlLanguage && import('./rtl-layout.css');
+import './rtl-layout.css';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
