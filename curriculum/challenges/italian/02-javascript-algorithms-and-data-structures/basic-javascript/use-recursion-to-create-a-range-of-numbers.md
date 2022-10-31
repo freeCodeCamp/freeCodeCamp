@@ -56,6 +56,13 @@ assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
 assert.deepStrictEqual(rangeOfNumbers(4, 4), [4]);
 ```
 
+Le variabili globali non dovrebbero essere usate per memorizzare l'array.
+
+```js
+rangeOfNumbers(1, 3)
+assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
+```
+
 # --seed--
 
 ## --seed-contents--

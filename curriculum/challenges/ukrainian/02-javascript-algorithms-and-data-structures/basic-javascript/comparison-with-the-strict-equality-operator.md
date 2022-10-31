@@ -16,39 +16,37 @@ dashedName: comparison-with-the-strict-equality-operator
 **Наприклад**
 
 ```js
-3 ===  3
-3 === '3'
+3 ===  3  // true
+3 === '3' // false
 ```
 
-Ці умови повертаються відповідно `true` та `false` відповідно.
-
-У другому прикладі, `3` є типом `Number`, а `'3'` є типом `String`.
+In the second example, `3` is a `Number` type and `'3'` is a `String` type.
 
 # --instructions--
 
-Використовуйте оператора абсолютної рівності з командою `if`, щоб функція повернула рядок `Equal`, коли `val` точно дорівнює `7`.
+Use the strict equality operator in the `if` statement so the function will return the string `Equal` when `val` is strictly equal to `7`.
 
 # --hints--
 
-`testStrict(10)` перетворюється в рядку на `Not Equal`
+`testStrict(10)` should return the string `Not Equal`
 
 ```js
 assert(testStrict(10) === 'Not Equal');
 ```
 
-`testStrict(7)` перетворюється в рядку на `Equal`
+`testStrict(7)` should return the string `Equal`
 
 ```js
 assert(testStrict(7) === 'Equal');
 ```
 
-`testStrict("7")` перетворюється в рядку на `Not Equal`
+`testStrict("7")` should return the string `Not Equal`
 
 ```js
 assert(testStrict('7') === 'Not Equal');
 ```
 
-Вам слід використовувати оператора `===`
+You should use the `===` operator
 
 ```js
 assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);

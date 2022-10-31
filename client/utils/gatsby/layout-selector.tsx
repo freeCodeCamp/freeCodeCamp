@@ -9,7 +9,10 @@ import { isChallenge } from '../../src/utils/path-parsers';
 
 interface LayoutSelectorProps {
   element: JSX.Element;
-  props: { location: { pathname: string } };
+  props: {
+    location: { pathname: string };
+    pageContext?: { challengeMeta?: { block?: string; superBlock?: string } };
+  };
 }
 export default function layoutSelector({
   element,

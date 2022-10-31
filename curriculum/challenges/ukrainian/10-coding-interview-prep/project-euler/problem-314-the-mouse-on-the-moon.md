@@ -18,7 +18,7 @@ dashedName: problem-314-the-mouse-on-the-moon
 
 Однак, якщо ви відрізали з квадрата чотири трикутники із сторонами 75 м, 75 м і $75\sqrt{2}$, загальна площа стає 238750 $\text{m}^2$, а периметр стає $1400 + 300 \sqrt{2} m. Отже, це дає $\frac{\tтекст{enclosed-area}}{\tтекст{wall-length}}$ коефіціент 130.87, що значно краще.
 
-<img class="img-responsive center-block" alt="зображення показує різницю в початковій області між колом і квадратом з вирізанням чотирьох трикутників" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="picture showing difference in enclosed-area between circle and square with cut off four triangles" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
 
 Знайдіть максимальне значення $\frac{\tтекст{enclosed-area}}{\text{wall-length}}$ співвідношення. Дайте відповідь, округлену до 8 знаків за десятковим значенням у формі abc.defghijk.
 

@@ -49,7 +49,24 @@ assert.sameMembers(
 );
 ```
 
-Вхідний граф `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` з початковим вузлом `1` повинен повертатися як масив з чотирьох елементів.
+The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `3` should return an array with `3`, `2`, `1`, and `0`.
+
+```js
+assert.sameMembers(
+  (function () {
+    var graph = [
+      [0, 1, 0, 0],
+      [1, 0, 1, 0],
+      [0, 1, 0, 1],
+      [0, 0, 1, 0]
+    ];
+    return dfs(graph, 3);
+  })(),
+  [3, 2, 1, 0]
+);
+```
+
+The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `1` should return an array with four elements.
 
 ```js
 assert(
@@ -65,7 +82,7 @@ assert(
 );
 ```
 
-Вхідний граф `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` з початковим вузлом `3` повинен повертатися як масив з числом `3`.
+The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` with a start node of `3` should return an array with `3`.
 
 ```js
 assert.sameMembers(
@@ -82,7 +99,7 @@ assert.sameMembers(
 );
 ```
 
-Вхідний граф `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` з початковим вузлом `3` повинен повертатися як масив з одним елементом.
+The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` with a start node of `3` should return an array with one element.
 
 ```js
 assert(
@@ -98,7 +115,7 @@ assert(
 );
 ```
 
-Вхідний граф`[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` з початковим вузлом `3` повинен повертатися як масив з чисел `2` і `3`.
+The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `3` should return an array with `2` and `3`.
 
 ```js
 assert.sameMembers(
@@ -115,7 +132,7 @@ assert.sameMembers(
 );
 ```
 
-Вхідний граф `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` з початковим вузлом `3` повинен повертатися як масив з двох елементів.
+The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `3` should return an array with two elements.
 
 ```js
 assert(
@@ -131,7 +148,7 @@ assert(
 );
 ```
 
-Вхідний граф `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` з початковим вузлом `0` повинен повертатися як масив з чисел `0` і `1`.
+The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `0` should return an array with `0` and `1`.
 
 ```js
 assert.sameMembers(
@@ -148,7 +165,7 @@ assert.sameMembers(
 );
 ```
 
-Вхідний граф `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` з початковим вузлом `0` повинен повертатися як масив з двох елементів.
+The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `0` should return an array with two elements.
 
 ```js
 assert(

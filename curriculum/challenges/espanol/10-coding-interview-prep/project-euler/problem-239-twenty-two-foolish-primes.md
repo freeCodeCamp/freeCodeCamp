@@ -1,7 +1,7 @@
 ---
 id: 5900f45c1000cf542c50ff6e
 title: 'Problem 239: Twenty-two Foolish Primes'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301884
 dashedName: problem-239-twenty-two-foolish-primes
 ---
@@ -16,10 +16,10 @@ Give your answer rounded to 12 places behind the decimal point in the form 0.abc
 
 # --hints--
 
-`euler239()` should return 0.001887854841.
+`twentyTwoFoolishPrimes()` should return `0.001887854841`.
 
 ```js
-assert.strictEqual(euler239(), 0.001887854841);
+assert.strictEqual(twentyTwoFoolishPrimes(), 0.001887854841);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler239(), 0.001887854841);
 ## --seed-contents--
 
 ```js
-function euler239() {
+function twentyTwoFoolishPrimes() {
 
   return true;
 }
 
-euler239();
+twentyTwoFoolishPrimes();
 ```
 
 # --solutions--

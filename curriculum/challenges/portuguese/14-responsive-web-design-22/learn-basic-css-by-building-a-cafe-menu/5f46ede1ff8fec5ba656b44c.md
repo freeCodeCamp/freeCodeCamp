@@ -1,8 +1,8 @@
 ---
 id: 5f46ede1ff8fec5ba656b44c
-title: Passo 78
+title: Passo 77
 challengeType: 0
-dashedName: step-78
+dashedName: step-77
 ---
 
 # --description--
@@ -32,12 +32,10 @@ assert(code.match(/\/\*\s*FOOTER\s*\*\//i));
   </head>
   <body>
     <div class="menu">
-      <header>
+      <main>
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
-      </header>
-      <hr>
-      <main>
+        <hr>
         <section>
           <h2>Coffee</h2>
           <article class="item">

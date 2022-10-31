@@ -71,6 +71,13 @@ assert(
 );
 ```
 
+不應使用全局變量來緩存數組。
+
+```js
+countdown(1)
+assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
+```
+
 # --seed--
 
 ## --seed-contents--

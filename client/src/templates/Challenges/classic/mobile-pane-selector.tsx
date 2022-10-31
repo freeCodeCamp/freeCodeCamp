@@ -7,11 +7,11 @@ import { createSelector } from 'reselect';
 
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import { ChallengeFile, ChallengeFiles } from '../../../redux/prop-types';
+import { toggleVisibleEditor } from '../redux/actions';
 import {
-  toggleVisibleEditor,
   visibleEditorsSelector,
   challengeFilesSelector
-} from '../redux';
+} from '../redux/selectors';
 import ChevronDown from '../../../assets/icons/chevron-down';
 import './mobile-pane-selector.css';
 

@@ -8,9 +8,9 @@ dashedName: build-a-recipe-box
 
 # --description--
 
-**Ціль:**Створити на сайті [CodePen.io](https://codepen.io) застосунок, який функціонально схожий на цей: <https://codepen.io/freeCodeCamp/full/dNVazZ/>.
+**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/dNVazZ/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/dNVazZ/</a>.
 
-Заповніть, як нижче наведено,[ історії користувача ](https://en.wikipedia.org/wiki/User_story). Використовуйте будь-які потрібні вам бібліотеки чи API (прикладні програмні інтерфейси). Проявіть при цьому свій власний стиль.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 **Історія користувача:** Я можу створювати рецепти, в яких є назви та інгредієнти.
 
@@ -28,7 +28,7 @@ dashedName: build-a-recipe-box
 
 Коли ви завершили, додайте посилання на ваш проєкт на CodePen та натисніть кнопку "Я виконав це завдання".
 
-Ви можете отримати відгук про ваш проєкт, поділившись ним на даному форумі: [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

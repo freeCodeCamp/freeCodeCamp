@@ -38,7 +38,7 @@ print(certificates_earned)
 
 ## --answers--
 
-```
+```markup
 Tom      8
 Kris     2
 Ahmad    5
@@ -48,7 +48,7 @@ dtype: int64
 
 ---
 
-```
+```markup
 Kris     2
 Ahmad    5
 Beau     6
@@ -58,7 +58,7 @@ dtype: int64
 
 ---
 
-```
+```markup
 Tom      8
 Kris     2
 Ahmad    5

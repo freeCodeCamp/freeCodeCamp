@@ -2,11 +2,24 @@
 
 Ein Pull-Request (PR) ermöglicht es dir, Änderungen von deinem Fork auf GitHub an FreeCodeCamp.orgs Hauptrepository zu senden. Wenn du mit den Änderungen am Code fertig bist, kannst du diese Richtlinien befolgen, um einen PR zu eröffnen.
 
-> [!NOTE] Dein PR sollte in Englisch verfasst sein. Schaue [hier](index.md#translations) nach, wie du Übersetzungen beisteuern kannst.
+Wir erwarten von unseren Mitwirkenden, dass sie den für dieses Projekt spezifischen Prozess kennen. Wenn du die Richtlinien gewissenhaft befolgst, verschaffe dir den Respekt deiner Kollegen und spare allen Beteiligten Zeit.
+
+Einige Beispiele hierfür sind:
+
+1. Bearbeite Dateien nicht direkt über GitHub - Das kannst du zwar, aber es ist keine gute Idee.
+2. Achte darauf, dass du die PR-Checkliste befolgst und nicht nur Dinge abhakst, sonst nehmen wir dich nicht ernst.
+3. Verwende die korrekte Art der Verknüpfung von Themen in der Beschreibung des PR, indem du die `XXXXXX` aktualisierst. Füge nicht einfach überall und nach Lust und Laune Heftnummern ein.
+4. Erwähne jemanden nicht zu oft mit "@mention" oder bitte ihn nicht zu oft um Bewertungen.
+
+   Wir verstehen, dass du gerne einen Beitrag leisten möchtest. So gerne sich ein Betreuer auch bei dir melden würde, er hat alle Hände voll zu tun, um Hunderte von Anfragen wie deine zu bearbeiten. Habe Geduld, früher oder später wird sich jemand bei dir melden.
+
+5. Arbeite nicht direkt an deinem `Hauptzweig` - erstelle einen neuen Zweig für die Änderungen, an denen du arbeitest.
+
+> [!NOTE] Deine Öffentlichkeitsarbeit sollte sich nur auf Änderungen des englischen Lehrplans beziehen. Lese stattdessen [diesen Leitfaden](index.md#translations), um zu Übersetzungen beizutragen.
 
 ## Bereite einen guten PR-Titel vor
 
-Wir empfehlen, [konventionelle Titel und Nachrichten](https://www.conventionalcommits.org/) für Commits und Pull-Requests zu verwenden. Die Konvention hat das folgende Format:
+Wir empfehlen, [konventionelle Titel und Nachrichten](https://www.conventionalcommits.org/) für Commits und Pull Requests zu verwenden. Die Konvention hat das folgende Format:
 
 > `<type>([optional scope(s)]): <description>`
 > 
@@ -14,7 +27,7 @@ Wir empfehlen, [konventionelle Titel und Nachrichten](https://www.conventionalco
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Wenn du einen Pull Request (PR) öffnest, kannst du den Typ, den Umfang (optional) und die Beschreibung festlegen.
+Wenn du einen Pull Request (PR) öffnest, kannst du den Typ, den Geltungsbereich (optional) und die Beschreibung festlegen.
 
 **Typ:**
 
@@ -44,13 +57,23 @@ Einige Beispiele für gute PR-Titel wären:
 
 1. Sobald die Änderungen übertragen wurden, wirst du aufgefordert, einen Pull-Request auf der GitHub-Seite deines Forks zu erstellen.
 
-   ![Bild - Vergleiche & Pull-Request Aufforderung auf GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   <details>
+   <summary>Screenshot ansehen</summary>
+
+   ![Bild - Vergleichen & Pull-Request-Prompt auf GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+
+   </details>
 
 2. Grundsätzlich sollten alle Pull-Requests gegen das Haupt-Repository von freeCodeCamp, den `main`-Branch, gerichtet sein.
 
    Stelle sicher, dass dein Base Fork auf freeCodeCamp/freeCodeCamp eingestellt ist, wenn du einen Pull-Request einreichst.
 
-   ![Bild - Vergleiche Gabelungen beim Pull Request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
+   <details>
+   <summary>Screenshot ansehen</summary>
+
+   ![Bild - Vergleiche Forks beim Pull Request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
+
+   </details>
 
 3. Übermittle den Pull-Request von deinem Branch an den `main`-Branch von freeCodeCamp.
 
@@ -76,7 +99,7 @@ Einige Beispiele für gute PR-Titel wären:
 
 Unsere Moderatoren werden jetzt einen Blick darauf werfen und dir ein Feedback hinterlassen. Bitte habe Geduld mit den anderen Moderatoren und respektiere ihre Zeit. Alle Pull-Requests werden zu gegebener Zeit überprüft.
 
-Und wie immer kannst du deine Fragen in der [Kategorie "Contributors" in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im ["Contributors" Chatraum](https://discord.gg/PRyKn3Vbay) stellen.
+Und wie immer kannst du deine Fragen in der [Kategorie "Contributors" in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im ["Contributors"-Chatraum](https://discord.gg/PRyKn3Vbay) stellen.
 
 > [!TIP] Wenn du mehr Pull-Requests beisteuern willst, empfehlen wir dir, die [Richtlinien für Änderungen und Synchronisierung](how-to-setup-freecodecamp-locally.md#making-changes-locally) zu lesen, damit du deinen Fork nicht löschen musst.
 
@@ -100,11 +123,11 @@ Wenn du an regulären Bugs und Features auf unserem Entwicklungszweig `main` arb
 2. Löse alle Konflikte und füge Commits hinzu / bzw. bearbeite sie
 
    ```console
-   # Either
+   # Entweder
    git add .
    git commit -m "chore: resolve conflicts"
 
-   # Or
+   # Oder
    git add .
    git commit --amend --no-edit
    ```
@@ -162,7 +185,7 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
    git cherry-pick <commit-hash>
    ```
 
-4. Beseitige alle Konflikte und räume auf, installiere Tests und führe sie durch
+4. Behebe alle Konflikte, bereinige, installiere Abhängigkeiten und führe Tests durch
 
    ```console
    npm run clean

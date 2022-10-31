@@ -35,23 +35,25 @@ import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
 import {
   cancelTests,
-  challengeFilesSelector,
   challengeMounted,
-  challengeTestsSelector,
-  consoleOutputSelector,
-  visibleEditorsSelector,
   createFiles,
   executeChallenge,
   initConsole,
   initTests,
-  isChallengeCompletedSelector,
   previewMounted,
   updateChallengeMeta,
   openModal,
-  setEditorFocusability,
-  testsRunningSelector
-} from '../redux';
-import { savedChallengesSelector } from '../../../redux';
+  setEditorFocusability
+} from '../redux/actions';
+import {
+  visibleEditorsSelector,
+  testsRunningSelector,
+  challengeFilesSelector,
+  challengeTestsSelector,
+  consoleOutputSelector,
+  isChallengeCompletedSelector
+} from '../redux/selectors';
+import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -68,10 +70,10 @@ type VisibleEditors = {
 const mapStateToProps = createStructuredSelector({
   challengeFiles: challengeFilesSelector,
   tests: challengeTestsSelector,
-  testsRunning: testsRunningSelector,
   output: consoleOutputSelector,
   isChallengeCompleted: isChallengeCompletedSelector,
   savedChallenges: savedChallengesSelector,
+  testsRunning: testsRunningSelector as () => boolean,
   visibleEditors: visibleEditorsSelector
 });
 
@@ -125,6 +127,7 @@ interface ShowClassicProps {
 interface ShowClassicState {
   layout: ReflexLayout;
   resizing: boolean;
+  usingKeyboardInTablist: boolean;
 }
 
 interface ReflexLayout {
@@ -134,6 +137,12 @@ interface ReflexLayout {
   notesPane: { flex: number };
   previewPane: { flex: number };
   testsPane: { flex: number };
+}
+
+interface RenderEditorArgs {
+  isMobileLayout: boolean;
+  isUsingKeyboardInTablist: boolean;
+  hasEditableBoundaries?: boolean;
 }
 
 const REFLEX_LAYOUT = 'challenge-layout';
@@ -174,12 +183,20 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     // layout: Holds the information of the panes sizes for desktop view
     this.state = {
       layout: this.getLayoutState(),
-      resizing: false
+      resizing: false,
+      usingKeyboardInTablist: false
     };
 
     this.containerRef = React.createRef();
     this.editorRef = React.createRef();
     this.instructionsPanelRef = React.createRef();
+
+    this.updateUsingKeyboardInTablist =
+      this.updateUsingKeyboardInTablist.bind(this);
+  }
+
+  updateUsingKeyboardInTablist(usingKeyboardInTablist: boolean): void {
+    this.setState({ usingKeyboardInTablist });
   }
 
   getLayoutState(): ReflexLayout {
@@ -377,7 +394,11 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     );
   }
 
-  renderEditor(hasEditableBoundaries?: boolean) {
+  renderEditor({
+    isMobileLayout,
+    isUsingKeyboardInTablist,
+    hasEditableBoundaries
+  }: RenderEditorArgs) {
     const {
       pageContext: {
         projectPreview: { showProjectPreview }
@@ -404,6 +425,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             this.editorRef as MutableRefObject<editor.IStandaloneCodeEditor>
           }
           initialTests={tests}
+          isMobileLayout={isMobileLayout}
+          isUsingKeyboardInTablist={isUsingKeyboardInTablist}
           resizeProps={this.resizeProps}
           title={title}
           usesMultifileEditor={usesMultifileEditor}
@@ -483,7 +506,11 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <Helmet title={windowTitle} />
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
-              editor={this.renderEditor(hasEditableBoundaries)}
+              editor={this.renderEditor({
+                hasEditableBoundaries,
+                isMobileLayout: true,
+                isUsingKeyboardInTablist: this.state.usingKeyboardInTablist
+              })}
               guideUrl={getGuideUrl({ forumTopicId, title })}
               hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
@@ -494,6 +521,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               notes={this.renderNotes(notes)}
               preview={this.renderPreview()}
               testOutput={this.renderTestOutput()}
+              // eslint-disable-next-line @typescript-eslint/unbound-method
+              updateUsingKeyboardInTablist={this.updateUsingKeyboardInTablist}
               usesMultifileEditor={usesMultifileEditor}
               videoUrl={this.getVideoUrl()}
               testsRunning={this.props.testsRunning}
@@ -501,10 +530,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
             <DesktopLayout
-              block={block}
               challengeFiles={challengeFiles}
               challengeType={challengeType}
-              editor={this.renderEditor(hasEditableBoundaries)}
+              editor={this.renderEditor({
+                hasEditableBoundaries,
+                isMobileLayout: false,
+                isUsingKeyboardInTablist: this.state.usingKeyboardInTablist
+              })}
               hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
               hasPreview={this.hasPreview()}
@@ -515,7 +547,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               notes={this.renderNotes(notes)}
               preview={this.renderPreview()}
               resizeProps={this.resizeProps}
-              superBlock={superBlock}
               testOutput={this.renderTestOutput()}
               visibleEditors={visibleEditors}
               windowTitle={windowTitle}

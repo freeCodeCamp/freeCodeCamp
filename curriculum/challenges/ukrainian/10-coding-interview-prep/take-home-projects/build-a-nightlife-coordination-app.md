@@ -8,19 +8,19 @@ dashedName: build-a-nightlife-coordination-app
 
 # --description--
 
-Створіть full stack додаток на JavaScript, який функціонально схожий на цей: <https://yoyo44.herokuapp.com/>. Використовуйте конструктор сайтів на ваш розсуд для завершення проєкту.
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://yoyo44.herokuapp.com/" target="_blank" rel="noopener noreferrer nofollow">https://yoyo44.herokuapp.com/</a>. Використовуйте конструктор сайтів на ваш розсуд для завершення проєкту.
 
 Тут наведено конкретні історії користувача, які варто імплементувати в даний проєкт:
 
-**Історія користувача:** Як неавторизований користувач ви можете подивитися всі бари неподалік.
+**User Story:** As an unauthenticated user, you can view all bars in your area.
 
-**Історія користувача:** Як неавторизований користувач ви можете додати себе в бар, щоб вказати, що ви збираєтесь туди увечері.
+**User Story:** As an authenticated user, you can add yourself to a bar to indicate you are going there tonight.
 
-**Історія користувача:** Як неавторизований користувач ви можете видалити себе з бару, якщо ви більше не хочете туди піти.
+**User Story:** As an authenticated user, you can remove yourself from a bar if you no longer want to go there.
 
 **Історія користувача:** Як неавторизований користувач, коли ви входите в систему, вам не треба виконувати пошук знову.
 
-**Підказка:** Спробуйте використати [Yelp API](https://www.yelp.com/developers/documentation/v3), щоб знайти місця проведення заходів, які шукають ваші користувачі. Якщо ви використовуєте Yelp API, не забудьте вказати це у вашому додатку.
+**Hint:** Try using the Yelp API to find venues in the cities your users search for. Якщо ви використовуєте Yelp API, не забудьте вказати це у вашому додатку.
 
 Коли ви завершили, переконайтеся, що демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням також введіть посилання на вихідний код проєкту у полі `GitHub Link`.
 

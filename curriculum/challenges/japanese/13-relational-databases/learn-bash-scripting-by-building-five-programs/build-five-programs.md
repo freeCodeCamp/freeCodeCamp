@@ -9,7 +9,7 @@ dashedName: build-five-programs
 
 # --description--
 
-この 220 のレッスンから成るコースでは、5 つの小規模なプログラムを作成しながら、より多くのターミナルコマンドと、Bash スクリプトでの使い方を学びます。
+In this 220-lesson course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs.
 
 # --instructions--
 

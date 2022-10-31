@@ -276,4 +276,138 @@ Aktualisiere deine `.env`-Datei, um deine neue Sprache für `CLIENT_LOCALE` und 
 
 Sobald du diese Einstellungen vorgenommen hast, solltest du `npm run develop` ausführen können, um deine übersetzte Version von freeCodeCamp anzuzeigen.
 
+> [!TIP] If you build the client in one language and then want to build it in a different language, you will need to use the command `npm run clean-and-develop` after changing the `.env` file, as Gatsby will cache the first language.
+
 > [!ATTENTION] Du kannst zwar lokal Übersetzungen zu Testzwecken vornehmen, aber wir erinnern alle daran, dass Übersetzungen _nicht_ über GitHub eingereicht werden sollten und nur über Crowdin erfolgen sollten. Achte darauf, dass du deine lokale Codebasis zurücksetzt, wenn du mit dem Testen fertig bist.
+
+# Neue Sprachen auf `/news` bereitstellen
+
+Um die News für eine neue Sprache bereitzustellen, musst du zwei PRs erstellen. Ein PR geht an das [CDN Repo](https://github.com/freeCodeCamp/cdn) und der andere an das [News Repo](https://github.com/freeCodeCamp/news).
+
+## Bereite das CDN Repo für die neue Sprache vor
+
+News bezieht während des Builds angesagte Links und Artikeltitel aus unserem CDN und fügt sie in den Footer ein. News holt sich während des Builds auch Day.js-Dateien aus dem CDN, um Datum und Uhrzeit für jede Sprache zu lokalisieren.
+
+### Hinzufügen einer YAML-Datei für angesagte Artikel
+
+Klone das [CDN Repo](https://github.com/freeCodeCamp/cdn) und erstelle einen neuen Zweig.
+
+Im Verzeichnis [`build/universal/trending`](https://github.com/freeCodeCamp/cdn/tree/main/build/universal/trending) erstellst du eine neue Datei und nennst sie `language.yaml`. Wenn du zum Beispiel Dothraki News startest, nennst du die Datei `dothraki.yaml`.
+
+Kopiere dann den Inhalt der [`english.yaml`](https://github.com/freeCodeCamp/cdn/blob/main/build/universal/trending/english.yaml)-Datei für angesagte Artikel und füge ihn in die neue YAML-Datei ein, die du gerade erstellt hast.
+
+Der Inhalt sieht dann etwa so aus:
+
+```yaml
+article0title: 'Learn JavaScript'
+article0link: 'https://www.freecodecamp.org/news/learn-javascript-free-js-courses-for-beginners/'
+article1title: 'Linux ln Example'
+article1link: 'https://www.freecodecamp.org/news/linux-ln-how-to-create-a-symbolic-link-in-linux-example-bash-command'
+article2title: 'JS document.ready()'
+article2link: 'https://www.freecodecamp.org/news/javascript-document-ready-jquery-example/'
+article3title: ...
+article3link: ...
+  ...
+```
+
+### Füge eine Day.js Gebietsschemadatei (Locale) für die neue Sprache hinzu
+
+Standardmäßig enthält Day.js nur Englisch als Gebietsschema. Damit es mit anderen Sprachen funktioniert, musst du eine neue Day.js Gebietsschemadatei zum CDN hinzufügen.
+
+Im Verzeichnis [`build/news-assets/dayjs/<version>/locale`](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) erstellst du eine neue Datei und nennst sie `isocode.min.js`. Wenn du zum Beispiel Dothraki News startest, nennst du die Datei `mis.min.js`.
+
+> [!NOTE] Die Versionsnummer wird sich ändern, wenn die Abhängigkeiten aktualisiert werden.
+
+Dann besuche [diese Seite auf cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) mit allen verfügbaren Day.js-Dateien für die von uns verwendete Version, suche den Link `https://cdnjs.cloudflare.com/ajax/libs/dayjs/<version>/locale/isocode.min.js` für die neue Sprache und öffne ihn in einem neuen Tab.
+
+> [!NOTE] Du musst nur die .../dayjs/\<version\>/_locale_/isocode.min.js Locale-Datei hinzufügen. Du musst keine weiteren Day.js-Dateien hinzufügen.
+
+Kopiere den Code des Gebietsschema aus Day.js von dem neuen Tab in die neue Datei, die du erstellt hast. Hier ist zum Beispiel eine ungekürzte Version des englischen Gebietsschemas für Day.js:
+
+```js
+!(function (e, n) {
+  'object' == typeof exports && 'undefined' != typeof module
+    ? (module.exports = n())
+    : 'function' == typeof define && define.amd
+    ? define(n)
+    : (e.dayjs_locale_en = n());
+})(this, function () {
+  'use strict';
+  return {
+    name: 'en',
+    weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
+      '_'
+    ),
+    months:
+      'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+        '_'
+      )
+  };
+});
+```
+
+Erstelle dann einen PR für das CDN-Repository, um sowohl die YAML- als auch die Day.js-Dateien zur Überprüfung hinzuzufügen.
+
+## Bereite das News Repo auf die neue Sprache vor
+
+Das [News Repo](https://github.com/freeCodeCamp/news) zieht die Daten von einer Ghost-Instanz, die Dateien, die du dem CDN hinzugefügt hast, erstellt die News und stellt sie bereit.
+
+> [!WARN] Pull Requests für das News-Repos _müssen_ aus demselben Repo kommen. Du solltest bei diesem Schritt nicht von einem Fork aus arbeiten.
+
+### Anpassung der Hauptkonfigurationsdatei (Main Config)
+
+Klone das News-Repository und erstelle einen neuen Zweig.
+
+Öffne die Datei `config/index.js`, um die neue Sprache hinzuzufügen und die notwendigen Werte zu konfigurieren. Es müssen ein paar Objekte und Arrays geändert werden:
+
+- `locales`: Dieses Array enthält die aktiven und kommenden News-Sprachen. Das sind die Werte, die in der `.env`-Datei verwendet werden, um die Ghost-Instanz und die Benutzeroberfläche für jeden Build zu wählen. Füge den Textnamen der neuen Sprache in Kleinbuchstaben zu diesem Array hinzu.
+- `localeCodes`: Dieses Objekt ist eine Übersicht der ISO-Codes für jede Sprache und wird verwendet, um i18next zu konfigurieren, bevor die Benutzeroberfläche erstellt wird. Um eine neue Sprache hinzuzufügen, verwende den Namen der Sprache in Kleinbuchstaben als _Schlüssel_ und den ISO 639-1 Sprachcode als _Wert_.
+- `algoliaIndices`: Dieses Objekt ist eine Übersicht der Algolia-Indizes für jede Sprache. Um eine neue Sprache hinzuzufügen, verwende den Namen der Sprache in Kleinbuchstaben als _Schlüssel_ und `news-` gefolgt von dem ISO 639-1 Sprachcode in Kleinbuchstaben als _Wert_.
+
+> [!NOTE] Wenn du dir nicht sicher bist, welchen String du beim Setzen von `algoliaIndices` verwenden sollst, schicke eine Nachricht an Kris (@scissorsneedfoodtoo) oder eine andere Person mit Zugang zu Algolia und bitte sie, das zu überprüfen.
+
+Wenn du zum Beispiel Dothraki News startest, sollten die oben genannten Objekte / Arrays wie folgt aussehen:
+
+```js
+const locales = ['arabic', 'bengali', 'chinese', 'english', 'dothraki'];
+
+const localeCodes = {
+  arabic: 'ar',
+  bengali: 'bn',
+  chinese: 'zh',
+  english: 'en',
+  dothraki: 'mis'
+};
+
+const algoliaIndices = {
+  arabic: 'news-ar',
+  bengali: 'news-bn',
+  chinese: 'news-zh',
+  english: 'news',
+  dothraki: 'news-mis'
+};
+```
+
+### Füge die i18next JSON-Dateien für die neue Sprache hinzu
+
+Als nächstes gehst du in das Verzeichnis `config/i18n/locales`, erstellst einen neuen Ordner und gibst ihm den Namen der neuen Sprache, die du hinzufügst. Wenn du zum Beispiel Dothraki News startest, erstelle einen neuen Ordner namens `dothraki`.
+
+Kopiere dann die JSON-Dateien aus dem Verzeichnis `english` in deinen neuen Ordner.
+
+Öffne in deinem neuen Ordner die Datei `serve.json` und ersetze ihren Inhalt durch den folgenden:
+
+```json
+{
+  "redirects": []
+}
+```
+
+Dann commitest und pushst du deinen Zweig direkt in das News-Repository.
+
+> [!NOTE] Du musst zu einem der Teams gehören, die Zugriff auf das News-Repository haben, um Zweige direkt zu News zu pushen. Derzeit dürfen nur die Entwickler-, i18n- und Staff-Teams dies tun.
+
+Eröffne schließlich einen PR zur Überprüfung.
+
+Sobald die PRs für das CDN und das News Repo genehmigt wurden, können sie zusammengeführt werden.
+
+> [!NOTE] Deployment will be handled subsequently by the staff. Here is a sample PR: [freeCodeCamp/news#485](https://github.com/freeCodeCamp/news/pull/485) of how they do it and more details are available in the [staff-wiki](https://staff-wiki.freecodecamp.org/docs/flight-manuals/news-instances#jamstack---news--assets).

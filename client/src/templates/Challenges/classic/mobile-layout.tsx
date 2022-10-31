@@ -4,7 +4,7 @@ import { createSelector } from 'reselect';
 
 import { Test } from '../../../redux/prop-types';
 import ToolPanel from '../components/tool-panel';
-import { challengeTestsSelector } from '../redux';
+import { challengeTestsSelector } from '../redux/selectors';
 import MobilePaneSelector, { Tab } from './mobile-pane-selector';
 
 const mapStateToProps = createSelector(
@@ -22,6 +22,7 @@ interface MobileLayoutProps {
   instructions: JSX.Element;
   notes: ReactElement;
   preview: JSX.Element;
+  updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
   videoUrl: string;
   usesMultifileEditor: boolean;
@@ -45,6 +46,10 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       currentTab: tab
     });
   };
+
+  handleKeyDown = () => this.props.updateUsingKeyboardInTablist(true);
+
+  handleClick = () => this.props.updateUsingKeyboardInTablist(false);
 
   render() {
     const { currentTab } = this.state;

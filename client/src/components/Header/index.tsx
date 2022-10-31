@@ -4,14 +4,15 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import React from 'react';
 import Helmet from 'react-helmet';
+import { User } from '../../redux/prop-types';
 
 import UniversalNav from './components/universal-nav';
 
 import './header.css';
 
-export interface HeaderProps {
+interface HeaderProps {
   fetchState: { pending: boolean };
-  user: Record<string, any>;
+  user: User;
 }
 export class Header extends React.Component<
   HeaderProps,
@@ -84,9 +85,16 @@ export class Header extends React.Component<
     return (
       <>
         <Helmet>
-          <style>{':root{--header-height: 38px}'}</style>
+          <style>
+            {
+              ':root{--header-height: 38px; --search-box-form: 38px; --lang-menu-height: 22.5rem;}'
+            }
+          </style>
         </Helmet>
         <header>
+          <a href='#content-start' className='skip-to-content-button'>
+            Skip To Content
+          </a>
           <UniversalNav
             displayMenu={displayMenu}
             fetchState={fetchState}

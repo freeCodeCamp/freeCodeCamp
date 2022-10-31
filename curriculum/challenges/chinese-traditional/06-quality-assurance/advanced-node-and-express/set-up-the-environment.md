@@ -10,7 +10,7 @@ dashedName: set-up-the-environment
 
 在接下來的挑戰中，我們將會用到 `chat.pug` 文件。 首先，在你的 `routes.js` 文件中爲 `/chat` 添加一個處理 GET 請求的路由，並給它傳入 `ensureAuthenticated`。在回調函數中，我們需要讓它渲染 `chat.pug` 文件，並在響應中包含 `{ user: req.user }` 信息。 現在，請修改 `/auth/github/callback` 路由，讓它可以像這樣設置 user_id：`req.session.user_id = req.user.id`，並在設置完成後重定向至 `/chat`。
 
-添加 `socket.io@~2.3.0` 作爲依賴項，並且在你的服務器中和 `http` （內置在 Nodejs 中）一起導入/實例化。具體如下：
+已添加 `socket.io@~2.3.0` 作爲依賴項，在你的服務器中和 `http` （內置在 Nodejs 中）一起導入/實例化，具體如下：
 
 ```javascript
 const http = require('http').createServer(app);
@@ -42,7 +42,7 @@ let socket = io();
 
 **注意：**只有在連接到處於同一個 url/server 上的 socket 時，`io()`纔可以正常執行。 如果需要連接到外部的 socket，就需要這樣調用：`io.connect('URL');`。
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考[這裏](https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1)的答案。
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">查看已執行項目的當前進度</a>。
 
 # --hints--
 

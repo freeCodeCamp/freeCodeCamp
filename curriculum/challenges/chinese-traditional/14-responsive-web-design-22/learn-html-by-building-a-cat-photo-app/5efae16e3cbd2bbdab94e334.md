@@ -1,8 +1,8 @@
 ---
 id: 5efae16e3cbd2bbdab94e334
-title: 步驟 30
+title: 步驟 31
 challengeType: 0
-dashedName: step-30
+dashedName: step-31
 ---
 
 # --description--
@@ -84,8 +84,8 @@ assert(
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->

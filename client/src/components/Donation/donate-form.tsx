@@ -13,19 +13,21 @@ import {
   defaultDonation,
   modalDefaultDonation
 } from '../../../../config/donation-settings';
+import { defaultDonationFormState } from '../../redux';
+import {
+  addDonation,
+  updateDonationFormState,
+  postChargeStripe,
+  postChargeStripeCard
+} from '../../redux/actions';
 import {
   isSignedInSelector,
+  userSelector,
   isDonatingSelector,
   signInLoadingSelector,
   donationFormStateSelector,
-  addDonation,
-  updateDonationFormState,
-  defaultDonationFormState,
-  userSelector,
-  postChargeStripe,
-  postChargeStripeCard,
   isVariantASelector
-} from '../../redux';
+} from '../../redux/selectors';
 import Spacer from '../helpers/spacer';
 import { Themes } from '../settings/theme';
 import DonateCompletion from './donate-completion';

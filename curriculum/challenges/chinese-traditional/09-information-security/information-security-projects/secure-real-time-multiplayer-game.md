@@ -8,21 +8,32 @@ dashedName: secure-real-time-multiplayer-game
 
 # --description--
 
-使用 HTML Canvas API 和 [Socket.io](https://socket.io/) 開發一個 2D 實時多人遊戲，其功能與此類似：<https://secure-real-time-multiplayer-game.freecodecamp.rocks/>。 在這個項目中，你將使用以下方法之一編寫你的代碼：
+使用 HTML Canvas API 和 Socket.io 開發一個功能上類似於 <a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a> 的 2D 實時多人遊戲。 在這個項目中，你將使用以下方法之一編寫你的代碼：
 
--   克隆[這個 GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/)，並在本地完成你的項目。
--   使用[我們的 Replit 初始項目](https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game)來完成你的項目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">這個 GitHub 倉庫</a>，並在本地完成你的項目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目
 -   使用您選擇的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
 完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 框中提交你的項目 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
 
 # --instructions--
 
-**注意** ：`helmet@^3.21.3` 是用戶故事所必需的。 這意味着你需要使用以前版本的 Helmet 的文檔，瞭解如何實現用戶故事的信息。
+創建一個安全的多人遊戲，每名玩家可以移動他們的角色，並且這個遊戲至少提供了一個可收集的道具，玩家的排名是根據他們的分數計算的。
+
+有關詳細信息，請參考下面的測試。
+
+請確保你的遊戲是安全的！ 包含以下安全措施：
+
+- 客戶端不能猜測/嗅探 MIME 類型
+- 防止 XSS 攻擊
+- 不要在客戶端中緩存網站的任何信息
+- 在請求頭中聲明網站是由 `PHP 7.4.3` 提供技術支持
+
+**注意：** `helmet@^3.21.3` 是需求中所要求的。 這意味着你將需要使用之前版本的 Helmet 文檔，來了解如何實現需求。
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+你應該提交你自己的項目，而不是示例 URL
 
 ```js
 (getUserInput) => {
@@ -34,91 +45,91 @@ dashedName: secure-real-time-multiplayer-game
 };
 ```
 
-多個玩家可以連接到一臺服務器遊玩。
+多名玩家可以連接到同一臺服務器玩這個遊戲。
 
 ```js
 
 ```
 
-每個玩家都有頭像。
+每名玩家都有一個角色。
 
 ```js
 
 ```
 
-每個玩家都由在 `Player.mjs` 中創建的 `Player` 類對象來代表。
+每名玩家都由 `Player.mjs` 中的 `Player` 類創建的對象表示
 
 ```js
 
 ```
 
-至少，每個玩家對象應該包含一個唯一的 `id`、一個 `score`，以及代表玩家當前位置的 `x` 和 `y` 座標。
+至少，每個玩家對象都應該包含一個唯一的 `id`、一個`score`，以及代表玩家當前位置的 `x` 和 `y` 座標。
 
 ```js
 
 ```
 
-遊戲至少有一種類型的可收藏物品。 在 `Collectible.mjs` 中完成 `Collectible` 類來實現這一點。
+遊戲中至少有一種可收集道具。 在 `Collectible.mjs` 中完成 `Collectible` 類來實現這一點
 
 ```js
 
 ```
 
-至少，每個由 `Collectible` 類創建的可收集物品對象應該包含一個唯一的 `id`、一個 `value`，以及代表該物品當前位置的 `x` 和 `y` 座標。
+至少，由 `Collectible` 類創建的每個可收集物品對象應該包含一個唯一的 `id`、一個 `value` 和代表物品的當前位置 `x` 和 `y` 座標。
 
 ```js
 
 ```
 
-玩家可以使用 WASD 或方向鍵移動頭像。 完成 `Player.mjs` 中的 `movePlayer` 方法來實現這一功能。
+玩家可以使用 WASD 和/或箭頭鍵移動他們的角色。 完成 `Player.mjs` 中的 `movePlayer` 方法來實現這一功能。
 
 ```js
 
 ```
 
-`movePlayer` 方法應該接受兩個參數：一個是 “up”、“down”、“left” 或 “right” 的字符串，另一個是玩家角色位置應該改變的像素數量。 `movePlayer` 應該調整它所調用的玩家對象的 `x` 和 `y` 座標。
+`movePlayer` 方法應該接受兩個參數：一個由 “up”、“down”、“left” 或 “right” 組成的字符串，以及一個表示玩家位置應該改變的像素數量的數字。 `movePlayer` 應該調整被調用的玩家對象的 `x` 和 `y` 座標。
 
 ```js
 
 ```
 
-用玩家的分數來計算他們相對其他玩家的名次。 在 `Player` 類中完成 `calculateRank` 方法來實現這個。
+玩家的分數應該用來計算他們與其他玩家相比的排名。 完成 `Player` 類中的 `calculateRank` 方法來實現這個功能。
 
 ```js
 
 ```
 
-`calculateRank` 方法應該接受一個代表所有在線玩家的對象數組，並返回字符串 `Rank: currentRanking/totalPlayers`。 例如，在一局有兩個玩家的遊戲中，如果玩家 A 的分數是 3，玩家 B 的分數是 5，那麼玩家 A 的 `calculateRank` 應該返回 `Rank: 2/2`。
+`calculateRank` 方法應該接受一個代表所有連接的玩家的對象數組，並返回字符串 `Rank: currentRanking/totalPlayers`（排名：當前排名/總玩家數）。 舉個例子，在一個兩人遊戲中，如果玩家 A 有 3 分，玩家 B 有 5 分，那麼玩家 A 的 `calculateRank` 應該返回 `Rank: 2/2`。
 
 ```js
 
 ```
 
-玩家可以與可收集物品發生碰撞。 完成 `Player.mjs` 中的 `collision` 方法來實現這一點。
+玩家可以與收集道具發生碰撞。 完成 `Player.mjs` 中的 `collision` 方法實現這一功能。
 
 ```js
 
 ```
 
-`collision` 方法應該接受一個可收集物品的對象作爲參數。 如果玩家的頭像與物品相交，`collision` 方法應該返回 `true`。
+`collision` 方法應該接受可收集物品的對象作爲參數。 如果玩家的角色與道具重合，`collision` 方法應該返回 `true`。
 
 ```js
 
 ```
 
-所有玩家都保持遊戲狀態同步。
+所有玩家保持同步。
 
 ```js
 
 ```
 
-玩家可以隨時斷開與遊戲的連接。
+玩家可以在任何時候退出遊戲。
 
 ```js
 
 ```
 
-阻止客戶端試圖猜測/嗅探 MIME 類型。
+防止客戶端嘗試猜測/嗅探 MIME 類型。
 
 ```js
 async (getUserInput) => {
@@ -138,7 +149,7 @@ async (getUserInput) => {
 };
 ```
 
-客戶端沒有緩存任何網站內容。
+網站上的任何東西都不會被緩存到客戶端中。
 
 ```js
 async (getUserInput) => {
@@ -154,7 +165,7 @@ async (getUserInput) => {
 };
 ```
 
-請求頭顯示該網站是由 “PHP 7.4.3” 驅動的，儘管實際並非如此（作爲一種安全防禦措施）。
+在請求頭中聲明該網站由 “PHP 7.4.3” 提供技術支持，儘管它並非如此（作爲一種安全措施）。
 
 ```js
 async (getUserInput) => {

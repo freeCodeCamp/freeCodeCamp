@@ -1,7 +1,7 @@
 ---
 id: 5ea2815e364d9a2222ea55f8
 title: LZW compression
-challengeType: 5
+challengeType: 1
 forumTopicId: 385288
 dashedName: lzw-compression
 ---
@@ -9,8 +9,6 @@ dashedName: lzw-compression
 # --description--
 
 The Lempel-Ziv-Welch (LZW) algorithm provides loss-less data compression.
-
-You can read a complete description of it in the [Wikipedia article](https://en.wikipedia.org/wiki/Lempel-Ziv-Welch) on the subject.
 
 # --instructions--
 

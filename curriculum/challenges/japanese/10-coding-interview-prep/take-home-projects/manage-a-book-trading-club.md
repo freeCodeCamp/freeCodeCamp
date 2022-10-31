@@ -8,9 +8,9 @@ dashedName: manage-a-book-trading-club
 
 # --description--
 
-**目標:** <https://manage-a-book-trading-club.freecodecamp.rocks/> と同じような機能を持つ、[Replit](https://replit.com/) アプリを構築してください。
+**Objective:** Build an app that is functionally similar to this: <a href="https://manage-a-book-trading-club.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://manage-a-book-trading-club.freecodecamp.rocks/</a>.
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を実装してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
+Fulfill the below user stories and get all of the tests to pass. 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
 
 **ユーザーストーリー:** すべてのユーザに投稿された本を見ることができます。
 
@@ -22,7 +22,7 @@ dashedName: manage-a-book-trading-club
 
 これらのユーザーストーリーの実装を終えたら、動作可能なアプリの URL を入力し、必要に応じて GitHub リポジトリの URL を入力してください。 それから「このチャレンジを完了しました」ボタンをクリックしてください。
 
-[freeCodeCamp フォーラム](https://forum.freecodecamp.org/c/project-feedback/409)でプロジェクトを共有することにより、フィードバックを得ることができます。
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

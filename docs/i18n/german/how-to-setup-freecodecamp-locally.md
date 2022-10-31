@@ -203,6 +203,8 @@ npm ci
 Bevor du die Anwendung lokal ausführen kannst, musst du den MongoDB-Dienst starten.
 
 > [!NOTE] Wenn du MongoDB nicht in einem anderen Setup als dem Standard-Setup laufen hast, sollte die URL, die als `MONGOHQ_URL`-Wert in der `.env`-Datei gespeichert ist, funktionieren. Wenn du eine benutzerdefinierte Konfiguration verwendest, ändere diesen Wert nach Bedarf.
+> 
+> Wenn du den [Windows 10 via WSL2 Setup Guide](how-to-setup-wsl.md) befolgt hast, solltest du diesen Schritt überspringen können, wenn der MongoDB-Server aus diesem Handbuch bereits läuft. Du kannst dies bestätigen, indem du überprüfst, ob du `http://localhost:27017` auf deinem lokalen Rechner erreichen kannst.
 
 Starte den MongoDB-Server in einem separaten Terminal:
 

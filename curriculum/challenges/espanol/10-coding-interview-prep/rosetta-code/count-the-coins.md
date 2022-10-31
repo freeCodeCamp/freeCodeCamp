@@ -1,14 +1,14 @@
 ---
 id: 59713bd26bdeb8a594fb9413
 title: Count the coins
-challengeType: 5
+challengeType: 1
 forumTopicId: 302238
 dashedName: count-the-coins
 ---
 
 # --description--
 
-There are four types of common coins in [US](https://en.wikipedia.org/wiki/United_States) currency:
+There are four types of common coins in US currency:
 
 <ul>
   <li>quarters (25 cents)</li>
@@ -46,7 +46,7 @@ assert(typeof countCoins === 'function');
 assert.equal(countCoins(15), 6);
 ```
 
-`countCoins(85)` shouls return `163`.
+`countCoins(85)` should return `163`.
 
 ```js
 assert.equal(countCoins(85), 163);

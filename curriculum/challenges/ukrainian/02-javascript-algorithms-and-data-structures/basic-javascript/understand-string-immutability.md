@@ -11,14 +11,14 @@ dashedName: understand-string-immutability
 
 У JavaScript, `String` значення <dfn>immutable</dfn>, означає, що їх не можна буде змінити після створення.
 
-Наприклад, у такому коді:
+For example, the following code will produce an error because the letter `B` in the string `Bob` cannot be changed to the letter `J`:
 
 ```js
 let myStr = "Bob";
 myStr[0] = "J";
 ```
 
-неможливо змінити значення `myStr` на `Job`, тому що вміст `myStr` не може бути зміненим. Зауважте, що *not* означає, що `myStr` не можна змінити, так само як окремі елементи в коді <dfn>string literal</dfn>. Єдиний спосіб змінити `myStr` - це додати новий рядок:
+Note that this does *not* mean that `myStr` could not be re-assigned. The only way to change `myStr` would be to assign it with a new value, like this:
 
 ```js
 let myStr = "Bob";

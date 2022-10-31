@@ -9,7 +9,7 @@ import React from 'react';
 import { TFunction, useTranslation } from 'react-i18next';
 
 import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n/all-langs';
+import { getLangCode } from '../../../../../config/i18n';
 import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';
 import SocialIcons from './social-icons';
@@ -24,10 +24,6 @@ interface CamperProps {
   about: string;
   githubProfile: string;
   isDonating: boolean;
-  isGithub: boolean;
-  isLinkedIn: boolean;
-  isTwitter: boolean;
-  isWebsite: boolean;
   joinDate: string;
   linkedin: string;
   location: string;
@@ -73,10 +69,6 @@ function Camper({
   yearsTopContributor,
   githubProfile,
   isDonating,
-  isLinkedIn,
-  isGithub,
-  isTwitter,
-  isWebsite,
   joinDate,
   linkedin,
   twitter,
@@ -98,10 +90,6 @@ function Camper({
       </Row>
       <SocialIcons
         githubProfile={githubProfile}
-        isGithub={isGithub}
-        isLinkedIn={isLinkedIn}
-        isTwitter={isTwitter}
-        isWebsite={isWebsite}
         linkedin={linkedin}
         twitter={twitter}
         username={username}

@@ -23,12 +23,12 @@ import VideoPlayer from '../components/VideoPlayer';
 import CompletionModal from '../components/completion-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
-  isChallengeCompletedSelector,
   challengeMounted,
   updateChallengeMeta,
   submitChallenge,
   updateSolutionFormValues
-} from '../redux';
+} from '../redux/actions';
+import { isChallengeCompletedSelector } from '../redux/selectors';
 
 // Styles
 import './show.css';

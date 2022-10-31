@@ -1,13 +1,13 @@
+import i18next from 'i18next';
 import {
+  call,
+  delay,
   put,
   select,
+  take,
   takeEvery,
-  takeLeading,
-  delay,
-  call,
-  take
+  takeLeading
 } from 'redux-saga/effects';
-import i18next from 'i18next';
 
 import {
   addDonation,
@@ -15,21 +15,22 @@ import {
   postChargeStripeCard
 } from '../utils/ajax';
 import { actionTypes as appTypes } from './action-types';
-
 import {
-  openDonationModal,
-  preventBlockDonationRequests,
-  shouldRequestDonationSelector,
-  preventProgressDonationRequests,
-  recentlyClaimedBlockSelector,
-  isDonatingSelector,
   addDonationComplete,
   addDonationError,
+  openDonationModal,
+  postChargeStripeCardComplete,
+  postChargeStripeCardError,
   postChargeStripeComplete,
   postChargeStripeError,
-  postChargeStripeCardComplete,
-  postChargeStripeCardError
-} from './';
+  preventBlockDonationRequests,
+  preventProgressDonationRequests
+} from './actions';
+import {
+  isDonatingSelector,
+  recentlyClaimedBlockSelector,
+  shouldRequestDonationSelector
+} from './selectors';
 
 const defaultDonationErrorMessage = i18next.t('donate.error-2');
 

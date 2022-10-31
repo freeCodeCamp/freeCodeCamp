@@ -46,7 +46,7 @@ Quando rinomini una certificazione, vorrai probabilmente rinominare il superbloc
 1. Nel file `meta.json` di quella cartella, rinomina i valori in `name`, `dashedName`, e `challengeOrder` con il nuovo nome.
 1. In `curriculum/challenges/english/12-certificate`, rinomina la cartella `{superBlock}-certificate`, e il file YAML dentro di essa, con il nuovo nome.
 1. Nel file YAML, cambia il titolo (`title`) con il nuovo nome.
-1. Rename the file and folder from step 3 for the rest of the curriculum languages.
+1. Rinomina il file e la cartella dello step 3 nel resto delle lingue del curriculum.
 1. Aggiorna `client/src/redux/index.ts` con il corretto `title`.
 1. Facoltativamente, aggiorna il `certSlug` per il superblocco nello stesso file. **Nota** che rinominare un `certSlug` cambia l'URL della certificazione ed è da fare con attenta considerazione.
 1. Aggiorna il `title` in `client/src/resources/cert-and-project-map.ts` al nuovo valore. **Nota** che cambiare `title` qui **romperà** la pagina superBlock per la certificazione associata. Fa affidamento sul titolo del superblocco per combaciare il titolo del certificato. Vorrai probabilmente rinominare il superblocco allo stesso tempo.
@@ -60,7 +60,7 @@ Quando rinomini una certificazione, vorrai probabilmente rinominare il superbloc
 
 > [!NOTE] Quando rinomini un superblocco, il nuovo nome della cartella è usato come percorso e dovrebbe essere considerato il nome "corretto". Tutti gli altri valori devono essere aggiornati per riflettere il cambiamento.
 
-Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all share a name. Per rinominare solo un superblocco devi:
+Inoltre, probabilmente vorrai rinominare il certificato e il blocco `{superBlock}-projects` quando rinomini un superblocco visto che condividono tutti un nome. Per rinominare solo un superblocco devi:
 
 1. Rinominare la cartella del superblocco nella cartella `curriculum/challenges/english`.
 1. Rinominare la cartella del superblocco in _tutte_ le altre cartelle `curriculum/challenges/{language}`.

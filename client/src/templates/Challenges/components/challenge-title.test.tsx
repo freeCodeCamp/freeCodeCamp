@@ -4,10 +4,8 @@ import renderer from 'react-test-renderer';
 import ChallengeTitle from './challenge-title';
 
 const baseProps = {
-  block: 'fake-block',
   children: 'title text',
   isCompleted: true,
-  superBlock: 'fake-superblock',
   translationPending: false
 };
 

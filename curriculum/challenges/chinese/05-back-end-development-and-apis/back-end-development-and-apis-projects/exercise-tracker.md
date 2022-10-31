@@ -8,10 +8,10 @@ dashedName: exercise-tracker
 
 # --description--
 
-构建一个 JavaScript 的全栈应用，在功能上与这个应用相似： <https://exercise-tracker.freecodecamp.rocks/>。 在这个项目中，你将使用以下方法之一编写你的代码：
+构建一个功能类似于此的全栈 JavaScript 应用：<a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks</a>。 在这个项目中，你将使用以下方法之一编写你的代码：
 
--   克隆 [GitHub 仓库](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) 并在本地完成你的项目。
--   使用[我们的 Replit 初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker)来完成你的项目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
 -   使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
 完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 字段中提交它的 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
@@ -79,7 +79,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   assert.isTrue(res.ok);
   if(!res.ok) {
@@ -96,7 +96,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -164,7 +164,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -198,7 +198,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -237,7 +237,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -276,7 +276,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -309,7 +309,7 @@ async (getUserInput) => {
 };
 ```
 
-对 `/api/users/:id/logs` 的 `GET` 请求将返回用户对象，其中包含添加的所有练习的 `log` 数组。
+对 `/api/users/:_id/logs` 的 `GET` 请求，将返回用户对象，其中包含添加的所有练习的 `log` 数组。
 
 ```js
 async(getUserInput) => {
@@ -319,7 +319,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   })
   if(res.ok){
     const {_id, username} = await res.json();
@@ -353,7 +353,7 @@ async(getUserInput) => {
 };
 ```
 
-从 `GET /api/users/:id/logs` 返回的 `log` 数组中的每一项都是一个应该具有 `description` 的对象， `duration` 和 `date` 属性。
+从 `GET /api/users/:_id/logs` 返回的 `log` 数组中的每个项目都是一个应该具有 `description`、`duration` 和 `date` 属性的对象。
 
 ```js
 async(getUserInput) => {
@@ -363,7 +363,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -400,7 +400,7 @@ async(getUserInput) => {
 };
 ```
 
-从 `GET /api/users/:id/logs` 返回的 `log` 数组中任何对象的 `description` 属性都应该是一个字符串。
+从 `GET /api/users/:_id/logs` 返回的 `log` 数组中任何对象的 `description` 属性都应该是一个字符串。
 
 ```js
 async(getUserInput) => {
@@ -410,7 +410,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -447,7 +447,7 @@ async(getUserInput) => {
 };
 ```
 
-从 `GET /api/users/:id/logs` 返回的 `log` 数组中任何对象的 `duration` 属性都应该是一个数字。
+从 `GET /api/users/:_id/logs` 返回的 `log` 数组中任何对象的 `duration` 属性应该是一个数字。
 
 ```js
 async(getUserInput) => {
@@ -457,7 +457,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -494,7 +494,7 @@ async(getUserInput) => {
 };
 ```
 
-从 `GET /api/users/:id/logs` 返回的 `log` 数组中任何对象的 `date` 属性应该是一个字符串。 使用 `Date` API 的 `dateString` 格式。
+从 `GET /api/users/:_id/logs` 返回的 `log` 数组中任何对象的 `date` 属性应该是一个字符串。 使用 `Date` API 的 `dateString` 格式。
 
 ```js
 async(getUserInput) => {
@@ -504,7 +504,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -549,7 +549,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();

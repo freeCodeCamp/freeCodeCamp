@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8041
 title: Сума послідовності
-challengeType: 5
+challengeType: 1
 forumTopicId: 302333
 dashedName: sum-of-a-series
 ---
 
 # --description--
 
-Вичисліть **n**<sup>ний</sup> член [послідовності](https://en.wikipedia.org/wiki/Series (mathematics)), тобто суму **n** перших членів відповідної [послідовності](https://en.wikipedia.org/wiki/sequence). Неформально це значення або його обмеження, коли **n** прагне до нескінченності називають *сумою послідовності*, звідси й назва завдання. Для цього завдання використовуйте: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
+Compute the **n**<sup>th</sup> term of a <em>series</em>, i.e. the sum of the **n** first terms of the corresponding <em>sequence</em>. Неформально це значення або його обмеження, коли **n** прагне до нескінченності називають *сумою послідовності*, звідси й назва завдання. Для цього завдання використовуйте: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
 
 # --instructions--
 

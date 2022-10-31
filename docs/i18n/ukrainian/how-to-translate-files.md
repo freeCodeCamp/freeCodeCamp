@@ -80,11 +80,11 @@
 
 Виберіть будь-який проєкт, до якого ви хочете долучитися. Ви побачите список доступних мов для перекладу.
 
-![Image - List of available languages](https://contribute.freecodecamp.org/images/crowdin/languages.png)
+![Зображення - Список доступних мов](https://contribute.freecodecamp.org/images/crowdin/languages.png)
 
 Оберіть мову, над якою хочете працювати, і тоді побачите повне дерево файлів.
 
-![Image - List of available files](https://contribute.freecodecamp.org/images/crowdin/file-tree.png)
+![Зображення - Список доступних файлів](https://contribute.freecodecamp.org/images/crowdin/file-tree.png)
 
 Кожен файл і папка мають індикатор виконання. **Синя** частина індикатору показує відсоток файлу, який вже перекладено, а **зелена** – відсоток, який вже затверджено.
 
@@ -94,7 +94,7 @@
 
 ## Перекладайте навчальну програму
 
-![Image - Editor View](https://contribute.freecodecamp.org/images/crowdin/editor.png)
+![Зображення - Вікно редактора](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
 Crowdin розділяє документ на «рядки», зазвичай на речення. Кожен такий рядок перекладається окремо. Посилаючись на зображення вище:
 
@@ -117,221 +117,297 @@ Crowdin розділяє документ на «рядки», зазвичай 
 
 > [!NOTE] Якщо ви бачите якісь неточності в оригінальному файлі англійською мовою, будь ласка, не виправляйте їх у процесі перекладу. Натомість залиште коментар або створіть GitHub issue.
 
-## Translate the Learn Interface
+## Перекладайте навчальний інтерфейс
 
-Our `/learn` interface relies on JSON files loaded into an i18n plugin to generate translated text. This translation effort is split across both Crowdin and GitHub.
+Наш інтерфейс `/learn` покладається на файли JSON, завантажені в плагін i18n, що створений для перекладеного тексту. Цей переклад розподілений між Crowdin та GitHub.
 
-### On GitHub
+### На GitHub
 
-The `links.json`, `meta-tags.json`, `motivation.json`, and `trending.json` files contain information that needs to be updated to reflect your language. However, we cannot load these into Crowdin, as the content isn't something that would be a one-to-one translation.
+Файли `links.json`, `meta-tags.json`, `motivation.json` та `trending.json` містять інформацію, яку потрібно оновити на вашу мову. Однак ми не можемо завантажити їх у Crowdin, оскільки вони не є прямим перекладом.
 
-These files will most likely be maintained by your language lead but you are welcome to [read about how to translate them](language-lead-handbook.md).
+Ймовірно, за цими файлами слідкує мовний керівник. Але ви можете [прочитати, як їх перекладати](language-lead-handbook.md).
 
-### On Crowdin
+### На Crowdin
 
-> [!ATTENTION] Do not edit the following files through a GitHub PR.
+> [!ATTENTION] Не редагуйте наведені нижче файли через GitHub PR.
 
-The `intro.json` and `translations.json` files are both translated on Crowdin, in the Learn User Interface project. Translating these can be a bit tricky, as each individual JSON value appears as its own string and sometimes the context is missing.
+Обидва файли `intro.json` та `translations.json` перекладають у проєкті «Learn User Interface» на Crowdin. Перекласти їх може бути дещо складно, оскільки кожне значення JSON зображається як окремий рядок, а контекст іноді відсутній.
 
-However, the `Context` information provided in Crowdin can help understand where the string fits in to the larger structure.
+Однак Crowdin може надати більше `контексту` про те, де вписується рядок.
 
-![Image with an arrow pointing to Crowdin's context information](https://contribute.freecodecamp.org/images/crowdin/context.png)
+![Зображення зі стрілкою, що вказує на контекст від Crowdin](https://contribute.freecodecamp.org/images/crowdin/context.png)
 
-If you have any questions about where a string fits in to the prose, reach out to us in our [contributor chat](https://discord.gg/PRyKn3Vbay).
+Якщо у вас є запитання щодо розташування рядка, напишіть нам у [contributor chat](https://discord.gg/PRyKn3Vbay).
 
-## Translate Documentation
+## Перекладайте документацію
 
-Translating our contributing documentation is a similar flow to translating our curriculum files.
+Переклад нашої документації схожий до перекладу файлів навчальної програми.
 
-> [!NOTE] Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
+> [!NOTE] Наша документація підтримує `docsify` та у нас є спеціальний аналіз для таких повідомлень. Якщо ви бачите рядки, які починаються з `[!NOTE]`, `[!WARNING]` або `[!TIP]` – ці слова НЕ перекладаються.
 
-### How to translate documentation with internal links
+### Як перекладати документацію з внутрішніми посиланнями
 
-When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
+Коли ви працюєте над документацією, стежте за внутрішніми посиланнями, які спрямовані на інший розділ документації.
 
-Make sure to replace the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
+Обов’язково замініть ідентифікатор цільового розділу (частина після `#`) на ідентифікатор перекладеного документа. Японською це буде виглядати так:
 
-Before translation
+До перекладу
 
 ```
-// in HTML
+// в HTML
 <a href="target-file-name.md#target-section-heading-id">Link text</a>
 <a href="#target-section-heading-id">Link text</a>
 
-// in Markdown
+// в Markdown
 [Link text](target-file-name.md#target-section-heading-id)
 [Link text](#target-section-heading-id)
 ```
 
-After translation
+Після перекладу
 
 ```
-// in HTML
+// в HTML
 <a href="target-file-name.md#翻訳後の-id">翻訳後のリンクテキスト</a>
 <a href="#翻訳後の-id">翻訳後のリンクテキスト</a>
 
-// in Markdown
+// в Markdown
 [翻訳後のリンクテキスト](target-file-name.md#翻訳後の-id)
 [翻訳後のリンクテキスト](#翻訳後の-id)
 ```
 
-The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
+Файли в документації написані в Markdown, але на Crowdin вони будуть зображатися як теги HTML.
 
-You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+Ви можете дізнатися, як `docsify` перетворює рядок вашою мовою на ідентифікатор, переглянувши перекладені сторінки. Якщо переклад ще не виконано, ви можете переглянути його, [запустивши сайт документації локально](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
 
-You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
+Ви можете дізнатися більше про [внутрішні посилання в наших документах тут](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
 
-## Translate the LearnToCode RPG
+## Перекладайте рольову гру LearnToCode
 
-The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
+Рольова гра LearnToCode працює на Ren'Py, який використовує спеціальний синтаксис для перекладених рядків: (див.
 
-- The sentences to be translated are always between `""`. These are dialogues or UI strings. The keywords that come before or after the dialogue are game engine control keywords and will be explained in details in subsequent rules. Please note that this first rule governs all subsequent rules listed.
-- In case of `new "..."` Do not translate the `new` keyword.
-- Prefixes like `player`, `annika`, `layla`, `marco` (or variants like `player happy`, `player @ happy`) should not be translated. These are control keywords to correctly display the character sprite in the game.
-- Postfixes like `nointeract` should not be translated.
-- Do not translate things between `[]` and `{}`. These are variable interpolations and text tags. These must remain halfwidth parentheses `[]` and `{}` instead of their fullwidth counterparts `【】` and `「」`
-- Do not translate the `nointeract` keyword at the end of the sentence.
-- If we try to use fullwidth parentheses `（）`, a QA warning will show. To avoid the QA warning, use halfwidth parentheses `()`
+текстову документацію Ren'Py</ а>)</p> 
 
-### Examples
+- Речення для перекладу завжди знаходиться між `""`. Це рядки діалогу або інтерфейсу користувача. Ключові слова, які йдуть до або після діалогу, є ключовими словами ігрового рушія та будуть детально пояснені в наступних правилах. Зауважте, що від першого правила відштовхуються всі інші.
+- У випадку `new "..."` не перекладайте ключове слово `new`.
+- Не потрібно перекладати префікси, як-от `player`, `annika`, `layla`, `marco` (або варіації `player happy`, `player @ happy`). Це контрольні ключові слова для правильного зображення спрайту персонажа в грі.
+- Не потрібно перекладати постфікси, як-от `nointeract`.
+- Не перекладайте текст між `[]` та `{}`. Це інтерполяції змінних та текстові теги. Вони мають залишатися дужками напівширини `[]` та `{}`, замість відповідників повної ширини `【】` та `「」`
+- Не перекладайте ключове слово `nointeract` у кінці речення.
+- Якщо ми спробуємо використати дужки повної ширини  `（）`, з’явиться попередження QA. Щоб уникнути попередження QA, використовуйте дужки напівширини `()`
+
+
+
+### Приклади
+
+
 
 ---
 
-#### Before translation
+
+
+#### До перекладу
+
+
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- це рядок, який потрібно перекласти. дивіться переклад нижче
 ```
 
-#### After translation
+
+
+
+#### Після перекладу
+
+
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
-Note: The `[]` and `{}` tags should be left intact.
+
+Примітка: теги `[]` та `{}` повинні бути без змін.
+
+
 
 ---
 
-#### Before translation
+
+
+#### До перекладу
+
+
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
-new "{icon=icon-fast-forward} Skip" <-- translate this line, see below
+new "{icon=icon-fast-forward} Skip" <-- перекладіть цей рядок, дивіться нижче
 ```
 
-#### After translation
+
+
+
+#### Після перекладу
+
+
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} 跳过"
 ```
 
-Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be left intact.
+
+Примітка: префікс `new` та тег `{icon=icon-fast-forward}` повинні бути без змін.
+
+
 
 ---
 
-#### Before translation
+
+
+#### До перекладу
+
+
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 ```
 
-#### After translation
+
+
+
+#### Після перекладу
+
+
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
 ```
 
-Note: `layla @ neutral` and `[player_name]` are left unchanged.
+
+Примітка: `layla @ neutral` та `[player_name]` повинні бути без змін.
+
+
 
 ---
 
-#### Before translation
+
+
+#### До перекладу
+
+
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
 player "Maybe this is all a dream?" nointeract
 ```
 
-#### After translation
+
+
+
+#### Після перекладу
+
+
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
 player "也许这都是一场梦？" nointeract
 ```
 
+
+
+
 ---
 
-### A Note on How Crowdin Segments a Sentence
 
-Pay attention to how Crowdin segments a line of dialogue wrapped between opening and closing quotes `""`. When we are translating the dialogue, we need to make sure to retain the opening and closing quotes, even if the quotes appear in different segments.
 
-This is the line to be translated:
+### Примітка про те, як Crowdin ділить речення
+
+Зверніть увагу на те, як Crowdin ділить рядок діалогу в лапках `""`. При перекладі діалогу нам потрібно переконатися, що лапки збережені, навіть якщо вони з’являються в різних частинах.
+
+Цей рядок потрібно перекласти:
+
+
 
 ```renpy
 player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
 ```
 
-Crowdin segments it into three parts like below:
 
-<img width="836" alt="Screen Shot 2022-01-23 at 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
+Crowdin ділить його на три частини, як показано нижче:
+
+<img width="836" alt="Знімок екрана 2022-01-23 о 10.36.43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
+
+
 
 ```renpy
-# original
+# оригінал
 player @ surprised "{b}Full-stack{/b}
-# translated, keeping the opening quotes `"`
+# перекладено, зберігаючи початкові лапки `"`
 player @ surprised "{b}全栈{/b}
 ```
 
-<img width="750" alt="Screen Shot 2022-01-23 at 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
+
+<img width="750" alt="Знімок екрана 2022-01-23 о 10.36.49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
+
+
 
 ```renpy
-# original
+# оригінал
 What is that?
-# translated, no quotes on either side
+# перекладено, без лапок з обох сторін
 这是什么？
 ```
 
-<img width="857" alt="Screen Shot 2022-01-23 at 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
+
+<img width="857" alt="Знімок екрана 2022-01-23 о 10.36.54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
+
+
 
 ```renpy
-# original
+# оригінал
 I better take notes so I can learn more about it."
-# translated, keeping the closing quotes `"`
+# перекладено, зберігаючи кінцеві лапки `"`
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
-## Rate Translations
 
-Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
 
-If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
 
-Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+## Оцінюйте переклади
 
-## Quality Assurance Checks
+Crowdin дозволяє вам оцінювати вже запропоновані переклади. Якщо ви спробуєте зберегти переклад, ви можете побачити повідомлення, що його неможливо зберегти – це означає, що інший учасник запропонував ідентичний переклад. Якщо ви згідні з перекладом, натисніть `+`, щоб проголосувати «за» переклад.
 
-We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+Якщо ви бачите переклад, який неточний або не передає суті рядка, натисніть `-`, щоб проголосувати «проти».
 
-When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
+Crowdin використовує ці голоси, щоб дати оцінку кожному запропонованому перекладу. Це допомагає команді редакторів визначити, який переклад найкраще підходить для кожного рядка.
 
-![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 
-> [!WARNING] You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
+## Перевірка якості
 
-## Translation Best Practices
+Ми дозволили деякі кроки щодо забезпечення якості, які підтверджують, що переклад є максимально точним – це допомагає нашим редакторам перевіряти запропоновані переклади.
 
-Follow these guidelines to ensure our translations are as accurate as possible:
+Якщо ви спробуєте зберегти переклад, ви можете побачити попереджувальне повідомлення щодо свого перекладу.
 
-- Do not translate the content within `<code>` tags. These tags indicate text that is found in code and should be left in English.
-- Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
-- Do not change the order of content.
+![Зображення - Попереджувальне повідомлення QA](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-If you have any questions, feel free to reach out to us in our [Discord](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.
+Це повідомлення зʼявиться, коли система перевірки на якість виявить потенційну помилку в запропонованому перекладі. У прикладі ми змінили текст тегу `<code>` і Crowdin помітив помилку.
+
+
+
+> [!WARNING] Ви можете зберегти переклад, незважаючи на помилки. Якщо ви це зробите, клацнувши «Save Anyway», вам потрібно буде позначити редактора або менеджера, і пояснити чому у цьому випадку потрібно проігнорувати повідомлення.
+
+
+
+## Найкращі практики перекладу
+
+Дотримуйтеся цих правил, щоб впевнитись, що переклад якомога точніший:
+
+- Не перекладайте вміст тегів `<code>`. Ці теги позначають текст, який знаходиться в коді та повинен бути англійською мовою.
+- Не додавайте додаткового вмісту. Якщо вам здається, що завдання потребує змін в тексті або додаткової інформації, запропонуйте це через GitHub, що змінить англійський файл.
+- Не змінюйте порядок вмісту.
+
+Якщо ви маєте запитання, пишіть нам у [Discord](https://discord.gg/PRyKn3Vbay) і ми будемо раді допомогти.

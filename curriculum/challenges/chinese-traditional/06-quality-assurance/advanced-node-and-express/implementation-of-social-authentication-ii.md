@@ -8,11 +8,13 @@ dashedName: implementation-of-social-authentication-ii
 
 # --description--
 
-設置 GitHub 驗證的最後一步是創建策略本身。 爲此，你需要在項目中添加 `passport-github@~1.1.0` 依賴，並在 `auth.js` 中請求它，作爲 `GithubStrategy`，像這樣：`const GitHubStrategy = require('passport-github').Strategy;`。 別忘了請求和配置 `dotenv`，使用你的環境變量。
+設置 GitHub 驗證的最後一步是創建策略本身。 已經添加 `passport-github@~1.1.0` 作爲依賴，在 `auth.js` 中請求它，作爲 `GithubStrategy`，像這樣：`const GitHubStrategy = require('passport-github').Strategy;`。 別忘了請求和配置 `dotenv`，使用你的環境變量。
 
-爲了設置 GitHub 策略，我們需要在 Passport 中使用實例化的 `GitHubStrategy`，它可以接收兩個參數：一個對象（包括 `clientID`、`clientSecret` 和 `callbackURL`），以及一個回調函數。在這個回調函數中，我們要處理驗證成功時，判斷用戶是否已經在數據庫中存在的邏輯，以及在用戶數據庫對象中最初保存哪些字段。 這種處理方式適用於絕大部分第三方驗證策略，但有些策略會需要我們提供更多的信息，詳情請參考相關策略的 GitHub README。 例如，Google 的驗證策略會要求你提供一個 *scope*，用於標示用戶成功登錄後，你需要從返回的對象中獲取那些信息。以及，這也需要經過用戶同意，你纔可以獲取到。 你可以在[這裏](https://github.com/jaredhanson/passport-github/)瞭解當前我們使用的驗證策略的用法，不過我們也會在 freeCodeCamp 課程中進行詳細講解。
+爲了設置 GitHub 策略，我們需要在 Passport 中使用實例化的 `GitHubStrategy`，它可以接收兩個參數：一個對象（包括 `clientID`、`clientSecret` 和 `callbackURL`），以及一個回調函數。在這個回調函數中，我們要處理驗證成功時，判斷用戶是否已經在數據庫中存在的邏輯，以及在用戶數據庫對象中最初保存哪些字段。 這種處理方式適用於絕大部分第三方驗證策略，但有些策略會需要我們提供更多的信息，詳情請參考相關策略的 GitHub README。 例如，Google 的驗證策略會要求你提供一個 *scope*，用於標示用戶成功登錄後，你需要從返回的對象中獲取那些信息。以及，這也需要經過用戶同意，你纔可以獲取到。
 
-你的新策略應該這樣去實現：
+當前策略是使用 GitHub 賬戶和 OAuth 2.0 令牌驗證用戶。 創建應用程序時獲得的客戶 ID 和密碼在創建策略時作爲選項提供。 策略還需要 `verify` 回調，接收訪問令牌和可選刷新令牌， 以及包含認證用戶的 GitHub 資料的 `profile`。 `verify` 回調必須調用 `cb` 提供用戶完成驗證。
+
+你的新策略應該是這樣的：
 
 ```js
 passport.use(new GitHubStrategy({
@@ -29,7 +31,7 @@ passport.use(new GitHubStrategy({
 
 目前，你的驗證部分不會成功。由於沒有數據庫的邏輯和回調函數，你的代碼目前還會報錯。但如果你試一試，就可以在控制檯裏看到輸出了你的 GitHub 個人信息。
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考[這裏](https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6)的答案。
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6" target="_blank" rel="noopener noreferrer nofollow">查看已執行項目的當前進度</a>。
 
 # --hints--
 
@@ -70,7 +72,7 @@ passport.use(new GitHubStrategy({
   );
 ```
 
-到目前爲止，Github 策略應正確設置。
+到目前爲止，GitHub 策略應正確設置。
 
 ```js
 (getUserInput) =>

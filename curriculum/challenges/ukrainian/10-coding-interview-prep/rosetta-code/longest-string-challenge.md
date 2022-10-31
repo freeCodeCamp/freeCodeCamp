@@ -1,7 +1,7 @@
 ---
 id: 5e6dd14192286d95fc43046e
 title: Завдання найдовшого рядка
-challengeType: 5
+challengeType: 1
 forumTopicId: 385275
 dashedName: longest-string-challenge
 ---
@@ -28,7 +28,7 @@ assert(typeof longestString == 'function');
 assert(Array.isArray(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg'])));
 ```
 
-`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` має повернути масив `["ccc", "ggg"]'`.
+`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` should return `["ccc", "ggg"]`.
 
 ```js
 assert.deepEqual(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg']), [

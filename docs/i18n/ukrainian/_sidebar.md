@@ -19,10 +19,10 @@
   - [Працюйте над документацією](how-to-work-on-the-docs-theme.md)
   - [Працюйте над компонентною бібліотекою](how-to-work-on-the-component-library.md)
 - **Додаткові інструкції**
-  - [Understand the curriculum file structure](curriculum-file-structure.md)
-  - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
-  - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
-  - [User Token Workflow](user-token-workflow.md)
+  - [Ознайомлення зі структурою файлів навчальної програми](curriculum-file-structure.md)
+  - [Налагодження вихідних електронних листів локально](how-to-catch-outgoing-emails-locally.md)
+  - [Встановлення freeCodeCamp на Windows (WSL)](how-to-setup-wsl.md)
+  - [Робочий процес токенів користувача](user-token-workflow.md)
 
 ---
 
@@ -31,7 +31,7 @@
   - [Довідник мовного керівника](language-lead-handbook.md)
   - [Довідник DevOps](devops.md)
   - [Розширення курсів VSCode](courses-vscode-extension.md)
-  - [Enable New Language](how-to-enable-new-languages.md)
+  - [Додавання нової мови](how-to-enable-new-languages.md)
 
 ---
 

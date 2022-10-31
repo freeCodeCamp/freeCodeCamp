@@ -14,6 +14,16 @@ O nível "Editor" permite ao usuário acessar todos os rascunhos e publicá-los.
 
 O nível "Administrator" (Administrador) é reservado para funcionários e líderes de idiomas do freeCodeCamp.
 
+### Como são feitos os artigos
+
+Usamos uma abordagem baseada em [JAMStack](https://www.google.com/search?q=what+is+jamstack) para criar e implementar os artigos. Esta estratégia faz com que um site estático seja armazenado em cache e servido a partir de uma CDN rapidamente.
+
+O [Ghost](https://ghost.org) atua como nossa plataforma de gerenciamento de conteúdo. O [11ty](https://11ty.dev) compila os artigos na forma de recursos estáticos – HTML, JavaScript e CSS. Apenas esses recursos estáticos são implantados em nossos servidores.
+
+Esse processo é automatizado e executado periodicamente. Se você publicar algo agora, estará disponível no site de notícias dentro de algumas horas.
+
+Você pode encontrar as agendas de compilação e o status atualizado aqui: https://github.com/freeCodeCamp/news#build
+
 ## Como mencionar o autor original de um artigo traduzido
 
 O autor original e o artigo original são vinculados automaticamente, adicionando este código à seção de cabeçalho Code Injection -> em Draft Setiings (Configurações de rascunho) no Ghost.
@@ -91,6 +101,76 @@ article5link: 'https://www.freecodecamp.org/portuguese/news/como-centralizar-tud
 Você pode converter de um formato para o outro cuidadosamente, alterando-o manualmente. Ou você pode usar [o script neste repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
 
 > [!TIP] Um novo fluxo de trabalho está sendo trabalhado. Será preciso alterar em apenas um lugar no futuro.
+
+## Como traduzir os artigos dos links de rodapé
+
+Existem alguns links listados no final do rodapé (Sobre, Rede de ex-alunos, Código aberto etc.) e alguns deles podem ser traduzidos para seu idioma do mesmo modo que os outros artigos.
+
+Artigos que podem ser traduzidos:
+
+- Sobre
+- Suporte
+- Honestidade acadêmica
+- Código de conduta
+
+Os seguintes artigos **não** devem ser traduzidos:
+
+- Loja
+- Patrocinadores
+- Política de privacidade
+- Termos de serviço
+- Política de direitos autorais
+
+Os links a seguir estão apontando para sites externos e não podem ser traduzidos:
+
+- Rede de ex-alunos
+- Código aberto
+
+### Alterações nos links de rodapé do editorial
+
+Depois de ter traduzido e publicado os artigos listados como "podem ser traduzidos" acima, você poderá atualizar os links no rodapé de `/news` editando o arquivo `news/config/i18n/locales/<your language>/links.json` no repositório [freeCodeCamp/news](https://github.com/freeCodeCamp/news).
+
+> [!NOTE] As solicitações de pull request para este repositório estão atualmente limitadas apenas à equipe. Se quiser atualizar este arquivo, peça ajuda a alguém da equipe.
+
+Atualize a seguinte parte do arquivo:
+
+```json
+{
+  ...
+  "footer": {
+    "about": "https://www.freecodecamp.org/news/about/",
+    "support": "https://www.freecodecamp.org/news/support/",
+    "honesty": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc": "https://www.freecodecamp.org/news/code-of-conduct/"
+  }
+}
+```
+
+### Alterações nos links de rodapé do curr[iculo
+
+Depois de ter traduzido e publicado os artigos listados como "podem ser traduzidos" acima e quando o curr[iculo em seu idioma estiver pronto para o lançamento, você poderá atualizar os links no rodapé de `/learn` editando o arquivo `news/config/i18n/locales/<your language>/links.json` no repositório [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp).
+
+> [!WARNING] Apenas "Sobre", "Suporte", "Honestidade acadêmica" e "Código de conduta" podem ser traduzidos. Deixar os outros URLs inalterados.
+
+Atualize a seguinte parte do arquivo:
+
+```json
+{
+  ...
+  "footer": {
+    "about-url": "https://www.freecodecamp.org/news/about/",
+    "shop-url": "https://www.freecodecamp.org/shop/",
+    "support-url": "https://www.freecodecamp.org/news/support/",
+    "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
+    "honesty-url": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc-url": "https://www.freecodecamp.org/news/code-of-conduct/",
+    "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
+    "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+    "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
+  },
+  ...
+}
+```
 
 ## Como traduzir os cabeçalhos das caixas informativas na documentação
 
@@ -276,3 +356,17 @@ Depois delas, cada idioma-alvo tem duas colunas. Se você traduzir para o Dothra
 > [!TIP] Em programas como o Microsoft Excel, você pode ocultar as colunas dos outros idiomas para liberar espaço em tela e ver as colunas em inglês e as colunas do idioma de destino ao lado umas das outras.
 
 Após ter feito as alterações e salvo o arquivo, você precisará fazer um PR com as alterações propostas. Depois de o PR ter sido aceito, você precisará executar o fluxo de trabalho do GitHub Action para atualizar o glossário do Crowdin. Suas alterações no glossário não terão efeitos imediatos, mas aparecerão em breve.
+
+## Como promover um colaborador a revisor
+
+Se você considerar que um colaborador pode se tornar um revisor de Crowdin, você pode dar a ele a função de revisor deste modo:
+
+No Crowdin, você individualiza `User management` (gerenciamento do usuário) no menu do lado esquerdo.
+
+Isto abrirá as ferramentas de gerenciamento de usuário, você será capaz de ver a lista de todos os usuários.
+
+Procure pelo usuário que se tornará um revisor. Use o menu de três pontos na linha do usuário para abrir um menu e selecione "Add to team" (Adicionar à equipe). As equipes de revisão têm o nome padrão de `Proof Readers (<language>)`. Você pode pesquisar a equipe usando o nome do idioma. Depois de selecionar a equipe, use o botão "ADD" na parte inferior da página para finalizar.
+
+O usuário agora é um revisor.
+
+> [!TIP] O revisor recém-promovido pode se beneficiar de ler a documentação em [How to Proofread Files](how-to-proofread-files.md).

@@ -4,7 +4,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const {
   availableLangs,
   languagesWithAuditedBetaReleases
-} = require('../config/i18n/all-langs');
+} = require('../config/i18n');
 const curriculumLangs = availableLangs.curriculum;
 
 exports.testedLang = function testedLang() {

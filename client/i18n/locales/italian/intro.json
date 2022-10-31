@@ -4,22 +4,22 @@
     "intro": [
       "In questo corso di Web Design Responsivo conoscerai i linguaggi usati per costruire le pagine web: HTML (Hypertext Markup Language) per il contenuto, e CSS (Cascade Style Sheets) per il design.",
       "Per prima cosa, costruirai un'app di foto per gatti per imparare le basi di HTML e CSS. Poi apprenderai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un modulo web.",
-      "Infine imparerai a fare pagine web adattabili a diverse misure di schermo costruendo una card Twitter con Flexbox, e un complesso layout per blog in CSS Grid."
+      "Infine, imparerai a realizzare pagine web adattabili a diverse misure di schermo costruendo una card Twitter con Flexbox, e un complesso layout per blog con CSS Grid."
     ],
     "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e le estensioni per la modalità scura, possono interferire con i test. In caso di problemi, ti consigliamo di disabilitare le estensioni che modificano il contenuto o il layout delle pagine durante il corso.",
     "blocks": {
       "basic-html-and-html5": {
         "title": "HTML Base e HTML5",
         "intro": [
-          "HTML è un linguaggio markup che utilizza una sintassi o notazione speciale che descrive la struttura di una pagina web al browser. Gli elementi HTML solitamente hanno un tag di apertura e di chiusura che danno significato al contenuto in essi racchiuso. Per esempio, diversi elementi possono descrivere il testo come titolo, paragrafo, o voce di una lista.",
-          "In questo corso, costruirai un'app per foto di gatti per imparare ad usare alcuni dei più comuni elementi HTML — i mattoni di ogni pagina web."
+          "HTML è un linguaggio di markup che utilizza una sintassi o notazione speciale che descrive la struttura di una pagina web al browser. Gli elementi HTML solitamente hanno un tag di apertura e di chiusura che danno significato al contenuto in essi racchiuso. Per esempio, diversi elementi possono descrivere il testo come un titolo, un paragrafo o la voce di una lista.",
+          "In questo corso, costruirai un'app per foto di gatti per imparare a usare alcuni dei più comuni elementi HTML — i mattoni di ogni pagina web."
         ]
       },
       "basic-css": {
         "title": "CSS Base",
         "intro": [
-          "CSS o Cascading Style Sheet, dice al browser come disporre il testo ed altri contenuti che hai scritto in HTML. Con CSS, puoi controllare il colore, font, dimensione, spaziatura, e molti altri aspetti degli elementi HTML.",
-          "Ora che hai descritto la struttura della tua app di foto di gatti, dagli un po' di stile con CSS."
+          "CSS o Cascading Style Sheet, dice al browser come disporre il testo e altri contenuti che hai scritto in HTML. Con CSS, puoi controllare il colore, font, dimensione, spaziatura e molti altri aspetti degli elementi HTML.",
+          "Ora che hai descritto la struttura della tua app di foto di gatti, dalle un po' di stile con CSS."
         ]
       },
       "applied-visual-design": {
@@ -32,28 +32,28 @@
       "applied-accessibility": {
         "title": "Accessibilità Applicata",
         "intro": [
-          "Nello sviluppo web, con accessibilità ci si riferisce al contenuto web e all'UI (User Interface, cioè interfaccia utente) che deve essere comprensibile, navigabile ed interattiva per una grande varietà di utenti. Questo include persone con disabilità visive, uditive, motorie o cognitive.",
+          "Nello sviluppo web, con accessibilità ci si riferisce al contenuto web e all'UI (User Interface, cioè interfaccia utente) che deve essere comprensibile, navigabile e interattiva per una grande varietà di utenti. Questo include persone con disabilità visive, uditive, motorie o cognitive.",
           "In questo corso imparerai le migliori pratiche per costruire pagine web accessibili a tutti."
         ]
       },
       "responsive-web-design-principles": {
         "title": "Principi di Web Design Responsivo",
         "intro": [
-          "Ci sono molti dispositivi che possono accedere al web, di tutte le forme e dimensioni. Il Web design responsivo è la pratica di creare design flessibili per siti web che possano adattarsi alle diverse dimensioni, orientazioni, e risoluzioni degli schermi.",
-          "In questo corso, imparerai come utilizzare CSS per rendere più belle le tue pagine web, a prescindere da che dispositivo venga utilizzato per accedervi."
+          "Ci sono molti dispositivi che possono accedere al web, di tutte le forme e dimensioni. Il Web design responsivo è la pratica di creare design flessibili per siti web che possano adattarsi alle diverse dimensioni, orientazioni e risoluzioni degli schermi.",
+          "In questo corso, imparerai come utilizzare CSS per rendere più belle le tue pagine web, a prescindere dal dispositivo utilizzato per accedervi."
         ]
       },
       "css-flexbox": {
-        "title": "La Flexbox CSS",
+        "title": "CSS Flexbox",
         "intro": [
-          "Flexbox è un metodo di layout potente e ben supportato he è stato introdotto con l'ultima versione di CSS: CSS3. Con flexbox, è facile centrare gli elementi nella pagina e creare interfacce utente dinamiche che si rimpiccioliscono e si espandono automaticamente.",
+          "Flexbox è un metodo di layout potente e ben supportato che è stato introdotto con l'ultima versione di CSS: CSS3. Con flexbox, è facile centrare gli elementi nella pagina e creare interfacce utente dinamiche che si rimpiccioliscono e si espandono automaticamente.",
           "In questo corso, imparerai le basi di flexbox e dei layout dinamici costruendo una card di Twitter."
         ]
       },
       "css-grid": {
-        "title": "La griglia CSS",
+        "title": "CSS Grid",
         "intro": [
-          "La griglia (grid) CSS è un nuovo standard che rende facile costruire layout responsivi complessi. Funziona trasformando un elemento HTML in una griglia, lasciandoti inserire elementi figli ovunque al suo interno.",
+          "CSS grid, o griglia CSS, è un nuovo standard che rende facile costruire layout responsivi complessi. Funziona trasformando un elemento HTML in una griglia, lasciandoti inserire elementi figli ovunque al suo interno.",
           "In questo corso imparerai le basi della griglia CSS costruendo vari layout complessi, incluso un blog."
         ]
       },
@@ -71,7 +71,7 @@
     "intro": [
       "In questo corso certificato di Web Design Responsivo imparerai i linguaggi che gli sviluppatori utilizzano per creare le pagine web. HTML (Hypertext Markup Language) per i contenuti e CSS (Cascading Style Sheets) per il design.",
       "Per prima cosa, costruirai un'app con foto di gatti per imparare le basi di HTML e CSS. Poi apprenderai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un quiz.",
-      "Infine, imparerai come fare pagine web che rispondono a diverse dimensioni dello schermo costruendo una galleria di foto con Flexbox e il layout di un articolo di rivista con CSS Grid."
+      "Infine, imparerai a realizzare pagine web adattabili a diverse misure di schermo costruendo una galleria di foto con Flexbox e il layout di un articolo di rivista con CSS Grid."
     ],
     "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e le estensioni per la modalità scura, possono interferire con i test. In caso di problemi, ti consigliamo di disabilitare le estensioni che modificano il contenuto o il layout delle pagine durante il corso.",
     "blocks": {
@@ -79,7 +79,7 @@
         "title": "Pagina Tributo",
         "intro": [
           "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
-          "Per questo progetto, costruirai una pagina di tributo per un soggetto di tua scelta, immaginario o reale."
+          "Per questo progetto, costruirai una pagina tributo per un soggetto di tua scelta, immaginario o reale."
         ]
       },
       "build-a-personal-portfolio-webpage-project": {
@@ -93,7 +93,7 @@
         "title": "Landing page di un prodotto",
         "intro": [
           "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
-          "Per questo progetto, costruirete una pagina di destinazione del prodotto per commercializzare un prodotto di vostra scelta."
+          "Per questo progetto, costruirai una landing page per commercializzare un prodotto di tua scelta."
         ]
       },
       "build-a-survey-form-project": {
@@ -107,27 +107,27 @@
         "title": "Pagina di documentazione tecnica",
         "intro": [
           "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
-          "Per questo progetto, si costruirà una pagina di documentazione tecnica che servirà come istruzione o riferimento per un argomento."
+          "Per questo progetto, si costruirà una pagina di documentazione tecnica che fungerà da istruzioni o riferimento per un argomento."
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
         "title": "Impara l’HTML progettando una app per foto di gatti",
         "intro": [
           "I tag HTML danno a una pagina web la sua struttura. Puoi usare tag HTML per aggiungere foto, pulsanti e altri elementi alla tua pagina web.",
-          "In questo corso, imparerai i tag HTML più comuni costruendo la tua app di foto di gatto."
+          "In questo corso, imparerai i tag HTML più comuni costruendo la tua app con foto di gatti."
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "Impara le basi del CCS realizzando un menù del bar",
+        "title": "Impara le basi del CCS realizzando il menù di un bar",
         "intro": [
           "CSS dice al browser come visualizzare la tua pagina web. Puoi usare CSS per impostare il colore, il carattere, la dimensione e altri aspetti degli elementi HTML.",
-          "In questo corso, imparerai CSS progettando una pagina del menu per una pagina web di un bar."
+          "In questo corso, imparerai CSS progettando una pagina del menu per la pagina web di un bar."
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "Impara il modello CSS Box realizzando un dipinto di Rothko",
+        "title": "Impara il Box Model CSS realizzando un dipinto di Rothko",
         "intro": [
-          "Ogni elemento HTML è una propria scatola – con una propria spaziatura e un bordo. Questo si chiama Box Model.",
+          "Ogni elemento HTML costituisce una scatola – con la propria spaziatura e un bordo. Questo si chiama Box Model (o modello a scatola).",
           "In questo corso, userai CSS e il Box Model per creare i tuoi pezzi d'arte rettangolari in stile Rothko."
         ]
       },
@@ -142,54 +142,54 @@
         "title": "Impara i moduli HTML realizzando un modulo di registrazione",
         "intro": [
           "Puoi utilizzare moduli HTML per raccogliere informazioni da persone che visitano la tua pagina web.",
-          "In questo corso, imparerai i moduli HTML costruendo una pagina di registrazione. Imparerai come controllare quali tipi di dati le persone possono digitare nella tua forma e alcuni nuovi strumenti CSS per stilare la tua pagina."
+          "In questo corso, imparerai i moduli HTML costruendo una pagina di registrazione. Imparerai come controllare i tipi di dati che le persone possono digitare nel tuo modulo e alcuni nuovi strumenti CSS per impostare lo stile della tua pagina."
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
         "title": "Impara l'accessibilità realizzando un Quiz",
         "intro": [
           "L'accessibilità rende la tua pagina web facile da usare per tutte le persone – anche le persone con disabilità.",
-          "In questo corso, costruirete una pagina web di quiz. Imparerete strumenti di accessibilità come shortcut da tastiera, attributi ARIA e progettate le migliori pratiche."
+          "In questo corso, costruirai una pagina web di un quiz. Conoscerai strumenti di accessibilità come scorciatoie da tastiera, attributi ARIA e le migliori pratiche di progettazione."
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
         "title": "Impara il CSS intermedio realizzando un dipinto di Picasso",
         "intro": [
-          "In questo corso, imparerai a usare alcune tecniche CSS intermedie codificando la tua pagina web del dipinto di Picasso. Imparerai le icone SVG, posizionamento CSS e rivederai le altre abilità CSS che hai imparato."
+          "In questo corso, imparerai a usare alcune tecniche CSS intermedie codificando la tua pagina web con un dipinto di Picasso. Conoscerai le icone SVG, il posizionamento CSS e rivederai le altre abilità CSS che hai imparato."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
         "title": "Impara il Design Responsivo creando un pianoforte",
         "intro": [
-          "Design responsivo dice alle tue pagine che aspetto devono avere su schermi di diverse dimensioni.",
-          "In questo corso, utilizzerai CSS e Responsive Design per creare un pianoforte. Scopri anche di più sulle query multimediali e sugli pseudo selettori."
+          "Il design responsivo dice alle tue pagine che aspetto devono avere su schermi di diverse dimensioni.",
+          "In questo corso, utilizzerai CSS e il design responsivo per creare un pianoforte. Scoprirai anche di più sulle media query e sugli pseudo selettori."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
         "title": "Impara il Flexbox CSS costruendo una fotogallery",
         "intro": [
           "Flexbox ti aiuta a progettare la tua pagina web in modo che vada bene su qualsiasi dimensione dello schermo.",
-          "In questo corso, utilizzerai Flexbox per creare una pagina web della galleria fotografica reattiva."
+          "In questo corso, utilizzerai Flexbox per creare una pagina web di una galleria fotografica reattiva."
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "Impara la griglia CSS creando una rivista",
+        "title": "Impara CSS Grid creando una rivista",
         "intro": [
           "La griglia CSS ti dà il controllo sulle righe e le colonne della tua pagina web.",
-          "In questo corso, creerai un articolo della rivista. Imparerai come usare la griglia CSS, inclusi concetti come le righe della griglia e le colonne della griglia."
+          "In questo corso, creerai un articolo di una rivista. Imparerai come usare la griglia CSS, inclusi concetti come le righe della griglia e le colonne della griglia."
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
         "title": "Impara la Tipografia costruendo un'etichetta nutrizionale",
         "intro": [
-          "La tipografia è l'arte di stilare il testo per essere facilmente leggibile e soddisfarne lo scopo.",
-          "In questo corso, userai la tipografia per creare una pagina web di etichette nutrizionali. Imparerai come disegnare il testo, regolare l'altezza della linea e posizionare il testo usando il CSS."
+          "La tipografia è l'arte modellare lo stile del testo in modo che sia facilmente leggibile e adatto al suo scopo.",
+          "In questo corso, userai la tipografia per creare una pagina web con un'etichetta nutrizionale. Imparerai come dare stile al testo, regolare l'altezza delle righe e posizionare il testo usando il CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
         "title": "Impara le trasformazioni CSS costruendo un pinguino",
         "intro": [
-          "Puoi trasformare gli elementi HTML per creare design piacevoli che attirano l'occhio del tuo lettore. Puoi usare trasformazioni per ruotare elementi, cambiargli dimensione, e altro.",
+          "Puoi trasformare gli elementi HTML per creare design piacevoli che attirano l'occhio del tuo lettore. Puoi usare le trasformazioni per ruotare elementi, cambiarne le dimensioni, e altro.",
           "In questo corso, costruirai un pinguino. Userai le trasformazioni CSS per posizionare e ridimensionare le parti del tuo pinguino, creare un background e animare il tuo lavoro."
         ]
       },
@@ -208,10 +208,10 @@
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
-        "title": "Impara i colori CSS creando un set di evidenziatori colorati",
+        "title": "Impara i colori CSS creando un set di pennarelli colorati",
         "intro": [
-          "Selezionare il colore corretto per la tua pagina web può migliorare grandemente l'attrazione estetica ai tuoi lettori.",
-          "In questo corso creerai un set di evidenziatori colorati. Imparerari metodi diversi per settare i valori dei colori e come accoppiare i colori assieme."
+          "Selezionare il colore corretto per la tua pagina web può renderla molto più gradevole per i tuoi lettori.",
+          "In questo corso creerai un set di pennarelli colorati. Imparerai metodi diversi per impostare i valori dei colori e come accoppiare i colori."
         ]
       }
     }
@@ -219,9 +219,9 @@
   "javascript-algorithms-and-data-structures": {
     "title": "Algoritmi e Strutture Dati in JavaScript",
     "intro": [
-      "Mentre HTML e CSS controllano il contenuto e lo stile della pagina, JavaScript viene utilizzato per renderla interattiva. Nella Certificazione Algoritmi e Strutture Dati in JavaScript, imparerai le basi di JavaScript, incluse variabili, array, oggetti, cicli e funzioni.",
-      "Una volta che avrai appreso le basi, applicherai questa conoscenza creando algoritmi per manipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
-      "Lungo il percorso, imparerai anche due importanti stili di programmazione o paradigmi: Programmazione Orientata agli Oggetti (Object Oriented Programming, OOP) e Programmazione Funzionale (Functional Programming, FP)."
+      "Mentre HTML e CSS controllano il contenuto e lo stile della pagina, JavaScript viene utilizzato per renderla interattiva. Nella Certificazione Algoritmi e Strutture Dati in JavaScript, imparerai le basi di JavaScript, tra cui variabili, array, oggetti, loop e funzioni.",
+      "Una volta che avrai appreso le basi, applicherai queste conoscenze creando algoritmi per manipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
+      "Lungo il percorso, imparerai anche due importanti stili di programmazione o paradigmi: la Programmazione Orientata agli Oggetti (Object Oriented Programming, OOP) e la Programmazione Funzionale (Functional Programming, FP)."
     ],
     "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e gli script-blocker, possono interferire con i test. In caso di problemi, ti raccomandiamo di disabilitare le estensioni che modificano o bloccano il contenuto delle pagine durante il corso.",
     "blocks": {
@@ -229,7 +229,7 @@
         "title": "JavaScript Base",
         "intro": [
           "JavaScript è un linguaggio si scripting che viene utilizzato per rendere interattive le pagine web. È una delle principali tecnologie del web, insieme ad HTML e CSS, ed è supportato da tutti i browser moderni.",
-          "In questo corso, imparerai i concetti di base della programmazione in JavaScript. Inizierai dalle strutture dati di base come numeri e stringhe. Poi imparerai a lavorare con array, oggetti, funzioni, cicli, istruzioni if/else, e molto altro."
+          "In questo corso, imparerai i concetti di base della programmazione in JavaScript. Inizierai dalle strutture dati di base come numeri e stringhe. Poi imparerai a lavorare con array, oggetti, funzioni, loop, istruzioni if/else e molto altro."
         ]
       },
       "es6": {
@@ -237,7 +237,7 @@
         "intro": [
           "ECMAScript o ES è una versione standardizzata di JavaScript. Dato che tutti i maggiori browser seguono queste specifiche, i termini ECMAScript e JavaScript sono intercambiabili.",
           "La maggior parte del JavaScript che hai appreso finora era in ES5 (ECMAScript 5), che fu definito nel 2009. Anche se puoi ancora scrivere programmi in ES5, JavaScript è in costante evoluzione, e vengono rilasciate ogni anno nuove funzionalità.",
-          "ES6, rilasciato nel 2015, ha aggiunto molte nuove potenti funzionalità al linguaggio. In questo corso conoscerai queste funzionalità, inclusi funzioni freccia, destrutturazione, classi, promise e moduli."
+          "ES6, rilasciato nel 2015, ha aggiunto molte nuove potenti funzionalità al linguaggio. In questo corso conoscerai queste funzionalità, tra cui funzioni freccia, destrutturazione, classi, promise e moduli."
         ]
       },
       "regular-expressions": {
@@ -259,7 +259,7 @@
         "title": "Strutture Dati Base",
         "intro": [
           "I dati possono essere memorizzati e letti in molti modi. Conosci già alcune strutture di dati JavaScript comuni — array e oggetti.",
-          "In questo corso Strutture Dati Base imparerai di più sulle differenze tra array e oggetti, e quali utilizzare in diverse situazioni. Imparerai anche come utilizzare utili metodi JS come <code>splice()</code> e <code>Object.keys()</code> per accedere e manipolare i dati."
+          "In questo corso Strutture Dati Base imparerai di più sulle differenze tra array e oggetti, e quali utilizzare in diverse situazioni. Imparerai anche come utilizzare utili metodi JS come <code>splice()</code> e <code>Object.keys()</code> per accedere a dei dati e manipolarli."
         ]
       },
       "basic-algorithm-scripting": {
@@ -274,14 +274,14 @@
         "title": "Programmazione Orientata agli Oggetti",
         "intro": [
           "La Programmazione Orientata agli Oggetti (OOP, o Object Oriented Programming), è uno dei principali approcci al processo di sviluppo del software. In OOP, gli oggetti e le classi sono utilizzati per organizzare il codice per descrivere le cose e cosa possono fare.",
-          "In questo corso, imparerai i principi di base di OOP in JavaScript includendo la parola chiave <code>this</code>, le catene di prototipi, i costruttori e l'ereditarietà."
+          "In questo corso, imparerai i principi di base di OOP in JavaScript, tra cui la parola chiave <code>this</code>, le catene di prototipi, i costruttori e l'ereditarietà."
         ]
       },
       "functional-programming": {
         "title": "Programmazione Funzionale",
         "intro": [
           "La programmazione funzionale è un altro approccio popolare allo sviluppo del software. Nella programmazione funzionale, il codice è organizzato in funzioni di base più piccole che possono essere combinate per costruire programmi complessi.",
-          "In questo corso, imparerai i concetti fondamentali della Programmazione Funzionale, comprese le funzioni pure, come evitare le mutazioni, e come scrivere codice più pulito con metodi come <code>.map()</code> and <code>.filter()</code>."
+          "In questo corso, imparerai i concetti fondamentali della Programmazione Funzionale, comprese le funzioni pure, come evitare le mutazioni, e come scrivere codice più pulito con metodi come <code>.map()</code> e <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Algoritmi e Strutture Dati JavaScript (Beta)",
-    "intro": [
-      "segnaposto",
-      "segnaposto"
-    ],
+    "intro": ["segnaposto", "segnaposto"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Crea un cifrario di Cesare",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "Crea un registro di cassa",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "Crea un verificatore di palindromi",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Crea un convertitore di numeri romani",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Crea un validatore di numeri telefonici",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Impara JavaScript Base creando un gioco di ruolo",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Impara la validazione dei moduli creando un contatore di calorie",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Impara programmazione funzionale creando un foglio di calcolo",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -369,7 +342,7 @@
     "title": "Librerie di sviluppo Front End",
     "intro": [
       "Ora che hai familiarità con HTML, CSS, e JavaScript, aumenta le tue competenze conoscendo alcune delle più popolari librerie di front-end del settore.",
-      "Nella Certificazione Librerie di Sviluppo Front End imparerai come stilizzare rapidamente il tuo sito con Bootstrap. Imparerai anche come aggiungere la logica ai tuoi stili CSS e ad estenderli con Sass.",
+      "Nella Certificazione Librerie di Sviluppo Front End, imparerai come definire rapidamente lo stile del tuo sito con Bootstrap. Imparerai anche come aggiungere la logica ai tuoi stili CSS e ad estenderli con Sass.",
       "Più tardi, costruirai un carrello e altre applicazioni per imparare a creare potenti applicazioni a pagina singola (Single Page Application, SPA) con React e Redux."
     ],
     "note": "",
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "Dashboard D3",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -828,7 +798,7 @@
     "legacy-desc": "Questi corsi non sono più parte del percorso di certificazioni, ma sono ancora disponibili per avanzare il tuo apprendimento.",
     "legacy-go-back": "Vai alla versione corrente del curriculum.",
     "new-rwd-desc": "Abbiamo aggiornato il curriculum Web Design Responsivo. Se stavi lavorando su questo curriculum, i tuoi progressi sono ancora salvati! Puoi trovarli nella sezione Web Design Responsivo Legacy.",
-    "new-rwd-article": "Ti incoraggiamo a leggere sui cambiamenti che abbiamo fatto e considerare di esporrare il curriculum aggiornato.",
+    "new-rwd-article": "Ti incoraggiamo a leggere circa i cambiamenti che abbiamo fatto e considerare di esplorare il curriculum aggiornato.",
     "viewing-upcoming-change": "Stai guardando ad una pagina in beta. ",
     "go-back-to-learn": "Torna alla versione stabile del curriculum.",
     "read-database-cert-article": "Per favore leggi questo post sul forum prima di procedere.",

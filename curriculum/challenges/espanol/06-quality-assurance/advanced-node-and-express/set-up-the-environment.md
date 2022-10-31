@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 Ahora que el servidor *http* está montado en la *aplicación expresa*, necesitas escuchar desde el servidor *http*. Cambia la línea con `app.listen` a `http.listen`.
 
-Lo primero que hay que manejar es escuchar por una nueva conexión del cliente. La palabra clave <dfn>on</dfn> hace eso: escucha un evento específico. Requiere 2 argumentos: una cadena que contiene el título del evento emitido, y una función con la que se pasan los datos. En el caso de nuestro detector de conexión, usamos *socket* para definir los datos en el segundo argumento. Un socket es un cliente individual que está conectado.
+Lo primero que hay que manejar es escuchar por una nueva conexión del cliente. La palabra clave <dfn>on</dfn> hace eso: escucha un evento específico. Requiere dos argumentos: un string con el nombre del evento emitido, y una función a través de la cual son pasados los datos. En el caso de nuestro detector de conexión, usamos *socket* para definir los datos en el segundo argumento. Un socket es un cliente individual que está conectado.
 
 Para escuchar las conexiones a tu servidor, añade lo siguiente dentro de la conexión de tu base de datos:
 

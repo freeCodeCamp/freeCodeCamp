@@ -459,7 +459,7 @@ sudo apt install build-essential
 7. サーバーを構築します。
 
    ```console
-   npm run create:config && npm run build:curriculum && npm run build:server
+   npm run prebuild && npm run build:curriculum && npm run build:server
    ```
 
 8. インスタンスを開始します。

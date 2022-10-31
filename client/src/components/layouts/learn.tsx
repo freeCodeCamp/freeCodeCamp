@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Loader } from '../../components/helpers';
 import {
-  userSelector,
   userFetchStateSelector,
-  isSignedInSelector
-} from '../../redux';
+  isSignedInSelector,
+  userSelector
+} from '../../redux/selectors';
 
 import './prism.css';
 import './prism-night.css';

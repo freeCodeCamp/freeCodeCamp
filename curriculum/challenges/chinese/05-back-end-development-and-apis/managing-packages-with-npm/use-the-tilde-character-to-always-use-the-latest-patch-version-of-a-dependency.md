@@ -18,15 +18,15 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --instructions--
 
-在 package.json 文件中，当前规则是 npm 将 moment 升级到特定版本（2.10.2）。 但是现在，要允许使用最新的 2.10.x 版本。
+在 package.json 文件中，你当前关于 npm 如何升级 `@freecodecamp/example` 的规则是使用特定版本（1.2.13）。 但现在，你想允许最新的 1.2.x 版本。
 
-在依赖项中，给 moment 的版本号添加波浪号（`~`）前缀，允许 npm 将其更新为最新的修订版。
+在依赖项中使用波浪号（`~`）字符作为 `@freecodecamp/example` 版本的前缀，并允许 npm 将其更新为任何新的*补丁*发布。
 
 **注意：**原来的版本号不用更改。
 
 # --hints--
 
-“dependencies”字段中应包含“moment”
+`"dependencies"` 应包括 `"@freecodecamp/example"`。
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
   );
 ```
 
-“moment”的版本号应该是“~2.10.2”
+`"@freecodecamp/example"` 版本应匹配 `"~1.2.13"`。
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^\~2\.10\.2/,
-        'Wrong version of "moment". It should be ~2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\~1\.2\.13/,
+        'Wrong version of "@freecodecamp/example". It should be ~1.2.13'
       );
     },
     (xhr) => {

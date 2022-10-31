@@ -8,6 +8,7 @@ import i18n from './i18n/config';
 import AppMountNotifier from './src/components/app-mount-notifier';
 import { createStore } from './src/redux/createStore';
 import layoutSelector from './utils/gatsby/layout-selector';
+import GrowthBookProvider from './src/components/growth-book/growth-book-wrapper';
 
 const store = createStore();
 
@@ -15,7 +16,9 @@ export const wrapRootElement = ({ element }) => {
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
-        <AppMountNotifier render={() => element} />
+        <GrowthBookProvider>
+          <AppMountNotifier render={() => element} />
+        </GrowthBookProvider>
       </I18nextProvider>
     </Provider>
   );

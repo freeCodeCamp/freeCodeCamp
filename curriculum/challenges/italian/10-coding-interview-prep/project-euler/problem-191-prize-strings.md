@@ -14,7 +14,7 @@ Durante un periodo di n-giorni viene formata una stringa ternaria per ogni bambi
 
 Anche se ci sono ottantuno stringhe ternarie che possono essere formate per un periodo di 4 giorni, esattamente quarantatre stringhe porterebbero a un premio:
 
-```
+```markup
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
 OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO
 AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL

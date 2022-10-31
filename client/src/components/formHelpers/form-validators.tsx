@@ -23,7 +23,7 @@ export const localhostValidator = (value: string): React.ReactElement | null =>
 export const httpValidator = (value: string): React.ReactElement | null =>
   httpRegex.test(value) ? <Trans>validation.http-url</Trans> : null;
 
-export type Validator = (value: string) => React.ReactElement | null;
+type Validator = (value: string) => React.ReactElement | null;
 export function composeValidators(...validators: (Validator | null)[]) {
   return (value: string): ReturnType<Validator> | null =>
     validators.reduce(

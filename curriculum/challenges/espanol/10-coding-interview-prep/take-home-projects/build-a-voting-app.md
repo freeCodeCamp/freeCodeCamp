@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443eddfaeb5bdef
-title: Build a Voting App
+title: Crea una Aplicación de Sufragio
 challengeType: 4
 forumTopicId: 302359
 dashedName: build-a-voting-app
@@ -8,9 +8,9 @@ dashedName: build-a-voting-app
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://voting-app.freecodecamp.rocks/>. Use a site builder of your choice to complete the project.
+Build a full stack JavaScript app that is functionally similar to this: <a href="https://voting-app.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://voting-app.freecodecamp.rocks/</a>. Utiliza un constructor de sitios de tu elección para completar el proyecto.
 
-Here are the specific user stories you should implement for this project:
+Estas son las historias de usuario específicas que debes implementar para este proyecto:
 
 **User Story:** As an authenticated user, you can keep my polls and come back later to access them.
 
@@ -28,7 +28,7 @@ Here are the specific user stories you should implement for this project:
 
 **User Story:** As an authenticated user, if you don't like the options on a poll, you can create a new option.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
 
 # --solutions--
 

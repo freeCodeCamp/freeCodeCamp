@@ -1,14 +1,14 @@
 ---
 id: 59c3ec9f15068017c96eb8a3
 title: Ряд Фарея
-challengeType: 5
+challengeType: 1
 forumTopicId: 302266
 dashedName: farey-sequence
 ---
 
 # --description--
 
-[Ряд Фарея](https://en.wikipedia.org/wiki/Farey sequence "wp: Farey sequence") <code>F<sub>n</sub></code> of order`n` є рядом повністю скорочених дробів між `0` та `1`, які у нескороченому виді мають знаменники, менші від або такі, які дорівнюють `n` у порядку зростання.
+The Farey sequence <code>F<sub>n</sub></code> of order `n` is the sequence of completely reduced fractions between `0` and `1` which, when in lowest terms, have denominators less than or equal to `n`, arranged in order of increasing size.
 
 *Ряд Фарея* деколи помилково називають *Серією Фарея*.
 

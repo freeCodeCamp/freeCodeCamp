@@ -1,7 +1,7 @@
 ---
 id: 5900f38f1000cf542c50fea2
 title: 'Problem 35: Circular primes'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302009
 dashedName: problem-35-circular-primes
 ---
@@ -14,7 +14,7 @@ There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73
 
 How many circular primes are there below `n`, whereas 100 ≤ `n` ≤ 1000000?
 
-**Note:**
+**注意:**
 
 Circular primes individual rotation can exceed `n`.
 

@@ -8,14 +8,14 @@ dashedName: stock-price-checker
 
 # --description--
 
-Напишіть повний пакет програми JavaScript, що функціонально подібний до цього: <https://stock-price-checker.freecodecamp.rocks/>.
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://stock-price-checker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker.freecodecamp.rocks/</a>.
 
-Оскільки всі надійні API цін на акції вимагають API-ключа, ми створили обхідний шлях. Користуйтесь <https://stock-price-checker-proxy.freecodecamp.rocks/>, аби отримувати актуальну інформацію про ціни на акції без необхідності підписуватись на власний ключ.
+Оскільки всі надійні API цін на акції вимагають API-ключа, ми створили обхідний шлях. Use <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker-proxy.freecodecamp.rocks/</a> to get up-to-date stock price information without needing to sign up for your own key.
 
 При роботі над цим проєктом Ви будете писати код, використовуючи один із наступних методів:
 
--   Дублюйте [цей репозиторій GitHub](https://github.com/freeCodeCamp/boilerplate-project-stockchecker/) та завершіть свій проєкт локально.
--   Використовуйте [наш стартовий проєкт Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker) для завершення Вашого проєкту.
+-   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
+-   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Використовуйте конструктор сайту на власний розсуд, щоб завершити проєкт. Впевніться, що Ви включили усі файли з нашого репозиторію GitHub.
 
 Коли Ви завершите роботу, переконайтесь, що робоча демоверсія Вашого проєкту розміщена у вільному доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням також введіть посилання на вихідний код проєкту у полі `GitHub Link`.
