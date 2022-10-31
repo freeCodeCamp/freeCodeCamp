@@ -34,7 +34,7 @@ socket.on('user', data => {
 });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out <a href="https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286" target="_blank" rel="noopener noreferrer nofollow">the project completed up to this point </a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135/3#announce-new-users-10" target="_blank" rel="noopener noreferrer nofollow">the project completed up to this point </a>.
 
 # --hints--
 
