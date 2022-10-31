@@ -4,6 +4,7 @@ import { mapTo, tap } from 'rxjs/operators';
 
 import envData from '../../../../../config/env.json';
 import { transformEditorLink } from '../utils';
+import { SuperBlocks } from '../../../../../config/certification-settings';
 import { actionTypes } from './action-types';
 import { closeModal } from './actions';
 import {
@@ -55,7 +56,7 @@ function createQuestionEpic(action$, state$, { window }) {
         helpCategory
       } = challengeMetaSelector(state);
 
-      if (superBlock === '2022/responsive-web-design') {
+      if (superBlock === SuperBlocks.RespWebDesignNew) {
         const runFiltration = diffFile => {
           const onlyChangedLines = diffFile.filter(
             obj => obj.removed || obj.added
