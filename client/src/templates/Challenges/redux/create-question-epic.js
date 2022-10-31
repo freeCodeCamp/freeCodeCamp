@@ -34,6 +34,9 @@ function filesToMarkdown(challengeFiles = {}) {
     } else {
       fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
     }
+    if (challengeFile?.isDiff) {
+      fileDescription += `/* diff */\n\n`;
+    }
 
     return `${fileString}\`\`\`${fileType}\n${fileDescription}${challengeFile.contents}\n\`\`\`\n\n`;
   }, '\n');
@@ -59,10 +62,11 @@ function createQuestionEpic(action$, state$, { window }) {
           const onlyChangedLines = diffFile.filter(
             obj => obj.removed || obj.added
           );
+
           for (let i = 0; i < onlyChangedLines.length; i++) {
-            str += `${i % 2 === 0 ? '+ ' : '- '}${onlyChangedLines[i].value}${
-              i % 2 !== 0 ? '\n' : ''
-            }`;
+            str += `${onlyChangedLines[i].added ? '- ' : '+ '}${
+              onlyChangedLines[i].value
+            }${i % 2 !== 0 ? '\n' : ''}`;
           }
           return str;
         };
@@ -71,7 +75,7 @@ function createQuestionEpic(action$, state$, { window }) {
           const str = runFiltration(
             Diff.diffTrimmedLines(file.contents, file.seed)
           );
-          return { ...file, contents: str };
+          return { ...file, contents: str, isDiff: true };
         };
 
         const newFiles = challengeFiles.filter(
