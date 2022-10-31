@@ -151,13 +151,13 @@
     "@types/redux-actions": "2.6.2",
     "@types/sanitize-html": "2.6.2",
     "@types/store": "2.0.2",
-    "@types/validator": "13.7.9",
+    "@types/validator": "13.7.10",
     "@typescript-eslint/eslint-plugin": "5.40.1",
     "@typescript-eslint/parser": "5.40.1",
     "babel-eslint": "10.1.0",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
-    "cypress": "10.10.0",
+    "cypress": "10.11.0",
     "cypress-plugin-stripe-elements": "1.0.2",
     "cypress-plugin-tab": "1.0.5",
     "docsify-cli": "4.4.4",
@@ -180,7 +180,7 @@
     "lint-staged": "12.5.0",
     "lodash": "4.17.21",
     "markdownlint": "0.26.2",
-    "mock-fs": "5.1.4",
+    "mock-fs": "5.2.0",
     "npm-run-all": "4.1.5",
     "ora": "5.4.1",
     "prettier": "2.7.1",
@@ -190,6 +190,6 @@
     "start-server-and-test": "1.14.0",
     "ts-node": "10.9.1",
     "typescript": "4.8.4",
-    "webpack-bundle-analyzer": "4.6.1"
+    "webpack-bundle-analyzer": "4.7.0"
   }
 }
