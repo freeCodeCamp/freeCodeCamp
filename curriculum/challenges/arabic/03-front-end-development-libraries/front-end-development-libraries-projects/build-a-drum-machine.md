@@ -1,6 +1,6 @@
 ---
 id: 587d7dbc367417b2b2512bae
-title: أنشاء Drum Machine
+title: أنشئ Drum Machine
 challengeType: 3
 forumTopicId: 301370
 dashedName: build-a-drum-machine
@@ -8,13 +8,13 @@ dashedName: build-a-drum-machine
 
 # --description--
 
-**متطلبات:** كم ببناء تطبيق يشبه وظيفيا إلي <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a>.
+**متطلبات:** أنشئ تطبيق يشبه وظيفيا إلي <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a>.
 
 أكمل قصص المستخدم بالأسفل وأجتاز جميع الاختبارات للنجاح. استخدم أي libraries أو APIs تحتاج إليها. أعطيها أسلوبك الشخصي الخاص.
 
 يمكنك استخدام أي مزيج من HTML و JavaScript و CSS و Bootstrap و SASS و React و Redux و jQuery لإكمال هذا المشروع. يجب عليك استخدام frontend framework (مثل React على سبيل المثال) لأن هذا القسم يدور حول تعلم frontend framework. لا ينصح باستخدام التكنولوجيات الإضافية غير المدرجة أعلاه و استخدامها على مسؤوليتك الخاصة. ونحن ننظر في دعم frontend frameworks أخرى، مثل Angular و Vue، ولكنها غير مدعومة حاليا. سنقبل ونحاول إصلاح جميع تقارير المشكلات التي تستخدم حُزْمَة التكنولوجيات المقترحة لهذا المشروع. برمجة سعيدة!
 
-**قصة المستخدم رقم 1:** يجب أن أكون قادرا على رؤية حاوية خارجية ذات `id="drum-machine"` تحتوي على جميع العناصر الأخرى.
+**قصة المستخدم #1:** يجب أن أكون قادرا على رؤية حاوية خارجية ذات `id="drum-machine"` تحتوي على جميع العناصر الأخرى.
 
 **قصة المستخدم #2:** في `#drum-machine` يمكنني رؤية عنصر يحمل `id="display"`.
 

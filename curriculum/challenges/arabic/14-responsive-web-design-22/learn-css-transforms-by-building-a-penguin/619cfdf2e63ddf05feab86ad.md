@@ -1,6 +1,6 @@
 ---
 id: 619cfdf2e63ddf05feab86ad
-title: الخطوة ٤٧
+title: الخطوة 47
 challengeType: 0
 dashedName: step-47
 ---
