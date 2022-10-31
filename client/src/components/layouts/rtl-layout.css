@@ -151,11 +151,16 @@ sections that need to stay left to right
 [dir='rtl'] .challenge-preview,
 [dir='rtl'] .output-text,
 /* setting table project name */
-[dir='rtl'] .certification-settings .table tbody .project-title {
+[dir='rtl'] .certification-settings .table tbody .project-title,
+/* timeline*/
+[dir='rtl'] .timeline-pagination_list {
   direction: ltr;
 }
 
 [dir='rtl'] .description-container,
-[dir='rtl'] .action-row-container {
+[dir='rtl'] .action-row-container,
+[dir='rtl']
+  .timeline-pagination_list
+  .timeline-pagination_list_item:not(:has(button)) {
   direction: rtl;
 }
