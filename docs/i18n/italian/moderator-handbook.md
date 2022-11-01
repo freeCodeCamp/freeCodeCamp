@@ -191,7 +191,7 @@ Se un utente risponde in un thread di aiuto per il curriculum di freeCodeCamp co
 
 Se l'autore del post risponde in un thread di aiuto per il curriculum di freeCodeCamp con la sua soluzione finale, sfocala e usa la risposta pronta **Blurred Spoiler Solution**.
 
-Se un utente crea un thread richiedendo un feedback su una soluzione, sposta il thread nel subforum per i feedback e sfoca la soluzione, se necessario. If the user is only posting the solution to show it off, then unlist the thread and use the **Solutions Thread** canned reply.
+Se un utente crea un thread richiedendo un feedback su una soluzione, sposta il thread nel subforum per i feedback e sfoca la soluzione, se necessario. Se l'utente sta postando la soluzione solo per mostrarla, togli il thread dall'elenco e usa la risposta pronta **Solutions Thread**.
 
 ### Utenti Minorenni
 
