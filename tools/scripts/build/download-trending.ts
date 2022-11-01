@@ -35,9 +35,7 @@ const cdnUrlCreator = (lang: string) =>
     ----------------------------------------------------
     Error: The trending JSON is invalid.
     ----------------------------------------------------
-    Unable to validate the ${clientLocale} trending JSON schema: ${JSON.stringify(
-        validationError
-      )}
+    Unable to validate the ${clientLocale} trending JSON schema: ${validationError.message}
     `
     );
   }
