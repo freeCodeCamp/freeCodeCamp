@@ -79,7 +79,6 @@ export const LangNames = {
   [Languages.Japanese]: '日本語',
   [Languages.German]: 'Deutsch',
   [Languages.Arabic]: 'العربية'
-
 };
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
