@@ -504,8 +504,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         <LearnLayout>
           <Helmet title={windowTitle}>
             <style>
-              {':root{--breadcrumb-height: 45px;}' +
-                '.page-wrapper{height: 100%;}' +
+              {'.page-wrapper{height: 100%;}' +
                 '.default-layout, #learn-app-wrapper, #content-start, #content-start > div {display: flex;flex-direction: column;min-height: 0;flex: 1 1 auto;}'}
             </style>
           </Helmet>
