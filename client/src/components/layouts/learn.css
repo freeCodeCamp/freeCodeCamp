@@ -7,7 +7,13 @@
 }
 
 #learn-app-wrapper .desktop-layout .reflex-element {
-  height: auto !important;
+  height: unset !important;
+}
+
+#learn-app-wrapper .reflex-container.vertical {
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter,
@@ -22,7 +28,7 @@
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter {
-  height: auto !important;
+  height: unset !important;
   width: 5px;
 }
 
