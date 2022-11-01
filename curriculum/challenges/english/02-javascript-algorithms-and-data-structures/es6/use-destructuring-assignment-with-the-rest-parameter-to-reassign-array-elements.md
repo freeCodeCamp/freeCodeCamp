@@ -59,7 +59,7 @@ Destructuring on `list` should be used.
 assert(
   __helpers
     .removeWhiteSpace(code)
-    .match(/\[(([_$a-z]\w*)?,){1,}\.\.\.arr\]=list/i)
+    .match(/\[(([_$a-z]\w*)?,){1,}\.\.\.shorterList\]=list/i)
 );
 ```
 
