@@ -27,7 +27,7 @@ Variables `a` and `b` take the first and second values from the array. After tha
 
 # --instructions--
 
-Use destructuring assignment with the rest parameter to emulate the behavior `Array.prototype.slice()` so that `shorterList` is a sub-array of the original array `list` with the first two elements omitted.
+Use a destructuring assignment with the rest parameter to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` should return a sub-array of the original array `list` with the first two elements omitted.
 
 # --hints--
 
