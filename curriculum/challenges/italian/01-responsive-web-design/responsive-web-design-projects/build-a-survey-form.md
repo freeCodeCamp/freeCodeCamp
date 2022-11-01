@@ -19,7 +19,7 @@ dashedName: build-a-survey-form
 1. All'interno dell'elemento modulo, ti è **richiesto** di inserire la tua email in un campo di `input` che ha un `id` di `email`
 1. Se inserisci una mail che non è formattata correttamente, vedrai un errore di validazione HTML5
 1. All'interno del modulo è possibile inserire un numero in un campo `input` che ha un `id` di `number`
-1. The number input should not accept non-numbers, either by preventing you from typing them or by showing an HTML5 validation error (depending on your browser).
+1. L'input del numero non dovrebbe accettare valori non numerici, impedendo all'utente di inserirli o tramite una validazione degli errori HTML5 (a seconda del browser).
 1. Se immetti un numero al di fuori del range del campo per il numero, che hai definito con gli attributi `min` e `max`, vedrai un errore di validazione HTML5
 1. Per le caselle di input per il nome, la mail e il numero, puoi vedere dei corrispondenti elementi `label` nel modulo che descrivono lo scopo di ogni campo con i seguenti attributi id: `id="name-label"`, `id="email-label"`, e `id="number-label"`
 1. Per i campi di input del nome, mail e numero, puoi vedere del testo segnaposto che da una descrizione o istruzioni per ogni campo

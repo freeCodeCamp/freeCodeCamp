@@ -20,89 +20,87 @@ dashedName: set-up-a-template-engine
 
 `pug@~3.0.0` 已經被安裝，並且在你項目的 `package.json` 文件中作爲依賴。
 
-Express 需要知道你正在使用哪個模板引擎。 我們將使用 `set` 方法來分配 `pug` 作爲 `view engine` 屬性的值： `app.set('view engine', 'pug')`。
+Express 需要知道你正在使用哪個模板引擎。 Use the `set` method to assign `pug` as the `view engine` property's value:
 
-在正確渲染 `views/pug` 目錄中的索引文件之後，加載頁面。
+```javascript
+app.set('view engine', 'pug');
+```
 
-要渲染 `pug` 模板，你需要在 `/` 路由中使用 `res.render()`。 將文件路徑作爲參數傳遞到方法的 `views/pug` 目錄。 這個路徑可以是相對路徑（相對於 views），也可以是絕對路徑，不需要文件擴展。
+After that, add another `set` method that sets the `views` property of your `app` to point to the `./views/pug` directory. This tells Express to render all views relative to that directory.
 
-如果一切按計劃進行，你的應用程序主頁將不再是空白的，並將顯示一條信息，表明你已經成功地渲染了 Pug 模板！
+Finally, use `res.render()` in the route for your home page, passing `index` as the first argument. This will render the `pug` template.
 
-完成以上要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">查看已執行項目的當前進度</a>。
+If all went as planned, your app home page will no longer be blank. Instead, it will display a message indicating you've successfully rendered the Pug template!
+
+完成以上要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 項目中應使用 Pug 作爲依賴。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'pug',
-        'Your project should list "pug" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'pug',
+    'Your project should list "pug" as a dependency'
   );
+}
 ```
 
 View 引擎應該是 Pug。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /('|")view engine('|"),( |)('|")pug('|")/gi,
-        'Your project should set Pug as a view engine'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
-  );
+async (getUserInput) => {
+  const url = new URL("/_api/app", getUserInput("url"));
+  const res = await fetch(url);
+  const app = await res.json();
+  assert.equal(app?.settings?.['view engine'], "pug");
+}
 ```
 
-使用正確的 ExpressJS 方法渲染來自響應的索引頁。
+You should set the `views` property of the application to `./views/pug`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
+async (getUserInput) => {
+  const url = new URL("/_api/app", getUserInput("url"));
+  const res = await fetch(url);
+  const app = await res.json();
+  assert.equal(app?.settings?.views, "./views/pug");
+}
+```
+
+Use the correct ExpressJS method to render the index page from the response.
+
+```js
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
       assert.match(
         data,
         /FCC Advanced Node and Express/gi,
         'You successfully rendered the Pug template!'
       );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
     }
-  );
 ```
 
-Pug 應該正常運行。
+Pug should be working.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
       assert.match(
         data,
         /pug-success-message/gi,
         'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
       );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
     }
-  );
 ```
 
 # --solutions--

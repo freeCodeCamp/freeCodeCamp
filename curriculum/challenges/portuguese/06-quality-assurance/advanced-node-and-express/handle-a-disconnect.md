@@ -18,44 +18,38 @@ socket.on('disconnect', () => {
 });
 ```
 
-Para garantir que os clients tenham a contagem atualizada dos usuários atuais continuamente, você deve diminuir os currentUsers em 1 quando a desconexão acontece, emitindo o evento 'user count' com a contagem atualizada!
+To make sure clients continuously have the updated count of current users, you should decrease `currentUsers` by 1 when the disconnect happens then emit the `'user count'` event with the updated count.
 
 **Observação:** assim como ocorre com `'disconnect'`, todos os outros eventos que um socket pode emitir para o servidor devem ser tratados dentro do listener que estiver conectando, onde 'socket' está definido.
 
-Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
+Envie sua página quando você achar que ela está certa. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#handle-a-disconnect-8" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 O servidor deve tratar do evento de desconexão a partir de um socket.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(data, /socket.on.*('|")disconnect('|")/gi, '');
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
-  );
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(data, /socket.on.*('|")disconnect('|")/s, '');
+}
 ```
 
-Seu client deve estar escutando o evento 'user count'.
+Your client should be listening for `'user count'` event.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")user count('|")/gi,
-        'Your client should be connection to server with the connection defined as socket'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")user count('|")/s,
+    'Your client should be connection to server with the connection defined as socket'
   );
+}
 ```
 
 # --solutions--

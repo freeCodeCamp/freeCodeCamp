@@ -1,8 +1,8 @@
 ---
 id: 60ffe7d8aae62c05bcc9e7eb
-title: Passo 56
+title: Step 57
 challengeType: 0
-dashedName: step-56
+dashedName: step-57
 ---
 
 # --description--
@@ -41,7 +41,7 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
   <body>
     <h1>Registration Form</h1>
     <p>Please fill out this form with the required information</p>
-    <form action='https://register-demo.freecodecamp.org'>
+    <form method="post" action='https://register-demo.freecodecamp.org'>
       <fieldset>
         <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
         <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>

@@ -18,44 +18,38 @@ socket.on('disconnect', () => {
 });
 ```
 
-为确保客户端可以看到实时的用户数量，我们应该在用户断开时让 currentUsers 减 1，然后发送 “user count” 事件，并使用修改后的用户数量。
+To make sure clients continuously have the updated count of current users, you should decrease `currentUsers` by 1 when the disconnect happens then emit the `'user count'` event with the updated count.
 
 **注意：**和 `'disconnect'` 类似，所有 socket 可以发送到服务器的事件，我们都应该在有 “socket” 定义的连接监听器里处理。
 
-完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa" target="_blank" rel="noopener noreferrer nofollow">查看已执行项目的当前进度</a>。
+完成上述要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#handle-a-disconnect-8" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 服务器应处理断开 socket 连接的事件。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(data, /socket.on.*('|")disconnect('|")/gi, '');
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
-  );
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(data, /socket.on.*('|")disconnect('|")/s, '');
+}
 ```
 
-客户端应监听 “user count” 事件。
+Your client should be listening for `'user count'` event.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")user count('|")/gi,
-        'Your client should be connection to server with the connection defined as socket'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")user count('|")/s,
+    'Your client should be connection to server with the connection defined as socket'
   );
+}
 ```
 
 # --solutions--

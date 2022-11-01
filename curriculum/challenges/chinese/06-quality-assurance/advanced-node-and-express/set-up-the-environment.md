@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 现在我们的 *express 应用*已经包含了 *http* 服务，接下来我们需要监听 *http* 服务的事件。 为此，我们需要把 `app.listen` 更新为 `http.listen`。
 
-需要处理的第一件事是监听客户端的新连接。 <dfn>on</dfn> 关键字就是监听这个特定事件。 它需要 2 个参数：一个包含所发出事件标题的字符串，以及一个用于传递数据的函数。 在连接监听器中，我们用 *socket* 来代表它所包含的数据。 socket 就是指已连接到服务器的客户端。
+需要处理的第一件事是监听客户端的新连接。 <dfn>on</dfn> 关键字就是监听这个特定事件。 它需要 2 个参数：一个包含所发出事件标题的字符串，以及一个用于传递数据的函数。 In the case of our connection listener, use `socket` to define the data in the second argument. socket 就是指已连接到服务器的客户端。
 
 为了可以监听服务器的连接事件，我们在数据库连接的部分加入如下代码：
 
@@ -36,105 +36,89 @@ io.on('connection', socket => {
 let socket = io();
 ```
 
-在这个文件中，我们没有定义 “io” 变量，但第一行的注释会阻止运行时产生的报错。 不过，我们在 chat.pug 的页面上已经为你添加好了 Socket.IO 库的 CDN。
+在这个文件中，我们没有定义 “io” 变量，但第一行的注释会阻止运行时产生的报错。 You have already added a reliable CDN to the Socket.IO library on the page in `chat.pug`.
 
-现在你可以重启一下你的 app，尝试一下验证用户，然后你应该会看到服务器的 console 里输出了 “A user has connected”。
+Now try loading up your app and authenticate and you should see in your server console `A user has connected`.
 
 **注意：**只有在连接到处于同一个 url/server 上的 socket 时，`io()`才可以正常执行。 如果需要连接到外部的 socket，就需要这样调用：`io.connect('URL');`。
 
-完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">查看已执行项目的当前进度</a>。
+完成上述要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-the-environment-6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 应添加 `socket.io` 作为依赖。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'socket.io',
-        'Your project should list "socket.io" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'socket.io',
+    'Your project should list "socket.io" as a dependency'
   );
+}
 ```
 
 应正确引入 `http`，并实例化为 `http`。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /http.*=.*require.*('|")http\1/gi,
-        'Your project should list "http" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /http.*=.*require.*('|")http\1/s,
+    'Your project should list "http" as a dependency'
   );
+}
 ```
 
 应正确引入 `socket.io`，并实例化为 `io`。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io.*=.*require.*('|")socket.io\1.*http/gi,
-        'You should correctly require and instantiate socket.io as io.'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io.*=.*require.*('|")socket.io\1.*http/s,
+    'You should correctly require and instantiate socket.io as io.'
   );
+}
 ```
 
 Socket.IO 应监听连接。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io.on.*('|")connection\1.*socket/gi,
-        'io should listen for "connection" and socket should be the 2nd arguments variable'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io.on.*('|")connection\1.*socket/s,
+    'io should listen for "connection" and socket should be the 2nd arguments variable'
   );
+}
 ```
 
 客户端应连接到服务器。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.*=.*io/gi,
-        'Your client should be connection to server with the connection defined as socket'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.*=.*io/s,
+    'Your client should be connection to server with the connection defined as socket'
   );
+}
 ```
 
 # --solutions--

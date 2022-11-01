@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 *http* サーバーを *Express アプリ*にマウントしたので、*http* サーバーからリッスンする必要があります。 `app.listen` の行を `http.listen` に変更します。
 
-最初の処理として、クライアントからの新しい接続をリッスンします。 <dfn>on</dfn> キーワードがその処理を行い、特定のイベントがないかリッスンします。 It requires 2 arguments: a string containing the title of the event that's emitted, and a function with which the data is passed through. コネクションリスナーの場合は、*ソケット*を使用して第 2 引数でデータを定義します。 ソケットとは、接続している個々のクライアントのことです。
+最初の処理として、クライアントからの新しい接続をリッスンします。 <dfn>on</dfn> キーワードがその処理を行い、特定のイベントがないかリッスンします。 It requires 2 arguments: a string containing the title of the event that's emitted, and a function with which the data is passed through. In the case of our connection listener, use `socket` to define the data in the second argument. ソケットとは、接続している個々のクライアントのことです。
 
 サーバーへの接続をリッスンするには、データベース接続の中に次を追加します。
 
@@ -36,105 +36,89 @@ io.on('connection', socket => {
 let socket = io();
 ```
 
-コメントにより、通常「io」がファイル内で定義されていない場合に表示されるエラーを表示しないようにしています。 chat.pug 内のページの Socket.IO ライブラリには、すでに信頼性の高い CDN を追加してあります。
+コメントにより、通常「io」がファイル内で定義されていない場合に表示されるエラーを表示しないようにしています。 You have already added a reliable CDN to the Socket.IO library on the page in `chat.pug`.
 
-では、アプリの読み込みと認証を試してみましょう。サーバーコンソールに「A user has connected」と表示されるはずです！
+Now try loading up your app and authenticate and you should see in your server console `A user has connected`.
 
 **注:** `io()` は、同じ url またはサーバー上でホストされているソケットに接続している場合にのみ動作します。 他の場所でホストされている外部ソケットに接続するには、`io.connect('URL');` を使用します。
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
+正しいと思ったら、ページを送信してください。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-the-environment-6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 `socket.io` を依存関係にする必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'socket.io',
-        'Your project should list "socket.io" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'socket.io',
+    'Your project should list "socket.io" as a dependency'
   );
+}
 ```
 
 `http` を `http` として正しく require しインスタンス化する必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /http.*=.*require.*('|")http\1/gi,
-        'Your project should list "http" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /http.*=.*require.*('|")http\1/s,
+    'Your project should list "http" as a dependency'
   );
+}
 ```
 
 `socket.io` を `io` として正しく require しインスタンス化する必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io.*=.*require.*('|")socket.io\1.*http/gi,
-        'You should correctly require and instantiate socket.io as io.'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io.*=.*require.*('|")socket.io\1.*http/s,
+    'You should correctly require and instantiate socket.io as io.'
   );
+}
 ```
 
 Socket.IO で接続をリッスンする必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io.on.*('|")connection\1.*socket/gi,
-        'io should listen for "connection" and socket should be the 2nd arguments variable'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io.on.*('|")connection\1.*socket/s,
+    'io should listen for "connection" and socket should be the 2nd arguments variable'
   );
+}
 ```
 
 クライアントからサーバーに接続する必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.*=.*io/gi,
-        'Your client should be connection to server with the connection defined as socket'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.*=.*io/s,
+    'Your client should be connection to server with the connection defined as socket'
   );
+}
 ```
 
 # --solutions--

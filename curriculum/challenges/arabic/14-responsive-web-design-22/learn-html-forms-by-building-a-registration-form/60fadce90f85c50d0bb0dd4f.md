@@ -1,8 +1,8 @@
 ---
 id: 60fadce90f85c50d0bb0dd4f
-title: الخطوة 45
+title: Step 46
 challengeType: 0
-dashedName: step-45
+dashedName: step-46
 ---
 
 # --description--
@@ -32,7 +32,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom,
   <body>
     <h1>Registration Form</h1>
     <p>Please fill out this form with the required information</p>
-    <form action='https://register-demo.freecodecamp.org'>
+    <form method="post" action='https://register-demo.freecodecamp.org'>
       <fieldset>
         <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
         <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>

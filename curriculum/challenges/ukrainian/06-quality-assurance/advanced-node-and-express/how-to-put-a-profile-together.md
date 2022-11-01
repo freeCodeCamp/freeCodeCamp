@@ -8,42 +8,41 @@ dashedName: how-to-put-a-profile-together
 
 # --description--
 
-Після того, як ми запевнили, що користувач, який має доступ до `/profile`, автентифікований, ми зможемо використовувати інформацію з `req.user` на нашій сторінці!
+Now that you can ensure the user accessing the `/profile` is authenticated, you can use the information contained in `req.user` on your page.
 
-Передайте об'єкт, що має властивість `username` і значення `req.user.username` як другий аргумент для методу відображення профілю. Тепер перейдіть до перегляду свого `profile.pug` і додайте наступний рядок під уже наявним `h1` елементом, дотримуючись тих самих відступів:
+Pass an object containing the property `username` and value of `req.user.username` as the second argument for the `render` method of the profile view.
+
+Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
 
 ```pug
 h2.center#welcome Welcome, #{username}!
 ```
 
-Це створить елемент `h2` з класом '`center`' і id '`welcome`', що міститиме текст '`Welcome,`' та ім'я користувача.
+This creates an `h2` element with the class `center` and id `welcome` containing the text `Welcome,` followed by the username.
 
-Також в `profile.pug` додайте посилання на маршрут `/logout`, який міститиме метод для скасування автентифікації користувача.
+Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user:
 
 ```pug
 a(href='/logout') Logout
 ```
 
-Відправте сторінку, якщо все було виконано правильно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-put-a-profile-together-9" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-Ви повинні правильно додати змінну Pug до /profile.
+You should correctly add a Pug render variable to `/profile`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /username:( |)req.user.username/gi,
-        'You should be passing the variable username with req.user.username into the render function of the profile page'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /username:( |)req.user.username/,
+    'You should be passing the variable username with req.user.username into the render function of the profile page'
   );
+}
 ```
 
 # --solutions--
