@@ -1,6 +1,7 @@
 import { writeFileSync } from 'fs';
 import fetch from 'node-fetch';
 import yaml from 'js-yaml';
+import { trendingSchemaValidator } from '../../../client/i18n/schema/trendingSchema';
 
 import envData from '../../../config/env.json';
 const { clientLocale } = envData;
@@ -24,6 +25,23 @@ const cdnUrlCreator = (lang: string) =>
 
   const data = await res.text();
   const trendingJSON = JSON.stringify(yaml.load(data));
+  const trendingObject = JSON.parse(trendingJSON) as Record<string, unknown>;
+  const validationError =
+    (trendingSchemaValidator(trendingObject).error as Error) || null;
+
+  if (validationError) {
+    throw new Error(
+      `
+    ----------------------------------------------------
+    Error: The trending JSON is invalid.
+    ----------------------------------------------------
+    Unable to validate the ${clientLocale} trending JSON schema: ${JSON.stringify(
+        validationError
+      )}
+    `
+    );
+  }
+
   const trendingLocation = `./client/i18n/locales/${clientLocale}/trending.json`;
   writeFileSync(trendingLocation, trendingJSON);
 })().catch(err => {
