@@ -75,7 +75,7 @@ jobs:
             spec: cypress/e2e/default/**/*.js
     services:
       mongodb:
-        image: mongo:4
+        image: mongo:4.4
         ports:
           - 27017:27017
       # We need mailhog to catch any emails the api tries to send.
