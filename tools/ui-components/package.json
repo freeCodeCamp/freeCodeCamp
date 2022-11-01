@@ -20,8 +20,8 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "dependencies": {
     "@babel/preset-typescript": "7.18.6",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
+    "react": "17.0.0",
+    "react-dom": "17.0.0",
     "typescript": "4.8.4"
   },
   "devDependencies": {
