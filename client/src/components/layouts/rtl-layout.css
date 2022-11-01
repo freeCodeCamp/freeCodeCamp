@@ -121,7 +121,7 @@ New RWD project challenge
 }
 
 [dir='rtl'] .panel-display-tabs {
-  margin-right: auto;
+  margin-left: auto;
 }
 
 [dir='rtl'] .monaco-editor-tabs button:not(:first-child) {
@@ -133,19 +133,11 @@ New RWD project challenge
 sections that need to stay left to right
 */
 
-/*Code snippet*/
+/* Code snippet*/
 [dir='rtl'] code,
-[dir='rtl'] p code,
-/* this selector is for the projects certification code and it doesn't work  */
-[dir='rtl'] #description p:is(code),
-/* 
-   the selector below is for table in this URL 
-   /javascript-algorithms-and-data-structures/basic-javascript/escape-sequences-in-strings
-*/
-[dir='rtl'] #description table tbody tr td:has(code),
-[dir='rtl'] pre:has(code),
-/* trending articles */
+/* Trending articles */
 [dir='rtl'] .trending-guides .trending-guides-row div a,
+/* Quotes */
 [dir='rtl'] .quote-partial,
 [dir='rtl'] .overflow-guard,
 [dir='rtl'] .challenge-preview,
@@ -157,10 +149,22 @@ sections that need to stay left to right
   direction: ltr;
 }
 
+[dir='rtl'] code {
+  word-break: normal;
+  unicode-bidi: isolate;
+}
+
 [dir='rtl'] .description-container,
 [dir='rtl'] .action-row-container,
 [dir='rtl']
   .timeline-pagination_list
   .timeline-pagination_list_item:not(:has(button)) {
   direction: rtl;
+}
+
+/* Revert the editor layout to account for reverted splitter */
+
+[dir='rtl'] .desktop-layout .tabs-row,
+[dir='rtl'] .desktop-layout .reflex-container:not(.horizontal) {
+  flex-direction: row-reverse;
 }
