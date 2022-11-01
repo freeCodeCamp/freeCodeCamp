@@ -9,7 +9,7 @@ import { createSuperOrder, getSuperOrder, getSuperBlockFromDir } from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });
 
-const test1 = {
+const englishTest = {
   [SuperBlocks.RespWebDesignNew]: 0,
   [SuperBlocks.JsAlgoDataStruct]: 1,
   [SuperBlocks.FrontEndDevLibs]: 2,
@@ -25,7 +25,7 @@ const test1 = {
   [SuperBlocks.RespWebDesign]: 12
 };
 
-const test2 = {
+const upcomingTest = {
   [SuperBlocks.RespWebDesignNew]: 0,
   [SuperBlocks.JsAlgoDataStruct]: 1,
   [SuperBlocks.FrontEndDevLibs]: 2,
@@ -42,51 +42,77 @@ const test2 = {
   [SuperBlocks.RespWebDesign]: 13
 };
 
-const test3 = {
+const espanolTest = {
   [SuperBlocks.RespWebDesign]: 0,
   [SuperBlocks.JsAlgoDataStruct]: 1,
   [SuperBlocks.FrontEndDevLibs]: 2,
-  [SuperBlocks.RespWebDesignNew]: 3,
-  [SuperBlocks.DataVis]: 4,
-  [SuperBlocks.RelationalDb]: 5,
-  [SuperBlocks.BackEndDevApis]: 6,
-  [SuperBlocks.QualityAssurance]: 7,
-  [SuperBlocks.SciCompPy]: 8,
-  [SuperBlocks.DataAnalysisPy]: 9,
+  [SuperBlocks.DataVis]: 3,
+  [SuperBlocks.BackEndDevApis]: 4,
+  [SuperBlocks.QualityAssurance]: 5,
+  [SuperBlocks.SciCompPy]: 6,
+  [SuperBlocks.DataAnalysisPy]: 7,
+  [SuperBlocks.RespWebDesignNew]: 8,
+  [SuperBlocks.RelationalDb]: 9,
   [SuperBlocks.InfoSec]: 10,
   [SuperBlocks.MachineLearningPy]: 11,
   [SuperBlocks.CodingInterviewPrep]: 12
 };
 
+const chineseTest = {
+  [SuperBlocks.RespWebDesignNew]: 0,
+  [SuperBlocks.JsAlgoDataStruct]: 1,
+  [SuperBlocks.FrontEndDevLibs]: 2,
+  [SuperBlocks.DataVis]: 3,
+  [SuperBlocks.BackEndDevApis]: 4,
+  [SuperBlocks.QualityAssurance]: 5,
+  [SuperBlocks.SciCompPy]: 6,
+  [SuperBlocks.DataAnalysisPy]: 7,
+  [SuperBlocks.InfoSec]: 8,
+  [SuperBlocks.MachineLearningPy]: 9,
+  [SuperBlocks.RespWebDesign]: 10,
+  [SuperBlocks.RelationalDb]: 11,
+  [SuperBlocks.CodingInterviewPrep]: 12
+};
+
 describe('createSuperOrder', () => {
-  const superOrder1 = createSuperOrder({
+  const englishSuperOrder = createSuperOrder({
     language: 'english',
     showNewCurriculum: 'false',
     showUpcomingChanges: 'false'
   });
 
-  const superOrder2 = createSuperOrder({
+  const upcomingSuperOrder = createSuperOrder({
     language: 'english',
     showNewCurriculum: 'false',
     showUpcomingChanges: 'true'
   });
 
-  const superOrder3 = createSuperOrder({
-    language: 'german',
+  const espanolSuperOrder = createSuperOrder({
+    language: 'espanol',
+    showNewCurriculum: 'false',
+    showUpcomingChanges: 'false'
+  });
+
+  const chineseSuperOrder = createSuperOrder({
+    language: 'chinese',
     showNewCurriculum: 'false',
     showUpcomingChanges: 'false'
   });
 
   it("should create the correct object for 'english'", () => {
-    expect(superOrder1).toStrictEqual(test1);
+    expect(englishSuperOrder).toStrictEqual(englishTest);
   });
 
   it('should create the correct object with upcoming changes shown', () => {
-    expect(superOrder2).toStrictEqual(test2);
+    expect(upcomingSuperOrder).toStrictEqual(upcomingTest);
   });
 
-  it("should create the correct object for 'german'", () => {
-    expect(superOrder3).toStrictEqual(test3);
+  it("should create the correct object for 'espanol'", () => {
+    expect(espanolSuperOrder).toStrictEqual(espanolTest);
+  });
+
+  it("should create the correct object for 'chinese'", () => {
+    expect(chineseSuperOrder).toStrictEqual(chineseTest);
   });
 });
 
@@ -110,10 +136,15 @@ describe('getSuperOrder', () => {
   });
 
   it('returns unique numbers for all current superblocks', () => {
-    if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
-      expect.assertions(14);
-    } else {
+    // Skip non-english tests
+    if (process.env.CURRICULUM_LOCALE !== 'english') {
+      return;
+    }
+
+    if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
       expect.assertions(13);
+    } else {
+      expect.assertions(14);
     }
 
     expect(getSuperOrder(SuperBlocks.RespWebDesignNew)).toBe(0);

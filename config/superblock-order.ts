@@ -494,6 +494,8 @@ export const superBlockOrder = {
   }
 };
 
+// The client uses the object above to create the map
+// Keep this so it can't change
 Object.freeze(superBlockOrder);
 
 function shouldShowSuperblocks({
