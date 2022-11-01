@@ -22,50 +22,44 @@ $('form').submit(function() {
 socket.emit('chat message', messageToSend);
 ```
 
-Тепер на вашому сервері, ви мусите прослухати сокет для події `'chat message'` з назвою `message`. Після отримання події він повинен буде видати подію `'chat message'` до всіх сокетів `io.emit` з даними об'єкта, що містить `name` та `message`.
+Тепер на вашому сервері, ви мусите прослухати сокет для події `'chat message'` з назвою `message`. Once the event is received, it should emit the event `'chat message'` to all sockets using `io.emit`, sending a data object containing the `username` and `message`.
 
-В `client.js`, тепер необхідно послухати подію `'chat message'` і після отримання, додати список елементів до `#message` з іменем, двокрапкою та повідомленням!
+In `client.js`, you should now listen for event `'chat message'` and, when received, append a list item to `#messages` with the username, a colon, and the message!
 
 На даний момент чат повинен бути повністю функціональним і спроможним відправляти повідомлення всім клієнтам!
 
-Підтвердіть вашу сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Підтвердіть вашу сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 Сервер має слухати `'chat message'` та переміщувати (emit) його належним чином.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*name.*message/gis,
-        'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*username.*message/s,
+    'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'
   );
+}
 ```
 
 Клієнт повинен правильно обробляти та показувати нові дані із події `'chat message'`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")chat message('|")[^]*messages.*li/gis,
-        'You should append a list item to #messages on your client within the "chat message" event listener to display the new message'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")chat message('|")[^]*messages.*li/s,
+    'You should append a list item to #messages on your client within the "chat message" event listener to display the new message'
   );
+}
 ```
 
 # --solutions--

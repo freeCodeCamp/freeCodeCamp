@@ -20,89 +20,87 @@ dashedName: set-up-a-template-engine
 
 `pug@~3.0.0` has already been installed, and is listed as a dependency in your `package.json` file.
 
-Висловіть свої потреби для розуміння, який шаблон двигуна ви використовуєте. Ми будемо використовувати метод `set` для призначення `pug` як `view engine` значення властивості: `app.set('view engine', 'pug')`
+Висловіть свої потреби для розуміння, який шаблон двигуна ви використовуєте. Use the `set` method to assign `pug` as the `view engine` property's value:
 
-Your page will be blank until you correctly render the index file in the `views/pug` directory.
+```javascript
+app.set('view engine', 'pug');
+```
 
-To render the `pug` template, you need to use `res.render()` in the `/` route. Pass the file path to the `views/pug` directory as the argument to the method. The path can be a relative path (relative to views), or an absolute path, and does not require a file extension.
+After that, add another `set` method that sets the `views` property of your `app` to point to the `./views/pug` directory. This tells Express to render all views relative to that directory.
 
-If all went as planned, your app home page will no longer be blank and will display a message indicating you've successfully rendered the Pug template!
+Finally, use `res.render()` in the route for your home page, passing `index` as the first argument. This will render the `pug` template.
 
-Підтвердіть свою сторінку, коли зрозумієте, що все працює коректно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+If all went as planned, your app home page will no longer be blank. Instead, it will display a message indicating you've successfully rendered the Pug template!
+
+Підтвердіть свою сторінку, коли зрозумієте, що все працює коректно. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 Pug повинен бути залежністю.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'pug',
-        'Your project should list "pug" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'pug',
+    'Your project should list "pug" as a dependency'
   );
+}
 ```
 
 Двигун перегляду має бути Pug.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /('|")view engine('|"),( |)('|")pug('|")/gi,
-        'Your project should set Pug as a view engine'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
-  );
+async (getUserInput) => {
+  const url = new URL("/_api/app", getUserInput("url"));
+  const res = await fetch(url);
+  const app = await res.json();
+  assert.equal(app?.settings?.['view engine'], "pug");
+}
 ```
 
-Використайте правильний метод ExpressJS, щоб відобразити сторінку індексу з відповіді.
+You should set the `views` property of the application to `./views/pug`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
+async (getUserInput) => {
+  const url = new URL("/_api/app", getUserInput("url"));
+  const res = await fetch(url);
+  const app = await res.json();
+  assert.equal(app?.settings?.views, "./views/pug");
+}
+```
+
+Use the correct ExpressJS method to render the index page from the response.
+
+```js
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
       assert.match(
         data,
         /FCC Advanced Node and Express/gi,
         'You successfully rendered the Pug template!'
       );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
     }
-  );
 ```
 
-Pug має працювати.
+Pug should be working.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
       assert.match(
         data,
         /pug-success-message/gi,
         'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
       );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
     }
-  );
 ```
 
 # --solutions--

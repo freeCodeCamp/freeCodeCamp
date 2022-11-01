@@ -60,87 +60,73 @@ function onAuthorizeFail(data, message, error, accept) {
 L'oggetto utente è ora disponibile sul tuo oggetto socket come `socket.request.user`. Per esempio, ora puoi aggiungere quanto segue:
 
 ```js
-console.log('user ' + socket.request.user.name + ' connected');
+console.log('user ' + socket.request.user.username + ' connected');
 ```
 
 Scriverà sulla console del server chi si è connesso!
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi controllare il progetto completato fino a questo punto <a href="https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254" target="_blank" rel="noopener noreferrer nofollow">qui</a>.
+Invia la tua pagina quando pensi di averlo fatto correttamente. If you're running into errors, you can  <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
 
 # --hints--
 
 `passport.socketio` dovrebbe essere una dipendenza.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'passport.socketio',
-        'Your project should list "passport.socketio" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'passport.socketio',
+    'Your project should list "passport.socketio" as a dependency'
   );
+}
 ```
 
 `cookie-parser` dovrebbe essere una dipendenza.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'cookie-parser',
-        'Your project should list "cookie-parser" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'cookie-parser',
+    'Your project should list "cookie-parser" as a dependency'
   );
+}
 ```
 
 passportSocketIo dovrebbe essere richiesto correttamente.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require\((['"])passport\.socketio\1\)/gi,
-        'You should correctly require and instantiate "passport.socketio"'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require\((['"])passport\.socketio\1\)/gi,
+    'You should correctly require and instantiate "passport.socketio"'
   );
+}
 ```
 
 passportSocketIo dovrebbe essere configurato correttamente.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io\.use\(\s*\w+\.authorize\(/,
-        'You should register "passport.socketio" as socket.io middleware and provide it correct options'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io\.use\(\s*\w+\.authorize\(/,
+    'You should register "passport.socketio" as socket.io middleware and provide it correct options'
   );
+}
 ```
 
 # --solutions--
