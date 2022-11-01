@@ -12,58 +12,63 @@ Una delle maggiori caratteristiche dell'utilizzo di un template engine è essere
 
 Nel tuo file Pug, sei in grado di usare una variabile facendo riferimento al nome della variabile come `#{variable_name}` inline con un altro testo su un elemento o usando un segno uguale sull'elemento senza uno spazio come `p=variable_name` che assegna il valore della variabile al testo dell'elemento p.
 
- Pug utilizza spazi bianchi e tab per mostrare elementi annidati e tagliare sulla quantità di codice necessario per fare un bel sito. Leggi la documentazione di Pug per maggiori informazioni sull'utilizzo e la sintassi.
+Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site.
 
- Ecco un esempio:
+Take the following Pug code for example:
 
- ```html
- <!--Typing this using Pug-->
- head
-    script(type='text/javascript').
-      if (foo) bar(1 + 5);
-  body
-    if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
+```pug
+head
+  script(type='text/javascript').
+    if (foo) bar(1 + 5);
+body
+  if youAreUsingPug
+      p You are amazing
+    else
+      p Get on it!
+```
 
-<!--will lead to creating this code-->
-  <head>
-    <script type="text/javascript">
-      if (foo) bar(1 + 5);
-    </script>
-  </head>
-  <body>
-    <p>You are amazing</p>
-  </body>
-  ```
+The above yields the following HTML:
 
-Nel nostro file pug `index.pug` incluso nel tuo progetto, abbiamo usato le variabili `title` e `message`.
+```html
+<head>
+  <script type="text/javascript">
+    if (foo) bar(1 + 5);
+  </script>
+</head>
+<body>
+  <p>You are amazing</p>
+</body>
+```
 
-Per passare quelle variabili dal nostro server, dovrai aggiungere un oggetto come secondo argomento ai tuoi `res.render` con le variabili e i loro valori. Per esempio, passa questo oggetto impostando le variabili per la tua vista indice: `{title: 'Hello', message: 'Please login'}`
+Your `index.pug` file included in your project, uses the variables `title` and `message`.
 
-Dovrebbe assomigliare a: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Aggiornando la tua pagina dovresti vedere quei valori renderizzati nel punto corretto come impostato nel file `index.pug`!
+Pass those from your server to the Pug file by adding an object as a second argument to your `res.render` call with the variables and their values. Give the `title` a value of `Hello` and `message` a value of `Please log in`.
 
-Invia la tua pagina quando pensi che sia corretto. Se incontri errori, puoi vedere <a href="https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
+It should look like:
+
+```javascript
+res.render('index', { title: 'Hello', message: 'Please log in' });
+```
+
+Now refresh your page, and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
+
+Submit your page when you think you've got it right. If you're running into errors, you can check out the <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">project completed up to this point</a>.
 
 # --hints--
 
-Il Pug dovrebbe visualizzare correttamente le variabili.
+Pug should correctly render variables.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
-      assert.match(
-        data,
-        /pug-variable("|')>Please login/gi,
-        'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /pug-variable("|')>Please log in/gi,
+    'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
   );
+}
 ```
 
 # --solutions--

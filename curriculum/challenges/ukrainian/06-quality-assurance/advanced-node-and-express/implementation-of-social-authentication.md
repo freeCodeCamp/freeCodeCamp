@@ -10,19 +10,21 @@ dashedName: implementation-of-social-authentication
 
 Основний шлях автентифікації відстежуватиметься у вашому застосунку:
 
-1.  Користувач натисне кнопку або з'єднається з нашим маршрутом для автентифікації у визначеній стратегії (наприклад, GitHub).
+1.  User clicks a button or link sending them to your route to authenticate using a specific strategy (e.g. GitHub).
 2.  Ваш маршрут `passport.authenticate('github')` перенаправляє їх на GitHub.
-3.  Сторінка, на яку користувач заходить, на GitHub, дозволяє йому увійти в систему, якщо він ще не зробив це. Система попросить підтвердити доступ до свого профілю з нашого застосунку.
-4.  Потім користувач повертається до нашого застосунку за адресою зворотного виклику url з його профілем, якщо він схвалений.
+3.  Сторінка, на яку користувач заходить, на GitHub, дозволяє йому увійти в систему, якщо він ще не зробив це. It then asks them to approve access to their profile from your app.
+4.  The user is then returned to your app at a specific callback url with their profile if they are approved.
 5.  Тепер вони аутентифіковані, і ваш застосунок перевірить, чи це постійний профіль, або збереже його у вашій базі даних, якщо це не так.
 
-Стратегії з OAuth потребують, щоб ви мали принаймні *Client ID* та *Client Secret*, так сервіс перевірить, від кого надходить запит автентифікації та чи є він дійсним. Вони отримані з сайту, з яким ви намагаєтеся здійснити автентифікацію, наприклад, з сайту GitHub і вони є унікальними для вашого застосунку **ВОНИ НЕ Є ДЛЯ ЗАГАЛЬНОГО ДОСТУПУ** і ніколи не повинні бути завантажені в публічне сховище або написані безпосередньо у вашому коді. Поширеною практикою є розміщення їх у файлі `.env` і посилання на них таким чином: `process.env.GITHUB_CLIENT_ID`. Для вирішення цього завдання ми будемо використовувати стратегію GitHub.
+Стратегії з OAuth потребують, щоб ви мали принаймні *Client ID* та *Client Secret*, так сервіс перевірить, від кого надходить запит автентифікації та чи є він дійсним. Вони отримані з сайту, з яким ви намагаєтеся здійснити автентифікацію, наприклад, з сайту GitHub і вони є унікальними для вашого застосунку **ВОНИ НЕ Є ДЛЯ ЗАГАЛЬНОГО ДОСТУПУ** і ніколи не повинні бути завантажені в публічне сховище або написані безпосередньо у вашому коді. Поширеною практикою є розміщення їх у файлі `.env` і посилання на них таким чином: `process.env.GITHUB_CLIENT_ID`. For this challenge you are going to use the GitHub strategy.
 
-Obtaining your *Client ID and Secret* from GitHub is done in your account profile settings under 'developer settings', then <a href="https://github.com/settings/developers" target="_blank" rel="noopener noreferrer nofollow">'OAuth applications'</a>. Натисніть "Зареєструвати нову програму", назвіть свій додаток, вставте URL-адресу на свою домашню сторінку Replit (**Not the project code's url**), і, зрештою, для URL-адреси зворотного виклику, вставте ту саму URL-адресу як і домашню сторінку, але з додаванням `/auth/github/callback`. Сюди користувачі будуть переадресовані для обробки після автентифікації на GitHub. Збережіть отриману інформацію як `'GITHUB_CLIENT_ID'` та `'GITHUB_CLIENT_SECRET'` у вашому файлі `.env`.
+Follow these instructions to obtain your *Client ID and Secret* from GitHub. Go to your GitHub profile settings and click 'developer settings', then <a href="https://github.com/settings/developers" target="_blank" rel="noopener noreferrer nofollow">'OAuth Apps'</a>. Click 'New OAuth App', then give your app a name, paste in the URL to your Replit homepage (**Not the project code's url**) and, for the callback URL, paste in the same URL as the homepage but add `/auth/github/callback` to the end of it. This is where users will be redirected after authenticating on GitHub. After you do all that, click 'Register application'.
 
-У вашому файлі `routes.js` додайте `showSocialAuth: true` до маршруту головної сторінки після `showRegistration: true`. Тепер створіть 2 маршрути, які прийматимуть запити GET: `/auth/github` та `/auth/github/callback`. Перший повинен лише викликати паспорт для автентифікації `'github'`. Другий повинен викликати паспорт для автентифікації `'github'` з помилкою переадресації на `/`, а потім, якщо вдалося, переадресувати на `/profile` (подібно до нашого останнього проєкту).
+On the next page, click 'Generate a new client secret' to create a new client secret. Save the client ID and your client secret in your project's `.env` file as `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
 
-Приклад того, що `/auth/github/callback` має виглядати подібним до обробки звичного логіну:
+In your `routes.js` file, add `showSocialAuth: true` to the homepage route, after `showRegistration: true`. Now, create 2 routes accepting GET requests: `/auth/github` and `/auth/github/callback`. The first should only call passport to authenticate `'github'`. The second should call passport to authenticate `'github'` with a failure redirect to `/`, and then if that is successful redirect to `/profile` (similar to your last project).
+
+An example of how `/auth/github/callback` should look is similar to how you handled a normal login:
 
 ```js
 app.route('/login')
@@ -31,11 +33,11 @@ app.route('/login')
   });
 ```
 
-Підтвердьте сторінку, якщо все зрозуміло. If you're running into errors, you can check out the project up to this point <a href="https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-3" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
 
 # --hints--
 
-Шлях `/auth/github` має бути правильним.
+Route `/auth/github` should be correct.
 
 ```js
 async (getUserInput) => {
@@ -66,7 +68,7 @@ async (getUserInput) => {
 }
 ```
 
-Шлях `/auth/github/callback` повинен бути правильним.
+Route `/auth/github/callback` should be correct.
 
 ```js
 async (getUserInput) => {

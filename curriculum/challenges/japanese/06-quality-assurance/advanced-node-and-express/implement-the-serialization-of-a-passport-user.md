@@ -8,20 +8,20 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 # --description--
 
-今の段階ではまだデータベースを設定していないため、実際のユーザーオブジェクトを読み込んでいません。 これはさまざまな方法で実現できますが、このプロジェクトでは、サーバーを起動し、アプリのライフサイクル全体にわたって永続的な接続を維持した時点で、データベースに接続します。 接続するために、データベースの接続文字列 (例: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) を環境変数 `MONGO_URI` に追加してください 。 この変数は `connection.js` ファイルで使用されます。
+You are not loading an actual user object since the database is not set up. Connect to the database once, when you start the server, and keep a persistent connection for the full life-cycle of the app. To do this, add your database's connection string (for example: `mongodb+srv://<username>:<password>@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) to the environment variable `MONGO_URI`. この変数は `connection.js` ファイルで使用されます。
 
-*MongoDB Atlas での無料データベースの設定に問題が発生した場合は、こちらの<a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">チュートリアル</a>を確認してください。*
+*If you are having issues setting up a free database on MongoDB Atlas, check out this <a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">tutorial</a>.*
 
-ここではデータベースに接続し、リクエストのリッスンを開始します。 その目的は、データベースの接続前やデータベースエラーの発生時にリクエストを許可しないことです。 そのためには、次のようなコードでシリアライズとアプリルートを処理します。
+Now you want to connect to your database, then start listening for requests. The purpose of this is to not allow requests before your database is connected or if there is a database error. To accomplish this, encompass your serialization and app routes in the following code:
 
-```js
+```javascript
 myDB(async client => {
   const myDataBase = await client.db('database').collection('users');
 
   // Be sure to change the title
   app.route('/').get((req, res) => {
-    //Change the response to render the Pug template
-    res.render('pug', {
+    // Change the response to render the Pug template
+    res.render('index', {
       title: 'Connected to Database',
       message: 'Please login'
     });
@@ -32,7 +32,7 @@ myDB(async client => {
   // Be sure to add this...
 }).catch(e => {
   app.route('/').get((req, res) => {
-    res.render('pug', { title: e, message: 'Unable to login' });
+    res.render('index', { title: e, message: 'Unable to connect to database' });
   });
 });
 // app.listen out here...
@@ -40,44 +40,38 @@ myDB(async client => {
 
 `deserializeUser` の `myDataBase` コードを必ずコメント解除してください。そして `done(null, null)` を編集して `doc` を含めてください。
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
+正しいと思ったら、ページを送信してください。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implement-the-serialization-of-a-passport-user-5" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 データベース接続が存在する必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
-      assert.match(
-        data,
-        /Connected to Database/gi,
-        'You successfully connected to the database!'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /Connected to Database/gi,
+    'You successfully connected to the database!'
   );
+}
 ```
 
 デシリアライズで DB を正しく使用している必要があり、`doc` を指定して `done(null, null)` を呼び出す必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /null,\s*doc/gi,
-        'The callback in deserializeUser of (null, null) should be altered to (null, doc)'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /null,\s*doc/gi,
+    'The callback in deserializeUser of (null, null) should be altered to (null, doc)'
   );
+}
 ```
 
 # --solutions--

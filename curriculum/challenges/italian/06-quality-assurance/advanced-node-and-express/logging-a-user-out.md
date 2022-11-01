@@ -8,9 +8,9 @@ dashedName: logging-a-user-out
 
 # --description--
 
-Creare la logica per il logout è semplice. La rotta dovrebbe semplicemente de-autenticare l'utente e reindirizzarlo alla home page senza renderizzare alcuna vista.
+Creare la logica per il logout è semplice. The route should just unauthenticate the user, and redirect to the home page instead of rendering any view.
 
-In passport, per de-autenticare un utente è sufficiente invocare `req.logout();` prima del reindirizzamento.
+In passport, unauthenticating a user is as easy as just calling `req.logout()` before redirecting. Add this `/logout` route to do that:
 
 ```js
 app.route('/logout')
@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-Potresti aver notato che non stiamo gestendo pagine mancanti (404). Il modo comune per gestirle in Node è con il seguente middleware. Prosegui e aggiungilo dopo tutte le tue rotte:
+You may have noticed that you are not handling missing pages (404). Il modo comune per gestirle in Node è con il seguente middleware. Prosegui e aggiungilo dopo tutte le tue rotte:
 
 ```js
 app.use((req, res, next) => {
@@ -30,44 +30,38 @@ app.use((req, res, next) => {
 });
 ```
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se stai avendo errori, puoi vedere <a href="https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
+Invia la tua pagina quando pensi di averlo fatto correttamente. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#logging-a-user-out-10" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 `req.Logout` dovrebbe essere invocato nella tua rotta `/logout`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /req.logout/gi,
-        'You should be calling req.logout() in your /logout route'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /req.logout/gi,
+    'You should be calling req.logout() in your /logout route'
   );
+}
 ```
 
-Il logout dovrebbe reindirizzare alla home page.
+`/logout` should redirect to the home page.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/logout').then(
-    (data) => {
-      assert.match(
-        data,
-        /Home page/gi,
-        'When a user logs out they should be redirected to the homepage'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/logout", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /Home page/gi,
+    'When a user logs out they should be redirected to the homepage'
   );
+}
 ```
 
 # --solutions--

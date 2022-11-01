@@ -10,19 +10,21 @@ dashedName: implementation-of-social-authentication
 
 アプリでこの種の認証を行うには、以下のパスに従います。
 
-1.  ユーザーは、特定のストラテジー (たとえば、GitHub) を使用して認証を受けるためのルートに自身を送信するボタンまたはリンクをクリックします。
+1.  User clicks a button or link sending them to your route to authenticate using a specific strategy (e.g. GitHub).
 2.  ルートは `passport.authenticate('github')` を呼び出し、ユーザーを GitHub へリダイレクトします。
-3.  ユーザーがたどり着いた GitHub のページで、ユーザーがまだログインしていない場合はログインが許可されます。 次に、アプリからのプロファイルへのアクセスを承認するようユーザーに求めます。
-4.  ユーザーはアプリの特定のコールバック URL に戻り、ユーザーが承認した場合はプロファイルが返されます。
+3.  ユーザーがたどり着いた GitHub のページで、ユーザーがまだログインしていない場合はログインが許可されます。 It then asks them to approve access to their profile from your app.
+4.  The user is then returned to your app at a specific callback url with their profile if they are approved.
 5.  これでユーザーが認証され、アプリでは、プロファイルが返却されたプロファイルかどうかを確認します。そうでない場合はデータベースに保存します。
 
-OAuth を使用したストラテジーでは、少なくとも*クライアント ID* と*クライアント シークレット*が必要です。サービスはこれらを使用して、認証リクエストが誰からのものか、またそれが有効かどうかを確認します。 これらは、認証を実装しようとしている GitHub などのサイトから取得され、アプリに固有のものです。これらの情報は**共有すべきではありません**。したがって、公開リポジトリにアップロードしたり、コード内に直接書き込んだりしないでください。 通常は、それらを `.env` ファイルに保存し、`process.env.GITHUB_CLIENT_ID` などのように参照します。 このチャレンジでは、GitHub ストラテジーを使用します。
+OAuth を使用したストラテジーでは、少なくとも*クライアント ID* と*クライアント シークレット*が必要です。サービスはこれらを使用して、認証リクエストが誰からのものか、またそれが有効かどうかを確認します。 これらは、認証を実装しようとしている GitHub などのサイトから取得され、アプリに固有のものです。これらの情報は**共有すべきではありません**。したがって、公開リポジトリにアップロードしたり、コード内に直接書き込んだりしないでください。 通常は、それらを `.env` ファイルに保存し、`process.env.GITHUB_CLIENT_ID` などのように参照します。 For this challenge you are going to use the GitHub strategy.
 
-GitHub からの*クライアント ID とシークレット*の取得は、「開発者設定 (Developer settings)」のアカウントプロファイル設定で実行され、その後は「<a href="https://github.com/settings/developers" target="_blank" rel="noopener noreferrer nofollow">OAuth アプリケーション (OAuth Apps)</a>」で実行されます。 「Register a new application (新しいアプリを登録する)」をクリックし、アプリに名前を付け、URL を Replit のホームページに貼り付けます (**プロジェクトコードの URL ではありません**)。最後に、コールバック URL をホームページと同じ URL に貼り付けますが、`/auth/github/callback` を追加します。 ユーザーはここにリダイレクトされ、GitHub で認証された後、処理が行われます。 返された情報を `'GITHUB_CLIENT_ID'` および `'GITHUB_CLIENT_SECRET'` として `.env` ファイルに保存します。
+Follow these instructions to obtain your *Client ID and Secret* from GitHub. Go to your GitHub profile settings and click 'developer settings', then <a href="https://github.com/settings/developers" target="_blank" rel="noopener noreferrer nofollow">'OAuth Apps'</a>. Click 'New OAuth App', then give your app a name, paste in the URL to your Replit homepage (**Not the project code's url**) and, for the callback URL, paste in the same URL as the homepage but add `/auth/github/callback` to the end of it. This is where users will be redirected after authenticating on GitHub. After you do all that, click 'Register application'.
 
-`routes.js` ファイルで、`showRegistration: true` の後に、`showSocialAuth: true` をホームページルートに追加します。 GET リクエストを受け付けるルートを 2 つ作成します。それらは、`/auth/github` と `/auth/github/callback` です。 1 つ目は、Passport を呼び出して `'github'` を認証するだけです。 2 つ目は、Passport を呼び出して `'github'` を認証した結果失敗し、`/` へリダイレクトした後、リダイレクトが成功した場合は `/profile` へリダイレクトします(前回のプロジェクトと同様です)。
+On the next page, click 'Generate a new client secret' to create a new client secret. Save the client ID and your client secret in your project's `.env` file as `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
 
-`/auth/github/callback` の内容は、たとえば通常のログイン処理と似たものになります。
+In your `routes.js` file, add `showSocialAuth: true` to the homepage route, after `showRegistration: true`. Now, create 2 routes accepting GET requests: `/auth/github` and `/auth/github/callback`. The first should only call passport to authenticate `'github'`. The second should call passport to authenticate `'github'` with a failure redirect to `/`, and then if that is successful redirect to `/profile` (similar to your last project).
+
+An example of how `/auth/github/callback` should look is similar to how you handled a normal login:
 
 ```js
 app.route('/login')
@@ -31,11 +33,11 @@ app.route('/login')
   });
 ```
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを <a href="https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e</a> で確認できます。
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-3" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
 
 # --hints--
 
-ルート `/auth/github` が正確である必要があります。
+Route `/auth/github` should be correct.
 
 ```js
 async (getUserInput) => {
@@ -66,7 +68,7 @@ async (getUserInput) => {
 }
 ```
 
-ルート `/auth/github/callback` が正確である必要があります。
+Route `/auth/github/callback` should be correct.
 
 ```js
 async (getUserInput) => {
