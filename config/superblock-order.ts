@@ -27,6 +27,26 @@ export enum SuperBlockStates {
   Legacy = 'legacy'
 }
 
+type SuperBlockOrder = {
+  [key in Languages]: {
+    [CurriculumMaps.Landing]: SuperBlocks[];
+    [CurriculumMaps.Learn]: {
+      [TranslationStates.Audited]: {
+        [SuperBlockStates.Current]: SuperBlocks[];
+        [SuperBlockStates.New]: SuperBlocks[];
+        [SuperBlockStates.Upcoming]: SuperBlocks[];
+        [SuperBlockStates.Legacy]: SuperBlocks[];
+      };
+      [TranslationStates.NotAudited]: {
+        [SuperBlockStates.Current]: SuperBlocks[];
+        [SuperBlockStates.New]: SuperBlocks[];
+        [SuperBlockStates.Upcoming]: SuperBlocks[];
+        [SuperBlockStates.Legacy]: SuperBlocks[];
+      };
+    };
+  };
+};
+
 // all languages should have this many, one for each current cert
 export const numberOfSuperBlocksOnLanding = 11;
 
@@ -37,7 +57,7 @@ export const numberOfSuperBlocksOnLanding = 11;
  * have to include all these superBlocks, but the ones it does include, have
  * to be in this order
  */
-export const defaultSuperBlockOrder = [
+export const defaultSuperBlockOrder: SuperBlocks[] = [
   SuperBlocks.RespWebDesignNew,
   SuperBlocks.RespWebDesign,
   SuperBlocks.JsAlgoDataStructNew,
@@ -65,7 +85,7 @@ export const defaultSuperBlockOrder = [
  * their various states. These will be used to create the 'superOrder' property.
  *
  */
-export const superBlockOrder = {
+export const superBlockOrder: SuperBlockOrder = {
   [Languages.English]: {
     [CurriculumMaps.Landing]: [
       SuperBlocks.RespWebDesignNew,
