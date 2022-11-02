@@ -65,5 +65,5 @@ jobs:
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: chrome
-          headless: true
+
           spec: cypress/e2e/third-party/*.js

@@ -136,5 +136,5 @@ jobs:
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
-          headless: true
+
           spec: ${{ matrix.spec }}
