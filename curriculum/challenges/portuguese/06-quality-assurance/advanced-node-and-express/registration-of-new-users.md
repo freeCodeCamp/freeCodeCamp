@@ -8,20 +8,20 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Now you need to allow a new user on your site to register an account. In the `res.render` for the home page add a new variable to the object passed along - `showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file. This form is set up to **POST** on `/register`, so create that route and have it add the user object to the database by following the logic below.
+Agora, você precisa permitir que um novo usuário crie uma conta no site. Na `res.render` para a página inicial, adicione uma nova variável para o objeto passado, `showRegistration: true`. Ao atualizar sua página, você deve então ver o formulário de registro que já foi criado no arquivo `index.pug`. Esse formulário está configurado para **POST** em `/register`, então crie essa rota e faça com que ela adicione o objeto do usuário ao banco de dados, seguindo a lógica abaixo.
 
-The logic of the registration route should be as follows:
+A lógica da rota de registo deve ser a seguinte:
 
-1. Register the new user
-2. Authenticate the new user
-3. Redirect to `/profile`
+1. Registrar o novo usuário
+2. Autenticar o novo usuário
+3. Redirecionar para `/profile`
 
-The logic of step 1 should be as follows:
+A lógica da etapa 1 deveria ser a seguinte:
 
-1. Query database with `findOne`
-2. If there is an error, call `next` with the error
-3. If a user is returned, redirect back to home
-4. If a user is not found and no errors occur, then `insertOne` into the database with the username and password. As long as no errors occur there, call `next` to go to step 2, authenticating the new user, which you already wrote the logic for in your `POST /login` route.
+1. Fazer a consulta ao banco de dados com `findOne`
+2. Se houver um erro, chamar `next` com o erro
+3. Se um usuário for retornado, redirecionar de volta para a página inicial
+4. Se um usuário não for encontrado e se nenhum erro ocorrer, usar `insertOne` para inserir um usuário no banco de dados com o nome de usuário e senha. Desde que não haja erros, chamar `next` para passar para a etapa 2, autenticando o novo usuário para o qual você já escreveu a lógica na rota `POST /login`.
 
 ```js
 app.route('/register')
@@ -56,13 +56,13 @@ app.route('/register')
   );
 ```
 
-Envie sua página quando você achar que ela está certa. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 **OBSERVAÇÃO:** a partir deste ponto, podem surgir problemas relacionados com o uso do navegador *picture-in-picture*. Se você estiver usando uma IDE on-line que oferece uma pré-visualização do aplicativo dentro do editor, é recomendável abrir esta pré-visualização em uma nova aba.
 
 # --hints--
 
-You should have a `/register` route and display a registration form on the home page.
+Você deve ter uma rota `/register` e exibir um formulário de registro na página inicial.
 
 ```js
 async (getUserInput) => {

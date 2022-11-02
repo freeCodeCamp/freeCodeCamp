@@ -8,9 +8,9 @@ dashedName: announce-new-users
 
 # --description--
 
-Muitas salas de bate-papo são capazes de anunciar quando um usuário conecta ou desconecta e, em seguida, exibem isso para todos os usuários conectados no bate-papo. Considerando que você já está emitindo um evento ao se conectar e desconectar, você só terá que modificar esse evento para dar suporte a esse recurso. The most logical way of doing so is sending 3 pieces of data with the event: the username of the user who connected/disconnected, the current user count, and if that username connected or disconnected.
+Muitas salas de bate-papo são capazes de anunciar quando um usuário conecta ou desconecta e, em seguida, exibem isso para todos os usuários conectados no bate-papo. Considerando que você já está emitindo um evento ao se conectar e desconectar, você só terá que modificar esse evento para dar suporte a esse recurso. A maneira mais lógica de fazer isso é enviando 3 dados com o evento: o nome do usuário que se conectou/desconectou, a contagem de usuário atual e se esse nome de usuário conectou ou desconectou.
 
-Change the event name to `'user'`, and pass an object along containing the fields `username`, `currentUsers`, and `connected` (to be `true` in case of connection, or `false` for disconnection of the user sent). Be sure to change both `'user count'` events and set the disconnect one to send `false` for the field `connected` instead of `true` like the event emitted on connect.
+Altere o nome do evento para `'user'` e passe um objeto junto com o evento contendo os campos `username`, `currentUsers` e `connected` (para ser `true` no caso de conexão, ou `false` em caso de desconexão do usuário). Certifique-se de alterar os dois eventos `'user count'` e defina o evento de desconexão para que envie `false` para o campo `connected` em vez de `true` como ocorre quando o evento é emitido ao conectar.
 
 ```js
 io.emit('user', {
@@ -34,11 +34,11 @@ socket.on('user', data => {
 });
 ```
 
-Envie sua página quando você achar que ela está certa. If you're running into errors, you can check out <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135/3#announce-new-users-10" target="_blank" rel="noopener noreferrer nofollow">the project completed up to this point </a>.
+Envie sua página quando você achar que ela está certa. Se estiver encontrando erros, pode conferir <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135/3#announce-new-users-10" target="_blank" rel="noopener noreferrer nofollow">o projeto concluído até este ponto</a>.
 
 # --hints--
 
-Event `'user'` should be emitted with `name`, `currentUsers`, and `connected`.
+O evento `'user'` deve ser emitido com `name`, `currentUsers` e `connected`.
 
 ```js
 async (getUserInput) => {

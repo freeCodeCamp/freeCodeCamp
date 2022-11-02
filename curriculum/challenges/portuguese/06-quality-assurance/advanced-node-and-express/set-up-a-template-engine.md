@@ -20,19 +20,19 @@ Um mecanismo de templates (template engine) permite o uso de arquivos de modelo 
 
 `pug@~3.0.0` já foi instalado e está listado como uma dependência no arquivo `package.json`.
 
-O Express precisa saber qual mecanismo de modelos você está usando. Use the `set` method to assign `pug` as the `view engine` property's value:
+O Express precisa saber qual mecanismo de modelos você está usando. Use o método `set` para atribuir `pug` como o valor de `view engine` da propriedade:
 
 ```javascript
 app.set('view engine', 'pug');
 ```
 
-After that, add another `set` method that sets the `views` property of your `app` to point to the `./views/pug` directory. This tells Express to render all views relative to that directory.
+Depois disso, adicione outro método `set` que defina a propriedade `views` do `app` para que aponte para o diretório `./views/pug`. Isto diz ao Express para renderizar todas as views relativas a esse diretório.
 
-Finally, use `res.render()` in the route for your home page, passing `index` as the first argument. This will render the `pug` template.
+Por fim, use `res.render()` na rota para a sua página inicial, passando `index` como primeiro argumento. Isto vai renderizar o template `pug`.
 
-If all went as planned, your app home page will no longer be blank. Instead, it will display a message indicating you've successfully rendered the Pug template!
+Se tudo correu como planejado, o aplicativo não estará mais em branco. Em vez disso, ele exibirá uma mensagem indicando que você renderizou com sucesso o modelo Pug!
 
-Envie sua página quando você achar que ela está certa. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 
@@ -62,7 +62,7 @@ async (getUserInput) => {
 }
 ```
 
-You should set the `views` property of the application to `./views/pug`.
+Você deve definir a propriedade `views` da aplicação para `./views/pug`.
 
 ```js
 async (getUserInput) => {
@@ -73,7 +73,7 @@ async (getUserInput) => {
 }
 ```
 
-Use the correct ExpressJS method to render the index page from the response.
+Use o método correto do ExpressJS para processar a página do índice a partir da resposta.
 
 ```js
 async (getUserInput) => {
@@ -88,7 +88,7 @@ async (getUserInput) => {
     }
 ```
 
-Pug should be working.
+O Pug deve funcionar.
 
 ```js
 async (getUserInput) => {

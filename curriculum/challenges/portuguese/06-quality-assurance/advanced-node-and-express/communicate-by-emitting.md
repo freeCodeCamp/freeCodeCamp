@@ -38,11 +38,11 @@ socket.on('user count', function(data) {
 
 Agora, tente carregar o seu aplicativo, autentique-se e você deve ver no console do client '1', representando a contagem de usuários no momento! Tente carregar mais clients, e autenticar para ver o número subir.
 
-Envie sua página quando você achar que ela está certa. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#communicate-by-emitting-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#communicate-by-emitting-7" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 
-`currentUsers` should be defined.
+`currentUsers` deve ser definido.
 
 ```js
 async (getUserInput) => {
@@ -72,7 +72,7 @@ async (getUserInput) => {
 }
 ```
 
-Your client should be listening for `'user count'` event.
+O client deve estar escutando o evento `'user count'`.
 
 ```js
 async (getUserInput) => {

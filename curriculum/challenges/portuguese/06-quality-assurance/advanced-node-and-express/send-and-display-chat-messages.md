@@ -22,13 +22,13 @@ Dentro do código de envio do formulário, você deve enviar um evento depois de
 socket.emit('chat message', messageToSend);
 ```
 
-Agora, no servidor, você deve estar escutando o socket para o evento `'chat message'` com os dados nomeados como `message`. Once the event is received, it should emit the event `'chat message'` to all sockets using `io.emit`, sending a data object containing the `username` and `message`.
+Agora, no servidor, você deve estar escutando o socket para o evento `'chat message'` com os dados nomeados como `message`. Quando o evento for recebido, ele deve emitir o evento `'chat message'` para todos os sockets usando o `io.emit` enviando um objeto de dados contendo `username` e `message`.
 
-In `client.js`, you should now listen for event `'chat message'` and, when received, append a list item to `#messages` with the username, a colon, and the message!
+No `client.js`, agora, você deve escutar o evento `'chat message'` e, quando ele for recebido, associe um item de lista a `#messages` com o nome de usuário, um sinal de dois-pontos e a mensagem!
 
 Neste ponto, o chat deve estar totalmente funcional e enviando mensagens para todos os clients!
 
-Envie sua página quando você achar que ela está certa. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

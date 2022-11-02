@@ -8,11 +8,11 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 # --description--
 
-You are not loading an actual user object since the database is not set up. Connect to the database once, when you start the server, and keep a persistent connection for the full life-cycle of the app. To do this, add your database's connection string (for example: `mongodb+srv://<username>:<password>@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) to the environment variable `MONGO_URI`. Este é usado no arquivo `connection.js`.
+Você não está carregando um objeto do usuário de fato, já que o banco de dados não está configurado. Conecte-se ao banco de dados uma vez, ao iniciar o servidor e mantenha uma conexão persistente para todo o ciclo de vida do aplicativo. Para fazer isso, adicione a string de conexão do banco de dados (por exemplo: `mongodb+srv://<username>:<password>@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) à variável de ambiente `MONGO_URI`. Este é usado no arquivo `connection.js`.
 
-*If you are having issues setting up a free database on MongoDB Atlas, check out this <a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">tutorial</a>.*
+*Se você estiver com problemas na criação de um banco de dados gratuito no MongoDB Atlas, confira o <a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">tutorial</a>.*
 
-Now you want to connect to your database, then start listening for requests. The purpose of this is to not allow requests before your database is connected or if there is a database error. To accomplish this, encompass your serialization and app routes in the following code:
+Agora, conecte-se ao nosso banco de dados. Em seguida, vamos começar a escutar solicitações. O objetivo é não permitir solicitações antes do banco de dados estar conectado ou se houver um erro no banco de dados. Para fazer isso, englobe a serialização e as rotas da aplicação no código a seguir:
 
 ```javascript
 myDB(async client => {
@@ -40,7 +40,7 @@ myDB(async client => {
 
 Certifique-se de descomentar o código `myDataBase` em `deserializeUser` e de editar o seu `done(null, null)` para incluir o `doc`.
 
-Envie sua página quando você achar que ela está certa. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implement-the-serialization-of-a-passport-user-5" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implement-the-serialization-of-a-passport-user-5" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

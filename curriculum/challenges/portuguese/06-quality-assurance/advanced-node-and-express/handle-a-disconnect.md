@@ -18,11 +18,11 @@ socket.on('disconnect', () => {
 });
 ```
 
-To make sure clients continuously have the updated count of current users, you should decrease `currentUsers` by 1 when the disconnect happens then emit the `'user count'` event with the updated count.
+Para garantir que os clients tenham a contagem atualizada dos usuários atuais continuamente, você deve diminuir os `currentUsers` crie uma conta em 1 quando a desconexão acontece, emitindo o evento `'user count'` com a contagem atualizada.
 
 **Observação:** assim como ocorre com `'disconnect'`, todos os outros eventos que um socket pode emitir para o servidor devem ser tratados dentro do listener que estiver conectando, onde 'socket' está definido.
 
-Envie sua página quando você achar que ela está certa. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#handle-a-disconnect-8" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#handle-a-disconnect-8" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 
@@ -37,7 +37,7 @@ async (getUserInput) => {
 }
 ```
 
-Your client should be listening for `'user count'` event.
+O client deve estar escutando o evento `'user count'`.
 
 ```js
 async (getUserInput) => {
