@@ -1,6 +1,6 @@
 ---
 id: 60fadce90f85c50d0bb0dd4f
-title: Step 46
+title: Passo 46
 challengeType: 0
 dashedName: step-46
 ---

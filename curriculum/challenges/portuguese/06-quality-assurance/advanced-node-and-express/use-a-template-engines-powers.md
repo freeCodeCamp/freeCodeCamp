@@ -12,9 +12,9 @@ Uma das maiores características do uso de um mecanismo de modelos (template eng
 
 No seu arquivo Pug, você pode usar uma variável fazendo referência ao nome da variável como `#{variable_name}` em linha com outro texto em um elemento ou usando um sinal de igual no elemento sem um espaço, como em `p=variable_name`, que atribui o valor da variável ao texto do elemento p.
 
-Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site.
+O Pug tem a ver com usar o espaço em branco e as tabulações para mostrar elementos aninhados e diminuir a quantidade de código necessária para fazer um belo site.
 
-Take the following Pug code for example:
+Veja o seguinte código Pug, por exemplo:
 
 ```pug
 head
@@ -27,7 +27,7 @@ body
       p Get on it!
 ```
 
-The above yields the following HTML:
+O conteúdo acima fornece o seguinte HTML:
 
 ```html
 <head>
@@ -40,23 +40,23 @@ The above yields the following HTML:
 </body>
 ```
 
-Your `index.pug` file included in your project, uses the variables `title` and `message`.
+O arquivo `index.pug`, incluído no projeto, usa as variáveis `title` e `message`.
 
-Pass those from your server to the Pug file by adding an object as a second argument to your `res.render` call with the variables and their values. Give the `title` a value of `Hello` and `message` a value of `Please log in`.
+Passe esses dados do servidor adicionando um objeto como um segundo argumento para a chamada de `res.render` com as variáveis e seus valores. Dê a `title` o valor de `Hello` e a `message` o valor de `Please log in`.
 
-It should look like:
+Deve ficar assim:
 
 ```javascript
 res.render('index', { title: 'Hello', message: 'Please log in' });
 ```
 
-Now refresh your page, and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
+Agora atualize a página e você deve ver esses valores renderizados em sua visão no local correto, como estabelecido no arquivo `index.pug`!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode conferir o <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">projeto concluído até este ponto</a>.
 
 # --hints--
 
-Pug should correctly render variables.
+O Pug deve renderizar as variáveis corretamente.
 
 ```js
 async (getUserInput) => {

@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 Agora que o servidor *http* está montado na aplicação do *Express*, você precisa escutar o servidor *http*. Altere a linha com `app.listen` para `http.listen`.
 
-A primeira coisa que precisa ser tratada é escutar uma nova conexão do client. A palavra-chave <dfn>on</dfn> faz isso - escuta um evento específico. Ela requer 2 argumentos: uma string contendo o título do evento que é emitido e uma função pela qual os dados são passados. In the case of our connection listener, use `socket` to define the data in the second argument. Um socket é um client individual que está conectado.
+A primeira coisa que precisa ser tratada é escutar uma nova conexão do client. A palavra-chave <dfn>on</dfn> faz isso - escuta um evento específico. Ela requer 2 argumentos: uma string contendo o título do evento que é emitido e uma função pela qual os dados são passados. No caso do nosso listener de conexão, use o `socket` para definir os dados no segundo argumento. Um socket é um client individual que está conectado.
 
 Para escutar as conexões do servidor, adicione o seguinte na sua conexão do banco de dados:
 
@@ -36,13 +36,13 @@ Agora, para o client se conectar, basta adicionar o seguinte ao `client.js` que 
 let socket = io();
 ```
 
-O comentário suprime o erro que você normalmente veria, já que 'io' não está definido no arquivo. You have already added a reliable CDN to the Socket.IO library on the page in `chat.pug`.
+O comentário suprime o erro que você normalmente veria, já que 'io' não está definido no arquivo. Você já adicionou um CDN confiável à biblioteca socket.io na página em `chat.pug`.
 
-Now try loading up your app and authenticate and you should see in your server console `A user has connected`.
+Agora, tente carregar o aplicativo e autentique-se. Você deve ver no console do servidor a frase `A user has connected`.
 
 **Observação:** `io()` só funciona ao se conectar a um socket hospedado no mesmo url/servidor. Para se conectar a um socket externo hospedado em outro lugar, você usaria `io.connect('URL');`.
 
-Envie sua página quando você achar que ela está certa. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-the-environment-6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-the-environment-6" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

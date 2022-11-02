@@ -8,11 +8,11 @@ dashedName: create-new-middleware
 
 # --description--
 
-As is, any user can just go to `/profile` whether they have authenticated or not by typing in the URL. You want to prevent this by checking if the user is authenticated first before rendering the profile page. Este é o exemplo perfeito de quando criar um middleware.
+Da forma como está no momento, qualquer usuário pode ir até `/profile`, já tendo sido autenticado ou não, digitando o URL. Evite isso verificando se o usuário está autenticado primeiro antes de renderizar a página de perfil. Este é o exemplo perfeito de quando criar um middleware.
 
-The challenge here is creating the middleware function `ensureAuthenticated(req, res, next)`, which will check if a user is authenticated by calling Passport's `isAuthenticated` method on the `request` which checks if `req.user` is defined. If it is, then `next()` should be called. Otherwise, you can just respond to the request with a redirect to your homepage to login.
+O desafio aqui é cria a função do middleware `ensureAuthenticated(req, res, next)`, que vai verificar se um usuário está autenticado chamando o método `isAuthenticated` do Passport na `request` (solicitação), que verificará se `req.user` está definido. Se estiver, então `next()` deve ser chamado. Caso contrário, você pode apenas responder ao pedido com um redirecionamento à página inicial para fazer o login.
 
-An implementation of this middleware is:
+Uma implementação deste middleware é:
 
 ```javascript
 function ensureAuthenticated(req, res, next) {
@@ -23,7 +23,7 @@ function ensureAuthenticated(req, res, next) {
 };
 ```
 
-Create the above middleware function, then pass `ensureAuthenticated` as middleware to requests for the profile page before the argument to the GET request:
+Crie a função de middleware acima e, em seguida, passe `ensureAuthenticated` como middleware para requisições de perfil antes do argumento para a requisição GET:
 
 ```javascript
 app
@@ -33,11 +33,11 @@ app
  });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#create-new-middleware-8" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#create-new-middleware-8" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 
-The middleware `ensureAuthenticated` should be implemented and attached to the `/profile` route.
+O middleware `ensureAuthenticated` deve ser implementado e anexado à rota `/profile`.
 
 ```js
 async (getUserInput) => {
@@ -57,7 +57,7 @@ async (getUserInput) => {
 }
 ```
 
-An unauthenticated GET request to `/profile` should correctly redirect to `/`.
+Uma solicitação GET não autenticado para `/profile` deve redirecionar corretamente para `/`.
 
 ```js
 async (getUserInput) => {

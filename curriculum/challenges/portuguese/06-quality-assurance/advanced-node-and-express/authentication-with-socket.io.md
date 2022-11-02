@@ -65,7 +65,7 @@ console.log('user ' + socket.request.user.username + ' connected');
 
 Ele vai logar no console do servidor que está conectado!
 
-Envie sua página quando você achar que ela está certa. If you're running into errors, you can  <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto até este ponto</a>.
 
 # --hints--
 

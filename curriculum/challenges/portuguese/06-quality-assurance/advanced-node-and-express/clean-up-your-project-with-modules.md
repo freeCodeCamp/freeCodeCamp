@@ -24,9 +24,9 @@ Por fim, pegue todas as rotas do servidor, cole-as em seus novos arquivos e remo
 
 Continue adicionando-os até que não existam mais erros e que o arquivo do servidor não tenha mais nenhuma rota (**exceto a rota no bloco catch**)!
 
-Do the same thing in your `auth.js` file with all of the things related to authentication such as the serialization and the setting up of the local strategy and erase them from your server file. Certifique-se de adicionar as dependências e de chamar `auth(app, myDataBase)` no servidor no mesmo local.
+Faça a mesma coisa no arquivo `auth.js` com tudo o que estiver relacionado à autenticação, como a serialização e a configuração da estratégia local, e apague-os do arquivo do servidor. Certifique-se de adicionar as dependências e de chamar `auth(app, myDataBase)` no servidor no mesmo local.
 
-Envie sua página quando você achar que ela está certa. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#clean-up-your-project-with-modules-2" target="_blank" rel="noopener noreferrer nofollow">check out an example of the completed project</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#clean-up-your-project-with-modules-2" target="_blank" rel="noopener noreferrer nofollow">conferir um exemplo do projeto concluído</a>.
 
 # --hints--
 

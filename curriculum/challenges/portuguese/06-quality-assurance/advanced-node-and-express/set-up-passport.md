@@ -8,13 +8,13 @@ dashedName: set-up-passport
 
 # --description--
 
-It's time to set up *Passport* so you can finally start allowing a user to register or log in to an account. In addition to Passport, you will use Express-session to handle sessions. Express-session has a ton of advanced features you can use, but for now you are just going to use the basics. Using this middleware saves the session id as a cookie in the client, and allows us to access the session data using that id on the server. This way, you keep personal account information out of the cookie used by the client to tell to your server clients are authenticated and keep the *key* to access the data stored on the server.
+É hora de configurar o *Passport* para que você possa finalmente começar a permitir que um usuário se registre ou faça o login em uma conta. Além do Passport, você usará Express-session para tratar das sessões. Express-session tem dezenas de recursos avançados que você pode usar, mas, no momento, você o usará apenas para o básico. Usar este middleware salva o id da sessão como um cookie no client e nos permite acessar os dados da sessão usando esse id no servidor. Desta forma, você manterá as informações da conta pessoal fora do cookie usado pelo client para informar ao servidor que os clients estão autenticados e, simplesmente, manter a *chave* para acessar os dados armazenados no servidor.
 
 `passport@~0.4.1` e `express-session@~1.17.1` já estão instalados e listados como dependências no arquivo `package.json`.
 
-You will need to set up the session settings and initialize Passport. First, create the variables `session` and `passport` to require `express-session` and `passport` respectively.
+Você precisará configurar as definições de sessão e inicializar o Passport. Primeiro, crie as variáveis `session` e `passport` para exigir `express-session` e `passport`, respectivamente.
 
-Then, set up your Express app to use the session by defining the following options:
+Em seguida, configure a aplicação do Express para que use o session, definindo as seguintes opções:
 
 ```javascript
 app.use(session({
@@ -25,15 +25,15 @@ app.use(session({
 }));
 ```
 
-Be sure to add `SESSION_SECRET` to your `.env` file, and give it a random value. This is used to compute the hash used to encrypt your cookie!
+Certifique-se de adicionar `SESSION_SECRET` ao arquivo `.env` e de dar a ele um valor aleatório. Isto é usado para calcular o hash usado para criptografar seu cookie!
 
-After you do all that, tell your express app to **use** `passport.initialize()` and `passport.session()`.
+Depois de fazer tudo isso, informe ao aplicativo do express para que **use** `passport.initialize()` e `passport.session()`.
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-passport-3" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-passport-3" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 
-Passport and Express-session should be dependencies.
+O Passport e o Express-session devem ser dependências.
 
 ```js
 async (getUserInput) => {
@@ -53,7 +53,7 @@ async (getUserInput) => {
 }
 ```
 
-Dependencies should be correctly required.
+As dependências devem ser solicitados corretamente.
 
 ```js
 async (getUserInput) => {
@@ -73,7 +73,7 @@ async (getUserInput) => {
 }
 ```
 
-Express app should use new dependencies.
+A aplicação do Express deve usar novas dependências.
 
 ```js
 async (getUserInput) => {
@@ -85,7 +85,7 @@ async (getUserInput) => {
 }
 ```
 
-Session and session secret should be correctly set up.
+Session e session secret devem estar definidos corretamente.
 
 ```js
 async (getUserInput) => {

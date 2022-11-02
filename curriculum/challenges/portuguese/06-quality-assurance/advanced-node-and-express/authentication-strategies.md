@@ -10,13 +10,13 @@ dashedName: authentication-strategies
 
 Uma estratégia é uma maneira de autenticar um usuário. Você pode usar uma estratégia para permitir que os usuários se autentiquem com base em informações salvas localmente (se você os tem registrados primeiro) ou em uma variedade de provedores, como o Google ou o GitHub. Para este projeto, usaremos o middleware chamado Passaport. O Passaport fornece um conjunto abrangente de estratégias que suportam a autenticação usando um nome de usuário e senha, GitHub, Google e muito mais.
 
-`passport-local@~1.0.0` has already been added as a dependency. Add it to your server as follows:
+`passport-local@~1.0.0` já foi adicionado como uma dependência. Adicione-o ao servidor da seguinte forma:
 
 ```javascript
 const LocalStrategy = require('passport-local');
 ```
 
-Tell passport to **use** an instantiated `LocalStrategy` object with a few settings defined. Make sure this (as well as everything from this point on) is encapsulated in the database connection since it relies on it!:
+Diga ao passport para **usar** um objeto `LocalStrategy` instanciado com algumas configurações definidas. Certifique-se de que isso (assim como tudo a partir desse ponto) esteja encapsulado na conexão do banco de dados, já que isso depende dela!:
 
 ```javascript
 passport.use(new LocalStrategy((username, password, done) => {
@@ -30,13 +30,13 @@ passport.use(new LocalStrategy((username, password, done) => {
 }));
 ```
 
-This is defining the process to use when you try to authenticate someone locally. First, it tries to find a user in your database with the username entered. Then, it checks for the password to match. Finally, if no errors have popped up that you checked for (e.g. an incorrect password), the `user` object is returned and they are authenticated.
+Isso está definindo o processo a ser usado ao tentar autenticar alguém localmente. Primeiro, ele tenta encontrar um usuário no seu banco de dados com o nome de usuário inserido. Então, ele verifica se a senha tem correspondência. Por fim, se nenhum erro que você verificou tiver sido exibido (por exemplo, uma senha incorreta), o objeto `user` é retornado e o usuário é autenticado.
 
-Many strategies are set up using different settings. Generally, it is easy to set it up based on the README in that strategy's repository. A good example of this is the GitHub strategy where you don't need to worry about a username or password because the user will be sent to GitHub's auth page to authenticate. As long as they are logged in and agree then GitHub returns their profile for you to use.
+Muitas estratégias são criadas usando configurações diferentes. Em geral, é fácil configurá-las com base no README no repositório da estratégia. Um bom exemplo disso é a estratégia do GitHub, onde não é preciso se preocupar com um nome de usuário ou senha, porque o usuário será enviado para a página de autenticação do GitHub para ser autenticado. Desde que estejam logados e que concordem com isso, o GitHub retorna seu perfil para que se possa vê-lo.
 
-In the next step, you will set up how to actually call the authentication strategy to validate a user based on form data.
+Na próxima etapa, você vai configurar como chamar realmente a estratégia de autenticação para validar um usuário com base nos dados do formulário.
 
-Envie sua página quando você achar que ela está certa. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-strategies-6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-strategies-6" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 
@@ -55,7 +55,7 @@ async (getUserInput) => {
 }
 ```
 
-Passport-local should be correctly required and set up.
+Passport-local deve ser solicitado e configurado corretamente.
 
 ```js
 async (getUserInput) => {
