@@ -38,7 +38,6 @@ jobs:
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
           node-version: 16.x
-          cache: 'npm'
 
       - name: Set freeCodeCamp Environment Variables
         run: |
