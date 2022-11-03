@@ -14,7 +14,6 @@ import {
 } from './selectors';
 
 const { forumLocation } = envData;
-const Diff = require('diff');
 
 function filesToMarkdown(challengeFiles = {}) {
   const moreThanOneFile = challengeFiles?.length > 1;
@@ -57,6 +56,7 @@ function createQuestionEpic(action$, state$, { window }) {
       } = challengeMetaSelector(state);
 
       if (superBlock === SuperBlocks.RespWebDesignNew) {
+        const { diffTrimmedLines } = require('diff');
         const runFiltration = diffFile => {
           const onlyChangedLines = diffFile.filter(
             obj => obj.removed || obj.added
@@ -71,9 +71,7 @@ function createQuestionEpic(action$, state$, { window }) {
         };
 
         const createDiff = file => {
-          const str = runFiltration(
-            Diff.diffTrimmedLines(file.contents, file.seed)
-          );
+          const str = runFiltration(diffTrimmedLines(file.contents, file.seed));
           return { ...file, contents: str, isDiff: true };
         };
 
