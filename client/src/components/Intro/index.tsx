@@ -17,6 +17,7 @@ interface IntroProps {
   slug?: string;
   username?: string;
   onDonationAlertClick?: () => void;
+  isDonating: boolean;
 }
 
 const Intro = ({
@@ -26,7 +27,8 @@ const Intro = ({
   complete,
   completedChallengeCount,
   slug,
-  onDonationAlertClick
+  onDonationAlertClick,
+  isDonating
 }: IntroProps): JSX.Element => {
   const { t } = useTranslation();
   if (pending && !complete) {
@@ -58,7 +60,10 @@ const Intro = ({
             </span>
           </blockquote>
         </div>
-        <LearnAlert onDonationAlertClick={onDonationAlertClick} />
+        <LearnAlert
+          onDonationAlertClick={onDonationAlertClick}
+          isDonating={isDonating}
+        />
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (
           <div className='intro-description'>
             <Spacer />

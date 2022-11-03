@@ -6,10 +6,12 @@ import { Link } from '../helpers';
 
 interface LearnAlertProps {
   onDonationAlertClick?: () => void;
+  isDonating: boolean;
 }
 
 const LearnAlert = ({
-  onDonationAlertClick
+  onDonationAlertClick,
+  isDonating
 }: LearnAlertProps): JSX.Element | null => {
   const { t } = useTranslation();
   const researchRecruitment = useFeature('show-research-recruitment-alert');
@@ -80,7 +82,7 @@ const LearnAlert = ({
   );
 
   if (researchRecruitment.on) return researchRecruitmentAlert;
-  else if (universityCreation.on) return universityCreationAlert;
+  else if (universityCreation.on && !isDonating) return universityCreationAlert;
   else if (seasionalMessage.on) return seasionalMessageAlert;
   else return null;
 };

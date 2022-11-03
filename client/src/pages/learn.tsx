@@ -29,6 +29,7 @@ interface User {
   name: string;
   username: string;
   completedChallengeCount: number;
+  isDonating: boolean;
 }
 
 const mapStateToProps = createSelector(
@@ -68,7 +69,7 @@ function LearnPage({
   isSignedIn,
   executeGA,
   fetchState: { pending, complete },
-  user: { name = '', completedChallengeCount = 0 },
+  user: { name = '', completedChallengeCount = 0, isDonating = false },
   data: {
     challengeNode: {
       challenge: {
@@ -88,7 +89,6 @@ function LearnPage({
       }
     });
   };
-
   return (
     <LearnLayout>
       <Helmet title={t('metaTags:title')} />
@@ -103,6 +103,7 @@ function LearnPage({
               pending={pending}
               slug={slug}
               onDonationAlertClick={onDonationAlertClick}
+              isDonating={isDonating}
             />
             <Map />
             <Spacer size={2} />
