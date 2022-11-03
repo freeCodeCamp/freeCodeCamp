@@ -18,7 +18,7 @@ import CertificationIcon from '../../../assets/icons/certification-icon';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
-import { Link } from '../../helpers';
+import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
 import TimelinePagination from './timeline-pagination';
 
@@ -164,7 +164,7 @@ function TimelineInner({
   const endIndex = pageNo * ITEMS_PER_PAGE;
 
   return (
-    <>
+    <FullWidthRow>
       <h2 className='text-center'>{t('profile.timeline')}</h2>
       {completedMap.length === 0 ? (
         <p className='text-center'>
@@ -225,7 +225,7 @@ function TimelineInner({
         previewTitle={projectTitle}
         showProjectPreview={true}
       />
-    </>
+    </FullWidthRow>
   );
 }
 
