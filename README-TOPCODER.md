@@ -8,6 +8,7 @@ This file describes the modifications Topcoder made to the freeCodeCamp.org appl
 - [Learning Platform API](#the-learning-platform-api)
 - [MongoDB Configuration](#mongodb-configuration)
 - [CI/CD Configuration](#cicd-configuration)
+- [Syncing with FCC/main](#syncing-with-fccmain)
 
 ### The Learning Platform
 
@@ -52,3 +53,29 @@ In order to connect the [freeCodeCamp API](#learning-platform-api) to the MongoD
 We initially attempted to deploy the freeCodeCamp application and API via our standard CircleCI system, however we were never able to get this to work properly. The application build failed repeatedly at various points and was never successful.
 
 Our DevOps team stood-up a new Jenkins CI/CD system in an AWS EC2 instance (see the [Jenkinsfile](./Jenkinsfile) in the project root for details) and this was successful. However, the build and deployment of the application and API currently takes over 20 minutes. We have an outstanding request with the DevOps team to address this.
+
+### Syncing with FCC/main
+
+Here are a few notes regarding how to merge latest from FCC/main
+
+- create a new branch `prod-merge` based off of origin/prod
+- fetch latest from FCC
+- merge fcc/main into `prod-merge`
+- open all conflicts in an editor for a better overview of what has changed
+
+- when there are new elements/features added on FCC, check freecodecamp.org/learn to see the change in action. Keep if it's something usefull. Remove if it's something we specifically got rid of or doesn't match our goals.
+- check the bellow list of known changes from our side that need to be kept as they are:
+
+  1. Remove "Donate Now" button from everywhere
+  2. Added QA shortened course (in intro.json)
+  3. Global font-family changed to Roboto. Font changes should be kept as "ours".
+  4. Override Mobile Layout.
+  5. Action Row Icon replacement
+  6. Added actions to redux
+  7. Added error message on form fields
+  8. Changed Font size and color for Editor.css
+     9.Removed Reset modal, Help modal
+  9. Added lesson title old course side panel
+  10. API changes for Auth (I'll write the readme for this item)
+
+- after resolving the conflicts, check the UI is still intact
