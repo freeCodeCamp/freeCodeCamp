@@ -1,3 +1,10 @@
+:root {
+  --test-icon-spacing: 0.5rem;
+  --test-heading-spacing: 0.5rem;
+  --test-heading-margin: 0.5em 0 0;
+  --test-paragraph-margin: 0.45rem 0 0;
+}
+
 .monaco-editor .margin-view-overlays .line-numbers,
 .monaco-editor .margin-view-overlays .myLineDecoration + .line-numbers {
   color: var(--primary-color);
@@ -117,17 +124,16 @@ textarea.inputarea {
 }
 
 .test-feedback p {
-  margin: 0.45rem 0 0;
+  margin: var(--test-paragraph-margin);
   font-family: 'Lato', sans-serif;
 }
 
 .test-feedback h2 {
   font-size: 1rem;
   line-height: 1.5;
-  padding-right: 0.5rem;
   /* using float instead of inline display so screen readers recognize h2 as a block element */
   float: left;
-  margin: 0.5em 0 0;
+  margin: var(--test-heading-margin);
 }
 
 .test-feedback h2:after {
@@ -137,20 +143,21 @@ textarea.inputarea {
 .test-feedback svg {
   height: 1.5rem;
   width: auto;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: var(--test-icon-spacing);
 }
 
 .test-feedback .test-status,
 .test-feedback .hint-status {
   margin-top: 1rem;
   display: flex;
+  gap: var(--test-icon-spacing);
   flex-direction: row;
 }
 
 .test-status-description,
 .hint-description {
   display: flex;
+  gap: var(--test-heading-spacing);
   width: 100%;
 }
 
