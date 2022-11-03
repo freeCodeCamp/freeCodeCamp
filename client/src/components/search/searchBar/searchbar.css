@@ -28,6 +28,7 @@
   width: 26px;
   background-color: var(--gray-75);
   padding-inline: 3px;
+  border-radius: 0px 15px 0px 15px / 0px 10px 0px 10px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
@@ -38,7 +39,9 @@
 }
 
 .fcc_searchBar .ais-Hits {
+  top: 70px;
   width: calc(100vw - 350px);
+  left: 15px;
 }
 
 /* hits */
@@ -127,6 +130,8 @@ and arrow keys */
   display: flex;
   flex-direction: row-reverse;
   gap: 0.25em;
+  top: var(--header-height);
+  right: 15px;
 }
 
 @media (min-width: 981px) {
@@ -139,10 +144,15 @@ and arrow keys */
     max-width: 520px;
   }
   .fcc_searchBar .ais-Hits {
+    top: auto;
     width: calc(100% - 20px);
     max-width: 500px;
+    left: 10px;
   }
   .fcc_searchBar .ais-SearchBox-form {
     display: flex;
+    position: static;
+    top: auto;
+    right: 15px;
   }
 }
