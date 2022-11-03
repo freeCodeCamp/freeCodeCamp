@@ -75,7 +75,7 @@ const LearnAlert = ({
           to='/donate'
           onClick={onDonationAlertClick}
         >
-          {t('buttons.donate')}
+          {t('donate.become-supporter')}
         </Link>
       </p>
     </Alert>
