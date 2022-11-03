@@ -499,19 +499,10 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
         </li>
         {username && (
           <Fragment key='signout-frag'>
-            {/* <li className='nav-line' key='sign-out'>
-              <a
-                className='nav-link nav-link-signout'
-                href={`${apiLocation}/signout`}
-                onBlur={this.handleBlur}
-                onKeyDown={this.handleMenuKeyDown}
-              >
-                {t('buttons.sign-out')}
-              </a>
-            </li> */}
             <li className='nav-line' key='sign-out'>
               <button
                 className='nav-link nav-link-signout'
+                data-value='sign-out-button'
                 onClick={this.handleSignOutClick}
                 onKeyDown={this.handleLanguageMenuKeyDown}
               >

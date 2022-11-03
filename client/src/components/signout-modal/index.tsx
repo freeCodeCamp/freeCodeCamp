@@ -72,6 +72,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
         <Button
           block={true}
           bsStyle='primary'
+          data-test-label='cancel-signout'
           className='btn-invert'
           onClick={handleModalHide}
           type='button'
@@ -82,6 +83,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
         <Button
           block={true}
           bsStyle='danger'
+          data-test-label='signout'
           className='btn-signout'
           onClick={handleSignout}
           type='button'
