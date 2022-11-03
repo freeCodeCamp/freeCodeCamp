@@ -17,7 +17,6 @@ export const actionTypes = createTypes(
     'onlineStatusChange',
     'serverStatusChange',
     'resetUserData',
-    'signoutUser',
     'tryToShowCodeAlly',
     'tryToShowDonationModal',
     'executeGA',
