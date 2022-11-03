@@ -1118,6 +1118,7 @@ When a countdown reaches zero (NOTE: timer MUST reach 00:00), a sound indicating
     }
   });
   // start the 25 + 5 clock
+  document.getElementById('beep').volume = 0;
   Array.of('start_stop').map((buttonId) => document.getElementById(buttonId)).forEach((key) => {
     if (key && typeof key.click === 'function') {
       key.click();
