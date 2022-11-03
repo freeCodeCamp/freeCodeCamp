@@ -1,5 +1,5 @@
 #learn-app-wrapper .desktop-layout,
-#learn-app-wrapper .mobile-layout {
+#mobile-layout {
   display: flex;
   flex-direction: column;
   min-height: 0;
