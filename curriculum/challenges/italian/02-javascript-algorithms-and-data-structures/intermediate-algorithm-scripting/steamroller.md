@@ -42,6 +42,13 @@ La tua soluzione non dovrebbe utilizzare i metodi `Array.prototype.flat()` o `Ar
 assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
 ```
 
+Le variabili globali non dovrebbero essere utilizzate.
+
+```js
+steamrollArray([1, {}, [3, [[4]]]])
+assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4])
+```
+
 # --seed--
 
 ## --seed-contents--

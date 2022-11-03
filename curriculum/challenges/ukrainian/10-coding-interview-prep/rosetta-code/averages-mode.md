@@ -1,14 +1,14 @@
 ---
 id: 594d8d0ab97724821379b1e6
 title: Середні значення/Режим
-challengeType: 5
+challengeType: 1
 forumTopicId: 302226
 dashedName: averagesmode
 ---
 
 # --description--
 
-Напишіть програму для пошуку значення [режиму](https://en.wikipedia.org/wiki/Mode (statistics) "wp: Mode (statistics)") колекції.
+Write a function `mode` to find the value that appears most in an array.
 
 Випадок, коли колекція є порожньою, можна ігнорувати. Необхідно бути обережним у випадку, коли режим не є унікальним.
 

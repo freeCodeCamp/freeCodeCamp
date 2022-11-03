@@ -21,10 +21,7 @@ export default function SoundSettings({
   const [volumeDisplay, setVolumeDisplay] = useState(
     (store.get('soundVolume') as number) ?? 50
   );
-
-  const soundInterval = setTimeout(() => {
-    void playTone('tests-completed');
-  }, 200);
+  const [mayPlay, setMayPlay] = useState(true);
 
   function handleVolumeChange(event: ChangeEvent<HTMLInputElement>) {
     const inputValue = Number(event.target.value);
@@ -32,8 +29,14 @@ export default function SoundSettings({
     store.set('soundVolume', inputValue);
 
     setVolumeDisplay((store.get('soundVolume') as number) ?? 50);
-    clearTimeout(soundInterval);
-    soundInterval;
+
+    if (mayPlay) {
+      void playTone('tests-completed');
+      setMayPlay(false);
+      setTimeout(() => {
+        setMayPlay(true);
+      }, 200);
+    }
   }
 
   return (

@@ -5,11 +5,13 @@ export const ns = 'app';
 export const actionTypes = createTypes(
   [
     'appMount',
+    'allowBlockDonationRequests',
     'hardGoTo',
     'closeDonationModal',
     'hideCodeAlly',
     'preventBlockDonationRequests',
     'preventProgressDonationRequests',
+    'tryToShowDonationModal',
     'openDonationModal',
     'onlineStatusChange',
     'serverStatusChange',

@@ -1,14 +1,14 @@
 ---
 id: 594d966a1467eb84194f0086
 title: Averages/Pythagorean means
-challengeType: 5
+challengeType: 1
 forumTopicId: 302227
 dashedName: averagespythagorean-means
 ---
 
 # --description--
 
-Compute all three of the [Pythagorean means](https://en.wikipedia.org/wiki/Pythagorean means "wp: Pythagorean means") of the set of integers $1$ through $10$ (inclusive).
+Compute all three of the <a href="https://en.wikipedia.org/wiki/Pythagorean_means" target="_blank" rel="noopener noreferrer nofollow">Pythagorean means</a> of the set of integers $1$ through $10$ (inclusive).
 
 Show that $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ for this set of positive integers.
 
@@ -23,7 +23,7 @@ Show that $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$
 
 # --instructions--
 
-When writing your function, assume the input is an ordered array of all inclusive numbers.
+When writing your function, assume the input is an ordered array of all-inclusive numbers.
 
 For the answer, please output an object in the following format:
 

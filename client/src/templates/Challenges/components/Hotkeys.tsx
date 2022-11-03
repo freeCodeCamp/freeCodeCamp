@@ -5,15 +5,17 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { ChallengeFiles, Test, User } from '../../../redux/prop-types';
 
-import { userSelector } from '../../../redux';
+import { userSelector } from '../../../redux/selectors';
+import {
+  setEditorFocusability,
+  submitChallenge,
+  openModal
+} from '../redux/actions';
 import {
   canFocusEditorSelector,
-  setEditorFocusability,
   challengeFilesSelector,
-  submitChallenge,
-  challengeTestsSelector,
-  openModal
-} from '../redux';
+  challengeTestsSelector
+} from '../redux/selectors';
 import './hotkeys.css';
 import { isFinalProject } from '../../../../utils/challenge-types';
 

@@ -27,7 +27,7 @@ assert(img?.nextElementSibling?.className === 'keys');
 assert(img?.previousElementSibling === null);
 ```
 
-`img` 元素應該有一個 `class` 設置爲 logo。
+`img` 元素應將 `class` 設置爲 `logo`。
 
 ```js
 const img = document.querySelector('img');

@@ -8,13 +8,11 @@ dashedName: set-up-passport
 
 # --description--
 
-现在我们来创建 *Passport*，最终我们需要用它来实现用户注册和登录。 除了 Passport，我们还会用 Express-session 来处理 session（会话）。 在客户端，我们可以用这个中间件把 session id 储存到 cookie。同时，我们可以在服务器上通过这个 id 访问 session 数据。 通过这种方式，我们无需把用户的个人账号信息存到 cookie，来完成用户的验证。只需要用这个 id 作为 *key* 来访问服务器上用户的数据即可。
+现在我们来创建 *Passport*，最终我们需要用它来实现用户注册和登录。 除了 Passport，我们还会用 Express-session 来处理 session（会话）。 Express-session 有许多高级特性，但我们暂时只需要了解其基础功能。 在客户端，我们可以用这个中间件把 session id 储存到 cookie。同时，我们可以在服务器上通过这个 id 访问 session 数据。 通过这种方式，我们无需把用户的个人账号信息存到 cookie，来完成用户的验证。只需要用这个 id 作为 *key* 来访问服务器上用户的数据即可。
 
-为了在你的项目中使用 Passport，首先你需要在 package.json 文件中添加依赖： `passport@~0.4.1`
+`passport@~0.4.1` 和 `express-session@~1.17.1` 已经安装，并且在你的 `package.json` 文件中均被列为依赖项。
 
-此外，还需要添加 Express-session 作为依赖。 Express-session 有许多高级特性，但我们暂时只需要了解其基础功能。 `express-session@~1.17.1`
-
-现在，我们需要配置 session 并初始化 Passport。 请先创建变量 “session” 和 “passport” 来分别引入 “express-session” 和 “passport”。
+现在，你需要配置 session 并初始化 Passport。 请先创建变量 “session” 和 “passport” 来分别引入 “express-session” 和 “passport”。
 
 为了让 express 应用可以使用 session，我们需要添加一些基础选项。 请在 .env 文件中添加字段 “SESSION_SECRET”，并给它赋一个随机值， 便于加密 cookie、计算哈希。
 
@@ -29,11 +27,11 @@ app.use(session({
 
 还有，我们需要让 express **使用** “passport.initialize()” 和 “passport.session()”。 （例如，`app.use(passport.initialize());`）。
 
-完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c)的答案。
+完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c" target="_blank" rel="noopener noreferrer nofollow">查看已执行项目的当前进度</a>。
 
 # --hints--
 
-应添加 Passort 和 express-session 作为依赖。
+应添加 Passport 和 Express-session 作为依赖。
 
 ```js
 (getUserInput) =>
@@ -103,7 +101,7 @@ Express app 可以使用新的依赖。
   );
 ```
 
-应正确设置 session 和 session secret。
+应正确设置 Session 和会话密码。
 
 ```js
 (getUserInput) =>

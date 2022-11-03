@@ -8,14 +8,11 @@ import { debounce } from 'lodash';
 import { challengeTypes } from '../../../../utils/challenge-types';
 
 import './tool-panel.css';
-import {
-  openModal,
-  executeChallenge,
-  challengeMetaSelector,
-  submitChallenge
-} from '../redux';
+import { openModal, executeChallenge, submitChallenge } from '../redux/actions';
+import { challengeMetaSelector } from '../redux/selectors';
 
-import { saveChallenge, isSignedInSelector } from '../../../redux';
+import { saveChallenge } from '../../../redux/actions';
+import { isSignedInSelector } from '../../../redux/selectors';
 
 const mapStateToProps = createSelector(
   challengeMetaSelector,

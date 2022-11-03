@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-scatterplot-graph
 
 # --description--
 
-**Obiettivo:** crea un'app funzionalmente simile a questa: <a href="https://codepen.io/freeCodeCamp/full/bgpXyK" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/bgpXyK</a>.
+**Obiettivo:** crea un'app funzionalmente simile a questa: <a href="https://scatterplot-graph.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://scatterplot-graph.freecodecamp.rocks</a>.
 
 Soddisfa le user story qui sotto e supera tutti i test. Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 

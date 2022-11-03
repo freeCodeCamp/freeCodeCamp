@@ -16,11 +16,11 @@ import Hotkeys from '../../components/Hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
 import {
   challengeMounted,
-  isChallengeCompletedSelector,
-  submitChallenge,
   updateChallengeMeta,
-  updateSolutionFormValues
-} from '../../redux';
+  updateSolutionFormValues,
+  submitChallenge
+} from '../../redux/actions';
+import { isChallengeCompletedSelector } from '../../redux/selectors';
 import SolutionForm from '../solution-form';
 
 // Redux Setup
@@ -177,9 +177,7 @@ class Project extends Component<ProjectProps, ProjectState> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
                 <ChallengeTitle
-                  block={block}
                   isCompleted={isChallengeCompleted}
-                  superBlock={superBlock}
                   translationPending={translationPending}
                 >
                   {title}

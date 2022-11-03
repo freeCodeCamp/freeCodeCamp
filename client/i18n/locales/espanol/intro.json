@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Algoritmos de JavaScript y estructuras de datos (beta)",
-    "intro": [
-      "marcador de posición",
-      "marcador de posición"
-    ],
+    "intro": ["marcador de posición", "marcador de posición"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Construye un proyecto de cifrado cesar",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "Construye un proyecto de caja registradora",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "Construye un proyecto de comprobación de palíndromos",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Construye un proyecto de conversión de números romanos",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Construye un proyecto validador de números de teléfono",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Aprende JavaScript básico construyendo un juego de rol",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Aprende a validar formularios construyendo un contador de calorías",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprende programación funcional construyendo una hoja de cálculo",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -369,7 +342,7 @@
     "title": "Librerías de desarrollo de la interfaz",
     "intro": [
       "Ahora que estás familiarizado con HTML, CSS y JavaScript, mejora tus habilidades aprendiendo algunas de las librerías de interfaz más populares en la industria.",
-      "En la certificación de librerías de la interfaz, aprenderás a darle estilo a tu sitio rápidamente con Bootstrap. También aprenderás cómo añadir lógica a tus estilos CSS y extenderlos con Sass.",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "Después, construirás un carrito de compras y otras aplicaciones para aprender a crear poderosas aplicaciones de página única (SPAs) con React y Redux."
     ],
     "note": "",
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "Panel D3",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },

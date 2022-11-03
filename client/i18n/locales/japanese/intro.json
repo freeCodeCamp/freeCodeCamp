@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "JavaScript アルゴリズムとデータ構造 (ベータ版)",
-    "intro": [
-      "プレイスホルダー",
-      "プレイスホルダー"
-    ],
+    "intro": ["プレイスホルダー", "プレイスホルダー"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "シーザー暗号解析器作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "キャッシュレジスター作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "回文チェッカー作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "ローマ数字コンバーター作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "電話番号バリデーター作成プロジェクト",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "JavaScript の基礎の学習: ロールプレイングゲームを作る",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "フォームの検証の学習: カロリー計算機を作る",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "関数型プログラミングの学習: スプレッドシートを作る",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -369,7 +342,7 @@
     "title": "フロントエンド開発ライブラリ",
     "intro": [
       "今やあなたは HTML、CSS、そして JavaScript に精通しているので、業界内で最も一般的なフロントエンドライブラリのいくつかを学習することで技能を向上させましょう。",
-      "フロントエンド開発ライブラリ認定講座では、Bootstrap でサイトを素早く整える方法を学習します。Sassで CSS スタイルに論理を加え、そして拡張する方法についても学習します。",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "後ほど、ショッピングカートや他のアプリケーションを構築しながら、強力なシングルページアプリケーション (SPA) を React と Redux で作成する方法を学習します。"
     ],
     "note": "",
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "D3 ダッシュボード",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -820,7 +790,7 @@
   "misc-text": {
     "certification": "{{cert}} 認定",
     "browse-other": "他の無料の認定講座を閲覧する\n(上から順に受講することをお勧めします)",
-    "courses": "コース",
+    "courses": "コース一覧",
     "steps": "ステップ",
     "expand": "コースを展開",
     "collapse": "コースを閉じる",

@@ -8,7 +8,7 @@ dashedName: build-a-markdown-previewer
 
 # --description--
 
-**Objetivo:** Crea una aplicación con funciones similares a esta: <a href="https://codepen.io/freeCodeCamp/full/GrZVVO" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/GrZVVO</a>.
+**Objetivo:** Construye una aplicación que sea funcionalmente similar a esta: <a href="https://markdown-previewer.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://markdown-previewer.freecodecamp.rocks/</a>.
 
 Completa las historias de usuario a continuación y obtén todas las pruebas para aprobar. Utiliza cualquier librería o API que necesites. Dale tu propio estilo.
 

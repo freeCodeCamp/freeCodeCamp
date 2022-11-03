@@ -7,7 +7,7 @@ import { config } from 'dotenv';
 const envPath = resolve(__dirname, '../../.env');
 config({ path: envPath });
 
-import { availableLangs, auditedCerts } from '../../config/i18n/all-langs';
+import { availableLangs, auditedCerts } from '../../config/i18n';
 import { getChallengesForLang } from '../../curriculum/getChallenges';
 import { SuperBlocks } from '../../config/certification-settings';
 import { ChallengeNode } from '../../client/src/redux/prop-types';

@@ -28,7 +28,7 @@ socket.emit('chat message', messageToSend);
 
 На даний момент чат повинен бути повністю функціональним і спроможним відправляти повідомлення всім клієнтам!
 
-Підтвердіть вашу сторінку, якщо все зрозуміло. Якщо сталась якась помилка, ви маєте змогу перевірити зроблений проєкт до цього етапу [тут](https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016).
+Підтвердіть вашу сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

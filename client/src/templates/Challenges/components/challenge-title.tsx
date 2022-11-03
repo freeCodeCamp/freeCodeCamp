@@ -6,11 +6,8 @@ import { Link } from '../../../components/helpers/index';
 import './challenge-title.css';
 
 interface ChallengeTitleProps {
-  block: string;
   children: string;
   isCompleted: boolean;
-  showBreadCrumbs?: boolean;
-  superBlock: string;
   translationPending: boolean;
 }
 

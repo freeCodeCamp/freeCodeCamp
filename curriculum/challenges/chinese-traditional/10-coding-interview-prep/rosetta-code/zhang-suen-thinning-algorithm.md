@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad7
 title: Zhang-Suen thinning algorithm
-challengeType: 5
+challengeType: 1
 forumTopicId: 302347
 dashedName: zhang-suen-thinning-algorithm
 ---
@@ -40,7 +40,7 @@ It produces the thinned output:
   '                               ' ];
 ```
 
-## Algorithm
+## 算法
 
 Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
 
@@ -51,7 +51,7 @@ Obviously the boundary pixels of the image cannot have the full eight neighbours
 - Define $A(P1)$ = the number of transitions from white to black, ($0 \to 1$) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).
 - Define $B(P1)$ = the number of black pixel neighbours of P1. ($= \\sum(P2 \ldots P9)$)
 
-**Step 1:**
+**步驟 1：**
 
 All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
 
@@ -63,7 +63,7 @@ All pixels are tested and pixels satisfying all the following conditions (simult
 
 After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
 
-**Step 2:**
+**步驟 2：**
 
 All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
 
@@ -73,11 +73,11 @@ All pixels are again tested and pixels satisfying all the following conditions a
 4. At least one of $P2$, $P4$ and $P8$ is white
 5. At least one of $P2$, $P6$ and $P8$ is white
 
-After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
+在迭代圖像並收集滿足所有步驟 2 條件的所有像​​素後，所有這些滿足條件的像素再次設置爲白色。
 
 **Iteration:**
 
-If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
+如果在這輪步驟 1 或步驟 2 中設置了任何像素，則重複所有步驟，直到沒有圖像像素髮生如此變化。
 
 # --instructions--
 
@@ -85,19 +85,19 @@ Write a routine to perform Zhang-Suen thinning on the provided `image`, an array
 
 # --hints--
 
-`thinImage` should be a function.
+`thinImage` 應該是一個函數。
 
 ```js
 assert.equal(typeof thinImage, 'function');
 ```
 
-`thinImage` should return an array.
+`thinImage` 應該返回一個數組。
 
 ```js
 assert(Array.isArray(thinImage(_testImage1)));
 ```
 
-`thinImage` should return an array of strings.
+`thinImage` 應該返回一個字符串數組。
 
 ```js
 assert.equal(typeof thinImage(_testImage1)[0], 'string');

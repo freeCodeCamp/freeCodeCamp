@@ -8,7 +8,7 @@ dashedName: polygon-area-calculator
 
 # --description--
 
-你將通過使用我們的[Replit 入門代碼](https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator)來完成本項目。
+你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
 # --instructions--
 

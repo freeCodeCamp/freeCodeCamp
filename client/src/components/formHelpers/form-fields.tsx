@@ -9,7 +9,6 @@ import normalizeUrl from 'normalize-url';
 import React, { Fragment, useState } from 'react';
 import { Field } from 'react-final-form';
 import Warning from '../../assets/icons/warning';
-import { FormOptions } from './form';
 import {
   editorValidator,
   localhostValidator,
@@ -18,6 +17,15 @@ import {
   httpValidator
 } from './form-validators';
 import './form-field.css';
+
+export type FormOptions = {
+  ignored?: string[];
+  isEditorLinkAllowed?: boolean;
+  isLocalLinkAllowed?: boolean;
+  required?: string[];
+  types?: { [key: string]: string };
+  placeholders?: { [key: string]: string };
+};
 
 type FormFieldsProps = {
   formFields: { name: string; label: string }[];

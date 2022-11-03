@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "JavaScript 算法和數據結構項目（Beta 測試版本）",
-    "intro": [
-      "佔位符",
-      "佔位符"
-    ],
+    "intro": ["佔位符", "佔位符"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "構建一個愷撒密碼項目",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "構建一個收銀機項目",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "構建一個迴文檢測器項目",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "搭建一個羅馬數字轉換器項目",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "構建一個電話號碼檢驗器項目",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "通過構建角色扮演遊戲來學習 JavaScript",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "通過構建卡路里計數器來學習表單驗證",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "通過構建電子表格學習函數式編程",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "D3 面板",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },

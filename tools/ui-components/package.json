@@ -22,11 +22,11 @@
     "@babel/preset-typescript": "7.18.6",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "typescript": "4.8.3"
+    "typescript": "4.8.4"
   },
   "devDependencies": {
-    "@babel/core": "7.19.1",
-    "@babel/preset-env": "7.19.1",
+    "@babel/core": "7.19.6",
+    "@babel/preset-env": "7.19.4",
     "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-commonjs": "19.0.2",
     "@rollup/plugin-node-resolve": "13.3.0",
@@ -43,17 +43,17 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
     "@types/jest": "27.5.2",
-    "autoprefixer": "10.4.11",
+    "autoprefixer": "10.4.12",
     "babel-loader": "8.2.5",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
-    "postcss": "8.4.16",
+    "postcss": "8.4.18",
     "postcss-import": "14.1.0",
     "rimraf": "3.0.2",
-    "rollup": "2.79.0",
+    "rollup": "2.79.1",
     "rollup-plugin-postcss": "4.0.2",
     "rollup-plugin-terser": "7.0.2",
-    "tailwindcss": "3.1.8"
+    "tailwindcss": "3.2.1"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",

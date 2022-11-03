@@ -10,20 +10,20 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 Функціональне програмування - це створення та використання функцій, що не змінюються.
 
-Останній виклик представив метод `контикату ` як спосіб об'єднання масивів у новий без  мутації вихідних масивів. Порівняйте метод `concat` з методом `push`. `push` додає елемент в кінець викликаного масиву, який змінює його. Ось один із прикладів:
+The last challenge introduced the `concat` method as a way to merge arrays into a new array without mutating the original arrays. Порівняйте метод `concat` з методом `push`. `push` adds items to the end of the same array it is called on, which mutates that array. Ось один із прикладів:
 
 ```js
 const arr = [1, 2, 3];
-arr.push([4, 5, 6]);
+arr.push(4, 5, 6);
 ```
 
-`arr` матиме модифіковане значення `[1, 2, 3, [4, 5, 6]]`,що не є функціональним способом програмування.
+`arr` would have a modified value of `[1, 2, 3, 4, 5, 6]`, which is not the functional programming way.
 
-`concat` пропонує спосіб додавання нових елементів до кінця масиву без побічних ефектів, що мутують.
+`concat` offers a way to merge new items to the end of an array without any mutating side effects.
 
 # --instructions--
 
-Змініть функцію `nonMutatingPush` так що вона використовує `concat`, щоб додати `newItem` до кінця `original` замість `push`. Функція повинна повертати масив.
+Change the `nonMutatingPush` function so it uses `concat` to merge `newItem` to the end of `original` without mutating `original` or `newItem` arrays. Функція повинна повертати масив.
 
 # --hints--
 

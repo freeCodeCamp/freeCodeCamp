@@ -24,12 +24,12 @@ import { debounce } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
+import { saveChallenge } from '../../../redux/actions';
 import {
-  userSelector,
-  saveChallenge,
   isDonationModalOpenSelector,
-  isSignedInSelector
-} from '../../../redux';
+  isSignedInSelector,
+  userSelector
+} from '../../../redux/selectors';
 import {
   ChallengeFiles,
   Dimensions,
@@ -45,25 +45,27 @@ import {
   isFinalProject
 } from '../../../../utils/challenge-types';
 import {
-  canFocusEditorSelector,
-  challengeMetaSelector,
-  consoleOutputSelector,
   executeChallenge,
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  challengeTestsSelector,
   submitChallenge,
   initTests,
-  isResettingSelector,
   stopResetting,
-  isProjectPreviewModalOpenSelector,
   openModal,
-  isChallengeCompletedSelector,
-  testsRunningSelector,
-  attemptsSelector,
   resetAttempts
-} from '../redux';
+} from '../redux/actions';
+import {
+  attemptsSelector,
+  canFocusEditorSelector,
+  challengeMetaSelector,
+  consoleOutputSelector,
+  challengeTestsSelector,
+  isResettingSelector,
+  isProjectPreviewModalOpenSelector,
+  testsRunningSelector,
+  isChallengeCompletedSelector
+} from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
 import Code from '../../../assets/icons/code';
 import ExternalLink from '../../../assets/icons/link-external';
@@ -93,8 +95,10 @@ interface EditorProps {
   initialExt: string;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
+  isMobileLayout: boolean;
   isResetting: boolean;
   isSignedIn: boolean;
+  isUsingKeyboardInTablist: boolean;
   openHelpModal: () => void;
   openResetModal: () => void;
   output: string[];
@@ -286,6 +290,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
+    fontFamily: 'Hack-ZeroSlash, monospace',
     scrollBeyondLastLine: true,
     selectionHighlight: false,
     overviewRulerBorder: false,
@@ -382,6 +387,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor: editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
   ) => {
+    const { isMobileLayout, isUsingKeyboardInTablist } = props;
     // TODO this should *probably* be set on focus
     editorRef.current = editor;
     dataRef.current.editor = editor;
@@ -414,11 +420,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
-    // Users who are using screen readers should not have to move focus from
-    // the editor to the description every time they open a challenge.
-    if (props.canFocus && !accessibilityMode) {
-      focusIfTargetEditor();
-    } else focusOnHotkeys();
+
+    // Focus should not automatically leave the 'Code' tab when using a keyboard
+    // to navigate the tablist.
+    if (!isMobileLayout || !isUsingKeyboardInTablist) {
+      // Users who are using screen readers should not have to move focus from
+      // the editor to the description every time they open a challenge.
+      if (props.canFocus && !accessibilityMode) {
+        focusIfTargetEditor();
+      } else focusOnHotkeys();
+    }
     // Removes keybind for intellisense
     // Private method - hopefully changes with future version
     // ref: https://github.com/microsoft/monaco-editor/issues/102

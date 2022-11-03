@@ -4,7 +4,7 @@ import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
-import { openModal } from '../redux';
+import { openModal } from '../redux/actions';
 
 import './tool-panel.css';
 

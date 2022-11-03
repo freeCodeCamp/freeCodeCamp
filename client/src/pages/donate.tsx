@@ -17,7 +17,8 @@ import {
 
 import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/campers-image';
-import { signInLoadingSelector, userSelector, executeGA } from '../redux';
+import { executeGA } from '../redux/actions';
+import { signInLoadingSelector, userSelector } from '../redux/selectors';
 
 export interface ExecuteGaArg {
   type: string;

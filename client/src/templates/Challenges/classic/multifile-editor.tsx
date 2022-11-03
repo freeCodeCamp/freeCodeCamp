@@ -3,12 +3,15 @@ import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { editor } from 'monaco-editor';
-import { isDonationModalOpenSelector, userSelector } from '../../../redux';
+import {
+  userSelector,
+  isDonationModalOpenSelector
+} from '../../../redux/selectors';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
   visibleEditorsSelector
-} from '../redux';
+} from '../redux/selectors';
 import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
 import {
@@ -38,6 +41,8 @@ interface MultifileEditorProps {
   initialEditorContent?: string;
   initialExt?: string;
   initialTests: Test[];
+  isMobileLayout: boolean;
+  isUsingKeyboardInTablist: boolean;
   output?: string[];
   resizeProps: ResizeProps;
   title: string;
@@ -78,6 +83,8 @@ const MultifileEditor = (props: MultifileEditorProps) => {
     description,
     editorRef,
     initialTests,
+    isMobileLayout,
+    isUsingKeyboardInTablist,
     resizeProps,
     title,
     visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx },
@@ -144,6 +151,8 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     editorRef={editorRef}
                     fileKey={key as FileKey}
                     initialTests={initialTests}
+                    isMobileLayout={isMobileLayout}
+                    isUsingKeyboardInTablist={isUsingKeyboardInTablist}
                     resizeProps={resizeProps}
                     contents={props.contents ?? ''}
                     dimensions={props.dimensions ?? { height: 0, width: 0 }}

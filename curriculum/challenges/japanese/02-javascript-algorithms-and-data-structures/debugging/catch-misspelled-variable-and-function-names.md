@@ -24,7 +24,7 @@ netWorkingCapital の計算で使用されている 2 つの変数のスペル�
 assert(netWorkingCapital === 2);
 ```
 
-コードの変数にスペルミスがあってはいけません。
+There should be no instances of misspelled variables in the code.
 
 ```js
 assert(!code.match(/recievables/g));
@@ -36,7 +36,7 @@ assert(!code.match(/recievables/g));
 assert(code.match(/receivables/g).length == 2);
 ```
 
-コードの変数にスペルミスがあってはいけません。
+There should be no instances of misspelled variables in the code.
 
 ```js
 assert(!code.match(/payable;/g));

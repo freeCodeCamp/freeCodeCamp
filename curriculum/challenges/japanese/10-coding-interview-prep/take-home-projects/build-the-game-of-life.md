@@ -8,29 +8,36 @@ dashedName: build-the-game-of-life
 
 # --description--
 
-**目標:** <https://codepen.io/freeCodeCamp/full/BpwMZv/> と同じような機能を持つ、[CodePen.io](https://codepen.io) アプリを構築してください。
+**Objective:** Build an app that is functionally similar to this: <a href="https://codepen.io/freeCodeCamp/full/BpwMZv/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/BpwMZv/</a>.
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を実装してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
+The Game of Life is a cellular automaton devised by the British mathematician John Horton Conway. It is a <em>zero-player game</em>, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves.
 
-**ユーザーストーリー:** 最初にゲームを訪れたときから、ボードがランダムに生成され、自由に動き始めます。
+The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, populated and unpopulated. Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent.
 
-**ユーザーストーリー:** ボードの動作を開始または停止できます。
+At each step in time, the following transitions occur:
 
-**ユーザーストーリー:** ボードを設定することができます。
+- Any live cell with fewer than two live neighbours dies, as if by underpopulation.
+- Any live cell with two or three live neighbours lives on to the next generation.
+- Any live cell with more than three live neighbours dies, as if by overpopulation.
+- Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
-**ユーザーストーリー:** ボードをクリアすることができます。
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**ユーザーストーリー:** start を押すと、ゲームが動き出します。
+**User Story:** When I first arrive at the game, it will randomly generate a board and start playing.
 
-**ユーザーストーリー:** ボードが変化するごとに、どれだけの世代が過ぎ去ったかを見ることができます。
+**User Story:** I can start and stop the board.
 
-**ヒント:** John Conway 自身によるライフゲームの説明はこちらです: <https://www.youtube.com/watch?v=E8kUJL04ELA>
+**User Story:** I can set up the board.
 
-**ヒント:** ルールを含めたライフゲームの概要についてはこちらを参照してください: [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+**User Story:** I can clear the board.
 
-完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
+**User Story:** When I press start, the game will play out.
 
-[freeCodeCamp フォーラム](https://forum.freecodecamp.org/c/project-feedback/409)でプロジェクトを共有することにより、フィードバックを得ることができます。
+**User Story:** Each time the board changes, I can see how many generations have gone by.
+
+When you are finished, include a link to your project and click the "I've completed this challenge" button.
+
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

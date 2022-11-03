@@ -568,7 +568,7 @@ code {
   background-color: var(--secondary-background);
   color: var(--tertiary-color);
   border-radius: 0;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Hack-ZeroSlash', monospace;
   overflow-wrap: anywhere;
 }
 

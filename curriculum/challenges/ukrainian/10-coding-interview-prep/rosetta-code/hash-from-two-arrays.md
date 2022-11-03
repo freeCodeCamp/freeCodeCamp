@@ -1,20 +1,24 @@
 ---
 id: 595671d4d2cdc305f0d5b36f
 title: Хеш із двох масивів
-challengeType: 5
+challengeType: 1
 forumTopicId: 302283
 dashedName: hash-from-two-arrays
 ---
 
 # --description--
 
-Використовуючи два масиви однакової довжини, створіть геш-об'єкт, в якому елементи з одного масиву (ключі) будуть пов'язані з елементами з іншого (значеннями).
+Given two arrays, create a hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
 
-**Пов’язане завдання:**
+Example:
 
-<ul>
-  <li><a href='https://rosettacode.org/wiki/Associative arrays/Creation' title='Асоціативні масиви/Створення' target='_blank'>Асоціативні масиви/Створення</a></li>
-</ul>
+```js
+const firstArr = [1, 2, 3];
+const secondArr = ["a", "b", "c"];
+const hashObj = arrToObj(firstArr, secondArr);
+```
+
+The hash object created from the arrays above will be `{1: "a", 2: "b", 3: "c"}`.
 
 # --hints--
 

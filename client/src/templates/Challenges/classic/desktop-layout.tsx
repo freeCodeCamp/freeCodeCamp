@@ -19,7 +19,6 @@ import {
 type Pane = { flex: number };
 
 interface DesktopLayoutProps {
-  block: string;
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
@@ -38,7 +37,6 @@ interface DesktopLayoutProps {
   notes: ReactElement;
   preview: ReactElement;
   resizeProps: ResizeProps;
-  superBlock: string;
   testOutput: ReactElement;
   visibleEditors: { [key: string]: boolean };
   windowTitle: string;
@@ -66,7 +64,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   };
 
   const {
-    block,
     resizeProps,
     instructions,
     editor,
@@ -77,7 +74,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     notes,
     preview,
     hasEditableBoundaries,
-    superBlock,
     visibleEditors,
     windowTitle
   } = props;
@@ -104,7 +100,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     <>
       <div className='desktop-layout'>
         <ActionRow
-          block={block}
           hasNotes={hasNotes}
           isProjectBasedChallenge={projectBasedChallenge}
           showConsole={showConsole}
@@ -113,8 +108,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           hasPreview={hasPreview}
           showPreviewPane={showPreviewPane}
           showPreviewPortal={showPreviewPortal}
-          superBlock={superBlock}
-          showBreadcrumbs={false}
           togglePane={togglePane}
         />
         <div className='editor-row'>

@@ -8,7 +8,7 @@ dashedName: budget-app
 
 # --description--
 
-你将[使用我们的 Replit 入门代码来完成这个项目](https://replit.com/github/freeCodeCamp/boilerplate-budget-app)。
+你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-budget-app" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
 
 # --instructions--
 

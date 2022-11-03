@@ -15,10 +15,14 @@ jobs:
   i18n-download-curriculum-translations:
     name: Curriculum
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [16.x]
+      fail-fast: true
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
         with:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
@@ -42,7 +46,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: zh-CN
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -78,7 +83,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: es-EM
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -107,7 +113,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: it
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -136,7 +143,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: pt-BR
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -165,7 +173,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: uk
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -194,7 +203,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: ja
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -223,7 +233,8 @@ jobs:
           # downloads
           download_translations: true
           download_language: de
-          skip_untranslated_files: true
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
           export_only_approved: true
 
           push_translations: false
@@ -238,6 +249,60 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
+      ##### Download Arabic #####
+      - name: Crowdin Download Arabic Translations
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_sources: false
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
+          # downloads
+          download_translations: true
+          download_language: ar
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
+          export_only_approved: true
+          push_translations: false
+          # pull-request
+          create_pull_request: false
+          # global options
+          config: './crowdin-config.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+          # Uncomment below to debug
+          # dryrun_action: true
+
+      # Validate the Download #
+      # All languages should go ABOVE this. #
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Set Environment variables
+        run: |
+          cp sample.env .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
+
+      - name: Build Source Files
+        run: |
+          echo npm version $(npm -v)
+          npm ci
+          npm run create:config
+          npm run build:curriculum
+          npm run build:server
+
+      - name: Lint and Format Files
+        run: |
+          npm run format:curriculum
+
+      # We do not need to run tests because they are run after the PR is created.
+
       # Create Commit
       - name: Commit Changes
         uses: freecodecamp/crowdin-action@main
@@ -248,9 +313,7 @@ jobs:
           GH_BRANCH: 'i18n-sync-curriculum'
           GH_MESSAGE: 'chore(i18n,learn): processed translations'
 
-      # Generate PR #
-      # All languages should go ABOVE this. #
-
+      # Create PR
       - name: Create PR
         uses: freecodecamp/crowdin-action@main
         env:

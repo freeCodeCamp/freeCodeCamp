@@ -7,7 +7,7 @@ import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n/all-langs';
+import { getLangCode } from '../../../../../config/i18n';
 import {
   getCertIds,
   getPathFromID,
@@ -17,7 +17,7 @@ import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification-icon';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
-import { openModal } from '../../../templates/Challenges/redux';
+import { openModal } from '../../../templates/Challenges/redux/actions';
 import { FullWidthRow, Link } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
 import TimelinePagination from './timeline-pagination';

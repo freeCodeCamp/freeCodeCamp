@@ -12,7 +12,7 @@ import { createSelector } from 'reselect';
 
 import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
-import { isSignedInSelector } from '../../../../redux';
+import { isSignedInSelector } from '../../../../redux/selectors';
 import {
   ChallengeMeta,
   ChallengeNode,
@@ -25,17 +25,19 @@ import Output from '../../components/output';
 import TestSuite from '../../components/test-suite';
 import {
   challengeMounted,
-  challengeTestsSelector,
-  consoleOutputSelector,
   executeChallenge,
   initConsole,
   initTests,
-  isChallengeCompletedSelector,
-  testsRunningSelector,
   updateChallengeMeta,
-  updateSolutionFormValues,
-  submitChallenge
-} from '../../redux';
+  submitChallenge,
+  updateSolutionFormValues
+} from '../../redux/actions';
+import {
+  challengeTestsSelector,
+  consoleOutputSelector,
+  testsRunningSelector,
+  isChallengeCompletedSelector
+} from '../../redux/selectors';
 import SolutionForm from '../solution-form';
 
 import '../../components/test-frame.css';
@@ -242,9 +244,7 @@ class BackEnd extends Component<BackEndProps> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
                 <ChallengeTitle
-                  block={block}
                   isCompleted={isChallengeCompleted}
-                  superBlock={superBlock}
                   translationPending={translationPending}
                 >
                   {title}

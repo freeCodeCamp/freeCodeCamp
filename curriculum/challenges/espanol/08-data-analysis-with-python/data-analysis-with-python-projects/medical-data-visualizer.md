@@ -69,7 +69,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      edad
+      <code>age</code>
     </td>
     
     <td align="center">
@@ -87,7 +87,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      altura
+      <code>height</code>
     </td>
     
     <td align="center">
@@ -105,7 +105,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      peso
+      <code>weight</code>
     </td>
     
     <td align="center">
@@ -123,7 +123,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      género
+      <code>gender</code>
     </td>
     
     <td align="center">
@@ -141,7 +141,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      ap_hi
+      <code>ap_hi</code>
     </td>
     
     <td align="center">
@@ -159,7 +159,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      ap_lo
+      <code>ap_lo</code>
     </td>
     
     <td align="center">
@@ -177,7 +177,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      colesterol
+      <code>cholesterol</code>
     </td>
     
     <td align="center">
@@ -195,7 +195,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      glúcido
+      <code>gluc</code>
     </td>
     
     <td align="center">
@@ -213,7 +213,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      humo
+      <code>smoke</code>
     </td>
     
     <td align="center">
@@ -231,7 +231,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      alco
+      <code>alco</code>
     </td>
     
     <td align="center">
@@ -249,7 +249,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      activo
+      <code>active</code>
     </td>
     
     <td align="center">
@@ -267,7 +267,7 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
     </td>
     
     <td align="center">
-      cardiaco
+      <code>cardio</code>
     </td>
     
     <td align="center">

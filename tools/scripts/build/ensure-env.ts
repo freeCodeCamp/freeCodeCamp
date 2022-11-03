@@ -2,7 +2,7 @@ import { spawn } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { availableLangs } from '../../../config/i18n/all-langs';
+import { availableLangs } from '../../../config/i18n';
 import env from '../../../config/read-env';
 
 const globalConfigPath = path.resolve(__dirname, '../../../config');
@@ -14,7 +14,7 @@ function checkClientLocale() {
   if (!availableLangs.client.includes(process.env.CLIENT_LOCALE)) {
     throw Error(`
 
-      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in config/i18n/all-langs.ts
+      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in config/i18n.ts
 
       `);
   }
@@ -26,7 +26,7 @@ function checkCurriculumLocale() {
   if (!availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE)) {
     throw Error(`
 
-      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in config/i18n/all-langs.ts
+      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in config/i18n.ts
 
       `);
   }
@@ -52,12 +52,14 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
   const donationKeys = ['stripePublicKey', 'paypalClientId', 'patreonClientId'];
   const loggingKeys = ['sentryClientDSN'];
+  const abTestingKeys = ['growthbookUri'];
 
   const expectedVariables = locationKeys.concat(
     deploymentKeys,
     searchKeys,
     donationKeys,
-    loggingKeys
+    loggingKeys,
+    abTestingKeys
   );
   const actualVariables = Object.keys(env as Record<string, unknown>);
   if (expectedVariables.length !== actualVariables.length) {

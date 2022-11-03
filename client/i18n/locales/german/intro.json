@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "JavaScript-Algorithmen und Datenstrukturen (Beta)",
-    "intro": [
-      "Platzhalter",
-      "Platzhalter"
-    ],
+    "intro": ["Platzhalter", "Platzhalter"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Erstelle ein Caesar-Verschlüsselung Projekt",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "Erstelle ein Registrierkassenprojekt",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "Erstelle ein Palindromprüfer Projekt",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Erstelle ein Projekt zur Umwandlung römischer Ziffern",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Erstelle ein Telefonnummernvalidierungsprojekt",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Lerne die Grundlagen von JavaScript durch die Entwicklung eines Rollenspiels",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Lerne die Formularvalidierung anhand eines Kalorienzählers",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Lerne die funktionale Programmierung durch das Erstellen einer Tabellenkalkulation",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -369,7 +342,7 @@
     "title": "Front-End-Entwicklungsbibliotheken",
     "intro": [
       "Jetzt, wo du mit HTML, CSS und JavaScript vertraut bist, kannst du deine Fähigkeiten verbessern, indem du einige der beliebtesten Front-End-Bibliotheken der Branche lernst.",
-      "In der Zertifizierung für Front-End-Entwicklungsbibliotheken lernst du, wie du deine Seite mit Bootstrap schnell stylen kannst. Du lernst auch, wie du Logik zu deinen CSS-Styles hinzufügst und sie mit Sass erweiterst.",
+      "In der Zertifizierung für Front-End-Entwicklungsbibliotheken lernst du, wie du deine Seite mit Bootstrap schnell gestalten kannst. Du lernst auch, wie du Logik zu deinen CSS-Styles hinzufügen und sie mit Sass erweitern kannst.",
       "Später baust du einen Warenkorb und andere Anwendungen, um zu lernen, wie du mit React und Redux leistungsstarke Single Page Applications (SPAs) erstellen kannst."
     ],
     "note": "",
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "D3 Dashboard",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },

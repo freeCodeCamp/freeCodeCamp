@@ -12,7 +12,7 @@ Sí - Puedes contribuir cualquiera de los más de 30 idiomas que hemos habilitad
 
 Tenemos traducciones hechas por usuarios nativos en algunos idiomas. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo acerca de esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
-If you are interested in contributing to translations please make sure you [read this guide](how-to-translate-files.md) first.
+Si estás interesado en ayudar a traducir, por favor asegúrate de [leer esta guía](how-to-translate-files.md) primero.
 
 ### Puedo contribuír con artículos a las Noticias de freeCodeCamp o con vídeos al canal de YouTube de freeCodeCamp?
 
@@ -81,7 +81,7 @@ Aquí hay algunas rutas para algunas de nuestras plataformas:
 - To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Echa un vistazo a [El manual del líder del subforo](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) para más información.
 - Para ser un moderador de **GitHub**, ayuda para procesar problemas de GitHub que son planteados para ver si son válidos e (idealmente) tratar de proponer soluciones para estos problemas que deben ser recogidos por otros (o por ti mismo).
 
-En total, sé respetuoso con los demás. Somos seres humanos en todo el mundo. Con esto en mente, por favor considera usar un lenguaje animado o de apoyo y ser consciente de la comunicación intercultural.
+En total, sé respetuoso con los demás. We are humans from all around the world. Con esto en mente, por favor considera usar un lenguaje animado o de apoyo y ser consciente de la comunicación intercultural.
 
 Si practicas lo anterior de forma consistente **durante un tiempo** y nuestros compañeros moderadores los recomiendan, un miembro del personal se pondrá en contacto contigo con el equipo de moderadores. El trabajo de código abierto es voluntario, y nuestro tiempo es limitado. Reconocemos que esto probablemente también sea cierto en su caso. Así que enfatizamos ser **consistente** en lugar de comprometerse en la comunidad 24/7.
 
@@ -104,6 +104,6 @@ nuestro servidor de chat<1>.</li> </ul>
 
 ### Asistencia adicional
 
-Si tiene preguntas sobre el stack, arquitectura de la base de código, traducciones, o cualquier otra cosa, no dudes en contactar con nuestro equipo de personal [en el foro](https://forum.freecodecamp.org/g/team).
+If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
 
 **Puedes enviar un correo a nuestro grupo de desarrolladores en: `dev[at]freecodecamp.org`**

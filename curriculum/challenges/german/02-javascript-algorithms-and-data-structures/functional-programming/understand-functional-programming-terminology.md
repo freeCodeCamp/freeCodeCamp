@@ -18,7 +18,7 @@ Aber zuerst wollen wir ein paar funktionale Begriffe klären:
 
 Funktionen, die einer Variablen zugewiesen, an eine andere Funktion übergeben oder von einer anderen Funktion zurückgegeben werden können, werden <dfn>Funktionen erster Klasse</dfn> genannt. Alle Funktionen in JavaScript sind Funktionen erster Klasse.
 
-Die Funktionen, die eine Funktion als Argument nehmen oder eine Funktion als Rückgabewert zurückgeben, werden <dfn>Funktionen höherer Ordnung</dfn> genannt.
+The functions that take a function as an argument, or return a function as a return value, are called <dfn>higher order</dfn> functions.
 
 Wenn Funktionen an eine andere Funktion übergeben oder von einer anderen Funktion zurückgegeben werden, dann können die übergebenen oder zurückgegebenen Funktionen als <dfn>Lambda</dfn> bezeichnet werden.
 

@@ -5,7 +5,7 @@ import {
   ChallengeFile as PropTypesChallengeFile,
   ChallengeMeta
 } from '../../../redux/prop-types';
-import { concatHtml } from '../rechallenge/builders.js';
+import { concatHtml } from '../rechallenge/builders';
 import { getTransformers, embedFilesInHtml } from '../rechallenge/transformers';
 import {
   createTestFramer,
@@ -18,18 +18,6 @@ import {
   Source
 } from './frame';
 import createWorker from './worker-executor';
-
-const _concatHtml = ({
-  required,
-  template,
-  contents
-}: {
-  required: { src: string }[];
-  template?: string;
-  contents?: string;
-}): string => {
-  return concatHtml({ required, template, contents });
-};
 
 interface ChallengeFile extends PropTypesChallengeFile {
   source: string;
@@ -222,7 +210,7 @@ export function buildDOMChallenge(
         return {
           challengeType:
             challengeTypes.html || challengeTypes.multifileCertProject,
-          build: _concatHtml({
+          build: concatHtml({
             required: finalRequires,
             template,
             contents
@@ -265,7 +253,7 @@ export function buildJSChallenge(
 export function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
-    build: _concatHtml({ required: frameRunner }),
+    build: concatHtml({ required: frameRunner }),
     sources: { url }
   };
 }
