@@ -1,6 +1,5 @@
 .fcc_searchBar {
   flex-grow: 1;
-  padding: 0 10px;
   max-height: 33px;
   font-family: 'Lato', sans-serif;
 }
@@ -28,7 +27,6 @@
   width: 26px;
   background-color: var(--gray-75);
   padding-inline: 3px;
-  border-radius: 0px 15px 0px 15px / 0px 10px 0px 10px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
@@ -131,7 +129,6 @@ and arrow keys */
   flex-direction: row-reverse;
   gap: 0.25em;
   top: var(--header-height);
-  right: 15px;
 }
 
 @media (min-width: 981px) {
@@ -151,8 +148,6 @@ and arrow keys */
   }
   .fcc_searchBar .ais-SearchBox-form {
     display: flex;
-    position: static;
     top: auto;
-    right: 15px;
   }
 }
