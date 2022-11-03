@@ -62,15 +62,16 @@ type ToneStates = keyof typeof toneUrls;
 export async function playTone(state: ToneStates): Promise<void> {
   const playSound = !!store.get('fcc-sound');
   if (playSound && toneUrls[state]) {
-    const audio = new Audio(toneUrls[state]);
+    const Tone = await import('tone');
+
+    const player = new Tone.Player(toneUrls[state]).toDestination();
 
     const storedVolume = (store.get('soundVolume') as number) ?? 50;
+    const calculateDecibel = -60 * (1 - storedVolume / 100);
 
-    // volume range [0-1], 0 -> muted, 1 -> loudest
-    const volume = storedVolume / 100;
+    player.volume.value = calculateDecibel;
 
-    audio.volume = volume;
-
-    await audio.play();
+    await Tone.loaded();
+    player.start();
   }
 }
