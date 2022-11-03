@@ -15,7 +15,7 @@ Wenn die zu vergleichenden Werte nicht vom gleichen Typ sind, führt der Gleichh
 
 **Beispiele**
 
-`3 == '3'` gibt `true` zurück, weil JavaScript eine Typkonvertierung von String zu Zahl durchführt. `3 === '3'` returns `false` because the types are different and type conversion is not performed.
+`3 == '3'` gibt `true` zurück, weil JavaScript eine Typkonvertierung von String zu Zahl durchführt. `3 === '3'` gibt `false` zurück, weil die Typen unterschiedlich sind und die Typkonvertierung nicht durchgeführt wird.
 
 **Hinweis:** In JavaScript kannst du den Typ einer Variablen oder eines Wertes mit dem `typeof`-Operator bestimmen, und zwar wie folgt:
 

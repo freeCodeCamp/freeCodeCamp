@@ -17,7 +17,7 @@ const arr = [1, 2, 3];
 arr.push(4, 5, 6);
 ```
 
-`arr` would have a modified value of `[1, 2, 3, 4, 5, 6]`, which is not the functional programming way.
+`arr` hätte nun den modifizierten Wert `[1, 2, 3, 4, 5, 6]`, was nicht dem praktischen Programmierweg entspricht.
 
 `concat` offers a way to merge new items to the end of an array without any mutating side effects.
 

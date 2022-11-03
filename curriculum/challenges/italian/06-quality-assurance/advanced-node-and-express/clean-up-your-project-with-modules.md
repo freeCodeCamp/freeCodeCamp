@@ -24,9 +24,9 @@ Infine, trasferisci tutte le rotte presenti nel tuo server e incollale nei nuovi
 
 Continua ad aggiungere percorsi fino a quando non ci saranno più errori e il tuo file server non avrà più neanche una rotta (**ad eccezione della rotta nel blocco catch**)!
 
-Do the same thing in your `auth.js` file with all of the things related to authentication such as the serialization and the setting up of the local strategy and erase them from your server file. Assicurati di aggiungere le dipendenze e invocare `auth(app, myDataBase)` nel server nello stesso punto.
+Fai la stessa cosa nel tuo file `auth.js` con tutte le cose relative all'autenticazione come la serializzazione e l'impostazione della strategia locale e cancellali dal file del server. Assicurati di aggiungere le dipendenze e invocare `auth(app, myDataBase)` nel server nello stesso punto.
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#clean-up-your-project-with-modules-2" target="_blank" rel="noopener noreferrer nofollow">check out an example of the completed project</a>.
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri errori, puoi <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#clean-up-your-project-with-modules-2" target="_blank" rel="noopener noreferrer nofollow">vedere un esempio del progetto completato qui</a>.
 
 # --hints--
 

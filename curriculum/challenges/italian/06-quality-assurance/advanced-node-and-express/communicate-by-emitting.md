@@ -72,7 +72,7 @@ async (getUserInput) => {
 }
 ```
 
-Your client should be listening for `'user count'` event.
+Il tuo client dovrebbe essere in ascolto per eventi di tipo `'user count'`.
 
 ```js
 async (getUserInput) => {
