@@ -1,10 +1,10 @@
-Follow these guidelines for contribute to the codebase. This is highly recommended if you want to contribute regularly.
+Follow these guidelines to contribute to the codebase. This is highly recommended if you want to contribute regularly.
 
 Ignoring these steps will soil your copy which makes the contributing, maintaining, and reviewing processes difficult.
 
 ## Making Contributing To Codebase
 
-You can now make changes to files and commit your changes to your clone of your fork, which you can prepare by reading [how to setup freecodecamp](how-to-setup-freecodecamp-locally.md).
+You can now make changes to files and commit your changes to your fork, which you can prepare by reading [how to set up freecodecamp](how-to-setup-freecodecamp-locally.md).
 
 Follow these steps:
 
@@ -110,7 +110,7 @@ Follow these steps:
 
        modified:   CONTRIBUTING.md
        modified:   docs/README.md
-       modified:   docs/how-to-setup-freecodecamp-.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
        modified:   docs/how-to-work-on-guide-articles.md
    ...
    ```
@@ -146,7 +146,7 @@ Follow these steps:
 
        modified:   CONTRIBUTING.md
        modified:   docs/README.md
-       modified:   docs/how-to-setup-freecodecamp-.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
        modified:   docs/how-to-work-on-guide-articles.md
    ```
 
@@ -200,7 +200,7 @@ After you've committed your changes, check here for [how to open a Pull Request]
 
 ## Quick commands reference
 
-A quick reference to the commands that you will need when working .
+A quick reference to the commands that you will need when working.
 
 | command                                                        | description                                                                         |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |

@@ -50,7 +50,7 @@ Note that the `download_language` key needs to be set to the language code displ
 
 There are a few steps to take in order to allow the codebase to build in your desired language.
 
-First, visit the `config/i18n.ts` file to add the language to the available languages list and configure the values. There are several objects here.
+First, visit the `config/i18n.ts` file to add the language to the list of available languages and configure the values. There are several objects here.
 
 - `availableLangs`: For both the `client` and `curriculum` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
 - `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. This tells the client which certifications are fully translated.
@@ -144,8 +144,6 @@ export const rtlLangs = [''];
 
 > [!NOTE]
 > When a language has been set up in the deployment pipeline AND has a public `/news` instance live, it can be removed from the `hiddenLangs` array and be made available to the public.
-
-> [!NOTE]
 
 Next, open the `client/src/utils/algolia-locale-setup.ts` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
 
