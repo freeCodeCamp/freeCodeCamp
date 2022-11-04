@@ -12,18 +12,14 @@ import {
   TranslationStates
 } from './superblock-order';
 
-const languages = Object.values(Languages);
 const superBlocks = Object.values(SuperBlocks);
-const curriculumMaps = Object.values(CurriculumMaps);
 const translationStates = Object.values(TranslationStates);
 const superBlockStates = Object.values(SuperBlockStates);
 const superBlockOrderLanguages = Object.keys(superBlockOrder);
 
 describe("'defaultSuperBlockOrder'", () => {
   it("should have a matching item for each value in the 'SuperBlocks' object", () => {
-    superBlocks.forEach(superBlock => {
-      expect(defaultSuperBlockOrder).toContain(superBlock);
-    });
+    expect(defaultSuperBlockOrder).toEqual(expect.arrayContaining(superBlocks));
   });
 
   it('should not have any extra keys', () => {
@@ -32,31 +28,8 @@ describe("'defaultSuperBlockOrder'", () => {
 });
 
 describe("'superBlockOrder'", () => {
-  it("should have a matching key for each value in the 'Languages' object", () => {
-    languages.forEach(language => {
-      expect(superBlockOrder).toHaveProperty(language);
-    });
-  });
-
-  it('should not have any extra keys', () => {
-    expect(superBlockOrderLanguages.length).toEqual(languages.length);
-  });
-
   superBlockOrderLanguages.forEach(language => {
     describe(`'${language}'`, () => {
-      // e.g. ['landing', 'learn']
-      const languageMaps = Object.keys(superBlockOrder[language as Languages]);
-
-      it("should have a matching key for each value in the 'CurriculumMaps' object", () => {
-        curriculumMaps.forEach(curriculumMap => {
-          expect(languageMaps).toContain(curriculumMap);
-        });
-      });
-
-      it('should not have any extra keys', () => {
-        expect(languageMaps.length).toEqual(curriculumMaps.length);
-      });
-
       describe("'landing'", () => {
         const landingSuperBlocks =
           superBlockOrder[language as Languages][CurriculumMaps.Landing];
@@ -65,12 +38,6 @@ describe("'superBlockOrder'", () => {
           expect(landingSuperBlocks.length).toEqual(
             numberOfSuperBlocksOnLanding
           );
-        });
-
-        it("should only have items that are in 'SuperBlocks' object", () => {
-          landingSuperBlocks.forEach(superBlock => {
-            expect(superBlocks).toContain(superBlock);
-          });
         });
 
         it('should not have a superBlock out of order', () => {
@@ -90,41 +57,10 @@ describe("'superBlockOrder'", () => {
       describe("'learn'", () => {
         const learn =
           superBlockOrder[language as Languages][CurriculumMaps.Learn];
-        const learnKeys = Object.keys(learn);
-
-        it("should have a matching key for each value in the 'TranslationStates' object", () => {
-          translationStates.forEach(translationState => {
-            expect(learnKeys).toContain(translationState);
-          });
-        });
-
-        it('should not have any extra keys', () => {
-          expect(learnKeys.length).toEqual(translationStates.length);
-        });
-
-        const audited =
-          superBlockOrder[language as Languages][CurriculumMaps.Learn][
-            TranslationStates.Audited
-          ];
-        const auditedKeys = Object.keys(audited);
-
-        const notAudited =
-          superBlockOrder[language as Languages][CurriculumMaps.Learn][
-            TranslationStates.NotAudited
-          ];
-        const notAuditedKeys = Object.keys(notAudited);
+        const audited = learn[TranslationStates.Audited];
+        const notAudited = learn[TranslationStates.NotAudited];
 
         describe("'audited'", () => {
-          it("should have a matching key for each value in the 'SuperBlockStates' object", () => {
-            superBlockStates.forEach(superBlockState => {
-              expect(auditedKeys).toContain(superBlockState);
-            });
-          });
-
-          it('should not have any extra keys', () => {
-            expect(auditedKeys.length).toEqual(superBlockStates.length);
-          });
-
           superBlockStates.forEach(superBlockState => {
             const stateSuperBlocks = audited[superBlockState];
 
@@ -149,16 +85,6 @@ describe("'superBlockOrder'", () => {
         });
 
         describe('not audited', () => {
-          it("should have a matching key for each value in the 'SuperBlockStates' object", () => {
-            superBlockStates.forEach(superBlockState => {
-              expect(notAuditedKeys).toContain(superBlockState);
-            });
-          });
-
-          it('should not have any extra keys', () => {
-            expect(notAuditedKeys.length).toEqual(superBlockStates.length);
-          });
-
           superBlockStates.forEach(superBlockState => {
             const stateSuperBlocks = notAudited[superBlockState];
 
