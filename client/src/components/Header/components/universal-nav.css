@@ -41,6 +41,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 10px;
   flex: 1 0 33%;
   height: var(--header-height);
 }
@@ -332,7 +333,6 @@ button.nav-link[aria-disabled='true'] {
   background-color: var(--theme-color);
   cursor: pointer;
   max-height: calc(var(--header-height) - 8px);
-  margin-right: 10px;
   display: flex;
   align-items: center;
 }
@@ -543,6 +543,7 @@ button.nav-link[aria-disabled='true'] {
 
   .fcc_searchBar,
   .fcc_searchBar div {
+    z-index: -1;
     width: 100%;
   }
 

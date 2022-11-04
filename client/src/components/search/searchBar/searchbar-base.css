@@ -632,6 +632,9 @@ a[class^='ais-'] {
 .ais-SearchBox-reset {
   right: 0.3rem;
 }
+.ais-SearchBox-submit {
+  position: absolute;
+}
 .ais-SearchBox-resetIcon,
 .ais-SearchBox-loadingIcon {
   position: absolute;
@@ -685,4 +688,10 @@ a[class^='ais-'] {
 }
 strong.ais-Highlight-highlighted {
   background-color: transparent;
+}
+
+@media (min-width: 981px) {
+  .ais-SearchBox-submit {
+    left: 0;
+  }
 }
