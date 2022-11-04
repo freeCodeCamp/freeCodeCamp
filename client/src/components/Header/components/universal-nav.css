@@ -478,6 +478,10 @@ button.nav-link[aria-disabled='true'] {
   width: calc(100vw - 19rem);
 }
 
+.universal-nav-right .fcc_searchBar .ais-Hits {
+  width: calc(100vw - 17rem);
+}
+
 .ais-SearchBox-input:focus {
   outline: 3px solid var(--blue-mid);
 }
