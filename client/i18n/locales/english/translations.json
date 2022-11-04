@@ -294,8 +294,7 @@
     "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
     "chal-preview": "Challenge Preview",
     "cert-map-estimates": {
-      "certs": "{{title}} Certification",
-      "challenges": "{{title}} Challenges"
+      "certs": "{{title}} Certification"
     },
     "editor-tabs": {
       "info": "Info",
