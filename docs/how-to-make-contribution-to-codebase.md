@@ -1,8 +1,8 @@
 Follow these guidelines to contribute to the codebase. This is highly recommended if you want to contribute regularly.
 
-Ignoring these steps will soil your copy which makes the contributing, maintaining, and reviewing processes difficult.
+Ignoring these steps may soil your copy which makes the contributing, maintaining, and reviewing processes difficult.
 
-## Making Contributing To Codebase
+## Contributing to the Codebase
 
 You can now make changes to files and commit your changes to your fork, which you can prepare by reading [how to set up freecodecamp](how-to-setup-freecodecamp-locally.md).
 
@@ -176,7 +176,7 @@ Follow these steps:
 
    Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
+   This does not take any more time than an unconventional message like 'update file' or 'add index.md'
 
    You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 

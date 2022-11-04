@@ -250,14 +250,14 @@ This single command will fire up all the services, including the API server and 
 
 Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
-The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
+The API serves endpoints at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
 
 While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
 
 > [!WARNING]
 > Clearing your cookies or running `npm run seed:certified-user` will log you out, and you will have to sign in again.
 
-If you had issue while installing it, checkout the [troubleshooting section](troubleshooting-development-issues.md)
+If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md)
 
 ## Quick commands reference
 

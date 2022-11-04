@@ -1,5 +1,3 @@
-While facing issues is frustrating, most issues that contributors experience are related to skimming through our docs and skipping important sections and information.
-
 If you are facing issue, there is a high chance that the resolution is in this documentation.
 
 ### Issues with installing the recommended prerequisites
@@ -8,15 +6,15 @@ We regularly develop on the latest or most popular operating systems like macOS 
 
 It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
-If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
+If you are on a different OS or are still facing issues, see [getting help](#getting-help).
 
 > [!WARNING]
 >
-> Although issues to improve the projects are welcomed, please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
+> Please avoid creating GitHub issues for problems with the prerequisite technologies. They are out of the scope of this project.
 
 ### Issues missing the UI, Fonts, language strings, or build errors.
 
-When you build the client, Gatsby will cache the Fonts, language strings and UI. if one of them isn't cached run the following:
+When you build the client, Gatsby will cache the Fonts, language strings and UI. If one of them isn't cached, run the following:
 
 ```console
 npm run clean
@@ -77,9 +75,9 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 ### Issues signing out while navigating
 
-While in development environment, your session is stored as cookies, clearing them will signout your development account.
+While in development, your session is stored as cookies. Clearing them will sign you out of your development account.
 
-Running `npm run seed:certified-user` will log you out, too. as it will overwrite your previous entry.
+Running `npm run seed:certified-user` will log you out, too. It will overwrite the development user in your local database.
 
 ### Issue getting 404 when navigating profile page
 
@@ -98,6 +96,6 @@ The first time setup can take a while depending on your network bandwidth. Be pa
 
 ## Getting Help
 
-If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+If you are stuck and need help, feel free to ask questions in the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
