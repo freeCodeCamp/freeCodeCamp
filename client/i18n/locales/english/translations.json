@@ -716,5 +716,12 @@
     "focus-instructions-panel": "Focus Instructions Panel",
     "navigate-previous": "Navigate Previous Exercise",
     "navigate-next": "Navigate Next Exercise"
+  },
+  "signout": {
+    "heading": "Sign out of your account",
+    "p1": "Warning: Signing out will stop saving your progress.",
+    "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
+    "certain": "Yes, sign out of my account",
+    "nevermind": "Nevermind, I don't want to sign out"
   }
 }
