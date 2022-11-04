@@ -22,13 +22,13 @@ All'interno del codice di invio del modulo, dovresti emettere un evento dopo ave
 socket.emit('chat message', messageToSend);
 ```
 
-Ora, sul tuo server, si dovrebbe ascoltare il socket in attesa dell'evento `'chat message'` con i dati chiamati `message`. Once the event is received, it should emit the event `'chat message'` to all sockets using `io.emit`, sending a data object containing the `username` and `message`.
+Ora, sul tuo server, si dovrebbe ascoltare il socket in attesa dell'evento `'chat message'` con i dati chiamati `message`. Una volta ricevuto l'evento, dovrebbe emettere l'evento `'chat message'` a tutti i socket usando `io.emit`, inviando un oggetto dati contenente `username` e `message`.
 
-In `client.js`, you should now listen for event `'chat message'` and, when received, append a list item to `#messages` with the username, a colon, and the message!
+In `client.js`, dovresti ora rimanere in ascolto per l'evento `'chat message'` e, quando ricevuto, aggiungi un elemento di lista a `#messages` con lo username, due punti e il messaggio!
 
 A questo punto, la chat dovrebbe essere completamente funzionante e in grado di inviare messaggi attraverso tutti i client!
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi vedere <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 

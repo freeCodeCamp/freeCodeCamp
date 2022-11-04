@@ -65,7 +65,7 @@ console.log('user ' + socket.request.user.username + ' connected');
 
 Scriverà sulla console del server chi si è connesso!
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. If you're running into errors, you can  <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi vedere <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">il progetto fino a questo punto</a>.
 
 # --hints--
 

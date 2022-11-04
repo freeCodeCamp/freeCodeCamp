@@ -26,11 +26,11 @@ Le variabili `a` e `b` prendono il primo e il secondo valore dall'array. Dopodic
 
 # --instructions--
 
-Use a destructuring assignment with the rest parameter to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` should return a sub-array of the original array `list` with the first two elements omitted.
+Usa un'assegnazione destrutturante con il parametro rest per emulare il comportamento di `Array.prototype.slice()`. `removeFirstTwo()` dovrebbe restituire un sotto-array dell'array originario `list` con i primi due elementi omessi.
 
 # --hints--
 
-`removeFirstTwo([1, 2, 3, 4, 5])` should be `[3, 4, 5]`
+`removeFirstTwo([1, 2, 3, 4, 5])` dovrebbe essere `[3, 4, 5]`
 
 ```js
 const testArr_ = [1, 2, 3, 4, 5];
@@ -38,7 +38,7 @@ const testArrWORemoved_ = removeFirstTwo(testArr_);
 assert(testArrWORemoved_.every((e, i) => e === i + 3) && testArrWORemoved_.length === 3);
 ```
 
-`removeFirstTwo()` should not modify `list`
+`removeFirstTwo()` non dovrebbe modificare `list`
 
 ```js
 const testArr_ = [1, 2, 3, 4, 5];
