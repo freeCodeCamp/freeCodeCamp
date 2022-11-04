@@ -15,11 +15,9 @@ const superBlocksWithoutLastWord = [SuperBlocks.CodingInterviewPrep];
 export function getSuperBlockTitleForMap(superBlock: SuperBlocks) {
   const i18nSuperBlock = i18next.t(`intro:${superBlock}.title`);
 
-  if (superBlocksWithoutLastWord.includes(superBlock)) {
-    return i18nSuperBlock;
-  } else {
-    return i18next.t([SuperBlockI18nKeys.Certification], {
-      title: i18nSuperBlock
-    });
-  }
+  return superBlocksWithoutLastWord.includes(superBlock)
+    ? i18nSuperBlock
+    : i18next.t([SuperBlockI18nKeys.Certification], {
+        title: i18nSuperBlock
+      });
 }
