@@ -22,7 +22,7 @@ Some examples of this are:
 
 We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
-> `<type>([optional scope(s)]): <description>`
+> `<type>([scope(s)]): <description>`
 >
 > For example:
 >
@@ -50,7 +50,7 @@ Keep it short (less than 30 characters) and simple; you can add more information
 Some examples of good PR titles would be:
 
 - `fix(a11y): improved search bar contrast`
-- `feat: add more tests to HTML and CSS challenges`
+- `feat(curriculum): add more tests to HTML and CSS challenges`
 - `fix(api,client): prevent CORS errors on form submission`
 - `docs(i18n): fix links to be relative instead of absolute`
 

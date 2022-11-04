@@ -16,9 +16,9 @@ If you are on a different OS and/or are still running into issues, see [getting 
 >
 > Although issues to improve the projects are welcomed, please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
-### Issues with the UI, Fonts, build errors, etc.
+### Issues missing the UI, Fonts, language strings, or build errors.
 
-If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
+When you build the client, Gatsby will cache the Fonts, language strings and UI. if one of them isn't cached run the following:
 
 ```console
 npm run clean

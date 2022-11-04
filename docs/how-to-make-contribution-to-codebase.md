@@ -1,10 +1,10 @@
-Follow these guidelines for making changes to freeCodeCamp. This is highly recommended if you want to contribute regularly.
+Follow these guidelines for contribute to the codebase. This is highly recommended if you want to contribute regularly.
 
-Ignoring these steps will pollute your repo, and make the contributing, maintaining, and reviewing processes difficult.
+Ignoring these steps will soil your copy which makes the contributing, maintaining, and reviewing processes difficult.
 
-## Making changes locally
+## Making Contributing To Codebase
 
-You can now make changes to files and commit your changes to your local clone of your fork, which you can prepare by reading [how to setup freecodecamp locally](how-to-setup-freecodecamp-locally.md).
+You can now make changes to files and commit your changes to your clone of your fork, which you can prepare by reading [how to setup freecodecamp](how-to-setup-freecodecamp-locally.md).
 
 Follow these steps:
 
@@ -23,13 +23,13 @@ Follow these steps:
    nothing to commit, working directory clean
    ```
 
-   If you are not on main or your working directory is not clean, resolve any outstanding files/commits and checkout `main`:
+   If you got different message, then you aren't on main or your working directory isn't clean, resolve any outstanding files/commits and checkout `main`:
 
    ```console
    git checkout main
    ```
 
-2. Sync the latest changes from the freeCodeCamp upstream `main` branch to your local main branch:
+2. Sync the latest changes from the freeCodeCamp upstream `main` branch to your `main` fork branch:
 
    > [!WARNING]
    > If you have any outstanding pull requests that you made from the `main` branch of your fork, you will lose them at the end of this step.
@@ -38,7 +38,7 @@ Follow these steps:
 
    This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
 
-   Update your local copy of the freeCodeCamp upstream repository:
+   Update your copy of the freeCodeCamp upstream repository:
 
    ```console
    git fetch upstream
@@ -66,7 +66,7 @@ Follow these steps:
 
 3. Create a fresh new branch:
 
-   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `main`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+   Working on a separate branch for each issue helps you keep your work copy clean. You should never work on the `main`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
 
    Check that you are on `main` as explained previously, and branch off from there:
 
@@ -88,7 +88,7 @@ Follow these steps:
 
 4. Edit pages and work on code in your favorite text editor.
 
-5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
+5. Once you are happy with the changes you should optionally run freeCodeCamp to preview the changes.
 
 6. Make sure you fix any errors and check the formatting of your changes.
 
@@ -110,7 +110,7 @@ Follow these steps:
 
        modified:   CONTRIBUTING.md
        modified:   docs/README.md
-       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-setup-freecodecamp-.md
        modified:   docs/how-to-work-on-guide-articles.md
    ...
    ```
@@ -146,7 +146,7 @@ Follow these steps:
 
        modified:   CONTRIBUTING.md
        modified:   docs/README.md
-       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-setup-freecodecamp-.md
        modified:   docs/how-to-work-on-guide-articles.md
    ```
 
@@ -159,20 +159,18 @@ Follow these steps:
    Some examples:
 
    ```md
-   fix: update guide article for Java - for loop
-   feat: add guide article for alexa skills
+   fix: add test for JavaScript - for loop step
+   feat: add link for article for alexa skills
    ```
 
-   Optional:
-
-   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
+   Make a conventional commit message. This is a good practice As a developer, and you will be following standard practices.
 
    Some examples of conventional commit messages are:
 
    ```md
-   fix: update HTML guide article
-   fix: update build scripts for Travis-CI
-   feat: add article for JavaScript hoisting
+   fix: improve HTML step
+   fix: fix build scripts for Travis-CI
+   feat: add link article JavaScript hoisting
    docs: update contributing guidelines
    ```
 
@@ -202,7 +200,7 @@ After you've committed your changes, check here for [how to open a Pull Request]
 
 ## Quick commands reference
 
-A quick reference to the commands that you will need when working locally.
+A quick reference to the commands that you will need when working .
 
 | command                                                        | description                                                                         |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
