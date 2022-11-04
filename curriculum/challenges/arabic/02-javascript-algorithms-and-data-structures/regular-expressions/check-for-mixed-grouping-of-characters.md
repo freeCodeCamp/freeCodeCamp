@@ -58,27 +58,27 @@ myRegex.lastIndex = 0;
 assert(!myRegex.test('Frank Roosevelt'));
 ```
 
-Your regex `myRegex` should return `false` for the string `FranklinRoosevelt`
+يجب أن ينتج regex الآتي `myRegex` قيمة `false` للمقطع `FranklinRoosevelt`
 
 ```js
 myRegex.lastIndex = 0;
 assert(!myRegex.test('FranklinRoosevelt'));
 ```
 
-Your regex `myRegex` should return `false` for the string `EleanorRoosevelt`
+يجب أن ينتج regex الآتي `myRegex` قيمة `false` للمقطع `EleanorRoosevelt`
 
 ```js
 myRegex.lastIndex = 0;
 assert(!myRegex.test('EleanorRoosevelt'));
 ```
 
-You should use `.test()` to test the regex.
+يجب عليك استخدام `.test()` لاختبار regex.
 
 ```js
 assert(code.match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
-Your result should return `true`.
+يجب أن تنتج `true`.
 
 ```js
 assert(result === true);

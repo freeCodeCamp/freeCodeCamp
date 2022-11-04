@@ -18,9 +18,7 @@ dashedName: implementation-of-social-authentication
 
 在 OAuth 验证策略中，我们至少需要提供 *Client ID* 和 *Client Secret*，这样第三方平台就会获悉验证请求的来源，以及这个来源是否有效。 为此，需要去我们使用的第三方验证平台（比如 GitHub）获取这两个字段的值。 注意，我们获取到的这个值是唯一的，仅对我们的当前 app 有效——**因此，千万不要分享给别人**，更不要上传到公共仓库或者直接写在代码里。 通常，我们会把它们放在 `.env` 文件里，并通过 `process.env.GITHUB_CLIENT_ID` 获取。 For this challenge you are going to use the GitHub strategy.
 
-Follow these instructions to obtain your *Client ID and Secret* from GitHub. Go to your GitHub profile settings and click 'developer settings', then <a href="https://github.com/settings/developers" target="_blank" rel="noopener noreferrer nofollow">'OAuth Apps'</a>. Click 'New OAuth App', then give your app a name, paste in the URL to your Replit homepage (**Not the project code's url**) and, for the callback URL, paste in the same URL as the homepage but add `/auth/github/callback` to the end of it. This is where users will be redirected after authenticating on GitHub. After you do all that, click 'Register application'.
-
-On the next page, click 'Generate a new client secret' to create a new client secret. Save the client ID and your client secret in your project's `.env` file as `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
+Follow <a href="https://www.freecodecamp.org/news/how-to-set-up-a-github-oauth-application/" target="_blank" rel="noopener noreferrer nofollow">these instructions</a> to obtain your *Client ID and Secret* from GitHub. Set the homepage URL to your Replit homepage (**not the project code's URL**), and set the callback URL to the same homepage URL with `/auth/github/callback` appended to the end. Save the client ID and your client secret in your project's `.env` file as `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
 
 In your `routes.js` file, add `showSocialAuth: true` to the homepage route, after `showRegistration: true`. Now, create 2 routes accepting GET requests: `/auth/github` and `/auth/github/callback`. The first should only call passport to authenticate `'github'`. The second should call passport to authenticate `'github'` with a failure redirect to `/`, and then if that is successful redirect to `/profile` (similar to your last project).
 

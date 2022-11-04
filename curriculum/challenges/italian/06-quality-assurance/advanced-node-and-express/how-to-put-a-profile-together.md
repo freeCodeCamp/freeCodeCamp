@@ -8,29 +8,29 @@ dashedName: how-to-put-a-profile-together
 
 # --description--
 
-Now that you can ensure the user accessing the `/profile` is authenticated, you can use the information contained in `req.user` on your page.
+Ora che puoi garantire che l'utente che accede al `/profile` sia autenticato, puoi utilizzare le informazioni contenute in `req.user` sulla tua pagina.
 
-Pass an object containing the property `username` and value of `req.user.username` as the second argument for the `render` method of the profile view.
+Passa un oggetto contenente la proprietà `username` e il valore di `req.user.username` come secondo argomento per il metodo `render` della vista del profilo.
 
-Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
+Quindi, vai alla tua vista `profile.pug` e aggiungi la seguente riga sotto l'elemento `h1` esistente, e allo stesso livello di indentazione:
 
 ```pug
 h2.center#welcome Welcome, #{username}!
 ```
 
-This creates an `h2` element with the class `center` and id `welcome` containing the text `Welcome,` followed by the username.
+Questo crea un elemento `h2` di classe `center` e con id `welcome` contenente il testo `Welcome,` seguito dal nome utente.
 
-Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user:
+Inoltre, in `profile.pug`, aggiungi un link relativo alla rotta `/logout`, che ospiterà la logica per disconnettere un utente:
 
 ```pug
 a(href='/logout') Logout
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-put-a-profile-together-9" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Invia la tua pagina quando pensi che sia tutto corretto. Se incontri degli errori, puoi vedere <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-put-a-profile-together-9" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 
-You should correctly add a Pug render variable to `/profile`.
+Dovresti aggiungere correttamente una variabile di rendering Pug a `/profile`.
 
 ```js
 async (getUserInput) => {
