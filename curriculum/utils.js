@@ -3,7 +3,8 @@ const {
   CurriculumMaps,
   superBlockOrder,
   SuperBlockStates,
-  TranslationStates
+  TranslationStates,
+  orderedSuperBlockStates
 } = require('../config/superblock-order');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
@@ -49,46 +50,39 @@ function createSuperOrder({
     );
   }
 
-  const tempAuditedStr = JSON.stringify(
-    superBlockOrder[language]?.[CurriculumMaps.Learn]?.[
-      TranslationStates.Audited
-    ]
-  );
-  const tempNotAuditedStr = JSON.stringify(
-    superBlockOrder[language]?.[CurriculumMaps.Learn]?.[
+  const audited =
+    superBlockOrder[language][CurriculumMaps.Learn][TranslationStates.Audited];
+  const notAudited =
+    superBlockOrder[language][CurriculumMaps.Learn][
       TranslationStates.NotAudited
-    ]
-  );
-
-  const auditedObj = JSON.parse(tempAuditedStr);
-  const notAuditedObj = JSON.parse(tempNotAuditedStr);
-
-  if (showNewCurriculum !== 'true') {
-    delete auditedObj[SuperBlockStates.New];
-    delete notAuditedObj[SuperBlockStates.New];
-  }
-
-  if (showUpcomingChanges !== 'true') {
-    delete auditedObj[SuperBlockStates.Upcoming];
-    delete notAuditedObj[SuperBlockStates.Upcoming];
-  }
+    ];
 
   const superOrder = {};
   let i = 0;
 
-  Object.keys(auditedObj).forEach(superBlockState => {
-    auditedObj[superBlockState].forEach(superBlock => {
-      superOrder[superBlock] = i;
+  function addToSuperOrder(superBlocks) {
+    superBlocks.forEach(key => {
+      superOrder[key] = i;
       i++;
     });
-  });
+  }
 
-  Object.keys(notAuditedObj).forEach(superBlockState => {
-    notAuditedObj[superBlockState].forEach(superBlock => {
-      superOrder[superBlock] = i;
-      i++;
+  function canAddToSuperOrder(superBlockState) {
+    if (superBlockState === SuperBlockStates.New)
+      return showNewCurriculum === 'true';
+    if (superBlockState === SuperBlockStates.Upcoming)
+      return showUpcomingChanges === 'true';
+    return true;
+  }
+
+  function addSuperBlockStates(translationState) {
+    orderedSuperBlockStates.forEach(state => {
+      if (canAddToSuperOrder(state)) addToSuperOrder(translationState[state]);
     });
-  });
+  }
+
+  addSuperBlockStates(audited);
+  addSuperBlockStates(notAudited);
 
   return superOrder;
 }

@@ -27,6 +27,13 @@ export enum SuperBlockStates {
   Legacy = 'legacy'
 }
 
+export const orderedSuperBlockStates = [
+  SuperBlockStates.Current,
+  SuperBlockStates.New,
+  SuperBlockStates.Upcoming,
+  SuperBlockStates.Legacy
+];
+
 type SuperBlockOrder = {
   [key in Languages]: {
     [CurriculumMaps.Landing]: SuperBlocks[];
