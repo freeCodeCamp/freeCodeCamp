@@ -59,7 +59,7 @@ export function SolutionDisplayWidget({
       rel='noopener noreferrer'
       target='_blank'
     >
-      {t('certification.project.view')}
+      {t('buttons.view')}
     </Button>
   );
   const MissingSolutionComponentForCertification = (
@@ -158,6 +158,8 @@ export function SolutionDisplayWidget({
           showProjectLink: ShowProjectLink,
           none: MissingSolutionComponent
         };
+
+  console.log(getSolutionDisplayType(completedChallenge));
 
   return displayComponents[getSolutionDisplayType(completedChallenge)];
 }
