@@ -36,7 +36,7 @@ Follow these steps:
    >
    > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `main`.
 
-   This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
+   This step **will sync the latest changes** from the main repository of freeCodeCamp.
 
    Update your copy of the freeCodeCamp upstream repository:
 
@@ -62,7 +62,7 @@ Follow these steps:
    git diff upstream/main
    ```
 
-   The resulting output should be empty.
+   The resulting output should be empty. This process is important, because you will be rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
 
 3. Create a fresh new branch:
 
