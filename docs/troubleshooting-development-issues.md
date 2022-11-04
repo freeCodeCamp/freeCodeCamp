@@ -2,8 +2,6 @@ While facing issues is frustrating, most issues that contributors experience are
 
 If you are facing issue, there is a high chance that the resolution is in this documentation.
 
-## Troubleshooting
-
 ### Issues with installing the recommended prerequisites
 
 We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
@@ -76,6 +74,12 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 <!-- tabs:end -->
 
 ---
+
+### Issue signing out while navigating
+
+While in development environment, your session is stored as cookies, clearing them will signout your development account.
+
+Running `npm run seed:certified-user` will log you out, too. as it will overwrite your previous entry.
 
 ### Issues installing dependencies
 

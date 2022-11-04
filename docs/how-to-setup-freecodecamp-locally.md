@@ -257,7 +257,7 @@ While you are logged in, if you visit <http://localhost:3000/explorer> you shoul
 > [!WARNING]
 > Clearing your cookies or running `npm run seed:certified-user` will log you out, and you will have to sign in again.
 
-If you had issue while installing it, checkout the [troubleshooting section]
+If you had issue while installing it, checkout the [troubleshooting section](troubleshooting-development-issues.md)
 
 ## Quick commands reference
 
