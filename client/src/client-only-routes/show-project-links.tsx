@@ -125,7 +125,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     return project.map(({ link, title, id }) => (
       <tr key={id}>
         <td>
-          <Link className='project-link' to={link}>
+          <Link to={link}>
             {t(`certification.project.title.${title}`, title)}
           </Link>
         </td>
