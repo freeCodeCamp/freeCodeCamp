@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-
+import store from 'store';
 import { getSessionUser, getUserProfile } from '../utils/ajax';
 import {
   fetchProfileForUserComplete,
@@ -24,7 +24,7 @@ function* fetchSessionUser() {
 
     const sound = user[userId].sound;
 
-    localStorage.setItem('fcc-sound', sound);
+    store.set('fcc-sound', sound);
 
     yield put(
       fetchUserComplete({ user: appUser, username: result, sessionMeta })
