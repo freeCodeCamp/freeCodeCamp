@@ -3,7 +3,7 @@ import { SuperBlocks } from '../../../config/certification-settings';
 
 // these are keys from i18n translations.json files
 enum SuperBlockI18nKeys {
-  Certification = 'learn.cert-map-estimates.certs',
+  Certification = 'learn.cert-map-estimates.certs'
 }
 
 // the key above is used to create the last word for superBlock titles used on
