@@ -716,5 +716,12 @@
     "focus-instructions-panel": "手順書パネルにフォーカス",
     "navigate-previous": "前の課題へ移動",
     "navigate-next": "次の課題へ移動"
+  },
+  "signout": {
+    "heading": "Sign out of your account",
+    "p1": "Warning: If you continue, your progress will no longer be saved.",
+    "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
+    "certain": "Yes, sign out of my account",
+    "nevermind": "Nevermind, I don't want to sign out"
   }
 }

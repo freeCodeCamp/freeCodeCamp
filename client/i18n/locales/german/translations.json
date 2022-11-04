@@ -716,5 +716,12 @@
     "focus-instructions-panel": "Fokus-Bedienfeld",
     "navigate-previous": "Zur vorherigen Übung navigieren",
     "navigate-next": "Zur nächsten Übung navigieren"
+  },
+  "signout": {
+    "heading": "Sign out of your account",
+    "p1": "Warning: If you continue, your progress will no longer be saved.",
+    "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
+    "certain": "Yes, sign out of my account",
+    "nevermind": "Nevermind, I don't want to sign out"
   }
 }
