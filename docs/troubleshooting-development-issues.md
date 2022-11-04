@@ -1,6 +1,6 @@
-While facing issue is frustrating, most issues that come our way are related to skimming through our docs and skipping important section.
+While facing issues is frustrating, most issues that contributors experience are related to skimming through our docs and skipping important sections and information.
 
-If you are facing issue, there is a high chance that its answer is in the docs, here are some.
+If you are facing issue, there is a high chance that the resolution is in this documentation.
 
 ## Troubleshooting
 

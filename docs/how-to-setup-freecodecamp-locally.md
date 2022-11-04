@@ -158,7 +158,7 @@ We have automated the process of setting up the development environment in Gitpo
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(You will still need to create, your own fork and branch.)
+(You will still need to create your own fork and branch.)
 
 #### Step 1: Set up the environment variable file
 

@@ -1,6 +1,6 @@
 Follow these guidelines for making changes to freeCodeCamp. This is highly recommended if you want to contribute regularly.
 
-Ignoring these steps will pollute your repo, and make maintaining and reviewing process difficult.
+Ignoring these steps will pollute your repo, and make the contributing, maintaining, and reviewing processes difficult.
 
 ## Making changes locally
 
@@ -32,7 +32,7 @@ Follow these steps:
 2. Sync the latest changes from the freeCodeCamp upstream `main` branch to your local main branch:
 
    > [!WARNING]
-   > If you have any outstanding pull request that you made from the `main` branch of your fork, you will lose them at the end of this step.
+   > If you have any outstanding pull requests that you made from the `main` branch of your fork, you will lose them at the end of this step.
    >
    > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `main`.
 
