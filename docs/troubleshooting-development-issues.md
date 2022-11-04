@@ -75,11 +75,17 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 ---
 
-### Issue signing out while navigating
+### Issues signing out while navigating
 
 While in development environment, your session is stored as cookies, clearing them will signout your development account.
 
 Running `npm run seed:certified-user` will log you out, too. as it will overwrite your previous entry.
+
+### Issue getting 404 when navigating profile page
+
+When you try to navigate to http://localhost:8000/developmentuser to view the profile page, Gatsby takes over serving the client-side pages and hence you will get a 404 page for the user profile when working.
+
+There is a "Preview Custom 404 Page" button, click it to see the profile.
 
 ### Issues installing dependencies
 
