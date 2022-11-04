@@ -56,7 +56,7 @@ interface NavLinksProps {
   showLanguageMenu: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu: () => void;
   menuButtonRef: React.RefObject<HTMLButtonElement>;
-  openSignoutModal?: () => void;
+  openSignoutModal: () => void;
 }
 
 const mapDispatchToProps = {
