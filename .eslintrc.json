@@ -38,7 +38,16 @@
     "import/order": "error",
     "import/no-cycle": [2, { "maxDepth": 2 }],
     "react/prop-types": "off",
-    "no-only-tests/no-only-tests": "error"
+    "no-only-tests/no-only-tests": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ]
   },
   "overrides": [
     {
