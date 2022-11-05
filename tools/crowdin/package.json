@@ -24,7 +24,7 @@
   "dependencies": {
     "@actions/core": "1.10.0",
     "@actions/github": "5.1.1",
-    "dotenv": "10.0.0",
+    "dotenv": "16.0.3",
     "fs-extra": "10.0.0",
     "gray-matter": "4.0.3",
     "node-fetch": "2.6.7",
