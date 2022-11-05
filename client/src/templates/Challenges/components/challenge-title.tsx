@@ -31,9 +31,7 @@ function ChallengeTitle({
       <div className='challenge-title'>
         <div className='title-text'>
           <h1>{children}</h1>
-          {isCompleted ? (
-            <GreenPass style={{ height: '15px', width: '15px' }} />
-          ) : null}
+          {isCompleted && <GreenPass />}
         </div>
       </div>
     </div>

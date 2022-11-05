@@ -90,7 +90,6 @@ a.cert-tag:active {
 
 .course-title {
   display: flex;
-  gap: var(--icons-spacing);
   align-items: center;
   font-size: 1.13rem;
   overflow-wrap: break-word;
@@ -120,7 +119,6 @@ a.cert-tag:active {
 .map-title {
   display: flex;
   align-items: center;
-  gap: var(--icons-spacing);
   padding: 18px 0;
   background: transparent;
   border: none;
@@ -141,7 +139,7 @@ button.map-title {
 .map-challenge-wrap > a,
 .map-project-wrap > a {
   display: flex;
-  gap: var(--small-icons-spacing);
+  gap: 7px;
 }
 
 .map-project-wrap > a {
@@ -416,7 +414,6 @@ button.map-title {
 .block-header-button-text {
   align-items: center;
   display: flex;
-  gap: var(--icons-spacing);
   flex-direction: row;
   justify-content: space-between;
 }
@@ -438,10 +435,15 @@ ToDo: find out why, and remove the need for it */
 
 .title-wrapper {
   display: flex;
-  gap: var(--icons-spacing);
   flex-direction: row;
   align-items: center;
   width: 100%;
+}
+.course-title,
+.map-title,
+.block-header-button-text,
+.title-wrapper {
+  gap: 10px;
 }
 
 .block-grid .progress-wrapper {
