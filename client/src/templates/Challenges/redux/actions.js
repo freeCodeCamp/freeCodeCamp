@@ -58,9 +58,13 @@ export const projectPreviewMounted = createAction(
   actionTypes.projectPreviewMounted
 );
 
-export const storeportalWindow = createAction(actionTypes.storeportalWindow);
-export const removeportalWindow = createAction(actionTypes.removeportalWindow);
-
+export const storeportalDocument = createAction(
+  actionTypes.storeportalDocument
+);
+export const removeportalDocument = createAction(
+  actionTypes.removeportalDocument
+);
+export const storePortalWindow = createAction(actionTypes.storePortalWindow);
 export const setReduxShowPreviewPortal = createAction(
   actionTypes.setReduxShowPreviewPortal
 );

@@ -36,8 +36,10 @@ export const actionTypes = createTypes(
 
     'previewMounted',
     'projectPreviewMounted',
-    'storeportalWindow',
-    'removeportalWindow',
+    'storeportalDocument',
+    'removeportalDocument',
+    'storePortalWindow',
+
     'challengeMounted',
     'checkChallenge',
     'executeChallenge',

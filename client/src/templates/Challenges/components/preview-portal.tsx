@@ -3,18 +3,29 @@ import ReactDOM from 'react-dom';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { storeportalWindow, removeportalWindow } from '../redux/actions';
 import {
-  portalWindowSelector,
-  showPreviewPortalSelector
+  storeportalDocument,
+  removeportalDocument,
+  storePortalWindow
+} from '../redux/actions';
+import {
+  portalDocumentSelector,
+  showPreviewPortalSelector,
+  portalWindowSelector
 } from '../redux/selectors';
 
 const mapStateToProps = createSelector(
   showPreviewPortalSelector,
   portalWindowSelector,
-  (showPreviewPortal: null, portalWindow: Window | null) => ({
+  portalDocumentSelector,
+  (
+    showPreviewPortal: false,
+    portalWindow: Window | null,
+    portalDocument: Document | null
+  ) => ({
     showPreviewPortal,
-    portalWindow
+    portalWindow,
+    portalDocument
   })
 );
 
@@ -23,22 +34,28 @@ interface PreviewPortalProps {
   togglePane: (pane: string) => void;
   windowTitle: string;
   t: TFunction;
-  storeportalWindow: (window: Window | null) => void;
-  removeportalWindow: () => void;
+  storeportalDocument: (document: Document | undefined) => void;
+  removeportalDocument: () => void;
+  storePortalWindow: (window: Window | null) => void;
+  portalWindow: Window;
+  showPreviewPortal: boolean;
+  portalDocument: Document | boolean;
 }
 
 const mapDispatchToProps = {
-  storeportalWindow,
-  removeportalWindow
+  storeportalDocument,
+  removeportalDocument,
+  storePortalWindow
 };
 
 class PreviewPortal extends Component<PreviewPortalProps> {
   static displayName = 'PreviewPortal';
   mainWindow: Window;
-  externalWindow: Window | null;
+  externalWindow: Window | null = null;
   containerEl;
   titleEl;
   styleEl;
+  existingExternalWindow: Window;
 
   constructor(props: PreviewPortalProps) {
     super(props);
@@ -48,6 +65,7 @@ class PreviewPortal extends Component<PreviewPortalProps> {
     this.containerEl = document.createElement('div');
     this.titleEl = document.createElement('title');
     this.styleEl = document.createElement('style');
+    this.existingExternalWindow = this.props.portalWindow;
   }
 
   componentDidMount() {
@@ -65,38 +83,59 @@ class PreviewPortal extends Component<PreviewPortalProps> {
       }
     `;
 
-    this.externalWindow = window.open(
-      '',
-      '',
-      'width=960,height=540,left=100,top=100'
-    );
-
-    this.externalWindow?.document.head.appendChild(this.titleEl);
-    this.externalWindow?.document.head.appendChild(this.styleEl);
-    this.externalWindow?.document.body.setAttribute(
-      'style',
-      `
+    if (
+      this.props.portalWindow &&
+      this.props.showPreviewPortal &&
+      this.props.portalDocument
+    ) {
+      console.log(this.existingExternalWindow.document);
+      this.existingExternalWindow.document.head.innerHTML = '';
+      this.existingExternalWindow.document.body.innerHTML = '';
+      this.existingExternalWindow?.document.head.appendChild(this.titleEl);
+      this.existingExternalWindow?.document.head.appendChild(this.styleEl);
+      this.existingExternalWindow?.document.body.setAttribute(
+        'style',
+        `
         margin: 0px;
         padding: 0px;
         overflow: hidden;
       `
-    );
-    this.externalWindow?.document.body.appendChild(this.containerEl);
+      );
+      this.existingExternalWindow?.document.body.appendChild(this.containerEl);
+      this.props.storePortalWindow(this.existingExternalWindow);
+      this.props.storeportalDocument(this.existingExternalWindow?.document);
+    } else {
+      this.externalWindow = window.open(
+        '',
+        '',
+        'width=960,height=540,left=100,top=100'
+      );
+
+      this.externalWindow?.document.head.appendChild(this.titleEl);
+      this.externalWindow?.document.head.appendChild(this.styleEl);
+      this.externalWindow?.document.body.setAttribute(
+        'style',
+        `
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+      `
+      );
+      this.externalWindow?.document.body.appendChild(this.containerEl);
+      this.props.storePortalWindow(this.externalWindow);
+      this.props.storeportalDocument(this.externalWindow?.document);
+    }
+
     this.externalWindow?.addEventListener('beforeunload', () => {
       this.props.togglePane('showPreviewPortal');
     });
-
-    console.log('window: ', this.externalWindow);
-    this.props.storeportalWindow(this.externalWindow);
-
     this.mainWindow?.addEventListener('beforeunload', () => {
       this.externalWindow?.close();
     });
   }
 
   componentWillUnmount() {
-    this.externalWindow?.close();
-    this.props.removeportalWindow();
+    this.props.removeportalDocument();
   }
 
   render() {
