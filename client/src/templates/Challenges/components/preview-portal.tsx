@@ -2,26 +2,40 @@ import { Component, ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { storePortalDocument, removePortalDocument } from '../redux/actions';
+import { createSelector } from 'reselect';
+import { storeportalWindow, removeportalWindow } from '../redux/actions';
+import {
+  portalWindowSelector,
+  showPreviewPortalSelector
+} from '../redux/selectors';
+
+const mapStateToProps = createSelector(
+  showPreviewPortalSelector,
+  portalWindowSelector,
+  (showPreviewPortal: null, portalWindow: Window | null) => ({
+    showPreviewPortal,
+    portalWindow
+  })
+);
 
 interface PreviewPortalProps {
   children: ReactElement | null;
   togglePane: (pane: string) => void;
   windowTitle: string;
   t: TFunction;
-  storePortalDocument: (document: Document | undefined) => void;
-  removePortalDocument: () => void;
+  storeportalWindow: (window: Window | null) => void;
+  removeportalWindow: () => void;
 }
 
 const mapDispatchToProps = {
-  storePortalDocument,
-  removePortalDocument
+  storeportalWindow,
+  removeportalWindow
 };
 
 class PreviewPortal extends Component<PreviewPortalProps> {
   static displayName = 'PreviewPortal';
   mainWindow: Window;
-  externalWindow: Window | null = null;
+  externalWindow: Window | null;
   containerEl;
   titleEl;
   styleEl;
@@ -72,7 +86,8 @@ class PreviewPortal extends Component<PreviewPortalProps> {
       this.props.togglePane('showPreviewPortal');
     });
 
-    this.props.storePortalDocument(this.externalWindow?.document);
+    console.log('window: ', this.externalWindow);
+    this.props.storeportalWindow(this.externalWindow);
 
     this.mainWindow?.addEventListener('beforeunload', () => {
       this.externalWindow?.close();
@@ -81,7 +96,7 @@ class PreviewPortal extends Component<PreviewPortalProps> {
 
   componentWillUnmount() {
     this.externalWindow?.close();
-    this.props.removePortalDocument();
+    this.props.removeportalWindow();
   }
 
   render() {
@@ -92,6 +107,6 @@ class PreviewPortal extends Component<PreviewPortalProps> {
 PreviewPortal.displayName = 'PreviewPortal';
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(withTranslation()(PreviewPortal));

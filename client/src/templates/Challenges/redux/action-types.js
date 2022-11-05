@@ -29,14 +29,15 @@ export const actionTypes = createTypes(
     'storedCodeFound',
     'noStoredCodeFound',
     'saveEditorContent',
-
+    'setReduxShowPreviewPane',
+    'setReduxShowPreviewPortal',
     'closeModal',
     'openModal',
 
     'previewMounted',
     'projectPreviewMounted',
-    'storePortalDocument',
-    'removePortalDocument',
+    'storeportalWindow',
+    'removeportalWindow',
     'challengeMounted',
     'checkChallenge',
     'executeChallenge',

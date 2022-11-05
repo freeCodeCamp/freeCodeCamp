@@ -41,9 +41,11 @@ const initialState = {
     projectPreview: false,
     shortcuts: false
   },
-  portalDocument: false,
+  portalWindow: null,
   projectFormValues: {},
-  successMessage: 'Happy Coding!'
+  successMessage: 'Happy Coding!',
+  reduxShowPreviewPortal: false,
+  reduxShowPreviewPane: true
 };
 
 export const epics = [
@@ -178,13 +180,21 @@ export const reducer = handleActions(
       ...state,
       isBuildEnabled: false
     }),
-    [actionTypes.storePortalDocument]: (state, { payload }) => ({
+    [actionTypes.storeportalWindow]: (state, { payload }) => ({
       ...state,
-      portalDocument: payload
+      portalWindow: payload
     }),
-    [actionTypes.removePortalDocument]: state => ({
+    [actionTypes.removeportalWindow]: state => ({
       ...state,
-      portalDocument: false
+      portalWindow: null
+    }),
+    [actionTypes.setReduxShowPreviewPortal]: (state, { payload }) => ({
+      ...state,
+      reduxShowPreviewPortal: payload
+    }),
+    [actionTypes.setReduxShowPreviewPane]: (state, { payload }) => ({
+      ...state,
+      reduxShowPreviewPane: payload
     }),
     [actionTypes.updateSuccessMessage]: (state, { payload }) => ({
       ...state,

@@ -58,11 +58,14 @@ export const projectPreviewMounted = createAction(
   actionTypes.projectPreviewMounted
 );
 
-export const storePortalDocument = createAction(
-  actionTypes.storePortalDocument
+export const storeportalWindow = createAction(actionTypes.storeportalWindow);
+export const removeportalWindow = createAction(actionTypes.removeportalWindow);
+
+export const setReduxShowPreviewPortal = createAction(
+  actionTypes.setReduxShowPreviewPortal
 );
-export const removePortalDocument = createAction(
-  actionTypes.removePortalDocument
+export const setReduxShowPreviewPane = createAction(
+  actionTypes.setReduxShowPreviewPane
 );
 
 export const challengeMounted = createAction(actionTypes.challengeMounted);

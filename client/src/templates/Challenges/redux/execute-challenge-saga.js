@@ -50,7 +50,7 @@ import {
   challengeMetaSelector,
   challengeTestsSelector,
   isBuildEnabledSelector,
-  portalDocumentSelector
+  portalWindowSelector
 } from './selectors';
 
 // How long before bailing out of a preview.
@@ -245,9 +245,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       });
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
+        //????//
         const document = yield getContext('document');
-        const portalDocument = yield select(portalDocumentSelector);
-        const finalDocument = portalDocument || document;
+        const portalWindow = yield select(portalWindowSelector);
+        const finalDocument = portalWindow || document;
 
         yield call(updatePreview, buildData, finalDocument, proxyLogger);
       } else if (isJavaScriptChallenge(challengeData)) {
