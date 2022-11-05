@@ -36,13 +36,13 @@ assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4]);
 assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 ```
 
-Deine Lösung sollte nicht `Array.prototype.flat()` oder `Array.prototype.flatMap()` Methoden verwenden.
+Deine Lösung sollte nicht `Array.prototype.flat()`- oder `Array.prototype.flatMap()`-Methoden verwenden.
 
 ```js
 assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
 ```
 
-Global variables should not be used.
+Globale Variablen sollten nicht verwendet werden.
 
 ```js
 steamrollArray([1, {}, [3, [[4]]]])

@@ -1,6 +1,6 @@
 ---
 id: 616d47bc9eedc4bc7f621bec
-title: الخطوة ١٠
+title: الخطوة 10
 challengeType: 0
 dashedName: step-10
 ---

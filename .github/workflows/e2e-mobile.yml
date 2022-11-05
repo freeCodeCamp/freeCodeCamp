@@ -29,7 +29,6 @@ jobs:
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
           node-version: 16.x
-          cache: 'npm'
 
       - name: Setup Flutter 3.0.x
         uses: subosito/flutter-action@dbf1fa04f4d2e52c33185153d06cdb5443aa189d # tag=v2
@@ -66,7 +65,7 @@ jobs:
           wait-on-timeout: 1200
           config: retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/mobile/mobile-app/generated-tests/
           browser: chrome
-          headless: true
+
           spec: cypress/integration/mobile-learn/test-challenges.js
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

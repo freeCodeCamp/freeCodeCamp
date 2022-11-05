@@ -37,7 +37,8 @@ function createSuperBlockTitle(superBlock: SuperBlocks) {
 const linkSpacingStyle = {
   display: 'flex',
   justifyContent: 'space-between',
-  alignItems: 'center'
+  alignItems: 'center',
+  gap: '15px'
 };
 
 function renderLandingMap(nodes: ChallengeNode[]) {

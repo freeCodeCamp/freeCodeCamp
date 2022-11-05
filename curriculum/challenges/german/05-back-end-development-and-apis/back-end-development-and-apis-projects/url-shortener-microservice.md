@@ -8,13 +8,13 @@ dashedName: url-shortener-microservice
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://url-shortener-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://url-shortener-microservice.freecodecamp.rocks</a>. Working on this project will involve you writing your code using one of the following methods:
+Build a full stack JavaScript app that is functionally similar to this: <a href="https://url-shortener-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://url-shortener-microservice.freecodecamp.rocks</a>. Bei der Arbeit an diesem Projekt musst du deinen Code mit einer der folgenden Methoden schreiben:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-urlshortener/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Use a site builder of your choice to complete the project. Achte darauf, alle Dateien aus unserer GitHub-Repo zu integrieren.
 
-Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Then submit the URL to it in the `Solution Link` field. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
+Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
 
 # --instructions--
 
@@ -22,7 +22,7 @@ Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich ge
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Du solltest dein eigenes Projekt bereitstellen, nicht die Beispiel-URL.
 
 ```js
 (getUserInput) => {
@@ -34,7 +34,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
+You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Hier siehst du ein Beispiel: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
 async (getUserInput) => {
@@ -56,7 +56,7 @@ async (getUserInput) => {
 };
 ```
 
-When you visit `/api/shorturl/<short_url>`, you will be redirected to the original URL.
+Wenn du `/api/shorturl/<short_url>` besuchst, wirst du zur ursprünglichen URL weitergeleitet.
 
 ```js
 async (getUserInput) => {
@@ -88,7 +88,7 @@ async (getUserInput) => {
 };
 ```
 
-If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`
+Wenn du eine ungültige URL angibst, die nicht dem gültigen `http://www.example.com`-Format folgt, wird die JSON-Antwort `{ error: 'invalid url' }` enthalten
 
 ```js
 async (getUserInput) => {

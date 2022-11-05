@@ -345,7 +345,7 @@ fieldset[disabled] .btn-primary.focus {
 .map-icon {
   width: 35px;
   max-height: 45px;
-  margin-right: 20px;
+  margin-inline: 5px;
 }
 
 .cert-header-icon {
