@@ -66,7 +66,7 @@
     "crypto-browserify": "3.12.0",
     "date-fns": "2.27.0",
     "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.6",
+    "enzyme-adapter-react-16": "1.15.7",
     "final-form": "4.20.7",
     "gatsby": "3.14.6",
     "gatsby-cli": "3.14.2",
