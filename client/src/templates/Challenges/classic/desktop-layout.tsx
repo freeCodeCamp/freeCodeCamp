@@ -69,6 +69,12 @@ const reflexProps = {
 };
 
 const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
+  const {
+    showPreviewPane,
+    showPreviewPortal,
+    setReduxShowPreviewPane,
+    setReduxShowPreviewPortal
+  } = props;
   const [showNotes, setShowNotes] = useState(false);
 
   const [showConsole, setShowConsole] = useState(false);
@@ -76,14 +82,14 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const togglePane = (pane: string): void => {
     switch (pane) {
       case 'showPreviewPane':
-        if (!props.showPreviewPane && props.showPreviewPortal)
-          props.setReduxShowPreviewPortal(false);
-        props.setReduxShowPreviewPane(!props.showPreviewPane);
+        if (!showPreviewPane && showPreviewPortal)
+          setReduxShowPreviewPortal(false);
+        setReduxShowPreviewPane(!showPreviewPane);
         break;
       case 'showPreviewPortal':
-        if (!props.showPreviewPortal && props.showPreviewPane)
-          props.setReduxShowPreviewPane(false);
-        props.setReduxShowPreviewPortal(!props.showPreviewPortal);
+        if (!showPreviewPortal && showPreviewPane)
+          setReduxShowPreviewPane(false);
+        setReduxShowPreviewPortal(!showPreviewPortal);
         break;
       case 'showConsole':
         setShowConsole(!showConsole);
@@ -97,8 +103,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       default:
         setShowInstuctions(true);
         setShowConsole(false);
-        props.setReduxShowPreviewPane(true);
-        props.setReduxShowPreviewPortal(false);
+        setReduxShowPreviewPane(true);
+        setReduxShowPreviewPortal(false);
         setShowNotes(false);
     }
   };
@@ -127,8 +133,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const projectBasedChallenge = hasEditableBoundaries;
   const isMultifileCertProject =
     challengeType === challengeTypes.multifileCertProject;
-  const displayPreviewPane = hasPreview && props.showPreviewPane;
-  const displayPreviewPortal = hasPreview && props.showPreviewPortal;
+  const displayPreviewPane = hasPreview && showPreviewPane;
+  const displayPreviewPortal = hasPreview && showPreviewPortal;
   const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
   const displayConsole =
     projectBasedChallenge || isMultifileCertProject ? showConsole : true;
@@ -150,8 +156,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showConsole={showConsole}
           showNotes={showNotes}
           showInstructions={showInstructions}
-          showPreviewPane={props.showPreviewPane}
-          showPreviewPortal={props.showPreviewPortal}
+          showPreviewPane={showPreviewPane}
+          showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
         />
       )}

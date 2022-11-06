@@ -245,9 +245,7 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       });
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
-        //????//
         const document = yield getContext('document');
-        console.log({ document });
         const portalDocument = yield select(portalDocumentSelector);
 
         const finalDocument = portalDocument || document;

@@ -59,17 +59,25 @@ class PreviewPortal extends Component<PreviewPortalProps> {
 
   constructor(props: PreviewPortalProps) {
     super(props);
-
+    const { portalWindow } = this.props;
     this.mainWindow = window;
     this.externalWindow = null;
     this.containerEl = document.createElement('div');
     this.titleEl = document.createElement('title');
     this.styleEl = document.createElement('style');
-    this.existingExternalWindow = this.props.portalWindow;
+    this.existingExternalWindow = portalWindow;
   }
 
   componentDidMount() {
-    const { t, windowTitle } = this.props;
+    const {
+      t,
+      windowTitle,
+      showPreviewPortal,
+      portalDocument,
+      storePortalWindow,
+      storeportalDocument,
+      portalWindow
+    } = this.props;
 
     this.titleEl.innerText = `${t(
       'learn.editor-tabs.preview'
@@ -83,17 +91,16 @@ class PreviewPortal extends Component<PreviewPortalProps> {
       }
     `;
 
-    if (
-      this.props.portalWindow &&
-      this.props.showPreviewPortal &&
-      this.props.portalDocument
-    ) {
-      console.log(this.existingExternalWindow.document);
-      this.existingExternalWindow.document.head.innerHTML = '';
-      this.existingExternalWindow.document.body.innerHTML = '';
-      this.existingExternalWindow?.document.head.appendChild(this.titleEl);
-      this.existingExternalWindow?.document.head.appendChild(this.styleEl);
-      this.existingExternalWindow?.document.body.setAttribute(
+    const processWindowAndDocuments = (
+      title: HTMLElement,
+      style: HTMLElement,
+      containerEl: HTMLElement,
+      externalWindow: Window | null,
+      clientDocument: Document | undefined
+    ) => {
+      externalWindow?.document.head.appendChild(title);
+      externalWindow?.document.head.appendChild(style);
+      externalWindow?.document.body.setAttribute(
         'style',
         `
         margin: 0px;
@@ -101,29 +108,34 @@ class PreviewPortal extends Component<PreviewPortalProps> {
         overflow: hidden;
       `
       );
-      this.existingExternalWindow?.document.body.appendChild(this.containerEl);
-      this.props.storePortalWindow(this.existingExternalWindow);
-      this.props.storeportalDocument(this.existingExternalWindow?.document);
+      externalWindow?.document.body.appendChild(containerEl);
+      storePortalWindow(externalWindow);
+      storeportalDocument(clientDocument);
+    };
+
+    if (portalWindow && showPreviewPortal && portalDocument) {
+      this.existingExternalWindow.document.head.innerHTML = '';
+      this.existingExternalWindow.document.body.innerHTML = '';
+      processWindowAndDocuments(
+        this.titleEl,
+        this.styleEl,
+        this.containerEl,
+        this.existingExternalWindow,
+        this.existingExternalWindow?.document
+      );
     } else {
       this.externalWindow = window.open(
         '',
         '',
         'width=960,height=540,left=100,top=100'
       );
-
-      this.externalWindow?.document.head.appendChild(this.titleEl);
-      this.externalWindow?.document.head.appendChild(this.styleEl);
-      this.externalWindow?.document.body.setAttribute(
-        'style',
-        `
-        margin: 0px;
-        padding: 0px;
-        overflow: hidden;
-      `
+      processWindowAndDocuments(
+        this.titleEl,
+        this.styleEl,
+        this.containerEl,
+        this.externalWindow,
+        this.externalWindow?.document
       );
-      this.externalWindow?.document.body.appendChild(this.containerEl);
-      this.props.storePortalWindow(this.externalWindow);
-      this.props.storeportalDocument(this.externalWindow?.document);
     }
 
     this.externalWindow?.addEventListener('beforeunload', () => {
