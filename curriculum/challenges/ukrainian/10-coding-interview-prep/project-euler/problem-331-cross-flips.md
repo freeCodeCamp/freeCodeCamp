@@ -1,32 +1,32 @@
 ---
 id: 5900f4b71000cf542c50ffca
-title: 'Problem 331: Cross flips'
-challengeType: 5
+title: 'Задача 331: Перехресні перевертання'
+challengeType: 1
 forumTopicId: 301989
 dashedName: problem-331-cross-flips
 ---
 
 # --description--
 
-N×N disks are placed on a square game board. Each disk has a black side and white side.
+N×N дисків розміщують на квадратній гральній дошці. Кожен диск має чорну і білу сторону.
 
-At each turn, you may choose a disk and flip all the disks in the same row and the same column as this disk: thus $2 × N - 1$ disks are flipped. The game ends when all disks show their white side. The following example shows a game on a 5×5 board.
+З кожним ходом ви можете обрати диск та перевернути всі диски у тому ж рядку і в тому ж стовпці, у якому знаходиться цей диск, тобто перевертаються $2 × N - 1$ дисків. Гра закінчується, коли всі диски перевернуті білою стороною догори. У наступному прикладі продемонстровано гру на дошці 5×5.
 
-<img class="img-responsive center-block" alt="animation showing game on 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="анімація показує гру на панелі 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
 
-It can be proven that 3 is the minimal number of turns to finish this game.
+Можна довести, що для завершення гри потрібно зробити мінімум 3 ходи.
 
-The bottom left disk on the $N×N$ board has coordinates (0, 0); the bottom right disk has coordinates ($N - 1$,$0$) and the top left disk has coordinates ($0$,$N - 1$).
+Нижній лівий диск на $N×N$ дошці має координати (0, 0); нижній правий диск має координати ($N - 1$,$0$), а верхній лівий диск має координати ($0$,$N - 1$).
 
-Let $C_N$ be the following configuration of a board with $N × N$ disks: A disk at ($x$, $y$) satisfying $N - 1 \le \sqrt{x^2 + y^2} \lt N$, shows its black side; otherwise, it shows its white side. $C_5$ is shown above.
+Let $C_N$ be the following configuration of a board with $N × N$ disks: A disk at ($x$, $y$) satisfying $N - 1 \le \sqrt{x^2 + y^2} \lt N$, shows its black side; otherwise, it shows its white side. $C_5$ показано вище.
 
-Let $T(N)$ be the minimal number of turns to finish a game starting from configuration $C_N$ or 0 if configuration $C_N$ is unsolvable. We have shown that $T(5) = 3$. You are also given that $T(10) = 29$ and $T(1\\,000) = 395\\,253$.
+Нехай $T(N)$ буде мінімальною кількістю ходів для завершення гри, починаючи з конфігурації $C_N$ або 0, якщо конфігурація $C_N$ нерозв'язна. Ми продемонстрували, що $T(5) = 3$. Показано також, що $T(10) = 29$ and $T(1\\,000) = 395\\,253$.
 
-Find $\displaystyle \sum_{i = 3}^{31} T(2^i - i)$.
+Знайдіть $\displaystyle \sum_{i = 3}^{31} T(2^i - i)$.
 
 # --hints--
 
-`crossFlips()` should return `467178235146843500`.
+`crossFlips()`повинно вийти`467178235146843500`.
 
 ```js
 assert.strictEqual(crossFlips(), 467178235146843500);

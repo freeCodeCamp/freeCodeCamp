@@ -10,7 +10,7 @@ dashedName: problem-148-exploring-pascals-triangle
 
 Podemos facilmente verificar que nenhuma das entradas das primeiras sete linhas do triângulo Pascal é divisível por 7:
 
-```
+```markup
             1
           1   1
         1   2   1

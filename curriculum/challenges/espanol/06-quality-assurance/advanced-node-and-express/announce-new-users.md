@@ -8,13 +8,13 @@ dashedName: announce-new-users
 
 # --description--
 
-Muchas salas de chat son capaces de anunciar cuando un usuario se conecta o se desconecta y luego lo muestra a todos los usuarios conectados en el chat. Viendo como si ya estuvieras emitiendo un evento al conectar y desconectar, sólo tendrás que modificar este evento para soportar una característica de este tipo. La forma más lógica de hacerlo es enviando 3 datos con el evento: el nombre del usuario que se conectó/desconectó, el recuento actual de usuarios y si ese nombre se conectó o desconectó.
+Muchas salas de chat son capaces de anunciar cuando un usuario se conecta o se desconecta y luego lo muestra a todos los usuarios conectados en el chat. Viendo como si ya estuvieras emitiendo un evento al conectar y desconectar, sólo tendrás que modificar este evento para soportar una característica de este tipo. The most logical way of doing so is sending 3 pieces of data with the event: the username of the user who connected/disconnected, the current user count, and if that username connected or disconnected.
 
-Cambia el nombre del evento a `'user'`, y pasa un objeto a lo largo de los campos que contengan 'name', 'currentUsers', and 'connected' (esto será `true` en caso de conexión, o `false` para desconexión del usuario enviado). Asegúrate de cambiar los dos eventos 'user count' y configura el de desconexión para que envíe `false` para el campo 'connected' en lugar de `true` como el evento emitido al conectar.
+Change the event name to `'user'`, and pass an object along containing the fields `username`, `currentUsers`, and `connected` (to be `true` in case of connection, or `false` for disconnection of the user sent). Be sure to change both `'user count'` events and set the disconnect one to send `false` for the field `connected` instead of `true` like the event emitted on connect.
 
 ```js
 io.emit('user', {
-  name: socket.request.user.name,
+  username: socket.request.user.username,
   currentUsers,
   connected: true
 });
@@ -28,55 +28,49 @@ Una implementación de esto podría parecerse a lo siguiente:
 socket.on('user', data => {
   $('#num-users').text(data.currentUsers + ' users online');
   let message =
-    data.name +
+    data.username +
     (data.connected ? ' has joined the chat.' : ' has left the chat.');
   $('#messages').append($('<li>').html('<b>' + message + '</b>'));
 });
 ```
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
+Envía tu página cuando creas que lo has hecho bien. If you're running into errors, you can check out <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135/3#announce-new-users-10" target="_blank" rel="noopener noreferrer nofollow">the project completed up to this point </a>.
 
 # --hints--
 
-El evento `'user'` debe emitirse con name, currentUsers, y connected.
+Event `'user'` should be emitted with `name`, `currentUsers`, and `connected`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io.emit.*('|")user\1.*name.*currentUsers.*connected/gis,
-        'You should have an event emitted named user sending name, currentUsers, and connected'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io.emit.*('|")user\1.*name.*currentUsers.*connected/s,
+    'You should have an event emitted named user sending name, currentUsers, and connected'
   );
+}
 ```
 
 El cliente debe manejar y mostrar correctamente los nuevos datos del evento `'user'`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")user\1[^]*num-users/gi,
-        'You should change the text of "#num-users" within on your client within the "user" event listener to show the current users connected'
-      );
-      assert.match(
-        data,
-        /socket.on.*('|")user\1[^]*messages.*li/gi,
-        'You should append a list item to "#messages" on your client within the "user" event listener to announce a user came or went'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")user\1[^]*num-users/s,
+    'You should change the text of "#num-users" within on your client within the "user" event listener to show the current users connected'
   );
+  assert.match(
+    data,
+    /socket.on.*('|")user\1[^]*messages.*li/s,
+    'You should append a list item to "#messages" on your client within the "user" event listener to announce a user came or went'
+  );
+}
 ```
 
 # --solutions--

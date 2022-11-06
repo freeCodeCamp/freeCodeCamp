@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**目标：** 构建一个功能类似于 <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a> 的应用程序
+**目标：** 构建一个功能类似于 <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a> 的应用程序
 
 **需求：**
 
@@ -19,7 +19,7 @@ dashedName: build-a-survey-form
 1. 在表单元素内，你**需要**在 `input` 字段中输入你的邮箱，该字段的 `id` 为 `email`
 1. 如果你输入了格式不正确的邮箱，你将会看见 HTML5 验证错误信息
 1. 在表单中，你可以在 `input` 字段中输入一个数字，该字段的 `id` 为 `number`
-1. 如果你在数字输入框内输入非数字内容，你会看到 HTML5 验证错误信息
+1. The number input should not accept non-numbers, either by preventing you from typing them or by showing an HTML5 validation error (depending on your browser).
 1. 如果你输入的数字超出了范围（使用 `min` 和 `max` 属性定义），你将会看见 HTML5 验证错误信息
 1. 表单中的名字、邮箱和数字输入框需有对应的包含描述输入框用途的 `label` 元素，id 应分别为 `id="name-label"`、`id="email-label"` 和 `id="number-label"`
 1. 在表单中的名字、邮箱和数字输入框中，你能看到各自的描述文字作为占位符
@@ -42,7 +42,7 @@ const el = document.getElementById('title')
 assert(!!el && el.tagName === 'H1')
 ```
 
-你的 `#title` 不应为空。
+你的 `#title` 元素不应为空。
 
 ```js
 const el = document.getElementById('title')
@@ -182,21 +182,21 @@ const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-你的 `#name-label` 不应为空。
+你的 `#name-label` 应包含描述输入的文本。
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-你的 `#email-label` 不应为空。
+你的 `#email-label` 应包含描述输入的文本。
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-你的 `#number-label` 不应为空。
+你的 `#number-label` 应该包含描述输入的文本。
 
 ```js
 const el = document.getElementById('number-label')
@@ -380,7 +380,7 @@ assert(!!el)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Survey Form</title>
   </head>
   <body>

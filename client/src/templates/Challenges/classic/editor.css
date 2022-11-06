@@ -28,7 +28,8 @@ textarea.inputarea {
 
 .breadcrumbs-demo {
   font-size: 16px;
-  margin: 0 0 1.2rem;
+  margin: 0;
+  padding: 10px;
 }
 
 .editor-upper-jaw,
@@ -56,7 +57,7 @@ textarea.inputarea {
 
 .description-container h1 {
   color: var(--secondary-color);
-  font-family: Roboto Mono, monospace;
+  font-family: Hack-ZeroSlash, monospace;
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.1;
@@ -168,4 +169,22 @@ textarea.inputarea {
   100% {
     opacity: 1;
   }
+}
+
+.lower-jaw-icon-bar {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+.lower-jaw-icon-bar > button {
+  line-height: 0;
+  margin-right: 10px;
+}
+
+.lower-jaw-icon-bar > button:focus {
+  outline: 2px solid var(--blue-mid);
+}
+
+.lower-jaw-icon-bar > button:last-child {
+  margin-right: 0;
 }

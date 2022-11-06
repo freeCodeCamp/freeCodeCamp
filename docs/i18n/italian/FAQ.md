@@ -12,7 +12,7 @@ Sì, puoi contribuire a ognuna delle oltre 30 lingue abilitate sulla nostra piat
 
 Abbiamo le traduzioni fatte dagli utenti live in alcune lingue. Abbiamo intenzione di localizzare freeCodeCamp nelle lingue più usate nel mondo. Puoi leggere tutto su questo argomento in questo [articolo](https://www.freecodecamp.org/italian/news/come-aiutare-a-tradurre-freecodecamp-nella-tua-lingua/).
 
-Se sei interessato a contribuire alla traduzione per favore assicurati di [leggere questa guida](how-to-translate-files.md) come prima cosa.
+Se sei interessato a contribuire alla traduzione, per favore assicurati di [leggere questa guida](how-to-translate-files.md) prima di tutto.
 
 ### Posso contribuire agli articoli alla pubblicazione di freeCodeCamp o ai video del canale YouTube?
 
@@ -100,6 +100,6 @@ Ti ringraziamo in anticipo per essere educato e paziente. Ricordati che questa c
 
 ### Assistenza aggiuntiva
 
-Se hai domande sullo stack, sull'architettura del database, sulle traduzioni, o su qualsiasi altra cosa, sentiti libero di rivolgerti al nostro team dello staff [sul forum](https://forum.freecodecamp.org/g/team).
+Se hai domande sullo stack, sull'architettura del database, sulle traduzioni o su qualsiasi altra cosa, sentiti libero di rivolgerti al nostro team dello staff [sul forum](https://forum.freecodecamp.org/g/team).
 
 **Puoi scrivere una mail allo staff di sviluppo a: `dev[at]freecodecamp.org`**

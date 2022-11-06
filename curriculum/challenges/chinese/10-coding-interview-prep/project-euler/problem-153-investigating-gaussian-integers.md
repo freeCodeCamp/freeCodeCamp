@@ -1,53 +1,67 @@
 ---
 id: 5900f4051000cf542c50ff18
-title: 'Problem 153: Investigating Gaussian Integers'
-challengeType: 5
+title: '问题 153：研究高斯整数'
+challengeType: 1
 forumTopicId: 301784
 dashedName: problem-153-investigating-gaussian-integers
 ---
 
 # --description--
 
-As we all know the equation x2=-1 has no solutions for real x.
+众所周知，方程 $x^2 = -1$ 没有实数 $x$ 解。
 
-If we however introduce the imaginary number i this equation has two solutions: x=i and x=-i.
+然而，如果我们引入虚数 $i$，则该等式具有两个解： $x = i$ 与 $x = -i$。
 
-If we go a step further the equation (x-3)2=-4 has two complex solutions: x=3+2i and x=3-2i. x=3+2i and x=3-2i are called each others' complex conjugate.
+如果我们更进一步，方程式 ${(x - 3)}^2 = -4$ 有两个复数解： $x = 3 + 2i$ 和 $x = 3 - 2i$， 被称为共轭复数。
 
-Numbers of the form a+bi are called complex numbers.
+形式 $a + bi$ 的数字称为复数。
 
-In general a+bi and a−bi are each other's complex conjugate. A Gaussian Integer is a complex number a+bi such that both a and b are integers.
+通常 $a + bi$ 与 $a − bi$ 为共轭复数。 高斯整数是指复数 $a + bi$，$a$ 与 $b$ 都是整数。
 
-The regular integers are also Gaussian integers (with b=0).
+常规整数也是高斯整数（$b = 0$）。
 
-To distinguish them from Gaussian integers with b ≠ 0 we call such integers "rational integers."
+为了将它们与 $b ≠ 0$ 的高斯整数区分开来，我们称这样的整数为“有理整数”。
 
-A Gaussian integer is called a divisor of a rational integer n if the result is also a Gaussian integer.
+一个高斯整数可以作为有理整数 $n$ 的约数，如果得到的余数也是一个高斯整数。
 
-If for example we divide 5 by 1+2i we can simplify in the following manner:
+例如，如果我们将 5 除以 $1 + 2i$，我们可以通过以下方式进行简化：
 
-Multiply numerator and denominator by the complex conjugate of 1+2i: 1−2i.
+将分子和分母乘以 $1 + 2i$ 的复共轭：$1 − 2i$。
 
-The result is .
+结果是：
 
-So 1+2i is a divisor of 5.
+$$\frac{5}{1 + 2i} = \frac{5}{1 + 2i} \frac{1 - 2i}{1 - 2i} = \frac{5(1 - 2i)}{1 - {(2i)}^2} = \frac{5(1 - 2i)}{1 - (-4)} = \frac{5(1 - 2i)}{5} = 1 - 2i$$
 
-Note that 1+i is not a divisor of 5 because .
+所以 $1 + 2i$ 是 5 的约数.
 
-Note also that if the Gaussian Integer (a+bi) is a divisor of a rational integer n, then its complex conjugate (a−bi) is also a divisor of n. In fact, 5 has six divisors such that the real part is positive: {1, 1 + 2i, 1 − 2i, 2 + i, 2 − i, 5}.
+请注意，$1 + i$ 不是 5 的除数，因为：
 
-The following is a table of all of the divisors for the first five positive rational integers:
+$$\frac{5}{1 + i} = \frac{5}{2} - \frac{5}{2}i$$
 
-n Gaussian integer divisors with positive real partSum s(n) of these
+注意，如果高斯整数（$a + bi$）是有理整数 $n$ 的约数，则其共轭复数（$a − bi$）也是 $n$ 的因子。 事实上，5 有六个因数，使得实部为正数：{1, 1 + 2i, 1 − 2i, 2 + i, 2 − i, 5}。
 
-divisors111 21, 1+i, 1-i, 25 31, 34 41, 1+i, 1-i, 2, 2+2i, 2-2i,413 51, 1+2i, 1-2i, 2+i, 2-i, 512 For divisors with positive real parts, then, we have: . For 1 ≤ n ≤ 105, ∑ s(n)=17924657155. What is ∑ s(n) for 1 ≤ n ≤ 108?
+以下是前五个正整数的所有约数表：
+
+| n | 实数部分为正的高斯整数约数表                        | 这些除数的总和 s(n) |
+| - | ------------------------------------- | ------------ |
+| 1 | 1                                     | 1            |
+| 2 | 1, 1 + i, 1 - i, 2                    | 5            |
+| 3 | 1, 3                                  | 4            |
+| 4 | 1, 1 + i, 1 - i, 2, 2 + 2i, 2 - 2i, 4 | 13           |
+| 5 | 1, 1 + 2i, 1 - 2i, 2 + i, 2 - i, 5    | 12           |
+
+对于实数部分为正的约数，我们有：$\displaystyle\sum_{n=1}^5 s(n) = 35$。
+
+对于 $1 ≤ n ≤ {10}^5$, $\displaystyle\sum_{n = 1}^{{10}^5} s(n) = 17924657155$.
+
+求 $\displaystyle\sum_{n=1}^{{10}^8} s(n)$?
 
 # --hints--
 
-`euler153()` should return 17971254122360636.
+`sumGaussianIntegers()` 应得 `17971254122360636`。
 
 ```js
-assert.strictEqual(euler153(), 17971254122360636);
+assert.strictEqual(sumGaussianIntegers(), 17971254122360636);
 ```
 
 # --seed--
@@ -55,12 +69,12 @@ assert.strictEqual(euler153(), 17971254122360636);
 ## --seed-contents--
 
 ```js
-function euler153() {
+function sumGaussianIntegers() {
 
   return true;
 }
 
-euler153();
+sumGaussianIntegers();
 ```
 
 # --solutions--

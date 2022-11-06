@@ -1,28 +1,22 @@
 ---
 id: 5e6dd1278e6ca105cde40ea9
 title: Longest common subsequence
-challengeType: 5
+challengeType: 1
 forumTopicId: 385271
 dashedName: longest-common-subsequence
 ---
 
 # --description--
 
-The **longest common subsequence** (or [**LCS**](http://en.wikipedia.org/wiki/Longest_common_subsequence_problem)) of groups A and B is the longest group of elements from A and B that are common between the two groups and in the same order in each group. For example, the sequences "1234" and "1224533324" have an LCS of "1234":
+The **longest common subsequence** (or **LCS**) of groups A and B is the longest group of elements from A and B that are common between the two groups and in the same order in each group. For example, the sequences `1234` and `1224533324` have an LCS of `1234`:<u>1234</u>
+<u>12</u>245<u>3</u>332<u>4</u>
 
-***1234***
+For a string example, consider the sequences `thisisatest` and `testing123testing`. An LCS would be `tsitest`:
+<u>t</u>hi<u>si</u>sa<u>test</u>
 
-***12***245***3***332***4***
-
-For a string example, consider the sequences "thisisatest" and "testing123testing". An LCS would be "tsitest":
-
-***t***hi***si***sa***test***
-
-***t***e***s***t***i***ng123***test***ing.
+<u>t</u>e<u>s</u>t<u>i</u>ng123<u>test</u>ing.
 
 Your code only needs to deal with strings.
-
-For more information on this problem please see [Wikipedia](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem).
 
 # --instructions--
 
@@ -86,8 +80,8 @@ function lcs(a, b) {
 
 ```js
 function lcs(a, b) {
-  var aSub = a.substr(0, a.length - 1);
-  var bSub = b.substr(0, b.length - 1);
+  var aSub = a.substring(0, a.length - 1);
+  var bSub = b.substring(0, b.length - 1);
 
   if (a.length === 0 || b.length === 0) {
     return '';

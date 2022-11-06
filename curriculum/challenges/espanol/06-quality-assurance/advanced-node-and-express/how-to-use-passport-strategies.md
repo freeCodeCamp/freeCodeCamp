@@ -8,64 +8,60 @@ dashedName: how-to-use-passport-strategies
 
 # --description--
 
-En el archivo `index.pug` proporcionado, hay realmente un formulario de inicio de sesión. Anteriormente ha estado oculto debido al JavaScript inline `if showLogin` con el formulario indentado después de él. Antes `showLogin` como variable nunca se definía, por lo que nunca renderizaba el bloque de código que contenía el formulario. Sigue adelante y en el `res.render` de esa página añade una nueva variable al objeto `showLogin: true`. Cuando actualices la página, ¡deberías ver el formulario! Este formulario está configurado para hacer una petición **POST** en `/login`, así que aquí es donde debemos configurar para aceptar el POST y autentificar al usuario.
+In the `index.pug` file supplied, there is a login form. It is hidden because of the inline JavaScript `if showLogin` with the form indented after it.
 
-Para este desafío debes añadir la ruta `/login` para aceptar una petición POST. Para autentificarse en esta ruta, es necesario añadir un middleware para hacerlo antes de enviar una respuesta. ¡Esto se hace simplemente pasando otro argumento con el middleware antes de tu `function(req,res)` con tu respuesta! El middleware a usar es `passport.authenticate('local')`.
+In the `res.render` for that page, add a new variable to the object, `showLogin: true`. When you refresh your page, you should then see the form! This form is set up to **POST** on `/login`. So, this is where you should set up to accept the POST request and authenticate the user.
 
-`passport.authenticate` también puede tomar algunas opciones como un argumento como: `{ failureRedirect: '/' }` que es increíblemente útil, así que asegúrate de añadirlo también. La respuesta después de usar el middleware (que sólo se llamará si el middleware de autentificación pasa) debe ser redirigir al usuario a `/profile` y esa ruta debe renderizar el perfil `profile.pug`.
+For this challenge, you should add the route `/login` to accept a POST request. To authenticate on this route, you need to add a middleware to do so before then sending a response. This is done by just passing another argument with the middleware before with your response. The middleware to use is `passport.authenticate('local')`.
 
-Si la autentificación fue exitosa, el user object se guardará en `req.user`.
+`passport.authenticate` can also take some options as an argument such as `{ failureRedirect: '/' }` which is incredibly useful, so be sure to add that in as well. Add a response after using the middleware (which will only be called if the authentication middleware passes) that redirects the user to `/profile`. Add that route, as well, and make it render the view `profile.pug`.
 
-En este punto, si introduces un nombre de usuario y una contraseña en el formulario, debe redirigirse a la página de inicio `/`, y la consola de tu servidor debe mostrar `'User {USERNAME} attempted to log in.'`, ya que actualmente no podemos iniciar la sesión de un usuario que no está registrado.
+If the authentication was successful, the user object will be saved in `req.user`.
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
+At this point, if you enter a username and password in the form, it should redirect to the home page `/`, and the console of your server should display `'User {USERNAME} attempted to log in.'`, since we currently cannot login a user who isn't registered.
+
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-use-passport-strategies-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-Todos los pasos deben ser correctamente implementados en el server.js.
+All steps should be correctly implemented in `server.js`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /showLogin:( |)true/gi,
-        'You should be passing the variable "showLogin" as true to your render function for the homepage'
-      );
-      assert.match(
-        data,
-        /failureRedirect:( |)('|")\/('|")/gi,
-        'Your code should include a failureRedirect to the "/" route'
-      );
-      assert.match(
-        data,
-        /login[^]*post[^]*local/gi,
-        'You should have a route for login which accepts a POST and passport.authenticates local'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /showLogin:( |)true/,
+    'You should be passing the variable "showLogin" as true to your render function for the homepage'
   );
+  assert.match(
+    data,
+    /failureRedirect:( |)('|")\/('|")/,
+    'Your code should include a failureRedirect to the "/" route'
+  );
+  assert.match(
+    data,
+    /login[^]*post[^]*local/,
+    'You should have a route for login which accepts a POST and passport.authenticates local'
+  );
+}
 ```
 
-Una solicitud POST a /login debe redirigir correctamente a /.
+A POST request to `/login` should correctly redirect to `/`.
 
 ```js
-(getUserInput) =>
-  $.post(getUserInput('url') + '/login').then(
-    (data) => {
-      assert.match(
-        data,
-        /Looks like this page is being rendered from Pug into HTML!/gi,
-        'A login attempt at this point should redirect to the homepage since we do not have any registered users'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/login", getUserInput("url"));
+  const res = await fetch(url, { method: 'POST' });
+  const data = await res.text();
+  assert.match(
+    data,
+    /Looks like this page is being rendered from Pug into HTML!/,
+    'A login attempt at this point should redirect to the homepage since we do not have any registered users'
   );
+}
 ```
 
 # --solutions--

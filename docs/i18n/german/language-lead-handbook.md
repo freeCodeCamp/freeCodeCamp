@@ -14,6 +14,16 @@ Auf der Ebene "Editor" hat der Benutzer Zugriff auf alle Entwürfe und kann sie 
 
 Die Stufe "Administrator" ist für freeCodeCamp-Mitarbeiter und Language Leads reserviert.
 
+### Wie Artikel erstellt werden
+
+Wir verwenden einen [JAMStack](https://www.google.com/search?q=what+is+jamstack)-basierten Ansatz zur Erstellung und Bereitstellung der Artikel. Diese Strategie sorgt für eine schnelle statische Website, die von einem CDN zwischengespeichert und bereitgestellt wird.
+
+[Ghost](https://ghost.org) fungiert als unsere Content-Management-Plattform, und [11ty](https://11ty.dev) erstellt aus den Artikeln statische Inhalte - einfaches HTML, JavaScript und CSS. Nur diese statischen Inhalte werden auf unseren Servern bereitgestellt.
+
+Dieser Prozess ist automatisiert und läuft regelmäßig ab. Wenn du jetzt etwas veröffentlichst, wird es in ein paar Stunden auf der Nachrichtenseite verfügbar sein.
+
+Die aktuellen Zeitpläne und den Status kannst du hier einsehen: https://github.com/freeCodeCamp/news#build
+
 ## Wie man den Originalautor eines übersetzten Artikels erwähnt
 
 Der ursprüngliche Autor und der ursprüngliche Artikel werden automatisch verlinkt, indem dieser Code dem Abschnitt Code Injection -> head in den Entwurfs-Einstellungen auf Ghost hinzugefügt wird.
@@ -91,6 +101,76 @@ article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano
 Du kannst von einem Format in ein anderes konvertieren, indem du es vorsichtig manuell ändern. Oder du kannst [das Skript in diesem Repl](https://replit.com/@Ieahleen/convert-json-to-yaml) verwenden.
 
 > [!TIP] Es wird an einem neuen Arbeitsablauf gearbeitet, sodass es in Zukunft nur noch eine Stelle gibt, an der Änderungen vorgenommen werden müssen.
+
+## How to translate articles in the footer links
+
+There are some links listed at the bottom of the footer (About, Alumni Network, Open Source etc.) and some of them can be translated into your language in the same way as other articles.
+
+Articles that can be translated:
+
+- About
+- Support
+- Academic Honesty
+- Code of Conduct
+
+The following articles should **not** be translated:
+
+- Shop
+- Sponsors
+- Privacy Policy
+- Terms of Service
+- Copyright Policy
+
+The following links are pointing to external sites and cannot be translated:
+
+- Alumni Network
+- Open Source
+
+### Change the footer links in the news
+
+Once you have translated and published the articles listed as "can be translated" above, you can update the links in the footer for `/news` by editing the file at `news/config/i18n/locales/<your language>/links.json` in the [freeCodeCamp/news](https://github.com/freeCodeCamp/news) repository.
+
+> [!NOTE] Pull requests to this repository are currently limited to staff only. If you want to update this file, ask someone on the staff team for help.
+
+Update the following part in the file:
+
+```json
+{
+  ...
+  "footer": {
+    "about": "https://www.freecodecamp.org/news/about/",
+    "support": "https://www.freecodecamp.org/news/support/",
+    "honesty": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc": "https://www.freecodecamp.org/news/code-of-conduct/"
+  }
+}
+```
+
+### Change the footer links in the curriculum
+
+When you have translated and published the articles listed as "can be translated" above, as well as when the curriculum in your language is ready for launch, you can update the links in the footer for `/learn` by editing the file at `client/i18n/locales/<your language>/links.json` in the [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) repository.
+
+> [!WARNING] Only "About", "Support", "Academic Honesty", and "Code of Conduct" can be translated. Leave other URLs unchanged.
+
+Update the following part in the file:
+
+```json
+{
+  ...
+  "footer": {
+    "about-url": "https://www.freecodecamp.org/news/about/",
+    "shop-url": "https://www.freecodecamp.org/shop/",
+    "support-url": "https://www.freecodecamp.org/news/support/",
+    "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
+    "honesty-url": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc-url": "https://www.freecodecamp.org/news/code-of-conduct/",
+    "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
+    "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+    "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
+  },
+  ...
+}
+```
 
 ## Wie man die Überschriften der Infoboxen in der Dokumentation übersetzt
 
@@ -277,3 +357,17 @@ Dann hat jede Zielsprache zwei Spalten. Wenn du ins Dothrakische übersetzt, wir
 > [!TIP] In Programmen wie Microsoft Excel kannst du die Spalten der anderen Sprachen ausblenden, um Bildschirmfläche freizugeben und die englischen Spalten und die Spalten der Zielsprache nebeneinander zu sehen.
 
 Nachdem du die Änderungen vorgenommen und die Datei gespeichert hast, musst du einen PR mit den vorgeschlagenen Änderungen erstellen. Nachdem der PR angenommen wurde, musst du den GitHub Action-Workflow ausführen, um das Crowdin-Glossar zu aktualisieren. Deine Änderungen im Glossar werden sich nicht sofort auswirken, aber sie werden kommen.
+
+## Wie man einen Mitwirkenden zum Korrekturleser (Proofreader) befördert
+
+Wenn du der Meinung bist, dass ein Mitwirkender ein Crowdin-Korrekturleser werden könnte, kannst du ihm auf diese Weise die Rolle des Korrekturlesers übertragen:
+
+In Crowdin wählst du `User management` im Menü auf der linken Seite aus.
+
+Dadurch wird die Benutzerverwaltung geöffnet, in der du die Liste aller Benutzer sehen kannst.
+
+Search for the user that will become proofreader. Verwende das Menü mit den drei Punkten in der Benutzerzeile, um ein Menü zu öffnen und wähle "Add to team". Die Korrekturleserteams haben den Standardnamen `Proof Readers(<Sprache>)`, du kannst das Team über den Namen der Sprache suchen. Wenn du das Team ausgewählt hast, benutze den Button "ADD" unten auf der Seite, um den Vorgang abzuschließen.
+
+Der Benutzer ist jetzt ein Korrekturleser.
+
+> [!TIP] Der neu beförderte Korrekturleser könnte vom Lesen der [Korrekturlesen von Übersetzungen](how-to-proofread-files.md)-Dokumentation profitieren.

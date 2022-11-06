@@ -9,7 +9,7 @@
 // translated, but when they are they can be included by adding 'certificates'
 // to the arrays below
 
-const { auditedCerts } = require('../config/i18n/all-langs');
+const { auditedCerts } = require('../config/i18n');
 
 function isAuditedCert(lang, cert) {
   if (!lang || !cert)

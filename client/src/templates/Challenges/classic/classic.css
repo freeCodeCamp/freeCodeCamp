@@ -11,10 +11,6 @@
   top: -999em;
 }
 
-.monaco-editor .editor-widget {
-  display: none !important;
-}
-
 .monaco-menu .monaco-action-bar.vertical .action-item:nth-last-child(n + 5),
 .monaco-menu .monaco-action-bar.vertical .action-item:last-child,
 .monaco-menu .monaco-action-bar.vertical .action-label.separator {
@@ -109,4 +105,14 @@
 #mobile-layout .monaco-editor-tabs button {
   flex: 1;
   max-width: 50%;
+}
+
+/* Focus indicator for tab panel */
+.nav-tabs [role='tab']:focus {
+  outline: 2px solid var(--blue-mid);
+  outline-offset: -2px;
+}
+
+.nav-tabs [role='tab']:focus:not(:focus-visible) {
+  outline: none;
 }

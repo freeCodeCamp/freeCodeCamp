@@ -1,6 +1,6 @@
 ---
 id: 5efae16e3cbd2bbdab94e334
-title: Step 31
+title: Крок 31
 challengeType: 0
 dashedName: step-31
 ---
@@ -84,8 +84,8 @@ assert(
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->

@@ -8,9 +8,9 @@ dashedName: build-a-pinterest-clone
 
 # --description--
 
-**目標:** <https://build-a-pinterest-clone.freecodecamp.rocks/> と同じような機能を持つ、[Replit](https://replit.com/) アプリを構築してください。
+**Objective:** Build an app that is functionally similar to this: <a href="https://build-a-pinterest-clone.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://build-a-pinterest-clone.freecodecamp.rocks/</a>.
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を実装してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
+Fulfill the below user stories and get all of the tests to pass. 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
 
 **ユーザーストーリー:** 認証が済んでいないユーザーである時に、GitHub でログインできます。
 
@@ -24,11 +24,11 @@ dashedName: build-a-pinterest-clone
 
 **ユーザーストーリー:** 認証済みのユーザーである時に、破損した画像をアップロードした場合は、プレースホルダー画像に置き換えられます。 (jQuery を使用して破損した画像を検出できます)
 
-**ヒント:** [Masonry.js](https://masonry.desandro.com/) は、Pinterest スタイルのイメージグリッドを割り当てるライブラリです。
+**Hint:** Masonry.js is a library that allows for Pinterest-style image grids.
 
 これらのユーザーストーリーの実装を終えたら、動作可能なアプリの URL を入力し、必要に応じて GitHub リポジトリの URL を入力してください。 それから「このチャレンジを完了しました」ボタンをクリックしてください。
 
-[freeCodeCamp フォーラム](https://forum.freecodecamp.org/c/project-feedback/409)でプロジェクトを共有することにより、フィードバックを得ることができます。
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

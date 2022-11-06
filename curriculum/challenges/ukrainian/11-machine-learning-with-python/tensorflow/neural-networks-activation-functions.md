@@ -14,7 +14,7 @@ dashedName: neural-networks-activation-functions
 
 ## --text--
 
-Яка функція активації переключає значення між -1 та 1?
+Which activation function squishes values between -1 and 1?
 
 ## --answers--
 

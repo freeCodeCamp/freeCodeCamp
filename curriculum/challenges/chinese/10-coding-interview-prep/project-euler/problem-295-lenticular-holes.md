@@ -1,7 +1,7 @@
 ---
 id: 5900f4931000cf542c50ffa6
 title: 'Problem 295: Lenticular holes'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301947
 dashedName: problem-295-lenticular-holes
 ---
@@ -10,30 +10,33 @@ dashedName: problem-295-lenticular-holes
 
 We call the convex area enclosed by two circles a lenticular hole if:
 
-The centres of both circles are on lattice points.
+- 两个圆的中心都在晶格点上。
+- 两个圆在两个不同的晶格点处相交。
+- 被两个圆包围的凸区域的内部不包含任何晶格点。
 
-The two circles intersect at two distinct lattice points.
+Consider the circles:
 
-The interior of the convex area enclosed by both circles does not contain any lattice points.
+$$\begin{align}   & C_0: x^2 + y^2 = 25 \\\\
+  & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
 
-Consider the circles: C0: x2+y2=25 C1: (x+4)2+(y-4)2=1 C2: (x-12)2+(y-4)2=65
+The circles $C_0$, $C_1$ and $C_2$ are drawn in the picture below.
 
-The circles C0, C1 and C2 are drawn in the picture below.
+<img class="img-responsive center-block" alt="C_0, C_1 and C_2 circles" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
 
-C0 and C1 form a lenticular hole, as well as C0 and C2.
+$C_0$ and $C_1$ form a lenticular hole, as well as $C_0$ and $C_2$.
 
-We call an ordered pair of positive real numbers (r1, r2) a lenticular pair if there exist two circles with radii r1 and r2 that form a lenticular hole. We can verify that (1, 5) and (5, √65) are the lenticular pairs of the example above.
+We call an ordered pair of positive real numbers ($r_1$, $r_2$) a lenticular pair if there exist two circles with radii $r_1$ and $r_2$ that form a lenticular hole. We can verify that ($1$, $5$) and ($5$, $\sqrt{65}$) are the lenticular pairs of the example above.
 
-Let L(N) be the number of distinct lenticular pairs (r1, r2) for which 0 &lt; r1 ≤ r2 ≤ N. We can verify that L(10) = 30 and L(100) = 3442.
+Let $L(N)$ be the number of distinct lenticular pairs ($r_1$, $r_2$) for which $0 &lt; r_1 ≤ r_2 ≤ N$. We can verify that $L(10) = 30$ and $L(100) = 3442$.
 
-Find L(100 000).
+Find $L(100\\,000)$.
 
 # --hints--
 
-`euler295()` should return 4884650818.
+`lenticularHoles()` should return `4884650818`.
 
 ```js
-assert.strictEqual(euler295(), 4884650818);
+assert.strictEqual(lenticularHoles(), 4884650818);
 ```
 
 # --seed--
@@ -41,12 +44,12 @@ assert.strictEqual(euler295(), 4884650818);
 ## --seed-contents--
 
 ```js
-function euler295() {
+function lenticularHoles() {
 
   return true;
 }
 
-euler295();
+lenticularHoles();
 ```
 
 # --solutions--

@@ -1,25 +1,29 @@
 ---
 id: 5900f3f71000cf542c50ff0a
-title: 'Problem 139: Pythagorean tiles'
-challengeType: 5
+title: '問題 139：畢達哥拉斯磚塊'
+challengeType: 1
 forumTopicId: 301767
 dashedName: problem-139-pythagorean-tiles
 ---
 
 # --description--
 
-Let (a, b, c) represent the three sides of a right angle triangle with integral length sides. It is possible to place four such triangles together to form a square with length c.
+設（a，b，c）表示具有整數邊長的直角三角形的三條邊。 It is possible to place four such triangles together to form a square with length c.
 
-For example, (3, 4, 5) triangles can be placed together to form a 5 by 5 square with a 1 by 1 hole in the middle and it can be seen that the 5 by 5 square can be tiled with twenty-five 1 by 1 squares.
+例如，邊長爲（3，4，5）的三角形可以放在一起形成一個 5 乘 5 的正方形，中間有一個 1 乘 1 的小正方形，並且可以用 25 個 1 乘 1 的小正方形平埔填充 5 乘 5 的正方形。
 
-However, if (5, 12, 13) triangles were used then the hole would measure 7 by 7 and these could not be used to tile the 13 by 13 square. Given that the perimeter of the right triangle is less than one-hundred million, how many Pythagorean triangles would allow such a tiling to take place?
+<img class="img-responsive center-block" alt="兩個 5 x 5 的正方形：第一個通過 4 個 3 x 4 x 5 的三角形組成，中心有個 1 x 1 小正方形；第二個通過 25 個 1 x 1 的小正方形平鋪填充。" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;" />
+
+但是，如果使用（5，12，13）的三角形組成正方形，中間的小正方形是 7 乘 7 的。 而這些 7 x 7 的正方形將無法平鋪填充 13 x 13 的正方形。
+
+請求出在周長小於 100,000,000 的直角三角形中，有多少個畢達哥斯拉三角形可以滿足這種填充？
 
 # --hints--
 
-`euler139()` should return 10057761.
+`pythagoreanTiles()` 應該返回 `10057761`。
 
 ```js
-assert.strictEqual(euler139(), 10057761);
+assert.strictEqual(pythagoreanTiles(), 10057761);
 ```
 
 # --seed--
@@ -27,12 +31,12 @@ assert.strictEqual(euler139(), 10057761);
 ## --seed-contents--
 
 ```js
-function euler139() {
+function pythagoreanTiles() {
 
   return true;
 }
 
-euler139();
+pythagoreanTiles();
 ```
 
 # --solutions--

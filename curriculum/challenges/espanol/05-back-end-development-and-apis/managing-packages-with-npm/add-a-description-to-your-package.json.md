@@ -10,7 +10,7 @@ dashedName: add-a-description-to-your-package-json
 
 La siguiente parte de un buen archivo package.json es el campo `description`; donde pertenece una descripción corta, pero informativa de tu proyecto.
 
-Si algún día planeas publicar un paquete a npm, esta es la cadena que debería vender su idea al usuario cuando decida si instalar o no el paquete. Sin embargo, ese no es el único caso de uso para la descripción, es una buena manera de resumir lo que hace un proyecto. Es igual de importante en cualquier proyecto Node.js para ayudar a otros desarrolladores, futuros mantenedores o incluso a tu yo del futuro a entender el proyecto rápidamente.
+If some day you plan to publish a package to npm, this is the string that should sell your idea to the user when they decide whether to install your package or not. Sin embargo, ese no es el único caso de uso para la descripción, es una buena manera de resumir lo que hace un proyecto. Es igual de importante en cualquier proyecto Node.js para ayudar a otros desarrolladores, futuros mantenedores o incluso a tu yo del futuro a entender el proyecto rápidamente.
 
 Independientemente de lo que planees para tu proyecto, definitivamente se recomienda una descripción. He aquí un ejemplo:
 

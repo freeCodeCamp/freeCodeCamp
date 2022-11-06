@@ -1,36 +1,36 @@
 ---
 id: 5900f4341000cf542c50ff46
-title: 'Problem 199: Iterative Circle Packing'
-challengeType: 5
+title: 'Завдання 199: Ітеративне кільцеве потовщення'
+challengeType: 1
 forumTopicId: 301837
 dashedName: problem-199-iterative-circle-packing
 ---
 
 # --description--
 
-Three circles of equal radius are placed inside a larger circle such that each pair of circles is tangent to one another and the inner circles do not overlap. There are four uncovered "gaps" which are to be filled iteratively with more tangent circles.
+Три кола з однаковим радіусом розміщені всередині більшого кола так, що кожна пара кіл дотична один до одного, а внутрішні кола не перетинаються. Існує чотири непокритих "прогалини", які багатократно заповнюються більш дотичними колами.
 
-<img class="img-responsive center-block" alt="a diagram of non-overlapping circles" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="a diagram of non-overlapping circles" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
 
-At each iteration, a maximally sized circle is placed in each gap, which creates more gaps for the next iteration. After 3 iterations (pictured), there are 108 gaps and the fraction of the area which is not covered by circles is 0.06790342, rounded to eight decimal places.
+При кожному повторному застосуванні в кожну прогалину розміщується коло максимального розміру, що створює ще більше прогалин для наступної етапу. Після 3-х повторних застосувань (на фото) виникає 108 прогалин, а частка площі, яка не покрита колами, становить 0,06790342, округлена до восьми знаків після коми.
 
-What fraction of the area is not covered by circles after `n` iterations? Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
+Яка частка площі не покрита колами після `n` повторних застосувань? Дайте відповідь, округлену до восьми знаків після коми, у форматі x.xxxxxxxx .
 
 # --hints--
 
-`iterativeCirclePacking(10)` should return a number.
+`iterativeCirclePacking(10)` має видати число.
 
 ```js
 assert(typeof iterativeCirclePacking(10) === 'number');
 ```
 
-`iterativeCirclePacking(10)` should return `0.00396087`.
+`iterativeCirclePacking(10)` має видати `0.00396087`.
 
 ```js
 assert.strictEqual(iterativeCirclePacking(10), 0.00396087);
 ```
 
-`iterativeCirclePacking(3)` should return `0.06790342`.
+`iterativeCirclePacking(3)` має видати `0.06790342`.
 
 ```js
 assert.strictEqual(iterativeCirclePacking(3), 0.06790342);

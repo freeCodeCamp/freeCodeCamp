@@ -245,7 +245,7 @@ Wenn du länger als zwei Minuten brauchst, um die Aufgabe zu lösen, hast du zwe
 
 Die 2-Minuten-Regel zwingt dich, als Aufgabenersteller, deine Anweisungen kurz und präzise zu formulieren, deinen Startcode klar zu formulieren und deine Tests eindeutig zu gestalten.
 
-Wir verfolgen, wie lange die Teilnehmer/innen brauchen, um die Aufgaben zu lösen und nutzen diese Informationen, um Aufgaben zu identifizieren, die vereinfacht oder aufgeteilt werden müssen.
+Wir verfolgen, wie lange die Teilnehmer brauchen, um die Aufgaben zu lösen, und nutzen diese Informationen, um Aufgaben zu identifizieren, die vereinfacht oder aufgeteilt werden müssen.
 
 ### Modularität
 

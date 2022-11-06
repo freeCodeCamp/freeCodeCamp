@@ -7,7 +7,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
-import React, { Component, FormEvent } from 'react';
+import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 
@@ -17,7 +17,7 @@ import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
 
-type PortfolioValues = {
+type PortfolioItem = {
   id: string;
   description: string;
   image: string;
@@ -27,17 +27,18 @@ type PortfolioValues = {
 
 type PortfolioProps = {
   picture?: string;
-  portfolio: PortfolioValues[];
+  portfolio: PortfolioItem[];
   t: TFunction;
-  updatePortfolio: (obj: { portfolio: PortfolioValues[] }) => void;
+  updatePortfolio: (obj: { portfolio: PortfolioItem[] }) => void;
   username?: string;
 };
 
 type PortfolioState = {
-  portfolio: PortfolioValues[];
+  portfolio: PortfolioItem[];
+  unsavedItemId: string | null;
 };
 
-function createEmptyPortfolio() {
+function createEmptyPortfolioItem(): PortfolioItem {
   return {
     id: nanoid(),
     title: '',
@@ -48,13 +49,8 @@ function createEmptyPortfolio() {
 }
 
 function createFindById(id: string) {
-  return (p: PortfolioValues) => p.id === id;
+  return (p: PortfolioItem) => p.id === id;
 }
-
-const mockEvent = {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  preventDefault() {}
-};
 
 class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
   static displayName: string;
@@ -64,7 +60,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const { portfolio = [] } = props;
 
     this.state = {
-      portfolio: [...portfolio]
+      portfolio: [...portfolio],
+      unsavedItemId: null
     };
   }
 
@@ -87,25 +84,33 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       });
     };
 
-  handleSubmit = (e: React.FormEvent) => {
+  handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
     e.preventDefault();
-    const { updatePortfolio } = this.props;
-    const { portfolio } = this.state;
-    return updatePortfolio({ portfolio });
+    this.updateItem(id);
+  };
+
+  updateItem = (id: string) => {
+    const { portfolio, unsavedItemId } = this.state;
+    if (unsavedItemId === id) {
+      this.setState({ unsavedItemId: null });
+    }
+    this.props.updatePortfolio({ portfolio });
   };
 
   handleAdd = () => {
-    return this.setState(state => ({
-      portfolio: [createEmptyPortfolio(), ...state.portfolio]
+    const item = createEmptyPortfolioItem();
+    this.setState(state => ({
+      portfolio: [item, ...state.portfolio],
+      unsavedItemId: item.id
     }));
   };
 
   handleRemoveItem = (id: string) => {
-    return this.setState(
+    this.setState(
       state => ({
         portfolio: state.portfolio.filter(p => p.id !== id)
       }),
-      () => this.handleSubmit(mockEvent as FormEvent<Element>)
+      () => this.updateItem(id)
     );
   };
 
@@ -197,9 +202,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
   }
 
   renderPortfolio = (
-    portfolio: PortfolioValues,
+    portfolio: PortfolioItem,
     index: number,
-    arr: PortfolioValues[]
+    arr: PortfolioItem[]
   ) => {
     const { t } = this.props;
     const { id, title, description, url, image } = portfolio;
@@ -213,11 +218,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     );
     const { state: descriptionState, message: descriptionMessage } =
       this.getDescriptionValidation(description);
-
     return (
       <div key={id}>
         <FullWidthRow>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={e => this.handleSubmit(e, id)}>
             <FormGroup
               controlId={`${id}-title`}
               validationState={
@@ -314,7 +318,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   render() {
     const { t } = this.props;
-    const { portfolio = [] } = this.state;
+    const { portfolio = [], unsavedItemId } = this.state;
     return (
       <section id='portfolio-settings'>
         <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
@@ -329,6 +333,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             block={true}
             bsSize='lg'
             bsStyle='primary'
+            disabled={unsavedItemId !== null}
             onClick={this.handleAdd}
             type='button'
           >

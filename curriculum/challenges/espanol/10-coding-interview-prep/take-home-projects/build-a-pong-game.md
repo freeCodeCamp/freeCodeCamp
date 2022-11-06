@@ -8,11 +8,11 @@ dashedName: build-a-pong-game
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/satyamdev/full/pdMmBp>.
+**Objective:** Build an app that is functionally similar to this: <https://codepen.io/satyamdev/full/pdMmBp>.
 
-**Rule #1:** Don't look at the example project's code. Figure it out for yourself.
+**Regla #1:** No mires el código de ejemplo del proyecto. Encuentra tu propia solución.
 
-**Rule #2:** Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+**Rule #2:** Fulfill the below user stories and get all of the tests to pass. Utiliza cualquier librería o API que necesites. Dale tu propio estilo personal.
 
 **User Story:** I can control a paddle.
 
@@ -22,9 +22,9 @@ dashedName: build-a-pong-game
 
 **User Story:** The game keeps track of the player and computer's score.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Cuando hayas terminado, incluye un enlace a tu proyecto en CodePen y haz clic en el botón "He completado este desafío".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

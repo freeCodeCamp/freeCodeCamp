@@ -38,62 +38,53 @@ socket.on('user count', function(data) {
 
 Ahora, ¡intenta cargar tu aplicación, autentifica, y debes ver en tu consola "1" que representa el recuento de usuarios actual! Trata de cargar más clientes y de autentificar para ver cómo sube el número.
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
+Envía tu página cuando creas que lo has hecho bien. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#communicate-by-emitting-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-currentUsers deben ser definidos.
+`currentUsers` should be defined.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /currentUsers/gi,
-        'You should have variable currentUsers defined'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /currentUsers/s,
+    'You should have variable currentUsers defined'
   );
+}
 ```
 
 El servidor debe emitir el recuento actual de usuarios en cada nueva conexión.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io.emit.*('|")user count('|").*currentUsers/gi,
-        'You should emit "user count" with data currentUsers'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io.emit.*('|")user count('|").*currentUsers/s,
+    'You should emit "user count" with data currentUsers'
   );
+}
 ```
 
-Tu cliente debe estar escuchando el evento 'user count'.
+Your client should be listening for `'user count'` event.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")user count('|")/gi,
-        'Your client should be connection to server with the connection defined as socket'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")user count('|")/s,
+    'Your client should be connection to server with the connection defined as socket'
   );
+}
 ```
 
 # --solutions--

@@ -14,7 +14,7 @@ Durante um período de n-dias, uma string ternária é formada para cada crianç
 
 Embora existam oitenta e uma strings ternárias para um período de 4 dias que possam ser formadas, exatamente quarenta e três strings levariam a um prêmio:
 
-```
+```markup
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
 OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO
 AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL

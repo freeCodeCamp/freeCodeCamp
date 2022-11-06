@@ -12,7 +12,7 @@ Se non hai familiarità con `const`, controlla <a href="/learn/javascript-algori
 
 La dichiarazione `const` ha molti casi di utilizzo nel JavaScript moderno.
 
-Alcuni sviluppatori preferiscono assegnare tutte le loro variabili usando `const` come impostazione predefinita, a meno che non sappiano che dovranno riassegnare il valore. Solo in quel caso usano `let`.
+Alcuni sviluppatori preferiscono assegnare tutte le loro variabili usando `const` come impostazione predefinita, a meno che non sappiano di doverne riassegnare il valore. Solo in quel caso usano `let`.
 
 Tuttavia, è importante capire che gli oggetti (inclusi gli array e le funzioni) assegnati a una variabile utilizzando `const` sono ancora mutabili. L'utilizzo della dichiarazione `const` impedisce solo la riassegnazione dell'identificatore della variabile.
 

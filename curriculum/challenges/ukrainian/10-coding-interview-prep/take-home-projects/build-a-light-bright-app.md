@@ -8,11 +8,11 @@ dashedName: build-a-light-bright-app
 
 # --description--
 
-**Ціль:** Створити застосунок в [CodePen.io](https://codepen.io), який функціонально схожий до даного: <https://codepen.io/freeCodeCamp/full/eyLYXE>.
+**Мета:** Створити застосунок, функціонально схожий до цього: <https://codepen.io/freeCodeCamp/full/eyLYXE>.
 
 **Правило #1: ** Не дивіться на зразок коду проєкту. Визначте його самі.
 
-**Правило #2: **Заповніть, як нижче наведено,[ історії користувача ](https://en.wikipedia.org/wiki/User_story). Використовуйте будь-які потрібні вам бібліотеки чи API (прикладні програмні інтерфейси). Проявіть при цьому свій власний стиль.
+**Правило №2:** виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 ** Історія користувача: ** Я можу натискати чи перетягувати курсор миші, щоб зафарбувати кружечки.
 
@@ -28,7 +28,7 @@ dashedName: build-a-light-bright-app
 
 Коли ви завершили, додайте посилання на ваш проєкт на CodePen та натисніть кнопку "Я виконав це завдання".
 
-Ви можете отримати відгук про ваш проєкт, поділившись ним на даному форумі: [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

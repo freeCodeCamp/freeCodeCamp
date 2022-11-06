@@ -12,7 +12,7 @@ Ja - du kannst zu jeder der über 30 Sprachen beitragen, die wir auf unserer Üb
 
 In einigen Sprachen haben wir von Nutzern erstellte Übersetzungen online. Wir haben vor, das freeCodeCamp in mehrere wichtige Weltsprachen zu lokalisieren. Du kannst alles darüber in unserer [Ankündigung](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) lesen.
 
-Wenn du daran interessiert bist, zu Übersetzungen beizutragen, stelle bitte sicher, dass du [diesen Leitfaden](how-to-translate-files.md) zuerst gelesen hast.
+Wenn du daran interessiert bist, zu Übersetzungen beizutragen, stelle bitte sicher, dass du zuerst [diesen Leitfaden](how-to-translate-files.md) gelesen hast.
 
 ### Kann ich Artikel für die freeCodeCamp News oder Videos für den YouTube-Kanal von freeCodeCamp beisteuern?
 
@@ -78,10 +78,10 @@ In erster Linie möchten wir, dass du ein aktiver Teilnehmer in der Gemeinschaft
 Hier sind einige empfohlene Wege für einige unserer Plattformen:
 
 - Ein **Discord/Chat**-Moderator zu sein, eine aktive Präsenz in unserem Chat zu haben und positiv auf andere einzugehen und gleichzeitig zu lernen und zu üben, wie man mit möglichen Konflikten umgeht, die entstehen können.
-- Ein **Forum**-Moderator zu sein, ähnlich wie ein Chat-Moderator, eine aktive Präsenz zu zeigen und mit anderen Forumspostern in Kontakt zu treten, andere in ihrem Lernprozess zu unterstützen und auf Wunsch auch Feedback zu geben. Sieh dir das [Das Handbuch für Subforenleiter](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) für weitere Informationen an.
+- Ein **Forum**-Moderator zu sein, ähnlich wie ein Chat-Moderator, eine aktive Präsenz zu zeigen und mit anderen Forenpostern in Kontakt zu treten, andere bei ihrem Lernprozess zu unterstützen und sogar Feedback zu geben, wenn du gefragt wirst. Sieh dir das [Das Handbuch für Subforenleiter](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) für weitere Informationen an.
 - Als **GitHub**-Moderator hilfst du bei der Bearbeitung von GitHub-Issues, die aufgeworfen werden und versuchst (idealerweise), Lösungen für diese Issues vorzuschlagen, die dann von anderen (oder von dir selbst) aufgegriffen werden.
 
-Sei insgesamt respektvoll gegenüber anderen. Wir sind Menschen überall auf der Welt. Mit Blick darauf denke auch daran, eine ermutigende oder unterstützende Sprache zu verwenden und achte auf die interkulturelle Kommunikation.
+Sei insgesamt respektvoll gegenüber anderen. Wir sind Menschen aus allen Teilen der Welt. Mit Blick darauf denke auch daran, eine ermutigende oder unterstützende Sprache zu verwenden und achte auf die interkulturelle Kommunikation.
 
 Wenn du das oben genannte **eine Weile lang konsequent praktizierst** und unsere anderen Moderatoren dich empfehlen, wird ein Mitarbeiter auf dich zukommen und dich in das Moderatorenteam aufnehmen. Open-Source-Arbeit ist freiwillige Arbeit und unsere Zeit ist begrenzt. Wir erkennen an, dass dies wahrscheinlich auch in deiner Situation der Fall ist. Deshalb betonen wir **konsequent** zu sein, anstatt sich rund um die Uhr (24/7) in der Community zu engagieren.
 

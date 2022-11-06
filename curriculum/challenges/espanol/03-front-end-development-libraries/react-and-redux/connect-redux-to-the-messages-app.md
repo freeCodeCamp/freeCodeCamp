@@ -14,7 +14,7 @@ En la última lección, el componente que conectaste a Redux se llamó `Presenta
 
 # --instructions--
 
-El editor tiene todo el código que has escrito hasta ahora en esta sección. El único cambio es que el componente React se renombra a `Presentational`. Crea un nuevo componente en una constante llamada `Container` que usa `connect` para conectar el componente `Presentational` a Redux. Luego, en el `AppWrapper`, renderiza el componente `Provider` de React Redux. Pasa a `Provider` el `store` Redux como una prop y renderiza `Container` como un hijo. Una vez que todo esté configurado, verás que los mensajes de la aplicación son visualizados nuevamente en la página.
+El editor tiene todo el código que has escrito hasta ahora en esta sección. El único cambio es que el componente React se renombra a `Presentational`. Crea un nuevo componente en una constante llamada `Container` que usa `connect` para conectar el componente `Presentational` a Redux. Luego, en el `AppWrapper`, renderiza el componente `Provider` de React Redux. Pasa a `Provider` el `store` Redux como una prop y renderiza `Container` como un hijo. Once everything is set up, you will see the messages app rendered to the page again.
 
 # --hints--
 

@@ -1,24 +1,24 @@
 ---
 id: 5a23c84252665b21eecc7e80
 title: Gray code
-challengeType: 5
+challengeType: 1
 forumTopicId: 302276
 dashedName: gray-code
 ---
 
 # --description--
 
-[Gray code](https://en.wikipedia.org/wiki/Gray code) is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
+Gray code is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
 
 This is a useful encoding for reducing hardware data hazards with values that change rapidly and/or connect to slower hardware as inputs.
 
-It is also useful for generating inputs for [Karnaugh maps](https://en.wikipedia.org/wiki/Karnaugh map) in order from left to right or top to bottom.
+It is also useful for generating inputs for Karnaugh maps in order from left to right or top to bottom.
 
 # --instructions--
 
 Create a function to encode a number to and decode a number from Gray code. The function should will have 2 parameters.
 
-The first would be a boolean. The function should encode for true and decode for false. The second parameter would be the number to be encoded/decoded.
+第一个是布尔值。 该函数应编码为 true，解码为 false。 第二个参数是要编码/解码的数字。
 
 Display the normal binary representations, Gray code representations, and decoded Gray code values for all 5-bit binary numbers (0-31 inclusive, leading 0's not necessary).
 

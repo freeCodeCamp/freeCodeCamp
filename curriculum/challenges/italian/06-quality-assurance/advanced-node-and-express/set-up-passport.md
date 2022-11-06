@@ -8,15 +8,15 @@ dashedName: set-up-passport
 
 # --description--
 
-È ora di configurare *Passport* così da permettere finalmente ad un utente di registrarsi od accedere ad un account! In aggiunta a Passport, useremo Express-session per gestire le sessioni. Express-session ha un sacco di funzionalità avanzate che puoi usare ma per ora useremo solo le basi! Usare questo middleware salva l'id di sessione come cookie nel client e permette di accedere ai dati di sessione usando quell'id sul server. In questo modo teniamo informazioni personali dell'account al di fuori del cookie usato dal client per verificare con il server di essere autenticato e teniamo solo la *key* per accedere ai dati immagazzinati nel server.
+È ora di configurare *Passport* così da permettere finalmente a un utente di registrarsi o accedere a un account. In aggiunta a Passport, userai Express-session per gestire le sessioni. Express-session ha un sacco di funzionalità avanzate che puoi usare ma per ora userai solo le basi. Usare questo middleware salva l'id di sessione come cookie nel client e permette di accedere ai dati di sessione usando quell'id sul server. In questo modo, mantieni le informazioni personali dell'account al di fuori del cookie usato dal client per comunicare al tuo server di essere autenticato e tieni solo la *key* per accedere ai dati immagazzinati nel server.
 
 `passport@~0.4.1` e `express-session@~1.17.1` sono già installati e sono entrambi elencati come dipendenze nel tuo file `package.json`.
 
-Ora dovrai configurare le impostazioni della sessione e inizializzare Passport. Assicurati di creare prima le variabili 'session' e 'passport' per richiedere rispettivamente 'express-session' e 'passport'.
+Dovrai configurare le impostazioni della sessione e inizializzare Passport. Per prima cosa, crea le variabili `session` e `passport` per richiedere rispettivamente `express-session` e `passport`.
 
-Per configurare la tua app express per utilizzare la sessione, definiremo solo alcune opzioni di base. Assicurati di aggiungere 'SESSION_SECRET' al tuo file .env e dagli un valore casuale. Questo è usato per calcolare l'hash usato per crittografare il tuo cookie!
+Poi, imposta la tua app Express in modo che utilizzi la sessione definendo le seguenti opzioni:
 
-```js
+```javascript
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: true,
@@ -25,98 +25,79 @@ app.use(session({
 }));
 ```
 
-Puoi anche andare avanti e dire alla tua app express di **usare** 'passport.initialize()' e 'passport.session()'. (Per esempio, `app.use(passport.initialize());`)
+Assicurati di aggiungere `SESSION_SECRET` al tuo file `.env` e dagli un valore casuale. Viene usato per calcolare l'hash utilizzato per crittografare il tuo cookie!
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi vedere <a href="https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
+Dopo aver fatto tutto ciò, di' alla tua app express di **usare** `passport.initialize()` e `passport.session()`.
+
+Invia la tua pagina quando pensi che sia tutto corretto. Se incontri degli errori, puoi vedere <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-passport-3" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 
 Passaport e Express-session dovrebbero essere dipendenze.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'passport',
-        'Your project should list "passport" as a dependency'
-      );
-      assert.property(
-        packJson.dependencies,
-        'express-session',
-        'Your project should list "express-session" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'passport',
+    'Your project should list "passport" as a dependency'
   );
+  assert.property(
+    packJson.dependencies,
+    'express-session',
+    'Your project should list "express-session" as a dependency'
+  );
+}
 ```
 
-Le dipendenze dovrebbero essere richieste correttamente.
+Le dipendenze dovrebbero essere correttamente richieste.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require.*("|')passport("|')/gi,
-        'You should have required passport'
-      );
-      assert.match(
-        data,
-        /require.*("|')express-session("|')/gi,
-        'You should have required express-session'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require.*("|')passport("|')/,
+    'You should have required passport'
   );
+  assert.match(
+    data,
+    /require.*("|')express-session("|')/,
+    'You should have required express-session'
+  );
+}
 ```
 
 Express app dovrebbe utilizzare nuove dipendenze.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /passport.initialize/gi,
-        'Your express app should use "passport.initialize()"'
-      );
-      assert.match(
-        data,
-        /passport.session/gi,
-        'Your express app should use "passport.session()"'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
-  );
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(data, /passport\.initialize/, 'Your express app should use "passport.initialize()"');
+  assert.match(data, /passport\.session/, 'Your express app should use "passport.session()"');
+}
 ```
 
-La sessione e il segreto di sessione dovrebbero essere impostati correttamente.
+La sessione e il segreto di sessione dovrebbero essere impostate correttamente.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /secret *: *process\.env(\.SESSION_SECRET|\[(?<q>"|')SESSION_SECRET\k<q>\])/g,
-        'Your express app should have express-session set up with your secret as process.env.SESSION_SECRET'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /secret *:\s*process\.env(\.SESSION_SECRET|\[(?<q>"|')SESSION_SECRET\k<q>\])/,
+    'Your express app should have express-session set up with your secret as process.env.SESSION_SECRET'
   );
+}
 ```
 
 # --solutions--

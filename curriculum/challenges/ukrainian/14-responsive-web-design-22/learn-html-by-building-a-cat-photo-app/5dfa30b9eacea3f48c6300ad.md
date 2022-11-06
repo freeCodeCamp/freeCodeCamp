@@ -1,6 +1,6 @@
 ---
 id: 5dfa30b9eacea3f48c6300ad
-title: Step 15
+title: Крок 15
 challengeType: 0
 dashedName: step-15
 ---
@@ -73,8 +73,8 @@ assert(document.querySelector('img').parentNode.nodeName === 'A');
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
       <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>

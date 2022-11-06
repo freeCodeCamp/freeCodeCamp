@@ -2,7 +2,20 @@
 
 Um pull request (PR) permite que você envie alterações do seu fork do GitHub para o repositório principal do freeCodeCamp.org. Depois de terminar de fazer alterações no código, você pode seguir essas diretrizes para abrir um PR.
 
-> [!NOTE] Seu PR deve estar em inglês. Veja [aqui](index.md#translations) como contribuir com traduções.
+Esperamos que nossos colaboradores estejam cientes do processo específico deste projeto. Seguindo as orientações religiosamente, você terá o respeito de outros mantenedores e poupará o tempo de todos.
+
+Alguns exemplos disso são:
+
+1. Não edite arquivos diretamente no GitHub – enquanto você puder, não é uma boa ideia.
+2. Certifique-se de seguir a lista de verificação de PR e não apenas desmarcar as coisas; caso contrário, não levaremos você a sério.
+3. Utilize a maneira correta de ligar issues na descrição do PR, atualizando o `XXXXXX`. Não adicione apenas números de issues em todo e qualquer lugar e que quiser.
+4. Não faça menções com @ nem solicite as revisões de outra pessoa diversas vezes.
+
+   Entendemos que você está animado para contribuir. Por mais que os mantenedores adorem a ideia de responder você, lembre-se de que eles são pessoas ocupadas que cuidam de centenas de solicitações como as suas. Seja paciente, alguém responderá você mais cedo ou mais tarde.
+
+5. Não trabalhe diretamente na branch `main` - crie uma outra branch para as alterações em que está trabalhando.
+
+> [!NOTE] Seu PR deve se destinar apenas a alterações no currículo em inglês. Veja [este guia](index.md#translations) para contribuir com traduções.
 
 ## Prepare um bom título para o PR
 
@@ -31,7 +44,7 @@ Você pode selecionar um escopo a partir [desta lista de etiquetas](https://gith
 
 **Descrição:**
 
-Escreva pouco (menos de 30 caracteres) e de modo simples. Você pode adicionar mais informações na caixa de descrição do PR e comentários.
+Escreva pouco (menos de 30 caracteres) e de modo simples. Você pode adicionar mais informações na caixa de descrição do PR e nos comentários.
 
 Alguns exemplos de bons títulos de PRs seriam:
 
@@ -44,15 +57,25 @@ Alguns exemplos de bons títulos de PRs seriam:
 
 1. Uma vez que as edições tenham sido realizadas, será solicitado que você crie um pull request na página do GitHub do seu fork.
 
+   <details>
+   <summary>Ver captura de tela</summary>
+
    ![Imagem - Comparar e solicitar o pull request no GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+
+   </details>
 
 2. Por padrão, todos os pull requests devem ser feitos no repositório principal do freeCodeCamp, branch `main`.
 
-   Certifique-se de que seu Fork Base está definido como freeCodeCamp/freeCodeCamp ao criar um Pull Request.
+   Certifique-se de que seu Base Fork está definido como freeCodeCamp/freeCodeCamp ao criar um Pull Request.
+
+   <details>
+   <summary>Ver captura de tela</summary>
 
    ![Imagem - Comparando forks ao fazer um pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
-3. Envie o pull request da sua branch para a branch `main` do freeCodeCamp.
+   </details>
+
+3. Envie o pull request do seu branch para o branch `main` do freeCodeCamp.
 
 4. Inclua um resumo mais detalhado das alterações feitas e como suas alterações são úteis no corpo do PR.
 
@@ -76,19 +99,19 @@ Alguns exemplos de bons títulos de PRs seriam:
 
 Nossos moderadores vão dar uma olhada e deixar um comentário para você. Seja paciente com os outros moderadores e respeite o tempo deles. Todos os pull requests são revisados no tempo devido.
 
-E como sempre, fique à vontade em perguntar na [categoria 'Contribuidores' do fórum](https://forum.freecodecamp.org/c/contributors) ou [no chat dos contribuidores](https://discord.gg/PRyKn3Vbay).
+E como sempre, fique à vontade em perguntar na [categoria 'Contributors' (colaboradores) do fórum](https://forum.freecodecamp.org/c/contributors) ou [na sala de chat de colaboradores](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Se você vai contribuir com mais pull requests, recomendamos ler as diretrizes sobre [fazer mudanças e sincronizá-las](how-to-setup-freecodecamp-locally.md#making-changes-locally) para evitar o apagamento de seu fork.
 
 ## Conflitos em um pull request
 
-Conflitos podem surgir porque muitos colaboradores trabalham no repositório, e as alterações podem afetar o seu PR, que está aguardando uma revisão e merge.
+Conflitos podem surgir porque muitos colaboradores trabalham no repositório, e as alterações podem afetar o seu PR, que está aguardando uma revisão e mesclagem.
 
 Na maioria das vezes, você pode não precisar de um rebase, porque nós comprimimos todos os commits. No entanto, se for solicitada uma rebase, é isso que você deve fazer.
 
 ### Para funcionalidades e correções de erros comuns
 
-Quando se está trabalhando em erros normais e funcionalidades na sua branch `main` de desenvolvimento, você pode fazer um simples ajuste:
+Quando se está trabalhando em erros normais e funcionalidades no seu branch `main` de desenvolvimento, você pode fazer um simples ajuste:
 
 1. Faça um rebase na sua cópia local:
 
@@ -100,11 +123,11 @@ Quando se está trabalhando em erros normais e funcionalidades na sua branch `ma
 2. Resolva quaisquer conflitos e adicione / edite commits
 
    ```console
-   # Ou
+   # isso
    git add .
-   git commit -m "chore: resolve conflicts"
+   git commit -m "chore: resolve conflitos"
 
-   # Or
+   # ou
    git add .
    git commit --amend --no-edit
    ```
@@ -117,7 +140,7 @@ Quando se está trabalhando em erros normais e funcionalidades na sua branch `ma
 
 ### Para o próximo currículo e próximas funcionalidades
 
-Quando você estiver trabalhando em funcionalidades para nossas próximas branches `next-*` do currículo, você tem que fazer um cherry pick:
+Quando você estiver trabalhando em funcionalidades para nossos próximos branches `next-*` de currículo, você tem que fazer um cherry pick:
 
 1. Certifique-se de que seu upstream esteja sincronizado com seu local:
 
@@ -128,47 +151,47 @@ Quando você estiver trabalhando em funcionalidades para nossas próximas branch
    git reset --hard upstream/next-python-projects
    ```
 
-2. Faça o backup
+2. Faça um backup
 
-   a. Exclua sua branch local depois de ter feito um backup (se você ainda a tem localmente):
+   a. Exclua seu branch local depois de ter feito um backup (se você ainda o tem localmente):
 
    ```console
-   git checkout <pr-branch-name>
+   git checkout <pr-branch-nome>
 
-      # exemplo:
-      # git checkout feat/add-numpy-video-question
+   # exemplo:
+   # git checkout feat/add-numpy-video-question
 
-      git checkout -b <backup-branch-name>
+   git checkout -b <backup-branch-nome>
 
-      # exemplo:
-      # git checkout -b backup-feat/add-numpy-video-question
+   # exemplo:
+   #  git checkout -b backup-feat/add-numpy-video-question
 
-      git branch -D <pr-branch-name>
+   git branch -D <pr-branch-nome>
    ```
 
-   b. Ou apenas faça um backup da sua branch pr (se você não a tem localmente):
+   b. Ou apenas faça um backup do seu branch de pr (se você não o tem localmente):
 
    ```console
-   git checkout -b <backup-branch-name> origin/<pr-branch-name>
+   git checkout -b <backup-branch-nome> origin/<pr-branch-nome>
 
-      # exemplo:
-      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+   # exemplo:
+   #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
    ```
 
 3. Comece do zero:
 
    ```console
-   git checkout -b <pr-branch-name> next-python-projects
+   git checkout -b <pr-branch-nome> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-4. Resolva quaisquer conflitos e limpe, instale testes
+4. Resolva os conflitos, faça a limpeza, instale as dependências e execute os testes
 
    ```console
    npm run clean
 
    npm ci
-   npm run test:curriculum --superblock=<superblock-name>
+   npm run test:curriculum --superblock=<superblock-nome>
 
    # exemplo:
 
@@ -179,5 +202,5 @@ Quando você estiver trabalhando em funcionalidades para nossas próximas branch
 5. Se tudo estiver correto, faça um push ao PR
 
    ```console
-   git push --force origin <pr-branch-name>
+   git push --force origin <pr-branch-nome>
    ```

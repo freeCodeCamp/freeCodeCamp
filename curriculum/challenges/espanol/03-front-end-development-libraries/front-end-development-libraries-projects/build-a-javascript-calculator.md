@@ -8,7 +8,7 @@ dashedName: build-a-javascript-calculator
 
 # --description--
 
-**Objetivo:** Crea una aplicación que sea funcionalmente similar a esta: <a href="https://codepen.io/freeCodeCamp/full/wgGVVX" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/wgGVVX</a>.
+**Objetivo:** Construye una aplicación que sea funcionalmente similar a esta: <a href="https://javascript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://javascript-calculator.freecodecamp.rocks/</a>.
 
 Completa las historias de usuario a continuación y obtén todas las pruebas para aprobar. Utiliza cualquier librería o API que necesites. Dale tu propio estilo.
 

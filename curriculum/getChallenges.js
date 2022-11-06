@@ -8,7 +8,7 @@ const readDirP = require('readdirp');
 const { helpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
 const { curriculum: curriculumLangs } =
-  require('../config/i18n/all-langs').availableLangs;
+  require('../config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
 /* eslint-disable max-len */
 const {

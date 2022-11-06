@@ -15,7 +15,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-one/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -55,7 +55,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-four/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -95,7 +95,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-one/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -135,7 +135,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-one/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -175,7 +175,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-one/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -215,7 +215,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-one/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -255,7 +255,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-two/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -295,7 +295,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-two/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -335,7 +335,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-two/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -375,7 +375,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-two/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -415,7 +415,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-three/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -455,7 +455,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-three/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"
@@ -495,7 +495,7 @@ exports[`<Map /> snapshot: Map 1`] = `
           href="/learn/super-block-three/"
         >
           <div
-            style="display: flex; justify-content: space-between; align-items: center;"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 15px;"
           >
             <svg
               aria-hidden="true"

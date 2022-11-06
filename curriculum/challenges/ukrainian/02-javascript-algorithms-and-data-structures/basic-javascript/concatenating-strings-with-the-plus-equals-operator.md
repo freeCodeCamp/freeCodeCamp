@@ -28,13 +28,19 @@ ourStr += "I come second.";
 
 # --hints--
 
-`myStr` повинен мати значення рядка `This is the first sentence. This is the second sentence.`
+`myStr` should have a single space character between the two strings.
+
+```js
+assert(/sentence\. This/.test(myStr));
+```
+
+`myStr` should have a value of the string `This is the first sentence. This is the second sentence.`
 
 ```js
 assert(myStr === 'This is the first sentence. This is the second sentence.');
 ```
 
-Для створення `myStr` потрібно використовувати `+=`.
+You should use the `+=` operator to build `myStr`.
 
 ```js
 assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));

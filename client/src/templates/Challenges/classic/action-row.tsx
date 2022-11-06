@@ -1,13 +1,10 @@
 import React from 'react';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'react-i18next';
-
-import BreadCrumb from '../components/bread-crumb';
 import EditorTabs from './editor-tabs';
 
 interface ActionRowProps {
-  block: string;
   hasNotes: boolean;
   isProjectBasedChallenge: boolean;
   showConsole: boolean;
@@ -15,7 +12,6 @@ interface ActionRowProps {
   showInstructions: boolean;
   showPreviewPane: boolean;
   showPreviewPortal: boolean;
-  superBlock: string;
   togglePane: (pane: string) => void;
 }
 
@@ -27,9 +23,7 @@ const ActionRow = ({
   showPreviewPortal,
   showConsole,
   showInstructions,
-  isProjectBasedChallenge,
-  superBlock,
-  block
+  isProjectBasedChallenge
 }: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
 
@@ -57,9 +51,6 @@ const ActionRow = ({
 
   return (
     <div className='action-row'>
-      <div className='breadcrumbs-demo'>
-        <BreadCrumb block={block} superBlock={superBlock} />
-      </div>
       <div className='tabs-row'>
         {!isProjectBasedChallenge && (
           <button
@@ -97,7 +88,7 @@ const ActionRow = ({
             onClick={() => togglePane('showPreviewPortal')}
           >
             <span className='sr-only'>{getPreviewBtnsSrText().portal}</span>
-            <FontAwesomeIcon icon={faExternalLinkAlt} />
+            <FontAwesomeIcon icon={faWindowRestore} />
           </button>
         </div>
       </div>

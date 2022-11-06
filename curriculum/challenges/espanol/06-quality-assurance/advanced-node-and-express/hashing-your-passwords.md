@@ -12,9 +12,9 @@ Volviendo a la sección de seguridad de la información, puedes recordar que alm
 
 `bcrypt@~5.0.0` Ha sido agregado como una dependencia, así que requiérelo en tu servidor. Necesitarás manejar el hashing en 2 áreas clave: donde manejas el registro/guardado de una nueva cuenta, y cuando compruebas que una contraseña es correcta al iniciar sesión.
 
-Actualmente en nuestra ruta de registro, se inserta la contraseña de un usuario en la base de datos así: `password: req.body.password`. Una forma sencilla de implementar el guardado de un hash en su lugar es agregar lo siguiente antes de tu lógica de base de datos `const hash = bcrypt.hashSync(req.body.password, 12);`, y sustituir el `req.body.password` en el guardado de la base de datos por sólo `password: hash`.
+Currently on your registration route, you insert a user's plaintext password into the database like so: `password: req.body.password`. Hash the passwords instead by adding the following before your database logic: `const hash = bcrypt.hashSync(req.body.password, 12);`, and replacing the `req.body.password` in the database saving with just `password: hash`.
 
-Finalmente, en nuestra estrategia de autenticación, comprobamos lo siguiente en nuestro código antes de completar el proceso: `if (password !== user.password) { return done(null, false); }`. Después de realizar los cambios anteriores, ahora `user.password` es un hash. Antes de hacer un cambio en el código existente, nota que la sentencia está comprobando si la contraseña **no** es igual entonces devuelve no autenticado. Con esto en mente, tu código podría verse como se muestra a continuación para verificar correctamente la contraseña introducida contra el hash:
+On your authentication strategy, you check for the following in your code before completing the process: `if (password !== user.password) return done(null, false);`. Después de realizar los cambios anteriores, ahora `user.password` es un hash. Antes de hacer un cambio en el código existente, nota que la sentencia está comprobando si la contraseña **no** es igual entonces devuelve no autenticado. With this in mind, change that code to look as follows to properly check the password entered against the hash:
 
 ```js
 if (!bcrypt.compareSync(password, user.password)) { 
@@ -22,57 +22,50 @@ if (!bcrypt.compareSync(password, user.password)) {
 }
 ```
 
-¡Eso es todo lo que se necesita para implementar una de las características de seguridad más importantes cuando tienes que almacenar contraseñas!
+That is all it takes to implement one of the most important security features when you have to store passwords.
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
+Envía tu página cuando creas que lo has hecho bien. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#hashing-your-passwords-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 BCrypt debe ser una dependencia.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'bcrypt',
-        'Your project should list "bcrypt" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json()
+  assert.property(
+    packJson.dependencies,
+    'bcrypt',
+    'Your project should list "bcrypt" as a dependency'
   );
+}
 ```
 
 BCrypt debe ser correctamente requerido e implementado.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require.*("|')bcrypt\1/gi,
-        'You should have required bcrypt'
-      );
-      assert.match(
-        data,
-        /bcrypt.hashSync/gi,
-        'You should use hash the password in the registration'
-      );
-      assert.match(
-        data,
-        /bcrypt.compareSync/gi,
-        'You should compare the password to the hash in your strategy'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require.*("|')bcrypt\1/gi,
+    'You should have required bcrypt'
   );
+  assert.match(
+    data,
+    /bcrypt.hashSync/gi,
+    'You should use hash the password in the registration'
+  );
+  assert.match(
+    data,
+    /bcrypt.compareSync/gi,
+    'You should compare the password to the hash in your strategy'
+  );
+}
 ```
 
 # --solutions--

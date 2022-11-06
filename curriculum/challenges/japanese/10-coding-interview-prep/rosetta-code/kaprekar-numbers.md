@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7eca
 title: カプレカ数
-challengeType: 5
+challengeType: 1
 forumTopicId: 302296
 dashedName: kaprekar-numbers
 ---
 
 # --description--
 
-正の整数は以下の場合、[カプレカ数](https://en.wikipedia.org/wiki/Kaprekar number) となります。
+A positive integer is a Kaprekar number if:
 
 <ul>
   <li>1 である、または</li>
@@ -21,7 +21,7 @@ dashedName: kaprekar-numbers
 
 <ul>
   <li><code>2223</code> は以下のとおりカプレカ数です。<code>2223 * 2223 = 4941729</code> であり、<code>4941729</code> が <code>494</code> と <code>1729</code> に分割でき、かつ <code>494 + 1729 = 2223</code> となります。</li>
-  <li>カプレカ数の数列は <a href='https://oeis.org/A006886' target='_blank'>A006886</a> として知られており、<code>1, 9, 45, 55, ...</code> で始まります。</li>
+  <li>The series of Kaprekar numbers is known as A006886, and begins as <code>1, 9, 45, 55, ...</code></li>
 </ul>
 
 # --instructions--

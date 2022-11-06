@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8012
 title: ソートアルゴリズム / ストゥージソート
-challengeType: 5
+challengeType: 1
 forumTopicId: 302318
 dashedName: sorting-algorithmsstooge-sort
 ---
 
 # --description--
 
-整数の配列で[ストゥージソート](https://en.wikipedia.org/wiki/Stooge sort)を実行する関数を記述してください。 この関数はソートされた配列を返す必要があります。
+Write a function to perform Stooge Sort on an array of integers. この関数はソートされた配列を返す必要があります。
 
 ストゥージソートのアルゴリズムは次のとおりです。
 
