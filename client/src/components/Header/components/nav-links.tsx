@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component, Fragment, createRef } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import envData from '../../../../../config/env.json';
+import { clientLocale, radioLocation } from '../../../../../config/env.json';
 import {
   availableLangs,
   LangNames,
@@ -25,14 +25,6 @@ import { Link } from '../../helpers';
 import { Themes } from '../../settings/theme';
 import LanguageGlobe from '../../../assets/icons/language-globe';
 import { User } from '../../../redux/prop-types';
-
-interface NavigationLocationApi {
-  clientLocale: string;
-  radioLocation: string;
-  apiLocation: string;
-}
-
-const { clientLocale, radioLocation } = envData as NavigationLocationApi;
 
 const locales = availableLangs.client.filter(
   lang => !hiddenLangs.includes(lang)
@@ -50,10 +42,10 @@ interface NavLinksProps {
   t: TFunction;
   showMenu: () => void;
   hideMenu: () => void;
-  toggleNightMode: (theme: Themes) => void;
+  toggleNightMode: (theme: Themes) => Themes;
   user?: User;
   navigate?: (location: string) => void;
-  showLanguageMenu: (elementToFocus: HTMLButtonElement) => void;
+  showLanguageMenu: (elementToFocus: HTMLButtonElement | null) => void;
   hideLanguageMenu: () => void;
   menuButtonRef: React.RefObject<HTMLButtonElement>;
   openSignoutModal: () => void;
@@ -95,7 +87,9 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     );
   }
 
-  getPreviousMenuItem(target: HTMLButtonElement): HTMLButtonElement {
+  getPreviousMenuItem(
+    target: HTMLButtonElement | null
+  ): HTMLButtonElement | null {
     const { menuButtonRef } = this.props;
     const previousSibling =
       target?.closest('.nav-list > li')?.previousElementSibling;
@@ -144,7 +138,9 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     }
   };
 
-  handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
+  handleMenuKeyDown = (
+    event: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>
+  ): void => {
     const { menuButtonRef, hideMenu } = this.props;
     if (event.key === 'Escape') {
       menuButtonRef.current?.focus();
@@ -230,7 +226,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
         }
         // Because FF adds an extra Tab stop to the lang menu (because it
         // is scrollable) we need to manually focus the previous menu item.
-        this.getPreviousMenuItem(this.langButtonRef.current).focus();
+        this.getPreviousMenuItem(this.langButtonRef.current)?.focus();
         hideLanguageMenu();
         event.preventDefault();
       },
@@ -296,9 +292,9 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
       fetchState,
       t,
       toggleNightMode,
-      user: { isDonating = false, username, theme }
+      user
     }: NavLinksProps = this.props;
-
+    const { isDonating, username, theme } = user;
     const { pending } = fetchState;
 
     return pending ? (
@@ -468,7 +464,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
                   onKeyDown={this.handleLanguageMenuKeyDown}
                   ref={this.firstLangOptionRef}
                   role='menuitem'
-                  tabIndex='-1'
+                  tabIndex={-1}
                 >
                   {t('buttons.cancel-change')}
                 </button>
@@ -480,7 +476,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
                     className='nav-link nav-lang-menu-option'
                     data-value={lang}
                     {...(LangCodes[lang] && {
-                      lang: LangCodes[lang] as string
+                      lang: LangCodes[lang] as typeof LangCodes
                     })}
                     onClick={this.handleLanguageChange}
                     onKeyDown={this.handleLanguageMenuKeyDown}
