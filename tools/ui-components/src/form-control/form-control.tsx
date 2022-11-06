@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
+import { FormContext } from '../form-context';
 import { FormControlFeedback as Feedback } from './form-control-feedback';
 import { FormControlStatic as Static } from './form-control-static';
 import { FormControlProps, FormControlElement } from './types';
@@ -24,6 +25,8 @@ const FormControl = React.forwardRef<FormControlElement, FormControlProps>(
     },
     ref
   ): JSX.Element => {
+    const { controlId } = useContext(FormContext);
+
     let defaultClasses =
       'outline-0 block w-full py-1.5 px-2.5 text-md text-foreground-primary ' +
       'bg-background-primary bg-none rounded-none border-1 border-solid ' +
@@ -40,7 +43,7 @@ const FormControl = React.forwardRef<FormControlElement, FormControlProps>(
     return (
       <Component
         ref={ref}
-        id={id}
+        id={id || controlId}
         data-testid={testId}
         className={classes}
         value={value}

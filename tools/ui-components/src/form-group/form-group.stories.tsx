@@ -35,7 +35,7 @@ const Template: Story<FormGroupProps> = ({
         <FormControl
           type={'text'}
           placeholder='Hello World'
-          value='Hello World'
+          defaultValue='Hello World'
           required={true}
         >
           {' '}
