@@ -718,10 +718,10 @@
     "navigate-next": "Navegar para o próximo exercício"
   },
   "signout": {
-    "heading": "Sign out of your account",
-    "p1": "Warning: If you continue, your progress will no longer be saved.",
-    "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
-    "certain": "Yes, sign out of my account",
-    "nevermind": "Nevermind, I don't want to sign out"
+    "heading": "Sair da sua conta",
+    "p1": "Aviso: se continuar, seu progresso não será mais salvo.",
+    "p2": "Esta ação encerrará a sua conta somente neste dispositivo e na sessão do navegador. Confirme se deseja prosseguir.",
+    "certain": "Sim, sair da minha conta",
+    "nevermind": "Deixa para lá, eu não quero sair da minha conta"
   }
 }
