@@ -8,7 +8,7 @@ dashedName: change-styles-based-on-data
 
 # --description--
 
-Bei D3 geht es um die Visualisierung und Darstellung von Daten. Es ist wahrscheinlich, dass du das Format der Elemente auf der Grundlage der Daten ändern wirst. You can use a callback function in the `style()` method to change the styling for different elements.
+Bei D3 geht es um die Visualisierung und Darstellung von Daten. It's likely you'll want to change the styling of elements based on the data. Du kannst eine Callback-Funktion innerhalb der `style()`-Methode verwenden, um die Gestaltung verschiedener Elemente zu verändern.
 
 For example, you may want to color a data point blue if it has a value less than 20, and red otherwise. You can use a callback function in the `style()` method and include the conditional logic. The callback function uses the `d` parameter to represent the data point:
 

@@ -28,7 +28,7 @@ Add version "1.1.0" of the `@freecodecamp/example` package to the `dependencies`
 
 # --hints--
 
-`"dependencies"` should include `"@freecodecamp/example"`.
+`"dependencies"` sollte `"@freecodecamp/example"` enthalten.
 
 ```js
 (getUserInput) =>
@@ -47,7 +47,7 @@ Add version "1.1.0" of the `@freecodecamp/example` package to the `dependencies`
   );
 ```
 
-`"@freecodecamp/example"` version should be `"1.1.0"`.
+Die `"@freecodecamp/example"`-Version sollte `"1.1.0"` sein.
 
 ```js
 (getUserInput) =>

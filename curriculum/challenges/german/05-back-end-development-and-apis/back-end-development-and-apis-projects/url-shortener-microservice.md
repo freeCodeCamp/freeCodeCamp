@@ -12,7 +12,7 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-urlshortener/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
--   Use a site builder of your choice to complete the project. Achte darauf, alle Dateien aus unserer GitHub-Repo zu integrieren.
+-   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Achte darauf, alle Dateien aus unserer GitHub-Repo zu integrieren.
 
 Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
 
@@ -88,7 +88,7 @@ async (getUserInput) => {
 };
 ```
 
-Wenn du eine ungültige URL angibst, die nicht dem gültigen `http://www.example.com`-Format folgt, wird die JSON-Antwort `{ error: 'invalid url' }` enthalten
+If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`
 
 ```js
 async (getUserInput) => {
