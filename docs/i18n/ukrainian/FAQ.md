@@ -2,104 +2,104 @@
 
 Прочитайте [«Як зробити внесок до відкритого вихідного коду»](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). Там є вичерпні вказівки для тих, хто вперше стикається з такими проєктами. Там також є багато порад для роботи з відкритим вихідним кодом.
 
-### What do I need to know to contribute to the codebase?
+### Що мені потрібно знати, щоб зробити внесок до кодової бази?
 
-freeCodeCamp runs on a modern JavaScript stack. If you're interested in contributing to our codebase, you will need some familiarity with JavaScript and some of the technologies we use like Node.js, MongoDB, OAuth 2.0, React, Gatsby, and Webpack.
+freeCodeCamp працює на сучасному стеку JavaScript. Якщо ви хочете зробити внесок до нашої кодової бази, ви повинні бути ознайомленими із JavaScript та іншими технологіями, якими ми користуємось: Node.js, MongoDB, OAuth 2.0, React, Gatsby та Webpack.
 
-### Can I translate freeCodeCamp's resources?
+### Чи можу я перекладати ресурси freeCodeCamp?
 
-Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
+Так! Ви можете почати перекладати на будь-яку з 30+ мов, які доступні на нашій локалізаційній платформі.
 
-We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
+Деякі з перекладів вже доступні на сайті. Ми хочемо локалізувати freeCodeCamp на популярні мови. Деталі можна дізнатися [тут](https://www.freecodecamp.org/ukrainian/news/yak-dopomohty-z-perekladom-freecodecamp-na-ridnu-movu/).
 
-If you are interested in contributing to translations please make sure you [read this guide](how-to-translate-files.md) first.
+Якщо ви хочете зробити внесок до перекладу, будь ласка, спочатку [прочитайте цей посібник](how-to-translate-files.md).
 
-### Can I contribute articles to freeCodeCamp News or videos to freeCodeCamp's YouTube channel?
+### Чи можу я писати публікації або знімати відео для freeCodeCamp?
 
-Yes - you can contribute to our publication blog and YouTube channel.
+Так! Ви можете зробити внесок до новин та ютуб-каналу.
 
-If you're interested in writing articles for freeCodeCamp News, please visit this [publication guide](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/). In addition, please read our [style guide](https://www.freecodecamp.org/news/developer-news-style-guide/) as this will help you write stronger and more effective articles.
+Якщо ви зацікавлені в написанні публікацій, відвідайте цей [посібник з публікацій](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/). А ще прочитайте нашу [інструкцію зі стилістичного оформлення](https://www.freecodecamp.org/news/developer-news-style-guide/); вона допомагає в написанні кращих публікацій.
 
-To help us make educational videos for our YouTube channel, you can follow the [YouTube channel guide here](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/).
+Щоб допомогти у створенні навчальних відео, слідуйте [посібнику з ютуб-каналу](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel- b86bce4c865/).
 
-### How can I report a new bug?
+### Як повідомити про нову помилку?
 
-If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
+Якщо ви вважаєте, що знайшли помилку, то спершу прочитайте публікацію [«Як повідомити про помилку»](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) та виконайте її вказівки.
 
-If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
+Якщо ви впевнені, що це нова помилка, то, будь ласка, створіть нове завдання на GitHub. Надайте якомога більше інформації для того, щоб ми могли відтворити помилку. У нас є заздалегідь заготовлений шаблон, який може вам допомогти.
 
-Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
+Будь ласка, зверніть увагу на те, що завдання на GitHub стосуються лише проблем щодо кодової бази та не мають ніякого відношення до допомоги з програмування. Якщо у вас є сумніви, то слід [звернутися за допомогою на форум](https://forum.freecodecamp.org), а вже потім створювати завдання на GitHub.
 
-### How can I report a security issue?
+### Як повідомити про проблему з безпекою?
 
-Please don't create GitHub issues for security issues. Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
+Будь ласка, не створюйте завдань на GitHub щодо питань безпеки. Натомість [слідуйте нашій політиці безпеки](https://contribute.freecodecamp.org/#/security).
 
-### I am a student. Can I work on a feature for academic credits?
+### Я здобуваю освіту. Чи може робота на платформі зараховуватися мені в залікові кредити?
 
-Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions from volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
+Так. Але зверніть, будь ласка, увагу, що ми не можемо надати жодних графіків чи документів, які вимагатиме ваш коледж або університет. Ми отримуємо багато пул реквестів та внесків до коду від розробників-волонтерів і ми поважаємо їхні час та зусилля. Ми поважаємо усіх наших користувачів, а тому не надаємо жодним запитам особливого пріоритету лише через те, що вони пов'язані з навчанням у закладах освіти.
 
-We request you to plan ahead and work on code contributions with this in mind.
+Ми просимо вас враховувати це та відповідно планувати свій час заздалегідь під час роботи над кодом.
 
-### What do these different labels that are tagged on issues mean?
+### Чому на завданнях бувають різні позначки?
 
-The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
+Техпідтримка, що відповідає за код, [сортує](https://en.wikipedia.org/wiki/Software_bug#Bug_management) завдання та пул реквести залежно від пріоритету, складності та інших факторів. [Тут ви можете ознайомитися з усіма їхніми значеннями](https://github.com/freecodecamp/freecodecamp/labels).
 
-### Where do I start if I want to work on an issue?
+### Звідки почати, якщо я хочу працювати над завданням?
 
-You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
+Вам слід переглянути [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) або [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22), щоб швидко ознайомитись з доступними задачами.
 
-> [!TIP] Проблеми в **`потрібна допомога`** загальнодоступні, тож вам не треба отримувати дозволи на роботу з ними. А ось проблеми з позначкою **`лише новачкам`** — це спеціальні проблеми для людей, які ще не робили внесок до кодової бази freeCodeCamp.
+> [!TIP] Завдання в **`help wanted`** загальнодоступні, тож вам не треба отримувати дозволи на роботу з ними. А ось завдання з позначкою **`first timers only`** – це спеціальні завдання для людей, які ще не робили внесок до кодової бази freeCodeCamp.
 
-### I found a typo. Should I report an issue before I can make a pull request?
+### Знайшлась друкарська помилка. Чи потрібно повідомляти про цю проблему, перш ніж зробити пул реквест?
 
-For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
+Для друкарських та орфографічних помилок можна відразу відкрити пул реквест без створення завдання. Не забудьте вказати деталі в описі пул реквестів, щоб допомогти нам переглянути ваш внесок (навіть якщо там незначна зміна).
 
-Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
+Створюйте завдання, якщо ви хочете обговорити глобальніші аспекти кодової бази або навчальної програми.
 
-### How can I get an issue assigned to me?
+### Яким чином можна отримати доручене завдання?
 
-We typically do not assign issues to anyone other than long-time contributors. Instead, we follow the below policy to be fair to everyone:
+Зазвичай ми доручаємо завдання лише тим користувачам, які вже давно нам допомагають. Натомість ми дотримуємось такої політики, щоб бути справедливими до кожного:
 
-1. Скоріш за все ми об'єднаємо перший пул реквест з подальшими, які стосуються цієї проблеми.
-2. Якщо декілька користувачів одночасно відкривають пул реквести для однієї проблеми, ми надаватимемо пріоритет тому, який найкраще її вирішує. На що ми звертаємо увагу:
-   - Чи входять туди тести?
-   - Did you catch all use cases?
+1. Скоріш за все ми приймемо перший пул реквест, який описує завдання.
+2. Якщо декілька користувачів одночасно відкривають пул реквести для одного завдання, ми надаємо пріоритет тому, який найкраще її описує. На що ми звертаємо увагу:
+   - Чи враховано тести?
+   - Чи враховано всі випадки використання?
    - Чи ви переконалися, що всі тести виконуються і працюють локально?
 3. Також ми даємо пріоритет тим пул реквестам, які дотримуються наших рекомендацій.
    - Ви стежили за списком пул реквестів?
    - Чи змістовна назва у вашого пул реквеста?
 
-### I am interested in being a moderator at freeCodeCamp. Where should I start?
+### Я хочу бути модератором freeCodeCamp. З чого мені варто почати?
 
-Our community moderators are our heroes. Their voluntary contributions make freeCodeCamp a safe and welcoming community.
+Модератори нашої  спільноти – наші герої. Їхні добровільні внески роблять freeCodeCamp безпечною та гостинною спільнотою.
 
-First and foremost, we would need you to be an active participant in the community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/) (not just enforce it).
+Перш за все, ви повинні бути активним учасником нашої спільноти та дотримуватись нашого [кодексу поведінки](https://www.freecodecamp.org/news/code-of-conduct/) (а не просто обіцяти його виконання).
 
-Here are some recommended paths for some of our platforms:
+Декілька рекомендацій стосовно наших платформ:
 
-- To be a **Discord/Chat** moderator, have an active presence in our chat and have positive engagements with others, while also learning and practicing how to deal with potential conflicts that may arise.
-- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
-- To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
+- Щоб бути модератором **дискорду/чату**, будьте активними у нашому чаті та взаємодійте з іншими, навчаючись та практикуючи вирішення потенційних конфліктів.
+- Щоб бути модератором **форуму**, будьте активними та взаємодійте з іншими людьми на форумі, підтримуйте їх та надавайте зворотний зв'язок за потреби. Див. [посібник керівника підфоруму](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) для додаткової інформації.
+- Щоб бути модератором **GitHub**, допомагайте з обробкою завдань GitHub, перевіряючи, чи вони дійсні та (в ідеалі) пропонуйте їх вирішення (власне чи чуже).
 
-Altogether, be respectful to others. We are humans from all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
+Коротко: поважайте інших. Ми – люди з усього світу. Зважаючи на це, будь ласка, слідкуйте за своїм спілкуванням із людьми інших культур.
 
-If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. Open source work is voluntary work and our time is limited. We acknowledge that this is probably true in your case as well. So we emphasize being **consistent** rather than engaging in the community 24/7.
+Якщо ви практикували вищезгадане **деякий час** та хтось із модераторів рекомендує вас, з вами зв'яжеться співробітник та залучить до команди модераторів. Відкрита робота є волонтерською роботою, і наш час обмежений. Ми розуміємо, що в вашому випадку це правда. Тому ми наголошуємо на тому, щоб бути **послідовними**, а не взаємодіяти у спільноті 24/7.
 
-Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
+Див. наш [довідник модератора](moderator-handbook.md) для детальнішого списку обов'язків модератора та наших очікувань від них.
 
-### I am stuck on something that is not included in this documentation.
+### Моя проблема не висвітлена у цій документації.
 
-**Feel free to ask for help in:**
+**Не соромтеся звертатися за допомогою до:**
 
-- The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The `#Contributors` channel on [our chat server](https://discord.gg/PRyKn3Vbay).
+- Категорії `Contributors` на [форумі нашої спільноти](https://forum.freecodecamp.org/c/contributors).
+- Каналу `#Contributors` на [нашому чат-сервері](https://discord.gg/PRyKn3Vbay).
 
-We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
+Ми раді допомогти вам зробити внесок до будь-якої цікавої для вас теми. Якщо ви поставите нам запитання у відповідній до нього темі, ми з радістю надамо вам роз'яснення. Перш ніж публікувати своє запитання, пошукайте чи не було його вирішено раніше.
 
-Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
+Заздалегідь дякуємо за ваші ввічливість та терпіння. Пам'ятайте, що ця спільнота здебільшого складається з волонтерів.
 
-### Additional Assistance
+### Додаткова допомога
 
-If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
+Якщо у вас є запитання щодо стека, архітектури коду, перекладів чи будь-чого іншого, зв'яжіться з нашою командою [на форумі](https://forum.freecodecamp.org/g/team).
 
-**You can email our developer staff at: `dev[at]freecodecamp.org`**
+**Ви можете написати на електронну пошту нашим розробникам: `dev[at]freecodecamp.org`**
