@@ -61,7 +61,8 @@ const loggedInProps = {
   pending: false,
   slug: '/',
   username: 'DevelopmentUser',
-  isDonating: false
+  isDonating: false,
+  onDonationAlertClick: () => jest.fn()
 };
 
 const loggedOutProps = {
@@ -72,5 +73,6 @@ const loggedOutProps = {
   pending: false,
   slug: '/',
   username: '',
-  isDonating: false
+  isDonating: false,
+  onDonationAlertClick: () => jest.fn()
 };

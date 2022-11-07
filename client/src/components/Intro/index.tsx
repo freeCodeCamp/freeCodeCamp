@@ -16,7 +16,7 @@ interface IntroProps {
   pending?: boolean;
   slug?: string;
   username?: string;
-  onDonationAlertClick?: () => void;
+  onDonationAlertClick: () => void;
   isDonating: boolean;
 }
 

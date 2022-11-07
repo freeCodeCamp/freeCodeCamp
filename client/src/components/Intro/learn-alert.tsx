@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from '../helpers';
 
 interface LearnAlertProps {
-  onDonationAlertClick?: () => void;
+  onDonationAlertClick: () => void;
   isDonating: boolean;
 }
 
@@ -16,7 +16,7 @@ const LearnAlert = ({
   const { t } = useTranslation();
   const researchRecruitment = useFeature('show-research-recruitment-alert');
   const universityCreation = useFeature('university-creation-alert');
-  const seasionalMessage = useFeature('seasonal-alert');
+  const seasonalMessage = useFeature('seasonal-alert');
 
   const researchRecruitmentAlert = (
     <Alert>
@@ -39,7 +39,7 @@ const LearnAlert = ({
     </Alert>
   );
 
-  const seasionalMessageAlert = (
+  const seasonalMessageAlert = (
     <Alert bsStyle='info' className='annual-donation-alert'>
       <p>
         <b>{t('learn.season-greetings-fcc')}</b>
@@ -82,9 +82,9 @@ const LearnAlert = ({
   );
 
   if (researchRecruitment.on) return researchRecruitmentAlert;
-  else if (universityCreation.on && !isDonating) return universityCreationAlert;
-  else if (seasionalMessage.on) return seasionalMessageAlert;
-  else return null;
+  if (universityCreation.on && !isDonating) return universityCreationAlert;
+  if (seasonalMessage.on) return seasonalMessageAlert;
+  return null;
 };
 
 LearnAlert.displayName = 'LearnAlert';
