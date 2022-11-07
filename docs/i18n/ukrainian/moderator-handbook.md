@@ -1,24 +1,24 @@
-# The Official freeCodeCamp Moderator Handbook
+# Офіційний довідник модератора freeCodeCamp
 
-This handbook will help you moderate different places in our community. This covers conversations and interactions in issues and pull request threads on GitHub, the community forum, the chat rooms, and other official communities that we foster.
+Цей довідник допоможе з модерацією у нашій спільноті. Сюди входять розмови та взаємодії у завданнях та пул реквестах на GitHub, форумі, чатах та інших офіційних спільнотах, які ми підтримуємо.
 
-> [!NOTE] All freeCodeCamp moderators are community-wide moderators. That means we trust you to oversee any of these places.
+> [!NOTE] Модератори freeCodeCamp мають доступ до всіх частин спільноти. Це означає, що ми довіряємо вам наглядати за будь-якою з них.
 
-You can serve as a moderator on any of the platforms that are of the most interest to you. Some moderators just help out on GitHub, while others just help out on the forum. Some moderators are active everywhere.
+Ви можете стати модератором будь-якої цікавої вам платформи. Деякі модератори допомагають тільки на GitHub, а інші залучені на форумі. Деякі модератори активні всюди.
 
-The bottom line is that we want you to enjoy being a moderator, and invest your scarce time in places that are of interest to you.
+Для нас важливо, щоб ви насолоджувались роллю модератора та проводили свій час там, де вам цікаво.
 
-> "With great power comes great responsibility." - Uncle Ben
+> «З великою владою приходить велика відповідальність.» - Дядько Бен
 
-As a moderator, temperament is more important than technical skill.
+Темперамент модератора важливіший за технічні навички.
 
-Listen. Be helpful. Don't abuse your power.
+Слухайте. Допомагайте. Не зловживайте владою.
 
-freeCodeCamp is an inclusive community, and we need to keep it that way.
+Спільнота freeCodeCamp вітає кожного і ми хочемо, щоб так було надалі.
 
-We have a single [Code of Conduct](https://code-of-conduct.freecodecamp.org) that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
+У нас є [Кодекс поведінки](https://code-of-conduct.freecodecamp.org), який керує нашою спільнотою. Чим менше правил, тим легше їх запам'ятати. Ви можете прочитати ці правила та закріпити їх у пам'яті [тут](https://code-of-conduct.freecodecamp.org).
 
-> [!NOTE] As a moderator we would add you to one or more teams on GitHub, our community forums & chat servers. If you are missing access on a platform that you would like to moderate, please [reach out to a staff member](FAQ.md#additional-assistance).
+> [!NOTE] Ми додамо вас до одної або більше команд на GitHub, форумі нашої спільноти та чат-серверах. Якщо у вас немає дозволу до платформи, яку хочете модерувати, [зверніться до персоналу](FAQ.md#additional-assistance).
 
 ## Moderating GitHub
 
@@ -162,14 +162,14 @@ Note that once you are a moderator on the forum, you will start to see blue mode
 
 These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, helping many other people in their coding journey. Even the slightest kindness may trigger a cascade of good deeds.
 
-### Deleting Forum Posts
+### Видалення повідомлень на форумі
 
-Forum moderators can delete users' posts. You should only do this for the following instances:
+Модератори форуму можуть видаляти дописи користувачів. Це потрібно робити лише в таких випадках:
 
-1. Someone has posted a pornographic or graphically violent image.
-2. Someone has posted a link or code that is malicious in nature and could harm other campers who click on it.
-3. Someone has flooded a thread with a lot of spam messages.
-4. An account has been created, beyond a reasonable doubt, to spam.
+1. Користувач опублікував зображення порнографічного характеру або насильницького змісту.
+2. Користувач розмістив посилання або код зловмисного характеру, що може завдати шкоди іншим користувачам, які натискають на них.
+3. Користувач заповнив тред величезною кількістю спаму.
+4. Обліковий запис був створений, без сумніву, для спаму.
 
 ### Dealing with Spam
 
@@ -355,31 +355,31 @@ This XKCD comic summarizes perfectly most communities' thoughts on free speech.
 
 Thanks for reading this, and thanks for helping the developer community!
 
-## Reply Templates
+## Зразки відповідей
 
 These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues/pull requests.
 
 > You can make your own saved replies with GitHub's built-in [saved replies](https://github.com/settings/replies/) feature or use the ones below.
 
-### Thank You
+### Подяка
 
 ```markdown
 Thank you for your contribution to the page! 👍
 We are happy to accept these changes and look forward to future contributions. 🎉
 ```
 
-### Thank you and congrats
+### Подяка та вітання
 
-> For thanking and encouraging first-time contributors.
+> Подяка та заохочення помічників-початківців.
 
 ```markdown
-Привіт, @username. Congrats on your first pull request (PR)! 🎉
+Hi @username. Congrats on your first pull request (PR)! 🎉
 
 Thank you for your contribution to the page! 👍
 We are happy to accept these changes and look forward to future contributions. 📝
 ```
 
-### Build Error
+### Помилка збірки
 
 ```markdown
 Hey @username
