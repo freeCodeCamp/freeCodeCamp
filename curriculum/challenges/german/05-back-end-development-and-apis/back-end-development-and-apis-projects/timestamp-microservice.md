@@ -12,7 +12,7 @@ Erstelle eine vollständige JavaScript-Anwendung, die eine ähnliche Funktionali
 
 -   Klone <a href="https://github.com/freeCodeCamp/boilerplate-project-timestamp/"  target="_blank" rel="noopener noreferrer nofollow">dieses GitHub-Repo</a> und schließe dein Projekt lokal ab.
 -   Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp"  target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starter-Projekt</a>, um dein Projekt fertigzustellen.
--   Use a site builder of your choice to complete the project. Achte darauf, alle Dateien aus unserer GitHub-Repo zu integrieren.
+-   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Be sure to incorporate all the files from our GitHub repo.
 
 Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
 
@@ -66,7 +66,7 @@ A request to `/api/:date?` with a valid date should return a JSON object with a 
   );
 ```
 
-A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
+Eine Anfrage an `/api/1451001600000` sollte `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }` zurückgeben
 
 ```js
 (getUserInput) =>
@@ -83,7 +83,7 @@ A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fr
   );
 ```
 
-Your project can handle dates that can be successfully parsed by `new Date(date_string)`
+Dein Projekt kann Daten verarbeiten, die erfolgreich von `new Date(date_string)` geparst werden können
 
 ```js
 (getUserInput) =>
