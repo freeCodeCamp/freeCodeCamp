@@ -1,8 +1,10 @@
 import { config } from 'dotenv';
 config({ path: '../.env' });
 import Fastify from 'fastify';
+import middie from '@fastify/middie';
 import { testRoutes } from './routes/test';
 import { dbConnector } from './db';
+import { testMiddleware } from './middleware';
 
 const fastify = Fastify({
   logger: { level: process.env.NODE_ENV === 'development' ? 'debug' : 'fatal' }
@@ -12,10 +14,18 @@ fastify.get('/', async (_request, _reply) => {
   return { hello: 'world' };
 });
 
-void fastify.register(dbConnector);
-void fastify.register(testRoutes);
-
 const start = async () => {
+  // NOTE: Awaited to ensure `.use` is registered on `fastify`
+  await fastify.register(middie);
+
+  // @ts-expect-error Types are not exported from Fastify,
+  // and TypeScript is not smart enough to realise types
+  // defined within this module have the same signature
+  void fastify.use('/test', testMiddleware);
+
+  void fastify.register(dbConnector);
+  void fastify.register(testRoutes);
+
   try {
     const port = Number(process.env.PORT) || 3000;
     fastify.log.info(`Starting server on port ${port}`);
