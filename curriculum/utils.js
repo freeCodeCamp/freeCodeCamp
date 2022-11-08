@@ -1,12 +1,18 @@
 const path = require('path');
+const {
+  CurriculumMaps,
+  superBlockOrder,
+  SuperBlockStates,
+  TranslationStates,
+  orderedSuperBlockStates
+} = require('../config/superblock-order');
+
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const {
-  availableLangs,
-  languagesWithAuditedBetaReleases
-} = require('../config/i18n');
+const { availableLangs } = require('../config/i18n');
 const curriculumLangs = availableLangs.curriculum;
 
+// checks that the CURRICULUM_LOCALE exists and is an available language
 exports.testedLang = function testedLang() {
   if (process.env.CURRICULUM_LOCALE) {
     if (curriculumLangs.includes(process.env.CURRICULUM_LOCALE)) {
@@ -20,67 +26,78 @@ exports.testedLang = function testedLang() {
   }
 };
 
-// TODO: migrate to TS and use the SuperBlocks enum from
-// config/certification-settings.ts
-
-const superBlockToOrder = {
-  '2022/responsive-web-design': 0,
-  'javascript-algorithms-and-data-structures': 1,
-  'front-end-development-libraries': 2,
-  'data-visualization': 3,
-  'relational-database': 4,
-  'back-end-development-and-apis': 5,
-  'quality-assurance': 6,
-  'scientific-computing-with-python': 7,
-  'data-analysis-with-python': 8,
-  'information-security': 9,
-  'machine-learning-with-python': 10,
-  'coding-interview-prep': 11,
-  'responsive-web-design': 12
-};
-
-/**
- * This order is used for i18n instances where a new certification is released
- * from beta but is not audited, so cannot be reordered (due to the way we
- * split the map)
+/*
+ * creates an object with all the superblocks in
+ * 'superBlockOrder[lang][learn]' as keys and gives them
+ * a number (superOrder), starting with 0, as the value
  */
-const superBlockNonAuditedOrder = {
-  'responsive-web-design': 0,
-  'javascript-algorithms-and-data-structures': 1,
-  'front-end-development-libraries': 2,
-  'data-visualization': 3,
-  'relational-database': 4,
-  'back-end-development-and-apis': 5,
-  'quality-assurance': 6,
-  'scientific-computing-with-python': 7,
-  'data-analysis-with-python': 8,
-  'information-security': 9,
-  'machine-learning-with-python': 10,
-  'coding-interview-prep': 11,
-  '2022/responsive-web-design': 12
-};
-
-const superBlockToNewOrder = {
-  ...superBlockToOrder,
-  '2022/javascript-algorithms-and-data-structures': 13
-};
-
-function getSuperOrder(
-  superblock,
-  { showNewCurriculum } = { showNewCurriculum: false }
-) {
-  let orderMap = superBlockToOrder;
-  if (showNewCurriculum) {
-    orderMap = superBlockToNewOrder;
+function createSuperOrder({
+  language = 'english',
+  showNewCurriculum = 'false',
+  showUpcomingChanges = 'false'
+}) {
+  if (!Object.prototype.hasOwnProperty.call(superBlockOrder, language)) {
+    throw Error(`${language} not found in superblock-order.ts`);
   }
+
   if (
-    !languagesWithAuditedBetaReleases.includes(process.env.CURRICULUM_LOCALE)
+    !Object.prototype.hasOwnProperty.call(superBlockOrder[language], [
+      CurriculumMaps.Learn
+    ])
   ) {
-    orderMap = superBlockNonAuditedOrder;
+    throw Error(
+      `${language} does not have a 'learn' key in superblock-order.ts`
+    );
   }
+
+  const audited =
+    superBlockOrder[language][CurriculumMaps.Learn][TranslationStates.Audited];
+  const notAudited =
+    superBlockOrder[language][CurriculumMaps.Learn][
+      TranslationStates.NotAudited
+    ];
+
+  const superOrder = {};
+  let i = 0;
+
+  function addToSuperOrder(superBlocks) {
+    superBlocks.forEach(key => {
+      superOrder[key] = i;
+      i++;
+    });
+  }
+
+  function canAddToSuperOrder(superBlockState) {
+    if (superBlockState === SuperBlockStates.New)
+      return showNewCurriculum === 'true';
+    if (superBlockState === SuperBlockStates.Upcoming)
+      return showUpcomingChanges === 'true';
+    return true;
+  }
+
+  function addSuperBlockStates(translationState) {
+    orderedSuperBlockStates.forEach(state => {
+      if (canAddToSuperOrder(state)) addToSuperOrder(translationState[state]);
+    });
+  }
+
+  addSuperBlockStates(audited);
+  addSuperBlockStates(notAudited);
+
+  return superOrder;
+}
+
+const superOrder = createSuperOrder({
+  language: process.env.CURRICULUM_LOCALE,
+  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+});
+
+// gets the superOrder of a superBlock from the object created above
+function getSuperOrder(superblock) {
   if (typeof superblock !== 'string')
     throw Error('superblock must be a string');
-  const order = orderMap[superblock];
+  const order = superOrder[superblock];
   if (typeof order === 'undefined')
     throw Error(`${superblock} is not a valid superblock`);
   return order;
@@ -112,5 +129,6 @@ function getSuperBlockFromDir(dir) {
   return directoryToSuperblock[dir];
 }
 
+exports.createSuperOrder = createSuperOrder;
 exports.getSuperOrder = getSuperOrder;
 exports.getSuperBlockFromDir = getSuperBlockFromDir;

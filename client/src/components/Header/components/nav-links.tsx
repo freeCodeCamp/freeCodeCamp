@@ -480,7 +480,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
                     className='nav-link nav-lang-menu-option'
                     data-value={lang}
                     {...(LangCodes[lang] && {
-                      lang: LangCodes[lang] as string
+                      lang: LangCodes[lang]
                     })}
                     onClick={this.handleLanguageChange}
                     onKeyDown={this.handleLanguageMenuKeyDown}
