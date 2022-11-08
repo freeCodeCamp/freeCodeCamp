@@ -5,9 +5,12 @@ on:
       - 'docs/**'
     branches-ignore:
       - 'renovate/**'
+      - 'next-api'
   pull_request:
     paths-ignore:
       - 'docs/**'
+    branches-ignore:
+      - 'next-api'
 
 jobs:
   build-client:
