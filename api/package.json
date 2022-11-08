@@ -1,0 +1,31 @@
+{
+  "name": "@freecodecamp/api",
+  "version": "0.0.1",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "none",
+  "scripts": {
+    "build": "tsc index.ts",
+    "start": "NODE_ENV=production node index.js",
+    "develop": "NODE_ENV=development nodemon index.ts"
+  },
+  "dependencies": {
+    "@fastify/mongodb": "6.1.0",
+    "fastify": "4.9.2",
+    "fastify-plugin": "4.3.0"
+  }
+}
