@@ -64,6 +64,13 @@
   margin: 0 auto;
 }
 
+#mobile-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
+}
+
 #mobile-layout .nav-tabs {
   margin-left: 2px;
   display: flex;

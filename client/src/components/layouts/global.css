@@ -53,9 +53,20 @@ body {
 }
 
 .default-layout {
-  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1 1 auto;
   margin-top: var(--header-height, 0);
   background: var(--secondary-background);
+}
+
+#content-start,
+#content-start > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
 }
 
 h1 {

@@ -503,10 +503,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       >
         <LearnLayout>
           <Helmet title={windowTitle}>
-            <style>
-              {'.page-wrapper{height: 100%;}' +
-                '.default-layout, #learn-app-wrapper, #content-start, #content-start > div {display: flex;flex-direction: column;min-height: 0;flex: 1 1 auto;}'}
-            </style>
+            <style>{'.page-wrapper{height: 100%;}'}</style>
           </Helmet>
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout

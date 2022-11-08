@@ -1,9 +1,9 @@
-#learn-app-wrapper .desktop-layout,
-#mobile-layout {
+#learn-app-wrapper,
+#learn-app-wrapper .desktop-layout {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  flex: 1 1 auto;
+  flex-grow: 1;
 }
 
 #learn-app-wrapper .desktop-layout .reflex-element {
@@ -13,7 +13,7 @@
 #learn-app-wrapper .reflex-container.vertical {
   display: flex;
   min-height: 0;
-  flex: 1 1 auto;
+  flex-grow: 1;
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter,
