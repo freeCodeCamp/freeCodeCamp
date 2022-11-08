@@ -16,7 +16,7 @@ HTTP 严格传输安全（HSTS）是一种网络安全策略，有助于保护�
 
 配置 `helmet.hsts()` 以在未来 90 天内使用 HTTPS。 传递配置对象 `{maxAge: timeInSeconds, force: true}`。 你可以创建一个变量 `ninetyDaysInSeconds = 90*24*60*60;` 来用于 `timeInSeconds`。 Replit 已经启用了 hsts。 要覆盖它的设置，你需要在配置对象中把 “force” 字段设置为 true。 我们将拦截并在对其进行检查测试后恢复 Replit 请求头。
 
-Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and an SSL/TLS Certificate.
+注意：在自定义网站上配置 HTTPS 需要获得一个域名，以及一个 SSL/TLS 证书。
 
 # --hints--
 
