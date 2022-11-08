@@ -65,7 +65,7 @@ const LearnAlert = ({
       <p>
         <b>{t('learn.building-a-university')}</b>
       </p>
-      <p>{t('learn.if-help-univeristy')}</p>
+      <p>{t('learn.if-help-university')}</p>
       <hr />
       <p className={'text-center'}>
         <Link
