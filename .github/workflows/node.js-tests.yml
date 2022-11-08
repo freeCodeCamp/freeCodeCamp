@@ -5,7 +5,10 @@ on:
   push:
     branches-ignore:
       - 'renovate/**'
+      - 'next-api'
   pull_request:
+    branches-ignore:
+      - 'next-api'
 
 permissions:
   contents: read
