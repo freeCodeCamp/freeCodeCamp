@@ -214,3 +214,6 @@ client/static/curriculum-data
 
 ### UI Components ###
 tools/ui-components/dist
+
+### API ###
+api/**/*.js
