@@ -9,7 +9,7 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-我們可以把<dfn>多維</dfn>數組看作成是*數組中的數組*。 When you use brackets to access your array, the first set of brackets refers to the entries in the outermost (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
+我們可以把<dfn>多維</dfn>數組看作成是*數組中的數組*。 當你使用括號訪問你的數組時，第一組括號指的是最外層（第一層）數組中的條目，而每一對額外的括號指的是裏面下一層的條目。
 
 **例如：**
 

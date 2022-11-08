@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bca
-title: Change the Presentation of a Bar Chart
+title: تغيير تقديم مخطط الأعمدة (Bar Chart)
 challengeType: 6
 forumTopicId: 301481
 dashedName: change-the-presentation-of-a-bar-chart

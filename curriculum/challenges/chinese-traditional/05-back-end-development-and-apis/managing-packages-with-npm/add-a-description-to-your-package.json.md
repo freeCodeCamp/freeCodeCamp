@@ -10,7 +10,7 @@ dashedName: add-a-description-to-your-package-json
 
 一個好的 package.json 文件的下一部分就是 `description` 字段——簡短精悍的的項目描述。
 
-If some day you plan to publish a package to npm, this is the string that should sell your idea to the user when they decide whether to install your package or not. 然而，這並不是使用描述的唯一場景：它也是一種很好的總結項目的方式， 可以幫助其它開發者、維護者甚至自己在未來快速地瞭解項目，對於任何一個 Node.js 項目來說都非常重要。
+如果有一天你打算向 npm 發佈一個軟件包，當用戶決定是否安裝你的軟件包時，這個字符串就能向用戶表明你的想法。 然而，這並不是使用描述的唯一場景：它也是一種很好的總結項目的方式， 可以幫助其它開發者、維護者甚至自己在未來快速地瞭解項目，對於任何一個 Node.js 項目來說都非常重要。
 
 無論項目計劃是什麼，都建議使用描述。 類似這樣：
 
