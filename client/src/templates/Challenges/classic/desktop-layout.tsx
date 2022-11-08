@@ -1,6 +1,8 @@
 import { first } from 'lodash-es';
 import React, { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import {
@@ -8,6 +10,12 @@ import {
   ChallengeFiles,
   ResizeProps
 } from '../../../redux/prop-types';
+import { setShowPreviewPortal, setShowPreviewPane } from '../redux/actions';
+import {
+  portalWindowSelector,
+  showPreviewPortalSelector,
+  showPreviewPaneSelector
+} from '../redux/selectors';
 import PreviewPortal from '../components/preview-portal';
 import ActionRow from './action-row';
 
@@ -34,16 +42,48 @@ interface DesktopLayoutProps {
   resizeProps: ResizeProps;
   testOutput: ReactElement;
   windowTitle: string;
+  showPreviewPortal: boolean;
+  showPreviewPane: boolean;
+  setShowPreviewPortal: (arg: boolean) => void;
+  setShowPreviewPane: (arg: boolean) => void;
+  portalWindow: null | Window;
 }
 
 const reflexProps = {
   propagateDimensions: true
 };
 
+const mapDispatchToProps = {
+  setShowPreviewPortal,
+  setShowPreviewPane
+};
+
+const mapStateToProps = createSelector(
+  showPreviewPortalSelector,
+  showPreviewPaneSelector,
+  portalWindowSelector,
+
+  (
+    showPreviewPortal: boolean,
+    showPreviewPane: boolean,
+    portalWindow: null | Window
+  ) => ({
+    showPreviewPortal,
+    showPreviewPane,
+    portalWindow
+  })
+);
+
 const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
+  const {
+    showPreviewPane,
+    showPreviewPortal,
+    setShowPreviewPane,
+    setShowPreviewPortal,
+    portalWindow
+  } = props;
+
   const [showNotes, setShowNotes] = useState(false);
-  const [showPreviewPane, setShowPreviewPane] = useState(true);
-  const [showPreviewPortal, setShowPreviewPortal] = useState(false);
   const [showConsole, setShowConsole] = useState(false);
   const [showInstructions, setShowInstuctions] = useState(true);
 
@@ -52,10 +92,12 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       case 'showPreviewPane':
         if (!showPreviewPane && showPreviewPortal) setShowPreviewPortal(false);
         setShowPreviewPane(!showPreviewPane);
+        portalWindow?.close();
         break;
       case 'showPreviewPortal':
         if (!showPreviewPortal && showPreviewPane) setShowPreviewPane(false);
         setShowPreviewPortal(!showPreviewPortal);
+        if (showPreviewPortal) portalWindow?.close();
         break;
       case 'showConsole':
         setShowConsole(!showConsole);
@@ -192,4 +234,4 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
 DesktopLayout.displayName = 'DesktopLayout';
 
-export default DesktopLayout;
+export default connect(mapStateToProps, mapDispatchToProps)(DesktopLayout);
