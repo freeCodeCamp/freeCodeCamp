@@ -314,7 +314,7 @@ async (getUserInput) => {
   let res = await fetch(`${url}/api/threads/fcc_test`);
   const threads = await res.json();
   const thread_id = threads[0]._id;
-  const data = { thread_id };
+  const data = { report_id };
 
   res = await fetch(`${url}/api/threads/fcc_test`, {
     method: 'PUT',
