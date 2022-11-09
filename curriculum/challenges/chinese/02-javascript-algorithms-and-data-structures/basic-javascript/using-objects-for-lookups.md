@@ -11,28 +11,26 @@ dashedName: using-objects-for-lookups
 
 对象和字典一样，可以用来存储键/值对。 如果数据是扁平的，你可以用对象来查找你想要的值，而不是链式使用 `switch` 或 `if/else` 语句。 当你知道你的输入数据在某个范围时，这种查找方式极为有效。
 
-这是简单的反向字母表：
+Here is an example of an article object:
 
 ```js
-const alpha = {
-  1:"Z",
-  2:"Y",
-  3:"X",
-  4:"W",
-  ...
-  24:"C",
-  25:"B",
-  26:"A"
+const article = {
+  "title": "How to create objects in JavaScript",
+  "link": "https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/",
+  "author": "Kaashan Hussain",
+  "language": "JavaScript",
+  "tags": "TECHNOLOGY",
+  "createdAt": "NOVEMBER 28, 2018"
 };
 
-const thirdLetter = alpha[2];
-const lastLetter = alpha[24];
+const articleAuthor = article[author];
+const articleLink = article[link];
 
-const value = 2;
-const valueLookup = alpha[value];
+const value = "title";
+const valueLookup = article[value];
 ```
 
-`thirdLetter` 是字符串 `Y`，`lastLetter` 是字符串 `C`，`valueLookup` 是字符串 `Y`。
+`articleAuthor` is the string `Kaashan Hussain`, `articleLink` is the string `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`, and `valueLookup` is the string `How to create objects in JavaScript`.
 
 # --instructions--
 

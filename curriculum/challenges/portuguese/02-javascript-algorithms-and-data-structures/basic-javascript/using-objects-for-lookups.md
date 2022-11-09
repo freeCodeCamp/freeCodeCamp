@@ -11,28 +11,26 @@ dashedName: using-objects-for-lookups
 
 Objetos podem ser pensados como armazenamento de chave/valor, como um dicionário. Se você tem um dado tabular, você pode usar um objeto para pesquisar valores ao invés de uma instrução `switch` ou uma cadeia de `if/else`. Isso é mais útil quando você sabe que o seu dado de entrada é limitado para um certo intervalo.
 
-Aqui está um exemplo de uma simples pesquisa reversa no alfabeto:
+Here is an example of an article object:
 
 ```js
-const alpha = {
-  1:"Z",
-  2:"Y",
-  3:"X",
-  4:"W",
-  ...
-  24:"C",
-  25:"B",
-  26:"A"
+const article = {
+  "title": "How to create objects in JavaScript",
+  "link": "https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/",
+  "author": "Kaashan Hussain",
+  "language": "JavaScript",
+  "tags": "TECHNOLOGY",
+  "createdAt": "NOVEMBER 28, 2018"
 };
 
-const thirdLetter = alpha[2];
-const lastLetter = alpha[24];
+const articleAuthor = article[author];
+const articleLink = article[link];
 
-const value = 2;
-const valueLookup = alpha[value];
+const value = "title";
+const valueLookup = article[value];
 ```
 
-`thirdLetter` é a string `Y`, `lastLetter` é a string `C` e `valueLookup` é a string `Y`.
+`articleAuthor` is the string `Kaashan Hussain`, `articleLink` is the string `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`, and `valueLookup` is the string `How to create objects in JavaScript`.
 
 # --instructions--
 
