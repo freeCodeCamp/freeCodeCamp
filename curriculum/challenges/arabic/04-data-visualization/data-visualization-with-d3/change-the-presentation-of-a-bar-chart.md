@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bca
-title: تغيير تقديم مخطط الأعمدة (Bar Chart)
+title: تغيير تقديم مخطط بياني للأعمدة (Bar Chart)
 challengeType: 6
 forumTopicId: 301481
 dashedName: change-the-presentation-of-a-bar-chart
@@ -8,15 +8,15 @@ dashedName: change-the-presentation-of-a-bar-chart
 
 # --description--
 
-The last challenge created a bar chart, but there are a couple of formatting changes that could improve it:
+وأنشأ التحدي السابق مخطط بياني للأعمدة (bar chart)، ولكن هناك بعض التغييرات في التنسيق الذي يمكن أن تحسن:
 
-1) Add space between each bar to visually separate them, which is done by adding a margin to the CSS for the `bar` class
+1) إضافة مساحة بين كل عمود لفصله بصرياً، عن طريق إضافة هامش (margin) إلى CSS لفئة تسمى `bar`
 
-2) Increase the height of the bars to better show the difference in values, which is done by multiplying the value by a number to scale the height
+2) زيادة ارتفاع (height) الأعمدة لإظهار الفرق في القيم بشكل أفضل، عن طريق ضرب (multiplying) القيمة في عدد لزيادة الارتفاع
 
 # --instructions--
 
-First, add a `margin` of `2px` to the `bar` class in the `style` tag. Next, change the callback function in the `style()` method so it returns a value `10` times the original data value (plus the `px`).
+أولاً، أضف `margin` بقيمة `2px` إلى قئة `bar` في علامة `style`. Next, change the callback function in the `style()` method so it returns a value `10` times the original data value (plus the `px`).
 
 **Note:** Multiplying each data point by the *same* constant only alters the scale. It's like zooming in, and it doesn't change the meaning of the underlying data.
 
