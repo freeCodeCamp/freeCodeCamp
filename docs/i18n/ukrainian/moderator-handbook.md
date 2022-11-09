@@ -215,31 +215,31 @@ Moderating the forum is possible via a cell-phone but you may encounter some usa
 - The moderator's 'wrench' is at the bottom of the view-port but if you click it and cannot see the "Select Posts" button because it has scrolled out of view, you may need to try to scroll to it, though sometimes that doesn't work in which case moving to a desktop/laptop monitor may be needed.
 - Sometimes clicking on the three-dot menu below a post can hide the reply icon. Reload the page to get it back.
 
-## Moderating Facebook
+## Модерація фейсбуку
 
-If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
+Якщо ви помітили будь-що, що порушує наш [Кодекс поведінки](https://code-of-conduct.freecodecamp.org/), вам необхідно негайно це видалити.
 
-Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. You should delete such posts, but not necessarily ban the person. Hopefully, the user will come to understand that what they posted was inappropriate because the post was deleted.
+Іноді люди публікують те, що вважають смішним. Вони не усвідомлюють, що те, що вони сказали чи поширили, може трактуватися як образа.  Такі дописи потрібно видаляти, але немає потреби кидати користувача в бан. Ми надіємося, що користувач зрозуміє, що його допис був неприйнятним та, відповідно, видаленим.
 
-But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language. In that case, you should strongly consider blocking the member from the Facebook group.
+Іноді допис є кричущим порушенням норм і не може бути розумно обґрунтованим з позиції культурних відмінностей чи нерозуміння англійської мови.  У такому випадку вам слід серйозно розглянути можливість заблокувати користувача у групі на фейсбуці.
 
-## Moderating Discord
+## Модерація дискорду
 
-Here's how moderators deal with violations of our [Code of Conduct](https://code-of-conduct.freecodecamp.org/) on our chat server:
+Модератори вирішують порушення нашого [Кодексу поведінки](https://code-of-conduct.freecodecamp.org/) у чаті наступним чином:
 
-> [!NOTE] Camperbot serves as our moderation bot, and all of the commands use Discord's native slash command interface. You can see a list of all of the commands by typing `/` in any channel.
+> [!NOTE] Camperbot служить нашим ботом та всі команди використовують дискордовий інтерфейс команд. Ви можете переглянути список всіх команд, ввівши `/` у будь-якому каналі.
 
-1. **Make sure the user intended to violate the [Code of Conduct](https://code-of-conduct.freecodecamp.org).**
+1. **Переконайтеся, що користувач навмисно порушив [Кодекс поведінки](https://code-of-conduct.freecodecamp.org).**
 
-   Not all violations of the [Code of Conduct](https://code-of-conduct.freecodecamp.org) were intended as such. A new camper might post a large amount of code for help, unaware that this can be disruptive to conversation. In these cases, you can just ask them to paste their code with services like CodePen or Pastebin.
+   Не всі порушення [Кодексу поведінки](https://code-of-conduct.freecodecamp.org) є навмисними. Нові користувачі можуть публікувати велику кількість коду для допомоги, не знаючи, що це може заважати розмові. У таких випадках ви можете просто попросити їх скористатися такими сервісами, як CodePen чи Pastebin.
 
-2. **If the camper clearly and intentionally violates the [Code of Conduct](https://code-of-conduct.freecodecamp.org), the moderator will proceed as follows:**
+2. **Якщо користувач безсумнівно та навмисно порушує [Кодекс поведінки](https://code-of-conduct.freecodecamp.org), модератор робить наступне:**
 
-   For minor offences, a warning may be issued with the `/warn` command. For more egregious offences, you can remove the member from the server temporarily with the `/kick` command, or permanently with the `/ban` command. In some cases, a member may just need some time to cool off and collect their thoughts - the `/mute` command allows you to prevent them from engaging with our community for a set period of time. A muted member can see the conversation, but cannot post messages or add reactions.
+   Через незначне порушення можна видати попередження за допомогою команди `/warn`. Через грубші порушення користувача можна видалити із сервера тимчасово (за допомогою команди `/kick`) або назавжди (за допомогою команди `/ban`). У деяких випадках користувачу просто потрібен час, щоб охолонути та зібрати свої думки: команда `/mute` дозволяє запобігти взаємодії користувача зі спільнотою на встановлений час. Заглушений користувач бачить розмову, але не може публікувати повідомлення чи додавати реакції.
 
-   All moderation commands will take a `reason` parameter, which should be a short explanation of why the action was taken. Moderation actions done with the bot will be logged in `#mod-log`, which allows us all to stay on the same page. As such, we should avoid using Discord's built-in moderation tools, as they will not be logged.
+   Усі модераційні команди приймають параметр `reason`, що вимагає короткого пояснення вжитих дій. Модераційні дії, виконані із допомогою бота, будуть записані до `#mod-log`, що дозволяє нам залишатись на одній хвилі. Вбудовані інструменти дискорду не записуються, тому їх потрібно уникати.
 
-   > [!WARNING] The reason provided to a moderation command will also be included in the DM notification to the camper. Please remember to be professional here.
+   > [!WARNING] Причина модераційної команди буде додана до особистого повідомлення користувачу. Не забудьте бути професіоналом.
 
 3. **Створення приватного обговорення**
 
@@ -275,13 +275,13 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
      Модератор: дружнє нагадування дотримуватись [Кодексу поведінки](https://code-of-conduct.freecodecamp.org): https://code-of-conduct.freecodecamp.org/
 
-6. **Не хвастайтесь тим, що ви модератор **
+6. **Не хвастайтесь тим, що ви модератор**
 
    Не ставте себе вище спільноти.  **Ви – спільнота.** І спільнота довірила вам захищати щось особливе, що ми всі розділяємо: _привітне_ місце для нових розробників.
 
    Якщо ви вихваляєтесь своє посадою модератора, люди можуть почуватися некомфортно поруч з вами, так само, як почуваються некомфортно поруч із поліцією, попри те, що не порушували закон. Це лише людська природа.
 
-7. **Не суперечте іншим модераторам **
+7. **Не суперечте іншим модераторам**
 
    Якщо ви не погоджуєтесь із діями іншого модератора, обговоріть це особисто з ним або у каналі #mod-chat. Ніколи не відхиляйте дії модератора і ніколи не суперечте іншим модераторам привселюдно. Натомість спокійно все обговоріть у `#mod-chat` та переконайте модератора, що він сам повинен скасувати бан або змінити свою думку.
 
