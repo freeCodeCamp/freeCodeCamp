@@ -11,28 +11,26 @@ dashedName: using-objects-for-lookups
 
 يمكن اعتبار الكائنات كمخزن بطريقة هُوِيَّة/قيمة، مثل القاموس. إذا كانت لديك بيانات جدولية، فيمكنك استخدام كائن للبحث عن القيم بدلاً من عبارة `switch` أو تسلسل `if/else`. هذا مفيد للغاية عندما تعرف أن بيانات الإدخال الخاصة بك محدودة بمدى معين.
 
-وفيما يلي مثال على بحث أبجدي عكسي بسيط:
+فيما يلي مثال على مقالة بهيئة كائن (object):
 
 ```js
-const alpha = {
-  1:"Z",
-  2:"Y",
-  3:"X",
-  4:"W",
-  ...
-  24:"C",
-  25:"B",
-  26:"A"
+const article = {
+  "title": "How to create objects in JavaScript",
+  "link": "https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/",
+  "author": "Kaashan Hussain",
+  "language": "JavaScript",
+  "tags": "TECHNOLOGY",
+  "createdAt": "NOVEMBER 28, 2018"
 };
 
-const thirdLetter = alpha[2];
-const lastLetter = alpha[24];
+const articleAuthor = article[author];
+const articleLink = article[link];
 
-const value = 2;
-const valueLookup = alpha[value];
+const value = "title";
+const valueLookup = article[value];
 ```
 
-يكون `thirdLetter` مقطع `Y`، ويكون `lastLetter` مقطع `C`، ويكون `valueLookup` مقطع `Y`.
+يكون `articleAuthor` مقطع `Kaashan Hussain`، ويكون `articleLink` مقطع `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`، ويكون `valueLookup` مقطع `How to create objects in JavaScript`.
 
 # --instructions--
 
