@@ -33,8 +33,9 @@
   },
   "scripts": {
     "build": "tsc index.ts",
+    "develop": "nodemon index.ts",
     "start": "NODE_ENV=production node index.js",
-    "develop": "nodemon index.ts"
+    "test": "NODE_OPTIONS='--test-only' ts-node **/*.test.ts"
   },
   "version": "0.0.1"
 }
