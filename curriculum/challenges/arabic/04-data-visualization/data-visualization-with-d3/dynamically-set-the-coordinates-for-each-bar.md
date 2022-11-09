@@ -10,11 +10,11 @@ dashedName: dynamically-set-the-coordinates-for-each-bar
 
 التحدي السابق أنشئت وألحقت مستطيل بعنصر `svg` لكل نقطة في `dataset` لتستعرض شريط. لسوء الحظ، كانوا مكدسين بعضَهم فوق بعض.
 
-يمكنك تحكم في موضع المستطيل بواسطة أستخدام سمات (attributes) تسمى `x` و `y`. لتخبر D3 أين يبدأ في رسم الشكل في منطقة `svg`. The last challenge set them each to 0, so every bar was placed in the upper-left corner.
+يمكنك تحكم في موضع المستطيل بواسطة أستخدام سمات (attributes) تسمى `x` و `y`. لتخبر D3 أين يبدأ في رسم الشكل في منطقة `svg`. قام التحدي السابق بتحديدهم إلى صفر، لذلك تم وضع كل عمود (bar) في الزاوية العلوية اليسرى.
 
-For a bar chart, all of the bars should sit on the same vertical level, which means the `y` value stays the same (at 0) for all bars. The `x` value, however, needs to change as you add new bars. Remember that larger `x` values push items farther to the right. As you go through the array elements in `dataset`, the `x` value should increase.
+للحصول على رسم بياني للأعمدة (bar chart)، يجب أن تجلس جميع الأعمدة على نفس المستوى العمودي، مما يعني أن قيمة `y` تبقى هي نفسها (عند 0) لجميع الأعمدة. ومع ذلك، تحتاج قيمة `x` إلى التغيير عند إضافة أعمدة جديد. تذكر أن أكبر قيم من `x` تدفع العناصر إلى أقصى اليمين. عندما تمر عبر عناصر القائمة في `dataset`، يجب أن تزيد قيمة `x`.
 
-The `attr()` method in D3 accepts a callback function to dynamically set that attribute. The callback function takes two arguments, one for the data point itself (usually `d`) and one for the index of the data point in the array. The second argument for the index is optional. Here's the format:
+تقبل طريقة (method) تسمى `attr()` في D3 الوظيفة تعيد تفعيل (callback functon) التي تعيين تلك السمة ديناميكيا. وظيفة تعيد تفعيل (callback functon) تأخذ حجيتين (arguments)، واحد لنقطة البيانات نفسها (عادة `d`) وواحد لترتيب نقطة البيانات في القائمة (array). أما الحِجَّة (argument) الثانية تدل على الترتيب فهي حِجَّة اختيارية. إليك التنسيق:
 
 ```js
 selection.attr("property", (d, i) => {
@@ -22,65 +22,65 @@ selection.attr("property", (d, i) => {
 })
 ```
 
-It's important to note that you do NOT need to write a `for` loop or use `forEach()` to iterate over the items in the data set. Recall that the `data()` method parses the data set, and any method that's chained after `data()` is run once for each item in the data set.
+من المهم مُراعاةٌ أنك لا تحتاج إلى كتابة حلقة (loop) نوعها `for` أو استخدام `forEach()` لتكرار العناصر في مجموعة البيانات (data set). تذكر أن طريقة `data()` تحلل مجموعة البيانات (data set), وأي طريقة تتبع `data()` يتم تشغيلها مرة واحدة لكل عنصر في مجموعة البيانات.
 
 # --instructions--
 
-Change the `x` attribute callback function so it returns the index times 30.
+غيّر سمة `x` في وظيفة تعيد تفعيل بحيث ترجع الترتيب 30 مرة.
 
-**Note:** Each bar has a width of 25, so increasing each `x` value by 30 adds some space between the bars. Any value greater than 25 would work in this example.
+**ملاحظة:** كل عمود له عرض (width) بقيمة 25، لذا زيادة كل قيمة `x` بمقدار 30 تضيف بعض المساحة بين الأعمدة. أي قيمة أكبر من 25 ستنجح في هذا المثال.
 
 # --hints--
 
-The first `rect` should have an `x` value of `0`.
+يجب أن يحتوي أول `rect` على `x` بقيمة `0`.
 
 ```js
 assert($('rect').eq(0).attr('x') == '0');
 ```
 
-The second `rect` should have an `x` value of `30`.
+يجب أن يحتوي ثاني `rect` على `x` بقيمة `30`.
 
 ```js
 assert($('rect').eq(1).attr('x') == '30');
 ```
 
-The third `rect` should have an `x` value of `60`.
+يجب أن يحتوي ثالث `rect` على `x` بقيمة `60`.
 
 ```js
 assert($('rect').eq(2).attr('x') == '60');
 ```
 
-The fourth `rect` should have an `x` value of `90`.
+يجب أن يحتوي رابع `rect` على `x` بقيمة `90`.
 
 ```js
 assert($('rect').eq(3).attr('x') == '90');
 ```
 
-The fifth `rect` should have an `x` value of `120`.
+يجب أن يحتوي خامس `rect` على `x` بقيمة `120`.
 
 ```js
 assert($('rect').eq(4).attr('x') == '120');
 ```
 
-The sixth `rect` should have an `x` value of `150`.
+يجب أن يحتوي سادس `rect` على `x` بقيمة `150`.
 
 ```js
 assert($('rect').eq(5).attr('x') == '150');
 ```
 
-The seventh `rect` should have an `x` value of `180`.
+يجب أن يحتوي سابع `rect` على `x` بقيمة `180`.
 
 ```js
 assert($('rect').eq(6).attr('x') == '180');
 ```
 
-The eighth `rect` should have an `x` value of `210`.
+يجب أن يحتوي ثامن `rect` على `x` بقيمة `210`.
 
 ```js
 assert($('rect').eq(7).attr('x') == '210');
 ```
 
-The ninth `rect` should have an `x` value of `240`.
+يجب أن يحتوي تاسع `rect` على `x` بقيمة `240`.
 
 ```js
 assert($('rect').eq(8).attr('x') == '240');

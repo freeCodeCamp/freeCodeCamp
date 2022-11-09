@@ -58,27 +58,27 @@ myRegex.lastIndex = 0;
 assert(!myRegex.test('Frank Roosevelt'));
 ```
 
-Your regex `myRegex` should return `false` for the string `FranklinRoosevelt`
+你的正則 `myRegex` 測試 `FranklinRoosevelt` 應該返回 `false`。
 
 ```js
 myRegex.lastIndex = 0;
 assert(!myRegex.test('FranklinRoosevelt'));
 ```
 
-Your regex `myRegex` should return `false` for the string `EleanorRoosevelt`
+你的正則 `myRegex` 測試 `EleanorRoosevelt` 應該返回 `false`。
 
 ```js
 myRegex.lastIndex = 0;
 assert(!myRegex.test('EleanorRoosevelt'));
 ```
 
-You should use `.test()` to test the regex.
+你應該使用 `.test()` 方法來檢測正則表達式。
 
 ```js
 assert(code.match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
-Your result should return `true`.
+你的返回結果應該爲 `true`。
 
 ```js
 assert(result === true);

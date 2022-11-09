@@ -1,6 +1,6 @@
 # Офіційний довідник модератора freeCodeCamp
 
-Цей довідник допоможе з модерацією у нашій спільноті. Сюди входять розмови та взаємодії у завданнях та пул реквестах на GitHub, форумі, чатах та інших офіційних спільнотах, які ми підтримуємо.
+Цей довідник допоможе із модерацією у нашій спільноті. Сюди входять розмови та взаємодії у завданнях та пул реквестах на GitHub, форумі, чатах та інших офіційних спільнотах, які ми підтримуємо.
 
 > [!NOTE] Модератори freeCodeCamp мають доступ до всіх частин спільноти. Це означає, що ми довіряємо вам наглядати за будь-якою з них.
 
@@ -177,25 +177,25 @@ For the first spam post of a legitimate user (ie. whose intent isn't to spam the
 
 As a moderator, you can ask questions and report incidents in the [mod-team forum section](https://forum.freecodecamp.org/c/mod-team/4).
 
-### Dealing with Off-Topic Conversations
+### Що робити із розмовами поза темою
 
-Posts or topics that seem to be in the wrong place can be recategorized or renamed to whatever would be appropriate.
+Дописи або теми, які розміщені в неправильному місці, можна перемістити або перейменувати так, щоб це було доречним.
 
-In exceptional circumstances, it may be appropriate for a moderator to fork a discussion into multiple threads.
+За виняткових обставин модератор може поділити дискусію на декілька тредів.
 
-Again, if you have any problems or questions, make a post with your actions in the `"Staff"` category, and tag another moderator if you want them to review your moderating actions.
+Знову ж таки, якщо у вас виникають проблеми чи запитання, напишіть у категорії `«Staff»` та позначте іншого модератора, аби він переглянув ваші дії.
 
-### Dealing with Posted Solutions
+### Що робити з опублікованим розв'язком
 
-If a user replies in a help thread for the freeCodeCamp curriculum with a solution, remove it and use the **Solution Instead of Help** canned reply (or a similar response in your own words).
+Якщо у своїй відповіді користувач надсилає розв'язок до навчальної програми freeCodeCamp, видаліть її та використайте відповідь **Solution Instead of Help** (або іншу своїми словами).
 
-If the OP (Original Poster) replies within a freeCodeCamp curriculum help thread with their final solution, blur it and use the **Blurred Spoiler Solution** canned reply.
+Якщо у своїй відповіді дописувальник надсилає кінцевий розв'язок навчальної програми freeCodeCamp, розмийте її та використайте відповідь **Blurred Spoiler Solution**.
 
-If a user creates a thread asking for feedback on a solution, move the thread to the feedback subforum and blur the solution, as necessary. If the user is only posting the solution to show it off, then unlist the thread and use the **Solutions Thread** canned reply.
+Якщо користувач просить відгук щодо розв'язку, перемістіть тред до підфоруму зворотного зв'язку та розмийте розв'язок за потреби. Якщо користувач публікує розв'язок для того, щоб похвастатися, вилучіть тред зі списку та використайте відповідь **Solutions Thread**.
 
-### Underage Users
+### Користувачі, які не досягнули відповідного віку
 
-Our [Terms of Service](https://freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. If a user reveals that they are under the age of 13, send them the message (below), suspend the account then **Email `support[at]freecodecamp.org` to delete the user's freeCodeCamp /learn and forum accounts as well (providing a link to the offending forum account).**
+Наші [Умови користування](https://freecodecamp.org/terms) вимагають, щоб користувачі freeCodeCamp досягли 13-річного віку. Якщо користувач зізнався, що не досягнув 13-річного віку, надішліть йому повідомлення (нижче) та призупиніть обліковий запис. Потім **напишіть на `support[at]freecodecamp.org` для видалення облікових записів на /learn та форумі (із посиланням на обліковий запис на форумі).**
 
 ```markdown
 SUBJECT: Users under 13 are not allowed to use the forum per our Terms of Service.
@@ -241,73 +241,73 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
    > [!WARNING] The reason provided to a moderation command will also be included in the DM notification to the camper. Please remember to be professional here.
 
-3. **Creating a private discussion**
+3. **Створення приватного обговорення**
 
-   There may be situations where you need to address a concern with a camper privately. This should not be done through DMs, which can lead to situations where you claim one thing and the camper claims another. Instead, use the bot's functionality to create a private discussion:
+   Можуть виникнути ситуації, коли до користувача варто звернутися особисто. Цього не варто робити в особистих повідомленнях, бо це може призвести до ситуацій, коли ви заявляєте одне, а учасник – інше. Замість цього використайте функціональність бота та створіть приватне обговорення:
 
-   - Call the `/private` command, where `target` is the camper you want to open a private channel with.
-   - The bot will create a new channel, and add the mentioned camper and all moderators with the `Your Friendly Moderator` role. While all moderators are added to the channel for transparency, the moderator who calls this command should be the only one to interact with the camper unless they request assistance.
-   - When the conversation is complete, click the `❌ Close` button _on the first message in the private channel_ to have the bot close and delete that channel.
+   - Викличте команду `/private`, де `target` – користувач, із яким ви бажаєте відкрити особисте обговорення.
+   - Бот створить новий канал та додасть згаданого користувача, а також всіх модераторів із роллю `Your Friendly Moderator`. До каналу додані усі модератори для прозорості, але лише модератор, який викликав команду може взаємодіяти з учасником. Виняток: модератор просить допомоги.
+   - Коли обговорення закінчено, натисніть кнопку `❌ Close` _на першому повідомленні у приватному каналі_, щоб бот закрив та видалив канал.
 
-4. **Deleting messages**
+4. **Видалення повідомлень**
 
-   Our moderation bot is configured to log deleted messages automatically in the `#mod-log` channel. If a message is not in line with our Code of Conduct, or otherwise not appropriate for our community, you are generally safe to delete it.
+   Наш бот автоматично вносить видалені повідомлення до каналу `#mod-log`. Якщо повідомлення не відповідає нашому Кодексу поведінки або є неприпустимим для нашої спільноти, його можна видалити.
 
-   Note that if the message contains content that violates Discord's terms of service, you'll want to report it via https://dis.gd/report **prior to** deleting it.
+   Зауважте: якщо повідомлення порушує умови використання дискорду, про це потрібно повідомити через https://dis.gd/report **перед** видаленням.
 
-5. **Don’t threaten to take action**
+5. **Не погрожуйте вжити заходів**
 
-   If a camper breaks the [Code of Conduct](https://code-of-conduct.freecodecamp.org), don’t threaten to take moderator action, and never warn them in public. Instead, talk to them privately using the bot's `/private` command, or use the bot's moderation commands.
+   Якщо користувач порушує [Кодекс поведінки](https://code-of-conduct.freecodecamp.org), ніколи не погрожуйте вжити заходів та не попереджайте їх публічно. Натомість поговоріть приватно, використовуючи команду `/private` або модераційні команди бота.
 
-   If a violation was clearly unintended and doesn't warrant moderation action or private conversation, make the offending camper aware of their actions without making it come across as a warning.
+   Якщо порушення очевидно ненавмисне і не потребує модерації чи приватної бесіди, повідомте користувача-правопорушника про його дії.
 
-   For example:
+   Наприклад:
 
-   - Camper posts a wall of code to request help:
+   - Користувач публікує великий код та просить допомоги:
 
-     Moderator: **@username** Please use CodePen or Pastebin when posting large amounts of code.
+     Модератор: **@username**, будь ласка, використовуйте CodePen або Pastebin, коли публікуєте довгий код.
 
-   - Or if you really have to explain why:
+   - Або вам потрібно пояснити причину:
 
-     Moderator: **@username** Please use CodePen or Pastebin when posting large amounts of code, because it disrupts the chat for everyone and could be considered spamming according to our [Code of Conduct](https://code-of-conduct.freecodecamp.org).
+     Модератор: **@username**, будь ласка, використовуйте CodePen або Pastebin, коли публікуєте довгий код, оскільки це порушує чат та може вважатися спамом згідно із нашим [Кодексом поведінки](https://code-of-conduct.freecodecamp.org).
 
-   - For mild and unintentional violations of the [Code of Conduct](https://code-of-conduct.freecodecamp.org):
+   - Дрібні та ненавмисні порушення [Кодексу поведінки](https://code-of-conduct.freecodecamp.org):
 
-     Moderator: This is a friendly reminder for everyone to follow the [Code of Conduct](https://code-of-conduct.freecodecamp.org): https://code-of-conduct.freecodecamp.org/
+     Модератор: дружнє нагадування дотримуватись [Кодексу поведінки](https://code-of-conduct.freecodecamp.org): https://code-of-conduct.freecodecamp.org/
 
-6. **Don’t brag about being a moderator**
+6. **Не хвастайтесь тим, що ви модератор **
 
-   Do not see yourself as above the community. **You are the community.** And the community has trusted you to help protect something rare that we all share - a _welcoming_ place for new developers.
+   Не ставте себе вище спільноти.  **Ви – спільнота.** І спільнота довірила вам захищати щось особливе, що ми всі розділяємо: _привітне_ місце для нових розробників.
 
-   If you brag about being a moderator, people may feel uneasy around you, in the same way that people may feel uneasy around a police officer, even if they’re doing nothing wrong. This is just human nature.
+   Якщо ви вихваляєтесь своє посадою модератора, люди можуть почуватися некомфортно поруч з вами, так само, як почуваються некомфортно поруч із поліцією, попри те, що не порушували закон. Це лише людська природа.
 
-7. **Don’t contradict other moderators**
+7. **Не суперечте іншим модераторам **
 
-   If you disagree with a moderator's action, talk with them in private or bring it up in the #mod-chat channel. Never override a moderator's action, and never contradict the other moderator(s) publicly. Instead, have a cool-headed discussion in `#mod-chat` and convince the moderator that they themselves should reverse their ban or change their PoV (Point of View).
+   Якщо ви не погоджуєтесь із діями іншого модератора, обговоріть це особисто з ним або у каналі #mod-chat. Ніколи не відхиляйте дії модератора і ніколи не суперечте іншим модераторам привселюдно. Натомість спокійно все обговоріть у `#mod-chat` та переконайте модератора, що він сам повинен скасувати бан або змінити свою думку.
 
-   _Remember: We’re all on the same team. We want to dignify the role of moderators and present a unified front._
+   _Пам'ятайте: ми всі в одній команді. Ми хочемо гідно представляти роль модераторів і діяти у взаємній згоді. _
 
-8. **Talk with other moderators**
+8. **Бесіда з іншими модераторами**
 
-   We have a `#mod-chat` room for moderators only. Use it! If you feel uncomfortable with handling a certain situation, ask other moderators for help. If you think something should be discussed, do it. You're part of the team, and we value every team member's input! Even if you totally disagree with anything in these guidelines or the [Code of Conduct](https://code-of-conduct.freecodecamp.org)!
+   У нас є кімната `#mod-chat` лише для модераторів. Скористайтеся нею! Якщо ви сумніваєтесь в тій чи іншій ситуації, зверніться за допомогою до інших модераторів. Якщо ви вважаєте, що якісь питання потрібно обговорити – зробіть це. Ви – частина команди, а ми цінуємо вклад кожного! Навіть якщо ви не погоджуєтесь із цими рекомендаціями або [Кодексом поведінки](https://code-of-conduct.freecodecamp.org)!
 
-9. **Temporarily inactive**
+9. **Тимчасова неактивність**
 
-   If you're not going to be active as a Moderator for a while due to vacation, illness, or any other reason, make sure to let the others know in the `#mod-chat` channel. This is so we know if we can count on you to be regularly active on the server or not.
+   Якщо протягом певного часу ви не можете бути активним модератором у зв'язку із відпусткою, хворобою чи іншою причиною, упевніться, що ви попередили інших у каналі `#mod-chat`. Це для того, щоб ми розуміли, чи зможемо розраховувати на вашу регулярну активність на сервері чи ні.
 
-## How to Become a Moderator
+## Як стати модератором
 
-Suppose you are helping people in the community consistently over time. In that case, our moderator team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
+Припустимо, ви допомагаєте іншим у спільноті протягом певного часу. У такому випадку наша команда модераторів зверне на вас увагу та запропонує вас як потенційного модератора [нашому персоналу](https://forum.freecodecamp.org/g/Team). Легшого та коротшого шляху немає.
 
-If you are approved, we will add you to our moderator teams on [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [forum](https://forum.freecodecamp.org/g/moderators), chat, etc.
+Якщо вас затвердили, ми додамо вас до команд модераторів на [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [форумі](https://forum.freecodecamp.org/g/moderators), чаті тощо.
 
-> [!NOTE] For GitHub: After you've been accepted as a moderator, you will receive a Github repository invitation. You'll need to head over towards [freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
+> [!NOTE] Для GitHub: після того, як вас затвердять модератором, ви отримаєте запрошення до репозиторію Github. Вам потрібно перейти за посиланням [freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation), щоб отримати запрошення.
 > 
-> This is required for us to be able to give you write access to some of our repositories.
+> Це необхідно для того, щоб ми могли надати вам дозвіл робити записи у наших репозиторіях.
 
-## How We Retire Inactive Moderators
+## Як ми звільняємо неактивних модераторів
 
-Please note that we will frequently remove moderators whom we think are inactive. When we do this, we will send the following message:
+Зверніть увагу, що ми часто видаляємо модераторів, яких вважаємо неактивними. Коли ми так робимо, то надсилаємо наступне повідомлення:
 
 ```markdown
 This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our moderator team. We deeply appreciate your help in the past.
@@ -321,45 +321,45 @@ Anyone is welcome in the [contributors room on our chat server](https://discord.
 
 We assume contributors will read anything in this room that directly mentions them with an **@username**. Everything else is optional, but feel free to read anything anyone posts in there and interact.
 
-## Dealing with Solicitors
+## Комунікація із посередниками
 
-You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
+До вас можуть звернутися організації, які хочуть стати партнерами або співвласниками бренду freeCodeCamp. Як тільки ви зрозумієте їхні наміри, **закінчуйте діалог** та направте їх на пошту `team[at]freecodecamp.org`.
 
-We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
+Нам часто надходять такі пропозиції, тому вигоду співпраці для нашої спільноти краще вирішувати персоналу (зазвичай воно того не варте).
 
-## Dealing with (Mental) Health Inquiries
+## Як діяти при зверненнях щодо (психічного) здоров'я
 
-You may come across situations where users seek medical advice or are dealing with mental health issues and are looking for support.
+Іноді трапляються ситуації, коли користувачам потрібна медична допомога, або у них наявні ментальні порушення та вони шукають підтримки.
 
-As a matter of policy, you should avoid talking privately about these matters. Should the situation reflect back to freeCodeCamp, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help.
+Згідно з нашою політикою вам варто уникати приватних розмов щодо таких речей. Якщо ситуація напряму стосується freeCodeCamp, потрібно мати запис розмови. Дайте зрозуміти, що ми не медичні працівники та заохотьте користувача звернутись по медичну допомогу.
 
-As difficult as it sometimes can be, avoid giving any tips or advice and rather point the user in the direction of seeking professional help!
+Попри те, що іноді це важко, уникайте підказок чи порад, а радше направте користувача на пошук професійної допомоги!
 
-If this happens on our chat server: Create a private channel for the user and the moderator team. This can be done with the bot's `private` command.
+Якщо таке трапилося у чаті, створіть приватний канал для користувача та команди модераторів. Це можна зробити за допомогою команди `private`.
 
-- The user is guaranteed some privacy.
-- Public chat is no longer disrupted.
-- Other team members can pitch in, should you feel uncomfortable dealing with the situation yourself.
+- Користувачу гарантована конфіденційність.
+- У публічному чаті більше немає порушень.
+- Інші учасники команди можуть втрутитися, якщо вам некомфортно справлятися із ситуацією самостійно.
 
-Helpful URLs:
+Корисні посилання:
 
 http://suicide.org/international-suicide-hotlines.html
 
-## A Note on Free Speech
+## Примітка щодо свободи слова
 
-Sometimes people will defend something offensive or incendiary that they said as "free speech."
+Інколи люди захищатимуть щось образливе або провокативне, обґрунтовуючи це «свободою слова».
 
-This XKCD comic summarizes perfectly most communities' thoughts on free speech.
+Цей вебкомікс від XKCD ідеально підсумовує думки більшості спільнот стосовно свободи слова.
 
 <div align="center"><img src='./images/github/xkcd-free-speech.png' width="400" height="400" /></div>
 
-Thanks for reading this, and thanks for helping the developer community!
+Дякуємо за увагу та допомогу спільноті розробників!
 
 ## Зразки відповідей
 
-These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues/pull requests.
+Це зразки відповідей, які можна використовувати під час розгляду пул реквестів та їх сортування.
 
-> You can make your own saved replies with GitHub's built-in [saved replies](https://github.com/settings/replies/) feature or use the ones below.
+> Ви можете створити власний список збережених відповідей за допомогою вбудованої функції [збережені відповіді](https://github.com/settings/replies/) на GitHub або використовувати подані нижче.
 
 ### Подяка
 
@@ -393,9 +393,9 @@ Once you resolve these issues, we will be able to review your PR and merge it. �
 Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
-### Syncing Fork
+### Синхронізація форку
 
-> When PR is not up to date with the `main` branch.
+> Якщо PR не відповідає даті гілки `main`.
 
 ````markdown
 Hey @username
@@ -443,9 +443,9 @@ Also, it's good practice on GitHub to write a brief description of your changes 
 
 ¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
 
-### Duplicate
+### Дублікат
 
-> When PR is repetitive or a duplicate.
+> Якщо PR повторюється або є дублікатом.
 
 ```markdown
 Hey @username
@@ -461,9 +461,9 @@ Thanks again! 😊
 If you have any questions, feel free to ask questions on the ["Contributors" category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 ```
 
-### Closing Invalid Pull Requests
+### Закриття недійсних пул реквестів
 
-> When PR is invalid.
+> Якщо PR недійсний.
 
 ```markdown
 Hey @username
@@ -475,7 +475,7 @@ This is a standard message notifying you that we've reviewed your pull request a
 Thank you and happy coding.
 ```
 
-> When PR adds links to external resources.
+> Якщо PR містить посилання на зовнішні джерела.
 
 ```markdown
 Thank you for your pull request.
@@ -485,7 +485,7 @@ We are closing this pull request. Please suggest links and other details to add 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### Adding comment about newbie mistakes
+### Додавання коментарів про помилки новачків
 
 ```markdown
 As a new contributor, we encourage you to read our [contributing guidelines](https://contribute.freecodecamp.org).
@@ -505,9 +505,9 @@ We appreciate you taking the time to help us, and we hope to see more contributi
 Happy Contributing.
 ```
 
-### Closing Invalid Issues
+### Закриття недійсних завдань
 
-> When an issue relates to the camper's code.
+> Якщо завдання стосується коду користувача.
 
 ```markdown
 Thank you for reporting this issue.
@@ -519,7 +519,7 @@ If the forum members determine there is nothing wrong with your code, you can re
 Thank you and happy coding.
 ```
 
-> When an issue is duplicate of an earlier issue.
+> Якщо завдання повторює вже наявне.
 
 ```markdown
 Thank you for reporting this issue.
@@ -529,7 +529,7 @@ This is a standard message notifying you that this issue appears to be very simi
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-> When an issue is fixed in staging.
+> Якщо завдання вирішено на проміжній версії.
 
 ```markdown
 Thank you for reporting this issue.
@@ -539,9 +539,9 @@ This is a standard message notifying you that the problem you mentioned here is 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### `first timer only` Issues
+### Завдання `first timer only`
 
-> When an issue is deemed to be eligible for first-time code contributors.
+> Якщо завдання вважається прийнятним для тих, хто робить внесок до коду вперше.
 
 ```markdown
 Thanks for opening this issue.
@@ -561,7 +561,7 @@ Sometimes we may get more than one pull request. We typically accept the most qu
 Happy contributing.
 ```
 
-### Requests for Assignment
+### Запити на призначення
 
 ```md
 We typically do not assign issues. Instead, we accept the first pull request that comprehensively solves the issue.
