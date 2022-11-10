@@ -24,7 +24,7 @@ Stiamo traducendo freeCodeCamp.org nelle maggiori lingue del mondo.
 
 Le certificazioni sono già disponibili in alcuni delle principali lingue, come:
 
-- [Cinese (中文)](https://chinese.freecodecamp.org/learn)
+- [Cinese (中文)](https://www.freecodecamp.org/chinese/learn)
 - [Spagnolo (Español)](https://www.freecodecamp.org/espanol/learn)
 - [Italiano](https://www.freecodecamp.org/italian/learn)
 - [Portoghese (Português)](https://www.freecodecamp.org/portuguese/learn)

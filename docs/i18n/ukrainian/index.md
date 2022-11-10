@@ -24,7 +24,7 @@
 
 Сертифікації вже доступні деякими поширеними мовами світу:
 
-- [Китайська (中文)](https://chinese.freecodecamp.org/learn)
+- [Китайська (中文)](https://www.freecodecamp.org/chinese/learn)
 - [Іспанська (Español)](https://www.freecodecamp.org/espanol/learn)
 - [Італійська (Italiano)](https://www.freecodecamp.org/italian/learn)
 - [Португальська (Português)](https://www.freecodecamp.org/portuguese/learn)

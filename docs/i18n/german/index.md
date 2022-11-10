@@ -24,7 +24,7 @@ Wir lokalisieren freeCodeCamp.org in die wichtigsten Sprachen der Welt.
 
 Die Zertifizierungen sind bereits in einigen wichtigen Weltsprachen, wie unten zu sehen, verfügbar:
 
-- [Chinesisch (中文)](https://chinese.freecodecamp.org/learn)
+- [Chinesisch (中文)](https://www.freecodecamp.org/chinese/learn)
 - [Spanisch (Español)](https://www.freecodecamp.org/espanol/learn)
 - [Italienisch (Italiano)](https://www.freecodecamp.org/italian/learn)
 - [Portugiesisch (Português)](https://www.freecodecamp.org/portuguese/learn)

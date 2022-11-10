@@ -181,10 +181,10 @@ Atualmente uma versão pública de testes beta está disponível em:
 |:--------- |:--------- |:---------------------------------------- |
 | Aprenda   | Inglês    | <https://www.freecodecamp.dev>           |
 |           | Espanhol  | <https://www.freecodecamp.dev/espanol>   |
-|           | Chinês    | <https://chinese.freecodecamp.dev>       |
+|           | Chinês    | <https://www.freecodecamp.dev/chinese>   |
 | Novidades | Inglês    | <https://www.freecodecamp.dev/news>      |
 | Fórum     | Inglês    | <https://forum.freecodecamp.dev>         |
-|           | Chinês    | <https://chinese.freecodecamp.dev/forum> |
+|           | Chinês    | <https://freecodecamp.dev/chinese/forum> |
 | API       | -         | `https://api.freecodecamp.dev`           |
 
 > [!NOTE] O nome do domínio é diferente de **`freeCodeCamp.org`**. Isso é intencional para evitar que ferramentas de busca indexem e evitar confusões da parte dos usuários regulares da plataforma.
