@@ -25,6 +25,9 @@ const cdnUrlCreator = (lang: string) =>
 
   const data = await res.text();
   const trendingJSON = JSON.stringify(yaml.load(data));
+  const trendingLocation = `./client/i18n/locales/${clientLocale}/trending.json`;
+  writeFileSync(trendingLocation, trendingJSON);
+
   const trendingObject = JSON.parse(trendingJSON) as Record<string, string>;
   const validationError =
     (trendingSchemaValidator(trendingObject).error as Error) || null;
@@ -39,9 +42,6 @@ const cdnUrlCreator = (lang: string) =>
     `
     );
   }
-
-  const trendingLocation = `./client/i18n/locales/${clientLocale}/trending.json`;
-  writeFileSync(trendingLocation, trendingJSON);
 })().catch(err => {
   console.log(err);
   process.exit(1);
