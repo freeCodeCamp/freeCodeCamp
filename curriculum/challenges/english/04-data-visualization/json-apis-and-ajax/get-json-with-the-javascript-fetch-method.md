@@ -39,27 +39,38 @@ Update the code to create and send a `GET` request to the freeCodeCamp Cat Photo
 # --hints--
 
 
-Api call yeilds expected results
+Your code should use the fetched data to replace the inner HTML
 
 ```js
-async function getJSON() {
-  const res = await fetch('/json/cats.json')
-  const json = await res.json();
-  return json
-}
-
-async function getDivContent() {
-  document.getElementById('getMessage').click();
-  await new Promise((resolve, reject) => setTimeout(() => resolve(), 500));
-  const msg = document.getElementById('message').textContent
-  return msg
-}
-
-(async () => {
-  const data = await getJSON()
-  const msg = await getDivContent()
-  assert(JSON.stringify(data)===msg)
-})()
+const catData = [
+  {
+    id: 0,
+    imageLink: "https://s3.amazonaws.com/freecodecamp/funny-cat.jpg",
+    altText: "A white cat wearing a green, helmet shaped melon on its head. ",
+    codeNames: ["Juggernaut", "Mrs. Wallace", "Buttercup"],
+  },
+  {
+    id: 1,
+    imageLink: "https://s3.amazonaws.com/freecodecamp/grumpy-cat.jpg",
+    altText: "A white cat with blue eyes, looking very grumpy. ",
+    codeNames: ["Oscar", "Scrooge", "Tyrion"],
+  },
+  {
+    id: 2,
+    imageLink: "https://s3.amazonaws.com/freecodecamp/mischievous-cat.jpg",
+    altText:
+      "A ginger cat with one eye closed and mouth in a grin-like expression. Looking very mischievous. ",
+    codeNames: ["The Doctor", "Loki", "Joker"],
+  },
+];
+async () => {
+  document.getElementById("getMessage").click();
+  await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  assert.equal(
+    document.getElementById("message").textContent,
+    JSON.stringify(catData)
+  );
+};
 ```
 
 
