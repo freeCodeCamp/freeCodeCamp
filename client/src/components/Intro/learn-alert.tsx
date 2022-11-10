@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Button } from '@freecodecamp/react-bootstrap';
+import { Alert } from '@freecodecamp/react-bootstrap';
 import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from '../helpers';
@@ -30,11 +30,14 @@ const LearnAlert = ({
         scientists.
       </p>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <Button
-          href={'https://wharton.qualtrics.com/jfe/form/SV_57rJfXROkQDDU2y'}
+        <Link
+          className='btn'
+          key='donate'
+          sameTab={false}
+          to='https://wharton.qualtrics.com/jfe/form/SV_57rJfXROkQDDU2y'
         >
           Learn about HabitLab
-        </Button>
+        </Link>
       </div>
     </Alert>
   );
