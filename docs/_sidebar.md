@@ -10,7 +10,7 @@
   - [Follow best-practices](codebase-best-practices.md)
   - [Open a pull request](how-to-open-a-pull-request.md)
   - [Work on Codebase](how-to-contribute-to-the-codebase.md)
-  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
+  - [Work on Coding Challenges](how-to-work-on-coding-challenges.md)
   - [Work on Component Library](how-to-work-on-the-component-library.md)
   - [Work on Practice Projects](how-to-work-on-practice-projects.md)
   - [Work on Mobile app](how-to-setup-freecodecamp-mobile-app-locally.md)
