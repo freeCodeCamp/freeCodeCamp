@@ -325,7 +325,11 @@
     "sorry-getting-there": "На жаль, ваш код не пройшов. Ви йдете у правильному напрямку.",
     "sorry-hang-in-there": "На жаль, ваш код не пройшов. Тримайтеся.",
     "sorry-dont-giveup": "На жаль, ваш код не пройшов. Не здавайтеся.",
-    "challenges-completed": "{{completedCount}} з {{totalChallenges}} завдань виконано"
+    "challenges-completed": "{{completedCount}} з {{totalChallenges}} завдань виконано",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program",
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
   },
   "donate": {
     "title": "Підтримати нашу некомерційну організацію",
@@ -350,6 +354,7 @@
     "your-donation": "Ваш внесок у розмірі ${{usd}} надаватиме {{hours}} год навчання людям у всьому світі.",
     "your-donation-2": "Ваш внесок у розмірі ${{usd}} щомісяця надаватиме {{hours}} год навчання людям у всьому світі.",
     "your-donation-3": "Ваш внесок у розмірі ${{usd}} щороку надаватиме {{hours}} год навчання людям у всьому світі.",
+    "become-supporter": "Become a Supporter",
     "duration": "Станьте одноразовим спонсором нашої некомерційної організації.",
     "duration-2": "Станьте спонсором нашої некомерційної організації (щомісячний внесок).",
     "duration-3": "Станьте спонсором нашої некомерційної організації (щорічний внесок).",

@@ -325,7 +325,11 @@
     "sorry-getting-there": "عذراً، لم يجتَز كودك. قربت من النجاح.",
     "sorry-hang-in-there": "عذراً، لم يجتَز كودك. لا تستسلم.",
     "sorry-dont-giveup": "عذراً، لم يجتَز كودك. لا تفقد الأمل.",
-    "challenges-completed": "اكتمل {{completedCount}} من {{totalChallenges}} تحديات"
+    "challenges-completed": "اكتمل {{completedCount}} من {{totalChallenges}} تحديات",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program",
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
   },
   "donate": {
     "title": "ادعم منظمتنا الخيرية",
@@ -350,6 +354,7 @@
     "your-donation": "سيوفر تبرعك{{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم.",
     "your-donation-2": "سيوفر تبرعك {{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم كل شهر.",
     "your-donation-3": "سيوفر تبرعك {{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم كل عام.",
+    "become-supporter": "Become a Supporter",
     "duration": "كن داعماً لمرة واحدة لمنظمتنا الخيرية.",
     "duration-2": "كن داعماً شهريا لمنظمتنا الخيرية.",
     "duration-3": "كن داعماً سنويا لمنظمتنا الخيرية",
