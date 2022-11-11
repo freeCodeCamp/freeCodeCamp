@@ -4,25 +4,6 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-[dir='rtl'] .nav-list {
-  right: 0;
-}
-
-.fcc_searchBar .ais-SearchBox-input,
-.fcc_searchBar .ais-Hits {
-  padding-inline-start: 1.5em;
-}
-@media (max-width: 980px) {
-  [dir='rtl'] #universal-nav-logo {
-    left: inherit;
-    right: 17px;
-  }
-  [dir='rtl'] .ais-SearchBox-submit {
-    left: inherit;
-    right: 0.55em;
-  }
-}
-
 body {
   height: 100%;
   font-family: 'Hack-ZeroSlash', monospace;
