@@ -8,6 +8,7 @@
 - **Code Contribution**
   - [Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md)
   - [Work on mobile app](how-to-setup-freecodecamp-mobile-app-locally.md)
+  - [How to contribute to the codebase](how-to-contribute-to-the-codebase.md)
   - [Follow coding best practices](codebase-best-practices.md)
   - [Open a pull request](how-to-open-a-pull-request.md)
   - [Work on coding challenges](how-to-work-on-coding-challenges.md)
@@ -23,6 +24,7 @@
   - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
   - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
   - [User Token Workflow](user-token-workflow.md)
+  - [Troubleshooting Development Issues](troubleshooting-development-issues.md)
 
 ---
 

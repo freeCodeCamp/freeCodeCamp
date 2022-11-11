@@ -52,13 +52,7 @@ git clone https://github.com/freeCodeCamp/freeCodeCamp.git
 Install `docsify`:
 
 ```console
-npm install -g docsify
-```
-
-and serve the `/docs` directory
-
-```console
-docsify serve docs
+npx docsify serve docs
 ```
 
 Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:

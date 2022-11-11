@@ -52,16 +52,10 @@ git clone https://github.com/freeCodeCamp/freeCodeCamp.git
 `docsify` をインストールする
 
 ```console
-npm install -g docsify
+npx docsify serve docs
 ```
 
-`/docs` ディレクトリを提供する
-
-```console
-docsify serve docs
-```
-
-または、freeCodeCamp がすでにローカルにインストールされている場合 (ローカルセットアップガイド参照)、CLI に開発ツールがバンドルされています。必要に応じて、リポジトリのルートから以下のコマンドを実行することができます。
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
 #### ドキュメントサイトのみを提供して起動する
 

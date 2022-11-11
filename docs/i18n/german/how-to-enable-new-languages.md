@@ -49,7 +49,7 @@ Beachte, dass der Schlüssel `download_language` auf den Sprachcode festgelegt w
 
 Es gibt ein paar Schritte, die du unternehmen musst, damit die Codebasis in deiner gewünschten Sprache erstellt werden kann.
 
-Gehe zuerst in die Datei `config/i18n/all-langs.ts`, um die Sprache zur Liste der verfügbaren Sprachen hinzuzufügen und die Werte zu konfigurieren. Hier gibt es mehrere Objekte.
+First, visit the `config/i18n.ts` file to add the language to the list of available languages and configure the values. Hier gibt es mehrere Objekte.
 
 - `availableLangs`: Füge sowohl für den `client` als auch für das `curriculum`-Array den Textnamen der Sprache hinzu. Dies ist der Wert, der später in der `.env`-Datei verwendet wird.
 - `auditedCerts`: Füge den Textnamen der Sprache als _Schlüssel_ und ein Array mit `SuperBlocks.{cert}`-Variablen als _Wert_ hinzu. Dies teilt dem Client mit, welche Zertifikate vollständig übersetzt sind.
@@ -57,8 +57,9 @@ Gehe zuerst in die Datei `config/i18n/all-langs.ts`, um die Sprache zur Liste de
 - `LangNames`: Dies sind die Anzeigenamen für die Sprachauswahl im Navigationsmenü.
 - `LangCodes`: Dies sind die Sprachcodes, die für die Formatierung von Datumsangaben und Zahlen verwendet werden. Dies sollten Unicode CLDR-Codes statt ISO-Codes sein.
 - `hiddenLangs`: Diese Sprachen werden im Navigationsmenü nicht angezeigt. Dies wird für Sprachen verwendet, die noch nicht zur Veröffentlichung bereit sind.
+- `rtlLangs`: These are languages that read from right to left.
 
-Wenn du zum Beispiel Dothraki als Sprache aktivieren möchtest, sollten deine `all-langs.js`-Objekte wie folgt aussehen:
+As an example, if you wanted to enable Dothraki as a language, your `i18n.ts` objects should look like this:
 
 ```js
 export const availableLangs = {
@@ -136,6 +137,8 @@ export enum LangCodes = {
 };
 
 export const hiddenLangs = ['dothraki'];
+
+export const rtlLangs = [''];
 ```
 
 > [!NOTE] Wenn eine Sprache in der Deployment-Pipeline eingerichtet wurde UND eine öffentliche `/news`-Instanz live ist, kann sie aus dem `hiddenLangs`-Array entfernt und der Öffentlichkeit zugänglich gemacht werden.
@@ -214,7 +217,7 @@ Für die Videoaufgaben musst du ein paar Dinge ändern. Füge zunächst das neue
       ...
 ```
 
-Füge dann eine ID für die neue Sprache zu jeder Videoaufgabe in einem geprüften Block hinzu. Wenn zum Beispiel `auditedCerts` in `all-langs.ts` `scientific-computing-with-python` für `dothraki` enthält, dann musst du einen `dothraki` Eintrag in `videoLocaleIds` hinzufügen. Das Front Matter sollte dann so aussehen:
+Füge dann eine ID für die neue Sprache zu jeder Videoaufgabe in einem geprüften Block hinzu. For example, if `auditedCerts` in `i18n.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. Das Front Matter sollte dann so aussehen:
 
 ```yml
 videoLocaleIds:
