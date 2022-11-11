@@ -26,11 +26,11 @@ Las variables `a` y `b` toman el primer y segundo valor del arreglo. Después de
 
 # --instructions--
 
-Use a destructuring assignment with the rest parameter to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` should return a sub-array of the original array `list` with the first two elements omitted.
+Utiliza una asignación de desestructuración con el parámetro rest para emular el comportamiento de `Array.prototype.slice()`. `removeFirstTwo()` debe devolver un sub-arreglo del arreglo original `list` sin los dos primeros elementos.
 
 # --hints--
 
-`removeFirstTwo([1, 2, 3, 4, 5])` should be `[3, 4, 5]`
+`removeFirstTwo([1, 2, 3, 4, 5])` debe devolver `[3, 4, 5]`
 
 ```js
 const testArr_ = [1, 2, 3, 4, 5];
@@ -38,7 +38,7 @@ const testArrWORemoved_ = removeFirstTwo(testArr_);
 assert(testArrWORemoved_.every((e, i) => e === i + 3) && testArrWORemoved_.length === 3);
 ```
 
-`removeFirstTwo()` should not modify `list`
+`removeFirstTwo()` no debe modificar `list`
 
 ```js
 const testArr_ = [1, 2, 3, 4, 5];

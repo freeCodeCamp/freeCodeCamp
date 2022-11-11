@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bca
-title: تغيير تقديم مخطط بياني للأعمدة (Bar Chart)
+title: تغيير مخطط بياني شريطي (Bar Chart)
 challengeType: 6
 forumTopicId: 301481
 dashedName: change-the-presentation-of-a-bar-chart
@@ -8,21 +8,21 @@ dashedName: change-the-presentation-of-a-bar-chart
 
 # --description--
 
-وأنشأ التحدي السابق مخطط بياني للأعمدة (bar chart)، ولكن هناك بعض التغييرات في التنسيق الذي يمكن أن تحسن:
+وأنشأ التحدي السابق مخطط بياني شريطي (bar chart)، ولكن هناك بعض التغييرات في التنسيق الذي يمكن أن تحسن:
 
-1) إضافة مساحة بين كل عمود لفصله بصرياً، عن طريق إضافة هامش (margin) إلى CSS لفئة تسمى `bar`
+1) إضافة مساحة بين كل شريط لفصله بصرياً، عن طريق إضافة هامش (margin) إلى CSS لفئة تسمى `bar`
 
-2) زيادة ارتفاع (height) الأعمدة لإظهار الفرق في القيم بشكل أفضل، عن طريق ضرب (multiplying) القيمة في عدد لزيادة الارتفاع
+2) زيادة ارتفاع (height) الأشرطة لإظهار الفرق في القيم بشكل أفضل، عن طريق ضرب (multiplying) القيمة في عدد لزيادة الارتفاع
 
 # --instructions--
 
-أولاً، أضف `margin` بقيمة `2px` إلى قئة `bar` في علامة `style`. Next, change the callback function in the `style()` method so it returns a value `10` times the original data value (plus the `px`).
+أولاً، أضف `margin` بقيمة `2px` إلى قئة `bar` في علامة `style`. بعد ذلك، غيّر وظيفة تعيد تفعيل في `style()` بحيث تنتج `10` أضعاف قيمة البيانات الأصلية (بالإضافة إلى `px`).
 
-**Note:** Multiplying each data point by the *same* constant only alters the scale. It's like zooming in, and it doesn't change the meaning of the underlying data.
+**ملاحظة:** ضرب كل نقطة بيانات *بنفس* الثابت فقط يغيّر الحجم. إنه مثل تكبير الصورة، الذي لا يغير المقصود من البيانات الأساسية.
 
 # --hints--
 
-The first `div` should have a `height` of `120` pixels and a `margin` of `2` pixels.
+يجب أن يحتوي أول `div` على `height` بقيمة `120` بكسل (px) و `margin` بقيمة `2` بكسل (px).
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-The second `div` should have a `height` of `310` pixels and a `margin` of `2` pixels.
+يجب أن يحتوي ثاني `div` على `height` بقيمة `310` بكسل (px) و `margin` بقيمة `2` بكسل (px).
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The third `div` should have a `height` of `220` pixels and a `margin` of `2` pixels.
+يجب أن يحتوي ثالث `div` على `height` بقيمة `220` بكسل (px) و `margin` بقيمة `2` بكسل (px).
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-The fourth `div` should have a `height` of `170` pixels and a `margin` of `2` pixels.
+يجب أن يحتوي رابع `div` على `height` بقيمة `170` بكسل (px) و `margin` بقيمة `2` بكسل (px).
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-The fifth `div` should have a `height` of `250` pixels and a `margin` of `2` pixels.
+يجب أن يحتوي خامس `div` على `height` بقيمة `250` بكسل (px) و `margin` بقيمة `2` بكسل (px).
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-The sixth `div` should have a `height` of `180` pixels and a `margin` of `2` pixels.
+يجب أن يحتوي سادس `div` على `height` بقيمة `180` بكسل (px) و `margin` بقيمة `2` بكسل (px).
 
 ```js
 assert(
@@ -76,7 +76,7 @@ assert(
 );
 ```
 
-The seventh `div` should have a `height` of `290` pixels and a `margin` of `2` pixels.
+يجب أن يحتوي سابع `div` على `height` بقيمة `290` بكسل (px) و `margin` بقيمة `2` بكسل (px).
 
 ```js
 assert(
@@ -85,7 +85,7 @@ assert(
 );
 ```
 
-The eighth `div` should have a `height` of `140` pixels and a `margin` of `2` pixels.
+يجب أن يحتوي ثامن `div` على `height` بقيمة `140` بكسل (px) و `margin` بقيمة `2` بكسل (px).
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The ninth `div` should have a `height` of `90` pixels and a `margin` of `2` pixels.
+يجب أن يحتوي تاسع `div` على `height` بقيمة `90` بكسل (px) و `margin` بقيمة `2` بكسل (px).
 
 ```js
 assert(
