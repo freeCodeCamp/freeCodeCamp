@@ -1,0 +1,17 @@
+{
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "freeCodeCamp.freecodecamp-dark-vscode-theme"
+  ],
+  "context": "..",
+  "dockerFile": "Dockerfile",
+  "forwardPorts": [3000, 8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Learn",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postAttachCommand": "npm run develop"
+}
