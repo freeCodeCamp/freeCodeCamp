@@ -264,7 +264,7 @@
       "p8": "Este currículo dará a você milhares de horas prática de programação \"mão na massa\".",
       "p9": "Se você quiser aprender mais matemática e teoria da ciência da computação, também temos milhares de horas de cursos em vídeo no canal do YouTube do <0>freeCodeCamp</0>.",
       "p10": "Se você quiser conseguir um trabalho como desenvolvedor ou ter clientes como freelance, as habilidades de programação serão apenas parte do desafio. Você também precisa construir sua rede pessoal e sua reputação como desenvolvedor.",
-      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
+      "p11": "Você pode fazer isso no LinkedIn e GitHub, assim como no <0>fórum do freeCodeCamp </0>.",
       "p12": "Boa programação!"
     },
     "upcoming-lessons": "Próximas lições",
@@ -325,7 +325,11 @@
     "sorry-getting-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
     "sorry-hang-in-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
     "sorry-dont-giveup": "Desculpe, seu código não passou nos testes. Não desista.",
-    "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafios concluídos"
+    "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafios concluídos",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program",
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -350,6 +354,7 @@
     "your-donation": "Sua doação de US${{usd}} proporcionará {{hours}} horas de aprendizado para pessoas ao redor do mundo.",
     "your-donation-2": "Sua doação de US${{usd}} proporcionará {{hours}} horas mensais de aprendizado para pessoas ao redor do mundo.",
     "your-donation-3": "Sua doação de US${{usd}} proporcionará {{hours}} horas anuais de aprendizado para pessoas ao redor do mundo.",
+    "become-supporter": "Become a Supporter",
     "duration": "Torne-se um apoiador por doação única da nossa organização sem fins lucrativos.",
     "duration-2": "Torne-se um apoiador mensal da nossa organização sem fins lucrativos.",
     "duration-3": "Torne-se um apoiador anual da nossa organização sem fins lucrativos",

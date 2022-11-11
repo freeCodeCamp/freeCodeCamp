@@ -325,7 +325,11 @@
     "sorry-getting-there": "残念ながら、テストが通りませんでした。もう一息です。",
     "sorry-hang-in-there": "残念ながら、テストが通りませんでした。がんばりましょう。",
     "sorry-dont-giveup": "残念ながら、テストが通りませんでした。諦めないでください。",
-    "challenges-completed": "{{totalChallenges}} 件中 {{completedCount}} 件完了"
+    "challenges-completed": "{{totalChallenges}} 件中 {{completedCount}} 件完了",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program",
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
   },
   "donate": {
     "title": "非営利団体を支援する",
@@ -350,6 +354,7 @@
     "your-donation": "あなたの {{usd}} ドルのご寄付が、世界中の人々に {{hours}} 時間の学びを提供します。",
     "your-donation-2": "あなたの {{usd}} ドルのご寄付が、世界中の人々に {{hours}} 時間の学びを毎月提供します。",
     "your-donation-3": "あなたの {{usd}} ドルのご寄付が、世界中の人々に {{hours}} 時間の学びを毎年提供します。",
+    "become-supporter": "Become a Supporter",
     "duration": "当非営利団体に一回のご支援をいただけますと幸いです。",
     "duration-2": "当非営利団体に毎月のご支援をいただけますと幸いです。",
     "duration-3": "当非営利団体に毎年のご支援をいただけますと幸いです。",

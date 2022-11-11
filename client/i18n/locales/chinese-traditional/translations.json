@@ -325,7 +325,11 @@
     "sorry-getting-there": "抱歉，你的代碼未通過，就快要成功了。",
     "sorry-hang-in-there": "抱歉，你的代碼未通過，堅持一下。",
     "sorry-dont-giveup": "抱歉，你的代碼未通過，不要放棄。",
-    "challenges-completed": "已完成 {{completedCount}}/{{totalChallenges}}"
+    "challenges-completed": "已完成 {{completedCount}}/{{totalChallenges}}",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program",
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
   },
   "donate": {
     "title": "支持我們的非營利組織",
@@ -350,6 +354,7 @@
     "your-donation": "你的 ${{usd}} 捐款將幫助世界各地的人們學習 {{hours}} 小時。",
     "your-donation-2": "你的 ${{usd}} 捐款每月將幫助世界各地的人們學習 {{hours}} 小時。",
     "your-donation-3": "你的 ${{usd}} 捐款每年將幫助世界各地的人們學習 {{hours}} 小時。",
+    "become-supporter": "Become a Supporter",
     "duration": "成爲我們非營利組織的一次性支持者",
     "duration-2": "成爲我們非營利組織的每月定期支持者",
     "duration-3": "成爲我們非營利組織的每年定期支持者",
