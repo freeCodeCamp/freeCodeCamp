@@ -52,16 +52,10 @@ git clone https://github.com/freeCodeCamp/freeCodeCamp.git
 Встановіть `docsify`:
 
 ```console
-npm install -g docsify
+npx docsify serve docs
 ```
 
-та обслужіть каталог `/docs`
-
-```console
-docsify serve docs
-```
-
-Іншим чином, якщо ви встановили freeCodeCamp локально (див. посібник з локального налаштування), ми зібрали CLI з інструментами веброзробки, щоб ви могли запустити будь-яку з наведених нижче команд, необхідних з кореня репозиторію:
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
 #### Обслужити та запустити лише документаційний сайт
 

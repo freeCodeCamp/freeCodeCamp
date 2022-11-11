@@ -8,21 +8,23 @@
 - **コードのコントリビューション**
   - [freeCodeCamp のローカル環境を構築する](how-to-setup-freecodecamp-locally.md)
   - [モバイルアプリに貢献する](how-to-setup-freecodecamp-mobile-app-locally.md)
-  - [コードベースのベストプラクティス](codebase-best-practices.md)
-  - [プルリクエストをオープンする](how-to-open-a-pull-request.md)
-  - [コーディングチャレンジに貢献する](how-to-work-on-coding-challenges.md)
-  - [プラクティスプロジェクトに貢献する](how-to-work-on-practice-projects.md)
-  - [CodeRoad のチュートリアルに貢献する](how-to-work-on-tutorials-that-use-coderoad.md)
-  - [ローカライズされたクライアント Web アプリに貢献する](how-to-work-on-localized-client-webapp.md)
-  - [Cypress テストに貢献する](how-to-add-cypress-tests.md)
-  - [ビデオチャレンジに貢献する](how-to-help-with-video-challenges.md)
-  - [ドキュメントに貢献する](how-to-work-on-the-docs-theme.md)
-  - [コンポーネントライブラリに貢献する](how-to-work-on-the-component-library.md)
+  - [How to contribute to the codebase](how-to-contribute-to-the-codebase.md)
+  - [Follow coding best practices](codebase-best-practices.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
+  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
+  - [Work on practice projects](how-to-work-on-practice-projects.md)
+  - [Work on tutorials with CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
+  - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
+  - [Work on Cypress tests](how-to-add-cypress-tests.md)
+  - [Work on video challenges](how-to-help-with-video-challenges.md)
+  - [Work on documentation](how-to-work-on-the-docs-theme.md)
+  - [Work on the component library](how-to-work-on-the-component-library.md)
 - **その他のガイド**
   - [Understand the curriculum file structure](curriculum-file-structure.md)
   - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
   - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
   - [User Token Workflow](user-token-workflow.md)
+  - [Troubleshooting Development Issues](troubleshooting-development-issues.md)
 
 ---
 

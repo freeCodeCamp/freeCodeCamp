@@ -8,21 +8,23 @@
 - **Contribuição de código**
   - [Configure o freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
   - [Trabalhar na aplicação para dispositivos móveis](how-to-setup-freecodecamp-mobile-app-locally.md)
-  - [Seguir as melhores práticas de programação](codebase-best-practices.md)
-  - [Abrir um pull request](how-to-open-a-pull-request.md)
-  - [Trabalhar em desafios de programação](how-to-work-on-coding-challenges.md)
-  - [Trabalhar em projetos práticos](how-to-work-on-practice-projects.md)
-  - [Trabalhar nos tutoriais com o CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
-  - [Ajudar na tradução da aplicação web](how-to-work-on-localized-client-webapp.md)
-  - [Trabalhar em testes do Cypress](how-to-add-cypress-tests.md)
-  - [Trabalhar nos desafios em vídeo](how-to-help-with-video-challenges.md)
-  - [Trabalhar com a documentação](how-to-work-on-the-docs-theme.md)
-  - [Trabalhar na biblioteca de componentes](how-to-work-on-the-component-library.md)
+  - [How to contribute to the codebase](how-to-contribute-to-the-codebase.md)
+  - [Follow coding best practices](codebase-best-practices.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
+  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
+  - [Work on practice projects](how-to-work-on-practice-projects.md)
+  - [Work on tutorials with CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
+  - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
+  - [Work on Cypress tests](how-to-add-cypress-tests.md)
+  - [Work on video challenges](how-to-help-with-video-challenges.md)
+  - [Work on documentation](how-to-work-on-the-docs-theme.md)
+  - [Work on the component library](how-to-work-on-the-component-library.md)
 - **Guias adicionais**
   - [Compreender a estrutura do arquivo do currículo](curriculum-file-structure.md)
   - [Depurar e-mails enviados localmente](how-to-catch-outgoing-emails-locally.md)
   - [Configurar freeCodeCamp no Windows (WSL)](how-to-setup-wsl.md)
   - [Fluxo de trabalho do token de usuário](user-token-workflow.md)
+  - [Troubleshooting Development Issues](troubleshooting-development-issues.md)
 
 ---
 
