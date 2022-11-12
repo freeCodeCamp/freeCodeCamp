@@ -31,15 +31,16 @@
 
 .fcc_searchBar .ais-SearchBox-input,
 .fcc_searchBar .ais-Hits {
-  padding-inline-start: 1.5em;
   z-index: 100;
   background-color: var(--gray-75);
   color: var(--gray-00);
 }
 
+.fcc_searchBar .ais-SearchBox-input {
+  padding-inline-start: 1.5em;
+}
+
 .fcc_searchBar .ais-Hits {
-  top: 70px;
-  width: calc(100vw - 350px);
   left: 15px;
 }
 
@@ -129,7 +130,6 @@ and arrow keys */
   display: flex;
   flex-direction: row-reverse;
   gap: 0.25em;
-  top: var(--header-height);
 }
 
 @media (min-width: 981px) {
@@ -143,12 +143,13 @@ and arrow keys */
   }
   .fcc_searchBar .ais-Hits {
     top: auto;
-    width: calc(100% - 20px);
+    width: 100%;
     max-width: 500px;
-    left: 10px;
+    left: 0px;
   }
   .fcc_searchBar .ais-SearchBox-form {
     display: flex;
+    justify-content: flex-end;
     top: auto;
   }
 }
