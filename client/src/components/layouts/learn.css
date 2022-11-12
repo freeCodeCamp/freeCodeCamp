@@ -6,8 +6,10 @@
   flex-grow: 1;
 }
 
-#learn-app-wrapper .desktop-layout .reflex-element {
-  height: unset !important;
+/* Zero height bug fix in Firefox (PR #48231) */
+#learn-app-wrapper .desktop-layout .reflex-element,
+#learn-app-wrapper .reflex-container.vertical > .reflex-splitter {
+  height: unset;
 }
 
 #learn-app-wrapper .reflex-container.vertical {
@@ -28,7 +30,6 @@
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter {
-  height: unset !important;
   width: 5px;
 }
 

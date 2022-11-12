@@ -502,9 +502,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         usesMultifileEditor={usesMultifileEditor}
       >
         <LearnLayout>
-          <Helmet title={windowTitle}>
-            <style>{'.page-wrapper{height: 100%;}'}</style>
-          </Helmet>
+          <Helmet title={windowTitle} />
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
               editor={this.renderEditor({

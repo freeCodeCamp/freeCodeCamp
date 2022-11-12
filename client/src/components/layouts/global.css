@@ -23,6 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  height: 100%;
 }
 
 .codeally-frame {
@@ -55,10 +56,13 @@ body {
 .default-layout {
   display: flex;
   flex-direction: column;
-  min-height: 0;
   flex: 1 1 auto;
   margin-top: var(--header-height, 0);
   background: var(--secondary-background);
+}
+
+.default-layout:only-child {
+  min-height: 0;
 }
 
 #content-start,
