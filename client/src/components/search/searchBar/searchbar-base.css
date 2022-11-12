@@ -689,9 +689,3 @@ a[class^='ais-'] {
 strong.ais-Highlight-highlighted {
   background-color: transparent;
 }
-
-@media (min-width: 981px) {
-  .ais-SearchBox-submit {
-    left: 0;
-  }
-}
