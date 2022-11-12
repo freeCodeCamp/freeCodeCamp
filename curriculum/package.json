@@ -42,7 +42,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
-    "chai": "4.3.6",
+    "chai": "4.3.7",
     "cross-env": "7.0.3",
     "css": "3.0.0",
     "invariant": "2.2.4",
