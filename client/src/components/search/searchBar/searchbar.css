@@ -9,7 +9,8 @@
   color: var(--gray-00);
 }
 
-.ais-SearchBox-reset {
+.ais-SearchBox-reset,
+.ais-SearchBox-loadingIndicator {
   display: none;
 }
 
