@@ -264,7 +264,7 @@
       "p8": "وهذا المنهج سيعطيك آلاف الساعات من التدريب العملي على البرمجة.",
       "p9": "وإذا كنت ترغب في تعلم المزيد من نظريات الرياضيات وعلوم الكمبيوتر، لدينا أيضا آلاف الساعات من دورات الفيديو على <0>قناة freeCodeCamp على يوتيوب</0>.",
       "p10": "إذا كنت ترغب في الحصول على وظيفة مطور أو عملاء مستقلين، فإن مهارات البرمجة ستكون مجرد جزء من اللغز. تحتاج أيضاً إلى بناء شبكتك الشخصية وسمعتك كمطور.",
-      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
+      "p11": "يمكنك فعل ذلك على LinkedIn و GitHub، وأيضاً على <0>منتدى freeCodeCamp </0>.",
       "p12": "برمجة سعيدة!"
     },
     "upcoming-lessons": "الدروس القادمة",
@@ -284,7 +284,7 @@
     "sign-in-save": "قم بتسجيل الدخول لحفظ تقدّمك",
     "download-solution": "تنزيل الحل",
     "percent-complete": "{{percent}}% مكتمل",
-    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
+    "project-complete": "أكملت {{completedChallengesInBlock}} من {{totalChallengesInBlock}} مشروعات الشهادات",
     "tried-rsa": "إذا كنت قد جربت طريقة <0>اقرأ-ابحث-اسأل</0>، فيمكنك طلب المساعدة في منتدى freeCodeCamp.",
     "rsa": "اقرأ ، ابحث ، اسأل",
     "rsa-forum": "<strong>قبل إجراء موضوع جديدة</strong> يرجى الاطلاع على ما إذا كان سؤالك <0> قد تم الإجابة عليه فعلًا في المنتدى </0>.",
@@ -326,10 +326,10 @@
     "sorry-hang-in-there": "عذراً، لم يجتَز كودك. لا تستسلم.",
     "sorry-dont-giveup": "عذراً، لم يجتَز كودك. لا تفقد الأمل.",
     "challenges-completed": "اكتمل {{completedCount}} من {{totalChallenges}} تحديات",
-    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
-    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
-    "building-a-university": "We're Building a Free Computer Science University Degree Program",
-    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
+    "season-greetings-fcc": "تحيات الموسم من مجتمع freeCodeCamp 🎉",
+    "if-getting-value": "إذا أفادك freeCodeCamp بشكل مثمر، يمكنك تتبرع دعما لرسالتنا التطوعية حتي يستمر مهمتنا.",
+    "building-a-university": "نحن نبني برنامَج مجاني لشهادة جامعة علوم الكمبيوتر Computer Science",
+    "if-help-university": "لقد حققنا قدرا كبيرا من التقدم بالفعل. أدعم منظمتنا الخيرية بالطريق الطويل الذي أمامنا."
   },
   "donate": {
     "title": "ادعم منظمتنا الخيرية",
@@ -354,7 +354,7 @@
     "your-donation": "سيوفر تبرعك{{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم.",
     "your-donation-2": "سيوفر تبرعك {{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم كل شهر.",
     "your-donation-3": "سيوفر تبرعك {{usd}}$ {{hours}} ساعات من التعلم للناس حول العالم كل عام.",
-    "become-supporter": "Become a Supporter",
+    "become-supporter": "أصبح داعماً",
     "duration": "كن داعماً لمرة واحدة لمنظمتنا الخيرية.",
     "duration-2": "كن داعماً شهريا لمنظمتنا الخيرية.",
     "duration-3": "كن داعماً سنويا لمنظمتنا الخيرية",
@@ -723,10 +723,10 @@
     "navigate-next": "تنقل إلى التمرين التالي"
   },
   "signout": {
-    "heading": "Sign out of your account",
-    "p1": "Warning: If you continue, your progress will no longer be saved.",
-    "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
-    "certain": "Yes, sign out of my account",
-    "nevermind": "Nevermind, I don't want to sign out"
+    "heading": "تسجيل الخروج من حسابك",
+    "p1": "تحذير: إذا تابعت، لن يتم حفظ تقدمك.",
+    "p2": "سيؤدي هذا الإجراء إلى تسجيل خروجك من حسابك على هذا الجهاز وجلسة المتصفح فقط. الرجاء تأكيد ما إذا كنت ترغب في المتابعة.",
+    "certain": "نعم، سجل الخروج من حسابي",
+    "nevermind": "لا أريد تسجيل الخروج"
   }
 }
