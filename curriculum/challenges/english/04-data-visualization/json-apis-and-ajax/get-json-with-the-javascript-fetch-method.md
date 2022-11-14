@@ -42,27 +42,8 @@ Update the code to create and send a `GET` request to the freeCodeCamp Cat Photo
 Your code should use the fetched data to replace the inner HTML
 
 ```js
-const catData = [
-  {
-    id: 0,
-    imageLink: "https://s3.amazonaws.com/freecodecamp/funny-cat.jpg",
-    altText: "A white cat wearing a green, helmet shaped melon on its head. ",
-    codeNames: ["Juggernaut", "Mrs. Wallace", "Buttercup"],
-  },
-  {
-    id: 1,
-    imageLink: "https://s3.amazonaws.com/freecodecamp/grumpy-cat.jpg",
-    altText: "A white cat with blue eyes, looking very grumpy. ",
-    codeNames: ["Oscar", "Scrooge", "Tyrion"],
-  },
-  {
-    id: 2,
-    imageLink: "https://s3.amazonaws.com/freecodecamp/mischievous-cat.jpg",
-    altText:
-      "A ginger cat with one eye closed and mouth in a grin-like expression. Looking very mischievous. ",
-    codeNames: ["The Doctor", "Loki", "Joker"],
-  },
-];
+const catData = 'dummy data'
+fetch = () => Promise.resolve({json: () => catData});
 async () => {
   document.getElementById("getMessage").click();
   await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
