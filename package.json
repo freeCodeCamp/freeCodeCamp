@@ -136,7 +136,6 @@
     "@types/lodash-es": "4.17.6",
     "@types/node": "16.18.3",
     "@types/prismjs": "1.26.0",
-    "@types/psl": "1.1.0",
     "@types/reach__router": "1.3.11",
     "@types/react": "17.0.52",
     "@types/react-dom": "17.0.18",
