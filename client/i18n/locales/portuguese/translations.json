@@ -326,10 +326,10 @@
     "sorry-hang-in-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
     "sorry-dont-giveup": "Desculpe, seu código não passou nos testes. Não desista.",
     "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafios concluídos",
-    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
-    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
-    "building-a-university": "We're Building a Free Computer Science University Degree Program",
-    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
+    "season-greetings-fcc": "Boas festas de fim de ano, da comunidade do freeCodeCamp 🎉",
+    "if-getting-value": "Se você está conseguindo tirar proveito do conteúdo do freeCodeCamp, agora é um ótimo momento para fazer sua doação e apoiar nossa missão sem fins lucrativos.",
+    "building-a-university": "Estamos criando um programa gratuito de graduação em Ciência da Computação",
+    "if-help-university": "Já fizemos um progresso enorme. Apoie nossa organização sem fins lucrativos com o longo caminho que temos pela frente."
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -354,7 +354,7 @@
     "your-donation": "Sua doação de US${{usd}} proporcionará {{hours}} horas de aprendizado para pessoas ao redor do mundo.",
     "your-donation-2": "Sua doação de US${{usd}} proporcionará {{hours}} horas mensais de aprendizado para pessoas ao redor do mundo.",
     "your-donation-3": "Sua doação de US${{usd}} proporcionará {{hours}} horas anuais de aprendizado para pessoas ao redor do mundo.",
-    "become-supporter": "Become a Supporter",
+    "become-supporter": "Torne-se um apoiador",
     "duration": "Torne-se um apoiador por doação única da nossa organização sem fins lucrativos.",
     "duration-2": "Torne-se um apoiador mensal da nossa organização sem fins lucrativos.",
     "duration-3": "Torne-se um apoiador anual da nossa organização sem fins lucrativos",
