@@ -49,7 +49,7 @@ Nota che la chiave `download_language` deve essere impostata sul codice della li
 
 Ci sono alcuni step da svolgere per consentire il build del codebase nella lingua scelta.
 
-First, visit the `config/i18n.ts` file to add the language to the list of available languages and configure the values. Qui ci sono diversi oggetti.
+Per prima cosa, visita il file `config/i18n.ts` per aggiungere la lingua alla lista delle lingue disponibili e configurare i valori. Qui ci sono diversi oggetti.
 
 - `availableLangs`: per entrambi gli array `client` e `curriculum`, aggiungi il testo del nome della lingua. Questo è il valore che sarà usato nel file `.env` più tardi.
 - `auditedCerts`: Aggiungi il nome della lingua come _chiave_ e aggiungi un array di variabili `SuperBlocks.{cert}` come _valore_. Questo dice al client quali certificazioni sono completamente tradotte.
@@ -57,9 +57,9 @@ First, visit the `config/i18n.ts` file to add the language to the list of availa
 - `LangNames`: Questi sono i nomi delle lingue visualizzati nel menu di navigazione.
 - `LangCodes`: Questi sono i codici delle lingue usati per formattare date e numeri. Questi devono essere codici Unicode CLDR invece di codici ISO.
 - `hiddenLangs`: Queste lingue non saranno mostrate nel menu di navigazione. Viene usato per le lingue che non sono ancora pronte per il rilascio.
-- `rtlLangs`: These are languages that read from right to left.
+- `rtlLangs`: Sono le lingue che si leggono da destra a sinistra.
 
-As an example, if you wanted to enable Dothraki as a language, your `i18n.ts` objects should look like this:
+Per esempio, se vuoi attivare la lingua Dothraki, il tuo oggetto `i18n.ts` dovrebbe essere come segue:
 
 ```js
 export const availableLangs = {
@@ -216,7 +216,7 @@ Per le sfide video, devi cambiare alcune cose. Come prima cosa aggiungi la nuova
       ...
 ```
 
-Quindi aggiungi un id per la nuova lingua ogni sfida video in un blocco verificato (`auditedCerts`). For example, if `auditedCerts` in `i18n.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. Il frontespizio dovrebbe essere simile a questo:
+Quindi aggiungi un id per la nuova lingua ogni sfida video in un blocco verificato (`auditedCerts`). Per esempio, se `auditedCerts` in `i18n.ts` include `scientific-computing-with-python` per `dothraki`, allora devi aggiungere l'elemento `dothraki` in `videoLocaleIds`. Il frontespizio dovrebbe essere simile a questo:
 
 ```yml
 videoLocaleIds:
