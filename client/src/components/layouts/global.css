@@ -54,23 +54,24 @@ body {
 }
 
 .default-layout {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
   margin-top: var(--header-height, 0);
   background: var(--secondary-background);
 }
 
 .default-layout:only-child {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
   min-height: 0;
 }
 
-#content-start,
-#content-start > div {
-  display: flex;
-  flex-direction: column;
+#content-start {
   min-height: 0;
-  flex-grow: 1;
+  height: 100%;
+}
+
+#content-start > div {
+  height: 100%;
 }
 
 h1 {

@@ -69,6 +69,7 @@
   flex-direction: column;
   min-height: 0;
   flex-grow: 1;
+  height: 100%;
 }
 
 #mobile-layout .nav-tabs {
@@ -93,8 +94,11 @@
 
 #mobile-layout .tab-content {
   position: relative;
-  height: 100%;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
+  overflow-y: hidden;
 }
 
 #mobile-layout-pane-editor {
@@ -104,7 +108,7 @@
 
 #mobile-layout .tab-pane {
   height: 100%;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 #mobile-layout .nav-tabs > li.active > a {

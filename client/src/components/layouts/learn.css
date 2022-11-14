@@ -1,4 +1,9 @@
 #learn-app-wrapper,
+#learn-app-wrapper .desktop-layout,
+#learn-app-wrapper .reflex-container.vertical {
+  height: 100%;
+}
+
 #learn-app-wrapper .desktop-layout {
   display: flex;
   flex-direction: column;
@@ -6,16 +11,9 @@
   flex-grow: 1;
 }
 
-/* Zero height bug fix in Firefox (PR #48231) */
-#learn-app-wrapper .desktop-layout .reflex-element,
-#learn-app-wrapper .reflex-container.vertical > .reflex-splitter {
-  height: unset;
-}
-
 #learn-app-wrapper .reflex-container.vertical {
-  display: flex;
   min-height: 0;
-  flex-grow: 1;
+  flex: 1 1 auto;
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter,
