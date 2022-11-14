@@ -4,6 +4,7 @@ import { mapTo, tap } from 'rxjs/operators';
 
 import envData from '../../../../../config/env.json';
 import { transformEditorLink } from '../utils';
+import { SuperBlocks } from '../../../../../config/certification-settings';
 import { actionTypes } from './action-types';
 import { closeModal } from './actions';
 import {
@@ -50,6 +51,34 @@ function createQuestionEpic(action$, state$, { window }) {
         block,
         helpCategory
       } = challengeMetaSelector(state);
+
+      if (superBlock === SuperBlocks.RespWebDesignNew) {
+        const editableRegionStrings = new (function () {
+          this.editableRegionStr = 'User Editable Region';
+          this.startComment = '<!---';
+          this.endComment = '--->';
+          this.lineBreak = '\n';
+          this.editableRegionComments = {
+            comment: `${this.lineBreak}${this.startComment} ${this.editableRegionStr} ${this.endComment}${this.lineBreak}`
+          };
+        })();
+
+        const {
+          lineBreak,
+          editableRegionComments: { comment }
+        } = editableRegionStrings;
+
+        challengeFiles.forEach(file => {
+          const { contents, seedEditableRegionBoundaries } = file;
+          if (seedEditableRegionBoundaries.length > 0) {
+            const [start, end] = seedEditableRegionBoundaries;
+            const editableContents = contents.split(lineBreak);
+            editableContents.splice(start, 0, comment);
+            editableContents.splice(end, 0, comment);
+            file.contents = editableContents.join(lineBreak);
+          }
+        });
+      }
       const {
         navigator: { userAgent },
         location: { pathname, origin }
