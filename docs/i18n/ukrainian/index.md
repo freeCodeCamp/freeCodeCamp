@@ -41,12 +41,4 @@
 
 В цілому ми маємо сервер API на основі Node.js, набір клієнтських додатків на основі React, тестові скрипти для оцінки проєктів кемперів та багато іншого. Якщо ви хочете здійснити внесок до навчальної платформи, ми радимо ознайомитися із цими інструментами.
 
-Якщо ви хочете допомогти покращити нашу базу кодів...
-
-**Ви можете використати Gitpod – безоплатне онлайн-середовище розробки, що запускає готове до кодування середовище для freeCodeCamp у вашому браузері.**
-
-[![Відкрити у Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
-
-Або ви можете...
-
-**[Встановити freeCodeCamp локально](how-to-setup-freecodecamp-locally.md) на свою машину.**
+**If you want to help us improve our codebase here's [how to set up freeCodeCamp](how-to-setup-freecodecamp-locally.md).**

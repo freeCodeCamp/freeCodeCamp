@@ -2,15 +2,79 @@ Sigue estas instrucciones para configurar freeCodeCamp localmente en tu sistema.
 
 Algunos de estos flujos de trabajo de contribución – como corregir errores en el código base o currículum – necesitan que ejecutes freeCodeCamp localmente en tu ordenador.
 
-### Cómo preparar su máquina local
+> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod. We have automated the process of installating all the dependencies & tools you will need.
+> 
+> Continue reading this guide to learn more about using GitPod.
 
-Comience instalando el software de requisitos previos para su sistema operativo.
+## Bifurcar el repositorio en GitHub
 
-Apoyamos principalmente el desarrollo en sistemas basados en Linux y Unix. Nuestro personal y los colaboradores de la comunidad trabajan regularmente con el código base utilizando herramientas instaladas en Ubuntu y macOS.
+[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-También tenemos compatibilidad con Windows 10 a través de WSL2, que puedes preparar [leyendo esta guía](how-to-setup-wsl.md).
+This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
-Algunos miembros de la comunidad también desarrollan en Windows 10 nativamente con Git for Windows (Git Bash), y otras herramientas instaladas en Windows. No tenemos soporte oficial para dicha configuración en este momento, así que recomendamos usar WSL2 en su lugar.
+> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
+> 
+> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
+
+**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
+
+1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
+
+2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
+
+3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp` (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
+
+<details>
+   <summary>
+      How to fork freeCodeCamp on GitHub (screenshot)
+   </summary>
+
+   <br>
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
+</details>
+
+## Use a Local Machine or GitPod
+
+Once you have forked the repository, choose one among the below. You can either use your own local machine or a GitPod-based workspace to work on the codebase.
+
+For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
+
+### How to prepare a GitPod workspace
+
+We have automated the process of installating all the dependencies & tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
+
+There are various ways to launch an GitPod workspace:
+
+1. **(Fastest)** Prepend `gitpod.io/#` in front of any URL from GitHub.
+
+   For example, if you visit your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, add `gitpod.io/#` in the front of the URL in the address bar and hit enter.
+
+   That is you can navigate to
+
+   ```
+   gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git
+   ```
+
+   and you should see a workspace created for you. This works for any repository or pull-request on GitHub.
+
+2. Alternatively install one of the below extentions for your browser.
+
+   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - works with Chromimum-based browsers like Google Chrome, Brave, Edge, etc.
+   - [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
+
+   Once installed you will see a 'GitPod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. See the extension page for details, screenshots, etc.
+
+That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of [how the URLs & Ports work within a GitPod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
+
+### How to prepare your local machine
+
+Start by installing the prerequisite software for your operating system.
+
+We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
+
+We also support Windows 10 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
+
+Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
 #### Pre-requisitos:
 
@@ -22,7 +86,7 @@ Algunos miembros de la comunidad también desarrollan en Windows 10 nativamente 
 
 > [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
-Si ya has instalado Node.js en tu máquina, ejecuta los siguientes comando para validar las versiones:
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
 node -v
@@ -31,102 +95,75 @@ npm -v
 
 > [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
 
-Una vez tengas los prerrequisitos instalados, necesitas preparar tu entorno de desarrollo.  Esto es normal en el desarrollo de flujos de trabajo, y sólo tendrás que hacerlo una vez.
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
 ##### Sigue estos pasos para dejar listo tu entorno de desarrollo:
 
-1. Instala [Git](https://git-scm.com/) o tu cliente Git favorito, si aún no lo has hecho. Actualice a la última versión; la versión que viene empaquetada con su sistema operativo puede estar desactualizada.
+1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
-2. (Opcional pero recomendado) [Configurar una clave SSH](https://help.github.com/articles/generating-an-ssh-key/) para GitHub.
+2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 
-3. Instale un editor de código de su elección.
+3. Install a code editor of your choice.
 
-   Recomendamos altamente usar [Visual Studio Code](https://code.visualstudio.com/) o [Atom](https://atom.io/). Estos son grandes editores de código libre y gratuito.
+   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
-4. Configurar linting para su editor de código.
+4. Set up linting for your code editor.
 
-   Deberías tener [ESLint corriendo en tu editor](http://eslint.org/docs/user-guide/integrations.html), y resaltará cualquier cosa que no se ajuste a la [Guía de estilo JavaScript de freeCodeCamp](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-   > [!TIP] Por favor, no ignore ningún error de linting. Están pensados para **ayudarte** y asegurar una base de código limpia y simple.
+   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
-## Bifurcar el repositorio en GitHub
+## Clone your fork from GitHub
 
-[Bifurcar](https://help.github.com/articles/about-forks/) es un paso donde consigues tu propia copia del repositorio de freeCodeCamp's (conocido como _repo_) en GitHub.
-
-Esto es esencial, te permite trabajar en tu propia copia de FreeCodeCamp en GitHub, o descargar o clonar un repuesto para trabajar localmente.  Más tarde, podrás solicitar cambios para que se muestren en el repositorio principal de  tu "fork" (bifurcación) a través de una "pull request" (PR).
-
-> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
-> 
-> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
-
-**Sigue estos pasos para bifurcar el repositorio `https://github.com/freeCodeCamp/freeCodeCamp`:**
-
-1. Ve al repositorio freeCodeCamp en GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
-
-2. Haga clic en el botón "Fork" en la esquina superior derecha de la interfaz ([Más detalles aquí](https://help.github.com/articles/fork-a-repo/))
-
-3. Después de que el repositorio haya sido bifurcado, serás llevado a tu copia del repositorio de freeCodeCamp en `https://github.com/YOUR_USER_NAME/freeCodeCamp` (`YOUR_USER_NAME` será remplazado con tu nombre de usuario de GitHub).
-
-<details>
-   <summary>
-      Cómo bifurcar freeCodeCamp en GitHub (captura de pantalla)
-   </summary>
-
-   <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Cómo bifurcar freeCodeCamp en Github" />
-</details>
-
-## Clona tu bifurcación desde GitHub
-
-"[Cloning](https://help.github.com/articles/cloning-a-repository/)" es donde tú  "**download**" (descargas) una copia de un repositorio de una localización "`remote`" (remota) que es propiedad tuya o de alguien más. En tu caso, esta localización remota es tu "`fork`" bifurcación del repositorio de freeCodeCamp que debería estar disponible en `https://github.com/YOUR_USER_NAME/freeCodeCamp`. ("`YOUR_USER_NAME`" (Tu nombre de usuario) debería ser reemplazado con tu nombre de usuario de GitHub)
+[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
 
 > [!WARNING] If you are working on a WSL2 Linux Distro, you might get performance and stability issues by running this project in a folder which is shared between Windows and WSL2 (e.g. `/mnt/c/Users/`). Therefore we recommend to clone this repo into a folder which is mainly used by your WSL2 Linux Distro and not directly shared with Windows (e.g. `~/PROJECTS/`).
 > 
 > See [this GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/40632) for further Information about this problem.
 
-Ejecuta estos comandos en tu computador:
+Run these commands on your local machine:
 
-1. Abrir una Terminal / Símbolo del sistema / Shell en el directorio de proyectos
+1. Open a Terminal / Command Prompt / Shell in your projects directory
 
-   _i.e.e.: `/yourprojectsdirectory/`_
+   _i.e.: `/yourprojectsdirectory/`_
 
-2. Clona tu bifurcación de freeCodeCamp, reemplazando `YOUR_USER_NAME` con tu nombre de usuario de GitHub
+2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
    ```console
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
-Esto descargará el repositorio entero de freeCodeCamp en tu directorio de proyectos.
+This will download the entire freeCodeCamp repository to your projects directory.
 
-Nota: "`--depth=1`" crea un clon superficial de tu bifurcación con solo la historia/commit más reciente.
+Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
-## Configurar sincronización desde el padre
+## Set up syncing from parent
 
-Ahora que ha descargado una copia de su bifurcación, necesitará configurar un `upstream` remoto en el repositorio padre.
+Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
-[Como se mencionó anteriormente](#fork-the-repository-on-github), el repositorio principal es referido repositorio `upstream` . Su bifurcación conocida como repositorio de `origen`.
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
 
-Necesita una referencia de su clon local al repositorio `upstream` además del repositorio `origin`. Esto es para que pueda sincronizar los cambios desde el repositorio principal sin el requisito de bifurcar y clonar repetidamente.
+You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
-1. Cambiar directorio al nuevo directorio de freeCodeCamp:
+1. Change directory to the new freeCodeCamp directory:
 
    ```console
    cd freeCodeCamp
    ```
 
-2. Añadir una referencia remota al repositorio principal de freeCodeCamp:
+2. Add a remote reference to the main freeCodeCamp repository:
 
    ```console
    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
-3. Asegúrese de que la configuración se vea correcta:
+3. Ensure the configuration looks correct:
 
    ```console
    git remote -v
    ```
 
-   La salida debería verse parecida a como se muestra debajo (remplazando `YOUR_USER_NAME` con tu usuario de GitHub):
+   The output should look something like below (replacing `YOUR_USER_NAME` with your GitHub username):
 
    ```console
    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
@@ -135,25 +172,19 @@ Necesita una referencia de su clon local al repositorio `upstream` además del r
    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Ejecutando freeCodeCamp localmente
+## Running freeCodeCamp locally
 
-Ahora que tienes una copia local de freeCodeCamp, puedes seguir estas instrucciones para ejecutarla localmente. Esto le permitirá:
+Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
 
-- Vista previa de ediciones a páginas como aparecerían en la plataforma de aprendizaje.
-- Trabajar en temas y mejoras relacionados con la IU.
-- Depurar y arreglar problemas con los servidores de aplicaciones y aplicaciones cliente.
+- Preview edits to pages as they would appear on the learning platform.
+- Work on UI related issues and enhancements.
+- Debug and fix issues with the application servers and client apps.
 
-Si tiene problemas, primero realice una búsqueda web para su problema y compruebe si ya ha sido respondida. Si no encuentra una solución, por favor busque en nuestra página [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) para una solución e infórmese del problema si aún no ha sido reportado.
+If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
 
-Y como siempre, sientase libre de hacer preguntas en la categoría ['Contributors' en nuestro foro](https://forum.freecodecamp.org/c/contributors) o en [nuestro servidor de chat](https://discord.gg/PRyKn3Vbay).
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://discord.gg/PRyKn3Vbay).
 
-### Configurando dependencias
-
-We have automated the process of setting up the development environment in Gitpod for you.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
-
-(You will still need to create your own fork and branch.)
+### Configuring dependencies
 
 #### Paso 1: Configurar el archivo de variable de entorno
 
@@ -212,7 +243,7 @@ mongod
 
 #### **Windows**
 
-- En Windows, debes especificar la ruta completa al binario `mondios`
+- On Windows, you must specify the full path to the `mongod` binary
 
 ```console
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod"

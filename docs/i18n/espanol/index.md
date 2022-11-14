@@ -41,12 +41,4 @@ Nuestra plataforma de aprendizaje se ejecuta en un stack de JavaScript moderno. 
 
 A grandes rasgos, tenemos un servidor API basado en Node.js, un conjunto de aplicaciones cliente basadas en React, scripts de prueba para evaluar proyectos currículo enviados por los estudiantes, y más. Si deseas contribuir de manera productiva a la plataforma de aprendizaje, te recomendamos que te familiarices un poco con estas herramientas.
 
-Si quieres ayudarnos a mejorar nuestro código base...
-
-**puedes optar por utilizar Gitpod, una herramienta gratuita de desarrollo en línea que crea entornos listos para escribir código para freeCodeCamp directamente en el navegador.**
-
-[![Abrir en GitPod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
-
-O puedes...
-
-**[Configura freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md) en tu máquina.**
+**If you want to help us improve our codebase here's [how to set up freeCodeCamp](how-to-setup-freecodecamp-locally.md).**

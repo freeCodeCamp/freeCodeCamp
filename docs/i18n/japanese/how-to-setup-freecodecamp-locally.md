@@ -2,15 +2,79 @@
 
 コードベースやカリキュラムのバグを修正するなど、コントリビューションワークフローの中には、ローカルコンピュータ上で freeCodeCamp を実行する必要があるものがあります。
 
-### ローカルマシンを準備する方法
+> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod. We have automated the process of installating all the dependencies & tools you will need.
+> 
+> Continue reading this guide to learn more about using GitPod.
 
-お使いのオペレーティングシステムの必須ソフトウェアをインストールすることから始めます。
+## GitHub でリポジトリをフォークする
 
-私たちは、Linux または Unix ベースのシステムでの開発を主にサポートしています。 スタッフとコミュニティのコントリビューターは、Ubuntu と macOS にインストールされているツールを使用して、定期的にコードベースの作業をしています。
+[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-また、WSL2 を介した Windows 10 をサポートしており、[ガイド](how-to-setup-wsl.md) を読んで準備することができます。
+This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
-コミュニティメンバーの中には、Git for Windows (Git Bash) や Windows にインストールされている他のツールを使用して、Windows 10でネイティブに開発する人もいます。 現時点では、このようなセットアップに対する公式サポートは行っておらず、WSL2 の使用をお勧めしています。
+> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
+> 
+> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
+
+**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
+
+1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
+
+2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
+
+3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp` (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
+
+<details>
+   <summary>
+      How to fork freeCodeCamp on GitHub (screenshot)
+   </summary>
+
+   <br>
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
+</details>
+
+## Use a Local Machine or GitPod
+
+Once you have forked the repository, choose one among the below. You can either use your own local machine or a GitPod-based workspace to work on the codebase.
+
+For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
+
+### How to prepare a GitPod workspace
+
+We have automated the process of installating all the dependencies & tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
+
+There are various ways to launch an GitPod workspace:
+
+1. **(Fastest)** Prepend `gitpod.io/#` in front of any URL from GitHub.
+
+   For example, if you visit your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, add `gitpod.io/#` in the front of the URL in the address bar and hit enter.
+
+   That is you can navigate to
+
+   ```
+   gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git
+   ```
+
+   and you should see a workspace created for you. This works for any repository or pull-request on GitHub.
+
+2. Alternatively install one of the below extentions for your browser.
+
+   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - works with Chromimum-based browsers like Google Chrome, Brave, Edge, etc.
+   - [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
+
+   Once installed you will see a 'GitPod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. See the extension page for details, screenshots, etc.
+
+That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of [how the URLs & Ports work within a GitPod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
+
+### How to prepare your local machine
+
+Start by installing the prerequisite software for your operating system.
+
+We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
+
+We also support Windows 10 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
+
+Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
 #### 必要条件:
 
@@ -22,7 +86,7 @@
 
 > [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
-Node.js が既にマシンにインストールされている場合、以下のコマンドを実行してバージョンを検証します。
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
 node -v
@@ -31,102 +95,75 @@ npm -v
 
 > [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
 
-必要条件をインストールしたら、開発環境を準備します。 これは多くの開発ワークフローに共通しており、一度だけこれを行う必要があります。
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
 ##### 以下の手順に従って、開発環境を準備してください。
 
-1. インストール済みでない場合は、[Git](https://git-scm.com/) またはお気に入りの Git クライアントをインストールしてください。 最新バージョンにアップデートしてください。お使いの OS にバンドルされているバージョンが古い可能性があります。
+1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
-2. (任意ですが推奨) GitHub 用の [SSH キーを設定](https://help.github.com/articles/generating-an-ssh-key/) します。
+2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 
-3. 選択したコードエディターをインストールします。
+3. Install a code editor of your choice.
 
-   [Visual Studio Code](https://code.visualstudio.com/) または [Atom](https://atom.io/) の使用を強くお勧めします。 これらは優れた、無料のオープンソースコードエディターです。
+   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
-4. コードエディターのリンティングを設定します。
+4. Set up linting for your code editor.
 
-   [エディターでの ESLint 実行](http://eslint.org/docs/user-guide/integrations.html) を入手してください。[freeCodeCamp の JavaScript スタイルガイド](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121) に準拠していないものを強調表示できます。
+   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-   > [!TIP] リンティングエラーを無視しないでください。 これらは **サポート** し、クリーンでシンプルなコードベースを確保するためのものです。
+   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
-## GitHub でリポジトリをフォークする
+## Clone your fork from GitHub
 
-[フォーク](https://help.github.com/articles/about-forks/) とは Github 上に freeCodeCamp メインリポジトリ (別名 _repo_) のコピーを自分用に用意するステップです。
-
-これは、GitHub 上の freeCodeCamp のコピーで作業できるようにするために、またリポジトリをダウンロード (クローン) しローカルで作業するために不可欠です。 後で、プルリクエスト (PR) を介して、フォークからメインリポジトリにプルされるように変更をリクエストできます。
-
-> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
-> 
-> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
-
-**以下の手順に従って `https://github.com/freeCodeCamp/freeCodeCamp` リポジトリをフォークします。**
-
-1. GitHub 上の freeCodeCamp リポジトリに移動します。<https://github.com/freeCodeCamp/freeCodeCamp>
-
-2. インターフェースの右上隅にある「フォーク」ボタンをクリックします ([詳細はこちら](https://help.github.com/articles/fork-a-repo/))。
-
-3. リポジトリをフォークすると、freeCodeCamp リポジトリのコピーである `https://github.com/YOUR_USER_NAME/freeCodeCamp` に移動することになります (`YOUR_USER_NAME` は GitHub のユーザーネームに置き換えられます)。
-
-<details>
-   <summary>
-      GitHub で freeCodeCamp をフォークする方法 (スクリーンショット)
-   </summary>
-
-   <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="GitHub で freeCodeCamp をフォークする方法" />
-</details>
-
-## GitHub からフォークのクローンを作る
-
-[クローン作成](https://help.github.com/articles/cloning-a-repository/) とは、自分または他の誰かが所有しているリポジトリのコピーを、`remote` の場所から **ダウンロード** することです。 自分で所有している場合、この remote の場所は freeCodeCamp リポジトリの `fork`にあり、`https://github.com/YOUR_USER_NAME/freeCodeCamp` で入手可能です。 `YOUR_USER_NAME` は、GitHub のユーザーネームに置き換えられます。
+[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
 
 > [!WARNING] If you are working on a WSL2 Linux Distro, you might get performance and stability issues by running this project in a folder which is shared between Windows and WSL2 (e.g. `/mnt/c/Users/`). Therefore we recommend to clone this repo into a folder which is mainly used by your WSL2 Linux Distro and not directly shared with Windows (e.g. `~/PROJECTS/`).
 > 
 > See [this GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/40632) for further Information about this problem.
 
-以下のコマンドをローカルマシンで実行します。
+Run these commands on your local machine:
 
-1. Terminal / Command Prompt / Shell をプロジェクトディレクトリで開きます。
+1. Open a Terminal / Command Prompt / Shell in your projects directory
 
-   _例: `/yourprojectsdirectory/`_
+   _i.e.: `/yourprojectsdirectory/`_
 
-2. `YOUR_USER_NAME` を GitHub のユーザーネームに置き換えて、freeCodeCamp のフォークのクローンを作成します。
+2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
    ```console
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
-これで、freeCodeCamp リポジトリ全体がプロジェクトディレクトリにダウンロードされます。
+This will download the entire freeCodeCamp repository to your projects directory.
 
-注: `--depth=1` は、最新の履歴 / コミットのみでフォークのシャロークローンを作成します。
+Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
-## 親からの同期を設定する
+## Set up syncing from parent
 
-フォークのコピーをダウンロードしたので、親リポジトリに `upstream` リモートを設定する必要があります。
+Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
-[前述](#github-でリポジトリをフォークする) のように、メインリポジトリは `upstream` リポジトリと呼ばれています。 自身のフォークは `origin` リポジトリと呼ばれています。
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
 
-`origin` リポジトリに加えて、ローカルクローンから `upstream` リポジトリへの参照が必要です。 これは、フォークやクローンを繰り返し行うことなく、メインリポジトリからの変更を同期できるようにするためです。
+You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
-1. ディレクトリを新しい freeCodeCamp ディレクトリに変更します。
+1. Change directory to the new freeCodeCamp directory:
 
    ```console
    cd freeCodeCamp
    ```
 
-2. メインの freeCodeCamp リポジトリへのリモート参照を追加します。
+2. Add a remote reference to the main freeCodeCamp repository:
 
    ```console
    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
-3. 設定が正しいことを確認します。
+3. Ensure the configuration looks correct:
 
    ```console
    git remote -v
    ```
 
-   出力は以下のようになります (`YOUR_USER_NAME` を GitHub ユーザ名に置き換えます)。
+   The output should look something like below (replacing `YOUR_USER_NAME` with your GitHub username):
 
    ```console
    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
@@ -135,25 +172,19 @@ npm -v
    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## freeCodeCamp をローカルで実行する
+## Running freeCodeCamp locally
 
-freeCodeCamp のローカルコピーができたので、これらの指示に従ってローカルで実行することが可能です。 これによって次のことができるようになります。
+Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
 
-- 学習プラットフォーム上に表示されるページへの編集をプレビューする。
-- UI関連の Issue と機能強化に取り組む。
-- アプリケーションサーバーとクライアントアプリの Issue をデバッグして修正する。
+- Preview edits to pages as they would appear on the learning platform.
+- Work on UI related issues and enhancements.
+- Debug and fix issues with the application servers and client apps.
 
-問題が発生した場合は、まず Web 検索を実行し、既に解決済みであるかどうかを確認します。 解決策が見つからない場合、[GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) ページを検索し、まだ報告されていない Issue を報告してください。
+If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
 
-そして、[フォーラムの「Contributors」カテゴリ](https://forum.freecodecamp.org/c/contributors) または [チャットサーバー](https://discord.gg/PRyKn3Vbay) へいつでもお気軽にお問い合わせください。
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://discord.gg/PRyKn3Vbay).
 
-### 依存関係を設定する
-
-We have automated the process of setting up the development environment in Gitpod for you.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
-
-(You will still need to create your own fork and branch.)
+### Configuring dependencies
 
 #### ステップ 1: 環境変数ファイルを設定する
 
@@ -212,7 +243,7 @@ mongod
 
 #### **Windows**
 
-- Windows では、`mongod` バイナリへの完全なパスを指定する必要があります。
+- On Windows, you must specify the full path to the `mongod` binary
 
 ```console
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod"

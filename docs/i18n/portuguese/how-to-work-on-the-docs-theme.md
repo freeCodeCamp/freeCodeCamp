@@ -43,19 +43,7 @@ Normalmente, você não precisaria alterar nenhuma configuração ou compilar o 
 
 ### Veiculando localmente o site da documentação
 
-Clone o freeCodeCamp:
-
-```console
-git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-```
-
-Instale o `docsify`:
-
-```console
-npx docsify serve docs
-```
-
-Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
 #### Veicule e inicie apenas o site da documentação
 

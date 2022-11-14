@@ -1,81 +1,81 @@
-Follow these guidelines to contribute to the codebase. This is highly recommended if you want to contribute regularly.
+Siga estas orientações para contribuir para o código. Isso é altamente recomendado se você quer contribuir regularmente.
 
-Ignoring these steps may soil your copy which makes the contributing, maintaining, and reviewing processes difficult.
+Ignorar essas etapas pode causar problemas à sua cópia, o que dificulta os processos daqueles que contribuem, mantêm e revisam.
 
-## Contributing to the Codebase
+## Contribuindo para a base de código
 
-You can now make changes to files and commit your changes to your fork, which you can prepare by reading [how to set up freecodecamp](how-to-setup-freecodecamp-locally.md).
+Agora, você pode fazer alterações nos arquivos e fazer o commit das alterações no seu fork, que você pode preparar lendo [Como configurar o freeCodeCamp](how-to-setup-freecodecamp-locally.md).
 
-Follow these steps:
+Siga estes passos:
 
-1. Validate that you are on the `main` branch:
+1. Certifique-se que está no branch `main`:
 
    ```console
    git status
    ```
 
-   You should get an output like this:
+   Você deve ver um resultado como este:
 
    ```console
-   On branch main
-   Your branch is up-to-date with 'origin/main'.
+   Na branch main
+   Sua branch está atualizada com 'origin/main'.
 
-   nothing to commit, working directory clean
+   nada para enviar no commit, diretório de trabalho limpo
    ```
 
-   If you got different message, then you aren't on main or your working directory isn't clean, resolve any outstanding files/commits and checkout `main`:
+   Se você receber uma mensagem diferente, você não está em main ou seu diretório de trabalho não está limpo. Resolva quaisquer arquivos/commits pendentes e saia de `main`:
 
    ```console
    git checkout main
    ```
 
-2. Sync the latest changes from the freeCodeCamp upstream `main` branch to your `main` fork branch:
+2. Sincronize as últimas mudanças da branch `main` upstream do freeCodeCamp para sua branch `main` do fork:
 
-   > [!WARNING] If you have any outstanding pull requests that you made from the `main` branch of your fork, you will lose them at the end of this step.
+   > [!WARNING] Se você possui qualquer pull request feito a partir da branch `main`, você os perderá ao fim desta etapa.
    > 
-   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `main`.
+   > Certifique-se de que foi feito um merge no seu pull request por um moderador antes de executar este passo. Para evitar essa situação, você **sempre** deve trabalhar em uma brach que não seja a `main`.
 
-   This step **will sync the latest changes** from the main repository of freeCodeCamp.
+   Este passo **irá sincronizar as últimas alterações** do repositório principal do freeCodeCamp.
 
-   Update your copy of the freeCodeCamp upstream repository:
+   Atualize sua cópia do repositório upstream do freeCodeCamp:
 
    ```console
    git fetch upstream
    ```
 
-   Hard reset your main branch with the freeCodeCamp main:
+   Faça um hard reset na sua branch main com a main do freeCodeCamp:
 
    ```console
    git reset --hard upstream/main
    ```
 
-   Push your main branch to your origin to have a clean history on your fork on GitHub:
+   Faça um push da sua branch main para a origin para obter um histórico claro em seu fork do GitHub:
 
    ```console
    git push origin main --force
    ```
 
-   You can validate your current main matches the upstream/main by performing a diff:
+   Você pode validar se sua main atual combina com upstream/main fazendo um diff:
 
    ```console
    git diff upstream/main
    ```
 
-   The resulting output should be empty. This process is important, because you will be rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
+   O resultado deve mostrar vazio. O processo é importante, pois você fará um rebase em sua branch usando `upstream/main` frequentemente para evitar conflitos depois.
 
-3. Create a fresh new branch:
+3. Crie uma branch novinha em folha:
 
-   Working on a separate branch for each issue helps you keep your work copy clean. You should never work on the `main`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+   Trabalhar em uma branch separada para cada issue ajuda a manter sua cópia de trabalho limpa. Você nunca deve trabalhar na `main`. Isso vai sujar sua cópia do freeCodeCamp e você pode ter que começar de novo com um clone ou fork.
 
-   Check that you are on `main` as explained previously, and branch off from there:
+   Veja se você está na `main` como explicado antes e crie uma branch a partir dela:
 
    ```console
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
+   Seu nome de branch deve começar com `fix/`, `feat/`, `docs/`, etc. Evite usar números de issues em branches. Mantenha-os curtos, significativos e únicos.
 
-   Some examples of good branch names are:
+   Alguns exemplos de bons nomes para branches são:
 
    ```md
    fix/update-challenges-for-react
@@ -85,131 +85,131 @@ Follow these steps:
    translate/add-spanish-basic-html
    ```
 
-4. Edit pages and work on code in your favorite text editor.
+4. Edite páginas e trabalhe no código em seu editor de texto favorito.
 
-5. Once you are happy with the changes you should optionally run freeCodeCamp to preview the changes.
+5. Quando estiver satisfeito com as alterações, você deve opcionalmente executar o freeCodeCamp para visualizar as alterações.
 
-6. Make sure you fix any errors and check the formatting of your changes.
+6. Certifique-se de corrigir quaisquer erros e verificar a formatação de suas alterações.
 
-7. Check and confirm the files you are updating:
+7. Verifique e confirme os arquivos que você está atualizando:
 
    ```console
    git status
    ```
 
-   This should show a list of `unstaged` files that you have edited.
+   Isso deve mostrar uma lista dos arquivos `unstaged` que você editou.
 
    ```console
-   On branch feat/documentation
-   Your branch is up to date with 'upstream/feat/documentation'.
+   Na branch feat/documentation
+   Sua branch está atualizada com 'upstream/feat/documentation'.
 
-   Changes were not staged for commit:
-   (use "git add/rm <file>..." to update what will be committed)
-   (use "git checkout -- <file>..." to discard changes in the working directory)
+   As mudanças não estão organizadas para commit:
+   (use "git add/rm <file>..." para atualizar o que será enviado)
+   (use "git checkout -- <file>..." para descartar as mudanças do diretório)
 
-       modified:   CONTRIBUTING.md
-       modified:   docs/README.md
-       modified:   docs/how-to-setup-freecodecamp-locally.md
-       modified:   docs/how-to-work-on-guide-articles.md
+       modificado:   CONTRIBUTING.md
+       modificado:   docs/README.md
+       modificado:   docs/how-to-setup-freecodecamp-locally.md
+       modificado:   docs/how-to-work-on-guide-articles.md
    ...
    ```
 
-8. Stage the changes and make a commit:
+8. Organize as alterações e faça um commit:
 
-   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
+   Nesta etapa, você só deve marcar arquivos que você editou ou adicionou. Você pode executar um reset e resolver arquivos que você não pretendeu mudar se necessário.
 
    ```console
-   git add path/to/my/changed/file.ext
+   git add caminho/para/meu/arquivo/alterado.ext
    ```
 
-   Or you can add all the `unstaged` files to the staging area:
+   Ou você pode adicionar todos os arquivos `unstaged` para a área de preparação:
 
    ```console
    git add .
    ```
 
-   Only the files that were moved to the staging area will be added when you make a commit.
+   Apenas os arquivos que foram movidos para a área de staging serão adicionados quando você fizer um commit.
 
    ```console
    git status
    ```
 
-   Output:
+   Resultado:
 
    ```console
-   On branch feat/documentation
-   Your branch is up to date with 'upstream/feat/documentation'.
+   Na branch feat/documentation
+   Sua branch está atualizada com 'upstream/feat/documentation'.
 
-   Changes to be committed:
-   (use "git reset HEAD <file>..." to unstage)
+   Mudanças para as quais devemos fazer um commit:
+   (use "git reset HEAD <file>..." para descartar as mudanças do diretório)
 
-       modified:   CONTRIBUTING.md
-       modified:   docs/README.md
-       modified:   docs/how-to-setup-freecodecamp-locally.md
-       modified:   docs/how-to-work-on-guide-articles.md
+       modificado:   CONTRIBUTING.md
+       modificado:   docs/README.md
+       modificado:   docs/how-to-setup-freecodecamp-locally.md
+       modificado:   docs/how-to-work-on-guide-articles.md
    ```
 
-   Now, you can commit your changes with a short message like so:
+   Agora, você pode fazer o commit das alterações com uma pequena mensagem assim:
 
    ```console
    git commit -m "fix: my short commit message"
    ```
 
-   Some examples:
+   Alguns exemplos:
 
    ```md
-   fix: add test for JavaScript - for loop step
-   feat: add link for article for alexa skills
+   fix: adicionado teste para JavaScript - passo do laço for
+   feat: adicionado link para o artigo de habilidades em alexa
    ```
 
-   Make a conventional commit message. This is a good practice As a developer, and you will be following standard practices.
+   Faça uma mensagem de commit convencional. Essa é uma boa prática. Como desenvolvedor, você estará seguindo as práticas padrão.
 
-   Some examples of conventional commit messages are:
+   Alguns exemplos de mensagens convencionais de commit são:
 
    ```md
-   fix: improve HTML step
-   fix: fix build scripts for Travis-CI
-   feat: add link article JavaScript hoisting
-   docs: update contributing guidelines
+   fix: melhorar o passo do HTML
+   fix: consertar scripts de build para o Travis-CI
+   feat: adicionar link do artigo sobre hoisting em JavaScript
+   docs: atuaizar as diretrizes de colaboração
    ```
 
-   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
+   Escreva pouco, não mais do que 50 caracteres. Você sempre pode adicionar informações extras na descrição da mensagem de commit.
 
-   This does not take any more time than an unconventional message like 'update file' or 'add index.md'
+   Isso não leva mais tempo do que uma mensagem não convencional como 'atualizar arquivo' ou 'adicionar index.md'
 
-   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+   Você pode aprender mais sobre o motivo de usar commits convencionais [aqui](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
+9. Se você se deu conta que precisa editar um arquivo ou atualizar a mensagem de commit você pode fazer isso assim:
 
    ```console
    git commit --amend
    ```
 
-   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
+   Isso abrirá um editor de texto padrão, como `nano` ou `vi` onde você pode editar o título da mensagem de commit e adicionar/editar a descrição.
 
-10. Next, you can push your changes to your fork:
+10. Em seguida, você pode fazer push das suas alterações no seu fork:
 
     ```console
-    git push origin branch/name-here
+    git push origin branch/nome-aqui
     ```
 
-## Proposing a Pull Request (PR)
+## Propondo um Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).
 
-## Quick commands reference
+## Referência de comandos rápidos
 
-A quick reference to the commands that you will need when working.
+Uma rápida referência aos comandos que você precisará ao trabalhar.
 
-| command                                                        | description                                                                         |
-| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `npm run storybook`                                            | Starts Storybook for component library development.                                 |
-| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `npm run test-client`                                          | Run the client test suite.                                                          |
-| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
-| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
-| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
-| `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
-| `npm run test-server`                                          | Run the server test suite.                                                          |
-| `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
-| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
+| comando                                                        | descrição                                                                                       |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `npm test`                                                     | Executa todos os testes JS no sistema, incluindo cliente, servidor, lint e testes dos desafios. |
+| `npm run test-client`                                          | Executa o conjunto de testes do cliente.                                                        |
+| `npm run test:curriculum`                                      | Executa o conjunto de teste de currículo.                                                       |
+| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Testa um bloco específico.                                                                      |
+| `npm run test:curriculum --superblock='responsive-web-design'` | Testa um super bloco específico.                                                                |
+| `npm run test-curriculum-full-output`                          | Executa o ocnjunto de teste de currículo, sem parar após o primeiro erro                        |
+| `npm run test-server`                                          | Executa o conjunto de testes de servidor.                                                       |
+| `npm run e2e`                                                  | Executa os testes de ponta a ponta do Cypress.                                                  |
+| `npm run clean`                                                | Desinstala todas as dependências e limpa os caches.                                             |
+| `npm run storybook`                                            | Inicia o Storybook para o desenvolvimento da biblioteca de componentes.                         |
