@@ -375,7 +375,6 @@ Challenges that have been already audited cannot fall back to their English vers
     await validate(filePath, meta.superBlock);
 
     const useEnglish =
-      lang === 'english' ||
       !isAuditedCert(lang, meta.superBlock) ||
       !fs.existsSync(getFullPath(lang, filePath));
 
