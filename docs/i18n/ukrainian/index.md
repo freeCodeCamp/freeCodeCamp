@@ -41,4 +41,4 @@
 
 В цілому ми маємо сервер API на основі Node.js, набір клієнтських додатків на основі React, тестові скрипти для оцінки проєктів кемперів та багато іншого. Якщо ви хочете здійснити внесок до навчальної платформи, ми радимо ознайомитися із цими інструментами.
 
-**If you want to help us improve our codebase here's [how to set up freeCodeCamp](how-to-setup-freecodecamp-locally.md).**
+**Якщо ви хочете допомогти нам покращити нашу кодову базу, ось [як встановити freeCodeCamp](how-to-setup-freecodecamp-locally.md).**
