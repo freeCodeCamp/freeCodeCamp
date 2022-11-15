@@ -1,12 +1,9 @@
 import dedent from 'dedent';
 import { Observable } from 'rx';
-// import debug from 'debug';
 import { isEmail } from 'validator';
 
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 import { observeMethod, observeQuery } from '../../server/utils/rx';
-
-// const log = debug('fcc:models:userIdent');
 
 export function ensureLowerCaseEmail(profile) {
   return typeof profile?.emails?.[0]?.value === 'string'
