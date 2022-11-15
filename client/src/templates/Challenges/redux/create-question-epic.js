@@ -69,9 +69,9 @@ function createQuestionEpic(action$, state$, { window }) {
         } = editableRegionStrings;
 
         challengeFiles.forEach(file => {
-          const { contents, seedEditableRegionBoundaries } = file;
-          if (seedEditableRegionBoundaries.length > 0) {
-            const [start, end] = seedEditableRegionBoundaries;
+          const { contents, editableRegionBoundaries } = file;
+          if (editableRegionBoundaries.length > 0) {
+            const [start, end] = editableRegionBoundaries;
             const editableContents = contents.split(lineBreak);
             editableContents.splice(start, 0, comment);
             editableContents.splice(end, 0, comment);
