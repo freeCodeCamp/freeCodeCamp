@@ -98,7 +98,6 @@ export const createAsyncUserDonation = (user, donation) => {
 };
 
 export function createDonationObj(body) {
-  // creates donation object
   const {
     resource: {
       id,
