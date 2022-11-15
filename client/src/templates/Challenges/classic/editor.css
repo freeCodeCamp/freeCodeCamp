@@ -53,6 +53,7 @@ textarea.inputarea {
 
 .challenge-description-header {
   display: flex;
+  gap: 7px;
 }
 
 .description-container h1 {
@@ -61,7 +62,7 @@ textarea.inputarea {
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.1;
-  margin: 0 0 0.6rem;
+  margin: 0.1em 0 0.6rem;
 }
 
 .description-highlighter {

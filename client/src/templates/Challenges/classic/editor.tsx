@@ -70,7 +70,6 @@ import LowerJaw from './lower-jaw';
 
 import './editor.css';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
@@ -265,7 +264,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     noteIndex: number;
     shouldPlay: boolean | undefined;
   }>({
-    // eslint-disable-next-line no-undefined
     sampler: undefined,
     noteIndex: 0,
     shouldPlay: store.get('fcc-sound') as boolean | undefined
@@ -456,7 +454,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
-      /* eslint-disable no-bitwise */
       keybindings: [
         monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
@@ -701,14 +698,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       )}</span>`;
       jawHeading.appendChild(challengeTitle);
       const checkmark = ReactDOMServer.renderToStaticMarkup(
-        <GreenPass
-          hushScreenReaderText
-          style={{
-            height: '15px',
-            width: '15px',
-            marginLeft: '7px'
-          }}
-        />
+        <GreenPass hushScreenReaderText />
       );
       const completedChallengeHeader = document.createElement('div');
       completedChallengeHeader.innerHTML = checkmark;
