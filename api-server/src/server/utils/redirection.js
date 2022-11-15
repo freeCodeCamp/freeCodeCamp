@@ -12,7 +12,7 @@ function getReturnTo(encryptedParams, secret, _homeLocation = homeLocation) {
   } catch (e) {
     // TODO: report to Sentry? Probably not. Remove entirely?
     console.log(e);
-    // something went wrong, use default params
+
     params = {
       returnTo: `${_homeLocation}/learn`,
       origin: _homeLocation,
