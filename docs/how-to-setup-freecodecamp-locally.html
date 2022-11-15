@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>how-to-setup-freecodecamp-locally.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.</p>
+<p>Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.</p>
+<blockquote>
+<p>[!TIP]
+If you are not interested in setting up freeCodeCamp locally, consider using Gitpod. We have automated the process of installating all the dependencies &amp; tools you will need.</p>
+<p>Continue reading this guide to learn more about using GitPod.</p>
+</blockquote>
+<h2 id="fork-the-repository-on-github">Fork the repository on GitHub</h2>
+<p><a href="https://help.github.com/articles/about-forks/">Forking</a> is a step where you get your own copy of freeCodeCamp's main repository (a.k.a <em>repo</em>) on GitHub.</p>
+<p>This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).</p>
+<blockquote>
+<p>[!TIP]
+The main repository at <code>https://github.com/freeCodeCamp/freeCodeCamp</code> is often referred to as the <code>upstream</code> repository.</p>
+<p>Your fork at <code>https://github.com/YOUR_USER_NAME/freeCodeCamp</code> is often referred to as the <code>origin</code> repository. <code>YOUR_USER_NAME</code> would be replaced with your GitHub username.</p>
+</blockquote>
+<p><strong>Follow these steps to fork the <code>https://github.com/freeCodeCamp/freeCodeCamp</code> repository:</strong></p>
+<ol>
+<li>
+<p>Go to the freeCodeCamp repository on GitHub: <a href="https://github.com/freeCodeCamp/freeCodeCamp">https://github.com/freeCodeCamp/freeCodeCamp</a></p>
+</li>
+<li>
+<p>Click the &quot;Fork&quot; Button in the upper right-hand corner of the interface (<a href="https://help.github.com/articles/fork-a-repo/">More Details Here</a>)</p>
+</li>
+<li>
+<p>After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at <code>https://github.com/YOUR_USER_NAME/freeCodeCamp</code> (<code>YOUR_USER_NAME</code> would be replaced with your GitHub user name.)</p>
+</li>
+</ol>
+<details>
+   <summary>
+      How to fork freeCodeCamp on GitHub (screenshot)
+   </summary>
+   <br>
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub">
+</details>
+<h2 id="use-a-local-machine-or-gitpod">Use a Local Machine or GitPod</h2>
+<p>Once you have forked the repository, choose one among the below. You can either use your own local machine or a GitPod-based workspace to work on the codebase.</p>
+<p>For contributing long-term, we recommend you setup freeCodeCamp on your local machine.</p>
+<h3 id="how-to-prepare-a-gitpod-workspace">How to prepare a GitPod workspace</h3>
+<p>We have automated the process of installating all the dependencies &amp; tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.</p>
+<p>There are various ways to launch an GitPod workspace:</p>
+<ol>
+<li>
+<p><strong>(Fastest)</strong> Prepend <code>gitpod.io/#</code> in front of any URL from GitHub.</p>
+<p>For example, if you visit your fork at <code>https://github.com/YOUR_USER_NAME/freeCodeCamp.git</code>, add <code>gitpod.io/#</code> in the front of the URL in the address bar and hit enter.</p>
+<p>That is you can navigate to</p>
+<pre class="hljs"><code><div>gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git
+</div></code></pre>
+<p>and you should see a workspace created for you. This works for any repository or pull-request on GitHub.</p>
+</li>
+<li>
+<p>Alternatively install one of the below extentions for your browser.</p>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki">Chrome Webstore</a> - works with Chromimum-based browsers like Google Chrome, Brave, Edge, etc.</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/gitpod">Firefox Add-on</a> - Firefox</li>
+</ul>
+<p>Once installed you will see a 'GitPod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. See the extension page for details, screenshots, etc.</p>
+</li>
+</ol>
+<p>That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of <a href="https://www.gitpod.io/docs/configure/workspaces/ports">how the URLs &amp; Ports work within a GitPod</a> workspace.</p>
+<h2 id="how-to-prepare-your-local-machine"><strong>How to prepare your local machine</strong></h2>
+<p>Start by installing the prerequisite software for your operating system.</p>
+<p>We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.</p>
+<p>We also support Windows 10 via WSL2, which you can prepare by <a href="how-to-setup-wsl.md">reading this guide</a>.</p>
+<p>Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.</p>
+<h4 id="prerequisites">Prerequisites:</h4>
+<table>
+<thead>
+<tr>
+<th>Prerequisite</th>
+<th>Version</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://nodejs.org">Node.js</a></td>
+<td><code>16.x</code></td>
+<td>We use the &quot;Active LTS&quot; version, See <a href="https://nodejs.org/en/about/releases/">LTS Schedule</a>.</td>
+</tr>
+<tr>
+<td>npm (comes bundled with Node)</td>
+<td><code>8.x</code></td>
+<td>We use the version bundled with Node.js Active LTS.</td>
+</tr>
+<tr>
+<td><a href="https://docs.mongodb.com/manual/administration/install-community/">MongoDB Community Server</a></td>
+<td><code>4.2.x</code></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!ATTENTION]
+If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See <a href="#troubleshooting">troubleshooting</a> for details.</p>
+</blockquote>
+<p>If Node.js is already installed on your machine, run the following commands to validate the versions:</p>
+<pre class="hljs"><code><div>node -v
+npm -v
+</div></code></pre>
+<blockquote>
+<p>[!TIP]
+We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.</p>
+</blockquote>
+<p>Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.</p>
+<h2 id="follow-these-steps-to-get-your-development-environment-ready">Follow these steps to get your development environment ready:</h2>
+<ol>
+<li>
+<p>Install <a href="https://git-scm.com/">Git</a> or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.</p>
+</li>
+<li>
+<p>(Optional but recommended) <a href="https://help.github.com/articles/generating-an-ssh-key/">Set up an SSH Key</a> for GitHub.</p>
+</li>
+<li>
+<p>Install a code editor of your choice.</p>
+<p>We highly recommend using <a href="https://code.visualstudio.com/">Visual Studio Code</a> or <a href="https://atom.io/">Atom</a>. These are great, free and open source code editors.</p>
+</li>
+<li>
+<p>Set up linting for your code editor.</p>
+<p>You should have <a href="http://eslint.org/docs/user-guide/integrations.html">ESLint running in your editor</a>, and it will highlight anything that doesn't conform to <a href="http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121">freeCodeCamp's JavaScript Style Guide</a>.</p>
+<blockquote>
+<p>[!TIP]
+Please do not ignore any linting errors. They are meant to <strong>help</strong> you and to ensure a clean and simple codebase.</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="clone-your-fork-from-github">Clone your fork from GitHub</h2>
+<p><a href="https://help.github.com/articles/cloning-a-repository/">Cloning</a> is where you <strong>download</strong> a copy of a repository from a <code>remote</code> location that is either owned by you or by someone else. In your case, this remote location is your <code>fork</code> of freeCodeCamp's repository that should be available at <code>https://github.com/YOUR_USER_NAME/freeCodeCamp</code>. (<code>YOUR_USER_NAME</code> would be replaced with your GitHub user name.)</p>
+<blockquote>
+<p>[!WARNING]
+If you are working on a WSL2 Linux Distro, you might get performance and stability issues by running this project in a folder which is shared between Windows and WSL2 (e.g. <code>/mnt/c/Users/</code>).
+Therefore we recommend to clone this repo into a folder which is mainly used by your WSL2 Linux Distro and not directly shared with Windows (e.g. <code>~/PROJECTS/</code>).</p>
+<p>See <a href="https://github.com/freeCodeCamp/freeCodeCamp/issues/40632">this GitHub Issue</a> for further Information about this problem.</p>
+</blockquote>
+<p>Run these commands on your local machine:</p>
+<ol>
+<li>
+<p>Open a Terminal / Command Prompt / Shell in your projects directory</p>
+<p><em>i.e.: <code>/yourprojectsdirectory/</code></em></p>
+</li>
+<li>
+<p>Clone your fork of freeCodeCamp, replacing <code>YOUR_USER_NAME</code> with your GitHub Username</p>
+<pre class="hljs"><code><div>git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
+</div></code></pre>
+</li>
+</ol>
+<p>This will download the entire freeCodeCamp repository to your projects directory.</p>
+<p>Note: <code>--depth=1</code> creates a shallow clone of your fork, with only the most recent history/commit.</p>
+<h2 id="set-up-syncing-from-parent">Set up syncing from parent</h2>
+<p>Now that you have downloaded a copy of your fork, you will need to set up an <code>upstream</code> remote to the parent repository.</p>
+<p><a href="#fork-the-repository-on-github">As mentioned earlier</a>, the main repository is referred <code>upstream</code> repository. Your fork referred to as the <code>origin</code> repository.</p>
+<p>You need a reference from your local clone to the <code>upstream</code> repository in addition to the <code>origin</code> repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.</p>
+<ol>
+<li>
+<p>Change directory to the new freeCodeCamp directory:</p>
+<pre class="hljs"><code><div>cd freeCodeCamp
+</div></code></pre>
+</li>
+<li>
+<p>Add a remote reference to the main freeCodeCamp repository:</p>
+<pre class="hljs"><code><div>git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
+</div></code></pre>
+</li>
+<li>
+<p>Ensure the configuration looks correct:</p>
+<pre class="hljs"><code><div>git remote -v
+</div></code></pre>
+<p>The output should look something like below (replacing <code>YOUR_USER_NAME</code> with your GitHub username):</p>
+<pre class="hljs"><code><div>origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+</div></code></pre>
+</li>
+</ol>
+<h2 id="running-freecodecamp-locally">Running freeCodeCamp locally</h2>
+<p>Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:</p>
+<ul>
+<li>Preview edits to pages as they would appear on the learning platform.</li>
+<li>Work on UI related issues and enhancements.</li>
+<li>Debug and fix issues with the application servers and client apps.</li>
+</ul>
+<p>If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our <a href="https://github.com/freeCodeCamp/freeCodeCamp/issues">GitHub issues</a> page for a solution and report the issue if it has not yet been reported.</p>
+<p>And as always, feel free to ask questions on the <a href="https://forum.freecodecamp.org/c/contributors">'Contributors' category on our forum</a> or <a href="https://discord.gg/PRyKn3Vbay">our chat server</a>.</p>
+<h3 id="configuring-dependencies">Configuring dependencies</h3>
+<h4 id="step-1-set-up-the-environment-variable-file">Step 1: Set up the environment variable file</h4>
+<p>The default API keys and environment variables are stored in the file <code>sample.env</code>. This file needs to be copied to a new file named <code>.env</code> that is accessed dynamically during the installation step.</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#</span><span class="bash"> Create a copy of the <span class="hljs-string">"sample.env"</span> and name it <span class="hljs-string">".env"</span>.</span>
+<span class="hljs-meta">#</span><span class="bash"> Populate it with the necessary API keys and secrets:</span>
+</div></code></pre>
+<!-- tabs:start -->
+<h4 id="macoslinux"><strong>macOS/Linux</strong></h4>
+<pre class="hljs"><code><div>cp sample.env .env
+</div></code></pre>
+<h4 id="windows"><strong>Windows</strong></h4>
+<pre class="hljs"><code><div>copy sample.env .env
+</div></code></pre>
+<!-- tabs:end -->
+<p>The keys in the <code>.env</code> file are <em>not</em> required to be changed to run the app locally. You can leave the default values copied over from <code>sample.env</code> as-is.</p>
+<blockquote>
+<p>[!TIP]
+Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the <code>.env</code> file.</p>
+</blockquote>
+<h4 id="step-2-install-dependencies">Step 2: Install dependencies</h4>
+<p>This step will install the dependencies required for the application to run:</p>
+<pre class="hljs"><code><div>npm ci
+</div></code></pre>
+<h4 id="step-3-start-mongodb-and-seed-the-database">Step 3: Start MongoDB and seed the database</h4>
+<p>Before you can run the application locally, you will need to start the MongoDB service.</p>
+<blockquote>
+<p>[!NOTE]
+Unless you have MongoDB running in a setup different than the default, the URL stored as the <code>MONGOHQ_URL</code> value in the <code>.env</code> file should work fine. If you are using a custom configuration, modify this value as needed.</p>
+<p>If you followed along with the <a href="how-to-setup-wsl.md">Windows 10 via WSL2 Setup Guide</a>, then you should be able to skip this step if the MongoDB server from that guide is already running. You can confirm this by checking that you can reach <code>http://localhost:27017</code> on your local machine.</p>
+</blockquote>
+<p>Start the MongoDB server in a separate terminal:</p>
+  <!-- tabs:start -->
+<h4 id="macoslinux"><strong>macOS/Linux</strong></h4>
+<pre class="hljs"><code><div>mongod
+</div></code></pre>
+<h4 id="windows"><strong>Windows</strong></h4>
+<ul>
+<li>On Windows, you must specify the full path to the <code>mongod</code> binary</li>
+</ul>
+<pre class="hljs"><code><div>"C:\Program Files\MongoDB\Server\3.6\bin\mongod"
+</div></code></pre>
+<p>Make sure to replace <code>3.6</code> with the version you have installed</p>
+  <!-- tabs:end -->
+<blockquote>
+<p>[!TIP]
+You can avoid having to start MongoDB every time by installing it as a background service. You can <a href="https://docs.mongodb.com/manual/administration/install-community/">learn more about it in their documentation for your OS</a></p>
+</blockquote>
+<p>Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.</p>
+<pre class="hljs"><code><div>npm run seed
+</div></code></pre>
+<h4 id="step-4-start-the-freecodecamp-client-application-and-api-server">Step 4: Start the freeCodeCamp client application and API server</h4>
+<p>You can now start up the API server and the client applications.</p>
+<pre class="hljs"><code><div>npm run develop
+</div></code></pre>
+<p>This single command will fire up all the services, including the API server and the client applications available for you to work on.</p>
+<p>Once ready, open a web browser and <strong>visit <a href="http://localhost:8000">http://localhost:8000</a></strong>. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.</p>
+<p>The API serves endpoints at <code>http://localhost:3000</code>. The Gatsby app serves the client application at <code>http://localhost:8000</code></p>
+<p>While you are logged in, if you visit <a href="http://localhost:3000/explorer">http://localhost:3000/explorer</a> you should see the available APIs.</p>
+<blockquote>
+<p>[!WARNING]
+Clearing your cookies or running <code>npm run seed:certified-user</code> will log you out, and you will have to sign in again.</p>
+</blockquote>
+<p>If you have issues while installing it, check out the <a href="troubleshooting-development-issues.md">troubleshooting section</a></p>
+<h2 id="quick-commands-reference">Quick commands reference</h2>
+<p>A quick reference to the commands that you will need when working locally.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm ci</code></td>
+<td>Installs / re-install all dependencies and bootstraps the different services.</td>
+</tr>
+<tr>
+<td><code>npm run seed</code></td>
+<td>Parses all the challenge markdown files and inserts them into MongoDB.</td>
+</tr>
+<tr>
+<td><code>npm run develop</code></td>
+<td>Starts the freeCodeCamp API Server and Client Applications.</td>
+</tr>
+<tr>
+<td><code>npm run clean</code></td>
+<td>Uninstalls all dependencies and cleans up caches.</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>

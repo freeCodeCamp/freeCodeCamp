@@ -40,7 +40,7 @@ Once you have forked the repository, choose one among the below. You can either 
 
 For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
 
-### How to prepare a GitPod workspace
+## **How to prepare a GitPod workspace**
 
 We have automated the process of installating all the dependencies & tools you will need. With GitPod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
 
@@ -67,11 +67,11 @@ There are various ways to launch an GitPod workspace:
 
 That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of [how the URLs & Ports work within a GitPod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
 
-### How to prepare your local machine
+## **How to prepare your local machine**
 
 Start by installing the prerequisite software for your operating system.
 
-We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
+We primarily support development on Linux and Unix-based systems. Our staffs and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
 
 We also support Windows 10 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
 
@@ -100,7 +100,7 @@ npm -v
 
 Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
-##### Follow these steps to get your development environment ready:
+## Follow these steps to get your development environment ready:
 
 1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
@@ -178,7 +178,7 @@ You need a reference from your local clone to the `upstream` repository in addit
    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Running freeCodeCamp locally
+## <b>Running freeCodeCamp locally</b>
 
 Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
 
@@ -192,7 +192,7 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 ### Configuring dependencies
 
-#### Step 1: Set up the environment variable file
+<b>Step 1</b>: Set up the environment variable file
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
@@ -222,7 +222,7 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 > [!TIP]
 > Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
-#### Step 2: Install dependencies
+<b>Step 2</b>: Install dependencies
 
 This step will install the dependencies required for the application to run:
 
@@ -230,7 +230,7 @@ This step will install the dependencies required for the application to run:
 npm ci
 ```
 
-#### Step 3: Start MongoDB and seed the database
+<b>Step 3</b>: Start MongoDB and seed the database
 
 Before you can run the application locally, you will need to start the MongoDB service.
 
@@ -270,7 +270,7 @@ Next, let's seed the database. In this step, we run the below command that fills
 npm run seed
 ```
 
-#### Step 4: Start the freeCodeCamp client application and API server
+<b>Step 4</b>: Start the freeCodeCamp client application and API server
 
 You can now start up the API server and the client applications.
 
@@ -291,7 +291,7 @@ While you are logged in, if you visit <http://localhost:3000/explorer> you shoul
 
 If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md)
 
-## Quick commands reference
+## <u>Quick commands reference</u>
 
 A quick reference to the commands that you will need when working locally.
 
