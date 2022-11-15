@@ -43,25 +43,7 @@
 
 ### Обслуговування документаційного сайту локально
 
-Клонуйте freeCodeCamp:
-
-```console
-git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-```
-
-Встановіть `docsify`:
-
-```console
-npm install -g docsify
-```
-
-та обслужіть каталог `/docs`
-
-```console
-docsify serve docs
-```
-
-Іншим чином, якщо ви встановили freeCodeCamp локально (див. посібник з локального налаштування), ми зібрали CLI з інструментами веброзробки, щоб ви могли запустити будь-яку з наведених нижче команд, необхідних з кореня репозиторію:
+Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
 #### Обслужити та запустити лише документаційний сайт
 
@@ -75,4 +57,4 @@ npm run docs:serve
 npm run develop
 ```
 
-> The documentation site should be available at <http://localhost:3400>
+> Сайт документації повинен бути доступним на <http://localhost:3400>

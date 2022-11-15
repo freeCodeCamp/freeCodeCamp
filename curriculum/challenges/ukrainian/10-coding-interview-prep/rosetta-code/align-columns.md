@@ -38,7 +38,7 @@ const testText = [
 - Мінімальний простір між стовпцями слід обчислювати з даного тексту, а не жорстко його кодувати.
 - Не обов'язково додавати розділові символи між стовпцями або навколо них.
 
-Наприклад, один з рядків взятий із `testText`, після вирівнювання праворуч, ліворуч та посередині відповідно:
+For example, one of the lines from the `testText`, after justifying to the right, left and center respectively:
 
 ```js
 '    column        are separated     by     at    least       one space.\n'

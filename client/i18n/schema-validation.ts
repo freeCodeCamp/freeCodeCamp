@@ -1,6 +1,6 @@
 import path from 'path';
 import { readFile } from 'fs/promises';
-import { availableLangs } from '../../config/i18n/all-langs';
+import { availableLangs } from '../../config/i18n';
 import introSchema from './locales/english/intro.json';
 import linksSchema from './locales/english/links.json';
 import metaTagsSchema from './locales/english/meta-tags.json';

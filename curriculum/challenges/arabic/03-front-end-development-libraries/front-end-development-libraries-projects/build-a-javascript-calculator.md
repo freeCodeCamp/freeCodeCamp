@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd17
-title: بناء حاسبة باستخدام JavaScript
+title: أنشئ حاسبة باستخدام JavaScript
 challengeType: 3
 forumTopicId: 301371
 dashedName: build-a-javascript-calculator
@@ -8,7 +8,7 @@ dashedName: build-a-javascript-calculator
 
 # --description--
 
-**متطلبات:** كم ببناء تطبيق يشبه وظيفيا إلي <a href="https://javascript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://javascript-calculator.freecodecamp.rocks/</a>.
+**متطلبات:** أنشئ تطبيق يشبه وظيفيا إلي <a href="https://javascript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://javascript-calculator.freecodecamp.rocks/</a>.
 
 أكمل قصص المستخدم بالأسفل وأجتاز جميع الاختبارات للنجاح. استخدم أي libraries أو APIs تحتاج إليها. أعطيها أسلوبك الشخصي الخاص.
 

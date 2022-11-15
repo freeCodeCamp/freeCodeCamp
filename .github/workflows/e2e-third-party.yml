@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-20.04
     services:
       mongodb:
-        image: mongo:4
+        image: mongo:4.4
         ports:
           - 27017:27017
       # We need mailhog to catch any emails the api tries to send.
@@ -38,7 +38,6 @@ jobs:
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
           node-version: 16.x
-          cache: 'npm'
 
       - name: Set freeCodeCamp Environment Variables
         run: |
@@ -66,5 +65,5 @@ jobs:
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: chrome
-          headless: true
+
           spec: cypress/e2e/third-party/*.js

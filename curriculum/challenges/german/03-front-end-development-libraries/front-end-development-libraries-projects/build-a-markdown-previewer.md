@@ -1,6 +1,6 @@
 ---
 id: bd7157d8c242eddfaeb5bd13
-title: Erstelle einen Markdown Previewer
+title: Build a Markdown Previewer
 challengeType: 3
 forumTopicId: 301372
 dashedName: build-a-markdown-previewer
@@ -12,7 +12,7 @@ dashedName: build-a-markdown-previewer
 
 Erfülle die folgenden User Stories und bestehe alle Tests. Verwende Bibliotheken und APIs deiner Wahl. Gib dem Ganzen deinen persönlichen Stil.
 
-Du kannst jede Mischung aus HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux und jQuery verwenden, um dieses Projekt abzuschließen. Du solltest ein Frontend-Framework (wie zum Beispiel React) verwenden, da es in diesem Abschnitt um das Lernen von Frontend Frameworks geht. Zusätzliche Technologien, die oben nicht aufgeführt sind, werden nicht empfohlen und die Verwendung erfolgt auf eigene Gefahr. Wir prüfen die Unterstützung anderer Frontend-Frameworks wie Angular und Vue, aber sie werden derzeit nicht unterstützt. Wir werden alle Fehlerberichte akzeptieren und versuchen, sie zu beheben, die den vorgeschlagenen Technologie-Stack für dieses Projekt verwenden. Viel Spaß beim Programmieren!
+Du kannst jede Mischung aus HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux und jQuery verwenden, um dieses Projekt abzuschließen. Du solltest ein Frontend-Framework (wie zum Beispiel React) verwenden, da es in diesem Abschnitt um das Lernen von Frontend Frameworks geht. Zusätzliche Technologien, die oben nicht aufgeführt sind, werden nicht empfohlen und die Verwendung erfolgt auf eigene Gefahr. Wir prüfen die Unterstützung anderer Frontend-Frameworks wie Angular und Vue, aber sie werden derzeit nicht unterstützt. Wir sind offen für Fehlermeldungen und kümmern uns um all jene, die die vorgeschlagenen Technologien für dieses Projekt verwenden. Viel Spaß beim Programmieren!
 
 **User Story #1:** Ich kann ein `textarea`-Element mit einem entsprechenden `id="editor"` sehen.
 

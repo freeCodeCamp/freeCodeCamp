@@ -1,14 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable react/prop-types */
-// @ts-nocheck
 import Loadable from '@loadable/component';
-import React, { Ref } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Media from 'react-responsive';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
+import { User } from '../../../redux/prop-types';
 import MenuButton from './menu-button';
 import NavLinks from './nav-links';
 import NavLogo from './nav-logo';
@@ -23,16 +19,16 @@ const SearchBarOptimized = Loadable(
 const MAX_MOBILE_WIDTH = 980;
 
 interface UniversalNavProps {
-  displayMenu?: boolean;
-  isLanguageMenuDisplayed?: boolean;
-  fetchState?: { pending: boolean };
-  menuButtonRef?: Ref<HTMLButtonElement> | undefined;
-  searchBarRef?: unknown;
-  showMenu?: () => void;
-  hideMenu?: () => void;
-  showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
-  hideLanguageMenu?: () => void;
-  user?: Record<string, unknown>;
+  displayMenu: boolean;
+  isLanguageMenuDisplayed: boolean;
+  fetchState: { pending: boolean };
+  menuButtonRef: React.RefObject<HTMLButtonElement>;
+  searchBarRef?: React.RefObject<HTMLDivElement>;
+  showMenu: () => void;
+  hideMenu: () => void;
+  showLanguageMenu: (elementToFocus: HTMLButtonElement) => void;
+  hideLanguageMenu: () => void;
+  user?: User;
 }
 export const UniversalNav = ({
   displayMenu,

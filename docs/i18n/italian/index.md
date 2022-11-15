@@ -24,7 +24,7 @@ Stiamo traducendo freeCodeCamp.org nelle maggiori lingue del mondo.
 
 Le certificazioni sono già disponibili in alcuni delle principali lingue, come:
 
-- [Cinese (中文)](https://chinese.freecodecamp.org/learn)
+- [Cinese (中文)](https://www.freecodecamp.org/chinese/learn)
 - [Spagnolo (Español)](https://www.freecodecamp.org/espanol/learn)
 - [Italiano](https://www.freecodecamp.org/italian/learn)
 - [Portoghese (Português)](https://www.freecodecamp.org/portuguese/learn)
@@ -41,12 +41,4 @@ La nostra piattaforma di apprendimento esegue uno stack JavaScript moderno. Ha v
 
 In generale, abbiamo un server API basato su Node.js, un set di applicazioni client basate su React, script per i test di valutazione dei progetti degli utenti del curriculum e altro. Se vuoi contribuire produttivamente alla piattaforma di apprendimento, raccomandiamo di avere familiarità con questi strumenti.
 
-Se vuoi aiutarci a migliorare il nostro codebase...
-
-**puoi utilizzare Gitpod, un ambiente di sviluppo online gratuito che parte con un ambiente di sviluppo pronto per freeCodeCamp nel browser.**
-
-[![Apri su Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
-
-Oppure puoi...
-
-**[Impostare freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md) sulla tua macchina.**
+**If you want to help us improve our codebase here's [how to set up freeCodeCamp](how-to-setup-freecodecamp-locally.md).**

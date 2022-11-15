@@ -117,14 +117,13 @@ textarea.inputarea {
 }
 
 .test-feedback p {
-  margin: 0.5rem 0 0;
+  margin: 0.45rem 0 0;
   font-family: 'Lato', sans-serif;
 }
 
 .test-feedback h2 {
   font-size: 1rem;
   line-height: 1.5;
-  padding-right: 0.5rem;
   /* using float instead of inline display so screen readers recognize h2 as a block element */
   float: left;
   margin: 0.5em 0 0;
@@ -137,18 +136,21 @@ textarea.inputarea {
 .test-feedback svg {
   height: 1.5rem;
   width: auto;
-  margin-right: 0.5rem;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
 }
 
-.test-feedback > div {
+.test-feedback .test-status,
+.test-feedback .hint-status {
   margin-top: 1rem;
   display: flex;
+  gap: 0.5rem;
   flex-direction: row;
 }
 
 .test-status-description,
 .hint-description {
+  display: flex;
+  gap: 0.5rem;
   width: 100%;
 }
 
@@ -174,11 +176,11 @@ textarea.inputarea {
 .lower-jaw-icon-bar {
   overflow: hidden;
   display: flex;
+  gap: 10px;
   flex-direction: row;
 }
 .lower-jaw-icon-bar > button {
   line-height: 0;
-  margin-right: 10px;
 }
 
 .lower-jaw-icon-bar > button:focus {

@@ -264,7 +264,7 @@
       "p8": "这套课程需要你进行数千个小时的编程练习。",
       "p9": "如果你想学习更多数学和计算机科学理论，<0>freeCodeCamp 的 \n YouTube channel</0> 还有数千个小时的视频课程。",
       "p10": "如果你想获得开发者工作或者成为自由职业开发者找到客户，那么除了编程技能，你还需要搭建自己的社交网络，打造自己作为开发者的影响力。",
-      "p11": "你可以在 Twitter、GitHub 和 <0>freeCodeCamp 论坛</0>搭建社交网络和打造影响力。",
+      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
       "p12": "编程愉快！"
     },
     "upcoming-lessons": "即将上线的课程",
@@ -284,6 +284,7 @@
     "sign-in-save": "登录以保存你的学习进度",
     "download-solution": "下载我的解决方案",
     "percent-complete": "完成 {{percent}}%",
+    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
     "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读-搜索-提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
     "rsa": "阅读，搜索，提问",
     "rsa-forum": "<strong>在发布新帖子之前</strong> ，请确认你的问题是否<0>已经在论坛上被回答过</0>。",
@@ -324,7 +325,11 @@
     "sorry-getting-there": "抱歉，你的代码未通过，就快要成功了。",
     "sorry-hang-in-there": "抱歉，你的代码未通过，坚持一下。",
     "sorry-dont-giveup": "抱歉，你的代码未通过，不要放弃。",
-    "challenges-completed": "已完成 {{completedCount}}/{{totalChallenges}}"
+    "challenges-completed": "已完成 {{completedCount}}/{{totalChallenges}}",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program",
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
   },
   "donate": {
     "title": "支持我们的非营利组织",
@@ -349,6 +354,7 @@
     "your-donation": "你的 ${{usd}} 捐款将帮助世界各地的人们学习 {{hours}} 小时。",
     "your-donation-2": "你的 ${{usd}} 捐款每月将帮助世界各地的人们学习 {{hours}} 小时。",
     "your-donation-3": "你的 ${{usd}} 捐款每年将帮助世界各地的人们学习 {{hours}} 小时。",
+    "become-supporter": "Become a Supporter",
     "duration": "成为我们非营利组织的一次性支持者",
     "duration-2": "成为我们非营利组织的每月定期支持者",
     "duration-3": "成为我们非营利组织的每年定期支持者",
@@ -715,5 +721,12 @@
     "focus-instructions-panel": "聚焦指示面板",
     "navigate-previous": "跳转至上一个练习",
     "navigate-next": "跳转至下一个练习"
+  },
+  "signout": {
+    "heading": "Sign out of your account",
+    "p1": "Warning: If you continue, your progress will no longer be saved.",
+    "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
+    "certain": "Yes, sign out of my account",
+    "nevermind": "Nevermind, I don't want to sign out"
   }
 }

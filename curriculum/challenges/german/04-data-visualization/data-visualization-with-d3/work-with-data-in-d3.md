@@ -1,6 +1,6 @@
 ---
 id: 587d7fa7367417b2b2512bc4
-title: Arbeite mit den Daten in D3
+title: Work with Data in D3
 challengeType: 6
 forumTopicId: 301497
 dashedName: work-with-data-in-d3
@@ -10,7 +10,7 @@ dashedName: work-with-data-in-d3
 
 Die D3-Bibliothek stützt sich auf einen datenbezogenen Ansatz. Hast du einen Datensatz, kannst du Methoden aus der D3-Bibliothek verwenden, um diesen auf der Seite anzuzeigen. Es gibt verschiedene Datenformate, diese Aufgabe aber behandelt einen einfachen Zahlen-Array.
 
-Der erste Schritt ist D3 auf die Daten aufmerksam zu machen. Die Methode `data()` wird auf eine Auswahl von DOM-Elementen angewendet, um die Daten an diese Elemente anzuhängen. Der Datensatz wird anschließend als Argument an die Methode übergeben.
+The first step is to make D3 aware of the data. Die Methode `data()` wird auf eine Auswahl von DOM-Elementen angewendet, um die Daten an diese Elemente anzuhängen. Der Datensatz wird anschließend als Argument an die Methode übergeben.
 
 Ein häufig verwendetes Workflow-Muster ist es, für jeden im Datensatz vorhandenen Eintrag, ein neues Element im Dokument zu erstellen. Hierfür gibt es bei D3 die `enter()`-Methode.
 
@@ -32,7 +32,7 @@ Hier ist ein Beispiel, das ein `ul`-Element auswählt und einen neuen Dateneintr
 </body>
 ```
 
-Es hört sich womöglich verwirrend an, noch nicht existierende Elemente auszuwählen. Dieser Code weist D3 an, als Erstes den `ul`-Tag der Seite auszuwählen. Als Nächstes werden alle Elemente der Liste ausgewählt, die eine leere Sammlung zurückgeben. Anschließend prüft die `data()`-Methode die Datensammlung und führt folgenden Code dreimal aus – einmal für jedes Element im Array. Die `enter()`-Methode benötigt 3 Elemente – je eines für jeden Eintrag von `dataset` – bemerkt aber, dass keine `li`-Elemente auf der Seite existieren. Neue `li`-Elemente werden an `ul` angehängt und sind durch den Text `New item` gekennzeichnet.
+Es hört sich womöglich verwirrend an, noch nicht existierende Elemente auszuwählen. Dieser Code weist D3 an, als Erstes den `ul`-Tag der Seite auszuwählen. Als Nächstes werden alle Elemente der Liste ausgewählt, die eine leere Sammlung zurückgeben. Anschließend prüft die `data()`-Methode den Datensatz und führt folgenden Code dreimal aus – einmal für jedes Element im Array. Die `enter()`-Methode benötigt 3 Elemente – je eines für jeden Eintrag von `dataset` – bemerkt aber, dass keine `li`-Elemente auf der Seite existieren. Neue `li`-Elemente werden an `ul` angehängt und sind durch den Text `New item` gekennzeichnet.
 
 # --instructions--
 

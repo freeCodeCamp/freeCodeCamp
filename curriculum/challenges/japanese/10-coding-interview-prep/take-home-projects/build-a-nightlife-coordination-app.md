@@ -12,11 +12,11 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 
 このプロジェクトに実装する必要がある、具体的なユーザーストーリーはこちらです:
 
-**ユーザーストーリー:** 認証が済んでいないユーザーである時に、自分がいるエリア内の、すべてのバーを見ることができます。
+**User Story:** As an unauthenticated user, you can view all bars in your area.
 
-**ユーザーストーリー:** 認証済みのユーザーである時に、自分をバーに追加して、その晩にそこへ行くことを表示できます。
+**User Story:** As an authenticated user, you can add yourself to a bar to indicate you are going there tonight.
 
-**ユーザーストーリー:** 認証済みのユーザーである時に、もしそこへ行く気が無くなったときは、自分をバーから削除できます。
+**User Story:** As an authenticated user, you can remove yourself from a bar if you no longer want to go there.
 
 **ユーザーストーリー:** 認証されていないユーザーは、ログインする時に、再度検索する必要はありません。
 

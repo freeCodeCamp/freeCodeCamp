@@ -1,8 +1,8 @@
 ---
 id: 60f85a62fb30c80bcea0cedb
-title: Крок 24
+title: Step 25
 challengeType: 0
-dashedName: step-24
+dashedName: step-25
 ---
 
 # --description--
@@ -47,7 +47,7 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
   <body>
     <h1>Registration Form</h1>
     <p>Please fill out this form with the required information</p>
-    <form action='https://register-demo.freecodecamp.org'>
+    <form method="post" action='https://register-demo.freecodecamp.org'>
       <fieldset>
         <label for="first-name">Enter Your First Name: <input id="first-name" type="text" required /></label>
         <label for="last-name">Enter Your Last Name: <input id="last-name" type="text" required /></label>

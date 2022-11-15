@@ -1,6 +1,6 @@
 ---
 id: 587d7fa9367417b2b2512bcf
-title: Dynamically Change the Height of Each Bar
+title: Dynamisches Ändern der Höhe jedes Balkens
 challengeType: 6
 forumTopicId: 301486
 dashedName: dynamically-change-the-height-of-each-bar
@@ -22,7 +22,7 @@ Here `d` would be the data point value, and `i` would be the index of the data p
 
 Change the callback function for the `height` attribute to return the data value times 3.
 
-**Note:** Remember that multiplying all data points by the same constant scales the data (like zooming in). It helps to see the differences between bar values in this example.
+**Note:** Remember that multiplying all data points by the same constant scales the data (like zooming in). Die Unterschiede zwischen den Balkenwerten sind in diesem Beispiel gut zu erkennen.
 
 # --hints--
 

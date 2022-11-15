@@ -1,6 +1,6 @@
 ---
 id: 61fda339eadcfd92a6812bed
-title: الخطوة ٣٠
+title: الخطوة 30
 challengeType: 0
 dashedName: step-30
 ---

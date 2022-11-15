@@ -10,7 +10,7 @@ dashedName: problem-385-ellipses-inside-triangles
 
 平面上の任意の三角形 $T$ について、$T$ に完全に内包され、かつ面積が最大である一意の楕円が存在することが分かっています。
 
-<img class="img-responsive center-block" alt="三角形に完全に内包される楕円" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="ellipse completely inside a triangle" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;" />
 
 与えられた $n$ について、次の両方を満たす三角形 $T$ を考えます。
 

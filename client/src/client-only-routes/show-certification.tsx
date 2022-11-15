@@ -7,7 +7,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import envData from '../../../config/env.json';
-import { getLangCode } from '../../../config/i18n/all-langs';
+import { getLangCode } from '../../../config/i18n';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
 import DonateForm from '../components/Donation/donate-form';
 

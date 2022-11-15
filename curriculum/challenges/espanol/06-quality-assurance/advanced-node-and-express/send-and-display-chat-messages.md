@@ -22,50 +22,44 @@ Dentro del código de envío del formulario, debes emitir un evento después de 
 socket.emit('chat message', messageToSend);
 ```
 
-Ahora, en tu servidor, debes estar escuchando el socket para el evento `'chat message'` con los datos que se llaman `message`. Una vez que el evento sea recibido, debe emitir el evento `'chat message'` a todos los sockets `io.emit` siendo los datos un objeto que contiene `name` y `message`.
+Ahora, en tu servidor, debes estar escuchando el socket para el evento `'chat message'` con los datos que se llaman `message`. Once the event is received, it should emit the event `'chat message'` to all sockets using `io.emit`, sending a data object containing the `username` and `message`.
 
-En `client.js`, ahora debes escuchar el evento `'chat message'` y, una vez recibido, ¡Añade un elemento de lista a `#messages` con el nombre, los dos y el mensaje!
+In `client.js`, you should now listen for event `'chat message'` and, when received, append a list item to `#messages` with the username, a colon, and the message!
 
 En este punto, ¡el chat debe ser totalmente funcional y enviar mensajes a todos los clientes!
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes consultar el <a href="https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016" target="_blank" rel="noopener noreferrer nofollow">proyecto completado hasta este momento</a>.
+Envía tu página cuando creas que lo has hecho bien. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 El servidor debe escuchar `'chat message'` y luego emitirlo correctamente.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*name.*message/gis,
-        'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*username.*message/s,
+    'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'
   );
+}
 ```
 
 El cliente debe gestionar y mostrar correctamente los nuevos datos del evento `'chat message'`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")chat message('|")[^]*messages.*li/gis,
-        'You should append a list item to #messages on your client within the "chat message" event listener to display the new message'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")chat message('|")[^]*messages.*li/s,
+    'You should append a list item to #messages on your client within the "chat message" event listener to display the new message'
   );
+}
 ```
 
 # --solutions--

@@ -26,6 +26,7 @@ export interface State {
       activeDonations: number;
     };
     showDonationModal: boolean;
+    showSignoutModal: boolean;
     isOnline: boolean;
     donationFormState: DefaultDonationFormState;
   };
