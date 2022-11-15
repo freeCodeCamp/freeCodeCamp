@@ -32,23 +32,32 @@ export function SolutionDisplayWidget({
   const viewProject = t('buttons.view-project');
 
   const ShowFilesSolutionForCertification = (
-    <button
-      className='project-link-button-override'
-      data-cy={dataCy}
-      onClick={showUserCode}
-    >
-      {t('certification.project.solution')}
-    </button>
+    <Button block={true} data-cy={dataCy} onClick={showUserCode}>
+      {t('buttons.view')}
+    </Button>
   );
   const ShowProjectAndGithubLinkForCertification = (
     <>
-      <a href={solution ?? ''} rel='noopener noreferrer' target='_blank'>
-        {t('certification.project.solution')}
-      </a>
-      ,{' '}
-      <a href={githubLink} rel='noopener noreferrer' target='_blank'>
-        {t('certification.project.source')}
-      </a>
+      <div className='solutions-dropdown'>
+        <DropdownButton
+          block={true}
+          bsStyle='primary'
+          className='btn-invert'
+          id={`dropdown-for-${id}`}
+          title={t('buttons.view')}
+        >
+          <MenuItem bsStyle='primary'>
+            <a href={solution ?? ''} rel='noopener noreferrer' target='_blank'>
+              {t('certification.project.solution')}
+            </a>
+          </MenuItem>
+          <MenuItem bsStyle='primary'>
+            <a href={githubLink} rel='noopener noreferrer' target='_blank'>
+              {t('certification.project.source')}
+            </a>
+          </MenuItem>
+        </DropdownButton>
+      </div>
     </>
   );
   const ShowProjectLinkForCertification = (

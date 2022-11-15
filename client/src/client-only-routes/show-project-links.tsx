@@ -161,6 +161,12 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       )}
       <Spacer />
       <Table striped>
+        <thead>
+          <tr>
+            <th>{t('profile.challenge')}</th>
+            <th>{t('settings.labels.solution')}</th>
+          </tr>
+        </thead>
         <tbody>{renderProjectsFor(certName)}</tbody>
       </Table>
       <Spacer />
