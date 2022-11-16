@@ -170,7 +170,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>DELETE</b> request to `/api/books` to delete all books in the database. The returned response will be the string `'complete delete successful` if successful.
+You can send a <b>DELETE</b> request to `/api/books` to delete all books in the database. The returned response will be the string `complete delete successful` if successful.
 
 ```js
 async (getUserInput) => {

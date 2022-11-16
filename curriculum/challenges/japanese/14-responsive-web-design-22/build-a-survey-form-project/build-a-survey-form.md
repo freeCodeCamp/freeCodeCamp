@@ -19,7 +19,7 @@ dashedName: build-a-survey-form
 1. その form 要素の中では、`id` の値が `email` である `input` 欄へのメールアドレスの入力が**必須**となっています
 1. メールアドレスを不正なフォーマットで入力すると、HTML5 のバリデーションエラーが表示されます
 1. フォームの中で、`id` の値が `number` に設定されている `input` の欄内に数値を入力できます
-1. The number input should not accept non-numbers, either by preventing you from typing them or by showing an HTML5 validation error (depending on your browser).
+1. 数値入力欄は数値でない値を受け付けないように、数値以外の値が入力できないか、HTML5 のバリデーションエラーが表示されるようになっています (ブラウザによって動作が異なります)
 1. `min` と `max` 属性で定義した範囲外の数字を入力すると、HTML5 のバリデーションエラーが表示されます
 1. 名前、メールアドレス、数値の入力欄に対応して、フォーム内に各欄の目的を説明する `label` 要素があり、それぞれ以下の id が設定されている必要があります: `id="name-label"`、`id="email-label"`、`id="number-label"`
 1. 名前、メールアドレス、数値の入力欄には、各欄の説明や指示を示すプレイスホルダーテキストが表示されます
@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Your `#email` should be a descendant of `#survey-form`.
+`#email` は `#survey-form` の子孫要素である必要があります
 
 ```js
 const el = document.querySelector('#survey-form #email')

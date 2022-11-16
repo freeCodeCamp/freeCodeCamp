@@ -11,7 +11,7 @@ dashedName: using-objects-for-lookups
 
 Gli oggetti possono essere pensati come una memorizzazione di coppie chiave / valore, come in un dizionario. Se hai dei dati tabulari, puoi usare un oggetto per cercare valori piuttosto che un'istruzione `switch` o una catena `if/else`. Questo è maggiormente utile quando sai che i dati di input sono limitati a un determinato intervallo.
 
-Here is an example of an article object:
+Ecco un esempio di un oggetto article:
 
 ```js
 const article = {
@@ -30,7 +30,7 @@ const value = "title";
 const valueLookup = article[value];
 ```
 
-`articleAuthor` is the string `Kaashan Hussain`, `articleLink` is the string `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`, and `valueLookup` is the string `How to create objects in JavaScript`.
+`articleAuthor` è la stringa `Kaashan Hussain`, `articleLink` è la stringa `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/` e `valueLookup` è la stringa `How to create objects in JavaScript`.
 
 # --instructions--
 

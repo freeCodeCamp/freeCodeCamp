@@ -16,10 +16,12 @@ dashedName: implement-the-filter-method-on-a-prototype
 
 # --hints--
 
-`new_s` 應該等於 `[23, 65, 5]`。
+`[23, 65, 98, 5, 13].myFilter(item => item % 2)` should equal `[23, 65, 5, 13]`.
 
 ```js
-assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]));
+const _test_s = [23, 65, 98, 5, 13];
+const _callback = item => item % 2;
+assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
 ```
 
 不應該使用 `filter` 方法。
@@ -33,26 +35,18 @@ assert(!code.match(/\.?[\s\S]*?filter/g));
 ## --seed-contents--
 
 ```js
-// The global variable
-const s = [23, 65, 98, 5];
-
 Array.prototype.myFilter = function(callback) {
-  // Only change code below this line
   const newArray = [];
+  // Only change code below this line
+
   // Only change code above this line
   return newArray;
 };
-
-const new_s = s.myFilter(function(item) {
-  return item % 2 === 1;
-});
 ```
 
 # --solutions--
 
 ```js
-const s = [23, 65, 98, 5];
-
 Array.prototype.myFilter = function(callback) {
   const newArray = [];
   for (let i = 0; i < this.length; i++) {
@@ -61,7 +55,7 @@ Array.prototype.myFilter = function(callback) {
   return newArray;
 };
 
-const new_s = s.myFilter(function(item) {
-  return item % 2 === 1;
-});
+// Test case
+const s = [23, 65, 98, 5];
+const odd_s = s.myFilter(item => item % 2 === 1);
 ```

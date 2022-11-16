@@ -19,7 +19,7 @@ users.hasOwnProperty('Alan');
 
 # --instructions--
 
-أنهي كتابة الوظيفة بحيث ترجع `true` إذا كان object الذي مرر إليه يحتوي على جميع الأسماء الأربعة، `Alan`, و `Jeff`, و `Sarah`, و `Ryan`, وإنتاج `false` خلاف ذلك.
+أنهي كتابة الوظيفة بحيث ترجع `true` إذا كان الكائن (object) الذي مرر إليها يحتوي على جميع الأسماء الأربعة، `Alan`, و `Jeff`, و `Sarah`, و `Ryan`, وترجع `false` خلاف ذلك.
 
 # --hints--
 
@@ -43,13 +43,13 @@ assert(
 );
 ```
 
-الوظيفة `isEveryoneHere` يجب أن تنتج `true` إذا `Alan`، و`Jeff`، و`Sarah`، و `Ryan` هي خصائص في object الذي تم تمريرها إلى الوظيفة.
+يجب أن يرجع الوظيفة `isEveryoneHere` حالة `true` إذا `Alan`، و`Jeff`، و`Sarah`، و `Ryan` هي خصائص في الكائن (object) الذي تم تمريره إلى الوظيفة.
 
 ```js
 assert(isEveryoneHere(users) === true);
 ```
 
-الوظيفة `isEveryoneHere` يجب أن تنتج `false` إذا `Alan` ليست خاصية في object الذي تم تمريره.
+يجب أن يرجع الوظيفة `isEveryoneHere` حالة `false` إذا `Alan` ليست خاصية في كائن (object) الذي تم تمريره.
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-الوظيفة `isEveryoneHere` يجب أن ترجع `false` إذا `Jeff` ليست خاصية في object الذي تم تمريره.
+يجب أن يرجع الوظيفة `isEveryoneHere` حالة `false` إذا `Jeff` ليست خاصية في كائن (object) الذي تم تمريره.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-الوظيفة `isEveryoneHere` يجب أن ترجع `false` إذا `Sarah` ليست خاصية في object الذي تم تمريره.
+يجب أن يرجع الوظيفة `isEveryoneHere` حالة `false` إذا `Sarah` ليست خاصية في كائن (object) الذي تم تمريره.
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-الوظيفة `isEveryoneHere` يجب أن ترجع `false` إذا `Ryan` ليست خاصية في object الذي تم تمريره.
+يجب أن يرجع الوظيفة `isEveryoneHere` حالة `false` إذا `Ryan` ليست خاصية في كائن (object) الذي تم تمريره.
 
 ```js
 assert(

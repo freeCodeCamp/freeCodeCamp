@@ -170,7 +170,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит <b>DELETE</b> до `/api/books`, щоб видалити усі книги з інформаційної бази. Отримана відповідь - рядок `'complete delete successful`, якщо видалено успішно.
+Ви можете надіслати запит <b>DELETE</b> до `/api/books`, щоб видалити усі книги з інформаційної бази. The returned response will be the string `complete delete successful` if successful.
 
 ```js
 async (getUserInput) => {

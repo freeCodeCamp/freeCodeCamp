@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b45
-title: 'استخدام Higher-Order Functions map او filter او reduce لحل مشكلة معقدة (Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem)'
+title: 'استخدام وظائف (Functions) عالية التجريد (Higher-Order) مثل map, أو filter, أو reduce لحل مشكلة معقدة'
 challengeType: 1
 forumTopicId: 301311
 dashedName: use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem
@@ -8,13 +8,13 @@ dashedName: use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-p
 
 # --description--
 
-الآن بعد أن تدربت على بعض التحديات باستخدام higher-order functions مثل `map()` و `filter()` و `reduce()`، يمكنك الآن تطبيقها لحل تحدي أكثر تعقيدا.
+الآن بعد أن تدربت على بعض التحديات باستخدام وظائف (functions) عالية التجريد (higher-order) مثل `map()`, و `filter()`, و `reduce()`، يمكنك الآن تطبيقها لحل تحدي أكثر تعقيدا.
 
 # --instructions--
 
-أكمل الكود لدالة `squareList` باستخدام أي مزيج من `map()` و `filter()` و `reduce()`. يجب أن تعيد الدالة array جديدة تحتوي على تربيع *فقط* الأعداد الصحيحة الموجبة (الأرقام العشرية ليست عدد صحيح) عندما تمرر إليها array من الأرقام الحقيقية. مثال لـ array من الأعداد الحقيقية (real numbers) هو `[-3, 4.8, 5, 3, -3.2]`.
+أكمل الكود لوظيفة `squareList` باستخدام أي مزيج من `map()`, و `filter()`, و `reduce()`. يجب أن تنتج الوظيفة (function) قائمة (array) جديدة تحتوي على تربيع *فقط* الأعداد الصحيحة الموجبة (الأرقام العشرية ليست عدد صحيح) عندما تمرر إليها قائمة (array) من الأرقام الحقيقية. مثال لـ array من الأعداد الحقيقية (real numbers) هو `[-3, 4.8, 5, 3, -3.2]`.
 
-**ملاحظة:** يجب ألا تستخدم دالتك أي نوع من حلقات `for` أو `while` أو `forEach()`.
+**ملاحظة:** يجب ألا تستخدم وظيفتك أي نوع من حلَقات (loops) مثل `for`, أو `while`, أو `forEach()`.
 
 # --hints--
 
@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-يجب أن تعيد الدالة `array`.
+يجب أن تعيد وظيفتك `array`.
 
 ```js
 assert(Array.isArray(squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2])));

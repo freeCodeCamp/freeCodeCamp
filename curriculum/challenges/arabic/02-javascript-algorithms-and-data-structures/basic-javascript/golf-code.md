@@ -11,7 +11,7 @@ dashedName: golf-code
 
 في لُعْبَة الجولف، كل ثقب لديه `par`، التي تصف متوسط عدد الضربات `strokes` المتوقعة من اللاعب من أجل أدخال الكرة في الثَّقب لإكمال اللعب. اعتمادًا على مدى بعد `strokes` من `par` سواء البعد كان فوق أو تحت، يوجد اسم مستعار مختلف لكل منهم.
 
-سيتم تمرير `par` و `strokes` كحجة الوظائف الخاص بك. أرجع المقطع الصحيح وفقًا لهذا الجدول الذي يسرد strokes حسب الأولوية؛ من الأعلى إلى الأسفل:
+سيتم تمرير `par` و `strokes` كوسائط (arguments) لوظائفك (function). أرجع المقطع الصحيح وفقًا لهذا الجدول الذي يسرد strokes حسب الأولوية؛ من الأعلى إلى الأسفل:
 
 <table class='table table-striped'><thead><tr><th>Strokes</th><th>Return</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
 
