@@ -37,28 +37,32 @@ export function SolutionDisplayWidget({
     </Button>
   );
   const ShowProjectAndGithubLinkForCertification = (
-    <>
-      <div className='solutions-dropdown'>
-        <DropdownButton
-          block={true}
+    <div className='solutions-dropdown'>
+      <DropdownButton
+        block={true}
+        bsStyle='primary'
+        className='btn-invert'
+        id={`dropdown-for-${id}`}
+        title={t('buttons.view')}
+      >
+        <MenuItem
           bsStyle='primary'
-          className='btn-invert'
-          id={`dropdown-for-${id}`}
-          title={t('buttons.view')}
+          href={solution ?? ''}
+          rel='noopener noreferrer'
+          target='_blank'
         >
-          <MenuItem bsStyle='primary'>
-            <a href={solution ?? ''} rel='noopener noreferrer' target='_blank'>
-              {t('certification.project.solution')}
-            </a>
-          </MenuItem>
-          <MenuItem bsStyle='primary'>
-            <a href={githubLink} rel='noopener noreferrer' target='_blank'>
-              {t('certification.project.source')}
-            </a>
-          </MenuItem>
-        </DropdownButton>
-      </div>
-    </>
+          {t('certification.project.solution')}
+        </MenuItem>
+        <MenuItem
+          bsStyle='primary'
+          href={githubLink}
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          {t('certification.project.source')}
+        </MenuItem>
+      </DropdownButton>
+    </div>
   );
   const ShowProjectLinkForCertification = (
     <Button
@@ -167,8 +171,6 @@ export function SolutionDisplayWidget({
           showProjectLink: ShowProjectLink,
           none: MissingSolutionComponent
         };
-
-  console.log(getSolutionDisplayType(completedChallenge));
 
   return displayComponents[getSolutionDisplayType(completedChallenge)];
 }
