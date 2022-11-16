@@ -41,4 +41,4 @@ Nossa plataforma de aprendizado é executada em uma stack moderna do JavaScript.
 
 De modo geral, temos um servidor de API baseado em Node.js, um conjunto de aplicativos de client baseados em React, testes de scripts para avaliar projetos de currículo apresentados pelos campers e muito mais. Se você deseja contribuir produtivamente para nossa plataforma de aprendizagem, recomendamos alguma familiaridade com estas ferramentas.
 
-**If you want to help us improve our codebase here's [how to set up freeCodeCamp](how-to-setup-freecodecamp-locally.md).**
+**Se quiser nos ajudar a melhorar nossa base de código, aqui está [como configurar o freeCodeCamp](how-to-setup-freecodecamp-locally.md).**
