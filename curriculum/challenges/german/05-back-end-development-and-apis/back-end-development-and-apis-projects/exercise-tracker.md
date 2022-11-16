@@ -108,7 +108,7 @@ async (getUserInput) => {
 };
 ```
 
-Du kannst eine `GET` Anfrage an `/api/users` stellen, um eine Liste aller Benutzer zu erhalten.
+Du kannst eine `GET`-Anfrage an `/api/users` stellen, um eine Liste aller Nutzer zu erhalten.
 
 ```js
 async(getUserInput) => {
@@ -121,7 +121,7 @@ async(getUserInput) => {
 };
 ```
 
-Die `GET` Anfrage an `/api/users` übermittelt ein Array.
+Die `GET`-Anfrage an `/api/users` übermittelt ein Array.
 
 ```js
 async(getUserInput) => {
@@ -309,7 +309,7 @@ async (getUserInput) => {
 };
 ```
 
-A `GET` request to `/api/users/:_id/logs` will return the user object with a `log` array of all the exercises added.
+Eine `GET`-Anfrage an `/api/users/:_id/logs` wird das Nutzerobjekt mit einem `log`-Array aller hinzugefügten Übungen zurückgeben.
 
 ```js
 async(getUserInput) => {
@@ -353,7 +353,7 @@ async(getUserInput) => {
 };
 ```
 
-Each item in the `log` array that is returned from `GET /api/users/:_id/logs` is an object that should have a `description`, `duration`, and `date` properties.
+Jedes Element des `log`-Arrays – das von `GET /api/users/:_id/logs` zurückgegeben wird –, ist ein Objekt, das folgende Eigenschaften haben sollte: `description`, `duration` und `date`.
 
 ```js
 async(getUserInput) => {

@@ -1,47 +1,47 @@
 ---
 id: 62a8ad8e01d7cb0deae5ec66
-title: Step 56
+title: Passo 56
 challengeType: 0
 dashedName: step-56
 ---
 
 # --description--
 
-Create another property in your object called `button functions`. Give this property an array containing the three functions assigned to the `onclick` properties in the `goTown` function. Remember that these functions are variables, not strings, and should not be wrapped in quotes.
+Crie outra propriedade no objeto chamado `button functions`. Dê a esta propriedade um array contendo as três funções atribuídas às propriedades `onclick` na função `goTown`. Lembre-se de que essas funções são variáveis, e não strings, e você não deve cercá-las com aspas.
 
 # --hints--
 
-Your first `locations` object should have a `button functions` property.
+O primeiro objeto de `locations` deve ter uma propriedade `button functions`.
 
 ```js
 assert.isDefined(locations[0]["button functions"]);
 ```
 
-Your `button functions` property should be an array.
+A propriedade `button functions` deve ser um array.
 
 ```js
 assert.isArray(locations[0]["button functions"]);
 ```
 
-Your `button functions` property should have three values in it.
+A propriedade `button functions` deve ter três valores nela.
 
 ```js
 assert.lengthOf(locations[0]["button functions"], 3);
 ```
 
-Your first `button functions` array value should be the function `goStore`.
+O primeiro valor de array `button functions` deve ser a função `goStore`.
 
 ```js
 assert.equal(locations[0]["button functions"][0], goStore);
 ```
 
-Your second `button functions` array value should be the function `goCave`.
+O segundo valor de array `button functions` deve ser a função `goCave`.
 
 ```js
 assert.equal(locations[0]["button functions"][1], goCave);
 ```
 
-Your third `button functions` array value should be the function `fightDragon`.
+O terceiro valor do array `button functions` deve ser a função `fightDragon`.
 
 ```js
 assert.equal(locations[0]["button functions"][2], fightDragon);

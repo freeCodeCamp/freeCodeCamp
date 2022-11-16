@@ -15,11 +15,11 @@ const algoliaIndices = {
   },
   chinese: {
     name: 'news-zh',
-    searchPage: 'https://chinese.freecodecamp.org/news/search/'
+    searchPage: 'https://www.freecodecamp.org/chinese/news/search/'
   },
   'chinese-traditional': {
     name: 'news-zh',
-    searchPage: 'https://chinese.freecodecamp.org/news/search'
+    searchPage: 'https://www.freecodecamp.org/chinese/news/search/'
   },
   italian: {
     name: 'news-it',

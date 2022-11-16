@@ -10,19 +10,19 @@ dashedName: implementation-of-social-authentication
 
 La ruta básica que seguirá este tipo de autenticación en tu aplicación es:
 
-1.  El usuario hace clic en un botón o enlace enviándolos a nuestra ruta para autentificarse utilizando una estrategia específica (por ejemplo, GitHub).
+1.  User clicks a button or link sending them to your route to authenticate using a specific strategy (e.g. GitHub).
 2.  Tu ruta llama a `passport.authenticate('github')` que los redirige a GitHub.
-3.  La página en la que aterriza el usuario, en GitHub, le permite iniciar sesión si aún no lo ha hecho. Luego les pide que aprueben el acceso a su perfil desde nuestra aplicación.
-4.  El usuario es devuelto a nuestra aplicación en una callback url específica con su perfil si es aprobado.
+3.  La página en la que aterriza el usuario, en GitHub, le permite iniciar sesión si aún no lo ha hecho. It then asks them to approve access to their profile from your app.
+4.  The user is then returned to your app at a specific callback url with their profile if they are approved.
 5.  Ahora están autentificados, y tu aplicación debe comprobar si es un perfil que vuelve, o guardarlo en tu base de datos si no lo es.
 
-Las estrategias con OAuth requieren que tengas al menos un *Client ID* y un *Client Secret* que es una forma de que el servicio verifique de quién viene la solicitud de autentificación y si es válida. Estos se obtienen del sitio con el que intentas implementar la autentificación, como GitHub, y son únicos para tu aplicación: **NO SE DEBEN COMPARTIR** y nunca deben subirse a un repositorio público ni escribirse directamente en tu código. Una práctica común es ponerlos en tu archivo `.env` y referenciarlos así: `process.env.GITHUB_CLIENT_ID`. Para este desafío vamos a usar la estrategia de GitHub.
+Las estrategias con OAuth requieren que tengas al menos un *Client ID* y un *Client Secret* que es una forma de que el servicio verifique de quién viene la solicitud de autentificación y si es válida. Estos se obtienen del sitio con el que intentas implementar la autentificación, como GitHub, y son únicos para tu aplicación: **NO SE DEBEN COMPARTIR** y nunca deben subirse a un repositorio público ni escribirse directamente en tu código. Una práctica común es ponerlos en tu archivo `.env` y referenciarlos así: `process.env.GITHUB_CLIENT_ID`. For this challenge you are going to use the GitHub strategy.
 
-El obtener tu *Client ID and Secret* de GitHub se realiza en la configuración del perfil de tu cuenta, en 'developer settings', y luego en '<a href="https://github.com/settings/developers" target="_blank" rel="noopener noreferrer nofollow">OAuth applications</a>. Haz clic en 'Register a new application', dale un nombre a tu aplicación, pega la url de tu página de inicio de Replit (**No la url del código del proyecto**), y por último, para la url de callback, pega la misma url de la página de inicio pero con `/auth/github/callback` añadido. Aquí es donde los usuarios serán redirigidos para que los manejemos después de autentificarse en GitHub. Guarda la información devuelta como `'GITHUB_CLIENT_ID'` y `'GITHUB_CLIENT_SECRET'` en tu archivo `.env`.
+Follow <a href="https://www.freecodecamp.org/news/how-to-set-up-a-github-oauth-application/" target="_blank" rel="noopener noreferrer nofollow">these instructions</a> to obtain your *Client ID and Secret* from GitHub. Set the homepage URL to your Replit homepage (**not the project code's URL**), and set the callback URL to the same homepage URL with `/auth/github/callback` appended to the end. Save the client ID and your client secret in your project's `.env` file as `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
 
-En tu archivo `routes.js`, agrega `showSocialAuth: true` a la ruta de la página de inicio, después de `showRegistration: true`. Ahora, crea 2 rutas aceptando peticiones GET: `/auth/github` y `/auth/github/callback`. La primera solo debe llamar al passport para autentificar `'github'`. El segundo debe llamar a passport para autentificar `'github'` con una redirección de fallo a `/`, y luego si eso es exitoso redirigir a `/profile` (similar a nuestro último proyecto).
+In your `routes.js` file, add `showSocialAuth: true` to the homepage route, after `showRegistration: true`. Now, create 2 routes accepting GET requests: `/auth/github` and `/auth/github/callback`. The first should only call passport to authenticate `'github'`. The second should call passport to authenticate `'github'` with a failure redirect to `/`, and then if that is successful redirect to `/profile` (similar to your last project).
 
-Un ejemplo de cómo debe ser `/auth/github/callback` es similar a cómo manejamos un inicio de sesión normal:
+An example of how `/auth/github/callback` should look is similar to how you handled a normal login:
 
 ```js
 app.route('/login')
@@ -31,11 +31,11 @@ app.route('/login')
   });
 ```
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto <a href="https://gist.github.com/camperbot/1f7f6f76adb178680246989612bea21e" target="_blank" rel="noopener noreferrer nofollow">aquí</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-3" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
 
 # --hints--
 
-La ruta `/auth/github` debe ser correcta.
+Route `/auth/github` should be correct.
 
 ```js
 async (getUserInput) => {
@@ -66,7 +66,7 @@ async (getUserInput) => {
 }
 ```
 
-La ruta `/auth/github/callback` debe ser correcta.
+Route `/auth/github/callback` should be correct.
 
 ```js
 async (getUserInput) => {

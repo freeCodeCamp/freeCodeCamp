@@ -1,6 +1,6 @@
 ---
 id: aff0395860f5d3034dc0bfc9
-title: مدقق رقم الهاتف
+title: Telephone Number Validator
 challengeType: 5
 forumTopicId: 16090
 dashedName: telephone-number-validator

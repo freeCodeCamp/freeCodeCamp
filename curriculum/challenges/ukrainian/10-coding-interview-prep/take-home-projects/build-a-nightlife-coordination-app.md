@@ -12,11 +12,11 @@ dashedName: build-a-nightlife-coordination-app
 
 Тут наведено конкретні історії користувача, які варто імплементувати в даний проєкт:
 
-**Історія користувача:** Як неавторизований користувач ви можете подивитися всі бари неподалік.
+**User Story:** As an unauthenticated user, you can view all bars in your area.
 
-**Історія користувача:** Як неавторизований користувач ви можете додати себе в бар, щоб вказати, що ви збираєтесь туди увечері.
+**User Story:** As an authenticated user, you can add yourself to a bar to indicate you are going there tonight.
 
-**Історія користувача:** Як неавторизований користувач ви можете видалити себе з бару, якщо ви більше не хочете туди піти.
+**User Story:** As an authenticated user, you can remove yourself from a bar if you no longer want to go there.
 
 **Історія користувача:** Як неавторизований користувач, коли ви входите в систему, вам не треба виконувати пошук знову.
 

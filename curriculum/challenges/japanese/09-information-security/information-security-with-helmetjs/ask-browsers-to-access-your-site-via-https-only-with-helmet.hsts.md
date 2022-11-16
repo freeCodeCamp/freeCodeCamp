@@ -16,7 +16,7 @@ HTTP Strict Transport Security (HSTS) は、プロトコルのダウングレー
 
 今後 90 日間 HTTPS を使用するように `helmet.hsts()` を設定してください。 config オブジェクト `{maxAge: timeInSeconds, force: true}` を渡してください。 変数 `ninetyDaysInSeconds = 90*24*60*60;` を作成し、 `timeInSeconds` に使用することができます。 Replit ではすでに hsts が有効になっています。 この設定を上書きするには、config オブジェクトの "force" フィールドを true に設定する必要があります。 Replit のヘッダーをインターセプトし、テストのために検査した後、復元します。
 
-注：カスタムのウェブサイトで HTTPS を設定するには、ドメインと SSL/TLS 証明書を取得する必要があります。
+Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and an SSL/TLS Certificate.
 
 # --hints--
 

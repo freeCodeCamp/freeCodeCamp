@@ -132,7 +132,7 @@
   outline: none !important;
 }
 
-a.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
+li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   background-color: var(--danger-background);
   color: var(--danger-color);
 }
@@ -231,7 +231,7 @@ button.nav-link[aria-disabled='true'] {
   }
 }
 
-/* main menu must be at least as tall as lang menu (when displayed) 
+/* main menu must be at least as tall as lang menu (when displayed)
    unless there isn't enough view port height */
 .nav-list.display-lang-menu {
   min-height: min(var(--lang-menu-height), calc(100vh - var(--header-height)));
@@ -457,7 +457,7 @@ button.nav-link[aria-disabled='true'] {
   left: 0;
 }
 
-/* In mobile layout, prevent search input from hanging around if the 
+/* In mobile layout, prevent search input from hanging around if the
    menu is collapsed. */
 .universal-nav-right
   #toggle-button-nav[aria-expanded='false']
@@ -466,7 +466,7 @@ button.nav-link[aria-disabled='true'] {
   display: none;
 }
 
-/* In mobile layout, prevent search results from hanging around if the 
+/* In mobile layout, prevent search results from hanging around if the
    menu is collapsed. */
 .universal-nav-right
   #toggle-button-nav[aria-expanded='false']

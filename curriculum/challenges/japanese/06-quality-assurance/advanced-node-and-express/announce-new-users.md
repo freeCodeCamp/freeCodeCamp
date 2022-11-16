@@ -8,13 +8,13 @@ dashedName: announce-new-users
 
 # --description--
 
-多くのチャットルームは、ユーザーが接続または切断したときに、チャットにいる他のすべての接続中ユーザーにそのことを通知して表示することができます。 接続時と切断時にすでにイベントをエミットしているはずなので、このような機能をサポートするようにこのイベントを変更するだけです。 そのための最も論理的な方法として、イベントに伴う 3 つのデータを送信します。それらは、接続/切断したユーザーの名前、現在のユーザー数、および、その名前が接続されているか切断されているかを示すデータです。
+多くのチャットルームは、ユーザーが接続または切断したときに、チャットにいる他のすべての接続中ユーザーにそのことを通知して表示することができます。 接続時と切断時にすでにイベントをエミットしているはずなので、このような機能をサポートするようにこのイベントを変更するだけです。 The most logical way of doing so is sending 3 pieces of data with the event: the username of the user who connected/disconnected, the current user count, and if that username connected or disconnected.
 
-イベント名を `'user'` に変更してください、そして、フィールド 「name」、「currentUsers」および「connected」(送信されたユーザーが接続する場合は `true`、切断する場合は `false`) を含むオブジェクトを渡してください。 必ず両方の「user count」イベントを変更し、切断イベントではフィールド 「connected」に対して、接続時にイベントが発生するような `true` ではなく `false` を送信するように設定してください。
+Change the event name to `'user'`, and pass an object along containing the fields `username`, `currentUsers`, and `connected` (to be `true` in case of connection, or `false` for disconnection of the user sent). Be sure to change both `'user count'` events and set the disconnect one to send `false` for the field `connected` instead of `true` like the event emitted on connect.
 
 ```js
 io.emit('user', {
-  name: socket.request.user.name,
+  username: socket.request.user.username,
   currentUsers,
   connected: true
 });
@@ -28,55 +28,49 @@ io.emit('user', {
 socket.on('user', data => {
   $('#num-users').text(data.currentUsers + ' users online');
   let message =
-    data.name +
+    data.username +
     (data.connected ? ' has joined the chat.' : ' has left the chat.');
   $('#messages').append($('<li>').html('<b>' + message + '</b>'));
 });
 ```
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
+正しいと思ったら、ページを送信してください。 If you're running into errors, you can check out <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135/3#announce-new-users-10" target="_blank" rel="noopener noreferrer nofollow">the project completed up to this point </a>.
 
 # --hints--
 
-イベント `'user'` を、name、currentUsers および connected とともにエミットする必要があります。
+Event `'user'` should be emitted with `name`, `currentUsers`, and `connected`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io.emit.*('|")user\1.*name.*currentUsers.*connected/gis,
-        'You should have an event emitted named user sending name, currentUsers, and connected'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io.emit.*('|")user\1.*name.*currentUsers.*connected/s,
+    'You should have an event emitted named user sending name, currentUsers, and connected'
   );
+}
 ```
 
 クライアントは、イベント `'user'` の新しいデータを適切に処理して表示する必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")user\1[^]*num-users/gi,
-        'You should change the text of "#num-users" within on your client within the "user" event listener to show the current users connected'
-      );
-      assert.match(
-        data,
-        /socket.on.*('|")user\1[^]*messages.*li/gi,
-        'You should append a list item to "#messages" on your client within the "user" event listener to announce a user came or went'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")user\1[^]*num-users/s,
+    'You should change the text of "#num-users" within on your client within the "user" event listener to show the current users connected'
   );
+  assert.match(
+    data,
+    /socket.on.*('|")user\1[^]*messages.*li/s,
+    'You should append a list item to "#messages" on your client within the "user" event listener to announce a user came or went'
+  );
+}
 ```
 
 # --solutions--

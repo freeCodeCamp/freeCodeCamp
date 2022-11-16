@@ -8,16 +8,25 @@ dashedName: registration-of-new-users
 
 # --description--
 
-新しいユーザーがサイトでアカウントを登録することを許可する必要があります。 ホームページの `res.render` で、渡されたオブジェクトに新しい変数 `showRegistration: true` を追加してください。 ページを更新すると、すでに `index.pug` ファイルで作成した登録フォームが表示されます！ このフォームは `/register` の **POST** を実行するように設定されています。つまり、ここで **POST** を受け付けてデータベースにユーザーオブジェクトを作成します。
+Now you need to allow a new user on your site to register an account. In the `res.render` for the home page add a new variable to the object passed along - `showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file. This form is set up to **POST** on `/register`, so create that route and have it add the user object to the database by following the logic below.
 
-登録ルートのロジックは、「新規ユーザーの登録 > 新規ユーザーの認証 > /profileへのリダイレクト」になります。
+The logic of the registration route should be as follows:
 
-ステップ 1 の新規ユーザーの登録のロジックでは、findOne コマンド &#062 を使用してデータベースクエリを実行します。ユーザーが返された場合は、そのユーザーが存在しているためホームにリダイレクトします。 *または*、ユーザーが未定義でエラーが発生しなかった場合は、ユーザー名とパスワードを使用してデータベース に「insertOne」し、エラーが発生しない限り、 *next* を呼び出してステップ 2 の新規ユーザー認証に進みます。認証のロジックについてはすでに POST の */login* ルートに記述してあります。
+1. Register the new user
+2. Authenticate the new user
+3. Redirect to `/profile`
+
+The logic of step 1 should be as follows:
+
+1. Query database with `findOne`
+2. If there is an error, call `next` with the error
+3. If a user is returned, redirect back to home
+4. If a user is not found and no errors occur, then `insertOne` into the database with the username and password. As long as no errors occur there, call `next` to go to step 2, authenticating the new user, which you already wrote the logic for in your `POST /login` route.
 
 ```js
 app.route('/register')
   .post((req, res, next) => {
-    myDataBase.findOne({ username: req.body.username }, function(err, user) {
+    myDataBase.findOne({ username: req.body.username }, (err, user) => {
       if (err) {
         next(err);
       } else if (user) {
@@ -47,33 +56,30 @@ app.route('/register')
   );
 ```
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
+正しいと思ったら、ページを送信してください。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 **注:** これ以降、*ピクチャー・イン・ピクチャー*対応ブラウザーの使用に関連する問題が生じる可能性があります。 エディター内でアプリのプレビューができるオンライン IDE を使用している場合は、新しいタブでこのプレビューを開くことを推奨します。
 
 # --hints--
 
-ルートを登録し、ホームに表示する必要があります。
+You should have a `/register` route and display a registration form on the home page.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /showRegistration:( |)true/gi,
-        'You should be passing the variable showRegistration as true to your render function for the homepage'
-      );
-      assert.match(
-        data,
-        /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
-        'You should have a route accepted a post request on register that querys the db with findone and the query being username: req.body.username'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /showRegistration:( |)true/gi,
+    'You should be passing the variable showRegistration as true to your render function for the homepage'
   );
+  assert.match(
+    data,
+    /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
+    'You should have a route that accepts a POST request on /register that queries the db with findOne and the query being username: req.body.username'
+  );
+}
 ```
 
 登録が正しく動作する必要があります。

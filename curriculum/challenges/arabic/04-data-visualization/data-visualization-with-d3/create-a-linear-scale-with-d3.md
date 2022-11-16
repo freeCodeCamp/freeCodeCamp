@@ -1,6 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bda
-title: Create a Linear Scale with D3
+title: إنشاء مقياس خطي مع D3
 challengeType: 6
 forumTopicId: 301483
 dashedName: create-a-linear-scale-with-d3
@@ -8,11 +8,11 @@ dashedName: create-a-linear-scale-with-d3
 
 # --description--
 
-The bar and scatter plot charts both plotted data directly onto the SVG canvas. However, if the height of a bar or one of the data points were larger than the SVG height or width values, it would go outside the SVG area.
+يملأ البيانات المرسومة كل من مخطط بياني شريطي وانسياب (النِّقَاط المبعثرة) على لوحة SVG قاصدًا. بيد أنه إذا كان ارتفاع الشريط أو إحدى نِقَاط البيانات أكبر من الارتفاع أو العرض SVG، ستذهب خارج نطاق SVG.
 
-In D3, there are scales to help plot data. `scales` are functions that tell the program how to map a set of raw data points onto the pixels of the SVG canvas.
+في D3، هناك مقاييس للمساعدة في ملأ البيانات. تكون `scales` وظائف (functions) تخبر البرنامَج كيفية ملأ مجموعة من نِقَاط البيانات الخام على البكسلات (px) في لوحة SVG.
 
-For example, say you have a 100x500-sized SVG canvas and you want to plot Gross Domestic Product (GDP) for a number of countries. The set of numbers would be in the billion or trillion-dollar range. You provide D3 a type of scale to tell it how to place the large GDP values into that 100x500-sized area.
+على سبيل المثال، قل أن لديك لوحة SVG بحجم 100x500، وأنت تريد ملأ الناتج إجمال المحلي (Gross Domestic Product) لعدد من الدول. The set of numbers would be in the billion or trillion-dollar range. You provide D3 a type of scale to tell it how to place the large GDP values into that 100x500-sized area.
 
 It's unlikely you would plot raw data as-is. Before plotting it, you set the scale for your entire data set, so that the `x` and `y` values fit your canvas width and height.
 

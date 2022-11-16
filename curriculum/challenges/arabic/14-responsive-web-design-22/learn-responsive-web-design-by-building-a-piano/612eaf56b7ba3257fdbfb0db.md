@@ -1,6 +1,6 @@
 ---
 id: 612eaf56b7ba3257fdbfb0db
-title: الخطوة ٢١
+title: الخطوة 21
 challengeType: 0
 dashedName: step-21
 ---

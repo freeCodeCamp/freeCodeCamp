@@ -1,32 +1,32 @@
-# Найкращі практики кодової бази
+# Рекомендації щодо кодової бази
 
-## Загальний JavaScript
+## Загально про JavaScript
 
-In most cases, our [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
+У більшості випадків наш [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) попереджатиме про будь-яке форматування, яке суперечить бажаному варіанту кодової бази.
 
-Рекомендується використовувати функціональні компоненти замість класових компонентів.
+Рекомендовано використовувати функціональні компоненти замість класових компонентів.
 
-## Specific TypeScript
+## Специфіка TypeScript
 
-### Migrating a JavaScript File to TypeScript
+### Перенесення файлу JavaScript до TypeScript
 
 #### Збереження історії файлів Git
 
-Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
+Іноді зміна файлу з `<filename>.js` на `<filename>.ts` (або `.tsx`) призводить до видалення вихідного файлу та створення нового, а в інших випадках назва файлу просто змінюється, згідно Git. В ідеалі ми хочемо, щоб історія файлів була збережена.
 
-Найкращі умови для досягнення цього:
+Щоб цього досягти потрібно:
 
 1. Перейменувати файл
-2. Commit with the flag `--no-verify` to prevent Husky from complaining about the lint errors
-3. Refactor to TypeScript for migration, in a separate commit
+2. Затвердити прапорцем `--no-verify`, щоб запобігти скаргам Хаскі на помилки lint
+3. Провести реорганізацію коду в TypeScript, в окремому коміті
 
-> [!NOTE] Такі редактори, як VSCode, все одно показуватимуть, що файл видалено та створено новий. Якщо ви використовуєте `git add .`, тоді VSCode покаже файл як перейменований в процесі
+> [!NOTE] Такі редактори, як VSCode, однаково показуватимуть, що файл видалено та створено новий. Якщо ви використовуєте CLI для `git add .`, то VSCode показуватиме файл як перейменований
 
-### Naming Conventions
+### Конвенції про іменування
 
 #### Інтерфейси та типи
 
-For the most part, it is encouraged to use interface declarations over type declarations.
+Рекомендовано використовувати оголошення інтерфейсу замість оголошення типів.
 
 React Component Props - суфікс `Props`
 
@@ -44,7 +44,7 @@ interface MyComponentState {}
 class MyComponent extends Component<MyComponentProps, MyComponentState> {}
 ```
 
-За замовчуванням - ім'я об'єкта в PascalCase
+За замовчуванням - ім'я об'єкта ВерблюдячимРегістром
 
 ```typescript
 interface MyObject {}
@@ -73,7 +73,7 @@ export const actionFunction = (
 });
 ```
 
-### Як підключити Reduce
+### Як використовувати Reduce
 
 ```typescript
 // Base reducer action without payload
@@ -100,7 +100,7 @@ export const reducer = (
 };
 ```
 
-### How to Dispatch
+### Як використовувати Dispatch
 
 Усередині компонента імпортуйте необхідні дії та селектори.
 

@@ -8,11 +8,13 @@ dashedName: create-new-middleware
 
 # --description--
 
-通常、ユーザーは認証されていてもいなくても、 url を入力することで `/profile` にアクセスできます。 ここではこの動作を防ぐために、プロファイルページをレンダーする前に、ユーザーが認証されているかどうかを先に確認する必要があるとします。 こうした例に最適なのがミドルウェアです。
+As is, any user can just go to `/profile` whether they have authenticated or not by typing in the URL. You want to prevent this by checking if the user is authenticated first before rendering the profile page. こうした例に最適なのがミドルウェアです。
 
-ここでのチャレンジは、ミドルウェア関数 `ensureAuthenticated(req, res, next)` を作成することです。この関数は、`request` 時に Passport の `isAuthenticated` メソッドを呼び出してユーザーが認証されているかどうかを確認します。メソッドでは、`req.user` が定義されているかどうかを確認します。 定義されている場合は、`next()` を呼び出します。定義されていない場合は、ホームページにリダイレクトすることでログインリクエストに応答します。 このミドルウェアの実装は次のようになります。
+The challenge here is creating the middleware function `ensureAuthenticated(req, res, next)`, which will check if a user is authenticated by calling Passport's `isAuthenticated` method on the `request` which checks if `req.user` is defined. If it is, then `next()` should be called. Otherwise, you can just respond to the request with a redirect to your homepage to login.
 
-```js
+An implementation of this middleware is:
+
+```javascript
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
@@ -21,59 +23,53 @@ function ensureAuthenticated(req, res, next) {
 };
 ```
 
-次に、*ensureAuthenticated* を、プロファイルページのリクエストに対するミドルウェアとして、ページをレンダーする関数を含む get リクエスト引数の前に追加してください。
+Create the above middleware function, then pass `ensureAuthenticated` as middleware to requests for the profile page before the argument to the GET request:
 
-```js
+```javascript
 app
  .route('/profile')
  .get(ensureAuthenticated, (req,res) => {
-    res.render(process.cwd() + '/views/pug/profile');
+    res.render('profile');
  });
 ```
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/ae49b8778cab87e93284a91343da0959" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#create-new-middleware-8" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-ミドルウェア ensureAuthenticate を /profile ルート上に実装する必要があります。
+The middleware `ensureAuthenticated` should be implemented and attached to the `/profile` route.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /ensureAuthenticated[^]*req.isAuthenticated/gi,
-        'Your ensureAuthenticated middleware should be defined and utilize the req.isAuthenticated function'
-      );
-      assert.match(
-        data,
-        /profile[^]*get[^]*ensureAuthenticated/gi,
-        'Your ensureAuthenticated middleware should be attached to the /profile route'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /ensureAuthenticated[^]*req.isAuthenticated/,
+    'Your ensureAuthenticated middleware should be defined and utilize the req.isAuthenticated function'
   );
+  assert.match(
+    data,
+    /profile[^]*get[^]*ensureAuthenticated/,
+    'Your ensureAuthenticated middleware should be attached to the /profile route'
+  );
+}
 ```
 
-認証されていないため、/profile への get リクエストを正しく / にリダイレクトする必要があります。
+An unauthenticated GET request to `/profile` should correctly redirect to `/`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/profile').then(
-    (data) => {
-      assert.match(
-        data,
-        /Home page/gi,
-        'An attempt to go to the profile at this point should redirect to the homepage since we are not logged in'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/profile", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /Home page/,
+    'An attempt to go to the profile at this point should redirect to the homepage since we are not logged in'
   );
+}
 ```
 
 # --solutions--

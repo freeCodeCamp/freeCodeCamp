@@ -16,6 +16,7 @@ myDataBase.findOneAndUpdate(
   {
     $setOnInsert: {
       id: profile.id,
+      username: profile.username,
       name: profile.displayName || 'John Doe',
       photo: profile.photos[0].value || '',
       email: Array.isArray(profile.emails)
@@ -40,33 +41,30 @@ myDataBase.findOneAndUpdate(
 
 `findOneAndUpdate` дозволяє шукати та оновлювати об'єкт. У разі, якщо об'єкта не існує, його вставлять та зроблять доступним для функції зворотнього зв'язку. У цьому прикладі, ми завжди встановлюємо `last_login`, збільшуємо `login_count` на `1` та після додавання нового об'єкту (користувача) лише заповнюємо більшість полів. Зверніть увагу на використання значень за замовчуванням. Іноді повернений профіль не міститиме усієї інформації або ж користувач зробить її приватною. У такому випадку, ви його обробляєте задля уникнення помилки.
 
-Ви повинні мати змогу увійти в ваш додаток прямо зараз — спробуйте!
+You should be able to login to your app now. Try it!
 
-Підтвердьте сторінку, якщо все виконано вірно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Підтвердьте сторінку, якщо все виконано вірно. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-iii-5" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 Ви повинні завершити налаштування стратегії GitHub.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/auth.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /GitHubStrategy[^]*myDataBase/gi,
-        'Strategy should use now use the database to search for the user'
-      );
-      assert.match(
-        data,
-        /GitHubStrategy[^]*return cb/gi,
-        'Strategy should return the callback function "cb"'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/auth.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /GitHubStrategy[^]*myDataBase/gi,
+    'Strategy should use now use the database to search for the user'
   );
+  assert.match(
+    data,
+    /GitHubStrategy[^]*return cb/gi,
+    'Strategy should return the callback function "cb"'
+  );
+}
 ```
 
 # --solutions--

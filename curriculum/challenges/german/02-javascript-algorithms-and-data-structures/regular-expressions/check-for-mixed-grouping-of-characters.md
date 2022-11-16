@@ -58,13 +58,27 @@ myRegex.lastIndex = 0;
 assert(!myRegex.test('Frank Roosevelt'));
 ```
 
-Du solltest `.test()` verwenden, um den regulären Ausdruck zu testen.
+Dein regulärer Ausdruck `myRegex` sollte `false` für den String `FranklinRoosevelt` zurückgeben.
+
+```js
+myRegex.lastIndex = 0;
+assert(!myRegex.test('FranklinRoosevelt'));
+```
+
+Dein regulärer Ausdruck `myRegex` sollte `false` für den String `EleanorRoosevelt` zurückgeben.
+
+```js
+myRegex.lastIndex = 0;
+assert(!myRegex.test('EleanorRoosevelt'));
+```
+
+You should use `.test()` to test the regex.
 
 ```js
 assert(code.match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
-Dein Ergebnis sollte `true` zurückgeben.
+Your result should return `true`.
 
 ```js
 assert(result === true);
@@ -85,6 +99,6 @@ let result = false; // Change this line
 
 ```js
 let myString = "Eleanor Roosevelt";
-let myRegex = /(Franklin|Eleanor).*Roosevelt/;
+let myRegex = /(Franklin|Eleanor) (([A-Z]\.?|[A-Z][a-z]+) )?Roosevelt/;
 let result = myRegex.test(myString);
 ```
