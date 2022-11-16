@@ -170,7 +170,7 @@ async (getUserInput) => {
 };
 ```
 
-Você pode enviar uma solicitação de <b>DELETE</b> para `/api/books` para excluir todos os livros do banco de dados. A resposta retornada será a string `'complete delete successful`' se for bem-sucedida.
+Você pode enviar uma solicitação de <b>DELETE</b> para `/api/books` para excluir todos os livros do banco de dados. A resposta retornada será a string `complete delete successful` se for bem-sucedida.
 
 ```js
 async (getUserInput) => {

@@ -34,7 +34,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --hints--
 
-"mongoose version ^5.11.15" dependency should be in package.json
+Abhängigkeit "mongoose Version ^5.11.15" sollte sich in package.json befinden
 
 ```js
 (getUserInput) =>
@@ -54,7 +54,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
   );
 ```
 
-"mongoose" should be connected to a database
+"mongoose" sollte mit einer Datenbank verbunden sein
 
 ```js
 (getUserInput) =>

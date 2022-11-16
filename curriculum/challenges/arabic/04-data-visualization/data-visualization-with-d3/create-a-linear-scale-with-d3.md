@@ -12,17 +12,17 @@ dashedName: create-a-linear-scale-with-d3
 
 في D3، هناك مقاييس للمساعدة في ملأ البيانات. تكون `scales` وظائف (functions) تخبر البرنامَج كيفية ملأ مجموعة من نِقَاط البيانات الخام على البكسلات (px) في لوحة SVG.
 
-على سبيل المثال، قل أن لديك لوحة SVG بحجم 100x500، وأنت تريد ملأ الناتج إجمال المحلي (Gross Domestic Product) لعدد من الدول. The set of numbers would be in the billion or trillion-dollar range. You provide D3 a type of scale to tell it how to place the large GDP values into that 100x500-sized area.
+على سبيل المثال، قل أن لديك لوحة SVG بحجم 100x500، وأنت تريد ملأ الناتج إجمال المحلي (Gross Domestic Product) لعدد من الدول. ومجموعة الأعداد ستكون في حدود المليار أو تريليون دولار. يمكنك توفير D3 من المقياس لمعرفة كيفية وضع قيم الناتج المحلي الإجمالي الكبيرة في تلك المساحة 100x500.
 
-It's unlikely you would plot raw data as-is. Before plotting it, you set the scale for your entire data set, so that the `x` and `y` values fit your canvas width and height.
+من غير المحتمل أن تملأ البيانات الخام كما هي. قبل الملأ، عيّن المقياس لكامل مجموعتك للبيانات. بحيث أن قيم `x` و `y` تتناسب مع عرض وطول اللوحة.
 
-D3 has several scale types. For a linear scale (usually used with quantitative data), there is the D3 method `scaleLinear()`:
+ولدى D3 عدة أنواع من المقاييس. للحصول على مقياس خطي (linear scale) (يستخدم عادة مع البيانات الكمية (quantitative data))، هناك طريقة في D3 تسمى `scaleLinear()`:
 
 ```js
 const scale = d3.scaleLinear()
 ```
 
-By default, a scale uses the identity relationship. The value of the input is the same as the value of the output. A separate challenge covers how to change this.
+بشكل افتراضي، يستخدم المقياس عَلاقة الهُوِيَّة (identity relationship). The value of the input is the same as the value of the output. A separate challenge covers how to change this.
 
 # --instructions--
 

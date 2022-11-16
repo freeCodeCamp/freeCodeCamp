@@ -7,7 +7,7 @@ dashedName: step-30
 
 # --description--
 
-لتحسين إمكانية الوصول (accessibility) إلى الصورة التي أضفتها للتو، أضف خاصية `alt` مع النص:
+لتحسين إمكانية الوصول (accessibility) إلى الصورة التي أضفتها، أضف خاصية `alt` مع النص:
 
 `Five cats looking around a field.`
 
