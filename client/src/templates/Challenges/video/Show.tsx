@@ -186,7 +186,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
             videoId,
             videoLocaleIds,
             bilibiliIds,
-            question: { text, answers, solution }
+            question: { text, answers, solution, assignments }
           }
         }
       },
@@ -244,8 +244,25 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
                 <PrismFormatted className={'line-numbers'} text={text} />
-                <Spacer />
+                <Spacer size={2} />
                 <ObserveKeys>
+                  <div className='video-quiz-options'>
+                    {assignments.map((assignment, index) => (
+                      <label className='video-quiz-option-label' key={index}>
+                        <input
+                          name='assignment'
+                          type='checkbox'
+                          className='video-quiz-checkbox-input'
+                        />
+
+                        <PrismFormatted
+                          className={'video-quiz-option'}
+                          text={assignment}
+                        />
+                      </label>
+                    ))}
+                  </div>
+                  <Spacer size={2} />
                   <div className='video-quiz-options'>
                     {answers.map((option, index) => (
                       // answers are static and have no natural id property, so
@@ -349,6 +366,7 @@ export const query = graphql`
           text
           answers
           solution
+          assignments
         }
         translationPending
       }

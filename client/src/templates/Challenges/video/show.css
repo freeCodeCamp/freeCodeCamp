@@ -5,6 +5,7 @@
   overflow: hidden;
   max-width: 100%;
 }
+
 .video-wrapper iframe,
 .video-wrapper object,
 .video-wrapper embed {
@@ -49,6 +50,7 @@
 .video-quiz-options > label::-webkit-scrollbar-track {
   background: var(--secondary-background);
 }
+
 .video-quiz-options > label::-webkit-scrollbar-thumb {
   background-color: var(--quaternary-background);
 }
@@ -100,6 +102,32 @@
   background-color: var(--primary-color);
   border-radius: 50%;
   transform: translate(-50%, -50%);
+}
+
+input[type='checkbox'] {
+  display: grid;
+  place-content: center;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin-right: 16px;
+  width: 1.15em;
+  height: 1.15em;
+  border: 2px solid black;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+}
+
+input[type='checkbox']::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  box-shadow: inset 1em 1em black;
+}
+
+input[type='checkbox']:checked::before {
+  transform: scale(1);
 }
 
 /* remove bootstrap properties */
