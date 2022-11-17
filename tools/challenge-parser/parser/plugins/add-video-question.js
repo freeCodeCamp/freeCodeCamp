@@ -6,38 +6,50 @@ const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
 function plugin() {
   return transformer;
-
   function transformer(tree, file) {
     const questionNodes = getAllBetween(tree, '--question--');
     if (questionNodes.length > 0) {
       const questionTree = root(questionNodes);
+      const assignmentNodes = getAllBetween(questionTree, '--assignment--');
+
       const textNodes = getAllBetween(questionTree, '--text--');
       const answersNodes = getAllBetween(questionTree, '--answers--');
       const solutionNodes = getAllBetween(questionTree, '--video-solution--');
 
-      const question = getQuestion(textNodes, answersNodes, solutionNodes);
+      const question = getQuestion(
+        textNodes,
+        answersNodes,
+        solutionNodes,
+        assignmentNodes
+      );
 
       file.data.question = question;
     }
   }
 }
 
-function getQuestion(textNodes, answersNodes, solutionNodes) {
+function getQuestion(textNodes, answersNodes, solutionNodes, assignmentNodes) {
   const text = mdastToHtml(textNodes);
   const answers = getAnswers(answersNodes);
   const solution = getSolution(solutionNodes);
+  const assignments = getAssignments(assignmentNodes);
 
   if (!text) throw Error('text is missing from question');
   if (!answers) throw Error('answers are missing from question');
   if (!solution) throw Error('solution is missing from question');
 
-  // console.log({ text, answers, solution });
-  return { text, answers, solution };
+  console.log({ answers });
+  return { text, answers, solution, assignments };
 }
 
 function getAnswers(answersNodes) {
   const answerGroups = splitOnThematicBreak(answersNodes);
   return answerGroups.map(answer => mdastToHtml(answer));
+}
+
+function getAssignments(assignmentNodes) {
+  const assignmentGroups = splitOnThematicBreak(assignmentNodes);
+  return assignmentGroups.map(assignment => mdastToHtml(assignment));
 }
 
 function getSolution(solutionNodes) {
