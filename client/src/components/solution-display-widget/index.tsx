@@ -9,7 +9,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
-
+import './style.css';
 interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;
@@ -37,32 +37,30 @@ export function SolutionDisplayWidget({
     </Button>
   );
   const ShowProjectAndGithubLinkForCertification = (
-    <div className='solutions-dropdown'>
-      <DropdownButton
-        block={true}
+    <DropdownButton
+      block={true}
+      bsStyle='primary w-100'
+      className='btn-invert'
+      id={`dropdown-for-${id}`}
+      title={t('buttons.view')}
+    >
+      <MenuItem
         bsStyle='primary'
-        className='btn-invert'
-        id={`dropdown-for-${id}`}
-        title={t('buttons.view')}
+        href={solution ?? ''}
+        rel='noopener noreferrer'
+        target='_blank'
       >
-        <MenuItem
-          bsStyle='primary'
-          href={solution ?? ''}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          {t('certification.project.solution')}
-        </MenuItem>
-        <MenuItem
-          bsStyle='primary'
-          href={githubLink}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          {t('certification.project.source')}
-        </MenuItem>
-      </DropdownButton>
-    </div>
+        {t('certification.project.solution')}
+      </MenuItem>
+      <MenuItem
+        bsStyle='primary'
+        href={githubLink}
+        rel='noopener noreferrer'
+        target='_blank'
+      >
+        {t('certification.project.source')}
+      </MenuItem>
+    </DropdownButton>
   );
   const ShowProjectLinkForCertification = (
     <Button
