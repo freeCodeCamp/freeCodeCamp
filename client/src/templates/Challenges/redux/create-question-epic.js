@@ -50,26 +50,33 @@ function createQuestionEpic(action$, state$, { window }) {
         block,
         helpCategory
       } = challengeMetaSelector(state);
-
-      if (challengeFiles.some(file => file.editableRegionBoundaries.length > 0)) {
-        const editableRegionStrings = new (function () {
-          this.editableRegionStr = 'User Editable Region';
-          this.startComment = '<!---';
-          this.endComment = '--->';
-          this.lineBreak = '\n';
-          this.editableRegionComments = {
-            comment: `${this.lineBreak}${this.startComment} ${this.editableRegionStr} ${this.endComment}${this.lineBreak}`
+      if (
+        challengeFiles.some(file => file.editableRegionBoundaries.length > 0)
+      ) {
+        const editableRegionStrings = fileExtension => {
+          const lineBreak = '\n';
+          const multiLineStart = '/*';
+          const multiLineEnd = '*/';
+          const htmlStart = '<!---';
+          const htmlEnd = '--->';
+          const editableRegionStr = 'User Editable Region';
+          const startComment =
+            fileExtension === 'html' ? htmlStart : multiLineStart;
+          const endComment = fileExtension === 'html' ? htmlEnd : multiLineEnd;
+          const editableRegionComments = {
+            comment: `${lineBreak}${startComment} ${editableRegionStr} ${endComment}${lineBreak}`
           };
-        })();
-
-        const {
-          lineBreak,
-          editableRegionComments: { comment }
-        } = editableRegionStrings;
+          return { lineBreak, editableRegionComments };
+        };
 
         challengeFiles.forEach(file => {
-          const { contents, editableRegionBoundaries } = file;
+          const { contents, editableRegionBoundaries, ext } = file;
           if (editableRegionBoundaries.length > 0) {
+            const editableRegionStr = editableRegionStrings(ext);
+            const {
+              lineBreak,
+              editableRegionComments: { comment }
+            } = editableRegionStr;
             const [start, end] = editableRegionBoundaries;
             const editableContents = contents.split(lineBreak);
             editableContents.splice(start, 0, comment);
