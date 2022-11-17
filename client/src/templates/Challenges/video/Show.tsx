@@ -148,8 +148,24 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     }
   }
 
-  handleSubmit(solution: number, openCompletionModal: () => void) {
-    if (solution - 1 === this.state.selectedOption) {
+  handleSubmit(
+    solution: number,
+    openCompletionModal: () => void,
+    assignments: string[]
+  ) {
+    const hasAssignments = assignments[0] != '';
+    const completed = this.state.allAssignmentsCompleted;
+
+    if (
+      solution - 1 == this.state.selectedOption &&
+      hasAssignments &&
+      completed
+    ) {
+      this.setState({
+        showWrong: false
+      });
+      openCompletionModal();
+    } else if (solution - 1 === this.state.selectedOption && !hasAssignments) {
       this.setState({
         showWrong: false
       });
@@ -176,7 +192,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
   ): void => {
     const assCopy = this.state.assignmentsCompleted;
     const completed = event.target.checked ? assCopy + 1 : assCopy - 1;
-    const allCompleted = assignments == assCopy;
+    const allCompleted = assignments == completed;
 
     this.setState({
       assignmentsCompleted: completed,
@@ -223,7 +239,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     return (
       <Hotkeys
         executeChallenge={() => {
-          this.handleSubmit(solution, openCompletionModal);
+          this.handleSubmit(solution, openCompletionModal, assignments);
         }}
         innerRef={(c: HTMLElement | null) => (this._container = c)}
         nextChallengePath={nextChallengePath}
@@ -265,36 +281,42 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 <ChallengeDescription description={description} />
                 <Spacer />
                 <ObserveKeys>
-                  <h2>Assignments</h2>
-                  <div className='video-quiz-options'>
-                    {assignments.map((assignment, index) => (
-                      <label className='video-quiz-option-label' key={index}>
-                        <input
-                          name='assignment'
-                          type='checkbox'
-                          className='video-quiz-checkbox-input'
-                          onChange={event =>
-                            this.handleAssignmentChange(
-                              event,
-                              assignments.length
-                            )
-                          }
-                        />
+                  {assignments[0] != '' ? (
+                    <>
+                      <h2>Assignments</h2>
+                      <div className='video-quiz-options'>
+                        {assignments.map((assignment, index) => (
+                          <label
+                            className='video-quiz-option-label'
+                            key={index}
+                          >
+                            <input
+                              name='assignment'
+                              type='checkbox'
+                              className='video-quiz-checkbox-input'
+                              onChange={event =>
+                                this.handleAssignmentChange(
+                                  event,
+                                  assignments.length
+                                )
+                              }
+                            />
 
-                        <PrismFormatted
-                          className={'video-quiz-option'}
-                          text={assignment}
-                        />
-                      </label>
-                    ))}
-                  </div>
-                  <Spacer size={2} />
+                            <PrismFormatted
+                              className={'video-quiz-option'}
+                              text={assignment}
+                            />
+                            <Spacer size={2} />
+                          </label>
+                        ))}
+                      </div>{' '}
+                    </>
+                  ) : null}
+
                   <h2>Question</h2>
                   <PrismFormatted className={'line-numbers'} text={text} />
                   <div className='video-quiz-options'>
                     {answers.map((option, index) => (
-                      // answers are static and have no natural id property, so
-                      // index should be fine as a key:
                       <label className='video-quiz-option-label' key={index}>
                         <input
                           aria-label={t('aria.answer')}
@@ -326,9 +348,12 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 >
                   {this.state.showWrong ? (
                     <span>{t('learn.wrong-answer')}</span>
-                  ) : (
+                  ) : this.state.allAssignmentsCompleted ? (
                     <span>{t('learn.check-answer')}</span>
-                  )}
+                  ) : null}
+                  {!this.state.allAssignmentsCompleted ? (
+                    <span>{t('learn.assignments-not-complete')}</span>
+                  ) : null}
                 </div>
                 <Spacer />
                 <Button
@@ -336,7 +361,11 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                   bsSize='large'
                   bsStyle='primary'
                   onClick={() =>
-                    this.handleSubmit(solution, openCompletionModal)
+                    this.handleSubmit(
+                      solution,
+                      openCompletionModal,
+                      assignments
+                    )
                   }
                 >
                   {t('buttons.check-answer')}
