@@ -24,7 +24,7 @@ numbers.some(function(currentValue) {
 
 # --instructions--
 
-استخدم دالة `some` داخل دالة `checkPositive` للتحقق مما إذا كان اي عنصر في `arr` موجبا. يجب أن يعيد الـ function قيمة Boolean.
+استخدم طريقة (method) مسمى `some` داخل وظيفة (fucntion) مسمى `checkPositive` للتحقق مما إذا كان أي عنصر في `arr` موجبا. يجب أن يرجع الوظيفة (function) قيمة منطقية (Boolean).
 
 # --hints--
 
