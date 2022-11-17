@@ -8,7 +8,7 @@ dashedName: build-a-roman-numeral-converter
 
 # --description--
 
-Convert the given number into a roman numeral.
+Konvertiere die übergebene Zahl in eine römische Zahl.
 
 | Römische Ziffern | Arabische Ziffern |
 | ---------------- | ----------------- |

@@ -8,64 +8,60 @@ dashedName: how-to-use-passport-strategies
 
 # --description--
 
-在提供的 `index.pug` 文件里有一个登录表单。 因为这个表单中存在行内 JavaScript 代码 `if showLogin`，因此它是隐藏的。 因为变量 `showLogin` 未定义，所以表单不会渲染。 在该页面的 `res.render` 里，给 `showLogin: true` 对象添加一个新的变量。 当你刷新页面，就会看到表单！ 表单设置为 `/login` 的 **POST**，因此我们在这里接收 POST 请求并验证用户。
+In the `index.pug` file supplied, there is a login form. It is hidden because of the inline JavaScript `if showLogin` with the form indented after it.
 
-在这个挑战中，你需要为 POST 请求添加路由 `/login`。 为了用这个路由进行验证，你需要在发送请求响应之前添加一个中间件。 中间件应作为参数添加到用于处理请求的函数 `function(req,res)` 之前。 对于 passport 的验证中间件，应这样调用：`passport.authenticate('local')`。
+In the `res.render` for that page, add a new variable to the object, `showLogin: true`. When you refresh your page, you should then see the form! This form is set up to **POST** on `/login`. So, this is where you should set up to accept the POST request and authenticate the user.
 
-`passport.authenticate` 也接收选项作为参数，例如 `{ failureRedirect: '/' }` 就很有用，请记得添加到你的代码中。 如果中间件验证通过，响应应该是将用户重定向到 `/profile`，并渲染 `profile.pug`。
+For this challenge, you should add the route `/login` to accept a POST request. To authenticate on this route, you need to add a middleware to do so before then sending a response. This is done by just passing another argument with the middleware before with your response. The middleware to use is `passport.authenticate('local')`.
 
-如果验证通过，用户对象将会储存到 `req.user` 中。
+`passport.authenticate` can also take some options as an argument such as `{ failureRedirect: '/' }` which is incredibly useful, so be sure to add that in as well. Add a response after using the middleware (which will only be called if the authentication middleware passes) that redirects the user to `/profile`. Add that route, as well, and make it render the view `profile.pug`.
 
-这时，由于我们还没有实现注册功能，如果你在表单里输入了用户名和密码，路由将会重定向到主页 `/`，在服务端将会打印 `'User {USERNAME} attempted to log in.'`。
+If the authentication was successful, the user object will be saved in `req.user`.
 
-完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9" target="_blank" rel="noopener noreferrer nofollow">查看已执行项目的当前进度</a>。
+At this point, if you enter a username and password in the form, it should redirect to the home page `/`, and the console of your server should display `'User {USERNAME} attempted to log in.'`, since we currently cannot login a user who isn't registered.
+
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-use-passport-strategies-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-server.js 中应正确执行所有步骤。
+All steps should be correctly implemented in `server.js`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /showLogin:( |)true/gi,
-        'You should be passing the variable "showLogin" as true to your render function for the homepage'
-      );
-      assert.match(
-        data,
-        /failureRedirect:( |)('|")\/('|")/gi,
-        'Your code should include a failureRedirect to the "/" route'
-      );
-      assert.match(
-        data,
-        /login[^]*post[^]*local/gi,
-        'You should have a route for login which accepts a POST and passport.authenticates local'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /showLogin:( |)true/,
+    'You should be passing the variable "showLogin" as true to your render function for the homepage'
   );
+  assert.match(
+    data,
+    /failureRedirect:( |)('|")\/('|")/,
+    'Your code should include a failureRedirect to the "/" route'
+  );
+  assert.match(
+    data,
+    /login[^]*post[^]*local/,
+    'You should have a route for login which accepts a POST and passport.authenticates local'
+  );
+}
 ```
 
-到 /login 的 POST 请求应重定向到 /。
+A POST request to `/login` should correctly redirect to `/`.
 
 ```js
-(getUserInput) =>
-  $.post(getUserInput('url') + '/login').then(
-    (data) => {
-      assert.match(
-        data,
-        /Looks like this page is being rendered from Pug into HTML!/gi,
-        'A login attempt at this point should redirect to the homepage since we do not have any registered users'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/login", getUserInput("url"));
+  const res = await fetch(url, { method: 'POST' });
+  const data = await res.text();
+  assert.match(
+    data,
+    /Looks like this page is being rendered from Pug into HTML!/,
+    'A login attempt at this point should redirect to the homepage since we do not have any registered users'
   );
+}
 ```
 
 # --solutions--

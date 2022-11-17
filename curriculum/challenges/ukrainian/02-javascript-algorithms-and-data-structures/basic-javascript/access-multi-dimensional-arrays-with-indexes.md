@@ -9,7 +9,7 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-<dfn>Багатовимірні масиви</dfn> можна також описати як *масиви в масивах*. Коли ви використовуєте дужки для доступу до масиву, перша пара дужок відноситься до матеріалів зовнішнього (перший рівень) масиву, і кожна додаткова пара дужок стосується наступного рівня матеріалів.
+<dfn>Багатовимірні масиви</dfn> можна також описати як *масиви в масивах*. When you use brackets to access your array, the first set of brackets refers to the entries in the outermost (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
 
 **Наприклад**
 

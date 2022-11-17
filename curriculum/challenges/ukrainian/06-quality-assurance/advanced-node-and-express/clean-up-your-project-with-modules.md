@@ -24,33 +24,30 @@ module.exports = function (app, myDataBase) {
 
 Продовжуйте додавати їх, поки помилки не припинять існувати, а ваш серверний файл більше не матиме маршрутизування (**за винятком шляху в блок catch**)!
 
-Тепер зробіть те саме в вашому файлі auth.js з усім, що пов'язане з автентифікацією, як ось серіалізація і налаштування локальної стратегії, і видаліть їх з вашого серверного файлу. Обов'язково додайте залежності і наберіть `auth(app, myDataBase)` на сервері в цьому ж місці.
+Do the same thing in your `auth.js` file with all of the things related to authentication such as the serialization and the setting up of the local strategy and erase them from your server file. Обов'язково додайте залежності і наберіть `auth(app, myDataBase)` на сервері в цьому ж місці.
 
-Підтвердьте вашу сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92" target="_blank" rel="noopener noreferrer nofollow">check out an example of the completed project</a>.
+Підтвердьте вашу сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#clean-up-your-project-with-modules-2" target="_blank" rel="noopener noreferrer nofollow">check out an example of the completed project</a>.
 
 # --hints--
 
 Модулі мають бути присутні.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require\s*\(('|")\.\/routes(\.js)?\1\)/gi,
-        'You should have required your new files'
-      );
-      assert.match(
-        data,
-        /client\s*\.db[^]*routes/gi,
-        'Your new modules should be called after your connection to the database'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require\s*\(('|")\.\/routes(\.js)?\1\)/gi,
+    'You should have required your new files'
   );
+  assert.match(
+    data,
+    /client\s*\.db[^]*routes/gi,
+    'Your new modules should be called after your connection to the database'
+  );
+}
 ```
 
 # --solutions--

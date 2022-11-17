@@ -11,28 +11,26 @@ dashedName: using-objects-for-lookups
 
 オブジェクトは、辞書のようなキー/値の保管場所と捉えることができます。 表形式のデータがある場合、`switch` ステートメントや `if/else` のチェーンを使用せずに、オブジェクトを利用して値のルックアップ検索を行うことができます。 この方法は、入力データが特定の範囲に制限されていることがわかっている場合に特に便利です。
 
-単純な逆アルファベット順のルックアップ検索の例を次に示します。
+Here is an example of an article object:
 
 ```js
-const alpha = {
-  1:"Z",
-  2:"Y",
-  3:"X",
-  4:"W",
-  ...
-  24:"C",
-  25:"B",
-  26:"A"
+const article = {
+  "title": "How to create objects in JavaScript",
+  "link": "https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/",
+  "author": "Kaashan Hussain",
+  "language": "JavaScript",
+  "tags": "TECHNOLOGY",
+  "createdAt": "NOVEMBER 28, 2018"
 };
 
-const thirdLetter = alpha[2];
-const lastLetter = alpha[24];
+const articleAuthor = article[author];
+const articleLink = article[link];
 
-const value = 2;
-const valueLookup = alpha[value];
+const value = "title";
+const valueLookup = article[value];
 ```
 
-`thirdLetter` は文字列 `Y`、`lastLetter` は文字列 `C`、`valueLookup` は文字列 `Y` となります。
+`articleAuthor` is the string `Kaashan Hussain`, `articleLink` is the string `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`, and `valueLookup` is the string `How to create objects in JavaScript`.
 
 # --instructions--
 

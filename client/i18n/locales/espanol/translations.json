@@ -9,8 +9,8 @@
     "frontend": "Front End",
     "backend": "Back End",
     "view": "Ver",
-    "view-code": "View Code",
-    "view-project": "View Project",
+    "view-code": "Mostrar Código",
+    "view-project": "Mostrar Proyecto",
     "show-cert": "Mostrar certificación",
     "claim-cert": "Solicitar certificación",
     "save-progress": "Guardar progreso",
@@ -112,7 +112,7 @@
     "claim-legacy": "Una vez que hayas obtenido las siguientes certificaciones de FreeCodeCamp, podrás reclamar la {{cert}}:",
     "for": "Ajustes de cuenta de {{username}}",
     "sound-mode": "Esto agrega un placentero sonido de guitarra acústica en todo el sitio web. Obtendrás reacciones musicales a medida que escribas en el editor, completes desafíos, obtengas certificados y mucho más.",
-    "sound-volume": "Campfire Volume:",
+    "sound-volume": "Volumen de fogata:",
     "username": {
       "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
@@ -264,7 +264,7 @@
       "p8": "Y este currículo te brindará miles de horas de práctica de programación.",
       "p9": "Y si deseas aprender más sobre matemáticas y teoría de la informática, también tenemos miles de horas de cursos en video en <0>el canal de YouTube de freeCodeCamp</0>.",
       "p10": "Si deseas obtener un trabajo de desarrollador o clientes independientes, las habilidades de programación serán solo una parte del rompecabezas. También necesitas construir tu red personal y tu reputación como desarrollador.",
-      "p11": "Puedes hacer esto en Twitter y GitHub, y también en <0>el foro de freeCodeCamp</0>.",
+      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
       "p12": "¡Feliz día programando!"
     },
     "upcoming-lessons": "Próximas lecciones",
@@ -284,6 +284,7 @@
     "sign-in-save": "Inicia sesión para guardar tu progreso",
     "download-solution": "Descargar mi solución",
     "percent-complete": "{{percent}}% completo",
+    "project-complete": "Completado {{completedChallengesInBlock}} de {{totalChallengesInBlock}} proyectos de certificación",
     "tried-rsa": "Si ya has probado el método <0>Leer-Buscar-Preguntar</0>, entonces puedes pedir ayuda en el foro de freeCodeCamp.",
     "rsa": "Leer, buscar, preguntar",
     "rsa-forum": "<strong>Antes de hacer una nueva publicación</strong> por favor, comprueba si tu pregunta ya ha sido <0>respondida en el foro</0>.",
@@ -324,7 +325,11 @@
     "sorry-getting-there": "Lo sentimos, tu código no pasa. Casi lo consigues.",
     "sorry-hang-in-there": "Lo sentimos, su código no pasa. Aguanta ahí.",
     "sorry-dont-giveup": "Lo sentimos, su código no pasa. No te rindas.",
-    "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafíos completados"
+    "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafíos completados",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program",
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -349,6 +354,7 @@
     "your-donation": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo.",
     "your-donation-2": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada mes.",
     "your-donation-3": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada año.",
+    "become-supporter": "Become a Supporter",
     "duration": "Conviértete en un contribuyente único de nuestra organización sin fines de lucro.",
     "duration-2": "Conviértete en un contribuyente mensual de nuestra organización sin fines de lucro.",
     "duration-3": "Conviértete en un contribuyente anual de nuestra organización sin fines de lucro",
@@ -430,7 +436,7 @@
   },
   "search": {
     "label": "Buscar",
-    "placeholder": "Search 9,000+ tutorials",
+    "placeholder": "Encuentra + 9,000 Tutoriales",
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "no-tutorials": "No se encontraron tutoriales",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",
@@ -453,7 +459,7 @@
     "certification-project": "Proyecto de certificación",
     "iframe-preview": "{{title}} Vista previa",
     "iframe-alert": "¡Normalmente este link te llevaría a otro sitio web! Funciona. Este es un enlace a: {{externalLink}}",
-    "iframe-form-submit-alert": "Normally this form would be submitted! It works. This will be submitted to: {{externalLink}}",
+    "iframe-form-submit-alert": "¡Normalmente, se enviaría este formulario! Funciona. Esto se enviará a: {{externalLink}}",
     "document-notfound": "documento no encontrado"
   },
   "icons": {
@@ -556,7 +562,7 @@
     "complete-project-first": "Primero debes completar el proyecto.",
     "local-code-save-error": "Vaya, tu código no se guardó, el almacenamiento local del navegador puede estar lleno.",
     "local-code-saved": "¡Guardado! Tu código ha sido guardado en el almacenamiento local de tu navegador.",
-    "timeline-private": "{{username}} has chosen to make their timeline private. They will need to make their timeline public in order for others to be able to view their certification.",
+    "timeline-private": "{{username}} has elegido hacer tu ruta de aprendizaje privada. Tendrás que hacer público tu ruta de aprendizaje para que otros puedan ver tu certificación.",
     "code-saved": "Tu código fue enviado a la base de datos. Estará aquí cuando regreses.",
     "code-save-error": "Ocurrió un error al intentar guardar tu código.",
     "code-save-less": "¡Espera! Tu código no fue guardado. Intenta de nuevo más tarde.",
@@ -715,5 +721,12 @@
     "focus-instructions-panel": "Panel de Instrucciones de enfoque",
     "navigate-previous": "Navegar al ejercicio anterior",
     "navigate-next": "Navegar siguiente ejercicio"
+  },
+  "signout": {
+    "heading": "Salir de tu cuenta",
+    "p1": "Advertencia: Si continúas, tu progreso ya no se guardará.",
+    "p2": "Esta acción te hará salir de tu cuenta sólo en este dispositivo y sesión del navegador. Por favor, confirma, si deseas continuar.",
+    "certain": "Sí, cerrar la sesión de mi cuenta",
+    "nevermind": "No importa, no quiero cerrar la sesión"
   }
 }

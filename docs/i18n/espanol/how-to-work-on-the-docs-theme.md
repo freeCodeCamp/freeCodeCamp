@@ -43,25 +43,7 @@ Normalmente no necesitarías modificar ninguna configuración ni compilar el sit
 
 ### Ejecutando el sitio de documentación localmente
 
-Clonar freeCodeCamp:
-
-```console
-git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-```
-
-Instalar `docsify`:
-
-```console
-npm install -g docsify
-```
-
-y sirve el directorio `/docs`
-
-```console
-docsify serve docs
-```
-
-Alternativamente, si has instalado freeCodeCamp localmente (ver la guía de instalación local), agrupamos el CLI con las herramientas de desarrollo para que puedas ejecutar cualquiera de los siguientes comandos según sea necesario desde la raíz del repositorio:
+Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
 #### Ejecutar y lanzar solo el sitio de documentación
 

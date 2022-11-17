@@ -30,7 +30,7 @@ import { UserFetchState, User } from '../../redux/prop-types';
 import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
-
+import SignoutModal from '../signout-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
@@ -219,6 +219,7 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
               removeFlashMessage={removeFlashMessage}
             />
           ) : null}
+          <SignoutModal />
           {isChallenge && (
             <div className='breadcrumbs-demo'>
               <BreadCrumb

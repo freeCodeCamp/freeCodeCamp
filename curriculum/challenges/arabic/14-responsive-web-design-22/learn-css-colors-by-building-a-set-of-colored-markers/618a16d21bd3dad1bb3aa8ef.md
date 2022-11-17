@@ -1,6 +1,6 @@
 ---
 id: 618a16d21bd3dad1bb3aa8ef
-title: الخطوة ٤١
+title: الخطوة 41
 challengeType: 0
 dashedName: step-41
 ---

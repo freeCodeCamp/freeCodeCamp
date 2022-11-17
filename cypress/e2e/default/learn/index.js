@@ -8,7 +8,6 @@ const locations = {
 
 const superBlockNames = [
   '(New) Responsive Web Design Certification',
-  'Legacy Responsive Web Design Certification',
   'JavaScript Algorithms and Data Structures Certification',
   'Front End Development Libraries Certification',
   'Data Visualization Certification',
@@ -19,7 +18,8 @@ const superBlockNames = [
   'Data Analysis with Python Certification',
   'Information Security Certification',
   'Machine Learning with Python Certification',
-  'Coding Interview Prep'
+  'Coding Interview Prep',
+  'Legacy Responsive Web Design Certification'
 ];
 
 describe('Learn Landing page (not logged in)', () => {

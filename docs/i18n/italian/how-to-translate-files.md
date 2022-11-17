@@ -177,7 +177,7 @@ Dopo la traduzione
 
 I file reali in docs sono scritti in Markdown, ma appaiono come tag HTML su Crowdin.
 
-Puoi scoprire come `docsify` converte una stringa nella tua lingua in un id guardando le pagine tradotte. Se la traduzione non è stata ancora distribuita, puoi avere una preview [eseguendo il la il sito della documentazione in locale](how-to-work-on-the-docs-theme.md#sservire-localmente-il-sito-di-documentazione).
+Puoi scoprire come `docsify` converte una stringa nella tua lingua in un id guardando le pagine tradotte. Se la traduzione non è stata ancora distribuita, puoi avere una preview [eseguendo il sito della documentazione in locale](how-to-work-on-the-docs-theme.md#sservire-localmente-il-sito-di-documentazione).
 
 Puoi avere più informazioni sui  [link esterni in docs qui](how-to-work-on-the-docs-theme.md#howcome-creare-un-link-interno).
 

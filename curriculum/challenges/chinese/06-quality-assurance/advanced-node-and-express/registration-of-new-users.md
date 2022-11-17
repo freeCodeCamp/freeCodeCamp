@@ -8,16 +8,25 @@ dashedName: registration-of-new-users
 
 # --description--
 
-现在我们需要为新用户添加注册帐号的功能。 首先我们需要在主页的 `res.render` 接收的变量对象中添加 `showRegistration: true`。 此时刷新页面，你会看到页面上已经显示了我们在 `index.pug` 文件中定义的注册表单。 这个表单设置了请求路径 `/register`，并将请求方法设置成 **POST**，所以我们需要在服务器接受 **POST** 请求，且在数据库中创建用户对象。
+Now you need to allow a new user on your site to register an account. In the `res.render` for the home page add a new variable to the object passed along - `showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file. This form is set up to **POST** on `/register`, so create that route and have it add the user object to the database by following the logic below.
 
-用户注册的逻辑：注册新用户 > 认证新用户 > 重定向到 /profile。
+The logic of the registration route should be as follows:
 
-对于步骤一的注册新用户，详细逻辑是这样的：用 findOne 命令查询数据库 > 如果返回了用户对象，则表示用户存在，然后返回主页；*或者*如果用户未定义且没有报错，则会将包含用户名和密码的用户对象通过 “insertOne” 添加到数据库，只要没有报错则会继续*下一步*：认证新用户——我们已经在 */login* 路由的 POST 请求中写好了这部分逻辑。
+1. Register the new user
+2. Authenticate the new user
+3. Redirect to `/profile`
+
+The logic of step 1 should be as follows:
+
+1. Query database with `findOne`
+2. If there is an error, call `next` with the error
+3. If a user is returned, redirect back to home
+4. If a user is not found and no errors occur, then `insertOne` into the database with the username and password. As long as no errors occur there, call `next` to go to step 2, authenticating the new user, which you already wrote the logic for in your `POST /login` route.
 
 ```js
 app.route('/register')
   .post((req, res, next) => {
-    myDataBase.findOne({ username: req.body.username }, function(err, user) {
+    myDataBase.findOne({ username: req.body.username }, (err, user) => {
       if (err) {
         next(err);
       } else if (user) {
@@ -47,33 +56,30 @@ app.route('/register')
   );
 ```
 
-完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e" target="_blank" rel="noopener noreferrer nofollow">查看已执行项目的当前进度</a>。
+完成上述要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 **注意：**接下来的挑战可能会在运行 *picture-in-picture*（画中画）模式的浏览器中出现问题。 如果你使用的线上 IDE 提供在 IDE 内预览 app 的功能，请考虑打开新的标签页预览。
 
 # --hints--
 
-注册路由和显示主页。
+You should have a `/register` route and display a registration form on the home page.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /showRegistration:( |)true/gi,
-        'You should be passing the variable showRegistration as true to your render function for the homepage'
-      );
-      assert.match(
-        data,
-        /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
-        'You should have a route accepted a post request on register that querys the db with findone and the query being username: req.body.username'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /showRegistration:( |)true/gi,
+    'You should be passing the variable showRegistration as true to your render function for the homepage'
   );
+  assert.match(
+    data,
+    /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
+    'You should have a route that accepts a POST request on /register that queries the db with findOne and the query being username: req.body.username'
+  );
+}
 ```
 
 注册功能应可以正常运行。

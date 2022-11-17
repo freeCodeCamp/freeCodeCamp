@@ -24,33 +24,30 @@ module.exports = function (app, myDataBase) {
 
 如果在这些步骤后没有报错，那么你已成功地从 server.js 文件中分离出了路由文件（**除了 catch block 中的路由**）！
 
-现在，我们来把 server.js 中与验证相关的代码分离到 auth.js 中，例如序列化，设置验证策略等。 请正确添加依赖，并在 server.js 中调用 `auth(app, myDataBase)`。
+Do the same thing in your `auth.js` file with all of the things related to authentication such as the serialization and the setting up of the local strategy and erase them from your server file. 请正确添加依赖，并在 server.js 中调用 `auth(app, myDataBase)`。
 
-完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92" target="_blank" rel="noopener noreferrer nofollow">查看已执行项目的当前进度</a>。
+完成上述要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#clean-up-your-project-with-modules-2" target="_blank" rel="noopener noreferrer nofollow">check out an example of the completed project</a>.
 
 # --hints--
 
 应该有模块。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require\s*\(('|")\.\/routes(\.js)?\1\)/gi,
-        'You should have required your new files'
-      );
-      assert.match(
-        data,
-        /client\s*\.db[^]*routes/gi,
-        'Your new modules should be called after your connection to the database'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require\s*\(('|")\.\/routes(\.js)?\1\)/gi,
+    'You should have required your new files'
   );
+  assert.match(
+    data,
+    /client\s*\.db[^]*routes/gi,
+    'Your new modules should be called after your connection to the database'
+  );
+}
 ```
 
 # --solutions--

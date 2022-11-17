@@ -8,20 +8,20 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 # --description--
 
-Ahora mismo, no estamos cargando un objeto de usuario real ya que no hemos configurado nuestra base de datos. Esto puede hacerse de muchas maneras, pero para nuestro proyecto nos conectaremos a la base de datos una vez cuando iniciemos el servidor y mantendremos una conexión persistente durante todo el ciclo de vida de la aplicación. Para hacer esto, agrega la cadena de conexión de tu base de datos (por ejemplo: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) a la variable de entorno `MONGO_URI`. Esto se utiliza en el archivo `connection.js`.
+You are not loading an actual user object since the database is not set up. Connect to the database once, when you start the server, and keep a persistent connection for the full life-cycle of the app. To do this, add your database's connection string (for example: `mongodb+srv://<username>:<password>@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) to the environment variable `MONGO_URI`. Esto se utiliza en el archivo `connection.js`.
 
-*Si tienes problemas para configurar una base de datos gratuita en MongoDB Atlas, consulta este <a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">tutorial</a>.*
+*If you are having issues setting up a free database on MongoDB Atlas, check out this <a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">tutorial</a>.*
 
-Ahora queremos conectarnos a nuestra base de datos y empezar a escuchar las peticiones. El propósito de esto es no permitir peticiones antes de que nuestra base de datos esté conectada o si hay un error en la base de datos. Para lograr esto, querrás englobar tu serialización y las rutas de tu aplicación en el siguiente código:
+Now you want to connect to your database, then start listening for requests. The purpose of this is to not allow requests before your database is connected or if there is a database error. To accomplish this, encompass your serialization and app routes in the following code:
 
-```js
+```javascript
 myDB(async client => {
   const myDataBase = await client.db('database').collection('users');
 
   // Be sure to change the title
   app.route('/').get((req, res) => {
-    //Change the response to render the Pug template
-    res.render('pug', {
+    // Change the response to render the Pug template
+    res.render('index', {
       title: 'Connected to Database',
       message: 'Please login'
     });
@@ -32,7 +32,7 @@ myDB(async client => {
   // Be sure to add this...
 }).catch(e => {
   app.route('/').get((req, res) => {
-    res.render('pug', { title: e, message: 'Unable to login' });
+    res.render('index', { title: e, message: 'Unable to connect to database' });
   });
 });
 // app.listen out here...
@@ -40,44 +40,38 @@ myDB(async client => {
 
 Asegúrate de descomentar el código `myDataBase` en `deserializeUser`, y edita tu `done(null, null)` para incluir el `doc`.
 
-Envía tu página cuando creas que lo has hecho bien. Si te estás encontrando errores, puedes <a href="https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7" target="_blank" rel="noopener noreferrer nofollow">mirar el proyecto completado hasta este punto</a>.
+Envía tu página cuando creas que lo has hecho bien. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implement-the-serialization-of-a-passport-user-5" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 La conexión a la base de datos debe estar presente.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
-      assert.match(
-        data,
-        /Connected to Database/gi,
-        'You successfully connected to the database!'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /Connected to Database/gi,
+    'You successfully connected to the database!'
   );
+}
 ```
 
 La deserialización ahora debe ser correcta usando la BD y `done(null, null)` debe ser llamado con el `doc`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /null,\s*doc/gi,
-        'The callback in deserializeUser of (null, null) should be altered to (null, doc)'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /null,\s*doc/gi,
+    'The callback in deserializeUser of (null, null) should be altered to (null, doc)'
   );
+}
 ```
 
 # --solutions--

@@ -8,16 +8,25 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Ahora tenemos que permitir que un nuevo usuario en nuestro sitio registre una cuenta. En el `res.render` de la página de inicio agrega una nueva variable al objeto pasado: `showRegistration: true`. Cuando actualices tu página, ¡debes ver el formulario de registro que ya fue creado en tu archivo `index.pug`! Este formulario está configurado para hacer una petición **POST** en `/register`, así que aquí es donde debemos configurar para aceptar el **POST** y crear el objeto usuario en la base de datos.
+Now you need to allow a new user on your site to register an account. In the `res.render` for the home page add a new variable to the object passed along - `showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file. This form is set up to **POST** on `/register`, so create that route and have it add the user object to the database by following the logic below.
 
-La lógica de la ruta de registro debe ser la siguiente: Registrar al nuevo usuario > Autentificar al nuevo usuario > Redirigir a /profile
+The logic of the registration route should be as follows:
 
-La lógica del paso 1, el registro del nuevo usuario, debe ser la siguiente: Consultar la base de datos con un comando findOne > si el usuario es devuelto entonces existe y redirige de nuevo a la página de inicio *OR* si el usuario es indefinido y no se produce ningún error entonces 'insertOne' en la base de datos con el nombre de usuario y la contraseña, y, siempre que no se produzcan errores, llamar a *next* para ir al paso 2, autentificar al nuevo usuario, para lo que ya hemos escrito la lógica en nuestra ruta POST */login*.
+1. Register the new user
+2. Authenticate the new user
+3. Redirect to `/profile`
+
+The logic of step 1 should be as follows:
+
+1. Query database with `findOne`
+2. If there is an error, call `next` with the error
+3. If a user is returned, redirect back to home
+4. If a user is not found and no errors occur, then `insertOne` into the database with the username and password. As long as no errors occur there, call `next` to go to step 2, authenticating the new user, which you already wrote the logic for in your `POST /login` route.
 
 ```js
 app.route('/register')
   .post((req, res, next) => {
-    myDataBase.findOne({ username: req.body.username }, function(err, user) {
+    myDataBase.findOne({ username: req.body.username }, (err, user) => {
       if (err) {
         next(err);
       } else if (user) {
@@ -47,33 +56,30 @@ app.route('/register')
   );
 ```
 
-Envía tu página cuando creas que lo has hecho bien. Si te estás encontrando errores, puedes <a href="https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e" target="_blank" rel="noopener noreferrer nofollow">mirar el proyecto completado hasta este punto</a>.
+Envía tu página cuando creas que lo has hecho bien. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 **NOTA:** A partir de este punto, pueden surgir problemas relacionados con el uso del navegador *picture-in-picture*. Si está utilizando un IDE en línea que ofrece una vista previa de la aplicación dentro del editor, se recomienda abrir esta vista previa en una nueva pestaña.
 
 # --hints--
 
-Debes registrar la ruta y mostrarla en la página de inicio.
+You should have a `/register` route and display a registration form on the home page.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /showRegistration:( |)true/gi,
-        'You should be passing the variable showRegistration as true to your render function for the homepage'
-      );
-      assert.match(
-        data,
-        /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
-        'You should have a route accepted a post request on register that querys the db with findone and the query being username: req.body.username'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /showRegistration:( |)true/gi,
+    'You should be passing the variable showRegistration as true to your render function for the homepage'
   );
+  assert.match(
+    data,
+    /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
+    'You should have a route that accepts a POST request on /register that queries the db with findOne and the query being username: req.body.username'
+  );
+}
 ```
 
 El registro debe funcionar.

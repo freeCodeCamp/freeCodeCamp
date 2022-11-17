@@ -14,7 +14,7 @@ In der letzten Lektion wurde die Komponente, die du mit Redux verbunden hast, `P
 
 # --instructions--
 
-Der Code-Editor enthält den gesamten Code, den du bisher in diesem Abschnitt geschrieben hast. Die einzige Änderung ist, dass die React-Komponente in `Presentational` umbenannt wurde. Erstelle eine neue Komponente in einer Konstante namens `Container`, die `connect` verwendet, um die Komponente `Presentational` mit Redux zu verbinden. Dann renderst du im `AppWrapper` die React Redux `Provider` Komponente. Übergib `Provider` an den Redux `store` als Eigenschaft und rendere `Container` als Kindkomponente. Sobald alles eingerichtet ist, siehst du, dass die Nachrichten-App wieder auf der Seite angezeigt wird.
+Der Code-Editor enthält den gesamten Code, den du bisher in diesem Abschnitt geschrieben hast. Die einzige Änderung ist, dass die React-Komponente in `Presentational` umbenannt wurde. Erstelle eine neue Komponente in einer Konstante namens `Container`, die `connect` verwendet, um die Komponente `Presentational` mit Redux zu verbinden. Dann renderst du im `AppWrapper` die React Redux `Provider` Komponente. Übergib `Provider` an den Redux `store` als Eigenschaft und rendere `Container` als Kindkomponente. Once everything is set up, you will see the messages app rendered to the page again.
 
 # --hints--
 

@@ -187,7 +187,11 @@ Di nuovo, se hai problemi o domande, fai un post con le tue azioni nella categor
 
 ### Affrontare le soluzioni postate
 
-Quando un utente posta una soluzione a una qualsiasi domanda, rimuovila e fagli sapere che le soluzioni non sono ammesse sul forum con le tue parole o usando la risposta predefinita **Solution Instead of Help**.
+Se un utente risponde in un thread di aiuto per il curriculum di freeCodeCamp con una soluzione, rimuovila e usa la risposta pronta **Solution Instead of Help** (o una risposta simile con le tue parole).
+
+Se l'autore del post risponde in un thread di aiuto per il curriculum di freeCodeCamp con la sua soluzione finale, sfocala e usa la risposta pronta **Blurred Spoiler Solution**.
+
+Se un utente crea un thread richiedendo un feedback su una soluzione, sposta il thread nel subforum per i feedback e sfoca la soluzione, se necessario. Se l'utente sta postando la soluzione solo per mostrarla, togli il thread dall'elenco e usa la risposta pronta **Solutions Thread**.
 
 ### Utenti Minorenni
 
@@ -215,7 +219,7 @@ La moderazione del forum è possibile anche via cellulare ma potresti incontrare
 
 Se vedi qualcosa che sembra violare il nostro [Codice di Condotta](https://code-of-conduct.freecodecamp.org/), dovresti eliminarlo immediatamente.
 
-Alcune volte le persone posteranno cose che credono essere divertenti. Non realizzano che ciò che hanno detto o condiviso potrebbe essere interpretato come offensivo. Dovresti eliminare quei post, ma non necessariamente bannare la persona. Si spera che l'utente capisca che ciò che ha postato era inappropriato e che quindi è stato cancellato.
+Alcune volte le persone posteranno cose che credono essere divertenti. Non si renderanno conto che ciò che hanno detto o condiviso potrebbe essere interpretato come offensivo. Dovresti eliminare quei post, ma non necessariamente bannare la persona. Si spera che l'utente capisca che ciò che ha postato era inappropriato e che quindi è stato cancellato.
 
 A meno che non sia un'offesa oltraggiosa che non può essere ragionevolmente attribuita a una differenza culturale o a un fraintendimento della lingua inglese. In tal caso, dovresti fortemente considerare di bloccare il membro dal gruppo Facebook.
 
@@ -303,7 +307,7 @@ Se verrai approvato, ti aggiungeremo al nostro Team dei Moderatori su [GitHub](h
 
 ## Come congediamo i moderatori inattivi
 
-Per favore ricorda che rimuoviamo frequentemente i moderatori che riteniamo essere inattivi. Quando lo facciamo, inviamo il seguente messaggio:
+Per favore, nota che rimuoviamo frequentemente i moderatori che riteniamo essere inattivi. Quando lo facciamo, inviamo il seguente messaggio:
 
 ```markdown
 This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our Moderator team. We deeply appreciate your help in the past.
@@ -319,9 +323,9 @@ Diamo per assodato che i contributori leggano qualunque messaggio in cui siano n
 
 ## Affrontare i sollecitatori
 
-Potresti essere avvicinato da organizzazioni che vogliono collaborare o diventare un co-brand di freeCodeCamp in qualche modo. Una volta che ti sei reso conto che questo è ciò che vogliono, **smetti di parlare con loro** e dì loro di mandare una email a `team[at]freecodecamp.org`.
+Potresti essere avvicinato da organizzazioni che vogliono collaborare o diventare un co-brand di freeCodeCamp in qualche modo. Una volta che ti sei reso conto che questo è ciò che vogliono, **smetti di parlare con loro** e di' loro di mandare una email a `team[at]freecodecamp.org`.
 
-Riceviamo proposte del genere continuamente e lo staff è nella posizione migliore per giudicare se valga la pena che la comunità intraprenda quelle relazioni (cosa che succede raramente).
+Riceviamo proposte del genere continuamente e lo staff è nella posizione migliore per giudicare se valga la pena che la comunità intraprenda queste relazioni (cosa che succede raramente).
 
 ## Affrontare richieste sulla salute (mentale)
 
@@ -331,7 +335,7 @@ Per una questione di principio, dovesti evitare di parlare di questi temi privat
 
 Per quanto a volte sia difficile, evita di dare suggerimenti o consigli diversi dall'indirizzare l'utente verso l'aiuto professionale!
 
-Se questo accade sul server delle chat: Crea un canale privato per l'utente e il team dei moderatori. Questo può essere fatto con il comando `private` del bot.
+Se questo accade sul server delle chat: crea un canale privato per l'utente e il team dei moderatori. Questo può essere fatto con il comando `private` del bot.
 
 - All'utente viene garantita privacy.
 - La chat pubblica non è più interrotta.
@@ -353,7 +357,7 @@ Grazie per aver letto e grazie per l'aiuto alla comunità degli sviluppatori!
 
 ## Modelli di risposta
 
-Queste sono alcune delle risposte standard che potresti voler usare mentre verifichi le pull request e fai il triage delle issues e delle pull request.
+Queste sono alcune delle risposte standard che potresti voler usare mentre verifichi le pull request e fai il triage delle issue e delle pull request.
 
 > Puoi creare le tue con la feature integrata di GitHub [saved replies](https://github.com/settings/replies/) oppure utilizzare quelle qui sotto.
 

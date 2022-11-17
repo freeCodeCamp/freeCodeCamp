@@ -23,7 +23,7 @@ Show that $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$
 
 # --instructions--
 
-When writing your function, assume the input is an ordered array of all inclusive numbers.
+When writing your function, assume the input is an ordered array of all-inclusive numbers.
 
 For the answer, please output an object in the following format:
 

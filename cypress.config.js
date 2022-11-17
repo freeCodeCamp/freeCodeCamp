@@ -8,7 +8,6 @@ module.exports = defineConfig({
     projectId: 'ke77ns',
     retries: 4,
     chromeWebSecurity: false,
-    experimentalWebKitSupport: true,
     specPattern: 'cypress/e2e/**/*.js',
     setupNodeEvents(on, config) {
       config.env = config.env || {};

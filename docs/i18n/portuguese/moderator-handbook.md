@@ -187,7 +187,11 @@ Novamente, se você tiver algum problema ou dúvida, faça uma postagem com suas
 
 ### Lidando com soluções publicadas
 
-Quando um usuário postar uma solução para qualquer uma das perguntas, remova-a e avise gentilmente, com as suas próprias palavras, que soluções não são permitidas no fórum, ou use a resposta pronta: **Solution instead of help**.
+Se um usuário responder em uma thread de ajuda para o currículo do freeCodeCamp com uma solução, remova-a e use a resposta pronta **Solution Instead of Help** (ou uma resposta semelhante em suas próprias palavras).
+
+Se o OP (pessoa que publicou o pedido de ajuda original) responder em sua própria thread de ajuda para o currículo do freeCodeCamp com sua solução final, desfoque-a e use a resposta pronta **Blurred Spoiler Solution**.
+
+Se um usuário criar uma thread pedindo feedback de uma solução, mova o tópico para o subfórum de feedback e desfoque a solução, conforme necessário. Se o usuário estiver apenas publicando a solução para se exibir, reitre o tópico das listas e use a resposta pronta **Solutions Thread**.
 
 ### Usuários menores de idade
 
@@ -327,7 +331,7 @@ Recebemos propostas como essa com frequência. A equipe está em melhor posiçã
 
 Você pode encontrar situações onde os usuários procuram aconselhamento médico ou estão lidando com questões de saúde mental e buscando apoio.
 
-Como parte de nossa política, você deve evitar falar em privado sobre essas questões. Se a situação em algum ponto refletir o freeCodeCamp, queremos que as conversas fiquem registradas. Deixe claro que nós não somos profissionais da saúde e que você encoraja o usuário a buscar ajuda profissional.
+Como parte de nossa política, você deve evitar falar em privado sobre essas questões. Se a situação em algum ponto refletir o freeCodeCamp, queremos que as conversas fiquem registradas. Deixe claro que não somos profissionais da medicina e que você encoraja o usuário a procurar ajuda profissional.
 
 Apesar de ser difícil às vezes, evite dar quaisquer dicas ou conselhos que não sejam indicar ao usuário buscar ajuda profissional!
 
@@ -337,7 +341,7 @@ Se isso ocorrer no nosso servidor de chat: crie um canal privado para o usuário
 - O chat público não será mais perturbado.
 - Outros membros do time podem contribuir caso você se sinta desconfortável ao lidar com a situação sozinho.
 
-Links úteis:
+URLs úteis:
 
 http://suicide.org/international-suicide-hotlines.html
 

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { GatsbyLinkProps } from 'gatsby';
 const gatsby: NodeModule = jest.requireActual('gatsby');
@@ -20,10 +19,7 @@ module.exports = {
       })
   ),
   withPrefix: jest.fn().mockImplementation((path: string) => {
-    const pathPrefix =
-      clientLocale === 'english' || clientLocale === 'chinese'
-        ? ''
-        : '/' + clientLocale;
+    const pathPrefix = clientLocale === 'english' ? '' : '/' + clientLocale;
     return pathPrefix + path;
   }),
   StaticQuery: jest.fn(),

@@ -18,7 +18,7 @@ dashedName: problem-314-the-mouse-on-the-moon
 
 しかし、辺が 75 m, 75 m, $75\sqrt{2}$ m の 三角形を土地の 4 隅 から切り離すと、面積は238750 $\text{m}^2$、周長は $1400 + 300\sqrt{2}$ m になります。 すると、$\frac{\text{囲まれた土地の面積}}{\text{壁の長さ}}$の比率は 130.87 で、先程より大幅に高くなります。
 
-<img class="img-responsive center-block" alt="壁に囲まれた土地の面積が、円形の場合と、正方形から 4 つの三角形を切り取った場合とでどのように違うかを示す図" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="picture showing difference in enclosed-area between circle and square with cut off four triangles" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
 
 $\frac{\text{囲まれた土地の面積}}{\text{壁の長さ}}$の比率の最大値を求めなさい。 回答は、四捨五入して小数第 8 位まで求め、abc.defghijk の形式にすること。
 

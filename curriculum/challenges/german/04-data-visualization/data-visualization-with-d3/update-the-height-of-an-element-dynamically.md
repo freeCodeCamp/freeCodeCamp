@@ -10,7 +10,7 @@ dashedName: update-the-height-of-an-element-dynamically
 
 The previous challenges covered how to display data from an array and how to add CSS classes. You can combine these lessons to create a simple bar chart. There are two steps to this:
 
-1) Create a `div` for each data point in the array
+1) Erstelle einen `div` für jeden Datenpunkt im Array
 
 2) Give each `div` a dynamic height, using a callback function in the `style()` method that sets height equal to the data value
 

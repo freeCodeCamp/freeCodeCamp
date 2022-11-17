@@ -24,7 +24,7 @@
 
 Сертифікації вже доступні деякими поширеними мовами світу:
 
-- [Китайська (中文)](https://chinese.freecodecamp.org/learn)
+- [Китайська (中文)](https://www.freecodecamp.org/chinese/learn)
 - [Іспанська (Español)](https://www.freecodecamp.org/espanol/learn)
 - [Італійська (Italiano)](https://www.freecodecamp.org/italian/learn)
 - [Португальська (Português)](https://www.freecodecamp.org/portuguese/learn)
@@ -41,12 +41,4 @@
 
 В цілому ми маємо сервер API на основі Node.js, набір клієнтських додатків на основі React, тестові скрипти для оцінки проєктів кемперів та багато іншого. Якщо ви хочете здійснити внесок до навчальної платформи, ми радимо ознайомитися із цими інструментами.
 
-Якщо ви хочете допомогти покращити нашу базу кодів...
-
-**Ви можете використати Gitpod – безоплатне онлайн-середовище розробки, що запускає готове до кодування середовище для freeCodeCamp у вашому браузері.**
-
-[![Відкрити у Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
-
-Або ви можете...
-
-**[Встановити freeCodeCamp локально](how-to-setup-freecodecamp-locally.md) на свою машину.**
+**Якщо ви хочете допомогти нам покращити нашу кодову базу, ось [як встановити freeCodeCamp](how-to-setup-freecodecamp-locally.md).**
