@@ -51,7 +51,7 @@ function createQuestionEpic(action$, state$, { window }) {
         helpCategory
       } = challengeMetaSelector(state);
       if (
-        challengeFiles.some(file => file.editableRegionBoundaries.length > 0)
+        challengeFiles?.some(file => file.editableRegionBoundaries.length > 0)
       ) {
         const editableRegionStrings = fileExtension => {
           const lineBreak = '\n';
