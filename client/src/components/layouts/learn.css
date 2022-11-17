@@ -7,8 +7,6 @@
 #learn-app-wrapper .desktop-layout {
   display: flex;
   flex-direction: column;
-  min-height: 0;
-  flex-grow: 1;
 }
 
 #learn-app-wrapper .reflex-container.vertical {
