@@ -4,7 +4,6 @@ import { mapTo, tap } from 'rxjs/operators';
 
 import envData from '../../../../../config/env.json';
 import { transformEditorLink } from '../utils';
-import { SuperBlocks } from '../../../../../config/certification-settings';
 import { actionTypes } from './action-types';
 import { closeModal } from './actions';
 import {
