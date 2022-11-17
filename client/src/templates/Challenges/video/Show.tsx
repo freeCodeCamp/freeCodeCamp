@@ -56,6 +56,7 @@ interface ShowVideoProps {
   data: { challengeNode: ChallengeNode };
   description: string;
   isChallengeCompleted: boolean;
+
   openCompletionModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
@@ -71,6 +72,8 @@ interface ShowVideoState {
   selectedOption: number | null;
   answer: number;
   showWrong: boolean;
+  assignmentsCompleted: number;
+  allAssignmentsCompleted: boolean;
   videoIsLoaded: boolean;
 }
 
@@ -87,6 +90,8 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       selectedOption: null,
       answer: 1,
       showWrong: false,
+      assignmentsCompleted: 0,
+      allAssignmentsCompleted: false,
       videoIsLoaded: false
     };
 
@@ -162,6 +167,20 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     this.setState({
       showWrong: false,
       selectedOption: parseInt(changeEvent.target.value, 10)
+    });
+  };
+
+  handleAssignmentChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    assignments: number
+  ): void => {
+    const assCopy = this.state.assignmentsCompleted;
+    const completed = event.target.checked ? assCopy + 1 : assCopy - 1;
+    const allCompleted = assignments == assCopy;
+
+    this.setState({
+      assignmentsCompleted: completed,
+      allAssignmentsCompleted: allCompleted
     });
   };
 
@@ -242,10 +261,11 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 </div>
               </Col>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <h2>{title}</h2>
                 <ChallengeDescription description={description} />
-                <PrismFormatted className={'line-numbers'} text={text} />
-                <Spacer size={2} />
+                <Spacer />
                 <ObserveKeys>
+                  <h2>Assignments</h2>
                   <div className='video-quiz-options'>
                     {assignments.map((assignment, index) => (
                       <label className='video-quiz-option-label' key={index}>
@@ -253,6 +273,12 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                           name='assignment'
                           type='checkbox'
                           className='video-quiz-checkbox-input'
+                          onChange={event =>
+                            this.handleAssignmentChange(
+                              event,
+                              assignments.length
+                            )
+                          }
                         />
 
                         <PrismFormatted
@@ -263,6 +289,8 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                     ))}
                   </div>
                   <Spacer size={2} />
+                  <h2>Question</h2>
+                  <PrismFormatted className={'line-numbers'} text={text} />
                   <div className='video-quiz-options'>
                     {answers.map((option, index) => (
                       // answers are static and have no natural id property, so
