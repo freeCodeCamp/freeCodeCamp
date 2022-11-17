@@ -7,7 +7,7 @@ import type {
   editor
   // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
-import { isMacintosh } from 'monaco-editor/esm/vs/base/common/platform.js';
+import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import { highlightAllUnder } from 'prismjs';
 import React, {
   useEffect,
@@ -478,9 +478,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       null,
       () => {}
     );
-    const tabFocusHotkeys = isMacintosh
-      ? monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M
-      : monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_M;
+    const tabFocusHotkeys =
+      OS === 2 /* Macintosh/iOS */
+        ? monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M
+        : monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_M;
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       'editor.action.toggleTabFocusMode',
