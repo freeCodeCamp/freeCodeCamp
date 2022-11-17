@@ -7,5 +7,22 @@
     "template": "",
     "required": "",
     "superBlock": "coding-interview-prep",
-    "challengeOrder": [["6374f208de18c50e48ba767b","What does HTML and CSS stand for"] ]
+    "challengeOrder": [
+        [
+            "6374f208de18c50e48ba767b",
+            "What does HTML and CSS stand for"
+        ],
+        [
+            "6376327e2724a688c04636e3",
+            "When to use HTML and CSS: A"
+        ],
+        [
+            "637633162724a688c04636e4",
+            "When to use HTML and CSS: B"
+        ],
+        [
+            "637633672724a688c04636e5",
+            "Difference between HTML, CSS and JS"
+        ]
+    ]
 }

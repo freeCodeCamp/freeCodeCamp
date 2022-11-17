@@ -4,6 +4,7 @@
   height: 0;
   overflow: hidden;
   max-width: 100%;
+  margin-bottom: 1.5em;
 }
 
 .video-wrapper iframe,
@@ -110,9 +111,11 @@ input[type='checkbox'] {
   -webkit-appearance: none;
   appearance: none;
   background-color: #fff;
-  margin-right: 16px;
-  width: 1.15em;
-  height: 1.15em;
+  min-width: 1.15em;
+  min-height: 1.15em;
+  max-width: 1.15em;
+  max-height: 1.15em;
+  margin-right: 15px;
   border: 2px solid black;
   border-radius: 0.15em;
   transform: translateY(-0.075em);
@@ -123,6 +126,7 @@ input[type='checkbox']::before {
   width: 0.65em;
   height: 0.65em;
   transform: scale(0);
+  transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em black;
 }
 
