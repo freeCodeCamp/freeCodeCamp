@@ -170,7 +170,7 @@ async (getUserInput) => {
 };
 ```
 
-可以向 `/api/books` 发送 <b>DELETE</b> 请求来删除数据库中的所有书籍。 如果成功，返回的响应将是字符串 `'complete delete successful`。
+可以向 `/api/books` 发送 <b>DELETE</b> 请求来删除数据库中的所有书籍。 The returned response will be the string `complete delete successful` if successful.
 
 ```js
 async (getUserInput) => {

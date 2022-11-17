@@ -8,7 +8,7 @@ dashedName: add-a-license-to-your-package-json
 
 # --description--
 
-The `license` field is where you inform users of what they are allowed to do with your project.
+Im Feld `license` teilst du den Nutzern mit, was sie mit deinem Projekt machen dürfen.
 
 Einige gängige Lizenzen für Open-Source-Projekte sind MIT und BSD. Lizenzinformation ist nicht erforderlich, und die Urheberrechtsgesetze der meisten Länder geben dir standardmäßig Eigentumsrechte an deiner Kreation. However, it’s always a good practice to explicitly state what users can and can’t do. Hier ist ein Beispiel für das Lizenzfeld:
 
