@@ -52,7 +52,7 @@ function createQuestionEpic(action$, state$, { window }) {
         helpCategory
       } = challengeMetaSelector(state);
 
-      if (superBlock === SuperBlocks.RespWebDesignNew) {
+      if (challengeFiles.some(file => file.editableRegionBoundaries.length > 0)) {
         const editableRegionStrings = new (function () {
           this.editableRegionStr = 'User Editable Region';
           this.startComment = '<!---';
