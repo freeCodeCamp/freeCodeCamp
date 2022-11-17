@@ -7,6 +7,7 @@ import type {
   editor
   // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
+import { isMacintosh } from 'monaco-editor/esm/vs/base/common/platform.js';
 import { highlightAllUnder } from 'prismjs';
 import React, {
   useEffect,
@@ -419,16 +420,16 @@ const Editor = (props: EditorProps): JSX.Element => {
       );
     };
 
-    const accessibilityMode = storedAccessibilityMode();
-    editor.updateOptions({
-      accessibilitySupport: accessibilityMode ? 'on' : 'auto'
-    });
-
     // By default, Tab will be trapped in the monaco editor, so we only need to
     // check if the user has turned this off.
     if (!isTabTrapped()) {
       setTabTrapped(false);
     }
+
+    const accessibilityMode = storedAccessibilityMode();
+    editor.updateOptions({
+      accessibilitySupport: accessibilityMode ? 'on' : 'auto'
+    });
 
     // Focus should not automatically leave the 'Code' tab when using a keyboard
     // to navigate the tablist.
@@ -469,6 +470,24 @@ const Editor = (props: EditorProps): JSX.Element => {
       '-actions.find',
       null,
       () => {}
+    );
+    // Make toggle tab setting in editor permanent
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      '-editor.action.toggleTabFocusMode',
+      null,
+      () => {}
+    );
+    const tabFocusHotkeys = isMacintosh
+      ? monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M
+      : monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_M;
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      'editor.action.toggleTabFocusMode',
+      tabFocusHotkeys,
+      () => {
+        setTabTrapped(!isTabTrapped());
+      }
     );
     /* eslint-enable */
     editor.addAction({
@@ -532,15 +551,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         });
       }
     });
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_M, () => {
-      setTabTrapped(!isTabTrapped());
-    });
-    editor.addCommand(
-      monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M,
-      () => {
-        setTabTrapped(!isTabTrapped());
-      }
-    );
     // Introduced as a work around for a bug in JAWS 2022
     // https://github.com/FreedomScientific/VFO-standards-support/issues/598
     editor.addAction({
