@@ -42,15 +42,22 @@ Update the code to create and send a `GET` request to the freeCodeCamp Cat Photo
 Your code should use the fetched data to replace the inner HTML
 
 ```js
-const catData = 'dummy data'
-fetch = () => Promise.resolve({json: () => catData});
+const catData = "dummy data";
+const ref = fetch;
+fetch = () => Promise.resolve({ json: () => catData });
 async () => {
-  document.getElementById("getMessage").click();
-  await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
-  assert.equal(
-    document.getElementById("message").textContent,
-    JSON.stringify(catData)
-  );
+  try {
+    document.getElementById("getMessage").click();
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    fetch = ref;
+    assert.equal(
+      document.getElementById("message").textContent,
+      JSON.stringify(catData)
+    );
+  }
 };
 ```
 
