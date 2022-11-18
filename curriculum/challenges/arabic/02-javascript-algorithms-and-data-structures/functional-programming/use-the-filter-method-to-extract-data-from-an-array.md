@@ -10,7 +10,7 @@ dashedName: use-the-filter-method-to-extract-data-from-an-array
 
 Array function أخر مفيد هو `Array.prototype.filter()`أو ببساطة `filter()`.
 
-`filter` يستدعي function على كل عنصر من array ويعيد array جديدة تحتوي فقط على العناصر التي ترجع لها هذه الدالة `true`. وبعبارة أخرى، تقوم بتصفية ال array، استنادا إلى ال function التي مررت إليها. مثل `map`، تقوم بذلك دون الحاجة إلى تعديل ال array الأصلية.
+`filter` calls a function on each element of an array and returns a new array containing only the elements for which that function returns a truthy value - that is, a value which returns `true` if passed to the `Boolean()` constructor. وبعبارة أخرى، تقوم بتصفية ال array، استنادا إلى ال function التي مررت إليها. مثل `map`، تقوم بذلك دون الحاجة إلى تعديل ال array الأصلية.
 
 الـ callback function تقبل ثلاث arguments. وال argument الأولى هي العنصر الحالي الذي تجري معالجته. والثاني هو فهرس ذلك العنصر والثالث هو ال array التي تم على أساسها استدعاء `filter`.
 
