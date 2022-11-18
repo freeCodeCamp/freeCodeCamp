@@ -16,11 +16,11 @@ Write your own `Array.prototype.myFilter()`, which should behave exactly like `A
 
 # --hints--
 
-`[23, 65, 98, 5, 13].myFilter(item => item % 2)` should equal `[23, 65, 5, 13]`.
+`[23, 65, 98, 5, 13].myFilter(item => item % 2 === 1)` should equal `[23, 65, 5, 13]`.
 
 ```js
 const _test_s = [23, 65, 98, 5, 13];
-const _callback = item => item % 2;
+const _callback = item => item % 2 === 1;
 assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
 ```
 
