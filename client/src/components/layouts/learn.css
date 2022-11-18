@@ -11,7 +11,7 @@
 
 #learn-app-wrapper .reflex-container.vertical {
   min-height: 0;
-  flex: 1 1 auto;
+  flex-grow: 1;
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter,
