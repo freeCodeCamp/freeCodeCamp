@@ -7,7 +7,7 @@ dashedName: step-30
 
 # --description--
 
-追加した画像のアクセシビリティを向上させるために、`alt` 属性に下記テキストを追加してください:
+To improve accessibility of the image you added, add an `alt` attribute with the text:
 
 `Five cats looking around a field.`
 

@@ -10,7 +10,7 @@ dashedName: use-the-filter-method-to-extract-data-from-an-array
 
 另一個有用的數組方法是 `filter()`（即 `Array.prototype.filter()`）。
 
-`filter` 接收一個回調函數，將回調函數內的邏輯應用於數組的每個元素，新數組包含根據回調函數內條件返回 `true` 的元素。 換言之，它根據傳遞給它的函數過濾數組。  和 `map` 一樣，filter 不會改變原始數組。
+`filter` calls a function on each element of an array and returns a new array containing only the elements for which that function returns a truthy value - that is, a value which returns `true` if passed to the `Boolean()` constructor. 換言之，它根據傳遞給它的函數過濾數組。  和 `map` 一樣，filter 不會改變原始數組。
 
 回調函數接收三個參數。 第一個參數是當前正在被處理的元素。 第二個參數是這個元素的索引，第三個參數是在其上調用 `filter` 方法的數組。
 

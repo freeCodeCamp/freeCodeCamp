@@ -170,7 +170,7 @@ async (getUserInput) => {
 };
 ```
 
-<b>DELETE</b> リクエストを `/api/books` へ送信して、データベース内のすべてのブックを削除することができます。 成功した場合、文字列 `'complete delete successful` のレスポンスを返します。
+<b>DELETE</b> リクエストを `/api/books` へ送信して、データベース内のすべてのブックを削除することができます。 The returned response will be the string `complete delete successful` if successful.
 
 ```js
 async (getUserInput) => {

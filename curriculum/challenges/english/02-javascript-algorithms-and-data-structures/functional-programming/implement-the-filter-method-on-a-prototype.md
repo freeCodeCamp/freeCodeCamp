@@ -42,10 +42,6 @@ Array.prototype.myFilter = function(callback) {
   // Only change code above this line
   return newArray;
 };
-
-// Test case
-const s = [23, 65, 98, 5];
-const odd_s = s.myFilter(item => item % 2 === 1);
 ```
 
 # --solutions--

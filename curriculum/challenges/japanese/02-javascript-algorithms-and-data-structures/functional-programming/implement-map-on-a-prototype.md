@@ -20,10 +20,12 @@ dashedName: implement-map-on-a-prototype
 
 # --hints--
 
-`new_s` は `[46, 130, 196, 10]` と等しくなければなりません。
+`[23, 65, 98, 5, 13].myMap(item => item * 2)` should equal `[46, 130, 196, 10, 26]`.
 
 ```js
-assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]));
+const _test_s = [46, 130, 196, 10, 13];
+const _callback = item => item * 2;
+assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
 コードでは `map` メソッドを使用しないでください。
@@ -37,9 +39,6 @@ assert(!code.match(/\.?[\s\S]*?map/g));
 ## --seed-contents--
 
 ```js
-// The global variable
-const s = [23, 65, 98, 5];
-
 Array.prototype.myMap = function(callback) {
   const newArray = [];
   // Only change code below this line
@@ -47,17 +46,11 @@ Array.prototype.myMap = function(callback) {
   // Only change code above this line
   return newArray;
 };
-
-const new_s = s.myMap(function(item) {
-  return item * 2;
-});
 ```
 
 # --solutions--
 
 ```js
-const s = [23, 65, 98, 5];
-
 Array.prototype.myMap = function(callback) {
   const newArray = [];
   for (const elem of this) {
@@ -66,7 +59,7 @@ Array.prototype.myMap = function(callback) {
   return newArray;
 };
 
-const new_s = s.myMap(function(item) {
-  return item * 2;
-});
+// Test case
+const s = [23, 65, 98, 5];
+const doubled_s = s.myMap(item => item * 2);
 ```

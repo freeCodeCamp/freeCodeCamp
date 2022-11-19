@@ -43,7 +43,7 @@ Normalmente, você não precisaria alterar nenhuma configuração ou compilar o 
 
 ### Veiculando localmente o site da documentação
 
-Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+Instale o freeCodeCamp localmente ([veja o guia de instalação local](how-to-setup-freecodecamp-locally)). Nós empacotamos a CLI com as ferramentas de desenvolvimento para que você possa executar qualquer um dos comandos abaixo, conforme necessário, a partir da raiz do repositório:
 
 #### Veicule e inicie apenas o site da documentação
 
