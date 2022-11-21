@@ -95,7 +95,7 @@ function fun1() {
 // Only change code above this line
 
 function fun2() {
-  let output = "";
+  var output = "";
   if (typeof myGlobal != "undefined") {
     output += "myGlobal: " + myGlobal;
   }
