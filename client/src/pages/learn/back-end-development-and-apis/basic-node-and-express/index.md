@@ -17,7 +17,7 @@ Express, while not included with Node.js, is another module often used with it. 
 
 Working on these challenges involves writing code on Replit in our starter project.
 
-- Start by Importing the project on Replit.
+- Start by importing the project on Replit.
 - Next, you will see a <code>.replit</code> window.
 - Select <code>Use run command</code> and click the <code>Done</code> button.
 - Complete each challenge and copy the public Replit URL (to the homepage of your app) into the challenge screen to test it!
