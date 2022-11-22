@@ -22,27 +22,27 @@ dashedName: create-a-linear-scale-with-d3
 const scale = d3.scaleLinear()
 ```
 
-بشكل افتراضي، يستخدم المقياس عَلاقة الهُوِيَّة (identity relationship). The value of the input is the same as the value of the output. A separate challenge covers how to change this.
+بشكل افتراضي، يستخدم المقياس عَلاقة الهُوِيَّة (identity relationship). تطابق قيمة المدخل (Input) قيمة المخرج (output). يشمل تحد أخر كيفية تغيير ذلك.
 
 # --instructions--
 
-Change the `scale` variable to create a linear scale. Then set the `output` variable to the scale called with an input argument of `50`.
+تغيير متغير (variable) مسمى `scale` لإنشاء مقياس خطي (linear scale). ثم عيّن متغير (variable) مسمى `output` إلى scale, الذي فعلته بالإدخال وسيط بقيمة `50`.
 
 # --hints--
 
-The text in the `h2` should be `50`.
+يجب أن يكون النص في `h2` بقيمة `50`.
 
 ```js
 assert($('h2').text() == '50');
 ```
 
-Your code should use the `scaleLinear()` method.
+يجب أن يستخدم كودك طريقة (method) تسمى `scaleLinear()`.
 
 ```js
 assert(code.match(/\.scaleLinear/g));
 ```
 
-The `output` variable should call `scale` with an argument of `50`.
+يجب أن يُفاعِل متغير `output` وظيفة `scale` مع وسيط `50`.
 
 ```js
 assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g));
