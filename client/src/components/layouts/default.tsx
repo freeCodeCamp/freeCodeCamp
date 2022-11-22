@@ -93,6 +93,13 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   useTheme?: boolean;
 }
 
+const getSystemTheme = () =>
+  `${
+    window.matchMedia('(prefers-color-scheme: dark)').matches === true
+      ? 'dark-palette'
+      : 'light-palette'
+  }`;
+
 class DefaultLayout extends Component<DefaultLayoutProps> {
   static displayName = 'DefaultLayout';
 
@@ -152,7 +159,7 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
         <Helmet
           bodyAttributes={{
             class: useTheme
-              ? `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
+              ? `${theme === 'night' ? 'dark-palette' : getSystemTheme()}`
               : 'light-palette'
           }}
           meta={[
