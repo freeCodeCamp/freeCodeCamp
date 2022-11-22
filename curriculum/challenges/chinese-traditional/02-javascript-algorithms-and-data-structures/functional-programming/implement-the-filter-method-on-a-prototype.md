@@ -16,7 +16,7 @@ dashedName: implement-the-filter-method-on-a-prototype
 
 # --hints--
 
-`[23, 65, 98, 5, 13].myFilter(item => item % 2)` should equal `[23, 65, 5, 13]`.
+`[23, 65, 98, 5, 13].myFilter(item => item % 2)` 應該等於 `[23, 65, 5, 13]`。
 
 ```js
 const _test_s = [23, 65, 98, 5, 13];
