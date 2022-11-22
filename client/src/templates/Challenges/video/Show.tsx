@@ -306,13 +306,13 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                               className={'video-quiz-option'}
                               text={assignment}
                             />
-                            <Spacer size={2} />
+                            <Spacer />
                           </label>
                         ))}
                       </div>{' '}
                     </>
                   ) : null}
-
+                  <Spacer />
                   <h2>Question</h2>
                   <PrismFormatted className={'line-numbers'} text={text} />
                   <div className='video-quiz-options'>
@@ -348,11 +348,15 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 >
                   {this.state.showWrong ? (
                     <span>{t('learn.wrong-answer')}</span>
-                  ) : this.state.allAssignmentsCompleted ? (
+                  ) : (
                     <span>{t('learn.check-answer')}</span>
-                  ) : null}
-                  {!this.state.allAssignmentsCompleted ? (
-                    <span>{t('learn.assignments-not-complete')}</span>
+                  )}
+                  {!this.state.allAssignmentsCompleted &&
+                  assignments[0] != '' ? (
+                    <>
+                      <br />
+                      <span>{t('learn.assignment-not-complete')}</span>
+                    </>
                   ) : null}
                 </div>
                 <Spacer />
