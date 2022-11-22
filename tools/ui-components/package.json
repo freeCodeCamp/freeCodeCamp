@@ -20,6 +20,7 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "dependencies": {
     "@babel/preset-typescript": "7.18.6",
+    "@headlessui/react": "^1.7.4",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "typescript": "4.9.5"
