@@ -10,6 +10,7 @@ import NavLinks from './nav-links';
 import NavLogo from './nav-logo';
 import './universal-nav.css';
 import AuthOrProfile from './auth-or-profile';
+import ExposedNav from './exposed-nav';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
@@ -67,6 +68,9 @@ export const UniversalNav = ({
         <Link id='universal-nav-logo' to='/learn'>
           <NavLogo />
         </Link>
+      </div>
+      <div className='exposed-nav-container'>
+        <ExposedNav />
       </div>
       <div className='universal-nav-right main-nav'>
         {pending ? (

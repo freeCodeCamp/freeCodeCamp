@@ -362,7 +362,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             </li>
           </Fragment>
         )}
-        <li key='forum' className='nav-line'>
+        <li key='forum' className='nav-line exposed-nav-items-menu'>
           <Link
             className='nav-link nav-link-flex'
             external={true}
@@ -374,7 +374,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             <FontAwesomeIcon icon={faExternalLinkAlt} />
           </Link>
         </li>
-        <li key='news'>
+        <li key='news' className='exposed-nav-items-menu'>
           <Link
             className='nav-link nav-link-flex'
             external={true}
@@ -386,7 +386,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             <FontAwesomeIcon icon={faExternalLinkAlt} />
           </Link>
         </li>
-        <li key='radio'>
+        <li key='radio' className='exposed-nav-items-menu'>
           <Link
             className='nav-link nav-link-flex'
             external={true}
