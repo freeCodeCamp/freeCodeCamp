@@ -37,7 +37,7 @@ async (getUserInput) => {
 }
 ```
 
-Your client should be listening for `'user count'` event.
+Dein Client sollte auf das Ereignis `'user count'` warten.
 
 ```js
 async (getUserInput) => {
