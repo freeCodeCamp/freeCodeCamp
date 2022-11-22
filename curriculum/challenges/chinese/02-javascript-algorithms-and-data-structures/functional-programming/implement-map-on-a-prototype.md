@@ -20,7 +20,7 @@ dashedName: implement-map-on-a-prototype
 
 # --hints--
 
-`[23, 65, 98, 5, 13].myMap(item => item * 2)` should equal `[46, 130, 196, 10, 26]`.
+`[23, 65, 98, 5, 13].myMap(item => item * 2)` 应该等于 `[46, 130, 196, 10, 26]`。
 
 ```js
 const _test_s = [46, 130, 196, 10, 13];

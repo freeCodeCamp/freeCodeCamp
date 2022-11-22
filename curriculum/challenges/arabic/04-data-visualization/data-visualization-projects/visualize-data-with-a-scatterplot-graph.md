@@ -28,23 +28,23 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 
 **قصة المستخدم 7:** يجب أن تتوافق `data-xvalue` ونقطتها الموافقة مع النقطة/القيمة الموافقة على محور أفقي (x-axis).
 
-**قصة المستخدم 8:** يجب أن تتوافق `data-yvalue` ونقطتها الموافقة مع النقطة/القيمة الموافقة على محور أفقي (y-axis).
+**قصة المستخدم 8:** يجب أن توافق `data-yvalue` ونقطتها الموافقة مع النقطة/القيمة الموافقة على محور أفقي (y-axis).
 
-**قصة المستخدم 9:** يمكنني أن أرى تسميات علامة (tick) متعددة على المحور الرأسي (y-axis) مع تنسيق الوقت `%M:%S`.
+**قصة المستخدم 9:** يمكننك رأيه تسميات علامة (tick) متعددة على المحور الرأسي (y-axis) مع تنسيق الوقت `%M:%S`.
 
-**قصة المستخدم 10:** يمكنني أن أرى تسميات علامة (tick) متعددة على المحور الأفقي (x-axis) الذي يظهر السنة.
+**قصة المستخدم 10:** يمكننك رأيه تسميات علامة (tick) متعددة على المحور الأفقي (x-axis) الذي يظهر السنة.
 
-**قصة المستخدم 11:** يمكنني أن أرى أن نطاق (range) تسميات (labels) المحور الأفقي (x-axis) يقع ضمن نطاق بيانات المحور الأفقي (x-axis) فعلاً.
+**قصة المستخدم 11:** يمكننك رأيه نطاق (range) تسميات (labels) المحور الأفقي (x-axis) يقع ضمن نطاق بيانات المحور الأفقي (x-axis) فعلاً.
 
-**قصة المستخدم 12:** يمكنني أن أرى أن نطاق (range) تسميات (labels) المحور الرأسي (y-axis) تقع ضمن نطاق بيانات المحور الرأسي (y-axis) فعلاً.
+**قصة المستخدم 12:** يمكننك رأيه نطاق (range) تسميات (labels) المحور الرأسي (y-axis) تقع ضمن نطاق بيانات المحور الرأسي (y-axis) فعلاً.
 
-**قصة المستخدم 13:** يمكنني رؤية legend تحتوي على نص وصفي يحتوي على `id="legend"`.
+**قصة المستخدم 13:** يمكننك رؤية legend تحتوي على نص وصفي يحتوي على `id="legend"`.
 
-**User Story #14:** I can mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
+**قصة المستخدم 14:** يمكننك تحريك الفأرة (mouse) فوق منطقة ورأيه أدوات نصيحة (tooltip) موافق `id="tooltip"`، التي تعرض المزيد من المعلومات حول المنطقة.
 
-**User Story #15:** My tooltip should have a `data-year` property that corresponds to the `data-xvalue` of the active area.
+**قصة المستخدم 15:** يجب أن تحتوي تلميح أدواتك (tooltip) على خاصية `data-year` التي تتوافق مع `data-xvalue` في المنطقة النشطة.
 
-Here is the dataset you will need to complete this project: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json`
+إليك مجموعة البيانات التي ستحتاج إلى إكمال هذا المشروع: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json`
 
 You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
