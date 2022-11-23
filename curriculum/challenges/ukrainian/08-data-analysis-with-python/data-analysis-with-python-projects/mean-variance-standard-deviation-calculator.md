@@ -50,19 +50,19 @@ For example, `calculate([0,1,2,3,4,5,6,7,8])` should return:
 }
 ```
 
-The unit tests for this project are in `test_module.py`.
+Модульні тести для цього проєкту знаходяться в `test_module.py`.
 
-## Development
+## Розробка
 
-For development, you can use `main.py` to test your `calculate()` function. Натисніть кнопку «запустити» і `main.py` запуститься.
+Для розробки ви можете використати `main.py`, щоб протестувати свою функцію `calculate()`. Натисніть кнопку «run» і `main.py` запуститься.
 
-## Testing
+## Тестування
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. Тести запустяться автоматично, коли ви натиснете на кнопку «запустити».
+Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
 
-## Submitting
+## Надсилання
 
-Copy your project's URL and submit it to freeCodeCamp.
+Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
 # --hints--
 

@@ -12,29 +12,29 @@ dashedName: polygon-area-calculator
 
 # --instructions--
 
-In this project you will use object oriented programming to create a Rectangle class and a Square class. The Square class should be a subclass of Rectangle and inherit methods and attributes.
+У цьому проєкті ви будете використовувати об'єктно-орієнтоване програмування, щоб створити класи Rectangle (прямокутник) та Square (квадрат). Клас Square повинен бути підкласом до Rectangle і наслідувати його методи та атрибути.
 
-## Клас "Rectangle"
+## Клас Rectangle
 
-When a Rectangle object is created, it should be initialized with `width` and `height` attributes. The class should also contain the following methods:
+При створенні об'єкту Rectangle ви повинні ініціалізувати його, використовуючи атрибути `width` та `height`. Клас також повинен містити наступні методи:
 
 - `set_width`
 - `set_height`
-- `get_area`: Returns area (`width * height`)
-- `get_perimeter`: Returns perimeter (`2 * width + 2 * height`)
-- `get_diagonal`: Returns diagonal (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: Returns a string that represents the shape using lines of "\*". The number of lines should be equal to the height and the number of "\*" in each line should be equal to the width. There should be a new line (`\n`) at the end of each line. If the width or height is larger than 50, this should return the string: "Too big for picture.".
-- `get_amount_inside`: Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
+- `get_area`: повертає площу (`width * height`)
+- `get_perimeter`: повертає периметр (`2 * width + 2 * height`)
+- `get_diagonal`: повертає діагональ (`(width ** 2 + height ** 2) ** .5`)
+- `get_picture`: повертає рядок, який представляє фігуру лініями "\*". Кількість ліній повинна дорівнювати висоті, а кількість "\*" у кожному рядку повинна дорівнювати ширині. Наприкінці кожного рядка має бути новий рядок (`\n`). Якщо ширина або висота більші за 50, то повинен повернутись рядок "Too big for picture." (завеликий для зображення).
+- `get_amount_inside`: приймає іншу фігуру (квадрат чи трикутник) як аргумент. Повертає ту кількість разів, скільки передана фігура може поміститися у фігурі (без обертання). Наприклад, прямокутник з шириною 4 і висотою 8 може вмістити два квадрати зі сторонами 4.
 
-Additionally, if an instance of a Rectangle is represented as a string, it should look like: `Rectangle(width=5, height=10)`
+Додатково, якщо екземпляр Rectangle представлений як рядок, він має виглядати так: `Rectangle(width=5, height=10)`
 
 ## Клас Square
 
-The Square class should be a subclass of Rectangle. When a Square object is created, a single side length is passed in. The `__init__` method should store the side length in both the `width` and `height` attributes from the Rectangle class.
+Клас Square має бути підкласом Rectangle. Коли ви створюєте об'єкт Square, передається довжина однієї сторони. Метод `__init__` має зберігати довжину сторони в атрибутах `width` та `height` з класу Rectangle.
 
-The Square class should be able to access the Rectangle class methods but should also contain a `set_side` method. If an instance of a Square is represented as a string, it should look like: `Square(side=9)`
+Клас Square повинен мати доступ до методів класу Rectange, але також повинен містити метод `set_side`. Якщо екземпляр Square представлений у вигляді рядка, то це має виглядати так: `Square(side=9)`
 
-Additionally, the `set_width` and `set_height` methods on the Square class should set both the width and height.
+Додатково, методи `set_width` та `set_height` у класі Square повинні встановити як ширину, так і висоту.
 
 ## Приклад використання
 
@@ -79,23 +79,23 @@ Square(side=4)
 8
 ```
 
-The unit tests for this project are in `test_module.py`.
+Модульні тести для цього проєкту знаходяться в `test_module.py`.
 
 ## Розробка
 
-Write your code in `shape_calculator.py`. For development, you can use `main.py` to test your `shape_calculator()` function. Натисніть кнопку «запустити» і `main.py` запуститься.
+Запишіть свій код у `shape_calculator.py`. Для розробки ви можете використати `main.py`, щоб протестувати свою функцію `shape_calculator()`. Натисніть кнопку «run» і `main.py` запуститься.
 
 ## Тестування
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. Тести запустяться автоматично, коли ви натиснете на кнопку «запустити».
+Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
 
 ## Надсилання
 
-Copy your project's URL and submit it to freeCodeCamp.
+Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
 # --hints--
 
-It should create a Rectangle class and Square class and pass all tests.
+Проєкт повинен створити класи Rectangle і Square та пройти тестування.
 
 ```js
 

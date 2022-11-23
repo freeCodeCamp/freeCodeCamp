@@ -12,19 +12,19 @@ dashedName: time-calculator
 
 # --instructions--
 
-Write a function named `add_time` that takes in two required parameters and one optional parameter:
+Напишіть функцію під назвою `add_time`, яка приймає два обов'язкових параметри та один необов'язковий параметр:
 
-- a start time in the 12-hour clock format (ending in AM or PM)
-- a duration time that indicates the number of hours and minutes
-- (optional) a starting day of the week, case insensitive
+- початковий час в 12-годинному форматі (закінчується на AM чи PM)
+- проміжок часу, який позначає кількість годин та хвилин
+- (необов'язково) перший день тижня, байдуже на регістр
 
-The function should add the duration time to the start time and return the result.
+Функція повинна додати проміжок часу до початкового часу та повернути результат.
 
-If the result will be the next day, it should show `(next day)` after the time. If the result will be more than one day later, it should show `(n days later)` after the time, where "n" is the number of days later.
+Якщо результатом буде наступний день, то повинне бути `(next day)` після часу. Якщо результат буде за декілька днів, то повинне бути `(n days later)` після часу, де n – це кількість днів.
 
-If the function is given the optional starting day of the week parameter, then the output should display the day of the week of the result. The day of the week in the output should appear after the time and before the number of days later.
+Якщо функції задано довільний параметр першого дня тижня, то вивід має показувати день тижня у результаті. День тижня у виводі повинен бути після часу та перед кількістю днів.
 
-Below are some examples of different cases the function should handle. Pay close attention to the spacing and punctuation of the results.
+Нижче наведені приклади різних випадків, які має опрацьовувати функція. Слідкуйте за інтервалами та пунктуацією в результатах.
 
 ```py
 add_time("3:00 PM", "3:10")
@@ -46,23 +46,23 @@ add_time("6:30 PM", "205:12")
 # Returns: 7:42 AM (9 days later)
 ```
 
-Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.
+Не імпортуйте бібліотеки Python. Припустимо, що початковий час є дійсним часом. Хвилини у проміжку часу будуть цілим числом меншим за 60, але години можуть бути будь-яким числом.
 
 ## Розробка
 
-Write your code in `time_calculator.py`. For development, you can use `main.py` to test your `time_calculator()` function. Натисніть кнопку «запустити» і `main.py` запуститься.
+Запишіть свій код у `time_calculator.py`. Для розробки ви можете використати `main.py`, щоб протестувати свою функцію `time_calculator()`. Натисніть кнопку «run» і `main.py` запуститься.
 
 ## Тестування
 
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. Тести запустяться автоматично, коли ви натиснете на кнопку «запустити».
+Модульні тести для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
 
 ## Надсилання
 
-Copy your project's URL and submit it to freeCodeCamp.
+Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
 # --hints--
 
-It should correctly add times and pass all tests.
+Проєкт повинен правильно додавати час та пройти тестування.
 
 ```js
 

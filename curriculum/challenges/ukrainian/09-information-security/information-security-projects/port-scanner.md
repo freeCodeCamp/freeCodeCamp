@@ -70,15 +70,15 @@ If the IP address passed into the `get_open_ports` function is invalid, the func
 
 ## Розробка
 
-Write your code in `port_scanner.py`. For development, you can use `main.py` to test your code. Натисніть кнопку "run" і `main.py` запуститься.
+Запишіть свій код у `port_scanner.py`. Для розробки ви можете використати `main.py`, щоб протестувати свій код. Натисніть кнопку «run» і `main.py` запуститься.
 
 ## Тестування
 
-Розділи з тестами для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично кожного разу, коли ви натиснете клавішу "run".
+Модульні тести для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
 
-## Надіслати
+## Надсилання
 
-Скопіюйте URL-адресу вашого проєкту і відправте його до freeCodeCamp.
+Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f140b6c005b0e76f07d
-title: 'Веб-сервіси: JSON'
+title: 'Вебсервіси: JSON'
 challengeType: 11
 videoId: ZJE-U56BppM
 bilibiliIds:
