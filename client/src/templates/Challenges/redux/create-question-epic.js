@@ -64,10 +64,10 @@ function createQuestionEpic(action$, state$, { window }) {
           if (editableRegionBoundaries.length > 0) {
             const comment = editableRegionStrings(ext);
             const [start, end] = editableRegionBoundaries;
-            const editableContents = contents.split(lineBreak);
+            const editableContents = contents.split('\n');
             editableContents.splice(start, 0, comment);
             editableContents.splice(end, 0, comment);
-            file.contents = editableContents.join(lineBreak);
+            file.contents = editableContents.join('\n');
           }
         });
       }
