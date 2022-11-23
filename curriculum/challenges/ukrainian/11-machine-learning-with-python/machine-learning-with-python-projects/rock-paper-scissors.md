@@ -24,9 +24,9 @@ The file `RPS.py` shows an example function that you will need to update. The ex
 
 *Hint: To defeat all four opponents, your program may need to have multiple strategies that change depending on the plays of the opponent.*
 
-## Development
+## Розробка
 
-Do not modify `RPS_game.py`. Write all your code in `RPS.py`. For development, you can use `main.py` to test your code.
+Do not modify `RPS_game.py`. Запишіть весь свій код у `RPS.py`. Для розробки ви можете використати `main.py`, щоб протестувати свій код.
 
 `main.py` imports the game function and bots from `RPS_game.py`.
 
@@ -46,15 +46,15 @@ For example, here is how you would call the function if you want `player` and `q
 play(player, quincy, 1000, verbose=True)
 ```
 
-Натисніть кнопку «запустити» і `main.py` запуститься.
+Натисніть кнопку «run» і `main.py` запуститься.
 
-## Testing
+## Тестування
 
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. Якщо ви видалите коментар в останньому рядку у `main.py`, тести запустяться автоматично, коли ви натиснете кнопку «запустити».
+Модульні тести для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Якщо ви видалите коментар в останньому рядку в `main.py`, тести запустяться автоматично, коли ви натиснете кнопку «run».
 
-## Submitting
+## Надсилання
 
-Copy your project's URL and submit it below.
+Скопіюйте URL-адресу свого проєкту та відправте її.
 
 # --hints--
 

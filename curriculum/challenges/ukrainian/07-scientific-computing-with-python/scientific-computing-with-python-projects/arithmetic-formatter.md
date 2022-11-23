@@ -12,7 +12,7 @@ dashedName: arithmetic-formatter
 
 # --instructions--
 
-Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
+У початковій школі вчать вирішувати математичні приклади вертикально, аби було простіше. Наприклад, «235 + 52» перетворюється на:
 
 ```py
   235
@@ -20,17 +20,17 @@ Students in primary school often arrange arithmetic problems vertically to make 
 -----
 ```
 
-Create a function that receives a list of strings that are arithmetic problems and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to `True`, the answers should be displayed.
+Створіть функцію, яка отримує список рядків з математичними прикладами та послідовно повертає їх у вертикальному вигляді. В разі потреби функція повинна брати другий аргумент. Коли другий аргумент встановлено на `True`, відповіді повинні відображатися.
 
-## Приклад
+## Наприклад
 
-Function Call:
+Виклик функції:
 
 ```py
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 ```
 
-Output:
+Вивід:
 
 ```py
    32      3801      45      123
@@ -38,13 +38,13 @@ Output:
 -----    ------    ----    -----
 ```
 
-Function Call:
+Виклик функції:
 
 ```py
 arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 ```
 
-Output:
+Вивід:
 
 ```py
   32         1      9999      523
@@ -55,35 +55,35 @@ Output:
 
 ## Правила
 
-The function will return the correct conversion if the supplied problems are properly formatted, otherwise, it will **return** a **string** that describes an error that is meaningful to the user.
+Функція поверне правильне перетворення, якщо надані приклади відформатовані правильно. В іншому випадку буде **повернений** **рядок**, який описує помилку, важливу для користувача.
 
 
-- Situations that will return an error:
-  - If there are **too many problems** supplied to the function. The limit is **five**, anything more will return: `Error: Too many problems.`
-  - The appropriate operators the function will accept are **addition** and **subtraction**. Multiplication and division will return an error. Other operators not mentioned in this bullet point will not need to be tested. The error returned will be: `Error: Operator must be '+' or '-'.`
-  - Each number (operand) should only contain digits. Otherwise, the function will return: `Error: Numbers must only contain digits.`
-  - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be: `Error: Numbers cannot be more than four digits.`
-- If the user supplied the correct format of problems, the conversion you return will follow these rules:
-  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
-  - Numbers should be right-aligned.
-  - There should be four spaces between each problem.
-  - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
+- Ситуації, які повернуть помилку:
+  - Функції надано **забагато прикладів**. Ліміт складає **5 прикладів**. Якщо їх більше, то повернеться `Error: Too many problems.`
+  - Функція приймає відповідні оператори: **додавання** та **віднімання**. Множення та ділення поверне помилку. Інші оператори, які не згадані тут, тестовані не будуть. Повернеться помилка `Error: Operator must be '+' or '-'.`
+  - Кожне число (операнд) повинне містити лише цифри. В іншому випадку функція поверне `Error: Numbers must only contain digits.`
+  - Кожен операнд (тобто число з кожної сторони оператора) може мати максимум чотири цифри по ширині. В іншому випадку помилковий рядок видасть `Error: Numbers cannot be more than four digits.`
+- Якщо користувач надав правильний формат прикладу, то перетворення буде слідувати наступним правилам:
+  - Повинен бути лише один пробіл між оператором і найдовшим із двох операндів, оператор буде на тому ж рядку, що й другий операнд, обоє операндів будуть в однаковому порядку, як і надано (перший буде зверху, а другий буде знизу).
+  - Числа повинні бути вирівняні за правим краєм.
+  - Між кожним прикладом повинно бути чотири пробіли.
+  - Знизу кожного прикладу повинна бути риска. Риска повинна йти по всій довжині прикладу індивідуально. (На прикладі вище видно, як це повинно виглядати.)
 
 ## Розробка
 
-Write your code in `arithmetic_arranger.py`. For development, you can use `main.py` to test your `arithmetic_arranger()` function. Натисніть кнопку «запустити» і `main.py` запуститься.
+Запишіть свій код у `arithmetic_arranger.py`. Для розробки ви можете використати `main.py`, щоб протестувати свою функцію `arithmetic_arranger()`. Натисніть кнопку «run» і `main.py` запуститься.
 
 ## Тестування
 
-The unit tests for this project are in `test_module.py`. We are running the tests from `test_module.py` in `main.py` for your convenience. Тести запустяться автоматично, коли ви натиснете на кнопку «запустити». Alternatively you may run the tests by inputting `pytest` in the console.
+Модульні тести для цього проєкту знаходяться в `test_module.py`. Ми запускаємо тести з `test_module.py` в `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run». Як варіант, ви можете запустити тести, ввівши у консоль `pytest`.
 
-## Надіслати
+## Надсилання
 
-Copy your project's URL and submit it below.
+Скопіюйте URL-адресу свого проєкту та відправте її.
 
 # --hints--
 
-It should correctly format an arithmetic problem and pass all tests.
+Проєкт повинен правильно відформатувати математичний приклад та пройти тестування.
 
 ```js
 

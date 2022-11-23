@@ -32,17 +32,17 @@ Unit tests are written for you under `test_module.py`.
 
 The boilerplate also includes commands to save and return the image.
 
-## Development
+## Розробка
 
-For development, you can use `main.py` to test your functions. Натисніть кнопку «запустити» і `main.py` запуститься.
+Для розробки ви можете використати `main.py`, щоб протестувати свої функції. Натисніть кнопку «run» і `main.py` запуститься.
 
-## Testing
+## Тестування
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. Тести запустяться автоматично, коли ви натиснете на кнопку «запустити».
+Ми перенесли тести з `test_module.py` в `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
 
-## Submitting
+## Надсилання
 
-Copy your project's URL and submit it to freeCodeCamp.
+Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
 ## Data Source
 
