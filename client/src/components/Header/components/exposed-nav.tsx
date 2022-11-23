@@ -5,7 +5,6 @@ import { radioLocation } from '../../../../../config/env.json';
 
 const ExposedNav = (): JSX.Element => {
   const { t } = useTranslation();
-  // return <FreeCodeCampLogo aria-label={t('aria.fcc-curriculum')} />;
   return (
     <nav className='exposed-nav'>
       <ul className='exposed-nav-list'>
