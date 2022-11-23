@@ -54,19 +54,9 @@ function createQuestionEpic(action$, state$, { window }) {
         challengeFiles?.some(file => file.editableRegionBoundaries.length > 0)
       ) {
         const editableRegionStrings = fileExtension => {
-          const lineBreak = '\n';
-          const multiLineStart = '/*';
-          const multiLineEnd = '*/';
-          const htmlStart = '<!---';
-          const htmlEnd = '--->';
-          const editableRegionStr = 'User Editable Region';
-          const startComment =
-            fileExtension === 'html' ? htmlStart : multiLineStart;
-          const endComment = fileExtension === 'html' ? htmlEnd : multiLineEnd;
-          const editableRegionComments = {
-            comment: `${lineBreak}${startComment} ${editableRegionStr} ${endComment}${lineBreak}`
-          };
-          return { lineBreak, editableRegionComments };
+          const startComment = fileExtension === 'html' ? '<!--' : '/*';
+          const endComment = fileExtension === 'html' ? '-->' : '*/';
+          return `\n${startComment} 'User Editable Region' ${endComment}\n`;
         };
 
         challengeFiles.forEach(file => {
