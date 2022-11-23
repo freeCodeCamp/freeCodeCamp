@@ -1,17 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import envData from '../../../../../config/env.json';
-
-import { Link } from '../../helpers';
-
-interface NavigationLocationApi {
-  clientLocale: string;
-  radioLocation: string;
-  apiLocation: string;
-}
-
-const { radioLocation } = envData as NavigationLocationApi;
+import { radioLocation } from '../../../../../config/env.json';
 
 const ExposedNav = (): JSX.Element => {
   const { t } = useTranslation();
