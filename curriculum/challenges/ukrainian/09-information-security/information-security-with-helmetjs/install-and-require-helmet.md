@@ -10,23 +10,29 @@ dashedName: install-and-require-helmet
 
 Робота над цими завданнями включає написання коду користуючись одним з методів наведених нижче:
 
-- Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте ці завдання локально.
+- Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте завдання локально.
 - Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання цих завдань.
 - Для завершення завдань використовуйте обраний вами розробник сайтів. Переконайтеся, що ви зберегли всі файли з нашого репозиторію GitHub.
 
-Після завершення, переконайтеся, що робоча демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту в поле `Solution Link`.
+If you use Replit, follow these steps to set up the project:
 
-Helmet допоможе вам захистити ваші Express-програми, встановивши різноманітні HTTP заголовки.
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+
+Helmet helps you secure your Express apps by setting various HTTP headers.
 
 # --instructions--
 
-Весь ваш код для цих уроків розміщується в файл `myApp.js` між рядками коду, з якого ми почали вам писати. Не змінюйте та не видаляйте код, який ми додали для вас.
+All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
 
-Версія Helmet `3.21.3` вже встановлена, тому вимагайте його як `helmet` у `myApp.js`.
+Helmet version `3.21.3` has already been installed, so require it as `helmet` in `myApp.js`.
 
 # --hints--
 
-Версія `helmet``3.21.3` повинна бути в `package.json`
+`helmet` version `3.21.3` should be in `package.json`
 
 ```js
 (getUserInput) =>

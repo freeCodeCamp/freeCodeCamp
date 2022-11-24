@@ -10,21 +10,26 @@ dashedName: budget-app
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-budget-app" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
 Завершіть клас `Category` у `budget.py`. Він повинен опрацьовувати об'єкти, базуючись на різних категоріях, наприклад *їжа*, *одяг* та *розваги*. Коли об'єкти створені, вони передаються в назву категорії. Клас повинен мати поле класу під назвою `ledger`, яке є списком. Клас також повинен містити наступні методи:
 
-- Метод `deposit`, що приймає суму та опис. Якщо жодного опису не дано, то воно автоматично переходить до порожнього рядка. Цей метод повинен додавати об'єкти до списку ledger у вигляді `{"amount": amount, "description": description}`.
-- Метод `withdraw` схожий до методу `deposit`, але сума, яку він передає, повинна зберігатися у списку як від'ємне число. Якщо недостатньо коштів, то нічого додавати не потрібно. Цей метод повинен повертати `True`, якщо зняття дійсне, а в іншому випадку повертати `False`.
-- Метод `get_balance`, що повертає поточний баланс категорії бюджету на основі депозитів і зняття.
-- Метод `transfer`, що приймає суму або іншу бюджетну категорію як аргументи. Цей метод повинен додавати виведення суми та опис "Transfer to [Destination Budget Category]" (перенести до [категорія]). Потім він повинен додати депозит до іншої категорії, що містить суму та опис "Transfer from [Source Budget Category]" (передача з [категорія]). Якщо недостатньо коштів, то нічого додавати не потрібно. Цей метод повинен повертати `True`, якщо переказ дійсний, а в іншому випадку повертати `False`.
-- Метод `check_funds`, що приймає суму як аргумент. Він повертає `False`, якщо сума більша за баланс бюджетної категорії, а в іншому випадку повертає `True`. Цей метод варто використовувати обом методам `withdraw` та `transfer`.
+- A `deposit` method that accepts an amount and description. If no description is given, it should default to an empty string. The method should append an object to the ledger list in the form of `{"amount": amount, "description": description}`.
+- A `withdraw` method that is similar to the `deposit` method, but the amount passed in should be stored in the ledger as a negative number. If there are not enough funds, nothing should be added to the ledger. This method should return `True` if the withdrawal took place, and `False` otherwise.
+- A `get_balance` method that returns the current balance of the budget category based on the deposits and withdrawals that have occurred.
+- A `transfer` method that accepts an amount and another budget category as arguments. The method should add a withdrawal with the amount and the description "Transfer to [Destination Budget Category]". The method should then add a deposit to the other budget category with the amount and the description "Transfer from [Source Budget Category]". If there are not enough funds, nothing should be added to either ledgers. This method should return `True` if the transfer took place, and `False` otherwise.
+- A `check_funds` method that accepts an amount as an argument. It returns `False` if the amount is greater than the balance of the budget category and returns `True` otherwise. This method should be used by both the `withdraw` method and `transfer` method.
 
 Якщо бюджетний об'єкт надрукований, він повинен відображатися:
 
-- Рядок заголовка із 30 символів, де назва категорії знаходиться у центрі рядка символів `*`.
-- Список елементів у записі. Кожен рядок повинен показувати опис і суму. Перші 23 символи опису повинні відображатися, а далі вже сума. Сума повинна бути вирівняною за правим краєм, містити два десяткові знаки та відображати максимум 7 символів.
-- Рядок, що показує загальну категорію.
+- A title line of 30 characters where the name of the category is centered in a line of `*` characters.
+- A list of the items in the ledger. Each line should show the description and amount. The first 23 characters of the description should be displayed, then the amount. The amount should be right aligned, contain two decimal places, and display a maximum of 7 characters.
+- A line displaying the category total.
 
 Ось приклад виводу:
 

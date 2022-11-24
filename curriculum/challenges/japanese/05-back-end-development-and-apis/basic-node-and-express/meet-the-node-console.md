@@ -14,21 +14,27 @@ dashedName: meet-the-node-console
 - <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、チャレンジを完了させる。
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。
+If you use Replit, follow these steps to set up the project:
 
-開発プロセスでは、コード内で何が起きているかを確認できるようにすることが重要です。
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
-Node は単なる JavaScript 環境にすぎません。 クライアントサイド JavaScript と同様に、コンソールを使用して有用なデバッグ情報を表示できます。 ローカルマシンでは、ターミナルでコンソール出力を確認できます。 Replit では、デフォルトで右側のペインにターミナルが開きます。
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
-チャレンジの作業中はターミナルを開いたままにしておくことをお勧めします。 ターミナルの出力を読み取ることで、発生する可能性のあるエラーを確認することができます。
+During the development process, it is important to be able to check what’s going on in your code.
+
+Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see console output in a terminal. On Replit, a terminal is open in the right pane by default.
+
+We recommend to keep the terminal open while working at these challenges. By reading the output in the terminal, you can see any errors that may occur.
 
 # --instructions--
 
-`myApp.js` ファイルを変更して、コンソールログに「Hello World」と出力してください。
+Modify the `myApp.js` file to log "Hello World" to the console.
 
 # --hints--
 
-`"Hello World"` がコンソールに表示されます。
+`"Hello World"` should be in the console
 
 ```js
 (getUserInput) =>

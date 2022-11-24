@@ -8,28 +8,28 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**目標:** <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a> と似た機能を持つアプリを構築します
+**目標:** <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a> と似た機能を持つアプリを作成します
 
 **ユーザーストーリー:**
 
-1. `id` の値が `title` に設定されている `h1` 要素内に、ページタイトルを入れる必要があります
-1. `id` の値が `description` に設定されている `p` 要素内に、簡単な説明を入れる必要があります
-1. `id` の値が `survey-form` に設定されている `form` 要素が 1 つ必要です
+1. `id` の値が `title` に設定されている `h1` 要素内に、ページタイトルがあります
+1. `id` の値が `description` に設定されている `p` 要素内に、簡単な説明が記載されています
+1. `id` の値が `survey-form` に設定されている `form` 要素が 1 つあります
 1. その form 要素の中では、`id` の値が `name`、`type` の値が `text` である `input` 欄への名前の入力が**必須**となっています
 1. その form 要素の中では、`id` の値が `email` である `input` 欄へのメールアドレスの入力が**必須**となっています
 1. メールアドレスを不正なフォーマットで入力すると、HTML5 のバリデーションエラーが表示されます
 1. フォームの中で、`id` の値が `number` に設定されている `input` の欄内に数値を入力できます
-1. The number input should not accept non-numbers, either by preventing you from typing them or by showing an HTML5 validation error (depending on your browser).
+1. 数値入力欄は数値でない値を受け付けないように、数値以外の値が入力できないか、HTML5 のバリデーションエラーが表示されるようになっています (ブラウザによって動作が異なります)
 1. `min` と `max` 属性で定義した範囲外の数字を入力すると、HTML5 のバリデーションエラーが表示されます
-1. 名前、メールアドレス、数値の入力欄に対応して、フォーム内に各欄の目的を説明する `label` 要素があり、それぞれ以下の id が設定されている必要があります: `id="name-label"`、`id="email-label"`、`id="number-label"`
+1. 名前、メールアドレス、数値の入力欄にそれぞれ対応して、各欄の目的を説明する `label` 要素がフォーム内にあり、それぞれ以下の id が設定されています: `id="name-label"`、`id="email-label"`、`id="number-label"`
 1. 名前、メールアドレス、数値の入力欄には、各欄の説明や指示を示すプレイスホルダーテキストが表示されます
-1. form 要素内には、`id` の値が `dropdown` に設定されている `select` ドロップダウン要素が 1 つ必要で、その選択肢は少なくとも 2 つ必要です
-1. form 要素内では、少なくとも 2 つのラジオボタンを `name` 属性を使用してグループ化したグループから、オプションを 1 つ選択できます
-1. フォーム要素内では、一連のチェックボックスからいくつかの欄を選択することができ、各チェックボックスは `value` 属性を持つ必要があります
+1. form 要素内には、`id` の値が `dropdown` に設定されている `select` ドロップダウン要素が 1 つあり、選択肢が少なくとも 2 つあります
+1. form 要素内では、`name` 属性を使用してグループ化した 2 つ以上のラジオボタンのグループから、オプションを 1 つ選択できます
+1. フォーム要素内では、一連のチェックボックスから複数の欄を選択することができ、各チェックボックスには `value` 属性が設定されています
 1. form 要素内には、追加のコメント用に `textarea` が用意されています
-1. form 要素内には、`id` の値が `submit` に設定されているボタンがすべての入力を送信するために用意されています
+1. form 要素内には、すべての入力内容を送信するために、`id` の値が `submit` に設定されたボタンが用意されています
 
-上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
+上記のユーザーストーリーを満たし、以下のすべてのテストが通るようにして、このプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
 **注:** スタイルシートをリンクして CSS を適用するため、HTML 内に `<link rel="stylesheet" href="styles.css">` を必ず追加してください
 

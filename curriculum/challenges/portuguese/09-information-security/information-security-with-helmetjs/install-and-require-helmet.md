@@ -14,19 +14,25 @@ Trabalhar nesses desafios vai fazer com que você escreva seu código usando um 
 - Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar esses desafios.
 - Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`.
+If you use Replit, follow these steps to set up the project:
 
-O Helmet ajuda você a proteger seus aplicativos do Express, definindo vários cabeçalhos HTTP.
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+
+Helmet helps you secure your Express apps by setting various HTTP headers.
 
 # --instructions--
 
-Todo o código para estas aulas vai para o arquivo `myApp.js` entre as linhas de código que fornecemos para você começar. Não altere nem exclua o código que adicionamos para você.
+All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
 
-A versão `3.21.3` do Helmet já foi instalada, então solicite-a como `helmet` no `myApp.js`.
+Helmet version `3.21.3` has already been installed, so require it as `helmet` in `myApp.js`.
 
 # --hints--
 
-A versão do `helmet` `3.21.3` deve estar no `package.json`
+`helmet` version `3.21.3` should be in `package.json`
 
 ```js
 (getUserInput) =>

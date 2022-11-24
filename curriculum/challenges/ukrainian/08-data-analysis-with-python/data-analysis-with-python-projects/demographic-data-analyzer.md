@@ -10,7 +10,12 @@ dashedName: demographic-data-analyzer
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
+Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
@@ -18,7 +23,7 @@ We are still developing the interactive instructional part of the Python curricu
 
 # --instructions--
 
-In this challenge you must analyze demographic data using Pandas. You are given a dataset of demographic data that was extracted from the 1994 Census database. Here is a sample of what the data looks like:
+У цьому завдання ви повинні проаналізувати демографічні дані за допомогою Pandas. Вам надається набір демографічних даних, отриманих з бази даних перепису населення 1994 року. Ось приклад того, як виглядають дані:
 
 ```markdown
 |    |   age | workclass        |   fnlwgt | education   |   education-num | marital-status     | occupation        | relationship   | race   | sex    |   capital-gain |   capital-loss |   hours-per-week | native-country   | salary   |
@@ -30,7 +35,7 @@ In this challenge you must analyze demographic data using Pandas. You are given 
 |  4 |    28 | Private          |   338409 | Bachelors   |              13 | Married-civ-spouse | Prof-specialty    | Wife           | Black  | Female |              0 |              0 |               40 | Cuba             | <=50K    |
 ```
 
-You must use Pandas to answer the following questions:
+Ви повинні використати Pandas, щоб відповісти на наступні запитання:
 
 - How many people of each race are represented in this dataset? This should be a Pandas series with race names as the index labels. (`race` column)
 - What is the average age of men?
@@ -42,9 +47,9 @@ You must use Pandas to answer the following questions:
 - What country has the highest percentage of people that earn >50K and what is that percentage?
 - Identify the most popular occupation for those who earn >50K in India.
 
-Use the starter code in the file `demographic_data_analyzer`. Update the code so all variables set to "None" are set to the appropriate calculation or code. Round all decimals to the nearest tenth.
+Використайте початковий код у файлі `demographic_data_analyzer`. Оновіть код, щоб для всіх змінних, для яких встановлено значення "None", було встановлено відповідне обчислення або код. Заокругліть усі десяткові дроби до найближчих десятків.
 
-Unit tests are written for you under `test_module.py`.
+Для вас складені модульні тести у `test_module.py`.
 
 ## Розробка
 
@@ -58,13 +63,13 @@ Unit tests are written for you under `test_module.py`.
 
 Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
-## Dataset Source
+## Джерело даних
 
 Dua, D. and Graff, C. (2019). <a href="http://archive.ics.uci.edu/ml" target="_blank" rel="noopener noreferrer nofollow">UCI Machine Learning Repository</a>. Irvine, CA: University of California, School of Information and Computer Science.
 
 # --hints--
 
-Він повинен пройти усі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

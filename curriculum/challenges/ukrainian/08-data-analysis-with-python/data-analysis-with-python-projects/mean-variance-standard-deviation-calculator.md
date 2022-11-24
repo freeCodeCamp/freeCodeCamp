@@ -10,7 +10,12 @@ dashedName: mean-variance-standard-deviation-calculator
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
-Ми все ще розробляємо інтерактивну частину навчального курсу Python. Наразі ось кілька відео на YouTube-каналі freeCodeCamp.org, які навчать вас усього необхідного, щоб виконати цей проєкт:
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
+Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
 
@@ -18,11 +23,11 @@ dashedName: mean-variance-standard-deviation-calculator
 
 # --instructions--
 
-Створіть функцію `calculate()` в `mean_var_std.py`, яку використовує Numpy для виведення середнього значення, дисперсії, стандартного відхилення, максимуму, мінімуму та суми рядків, стовпців, і елементи в матриці 3 x 3.
+Створіть функцію під назвою `calculate()` у `mean_var_std.py`, яка використовує Numpy для виведення середнього значення, дисперсії, стандартного відхилення, максимуму, мінімуму та суми рядків, стовпчиків, і елементів в матриці 3 x 3.
 
 Вхідним значенням функції має бути список, що містить 9 цифр. Функція повинна перетворити список у масив Numpy 3 x 3, а потім повернути словник, що містить середнє значення, дисперсію, стандартне відхилення, максимум, мінімум і суму вздовж обох осей і для сплощеної матриці.
 
-The returned dictionary should follow this format:
+Повернений словник повинен мати такий формат:
 
 ```py
 {
@@ -35,9 +40,9 @@ The returned dictionary should follow this format:
 }
 ```
 
-Якщо у функцію передається список, що містить менше 9 елементів, вона має викликати виняток `ValueError` з повідомленням: «Список має містити дев’ять чисел.» Значеннями у повернутому словнику мають бути списки, а не числові масиви Numpy.
+Якщо у функцію передається список, що містить менше 9 елементів, вона має викликати виняток `ValueError` з повідомленням: "List must contain nine numbers." (список має містити дев’ять чисел). Значеннями у повернутому словнику мають бути списки, а не масиви Numpy.
 
-For example, `calculate([0,1,2,3,4,5,6,7,8])` should return:
+Наприклад, `calculate([0,1,2,3,4,5,6,7,8])` має повертати:
 
 ```py
 {
@@ -66,7 +71,7 @@ For example, `calculate([0,1,2,3,4,5,6,7,8])` should return:
 
 # --hints--
 
-Потрібно виконати всі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

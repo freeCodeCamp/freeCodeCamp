@@ -18,7 +18,13 @@ Lavorare su questo progetto ti porterà a scrivere il tuo codice utilizzando uno
 -   Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare il tuo progetto.
 -   Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -27,19 +33,19 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 3.  Aggiungerai tutte le funzionalità di sicurezza a `server.js`
 4.  Creerai tutti i test funzionali in `tests/2_functional-tests.js`
 
-**Nota** Considerazioni sulla privacy: a causa del requisito che solo 1 like per IP dovrebbe essere accettato, è necessario salvare gli indirizzi IP. È importante mantenere il rispetto delle leggi sulla privacy dei dati come il General Data Protection Regulation. Una opzione è quella di ottenere il permesso di salvare i dati dell'utente, ma è molto più semplice anonimizzarlo. Per questa sfida, ricordati di anonimizzare gli indirizzi IP prima di salvarli nel database. Se hai bisogno di idee su come farlo, puoi scegliere di fare l'hash dei dati, troncare l'IP, o impostare parte dell'indirizzo IP a 0.
+**Note** Privacy Considerations: Due to the requirement that only 1 like per IP should be accepted, you will have to save IP addresses. It is important to remain compliant with data privacy laws such as the General Data Protection Regulation. One option is to get permission to save the user's data, but it is much simpler to anonymize it. For this challenge, remember to anonymize IP addresses before saving them to the database. If you need ideas on how to do this, you may choose to hash the data, truncate it, or set part of the IP address to 0.
 
-Scrivi i seguenti test in `tests/2_functional-tests.js`:
+Write the following tests in `tests/2_functional-tests.js`:
 
--   Visualizzazione di un'azione: richiesta GET a `/api/stock-prices/`
--   Visualizzazione di un'azione e aggiunta del like: richiesta GET a `/api/stock-prices/`
--   Visualizzazione della stesse azione e nuovo like: richiesta GET a `/api/stock-prices/`
--   Visualizzazione di due azioni: richiesta GET a `/api/stock-prices/`
--   Visualizzazione di due azioni e aggiunta del like: richiesta GET a `/api/stock-prices/`
+-   Viewing one stock: GET request to `/api/stock-prices/`
+-   Viewing one stock and liking it: GET request to `/api/stock-prices/`
+-   Viewing the same stock and liking it again: GET request to `/api/stock-prices/`
+-   Viewing two stocks: GET request to `/api/stock-prices/`
+-   Viewing two stocks and liking them: GET request to `/api/stock-prices/`
 
 # --hints--
 
-È necessario fornire il proprio progetto, non l'URL di esempio.
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -49,7 +55,7 @@ Scrivi i seguenti test in `tests/2_functional-tests.js`:
 };
 ```
 
-Dovresti impostare i criteri di sicurezza dei contenuti per consentire il caricamento di script e CSS solo dal tuo server.
+You should set the content security policies to only allow loading of scripts and CSS from your server.
 
 ```js
 async (getUserInput) => {
@@ -64,7 +70,7 @@ async (getUserInput) => {
 };
 ```
 
-Puoi inviare una richiesta `GET` a `/api/stock-prices`, passando un simbolo azionario NASDAQ a un parametro di query `stock` (azione). L'oggetto restituito conterrà una proprietà denominata `stockData`.
+You can send a `GET` request to `/api/stock-prices`, passing a NASDAQ stock symbol to a `stock` query parameter. The returned object will contain a property named `stockData`.
 
 ```js
 async (getUserInput) => {
@@ -76,7 +82,7 @@ async (getUserInput) => {
 };
 ```
 
-La proprietà `stockData` include il simbolo `stock` come stringa, il prezzo `price` come numero e i `likes` come numero.
+The `stockData` property includes the `stock` symbol as a string, the `price` as a number, and `likes` as a number.
 
 ```js
 async (getUserInput) => {
@@ -91,13 +97,13 @@ async (getUserInput) => {
 };
 ```
 
-Puoi anche passare un campo `like` come `true` (booleano) per avere il tuo like aggiunto alle azioni. Dovrebbe essere accettato solo un like per IP.
+You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
 
 ```js
 
 ```
 
-Se passi 2 azioni, il valore restituito sarà un array con informazioni su entrambe le azioni. Invece di `likes`, mostrerà `rel_likes` (la differenza tra i like delle azioni) per entrambi gli oggetti `stockData`.
+If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both `stockData` objects.
 
 ```js
 async (getUserInput) => {
@@ -112,7 +118,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 5 test funzionali richiesti sono completi e superati.
+All 5 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

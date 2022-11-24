@@ -14,7 +14,7 @@ dashedName: dictionaries-common-applications
 
 ## --text--
 
-Що буде результатом виконання даного коду?
+Що надрукує наведений код?
 
 ```python
 counts = { 'quincy' : 1 , 'mrugesh' : 42, 'beau': 100, '0': 10}

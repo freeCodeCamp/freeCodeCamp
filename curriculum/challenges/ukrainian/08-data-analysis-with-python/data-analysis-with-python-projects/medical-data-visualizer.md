@@ -10,7 +10,12 @@ dashedName: medical-data-visualizer
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
+Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
 
@@ -18,34 +23,34 @@ We are still developing the interactive instructional part of the Python curricu
 
 # --instructions--
 
-In this project, you will visualize and make calculations from medical examination data using matplotlib, seaborn, and pandas. The dataset values were collected during medical examinations.
+У цьому проєкті ви візуалізуєте та зробите підрахунки на основі даних медичного обстеження, використовуючи matplotlib, seaborn та pandas. Значення набору даних були зібрані під час медичних оглядів.
 
-## Data description
+## Опис даних
 
-The rows in the dataset represent patients and the columns represent information like body measurements, results from various blood tests, and lifestyle choices. You will use the dataset to explore the relationship between cardiac disease, body measurements, blood markers, and lifestyle choices.
+Рядки в наборі даних представляють пацієнтів, а стовпці інформацію, як-от вимірювання тіла, результати різних аналізів крові та вибір способу життя. Ви будете використовувати набір даних, щоб дослідити зв’язок між серцевими захворюваннями, розмірами тіла, маркерами крові та вибором способу життя.
 
-File name: medical_examination.csv
+Назва файлу: medical_examination.csv
 
-|                    Feature                    |    Variable Type    |   Variable    |                    Value Type                    |
-|:---------------------------------------------:|:-------------------:|:-------------:|:------------------------------------------------:|
-|                      Age                      |  Objective Feature  |     `age`     |                    int (days)                    |
-|                    Height                     |  Objective Feature  |   `height`    |                     int (cm)                     |
-|                    Weight                     |  Objective Feature  |   `weight`    |                    float (kg)                    |
-|                    Gender                     |  Objective Feature  |   `gender`    |                 categorical code                 |
-|            Systolic blood pressure            | Examination Feature |    `ap_hi`    |                       int                        |
-|           Diastolic blood pressure            | Examination Feature |    `ap_lo`    |                       int                        |
-|                  Cholesterol                  | Examination Feature | `cholesterol` | 1: normal, 2: above normal, 3: well above normal |
-|                    Glucose                    | Examination Feature |    `gluc`     | 1: normal, 2: above normal, 3: well above normal |
-|                    Smoking                    | Subjective Feature  |    `smoke`    |                      binary                      |
-|                Alcohol intake                 | Subjective Feature  |    `alco`     |                      binary                      |
-|               Physical activity               | Subjective Feature  |   `active`    |                      binary                      |
-| Presence or absence of cardiovascular disease |   Target Variable   |   `cardio`    |                      binary                      |
+|                      Особливість                      |       Тип змінної       |    Змінна     |                   Тип значення                    |
+|:-----------------------------------------------------:|:-----------------------:|:-------------:|:-------------------------------------------------:|
+|                          Вік                          | Об'єктивна особливість  |     `age`     |                    ціле (дні)                     |
+|                         Зріст                         | Об'єктивна особливість  |   `height`    |                     ціле (см)                     |
+|                         Вага                          | Об'єктивна особливість  |   `weight`    |                   плаваюче (кг)                   |
+|                         Стать                         | Об'єктивна особливість  |   `gender`    |                 категоричний код                  |
+|              Систолічний кров'яний тиск               | Особливість обстеження  |    `ap_hi`    |                       ціле                        |
+|              Діастолічний кров'яний тиск              | Особливість обстеження  |    `ap_lo`    |                       ціле                        |
+|                      Холестерин                       | Особливість обстеження  | `cholesterol` | 1: нормально, 2: вище норми, 3: значно вище норми |
+|                        Глюкоза                        | Особливість обстеження  |    `gluc`     | 1: нормально, 2: вище норми, 3: значно вище норми |
+|                        Куріння                        | Суб'єктивна особливість |    `smoke`    |                     двійкове                      |
+|                   Вживання алкоголю                   | Суб'єктивна особливість |    `alco`     |                     двійкове                      |
+|                  Фізична активність                   | Суб'єктивна особливість |   `active`    |                     двійкове                      |
+| Наявність чи відсутність серцево-судинних захворювань |     Цільова змінна      |   `cardio`    |                     двійкове                      |
 
-## Tasks
+## Завдання
 
-Create a chart similar to `examples/Figure_1.png`, where we show the counts of good and bad outcomes for the `cholesterol`, `gluc`, `alco`, `active`, and `smoke` variables for patients with cardio=1 and cardio=0 in different panels.
+Створіть діаграму, подібну до `examples/Figure_1.png`, де ми покажемо кількість хороших та поганих результатів для змінних `cholesterol`, `gluc`, `alco`, `active` та `smoke` для пацієнтів з cardio=1 та cardio=0 на різних панелях.
 
-Use the data to complete the following tasks in `medical_data_visualizer.py`:
+Використайте дані для виконання наступних завдань у `medical_data_visualizer.py`:
 
 - Add an `overweight` column to the data. To determine if a person is overweight, first calculate their BMI by dividing their weight in kilograms by the square of their height in meters. If that value is > 25 then the person is overweight. Use the value 0 for NOT overweight and the value 1 for overweight.
 - Normalize the data by making 0 always good and 1 always bad. If the value of `cholesterol` or `gluc` is 1, make the value 0. If the value is more than 1, make the value 1.
@@ -58,9 +63,9 @@ Use the data to complete the following tasks in `medical_data_visualizer.py`:
   - weight is more than the 97.5th percentile
 - Create a correlation matrix using the dataset. Plot the correlation matrix using seaborn's `heatmap()`. Mask the upper triangle. The chart should look like `examples/Figure_2.png`.
 
-Any time a variable is set to `None`, make sure to set it to the correct code.
+Кожного разу, коли для змінної встановлено значення `None`, переконайтеся, що для неї встановлено правильний код.
 
-Unit tests are written for you under `test_module.py`.
+Для вас складені модульні тести у `test_module.py`.
 
 ## Розробка
 
@@ -76,7 +81,7 @@ Unit tests are written for you under `test_module.py`.
 
 # --hints--
 
-Він повинен пройти усі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

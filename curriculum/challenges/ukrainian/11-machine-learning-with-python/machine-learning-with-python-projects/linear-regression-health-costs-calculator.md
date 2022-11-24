@@ -34,7 +34,7 @@ The final cell will also predict expenses using the `test_dataset` and graph the
 
 # --hints--
 
-Потрібно виконати всі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

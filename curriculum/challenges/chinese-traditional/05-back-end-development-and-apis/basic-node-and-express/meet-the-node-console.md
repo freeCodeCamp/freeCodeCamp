@@ -14,21 +14,27 @@ dashedName: meet-the-node-console
 - 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成這些挑戰。
 - 使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 字段中提交它的 URL。
+If you use Replit, follow these steps to set up the project:
 
-在開發過程中，能夠隨時看到代碼的運行結果是非常重要的。
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
-Node 只是一個 JavaScript 環境。 與客戶端 JavaScript 一樣，你可以使用控制檯顯示有用的調試信息。 在本地計算機上，你可以在終端中輸出調試信息。 在 Replit 上，右側邊欄會默認打開一個終端。
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
-我們建議在做這些挑戰題時保持終端打開的狀態。 通過這些終端的輸出，你可能會發現這些錯誤的本質原因。
+During the development process, it is important to be able to check what’s going on in your code.
+
+Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see console output in a terminal. On Replit, a terminal is open in the right pane by default.
+
+We recommend to keep the terminal open while working at these challenges. By reading the output in the terminal, you can see any errors that may occur.
 
 # --instructions--
 
-修改 `myApp.js` 文件，在控制檯打印出 “Hello World”。
+Modify the `myApp.js` file to log "Hello World" to the console.
 
 # --hints--
 
-控制檯應該輸出 `"Hello World"`
+`"Hello World"` should be in the console
 
 ```js
 (getUserInput) =>

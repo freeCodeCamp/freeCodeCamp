@@ -14,11 +14,17 @@ dashedName: request-header-parser-microservice
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-headerparser" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Використати конструктор сайтів на свій вибір для завершення проекту. Впевніться, що ви зберегли всі файли із нашого GitHub репозиторію.
 
-По завершенню переконайтеся, що працююча демоверсія вашого проекту розміщена у відкритому доступі. Потім введіть його URL-адресу в поле `Solution Link`. За бажанням також можете ввести посилання на вихідний код вашого проекту в полі `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --hints--
 
-Вам необхідно вказати свій власний проект, а не приклад URL-адреси.
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -30,7 +36,7 @@ dashedName: request-header-parser-microservice
 };
 ```
 
-Запит на `/api/whoami` повинен повернути об'єкт JSON з вашою IP-адресою у ключі `ipaddress`.
+A request to `/api/whoami` should return a JSON object with your IP address in the `ipaddress` key.
 
 ```js
 (getUserInput) =>
@@ -42,7 +48,7 @@ dashedName: request-header-parser-microservice
   );
 ```
 
-Запит на `/api/whoami` повинен повернути об’єкт JSON з вашою бажаною мовою у ключі `language`.
+A request to `/api/whoami` should return a JSON object with your preferred language in the `language` key.
 
 ```js
 (getUserInput) =>
@@ -54,7 +60,7 @@ dashedName: request-header-parser-microservice
   );
 ```
 
-Запит на `/api/whoami` повинен повернути об'єкт JSON з вашим програмним забезпеченням у ключі `software`.
+A request to `/api/whoami` should return a JSON object with your software in the `software` key.
 
 ```js
 (getUserInput) =>

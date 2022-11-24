@@ -10,6 +10,11 @@ dashedName: arithmetic-formatter
 
 Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
 Gli studenti delle elementari spesso scrivono l problemi aritmetici in colonna per risolverli più facilmente. Per esempio, "235 + 52" diventa:
@@ -58,16 +63,16 @@ Output:
 La funzione restituirà la conversione corretta se i problemi dati sono correttamente formattati, altrimenti, deve **restituire** una **stringa** che descrive un errore significativo per l'utente.
 
 
-- Situazioni che devono restituire un errore:
-  - Se ci sono **troppi problemi** dati alla funzione. Il limite è **cinque**, più di ciò deve restiture: `Error: Too many problems.`
-  - Gli operatori appropriati che la funzione accetterà sono **addizione** e **sottrazione**. Moltiplicazione e divisione devono dare un errore. Altri operatori non menzionati in questa lista non serve che vengano testati. L'errore restituito deve essere: `Error: Operator must be '+' or '-'.`
-  - Ogni numero (operando) deve contenere solo cifre. Altrimenti, la funzione deve restituire: `Error: Numbers must only contain digits.`
-  - Ogni operando (numero da ogni lato dell'operatore) ha una lunghezza di massimo 4 cirre. Altrimenti, la funzione deve restituire: `Error: Numbers cannot be more than four digits.`
-- Se l'utente ha dato i problemi nel formato corretto, la conversione che restituisci deve seguire le seguenti regole:
-  - Ci deve essere un singolo spazio tra l'operatore e il più lungo dei due operandi, l'operatore deve essere sulla stessa riga del secondo operando, entrambi gli operandi devono essere nell'ordine dato (il primo in alto, il secondo in basso).
-  - I numeri devono essere allineati a destra.
-  - Devono esserci quattro spazi tra ogni problema.
-  - Ci devono essere dei trattini sotto ogni problema. I trattini devono avere la stessa larghezza del singolo problema. (L'esempio sopra mostra come deve apparire.)
+- Situations that will return an error:
+  - If there are **too many problems** supplied to the function. The limit is **five**, anything more will return: `Error: Too many problems.`
+  - The appropriate operators the function will accept are **addition** and **subtraction**. Multiplication and division will return an error. Other operators not mentioned in this bullet point will not need to be tested. The error returned will be: `Error: Operator must be '+' or '-'.`
+  - Each number (operand) should only contain digits. Otherwise, the function will return: `Error: Numbers must only contain digits.`
+  - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be: `Error: Numbers cannot be more than four digits.`
+- If the user supplied the correct format of problems, the conversion you return will follow these rules:
+  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
+  - Numbers should be right-aligned.
+  - There should be four spaces between each problem.
+  - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
 
 ## Sviluppo
 

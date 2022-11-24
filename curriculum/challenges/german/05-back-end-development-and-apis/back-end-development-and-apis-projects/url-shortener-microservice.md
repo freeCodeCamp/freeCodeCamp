@@ -14,7 +14,13 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Achte darauf, alle Dateien aus unserer GitHub-Repo zu integrieren.
 
-Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -22,7 +28,7 @@ Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich ge
 
 # --hints--
 
-Du solltest dein eigenes Projekt bereitstellen, nicht die Beispiel-URL.
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -34,7 +40,7 @@ Du solltest dein eigenes Projekt bereitstellen, nicht die Beispiel-URL.
 };
 ```
 
-You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Hier siehst du ein Beispiel: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
+You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
 async (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-Wenn du `/api/shorturl/<short_url>` besuchst, wirst du zur ursprünglichen URL weitergeleitet.
+When you visit `/api/shorturl/<short_url>`, you will be redirected to the original URL.
 
 ```js
 async (getUserInput) => {

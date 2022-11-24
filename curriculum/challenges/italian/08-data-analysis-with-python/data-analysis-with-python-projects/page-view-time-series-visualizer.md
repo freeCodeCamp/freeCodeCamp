@@ -10,11 +10,16 @@ dashedName: page-view-time-series-visualizer
 
 Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow"> questo progetto con il nostro codice d'inizio su Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Video corso Python for Everybody</a>(14 ore)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow"> Come analizzare i dati con Python Pandas </a>(10 ore)
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -22,11 +27,11 @@ Per questo progetto visualizzerai i dati delle serie temporali usando un grafico
 
 Utilizza i dati per completare le seguenti attività:
 
-- Utilizza Pandas per importare i dati da "fcc-forum-pageviews.csv". Imposta l'indice alla colonna `date`.
-- Pulisci i dati filtrando i giorni in cui le viste della pagina erano nel 2,5% superiore o nel 2,5% inferiore del set di dati.
-- Crea una funzione `draw_line_plot` che utilizza Matplotlib per disegnare un grafico a linee simile a "examples/Figure_1.png". Il titolo dovrebbe essere `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`. L'eticchetta sull'asse x dovrebbe essere `Date` e l'etichetta sull'asse y dovrebbe essere `Page Views`.
-- Crea una funzione `draw_bar_plot` che disegna un grafico a barre simile a "examples/Figure_2.png". Dovrebbe mostrare le visualizzazioni medie giornaliere delle pagine per ogni mese raggruppato per anno. La legenda dovrebbe mostrare etichette dei mesi e avere il titolo `Months`. Sul grafico, l'etichetta sull'asse x dovrebbe essere `Years` e l'etichetta sull'asse y dovrebbe essere `Average Page Views`.
-- Crea una funzione `draw_box_plot` che utilizzi Seaborn per disegnare due grafici adiacenti simili a "examples/Figure_3.png". Questi grafici a riquadro devono mostrare come i valori sono distribuiti entro un determinato anno o mese e come si confronta nel tempo. Il titolo del primo grafico dovrebbe essere `Year-wise Box Plot (Trend)` e il titolo del secondo grafico dovrebbe essere `Month-wise Box Plot (Seasonality)`. Assicurati che le etichette mensili in basso inizino con `Jan` e gli assi x e y siano etichettati correttamente. Il boilerplate include comandi per preparare i dati.
+- Use Pandas to import the data from "fcc-forum-pageviews.csv". Set the index to the `date` column.
+- Clean the data by filtering out days when the page views were in the top 2.5% of the dataset or bottom 2.5% of the dataset.
+- Create a `draw_line_plot` function that uses Matplotlib to draw a line chart similar to "examples/Figure_1.png". The title should be `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`. The label on the x axis should be `Date` and the label on the y axis should be `Page Views`.
+- Create a `draw_bar_plot` function that draws a bar chart similar to "examples/Figure_2.png". It should show average daily page views for each month grouped by year. The legend should show month labels and have a title of `Months`. On the chart, the label on the x axis should be `Years` and the label on the y axis should be `Average Page Views`.
+- Create a `draw_box_plot` function that uses Seaborn to draw two adjacent box plots similar to "examples/Figure_3.png". These box plots should show how the values are distributed within a given year or month and how it compares over time. The title of the first chart should be `Year-wise Box Plot (Trend)` and the title of the second chart should be `Month-wise Box Plot (Seasonality)`. Make sure the month labels on bottom start at `Jan` and the x and y axis are labeled correctly. The boilerplate includes commands to prepare the data.
 
 Per ogni grafico, assicurati di utilizzare una copia del frame di dati. I test unitari sono scritti per te in `test_module.py`.
 
