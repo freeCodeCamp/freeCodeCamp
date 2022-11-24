@@ -263,6 +263,11 @@ function ShowClassic({
 
     store.set(REFLEX_LAYOUT, layout);
   };
+  
+  const setHtmlHeight = () => {
+    const vh = String(window.innerHeight - 1);
+    document.documentElement.style.height = vh + 'px';
+  };
   const onResize = () => {
     setResizing(true);
   };
@@ -286,6 +291,10 @@ function ShowClassic({
     document.addEventListener('touchstart', handleContentWidgetEvents, true);
     document.addEventListener('touchmove', handleContentWidgetEvents, true);
     document.addEventListener('touchend', handleContentWidgetEvents, true);
+
+    
+    window.addEventListener('resize', setHtmlHeight);
+    setHtmlHeight();
 
     return () => {
       createFiles([]);
@@ -311,6 +320,7 @@ function ShowClassic({
         true
       );
       document.removeEventListener('touchend', handleContentWidgetEvents, true);
+      window.removeEventListener('resize',setHtmlHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
