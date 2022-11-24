@@ -1,9 +1,9 @@
 ---
-id: 637f4e5f72c65bc8e73dfe28
+id: 637f703572c65bc8e73dfe35
 videoId: LGQuIIv2RVA
-title: Working With Text Question B
+title: Links and Images Question B
 challengeType: 11
-dashedName: working-with-text-question-b
+dashedName: links-and-images-question-b
 ---
 # --description--
 
