@@ -38,7 +38,7 @@ function getQuestion(textNodes, answersNodes, solutionNodes, assignmentNodes) {
   if (!answers) throw Error('answers are missing from question');
   if (!solution) throw Error('solution is missing from question');
 
-  console.log({ answers });
+  //console.log({ text, answers, solution, assignments });
   return { text, answers, solution, assignments };
 }
 
