@@ -10,8 +10,7 @@ dashedName: introduction-to-html-and-css-question-c
 
 HTML and CSS are two languages that work together to create everything that you see when you look at something on the internet. HTML is the raw data that a webpage is built out of. All the text, links, cards, lists, and buttons are created in HTML. CSS is what adds style to those plain elements. HTML puts information on a webpage, and CSS positions that information, gives it color, changes the font, and makes it look great!
 
-Many great resources out there keep referring to HTML and CSS as programming languages, but if you want to get technical, labeling them as such is not quite accurate, because they are only concerned with presenting information. They are not used to program any logic. JavaScript, which you will be learning in the next section, is a programming language because it’s used to make webpages do things. Yet, there is quite a lot you can do with just HTML and CSS, and you will definitely need them both. The following lessons focus on giving you the tools you need to be successful once you get to the JavaScript content as you continue through our curriculum!
-
+Many helpful resources out there keep referring to HTML and CSS as programming languages, but if you want to get technical, labeling them as such is not quite accurate. This is because they are only concerned with presenting information. They are not used to program logic. JavaScript, which you will learn in the next section, is a programming language because it’s used to make webpages do things. Yet, there is quite a lot you can do with just HTML and CSS, and you will definitely need them both. Throughout our curriculum, the following lessons focus on giving you the tools you need to succeed once you reach JavaScript content.
 # --question--
 
 ## --assignment--
@@ -20,22 +19,21 @@ Read the HTML vs CSS vs JavaScript article. It is a quick overview of the relati
     
 ## --text--
 
-What does HTML and CSS stand for?
+Between HTML and CSS, which would you use for changing the font and background color of a button?
 
 ## --answers--
 
-CSS is used for creating a basic structure for your website and HTML is used for styling.
+You should use CSS to change the background color and font of your button.
 
 ---
 
-HTML is for creating a basic structure for your website and CSS is used for styling.
+You should use JavaScript to change the background color and font of your button.
 
 ---
 
-HTML and CSS are both used for styling and JavaScript is used to create a basic structure for your website.
-
+You should use HTML to change the background color and font of your button.
 
 ## --video-solution--
 
-2
+1
 
