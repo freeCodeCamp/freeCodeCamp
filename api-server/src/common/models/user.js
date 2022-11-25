@@ -341,6 +341,22 @@ export default function initializeUser(User) {
     );
   };
 
+  User.prototype.mobileLoginByRequest = function mobileLoginByRequest(
+    req,
+    res
+  ) {
+    const createToken = this.createAccessToken$().do(accessToken => {
+      if (accessToken && accessToken.id) {
+        setAccessTokenToResponse({ accessToken }, req, res);
+      }
+    });
+    return Observable.combineLatest(
+      createToken,
+      req.logIn(this),
+      accessToken => accessToken
+    );
+  };
+
   User.afterRemote('logout', function ({ req, res }, result, next) {
     removeCookies(req, res);
     next();

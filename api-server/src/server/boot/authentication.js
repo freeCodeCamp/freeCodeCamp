@@ -87,6 +87,8 @@ module.exports = function enableAuthentication(app) {
     createGetPasswordlessAuth(app)
   );
 
+  api.get('/mobile-login', mobileLogin(app));
+
   app.use(api);
 };
 
@@ -186,5 +188,32 @@ function createGetPasswordlessAuth(app) {
         })
         .subscribe(() => {}, next)
     );
+  };
+}
+
+function mobileLogin(app) {
+  const {
+    models: { User }
+  } = app;
+  return function getPasswordlessAuth(req, res, next) {
+    const {
+      query: { email }
+    } = req;
+    if (!isEmail(email)) {
+      return next(
+        wrapHandledError(new TypeError('decoded email is invalid'), {
+          type: 'info',
+          message: 'The email encoded in the link is incorrectly formatted',
+          redirectTo: `${origin}/signin`
+        })
+      );
+    }
+
+    return User.findOne$({ where: { email: email } })
+      .map(user => user.mobileLoginByRequest(req, res))
+      .do(() => {
+        return res.json({ success: true });
+      })
+      .subscribe(() => {}, next);
   };
 }
