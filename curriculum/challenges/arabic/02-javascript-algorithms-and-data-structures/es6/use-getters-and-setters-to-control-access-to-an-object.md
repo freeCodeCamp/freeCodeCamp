@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-يجب تعريف `setter`.
+A `setter` should be defined.
 
 ```js
 assert(

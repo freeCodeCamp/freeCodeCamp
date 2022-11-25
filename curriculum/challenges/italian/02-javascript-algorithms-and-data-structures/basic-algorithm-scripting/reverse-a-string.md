@@ -8,33 +8,31 @@ dashedName: reverse-a-string
 
 # --description--
 
-Inverti la stringa fornita.
+Reverse the provided string and return the reversed string.
 
-Potrebbe essere necessario trasformare la stringa in un array prima di poterla invertire.
-
-Il tuo risultato deve essere una stringa.
+For example, `"hello"` should become `"olleh"`.
 
 # --hints--
 
-`reverseString("hello")` dovrebbe restituire una stringa.
+`reverseString("hello")` should return a string.
 
 ```js
 assert(typeof reverseString('hello') === 'string');
 ```
 
-`reverseString("hello")` dovrebbe restituire la stringa `olleh`.
+`reverseString("hello")` should return the string `olleh`.
 
 ```js
 assert(reverseString('hello') === 'olleh');
 ```
 
-`reverseString("Howdy")` dovrebbe restituire la stringa `ydwoH`.
+`reverseString("Howdy")` should return the string `ydwoH`.
 
 ```js
 assert(reverseString('Howdy') === 'ydwoH');
 ```
 
-`reverseString("Greetings from Earth")` dovrebbe restituire la stringa `htraE morf sgniteerG`.
+`reverseString("Greetings from Earth")` should return the string `htraE morf sgniteerG`.
 
 ```js
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');

@@ -8,33 +8,31 @@ dashedName: reverse-a-string
 
 # --description--
 
-Invierte la cadena proporcionada.
+Reverse the provided string and return the reversed string.
 
-Es posible que necesites convertir la cadena en un arreglo antes de poder invertirla.
-
-Tu resultado debe ser una cadena.
+For example, `"hello"` should become `"olleh"`.
 
 # --hints--
 
-`reverseString("hello")` debe devolver una cadena.
+`reverseString("hello")` should return a string.
 
 ```js
 assert(typeof reverseString('hello') === 'string');
 ```
 
-`reverseString("hello")` debe devolver la cadena `olleh`.
+`reverseString("hello")` should return the string `olleh`.
 
 ```js
 assert(reverseString('hello') === 'olleh');
 ```
 
-`reverseString("Howdy")` debe devolver la cadena `ydwoH`.
+`reverseString("Howdy")` should return the string `ydwoH`.
 
 ```js
 assert(reverseString('Howdy') === 'ydwoH');
 ```
 
-`reverseString("Greetings from Earth")` debe devolver la cadena `htraE morf sgniteerG`.
+`reverseString("Greetings from Earth")` should return the string `htraE morf sgniteerG`.
 
 ```js
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');

@@ -8,19 +8,19 @@ dashedName: meet-the-node-console
 
 # --description--
 
-Робота над цими завданнями передбачає написання коду одним із таких методів:
+Робота над цими завданнями передбачає написання коду за допомогою одного з наступних методів:
 
 - Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-express/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте завдання локально.
 - Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання цих завдань.
-- Для виконання проєкту скористуйтеся будь-яким конструктором сайтів на ваш розсуд. Впевніться, що ви маєте усі файли з нашого GitHub репозиторію.
+- Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`.
 
 During the development process, it is important to be able to check what’s going on in your code.
 

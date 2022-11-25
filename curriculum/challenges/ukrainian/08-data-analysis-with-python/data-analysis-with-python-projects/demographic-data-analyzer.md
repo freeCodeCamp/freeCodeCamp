@@ -10,16 +10,16 @@ dashedName: demographic-data-analyzer
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
 
 Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 годин)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 годин)
 
 # --instructions--
 
@@ -37,15 +37,15 @@ dashedName: demographic-data-analyzer
 
 Ви повинні використати Pandas, щоб відповісти на наступні запитання:
 
-- How many people of each race are represented in this dataset? This should be a Pandas series with race names as the index labels. (`race` column)
-- What is the average age of men?
-- What is the percentage of people who have a Bachelor's degree?
-- What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?
-- What percentage of people without advanced education make more than 50K?
-- What is the minimum number of hours a person works per week?
-- What percentage of the people who work the minimum number of hours per week have a salary of more than 50K?
-- What country has the highest percentage of people that earn >50K and what is that percentage?
-- Identify the most popular occupation for those who earn >50K in India.
+- Скільки людей кожної раси представлено в цьому наборі даних? Це повинна бути серія Pandas з назвами рас як індексними мітками. (стовпчик `race`)
+- Який середній вік людей?
+- Який відсоток людей, у яких є ступінь бакалавра?
+- Який відсоток людей з вищою освітою (`Bachelors`, `Masters` або `Doctorate`) заробляє понад 50 тисяч?
+- Який відсоток людей без вищої освіти заробляє понад 50 тисяч?
+- Яку мінімальну кількість годин на тиждень працює людина?
+- Який відсоток людей, які працюють мінімальну кількість годин на тиждень та отримують зарплату понад 50 тисяч?
+- У якій країні найбільший відсоток людей, які заробляють >50 тисяч і який цей відсоток?
+- Визначте найпопулярнішу професію для тих, хто заробляє >50 тисяч в Індії.
 
 Використайте початковий код у файлі `demographic_data_analyzer`. Оновіть код, щоб для всіх змінних, для яких встановлено значення "None", було встановлено відповідне обчислення або код. Заокругліть усі десяткові дроби до найближчих десятків.
 
