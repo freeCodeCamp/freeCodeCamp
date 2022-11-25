@@ -1,6 +1,6 @@
 ---
 id: 637f4e2872c65bc8e73dfe21
-videoId: LGQuIIv2RVA
+videoId: V8UAEoOvqFg
 title: HTML Boilerplate Question B
 challengeType: 11
 dashedName: html-boilerplate-question-b
@@ -8,29 +8,38 @@ dashedName: html-boilerplate-question-b
 
 # --description--
 
-text
+After we declare the doctype, we need to provide an `<html>` element. This is what’s known as the root element of the document, meaning that every other element in the document will be a descendant of it.
+
+This becomes more important later on when we learn about manipulating HTML with JavaScript. For now, just know that the HTML element should be included on every HTML document.
+
+Back in the index.html file, let’s add the `<html>` element by typing out its opening and closing tags, like so:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+</html>
+```
+
+## What is the lang attribute?
+`lang` specifies the language of the text content in that element. This attribute is primarily used for improving accessibility of the webpage. It allows assistive technologies, for example screen readers, to adapt according to the language and invoke correct pronunciation.
 
 # --question--
-
-## --assignment--
-
-assignment
     
 ## --text--
 
-question
+What is the HTML element?
 
 ## --answers--
 
-solution 1
+It is the root element in the document and tells the browser which version of HTML it should use.
 
 ---
 
-solution 2
+It is the root element in the document and all other elements should descend from it.
 
 ---
 
-solution 3
+It is the root element in the document and all other elements should come after it.
 
 
 ## --video-solution--

@@ -278,7 +278,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               </Col>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <h2>{title}</h2>
-                <ChallengeDescription description={description} />
+                <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer />
                 <ObserveKeys>
                   {assignments[0] != '' ? (
