@@ -12,6 +12,10 @@ In questa sfida creerai un programma per giocare a carta, sasso, forbici. Un pro
 
 Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 Stiamo ancora sviluppando la parte di didattica interattiva per il programma di machine learning. Per ora, dovrai utilizzare altre risorse per imparare a superare questa sfida.
 
 # --instructions--
@@ -32,9 +36,9 @@ Non cambiare `RPS_game.py`. Scrivi tutto il tuo codice in `RPS.py`. Per lo svilu
 
 Per testare il tuo codice, fai una partita usando la funzione `play`. La funzione `play` prende quattro argomenti:
 
-- due giocatori per giocare uno contro l'altro (i giocatori sono in realtà funzioni)
-- il numero di mani da giocare nella partita
-- un argomento opzionale per vedere la storia di ogni partita. Impostalo su `True` per vedere questi messaggi.
+- two players to play against each other (the players are actually functions)
+- the number of games to play in the match
+- an optional argument to see a log of each game. Set it to `True` to see these messages.
 
 ```py
 play(player1, player2, num_games[, verbose])

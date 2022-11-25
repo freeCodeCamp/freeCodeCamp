@@ -10,11 +10,16 @@ dashedName: demographic-data-analyzer
 
 你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 我們仍在開發 Python 課程的交互式教學部分。 目前，你可以在 YouTube 上通過 freeCodeCamp.org 上傳的一些視頻學習這個項目相關的知識。
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">給所有人的 Python 課程</a>（14 小時）
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">如何使用 Python Pandas 分析數據</a>（10 小時）
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -32,15 +37,15 @@ dashedName: demographic-data-analyzer
 
 你必須使用 Pandas 來回答以下問題：
 
-- 這個數據集中每個種族有多少人？ 這應該是一個以種族名稱作爲索引標籤的 Pandas 系列。 （`race` 欄）
-- 男性的平均年齡是多少？
-- 擁有學士學位的人的百分比是多少？
-- 受過高等教育（`Bachelors`, `Masters`, or `Doctorate`）收入超過 50K 的人佔多大比例？
-- 沒有受過高等教育的人的收入超過 50K 的比例是多少？
-- 一個人每週最少工作多少小時？
-- 每週工作最少小時數的人中有多少人的工資超過 50K？
-- 哪個國家/地區的收入 >50K 的人口比例最高，該比例是多少？
-- 確定印度收入 >50K 的人最受歡迎的職業。
+- How many people of each race are represented in this dataset? This should be a Pandas series with race names as the index labels. (`race` column)
+- What is the average age of men?
+- What is the percentage of people who have a Bachelor's degree?
+- What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?
+- What percentage of people without advanced education make more than 50K?
+- What is the minimum number of hours a person works per week?
+- What percentage of the people who work the minimum number of hours per week have a salary of more than 50K?
+- What country has the highest percentage of people that earn >50K and what is that percentage?
+- Identify the most popular occupation for those who earn >50K in India.
 
 使用文件 `demographic_data_analyzer` 中的啓動代碼。 更新代碼，以便將所有設置爲“None”的變量設置爲適當的計算或代碼。 將所有小數四捨五入到最接近的十分之一。
 

@@ -11,7 +11,12 @@ dashedName: port-scanner
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
-Ми й досі в процесі розробки інтерактивної складової навчального курсу Python. Наразі можете ознайомитись із наступними відео на YouTube каналі freeCodeCamp.org. У них ви знайдете все необхідне для завершення цього проєкту:
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
+Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
@@ -82,7 +87,7 @@ If the IP address passed into the `get_open_ports` function is invalid, the func
 
 # --hints--
 
-Він повинен пройти усі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

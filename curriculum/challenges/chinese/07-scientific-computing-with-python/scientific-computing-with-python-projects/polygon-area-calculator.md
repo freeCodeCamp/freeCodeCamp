@@ -10,6 +10,11 @@ dashedName: polygon-area-calculator
 
 你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
 在这个项目中，你将使用面向对象的编程来创建 Rectangle（矩形） 类和 Square（正方形） 类。 Square 类应该是 Rectangle 的子类，并继承方法和属性。
@@ -20,11 +25,11 @@ dashedName: polygon-area-calculator
 
 - `set_width`
 - `set_height`
-- `get_area`：返回面积（`width * height`）
-- `get_perimeter`：返回周长（`2 * width + 2 * height`）
-- `get_diagonal`：返回对角线 (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`：返回一个字符串，该字符串使用包含“\*”的行来表示形状。 行数应等于高度，每行中“\*”的数量应等于宽度。 每行末尾应该有一个新行 (`\n`)。 如果宽度或高度大于 50，则应返回字符串：“Too big for picture.”。
-- `get_amount_inside`：以另一个形状（正方形或矩形）作为参数。 返回传入的形状可以装进该形状的次数（没有旋转）。 例如，一个宽为 4，高为 8 的矩形可以放入两个边长为 4 的正方形。
+- `get_area`: Returns area (`width * height`)
+- `get_perimeter`: Returns perimeter (`2 * width + 2 * height`)
+- `get_diagonal`: Returns diagonal (`(width ** 2 + height ** 2) ** .5`)
+- `get_picture`: Returns a string that represents the shape using lines of "\*". The number of lines should be equal to the height and the number of "\*" in each line should be equal to the width. There should be a new line (`\n`) at the end of each line. If the width or height is larger than 50, this should return the string: "Too big for picture.".
+- `get_amount_inside`: Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
 
 另外，如果一个 Rectangle 实例被表示为一个字符串，它应该看起来像： `Rectangle(width=5, height=10)`
 

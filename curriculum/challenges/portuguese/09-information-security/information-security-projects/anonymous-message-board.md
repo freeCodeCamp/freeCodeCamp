@@ -16,7 +16,13 @@ Trabalhar nesse projeto vai fazer com que você escreva seu código usando um do
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar o projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -24,22 +30,22 @@ Quando terminar, certifique-se de que uma demonstração funcional do seu projet
 2.  Esse é o recomendado para criar controladores/manipuladores e lidar com roteamento em `routes/api.js`
 3.  Você adicionará todas as funcionalidades de segurança ao `server.js`
 
-Escreva os testes a seguir em `tests/2_functional-tests.js`:
+Write the following tests in `tests/2_functional-tests.js`:
 
--   Criar um novo tópico: solicitação de POST para `/api/threads/{board}`
--   Visualizar os 10 tópicos mais recentes com 3 respostas cada: solicitação GET para `/api/threads/{board}`
--   Excluir um tópico com a senha incorreta: solicitação DELETE para `/api/threads/{board}` com uma `delete_password` inválida
--   Excluir um tópico com a senha correta: solicitação DELETE para `/api/threads/{board}` com uma `delete_password` válida
--   Denunciar um tópico: solicitação de PUT para `/api/threads/{board}`
--   Criar uma nova resposta: solicitação de POST para `/api/replies/{board}`
--   Visualizar um único tópico com todas as respostas: solicitação GET para `/api/replies/{board}`
--   Excluir uma resposta com a senha incorreta: solicitação DELETE para `/api/replies/{board}` com uma `delete_password` inválida
--   Excluir uma resposta com a senha correta: solicitação DELETE para `/api/replies/{board}` com uma `delete_password` válida
--   Denunciar uma resposta: solicitação de PUT para `/api/replies/{board}`
+-   Creating a new thread: POST request to `/api/threads/{board}`
+-   Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
+-   Deleting a thread with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
+-   Deleting a thread with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
+-   Reporting a thread: PUT request to `/api/threads/{board}`
+-   Creating a new reply: POST request to `/api/replies/{board}`
+-   Viewing a single thread with all replies: GET request to `/api/replies/{board}`
+-   Deleting a reply with the incorrect password: DELETE request to `/api/replies/{board}` with an invalid `delete_password`
+-   Deleting a reply with the correct password: DELETE request to `/api/replies/{board}` with a valid `delete_password`
+-   Reporting a reply: PUT request to `/api/replies/{board}`
 
 # --hints--
 
-Você pode fornecer seu próprio projeto, não o exemplo de URL.
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -51,7 +57,7 @@ Você pode fornecer seu próprio projeto, não o exemplo de URL.
 };
 ```
 
-Permita apenas que o site seja carregado em um iFrame em suas próprias páginas.
+Only allow your site to be loaded in an iFrame on your own pages.
 
 ```js
 async (getUserInput) => {
@@ -61,7 +67,7 @@ async (getUserInput) => {
 };
 ```
 
-Não permita o pré-carregamento de DNS.
+Do not allow DNS prefetching.
 
 ```js
 async (getUserInput) => {
@@ -71,7 +77,7 @@ async (getUserInput) => {
 };
 ```
 
-Permita apenas que seu site envie o encaminhador para suas próprias páginas.
+Only allow your site to send the referrer for your own pages.
 
 ```js
 async (getUserInput) => {
@@ -81,7 +87,7 @@ async (getUserInput) => {
 };
 ```
 
-Você pode enviar uma solicitação POST para `/api/threads/{board}` com dados de formulário, incluindo `text` e `delete_password`. O registro salvo do banco de dados terá pelo menos os campos `_id`, `text`, `created_on` (data e hora), `bumped_on`(data e hora, começa igual a `created_on`), `reported` (booleano), `delete_password` e `replies` (array).
+You can send a POST request to `/api/threads/{board}` with form data including `text` and `delete_password`. The saved database record will have at least the fields `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
 
 ```js
 async (getUserInput) => {
@@ -113,7 +119,7 @@ async (getUserInput) => {
 };
 ```
 
-Você pode enviar uma solicitação de POST para `/api/replies/{board}` com dados de formulário, incluindo `text`, `delete_password` e `thread_id`. Isto atualizará a data de `bumped_on` para a data do comentário. No array `replies` do tópico, um objeto será salvo com pelo menos as propriedades `_id`, `text`, `created_on`, `delete_password` e `reported`.
+You can send a POST request to `/api/replies/{board}` with form data including `text`, `delete_password`, & `thread_id`. This will update the `bumped_on` date to the comment's date. In the thread's `replies` array, an object will be saved with at least the properties `_id`, `text`, `created_on`, `delete_password`, & `reported`.
 
 ```js
 async (getUserInput) => {
@@ -150,7 +156,7 @@ async (getUserInput) => {
 };
 ```
 
-Você pode enviar uma solicitação de GET para `/api/threads/{board}`. O conteúdo retornado será um array dos 10 tópicos que mais subiram no quadro apenas com as 3 respostas mais recentes para cada um deles. Os campos `reported` e `delete_password` não serão enviados ao client.
+You can send a GET request to `/api/threads/{board}`. Returned will be an array of the most recent 10 bumped threads on the board with only the most recent 3 replies for each. The `reported` and `delete_password` fields will not be sent to the client.
 
 ```js
 async (getUserInput) => {
@@ -181,7 +187,7 @@ async (getUserInput) => {
 };
 ```
 
-Você pode enviar uma solicitação de GET para `/api/replies/{board}?thread_id={thread_id}`. O conteúdo retornado será o tópico inteiro com todas as suas respostas, também excluindo os mesmos campos do client do teste anterior.
+You can send a GET request to `/api/replies/{board}?thread_id={thread_id}`. Returned will be the entire thread with all its replies, also excluding the same fields from the client as the previous test.
 
 ```js
 async (getUserInput) => {
@@ -213,7 +219,7 @@ async (getUserInput) => {
 };
 ```
 
-Você pode enviar uma solicitação de DELETE para `/api/threads/{board}` e passar adiante `thread_id` e `delete_password` para excluir o tópico. O conteúdo retornado será a string `incorrect password` ou `success`.
+You can send a DELETE request to `/api/threads/{board}` and pass along the `thread_id` & `delete_password` to delete the thread. O conteúdo retornado será a string `incorrect password` ou `success`.
 
 ```js
 async (getUserInput) => {
@@ -250,7 +256,7 @@ async (getUserInput) => {
 };
 ```
 
-Você pode enviar uma solicitação de DELETE para `/api/replies/{board}` e passar adiante `thread_id`, `reply_id` e `delete_password`. O conteúdo retornado será a string `incorrect password` ou `success`. Em caso de sucesso, o texto de `reply_id` será alterado para `[deleted]`.
+You can send a DELETE request to `/api/replies/{board}` and pass along the `thread_id`, `reply_id`, & `delete_password`. Returned will be the string `incorrect password` or `success`. On success, the text of the `reply_id` will be changed to `[deleted]`.
 
 ```js
 async (getUserInput) => {
@@ -305,7 +311,7 @@ async (getUserInput) => {
 };
 ```
 
-Você pode enviar uma solicitação de PUT para `/api/threads/{board}` e passar adiante a `thread_id`. O conteúdo retornado será a string `reported`. O valor `reported` de `thread_id` será alterado para `true`.
+You can send a PUT request to `/api/threads/{board}` and pass along the `thread_id`. O conteúdo retornado será a string `reported`. The `reported` value of the `thread_id` will be changed to `true`.
 
 ```js
 async (getUserInput) => {
@@ -336,7 +342,7 @@ async (getUserInput) => {
 };
 ```
 
-Você pode enviar uma solicitação de PUT para `/api/replies/{board}` e passar adiante `thread_id` e `reply_id`. O conteúdo retornado será a string `reported`. O valor `reported` de `reply_id` será alterado para `true`.
+You can send a PUT request to `/api/replies/{board}` and pass along the `thread_id` & `reply_id`. Returned will be the string `reported`. The `reported` value of the `reply_id` will be changed to `true`.
 
 ```js
 async (getUserInput) => {
@@ -368,7 +374,7 @@ async (getUserInput) => {
 };
 ```
 
-Todos os 10 testes funcionais foram concluídos e deram aprovação.
+All 10 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

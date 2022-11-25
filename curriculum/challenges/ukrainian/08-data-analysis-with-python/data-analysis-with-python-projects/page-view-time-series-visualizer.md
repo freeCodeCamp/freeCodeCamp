@@ -10,7 +10,12 @@ dashedName: page-view-time-series-visualizer
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
+Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
 
@@ -18,9 +23,9 @@ We are still developing the interactive instructional part of the Python curricu
 
 # --instructions--
 
-For this project you will visualize time series data using a line chart, bar chart, and box plots. You will use Pandas, Matplotlib, and Seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations will help you understand the patterns in visits and identify yearly and monthly growth.
+У цьому проєкті ви візуалізуєте дані часових рядів, використовуючи лінійний графік, стовпчикову діаграму та коробковий графік. Ви будете використовувати Pandas, Matplotlib та Seaborn для візуалізації даних, які містять кількість щоденних переглядів на форумі freeCodeCamp.org з 09.05.2016 по 03.12.2019. Візуалізація даних допоможе вам зрозуміти тенденції відвідування та визначити річний і місячний приріст.
 
-Use the data to complete the following tasks:
+Використайте дані для виконання наступних завдань:
 
 - Use Pandas to import the data from "fcc-forum-pageviews.csv". Set the index to the `date` column.
 - Clean the data by filtering out days when the page views were in the top 2.5% of the dataset or bottom 2.5% of the dataset.
@@ -28,9 +33,9 @@ Use the data to complete the following tasks:
 - Create a `draw_bar_plot` function that draws a bar chart similar to "examples/Figure_2.png". It should show average daily page views for each month grouped by year. The legend should show month labels and have a title of `Months`. On the chart, the label on the x axis should be `Years` and the label on the y axis should be `Average Page Views`.
 - Create a `draw_box_plot` function that uses Seaborn to draw two adjacent box plots similar to "examples/Figure_3.png". These box plots should show how the values are distributed within a given year or month and how it compares over time. The title of the first chart should be `Year-wise Box Plot (Trend)` and the title of the second chart should be `Month-wise Box Plot (Seasonality)`. Make sure the month labels on bottom start at `Jan` and the x and y axis are labeled correctly. The boilerplate includes commands to prepare the data.
 
-For each chart, make sure to use a copy of the data frame. Unit tests are written for you under `test_module.py`.
+Для кожної діаграми обов’язково використайте копію кадру даних. Для вас складені модульні тести у `test_module.py`.
 
-The boilerplate also includes commands to save and return the image.
+Шаблон також містить команди для збереження та повернення зображення.
 
 ## Розробка
 
@@ -46,7 +51,7 @@ The boilerplate also includes commands to save and return the image.
 
 # --hints--
 
-Він повинен пройти усі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

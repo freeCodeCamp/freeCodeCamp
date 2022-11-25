@@ -14,13 +14,19 @@ dashedName: exercise-tracker
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Використати конструктор сайтів на свій вибір для завершення проекту. Впевніться, що ви зберегли всі файли із нашого GitHub репозиторію.
 
-По завершенню переконайтеся, що працююча демоверсія вашого проекту розміщена у відкритому доступі. Потім введіть його URL-адресу в поле `Solution Link`. За бажанням також можете ввести посилання на вихідний код вашого проекту в полі `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-Ваші відповіді повинні мати наступні структури.
+Your responses should have the following structures.
 
-Вправа:
+Exercise:
 
 ```js
 {
@@ -32,7 +38,7 @@ dashedName: exercise-tracker
 }
 ```
 
-Користувач:
+User:
 
 ```js
 {
@@ -41,7 +47,7 @@ dashedName: exercise-tracker
 }
 ```
 
-Лог:
+Log:
 
 ```js
 {
@@ -56,11 +62,11 @@ dashedName: exercise-tracker
 }
 ```
 
-**Підказка:** для отримування очікуваного результату властивості `date` може використовуватися метод `toDateString` з `Date` API.
+**Hint:** For the `date` property, the `toDateString` method of the `Date` API can be used to achieve the expected output.
 
 # --hints--
 
-Вам необхідно вказати свій власний проект, а не приклад URL-адреси.
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -71,7 +77,7 @@ dashedName: exercise-tracker
 };
 ```
 
-Ви можете виконати `POST` запит до `/api/users` з даними форми `username` для створення нового користувача.
+You can `POST` to `/api/users` with form data `username` to create a new user.
 
 ```js
 async (getUserInput) => {
@@ -88,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-Отримана відповідь від `POST /api/users` з даними форми `username` буде об'єктом з властивостями `username` та `_id`.
+The returned response from `POST /api/users` with form data `username` will be an object with `username` and `_id` properties.
 
 ```js
 async (getUserInput) => {
@@ -108,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете зробити запит `GET` на `/api/users`, щоб отримати список всіх користувачів.
+You can make a `GET` request to `/api/users` to get a list of all users.
 
 ```js
 async(getUserInput) => {
@@ -121,7 +127,7 @@ async(getUserInput) => {
 };
 ```
 
-Запит `GET` на `/api/users` повертає масив.
+The `GET` request to `/api/users` returns an array.
 
 ```js
 async(getUserInput) => {
@@ -136,7 +142,7 @@ async(getUserInput) => {
 };
 ```
 
-Кожен елемент у масиві, який повернувся з `GET /api/users`, є літералом об'єкта з `username` та `_id` користувача.
+Each element in the array returned from `GET /api/users` is an object literal containing a user's `username` and `_id`.
 
 ```js
 async(getUserInput) => {
@@ -156,7 +162,7 @@ async(getUserInput) => {
 };
 ```
 
-Ви можете виконати `POST` запит до `/api/users/:_id/exercises` з даними форм `description`, `duration` та за бажанням `date`. Якщо дата не вказана, буде використовуватись поточна дата.
+You can `POST` to `/api/users/:_id/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used.
 
 ```js
 async (getUserInput) => {
@@ -190,7 +196,7 @@ async (getUserInput) => {
 };
 ```
 
-Відповідь, що повернулася від `POST /api/users/:_id/exercises`, буде об'єктом користувача з доданими полями з вправи.
+The response returned from `POST /api/users/:_id/exercises` will be the user object with the exercise fields added.
 
 ```js
 async (getUserInput) => {
@@ -229,7 +235,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете зробити запит `GET` на `/api/users/:_id/logs`, щоб отримати повний журнал вправ будь-якого користувача.
+You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user.
 
 ```js
 async (getUserInput) => {
@@ -268,7 +274,7 @@ async (getUserInput) => {
 };
 ```
 
-Запит до журналу користувача `GET /api/users/:_id/logs` повертає об'єкт користувача разом з властивістю `count` яка представляє кількість вправ, що належать цьому користувачеві.
+A request to a user's log `GET /api/users/:_id/logs` returns a user object with a `count` property representing the number of exercises that belong to that user.
 
 ```js
 async (getUserInput) => {
@@ -494,7 +500,7 @@ async(getUserInput) => {
 };
 ```
 
-The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Використовуйте `dateString` формат з `Date` API.
+The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Use the `dateString` format of the `Date` API.
 
 ```js
 async(getUserInput) => {
@@ -541,7 +547,7 @@ async(getUserInput) => {
 };
 ```
 
-Ви можете додати параметри `from`, `to` та `limit` у запит `GET /api/users/:_id/logs` для отримання частини журналу будь-якого користувача. `from` та `to` - дати у форматі `yyyy-mm-dd`. `limit` - це ціле число того, скільки журналів потрібно надіслати назад.
+You can add `from`, `to` and `limit` parameters to a `GET /api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
 
 ```js
 async (getUserInput) => {

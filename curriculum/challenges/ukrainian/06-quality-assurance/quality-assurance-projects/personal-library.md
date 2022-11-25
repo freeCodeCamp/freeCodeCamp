@@ -14,7 +14,13 @@ dashedName: personal-library
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Для завершення проєкту використайте вибраний вами розробник сайтів. Не забудьте включити всі файли із нашого репо-сервера GitHub.
 
-Коли ви завершили, переконайтеся, ця демоверсія вашого проєкту розміщена у відкритому місці. Потім введіть URL-адресу у поле `Solution Link`. Додатково, також вкажіть посилання на вхідний код вашого проєкту у полі `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -25,7 +31,7 @@ dashedName: personal-library
 
 # --hints--
 
-Ви можете застосувати свій власний проєкт, а не URL-посилання прикладу.
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -35,7 +41,7 @@ dashedName: personal-library
 };
 ```
 
-Ви можете відправити запит <b>POST</b> на `/api/books` з `title` як частину форми даних, щоб додати книгу.  Зворотною відповіддю буде об'єкт з `title` та унікальним `_id` як ключі доступу.  Якщо `title` не включений у запит, то відповідь повинна бути рядком `missing required field title`.
+You can send a <b>POST</b> request to `/api/books` with `title` as part of the form data to add a book.  The returned response will be an object with the `title` and a unique `_id` as keys.  If `title` is not included in the request, the returned response should be the string `missing required field title`.
 
 ```js
 async (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит <b>GET</b> до `/api/books` та отримати відповідь JSON у вигляді усіх книг. Відповідь JSON буде масивом об'єктів з кожним об'єктом (книгою), який складається з `title`, `_id` та `commentcount`.
+You can send a <b>GET</b> request to `/api/books` and receive a JSON response representing all the books. The JSON response will be an array of objects with each object (book) containing `title`, `_id`, and `commentcount` properties.
 
 ```js
 async (getUserInput) => {
@@ -84,7 +90,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит <b>GET</b> до `/api/books/{_id}`, щоб отримати один об'єкт в книзі, який містить властивості `title`, `_id` та `comments` (пустий масив, якщо немає коментарів). Якщо не знайдено книги, поверніться в рядок `no book exists`.
+You can send a <b>GET</b> request to `/api/books/{_id}` to retrieve a single object of a book containing the properties `title`, `_id`, and a `comments` array (empty array if no comments present). If no book is found, return the string `no book exists`.
 
 ```js
 async (getUserInput) => {
@@ -108,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит <b>POST</b>, який містить `comment`, як частину корпусу даних до `/api/books/{_id}`, щоб додати коментар до книжки. Отримана відповідь - об'єкт книги, аналогічний до <b>GET</b> `/api/books/{_id}`, запиту в попередньому тесті. Якщо `comment` не включено в запит, поверніться до рядка `missing required field comment`. Якщо не знайдено книги, поверніться до рядка `no book exists`.
+You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. If `comment` is not included in the request, return the string `missing required field comment`. If no book is found, return the string `no book exists`.
 
 ```js
 async (getUserInput) => {
@@ -146,7 +152,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит <b>DELETE</b> до `/api/books/{_id}`, щоб видалити книги з колекції. Отримана відповідь - рядок `delete successful`, якщо видалено успішно. Якщо книги не знайдено, поверніться до рядка `no book exists`.
+You can send a <b>DELETE</b> request to `/api/books/{_id}` to delete a book from the collection. The returned response will be the string `delete successful` if successful. If no book is found, return the string `no book exists`.
 
 ```js
 async (getUserInput) => {
@@ -170,7 +176,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит <b>DELETE</b> до `/api/books`, щоб видалити усі книги з інформаційної бази. The returned response will be the string `complete delete successful` if successful.
+You can send a <b>DELETE</b> request to `/api/books` to delete all books in the database. The returned response will be the string `complete delete successful` if successful.
 
 ```js
 async (getUserInput) => {
@@ -187,7 +193,7 @@ async (getUserInput) => {
 };
 ```
 
-Усі 10 необхідних функціональних тестів завершено й успішно здано.
+All 10 functional tests required are complete and passing.
 
 ```js
 async (getUserInput) => {

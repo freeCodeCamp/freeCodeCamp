@@ -102,7 +102,7 @@ Run this final cell to see if you passed the challenge or if you need to keep tr
 
 # --hints--
 
-Він повинен пройти усі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 
