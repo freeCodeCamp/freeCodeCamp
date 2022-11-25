@@ -18,13 +18,13 @@ Trabalhar nesse projeto vai fazer com que você escreva seu código usando um do
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar o projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Se você usa o Replit, siga estas etapas para configurar o projeto:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Comece importando o projeto no Replit.
+-   Em seguida, você verá uma janela `.replit`.
+-   Selecione `Use run command` e clique no botão `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
 
 # --instructions--
 
@@ -33,19 +33,19 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 3.  Você adicionará todas as funcionalidades de segurança ao `server.js`
 4.  Você criará todos os testes funcionais em `tests/2_functional-tests.js`
 
-**Note** Privacy Considerations: Due to the requirement that only 1 like per IP should be accepted, you will have to save IP addresses. It is important to remain compliant with data privacy laws such as the General Data Protection Regulation. One option is to get permission to save the user's data, but it is much simpler to anonymize it. For this challenge, remember to anonymize IP addresses before saving them to the database. If you need ideas on how to do this, you may choose to hash the data, truncate it, or set part of the IP address to 0.
+**Observação** Considerações de privacidade: devido à exigência de que apenas uma curtida por IP deve ser aceita, você terá que salvar endereços IP. É importante manter a conformidade com as leis relativas à privacidade de dados, como o Regulamento Geral para a Proteção de Dados. Uma opção é obter permissão para salvar os dados do usuário, mas é muito mais simples deixar os dados anônimos. Para este desafio, lembre-se de anonimizar endereços IP antes de salvá-los no banco de dados. Se você precisa de ideias sobre como fazer isso, você pode optar por criptografar os dados (algoritmo hash), omitir parte deles, ou definir parte do endereço IP como 0.
 
-Write the following tests in `tests/2_functional-tests.js`:
+Escreva os testes a seguir em `tests/2_functional-tests.js`:
 
--   Viewing one stock: GET request to `/api/stock-prices/`
--   Viewing one stock and liking it: GET request to `/api/stock-prices/`
--   Viewing the same stock and liking it again: GET request to `/api/stock-prices/`
--   Viewing two stocks: GET request to `/api/stock-prices/`
--   Viewing two stocks and liking them: GET request to `/api/stock-prices/`
+-   Visualizar uma ação: faça a solicitação de GET para `/api/stock-prices/`
+-   Visualizar uma ação e dizer que gostou dela: faça a solicitação de GET para `/api/stock-prices/`
+-   Visualizar a mesma ação e dizer que gostou dela novamente: faça a solicitação de GET para `/api/stock-prices/`
+-   Visualizar duas ações: faça a solicitação de GET para `/api/stock-prices/`
+-   Visualizar duas ações e dizer que gostou delas: faça a solicitação de GET para `/api/stock-prices/`
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Você pode fornecer seu próprio projeto, não o exemplo de URL.
 
 ```js
 (getUserInput) => {
@@ -55,7 +55,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-You should set the content security policies to only allow loading of scripts and CSS from your server.
+Você deve definir as políticas de segurança do conteúdo para permitir apenas o carregamento de scripts e CSS do seu servidor.
 
 ```js
 async (getUserInput) => {
@@ -70,7 +70,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `GET` request to `/api/stock-prices`, passing a NASDAQ stock symbol to a `stock` query parameter. The returned object will contain a property named `stockData`.
+Você pode enviar uma requisição do tipo `GET` para `/api/stock-prices`, passando um símbolo de ação NASDAQ para um parâmetro de consulta `stock`. O objeto retornado conterá uma propriedade chamada `stockData`.
 
 ```js
 async (getUserInput) => {
@@ -82,7 +82,7 @@ async (getUserInput) => {
 };
 ```
 
-The `stockData` property includes the `stock` symbol as a string, the `price` as a number, and `likes` as a number.
+A propriedade `stockData` inclui o símbolo da ação `stock` como uma string, o preço `price` como um número e o número de curtidas `likes` como um número.
 
 ```js
 async (getUserInput) => {
@@ -97,13 +97,13 @@ async (getUserInput) => {
 };
 ```
 
-You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
+Você também pode passar um campo `like` como `true` (booleano) para ter sua curtida adicionada à ação. Apenas 1 curtida por IP deve ser aceita.
 
 ```js
 
 ```
 
-If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both `stockData` objects.
+Se você passar 2 ações, o valor retornado será um array com informações sobre as duas. Em vez do número de curtidas `likes`, será exibida a propriedade `rel_likes` (a diferença de curtidas entre ambas as ações) para os dois objetos `stockData`.
 
 ```js
 async (getUserInput) => {
@@ -118,7 +118,7 @@ async (getUserInput) => {
 };
 ```
 
-All 5 functional tests are complete and passing.
+Todos os 5 testes funcionais estão completos e passando.
 
 ```js
 async (getUserInput) => {

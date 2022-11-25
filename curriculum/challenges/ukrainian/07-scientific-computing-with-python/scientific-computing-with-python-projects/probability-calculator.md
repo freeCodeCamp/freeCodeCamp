@@ -10,9 +10,9 @@ dashedName: probability-calculator
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
 
 # --instructions--
@@ -35,10 +35,10 @@ hat3 = Hat(red=5, orange=4, black=1, blue=0, pink=2, striped=9)
 
 Потім створіть функцію `experiment` в `prob_calculator.py` (не в класі `Hat`). Ця функція повинна приймати наступні аргументи:
 
-- `hat`: A hat object containing balls that should be copied inside the function.
-- `expected_balls`: An object indicating the exact group of balls to attempt to draw from the hat for the experiment. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
-- `num_balls_drawn`: The number of balls to draw out of the hat in each experiment.
-- `num_experiments`: The number of experiments to perform. (The more experiments performed, the more accurate the approximate probability will be.)
+- `hat`: об'єкт-капелюх з кульками, який має бути скопійований у функцію.
+- `expected_balls`: об'єкт, який вказує на точну кількість кульок, котру треба вийняти з капелюха для експерименту. Наприклад, щоб визначити вірогідність того, що ви витягнете 2 сині та 1 червону кульки з капелюха, встановіть `expected_balls` на `{"blue":2, "red":1}`.
+- `num_balls_drawn`: кількість кульок, які треба витягти з капелюха в кожному експерименті.
+- `num_experiments`: кількість експериментів, які треба провести. (Чим більше експериментів було проведено, тим точнішою буде вірогідність.)
 
 Функція `experiment` повинна повертати вірогідність.
 

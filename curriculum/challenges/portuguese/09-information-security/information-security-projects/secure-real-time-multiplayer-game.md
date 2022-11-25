@@ -14,32 +14,32 @@ Desenvolva um jogo multijogador 2D em tempo real usando a API do Canvas do HTML 
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar o projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Se você usa o Replit, siga estas etapas para configurar o projeto:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Comece importando o projeto no Replit.
+-   Em seguida, você verá uma janela `.replit`.
+-   Selecione `Use run command` e clique no botão `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
 
 # --instructions--
 
-Create a secure multiplayer game in which each player can move their avatar, there is at least one collectible item, and the rank of the players is calculated based on their score.
+Crie um jogo multijogador seguro no qual cada jogador pode mover seu avatar, há pelo menos um item colecionável e a classificação dos jogadores é calculada com base na pontuação de cada um.
 
-For details consult the tests below.
+Para obter detalhes, consulte os testes abaixo.
 
-Make sure that your game is secure! Include these security measures:
+Certifique-se de que o jogo é seguro! Incluir estas medidas de segurança:
 
-- The client should not be able to guess/sniff the MIME type
-- Prevent XSS attacks
-- Do not cache anything from the website in the client
-- The headers say that the site is powered by `PHP 7.4.3`
+- O client não deve ser capaz de adivinhar/descobrir o tipo de MIME
+- Evitar ataques XSS
+- Não faça o cache de nada que seja do site da web no client
+- Os cabeçalhos dizem que o site é alimentado por `PHP 7.4.3`
 
-**Note**: `helmet@^3.21.3` is needed for the user stories. This means you will need to use the previous version of Helmet's docs, for information on how to achieve the user stories.
+**Observação**: `helmet@^3.21.3` é necessário para as histórias de usuários. Isto significa que você precisará usar a versão anterior da documentação do Helmet, para obter informações sobre como obter as histórias de usuários.
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Você pode fornecer seu próprio projeto, não o exemplo de URL.
 
 ```js
 (getUserInput) => {
@@ -51,91 +51,91 @@ You can provide your own project, not the example URL.
 };
 ```
 
-Multiple players can connect to a server and play.
+Vários jogadores podem se conectar a um servidor e jogar.
 
 ```js
 
 ```
 
-Each player has an avatar.
+Cada jogador tem um avatar.
 
 ```js
 
 ```
 
-Each player is represented by an object created by the `Player` class in `Player.mjs`.
+Cada jogador é representado por um objeto criado pela classe `Player` em `Player.mjs`.
 
 ```js
 
 ```
 
-At a minimum, each player object should contain a unique `id`, a `score`, and `x` and `y` coordinates representing the player's current position.
+No mínimo, cada objeto do jogador deve conter um `id` único, um `score` e coordenadas `x` e `y` representando a posição atual do jogador.
 
 ```js
 
 ```
 
-The game has at least one type of collectible item. Complete the `Collectible` class in `Collectible.mjs` to implement this.
+O jogo tem pelo menos um tipo de item colecionável. Complete a classe `Collectible` em `Collectible.mjs` para implementar isso.
 
 ```js
 
 ```
 
-At a minimum, each collectible item object created by the `Collectible` class should contain a unique `id`, a `value`, and `x` and `y` coordinates representing the item's current position.
+No mínimo, cada objeto de item colecionável criado pela classe `Collectible` deve conter um `id` único, um `value` e coordenadas `x` e `y` representando a posição atual do item.
 
 ```js
 
 ```
 
-Players can use the WASD and/or arrow keys to move their avatar. Complete the `movePlayer` method in `Player.mjs` to implement this.
+Os jogadores podem usar as teclas WASD e/ou as setas do teclado para mover seu avatar. Complete o método `movePlayer` em `Player.mjs` para implementar isso.
 
 ```js
 
 ```
 
-The `movePlayer` method should accept two arguments: a string of "up", "down", "left", or "right", and a number for the amount of pixels the player's position should change. `movePlayer` should adjust the `x` and `y` coordinates of the player object it's called from.
+O método `movePlayer` deve aceitar dois argumentos: uma string para "up", "down", "left" ou "right" e um número para a quantidade de pixels que a posição do jogador deve mudar. `movePlayer` deve ajustar as coordenadas `x` e `y` do objeto do jogador de onde ele é chamado.
 
 ```js
 
 ```
 
-The player's score should be used to calculate their rank among the other players. Complete the `calculateRank` method in the `Player` class to implement this.
+A pontuação do jogador deve ser usada para calcular a classificação entre os outros jogadores. Complete o método `calculateRank` em `Player` para implementar isso.
 
 ```js
 
 ```
 
-The `calculateRank` method should accept an array of objects representing all connected players and return the string `Rank: currentRanking/totalPlayers`. For example, in a game with two players, if Player A has a score of 3 and Player B has a score of 5, `calculateRank` for Player A should return `Rank: 2/2`.
+O método `calculateRank` deve aceitar um array de objetos representando todos os jogadores conectados e retornar a string `Rank: currentRanking/totalPlayers`. Por exemplo, em um jogo com dois jogadores, se o jogador A tiver uma pontuação de 3 e o jogador B tiver uma pontuação de 5, `calculateRank` para o Jogador A deve retornar `Rank: 2/2`.
 
 ```js
 
 ```
 
-Players can collide with a collectible item. Complete the `collision` method in `Player.mjs` to implement this.
+Os jogadores podem colidir com um item colecionável. Complete o método `collision` em `Player.mjs` para implementar isso.
 
 ```js
 
 ```
 
-The `collision` method should accept a collectible item's object as an argument. If the player's avatar intersects with the item, the `collision` method should return `true`.
+O método `collision` deve aceitar o objeto de um item colecionável como um argumento. Se o avatar do jogador cruzar com o item, o método `collision` deve retornar `true`.
 
 ```js
 
 ```
 
-All players are kept in sync.
+Todos os jogadores são mantidos em sincronia.
 
 ```js
 
 ```
 
-Players can disconnect from the game at any time.
+Os jogadores podem se desconectar do jogo a qualquer momento.
 
 ```js
 
 ```
 
-Prevent the client from trying to guess / sniff the MIME type.
+Impedir que o client tente adivinhar/detectar o tipo MIME.
 
 ```js
 async (getUserInput) => {
@@ -145,7 +145,7 @@ async (getUserInput) => {
 };
 ```
 
-Prevent cross-site scripting (XSS) attacks.
+Evitar ataques de cross-site scripting (XSS).
 
 ```js
 async (getUserInput) => {
@@ -155,7 +155,7 @@ async (getUserInput) => {
 };
 ```
 
-Nothing from the website is cached in the client.
+Nada do site está armazenado em cache no client.
 
 ```js
 async (getUserInput) => {
@@ -171,7 +171,7 @@ async (getUserInput) => {
 };
 ```
 
-The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as a security measure).
+Os cabeçalhos dizem que o site usa "PHP 7.4.3", mesmo que não seja verdade (como uma medida de segurança).
 
 ```js
 async (getUserInput) => {
