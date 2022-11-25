@@ -10,6 +10,11 @@ dashedName: polygon-area-calculator
 
 You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
 このプロジェクトでは、オブジェクト指向プログラミングを使用して、Rectangle クラスと Square クラスを作成します。 Square クラスは Rectangle のサブクラスであり、メソッドと属性を継承する必要があります。
@@ -20,11 +25,11 @@ When a Rectangle object is created, it should be initialized with `width` and `h
 
 - `set_width`
 - `set_height`
-- `get_area`: 面積を返します (`width * height`)
-- `get_perimeter`: 外周を返します (`2 * width + 2 * height`)
-- `get_diagonal`: 対角線を返します(`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: "\*" の行を使用して図形を表す文字列を返します。 行数は高さと等しく、各行の"\*"の数は幅と等しくする必要があります。 各行の末尾に改行 (`\n`) が必要です。 幅または高さが 50 より大きい場合は、文字列 "Too big for picture." を返す必要があります。
-- `get_amount_inside`: 引数として別の図形 (正方形または長方形) を受け取ります。 渡された図形が、その図形の中に何個収まるかを返します (回転はしません)。 たとえば、幅が 4 で高さが 8 の長方形には、一辺が 4 の正方形が 2つ収まります。
+- `get_area`: Returns area (`width * height`)
+- `get_perimeter`: Returns perimeter (`2 * width + 2 * height`)
+- `get_diagonal`: Returns diagonal (`(width ** 2 + height ** 2) ** .5`)
+- `get_picture`: Returns a string that represents the shape using lines of "\*". The number of lines should be equal to the height and the number of "\*" in each line should be equal to the width. There should be a new line (`\n`) at the end of each line. If the width or height is larger than 50, this should return the string: "Too big for picture.".
+- `get_amount_inside`: Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
 
 Additionally, if an instance of a Rectangle is represented as a string, it should look like: `Rectangle(width=5, height=10)`
 
@@ -95,7 +100,7 @@ We imported the tests from `test_module.py` to `main.py` for your convenience. T
 
 # --hints--
 
-Rectangle クラスと Square クラスを作成し、すべてのテストに合格する必要があります。
+Rectangle クラスと Square クラスを作成し、すべてのテストを成功させる必要があります。
 
 ```js
 

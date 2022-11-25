@@ -14,13 +14,19 @@ Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: 
 -   Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp"  target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare il tuo progetto.
 -   Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
 
-**Nota:** la conversione tra fusi orari non è un proposito di questo progetto, quindi assumi che tutte le date valide saranno passate a `new Date()` come date GMT.
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+
+**Note:** Time zones conversion is not a purpose of this project, so assume all sent valid dates will be parsed with `new Date()` as GMT dates.
 
 # --hints--
 
-È necessario fornire il proprio progetto, non l'URL di esempio.
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -30,7 +36,7 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 };
 ```
 
-Una richiesta a `/api/:date?` con una data valida dovrebbe restituire un oggetto JSON con una chiave `unix` che è un timestamp Unix della data di input in millisecondi (di tipo Number)
+A request to `/api/:date?` with a valid date should return a JSON object with a `unix` key that is a Unix timestamp of the input date in milliseconds (as type Number)
 
 ```js
 (getUserInput) =>
@@ -48,7 +54,7 @@ Una richiesta a `/api/:date?` con una data valida dovrebbe restituire un oggetto
   );
 ```
 
-Una richiesta a `/api/:date?` con una data valida dovrebbe restituire un oggetto JSON con una chiave `utc` che è una stringa della data di immissione nel formato: `Thu, 01 Jan 1970 00:00:00 GMT`
+A request to `/api/:date?` with a valid date should return a JSON object with a `utc` key that is a string of the input date in the format: `Thu, 01 Jan 1970 00:00:00 GMT`
 
 ```js
 (getUserInput) =>
@@ -66,7 +72,7 @@ Una richiesta a `/api/:date?` con una data valida dovrebbe restituire un oggetto
   );
 ```
 
-Una richiesta a `/api/1451001600000` dovrebbe restituire `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
+A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
 
 ```js
 (getUserInput) =>
@@ -83,7 +89,7 @@ Una richiesta a `/api/1451001600000` dovrebbe restituire `{ unix: 1451001600000,
   );
 ```
 
-Il tuo progetto può gestire date che possono essere lette con successo da `new Date(date_string)`
+Your project can handle dates that can be successfully parsed by `new Date(date_string)`
 
 ```js
 (getUserInput) =>
@@ -100,7 +106,7 @@ Il tuo progetto può gestire date che possono essere lette con successo da `new 
   );
 ```
 
-Se la stringa della data di input non è valida, l'api restituisce un oggetto con la struttura `{ error : "Invalid Date" }`
+If the input date string is invalid, the api returns an object having the structure `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>
@@ -114,7 +120,7 @@ Se la stringa della data di input non è valida, l'api restituisce un oggetto co
   );
 ```
 
-Un parametro data vuoto dovrebbe restituire l'ora corrente in un oggetto JSON con una chiave `unix`
+An empty date parameter should return the current time in a JSON object with a `unix` key
 
 ```js
 (getUserInput) =>
@@ -129,7 +135,7 @@ Un parametro data vuoto dovrebbe restituire l'ora corrente in un oggetto JSON co
   );
 ```
 
-Un parametro data vuoto dovrebbe restituire l'ora corrente in un oggetto JSON con una chiave `utc`
+An empty date parameter should return the current time in a JSON object with a `utc` key
 
 ```js
 (getUserInput) =>

@@ -14,15 +14,21 @@ dashedName: file-metadata-microservice
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Використати конструктор сайтів на свій вибір для завершення проекту. Впевніться, що ви зберегли всі файли із нашого GitHub репозиторію.
 
-По завершенню переконайтеся, що працююча демоверсія вашого проекту розміщена у відкритому доступі. Потім введіть його URL-адресу в поле `Solution Link`. За бажанням також можете ввести посилання на вихідний код вашого проєкту в полі `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-**ПІДКАЗКА:** Ви можете використовувати npm пакет `multer` щоб опрацювати завантаження файлу.
+**HINT:** You can use the `multer` npm package to handle file uploading.
 
 # --hints--
 
-Вам необхідно вказати свій власний проект, а не приклад URL-адреси.
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -34,7 +40,7 @@ dashedName: file-metadata-microservice
 };
 ```
 
-Ви можете надіслати форму, що включає в себе завантаження файлу.
+You can submit a form that includes a file upload.
 
 ```js
 async (getUserInput) => {
@@ -45,7 +51,7 @@ async (getUserInput) => {
 };
 ```
 
-Поле вводу файлу форми має параметр `name` встановлений в `upfile`.
+The form file input field has the `name` attribute set to `upfile`.
 
 ```js
 async (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-Коли ви надсилаєте файл, ви отримуєте `name`, `type` і `size` файлу в байтах у відповіді JSON.
+When you submit a file, you receive the file `name`, `type`, and `size` in bytes within the JSON response.
 
 ```js
 async (getUserInput) => {

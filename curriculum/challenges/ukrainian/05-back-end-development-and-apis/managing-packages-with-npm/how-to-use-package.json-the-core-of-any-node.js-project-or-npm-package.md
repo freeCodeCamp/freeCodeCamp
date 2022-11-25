@@ -10,17 +10,23 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 Робота над цими завданнями включатиме написання вашого коду  з використанням одного з наступних методів:
 
-- Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте ці завдання локально.
+- Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте завдання локально.
 - Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання цих завдань.
 - Для завершення проєкту користуйтеся вибраним вами конструктором сайту. Переконайтеся, що ви зберегли всі файли з нашого репозиторію GitHub.
 
-Коли ви завершили, переконайтеся, що ця демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу в поле `Solution Link`.
+If you use Replit, follow these steps to set up the project:
 
-Файл `package.json` є центром будь-якого проєкту Node.js або npm пакету. Він зберігає інформацію про ваш проєкт, схожий на те, як &lt;заголовок> секція HTML-документа описує вміст веб-сторінки. Він складається з одного об'єкту JSON, де інформація зберігається у парах ключ-значення. Є лише два обов'язкові поля; "ім'я" та "версія", але дуже добре практикуватися надавати додаткову інформацію про ваш проєкт, який може бути корисний майбутнім користувачам або керівникам.
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
-Якщо подивитесь на дерево файлів вашого проєкту, то знайдете файл package.json на верхньому рівні дерева. Це файл, який ви будете покращуватись у наступних парах завдань.
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
-Одне з найпоширеніших відомостей у цьому файлі є полем `author`. Він вказує на те, хто створив проект, і може складатися з рядка або об'єкта з контактом або іншими деталями. Об’єкт рекомендований для більших проєктів, але простий рядок, як наступний приклад, працюватиме для цього проєкту.
+The `package.json` file is the center of any Node.js project or npm package. It stores information about your project, similar to how the &lt;head> section of an HTML document describes the content of a webpage. It consists of a single JSON object where information is stored in key-value pairs. There are only two required fields; "name" and "version", but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+
+If you look at the file tree of your project, you will find the package.json file on the top level of the tree. This is the file that you will be improving in the next couple of challenges.
+
+One of the most common pieces of information in this file is the `author` field. It specifies who created the project, and can consist of a string or an object with contact or other details. An object is recommended for bigger projects, but a simple string like the following example will do for this project.
 
 ```json
 "author": "Jane Doe",
@@ -28,13 +34,13 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 # --instructions--
 
-Додайте ваше ім'я як `author` проєкту у файл package.json.
+Add your name as the `author` of the project in the package.json file.
 
-**Примітка:** Пам'ятайте, що ви пишете JSON, бо всі назви полів повинні використовувати подвійні лапки (") і бути розділені комою (,).
+**Note:** Remember that you’re writing JSON, so all field names must use double-quotes (") and be separated with a comma (,).
 
 # --hints--
 
-package.json повинен мати допустимий ключ "автор"
+package.json should have a valid "author" key
 
 ```js
 (getUserInput) =>

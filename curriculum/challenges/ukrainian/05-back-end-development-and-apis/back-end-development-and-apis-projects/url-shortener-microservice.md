@@ -14,15 +14,21 @@ dashedName: url-shortener-microservice
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Використати конструктор сайту на свій вибір для завершення проекту. Впевнитися, що включили всі файли з нашого репозиторію GitHub.
 
-По завершенню переконайтеся, що працююча демо-версія вашого проекту розміщена у відкритому доступі. Потім введіть його URL-адресу в поле `Solution Link`. За бажанням також можете ввести посилання на вихідний код вашого проєкту в полі `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-**ПІДКАЗКА:** не забудьте використовувати проміжне програмне забезпечення body parsing для обробки запитів POST. Також ви можете використовувати функцію `dns.lookup(host, cb)` з основного модуля `dns` для перевірки надісланої URL-адреси.
+**HINT:** Do not forget to use a body parsing middleware to handle the POST requests. Also, you can use the function `dns.lookup(host, cb)` from the `dns` core module to verify a submitted URL.
 
 # --hints--
 
-Вам необхідно вказати свій власний проект, а не приклад URL-адреси.
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -34,7 +40,7 @@ dashedName: url-shortener-microservice
 };
 ```
 
-Ви можете POST URL до `/api/shorturl` та отримати відповідь JSON з властивостями `original_url` і `short_url`. Ось приклад: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
+You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
 async (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-Коли ви відкриєте `/api/shorturl/<short_url>`, вас буде перенаправлено на оригінальне URL.
+When you visit `/api/shorturl/<short_url>`, you will be redirected to the original URL.
 
 ```js
 async (getUserInput) => {
@@ -88,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо ви введете недійсний URL, який не відповідає дійсному формату `http://www.example.com` , то відповідь JSON буде містити `{ error: 'invalid url' }`
+If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`
 
 ```js
 async (getUserInput) => {

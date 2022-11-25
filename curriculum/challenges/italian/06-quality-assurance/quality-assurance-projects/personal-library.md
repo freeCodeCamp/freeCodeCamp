@@ -14,7 +14,13 @@ Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: 
 -   Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare il tuo progetto.
 -   Usare un costruttore di siti a tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -25,7 +31,7 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 
 # --hints--
 
-È necessario fornire il proprio progetto, non l'URL di esempio.
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -35,7 +41,7 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 };
 ```
 
-Puoi inviare una richiesta <b>POST</b> a `/api/books` con `title` come parte dei dati del modulo per aggiungere un libro.  La risposta restituita sarà un oggetto con un `title` e un `_id` unico come chiavi.  Se `title` non è incluso nella richiesta, la risposta restituita dovrebbe essere la stringa `missing required field title`.
+You can send a <b>POST</b> request to `/api/books` with `title` as part of the form data to add a book.  The returned response will be an object with the `title` and a unique `_id` as keys.  If `title` is not included in the request, the returned response should be the string `missing required field title`.
 
 ```js
 async (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-Puoi inviare una richiesta <b>GET</b> a `/api/books` e ricevere una risposta JSON che rappresenta tutti i libri. La risposta JSON sarà un array di oggetti con ogni oggetto (libro) contenente le proprietà `title`, `_id`e `commentcount`.
+You can send a <b>GET</b> request to `/api/books` and receive a JSON response representing all the books. The JSON response will be an array of objects with each object (book) containing `title`, `_id`, and `commentcount` properties.
 
 ```js
 async (getUserInput) => {
@@ -84,7 +90,7 @@ async (getUserInput) => {
 };
 ```
 
-Puoi inviare una richiesta <b>GET</b> a `/api/books/{_id}` per recuperare un singolo oggetto di un libro contenente le proprietà `title`, `_id` e un array di commenti `comments` (array vuoto se nessun commento è presente). Se non viene trovato nessun libro, restituisci la stringa `no book exists`.
+You can send a <b>GET</b> request to `/api/books/{_id}` to retrieve a single object of a book containing the properties `title`, `_id`, and a `comments` array (empty array if no comments present). If no book is found, return the string `no book exists`.
 
 ```js
 async (getUserInput) => {
@@ -108,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-È possibile inviare una richiesta <b>POST</b> contenente `comment` come dati del corpo del modulo a `/api/books/{_id}` per aggiungere un commento a un libro. La risposta restituita sarà l'oggetto libri simile alla richiesta <b>GET</b> `/api/books/{_id}` in un test precedente. Se `comment` non è incluso nella richiesta, restituisci la stringa `missing required field comment`. Se non viene trovato nessun libro, restituisci la stringa `no book exists`.
+You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. If `comment` is not included in the request, return the string `missing required field comment`. If no book is found, return the string `no book exists`.
 
 ```js
 async (getUserInput) => {
@@ -146,7 +152,7 @@ async (getUserInput) => {
 };
 ```
 
-Puoi inviare una richiesta <b>DELETE</b> a `/api/books/{_id}` per eliminare un libro dalla collezione. La risposta restituita sarà la stringa `delete successful` se la richiesta ha avuto successo. Se non viene trovato nessun libro, restituisce la stringa `no book exists`.
+You can send a <b>DELETE</b> request to `/api/books/{_id}` to delete a book from the collection. The returned response will be the string `delete successful` if successful. If no book is found, return the string `no book exists`.
 
 ```js
 async (getUserInput) => {
@@ -170,7 +176,7 @@ async (getUserInput) => {
 };
 ```
 
-Puoi inviare una richiesta <b>DELETE</b> a `/api/books` per eliminare tutti i libri nel database. La risposta restituita sarà la stringa `complete delete successful` se la richiesta ha avuto successo.
+You can send a <b>DELETE</b> request to `/api/books` to delete all books in the database. The returned response will be the string `complete delete successful` if successful.
 
 ```js
 async (getUserInput) => {
@@ -187,7 +193,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 10 test funzionali richiesti sono completi e superati.
+All 10 functional tests required are complete and passing.
 
 ```js
 async (getUserInput) => {

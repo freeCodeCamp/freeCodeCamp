@@ -53,7 +53,7 @@ The first three cells import libraries you may need and the data to use. The fin
 
 # --hints--
 
-Він повинен пройти усі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

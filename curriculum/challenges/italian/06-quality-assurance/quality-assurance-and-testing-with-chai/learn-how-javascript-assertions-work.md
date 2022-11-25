@@ -14,15 +14,21 @@ Lavorare su queste sfide ti porterà a scrivere il tuo codice utilizzando uno de
 - Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare queste sfide.
 - Usare un costruttore di siti a tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
 # --instructions--
 
-All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#1`, nella suite `Basic Assertions`, cambia ogni asserzione `assert` in `assert.isNull` o `assert.isNotNull` per far superare il test (dovrebbe risultare `true`). Non alterare gli argomenti passati alle asserzioni.
+Within `tests/1_unit-tests.js` under the test labelled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
 # --hints--
 
-Tutti i test dovrebbero essere superati.
+All tests should pass.
 
 ```js
 (getUserInput) =>
@@ -36,7 +42,7 @@ Tutti i test dovrebbero essere superati.
   );
 ```
 
-Dovresti scegliere il metodo corretto per la prima asserzione - `isNull` oppure `isNotNull`.
+You should choose the correct method for the first assertion - `isNull` vs. `isNotNull`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +56,7 @@ Dovresti scegliere il metodo corretto per la prima asserzione - `isNull` oppure 
   );
 ```
 
-Dovresti scegliere il metodo corretto per la seconda asserzione - `isNull` oppure `isNotNull`.
+You should choose the correct method for the second assertion - `isNull` vs. `isNotNull`.
 
 ```js
 (getUserInput) =>

@@ -14,13 +14,19 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 - 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成这些挑战。
 - 使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 字段中提交它的 URL。
+If you use Replit, follow these steps to set up the project:
 
-`package.json` 文件是所有 Node.js 项目和 npm 包的枢纽， 和 HTML 文档中的 &lt;head> 区域用来描述网页的配置信息（元数据）一样，它存储项目的相关信息。 它由单个 JSON 对象组成，并以键值对的形式存储项目信息， 且至少包含两个必填字段：“name”和“version”——但是最好提供有关项目的其他信息，这将对用户或者维护者有所帮助。
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
-如果能找到项目的文件树，那么可以在文件树的最外层找到 package.json， 在接下来的几个挑战中将完善这个文件。
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
-在这个文件中最常见的信息之一是 `author` 字段， 它说明了项目的创建者，它可以是字符串，也可以是带有联系人详细信息的对象。 对于较大的项目，建议使用对象；但是在我们的项目中，一个简单的字符串就够了，比如下面的例子：
+The `package.json` file is the center of any Node.js project or npm package. It stores information about your project, similar to how the &lt;head> section of an HTML document describes the content of a webpage. It consists of a single JSON object where information is stored in key-value pairs. There are only two required fields; "name" and "version", but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+
+If you look at the file tree of your project, you will find the package.json file on the top level of the tree. This is the file that you will be improving in the next couple of challenges.
+
+One of the most common pieces of information in this file is the `author` field. It specifies who created the project, and can consist of a string or an object with contact or other details. An object is recommended for bigger projects, but a simple string like the following example will do for this project.
 
 ```json
 "author": "Jane Doe",
@@ -28,13 +34,13 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 # --instructions--
 
-在项目的 package.json 文件的 `author` 键中添加你的名字。
+Add your name as the `author` of the project in the package.json file.
 
-**注意：** 正在修改的是一个 JSON，所有的字段名必须用双引号（"）包裹，也必须用逗号（,）分割。
+**Note:** Remember that you’re writing JSON, so all field names must use double-quotes (") and be separated with a comma (,).
 
 # --hints--
 
-package.json 应该有一个有效的“author”键
+package.json should have a valid "author" key
 
 ```js
 (getUserInput) =>

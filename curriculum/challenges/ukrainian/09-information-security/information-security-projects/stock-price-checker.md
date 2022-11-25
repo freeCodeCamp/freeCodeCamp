@@ -18,7 +18,13 @@ dashedName: stock-price-checker
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Використовуйте конструктор сайту на власний розсуд, щоб завершити проєкт. Впевніться, що Ви включили усі файли з нашого репозиторію GitHub.
 
-Коли Ви завершите роботу, переконайтесь, що робоча демоверсія Вашого проєкту розміщена у вільному доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням також введіть посилання на вихідний код проєкту у полі `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -27,19 +33,19 @@ dashedName: stock-price-checker
 3.  Додайте будь-які заходи безпеки до `server.js`
 4.  Створіть усі функціональні тести в `tests/2_functional-tests.js`
 
-**Зверніть увагу** на питання конфіденційності: вам доведеться зберегти IP-адресу. Важливо дотримуватися законів про конфіденційність даних, як от загального регламенту про захист даних. Один із варіантів — отримати дозвіл на збереження даних користувача, однак все ж простіше зробити їх анонімними. Не забудьте зробити ваші IP-адреси анонімними, перш ніж зберігати їх до бази даних у цьому завданні. Для цього ви можете скористатися хеш-функцією, методом truncate чи просто змінити частину IP-адреси на 0.
+**Note** Privacy Considerations: Due to the requirement that only 1 like per IP should be accepted, you will have to save IP addresses. It is important to remain compliant with data privacy laws such as the General Data Protection Regulation. One option is to get permission to save the user's data, but it is much simpler to anonymize it. For this challenge, remember to anonymize IP addresses before saving them to the database. If you need ideas on how to do this, you may choose to hash the data, truncate it, or set part of the IP address to 0.
 
-Напишіть наступні тести в `tests/2_functional-tests.js`:
+Write the following tests in `tests/2_functional-tests.js`:
 
--   Перегляд однієї акції: запит GET до `/api/stock-prices/`
--   Якщо Ви переглянули одну акцію й вона Вам сподобалась: запит GET в `/api/stock-prices/`
--   Якщо Ви переглянули ту ж саму акцію й обрали її знову: запит GET в `/api/stock-prices/`
--   Якщо Ви переглянули дві акції: запит GET в `/api/stock-prices/`
--   Якщо Ви переглянули дві акції та вони Вам сподобались: запит GET в `/api/stock-prices/`
+-   Viewing one stock: GET request to `/api/stock-prices/`
+-   Viewing one stock and liking it: GET request to `/api/stock-prices/`
+-   Viewing the same stock and liking it again: GET request to `/api/stock-prices/`
+-   Viewing two stocks: GET request to `/api/stock-prices/`
+-   Viewing two stocks and liking them: GET request to `/api/stock-prices/`
 
 # --hints--
 
-Ви можете додати свій проєкт, а не URL-посилання прикладу.
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -49,7 +55,7 @@ dashedName: stock-price-checker
 };
 ```
 
-Ви маєте налаштувати політику безпеки вмісту так, щоб дозволити завантаження скриптів та CSS лише з вашого сервера.
+You should set the content security policies to only allow loading of scripts and CSS from your server.
 
 ```js
 async (getUserInput) => {
@@ -64,7 +70,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит `GET` до `/api/stock-prices`, передаючи символ акції NASDAQ в параметр запиту `stock`. Отриманий об'єкт міститиме властивість із назвою `stockData`.
+You can send a `GET` request to `/api/stock-prices`, passing a NASDAQ stock symbol to a `stock` query parameter. The returned object will contain a property named `stockData`.
 
 ```js
 async (getUserInput) => {
@@ -76,7 +82,7 @@ async (getUserInput) => {
 };
 ```
 
-Властивість `stockData` включає символ `stock` у вигляді строки, `price` та `likes` у вигляді чисел.
+The `stockData` property includes the `stock` symbol as a string, the `price` as a number, and `likes` as a number.
 
 ```js
 async (getUserInput) => {
@@ -91,13 +97,13 @@ async (getUserInput) => {
 };
 ```
 
-Ви також можете передати поле `like` як `true` (логічний тип), аби ваші вподобання було додано до акції(й). Приймається лише одне вподобання на IP.
+You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
 
 ```js
 
 ```
 
-Якщо Ви передасте 2 акції, то отриманим значенням буде масив із інформацією про обидві акції. Замість `likes` буде показано `rel_likes` (різниця між уподобаннями на обох акціях) для обох об'єктів `stockData`.
+If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both `stockData` objects.
 
 ```js
 async (getUserInput) => {
@@ -112,7 +118,7 @@ async (getUserInput) => {
 };
 ```
 
-Усі 5 функціональних тестів завершено та успішно пройдено.
+All 5 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

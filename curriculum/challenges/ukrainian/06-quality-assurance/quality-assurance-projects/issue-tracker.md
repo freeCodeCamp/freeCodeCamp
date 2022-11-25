@@ -14,36 +14,42 @@ dashedName: issue-tracker
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Для завершення проєкту, використайте вибраний вами розробник сайту. Переконайтеся, що зберегли усі файли з нашого репозиторію GitHub.
 
-Коли ви завершили, переконайтеся, що ця демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу в поле `Solution Link`. При необхідності, також введіть посилання на джерело коду вашого проєкту у полі`GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
--   Завершіть необхідні маршрути в `/routes/api.js`
--   Створіть усі функціональні тести в `tests/2_functional-tests.js`
--   Скопіюйте файл `sample.env` до `.env` та встановіть відповідні змінні
--   Щоб розпочати тест розкоментуйте `NODE_ENV=test` у вашому файлі `.env`
--   Щоб розпочати тести на консолі, використайте команду `npm run test`. Щоб відкрити консоль Replit, натисніть сполучення клавіш Ctrl+Shift+P (Cmd, якщо на Mac) та наберіть "open shell"
+-   Complete the necessary routes in `/routes/api.js`
+-   Create all of the functional tests in `tests/2_functional-tests.js`
+-   Copy the `sample.env` file to `.env` and set the variables appropriately
+-   To run the tests uncomment `NODE_ENV=test` in your `.env` file
+-   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
-Напишіть наступні тести в `tests/2_functional-tests.js`:
+Write the following tests in `tests/2_functional-tests.js`:
 
--   Створіть запитання в кожному полі: запит POST на `/api/issues/{project}`
--   Створіть запитання тільки в необхідних полях: запит POST на `/api/issues/{project}`
--   Створіть запитання в пропущених необхідних полях: запит POST на `/api/issues/{project}`
--   Подивіться запитання проєкту: запит GET на `/api/issues/{project}`
--   Подивіться запитання проєкту з одним фільтром: запит GET на `/api/issues/{project}`
--   Подивіться запитання проєкту з декількома фільтрами: запит GET на `/api/issues/{project}`
--   Оновіть одне поле на запитанні: запит PUT на `/api/issues/{project}`
--   Оновіть декілька полів на запитанні: запит PUT на `/api/issues/{project}`
--   Оновіть запитання з пропущеним `_id`: запит PUT на `/api/issues/{project}`
--   Оновіть запитання з полями для оновлення: запит PUT на `/api/issues/{project}`
--   Оновіть запитання з недопустимим `_id`: запит PUT на `/api/issues/{project}`
--   Видаліть запитання: запит DELETE на `/api/issues/{project}`
--   Видаліть запитання з недопустимим `_id`: запит DELETE на `/api/issues/{project}`
--   Видаліть запитання з пропущеним `_id`: запит DELETE на `/api/issues/{project}`
+-   Create an issue with every field: POST request to `/api/issues/{project}`
+-   Create an issue with only required fields: POST request to `/api/issues/{project}`
+-   Create an issue with missing required fields: POST request to `/api/issues/{project}`
+-   View issues on a project: GET request to `/api/issues/{project}`
+-   View issues on a project with one filter: GET request to `/api/issues/{project}`
+-   View issues on a project with multiple filters: GET request to `/api/issues/{project}`
+-   Update one field on an issue: PUT request to `/api/issues/{project}`
+-   Update multiple fields on an issue: PUT request to `/api/issues/{project}`
+-   Update an issue with missing `_id`: PUT request to `/api/issues/{project}`
+-   Update an issue with no fields to update: PUT request to `/api/issues/{project}`
+-   Update an issue with an invalid `_id`: PUT request to `/api/issues/{project}`
+-   Delete an issue: DELETE request to `/api/issues/{project}`
+-   Delete an issue with an invalid `_id`: DELETE request to `/api/issues/{project}`
+-   Delete an issue with missing `_id`: DELETE request to `/api/issues/{project}`
 
 # --hints--
 
-Ви можете застосувати свій власний проєкт, а не URL-посилання прикладу.
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -51,7 +57,7 @@ dashedName: issue-tracker
 };
 ```
 
-Ви можете надіслати запит `POST` на `/api/issues/{projectname}` з формою даних, яка містить необхідні поля `issue_title`, `issue_text`, `created_by` і при необхідності `assigned_to` та `status_text`.
+You can send a `POST` request to `/api/issues/{projectname}` with form data containing the required fields `issue_title`, `issue_text`, `created_by`, and optionally `assigned_to` and `status_text`.
 
 ```js
 async (getUserInput) => {
@@ -73,7 +79,7 @@ async (getUserInput) => {
 };
 ```
 
-Запит `POST` на `/api/issues/{projectname}` повертає створений об'єкт і повинен включати усі подані поля. Виключені поля будуть повертатися як порожні рядки. Додатково, включіть `created_on` (дата/час), `updated_on` (дата/час), `open` (boolean, `true` для відкритого - значення за змовчуванням, `false` для закритого) та `_id`.
+The `POST` request to `/api/issues/{projectname}` will return the created object, and must include all of the submitted fields. Excluded optional fields will be returned as empty strings. Additionally, include `created_on` (date/time), `updated_on` (date/time), `open` (boolean, `true` for open - default value, `false` for closed), and `_id`.
 
 ```js
 async (getUserInput) => {
@@ -107,7 +113,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо ви відправите запит `POST` на `/api/issues/{projectname}` без необхідних полів, то буде помилка `{ error: 'required field(s) missing' }`
+If you send a `POST` request to `/api/issues/{projectname}` without the required fields, returned will be the error `{ error: 'required field(s) missing' }`
 
 ```js
 async (getUserInput) => {
@@ -125,7 +131,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит `GET` на `/api/issues/{projectname}` для масиву усіх запитань для конкретного `projectname` з усіма цими полями для кожного запитання.
+You can send a `GET` request to `/api/issues/{projectname}` for an array of all issues for that specific `projectname`, with all the fields present for each issue.
 
 ```js
 async (getUserInput) => {
@@ -172,7 +178,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит `GET` на `/api/issues/{projectname}` та фільтрувати запит, також передавши будь-яке поле і значення як запит URL (наприклад, `/api/issues/{project}?open=false`). Ви також можете одночасно передати одне чи декілька полів/значень.
+You can send a `GET` request to `/api/issues/{projectname}` and filter the request by also passing along any field and value as a URL query (ie. `/api/issues/{project}?open=false`). You can pass one or more field/value pairs at once.
 
 ```js
 async (getUserInput) => {
@@ -213,7 +219,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит `PUT` на `/api/issues/{projectname}` з `_id` та з одним чи більше полем для оновлення. Якщо все зроблено успішно, поле `updated_on` повинне оновитися і повернутися у вигляді `{  result: 'successfully updated', '_id': _id }`.
+You can send a `PUT` request to `/api/issues/{projectname}` with an `_id` and one or more fields to update. On success, the `updated_on` field should be updated, and returned should be `{  result: 'successfully updated', '_id': _id }`.
 
 ```js
 async (getUserInput) => {
@@ -248,7 +254,7 @@ async (getUserInput) => {
 };
 ```
 
-Коли запит `PUT` надіслати на `/api/issues/{projectname}` не включаючи `_id`, зворотне значення `{ error: 'missing _id' }`.
+When the `PUT` request sent to `/api/issues/{projectname}` does not include an `_id`, the return value is `{ error: 'missing _id' }`.
 
 ```js
 async (getUserInput) => {
@@ -264,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-Коли запит `PUT` надіслати на `/api/issues/{projectname}` не включаючи оновлені поля, зворотне значення `{ error: 'no update field(s) sent', '_id': _id }`. При іншій помилці, зворотне значення буде `{ error: 'could not update', '_id': _id }`.
+When the `PUT` request sent to `/api/issues/{projectname}` does not include update fields, the return value is `{ error: 'no update field(s) sent', '_id': _id }`. On any other error, the return value is `{ error: 'could not update', '_id': _id }`.
 
 ```js
 async (getUserInput) => {
@@ -294,7 +300,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит `DELETE` на `/api/issues/{projectname}` з `_id`, щоб видалити помилку. Якщо не надіслано жодного `_id`, зворотне значення буде `{ error: 'missing _id' }`. Якщо успішно, зворотне значення - `{ result: 'successfully deleted', '_id': _id }`. Якщо невдало, зворотне значення - `{ error: 'could not delete', '_id': _id }`.
+You can send a `DELETE` request to `/api/issues/{projectname}` with an `_id` to delete an issue. If no `_id` is sent, the return value is `{ error: 'missing _id' }`. On success, the return value is `{ result: 'successfully deleted', '_id': _id }`. On failure, the return value is `{ error: 'could not delete', '_id': _id }`.
 
 ```js
 async (getUserInput) => {
@@ -336,7 +342,7 @@ async (getUserInput) => {
 };
 ```
 
-Усі 14 функціональних тестів завершено та успішно пройдено.
+All 14 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

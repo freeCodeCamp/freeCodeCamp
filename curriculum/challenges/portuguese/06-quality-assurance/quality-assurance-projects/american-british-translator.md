@@ -14,56 +14,62 @@ Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar o projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
--   Toda lógica pode ir em `/components/translator.js`
--   Complete a rota `/api/translate` em `/routes/api.js`
--   Crie todos os testes unitários/funcionais em `tests/1_unit-tests.js` e `tests/2_functional-tests.js`
--   Veja os arquivos JavaScript em `/components` para diferentes ortografias e termos que sua aplicação deve traduzir
--   Para executar os testes no Replit, defina `NODE_ENV` como `test` sem aspas no arquivo `.env`
--   Para executar os testes no console, use o comando `npm run test`. Para abrir o console do Replit, pressione Ctrl+Shift+P (cmd, se estiver em um Mac) e digite "open shell"
+-   All logic can go into `/components/translator.js`
+-   Complete the `/api/translate` route in `/routes/api.js`
+-   Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`
+-   See the JavaScript files in `/components` for the different spelling and terms your application should translate
+-   To run the tests on Replit, set `NODE_ENV` to `test` without quotes in the `.env` file
+-   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
-Escreva os testes a seguir em `tests/1_unit-tests.js`:
+Write the following tests in `tests/1_unit-tests.js`:
 
--   Traduza `Mangoes are my favorite fruit.` para o inglês britânico
--   Traduza `I ate yogurt for breakfast.` para o inglês britânico
--   Traduza `We had a party at my friend's condo.` para o inglês britânico
--   Traduza `Can you toss this in the trashcan for me?` para o inglês britânico
--   Traduza `The parking lot was full.` para o inglês britânico
--   Traduza `Like a high tech Rube Goldberg machine.` para o inglês britânico
--   Traduza `To play hooky means to skip class or work.` para o inglês britânico
--   Traduza `No Mr. Bond, I expect you to die.` para o inglês britânico
--   Traduza `Dr. Grosh will see you now.` para o inglês britânico
--   Traduza `Lunch is at 12:15 today.` para o inglês britânico
--   Traduza `We watched the footie match for a while.` para o inglês americano
--   Traduza `Paracetamol takes up to an hour to work.` para o inglês americano
--   Traduza `First, caramelise the onions.` para o inglês americano
--   Traduza `I spent the bank holiday at the funfair.` para o inglês americano
--   Traduza `I had a bicky then went to the chippy.` para o inglês americano
--   Traduza `I've just got bits and bobs in my bum bag.` para o inglês americano
--   Traduza `The car boot sale at Boxted Airfield was called off.` para o inglês americano
--   Traduza `Have you met Mrs Kalyani?` para o inglês americano
--   Traduza `Prof Joyner of King's College, London.` para o inglês americano
--   Traduza `Tea time is usually around 4 or 4.30.` para o inglês americano
--   Destaque a tradução em `Mangoes are my favorite fruit.`
--   Destaque a tradução em `I ate yogurt for breakfast.`
--   Destaque a tradução em `We watched the footie match for a while.`
--   Destaque a tradução em `Paracetamol takes up to an hour to work.`
+-   Translate `Mangoes are my favorite fruit.` to British English
+-   Translate `I ate yogurt for breakfast.` to British English
+-   Translate `We had a party at my friend's condo.` to British English
+-   Translate `Can you toss this in the trashcan for me?` to British English
+-   Translate `The parking lot was full.` to British English
+-   Translate `Like a high tech Rube Goldberg machine.` to British English
+-   Translate `To play hooky means to skip class or work.` to British English
+-   Translate `No Mr. Bond, I expect you to die.` to British English
+-   Translate `Dr. Grosh will see you now.` to British English
+-   Translate `Lunch is at 12:15 today.` to British English
+-   Translate `We watched the footie match for a while.` to American English
+-   Translate `Paracetamol takes up to an hour to work.` to American English
+-   Translate `First, caramelise the onions.` to American English
+-   Translate `I spent the bank holiday at the funfair.` to American English
+-   Translate `I had a bicky then went to the chippy.` to American English
+-   Translate `I've just got bits and bobs in my bum bag.` to American English
+-   Translate `The car boot sale at Boxted Airfield was called off.` to American English
+-   Translate `Have you met Mrs Kalyani?` to American English
+-   Translate `Prof Joyner of King's College, London.` to American English
+-   Translate `Tea time is usually around 4 or 4.30.` to American English
+-   Highlight translation in `Mangoes are my favorite fruit.`
+-   Highlight translation in `I ate yogurt for breakfast.`
+-   Highlight translation in `We watched the footie match for a while.`
+-   Highlight translation in `Paracetamol takes up to an hour to work.`
 
-Escreva os testes a seguir em `tests/2_functional-tests.js`:
+Write the following tests in `tests/2_functional-tests.js`:
 
--   A tradução com os campos de texto e de localização: solicitação de POST para `/api/translate`
--   A tradução com o campo de texto e o campo de localização inválida: solicitação de POST para `/api/translate`
--   A tradução com o campos de texto ausente: solicitação de POST para `/api/translate`
--   A tradução com o campo de localização ausente: solicitação de POST para `/api/translate`
--   A tradução com o campo vazio: solicitação de POST para `/api/translate`
--   A tradução com texto que não precisa de tradução: solicitação de POST para `/api/translate`
+-   Translation with text and locale fields: POST request to `/api/translate`
+-   Translation with text and invalid locale field: POST request to `/api/translate`
+-   Translation with missing text field: POST request to `/api/translate`
+-   Translation with missing locale field: POST request to `/api/translate`
+-   Translation with empty text: POST request to `/api/translate`
+-   Translation with text that needs no translation: POST request to `/api/translate`
 
 # --hints--
 
-Eu posso fornecer meu próprio projeto, não o exemplo de URL.
+I can provide my own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -75,7 +81,7 @@ Eu posso fornecer meu próprio projeto, não o exemplo de URL.
 };
 ```
 
-Você pode solicitar `POST` para `/api/translate` com um corpo contendo `text` com o texto para traduzir e `locale` com `american-to-british` ou `british-to-american`. O objeto retornado deve conter o `text` enviado e a `translation` com o texto traduzido.
+You can `POST` to `/api/translate` with a body containing `text` with the text to translate and `locale` with either `american-to-british` or `british-to-american`. The returned object should contain the submitted `text` and `translation` with the translated text.
 
 ```js
 async (getUserInput) => {
@@ -103,7 +109,7 @@ async (getUserInput) => {
 };
 ```
 
-A rota `/api/translate` deve tratar a forma como o tempo é escrito no inglês americano e britânico. Por exemplo, dez trinta e trinta é escrito como "10:30" em inglês britânico e "10:30" em inglês americano. O elemento `span` deve envolver a string de tempo inteira, ou seja, `<span class="highlight">10:30</span>`.
+The `/api/translate` route should handle the way time is written in American and British English. For example, ten thirty is written as "10.30" in British English and "10:30" in American English. The `span` element should wrap the entire time string, i.e. `<span class="highlight">10:30</span>`.
 
 ```js
 async (getUserInput) => {
@@ -130,7 +136,7 @@ async (getUserInput) => {
 };
 ```
 
-A rota `/api/translate` também deve tratar a forma como os títulos/pronomes de tratamento são abreviados no inglês americano e no britânico. Por exemplo, Doctor Wright é abreviado como "Dr Wright" em inglês britânico e "Dr. Wright" em inglês americano. Veja `/components/american-to-british-titles.js` para os diferentes títulos que sua aplicação deve tratar.
+The `/api/translate` route should also handle the way titles/honorifics are abbreviated in American and British English. For example, Doctor Wright is abbreviated as "Dr Wright" in British English and "Dr. Wright" in American English. See `/components/american-to-british-titles.js` for the different titles your application should handle.
 
 ```js
 async (getUserInput) => {
@@ -157,7 +163,7 @@ async (getUserInput) => {
 };
 ```
 
-Envolva qualquer ortografia ou termos traduzidos com as tags `<span class="highlight">...</span>` para que elas apareçam em verde.
+Wrap any translated spelling or terms with `<span class="highlight">...</span>` tags so they appear in green.
 
 ```js
 async (getUserInput) => {
@@ -185,7 +191,7 @@ async (getUserInput) => {
 };
 ```
 
-Se um ou mais campos requeridos estiver faltando, retorne `{ error: 'Required field(s) missing' }`.
+If one or more of the required fields is missing, return `{ error: 'Required field(s) missing' }`.
 
 ```js
 async (getUserInput) => {
@@ -206,7 +212,7 @@ async (getUserInput) => {
 };
 ```
 
-Se `text` estiver vazio, retorne `{ error: 'No text to translate' }`
+If `text` is empty, return `{ error: 'No text to translate' }`
 
 ```js
 async (getUserInput) => {
@@ -227,7 +233,7 @@ async (getUserInput) => {
 };
 ```
 
-Se `locale` não corresponder a uma das duas localidades especificadas, retorne `{ error: 'Invalid value for locale field' }`.
+If `locale` does not match one of the two specified locales, return `{ error: 'Invalid value for locale field' }`.
 
 ```js
 async (getUserInput) => {
@@ -249,7 +255,7 @@ async (getUserInput) => {
 };
 ```
 
-Se `text` não precisar de tradução, retorne `"Everything looks good to me!"` para o valor `translation`.
+If `text` requires no translation, return `"Everything looks good to me!"` for the `translation` value.
 
 ```js
 async (getUserInput) => {
@@ -276,7 +282,7 @@ async (getUserInput) => {
 };
 ```
 
-Todos os 24 testes de unidade foram concluídos e deram aprovação. Veja `/tests/1_unit-tests.js` para o comportamento esperado para o qual você deve escrever os testes.
+All 24 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
 
 ```js
 async (getUserInput) => {
@@ -301,7 +307,7 @@ async (getUserInput) => {
 };
 ```
 
-Todos os 6 testes funcionais foram concluídos e deram aprovação. Veja `/tests/2_functional-tests.js` para o comportamento esperado para o qual você deve escrever os testes.
+All 6 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
 
 ```js
 async (getUserInput) => {

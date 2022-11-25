@@ -10,9 +10,14 @@ dashedName: arithmetic-formatter
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
-Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
+У початковій школі вчать вирішувати математичні приклади вертикально, аби було простіше. Наприклад, «235 + 52» перетворюється на:
 
 ```py
   235
@@ -20,17 +25,17 @@ Students in primary school often arrange arithmetic problems vertically to make 
 -----
 ```
 
-Create a function that receives a list of strings that are arithmetic problems and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to `True`, the answers should be displayed.
+Створіть функцію, яка отримує список рядків з математичними прикладами та послідовно повертає їх у вертикальному вигляді. В разі потреби функція повинна брати другий аргумент. Коли другий аргумент встановлено на `True`, відповіді повинні відображатися.
 
-## Приклад
+## Наприклад
 
-Function Call:
+Виклик функції:
 
 ```py
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 ```
 
-Output:
+Вивід:
 
 ```py
    32      3801      45      123
@@ -38,13 +43,13 @@ Output:
 -----    ------    ----    -----
 ```
 
-Function Call:
+Виклик функції:
 
 ```py
 arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 ```
 
-Output:
+Вивід:
 
 ```py
   32         1      9999      523
@@ -55,7 +60,7 @@ Output:
 
 ## Правила
 
-The function will return the correct conversion if the supplied problems are properly formatted, otherwise, it will **return** a **string** that describes an error that is meaningful to the user.
+Функція поверне правильне перетворення, якщо надані приклади відформатовані правильно. В іншому випадку буде **повернений** **рядок**, який описує помилку, важливу для користувача.
 
 
 - Situations that will return an error:
@@ -71,19 +76,19 @@ The function will return the correct conversion if the supplied problems are pro
 
 ## Розробка
 
-Write your code in `arithmetic_arranger.py`. For development, you can use `main.py` to test your `arithmetic_arranger()` function. Натисніть кнопку «запустити» і `main.py` запуститься.
+Запишіть свій код у `arithmetic_arranger.py`. Для розробки ви можете використати `main.py`, щоб протестувати свою функцію `arithmetic_arranger()`. Натисніть кнопку «run» і `main.py` запуститься.
 
 ## Тестування
 
-The unit tests for this project are in `test_module.py`. We are running the tests from `test_module.py` in `main.py` for your convenience. Тести запустяться автоматично, коли ви натиснете на кнопку «запустити». Alternatively you may run the tests by inputting `pytest` in the console.
+Модульні тести для цього проєкту знаходяться в `test_module.py`. Ми запускаємо тести з `test_module.py` в `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run». Як варіант, ви можете запустити тести, ввівши у консоль `pytest`.
 
-## Надіслати
+## Надсилання
 
-Copy your project's URL and submit it below.
+Скопіюйте URL-адресу свого проєкту та відправте її.
 
 # --hints--
 
-It should correctly format an arithmetic problem and pass all tests.
+Проєкт повинен правильно відформатувати математичний приклад та пройти тестування.
 
 ```js
 

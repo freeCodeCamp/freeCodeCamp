@@ -14,15 +14,21 @@ dashedName: learn-how-javascript-assertions-work
 - <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、チャレンジを完了させる。
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Basic Assertions` スイート内の `#1` に分類されたテストにおいて、テストを合格にする (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isNull` または `assert.isNotNull` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labelled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+All tests should pass.
 
 ```js
 (getUserInput) =>
@@ -36,7 +42,7 @@ dashedName: learn-how-javascript-assertions-work
   );
 ```
 
-最初のアサーションに対して、正しいメソッドを選ぶ必要があります - `isNull` もしくは `isNotNull` です。
+You should choose the correct method for the first assertion - `isNull` vs. `isNotNull`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +56,7 @@ dashedName: learn-how-javascript-assertions-work
   );
 ```
 
-2 番目のアサーションに対して、正しいメソッドを選ぶ必要があります- `isNull` もしくは `isNotNull` です。
+You should choose the correct method for the second assertion - `isNull` vs. `isNotNull`.
 
 ```js
 (getUserInput) =>

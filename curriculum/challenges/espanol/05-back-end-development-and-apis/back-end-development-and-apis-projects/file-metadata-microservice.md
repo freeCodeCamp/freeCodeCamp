@@ -14,15 +14,21 @@ Crea una aplicación full stack de JavaScript que sea funcionalmente similar a e
 -   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-**NOTA:** Puedes usar el paquete npm `multer` para gestionar la carga de archivos.
+**HINT:** You can use the `multer` npm package to handle file uploading.
 
 # --hints--
 
-Debes proporcionar tu propio proyecto, no la URL de ejemplo.
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -34,7 +40,7 @@ Debes proporcionar tu propio proyecto, no la URL de ejemplo.
 };
 ```
 
-Puedes enviar un formulario que incluya una carga de archivo.
+You can submit a form that includes a file upload.
 
 ```js
 async (getUserInput) => {
@@ -45,7 +51,7 @@ async (getUserInput) => {
 };
 ```
 
-El campo de entrada del archivo de formulario tiene el atributo `name` establecido a `upfile`.
+The form file input field has the `name` attribute set to `upfile`.
 
 ```js
 async (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-Cuando envíes un archivo, recibirá el `name` del archivo, `type` y `size` en bytes dentro de la respuesta JSON.
+When you submit a file, you receive the file `name`, `type`, and `size` in bytes within the JSON response.
 
 ```js
 async (getUserInput) => {

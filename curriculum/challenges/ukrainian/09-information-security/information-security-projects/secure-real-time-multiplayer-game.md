@@ -14,7 +14,13 @@ Develop a 2D real time multiplayer game using the HTML Canvas API and Socket.io 
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Для завершення проєкту використайте вибраний вами розробник сайтів. Не забудьте включити всі файли із нашого репозиторію GitHub.
 
-Коли ви завершили, переконайтеся, що демоверсія вашого проекту розміщена у відкритому доступі. Потім введіть URL-адресу у поле `Solution Link`. Додатково, також вкажіть посилання на вхідний код вашого проєкту у полі `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 

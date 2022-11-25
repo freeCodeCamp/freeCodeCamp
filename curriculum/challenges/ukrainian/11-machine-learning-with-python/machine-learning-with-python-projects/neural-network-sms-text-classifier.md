@@ -26,7 +26,7 @@ The first two cells import the libraries and data. The final cell tests your mod
 
 # --hints--
 
-Він повинен пройти усі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

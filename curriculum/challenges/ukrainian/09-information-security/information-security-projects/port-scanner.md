@@ -11,7 +11,12 @@ dashedName: port-scanner
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
-Ми й досі в процесі розробки інтерактивної складової навчального курсу Python. Наразі можете ознайомитись із наступними відео на YouTube каналі freeCodeCamp.org. У них ви знайдете все необхідне для завершення цього проєкту:
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
+Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
@@ -70,19 +75,19 @@ If the IP address passed into the `get_open_ports` function is invalid, the func
 
 ## Розробка
 
-Write your code in `port_scanner.py`. For development, you can use `main.py` to test your code. Натисніть кнопку "run" і `main.py` запуститься.
+Запишіть свій код у `port_scanner.py`. Для розробки ви можете використати `main.py`, щоб протестувати свій код. Натисніть кнопку «run» і `main.py` запуститься.
 
 ## Тестування
 
-Розділи з тестами для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично кожного разу, коли ви натиснете клавішу "run".
+Модульні тести для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
 
-## Надіслати
+## Надсилання
 
-Скопіюйте URL-адресу вашого проєкту і відправте його до freeCodeCamp.
+Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
 # --hints--
 
-Він повинен пройти усі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 
