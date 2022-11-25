@@ -9,8 +9,8 @@
     "frontend": "フロントエンド",
     "backend": "バックエンド",
     "view": "表示",
-    "view-code": "View Code",
-    "view-project": "View Project",
+    "view-code": "コードを表示",
+    "view-project": "プロジェクトを表示",
     "show-cert": "認定証を表示",
     "claim-cert": "認定証を取得",
     "save-progress": "進行状況を保存",
@@ -264,7 +264,7 @@
       "p8": "そしてこのカリキュラムは何千時間もの実践的なプログラミングの経験を提供します。",
       "p9": "また、数学とコンピュータサイエンス理論をさらに学びたいなら、<0>freeCodeCamp の YouTube チャンネル</0> にも何千時間もの動画コースがあります。",
       "p10": "開発の仕事やフリーランスの顧客を得たいなら、プログラミングスキルはパズルの一部にすぎません。人とのつながりや開発者としての評判を得ることも必要です。",
-      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
+      "p11": "そのためには LinkedIn や GitHub、そして <0>freeCodeCamp フォーラム</0> も活用してください。",
       "p12": "コーディングを楽しみましょう！"
     },
     "upcoming-lessons": "このコースのレッスン",
@@ -284,7 +284,7 @@
     "sign-in-save": "サインインして進行状況を保存",
     "download-solution": "回答をダウンロード",
     "percent-complete": "{{percent}}% 完了",
-    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
+    "project-complete": "{{totalChallengesInBlock}} 件中 {{completedChallengesInBlock}} 件の認定プロジェクトが完了しました",
     "tried-rsa": "すでに <0>Read-Search-Ask (読む - 検索する - 質問する)</0> メソッドを試したなら、freeCodeCamp フォーラムで助けを求めることができます。",
     "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
     "rsa-forum": "<strong>新しい投稿を作成する前に</strong>同じ質問が<0>フォーラム</0>で既に回答されていないか確認してください。",
@@ -326,10 +326,10 @@
     "sorry-hang-in-there": "残念ながら、テストが通りませんでした。がんばりましょう。",
     "sorry-dont-giveup": "残念ながら、テストが通りませんでした。諦めないでください。",
     "challenges-completed": "{{totalChallenges}} 件中 {{completedCount}} 件完了",
-    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
-    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
-    "building-a-university": "We're Building a Free Computer Science University Degree Program",
-    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
+    "season-greetings-fcc": "freeCodeCamp コミュニティから季節のご挨拶🎉",
+    "if-getting-value": "freeCodeCamp が役に立ったと感じていただけたなら、寄付を通して当非営利団体の使命をご支援いただけますと幸いです。",
+    "building-a-university": "freeCodeCamp では無料のコンピューターサイエンス学位プログラムの設立に取り組んでいます。",
+    "if-help-university": "すでに順調に進んでいますが、この先更に長い道のりが待っています。ぜひ私たちのチャリティー活動をご支援ください。"
   },
   "donate": {
     "title": "非営利団体を支援する",
@@ -354,7 +354,7 @@
     "your-donation": "あなたの {{usd}} ドルのご寄付が、世界中の人々に {{hours}} 時間の学びを提供します。",
     "your-donation-2": "あなたの {{usd}} ドルのご寄付が、世界中の人々に {{hours}} 時間の学びを毎月提供します。",
     "your-donation-3": "あなたの {{usd}} ドルのご寄付が、世界中の人々に {{hours}} 時間の学びを毎年提供します。",
-    "become-supporter": "Become a Supporter",
+    "become-supporter": "サポーターになる",
     "duration": "当非営利団体に一回のご支援をいただけますと幸いです。",
     "duration-2": "当非営利団体に毎月のご支援をいただけますと幸いです。",
     "duration-3": "当非営利団体に毎年のご支援をいただけますと幸いです。",
@@ -459,7 +459,7 @@
     "certification-project": "認定プロジェクト",
     "iframe-preview": "{{title}} のプレビュー",
     "iframe-alert": "このリンクは通常の環境では他のウェブサイトを開きます。正しく動作しています。これは {{externalLink}} へのリンクです。",
-    "iframe-form-submit-alert": "Normally this form would be submitted! It works. This will be submitted to: {{externalLink}}",
+    "iframe-form-submit-alert": "通常はこれでフォームが送信されます。正しく動作しています。フォームは {{externalLink}} へ送信されます。",
     "document-notfound": "ドキュメントが見つかりませんでした"
   },
   "icons": {
@@ -723,10 +723,10 @@
     "navigate-next": "次の課題へ移動"
   },
   "signout": {
-    "heading": "Sign out of your account",
-    "p1": "Warning: If you continue, your progress will no longer be saved.",
-    "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
-    "certain": "Yes, sign out of my account",
-    "nevermind": "Nevermind, I don't want to sign out"
+    "heading": "アカウントからサインアウト",
+    "p1": "注意: サインアウト後は進行状況が保存されません。",
+    "p2": "この操作では、このデバイスおよびブラウザーセッションのみを対象にサインアウトされます。サインアウトしてよろしいですか？",
+    "certain": "はい、サインアウトします",
+    "nevermind": "いいえ、サインアウトしません"
   }
 }
