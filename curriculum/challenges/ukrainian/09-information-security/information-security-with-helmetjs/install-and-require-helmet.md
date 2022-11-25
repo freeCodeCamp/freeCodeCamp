@@ -8,19 +8,19 @@ dashedName: install-and-require-helmet
 
 # --description--
 
-Робота над цими завданнями включає написання коду користуючись одним з методів наведених нижче:
+Робота над цими завданнями передбачає написання коду за допомогою одного з наступних методів:
 
 - Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте завдання локально.
 - Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання цих завдань.
-- Для завершення завдань використовуйте обраний вами розробник сайтів. Переконайтеся, що ви зберегли всі файли з нашого репозиторію GitHub.
+- Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`.
 
 Helmet helps you secure your Express apps by setting various HTTP headers.
 

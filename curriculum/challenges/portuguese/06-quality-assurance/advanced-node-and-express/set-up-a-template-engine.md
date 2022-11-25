@@ -14,35 +14,35 @@ Trabalhar nesses desafios vai fazer com que você escreva seu código usando um 
 - Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar esses desafios.
 - Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Se você usa o Replit, siga estas etapas para configurar o projeto:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Comece importando o projeto no Replit.
+-   Em seguida, você verá uma janela `.replit`.
+-   Selecione `Use run command` e clique no botão `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`.
 
-A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
+Um mecanismo de templates (template engine) permite o uso de arquivos de modelo estáticos (como aqueles escritos no *Pug*) na aplicação. Em tempo de execução, o mecanismo de modelos substitui variáveis em um arquivo de modelo por valores reais que podem ser fornecidos pelo servidor. Em seguida, ele transforma o modelo em um arquivo HTML estático, que é enviado ao client. Esta abordagem torna mais fácil projetar uma página HTML e permite exibir variáveis na página sem precisar fazer uma chamada de API do client.
 
-`pug@~3.0.0` has already been installed, and is listed as a dependency in your `package.json` file.
+`pug@~3.0.0` já foi instalado e está listado como uma dependência no arquivo `package.json`.
 
-Express needs to know which template engine you are using. Use the `set` method to assign `pug` as the `view engine` property's value:
+O Express precisa saber qual mecanismo de modelos você está usando. Use o método `set` para atribuir `pug` como o valor de `view engine` da propriedade:
 
 ```javascript
 app.set('view engine', 'pug');
 ```
 
-After that, add another `set` method that sets the `views` property of your `app` to point to the `./views/pug` directory. This tells Express to render all views relative to that directory.
+Depois disso, adicione outro método `set` que defina a propriedade `views` do `app` para que aponte para o diretório `./views/pug`. Isto diz ao Express para renderizar todas as views relativas a esse diretório.
 
-Finally, use `res.render()` in the route for your home page, passing `index` as the first argument. This will render the `pug` template.
+Por fim, use `res.render()` na rota para a sua página inicial, passando `index` como primeiro argumento. Isto vai renderizar o template `pug`.
 
-If all went as planned, your app home page will no longer be blank. Instead, it will display a message indicating you've successfully rendered the Pug template!
+Se tudo correu como planejado, o aplicativo não estará mais em branco. Em vez disso, ele exibirá uma mensagem indicando que você renderizou com sucesso o modelo Pug!
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 
-Pug should be a dependency.
+O Pug deve ser uma dependência.
 
 ```js
 async (getUserInput) => {
@@ -57,7 +57,7 @@ async (getUserInput) => {
 }
 ```
 
-View engine should be Pug.
+O mecanismo de visualização (view engine) deve ser o Pug.
 
 ```js
 async (getUserInput) => {
@@ -68,7 +68,7 @@ async (getUserInput) => {
 }
 ```
 
-You should set the `views` property of the application to `./views/pug`.
+Você deve definir a propriedade `views` da aplicação para `./views/pug`.
 
 ```js
 async (getUserInput) => {
@@ -79,7 +79,7 @@ async (getUserInput) => {
 }
 ```
 
-Use the correct ExpressJS method to render the index page from the response.
+Use o método correto do ExpressJS para processar a página do índice a partir da resposta.
 
 ```js
 async (getUserInput) => {
@@ -94,7 +94,7 @@ async (getUserInput) => {
     }
 ```
 
-Pug should be working.
+O Pug deve funcionar.
 
 ```js
 async (getUserInput) => {

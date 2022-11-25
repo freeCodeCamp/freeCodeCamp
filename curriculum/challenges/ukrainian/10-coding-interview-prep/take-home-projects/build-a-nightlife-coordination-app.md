@@ -8,7 +8,7 @@ dashedName: build-a-nightlife-coordination-app
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://yoyo44.herokuapp.com/" target="_blank" rel="noopener noreferrer nofollow">https://yoyo44.herokuapp.com/</a>. Використовуйте конструктор сайтів на ваш розсуд для завершення проєкту.
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://yoyo44.herokuapp.com/" target="_blank" rel="noopener noreferrer nofollow">https://yoyo44.herokuapp.com/</a>. Для виконання проєкту використайте конструктор сайту на власний вибір.
 
 Тут наведено конкретні історії користувача, які варто імплементувати в даний проєкт:
 
@@ -22,7 +22,7 @@ dashedName: build-a-nightlife-coordination-app
 
 **Hint:** Try using the Yelp API to find venues in the cities your users search for. Якщо ви використовуєте Yelp API, не забудьте вказати це у вашому додатку.
 
-Коли ви завершили, переконайтеся, що демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням також введіть посилання на вихідний код проєкту у полі `GitHub Link`.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням також введіть посилання на вихідний код проєкту у полі `GitHub Link`.
 
 # --solutions--
 

@@ -10,16 +10,16 @@ dashedName: medical-data-visualizer
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
 
 Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 годин)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 годин)
 
 # --instructions--
 
@@ -52,16 +52,16 @@ dashedName: medical-data-visualizer
 
 Використайте дані для виконання наступних завдань у `medical_data_visualizer.py`:
 
-- Add an `overweight` column to the data. To determine if a person is overweight, first calculate their BMI by dividing their weight in kilograms by the square of their height in meters. If that value is > 25 then the person is overweight. Use the value 0 for NOT overweight and the value 1 for overweight.
-- Normalize the data by making 0 always good and 1 always bad. If the value of `cholesterol` or `gluc` is 1, make the value 0. If the value is more than 1, make the value 1.
-- Convert the data into long format and create a chart that shows the value counts of the categorical features using seaborn's `catplot()`. The dataset should be split by 'Cardio' so there is one chart for each `cardio` value. The chart should look like `examples/Figure_1.png`.
-- Clean the data. Filter out the following patient segments that represent incorrect data:
-  - diastolic pressure is higher than systolic (Keep the correct data with `(df['ap_lo'] <= df['ap_hi'])`)
-  - height is less than the 2.5th percentile (Keep the correct data with `(df['height'] >= df['height'].quantile(0.025))`)
-  - height is more than the 97.5th percentile
-  - weight is less than the 2.5th percentile
-  - weight is more than the 97.5th percentile
-- Create a correlation matrix using the dataset. Plot the correlation matrix using seaborn's `heatmap()`. Mask the upper triangle. The chart should look like `examples/Figure_2.png`.
+- Додайте стовпчик `overweight` до даних. Щоб визначити, чи має людина зайву вагу, спочатку обчисліть її ІМТ, поділивши вагу (кг) на зріст (м) у квадраті. Якщо це значення > 25, то людина має зайву вагу. Використайте значення 0 для НЕ надмірної ваги та значення 1 для надмірної ваги.
+- Нормалізуйте дані, зробивши 0 завжди хорошим, а 1 завжди поганим. Якщо значення `cholesterol` або `gluc` дорівнює 1, зробіть значення 0. Якщо значення більше ніж 1, зробіть значення 1.
+- Перетворіть дані у довгий формат та створіть діаграму, яка показує кількість підрахунків категорійних особливостей, використовуючи `catplot()` із seaborn. Набір даних має бути розділений «Cardio», щоб для кожного значення `cardio` був стовпчик. Діаграма повинна виглядати так: `examples/Figure_1.png`.
+- Очистіть дані. Відфільтруйте наступні сегменти пацієнтів, які представляють неправильні дані:
+  - діастолічний тиск вищий за систолічний (збережіть правильні дані за допомогою `(df['ap_lo'] <= df['ap_hi'])`)
+  - зріст менший за 2,5-ий процентиль (збережіть правильні дані за допомогою `(df['height'] >= df['height'].quantile(0.025))`)
+  - зріст більший за 97,5-ий процентиль
+  - вага менша за 2,5-ий процентиль
+  - вага більша ніж 97,5-ий процентиль
+- Створіть кореляційну матрицю, використовуючи набір даних. Побудуйте кореляційну матрицю за допомогою `heatmap()` із seaborn. Замаскуйте верхній трикутник. Діаграма повинна виглядати так: `examples/Figure_2.png`.
 
 Кожного разу, коли для змінної встановлено значення `None`, переконайтеся, що для неї встановлено правильний код.
 

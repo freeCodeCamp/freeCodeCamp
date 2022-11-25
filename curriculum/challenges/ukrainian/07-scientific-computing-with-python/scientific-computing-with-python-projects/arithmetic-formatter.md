@@ -10,9 +10,9 @@ dashedName: arithmetic-formatter
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
 
 # --instructions--
@@ -63,16 +63,16 @@ arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 Функція поверне правильне перетворення, якщо надані приклади відформатовані правильно. В іншому випадку буде **повернений** **рядок**, який описує помилку, важливу для користувача.
 
 
-- Situations that will return an error:
-  - If there are **too many problems** supplied to the function. The limit is **five**, anything more will return: `Error: Too many problems.`
-  - The appropriate operators the function will accept are **addition** and **subtraction**. Multiplication and division will return an error. Other operators not mentioned in this bullet point will not need to be tested. The error returned will be: `Error: Operator must be '+' or '-'.`
-  - Each number (operand) should only contain digits. Otherwise, the function will return: `Error: Numbers must only contain digits.`
-  - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be: `Error: Numbers cannot be more than four digits.`
-- If the user supplied the correct format of problems, the conversion you return will follow these rules:
-  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
-  - Numbers should be right-aligned.
-  - There should be four spaces between each problem.
-  - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
+- Ситуації, які повернуть помилку:
+  - Функції надано **забагато прикладів**. Ліміт складає **5 прикладів**. Якщо їх більше, то повернеться `Error: Too many problems.`
+  - Функція приймає відповідні оператори: **додавання** та **віднімання**. Множення та ділення поверне помилку. Інші оператори, які не згадані тут, тестовані не будуть. Повернеться помилка `Error: Operator must be '+' or '-'.`
+  - Кожне число (операнд) повинне містити лише цифри. В іншому випадку функція поверне `Error: Numbers must only contain digits.`
+  - Кожен операнд (тобто число з кожної сторони оператора) може мати максимум чотири цифри по ширині. В іншому випадку помилковий рядок видасть `Error: Numbers cannot be more than four digits.`
+- Якщо користувач надав правильний формат прикладу, то перетворення буде слідувати наступним правилам:
+  - Повинен бути лише один пробіл між оператором і найдовшим із двох операндів, оператор буде на тому ж рядку, що й другий операнд, обоє операндів будуть в однаковому порядку, як і надано (перший буде зверху, а другий буде знизу).
+  - Числа повинні бути вирівняні за правим краєм.
+  - Між кожним прикладом повинно бути чотири пробіли.
+  - Знизу кожного прикладу повинна бути риска. Риска повинна йти по всій довжині прикладу індивідуально. (На прикладі вище видно, як це повинно виглядати.)
 
 ## Розробка
 

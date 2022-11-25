@@ -10,16 +10,16 @@ dashedName: sea-level-predictor
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
 
 Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 годин)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 годин)
 
 # --instructions--
 
@@ -27,11 +27,11 @@ dashedName: sea-level-predictor
 
 Використайте дані для виконання наступних завдань:
 
-- Use Pandas to import the data from `epa-sea-level.csv`.
-- Use matplotlib to create a scatter plot using the `Year` column as the x-axis and the `CSIRO Adjusted Sea Level` column as the y-axix.
-- Use the `linregress` function from `scipy.stats` to get the slope and y-intercept of the line of best fit. Plot the line of best fit over the top of the scatter plot. Make the line go through the year 2050 to predict the sea level rise in 2050.
-- Plot a new line of best fit just using the data from year 2000 through the most recent year in the dataset. Make the line also go through the year 2050 to predict the sea level rise in 2050 if the rate of rise continues as it has since the year 2000.
-- The x label should be `Year`, the y label should be `Sea Level (inches)`, and the title should be `Rise in Sea Level`.
+- Використайте Pandas для імпорту даних з `epa-sea-level.csv`.
+- Використайте matplotlib, щоб створити діаграму розсіювання, використовуючи стовпчик `Year` як вісь x та стовпчик `CSIRO Adjusted Sea Level` як вісь y.
+- Використайте функцію `linregress` із `scipy.stats`, щоб отримати нахил та Y-перехоплення лінії, яка найкраще підходить. Нанесіть лінію, яка найкраще підходить, поверх діаграми розсіювання. Проведіть лінію через 2050 рік, щоб передбачити підвищення рівня моря в 2050 році.
+- Побудуйте нову лінію, яка найкраще підходить, просто використовуючи дані з 2000 року до найновішого року в наборі даних. Зробіть так, щоб лінія також проходила через 2050 рік, щоб передбачити підвищення рівня моря в 2050 році, якщо темпи підвищення триватимуть, як це було з 2000 року.
+- Міткою x повинна бути `Year`, міткою y повинна бути `Sea Level (inches)`, а назва повинна бути `Rise in Sea Level`.
 
 Для вас складені модульні тести у `test_module.py`.
 

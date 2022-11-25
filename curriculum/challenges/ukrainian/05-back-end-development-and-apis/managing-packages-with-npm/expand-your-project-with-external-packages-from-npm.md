@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512c00
-title: Розпакуйте ваш проєкт із зовнішніми пакетами через npm
+title: Розширте свій проєкт зовнішніми пакетами із npm
 challengeType: 2
 forumTopicId: 301527
 dashedName: expand-your-project-with-external-packages-from-npm
@@ -8,7 +8,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --description--
 
-Однією з найважливіших підстав для використання менеджера пакетів є їх потужне управління залежностями. Npm автоматично встановлює всі необхідні елементи під час встановлення проекту на новому комп'ютер і позбавляє вас необхідності встановлювати все кожного разу вручну. Але як npm може отримати інформацію, чого потребує ваш проєкт? Знайдіть розділ `dependencies` у вашому файлі package.json.
+Однією з найважливіших причин для використання менеджера пакетів є потужне управління залежностями. Npm автоматично встановлює всі необхідні елементи під час встановлення проєкту на новому комп'ютері і позбавляє вас необхідності встановлювати все вручну. Але як npm може точно знати, чого потребує ваш проєкт? Знайдіть розділ `dependencies` у своєму файлі package.json.
 
 У цьому розділі зберігаються пакети, необхідні для вашого проєкту, в наступному форматі:
 
@@ -22,13 +22,13 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --instructions--
 
-Add version "1.1.0" of the `@freecodecamp/example` package to the `dependencies` field of your `package.json` file.
+Додайте версію «1.1.0» пакета `@freecodecamp/example` у поле `dependencies` свого файлу `package.json`.
 
-**Note:** `@freecodecamp/example` is a faux package used as a learning tool.
+**Примітка:** `@freecodecamp/example` є фальшивим пакетом, який використовується як навчальний інструмент.
 
 # --hints--
 
-`"dependencies"` should include `"@freecodecamp/example"`.
+`"dependencies"` повинні містити `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -47,7 +47,7 @@ Add version "1.1.0" of the `@freecodecamp/example` package to the `dependencies`
   );
 ```
 
-`"@freecodecamp/example"` version should be `"1.1.0"`.
+Версією `"@freecodecamp/example"` повинна бути `"1.1.0"`.
 
 ```js
 (getUserInput) =>

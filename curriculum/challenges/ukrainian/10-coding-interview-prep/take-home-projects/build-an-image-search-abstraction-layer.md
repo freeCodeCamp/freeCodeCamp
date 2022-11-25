@@ -8,7 +8,7 @@ dashedName: build-an-image-search-abstraction-layer
 
 # --description--
 
-Build a full stack JavaScript app that allows you to search for images like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10</a> and browse recent search queries like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/recent/" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/recent/</a>. Використовуйте конструктор сайтів на ваш розсуд для завершення проєкту.
+Build a full stack JavaScript app that allows you to search for images like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10</a> and browse recent search queries like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/recent/" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/recent/</a>. Для виконання проєкту використайте конструктор сайту на власний вибір.
 
 Тут наведено конкретні історії користувача, які варто реалізувати в даному проєкті:
 
@@ -18,7 +18,7 @@ Build a full stack JavaScript app that allows you to search for images like this
 
 **Історія користувача:** Ви можете отримати список останніх пошукових рядків.
 
-Коли ви завершили, переконайтеся, що демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту в поле `Solution Link`. За бажанням, також можете ввести посилання на вихідний код вашого проєкту в полі`GitHub Link`.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням, також можете ввести посилання на вихідний код вашого проєкту в полі`GitHub Link`.
 
 # --solutions--
 

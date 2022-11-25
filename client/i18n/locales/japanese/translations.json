@@ -438,7 +438,7 @@
     "label": "検索",
     "placeholder": "投稿を検索",
     "see-results": "{{searchQuery}} のすべての結果を見る",
-    "no-tutorials": "チュートリアルは見つかりませんでした",
+    "no-tutorials": "投稿が見つかりませんでした",
     "try": "何かお探しですか？このページの検索バーを試してみてください。",
     "no-results": "<0>{{query}}</0> に関するものは見つかりませんでした"
   },
