@@ -177,7 +177,7 @@
     "jest": "27.5.1",
     "js-yaml": "3.14.1",
     "knip": "0.13.0",
-    "lint-staged": "13.0.3",
+    "lint-staged": "13.0.4",
     "lodash": "4.17.21",
     "markdownlint": "0.26.2",
     "mock-fs": "5.2.0",
