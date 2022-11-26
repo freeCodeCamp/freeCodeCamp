@@ -345,15 +345,14 @@ export default function initializeUser(User) {
     req,
     res
   ) {
-    const createToken = this.createAccessToken$().do(accessToken => {
-      if (accessToken && accessToken.id) {
+    return new Promise((resolve, reject) =>
+      this.createAccessToken({ ttl: 77760000000 }, (err, accessToken) => {
+        if (err) {
+          return reject(err);
+        }
         setAccessTokenToResponse({ accessToken }, req, res);
-      }
-    });
-    return Observable.combineLatest(
-      createToken,
-      req.logIn(this),
-      accessToken => accessToken
+        return resolve();
+      })
     );
   };
 

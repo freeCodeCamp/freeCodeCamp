@@ -210,8 +210,8 @@ function mobileLogin(app) {
     }
 
     return User.findOne$({ where: { email: email } })
-      .map(user => user.mobileLoginByRequest(req, res))
-      .do(() => {
+      .do(async user => {
+        await user.mobileLoginByRequest(req, res);
         return res.json({ success: true });
       })
       .subscribe(() => {}, next);
