@@ -30,13 +30,13 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Setup Flutter 3.0.x
+      - name: Setup Flutter 3.3.x
         uses: subosito/flutter-action@dbf1fa04f4d2e52c33185153d06cdb5443aa189d # tag=v2
         with:
-          flutter-version: '3.0.x'
+          flutter-version: '3.3.x'
           channel: 'stable'
           cache: true
-          cache-key: flutter-3.0.x
+          cache-key: flutter-3.3.x
           cache-path: ${{ runner.tool_cache }}/flutter
 
       - name: Set freeCodeCamp Environment Variables
