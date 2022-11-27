@@ -57,7 +57,7 @@ jobs:
           flutter test test/widget_test.dart
 
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           start: npx serve
@@ -65,7 +65,6 @@ jobs:
           wait-on-timeout: 1200
           config: retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/mobile/mobile-app/generated-tests/
           browser: chrome
-
           spec: cypress/integration/mobile-learn/test-challenges.js
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
