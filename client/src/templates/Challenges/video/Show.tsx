@@ -168,7 +168,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
         showWrong: false
       });
       openCompletionModal();
-    } else {
+    } else if (solution - 1 !== this.state.selectedOption) {
       this.setState({
         showWrong: true
       });
