@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c14d
-title: 'Аналіз даних: Приклад А'
+title: 'Аналіз даних: приклад А'
 challengeType: 11
 videoId: nVAaxZ34khk
 bilibiliIds:
@@ -17,7 +17,7 @@ dashedName: data-analysis-example-a
 Додаткові ресурси:
 
 -  <a href="https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-ample" target="_blank" rel="noopener noreferrer nofollow">Блокноти на GitHub</a>
--  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub використовуючи Google Colab.</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub, використовуючи Google Colab.</a>
 
 # --question--
 
@@ -31,15 +31,15 @@ dashedName: data-analysis-example-a
 
 ---
 
-Кількість рядків та стовпців в таблиці даних.
+Кількість рядків та стовпчиків у таблиці даних.
 
 ---
 
-Кількість рядків у вхідних даних перед завантаження.
+Кількість рядків у вхідних даних перед завантаженням.
 
 ---
 
-Кількість стовпців у вхідних даних перед завантаження.
+Кількість стовпчиків у вхідних даних перед завантаженням.
 
 ## --video-solution--
 

@@ -18,7 +18,13 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、`GitHub Link` フィールドでプロジェクトのソースコードへのリンクを送信してください。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -27,19 +33,19 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 3.  `server.js` にセキュリティ機能を追加します。
 4.  `tests/2_functional-tests.js` にすべての機能テストを作成します。
 
-**注**: プライバシーに対する注意事項: 1 つの IP に対して 1 つの「いいね！」しか受け付けないという条件があるため、IP アドレスを保存する必要があります。 一般データ保護規則などのデータプライバシー関連の法令を遵守することが重要です。 ユーザーのデータを保存するための権限を取得するという方法もありますが、データを匿名化した方がはるかに簡単です。 このチャレンジでは、データベースに保存する前に必ず IP アドレスを匿名化してください。 その方法として、データをハッシュ化する、切り詰める、IP アドレスの一部を 0 にする、などが考えられます。
+**Note** Privacy Considerations: Due to the requirement that only 1 like per IP should be accepted, you will have to save IP addresses. It is important to remain compliant with data privacy laws such as the General Data Protection Regulation. One option is to get permission to save the user's data, but it is much simpler to anonymize it. For this challenge, remember to anonymize IP addresses before saving them to the database. If you need ideas on how to do this, you may choose to hash the data, truncate it, or set part of the IP address to 0.
 
-次のテストを `tests/2_functional-tests.js` に記述してください。
+Write the following tests in `tests/2_functional-tests.js`:
 
--   1 つの株式を表示: `/api/stock-prices/` への GET リクエスト
--   1 つの株式を表示して「いいね！」をクリック: `/api/stock-prices/` への GET リクエスト
--   もう一度同じ株式を表示して「いいね！」をクリック: `/api/stock-prices/` への GET リクエスト
--   2 つの株式を表示: `/api/stock-prices/` への GET リクエスト
--   2 つの株式を表示して「いいね！」をクリック: `/api/stock-prices/` への GET リクエスト
+-   Viewing one stock: GET request to `/api/stock-prices/`
+-   Viewing one stock and liking it: GET request to `/api/stock-prices/`
+-   Viewing the same stock and liking it again: GET request to `/api/stock-prices/`
+-   Viewing two stocks: GET request to `/api/stock-prices/`
+-   Viewing two stocks and liking them: GET request to `/api/stock-prices/`
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供することができます。
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -49,7 +55,7 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 };
 ```
 
-コンテンツセキュリティポリシーを設定して、自分のサーバーからのスクリプトや CSS の読み込みのみを許可するようにしてください。
+You should set the content security policies to only allow loading of scripts and CSS from your server.
 
 ```js
 async (getUserInput) => {
@@ -64,7 +70,7 @@ async (getUserInput) => {
 };
 ```
 
-`GET` リクエストを `/api/stock-prices` に送信し、NASDAQ 株式表示記号を `stock` クエリパラメーターに渡すことができます。 返されるオブジェクトには、`stockData` というプロパティが含まれます。
+You can send a `GET` request to `/api/stock-prices`, passing a NASDAQ stock symbol to a `stock` query parameter. The returned object will contain a property named `stockData`.
 
 ```js
 async (getUserInput) => {
@@ -76,7 +82,7 @@ async (getUserInput) => {
 };
 ```
 
-`stockData` プロパティには、文字列としての `stock` 記号、数値としての `price`、数値としての `likes` が含まれています。
+The `stockData` property includes the `stock` symbol as a string, the `price` as a number, and `likes` as a number.
 
 ```js
 async (getUserInput) => {
@@ -91,13 +97,13 @@ async (getUserInput) => {
 };
 ```
 
-また、`like` フィールドに `true` (ブール値) を渡すと、その株式の「いいね！」が増えます。 「いいね！」は、1 つの IP につき 1 回のみ受け付ける必要があります。
+You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
 
 ```js
 
 ```
 
-2 つの株式を渡した場合、返される値は 2 つの株式に関する情報を持つ配列となります。 `likes` の代わりに、両方の `stockData` オブジェクトの `rel_likes` (両株式の「いいね！」の差) を表示します。
+If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both `stockData` objects.
 
 ```js
 async (getUserInput) => {
@@ -112,7 +118,7 @@ async (getUserInput) => {
 };
 ```
 
-5 種類の機能テストがすべて完了して、合格です。
+All 5 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

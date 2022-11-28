@@ -8,11 +8,11 @@ dashedName: create-new-middleware
 
 # --description--
 
-As is, any user can just go to `/profile` whether they have authenticated or not by typing in the URL. You want to prevent this by checking if the user is authenticated first before rendering the profile page. 這就是一個很棒的創建中間件的示例。
+就像現在這樣，任何用戶都可以直接進入 `/profile`，不管他們是否已經通過認證，只要輸入 URL 就可以了。 你想通過在呈現個人資料頁面之前首先檢查用戶是否經過認證來防止這種情況。 這就是一個很棒的創建中間件的示例。
 
-The challenge here is creating the middleware function `ensureAuthenticated(req, res, next)`, which will check if a user is authenticated by calling Passport's `isAuthenticated` method on the `request` which checks if `req.user` is defined. If it is, then `next()` should be called. Otherwise, you can just respond to the request with a redirect to your homepage to login.
+這裏的挑戰是創建中間件函數 `ensureAuthenticated(req, res, next)`，它將通過在檢查 `req.user` 是否被定義的 `request` 上調用 Passport 的 `isAuthenticated` 方法檢查用戶是否已認證。 如果是的話，那麼 `next()` 應該被調用。 否則，你可以直接用一個重定向到你的主頁來回應請求，以便登錄。
 
-An implementation of this middleware is:
+此中間件的實現是：
 
 ```javascript
 function ensureAuthenticated(req, res, next) {
@@ -23,7 +23,7 @@ function ensureAuthenticated(req, res, next) {
 };
 ```
 
-Create the above middleware function, then pass `ensureAuthenticated` as middleware to requests for the profile page before the argument to the GET request:
+創建上述中間件函數，然後在 GET 請求參數之前，將 `ensureAuthenticated` 作爲中間件傳遞，以請求個人資料頁面。
 
 ```javascript
 app
@@ -33,11 +33,11 @@ app
  });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#create-new-middleware-8" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成之後提交你的頁面。 如果你在運行時遇到錯誤，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#create-new-middleware-8" target="_blank" rel="noopener noreferrer nofollow">查看到此爲止的項目完成情況</a>。
 
 # --hints--
 
-The middleware `ensureAuthenticated` should be implemented and attached to the `/profile` route.
+中間件 `ensureAuthenticated` 應該被實現，並附加到 `/profile` 路由。
 
 ```js
 async (getUserInput) => {
@@ -57,7 +57,7 @@ async (getUserInput) => {
 }
 ```
 
-An unauthenticated GET request to `/profile` should correctly redirect to `/`.
+未認證的 GET 請求 `/profile` 應該正確重定向到 `/`。
 
 ```js
 async (getUserInput) => {

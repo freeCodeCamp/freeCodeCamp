@@ -22,7 +22,7 @@ dashedName: modify-an-array-stored-in-an-object
 assert('name' in user && 'age' in user && 'data' in user);
 ```
 
-يجب أن تقبل وظيفة `addFriend` كائن `user` مقطع نصي `friend` كوسيطات و أضف friend إلى قائمة `friends` في كائن `user`.
+يجب أن تقبل وظيفة (function) مسمى `addFriend` كائن `user` ومقطع نصي `friend` كوسائط و أضف friend إلى قائمة `friends` في كائن `user`.
 
 ```js
 assert(

@@ -7,11 +7,11 @@ dashedName: step-162
 
 # --description--
 
-After your `numbers` array, create a `while` loop. A <dfn>while</dfn> loop accepts a condition, and will run the code in the block until the condition is no longer true.
+Після масиву `numbers` створіть цикл `while`. Цикл <dfn>while</dfn> приймає умову та виконує код до того моменту, як умова перестане бути істинною.
 
-Your `while` loop should run while `numbers.length` is less than `10`.
+Ваш цикл `while` повинен виконуватись, поки `numbers.length` менше за `10`.
 
-Here is an example of a `while` loop that runs while `i` is less than five.
+Ось приклад циклу `while`, який виконується, поки `i` менше ніж п'ять.
 
 ```js
 while (i < 5) {
@@ -21,13 +21,13 @@ while (i < 5) {
 
 # --hints--
 
-Your `pick` function should have a `while` loop.
+Ваша функція `pick` повинна мати цикл `while`.
 
 ```js
 assert.match(pick.toString(), /while\s*\(/);
 ```
 
-Your `while` loop should run while `numbers.length < 10`.
+Ваш цикл `while` повинен виконуватись, поки `numbers.length < 10`.
 
 ```js
 assert.match(pick.toString(), /while\s*\(\s*numbers.length\s*<\s*10\s*\)/);

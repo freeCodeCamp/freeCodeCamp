@@ -16,7 +16,13 @@ Bei der Arbeit an diesem Projekt musst du deinen Code mit einer der folgenden Me
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Be sure to incorporate all the files from our GitHub repo.
 
-Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -24,7 +30,7 @@ Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich ge
 2.  Recommended to create controllers/handlers and handle routing in `routes/api.js`
 3.  Füge alle Security-Features zu `server.js` hinzu
 
-Schreibe die folgenden Tests in `tests/2_functional-tests.js`:
+Write the following tests in `tests/2_functional-tests.js`:
 
 -   Creating a new thread: POST request to `/api/threads/{board}`
 -   Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
@@ -39,7 +45,7 @@ Schreibe die folgenden Tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-Du kannst dein eigenes Projekt angeben, nicht die Beispiel-URL.
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -61,7 +67,7 @@ async (getUserInput) => {
 };
 ```
 
-DNS-Prefetching nicht erlauben.
+Do not allow DNS prefetching.
 
 ```js
 async (getUserInput) => {
@@ -368,7 +374,7 @@ async (getUserInput) => {
 };
 ```
 
-Alle 10 Funktionstests sind abgeschlossen und wurden bestanden.
+All 10 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

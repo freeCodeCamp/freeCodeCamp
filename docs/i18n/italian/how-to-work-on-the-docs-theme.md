@@ -43,7 +43,7 @@ In genere non è necessario modificare alcuna configurazione o costruire il sito
 
 ### Servire localmente il sito di documentazione
 
-Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+Installa freeCodeCamp localmente ([vedi la guida di installazione locale](how-to-setup-freecodecamp-locally)), impacchettiamo il CLI con gli strumenti di sviluppo in modo da poter eseguire uno qualsiasi dei comandi sottostanti dalla root del repo quando necessario:
 
 #### Servire e avviare solo il sito di documentazione
 

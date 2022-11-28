@@ -16,7 +16,13 @@ dashedName: anonymous-message-board
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後將 URL 提交到 `Solution Link` 中。 此外，還可以提交一個指向項目源碼的 `GitHub Link`。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -24,22 +30,22 @@ dashedName: anonymous-message-board
 2.  建議在 `routes/api.js` 中創建控制器/處理器並處理路由。
 3.  你將在 `server.js` 中添加任何安全功能。
 
-在 `tests/2_functional-tests.js` 中編寫下以下測試：
+Write the following tests in `tests/2_functional-tests.js`:
 
--   創建一個新的主題：發送 POST 請求到 `/api/threads/{board}`。
--   查看最近的 10 個主題，每個主題有 3 個回覆：發送 GET 請求到 `/api/threads/{board}`
--   使用錯誤密碼刪除主題：使用錯誤的`delete_password`向`/api/threads/{board}`發出DELETE請求
--   用正確的密碼刪除一個主題：向`/api/threads/{board}`發出DELETE請求，並提供有效的`delete_password`。
--   報告一個主題：發送 PUT 請求到 `/api/threads/{board}`。
--   創建一個新的回覆：發送 POST 請求到 `/api/replies/{board}`。
--   查看一個帶有所有回覆的主題：發送 GET 請求到`/api/replies/{board}`。
--   使用錯誤密碼刪除一個回覆：使用無效的`delete_password`向`/api/replies/{board}`發出DELETE請求。
--   使用正確密碼刪除一個回覆：使用有效的`delete_password`向`/api/replies/{board}`發出DELETE請求。
--   報告一個回覆：發送 PUT 請求到 `/api/replies/{board}`。
+-   Creating a new thread: POST request to `/api/threads/{board}`
+-   Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
+-   Deleting a thread with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
+-   Deleting a thread with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
+-   Reporting a thread: PUT request to `/api/threads/{board}`
+-   Creating a new reply: POST request to `/api/replies/{board}`
+-   Viewing a single thread with all replies: GET request to `/api/replies/{board}`
+-   Deleting a reply with the incorrect password: DELETE request to `/api/replies/{board}` with an invalid `delete_password`
+-   Deleting a reply with the correct password: DELETE request to `/api/replies/{board}` with a valid `delete_password`
+-   Reporting a reply: PUT request to `/api/replies/{board}`
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -51,7 +57,7 @@ dashedName: anonymous-message-board
 };
 ```
 
-只允許你的網站在你自己的頁面上以 iFrame 方式加載。
+Only allow your site to be loaded in an iFrame on your own pages.
 
 ```js
 async (getUserInput) => {
@@ -61,7 +67,7 @@ async (getUserInput) => {
 };
 ```
 
-不允許 DNS 預取。
+Do not allow DNS prefetching.
 
 ```js
 async (getUserInput) => {
@@ -71,7 +77,7 @@ async (getUserInput) => {
 };
 ```
 
-只允許你的網站爲你自己的頁面發送 referrer 請求頭。
+Only allow your site to send the referrer for your own pages.
 
 ```js
 async (getUserInput) => {
@@ -81,7 +87,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/threads/{board}` 發送一個 POST 請求，其中包括 `text` 和 `delete_password` 的表單數據。 保存的數據庫記錄將至少有 `_id`、`text`、`created_on`(date & time)、`bumped_on`(date & time, starts same as `created_on`)、`reported`（布爾值）、`delete_password`、& `replies`（數組）。
+You can send a POST request to `/api/threads/{board}` with form data including `text` and `delete_password`. The saved database record will have at least the fields `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
 
 ```js
 async (getUserInput) => {
@@ -113,7 +119,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/replies/{board}` 發送一個 POST 請求，其中包括字段 `text`、`delete_password` & `thread_id`。 這將更新 `bumped_on` 日期到評論日期。 在主題的 `replies` 數組中，將保存一個對象，至少有 `_id`、`text`、`created_on`、`delete_password`、& `reported` 這些屬性。
+You can send a POST request to `/api/replies/{board}` with form data including `text`, `delete_password`, & `thread_id`. This will update the `bumped_on` date to the comment's date. In the thread's `replies` array, an object will be saved with at least the properties `_id`, `text`, `created_on`, `delete_password`, & `reported`.
 
 ```js
 async (getUserInput) => {
@@ -150,7 +156,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/threads/{board}` 發送一個 GET 請求。 返回的將是一個數組，包括論壇上最近的 10 個被回覆的主題，及每個主題最新的 3 個回帖。 `reported` 和 `delete_password` 字段將不會被髮送到客戶端。
+You can send a GET request to `/api/threads/{board}`. Returned will be an array of the most recent 10 bumped threads on the board with only the most recent 3 replies for each. The `reported` and `delete_password` fields will not be sent to the client.
 
 ```js
 async (getUserInput) => {
@@ -181,7 +187,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/replies/{board}?thread_id={thread_id}` 發送一個 GET 請求。 返回的將是帶有所有的回覆的整個主題，不包括與之前測試相同的客戶端字段。
+You can send a GET request to `/api/replies/{board}?thread_id={thread_id}`. Returned will be the entire thread with all its replies, also excluding the same fields from the client as the previous test.
 
 ```js
 async (getUserInput) => {
@@ -213,7 +219,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/threads/{board}` 發送一個 DELETE 請求，並傳遞 `thread_id` & `delete_password` 來刪除該線程。 返回的將是字符串 `incorrect password` 或 `success`。
+You can send a DELETE request to `/api/threads/{board}` and pass along the `thread_id` & `delete_password` to delete the thread. 返回的將是字符串 `incorrect password` 或 `success`。
 
 ```js
 async (getUserInput) => {
@@ -250,7 +256,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/replies/{board}` 發送一個 DELETE 請求，並傳遞 `thread_id`、`reply_id`、& `delete_password`。 返回的將是字符串 `incorrect password` 或 `success`。 成功後，`reply_id` 的文本將更改爲 `[deleted]`。
+You can send a DELETE request to `/api/replies/{board}` and pass along the `thread_id`, `reply_id`, & `delete_password`. Returned will be the string `incorrect password` or `success`. On success, the text of the `reply_id` will be changed to `[deleted]`.
 
 ```js
 async (getUserInput) => {
@@ -305,7 +311,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/threads/{board}` 發送一個 PUT 請求，並傳遞 `thread_id`。 返回的將是字符串 `reported`。 `thread_id` 回覆的 `reported` 值將改爲 `true`。
+You can send a PUT request to `/api/threads/{board}` and pass along the `thread_id`. 返回的將是字符串 `reported`。 The `reported` value of the `thread_id` will be changed to `true`.
 
 ```js
 async (getUserInput) => {
@@ -336,7 +342,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以通過向 `/api/replies/{board}` 發送 PUT 請求並傳遞 `thread_id` & `reply_id`。 返回的將是字符串 `reported`。 `reply_id` 的 `reported` 值將被改變爲 `true`。
+You can send a PUT request to `/api/replies/{board}` and pass along the `thread_id` & `reply_id`. Returned will be the string `reported`. The `reported` value of the `reply_id` will be changed to `true`.
 
 ```js
 async (getUserInput) => {
@@ -368,7 +374,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 10 項功能測試都已完成並通過。
+All 10 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

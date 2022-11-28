@@ -177,7 +177,7 @@ Logout sollte funktionieren.
   );
 ```
 
-Das Profil sollte nach dem Abmelden nicht mehr funktionieren.
+Profile should no longer work after logout.
 
 ```js
 (getUserInput) =>
