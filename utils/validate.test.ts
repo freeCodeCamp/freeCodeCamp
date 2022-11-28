@@ -1,12 +1,12 @@
-const {
+import {
   isValidUsername,
   usernameTooShort,
   validationSuccess,
   usernameIsHttpStatusCode,
   invalidCharError
-} = require('./validate');
+} from './validate';
 
-function inRange(num, range) {
+function inRange(num: number, range: number[]) {
   return num >= range[0] && num <= range[1];
 }
 
@@ -46,7 +46,7 @@ describe('isValidUsername', () => {
     const finalCode = 127;
 
     for (let code = 0; code <= finalCode; code++) {
-      let char = String.fromCharCode(code);
+      const char = String.fromCharCode(code);
       let expected = invalidCharError;
       if (allowedCharactersList.includes(char)) expected = validationSuccess;
       if (inRange(code, numbers)) expected = validationSuccess;

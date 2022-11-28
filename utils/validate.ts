@@ -1,32 +1,28 @@
-const invalidCharError = {
+interface ErrorInterface {
+  valid: boolean;
+  error: null | string;
+}
+
+export const invalidCharError: ErrorInterface = {
   valid: false,
   error: 'contains invalid characters'
 };
-const validationSuccess = { valid: true, error: null };
-const usernameTooShort = { valid: false, error: 'is too short' };
-const usernameIsHttpStatusCode = {
+export const validationSuccess = { valid: true, error: null };
+export const usernameTooShort = { valid: false, error: 'is too short' };
+export const usernameIsHttpStatusCode = {
   valid: false,
   error: 'is a reserved error code'
 };
 
-const isNumeric = num => !isNaN(num);
+// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+export const isNumeric = (num: any) => !isNaN(num);
 const validCharsRE = /^[a-zA-Z0-9\-_+]*$/;
-const isHttpStatusCode = str =>
+export const isHttpStatusCode = (str: string) =>
   isNumeric(str) && parseInt(str, 10) >= 100 && parseInt(str, 10) <= 599;
 
-const isValidUsername = str => {
+export const isValidUsername = (str: string) => {
   if (!validCharsRE.test(str)) return invalidCharError;
   if (str.length < 3) return usernameTooShort;
   if (isHttpStatusCode(str)) return usernameIsHttpStatusCode;
   return validationSuccess;
-};
-
-module.exports = {
-  isNumeric,
-  isHttpStatusCode,
-  isValidUsername,
-  validationSuccess,
-  usernameTooShort,
-  usernameIsHttpStatusCode,
-  invalidCharError
 };

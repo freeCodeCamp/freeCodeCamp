@@ -1,15 +1,10 @@
-const { isEmpty } = require('lodash');
-
-function getLines(contents, range) {
-  if (isEmpty(range)) {
+export function getLines(contents: string, range?: number[]) {
+  if (!range) {
     return '';
   }
+
   const lines = contents.split('\n');
   const editableLines =
-    isEmpty(lines) || range[1] <= range[0]
-      ? []
-      : lines.slice(range[0], range[1] - 1);
+    !range || range[1] <= range[0] ? [] : lines.slice(range[0], range[1] - 1);
   return editableLines.join('\n');
 }
-
-exports.getLines = getLines;

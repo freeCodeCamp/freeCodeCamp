@@ -1,4 +1,4 @@
-const { getLines } = require('./get-lines');
+import { getLines } from './get-lines';
 
 const content = 'one\ntwo\nthree';
 
