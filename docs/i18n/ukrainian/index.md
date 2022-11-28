@@ -30,6 +30,7 @@
 - [Португальська (Português)](https://www.freecodecamp.org/portuguese/learn)
 - [Українська](https://www.freecodecamp.org/ukrainian/learn)
 - [Японська (日本語)](https://www.freecodecamp.org/japanese/learn)
+- [German (Deutsch)](https://www.freecodecamp.org/german/learn)
 
 Радимо вам прочитати [це оголошення](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) та поділитися ним зі своїми друзями, аби зацікавити ще і їх.
 
