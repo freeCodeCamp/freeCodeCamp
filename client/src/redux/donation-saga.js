@@ -140,14 +140,16 @@ function* stripeCardErrorHandler(
   }
 }
 
-function* setDonationCookie() {
-  const isDonating = yield select(isDonatingSelector);
-  const isDonorCookieSet = document.cookie
-    .split(';')
-    .some(item => item.trim().startsWith('isDonor=true'));
-  if (isDonating) {
-    if (!isDonorCookieSet) {
-      document.cookie = 'isDonor=true';
+export function* setDonationCookie() {
+  if (document?.cookie) {
+    const isDonating = yield select(isDonatingSelector);
+    const isDonorCookieSet = document.cookie
+      .split(';')
+      .some(item => item.trim().startsWith('isDonor=true'));
+    if (isDonating) {
+      if (!isDonorCookieSet) {
+        document.cookie = 'isDonor=true';
+      }
     }
   }
 }
