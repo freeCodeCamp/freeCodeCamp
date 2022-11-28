@@ -10,7 +10,7 @@ dashedName: html-boilerplate-question-c
 
 The `<head>` element is where we put important meta-information about our webpages, and stuff required for our webpages to render correctly in the browser. Inside the `<head>`, we should not use any element that displays content on the webpage.
 
-##  The Charset Meta Element
+## The Charset Meta Element
 We should always have the meta tag for the charset encoding of the webpage in the head element: `<meta charset="utf-8">`.
 
 Setting the encoding is very important because it ensures that the webpage will display special symbols and characters from different languages correctly in the browser.
@@ -29,6 +29,7 @@ If we didn’t include a title element, the webpage’s title would default to i
 There are many more elements that can go within the head of an HTML document. However, for now it’s only crucial to know about the two elements we have covered here. We will introduce more elements that go into the head throughout the rest of the curriculum.
 
 Back in `index.html` file, let’s add a head element with a charset meta element and a title within it. The head element goes within the HTML element and should always be the first element under the opening `<html>` tag:
+
 
 ```html
 <!DOCTYPE html>
