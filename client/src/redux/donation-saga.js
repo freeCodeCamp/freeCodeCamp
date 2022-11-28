@@ -48,7 +48,7 @@ function* showDonateModalSaga() {
   }
 }
 
-function* postChargeSaga({
+export function* postChargeSaga({
   payload,
   payload: {
     paymentProvider,
