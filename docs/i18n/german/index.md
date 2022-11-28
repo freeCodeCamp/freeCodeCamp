@@ -30,6 +30,7 @@ Die Zertifizierungen sind bereits in einigen wichtigen Weltsprachen, wie unten z
 - [Portugiesisch (Português)](https://www.freecodecamp.org/portuguese/learn)
 - [Ukrainisch (Українська)](https://www.freecodecamp.org/ukrainian/learn)
 - [Japanisch (日本語)](https://www.freecodecamp.org/japanese/learn)
+- [German (Deutsch)](https://www.freecodecamp.org/german/learn)
 
 Wir möchten dich dazu ermutigen, die [Ankündigung hier](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) zu lesen und sie an deine Freunde weiterzuleiten, um sie für dieses Thema zu begeistern.
 

@@ -183,9 +183,7 @@ Crowdin розділяє документ на «рядки», зазвичай 
 
 ## Перекладайте рольову гру LearnToCode
 
-Рольова гра LearnToCode працює на Ren'Py, який використовує спеціальний синтаксис для перекладених рядків: (див.
-
-текстову документацію Ren'Py</ а>)</p> 
+Рольова гра LearnToCode RPG працює на Ren'Py, який використовує спеціальний синтаксис для перекладених рядків (див. [Текстову документацію Ren'Py](https://www.renpy.org/doc/html/text.html))
 
 - Речення для перекладу завжди знаходиться між `""`. Це рядки діалогу або інтерфейсу користувача. Ключові слова, які йдуть до або після діалогу, є ключовими словами ігрового рушія та будуть детально пояснені в наступних правилах. Зауважте, що від першого правила відштовхуються всі інші.
 - У випадку `new "..."` не перекладайте ключове слово `new`.
@@ -195,133 +193,79 @@ Crowdin розділяє документ на «рядки», зазвичай 
 - Не перекладайте ключове слово `nointeract` у кінці речення.
 - Якщо ми спробуємо використати дужки повної ширини  `（）`, з’явиться попередження QA. Щоб уникнути попередження QA, використовуйте дужки напівширини `()`
 
-
-
 ### Приклади
-
-
 
 ---
 
-
-
 #### До перекладу
-
-
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
 "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- це рядок, який потрібно перекласти. дивіться переклад нижче
 ```
 
-
-
-
 #### Після перекладу
-
-
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
-
 Примітка: теги `[]` та `{}` повинні бути без змін.
-
-
 
 ---
 
-
-
 #### До перекладу
-
-
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} Skip" <-- перекладіть цей рядок, дивіться нижче
 ```
 
-
-
-
 #### Після перекладу
-
-
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} 跳过"
 ```
 
-
 Примітка: префікс `new` та тег `{icon=icon-fast-forward}` повинні бути без змін.
-
-
 
 ---
 
-
-
 #### До перекладу
-
-
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 ```
 
-
-
-
 #### Після перекладу
-
-
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
 ```
 
-
 Примітка: `layla @ neutral` та `[player_name]` повинні бути без змін.
-
-
 
 ---
 
-
-
 #### До перекладу
-
-
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
 player "Maybe this is all a dream?" nointeract
 ```
 
-
-
-
 #### Після перекладу
-
-
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
 player "也许这都是一场梦？" nointeract
 ```
 
-
-
-
 ---
-
-
 
 ### Примітка про те, як Crowdin ділить речення
 
@@ -329,18 +273,13 @@ player "也许这都是一场梦？" nointeract
 
 Цей рядок потрібно перекласти:
 
-
-
 ```renpy
 player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
 ```
 
-
 Crowdin ділить його на три частини, як показано нижче:
 
 <img width="836" alt="Знімок екрана 2022-01-23 о 10.36.43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
-
-
 
 ```renpy
 # оригінал
@@ -349,10 +288,7 @@ player @ surprised "{b}Full-stack{/b}
 player @ surprised "{b}全栈{/b}
 ```
 
-
 <img width="750" alt="Знімок екрана 2022-01-23 о 10.36.49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
-
-
 
 ```renpy
 # оригінал
@@ -361,10 +297,7 @@ What is that?
 这是什么？
 ```
 
-
 <img width="857" alt="Знімок екрана 2022-01-23 о 10.36.54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
-
-
 
 ```renpy
 # оригінал
@@ -373,9 +306,6 @@ I better take notes so I can learn more about it."
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
-
-
-
 ## Оцінюйте переклади
 
 Crowdin дозволяє вам оцінювати вже запропоновані переклади. Якщо ви спробуєте зберегти переклад, ви можете побачити повідомлення, що його неможливо зберегти – це означає, що інший учасник запропонував ідентичний переклад. Якщо ви згідні з перекладом, натисніть `+`, щоб проголосувати «за» переклад.
@@ -383,8 +313,6 @@ Crowdin дозволяє вам оцінювати вже запропонова
 Якщо ви бачите переклад, який неточний або не передає суті рядка, натисніть `-`, щоб проголосувати «проти».
 
 Crowdin використовує ці голоси, щоб дати оцінку кожному запропонованому перекладу. Це допомагає команді редакторів визначити, який переклад найкраще підходить для кожного рядка.
-
-
 
 ## Перевірка якості
 
@@ -396,11 +324,7 @@ Crowdin використовує ці голоси, щоб дати оцінку
 
 Це повідомлення зʼявиться, коли система перевірки на якість виявить потенційну помилку в запропонованому перекладі. У прикладі ми змінили текст тегу `<code>` і Crowdin помітив помилку.
 
-
-
 > [!WARNING] Ви можете зберегти переклад, незважаючи на помилки. Якщо ви це зробите, клацнувши «Save Anyway», вам потрібно буде позначити редактора або менеджера, і пояснити чому у цьому випадку потрібно проігнорувати повідомлення.
-
-
 
 ## Найкращі практики перекладу
 

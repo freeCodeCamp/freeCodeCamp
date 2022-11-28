@@ -30,6 +30,7 @@ As certificações já estão disponíveis em alguns dos principais idiomas mund
 - [Português](https://www.freecodecamp.org/portuguese/learn)
 - [Ucraniano (Українська)](https://www.freecodecamp.org/ukrainian/learn)
 - [Japonês (日本語)](https://www.freecodecamp.org/japanese/learn)
+- [Alemão (Deutsch)](https://www.freecodecamp.org/german/learn)
 
 Recomendamos a leitura do [anúncio aqui](https://www.freecodecamp.org/portuguese/news/como-ajudar-a-traduzir-o-freecodecamp-para-seu-idioma/) e o compartilhamento com seus amigos.
 
