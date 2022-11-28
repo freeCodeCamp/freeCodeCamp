@@ -81,6 +81,7 @@ const schema = Joi.object()
     question: Joi.object().keys({
       text: Joi.string().required(),
       answers: Joi.array().items(Joi.string()).required(),
+      assignments: Joi.array().items(Joi.string()).required(),
       solution: Joi.number().required()
     }),
     required: Joi.array().items(
