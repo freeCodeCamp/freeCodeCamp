@@ -123,7 +123,6 @@ type Question = {
   solution: number;
   assignments: string[];
 };
-type Assignment = { assign: string };
 type Fields = { slug: string; blockName: string; tests: Test[] };
 type Required = {
   link: string;
@@ -191,7 +190,6 @@ export type ChallengeNode = {
     isPrivate: boolean;
     order: number;
     question: Question;
-    assignment: Assignment;
     required: Required[];
     solutions: {
       [T in FileKey]: FileKeyChallenge;
