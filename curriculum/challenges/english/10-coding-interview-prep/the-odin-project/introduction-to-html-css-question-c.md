@@ -32,4 +32,3 @@ You should use HTML to change the background color and font of your button.
 ## --video-solution--
 
 1
-

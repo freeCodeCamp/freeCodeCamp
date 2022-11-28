@@ -35,4 +35,3 @@ You should use HTML for putting paragraphs on your website.
 ## --video-solution--
 
 3
-

@@ -15,7 +15,6 @@ import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
-import ChallengeDescription from '../components/Challenge-Description';
 import Hotkeys from '../components/Hotkeys';
 import VideoPlayer from '../components/VideoPlayer';
 import ChallengeTitle from '../components/challenge-title';
@@ -156,15 +155,14 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const hasAssignments = assignments[0] != '';
     const completed = this.state.allAssignmentsCompleted;
 
-    if (
-      solution - 1 == this.state.selectedOption &&
-      hasAssignments &&
-      completed
-    ) {
+    if (solution - 1 == this.state.selectedOption && hasAssignments) {
       this.setState({
         showWrong: false
       });
-      openCompletionModal();
+
+      if (completed) {
+        openCompletionModal();
+      }
     } else if (solution - 1 === this.state.selectedOption && !hasAssignments) {
       this.setState({
         showWrong: false
@@ -348,9 +346,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 >
                   {this.state.showWrong ? (
                     <span>{t('learn.wrong-answer')}</span>
-                  ) : (
-                    <span>{t('learn.check-answer')}</span>
-                  )}
+                  ) : null}
                   {!this.state.allAssignmentsCompleted &&
                   assignments[0] != '' ? (
                     <>

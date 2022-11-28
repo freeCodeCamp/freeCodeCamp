@@ -33,4 +33,3 @@ JavaScript is for the look and feel of your website, CSS is for creating the str
 ## --video-solution--
 
 2
-

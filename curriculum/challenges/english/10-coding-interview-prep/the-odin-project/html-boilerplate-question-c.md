@@ -10,7 +10,7 @@ dashedName: html-boilerplate-question-c
 
 The `<head>` element is where we put important meta-information about our webpages, and stuff required for our webpages to render correctly in the browser. Inside the `<head>`, we should not use any element that displays content on the webpage.
 
-##  The Charset Meta Element
+## The Charset Meta Element
 We should always have the meta tag for the charset encoding of the webpage in the head element: `<meta charset="utf-8">`.
 
 Setting the encoding is very important because it ensures that the webpage will display special symbols and characters from different languages correctly in the browser.
@@ -42,7 +42,6 @@ Back in `index.html` file, let’s add a head element with a charset meta elemen
 ```
 
 # --question--
-    
 ## --text--
 
 What is the purpose of the head element?
