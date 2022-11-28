@@ -8,7 +8,7 @@ dashedName: exercise-tracker
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks</a>. Робота над цим проектом залучатиме тебе писати свій код використовуючи один з наступних методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -20,13 +20,13 @@ dashedName: exercise-tracker
 -   Потім ви побачите вікно `.replit`.
 -   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
 
 # --instructions--
 
-Your responses should have the following structures.
+Ваші відповіді повинні мати наступну структуру.
 
-Exercise:
+Вправа:
 
 ```js
 {
@@ -38,7 +38,7 @@ Exercise:
 }
 ```
 
-User:
+Користувач:
 
 ```js
 {
@@ -47,7 +47,7 @@ User:
 }
 ```
 
-Log:
+Дані:
 
 ```js
 {
@@ -62,11 +62,11 @@ Log:
 }
 ```
 
-**Hint:** For the `date` property, the `toDateString` method of the `Date` API can be used to achieve the expected output.
+**Підказка:** щоб отримати очікуваний результат властивості `date`, можна використати метод `toDateString` від `Date` API.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Ви повинні надати власний проєкт, а не приклад URL-адреси.
 
 ```js
 (getUserInput) => {
@@ -77,7 +77,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can `POST` to `/api/users` with form data `username` to create a new user.
+Ви можете зробити запит `POST` до `/api/users` із даними форми `username`, щоб створити нового користувача.
 
 ```js
 async (getUserInput) => {
@@ -94,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-The returned response from `POST /api/users` with form data `username` will be an object with `username` and `_id` properties.
+Відповіддю від `POST /api/users` із даними форми `username` буде об'єкт з властивостями `username` та `_id`.
 
 ```js
 async (getUserInput) => {
@@ -114,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users` to get a list of all users.
+Ви можете зробити запит `GET` до `/api/users`, щоб отримати список всіх користувачів.
 
 ```js
 async(getUserInput) => {
@@ -127,7 +127,7 @@ async(getUserInput) => {
 };
 ```
 
-The `GET` request to `/api/users` returns an array.
+Запит `GET` до `/api/users` повертає масив.
 
 ```js
 async(getUserInput) => {
@@ -142,7 +142,7 @@ async(getUserInput) => {
 };
 ```
 
-Each element in the array returned from `GET /api/users` is an object literal containing a user's `username` and `_id`.
+Кожен елемент у масиві, який повернувся з `GET /api/users`, є літералом об'єкта з `username` та `_id` користувача.
 
 ```js
 async(getUserInput) => {
@@ -162,7 +162,7 @@ async(getUserInput) => {
 };
 ```
 
-You can `POST` to `/api/users/:_id/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used.
+Ви можете виконати запит `POST` до `/api/users/:_id/exercises` із даними форми `description`, `duration` та додатково `date`. Якщо дата не вказана, буде використовуватись поточна дата.
 
 ```js
 async (getUserInput) => {
@@ -196,7 +196,7 @@ async (getUserInput) => {
 };
 ```
 
-The response returned from `POST /api/users/:_id/exercises` will be the user object with the exercise fields added.
+Відповіддю від `POST /api/users/:_id/exercises` буде об'єкт-користувач з доданими полями вправ.
 
 ```js
 async (getUserInput) => {
@@ -235,7 +235,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user.
+Ви можете зробити запит `GET` до `/api/users/:_id/logs`, щоб отримати всі вправи будь-якого користувача.
 
 ```js
 async (getUserInput) => {
@@ -274,7 +274,7 @@ async (getUserInput) => {
 };
 ```
 
-A request to a user's log `GET /api/users/:_id/logs` returns a user object with a `count` property representing the number of exercises that belong to that user.
+Запит до вправ користувача `GET /api/users/:_id/logs` повертає об'єкта-користувача разом з властивістю `count`, яка представляє кількість вправ цього користувача.
 
 ```js
 async (getUserInput) => {
@@ -315,7 +315,7 @@ async (getUserInput) => {
 };
 ```
 
-A `GET` request to `/api/users/:_id/logs` will return the user object with a `log` array of all the exercises added.
+Запит `GET` до `/api/users/:_id/logs` повертає об'єкта-користувача з масивом `log`, де наявні всі вправи.
 
 ```js
 async(getUserInput) => {
@@ -359,7 +359,7 @@ async(getUserInput) => {
 };
 ```
 
-Each item in the `log` array that is returned from `GET /api/users/:_id/logs` is an object that should have a `description`, `duration`, and `date` properties.
+Кожен елемент у масиві `log`, який повернувся з `GET /api/users/:_id/logs`, є об'єктом, який повинен мати властивості `description` `duration` та `date`.
 
 ```js
 async(getUserInput) => {
@@ -406,7 +406,7 @@ async(getUserInput) => {
 };
 ```
 
-The `description` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string.
+Властивість `description` будь-якого об'єкту в масиві `log`, що повернувся з `GET /api/users/:_id/logs`, повинна бути рядком.
 
 ```js
 async(getUserInput) => {
@@ -453,7 +453,7 @@ async(getUserInput) => {
 };
 ```
 
-The `duration` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a number.
+Властивість `duration` будь-якого об'єкту в масиві `log`, що повернувся з `GET /api/users/:_id/logs`, повинна бути числом.
 
 ```js
 async(getUserInput) => {
@@ -500,7 +500,7 @@ async(getUserInput) => {
 };
 ```
 
-The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Use the `dateString` format of the `Date` API.
+Властивість `date` будь-якого об'єкту в масиві `log`, що повернувся з `GET /api/users/:_id/logs`, повинна бути рядком. Використайте формат `dateString` від `Date` API.
 
 ```js
 async(getUserInput) => {
@@ -547,7 +547,7 @@ async(getUserInput) => {
 };
 ```
 
-You can add `from`, `to` and `limit` parameters to a `GET /api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
+Ви можете додати параметри `from`, `to` та `limit` до запиту `GET /api/users/:_id/logs`, щоб отримати дані будь-якого користувача. `from` та `to` є датами у форматі `yyyy-mm-dd`. `limit` – ціле число інформації, яку потрібно надіслати назад.
 
 ```js
 async (getUserInput) => {

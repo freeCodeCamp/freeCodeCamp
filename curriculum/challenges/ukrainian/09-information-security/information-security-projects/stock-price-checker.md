@@ -12,7 +12,7 @@ dashedName: stock-price-checker
 
 Оскільки всі надійні API цін на акції вимагають API-ключа, ми створили обхідний шлях. Use <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker-proxy.freecodecamp.rocks/</a> to get up-to-date stock price information without needing to sign up for your own key.
 
-При роботі над цим проєктом Ви будете писати код, використовуючи один із наступних методів:
+Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -24,7 +24,7 @@ dashedName: stock-price-checker
 -   Потім ви побачите вікно `.replit`.
 -   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
 
 # --instructions--
 

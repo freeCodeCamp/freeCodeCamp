@@ -8,7 +8,7 @@ dashedName: file-metadata-microservice
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://file-metadata-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://file-metadata-microservice.freecodecamp.rocks</a>. Робота над цим проектом залучатиме тебе писати свій код використовуючи один з наступних методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://file-metadata-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://file-metadata-microservice.freecodecamp.rocks</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-filemetadata/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -20,15 +20,15 @@ dashedName: file-metadata-microservice
 -   Потім ви побачите вікно `.replit`.
 -   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
 
 # --instructions--
 
-**HINT:** You can use the `multer` npm package to handle file uploading.
+**ПІДКАЗКА:** ви можете використати npm-пакет `multer`, щоб опрацювати завантаження файлу.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Ви повинні надати власний проєкт, а не приклад URL-адреси.
 
 ```js
 (getUserInput) => {
@@ -40,7 +40,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can submit a form that includes a file upload.
+Ви можете надіслати форму, яка містить завантаження файлу.
 
 ```js
 async (getUserInput) => {
@@ -51,7 +51,7 @@ async (getUserInput) => {
 };
 ```
 
-The form file input field has the `name` attribute set to `upfile`.
+Поле вводу файлу форми має атрибут `name` зі значенням `upfile`.
 
 ```js
 async (getUserInput) => {
@@ -62,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-When you submit a file, you receive the file `name`, `type`, and `size` in bytes within the JSON response.
+Коли ви надішлете файл, то отримаєте файл `name`, `type` та `size` у байтах у відповіді JSON.
 
 ```js
 async (getUserInput) => {

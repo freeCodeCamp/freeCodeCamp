@@ -8,7 +8,7 @@ dashedName: url-shortener-microservice
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://url-shortener-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://url-shortener-microservice.freecodecamp.rocks</a>. Робота над цим проєктом включатиме написання коду одним із таких методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://url-shortener-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://url-shortener-microservice.freecodecamp.rocks</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-urlshortener/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -20,15 +20,15 @@ dashedName: url-shortener-microservice
 -   Потім ви побачите вікно `.replit`.
 -   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
 
 # --instructions--
 
-**HINT:** Do not forget to use a body parsing middleware to handle the POST requests. Also, you can use the function `dns.lookup(host, cb)` from the `dns` core module to verify a submitted URL.
+**ПІДКАЗКА:** не забудьте використати проміжне програмне забезпечення для обробки запитів POST. Також ви можете використати функцію `dns.lookup(host, cb)` з основного модуля `dns`, щоб перевірити надіслану URL-адресу.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Ви повинні надати власний проєкт, а не приклад URL-адреси.
 
 ```js
 (getUserInput) => {
@@ -40,7 +40,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
+Ви можете опублікувати URL-адресу на `/api/shorturl` та отримати відповідь JSON із властивостями `original_url` та `short_url`. Ось приклад: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
 async (getUserInput) => {
@@ -62,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-When you visit `/api/shorturl/<short_url>`, you will be redirected to the original URL.
+При відвідуванні `/api/shorturl/<short_url>` вас буде перенаправлено на вихідну URL-адресу.
 
 ```js
 async (getUserInput) => {
@@ -94,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`
+Якщо ви передасте недійсну URL-адресу, яка не відповідає дійсному формату `http://www.example.com`, то відповідь JSON міститиме `{ error: 'invalid url' }`
 
 ```js
 async (getUserInput) => {

@@ -10,7 +10,7 @@ dashedName: anonymous-message-board
 
 Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://anonymous-message-board.freecodecamp.rocks/</a>.
 
-Робота над цим проєктом бути включати написання кода одним із таких методів:
+Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-messageboard/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -22,7 +22,7 @@ dashedName: anonymous-message-board
 -   Потім ви побачите вікно `.replit`.
 -   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
 
 # --instructions--
 

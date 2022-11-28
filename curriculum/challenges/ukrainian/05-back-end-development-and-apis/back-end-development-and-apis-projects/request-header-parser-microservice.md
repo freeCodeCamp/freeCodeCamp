@@ -8,7 +8,7 @@ dashedName: request-header-parser-microservice
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://request-header-parser-microservice.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://request-header-parser-microservice.freecodecamp.rocks/</a>. Робота над цим проектом залучатиме тебе писати свій код використовуючи один з наступних методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://request-header-parser-microservice.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://request-header-parser-microservice.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-headerparser/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-headerparser" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -20,11 +20,11 @@ dashedName: request-header-parser-microservice
 -   Потім ви побачите вікно `.replit`.
 -   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Ви повинні надати власний проєкт, а не приклад URL-адреси.
 
 ```js
 (getUserInput) => {
@@ -36,7 +36,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-A request to `/api/whoami` should return a JSON object with your IP address in the `ipaddress` key.
+Запит до `/api/whoami` повинен повернути об'єкт JSON з вашою IP-адресою у ключі `ipaddress`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ A request to `/api/whoami` should return a JSON object with your IP address in t
   );
 ```
 
-A request to `/api/whoami` should return a JSON object with your preferred language in the `language` key.
+Запит до `/api/whoami` повинен повернути об’єкт JSON з вашою бажаною мовою у ключі `language`.
 
 ```js
 (getUserInput) =>
@@ -60,7 +60,7 @@ A request to `/api/whoami` should return a JSON object with your preferred langu
   );
 ```
 
-A request to `/api/whoami` should return a JSON object with your software in the `software` key.
+Запит до `/api/whoami` повинен повернути об'єкт JSON з вашим програмним забезпеченням у ключі `software`.
 
 ```js
 (getUserInput) =>

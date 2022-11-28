@@ -1,6 +1,6 @@
 ---
 id: 5e46f8edac417301a38fb930
-title: Калькулятор лінійної регресії витрат на охорону здоров'я
+title: Калькулятор лінійної регресії витрат на здоров'я
 challengeType: 10
 forumTopicId: 462379
 dashedName: linear-regression-health-costs-calculator
@@ -10,27 +10,27 @@ dashedName: linear-regression-health-costs-calculator
 
 Ви будете <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-linear-regression-health-costs-calculator/blob/master/fcc_predict_health_costs_with_regression.ipynb" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з Google Colaboratory</a>.
 
-Перейшовши за цим посиланням, створіть копію блокнота в своєму обліковому записі або локально. Як тільки ви завершили проєкт та пройшли тести (доданий до посилання), здайте посилання на свій проєкт. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Перейшовши за цим посиланням, створіть копію блокнота в своєму обліковому записі або локально. Як тільки ви завершили проєкт та пройшли тест (доданий до посилання), здайте посилання на свій проєкт. Якщо ви надаєте посилання на Google Colaboratory, переконайтеся, що ви увімкнули режим доступу для «усіх, хто має це посилання».
 
-We are still developing the interactive instructional content for the machine learning curriculum. Поки ви можете переглянути відеозавдання цієї сертифікації. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
+Ми досі розробляємо інтерактивну складову для навчальної програми з машинного навчання. Поки ви можете переглянути відеозавдання цієї сертифікації. Вам також можуть знадобитися додаткові навчальні ресурси, так само як під час роботи із повноцінним проєктом.
 
 # --instructions--
 
-In this challenge, you will predict healthcare costs using a regression algorithm.
+У цьому завданні ви передбачите витрати на здоров'я, використовуючи алгоритм регресії.
 
-You are given a dataset that contains information about different people including their healthcare costs. Use the data to predict healthcare costs based on new data.
+Ви отримаєте набір даних, що містять інформацію про різних людей, враховуючи їхні витрати на здоров'я. Використайте дані для прогнозування витрат на здоров'я на основі нових даних.
 
-The first two cells of this notebook import libraries and the data.
+Перші дві клітинки цього блокнота імпортують бібліотеки та дані.
 
-Make sure to convert categorical data to numbers. Use 80% of the data as the `train_dataset` and 20% of the data as the `test_dataset`.
+Не забудьте перетворити дані категорій на числа. Використайте 80% даних як `train_dataset` та 20% даних як `test_dataset`.
 
-`pop` off the "expenses" column from these datasets to create new datasets called `train_labels` and `test_labels`. Use these labels when training your model.
+`pop` (скоротіть) стовпчик «expenses» (витрати) з цих наборів даних, щоб створити нові набори даних під назвою `train_labels` та `test_labels`. Використайте ці мітки під час навчання моделі.
 
-Create a model and train it with the `train_dataset`. Run the final cell in this notebook to check your model. The final cell will use the unseen `test_dataset` to check how well the model generalizes.
+Створіть модель та навчіть її за допомогою `train_dataset`. Запустіть останню клітинку в цьому блокноті, щоб перевірити свою модель. Остання клітинка використовуватиме невидимий `test_dataset`, щоб перевірити, наскільки добре модель узагальнює.
 
-To pass the challenge, `model.evaluate` must return a Mean Absolute Error of under 3500. This means it predicts health care costs correctly within $3500.
+Щоб пройти завдання, `model.evaluate` повинна повернути середню абсолютну помилку менше ніж 3500. Це означає, що вона правильно прогнозує витрати на здоров’я в межах 3500 доларів.
 
-The final cell will also predict expenses using the `test_dataset` and graph the results.
+Остання клітинка також передбачить витрати за допомогою `test_dataset` та побудує графік з результатами.
 
 # --hints--
 

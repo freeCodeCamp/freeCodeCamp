@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9a
-title: 'Згорткові нейронні мережі: Вибір попередньо підготовленої моделі'
+title: 'Згорткові нейронні мережі: вибір попередньо підготовленої моделі'
 challengeType: 11
 videoId: h1XUt1AgIOI
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: convolutional-neural-networks-picking-a-pretrained-model
 
 ## --text--
 
-Заповніть пропуски нижче, щоб використати попередньо підготовлену модель Google MobileNet V2 як основу для згорткової нейронної системи:
+Заповніть пропуски нижче, щоб використати попередньо підготовлену модель Google MobileNet V2 як основу для згорткової нейронної мережі:
 
 ```py
 base_model = tf.__A__.applications.__B__(input_shape=(160, 160, 3),

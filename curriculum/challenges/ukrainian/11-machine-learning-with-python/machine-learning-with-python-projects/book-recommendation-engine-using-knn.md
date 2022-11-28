@@ -10,27 +10,27 @@ dashedName: book-recommendation-engine-using-knn
 
 Ви будете <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-book-recommendation-engine/blob/master/fcc_book_recommendation_knn.ipynb" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з Google Colaboratory</a>.
 
-Перейшовши за цим посиланням, створіть копію блокнота в своєму обліковому записі або локально. Як тільки ви завершили проєкт та пройшли тести (доданий до посилання), здайте посилання на свій проєкт. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Перейшовши за цим посиланням, створіть копію блокнота в своєму обліковому записі або локально. Як тільки ви завершили проєкт та пройшли тест (доданий до посилання), здайте посилання на свій проєкт. Якщо ви надаєте посилання на Google Colaboratory, переконайтеся, що ви увімкнули режим доступу для «усіх, хто має це посилання».
 
-We are still developing the interactive instructional content for the machine learning curriculum. Поки ви можете переглянути відеозавдання цієї сертифікації. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
+Ми досі розробляємо інтерактивну складову для навчальної програми з машинного навчання. Поки ви можете переглянути відеозавдання цієї сертифікації. Вам також можуть знадобитися додаткові навчальні ресурси, так само як під час роботи із повноцінним проєктом.
 
 # --instructions--
 
-In this challenge, you will create a book recommendation algorithm using **K-Nearest Neighbors**.
+У цьому завданні ви створите алгоритм книжкових рекомендацій, використовуючи **K-Nearest Neighbours**.
 
-You will use the <a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/" target="_blank" rel="noopener noreferrer nofollow">Book-Crossings dataset</a>. This dataset contains 1.1 million ratings (scale of 1-10) of 270,000 books by 90,000 users.
+Ви будете використовувати <a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/" target="_blank" rel="noopener noreferrer nofollow">набір даних Book-Crossings</a>. Цей набір даних містить 1,1 млн рейтингів (за шкалою 1-10) 270 000 книжок від 90 000 користувачів.
 
-After importing and cleaning the data, use `NearestNeighbors` from `sklearn.neighbors` to develop a model that shows books that are similar to a given book. The Nearest Neighbors algorithm measures the distance to determine the “closeness” of instances.
+Після імпортування та очищення даних використайте `NearestNeighbors` з `sklearn.neighbors`, щоб розробити модель, яка показує книжки, схожі на подану книжку. Алгоритм «Nearest Neighbors» вимірює відстань, щоб визначити «близькість» екземплярів.
 
-Create a function named `get_recommends` that takes a book title (from the dataset) as an argument and returns a list of 5 similar books with their distances from the book argument.
+Створіть функцію під назвою `get_recommends`, яка приймає назву книжки (з набору даних) як аргумент та повертає список із 5 подібних книжок з відстанями до аргументу книжки.
 
-This code:
+Цей код:
 
 ```py
 get_recommends("The Queen of the Damned (Vampire Chronicles (Paperback))")
 ```
 
-should return:
+має повернути:
 
 ```py
 [
@@ -45,11 +45,11 @@ should return:
 ]
 ```
 
-Notice that the data returned from `get_recommends()` is a list. The first element in the list is the book title passed into the function. The second element in the list is a list of five more lists. Each of the five lists contains a recommended book and the distance from the recommended book to the book passed into the function.
+Зверніть увагу, що дані, які повертає `get_recommends()`, є списком. Першим елементом у списку є назва книжки, передана у функцію. Другим елементом списку є список із ще п’яти списків. Кожен з п’яти списків містить рекомендовану книжку та відстань від рекомендованої книжки до книжки, переданої у функцію.
 
-If you graph the dataset (optional), you will notice that most books are not rated frequently. To ensure statistical significance, remove from the dataset users with less than 200 ratings and books with less than 100 ratings.
+Якщо ви побудуєте графік набору даних (необов’язково), ви помітите, що більшість книжок оцінюється рідко. Щоб забезпечити статистичну значущість, видаліть із набору даних користувачів з менш ніж 200 оцінками та книжки з менш ніж 100 оцінками.
 
-The first three cells import libraries you may need and the data to use. The final cell is for testing. Write all your code in between those cells.
+Перші три клітинки імпортують бібліотеки, які вам можуть знадобитися, та дані для використання. Кінцева клітинка для тестування. Напишіть весь свій код між цими клітинками.
 
 # --hints--
 
