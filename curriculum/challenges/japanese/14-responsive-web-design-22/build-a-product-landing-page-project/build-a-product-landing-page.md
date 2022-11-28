@@ -8,25 +8,25 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**目標:** <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a> と似た機能を持つアプリを構築します
+**目標:** <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a> と似た機能を持つアプリを作成します
 
 **ユーザーストーリー:**
 
-1. プロダクトランディングページには `id="header"` を持つ `header` 要素が必要です
-1. `header` 要素内には、`id="header-img"` を持つ画像が必要です (ロゴのような画像を表示すると良いでしょう)
-1. `#header` 要素内には、`id="nav-bar"` を持つ `nav` 要素が必要です
-1. `nav` 要素内に少なくとも 3 つ、クリック可能な `nav-link` クラスの要素が必要です
+1. このプロダクトランディングページには、`id="header"` を持つ `header` 要素があります
+1. `header` 要素内に、`id="header-img"` を持つ画像があります (ロゴのような画像を表示すると良いでしょう)
+1. `#header` の要素内には、`id="nav-bar"` を持つ `nav` 要素があります
+1. `nav` 要素内に少なくとも 3 つ、クリック可能な `nav-link` クラスの要素があります
 1. `nav` 要素内の `.nav-link` ボタンをクリックすると、ランディングページの対応するセクションに移動します
-1. `id="video"` を持つ、プロダクトの埋め込み動画を見ることができます
-1. プロダクトランディングページには `id="form"` を持つ `form` 要素が必要です
-1. フォーム内には、E メールアドレスが入力可能な `id="email"` を持つ `input` 欄が必要です
-1. `#email` 入力欄には、その用途をユーザーに知らせるためのプレイスホルダーテキストが必要です
+1. `id="video"` を持つ、プロダクトに関する埋め込み動画を見ることができます
+1. このプロダクトランディングページには、`id="form"` を持つ `form` 要素があります
+1. フォーム内には、E メールアドレスが入力可能な `id="email"` を持つ `input` 欄があります
+1. `#email` 入力欄には、その用途をユーザーに知らせるためのプレイスホルダーテキストが表示されます
 1. `#email` 入力欄は、入力されたテキストがメールアドレスであるか確認するために HTML5 のバリデーションを使用します
-1. フォーム内には、`id="submit"` を持つ送信ボタンの `input` が必要です
+1. フォーム内には、`id="submit"` を持つ送信ボタンの `input` があります
 1. `#submit` 要素をクリックすると、email の情報が静的ページに送信されます (このモック URL を使用してください: `https://www.freecodecamp.com/email-submit`)
-1. ナビゲーションバーは常にビューポートの上部にある必要があります
-1. プロダクトランディングページには、少なくとも 1 つのメディアクエリが必要です
-1. プロダクトランディングページでは、少なくとも 1 つの CSS フレックスボックスが使用されている必要があります
+1. ナビゲーションバーは常にビューポートの上部に表示されます
+1. このプロダクトランディングページには、少なくとも 1 つのメディアクエリが必要です
+1. このプロダクトランディングページでは、少なくとも 1 つの CSS フレックスボックスが使用されている必要があります
 
 上記のユーザーストーリーを満たし、以下のすべてのテストが通るようにして、このプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 

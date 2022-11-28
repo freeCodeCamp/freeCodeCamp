@@ -11,18 +11,18 @@ dashedName: sha-1-password-cracker
 
 Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice iniziale su Replit</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
 
 
 Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Video corso Python for Everybody</a> (14 ore)
 
-- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Video corso Python Basics in Depth</a> (4 hours)
 
-- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Video corso Intermediate Python</a> (6 hours)
 
 # --instructions--
 
@@ -38,15 +38,15 @@ La funzione dovrebbe prendere un secondo argomento opzionale chiamato `use_salts
 
 Ecco l'hash di alcune password con cui testare la funzione:
 
-- `b305921a3723cd5d70a375cd21a61e60aabb84ec` should return "sammy123"
-- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` should return "abacab"
-- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` should return "password"
+- `b305921a3723cd5d70a375cd21a61e60aabb84ec` dovrebbe restituire "sammy123"
+- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` dovrebbe restituire "abacab"
+- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` dovrebbe restituire "password"
 
 Ecco l'hash di alcune password con cui testare la funzione con `use_salts` impostato a `True`:
 
-- `53d8b3dc9d39f0184144674e310185e41a87ffd5` should return "superman"
-- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` should return "q1w2e3r4t5"
-- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` should return "bubbles1"
+- `53d8b3dc9d39f0184144674e310185e41a87ffd5` dovrebbe restituire "superman"
+- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` dovrebbe restituire "q1w2e3r4t5"
+- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` dovrebbe restituire "bubbles1"
 
 La libreria `hashlib` è stata importata per te. Considera di usarla nel tuo codice. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Scopri di più su "hashlib" qui</a>.
 

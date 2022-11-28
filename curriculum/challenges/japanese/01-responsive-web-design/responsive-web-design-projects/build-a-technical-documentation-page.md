@@ -8,25 +8,25 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**目標:** <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a> と似た機能を持つアプリを構築します
+**目標:** <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a> と似た機能を持つアプリを作成します
 
 **ユーザーストーリー:**
 
-1. `id="main-doc"` を持ち、ページのメインコンテンツ (技術ドキュメント) が入る `main` 要素が必要です
-1. `#main-doc` 要素内に、それぞれのクラスが `main-section` である複数の `section` 要素が必要です。 最低でも 5 個必要です
-1. 各 `.main-section` 内の最初の要素は、そのセクションの主なトピックを説明するテキストが入った `header` 要素である必要があります
-1. クラスが `main-section` の各 `section` 要素は、それぞれの `header` のテキストに対応する `id` も持つ必要があります。 すべてのスペースはアンダースコアに置き換える必要があります (例: "JavaScript and Java" というヘッダーを含む section には、対応する `id="JavaScript_and_Java"` が必要です)
-1. `.main-section` 要素は少なくとも (それぞれではなく) 合計で 10 個の `p` 要素を含む必要があります
-1. `.main-section` 要素は少なくとも (それぞれではなく) 合計で 5 個の `code` 要素を含む必要があります
-1. `.main-section` 要素は少なくとも (それぞれではなく) 合計で 5 個の `li` 要素を含む必要があります
-1. `id="navbar"` を持つ `nav` 要素が 1 つ必要です
-1. ナビゲーションバー (navbar) の要素には、技術ドキュメントのトピックを説明するテキストが入った `header` 要素が含まれている必要があります
-1. さらに、ナビゲーションバーには `nav-link` のクラスを持つリンク (`a`) 要素が含まれている必要があります。 これはクラス `main-section` の各要素に対応して 1 つずつ存在する必要があります
+1. `id="main-doc"` を持ち、ページのメインコンテンツ (技術ドキュメント) が入る `main` 要素があります
+1. `#main-doc` 要素内には、それぞれのクラスが `main-section` である `section` 要素が複数あります。 最低でも 5 個必要です
+1. 各 `.main-section` 内の最初の要素は、そのセクションの主なトピックを説明するテキストが入った `header` 要素となっています。
+1. クラスが `main-section` の各 `section` 要素には、それぞれの `header` のテキストに対応する `id` も設定されています。 すべてのスペースはアンダースコアに置き換える必要があります (例: "JavaScript and Java" というヘッダーを含む section には、対応する `id="JavaScript_and_Java"` が必要です)
+1. `.main-section` 要素には、(それぞれではなく) 合計で少なくとも 10 個の `p` 要素が含まれます
+1. `.main-section` 要素には、(それぞれではなく) 合計で少なくとも 5 個の `code` 要素が含まれます
+1. `.main-section` 要素には、(それぞれではなく) 合計で少なくとも 5 個の `li` 要素が含まれます
+1. `id="navbar"` を持つ `nav` 要素が 1 つあります
+1. ナビゲーションバー (navbar) の要素には、技術ドキュメントのトピックを説明するテキストが入った `header` 要素が 1 つ含まれています
+1. さらに、ナビゲーションバーには `nav-link` のクラスを持つリンク (`a`) 要素が含まれています。 このリンクは、クラス `main-section` の各要素に対応して 1 つずつ存在します
 1. `#navbar` 内の `header` 要素は、ナビゲーションバーのどのリンク (`a`) 要素よりも前に置かれなければなりません
 1. `nav-link` クラスの各要素には、各 `section` 内の `header` テキストに対応するテキストが含まれていなければなりません (例えば、もし "Hello world" セクション / ヘッダーがあるならば、ナビゲーションバーには "Hello world" というテキストを含む要素が必要です)
-1. ナビゲーションバーの要素をクリックしたとき、ページは `#main-doc` 要素の、対応するセクションに移動しなければなりません (例えば、"Hello world" のテキストを含む `.nav-link` 要素をクリックしたならば、その id を持ち、対応するヘッダーを含む `section` 要素に移動しなければなりません)
-1. 通常サイズのデバイス上 (ラップトップ、デスクトップ) では、`id="navbar"` を持つ要素は画面の左側に表示され、常にユーザーから見える状態にしなければなりません
-1. 技術ドキュメントに、少なくとも 1 つのメディアクエリが使われている必要があります
+1. ナビゲーションバーの要素をクリックすると、ページは `#main-doc` 要素内の対応するセクションに移動します (例えば、"Hello world" のテキストを含む `.nav-link` 要素をクリックしたならば、その id を持ち、対応するヘッダーを含む `section` 要素に移動しなければなりません)
+1. 通常サイズのデバイス (ノート PC、デスクトップ) 上では、`id="navbar"` を持つ要素は画面の左側に表示され、常にユーザーから見える状態にしなければなりません
+1. この技術ドキュメントには、少なくとも 1 つのメディアクエリが使われている必要があります
 
 上記のユーザーストーリーを満たし、以下のすべてのテストが通るようにして、このプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 

@@ -8,7 +8,7 @@ dashedName: timestamp-microservice
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://timestamp-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://timestamp-microservice.freecodecamp.rocks</a>. Робота над цим проектом залучатиме тебе писати свій код використовуючи один з наступних методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://timestamp-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://timestamp-microservice.freecodecamp.rocks</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-timestamp/"  target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp"  target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -20,13 +20,13 @@ dashedName: timestamp-microservice
 -   Потім ви побачите вікно `.replit`.
 -   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
 
-**Note:** Time zones conversion is not a purpose of this project, so assume all sent valid dates will be parsed with `new Date()` as GMT dates.
+**Примітка:** конвертація часових зон не є головною метою проєкту, тому вважайте, що всі надіслані дійсні дати будуть проаналізовані за допомогою `new Date()` як дати GMT.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Ви повинні надати власний проєкт, а не приклад URL-адреси.
 
 ```js
 (getUserInput) => {
@@ -36,7 +36,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-A request to `/api/:date?` with a valid date should return a JSON object with a `unix` key that is a Unix timestamp of the input date in milliseconds (as type Number)
+Запит до `/api/:date?` з дійсною датою повинен повернути об’єкт JSON з ключем `unix`, який є часовою міткою Unix введеної дати в мілісекундах (як тип Number)
 
 ```js
 (getUserInput) =>
@@ -54,7 +54,7 @@ A request to `/api/:date?` with a valid date should return a JSON object with a 
   );
 ```
 
-A request to `/api/:date?` with a valid date should return a JSON object with a `utc` key that is a string of the input date in the format: `Thu, 01 Jan 1970 00:00:00 GMT`
+Запит до `/api/:date?` з дійсною датою повинен повернути об'єкт JSON з ключем `utc`, який є рядком введеної дати у форматі `Thu, 01 Jan 1970 00:00:00 GMT`
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ A request to `/api/:date?` with a valid date should return a JSON object with a 
   );
 ```
 
-A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
+Запит до `/api/1451001600000` повинен повернути `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
 
 ```js
 (getUserInput) =>
@@ -89,7 +89,7 @@ A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fr
   );
 ```
 
-Your project can handle dates that can be successfully parsed by `new Date(date_string)`
+Ваш проєкт може обробляти дати, які можуть бути успішно проаналізовані за допомогою `new Date(date_string)`
 
 ```js
 (getUserInput) =>
@@ -106,7 +106,7 @@ Your project can handle dates that can be successfully parsed by `new Date(date_
   );
 ```
 
-If the input date string is invalid, the api returns an object having the structure `{ error : "Invalid Date" }`
+Якщо введений рядок дати недійсний, api повертає об'єкт зі структурою `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>
@@ -120,7 +120,7 @@ If the input date string is invalid, the api returns an object having the struct
   );
 ```
 
-An empty date parameter should return the current time in a JSON object with a `unix` key
+Порожній параметр дати має повернути поточний час в об'єкті JSON з ключем `unix`
 
 ```js
 (getUserInput) =>
@@ -135,7 +135,7 @@ An empty date parameter should return the current time in a JSON object with a `
   );
 ```
 
-An empty date parameter should return the current time in a JSON object with a `utc` key
+Порожній параметр дати має повернути поточний час в об'єкті JSON з ключем `utc`
 
 ```js
 (getUserInput) =>
