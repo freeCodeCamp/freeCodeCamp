@@ -43,7 +43,7 @@ function createQuestionEpic(action$, state$, { window }) {
     ofType(actionTypes.createQuestion),
     tap(() => {
       const state = state$.value;
-      const challengeFiles = challengeFilesSelector(state);
+      let challengeFiles = challengeFilesSelector(state);
       const {
         title: challengeTitle,
         superBlock,
@@ -59,17 +59,23 @@ function createQuestionEpic(action$, state$, { window }) {
           return `\n${startComment} 'User Editable Region' ${endComment}\n`;
         };
 
-        challengeFiles.forEach(file => {
-          const { contents, editableRegionBoundaries, ext } = file;
-          if (editableRegionBoundaries.length > 0) {
-            const comment = editableRegionStrings(ext);
-            const [start, end] = editableRegionBoundaries;
-            const editableContents = contents.split('\n');
-            editableContents.splice(start, 0, comment);
-            editableContents.splice(end, 0, comment);
-            file.contents = editableContents.join('\n');
-          }
-        });
+        const filesWithEditableRegions = challengeFiles
+          .map(file => {
+            return { ...file };
+          })
+          .map(file => {
+            const { contents, editableRegionBoundaries, ext } = file;
+            if (editableRegionBoundaries.length > 0) {
+              const comment = editableRegionStrings(ext);
+              const [start, end] = editableRegionBoundaries;
+              const editableContents = contents.split('\n');
+              editableContents.splice(start, 0, comment);
+              editableContents.splice(end, 0, comment);
+              file.contents = editableContents.join('\n');
+              return file;
+            }
+          });
+        challengeFiles = filesWithEditableRegions;
       }
       const {
         navigator: { userAgent },
