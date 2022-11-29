@@ -65,7 +65,7 @@ console.log('user ' + socket.request.user.username + ' connected');
 
 Це дозволить увійти у підключену консоль серверу!
 
-Відправте сторінку, якщо все було виконано правильно. If you're running into errors, you can  <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. If you're running into errors, you can  <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
 
 # --hints--
 

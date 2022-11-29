@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3e
-title: Вимикання кешування Client-Side за допомогою helmet.noCache()
+title: Вимкніть кешування на стороні клієнта за допомогою helmet.noCache()
 challengeType: 2
 forumTopicId: 301576
 dashedName: disable-client-side-caching-with-helmet-nocache
@@ -10,15 +10,15 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-Якщо ви випускаєте оновлення для вашого веб-сайту і хочете, щоб користувачі завжди завантажували новішу версію, ви можете спробувати вимкнути кешування в їхньому браузері. Це може бути корисним також у розробці. Проте використовуйте таку опцію лише за необхідністю, адже з ним кешування не покращує продуктивність як зазвичай.
+Якщо ви випускаєте оновлення для свого вебсайту і хочете, щоб користувачі завжди завантажували новішу версію, ви можете (спробувати) вимкнути кешування в їхньому браузері. У розробці це також може бути корисним. Кешування має переваги продуктивності, які ви втратите. Тому використовуйте цей варіант лише в разі потреби.
 
 # --instructions--
 
-Використовуйте метод `helmet.noCache()` на вашому сервері.
+Використайте метод `helmet.noCache()` на своєму сервері.
 
 # --hints--
 
-проміжне програмне забезпечення helmet.noCache() необхідно правильно встановити
+Проміжне ПЗ helmet.noCache() повинне бути встановлене правильно
 
 ```js
 (getUserInput) =>

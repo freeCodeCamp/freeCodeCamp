@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3c
-title: Надавайте браузеру доступ до Вашого сайту тільки через HTTPS за допомогою helmet.hsts()
+title: Попросіть браузерів надавати доступ до сайту через HTTPS за допомогою helmet.hsts()
 challengeType: 2
 forumTopicId: 301573
 dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts
@@ -10,17 +10,17 @@ dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts
 
 Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-HTTP Strict Transport Security (HSTS) - це політика веб-безпеки, яка допомагає захистити вебсайти від атак зниження рівня на протокол та крадіжку куки. Якщо доступ до вашого веб-сайту можна отримати через HTTPS-протокол, запобігайте використанню браузером незахищеного HTTPS-протоколу. Встановлюючи заголовок Strict-Transport-Security, ви вказуєте браузерам використовувати протокол HTTPS для майбутніх запитів протягом певного періоду часу. Це спрацює для запитів, які слідують після початкового запиту.
+HTTP Strict Transport Security (HSTS) – це політика веббезпеки, яка допомагає захистити вебсайти від атак зниження рівня на протокол та крадіжки куків. Якщо до вашого вебсайту можна отримати доступ через HTTPS, можна попросити у браузера користувача, щоб він уникав незахищене HTTP. Встановлюючи заголовок Strict-Transport-Security, ви вказуєте браузерам використовувати HTTPS для майбутніх запитів протягом певного періоду часу. Це спрацює для запитів, які слідують після початкового запиту.
 
 # --instructions--
 
-Налаштуйте`helmet.hsts()`для використання HTTPS-протоколу протягом наступних 90 днів. Передайте об'єкт конфігурації`{maxAge: timeInSeconds, force: true}`. Ви можете створити змінну`ninetyDaysInSeconds = 90*24*60*60;` для застосування в `timeInSeconds`. Replit вже включає в себе hsts. Для зміни його налаштувань необхідно встановити поле "force" в об'єкті конфігурації. Ми перехопимо і відновимо заголовок Replit після перевірки.
+Налаштуйте `helmet.hsts()` для використання HTTPS протягом наступних 90 днів. Передайте об'єкт конфігурації `{maxAge: timeInSeconds, force: true}`. Ви можете створити змінну `ninetyDaysInSeconds = 90*24*60*60;` для використання в `timeInSeconds`. Replit вже включає в себе hsts. Щоб перевизначити параметри, потрібно встановити поле «force» в об'єкті конфігурації на true. Ми перехопимо і відновимо заголовок Replit після перевірки.
 
-Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and an SSL/TLS Certificate.
+Примітка: налаштування HTTPS на вебсайті передбачає придбання домену та сертифікат SSL/TLS.
 
 # --hints--
 
-проміжне програмне забезпечення helmet.hsts() необхідно правильно встановити
+Проміжне ПЗ helmet.hsts() повинне бути встановлене правильно
 
 ```js
 (getUserInput) =>

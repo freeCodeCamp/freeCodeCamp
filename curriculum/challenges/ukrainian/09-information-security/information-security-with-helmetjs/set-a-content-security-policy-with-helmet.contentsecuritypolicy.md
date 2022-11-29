@@ -22,7 +22,7 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 # --hints--
 
-проміжне програмне забезпечення helmet.contentSecurityPolicy() повинно бути правильно встановлене
+Проміжне ПЗ helmet.contentSecurityPolicy() повинне бути встановлене правильно
 
 ```js
 (getUserInput) =>

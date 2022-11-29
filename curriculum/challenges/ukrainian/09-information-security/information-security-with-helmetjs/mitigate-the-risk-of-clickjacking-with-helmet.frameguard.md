@@ -20,7 +20,7 @@ dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 
 # --hints--
 
-проміжне програмне забезпечення helmet.frameguard() необхідно правильно встановити
+Проміжне ПЗ helmet.frameguard() повинне бути встановлене правильно
 
 ```js
 (getUserInput) =>

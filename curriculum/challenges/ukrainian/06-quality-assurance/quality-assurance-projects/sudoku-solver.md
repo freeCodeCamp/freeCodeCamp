@@ -33,7 +33,7 @@ dashedName: sudoku-solver
 - To run the challenge tests on this page, set `NODE_ENV` to `test` without quotes in the `.env` file
 - To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
-Write the following tests in `tests/1_unit-tests.js`:
+Напишіть наступні тести в `tests/1_unit-tests.js`:
 
 -   Logic handles a valid puzzle string of 81 characters
 -   Logic handles a puzzle string with invalid characters (not 1-9 or `.`)
@@ -48,7 +48,7 @@ Write the following tests in `tests/1_unit-tests.js`:
 -   Invalid puzzle strings fail the solver
 -   Solver returns the expected solution for an incomplete puzzle
 
-Write the following tests in `tests/2_functional-tests.js`
+Напишіть наступні тести в `tests/2_functional-tests.js`
 
 -   Solve a puzzle with valid puzzle string: POST request to `/api/solve`
 -   Solve a puzzle with missing puzzle string: POST request to `/api/solve`
@@ -67,7 +67,7 @@ Write the following tests in `tests/2_functional-tests.js`
 
 # --hints--
 
-Ви повинні надати власний проєкт, а не приклад URL-адреси.
+Ви повинні надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 (getUserInput) => {
@@ -377,7 +377,7 @@ async (getUserInput) => {
 };
 ```
 
-All 14 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the expected functionality you should write tests for.
+Усі 14 функціональних тестів завершено та успішно пройдено. See `/tests/2_functional-tests.js` for the expected functionality you should write tests for.
 
 ```js
 async (getUserInput) => {

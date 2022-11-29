@@ -24,7 +24,7 @@ dashedName: request-header-parser-microservice
 
 # --hints--
 
-Ви повинні надати власний проєкт, а не приклад URL-адреси.
+Ви повинні надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 (getUserInput) => {
