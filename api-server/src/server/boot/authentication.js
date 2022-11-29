@@ -3,7 +3,7 @@ import { check } from 'express-validator';
 import jwt from 'jsonwebtoken';
 import passport from 'passport';
 import { isEmail } from 'validator';
-
+//import { auth } from 'express-oauth2-jwt-bearer';
 import axios from 'axios';
 import { jwtSecret } from '../../../../config/secrets';
 
@@ -197,8 +197,18 @@ function mobileLogin(app) {
   } = app;
   return async function getPasswordlessAuth(req, res, next) {
     const {
-      headers: { token: accessToken }
+      headers: { Authorization: accessToken }
     } = req;
+
+    try {
+      // validate the access token from auth0
+      // auth({
+      //   audience: `https://${process.env.AUTH0_DOMAIN}/api/v2/`,
+      //   issuerBaseURL: process.env.AUTH0_DOMAIN,
+      // })
+    } catch (e) {
+      res.send({ error: e });
+    }
 
     const userInfo = await axios({
       method: 'GET',
