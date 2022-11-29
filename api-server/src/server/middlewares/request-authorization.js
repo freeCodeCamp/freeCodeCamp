@@ -26,7 +26,7 @@ const updateHooksRE = /^\/hooks\/update-paypal$/;
 // note: this would be replaced by webhooks later
 const donateRE = /^\/donate\/charge-stripe$/;
 const submitCoderoadChallengeRE = /^\/coderoad-challenge-completed$/;
-const mobileLoginRE = /^\/mobile-login$/;
+const mobileLoginRE = /^\/mobile-login/;
 
 const _pathsAllowedREs = [
   authRE,

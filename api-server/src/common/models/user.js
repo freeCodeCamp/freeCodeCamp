@@ -351,7 +351,7 @@ export default function initializeUser(User) {
           return reject(err);
         }
         setAccessTokenToResponse({ accessToken }, req, res);
-        return resolve();
+        return resolve(accessToken);
       })
     );
   };

@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 import passport from 'passport';
 import { isEmail } from 'validator';
 
+import axios from 'axios';
 import { jwtSecret } from '../../../../config/secrets';
 
 import { decodeEmail } from '../../common/utils';
@@ -17,7 +18,6 @@ import { removeCookies } from '../utils/getSetAccessToken';
 import { ifUserRedirectTo, ifNoUserRedirectHome } from '../utils/middleware';
 import { getRedirectParams } from '../utils/redirection';
 import { createDeleteUserToken } from '../middlewares/user-token';
-
 const passwordlessGetValidators = [
   check('email')
     .isBase64()
@@ -195,10 +195,21 @@ function mobileLogin(app) {
   const {
     models: { User }
   } = app;
-  return function getPasswordlessAuth(req, res, next) {
+  return async function getPasswordlessAuth(req, res, next) {
     const {
-      query: { email }
+      query: { accessToken }
     } = req;
+
+    const userInfo = await axios({
+      method: 'GET',
+      url: `https://${process.env.AUTH0_DOMAIN}/userinfo`,
+      headers: { Authorization: `Bearer ${accessToken}` }
+    });
+
+    const {
+      data: { email }
+    } = userInfo;
+
     if (!isEmail(email)) {
       return next(
         wrapHandledError(new TypeError('decoded email is invalid'), {
@@ -211,8 +222,8 @@ function mobileLogin(app) {
 
     return User.findOne$({ where: { email: email } })
       .do(async user => {
-        await user.mobileLoginByRequest(req, res);
-        return res.json({ success: true });
+        const token = await user.mobileLoginByRequest(req, res);
+        return res.json(token);
       })
       .subscribe(() => {}, next);
   };
