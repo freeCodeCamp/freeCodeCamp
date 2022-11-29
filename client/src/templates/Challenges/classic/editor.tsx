@@ -472,12 +472,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       () => {}
     );
     // Make toggle tab setting in editor permanent
-    // @ts-ignore
-    editor._standaloneKeybindingService.addDynamicKeybinding(
-      '-editor.action.toggleTabFocusMode',
-      null,
-      () => {}
-    );
     const tabFocusHotkeys =
       OS === 2 /* Macintosh/iOS */
         ? monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M
