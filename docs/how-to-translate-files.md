@@ -35,7 +35,7 @@ We just ask that you understand the following:
 
    We have looked at our user base and added 30+ most widely spoken languages to the list of enabled languages on the translations platform. Some languages like Chinese and Spanish are already deployed live on **"/learn"** at this moment.
 
-   Unfortunately, the list does not include hundreds of languages out there. We get dozens of requests from contributors like you every day who want to help translate the site into a language they speak.
+   Unfortunately, the list doesn't include hundreds of languages out there. We get dozens of requests from contributors like you every day who want to help translate the site into a language they speak.
 
    We are definitely looking forward to adding more languages to the list, but as you may already guess, it would only be feasible if we get enough momentum around a world language.
 
@@ -58,7 +58,7 @@ The translation workflow is split into two main activities:
 
 - **Proofreading** the translations for all of the above.
 
-  Proofreaders verify that the community contributed translations are uniform in tone and free of common issues like typos, etc. In short, they ensure that the quality of translations is high. Note that we do not use machine translations for a reason.
+  Proofreaders verify that the community contributed translations are uniform in tone and free of common issues like typos, etc. In short, they ensure that the quality of translations is high. Note that we don't use machine translations for a reason.
 
 > [!WARNING]
 > We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
@@ -67,13 +67,13 @@ The translation workflow is split into two main activities:
 
 First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). We post regular updates about translating resources and answer a lot of your queries in there.
 
-Next, head to our [translation platform](https://translate.freecodecamp.org/) and login (if you have not contributed to translations before, you will need to create an account).
+Next, head to our [translation platform](https://translate.freecodecamp.org/) and login (if you haven't contributed to translations before, you will need to create an account).
 
 Finally, go through the detailed walk-thru below to understand the translation tools and workflows at your disposal.
 
 Happy translating.
 
-## Select a Project and File
+## Select a Project and language
 
 Once you visit the translation platform, you should see multiple "projects" available for translation:
 
@@ -85,13 +85,13 @@ Select any project you want to contribute to, and you will see a list of availab
 
 ![Image - List of available languages](https://contribute.freecodecamp.org/images/crowdin/languages.png)
 
-Select the language you want to work on, and you will see the complete file tree.
+Select the language you want to contribute in, and you will see the complete file tree.
 
 ![Image - List of available files](https://contribute.freecodecamp.org/images/crowdin/file-tree.png)
 
 Each file and folder will show a progress bar. The **blue** portion of the progress bar indicates what percentage of the file has been translated, while the **green** portion of the progress bar indicates what percentage of the file has been approved by the proofreading team.
 
-Select a file to work on and Crowdin will open the editor view.
+Select a file to contribute to and Crowdin will open the editor view.
 
 > [!NOTE]
 > When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
@@ -104,24 +104,24 @@ Crowdin separates a document into translatable "strings", usually sentences. Eac
 
 1. A string highlighted in green already has a proposed translation.
 2. A string highlighted in red does _not_ have a proposed translation.
-3. A string with greyed out text is not translatable. This is the case for code blocks and other content that must not be translated. You will be unable to select these strings in the editor.
-4. If a contributor has proposed a translation to a string, Crowdin will display those proposals here. You will not be able to save an identical translation - instead, if a translation is accurate, you should click the `+` icon to "upvote" it. An inaccurate translation can be "downvoted" with the `-` icon.
+3. A string with greyed out text isn't translatable. This is the case for code blocks and other content that mustn't be translated. You will be unable to select these strings in the editor.
+4. If a contributor has proposed a translation to a string, Crowdin will display those proposals here. If a translation is accurate, you should click the `+` icon to "upvote" it. An inaccurate translation can be "downvoted" with the `-` icon.
 5. Crowdin will recommend translations based on Translation Memory (TM) or Machine Translation (MT). Translation Memory refers to similar or identical strings that we have translated/approved in other files. Machine Translation refers to translations recommended by their integrated library.
 6. This is the editor pane, where you may write your proposed translation for the selected string.
 7. The currently selected string in the editor will be highlighted in yellow.
-8. Here you will see tags indicating the state of the string. `Done` means the string has at least one proposed translation. `Todo` means the string does not have any proposed translations.
+8. Here you will see tags indicating the state of the string. `Done` means the string has at least one proposed translation. `Todo` means the string doesn't have any proposed translations.
 9. Here you can see the comments window. If you have questions or concerns about a particular string, you can leave a comment on the string here for other translators to see.
 10. These two "pane" buttons will hide the left (document) and right (comments) views.
 
 > [!NOTE]
-> If you see a hidden string that includes translations, please notify us in the [Discord](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
+> If you see a hidden string that includes translations, please notify us in the [Discord](https://discord.gg/PRyKn3Vbay) so we can remove them from Crowdin memory.
 
 When you have completed a translation for a string, select the `Save` button to store your translation on Crowdin. Other contributors will then be able to vote on your translation and proofreaders will be able to approve it.
 
 You are welcome to translate as many strings as you like - there are no additional steps required when you complete a full file or propose a new translation. Clicking the `Save` button is all that is needed to store a translation.
 
 > [!NOTE]
-> If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
+> If you see something in the English source file that is inaccurate or incorrect, please don't fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
 
 ## Translate the Learn Interface
 
@@ -136,7 +136,7 @@ These files will most likely be maintained by your language lead but you are wel
 ### On Crowdin
 
 > [!ATTENTION]
-> Do not edit the following files through a GitHub PR.
+> Don't edit the following files through a GitHub PR.
 
 The `intro.json` and `translations.json` files are both translated on Crowdin, in the Learn User Interface project. Translating these can be a bit tricky, as each individual JSON value appears as its own string and sometimes the context is missing.
 
@@ -144,7 +144,7 @@ However, the `Context` information provided in Crowdin can help understand where
 
 ![Image with an arrow pointing to Crowdin's context information](https://contribute.freecodecamp.org/images/crowdin/context.png)
 
-If you have any questions about where a string fits in to the prose, reach out to us in our [contributor chat](https://discord.gg/PRyKn3Vbay).
+If you have any questions about where a string fits in to the prose, reach out to contributors in your [language chat](https://discord.gg/PRyKn3Vbay).
 
 ## Translate Documentation
 
@@ -155,7 +155,7 @@ Translating our contributing documentation is a similar flow to translating our 
 
 ### How to translate documentation with internal links
 
-When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
+When you contribute to translating contributing documentation, watch out for internal links targeting a different section of the documentation.
 
 Make sure to replace the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
 
@@ -185,7 +185,7 @@ After translation
 
 The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
 
-You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation isn't deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
 
 You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
 
@@ -194,12 +194,12 @@ You can learn more about [internal links in our docs here](how-to-work-on-the-do
 The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
 
 - The sentences to be translated are always between `""`. These are dialogues or UI strings. The keywords that come before or after the dialogue are game engine control keywords and will be explained in details in subsequent rules. Please note that this first rule governs all subsequent rules listed.
-- In case of `new "..."` Do not translate the `new` keyword.
-- Prefixes like `player`, `annika`, `layla`, `marco` (or variants like `player happy`, `player @ happy`) should not be translated. These are control keywords to correctly display the character sprite in the game.
-- Postfixes like `nointeract` should not be translated.
-- Do not translate things between `[]` and `{}`. These are variable interpolations and text tags. These must remain halfwidth parentheses `[]` and `{}` instead of their fullwidth counterparts `【】` and `「」`
-- Do not translate the `nointeract` keyword at the end of the sentence.
-- If we try to use fullwidth parentheses `（）`, a QA warning will show. To avoid the QA warning, use halfwidth parentheses `()`
+- In case of `new "..."` Don't translate the `new` keyword.
+- Prefixes like `player`, `annika`, `layla`, `marco` shouldn't be translated. Variants like `player happy`, `player @ happy` shouldn't be translated, too. These are control keywords to correctly display the character sprite in the game.
+- Postfixes like `nointeract` shouldn't be translated.
+- Don't translate things between `[]` and `{}`. These are variable interpolations and text tags. These must remain halfwidth parentheses `[]` and `{}` instead of their fullwidth counterparts `【】` and `「」`.
+- Don't translate the `nointeract` keyword at the end of the sentence.
+- If we try to use fullwidth parentheses `（）`, a QA warning will show. To avoid the QA warning, use halfwidth parentheses `()`.
 
 ### Examples
 
@@ -318,7 +318,7 @@ I better take notes so I can learn more about it."
 
 Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
 
-If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
+If you see a translation that is inaccurate or doesn't provide the same clarity as the original string, click the `-` button to "downvote" the translation.
 
 Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
 
@@ -339,8 +339,8 @@ This message appears when Crowdin's QA system has identified a potential error i
 
 Follow these guidelines to ensure our translations are as accurate as possible:
 
-- Do not translate the content within `<code>` tags. These tags indicate text that is found in code and should be left in English.
-- Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
-- Do not change the order of content.
+- Don't translate the content within `<code>` tags. These tags indicate text that is found in code and should be left in English.
+- Don't add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
+- Don't change the order of content.
 
 If you have any questions, feel free to reach out to us in our [Discord](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.
