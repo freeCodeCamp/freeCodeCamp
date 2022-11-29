@@ -6,8 +6,7 @@ import ToggleSetting from './toggle-setting';
 
 export enum Themes {
   Night = 'night',
-  Default = 'default',
-  System = 'system'
+  Default = 'default'
 }
 
 type ThemeProps = {
