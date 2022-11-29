@@ -27,7 +27,7 @@ dashedName: web-services-xml
 
 ## --answers--
 
-Тег закриття відсутній в email.
+В email немає кінцевого тегу.
 
 ---
 
@@ -35,7 +35,7 @@ dashedName: web-services-xml
 
 ---
 
-Тег закриття відсутній в phone.
+У phone немає кінцевого тегу.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c14f
-title: 'Jupyter Notebook: Вступ'
+title: Вступ до використання Jupyter Notebook
 challengeType: 11
 videoId: h8caJq2Bb9w
 bilibiliIds:
@@ -17,7 +17,7 @@ dashedName: how-to-use-jupyter-notebooks-intro
 Додаткові ресурси:
 
 -  <a href="https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial" target="_blank" rel="noopener noreferrer nofollow">Блокноти на GitHub</a>
--  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub використовуючи Google Colab.</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub, використовуючи Google Colab.</a>
 
 # --question--
 
@@ -27,7 +27,7 @@ dashedName: how-to-use-jupyter-notebooks-intro
 
 ## --answers--
 
-Мова розмітки даних Markdown
+Markdown
 
 ---
 

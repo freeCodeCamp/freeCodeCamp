@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd4
-title: Add a Hover Effect to a D3 Element
+title: أضف تأثير عند تحرك المستخدم فوق عنصر (Hover Effect) إلى عنصر D3
 challengeType: 6
 forumTopicId: 301469
 dashedName: add-a-hover-effect-to-a-d3-element
@@ -8,17 +8,17 @@ dashedName: add-a-hover-effect-to-a-d3-element
 
 # --description--
 
-It's possible to add effects that highlight a bar when the user hovers over it with the mouse. So far, the styling for the rectangles is applied with the built-in D3 and SVG methods, but you can use CSS as well.
+من الممكن إضافة التأثيرات (effects) التي توضح العمود (bar) عندما يتحرك المستخدم فوقه (hovers) بالفأرة. حتى الآن، طبقت تصميم (style) لمستطيلات بواسطة طرق (methods) في D3 و SVG الموجودة داخلهم، ولكن يمكنك استعمال CSS أيضا.
 
-You set the CSS class on the SVG elements with the `attr()` method. Then the `:hover` pseudo-class for your new class holds the style rules for any hover effects.
+يمكنك تعيين فئة (class) من CSS إلى عناصر SVG مع طريقة (method) تسمى `attr()`. ثم تحتوي فئة الزائفة (pseudo-class) المسمى `:hover` على قواعد التصميم (style) الجديدة لأي تأثيرات عند تحرك المستخدم فوق عنصر (hover).
 
 # --instructions--
 
-Use the `attr()` method to add a class of `bar` to all the `rect` elements. This changes the `fill` color of the bar to brown when you mouse over it.
+استخدم طريقة (method) تسمى `attr()` لإضافة فئة (class) بقيمة `bar` إلى جميع العناصر `rect`. هذا يغير لون `fill` من العمود (bar) للبني عند تحركك فوقه.
 
 # --hints--
 
-Your `rect` elements should have a class of `bar`.
+يجب أن تحتوي عناصرك `rect` على فئة (class) بقيمة `bar`.
 
 ```js
 assert($('rect').attr('class').trim().split(/\s+/g).includes('bar'));

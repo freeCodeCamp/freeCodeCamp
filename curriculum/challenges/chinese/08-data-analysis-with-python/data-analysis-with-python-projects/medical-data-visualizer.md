@@ -10,11 +10,16 @@ dashedName: medical-data-visualizer
 
 你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 我们仍在开发 Python 课程的交互式教学部分。 目前，你可以在 YouTube 上通过 freeCodeCamp.org 上传的一些视频学习这个项目相关的知识。
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">给所有人的 Python 课程</a>（14 小时）
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">如何使用 Python Pandas 分析数据</a>（10 小时）
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -47,16 +52,16 @@ dashedName: medical-data-visualizer
 
 在 `medical_data_visualizer.py` 中使用数据完成以下任务：
 
-- 给数据添加一列 `overweight`。 要确定一个人是否超重，首先通过将他们的体重（公斤）除以他们的身高（米）的平方来计算他们的 BMI。 如果该值 > 25，则此人超重。 使用值 0 表示不超重，使用值 1 表示超重。
-- 使用 0 表示好的和 1 表示坏，来规范化数据。 如果 `cholesterol` 或 `gluc` 的值为 1，则将值设为 0。 如果值大于 1，则将值设为 1。
-- 将数据转换为长格式并使用 seaborn 的 `catplot()` 创建一个显示分类特征值计数的图表。 数据集应按“Cardio”拆分，因此每个 `cardio` 值都有一个图表。 该图表应该看起来像 `examples/Figure_1.png`。
-- 清理数据。 过滤掉以下代表不正确数据的患者段：
-  - 舒张压高于收缩压（使用 `(df['ap_lo'] <= df['ap_hi'])` 保留正确的数据）
-  - 高度小于第 2.5 个百分位数（使用 `(df['height'] >= df['height'].quantile(0.025))` 保留正确的数据）
-  - 身高超过第 97.5 个百分位
-  - 体重小于第 2.5 个百分位
-  - 体重超过第 97.5 个百分位
-- 使用数据集创建相关矩阵。 使用 seaborn 的 `heatmap()` 绘制相关矩阵。 遮罩上三角。 该图表应类似于 `examples/Figure_2.png`。
+- Add an `overweight` column to the data. To determine if a person is overweight, first calculate their BMI by dividing their weight in kilograms by the square of their height in meters. If that value is > 25 then the person is overweight. Use the value 0 for NOT overweight and the value 1 for overweight.
+- Normalize the data by making 0 always good and 1 always bad. If the value of `cholesterol` or `gluc` is 1, make the value 0. If the value is more than 1, make the value 1.
+- Convert the data into long format and create a chart that shows the value counts of the categorical features using seaborn's `catplot()`. The dataset should be split by 'Cardio' so there is one chart for each `cardio` value. The chart should look like `examples/Figure_1.png`.
+- Clean the data. Filter out the following patient segments that represent incorrect data:
+  - diastolic pressure is higher than systolic (Keep the correct data with `(df['ap_lo'] <= df['ap_hi'])`)
+  - height is less than the 2.5th percentile (Keep the correct data with `(df['height'] >= df['height'].quantile(0.025))`)
+  - height is more than the 97.5th percentile
+  - weight is less than the 2.5th percentile
+  - weight is more than the 97.5th percentile
+- Create a correlation matrix using the dataset. Plot the correlation matrix using seaborn's `heatmap()`. Mask the upper triangle. The chart should look like `examples/Figure_2.png`.
 
 每当变量设置为 `None` 时，请确保将其设置为正确的代码。
 

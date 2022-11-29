@@ -11,7 +11,7 @@ dashedName: using-objects-for-lookups
 
 對象和字典一樣，可以用來存儲鍵/值對。 如果數據是扁平的，你可以用對象來查找你想要的值，而不是鏈式使用 `switch` 或 `if/else` 語句。 當你知道你的輸入數據在某個範圍時，這種查找方式極爲有效。
 
-Here is an example of an article object:
+這是一個文章對象的示例：
 
 ```js
 const article = {
@@ -30,7 +30,7 @@ const value = "title";
 const valueLookup = article[value];
 ```
 
-`articleAuthor` is the string `Kaashan Hussain`, `articleLink` is the string `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`, and `valueLookup` is the string `How to create objects in JavaScript`.
+`articleAuthor` 是字符串 `Kaashan Hussain`，`articleLink` 是字符串 `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`，`valueLookup` 是字符串 `How to create objects in JavaScript`。
 
 # --instructions--
 

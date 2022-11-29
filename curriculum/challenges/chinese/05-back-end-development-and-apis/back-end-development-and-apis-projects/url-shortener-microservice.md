@@ -14,15 +14,21 @@ dashedName: url-shortener-microservice
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
 -   使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 字段中提交它的 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-**提示：** 请使用 body parsing 中间件来处理 POST 请求， 也可以使用 `dns` 核心模块中的 `dns.lookup(host, cb)` 函数验证提交的 URL。
+**HINT:** Do not forget to use a body parsing middleware to handle the POST requests. Also, you can use the function `dns.lookup(host, cb)` from the `dns` core module to verify a submitted URL.
 
 # --hints--
 
-提交自己的项目，而不是示例的 URL。
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -34,7 +40,7 @@ dashedName: url-shortener-microservice
 };
 ```
 
-可以通过 POST 请求给 `/api/shorturl` 发送一个 URL，并返回一个带有 `original_url` 和 `short_url` 属性的 JSON 响应。 例如：`{ original_url : 'https://freeCodeCamp.org', short_url : 1}`。
+You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
 async (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-当访问 `/api/shorturl/<short_url>` 时, 将重定向到原来的 URL。
+When you visit `/api/shorturl/<short_url>`, you will be redirected to the original URL.
 
 ```js
 async (getUserInput) => {
@@ -88,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-如果传入一个没有遵循如 `http://www.example.com` 的无效 URL，则返回包含 `{ error: 'invalid url' }` 的 JSON 响应。
+If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`
 
 ```js
 async (getUserInput) => {

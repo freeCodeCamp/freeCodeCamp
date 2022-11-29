@@ -10,13 +10,17 @@ dashedName: time-calculator
 
 你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-time-calculator" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 # --instructions--
 
 编写一个名为 `add_time` 的函数，它接受两个必需参数和一个可选参数：
 
-- 12 小时制的开始时间（以 AM 或 PM 结束）
-- 指示小时数和分钟数的持续时间
-- （可选）一周的开始日期，不区分大小写
+- a start time in the 12-hour clock format (ending in AM or PM)
+- a duration time that indicates the number of hours and minutes
+- (optional) a starting day of the week, case insensitive
 
 该函数应将持续时间添加到开始时间并返回结果。
 

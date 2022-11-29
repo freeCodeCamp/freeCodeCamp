@@ -10,6 +10,11 @@ dashedName: probability-calculator
 
 You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
 Suppose there is a hat containing 5 blue balls, 4 red balls, and 2 green balls. What is the probability that a random draw of 4 balls will contain at least 1 red ball and 2 green balls? While it would be possible to calculate the probability using advanced mathematics, an easier way is to write a program to perform a large number of experiments to estimate an approximate probability.
@@ -30,10 +35,10 @@ The `Hat` class should have a `draw` method that accepts an argument indicating 
 
 次に、(`Hat` クラスの中ではなく) `prob_calculator.py` で `experiment` 関数を作成してください。 この関数は次の引数を受け取る必要があります。
 
-- `hat`: 関数内でコピーする必要のあるボールを含む帽子オブジェクト。
-- `expected_balls`: 実験で帽子から取り出そうとするボールの正確なグループを示すオブジェクト。 たとえば、青のボール 2 個と赤のボール 1 個を帽子から取り出す確率を調べるには、`expected_balls` を `{"blue":2, "red":1}` に設定します。
-- `num_balls_drawn`: 各実験で帽子から取り出すボールの数。
-- `num_experiments`: 実行する実験の回数 (実験の回数が多いほど、おおよその確率の正確性が高まります)。
+- `hat`: A hat object containing balls that should be copied inside the function.
+- `expected_balls`: An object indicating the exact group of balls to attempt to draw from the hat for the experiment. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
+- `num_balls_drawn`: The number of balls to draw out of the hat in each experiment.
+- `num_experiments`: The number of experiments to perform. (The more experiments performed, the more accurate the approximate probability will be.)
 
 `experiment` 関数は、確率を返す必要があります。
 
@@ -69,7 +74,7 @@ probability = experiment(hat=hat,
 
 # --hints--
 
-確率を正しく計算し、すべてのテストに合格する必要があります。
+確率を正しく計算し、すべてのテストを成功させる必要があります。
 
 ```js
 

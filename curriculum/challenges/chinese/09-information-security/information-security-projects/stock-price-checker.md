@@ -18,7 +18,13 @@ dashedName: stock-price-checker
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
 -   使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -27,19 +33,19 @@ dashedName: stock-price-checker
 3.  添加安全功能到 `server.js`。
 4.  在 `tests/2_functional-tests.js` 中创建所有的功能测试
 
-**注意** 隐私考虑：由于每个 IP 只能接受一个赞（like），你必须保存 IP 地址。 必须遵守数据隐私法规，例如《通用数据保护条例》。 一个选项是获得保存用户数据的权限，但是匿名化则要简单得多。 对于此挑战，请记住在将 IP 地址保存到数据库之前对其进行匿名化。 如果你想知道如何做到这一点，你可以选择散列数据、截断它、或将 IP 地址的一部分设置为 0。
+**Note** Privacy Considerations: Due to the requirement that only 1 like per IP should be accepted, you will have to save IP addresses. It is important to remain compliant with data privacy laws such as the General Data Protection Regulation. One option is to get permission to save the user's data, but it is much simpler to anonymize it. For this challenge, remember to anonymize IP addresses before saving them to the database. If you need ideas on how to do this, you may choose to hash the data, truncate it, or set part of the IP address to 0.
 
-在 `tests/2_functional-tests.js` 中编写以下测试：
+Write the following tests in `tests/2_functional-tests.js`:
 
--   查看股价：发送 GET 请求到 `/api/stock-prices/`
--   查看一个股票并关注它：发送 GET 请求到 `/api/stock-prices/`
--   查看同一只股票并再次发送关注：发送 GET 请求到 `/api/stock-prices/`
--   查看两只股票：发送 GET 请求到 `/api/stock-prices/`
--   查看两只股票并关注它：发送 GET 请求到 `/api/stock-prices/`
+-   Viewing one stock: GET request to `/api/stock-prices/`
+-   Viewing one stock and liking it: GET request to `/api/stock-prices/`
+-   Viewing the same stock and liking it again: GET request to `/api/stock-prices/`
+-   Viewing two stocks: GET request to `/api/stock-prices/`
+-   Viewing two stocks and liking them: GET request to `/api/stock-prices/`
 
 # --hints--
 
-提交你自己的项目，而不是示例的 URL。
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -49,7 +55,7 @@ dashedName: stock-price-checker
 };
 ```
 
-将内容安全策略设置为仅允许从服务器加载脚本和 CSS。
+You should set the content security policies to only allow loading of scripts and CSS from your server.
 
 ```js
 async (getUserInput) => {
@@ -64,7 +70,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/stock-prices` 发送一个 `GET` 请求，将纳斯达克股票代码赋值给 `stock` 查询参数。 返回的对象将包含一个名为 `stockData` 的属性。
+You can send a `GET` request to `/api/stock-prices`, passing a NASDAQ stock symbol to a `stock` query parameter. The returned object will contain a property named `stockData`.
 
 ```js
 async (getUserInput) => {
@@ -76,7 +82,7 @@ async (getUserInput) => {
 };
 ```
 
-`stockData` 属性包括字符串 `stock`、数字 `price`，以及数字 `likes`。
+The `stockData` property includes the `stock` symbol as a string, the `price` as a number, and `likes` as a number.
 
 ```js
 async (getUserInput) => {
@@ -91,13 +97,13 @@ async (getUserInput) => {
 };
 ```
 
-你也可以将 `like` 字段作为 `true`（布尔值）传递，让你的偏好添加到股票中。 每个 IP 应该只接受 1 个赞（like）。
+You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
 
 ```js
 
 ```
 
-如果你传递了两只股票，返回值将是一个包含这两只股票信息的数组。 它将会显示对于两个 `stockData` 对象的 `rel_likes`（两只股票所获得的赞同数的区别），而不是 `likes`。
+If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both `stockData` objects.
 
 ```js
 async (getUserInput) => {
@@ -112,7 +118,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 5 项功能测试都已完成并通过。
+All 5 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

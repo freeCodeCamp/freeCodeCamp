@@ -10,6 +10,11 @@ dashedName: polygon-area-calculator
 
 Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
 
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
+
+
 # --instructions--
 
 In questo progetto utilizzerai la programmazione orientata agli oggetti per creare una classe Rettangolo (Rectangle) e una classe Quadrato (Square). La classe Square dovrebbe essere una sottoclasse di Rectangle ed ereditare metodi ed attributi.
@@ -23,7 +28,7 @@ Quando viene creato un oggetto Rectangle, dovrebbe essere inizializzato con attr
 - `get_area`: Restituisce l'area (`width * height`)
 - `get_perimeter`: Restituisce il perimetro (`2 * width + 2 * height`)
 - `get_diagonal`: Restituisce la diagonale (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: Restituisce una stringa che rappresenta la forma usando linee di "\*". Il numero di righe dovrebbe essere uguale all'altezza e il numero di "\*" in ogni riga dovrebbe essere uguale alla larghezza. Ci dovrebbe essere un carattere di nuova linea (`\n`) alla fine di ogni riga. Se la larghezza o l'altezza è maggiore di 50, questo dovrebbe restituire la stringa: `"Too big for picture."`.
+- `get_picture`: Restituisce una stringa che rappresenta la forma usando linee di "\*". Il numero di righe dovrebbe essere uguale all'altezza e il numero di "\*" in ogni riga dovrebbe essere uguale alla larghezza. Ci dovrebbe essere un carattere di nuova riga (`\n`) alla fine di ogni riga. Se la larghezza o l'altezza è maggiore di 50, occorre restituire la stringa: "Too big for picture.".
 - `get_amount_inside`: Prende un'altra forma (quadrato o rettangolo) come argomento. Restituisce il numero di volte che la forma passata potrebbe adattarsi all'interno della forma (senza rotazioni). Per esempio, un rettangolo con una larghezza di 4 e un'altezza di 8 potrebbe contenere due quadrati con lati di 4.
 
 Inoltre, se un'istanza di Rectangle è rappresentata come una stringa, dovrebbe apparire come: `Rectangle(width=5, height=10)`
