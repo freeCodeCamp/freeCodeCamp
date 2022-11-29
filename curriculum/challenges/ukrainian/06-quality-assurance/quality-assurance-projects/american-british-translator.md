@@ -31,7 +31,7 @@ dashedName: american-british-translator
 -   To run the tests on Replit, set `NODE_ENV` to `test` without quotes in the `.env` file
 -   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
-Write the following tests in `tests/1_unit-tests.js`:
+Напишіть наступні тести в `tests/1_unit-tests.js`:
 
 -   Translate `Mangoes are my favorite fruit.` to British English
 -   Translate `I ate yogurt for breakfast.` to British English
@@ -58,7 +58,7 @@ Write the following tests in `tests/1_unit-tests.js`:
 -   Highlight translation in `We watched the footie match for a while.`
 -   Highlight translation in `Paracetamol takes up to an hour to work.`
 
-Write the following tests in `tests/2_functional-tests.js`:
+Напишіть наступні тести в `tests/2_functional-tests.js`:
 
 -   Translation with text and locale fields: POST request to `/api/translate`
 -   Translation with text and invalid locale field: POST request to `/api/translate`
@@ -69,7 +69,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-I can provide my own project, not the example URL.
+Я можу надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 (getUserInput) => {
@@ -307,7 +307,7 @@ async (getUserInput) => {
 };
 ```
 
-All 6 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
+Усі 6 функціональних тестів завершено та успішно пройдено. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
 
 ```js
 async (getUserInput) => {

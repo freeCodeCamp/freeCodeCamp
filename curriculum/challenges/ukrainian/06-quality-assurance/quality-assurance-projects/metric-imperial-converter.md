@@ -30,7 +30,7 @@ dashedName: metric-imperial-converter
 - To run the tests uncomment `NODE_ENV=test` in your `.env` file
 - To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
-Write the following tests in `tests/1_unit-tests.js`:
+Напишіть наступні тести в `tests/1_unit-tests.js`:
 
 - `convertHandler` should correctly read a whole number input.
 - `convertHandler` should correctly read a decimal number input.
@@ -49,7 +49,7 @@ Write the following tests in `tests/1_unit-tests.js`:
 - `convertHandler` should correctly convert `lbs` to `kg`.
 - `convertHandler` should correctly convert `kg` to `lbs`.
 
-Write the following tests in `tests/2_functional-tests.js`:
+Напишіть наступні тести в `tests/2_functional-tests.js`:
 
 - Convert a valid input such as `10L`: `GET` request to `/api/convert`.
 - Convert an invalid input such as `32g`: `GET` request to `/api/convert`.
@@ -59,7 +59,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Ви можете надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 getUserInput => {
@@ -288,7 +288,7 @@ async getUserInput => {
 };
 ```
 
-All 5 functional tests are complete and passing.
+Усі 5 функціональних тестів завершено та успішно пройдено.
 
 ```js
 async getUserInput => {

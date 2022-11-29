@@ -14,11 +14,11 @@ dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
 
 # --instructions--
 
-Застосовуйте метод `helmet.ieNoOpen()` на вашому сервері.
+Використайте метод `helmet.ieNoOpen()` на своєму сервері.
 
 # --hints--
 
-проміжне програмне забезпечення helmet.ieNoOpen() необхідно правильно встановити
+Проміжне ПЗ helmet.ieNoOpen() повинне бути встановлене правильно
 
 ```js
 (getUserInput) =>

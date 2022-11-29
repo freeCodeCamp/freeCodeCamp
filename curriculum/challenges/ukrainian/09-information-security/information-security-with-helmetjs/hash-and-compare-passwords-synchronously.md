@@ -1,6 +1,6 @@
 ---
 id: 58a25bcff9fc0f352b528e7e
-title: Синхронне перетворення паролів на дані та їх порівняння
+title: Синхронне хешування та порівняння паролів
 challengeType: 2
 forumTopicId: 301579
 dashedName: hash-and-compare-passwords-synchronously
@@ -28,7 +28,7 @@ var result = bcrypt.compareSync(myPlaintextPassword, hash);
 
 Додайте функцію і увійдіть в консоль щоб побачити, як вона працює.
 
-Підтвердіть вашу сторінку, якщо все зрозуміло.
+Відправте свою сторінку коли впевнились, що все правильно.
 
 # --hints--
 

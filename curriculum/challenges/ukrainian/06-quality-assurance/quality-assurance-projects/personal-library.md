@@ -31,7 +31,7 @@ dashedName: personal-library
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Ви можете надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 (getUserInput) => {
@@ -193,7 +193,7 @@ async (getUserInput) => {
 };
 ```
 
-All 10 functional tests required are complete and passing.
+Усі 10 функціональних тестів завершено та успішно пройдено.
 
 ```js
 async (getUserInput) => {

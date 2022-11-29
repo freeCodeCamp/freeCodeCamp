@@ -25,7 +25,7 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --hints--
 
-проміжне програмне забезпечення helmet.xssFilter() необхідно правильно встановити
+Проміжне ПЗ helmet.xssFilter() повинне бути встановлене правильно
 
 ```js
 (getUserInput) =>
