@@ -411,6 +411,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     const isTabTrapped = () => !!(store.get('monacoTabTrapped') ?? true);
 
     const setTabTrapped = (trapped: boolean) => {
+      // Monaco uses the contextKey 'editorTabMovesFocus' to control how it
+      // reacts to the tab key. Setting this to true allows the user to tab
+      // outside of the editor. If it is false, tab will act inside the editor
+      // (i.e. create spaces).
       editor.createContextKey('editorTabMovesFocus', !trapped);
       store.set('monacoTabTrapped', trapped);
       ariaAlert(
