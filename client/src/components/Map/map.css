@@ -6,6 +6,15 @@
   list-style: none;
   color: var(--secondary-color);
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* width: 100%; */
+}
+
+.map-ui > ul > li {
+  margin: 5px;
+  text-align: center;
 }
 
 @media (max-width: 640px) {

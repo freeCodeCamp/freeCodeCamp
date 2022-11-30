@@ -185,6 +185,7 @@ p.caption {
 .certification-section,
 .testimonials {
   padding: 4vw 0;
+  width: 1000px;
 }
 
 .map-ui .btn {

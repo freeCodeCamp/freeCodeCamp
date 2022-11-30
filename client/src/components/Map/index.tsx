@@ -36,7 +36,11 @@ function createSuperBlockTitle(superBlock: SuperBlocks) {
 
 const linkSpacingStyle = {
   display: 'flex',
-  justifyContent: 'space-between',
+  flexDirection: 'column' as const,
+  textAlign: 'center' as const,
+  width: '300px',
+  height: '200px',
+  justifyContent: 'space-around',
   alignItems: 'center'
 };
 

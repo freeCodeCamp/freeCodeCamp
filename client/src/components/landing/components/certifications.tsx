@@ -16,7 +16,7 @@ const Certifications = ({
 
   return (
     <Row className='certification-section'>
-      <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+      <Col md={8} mdOffset={4} sm={10} smOffset={1} xs={12}>
         <h1 className='big-heading'>{t('landing.certification-heading')}</h1>
         <Map forLanding={true} />
         <Spacer />
