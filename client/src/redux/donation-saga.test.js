@@ -1,9 +1,5 @@
 import { expectSaga } from 'redux-saga-test-plan';
-import {
-  postChargeStripe,
-  postChargeStripeCard,
-  addDonation
-} from '../utils/ajax';
+import { postChargeStripe, postChargeStripeCard } from '../utils/ajax';
 import { postChargeSaga, setDonationCookie } from './donation-saga.js';
 import { postChargeComplete, executeGA } from './actions';
 
@@ -53,18 +49,14 @@ describe('donation-saga', () => {
       }
     };
 
-    console.log(stripeCardDataMock);
-
     let stripeCardGAdata = mockEventPayload;
-    stripeCardGAdata.data.action =
-      'Donation Page Stripe Card Payment Submission';
+    stripeCardGAdata.data.action = 'Donate Page Stripe Card Payment Submission';
 
-    const { paymentMethodId, amount, duration } = stripeCardDataMock;
+    const { paymentMethodId, amount, duration } = stripeCardDataMock.payload;
     const optimizedPayload = { paymentMethodId, amount, duration };
     return expectSaga(postChargeSaga, stripeCardDataMock)
       .call(postChargeStripeCard, optimizedPayload)
       .put(postChargeComplete())
-      .call(addDonation, { amount, duration })
       .call(setDonationCookie)
       .put(executeGA(stripeCardGAdata))
       .run();

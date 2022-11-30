@@ -64,19 +64,18 @@ export function* postChargeSaga({
       yield call(postChargeStripe, payload);
     } else if (paymentProvider === 'stripe card') {
       const optimizedPayload = { paymentMethodId, amount, duration };
-      const {
-        data: { error }
-      } = yield call(postChargeStripeCard, optimizedPayload);
+      const response = yield call(postChargeStripeCard, optimizedPayload);
+      const error = response?.data?.error;
       if (error) {
         yield stripeCardErrorHandler(
           error,
           handleAuthentication,
           error.client_secret,
-          paymentMethodId,
+          response.paymentMethodId,
           optimizedPayload
         );
 
-        // the authentication does not throw and error, add a donation
+        //if the authentication does not throw an error, add a donation
         yield call(addDonation, { amount, duration });
       }
     } else if (paymentProvider === 'paypal') {
@@ -102,16 +101,7 @@ export function* postChargeSaga({
       })
     );
   } catch (error) {
-    // add donation error
-    // const data =
-    //   error.response && error.response.data
-    //     ? error.response.data
-    //     : {
-    //         message: defaultDonationErrorMessage
-    //       };
-    // yield put(addDonationError(data.message));
-    //post stripe card
-    // const errorMessage = error.message || defaultDonationErrorMessage;
+    console.log(error);
     const err =
       error.response && error.response.data
         ? error.response.data.error
