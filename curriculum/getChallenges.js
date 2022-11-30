@@ -378,7 +378,8 @@ Challenges that have been already audited cannot fall back to their English vers
       lang === 'english' ||
       !isAuditedCert(lang, meta.superBlock) ||
       !fs.existsSync(getFullPath(lang, filePath));
-
+    // the await function is used to pause the execution until
+    // the promise is settled.
     const challenge = await (useEnglish
       ? parseMD(getFullPath('english', filePath))
       : parseTranslation(
@@ -393,6 +394,8 @@ Challenges that have been already audited cannot fall back to their English vers
   }
   return createChallenge;
 }
+//this function uses the reduce method, which reduces an array to
+// a single value and executes a function for each value in the array
 
 function challengeFilesToPolys(files) {
   return files.reduce((challengeFiles, challengeFile) => {
@@ -415,7 +418,9 @@ async function hasEnglishSource(basePath, translationPath) {
     .then(() => true)
     .catch(() => false);
 }
-
+//these two functions use the split method to
+//split a string into an array of substrings,
+// and return an array
 function getBaseDir(filePath) {
   const [baseDir] = filePath.split(path.sep);
   return baseDir;

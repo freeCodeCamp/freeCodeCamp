@@ -65,6 +65,11 @@ There are various ways to launch an GitPod workspace:
 
    Once installed you will see a 'GitPod' button on every repository, pull-request, etc. as a handy shortcut to launch a workspace from there. See the extension page for details, screenshots, etc.
 
+For example, adding the firefox extension looks like this:
+![gitpod](gitpod.PNG)
+
+Next when you open the forked github repo, gitpod should be available:
+![gitpod](gitpod2.PNG)
 That's it, you can now skip to the 'syncing up from parent' section after you have launched a GitPod workspace. Most parts of this guide applies to GitPod workspaces, but be mindful of [how the URLs & Ports work within a GitPod](https://www.gitpod.io/docs/configure/workspaces/ports) workspace.
 
 ### How to prepare your local machine
