@@ -28,7 +28,7 @@ dashedName: issue-tracker
 -   Create all of the functional tests in `tests/2_functional-tests.js`
 -   Copy the `sample.env` file to `.env` and set the variables appropriately
 -   To run the tests uncomment `NODE_ENV=test` in your `.env` file
--   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+-   Щоб запустити тести на консолі, використайте команду `npm run test`. Щоб відкрити консоль Replit, натисніть Ctrl+Shift+P (Cmd на Mac) та введіть «open shell»
 
 Напишіть наступні тести в `tests/2_functional-tests.js`:
 
