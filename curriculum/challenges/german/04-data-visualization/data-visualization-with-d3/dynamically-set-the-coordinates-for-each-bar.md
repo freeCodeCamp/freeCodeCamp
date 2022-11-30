@@ -1,6 +1,6 @@
 ---
 id: 587d7fa9367417b2b2512bce
-title: Dynamically Set the Coordinates for Each Bar
+title: Koordinaten für jeden Balken dynamisch festlegen
 challengeType: 6
 forumTopicId: 301487
 dashedName: dynamically-set-the-coordinates-for-each-bar
@@ -14,7 +14,7 @@ The placement of a rectangle is handled by the `x` and `y` attributes. They tell
 
 For a bar chart, all of the bars should sit on the same vertical level, which means the `y` value stays the same (at 0) for all bars. The `x` value, however, needs to change as you add new bars. Remember that larger `x` values push items farther to the right. As you go through the array elements in `dataset`, the `x` value should increase.
 
-The `attr()` method in D3 accepts a callback function to dynamically set that attribute. The callback function takes two arguments, one for the data point itself (usually `d`) and one for the index of the data point in the array. The second argument for the index is optional. Here's the format:
+The `attr()` method in D3 accepts a callback function to dynamically set that attribute. The callback function takes two arguments, one for the data point itself (usually `d`) and one for the index of the data point in the array. Das zweite Argument für den Index ist optional. Here's the format:
 
 ```js
 selection.attr("property", (d, i) => {

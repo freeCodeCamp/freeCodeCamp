@@ -43,25 +43,7 @@ The site is generated using [`docsify`](https://docsify.js.org) and served using
 
 ### ローカルでドキュメントサイトを提供する
 
-freeCodeCamp をクローンする
-
-```console
-git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-```
-
-`docsify` をインストールする
-
-```console
-npm install -g docsify
-```
-
-`/docs` ディレクトリを提供する
-
-```console
-docsify serve docs
-```
-
-または、freeCodeCamp がすでにローカルにインストールされている場合 (ローカルセットアップガイド参照)、CLI に開発ツールがバンドルされています。必要に応じて、リポジトリのルートから以下のコマンドを実行することができます。
+Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
 #### ドキュメントサイトのみを提供して起動する
 

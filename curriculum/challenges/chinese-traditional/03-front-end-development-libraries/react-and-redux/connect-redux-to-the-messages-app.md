@@ -14,7 +14,7 @@ dashedName: connect-redux-to-the-messages-app
 
 # --instructions--
 
-到目前爲止，我們的編輯器上已包含了整個章節的代碼， 唯一不同的是，React 組件被重新命名爲 `Presentational`，即展示層組件。 創建一個新組件，保存在名爲 `Container` 的常量中。 這個常量用 `connect` 把 `Presentational` 組件和 Redux 連接起來。 然後，在`AppWrapper` 中渲染 React Redux 的 `Provider`組件， 給 `Provider` 傳入 Redux `store` 屬性並渲染 `Container` 爲子組件。 Once everything is set up, you will see the messages app rendered to the page again.
+到目前爲止，我們的編輯器上已包含了整個章節的代碼， 唯一不同的是，React 組件被重新命名爲 `Presentational`，即展示層組件。 創建一個新組件，保存在名爲 `Container` 的常量中。 這個常量用 `connect` 把 `Presentational` 組件和 Redux 連接起來。 然後，在`AppWrapper` 中渲染 React Redux 的 `Provider`組件， 給 `Provider` 傳入 Redux `store` 屬性並渲染 `Container` 爲子組件。 設置完所有內容後，將再次看到消息應用程序渲染到頁面上。
 
 # --hints--
 

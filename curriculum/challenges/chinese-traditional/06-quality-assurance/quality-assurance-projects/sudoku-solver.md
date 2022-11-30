@@ -14,54 +14,60 @@ dashedName: sudoku-solver
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 框中提交你的項目 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-- 所有解謎邏輯都可以進入 `/controllers/sudoku-solver.js`
-  - `validate` 函數應該使用給定的解謎字符串，然後檢查它是否是 81 個有效的輸入字符。
-  - `check` 函數應對棋盤的 *current* 進行驗證。
-  - `solve` 函數應該處理任何給定的解謎字符串，而不僅僅是測試輸入和解決方法。 你需要寫出解決這個問題的邏輯。
-- 所有路由邏輯都可以進入 `/routes/api.js`
-- 閱讀 `/controllers` 中的 `puzzle-strings.js` 文件來了解一些應用程序應該解決的示例謎題
-- 在 `.env` 文件中將 `NODE_ENV` 設置爲 `test` （沒有引號），運行這個頁面的挑戰測試。
-- 使用 `npm run test` 命令在 console 中運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯。
+- All puzzle logic can go into `/controllers/sudoku-solver.js`
+  - The `validate` function should take a given puzzle string and check it to see if it has 81 valid characters for the input.
+  - The `check` functions should be validating against the *current* state of the board.
+  - The `solve` function should handle solving any given valid puzzle string, not just the test inputs and solutions. You are expected to write out the logic to solve this.
+- All routing logic can go into `/routes/api.js`
+- See the `puzzle-strings.js` file in `/controllers` for some sample puzzles your application should solve
+- To run the challenge tests on this page, set `NODE_ENV` to `test` without quotes in the `.env` file
+- To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
-在 `tests/1_unit-tests.js` 中寫下以下測試：
+Write the following tests in `tests/1_unit-tests.js`:
 
--   邏輯處理 81 個字符的解謎字符串
--   邏輯處理無效的解謎字符串 (不是 1-9 或 `.`)
--   邏輯處理一個長度不是 81 個字符的解謎字符串
--   邏輯處理有效行的位置
--   邏輯處理無效行的位置
--   邏輯處理一個有效的列位置
--   邏輯處理無效列位置
--   邏輯處理一個有效的區域 (3x3 網格)
--   邏輯處理一個無效的區域 (3x3 網格)
--   有效解謎字符串通過 solver
--   無效解謎字符串無法通過 solver
--   Solver 返回一個不完整謎題的的預期解決方案
+-   Logic handles a valid puzzle string of 81 characters
+-   Logic handles a puzzle string with invalid characters (not 1-9 or `.`)
+-   Logic handles a puzzle string that is not 81 characters in length
+-   Logic handles a valid row placement
+-   Logic handles an invalid row placement
+-   Logic handles a valid column placement
+-   Logic handles an invalid column placement
+-   Logic handles a valid region (3x3 grid) placement
+-   Logic handles an invalid region (3x3 grid) placement
+-   Valid puzzle strings pass the solver
+-   Invalid puzzle strings fail the solver
+-   Solver returns the expected solution for an incomplete puzzle
 
-在 `tests/2_functional-tests.js` 中編寫下以下測試：
+Write the following tests in `tests/2_functional-tests.js`
 
--   用有效的解謎字符串解決一個謎題：POST 請求到 `/api/solve`
--   用缺失的解謎字符串解決一個謎題：POST 請求到 `/api/solve`
--   用無效字符解決一個謎題：POST 請求到 `/api/solve`
--   用不正確的長度解決一個謎題：POST 請求到 `/api/solve`
--   解決一個無法解決的謎題：POST 請求到 `/api/solve`
--   檢查所有字段的解謎位置：POST 請求到 `/api/check`
--   用單個位置衝突檢查解謎位置：POST 請求到 `/api/check`
--   檢查一個有多個位置衝突的解謎位置: POST 請求到 `/api/check`
--   檢查與所有位置衝突的解謎位置: POST 請求到 `/api/check`
--   檢查缺失所需字段的解謎位置：POST 請求到 `/api/check`
--   檢查一個有無效字符的解謎位置: POST 請求到 `/api/check`
--   檢查不正確長度的解謎位置：POST 請求到 `/api/check`
--   檢查一個無效的放置座標的解謎位置：POST 請求到 `/api/check`
--   檢查具有無效的放置值的解謎位置：POST 請求到 `/api/check`
+-   Solve a puzzle with valid puzzle string: POST request to `/api/solve`
+-   Solve a puzzle with missing puzzle string: POST request to `/api/solve`
+-   Solve a puzzle with invalid characters: POST request to `/api/solve`
+-   Solve a puzzle with incorrect length: POST request to `/api/solve`
+-   Solve a puzzle that cannot be solved: POST request to `/api/solve`
+-   Check a puzzle placement with all fields: POST request to `/api/check`
+-   Check a puzzle placement with single placement conflict: POST request to `/api/check`
+-   Check a puzzle placement with multiple placement conflicts: POST request to `/api/check`
+-   Check a puzzle placement with all placement conflicts: POST request to `/api/check`
+-   Check a puzzle placement with missing required fields: POST request to `/api/check`
+-   Check a puzzle placement with invalid characters: POST request to `/api/check`
+-   Check a puzzle placement with incorrect length: POST request to `/api/check`
+-   Check a puzzle placement with invalid placement coordinate: POST request to `/api/check`
+-   Check a puzzle placement with invalid placement value: POST request to `/api/check`
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -70,7 +76,7 @@ dashedName: sudoku-solver
 };
 ```
 
-可以發送 `POST` 請求到 `/api/solve`，使用包含 `puzzle` 的表單數據這將是一個包含數字 (1-9) 和點號的字符串組合，`.` 表示空格。 返回的對象將包含一個 `solution` 屬性與解決的謎題。
+You can `POST` `/api/solve` with form data containing `puzzle` which will be a string containing a combination of numbers (1-9) and periods `.` to represent empty spaces. The returned object will contain a `solution` property with the solved puzzle.
 
 ```js
 async (getUserInput) => {
@@ -89,7 +95,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/solve` 的對象缺失 `puzzle`，返回的值將是 `{ error: 'Required field missing' }`
+If the object submitted to `/api/solve` is missing `puzzle`, the returned value will be `{ error: 'Required field missing' }`
 
 ```js
 async (getUserInput) => {
@@ -107,7 +113,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/solve` 謎題包含非數字或點號的值。 返回的值將是 `{ error: 'Invalid characters in puzzle' }`
+If the puzzle submitted to `/api/solve` contains values which are not numbers or periods, the returned value will be `{ error: 'Invalid characters in puzzle' }`
 
 ```js
 async (getUserInput) => {
@@ -125,7 +131,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/solve` 的謎題大於或小於 81 個字符， 返回的值將是 `{ error: 'Expected puzzle to be 81 characters long' }`
+If the puzzle submitted to `/api/solve` is greater or less than 81 characters, the returned value will be `{ error: 'Expected puzzle to be 81 characters long' }`
 
 ```js
 async (getUserInput) => {
@@ -147,7 +153,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/solve` 的謎題無效或無法解決， 返回的值將是 `{ error: 'Puzzle cannot be solved' }`
+If the puzzle submitted to `/api/solve` is invalid or cannot be solved, the returned value will be `{ error: 'Puzzle cannot be solved' }`
 
 ```js
 async (getUserInput) => {
@@ -165,7 +171,7 @@ async (getUserInput) => {
 };
 ```
 
-可以發送 `POST` 請求到 `/api/check`，包含 `puzzle`、`coordinate` 和 `value` 的對象，其中 `coordinate` 是表示行的字母 A-I，後跟表示列的數字 1-9，而 `value` 是 1-9 的數字。
+You can `POST` to `/api/check` an object containing `puzzle`, `coordinate`, and `value` where the `coordinate` is the letter A-I indicating the row, followed by a number 1-9 indicating the column, and `value` is a number from 1-9.
 
 ```js
 async (getUserInput) => {
@@ -184,7 +190,7 @@ async (getUserInput) => {
 };
 ```
 
-發送 `POST` 請求到 `/api/check`，返回值是一個包含 `valid` 屬性的對象，如果數字可能放置在提供的座標中則是 `true`，否則是`false`。 如果錯誤，返回的對象還將包含一個 `conflict` 屬性，它是一個字符串 `"row"`、`"column"`, 和/或 取決於哪個區域使位置無效的`"region"` 。
+The return value from the `POST` to `/api/check` will be an object containing a `valid` property, which is `true` if the number may be placed at the provided coordinate and `false` if the number may not. If false, the returned object will also contain a `conflict` property which is an array containing the strings `"row"`, `"column"`, and/or `"region"` depending on which makes the placement invalid.
 
 ```js
 async (getUserInput) => {
@@ -207,7 +213,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/check` 的 `value` 已放置在該 `coordinate` 上的 `puzzle`中，如果 `value` 不衝突，則返回的是 `valid` 屬性爲 `true` 的對象。
+If `value` submitted to `/api/check` is already placed in `puzzle` on that `coordinate`, the returned value will be an object containing a `valid` property with `true` if `value` is not conflicting.
 
 ```js
 async (getUserInput) => {
@@ -226,7 +232,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/check` 的謎題包含非數字或點號的值。 返回的值將是 `{ error: 'Invalid characters in puzzle' }`
+If the puzzle submitted to `/api/check` contains values which are not numbers or periods, the returned value will be `{ error: 'Invalid characters in puzzle' }`
 
 ```js
 async (getUserInput) => {
@@ -246,7 +252,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/check` 的謎題大於或小於 81 個字符， 返回的值將是 `{ error: 'Expected puzzle to be 81 characters long' }`
+If the puzzle submitted to `/api/check` is greater or less than 81 characters, the returned value will be `{ error: 'Expected puzzle to be 81 characters long' }`
 
 ```js
 async (getUserInput) => {
@@ -270,7 +276,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/check` 的對象缺失 `puzzle`、`coordinate` 或 `value`，那麼返回的值將是 `{ error: 'Required field(s) missing' }`。
+If the object submitted to `/api/check` is missing `puzzle`, `coordinate` or `value`, the returned value will be `{ error: 'Required field(s) missing' }`
 
 ```js
 async (getUserInput) => {
@@ -302,7 +308,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `api/check` 的座標不指向現有的網格單元格， 返回的值將是 `{ error: 'Invalid coordinate'}`
+If the coordinate submitted to `api/check` does not point to an existing grid cell, the returned value will be `{ error: 'Invalid coordinate'}`
 
 ```js
 async (getUserInput) => {
@@ -324,7 +330,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/check` 的 `value` 不是一個介於 1 到 9 之間的數字，則返回的值將是 `{ error: 'Invalid value' }`。
+If the `value` submitted to `/api/check` is not a number between 1 and 9, the returned value will be `{ error: 'Invalid value' }`
 
 ```js
 async (getUserInput) => {
@@ -346,7 +352,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 12 個單元的測試都已完成並通過。 請參閱 `/tests/1_unit-tests.js` 來了解你應該寫的測試的預期行爲。
+All 12 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
 
 ```js
 async (getUserInput) => {
@@ -371,7 +377,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 14 項功能測試都已完成並通過。 請參閱 `/tests/2_functional-tests.js` 來了解你應該編寫的測試的功能。
+All 14 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the expected functionality you should write tests for.
 
 ```js
 async (getUserInput) => {

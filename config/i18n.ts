@@ -1,5 +1,16 @@
-// ---------------------------------------------------------------------------
-import { SuperBlocks } from './certification-settings';
+export enum Languages {
+  English = 'english',
+  Espanol = 'espanol',
+  Chinese = 'chinese',
+  ChineseTrandational = 'chinese-traditional',
+  Italian = 'italian',
+  Portuguese = 'portuguese',
+  Ukrainian = 'ukrainian',
+  Japanese = 'japanese',
+  German = 'german',
+  Arabic = 'arabic'
+}
+
 /*
  * List of languages with localizations enabled for builds.
  *
@@ -10,159 +21,30 @@ import { SuperBlocks } from './certification-settings';
  */
 export const availableLangs = {
   client: [
-    'english',
-    'espanol',
-    'chinese',
-    'chinese-traditional',
-    'italian',
-    'portuguese',
-    'ukrainian',
-    'japanese',
-    'german',
-    'arabic'
+    Languages.English,
+    Languages.Espanol,
+    Languages.Chinese,
+    Languages.ChineseTrandational,
+    Languages.Italian,
+    Languages.Portuguese,
+    Languages.Ukrainian,
+    Languages.Japanese,
+    Languages.German,
+    Languages.Arabic
   ],
   curriculum: [
-    'english',
-    'espanol',
-    'chinese',
-    'chinese-traditional',
-    'italian',
-    'portuguese',
-    'ukrainian',
-    'japanese',
-    'german',
-    'arabic'
+    Languages.English,
+    Languages.Espanol,
+    Languages.Chinese,
+    Languages.ChineseTrandational,
+    Languages.Italian,
+    Languages.Portuguese,
+    Languages.Ukrainian,
+    Languages.Japanese,
+    Languages.German,
+    Languages.Arabic
   ]
 };
-
-/*
- * List of certifications with localization enabled in their world language.
- *
- * These certifications have been approved 100% on Crowdin at least during
- * their launch, and hence meet the QA standard to be published live. Other
- * certifications which have not been audited & approved will fallback to
- * English equivalent.
- */
-export const auditedCerts = {
-  espanol: [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy
-  ],
-  chinese: [
-    SuperBlocks.RespWebDesignNew,
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy
-  ],
-  'chinese-traditional': [
-    SuperBlocks.RespWebDesignNew,
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy
-  ],
-  italian: [
-    SuperBlocks.RespWebDesignNew,
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.CodingInterviewPrep
-  ],
-  portuguese: [
-    SuperBlocks.RespWebDesignNew,
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.RelationalDb
-  ],
-  ukrainian: [
-    SuperBlocks.RespWebDesignNew,
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.RelationalDb
-  ],
-  japanese: [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.RelationalDb
-  ],
-  german: [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs
-  ],
-  arabic: [
-    SuperBlocks.RespWebDesignNew,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs
-  ]
-};
-
-/**
- * This contains the list of languages which have a beta->stable release
- * that has been 100% translated. This will only be used during the window
- * where a beta goes to stable but the translation isn't complete yet.
- */
-export const languagesWithAuditedBetaReleases = [
-  'english',
-  'portuguese',
-  'italian',
-  'ukrainian',
-  'chinese',
-  'chinese-traditional',
-  'arabic'
-];
 
 // ---------------------------------------------------------------------------
 
@@ -173,51 +55,48 @@ export const languagesWithAuditedBetaReleases = [
  * Use a 639-1 code here https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
  */
 export const i18nextCodes = {
-  english: 'en',
-  espanol: 'es',
-  chinese: 'zh',
-  'chinese-traditional': 'zh-Hant',
-  italian: 'it',
-  portuguese: 'pt-BR',
-  ukrainian: 'uk',
-  japanese: 'ja',
-  german: 'de',
-  arabic: 'ar'
+  [Languages.English]: 'en',
+  [Languages.Espanol]: 'es',
+  [Languages.Chinese]: 'zh',
+  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.Italian]: 'it',
+  [Languages.Portuguese]: 'pt-BR',
+  [Languages.Ukrainian]: 'uk',
+  [Languages.Japanese]: 'ja',
+  [Languages.German]: 'de',
+  [Languages.Arabic]: 'ar'
 };
 
-/* eslint-disable @typescript-eslint/naming-convention */
-
 // These are for the language selector dropdown menu in the footer
-export enum LangNames {
-  english = 'English',
-  espanol = 'Español',
-  chinese = '中文（简体字）',
-  'chinese-traditional' = '中文（繁體字）',
-  italian = 'Italiano',
-  portuguese = 'Português',
-  ukrainian = 'Українська',
-  japanese = '日本語',
-  german = 'Deutsch',
-  arabic = 'العربية'
-}
+export const LangNames = {
+  [Languages.English]: 'English',
+  [Languages.Espanol]: 'Español',
+  [Languages.Chinese]: '中文（简体字）',
+  [Languages.ChineseTrandational]: '中文（繁體字）',
+  [Languages.Italian]: 'Italiano',
+  [Languages.Portuguese]: 'Português',
+  [Languages.Ukrainian]: 'Українська',
+  [Languages.Japanese]: '日本語',
+  [Languages.German]: 'Deutsch',
+  [Languages.Arabic]: 'العربية'
+};
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
  * There's an example in profile/components/Camper.js
  * List: https://github.com/unicode-cldr/cldr-dates-modern/tree/master/main
  */
-export enum LangCodes {
-  english = 'en-US',
-  espanol = 'es-419',
-  chinese = 'zh',
-  'chinese-traditional' = 'zh-Hant',
-  italian = 'it',
-  portuguese = 'pt-BR',
-  ukrainian = 'uk',
-  japanese = 'ja',
-  german = 'de',
-  arabic = 'ar'
-}
-/* eslint-enable @typescript-eslint/naming-convention */
+export const LangCodes = {
+  [Languages.English]: 'en-US',
+  [Languages.Espanol]: 'es-419',
+  [Languages.Chinese]: 'zh',
+  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.Italian]: 'it',
+  [Languages.Portuguese]: 'pt-BR',
+  [Languages.Ukrainian]: 'uk',
+  [Languages.Japanese]: 'ja',
+  [Languages.German]: 'de',
+  [Languages.Arabic]: 'ar'
+};
 
 /**
  * This array contains languages that should NOT appear in the language selector.

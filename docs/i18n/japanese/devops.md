@@ -181,10 +181,10 @@
 |:-------- |:----- |:---------------------------------------- |
 | 学習       | 英語    | <https://www.freecodecamp.dev>           |
 |          | スペイン語 | <https://www.freecodecamp.dev/espanol>   |
-|          | 中国語   | <https://chinese.freecodecamp.dev>       |
+|          | 中国語   | <https://www.freecodecamp.dev/chinese>   |
 | ニュース     | 英語    | <https://www.freecodecamp.dev/news>      |
 | フォーラム    | 英語    | <https://forum.freecodecamp.dev>         |
-|          | 中国語   | <https://chinese.freecodecamp.dev/forum> |
+|          | 中国語   | <https://freecodecamp.dev/chinese/forum> |
 | API      | -     | `https://api.freecodecamp.dev`           |
 
 > [!NOTE] ドメイン名は **`freeCodeCamp.org`** とは異なります。 これは、検索エンジンのインデックス作成を防止し、プラットフォームの通常ユーザーの混乱を避けるための、意図的なものです。

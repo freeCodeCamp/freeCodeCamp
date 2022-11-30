@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c10
-title: Видалення одного документа за допомогою model.findByIdAndRemove
+title: Видаліть один документ за допомогою model.findByIdAndRemove
 challengeType: 2
 forumTopicId: 301539
 dashedName: delete-one-document-using-model-findbyidandremove
@@ -8,11 +8,11 @@ dashedName: delete-one-document-using-model-findbyidandremove
 
 # --description--
 
-`findByIdAndRemove` і `findOneAndRemove` схожі до попередніх методів оновлення. Вони передають вилучений документ до db. Використовуйте аргумент функції `personId` як ключ пошуку.
+`findByIdAndRemove` і `findOneAndRemove` схожі до попередніх методів оновлення. Вони передають вилучений документ до бази даних. Використайте аргумент функції `personId` як ключ пошуку.
 
 # --instructions--
 
-Змініть функцію `removeById`, щоб видалити одну особу на основі її `_id`. Потрібно використовувати один із методів `findByIdAndRemove()` or `findOneAndRemove()`.
+Змініть функцію `removeById`, щоб видалити одну людину на основі її `_id`. Ви повинні використати метод `findByIdAndRemove()` або `findOneAndRemove()`.
 
 # --hints--
 

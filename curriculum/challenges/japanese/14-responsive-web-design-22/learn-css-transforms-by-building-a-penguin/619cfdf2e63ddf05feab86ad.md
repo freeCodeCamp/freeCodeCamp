@@ -7,17 +7,17 @@ dashedName: step-47
 
 # --description--
 
-Position the `.face` elements so that they are `15%` from the top.
+`.face` 要素を上端から `15%` の位置に配置してください。
 
 # --hints--
 
-You should give `.face` a `top` property.
+`.face` には `top` プロパティが必要です。
 
 ```js
 assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.top);
 ```
 
-You should give `.face` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+`.face` の `top` を `--fcc-expected--` に設定する必要がありますが、`--fcc-actual--` が設定されています。
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.top, '15%');

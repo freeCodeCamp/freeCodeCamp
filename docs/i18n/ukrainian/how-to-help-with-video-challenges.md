@@ -2,9 +2,9 @@
 
 Відеозавдання – це новий тип завдань у навчальній програмі freeCodeCamp.
 
-Відеозавдання – це маленька частина повноформатного відеокурсу на певну тему. Сторінка з відеозавданням містить відео з Youtube. Кожна сторінка має одне запитання з декількома варіантами відповідей, що стосуються відео. Користувач повинен відповісти правильно на питання перед тим, як перейти до наступного відеозавдання в курсі.
+Відеозавдання – це маленька частина повноформатного відеокурсу на певну тему. Сторінка з відеозавданням містить відео на ютубі. Кожна сторінка має одне запитання з декількома варіантами відповідей, що стосуються відео. Користувач повинен правильно відповісти на запитання перед тим, як перейти до наступного відеозавдання курсу.
 
-Сторінки з відеозавданнями створюються членами команди freeCodeCamp. Відео на YouTube також завантажуються членами команди freeCodeCamp. Багато відеозавдань ще не мають запитань, пов'язаних з ними.
+Сторінки з відеозавданнями створюються учасниками команди freeCodeCamp. Відео на ютуб також завантажуються учасниками команди freeCodeCamp. Багато відеозавдань ще не мають запитань, пов'язаних з ними.
 
 Ви можете допомогти, створивши запитання з декількома варіантами відповіді, повʼязаних з розділами відео, та додавши ці питання до markdown-файлів для відеозавдань.
 
@@ -23,7 +23,7 @@ forumTopicId: 12345
 
 # --description--
 
-Challenge description text, in markdown
+Опис завдання, у markdown
 
 ```html
 <div>example code</div>
@@ -31,7 +31,7 @@ Challenge description text, in markdown
 
 # --question--
 
-На даний момент ці поля використовуються для Python завдань з декількома варіантами відповіді.
+Наразі ці поля використовуються у завданнях з декількома варіантами відповідей на тему Python.
 
 ## --text--
 
@@ -54,24 +54,24 @@ Challenge description text, in markdown
 Номер правильної відповіді повинен бути тут.
 ````
 
-## Creating questions for video challenges
+## Створення запитань для відеозавдань
 
-### Access the video challenge markdown files
+### Отримання доступу до markdown-файлів відеозавдань
 
-You can find the markdown files for video challenges at the following locations in the curriculum:
+Markdow-файли до відеозавдань можна знайти у наступних локаціях навчальної програми:
 
 - [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
 - [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
 - [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/numpy)
 - [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-Pick a challenge markdown file from the options above.
+Оберіть markdown-файл завдання із поданих нижче.
 
-### Skim through the video associated with the challenge and create a multiple-choice question
+### Ознайомтеся із відео, пов'язаним із завданням, та створіть запитання із декількома варіантами відповіді
 
-First, find the `videoId`.
+Спершу знайдіть `videoId`.
 
-For example, in the following code from the header of a video challenge markdown file, the `videoId` is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
+Наприклад, у наступному коді із заголовка markdown-файлу завдання, `videoId` є «nVAaxZ34khk». На GitHub інформація повинна бути поданою у форматі таблиці.
 
 ````
 ---
@@ -80,44 +80,44 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Next, access the YouTube video with that `videoId`. The URL for the video will be:
-https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
+Потім отримайте доступ до відео на ютубі за допомогою `videoId`. Посиланням на відео буде:
+https://www.youtube.com/watch?v=[videoId] (замініть `videoId` у посиланні на ID відео, без квадратних дужок)
 
-In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
+У прикладі вище посиланням є https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim the YouTube video with that `videoId` and think of a multiple-choice question based on the content of the video.
+Перегляньте відео із цим `videoId` та на його основі придумайте запитання із декількома варіантами відповіді.
 
-### Add the question to the markdown file
+### Додайте запитання до markdown-файлу
 
-You can add the question locally or using the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
+Ви можете додати запитання локально або скориставшись інтерфейсом GitHub. Щоб додати запитання локально, вам потрібно [налаштувати freeCodeCamp локально](how-to-setup-freecodecamp-locally.md). Ви також можете знайти файл на GitHub та клацнути кнопку редагування, щоб додати запитання прямо у своєму браузері.
 
-If a question has not yet been added to a particular video challenge, it will have the following default question:
+Якщо запитання ще не додано до певного відеозавдання, воно матиме наступне запитання за замовчуванням:
 
 ```md
 # --question--
 
 ## --text--
 
-Question text
+Запитання
 
 ## --answers--
 
-Answer 1
+Відповідь 1
 
 ---
 
-Answer 2
+Відповідь 2
 
 ---
 
-More answers
+Інші відповіді
 
 ## --video-solution--
 
 1
 ```
 
-Add/Update the question text under the part that shows:
+Додайте/оновіть текст запитання під частиною, яка зображає:
 
 ```
 # --question--
@@ -125,7 +125,7 @@ Add/Update the question text under the part that shows:
 ## --text--
 ```
 
-Add/Update answers (`Answer 1`, `Answer 2`, and so on) under `## --answers--`. Make sure to update the number under `## --video-solution--` with the correct answer number. You can add more possible answers using the same format. Запитання та відповіді можуть бути в лапках.
+Додайте/оновіть відповіді (`Answer 1`, `Answer 2` і так далі) під `## --answers--`. Переконайтеся, що оновили номер правильної відповіді під `## --video-solution--`. Ви можете додати більше можливих відповідей, використовуючи такий самий формат. Запитання та відповіді можуть бути в лапках.
 
 ### Приклади запитань
 
@@ -200,4 +200,4 @@ print(height/3)
 
 ## Відкрийте пул реквест
 
-After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).
+Після створення одного чи більше запитань, ви можете зафіксувати зміни в новій гілці та [відкрити пул реквест](how-to-open-a-pull-request.md).

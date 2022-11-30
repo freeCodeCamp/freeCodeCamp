@@ -10,21 +10,26 @@ dashedName: budget-app
 
 Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-budget-app" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
 Complete la clase `Category` en `budget.py`. Debería poder instanciar objetos en función de diferentes categorías presupuestarias como *comida*, *ropa* y *entretenimiento*. Cuando se crean objetos, se pasan en el nombre de la categoria. La clase debe tener como instancia una variable llamada `ledger` (esta es una lista). La clase debe contener también los siguientes metodos:
 
-- Un metodo `deposit` que acepte una catidad y una descripción. Si no se le ha dado una descripción, se debe pasar por defecto una cadena de texto vacía. El metodo debe agregar un objeto a la lista de contadores en la forma de `{"amount": amount, "description": description}`.
-- Un método `withdraw` similar al método `deposit`, pero la cantidad pasada debe ser almacenada en el libro de valores como un número negativo. Si no hay fondos suficientes, no hay nada que añadir a la plantilla. Este método debe retornar `True` si el retiro tuvo lugar, y `False` de otra manera.
-- Un método `get_balance` que devuelve el saldo actual de la categoría de presupuesto basado en los depósitos y retiros que han ocurrido.
-- Un método de `transfer` que acepta un importe y otra categoría presupuestaria como argumentos. El método debe agregar un retiro con la cantidad y la descripción "Transferir a [Categoría de presupuesto de destino]". El método debe entonces añadir un depósito a la otra categoría de presupuesto con la cantidad y la descripción "Transferir de la [Categoría del Presupuesto Fuente]". Si no hay fondos suficientes, no hay nada que añadir a ninguno de los agentes financieros. Este método debe retornar `True` si la transferencia tuvo lugar, y `False` de otra manera.
-- Un método `check_funds` que acepta una cantidad como argumento. Devuelve `False` si la cantidad es mayor que el saldo de la categoría de presupuesto y devuelve `True` de lo contrario. Este método debe ser utilizado tanto por el método `withdraw` como por el método `transfer`.
+- A `deposit` method that accepts an amount and description. If no description is given, it should default to an empty string. The method should append an object to the ledger list in the form of `{"amount": amount, "description": description}`.
+- A `withdraw` method that is similar to the `deposit` method, but the amount passed in should be stored in the ledger as a negative number. If there are not enough funds, nothing should be added to the ledger. This method should return `True` if the withdrawal took place, and `False` otherwise.
+- A `get_balance` method that returns the current balance of the budget category based on the deposits and withdrawals that have occurred.
+- A `transfer` method that accepts an amount and another budget category as arguments. The method should add a withdrawal with the amount and the description "Transfer to [Destination Budget Category]". The method should then add a deposit to the other budget category with the amount and the description "Transfer from [Source Budget Category]". If there are not enough funds, nothing should be added to either ledgers. This method should return `True` if the transfer took place, and `False` otherwise.
+- A `check_funds` method that accepts an amount as an argument. It returns `False` if the amount is greater than the balance of the budget category and returns `True` otherwise. This method should be used by both the `withdraw` method and `transfer` method.
 
 Cuando el objeto de presupuesto se imprime, debe mostrar:
 
-- Una línea de título de 30 caracteres donde el nombre de la categoría está centrado en una línea de `*` caracteres.
-- Una lista de los elementos en el contador. Cada línea debe mostrar la descripción y la cantidad. Los primeros 23 caracteres de la descripción deben mostrarse, luego la cantidad. La cantidad debe estar alineada correctamente, contener dos decimales y mostrar un máximo de 7 caracteres.
-- Una línea que muestra el total de las categorías.
+- A title line of 30 characters where the name of the category is centered in a line of `*` characters.
+- A list of the items in the ledger. Each line should show the description and amount. The first 23 characters of the description should be displayed, then the amount. The amount should be right aligned, contain two decimal places, and display a maximum of 7 characters.
+- A line displaying the category total.
 
 Aquí hay un ejemplo de salida:
 

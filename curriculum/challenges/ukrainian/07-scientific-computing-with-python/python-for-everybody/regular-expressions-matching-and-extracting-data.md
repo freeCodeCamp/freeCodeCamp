@@ -14,7 +14,7 @@ dashedName: regular-expressions-matching-and-extracting-data
 
 ## --text--
 
-Що виведе дана програма на екран?:
+Що виведе на екран дана програма?:
 
 ```python
 import re

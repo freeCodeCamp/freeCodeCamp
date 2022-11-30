@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf4
-title: Chain Middleware to Create a Time Server
+title: Verkette Middleware, um einen Zeitserver zu erstellen
 challengeType: 2
 forumTopicId: 301510
 dashedName: chain-middleware-to-create-a-time-server
@@ -21,7 +21,7 @@ app.get('/user', function(req, res, next) {
 });
 ```
 
-Dieser Ansatz ist nützlich, um den Serverbetrieb in kleinere Einheiten aufzuteilen. Das führt zu einer besseren App-Struktur und der Möglichkeit, Code an verschiedenen Stellen wiederzuverwenden. Dieser Ansatz kann auch zur Validierung der Daten verwendet werden. An jedem Punkt des Middleware-Stacks kannst du die Ausführung der aktuellen Kette blockieren und die Kontrolle an Funktionen übergeben, die speziell für die Fehlerbehandlung entwickelt wurden. Oder du kannst die Kontrolle an die nächste passende Route weitergeben, um besondere Fälle zu bearbeiten. We will see how in the advanced Express section.
+Dieser Ansatz ist nützlich, um den Serverbetrieb in kleinere Einheiten aufzuteilen. Das führt zu einer besseren App-Struktur und der Möglichkeit, Code an verschiedenen Stellen wiederzuverwenden. Dieser Ansatz kann auch zur Validierung der Daten verwendet werden. An jedem Punkt des Middleware-Stacks kannst du die Ausführung der aktuellen Kette blockieren und die Kontrolle an Funktionen übergeben, die speziell für die Fehlerbehandlung entwickelt wurden. Oder du kannst die Kontrolle an die nächste passende Route weitergeben, um besondere Fälle zu bearbeiten. Wie das geht, erfährst du im Abschnitt Express für Fortgeschrittene.
 
 # --instructions--
 

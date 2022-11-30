@@ -8,11 +8,11 @@ dashedName: create-a-linear-scale-with-d3
 
 # --description--
 
-Bei den Balken- und Punktediagrammen werden die Daten direkt im SVG-Canvas dargestellt. Wäre jedoch die Höhe eines Balkens oder eines Datenpunkts größer als die SVG-Höhen- oder Breitenwerte, würde er außerhalb des SVG-Bereichs liegen.
+The bar and scatter plot charts both plotted data directly onto the SVG canvas. Wäre jedoch die Höhe eines Balkens oder eines Datenpunkts größer als die SVG-Höhen- oder Breitenwerte, würde er außerhalb des SVG-Bereichs liegen.
 
 In D3 gibt es Skalen, die bei der Darstellung von Daten helfen. `scales` are functions that tell the program how to map a set of raw data points onto the pixels of the SVG canvas.
 
-For example, say you have a 100x500-sized SVG canvas and you want to plot Gross Domestic Product (GDP) for a number of countries. Die Zahlen wären im Milliarden- oder Billionen-Dollar-Bereich. You provide D3 a type of scale to tell it how to place the large GDP values into that 100x500-sized area.
+Nehmen wir an, du hast eine SVG-Canvas der Größe 100x500 und möchtest das Bruttoinlandsprodukt (BIP) für eine Reihe von Ländern darstellen. Die Zahlen wären im Milliarden- oder Billionen-Dollar-Bereich. You provide D3 a type of scale to tell it how to place the large GDP values into that 100x500-sized area.
 
 It's unlikely you would plot raw data as-is. Before plotting it, you set the scale for your entire data set, so that the `x` and `y` values fit your canvas width and height.
 
@@ -22,7 +22,7 @@ D3 has several scale types. For a linear scale (usually used with quantitative d
 const scale = d3.scaleLinear()
 ```
 
-By default, a scale uses the identity relationship. The value of the input is the same as the value of the output. A separate challenge covers how to change this.
+Standardmäßig verwendet eine Skala die Identitätsbeziehung. The value of the input is the same as the value of the output. Wie man das ändern kann, ist Gegenstand einer separaten Aufgabenstellung.
 
 # --instructions--
 
@@ -30,13 +30,13 @@ Change the `scale` variable to create a linear scale. Then set the `output` vari
 
 # --hints--
 
-The text in the `h2` should be `50`.
+Der Text im `h2` sollte `50` sein.
 
 ```js
 assert($('h2').text() == '50');
 ```
 
-Your code should use the `scaleLinear()` method.
+Dein Code sollte die `scaleLinear()`-Methode verwenden.
 
 ```js
 assert(code.match(/\.scaleLinear/g));

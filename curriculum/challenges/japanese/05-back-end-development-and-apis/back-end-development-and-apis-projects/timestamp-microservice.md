@@ -14,13 +14,19 @@ dashedName: timestamp-microservice
 -   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp"  target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、プロジェクトのソースコードへのリンクも、`GitHub Link` フィールドへ提出してください。
+If you use Replit, follow these steps to set up the project:
 
-**注:** タイムゾーンの変換は、このプロジェクトの目的ではありません。そのため、有効な日付が送信された場合、GMT の日時として `new Date()` に解釈されると想定してください。
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+
+**Note:** Time zones conversion is not a purpose of this project, so assume all sent valid dates will be parsed with `new Date()` as GMT dates.
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供する必要があります。
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -30,7 +36,7 @@ dashedName: timestamp-microservice
 };
 ```
 
-有効な日付を持つ `/api/:date?` へのリクエストに対して、JSON オブジェクトを返し、その `unix` キーの値は入力日付を表す Unix タイムスタンプ (ミリ秒単位で、データ型は Number) の値である必要があります。
+A request to `/api/:date?` with a valid date should return a JSON object with a `unix` key that is a Unix timestamp of the input date in milliseconds (as type Number)
 
 ```js
 (getUserInput) =>
@@ -48,7 +54,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-有効な日付を持つ `/api/:date?` へのリクエストに対して、JSON オブジェクトを返し、その `utc` キーの値は入力日付を表す `Thu, 01 Jan 1970 00:00:00 GMT` 形式の文字列である必要があります。
+A request to `/api/:date?` with a valid date should return a JSON object with a `utc` key that is a string of the input date in the format: `Thu, 01 Jan 1970 00:00:00 GMT`
 
 ```js
 (getUserInput) =>
@@ -66,7 +72,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-`/api/1451001600000` へのリクエストに対して、`{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }` を返す必要があります。
+A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
 
 ```js
 (getUserInput) =>
@@ -83,7 +89,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-あなたのプロジェクトは、`new Date(date_string)` で正常に解析できる日付を処理することができます。
+Your project can handle dates that can be successfully parsed by `new Date(date_string)`
 
 ```js
 (getUserInput) =>
@@ -100,7 +106,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-入力された日付文字列が無効な場合、API は `{ error : "Invalid Date" }` という構造のオブジェクトを返します。
+If the input date string is invalid, the api returns an object having the structure `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>
@@ -114,7 +120,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-空の日付パラメータに対して、`unix` キーを持ち、現在時刻を表す JSON オブジェクトを返す必要があります。
+An empty date parameter should return the current time in a JSON object with a `unix` key
 
 ```js
 (getUserInput) =>
@@ -129,7 +135,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-空の日付パラメータに対して、`utc` キーを持ち、現在時刻を表す JSON オブジェクトを返す必要があります。
+An empty date parameter should return the current time in a JSON object with a `utc` key
 
 ```js
 (getUserInput) =>

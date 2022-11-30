@@ -23,6 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  height: 100%;
 }
 
 .codeally-frame {
@@ -53,9 +54,24 @@ body {
 }
 
 .default-layout {
-  flex: 1 0 auto;
   margin-top: var(--header-height, 0);
   background: var(--secondary-background);
+}
+
+.default-layout:only-child {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+#content-start {
+  min-height: 0;
+  height: 100%;
+}
+
+#content-start > div {
+  height: 100%;
 }
 
 h1 {
@@ -622,6 +638,20 @@ blockquote .small {
   background-color: #31708f;
   color: #d9edf7;
   border-color: #31708f;
+}
+
+.annual-donation-alert {
+  background: linear-gradient(
+      -10deg,
+      rgba(217, 237, 247, 1) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(255 215 224) 100%
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 202, 225, 1) 0%,
+      rgba(218, 234, 252, 1) 100%
+    );
 }
 
 /* gatsby 404 */

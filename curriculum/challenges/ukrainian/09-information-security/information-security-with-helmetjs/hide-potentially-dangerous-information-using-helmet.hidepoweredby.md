@@ -14,7 +14,7 @@ dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby
 
 # --hints--
 
-проміжне програмне забезпечення helmet.hidePoweredBy() необхідно правильно встановити
+Проміжне ПЗ helmet.hidePoweredBy() повинне бути встановлене правильно
 
 ```js
 (getUserInput) =>
