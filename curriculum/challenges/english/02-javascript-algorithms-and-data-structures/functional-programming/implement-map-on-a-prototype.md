@@ -28,6 +28,14 @@ const _callback = item => item * 2;
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
+`["naomi", "quincy", "camperbot"].myMap(element => element.toUpperCase())` should return `["NAOMI", "QUINCY", "CAMPERBOT"]`.
+
+```js
+const _test_s = ["naomi", "quincy", "camperbot"];
+const _callback = element => element.toUpperCase();
+assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
+```
+
 Your code should not use the `map` method.
 
 ```js

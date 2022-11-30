@@ -24,6 +24,14 @@ const _callback = item => item % 2;
 assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
 ```
 
+`["naomi", "quincy", "camperbot"].myFilter(element => element === "naomi")` should return `["naomi"]`.
+
+```js
+const _test_s = ["naomi", "quincy", "camperbot"];
+const _callback = element => element === "naomi";
+assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
+```
+
 Your code should not use the `filter` method.
 
 ```js
