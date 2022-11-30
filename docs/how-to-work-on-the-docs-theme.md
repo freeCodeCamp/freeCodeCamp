@@ -4,7 +4,7 @@
 
 To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). When your changes are merged, they will be made available automatically at the documentation site.
 
-If you add a new file to the `docs` directory evaluate if the file should also be added to the sidebar navigation, if so add link to [`_sidebar.md`](_sidebar.md). Follow the guide below on how to create an internal link.
+When adding a new file to the `docs` directory, you should evaluate if the file should also be added to the sidebar navigation. We typically create a link in the [`_sidebar.md`](_sidebar.md) file for new and independent guides. Alternatively, You may follow the instructions below on creating an internal link for supporting guides.
 
 ### How to create an internal link
 
