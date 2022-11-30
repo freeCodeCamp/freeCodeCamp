@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3b
-title: Запобігти відкриванню ненадійних HTML кодів браузером Internet Explorer за допомогою helmet.ieNoOpen()
+title: Перешкоджайте IE від відкриття ненадійного HTML за допомогою helmet.ieNoOpen()
 challengeType: 2
 forumTopicId: 301584
 dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
@@ -10,7 +10,7 @@ dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
 
 Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-Деякі веб-додатки будуть пропонувати завантажувати ненадійний HTML код. За змовчуванням деякі версії браузера Internet Explorer відкривають такі HTML файли в залежності від вашого сайту. Це означає, що ненадійна HTML сторінка може отримати несанкціонований доступ до ваших вкладок. Це проміжне програмне забезпечення встановлює заголовок X-Frame-Options, щоб не відкривати такі файли. Це дозволить користувачам Internet Explorer виконувати завантаження на надійних сайтах.
+Деякі вебзастосунки обслуговуватимуть ненадійний HTML для завантаження. Деякі версії Internet Explorer відкривають ці HTML-файли в контексті вашого сайту за замовчуванням. Через це ненадійна сторінка HTML може почати робити погані речі вашим сторінкам. Це проміжне програмне забезпечення встановлює заголовок X-Frame-Options на noopen (не відкривати). Це дозволить користувачам Internet Explorer виконувати завантаження на надійних сайтах.
 
 # --instructions--
 

@@ -28,34 +28,34 @@ dashedName: metric-imperial-converter
 - Complete the necessary routes in `/routes/api.js`
 - Copy the `sample.env` file to `.env` and set the variables appropriately
 - To run the tests uncomment `NODE_ENV=test` in your `.env` file
-- To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+- Щоб запустити тести на консолі, використайте команду `npm run test`. Щоб відкрити консоль Replit, натисніть Ctrl+Shift+P (Cmd на Mac) та введіть «open shell»
 
 Напишіть наступні тести в `tests/1_unit-tests.js`:
 
-- `convertHandler` should correctly read a whole number input.
-- `convertHandler` should correctly read a decimal number input.
-- `convertHandler` should correctly read a fractional input.
-- `convertHandler` should correctly read a fractional input with a decimal.
+- `convertHandler` повинен правильно читати введення цілого числа.
+- `convertHandler` повинен правильно читати введення десяткового числа.
+- `convertHandler` повинен правильно читати введення дробу.
+- `convertHandler` повинен правильно читати введення десяткового дробу.
 - `convertHandler` should correctly return an error on a double-fraction (i.e. `3/2/3`).
 - `convertHandler` should correctly default to a numerical input of `1` when no numerical input is provided.
 - `convertHandler` should correctly read each valid input unit.
 - `convertHandler` should correctly return an error for an invalid input unit.
 - `convertHandler` should return the correct return unit for each valid input unit.
 - `convertHandler` should correctly return the spelled-out string unit for each valid input unit.
-- `convertHandler` should correctly convert `gal` to `L`.
-- `convertHandler` should correctly convert `L` to `gal`.
-- `convertHandler` should correctly convert `mi` to `km`.
-- `convertHandler` should correctly convert `km` to `mi`.
-- `convertHandler` should correctly convert `lbs` to `kg`.
-- `convertHandler` should correctly convert `kg` to `lbs`.
+- `convertHandler` повинен правильно перетворювати `gal` у `L`.
+- `convertHandler` повинен правильно перетворювати `L` у `gal`.
+- `convertHandler` повинен правильно перетворювати `mi` у `km`.
+- `convertHandler` повинен правильно перетворювати `km` у `mi`.
+- `convertHandler` повинен правильно перетворювати `lbs` у `kg`.
+- `convertHandler` повинен правильно перетворювати `kg` у `lbs`.
 
 Напишіть наступні тести в `tests/2_functional-tests.js`:
 
-- Convert a valid input such as `10L`: `GET` request to `/api/convert`.
-- Convert an invalid input such as `32g`: `GET` request to `/api/convert`.
-- Convert an invalid number such as `3/7.2/4kg`: `GET` request to `/api/convert`.
-- Convert an invalid number AND unit such as `3/7.2/4kilomegagram`: `GET` request to `/api/convert`.
-- Convert with no number such as `kg`: `GET` request to `/api/convert`.
+- Перетворення дійсного вводу, наприклад `10L`: запит `GET` до `/api/convert`.
+- Перетворення недійсного вводу, наприклад `32g`: запит `GET` до `/api/convert`.
+- Перетворення недійсного числа, наприклад `3/7.2/4kg`: запит `GET` до `/api/convert`.
+- Перетворення недійсного числа ТА одиниці, наприклад `3/7.2/4kilomegagram`: запит `GET` до `/api/convert`.
+- Перетворення без числа, наприклад `kg`: запит `GET` до `/api/convert`.
 
 # --hints--
 
@@ -71,13 +71,13 @@ getUserInput => {
 };
 ```
 
-You can `GET` `/api/convert` with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)
+Ви можете надіслати запит `GET` до `/api/convert` з параметром, що містить прийняті число та одиницю і отримати їх перетвореними. (Підказка: розділіть вхідні дані, знайшовши індекс першого символу, що позначить початок одиниці)
 
 ```js
 
 ```
 
-You can convert `'gal'` to `'L'` and vice versa. (1 gal to 3.78541 L)
+Ви можете перетворити `'gal'` у `'L'` і навпаки. (1 гал = 3.78541 л)
 
 ```js
 async getUserInput => {
@@ -100,7 +100,7 @@ async getUserInput => {
 };
 ```
 
-You can convert `'lbs'` to `'kg'` and vice versa. (1 lbs to 0.453592 kg)
+Ви можете перетворити `'lbs'` у `'kg'` і навпаки. (1 фунт = 0.453592 кг)
 
 ```js
 async getUserInput => {
@@ -123,7 +123,7 @@ async getUserInput => {
 };
 ```
 
-You can convert `'mi'` to `'km'` and vice versa. (1 mi to 1.60934 km)
+Ви можете перетворити `'mi'` у `'km'` і навпаки. (1 миля = 1.60934 км)
 
 ```js
 async getUserInput => {
@@ -146,7 +146,7 @@ async getUserInput => {
 };
 ```
 
-All incoming units should be accepted in both upper and lower case, but should be returned in both the `initUnit` and `returnUnit` in lower case, except for liter, which should be represented as an uppercase `'L'`.
+Усі вхідні одиниці повинні прийматись в верхньому та нижньому регістрах, однак повинні повертатись в `initUnit` та `returnUnit` в нижньому регістрі; винятком є літри, які повинні бути у верхньому регістрі `'L'`.
 
 ```js
 async getUserInput => {
@@ -169,7 +169,7 @@ async getUserInput => {
 };
 ```
 
-If the unit of measurement is invalid, returned will be `'invalid unit'`.
+Якщо одиниця виміру недійсна, поверненим буде `'invalid unit'`.
 
 ```js
 async getUserInput => {
@@ -182,7 +182,7 @@ async getUserInput => {
 };
 ```
 
-If the number is invalid, returned will be `'invalid number'`.
+Якщо число недійсне, поверненим буде `'invalid number'`.
 
 ```js
 async getUserInput => {
@@ -197,7 +197,7 @@ async getUserInput => {
 };
 ```
 
-If both the unit and number are invalid, returned will be `'invalid number and unit'`.
+Якщо одиниця та число недійсні, поверненим буде `'invalid number and unit'`.
 
 ```js
 async getUserInput => {
@@ -215,7 +215,7 @@ async getUserInput => {
 };
 ```
 
-You can use fractions, decimals or both in the parameter (ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
+Ви можете використовувати дроби в параметрі (тобто 5, 1/2, 2.5/6), але якщо нічого не вказано, за замовчуванням буде 1.
 
 ```js
 async getUserInput => {
@@ -246,7 +246,7 @@ async getUserInput => {
 };
 ```
 
-Your return will consist of the `initNum`, `initUnit`, `returnNum`, `returnUnit`, and `string` spelling out units in the format `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'` with the result rounded to 5 decimals.
+Повернений об'єкт міститиме `initNum`, `initUnit`, `returnNum`, `returnUnit` та `string`, прописуючи одиниці у форматі `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'` із результатом, заокругленим до 5-ти символів після коми.
 
 ```js
 async getUserInput => {
@@ -263,7 +263,7 @@ async getUserInput => {
 };
 ```
 
-All 16 unit tests are complete and passing.
+Усі 16 модульних тестів завершено та успішно пройдено.
 
 ```js
 async getUserInput => {
