@@ -195,7 +195,7 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 
 - The sentences to be translated are always between `""`. These are dialogues or UI strings. The keywords that come before or after the dialogue are game engine control keywords and will be explained in details in subsequent rules. Please note that this first rule governs all subsequent rules listed.
 - In case of `new "..."` Don't translate the `new` keyword.
-- Prefixes like `player`, `annika`, `layla`, `marco` shouldn't be translated. Variants like `player happy`, `player @ happy` shouldn't be translated, too. These are control keywords to correctly display the character sprite in the game.
+- Prefixes like `player`, `annika`, `layla`, `marco`, and variants like `player happy` and `player @ happy` shouldn't be translated. These are control keywords to correctly display the character sprite in the game.
 - Postfixes like `nointeract` shouldn't be translated.
 - Don't translate things between `[]` and `{}`. These are variable interpolations and text tags. These must remain halfwidth parentheses `[]` and `{}` instead of their fullwidth counterparts `【】` and `「」`.
 - Don't translate the `nointeract` keyword at the end of the sentence.
