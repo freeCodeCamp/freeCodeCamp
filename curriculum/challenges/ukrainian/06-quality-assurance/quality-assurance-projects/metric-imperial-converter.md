@@ -24,10 +24,10 @@ dashedName: metric-imperial-converter
 
 # --instructions--
 
-- Complete the necessary conversion logic in `/controllers/convertHandler.js`
-- Complete the necessary routes in `/routes/api.js`
-- Copy the `sample.env` file to `.env` and set the variables appropriately
-- To run the tests uncomment `NODE_ENV=test` in your `.env` file
+- Завершіть необхідну логіку перетворення у `/controllers/convertHandler.js`
+- Завершіть необхідні маршрути у `/routes/api.js`
+- Скопіюйте файл `sample.env` до `.env` та відповідно встановіть змінні
+- Щоб провести тести, розкоментуйте `NODE_ENV=test` у своєму файлі `.env`
 - Щоб запустити тести на консолі, використайте команду `npm run test`. Щоб відкрити консоль Replit, натисніть Ctrl+Shift+P (Cmd на Mac) та введіть «open shell»
 
 Напишіть наступні тести в `tests/1_unit-tests.js`:
@@ -36,12 +36,12 @@ dashedName: metric-imperial-converter
 - `convertHandler` повинен правильно читати введення десяткового числа.
 - `convertHandler` повинен правильно читати введення дробу.
 - `convertHandler` повинен правильно читати введення десяткового дробу.
-- `convertHandler` should correctly return an error on a double-fraction (i.e. `3/2/3`).
-- `convertHandler` should correctly default to a numerical input of `1` when no numerical input is provided.
-- `convertHandler` should correctly read each valid input unit.
-- `convertHandler` should correctly return an error for an invalid input unit.
-- `convertHandler` should return the correct return unit for each valid input unit.
-- `convertHandler` should correctly return the spelled-out string unit for each valid input unit.
+- `convertHandler` повинен правильно повернути помилку при подвійному дробі (тобто `3/2/3`).
+- `convertHandler` повинен правильно приймати ввід `1` за замовчуванням, якщо нічого не введено.
+- `convertHandler` повинен правильно читати дійсні введені одиниці.
+- `convertHandler` повинен правильно повертати помилку при недійсній введеній одиниці.
+- `convertHandler` повинен повернути правильну одиницю для кожної дійсної введеної одиниці.
+- `convertHandler` повинен правильно повернути прописаний рядок для кожної дійсної введеної одиниці.
 - `convertHandler` повинен правильно перетворювати `gal` у `L`.
 - `convertHandler` повинен правильно перетворювати `L` у `gal`.
 - `convertHandler` повинен правильно перетворювати `mi` у `km`.

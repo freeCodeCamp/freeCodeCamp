@@ -28,7 +28,23 @@ const _callback = item => item * 2;
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-コードでは `map` メソッドを使用しないでください。
+`["naomi", "quincy", "camperbot"].myMap(element => element.toUpperCase())` should return `["NAOMI", "QUINCY", "CAMPERBOT"]`.
+
+```js
+const _test_s = ["naomi", "quincy", "camperbot"];
+const _callback = element => element.toUpperCase();
+assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
+```
+
+`[1, 1, 2, 5, 2].myMap((element, index, array) => array[i + 1] || array[0])` should return `[1, 2, 5, 2, 1]`.
+
+```js
+const _test_s = [1, 1, 2, 5, 2];
+const _callback = (element, index, array) => array[index + 1] || array[0];
+assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
+```
+
+Your code should not use the `map` method.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?map/g));
@@ -53,8 +69,8 @@ Array.prototype.myMap = function(callback) {
 ```js
 Array.prototype.myMap = function(callback) {
   const newArray = [];
-  for (const elem of this) {
-    newArray.push(callback(elem));
+  for (let i = 0; i < this.length; i++) {
+    newArray.push(callback(this[i], i, this));
   }
   return newArray;
 };
