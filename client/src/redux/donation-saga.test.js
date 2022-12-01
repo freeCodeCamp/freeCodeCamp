@@ -10,7 +10,7 @@ import { postChargeComplete, executeGA } from './actions';
 jest.mock('../utils/ajax');
 jest.mock('../analytics');
 
-let postChargeMockData = {
+const postChargeDataMock = {
   payload: {
     paymentProvider: 'stripe',
     paymentContext: 'donate page',
@@ -21,7 +21,7 @@ let postChargeMockData = {
   }
 };
 
-const mockEventPayload = {
+const analyticsDataMock = {
   type: 'event',
   data: {
     category: 'Donation',
@@ -32,22 +32,23 @@ const mockEventPayload = {
 };
 
 describe('donation-saga', () => {
-  it('calls postChargeStrip if Stripe', () => {
-    return expectSaga(postChargeSaga, postChargeMockData)
-      .call(postChargeStripe, postChargeMockData.payload)
+  it('calls postChargeStrip for Stripe', () => {
+    return expectSaga(postChargeSaga, postChargeDataMock)
+      .call(postChargeStripe, postChargeDataMock.payload)
       .put(postChargeComplete())
       .call(setDonationCookie)
-      .put(executeGA(mockEventPayload))
+      .put(executeGA(analyticsDataMock))
       .run();
   });
 
-  it('calls postChargeStripCard if Stripe Card', () => {
-    let stripeCardDataMock = {
-      payload: { ...postChargeMockData.payload, paymentProvider: 'stripe card' }
+  it('calls postChargeStripCard for Stripe Card', () => {
+    const stripeCardDataMock = {
+      payload: { ...postChargeDataMock.payload, paymentProvider: 'stripe card' }
     };
 
-    let stripeCardGAdata = mockEventPayload;
-    stripeCardGAdata.data.action = 'Donate Page Stripe Card Payment Submission';
+    const stripeCardAnalyticsDataMock = analyticsDataMock;
+    stripeCardAnalyticsDataMock.data.action =
+      'Donate Page Stripe Card Payment Submission';
 
     const { paymentMethodId, amount, duration } = stripeCardDataMock.payload;
     const optimizedPayload = { paymentMethodId, amount, duration };
@@ -55,17 +56,18 @@ describe('donation-saga', () => {
       .call(postChargeStripeCard, optimizedPayload)
       .put(postChargeComplete())
       .call(setDonationCookie)
-      .put(executeGA(stripeCardGAdata))
+      .put(executeGA(stripeCardAnalyticsDataMock))
       .run();
   });
 
-  it('calls addDonate with paypal if user signed in', () => {
-    let stripeCardDataMock = {
-      payload: { ...postChargeMockData.payload, paymentProvider: 'paypal' }
+  it('calls addDonate for Paypal if user signed in', () => {
+    const paypalDataMock = {
+      payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
     };
 
-    let stripeCardGAdata = mockEventPayload;
-    stripeCardGAdata.data.action = 'Donate Page Paypal Payment Submission';
+    const paypalAnalyticsDataMock = analyticsDataMock;
+    paypalAnalyticsDataMock.data.action =
+      'Donate Page Paypal Payment Submission';
 
     const storeMock = {
       app: {
@@ -73,26 +75,52 @@ describe('donation-saga', () => {
       }
     };
 
-    const { amount, duration } = stripeCardDataMock.payload;
-    return expectSaga(postChargeSaga, stripeCardDataMock)
+    const { amount, duration } = paypalDataMock.payload;
+    return expectSaga(postChargeSaga, paypalDataMock)
       .withState(storeMock)
       .call(addDonation, { amount, duration })
       .put(postChargeComplete())
       .call(setDonationCookie)
-      .put(executeGA(stripeCardGAdata))
+      .put(executeGA(paypalAnalyticsDataMock))
       .run();
   });
 
-  it('calls executeGA for patreon', () => {
-    let stripeCardDataMock = {
-      payload: { ...postChargeMockData.payload, paymentProvider: 'patreon' }
+  it('does not call addDonate for Paypal if user not signed in', () => {
+    const paypalDataMock = {
+      payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
     };
 
-    let stripeCardGAdata = mockEventPayload;
-    stripeCardGAdata.data.action = 'Donate Page Patreon Payment Redirection';
-    stripeCardGAdata.data.category = 'Donation Related';
-    return expectSaga(postChargeSaga, stripeCardDataMock)
-      .put(executeGA(stripeCardGAdata))
+    const paypalAnalyticsDataMock = analyticsDataMock;
+    paypalAnalyticsDataMock.data.action =
+      'Donate Page Paypal Payment Submission';
+
+    const storeMock = {
+      app: {}
+    };
+
+    return expectSaga(postChargeSaga, paypalDataMock)
+      .withState(storeMock)
+      .not.call.fn(addDonation)
+      .put(postChargeComplete())
+      .call(setDonationCookie)
+      .put(executeGA(paypalAnalyticsDataMock))
+      .run();
+  });
+
+  it('does not call api for Patreon', () => {
+    const patreonDataMock = {
+      payload: { ...postChargeDataMock.payload, paymentProvider: 'patreon' }
+    };
+
+    const patreonAnalyticsDataMock = analyticsDataMock;
+    patreonAnalyticsDataMock.data.action =
+      'Donate Page Patreon Payment Redirection';
+    patreonAnalyticsDataMock.data.category = 'Donation Related';
+    return expectSaga(postChargeSaga, patreonDataMock)
+      .not.call.fn(addDonation)
+      .not.call.fn(postChargeStripeCard)
+      .not.call.fn(postChargeStripe)
+      .put(executeGA(patreonAnalyticsDataMock))
       .run();
   });
 });
