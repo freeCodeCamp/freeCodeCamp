@@ -3,7 +3,8 @@ const path = require('path');
 const {
   generateChallengeCreator,
   hasEnglishSource,
-  createCommentMap
+  createCommentMap,
+  getTranslatableComments
 } = require('./getChallenges');
 
 const EXISTING_CHALLENGE_PATH = 'challenge.md';
@@ -54,6 +55,22 @@ It should be in
         MISSING_CHALLENGE_PATH
       );
       expect(sourceExists).toBe(false);
+    });
+  });
+
+  //two tests added for getTranslatableComments
+  describe('getTranslatableComments', () => {
+    const dictionaryDir = path.resolve(
+      __dirname,
+      '__fixtures__',
+      'dictionaries'
+    );
+    it('returns an array of available comments to translate', () => {
+      expect(typeof getTranslatableComments(dictionaryDir)).toBe('object');
+    });
+    it('returns no translatable comments', async () => {
+      const commentsArray = await getTranslatableComments(dictionaryDir);
+      expect(commentsArray.length).to.be.equal(0);
     });
   });
 
