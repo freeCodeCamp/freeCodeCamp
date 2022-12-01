@@ -6,7 +6,7 @@ import { trendingSchemaValidator } from '../../../client/i18n/schema/trendingSch
 import envData from '../../../config/env.json';
 const { clientLocale } = envData;
 
-const cdnUrlCreator = (lang: string) =>
+const createCdnUrl = (lang: string) =>
   `https://cdn.freecodecamp.org/universal/trending/${lang}.yaml`;
 
 (async () => {
