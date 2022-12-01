@@ -93,7 +93,8 @@ export function* postChargeSaga({
       executeGA({
         type: 'event',
         data: {
-          category: 'Donation',
+          category:
+            paymentProvider === 'patreon' ? 'Donation Related' : 'Donation',
           action: stringifyDonationEvents(paymentContext, paymentProvider),
           label: duration,
           value: amount
@@ -101,7 +102,6 @@ export function* postChargeSaga({
       })
     );
   } catch (error) {
-    console.log(error);
     const err =
       error.response && error.response.data
         ? error.response.data.error

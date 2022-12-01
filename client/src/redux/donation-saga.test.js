@@ -1,5 +1,9 @@
 import { expectSaga } from 'redux-saga-test-plan';
-import { postChargeStripe, postChargeStripeCard } from '../utils/ajax';
+import {
+  postChargeStripe,
+  postChargeStripeCard,
+  addDonation
+} from '../utils/ajax';
 import { postChargeSaga, setDonationCookie } from './donation-saga.js';
 import { postChargeComplete, executeGA } from './actions';
 
@@ -39,14 +43,7 @@ describe('donation-saga', () => {
 
   it('calls postChargeStripCard if Stripe Card', () => {
     let stripeCardDataMock = {
-      payload: {
-        paymentProvider: 'stripe card',
-        paymentContext: 'donate page',
-        amount: '500',
-        duration: 'monthly',
-        handleAuthentication: jest.fn(),
-        paymentMethodId: '123456'
-      }
+      payload: { ...postChargeMockData.payload, paymentProvider: 'stripe card' }
     };
 
     let stripeCardGAdata = mockEventPayload;
@@ -58,6 +55,43 @@ describe('donation-saga', () => {
       .call(postChargeStripeCard, optimizedPayload)
       .put(postChargeComplete())
       .call(setDonationCookie)
+      .put(executeGA(stripeCardGAdata))
+      .run();
+  });
+
+  it('calls addDonate with paypal if user signed in', () => {
+    let stripeCardDataMock = {
+      payload: { ...postChargeMockData.payload, paymentProvider: 'paypal' }
+    };
+
+    let stripeCardGAdata = mockEventPayload;
+    stripeCardGAdata.data.action = 'Donate Page Paypal Payment Submission';
+
+    const storeMock = {
+      app: {
+        appUsername: 'devuser'
+      }
+    };
+
+    const { amount, duration } = stripeCardDataMock.payload;
+    return expectSaga(postChargeSaga, stripeCardDataMock)
+      .withState(storeMock)
+      .call(addDonation, { amount, duration })
+      .put(postChargeComplete())
+      .call(setDonationCookie)
+      .put(executeGA(stripeCardGAdata))
+      .run();
+  });
+
+  it('calls executeGA for patreon', () => {
+    let stripeCardDataMock = {
+      payload: { ...postChargeMockData.payload, paymentProvider: 'patreon' }
+    };
+
+    let stripeCardGAdata = mockEventPayload;
+    stripeCardGAdata.data.action = 'Donate Page Patreon Payment Redirection';
+    stripeCardGAdata.data.category = 'Donation Related';
+    return expectSaga(postChargeSaga, stripeCardDataMock)
       .put(executeGA(stripeCardGAdata))
       .run();
   });
