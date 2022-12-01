@@ -30,7 +30,19 @@ Follow the instructions on the [official documentation](https://docs.microsoft.c
    # cleanup
    sudo apt autoremove -y
    ```
+3. Check WSL and Linux distribution installation
 
+   ```console
+   wsl --list --verbose
+   ```
+   Your output should display your linux distro and version of WSL if installed correctly
+
+   ```output
+   ~
+     NAME                   STATE           VERSION
+   * Ubuntu-20.04           Running         2
+   ```
+   
 ## Set up Git
 
 Git comes pre-installed with Ubuntu 18.04, verify your Git version with `git --version`.
