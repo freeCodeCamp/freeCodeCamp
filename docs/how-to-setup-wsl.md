@@ -42,7 +42,7 @@ Follow the instructions on the [official documentation](https://docs.microsoft.c
      NAME                   STATE           VERSION
    * Ubuntu-20.04           Running         2
    ```
-   
+
 ## Set up Git
 
 Git comes pre-installed with Ubuntu 18.04, verify your Git version with `git --version`.
@@ -108,6 +108,18 @@ Once you have configured Docker Desktop to work with WSL2, follow these steps to
 
 We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
+In your terminal, run the nvm installer like this:
+
+> [!NOTE]
+> We recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases. However, some npm packages may not be compatible with newer versions of node. NVM can allow you to use npm packages with the compatible versions of node. Check your current node version before upgrading incase you need it later to work on a project outside of freeCodeCamp and notice compatibility issues
+
+```console
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+# or
+
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
 Once installed use these commands to install and use the Node.js version as needed
 
 ```console
