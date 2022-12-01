@@ -8,7 +8,6 @@ const selectors = {
 
 const certifications = [
   '(New) Responsive Web Design',
-  'Legacy Responsive Web Design',
   'JavaScript Algorithms and Data Structures',
   'Front End Development Libraries',
   'Data Visualization',
@@ -59,7 +58,7 @@ describe('Landing page', () => {
   });
 
   it('Has links to all the certifications', function () {
-    cy.get(selectors.certifications).children().its('length').should('eq', 12);
+    cy.get(selectors.certifications).children().its('length').should('eq', 11);
     cy.wrap(certifications).each(cert => {
       cy.get(selectors.certifications).contains(cert);
     });

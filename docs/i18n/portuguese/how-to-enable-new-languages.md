@@ -49,7 +49,7 @@ Observe que a chave `download_language` precisa ser definida como código do idi
 
 Existem algumas etapas a serem seguidas para permitir que a base de código seja compilada no idioma desejado.
 
-Primeiro, visite o arquivo `config/i18n/all-langs.ts` para adicionar o idioma à lista de idiomas disponíveis e configurar os valores. Existem vários objetos aqui.
+Primeiro, visite o arquivo `config/i18n.ts` para adicionar o idioma à lista de idiomas disponíveis e configurar os valores. Existem vários objetos aqui.
 
 - `availableLangs`: tanto para o array `client` quanto para o array `curriculum`, adicione o nome do idioma. Esse valor é o que será usado no arquivo `.env` depois.
 - `auditedCerts`: adicione o nome do texto do idioma como a _chave_ e adicione um array de variáveis `SuperBlocks.{cert}` como o _valor_. Isto informa ao cliente quais certificações estão totalmente traduzidas.
@@ -57,8 +57,9 @@ Primeiro, visite o arquivo `config/i18n/all-langs.ts` para adicionar o idioma à
 - `LangNames`: esses são os nomes dos idiomas que aparecerão para a seleção no menu de navegação.
 - `LangCodes`: esses são os códigos de idiomas usados para formatar datas e números. Esses deverão ser códigos Unicode CLDR ao invés de códigos ISO.
 - `hiddenLangs`: Esses idiomas não serão exibidos no menu de navegação. Isto é usado para idiomas que ainda não estão prontos para liberação.
+- `rtlLangs`: estes são os idiomas que leem da direita para a esquerda.
 
-Como um exemplo, se você tivesse que habilitar o idioma Dothraki como seu idioma, os objetos  `all-langs.js` devem ficar assim:
+Como um exemplo, se você tivesse que habilitar o idioma Dothraki como seu idioma, os objetos `i18n.ts` devem ficar assim:
 
 ```js
 export const availableLangs = {
@@ -136,6 +137,8 @@ export enum LangCodes = {
 };
 
 export const hiddenLangs = ['dothraki'];
+
+export const rtlLangs = [''];
 ```
 
 > [!NOTE] Quando um idioma for configurado no pipeline de implantação E tiver uma instância pública de `/news` ativa, ele pode ser removido da matriz `hiddenLangs` e ser disponibilizado ao público.
@@ -214,7 +217,7 @@ Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, 
       ...
 ```
 
-Em seguida, adicione um id para o novo idioma para qualquer desafio em vídeo em um bloco auditado. Por exemplo, se `auditedCerts` em `all-langs.ts` inclui `scientific-computing-with-python` para `dothraki`, você deve adicionar uma entrada em `dothraki` em `videoLocaleIds`. O frontmatter dever ter essa aparência:
+Em seguida, adicione um id para o novo idioma para qualquer desafio em vídeo em um bloco auditado. Por exemplo, se `auditedCerts` em `i18n.ts` inclui `scientific-computing-with-python` para `dothraki`, você deve adicionar uma entrada em `dothraki` em `videoLocaleIds`. O frontmatter dever ter essa aparência:
 
 ```yml
 videoLocaleIds:
@@ -276,7 +279,7 @@ Atualize seu arquivo `.env` para usar seu novo idioma para `CLIENT_LOCALE` e `CU
 
 Quando estes arquivos estiverem no local certo, você deve poder usar `npm run develop` para ver sua versão traduzida do freeCodeCamp.
 
-> [!TIP] If you build the client in one language and then want to build it in a different language, you will need to use the command `npm run clean-and-develop` after changing the `.env` file, as Gatsby will cache the first language.
+> [!TIP] Se você fizer a build do client em um idioma e quiser fazer a build em um idioma diferente, precisará usar o comando `npm run clean-and-develop` depois de alterar o arquivo `.env`, pois o Gatsby armazenará em cache o primeiro idioma.
 
 > [!ATTENTION] Embora você possa realizar as traduções localmente para fins de teste, lembramos a todos que as traduções _não_ devem ser enviadas pelo GitHub e devem ser feitas somente pelo Crowdin. Certifique-se de reiniciar sua base de código local após realizar os testes.
 
@@ -408,4 +411,6 @@ Em seguida, faça o commit e o push de sua branch diretamente para o repositóri
 
 Por fim, abra um PR para análise.
 
-Uma vez que os PRs para o repositório do CDN e de News tenham sido aprovados, eles podem ser mesclados. A implantação será realizada posteriormente pelos membros da equipe.
+Uma vez que os PRs para o repositório do CDN e de News tenham sido aprovados, eles podem ser mesclados.
+
+> [!NOTE] A implantação será realizada posteriormente pelos membros da equipe. Aqui temos uma amostra de PR: [freeCodeCamp/news#485](https://github.com/freeCodeCamp/news/pull/485). Nela, vemos como a equipe faz isso. Mais detalhes estão disponíveis na [Wiki da equipe](https://staff-wiki.freecodecamp.org/docs/flight-manuals/news-instances#jamstack---news--assets).

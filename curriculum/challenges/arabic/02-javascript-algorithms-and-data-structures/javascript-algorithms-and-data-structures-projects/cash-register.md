@@ -1,6 +1,6 @@
 ---
 id: aa2e6f85cab2ab736c9a9b24
-title: ماكينة تسجيل المدفوعات النقدية
+title: Cash Register
 challengeType: 5
 forumTopicId: 16012
 dashedName: cash-register

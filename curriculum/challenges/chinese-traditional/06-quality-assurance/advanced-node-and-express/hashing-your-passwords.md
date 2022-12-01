@@ -12,9 +12,9 @@ dashedName: hashing-your-passwords
 
 `bcrypt@~5.0.0` 已被添加爲依賴項，在你的服務器中請求它。 你需要在兩個步驟中使用哈希運算：註冊和保存新賬戶，以及登錄時檢查密碼是否正確。
 
-目前處理註冊的路由中，我們是這樣把密碼添加到數據庫的：`password: req.body.password`。 保存哈希值的一個簡單方式是在數據庫邏輯中添加 `const hash = bcrypt.hashSync(req.body.password, 12);`，然後把 `req.body.password` 替換爲 `password: hash`。
+Currently on your registration route, you insert a user's plaintext password into the database like so: `password: req.body.password`. Hash the passwords instead by adding the following before your database logic: `const hash = bcrypt.hashSync(req.body.password, 12);`, and replacing the `req.body.password` in the database saving with just `password: hash`.
 
-最後，在驗證邏輯中，我們已經有這樣一段代碼執行檢查：`if (password !== user.password) { return done(null, false); }`。 現在存儲的密碼 `user.password` 已經是哈希值了。 在對現有代碼進行修改前，注意目前的語句是如何檢查如果密碼**不**匹配，就返回未認證的。 牢記這一點，你的代碼應該是如下，檢查輸入的密碼是否與哈希相對照：
+On your authentication strategy, you check for the following in your code before completing the process: `if (password !== user.password) return done(null, false);`. 現在存儲的密碼 `user.password` 已經是哈希值了。 在對現有代碼進行修改前，注意目前的語句是如何檢查如果密碼**不**匹配，就返回未認證的。 With this in mind, change that code to look as follows to properly check the password entered against the hash:
 
 ```js
 if (!bcrypt.compareSync(password, user.password)) { 
@@ -22,57 +22,50 @@ if (!bcrypt.compareSync(password, user.password)) {
 }
 ```
 
-當你需要存儲密碼時，這樣做可以有效地提升網站的安全性。
+That is all it takes to implement one of the most important security features when you have to store passwords.
 
-完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564" target="_blank" rel="noopener noreferrer nofollow">查看已執行項目的當前進度</a>。
+完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#hashing-your-passwords-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 應存在 BCrypt 依賴。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'bcrypt',
-        'Your project should list "bcrypt" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json()
+  assert.property(
+    packJson.dependencies,
+    'bcrypt',
+    'Your project should list "bcrypt" as a dependency'
   );
+}
 ```
 
 應正確地引入和調用 BCrypt。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require.*("|')bcrypt\1/gi,
-        'You should have required bcrypt'
-      );
-      assert.match(
-        data,
-        /bcrypt.hashSync/gi,
-        'You should use hash the password in the registration'
-      );
-      assert.match(
-        data,
-        /bcrypt.compareSync/gi,
-        'You should compare the password to the hash in your strategy'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require.*("|')bcrypt\1/gi,
+    'You should have required bcrypt'
   );
+  assert.match(
+    data,
+    /bcrypt.hashSync/gi,
+    'You should use hash the password in the registration'
+  );
+  assert.match(
+    data,
+    /bcrypt.compareSync/gi,
+    'You should compare the password to the hash in your strategy'
+  );
+}
 ```
 
 # --solutions--

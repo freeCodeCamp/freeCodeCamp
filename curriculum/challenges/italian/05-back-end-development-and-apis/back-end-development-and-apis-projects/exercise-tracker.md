@@ -14,6 +14,12 @@ Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: 
 -   Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare il tuo progetto.
 -   Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
+Se utilizzi Replit, segui questi passaggi per impostare il progetto:
+
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
+
 Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
 
 # --instructions--
@@ -56,11 +62,11 @@ Log:
 }
 ```
 
-**Suggerimento:** Per la prorpietà `date`, puoi usare il metodo `toDateString` della API `Date` per ottenere l'output previsto.
+**Suggerimento:** Per la proprietà `date`, puoi usare il metodo `toDateString` della API `Date` per ottenere l'output previsto.
 
 # --hints--
 
-È necessario fornire il proprio progetto, non l'URL di esempio.
+Dovresti inviare il tuo progetto, non l'URL di esempio.
 
 ```js
 (getUserInput) => {
@@ -136,7 +142,7 @@ async(getUserInput) => {
 };
 ```
 
-Ogni elemento nell'array restituito da `GET /api/users` è un oggetto contenete le proprietà `username` e `_id` dell'utente.
+Ogni elemento nell'array restituito da `GET /api/users` è un oggetto contenente le proprietà `username` e `_id` dell'utente.
 
 ```js
 async(getUserInput) => {
@@ -156,7 +162,7 @@ async(getUserInput) => {
 };
 ```
 
-Puoi fare una richiesta `POST` a `/api/users/:_id/exercises` con dati `description`, `duration`, e facoltativamente `date`. Se nessuna data è fornita, la data corrente verrà usata.
+Puoi fare una richiesta `POST` a `/api/users/:_id/exercises` con dati `description`, `duration`, e facoltativamente `date`. Se nessuna data è fornita, verrà usata la data corrente.
 
 ```js
 async (getUserInput) => {
@@ -190,7 +196,7 @@ async (getUserInput) => {
 };
 ```
 
-La risposta restituita da `POST /api/users/:_id/exercises` sarà l'oggetto dell'utente con un campo esercizi aggiutivo.
+La risposta restituita da `POST /api/users/:_id/exercises` sarà l'oggetto dell'utente con i campi esercizio aggiunti.
 
 ```js
 async (getUserInput) => {

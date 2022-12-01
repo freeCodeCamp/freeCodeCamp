@@ -10,11 +10,16 @@ dashedName: page-view-time-series-visualizer
 
 你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 我们仍在开发 Python 课程的交互式教学部分。 目前，你可以在 freeCodeCamp.org 的 YouTube 频道中通过视频学习到这个项目相关的所有知识
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">给所有人的 Python 课程</a>（14 小时）
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">如何使用 Python Pandas 分析数据</a>（10 小时）
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -22,11 +27,11 @@ dashedName: page-view-time-series-visualizer
 
 使用数据完成以下任务：
 
-- 使用 Pandas 从 “fcc-forum-pageviews.csv” 导入数据。 将索引设置为 `date` 列。
-- 通过过滤掉页面浏览量位于数据集前 2.5% 或数据集后 2.5% 的日期来清理数据。
-- 创建一个 `draw_line_plot` 函数，该函数使用 Matplotlib 绘制类似于“examples/Figure_1.png”的折线图。 标题应为 `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`。 x 轴上的标签应为 `Date`，y 轴上的标签应为 `Page Views`。
-- 创建一个 `draw_bar_plot` 函数，用于绘制类似于“examples/Figure_2.png”的条形图。 它应该显示按年份分组的每个月的平均每日页面浏览量。 图例应显示月份标签并具有 `Months` 标题。 在图表上，x 轴上的标签应为 `Years`，y 轴上的标签应为 `Average Page Views`。
-- 创建一个 `draw_box_plot` 函数，该函数使用 Seaborn 绘制两个相邻的箱形图，类似于“examples/Figure_3.png”。 这些箱线图应显示值在给定年份或月份内的分布情况以及随时间推移的比较情况。 第一个图表的标题应为 `Year-wise Box Plot (Trend)`，第二个图表的标题应为 `Month-wise Box Plot (Seasonality)`。 确保底部的月份标签从 `Jan` 开始，并且 x 和 y 轴标记正确。 样板文件包括准备数据的命令。
+- Use Pandas to import the data from "fcc-forum-pageviews.csv". Set the index to the `date` column.
+- Clean the data by filtering out days when the page views were in the top 2.5% of the dataset or bottom 2.5% of the dataset.
+- Create a `draw_line_plot` function that uses Matplotlib to draw a line chart similar to "examples/Figure_1.png". The title should be `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`. The label on the x axis should be `Date` and the label on the y axis should be `Page Views`.
+- Create a `draw_bar_plot` function that draws a bar chart similar to "examples/Figure_2.png". It should show average daily page views for each month grouped by year. The legend should show month labels and have a title of `Months`. On the chart, the label on the x axis should be `Years` and the label on the y axis should be `Average Page Views`.
+- Create a `draw_box_plot` function that uses Seaborn to draw two adjacent box plots similar to "examples/Figure_3.png". These box plots should show how the values are distributed within a given year or month and how it compares over time. The title of the first chart should be `Year-wise Box Plot (Trend)` and the title of the second chart should be `Month-wise Box Plot (Seasonality)`. Make sure the month labels on bottom start at `Jan` and the x and y axis are labeled correctly. The boilerplate includes commands to prepare the data.
 
 对于每个图表，请确保使用数据框的副本。 单元测试是在 `test_module.py` 下为你编写的。
 

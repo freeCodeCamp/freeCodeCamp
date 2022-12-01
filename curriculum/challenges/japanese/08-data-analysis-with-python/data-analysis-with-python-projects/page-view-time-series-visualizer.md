@@ -10,11 +10,16 @@ dashedName: page-view-time-series-visualizer
 
 <a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用して取り組んでください</a>。
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">「みんなで Python」ビデオコース</a> (14 時間)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">Python Pandas でデータを分析する方法</a> (10 時間)
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -22,11 +27,11 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 
 データを使用して、次のタスクを完了してください。
 
-- Pandas を使用して "fcc-forum-pageviews.csv" からデータをインポートします。 Set the index to the `date` column.
-- データをクリーニングするため、ページビュー数がデータセットの上位 2.5% または下位 2.5% となった日を除外します。
-- `draw_line_plot` 関数を作成します。この関数は、Matplotlib を使用して "examples/Figure_1.png" に示すような折れ線グラフを描きます。 The title should be `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`. The label on the x axis should be `Date` and the label on the y axis should be `Page Views`.
-- `draw_bar_plot` 関数を作成します。この関数は "examples/Figure_2.png" に示すような棒グラフを描きます。 月ごとの 1 日の平均ページビュー数を表示し、年ごとにグループ化する必要があります。 The legend should show month labels and have a title of `Months`. On the chart, the label on the x axis should be `Years` and the label on the y axis should be `Average Page Views`.
-- `draw_box_plot` 関数を作成します。この関数は、Seaborn を使用して "examples/Figure_3.png" に示すような 2 つの隣接するボックスプロットを描きます。 これらのボックスプロットでは、特定の年または月の中で値がどのように分布しているかを示し、経時的に比較できるようにする必要があります。 The title of the first chart should be `Year-wise Box Plot (Trend)` and the title of the second chart should be `Month-wise Box Plot (Seasonality)`. Make sure the month labels on bottom start at `Jan` and the x and y axis are labeled correctly. ボイラープレートには、データを準備するコマンドが含まれています。
+- Use Pandas to import the data from "fcc-forum-pageviews.csv". Set the index to the `date` column.
+- Clean the data by filtering out days when the page views were in the top 2.5% of the dataset or bottom 2.5% of the dataset.
+- Create a `draw_line_plot` function that uses Matplotlib to draw a line chart similar to "examples/Figure_1.png". The title should be `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`. The label on the x axis should be `Date` and the label on the y axis should be `Page Views`.
+- Create a `draw_bar_plot` function that draws a bar chart similar to "examples/Figure_2.png". It should show average daily page views for each month grouped by year. The legend should show month labels and have a title of `Months`. On the chart, the label on the x axis should be `Years` and the label on the y axis should be `Average Page Views`.
+- Create a `draw_box_plot` function that uses Seaborn to draw two adjacent box plots similar to "examples/Figure_3.png". These box plots should show how the values are distributed within a given year or month and how it compares over time. The title of the first chart should be `Year-wise Box Plot (Trend)` and the title of the second chart should be `Month-wise Box Plot (Seasonality)`. Make sure the month labels on bottom start at `Jan` and the x and y axis are labeled correctly. The boilerplate includes commands to prepare the data.
 
 グラフごとに、必ずデータフレームのコピーを使用してください。 `test_module.py` の下に単体テストが記述してあります。
 
@@ -46,7 +51,7 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 
 # --hints--
 
-すべての Python テストに合格する必要があります。
+すべての Python テストが成功する必要があります。
 
 ```js
 

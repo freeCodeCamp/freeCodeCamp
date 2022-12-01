@@ -15,16 +15,9 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
       </h1>
       <svg
         aria-label="icons.passed"
-        height="50"
-        style={
-          Object {
-            "height": "15px",
-            "marginLeft": "7px",
-            "width": "15px",
-          }
-        }
+        height="15"
         viewBox="0 0 200 200"
-        width="50"
+        width="15"
         xmlns="http://www.w3.org/2000/svg"
       >
         <g

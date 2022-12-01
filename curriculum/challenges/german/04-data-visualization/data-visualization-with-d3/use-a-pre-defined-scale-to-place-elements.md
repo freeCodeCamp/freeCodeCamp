@@ -27,7 +27,7 @@ For the `text` elements, apply the scales to set the `x` and `y` attributes. The
 
 # --hints--
 
-Your code should have 10 `circle` elements.
+Dein Code sollte 10 `circle`-Elemente enthalten.
 
 ```js
 assert($('circle').length == 10);
@@ -133,7 +133,7 @@ assert(
 );
 ```
 
-Your code should have 10 `text` elements.
+Dein Code sollte 10 `text`-Elemente enthalten.
 
 ```js
 assert($('text').length == 10);

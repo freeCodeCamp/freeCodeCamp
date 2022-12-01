@@ -1,13 +1,13 @@
 ---
 id: 60ffe7d8aae62c05bcc9e7eb
-title: ステップ 56
+title: ステップ 57
 challengeType: 0
-dashedName: step-56
+dashedName: step-57
 ---
 
 # --description--
 
-With a `display` of `block` the submit button sits flush against the left edge of its parent.
+`display` を `block` に設定すると、送信ボタンは親要素の左端に表示されます。
 
 `form` を中央揃えにする際に使ったのとテクニックを使って、送信ボタンを中央揃えにしてください。
 
@@ -41,7 +41,7 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
   <body>
     <h1>Registration Form</h1>
     <p>Please fill out this form with the required information</p>
-    <form action='https://register-demo.freecodecamp.org'>
+    <form method="post" action='https://register-demo.freecodecamp.org'>
       <fieldset>
         <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
         <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>

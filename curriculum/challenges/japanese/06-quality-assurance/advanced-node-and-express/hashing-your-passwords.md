@@ -12,9 +12,9 @@ dashedName: hashing-your-passwords
 
 すでに `bcrypt@~5.0.0` が依存関係として追加されているので、サーバーで require します。 2 つの重要な箇所でハッシュを処理する必要があります。1 つは、新しいアカウントの登録/保存を処理する箇所で、もう 1 つは、ログイン時にパスワードが正しいことを確認する箇所です。
 
-現在の登録ルート上では、`password: req.body.password` のように、ユーザーのパスワードをデータベースへ挿入しています。 この代わりにハッシュの保存を実装する簡単な方法として、データベース ロジックの前に `const hash = bcrypt.hashSync(req.body.password, 12);` を追加し、データベースに保存する `req.body.password` を `password: hash` に置き換えることができます。
+Currently on your registration route, you insert a user's plaintext password into the database like so: `password: req.body.password`. Hash the passwords instead by adding the following before your database logic: `const hash = bcrypt.hashSync(req.body.password, 12);`, and replacing the `req.body.password` in the database saving with just `password: hash`.
 
-さらに認証ストラテジーでは、プロセスを完了する前のコードで `if (password !== user.password) { return done(null, false); }` のチェックを実行します。 以上の変更を加えると、`user.password` がハッシュになります。 既存のコードに変更を加える前に、ステートメントではパスワードが**一致しない**かどうかをチェックし、一致しない場合に非認証を返していることに注目してください。 上記を考慮するとコードは次のようになり、ハッシュに対して入力されたパスワードを適切にチェックします。
+On your authentication strategy, you check for the following in your code before completing the process: `if (password !== user.password) return done(null, false);`. 以上の変更を加えると、`user.password` がハッシュになります。 既存のコードに変更を加える前に、ステートメントではパスワードが**一致しない**かどうかをチェックし、一致しない場合に非認証を返していることに注目してください。 With this in mind, change that code to look as follows to properly check the password entered against the hash:
 
 ```js
 if (!bcrypt.compareSync(password, user.password)) { 
@@ -22,57 +22,50 @@ if (!bcrypt.compareSync(password, user.password)) {
 }
 ```
 
-これで、パスワードを保存する必要がある場合に、最も重要なセキュリティ機能の1つを実装できます！
+That is all it takes to implement one of the most important security features when you have to store passwords.
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
+正しいと思ったら、ページを送信してください。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#hashing-your-passwords-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 BCrypt を依存関係にする必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'bcrypt',
-        'Your project should list "bcrypt" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json()
+  assert.property(
+    packJson.dependencies,
+    'bcrypt',
+    'Your project should list "bcrypt" as a dependency'
   );
+}
 ```
 
 BCrypt を正しく require して実装する必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require.*("|')bcrypt\1/gi,
-        'You should have required bcrypt'
-      );
-      assert.match(
-        data,
-        /bcrypt.hashSync/gi,
-        'You should use hash the password in the registration'
-      );
-      assert.match(
-        data,
-        /bcrypt.compareSync/gi,
-        'You should compare the password to the hash in your strategy'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require.*("|')bcrypt\1/gi,
+    'You should have required bcrypt'
   );
+  assert.match(
+    data,
+    /bcrypt.hashSync/gi,
+    'You should use hash the password in the registration'
+  );
+  assert.match(
+    data,
+    /bcrypt.compareSync/gi,
+    'You should compare the password to the hash in your strategy'
+  );
+}
 ```
 
 # --solutions--

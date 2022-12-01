@@ -4,51 +4,51 @@
 
 ## Повідомлення про вразливість
 
-> [!NOTE] Якщо ви вважаєте, що знайшли вразливість, **будь ласка, повідомте про це**. Не створюйте обговорення на GitHub з питань безпеки. Натомість слідуйте цій інструкції.
+> [!NOTE] Якщо ви вважаєте, що знайшли вразливість, **будь ласка, повідомте про це**. Не створюйте завдань на GitHub щодо питань безпеки. Натомість слідуйте цій інструкції.
 
 ### Настанови
 
 Ми цінуємо відповідальне розкриття інформації, що може вплинути на цілісність наших платформ та користувачів. В інтересах збереження часу ми просимо вас повідомити про вразливість, враховуючи наступне:
 
-1. Ensure that you are using the **latest**, **stable**, and **updated** versions of the Operating System and Web Browser(s) available to you on your machine.
-2. We consider using tools & online utilities to report issues with SPF & DKIM configs, SSL Server tests, etc., in the category of ["beg bounties"](https://www.troyhunt.com/beg-bounties) and are unable to respond to these reports.
-3. While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](security-hall-of-fame.md) list, provided the reports are not low-effort.
+1. Переконайтесь, що використовуєте **найновіші**, **стабільні** та **оновлені** версії операційної системи та веббраузера, доступних на вашій машині.
+2. Ми відносимо звіти, для яких використовувались інструменти та утиліти про повідомлення проблеми із конфігурацією SPF та DKIM, тестами SSL тощо, до категорії [«випрошування щедрот»](https://www.troyhunt.com/beg-bounties) та не відповідаємо на них.
+3. Поки ми не пропонуємо жодних винагород, ми будемо раді розмістити ваше ім'я у нашому списку [Зали слави](security-hall-of-fame.md), при умові, що звіти забрали чимало зусиль.
 
-### Reporting
+### Звітність
 
-After confirming the above guidelines, please feel free to send an email to `possible-security-issue [at] freecodecamp.org`. You can also send us a PGP encrypted message at `flowcrypt.com/me/freecodecamp`.
+Після підтвердження вищезгаданих настанов, будь ласка, напишіть на `possible-security-issue [at] freecodecamp.org`. Також ви можете надіслати PGP-зашифроване повідомлення на `flowcrypt.com/me/freecodecamp`.
 
-Once you report a vulnerability, we will look into it and ensure that it is not a false positive. If we need to clarify any details, we will get back to you. You can submit separate reports for each issue you find. Please note that we will not be able to respond to any issues that we think are outside the guidelines.
+Як тільки ви повідомите про вразливість, ми розглянемо та впевнимось, що вона не хибно позитивна. Якщо нам необхідно прояснити будь-яку інформацію, то ми зв'яжемося з вами. Ви можете надіслати окремі звіти для кожної знайденої вами проблеми. Зверніть увагу, що ми не можемо відповісти на проблеми, які, на нашу думку, не входять до настанов.
 
-## Platforms & Codebases
+## Платформи та кодові бази
 
-Here is a list of the platforms and codebases we are accepting reports for:
+Ось перелік платформ та кодових баз, на які ми приймаємо звіти:
 
-### Learn Platform
+### Платформа для навчання
 
-| Version     | Branch         | Supported | Website active           |
-| ----------- | -------------- | --------- | ------------------------ |
-| production  | `prod-current` | Yes       | `freecodecamp.org/learn` |
-| staging     | `prod-staging` | Yes       | `freecodecamp.dev/learn` |
-| development | `main`         | No        |                          |
+| Версія          | Гілка          | Підтримується | Актив вебсайту           |
+| --------------- | -------------- | ------------- | ------------------------ |
+| кінцева версія  | `prod-current` | Так           | `freecodecamp.org/learn` |
+| проміжна версія | `prod-staging` | Так           | `freecodecamp.dev/learn` |
+| розробка        | `main`         | Ні            |                          |
 
-### Publication Platform
+### Платформа для публікацій
 
-| Version    | Supported | Website active                           |
-| ---------- | --------- | ---------------------------------------- |
-| production | Yes       | `freecodecamp.org/news`                  |
-| localized  | Yes       | `freecodecamp.org/<language>/news` |
+| Версія              | Підтримується | Актив вебсайту                           |
+| ------------------- | ------------- | ---------------------------------------- |
+| кінцева версія      | Так           | `freecodecamp.org/news`                  |
+| локалізована версія | Так           | `freecodecamp.org/<language>/news` |
 
-### Mobile App
+### Мобільний додаток
 
-| Version    | Supported | Website active                                                   |
-| ---------- | --------- | ---------------------------------------------------------------- |
-| production | Yes       | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
+| Версія         | Підтримується | Актив вебсайту                                                   |
+| -------------- | ------------- | ---------------------------------------------------------------- |
+| кінцева версія | Так           | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
 
-### Other Platforms
+### Інші платформи
 
-Apart from the above, we are also accepting reports for repositories hosted on GitHub under the freeCodeCamp organization.
+Крім вищезазначеного, ми також приймаємо звіти для репозиторіїв, розміщених на GitHub під організацією freeCodeCamp.
 
-### Other Self-hosted Applications
+### Інші програми із самостійним розміщенням
 
-We self-host some of our platforms using open-source software like Ghost & Discourse. If you are reporting a vulnerability, please ensure that it is not a bug in the upstream software.
+Ми самостійно розміщуємо деякі з наших платформ, використовуючи програмне забезпечення із відкритим кодом, наприклад Ghost та Discourse. Перш ніж повідомити про вразливість, будь ласка, переконайтеся, що помилка не належить до програмного забезпечення.

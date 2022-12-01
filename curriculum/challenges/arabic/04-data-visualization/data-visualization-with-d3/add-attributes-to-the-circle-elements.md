@@ -1,6 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bd8
-title: Add Attributes to the Circle Elements
+title: أضف سمات (Attributes) إلى عناصر Circle
 challengeType: 6
 forumTopicId: 301471
 dashedName: add-attributes-to-the-circle-elements
@@ -8,13 +8,13 @@ dashedName: add-attributes-to-the-circle-elements
 
 # --description--
 
-The last challenge created the `circle` elements for each point in the `dataset`, and appended them to the SVG canvas. But D3 needs more information about the position and size of each `circle` to display them correctly.
+أنشئت في التحدي السابق عناصر `circle` لكل نقطة في `dataset`، وربطهم بلوحة (canvas) في SVG. لكن D3 يحتاج إلى مزيد من المعلومات حول موضع (position) وحجم (size) كل `circle` لعرضها بشكل صحيح.
 
-A `circle` in SVG has three main attributes. The `cx` and `cy` attributes are the coordinates. They tell D3 where to position the *center* of the shape on the SVG canvas. The radius (`r` attribute) gives the size of the `circle`.
+لدي `circle` في SVG ثلاث سمات (attributes) رئيسية. تكون السمات (attributes) المسمى `cx` و `cy` إحداثيات. ويخبروا D3 أين يضع (position) *مركز (center)* للشكل على اللوحة (canvas) من SVG. تغير سمة (attribute) نصف قطر (radius) (تكتب مثل: `r`) يأثر على حجم `circle`.
 
-Just like the `rect` `y` coordinate, the `cy` attribute for a `circle` is measured from the top of the SVG canvas, not from the bottom.
+مثل مقياس الإحداثيات `y` داخل `rect`، تقاس `cy` داخل `circle` من الجزء العلوي للوحة (canvas) في SVG، ليس من الأسفل.
 
-All three attributes can use a callback function to set their values dynamically. Remember that all methods chained after `data(dataset)` run once per item in `dataset`. The `d` parameter in the callback function refers to the current item in `dataset`, which is an array for each point. You use bracket notation, like `d[0]`, to access the values in that array.
+تقدر السمات (attributes) الثلاث جميعها استخدام وظيفة تعيد تفعيل (callback function) لتحديد قيمها بشكل ديناميكي. تذكر أن جميع الطرق (methods) مرتبطة بوظيفة `data(dataset)` تفعّل مرة واحدة لكل عنصر في `dataset`. The `d` parameter in the callback function refers to the current item in `dataset`, which is an array for each point. You use bracket notation, like `d[0]`, to access the values in that array.
 
 # --instructions--
 

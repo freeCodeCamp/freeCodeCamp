@@ -10,6 +10,11 @@ dashedName: polygon-area-calculator
 
 Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
 
+-   Comece importando o projeto no Replit.
+-   Em seguida, você verá uma janela `.replit`.
+-   Selecione `Use run command` e clique no botão `Done`.
+
+
 # --instructions--
 
 Neste projeto, você usará programação orientada a objetos para criar a classe Rectangle, para um retângulo, e a classe Square, para um quadrado. A classe Square deve ser uma subclasse da classe Rectangle e herdar métodos e atributos.

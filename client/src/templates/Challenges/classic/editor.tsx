@@ -446,6 +446,12 @@ const Editor = (props: EditorProps): JSX.Element => {
         newLine.run();
       }
     );
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      '-actions.find',
+      null,
+      () => {}
+    );
     /* eslint-enable */
     editor.addAction({
       id: 'execute-challenge',

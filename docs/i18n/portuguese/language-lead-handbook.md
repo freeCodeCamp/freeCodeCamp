@@ -102,37 +102,37 @@ Você pode converter de um formato para o outro cuidadosamente, alterando-o manu
 
 > [!TIP] Um novo fluxo de trabalho está sendo trabalhado. Será preciso alterar em apenas um lugar no futuro.
 
-## How to translate articles in the footer links
+## Como traduzir os artigos dos links de rodapé
 
-There are some links listed at the bottom of the footer (About, Alumni Network, Open Source etc.) and some of them can be translated into your language in the same way as other articles.
+Existem alguns links listados no final do rodapé (Sobre, Rede de ex-alunos, Código aberto etc.) e alguns deles podem ser traduzidos para seu idioma do mesmo modo que os outros artigos.
 
-Articles that can be translated:
+Artigos que podem ser traduzidos:
 
-- About
-- Support
-- Academic Honesty
-- Code of Conduct
+- Sobre
+- Suporte
+- Honestidade acadêmica
+- Código de conduta
 
-The following articles should **not** be translated:
+Os seguintes artigos **não** devem ser traduzidos:
 
-- Shop
-- Sponsors
-- Privacy Policy
-- Terms of Service
-- Copyright Policy
+- Loja
+- Patrocinadores
+- Política de privacidade
+- Termos de serviço
+- Política de direitos autorais
 
-The following links are pointing to external sites and cannot be translated:
+Os links a seguir estão apontando para sites externos e não podem ser traduzidos:
 
-- Alumni Network
-- Open Source
+- Rede de ex-alunos
+- Código aberto
 
-### Change the footer links in the news
+### Alterações nos links de rodapé do editorial
 
-Once you have translated and published the articles listed as "can be translated" above, you can update the links in the footer for `/news` by editing the file at `news/config/i18n/locales/<your language>/links.json` in the [freeCodeCamp/news](https://github.com/freeCodeCamp/news) repository.
+Depois de ter traduzido e publicado os artigos listados como "podem ser traduzidos" acima, você poderá atualizar os links no rodapé de `/news` editando o arquivo `news/config/i18n/locales/<your language>/links.json` no repositório [freeCodeCamp/news](https://github.com/freeCodeCamp/news).
 
-> [!NOTE] Pull requests to this repository are currently limited to staff only. If you want to update this file, ask someone on the staff team for help.
+> [!NOTE] As solicitações de pull request para este repositório estão atualmente limitadas apenas à equipe. Se quiser atualizar este arquivo, peça ajuda a alguém da equipe.
 
-Update the following part in the file:
+Atualize a seguinte parte do arquivo:
 
 ```json
 {
@@ -146,13 +146,13 @@ Update the following part in the file:
 }
 ```
 
-### Change the footer links in the curriculum
+### Alterações nos links de rodapé do curr[iculo
 
-When you have translated and published the articles listed as "can be translated" above, as well as when the curriculum in your language is ready for launch, you can update the links in the footer for `/learn` by editing the file at `client/i18n/locales/<your language>/links.json` in the [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) repository.
+Depois de ter traduzido e publicado os artigos listados como "podem ser traduzidos" acima e quando o curr[iculo em seu idioma estiver pronto para o lançamento, você poderá atualizar os links no rodapé de `/learn` editando o arquivo `news/config/i18n/locales/<your language>/links.json` no repositório [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp).
 
-> [!WARNING] Only "About", "Support", "Academic Honesty", and "Code of Conduct" can be translated. Leave other URLs unchanged.
+> [!WARNING] Apenas "Sobre", "Suporte", "Honestidade acadêmica" e "Código de conduta" podem ser traduzidos. Deixar os outros URLs inalterados.
 
-Update the following part in the file:
+Atualize a seguinte parte do arquivo:
 
 ```json
 {
