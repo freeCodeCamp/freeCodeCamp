@@ -8,31 +8,31 @@ dashedName: reverse-a-string
 
 # --description--
 
-Reverse the provided string and return the reversed string.
+反轉提供的字符串並返回反轉後的字符串。
 
-For example, `"hello"` should become `"olleh"`.
+例如， `"hello"` 應該變成 `"olleh"`。
 
 # --hints--
 
-`reverseString("hello")` should return a string.
+`reverseString("hello")` 應返回一個字符串。
 
 ```js
 assert(typeof reverseString('hello') === 'string');
 ```
 
-`reverseString("hello")` should return the string `olleh`.
+`reverseString("hello")` 應返回 `olleh`。
 
 ```js
 assert(reverseString('hello') === 'olleh');
 ```
 
-`reverseString("Howdy")` should return the string `ydwoH`.
+`reverseString("Howdy")` 應返回 `ydwoH`。
 
 ```js
 assert(reverseString('Howdy') === 'ydwoH');
 ```
 
-`reverseString("Greetings from Earth")` should return the string `htraE morf sgniteerG`.
+`reverseString("Greetings from Earth")` 應返回 `htraE morf sgniteerG`。
 
 ```js
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');

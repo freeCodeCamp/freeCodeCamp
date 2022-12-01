@@ -1,6 +1,6 @@
 ---
 id: 58a25bcef9fc0f352b528e7c
-title: Розуміння функції BCrypt
+title: Розуміння хешів BCrypt
 challengeType: 2
 forumTopicId: 301586
 dashedName: understand-bcrypt-hashes
@@ -8,23 +8,23 @@ dashedName: understand-bcrypt-hashes
 
 # --description--
 
-У наступних завданнях ви будете працювати з новим початковим проєктом, який відрізняється від попереднього. You can find the new starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or clone it from <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+У наступних завданнях ви будете працювати з новим початковим проєктом, який відрізняється від попереднього. Ви можете знайти новий початковий проєкт на <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонувати його з <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-Функція BCrypt відзначається своєю надійністю. Хеш - це, по суті, "відбиток" початкових даних, який завжди лишається унікальним. Така функція виконується шляхом введення початкових даних в алгоритм і виведення фіксованого результату довжини. Щоб ускладнити процес і зробити його безпечнішим, ви можете застосувати випадково згенерований модифікатор *salt* для хешу. Випадкова генерація хешу включає в себе додавання випадкових даних до початкових даних перед процесом хешування, що ускладнює крадіжку хешу.
+Хеші BCrypt відзначаються своєю надійністю. Хеш – це «відбиток» початкових даних, який завжди унікальний. Така функція виконується шляхом введення початкових даних в алгоритм і виведення фіксованого результату довжини. Щоб ускладнити процес і зробити його безпечнішим, можна *посолити* свій хеш. Соління хешу – це додавання випадкових даних до початкових даних перед процесом хешування, що ускладнює злам хешу.
 
-BCrypt hashes will always look like `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` which does have a structure. Перший невеликий біт даних `$2a` визначає, який алгоритм хешу був використаний. Наступна частина `$13` визначає *cost*. Cost показує наскільки важко вичислити хеш. Цей елемент розміщений на логарифмічній шкалі 2^cost і визначає скільки разів дані проходять крізь алгоритм хешування. For example, at a cost of 10 you are able to hash 10 passwords a second on an average computer, however at a cost of 15 it takes 3 seconds per hash... and to take it further, at a cost of 31 it would take multiple days to complete a hash. Значення cost 12 вважається найбезпечнішим на сьогодні. Остання частина хешу `$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` виглядає як один великий рядок чисел, періодів і букв, але насправді це дві окремі деталі. Перші 22 символи це згенерований модифікатор у вигляді простого тексту, решта - перетворений пароль!
+Хеші BCrypt завжди виглядатимуть як `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm`, що має структуру. Перша частинка даних `$2a` визначає, який тип хеш-алгоритму був використаний. Наступна частина `$13` визначає *вартість*. Вартість показує, скільки потрібно сили для вичислення хешу. Вона розміщена в логарифмічній шкалі 2^вартість і визначає, скільки разів дані пропускаються через алгоритм хешування. Наприклад, якщо вартість дорівнює 10, ви можете хешувати 10 паролів за секунду на середньостатистичному комп'ютері, однак при вартості 15 це займе 3 секунди для одного хешування... і, відповідно, при вартості 31, процес займе декілька днів, щоб отримати готовий хеш. Сьогодні значення вартості 12 вважається найбезпечнішим. Остання частина хешу `$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` виглядає як один великий рядок чисел, крапок і букв, але насправді це дві окремі частини інформації. Перші 22 символи є сіллю сухого тексту, а решта – хешований пароль!
 
 # --instructions--
 
-Add all your code for these lessons in the `server.js` file between the code we have started you off with. Do not change or delete the code we have added for you.
+Додайте весь свій код з цих уроків у файл `server.js` між рядками коду, з якого ми почали. Не змінюйте та не видаляйте код, який ми додали для вас.
 
-BCrypt has already been added as a dependency, so require it as `bcrypt` in your server.
+BCrypt вже додано як залежність, тому вимагайте його як `bcrypt` на своєму сервері.
 
 Відправте свою сторінку коли впевнились, що все правильно.
 
 # --hints--
 
-BCrypt повинен бути пакетом в коді.
+BCrypt повинен бути залежністю.
 
 ```js
 (getUserInput) =>
@@ -43,7 +43,7 @@ BCrypt повинен бути пакетом в коді.
   );
 ```
 
-Потрібно правильно запустити BCrypt.
+BCrypt потрібно вимагати правильно.
 
 ```js
 (getUserInput) =>

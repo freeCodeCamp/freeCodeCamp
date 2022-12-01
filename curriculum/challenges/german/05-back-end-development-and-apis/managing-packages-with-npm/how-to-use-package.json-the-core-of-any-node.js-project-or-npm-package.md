@@ -1,6 +1,6 @@
 ---
 id: 587d7fb3367417b2b2512bfb
-title: 'How to Use package.json, the Core of Any Node.js Project or npm Package'
+title: 'Wie man package.json, den Kern eines jeden Node.js-Projekts oder npm-Pakets, verwendet'
 challengeType: 2
 forumTopicId: 301528
 dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-package
@@ -10,9 +10,9 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 Bei der Bearbeitung dieser Aufgaben musst du deinen Code nach einer der folgenden Methoden schreiben:
 
-- Clone <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
-- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
-- Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Be sure to incorporate all the files from our GitHub repo.
+- Klone <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">diese GitHub-Repo</a> und schließe dein Projekt lokal ab.
+- Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starterprojekt</a>, um diese Aufgabe fertigzustellen.
+- Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Achte darauf, alle Dateien aus unserer GitHub-Repo zu integrieren.
 
 If you use Replit, follow these steps to set up the project:
 

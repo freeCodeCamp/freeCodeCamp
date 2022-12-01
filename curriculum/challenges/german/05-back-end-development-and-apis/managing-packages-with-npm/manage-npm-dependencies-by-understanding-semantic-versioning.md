@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c01
-title: Manage npm Dependencies By Understanding Semantic Versioning
+title: Verwalte npm-Abhängigkeiten durch das Verstehen semantischer Versionierung
 challengeType: 2
 forumTopicId: 301529
 dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
@@ -8,9 +8,9 @@ dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
 
 # --description--
 
-`Versions` of the npm packages in the dependencies section of your package.json file follow what’s called Semantic Versioning (SemVer), an industry standard for software versioning aiming to make it easier to manage dependencies. Libraries, frameworks or other tools published on npm should use SemVer in order to clearly communicate what kind of changes projects can expect if they update.
+`Versions` der npm-Pakete im Abschnitt "dependencies" (Abhängigkeiten) deiner package.json-Datei folgen dem sogenannten Semantic Versioning (SemVer), einem Industriestandard für Software Versioning, der die Verwaltung von Abhängigkeiten erleichtern soll. Bibliotheken, Frameworks oder andere Tools, die auf npm veröffentlicht werden, sollten SemVer verwenden, um klar zu kommunizieren, welche Art von Änderungen Projekte erwarten können, wenn sie aktualisiert werden.
 
-Knowing SemVer can be useful when you develop software that uses external dependencies (which you almost always do). One day, your understanding of these numbers will save you from accidentally introducing breaking changes to your project without understanding why things that worked yesterday suddenly don’t work today. This is how Semantic Versioning works according to the official website:
+Die Kenntnis von SemVer kann nützlich sein, wenn du eine Software entwickelst, die externe Abhängigkeiten nutzt (was du fast immer tust). One day, your understanding of these numbers will save you from accidentally introducing breaking changes to your project without understanding why things that worked yesterday suddenly don’t work today. This is how Semantic Versioning works according to the official website:
 
 ```json
 "package": "MAJOR.MINOR.PATCH"
