@@ -4,9 +4,11 @@
 
 Para trabalhar nas diretrizes de contribuição, você pode editar ou adicionar arquivos no diretório `docs` [disponível aqui](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). Ao fazermos o merge de suas alterações, elas são disponibilizadas automaticamente no site da documentação.
 
+When adding a new file to the `docs` directory, you should evaluate if the file should also be added to the sidebar navigation. We typically create a link in the [`_sidebar.md`](_sidebar.md) file for new and independent guides. Alternatively, You may follow the instructions below on creating an internal link for supporting guides.
+
 ### Como criar um link interno
 
-Se você quiser criar um link direcionando a uma outra seção das diretrizes de contribuição, siga este formato:
+If you want to create a link targeting a different section of the contributing guidelines, follow this format:
 
 ```md
 [Link text](target-file-name.md#target-section-heading-id)
@@ -15,13 +17,13 @@ Se você quiser criar um link direcionando a uma outra seção das diretrizes de
 [texto do link](#id-do-cabeçalho-da-seção-de-destino)
 ```
 
-Certifique-se de incluir a extensão de arquivo (`.md`). Não especifique o URL completo nem acrescente `/` antes do nome do arquivo.
+Make sure you include the file extension (`.md`). Don't specify the full URL or append `/` before the file name.
 
-Isso é necessário para que esses links funcionem para a versão traduzida do documento. Caso contrário, eles redirecionarão para a versão em inglês da página, independentemente do idioma.
+This is necessary to make these links work for the translated version of the document. Otherwise, they will redirect to the English version of the page regardless of the language.
 
 #### Traduzindo a documentação com links internos
 
-Ao trabalhar na tradução da documentação no Crowdin, certifique-se de substituir o `#target-section-heading-id` (id do cabeçalho da seção de destino) pelo id no documento traduzido. [Saiba mais sobre como traduzir a documentação aqui](how-to-translate-files.md#translate-documentation).
+When you work on translating docs on Crowdin, make sure to replace the `#target-section-heading-id` with the id on the translated document. [Learn more about translating docs here](how-to-translate-files.md#translate-documentation).
 
 ## Trabalhe no tema da documentação
 
@@ -31,19 +33,19 @@ Ao trabalhar na tradução da documentação no Crowdin, certifique-se de substi
 
 ### Estrutura do site da documentação
 
-O site é gerado usando [`docsify`](https://docsify.js.org) e veiculado usando GitHub Pages.
+The site is generated using [`docsify`](https://docsify.js.org) and served using GitHub pages.
 
-Normalmente, você não precisaria alterar nenhuma configuração ou compilar o site localmente. Caso esteja interessado, funciona assim:
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
 - A fonte da página inicial para este site está disponível em [`docs/index.html`](index.html).
 - Veiculamos este arquivo como uma SPA usando `docsify` e GitHub Pages.
 - O script do `docsify` gera o conteúdo dos arquivos em `markdown` no diretório `docs` sob demanda.
 - A página inicial é gerada a partir do [`_coverpage.md`](_coverpage.md).
-- a navegação da barra lateral é gerada a partir de [`_sidebar.md`](_sidebar.md).
+- The sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
 ### Veiculando localmente o site da documentação
 
-Instale o freeCodeCamp localmente ([veja o guia de instalação local](how-to-setup-freecodecamp-locally)). Nós empacotamos a CLI com as ferramentas de desenvolvimento para que você possa executar qualquer um dos comandos abaixo, conforme necessário, a partir da raiz do repositório:
+Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
 #### Veicule e inicie apenas o site da documentação
 
