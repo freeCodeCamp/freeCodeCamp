@@ -152,7 +152,7 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
       user
     } = this.props;
 
-    const useSystemTheme = fetchState.complete && theme === 'system';
+    const useSystemTheme = fetchState.complete && theme === 'default';
 
     return (
       <div className='page-wrapper'>
