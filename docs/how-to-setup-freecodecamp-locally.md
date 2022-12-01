@@ -88,6 +88,9 @@ Some community members also develop on Windows 10 natively with Git for Windows 
 > [!ATTENTION]
 > If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
+>[!TIP]
+>For issues involving MongoDB on Apple M1 look at the troubleshooting development issues section.
+
 If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console

@@ -94,6 +94,48 @@ The first time setup can take a while depending on your network bandwidth. Be pa
 > [!NOTE]
 > If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
 
+### Issues installing MongoDB on Apple M1 Device
+
+If you are having errors and cannot get mongodb to run without an error you can follow these steps.
+
+First, reinstalling Homebrew from a Rosetta-terminal. For this you need to close your terminal and make a copy of it; rename the copy Rosetta-terminal or terminal-x86 for reference. This makes it possible to install Homebrew as an Intel device program.
+
+With the Rosetta terminal opened you can install homebrew by following their install process detailed at ['Homebrew's website'](https://brew.sh). 
+
+The following `which brew` command should return the following.
+```
+❯ which brew
+/usr/local/bin/brew
+```
+With brew installed, you can follow the installation guide at [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) 
+
+>[!NOTE]
+>Do not run mongo using `brew services start mongodb-community` or similar. The config file needs to be changed. Please keep a copy of the original config file.
+>
+
+Open the config file at `/usr/local/etc/mongod.conf` and replace the text with the following.
+```
+net:
+   port: 27017
+   bindIp: 127.0.0.1
+storage:
+   dbPath: /usr/local/var/mongodb
+systemLog:
+   destination: file
+   path: "/usr/local/var/log/mongodb/mongo.log"
+   logAppend: true
+```
+
+With the config file changes made, run the mongod command as follows
+```
+mongod --config /usr/local/etc/mongod.conf
+```
+The command should 'hang' or stay open. You can verify this by opening a second terminal window and running this command.
+```
+ps aux | grep mongod|less
+```
+With these changes you can return to the how to setup freecodecamp and continue your installation.
+
 ## Getting Help
 
 If you are stuck and need help, feel free to ask questions in the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
