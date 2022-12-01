@@ -56,7 +56,7 @@ app.route('/register')
   );
 ```
 
-Відправте свою сторінку коли впевнились, що все правильно. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 **ПРИМІТКА:** З цього моменту можуть виникнути проблеми з використанням браузеру *picture-in-picture*. Якщо ви використовуєте онлайн IDE, який має попередній перегляд програми в редакторі, рекомендується відкрити цей попередній перегляд у новій вкладці.
 

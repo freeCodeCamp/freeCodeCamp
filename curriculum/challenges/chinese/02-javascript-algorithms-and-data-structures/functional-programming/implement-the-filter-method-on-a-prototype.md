@@ -24,7 +24,23 @@ const _callback = item => item % 2;
 assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
 ```
 
-不应该使用 `filter` 方法。
+`["naomi", "quincy", "camperbot"].myFilter(element => element === "naomi")` should return `["naomi"]`.
+
+```js
+const _test_s = ["naomi", "quincy", "camperbot"];
+const _callback = element => element === "naomi";
+assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
+```
+
+`[1, 1, 2, 5, 2].myFilter((element, index, array) => array.indexOf(element) === index)` should return `[1, 2, 5]`.
+
+```js
+const _test_s = [1, 1, 2, 5, 2];
+const _callback = (element, index, array) => array.indexOf(element) === index;
+assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
+```
+
+Your code should not use the `filter` method.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?filter/g));
@@ -50,7 +66,7 @@ Array.prototype.myFilter = function(callback) {
 Array.prototype.myFilter = function(callback) {
   const newArray = [];
   for (let i = 0; i < this.length; i++) {
-    if (callback(this[i])) newArray.push(this[i]);
+    if (callback(this[i], i, this)) newArray.push(this[i]);
   }
   return newArray;
 };

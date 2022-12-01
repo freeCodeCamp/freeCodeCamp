@@ -1,6 +1,6 @@
 ---
 id: 5e601bf95ac9d0ecd8b94afd
-title: Програма для розв'язування судоку
+title: Розв'язувач судоку
 challengeType: 4
 forumTopicId: 462357
 dashedName: sudoku-solver
@@ -24,46 +24,46 @@ dashedName: sudoku-solver
 
 # --instructions--
 
-- All puzzle logic can go into `/controllers/sudoku-solver.js`
-  - The `validate` function should take a given puzzle string and check it to see if it has 81 valid characters for the input.
-  - The `check` functions should be validating against the *current* state of the board.
-  - The `solve` function should handle solving any given valid puzzle string, not just the test inputs and solutions. You are expected to write out the logic to solve this.
-- All routing logic can go into `/routes/api.js`
-- See the `puzzle-strings.js` file in `/controllers` for some sample puzzles your application should solve
-- To run the challenge tests on this page, set `NODE_ENV` to `test` without quotes in the `.env` file
+- Уся логіка головоломки може перейти до `/controllers/sudoku-solver.js`
+  - Функція `validate` повинна приймати наданий рядок головоломки та перевіряти, чи в ньому є 81 дійсних символів для вводу.
+  - Функції `check` повинні перевіряти *поточний* стан дошки.
+  - Функція `solve` повинна обробляти вирішення будь-якого наданого дійсного рядка головоломки, а не лише тестові вводи та вирішення. Від вас очікується написання логіки, яка б вирішувала це.
+- Уся логіка маршруту може перейти до `/routes/api.js`
+- Перегляньте файл `puzzle-strings.js` у `/controllers` для прикладів головоломок, які повинен розв'язувати ваш додаток
+- Щоб запустити тести завдання на цій сторінці, встановіть `NODE_ENV` на `test` без лапок у файлі `.env`
 - Щоб запустити тести на консолі, використайте команду `npm run test`. Щоб відкрити консоль Replit, натисніть Ctrl+Shift+P (Cmd на Mac) та введіть «open shell»
 
 Напишіть наступні тести в `tests/1_unit-tests.js`:
 
--   Logic handles a valid puzzle string of 81 characters
--   Logic handles a puzzle string with invalid characters (not 1-9 or `.`)
--   Logic handles a puzzle string that is not 81 characters in length
--   Logic handles a valid row placement
--   Logic handles an invalid row placement
--   Logic handles a valid column placement
--   Logic handles an invalid column placement
--   Logic handles a valid region (3x3 grid) placement
--   Logic handles an invalid region (3x3 grid) placement
--   Valid puzzle strings pass the solver
--   Invalid puzzle strings fail the solver
--   Solver returns the expected solution for an incomplete puzzle
+-   Логіка обробляє дійсний рядок головоломки з 81 символом
+-   Логіка обробляє рядок головоломки з недійсними символами (не 1-9 або `.`)
+-   Логіка обробляє рядок головоломки, довжина якого не 81 символ
+-   Логіка обробляє дійсне розміщення рядочка
+-   Логіка обробляє недійсне розміщення рядочка
+-   Логіка обробляє дійсне розміщення стовпчика
+-   Логіка обробляє недійсне розміщення стовпчика
+-   Логіка обробляє дійсне розміщення області (сітка 3x3)
+-   Логіка обробляє недійсне розміщення області (сітка 3x3)
+-   Дійсні рядки головоломки проходять розв’язувач
+-   Недійсні рядки головоломки не проходять розв’язувач
+-   Розв'язувач повертає вирішення для невирішеної головоломки
 
 Напишіть наступні тести в `tests/2_functional-tests.js`
 
--   Solve a puzzle with valid puzzle string: POST request to `/api/solve`
--   Solve a puzzle with missing puzzle string: POST request to `/api/solve`
--   Solve a puzzle with invalid characters: POST request to `/api/solve`
--   Solve a puzzle with incorrect length: POST request to `/api/solve`
--   Solve a puzzle that cannot be solved: POST request to `/api/solve`
--   Check a puzzle placement with all fields: POST request to `/api/check`
--   Check a puzzle placement with single placement conflict: POST request to `/api/check`
--   Check a puzzle placement with multiple placement conflicts: POST request to `/api/check`
--   Check a puzzle placement with all placement conflicts: POST request to `/api/check`
--   Check a puzzle placement with missing required fields: POST request to `/api/check`
--   Check a puzzle placement with invalid characters: POST request to `/api/check`
--   Check a puzzle placement with incorrect length: POST request to `/api/check`
--   Check a puzzle placement with invalid placement coordinate: POST request to `/api/check`
--   Check a puzzle placement with invalid placement value: POST request to `/api/check`
+-   Вирішіть головоломку з дійсним рядком головоломки: запит POST до `/api/solve`
+-   Вирішіть головоломку з відсутнім рядком головоломки: запит POST до `/api/solve`
+-   Вирішіть головоломку з недійсними символами: запит POST до `/api/solve`
+-   Вирішіть головоломку з неправильною довжиною: запит POST до `/api/solve`
+-   Вирішіть головоломку, яку неможливо вирішити: запит POST до `/api/solve`
+-   Перевірте розміщення головоломки з усіма полями: запит POST до `/api/check`
+-   Перевірте розміщення головоломки з одним конфліктом розміщення: запит POST до `/api/check`
+-   Перевірте розміщення головоломки з декількома конфліктами розміщення: запит POST до `/api/check`
+-   Перевірте розміщення головоломки з усіма конфліктами розміщення: запит POST до `/api/check`
+-   Перевірте розміщення головоломки з відсутніми необхідними полями: запит POST до `/api/check`
+-   Перевірте розміщення головоломки з недійсними символами: запит POST до `/api/check`
+-   Перевірте розміщення головоломки з неправильною довжиною: запит POST до `/api/check`
+-   Перевірте розміщення головоломки з недійсною координатою розміщення: запит POST до `/api/check`
+-   Перевірте розміщення головоломки з недійсним значенням розміщення: запит POST до `/api/check`
 
 # --hints--
 
@@ -76,7 +76,7 @@ dashedName: sudoku-solver
 };
 ```
 
-You can `POST` `/api/solve` with form data containing `puzzle` which will be a string containing a combination of numbers (1-9) and periods `.` to represent empty spaces. The returned object will contain a `solution` property with the solved puzzle.
+Ви можете надіслати запит `POST` до `/api/solve` з даними форми, що містять `puzzle`, яка буде рядком з комбінації чисел (1-9) та крапок `.` для представлення порожніх місць. Повернений об'єкт міститиме властивість `solution` з вирішеною головоломкою.
 
 ```js
 async (getUserInput) => {
@@ -95,7 +95,7 @@ async (getUserInput) => {
 };
 ```
 
-If the object submitted to `/api/solve` is missing `puzzle`, the returned value will be `{ error: 'Required field missing' }`
+Якщо об'єкт, надісланий до `/api/solve` не має `puzzle`, поверненим значенням буде `{ error: 'Required field missing' }`
 
 ```js
 async (getUserInput) => {
@@ -113,7 +113,7 @@ async (getUserInput) => {
 };
 ```
 
-If the puzzle submitted to `/api/solve` contains values which are not numbers or periods, the returned value will be `{ error: 'Invalid characters in puzzle' }`
+Якщо головоломка, надіслана до `/api/solve`, містить значення, які не є числами або крапками, поверненим значенням буде `{ error: 'Invalid characters in puzzle' }`
 
 ```js
 async (getUserInput) => {
@@ -131,7 +131,7 @@ async (getUserInput) => {
 };
 ```
 
-If the puzzle submitted to `/api/solve` is greater or less than 81 characters, the returned value will be `{ error: 'Expected puzzle to be 81 characters long' }`
+Якщо головоломка, надіслана до `/api/solve`, містить більше чи менше за 81 символ, поверненим значенням буде `{ error: 'Expected puzzle to be 81 characters long' }`
 
 ```js
 async (getUserInput) => {
@@ -153,7 +153,7 @@ async (getUserInput) => {
 };
 ```
 
-If the puzzle submitted to `/api/solve` is invalid or cannot be solved, the returned value will be `{ error: 'Puzzle cannot be solved' }`
+Якщо головоломка, надіслана до `/api/solve`, недійсна або не може бути вирішеною, поверненим значенням буде `{ error: 'Puzzle cannot be solved' }`
 
 ```js
 async (getUserInput) => {
@@ -171,7 +171,7 @@ async (getUserInput) => {
 };
 ```
 
-You can `POST` to `/api/check` an object containing `puzzle`, `coordinate`, and `value` where the `coordinate` is the letter A-I indicating the row, followed by a number 1-9 indicating the column, and `value` is a number from 1-9.
+Ви можете надіслати запит `POST` до `/api/check` з об'єктом, який містить `puzzle`, `coordinate` та `value`, де `coordinate` є буквою від А до I (представляє рядочок) і супроводжується числом від 1 до 9 (представляє стовпчик), а `value` є числом від 1 до 9.
 
 ```js
 async (getUserInput) => {
@@ -190,7 +190,7 @@ async (getUserInput) => {
 };
 ```
 
-The return value from the `POST` to `/api/check` will be an object containing a `valid` property, which is `true` if the number may be placed at the provided coordinate and `false` if the number may not. If false, the returned object will also contain a `conflict` property which is an array containing the strings `"row"`, `"column"`, and/or `"region"` depending on which makes the placement invalid.
+Поверненим значенням запиту `POST` до `/api/check` буде об'єкт, який містить властивість `valid`, де `true` означає, що число можна розмістити на заданій координаті, та `false`, якщо ні. Якщо false, повернений об'єкт також міститиме властивість `conflict`, яка є масивом із рядками `"row"`, `"column"` та/або `"region"`, залежно від того, чому розміщення недійсне.
 
 ```js
 async (getUserInput) => {
@@ -213,7 +213,7 @@ async (getUserInput) => {
 };
 ```
 
-If `value` submitted to `/api/check` is already placed in `puzzle` on that `coordinate`, the returned value will be an object containing a `valid` property with `true` if `value` is not conflicting.
+Якщо `value`, надіслане до `/api/check`, вже розміщене в `puzzle` на цій `coordinate`, поверненим значенням буде об'єкт, який містить властивість `valid` із `true`, якщо `value` не конфліктує.
 
 ```js
 async (getUserInput) => {
@@ -232,7 +232,7 @@ async (getUserInput) => {
 };
 ```
 
-If the puzzle submitted to `/api/check` contains values which are not numbers or periods, the returned value will be `{ error: 'Invalid characters in puzzle' }`
+Якщо головоломка, надіслана до `/api/check`, містить символи, які не є числами або крапками, поверненим значенням буде `{ error: 'Invalid characters in puzzle' }`
 
 ```js
 async (getUserInput) => {
@@ -252,7 +252,7 @@ async (getUserInput) => {
 };
 ```
 
-If the puzzle submitted to `/api/check` is greater or less than 81 characters, the returned value will be `{ error: 'Expected puzzle to be 81 characters long' }`
+Якщо головоломка, надіслана до `/api/check`, містить більше чи менше за 81 символ, поверненим значенням буде `{ error: 'Expected puzzle to be 81 characters long' }`
 
 ```js
 async (getUserInput) => {
@@ -276,7 +276,7 @@ async (getUserInput) => {
 };
 ```
 
-If the object submitted to `/api/check` is missing `puzzle`, `coordinate` or `value`, the returned value will be `{ error: 'Required field(s) missing' }`
+Якщо об'єкт, надісланий до `/api/check`, не має `puzzle`, `coordinate` або `value`, поверненим значенням буде `{ error: 'Required field(s) missing' }`
 
 ```js
 async (getUserInput) => {
@@ -308,7 +308,7 @@ async (getUserInput) => {
 };
 ```
 
-If the coordinate submitted to `api/check` does not point to an existing grid cell, the returned value will be `{ error: 'Invalid coordinate'}`
+Якщо координата, надіслана до `api/check`, не вказує на наявну клітинку сітки, поверненим значенням буде `{ error: 'Invalid coordinate'}`
 
 ```js
 async (getUserInput) => {
@@ -330,7 +330,7 @@ async (getUserInput) => {
 };
 ```
 
-If the `value` submitted to `/api/check` is not a number between 1 and 9, the returned value will be `{ error: 'Invalid value' }`
+Якщо `value`, надіслане до `/api/check`, не є числом від 1 до 9, поверненим значенням буде `{ error: 'Invalid value' }`
 
 ```js
 async (getUserInput) => {
@@ -352,7 +352,7 @@ async (getUserInput) => {
 };
 ```
 
-Усі 12 модульних тестів завершено та успішно пройдено. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
+Усі 12 модульних тестів завершено та успішно пройдено. Перегляньте `/tests/1_unit-tests.js` очікуваної поведінки, для якої ви пишете тести.
 
 ```js
 async (getUserInput) => {
@@ -377,7 +377,7 @@ async (getUserInput) => {
 };
 ```
 
-Усі 14 функціональних тестів завершено та успішно пройдено. See `/tests/2_functional-tests.js` for the expected functionality you should write tests for.
+Усі 14 функціональних тестів завершено та успішно пройдено. Перегляньте `/tests/2_functional-tests.js` функціональності, для якої ви пишете тести.
 
 ```js
 async (getUserInput) => {
