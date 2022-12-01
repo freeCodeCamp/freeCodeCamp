@@ -7,7 +7,7 @@ import type {
   editor
   // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
-import { highlightAllUnder } from 'prismjs';
+import Prism from 'prismjs';
 import React, {
   useEffect,
   Suspense,
@@ -66,6 +66,7 @@ import {
   isChallengeCompletedSelector
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
+import { enhancePrismAccessibility } from '../utils/index';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
@@ -725,7 +726,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
-    highlightAllUnder(desc);
+    Prism.hooks.add('complete', enhancePrismAccessibility);
+    Prism.highlightAllUnder(desc);
 
     domNode.style.userSelect = 'text';
 

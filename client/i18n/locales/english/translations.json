@@ -503,7 +503,8 @@
     "open-preview-in-new-window": "Open the preview in a new window and focus it",
     "step": "Step",
     "steps": "Steps",
-    "steps-for": "Steps for {{blockTitle}}"
+    "steps-for": "Steps for {{blockTitle}}",
+    "code-example": "{{codeName}} code example"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
