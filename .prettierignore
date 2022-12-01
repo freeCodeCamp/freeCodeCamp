@@ -1,6 +1,7 @@
 **/.cache
 **/public
 client/static
+client/**/trending.json
 **/*fixtures*
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
