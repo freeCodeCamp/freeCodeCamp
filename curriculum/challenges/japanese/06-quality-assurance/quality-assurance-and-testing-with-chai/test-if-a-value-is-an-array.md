@@ -12,11 +12,11 @@ dashedName: test-if-a-value-is-an-array
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Arrays` スイート内の `#11` に分類されたテストにおいて、テストを合格にする (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isArray` または `assert.isNotArray` に変更してください。 アサート に渡された引数を変更しないでください。
+`tests/1_unit-tests.js` の中の、`Arrays` スイート内の `#11` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isArray` または `assert.isNotArray` に変更してください。 アサート に渡された引数を変更しないでください。
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>

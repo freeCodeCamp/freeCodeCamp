@@ -1,6 +1,6 @@
 ---
 id: 589a69f5f9fc0f352b528e71
-title: 实现第二种社交登录
+title: Implementation of Social Authentication II
 challengeType: 2
 forumTopicId: 301557
 dashedName: implementation-of-social-authentication-ii

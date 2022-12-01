@@ -8,33 +8,31 @@ dashedName: reverse-a-string
 
 # --description--
 
-أقلب المقطع النصي المقدم.
+أقلب تشكيل المقطع النصي (string) المقدمة لتنتج مقطع نصي (string) مقلوب.
 
-قد تحتاج إلى تحويل المقطع النصي (string) إلى قائمة قبل أن تتمكن من قلبها.
-
-يجب أن تكون نتيجتك مقطع نصي (string).
+على سبيل المثال، يجب أن يصبح `"hello"` على هيئة `"olleh"`.
 
 # --hints--
 
-`reverseString("hello")` يجب أن ينتج مقطع نصي.
+يجب أن ينتج `reverseString("hello")` مقطع نصي (string).
 
 ```js
 assert(typeof reverseString('hello') === 'string');
 ```
 
-`reverseString("hello")` يجب أن ينتج مقطع `olleh`.
+يجب أن ينتج `reverseString("hello")` مقطع `olleh`.
 
 ```js
 assert(reverseString('hello') === 'olleh');
 ```
 
-`reverseString("Howdy")` يجب أن ينتج مقطع `ydwoH`.
+يجب أن ينتج `reverseString("Howdy")` مقطع `ydwoH`.
 
 ```js
 assert(reverseString('Howdy') === 'ydwoH');
 ```
 
-`reverseString("Greetings from Earth")` يجب أن ينتج المقطع `htraE morf sgniteerG`.
+يجب أن ينتج `reverseString("Greetings from Earth")` المقطع `htraE morf sgniteerG`.
 
 ```js
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');

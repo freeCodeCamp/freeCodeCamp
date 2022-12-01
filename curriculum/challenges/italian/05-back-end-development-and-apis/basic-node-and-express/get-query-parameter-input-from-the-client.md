@@ -20,7 +20,7 @@ Costruisci un endpoint API, montato su `GET /name`. Rispondi con un documento JS
 
 # --hints--
 
-Test 1 : Your API endpoint should respond with `{ "name": "Mick Jagger" }` when the `/name` endpoint is called with `?first=Mick&last=Jagger`
+Test 1 : il tuo endpoint API dovrebbe rispondere con `{ "name": "Mick Jagger" }` quando l'endpoint `/name` è chiamato con `?first=Mick&last=Jagger`
 
 ```js
 (getUserInput) =>
@@ -38,7 +38,7 @@ Test 1 : Your API endpoint should respond with `{ "name": "Mick Jagger" }` when 
   );
 ```
 
-Test 2 : Your API endpoint should respond with `{ "name": "Keith Richards" }` when the `/name` endpoint is called with `?first=Keith&last=Richards`
+Test 2 : il tuo endpoint API dovrebbe rispondere con `{ "name": "Keith Richards" }` quando l'endpoint `/name` è chiamato con `?first=Keith&last=Richards`
 
 ```js
 (getUserInput) =>

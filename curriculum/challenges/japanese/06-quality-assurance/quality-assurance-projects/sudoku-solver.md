@@ -14,54 +14,60 @@ dashedName: sudoku-solver
 -   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、`GitHub Link` フィールドでプロジェクトのソースコードへのリンクを送信してください。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-- すべてのパズルロジックを `/controllers/sudoku-solver.js` に含めてください。
-  - `validate` 関数は、与えられたパズル文字列を受け取り、入力に 81 の有効な文字があるかどうかを確認する必要があります。
-  - `check` 関数は、ボードの*現在の*状態を確認する必要があります。
-  - `solve` 関数は、テスト入力と解答だけでなく、与えられた任意の有効なパズル文字列を解く処理を行う必要があります。 パズルを解くためのロジックを記述することが求められます。
-- すべてのルーティングロジックを `/routes/api.js` に含めてください。
-- アプリで解くべきパズルのサンプルについては、`/controllers` の `puzzle-strings.js` ファイルを参照してください。
-- このページでチャレンジテストを実行するには、`.env` ファイル内で引用符を付けずに `NODE_ENV` を `test` に設定してください。
-- コンソールでテストを実行するには、コマンド `npm run test` を使用してください。 Replit コンソールを開くには、Ctrl+Shift+P (Macの場合はCmd) を押して「open shell」と入力してください。
+- All puzzle logic can go into `/controllers/sudoku-solver.js`
+  - The `validate` function should take a given puzzle string and check it to see if it has 81 valid characters for the input.
+  - The `check` functions should be validating against the *current* state of the board.
+  - The `solve` function should handle solving any given valid puzzle string, not just the test inputs and solutions. You are expected to write out the logic to solve this.
+- All routing logic can go into `/routes/api.js`
+- See the `puzzle-strings.js` file in `/controllers` for some sample puzzles your application should solve
+- To run the challenge tests on this page, set `NODE_ENV` to `test` without quotes in the `.env` file
+- To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
-`tests/1_unit-tests.js` に以下のテストを記述してください。
+Write the following tests in `tests/1_unit-tests.js`:
 
--   ロジックは、81 文字の有効なパズル文字列を処理します。
--   ロジックは、(1～9 でも `.` でもない) 無効な文字が含まれているパズル文字列を処理します。
--   ロジックは、81 文字ではないパズル文字列を処理します。
--   ロジックは、有効な行の配置を処理します。
--   ロジックは、無効な行の配置を処理します。
--   ロジックは、有効な列の配置を処理します。
--   ロジックは、無効な列の配置を処理します。
--   ロジックは、有効な領域 (3x3 グリッド) の配置を処理します。
--   ロジックは、無効な領域 (3x3 グリッド) の配置を処理します。
--   有効なパズルの文字列は、ソルバーをパスします。
--   無効なパズル文字列は、ソルバーをパスしません。
--   不完全なパズルの場合、ソルバーは期待される解答を返します。
+-   Logic handles a valid puzzle string of 81 characters
+-   Logic handles a puzzle string with invalid characters (not 1-9 or `.`)
+-   Logic handles a puzzle string that is not 81 characters in length
+-   Logic handles a valid row placement
+-   Logic handles an invalid row placement
+-   Logic handles a valid column placement
+-   Logic handles an invalid column placement
+-   Logic handles a valid region (3x3 grid) placement
+-   Logic handles an invalid region (3x3 grid) placement
+-   Valid puzzle strings pass the solver
+-   Invalid puzzle strings fail the solver
+-   Solver returns the expected solution for an incomplete puzzle
 
-`tests/2_functional-tests.js` に以下のテストを記述してください。
+Write the following tests in `tests/2_functional-tests.js`
 
--   有効なパズル文字列のパズルを解いてください: `/api/solve` への POST リクエスト
--   パズル文字列が不足しているパズルを解いてください: `/api/solve` への POST リクエスト
--   無効な文字のパズルを解いてください: `/api/solve` への POST リクエスト
--   誤った長さのパズルを解いてください: `/api/solve` への POST リクエスト
--   解くことができないパズルを解いてください: `/api/solve` への POST リクエスト
--   すべてのフィールドのパズル配置を確認してください: `/api/check` への POST リクエスト
--   1 つの配置が競合しているパズル配置を確認してください: `/api/check` への POST リクエスト
--   複数の配置が競合しているパズル配置を確認してください: `/api/check` への POST リクエスト
--   すべての配置が競合しているパズルの配置を確認してください: `/api/check` への POST リクエスト
--   必須フィールドがないパズル配置を確認してください: `/api/check`への POST リクエスト
--   無効な文字のパズル配置を確認してください: `/api/check` への POST リクエスト
--   誤った長さのパズル配置を確認してください: `/api/check` への POST リクエスト
--   無効な配置座標のパズル配置を確認してください: `/api/check` への POST リクエスト
--   無効な配置値のパズル配置を確認してください: `/api/check` への POST リクエスト
+-   Solve a puzzle with valid puzzle string: POST request to `/api/solve`
+-   Solve a puzzle with missing puzzle string: POST request to `/api/solve`
+-   Solve a puzzle with invalid characters: POST request to `/api/solve`
+-   Solve a puzzle with incorrect length: POST request to `/api/solve`
+-   Solve a puzzle that cannot be solved: POST request to `/api/solve`
+-   Check a puzzle placement with all fields: POST request to `/api/check`
+-   Check a puzzle placement with single placement conflict: POST request to `/api/check`
+-   Check a puzzle placement with multiple placement conflicts: POST request to `/api/check`
+-   Check a puzzle placement with all placement conflicts: POST request to `/api/check`
+-   Check a puzzle placement with missing required fields: POST request to `/api/check`
+-   Check a puzzle placement with invalid characters: POST request to `/api/check`
+-   Check a puzzle placement with incorrect length: POST request to `/api/check`
+-   Check a puzzle placement with invalid placement coordinate: POST request to `/api/check`
+-   Check a puzzle placement with invalid placement value: POST request to `/api/check`
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供する必要があります。
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -70,7 +76,7 @@ dashedName: sudoku-solver
 };
 ```
 
-数字 (1～9) と空白を表すピリオド `.` の組み合わせを含む文字列である `puzzle` を含むフォームデータを指定して、`POST` `/api/solve` を実行することができます。 返されるオブジェクトには、解いたパズルを含む `solution` プロパティが含まれます。
+You can `POST` `/api/solve` with form data containing `puzzle` which will be a string containing a combination of numbers (1-9) and periods `.` to represent empty spaces. The returned object will contain a `solution` property with the solved puzzle.
 
 ```js
 async (getUserInput) => {
@@ -89,7 +95,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/solve` へ送信されたオブジェクトに `puzzle` がない場合、戻り値は `{ error: 'Required field missing' }` になります。
+If the object submitted to `/api/solve` is missing `puzzle`, the returned value will be `{ error: 'Required field missing' }`
 
 ```js
 async (getUserInput) => {
@@ -107,7 +113,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/solve` へ送信されたパズルに数字でもピリオドでもない値が含まれている場合、戻り値は `{ error: 'Invalid characters in puzzle' }` になります。
+If the puzzle submitted to `/api/solve` contains values which are not numbers or periods, the returned value will be `{ error: 'Invalid characters in puzzle' }`
 
 ```js
 async (getUserInput) => {
@@ -125,7 +131,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/solve` へ送信されたパズルの文字数が 81 文字より多いまたは少ない場合、戻り値は `{ error: 'Expected puzzle to be 81 characters long' }` になります。
+If the puzzle submitted to `/api/solve` is greater or less than 81 characters, the returned value will be `{ error: 'Expected puzzle to be 81 characters long' }`
 
 ```js
 async (getUserInput) => {
@@ -147,7 +153,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/solve` へ送信されたパズルが無効もしくは解けない場合、戻り値は `{ error: 'Puzzle cannot be solved' }` になります。
+If the puzzle submitted to `/api/solve` is invalid or cannot be solved, the returned value will be `{ error: 'Puzzle cannot be solved' }`
 
 ```js
 async (getUserInput) => {
@@ -165,7 +171,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/check` オブジェクトへの `POST` で、`puzzle`、`coordinate` および `value` を含むオブジェクトを指定できます。`coordinate` は行を示す文字 A～I で、その後に列を示す 1～9 の数字が続きます。`value` は 1～9 の数字です。
+You can `POST` to `/api/check` an object containing `puzzle`, `coordinate`, and `value` where the `coordinate` is the letter A-I indicating the row, followed by a number 1-9 indicating the column, and `value` is a number from 1-9.
 
 ```js
 async (getUserInput) => {
@@ -184,7 +190,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/check` への `POST` の戻り値は、`valid` プロパティを含むオブジェクトになります。このプロパティは、指定された座標に数字を配置できる場合は `true` になり、そうでない場合は `false` になります。 false の場合、返されるオブジェクトには `conflict` プロパティも含まれます。このプロパティは、文字列 `"row"`、`"column"`、`"region"` の任意の組み合わせを含む配列になります (どれが配置を無効にしているのかによります)。
+The return value from the `POST` to `/api/check` will be an object containing a `valid` property, which is `true` if the number may be placed at the provided coordinate and `false` if the number may not. If false, the returned object will also contain a `conflict` property which is an array containing the strings `"row"`, `"column"`, and/or `"region"` depending on which makes the placement invalid.
 
 ```js
 async (getUserInput) => {
@@ -207,7 +213,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/check` へ送信された `value` がすでに `puzzle` のその `coordinate` に配置されている場合、戻り値は `valid` プロパティを含むオブジェクトになり、`value` が競合していなければ `true` となります。
+If `value` submitted to `/api/check` is already placed in `puzzle` on that `coordinate`, the returned value will be an object containing a `valid` property with `true` if `value` is not conflicting.
 
 ```js
 async (getUserInput) => {
@@ -226,7 +232,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/check` へ送信されたパズルに数字でもピリオドでもない値が含まれている場合、戻り値は `{ error: 'Invalid characters in puzzle' }` になります。
+If the puzzle submitted to `/api/check` contains values which are not numbers or periods, the returned value will be `{ error: 'Invalid characters in puzzle' }`
 
 ```js
 async (getUserInput) => {
@@ -246,7 +252,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/check` へ送信されたパズルが 81 文字より多いか少ない場合、戻り値は `{ error: 'Expected puzzle to be 81 characters long' }` になります。
+If the puzzle submitted to `/api/check` is greater or less than 81 characters, the returned value will be `{ error: 'Expected puzzle to be 81 characters long' }`
 
 ```js
 async (getUserInput) => {
@@ -270,7 +276,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/check` へ送信されたオブジェクトに `puzzle`、`coordinate` もしくは `value` がない場合、戻り値は、`{ error: 'Required field(s) missing' }` になります。
+If the object submitted to `/api/check` is missing `puzzle`, `coordinate` or `value`, the returned value will be `{ error: 'Required field(s) missing' }`
 
 ```js
 async (getUserInput) => {
@@ -302,7 +308,7 @@ async (getUserInput) => {
 };
 ```
 
-`api/check` へ送信された座標が既存のグリッドセルを指し示していない場合、戻り値は `{ error: 'Invalid coordinate'}` になります。
+If the coordinate submitted to `api/check` does not point to an existing grid cell, the returned value will be `{ error: 'Invalid coordinate'}`
 
 ```js
 async (getUserInput) => {
@@ -324,7 +330,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/check` へ送信された `value` が 1 から 9 の数字でない場合、戻り値は `{ error: 'Invalid value' }` になります。
+If the `value` submitted to `/api/check` is not a number between 1 and 9, the returned value will be `{ error: 'Invalid value' }`
 
 ```js
 async (getUserInput) => {
@@ -346,7 +352,7 @@ async (getUserInput) => {
 };
 ```
 
-12 種類のテストがすべて完了し、合格しています。 テストを記述すべき期待される動作については、`/tests/1_unit-tests.js` を参照してください。
+All 12 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
 
 ```js
 async (getUserInput) => {
@@ -371,7 +377,7 @@ async (getUserInput) => {
 };
 ```
 
-14 種類の機能テストがすべて完了し、合格しています。 テストを記述すべき期待される機能については、`/tests/2_functional-tests.js` を参照してください。
+All 14 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the expected functionality you should write tests for.
 
 ```js
 async (getUserInput) => {

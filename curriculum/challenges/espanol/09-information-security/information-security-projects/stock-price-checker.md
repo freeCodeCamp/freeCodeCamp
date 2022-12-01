@@ -18,7 +18,13 @@ Trabajar en este proyecto implicará escribir tu código utilizando uno de los s
 -   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, envíe un enlace al código fuente de su proyecto en el campo `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -27,7 +33,7 @@ Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté
 3.  Añadirás cualquier característica de seguridad a `server.js`
 4.  Crearás todas las pruebas funcionales en `tests/2_functional-tests.js`
 
-**Note** Privacy Considerations: Due to the requirement that only 1 like per IP should be accepted, you will have to save IP addresses. Es importante seguir cumpliendo con leyes de privacidad como el Reglamento General de Protección de Datos. Una opción es obtener permiso para guardar los datos del usuario, pero es mucho más simple hacerlo anónimo. Para este desafío, recuerde anonimizar las direcciones IP antes de guardarlas en la base de datos. If you need ideas on how to do this, you may choose to hash the data, truncate it, or set part of the IP address to 0.
+**Note** Privacy Considerations: Due to the requirement that only 1 like per IP should be accepted, you will have to save IP addresses. It is important to remain compliant with data privacy laws such as the General Data Protection Regulation. One option is to get permission to save the user's data, but it is much simpler to anonymize it. For this challenge, remember to anonymize IP addresses before saving them to the database. If you need ideas on how to do this, you may choose to hash the data, truncate it, or set part of the IP address to 0.
 
 Write the following tests in `tests/2_functional-tests.js`:
 

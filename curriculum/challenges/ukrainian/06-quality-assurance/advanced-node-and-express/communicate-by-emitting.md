@@ -38,7 +38,7 @@ socket.on('user count', function(data) {
 
 Тепер спробуйте завантажити ваш додаток, автентифікуватись і ви повинні побачити на консолі клієнта '1', яка показує поточну кількість користувачів! Спробуйте завантажити більше клієнтів і автентифікуйтеся, щоб побачити, як число зростає.
 
-Відправте сторінку, якщо все було виконано правильно. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#communicate-by-emitting-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#communicate-by-emitting-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

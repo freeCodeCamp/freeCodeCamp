@@ -127,6 +127,8 @@ textarea.inputarea {
   /* using float instead of inline display so screen readers recognize h2 as a block element */
   float: left;
   margin: 0.5em 0 0;
+  /* prevent line breaks in Chinese/Japanese/Korean */
+  word-break: keep-all;
 }
 
 .test-feedback h2:after {

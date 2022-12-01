@@ -10,105 +10,62 @@ dashedName: sea-level-predictor
 
 Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código de inicio Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 Todavía estamos desarrollando la parte interactiva del currículo de Python. Por ahora, aquí hay algunos videos en el canal de YouTube de freeCodeCamp.org que te enseñaran todo lo que necesitas saber para completar este proyecto:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso de video de Python para todos< /a>(14 horas)</p></li> 
-  
-  <li>
-    <p spaces-before="0">
-      <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">Cómo analizar datos con Python Pandas</a> (10 horas)
-    </p>
-  </li></ul>
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
 
-<h1 spaces-before="0">
-  --instructions--
-</h1>
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
-<p spaces-before="0">
-  Analizará un conjunto de datos sobre el cambio del nivel medio del mar a nivel mundial desde 1880. Utilizarás los datos para predecir el cambio del nivel del mar hasta el año 2050.
-</p>
+# --instructions--
 
-<p spaces-before="0">
-  Utiliza los datos para completar las siguientes tareas:
-</p>
+Analizará un conjunto de datos sobre el cambio del nivel medio del mar a nivel mundial desde 1880. Utilizarás los datos para predecir el cambio del nivel del mar hasta el año 2050.
 
-<ul>
-  <li>
-    Utiliza Pandas para importar los datos de <code>epa-sea-level.csv</code>.
-  </li>
-  <li>
-    Utilice matplotlib para crear un gráfico de dispersión utilizando la columna <code>Year</code> como eje x y la columna <code>CSIRO Adjusted Sea Level</code> como eje y.
-  </li>
-  <li>
-    Usa la función <code>linregress</code> de <code>scipy.stats</code> para obtener la pendiente e intersección con el eje y de la línea de mejor encaje. Dibuja la línea de mejor encaje sobre el diagrama de dispersión. Haz que la línea pase por el año 2050 para predecir el aumento del nivel del mar en ese año.
-  </li>
-  <li>
-    Traza una nueva línea de mejor encaje utilizando datos del año 2000 hasta el año más reciente del conjunto de datos. Haz que la línea pase también por el año 2050 para predecir la subida del nivel del mar en 2050 si el ritmo de subida continúa como desde el año 2000.
-  </li>
-  <li>
-    La etiqueta x debe ser <code>Year</code>, la etiqueta y debe ser <code>Sea Level (pulgadas)</code> y el título debe ser <code>Rise in Sea Level</code>.
-  </li>
-</ul>
+Utiliza los datos para completar las siguientes tareas:
 
-<p spaces-before="0">
-  Las pruebas unitarias están escritas para en <code>test_module.py</code>.
-</p>
+- Use Pandas to import the data from `epa-sea-level.csv`.
+- Use matplotlib to create a scatter plot using the `Year` column as the x-axis and the `CSIRO Adjusted Sea Level` column as the y-axix.
+- Use the `linregress` function from `scipy.stats` to get the slope and y-intercept of the line of best fit. Plot the line of best fit over the top of the scatter plot. Make the line go through the year 2050 to predict the sea level rise in 2050.
+- Plot a new line of best fit just using the data from year 2000 through the most recent year in the dataset. Make the line also go through the year 2050 to predict the sea level rise in 2050 if the rate of rise continues as it has since the year 2000.
+- The x label should be `Year`, the y label should be `Sea Level (inches)`, and the title should be `Rise in Sea Level`.
 
-<p spaces-before="0">
-  El boilerplate también incluye los comandos para guardar y devolver la imagen.
-</p>
+Las pruebas unitarias están escritas para en `test_module.py`.
 
-<h2 spaces-before="0">
-  Desarrollo
-</h2>
+El boilerplate también incluye los comandos para guardar y devolver la imagen.
 
-<p spaces-before="0">
-  Para el desarrollo, puedes utilizar <code>main.py</code> para probar tus funciones. Haz clic en el botón "run" y se ejecutará <code>main.py</code>.
-</p>
+## Desarrollo
 
-<h2 spaces-before="0">
-  Pruebas
-</h2>
+Para el desarrollo, puedes utilizar `main.py` para probar tus funciones. Haz clic en el botón "run" y se ejecutará `main.py`.
 
-<p spaces-before="0">
-  Importamos las pruebas de <code>test_module.py</code> a <code>main.py</code> para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que pulses el botón "run".
-</p>
+## Pruebas
 
-<h2 spaces-before="0">
-  Envío
-</h2>
+Importamos las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que pulses el botón "run".
 
-<p spaces-before="0">
-  Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
-</p>
+## Envío
 
-<h2 spaces-before="0">
-  Fuente de datos
-</h2>
+Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
 
-<p spaces-before="0">
-  
+## Fuente de datos
 
 <a href="https://datahub.io/core/sea-level-rise" target="_blank" rel="noopener noreferrer nofollow">Global Average Absolute Sea Level Change</a>, 1880-2014 de la Agencia de Protección Ambiental de los Estados Unidos utilizando datos de CSIRO, 2015; NOAA, 2015.
-</p>
 
 
-<h1 spaces-before="0">
-  --hints--
-</h1>
+# --hints--
 
-<p spaces-before="0">
-  Debería pasar todas las pruebas de Python.
-</p>
+Debería pasar todas las pruebas de Python.
 
-<pre><code class="js">
-</code></pre>
+```js
 
-<h1 spaces-before="0">
-  --solutions--
-</h1>
+```
 
-<pre><code class="py">  # Python challenges don't need solutions,
+# --solutions--
+
+```py
+  # Python challenges don't need solutions,
   # because they would need to be tested against a full working project.
   # Please check our contributing guidelines to learn more.
-</code></pre>
+```

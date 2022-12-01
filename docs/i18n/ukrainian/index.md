@@ -30,6 +30,7 @@
 - [Португальська (Português)](https://www.freecodecamp.org/portuguese/learn)
 - [Українська](https://www.freecodecamp.org/ukrainian/learn)
 - [Японська (日本語)](https://www.freecodecamp.org/japanese/learn)
+- [German (Deutsch)](https://www.freecodecamp.org/german/learn)
 
 Радимо вам прочитати [це оголошення](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) та поділитися ним зі своїми друзями, аби зацікавити ще і їх.
 
@@ -41,4 +42,4 @@
 
 В цілому ми маємо сервер API на основі Node.js, набір клієнтських додатків на основі React, тестові скрипти для оцінки проєктів кемперів та багато іншого. Якщо ви хочете здійснити внесок до навчальної платформи, ми радимо ознайомитися із цими інструментами.
 
-**If you want to help us improve our codebase here's [how to set up freeCodeCamp](how-to-setup-freecodecamp-locally.md).**
+**Якщо ви хочете допомогти нам покращити нашу кодову базу, ось [як встановити freeCodeCamp](how-to-setup-freecodecamp-locally.md).**

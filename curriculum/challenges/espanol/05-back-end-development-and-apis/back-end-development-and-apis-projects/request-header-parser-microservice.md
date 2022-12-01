@@ -14,11 +14,17 @@ Crea una aplicación full stack de JavaScript que sea funcionalmente similar a e
 -   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-headerparser" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --hints--
 
-Debes proporcionar tu propio proyecto, no la URL de ejemplo.
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -30,7 +36,7 @@ Debes proporcionar tu propio proyecto, no la URL de ejemplo.
 };
 ```
 
-Una petición a `/api/whoami` debe devolver un objeto JSON con tu dirección IP en la clave `ipaddress`.
+A request to `/api/whoami` should return a JSON object with your IP address in the `ipaddress` key.
 
 ```js
 (getUserInput) =>
@@ -42,7 +48,7 @@ Una petición a `/api/whoami` debe devolver un objeto JSON con tu dirección IP 
   );
 ```
 
-Una petición a `/api/whoami` debe devolver un objeto JSON con tu idioma preferido en la clave `language`.
+A request to `/api/whoami` should return a JSON object with your preferred language in the `language` key.
 
 ```js
 (getUserInput) =>
@@ -54,7 +60,7 @@ Una petición a `/api/whoami` debe devolver un objeto JSON con tu idioma preferi
   );
 ```
 
-Una petición a `/api/whoami` debe devolver un objeto JSON con tu software en la clave de `software`.
+A request to `/api/whoami` should return a JSON object with your software in the `software` key.
 
 ```js
 (getUserInput) =>

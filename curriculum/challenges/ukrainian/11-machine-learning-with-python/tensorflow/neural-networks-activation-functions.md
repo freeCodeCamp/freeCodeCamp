@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d93
-title: 'Нейронні мережі: Функції активації'
+title: 'Нейронні мережі: функції активації'
 challengeType: 11
 videoId: S45tqW6BqRs
 bilibiliIds:
@@ -14,15 +14,15 @@ dashedName: neural-networks-activation-functions
 
 ## --text--
 
-Which activation function squishes values between -1 and 1?
+Яка функція активації нормалізує значення між -1 та 1?
 
 ## --answers--
 
-Блок лінійної ректифікації
+ReLU (Блок лінійної ректифікації)
 
 ---
 
-Гіперболічний тангенс
+Tanh (Гіперболічний тангенс)
 
 ---
 

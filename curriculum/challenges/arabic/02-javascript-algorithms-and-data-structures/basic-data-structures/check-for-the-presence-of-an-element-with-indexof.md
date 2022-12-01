@@ -28,7 +28,7 @@ fruits.indexOf('pears');
 
 # --hints--
 
-يجب أن تقوم الوظيفة `quickCheck` بإرجاع منطقي (boolean) (`true` أو `false`)، ليس سلسلة (string) نصية (`"true"` أو `"false"`)
+يجب أن تقوم الوظيفة `quickCheck` بإرجاع منطق (boolean) (`true` أو `false`)، ليس مقطع نصي (string) (`"true"` أو `"false"`)
 
 ```js
 assert.isBoolean(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));

@@ -14,26 +14,32 @@ dashedName: secure-real-time-multiplayer-game
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目
 -   使用您选择的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 框中提交你的项目 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-创建一个安全的多人游戏，每名玩家可以移动他们的角色，并且这个游戏至少提供了一个可收集的道具，玩家的排名是根据他们的分数计算的。
+Create a secure multiplayer game in which each player can move their avatar, there is at least one collectible item, and the rank of the players is calculated based on their score.
 
-有关详细信息，请参考下面的测试。
+For details consult the tests below.
 
-请确保你的游戏是安全的！ 包含以下安全措施：
+Make sure that your game is secure! Include these security measures:
 
-- 客户端不能猜测/嗅探 MIME 类型
-- 防止 XSS 攻击
-- 不要在客户端中缓存网站的任何信息
-- 在请求头中声明网站是由 `PHP 7.4.3` 提供技术支持
+- The client should not be able to guess/sniff the MIME type
+- Prevent XSS attacks
+- Do not cache anything from the website in the client
+- The headers say that the site is powered by `PHP 7.4.3`
 
-**注意：** `helmet@^3.21.3` 是需求中所要求的。 这意味着你将需要使用之前版本的 Helmet 文档，来了解如何实现需求。
+**Note**: `helmet@^3.21.3` is needed for the user stories. This means you will need to use the previous version of Helmet's docs, for information on how to achieve the user stories.
 
 # --hints--
 
-你应该提交你自己的项目，而不是示例 URL
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -45,91 +51,91 @@ dashedName: secure-real-time-multiplayer-game
 };
 ```
 
-多名玩家可以连接到同一台服务器玩这个游戏。
+Multiple players can connect to a server and play.
 
 ```js
 
 ```
 
-每名玩家都有一个角色。
+Each player has an avatar.
 
 ```js
 
 ```
 
-每名玩家都由 `Player.mjs` 中的 `Player` 类创建的对象表示
+Each player is represented by an object created by the `Player` class in `Player.mjs`.
 
 ```js
 
 ```
 
-至少，每个玩家对象都应该包含一个唯一的 `id`、一个`score`，以及代表玩家当前位置的 `x` 和 `y` 坐标。
+At a minimum, each player object should contain a unique `id`, a `score`, and `x` and `y` coordinates representing the player's current position.
 
 ```js
 
 ```
 
-游戏中至少有一种可收集道具。 在 `Collectible.mjs` 中完成 `Collectible` 类来实现这一点
+The game has at least one type of collectible item. Complete the `Collectible` class in `Collectible.mjs` to implement this.
 
 ```js
 
 ```
 
-至少，由 `Collectible` 类创建的每个可收集物品对象应该包含一个唯一的 `id`、一个 `value` 和代表物品的当前位置 `x` 和 `y` 坐标。
+At a minimum, each collectible item object created by the `Collectible` class should contain a unique `id`, a `value`, and `x` and `y` coordinates representing the item's current position.
 
 ```js
 
 ```
 
-玩家可以使用 WASD 和/或箭头键移动他们的角色。 完成 `Player.mjs` 中的 `movePlayer` 方法来实现这一功能。
+Players can use the WASD and/or arrow keys to move their avatar. Complete the `movePlayer` method in `Player.mjs` to implement this.
 
 ```js
 
 ```
 
-`movePlayer` 方法应该接受两个参数：一个由 “up”、“down”、“left” 或 “right” 组成的字符串，以及一个表示玩家位置应该改变的像素数量的数字。 `movePlayer` 应该调整被调用的玩家对象的 `x` 和 `y` 坐标。
+The `movePlayer` method should accept two arguments: a string of "up", "down", "left", or "right", and a number for the amount of pixels the player's position should change. `movePlayer` should adjust the `x` and `y` coordinates of the player object it's called from.
 
 ```js
 
 ```
 
-玩家的分数应该用来计算他们与其他玩家相比的排名。 完成 `Player` 类中的 `calculateRank` 方法来实现这个功能。
+The player's score should be used to calculate their rank among the other players. Complete the `calculateRank` method in the `Player` class to implement this.
 
 ```js
 
 ```
 
-`calculateRank` 方法应该接受一个代表所有连接的玩家的对象数组，并返回字符串 `Rank: currentRanking/totalPlayers`（排名：当前排名/总玩家数）。 举个例子，在一个两人游戏中，如果玩家 A 有 3 分，玩家 B 有 5 分，那么玩家 A 的 `calculateRank` 应该返回 `Rank: 2/2`。
+The `calculateRank` method should accept an array of objects representing all connected players and return the string `Rank: currentRanking/totalPlayers`. For example, in a game with two players, if Player A has a score of 3 and Player B has a score of 5, `calculateRank` for Player A should return `Rank: 2/2`.
 
 ```js
 
 ```
 
-玩家可以与收集道具发生碰撞。 完成 `Player.mjs` 中的 `collision` 方法实现这一功能。
+Players can collide with a collectible item. Complete the `collision` method in `Player.mjs` to implement this.
 
 ```js
 
 ```
 
-`collision` 方法应该接受可收集物品的对象作为参数。 如果玩家的角色与道具重合，`collision` 方法应该返回 `true`。
+The `collision` method should accept a collectible item's object as an argument. If the player's avatar intersects with the item, the `collision` method should return `true`.
 
 ```js
 
 ```
 
-所有玩家保持同步。
+All players are kept in sync.
 
 ```js
 
 ```
 
-玩家可以在任何时候退出游戏。
+Players can disconnect from the game at any time.
 
 ```js
 
 ```
 
-防止客户端尝试猜测/嗅探 MIME 类型。
+Prevent the client from trying to guess / sniff the MIME type.
 
 ```js
 async (getUserInput) => {
@@ -139,7 +145,7 @@ async (getUserInput) => {
 };
 ```
 
-防止跨站脚本（XSS）攻击。
+Prevent cross-site scripting (XSS) attacks.
 
 ```js
 async (getUserInput) => {
@@ -149,7 +155,7 @@ async (getUserInput) => {
 };
 ```
 
-网站上的任何东西都不会被缓存到客户端中。
+Nothing from the website is cached in the client.
 
 ```js
 async (getUserInput) => {
@@ -165,7 +171,7 @@ async (getUserInput) => {
 };
 ```
 
-在请求头中声明该网站由 “PHP 7.4.3” 提供技术支持，尽管它并非如此（作为一种安全措施）。
+The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as a security measure).
 
 ```js
 async (getUserInput) => {

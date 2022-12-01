@@ -38,11 +38,11 @@ socket.on('user count', function(data) {
 
 現在你可以嘗試啓動你的 app 並登錄，你會看到在客戶端的控制檯打印出了 “1”，這就表示目前連接到服務器的用戶數爲 1。 你可以試着通過打開多個 app 來驗證數量是否會增加。
 
-完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#communicate-by-emitting-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#communicate-by-emitting-7" target="_blank" rel="noopener noreferrer nofollow">查看到目前爲止已完成的項目</a>。
 
 # --hints--
 
-`currentUsers` should be defined.
+應該定義 `currentUsers`。
 
 ```js
 async (getUserInput) => {
@@ -72,7 +72,7 @@ async (getUserInput) => {
 }
 ```
 
-Your client should be listening for `'user count'` event.
+你的客戶端應該監聽 `'user count'` 事件。
 
 ```js
 async (getUserInput) => {
