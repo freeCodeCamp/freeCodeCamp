@@ -8,7 +8,7 @@ dashedName: secure-real-time-multiplayer-game
 
 # --description--
 
-Develop a 2D real time multiplayer game using the HTML Canvas API and Socket.io that is functionally similar to this: <a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
+Розробіть багатокористувацьку 2D-гру в реальному часі, використовуючи HTML Canvas API та Socket.io, яка функціонально схожа до цього: <a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
@@ -24,22 +24,22 @@ Develop a 2D real time multiplayer game using the HTML Canvas API and Socket.io 
 
 # --instructions--
 
-Create a secure multiplayer game in which each player can move their avatar, there is at least one collectible item, and the rank of the players is calculated based on their score.
+Створіть безпечну багатокористувацьку гру, у якій кожен гравець може переміщувати свій аватар, є принаймні один колекційний предмет, а рейтинг гравців обчислюється на основі результатів.
 
-For details consult the tests below.
+Для отримання детальної інформації зверніться до тестів нижче.
 
-Make sure that your game is secure! Include these security measures:
+Переконайтеся, що ваша гра безпечна! Додайте такі заходи безпеки:
 
-- The client should not be able to guess/sniff the MIME type
-- Prevent XSS attacks
-- Do not cache anything from the website in the client
-- The headers say that the site is powered by `PHP 7.4.3`
+- Клієнт не може вгадати/розпізнати тип MIME
+- Запобігайте атакам XSS
+- Не кешуйте нічого з вебсайту в клієнті
+- У заголовках зазначено, що сайт працює на основі `PHP 7.4.3`
 
-**Note**: `helmet@^3.21.3` is needed for the user stories. This means you will need to use the previous version of Helmet's docs, for information on how to achieve the user stories.
+**Примітка**: `helmet@^3.21.3` потрібний для історії користувача. Це означає, що вам потрібно буде використати попередню версію документації Helmet, щоб отримати інформацію про те, як виконати історію користувача.
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Ви можете надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 (getUserInput) => {
@@ -51,91 +51,91 @@ You can provide your own project, not the example URL.
 };
 ```
 
-Multiple players can connect to a server and play.
+Декілька гравців можуть приєднатися до сервера і грати.
 
 ```js
 
 ```
 
-Each player has an avatar.
+У кожного гравця є аватар.
 
 ```js
 
 ```
 
-Each player is represented by an object created by the `Player` class in `Player.mjs`.
+Кожен гравець представлений об'єктом, створеним класом `Player` у `Player.mjs`.
 
 ```js
 
 ```
 
-At a minimum, each player object should contain a unique `id`, a `score`, and `x` and `y` coordinates representing the player's current position.
+Як мінімум, кожен об'єкт-гравець повинен містити унікальний `id`, `score` і координати `x` та `y`, які показують поточну позицію гравця.
 
 ```js
 
 ```
 
-The game has at least one type of collectible item. Complete the `Collectible` class in `Collectible.mjs` to implement this.
+Гра має принаймні один тип колекційного предмета. Заповніть клас `Collectible` у `Collectible.mjs`, щоб впровадити це.
 
 ```js
 
 ```
 
-At a minimum, each collectible item object created by the `Collectible` class should contain a unique `id`, a `value`, and `x` and `y` coordinates representing the item's current position.
+Як мінімум, кожен об'єкт-предмет, створений класом `Collectible`, повинен містити унікальний `id`, `value` і координати `x` та `y`, які показують поточну позицію предмета.
 
 ```js
 
 ```
 
-Players can use the WASD and/or arrow keys to move their avatar. Complete the `movePlayer` method in `Player.mjs` to implement this.
+Гравці можуть використовувати клавіші WASD та/або стрілки, щоб перемістити свій аватар. Заповніть метод `movePlayer` у `Player.mjs`, щоб впровадити це.
 
 ```js
 
 ```
 
-The `movePlayer` method should accept two arguments: a string of "up", "down", "left", or "right", and a number for the amount of pixels the player's position should change. `movePlayer` should adjust the `x` and `y` coordinates of the player object it's called from.
+Метод `movePlayer` повинен приймати два аргументи: рядок «up», «down», «left» або «right», а також кількість пікселів, на яку має змінюватися позиція гравця. `movePlayer` повинен адаптовуватися до координат (`x` та `y`) об'єкта-гравця, який його викликав.
 
 ```js
 
 ```
 
-The player's score should be used to calculate their rank among the other players. Complete the `calculateRank` method in the `Player` class to implement this.
+Рахунок гравця повинен бути використаний, щоб розрахувати рейтинг серед інших гравців. Заповніть метод `calculateRank` у `Player`, щоб впровадити це.
 
 ```js
 
 ```
 
-The `calculateRank` method should accept an array of objects representing all connected players and return the string `Rank: currentRanking/totalPlayers`. For example, in a game with two players, if Player A has a score of 3 and Player B has a score of 5, `calculateRank` for Player A should return `Rank: 2/2`.
+Метод `calculateRank` повинен приймати масив об'єктів, представляючи усіх підключених гравців і повернути рядок `Rank: currentRanking/totalPlayers`. Наприклад, в грі з двома гравцями, якщо гравець А має рахунок 3 і гравець В має рахунок 5, `calculateRank` для гравця A повинен повернути `Rank: 2/2`.
 
 ```js
 
 ```
 
-Players can collide with a collectible item. Complete the `collision` method in `Player.mjs` to implement this.
+Гравці можуть зіткнутися з колекційним предметом. Заповніть метод `collision` у `Player.mjs`, щоб впровадити це.
 
 ```js
 
 ```
 
-The `collision` method should accept a collectible item's object as an argument. If the player's avatar intersects with the item, the `collision` method should return `true`.
+Метод `collision` повинен приймати колекційний предмет як аргумент. Якщо аватар гравця перетинається з предметом, метод `collision` повинен повернути `true`.
 
 ```js
 
 ```
 
-All players are kept in sync.
+Всі гравці залишаються синхронізованими.
 
 ```js
 
 ```
 
-Players can disconnect from the game at any time.
+Гравці можуть відключитись від гри в будь-який час.
 
 ```js
 
 ```
 
-Prevent the client from trying to guess / sniff the MIME type.
+Забороніть клієнту вгадувати/розпізнавати тип MIME.
 
 ```js
 async (getUserInput) => {
@@ -145,7 +145,7 @@ async (getUserInput) => {
 };
 ```
 
-Prevent cross-site scripting (XSS) attacks.
+Забороніть міжсайтові атаки XSS.
 
 ```js
 async (getUserInput) => {
@@ -155,7 +155,7 @@ async (getUserInput) => {
 };
 ```
 
-Nothing from the website is cached in the client.
+Ніякі дані вебсайту не розміщені у кеші клієнта.
 
 ```js
 async (getUserInput) => {
@@ -171,7 +171,7 @@ async (getUserInput) => {
 };
 ```
 
-The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as a security measure).
+Заголовки зазначають, що сайт працює на «PHP 7.4.3», хоча це не так (написано з міркувань безпеки).
 
 ```js
 async (getUserInput) => {

@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Your `#email` should be a descendant of `#survey-form`.
+`#email` は `#survey-form` の子孫要素である必要があります。
 
 ```js
 const el = document.querySelector('#survey-form #email')

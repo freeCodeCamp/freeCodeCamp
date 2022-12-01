@@ -28,9 +28,9 @@ dashedName: issue-tracker
 -   Create all of the functional tests in `tests/2_functional-tests.js`
 -   Copy the `sample.env` file to `.env` and set the variables appropriately
 -   To run the tests uncomment `NODE_ENV=test` in your `.env` file
--   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+-   Щоб запустити тести на консолі, використайте команду `npm run test`. Щоб відкрити консоль Replit, натисніть Ctrl+Shift+P (Cmd на Mac) та введіть «open shell»
 
-Write the following tests in `tests/2_functional-tests.js`:
+Напишіть наступні тести в `tests/2_functional-tests.js`:
 
 -   Create an issue with every field: POST request to `/api/issues/{project}`
 -   Create an issue with only required fields: POST request to `/api/issues/{project}`
@@ -49,7 +49,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Ви можете надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 (getUserInput) => {
@@ -342,7 +342,7 @@ async (getUserInput) => {
 };
 ```
 
-All 14 functional tests are complete and passing.
+Усі 14 функціональних тестів завершено та успішно пройдено.
 
 ```js
 async (getUserInput) => {
