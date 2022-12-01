@@ -4,9 +4,11 @@
 
 コントリビューションガイドラインを編集するには、`docs` [ディレクトリ](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs) のファイルを編集または追加します。 When your changes are merged, they will be made available automatically at the documentation site.
 
+When adding a new file to the `docs` directory, you should evaluate if the file should also be added to the sidebar navigation. We typically create a link in the [`_sidebar.md`](_sidebar.md) file for new and independent guides. Alternatively, You may follow the instructions below on creating an internal link for supporting guides.
+
 ### 内部リンクを作成する
 
-コントリビューションガイドラインの他セクションをリンク先に設定する場合、次の形式に従ってください。
+If you want to create a link targeting a different section of the contributing guidelines, follow this format:
 
 ```md
 [Link text](target-file-name.md#target-section-heading-id)
@@ -15,13 +17,13 @@
 [Link text](#target-section-heading-id)
 ```
 
-拡張子 (`.md`) を必ず含めてください。 URL 全体を指定したり、ファイル名の前に `/` を付けたりしないでください。
+Make sure you include the file extension (`.md`). Don't specify the full URL or append `/` before the file name.
 
-上記は翻訳版のドキュメントでリンクが動作するために必要です。 この形式に従わないリンクは、言語に関係なく英語版のページにリダイレクトされます。
+This is necessary to make these links work for the translated version of the document. Otherwise, they will redirect to the English version of the page regardless of the language.
 
 #### 内部リンクのあるドキュメントを翻訳する
 
-Crowdin でドキュメントの翻訳を行う際には、`#target-section-heading-id` を翻訳版のドキュメント上の id と置き換えてください。 [ドキュメントの翻訳について詳しくはこちらを参照してください](how-to-translate-files.md#ドキュメントを翻訳する)。
+When you work on translating docs on Crowdin, make sure to replace the `#target-section-heading-id` with the id on the translated document. [Learn more about translating docs here](how-to-translate-files.md#translate-documentation).
 
 ## ドキュメントのテーマに貢献する
 
@@ -33,13 +35,13 @@ Crowdin でドキュメントの翻訳を行う際には、`#target-section-head
 
 The site is generated using [`docsify`](https://docsify.js.org) and served using GitHub pages.
 
-通常、サイトの設定を変更したり、サイトをローカルにビルドしたりする必要はありません。 参考までに、以下のように動作します。
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
 - このサイト向けのホームページのソースは、[`docs/index.html`](index.html) にあります。
 - `docsify` と GitHub Pages を使用して、このファイルを SPA として提供します。
 - The `docsify` script generates the content of `markdown` files in the `docs` directory on demand.
 - ホームページは [`_coverpage.md`](_coverpage.md) から生成されます。
-- サイドバーナビゲーションは [`_sidebar.md`](_sidebar.md) から生成されます。
+- The sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
 ### ローカルでドキュメントサイトを提供する
 

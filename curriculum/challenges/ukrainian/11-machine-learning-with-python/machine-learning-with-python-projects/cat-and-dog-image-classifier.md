@@ -10,19 +10,19 @@ dashedName: cat-and-dog-image-classifier
 
 Ви будете <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-cat-and-dog-image-classifier/blob/master/fcc_cat_dog.ipynb" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з Google Colaboratory</a>.
 
-Перейшовши за цим посиланням, створіть копію блокнота в своєму обліковому записі або локально. Як тільки ви завершили проєкт та пройшли тести (доданий до посилання), здайте посилання на свій проєкт. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Перейшовши за цим посиланням, створіть копію блокнота в своєму обліковому записі або локально. Як тільки ви завершили проєкт та пройшли тест (доданий до посилання), здайте посилання на свій проєкт. Якщо ви надаєте посилання на Google Colaboratory, переконайтеся, що ви увімкнули режим доступу для «усіх, хто має це посилання».
 
-We are still developing the interactive instructional content for the machine learning curriculum. Поки ви можете переглянути відеозавдання цієї сертифікації. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
+Ми досі розробляємо інтерактивну складову для навчальної програми з машинного навчання. Поки ви можете переглянути відеозавдання цієї сертифікації. Вам також можуть знадобитися додаткові навчальні ресурси, так само як під час роботи із повноцінним проєктом.
 
 # --instructions--
 
-For this challenge, you will complete the code  to classify images of dogs and cats. You will use TensorFlow 2.0 and Keras to create a convolutional neural network that correctly classifies images of cats and dogs at least 63% of the time. (Extra credit if you get it to 70% accuracy!)
+У цьому завданні ви завершите код для класифікації зображень собак та котів. Ви будете використовувати TensorFlow 2.0 та Keras, щоб створити звивисту нейронну систему, яка чітко визначатиме зображення котів та собак мінімум в 63% випадках. (Додатковий бонус, якщо ви отримаєте 70% точності!)
 
-Some of the code is given to you but some code you must fill in to complete this challenge. Read the instruction in each text cell so you will know what you have to do in each code cell.
+Вам надано частину коду, а іншу частину коду ви повинні заповнити, щоб виконати це завдання. Прочитайте інструкцію в кожній текстовій клітинці, щоб знати, що вам потрібно зробити в кожній клітинці коду.
 
-The first code cell imports the required libraries. The second code cell downloads the data and sets key variables. The third cell is the first place you will write your own code.
+Перша клітинка коду імпортує необхідні бібліотеки. Друга клітинка коду завантажує дані та встановлює ключові змінні. Третя клітинка – це перше місце, де ви будете писати свій власний код.
 
-The structure of the dataset files that are downloaded looks like this (You will notice that the test directory has no subdirectories and the images are not labeled):
+Структура файлів набору даних, які завантажуються, виглядає так (ви помітите, що тестова директорія не має піддиректорій, а зображення не позначені):
 
 ```py
 cats_and_dogs
@@ -35,20 +35,20 @@ cats_and_dogs
 |__ test: [1.jpg, 2.jpg ...]
 ```
 
-You can tweak epochs and batch size if you like, but it is not required.
+Ви можете налаштувати епохи та розмір, якщо хочете, але це не обов’язково.
 
-The following instructions correspond to specific cell numbers, indicated with a comment at the top of the cell (such as `# 3`).
+Наступні інструкції відповідають конкретним номерам клітинок, позначеним коментарем у верхній частині клітинки (наприклад, `# 3`).
 
-## Cell 3
+## Клітинка 3
 
-Now it is your turn! Set each of the variables in this cell correctly. (They should no longer equal `None`.)
+Тепер ваша черга! Правильно встановіть кожну зі змінних у цій клітинці. (Вони більше не повинні дорівнювати `None`.)
 
-Create image generators for each of the three image data sets (train, validation, test). Use `ImageDataGenerator` to read / decode the images and convert them into floating point tensors. Use the `rescale` argument (and no other arguments for now) to rescale the tensors from values between 0 and 255 to values between 0 and 1.
+Створіть генератори зображень для кожного з трьох наборів даних зображень (навчання, перевірка, тест). Використайте `ImageDataGenerator`, щоб прочитати/декодувати зображення та перетворити їх у тензори з плавучою комою. Використайте аргумент `rescale` (жодних інших аргументів наразі), щоб змінити масштаб тензорів від значень від 0 до 255 до значень від 0 до 1.
 
-For the `*_data_gen` variables, use the `flow_from_directory` method. Pass in the batch size, directory, target size (`(IMG_HEIGHT, IMG_WIDTH)`), class mode, and anything else required. `test_data_gen` will be the trickiest one. For `test_data_gen`, make sure to pass in `shuffle=False` to the `flow_from_directory` method. This will make sure the final predictions stay is in the order that our test expects. For `test_data_gen` it will also be helpful to observe the directory structure.
+Для змінних `*_data_gen` використайте метод `flow_from_directory`. Передайте розмір партії, директорію, цільовий розмір (`(IMG_HEIGHT, IMG_WIDTH)`), режим класу та все інше, що потрібно. `test_data_gen` буде найскладнішим. Для `test_data_gen` обов’язково передайте `shuffle=False` в метод `flow_from_directory`. Це гарантує, що кінцеві прогнози залишаться в тому порядку, який очікує наш тест. Для `test_data_gen` також буде корисно спостерігати за структурою директорії.
 
 
-After you run the code, the output should look like this:
+Після запуску коду результат повинен виглядати так:
 
 ```py
 Found 2000 images belonging to 2 classes.
@@ -56,49 +56,49 @@ Found 1000 images belonging to 2 classes.
 Found 50 images belonging to 1 class.
 ```
 
-## Cell 4
+## Клітинка 4
 
-The `plotImages` function will be used a few times to plot images. It takes an array of images and a probabilities list, although the probabilities list is optional. This code is given to you. If you created the `train_data_gen` variable correctly, then running this cell will plot five random training images.
+Функція `plotImages` буде використана кілька разів для побудови зображень. Вона приймає масив зображень та список ймовірностей, хоча список ймовірностей необов’язковий. Цей код надається вам. Якщо ви правильно створили змінну `train_data_gen`, то запуск цієї клітинки побудує п’ять випадкових навчальних зображень.
 
-## Cell 5
+## Клітинка 5
 
-Recreate the `train_image_generator` using `ImageDataGenerator`.
+Повторно створіть `train_image_generator`, використовуючи `ImageDataGenerator`.
 
-Since there are a small number of training examples, there is a risk of overfitting. One way to fix this problem is by creating more training data from existing training examples by using random transformations.
+Оскільки існує невелика кількість навчальних прикладів, наявний ризик переоснащення. Один зі способів розв'язати цю проблему – це створити більше навчальних даних із наявних навчальних прикладів за допомогою випадкових перетворень.
 
-Add 4-6 random transformations as arguments to `ImageDataGenerator`. Make sure to rescale the same as before.
+Додайте 4-6 випадкових перетворень як аргументи до `ImageDataGenerator`. Не забудьте змінити масштаб так само, як і раніше.
 
-## Cell 6
+## Клітинка 6
 
-You don't have to do anything for this cell. `train_data_gen` is created just like before but with the new `train_image_generator`. Then, a single image is plotted five different times using different variations.
+Вам не потрібно нічого робити для цієї клітини. `train_data_gen` створюється так само, як і раніше, але з новим `train_image_generator`. Потім одне зображення наноситься п’ять разів з використанням різних варіацій.
 
-## Cell 7
+## Клітинка 7
 
-In this cell, create a model for the neural network that outputs class probabilities. It should use the Keras Sequential model. It will probably involve a stack of Conv2D and MaxPooling2D layers and then a fully connected layer on top that is activated by a ReLU activation function.
+У цій клітинці створіть модель для нейронної мережі, яка виводить ймовірності класу. Вона повинна використовувати модель Keras Sequential. Ймовірно, це включатиме стек шарів Conv2D та MaxPooling2D, а потім повністю підключений рівень поверх, який активується функцією активації ReLU.
 
-Compile the model passing the arguments to set the optimizer and loss. Also pass in `metrics=['accuracy']` to view training and validation accuracy for each training epoch.
+Скомпілюйте модель, передаючи аргументи для встановлення оптимізатора та втрати. Також передайте `metrics=['accuracy']`, щоб переглянути точність навчання та перевірки для кожної епохи навчання.
 
-## Cell 8
+## Клітинка 8
 
-Use the `fit` method on your `model` to train the network. Make sure to pass in arguments for `x`, `steps_per_epoch`, `epochs`, `validation_data`, and `validation_steps`.
+Використайте метод `fit` на своїй `model`, щоб навчити мережу. Обов’язково передайте аргументи для `x`, `steps_per_epoch`, `epochs`, `validation_data` та `validation_steps`.
 
-## Cell 9
+## Клітинка 9
 
-Run this cell to visualize the accuracy and loss of the model.
+Запустіть цю клітинку, щоб візуалізувати точність та втрату моделі.
 
-## Cell 10
+## Клітинка 10
 
-Now it is time to use your model to predict whether a brand new image is a cat or a dog.
+Тепер настав час використати вашу модель, щоб передбачити, чи є нове зображення кішкою чи собакою.
 
-In this cell, get the probability that each test image (from `test_data_gen`) is a dog or a cat. `probabilities` should be a list of integers.
+У цій клітинці отримайте ймовірність того, що кожне тестове зображення (з `test_data_gen`) є собакою чи котом. `probabilities` повинен бути списком цілих чисел.
 
-Call the `plotImages` function and pass in the test images and the probabilities corresponding to each test image.
+Викличте функцію `plotImages` та передайте тестові зображення та ймовірності, що відповідають кожному тестовому зображенню.
 
-After you run the cell, you should see all 50 test images with a label showing the percentage of "sure" that the image is a cat or a dog. The accuracy will correspond to the accuracy shown in the graph above (after running the previous cell). More training images could lead to a higher accuracy.
+Після того, як ви запустите клітинку, ви побачите всі 50 тестових зображень з міткою, яка показує відсоток «впевненості», що це зображення кішки чи собаки. Точність відповідатиме точності, показаній на графіку вище (після виконання попередньої клітинки). Більше навчальних зображень може призвести до вищої точності.
 
-## Cell 11
+## Клітинка 11
 
-Run this final cell to see if you passed the challenge or if you need to keep trying.
+Запустіть останню клітинку, щоб побачити, чи ви пройшли завдання чи вам потрібно продовжувати спроби.
 
 # --hints--
 

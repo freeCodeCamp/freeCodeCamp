@@ -22,19 +22,19 @@ dashedName: meet-the-node-console
 
 Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`.
 
-During the development process, it is important to be able to check what’s going on in your code.
+Під час процесу розробки важливо перевіряти, що відбувається у коді.
 
-Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see console output in a terminal. On Replit, a terminal is open in the right pane by default.
+Node – це всього лиш середовище JavaScript. Як і клієнтська сторона JavaScript, ви можете використовувати консоль для відображення корисної інформації щодо налаштування. На своїй локальній машині ви побачите вивід консолі в терміналі. На Replit термінал відкритий на правій панелі за замовчуванням.
 
-We recommend to keep the terminal open while working at these challenges. By reading the output in the terminal, you can see any errors that may occur.
+Ми рекомендуємо тримати термінал відкритим під час роботи над цими завданнями. Читаючи вивід в терміналі, ви можете побачити будь-які помилки, що можуть виникнути.
 
 # --instructions--
 
-Modify the `myApp.js` file to log "Hello World" to the console.
+Модифікуйте файл `myApp.js` для виводу «Hello World» на консоль.
 
 # --hints--
 
-`"Hello World"` should be in the console
+`"Hello World"` повинне бути на консолі
 
 ```js
 (getUserInput) =>

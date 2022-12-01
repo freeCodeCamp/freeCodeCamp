@@ -4,6 +4,8 @@
 
 To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). When your changes are merged, they will be made available automatically at the documentation site.
 
+When adding a new file to the `docs` directory, you should evaluate if the file should also be added to the sidebar navigation. We typically create a link in the [`_sidebar.md`](_sidebar.md) file for new and independent guides. Alternatively, You may follow the instructions below on creating an internal link for supporting guides.
+
 ### How to create an internal link
 
 If you want to create a link targeting a different section of the contributing guidelines, follow this format:
@@ -39,7 +41,7 @@ Typically you would not need to change any configuration or build the site local
 - Wir stellen diese Datei als SPA (Single Page Application) mit `docsify` und GitHub Pages bereit.
 - The `docsify` script generates the content of `markdown` files in the `docs` directory on demand.
 - Die Homepage wird aus der [`_coverpage.md`](_coverpage.md) erstellt.
-- die Navigation in der Seitenleiste wird aus [`_sidebar.md`](_sidebar.md) generiert.
+- The sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
 ### Serving the documentation site locally
 

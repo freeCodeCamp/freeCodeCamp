@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ca
-title: オブジェクトを使用してルックアップ検索を行う
+title: オブジェクトを使用して検索を行う
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBk8sM'
 forumTopicId: 18373
@@ -9,9 +9,9 @@ dashedName: using-objects-for-lookups
 
 # --description--
 
-オブジェクトは、辞書のようなキー/値の保管場所と捉えることができます。 表形式のデータがある場合、`switch` ステートメントや `if/else` のチェーンを使用せずに、オブジェクトを利用して値のルックアップ検索を行うことができます。 この方法は、入力データが特定の範囲に制限されていることがわかっている場合に特に便利です。
+オブジェクトは、辞書のようなキー/値の保管場所と捉えることができます。 表形式のデータがある場合、`switch` ステートメントや `if/else` のチェーンを使用せずに、オブジェクトを利用して目的の値を探すことができます。 この方法は、入力データが特定の範囲に制限されていることがわかっている場合に特に便利です。
 
-Here is an example of an article object:
+下記は記事 (article) を表すオブジェクトを使った例です。
 
 ```js
 const article = {
@@ -30,7 +30,7 @@ const value = "title";
 const valueLookup = article[value];
 ```
 
-`articleAuthor` is the string `Kaashan Hussain`, `articleLink` is the string `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`, and `valueLookup` is the string `How to create objects in JavaScript`.
+`articleAuthor` は `Kaashan Hussain` という文字列、`articleLink` は `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/` という文字列、`valueLookup` は `How to create objects in JavaScript` という文字列になります。
 
 # --instructions--
 
