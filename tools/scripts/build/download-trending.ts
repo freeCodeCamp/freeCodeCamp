@@ -42,7 +42,6 @@ const download = async () => {
     `
     );
   }
-})().catch(err => {
-  console.log(err);
-  process.exit(1);
-});
+};
+
+void download();
