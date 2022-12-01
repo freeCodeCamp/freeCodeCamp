@@ -9,7 +9,7 @@ const { clientLocale } = envData;
 const createCdnUrl = (lang: string) =>
   `https://cdn.freecodecamp.org/universal/trending/${lang}.yaml`;
 
-(async () => {
+const download = async () => {
   const url = cdnUrlCreator(clientLocale);
   const res = await fetch(url);
   if (!res.ok) {
