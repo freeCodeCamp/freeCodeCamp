@@ -52,7 +52,7 @@ res.render('index', { title: 'Hello', message: 'Please log in' });
 
 Now refresh your page, and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
 
-Відправте свою сторінку коли впевнились, що все правильно. If you're running into errors, you can check out the <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">project completed up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 

@@ -42,7 +42,7 @@ Now try loading up your app and authenticate and you should see in your server c
 
 **Примітка:**`io()` працює лише тоді коли підключений до сокета, який знаходиться на тому ж url/сервері. Щоб підключитись до зовнішнього сокета, який знаходиться в іншому місці, скористайтесь `io.connect('URL');`.
 
-Відправте свою сторінку коли впевнились, що все правильно. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-the-environment-6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-the-environment-6" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 

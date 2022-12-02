@@ -28,7 +28,7 @@ const _callback = item => item * 2;
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-`["naomi", "quincy", "camperbot"].myMap(element => element.toUpperCase())` should return `["NAOMI", "QUINCY", "CAMPERBOT"]`.
+`["naomi", "quincy", "camperbot"].myMap(element => element.toUpperCase())` dovrebbe restituire `["NAOMI", "QUINCY", "CAMPERBOT"]`.
 
 ```js
 const _test_s = ["naomi", "quincy", "camperbot"];
@@ -36,7 +36,7 @@ const _callback = element => element.toUpperCase();
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-`[1, 1, 2, 5, 2].myMap((element, index, array) => array[i + 1] || array[0])` should return `[1, 2, 5, 2, 1]`.
+`[1, 1, 2, 5, 2].myMap((element, index, array) => array[i + 1] || array[0])` dovrebbe restituire `[1, 2, 5, 2, 1]`.
 
 ```js
 const _test_s = [1, 1, 2, 5, 2];
@@ -44,7 +44,7 @@ const _callback = (element, index, array) => array[index + 1] || array[0];
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-Your code should not use the `map` method.
+Il tuo codice non dovrebbe usare il metodo `map`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?map/g));
