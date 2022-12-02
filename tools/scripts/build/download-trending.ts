@@ -9,7 +9,7 @@ const { clientLocale } = envData;
 const createCdnUrl = (lang: string) =>
   `https://cdn.freecodecamp.org/universal/trending/${lang}.yaml`;
 
-const download = async () => {
+const download = async (clientLocale: string) => {
   const url = createCdnUrl(clientLocale);
   const res = await fetch(url);
   if (!res.ok) {
@@ -44,4 +44,7 @@ const download = async () => {
   }
 };
 
-void download();
+void download(clientLocale);
+// TODO: remove the need to fallback to english once we're confident it's
+// unnecessary (client/i18n/config.js will need all references to 'en' removing)
+if (clientLocale !== 'english') void download('english');
