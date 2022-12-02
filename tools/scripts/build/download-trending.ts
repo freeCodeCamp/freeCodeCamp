@@ -47,4 +47,4 @@ const download = async (clientLocale: string) => {
 void download(clientLocale);
 // TODO: remove the need to fallback to english once we're confident it's
 // unnecessary (client/i18n/config.js will need all references to 'en' removing)
-void download('english');
+if (clientLocale !== 'english') void download('english');
