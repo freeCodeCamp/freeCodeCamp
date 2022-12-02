@@ -3,7 +3,6 @@ import { check } from 'express-validator';
 import jwt from 'jsonwebtoken';
 import passport from 'passport';
 import { isEmail } from 'validator';
-import { auth } from 'express-oauth2-jwt-bearer';
 import axios from 'axios';
 import { jwtSecret } from '../../../../config/secrets';
 
@@ -191,52 +190,40 @@ function createGetPasswordlessAuth(app) {
   };
 }
 
-async function getUserInfo(accessToken) {
-  return await axios({
-    method: 'GET',
-    url: `https://${process.env.AUTH0_DOMAIN}/userinfo`,
-    headers: { Authorization: `${accessToken}` }
-  });
-}
-
 function mobileLogin(app) {
   const {
     models: { User }
   } = app;
   return async function getPasswordlessAuth(req, res, next) {
-    try {
-      const {
-        headers: { authorization: accessToken }
-      } = req;
+    const {
+      headers: { token: accessToken }
+    } = req;
 
-      // validate the access token from auth0
-      auth({
-        audience: `https://${process.env.AUTH0_DOMAIN}/api/v2/`,
-        issuerBaseURL: process.env.AUTH0_DOMAIN
-      });
+    const userInfo = await axios({
+      method: 'GET',
+      url: `https://${process.env.AUTH0_DOMAIN}/userinfo`,
+      headers: { Authorization: `Bearer ${accessToken}` }
+    });
 
-      const {
-        data: { email }
-      } = await getUserInfo(accessToken);
+    const {
+      data: { email }
+    } = userInfo;
 
-      if (!isEmail(email)) {
-        return next(
-          wrapHandledError(new TypeError('decoded email is invalid'), {
-            type: 'info',
-            message: 'The email encoded in the link is incorrectly formatted',
-            redirectTo: `${origin}/signin`
-          })
-        );
-      }
-
-      return User.findOne$({ where: { email: email } })
-        .do(async user => {
-          const token = await user.mobileLoginByRequest(req, res);
-          return res.json(token);
+    if (!isEmail(email)) {
+      return next(
+        wrapHandledError(new TypeError('decoded email is invalid'), {
+          type: 'info',
+          message: 'The email encoded in the link is incorrectly formatted',
+          redirectTo: `${origin}/signin`
         })
-        .subscribe(() => {}, next);
-    } catch (e) {
-      res.send({ error: e });
+      );
     }
+
+    return User.findOne$({ where: { email: email } })
+      .do(async user => {
+        const token = await user.mobileLoginByRequest(req, res);
+        return res.json(token);
+      })
+      .subscribe(() => {}, next);
   };
 }
