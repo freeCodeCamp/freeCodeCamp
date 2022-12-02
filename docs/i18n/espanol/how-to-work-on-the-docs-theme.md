@@ -4,9 +4,11 @@
 
 Para trabajar en las pautas de contribución, puedes editar o agregar archivos al directorio `docs`, [disponible aquí](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). Cuando tus cambios se fusionen, automáticamente estarán disponibles en el sitio de documentación.
 
+When adding a new file to the `docs` directory, you should evaluate if the file should also be added to the sidebar navigation. We typically create a link in the [`_sidebar.md`](_sidebar.md) file for new and independent guides. Alternatively, You may follow the instructions below on creating an internal link for supporting guides.
+
 ### Cómo crear un enlace interno
 
-Si desea crear un enlace dirigido a una sección diferente de las pautas de contribución, siga el siguiente formato:
+If you want to create a link targeting a different section of the contributing guidelines, follow this format:
 
 ```md
 [Link text](target-file-name.md#target-section-heading-id)
@@ -15,13 +17,13 @@ Si desea crear un enlace dirigido a una sección diferente de las pautas de cont
 [Link text](#target-section-heading-id)
 ```
 
-Asegurate de incluir la extensión del archivo(`.md`). No especifique la URL completa o añada `/` antes del nombre del archivo.
+Make sure you include the file extension (`.md`). Don't specify the full URL or append `/` before the file name.
 
-Esto es necesario para que estos enlaces funcionen en la versión traducida del documento. De lo contrario, serán redirigidos a la versión de la pagina en inglés independientemente del idioma.
+This is necessary to make these links work for the translated version of the document. Otherwise, they will redirect to the English version of the page regardless of the language.
 
 #### Traduciendo archivos con enlaces internos
 
-Cuando traduces documentos en Crowdin, asegurate de reemplazar el `#target-section-heading-id` con el id del documento traducido. [Más información sobre la traducción de documentos aquí](how-to-translate-files.md#translate-documentation).
+When you work on translating docs on Crowdin, make sure to replace the `#target-section-heading-id` with the id on the translated document. [Learn more about translating docs here](how-to-translate-files.md#translate-documentation).
 
 ## Trabajar en el tema de los documentos
 
@@ -31,15 +33,15 @@ Cuando traduces documentos en Crowdin, asegurate de reemplazar el `#target-secti
 
 ### Estructura de los documentos de la página web
 
-El sitio es generado con [`docsify`](https://docsify.js.org) y hosteado por medio de GitHub pages.
+The site is generated using [`docsify`](https://docsify.js.org) and served using GitHub pages.
 
-Normalmente no necesitarías modificar ninguna configuración ni compilar el sitio localmente. En caso de que te interese, así es como funciona:
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
 - El código de la página de inicio para este sitio está disponible en [`docs/index.html`](index.html).
 - Servimos este archivo como SPA utilizando `docsify` y GitHub Pages.
 - El script `docsify` genera el contenido de los archivos `lenguaje de marcado` en el directorio `docs` en linea.
 - La página de inicio se genera a partir del [`_coverpage.md`](_coverpage.md).
-- La barra de navegación lateral es generada desde [`_sidebar.md`](_sidebar.md).
+- The sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
 ### Ejecutando el sitio de documentación localmente
 

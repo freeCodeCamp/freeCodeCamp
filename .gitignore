@@ -211,6 +211,7 @@ curriculum/build
 client/static/_redirects
 client/static/mobile
 client/static/curriculum-data
+client/i18n/locales/**/trending.json
 
 ### UI Components ###
 tools/ui-components/dist

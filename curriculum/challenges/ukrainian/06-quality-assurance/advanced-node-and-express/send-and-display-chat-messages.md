@@ -28,7 +28,7 @@ In `client.js`, you should now listen for event `'chat message'` and, when recei
 
 На даний момент чат повинен бути повністю функціональним і спроможним відправляти повідомлення всім клієнтам!
 
-Підтвердіть вашу сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

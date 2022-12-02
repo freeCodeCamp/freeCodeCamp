@@ -10,7 +10,7 @@ dashedName: add-a-license-to-your-package-json
 
 Im Feld `license` teilst du den Nutzern mit, was sie mit deinem Projekt machen dürfen.
 
-Einige gängige Lizenzen für Open-Source-Projekte sind MIT und BSD. Lizenzinformation ist nicht erforderlich, und die Urheberrechtsgesetze der meisten Länder geben dir standardmäßig Eigentumsrechte an deiner Kreation. However, it’s always a good practice to explicitly state what users can and can’t do. Hier ist ein Beispiel für das Lizenzfeld:
+Einige gängige Lizenzen für Open-Source-Projekte sind MIT und BSD. Lizenzinformation ist nicht erforderlich, und die Urheberrechtsgesetze der meisten Länder geben dir standardmäßig Eigentumsrechte an deiner Kreation. Es ist jedoch ein bewährtes Verfahren, ausdrücklich anzugeben, was Nutzer machen dürfen und was nicht. Hier ist ein Beispiel für das Lizenzfeld:
 
 ```json
 "license": "MIT",
@@ -18,7 +18,7 @@ Einige gängige Lizenzen für Open-Source-Projekte sind MIT und BSD. Lizenzinfor
 
 # --instructions--
 
-Fill the `license` field in the package.json file of your project as you find suitable.
+Fülle das `license`-Feld in der package.json-Datei deines Projekts so aus, wie du das für notwendig hältst.
 
 # --hints--
 
