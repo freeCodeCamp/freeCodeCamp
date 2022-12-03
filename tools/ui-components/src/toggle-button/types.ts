@@ -1,4 +1,6 @@
-
 export interface ToggleButtonProps {
-  className?: string
+  children?: React.ReactNode;
+  checked?: boolean;
+  onChange?: (value: boolean) => void;
+  className?: string;
 }
