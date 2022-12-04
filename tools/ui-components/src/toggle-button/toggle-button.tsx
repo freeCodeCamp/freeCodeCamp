@@ -1,5 +1,5 @@
 import { Switch } from '@headlessui/react';
-import React, { useCallback } from 'react';
+import React from 'react';
 import { ButtonSize, ButtonVariant, ToggleButtonProps } from './types';
 
 const defaultClassNames = [
@@ -7,6 +7,14 @@ const defaultClassNames = [
   'border-3',
   'text-center',
   'inline-block',
+  'active:before:w-full',
+  'active:before:h-full',
+  'active:before:absolute',
+  'active:before:inset-0',
+  'active:before:border-3',
+  'active:before:border-transparent',
+  'active:before:bg-gray-900',
+  'active:before:opacity-20',
   'focus:outline-none', // Hide the default browser outline
   'focus:ring',
   'focus:ring-focus-outline-color',
@@ -17,10 +25,12 @@ const defaultClassNames = [
 
 const computeClassNames = ({
   size,
-  variant
+  variant,
+  disabled
 }: {
   size: ButtonSize;
   variant: ButtonVariant;
+  disabled?: boolean;
 }) => {
   const classNames = [...defaultClassNames];
 
@@ -30,14 +40,18 @@ const computeClassNames = ({
         'border-foreground-danger',
         'bg-background-danger',
         'text-foreground-danger',
-        'hover:bg-foreground-danger',
-        'hover:text-background-danger',
-        'dark:hover:bg-background-danger',
-        'dark:hover:text-foreground-danger',
         'ui-checked:bg-foreground-danger',
         'ui-checked:text-background-danger',
-        'ui-checked:hover:bg-background-danger',
-        'ui-checked:hover:text-foreground-danger'
+        ...(disabled
+          ? ['active:before:hidden']
+          : [
+              'hover:bg-foreground-danger',
+              'hover:text-background-danger',
+              'dark:hover:bg-background-danger',
+              'dark:hover:text-foreground-danger',
+              'ui-checked:hover:bg-background-danger',
+              'ui-checked:hover:text-foreground-danger'
+            ])
       );
       break;
     // default variant is 'primary'
@@ -46,14 +60,18 @@ const computeClassNames = ({
         'border-foreground-secondary',
         'bg-background-quaternary',
         'text-foreground-secondary',
-        'hover:bg-foreground-primary',
-        'hover:text-background-primary',
-        'dark:hover:bg-background-primary',
-        'dark:hover:text-foreground-primary',
         'ui-checked:bg-foreground-primary',
         'ui-checked:text-background-primary',
-        'ui-checked:hover:bg-background-quaternary',
-        'ui-checked:hover:text-foreground-secondary'
+        ...(disabled
+          ? ['active:before:hidden']
+          : [
+              'hover:bg-foreground-primary',
+              'hover:text-background-primary',
+              'dark:hover:bg-background-primary',
+              'dark:hover:text-foreground-primary',
+              'ui-checked:hover:bg-background-quaternary',
+              'ui-checked:hover:text-foreground-secondary'
+            ])
       );
   }
 
@@ -61,35 +79,32 @@ const computeClassNames = ({
     case 'large':
       classNames.push('px-8 py-2.5 text-lg');
       break;
-    case 'small':
-      classNames.push('px-5 py-1 text-sm');
-      break;
-    // default size is 'medium'
-    default:
+    case 'medium':
       classNames.push('px-6 py-1.5 text-md');
+      break;
+    // default size is 'small'
+    default:
+      classNames.push('px-5 py-1 text-sm');
   }
 
   return classNames.join(' ');
 };
 
 export const ToggleButton = ({
-  size = 'medium',
+  size = 'small',
   variant = 'primary',
   disabled,
   children,
   checked,
   onChange
 }: ToggleButtonProps) => {
-  const classNames = computeClassNames({ size, variant });
+  const classNames = computeClassNames({ size, variant, disabled });
 
-  const handleChange = useCallback(
-    (checked: boolean) => {
-      if (!disabled && onChange) {
-        onChange(checked);
-      }
-    },
-    [onChange, disabled]
-  );
+  const handleChange = () => {
+    if (!disabled && onChange) {
+      onChange(true);
+    }
+  };
 
   return (
     <Switch
