@@ -277,7 +277,6 @@
     "submit-and-go": "Submit and go to my next challenge",
     "congratulations": "Congratulations, your code passes. Submit your code to continue.",
     "i-completed": "I've completed this challenge",
-    "tests": "Tests",
     "test-output": "Your test output will go here",
     "running-tests": "// running tests",
     "tests-completed": "// tests completed",
