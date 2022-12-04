@@ -21,6 +21,7 @@
   "dependencies": {
     "@babel/preset-typescript": "7.18.6",
     "@headlessui/react": "^1.7.4",
+    "@headlessui/tailwindcss": "^0.1.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "typescript": "4.9.5"
