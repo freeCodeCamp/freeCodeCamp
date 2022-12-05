@@ -7,7 +7,6 @@ import { render, screen } from '../../../../utils/test-utils';
 import { createStore } from '../../../redux/createStore';
 import TimeLine from './time-line';
 
-jest.mock('react-ga');
 const store = createStore();
 
 beforeEach(() => {
