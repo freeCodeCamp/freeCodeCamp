@@ -8,15 +8,15 @@ dashedName: authentication-strategies
 
 # --description--
 
-Стратегія - це процес авторизації користувача. Ви можете вибрати стратегію, яка дозволяє користувачам авторизуватись на основі збережених даних (якщо ви їх вказували) або від різних провайдерів таких, як Google або GitHub. For this project, we will use Passport middleware. Passport provides a comprehensive set of strategies that support authentication using a username and password, GitHub, Google, and more.
+Стратегія – це спосіб автентифікації користувача. Ви можете вибрати стратегію, яка дозволяє користувачам авторизуватись на основі локально збережених даних (якщо ви їх реєстрували) або від різних провайдерів, як-от Google або GitHub. У цьому проєкті ми будемо використовувати проміжне ПЗ Passport. Passport надає повний набір стратегій, які підтримують автентифікацію за допомогою імені користувача та пароля, GitHub, Google тощо.
 
-`passport-local@~1.0.0` has already been added as a dependency. Add it to your server as follows:
+`passport-local@~1.0.0` вже додано як залежність. Додайте його на свій сервер наступним чином:
 
 ```javascript
 const LocalStrategy = require('passport-local');
 ```
 
-Tell passport to **use** an instantiated `LocalStrategy` object with a few settings defined. Make sure this (as well as everything from this point on) is encapsulated in the database connection since it relies on it!:
+Скажіть паспорту **використовувати** екземпляр об'єкту `LocalStrategy` з кількома визначеними налаштуваннями. Переконайтесь у тому, що це (як і все інше з цього моменту) інкапсульовано в з'єднанні з базою даних, оскільки все залежить від цього!:
 
 ```javascript
 passport.use(new LocalStrategy((username, password, done) => {
@@ -30,11 +30,11 @@ passport.use(new LocalStrategy((username, password, done) => {
 }));
 ```
 
-This is defining the process to use when you try to authenticate someone locally. First, it tries to find a user in your database with the username entered. Then, it checks for the password to match. Finally, if no errors have popped up that you checked for (e.g. an incorrect password), the `user` object is returned and they are authenticated.
+Так виглядає процес, коли ви хочете автентифікувати когось локально. First, it tries to find a user in your database with the username entered. Then, it checks for the password to match. Finally, if no errors have popped up that you checked for (e.g. an incorrect password), the `user` object is returned and they are authenticated.
 
-Many strategies are set up using different settings. Generally, it is easy to set it up based on the README in that strategy's repository. A good example of this is the GitHub strategy where you don't need to worry about a username or password because the user will be sent to GitHub's auth page to authenticate. As long as they are logged in and agree then GitHub returns their profile for you to use.
+Багато стратегій налаштовуються з використанням різних налаштувань. Загалом стратегію легко налаштувати на основі README у її репозиторії. Хорошим прикладом є стратегія GitHub, де можна не переживати за ім'я користувача або пароль, оскільки користувач автоматично переадресовується на сторінку GitHub для автентифікації. Допоки користувач авторизований і згідний з умовами, GitHub надаватиме його профіль для користування.
 
-In the next step, you will set up how to actually call the authentication strategy to validate a user based on form data.
+Далі ви дізнаєтеся, як за допомогою стратегії автентифікації перевірити користувача на основі заповнених даних.
 
 Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-strategies-6" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 

@@ -58,27 +58,27 @@ myRegex.lastIndex = 0;
 assert(!myRegex.test('Frank Roosevelt'));
 ```
 
-Your regex `myRegex` should return `false` for the string `FranklinRoosevelt`
+正規表現 `myRegex` は文字列 `FranklinRoosevelt` に対して `false` を返す必要があります。
 
 ```js
 myRegex.lastIndex = 0;
 assert(!myRegex.test('FranklinRoosevelt'));
 ```
 
-Your regex `myRegex` should return `false` for the string `EleanorRoosevelt`
+正規表現 `myRegex` は文字列 `EleanorRoosevelt` に対して `false` を返す必要があります。
 
 ```js
 myRegex.lastIndex = 0;
 assert(!myRegex.test('EleanorRoosevelt'));
 ```
 
-You should use `.test()` to test the regex.
+`.test()` を使用して正規表現をテストする必要があります。
 
 ```js
 assert(code.match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
-Your result should return `true`.
+結果は `true` を返す必要があります。
 
 ```js
 assert(result === true);

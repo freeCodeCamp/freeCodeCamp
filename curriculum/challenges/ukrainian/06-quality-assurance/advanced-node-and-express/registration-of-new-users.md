@@ -8,20 +8,20 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Now you need to allow a new user on your site to register an account. In the `res.render` for the home page add a new variable to the object passed along - `showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file. This form is set up to **POST** on `/register`, so create that route and have it add the user object to the database by following the logic below.
+Тепер потрібно дозволити новому користувачеві створити обліковий запис на вашому сайті. У `res.render` для головної сторінки додайте нову змінну до переданого об'єкта `showRegistration: true`. Після оновлення своєї сторінки ви побачите реєстраційну форму, яка вже була створена у вашому файлі `index.pug`. Ця форма налаштована на **POST** до `/register`, тому створіть цей маршрут і нехай він додасть об’єкта-користувача до бази даних, дотримуючись логіки нижче.
 
-The logic of the registration route should be as follows:
+Логіка маршруту реєстрації повинна бути такою:
 
-1. Register the new user
-2. Authenticate the new user
-3. Redirect to `/profile`
+1. Зареєструйте нового користувача
+2. Автентифікуйте нового користувача
+3. Перенаправте до `/profile`
 
-The logic of step 1 should be as follows:
+Логіка кроку 1 повинна бути такою:
 
-1. Query database with `findOne`
-2. If there is an error, call `next` with the error
-3. If a user is returned, redirect back to home
-4. If a user is not found and no errors occur, then `insertOne` into the database with the username and password. As long as no errors occur there, call `next` to go to step 2, authenticating the new user, which you already wrote the logic for in your `POST /login` route.
+1. Зробіть запит до бази даних з `findOne`
+2. Якщо є помилка, викличте `next` з помилкою
+3. Якщо повернено користувача, перенаправте назад на головну сторінку
+4. Якщо користувача не знайдено та не виникло помилок, тоді вставте `insertOne` в базу даних з іменем користувача та паролем. Якщо там не виникає помилок, викличте `next`, щоб перейти до кроку 2, автентифікуючи нового користувача, для якого ви вже написали логіку у своєму маршруті `POST /login`.
 
 ```js
 app.route('/register')
@@ -58,11 +58,11 @@ app.route('/register')
 
 Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
-**ПРИМІТКА:** З цього моменту можуть виникнути проблеми з використанням браузеру *picture-in-picture*. Якщо ви використовуєте онлайн IDE, який має попередній перегляд програми в редакторі, рекомендується відкрити цей попередній перегляд у новій вкладці.
+**ПРИМІТКА:** з цього моменту можуть виникнути проблеми з використанням браузеру *картинка-в-картинці*. Якщо ви використовуєте онлайн IDE, який пропонує попередній перегляд в редакторі, рекомендовано відкрити цей попередній перегляд у новій вкладці.
 
 # --hints--
 
-You should have a `/register` route and display a registration form on the home page.
+Ви повинні мати маршрут `/register` і зображати реєстраційну форму на головній сторінці.
 
 ```js
 async (getUserInput) => {

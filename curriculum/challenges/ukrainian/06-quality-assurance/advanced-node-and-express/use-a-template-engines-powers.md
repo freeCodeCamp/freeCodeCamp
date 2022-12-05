@@ -1,6 +1,6 @@
 ---
 id: 5895f70bf9fc0f352b528e64
-title: Використовуйте можливості шаблонного рушія
+title: Використання можливостей шаблонізатора
 challengeType: 2
 forumTopicId: 301567
 dashedName: use-a-template-engines-powers
@@ -8,13 +8,13 @@ dashedName: use-a-template-engines-powers
 
 # --description--
 
-Одна з головних переваг використання шаблонного рушія – це можливість передавати змінні з сервера в файл шаблону перед його візуалізацією в HTML.
+Одна з головних переваг шаблонізатора – це можливість передавати змінні з сервера до шаблону перед його візуалізацією в HTML.
 
-У вашому файлі Pug ви можете використовувати змінну, посилаючись на ім'я змінної як `#{variable_name}` в рядку з іншим текстом в елементі або використовуючи знак рівності в елементі без пробілу, наприклад, `p=variable_name`, що присвоює значення змінної тексту елемента p.
+У своєму файлі Pug ви можете використовувати змінну, посилаючись на ім'я змінної як `#{variable_name}` в рядку з іншим текстом в елементі або використовуючи знак рівності в елементі без пробілу, наприклад, `p=variable_name`, що присвоює значення змінної до тексту елемента p.
 
-Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site.
+Pug націлений на використання прогалин і вкладок для зображення вкладених елементів та скорочення обсягу коду, необхідного для створення красивого сайту.
 
-Take the following Pug code for example:
+Візьмемо, наприклад, такий код Pug:
 
 ```pug
 head
@@ -27,7 +27,7 @@ body
       p Get on it!
 ```
 
-The above yields the following HTML:
+Наведене вище видає наступний HTML:
 
 ```html
 <head>
@@ -40,23 +40,23 @@ The above yields the following HTML:
 </body>
 ```
 
-Your `index.pug` file included in your project, uses the variables `title` and `message`.
+Ваш файл `index.pug`, поміщений у проєкті, використовує змінні `title` та `message`.
 
-Pass those from your server to the Pug file by adding an object as a second argument to your `res.render` call with the variables and their values. Give the `title` a value of `Hello` and `message` a value of `Please log in`.
+Передайте їх зі свого сервера до файлу Pug, додавши об'єкт як другий аргумент до свого виклику `res.render` зі змінними та їхніми значеннями. Надайте `title` значення `Hello`, а `message` значення `Please log in`.
 
-It should look like:
+Це має виглядати так:
 
 ```javascript
 res.render('index', { title: 'Hello', message: 'Please log in' });
 ```
 
-Now refresh your page, and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
+Тепер оновіть свою сторінку, і ви повинні побачити ці значення у перегляді в правильному місці, як зазначено у вашому файлі `index.pug`!
 
 Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-Pug should correctly render variables.
+Pug повинен правильно відображати змінні.
 
 ```js
 async (getUserInput) => {

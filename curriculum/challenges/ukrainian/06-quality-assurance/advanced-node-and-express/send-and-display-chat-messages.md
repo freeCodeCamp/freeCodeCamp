@@ -8,7 +8,7 @@ dashedName: send-and-display-chat-messages
 
 # --description--
 
-Настав час почати надсилати повідомлення чату на сервер всім клієнтам! У файлі `client.js`, ви бачите, що вже існує блок обробки коду, після відправлення форми повідомлення.
+Настав час дозволити клієнтам надсилати повідомлення чату на сервер! У файлі `client.js` ви бачите, що вже існує блок обробки коду, після відправлення форми повідомлення.
 
 ```js
 $('form').submit(function() {
@@ -16,23 +16,23 @@ $('form').submit(function() {
 });
 ```
 
-У межах коду відправлення форми ви повинні видати (emit) подію після визначення `messageToSend`, але перед тим, як ви очистите текстову панель `#m`. Код повинен називатися `'chat message'` і дані повинні бути `messageToSend`.
+У межах коду відправлення форми потрібно видати подію після того, як ви визначите `messageToSend`, але перед тим, як ви очистите текстову панель `#m`. Подія повинна називатися `'chat message'`, а даними повинні бути `messageToSend`.
 
 ```js
 socket.emit('chat message', messageToSend);
 ```
 
-Тепер на вашому сервері, ви мусите прослухати сокет для події `'chat message'` з назвою `message`. Once the event is received, it should emit the event `'chat message'` to all sockets using `io.emit`, sending a data object containing the `username` and `message`.
+Тепер на своєму сервері ви можете прослухати сокет для події `'chat message'` з даними під назвою `message`. Після отримання події потрібно видати подію `'chat message'` до всіх сокетів, використовуючи `io.emit`, надсилаючи об'єкт-дані, що містить `username` та `message`.
 
-In `client.js`, you should now listen for event `'chat message'` and, when received, append a list item to `#messages` with the username, a colon, and the message!
+В `client.js` тепер потрібно послухати подію `'chat message'` та після отримання додати список елементів до `#messages` з іменем користувача, двокрапкою та повідомленням!
 
-На даний момент чат повинен бути повністю функціональним і спроможним відправляти повідомлення всім клієнтам!
+Тепер чат повинен бути повністю функціональним і спроможним відправляти повідомлення між клієнтами!
 
 Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-Сервер має слухати `'chat message'` та переміщувати (emit) його належним чином.
+Сервер повинен слухати `'chat message'` та видавати його належним чином.
 
 ```js
 async (getUserInput) => {
