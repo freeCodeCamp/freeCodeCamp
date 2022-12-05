@@ -1,6 +1,6 @@
 ---
 id: 5895f70df9fc0f352b528e6a
-title: Створення нового підпрограмного забезпечення
+title: Створення нового проміжного ПЗ
 challengeType: 2
 forumTopicId: 301551
 dashedName: create-new-middleware
@@ -8,11 +8,11 @@ dashedName: create-new-middleware
 
 # --description--
 
-As is, any user can just go to `/profile` whether they have authenticated or not by typing in the URL. You want to prevent this by checking if the user is authenticated first before rendering the profile page. Це прекрасний приклад того, коли можна створити підпрограмне забезпечення.
+Будь-який користувач може просто перейти до `/profile`, незалежно від того, пройшов він автентифікацію чи ні, ввівши URL-адресу. Цього потрібно запобігти, перевіривши, чи користувач автентифікувався перш ніж переглядати сторінку профілю. Це хороший приклад того, коли варто створити проміжне ПЗ.
 
-The challenge here is creating the middleware function `ensureAuthenticated(req, res, next)`, which will check if a user is authenticated by calling Passport's `isAuthenticated` method on the `request` which checks if `req.user` is defined. If it is, then `next()` should be called. Otherwise, you can just respond to the request with a redirect to your homepage to login.
+Це завдання створює функцію проміжного ПЗ `ensureAuthenticated(req, res, next)`, яка перевірятиме, чи користувач автентифікувався, викликавши метод Passport `isAuthenticated` до `request`, який перевіряє, чи `req.user` визначений. Якщо так, то треба викликати `next()`. В іншому випадку ви можете просто відповісти на запит, перенаправивши на свою домашню сторінку для входу.
 
-An implementation of this middleware is:
+Впровадження цього проміжного ПЗ:
 
 ```javascript
 function ensureAuthenticated(req, res, next) {
@@ -23,7 +23,7 @@ function ensureAuthenticated(req, res, next) {
 };
 ```
 
-Create the above middleware function, then pass `ensureAuthenticated` as middleware to requests for the profile page before the argument to the GET request:
+Створіть наведену вище функцію проміжного ПЗ, а потім передайте `ensureAuthenticated` як проміжне ПЗ до запитів сторінки профілю перед аргументом запиту GET:
 
 ```javascript
 app
@@ -37,7 +37,7 @@ app
 
 # --hints--
 
-The middleware `ensureAuthenticated` should be implemented and attached to the `/profile` route.
+Проміжне програмне забезпечення `ensureAuthenticated` повинне бути реалізоване та приєднане до маршруту `/profile`.
 
 ```js
 async (getUserInput) => {
@@ -57,7 +57,7 @@ async (getUserInput) => {
 }
 ```
 
-An unauthenticated GET request to `/profile` should correctly redirect to `/`.
+Неавтентифікований запит GET до `/profile` повинен правильно перенаправляти до `/`.
 
 ```js
 async (getUserInput) => {

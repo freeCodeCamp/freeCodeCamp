@@ -1,6 +1,6 @@
 ---
 id: 5895f70ef9fc0f352b528e6b
-title: Як створити профіль
+title: Як налаштувати профіль
 challengeType: 2
 forumTopicId: 301554
 dashedName: how-to-put-a-profile-together
@@ -8,19 +8,19 @@ dashedName: how-to-put-a-profile-together
 
 # --description--
 
-Now that you can ensure the user accessing the `/profile` is authenticated, you can use the information contained in `req.user` on your page.
+Як тільки ви впевнились, що користувач, який має доступ до `/profile`, автентифікований, ви зможете використовувати інформацію з `req.user` на своїй сторінці.
 
-Pass an object containing the property `username` and value of `req.user.username` as the second argument for the `render` method of the profile view.
+Передайте об'єкт, який містить властивість `username` та значення `req.user.username` як другий аргумент для методу `render` показу профілю.
 
-Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
+Потім перейдіть до перегляду свого `profile.pug` і додайте наступний рядок під наявним елементом `h1`, дотримуючись тих самих відступів:
 
 ```pug
 h2.center#welcome Welcome, #{username}!
 ```
 
-This creates an `h2` element with the class `center` and id `welcome` containing the text `Welcome,` followed by the username.
+Це створить елемент `h2` з класом `center` та id `welcome`, що міститиме текст `Welcome,` та ім’я користувача.
 
-Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user:
+Крім того, в `profile.pug` додайте посилання на маршрут `/logout`, який міститиме логіку для скасування автентифікації користувача:
 
 ```pug
 a(href='/logout') Logout
@@ -30,7 +30,7 @@ a(href='/logout') Logout
 
 # --hints--
 
-You should correctly add a Pug render variable to `/profile`.
+Ви повинні правильно додати змінну Pug до `/profile`.
 
 ```js
 async (getUserInput) => {

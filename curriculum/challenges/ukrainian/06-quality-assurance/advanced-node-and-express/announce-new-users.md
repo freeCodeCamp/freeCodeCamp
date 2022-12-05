@@ -8,9 +8,9 @@ dashedName: announce-new-users
 
 # --description--
 
-Багато чатів мають функцію повідомлення всіх підключених користувачів чату про приєднання чи від'єднання користувача. Оскільки приєднання чи від'єднання це вже виконання дії, то для підтримки такої функції вам потрібно відредагувати цю подію. The most logical way of doing so is sending 3 pieces of data with the event: the username of the user who connected/disconnected, the current user count, and if that username connected or disconnected.
+Багато чатів можуть повідомляти всіх підключених користувачів чату про приєднання чи від'єднання іншого користувача. Остільки з приєднанням чи від'єднанням ви видаєте подію, то для підтримки такої функції вам потрібно просто відредагувати цю подію. Найлогічніший спосіб зробити це – надіслати 3 частини даних разом із подією: ім’я користувача, який приєднався/від'єднався, поточну кількість користувачів, а також те, чи це ім’я користувача приєднане чи від'єднане.
 
-Change the event name to `'user'`, and pass an object along containing the fields `username`, `currentUsers`, and `connected` (to be `true` in case of connection, or `false` for disconnection of the user sent). Be sure to change both `'user count'` events and set the disconnect one to send `false` for the field `connected` instead of `true` like the event emitted on connect.
+Змініть назву події на `'user'` і передайте об'єкт, що містить поля `username`, `currentUsers` та `connected` (`true` у разі приєднання або `false` у разі від'єднання надісланого користувача). Обов’язково переконайтесь, що змінили обидві події `'user count'` та встановили подію від'єднання так, щоб надсилалось `false` у поле `connected` замість `true`, яке надсилається у події приєднання.
 
 ```js
 io.emit('user', {
@@ -20,7 +20,7 @@ io.emit('user', {
 });
 ```
 
-Тепер ваш клієнт матиме всю необхідну інформацію, щоб правильно показати кількість поточних користувачів і повідомити, коли користувач підключається або відключається! Щоб обробити цю подію зі сторони клієнта, ми повинні отримати `'user'`, а потім оновити кількість поточних користувачів за допомогою jQuery, щоб замінити текст `#num-users` на `'{NUMBER} users online'`, а також додати `<li>` до невпорядкованого маркованого списку з id `messages` з `'{NAME} has {joined/left} the chat.'`.
+Тепер ваш клієнт матиме всю необхідну інформацію, щоб правильно показувати кількість поточних користувачів і повідомляти, коли користувач під'єднується або від'єднується! Щоб обробити цю подію зі сторони клієнта, ми повинні послухати `'user'`, потім оновити кількість поточних користувачів за допомогою jQuery, щоб змінити текст `#num-users` на `'{NUMBER} users online'`, а також додати `<li>` до невпорядкованого списку з id `messages` з `'{NAME} has {joined/left} the chat.'`.
 
 Ця дія може виглядати таким чином:
 
@@ -38,7 +38,7 @@ socket.on('user', data => {
 
 # --hints--
 
-Event `'user'` should be emitted with `name`, `currentUsers`, and `connected`.
+Подія `'user'` повинна видаватись з `name`, `currentUsers` та `connected`.
 
 ```js
 async (getUserInput) => {

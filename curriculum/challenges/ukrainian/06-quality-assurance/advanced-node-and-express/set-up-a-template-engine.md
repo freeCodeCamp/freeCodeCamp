@@ -1,6 +1,6 @@
 ---
 id: 5895f700f9fc0f352b528e63
-title: Налаштування шаблону двигуна
+title: Налаштування шаблонізатора
 challengeType: 2
 forumTopicId: 301564
 dashedName: set-up-a-template-engine
@@ -22,27 +22,27 @@ dashedName: set-up-a-template-engine
 
 Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`.
 
-A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
+Шаблонізатор дозволяє використовувати статистичні шаблони (наприклад ті, що написані в *Pug*) у вашому додатку. Під час виконання коду шаблонізатор замінює змінні у шаблоні на фактичні значення, які може надати сервер. Потім шаблон перетворюється на статистичний файл HTML, який надсилається клієнту. Цей підхід спрощує дизайн сторінки HTML та дозволяє відображати змінні на сторінці без потреби викликати API з клієнта.
 
-`pug@~3.0.0` has already been installed, and is listed as a dependency in your `package.json` file.
+`pug@~3.0.0` вже встановлений та вказаний як залежність у вашому файлі `package.json`.
 
-Express needs to know which template engine you are using. Use the `set` method to assign `pug` as the `view engine` property's value:
+Express повинен знати, який шаблонізатор ви використовуєте. Використайте метод `set`, щоб присвоїти `pug` як значення властивості `view engine`:
 
 ```javascript
 app.set('view engine', 'pug');
 ```
 
-After that, add another `set` method that sets the `views` property of your `app` to point to the `./views/pug` directory. This tells Express to render all views relative to that directory.
+Після цього додайте ще один метод `set`, який встановлює властивість `views` вашого `app` так, щоб вона вказувала на директорію `./views/pug`. Це каже Express відображати все, що належить до цієї директорії.
 
-Finally, use `res.render()` in the route for your home page, passing `index` as the first argument. This will render the `pug` template.
+Вкінці використайте `res.render()` у маршруті своєї домашньої сторінки, передавши `index` як перший аргумент. Це зобразить шаблон `pug`.
 
-If all went as planned, your app home page will no longer be blank. Instead, it will display a message indicating you've successfully rendered the Pug template!
+Якщо все пройшло за планом, то домашня сторінка більше не буде порожньою. Натомість буде повідомлення про те, що ви успішно зобразили шаблон Pug!
 
 Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-Pug should be a dependency.
+Pug повинен бути залежністю.
 
 ```js
 async (getUserInput) => {
@@ -57,7 +57,7 @@ async (getUserInput) => {
 }
 ```
 
-View engine should be Pug.
+Двигуном перегляду повинен бути Pug.
 
 ```js
 async (getUserInput) => {
@@ -68,7 +68,7 @@ async (getUserInput) => {
 }
 ```
 
-You should set the `views` property of the application to `./views/pug`.
+Ви повинні встановити властивість `views` на `./views/pug`.
 
 ```js
 async (getUserInput) => {
@@ -79,7 +79,7 @@ async (getUserInput) => {
 }
 ```
 
-Use the correct ExpressJS method to render the index page from the response.
+Використайте правильний метод ExpressJS, щоб відобразити сторінку індексу з відповіді.
 
 ```js
 async (getUserInput) => {
@@ -94,7 +94,7 @@ async (getUserInput) => {
     }
 ```
 
-Pug should be working.
+Pug повинен працювати.
 
 ```js
 async (getUserInput) => {
