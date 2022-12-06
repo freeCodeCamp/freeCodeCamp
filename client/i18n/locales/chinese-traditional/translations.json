@@ -503,7 +503,8 @@
     "open-preview-in-new-window": "在新窗口中打開預覽並聚焦於它",
     "step": "步驟",
     "steps": "步驟",
-    "steps-for": "{{blockTitle}} 的步驟"
+    "steps-for": "{{blockTitle}} 的步驟",
+    "code-example": "{{codeName}} code example"
   },
   "flash": {
     "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",

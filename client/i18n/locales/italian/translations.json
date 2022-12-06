@@ -503,7 +503,8 @@
     "open-preview-in-new-window": "Apri l'anteprima in una nuova finestra e selezionala",
     "step": "Step",
     "steps": "Step",
-    "steps-for": "Step per {{blockTitle}}"
+    "steps-for": "Step per {{blockTitle}}",
+    "code-example": "{{codeName}} code example"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",

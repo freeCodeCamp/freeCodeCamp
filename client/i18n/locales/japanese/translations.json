@@ -503,7 +503,8 @@
     "open-preview-in-new-window": "プレビューを新しいウィンドウで開いてフォーカス",
     "step": "ステップ",
     "steps": "ステップ一覧",
-    "steps-for": "「{{blockTitle}}」のステップ一覧"
+    "steps-for": "「{{blockTitle}}」のステップ一覧",
+    "code-example": "{{codeName}} code example"
   },
   "flash": {
     "honest-first": "認定証を請求するには、まず学問的誠実性ポリシーに同意する必要があります。",

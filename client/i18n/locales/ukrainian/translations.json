@@ -503,7 +503,8 @@
     "open-preview-in-new-window": "Відкрити попередній перегляд у новому вікні та сфокусувати його",
     "step": "Крок",
     "steps": "Кроки",
-    "steps-for": "Кроки для {{blockTitle}}"
+    "steps-for": "Кроки для {{blockTitle}}",
+    "code-example": "{{codeName}} code example"
   },
   "flash": {
     "honest-first": "Щоб отримати сертифікацію, ви повинні спочатку прийняти нашу політику академічної доброчесності",
