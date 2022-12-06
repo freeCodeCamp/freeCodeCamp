@@ -108,6 +108,7 @@
     "test-tools": "jest tools",
     "test-utils": "jest utils",
     "test-ui-components": "jest tools/ui-components",
+    "postinstall": "cypress cache prune",
     "prepare": "husky install"
   },
   "dependencies": {
