@@ -50,7 +50,7 @@ async (getUserInput) => {
 }
 ```
 
-passport-github should be required.
+passport-github повинен бути правильно заданий.
 
 ```js
 async (getUserInput) => {

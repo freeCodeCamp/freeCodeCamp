@@ -1,6 +1,6 @@
 ---
 id: 5895f70df9fc0f352b528e69
-title: Як використовувати Passport стратегії
+title: Як використовувати стратегії Passport
 challengeType: 2
 forumTopicId: 301555
 dashedName: how-to-use-passport-strategies

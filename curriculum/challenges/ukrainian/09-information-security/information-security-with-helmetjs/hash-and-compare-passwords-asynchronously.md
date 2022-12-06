@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-Додайте це до своєї наявної хеш-функції (оскільки вам потрібно дочекатися завершення хешу перед викликом функції порівняння) після того, як ви записали повний хеш та ввели «res» на консоль в межах порівняння. На консолі з'являться хеш та значення «true»! Якщо ви зміните «myPlaintextPassword» у функції порівняння на «someOtherPlaintextPassword» – з'явиться false.
+Додайте це до своєї наявної хеш-функції (оскільки вам потрібно дочекатися завершення хешу перед викликом функції порівняння) після того, як ви записали повний хеш та ввели «res» на консоль в межах порівняння. You should see in the console a hash, and then 'true' is printed! If you change 'myPlaintextPassword' in the compare function to 'someOtherPlaintextPassword', then it should say false.
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {
