@@ -503,7 +503,8 @@
     "open-preview-in-new-window": "أفتح المعاينة في شاشة جديدة وتركيزها",
     "step": "الخطوة",
     "steps": "الخطوات",
-    "steps-for": "خطوات {{blockTitle}}"
+    "steps-for": "خطوات {{blockTitle}}",
+    "code-example": "{{codeName}} code example"
   },
   "flash": {
     "honest-first": "للمطالبة بشهادة ، يجب عليك أولاً قبول سياسة الصدق الأكاديمي الخاصة بنا",
