@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 import passport from 'passport';
 import { isEmail } from 'validator';
 import axios from 'axios';
+import rateLimit from 'express-rate-limit';
 import { jwtSecret } from '../../../../config/secrets';
 
 import { decodeEmail } from '../../common/utils';
@@ -39,6 +40,15 @@ module.exports = function enableAuthentication(app) {
   const devLoginSuccessRedirect = devLoginRedirect();
   const api = app.loopback.Router();
   const deleteUserToken = createDeleteUserToken(app);
+
+  // Rate limit for mobile login
+  // 10 requests per 15 minute windows
+  const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 10,
+    standardHeaders: true,
+    legacyHeaders: false
+  });
 
   // Use a local mock strategy for signing in if we are in dev mode.
   // Otherwise we use auth0 login. We use a string for 'true' because values
@@ -86,7 +96,7 @@ module.exports = function enableAuthentication(app) {
     createGetPasswordlessAuth(app)
   );
 
-  api.get('/mobile-login', mobileLogin(app));
+  api.get('/mobile-login', limiter, mobileLogin(app));
 
   app.use(api);
 };
