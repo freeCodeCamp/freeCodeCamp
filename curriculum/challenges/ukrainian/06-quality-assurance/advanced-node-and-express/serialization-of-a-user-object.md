@@ -105,7 +105,7 @@ async (getUserInput) => {
 }
 ```
 
-Mongodb потрібно правильно вимагати, включно з ObjectId.
+Mongodb повинен бути правильно заданий, включно з ObjectId.
 
 ```js
 async (getUserInput) => {

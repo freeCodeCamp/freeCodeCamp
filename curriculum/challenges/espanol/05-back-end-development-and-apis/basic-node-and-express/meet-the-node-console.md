@@ -14,13 +14,13 @@ Trabajar en estos desafíos implica escribir tu código usando uno de los siguie
 - Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto de inicio Replit</a> para completar estos desafíos.
 - Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Si usas Replit, sigue los siguientes pasos para configurar el proyecto:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Comienza importando el proyecto en Replit.
+-   Después, verás una ventana `.replit`.
+-   Selecciona `Use run command` y haz clic en el botón `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Cuando hayas acabado, asegúrate de que un demo funcional del proyecto, este alojado en algún sitio público. Envía esa URL mediante el campo `Solution Link`.
 
 During the development process, it is important to be able to check what’s going on in your code.
 

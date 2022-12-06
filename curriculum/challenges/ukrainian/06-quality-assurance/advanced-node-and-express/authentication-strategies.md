@@ -30,7 +30,7 @@ passport.use(new LocalStrategy((username, password, done) => {
 }));
 ```
 
-Так виглядає процес, коли ви хочете автентифікувати когось локально. First, it tries to find a user in your database with the username entered. Then, it checks for the password to match. Finally, if no errors have popped up that you checked for (e.g. an incorrect password), the `user` object is returned and they are authenticated.
+Так виглядає процес, коли ви хочете автентифікувати когось локально. Спочатку виконується спроба знайти користувача у вашій базі даних із введеним іменем користувача. Потім перевіряється відповідність пароля. Якщо не з'явилося жодних помилок, які ви перевіряли (наприклад, неправильний пароль), то повертається об’єкт `user` і користувачі автентифікуються.
 
 Багато стратегій налаштовуються з використанням різних налаштувань. Загалом стратегію легко налаштувати на основі README у її репозиторії. Хорошим прикладом є стратегія GitHub, де можна не переживати за ім'я користувача або пароль, оскільки користувач автоматично переадресовується на сторінку GitHub для автентифікації. Допоки користувач авторизований і згідний з умовами, GitHub надаватиме його профіль для користування.
 
@@ -55,7 +55,7 @@ async (getUserInput) => {
 }
 ```
 
-Passport-local should be correctly required and set up.
+Passport-local повинен бути правильно заданий та налаштований.
 
 ```js
 async (getUserInput) => {

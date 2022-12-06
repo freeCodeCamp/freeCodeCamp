@@ -46,7 +46,7 @@ Now try loading up your app and authenticate and you should see in your server c
 
 # --hints--
 
-`socket.io` має бути залежністю.
+`socket.io` повинен бути залежністю.
 
 ```js
 async (getUserInput) => {
