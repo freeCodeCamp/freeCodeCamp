@@ -5,7 +5,7 @@ import linksObject from '../../../client/i18n/locales/english/links.json';
 import metaObject from '../../../client/i18n/locales/english/meta-tags.json';
 import motivationObject from '../../../client/i18n/locales/english/motivation.json';
 import translationsObject from '../../../client/i18n/locales/english/translations.json';
-// eslint-disable-next-line import/no-unresolved
+// If this trending.json is missing, most likely the download-trending script failed.
 import trendingObject from '../../../client/i18n/locales/english/trending.json';
 
 /**
@@ -42,7 +42,6 @@ const translationKeys: string[] = Object.keys(
 const metaKeys: string[] = Object.keys(flattenAnObject(metaObject));
 const motivationKeys: string[] = Object.keys(flattenAnObject(motivationObject));
 const introKeys: string[] = Object.keys(flattenAnObject(introObject));
-// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 const trendingKeys: string[] = Object.keys(flattenAnObject(trendingObject));
 const linksKeys: string[] = Object.keys(flattenAnObject(linksObject));
 
