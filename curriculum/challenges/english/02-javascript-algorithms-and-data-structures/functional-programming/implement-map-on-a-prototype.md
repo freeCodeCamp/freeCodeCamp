@@ -23,7 +23,7 @@ Write your own `Array.prototype.myMap()`, which should behave exactly like `Arra
 `[23, 65, 98, 5, 13].myMap(item => item * 2)` should equal `[46, 130, 196, 10, 26]`.
 
 ```js
-const _test_s = [46, 130, 196, 10, 13];
+const _test_s = [23, 65, 98, 5, 13];
 const _callback = item => item * 2;
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
