@@ -5,6 +5,7 @@ import linksObject from '../../../client/i18n/locales/english/links.json';
 import metaObject from '../../../client/i18n/locales/english/meta-tags.json';
 import motivationObject from '../../../client/i18n/locales/english/motivation.json';
 import translationsObject from '../../../client/i18n/locales/english/translations.json';
+// If this trending.json is missing, most likely the download-trending script failed.
 import trendingObject from '../../../client/i18n/locales/english/trending.json';
 
 /**
