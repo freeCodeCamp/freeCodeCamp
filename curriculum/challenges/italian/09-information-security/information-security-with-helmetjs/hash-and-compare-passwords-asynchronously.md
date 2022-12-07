@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-Aggiungilo alla tua funzione di hash esistente (dal momento che devi attendere che l'hash venga completato prima di chiamare la funzione di confronto) dopo aver registrato l'hash e il log 'res' completati nella console durante il confronto. You should see in the console a hash, and then 'true' is printed! If you change 'myPlaintextPassword' in the compare function to 'someOtherPlaintextPassword', then it should say false.
+Aggiungilo alla tua funzione di hash esistente (dal momento che devi attendere che l'hash venga completato prima di chiamare la funzione di confronto) dopo aver registrato l'hash e il log 'res' completati nella console durante il confronto. Dovresti vedere nella console una password crittografata, e poi viene stampato 'true'! Se cambi 'myPlaintextPassword' nella funzione di confronto con 'someOtherPlaintextPassword', allora dovrebbe restituire false.
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {
