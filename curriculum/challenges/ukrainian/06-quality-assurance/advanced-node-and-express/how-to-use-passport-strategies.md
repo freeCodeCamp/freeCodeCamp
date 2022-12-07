@@ -8,23 +8,23 @@ dashedName: how-to-use-passport-strategies
 
 # --description--
 
-In the `index.pug` file supplied, there is a login form. It is hidden because of the inline JavaScript `if showLogin` with the form indented after it.
+У заданому файлі `index.pug` є форма авторизації. Її приховано через вбудований JavaScript `if showLogin` з відступленою формою після.
 
-In the `res.render` for that page, add a new variable to the object, `showLogin: true`. When you refresh your page, you should then see the form! This form is set up to **POST** on `/login`. So, this is where you should set up to accept the POST request and authenticate the user.
+У `res.render` для цієї сторінки додайте нову змінну до об'єкта `showLogin: true`. Коли ви оновите сторінку, ви повинні побачити форму! Ця форма налаштована, щоб надіслати запит **POST** до `/login`. Тут ви повинні налаштувати прийом запиту POST та автентифікацію користувача.
 
-For this challenge, you should add the route `/login` to accept a POST request. To authenticate on this route, you need to add a middleware to do so before then sending a response. This is done by just passing another argument with the middleware before with your response. The middleware to use is `passport.authenticate('local')`.
+Для цього завдання потрібно додати маршрут `/login`, щоб прийняти запит POST. Для автентифікації на цьому маршруті потрібно додати проміжне програмне забезпечення перед надсиланням відповіді. Для цього потрібно передати інший аргумент разом із проміжним ПЗ перед відповіддю. Потрібно використати наступне проміжне ПЗ: `passport.authenticate('local')`.
 
-`passport.authenticate` can also take some options as an argument such as `{ failureRedirect: '/' }` which is incredibly useful, so be sure to add that in as well. Add a response after using the middleware (which will only be called if the authentication middleware passes) that redirects the user to `/profile`. Add that route, as well, and make it render the view `profile.pug`.
+`passport.authenticate` також може приймати деякі опції, як-от аргумент `{ failureRedirect: '/' }`, який є неймовірно корисними, тому не забудьте додати його. Додайте відповідь після використання проміжного ПЗ (її буде викликано лише при дійсному проміжному ПЗ), що переадресовує користувача до `/profile`. Додайте також цей маршрут і зробіть так, щоб він зображав перегляд `profile.pug`.
 
-If the authentication was successful, the user object will be saved in `req.user`.
+Якщо автентифікація була успішною, то об'єкта-користувача буде збережено в `req.user`.
 
-At this point, if you enter a username and password in the form, it should redirect to the home page `/`, and the console of your server should display `'User {USERNAME} attempted to log in.'`, since we currently cannot login a user who isn't registered.
+Якщо ви введете ім'я користувача і пароль у форму, ви будете переадресовані на головну сторінку `/`, а на консолі вашого серверу з'явиться `'User {USERNAME} attempted to log in.'`, оскільки наразі ми не можемо увійти в обліковий запис користувача, який не зареєстрований.
 
 Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-use-passport-strategies-7" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-All steps should be correctly implemented in `server.js`.
+Усі кроки повинні бути правильно реалізовані в `server.js`.
 
 ```js
 async (getUserInput) => {
@@ -49,7 +49,7 @@ async (getUserInput) => {
 }
 ```
 
-A POST request to `/login` should correctly redirect to `/`.
+Запит POST до `/login` повинен правильно перенаправляти до `/`.
 
 ```js
 async (getUserInput) => {

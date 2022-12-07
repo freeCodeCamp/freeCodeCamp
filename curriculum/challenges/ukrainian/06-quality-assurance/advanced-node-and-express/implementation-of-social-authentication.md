@@ -8,21 +8,21 @@ dashedName: implementation-of-social-authentication
 
 # --description--
 
-Основний шлях автентифікації відстежуватиметься у вашому застосунку:
+Цей тип автентифікації буде дотримуватись наступного шляху:
 
-1.  User clicks a button or link sending them to your route to authenticate using a specific strategy (e.g. GitHub).
-2.  Ваш маршрут `passport.authenticate('github')` перенаправляє їх на GitHub.
-3.  Сторінка, на яку користувач заходить, на GitHub, дозволяє йому увійти в систему, якщо він ще не зробив це. It then asks them to approve access to their profile from your app.
-4.  The user is then returned to your app at a specific callback url with their profile if they are approved.
-5.  Тепер вони аутентифіковані, і ваш застосунок перевірить, чи це постійний профіль, або збереже його у вашій базі даних, якщо це не так.
+1.  Користувач натискає кнопку або посилання, надсилаючи їх на ваш маршрут, щоб автентифікуватись за допомогою визначеної стратегії (наприклад, GitHub).
+2.  Ваш шлях викликає `passport.authenticate('github')`, перенаправляючи користувача на GitHub.
+3.  Сторінка на GitHub, яку відвідує користувач, дозволяє увійти в систему, якщо він досі не зробив цього. Потім система просить користувача підтвердити доступ до свого профілю з вашої програми.
+4.  Потім користувач повертається до вашої програми за url-адресою зворотного виклику зі своїм профілем, якщо він схвалений.
+5.  Тепер користувач автентифікований, і ваша програма перевірить, чи це постійний профіль, або збереже його у вашій базі даних, якщо це не так.
 
-Стратегії з OAuth потребують, щоб ви мали принаймні *Client ID* та *Client Secret*, так сервіс перевірить, від кого надходить запит автентифікації та чи є він дійсним. Вони отримані з сайту, з яким ви намагаєтеся здійснити автентифікацію, наприклад, з сайту GitHub і вони є унікальними для вашого застосунку **ВОНИ НЕ Є ДЛЯ ЗАГАЛЬНОГО ДОСТУПУ** і ніколи не повинні бути завантажені в публічне сховище або написані безпосередньо у вашому коді. Поширеною практикою є розміщення їх у файлі `.env` і посилання на них таким чином: `process.env.GITHUB_CLIENT_ID`. For this challenge you are going to use the GitHub strategy.
+Стратегії з OAuth вимагають, щоб ви мали принаймні *ID клієнта* та *секрет клієнта*; так сервіс перевірить, від кого надходить запит автентифікації та чи є він дійсним. Вони отримані з сайту, за допомогою якого ви намагаєтеся здійснити автентифікацію, наприклад, з сайту GitHub, та вони є унікальними для вашої програми. **ВОНИ НЕ ДЛЯ ПУБЛІЧНОГО ДОСТУПУ** і ніколи не можуть бути завантаженими в публічному репозиторії або написаними у вашому коді. Їх часто зберігають у файлі `.env` та посилаються на них таким чином: `process.env.GITHUB_CLIENT_ID`. Для вирішення цього завдання ви будете використовувати стратегію GitHub.
 
-Follow <a href="https://www.freecodecamp.org/news/how-to-set-up-a-github-oauth-application/" target="_blank" rel="noopener noreferrer nofollow">these instructions</a> to obtain your *Client ID and Secret* from GitHub. Set the homepage URL to your Replit homepage (**not the project code's URL**), and set the callback URL to the same homepage URL with `/auth/github/callback` appended to the end. Save the client ID and your client secret in your project's `.env` file as `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
+Дотримуйтесь <a href="https://www.freecodecamp.org/news/how-to-set-up-a-github-oauth-application/" target="_blank" rel="noopener noreferrer nofollow">цих інструкцій</a>, щоб отримати *ID та секрет клієнта* з GitHub. Встановіть URL-адресу головної сторінки на свою головну сторінку Replit (**а не URL-адресу коду проєкту**), і встановіть URL-адресу зворотного виклику на ту саму URL-адресу головної сторінки, додавши `/auth/github/callback` вкінці. Збережіть ID та секрет клієнта у своєму файлі проєкту `.env` як `GITHUB_CLIENT_ID` та `GITHUB_CLIENT_SECRET`.
 
-In your `routes.js` file, add `showSocialAuth: true` to the homepage route, after `showRegistration: true`. Now, create 2 routes accepting GET requests: `/auth/github` and `/auth/github/callback`. The first should only call passport to authenticate `'github'`. The second should call passport to authenticate `'github'` with a failure redirect to `/`, and then if that is successful redirect to `/profile` (similar to your last project).
+У своєму файлі `routes.js` додайте `showSocialAuth: true` до маршруту головної сторінки після `showRegistration: true`. Тепер створіть 2 маршрути, які прийматимуть запити GET: `/auth/github` та `/auth/github/callback`. Перший повинен лише викликати паспорт для автентифікації `'github'`. Другий повинен викликати паспорт для автентифікації `'github'` з помилкою переадресації на `/`, а потім, якщо вдалося, переадресувати на `/profile` (подібно до вашого останнього проєкту).
 
-An example of how `/auth/github/callback` should look is similar to how you handled a normal login:
+Приклад `/auth/github/callback` схожий до того, як ви обробляли звичайний вхід в обліковий запис:
 
 ```js
 app.route('/login')
@@ -35,7 +35,7 @@ app.route('/login')
 
 # --hints--
 
-Route `/auth/github` should be correct.
+Маршрут `/auth/github` повинен бути правильним.
 
 ```js
 async (getUserInput) => {
@@ -66,7 +66,7 @@ async (getUserInput) => {
 }
 ```
 
-Route `/auth/github/callback` should be correct.
+Маршрут `/auth/github/callback` повинен бути правильним.
 
 ```js
 async (getUserInput) => {
