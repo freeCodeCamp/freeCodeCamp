@@ -87,7 +87,7 @@ module.exports = function enableAuthentication(app) {
     createGetPasswordlessAuth(app)
   );
 
-  api.get('/mobile-login', mobileLogin(app));
+  api.get('/mobile-login', ifUserRedirect, mobileLogin(app));
 
   app.use(api);
 };
