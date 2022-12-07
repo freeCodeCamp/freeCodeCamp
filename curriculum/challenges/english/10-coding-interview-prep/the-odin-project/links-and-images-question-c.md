@@ -7,7 +7,7 @@ dashedName: links-and-images-question-c
 ---
 # --description--
 
-To get some practice using links and images throughout this lesson we need an HTML project to work with.
+To get some practice using links and images throughout this lesson you need an HTML project to work with.
 
 - Create a new directory named odin-links-and-images.
 
@@ -15,19 +15,19 @@ To get some practice using links and images throughout this lesson we need an HT
 
 - Fill in the usual HTML boilerplate.
 
-- inally, add the following h1 to the body: `<h1>Homepage</h1>`
+- finally, add the following h1 to the body: `<h1>Homepage</h1>`
 
 ## Anchor Elements
-To create a link in HTML, we use the anchor element. An anchor element is defined by wrapping the text or another HTML element we want to be a link with an `<a>` tag.
-Add the following to the body of the index.html page we created and open it in the browser:
+To create a link in HTML, you use the anchor element. An anchor element is defined by wrapping the text or another HTML element you want to be a link with an `<a>` tag.
+Add the following to the body of the index.html page you created and open it in the browser:
 
 ```html
 <a>click me</a>
 ```
 
-You may have noticed that clicking this link doesn’t do anything. This is because an anchor tag on its own won’t know where we want to link to. We have to tell it a destination to go to. We do this by using an HTML attribute.
-An HTML attribute gives additional information to an HTML element and always goes in the element’s opening tag. An attribute is usually made up of two parts: a name, and a value; however, not all attributes require a value. In our case, we need to add a href (hyperlink reference) attribute to the opening anchor tag. The value of the href attribute is the destination we want our link to go to.
-Add the following href attribute to the anchor element we created previously and try clicking it again, don’t forget to refresh the browser so the new changes can be applied.
+You may have noticed that clicking this link doesn’t do anything. This is because an anchor tag on its own won’t know where you want to link to. You have to tell it a destination to go to. You do this by using an HTML attribute.
+An HTML attribute gives additional information to an HTML element and always goes in the element’s opening tag. An attribute is usually made up of two parts: a name, and a value; however, not all attributes require a value. In your case, you need to add a href (hyperlink reference) attribute to the opening anchor tag. The value of the href attribute is the destination you want your link to go to.
+Add the following href attribute to the anchor element you created previously and try clicking it again, don’t forget to refresh the browser so the new changes can be applied.
 
 ```html
 <a href="https://www.theodinproject.com/about">click me</a>

@@ -35,7 +35,7 @@ This is where all important information about the webpage is displayed such as t
 
 ---
 
-This is where we tell the browser how to render the webpage correctly.
+This is where you tell the browser how to render the webpage correctly.
 
 ---
 

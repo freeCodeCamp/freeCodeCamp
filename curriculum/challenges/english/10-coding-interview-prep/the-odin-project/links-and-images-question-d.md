@@ -8,22 +8,22 @@ dashedName: links-and-images-question-d
 # --description--
 
 
-Generally, there are two kinds of links we will create:
+Generally, there are two kinds of links you will create:
 
 - Links to pages on other websites on the internet
 
-- Links to pages located on our own websites
+- Links to pages located on your own websites
 
 
 ## Absolute Links
 Links to pages on other websites on the internet are called absolute links. A typical absolute link will be made up of the following parts: protocol://domain/path. An absolute link will always contain the protocol and domain of the destination.
 
-We’ve already seen an absolute link in action. The link we created to The Odin Project’s About page earlier was an absolute link as it contains the protocol and domain.
+You’ve already seen an absolute link in action. The link you created to The Odin Project’s About page earlier was an absolute link as it contains the protocol and domain.
 
 `https://www.theodinproject.com/about`
 
 ## Relative Links
-Links to other pages within our own website are called relative links. Relative links do not include the domain name, since it is another page on the same site, it assumes the domain name will be the same as the page we created the link on.
+Links to other pages within your own website are called relative links. Relative links do not include the domain name, since it is another page on the same site, it assumes the domain name will be the same as the page you created the link on.
 
 Relative links only include the file path to the other page, relative to the page you are creating the link on. This is quite abstract, let’s see this in action using an example.
 
@@ -54,17 +54,17 @@ Back in the index page, add the following anchor element to create a link to the
 </body>
 ```
 
-Open the index file in a browser and click on the about link to make sure it is all wired together correctly. Clicking the link should go to the about page we just created.
+Open the index file in a browser and click on the about link to make sure it is all wired together correctly. Clicking the link should go to the about page you just created.
 
-This works because the index and about page are in the same directory. That means we can simply use its name (`about.html`) as the link’s href value.
+This works because the index and about page are in the same directory. That means you can simply use its name (`about.html`) as the link’s href value.
 
-But we will usually want to organize our website directories a little better. Normally we would only have the index.html at the root directory and all other HTML files in their own directory.
+But you will usually want to organize your website directories a little better. Normally you would only have the index.html at the root directory and all other HTML files in their own directory.
 
 Create a directory named `pages` within the `odin-links-and-images` directory and move the `about.html` file into this new directory.
 
 Refresh the index page in the browser and then click on the about link. It will now be broken. This is because the location of the about page file has changed.
 
-To fix this, we just need to update the about link href value to include the `pages/` directory since that is the new location of the about file relative to the index file.
+To fix this, you just need to update the about link href value to include the `pages/` directory since that is the new location of the about file relative to the index file.
 
 ```html
 <body>

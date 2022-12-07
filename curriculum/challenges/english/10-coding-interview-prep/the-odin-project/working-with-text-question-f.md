@@ -7,9 +7,9 @@ dashedName: working-with-text-question-f
 ---
 # --description--
 
-You may have noticed that in all the examples in this lesson we indent any elements that are within other elements. This is known as nesting elements.
+You may have noticed that in all the examples in this lesson you indent any elements that are within other elements. This is known as nesting elements.
 
-When we nest elements within other elements, we create a parent and child relationship between them. The nested elements are the children and the element they are nested within is the parent.
+When you nest elements within other elements, you create a parent and child relationship between them. The nested elements are the children and the element they are nested within is the parent.
 
 In the following example, the body element is the parent and the paragraph is the child:
 
@@ -38,9 +38,9 @@ For example, the two paragraphs in the following code are siblings, since they a
  </html>
 ```
 
-We use indentation to make the level of nesting clear and readable for ourselves and other developers who will work with our HTML in the future. It is recommended to indent any child elements by two spaces.
+You use indentation to make the level of nesting clear and readable for yourselves and other developers who will work with your HTML in the future. It is recommended to indent any child elements by two spaces.
 
-The parent, child, and sibling relationships between elements will become much more important later when we start styling our HTML with CSS and adding behavior with JavaScript. For now, however, it is just important to know the distinction between how elements are related and the terminology used to describe their relationships.
+The parent, child, and sibling relationships between elements will become much more important later when you start styling your HTML with CSS and adding behavior with JavaScript. For now, however, it is just important to know the distinction between how elements are related and the terminology used to describe their relationships.
 
 # --question--
 
