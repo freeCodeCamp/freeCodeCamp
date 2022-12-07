@@ -1,9 +1,9 @@
 ---
-id: 637f4e3e72c65bc8e73dfe24
-videoId: kcHKFZBVtf4
-title: Understand Orderd and Unorderd List Question A
+id: 637f4e5172c65bc8e73dfe26
+videoId: LGQuIIv2RVA
+title: Understand Ordered and Unordered List Question C
 challengeType: 11
-dashedName: understand-orderd-and-undorderd-list-question-a
+dashedName: understand-ordered-and-unordered-list-question-c
 ---
 # --description--
 
@@ -23,41 +23,21 @@ Ordered lists are created using the `<ol>` element. Each individual item in them
 
 # --question--
 
-## --assignment--
-
-Watch the first three minutes of Kevin Powell's video on Orderd and Unorderd lists above.
-
----
-
-Make an unordered shopping list of your favorite foods.
-
----
-
-Make an ordered list of todo’s you need to get done today.
-
----
-
-Make an unordered list of places you’d like to visit someday.
-
----
-
-Make an ordered list of your all time top 5 favorite video games or movies.
-    
 ## --text--
 
-What HTML is used to create an unordered list?
+What HTML tag is used to create list items within both unordered and ordered lists?
 
 ## --answers--
 
-You should use the `<li>` tag to make an unordered list
+You should use the `<ol>` tag to make an ordered list
 
 ---
 
-You should use the `<ul>` tag to make an unordered list
+You should use the `<li>` tag to make an ordered list
 
 ---
 
-You should use the `<ol>` tag to make an unordered list
+You should use the `<ul>` tag to make an ordered list
 
 
 ## --video-solution--
