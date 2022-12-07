@@ -4,8 +4,8 @@ import jwt from 'jsonwebtoken';
 import passport from 'passport';
 import { isEmail } from 'validator';
 import axios from 'axios';
-import { jwtSecret } from '../../../../config/secrets';
 
+import { jwtSecret } from '../../../../config/secrets';
 import { decodeEmail } from '../../common/utils';
 import {
   createPassportCallbackAuthenticator,
@@ -17,6 +17,7 @@ import { removeCookies } from '../utils/getSetAccessToken';
 import { ifUserRedirectTo, ifNoUserRedirectHome } from '../utils/middleware';
 import { getRedirectParams } from '../utils/redirection';
 import { createDeleteUserToken } from '../middlewares/user-token';
+
 const passwordlessGetValidators = [
   check('email')
     .isBase64()
