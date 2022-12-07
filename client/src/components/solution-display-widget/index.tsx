@@ -9,7 +9,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
-import './style.css';
 interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;
@@ -39,7 +38,7 @@ export function SolutionDisplayWidget({
   const ShowProjectAndGithubLinkForCertification = (
     <DropdownButton
       block={true}
-      bsStyle='primary w-100'
+      bsStyle='primary'
       className='btn-invert'
       id={`dropdown-for-${id}`}
       title={t('buttons.view')}
