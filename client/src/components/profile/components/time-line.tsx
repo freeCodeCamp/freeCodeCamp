@@ -22,8 +22,6 @@ import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
 import TimelinePagination from './timeline-pagination';
 
-import './timeline.css';
-
 const SolutionViewer = Loadable(
   () => import('../../SolutionViewer/SolutionViewer')
 );
