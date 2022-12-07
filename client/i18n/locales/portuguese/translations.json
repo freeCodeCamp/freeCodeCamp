@@ -504,7 +504,7 @@
     "step": "Passo",
     "steps": "Passos",
     "steps-for": "Passos para {{blockTitle}}",
-    "code-example": "{{codeName}} code example"
+    "code-example": "Exemplo de código de {{codeName}}"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",

@@ -504,7 +504,7 @@
     "step": "Крок",
     "steps": "Кроки",
     "steps-for": "Кроки для {{blockTitle}}",
-    "code-example": "{{codeName}} code example"
+    "code-example": "Приклад коду {{codeName}}"
   },
   "flash": {
     "honest-first": "Щоб отримати сертифікацію, ви повинні спочатку прийняти нашу політику академічної доброчесності",
