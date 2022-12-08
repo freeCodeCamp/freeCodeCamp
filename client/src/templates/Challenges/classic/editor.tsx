@@ -8,7 +8,6 @@ import type {
   // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
 import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
-import { highlightAllUnder } from 'prismjs';
 import Prism from 'prismjs';
 import React, {
   useEffect,
