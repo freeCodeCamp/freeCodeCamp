@@ -41,7 +41,7 @@ O comando gerará uma nova pasta dentro do diretório `ui-components`, com os se
 | `my-component.stories.tsx` | É utilizado para fazer a demonstração do componente no Storybook. |
 | `my-component.test.tsx`    | É um arquivo de teste.                                            |
 | `my-component.tsx`         | É onde implementamos o componente.                                |
-| `types.ts`                 | It is where we locate the component's interface and types.        |
+| `types.ts`                 | É onde localizamos a interface e os tipos do componente.          |
 
 Cada componente é diferente, mas, em geral, os componentes devem:
 
