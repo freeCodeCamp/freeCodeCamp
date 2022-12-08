@@ -8,7 +8,7 @@ dashedName: send-and-display-chat-messages
 
 # --description--
 
-Настав час почати надсилати повідомлення чату на сервер всім клієнтам! У файлі `client.js`, ви бачите, що вже існує блок обробки коду, після відправлення форми повідомлення.
+Настав час дозволити клієнтам надсилати повідомлення чату на сервер! У файлі `client.js` ви бачите, що вже існує блок обробки коду, після відправлення форми повідомлення.
 
 ```js
 $('form').submit(function() {
@@ -16,56 +16,50 @@ $('form').submit(function() {
 });
 ```
 
-У межах коду відправлення форми ви повинні видати (emit) подію після визначення `messageToSend`, але перед тим, як ви очистите текстову панель `#m`. Код повинен називатися `'chat message'` і дані повинні бути `messageToSend`.
+У межах коду відправлення форми потрібно видати подію після того, як ви визначите `messageToSend`, але перед тим, як ви очистите текстову панель `#m`. Подія повинна називатися `'chat message'`, а даними повинні бути `messageToSend`.
 
 ```js
 socket.emit('chat message', messageToSend);
 ```
 
-Тепер на вашому сервері, ви мусите прослухати сокет для події `'chat message'` з назвою `message`. Після отримання події він повинен буде видати подію `'chat message'` до всіх сокетів `io.emit` з даними об'єкта, що містить `name` та `message`.
+Тепер на своєму сервері ви можете прослухати сокет для події `'chat message'` з даними під назвою `message`. Після отримання події потрібно видати подію `'chat message'` до всіх сокетів, використовуючи `io.emit`, надсилаючи об'єкт-дані, що містить `username` та `message`.
 
-В `client.js`, тепер необхідно послухати подію `'chat message'` і після отримання, додати список елементів до `#message` з іменем, двокрапкою та повідомленням!
+В `client.js` тепер потрібно послухати подію `'chat message'` та після отримання додати список елементів до `#messages` з іменем користувача, двокрапкою та повідомленням!
 
-На даний момент чат повинен бути повністю функціональним і спроможним відправляти повідомлення всім клієнтам!
+Тепер чат повинен бути повністю функціональним і спроможним відправляти повідомлення між клієнтами!
 
-Підтвердіть вашу сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-Сервер має слухати `'chat message'` та переміщувати (emit) його належним чином.
+Сервер повинен слухати `'chat message'` та видавати його належним чином.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*name.*message/gis,
-        'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*username.*message/s,
+    'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'
   );
+}
 ```
 
 Клієнт повинен правильно обробляти та показувати нові дані із події `'chat message'`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")chat message('|")[^]*messages.*li/gis,
-        'You should append a list item to #messages on your client within the "chat message" event listener to display the new message'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")chat message('|")[^]*messages.*li/s,
+    'You should append a list item to #messages on your client within the "chat message" event listener to display the new message'
   );
+}
 ```
 
 # --solutions--

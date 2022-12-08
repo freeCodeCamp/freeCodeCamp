@@ -2,7 +2,7 @@ import { spawn } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { availableLangs } from '../../../config/i18n';
+import { availableLangs, Languages } from '../../../config/i18n';
 import env from '../../../config/read-env';
 
 const globalConfigPath = path.resolve(__dirname, '../../../config');
@@ -11,7 +11,7 @@ const { FREECODECAMP_NODE_ENV } = process.env;
 
 function checkClientLocale() {
   if (!process.env.CLIENT_LOCALE) throw Error('CLIENT_LOCALE is not set');
-  if (!availableLangs.client.includes(process.env.CLIENT_LOCALE)) {
+  if (!availableLangs.client.includes(process.env.CLIENT_LOCALE as Languages)) {
     throw Error(`
 
       CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in config/i18n.ts
@@ -23,7 +23,11 @@ function checkClientLocale() {
 function checkCurriculumLocale() {
   if (!process.env.CURRICULUM_LOCALE)
     throw Error('CURRICULUM_LOCALE is not set');
-  if (!availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE)) {
+  if (
+    !availableLangs.curriculum.includes(
+      process.env.CURRICULUM_LOCALE as Languages
+    )
+  ) {
     throw Error(`
 
       CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in config/i18n.ts

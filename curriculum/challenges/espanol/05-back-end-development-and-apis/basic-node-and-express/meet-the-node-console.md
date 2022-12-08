@@ -14,21 +14,27 @@ Trabajar en estos desafíos implica escribir tu código usando uno de los siguie
 - Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto de inicio Replit</a> para completar estos desafíos.
 - Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. A continuación, envía la URL en el campo `Solution Link`.
+Si usas Replit, sigue los siguientes pasos para configurar el proyecto:
 
-Durante el proceso de desarrollo, es importante poder comprobar lo que está pasando en tu código.
+-   Comienza importando el proyecto en Replit.
+-   Después, verás una ventana `.replit`.
+-   Selecciona `Use run command` y haz clic en el botón `Done`.
 
-Node es sólo un entorno JavaScript. Al igual que JavaScript en el lado del cliente, puedes usar la consola para mostrar información útil de depuración. En tu máquina local, verías la salida de la consola en una terminal. En Replit, una terminal está abierta por defecto en el panel derecho.
+Cuando hayas acabado, asegúrate de que un demo funcional del proyecto, este alojado en algún sitio público. Envía esa URL mediante el campo `Solution Link`.
 
-Recomendamos mantener la terminal abierta mientras trabajamos en estos desafíos. Al leer la salida en la terminal, puedes ver cualquier error que pueda ocurrir.
+Durante el proceso de desarrollo, es importante poder comprobar lo que ocurre en el código.
+
+Node es solo un entorno JavaScript. Al igual que el JavaScript del lado cliente, puedes hacer uso de la consola para mostrar información útil para la depuración. En tu máquina, varía la salida de la consola en un terminal. En Replit, por defecto hay un terminal abierto en el panel de la derecha.
+
+Recomendamos mantener abierto el terminal mientras desarrolles estos retos. Al leer el resultado en el terminal, puedes ver cualquier error que pueda producirse.
 
 # --instructions--
 
-Modifica el archivo `myApp.js` para escribir "Hello World" en la consola.
+Modifica el archivo `myApp.js` para que registre "Hello World" en la consola.
 
 # --hints--
 
-`"Hello World"` debe estar en la consola
+`"Hello World"` debe aparecer en la consola
 
 ```js
 (getUserInput) =>

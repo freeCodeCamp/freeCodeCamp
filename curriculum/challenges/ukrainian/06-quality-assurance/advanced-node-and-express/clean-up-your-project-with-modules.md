@@ -1,6 +1,6 @@
 ---
 id: 589690e6f9fc0f352b528e6e
-title: Очистити ваш проект з модулями
+title: Чистка проєкту з модулями
 challengeType: 2
 forumTopicId: 301549
 dashedName: clean-up-your-project-with-modules
@@ -8,7 +8,7 @@ dashedName: clean-up-your-project-with-modules
 
 # --description--
 
-Зараз все, що ви маєте є у файлі `server.js`. Це може привести до складного управління кодом, який не дуже розширюється. Створіть 2 нових файли: `routes.js` і `auth.js`
+Зараз все, що ви маєте знаходиться у файлі `server.js`. Через це, можливо, важко управляти кодом, який не дуже розширюється. Створіть 2 нових файли: `routes.js` та `auth.js`
 
 Обидва повинні починатися з такого коду:
 
@@ -18,39 +18,36 @@ module.exports = function (app, myDataBase) {
 }
 ```
 
-Тепер, зверху вашого серверного файлу, подайте ці файли так: `const routes = require('./routes.js');`. Одразу після того, як ви встановите вдалий зв'язок з базою даних, пропишіть кожен з них таким чином: `routes(app, myDataBase)`
+Тепер зверху свого серверного файлу вимагайте ці файли так: `const routes = require('./routes.js');`. Одразу після того, як ви встановите вдалий зв'язок з базою даних, пропишіть кожен з них ось так: `routes(app, myDataBase)`
 
-Врешті, візьміть усі ваші маршрути на сервері та вставте їх в нові файли, і видаліть їх з вашого серверного файлу. Також візьміть функцію `ensureAuthenticated`, оскільки її створили спеціально для маршрутизації. Тепер ви маєте правильно додати залежності, в яких використовуються функції, такі як `const passport = require('passport');`, з самого верху, над експортним рядком у вашому файлі `routes.js`.
+Вкінці візьміть усі свої маршрути на сервері та вставте їх у нові файли, і видаліть їх зі свого серверного файлу. Також візьміть функцію `ensureAuthenticated`, оскільки її створили спеціально для маршрутизації. Тепер вам потрібно правильно додати залежності, в яких використовуються функції, наприклад `const passport = require('passport');` у самий верх над рядком експорту у своєму файлі `routes.js`.
 
-Продовжуйте додавати їх, поки помилки не припинять існувати, а ваш серверний файл більше не матиме маршрутизування (**за винятком шляху в блок catch**)!
+Продовжуйте додавати їх, поки не припинять існувати помилки, а ваш серверний файл більше не матиме маршрутизування (**за винятком шляху в блоці catch**)!
 
-Тепер зробіть те саме в вашому файлі auth.js з усім, що пов'язане з автентифікацією, як ось серіалізація і налаштування локальної стратегії, і видаліть їх з вашого серверного файлу. Обов'язково додайте залежності і наберіть `auth(app, myDataBase)` на сервері в цьому ж місці.
+Зробіть те саме у своєму файлі `auth.js` з усім, що пов'язане з автентифікацією, як-от серіалізація і налаштування локальної стратегії, і видаліть їх зі свого серверного файлу. Не забудьте додати залежності та викликати `auth(app, myDataBase)` на сервері на цьому ж місці.
 
-Підтвердьте вашу сторінку, якщо все зрозуміло. If you're running into errors, you can <a href="https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92" target="_blank" rel="noopener noreferrer nofollow">check out an example of the completed project</a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#clean-up-your-project-with-modules-2" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-Модулі мають бути присутні.
+Модулі повинні бути присутні.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require\s*\(('|")\.\/routes(\.js)?\1\)/gi,
-        'You should have required your new files'
-      );
-      assert.match(
-        data,
-        /client\s*\.db[^]*routes/gi,
-        'Your new modules should be called after your connection to the database'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require\s*\(('|")\.\/routes(\.js)?\1\)/gi,
+    'You should have required your new files'
   );
+  assert.match(
+    data,
+    /client\s*\.db[^]*routes/gi,
+    'Your new modules should be called after your connection to the database'
+  );
+}
 ```
 
 # --solutions--

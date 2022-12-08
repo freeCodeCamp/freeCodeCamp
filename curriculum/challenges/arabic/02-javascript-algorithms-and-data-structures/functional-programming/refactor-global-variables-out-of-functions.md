@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b60
-title: Refactor Global Variables Out of Functions
+title: تعديل المتغيرات العالمية (Global Variables) لأخراجهم من الوظائف (Functions)
 challengeType: 1
 forumTopicId: 301235
 dashedName: refactor-global-variables-out-of-functions
@@ -8,19 +8,19 @@ dashedName: refactor-global-variables-out-of-functions
 
 # --description--
 
-وقد شهدنا حتى الآن مبدأين متميزين للـ functional programming:
+وقد شهدنا حتى الآن مبدأين متميزين للبرمجة الوظيفية (functional programming):
 
-1) لا تغير متغير (variable) أو object - قم بإنشاء متغيرات و objects جديدة و قم بإرجاعها إذا لزم الأمر من function. تلميح: باستخدام شيء مثل `const newArr = arrVar`، حيث `arrVar` هو array، سوف يقوم ببساطة بإنشاء مرجع إلى المتغير الحالي وليس نسخة. لذا فإن تغيير قيمة في `newArr` سيغير القيمة في `arrVar`.
+1) لا تغير متغير (variable) أو كائن (object) - أنشئ متغيرات و كائنات (objects) جديدة و منشئا من الوظيفة (function) إذا لزم الأمر. تلميح: باستخدام شيء مثل `const newArr = arrVar`، حيث `arrVar` هو array، سوف يقوم ببساطة بإنشاء مرجع إلى المتغير الحالي وليس نسخة. لذا فإن تغيير قيمة في `newArr` سيغير القيمة في `arrVar`.
 
-2) تعريف معلمات الدالة - أي حساب داخل الـ function يعتمد فقط على الـ arguments التي تحال إلى الـ function، وليس على أي global object أو متغير.
+2) تعريف وسائط الوظيفة (function parameters) - يعتمد حسابات داخل الوظيفة (function) فقط على الوسائط (arguments) التي تمر إلى الوظيفة (function)، ولاا تعتمد على أي كائن (object) أو متغير (variable) عام (global).
 
 إن إضافة واحد إلى رقما ليس مثيراً جداً، ولكن يمكننا تطبيق هذه المبادئ عند العمل مع arrays أو objects أكثر تعقيداً.
 
 # --instructions--
 
-أعد كتابة الكود حتى لا يتم تغيير الـ array العامة `bookList` داخل أي من الـ functions. يجب أن تضيف دالة `add` الـ `bookName` إلى نهاية الـ array الذي تم تمريره إليه وإعادة array جديدة (قائمة). يجب أن تقوم دالة `remove` بإزالة `bookName` من الـ array الذي تم تمريره إليه.
+أعد كتابة الكود حتى لا يتم تغيير القائمة (array) العامة `bookList` داخل أي من الوظائف (functions). يجب أن تضيف وظيفة `add` قيمة الوسيط `bookName` المعطى إلى نهاية القائمة (array) الذي تم تمريره إليه وإعادة قائمة (array) جديدة. يجب أن تزيل وظيفة `remove` قيمة الوسيط `bookName` من القائمة (array) الذي تم تمريره إليها.
 
-**ملاحظة:** يجب أن تعيد كلتا الدالتين، array، وينبغي إضافة أي معلمات جديدة قبل معلمة `bookName`.
+**ملاحظة:** يجب أن تنتج كلتا الوظيفتين (functions) قائمة (array)، وينبغي إضافة أي وسائط (parameters) جديدة قبل وسيط `bookName`.
 
 # --hints--
 

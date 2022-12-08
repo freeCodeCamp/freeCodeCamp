@@ -8,9 +8,9 @@ dashedName: implement-map-on-a-prototype
 
 # --description--
 
-كما رأيتم من تطبيق `Array.prototype.map()`، أو `map()` من قبل، فدالة `map` ترجع array من نفس طول الـ array التي استُدعت الدالة عليها. كما أنها لا تغير الـ array الأصلية، طالما أن دالة الـ callback الخاصة بها لا تفعل ذلك.
+كما رأيتم من تطبيق `Array.prototype.map()`، أو `map()` من قبل، فدالة `map` ترجع array من نفس طول الـ array التي استُدعت الدالة عليها. وهي إلى ذلك لا تغير القائمة (array) الأصلية، مادام أن وظيفتها لإعادة التفعيل (callback function) لا تفعل ذلك.
 
-بمعنى آخر، `map` هي دالة خالصة (pure function)، ومخرجها يعتمد فقط على مدخلاتها. وعلاوة على ذلك، فإنها تأخذ دالة أخرى كوسيطه (argument) لها.
+بمعنى آخر، `map` هي وظيفة خالصة (pure function)، ومخرجها يعتمد فقط على مدخلاتها. إضافةً إلى ذلك، فإنها تأخذ وظيفة أخرى كحجة (argument) لها.
 
 قد تتعلم الكثير عن دالة `map` إذا قمت بتنفيذ الإصدار الخاص بك منها. من المستحسن أن تستخدم حلقات `for` التكرارية أو `Array.prototype.forEach()`.
 
@@ -20,13 +20,31 @@ dashedName: implement-map-on-a-prototype
 
 # --hints--
 
-`new_s` يجب أن يساوي `[46, 130, 196, 10]`.
+يجب أن يساوي `[23, 65, 98, 5, 13].myMap(item => item * 2)` قيمة `[46, 130, 196, 10, 26]`.
 
 ```js
-assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]));
+const _test_s = [23, 65, 98, 5, 13];
+const _callback = item => item * 2;
+assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-يجب ألا يستخدم الكود الخاص بك دالة `map`.
+يجب أن ينتج `["naomi", "quincy", "camperbot"].myMap(element => element.toUpperCase())` قائمة `["NAOMI", "QUINCY", "CAMPERBOT"]`.
+
+```js
+const _test_s = ["naomi", "quincy", "camperbot"];
+const _callback = element => element.toUpperCase();
+assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
+```
+
+`[1, 1, 2, 5, 2].myMap((element, index, array) => array[index + 1] || array[0])` should return `[1, 2, 5, 2, 1]`.
+
+```js
+const _test_s = [1, 1, 2, 5, 2];
+const _callback = (element, index, array) => array[index + 1] || array[0];
+assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
+```
+
+يجب ألا يستخدم كودك الطريقة (method) المسمى `map`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?map/g));
@@ -37,9 +55,6 @@ assert(!code.match(/\.?[\s\S]*?map/g));
 ## --seed-contents--
 
 ```js
-// The global variable
-const s = [23, 65, 98, 5];
-
 Array.prototype.myMap = function(callback) {
   const newArray = [];
   // Only change code below this line
@@ -47,26 +62,20 @@ Array.prototype.myMap = function(callback) {
   // Only change code above this line
   return newArray;
 };
-
-const new_s = s.myMap(function(item) {
-  return item * 2;
-});
 ```
 
 # --solutions--
 
 ```js
-const s = [23, 65, 98, 5];
-
 Array.prototype.myMap = function(callback) {
   const newArray = [];
-  for (const elem of this) {
-    newArray.push(callback(elem));
+  for (let i = 0; i < this.length; i++) {
+    newArray.push(callback(this[i], i, this));
   }
   return newArray;
 };
 
-const new_s = s.myMap(function(item) {
-  return item * 2;
-});
+// Test case
+const s = [23, 65, 98, 5];
+const doubled_s = s.myMap(item => item * 2);
 ```

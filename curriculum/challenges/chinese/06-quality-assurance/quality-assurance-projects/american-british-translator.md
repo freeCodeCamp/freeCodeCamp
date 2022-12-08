@@ -14,56 +14,62 @@ dashedName: american-british-translator
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
 -   使用您选择的站点生成器来完成项目。 并确保包含了我们 GitHub 仓库的所有文件。
 
-当完成本项目，请确认有一个可以公开访问的正常运行 demo 。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
--   所有逻辑都可以进入 `/components/translator.js`
--   在 `/routes/api.js` 中完成 `/api/translate` 路由
--   在 `tests/1_unit-tests.js` 和 `tests/2_functional-tests.js` 中创建所有 unit/functional 测试
--   查看 `/components` 中的 JavaScript 文件以获取应用程序应该翻译的条款以及不同的拼写
--   在 `.env` 文件中将 `NODE_ENV` 设置为 `test`（没有引号），在 Replit 上运行测试。
--   使用 `npm run test` 命令，在 console 运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open shell”，打开 Replit 控制台。
+-   All logic can go into `/components/translator.js`
+-   Complete the `/api/translate` route in `/routes/api.js`
+-   Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`
+-   See the JavaScript files in `/components` for the different spelling and terms your application should translate
+-   To run the tests on Replit, set `NODE_ENV` to `test` without quotes in the `.env` file
+-   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
-在 `tests/1_unit-tests.js` 中写下以下测试：
+Write the following tests in `tests/1_unit-tests.js`:
 
--   将 `Mangoes are my favorite fruit.` 转换成英式英语。
--   将 `I ate yogurt for breakfast.` 转换成英式英语。
--   将 `We had a party at my friend's condo.` 转换成英式英语。
--   将 `Can you toss this in the trashcan for me?` 转换成英式英语。
--   将 `The parking lot was full.` 转换成英式英语。
--   将 `Like a high tech Rube Goldberg machine.` 转换成英式英语。
--   将 `To play hooky means to skip class or work.` 转换成英式英语。
--   将 `No Mr. Bond, I expect you to die.` 转换成英式英语。
--   将 `Dr. Grosh will see you now.` 转换成英式英语。
--   将 `Lunch is at 12:15 today.` 转换成英式英语。
--   将 `We watched the footie match for a while.` 转换成美式英语。
--   将 `Paracetamol takes up to an hour to work.` 转换成美式英语。
--   将 `First, caramelise the onions.` 转换成美式英语。
--   将 `I spent the bank holiday at the funfair.` 转换成美式英语。
--   将 `I had a bicky then went to the chippy.` 转换成美式英语。
--   将 `I've just got bits and bobs in my bum bag.` 转换成美式英语。
--   将 `The car boot sale at Boxted Airfield was called off.` 转换成美式英语。
--   将 `Have you met Mrs Kalyani?` 转换成美式英语。
--   将 `Prof Joyner of King's College, London.` 转换成美式英语。
--   将 `Tea time is usually around 4 or 4.30.` 转换成美式英语。
--   将 `Mangoes are my favorite fruit.` 里的转换高亮。
--   高亮 `I ate yogurt for breakfast.` 里的转换。
--   高亮 `We watched the footie match for a while.` 里的转换。
--   高亮 `Paracetamol takes up to an hour to work.` 里的转换。
+-   Translate `Mangoes are my favorite fruit.` to British English
+-   Translate `I ate yogurt for breakfast.` to British English
+-   Translate `We had a party at my friend's condo.` to British English
+-   Translate `Can you toss this in the trashcan for me?` to British English
+-   Translate `The parking lot was full.` to British English
+-   Translate `Like a high tech Rube Goldberg machine.` to British English
+-   Translate `To play hooky means to skip class or work.` to British English
+-   Translate `No Mr. Bond, I expect you to die.` to British English
+-   Translate `Dr. Grosh will see you now.` to British English
+-   Translate `Lunch is at 12:15 today.` to British English
+-   Translate `We watched the footie match for a while.` to American English
+-   Translate `Paracetamol takes up to an hour to work.` to American English
+-   Translate `First, caramelise the onions.` to American English
+-   Translate `I spent the bank holiday at the funfair.` to American English
+-   Translate `I had a bicky then went to the chippy.` to American English
+-   Translate `I've just got bits and bobs in my bum bag.` to American English
+-   Translate `The car boot sale at Boxted Airfield was called off.` to American English
+-   Translate `Have you met Mrs Kalyani?` to American English
+-   Translate `Prof Joyner of King's College, London.` to American English
+-   Translate `Tea time is usually around 4 or 4.30.` to American English
+-   Highlight translation in `Mangoes are my favorite fruit.`
+-   Highlight translation in `I ate yogurt for breakfast.`
+-   Highlight translation in `We watched the footie match for a while.`
+-   Highlight translation in `Paracetamol takes up to an hour to work.`
 
-在 `tests/2_functional-tests.js` 中写下以下测试：
+Write the following tests in `tests/2_functional-tests.js`:
 
--   翻译文本字段和本地化字段: POST 请求到 `/api/translate`
--   翻译文本字段和无效的本地化字段: POST 请求到 `/api/translate`
--   翻译缺失的文本字段: POST 请求到 `/api/translate`
--   翻译缺失的本地化字段: POST 请求到 `/api/translate`
--   翻译空的文本: POST 请求到 `/api/translate`
--   翻译无需翻译的文本: POST 请求到 `/api/translate`
+-   Translation with text and locale fields: POST request to `/api/translate`
+-   Translation with text and invalid locale field: POST request to `/api/translate`
+-   Translation with missing text field: POST request to `/api/translate`
+-   Translation with missing locale field: POST request to `/api/translate`
+-   Translation with empty text: POST request to `/api/translate`
+-   Translation with text that needs no translation: POST request to `/api/translate`
 
 # --hints--
 
-我可以提供我自己的项目，而不是示例 URL。
+I can provide my own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -75,7 +81,7 @@ dashedName: american-british-translator
 };
 ```
 
-可以向 `/api/translate` 发送 `POST` 请求，对请求体内的 `text` 文本进行翻译， `locale` 字段可以是 `american-to-british` 或 `british-to-american`。 返回的对象应该包含提交的 `text` 以及翻译的文本 `translation`。
+You can `POST` to `/api/translate` with a body containing `text` with the text to translate and `locale` with either `american-to-british` or `british-to-american`. The returned object should contain the submitted `text` and `translation` with the translated text.
 
 ```js
 async (getUserInput) => {
@@ -103,7 +109,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/translate` 路由应该可以处理用英美方式英语写的时间。 例如，十点半英式英语写为“10.30”，而美式英语写为“10:30”。 `span` 元素应该包裹整个时间字符串，即 `<span class="highlight">10:30</span>`。
+The `/api/translate` route should handle the way time is written in American and British English. For example, ten thirty is written as "10.30" in British English and "10:30" in American English. The `span` element should wrap the entire time string, i.e. `<span class="highlight">10:30</span>`.
 
 ```js
 async (getUserInput) => {
@@ -130,7 +136,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/translate` 路由也应该处理美式英语和英式英语中头衔/尊称的缩写方式。 例如，Doctor Wright 在英式英语中缩写为 “Dr Wright”，在美式英语中缩写为 “Dr. Wright"”。 请参阅 `/components/american-to-british-titles.js`，了解程序应当处理的不同标题。
+The `/api/translate` route should also handle the way titles/honorifics are abbreviated in American and British English. For example, Doctor Wright is abbreviated as "Dr Wright" in British English and "Dr. Wright" in American English. See `/components/american-to-british-titles.js` for the different titles your application should handle.
 
 ```js
 async (getUserInput) => {
@@ -157,7 +163,7 @@ async (getUserInput) => {
 };
 ```
 
-将任何翻译过的拼写或条目放在 `<span class="highlight">...</span>` 标签内以使其显示为绿色。
+Wrap any translated spelling or terms with `<span class="highlight">...</span>` tags so they appear in green.
 
 ```js
 async (getUserInput) => {
@@ -185,7 +191,7 @@ async (getUserInput) => {
 };
 ```
 
-如果缺少一个或多个必填字段，返回 `{ error: 'Required field(s) missing' }`。
+If one or more of the required fields is missing, return `{ error: 'Required field(s) missing' }`.
 
 ```js
 async (getUserInput) => {
@@ -206,7 +212,7 @@ async (getUserInput) => {
 };
 ```
 
-如果 `text` 为空，返回 `{ error: 'No text to translate' }`
+If `text` is empty, return `{ error: 'No text to translate' }`
 
 ```js
 async (getUserInput) => {
@@ -227,7 +233,7 @@ async (getUserInput) => {
 };
 ```
 
-如果 `locale` 与两个指定的 locales 都不匹配，返回 `{ error: 'Invalid value for locale field' }`。
+If `locale` does not match one of the two specified locales, return `{ error: 'Invalid value for locale field' }`.
 
 ```js
 async (getUserInput) => {
@@ -249,7 +255,7 @@ async (getUserInput) => {
 };
 ```
 
-如果 `text` 不需要翻译，返回的 `translation` 值为`"Everything looks good to me!"`。
+If `text` requires no translation, return `"Everything looks good to me!"` for the `translation` value.
 
 ```js
 async (getUserInput) => {
@@ -276,7 +282,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 24 个单元的测试都已完成并通过。 请参阅 `/tests/1_unit-tests.js` 来了解你应该写的测试的预期行为。
+All 24 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
 
 ```js
 async (getUserInput) => {
@@ -301,7 +307,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 6 项功能测试都已完成并通过。 请参阅 `/tests/2_functional-tests.js` 来了解你应该写的测试的功能。
+All 6 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
 
 ```js
 async (getUserInput) => {

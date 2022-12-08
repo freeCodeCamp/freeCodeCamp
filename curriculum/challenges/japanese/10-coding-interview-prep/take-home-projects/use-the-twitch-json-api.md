@@ -12,7 +12,7 @@ dashedName: use-the-twitch-json-api
 
 The Twitch API is a RESTful API that lets developers build creative integrations for the broader Twitch community.
 
-Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 Use whichever libraries or APIs you need. Give it your own personal style.
 
 **User Story:** I can see whether freeCodeCamp is currently streaming on Twitch.tv.
 

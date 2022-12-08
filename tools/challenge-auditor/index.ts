@@ -7,10 +7,11 @@ import { config } from 'dotenv';
 const envPath = resolve(__dirname, '../../.env');
 config({ path: envPath });
 
-import { availableLangs, auditedCerts } from '../../config/i18n';
+import { availableLangs } from '../../config/i18n';
 import { getChallengesForLang } from '../../curriculum/getChallenges';
 import { SuperBlocks } from '../../config/certification-settings';
 import { ChallengeNode } from '../../client/src/redux/prop-types';
+import { getAuditedSuperBlocks } from '../../config/superblock-order';
 
 const superBlockFolderMap = {
   'responsive-web-design': '01-responsive-web-design',
@@ -89,7 +90,11 @@ void (async () => {
   );
   for (const lang of langsToCheck) {
     console.log(`\n=== ${lang} ===`);
-    const certs = auditedCerts[lang as keyof typeof auditedCerts];
+    const certs = getAuditedSuperBlocks({
+      language: lang,
+      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+    });
     const langCurriculumDirectory = join(
       process.cwd(),
       'curriculum',

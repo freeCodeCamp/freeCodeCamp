@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c42
-title: Система відстеження помилок
+title: Відстеження проблем
 challengeType: 4
 forumTopicId: 301569
 dashedName: issue-tracker
@@ -8,42 +8,48 @@ dashedName: issue-tracker
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду з використанням одного з наступних метод:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
--   Для завершення проєкту, використайте вибраний вами розробник сайту. Переконайтеся, що зберегли усі файли з нашого репозиторію GitHub.
+-   Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
 
-Коли ви завершили, переконайтеся, що ця демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу в поле `Solution Link`. При необхідності, також введіть посилання на джерело коду вашого проєкту у полі`GitHub Link`.
+Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
+
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
+
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
 
 # --instructions--
 
--   Завершіть необхідні маршрути в `/routes/api.js`
--   Створіть усі функціональні тести в `tests/2_functional-tests.js`
--   Скопіюйте файл `sample.env` до `.env` та встановіть відповідні змінні
--   Щоб розпочати тест розкоментуйте `NODE_ENV=test` у вашому файлі `.env`
--   Щоб розпочати тести на консолі, використайте команду `npm run test`. Щоб відкрити консоль Replit, натисніть сполучення клавіш Ctrl+Shift+P (Cmd, якщо на Mac) та наберіть "open shell"
+-   Завершіть необхідні маршрути у `/routes/api.js`
+-   Створіть усі функціональні тести у `tests/2_functional-tests.js`
+-   Скопіюйте файл `sample.env` до `.env` та відповідно встановіть змінні
+-   Щоб провести тести, розкоментуйте `NODE_ENV=test` у своєму файлі `.env`
+-   Щоб запустити тести на консолі, використайте команду `npm run test`. Щоб відкрити консоль Replit, натисніть Ctrl+Shift+P (Cmd на Mac) та введіть «open shell»
 
 Напишіть наступні тести в `tests/2_functional-tests.js`:
 
--   Створіть запитання в кожному полі: запит POST на `/api/issues/{project}`
--   Створіть запитання тільки в необхідних полях: запит POST на `/api/issues/{project}`
--   Створіть запитання в пропущених необхідних полях: запит POST на `/api/issues/{project}`
--   Подивіться запитання проєкту: запит GET на `/api/issues/{project}`
--   Подивіться запитання проєкту з одним фільтром: запит GET на `/api/issues/{project}`
--   Подивіться запитання проєкту з декількома фільтрами: запит GET на `/api/issues/{project}`
--   Оновіть одне поле на запитанні: запит PUT на `/api/issues/{project}`
--   Оновіть декілька полів на запитанні: запит PUT на `/api/issues/{project}`
--   Оновіть запитання з пропущеним `_id`: запит PUT на `/api/issues/{project}`
--   Оновіть запитання з полями для оновлення: запит PUT на `/api/issues/{project}`
--   Оновіть запитання з недопустимим `_id`: запит PUT на `/api/issues/{project}`
--   Видаліть запитання: запит DELETE на `/api/issues/{project}`
--   Видаліть запитання з недопустимим `_id`: запит DELETE на `/api/issues/{project}`
--   Видаліть запитання з пропущеним `_id`: запит DELETE на `/api/issues/{project}`
+-   Створіть проблему з кожним полем: запит POST до `/api/issues/{project}`
+-   Створіть проблему лише з необхідними полями: запит POST до `/api/issues/{project}`
+-   Створіть проблему з відсутніми необхідними полями: запит POST до `/api/issues/{project}`
+-   Перегляньте проблеми проєкту: запит GET до `/api/issues/{project}`
+-   Перегляньте проблеми проєкту з одним фільтром: запит GET до `/api/issues/{project}`
+-   Перегляньте проблеми проєкту з декількома фільтрами: запит GET до `/api/issues/{project}`
+-   Оновіть одне поле проблеми: запит PUT до `/api/issues/{project}`
+-   Оновіть декілька полів проблеми: запит PUT до `/api/issues/{project}`
+-   Оновіть проблему з відсутнім `_id`: запит PUT до `/api/issues/{project}`
+-   Оновіть проблему з неоновлювальними полями: запит PUT до `/api/issues/{project}`
+-   Оновіть проблему з недійсним `_id`: запит PUT до `/api/issues/{project}`
+-   Видаліть проблему: запит DELETE до `/api/issues/{project}`
+-   Видаліть проблему з недійсним `_id`: запит DELETE до `/api/issues/{project}`
+-   Видаліть проблему з відсутнім `_id`: запит DELETE до `/api/issues/{project}`
 
 # --hints--
 
-Ви можете застосувати свій власний проєкт, а не URL-посилання прикладу.
+Ви можете надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 (getUserInput) => {
@@ -51,7 +57,7 @@ dashedName: issue-tracker
 };
 ```
 
-Ви можете надіслати запит `POST` на `/api/issues/{projectname}` з формою даних, яка містить необхідні поля `issue_title`, `issue_text`, `created_by` і при необхідності `assigned_to` та `status_text`.
+Ви можете надіслати запит `POST` до `/api/issues/{projectname}` з даними форми, включно з обов'язковими полями `issue_title`, `issue_text`, `created_by` і додатковими `assigned_to` та `status_text`.
 
 ```js
 async (getUserInput) => {
@@ -73,7 +79,7 @@ async (getUserInput) => {
 };
 ```
 
-Запит `POST` на `/api/issues/{projectname}` повертає створений об'єкт і повинен включати усі подані поля. Виключені поля будуть повертатися як порожні рядки. Додатково, включіть `created_on` (дата/час), `updated_on` (дата/час), `open` (boolean, `true` для відкритого - значення за змовчуванням, `false` для закритого) та `_id`.
+Запит `POST` до `/api/issues/{projectname}` поверне створений об'єкт, та повинен містити всі введені поля. Вилучені необов'язкові поля будуть повернені як порожні рядки. Додатково включіть `created_on` (дата/час), `updated_on` (дата/час), `open` (булеве, значення за замовчуванням `true` для відкритого і `false` для закритого) та `_id`.
 
 ```js
 async (getUserInput) => {
@@ -107,7 +113,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо ви відправите запит `POST` на `/api/issues/{projectname}` без необхідних полів, то буде помилка `{ error: 'required field(s) missing' }`
+Якщо ви надішлете запит `POST` до `/api/issues/{projectname}` без необхідних полів, повернеться помилка `{ error: 'required field(s) missing' }`
 
 ```js
 async (getUserInput) => {
@@ -125,7 +131,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит `GET` на `/api/issues/{projectname}` для масиву усіх запитань для конкретного `projectname` з усіма цими полями для кожного запитання.
+Ви можете надіслати запит `GET` до `/api/issues/{projectname}` для масиву проблем конкретного `projectname`, з усіма наявними полями кожної проблеми.
 
 ```js
 async (getUserInput) => {
@@ -172,7 +178,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит `GET` на `/api/issues/{projectname}` та фільтрувати запит, також передавши будь-яке поле і значення як запит URL (наприклад, `/api/issues/{project}?open=false`). Ви також можете одночасно передати одне чи декілька полів/значень.
+Ви можете надіслати запит `GET` до `/api/issues/{projectname}` та відфільтрувати запит, передавши будь-яке поле та значення як запит URL (тобто `/api/issues/{project}?open=false`). Ви можете одночасно передати одну чи більше пар поле/значення.
 
 ```js
 async (getUserInput) => {
@@ -213,7 +219,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит `PUT` на `/api/issues/{projectname}` з `_id` та з одним чи більше полем для оновлення. Якщо все зроблено успішно, поле `updated_on` повинне оновитися і повернутися у вигляді `{  result: 'successfully updated', '_id': _id }`.
+Ви можете надіслати запит `PUT` до `/api/issues/{projectname}` із `_id` та одним чи більше оновлювальним полем. Якщо все успішно, поле `updated_on` оновиться та повернеться `{  result: 'successfully updated', '_id': _id }`.
 
 ```js
 async (getUserInput) => {
@@ -248,7 +254,7 @@ async (getUserInput) => {
 };
 ```
 
-Коли запит `PUT` надіслати на `/api/issues/{projectname}` не включаючи `_id`, зворотне значення `{ error: 'missing _id' }`.
+Якщо надісланий запит `PUT` до `/api/issues/{projectname}` не містить `_id`, поверненим значенням буде `{ error: 'missing _id' }`.
 
 ```js
 async (getUserInput) => {
@@ -264,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-Коли запит `PUT` надіслати на `/api/issues/{projectname}` не включаючи оновлені поля, зворотне значення `{ error: 'no update field(s) sent', '_id': _id }`. При іншій помилці, зворотне значення буде `{ error: 'could not update', '_id': _id }`.
+Якщо надісланий запит `PUT` `/api/issues/{projectname}` не містить оновлювальні поля, поверненим значенням буде `{ error: 'no update field(s) sent', '_id': _id }`. При іншій помилці поверненим значенням буде `{ error: 'could not update', '_id': _id }`.
 
 ```js
 async (getUserInput) => {
@@ -294,7 +300,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит `DELETE` на `/api/issues/{projectname}` з `_id`, щоб видалити помилку. Якщо не надіслано жодного `_id`, зворотне значення буде `{ error: 'missing _id' }`. Якщо успішно, зворотне значення - `{ result: 'successfully deleted', '_id': _id }`. Якщо невдало, зворотне значення - `{ error: 'could not delete', '_id': _id }`.
+Ви можете надіслати запит `DELETE` до `/api/issues/{projectname}` із `_id`, щоб видалити проблему. Якщо `_id` не надіслано, поверненим значенням буде `{ error: 'missing _id' }`. Якщо все успішно, поверненим значенням буде `{ result: 'successfully deleted', '_id': _id }`. При помилці поверненим значенням буде `{ error: 'could not delete', '_id': _id }`.
 
 ```js
 async (getUserInput) => {

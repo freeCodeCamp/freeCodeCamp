@@ -8,16 +8,25 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Тепер потрібно дозволити новому користувачеві створити обліковий запис на нашому сайті. У `res.render` для головної сторінки додайте нову змінну до переданого об'єкта `showRegistration: true`. Після оновлення вашої сторінки, ви побачите реєстраційну форму, яка вже була створена в файлі `index.pug`! Ця форма налаштована для надсилання **POST** запиту до `/register`, тому тут ми повинні прийняти **POST** і створити об'єкт користувача в базі даних.
+Тепер потрібно дозволити новому користувачеві створити обліковий запис на вашому сайті. У `res.render` для головної сторінки додайте нову змінну до переданого об'єкта `showRegistration: true`. Після оновлення своєї сторінки ви побачите реєстраційну форму, яка вже була створена у вашому файлі `index.pug`. Ця форма налаштована на **POST** до `/register`, тому створіть цей маршрут і нехай він додасть об’єкта-користувача до бази даних, дотримуючись логіки нижче.
 
-Логіка реєстраційного маршруту має бути наступною: Реєстрація нового користувача > Автентифікація нового користувача > Переадресація на /profile
+Логіка маршруту реєстрації повинна бути такою:
 
-Логіка кроку 1, реєстрація нового користувача, повинна бути такою: Зробіть запит до бази даних за допомогою команди findOne > Якщо користувач був повернений, то він існує і переадресовується на головну сторінку *АБО* якщо користувач не визначений і помилки не виникло, тоді 'insertOne' у базу даних з ім'ям користувача та паролем, і поки не з'явиться помилок, викликайте *наступного*, щоб перейти до кроку 2, автентифікації нового користувача, для якого вже написана логіка в маршруті POST */login*.
+1. Зареєструйте нового користувача
+2. Автентифікуйте нового користувача
+3. Перенаправте до `/profile`
+
+Логіка кроку 1 повинна бути такою:
+
+1. Зробіть запит до бази даних з `findOne`
+2. Якщо є помилка, викличте `next` з помилкою
+3. Якщо повернено користувача, перенаправте назад на головну сторінку
+4. Якщо користувача не знайдено та не виникло помилок, тоді вставте `insertOne` в базу даних з іменем користувача та паролем. Якщо там не виникає помилок, викличте `next`, щоб перейти до кроку 2, автентифікуючи нового користувача, для якого ви вже написали логіку у своєму маршруті `POST /login`.
 
 ```js
 app.route('/register')
   .post((req, res, next) => {
-    myDataBase.findOne({ username: req.body.username }, function(err, user) {
+    myDataBase.findOne({ username: req.body.username }, (err, user) => {
       if (err) {
         next(err);
       } else if (user) {
@@ -47,33 +56,30 @@ app.route('/register')
   );
 ```
 
-Підтвердьте сторінку, якщо все виконано вірно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
-**ПРИМІТКА:** З цього моменту можуть виникнути проблеми з використанням браузеру *picture-in-picture*. Якщо ви використовуєте онлайн IDE, який має попередній перегляд програми в редакторі, рекомендується відкрити цей попередній перегляд у новій вкладці.
+**ПРИМІТКА:** з цього моменту можуть виникнути проблеми з використанням браузера *картинка-в-картинці*. Якщо ви використовуєте онлайн IDE, який пропонує попередній перегляд в редакторі, рекомендовано відкрити цей попередній перегляд у новій вкладці.
 
 # --hints--
 
-Ви повинні зареєструвати маршрут та відобразити його на головній сторінці.
+Ви повинні мати маршрут `/register` і зображати реєстраційну форму на головній сторінці.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /showRegistration:( |)true/gi,
-        'You should be passing the variable showRegistration as true to your render function for the homepage'
-      );
-      assert.match(
-        data,
-        /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
-        'You should have a route accepted a post request on register that querys the db with findone and the query being username: req.body.username'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /showRegistration:( |)true/gi,
+    'You should be passing the variable showRegistration as true to your render function for the homepage'
   );
+  assert.match(
+    data,
+    /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
+    'You should have a route that accepts a POST request on /register that queries the db with findOne and the query being username: req.body.username'
+  );
+}
 ```
 
 Реєстрація повинна працювати.

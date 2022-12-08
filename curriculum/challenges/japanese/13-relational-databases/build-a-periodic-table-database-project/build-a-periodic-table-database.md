@@ -13,7 +13,7 @@ dashedName: build-a-periodic-table-database
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `periodic_table.sql` file, as well as your `element.sh` file, so you can complete step 2. There will be instructions on how to do that within the virtual machine.
+**重要:** プロジェクトのテストがすべて成功した後に、データベースのダンプを `periodic_table.sql` ファイルに保存し、あわせて `element.sh` ファイルも保存することで、ステップ 2 を完了できます。 There will be instructions on how to do that within the virtual machine.
 
 # --notes--
 

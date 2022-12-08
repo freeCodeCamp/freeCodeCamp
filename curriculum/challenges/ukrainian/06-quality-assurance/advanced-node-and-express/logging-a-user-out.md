@@ -8,9 +8,9 @@ dashedName: logging-a-user-out
 
 # --description--
 
-Логіка logout легко створюється. Маршрут має лише скасувати автентифікацію користувача та переадресувати на головну сторінку замість візуалізації будь-якого перегляду.
+Створити логіку виходу з облікового запису легко. Маршрут має лише скасувати автентифікацію користувача та переадресувати на головну сторінку замість візуалізації будь-якого перегляду.
 
-Скасувати автентифікацію користувача через Passport так само легко, як викликати `req.logout();` до початку переспрямування.
+Скасувати автентифікацію користувача через Passport так само легко, як викликати `req.logout()` перед переадресацією. Додайте такий маршрут `/logout`, щоб зробити це:
 
 ```js
 app.route('/logout')
@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-Певно, ви помітили, що ми не обробляємо відсутні вебсторінки (404). Поширений спосіб обробки цієї помилки у Node є наступне проміжне програмне забезпечення. Додайте це після всіх інших маршрутів:
+Мабуть, ви помітили, що не обробляєте відсутні вебсторінки (404). Поширеним способом обробки цієї помилки у Node є наступне проміжне програмне забезпечення. Додайте його після всіх інших маршрутів:
 
 ```js
 app.use((req, res, next) => {
@@ -30,44 +30,38 @@ app.use((req, res, next) => {
 });
 ```
 
-Підтвердьте сторінку, якщо все виконано вірно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#logging-a-user-out-10" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-`req.logout()` should be called in your `/logout` route.
+`req.logout()` потрібно викликати у маршруті `/logout`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /req.logout/gi,
-        'You should be calling req.logout() in your /logout route'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /req.logout/gi,
+    'You should be calling req.logout() in your /logout route'
   );
+}
 ```
 
-Logout має переадресовувати на головну сторінку.
+`/logout` повинен переадресовувати на головну сторінку.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/logout').then(
-    (data) => {
-      assert.match(
-        data,
-        /Home page/gi,
-        'When a user logs out they should be redirected to the homepage'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/logout", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /Home page/gi,
+    'When a user logs out they should be redirected to the homepage'
   );
+}
 ```
 
 # --solutions--

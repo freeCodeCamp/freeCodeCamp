@@ -1,6 +1,6 @@
 ---
 id: 619cfdf2e63ddf05feab86ad
-title: الخطوة ٤٧
+title: الخطوة 47
 challengeType: 0
 dashedName: step-47
 ---
@@ -61,7 +61,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100vh;
-  overflow: clip;
+  overflow: hidden;
 }
 
 .left-mountain {

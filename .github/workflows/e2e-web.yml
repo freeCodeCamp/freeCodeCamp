@@ -5,9 +5,12 @@ on:
       - 'docs/**'
     branches-ignore:
       - 'renovate/**'
+      - 'next-api'
   pull_request:
     paths-ignore:
       - 'docs/**'
+    branches-ignore:
+      - 'next-api'
 
 jobs:
   build-client:
@@ -28,7 +31,6 @@ jobs:
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
           node-version: 16.x
-          cache: 'npm'
 
       - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env
@@ -75,7 +77,7 @@ jobs:
             spec: cypress/e2e/default/**/*.js
     services:
       mongodb:
-        image: mongo:4
+        image: mongo:4.4
         ports:
           - 27017:27017
       # We need mailhog to catch any emails the api tries to send.
@@ -114,7 +116,6 @@ jobs:
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
 
       - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env
@@ -138,5 +139,5 @@ jobs:
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
-          headless: true
+
           spec: ${{ matrix.spec }}

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ca
-title: オブジェクトを使用してルックアップ検索を行う
+title: オブジェクトを使用して検索を行う
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBk8sM'
 forumTopicId: 18373
@@ -9,30 +9,28 @@ dashedName: using-objects-for-lookups
 
 # --description--
 
-オブジェクトは、辞書のようなキー/値の保管場所と捉えることができます。 表形式のデータがある場合、`switch` ステートメントや `if/else` のチェーンを使用せずに、オブジェクトを利用して値のルックアップ検索を行うことができます。 この方法は、入力データが特定の範囲に制限されていることがわかっている場合に特に便利です。
+オブジェクトは、辞書のようなキー/値の保管場所と捉えることができます。 表形式のデータがある場合、`switch` ステートメントや `if/else` のチェーンを使用せずに、オブジェクトを利用して目的の値を探すことができます。 この方法は、入力データが特定の範囲に制限されていることがわかっている場合に特に便利です。
 
-単純な逆アルファベット順のルックアップ検索の例を次に示します。
+下記は記事 (article) を表すオブジェクトを使った例です。
 
 ```js
-const alpha = {
-  1:"Z",
-  2:"Y",
-  3:"X",
-  4:"W",
-  ...
-  24:"C",
-  25:"B",
-  26:"A"
+const article = {
+  "title": "How to create objects in JavaScript",
+  "link": "https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/",
+  "author": "Kaashan Hussain",
+  "language": "JavaScript",
+  "tags": "TECHNOLOGY",
+  "createdAt": "NOVEMBER 28, 2018"
 };
 
-const thirdLetter = alpha[2];
-const lastLetter = alpha[24];
+const articleAuthor = article["author"];
+const articleLink = article["link"];
 
-const value = 2;
-const valueLookup = alpha[value];
+const value = "title";
+const valueLookup = article[value];
 ```
 
-`thirdLetter` は文字列 `Y`、`lastLetter` は文字列 `C`、`valueLookup` は文字列 `Y` となります。
+`articleAuthor` は `Kaashan Hussain` という文字列、`articleLink` は `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/` という文字列、`valueLookup` は `How to create objects in JavaScript` という文字列になります。
 
 # --instructions--
 

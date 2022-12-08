@@ -1,6 +1,6 @@
 ---
 id: 5895f70cf9fc0f352b528e66
-title: Серіалізація об'єкта користувача
+title: Серіалізація об'єкта-користувача
 challengeType: 2
 forumTopicId: 301563
 dashedName: serialization-of-a-user-object
@@ -8,13 +8,25 @@ dashedName: serialization-of-a-user-object
 
 # --description--
 
-Серіалізація та десеріалізація є важливими поняттями щодо автентифікації. Серіалізація об’єкта означає перетворення його вмісту в маленький *ключ*, який потім можна десеріалізувати у вихідний об’єкт. Це дозволяє нам знати, хто користувався сервером без надсилання даних автентифікації, таких як ім’я користувача та пароль, при кожному запиті на нову сторінку.
+Серіалізація та десеріалізація є важливими поняттями щодо автентифікації. Серіалізувати об’єкт означає перетворити його вміст в маленький *ключ*, який потім можна десеріалізувати у вихідний об’єкт. Це дозволяє нам знати, хто користувався сервером без надсилання даних автентифікації, таких як ім’я користувача та пароль, при кожному запиті на нову сторінку.
 
-Щоб налаштувати його належним чином, потрібно мати функцію серіалізації та функцію десеріалізації. У Passport, ми створюємо їх за допомогою `passport.serializeUser( OURFUNCTION )` та `passport.deserializeUser( OURFUNCTION )`
+Щоб налаштувати це правильно, потрібно мати функцію серіалізації та функцію десеріалізації. У Passport їх можна створити з:
 
-`serializeUser` викликається 2 аргументами, повним об'єктом користувача та зворотним викликом, що використовується паспортом. Унікальний ключ для ідентифікації того, що користувача слід повернути у зворотному виклику, найпростіший у використанні `_id` користувача в об'єкті. Він повинен бути унікальним, оскільки він створений MongoDB. Аналогічно, `deserializeUser` викликається за допомогою цього ключа і також функції зворотного виклику паспорта, але цього разу ми повинні взяти цей ключ і повернути повний об'єкт користувача до зворотного виклику. Щоб здійснити пошук за запитом для Mongo `_id`, вам потрібно створити `const ObjectID = require('mongodb').ObjectID;`, а потім, щоб використати його, викличте `new ObjectID(THE_ID)`. `mongodb@~3.6.0` has already been added as a dependency. Ви можете побачити це в наведених нижче прикладах:
+```javascript
+passport.serializeUser(cb);
+passport.deserializeUser(cb);
+```
 
-```js
+Функція зворотного виклику, передана до `serializeUser`, викликається з двома аргументами: повним об'єктом-користувачем та зворотним викликом, що використовується паспортом.
+
+Зворотний виклик очікує два аргументи: помилку, якщо така є, та унікальний ключ для ідентифікації користувача, який має бути повернутий у зворотному виклику. Ви використовуватимете `_id` користувача в об’єкті. Він гарантовано унікальний, оскільки його створив MongoDB.
+
+`deserializeUser` також викликається з двома аргументами: унікальним ключем та функцією зворотного виклику.
+
+Цей зворотний виклик очікує два аргументи: помилку, якщо така є, та повного об’єкта-користувача. Щоб отримати повного об’єкта-користувача, виконайте пошуковий запит для `_id` Mongo, як показано нижче:
+
+
+```javascript
 passport.serializeUser((user, done) => {
   done(null, user._id);
 });
@@ -26,98 +38,91 @@ passport.deserializeUser((id, done) => {
 });
 ```
 
-ПРИМІТКА: `deserializeUser` видасть помилку, поки ми не налаштуємо базу даних (DB) на наступному кроці, тому поки що прокоментуйте весь блок і просто викличте `done(null, null)` у функції `deserializeUser`.
+Додайте дві функції вище на свій сервер. Клас `ObjectID` походить із пакета `mongodb`. `mongodb@~3.6.0` вже додано як залежність. Оголосіть цей клас з:
 
-Підтвердіть сторінку, якщо все виконано вірно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/7068a0d09e61ec7424572b366751f048" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+```javascript
+const { ObjectID } = require('mongodb');
+```
+
+`deserializeUser` видаватиме помилку, доки ви не налаштуєте підключення до бази даних. Тому закоментуйте виклик `myDatabase.findOne` та просто викличте `done(null, null)` у функції зворотного виклику `deserializeUser`.
+
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#serialization-of-a-user-object-4" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-Вам слід правильно серіалізувати функцію користувача.
+Ви повинні правильно серіалізувати функцію користувача.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /passport.serializeUser/gi,
-        'You should have created your passport.serializeUser function'
-      );
-      assert.match(
-        data,
-        /null,\s*user._id/gi,
-        'There should be a callback in your serializeUser with (null, user._id)'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /passport.serializeUser/gi,
+    'You should have created your passport.serializeUser function'
   );
+  assert.match(
+    data,
+    /null,\s*user._id/gi,
+    'There should be a callback in your serializeUser with (null, user._id)'
+  );
+}
 ```
 
-Вам слід належним чином десеріалізувати функцію користувача.
+Ви повинні правильно десеріалізувати функцію користувача.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /passport.deserializeUser/gi,
-        'You should have created your passport.deserializeUser function'
-      );
-      assert.match(
-        data,
-        /null,\s*null/gi,
-        'There should be a callback in your deserializeUser with (null, null) for now'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /passport.deserializeUser/gi,
+    'You should have created your passport.deserializeUser function'
   );
+  assert.match(
+    data,
+    /null,\s*null/gi,
+    'There should be a callback in your deserializeUser with (null, null) for now'
+  );
+}
 ```
 
-MongoDB має бути залежністю.
+MongoDB повинен бути залежністю.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'mongodb',
-        'Your project should list "mongodb" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'mongodb',
+    'Your project should list "mongodb" as a dependency'
   );
+}
 ```
 
-Mongodb повинен бути включеним (required) належним чином, включаючи ObjectId.
+Mongodb повинен бути правильно заданий, включно з ObjectId.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require.*("|')mongodb\1/gi,
-        'You should have required mongodb'
-      );
-      assert.match(
-        data,
-        /new ObjectID.*id/gi,
-        'Even though the block is commented out, you should use new ObjectID(id) for when we add the database'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require.*("|')mongodb\1/gi,
+    'You should have required mongodb'
   );
+  assert.match(
+    data,
+    /new ObjectID.*id/gi,
+    'Even though the block is commented out, you should use new ObjectID(id) for when we add the database'
+  );
+}
 ```
 
 # --solutions--

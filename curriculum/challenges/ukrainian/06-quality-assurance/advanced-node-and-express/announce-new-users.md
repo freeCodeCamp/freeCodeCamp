@@ -8,19 +8,19 @@ dashedName: announce-new-users
 
 # --description--
 
-Багато чатів мають функцію повідомлення всіх підключених користувачів чату про приєднання чи від'єднання користувача. Оскільки приєднання чи від'єднання це вже виконання дії, то для підтримки такої функції вам потрібно відредагувати цю подію. Найбільш логічний спосіб зробити це — надіслати певні дані з подією: ім’я користувача, який приєднався/від'єднався, поточну кількість користувачів, а також те, чи це ім’я приєднане чи від'єднане.
+Багато чатів можуть повідомляти всіх приєднаних користувачів чату про приєднання чи від'єднання іншого користувача. Оскільки з приєднанням чи від'єднанням ви видаєте подію, то для підтримки такої функції вам потрібно просто відредагувати цю подію. Найлогічніший спосіб зробити це – надіслати 3 частини даних разом із подією: ім’я користувача, який приєднався/від'єднався, поточну кількість користувачів, а також те, чи це ім’я користувача приєднане чи від'єднане.
 
-Змініть назву події на `'user'` і надішліть інформацію, що містить поля 'name', 'currentUsers' і 'connected' (`true` у разі приєднання, або - `false` для відключення користувача). Обов’язково переконайтесь, що ви змінили події 'user count' та встановили `false` при відключенні для поля 'connected' замість `true`, як і при підключенні.
+Змініть назву події на `'user'` і передайте об'єкт, що містить поля `username`, `currentUsers` та `connected` (`true` у разі приєднання або `false` у разі від'єднання надісланого користувача). Обов’язково переконайтесь, що змінили обидві події `'user count'` та встановили подію від'єднання так, щоб надсилалось `false` у поле `connected` замість `true`, яке надсилається у події приєднання.
 
 ```js
 io.emit('user', {
-  name: socket.request.user.name,
+  username: socket.request.user.username,
   currentUsers,
   connected: true
 });
 ```
 
-Тепер ваш клієнт матиме всю необхідну інформацію, щоб правильно показати кількість поточних користувачів і повідомити, коли користувач підключається або відключається! Щоб обробити цю подію зі сторони клієнта, ми повинні отримати `'user'`, а потім оновити кількість поточних користувачів за допомогою jQuery, щоб замінити текст `#num-users` на `'{NUMBER} users online'`, а також додати `<li>` до невпорядкованого маркованого списку з id `messages` з `'{NAME} has {joined/left} the chat.'`.
+Тепер ваш клієнт матиме всю необхідну інформацію, щоб правильно показувати кількість поточних користувачів і повідомляти, коли користувач під'єднується або від'єднується! Щоб обробити цю подію зі сторони клієнта, ми повинні послухати `'user'`, потім оновити кількість поточних користувачів за допомогою jQuery, щоб змінити текст `#num-users` на `'{NUMBER} users online'`, а також додати `<li>` до невпорядкованого списку з id `messages` з `'{NAME} has {joined/left} the chat.'`.
 
 Ця дія може виглядати таким чином:
 
@@ -28,55 +28,49 @@ io.emit('user', {
 socket.on('user', data => {
   $('#num-users').text(data.currentUsers + ' users online');
   let message =
-    data.name +
+    data.username +
     (data.connected ? ' has joined the chat.' : ' has left the chat.');
   $('#messages').append($('<li>').html('<b>' + message + '</b>'));
 });
 ```
 
-Відправте сторінку, якщо все було виконано правильно. If you're running into errors, you can check out <a href="https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286" target="_blank" rel="noopener noreferrer nofollow">the project completed up to this point </a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135/3#announce-new-users-10" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-Подія `'user'` повинна містити name, currentUsers та connected.
+Подія `'user'` повинна видаватись з `name`, `currentUsers` та `connected`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io.emit.*('|")user\1.*name.*currentUsers.*connected/gis,
-        'You should have an event emitted named user sending name, currentUsers, and connected'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io.emit.*('|")user\1.*name.*currentUsers.*connected/s,
+    'You should have an event emitted named user sending name, currentUsers, and connected'
   );
+}
 ```
 
 Клієнт повинен правильно обробляти та показувати нові дані із події `'user'`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")user\1[^]*num-users/gi,
-        'You should change the text of "#num-users" within on your client within the "user" event listener to show the current users connected'
-      );
-      assert.match(
-        data,
-        /socket.on.*('|")user\1[^]*messages.*li/gi,
-        'You should append a list item to "#messages" on your client within the "user" event listener to announce a user came or went'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")user\1[^]*num-users/s,
+    'You should change the text of "#num-users" within on your client within the "user" event listener to show the current users connected'
   );
+  assert.match(
+    data,
+    /socket.on.*('|")user\1[^]*messages.*li/s,
+    'You should append a list item to "#messages" on your client within the "user" event listener to announce a user came or went'
+  );
+}
 ```
 
 # --solutions--

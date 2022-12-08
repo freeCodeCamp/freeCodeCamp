@@ -6,9 +6,9 @@
 
 ## Куди додати тест
 
-- Тести Cypress знаходяться в каталозі `./cypress`.
+- Тести Cypress знаходяться у директорії `./cypress`.
 
-- Тести Cypress для модуля навчальної програми знаходяться у відповідному каталозі навчальної програми, тобто `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
+- Тести Cypress для модуля навчальної програми знаходяться у відповідній директорії навчальної програми, тобто `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
 
 ## Як проводити тести
 
@@ -24,7 +24,7 @@
 
 Щоб запустити тести продакшн збірок, замініть `dev` на `prd` нижче.
 
-- Щоб запустити всі тести в каталозі `./cypress`:
+- Щоб запустити всі тести у директорії `./cypress`:
 
   ```console
   npm run cypress:dev:run

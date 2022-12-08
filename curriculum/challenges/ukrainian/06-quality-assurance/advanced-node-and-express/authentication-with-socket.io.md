@@ -8,9 +8,9 @@ dashedName: authentication-with-socket-io
 
 # --description--
 
-Наразі ви не можете визначити, хто підключений до вашого веб-сокету. Хоча й `req.user` містить об'єкт "користувач", проте тільки тоді, коли ваш користувач взаємодіє з веб-сервером, тоді ж як до веб-сокетів у вас немає `req` (запиту), а, як наслідок, немає і даних користувача. Одним зі способів розв'язання проблеми відсутності інформації про те, хто підключений до вашого веб-сокету, є застосування синтаксичного аналізу та декодування файлів cookie, які містять сесію паспорту, далі - отриманні дані десеріалізуються задля отримання об'єкту "користувач". На щастя, NPM має спеціальний пакет для цього, який перетворює колись складну задачу на щось просте!
+Наразі ви не можете визначити, хто приєднаний до вашого вебсокету. Хоча `req.user` містить об'єкта-користувача, це відбувається лише тоді, коли користувач взаємодіє з вебсервером; з вебсокетами у вас немає `req` (запиту), і відповідно немає даних користувача. Один зі способів дізнатися, хто приєднаний до вашого вебсокету – проаналізувати та декодувати куки, які містять сесію паспорту, а потім десеріалізувати їх, щоб отримати об'єкта-користувача. На щастя, NPM має спеціальний пакет, який перетворює колись складну задачу на щось просте!
 
-`passport.socketio@~3.7.0`, `connect-mongo@~3.2.0`, and `cookie-parser@~1.4.5` have already been added as dependencies. Require them as `passportSocketIo`, `MongoStore`, and `cookieParser` respectively. Also, we need to initialize a new memory store, from `express-session` which we previously required. It should look like this:
+`passport.socketio@~3.7.0`, `connect-mongo@~3.2.0` та `cookie-parser@~1.4.5` вже додані як залежності. Вимагайте їх як `passportSocketIo`, `MongoStore` та `cookieParser` відповідно. Крім того, нам потрібно ініціалізувати нове сховище пам'яті з `express-session`, яке ми вимагали раніше. Це має виглядати ось так:
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -18,7 +18,7 @@ const URI = process.env.MONGO_URI;
 const store = new MongoStore({ url: URI });
 ```
 
-Тепер треба лише вказати Socket.IO використовувати його та встановити налаштування. Переконайтеся, що його додано перед наявним кодом сокета, а не в цьому слухачі підключення. На вашому сервері це повинно мати такий вигляд:
+Тепер треба лише вказати Socket.IO використовувати його та встановити налаштування. Переконайтеся, що його додано перед наявним кодом сокета, а не в наявному слухачі приєднання. На вашому сервері це повинно мати такий вигляд:
 
 ```js
 io.use(
@@ -33,15 +33,15 @@ io.use(
 );
 ```
 
-Зауважте, що налаштування автентифікації Passport для Socket.IO є дуже подібним до налаштування проміжного програмного забезпечення `session` для API. Це пояснюється тим, що вони призначені для одного методу автентифікації: отримати id сесії від файлів cookie та перевірити його.
+Зауважте, що налаштування автентифікації Passport для Socket.IO подібне до налаштування проміжного програмного забезпечення `session` для API. Це пояснюється тим, що вони призначені для одного методу автентифікації: отримати id сесії від куків та перевірити його.
 
-Раніше, при налаштуванні проміжного програмного забезпечення `session`, ми не встановлювали безпосередньо назву файлів cookie для сесії (`key`). Це пояснюється тим, що пакет `session` використовував значення за замовчуванням. Тепер, коли додано інший пакет, який потребує доступу до того самого значення файлів cookies, треба чітко встановити значення `key` в обох об'єктах конфігурації.
+Раніше при налаштуванні проміжного програмного забезпечення `session` ми не встановлювали назву куків для сесії (`key`). Це пояснюється тим, що пакет `session` використовував значення за замовчуванням. Тепер, коли додано інший пакет, який потребує доступу до того самого значення куків, треба чітко встановити значення `key` в обох об'єктах конфігурації.
 
-Обов'язково виконайте додавання `key` з назвою файлів cookie до проміжного програмного забезпечення `session`, яке збігається з ключем Socket.IO. Також додайте посилання `store` на налаштування, поруч із якими ми пропишемо `saveUninitialized: true`. Необхідно вказати Socket.IO до якої сесії прив'язуватися.
+Не забудьте додати `key` з назвою куків до проміжного програмного забезпечення `session`, яке відповідає ключу Socket.IO. Також додайте посилання `store` до налаштувань, поруч з якими ми встановлюємо `saveUninitialized: true`. Необхідно вказати Socket.IO до якої сесії прив'язуватися.
 
 <hr />
 
-Тепер слід визначити функції зворотного зв'язку `success` та `fail`:
+Тепер потрібно визначити функції зворотного зв'язку `success` та `fail`:
 
 ```js
 function onAuthorizeSuccess(data, accept) {
@@ -57,90 +57,76 @@ function onAuthorizeFail(data, message, error, accept) {
 }
 ```
 
-Об'єкт "користувач" тепер має доступ у вашому сокет-об'єкті як `socket.request.user`. Тепер, наприклад, ви можете додати таке:
+Тепер до вашого об'єкта-користувача можна отримати доступ в об'єкті-сокеті як `socket.request.user`. Наприклад, тепер ви можете додати наступне:
 
 ```js
-console.log('user ' + socket.request.user.name + ' connected');
+console.log('user ' + socket.request.user.username + ' connected');
 ```
 
-Це дозволить увійти у підключену консоль серверу!
+Це введе на консоль сервера тих, хто приєднався!
 
-Відправте сторінку, якщо все було виконано правильно. If you're running into errors, you can check out the project up to this point <a href="https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254</a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-`passport.socketio` має бути залежністю.
+`passport.socketio` повинен бути залежністю.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'passport.socketio',
-        'Your project should list "passport.socketio" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'passport.socketio',
+    'Your project should list "passport.socketio" as a dependency'
   );
+}
 ```
 
-`cookie-parser` має бути залежністю.
+`cookie-parser` повинен бути залежністю.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'cookie-parser',
-        'Your project should list "cookie-parser" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'cookie-parser',
+    'Your project should list "cookie-parser" as a dependency'
   );
+}
 ```
 
-passportSocketIo має правильно виконуватися (required).
+passportSocketIo повинен бути правильно заданий.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require\((['"])passport\.socketio\1\)/gi,
-        'You should correctly require and instantiate "passport.socketio"'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require\((['"])passport\.socketio\1\)/gi,
+    'You should correctly require and instantiate "passport.socketio"'
   );
+}
 ```
 
-passportSocketIo слід належним чином налаштувати.
+passportSocketIo потрібно правильно налаштувати.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io\.use\(\s*\w+\.authorize\(/,
-        'You should register "passport.socketio" as socket.io middleware and provide it correct options'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io\.use\(\s*\w+\.authorize\(/,
+    'You should register "passport.socketio" as socket.io middleware and provide it correct options'
   );
+}
 ```
 
 # --solutions--

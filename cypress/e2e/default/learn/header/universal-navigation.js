@@ -15,12 +15,14 @@ const selectors = {
   'lang-menu-option': 'button.nav-lang-menu-option',
   'sign-in-button': "[data-test-label='landing-small-cta']",
   'avatar-link': '.avatar-nav-link',
-  'avatar-container': '.avatar-container'
+  'avatar-container': '.avatar-container',
+  'sign-out-button': "[data-value='sign-out-button']",
+  signout: "[data-test-label='signout']",
+  'cancel-signout': "[data-test-label='cancel-signout']"
 };
 
 const links = {
   'sign-in': '/signin',
-  'sign-out': '/signout',
   donate: '/donate',
   curriculum: '/learn',
   forum: 'https://forum.freecodecamp.org/',
@@ -163,7 +165,6 @@ describe('Authenticated Navigation Menu', () => {
   });
   it('should show default avatar.', () => {
     testLink('Settings');
-    testLink('Sign out');
     cy.get(selectors['sign-in-button']).should('not.exist');
     cy.get(selectors['avatar-link'])
       .should('have.attr', 'href')
@@ -174,6 +175,32 @@ describe('Authenticated Navigation Menu', () => {
     );
     cy.get(selectors['navigation-list']).contains('Night Mode').click();
     cy.get('body').should('have.class', 'dark-palette');
+  });
+});
+
+describe('Authenticated User Sign Out', () => {
+  before(() => {
+    cy.clearCookies();
+    cy.exec('npm run seed');
+  });
+  beforeEach(() => {
+    cy.login();
+    cy.get(selectors['toggle-button']).should('be.visible').click();
+  });
+  it('should sign out user', () => {
+    cy.get(selectors['sign-out-button']).click();
+    cy.get(selectors['signout']).click();
+    cy.get(selectors['sign-in-button']).should('be.visible');
+    cy.get(selectors['sign-out-button']).should('not.exist');
+    cy.get(selectors['avatar-link']).should('not.exist');
+    cy.get(selectors['avatar-container']).should('not.exist');
+  });
+  it('should cancel the sign out', () => {
+    cy.get(selectors['sign-out-button']).click();
+    cy.get(selectors['cancel-signout']).click();
+    cy.get(selectors['sign-in-button']).should('not.exist');
+    cy.get(selectors['avatar-link']).should('be.visible');
+    cy.get(selectors['avatar-container']).should('be.visible');
   });
 });
 

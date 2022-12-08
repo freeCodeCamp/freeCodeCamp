@@ -14,7 +14,13 @@ Crea una aplicación full stack de JavaScript que sea funcionalmente similar a e
 -   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+Si usas Replit, sigue estos pasos para configurar el proyecto:
+
+-   Empieza importando el proyecto en Replit.
+-   Siguiente, verás una ventana `.replit`.
+-   Selecciona `Use run command` y haz clic en el botón `Done`.
+
+Cuando hayas acabado, asegúrate de que un demo funcional de tu proyecto, este alojado en algún sitio público. Luego envía la URL a la misma en el campo `Solution Link`. Opcionalmente, también envía un enlace para el código fuente de tu proyecto en el campo `GitHub Link`.
 
 # --instructions--
 
@@ -22,7 +28,7 @@ Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté
 
 # --hints--
 
-Debes proporcionar tu propio proyecto, no la URL de ejemplo.
+Debes proporcionar tu propio proyecto, no la URL del ejemplo.
 
 ```js
 (getUserInput) => {
@@ -45,7 +51,7 @@ async (getUserInput) => {
 };
 ```
 
-El campo de entrada del archivo de formulario tiene el atributo `name` establecido a `upfile`.
+El campo de entrada del archivo de formulario tiene el atributo `name` establecido en `upfile`.
 
 ```js
 async (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-Cuando envíes un archivo, recibirá el `name` del archivo, `type` y `size` en bytes dentro de la respuesta JSON.
+When you submit a file, you receive the file `name`, `type`, and `size` in bytes within the JSON response.
 
 ```js
 async (getUserInput) => {

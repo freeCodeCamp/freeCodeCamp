@@ -10,7 +10,7 @@ dashedName: cat-and-dog-image-classifier
 
 You will be <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-cat-and-dog-image-classifier/blob/master/fcc_cat_dog.ipynb" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+After going to that link, create a copy of the notebook either in your own account or locally. プロジェクトを完了し、テストが成功したら (テストはリンクに含まれています)、下記にプロジェクトリンクを送信してください。 If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
 
 We are still developing the interactive instructional content for the machine learning curriculum. For now, you can go through the video challenges in this certification. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
 
@@ -102,7 +102,7 @@ Run this final cell to see if you passed the challenge or if you need to keep tr
 
 # --hints--
 
-It should pass all Python tests.
+すべての Python テストが成功する必要があります。
 
 ```js
 

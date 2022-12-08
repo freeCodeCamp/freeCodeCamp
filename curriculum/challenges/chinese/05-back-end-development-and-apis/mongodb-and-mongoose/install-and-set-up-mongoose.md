@@ -14,19 +14,25 @@ dashedName: install-and-set-up-mongoose
 - 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成这些挑战。
 - 使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 字段中提交它的 URL。
+If you use Replit, follow these steps to set up the project:
 
-在这个挑战中，你将建立一个 MongoDB Atlas 数据库并导入连接到它所需的软件包。
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
-按照<a href='https://chinese.freecodecamp.org/news/get-started-with-mongodb-atlas/' target="_blank" rel="noopener noreferrer nofollow">这篇教程</a>在 MongoDB Atlas 创建一个托管数据库。
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+
+In this challenge, you will set up a MongoDB Atlas database and import the required packages to connect to it.
+
+Follow <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' target="_blank" rel="noopener noreferrer nofollow">this tutorial</a> to set up a hosted database on MongoDB Atlas.
 
 # --instructions--
 
-`mongoose@^5.11.15` 已添加到你项目的 `package.json` 文件中。 首先，在 `myApp.js` 中请求 mongoose 为 `mongoose`。 接下来，创建一个 `.env` 文件并向其中添加一个 `MONGO_URI` 变量。 变量的值为你的 MongoDB Atlas 数据库 URI。 应用单引号或双引号包裹 URI。请记住，环境变量 `=` 两边不能有空格。 例如，`MONGO_URI='VALUE'`。
+`mongoose@^5.11.15` has been added to your project’s `package.json` file. First, require mongoose as `mongoose` in `myApp.js`. Next, create a `.env` file and add a `MONGO_URI` variable to it. Its value should be your MongoDB Atlas database URI. Be sure to surround the URI with single or double quotes, and remember that you can't use spaces around the `=` in environment variables. For example, `MONGO_URI='VALUE'`.
 
-**注意：** 如果你使用的是 Replit，则无法创建 `.env` 文件。 相反，使用内置的 <dfn>SECRETS</dfn> 选项卡来添加变量。 在使用 <em>SECRETS</em> 选项卡时，<em>不要</em>将值括在引号中。
+**Note:** If you are using Replit, you cannot create a `.env` file. Instead, use the built-in <dfn>SECRETS</dfn> tab to add the variable. <em>Do not</em> surround the values with quotes when using the <em>SECRETS</em> tab.
 
-完成后，使用以下语法连接到数据库：
+When you are done, connect to the database using the following syntax:
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -34,7 +40,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --hints--
 
-“mongoose version ^5.11.15” 依赖项应该在 package.json
+"mongoose version ^5.11.15" dependency should be in package.json
 
 ```js
 (getUserInput) =>
@@ -54,7 +60,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
   );
 ```
 
-应使用 “mongoose” 连接数据库。
+"mongoose" should be connected to a database
 
 ```js
 (getUserInput) =>

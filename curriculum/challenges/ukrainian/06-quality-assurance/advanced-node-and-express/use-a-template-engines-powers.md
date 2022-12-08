@@ -1,6 +1,6 @@
 ---
 id: 5895f70bf9fc0f352b528e64
-title: Використовуйте можливості шаблонного рушія
+title: Використання можливостей шаблонізатора
 challengeType: 2
 forumTopicId: 301567
 dashedName: use-a-template-engines-powers
@@ -8,62 +8,67 @@ dashedName: use-a-template-engines-powers
 
 # --description--
 
-Одна з головних переваг використання шаблонного рушія – це можливість передавати змінні з сервера в файл шаблону перед його візуалізацією в HTML.
+Одна з головних переваг шаблонізатора – це можливість передавати змінні з сервера до шаблону перед його візуалізацією в HTML.
 
-У вашому файлі Pug ви можете використовувати змінну, посилаючись на ім'я змінної як `#{variable_name}` в рядку з іншим текстом в елементі або використовуючи знак рівності в елементі без пробілу, наприклад, `p=variable_name`, що присвоює значення змінної тексту елемента p.
+У своєму файлі Pug ви можете використовувати змінну, посилаючись на ім'я змінної як `#{variable_name}` в рядку з іншим текстом в елементі або використовуючи знак рівності в елементі без пробілу, наприклад, `p=variable_name`, що присвоює значення змінної до тексту елемента p.
 
- Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site. Read the Pug documentation for more information on usage and syntax.
+Pug націлений на використання прогалин і вкладок для зображення вкладених елементів та скорочення обсягу коду, необхідного для створення красивого сайту.
 
- Here is an example:
+Візьмемо, наприклад, такий код Pug:
 
- ```html
- <!--Typing this using Pug-->
- head
-    script(type='text/javascript').
-      if (foo) bar(1 + 5);
-  body
-    if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
+```pug
+head
+  script(type='text/javascript').
+    if (foo) bar(1 + 5);
+body
+  if youAreUsingPug
+      p You are amazing
+    else
+      p Get on it!
+```
 
-<!--will lead to creating this code-->
-  <head>
-    <script type="text/javascript">
-      if (foo) bar(1 + 5);
-    </script>
-  </head>
-  <body>
-    <p>You are amazing</p>
-  </body>
-  ```
+Наведене вище видає наступний HTML:
 
-Looking at our pug file `index.pug` included in your project, we used the variables `title` and `message`.
+```html
+<head>
+  <script type="text/javascript">
+    if (foo) bar(1 + 5);
+  </script>
+</head>
+<body>
+  <p>You are amazing</p>
+</body>
+```
 
-To pass those along from our server, you will need to add an object as a second argument to your `res.render` with the variables and their values. For example, pass this object along setting the variables for your index view: `{title: 'Hello', message: 'Please login'}`
+Ваш файл `index.pug`, поміщений у проєкті, використовує змінні `title` та `message`.
 
-It should look like: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
+Передайте їх зі свого сервера до файлу Pug, додавши об'єкт як другий аргумент до свого виклику `res.render` зі змінними та їхніми значеннями. Надайте `title` значення `Hello`, а `message` значення `Please log in`.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the <a href="https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871" target="_blank" rel="noopener noreferrer nofollow">project completed up to this point</a>.
+Це має виглядати так:
+
+```javascript
+res.render('index', { title: 'Hello', message: 'Please log in' });
+```
+
+Тепер оновіть свою сторінку, і ви повинні побачити ці значення у перегляді в правильному місці, як зазначено у вашому файлі `index.pug`!
+
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-Pug should correctly render variables.
+Pug повинен правильно відображати змінні.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
-      assert.match(
-        data,
-        /pug-variable("|')>Please login/gi,
-        'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /pug-variable("|')>Please log in/gi,
+    'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
   );
+}
 ```
 
 # --solutions--

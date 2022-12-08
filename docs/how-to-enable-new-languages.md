@@ -50,7 +50,7 @@ Note that the `download_language` key needs to be set to the language code displ
 
 There are a few steps to take in order to allow the codebase to build in your desired language.
 
-First, visit the `config/i18n/all-langs.ts` file to add the language to the available languages list and configure the values. There are several objects here.
+First, visit the `config/i18n.ts` file to add the language to the list of available languages and configure the values. There are several objects here.
 
 - `availableLangs`: For both the `client` and `curriculum` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
 - `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. This tells the client which certifications are fully translated.
@@ -58,8 +58,9 @@ First, visit the `config/i18n/all-langs.ts` file to add the language to the avai
 - `LangNames`: These are the display names for the language selector in the navigation menu.
 - `LangCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
 - `hiddenLangs`: These languages will not be displayed in the navigation menu. This is used for languages that are not yet ready for release.
+- `rtlLangs`: These are languages that read from right to left.
 
-As an example, if you wanted to enable Dothraki as a language, your `all-langs.js` objects should look like this:
+As an example, if you wanted to enable Dothraki as a language, your `i18n.ts` objects should look like this:
 
 ```js
 export const availableLangs = {
@@ -137,6 +138,8 @@ export enum LangCodes = {
 };
 
 export const hiddenLangs = ['dothraki'];
+
+export const rtlLangs = [''];
 ```
 
 > [!NOTE]
@@ -217,7 +220,7 @@ For the video challenges, you need to change a few things. First add the new loc
       ...
 ```
 
-Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `all-langs.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
+Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `i18n.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
 
 ```yml
 videoLocaleIds:

@@ -14,6 +14,12 @@ Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: 
 -   Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare il tuo progetto.
 -   Usare un costruttore di siti a tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
+Se utilizzi Replit, segui questi passaggi per impostare il progetto:
+
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
+
 Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
 
 # --instructions--
@@ -26,10 +32,10 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 
 Scrivi i seguenti test in `tests/2_functional-tests.js`:
 
--   Crea un'issue con ogni campo: richiesta POST a `/api/issues/{project}`
--   Crea un'issue con soli campi obbligatori: richiesta POST a `/api/issues/{project}`
--   Crea un'issue con i campi obbligatori mancanti: richiesta POST a `/api/issues/{project}`
--   Visualizza i gli issue di un progetto: richiesta GET a `/api/issues/{project}`
+-   Crea un issue con ogni campo: richiesta POST a `/api/issues/{project}`
+-   Crea un issue con soli campi obbligatori: richiesta POST a `/api/issues/{project}`
+-   Crea un issue con i campi obbligatori mancanti: richiesta POST a `/api/issues/{project}`
+-   Visualizza gli issue di un progetto: richiesta GET a `/api/issues/{project}`
 -   Visualizza gli issue di un progetto con un filtro: richiesta GET a `/api/issues/{project}`
 -   Visualizza gli issue di un progetto con più filtri: richiesta GET a `/api/issues/{project}`
 -   Aggiorna un campo in un issue: richiesta PUT a `/api/issues/{project}`
@@ -213,7 +219,7 @@ async (getUserInput) => {
 };
 ```
 
-Puoi inviare una richiesta `PUT` a `/api/issues/{projectname}` con un `_id` e uno o più campi da aggiornare. Al successo, il campo `updated_on` dovrebbe essere aggiornato, e dovrebbe essere restituito `{  result: 'successfully updated', '_id': _id }`.
+Puoi inviare una richiesta `PUT` a `/api/issues/{projectname}` con un `_id` e uno o più campi da aggiornare. Al successo, il campo `updated_on` dovrebbe essere aggiornato e dovrebbe essere restituito `{  result: 'successfully updated', '_id': _id }`.
 
 ```js
 async (getUserInput) => {
@@ -248,7 +254,7 @@ async (getUserInput) => {
 };
 ```
 
-Quando la richiesta `PUT` inviata a `/api/issues/{projectname}` non include un `_id`, deve essere restuito `{ error: 'missing _id' }`.
+Quando la richiesta `PUT` inviata a `/api/issues/{projectname}` non include un `_id`, deve essere restituito `{ error: 'missing _id' }`.
 
 ```js
 async (getUserInput) => {
@@ -264,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-Quando la richiesta `PUT` inviata a `/api/issues/{projectname}` non include campi da aggiornare, deve essere restuito `{ error: 'no update field(s) sent', '_id': _id }`. Su qualsiasi altro errore, il valore restituito deve essere `{ error: 'could not update', '_id': _id }`.
+Quando la richiesta `PUT` inviata a `/api/issues/{projectname}` non include campi da aggiornare, deve essere restituito `{ error: 'no update field(s) sent', '_id': _id }`. Su qualsiasi altro errore, il valore restituito deve essere `{ error: 'could not update', '_id': _id }`.
 
 ```js
 async (getUserInput) => {
@@ -294,7 +300,7 @@ async (getUserInput) => {
 };
 ```
 
-Puoi inviare una richiesta `DELETE` a `/api/issues/{projectname}` con un `_id` per eliminare un issue. Se non viene inviato un `_id` , deve essere restuito `{ error: 'missing _id' }`. Al successo, deve essere restituito `{ result: 'successfully deleted', '_id': _id }`. Al fallimento, il valore restituito deve essere `{ error: 'could not delete', '_id': _id }`.
+Puoi inviare una richiesta `DELETE` a `/api/issues/{projectname}` con un `_id` per eliminare un issue. Se non viene inviato un `_id`, deve essere restituito `{ error: 'missing _id' }`. Al successo, deve essere restituito `{ result: 'successfully deleted', '_id': _id }`. Al fallimento, il valore restituito deve essere `{ error: 'could not delete', '_id': _id }`.
 
 ```js
 async (getUserInput) => {
@@ -336,7 +342,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 14 test funzionali sono completi e passano.
+Tutti i 14 test funzionali richiesti sono completi e superati.
 
 ```js
 async (getUserInput) => {

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8d367417b2b2512b5b
-title: Learn About Functional Programming
+title: تعلم عن البرمجة الوظيفية (Functional)
 challengeType: 1
 forumTopicId: 301233
 dashedName: learn-about-functional-programming
@@ -8,21 +8,21 @@ dashedName: learn-about-functional-programming
 
 # --description--
 
-الـ Functional programming هي أسلوب للبرمجة تكون فيه الحلول عبارة عن functions بسيطة ومنعزلة، بدون أي تأثيرات جانبية خارج نطاق الدالة: `INPUT -> PROCESS -> OUTPUT`
+يكون البرمجة الوظيفية (Functional) أسلوب للبرمجة فيه الحلول من الوظائف (functions) بسيطة ومنعزلة، دون أي تأثيرات جانبية خارج نطاق الوظيفة: `INPUT -> PROCESS -> OUTPUT`
 
-Functional programming تتعلق بما يلي:
+تتعلق البرمجة الوظيفية (Functional) بما يلي:
 
-1) Isolated functions - لا يوجد اعتماد على حالة البرنامج، الذي يشمل المتغيرات الـ global القابلة للتغيير
+1) وظائف منعزلة (Isolated functions) - لا تعتمد على حالة البرنامَج، الذي يشمل المتغيرات العامة (global) القابلة للتغيير
 
-2) Pure functions - نفس الإدخال يعطي دائمًا نفس الإخراج
+2) الوظائف الخالصة (Pure functions) - نفس الإدخال يعطي دائمًا نفس الإخراج
 
-(3) الـ functions ذات التأثيرات الجانبية المحدودة - أي تغييرات أو تحولات في حالة البرنامج خارج الـ function تخضع للتحكم الدقيق
+(3) الوظائف (functions) ذات التأثيرات الجانبية المحدودة - أي تغييرات أو تحولات في حالة البرنامَج خارج الوظيفة (function) تخضع للتحكم الدقيق
 
 # --instructions--
 
 يصادف أن أعضاء freeCodeCamp يحبون الشاي.
 
-في محرر الكود، تم بالفعل تعريف الدوال `prepareTea` و `getTea` من أجلك. قم باستدعاء دالة `getTea` للحصول على 40 كوب من الشاي للفريق، وتخزينها في متغير `tea4TeamFCC`.
+في محرر الكود، تم تعريف وظيفتان (functions) تسمى `prepareTea` و `getTea` من أجلك فعلًا. أستدعي وظيفة `getTea` للحصول على 40 كوب من الشاي للفريق، وتخزينها في متغير `tea4TeamFCC`.
 
 # --hints--
 

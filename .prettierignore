@@ -1,13 +1,15 @@
 **/.cache
 **/public
 client/static
+client/**/trending.json
 **/*fixtures*
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 config/**/*.json
 config/i18n.js
 config/certification-settings.js
-docs/i18n
+config/superblock-order.js
+config/superblock-order.test.js
 utils/block-nameify.js
 utils/block-nameify.test.js
 utils/slugs.js
@@ -16,3 +18,4 @@ utils/index.js
 **/package-lock.json
 web/.next
 curriculum-server/data/curriculum.json
+docs/**/*.md

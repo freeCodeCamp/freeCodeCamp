@@ -1,6 +1,6 @@
 ---
 id: 5e601c0d5ac9d0ecd8b94afe
-title: Перекладач американської та британської англійської мови
+title: Перекладач з американської на британську
 challengeType: 4
 forumTopicId: 462358
 dashedName: american-british-translator
@@ -8,62 +8,68 @@ dashedName: american-british-translator
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a>. Робота над цим проєктом включатиме написання коду, використовуючи один з таких методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
--   Для завершення проєкту, використайте вибраний вами розробник сайту. Переконайтеся, що зберегли усі файли з нашого репозиторію GitHub.
+-   Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
 
-Коли ви завершили, переконайтеся, що ця демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу у поле `Solution Link`. При необхідності, також введіть посилання на джерело коду вашого проєкту у полі `GitHub Link`.
+Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
+
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
+
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
 
 # --instructions--
 
 -   Уся логіка може перейти до `/components/translator.js`
 -   Завершіть маршрут `/api/translate` в `/routes/api.js`
--   Створіть усі сегменти/функціональні тести в `tests/1_unit-tests.js` та `tests/2_functional-tests.js`
--   Перегляньте файли JavaScript у `/components` для різного правопису і термінів вашого застосунку, які він повинен перекладати
--   Щоб розпочати тести на Replit, налаштуйте `NODE_ENV` на файл `test` без лапок в `.env`
--   Щоб розпочати тести в консолі, використайте команду `npm run test`. Щоб відкрити консоль Replit, натисніть сполучення клавіш Ctrl+Shift+P (Cmd, якщо з Mac) та наберіть "open shell"
+-   Створіть усі модульні/функціональні тести у `tests/1_unit-tests.js` та `tests/2_functional-tests.js`
+-   Перегляньте файли JavaScript у `/components` для правопису та термінів, які повинен перекласти ваш додаток
+-   Щоб запустити тести на Replit, встановіть `NODE_ENV` на `test` без лапок у файлі `.env`
+-   Щоб запустити тести на консолі, використайте команду `npm run test`. Щоб відкрити консоль Replit, натисніть Ctrl+Shift+P (Cmd на Mac) та введіть «open shell»
 
 Напишіть наступні тести в `tests/1_unit-tests.js`:
 
--   Перекладіть британською англійською `Mangoes are my favorite fruit.`
--   Перекладіть британською англійською `I ate yogurt for breakfast.`
--   Перекладіть британською англійською `We had a party at my friend's condo.`
--   Перекладіть британською англійською `Can you toss this in the trashcan for me?`
--   Перекладіть британською англійською `The parking lot was full.`
--   Перекладіть британською англійською `Like a high tech Rube Goldberg machine.`
--   Перекладіть британською англійською `To play hooky means to skip class or work.`
--   Перекладіть британською англійською `No Mr. Bond, I expect you to die.`
--   Перекладіть британською англійською `Dr. Grosh will see you now.`
--   Перекладіть британською англійською `Lunch is at 12:15 today.`
--   Перекладіть американською англійською `We watched the footie match for a while.`
--   Перекладіть американською англійською `Paracetamol takes up to an hour to work.`
--   Перекладіть американською англійською `First, caramelise the onions.`
--   Перекладіть американською англійською `I spent the bank holiday at the funfair.`
--   Перекладіть американською англійською `I had a bicky then went to the chippy.`
--   Перекладіть американською англійською `I've just got bits and bobs in my bum bag.`
--   Перекладіть американською англійською `The car boot sale at Boxted Airfield was called off.`
--   Перекладіть американською англійською `Have you met Mrs Kalyani?`
--   Перекладіть американською англійською `Prof Joyner of King's College, London.`
--   Перекладіть американською англійською `Tea time is usually around 4 or 4.30.`
--   Виділіть переклад в `Mangoes are my favorite fruit.`
--   Виділіть переклад в `I ate yogurt for breakfast.`
--   Виділіть переклад в `We watched the footie match for a while.`
--   Виділіть переклад в `Paracetamol takes up to an hour to work.`
+-   Перекладіть `Mangoes are my favorite fruit.` на британську англійську
+-   Перекладіть `I ate yogurt for breakfast.` на британську англійську
+-   Перекладіть `We had a party at my friend's condo.` на британську англійську
+-   Перекладіть `Can you toss this in the trashcan for me?` на британську англійську
+-   Перекладіть `The parking lot was full.` на британську англійську
+-   Перекладіть `Like a high tech Rube Goldberg machine.` на британську англійську
+-   Перекладіть `To play hooky means to skip class or work.` на британську англійську
+-   Перекладіть `No Mr. Bond, I expect you to die.` на британську англійську
+-   Перекладіть `Dr. Grosh will see you now.` на британську англійську
+-   Перекладіть `Lunch is at 12:15 today.` на британську англійську
+-   Перекладіть `We watched the footie match for a while.` на американську англійську
+-   Перекладіть `Paracetamol takes up to an hour to work.` на американську англійську
+-   Перекладіть `First, caramelise the onions.` на американську англійську
+-   Перекладіть `I spent the bank holiday at the funfair.` на американську англійську
+-   Перекладіть `I had a bicky then went to the chippy.` на американську англійську
+-   Перекладіть `I've just got bits and bobs in my bum bag.` на американську англійську
+-   Перекладіть `The car boot sale at Boxted Airfield was called off.` на американську англійську
+-   Перекладіть `Have you met Mrs Kalyani?` на американську англійську
+-   Перекладіть `Prof Joyner of King's College, London.` на американську англійську
+-   Перекладіть `Tea time is usually around 4 or 4.30.` на американську англійську
+-   Виділіть переклад у `Mangoes are my favorite fruit.`
+-   Виділіть переклад у `I ate yogurt for breakfast.`
+-   Виділіть переклад у `We watched the footie match for a while.`
+-   Виділіть переклад у `Paracetamol takes up to an hour to work.`
 
 Напишіть наступні тести в `tests/2_functional-tests.js`:
 
--   Переклад з текстом та полями локалізації: запит POST на `/api/translate`
--   Переклад тексту з недопустимими полями локалізації: запит POST на `/api/translate`
--   Переклад з пропущеним текстовим полем: запит POST на `/api/translate`
--   Переклад з пропущеним полем локалізації: запит POST на `/api/translate`
--   Переклад з порожнім текстом: запит POST на `/api/translate`
--   Переклад тексту, який не потребує перекладу: запит POST на `/api/translate`
+-   Переклад із полями тексту та локалі: запит POST до `/api/translate`
+-   Переклад із полями тексту та недійсної локалі: запит POST до `/api/translate`
+-   Переклад із відсутнім полем тексту: запит POST до `/api/translate`
+-   Переклад із відсутнім полем локалі: запит POST до `/api/translate`
+-   Переклад із порожнім текстом: запит POST до `/api/translate`
+-   Переклад із текстом, якому не потрібен переклад: запит POST до `/api/translate`
 
 # --hints--
 
-Я можу надати свій власний проєкт, не приклад URL-адреси.
+Я можу надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 (getUserInput) => {
@@ -75,7 +81,7 @@ dashedName: american-british-translator
 };
 ```
 
-Ви можете `POST` на `/api/translate`, з корпусом, що містить `text` з текстом для перекладу та `locale` з `american-to-british` чи `british-to-american`. Зворотний об'єкт повинен містити поданий `text` та `translation` з перекладеним текстом.
+Ви можете надіслати запит `POST` до `/api/translate` із тілом, що містить `text` з текстом для перекладу та `locale` з `american-to-british` або `british-to-american`. Повернений об'єкт міститиме наданий `text` та `translation` з перекладеним текстом.
 
 ```js
 async (getUserInput) => {
@@ -103,7 +109,7 @@ async (getUserInput) => {
 };
 ```
 
-Маршрут `/api/translate` повинен опрацьовувати час, написаний американською та британською англійською. Наприклад, десять тридцять написано як "10.30" британською англійською та "10:30" американською англійською. Елемент `span` повинен містити весь рядок часу, наприклад `<span class="highlight">10:30</span>`.
+Маршрут `/api/translate` повинен обробляти те, як написаний час американською та британською англійською. Наприклад, пів на десяту пишеться «10.30» британською та «10:30» американською. Елемент `span` повинен повністю обгорнути рядок часу, тобто `<span class="highlight">10:30</span>`.
 
 ```js
 async (getUserInput) => {
@@ -130,7 +136,7 @@ async (getUserInput) => {
 };
 ```
 
-Маршрут `/api/translate` повинен також регулювати те як заголовки/ назви посад/титулів скорочені американською та британською англійською. Наприклад, абревіатура Doctor Wright скорочується на "Dr Wright" у британській англійській і "Dr. Wright" в американській англійській. Дивіться `/components/american-to-british-titles.js` для різних заголовків, які має опрацювати ваш додаток.
+Маршрут `/api/translate` також повинен обробляти скорочення титулів та гоноративів американською та британською. Наприклад, Доктор Райт пишеться «Dr Wright» британською та «Dr. Wright» американською. Перегляньте `/components/american-to-british-titles.js` для різних титулів, які повинен обробляти ваш додаток.
 
 ```js
 async (getUserInput) => {
@@ -157,7 +163,7 @@ async (getUserInput) => {
 };
 ```
 
-Перенести будь-який перекладений правопис чи термін з тегів `<span class="highlight">...</span>` так, щоб вони стали зеленими.
+Обгорніть будь-які перекладені правописи чи терміни тегами `<span class="highlight">...</span>`, щоб вони були зеленими.
 
 ```js
 async (getUserInput) => {
@@ -185,7 +191,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо одне чи більше необхідних полів відсутні, поверніться `{ error: 'Required field(s) missing' }`.
+Якщо одне чи більше необхідних полів відсутні, поверніть `{ error: 'Required field(s) missing' }`.
 
 ```js
 async (getUserInput) => {
@@ -206,7 +212,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо `text` порожній, поверніться `{ error: 'No text to translate' }`
+Якщо `text` порожній, поверніть `{ error: 'No text to translate' }`
 
 ```js
 async (getUserInput) => {
@@ -227,7 +233,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо `locale` не збігається з однією з двох спеціальних мов, поверніться `{ error: 'Invalid value for locale field' }`.
+Якщо `locale` не відповідає одній із вказаних локалей, поверніть `{ error: 'Invalid value for locale field' }`.
 
 ```js
 async (getUserInput) => {
@@ -249,7 +255,7 @@ async (getUserInput) => {
 };
 ```
 
-Якщо `text` не потребує перекладу, поверніться `"Everything looks good to me!"` для значення `translation`.
+Якщо `text` не потрібен переклад, поверніть `"Everything looks good to me!"` для значення `translation`.
 
 ```js
 async (getUserInput) => {
@@ -276,7 +282,7 @@ async (getUserInput) => {
 };
 ```
 
-Усі 24 модульних тестів завершено та успішно пройдено. Дивіться `/tests/1_unit-tests.js` для очікуваної поведінки об'єкту, для якої вам слід написати тести.
+Усі 24 модульних тестів завершено та успішно пройдено. Перегляньте `/tests/1_unit-tests.js` очікуваної поведінки, для якої ви пишете тести.
 
 ```js
 async (getUserInput) => {
@@ -301,7 +307,7 @@ async (getUserInput) => {
 };
 ```
 
-Усі 6 функціональних тестів завершено та успішно пройдено. Дивіться `/tests/2_functional-tests.js` для функціональності, для якої вам слід написати тести.
+Усі 6 функціональних тестів завершено та успішно пройдено. Перегляньте `/tests/2_functional-tests.js` функціональності, для якої ви пишете тести.
 
 ```js
 async (getUserInput) => {

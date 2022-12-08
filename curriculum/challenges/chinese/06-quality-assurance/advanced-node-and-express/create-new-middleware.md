@@ -8,11 +8,13 @@ dashedName: create-new-middleware
 
 # --description--
 
-无论是否登录，任何用户都可以通过输入 url 而跳转到 `/profile`。 为了解决这个问题，我们需要在 profile 页面渲染之前进行用户验证。 这就是一个很棒的创建中间件的示例。
+就像现在这样，任何用户都可以直接进入 `/profile`，不管他们是否已经通过认证，只要输入 URL 就可以了。 你想通过在呈现个人资料页面之前首先检查用户是否经过认证来防止这种情况。 这就是一个很棒的创建中间件的示例。
 
-这个挑战的目标是创建 `ensureAuthenticated(req, res, next)` 中间件方法，通过在 `request` 上调用 passports 的`isAuthenticated` 方法，可以检查 `req.user` 是否定义，从而确定用户是否通过认证。 如果用户已通过验证，就会调用 `next()`，否则我们应重定向到主页并让用户登录。 该中间件的实现如下：
+这里的挑战是创建中间件函数 `ensureAuthenticated(req, res, next)`，它将通过在检查 `req.user` 是否被定义的 `request` 上调用 Passport 的 `isAuthenticated` 方法检查用户是否已认证。 如果是的话，那么 `next()` 应该被调用。 否则，你可以直接用一个重定向到你的主页来回应请求，以便登录。
 
-```js
+此中间件的实现是：
+
+```javascript
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
@@ -21,59 +23,53 @@ function ensureAuthenticated(req, res, next) {
 };
 ```
 
-然后，在 profile 页面请求中，添加 *ensureAuthenticated* 作为中间件，放在 get 请求（包含渲染页面的函数）的参数之前。
+创建上述中间件函数，然后在 GET 请求参数之前，将 `ensureAuthenticated` 作为中间件传递，以请求个人资料页面。
 
-```js
+```javascript
 app
  .route('/profile')
  .get(ensureAuthenticated, (req,res) => {
-    res.render(process.cwd() + '/views/pug/profile');
+    res.render('profile');
  });
 ```
 
-完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://gist.github.com/camperbot/ae49b8778cab87e93284a91343da0959" target="_blank" rel="noopener noreferrer nofollow">查看已执行项目的当前进度</a>。
+完成之后提交你的页面。 如果你在运行时遇到错误，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#create-new-middleware-8" target="_blank" rel="noopener noreferrer nofollow">查看到此为止的项目完成情况</a>。
 
 # --hints--
 
-应把 ensureAuthenticated 中间件添加到 /profile 路由中。
+中间件 `ensureAuthenticated` 应该被实现，并附加到 `/profile` 路由。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /ensureAuthenticated[^]*req.isAuthenticated/gi,
-        'Your ensureAuthenticated middleware should be defined and utilize the req.isAuthenticated function'
-      );
-      assert.match(
-        data,
-        /profile[^]*get[^]*ensureAuthenticated/gi,
-        'Your ensureAuthenticated middleware should be attached to the /profile route'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /ensureAuthenticated[^]*req.isAuthenticated/,
+    'Your ensureAuthenticated middleware should be defined and utilize the req.isAuthenticated function'
   );
+  assert.match(
+    data,
+    /profile[^]*get[^]*ensureAuthenticated/,
+    'Your ensureAuthenticated middleware should be attached to the /profile route'
+  );
+}
 ```
 
-如果没有通过验证，对 /profile 的 GET 请求应重定向到 /。
+未认证的 GET 请求 `/profile` 应该正确重定向到 `/`。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/profile').then(
-    (data) => {
-      assert.match(
-        data,
-        /Home page/gi,
-        'An attempt to go to the profile at this point should redirect to the homepage since we are not logged in'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/profile", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /Home page/,
+    'An attempt to go to the profile at this point should redirect to the homepage since we are not logged in'
   );
+}
 ```
 
 # --solutions--

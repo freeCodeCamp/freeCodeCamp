@@ -1,6 +1,6 @@
 ---
 id: 5895f70df9fc0f352b528e6a
-title: Створення нового підпрограмного забезпечення
+title: Створення нового проміжного ПЗ
 challengeType: 2
 forumTopicId: 301551
 dashedName: create-new-middleware
@@ -8,11 +8,13 @@ dashedName: create-new-middleware
 
 # --description--
 
-На практиці будь-який користувач може просто перейти до `/profile`, незалежно від того, пройшов він автентифікацію чи ні, ввівши Url-адресу. Ми хочемо запобігти цьому, перевіривши, чи користувач автентифікувався, перш ніж відображати сторінку профілю. Це прекрасний приклад того, коли можна створити підпрограмне забезпечення.
+Будь-який користувач може просто перейти до `/profile`, незалежно від того, пройшов він автентифікацію чи ні, ввівши URL-адресу. Цього потрібно запобігти, перевіривши, чи користувач автентифікувався перш ніж переглядати сторінку профілю. Це хороший приклад того, коли варто створити проміжне ПЗ.
 
-Це завдання завдає функцію підпрограмного забезпечення `ensureAuthenticated(req, res, next)`, яка буде перевіряти чи користувач автентифікувався методом `isAuthenticated` по `request`, який у свою чергу визначає `req.user`. Якщо це так, то слід викликати `next()`, інакше ми можемо просто відповісти на запит перенаправленням на нашу головну сторінку для входу. Впровадження цього підпрограмного забезпечення означає:
+Це завдання створює функцію проміжного ПЗ `ensureAuthenticated(req, res, next)`, яка перевірятиме, чи користувач автентифікувався, викликавши метод Passport `isAuthenticated` до `request`, який перевіряє, чи `req.user` визначений. Якщо так, то треба викликати `next()`. В іншому випадку ви можете просто відповісти на запит, перенаправивши на свою домашню сторінку для входу.
 
-```js
+Впровадження цього проміжного ПЗ:
+
+```javascript
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
@@ -21,59 +23,53 @@ function ensureAuthenticated(req, res, next) {
 };
 ```
 
-Тепер додайте *ensureAuthenticated* як підпрограмне забезпечення до запиту сторінки профілю перед аргументом, щоб отримати запит, який містить функцію для відображення сторінки.
+Створіть наведену вище функцію проміжного ПЗ, а потім передайте `ensureAuthenticated` як проміжне ПЗ до запитів сторінки профілю перед аргументом запиту GET:
 
-```js
+```javascript
 app
  .route('/profile')
  .get(ensureAuthenticated, (req,res) => {
-    res.render(process.cwd() + '/views/pug/profile');
+    res.render('profile');
  });
 ```
 
-Підтвердьте сторінку, якщо все виконано вірно. If you're running into errors, you can <a href="https://gist.github.com/camperbot/ae49b8778cab87e93284a91343da0959" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#create-new-middleware-8" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-Підпрограмне забезпечення sureAuthenticated має бути реалізованим і на нашому /profile маршруті.
+Проміжне програмне забезпечення `ensureAuthenticated` повинне бути реалізоване та приєднане до маршруту `/profile`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /ensureAuthenticated[^]*req.isAuthenticated/gi,
-        'Your ensureAuthenticated middleware should be defined and utilize the req.isAuthenticated function'
-      );
-      assert.match(
-        data,
-        /profile[^]*get[^]*ensureAuthenticated/gi,
-        'Your ensureAuthenticated middleware should be attached to the /profile route'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /ensureAuthenticated[^]*req.isAuthenticated/,
+    'Your ensureAuthenticated middleware should be defined and utilize the req.isAuthenticated function'
   );
+  assert.match(
+    data,
+    /profile[^]*get[^]*ensureAuthenticated/,
+    'Your ensureAuthenticated middleware should be attached to the /profile route'
+  );
+}
 ```
 
-Запит на отримання /profile має правильно переспрямовувати до / оскільки ми не автентифіковані.
+Неавтентифікований запит GET до `/profile` повинен правильно перенаправляти до `/`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/profile').then(
-    (data) => {
-      assert.match(
-        data,
-        /Home page/gi,
-        'An attempt to go to the profile at this point should redirect to the homepage since we are not logged in'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/profile", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /Home page/,
+    'An attempt to go to the profile at this point should redirect to the homepage since we are not logged in'
   );
+}
 ```
 
 # --solutions--

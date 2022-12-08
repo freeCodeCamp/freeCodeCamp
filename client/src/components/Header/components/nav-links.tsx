@@ -18,7 +18,7 @@ import {
   LangCodes,
   hiddenLangs
 } from '../../../../../config/i18n';
-import { hardGoTo as navigate } from '../../../redux/actions';
+import { hardGoTo as navigate, openSignoutModal } from '../../../redux/actions';
 import { updateMyTheme } from '../../../redux/settings/actions';
 import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
@@ -32,8 +32,7 @@ interface NavigationLocationApi {
   apiLocation: string;
 }
 
-const { clientLocale, radioLocation, apiLocation } =
-  envData as NavigationLocationApi;
+const { clientLocale, radioLocation } = envData as NavigationLocationApi;
 
 const locales = availableLangs.client.filter(
   lang => !hiddenLangs.includes(lang)
@@ -57,11 +56,13 @@ interface NavLinksProps {
   showLanguageMenu: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu: () => void;
   menuButtonRef: React.RefObject<HTMLButtonElement>;
+  openSignoutModal: () => void;
 }
 
 const mapDispatchToProps = {
   navigate,
-  toggleNightMode: (theme: Themes) => updateMyTheme({ theme })
+  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
+  openSignoutModal
 };
 
 export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
@@ -82,6 +83,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
       this.handleLanguageButtonKeyDown.bind(this);
     this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.handleSignOutClick = this.handleSignOutClick.bind(this);
   }
 
   toggleTheme(
@@ -281,6 +283,12 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     }
   };
 
+  handleSignOutClick = (): void => {
+    const { hideMenu, openSignoutModal } = this.props;
+    hideMenu();
+    openSignoutModal();
+  };
+
   render() {
     const {
       displayMenu,
@@ -472,7 +480,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
                     className='nav-link nav-lang-menu-option'
                     data-value={lang}
                     {...(LangCodes[lang] && {
-                      lang: LangCodes[lang] as string
+                      lang: LangCodes[lang]
                     })}
                     onClick={this.handleLanguageChange}
                     onKeyDown={this.handleLanguageMenuKeyDown}
@@ -492,14 +500,14 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
         {username && (
           <Fragment key='signout-frag'>
             <li className='nav-line' key='sign-out'>
-              <a
+              <button
                 className='nav-link nav-link-signout'
-                href={`${apiLocation}/signout`}
-                onBlur={this.handleBlur}
-                onKeyDown={this.handleMenuKeyDown}
+                data-value='sign-out-button'
+                onClick={this.handleSignOutClick}
+                onKeyDown={this.handleLanguageMenuKeyDown}
               >
                 {t('buttons.sign-out')}
-              </a>
+              </button>
             </li>
           </Fragment>
         )}
