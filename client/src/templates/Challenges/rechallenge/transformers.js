@@ -99,9 +99,8 @@ const testJS = matchesProperty('ext', 'js');
 const testJSX = matchesProperty('ext', 'jsx');
 const testHTML = matchesProperty('ext', 'html');
 const testHTML$JS$JSX = overSome(testHTML, testJS, testJSX);
-export const testJS$JSX = overSome(testJS, testJSX);
 
-export const replaceNBSP = cond([
+const replaceNBSP = cond([
   [
     testHTML$JS$JSX,
     partial(transformContents, contents => contents.replace(NBSPReg, ' '))

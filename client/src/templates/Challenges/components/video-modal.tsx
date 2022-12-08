@@ -28,7 +28,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-export function VideoModal({
+function VideoModal({
   closeVideoModal,
   executeGA,
   isOpen,

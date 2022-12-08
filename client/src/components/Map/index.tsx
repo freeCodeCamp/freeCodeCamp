@@ -120,7 +120,7 @@ function renderLearnMap(currentSuperBlock: MapProps['currentSuperBlock']) {
   );
 }
 
-export function Map({
+function Map({
   forLanding = false,
   currentSuperBlock = null
 }: MapProps): React.ReactElement {
