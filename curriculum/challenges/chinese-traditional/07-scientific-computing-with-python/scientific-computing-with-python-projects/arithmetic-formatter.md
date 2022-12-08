@@ -10,9 +10,9 @@ dashedName: arithmetic-formatter
 
 你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
 
 
 # --instructions--
@@ -63,16 +63,16 @@ arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 如果提供的問題格式正確，該函數將返回正確的轉換，否則，它將 **返回** 一個 **字符串** 來描述對用戶有意義的錯誤。
 
 
-- Situations that will return an error:
-  - If there are **too many problems** supplied to the function. The limit is **five**, anything more will return: `Error: Too many problems.`
-  - The appropriate operators the function will accept are **addition** and **subtraction**. Multiplication and division will return an error. Other operators not mentioned in this bullet point will not need to be tested. The error returned will be: `Error: Operator must be '+' or '-'.`
-  - Each number (operand) should only contain digits. Otherwise, the function will return: `Error: Numbers must only contain digits.`
-  - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be: `Error: Numbers cannot be more than four digits.`
-- If the user supplied the correct format of problems, the conversion you return will follow these rules:
-  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
-  - Numbers should be right-aligned.
-  - There should be four spaces between each problem.
-  - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
+- 會返回錯誤的情況：
+  - 如果提供給函數的**問題過多**。 限制爲**五個**，更多的將返回：`Error: Too many problems.`。
+  - 函數可以接受的運算符是**加法**和**減法**。 乘法和除法將返回錯誤。 本要點中未提及的其他運算符將不需要進行測試。 返回的錯誤將是：`Error: Operator must be '+' or '-'.`。
+  - 每個數字（操作數）應該只包含數字。 否則，該函數將返回：`Error: Numbers must only contain digits.`。
+  - 每個操作數（即運算符每一側的數字）的寬度最多爲四位數字。 否則，返回的錯誤字符串將爲：`Error: Numbers cannot be more than four digits.`。
+- 如果用戶提供了正確格式的問題，返回的轉換將遵循以下規則：
+  - 操作符和兩個操作數中最長的一個之間應該有一個空格，操作符將與第二個操作數在同一行，兩個操作數的順序與提供的相同（第一個是上面的，第二個是下面的）。
+  - 數字應該右對齊。
+  - 每個問題之間應該有四個空格。
+  - 每個問題的底部都應該有破折號。 破折號應該單獨沿着每個問題的整個長度延伸。 （上面的例子展示了這應該是什麼樣子。）
 
 ## 開發
 

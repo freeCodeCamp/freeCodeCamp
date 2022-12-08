@@ -10,9 +10,9 @@ dashedName: probability-calculator
 
 你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮。
 
 
 # --instructions--
@@ -35,10 +35,10 @@ hat3 = Hat(red=5, orange=4, black=1, blue=0, pink=2, striped=9)
 
 接下来，在 `prob_calculator.py`（不是在 `Hat` 类中）创建一个 `experiment` 函数。 此函数应接受以下参数：
 
-- `hat`: A hat object containing balls that should be copied inside the function.
-- `expected_balls`: An object indicating the exact group of balls to attempt to draw from the hat for the experiment. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
-- `num_balls_drawn`: The number of balls to draw out of the hat in each experiment.
-- `num_experiments`: The number of experiments to perform. (The more experiments performed, the more accurate the approximate probability will be.)
+- `hat`：一个包含球的帽子对象，应该在函数内复制。
+- `expected_balls`：一个对象，指示尝试从帽子中抽取的确切球组以进行实验。 例如，要确定从帽子中抽取 2 个蓝球和 1 个红球的概率，将 `expected_balls` 设置为 `{"blue":2, "red":1}`。
+- `num_balls_drawn`：每次实验中从帽子中抽出的球数。
+- `num_experiments`：要执行的实验数量。 （进行的实验越多，近似概率就越准确。）
 
 `experiment` 函数应该返回一个概率。
 

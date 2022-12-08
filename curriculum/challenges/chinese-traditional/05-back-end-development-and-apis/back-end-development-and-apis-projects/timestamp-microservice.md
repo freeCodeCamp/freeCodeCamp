@@ -14,19 +14,19 @@ dashedName: timestamp-microservice
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp"  target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
-If you use Replit, follow these steps to set up the project:
+如果你使用 Replit，請按照以下步驟設置項目：
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。 此外，將項目的源碼鏈接提交到 `GitHub Link` 字段中。
 
-**Note:** Time zones conversion is not a purpose of this project, so assume all sent valid dates will be parsed with `new Date()` as GMT dates.
+**注意：**時區轉換不是本項目的目的，因此假設所有發送的有效日期將使用 `new Date()` 解析爲 GMT 日期。
 
 # --hints--
 
-You should provide your own project, not the example URL.
+你應該提交自己的項目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -36,7 +36,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-A request to `/api/:date?` with a valid date should return a JSON object with a `unix` key that is a Unix timestamp of the input date in milliseconds (as type Number)
+一個對 `/api/:date?` 的有效日期的請求應該返回一個 JSON 對象，該對象的 `unix` 鍵是輸入日期的 Unix 時間戳，單位是毫秒（數字類型）。
 
 ```js
 (getUserInput) =>
@@ -54,7 +54,7 @@ A request to `/api/:date?` with a valid date should return a JSON object with a 
   );
 ```
 
-A request to `/api/:date?` with a valid date should return a JSON object with a `utc` key that is a string of the input date in the format: `Thu, 01 Jan 1970 00:00:00 GMT`
+對具有有效日期的 `/api/:date?` 的請求應返回一個帶有 `utc` 鍵的 JSON 對象，該鍵是輸入日期的字符串，格式爲：`Thu, 01 Jan 1970 00:00:00 GMT`。
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ A request to `/api/:date?` with a valid date should return a JSON object with a 
   );
 ```
 
-A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
+對 `/api/1451001600000` 的請求應該返回 `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`。
 
 ```js
 (getUserInput) =>
@@ -89,7 +89,7 @@ A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fr
   );
 ```
 
-Your project can handle dates that can be successfully parsed by `new Date(date_string)`
+你的項目可以處理可以通過 `new Date(date_string)` 成功解析的日期。
 
 ```js
 (getUserInput) =>
@@ -106,7 +106,7 @@ Your project can handle dates that can be successfully parsed by `new Date(date_
   );
 ```
 
-If the input date string is invalid, the api returns an object having the structure `{ error : "Invalid Date" }`
+如果輸入的日期字符串無效，api 將返回一個具有結構 `{ error : "Invalid Date" }` 的對象。
 
 ```js
 (getUserInput) =>
@@ -120,7 +120,7 @@ If the input date string is invalid, the api returns an object having the struct
   );
 ```
 
-An empty date parameter should return the current time in a JSON object with a `unix` key
+一個空的日期參數應該返回一個帶有 `unix` 鍵的 JSON 對象中的當前時間。
 
 ```js
 (getUserInput) =>
@@ -135,7 +135,7 @@ An empty date parameter should return the current time in a JSON object with a `
   );
 ```
 
-An empty date parameter should return the current time in a JSON object with a `utc` key
+一個空日期參數應返回帶有 `utc` 鍵的 JSON 對象中的當前時間。
 
 ```js
 (getUserInput) =>
