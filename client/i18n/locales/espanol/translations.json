@@ -503,7 +503,8 @@
     "open-preview-in-new-window": "Abrir la vista previa en una nueva ventana y enfocarla",
     "step": "Paso",
     "steps": "Pasos",
-    "steps-for": "Pasos para {{blockTitle}}"
+    "steps-for": "Pasos para {{blockTitle}}",
+    "code-example": "{{codeName}} code example"
   },
   "flash": {
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica.",

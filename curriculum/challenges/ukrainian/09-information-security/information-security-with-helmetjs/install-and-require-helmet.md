@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c36
-title: Встановлення та вимоги до Helmet
+title: Встановіть та вимагайте Helmet
 challengeType: 2
 forumTopicId: 301581
 dashedName: install-and-require-helmet
@@ -22,17 +22,17 @@ dashedName: install-and-require-helmet
 
 Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`.
 
-Helmet helps you secure your Express apps by setting various HTTP headers.
+Helmet дозволяє захистити додатки Express, встановлюючи різноманітні заголовки HTTP.
 
 # --instructions--
 
-All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
+Весь ваш код з цих уроків йде у файл `myApp.js` між рядками коду, з якого ми почали. Не змінюйте та не видаляйте код, який ми додали для вас.
 
-Helmet version `3.21.3` has already been installed, so require it as `helmet` in `myApp.js`.
+Helmet версія `3.21.3` вже встановлена, тому вимагайте її як `helmet` у `myApp.js`.
 
 # --hints--
 
-`helmet` version `3.21.3` should be in `package.json`
+`helmet` версія `3.21.3` повинна бути у `package.json`
 
 ```js
 (getUserInput) =>

@@ -10,7 +10,7 @@ dashedName: stock-price-checker
 
 Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://stock-price-checker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker.freecodecamp.rocks/</a>.
 
-Оскільки всі надійні API цін на акції вимагають API-ключа, ми створили обхідний шлях. Use <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker-proxy.freecodecamp.rocks/</a> to get up-to-date stock price information without needing to sign up for your own key.
+Оскільки всі надійні API цін на акції вимагають API-ключа, ми створили обхідний шлях. Використайте <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker-proxy.freecodecamp.rocks/</a>, щоб отримати актуальну інформацію про ціни на акції без необхідності підписуватись на власний ключ.
 
 Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
@@ -28,24 +28,24 @@ dashedName: stock-price-checker
 
 # --instructions--
 
-1.  Встановіть `NODE_ENV` до `test` без лапок та встановіть `DB` на ваш MongoDB
-2.  Завершіть проект в `routes/api.js` або через створення обробника/контролера
-3.  Додайте будь-які заходи безпеки до `server.js`
-4.  Створіть усі функціональні тести в `tests/2_functional-tests.js`
+1.  Встановіть `NODE_ENV` на `test` без лапок та встановіть `DB` на свій рядок з'єднання MongoDB
+2.  Завершіть проєкт в `routes/api.js` або створивши обробник/контролер
+3.  Ви додаватимете будь-які функції безпеки до `server.js`
+4.  Ви створюватимете усі функціональні тести в `tests/2_functional-tests.js`
 
-**Note** Privacy Considerations: Due to the requirement that only 1 like per IP should be accepted, you will have to save IP addresses. It is important to remain compliant with data privacy laws such as the General Data Protection Regulation. One option is to get permission to save the user's data, but it is much simpler to anonymize it. For this challenge, remember to anonymize IP addresses before saving them to the database. If you need ideas on how to do this, you may choose to hash the data, truncate it, or set part of the IP address to 0.
+**Примітка** конфіденційності: згідно з вимогою, що на IP приймається лише одне вподобання, вам доведеться зберігати IP адреси. Важливо дотримуватися законів про конфіденційність даних, як-от загального регламенту про захист даних. Один із варіантів – отримати дозвіл на збереження даних користувача, однак все ж простіше зробити їх анонімними. Не забудьте зробити ваші IP адреси анонімними, перш ніж зберігати їх до бази даних у цьому завданні. Для цього ви можете хешувати дані, скоротити їх чи просто змінити частину IP адреси на 0.
 
-Write the following tests in `tests/2_functional-tests.js`:
+Напишіть наступні тести в `tests/2_functional-tests.js`:
 
--   Viewing one stock: GET request to `/api/stock-prices/`
--   Viewing one stock and liking it: GET request to `/api/stock-prices/`
--   Viewing the same stock and liking it again: GET request to `/api/stock-prices/`
--   Viewing two stocks: GET request to `/api/stock-prices/`
--   Viewing two stocks and liking them: GET request to `/api/stock-prices/`
+-   Перегляд однієї акції: запит GET до `/api/stock-prices/`
+-   Перегляд однієї акції та вподобання: запит GET до `/api/stock-prices/`
+-   Перегляд тієї самої акції та знову вподобання: запит GET до `/api/stock-prices/`
+-   Перегляд двох акцій: запит GET до `/api/stock-prices/`
+-   Перегляд двох акцій та вподобання: запит GET до `/api/stock-prices/`
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Ви можете надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 (getUserInput) => {
@@ -55,7 +55,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-You should set the content security policies to only allow loading of scripts and CSS from your server.
+Ви повинні налаштувати політику безпеки вмісту так, щоб дозволити завантаження скриптів та CSS лише зі свого сервера.
 
 ```js
 async (getUserInput) => {
@@ -70,7 +70,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `GET` request to `/api/stock-prices`, passing a NASDAQ stock symbol to a `stock` query parameter. The returned object will contain a property named `stockData`.
+Ви можете надіслати запит `GET` до `/api/stock-prices`, передаючи символ акції NASDAQ в параметр запиту `stock`. Повернений об'єкт міститиме властивість під назвою `stockData`.
 
 ```js
 async (getUserInput) => {
@@ -82,7 +82,7 @@ async (getUserInput) => {
 };
 ```
 
-The `stockData` property includes the `stock` symbol as a string, the `price` as a number, and `likes` as a number.
+Властивість `stockData` містить символ `stock` як рядок, `price` як число та `likes` як число.
 
 ```js
 async (getUserInput) => {
@@ -97,13 +97,13 @@ async (getUserInput) => {
 };
 ```
 
-You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
+Ви також можете передати поле `like` як `true` (булеве), щоб ваше вподобання було додано до акцій. Приймається лише одне вподобання на IP.
 
 ```js
 
 ```
 
-If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both `stockData` objects.
+Якщо ви передасте 2 акції, то поверненим значенням буде масив з інформацією про обидві акції. Замість `likes` буде показано `rel_likes` (різниця між вподобаннями на обох акціях) для обох об'єктів `stockData`.
 
 ```js
 async (getUserInput) => {
@@ -118,7 +118,7 @@ async (getUserInput) => {
 };
 ```
 
-All 5 functional tests are complete and passing.
+Усі 5 функціональних тестів завершено та успішно пройдено.
 
 ```js
 async (getUserInput) => {

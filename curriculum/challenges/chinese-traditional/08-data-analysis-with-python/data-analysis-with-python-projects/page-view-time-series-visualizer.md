@@ -10,16 +10,16 @@ dashedName: page-view-time-series-visualizer
 
 你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
 
 
 我們仍在開發 Python 課程的交互式教學部分。 目前，你可以在 freeCodeCamp.org 的 YouTube 頻道中通過視頻學習到這個項目相關的所有知識
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">給所有人的 Python 課程</a>（14 小時）
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">如何使用 Python Pandas 分析數據</a>（10 小時）
 
 # --instructions--
 
@@ -27,11 +27,11 @@ dashedName: page-view-time-series-visualizer
 
 使用數據完成以下任務：
 
-- Use Pandas to import the data from "fcc-forum-pageviews.csv". Set the index to the `date` column.
-- Clean the data by filtering out days when the page views were in the top 2.5% of the dataset or bottom 2.5% of the dataset.
-- Create a `draw_line_plot` function that uses Matplotlib to draw a line chart similar to "examples/Figure_1.png". The title should be `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`. The label on the x axis should be `Date` and the label on the y axis should be `Page Views`.
-- Create a `draw_bar_plot` function that draws a bar chart similar to "examples/Figure_2.png". It should show average daily page views for each month grouped by year. The legend should show month labels and have a title of `Months`. On the chart, the label on the x axis should be `Years` and the label on the y axis should be `Average Page Views`.
-- Create a `draw_box_plot` function that uses Seaborn to draw two adjacent box plots similar to "examples/Figure_3.png". These box plots should show how the values are distributed within a given year or month and how it compares over time. The title of the first chart should be `Year-wise Box Plot (Trend)` and the title of the second chart should be `Month-wise Box Plot (Seasonality)`. Make sure the month labels on bottom start at `Jan` and the x and y axis are labeled correctly. The boilerplate includes commands to prepare the data.
+- 使用 Pandas 從 “fcc-forum-pageviews.csv” 導入數據。 將索引設置爲 `date` 列。
+- 通過過濾掉頁面瀏覽量位於數據集前 2.5% 或數據集後 2.5% 的日期來清理數據。
+- 創建一個 `draw_line_plot` 函數，該函數使用 Matplotlib 繪製類似於 “examples/Figure_1.png” 的折線圖。 標題應爲 `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`。 x 軸上的標籤應爲 `Date`，y 軸上的標籤應爲 `Page Views`。
+- 創建一個 `draw_bar_plot` 函數，用於繪製類似於 “examples/Figure_2.png” 的條形圖。 它應該顯示按年份分組的每個月的平均每日頁面瀏覽量。 圖例應顯示月份標籤並具有 `Months` 標題。 在圖表上，x 軸上的標籤應爲 `Years`，y 軸上的標籤應爲 `Average Page Views`。
+- 創建一個 `draw_box_plot` 函數，該函數使用 Seaborn 繪製兩個相鄰的箱形圖，類似於 “examples/Figure_3.png”。 這些箱線圖應顯示值在給定年份或月份內的分佈情況以及隨時間推移的比較情況。 第一個圖表的標題應爲 `Year-wise Box Plot (Trend)`，第二個圖表的標題應爲 `Month-wise Box Plot (Seasonality)`。 確保底部的月份標籤從 `Jan` 開始，並且 x 和 y 軸標記正確。 樣板文件包括準備數據的命令。
 
 對於每個圖表，請確保使用數據框的副本。 單元測試是在 `test_module.py` 下爲你編寫的。
 

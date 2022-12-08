@@ -10,7 +10,7 @@ dashedName: use-the-filter-method-to-extract-data-from-an-array
 
 もう一つの便利な配列関数に、`Array.prototype.filter()`、または単に `filter()` があります。
 
-`filter` calls a function on each element of an array and returns a new array containing only the elements for which that function returns a truthy value - that is, a value which returns `true` if passed to the `Boolean()` constructor. つまり、渡された関数に基づいて配列をフィルターで絞り込みます。 `map` と同様に、元の配列を変更せずにこうした操作を実行します。
+`filter` は配列の各要素に対して関数を呼び出し、その関数が真値 (Truthy な値) を返す要素のみを含む新しい配列を返します。真値とは、`Boolean()` コンストラクターに渡されたとき `true` を返す値です。 つまり、渡された関数に基づいて配列をフィルターで絞り込みます。 `map` と同様に、元の配列を変更せずにこうした操作を実行します。
 
 コールバック関数は 3 つの引数を受け取ります。 最初の引数は、現在処理中の要素です。 2 つ目は、その要素のインデックスです。3 つ目は、`filter` メソッドを呼び出した対象の配列です。
 

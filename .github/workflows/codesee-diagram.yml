@@ -30,7 +30,7 @@ jobs:
         uses: Codesee-io/codesee-detect-languages-action@latest
 
       - name: Configure JDK 16
-        uses: actions/setup-java@de1bb2b0c5634f0fc4438d7aa9944e68f9bf86cc # tag=v3
+        uses: actions/setup-java@19eeec562b37d29a1ad055b7de9c280bd0906d8d # v3
         if: ${{ fromJSON(steps.detect-languages.outputs.languages).java }}
         with:
           java-version: '16'

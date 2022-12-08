@@ -23,12 +23,28 @@ dashedName: implement-map-on-a-prototype
 `[23, 65, 98, 5, 13].myMap(item => item * 2)` 應該等於 `[46, 130, 196, 10, 26]`。
 
 ```js
-const _test_s = [46, 130, 196, 10, 13];
+const _test_s = [23, 65, 98, 5, 13];
 const _callback = item => item * 2;
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-不能使用 `map` 方法。
+`["naomi", "quincy", "camperbot"].myMap(element => element.toUpperCase())` 應該返回 `["NAOMI", "QUINCY", "CAMPERBOT"]`。
+
+```js
+const _test_s = ["naomi", "quincy", "camperbot"];
+const _callback = element => element.toUpperCase();
+assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
+```
+
+`[1, 1, 2, 5, 2].myMap((element, index, array) => array[index + 1] || array[0])` 應該返回 `[1, 2, 5, 2, 1]`。
+
+```js
+const _test_s = [1, 1, 2, 5, 2];
+const _callback = (element, index, array) => array[index + 1] || array[0];
+assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
+```
+
+你的代碼不應該使用 `map` 方法。
 
 ```js
 assert(!code.match(/\.?[\s\S]*?map/g));
@@ -53,8 +69,8 @@ Array.prototype.myMap = function(callback) {
 ```js
 Array.prototype.myMap = function(callback) {
   const newArray = [];
-  for (const elem of this) {
-    newArray.push(callback(elem));
+  for (let i = 0; i < this.length; i++) {
+    newArray.push(callback(this[i], i, this));
   }
   return newArray;
 };

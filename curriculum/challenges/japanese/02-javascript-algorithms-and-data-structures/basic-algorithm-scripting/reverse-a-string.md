@@ -8,31 +8,31 @@ dashedName: reverse-a-string
 
 # --description--
 
-Reverse the provided string and return the reversed string.
+与えられた文字列を反転させて、反転した文字列を返してください。
 
-For example, `"hello"` should become `"olleh"`.
+例えば、`"hello"` は `"olleh"` となるようにしてください。
 
 # --hints--
 
-`reverseString("hello")` should return a string.
+`reverseString("hello")` は文字列を返す必要があります。
 
 ```js
 assert(typeof reverseString('hello') === 'string');
 ```
 
-`reverseString("hello")` should return the string `olleh`.
+`reverseString("hello")` は文字列 `olleh` を返す必要があります。
 
 ```js
 assert(reverseString('hello') === 'olleh');
 ```
 
-`reverseString("Howdy")` should return the string `ydwoH`.
+`reverseString("Howdy")` は文字列 `ydwoH` を返す必要があります。
 
 ```js
 assert(reverseString('Howdy') === 'ydwoH');
 ```
 
-`reverseString("Greetings from Earth")` should return the string `htraE morf sgniteerG`.
+`reverseString("Greetings from Earth")` は文字列 `htraE morf sgniteerG` を返す必要があります。
 
 ```js
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');

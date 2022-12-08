@@ -11,12 +11,12 @@ dashedName: escape-sequences-in-strings
 
 文字列の中で<dfn>エスケープ</dfn>できる文字は引用符だけではありません。 エスケープ文字を使用するのには 2 つ理由があります。
 
-1.  To allow you to use characters you may not otherwise be able to type out, such as a newline.
-2.  文字列中で複数の引用符を表現でき、JavaScript が正しく解釈できるようになります。
+1.  改行のように、他の方法では入力できない文字を使用できるようにするため。
+2.  文字列中で複数種類の引用符を使用する場合に、JavaScript が正しく解釈できるようにするため。
 
 前のチャレンジでは次のことを学習しました。
 
-<table class='table table-striped'><thead><tr><th>コード</th><th>出力</th></tr></thead><tbody><tr><td><code>\'</code></td><td>シングルクォート</td></tr><tr><td><code>\"</code></td><td>ダブルクォート</td></tr><tr><td><code>\\</code></td><td>バックスラッシュ (日本語では円記号)</td></tr><tr><td><code>\n</code></td><td>改行</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\b</code></td><td>単語境界</td></tr><tr><td><code>\f</code></td><td>改ページ</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>コード</th><th>出力</th></tr></thead><tbody><tr><td><code>\'</code></td><td>シングルクォート</td></tr><tr><td><code>\"</code></td><td>ダブルクォート</td></tr><tr><td><code>\\</code></td><td>バックスラッシュ (日本語では円記号)</td></tr><tr><td><code>\n</code></td><td>改行</td></tr><tr><td><code>\t</code></td><td>タブ</td></tr><tr><td><code>\r</code></td><td>キャリッジリターン</td></tr><tr><td><code>\b</code></td><td>単語境界</td></tr><tr><td><code>\f</code></td><td>改ページ</td></tr></tbody></table>
 
 *バックスラッシュ自体をバックスラッシュとして表示するためにはエスケープする必要があります。*
 

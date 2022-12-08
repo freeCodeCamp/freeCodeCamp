@@ -503,7 +503,8 @@
     "open-preview-in-new-window": "Öffne die Vorschau in einem neuen Fenster und fokussiere sie",
     "step": "Schritt",
     "steps": "Schritte",
-    "steps-for": "Schritte für {{blockTitle}}"
+    "steps-for": "Schritte für {{blockTitle}}",
+    "code-example": "{{codeName}} code example"
   },
   "flash": {
     "honest-first": "Um eine Zertifizierung zu erlangen, musst du zunächst unsere Richtlinie zur akademischen Ehrlichkeit akzeptieren",
