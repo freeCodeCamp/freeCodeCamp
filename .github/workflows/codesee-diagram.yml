@@ -9,76 +9,15 @@ on:
       - 'docs/**'
     types: [opened, synchronize, reopened]
 
+permissions: read-all
+
 jobs:
-  test_map_action:
+  codesee:
     runs-on: ubuntu-20.04
     if: ${{ github.actor != 'renovate[bot]' && github.actor != 'camperbot' }}
     continue-on-error: true
-    name: Run CodeSee Map Analysis
+    name: Analyze the repo with CodeSee
     steps:
-      - name: checkout
-        id: checkout
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+      - uses: Codesee-io/codesee-action@1d109bb07bbd63a6fc3d01b40d28a4c8f0925bf5 # tag=v2
         with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-
-      # codesee-detect-languages has an output with id languages.
-      - name: Detect Languages
-        id: detect-languages
-        uses: Codesee-io/codesee-detect-languages-action@latest
-
-      - name: Configure JDK 16
-        uses: actions/setup-java@19eeec562b37d29a1ad055b7de9c280bd0906d8d # v3
-        if: ${{ fromJSON(steps.detect-languages.outputs.languages).java }}
-        with:
-          java-version: '16'
-          distribution: 'zulu'
-
-      # CodeSee Maps Go support uses a static binary so there's no setup step required.
-
-      - name: Configure Node.js 16
-        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
-        if: ${{ fromJSON(steps.detect-languages.outputs.languages).javascript }}
-        with:
-          node-version: '16'
-
-      - name: Configure Python 3.x
-        uses: actions/setup-python@13ae5bb136fac2878aff31522b9efb785519f984 # tag=v4
-        if: ${{ fromJSON(steps.detect-languages.outputs.languages).python }}
-        with:
-          python-version: '3.x'
-          architecture: 'x64'
-
-      - name: Configure Ruby '3.x'
-        uses: ruby/setup-ruby@v1
-        if: ${{ fromJSON(steps.detect-languages.outputs.languages).ruby }}
-        with:
-          ruby-version: '3.0'
-
-      # CodeSee Maps Rust support uses a static binary so there's no setup step required.
-
-      - name: Generate Map
-        id: generate-map
-        uses: Codesee-io/codesee-map-action@latest
-        with:
-          step: map
-          github_ref: ${{ github.ref }}
-          languages: ${{ steps.detect-languages.outputs.languages }}
-
-      - name: Upload Map
-        id: upload-map
-        uses: Codesee-io/codesee-map-action@latest
-        with:
-          step: mapUpload
-          api_token: ${{ secrets.CODESEE_ARCH_DIAG_API_TOKEN }}
-          github_ref: ${{ github.ref }}
-
-      - name: Insights
-        id: insights
-        uses: Codesee-io/codesee-map-action@latest
-        with:
-          step: insights
-          api_token: ${{ secrets.CODESEE_ARCH_DIAG_API_TOKEN }}
-          github_ref: ${{ github.ref }}
+          codesee-token: ${{ secrets.CODESEE_ARCH_DIAG_API_TOKEN }}
