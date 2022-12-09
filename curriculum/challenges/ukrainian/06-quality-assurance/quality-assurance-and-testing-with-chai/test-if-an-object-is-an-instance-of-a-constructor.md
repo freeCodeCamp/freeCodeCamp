@@ -1,6 +1,6 @@
 ---
 id: 587d824e367417b2b2512c57
-title: Перевірка об'єкта на екземпляр конструктора
+title: Перевірте, чи об'єкт є екземпляром конструктора
 challengeType: 2
 forumTopicId: 301605
 dashedName: test-if-an-object-is-an-instance-of-a-constructor
@@ -14,7 +14,7 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#18` в наборі `Objects` змініть кожний `assert` на `assert.instanceOf` або `assert.notInstanceOf`, щоб забезпечити проходження тесту (має мати значення `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#18` в наборі `Objects` змініть кожний `assert` на `assert.instanceOf` або `assert.notInstanceOf`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -32,7 +32,7 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження – `instanceOf` або `notInstanceOf`.
+Ви повинні обрати правильний метод для першого твердження: `instanceOf` або `notInstanceOf`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження – `instanceOf` або `notInstanceOf`.
+Ви повинні обрати правильний метод для другого твердження: `instanceOf` або `notInstanceOf`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
   );
 ```
 
-Потрібно обрати правильний метод для третього твердження – `instanceOf` або `notInstanceOf`.
+Ви повинні обрати правильний метод для третього твердження: `instanceOf` або `notInstanceOf`.
 
 ```js
 (getUserInput) =>
@@ -86,7 +86,7 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
   );
 ```
 
-Потрібно обрати правильний метод для четвертого твердження – `instanceOf` або `notInstanceOf`.
+Ви повинні обрати правильний метод для четвертого твердження: `instanceOf` або `notInstanceOf`.
 
 ```js
 (getUserInput) =>

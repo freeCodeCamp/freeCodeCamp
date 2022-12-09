@@ -1,6 +1,6 @@
 ---
 id: 5f8884f4c46685731aabfc41
-title: Запуск функціональних тестів за допомогою Headless Browser II
+title: Запустіть функціональні тести за допомогою headless браузера II
 challengeType: 2
 forumTopicId: 301594
 dashedName: run-functional-tests-using-a-headless-browser-ii
@@ -28,7 +28,7 @@ Within `tests/2_functional-tests.js`, in the `'Submit the surname "Vespucci" in 
 
 # --hints--
 
-Необхідно пройти всі тести.
+Всі тести повинні бути успішно пройдені.
 
 ```js
 (getUserInput) =>

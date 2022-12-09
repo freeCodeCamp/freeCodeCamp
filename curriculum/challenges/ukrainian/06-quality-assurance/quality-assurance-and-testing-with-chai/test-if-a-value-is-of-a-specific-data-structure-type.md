@@ -14,7 +14,7 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#17` в наборі `Objects` змініть кожний `assert` на `assert.typeOf` або `assert.notTypeOf` щоб полегшити проходження тесту (варто оцінювати як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#17` в наборі `Objects` змініть кожен `assert` на `assert.typeOf` або `assert.notTypeOf`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -32,7 +32,7 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження – `typeOf` або `notTypeOf`.
+Ви повинні обрати правильний метод для першого твердження: `typeOf` або `notTypeOf`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження –`typeOf` або `notTypeOf`.
+Ви повинні обрати правильний метод для другого твердження: `typeOf` або `notTypeOf`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
   );
 ```
 
-Потрібно обрати правильний метод для третього твердження –`typeOf` або `notTypeOf`.
+Ви повинні обрати правильний метод для третього твердження: `typeOf` або `notTypeOf`.
 
 ```js
 (getUserInput) =>
@@ -86,7 +86,7 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
   );
 ```
 
-Потрібно обрати правильний метод для четвертого твердження –`typeOf` або `notTypeOf`.
+Ви повинні обрати правильний метод для четвертого твердження: `typeOf` або `notTypeOf`.
 
 ```js
 (getUserInput) =>

@@ -18,7 +18,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#10` в наборі `Comparisons` змініть кожний `assert` на `assert.approximately`, щоб полегшити проходження тесту (варто оцінювати як `true`).
+У межах `tests/1_unit-tests.js` під тестом з міткою `#10` в наборі `Comparisons` змініть кожен `assert` на `assert.approximately`, щоб пройти тест (повинен дорівнювати `true`).
 
 Виберіть мінімальний діапазон (третій параметр) для того, щоб тест можна було проходити завжди. Він має бути менше ніж 1.
 
