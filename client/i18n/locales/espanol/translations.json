@@ -307,6 +307,10 @@
       "notes": "Notas",
       "preview": "Vista"
     },
+    "editor-alerts": {
+      "tab-trapped": "Pressing tab will now insert the tab character",
+      "tab-free": "Pressing tab will now move focus to the next focusable element"
+    },
     "help-translate": "Todavía estamos traduciendo las siguientes certificaciones.",
     "help-translate-link": "Ayúdanos a traducir.",
     "project-preview-title": "Aquí hay una vista previa de lo que construirás",
