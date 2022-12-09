@@ -340,7 +340,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
         <main className='information'>
           <div className='information-container'>
-            <QRCodeSVG className='qr-code' value={certURL} />
             <Trans i18nKey='certification.fulltext' title={certTitle}>
               <h3>placeholder</h3>
               <h1>
@@ -368,6 +367,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             </p>
             <p>{t('certification.executive')}</p>
           </div>
+          <span className='qr-wrap'>
+            <QRCodeSVG className='qr-code' value={certURL} />
+          </span>
           <Row>
             <p className='verify'>
               {t('certification.verify', { certURL: certURL })}

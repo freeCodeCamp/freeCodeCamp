@@ -163,18 +163,25 @@
   margin-top: calc(-1 * var(--header-height));
 }
 
+.qr-wrap {
+  display: block;
+  width: 100%;
+  height: 0;
+  position: relative;
+}
+
 .qr-code {
   position: absolute;
-  width: 150px;
-  height: 150px;
-  left: calc(100% - 50px);
-  top: calc(100% - 315px);
+  width: 128px;
+  height: 128px;
+  top: -128px;
+  right: 60px;
 }
 
 /*mobile media queries*/
 @media screen and (max-width: 1200px) {
   .qr-code {
-    top: calc(100% - 350px);
+    right: 40px;
   }
 }
 
@@ -227,9 +234,11 @@
   }
 
   .qr-code {
-    width: 100px;
-    left: calc(100% - 85px);
-    top: calc(100% - 300px);
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    top: calc(-96px - 50px);
+    right: 20px;
   }
 }
 
