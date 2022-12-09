@@ -158,3 +158,19 @@ sections that need to stay left to right
 [dir='rtl'] .desktop-layout .reflex-container:not(.horizontal) {
   flex-direction: row-reverse;
 }
+
+/* new Font Family because 'Hack-ZeroSlash' add letter spacing in Arabic letter which is extermely bad */
+
+[dir='rtl'] body,
+[dir='rtl'] .signup-btn,
+[dir='rtl'] h1,
+[dir='rtl'] h2,
+[dir='rtl'] h3,
+[dir='rtl'] h4,
+[dir='rtl'] h5,
+[dir='rtl'] h6,
+[dir='rtl'] p,
+[dir='rtl'] td,
+[dir='rtl'] th {
+  font-family: 'NotoSansArabic';
+}
