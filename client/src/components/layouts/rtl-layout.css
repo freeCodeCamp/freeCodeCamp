@@ -82,22 +82,13 @@ and menu secion
 [dir='rtl'] .nav-list {
   right: auto;
 }
-/* 
-
-.fcc_searchBar .ais-SearchBox-input, .fcc_searchBar .ais-Hits {
-  padding-inline-start: 1.25em;
-}
 
 @media (max-width: 980px) {
-  [dir=rtl] #universal-nav-logo {
+  [dir='rtl'] #universal-nav-logo {
     left: inherit;
     right: 17px;
   }
-  [dir=rtl] .ais-SearchBox-submit {
-    left: inherit;
-    right: .55em;
-  }
-} */
+}
 
 /* had to change overflow, because it clips the first words of the english articles */
 [dir='rtl'] .footer-container {
