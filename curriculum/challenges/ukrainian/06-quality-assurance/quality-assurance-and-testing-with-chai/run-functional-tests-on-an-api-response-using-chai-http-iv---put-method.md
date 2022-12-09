@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c5b
-title: Запуск функціональних тестів на відповідь API за допомогою методу Chai-HTTP IV - PUT
+title: Запустіть функціональні тести на відповіді API за допомогою методу Chai-HTTP IV - PUT
 challengeType: 2
 forumTopicId: 301591
 dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-method
@@ -12,13 +12,13 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 Ця вправа схожа на попередню.
 
-Тепер, коли ви знаєте, як перевірити запит `PUT`, ваша черга зробити це з нуля.
+Тепер ви знаєте, як перевірити запит `PUT`. Прийшла ваша черга зробити все з нуля.
 
 # --instructions--
 
-У межах  `tests/2_functional-tests.js` змініть `'Send {surname: "da Verrazzano"}'`, перевірте (`// #4`) та використайте методи `put` та `send`, щоб перевірити кінцеву точку `'/travellers'`.
+У межах `tests/2_functional-tests.js` змініть `'Send {surname: "da Verrazzano"}'` тесту (`// #4`) і використайте методи `put` та `send`, щоб перевірити кінцеву точку `'/travellers'`.
 
-Надішліть наступний об'єкт JSON з вашим PUT-запитом:
+Надішліть наступний об'єкт JSON зі своїм запитом PUT:
 
 ```json
 {
@@ -26,18 +26,18 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 }
 ```
 
-Перевірте наступне у межах виклику `request.end`:
+Перевірте наступне у межах зворотнього виклику `request.end`:
 
-1.  `status` має бути `200`
-2.  `type` має бути `application/json`
-3.  `body.name` має бути `Giovanni`
-4.  `body.surname` має бути `da Verrazzano`
+1.  `status` повинен бути `200`
+2.  `type` повинен бути `application/json`
+3.  `body.name` повинен бути `Giovanni`
+4.  `body.surname` повинен бути `da Verrazzano`
 
-Дотримуйтесь порядку тверджень вище – ми покладаємося на нього. Також обов'язково видаліть `assert.fail()` після завершення.
+Дотримуйтесь порядку тверджень вище, оскільки ми залежимо від нього. Не забудьте видалити `assert.fail()` після завершення.
 
 # --hints--
 
-Необхідно пройти всі тести
+Всі тести повинні бути успішно пройдені
 
 ```js
 (getUserInput) =>
@@ -51,7 +51,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
   );
 ```
 
-Перевірте значення `res.status` на 200
+Ви повинні перевірити, чи `res.status` має значення 200
 
 ```js
 (getUserInput) =>
@@ -67,7 +67,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
   );
 ```
 
-Перевірте значення `res.type` на `'application/json'`
+Ви повинні перевірити, чи `res.type` має значення `'application/json'`
 
 ```js
 (getUserInput) =>
@@ -83,7 +83,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
   );
 ```
 
-Перевірте значення `res.body.name` на `'Giovanni'`
+Ви повинні перевірити, чи `res.body.name` має значення `'Giovanni'`
 
 ```js
 (getUserInput) =>
@@ -99,7 +99,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
   );
 ```
 
-Перевірте значення `res.body.surname` на `'da Verrazzano'`
+Ви повинні перевірити, чи `res.body.surname` має значення `'da Verrazzano'`
 
 ```js
 (getUserInput) =>

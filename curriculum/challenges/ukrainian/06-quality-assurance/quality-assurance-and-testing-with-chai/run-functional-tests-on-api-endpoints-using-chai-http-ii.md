@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c59
-title: Запуск функціональних тестів на кінцевих точках API за допомогою Chai-HTTP II
+title: Запустіть функціональні тести на кінцевих точках API за допомогою Chai-HTTP II
 challengeType: 2
 forumTopicId: 301592
 dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
@@ -12,13 +12,13 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
 
 # --instructions--
 
-У межах `tests/2_functional-tests.js`, змініть тест `'Test GET /hello with your name'` (`// #2`) для перевірки відповідей `status` та `text` для проходження тесту.
+У межах `tests/2_functional-tests.js` змініть `'Test GET /hello with your name'` тесту (`// #2`) для підтвердження `status` та `text`, щоб пройти тест.
 
-Надішліть своє ім'я як запит URL, додавши до маршруту `?name=<your_name>`. Кінцева точка відповідає `'hello <your_name>'`.
+Надішліть своє ім'я як запит URL, додавши `?name=<your_name>` до маршруту. Кінцева точка відповідає `'hello <your_name>'`.
 
 # --hints--
 
-Необхідно пройти всі тести
+Всі тести повинні бути успішно пройдені
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
   );
 ```
 
-Перевірте значення `res.status` == 200
+Ви повинні перевірити, чи `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
   );
 ```
 
-Перевірте значення `res.text` == `'hello <your_name>'`
+Ви повинні перевірити, чи `res.text` == `'hello <your_name>'`
 
 ```js
 (getUserInput) =>

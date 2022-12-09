@@ -1,6 +1,6 @@
 ---
 id: 587d8250367417b2b2512c5d
-title: Запуск функціональних тестів за допомогою Headless Browser
+title: Запустіть функціональні тести за допомогою headless браузера
 challengeType: 2
 forumTopicId: 301595
 dashedName: run-functional-tests-using-a-headless-browser
@@ -10,7 +10,7 @@ dashedName: run-functional-tests-using-a-headless-browser
 
 Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-На сторінці знаходиться вхідна форма. Дані надсилаються до кінцевої точки `PUT /travellers` як запит AJAX.
+На сторінці знаходиться форма для вхідних даних. Вона надсилає дані до кінцевої точки `PUT /travellers` як запит AJAX.
 
 Коли запит успішно виконано, код клієнта додає `<div>`, що містить інформацію у відповідь на DOM.
 
@@ -30,38 +30,38 @@ test('Submit the surname "Polo" in the HTML form', function (done) {
 });
 ```
 
-Спершу метод `fill` об'єкта `browser` заповнює поле форми `surname` зі значенням `'Polo'`. `fill` повертає Promise, тоді `then` вимикається.
+Спершу метод `fill` об'єкта `browser` заповнює поле форми `surname` зі значенням `'Polo'`. `fill` повертає promise, тому `then` від'єднується.
 
 У межах зворотного виклику `then` метод `pressButton` об'єкта `browser` використовується для виклику слухача події форми `submit`. Метод `pressButton` є асинхронним.
 
-Як тільки відповідь буде отримана від запиту AJAX, виникає кілька тверджень:
+Як тільки від запиту AJAX буде отримана відповідь, виникає декілька тверджень:
 
-1.  Статус відповіді `200`
-2.  Текст усередині елемента `<span id='name'></span>` збігається з `'Marco'`
-3.  Текст усередині елемента `<span id='surname'></span>` збігається з `'Polo'`
-4.  Є елемент `1` `<span id='dates'></span>`.
+1.  Статус відповіді становить `200`
+2.  Текст всередині елемента `<span id='name'></span>` відповідає `'Marco'`
+3.  Текст всередині елемента `<span id='surname'></span>` відповідає `'Polo'`
+4.  Наявний `1` елемент `<span id='dates'></span>`.
 
-Зрештою, запущено зворотний виклик `done`, який необхідний для асинхронного тесту.
+Вкінці буде запущено зворотний виклик `done`, який необхідний для асинхронного тесту.
 
 # --instructions--
 
-У межах `tests/2_functional-tests.js` у тесті `'Submit the surname "Colombo" in the HTML form'` (`// #5`) потрібно автоматизувати такі умови:
+У межах `tests/2_functional-tests.js` у `'Submit the surname "Colombo" in the HTML form'` тесту `// #5` автоматизуйте наступне:
 
 1.  Впишіть у форму прізвище `Colombo`
 2.  Натисніть кнопку підтвердження
 
 У межах кнопки зворотного виклику `pressButton`:
 
-1.  Підтвердьте, що статус – OK `200`
-2.  Підтвердьте, що текст всередині елемента `span#name` – це `'Cristoforo'`
-3.  Підтвердьте, що текст всередині елемента `span#surname` – це `'Colombo'`
-4.  Підтвердьте, що елемент(и) `span#dates` існують і їхній підрахунок дорівнює `1`
+1.  Підтвердьте, що статус становить OK `200`
+2.  Підтвердьте, що текстом всередині елемента `span#name` є `'Cristoforo'`
+3.  Підтвердьте, що текстом всередині елемента `span#surname` є `'Colombo'`
+4.  Підтвердьте, що елемент(и) `span#dates` існують та їхня кількість дорівнює `1`
 
 Не забудьте видалити виклик `assert.fail()`.
 
 # --hints--
 
-Необхідно пройти всі тести.
+Всі тести повинні бути успішно пройдені.
 
 ```js
 (getUserInput) =>
@@ -75,7 +75,7 @@ test('Submit the surname "Polo" in the HTML form', function (done) {
   );
 ```
 
-Вам слід підтвердити, що запит headless browser був успішним.
+Ви повинні підтвердити, що запит headless браузера був успішним.
 
 ```js
 (getUserInput) =>
@@ -89,7 +89,7 @@ test('Submit the surname "Polo" in the HTML form', function (done) {
   );
 ```
 
-Підтвердьте, що текст всередині елемента `span#name`> – це `'Cristoforo'`.
+Ви повинні підтвердити, що текстом всередині елемента `span#name`> є `'Cristoforo'`.
 
 ```js
 (getUserInput) =>

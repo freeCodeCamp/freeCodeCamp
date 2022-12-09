@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c48
-title: Використання Assert.isOK і Assert.isNotOK
+title: Використайте Assert.isOK та Assert.isNotOK
 challengeType: 2
 forumTopicId: 301607
 dashedName: use-assert-isok-and-assert-isnotok
@@ -16,7 +16,7 @@ To learn more about truthy and falsy values, try our <a href="https://www.freeco
 
 # --instructions--
 
-У `tests/1_unit-tests.js` тесті з позначкою `#3` у наборі `Basic Assertions` змініть кожне `assert` на `assert.isOk()` або `assert.isNotOk()`, щоб пройти тест (має мати значення `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#3` в наборі `Basic Assertions` змініть кожний `assert` на `assert.isOk()` або `assert.isNotOk()`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -34,7 +34,7 @@ To learn more about truthy and falsy values, try our <a href="https://www.freeco
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження – `isOk` у порівнянні з `isNotOk`.
+Ви повинні обрати правильний метод для першого твердження: `isOk` або `isNotOk`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ To learn more about truthy and falsy values, try our <a href="https://www.freeco
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження – `isOk` у порівнянні з `isNotOk`.
+Ви повинні обрати правильний метод для другого твердження: `isOk` або `isNotOk`.
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ To learn more about truthy and falsy values, try our <a href="https://www.freeco
   );
 ```
 
-Потрібно обрати правильний метод для третього твердження – `isOk` у порівнянні з `isNotOk`.
+Ви повинні обрати правильний метод для третього твердження: `isOk` або `isNotOk`.
 
 ```js
 (getUserInput) =>

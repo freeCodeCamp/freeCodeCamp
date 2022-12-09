@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c54
-title: Використання звичайних виразів для перевірки рядка
+title: Використайте регулярні вирази для перевірки рядка
 challengeType: 2
 forumTopicId: 301608
 dashedName: use-regular-expressions-to-test-a-string
@@ -14,7 +14,7 @@ dashedName: use-regular-expressions-to-test-a-string
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#15` у наборі `Strings` змініть кожний `assert` на `assert.match` або `assert.notMatch`, щоб забезпечити проходження тесту. (Має мати значення `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#15` в наборі `Strings` змініть кожний `assert` на `assert.match` або `assert.notMatch`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -32,7 +32,7 @@ dashedName: use-regular-expressions-to-test-a-string
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження – `match` у порівнянні з `notMatch`.
+Ви повинні обрати правильний метод для першого твердження: `match` або `notMatch`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ dashedName: use-regular-expressions-to-test-a-string
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження – `match` у порівнянні з `notMatch`.
+Ви повинні обрати правильний метод для другого твердження: `match` або `notMatch`.
 
 ```js
 (getUserInput) =>
