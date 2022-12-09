@@ -7,6 +7,7 @@ import type {
   editor
   // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
+import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
 import React, {
   useEffect,
@@ -408,6 +409,28 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility;
     };
 
+    const isTabTrapped = () => !!(store.get('monacoTabTrapped') ?? true);
+
+    const setTabTrapped = (trapped: boolean) => {
+      // Monaco uses the contextKey 'editorTabMovesFocus' to control how it
+      // reacts to the tab key. Setting this to true allows the user to tab
+      // outside of the editor. If it is false, tab will act inside the editor
+      // (i.e. create spaces).
+      editor.createContextKey('editorTabMovesFocus', !trapped);
+      store.set('monacoTabTrapped', trapped);
+      ariaAlert(
+        `${
+          trapped ? t('editor-alerts.tab-trapped') : t('editor-alerts.tab-free')
+        }`
+      );
+    };
+
+    // By default, Tab will be trapped in the monaco editor, so we only need to
+    // check if the user has turned this off.
+    if (!isTabTrapped()) {
+      setTabTrapped(false);
+    }
+
     const accessibilityMode = storedAccessibilityMode();
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
@@ -452,6 +475,19 @@ const Editor = (props: EditorProps): JSX.Element => {
       '-actions.find',
       null,
       () => {}
+    );
+    // Make toggle tab setting in editor permanent
+    const tabFocusHotkeys =
+      OS === 2 /* Macintosh/iOS */
+        ? monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M
+        : monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_M;
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      'editor.action.toggleTabFocusMode',
+      tabFocusHotkeys,
+      () => {
+        setTabTrapped(!isTabTrapped());
+      }
     );
     /* eslint-enable */
     editor.addAction({
