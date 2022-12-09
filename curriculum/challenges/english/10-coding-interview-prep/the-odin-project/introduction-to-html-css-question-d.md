@@ -16,7 +16,7 @@ Many helpful resources out there keep referring to HTML and CSS as programming l
     
 ## --text--
 
-What is the difference between HTML, CSS and JavaScript
+What is the difference between HTML, CSS and JavaScript?
 
 ## --answers--
 

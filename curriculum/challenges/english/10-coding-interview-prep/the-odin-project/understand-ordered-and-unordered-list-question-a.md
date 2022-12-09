@@ -25,7 +25,7 @@ Ordered lists are created using the `<ol>` element. Each individual item in them
 
 ## --assignment--
 
-Watch the first three minutes of Kevin Powell's video on Orderd and Unorderd lists above.
+Watch the first three minutes of Kevin Powell's video on Ordered and Unordered lists above.
 
 ---
 

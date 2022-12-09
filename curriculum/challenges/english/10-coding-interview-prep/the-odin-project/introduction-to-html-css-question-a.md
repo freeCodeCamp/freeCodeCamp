@@ -20,8 +20,7 @@ Read <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#W
     
 ## --text--
 
-What does HTML and CSS stand for?
-
+Which of the following statements is true?
 ## --answers--
 
 Your website's structure is created using CSS, and its style is created using HTML.
