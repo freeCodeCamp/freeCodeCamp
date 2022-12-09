@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom"]
+  },
+  "include": ["e2e/**/*.ts"],
+  "extends": "../tsconfig-base.json"
+}
