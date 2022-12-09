@@ -3,23 +3,29 @@ import { FormContext } from '../form-context';
 import { FormGroupProps } from './types';
 
 let variantClass = '';
+
 const hasSuccess = `
-[&_span:has[data-testid='help-block'], &_label]: color-var(--highlight-color) 
-[&_input]: bordercolor-var(--quaternary-background) box-shadow-inset 0 1px 1px rgba(0, 0, 0, .075) 
-[&_input:focus]: bordercolor-var(--tertiary-color) box-shadow-inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168 
-[&_input_span]: color-#3c763d
+[&_span:has[data-testid='help-block']]: color-var(--highlight-color)
+[&_label]: color-var(--highlight-color)
+[&_input]: bordercolor-var(--quaternary-background) shadow-inner-small
+[&_input:focus]: bordercolor-var(--tertiary-color) shadow-inner-success-focus
+[&_input_span]: text-green-700
 `;
+
 const hasWarning = `
-[&_span:has[data-testid='help-block'], &_label]: color-var(--highlight-color) 
-[&_input]: bordercolor-var(--quaternary-background) box-shadow-inset 0 1px 1px rgba(0, 0, 0, .075) 
-[&_input:focus]: bordercolor-var(--tertiary-color) box-shadow-inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168 
-[&_input_span]: color-#3c763d
+[&_span:has[data-testid='help-block']]: text-amber-500
+[&_label]: text-amber-500
+[&_input]: bordercolor-var(--quaternary-background) shadow-inner-small 
+[&_input:focus]: bordercolor-var(--tertiary-color) shadow-inner-warning-focus
+[&_input_span]: text-green-700
 `;
+
 const hasError = `
-[&_span:has[data-testid='help-block'], &_label]: var(--danger-color) 
-[&_input]: bordercolor-var(--quaternary-background) box-shadow-inset 0 1px 1px rgba(0, 0, 0, .075) 
-[&_input:focus]: bordercolor-var(--tertiary-color) box-shadow-inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168 
-[&_input_span]: color-#8a6d3b
+[&_span:has[data-testid='help-block']]: var(--danger-color)
+[&_label]: color-var(--danger-color)
+[&_input]: bordercolor-var(--quaternary-background) shadow-inner-small
+[&_input:focus]: bordercolor-var(--tertiary-color) shadow-inner-error-focus
+[&_input_span]: text-amber-500
 `;
 
 const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(

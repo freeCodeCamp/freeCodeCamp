@@ -88,6 +88,15 @@ module.exports = {
     minHeight: {
       '43-px': '43px'
     },
+    boxShadow: {
+      'shadow-inner-small': 'inset 0 1px 1px rgba(0, 0, 0, .075)',
+      'shadow-inner-success-focus':
+        'inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168',
+      'shadow-inner-warning-focus':
+        'inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #c0a16b',
+      'shadow-inner-error-focus':
+        'inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483'
+    },
     extend: {
       zIndex: {
         2: '2'
