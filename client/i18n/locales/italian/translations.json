@@ -307,6 +307,10 @@
       "notes": "Note",
       "preview": "Anteprima"
     },
+    "editor-alerts": {
+      "tab-trapped": "Pressing tab will now insert the tab character",
+      "tab-free": "Pressing tab will now move focus to the next focusable element"
+    },
     "help-translate": "Stiamo ancora traducendo le seguenti certificazioni.",
     "help-translate-link": "Aiutaci con le traduzioni...",
     "project-preview-title": "Ecco una anticipazione di quello che creerai",

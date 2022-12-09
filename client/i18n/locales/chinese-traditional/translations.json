@@ -307,6 +307,10 @@
       "notes": "注意",
       "preview": "預覽"
     },
+    "editor-alerts": {
+      "tab-trapped": "Pressing tab will now insert the tab character",
+      "tab-free": "Pressing tab will now move focus to the next focusable element"
+    },
     "help-translate": "我們仍然在翻譯以下證書。",
     "help-translate-link": "幫助我們翻譯。",
     "project-preview-title": "下面是你將構建的項目的預覽",

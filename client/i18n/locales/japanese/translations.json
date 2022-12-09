@@ -307,6 +307,10 @@
       "notes": "ノート",
       "preview": "プレビュー"
     },
+    "editor-alerts": {
+      "tab-trapped": "Pressing tab will now insert the tab character",
+      "tab-free": "Pressing tab will now move focus to the next focusable element"
+    },
     "help-translate": "以下の認定講座は現在翻訳中です。",
     "help-translate-link": "翻訳にご協力ください。",
     "project-preview-title": "これが今から作る物のプレビューです。",

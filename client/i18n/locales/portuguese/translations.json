@@ -307,6 +307,10 @@
       "notes": "Observações",
       "preview": "Pré-visualizar"
     },
+    "editor-alerts": {
+      "tab-trapped": "Ao apertar a tecla tab, agora, você vai inserir o caractere de tabulação",
+      "tab-free": "Ao apertar a tecla tab, agora, você moverá o foco para o próximo elemento que possa ser focado"
+    },
     "help-translate": "Ainda estamos traduzindo as certificações a seguir.",
     "help-translate-link": "Ajude-nos a traduzir.",
     "project-preview-title": "Aqui está uma prévia do que você vai criar",
