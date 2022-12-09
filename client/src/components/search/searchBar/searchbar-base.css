@@ -619,7 +619,13 @@ a[class^='ais-'] {
 .ais-SearchBox-submit {
   position: absolute;
 }
-.ais-SearchBox-resetIcon,
+
+.ais-SearchBox-resetIcon {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+}
+
 .ais-SearchBox-loadingIcon {
   position: absolute;
   top: 50%;

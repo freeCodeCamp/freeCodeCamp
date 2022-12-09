@@ -9,7 +9,17 @@
   color: var(--gray-00);
 }
 
-.ais-SearchBox-reset,
+.ais-SearchBox-reset {
+  position: relative;
+  top: 0;
+  left: 0px;
+  margin: 6px 3px 2px 31px;
+  height: 26px;
+  width: 26px;
+  background-color: var(--gray-75);
+  padding-inline: 3px;
+}
+
 .ais-SearchBox-loadingIndicator {
   display: none;
 }
