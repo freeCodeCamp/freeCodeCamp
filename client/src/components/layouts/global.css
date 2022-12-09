@@ -471,6 +471,11 @@ hr {
   background-color: var(--secondary-color);
 }
 
+.dropdown,
+.dropdown > .dropdown-menu {
+  width: 100%;
+}
+
 .dropdown-menu > li > a {
   color: var(--secondary-background);
 }
