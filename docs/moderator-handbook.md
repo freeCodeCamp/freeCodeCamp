@@ -20,7 +20,7 @@ freeCodeCamp is an inclusive community, and we need to keep it that way.
 We have a single [Code of Conduct](https://code-of-conduct.freecodecamp.org) that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
 
 > [!NOTE]
-> As a moderator we would add you to one or more teams on GitHub, our community forums & chat servers. If you are missing access on a platform that you would like to moderate, please [reach out to a staff member](FAQ.md#additional-assistance).
+> As a moderator we would add you to one or more teams on GitHub, our community forums & chat servers. If you are missing access to a platform that you would like to moderate, please [reach out to a staff member](FAQ.md#additional-assistance).
 
 ## Moderating GitHub
 
