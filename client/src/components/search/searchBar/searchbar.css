@@ -23,21 +23,14 @@
 
 .ais-SearchBox-submit,
 .ais-SearchBox-reset {
+  margin-top: 6px;
   height: 26px;
   width: 26px;
   background-color: var(--gray-75);
 }
 
 .ais-SearchBox-submit {
-  margin-top: 6px;
   padding-inline: 3px;
-}
-
-.ais-SearchBox-reset {
-  position: relative;
-  top: 0;
-  left: 0;
-  margin: 6px 3px 2px 31px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
@@ -48,7 +41,7 @@
 }
 
 .fcc_searchBar .ais-SearchBox-input {
-  padding-inline-start: 1.5em;
+  padding-inline: 1.5em;
 }
 
 .fcc_searchBar .ais-Hits {
@@ -146,36 +139,21 @@ and arrow keys */
 @media (min-width: 981px) {
   .ais-SearchBox-input {
     width: 100%;
-    max-width: 500px;
+    max-width: 100%;
   }
   .fcc_searchBar {
     position: relative;
-    max-width: 520px;
+    max-width: 500px;
   }
   .fcc_searchBar .ais-Hits {
     top: auto;
     width: 100%;
-    max-width: 500px;
+    max-width: 100%;
     left: 0px;
   }
   .fcc_searchBar .ais-SearchBox-form {
     display: flex;
     justify-content: flex-end;
     top: auto;
-  }
-}
-
-@media (max-width: 980px) {
-  .ais-SearchBox-input:not(.ais-SearchBox-input[value='']) {
-    max-width: calc(100vw - 17em - 65px);
-  }
-}
-
-@media (max-width: 600px) {
-  .ais-SearchBox-input:not(.ais-SearchBox-input[value='']) {
-    max-width: calc(100vw - 110px);
-  }
-  .ais-SearchBox-reset {
-    padding-inline: 9px;
   }
 }
