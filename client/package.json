@@ -114,7 +114,7 @@
     "redux-actions": "2.6.5",
     "redux-devtools-extension": "2.13.9",
     "redux-observable": "1.2.0",
-    "redux-saga": "1.2.1",
+    "redux-saga": "1.2.2",
     "reselect": "4.1.7",
     "rxjs": "6.6.7",
     "sanitize-html": "2.7.3",
