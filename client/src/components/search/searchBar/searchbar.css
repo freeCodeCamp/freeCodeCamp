@@ -173,7 +173,7 @@ and arrow keys */
 
 @media (max-width: 600px) {
   .ais-SearchBox-input:not(.ais-SearchBox-input[value='']) {
-    max-width: 500px;
+    max-width: calc(100vw - 110px);
   }
   .ais-SearchBox-reset {
     padding-inline: 9px;
