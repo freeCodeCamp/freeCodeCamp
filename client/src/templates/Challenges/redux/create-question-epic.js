@@ -60,17 +60,16 @@ function createQuestionEpic(action$, state$, { window }) {
         };
 
         const filesWithEditableRegions = challengeFiles.map(file => {
-          const { contents: Contents, editableRegionBoundaries, ext } = file;
+          const { contents, editableRegionBoundaries, ext } = file;
           if (editableRegionBoundaries.length > 0) {
             const comment = editableRegionStrings(ext);
             const [start, end] = editableRegionBoundaries;
-            const editableContents = Contents.split('\n');
-            editableContents.splice(start, 0, comment);
-            editableContents.splice(end, 0, comment);
-            const contents = editableContents.join('\n');
-            return { ...file, contents };
+            const lines = contents.split('\n');
+            lines.splice(start, 0, comment);
+            lines.splice(end, 0, comment);
+            return { ...file, contents: lines.join('\n') };
           }
-          return { ...file };
+          return { file };
         });
         challengeFiles = filesWithEditableRegions;
       }
