@@ -72,9 +72,9 @@ jobs:
           - browsers: electron
             spec: cypress/e2e/default/learn/challenges/projects.js
           - browsers: chrome
-            spec: cypress/e2e/default/**/*.js
+            spec: cypress/e2e/default/**/*.{js,ts}
           - browsers: firefox
-            spec: cypress/e2e/default/**/*.js
+            spec: cypress/e2e/default/**/*.{js,ts}
     services:
       mongodb:
         image: mongo:4.4
