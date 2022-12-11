@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import Magnifier from '../../../assets/icons/Magnifier';
+import InputReset from '../../../assets/icons/inputReset';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 
 type Props = {
@@ -12,6 +13,7 @@ const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
   const placeholder = t('search.placeholder');
   const searchUrl = searchPageUrl;
   const [value, setValue] = useState('');
+  const inputElementRef = useRef<HTMLInputElement>(null);
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setValue(event.target.value);
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -19,6 +21,10 @@ const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
     if (value && value.length > 1) {
       window.open(`${searchUrl}?query=${encodeURIComponent(value)}`, '_blank');
     }
+  };
+  const onClick = () => {
+    setValue('');
+    inputElementRef.current?.focus();
   };
 
   return (
@@ -44,14 +50,25 @@ const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
               spellCheck='false'
               type='search'
               value={value}
+              ref={inputElementRef}
             />
             <button
               className='ais-SearchBox-submit'
-              title='Submit your search query.'
+              title='Submit search terms.'
               type='submit'
             >
               <Magnifier />
             </button>
+            {value && (
+              <button
+                className='ais-SearchBox-reset'
+                title='Clear search terms.'
+                onClick={onClick}
+                type='button'
+              >
+                <InputReset />
+              </button>
+            )}
           </form>
         </div>
       </div>
