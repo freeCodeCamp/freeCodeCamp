@@ -7,7 +7,7 @@ You are welcome to create, update and fix bugs in our [curriculum](#curriculum),
 
 We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
 
-Happy contributing.
+Happy contributing!
 
 ---
 
