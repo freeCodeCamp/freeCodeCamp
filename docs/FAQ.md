@@ -69,11 +69,10 @@ We typically do not assign issues to anyone other than long-time contributors. I
    - Did you follow the pull request checklist?
    - Did you give your pull request a meaningful title?
 
-### I am interested in being a moderator at freeCodeCamp. Where should I start?
+### I am interested in being a moderator at freeCodeCamp.Where should I start?
 
 Our community moderators are our heroes. Their voluntary contributions make
 freeCodeCamp a safe and welcoming community.
-
 First and foremost, we would need you to be an active participant in the
 community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/)
 (not just enforce it).
@@ -105,7 +104,6 @@ being **consistent** rather than engaging in the community 24/7.
 Take a look at our [Moderator Handbook](moderator-handbook.md)
 for a more exhaustive list of other responsibilities and expectations we have
 of our moderators.
-
 ### I am stuck on something that is not included in this documentation.
 
 **Feel free to ask for help in:**
