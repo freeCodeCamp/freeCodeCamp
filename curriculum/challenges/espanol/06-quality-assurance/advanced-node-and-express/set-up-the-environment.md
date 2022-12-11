@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 Ahora que el servidor *http* está montado en la *aplicación expresa*, necesitas escuchar desde el servidor *http*. Cambia la línea con `app.listen` a `http.listen`.
 
-Lo primero que hay que manejar es escuchar por una nueva conexión del cliente. La palabra clave <dfn>on</dfn> hace eso: escucha un evento específico. Requiere dos argumentos: un string con el nombre del evento emitido, y una función a través de la cual son pasados los datos. En el caso de nuestro detector de conexión, usamos *socket* para definir los datos en el segundo argumento. Un socket es un cliente individual que está conectado.
+Lo primero que hay que manejar es escuchar por una nueva conexión del cliente. La palabra clave <dfn>on</dfn> hace eso: escucha un evento específico. Requiere dos argumentos: un string con el nombre del evento emitido, y una función a través de la cual son pasados los datos. In the case of our connection listener, use `socket` to define the data in the second argument. Un socket es un cliente individual que está conectado.
 
 Para escuchar las conexiones a tu servidor, añade lo siguiente dentro de la conexión de tu base de datos:
 
@@ -36,105 +36,89 @@ Ahora para que el cliente se conecte, sólo tiene que añadir lo siguiente a su 
 let socket = io();
 ```
 
-El comentario suprime el error que normalmente verías, ya que 'io' no está definido en el archivo. Ya hemos añadido un CDN confiable a la biblioteca Socket.IO en la página de chat.pug.
+El comentario suprime el error que normalmente verías, ya que 'io' no está definido en el archivo. You have already added a reliable CDN to the Socket.IO library on the page in `chat.pug`.
 
-Ahora intenta cargar tu aplicación asimismo autenticarte y deberías ver en la consola de tu servidor 'Un usuario se ha conectado'!
+Now try loading up your app and authenticate and you should see in your server console `A user has connected`.
 
 **Nota:**`io()` funciona sólo cuando se conecta a un socket alojado en la misma url/servidor. Para conectar a un socket externo alojado en otro lugar, debes usar `io.connect('URL');`.
 
-Envía tu página cuando creas que está correcto. Si te estás encontrando errores, puedes <a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">mirar el proyecto completado hasta este punto</a>.
+Envía tu página cuando creas que está correcto. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-the-environment-6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 `socket.io` debe ser una dependencia.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'socket.io',
-        'Your project should list "socket.io" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'socket.io',
+    'Your project should list "socket.io" as a dependency'
   );
+}
 ```
 
 Debes requerir correctamente e instanciar `http` como `http`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /http.*=.*require.*('|")http\1/gi,
-        'Your project should list "http" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /http.*=.*require.*('|")http\1/s,
+    'Your project should list "http" as a dependency'
   );
+}
 ```
 
 Debes requerir correctamente e instanciar `socket.io` como `io`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io.*=.*require.*('|")socket.io\1.*http/gi,
-        'You should correctly require and instantiate socket.io as io.'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io.*=.*require.*('|")socket.io\1.*http/s,
+    'You should correctly require and instantiate socket.io as io.'
   );
+}
 ```
 
 Socket.IO debe estar escuchando las conexiones.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io.on.*('|")connection\1.*socket/gi,
-        'io should listen for "connection" and socket should be the 2nd arguments variable'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io.on.*('|")connection\1.*socket/s,
+    'io should listen for "connection" and socket should be the 2nd arguments variable'
   );
+}
 ```
 
 Tu cliente debe conectarse a tu servidor.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.*=.*io/gi,
-        'Your client should be connection to server with the connection defined as socket'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.*=.*io/s,
+    'Your client should be connection to server with the connection defined as socket'
   );
+}
 ```
 
 # --solutions--

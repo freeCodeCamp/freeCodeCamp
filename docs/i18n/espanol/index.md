@@ -24,12 +24,13 @@ Estamos localizando freeCodeCamp.org a los principales idiomas del mundo.
 
 Las certificaciones ya están disponibles en algunos de los principales idiomas del mundo como:
 
-- [Chino (中文)](https://chinese.freecodecamp.org/learn)
+- [Chino (中文)](https://www.freecodecamp.org/chinese/learn)
 - [Español](https://www.freecodecamp.org/espanol/learn)
 - [Italiano (Italiano)](https://www.freecodecamp.org/italian/learn)
 - [portugués (Português)](https://www.freecodecamp.org/portuguese/learn)
 - [Ucraniano (Українська)](https://www.freecodecamp.org/ukrainian/learn)
 - [Japonés (日本語)](https://www.freecodecamp.org/japanese/learn)
+- [German (Deutsch)](https://www.freecodecamp.org/german/learn)
 
 Te animamos a leer el anuncio [aquí](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) y compartirlo con tus amigos para que se sientan entusiasmados con esto.
 
@@ -41,12 +42,4 @@ Nuestra plataforma de aprendizaje se ejecuta en un stack de JavaScript moderno. 
 
 A grandes rasgos, tenemos un servidor API basado en Node.js, un conjunto de aplicaciones cliente basadas en React, scripts de prueba para evaluar proyectos currículo enviados por los estudiantes, y más. Si deseas contribuir de manera productiva a la plataforma de aprendizaje, te recomendamos que te familiarices un poco con estas herramientas.
 
-Si quieres ayudarnos a mejorar nuestro código base...
-
-**puedes optar por utilizar Gitpod, una herramienta gratuita de desarrollo en línea que crea entornos listos para escribir código para freeCodeCamp directamente en el navegador.**
-
-[![Abrir en GitPod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
-
-O puedes...
-
-**[Configura freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md) en tu máquina.**
+**If you want to help us improve our codebase here's [how to set up freeCodeCamp](how-to-setup-freecodecamp-locally.md).**

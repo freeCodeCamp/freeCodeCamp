@@ -9,7 +9,7 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-Man kann sich ein <dfn>mehrdimensionales</dfn> Array als ein *Array von Arrays* vorstellen. Wenn du Klammern verwendest, um auf dein Array zuzugreifen, bezieht sich der erste Klammersatz auf die Einträge im äußersten (die erste Ebene) Array, und jedes weitere Klammerpaar bezieht sich auf die nächste Ebene von Einträgen darin.
+Man kann sich ein <dfn>mehrdimensionales</dfn> Array als ein *Array von Arrays* vorstellen. When you use brackets to access your array, the first set of brackets refers to the entries in the outermost (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
 
 **Beispiel**
 

@@ -4,14 +4,15 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import React from 'react';
 import Helmet from 'react-helmet';
+import { User } from '../../redux/prop-types';
 
 import UniversalNav from './components/universal-nav';
 
 import './header.css';
 
-export interface HeaderProps {
+interface HeaderProps {
   fetchState: { pending: boolean };
-  user: Record<string, any>;
+  user: User;
 }
 export class Header extends React.Component<
   HeaderProps,

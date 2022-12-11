@@ -1,14 +1,15 @@
+import { Table } from '@freecodecamp/react-bootstrap';
 import { find, first } from 'lodash-es';
 import React, { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
+import { Link, Spacer } from '../components/helpers';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
-import { Spacer, Link } from '../components/helpers';
 import { CompletedChallenge, User } from '../redux/prop-types';
 import {
-  projectMap,
-  legacyProjectMap
+  legacyProjectMap,
+  projectMap
 } from '../resources/cert-and-project-map';
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
@@ -16,8 +17,8 @@ import ProjectPreviewModal from '../templates/Challenges/components/project-prev
 
 import { openModal } from '../templates/Challenges/redux/actions';
 
-import '../components/layouts/project-links.css';
 import { regeneratePathAndHistory } from '../../../utils/polyvinyl';
+import '../components/layouts/project-links.css';
 interface ShowProjectLinksProps {
   certName: string;
   name: string;
@@ -105,16 +106,13 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         const { certSlug } = first(mapToUse) as { certSlug: string };
         const certLocation = `/certification/${username}/${certSlug}`;
         return (
-          <li key={ind}>
-            <a
-              className='btn-invert project-link'
-              href={certLocation}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              {t(`certification.project.title.${cert.title}`, cert.title)}
-            </a>
-          </li>
+          <tr key={ind}>
+            <td>
+              <Link className='project-link' to={certLocation} external>
+                {t(`certification.project.title.${cert.title}`, cert.title)}
+              </Link>
+            </td>
+          </tr>
         );
       });
     }
@@ -125,12 +123,14 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       id: string;
     }[];
     return project.map(({ link, title, id }) => (
-      <li key={id}>
-        <Link className='project-link' to={link}>
-          {t(`certification.project.title.${title}`, title)}
-        </Link>
-        : {getProjectSolution(id, title)}
-      </li>
+      <tr key={id}>
+        <td>
+          <Link to={link}>
+            {t(`certification.project.title.${title}`, title)}
+          </Link>
+        </td>
+        <td colSpan={2}>{getProjectSolution(id, title)}</td>
+      </tr>
     ));
   };
 
@@ -160,7 +160,15 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         { user: name }
       )}
       <Spacer />
-      <ul>{renderProjectsFor(certName)}</ul>
+      <Table striped>
+        <thead>
+          <tr>
+            <th>{t('profile.challenge')}</th>
+            <th>{t('settings.labels.solution')}</th>
+          </tr>
+        </thead>
+        <tbody>{renderProjectsFor(certName)}</tbody>
+      </Table>
       <Spacer />
       <ProjectModal
         challengeFiles={completedChallenge?.challengeFiles ?? null}

@@ -9,7 +9,7 @@ dashedName: constructing-strings-with-variables
 
 # --description--
 
-Інколи потрібно створити рядок у стилі гри [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs). Використовуючи оператор об'єднання (`+`), можна вставити одну або декілька змінних у рядок, який ви створюєте.
+Sometimes you will need to build a string. Використовуючи оператор об'єднання (`+`), можна вставити одну або декілька змінних у рядок, який ви створюєте.
 
 Наприклад:
 

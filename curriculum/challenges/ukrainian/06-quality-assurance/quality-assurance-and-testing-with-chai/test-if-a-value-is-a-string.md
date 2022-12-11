@@ -14,7 +14,7 @@ dashedName: test-if-a-value-is-a-string
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#13` в наборі `Strings` змініть кожний `assert` на `assert.isString` або `assert.isNotString` щоб полегшити проходження тесту (варто оцінювати як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#13` в наборі `Strings` змініть кожний `assert` на `assert.isString` або `assert.isNotString`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -32,7 +32,7 @@ dashedName: test-if-a-value-is-a-string
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження `isString` або `isNotString`.
+Ви повинні обрати правильний метод для першого твердження: `isString` або `isNotString`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ dashedName: test-if-a-value-is-a-string
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження - `isString` або `isNotString`.
+Ви повинні обрати правильний метод для другого твердження: `isString` або `isNotString`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ dashedName: test-if-a-value-is-a-string
   );
 ```
 
-Потрібно обрати правильний метод для третього твердження – `isString` або `isNotString`.
+Ви повинні обрати правильний метод для третього твердження: `isString` або `isNotString`.
 
 ```js
 (getUserInput) =>

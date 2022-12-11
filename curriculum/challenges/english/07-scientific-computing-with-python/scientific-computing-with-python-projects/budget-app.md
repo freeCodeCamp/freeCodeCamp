@@ -9,6 +9,11 @@ dashedName: budget-app
 # --description--
 
 You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-budget-app" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+
+-   Start by importing the project on Replit. 
+-   Next, you will see a `.replit` window. 
+-   Select `Use run command` and click the `Done` button. 
+
       
 # --instructions--
 

@@ -9,7 +9,7 @@ dashedName: build-a-bike-rental-shop
 
 # --description--
 
-この 210 のレッスンから成るコースでは、PostgreSQL を使用して、自転車レンタルショップのレンタル情報を保存するインタラクティブな Bash プログラムを構築します。
+In this 210-lesson course, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL.
 
 # --instructions--
 

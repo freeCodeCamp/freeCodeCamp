@@ -10,36 +10,42 @@ dashedName: anonymous-message-board
 
 Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://anonymous-message-board.freecodecamp.rocks/</a>.
 
-Робота над цим проєктом бути включати написання кода одним із таких методів:
+Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-messageboard/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
 -   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
--   Для завершення проєкту використайте вибраний вами розробник сайтів. Не забудьте включити всі файли із нашого репозиторію GitHub.
+-   Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
 
-Коли ви завершили, переконайтеся, що ця демоверсія вашого проекту розміщена у відкритому доступі. Потім введіть URL-адресу проекту у поле `Solution Link`. За бажанням також введіть посилання на вихідний код проєкту у полі `GitHub Link`.
+Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
+
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
+
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
 
 # --instructions--
 
-1.  Встановити `NODE_ENV` на перевірку без лапок, коли вона буде готова до написання тестів і БД до рядка підключення бази даних (в `.env`)
-2.  Рекомендується створювати контролери/обробники і проводити сам процес в `routes/api.js`
-3.  Ви додасте будь-які функції безпеки на `server.js`
+1.  Встановіть `NODE_ENV` на тест без лапок по готовності написання тестів та бази даних для рядка з'єднання (у `.env`)
+2.  Рекомендовано створити контролери/обробники і обробляти маршрут у `routes/api.js`
+3.  Ви додаватимете будь-які функції безпеки до `server.js`
 
-Створюйте усі функціональні тести в `tests/2_functional-tests.js`:
+Напишіть наступні тести в `tests/2_functional-tests.js`:
 
--   Створення нової теми: POST запит на `/api/threads/{board}`
--   Перегляд 10 останніх тем з 3 відповідями на кожну: GET запит на `/api/threads/{board}`
--   Видалення теми з неправильним паролем: DELETE запит на `/api/threads/{board}` з неприпустимим `delete_password`
--   Видалення теми з правильним паролем: DELETE запит на `/api/threads/{board}` з припустимим `delete_password`
--   Звітувати про тему: PUT запит на `/api/threads/{board}`
--   Створення нової відповіді: POST запит на `/api/replies/{board}`
--   Перегляд однієї теми з усіма відповідями до неї: GET запит на `/api/replies/{board}`
--   Видалення відповіді з неправильним паролем: DELETE запит на `/api/replies/{board}` з неприпустимим `delete_password`
--   Видалення відповіді з правильним паролем: DELETE запит на `/api/replies/{board}` з припустимим `delete_password`
--   Звітувати про відповідь: PUT запит на `/api/replies/{board}`
+-   Створення нового треду: запит POST до `/api/threads/{board}`
+-   Перегляд 10 останніх тредів, кожен із 3 відповідями: запит GET до `/api/threads/{board}`
+-   Видалення треду з неправильним паролем: запит DELETE до `/api/threads/{board}` із недійсним `delete_password`
+-   Видалення треду з правильним паролем: запит DELETE до `/api/threads/{board}` із дійсним `delete_password`
+-   Звітування треду: запит PUT до `/api/threads/{board}`
+-   Створення нової відповіді: запит POST до `/api/replies/{board}`
+-   Перегляд одного треду з усіма відповідями: запит GET до `/api/replies/{board}`
+-   Видалення відповіді з неправильним паролем: запит DELETE до `/api/replies/{board}` із недійсним `delete_password`
+-   Видалення відповіді з правильним паролем: запит DELETE до `/api/replies/{board}` із дійсним `delete_password`
+-   Звітування відповіді: запит PUT до `/api/replies/{board}`
 
 # --hints--
 
-Ви можете вказати свій власний проєкт, а не приклад URL.
+Ви можете надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 (getUserInput) => {
@@ -51,7 +57,7 @@ dashedName: anonymous-message-board
 };
 ```
 
-Дозволити вашому сайту тільки завантажувати його в iFrame на власних сторінках.
+Дозвольте своєму сайту завантажуватись в iFrame на власних сторінках.
 
 ```js
 async (getUserInput) => {
@@ -61,7 +67,7 @@ async (getUserInput) => {
 };
 ```
 
-Не дозволяти передумову DNS для роботи.
+Не дозволяйте передвибірку DNS.
 
 ```js
 async (getUserInput) => {
@@ -71,7 +77,7 @@ async (getUserInput) => {
 };
 ```
 
-Дозволити вашому сайту надсилати реферал лише для ваших власних сторінок.
+Дозвольте своєму сайту надсилати реферер для власних сторінок.
 
 ```js
 async (getUserInput) => {
@@ -81,7 +87,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати POST запит на сторінку `/api/threads/{board}` з даними форми, включаючи `text` і `delete_password`. Збереження запису до бази даних буде мати принаймі поля `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, починається так само, як `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
+Ви можете надіслати запит POST до `/api/threads/{board}` з даними форми, включно з `text` та `delete_password`. Збережена база даних принаймні матиме поля `_id`, `text`, `created_on` (дата і час), `bumped_on` (дата і час, починається як `created_on`), `reported` (булеве), `delete_password` та `replies` (масив).
 
 ```js
 async (getUserInput) => {
@@ -113,7 +119,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати POST запит на сторінку `/api/replies/{board}` з даними форми, включаючи `text` і `delete_password`, & `thread_id`. Це оновить дату ` bumped_on` до дати коментаря. У масиві `replies` теми буде збережено об'єкт як мінімум з властивостями `_id`, `text`, `created_on`, `delete_password`, & `reported`.
+Ви можете надіслати запит POST до `/api/replies/{board}` з даними форми, включно з `text`, `delete_password` та `thread_id`. Це оновить дату `bumped_on` до дати коментаря. У треді масиву `replies` об'єкт буде збережений принаймні з властивостями `_id`, `text`, `created_on`, `delete_password` та `reported`.
 
 ```js
 async (getUserInput) => {
@@ -150,7 +156,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете відправити GET запит на `/api/threads/{board}`. Буде повернено масив з 10 останніми темами на сторінці лише з 3 останніми відповідями для кожної теми. Поля `reported` та `delete_password` не будуть відправлятися клієнту.
+Ви можете надіслати запит GET до `/api/threads/{board}`. Поверненим буде масив з 10 останніми редагованими тредами на дошці із 3 останніми відповідями для кожного. Поля `reported` та `delete_password` не будуть надіслані клієнту.
 
 ```js
 async (getUserInput) => {
@@ -181,7 +187,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит GET до `/api/replies/{board}?thread_id={thread_id}`. Повернено буде всю тему з усіма відповідями в ній, а також всі поля з попереднього тесту не буде враховано.
+Ви можете надіслати запит GET до `/api/replies/{board}?thread_id={thread_id}`. Поверненим буде тред з усіма відповідями, також вилучивши поля з клієнта, як у попередньому тесті.
 
 ```js
 async (getUserInput) => {
@@ -213,7 +219,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати DELETE запит на `/api/threads/{board}` та передати `thread_id` & `delete_password` для видалення теми. Повернено буде рядок `incorrect password` або `success`.
+Ви можете надіслати запит DELETE до `/api/threads/{board}` і передати `thread_id` та `delete_password`, щоб видалити тред. Поверненим буде рядок `incorrect password` або `success`.
 
 ```js
 async (getUserInput) => {
@@ -250,7 +256,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати DELETE запит на `/api/replies/{board}` і передати `thread_id`, `reply_id`, & `delete_password`. Повернено буде рядок `incorrect password` або `success`. У разі успіху текст `reply_id` буде змінено на `[deleted]`.
+Ви можете надіслати запит DELETE до `/api/replies/{board}` і передати `thread_id`, `reply_id` та `delete_password`. Поверненим буде рядок `incorrect password` або `success`. У разі успіху текст `reply_id` буде змінений на `[deleted]`.
 
 ```js
 async (getUserInput) => {
@@ -305,7 +311,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати PUT запит на `/api/threads/{board}` і передати далі `thread_id`. Буде повернено рядок `reported`. Значення `reported` в `thread_id` буде змінено на `true`.
+Ви можете надіслати запит PUT до `/api/threads/{board}` та передати `thread_id`. Поверненим буде рядок `reported`. Значення `reported` об'єкта `thread_id` буде змінено на `true`.
 
 ```js
 async (getUserInput) => {
@@ -313,8 +319,8 @@ async (getUserInput) => {
 
   let res = await fetch(`${url}/api/threads/fcc_test`);
   const threads = await res.json();
-  const report_id = threads[0]._id;
-  const data = { report_id };
+  const thread_id = threads[0]._id;
+  const data = { thread_id };
 
   res = await fetch(`${url}/api/threads/fcc_test`, {
     method: 'PUT',
@@ -336,7 +342,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати PUT запит на `/api/replies/{board}` і передати далі `thread_id` & `reply_id`. Буде повернено рядок `reported`. Значення `reported` в `reply_id` буде змінено на `true`.
+Ви можете надіслати запит PUT до `/api/replies/{board}` і передати `thread_id` та `reply_id`. Поверненим буде рядок `reported`. Значення `reported` об'єкта `reply_id` буде змінено на `true`.
 
 ```js
 async (getUserInput) => {
@@ -368,7 +374,7 @@ async (getUserInput) => {
 };
 ```
 
-Усі 10 функціональних тести завершено і здано.
+Усі 10 функціональних тестів завершено та успішно пройдено.
 
 ```js
 async (getUserInput) => {

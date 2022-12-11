@@ -280,32 +280,33 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                   </Trans>
                 </div>
                 <Spacer />
-                {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
-                  <>
-                    <div className='ca-description'>
-                      {t('learn.complete-both-steps')}
-                    </div>
-                    <hr />
-                    <Spacer />
-                    <b>{t('learn.step-1')}</b>
-                    {(isPartiallyCompleted || isCompleted) && (
-                      <GreenPass
-                        style={{
-                          height: '15px',
-                          width: '15px',
-                          marginLeft: '7px'
-                        }}
-                      />
-                    )}
-                    <Spacer />
-                    <div className='ca-description'>
-                      {t('learn.runs-in-vm')}
-                    </div>
-                    <Spacer />
-                    <PrismFormatted text={instructions} />
-                    <Spacer />
-                  </>
-                )}
+                {isSignedIn &&
+                  challengeType === challengeTypes.codeAllyCert && (
+                    <>
+                      <div className='ca-description'>
+                        {t('learn.complete-both-steps')}
+                      </div>
+                      <hr />
+                      <Spacer />
+                      <b>{t('learn.step-1')}</b>
+                      {(isPartiallyCompleted || isCompleted) && (
+                        <GreenPass
+                          style={{
+                            height: '15px',
+                            width: '15px',
+                            marginLeft: '7px'
+                          }}
+                        />
+                      )}
+                      <Spacer />
+                      <div className='ca-description'>
+                        {t('learn.runs-in-vm')}
+                      </div>
+                      <Spacer />
+                      <PrismFormatted text={instructions} />
+                      <Spacer />
+                    </>
+                  )}
                 <div
                   className={`ca-btn-padding ${
                     !isSignedIn ||
@@ -329,35 +330,36 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       : t('buttons.click-start-course')}
                   </Button>
                 </div>
-                {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
-                  <>
-                    <hr />
-                    <Spacer />
-                    <b>{t('learn.step-2')}</b>
-                    {isCompleted && (
-                      <GreenPass
-                        style={{
-                          height: '15px',
-                          width: '15px',
-                          marginLeft: '7px'
-                        }}
+                {isSignedIn &&
+                  challengeType === challengeTypes.codeAllyCert && (
+                    <>
+                      <hr />
+                      <Spacer />
+                      <b>{t('learn.step-2')}</b>
+                      {isCompleted && (
+                        <GreenPass
+                          style={{
+                            height: '15px',
+                            width: '15px',
+                            marginLeft: '7px'
+                          }}
+                        />
+                      )}
+                      <Spacer />
+                      <div className='ca-description'>
+                        {t('learn.submit-public-url')}
+                      </div>
+                      <Spacer />
+                      <PrismFormatted text={notes} />
+                      <Spacer />
+                      <SolutionForm
+                        challengeType={challengeType}
+                        description={description}
+                        onSubmit={this.handleSubmit}
+                        updateSolutionForm={updateSolutionFormValues}
                       />
-                    )}
-                    <Spacer />
-                    <div className='ca-description'>
-                      {t('learn.submit-public-url')}
-                    </div>
-                    <Spacer />
-                    <PrismFormatted text={notes} />
-                    <Spacer />
-                    <SolutionForm
-                      challengeType={challengeType}
-                      description={description}
-                      onSubmit={this.handleSubmit}
-                      updateSolutionForm={updateSolutionFormValues}
-                    />
-                  </>
-                )}
+                    </>
+                  )}
                 <ProjectToolPanel />
                 <br />
                 <Spacer />

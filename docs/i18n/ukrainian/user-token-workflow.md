@@ -1,15 +1,15 @@
-# How the User Token Workflow Works
+# Про робочий процес токенів користувача
 
-User tokens are used to identify users to third parties so challenges completed using those services can be saved to a user's account.
+Токени користувачів використовуються для ідентифікації користувачів сторонніми сервісами, щоб завдання, виконані з їх використанням, були збережені в обліковому записі користувача.
 
-## How they are created
+## Як їх створюють
 
-At the moment, the tokens are only used to submit the Relational Database challenges. A token gets created when a signed in user clicks the "Click here to start the course" or "Click here to start the project" buttons to start one of the Relational Database courses or projects.
+Зараз токени використовуються лише для надсилання завдань над реляційною базою даних. Токен створюється, коли зареєстрований користувач натискає «Натисніть тут, щоб розпочати курс» або «Натисніть тут, щоб розпочати проєкт», щоб розпочати один із курсів чи проєктів реляційної бази даних.
 
-## When they get deleted
+## Коли їх видаляють
 
-A user token will be deleted when a user signs out of freeCodeCamp, resets their progress, deletes their account, or manually deletes the token using the widget on the settings page.
+Токен користувача видаляється, якщо користувач вийде із freeCodeCamp, скине свій прогрес, видалить свій обліковий запис або самостійно видалить токен за допомогою віджета у налаштуваннях.
 
-## How they work
+## Як вони працюють
 
-Tokens are stored in a `UserToken` collection in the database. Each record has a unique `_id`, which is the token, and a `user_id` that links to the user's account from the `user` collection. The token is encoded using JWT and sent to the client when it's created. That encoded token is then given to third party services that need it and sent to our API by them when a challenge is completed. When our API gets it, it is decoded so we can identify the user submitting a challenge and save the completed challenge to their `completedChallenges`.
+Токени зберігаються у колекції `UserToken` у базі даних. Кожен запис має унікальний `_id`, який є токеном та `user_id`, який посилає на обліковий запис користувача із колекції `user`. Токен закодовано за допомогою JWT та відправлено клієнту під час його створення. Потім цей закодований токен надають стороннім сервісам, які потребують його, а коли завдання виконане – відправляють його на наш API. Коли наш API отримує токен, він буде розкодованим, щоб ми могли ідентифікувати користувача та зберегти виконане завдання до його `completedChallenges`.

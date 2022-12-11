@@ -22,7 +22,7 @@ assert.isTrue(1, 'This will NOT pass with the number value 1');
 
 # --instructions--
 
-У `tests/1_unit-tests.js` тесті з позначкою `#4` в наборі `Basic Assertions` змініть кожне `assert` на `assert.isTrue`, або `assert.isNotTrue`, щоб пройти тест (варто оцінювати як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#4` в наборі `Basic Assertions` змініть кожний `assert` на `assert.isTrue` або `assert.isNotTrue`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -40,7 +40,7 @@ assert.isTrue(1, 'This will NOT pass with the number value 1');
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження `isTrue` або `isNotTrue`.
+Ви повинні обрати правильний метод для першого твердження: `isTrue` або `isNotTrue`.
 
 ```js
 (getUserInput) =>
@@ -54,7 +54,7 @@ assert.isTrue(1, 'This will NOT pass with the number value 1');
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження `isTrue` або `isNotTrue`.
+Ви повинні обрати правильний метод для другого твердження: `isTrue` або `isNotTrue`.
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ assert.isTrue(1, 'This will NOT pass with the number value 1');
   );
 ```
 
-Потрібно обрати правильний метод для третього твердження – `isTrue` або `isNotTrue`.
+Ви повинні обрати правильний метод для третього твердження: `isTrue` або `isNotTrue`.
 
 ```js
 (getUserInput) =>

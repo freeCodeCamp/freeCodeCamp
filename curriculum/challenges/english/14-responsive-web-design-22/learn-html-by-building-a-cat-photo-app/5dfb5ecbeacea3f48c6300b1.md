@@ -71,6 +71,7 @@ assert(
         <h3>Things cats love:</h3>
 --fcc-editable-region--
         <ul>
+          
         </ul>
 --fcc-editable-region--
       </section>

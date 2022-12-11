@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8014
 title: Sort stability
-challengeType: 5
+challengeType: 1
 forumTopicId: 302308
 dashedName: sort-stability
 ---
 
 # --description--
 
-When sorting records in a table by a particular column or field, a [stable sort](https://en.wikipedia.org/wiki/Stable_sort#Stability) will always retain the relative order of records that have the same key.
+When sorting records in a table by a particular column or field, a <a href="https://www.freecodecamp.org/news/stability-in-sorting-algorithms-a-treatment-of-equality-fa3140a5a539/" target="_blank" rel="noopener noreferrer nofollow">stable sort</a> will always retain the relative order of records that have the same key.
 
 For example, in this table of countries and cities, a stable sort on the **second** column, the cities, would keep the US Birmingham above the UK Birmingham. (Although an unstable sort *might*, in this case, place the US Birmingham above the UK Birmingham, a stable sort routine would *guarantee* it).
 

@@ -7,7 +7,7 @@ dashedName: step-30
 
 # --description--
 
-Per migliorare l'accessibilità dell'immagine che hai appena aggiunto, aggiungi un attributo `alt` con il testo:
+Per migliorare l'accessibilità dell'immagine che hai aggiunto, aggiungi un attributo `alt` con il testo:
 
 `Five cats looking around a field.`
 
@@ -60,8 +60,8 @@ assert(
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->

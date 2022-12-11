@@ -8,11 +8,16 @@ dashedName: polygon-area-calculator
 
 # --description--
 
-このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator)を使用して作業を行います。
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 
 # --instructions--
 
-In this project you will use object oriented programming to create a Rectangle class and a Square class. The Square class should be a subclass of Rectangle and inherit methods and attributes.
+このプロジェクトでは、オブジェクト指向プログラミングを使用して、Rectangle クラスと Square クラスを作成します。 Square クラスは Rectangle のサブクラスであり、メソッドと属性を継承する必要があります。
 
 ## Rectangle クラス
 
@@ -30,11 +35,11 @@ Additionally, if an instance of a Rectangle is represented as a string, it shoul
 
 ## Square クラス
 
-The Square class should be a subclass of Rectangle. When a Square object is created, a single side length is passed in. The `__init__` method should store the side length in both the `width` and `height` attributes from the Rectangle class.
+Square クラスは Rectangle のサブクラスである必要があります。 Square オブジェクトが生成されるときは、一辺の長さを渡します。 `__init__` メソッドでは、一辺の長さを Rectangle クラスの `width` 属性と `height` 属性の両方に格納する必要があります。
 
-The Square class should be able to access the Rectangle class methods but should also contain a `set_side` method. If an instance of a Square is represented as a string, it should look like: `Square(side=9)`
+Square クラスは、Rectangle クラスのメソッドにアクセスできる必要があり、加えて `set_side` メソッドも含める必要があります。 If an instance of a Square is represented as a string, it should look like: `Square(side=9)`
 
-Additionally, the `set_width` and `set_height` methods on the Square class should set both the width and height.
+また、Square クラスの `set_width` と `set_height` メソッドでは、幅と高さの両方を設定する必要があります。
 
 ## 使用例
 
@@ -58,7 +63,7 @@ rect.set_width(16)
 print(rect.get_amount_inside(sq))
 ```
 
-That code should return:
+上記のコードは次を返す必要があります。
 
 ```bash
 50
@@ -79,11 +84,11 @@ Square(side=4)
 8
 ```
 
-The unit tests for this project are in `test_module.py`.
+このプロジェクトの単体テストは `test_module.py` にあります。
 
 ## 開発
 
-Write your code in `shape_calculator.py`. For development, you can use `main.py` to test your `shape_calculator()` function. Click the "run" button and `main.py` will run.
+`shape_calculator.py` でコードを記述してください。 開発には `main.py` を使用して `shape_calculator()` 関数をテストすることができます。 Click the "run" button and `main.py` will run.
 
 ## テスト
 
@@ -91,11 +96,11 @@ We imported the tests from `test_module.py` to `main.py` for your convenience. T
 
 ## 提出
 
-Copy your project's URL and submit it to freeCodeCamp.
+プロジェクトの URL をコピーし、freeCodeCamp に提出してください。
 
 # --hints--
 
-It should create a Rectangle class and Square class and pass all tests.
+Rectangle クラスと Square クラスを作成し、すべてのテストを成功させる必要があります。
 
 ```js
 

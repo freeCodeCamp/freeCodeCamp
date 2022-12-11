@@ -1,14 +1,14 @@
 ---
 id: 5900f3b81000cf542c50fecb
-title: 'Problem 76: Counting summations'
-challengeType: 5
+title: '問題 76：計算加和'
+challengeType: 1
 forumTopicId: 302189
 dashedName: problem-76-counting-summations
 ---
 
 # --description--
 
-It is possible to write five as a sum in exactly six different ways:
+整數 5 是有可能通過六種不同的加和的方式得到：
 
 <div style='margin-left: 4em;'>
   4 + 1<br>

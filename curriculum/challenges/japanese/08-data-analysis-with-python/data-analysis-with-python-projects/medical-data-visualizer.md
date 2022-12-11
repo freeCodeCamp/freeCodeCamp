@@ -8,12 +8,18 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer)を使用して作業を行います。
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 
 Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
 
-- [「みんなで Python」ビデオコース](https://www.freecodecamp.org/news/python-for-everybody/) (14 時間)
-- [「Python を学ぶ」ビデオコース](https://www.freecodecamp.org/news/learn-python-video-course/) (10 時間)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -25,20 +31,20 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 
 ファイル名: medical_examination.csv
 
-|                            特徴                            | 変数のタイプ |     変数      |             値のタイプ              |
-|:--------------------------------------------------------:|:------:|:-----------:|:------------------------------:|
-|                         Age (年齢)                         | 客観的特徴  |     age     |            int (日数)            |
-|                       Height (身長)                        | 客観的特徴  |   height    |            int (cm)            |
-|                       Weight (体重)                        | 客観的特徴  |   weight    |           float (kg)           |
-|                       Gender (性別)                        | 客観的特徴  |   gender    |            カテゴリコード             |
-|              Systolic blood pressure (最高血圧)              | 検査の特徴  |    ap_hi    |              int               |
-|             Diastolic blood pressure (最低血圧)              | 検査の特徴  |    ap_lo    |              int               |
-|                  Cholesterol (コレステロール値)                  | 検査の特徴  | cholesterol | 1: 正常値、2: 正常値より高い、3: 正常値を優に超える |
-|                      Glucose (血糖値)                       | 検査の特徴  |    gluc     | 1: 正常値、2: 正常値より高い、3: 正常値を優に超える |
-|                       Smoking (喫煙)                       | 主観的特徴  |    smoke    |             binary             |
-|                 Alcohol intake (アルコール摂取)                 | 主観的特徴  |    alco     |             binary             |
-|                Physical activity (身体活動状況)                | 主観的特徴  |   active    |             binary             |
-| Presence or absence of cardiovascular disease (心血管疾患の有無) | 目的の変数  |   cardio    |             binary             |
+|                            特徴                            | 変数のタイプ |      変数       |             値のタイプ              |
+|:--------------------------------------------------------:|:------:|:-------------:|:------------------------------:|
+|                         Age (年齢)                         | 客観的特徴  |     `age`     |            int (日数)            |
+|                       Height (身長)                        | 客観的特徴  |   `height`    |            int (cm)            |
+|                       Weight (体重)                        | 客観的特徴  |   `weight`    |           float (kg)           |
+|                       Gender (性別)                        | 客観的特徴  |   `gender`    |            カテゴリコード             |
+|              Systolic blood pressure (最高血圧)              | 検査の特徴  |    `ap_hi`    |              int               |
+|             Diastolic blood pressure (最低血圧)              | 検査の特徴  |    `ap_lo`    |              int               |
+|                  Cholesterol (コレステロール値)                  | 検査の特徴  | `cholesterol` | 1: 正常値、2: 正常値より高い、3: 正常値を優に超える |
+|                      Glucose (血糖値)                       | 検査の特徴  |    `gluc`     | 1: 正常値、2: 正常値より高い、3: 正常値を優に超える |
+|                       Smoking (喫煙)                       | 主観的特徴  |    `smoke`    |             binary             |
+|                 Alcohol intake (アルコール摂取)                 | 主観的特徴  |    `alco`     |             binary             |
+|                Physical activity (身体活動状況)                | 主観的特徴  |   `active`    |             binary             |
+| Presence or absence of cardiovascular disease (心血管疾患の有無) | 目的の変数  |   `cardio`    |             binary             |
 
 ## タスク
 
@@ -46,16 +52,16 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 
 `medical_data_visualizer.py` で、データを使用して次のタスクを完了してください。
 
-- データに `overweight` 列を追加します。 太りすぎかどうかを判断するには、まず、体重 (キログラム単位) を身長 (メートル単位) の 2 乗で割って BMI (ボディマス指数) を計算します。 その値が 25 より大きい場合、その人は太りすぎです。 太りすぎではない場合は値 0 を使用し、太りすぎの場合は値 1 を使用します。
-- 0 を常に良とし、1 を常に悪としてデータを正規化します。 `cholesterol` または `gluc` の値が 1 の場合は、この値を 0 にします。 値が 1 より大きい場合は、値を 1 とします。
-- データを長い形式に変換し、seabornの `catplot()` を使用して、カテゴリ特徴の値の数を示すグラフを作成します。 データセットは 'Cardio' 別に分割し、`cardio` の値ごとに 1 つずつグラフを作成します。 `examples/Figure_1.png` のようなグラフを表示する必要があります。
-- データをクリーニングします。 正しくないデータを表す次の患者セグメントを除外します。
-  - 最低血圧が最高血圧よりも高い (`(df['ap_lo'] <= df['ap_hi'])`) で正しいデータを維持)
-  - 身長が 2.5 パーセンタイルを下回る (`(df['height'] >= df['height'].quantile(0.025))` で正しいデータを維持)
-  - 身長が 97.5 パーセンタイルを上回る
-  - 体重が 2.5 パーセンタイルを下回る
-  - 体重が 97.5 パーセンタイルを上回る
-- データセットを使用して相関行列を作成します。 seabornの `heatmap()` を使用して相関行列をプロットします。 上側の三角形をマスク処理します。 `examples/Figure_2.png` のようなグラフを表示する必要があります。
+- Add an `overweight` column to the data. To determine if a person is overweight, first calculate their BMI by dividing their weight in kilograms by the square of their height in meters. If that value is > 25 then the person is overweight. Use the value 0 for NOT overweight and the value 1 for overweight.
+- Normalize the data by making 0 always good and 1 always bad. If the value of `cholesterol` or `gluc` is 1, make the value 0. If the value is more than 1, make the value 1.
+- Convert the data into long format and create a chart that shows the value counts of the categorical features using seaborn's `catplot()`. The dataset should be split by 'Cardio' so there is one chart for each `cardio` value. The chart should look like `examples/Figure_1.png`.
+- Clean the data. Filter out the following patient segments that represent incorrect data:
+  - diastolic pressure is higher than systolic (Keep the correct data with `(df['ap_lo'] <= df['ap_hi'])`)
+  - height is less than the 2.5th percentile (Keep the correct data with `(df['height'] >= df['height'].quantile(0.025))`)
+  - height is more than the 97.5th percentile
+  - weight is less than the 2.5th percentile
+  - weight is more than the 97.5th percentile
+- Create a correlation matrix using the dataset. Plot the correlation matrix using seaborn's `heatmap()`. Mask the upper triangle. The chart should look like `examples/Figure_2.png`.
 
 変数が `None`に設定された場合は、必ず正しいコードに設定してください。
 
@@ -75,7 +81,7 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 
 # --hints--
 
-すべての Python テストに合格する必要があります。
+すべての Python テストが成功する必要があります。
 
 ```js
 

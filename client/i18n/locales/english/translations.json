@@ -264,7 +264,7 @@
       "p8": "And this curriculum will give you thousands of hours of hands-on programming practice.",
       "p9": "And if you want to learn more math and computer science theory, we also have thousands of hours of video courses on <0>freeCodeCamp's YouTube channel</0>.",
       "p10": "If you want to get a developer job or freelance clients, programming skills will be just part of the puzzle. You also need to build your personal network and your reputation as a developer.",
-      "p11": "You can do this on Twitter and GitHub, and also on <0>the freeCodeCamp forum</0>.",
+      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
       "p12": "Happy coding!"
     },
     "upcoming-lessons": "Upcoming Lessons",
@@ -284,6 +284,7 @@
     "sign-in-save": "Sign in to save your progress",
     "download-solution": "Download my solution",
     "percent-complete": "{{percent}}% complete",
+    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
     "tried-rsa": "If you've already tried the <0>Read-Search-Ask</0> method, then you can ask for help on the freeCodeCamp forum.",
     "rsa": "Read, search, ask",
     "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
@@ -306,6 +307,10 @@
       "notes": "Notes",
       "preview": "Preview"
     },
+    "editor-alerts": {
+      "tab-trapped": "Pressing tab will now insert the tab character",
+      "tab-free": "Pressing tab will now move focus to the next focusable element"
+    },
     "help-translate": "We are still translating the following certifications.",
     "help-translate-link": "Help us translate.",
     "project-preview-title": "Here's a preview of what you will build",
@@ -324,7 +329,11 @@
     "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
     "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
     "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up.",
-    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program",
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
   },
   "donate": {
     "title": "Support our nonprofit",
@@ -349,6 +358,7 @@
     "your-donation": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world.",
     "your-donation-2": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each month.",
     "your-donation-3": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each year.",
+    "become-supporter": "Become a Supporter",
     "duration": "Become a one-time supporter of our nonprofit.",
     "duration-2": "Become a monthly supporter of our nonprofit.",
     "duration-3": "Become an annual supporter of our nonprofit",
@@ -497,7 +507,8 @@
     "open-preview-in-new-window": "Open the preview in a new window and focus it",
     "step": "Step",
     "steps": "Steps",
-    "steps-for": "Steps for {{blockTitle}}"
+    "steps-for": "Steps for {{blockTitle}}",
+    "code-example": "{{codeName}} code example"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
@@ -715,5 +726,12 @@
     "focus-instructions-panel": "Focus Instructions Panel",
     "navigate-previous": "Navigate Previous Exercise",
     "navigate-next": "Navigate Next Exercise"
+  },
+  "signout": {
+    "heading": "Sign out of your account",
+    "p1": "Warning: If you continue, your progress will no longer be saved.",
+    "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
+    "certain": "Yes, sign out of my account",
+    "nevermind": "Nevermind, I don't want to sign out"
   }
 }

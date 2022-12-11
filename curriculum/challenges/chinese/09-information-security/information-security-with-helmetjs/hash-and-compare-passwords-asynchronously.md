@@ -8,7 +8,7 @@ dashedName: hash-and-compare-passwords-asynchronously
 
 # --description--
 
-请注意，本项目在[这个 Repl.it 项目](https://replit.com/github/freeCodeCamp/boilerplate-infosec)的基础上进行开发。 你也可以从[GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/)上克隆。
+请注意，本项目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化项目的基础上进行开发，你也可以从 <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
 
 由于哈希运算会占用很大计算机资源，并且会耗费比较多时间，因此比较推荐的做法是异步调用哈希算法，这样就不会因此阻止其它连接或请求了。 异步调用哈希方法非常简单，只需要：
 
@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-在你记录完成的哈希，并在比较中把 'res' 记录到控制台后，将此添加到你现有的哈希函数中（因为你需要等待哈希完成后再调用比较函数）。 控制台中会首先输出一个哈希结果，然后输出 true。 如果将比较函数中的 “myPlaintextPassword” 更改为 “someOtherPlaintextPassword”，则比较的结果应显示 false。
+在你记录完成的哈希，并在比较中把 'res' 记录到控制台后，将此添加到你现有的哈希函数中（因为你需要等待哈希完成后再调用比较函数）。 You should see in the console a hash, and then 'true' is printed! If you change 'myPlaintextPassword' in the compare function to 'someOtherPlaintextPassword', then it should say false.
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {

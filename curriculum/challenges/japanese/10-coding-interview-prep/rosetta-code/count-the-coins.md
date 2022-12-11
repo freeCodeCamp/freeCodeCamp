@@ -1,14 +1,14 @@
 ---
 id: 59713bd26bdeb8a594fb9413
 title: 硬貨を数える
-challengeType: 5
+challengeType: 1
 forumTopicId: 302238
 dashedName: count-the-coins
 ---
 
 # --description--
 
-[米国](https://en.wikipedia.org/wiki/United_States) 通貨には4種類の共通硬貨があります。
+There are four types of common coins in US currency:
 
 <ul>
   <li>25セント硬貨</li>
@@ -46,7 +46,7 @@ assert(typeof countCoins === 'function');
 assert.equal(countCoins(15), 6);
 ```
 
-`countCoins(85)` は `163` を返します。
+`countCoins(85)` should return `163`.
 
 ```js
 assert.equal(countCoins(85), 163);

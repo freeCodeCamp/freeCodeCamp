@@ -7,7 +7,7 @@ dashedName: step-30
 
 # --description--
 
-Щоб покращити доступність зображення, яке ви щойно додали, додайте атрибут `alt` із текстом:
+Щоб покращити доступність доданого зображення, додайте атрибут `alt` із текстом:
 
 `Five cats looking around a field.`
 
@@ -60,8 +60,8 @@ assert(
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->

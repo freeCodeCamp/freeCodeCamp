@@ -264,7 +264,7 @@
       "p8": "Und dieser Lehrplan wird dir tausende von Stunden praktischer Programmierpraxis geben.",
       "p9": "Und wenn du mehr Mathematik und Informatik-Theorie lernen möchtest, haben wir auch Tausende von Stunden an Videokursen auf <0>freeCodeCamps YouTube-Kanal</0>.",
       "p10": "Wenn du einen Entwicklerjob oder Freelance-Kunden bekommen möchtest, werden Programmierkenntnisse nur Teil des Puzzles sein. Du musst auch dein persönliches Netzwerk und deinen Ruf als Entwickler aufbauen.",
-      "p11": "Du kannst dies auf Twitter und GitHub tun, sowie im <0>freeCodeCamp-Forum</0>.",
+      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
       "p12": "Viel Spaß beim Programmieren!"
     },
     "upcoming-lessons": "Bevorstehende Lektionen",
@@ -284,6 +284,7 @@
     "sign-in-save": "Melde dich an, um deinen Fortschritt zu speichern",
     "download-solution": "Meine Lösung herunterladen",
     "percent-complete": "{{percent}}% abgeschlossen",
+    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
     "tried-rsa": "Wenn du die <0>Lesen-Suchen-Fragen</0> Methode bereits ausprobiert hast, kannst du im freeCodeCamp-Forum um Hilfe bitten.",
     "rsa": "Lesen, suchen, fragen",
     "rsa-forum": "<strong>Bevor du einen neuen Beitrag schreibst</strong> schau bitte nach, ob deine Frage <0>bereits im Forum beantwortet wurde</0>.",
@@ -306,6 +307,10 @@
       "notes": "Hinweise",
       "preview": "Vorschau"
     },
+    "editor-alerts": {
+      "tab-trapped": "Pressing tab will now insert the tab character",
+      "tab-free": "Pressing tab will now move focus to the next focusable element"
+    },
     "help-translate": "Wir übersetzen noch die folgenden Zertifikate.",
     "help-translate-link": "Hilf uns, zu übersetzen.",
     "project-preview-title": "Hier ist eine Vorschau auf das, was du erstellen wirst",
@@ -324,7 +329,11 @@
     "sorry-getting-there": "Tut mir leid, dein Code funktioniert nicht. Du bist auf dem Weg dorthin.",
     "sorry-hang-in-there": "Tut mir leid, dein Code funktioniert nicht. Halte durch.",
     "sorry-dont-giveup": "Tut mir leid, dein Code funktioniert nicht. Gib nicht auf.",
-    "challenges-completed": "{{completedCount}} von {{totalChallenges}} Herausforderungen erfüllt"
+    "challenges-completed": "{{completedCount}} von {{totalChallenges}} Herausforderungen erfüllt",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program",
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
   },
   "donate": {
     "title": "Unterstütze unsere Non-Profit-Organisation",
@@ -349,6 +358,7 @@
     "your-donation": "Deine ${{usd}} Spende ermöglicht {{hours}} Stunden des Lernens für Menschen auf der ganzen Welt.",
     "your-donation-2": "Deine ${{usd}} Spende wird jeden Monat {{hours}} Stunden des Lernens für Menschen auf der ganzen Welt ermöglichen.",
     "your-donation-3": "Deine ${{usd}} Spende wird jedes Jahr {{hours}} Stunden des Lernens für Menschen auf der ganzen Welt ermöglichen.",
+    "become-supporter": "Become a Supporter",
     "duration": "Werde ein einmaliger Unterstützer für unsere gemeinnützigen Organisation.",
     "duration-2": "Werde ein monatlicher Unterstützer für unsere gemeinnützigen Organisation.",
     "duration-3": "Werde ein jährlicher Unterstützer für unsere gemeinnützigen Organisation",
@@ -453,7 +463,7 @@
     "certification-project": "Zertifizierungsprojekt",
     "iframe-preview": "{{title}} Vorschau",
     "iframe-alert": "Normalerweise würde dieser Link dich auf eine andere Website führen! Er funktioniert. Dies ist ein Link zu: {{externalLink}}",
-    "iframe-form-submit-alert": "Normally this form would be submitted! It works. This will be submitted to: {{externalLink}}",
+    "iframe-form-submit-alert": "Normalerweise würde dieses Formular übermittelt werden! Es funktioniert. Dies wird übermittelt an: {{externalLink}}",
     "document-notfound": "Dokument wurde nicht gefunden"
   },
   "icons": {
@@ -497,7 +507,8 @@
     "open-preview-in-new-window": "Öffne die Vorschau in einem neuen Fenster und fokussiere sie",
     "step": "Schritt",
     "steps": "Schritte",
-    "steps-for": "Schritte für {{blockTitle}}"
+    "steps-for": "Schritte für {{blockTitle}}",
+    "code-example": "{{codeName}} code example"
   },
   "flash": {
     "honest-first": "Um eine Zertifizierung zu erlangen, musst du zunächst unsere Richtlinie zur akademischen Ehrlichkeit akzeptieren",
@@ -715,5 +726,12 @@
     "focus-instructions-panel": "Fokus-Bedienfeld",
     "navigate-previous": "Zur vorherigen Übung navigieren",
     "navigate-next": "Zur nächsten Übung navigieren"
+  },
+  "signout": {
+    "heading": "Sign out of your account",
+    "p1": "Warning: If you continue, your progress will no longer be saved.",
+    "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
+    "certain": "Yes, sign out of my account",
+    "nevermind": "Nevermind, I don't want to sign out"
   }
 }

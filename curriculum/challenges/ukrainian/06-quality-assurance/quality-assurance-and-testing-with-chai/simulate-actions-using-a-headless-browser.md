@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c5c
-title: Імітувати дії з використанням Headless Browser
+title: Імітуйте дії за допомогою headless браузера
 challengeType: 2
 dashedName: simulate-actions-using-a-headless-browser
 ---
@@ -47,7 +47,7 @@ suiteSetup(function(done) {
 
 # --hints--
 
-Необхідно пройти всі тести.
+Всі тести повинні бути успішно пройдені.
 
 ```js
 (getUserInput) =>

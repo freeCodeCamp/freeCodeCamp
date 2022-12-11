@@ -23,7 +23,7 @@ s[2] = 45;
 console.log(s);
 ```
 
-`s = [1, 2, 3]` wird zu einem Fehler führen. Die `console.log` wird den Wert `[5, 6, 45]` anzeigen.
+`s = [1, 2, 3]` wird zu einem Fehler führen. After commenting out that line, the `console.log` will display the value `[5, 6, 45]`.
 
 Wie du siehst, kannst du das Objekt `[5, 6, 7]` selbst verändern und die Variable `s` wird immer noch auf das veränderte Array `[5, 6, 45]` zeigen. Wie alle Arrays sind die Arrayelemente in `s` veränderbar, aber weil `const` verwendet wurde, kannst du den Variablennamen `s` nicht verwenden, um mit dem Zuweisungsoperator auf ein anderes Array zu zeigen.
 

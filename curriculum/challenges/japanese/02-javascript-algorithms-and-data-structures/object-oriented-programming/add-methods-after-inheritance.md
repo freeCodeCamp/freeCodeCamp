@@ -79,22 +79,54 @@ assert(beagle.constructor === Dog);
 `beagle.eat()` は文字列 `nom nom nom` を出力する必要があります。
 
 ```js
-console.log = function (msg) {
-  throw msg;
-};
-assert.throws(() => beagle.eat(), 'nom nom nom');
+capture();
+beagle.eat();
+uncapture();
+assert(logOutput == 'nom nom nom');
 ```
 
 `beagle.bark()` は文字列 `Woof!` を出力する必要があります。
 
 ```js
-console.log = function (msg) {
-  throw msg;
-};
-assert.throws(() => beagle.bark(), 'Woof!');
+capture();
+beagle.bark();
+uncapture();
+assert(logOutput == 'Woof!');
 ```
 
 # --seed--
+
+## --before-user-code--
+
+```js
+var logOutput = "";
+var originalConsole = console
+function capture() {
+    var nativeLog = console.log;
+    console.log = function (message) {
+        logOutput = message;
+        if(nativeLog.apply) {
+          nativeLog.apply(originalConsole, arguments);
+        } else {
+          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
+          nativeLog(nativeMsg);
+        }
+    };
+}
+
+function uncapture() {
+  console.log = originalConsole.log;
+}
+
+capture();
+```
+
+## --after-user-code--
+
+```js
+uncapture();
+(function() { return logOutput || "console.log never called"; })();
+```
 
 ## --seed-contents--
 

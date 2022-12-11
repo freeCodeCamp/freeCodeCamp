@@ -110,11 +110,12 @@ assert(
           <li>thunder</li>
           <li>other cats</li>
         </ol>
+--fcc-editable-region--
         <figure>
---fcc-editable-region--
           <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
---fcc-editable-region--
+
         </figure>
+--fcc-editable-region--
       </section>
     </main>
   </body>

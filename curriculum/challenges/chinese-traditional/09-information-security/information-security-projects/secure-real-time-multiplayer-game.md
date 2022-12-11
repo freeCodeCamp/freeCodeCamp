@@ -8,21 +8,38 @@ dashedName: secure-real-time-multiplayer-game
 
 # --description--
 
-使用 HTML Canvas API 和 [Socket.io](https://socket.io/) 開發一個 2D 實時多人遊戲，其功能與此類似：<https://secure-real-time-multiplayer-game.freecodecamp.rocks/>。 在這個項目中，你將使用以下方法之一編寫你的代碼：
+使用 HTML Canvas API 和 Socket.io 開發一個功能上類似於 <a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a> 的 2D 實時多人遊戲。 在這個項目中，你將使用以下方法之一編寫你的代碼：
 
--   克隆[這個 GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/)，並在本地完成你的項目。
--   使用[我們的 Replit 初始項目](https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game)來完成你的項目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">這個 GitHub 倉庫</a>，並在本地完成你的項目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目
 -   使用您選擇的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 框中提交你的項目 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-**注意** ：`helmet@^3.21.3` 是用戶故事所必需的。 這意味着你需要使用以前版本的 Helmet 的文檔，瞭解如何實現用戶故事的信息。
+Create a secure multiplayer game in which each player can move their avatar, there is at least one collectible item, and the rank of the players is calculated based on their score.
+
+For details consult the tests below.
+
+Make sure that your game is secure! Include these security measures:
+
+- The client should not be able to guess/sniff the MIME type
+- Prevent XSS attacks
+- Do not cache anything from the website in the client
+- The headers say that the site is powered by `PHP 7.4.3`
+
+**Note**: `helmet@^3.21.3` is needed for the user stories. This means you will need to use the previous version of Helmet's docs, for information on how to achieve the user stories.
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -34,91 +51,91 @@ dashedName: secure-real-time-multiplayer-game
 };
 ```
 
-多個玩家可以連接到一臺服務器遊玩。
+Multiple players can connect to a server and play.
 
 ```js
 
 ```
 
-每個玩家都有頭像。
+Each player has an avatar.
 
 ```js
 
 ```
 
-每個玩家都由在 `Player.mjs` 中創建的 `Player` 類對象來代表。
+Each player is represented by an object created by the `Player` class in `Player.mjs`.
 
 ```js
 
 ```
 
-至少，每個玩家對象應該包含一個唯一的 `id`、一個 `score`，以及代表玩家當前位置的 `x` 和 `y` 座標。
+At a minimum, each player object should contain a unique `id`, a `score`, and `x` and `y` coordinates representing the player's current position.
 
 ```js
 
 ```
 
-遊戲至少有一種類型的可收藏物品。 在 `Collectible.mjs` 中完成 `Collectible` 類來實現這一點。
+The game has at least one type of collectible item. Complete the `Collectible` class in `Collectible.mjs` to implement this.
 
 ```js
 
 ```
 
-至少，每個由 `Collectible` 類創建的可收集物品對象應該包含一個唯一的 `id`、一個 `value`，以及代表該物品當前位置的 `x` 和 `y` 座標。
+At a minimum, each collectible item object created by the `Collectible` class should contain a unique `id`, a `value`, and `x` and `y` coordinates representing the item's current position.
 
 ```js
 
 ```
 
-玩家可以使用 WASD 或方向鍵移動頭像。 完成 `Player.mjs` 中的 `movePlayer` 方法來實現這一功能。
+Players can use the WASD and/or arrow keys to move their avatar. Complete the `movePlayer` method in `Player.mjs` to implement this.
 
 ```js
 
 ```
 
-`movePlayer` 方法應該接受兩個參數：一個是 “up”、“down”、“left” 或 “right” 的字符串，另一個是玩家角色位置應該改變的像素數量。 `movePlayer` 應該調整它所調用的玩家對象的 `x` 和 `y` 座標。
+The `movePlayer` method should accept two arguments: a string of "up", "down", "left", or "right", and a number for the amount of pixels the player's position should change. `movePlayer` should adjust the `x` and `y` coordinates of the player object it's called from.
 
 ```js
 
 ```
 
-用玩家的分數來計算他們相對其他玩家的名次。 在 `Player` 類中完成 `calculateRank` 方法來實現這個。
+The player's score should be used to calculate their rank among the other players. Complete the `calculateRank` method in the `Player` class to implement this.
 
 ```js
 
 ```
 
-`calculateRank` 方法應該接受一個代表所有在線玩家的對象數組，並返回字符串 `Rank: currentRanking/totalPlayers`。 例如，在一局有兩個玩家的遊戲中，如果玩家 A 的分數是 3，玩家 B 的分數是 5，那麼玩家 A 的 `calculateRank` 應該返回 `Rank: 2/2`。
+The `calculateRank` method should accept an array of objects representing all connected players and return the string `Rank: currentRanking/totalPlayers`. For example, in a game with two players, if Player A has a score of 3 and Player B has a score of 5, `calculateRank` for Player A should return `Rank: 2/2`.
 
 ```js
 
 ```
 
-玩家可以與可收集物品發生碰撞。 完成 `Player.mjs` 中的 `collision` 方法來實現這一點。
+Players can collide with a collectible item. Complete the `collision` method in `Player.mjs` to implement this.
 
 ```js
 
 ```
 
-`collision` 方法應該接受一個可收集物品的對象作爲參數。 如果玩家的頭像與物品相交，`collision` 方法應該返回 `true`。
+The `collision` method should accept a collectible item's object as an argument. If the player's avatar intersects with the item, the `collision` method should return `true`.
 
 ```js
 
 ```
 
-所有玩家都保持遊戲狀態同步。
+All players are kept in sync.
 
 ```js
 
 ```
 
-玩家可以隨時斷開與遊戲的連接。
+Players can disconnect from the game at any time.
 
 ```js
 
 ```
 
-阻止客戶端試圖猜測/嗅探 MIME 類型。
+Prevent the client from trying to guess / sniff the MIME type.
 
 ```js
 async (getUserInput) => {
@@ -128,7 +145,7 @@ async (getUserInput) => {
 };
 ```
 
-防止跨站腳本（XSS）攻擊。
+Prevent cross-site scripting (XSS) attacks.
 
 ```js
 async (getUserInput) => {
@@ -138,7 +155,7 @@ async (getUserInput) => {
 };
 ```
 
-客戶端沒有緩存任何網站內容。
+Nothing from the website is cached in the client.
 
 ```js
 async (getUserInput) => {
@@ -154,7 +171,7 @@ async (getUserInput) => {
 };
 ```
 
-請求頭顯示該網站是由 “PHP 7.4.3” 驅動的，儘管實際並非如此（作爲一種安全防禦措施）。
+The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as a security measure).
 
 ```js
 async (getUserInput) => {

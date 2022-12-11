@@ -302,17 +302,17 @@ Nuestro objetivo es comunicar el único punto que el reto está tratando de ense
 
 Las pruebas de desafío pueden hacer uso de las librerías de aserción de Node.js y Chai.js. Además, si es necesario, se puede acceder al código generado por el usuario en la variable `code`. Además, el objeto `__helpers`  expone varias funciones que simplifican el proceso de escritura de los test. Las funciones disponibles estan definidas en _client/src/utils/curriculum-helpers.ts_.
 
-## Código de semilla de formato
+## Formatting seed code
 
-Aquí están las pautas de formato específicas para el código de semilla del reto:
+Here are specific formatting guidelines for the challenge seed code:
 
-- Utilice dos espacios para indentar
-- Las declaraciones de JavaScript terminan con punto y coma
-- Utilice comillas dobles donde sea aplicable
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
-### Comentarios de código de semilla
+### Seed code comments
 
-Tenemos un [diccionario de comentarios](/curriculum/dictionaries/english/comentarios.) que contiene los únicos comentarios que pueden ser usados dentro del código de semilla. El caso exacto y el espaciado del comentario del diccionario deben ser utilizados. El diccionario de comentarios no debe ser expandido sin una discusión previa con el equipo de desarrollo.
+We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. El caso exacto y el espaciado del comentario del diccionario deben ser utilizados. El diccionario de comentarios no debe ser expandido sin una discusión previa con el equipo de desarrollo.
 
 Los comentarios usados deben tener un espacio entre los caracteres del comentario y los propios comentarios. En general, los comentarios deben usarse con moderación. Siempre considere reescribir la descripción o las instrucciones de un desafío si pudiera evitar usar un comentario de código de semilla.
 
@@ -374,7 +374,7 @@ class MyComponent extends React.Component {
 
 ### Traducción de comentarios de código de semilla
 
-Hay diccionarios de comentarios separados para cada idioma. La [versión inglesa del diccionario de comentarios](/curriculum/dictionaries/english/comments.js) es la base de las traducciones que se encuentran en las correspondientes versiones no inglesas de los archivos. La versión no inglesa del diccionario de comentarios en chino se encuentra en  `/curriculum/dictionaries/chinese/comments.js`. Cada diccionario consiste en un arreglo de objetos con una propiedad `id` única y una propiedad `text`. Solo debe modificarse el `text` para abarcar la traducción del comentario inglés correspondiente.
+Hay diccionarios de comentarios separados para cada idioma. The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. Cada diccionario consiste en un arreglo de objetos con una propiedad `id` única y una propiedad `text`. Solo debe modificarse el `text` para abarcar la traducción del comentario inglés correspondiente.
 
 Algunos comentarios pueden contener una palabra/frase que no debe ser traducida. Por ejemplo, los nombres de las variables o los nombres propios de las bibliotecas, como "React", no deben traducirse. Vea el comentario siguiente como ejemplo. La palabra `myGlobal` no debe traducirse.
 

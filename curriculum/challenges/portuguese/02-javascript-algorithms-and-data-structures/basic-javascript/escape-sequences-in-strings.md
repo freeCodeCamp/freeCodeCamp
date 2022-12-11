@@ -11,12 +11,12 @@ dashedName: escape-sequences-in-strings
 
 Aspas não são os únicos caracteres que podem ser <dfn>escapados</dfn> dentro de uma string. Há dois motivos para usar caracteres de escapamento:
 
-1.  Para permitir que você use caracteres que você pode não ser capaz de digitar do contrário, como o caractere de retorno de carro.
+1.  Para permitir que você use caracteres que você pode não ser capaz de digitar do contrário, como o caractere de nova linha.
 2.  Para permitir que você represente várias aspas em uma string sem o JavaScript entender erroneamente o que você quis dizer.
 
 Aprendemos isso no desafio anterior.
 
-<table class='table table-striped'><thead><tr><th>Código</th><th>Saída</th></tr></thead><tbody><tr><td><code>\'</code></td><td>aspas simples</td></tr><tr><td><code>\"</code></td><td>aspas duplas</td></tr><tr><td><code>\\</code></td><td>barra invertida</td></tr><tr><td><code>\n</code></td><td>nova linha</td></tr><tr><td><code>\r</code></td><td>retorno de carro</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\b</code></td><td>limite de palavra</td></tr><tr><td><code>\f</code></td><td>quebra de página</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Código</th><th>Saída</th></tr></thead><tbody><tr><td><code>\'</code></td><td>aspas simples</td></tr><tr><td><code>\"</code></td><td>aspas duplas</td></tr><tr><td><code>\\</code></td><td>barra invertida</td></tr><tr><td><code>\n</code></td><td>nova linha</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\r</code></td><td>retorno de carro</td></tr><tr><td><code>\b</code></td><td>limite de palavra</td></tr><tr><td><code>\f</code></td><td>quebra de página</td></tr></tbody></table>
 
 *Note que a própria barra invertida deve ser escapada para ser exibida como uma barra invertida.*
 
@@ -77,14 +77,6 @@ assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(){
-if (myStr !== undefined){
-console.log('myStr:\n' + myStr);}})();
-```
 
 ## --seed-contents--
 

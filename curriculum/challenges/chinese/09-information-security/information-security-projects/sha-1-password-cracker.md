@@ -9,13 +9,20 @@ dashedName: sha-1-password-cracker
 
 # --description--
 
-你将通过使用我们的 [Replit 入门代码](https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker) 来完成本项目。
+你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 
 我们仍在开发 Python 课程的交互式教学部分。 目前，你可以在 YouTube 上通过 freeCodeCamp.org 上传的一些视频学习这个项目相关的知识。
 
-- [Python for Everybody 视频课程](https://www.freecodecamp.org/news/python-for-everybody/)（14 小时）
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
-- [Learn Python 视频课程](https://www.freecodecamp.org/news/learn-python-video-course/)（10 小时）
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
 
 # --instructions--
 
@@ -31,17 +38,17 @@ dashedName: sha-1-password-cracker
 
 以下是一些用于测试该功能的散列密码：
 
-- `b305921a3723cd5d70a375cd21a61e60aabb84ec` 应该返回 “sammy123”
-- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` 应该返回 “abacab”
-- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` 应该返回 “password”
+- `b305921a3723cd5d70a375cd21a61e60aabb84ec` should return "sammy123"
+- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` should return "abacab"
+- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` should return "password"
 
 以下是一些散列密码，用于在 `use_salts` 设置为 `True` 时测试该功能：
 
-- `53d8b3dc9d39f0184144674e310185e41a87ffd5` 应该返回 “superman”
-- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` 应该返回 “q1w2e3r4t5”
-- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` 应该返回 “bubbles1”
+- `53d8b3dc9d39f0184144674e310185e41a87ffd5` should return "superman"
+- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` should return "q1w2e3r4t5"
+- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` should return "bubbles1"
 
-`hashlib` 库已经为你导入。 你应该在你的代码中使用它。 [在此了解更多关于 “hashlib” 的信息](https://docs.python.org/3/library/hashlib.html)
+`hashlib` 库已经为你导入。 你应该在你的代码中使用它。 <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">在此了解更多关于 “hashlib” 的信息</a>。
 
 ## 开发
 

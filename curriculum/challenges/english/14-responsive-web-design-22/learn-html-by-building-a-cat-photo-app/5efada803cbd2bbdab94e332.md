@@ -89,6 +89,7 @@ assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/cdn\.freecodecamp\.org\/curriculum\/ca
         </ol>
 --fcc-editable-region--
         <figure>
+          
         </figure>
 --fcc-editable-region--
       </section>

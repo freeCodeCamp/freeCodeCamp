@@ -9,7 +9,7 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-<dfn>Багатовимірні масиви</dfn> можна також описати як *масиви в масивах*. Коли ви використовуєте дужки для доступу до масиву, перша пара дужок відноситься до матеріалів зовнішнього (перший рівень) масиву, і кожна додаткова пара дужок стосується наступного рівня матеріалів.
+<dfn>Багатовимірні масиви</dfn> можна також описати як *масиви в масивах*. When you use brackets to access your array, the first set of brackets refers to the entries in the outermost (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
 
 **Наприклад**
 
@@ -21,12 +21,12 @@ const arr = [
   [[10, 11, 12], 13, 14]
 ];
 
-arr[3];
-arr[3][0];
-arr[3][0][1];
+const subarray = arr[3];
+const nestedSubarray = arr[3][0];
+const element = arr[3][0][1];
 ```
 
-`arr[3]` є `[[10, 11, 12], 13, 14]`, `arr[3][0]` є `[10, 11, 12]`, і `arr[3][0][1]` є `11`.
+In this example, `subarray` has the value `[[10, 11, 12], 13, 14]`, `nestedSubarray` has the value `[10, 11, 12]`,   and `element` has the value `11` .
 
 **Примітка:** ніколи не вставляйте пробіл між ім'ям масиву і квадратними дужками, наприклад, так `array [0][0]` і навіть так `array [0] [0]` не можна робити. Незважаючи на те, що для JavaScript це є дрібницею, ця звичка може ускладнити читання коду іншими програмістами.
 

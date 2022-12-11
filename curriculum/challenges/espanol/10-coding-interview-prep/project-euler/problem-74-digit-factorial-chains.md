@@ -1,7 +1,7 @@
 ---
 id: 5900f3b61000cf542c50fec9
 title: 'Problem 74: Digit factorial chains'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302187
 dashedName: problem-74-digit-factorial-chains
 ---
@@ -14,15 +14,19 @@ $$1! + 4! + 5! = 1 + 24 + 120 = 145$$
 
 Perhaps less well known is 169, in that it produces the longest chain of numbers that link back to 169; it turns out that there are only three such loops that exist:
 
-$$\begin{align} &169 → 363601 → 1454 → 169\\\\ &871 → 45361 → 871\\\\ &872 → 45362 → 872\\\\ \end{align}$$
+$$\begin{align} &169 → 363601 → 1454 → 169\\\\
+&871 → 45361 → 871\\\\ &872 → 45362 → 872\\\\
+\end{align}$$
 
-It is not difficult to prove that EVERY starting number will eventually get stuck in a loop. For example,
+It is not difficult to prove that EVERY starting number will eventually get stuck in a loop. Por ejemplo,
 
-$$\begin{align} &69 → 363600 → 1454 → 169 → 363601\\ (→ 1454)\\\\ &78 → 45360 → 871 → 45361\\ (→ 871)\\\\ &540 → 145\\ (→ 145)\\\\ \end{align}$$
+$$\begin{align} &69 → 363600 → 1454 → 169 → 363601\\ (→ 1454)\\\\
+&78 → 45360 → 871 → 45361\\ (→ 871)\\\\ &540 → 145\\ (→ 145)\\\\
+\end{align}$$
 
 Starting with 69 produces a chain of five non-repeating terms, but the longest non-repeating chain with a starting number below one million is sixty terms.
 
-How many chains, with a starting number below `n`, contain exactly sixty non-repeating terms?
+¿Cuántas cadenas, con un número inicial debajo de `n`, contienen exactamente sesenta términos que no se repiten?
 
 # --hints--
 
@@ -32,25 +36,25 @@ How many chains, with a starting number below `n`, contain exactly sixty non-rep
 assert(typeof digitFactorialChains(2000) === 'number');
 ```
 
-`digitFactorialChains(2000)` should return `6`.
+`digitFactorialChains(2000)` debería devolver `6`.
 
 ```js
 assert.strictEqual(digitFactorialChains(2000), 6);
 ```
 
-`digitFactorialChains(100000)` should return `42`.
+`digitFactorialChains(100000)` debería devolver `42`.
 
 ```js
 assert.strictEqual(digitFactorialChains(100000), 42);
 ```
 
-`digitFactorialChains(500000)` should return `282`.
+`digitFactorialChains(500000)` debería devolver `282`.
 
 ```js
 assert.strictEqual(digitFactorialChains(500000), 282);
 ```
 
-`digitFactorialChains(1000000)` should return `402`.
+`digitFactorialChains(1000000)` debería devolver `402`.
 
 ```js
 assert.strictEqual(digitFactorialChains(1000000), 402);
