@@ -3,6 +3,6 @@
     "target": "es5",
     "lib": ["es5", "dom"]
   },
-  "include": ["e2e/**/*.ts"],
+  "include": ["e2e/**/*.ts", "support/**/*.ts"],
   "extends": "../tsconfig-base.json"
 }
