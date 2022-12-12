@@ -1,4 +1,4 @@
-import { selectors } from '../../../../support/types';
+import { selectors } from '../../../../support/selectors';
 
 const location =
   '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements';

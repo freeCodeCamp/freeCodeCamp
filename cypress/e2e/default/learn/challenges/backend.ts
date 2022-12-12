@@ -1,4 +1,4 @@
-import { selectors } from '../../../../support/types';
+import { selectors } from '../../../../support/selectors';
 
 const locations = {
   index:
