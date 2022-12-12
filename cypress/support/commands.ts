@@ -61,3 +61,15 @@ Cypress.Commands.add('goToSettings', goToSettings);
 Cypress.Commands.add('typeUsername', typeUsername);
 
 Cypress.Commands.add('resetUsername', resetUsername);
+
+// eslint-disable-next-line @typescript-eslint/no-namespace
+declare namespace Cypress {
+  interface Chainable {
+    login: typeof login;
+    preserveSession: typeof preserveSession;
+    setPrivacyTogglesToPublic: typeof setPrivacyTogglesToPublic;
+    goToSettings: typeof goToSettings;
+    typeUsername: typeof typeUsername;
+    resetUsername: typeof resetUsername;
+  }
+}
