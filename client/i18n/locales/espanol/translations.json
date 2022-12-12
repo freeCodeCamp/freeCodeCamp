@@ -264,7 +264,7 @@
       "p8": "Y este currículo te brindará miles de horas de práctica de programación.",
       "p9": "Y si deseas aprender más sobre matemáticas y teoría de la informática, también tenemos miles de horas de cursos en video en <0>el canal de YouTube de freeCodeCamp</0>.",
       "p10": "Si deseas obtener un trabajo de desarrollador o clientes independientes, las habilidades de programación serán solo una parte del rompecabezas. También necesitas construir tu red personal y tu reputación como desarrollador.",
-      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
+      "p11": "Puedes hacer esto en LinkedIn y GitHub, y también en <0>el foro freeCodeCamp</0>.",
       "p12": "¡Feliz día programando!"
     },
     "upcoming-lessons": "Próximas lecciones",
@@ -308,8 +308,8 @@
       "preview": "Vista"
     },
     "editor-alerts": {
-      "tab-trapped": "Pressing tab will now insert the tab character",
-      "tab-free": "Pressing tab will now move focus to the next focusable element"
+      "tab-trapped": "Presionando la pestaña insertará el carácter de la pestaña",
+      "tab-free": "Presionando la pestaña ahora se moverá el foco al siguiente elemento enfocable"
     },
     "help-translate": "Todavía estamos traduciendo las siguientes certificaciones.",
     "help-translate-link": "Ayúdanos a traducir.",
@@ -330,10 +330,10 @@
     "sorry-hang-in-there": "Lo sentimos, su código no pasa. Aguanta ahí.",
     "sorry-dont-giveup": "Lo sentimos, su código no pasa. No te rindas.",
     "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafíos completados",
-    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
-    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
-    "building-a-university": "We're Building a Free Computer Science University Degree Program",
-    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
+    "season-greetings-fcc": "Saludos de Temporada de la comunidad freeCodeCamp 🎉",
+    "if-getting-value": "Si estás obteniendo mucho de freeCodeCamp, ahora es un buen momento para donar con el fin de apoyar nuestra misión sin fines de lucro.",
+    "building-a-university": "Estamos construyendo un programa gratuito de grado universitario en ciencias de la computación",
+    "if-help-university": "Ya hemos hecho un montón de progresos. Apoyamos nuestra caridad con el largo camino por delante."
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -358,7 +358,7 @@
     "your-donation": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo.",
     "your-donation-2": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada mes.",
     "your-donation-3": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada año.",
-    "become-supporter": "Become a Supporter",
+    "become-supporter": "Conviértete en un colaborador",
     "duration": "Conviértete en un contribuyente único de nuestra organización sin fines de lucro.",
     "duration-2": "Conviértete en un contribuyente mensual de nuestra organización sin fines de lucro.",
     "duration-3": "Conviértete en un contribuyente anual de nuestra organización sin fines de lucro",
@@ -508,7 +508,7 @@
     "step": "Paso",
     "steps": "Pasos",
     "steps-for": "Pasos para {{blockTitle}}",
-    "code-example": "{{codeName}} code example"
+    "code-example": "ejemplo de código de {{codeName}}"
   },
   "flash": {
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica.",

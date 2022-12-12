@@ -308,8 +308,8 @@
       "preview": "Попередній перегляд"
     },
     "editor-alerts": {
-      "tab-trapped": "Pressing tab will now insert the tab character",
-      "tab-free": "Pressing tab will now move focus to the next focusable element"
+      "tab-trapped": "При натисканні клавіші tab ви вставите символ табуляції",
+      "tab-free": "При натисканні клавіші tab ви перемістите фокус на наступний елемент, який можна сфокусувати"
     },
     "help-translate": "Ми досі перекладаємо наступні сертифікації.",
     "help-translate-link": "Допоможіть нам з перекладом.",
