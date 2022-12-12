@@ -493,6 +493,10 @@ button.nav-link[aria-disabled='true'] {
   outline: 3px solid var(--blue-mid);
 }
 
+.ais-SearchBox-reset:focus {
+  outline: 3px solid var(--blue-mid);
+}
+
 .ais-SearchBox-submit:focus:not(:focus-visible) {
   outline: none;
 }
