@@ -65,7 +65,7 @@ console.log('user ' + socket.request.user.username + ' connected');
 
 它將在服務器控制檯記錄已連接的用戶！
 
-完成以上要求後，請提交你的頁面鏈接。 If you're running into errors, you can  <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
+完成以上要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 # --hints--
 

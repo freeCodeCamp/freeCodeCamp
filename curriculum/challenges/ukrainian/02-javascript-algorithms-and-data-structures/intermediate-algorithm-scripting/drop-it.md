@@ -14,7 +14,7 @@ dashedName: drop-it
 
 # --hints--
 
-`dropElements([1, 2, 3, 4], function(n) {return n >= 3;})` повинен повертатися як `[3, 4]`.
+`dropElements([1, 2, 3, 4], function(n) {return n >= 3;})` повинен повертати `[3, 4]`.
 
 ```js
 assert.deepEqual(
@@ -25,7 +25,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([0, 1, 0, 1], function(n) {return n === 1;})` повинен повертатися як `[1, 0, 1]`.
+`dropElements([0, 1, 0, 1], function(n) {return n === 1;})` повинен повертати `[1, 0, 1]`.
 
 ```js
 assert.deepEqual(
@@ -36,7 +36,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3], function(n) {return n > 0;})` повинен повертатися як `[1, 2, 3]`.
+`dropElements([1, 2, 3], function(n) {return n > 0;})` повинен повертати `[1, 2, 3]`.
 
 ```js
 assert.deepEqual(
@@ -47,7 +47,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3, 4], function(n) {return n > 5;})` повинен повертатися як `[]`.
+`dropElements([1, 2, 3, 4], function(n) {return n > 5;})` повинен повертати `[]`.
 
 ```js
 assert.deepEqual(
@@ -58,7 +58,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})` повинен повертатися як `[7, 4]`.
+`dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})` повинен повертати `[7, 4]`.
 
 ```js
 assert.deepEqual(
@@ -69,7 +69,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})` повинен повертатися як `[3, 9, 2]`.
+`dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})` повинен повертати `[3, 9, 2]`.
 
 ```js
 assert.deepEqual(

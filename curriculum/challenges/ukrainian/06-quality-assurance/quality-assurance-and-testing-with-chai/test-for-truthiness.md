@@ -10,7 +10,7 @@ dashedName: test-for-truthiness
 
 Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`isTrue()` протестує логічне значення `true` та `isNotTrue()` передасть дані, коли отримає будь-що окрім логічного значення `true`.
+`isTrue()` перевірить булеве значення `true`, а `isNotTrue()` буде передане, якщо задано щось інше, а не `true`.
 
 ```js
 assert.isTrue(true, 'This will pass with the boolean value true');
@@ -18,7 +18,7 @@ assert.isTrue('true', 'This will NOT pass with the string value "true"');
 assert.isTrue(1, 'This will NOT pass with the number value 1');
 ```
 
-`isFalse()` та `isNotFalse()` також існують, і мають схожу поведінку до своїх true двійників, якщо тільки не шукають логічне значення `false`.
+`isFalse()` та `isNotFalse()` також існують, і мають схожу поведінку до своїх true-двійників, але шукають булеве значення `false`.
 
 # --instructions--
 

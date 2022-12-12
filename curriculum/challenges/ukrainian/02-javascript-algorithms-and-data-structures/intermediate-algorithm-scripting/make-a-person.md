@@ -23,7 +23,7 @@ setFullName(firstAndLast)
 
 # --hints--
 
-Не треба додавати жодних властивостей. `Object.keys(bob).length` повинен завжди повертатися як 6.
+Не треба додавати жодних властивостей. `Object.keys(bob).length` завжди повинен повертати 6.
 
 ```js
 assert.strictEqual(
@@ -38,19 +38,19 @@ assert.strictEqual(
  );
 ```
 
-`bob instanceof Person` повинен повертатися як `true`.
+`bob instanceof Person` повинен повертати `true`.
 
 ```js
 assert.deepEqual(bob instanceof Person, true);
 ```
 
-`bob.firstName` повинен повертатися як `undefined`.
+`bob.firstName` повинен повертати `undefined`.
 
 ```js
 assert.deepEqual(bob.firstName, undefined);
 ```
 
-`bob.lastName` повинен повертатися як `undefined`.
+`bob.lastName` повинен повертати `undefined`.
 
 ```js
 assert.deepEqual(bob.lastName, undefined);

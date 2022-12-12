@@ -14,19 +14,19 @@ dashedName: sum-all-primes
 
 # --hints--
 
-`sumPrimes(10)` потрібно повернути число.
+`sumPrimes(10)` повинен повертати число.
 
 ```js
 assert.deepEqual(typeof sumPrimes(10), 'number');
 ```
 
-`sumPrimes(10)` потрібно повертати 17.
+`sumPrimes(10)` повинен повертати 17.
 
 ```js
 assert.deepEqual(sumPrimes(10), 17);
 ```
 
-`sumPrimes(977)` потрібно повертати 73156.
+`sumPrimes(977)` повинен повертати 73156.
 
 ```js
 assert.deepEqual(sumPrimes(977), 73156);

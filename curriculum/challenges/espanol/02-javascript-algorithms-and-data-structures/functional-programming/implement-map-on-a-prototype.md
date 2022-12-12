@@ -36,7 +36,7 @@ const _callback = element => element.toUpperCase();
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-`[1, 1, 2, 5, 2].myMap((element, index, array) => array[index + 1] || array[0])` should return `[1, 2, 5, 2, 1]`.
+`[1, 1, 2, 5, 2].myMap((element, index, array) => array[index + 1] || array[0])` debería devolver `[1, 2, 5, 2, 1]`.
 
 ```js
 const _test_s = [1, 1, 2, 5, 2];

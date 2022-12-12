@@ -10,7 +10,7 @@ dashedName: test-if-a-string-contains-a-substring
 
 Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`include()` та `notInclude()` також працює і для рядків! `include()` перевіряє, чи містить фактичний рядок очікуваний підрядок.
+`include()` та `notInclude()` працюють й для рядків! `include()` підтверджує, що рядок містить очікуваний підрядок.
 
 # --instructions--
 
