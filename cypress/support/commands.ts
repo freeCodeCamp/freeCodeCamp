@@ -1,19 +1,19 @@
-Cypress.Commands.add('login', () => {
+const login = () => {
   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
   cy.visit(`${Cypress.env('API_LOCATION')}/signin`);
   cy.contains('Welcome back');
-});
+};
 
-Cypress.Commands.add('preserveSession', () => {
+const preserveSession = () => {
   Cypress.Cookies.preserveOnce(
     'jwt_access_token',
     'csrf_token',
     '_csrf',
     'connect.sid'
   );
-});
+};
 
-Cypress.Commands.add('setPrivacyTogglesToPublic', () => {
+const setPrivacyTogglesToPublic = () => {
   cy.get('#privacy-settings')
     .find('.toggle-not-active')
     .each(element => {
@@ -22,23 +22,23 @@ Cypress.Commands.add('setPrivacyTogglesToPublic', () => {
   cy.get('[data-cy=save-privacy-settings]').click();
   cy.get('#honesty-policy').find('button').click();
   cy.contains('You have accepted our Academic Honesty Policy');
-});
+};
 
-Cypress.Commands.add('goToSettings', () => {
+const goToSettings = () => {
   cy.visit('/settings');
 
   // Setting aliases here
   cy.get('[data-cy=username-input]').as('usernameInput');
   cy.get('[data-cy=username-form]').as('usernameForm');
-});
+};
 
-Cypress.Commands.add('typeUsername', username => {
+const typeUsername = (username: string) => {
   cy.get('@usernameInput')
     .clear({ force: true })
     .type(username, { force: true });
-});
+};
 
-Cypress.Commands.add('resetUsername', () => {
+const resetUsername = () => {
   cy.goToSettings();
 
   cy.typeUsername('developmentuser');
@@ -48,4 +48,16 @@ Cypress.Commands.add('resetUsername', () => {
   cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
   cy.contains('Account Settings for developmentuser').should('be.visible');
-});
+};
+
+Cypress.Commands.add('login', login);
+
+Cypress.Commands.add('preserveSession', preserveSession);
+
+Cypress.Commands.add('setPrivacyTogglesToPublic', setPrivacyTogglesToPublic);
+
+Cypress.Commands.add('goToSettings', goToSettings);
+
+Cypress.Commands.add('typeUsername', typeUsername);
+
+Cypress.Commands.add('resetUsername', resetUsername);
