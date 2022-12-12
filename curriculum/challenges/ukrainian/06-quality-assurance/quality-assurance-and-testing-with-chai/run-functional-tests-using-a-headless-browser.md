@@ -45,7 +45,7 @@ test('Submit the surname "Polo" in the HTML form', function (done) {
 
 # --instructions--
 
-У межах `tests/2_functional-tests.js` у `'Submit the surname "Colombo" in the HTML form'` тесту `// #5` автоматизуйте наступне:
+У межах `tests/2_functional-tests.js` у тесті `'Submit the surname "Colombo" in the HTML form'` `// #5` автоматизуйте наступне:
 
 1.  Впишіть у форму прізвище `Colombo`
 2.  Натисніть кнопку підтвердження
@@ -89,7 +89,7 @@ test('Submit the surname "Polo" in the HTML form', function (done) {
   );
 ```
 
-Ви повинні підтвердити, що текстом всередині елемента `span#name`> є `'Cristoforo'`.
+Ви повинні підтвердити, що текстом всередині елемента `span#name` є `'Cristoforo'`.
 
 ```js
 (getUserInput) =>
@@ -105,7 +105,7 @@ test('Submit the surname "Polo" in the HTML form', function (done) {
   );
 ```
 
-Підтвердьте, що текст всередині елемента `span#surname` – це `'Colombo'`.
+Ви повинні підтвердити, що текстом всередині елемента `span#surname` є `'Colombo'`.
 
 ```js
 (getUserInput) =>
@@ -121,7 +121,7 @@ test('Submit the surname "Polo" in the HTML form', function (done) {
   );
 ```
 
-Підтвердьте, що елемент `span#dates` існує, а його підрахунок - 1.
+Ви повинні підтвердити, що існує лише один елемент `span#dates`.
 
 ```js
 (getUserInput) =>

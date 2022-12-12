@@ -12,17 +12,17 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, in the `'Submit the surname "Vespucci" in the HTML form'` test (`// #6`), automate the following:
+У межах `tests/2_functional-tests.js` у тесті `'Submit the surname "Vespucci" in the HTML form'` (`// #6`) автоматизуйте наступне:
 
 1.  Впишіть у форму прізвище `Vespucci`
 2.  Натисніть кнопку підтвердження
 
 У межах кнопки зворотного виклику `pressButton`:
 
-1.  Підтвердьте, що статус – OK `200`
-2.  Підтвердьте, що текст всередині елемента `span#name` – це `'Amerigo'`
-3.  Підтвердьте, що текст всередині елемента `span#surname` – це `'Vespucci'`
-4.  Підтвердьте, що елемент(и) `span#dates` існують і їхній підрахунок дорівнює `1`
+1.  Підтвердьте, що статус становить OK `200`
+2.  Підтвердьте, що текстом всередині елемента `span#name` є `'Amerigo'`
+3.  Підтвердьте, що текстом всередині елемента `span#surname` є `'Vespucci'`
+4.  Підтвердьте, що елемент(и) `span#dates` існують та їхня кількість дорівнює `1`
 
 Не забудьте видалити виклик `assert.fail()`.
 
@@ -42,7 +42,7 @@ Within `tests/2_functional-tests.js`, in the `'Submit the surname "Vespucci" in 
   );
 ```
 
-Вам слід підтвердити, що запит безголового браузера був успішним.
+Ви повинні підтвердити, що запит headless браузера був успішним.
 
 ```js
 (getUserInput) =>
@@ -56,7 +56,7 @@ Within `tests/2_functional-tests.js`, in the `'Submit the surname "Vespucci" in 
   );
 ```
 
-Підтвердьте, що текст всередині елемента `span#name`> – це `'Amerigo'`.
+Ви повинні підтвердити, що текстом всередині елемента `span#name` є `'Amerigo'`.
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ Within `tests/2_functional-tests.js`, in the `'Submit the surname "Vespucci" in 
   );
 ```
 
-Підтвердьте, що текст всередині елемента `span#surname` – це `'Vespucci'`.
+Ви повинні підтвердити, що текстом всередині елемента `span#surname` є `'Vespucci'`.
 
 ```js
 (getUserInput) =>
@@ -88,7 +88,7 @@ Within `tests/2_functional-tests.js`, in the `'Submit the surname "Vespucci" in 
   );
 ```
 
-Підтвердьте, що елемент `span#dates` існує, а його підрахунок - 1.
+Ви повинні підтвердити, що існує лише один елемент `span#dates`.
 
 ```js
 (getUserInput) =>

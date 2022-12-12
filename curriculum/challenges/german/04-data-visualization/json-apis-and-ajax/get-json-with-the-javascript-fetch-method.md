@@ -38,13 +38,37 @@ Aktualisiere den Code, um eine `GET`-Anfrage an die freeCodeCamp Katzen-Foto-API
 
 # --hints--
 
-Dein Code sollte eine `GET`-Anfrage mit `fetch` stellen.
+
+Your code should use the fetched data to replace the inner HTML
+
+```js
+const catData = "dummy data";
+const ref = fetch;
+fetch = () => Promise.resolve({ json: () => catData });
+async () => {
+  try {
+    document.getElementById("getMessage").click();
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    fetch = ref;
+    assert.equal(
+      document.getElementById("message").textContent,
+      JSON.stringify(catData)
+    );
+  }
+};
+```
+
+
+Your code should make a `GET` request with `fetch`.
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-Dein Code sollte `then` verwenden, um die Antwort in JSON zu konvertieren.
+Your code should use `then` to convert the response to JSON.
 
 ```js
 assert(
@@ -54,13 +78,13 @@ assert(
 );
 ```
 
-Dein Code sollte `then` verwenden, um die Daten zu verarbeiten, die von dem anderen `then` in JSON umgewandelt wurden.
+Your code should use `then` to handle the data converted to JSON by the other `then`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-Dein Code sollte das Element mit der ID `message` erhalten und sein inneres HTML in den String der JSON-Daten ändern.
+Your code should get the element with id `message` and change its inner HTML to the string of JSON data.
 
 ```js
 assert(

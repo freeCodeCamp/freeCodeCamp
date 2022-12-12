@@ -14,13 +14,13 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 .approximately(actual, expected, delta, [message])
 ```
 
-Перевіряє, щоб `actual` дорівнював `expected`, у межах +/- `delta` діапазону.
+Підтверджує, що `actual` рівний `expected`, у межах діапазону +/- `delta`.
 
 # --instructions--
 
 У межах `tests/1_unit-tests.js` під тестом з міткою `#10` в наборі `Comparisons` змініть кожен `assert` на `assert.approximately`, щоб пройти тест (повинен дорівнювати `true`).
 
-Виберіть мінімальний діапазон (третій параметр) для того, щоб тест можна було проходити завжди. Він має бути менше ніж 1.
+Виберіть мінімальний діапазон (третій параметр) для того, щоб тест завжди проходив. Він повинен бути менший за 1.
 
 # --hints--
 
@@ -38,7 +38,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
   );
 ```
 
-Оберіть правильний діапазон для першого твердження - `approximately(actual, expected, range)`.
+Ви повинні обрати правильний діапазон для першого твердження: `approximately(actual, expected, range)`.
 
 ```js
 (getUserInput) =>
@@ -57,7 +57,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
   );
 ```
 
-Оберіть правильний діапазон для другого твердження - `approximately(actual, expected, range)`.
+Ви повинні обрати правильний діапазон для другого твердження: `approximately(actual, expected, range)`.
 
 ```js
 (getUserInput) =>

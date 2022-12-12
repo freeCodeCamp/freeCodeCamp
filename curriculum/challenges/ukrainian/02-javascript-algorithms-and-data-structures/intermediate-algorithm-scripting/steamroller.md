@@ -12,25 +12,25 @@ dashedName: steamroller
 
 # --hints--
 
-`steamrollArray([[["a"]], [["b"]]])` повинен повертатися як `["a", "b"]`.
+`steamrollArray([[["a"]], [["b"]]])` повинен повертати `["a", "b"]`.
 
 ```js
 assert.deepEqual(steamrollArray([[['a']], [['b']]]), ['a', 'b']);
 ```
 
-`steamrollArray([1, [2], [3, [[4]]]])` повинен повертатися як `[1, 2, 3, 4]`.
+`steamrollArray([1, [2], [3, [[4]]]])` повинен повертати `[1, 2, 3, 4]`.
 
 ```js
 assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4]);
 ```
 
-`steamrollArray([1, [], [3, [[4]]]])` повинен повертатися як `[1, 3, 4]`.
+`steamrollArray([1, [], [3, [[4]]]])` повинен повертати `[1, 3, 4]`.
 
 ```js
 assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4]);
 ```
 
-`steamrollArray([1, {}, [3, [[4]]]])` повинен повертатися як `[1, {}, 3, 4]`.
+`steamrollArray([1, {}, [3, [[4]]]])` повинен повертати `[1, {}, 3, 4]`.
 
 ```js
 assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);

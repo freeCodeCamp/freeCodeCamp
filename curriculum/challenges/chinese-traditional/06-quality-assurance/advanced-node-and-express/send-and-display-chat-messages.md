@@ -22,13 +22,13 @@ $('form').submit(function() {
 socket.emit('chat message', messageToSend);
 ```
 
-在服務端，我們需要監聽包含 `message` 數據的 `'chat message'` 事件。 Once the event is received, it should emit the event `'chat message'` to all sockets using `io.emit`, sending a data object containing the `username` and `message`.
+在服務端，我們需要監聽包含 `message` 數據的 `'chat message'` 事件。 一旦接收到事件，服務端應該使用 `io.emit` 向所有套接字發出 `'chat message'` 事件，併發送包含 `username` 和 `message` 的數據對象。
 
-In `client.js`, you should now listen for event `'chat message'` and, when received, append a list item to `#messages` with the username, a colon, and the message!
+在 `client.js` 中，你現在應該監聽 `'chat message'` 事件，並在接收到事件後將用戶名、冒號和消息添加到 `#messages` 的列表項中！
 
 至此，我們已經完成發送信息到所有客戶端的功能。
 
-完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 # --hints--
 
