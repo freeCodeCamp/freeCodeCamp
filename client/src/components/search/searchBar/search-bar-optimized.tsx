@@ -52,17 +52,12 @@ const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
               value={value}
               ref={inputElementRef}
             />
-            <button
-              className='ais-SearchBox-submit'
-              title='Submit search terms.'
-              type='submit'
-            >
+            <button className='ais-SearchBox-submit' type='submit'>
               <Magnifier />
             </button>
             {value && (
               <button
                 className='ais-SearchBox-reset'
-                title='Clear search terms.'
                 onClick={onClick}
                 type='button'
               >

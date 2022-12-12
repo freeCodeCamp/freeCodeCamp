@@ -6,7 +6,7 @@ const InputReset = (): JSX.Element => {
 
   return (
     <>
-      <span className='sr-only'>{t('icons.InputReset')}</span>
+      <span className='sr-only'>{t('icons.inputReset')}</span>
       <svg
         className='ais-SearchBox-resetIcon'
         height='10'
