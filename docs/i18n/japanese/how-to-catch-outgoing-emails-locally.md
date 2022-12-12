@@ -50,11 +50,11 @@ brew services start mailhog
 
 <details><summary>Windows に MailHog をインストールする</summary>
 
-[MailHog の公式リポジトリ](https://github.com/mailhog/MailHog/releases) から最新バージョンの MailHog をダウンロードします。 Windows バージョン (32 ビットまたは 64 ビット) のリンクをクリックすると、.exe ファイルがコンピュータにダウンロードされます。
+[MailHog の公式リポジトリ](https://github.com/mailhog/MailHog/releases) から最新バージョンの MailHog をダウンロードします。 Locate and click on the link for your Windows version (32 or 64 bit) and a `.exe` file will be downloaded to your computer.
 
 ダウンロードが完了したら、クリックしてファイルを開きます。 Windows ファイアウォールの通知が表示され、MailHog のアクセス許可を要求する場合があります。 ファイアウォールへのアクセスが許可されると、標準の Windows コマンドラインプロンプトが開き、MailHog が実行されます。
 
-コマンドプロンプトウィンドウを閉じて、MailHog を閉じます。 MailHog を再度起動するには、最初にダウンロードした MailHog 実行可能ファイル (.exe)  をクリックします。新たに MailHog インストールファイルをダウンロードする必要はありません。
+コマンドプロンプトウィンドウを閉じて、MailHog を閉じます。 To start MailHog again, click on the MailHog executable (`.exe`) file that was downloaded initially - it is not necessary to download a new MailHog installation file.
 
 [MailHog の使用](#mailhog-の使用) を開始します。
 

@@ -50,11 +50,11 @@ Wenn die Installation abgeschlossen ist, kannst du [MailHog](#using-mailhog) ben
 
 <details><summary>Installation von MailHog unter Windows</summary>
 
-Lade die neueste Version von MailHog von [MailHogs offiziellem Repository](https://github.com/mailhog/MailHog/releases) herunter. Klicke auf den Link für deine Windows-Version (32 oder 64 Bit) und es wird eine exe-Datei auf deinen Computer heruntergeladen.
+Lade die neueste Version von MailHog von [MailHogs offiziellem Repository](https://github.com/mailhog/MailHog/releases) herunter. Locate and click on the link for your Windows version (32 or 64 bit) and a `.exe` file will be downloaded to your computer.
 
 Wenn der Download abgeschlossen ist, klicke auf die Datei, um sie zu öffnen. Es kann sein, dass eine Benachrichtigung der Windows-Firewall erscheint, die eine Zugriffsberechtigung für MailHog anfordert. Es öffnet sich eine Standard-Windows-Kommandozeile, in der MailHog ausgeführt wird, sobald der Firewall-Zugriff gewährt wurde.
 
-Beende MailHog, indem du das Fenster der Kommandozeile schließt. Um MailHog erneut zu starten, klicke auf die ausführbare MailHog-Datei (.exe), die du ursprünglich heruntergeladen hast - es ist nicht nötig, eine neue MailHog-Installationsdatei herunterzuladen.
+Beende MailHog, indem du das Fenster der Kommandozeile schließt. To start MailHog again, click on the MailHog executable (`.exe`) file that was downloaded initially - it is not necessary to download a new MailHog installation file.
 
 Starte [mit der Nutzung von MailHog](#using-mailhog).
 
