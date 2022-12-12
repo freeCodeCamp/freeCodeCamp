@@ -308,8 +308,8 @@
       "preview": "Anteprima"
     },
     "editor-alerts": {
-      "tab-trapped": "Pressing tab will now insert the tab character",
-      "tab-free": "Pressing tab will now move focus to the next focusable element"
+      "tab-trapped": "Premendo tab ora potrai inserire il carattere tab",
+      "tab-free": "Premendo tab ora potrai spostare il focus sull'elemento successivo"
     },
     "help-translate": "Stiamo ancora traducendo le seguenti certificazioni.",
     "help-translate-link": "Aiutaci con le traduzioni...",
