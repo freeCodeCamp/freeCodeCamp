@@ -1,0 +1,782 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should check legacy certification button consistency 1`] = `
+Array [
+  <div
+    className="row"
+  >
+    <div
+      className="col-sm-8 col-sm-offset-2 col-xs-12"
+    >
+      <div
+        className="spacer"
+        style={
+          Object {
+            "height": "1px",
+            "padding": "15px 0",
+          }
+        }
+      />
+      <h3
+        className="text-center"
+        id="cert-legacy-front-end"
+      >
+        Legacy Front End
+      </h3>
+      <table
+        className="table"
+      >
+        <thead>
+          <tr>
+            <th>
+              settings.labels.project-name
+            </th>
+            <th>
+              settings.labels.solution
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage"
+              >
+                Build a Personal Portfolio Webpage
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine"
+              >
+                Build a Random Quote Machine
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock"
+              >
+                Build a 25 + 5 Clock
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator"
+              >
+                Build a JavaScript Calculator
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/show-the-local-weather"
+              >
+                Show the Local Weather
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/use-the-twitch-json-api"
+              >
+                Use the TwitchTV JSON API
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page"
+              >
+                Build a Tribute Page
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/build-a-wikipedia-viewer"
+              >
+                Build a Wikipedia Viewer
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/build-a-tic-tac-toe-game"
+              >
+                Build a Tic Tac Toe Game
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/build-a-simon-game"
+              >
+                Build a Simon Game
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr>
+            <td
+              colSpan={2}
+            >
+              <a
+                className="col-xs-12 btn btn-primary btn-block"
+                data-cy="btn-for-legacy-front-end"
+                href="/certification/undefined/legacy-front-end"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                buttons.claim-cert
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>,
+  <div
+    className="row"
+  >
+    <div
+      className="col-sm-8 col-sm-offset-2 col-xs-12"
+    >
+      <div
+        className="spacer"
+        style={
+          Object {
+            "height": "1px",
+            "padding": "15px 0",
+          }
+        }
+      />
+      <h3
+        className="text-center"
+        id="cert-legacy-back-end"
+      >
+        Legacy Back End
+      </h3>
+      <table
+        className="table"
+      >
+        <thead>
+          <tr>
+            <th>
+              settings.labels.project-name
+            </th>
+            <th>
+              settings.labels.solution
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice"
+              >
+                Timestamp Microservice
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice"
+              >
+                Request Header Parser Microservice
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/url-shortener-microservice"
+              >
+                URL Shortener Microservice
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/build-an-image-search-abstraction-layer"
+              >
+                Image Search Abstraction Layer
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice"
+              >
+                File Metadata Microservice
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/build-a-voting-app"
+              >
+                Build a Voting App
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/build-a-nightlife-coordination-app"
+              >
+                Build a Nightlife Coordination App
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/chart-the-stock-market"
+              >
+                Chart the Stock Market
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/manage-a-book-trading-club"
+              >
+                Manage a Book Trading Club
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/build-a-pinterest-clone"
+              >
+                Build a Pinterest Clone
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr>
+            <td
+              colSpan={2}
+            >
+              <a
+                className="col-xs-12 btn btn-primary btn-block"
+                data-cy="btn-for-legacy-back-end"
+                href="/certification/undefined/legacy-back-end"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                buttons.claim-cert
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>,
+  <div
+    className="row"
+  >
+    <div
+      className="col-sm-8 col-sm-offset-2 col-xs-12"
+    >
+      <div
+        className="spacer"
+        style={
+          Object {
+            "height": "1px",
+            "padding": "15px 0",
+          }
+        }
+      />
+      <h3
+        className="text-center"
+        id="cert-legacy-data-visualization"
+      >
+        Legacy Data Visualization
+      </h3>
+      <table
+        className="table"
+      >
+        <thead>
+          <tr>
+            <th>
+              settings.labels.project-name
+            </th>
+            <th>
+              settings.labels.solution
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer"
+              >
+                Build a Markdown Previewer
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/build-a-freecodecamp-forum-homepage"
+              >
+                Build a freeCodeCamp Forum Homepage
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/build-a-recipe-box"
+              >
+                Build a Recipe Box
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/build-the-game-of-life"
+              >
+                Build the Game of Life
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/build-a-roguelike-dungeon-crawler-game"
+              >
+                Build a Roguelike Dungeon Crawler Game
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart"
+              >
+                Visualize Data with a Bar Chart
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph"
+              >
+                Visualize Data with a Scatterplot Graph
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map"
+              >
+                Visualize Data with a Heat Map
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/show-national-contiguity-with-a-force-directed-graph"
+              >
+                Show National Contiguity with a Force Directed Graph
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/coding-interview-prep/take-home-projects/map-data-across-the-globe"
+              >
+                Map Data Across the Globe
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr>
+            <td
+              colSpan={2}
+            >
+              <a
+                className="col-xs-12 btn btn-primary btn-block"
+                data-cy="btn-for-legacy-data-visualization"
+                href="/certification/undefined/legacy-data-visualization"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                buttons.claim-cert
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>,
+  <div
+    className="row"
+  >
+    <div
+      className="col-sm-8 col-sm-offset-2 col-xs-12"
+    >
+      <div
+        className="spacer"
+        style={
+          Object {
+            "height": "1px",
+            "padding": "15px 0",
+          }
+        }
+      />
+      <h3
+        className="text-center"
+        id="cert-information-security-and-quality-assurance"
+      >
+        Legacy Information Security and Quality Assurance
+      </h3>
+      <table
+        className="table"
+      >
+        <thead>
+          <tr>
+            <th>
+              settings.labels.project-name
+            </th>
+            <th>
+              settings.labels.solution
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter"
+              >
+                Metric-Imperial Converter
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/quality-assurance/quality-assurance-projects/issue-tracker"
+              >
+                Issue Tracker
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/quality-assurance/quality-assurance-projects/personal-library"
+              >
+                Personal Library
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/information-security/information-security-projects/stock-price-checker"
+              >
+                Stock Price Checker
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr
+            className="project-row"
+          >
+            <td
+              className="project-title col-sm-8 col-xs-8"
+            >
+              <a
+                href="/learn/information-security/information-security-projects/anonymous-message-board"
+              >
+                Anonymous Message Board
+              </a>
+            </td>
+            <td
+              className="project-solution col-sm-4 col-xs-4"
+            />
+          </tr>
+          <tr>
+            <td
+              colSpan={2}
+            >
+              <a
+                className="col-xs-12 btn btn-primary btn-block"
+                data-cy="btn-for-information-security-and-quality-assurance"
+                href="/certification/undefined/information-security-and-quality-assurance"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                buttons.claim-cert
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>,
+]
+`;
