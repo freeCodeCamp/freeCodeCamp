@@ -265,7 +265,9 @@ export class CertificationSettings extends Component {
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8 col-xs-8'>
-            <Link to={link}>{title}</Link>
+            <Link to={link}>
+              {t(`certification.project.title.${title}`, title)}
+            </Link>
           </td>
           <td className='project-solution col-sm-4 col-xs-4'>
             {this.getProjectSolution(id, title)}
