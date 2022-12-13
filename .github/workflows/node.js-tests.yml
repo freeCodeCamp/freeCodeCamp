@@ -31,7 +31,7 @@ jobs:
         run: |
           if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 1 ]
           then
-            echo 'Error: found too many lockfiles in the repository'
+            echo -e 'Error: found too many lockfiles in the repository.\nWe use npm workspaces to manage packages so all dependencies should be added to the root package-lock.json'
             exit 1
           fi
 
