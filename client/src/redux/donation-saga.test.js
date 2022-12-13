@@ -5,7 +5,7 @@ import {
   addDonation
 } from '../utils/ajax';
 import { postChargeSaga, setDonationCookie } from './donation-saga.js';
-import { postChargeComplete, executeGA } from './actions';
+import { postChargeComplete, postChargeProcessing, executeGA } from './actions';
 
 jest.mock('../utils/ajax');
 jest.mock('../analytics');
@@ -34,6 +34,7 @@ const analyticsDataMock = {
 describe('donation-saga', () => {
   it('calls postChargeStrip for Stripe', () => {
     return expectSaga(postChargeSaga, postChargeDataMock)
+      .put(postChargeProcessing())
       .call(postChargeStripe, postChargeDataMock.payload)
       .put(postChargeComplete())
       .call(setDonationCookie)
@@ -53,6 +54,7 @@ describe('donation-saga', () => {
     const { paymentMethodId, amount, duration } = stripeCardDataMock.payload;
     const optimizedPayload = { paymentMethodId, amount, duration };
     return expectSaga(postChargeSaga, stripeCardDataMock)
+      .put(postChargeProcessing())
       .call(postChargeStripeCard, optimizedPayload)
       .put(postChargeComplete())
       .call(setDonationCookie)
@@ -78,6 +80,7 @@ describe('donation-saga', () => {
     const { amount, duration } = paypalDataMock.payload;
     return expectSaga(postChargeSaga, paypalDataMock)
       .withState(storeMock)
+      .put(postChargeProcessing())
       .call(addDonation, { amount, duration })
       .put(postChargeComplete())
       .call(setDonationCookie)
@@ -100,6 +103,7 @@ describe('donation-saga', () => {
 
     return expectSaga(postChargeSaga, paypalDataMock)
       .withState(storeMock)
+      .put(postChargeProcessing())
       .not.call.fn(addDonation)
       .put(postChargeComplete())
       .call(setDonationCookie)

@@ -19,6 +19,7 @@ import { actionTypes as appTypes } from './action-types';
 import {
   openDonationModal,
   postChargeComplete,
+  postChargeProcessing,
   postChargeError,
   preventBlockDonationRequests,
   preventProgressDonationRequests,
@@ -60,6 +61,10 @@ export function* postChargeSaga({
   }
 }) {
   try {
+    if (paymentProvider !== 'patreon') {
+      yield put(postChargeProcessing());
+    }
+
     if (paymentProvider === 'stripe') {
       yield call(postChargeStripe, payload);
     } else if (paymentProvider === 'stripe card') {

@@ -130,7 +130,7 @@ export const reducer = handleActions(
       ...state,
       donationFormState: { ...state.donationFormState, ...payload }
     }),
-    [actionTypes.postCharge]: state => ({
+    [actionTypes.postChargeProcessing]: state => ({
       ...state,
       donationFormState: { ...defaultDonationFormState, processing: true }
     }),

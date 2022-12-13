@@ -54,6 +54,9 @@ export const fetchUserComplete = createAction(actionTypes.fetchUserComplete);
 export const fetchUserError = createAction(actionTypes.fetchUserError);
 
 export const postCharge = createAction(actionTypes.postCharge);
+export const postChargeProcessing = createAction(
+  actionTypes.postChargeProcessing
+);
 export const postChargeComplete = createAction(actionTypes.postChargeComplete);
 export const postChargeError = createAction(actionTypes.postChargeError);
 
