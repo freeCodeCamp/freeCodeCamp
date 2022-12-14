@@ -69,7 +69,7 @@ function createQuestionEpic(action$, state$, { window }) {
             lines.splice(end, 0, comment);
             return { ...file, contents: lines.join('\n') };
           }
-          return { file };
+          return file;
         });
         challengeFiles = filesWithEditableRegions;
       }
