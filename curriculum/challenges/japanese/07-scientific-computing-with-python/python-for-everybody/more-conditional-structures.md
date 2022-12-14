@@ -14,9 +14,9 @@ dashedName: more-conditional-structures
 
 その他のリソース:
 
-\- <a href="https://www.youtube.com/watch?v=crLerB4ZxMI" target="_blank" rel="noopener noreferrer nofollow">Exercise 1</a>
+\- <a href="https://www.youtube.com/watch?v=crLerB4ZxMI" target="_blank" rel="noopener noreferrer nofollow">演習 1</a>
 
-\- <a href="https://www.youtube.com/watch?v=KJN3-7HH6yk" target="_blank" rel="noopener noreferrer nofollow">Exercise 2</a>
+\- <a href="https://www.youtube.com/watch?v=KJN3-7HH6yk" target="_blank" rel="noopener noreferrer nofollow">演習 2</a>
 
 # --question--
 

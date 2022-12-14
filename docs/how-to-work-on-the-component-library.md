@@ -92,6 +92,14 @@ To run tests against the component library, run the following command from the r
 npm run test-ui-components
 ```
 
+## Adding packages to the UI-Component library
+
+We restrict adding new packages to the UI Components to help with the project's maintainability. In the rare chance that you think a dependency is needed, please check with the maintainers first and then use the following command to add a package:
+
+```bash
+npm i -w=tools/ui-components package_name
+```
+
 ### Useful links
 
 - [Testing for Accessibility](https://testing-library.com/docs/dom-testing-library/api-accessibility)
