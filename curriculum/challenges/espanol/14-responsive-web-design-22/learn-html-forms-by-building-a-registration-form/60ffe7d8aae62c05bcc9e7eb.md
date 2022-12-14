@@ -51,7 +51,7 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
       <fieldset>
         <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" /> Personal Account</label>
         <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business Account</label>
-        <label for="terms-and-conditions" name="terms-and-conditions">
+        <label for="terms-and-conditions">
           <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" class="inline" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
         </label>
       </fieldset>
