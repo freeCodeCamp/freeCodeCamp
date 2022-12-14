@@ -213,6 +213,7 @@ client/static/_redirects
 client/static/mobile
 client/static/curriculum-data
 client/i18n/locales/**/trending.json
+client/src/components/Donation/types.js
 
 ### UI Components ###
 tools/ui-components/dist
