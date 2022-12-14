@@ -38,11 +38,14 @@ const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
             onSubmit={onSubmit}
             role='search'
           >
+            <label className='sr-only' htmlFor='ais-SearchBox-input'>
+              {t ? t('search.label') : ''}
+            </label>
             <input
-              aria-label='Search'
               autoCapitalize='off'
               autoComplete='off'
               autoCorrect='off'
+              id='ais-SearchBox-input'
               className='ais-SearchBox-input'
               maxLength={512}
               onChange={onChange}

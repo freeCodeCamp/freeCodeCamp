@@ -187,6 +187,8 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
   render(): JSX.Element {
     const { isDropdownEnabled, isSearchFocused, innerRef, t } = this.props;
     const { index } = this.state;
+    const submitTitle = t ? t('icons.magnifier') : '';
+    const resetTitle = t ? t('icons.inputReset') : '';
     const placeholder = t ? t('search.placeholder') : '';
 
     return (
@@ -210,7 +212,11 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
                       this.handleSearch(e);
                     }}
                     showLoadingIndicator={false}
-                    translations={{ placeholder }}
+                    translations={{
+                      submitTitle: submitTitle,
+                      resetTitle: resetTitle,
+                      placeholder: placeholder
+                    }}
                   />
                 </div>
               </ObserveKeys>
