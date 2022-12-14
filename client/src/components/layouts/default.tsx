@@ -142,18 +142,14 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
       block,
       superBlock,
       t,
-      theme = 'default',
-      user,
-      useTheme = true
+      user
     } = this.props;
 
     return (
       <div className='page-wrapper'>
         <Helmet
           bodyAttributes={{
-            class: useTheme
-              ? `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
-              : 'light-palette'
+            class: 'system-palette'
           }}
           meta={[
             {
