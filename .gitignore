@@ -164,6 +164,7 @@ config/client/test-evaluator.json
 config/curriculum.json
 config/i18n.js
 config/certification-settings.js
+config/donation-settings.js
 config/superblock-order.js
 config/superblock-order.test.js
 
