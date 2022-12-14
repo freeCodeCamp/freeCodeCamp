@@ -14,7 +14,7 @@ dashedName: iterations-more-patterns
 
 その他のリソース:
 
-\- <a href="https://www.youtube.com/watch?v=kjxXZQw0uPg" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=kjxXZQw0uPg" target="_blank" rel="noopener noreferrer nofollow">演習</a>
 
 # --question--
 
