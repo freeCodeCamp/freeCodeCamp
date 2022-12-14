@@ -15,6 +15,7 @@ import {
   postChargeStripeCard
 } from '../utils/ajax';
 import { stringifyDonationEvents } from '../utils/analyticsStrings';
+import { PaymentProvider } from '../../../config/donation-settings';
 import { actionTypes as appTypes } from './action-types';
 import {
   openDonationModal,
@@ -61,13 +62,13 @@ export function* postChargeSaga({
   }
 }) {
   try {
-    if (paymentProvider !== 'patreon') {
+    if (paymentProvider !== PaymentProvider.Patreon) {
       yield put(postChargeProcessing());
     }
 
-    if (paymentProvider === 'stripe') {
+    if (paymentProvider === PaymentProvider.Stripe) {
       yield call(postChargeStripe, payload);
-    } else if (paymentProvider === 'stripe card') {
+    } else if (paymentProvider === PaymentProvider.StripeCard) {
       const optimizedPayload = { paymentMethodId, amount, duration };
       const response = yield call(postChargeStripeCard, optimizedPayload);
       const error = response?.data?.error;
@@ -83,14 +84,20 @@ export function* postChargeSaga({
         //if the authentication does not throw an error, add a donation
         yield call(addDonation, { amount, duration });
       }
-    } else if (paymentProvider === 'paypal') {
+    } else if (paymentProvider === PaymentProvider.Paypal) {
       // If the user is signed in and the payment goes through call api
       let isSignedIn = yield select(isSignedInSelector);
       // look into skip add donation
       // what to do with "data" that comes throug
       if (isSignedIn) yield call(addDonation, { amount, duration });
     }
-    if (['paypal', 'stripe', 'stripe card'].includes(paymentProvider)) {
+    if (
+      [
+        PaymentProvider.Paypal,
+        PaymentProvider.Stripe,
+        PaymentProvider.StripeCard
+      ].includes(paymentProvider)
+    ) {
       yield put(postChargeComplete());
       yield call(setDonationCookie);
     }
@@ -99,7 +106,9 @@ export function* postChargeSaga({
         type: 'event',
         data: {
           category:
-            paymentProvider === 'patreon' ? 'Donation Related' : 'Donation',
+            paymentProvider === PaymentProvider.Patreon
+              ? 'Donation Related'
+              : 'Donation',
           action: stringifyDonationEvents(paymentContext, paymentProvider),
           label: duration,
           value: amount

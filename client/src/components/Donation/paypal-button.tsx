@@ -5,7 +5,8 @@ import { createSelector } from 'reselect';
 import {
   paypalConfigurator,
   paypalConfigTypes,
-  defaultDonation
+  defaultDonation,
+  PaymentProvider
 } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
@@ -145,7 +146,10 @@ export class PaypalButton extends Component<
           isPaypalLoading={isPaypalLoading}
           isSubscription={isSubscription}
           onApprove={(data: DonationApprovalData) => {
-            this.props.postPayment({ paymentProvider: 'paypal', data });
+            this.props.postPayment({
+              paymentProvider: PaymentProvider.Paypal,
+              data
+            });
           }}
           onCancel={() => {
             this.props.onDonationStateChange({

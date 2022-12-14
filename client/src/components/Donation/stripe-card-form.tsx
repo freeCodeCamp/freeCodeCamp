@@ -13,6 +13,7 @@ import type {
 } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 
+import { PaymentProvider } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
 import { Themes } from '../settings/theme';
 import { DonationApprovalData, PostPayment } from './types';
@@ -116,7 +117,7 @@ const StripeCardForm = ({
           });
         } else if (paymentMethod)
           postPayment({
-            paymentProvider: 'stripe card',
+            paymentProvider: PaymentProvider.StripeCard,
             paymentMethodId: paymentMethod.id,
             handleAuthentication
           });

@@ -19,6 +19,7 @@ import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/campers-image';
 import { executeGA } from '../redux/actions';
 import { signInLoadingSelector, userSelector } from '../redux/selectors';
+import { PaymentContext } from '../../../config/donation-settings';
 
 export interface ExecuteGaArg {
   type: string;
@@ -98,7 +99,7 @@ function DonatePage({
               <DonationText />
               <Row>
                 <Col xs={12}>
-                  <DonateForm paymentContext='donate page' />
+                  <DonateForm paymentContext={PaymentContext.DonatePage} />
                 </Col>
               </Row>
               <Spacer size={3} />

@@ -115,3 +115,16 @@ export const aBTestConfig = {
   isTesting: true,
   type: 'secureIconButtonOnly'
 };
+
+export enum PaymentContext {
+  Modal = 'modal',
+  DonatePage = 'donate page',
+  Certificate = 'certificate'
+}
+
+export enum PaymentProvider {
+  Paypal = 'paypal',
+  Patreon = 'patreon',
+  Stripe = 'stripe',
+  StripeCard = 'stripe card'
+}

@@ -6,7 +6,10 @@ import { connect } from 'react-redux';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
-import { modalDefaultDonation } from '../../../../config/donation-settings';
+import {
+  modalDefaultDonation,
+  PaymentContext
+} from '../../../../config/donation-settings';
 import Cup from '../../assets/icons/cup';
 import Heart from '../../assets/icons/heart';
 
@@ -143,7 +146,7 @@ function DonateModal({
             <DonateForm
               handleProcessing={handleProcessing}
               isMinimalForm={true}
-              paymentContext='modal'
+              paymentContext={PaymentContext.Modal}
             />
           </Col>
         </Row>

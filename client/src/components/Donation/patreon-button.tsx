@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   donationUrls,
-  patreonDefaultPledgeAmount
+  patreonDefaultPledgeAmount,
+  PaymentProvider
 } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
 import PatreonLogo from '../../assets/images/components/patreon-logo';
@@ -37,7 +38,7 @@ const PatreonButton = ({
       className='patreon-button link-button'
       data-patreon-widget-type='become-patron-button'
       href={href}
-      onClick={() => postPayment({ paymentProvider: 'patreon' })}
+      onClick={() => postPayment({ paymentProvider: PaymentProvider.Patreon })}
       rel='noreferrer'
       target='_blank'
     >
