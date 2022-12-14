@@ -29,10 +29,9 @@
   --editor-background-light: #fffffe;
   --editor-background-dark: #2a2b40;
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --gray-color-primary: var(--gray-09);
+    --gray-color-primary: var(--gray-00);
     --gray-color-secondary: var(--gray-05);
     --gray-color-tertiary: var(-gray-10);
     --gray-color-quaternary: var(--gray-15);
@@ -116,7 +115,7 @@
 
 .system-palette {
   --primary-color: var(--gray-color-primary);
-  --secondary-color: var(--selection-color-system);
+  --secondary-color: var(--gray-color-secondary);
   --tertiary-color: var(--gray-color-tertiary);
   --quaternary-color: var(--gray-color-quaternary);
   --quaternary-background: var(--gray-bg-quaternary);
