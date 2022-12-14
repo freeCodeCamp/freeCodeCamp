@@ -79,8 +79,11 @@ Intro project buttons and headings
 universal-nav-bar
 and menu secion
 */
-[dir='rtl'] .nav-list {
-  right: auto;
+@media (min-width: 767.5px) {
+  [dir='rtl'] .nav-list {
+    right: auto;
+    left: 0;
+  }
 }
 
 @media (max-width: 980px) {
@@ -120,6 +123,12 @@ New RWD project challenge
   border-right: none;
 }
 
+/* Align the the Arabic head with the corresponding English word */
+
+[dir='rtl'] .table thead:first-child tr:first-child th {
+  text-align: right;
+}
+
 /* 
 sections that need to stay left to right
 */
@@ -132,8 +141,6 @@ sections that need to stay left to right
 [dir='rtl'] .overflow-guard,
 [dir='rtl'] .challenge-preview,
 [dir='rtl'] .output-text,
-/* setting table project name */
-[dir='rtl'] .certification-settings .table tbody .project-title,
 /* timeline*/
 [dir='rtl'] .timeline-pagination_list {
   direction: ltr;
