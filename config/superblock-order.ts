@@ -392,7 +392,7 @@ export const superBlockOrder: SuperBlockOrder = {
   },
   [Languages.Japanese]: {
     [CurriculumMaps.Landing]: [
-      SuperBlocks.RespWebDesign,
+      SuperBlocks.RespWebDesignNew,
       SuperBlocks.JsAlgoDataStruct,
       SuperBlocks.FrontEndDevLibs,
       SuperBlocks.DataVis,
@@ -407,6 +407,7 @@ export const superBlockOrder: SuperBlockOrder = {
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
         [SuperBlockStates.Current]: [
+          SuperBlocks.RespWebDesignNew,
           SuperBlocks.RespWebDesign,
           SuperBlocks.JsAlgoDataStruct,
           SuperBlocks.FrontEndDevLibs,
@@ -425,7 +426,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.Legacy]: []
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [SuperBlocks.RespWebDesignNew],
+        [SuperBlockStates.Current]: [],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
         [SuperBlockStates.Legacy]: []

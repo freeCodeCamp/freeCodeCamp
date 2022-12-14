@@ -9,7 +9,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
-
 interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;
@@ -32,34 +31,46 @@ export function SolutionDisplayWidget({
   const viewProject = t('buttons.view-project');
 
   const ShowFilesSolutionForCertification = (
-    <button
-      className='project-link-button-override'
-      data-cy={dataCy}
-      onClick={showUserCode}
-    >
-      {t('certification.project.solution')}
-    </button>
+    <Button block={true} data-cy={dataCy} onClick={showUserCode}>
+      {t('buttons.view')}
+    </Button>
   );
   const ShowProjectAndGithubLinkForCertification = (
-    <>
-      <a href={solution ?? ''} rel='noopener noreferrer' target='_blank'>
+    <DropdownButton
+      block={true}
+      bsStyle='primary'
+      className='btn-invert'
+      id={`dropdown-for-${id}`}
+      title={t('buttons.view')}
+    >
+      <MenuItem
+        bsStyle='primary'
+        href={solution ?? ''}
+        rel='noopener noreferrer'
+        target='_blank'
+      >
         {t('certification.project.solution')}
-      </a>
-      ,{' '}
-      <a href={githubLink} rel='noopener noreferrer' target='_blank'>
+      </MenuItem>
+      <MenuItem
+        bsStyle='primary'
+        href={githubLink}
+        rel='noopener noreferrer'
+        target='_blank'
+      >
         {t('certification.project.source')}
-      </a>
-    </>
+      </MenuItem>
+    </DropdownButton>
   );
   const ShowProjectLinkForCertification = (
-    <a
+    <Button
+      block={true}
       className='btn-invert'
       href={solution ?? ''}
       rel='noopener noreferrer'
       target='_blank'
     >
-      {t('certification.project.solution')}
-    </a>
+      {t('buttons.view')}
+    </Button>
   );
   const MissingSolutionComponentForCertification = (
     <>{t('certification.project.no-solution')}</>

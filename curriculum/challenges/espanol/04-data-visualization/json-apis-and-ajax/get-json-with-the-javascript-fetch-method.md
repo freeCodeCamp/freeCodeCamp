@@ -38,13 +38,37 @@ Actualiza el código para crear y enviar una solicitud `GET` a la API de foto de
 
 # --hints--
 
-Tu código debe hacer una solicitud `GET` con `fetch`.
+
+Your code should use the fetched data to replace the inner HTML
+
+```js
+const catData = "dummy data";
+const ref = fetch;
+fetch = () => Promise.resolve({ json: () => catData });
+async () => {
+  try {
+    document.getElementById("getMessage").click();
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    fetch = ref;
+    assert.equal(
+      document.getElementById("message").textContent,
+      JSON.stringify(catData)
+    );
+  }
+};
+```
+
+
+Your code should make a `GET` request with `fetch`.
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-Tu código debe usar `then` para convertir la respuesta a JSON.
+Your code should use `then` to convert the response to JSON.
 
 ```js
 assert(
@@ -54,13 +78,13 @@ assert(
 );
 ```
 
-Tu código debe usar `then` para manejar los datos convertidos a JSON por el otro `then`.
+Your code should use `then` to handle the data converted to JSON by the other `then`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-Tu código debe obtener el elemento con id `message` y cambiar su HTML interno a la cadena de datos JSON.
+Your code should get the element with id `message` and change its inner HTML to the string of JSON data.
 
 ```js
 assert(

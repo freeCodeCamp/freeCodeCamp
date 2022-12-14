@@ -23,8 +23,8 @@ const article = {
   "createdAt": "NOVEMBER 28, 2018"
 };
 
-const articleAuthor = article[author];
-const articleLink = article[link];
+const articleAuthor = article["author"];
+const articleLink = article["link"];
 
 const value = "title";
 const valueLookup = article[value];

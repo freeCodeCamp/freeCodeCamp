@@ -4,9 +4,11 @@
 
 Щоб працювати над рекомендаціями щодо внеску, ви можете редагувати або додавати файли в каталозі `docs`, [доступному тут](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). Коли ваші зміни об'єднані, вони стануть автоматично доступними на документаційному сайті.
 
+When adding a new file to the `docs` directory, you should evaluate if the file should also be added to the sidebar navigation. We typically create a link in the [`_sidebar.md`](_sidebar.md) file for new and independent guides. Alternatively, You may follow the instructions below on creating an internal link for supporting guides.
+
 ### Як створити внутрішнє посилання
 
-Якщо ви хочете створити внутрішнє посилання, націлене на інший розділ рекомендацій щодо внеску, слідуйте цьому формату:
+If you want to create a link targeting a different section of the contributing guidelines, follow this format:
 
 ```md
 [Link text](target-file-name.md#target-section-heading-id)
@@ -15,13 +17,13 @@
 [Link text](#target-section-heading-id)
 ```
 
-Переконайтеся, що включили розширення файлу (`.md`). Не вказуйте повну URL-адресу або додайте `/` перед назвою файлу.
+Make sure you include the file extension (`.md`). Don't specify the full URL or append `/` before the file name.
 
-Це обов'язково для того, щоб посилання працювали для перекладеної версії документа. В іншому випадку вони перенаправлятимуть на англійську версію сторінки, незалежно від мови.
+This is necessary to make these links work for the translated version of the document. Otherwise, they will redirect to the English version of the page regardless of the language.
 
 #### Переклад документації з внутрішніми посиланнями
 
-Коли ви працюєте над перекладом документації на Crowdin, не забудьте змінити `#target-section-heading-id` на ідентифікацію в перекладеному документі. [Дізнатись більше про переклад документації](how-to-translate-files.md#translate-documentation).
+When you work on translating docs on Crowdin, make sure to replace the `#target-section-heading-id` with the id on the translated document. [Learn more about translating docs here](how-to-translate-files.md#translate-documentation).
 
 ## Робота над темою документації
 
@@ -31,15 +33,15 @@
 
 ### Структура вебсайту документації
 
-Сайт створений з використанням [`docsify`](https://docsify.js.org) та обслуговується завдяки GitHub Pages.
+The site is generated using [`docsify`](https://docsify.js.org) and served using GitHub pages.
 
-Зазвичай вам не потрібно буде змінювати конфігурації або створювати сайт локально. Хочете дізнатись більше? Ось як це працює:
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
 - Джерело домашньої сторінки для цього сайту доступне в [`docs/index.html`](index.html).
 - Ми обслуговуємо цей файл як SPA, використовуючи `docsify` та GitHub Pages.
 - Скрипт `docsify` генерує вміст файлів `markdown` в каталозі `docs` за запитом.
 - Домашня сторінка генерується з [`_coverpage.md`](_coverpage.md).
-- Навігація бічної панелі генерується з [`_sidebar.md`](_sidebar.md).
+- The sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
 ### Обслуговування документаційного сайту локально
 

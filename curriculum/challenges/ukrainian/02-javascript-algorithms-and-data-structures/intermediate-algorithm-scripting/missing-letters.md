@@ -38,7 +38,7 @@ assert.deepEqual(fearNotLetter('stvwx'), 'u');
 assert.deepEqual(fearNotLetter('bcdf'), 'e');
 ```
 
-`fearNotLetter("abcdefghijklmnopqrstuvwxyz")` повинен повертати рядок `undefined`.
+`fearNotLetter("abcdefghijklmnopqrstuvwxyz")` повинен повертати `undefined`.
 
 ```js
 assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'));

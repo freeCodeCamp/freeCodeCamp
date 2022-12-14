@@ -41,13 +41,13 @@ multiplier(4, 2);
 يجب عليك استبدال كلمة `var`.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 `myConcat` يجب أن يكون متغير ثابت (باستخدام `const`).
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+myConcat/g));
+assert.match(code, /const\s+myConcat/g);
 ```
 
 `myConcat` يجب أن تكون arrow function مع معلمين (two parameters)
@@ -68,7 +68,7 @@ assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
 لا ينبغي استخدام كلمة `function`.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/function/g));
+assert.notMatch(code, /function/g);
 ```
 
 # --seed--

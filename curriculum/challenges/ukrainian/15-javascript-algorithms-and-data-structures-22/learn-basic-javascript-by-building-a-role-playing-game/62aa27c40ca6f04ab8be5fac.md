@@ -7,7 +7,7 @@ dashedName: step-166
 
 # --description--
 
-A `for` loop runs for a specific number of times. We will break down how a `for` loop runs in the next several steps. For now, copy this loop below and paste it at the end of your `pick` function.
+Цикл `for` виконується певну кількість разів. У наступних кроках ми розберемо, як виконується цикл `for`. А поки скопіюйте та вставте нижчеподаний цикл у кінець функції `pick`.
 
 ```js
 for (let x = 1; x < 5; x++) {
@@ -17,7 +17,7 @@ for (let x = 1; x < 5; x++) {
 
 # --hints--
 
-You should copy the above loop into your `pick` function.
+Ви повинні скопіювати вищеподаний цикл до функції `pick`.
 
 ```js
 assert.match(pick.toString(), /for\s*\(\s*(let|var)\s*x\s*=\s*1\s*;\s*x\s*<\s*5\s*;\s*x\s*\+\+\s*\)/);

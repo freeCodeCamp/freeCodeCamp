@@ -35,13 +35,13 @@ npm run gen-component MyComponent
 
 El comando generará una nueva carpeta dentro del directorio `ui-components`, con los siguientes archivos:
 
-| Nombre del archivo         | Propósito                                                    |
-| -------------------------- | ------------------------------------------------------------ |
-| `index.ts`                 | Se utiliza para exportar el componente y sus tipos.          |
-| `my-component.stories.tsx` | Se utiliza para demostrar el componente en Storybook.        |
-| `my-component.test.tsx`    | Se trata de un archivo de prueba.                            |
-| `my-component.tsx`         | Ahí es donde aplicamos el componente.                        |
-| `types.ts`                 | Es donde localizamos la interfaz y los tipos del componente. |
+| Nombre del archivo         | Propósito                                                  |
+| -------------------------- | ---------------------------------------------------------- |
+| `index.ts`                 | Se utiliza para exportar el componente y sus tipos.        |
+| `my-component.stories.tsx` | Se utiliza para demostrar el componente en Storybook.      |
+| `my-component.test.tsx`    | Se trata de un archivo de prueba.                          |
+| `my-component.tsx`         | Ahí es donde aplicamos el componente.                      |
+| `types.ts`                 | It is where we locate the component's interface and types. |
 
 Cada componente es diferente, pero en general un componente debería:
 

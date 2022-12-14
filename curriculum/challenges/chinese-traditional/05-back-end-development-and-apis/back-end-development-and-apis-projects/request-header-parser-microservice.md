@@ -14,11 +14,17 @@ dashedName: request-header-parser-microservice
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-headerparser" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 字段中提交它的 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+如果你使用 Replit，請按照以下步驟設置項目：
+
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 中。 此外，將項目的源碼鏈接提交到 `GitHub Link` 字段中。
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+你應該提交自己的項目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -30,7 +36,7 @@ dashedName: request-header-parser-microservice
 };
 ```
 
-向 `/api/whoami` 發送請求，返回一個 JSON 對象，這個JSON 對象應該含有存放 IP 地址的 `ipaddress` 鍵中。
+向 `/api/whoami` 發送請求，返回一個 JSON 對象，這個JSON 對象應該含有存放 IP 地址的 `ipaddress` 鍵。
 
 ```js
 (getUserInput) =>

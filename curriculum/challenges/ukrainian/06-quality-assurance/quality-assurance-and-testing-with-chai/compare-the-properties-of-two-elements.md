@@ -12,11 +12,11 @@ dashedName: compare-the-properties-of-two-elements
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#8` in the `Comparisons` suite, change each `assert` to either `assert.isAbove` or `assert.isAtMost` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#8` в наборі `Comparisons` змініть кожний `assert` на `assert.isAbove` або `assert.isAtMost`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
-All tests should pass.
+Всі тести повинні бути успішно пройдені.
 
 ```js
 (getUserInput) =>
@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isAbove` vs. `isAtMost`.
+Ви повинні обрати правильний метод для першого твердження: `isAbove` або `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isAbove` vs. `is
   );
 ```
 
-You should choose the correct method for the second assertion - `isAbove` vs. `isAtMost`.
+Ви повинні обрати правильний метод для другого твердження: `isAbove` або `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ You should choose the correct method for the second assertion - `isAbove` vs. `i
   );
 ```
 
-You should choose the correct method for the third assertion - `isAbove` vs. `isAtMost`.
+Ви повинні обрати правильний метод для третього твердження: `isAbove` або `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -80,7 +80,7 @@ You should choose the correct method for the third assertion - `isAbove` vs. `is
   );
 ```
 
-You should choose the correct method for the fourth assertion - `isAbove` vs. `isAtMost`.
+Ви повинні обрати правильний метод для четвертого твердження: `isAbove` або `isAtMost`.
 
 ```js
 (getUserInput) =>

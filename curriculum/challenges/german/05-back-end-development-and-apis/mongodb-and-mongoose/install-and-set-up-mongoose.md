@@ -14,9 +14,15 @@ Working on these challenges will involve you writing your code using one of the 
 - Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
 - Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Be sure to incorporate all the files from our GitHub repo.
 
-Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein.
+If you use Replit, follow these steps to set up the project:
 
-In dieser Aufgabe wirst du eine MongoDB-Atlas-Datenbank einrichten und die erforderlichen Pakete importieren, um sich mit ihr zu verbinden.
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+
+In this challenge, you will set up a MongoDB Atlas database and import the required packages to connect to it.
 
 Follow <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' target="_blank" rel="noopener noreferrer nofollow">this tutorial</a> to set up a hosted database on MongoDB Atlas.
 
@@ -34,7 +40,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --hints--
 
-Abhängigkeit "mongoose Version ^5.11.15" sollte sich in package.json befinden
+"mongoose version ^5.11.15" dependency should be in package.json
 
 ```js
 (getUserInput) =>
@@ -54,7 +60,7 @@ Abhängigkeit "mongoose Version ^5.11.15" sollte sich in package.json befinden
   );
 ```
 
-"mongoose" sollte mit einer Datenbank verbunden sein
+"mongoose" should be connected to a database
 
 ```js
 (getUserInput) =>

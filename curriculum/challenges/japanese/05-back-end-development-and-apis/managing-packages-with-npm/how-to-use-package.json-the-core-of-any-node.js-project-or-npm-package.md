@@ -14,13 +14,19 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 - <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、チャレンジを完了させる。
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。
+If you use Replit, follow these steps to set up the project:
 
-`package.json` ファイルは、Node.js プロジェクトまたは npm パッケージの中心となります。 HTML ドキュメントの &lt;head> セクションでウェブページの内容を記述するのと同じように、このファイルにはプロジェクトに関する情報を保存します。 ファイルは単一の JSON オブジェクトで構成され、そこに情報がキーと値のペアで保存されます。 必須のフィールドは「name」と「version」の 2 つのみですが、将来のユーザーや保守作業者に役立つように、プロジェクトに関する追加情報を記述しておくことをお勧めします。
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
-プロジェクトのファイルツリーを見ると、package.json ファイルはツリーの最上位のレベルにあります。 以降のチャレンジではこのファイルに改良を加えていきます。
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
-このファイルで最も一般的な情報の 1 つは、 `author` フィールドです。 これはプロジェクトの作成者を指定するもので、連絡先などの詳細を記した文字列またはオブジェクトで構成できます。 より大きなプロジェクトではオブジェクトが推奨されますが、このプロジェクトでは次の例のような単純な文字列を使用します。
+The `package.json` file is the center of any Node.js project or npm package. It stores information about your project, similar to how the &lt;head> section of an HTML document describes the content of a webpage. It consists of a single JSON object where information is stored in key-value pairs. There are only two required fields; "name" and "version", but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+
+If you look at the file tree of your project, you will find the package.json file on the top level of the tree. This is the file that you will be improving in the next couple of challenges.
+
+One of the most common pieces of information in this file is the `author` field. It specifies who created the project, and can consist of a string or an object with contact or other details. An object is recommended for bigger projects, but a simple string like the following example will do for this project.
 
 ```json
 "author": "Jane Doe",
@@ -28,13 +34,13 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 # --instructions--
 
-package.json ファイルで、プロジェクトの `author` の名前を追加してください。
+Add your name as the `author` of the project in the package.json file.
 
-**注: ** JSON を記述しているので、すべてのフィールド名で二重引用符 (") を使用し、コンマ (,) で区切る必要があります。
+**Note:** Remember that you’re writing JSON, so all field names must use double-quotes (") and be separated with a comma (,).
 
 # --hints--
 
-package.json で、有効な「author」キーを記述する必要があります。
+package.json should have a valid "author" key
 
 ```js
 (getUserInput) =>

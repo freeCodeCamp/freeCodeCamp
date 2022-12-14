@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c4b
-title: Використання потрійних рівностей для підтвердження суворої рівності
+title: Використайте потрійну рівність для підтвердження строгої рівності
 challengeType: 2
 forumTopicId: 301610
 dashedName: use-the-triple-equals-to-assert-strict-equality
@@ -14,7 +14,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#6` в наборі `Equality` змініть кожний `assert` на `assert.strictEqual` або `assert.notStrictEqual`, щоб полегшити проходження тесту (варто оцінювати як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#6` в наборі `Equality` змініть кожний `assert` на `assert.strictEqual` або `assert.notStrictEqual`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -32,7 +32,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження `strictEqual` або `notStrictEqual`.
+Ви повинні обрати правильний метод для першого твердження: `strictEqual` або `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження `strictEqual` або `notStrictEqual`.
+Ви повинні обрати правильний метод для другого твердження: `strictEqual` або `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -64,7 +64,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
   );
 ```
 
-Потрібно обрати правильний метод для третього твердження `strictEqual` або `notStrictEqual`.
+Ви повинні обрати правильний метод для третього твердження: `strictEqual` або `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -82,7 +82,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
   );
 ```
 
-Потрібно обрати правильний метод для четвертого твердження `strictEqual` або `notStrictEqual`.
+Ви повинні обрати правильний метод для четвертого твердження: `strictEqual` або `notStrictEqual`.
 
 ```js
 (getUserInput) =>

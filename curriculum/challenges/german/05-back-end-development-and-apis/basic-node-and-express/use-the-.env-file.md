@@ -22,7 +22,7 @@ Greife nun in dem `/json`-GET-Route-Handler, den du in der letzten Aufgabe erste
 
 **Hinweis:** Nutzt du Replit, kannst du keine `.env`-Datei erstellen. Benutze stattdessen den eingebauten <dfn>SECRETS</dfn>-Tab, um eine Variabel hinzuzufügen.
 
-Wenn du lokal arbeitest, benötigst du das `dotenv`-Paket. Dieses lädt Umgebungsvariablen deiner `.env`-Datei in `process.env`. Das `dotenv`-Paket wurde bereits installiert und befindet sich in deiner `package.json`-Projektdatei. At the top of your `myApp.js` file, import and load the variables with `require('dotenv').config()`.
+Wenn du lokal arbeitest, benötigst du das `dotenv`-Paket. Dieses lädt Umgebungsvariablen deiner `.env`-Datei in `process.env`. Das `dotenv`-Paket wurde bereits installiert und befindet sich in deiner `package.json`-Projektdatei. Importiere und lade die Variablen mit `require('dotenv').config()` am Anfang deiner `myApp.js`-Datei.
 
 # --hints--
 

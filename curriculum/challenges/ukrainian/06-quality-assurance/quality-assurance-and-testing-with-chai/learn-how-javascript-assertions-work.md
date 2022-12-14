@@ -1,6 +1,6 @@
 ---
 id: 587d824a367417b2b2512c46
-title: Дізнайтесь як працює твердження JavaScript
+title: Дізнайтесь, як працюють твердження JavaScript
 challengeType: 2
 forumTopicId: 301589
 dashedName: learn-how-javascript-assertions-work
@@ -8,21 +8,27 @@ dashedName: learn-how-javascript-assertions-work
 
 # --description--
 
-Робота над цими завданнями передбачає написання коду одним із таких методів:
+Робота над цими завданнями передбачає написання коду за допомогою одного з наступних методів:
 
-- Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте ці завдання локально.
+- Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте завдання локально.
 - Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання цих завдань.
-- Для виконання проєкту скористуйтеся будь-яким конструктором сайтів на ваш розсуд. Впевніться, що ви зберегли усі файли з нашого GitHub репозиторію.
+- Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
 
-Завершивши роботу, переконайтеся, що робоча демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`.
+Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
+
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
+
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`.
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#1` в наборі `Basic Assertions` змініть кожне `assert`, або `assert.isNull`, або `assert.isNotNull` щоб пройти тест, який має оцінити `true`. Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#1` в наборі `Basic Assertions` змініть кожний `assert` на `assert.isNull` або `assert.isNotNull`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
-Необхідно пройти усі тести.
+Всі тести повинні бути успішно пройдені.
 
 ```js
 (getUserInput) =>
@@ -36,7 +42,7 @@ dashedName: learn-how-javascript-assertions-work
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження `isNull` або`isNotNull`.
+Ви повинні обрати правильний метод для першого твердження: `isNull` або `isNotNull`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +56,7 @@ dashedName: learn-how-javascript-assertions-work
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження `isNull` або `isNotNull`.
+Ви повинні обрати правильний метод для другого твердження: `isNull` або `isNotNull`.
 
 ```js
 (getUserInput) =>

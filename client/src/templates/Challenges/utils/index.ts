@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import envData from '../../../../../config/env.json';
 
 const { forumLocation } = envData;
@@ -30,4 +31,38 @@ export function transformEditorLink(url: string): string {
       /(\/\/)(?<projectname>[^.]+)\.glitch\.me\/?/,
       '//glitch.com/edit/#!/$<projectname>'
     );
+}
+
+export function enhancePrismAccessibility(
+  prismEnv: Prism.hooks.ElementHighlightedEnvironment
+) {
+  const langs: { [key: string]: string } = {
+    js: 'JavaScript',
+    javascript: 'JavaScript',
+    css: 'CSS',
+    html: 'HTML',
+    python: 'python',
+    py: 'python',
+    xml: 'XML',
+    jsx: 'JSX',
+    scss: 'SCSS',
+    sql: 'SQL',
+    http: 'HTTP',
+    json: 'JSON',
+    pug: 'pug'
+  };
+  const parent = prismEnv?.element?.parentElement;
+  if (parent && parent.nodeName === 'PRE' && parent.tabIndex === 0) {
+    parent.setAttribute('role', 'region');
+    const codeType = prismEnv.element?.className
+      .replace(/language-(.*)/, '$1')
+      .toLowerCase();
+    const codeName = langs[codeType] || '';
+    parent.setAttribute(
+      'aria-label',
+      i18next.t('aria.code-example', {
+        codeName
+      })
+    );
+  }
 }

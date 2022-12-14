@@ -41,6 +41,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 10px;
   flex: 1 0 33%;
   height: var(--header-height);
 }
@@ -332,7 +333,6 @@ button.nav-link[aria-disabled='true'] {
   background-color: var(--theme-color);
   cursor: pointer;
   max-height: calc(var(--header-height) - 8px);
-  margin-right: 10px;
   display: flex;
   align-items: center;
 }
@@ -445,16 +445,14 @@ button.nav-link[aria-disabled='true'] {
 
 .universal-nav-right .fcc_searchBar {
   position: absolute;
-  top: 0;
+  top: var(--header-height);
   left: 0;
 }
 
 .universal-nav-right .fcc_searchBar .ais-SearchBox-form {
   width: 100vw;
-  height: var(--search-box-form);
   max-width: unset;
   padding: 0 15px;
-  left: 0;
 }
 
 /* In mobile layout, prevent search input from hanging around if the
@@ -477,17 +475,10 @@ button.nav-link[aria-disabled='true'] {
 
 .universal-nav-right .ais-SearchBox-input {
   width: calc(100vw - 17rem);
-  padding-left: 27px;
 }
 
 .universal-nav-right .fcc_searchBar .ais-Hits {
   width: calc(100vw - 17rem);
-}
-
-.universal-nav-right .fcc_searchBar .ais-SearchBox-submit {
-  top: unset;
-  margin-top: 19px;
-  left: 18px;
 }
 
 .ais-SearchBox-input:focus {
@@ -529,9 +520,7 @@ button.nav-link[aria-disabled='true'] {
 
   .fcc_searchBar .ais-SearchBox-form {
     display: flex;
-    position: absolute;
-    top: var(--header-height);
-    left: 15px;
+    justify-content: flex-end;
     max-width: calc(100vw - 350px);
   }
 

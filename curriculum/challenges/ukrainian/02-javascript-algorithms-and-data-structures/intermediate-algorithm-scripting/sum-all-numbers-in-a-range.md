@@ -20,25 +20,25 @@ dashedName: sum-all-numbers-in-a-range
 assert(typeof sumAll([1, 4]) === 'number');
 ```
 
-`sumAll([1, 4])` повинен повернутися як 10.
+`sumAll([1, 4])` повинен повертати 10.
 
 ```js
 assert.deepEqual(sumAll([1, 4]), 10);
 ```
 
-`sumAll([4, 1])` повинен повернутися як 10.
+`sumAll([4, 1])` повинен повертати 10.
 
 ```js
 assert.deepEqual(sumAll([4, 1]), 10);
 ```
 
-`sumAll([5, 10])` повинен повернутися як 45.
+`sumAll([5, 10])` повинен повертати 45.
 
 ```js
 assert.deepEqual(sumAll([5, 10]), 45);
 ```
 
-`sumAll([10, 5])` повинен повернутися як 45.
+`sumAll([10, 5])` повинен повертати 45.
 
 ```js
 assert.deepEqual(sumAll([10, 5]), 45);
