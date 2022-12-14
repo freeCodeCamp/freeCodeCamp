@@ -9,7 +9,6 @@ import { createSelector } from 'reselect';
 import {
   amountsConfig,
   durationsConfig,
-  defaultAmount,
   defaultDonation,
   modalDefaultDonation
 } from '../../../../config/donation-settings';
@@ -36,7 +35,9 @@ import {
   PaymentContext,
   PostPayment,
   HandleAuthentication,
-  DonationApprovalData
+  DonationApprovalData,
+  DonationAmount,
+  DonationConfig
 } from './types';
 
 import './donation.css';
@@ -55,10 +56,7 @@ type DonateFormState = {
   };
 };
 
-type DonateFormComponentState = {
-  donationAmount: number;
-  donationDuration: string;
-};
+type DonateFormComponentState = DonationConfig;
 
 type PostCharge = (data: {
   paymentProvider: PaymentProvider;
@@ -130,20 +128,16 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
   constructor(props: DonateFormProps) {
     super(props);
 
-    this.durations = durationsConfig as {
-      month: 'monthly';
-      onetime: 'one-time';
-    };
+    this.durations = durationsConfig;
     this.amounts = amountsConfig;
 
-    const initialAmountAndDuration = this.props.isMinimalForm
+    const initialAmountAndDuration: DonationConfig = this.props.isMinimalForm
       ? modalDefaultDonation
       : defaultDonation;
 
     this.state = { ...initialAmountAndDuration };
 
     this.onDonationStateChange = this.onDonationStateChange.bind(this);
-    this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
     this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
     this.handleSelectAmount = this.handleSelectAmount.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
@@ -174,16 +168,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     });
   }
 
-  //  onload
-  getActiveDonationAmount(
-    durationSelected: 'month' | 'onetime',
-    amountSelected: number
-  ): number {
-    return this.amounts[durationSelected].includes(amountSelected)
-      ? amountSelected
-      : defaultAmount[durationSelected] || this.amounts[durationSelected][0];
-  }
-
   convertToTimeContributed(amount: number) {
     return numToCommas((amount / 100) * 50);
   }
@@ -197,7 +181,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     const { t } = this.props;
     const usd = this.getFormattedAmountLabel(donationAmount);
     let donationBtnLabel = t('donate.confirm');
-    if (donationDuration === 'onetime') {
+    if (donationDuration === 'one-time') {
       donationBtnLabel = t('donate.confirm-2', {
         usd: usd
       });
@@ -239,7 +223,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     if (this.props.handleProcessing) this.props.handleProcessing();
   };
 
-  handleSelectAmount(donationAmount: number) {
+  handleSelectAmount(donationAmount: DonationAmount) {
     this.setState({ donationAmount });
   }
 
@@ -251,7 +235,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
 
     let donationDescription = t('donate.your-donation-3', { usd, hours });
 
-    if (donationDuration === 'onetime') {
+    if (donationDuration === 'one-time') {
       donationDescription = t('donate.your-donation', { usd, hours });
     } else if (donationDuration === 'month') {
       donationDescription = t('donate.your-donation-2', { usd, hours });
@@ -300,7 +284,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       isVariantA
     } = this.props;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
-    const isOneTime = donationDuration === 'onetime';
+    const isOneTime = donationDuration === 'one-time';
     const walletlabel = `${t(
       isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
       { usd: donationAmount / 100 }

@@ -10,12 +10,17 @@ import {
 import envData from '../../../../config/env.json';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
 import { Themes } from '../settings/theme';
-import { DonationApprovalData, PostPayment } from './types';
+import {
+  DonationApprovalData,
+  PostPayment,
+  DonationDuration,
+  DonationAmount
+} from './types';
 import PayPalButtonScriptLoader from './paypal-button-script-loader';
 
 type PaypalButtonProps = {
-  donationAmount: number;
-  donationDuration: string;
+  donationAmount: DonationAmount;
+  donationDuration: DonationDuration;
   isDonating: boolean;
   onDonationStateChange: ({
     redirecting,
@@ -72,8 +77,8 @@ export class PaypalButton extends Component<
   ): PaypalButtonState {
     const { donationAmount, donationDuration } = props;
     const configurationObj: {
-      amount: number;
-      duration: string;
+      amount: DonationAmount;
+      duration: DonationDuration;
       planId: string | null;
     } = paypalConfigurator(
       donationAmount,
@@ -90,7 +95,7 @@ export class PaypalButton extends Component<
   render(): JSX.Element | null {
     const { duration, planId, amount } = this.state;
     const { t, theme, isPaypalLoading, isMinimalForm } = this.props;
-    const isSubscription = duration !== 'onetime';
+    const isSubscription = duration !== 'one-time';
     const buttonColor = theme === Themes.Night ? 'white' : 'gold';
     if (!paypalClientId) {
       return null;

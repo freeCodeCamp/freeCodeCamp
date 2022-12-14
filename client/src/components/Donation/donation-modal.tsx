@@ -80,12 +80,10 @@ function DonateModal({
   const getDonationText = () => {
     const donationDuration = modalDefaultDonation.donationDuration;
     switch (donationDuration) {
-      case 'onetime':
+      case 'one-time':
         return <b>{t('donate.duration')}</b>;
       case 'month':
         return <b>{t('donate.duration-2')}</b>;
-      case 'year':
-        return <b>{t('donate.duration-3')}</b>;
       default:
         return <b>{t('donate.duration-4')}</b>;
     }
