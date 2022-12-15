@@ -6,9 +6,9 @@ import {
 } from '../../resources/cert-and-project-map';
 import { CertificationSettings } from './certification';
 
-it('should check legacy certification button consistency', () => {
-  const certificationSettings = new CertificationSettings();
+const certificationSettings = new CertificationSettings();
 
+it('should check legacy certification button consistency', () => {
   certificationSettings.props = { t: t => t };
 
   const { renderCertifications } = certificationSettings;
@@ -24,11 +24,7 @@ it('should check legacy certification button consistency', () => {
   expect(tree).toMatchSnapshot();
 });
 
-// const first = jest.fn(arr => arr[0]);
-
 it('should check certification button consistency', () => {
-  const certificationSettings = new CertificationSettings();
-
   certificationSettings.props = { t: t => t };
 
   const { renderCertifications } = certificationSettings;
@@ -36,9 +32,7 @@ it('should check certification button consistency', () => {
   const certifications = Object.keys(projectMap);
 
   const tree = renderer.create(
-    certifications.map(certName =>
-      renderCertifications(certName, certifications)
-    )
+    certifications.map(certName => renderCertifications(certName, projectMap))
   );
 
   expect(tree).toMatchSnapshot();
