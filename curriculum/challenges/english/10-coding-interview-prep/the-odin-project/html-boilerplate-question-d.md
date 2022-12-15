@@ -2,7 +2,7 @@
 id: 637f4e3672c65bc8e73dfe23
 videoId: LGQuIIv2RVA
 title: HTML Boilerplate Question D
-challengeType: 11
+challengeType: 15
 dashedName: html-boilerplate-question-d
 ---
 # --description--

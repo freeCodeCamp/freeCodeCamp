@@ -2,7 +2,7 @@
 id: 637f703072c65bc8e73dfe34
 videoId: tsEQgGjSmkM
 title: Links and Images Question C
-challengeType: 11
+challengeType: 15
 dashedName: links-and-images-question-c
 ---
 # --description--

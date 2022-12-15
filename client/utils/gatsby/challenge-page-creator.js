@@ -32,13 +32,19 @@ const video = path.resolve(
   '../../src/templates/Challenges/video/Show.tsx'
 );
 
+const theOdinProject = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/the-odin-project/Show.tsx'
+);
+
 const views = {
   backend,
   classic,
   modern: classic,
   frontend,
   video,
-  codeAlly
+  codeAlly,
+  theOdinProject
   // quiz: Quiz
 };
 

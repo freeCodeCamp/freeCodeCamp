@@ -2,7 +2,7 @@
 id: 637f4e5872c65bc8e73dfe27
 videoId: yqcd-XkxZNM
 title: Working With Text Question A
-challengeType: 11
+challengeType: 15
 dashedName: working-with-text-question-a
 ---
 # --description--

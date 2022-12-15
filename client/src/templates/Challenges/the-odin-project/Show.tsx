@@ -15,7 +15,6 @@ import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
-import ChallengeDescription from '../components/Challenge-Description';
 import Hotkeys from '../components/Hotkeys';
 import VideoPlayer from '../components/VideoPlayer';
 import ChallengeTitle from '../components/challenge-title';
@@ -71,6 +70,8 @@ interface ShowVideoState {
   selectedOption: number | null;
   answer: number;
   showWrong: boolean;
+  assignmentsCompleted: number;
+  allAssignmentsCompleted: boolean;
   videoIsLoaded: boolean;
 }
 
@@ -87,6 +88,8 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       selectedOption: null,
       answer: 1,
       showWrong: false,
+      assignmentsCompleted: 0,
+      allAssignmentsCompleted: false,
       videoIsLoaded: false
     };
 
@@ -143,13 +146,28 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     }
   }
 
-  handleSubmit(solution: number, openCompletionModal: () => void) {
-    if (solution - 1 === this.state.selectedOption) {
+  handleSubmit(
+    solution: number,
+    openCompletionModal: () => void,
+    assignments: string[]
+  ) {
+    const hasAssignments = assignments[0] != '';
+    const completed = this.state.allAssignmentsCompleted;
+
+    if (solution - 1 == this.state.selectedOption && hasAssignments) {
+      this.setState({
+        showWrong: false
+      });
+
+      if (completed) {
+        openCompletionModal();
+      }
+    } else if (solution - 1 === this.state.selectedOption && !hasAssignments) {
       this.setState({
         showWrong: false
       });
       openCompletionModal();
-    } else {
+    } else if (solution - 1 !== this.state.selectedOption) {
       this.setState({
         showWrong: true
       });
@@ -162,6 +180,20 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     this.setState({
       showWrong: false,
       selectedOption: parseInt(changeEvent.target.value, 10)
+    });
+  };
+
+  handleAssignmentChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    assignments: number
+  ): void => {
+    const assCopy = this.state.assignmentsCompleted;
+    const completed = event.target.checked ? assCopy + 1 : assCopy - 1;
+    const allCompleted = assignments == completed;
+
+    this.setState({
+      assignmentsCompleted: completed,
+      allAssignmentsCompleted: allCompleted
     });
   };
 
@@ -186,7 +218,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
             videoId,
             videoLocaleIds,
             bilibiliIds,
-            question: { text, answers, solution }
+            question: { text, answers, solution, assignments }
           }
         }
       },
@@ -204,7 +236,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     return (
       <Hotkeys
         executeChallenge={() => {
-          this.handleSubmit(solution, openCompletionModal);
+          this.handleSubmit(solution, openCompletionModal, assignments);
         }}
         innerRef={(c: HTMLElement | null) => (this._container = c)}
         nextChallengePath={nextChallengePath}
@@ -242,14 +274,46 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 </div>
               </Col>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <ChallengeDescription description={description} />
-                <PrismFormatted className={'line-numbers'} text={text} />
+                <h2>{title}</h2>
+                <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer />
                 <ObserveKeys>
+                  {assignments[0] != '' ? (
+                    <>
+                      <h2>Assignments</h2>
+                      <div className='video-quiz-options'>
+                        {assignments.map((assignment, index) => (
+                          <label
+                            className='video-quiz-option-label'
+                            key={index}
+                          >
+                            <input
+                              name='assignment'
+                              type='checkbox'
+                              className='video-quiz-checkbox-input'
+                              onChange={event =>
+                                this.handleAssignmentChange(
+                                  event,
+                                  assignments.length
+                                )
+                              }
+                            />
+
+                            <PrismFormatted
+                              className={'video-quiz-option'}
+                              text={assignment}
+                            />
+                            <Spacer />
+                          </label>
+                        ))}
+                      </div>{' '}
+                    </>
+                  ) : null}
+                  <Spacer />
+                  <h2>Question</h2>
+                  <PrismFormatted className={'line-numbers'} text={text} />
                   <div className='video-quiz-options'>
                     {answers.map((option, index) => (
-                      // answers are static and have no natural id property, so
-                      // index should be fine as a key:
                       <label className='video-quiz-option-label' key={index}>
                         <input
                           aria-label={t('aria.answer')}
@@ -281,9 +345,14 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 >
                   {this.state.showWrong ? (
                     <span>{t('learn.wrong-answer')}</span>
-                  ) : (
-                    <span>{t('learn.check-answer')}</span>
-                  )}
+                  ) : null}
+                  {!this.state.allAssignmentsCompleted &&
+                  assignments[0] != '' ? (
+                    <>
+                      <br />
+                      <span>{t('learn.assignment-not-complete')}</span>
+                    </>
+                  ) : null}
                 </div>
                 <Spacer />
                 <Button
@@ -291,7 +360,11 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                   bsSize='large'
                   bsStyle='primary'
                   onClick={() =>
-                    this.handleSubmit(solution, openCompletionModal)
+                    this.handleSubmit(
+                      solution,
+                      openCompletionModal,
+                      assignments
+                    )
                   }
                 >
                   {t('buttons.check-answer')}
@@ -320,7 +393,7 @@ export default connect(
 )(withTranslation()(ShowVideo));
 
 export const query = graphql`
-  query VideoChallenge($slug: String!) {
+  query TheOdinProject($slug: String!) {
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
         videoId
@@ -349,6 +422,7 @@ export const query = graphql`
           text
           answers
           solution
+          assignments
         }
         translationPending
       }
