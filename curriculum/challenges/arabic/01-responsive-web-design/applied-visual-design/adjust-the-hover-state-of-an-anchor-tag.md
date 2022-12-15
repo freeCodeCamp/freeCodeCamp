@@ -25,13 +25,13 @@ The code editor has a CSS rule to style all `a` tags black. Add a rule so that w
 
 # --hints--
 
-The anchor tag `color` should remain black, only add CSS rules for the `:hover` state.
+يجب أن تبقى علامة الرابط `color` سوداء, أضف الفئة الزائفة `:hover` من قواعد CSS فقط.
 
 ```js
 assert($('a').css('color') == 'rgb(0, 0, 0)');
 ```
 
-The anchor tag should have a `color` of blue on hover.
+يجب أن يتغير قيمة `color` في علامة الرابط (anchor) إلى الأزرق (blue) عندما تحوم عليها (hover).
 
 ```js
 assert(
