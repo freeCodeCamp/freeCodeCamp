@@ -32,9 +32,9 @@ const video = path.resolve(
   '../../src/templates/Challenges/video/Show.tsx'
 );
 
-const theOdinProject = path.resolve(
+const odin = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/the-odin-project/Show.tsx'
+  '../../src/templates/Challenges/odin/Show.tsx'
 );
 
 const views = {
@@ -44,7 +44,7 @@ const views = {
   frontend,
   video,
   codeAlly,
-  theOdinProject
+  odin
   // quiz: Quiz
 };
 

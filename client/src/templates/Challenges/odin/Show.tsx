@@ -50,7 +50,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   );
 
 // Types
-interface ShowVideoProps {
+interface ShowOdinProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
   description: string;
@@ -64,7 +64,7 @@ interface ShowVideoProps {
   updateSolutionFormValues: () => void;
 }
 
-interface ShowVideoState {
+interface ShowOdinState {
   subtitles: string;
   downloadURL: string | null;
   selectedOption: number | null;
@@ -76,11 +76,11 @@ interface ShowVideoState {
 }
 
 // Component
-class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
+class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
   static displayName: string;
   private _container: HTMLElement | null | undefined;
 
-  constructor(props: ShowVideoProps) {
+  constructor(props: ShowOdinProps) {
     super(props);
     this.state = {
       subtitles: '',
@@ -117,7 +117,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     this._container?.focus();
   }
 
-  componentDidUpdate(prevProps: ShowVideoProps): void {
+  componentDidUpdate(prevProps: ShowOdinProps): void {
     const {
       data: {
         challengeNode: {
@@ -385,12 +385,12 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
   }
 }
 
-ShowVideo.displayName = 'ShowVideo';
+ShowOdin.displayName = 'ShowOdin';
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withTranslation()(ShowVideo));
+)(withTranslation()(ShowOdin));
 
 export const query = graphql`
   query TheOdinProject($slug: String!) {

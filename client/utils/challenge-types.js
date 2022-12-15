@@ -84,7 +84,7 @@ exports.viewTypes = {
   [codeAllyPractice]: 'codeAlly',
   [codeAllyCert]: 'codeAlly',
   [multifileCertProject]: 'classic',
-  [theOdinProject]: 'theOdinProject'
+  [theOdinProject]: 'odin'
 };
 
 // determine the type of submit function to use for the challenge on completion
