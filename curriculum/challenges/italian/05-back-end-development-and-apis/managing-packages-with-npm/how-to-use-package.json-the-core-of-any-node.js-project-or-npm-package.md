@@ -14,19 +14,19 @@ Lavorare su queste sfide ti porterà a scrivere il tuo codice utilizzando uno de
 - Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare queste sfide.
 - Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Se utilizzi Replit, segui questi passaggi per impostare il progetto:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`.
 
-The `package.json` file is the center of any Node.js project or npm package. It stores information about your project, similar to how the &lt;head> section of an HTML document describes the content of a webpage. It consists of a single JSON object where information is stored in key-value pairs. There are only two required fields; "name" and "version", but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+Il file `package.json` è il centro di qualsiasi progetto Node.js o pacchetto npm. Memorizza informazioni sul tuo progetto, in modo simile a come la sezione &lt;head> di un documento HTML descrive il contenuto di una pagina web. Consiste di un singolo oggetto JSON dove le informazioni sono memorizzate in coppie chiave-valore. Ci sono solo due campi obbligatori; "name" e "version", ma è buona pratica fornire ulteriori informazioni sul tuo progetto che potrebbero essere utili per futuri utenti o manutentori.
 
-If you look at the file tree of your project, you will find the package.json file on the top level of the tree. This is the file that you will be improving in the next couple of challenges.
+Se guardi l'albero dei file del tuo progetto, troverai il file package.json al livello superiore dell'albero. Questo è il file che andremo a migliorare nelle prossime due sfide.
 
-One of the most common pieces of information in this file is the `author` field. It specifies who created the project, and can consist of a string or an object with contact or other details. An object is recommended for bigger projects, but a simple string like the following example will do for this project.
+Una delle informazioni più comuni in questo file è il campo `author`. Specifica chi ha creato il progetto e può consistere in una stringa o un oggetto con informazioni di contatto o altri dettagli. Un oggetto è consigliato per progetti più grandi, ma una semplice stringa come l'esempio seguente farà al caso nostro per questo progetto.
 
 ```json
 "author": "Jane Doe",
@@ -34,13 +34,13 @@ One of the most common pieces of information in this file is the `author` field.
 
 # --instructions--
 
-Add your name as the `author` of the project in the package.json file.
+Aggiungi il tuo nome come `author` del progetto nel file package.json.
 
-**Note:** Remember that you’re writing JSON, so all field names must use double-quotes (") and be separated with a comma (,).
+**Nota:** Ricorda che stai scrivendo JSON, quindi tutti i nomi dei campi devono usare virgolette doppie (") ed essere separati con una virgola (,).
 
 # --hints--
 
-package.json should have a valid "author" key
+package.json deve avere una chiave "author" valida
 
 ```js
 (getUserInput) =>

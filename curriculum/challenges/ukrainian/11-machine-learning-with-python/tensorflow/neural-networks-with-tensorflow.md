@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d92
-title: Нейронні мережі у TensorFlow
+title: Нейронні мережі з TensorFlow
 challengeType: 11
 videoId: uisdfrNrZW4
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: neural-networks-with-tensorflow
 
 ## --text--
 
-Щільно зв'язана нейронна мережа - це та, в якій...:
+Щільно зв'язана нейронна мережа – це та, в якій...:
 
 ## --answers--
 

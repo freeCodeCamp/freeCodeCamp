@@ -10,9 +10,9 @@ dashedName: probability-calculator
 
 Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
 
 
 # --instructions--
@@ -35,10 +35,10 @@ La classe `Hat` dovrebbe avere un metodo `draw` che accetta un argomento che ind
 
 Successivamente, crea una funzione `experiment` in `prob_calculator.py` (non all'interno della classe `Hat`). Questa funzione dovrebbe accettare i seguenti argomenti:
 
-- `hat`: A hat object containing balls that should be copied inside the function.
-- `expected_balls`: An object indicating the exact group of balls to attempt to draw from the hat for the experiment. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
-- `num_balls_drawn`: The number of balls to draw out of the hat in each experiment.
-- `num_experiments`: The number of experiments to perform. (The more experiments performed, the more accurate the approximate probability will be.)
+- `hat`: Un oggetto cappello contenente palline che dovrebbero essere copiate all'interno della funzione.
+- `expected_balls`: Un oggetto che indica il gruppo esatto di palline che tentiamo di attingere dal cappello per l'esperimento. Ad esempio, per determinare la probabilità di pescare 2 palline blu e 1 pallina rossa dal cappello, imposta `expected_balls` a `{"blue":2, "red":1}`.
+- `num_balls_drawn`: Il numero di palline da pescare dal cappello in ogni esperimento.
+- `num_experiments`: Il numero di esperimenti da eseguire. (Più esperimenti eseguiti, più precisa sarà la probabilità approssimativa.)
 
 La funzione `experiment` dovrebbe restituire una probabilità.
 

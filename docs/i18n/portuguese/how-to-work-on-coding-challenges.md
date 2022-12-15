@@ -309,7 +309,7 @@ Aqui vemos diretrizes de formatação específicas para o código seed do desafi
 
 ### Comentários do código seed
 
-Temos um [comment dictionary](/curriculum/dictionaries/english/comments.js) que contém os únicos comentários que podem ser usados no código seed. O espaçamento e as letras maiúsculas e minúsculas do dicionário de comentário devem ser usadas exatamente como são. O dicionário de comentário não deve ser expandido sem uma discussão prévia com o time de desenvolvimento (dev-team).
+Temos um [dicionário de comentários](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) que contém os únicos comentários que podem ser usados no código seed. O espaçamento e as letras maiúsculas e minúsculas do dicionário de comentário devem ser usadas exatamente como são. O dicionário de comentário não deve ser expandido sem uma discussão prévia com o time de desenvolvimento (dev-team).
 
 Os comentários usados devem ter um espaço entre os caracteres do comentário e o comentário em si. Geralmente, os comentários devem ser usados com moderação. Sempre considere reescrever a descrição de um desafio ou instrução se for possível evitar usar um comentário de código fornecido.
 
@@ -371,7 +371,7 @@ class MyComponent extends React.Component {
 
 ### Tradução de comentários de código seed
 
-Existem dicionários de comentários separados para cada linguagem. A [versão em inglês do dicionário de comentários](/curriculum/dictionaries/english/comments.js) é a base para as traduções encontradas nas versões correspondentes dos arquivos em outros idiomas. A versão não inglesa do dicionário de comentário chinesa pode ser encontrada em `/curriculum/dictionaries/chinese/comments.js`. Cada dicionário consiste em um array de objetos com uma propriedade de `id` única e uma propriedade de `text`. Somente a propriedade `text` deve ser modificada para englobar a tradução do comentário correspondente em inglês.
+Existem dicionários de comentários separados para cada linguagem. A [versão em inglês do dicionário de comentários](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) é a base para as traduções encontradas nas versões correspondentes dos arquivos em outros idiomas. A versão do dicionário de comentários em chinês (não a versão em inglês) pode ser encontrada em `/curriculum/dictionaries/chinese/comments.json`. Cada dicionário consiste em um array de objetos com uma propriedade de `id` única e uma propriedade de `text`. Somente a propriedade `text` deve ser modificada para englobar a tradução do comentário correspondente em inglês.
 
 Alguns comentários podem conter uma palavra/frase que não deve ser traduzida. Por exemplo, nomes de variáveis, ou nomes próprios de bibliotecas como "React" não devem ser traduzidas. Veja o comentário abaixo como um exemplo. A palavra `myGlobal` não deve ser traduzida.
 

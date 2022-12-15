@@ -26,11 +26,11 @@ console.log(arr);
 
 # --instructions--
 
-Use a destructuring assignment with the rest parameter to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` should return a sub-array of the original array `list` with the first two elements omitted.
+分割代入と残余引数を使用して、`Array.prototype.slice()` と同様の機能を実装してください。 `removeFirstTwo()` が、元の配列 `list` から最初の 2 つの要素を取り除いた部分配列を返すようにしてください。
 
 # --hints--
 
-`removeFirstTwo([1, 2, 3, 4, 5])` should be `[3, 4, 5]`
+`removeFirstTwo([1, 2, 3, 4, 5])` の結果は `[3, 4, 5]` となるべきです。
 
 ```js
 const testArr_ = [1, 2, 3, 4, 5];
@@ -38,7 +38,7 @@ const testArrWORemoved_ = removeFirstTwo(testArr_);
 assert(testArrWORemoved_.every((e, i) => e === i + 3) && testArrWORemoved_.length === 3);
 ```
 
-`removeFirstTwo()` should not modify `list`
+`removeFirstTwo()` は `list` を変更してはいけません。
 
 ```js
 const testArr_ = [1, 2, 3, 4, 5];

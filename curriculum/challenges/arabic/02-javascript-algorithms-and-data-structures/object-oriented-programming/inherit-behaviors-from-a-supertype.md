@@ -36,7 +36,7 @@ animal.eat();
 animal instanceof Animal;
 ```
 
-دالة `instanceof` هنا، ستعيد `true`.
+ستعيد طريقة `instanceof` حالة `true` هنا.
 
 # --instructions--
 

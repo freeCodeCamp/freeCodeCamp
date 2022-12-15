@@ -8,7 +8,7 @@ dashedName: rock-paper-scissors
 
 # --description--
 
-For this challenge, you will create a program to play Rock, Paper, Scissors. A program that picks at random will usually win 50% of the time. To pass this challenge your program must play matches against four different bots, winning at least 60% of the games in each match.
+В цьому завданні ви створите програму, щоб грати в камінь-ножиці-папір. Програма, яка обиратиме випадково, зазвичай виграватиме у 50%. Щоб виконати це завдання, ваша програма повинна зіграти матчі проти чотирьох різних ботів, вигравши принаймні 60% ігор у кожному матчі.
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
@@ -16,35 +16,35 @@ For this challenge, you will create a program to play Rock, Paper, Scissors. A p
 -   Потім ви побачите вікно `.replit`.
 -   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-We are still developing the interactive instructional part of the machine learning curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+Ми досі розробляємо інтерактивну складову для навчальної програми з машинного навчання. Поки вам доведеться використовувати інші ресурси, щоб виконати це завдання.
 
 # --instructions--
 
-In the file `RPS.py` you are provided with a function called `player`. The function takes an argument that is a string describing the last move of the opponent ("R", "P", or "S"). The function should return a string representing the next move for it to play ("R", "P", or "S").
+У файлі `RPS.py` вам надається функція під назвою `player`. Функція приймає аргумент, який є рядком, що описує останній хід суперника («R», «P» або «S»). Функція повинна повертати рядок, що представляє наступний хід для відтворення («R», «P» або «S»).
 
-A player function will receive an empty string as an argument for the first game in a match since there is no previous play.
+Функція гравця отримає порожній рядок як аргумент для першої гри в матчі, оскільки немає попередньої гри.
 
-The file `RPS.py` shows an example function that you will need to update. The example function is defined with two arguments (`player(prev_play, opponent_history = [])`). The function is never called with a second argument so that one is completely optional. The reason why the example function contains a second argument (`opponent_history = []`) is because that is the only way to save state between consecutive calls of the `player` function. You only need the `opponent_history` argument if you want to keep track of the opponent_history.
+У файлі `RPS.py` показано приклад функції, яку вам потрібно оновити. Приклад функції визначається двома аргументами (`player(prev_play, opponent_history = [])`). Функція ніколи не викликається з другим аргументом, тому він є абсолютно необов’язковим. Причина, чому функція з прикладу містить другий аргумент (`opponent_history = []`), полягає в тому, що це єдиний спосіб зберегти стан між послідовними викликами функції `player`. Вам потрібен лише аргумент `opponent_history`, якщо ви хочете стежити за історією ходів супротивника.
 
-*Hint: To defeat all four opponents, your program may need to have multiple strategies that change depending on the plays of the opponent.*
+*Підказка: щоб перемогти всіх чотирьох супротивників, ваша програма повинна мати багато стратегій, які змінюються залежно від гри супротивника.*
 
 ## Розробка
 
-Do not modify `RPS_game.py`. Запишіть весь свій код у `RPS.py`. Для розробки ви можете використати `main.py`, щоб протестувати свій код.
+Не змінюйте `RPS_game.py`. Запишіть весь свій код у `RPS.py`. Для розробки ви можете використати `main.py`, щоб протестувати свій код.
 
-`main.py` imports the game function and bots from `RPS_game.py`.
+`main.py` імпортує функцію гри та ботів із `RPS_game.py`.
 
-To test your code, play a game with the `play` function. The `play` function takes four arguments:
+Щоб перевірити свій код, пограйте в гру за допомогою функції `play`. Функція `play` приймає чотири аргументи:
 
-- two players to play against each other (the players are actually functions)
-- the number of games to play in the match
-- an optional argument to see a log of each game. Set it to `True` to see these messages.
+- два гравці грають один проти одного (насправді гравцями є функції)
+- кількість ігор, які потрібно зіграти в матчі
+- додатковий аргумент для перегляду записів кожної гри. Встановіть його на `True`, щоб побачити ці повідомлення.
 
 ```py
 play(player1, player2, num_games[, verbose])
 ```
 
-For example, here is how you would call the function if you want `player` and `quincy` to play 1000 games against each other and you want to see the results of each game:
+Наприклад, ось як можна викликати функцію, якщо ви хочете, щоб `player` та `quincy` зіграли один проти одного 1000 ігор та бажаєте побачити результати кожної гри:
 
 ```py
 play(player, quincy, 1000, verbose=True)

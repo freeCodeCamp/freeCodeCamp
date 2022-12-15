@@ -14,25 +14,25 @@ Lavorare su queste sfide ti porterà a scrivere il tuo codice utilizzando uno de
 - Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare queste sfide.
 - Usare un costruttore di siti a tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Se utilizzi Replit, segui questi passaggi per impostare il progetto:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`.
 
-Helmet helps you secure your Express apps by setting various HTTP headers.
+Helmet ti aiuta a proteggere le tue app Express impostando varie intestazioni HTTP.
 
 # --instructions--
 
-All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
+Tutto il tuo codice per queste lezioni va nel file `myApp.js` tra le righe di codice con cui hai iniziato. Non modificare o eliminare il codice che abbiamo aggiunto per te.
 
-Helmet version `3.21.3` has already been installed, so require it as `helmet` in `myApp.js`.
+Helmet versione `3.21.3` è già stato installato, quindi richiedilo come `helmet` in `myApp.js`.
 
 # --hints--
 
-`helmet` version `3.21.3` should be in `package.json`
+`helmet` versione `3.21.3` dovrebbe essere in `package.json`
 
 ```js
 (getUserInput) =>

@@ -15,7 +15,7 @@ dashedName: nest-one-array-within-another-array
 const teams = [["Bulls", 23], ["White Sox", 45]];
 ```
 
-هذا يسمى أيضا <dfn>قوائم متعددة الأبعاد</dfn>.
+هذا يسمى أيضا <dfn>قوائم متعددة الأبعاد (multi-dimensional array)</dfn>.
 
 # --instructions--
 

@@ -10,26 +10,26 @@ dashedName: budget-app
 
 你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-budget-app" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
 
 
 # --instructions--
 
 完成 `budget.py` 中的 `Category` 類。 它應該能夠根據不同的預算類別實例化對象，例如 *食物* 、 *服裝* 和 *娛樂* 。 創建對象時，它們以類別的名稱傳遞。 該類應該有一個名爲 `ledger` 的實例變量，它是一個列表。 該類還應包含以下方法：
 
-- A `deposit` method that accepts an amount and description. If no description is given, it should default to an empty string. The method should append an object to the ledger list in the form of `{"amount": amount, "description": description}`.
-- A `withdraw` method that is similar to the `deposit` method, but the amount passed in should be stored in the ledger as a negative number. If there are not enough funds, nothing should be added to the ledger. This method should return `True` if the withdrawal took place, and `False` otherwise.
-- A `get_balance` method that returns the current balance of the budget category based on the deposits and withdrawals that have occurred.
-- A `transfer` method that accepts an amount and another budget category as arguments. The method should add a withdrawal with the amount and the description "Transfer to [Destination Budget Category]". The method should then add a deposit to the other budget category with the amount and the description "Transfer from [Source Budget Category]". If there are not enough funds, nothing should be added to either ledgers. This method should return `True` if the transfer took place, and `False` otherwise.
-- A `check_funds` method that accepts an amount as an argument. It returns `False` if the amount is greater than the balance of the budget category and returns `True` otherwise. This method should be used by both the `withdraw` method and `transfer` method.
+- 接受金額和描述的 `deposit` 方法。 如果沒有給出描述，它應該默認爲一個空字符串。 該方法應以 `{"amount": amount, "description": description}` 的形式將對象附加到賬本列表。
+- `withdraw` 方法類似於 `deposit` 方法，但傳入的金額應作爲負數存儲在賬本中。 如果沒有足夠的資金，則不應向賬本添加任何內容。 如果取款發生，此方法應返回 `True`，否則返回 `False`。
+- `get_balance` 方法，根據發生的存款和取款返回預算類別的當前餘額。
+- `transfer` 方法，它接受一個金額和另一個預算類別作爲參數。 該方法應添加帶有金額和描述 “Transfer to [目的地預算類別]”的提款。 然後，該方法應將存款添加到其他預算類別，其金額和描述爲 “Transfer from [來源預算類別]”。 如果沒有足夠的資金，則不應向任一賬本添加任何內容。 如果轉賬發生，此方法應返回 `True`，否則返回 `False`。
+- 接受金額作爲參數的 `check_funds` 方法。 如果金額大於預算類別的餘額，則返回 `False`，否則返回 `True`。 `withdraw` 方法和 `transfer` 方法都應該使用此方法。
 
 打印預算對象時，它應顯示：
 
-- A title line of 30 characters where the name of the category is centered in a line of `*` characters.
-- A list of the items in the ledger. Each line should show the description and amount. The first 23 characters of the description should be displayed, then the amount. The amount should be right aligned, contain two decimal places, and display a maximum of 7 characters.
-- A line displaying the category total.
+- 30 個字符的標題行，類別名稱居中在一行 `*` 字符中。
+- 賬本中的項目列表。 每行應顯示描述和金額。 應顯示描述的前 23 個字符，然後是金額。 金額應右對齊，包含兩位小數，最多顯示 7 個字符。
+- 一行顯示類別總數。
 
 下面是一個輸出示例：
 

@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c4a
-title: Використання подвійних рівностей для підтвердження рівності
+title: Використайте подвійну рівність для підтвердження рівності
 challengeType: 2
 forumTopicId: 301609
 dashedName: use-the-double-equals-to-assert-equality
@@ -14,7 +14,7 @@ dashedName: use-the-double-equals-to-assert-equality
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#5` в наборі `Equality` змініть кожний `assert` на `assert.equal` або `assert.notEqual`, щоб полегшити проходження тесту (варто оцінювати як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#5` в наборі `Equality` змініть кожний `assert` на `assert.equal` або `assert.notEqual`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -32,7 +32,7 @@ dashedName: use-the-double-equals-to-assert-equality
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження `equal` або `notEqual`.
+Ви повинні обрати правильний метод для першого твердження: `equal` або `notEqual`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ dashedName: use-the-double-equals-to-assert-equality
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження `equal` або `notEqual`.
+Ви повинні обрати правильний метод для другого твердження: `equal` або `notEqual`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ dashedName: use-the-double-equals-to-assert-equality
   );
 ```
 
-Потрібно обрати правильний метод для третього твердження `equal` або `notEqual`.
+Ви повинні обрати правильний метод для третього твердження: `equal` або `notEqual`.
 
 ```js
 (getUserInput) =>
@@ -86,7 +86,7 @@ dashedName: use-the-double-equals-to-assert-equality
   );
 ```
 
-Потрібно обрати правильний метод для четвертого твердження `equal` або `notEqual`.
+Ви повинні обрати правильний метод для четвертого твердження: `equal` або `notEqual`.
 
 ```js
 (getUserInput) =>

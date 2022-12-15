@@ -30,13 +30,13 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Setup Flutter 3.0.x
+      - name: Setup Flutter 3.3.x
         uses: subosito/flutter-action@dbf1fa04f4d2e52c33185153d06cdb5443aa189d # tag=v2
         with:
-          flutter-version: '3.0.x'
+          flutter-version: '3.3.x'
           channel: 'stable'
           cache: true
-          cache-key: flutter-3.0.x
+          cache-key: flutter-3.3.x
           cache-path: ${{ runner.tool_cache }}/flutter
 
       - name: Set freeCodeCamp Environment Variables
@@ -57,7 +57,7 @@ jobs:
           flutter test test/widget_test.dart
 
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           start: npx serve
@@ -65,8 +65,7 @@ jobs:
           wait-on-timeout: 1200
           config: retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/mobile/mobile-app/generated-tests/
           browser: chrome
-
-          spec: cypress/integration/mobile-learn/test-challenges.js
+          spec: cypress/e2e/mobile-learn/test-challenges.js
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

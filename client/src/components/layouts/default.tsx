@@ -90,8 +90,14 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   block?: string;
   superBlock?: string;
   t: TFunction;
-  useTheme?: boolean;
 }
+
+const getSystemTheme = () =>
+  `${
+    window.matchMedia('(prefers-color-scheme: dark)').matches === true
+      ? 'dark-palette'
+      : 'light-palette'
+  }`;
 
 class DefaultLayout extends Component<DefaultLayoutProps> {
   static displayName = 'DefaultLayout';
@@ -143,17 +149,18 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
       superBlock,
       t,
       theme = 'default',
-      user,
-      useTheme = true
+      user
     } = this.props;
+
+    const useSystemTheme = fetchState.complete && isSignedIn === false;
 
     return (
       <div className='page-wrapper'>
         <Helmet
           bodyAttributes={{
-            class: useTheme
-              ? `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
-              : 'light-palette'
+            class: useSystemTheme
+              ? getSystemTheme()
+              : `${theme === 'night' ? 'dark' : 'light'}-palette`
           }}
           meta={[
             {

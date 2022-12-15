@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c5a
-title: Запустіть функціональне тестування на відповідь API за допомогою Chai-HTTP III - PUT методу
+title: Запустіть функціональні тести на відповіді API за допомогою методу Chai-HTTP III - PUT
 challengeType: 2
 forumTopicId: 301590
 dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-method
@@ -10,9 +10,9 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-Коли ви протестуєте `PUT` запит, ви часто будете посилати дані разом з ним. Дані, які ви включаєте до вашого `PUT` запиту, називаються тілом запиту.
+Під час тесту запиту `PUT` ви часто будете надсилати й дані. Дані, які поміщені у вашому запиті `PUT`, називаються тілом запиту.
 
-Щоб відправити `PUT` запит і об'єкт JSON до `'/travellers'`, ви можете використовувати плагіни `chai-http`, `put` і `send` методи:
+Щоб відправити запит `PUT` та об'єкт JSON до `'/travellers'`, ви можете використати методи `put` та `send` плагіну `chai-http`:
 
 ```js
 chai
@@ -24,7 +24,7 @@ chai
   ...
 ```
 
-І маршрут відповідає:
+Відповідь маршруту:
 
 ```json
 {
@@ -38,9 +38,9 @@ chai
 
 # --instructions--
 
-У межах  `tests/2_functional-tests.js` змініть `'Send {surname: "Colombo"}'`, перевірте (`// #3`) та використайте методи `put` та `send`, щоб перевірити кінцеву точку `'/travellers'`.
+У межах `tests/2_functional-tests.js` змініть `'Send {surname: "Colombo"}'` тесту (`// #3`) і використайте методи `put` та `send`, щоб перевірити кінцеву точку `'/travellers'`.
 
-Надішліть наступний об'єкт JSON з вашим PUT-запитом:
+Надішліть наступний об'єкт JSON зі своїм запитом PUT:
 
 ```json
 {
@@ -48,18 +48,18 @@ chai
 }
 ```
 
-Перевірте наступне у межах виклику `request.end`:
+Перевірте наступне у межах зворотнього виклику `request.end`:
 
-1.  `status` має бути `200`
-2.  `type` має бути `application/json`
-3.  `body.name` має бути `Cristoforo`
-4.  `body.surname` має бути `Colombo`
+1.  `status` повинен бути `200`
+2.  `type` повинен бути `application/json`
+3.  `body.name` повинен бути `Cristoforo`
+4.  `body.surname` повинен бути `Colombo`
 
-Дотримуйтесь порядку тверджень вище - ми покладаємося на нього. Також обов'язково видаліть `assert.fail()` після завершення.
+Дотримуйтесь порядку тверджень вище, оскільки ми залежимо від нього. Не забудьте видалити `assert.fail()` після завершення.
 
 # --hints--
 
-Необхідно пройти усі тести.
+Всі тести повинні бути успішно пройдені.
 
 ```js
 (getUserInput) =>
@@ -73,7 +73,7 @@ chai
   );
 ```
 
-Ви повинні перевірити, чи значення `res.status` становить 200.
+Ви повинні перевірити, чи `res.status` має значення 200.
 
 ```js
 (getUserInput) =>
@@ -89,7 +89,7 @@ chai
   );
 ```
 
-Перевірте значення `res.type` на `'application/json'`.
+Ви повинні перевірити, чи `res.type` має значення `'application/json'`.
 
 ```js
 (getUserInput) =>
@@ -105,7 +105,7 @@ chai
   );
 ```
 
-Перевірте значення `res.body.name` на `'Cristoforo'`.
+Ви повинні перевірити, чи `res.body.name` має значення `'Cristoforo'`.
 
 ```js
 (getUserInput) =>
@@ -121,7 +121,7 @@ chai
   );
 ```
 
-Перевірте значення `res.body.surname` на `'Colombo'`.
+Ви повинні перевірити, чи `res.body.surname` має значення `'Colombo'`.
 
 ```js
 (getUserInput) =>
