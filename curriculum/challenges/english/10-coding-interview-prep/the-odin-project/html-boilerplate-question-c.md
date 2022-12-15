@@ -46,19 +46,19 @@ Back in `index.html` file, let’s add a `head` element with a `charset` `meta` 
     
 ## --text--
 
-What is the purpose of the head element?
+What is the purpose of the `head` element?
 
 ## --answers--
 
-The head element is used to display all elements that are displayed on the webpage.
+The `head` element is used to display all elements that are displayed on the webpage.
 
 ---
 
-The head element is used to display important information about your webpage and is used to render web pages correctly with meta elements.
+The `head` element is used to display important information about your webpage and is used to render web pages correctly with `meta` elements.
 
 ---
 
-It is used to display the header content on top of the webpage.
+The `head` element is used to display the header content on top of the webpage.
 
 
 ## --video-solution--
