@@ -21,7 +21,7 @@ To use images that you have on your own websites, you can use a relative path.
 
 - Create a new directory named `images` within the `odin-links-and-images` project.
 
-- Next, download [this image](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) and move it into the images directory you just created.
+- Next, download [this image](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) and move it into the `images` directory you just created.
 
 - Rename the image to `dog.jpg`.
 
@@ -61,13 +61,13 @@ To break this down:
 
 Using the metaphor we used earlier, using `../` in a filepath is kind of like stepping out from the room you are currently in to the main hallway so you can go to another room.
 
-## Alt attribute
+## `Alt` attribute
 
-Besides the src attribute, every image element should also have an alt (alternative text) attribute.
+Besides the `src` attribute, every image element should also have an `alt` (alternative text) attribute.
 
-The alt attribute is used to describe an image. It will be used in place of the image if it cannot be loaded. It is also used with screen readers to describe what the image is to visually impaired users.
+The `alt` attribute is used to describe an image. It will be used in place of the image if it cannot be loaded. It is also used with screen readers to describe what the image is to visually impaired users.
 
-This is how the The Odin Project logo example you used earlier looks with an alt attribute included:
+This is how the The Odin Project logo example you used earlier looks with an `alt` attribute included:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
 # --question--
