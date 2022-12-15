@@ -91,6 +91,14 @@ Para executar testes contra a biblioteca de componentes, execute o seguinte coma
 npm run test-ui-components
 ```
 
+## Adding packages to the UI-Component library
+
+We restrict adding new packages to the UI Components to help with the project's maintainability. In the rare chance that you think a dependency is needed, please check with the maintainers first and then use the following command to add a package:
+
+```bash
+npm i -w=tools/ui-components package_name
+```
+
 ### Links úteis
 
 - [Testes de acessibilidade](https://testing-library.com/docs/dom-testing-library/api-accessibility)
