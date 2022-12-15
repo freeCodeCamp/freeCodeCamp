@@ -10,7 +10,7 @@ function Spacer(props: SpacerPropTypes): JSX.Element {
 
   return (
     <>
-      <span className='sr-only'>{t('icons.spacer')}</span>
+      <span className='sr-only' aria-hidden='true' />
       <svg
         className='tick'
         height='50'
