@@ -104,19 +104,7 @@ Comece a [usar o MailHog](#using-mailhog).
 
 ## Usando o MailHog
 
-Abra uma nova guia ou janela do navegador e navegue até [http://localhost:8025](http://localhost:8025) para abrir sua caixa de entrada do MailHog quando a instalação do MailHog for concluída e o MailHog estiver em execução. A caixa de entrada será similar à imagem abaixo.
-
-![Captura de tela do MailHog 1](https://contribute.freecodecamp.org/images/mailhog/1.jpg)
-
-E-mails enviados pela instalação do seu freeCodeCamp aparecerão assim
-
-![Captura de tela do MailHog 2](https://contribute.freecodecamp.org/images/mailhog/2.jpg)
-
-Duas guias que permitem que você veja texto simples ou conteúdo fonte estarão disponíveis quando você abrir um determinado e-mail. Certifique-se de que a aba de texto simples esteja selecionada como abaixo.
-
-![Captura de tela do MailHog 3](https://contribute.freecodecamp.org/images/mailhog/3.jpg)
-
-Todos os links no e-mail devem ser clicáveis e redirecionar para a URL deles.
+Open a new browser tab or window and navigate to [http://localhost:8025](http://localhost:8025) to open your MailHog inbox when the MailHog installation has completed and MailHog is running.
 
 ## Links úteis
 
