@@ -11,7 +11,7 @@ You may have noticed that in all the examples in this lesson you indent any elem
 
 When you nest elements within other elements, you create a parent and child relationship between them. The nested elements are the children and the element they are nested within is the parent.
 
-In the following example, the body element is the parent and the paragraph is the child:
+In the following example, the `body` element is the parent and the `p` is the child:
 
 ```html
 <html>
@@ -25,7 +25,7 @@ In the following example, the body element is the parent and the paragraph is th
 
 Just as in human relationships, HTML parent elements can have many children. Elements at the same level of nesting are considered to be siblings.
 
-For example, the two paragraphs in the following code are siblings, since they are both children of the body tag and are at the same level of nesting as each other:
+For example, the two `p` elements in the following code are siblings, since they are both children of the `body` tag and are at the same level of nesting as each other:
 
 ```html
 <html>

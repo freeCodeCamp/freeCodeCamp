@@ -77,15 +77,15 @@ This is how the The Odin Project logo example you used earlier looks with an alt
 What two attributes do images always need to have?
 ## --answers--
 
-An Image element always needs to have a `href` attribute and an `alt` attribute.
+An `img` element always needs to have a `href` attribute and an `alt` attribute.
 
 ---
 
-An Image element always needs to have a `name` attribute and `href` attribute.
+An `img` element always needs to have a `name` attribute and `href` attribute.
 
 ---
 
-An image element always needs to have an `alt` attribute and a `src` attribute
+An `img` element always needs to have an `alt` attribute and a `src` attribute
 
 ## --video-solution--
 
