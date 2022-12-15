@@ -1,5 +1,6 @@
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import { isEmpty } from 'lodash-es';
+import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -7,7 +8,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import envData from '../../../config/env.json';
-import { getLangCode } from '../../../config/i18n/all-langs';
+import { getLangCode } from '../../../config/i18n';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
 import DonateForm from '../components/Donation/donate-form';
 
@@ -366,6 +367,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             </p>
             <p>{t('certification.executive')}</p>
           </div>
+          <span className='qr-wrap'>
+            <QRCodeSVG className='qr-code' value={certURL} />
+          </span>
           <Row>
             <p className='verify'>
               {t('certification.verify', { certURL: certURL })}

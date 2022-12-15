@@ -3,6 +3,8 @@ client/static/**
 client/public/**
 api-server/src/public/**
 api-server/lib/**
-config/i18n/all-langs.js
+config/i18n.js
 config/certification-settings.js
+config/superblock-order.js
 web/**
+docs/**/*.md

@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d87
-title: 'Вступ: Основи машинного навчання'
+title: 'Вступ: основи машинного навчання'
 challengeType: 11
 videoId: KwL1qTR5MT8
 bilibiliIds:
@@ -26,7 +26,7 @@ dashedName: introduction-machine-learning-fundamentals
 
 ---
 
-Машинне навчання - це підмножина штучного інтелекту.
+Машинне навчання – це підмножина штучного інтелекту.
 
 ## --video-solution--
 

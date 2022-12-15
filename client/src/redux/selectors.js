@@ -26,6 +26,8 @@ export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
 export const isSignedInSelector = state => !!state[MainApp].appUsername;
 export const isDonationModalOpenSelector = state =>
   state[MainApp].showDonationModal;
+export const isSignoutModalOpenSelector = state =>
+  state[MainApp].showSignoutModal;
 export const recentlyClaimedBlockSelector = state =>
   state[MainApp].recentlyClaimedBlock;
 export const donationFormStateSelector = state =>

@@ -26,6 +26,7 @@ export interface State {
       activeDonations: number;
     };
     showDonationModal: boolean;
+    showSignoutModal: boolean;
     isOnline: boolean;
     donationFormState: DefaultDonationFormState;
   };
@@ -35,14 +36,14 @@ export interface FlashState {
   message: { id: string } & FlashMessageArg;
 }
 
-export interface DefaultFetchState {
+interface DefaultFetchState {
   pending: boolean;
   complete: boolean;
   errored: boolean;
   error: null | string;
 }
 
-export interface DefaultDonationFormState {
+interface DefaultDonationFormState {
   redirecting: boolean;
   processing: boolean;
   success: boolean;

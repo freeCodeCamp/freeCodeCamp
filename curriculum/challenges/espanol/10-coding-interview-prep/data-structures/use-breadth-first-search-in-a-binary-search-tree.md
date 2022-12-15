@@ -1,6 +1,6 @@
 ---
 id: 587d8258367417b2b2512c7f
-title: Use Breadth First Search in a Binary Search Tree
+title: Usa la busqueda Breadth First en una busqueda de arbol binario
 challengeType: 1
 forumTopicId: 301718
 dashedName: use-breadth-first-search-in-a-binary-search-tree
@@ -8,17 +8,17 @@ dashedName: use-breadth-first-search-in-a-binary-search-tree
 
 # --description--
 
-Here we will introduce another tree traversal method: breadth-first search. In contrast to the depth-first search methods from the last challenge, breadth-first search explores all the nodes in a given level within a tree before continuing on to the next level. Typically, queues are utilized as helper data structures in the design of breadth-first search algorithms.
+Aquí introduciremos otro método de arbol transversal: la busqueda breadth-first. En contraste al método de busqueda depth-first del último reto, la busqueda breadth-first explora todos los nodos en un nivel dado dentro del arbol antes de continuar con el siguiente nivel. Normalmente, las colas son utilizadas como estructuras de datos de apoyo en el diseño de los algoritmos de busqueda breadth-first.
 
-In this method, we start by adding the root node to a queue. Then we begin a loop where we dequeue the first item in the queue, add it to a new array, and then inspect both its child subtrees. If its children are not null, they are each enqueued. This process continues until the queue is empty.
+En este método, empezamos agregando el nodo raíz a la cola. Luego empezamos un ciclo donde obtenemos el primer elemento de la cola, lo agregamos a un nuevo array, y luego inspeccionamos ambos sub-arboles hijos. Si sus hijos no son nulos, entonces ambos serán encolados. Este proceso continua hasta que la cola está vacía.
 
 # --instructions--
 
-Let's create a breadth-first search method in our tree called `levelOrder`. This method should return an array containing the values of all the tree nodes, explored in a breadth-first manner. Be sure to return the values in the array, not the nodes themselves. A level should be traversed from left to right. Next, let's write a similar method called `reverseLevelOrder` which performs the same search but in the reverse direction (right to left) at each level.
+Creamos un método de búsqueda de primera-amplitud en nuestro árbol llamado `levelOrder`. Este método debería devolver un arreglo conteniendo los valores de todos los nodos del árbol, explorados en la forma primera-amplitud. Asegurate de devolver los valores en el arreglo, no los nodos por sí mismos. Un nivel debería ser atravesado de izquierda a derecha. Siguiente, escriberemos un método similar llamado `reverseLevelOrder` cual efectuara la misma búsqueda pero en la dirección inversa (derecha a izquierda) en cada nivel.
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+La estructura de datos `BinarySearchTree` debería existir.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `levelOrder`.
+El árbol de búsqueda binaria debería tener un método llamado `levelOrder`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `reverseLevelOrder`.
+El árbol de búsqueda binaria debería tener un método llamado `reverseLevelOrder`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-The `levelOrder` method should return an array of the tree node values explored in level order.
+El método `levelOrder` debería devolver un arreglo de valores de nodo del árbol explorados en level order.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The `reverseLevelOrder` method should return an array of the tree node values explored in reverse level order.
+El método `reverseLevelOrder` debería devolver un arreglo de valores de nodo de árbol explorados en reverse level order.
 
 ```js
 assert(
@@ -124,7 +124,7 @@ assert(
 );
 ```
 
-The `levelOrder` method should return `null` for an empty tree.
+El método `levelOrder` debería devolver `null` para un árbol vacío.
 
 ```js
 assert(
@@ -143,7 +143,7 @@ assert(
 );
 ```
 
-The `reverseLevelOrder` method should return `null` for an empty tree.
+El método `reverseLevelOrder` debería devolver `null` para un árbol vacio.
 
 ```js
 assert(

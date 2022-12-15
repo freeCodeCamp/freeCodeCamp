@@ -8,13 +8,19 @@ dashedName: metric-imperial-converter
 
 # --description--
 
-构建一个 JavaScript 的全栈应用，在功能上与这个应用相似：<https://metric-imperial-converter.freecodecamp.rocks/>。 可以采用下面的任意一种方式完成这个挑战：
+构建一个 JavaScript 全栈应用，在功能上与 <a href="https://metric-imperial-converter.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://metric-imperial-converter.freecodecamp.rocks/</a> 类似。 可以采用下面的任意一种方式完成这个挑战：
 
-- 克隆 [GitHub 仓库](https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/) 并在本地完成你的项目。
-- 使用[我们的 Replit 初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter)来完成你的项目。
+- 克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
+- 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
 - 使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 框中提交你的项目 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+如果你使用 Replit，请按照以下步骤设置项目：
+
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮。
+
+当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 `Solution Link` 字段中。 也可以将项目的源码链接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
@@ -22,15 +28,15 @@ dashedName: metric-imperial-converter
 - 在 `/routes/api.js` 中完成必要的路由
 - 复制 `sample.env` 文件到 `.env` 并按需设置变量
 - 在 `.env` 文件中取消注释 `NODE_ENV=test` 来运行测试
-- 使用 `npm run test` 命令在 console 中运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open shell”，打开 Replit 控制台。
+- 使用 `npm run test` 命令在 console 中运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open shell”，打开 Replit 控制台
 
 在 `tests/1_unit-tests.js` 中写下以下测试：
 
 - `convertHandler` 应该正确地读取整个数字输入。
-- `convertHandler` 应该正确地读取十进制数字输入。
+- `convertHandler` 应该正确地读取一个十进制数字输入。
 - `convertHandler` 应该正确地读取一个分数输入。
 - `convertHandler` 应该正确地读取一个带小数点的分数输入。
-- `convertHandler` 当输入双分数时应该返回错误 ( `3/2/3`)。
+- `convertHandler` 当输入双分数时应该返回错误（`3/2/3`）。
 - `convertHandler` 在没有提供数字输入时应该默认为 `1`。
 - `convertHandler` 应该正确地读取每个有效的单位输入。
 - `convertHandler` 在输入无效单位时应返回错误。
@@ -43,17 +49,17 @@ dashedName: metric-imperial-converter
 - `convertHandler` 应该正确地将 `lbs` 转换为 `kg`。
 - `convertHandler` 应该正确地将 `kg` 转换为 `lbs`。
 
-在 `tests/2_functional-tests.js` 中写下以下测试：
+在 `tests/2_functional-tests.js` 中编写下以下测试：
 
-- 将有效的输入转换为 `10L`: `GET` 请求到 `/api/convert`。
-- 转换无效的输如 `32g`: `GET` 请求到 `/api/convert`.
-- 转换无效的数字，例如 `3/7.2/4kg`: `GET` 请求到 `/api/convert`。
-- 转换无效的数字和单位如 `3/7.2/4kilomegagram`: `GET` 请求到 `/api/convert`.
-- 转换时没有数字，例如 `kg`: `GET` 请求到 `/api/convert`。
+- 转换一个有效的输入例如 `10L`：`GET` 请求到 `/api/convert`。
+- 转换一个无效的输入例如 `32g`：`GET` 请求到 `/api/convert`。
+- 转换一个无效的数字例如 `3/7.2/4kg`：`GET` 请求到 `/api/convert`。
+- 转换一个无效的数字和单位例如 `3/7.2/4kilomegagram`：`GET` 请求到 `/api/convert`。
+- 转换时没有数字，例如 `kg`：`GET` 请求到 `/api/convert`。
 
 # --hints--
 
-提交自己的项目，而不是示例的 URL。
+你可以提交你自己的项目，而不是示例的 URL。
 
 ```js
 getUserInput => {
@@ -71,7 +77,7 @@ getUserInput => {
 
 ```
 
-可以将 `'gal'` 转换为 `'L'`，反之亦然。 (1 gal to 3.78541 L)
+你可以将 `'gal'` 转换为 `'L'`，反之亦然。 （1 gal 转换为 3.78541 L）
 
 ```js
 async getUserInput => {
@@ -94,7 +100,7 @@ async getUserInput => {
 };
 ```
 
-可以将 `'lbs'` 转换为 `'kg'`，反之亦然。 (1 lbs to 0.453592 kg)
+你可以将 `'lbs'` 转换为 `'kg'`，反之亦然。 （1 lbs 转换为 0.453592 kg）
 
 ```js
 async getUserInput => {
@@ -117,7 +123,7 @@ async getUserInput => {
 };
 ```
 
-你可以将 `'mi'` 转换为 `'km'` 反之亦然。 (1 mi to 1.60934 km)
+你可以将 `'mi'` 转换为 `'km'` 反之亦然。 （1 mi 转换为 1.60934 km）
 
 ```js
 async getUserInput => {
@@ -209,7 +215,7 @@ async getUserInput => {
 };
 ```
 
-可以在参数中使用分数、小数或小数分数 (例如 5, 1/2, 2.5/6)，如果没有提供任何内容，则默认值为 1。
+你可以在参数中使用分数、小数或小数分数（例如 5、1/2、2.5/6），如果没有提供任何内容，则默认值为 1。
 
 ```js
 async getUserInput => {
@@ -240,7 +246,7 @@ async getUserInput => {
 };
 ```
 
-返回将包含 `initNum`、`initUnit`、`returnNum`、`returnUnit` 和 `string` 拼写单位格式 `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'` 结果四舍五入为 5 小数。
+你的返回将包含 `initNum`、`initUnit`、`returnNum`、`returnUnit` 和 `string` 拼写单位格式 `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'`，结果四舍五入为 5 位小数。
 
 ```js
 async getUserInput => {
@@ -257,7 +263,7 @@ async getUserInput => {
 };
 ```
 
-所有 16 个单元的测试都已完成并通过。
+所有 16 项单元测试都已完成并通过。
 
 ```js
 async getUserInput => {

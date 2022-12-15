@@ -19,7 +19,7 @@ dashedName: build-a-survey-form
 1. Dentro do elemento do formulário, deve ser **obrigatório** inserir seu e-mail em um campo `input` que tenha um `id` `email`
 1. Se for informado um e-mail que não esteja formatado corretamente, um erro de validação HTML5 deve ser mostrado
 1. Dentro do formulário, você pode inserir um número em um campo `input` que tenha o `id` `number`
-1. Se for informado qualquer caractere não numérico no campo de entrada do número, um erro de validação HTML5 deve ser mostrado
+1. A entrada de número não deve aceitar algo que não seja números, impedindo que você os digite ou mostrando um erro de validação do HTML5 (dependendo do seu navegador).
 1. Se forem inseridos números fora do intervalo do campo de entrada do número, intervalo esse definido pelos atributos `min` e `max`, um erro de validação de HTML5 deve ser mostrado
 1. Para os campos de entrada (inputs) name, email e number dentro do formulário, deve haver elementos `label` correspondentes que descrevam o propósito de cada campo com os seguintes ids: `id="name-label"`, `id="email-label"` e `id="number-label"`
 1. Para os campos de entrada name, email e number, deve haver um texto placeholder (texto ilustrativo) que forneça uma descrição ou instruções para cada campo
@@ -91,7 +91,7 @@ const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-O elemento `#name` deve estar aninhado dentro de `#survey-form`.
+O elemento `#name` deve ser um descendente de `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name')
@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-O elemento `#email` deve estar aninhado dentro de `#survey-form`
+O elemento `#email` deve ser um descendente de `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #email')
@@ -133,7 +133,7 @@ const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-O elemento `#number` deve estar aninhado dentro de `#survey-form`.
+O elemento `#number` deve ser um descendente de `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number')
@@ -203,21 +203,21 @@ const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-O elemento `#name-label` deve estar aninhado dentro de `#survey-form`.
+O elemento `#name-label` deve ser um descendente de `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-O elemento `#email-label` deve estar aninhado dentro de `#survey-form`.
+O elemento `#email-label` deve ser um descendente de `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-O elemento `#number-label` deve estar aninhado dentro de `#survey-form`.
+O elemento `#number-label` deve ser um descendente de `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number-label')

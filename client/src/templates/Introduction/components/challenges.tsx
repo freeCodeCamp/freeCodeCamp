@@ -24,8 +24,6 @@ interface Challenges {
   blockTitle?: string | null;
 }
 
-const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
-
 function Challenges({
   challengesWithCompleted,
   executeGA,
@@ -44,11 +42,7 @@ function Challenges({
     });
 
   const renderCheckMark = (isCompleted: boolean) =>
-    isCompleted ? (
-      <GreenPass style={mapIconStyle} />
-    ) : (
-      <GreenNotCompleted style={mapIconStyle} />
-    );
+    isCompleted ? <GreenPass /> : <GreenNotCompleted />;
 
   const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
 

@@ -17,7 +17,7 @@ dashedName: global-scope-and-functions
 
 Використовуючи `let` чи `const`, визначте глобальну змінну `myGlobal` поза будь-якою функцією. Привласніть їй значення `10`.
 
-Призначте `5` для `oopsGlobal` всередині функції `fun1` ***не*** використовуючи ключове слово `let` чи `const`.
+Призначте `5` до `oopsGlobal` всередині функції `fun1` ***не*** використовуючи ключові слова `var`, `let` чи `const`.
 
 # --hints--
 
@@ -95,7 +95,7 @@ function fun1() {
 // Only change code above this line
 
 function fun2() {
-  var output = "";
+  let output = "";
   if (typeof myGlobal != "undefined") {
     output += "myGlobal: " + myGlobal;
   }
@@ -116,7 +116,7 @@ function fun1() {
 }
 
 function fun2() {
-  var output = "";
+  let output = "";
   if(typeof myGlobal != "undefined") {
     output += "myGlobal: " + myGlobal;
   }

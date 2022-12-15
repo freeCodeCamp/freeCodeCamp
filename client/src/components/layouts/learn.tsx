@@ -87,8 +87,6 @@ function LearnLayout({
         <meta content='noindex' name='robots' />
       </Helmet>
       <main id='learn-app-wrapper'>{children}</main>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-      /* @ts-ignore  */}
       <DonateModal />
     </>
   );

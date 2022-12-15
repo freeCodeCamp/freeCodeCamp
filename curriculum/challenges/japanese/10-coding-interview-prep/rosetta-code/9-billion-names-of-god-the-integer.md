@@ -1,14 +1,14 @@
 ---
 id: 5949b579404977fbaefcd736
 title: 90億の神の御名 整数
-challengeType: 5
+challengeType: 1
 forumTopicId: 302219
 dashedName: 9-billion-names-of-god-the-integer
 ---
 
 # --description--
 
-このタスクは、[アーサー・C・クラークの短編](https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary "wp: The Nine Billion Names of God#Plot_summary")のバリエーションです。
+This task is a variation of the short story by Arthur C. Clarke.
 
 (ソルバーは、このタスクの完了結果を認識している必要があります。)
 

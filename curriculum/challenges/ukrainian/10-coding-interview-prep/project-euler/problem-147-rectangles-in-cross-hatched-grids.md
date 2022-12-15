@@ -10,7 +10,7 @@ dashedName: problem-147-rectangles-in-cross-hatched-grids
 
 У сітці 3х2 всього може бути розташовано 37 різних прямокутників, як зазначено на ескізі.
 
-<img class="img-responsive center-block" alt="способи розміщення різних прямокутників в сітці з перехресним штрихуванням розміром 3x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="ways of situating different rectangles within cross-hatched 3x2 grid" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px;" />
 
 Є 5 сіток, менших, ніж 3х2, розміри яких (горизонтальні та вертикальні) є важливими: 1x1, 2x1, 3x1, 1x2 and 2x2. Якщо кожна з них перехресно заштрихована, то в менших сітках можна буде розмістити наступне число прямокутників:
 

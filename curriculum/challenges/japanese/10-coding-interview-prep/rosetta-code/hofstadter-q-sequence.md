@@ -1,18 +1,18 @@
 ---
 id: 59637c4d89f6786115efd814
 title: ホフスタッター Q 数列
-challengeType: 5
+challengeType: 1
 forumTopicId: 302287
 dashedName: hofstadter-q-sequence
 ---
 
 # --description--
 
-[ホフスタッター Q 数列](https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence "wp: Hofstadter_sequence#Hofstadter_Q_sequence") は次のように定義されます。
+The Hofstadter Q sequence is defined as:
 
 $Q(1)=Q(2)=1, \\\\ Q(n)=Q\\big(n-Q(n-1)\\big)+Q\\big(n-Q(n-2)), \\quad n>2.$
 
-これは [フィボナッチ数列](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence")に似た定義ですが、 フィボナッチ数列の次の項が前の2つの項の合計であるのに対し、 Q数列では、前の2つの項は、次の項を作成するために合計する2つの数字を見つけるためにQ数列内で戻る距離を示しています。
+It is defined like the Fibonacci sequence, but whereas the next term in the Fibonacci sequence is the sum of the previous two terms, in the Q sequence the previous two terms tell you how far to go back in the Q sequence to find the two numbers to sum to make the next term of the sequence.
 
 # --instructions--
 

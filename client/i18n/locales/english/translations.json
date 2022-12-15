@@ -226,12 +226,12 @@
     "page-number": "{{pageNumber}} of {{totalPages}}"
   },
   "footer": {
-    "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)",
+    "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546)",
     "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.",
     "donation-initiatives": "Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.",
     "donate-text": "You can <1>make a tax-deductible donation here</1>.",
     "trending-guides": "Trending Guides",
-    "our-nonprofit": "Our Nonprofit",
+    "our-nonprofit": "Our Charity",
     "links": {
       "about": "About",
       "alumni": "Alumni Network",
@@ -264,7 +264,7 @@
       "p8": "And this curriculum will give you thousands of hours of hands-on programming practice.",
       "p9": "And if you want to learn more math and computer science theory, we also have thousands of hours of video courses on <0>freeCodeCamp's YouTube channel</0>.",
       "p10": "If you want to get a developer job or freelance clients, programming skills will be just part of the puzzle. You also need to build your personal network and your reputation as a developer.",
-      "p11": "You can do this on Twitter and GitHub, and also on <0>the freeCodeCamp forum</0>.",
+      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
       "p12": "Happy coding!"
     },
     "upcoming-lessons": "Upcoming Lessons",
@@ -284,6 +284,7 @@
     "sign-in-save": "Sign in to save your progress",
     "download-solution": "Download my solution",
     "percent-complete": "{{percent}}% complete",
+    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
     "tried-rsa": "If you've already tried the <0>Read-Search-Ask</0> method, then you can ask for help on the freeCodeCamp forum.",
     "rsa": "Read, search, ask",
     "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
@@ -306,6 +307,10 @@
       "notes": "Notes",
       "preview": "Preview"
     },
+    "editor-alerts": {
+      "tab-trapped": "Pressing tab will now insert the tab character",
+      "tab-free": "Pressing tab will now move focus to the next focusable element"
+    },
     "help-translate": "We are still translating the following certifications.",
     "help-translate-link": "Help us translate.",
     "project-preview-title": "Here's a preview of what you will build",
@@ -324,10 +329,14 @@
     "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
     "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
     "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up.",
-    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our charity's mission.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program",
+    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
   },
   "donate": {
-    "title": "Support our nonprofit",
+    "title": "Support our charity",
     "processing": "We are processing your donation.",
     "redirecting": "Redirecting...",
     "thanks": "Thanks for donating",
@@ -349,10 +358,11 @@
     "your-donation": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world.",
     "your-donation-2": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each month.",
     "your-donation-3": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each year.",
-    "duration": "Become a one-time supporter of our nonprofit.",
-    "duration-2": "Become a monthly supporter of our nonprofit.",
-    "duration-3": "Become an annual supporter of our nonprofit",
-    "duration-4": "Become a supporter of our nonprofit",
+    "become-supporter": "Become a Supporter",
+    "duration": "Become a one-time supporter of our charity.",
+    "duration-2": "Become a monthly supporter of our charity.",
+    "duration-3": "Become an annual supporter of our charity",
+    "duration-4": "Become a supporter of our charity",
     "nicely-done": "Nicely done. You just completed {{block}}.",
     "credit-card": "Credit Card",
     "credit-card-2": "Or donate with a credit card:",
@@ -366,25 +376,25 @@
     "email-receipt": "Email (we'll send you a tax-deductible donation receipt):",
     "need-help": "Need help with your current or past donations?",
     "forward-receipt": "Forward a copy of your donation receipt to donors@freecodecamp.org and tell us how we can help.",
-    "efficiency": "freeCodeCamp is a highly efficient education nonprofit.",
+    "efficiency": "freeCodeCamp is a highly efficient education charity.",
     "why-donate-1": "When you donate to freeCodeCamp, you help people learn new skills and provide for their families.",
     "why-donate-2": "You also help us create new resources for you to use to expand your own technology skills.",
     "bigger-donation": "Want to make a bigger one-time donation, mail us a check, or give in other ways?",
-    "other-ways": "Here are many <0>other ways you can support our non-profit's mission</0>.",
+    "other-ways": "Here are many <0>other ways you can support our charity's mission</0>.",
     "failed-pay": "Uh - oh. It looks like your transaction didn't go through. Could you please try again?",
     "try-again": "Please try again.",
     "card-number": "Your Card Number:",
     "expiration": "Expiration Date:",
     "secure-donation": "Secure donation",
     "faq": "Frequently asked questions",
-    "only-you": "Only you can see this message. Congratulations on earning this certification. It's no easy task. Running freeCodeCamp isn't easy either. Nor is it cheap. Help us help you and many other people around the world. Make a tax-deductible supporting donation to our nonprofit today.",
+    "only-you": "Only you can see this message. Congratulations on earning this certification. It's no easy task. Running freeCodeCamp isn't easy either. Nor is it cheap. Help us help you and many other people around the world. Make a tax-deductible supporting donation to our charity today.",
     "get-help": "How can I get help with my donations?",
     "how-transparent": "How transparent is freeCodeCamp.org?",
     "very-transparent": "Very. We have a Platinum transparency rating from GuideStar.org.",
     "download-irs": "You can <0>download our IRS Determination Letter here</0>.",
     "download-990": "You can <0>download our most recent 990 (annual tax report) here</0>.",
     "how-efficient": "How efficient is freeCodeCamp?",
-    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable nonprofits. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
+    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable charity. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
     "help-millions": "However, on a budget of only a few hundred thousand dollars per year, we have been able to help millions of people.",
     "how-one-time": "How can I make a one-time donation?",
     "one-time": "If you'd prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use <0>this link to donate whatever amount feels right through PayPal</0>.",
@@ -394,7 +404,7 @@
     "can-check": "Can I mail a physical check?",
     "yes-check": "Yes, we would welcome a check. You can mail it to us at:",
     "how-matching-gift": "How can I set up matching gifts from my employer, or payroll deductions?",
-    "employers-vary": "This varies from employer to employer, and our nonprofit is already listed in many of the big donation-matching databases.",
+    "employers-vary": "This varies from employer to employer, and our charity is already listed in many of the big donation-matching databases.",
     "some-volunteer": "Some people are able to volunteer for freeCodeCamp and their employer matches by donating a fixed amount per hour they volunteer. Other employers will match any donations the donors make up to a certain amount",
     "help-matching-gift": "If you need help with this, please email Quincy directly: quincy@freecodecamp.org",
     "how-endowment": "How can I set up an Endowment Gift to freeCodeCamp.org?",
@@ -405,13 +415,13 @@
     "thank-wikimedia": "We would like to thank the Wikimedia Foundation for providing this formal language for us to use.",
     "legacy-gift-questions": "If you have any questions about this process, please email Quincy at quincy@freecodecamp.org.",
     "how-stock": "How can I donate stock to freeCodeCamp.org?",
-    "welcome-stock": "We would welcome your stock donations. Please email Quincy directly and he can help you with this, and share our nonprofit's brokerage account details: quincy@freecodecamp.org.",
+    "welcome-stock": "We would welcome your stock donations. Please email Quincy directly and he can help you with this, and share our charity's brokerage account details: quincy@freecodecamp.org.",
     "how-receipt": "Can I get a donation receipt so that I can deduct my donation from my taxes?",
     "just-forward": "Absolutely. Just forward the receipt from your transaction to donors@freecodecamp.org, tell us you'd like a receipt and any special instructions you may have, and we'll reply with a receipt for you.",
     "how-update": "I set up a monthly donation, but I need to update or pause the monthly recurrence. How can I do this?",
     "take-care-of-this": "Just forward one of your monthly donation receipts to donors@freecodecamp.org and tell us what you'd like us to do. We'll take care of this for you and send you confirmation.",
     "anything-else": "Is there anything else I can learn about donating to freeCodeCamp.org?",
-    "other-support": "If there is some other way you'd like to support our nonprofit and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org."
+    "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org."
   },
   "report": {
     "sign-in": "You need to be signed in to report a user",
@@ -497,7 +507,8 @@
     "open-preview-in-new-window": "Open the preview in a new window and focus it",
     "step": "Step",
     "steps": "Steps",
-    "steps-for": "Steps for {{blockTitle}}"
+    "steps-for": "Steps for {{blockTitle}}",
+    "code-example": "{{codeName}} code example"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
@@ -715,5 +726,12 @@
     "focus-instructions-panel": "Focus Instructions Panel",
     "navigate-previous": "Navigate Previous Exercise",
     "navigate-next": "Navigate Next Exercise"
+  },
+  "signout": {
+    "heading": "Sign out of your account",
+    "p1": "Warning: If you continue, your progress will no longer be saved.",
+    "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
+    "certain": "Yes, sign out of my account",
+    "nevermind": "Nevermind, I don't want to sign out"
   }
 }

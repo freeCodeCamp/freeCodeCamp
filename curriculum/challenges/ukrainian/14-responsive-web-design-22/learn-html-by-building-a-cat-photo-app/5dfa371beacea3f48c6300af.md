@@ -64,8 +64,8 @@ assert(
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
@@ -75,6 +75,7 @@ assert(
 --fcc-editable-region--
       <section>
         <h2>Cat Lists</h2>
+
       </section>
 --fcc-editable-region--
     </main>

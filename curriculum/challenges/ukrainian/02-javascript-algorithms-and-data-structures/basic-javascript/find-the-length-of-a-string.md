@@ -15,13 +15,13 @@ dashedName: find-the-length-of-a-string
 console.log("Alan Peter".length);
 ```
 
-У консолі відображатиметься значення `10`.
+The value `10` would be displayed in the console. Note that the space character between "Alan" and "Peter" is also counted.
 
 Наприклад, якби ми створили змінну `const firstName = "Ada"`, ми б змогли визначити довжину рядка `Ada` за допомогою властивості `firstName.length`.
 
 # --instructions--
 
-Використовуйте властивість `.length`, щоб вирахувати кількість символів у змінній `lastName` і призначити її до `lastNameLength`.
+Use the `.length` property to set `lastNameLength` to the number of characters in `lastName`.
 
 # --hints--
 

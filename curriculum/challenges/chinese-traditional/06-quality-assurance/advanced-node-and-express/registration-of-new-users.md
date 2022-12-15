@@ -8,16 +8,25 @@ dashedName: registration-of-new-users
 
 # --description--
 
-現在我們需要爲新用戶添加註冊帳號的功能。 首先我們需要在主頁的 `res.render` 接收的變量對象中添加 `showRegistration: true`。 此時刷新頁面，你會看到頁面上已經顯示了我們在 `index.pug` 文件中定義的註冊表單。 這個表單設置了請求路徑 `/register`，並將請求方法設置成 **POST**，所以我們需要在服務器接受 **POST** 請求，且在數據庫中創建用戶對象。
+現在你需要允許你網站上的新用戶註冊一個賬戶。 在主頁的 `res.render` 中，給傳遞的對象添加一個新的變量——`showRegistration: true`。 當你刷新頁面時，你應該看到已經在 `index.pug` 文件中創建的註冊表格。 這個表單被設置爲在 `/register` 上使用 **POST** 方法，因此根據下面的邏輯創建路由並將用戶對象添加到數據庫中。
 
-用戶註冊的邏輯：註冊新用戶 > 認證新用戶 > 重定向到 /profile。
+註冊路由的邏輯應如下：
 
-對於步驟一的註冊新用戶，詳細邏輯是這樣的：用 findOne 命令查詢數據庫 > 如果返回了用戶對象，則表示用戶存在，然後返回主頁；*或者*如果用戶未定義且沒有報錯，則會將包含用戶名和密碼的用戶對象通過 “insertOne” 添加到數據庫，只要沒有報錯則會繼續*下一步*：認證新用戶——我們已經在 */login* 路由的 POST 請求中寫好了這部分邏輯。
+1. 註冊新用戶
+2. 驗證新用戶
+3. 重定向到 `/profile`
+
+第 1 步的邏輯應如下：
+
+1. 使用 `findOne` 查詢數據庫
+2. 如果出現錯誤，調用 `next` 並傳入錯誤對象。
+3. 如果用戶結果返回，則重定向至主頁
+4. 如果找不到用戶並且沒有發生錯誤，那麼使用 `insertOne` 在數據庫中插入用戶名和密碼。 只要沒有發生錯誤，就調用 `next` 進行第 2 步，認證新用戶，即你已經在 `POST /login` 路由中編寫的邏輯。
 
 ```js
 app.route('/register')
   .post((req, res, next) => {
-    myDataBase.findOne({ username: req.body.username }, function(err, user) {
+    myDataBase.findOne({ username: req.body.username }, (err, user) => {
       if (err) {
         next(err);
       } else if (user) {
@@ -47,33 +56,30 @@ app.route('/register')
   );
 ```
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考[這裏](https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e)的答案。
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 **注意：**接下來的挑戰可能會在運行 *picture-in-picture*（畫中畫）模式的瀏覽器中出現問題。 如果你使用的線上 IDE 提供在 IDE 內預覽 app 的功能，請考慮打開新的標籤頁預覽。
 
 # --hints--
 
-註冊路由和顯示主頁。
+你應該有 `/register` 路由並在主頁上顯示註冊表單。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /showRegistration:( |)true/gi,
-        'You should be passing the variable showRegistration as true to your render function for the homepage'
-      );
-      assert.match(
-        data,
-        /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
-        'You should have a route accepted a post request on register that querys the db with findone and the query being username: req.body.username'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /showRegistration:( |)true/gi,
+    'You should be passing the variable showRegistration as true to your render function for the homepage'
   );
+  assert.match(
+    data,
+    /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
+    'You should have a route that accepts a POST request on /register that queries the db with findOne and the query being username: req.body.username'
+  );
+}
 ```
 
 註冊功能應可以正常運行。

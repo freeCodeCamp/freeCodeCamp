@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7eb0
 title: 'І перед Е (виняток: окрім після С)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302288
 dashedName: i-before-e-except-after-c
 ---
 
 # --description--
 
-Вираз ["I перед E, але не після C"](https://en.wikipedia.org/wiki/I before E except after C) - це загальновідомий мнемонічний вираз, який допомагає при написанні англійський слів.
+**<a href="http://www.rosettacode.org/wiki/I_before_E_except_after_C" target="_blank" rel="noopener noreferrer nofollow">"I before E, except after C"</a>** is a general rule for English language spelling. If one is unsure whether a word is spelled with the digraph `ei` or `ie`, the rhyme suggests that the correct order is `ie` unless the preceding letter is `c`, in which case it may be `ei`.
 
 Використовуючи надані слова, перевірте, чи два підпункти фрази переконливі окремо:
 
@@ -35,43 +35,43 @@ dashedName: i-before-e-except-after-c
 assert(typeof IBeforeExceptC == 'function');
 ```
 
-`IBeforeExceptC("receive")` має повертати логічне значення.
+`IBeforeExceptC("receive")` повинен повертати булеве значення.
 
 ```js
 assert(typeof IBeforeExceptC('receive') == 'boolean');
 ```
 
-`IBeforeExceptC("receive")` має повертати `true`.
+`IBeforeExceptC("receive")` повинен повертати `true`.
 
 ```js
 assert.equal(IBeforeExceptC('receive'), true);
 ```
 
-`IBeforeExceptC("science")` має повертати `false`.
+`IBeforeExceptC("science")` повинен повертати `false`.
 
 ```js
 assert.equal(IBeforeExceptC('science'), false);
 ```
 
-`IBeforeExceptC("imperceivable")` має повертати `true`.
+`IBeforeExceptC("imperceivable")` повинен повертати `true`.
 
 ```js
 assert.equal(IBeforeExceptC('imperceivable'), true);
 ```
 
-`IBeforeExceptC("inconceivable")` має повертати `true`.
+`IBeforeExceptC("inconceivable")` повинен повертати `true`.
 
 ```js
 assert.equal(IBeforeExceptC('inconceivable'), true);
 ```
 
-`IBeforeExceptC("insufficient")` має повертати `false`.
+`IBeforeExceptC("insufficient")` повинен повертати `false`.
 
 ```js
 assert.equal(IBeforeExceptC('insufficient'), false);
 ```
 
-`IBeforeExceptC("omniscient")` має повертати `false`.
+`IBeforeExceptC("omniscient")` повинен повертати `false`.
 
 ```js
 assert.equal(IBeforeExceptC('omniscient'), false);

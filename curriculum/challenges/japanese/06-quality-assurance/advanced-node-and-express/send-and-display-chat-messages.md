@@ -22,50 +22,44 @@ $('form').submit(function() {
 socket.emit('chat message', messageToSend);
 ```
 
-次に、サーバー上でソケットをリッスンし、 `message` というデータを持つイベント `'chat message'` を受信する必要があります。 サーバーでイベントを受信したら、`name` と `message` を含むオブジェクトデータを使用して、イベント `'chat message'` をすべてのソケット `io.emit` にエミットする必要があります。
+次に、サーバー上でソケットをリッスンし、 `message` というデータを持つイベント `'chat message'` を受信する必要があります。 Once the event is received, it should emit the event `'chat message'` to all sockets using `io.emit`, sending a data object containing the `username` and `message`.
 
-`client.js` では、イベント `'chat message'` をリッスンし、イベントを受信したら、名前、コロン、メッセージを使用してリストアイテムを `#messages` の末尾に追加する必要があります。
+In `client.js`, you should now listen for event `'chat message'` and, when received, append a list item to `#messages` with the username, a colon, and the message!
 
 この時点でチャットが完全に機能し、すべてのクライアントにメッセージが送信されるはずです！
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
+正しいと思ったら、ページを送信してください。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#send-and-display-chat-messages-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
 サーバーは、`'chat message'` をリッスンして正しくエミットする必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*name.*message/gis,
-        'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*username.*message/s,
+    'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'
   );
+}
 ```
 
 クライアントは、イベント `'chat message'` から受信した新しいデータを適切に処理して表示する必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/client.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /socket.on.*('|")chat message('|")[^]*messages.*li/gis,
-        'You should append a list item to #messages on your client within the "chat message" event listener to display the new message'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/public/client.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /socket.on.*('|")chat message('|")[^]*messages.*li/s,
+    'You should append a list item to #messages on your client within the "chat message" event listener to display the new message'
   );
+}
 ```
 
 # --solutions--

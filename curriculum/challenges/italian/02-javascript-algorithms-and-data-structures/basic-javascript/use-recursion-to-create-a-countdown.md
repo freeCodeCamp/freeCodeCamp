@@ -71,6 +71,13 @@ assert(
 );
 ```
 
+Le variabili globali non dovrebbero essere usate per memorizzare l'array.
+
+```js
+countdown(1)
+assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
+```
+
 # --seed--
 
 ## --seed-contents--

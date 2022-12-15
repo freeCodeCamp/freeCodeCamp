@@ -8,17 +8,23 @@ dashedName: stock-price-checker
 
 # --description--
 
-构建一个 JavaScript 的全栈应用，在功能上与这个应用相似：<https://stock-price-checker.freecodecamp.rocks/>。
+构建一个 JavaScript 的全栈应用，在功能上与这个应用相似：<a href="https://stock-price-checker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker.freecodecamp.rocks/</a>。
 
-由于所有可靠的股票价格 API 都需要一个 API 密钥，我们已经建立了一个解决方案。 使用 [https://stock-price-checer-proxy.freecodecamp.rocks/](https://stock-price-checker-proxy.freecodecamp.rocks/) 获取最新的股票价格信息，而无需注册您自己的密钥。
+由于所有可靠的股票价格 API 都需要一个 API 密钥，我们已经建立了一个解决方案。 使用 <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker-proxy.freecodecamp.rocks/</a> 获取最新的股票价格信息，而无需注册你自己的密钥。
 
 可以采用下面的任意一种方式完成这个挑战：
 
--   克隆 [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-stockchecker/) 并在本地完成项目。
--   使用[我们的 Replit 启动项目](https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker)来完成你的项目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
 -   使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+如果你使用 Replit，请按照以下步骤设置项目：
+
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮。
+
+当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 `Solution Link` 字段中。 也可以将项目的源码链接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
@@ -39,7 +45,7 @@ dashedName: stock-price-checker
 
 # --hints--
 
-提交你自己的项目，而不是示例的 URL。
+你可以提交你自己的项目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -91,7 +97,7 @@ async (getUserInput) => {
 };
 ```
 
-你也可以将 `like` 字段作为 `true`（布尔值）传递，让你的偏好添加到股票中。 每个 IP 应该只接受 1 个赞（like）。
+你也可以将 `like` 字段作为 `true`（布尔值）传递，将你的偏好添加到股票中。 每个 IP 应该只接受 1 个赞（like）。
 
 ```js
 

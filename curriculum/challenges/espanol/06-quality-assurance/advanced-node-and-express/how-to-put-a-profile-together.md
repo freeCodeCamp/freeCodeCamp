@@ -8,42 +8,41 @@ dashedName: how-to-put-a-profile-together
 
 # --description--
 
-Ahora que podemos asegurarnos de que el usuario que accede al `/profile` está autenticado, ¡podemos utilizar la información contenida en `req.user` en nuestra página!
+Now that you can ensure the user accessing the `/profile` is authenticated, you can use the information contained in `req.user` on your page.
 
-Pasa un objeto que contenga la propiedad `username` y el valor de `req.user.username` como segundo argumento para el método render de la vista de perfil. Luego, ve a tu perfil `profile.pug` y agrega la siguiente línea debajo del elemento existente `h1` y al mismo nivel de indentación:
+Pass an object containing the property `username` and value of `req.user.username` as the second argument for the `render` method of the profile view.
+
+Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
 
 ```pug
 h2.center#welcome Welcome, #{username}!
 ```
 
-Esto crea un elemento `h2` con la clase '`center`' e id '`welcome`' conteniendo el texto '`Welcome,`' seguido por el nombre de usuario.
+This creates an `h2` element with the class `center` and id `welcome` containing the text `Welcome,` followed by the username.
 
-Además, en `profile.pug`, añade un enlace que haga referencia a la ruta `/logout`, que alojará la lógica para des-autentificar a un usuario.
+Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user:
 
 ```pug
 a(href='/logout') Logout
 ```
 
-Envía tu página cuando creas que lo has hecho bien. Si te estás encontrando errores, puedes <a href="https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a" target="_blank" rel="noopener noreferrer nofollow">mirar el proyecto completado hasta este punto</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-put-a-profile-together-9" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-Debes agregar correctamente una variable de renderizado Pug a /profile.
+You should correctly add a Pug render variable to `/profile`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /username:( |)req.user.username/gi,
-        'You should be passing the variable username with req.user.username into the render function of the profile page'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /username:( |)req.user.username/,
+    'You should be passing the variable username with req.user.username into the render function of the profile page'
   );
+}
 ```
 
 # --solutions--

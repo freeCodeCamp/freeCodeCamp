@@ -38,7 +38,31 @@ Modifica il codice per creare e usare una richiesta `GET` all'API Cat Photo di f
 
 # --hints--
 
-Il tuo codice dobrebbe fare una richiesta `GET` usando `fetch`.
+
+Il tuo codice dovrebbe utilizzare i dati recuperati per sostituire l'innerHTML
+
+```js
+const catData = "dummy data";
+const ref = fetch;
+fetch = () => Promise.resolve({ json: () => catData });
+async () => {
+  try {
+    document.getElementById("getMessage").click();
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    fetch = ref;
+    assert.equal(
+      document.getElementById("message").textContent,
+      JSON.stringify(catData)
+    );
+  }
+};
+```
+
+
+Il tuo codice dovrebbe fare una richiesta `GET` usando `fetch`.
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
@@ -54,13 +78,13 @@ assert(
 );
 ```
 
-Il tuo codice dovrebbe usare `then` per gestire i dati convertiti a JSON dall'altro `then`.
+Il tuo codice dovrebbe usare `then` per gestire i dati convertiti in JSON dall'altro `then`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-Il tuo codice dovrebbe selezionare l'elemento con id `message` e cambiare il suo innerHTML con la stringa di dati JSON.
+Il tuo codice dovrebbe selezionare l'elemento con l'id `message` e cambiare il suo innerHTML con la stringa di dati JSON.
 
 ```js
 assert(

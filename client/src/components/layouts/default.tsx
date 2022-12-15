@@ -30,7 +30,7 @@ import { UserFetchState, User } from '../../redux/prop-types';
 import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
-
+import SignoutModal from '../signout-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
@@ -90,8 +90,14 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   block?: string;
   superBlock?: string;
   t: TFunction;
-  useTheme?: boolean;
 }
+
+const getSystemTheme = () =>
+  `${
+    window.matchMedia('(prefers-color-scheme: dark)').matches === true
+      ? 'dark-palette'
+      : 'light-palette'
+  }`;
 
 class DefaultLayout extends Component<DefaultLayoutProps> {
   static displayName = 'DefaultLayout';
@@ -143,17 +149,18 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
       superBlock,
       t,
       theme = 'default',
-      user,
-      useTheme = true
+      user
     } = this.props;
+
+    const useSystemTheme = fetchState.complete && isSignedIn === false;
 
     return (
       <div className='page-wrapper'>
         <Helmet
           bodyAttributes={{
-            class: useTheme
-              ? `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
-              : 'light-palette'
+            class: useSystemTheme
+              ? getSystemTheme()
+              : `${theme === 'night' ? 'dark' : 'light'}-palette`
           }}
           meta={[
             {
@@ -219,6 +226,7 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
               removeFlashMessage={removeFlashMessage}
             />
           ) : null}
+          <SignoutModal />
           {isChallenge && (
             <div className='breadcrumbs-demo'>
               <BreadCrumb

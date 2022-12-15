@@ -1,32 +1,32 @@
 ---
 id: 5900f3701000cf542c50fe83
-title: 'Problem 4: Largest palindrome product'
-challengeType: 5
+title: '问题 4：最大的回文积'
+challengeType: 1
 forumTopicId: 302065
 dashedName: problem-4-largest-palindrome-product
 ---
 
 # --description--
 
-A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+回文数字左右两种方式读取相同。 The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 
 Find the largest palindrome made from the product of two `n`-digit numbers.
 
 # --hints--
 
-`largestPalindromeProduct(2)` should return a number.
+`largestPalindromeProduct(2)` 应该返回一个数字。
 
 ```js
 assert(typeof largestPalindromeProduct(2) === 'number');
 ```
 
-`largestPalindromeProduct(2)` should return 9009.
+`largestPalindromeProduct(2)` 应返回 9009。
 
 ```js
 assert.strictEqual(largestPalindromeProduct(2), 9009);
 ```
 
-`largestPalindromeProduct(3)` should return 906609.
+`largestPalindromeProduct(3)` 应返回 906609。
 
 ```js
 assert.strictEqual(largestPalindromeProduct(3), 906609);

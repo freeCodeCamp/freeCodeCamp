@@ -1,8 +1,8 @@
 ---
 id: 60fadce90f85c50d0bb0dd4f
-title: 步骤 45
+title: 步骤 46
 challengeType: 0
-dashedName: step-45
+dashedName: step-46
 ---
 
 # --description--
@@ -32,7 +32,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom,
   <body>
     <h1>Registration Form</h1>
     <p>Please fill out this form with the required information</p>
-    <form action='https://register-demo.freecodecamp.org'>
+    <form method="post" action='https://register-demo.freecodecamp.org'>
       <fieldset>
         <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
         <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>
@@ -42,7 +42,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom,
       <fieldset>
         <label for="personal-account"><input id="personal-account" type="radio" name="account-type" /> Personal Account</label>
         <label for="business-account"><input id="business-account" type="radio" name="account-type" /> Business Account</label>
-        <label for="terms-and-conditions" name="terms-and-conditions">
+        <label for="terms-and-conditions">
           <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
         </label>
       </fieldset>

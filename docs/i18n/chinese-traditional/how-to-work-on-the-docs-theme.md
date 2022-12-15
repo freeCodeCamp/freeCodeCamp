@@ -4,6 +4,8 @@
 
 To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). When your changes are merged, they will be made available automatically at the documentation site.
 
+When adding a new file to the `docs` directory, you should evaluate if the file should also be added to the sidebar navigation. We typically create a link in the [`_sidebar.md`](_sidebar.md) file for new and independent guides. Alternatively, You may follow the instructions below on creating an internal link for supporting guides.
+
 ### How to create an internal link
 
 If you want to create a link targeting a different section of the contributing guidelines, follow this format:
@@ -39,29 +41,11 @@ Typically you would not need to change any configuration or build the site local
 - We serve this file as a SPA using `docsify` and GitHub Pages.
 - The `docsify` script generates the content of `markdown` files in the `docs` directory on demand.
 - The homepage is generated from the [`_coverpage.md`](_coverpage.md).
-- the sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
+- The sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
 ### Serving the documentation site locally
 
-Clone freeCodeCamp:
-
-```console
-git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-```
-
-Install `docsify`:
-
-```console
-npm install -g docsify
-```
-
-and serve the `/docs` directory
-
-```console
-docsify serve docs
-```
-
-Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
 #### Serve and launch the documentation site only
 

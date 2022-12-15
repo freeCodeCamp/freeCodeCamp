@@ -1,14 +1,14 @@
 ---
 id: 5a7dad05be01840e1778a0d1
 title: Мова програмування Fractran
-challengeType: 5
+challengeType: 1
 forumTopicId: 302270
 dashedName: fractran
 ---
 
 # --description--
 
-[FRACTRAN](https://en.wikipedia.org/wiki/FRACTRAN "wp: FRACTRAN")-це повна езотерична мова програмування Тюрінга, винайдена математиком [Джоном Хортоном Конвеєм](https://en.wikipedia.org/wiki/John Horton Conway "wp: John Horton Conway").
+FRACTRAN is a Turing-complete esoteric programming language invented by the mathematician John Horton Conway.
 
 Програма FRACTRAN є впорядкованим списком додатних дробів $P = (f_1, f_2, \\ldots, f_m)$, разом з початковим введенням додатного цілого числа $n$.
 

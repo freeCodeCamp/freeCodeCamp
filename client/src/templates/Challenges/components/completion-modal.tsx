@@ -77,19 +77,31 @@ export function getCompletedPercent(
   currentBlockIds: string[] = [],
   currentChallengeId: string
 ): number {
-  completedChallengesIds = completedChallengesIds.includes(currentChallengeId)
-    ? completedChallengesIds
-    : [...completedChallengesIds, currentChallengeId];
-
-  const completedChallengesInBlock = completedChallengesIds.filter(id => {
-    return currentBlockIds.includes(id);
-  });
-
+  const completedChallengesInBlock = getCompletedChallengesInBlock(
+    completedChallengesIds,
+    currentBlockIds,
+    currentChallengeId
+  );
   const completedPercent = Math.round(
-    (completedChallengesInBlock.length / currentBlockIds.length) * 100
+    (completedChallengesInBlock / currentBlockIds.length) * 100
   );
 
   return completedPercent > 100 ? 100 : completedPercent;
+}
+
+function getCompletedChallengesInBlock(
+  completedChallengesIds: string[],
+  currentBlockChallengeIds: string[],
+  currentChallengeId: string
+) {
+  const oldCompletionCount = completedChallengesIds.filter(challengeId =>
+    currentBlockChallengeIds.includes(challengeId)
+  ).length;
+
+  const isAlreadyCompleted =
+    completedChallengesIds.includes(currentChallengeId);
+
+  return isAlreadyCompleted ? oldCompletionCount : oldCompletionCount + 1;
 }
 
 interface CompletionModalsProps {
@@ -116,6 +128,7 @@ interface CompletionModalsProps {
 interface CompletionModalInnerState {
   downloadURL: null | string;
   completedPercent: number;
+  completedChallengesInBlock: number;
 }
 
 export class CompletionModalInner extends Component<
@@ -129,7 +142,8 @@ export class CompletionModalInner extends Component<
 
     this.state = {
       downloadURL: null,
-      completedPercent: 0
+      completedPercent: 0,
+      completedChallengesInBlock: 0
     };
   }
 
@@ -139,7 +153,11 @@ export class CompletionModalInner extends Component<
   ): CompletionModalInnerState {
     const { challengeFiles, isOpen } = props;
     if (!isOpen) {
-      return { downloadURL: null, completedPercent: 0 };
+      return {
+        downloadURL: null,
+        completedPercent: 0,
+        completedChallengesInBlock: 0
+      };
     }
     const { downloadURL } = state;
     if (downloadURL) {
@@ -168,7 +186,21 @@ export class CompletionModalInner extends Component<
     const completedPercent = isSignedIn
       ? getCompletedPercent(completedChallengesIds, currentBlockIds, id)
       : 0;
-    return { downloadURL: newURL, completedPercent: completedPercent };
+
+    let completedChallengesInBlock = 0;
+    if (currentBlockIds) {
+      completedChallengesInBlock = getCompletedChallengesInBlock(
+        completedChallengesIds,
+        currentBlockIds,
+        id
+      );
+    }
+
+    return {
+      downloadURL: newURL,
+      completedPercent,
+      completedChallengesInBlock
+    };
   }
 
   handleKeypress(e: React.KeyboardEvent): void {
@@ -207,15 +239,19 @@ export class CompletionModalInner extends Component<
     const {
       block,
       close,
+      currentBlockIds,
+      id,
       isOpen,
-      message,
-      t,
-      title,
       isSignedIn,
-      superBlock = ''
+      message,
+      superBlock = '',
+      t,
+      title
     } = this.props;
 
-    const { completedPercent } = this.state;
+    const { completedPercent, completedChallengesInBlock } = this.state;
+
+    const totalChallengesInBlock = currentBlockIds?.length ?? 0;
 
     if (isOpen) {
       executeGA({ type: 'modal', data: '/completion-modal' });
@@ -243,9 +279,14 @@ export class CompletionModalInner extends Component<
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
           <CompletionModalBody
-            block={block}
-            completedPercent={completedPercent}
-            superBlock={superBlock}
+            {...{
+              block,
+              completedPercent,
+              completedChallengesInBlock,
+              currentChallengeId: id,
+              superBlock,
+              totalChallengesInBlock
+            }}
           />
         </Modal.Body>
         <Modal.Footer>

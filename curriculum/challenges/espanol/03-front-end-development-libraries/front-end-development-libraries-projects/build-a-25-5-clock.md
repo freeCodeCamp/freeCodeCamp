@@ -8,7 +8,7 @@ dashedName: build-a-25--5-clock
 
 # --description--
 
-**Objetivo:** Crea una aplicación que sea funcionalmente similar a esto: <a href="https://codepen.io/freeCodeCamp/full/XpKrrW" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/XpKrrW</a>.
+**Objetivo:** Construye una aplicación que sea funcionalmente similar a esta: <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>.
 
 Completa las historias de usuario a continuación y obtén todas las pruebas para aprobar. Utiliza cualquier librería o API que necesites. Dale tu propio estilo.
 

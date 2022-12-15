@@ -8,62 +8,68 @@ dashedName: american-british-translator
 
 # --description--
 
-構建一個 JavaScript 的全棧應用，在功能上與這個應用相似：<https://american-british-translator.freecodecamp.rocks/>。 可以採用下面的任意一種方式完成這個挑戰：
+構建一個 JavaScript 全棧應用，在功能上與 <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a> 類似。 可以採用下面的任意一種方式完成這個挑戰：
 
--   克隆 [這個 GitHub 倉庫](https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/) 並在本地完成項目。
--   使用[我們的 Replit 初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator)來完成你的項目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">這個 GitHub 倉庫</a>，並在本地完成你的項目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用您選擇的站點生成器來完成項目。 並確保包含了我們 GitHub 倉庫的所有文件。
 
-當完成本項目，請確認有一個可以公開訪問的正常運行 demo 。 然後將 URL 提交到 `Solution Link` 中。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+如果你使用 Replit，請按照以下步驟設置項目：
+
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。 也可以將項目的源碼鏈接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
 -   所有邏輯都可以進入 `/components/translator.js`
 -   在 `/routes/api.js` 中完成 `/api/translate` 路由
--   在 `tests/1_unit-tests.js` 和 `tests/2_functional-tests.js` 中創建所有 unit/functional 測試
+-   在 `tests/1_unit-tests.js` 和 `tests/2_functional-tests.js` 中創建所有單元/功能測試
 -   查看 `/components` 中的 JavaScript 文件以獲取應用程序應該翻譯的條款以及不同的拼寫
--   在 `.env` 文件中將 `NODE_ENV` 設置爲 `test`（沒有引號），在 Replit 上運行測試。
--   使用 `npm run test` 命令，在 console 運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯。
+-   在 `.env` 文件中將 `NODE_ENV` 設置爲 `test`（沒有引號），在 Replit 上運行測試
+-   使用 `npm run test` 命令在 console 中運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯
 
 在 `tests/1_unit-tests.js` 中寫下以下測試：
 
--   將 `Mangoes are my favorite fruit.` 轉換成英式英語。
--   將 `I ate yogurt for breakfast.` 轉換成英式英語。
--   將 `We had a party at my friend's condo.` 轉換成英式英語。
--   將 `Can you toss this in the trashcan for me?` 轉換成英式英語。
--   將 `The parking lot was full.` 轉換成英式英語。
--   將 `Like a high tech Rube Goldberg machine.` 轉換成英式英語。
--   將 `To play hooky means to skip class or work.` 轉換成英式英語。
--   將 `No Mr. Bond, I expect you to die.` 轉換成英式英語。
--   將 `Dr. Grosh will see you now.` 轉換成英式英語。
--   將 `Lunch is at 12:15 today.` 轉換成英式英語。
--   將 `We watched the footie match for a while.` 轉換成美式英語。
--   將 `Paracetamol takes up to an hour to work.` 轉換成美式英語。
--   將 `First, caramelise the onions.` 轉換成美式英語。
--   將 `I spent the bank holiday at the funfair.` 轉換成美式英語。
--   將 `I had a bicky then went to the chippy.` 轉換成美式英語。
--   將 `I've just got bits and bobs in my bum bag.` 轉換成美式英語。
--   將 `The car boot sale at Boxted Airfield was called off.` 轉換成美式英語。
--   將 `Have you met Mrs Kalyani?` 轉換成美式英語。
--   將 `Prof Joyner of King's College, London.` 轉換成美式英語。
--   將 `Tea time is usually around 4 or 4.30.` 轉換成美式英語。
--   將 `Mangoes are my favorite fruit.` 裏的轉換高亮。
--   高亮 `I ate yogurt for breakfast.` 裏的轉換。
--   高亮 `We watched the footie match for a while.` 裏的轉換。
--   高亮 `Paracetamol takes up to an hour to work.` 裏的轉換。
+-   將 `Mangoes are my favorite fruit.` 轉換成英式英語
+-   將 `I ate yogurt for breakfast.` 轉換成英式英語
+-   將 `We had a party at my friend's condo.` 轉換成英式英語
+-   將 `Can you toss this in the trashcan for me?` 轉換成英式英語
+-   將 `The parking lot was full.` 轉換成英式英語
+-   將 `Like a high tech Rube Goldberg machine.` 轉換成英式英語
+-   將 `To play hooky means to skip class or work.` 轉換成英式英語
+-   將 `No Mr. Bond, I expect you to die.` 轉換成英式英語
+-   將 `Dr. Grosh will see you now.` 轉換成英式英語
+-   將 `Lunch is at 12:15 today.` 轉換成英式英語
+-   將 `We watched the footie match for a while.` 轉換成美式英語
+-   將 `Paracetamol takes up to an hour to work.` 轉換成美式英語
+-   將 `First, caramelise the onions.` 轉換成美式英語
+-   將 `I spent the bank holiday at the funfair.` 轉換成美式英語
+-   將 `I had a bicky then went to the chippy.` 轉換成美式英語
+-   將 `I've just got bits and bobs in my bum bag.` 轉換成美式英語
+-   將 `The car boot sale at Boxted Airfield was called off.` 轉換成美式英語
+-   將 `Have you met Mrs Kalyani?` 轉換成美式英語
+-   將 `Prof Joyner of King's College, London.` 轉換成美式英語
+-   將 `Tea time is usually around 4 or 4.30.` 轉換成美式英語
+-   將 `Mangoes are my favorite fruit.` 裏的轉換高亮
+-   將 `I ate yogurt for breakfast.` 裏的轉換高亮
+-   將 `We watched the footie match for a while.` 裏的轉換高亮
+-   將 `Paracetamol takes up to an hour to work.` 裏的轉換高亮
 
-在 `tests/2_functional-tests.js` 中寫下以下測試：
+在 `tests/2_functional-tests.js` 中編寫下以下測試：
 
--   翻譯文本字段和本地化字段: POST 請求到 `/api/translate`
--   翻譯文本字段和無效的本地化字段: POST 請求到 `/api/translate`
--   翻譯缺失的文本字段: POST 請求到 `/api/translate`
--   翻譯缺失的本地化字段: POST 請求到 `/api/translate`
--   翻譯空的文本: POST 請求到 `/api/translate`
--   翻譯無需翻譯的文本: POST 請求到 `/api/translate`
+-   翻譯文本字段和本地化字段：POST 請求到 `/api/translate`
+-   翻譯文本字段和無效的本地化字段：POST 請求到 `/api/translate`
+-   翻譯缺失的文本字段：POST 請求到 `/api/translate`
+-   翻譯缺失的本地化字段：POST 請求到 `/api/translate`
+-   翻譯空的文本：POST 請求到 `/api/translate`
+-   翻譯無需翻譯的文本：POST 請求到 `/api/translate`
 
 # --hints--
 
-我可以提供我自己的項目，而不是示例 URL。
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -103,7 +109,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/translate` 路由應該可以處理用英美方式英語寫的時間。 例如，十點半英式英語寫爲“10.30”，而美式英語寫爲“10:30”。 `span` 元素應該包裹整個時間字符串，即 `<span class="highlight">10:30</span>`。
+`/api/translate` 路由應該可以處理用英美方式英語寫的時間。 例如，十點半英式英語寫爲 “10.30”，而美式英語寫爲 “10:30”。 `span` 元素應該包裹整個時間字符串，即 `<span class="highlight">10:30</span>`。
 
 ```js
 async (getUserInput) => {
@@ -206,7 +212,7 @@ async (getUserInput) => {
 };
 ```
 
-如果 `text` 爲空，返回 `{ error: 'No text to translate' }`
+如果 `text` 爲空，返回 `{ error: 'No text to translate' }`。
 
 ```js
 async (getUserInput) => {
@@ -276,7 +282,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 24 個單元的測試都已完成並通過。 請參閱 `/tests/1_unit-tests.js` 來了解你應該寫的測試的預期行爲。
+所有 24 項單元測試都已完成並通過。 請參閱 `/tests/1_unit-tests.js` 來了解你應該寫的測試的預期行爲。
 
 ```js
 async (getUserInput) => {
@@ -301,7 +307,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 6 項功能測試都已完成並通過。 請參閱 `/tests/2_functional-tests.js` 來了解你應該寫的測試的功能。
+所有 6 項功能測試都已完成並通過。 請參閱 `/tests/2_functional-tests.js` 來了解你應該編寫的測試的功能。
 
 ```js
 async (getUserInput) => {

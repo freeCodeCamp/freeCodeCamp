@@ -38,13 +38,37 @@ fetch('/json/cats.json')
 
 # --hints--
 
-`fetch` で `GET` リクエストを行う必要があります。
+
+要素内の HTML を、fetch で取得したデータで置き換えてください。
+
+```js
+const catData = "dummy data";
+const ref = fetch;
+fetch = () => Promise.resolve({ json: () => catData });
+async () => {
+  try {
+    document.getElementById("getMessage").click();
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    fetch = ref;
+    assert.equal(
+      document.getElementById("message").textContent,
+      JSON.stringify(catData)
+    );
+  }
+};
+```
+
+
+`fetch` を使用して `GET` リクエストを行う必要があります。
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-`then` を使用して応答を JSON に変換する必要があります。
+`then` を使用してレスポンスを JSON に変換する必要があります。
 
 ```js
 assert(
@@ -54,13 +78,13 @@ assert(
 );
 ```
 
-`then` を使用して、他の `then` によって JSON に変換されたデータを処理する必要があります 。
+`then` を使用して、他の `then` によって JSON に変換されたデータを処理する必要があります。
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-`message` という id を持つ要素を取得し、内部の HTML を JSON データの文字列に変更する必要があります。
+`message` という id を持つ要素を取得し、その内部の HTML を JSON データの文字列に変更する必要があります。
 
 ```js
 assert(

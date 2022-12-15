@@ -8,42 +8,41 @@ dashedName: how-to-put-a-profile-together
 
 # --description--
 
-`/profile` にアクセスしているユーザーが認証されたことを確認できるようになったので、ページの `req.user` に含まれている情報を使用できます！
+Now that you can ensure the user accessing the `/profile` is authenticated, you can use the information contained in `req.user` on your page.
 
-プロパティ `username` および `req.user.username` の値を含むオブジェクトを、プロファイルビューのレンダーメソッドの 2 番目の引数として渡してください。 次に、`profile.pug` ビューに移動し、既存の `h1` 要素の下に同レベルのインデントで次の行を追加してください。
+Pass an object containing the property `username` and value of `req.user.username` as the second argument for the `render` method of the profile view.
+
+Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
 
 ```pug
 h2.center#welcome Welcome, #{username}!
 ```
 
-これで、クラス「`center`」と id「`welcome`」を持ち、「`Welcome,`」の後にユーザー名を含む `h2` 要素が作成されます。
+This creates an `h2` element with the class `center` and id `welcome` containing the text `Welcome,` followed by the username.
 
-また、`profile.pug` で、ユーザーの認証解除のロジックを受け持つ `/logout` ルートを参照するリンクを追加してください。
+Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user:
 
 ```pug
 a(href='/logout') Logout
 ```
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-put-a-profile-together-9" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-Pug render 変数を /profile に正しく追加する必要があります。
+You should correctly add a Pug render variable to `/profile`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /username:( |)req.user.username/gi,
-        'You should be passing the variable username with req.user.username into the render function of the profile page'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /username:( |)req.user.username/,
+    'You should be passing the variable username with req.user.username into the render function of the profile page'
   );
+}
 ```
 
 # --solutions--

@@ -14,13 +14,19 @@ Lavorare su queste sfide ti porterà a scrivere il tuo codice utilizzando uno de
 - Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare queste sfide.
 - Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
+Se utilizzi Replit, segui questi passaggi per impostare il progetto:
+
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
+
 Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`.
 
 Durante il processo di sviluppo, è importante essere in grado di controllare cosa sta succedendo nel tuo codice.
 
 Node è solo un ambiente JavaScript. Come per il JavaScript lato client, puoi usare la console per visualizzare utili informazioni di debug. Sulla tua macchina locale, vedrai l'output della console in un terminale. Su Replit, un terminale è aperto nel riquadro destro per impostazione predefinita.
 
-Ti consigliamo di mantenere il terminale aperto mentre lavori a a queste sfide. Leggendo l'output nel terminale, potrai vedere eventuali errori.
+Ti consigliamo di mantenere il terminale aperto mentre lavori a queste sfide. Leggendo l'output nel terminale, potrai vedere eventuali errori.
 
 # --instructions--
 

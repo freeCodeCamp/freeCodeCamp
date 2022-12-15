@@ -8,11 +8,11 @@ dashedName: compare-the-properties-of-two-elements
 
 # --description--
 
-Нагадуємо, що цей проєкт будується на основі наступного стартового проєкту на [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), або клонується з [ GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 # --instructions--
 
-У межах `test/1_unit-tests.js` під тестом з міткою `#8` у наборі `Comparisons` змініть кожне `assert` на `assert.isAbove` або `assert.isAtMost`, щоб тест міг бути успішно пройдений (слід оцінити як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#8` в наборі `Comparisons` змініть кожний `assert` на `assert.isAbove` або `assert.isAtMost`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -30,7 +30,7 @@ dashedName: compare-the-properties-of-two-elements
   );
 ```
 
-Ви повинні вибрати правильний метод для першого твердження - `isAbove` або `isAtMost`.
+Ви повинні обрати правильний метод для першого твердження: `isAbove` або `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ dashedName: compare-the-properties-of-two-elements
   );
 ```
 
-Ви повинні вибрати правильний метод для другого твердження - `isAbove` або `isAtMost`.
+Ви повинні обрати правильний метод для другого твердження: `isAbove` або `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ dashedName: compare-the-properties-of-two-elements
   );
 ```
 
-Ви повинні обрати правильний метод третього твердження - `isAbove` або `isAtMost`.
+Ви повинні обрати правильний метод для третього твердження: `isAbove` або `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -80,7 +80,7 @@ dashedName: compare-the-properties-of-two-elements
   );
 ```
 
-Ви повинні вибрати правильний метод для четвертого твердження - `isAbove` або `isAtMost`.
+Ви повинні обрати правильний метод для четвертого твердження: `isAbove` або `isAtMost`.
 
 ```js
 (getUserInput) =>

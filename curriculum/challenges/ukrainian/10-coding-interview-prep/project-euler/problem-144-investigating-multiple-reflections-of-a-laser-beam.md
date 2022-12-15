@@ -15,8 +15,8 @@ dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
 Ділянка, що відповідає $ −0.01 ≤ x ≤ +0.01 $ у верхній частині, відсутня, що дозволяє світлу входити і виходити через отвір.
 
 <div style="text-align: center">
-  <img class="img-responsive center-block" alt="світловий промінь починається в точці (0,0, 10,1) і стрикається з дзеркалом в точці (1,4, -9,6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
-  <img class="img-responsive center-block" alt="анімація з першими 10 віддзеркаленнями променя" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="light beam starting at point (0.0, 10.1), and impacting the mirror at point (1.4, -9.6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="animation with first 10 reflections of the beam" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
 </div><br>
 
 Світловий промінь у цій задачі починається в точці (0,0, 10,1) безпосередньо біля білої клітини, і промінь спочатку стикається з дзеркалом в точці (1,4, -9,6).
