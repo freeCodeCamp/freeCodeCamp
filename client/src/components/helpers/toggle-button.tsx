@@ -11,7 +11,6 @@ import ToggleCheck from '../../assets/icons/toggle-check';
 interface ButtonProps {
   name: string;
   offLabel: string;
-  onChange: (value: string) => void;
   onLabel: string;
   value: boolean;
   condition?: boolean;
@@ -25,7 +24,6 @@ function getActiveClass(condition: ActiveClass | unknown) {
 
 export default function ToggleButton({
   name,
-  onChange,
   value,
   onLabel = 'On',
   offLabel = 'Off'
@@ -36,7 +34,8 @@ export default function ToggleButton({
     width: '20px'
   };
   return (
-    <BSBG name={name} onChange={onChange} type='radio'>
+    // what is BSBG?
+    <BSBG name={name} type='radio'>
       <TB
         bsSize='sm'
         bsStyle='primary'
