@@ -13,14 +13,7 @@ interface ButtonProps {
   offLabel: string;
   onChange: (value: string) => void;
   onLabel: string;
-  value: boolean;
-  condition?: boolean;
-}
-
-type ActiveClass = Pick<ButtonProps, 'condition'>;
-
-function getActiveClass(condition: ActiveClass | unknown) {
-  return condition ? 'active' : 'not-active';
+  value: string | null;
 }
 
 export default function ToggleThemeButton({
@@ -40,12 +33,14 @@ export default function ToggleThemeButton({
       <TB
         bsSize='sm'
         bsStyle='primary'
-        className={`toggle-${getActiveClass(value)}`}
-        disabled={value}
+        className={`${
+          value !== 'night' ? 'toggle-not-active' : 'toggle-active'
+        }`}
+        disabled={value === 'night'}
         type='radio'
         value={1}
       >
-        {value ? (
+        {value === 'night' ? (
           <ToggleCheck style={checkIconStyle} />
         ) : (
           <Spacer style={checkIconStyle} />
@@ -55,13 +50,30 @@ export default function ToggleThemeButton({
       <TB
         bsSize='sm'
         bsStyle='primary'
-        className={`toggle-${getActiveClass(!value)}`}
-        disabled={!value}
+        className={`${
+          value !== 'default' ? 'toggle-not-active' : 'toggle-active'
+        }}`}
+        disabled={value === 'default'}
         type='radio'
         value={2}
       >
         {offLabel}
-        {!value ? (
+        {value ? (
+          <ToggleCheck style={checkIconStyle} />
+        ) : (
+          <Spacer style={checkIconStyle} />
+        )}
+      </TB>
+      <TB
+        bsSize='sm'
+        bsStyle='primary'
+        className={`${value !== null ? 'toggle-not-active' : 'toggle-active'}`}
+        disabled={value === null}
+        type='radio'
+        value={3}
+      >
+        {offLabel}
+        {value === null ? (
           <ToggleCheck style={checkIconStyle} />
         ) : (
           <Spacer style={checkIconStyle} />

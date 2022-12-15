@@ -27,8 +27,7 @@ export default function ThemeSettings({
     >
       <ToggleTheme
         action={t('settings.labels.night-mode')}
-        flag={currentTheme === Themes.Night}
-        flagName='currentTheme'
+        themeName={currentTheme}
         offLabel={t('buttons.off')}
         onLabel={t('buttons.on')}
         toggleFlag={() => {

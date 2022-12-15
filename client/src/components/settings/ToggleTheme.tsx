@@ -13,8 +13,7 @@ import './toggle-setting.css';
 type ToggleSettingProps = {
   action: string;
   explain?: string;
-  flag: boolean;
-  flagName: string;
+  themeName: string;
   toggleFlag: () => void;
   offLabel: string;
   onLabel: string;
@@ -23,8 +22,7 @@ type ToggleSettingProps = {
 export default function ToggleTheme({
   action,
   explain,
-  flag,
-  flagName,
+  themeName,
   toggleFlag,
   ...restProps
 }: ToggleSettingProps): JSX.Element {
@@ -32,7 +30,7 @@ export default function ToggleTheme({
     <>
       <div className='toggle-setting-container'>
         <FormGroup>
-          <ControlLabel className='toggle-label' htmlFor={flagName}>
+          <ControlLabel className='toggle-label' htmlFor={themeName}>
             <strong>{action}</strong>
             {explain ? (
               <HelpBlock>
@@ -41,9 +39,9 @@ export default function ToggleTheme({
             ) : null}
           </ControlLabel>
           <TB
-            name={flagName}
+            name={themeName}
             onChange={toggleFlag}
-            value={flag}
+            value={themeName}
             {...restProps}
           />
         </FormGroup>
