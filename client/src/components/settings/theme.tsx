@@ -2,7 +2,7 @@ import { Form } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import ToggleSetting from './toggle-setting';
+import ToggleTheme from './ToggleTheme';
 
 export enum Themes {
   Night = 'night',
@@ -25,7 +25,7 @@ export default function ThemeSettings({
       inline={true}
       onSubmit={(e: React.FormEvent): void => e.preventDefault()}
     >
-      <ToggleSetting
+      <ToggleTheme
         action={t('settings.labels.night-mode')}
         flag={currentTheme === Themes.Night}
         flagName='currentTheme'
