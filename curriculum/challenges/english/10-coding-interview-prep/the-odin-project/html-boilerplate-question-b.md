@@ -10,9 +10,9 @@ dashedName: html-boilerplate-question-b
 
 After you declare the doctype, you need to provide an `<html>` element. This is what’s known as the root element of the document, meaning that every other element in the document will be a descendant of it.
 
-This becomes more important later on when you learn about manipulating HTML with JavaScript. For now, just know that the HTML element should be included on every HTML document.
+This becomes more important later on when you learn about manipulating HTML with JavaScript. For now, just know that the `html` element should be included on every HTML document.
 
-Back in the index.html file, let’s add the `<html>` element by typing out its opening and closing tags, like so:
+Back in the `index.html` file, let’s add the `<html>` element by typing out its opening and closing tags, like so:
 
 ```html
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ Back in the index.html file, let’s add the `<html>` element by typing out its 
     
 ## --text--
 
-What is the HTML element?
+What is the `html` element?
 
 ## --answers--
 

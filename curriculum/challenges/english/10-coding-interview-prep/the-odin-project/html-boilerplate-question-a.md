@@ -35,7 +35,7 @@ Open the `index.html` file created earlier in your text editor and add `<!DOCTYP
 # --question-- 
 ## --text--
 
-What is the purpose of the doctype declaration?
+What is the purpose of the `DOCTYPE` declaration?
 
 ## --answers--
 
