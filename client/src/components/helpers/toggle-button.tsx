@@ -12,6 +12,7 @@ interface ButtonProps {
   name: string;
   offLabel: string;
   onLabel: string;
+  onChange: (value: string) => void;
   value: boolean;
   condition?: boolean;
 }
@@ -25,6 +26,7 @@ function getActiveClass(condition: ActiveClass | unknown) {
 export default function ToggleButton({
   name,
   value,
+  onChange,
   onLabel = 'On',
   offLabel = 'Off'
 }: ButtonProps): JSX.Element {
@@ -34,8 +36,7 @@ export default function ToggleButton({
     width: '20px'
   };
   return (
-    // what is BSBG?
-    <BSBG name={name} type='radio'>
+    <BSBG name={name} onChange={onChange} type='radio'>
       <TB
         bsSize='sm'
         bsStyle='primary'

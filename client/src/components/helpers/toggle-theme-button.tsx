@@ -10,18 +10,14 @@ import ToggleCheck from '../../assets/icons/toggle-check';
 
 interface ButtonProps {
   name: string;
-  offLabel: string;
   onChange: (value: string) => void;
-  onLabel: string;
   value: string | null;
 }
 
 export default function ToggleThemeButton({
   name,
   onChange,
-  value,
-  onLabel = 'On',
-  offLabel = 'Off'
+  value
 }: ButtonProps): JSX.Element {
   const checkIconStyle = {
     height: '15px',
@@ -45,7 +41,7 @@ export default function ToggleThemeButton({
         ) : (
           <Spacer style={checkIconStyle} />
         )}
-        {onLabel}
+        dark
       </TB>
       <TB
         bsSize='sm'
@@ -57,7 +53,7 @@ export default function ToggleThemeButton({
         type='radio'
         value={2}
       >
-        {offLabel}
+        light
         {value ? (
           <ToggleCheck style={checkIconStyle} />
         ) : (
@@ -72,7 +68,7 @@ export default function ToggleThemeButton({
         type='radio'
         value={3}
       >
-        {offLabel}
+        system
         {value === null ? (
           <ToggleCheck style={checkIconStyle} />
         ) : (
