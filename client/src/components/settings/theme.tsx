@@ -14,11 +14,12 @@ const checkIconStyle = {
 
 export enum Themes {
   Night = 'night',
-  Default = 'default'
+  Default = 'default',
+  System = 'system'
 }
 
 type ThemeProps = {
-  currentTheme: Themes | null;
+  currentTheme: Themes;
   toggleNightMode: (theme: Themes) => void;
 };
 
@@ -35,7 +36,7 @@ export default function ThemeSettings({
     >
       <ToggleTheme
         action={t('settings.labels.night-mode')}
-        themeName={currentTheme ?? ''}
+        themeName={currentTheme}
         offLabel={t('buttons.off')}
         onLabel={t('buttons.on')}
         toggleFlag={() => {
@@ -77,7 +78,7 @@ export default function ThemeSettings({
           currentTheme !== null ? 'toggle-not-active' : 'toggle-active'
         }`}
         disabled={currentTheme === null}
-        onClick={() => toggleNightMode((currentTheme = null))}
+        onClick={() => toggleNightMode((currentTheme = Themes.System))}
       >
         system
         {currentTheme === null ? (
