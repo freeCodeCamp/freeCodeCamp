@@ -14,8 +14,6 @@ export const usernameIsHttpStatusCode = {
   error: 'is a reserved error code'
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-export const isNumeric = (num: any) => !isNaN(num);
 const validCharsRE = /^[a-zA-Z0-9\-_+]*$/;
 export const isHttpStatusCode = (str: string) =>
   isNumeric(str) && parseInt(str, 10) >= 100 && parseInt(str, 10) <= 599;
