@@ -9,7 +9,7 @@ dashedName: html-boilerplate-question-d
 
 The final element needed to complete the HTML boilerplate is the `<body>` element. This is where all the content that will be displayed to users will go - the text, images, lists, links, and so on.
 
-To complete the boilerplate, add a body element to the `index.html` file. The body element also goes within the HTML element and is always below the head element, like so:
+To complete the boilerplate, add a `body` element to the `index.html` file. The `body` element also goes within the `html` element and is always below the `head` element, like so:
 
 # --question--
 
@@ -27,11 +27,11 @@ Run your boilerplate through this [HTML validator](https://www.freeformatter.com
     
 ## --text--
 
-What is the purpose of the body element?
+What is the purpose of the `body` element?
 
 ## --answers--
 
-This is where all important information about the webpage is displayed such as the title and meta tags.
+This is where all important information about the webpage is displayed such as the `title` and `meta` tags.
 
 ---
 

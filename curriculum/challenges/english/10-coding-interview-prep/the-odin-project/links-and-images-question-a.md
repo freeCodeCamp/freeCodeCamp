@@ -9,7 +9,7 @@ dashedName: links-and-images-question-a
 
 To get some practice using links and images throughout this lesson you need an HTML project to work with.
 
-- Create a new directory named odin-links-and-images.
+- Create a new directory named `odin-links-and-images`.
 
 - Within that directory, create a new file named index.html.
 
