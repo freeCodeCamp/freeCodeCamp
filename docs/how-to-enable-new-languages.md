@@ -52,8 +52,8 @@ There are a few steps to take in order to allow the codebase to build in your de
 
 First, visit the `config/i18n.ts` file to add the language to the list of available languages and configure the values. There are several objects here.
 
-- `availableLangs`: For both the `client` and `curriculum` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
-- `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. This tells the client which certifications are fully translated.
+- `Languages`: Add the new language to `Languages` enum, similar to the others. The string value here will be used in the `.env` file to set a build language later.
+- `availableLangs`: Add the new property from the `Language` enum to both the `client` and `curriculum` arrays. 
 - `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
 - `LangNames`: These are the display names for the language selector in the navigation menu.
 - `LangCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
@@ -63,53 +63,28 @@ First, visit the `config/i18n.ts` file to add the language to the list of availa
 As an example, if you wanted to enable Dothraki as a language, your `i18n.ts` objects should look like this:
 
 ```js
-export const availableLangs = {
-  client: ['english', 'espanol', 'chinese', 'chinese-traditional', 'dothraki'],
-  curriculum: [
-    'english',
-    'espanol',
-    'chinese',
-    'chinese-traditional',
-    'dothraki'
-  ]
-};
+export enum Languages {
+  English = 'english',
+  Espanol = 'espanol',
+  Chinese = 'chinese',
+  ChineseTrandational = 'chinese-traditional',
+  Dothraki = 'dothraki'
+}
 
-export const auditedCerts = {
-  espanol: [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis
+export const availableLangs = {
+  client: [
+    Languages.English,
+    Languages.Espanol,
+    Languages.Chinese,
+    Languages.ChineseTrandational,
+    Languages.Dothraki
   ],
-  chinese: [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy
-  ],
-  'chinese-traditional': [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy
-  ],
-  dothraki: [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs
+  curriculum: [
+    Languages.English,
+    Languages.Espanol,
+    Languages.Chinese,
+    Languages.ChineseTrandational,
+    Languages.Dothraki
   ]
 };
 
@@ -145,6 +120,72 @@ export const rtlLangs = [''];
 > [!NOTE]
 > When a language has been set up in the deployment pipeline AND has a public `/news` instance live, it can be removed from the `hiddenLangs` array and be made available to the public.
 
+### Configure the Language Superblock Order
+
+In the [config/superblock-order.ts] file, you need to set the order and state of all the superblocks for the new language in the `superBlockOrder` object. Copy one of the language keys and all its values, paste it to the bottom of the object, and change the key to use the key of your new language from the `Language` enum.
+
+```js
+export const superBlockOrder: SuperBlockOrder = {
+  ...
+  [Languages.Dothraki]: {
+    [CurriculumMaps.Landing]: [
+      SuperBlocks.RespWebDesignNew,
+      SuperBlocks.JsAlgoDataStruct,
+      SuperBlocks.FrontEndDevLibs,
+      SuperBlocks.DataVis,
+      SuperBlocks.RelationalDb,
+      SuperBlocks.BackEndDevApis,
+      SuperBlocks.QualityAssurance,
+      SuperBlocks.SciCompPy,
+      SuperBlocks.DataAnalysisPy,
+      SuperBlocks.InfoSec,
+      SuperBlocks.MachineLearningPy
+    ],
+    [CurriculumMaps.Learn]: {
+      [TranslationStates.Audited]: {
+        [SuperBlockStates.Current]: [
+          SuperBlocks.RespWebDesignNew,
+          SuperBlocks.JsAlgoDataStruct,
+          SuperBlocks.FrontEndDevLibs,
+          SuperBlocks.DataVis,
+          SuperBlocks.RelationalDb,
+          SuperBlocks.BackEndDevApis,
+          SuperBlocks.QualityAssurance,
+          SuperBlocks.SciCompPy,
+          SuperBlocks.DataAnalysisPy,
+          SuperBlocks.InfoSec,
+          SuperBlocks.MachineLearningPy,
+          SuperBlocks.CodingInterviewPrep
+        ],
+        [SuperBlockStates.New]: [],
+        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
+        [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
+      },
+      [TranslationStates.NotAudited]: {
+        [SuperBlockStates.Current]: [],
+        [SuperBlockStates.New]: [],
+        [SuperBlockStates.Upcoming]: [],
+        [SuperBlockStates.Legacy]: []
+      }
+    }
+  }
+}
+```
+
+The order of the superblocks in this object is how they appear on the "Landing" page and "Learn" maps. Follow the comments in that file to know how you are allowed to order the superblocks and move the superblocks for the new language to their proper places.
+
+> [!ATTENTION]
+> Do not change the order of any of the keys in the object, just move the superblocks to the different arrays
+
+The `CurriculumMaps.Landing` array should contain exactly one superblock for all our current certifications; and the `CurriculumMaps.Learn` object should have all the existing superblocks in it. Translated superblocks go in `TranslationStates.Audited` and non-translated superblocks go in `TranslationStates.NotAudited`. Each of those two objects has four different states a superblock can be in.
+
+1. `SuperBlockStates.Current`: means that the superblock is current. e.g. `(New) Responsive Web Design`
+1. `SuperBlockStates.New`: these only show up when `SHOW_NEW_CURRICULUM` is set to `true` in your `.env` file. It is for displaying new superblocks on a specific build. For example, when we release the new RWD, we only showed in on English to start.
+1. `SuperBlockStates.Upcoming`: these only show up when `SHOW_UPCOMING_CHANGES` is set to `true` in your `.env` file. It is to show superblocks while they are in development.
+1. `SuperBlockStates.Legacy`: a superblock is moved here when a newer version of that superblock has been fully translated and replaced it.
+
+### Configure Search
+
 Next, open the `client/src/utils/algolia-locale-setup.ts` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
 
 Add an object for your language to the `algoliaIndices` object. You should use the the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
@@ -178,30 +219,6 @@ const algoliaIndices = {
   }
 };
 ```
-
-### Releasing a Superblock
-
-After a superblock has been fully translated into a language, there are two steps to release it. First add the superblock enum to that language's `auditedCerts` array. So, if you want to release the new Responsive Web Design superblock for Dothraki, the array should look like this:
-
-```ts
-export const auditedCerts = {
-  // other languages
-  dothraki: [
-    SuperBlocks.RespWebDesignNew, // the newly translated superblock
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs
-  ]
-};
-```
-
-Finally, if the superblock is in a "new" state (that is, replacing a legacy superblock), the `languagesWithAuditedBetaReleases` array should be updated to include the new language like this:
-
-```ts
-export const languagesWithAuditedBetaReleases: ['english', 'dothraki'];
-```
-
-This will move the new superblock to the correct place in the curriculum map on `/learn`.
 
 ## Enabling Localized Videos
 
