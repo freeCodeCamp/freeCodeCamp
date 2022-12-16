@@ -12,6 +12,10 @@ For this challenge, you will create a program to play Rock, Paper, Scissors. A p
 
 You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
+-   Start by importing the project on Replit. 
+-   Next, you will see a `.replit` window. 
+-   Select `Use run command` and click the `Done` button. 
+
 We are still developing the interactive instructional part of the machine learning curriculum. For now, you will have to use other resources to learn how to pass this challenge.
 
 # --instructions--

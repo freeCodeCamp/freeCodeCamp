@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b46
-title: تعيين المعلمات الافتراضية للدوال (Set Default Parameters for Your Functions)
+title: تعيين الوسائط (Parameters) الافتراضية للوظيفتك (Functions)
 challengeType: 1
 forumTopicId: 301209
 dashedName: set-default-parameters-for-your-functions
@@ -8,7 +8,7 @@ dashedName: set-default-parameters-for-your-functions
 
 # --description--
 
-من أجل مساعدتنا في إنشاء functions أكثر مرونة، يوفر ES6 الـ <dfn>default parameters</dfn> للـ functions.
+من أجل مساعدتنا في إنشاء وظائف (functions) أكثر مرونة، يوفر ES6 أمكانية وضع <dfn>وسائط أفتراضية (default parameters)</dfn> إلى الوظائف (functions).
 
 تحقق من هذا الكود:
 
@@ -25,7 +25,7 @@ console.log(greeting());
 
 # --instructions--
 
-قم بتعديل الدالة `increment` بإضافة الـ default parameters بحيث تضيف 1 إلى `number` إذا لم يتم تحديد `value`.
+عدّل الوظيفة `increment` بإضافة الوسائط الافتراضية (default parameters) بحيث تضيف 1 إلى `number` إذا لم يتم تحديد `value`.
 
 # --hints--
 

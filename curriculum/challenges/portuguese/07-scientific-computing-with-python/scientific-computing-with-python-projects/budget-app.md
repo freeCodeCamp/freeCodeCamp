@@ -10,6 +10,11 @@ dashedName: budget-app
 
 Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-budget-app" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
 
+-   Comece importando o projeto no Replit.
+-   Em seguida, você verá uma janela `.replit`.
+-   Selecione `Use run command` e clique no botão `Done`.
+
+
 # --instructions--
 
 Complete a classe `Category` no `budget.py`. Ela deve ser capaz de instanciar objetos com base em diferentes categorias de orçamento, como *alimentos* (food), *vestuário* (clothing) e *entretenimento* (entertainment). Quando os objetos são criados, eles são passados com o nome da categoria. A classe deve ter uma variável de instância chamada `ledger` que seja uma lista. A classe também deve conter os seguintes métodos:

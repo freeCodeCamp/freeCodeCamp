@@ -14,11 +14,10 @@ export const usernameIsHttpStatusCode = {
   error: 'is a reserved error code'
 };
 
-export const isNumeric = (num: string | number) => !isNaN(num);
 const validCharsRE = /^[a-zA-Z0-9\-_+]*$/;
 export const isHttpStatusCode = (str: string) => {
   const output = parseInt(str, 10);
-  return isNumeric(output) && output >= 100 && output <= 599;
+  return !isNaN(output) && output >= 100 && output <= 599;
 };
 
 export const isValidUsername = (str: string) => {

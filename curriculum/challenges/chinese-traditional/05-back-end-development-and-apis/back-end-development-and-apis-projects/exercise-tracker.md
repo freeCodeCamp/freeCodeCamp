@@ -14,13 +14,19 @@ dashedName: exercise-tracker
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 字段中提交它的 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-你的答案應該有以下結構。
+Your responses should have the following structures.
 
-運動：
+Exercise:
 
 ```js
 {
@@ -32,7 +38,7 @@ dashedName: exercise-tracker
 }
 ```
 
-用戶：
+User:
 
 ```js
 {
@@ -41,7 +47,7 @@ dashedName: exercise-tracker
 }
 ```
 
-日誌：
+Log:
 
 ```js
 {
@@ -56,11 +62,11 @@ dashedName: exercise-tracker
 }
 ```
 
-**提示：** 對於 `date` 屬性，`Date` API 的 `toDateString` 方法可以用於實現預期的輸出。
+**Hint:** For the `date` property, the `toDateString` method of the `Date` API can be used to achieve the expected output.
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -71,7 +77,7 @@ dashedName: exercise-tracker
 };
 ```
 
-可以將表單裏的 `username` 通過 `POST` 請求發送到 `/api/users`，以創建一個新的用戶。
+You can `POST` to `/api/users` with form data `username` to create a new user.
 
 ```js
 async (getUserInput) => {
@@ -88,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-`POST /api/users` 帶有表單數據 `username` 對請求，返回的響應將是一個具有 `username` 和 `_id` 屬性的對象.
+The returned response from `POST /api/users` with form data `username` will be an object with `username` and `_id` properties.
 
 ```js
 async (getUserInput) => {
@@ -108,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/users` 發出 `GET` 請求以獲取所有用戶的列表。
+You can make a `GET` request to `/api/users` to get a list of all users.
 
 ```js
 async(getUserInput) => {
@@ -121,7 +127,7 @@ async(getUserInput) => {
 };
 ```
 
-對 `/api/users` 的 `GET` 請求返回一個數組。
+The `GET` request to `/api/users` returns an array.
 
 ```js
 async(getUserInput) => {
@@ -136,7 +142,7 @@ async(getUserInput) => {
 };
 ```
 
-從 `GET /api/users` 返回的數組中的每個元素都是一個對象字面量，包含用戶的 `username` 和 `_id`。
+Each element in the array returned from `GET /api/users` is an object literal containing a user's `username` and `_id`.
 
 ```js
 async(getUserInput) => {
@@ -156,7 +162,7 @@ async(getUserInput) => {
 };
 ```
 
-你能用表單裏的 `description`、`duration` 和 `date`（可選）發送 `POST` 請求到 `/api/users/:_id/exercises`。 如果沒有傳入 date，默認採用當前日期。
+You can `POST` to `/api/users/:_id/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used.
 
 ```js
 async (getUserInput) => {
@@ -190,7 +196,7 @@ async (getUserInput) => {
 };
 ```
 
-從 `POST /api/users/:_id/exercises` 返回的響應將是添加了運動字段的用戶對象。
+The response returned from `POST /api/users/:_id/exercises` will be the user object with the exercise fields added.
 
 ```js
 async (getUserInput) => {
@@ -229,7 +235,7 @@ async (getUserInput) => {
 };
 ```
 
-可以發送 `GET` 請求到 `/api/users/:_id/logs`，以獲取任何用戶的完整 exercise 日誌。
+You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user.
 
 ```js
 async (getUserInput) => {
@@ -268,7 +274,7 @@ async (getUserInput) => {
 };
 ```
 
-對用戶日誌的請求 `GET /api/users/:_id/logs` 返回一個用戶對象，該對象具有一個 `count` 屬性，表示屬於該用戶的運動次數。
+A request to a user's log `GET /api/users/:_id/logs` returns a user object with a `count` property representing the number of exercises that belong to that user.
 
 ```js
 async (getUserInput) => {
@@ -309,7 +315,7 @@ async (getUserInput) => {
 };
 ```
 
-對 `/api/users/:_id/logs` 的 `GET` 請求，將返回用戶對象，其中包含添加的所有練習的 `log` 數組。
+A `GET` request to `/api/users/:_id/logs` will return the user object with a `log` array of all the exercises added.
 
 ```js
 async(getUserInput) => {
@@ -353,7 +359,7 @@ async(getUserInput) => {
 };
 ```
 
-從 `GET /api/users/:_id/logs` 返回的 `log` 數組中的每個項目都是一個應該具有 `description`、`duration` 和 `date` 屬性的對象。
+Each item in the `log` array that is returned from `GET /api/users/:_id/logs` is an object that should have a `description`, `duration`, and `date` properties.
 
 ```js
 async(getUserInput) => {
@@ -400,7 +406,7 @@ async(getUserInput) => {
 };
 ```
 
-從 `GET /api/users/:_id/logs` 返回的 `log` 數組中任何對象的 `description` 屬性都應該是一個字符串。
+The `description` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string.
 
 ```js
 async(getUserInput) => {
@@ -447,7 +453,7 @@ async(getUserInput) => {
 };
 ```
 
-從 `GET /api/users/:_id/logs` 返回的 `log` 數組中任何對象的 `duration` 屬性應該是一個數字。
+The `duration` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a number.
 
 ```js
 async(getUserInput) => {
@@ -494,7 +500,7 @@ async(getUserInput) => {
 };
 ```
 
-從 `GET /api/users/:_id/logs` 返回的 `log` 數組中任何對象的 `date` 屬性應該是一個字符串。 使用 `Date` API 的 `dateString` 格式。
+The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Use the `dateString` format of the `Date` API.
 
 ```js
 async(getUserInput) => {
@@ -541,7 +547,7 @@ async(getUserInput) => {
 };
 ```
 
-你可以將 `from`、`to` 和 `limit` 參數添加到 `GET /api/users/:_id/logs` 請求檢索任何用戶的部分日誌。 `from` 和 `to` 是 `yyyy-mm-dd` 形式的日期， `limit` 是希望返回的 log 數量。
+You can add `from`, `to` and `limit` parameters to a `GET /api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
 
 ```js
 async (getUserInput) => {

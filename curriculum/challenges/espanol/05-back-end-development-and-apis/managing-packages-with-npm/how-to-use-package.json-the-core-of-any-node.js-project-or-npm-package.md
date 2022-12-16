@@ -14,13 +14,19 @@ Trabajar en estos desafíos implica escribir tu código usando uno de los siguie
 - Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto de inicio Replit</a> para completar estos desafíos.
 - Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`.
+If you use Replit, follow these steps to set up the project:
 
-El archivo `package.json` es el centro de cualquier proyecto Node.js o paquete npm. Almacena información sobre tu proyecto, similar a cómo la sección &lt;head> de un documento HTML describe el contenido de una página web. Consiste en un único objeto JSON donde la información se almacena en pares clave-valor. Sólo hay dos campos obligatorios; "name" y "version", pero es una buena práctica proporcionar información adicional sobre tu proyecto que podría ser útil para futuros usuarios o mantenedores.
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
-Si miras el árbol de archivos de tu proyecto, encontrarás el archivo package.json en el nivel superior del árbol. Este es el archivo que mejorarás en el próximo par de desafíos.
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
-Una de las piezas de información más comunes en este archivo es el campo `author`. Este especifica quién creó el proyecto, y puede consistir en una cadena u objeto con contacto u otros detalles. Se recomienda un objeto para proyectos más grandes, pero una simple cadena como el siguiente ejemplo funcionará para este proyecto.
+The `package.json` file is the center of any Node.js project or npm package. It stores information about your project, similar to how the &lt;head> section of an HTML document describes the content of a webpage. It consists of a single JSON object where information is stored in key-value pairs. There are only two required fields; "name" and "version", but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+
+If you look at the file tree of your project, you will find the package.json file on the top level of the tree. This is the file that you will be improving in the next couple of challenges.
+
+One of the most common pieces of information in this file is the `author` field. It specifies who created the project, and can consist of a string or an object with contact or other details. An object is recommended for bigger projects, but a simple string like the following example will do for this project.
 
 ```json
 "author": "Jane Doe",
@@ -28,13 +34,13 @@ Una de las piezas de información más comunes en este archivo es el campo `auth
 
 # --instructions--
 
-Añade tu nombre como el `author` del proyecto en el archivo package.json.
+Add your name as the `author` of the project in the package.json file.
 
-**Nota:** Recuerda que estás escribiendo JSON, por lo que todos los nombres de campos deben usar comillas dobles (") y separarse con una coma (,).
+**Note:** Remember that you’re writing JSON, so all field names must use double-quotes (") and be separated with a comma (,).
 
 # --hints--
 
-el archivo package.json debe tener una clave "author" válida
+package.json should have a valid "author" key
 
 ```js
 (getUserInput) =>

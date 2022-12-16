@@ -1,6 +1,6 @@
 ---
 id: 587d7fb0367417b2b2512bed
-title: Meet the Node console
+title: Lerne Node console kennen
 challengeType: 2
 forumTopicId: 301515
 dashedName: meet-the-node-console
@@ -8,13 +8,19 @@ dashedName: meet-the-node-console
 
 # --description--
 
-Working on these challenges will involve you writing your code using one of the following methods:
+Bei der Arbeit an diesen Aufgaben wirst du deinen Code mithilfe folgender Methoden schreiben:
 
-- Clone <a href="https://github.com/freeCodeCamp/boilerplate-express/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
-- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+- Klone <a href="https://github.com/freeCodeCamp/boilerplate-express/" target="_blank" rel="noopener noreferrer nofollow">dieses GitHub-Repo</a> und schließe dein Projekt lokal ab.
+- Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starterprojekt</a>, um die Aufgaben abzuschließen.
+- Verwende einen Site Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien aus unserem GitHub Repo zu integrieren.
 
-Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
 During the development process, it is important to be able to check what’s going on in your code.
 

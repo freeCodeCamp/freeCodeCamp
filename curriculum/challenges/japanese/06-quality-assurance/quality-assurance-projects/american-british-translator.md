@@ -14,56 +14,62 @@ dashedName: american-british-translator
 -   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、`GitHub Link` フィールドでプロジェクトのソースコードへのリンクを送信してください。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
--   すべてのロジックを `/components/translator.js` に含めてください。
--   `/routes/api.js` で `/api/translate` ルートを完成させてください。
--   `tests/1_unit-tests.js` および `tests/2_functional-tests.js` で、すべてのユニット/機能テストを作成してください。
--   アプリで変換すべきスペルと用語については、`/components` にある JavaScript ファイルを参照してください。
--   Replit でテストを実行するには、`.env` ファイル内で引用符を付けずに`NODE_ENV` を `test` に設定してください。
--   コンソールでテストを実行するには、コマンド `npm run test` を使用してください。 Replit コンソールを開くには、Ctrl+Shift+P (Macの場合はCmd) を押して「open shell」と入力してください。
+-   All logic can go into `/components/translator.js`
+-   Complete the `/api/translate` route in `/routes/api.js`
+-   Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`
+-   See the JavaScript files in `/components` for the different spelling and terms your application should translate
+-   To run the tests on Replit, set `NODE_ENV` to `test` without quotes in the `.env` file
+-   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
-`tests/1_unit-tests.js` に以下のテストを記述してください。
+Write the following tests in `tests/1_unit-tests.js`:
 
--   `Mangoes are my favorite fruit.` をイギリス英語に変換してください
--   `I ate yogurt for breakfast.` をイギリス英語に変換してください
--   `We had a party at my friend's condo.` をイギリス英語に変換してください
--   `Can you toss this in the trashcan for me?` をイギリス英語に変換してください
--   `The parking lot was full.` をイギリス英語に変換してください
--   `Like a high tech Rube Goldberg machine.` をイギリス英語に変換してください
--   `To play hooky means to skip class or work.` をイギリス英語に変換してください
--   `No Mr. Bond, I expect you to die.` をイギリス英語に変換してください
--   `Dr. Grosh will see you now.` をイギリス英語に変換してください
--   `Lunch is at 12:15 today.` をイギリス英語に変換してください
--   `We watched the footie match for a while.` をイギリス英語に変換してください
--   `Paracetamol takes up to an hour to work.` をイギリス英語に変換してください
--   `First, caramelise the onions.` をイギリス英語に変換してください
--   `I spent the bank holiday at the funfair.` をイギリス英語に変換してください
--   `I had a bicky then went to the chippy.` をイギリス英語に変換してください
--   `I've just got bits and bobs in my bum bag.` をイギリス英語に変換してください
--   `The car boot sale at Boxted Airfield was called off.` をイギリス英語に変換してください
--   `Have you met Mrs Kalyani?` をイギリス英語に変換してください
--   `Prof Joyner of King's College, London.` をイギリス英語に変換してください
--   `Tea time is usually around 4 or 4.30.` をイギリス英語に変換してください
--   `Mangoes are my favorite fruit.` の変換をハイライト表示してください
--   `I ate yogurt for breakfast.` の変換をハイライト表示してください
--   `We watched the footie match for a while.` の変換をハイライト表示してください
--   `Paracetamol takes up to an hour to work.` の変換をハイライト表示してください
+-   Translate `Mangoes are my favorite fruit.` to British English
+-   Translate `I ate yogurt for breakfast.` to British English
+-   Translate `We had a party at my friend's condo.` to British English
+-   Translate `Can you toss this in the trashcan for me?` to British English
+-   Translate `The parking lot was full.` to British English
+-   Translate `Like a high tech Rube Goldberg machine.` to British English
+-   Translate `To play hooky means to skip class or work.` to British English
+-   Translate `No Mr. Bond, I expect you to die.` to British English
+-   Translate `Dr. Grosh will see you now.` to British English
+-   Translate `Lunch is at 12:15 today.` to British English
+-   Translate `We watched the footie match for a while.` to American English
+-   Translate `Paracetamol takes up to an hour to work.` to American English
+-   Translate `First, caramelise the onions.` to American English
+-   Translate `I spent the bank holiday at the funfair.` to American English
+-   Translate `I had a bicky then went to the chippy.` to American English
+-   Translate `I've just got bits and bobs in my bum bag.` to American English
+-   Translate `The car boot sale at Boxted Airfield was called off.` to American English
+-   Translate `Have you met Mrs Kalyani?` to American English
+-   Translate `Prof Joyner of King's College, London.` to American English
+-   Translate `Tea time is usually around 4 or 4.30.` to American English
+-   Highlight translation in `Mangoes are my favorite fruit.`
+-   Highlight translation in `I ate yogurt for breakfast.`
+-   Highlight translation in `We watched the footie match for a while.`
+-   Highlight translation in `Paracetamol takes up to an hour to work.`
 
-`tests/2_functional-tests.js` に以下のテストを記述してください。
+Write the following tests in `tests/2_functional-tests.js`:
 
--   テキストとロケールフィールドの変換: `/api/translate` への POST リクエスト
--   テキストと無効なロケールフィールドの変換: `/api/translate` への POST リクエスト
--   不足しているテキストフィールドの変換: `/api/translate` への POST リクエスト
--   不足しているロケールフィールドの変換: `/api/translate` への POST リクエスト
--   空のテキストの変換: `/api/translate` への POST リクエスト
--   変換不要テキストの変換: `/api/translate` への POST リクエスト
+-   Translation with text and locale fields: POST request to `/api/translate`
+-   Translation with text and invalid locale field: POST request to `/api/translate`
+-   Translation with missing text field: POST request to `/api/translate`
+-   Translation with missing locale field: POST request to `/api/translate`
+-   Translation with empty text: POST request to `/api/translate`
+-   Translation with text that needs no translation: POST request to `/api/translate`
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供することができます。
+I can provide my own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -75,7 +81,7 @@ dashedName: american-british-translator
 };
 ```
 
-変換するテキストの `text` を含むボディと、`american-to-british` もしくは `british-to-american` のいずれかを含む `locale` を使用して、`/api/translate` へ `POST` できます。 返されるオブジェクトには、送信した `text` と、変換後のテキストを含む `translation` が含まれている必要があります。
+You can `POST` to `/api/translate` with a body containing `text` with the text to translate and `locale` with either `american-to-british` or `british-to-american`. The returned object should contain the submitted `text` and `translation` with the translated text.
 
 ```js
 async (getUserInput) => {
@@ -103,7 +109,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/translate` ルートでは、時間をアメリカ英語とイギリス英語で記述する方法を使用する必要があります。 たとえば、10 時 30 分は、イギリス英語では「10.30」、アメリカ英語では「10:30」と記述します。 `span` 要素に時間文字列全体を含める必要があります。たとえば、`<span class="highlight">10:30</span>` などとします。
+The `/api/translate` route should handle the way time is written in American and British English. For example, ten thirty is written as "10.30" in British English and "10:30" in American English. The `span` element should wrap the entire time string, i.e. `<span class="highlight">10:30</span>`.
 
 ```js
 async (getUserInput) => {
@@ -130,7 +136,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/translate` ルートでは、肩書や敬語をアメリカ英語とイギリス英語で略記する方法も使用する必要があります。 たとえば、Doctor Wright は、イギリス英語では「Dr Wright」、アメリカ英語では「Dr. Wright」と 略記します。 アプリで使用すべきさまざまな肩書については、`/components/american-to-british-titles.js` を参照してください。
+The `/api/translate` route should also handle the way titles/honorifics are abbreviated in American and British English. For example, Doctor Wright is abbreviated as "Dr Wright" in British English and "Dr. Wright" in American English. See `/components/american-to-british-titles.js` for the different titles your application should handle.
 
 ```js
 async (getUserInput) => {
@@ -157,7 +163,7 @@ async (getUserInput) => {
 };
 ```
 
-変換されたスペルや用語を `<span class="highlight">...</span>` タグで囲み、緑色で表示します。
+Wrap any translated spelling or terms with `<span class="highlight">...</span>` tags so they appear in green.
 
 ```js
 async (getUserInput) => {
@@ -185,7 +191,7 @@ async (getUserInput) => {
 };
 ```
 
-1 つ以上の必須フィールドが存在しない場合は、`{ error: 'Required field(s) missing' }` を返します。
+If one or more of the required fields is missing, return `{ error: 'Required field(s) missing' }`.
 
 ```js
 async (getUserInput) => {
@@ -206,7 +212,7 @@ async (getUserInput) => {
 };
 ```
 
-`text` が空の場合は、`{ error: 'No text to translate' }` を返します。
+If `text` is empty, return `{ error: 'No text to translate' }`
 
 ```js
 async (getUserInput) => {
@@ -227,7 +233,7 @@ async (getUserInput) => {
 };
 ```
 
-`locale` が 2 つの指定されたロケールのいずれとも一致しない場合は、`{ error: 'Invalid value for locale field' }` を返します。
+If `locale` does not match one of the two specified locales, return `{ error: 'Invalid value for locale field' }`.
 
 ```js
 async (getUserInput) => {
@@ -249,7 +255,7 @@ async (getUserInput) => {
 };
 ```
 
-`text` が変換を必要としない場合は、`translation` の値として `"Everything looks good to me!"` を返します。
+If `text` requires no translation, return `"Everything looks good to me!"` for the `translation` value.
 
 ```js
 async (getUserInput) => {
@@ -276,7 +282,7 @@ async (getUserInput) => {
 };
 ```
 
-24 種類のテストがすべて完了し、合格しています。 テストを記述すべき期待される動作については、`/tests/1_unit-tests.js` を参照してください。
+All 24 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
 
 ```js
 async (getUserInput) => {
@@ -301,7 +307,7 @@ async (getUserInput) => {
 };
 ```
 
-6 種類の機能テストがすべて完了し、合格しています。 テストを記述すべき機能については、`/tests/2_functional-tests.js` を参照してください。
+All 6 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
 
 ```js
 async (getUserInput) => {

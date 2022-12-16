@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05b
-title: Створіть свої власні функції
+title: Побудова власних функцій
 challengeType: 11
 videoId: nLDychdBwUg
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: build-your-own-functions
 
 Додаткові ресурси:
 
-\- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">Вправа</a>
 
 # --question--
 

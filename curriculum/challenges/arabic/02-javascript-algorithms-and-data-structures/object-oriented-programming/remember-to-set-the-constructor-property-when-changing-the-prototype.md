@@ -8,7 +8,7 @@ dashedName: remember-to-set-the-constructor-property-when-changing-the-prototype
 
 # --description--
 
-هناك تأثير جانبي مهم لضبط prototype يدويًا إلى كائن (object) جديد. إنه يمحو خاصية `constructor`! يمكن استخدام هذه الخاصية لمعرفة إي وظيفة constructor هي التي أنشأت instance، ولكن بما انه تم التعديل علي الخاصية، فإنها تعطي الآن نتائج خاطئة:
+هناك تأثير جانبي مهم لضبط prototype يدويًا إلى كائن (object) جديد. إنه يمحو خاصية `constructor`! يمكن استخدام هذه الخاصية لمعرفة إي وظيفة منشئ (constructor) هي التي أنشأت نموذج (instance)، ولكن بما انه تم التعديل علي الخاصية (property)، فإنها تعطي الآن نتائج خاطئة:
 
 ```js
 duck.constructor === Bird;

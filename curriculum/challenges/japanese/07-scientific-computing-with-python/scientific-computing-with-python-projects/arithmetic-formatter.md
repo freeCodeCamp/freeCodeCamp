@@ -10,6 +10,11 @@ dashedName: arithmetic-formatter
 
 You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow"> working on this project with our Replit starter code</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
 小学校の算数では計算問題を解きやすくするために縦書きにすることが多くあります。 たとえば「235 + 52」を次のように記述します。
@@ -83,7 +88,7 @@ Copy your project's URL and submit it below.
 
 # --hints--
 
-It should correctly format an arithmetic problem and pass all tests.
+計算問題を正しく整形し、すべてのテストを成功させる必要があります。
 
 ```js
 

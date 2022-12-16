@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c02
-title: Використовуйте символ тильди (~), щоб завжди мати доступ до останньої версії залежностей Patch
+title: Використайте символ «Тильда» для останньої патч версії залежностей
 challengeType: 2
 forumTopicId: 301532
 dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-dependency
@@ -8,9 +8,9 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --description--
 
-В останньому завданні ви сказали npm включати тільки конкретну версію пакету. Це корисний спосіб призупинити блокування ваших залежностей, якщо вам потрібно переконатися, що різні частини вашого проєкту залишаються сумісними одна з одною. Але в більшості випадків ви не захочете пропустити виправлення помилок, оскільки вони часто містять важливі патчі безпеки і (як можна сподіватися) не порушують при цьому речі.
+В останньому завданні ви сказали npm включати тільки конкретну версію пакету. Це корисний спосіб призупинити блокування своїх залежностей, якщо вам потрібно переконатися, що різні частини проєкту залишаються сумісними між собою. Але в більшості випадків не варто пропускати виправлення помилок, оскільки вони часто містять важливі патчі безпеки і (як можна сподіватися) нічого при цьому не порушують.
 
-Щоб npm залежність оновилася до останньої версії PATCH, можна встановити префікс версії залежностей з символом тильди (`~`). Ось приклад оновлення для будь-якої версії 1.3.x.
+Щоб npm-залежність оновилася до останньої версії PATCH, можна встановити префікс версії залежностей з символом тильди (`~`). Ось приклад оновлення для будь-якої версії 1.3.x.
 
 ```json
 "package": "~1.3.8"
@@ -18,15 +18,15 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --instructions--
 
-In the package.json file, your current rule for how npm may upgrade `@freecodecamp/example` is to use a specific version (1.2.13). But now, you want to allow the latest 1.2.x version.
+У файлі package.json вашим поточним правилом для оновлення `@freecodecamp/example` є використання конкретної версії (1.2.13). Але тепер потрібна остання версія 1.2.x.
 
-Use the tilde (`~`) character to prefix the version of `@freecodecamp/example` in your dependencies, and allow npm to update it to any new _patch_ release.
+Використайте символ тильда (`~`), щоб встановити префікс версії `@freecodecamp/example` у своїх залежностях і дозволити npm оновлення до будь-якої версії _патч_.
 
-**Примітка:** Номери версій не слід змінювати.
+**Примітка:** не потрібно змінювати номери версій.
 
 # --hints--
 
-`"dependencies"` should include `"@freecodecamp/example"`.
+`"dependencies"` повинні містити `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -45,7 +45,7 @@ Use the tilde (`~`) character to prefix the version of `@freecodecamp/example` i
   );
 ```
 
-`"@freecodecamp/example"` version should match `"~1.2.13"`.
+Версія `"@freecodecamp/example"` повинна відповідати `"~1.2.13"`.
 
 ```js
 (getUserInput) =>

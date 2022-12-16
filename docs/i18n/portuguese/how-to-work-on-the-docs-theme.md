@@ -4,6 +4,8 @@
 
 Para trabalhar nas diretrizes de contribuição, você pode editar ou adicionar arquivos no diretório `docs` [disponível aqui](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). Ao fazermos o merge de suas alterações, elas são disponibilizadas automaticamente no site da documentação.
 
+Ao adicionar um novo arquivo ao diretório `docs`, você deve avaliar se o arquivo também deve ser adicionado à navegação na barra lateral. Normalmente, criamos um link no arquivo [`_sidebar.md`](_sidebar.md) para guias novos e independentes. Como alternativa, você pode seguir as instruções abaixo para criar um link interno para os guias de suporte.
+
 ### Como criar um link interno
 
 Se você quiser criar um link direcionando a uma outra seção das diretrizes de contribuição, siga este formato:
@@ -39,11 +41,11 @@ Normalmente, você não precisaria alterar nenhuma configuração ou compilar o 
 - Veiculamos este arquivo como uma SPA usando `docsify` e GitHub Pages.
 - O script do `docsify` gera o conteúdo dos arquivos em `markdown` no diretório `docs` sob demanda.
 - A página inicial é gerada a partir do [`_coverpage.md`](_coverpage.md).
-- a navegação da barra lateral é gerada a partir de [`_sidebar.md`](_sidebar.md).
+- A navegação da barra lateral é gerada a partir de [`_sidebar.md`](_sidebar.md).
 
 ### Veiculando localmente o site da documentação
 
-Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+Instale o freeCodeCamp localmente ([veja o guia de instalação local](how-to-setup-freecodecamp-locally)). Nós empacotamos a CLI com as ferramentas de desenvolvimento para que você possa executar qualquer um dos comandos abaixo, conforme necessário, a partir da raiz do repositório:
 
 #### Veicule e inicie apenas o site da documentação
 

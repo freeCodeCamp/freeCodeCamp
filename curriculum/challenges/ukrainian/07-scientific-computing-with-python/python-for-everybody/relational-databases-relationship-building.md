@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08e
-title: 'Реляційні бази даних: побудова відносин'
+title: 'Реляційні бази даних: побудова відношень'
 challengeType: 11
 videoId: CSbqczsHVnc
 bilibiliIds:
