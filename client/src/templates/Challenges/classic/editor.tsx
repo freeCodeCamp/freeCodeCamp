@@ -743,7 +743,7 @@ const Editor = (props: EditorProps): JSX.Element => {
           style={{
             height: '15px',
             width: '15px',
-            marginLeft: '7px'
+            marginInlineStart: '7px'
           }}
         />
       );

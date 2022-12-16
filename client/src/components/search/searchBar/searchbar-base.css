@@ -77,7 +77,7 @@
   align-items: center;
 }
 .ais-HierarchicalMenu-list .ais-HierarchicalMenu-list {
-  margin-left: 1em;
+  margin-inline-start: 1em;
 }
 .ais-PoweredBy-logo {
   display: block;
@@ -112,7 +112,7 @@
   width: 100%;
 }
 .ais-RangeSlider .rheostat-handle {
-  margin-left: -12px;
+  margin-inline-start: -12px;
   top: -7px;
 }
 .ais-RangeSlider .rheostat-background {
@@ -138,7 +138,7 @@
   cursor: grab;
 }
 .rheostat-marker {
-  margin-left: -1px;
+  margin-inline-start: -1px;
   position: absolute;
   width: 1px;
   height: 5px;
@@ -148,7 +148,7 @@
   height: 9px;
 }
 .rheostat-value {
-  margin-left: 50%;
+  margin-inline-start: 50%;
   padding-top: 15px;
   position: absolute;
   text-align: center;
@@ -156,7 +156,7 @@
   transform: translateX(-50%);
 }
 .rheostat-tooltip {
-  margin-left: 50%;
+  margin-inline-start: 50%;
   position: absolute;
   top: -22px;
   text-align: center;
@@ -299,7 +299,7 @@ a[class^='ais-'] {
   flex-wrap: wrap;
 }
 .ais-CurrentRefinements-item {
-  margin-right: 0.3rem;
+  margin-inline-end: 0.3rem;
   margin-top: 0.3rem;
   padding: 0.3rem 0.5rem;
   display: -webkit-box;
@@ -309,13 +309,13 @@ a[class^='ais-'] {
   border-radius: 0px;
 }
 .ais-CurrentRefinements-category {
-  margin-left: 0.3em;
+  margin-inline-start: 0.3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 .ais-CurrentRefinements-delete {
-  margin-left: 0.3rem;
+  margin-inline-start: 0.3rem;
 }
 .ais-CurrentRefinements-label,
 .ais-CurrentRefinements-categoryLabel,
@@ -329,7 +329,7 @@ a[class^='ais-'] {
   white-space: nowrap;
 }
 .ais-CurrentRefinements-reset + .ais-CurrentRefinements-list {
-  margin-left: 0.3rem;
+  margin-inline-start: 0.3rem;
 }
 .ais-HierarchicalMenu-link,
 .ais-Menu-link {
@@ -345,7 +345,7 @@ a[class^='ais-'] {
   line-height: 1.5;
 }
 .ais-HierarchicalMenu-link:after {
-  margin-left: 0.3em;
+  margin-inline-start: 0.3em;
   content: '';
   width: 10px;
   height: 10px;
@@ -396,7 +396,7 @@ a[class^='ais-'] {
 .ais-Hits-list,
 .ais-Results-list {
   margin-top: -1rem;
-  margin-left: -1rem;
+  margin-inline-start: -1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -414,7 +414,7 @@ a[class^='ais-'] {
 .ais-Hits-item,
 .ais-Results-item {
   margin-top: 1rem;
-  margin-left: 1rem;
+  margin-inline-start: 1rem;
   padding: 1rem;
   width: calc(25% - 1rem);
 }
@@ -436,7 +436,8 @@ a[class^='ais-'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  padding: 0.3rem 2rem 0.3rem 0.3rem;
+  padding-block: 0.3rem;
+  padding-inline: 0.3rem 2rem;
   background-color: #fff;
   background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z%27 fill%3D%22%233A4570%22 /%3E%3C/svg%3E');
   background-repeat: no-repeat;
@@ -467,7 +468,7 @@ a[class^='ais-'] {
   margin: 0 0.3rem;
 }
 .ais-RangeInput-submit {
-  margin-left: 0.3rem;
+  margin-inline-start: 0.3rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -496,7 +497,7 @@ a[class^='ais-'] {
   justify-content: center;
 }
 .ais-Pagination-item + .ais-Pagination-item {
-  margin-left: 0.3rem;
+  margin-inline-start: 0.3rem;
 }
 .ais-Pagination-link {
   padding: 0.3rem 0.6rem;
@@ -536,7 +537,7 @@ a[class^='ais-'] {
   font-size: 0.8rem;
 }
 .ais-PoweredBy-logo {
-  margin-left: 0.3rem;
+  margin-inline-start: 0.3rem;
 }
 .ais-RangeSlider .rheostat-progress {
   background-color: #495588;
@@ -566,7 +567,7 @@ a[class^='ais-'] {
   line-height: 1.5;
 }
 .ais-RatingMenu-link > * + * {
-  margin-left: 0.3rem;
+  margin-inline-start: 0.3rem;
 }
 .ais-RatingMenu-starIcon {
   position: relative;

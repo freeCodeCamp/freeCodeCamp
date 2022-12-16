@@ -61,7 +61,8 @@
   flex-grow: 1;
   flex-shrink: 2;
   background-color: var(--quaternary-background);
-  padding: 0 0.57rem 0 0;
+  padding-block: 0;
+  padding-inline: 0 0.57rem;
   position: relative;
 }
 
