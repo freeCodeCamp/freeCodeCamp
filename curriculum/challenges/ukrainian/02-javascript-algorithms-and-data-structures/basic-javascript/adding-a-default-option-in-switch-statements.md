@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244de
-title: Додавання опції за замовчуванням до команди Switch
+title: Додавання опції за замовчуванням до інструкції switch
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JvVfg'
 forumTopicId: 16653
@@ -9,9 +9,9 @@ dashedName: adding-a-default-option-in-switch-statements
 
 # --description--
 
-В команді `switch` ви не матимете можливості вказати усі можливі значення, наприклад, як команда `case`. Натомість, ви можете додати команду `default`, яка включатиметься, якщо не знайдено відповідних перемикачів `case`. Вважайте це фінальною командою `else` у ланцюжку `if/else`.
+В інструкції `switch` ви не завжди зможете вказати усі можливі значення, як інструкції `case`. Натомість ви можете додати інструкцію `default`, яка виконуватиметься, якщо не знайдено відповідних інструкцій `case`. Вважайте це кінцевою інструкцією `else` у ланцюжку `if/else`.
 
-`default` перемикач повинен бути останнім.
+Інструкція `default` повинна бути вкінці.
 
 ```js
 switch (num) {
@@ -30,7 +30,7 @@ switch (num) {
 
 # --instructions--
 
-Напишіть команду switch, щоб встановити `answer` за наступних умов:  
+Напишіть інструкцію switch, щоб становити `answer` для наступних інструкцій:  
 `a` - `apple`  
 `b` - `bird`  
 `c` - `cat`  
@@ -38,49 +38,49 @@ switch (num) {
 
 # --hints--
 
-`switchOfStuff("a")` повинен перетворитися на рядок `apple`
+`switchOfStuff("a")` повинен повертати рядок `apple`
 
 ```js
 assert(switchOfStuff('a') === 'apple');
 ```
 
-`switchOfStuff("b")` повинен перетворитися на рядок`bird`
+`switchOfStuff("b")` повинен повертати рядок `bird`
 
 ```js
 assert(switchOfStuff('b') === 'bird');
 ```
 
-`switchOfStuff("c")` повинен перетворитися на рядок `cat`
+`switchOfStuff("c")` повинен повертати рядок `cat`
 
 ```js
 assert(switchOfStuff('c') === 'cat');
 ```
 
-`switchOfStuff("d")` повинен перетворитися на рядок `stuff`
+`switchOfStuff("d")` повинен повертати рядок `stuff`
 
 ```js
 assert(switchOfStuff('d') === 'stuff');
 ```
 
-`switchOfStuff(4)` повинен перетворитися на рядок `stuff`
+`switchOfStuff(4)` повинен повертати рядок `stuff`
 
 ```js
 assert(switchOfStuff(4) === 'stuff');
 ```
 
-Ви не повинні використовувати `if` чи `else` команди
+Ви не повинні використовувати інструкції `if` чи `else`
 
 ```js
 assert(!/else/g.test(code) || !/if/g.test(code));
 ```
 
-Вам слід користуватись командою`default`
+Ви повинні використати інструкцію `default`
 
 ```js
 assert(switchOfStuff('string-to-trigger-default-case') === 'stuff');
 ```
 
-Потрібно мати щонайменше 3 команди `break`
+Ви повинні мати принаймні 3 інструкції `break`
 
 ```js
 assert(code.match(/break/g).length > 2);
