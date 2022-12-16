@@ -53,7 +53,7 @@ There are a few steps to take in order to allow the codebase to build in your de
 First, visit the `config/i18n.ts` file to add the language to the list of available languages and configure the values. There are several objects here.
 
 - `Languages`: Add the new language to `Languages` enum, similar to the others. The string value here will be used in the `.env` file to set a build language later.
-- `availableLangs`: Add the new property from the `Language` enum to both the `client` and `curriculum` arrays. 
+- `availableLangs`: Add the new property from the `Languages` enum to both the `client` and `curriculum` arrays.
 - `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
 - `LangNames`: These are the display names for the language selector in the navigation menu.
 - `LangCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
@@ -89,27 +89,27 @@ export const availableLangs = {
 };
 
 export const i18nextCodes = {
-  english: 'en',
-  espanol: 'es',
-  chinese: 'zh',
-  'chinese-traditional': 'zh-Hant',
-  dothraki: 'mis'
+  [Languages.English]: 'en',
+  [Languages.Espanol]: 'es',
+  [Languages.Chinese]: 'zh',
+  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.Dothraki]: 'mis'
 };
 
 export enum LangNames = {
-  english: 'English',
-  espanol: 'Español',
-  chinese: '中文（简体字）',
-  'chinese-traditional': '中文（繁體字）',
-  dothraki: 'Dothraki'
+  [Languages.English]: 'English',
+  [Languages.Espanol]: 'Español',
+  [Languages.Chinese]: '中文（简体字）',
+  [Languages.ChineseTrandational]: '中文（繁體字）',
+  [Languages.Dothraki]: 'Dothraki'
 };
 
 export enum LangCodes = {
-  english: 'en-US',
-  espanol: 'es-419',
-  chinese: 'zh',
-  'chinese-traditional': 'zh-Hant',
-  dothraki: 'mis'
+  [Languages.English]: 'en-US',
+  [Languages.Espanol]: 'es-419',
+  [Languages.Chinese]: 'zh',
+  [Languages.ChineseTrandational]: 'zh-Hant',
+  [Languages.Dothraki]: 'mis'
 };
 
 export const hiddenLangs = ['dothraki'];
@@ -122,7 +122,7 @@ export const rtlLangs = [''];
 
 ### Configure the Language Superblock Order
 
-In the [config/superblock-order.ts] file, you need to set the order and state of all the superblocks for the new language in the `superBlockOrder` object. Copy one of the language keys and all its values, paste it to the bottom of the object, and change the key to use the key of your new language from the `Language` enum.
+In the [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts) file, you need to set the order and state of all the superblocks for the new language in the `superBlockOrder` object. Copy one of the language keys and all its values, paste it to the bottom of the object (or wherever), and change the key your new language from the `Language` enum.
 
 ```js
 export const superBlockOrder: SuperBlockOrder = {
@@ -172,17 +172,17 @@ export const superBlockOrder: SuperBlockOrder = {
 }
 ```
 
-The order of the superblocks in this object is how they appear on the "Landing" page and "Learn" maps. Follow the comments in that file to know how you are allowed to order the superblocks and move the superblocks for the new language to their proper places.
+The order of the superblocks in this object is how they appear on the "Landing" page and "Learn" maps. Follow the comments in that file so you know how you are allowed to order the superblocks, then move them to their proper places for the new language.
 
 > [!ATTENTION]
 > Do not change the order of any of the keys in the object, just move the superblocks to the different arrays
 
-The `CurriculumMaps.Landing` array should contain exactly one superblock for all our current certifications; and the `CurriculumMaps.Learn` object should have all the existing superblocks in it. Translated superblocks go in `TranslationStates.Audited` and non-translated superblocks go in `TranslationStates.NotAudited`. Each of those two objects has four different states a superblock can be in.
+The `CurriculumMaps.Landing` array should contain exactly one superblock for all our current certifications; and the `CurriculumMaps.Learn` object should have all existing superblocks in it. Translated superblocks go in `TranslationStates.Audited` and non-translated superblocks go in `TranslationStates.NotAudited`. Each of those two objects has four different states a superblock can be in.
 
-1. `SuperBlockStates.Current`: means that the superblock is current. e.g. `(New) Responsive Web Design`
-1. `SuperBlockStates.New`: these only show up when `SHOW_NEW_CURRICULUM` is set to `true` in your `.env` file. It is for displaying new superblocks on a specific build. For example, when we release the new RWD, we only showed in on English to start.
-1. `SuperBlockStates.Upcoming`: these only show up when `SHOW_UPCOMING_CHANGES` is set to `true` in your `.env` file. It is to show superblocks while they are in development.
-1. `SuperBlockStates.Legacy`: a superblock is moved here when a newer version of that superblock has been fully translated and replaced it.
+- `SuperBlockStates.Current`: means that the superblock is current. e.g. `(New) Responsive Web Design`
+- `SuperBlockStates.New`: these only show up when `SHOW_NEW_CURRICULUM` is set to `true` in your `.env` file. It is for displaying new superblocks on a specific build. For example, when we released the new RWD, we only showed in on English to start.
+- `SuperBlockStates.Upcoming`: these only show up when `SHOW_UPCOMING_CHANGES` is set to `true` in your `.env` file. It is to show superblocks locally while they are in development. Or, if you just need to hide a superblock from the map for some other reason.
+- `SuperBlockStates.Legacy`: a superblock is moved here when a newer version of that superblock has been fully translated and replaced it.
 
 ### Configure Search
 
