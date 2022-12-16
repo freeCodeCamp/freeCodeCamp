@@ -2,9 +2,8 @@ import dedent from 'dedent';
 import { check } from 'express-validator';
 import jwt from 'jsonwebtoken';
 import passport from 'passport';
-import { isEmail } from 'validator';
 import axios from 'axios';
-
+import { isEmail } from 'validator';
 import { jwtSecret } from '../../../../config/secrets';
 import { decodeEmail } from '../../common/utils';
 import {
@@ -14,7 +13,11 @@ import {
 } from '../component-passport';
 import { wrapHandledError } from '../utils/create-handled-error.js';
 import { removeCookies } from '../utils/getSetAccessToken';
-import { ifUserRedirectTo, ifNoUserRedirectHome } from '../utils/middleware';
+import {
+  ifUserRedirectTo,
+  ifNoUserRedirectHome,
+  ifNotMobileRedirect
+} from '../utils/middleware';
 import { getRedirectParams } from '../utils/redirection';
 import { createDeleteUserToken } from '../middlewares/user-token';
 
@@ -34,6 +37,7 @@ module.exports = function enableAuthentication(app) {
   // enable loopback access control authentication. see:
   // loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
+  const ifNotMobile = ifNotMobileRedirect();
   const ifUserRedirect = ifUserRedirectTo();
   const ifNoUserRedirect = ifNoUserRedirectHome();
   const devSaveAuthCookies = devSaveResponseAuthCookies();
@@ -87,7 +91,7 @@ module.exports = function enableAuthentication(app) {
     createGetPasswordlessAuth(app)
   );
 
-  api.get('/mobile-login', ifUserRedirect, mobileLogin(app));
+  api.get('/mobile-login', ifNotMobile, ifUserRedirect, mobileLogin(app));
 
   app.use(api);
 };
