@@ -12,7 +12,7 @@ function Spacer(props: SpacerPropTypes): JSX.Element {
     <>
       <svg
         className='tick'
-        aria-hidden='true' 
+        aria-hidden='true'
         height='50'
         viewBox='-10 -45 200 200'
         width='50'
