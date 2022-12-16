@@ -2,7 +2,7 @@ import dedent from 'dedent';
 import { check } from 'express-validator';
 import jwt from 'jsonwebtoken';
 import passport from 'passport';
-import axios from 'axios';
+import fetch from 'node-fetch';
 import { isEmail } from 'validator';
 import { jwtSecret } from '../../../../config/secrets';
 import { decodeEmail } from '../../common/utils';
@@ -204,15 +204,14 @@ function mobileLogin(app) {
       headers: { token: accessToken }
     } = req;
 
-    const userInfo = await axios({
-      method: 'GET',
-      url: `https://${process.env.AUTH0_DOMAIN}/userinfo`,
-      headers: { Authorization: `Bearer ${accessToken}` }
-    });
+    const auth0Res = await fetch(
+      `https://${process.env.AUTH0_DOMAIN}/userinfo`,
+      {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      }
+    );
 
-    const {
-      data: { email }
-    } = userInfo;
+    const { email } = await auth0Res.json();
 
     if (!isEmail(email)) {
       return next(

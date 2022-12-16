@@ -60,6 +60,7 @@
     "mongodb": "3.6.9",
     "morgan": "1.10.0",
     "nanoid": "3.3.4",
+    "node-fetch": "^2.6.7",
     "nodemailer-ses-transport": "1.5.1",
     "passport": "0.4.1",
     "passport-auth0": "1.4.2",
