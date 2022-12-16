@@ -149,7 +149,7 @@ const allAnchorsHaveHrefHash = [...anchorTags].every(function(anchorTag) {
   return anchorTag.hasAttribute("href") && anchorTag.getAttribute("href") === "#";
 });
 
-assert(allAnchorsHaveHrefHash); 
+assert(allAnchorsHaveHrefHash && anchorTags.length > 0); 
 ```
 
 # --seed--
