@@ -12,18 +12,18 @@ The website will consist of a main index page which will have links to a few rec
 **User Stories:**
 
 1. Your recipe page should contain a `DOCTYPE` tag.
-1. Your recipe page should include a `html` element with a `head` and `body` element as children.
+1. Your recipe page should include an `html` element with a `head` and `body` element as children.
 1. You should have a `title` element within the `head` element with the text `The Odin Recipes`.
-1. You should see a `h1` element that has the text `Creamy Chocolate Fudge`.
+1. You should see an `h1` element that has the text `Creamy Chocolate Fudge`.
 1. You should see an image with the url `*placeholder-fcc-cdn*` with a fitting `alt` text.
-1. There should be a `h2` element with the text `Description` under the image.
-1. You should see a couple of paragraphs under that describe the recipe.
-1. There should be a `h2` element with the text `Ingredients`
-1. Under the `Ingredients` heading there should be an unordered with the ingredients needed for the recipe.
+1. There should be an `h2` element with the text `Description` under the image.
+1. You should see a couple of paragraphs under `Description` that describe the recipe.
+1. There should be an `h2` element with the text `Ingredients`
+1. Under the `Ingredients` heading there should be an unordered list with the ingredients needed for the recipe.
 1. Under the list of ingredients add another heading called `Steps`.
 1. You should see an ordered list with a couple of steps needed to complete the recipe.
-1. Under the steps there should be a `h2` element with the text `More Recipes`
-1. You should see a couple of links to other recipes inside an unordered list which has a couple list items with anchor elements within.
+1. Under the steps there should be an `h2` element with the text `More Recipes`
+1. You should see a couple of links to other recipes inside an unordered list which has a couple of list items with anchor elements within.
 1. These anchor elements should have `href` attribute with the value set to `#`
 
 # --hints--
