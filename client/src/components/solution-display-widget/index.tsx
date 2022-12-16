@@ -1,4 +1,7 @@
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faExternalLinkAlt,
+  faWindowRestore
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Button,
@@ -84,7 +87,7 @@ export function SolutionDisplayWidget({
       id={`btn-for-${id}`}
       onClick={showUserCode}
     >
-      {viewText} <FontAwesomeIcon icon={faExternalLinkAlt} />
+      {viewText} <FontAwesomeIcon icon={faWindowRestore} />
     </Button>
   );
   const ShowMultifileProjectSolution = (
