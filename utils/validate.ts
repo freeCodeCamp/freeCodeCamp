@@ -16,8 +16,10 @@ export const usernameIsHttpStatusCode = {
 
 export const isNumeric = (num: string | number) => !isNaN(num);
 const validCharsRE = /^[a-zA-Z0-9\-_+]*$/;
-export const isHttpStatusCode = (str: string) =>
-  isNumeric(str) && parseInt(str, 10) >= 100 && parseInt(str, 10) <= 599;
+export const isHttpStatusCode = (str: string) => {
+  const output = parseInt(str, 10);
+  return isNumeric(output) && output >= 100 && output <= 599;
+};
 
 export const isValidUsername = (str: string) => {
   if (!validCharsRE.test(str)) return invalidCharError;
