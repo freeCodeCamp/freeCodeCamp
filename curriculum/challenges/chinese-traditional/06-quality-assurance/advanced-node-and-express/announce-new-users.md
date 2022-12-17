@@ -8,9 +8,9 @@ dashedName: announce-new-users
 
 # --description--
 
-許多聊天室都有這個功能：所有已連接到服務器的在線用戶都會看到有人加入或退出的提醒。 我們已經寫好了處理連接和斷開事件的代碼，只要對這個方法稍作修改就可以實現這個功能。 The most logical way of doing so is sending 3 pieces of data with the event: the username of the user who connected/disconnected, the current user count, and if that username connected or disconnected.
+許多聊天室都有這個功能：所有已連接到服務器的在線用戶都會看到有人加入或退出的提醒。 我們已經寫好了處理連接和斷開事件的代碼，只要對這個方法稍作修改就可以實現這個功能。 最合理的方式是隨事件發送 3 個數據：連接/斷開連接的用戶的用戶名、當前的用戶數，以及該用戶名是否連接或斷開連接。
 
-Change the event name to `'user'`, and pass an object along containing the fields `username`, `currentUsers`, and `connected` (to be `true` in case of connection, or `false` for disconnection of the user sent). Be sure to change both `'user count'` events and set the disconnect one to send `false` for the field `connected` instead of `true` like the event emitted on connect.
+將事件名稱更改爲 `'user'`，傳遞一個對象，其中應包含如下字段：`username`、`currentUsers` 和 `connected`（布爾值，連接上即爲 `true`，斷開則是 `false`）。 記得更改兩個 `'user count'` 事件，設置斷開連接事件向 `connected` 字段發送 `false` ，而不是像連接上的事件一樣發送 `true`。
 
 ```js
 io.emit('user', {
@@ -34,11 +34,11 @@ socket.on('user', data => {
 });
 ```
 
-完成上述要求後，你可以在下方提交你的頁面鏈接。 If you're running into errors, you can check out <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135/3#announce-new-users-10" target="_blank" rel="noopener noreferrer nofollow">the project completed up to this point </a>.
+完成上述要求後，你可以在下方提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135/3#announce-new-users-10" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 # --hints--
 
-Event `'user'` should be emitted with `name`, `currentUsers`, and `connected`.
+事件 `'user'` 應該與 `name`、`currentUsers` 和 `connected` 一起發送。
 
 ```js
 async (getUserInput) => {

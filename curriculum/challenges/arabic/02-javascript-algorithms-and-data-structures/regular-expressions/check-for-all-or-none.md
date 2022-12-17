@@ -22,7 +22,7 @@ rainbowRegex.test(american);
 rainbowRegex.test(british);
 ```
 
-كل من استدعائات دالة `test` سيرجعان `true`.
+كل من استدعاءات طريقة (method) مسمى `test` سيرجعان `true`.
 
 # --instructions--
 

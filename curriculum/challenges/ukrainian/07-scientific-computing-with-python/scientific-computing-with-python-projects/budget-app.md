@@ -90,7 +90,7 @@ Percentage spent by category
 
 # --hints--
 
-Проєкт повинен створити клас Category та пройти тестування.
+Проєкт повинен створити клас Category та пройти всі тести.
 
 ```js
 

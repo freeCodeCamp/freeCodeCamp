@@ -1,6 +1,6 @@
 ---
 id: 60fadce90f85c50d0bb0dd4f
-title: Step 46
+title: Paso 46
 challengeType: 0
 dashedName: step-46
 ---
@@ -42,7 +42,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom,
       <fieldset>
         <label for="personal-account"><input id="personal-account" type="radio" name="account-type" /> Personal Account</label>
         <label for="business-account"><input id="business-account" type="radio" name="account-type" /> Business Account</label>
-        <label for="terms-and-conditions" name="terms-and-conditions">
+        <label for="terms-and-conditions">
           <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
         </label>
       </fieldset>

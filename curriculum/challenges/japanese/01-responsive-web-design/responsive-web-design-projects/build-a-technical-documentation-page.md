@@ -30,7 +30,7 @@ dashedName: build-a-technical-documentation-page
 
 上記のユーザーストーリーを満たし、以下のすべてのテストが通るようにして、このプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
-**注:** スタイルシートをリンクして CSS を適用するため、HTML 内に `<link rel="stylesheet" href="styles.css">` を必ず追加してください
+**注:** スタイルシートをリンクして CSS を適用するため、HTML のコード内に必ず `<link rel="stylesheet" href="styles.css">` を追加してください。
 
 # --hints--
 

@@ -14,27 +14,27 @@ Trabajar en estos desafíos implica escribir tu código usando uno de los siguie
 - Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto de inicio Replit</a> para completar estos desafíos.
 - Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Si usas Replit, sigue los siguientes pasos para configurar el proyecto:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Comienza importando el proyecto en Replit.
+-   Después, verás una ventana `.replit`.
+-   Selecciona `Use run command` y haz clic en el botón `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Cuando hayas acabado, asegúrate de que un demo funcional del proyecto, este alojado en algún sitio público. Envía esa URL mediante el campo `Solution Link`.
 
-During the development process, it is important to be able to check what’s going on in your code.
+Durante el proceso de desarrollo, es importante poder comprobar lo que ocurre en el código.
 
-Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see console output in a terminal. On Replit, a terminal is open in the right pane by default.
+Node es solo un entorno JavaScript. Al igual que el JavaScript del lado cliente, puedes hacer uso de la consola para mostrar información útil para la depuración. En tu máquina, varía la salida de la consola en un terminal. En Replit, por defecto hay un terminal abierto en el panel de la derecha.
 
-We recommend to keep the terminal open while working at these challenges. By reading the output in the terminal, you can see any errors that may occur.
+Recomendamos mantener abierto el terminal mientras desarrolles estos retos. Al leer el resultado en el terminal, puedes ver cualquier error que pueda producirse.
 
 # --instructions--
 
-Modify the `myApp.js` file to log "Hello World" to the console.
+Modifica el archivo `myApp.js` para que registre "Hello World" en la consola.
 
 # --hints--
 
-`"Hello World"` should be in the console
+`"Hello World"` debe aparecer en la consola
 
 ```js
 (getUserInput) =>

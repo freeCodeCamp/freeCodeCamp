@@ -12,9 +12,9 @@ dashedName: hashing-your-passwords
 
 `bcrypt@~5.0.0` 已被添加爲依賴項，在你的服務器中請求它。 你需要在兩個步驟中使用哈希運算：註冊和保存新賬戶，以及登錄時檢查密碼是否正確。
 
-Currently on your registration route, you insert a user's plaintext password into the database like so: `password: req.body.password`. Hash the passwords instead by adding the following before your database logic: `const hash = bcrypt.hashSync(req.body.password, 12);`, and replacing the `req.body.password` in the database saving with just `password: hash`.
+目前在你的註冊路徑上，你將把用戶的純文本密碼插入數據庫中：`password: req.body.password`。 通過在你的數據庫邏輯前添加 `const hash = bcrypt.hashSync(req.body.password, 12);`，並在數據庫存儲中將 `req.body.password` 替換爲 `password: hash`，來哈希密碼。
 
-On your authentication strategy, you check for the following in your code before completing the process: `if (password !== user.password) return done(null, false);`. 現在存儲的密碼 `user.password` 已經是哈希值了。 在對現有代碼進行修改前，注意目前的語句是如何檢查如果密碼**不**匹配，就返回未認證的。 With this in mind, change that code to look as follows to properly check the password entered against the hash:
+在你的驗證策略上，你在完成過程之前在代碼中檢查：`if (password !== user.password) return done(null, false);`。 現在存儲的密碼 `user.password` 已經是哈希值了。 在對現有代碼進行修改前，注意目前的語句是如何檢查如果密碼**不**匹配，就返回未認證的。 考慮到這一點，將該代碼修改如下，以便根據哈希值正確檢查輸入的密碼。
 
 ```js
 if (!bcrypt.compareSync(password, user.password)) { 
@@ -22,9 +22,9 @@ if (!bcrypt.compareSync(password, user.password)) {
 }
 ```
 
-That is all it takes to implement one of the most important security features when you have to store passwords.
+當你必須存儲密碼時，這就是實現最重要的安全功能之一的全部內容。
 
-完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#hashing-your-passwords-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#hashing-your-passwords-1" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 # --hints--
 

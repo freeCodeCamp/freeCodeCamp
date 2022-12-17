@@ -15,7 +15,7 @@ describe('Donate page', () => {
     );
     cy.get('[data-cy="donate.bigger-donation"]').should(
       'have.text',
-      "Want to make a bigger one-time donation, mail us a check, or give in other ways? Here are many other ways you can support our non-profit's mission."
+      "Want to make a bigger one-time donation, mail us a check, or give in other ways? Here are many other ways you can support our charity's mission."
     );
     cy.get('[data-cy="donate-link"]').should(
       'contain.attr',

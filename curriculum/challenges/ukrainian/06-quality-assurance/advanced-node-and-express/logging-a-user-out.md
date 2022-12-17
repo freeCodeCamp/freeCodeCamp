@@ -8,9 +8,9 @@ dashedName: logging-a-user-out
 
 # --description--
 
-Логіка logout легко створюється. The route should just unauthenticate the user, and redirect to the home page instead of rendering any view.
+Створити логіку виходу з облікового запису легко. Маршрут має лише скасувати автентифікацію користувача та переадресувати на головну сторінку замість візуалізації будь-якого перегляду.
 
-In passport, unauthenticating a user is as easy as just calling `req.logout()` before redirecting. Add this `/logout` route to do that:
+Скасувати автентифікацію користувача через Passport так само легко, як викликати `req.logout()` перед переадресацією. Додайте такий маршрут `/logout`, щоб зробити це:
 
 ```js
 app.route('/logout')
@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-You may have noticed that you are not handling missing pages (404). Поширений спосіб обробки цієї помилки у Node є наступне проміжне програмне забезпечення. Додайте це після всіх інших маршрутів:
+Мабуть, ви помітили, що не обробляєте відсутні вебсторінки (404). Поширеним способом обробки цієї помилки у Node є наступне проміжне програмне забезпечення. Додайте його після всіх інших маршрутів:
 
 ```js
 app.use((req, res, next) => {
@@ -30,11 +30,11 @@ app.use((req, res, next) => {
 });
 ```
 
-Відправте свою сторінку коли впевнились, що все правильно. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#logging-a-user-out-10" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#logging-a-user-out-10" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-`req.logout()` should be called in your `/logout` route.
+`req.logout()` потрібно викликати у маршруті `/logout`.
 
 ```js
 async (getUserInput) => {
@@ -49,7 +49,7 @@ async (getUserInput) => {
 }
 ```
 
-`/logout` should redirect to the home page.
+`/logout` повинен переадресовувати на головну сторінку.
 
 ```js
 async (getUserInput) => {
