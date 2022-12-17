@@ -1,3 +1,12 @@
+.alert > p > strong {
+  color: inherit;
+}
+
+.fa-circle-exclamation {
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+
 @media screen and (max-width: 767px) {
   .help-modal .btn-lg {
     font-size: 16px;

@@ -8,17 +8,15 @@ dashedName: set-up-passport
 
 # --description--
 
-Час встановити *Passport*, щоб нарешті дозволити користувачеві реєструватися або входити в обліковий запис! Разом з Passport, ми будемо використовувати експрес-сесію (Express-session) для обробки сесій. Використання цього проміжного програмного забезпечення зберігає id сесії як файл cookie в клієнті та дозволяє нам отримувати доступ до даних сесії за допомогою цього id на сервері. Таким чином ми зберігаємо особисту інформацію облікового запису поза файлом cookie, який клієнт використовує для перевірки на нашому сервері їх автентичності, і просто зберігаємо *ключ* для доступу до даних, що зберігаються на сервері.
+Час встановити *Passport*, щоб дозволити користувачеві реєструватися або входити в обліковий запис. Окрім Passport ви будете використовувати Express-session для обробки сесій. Express-session має величезний набір розширених функцій, які ви можете використати, але зараз ви будете використовувати лише основні. Використання цього проміжного програмного забезпечення зберігає id сесії як куки в клієнті та дозволяє нам отримати доступ до даних сесії, використовуючи цей id на сервері. Таким чином ви зберігаєте особисту інформацію облікового запису поза куками, які клієнт використовує, аби повідомити ваш сервер про автентифікованих клієнтів, і зберігаєте *ключ* для доступу до даних, які зберігаються на сервері.
 
-Щоб налаштувати Passport для використання в своєму проекті, вам потрібно буде спочатку додати його як залежність у вашому package.json. `passport@~0.4.1`
+`passport@~0.4.1` та `express-session@~1.17.1` вже встановлені та вказані як залежності у вашому файлі `package.json`.
 
-Крім того, додайте також експрес-сесію як залежність. Експрес-сесія має дуже великий набір розширених функцій, які ви можете використати, але зараз ми збираємося використовувати лише базові функції! `express-session@~1.17.1`
+Вам потрібно буде встановити налаштування сесії та ініціалізувати Passport. Спочатку створіть змінні `session` та `passport`, щоб вимагати `express-session` та `passport` відповідно.
 
-Зараз вам потрібно буде встановити налаштування сесії та ініціалізувати Passport. Переконайтеся, що створили змінні 'session' та 'passport', це потрібно для 'express-session' та 'passport'.
+Потім налаштуйте програму Express на використання сесії, визначивши наступні параметри:
 
-Щоб налаштувати експрес-застосунок для використання у сесії, ми визначимо лише декілька основних параметрів. Не забудьте додати 'SESSION_SECRET' до вашого .env файлу і надати йому випадкове значення. Це використовується для обчислення хешу, яке використовується для шифрування вашого cookie!
-
-```js
+```javascript
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: true,
@@ -27,98 +25,79 @@ app.use(session({
 }));
 ```
 
-Крім того, ви можете продовжити та повідомити своєму експрес-застосунку **використовувати** 'Passpor.initialize()' та 'Pasort.session()'. (Наприклад, `app.use(passport.initialize());`)
+Не забудьте додати `SESSION_SECRET` до свого файлу `.env` та надати йому випадкове значення. Це використовується для обчислення хешу, щоб зашифрувати ваші куки!
 
-Відправте сторінку, якщо все було виконано правильно. Якщо виникають помилки, ви можете перевірити виконання проєкту до цього етапу [тут](https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c).
+Після того, як ви все зробите, скажіть своїй програмі Express **використовувати** `passport.initialize()` та `passport.session()`.
+
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-passport-3" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
-Passport і експрес-сесії повинні бути залежностями.
+Passport та Express-session повинні бути залежностями.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'passport',
-        'Your project should list "passport" as a dependency'
-      );
-      assert.property(
-        packJson.dependencies,
-        'express-session',
-        'Your project should list "express-session" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'passport',
+    'Your project should list "passport" as a dependency'
   );
+  assert.property(
+    packJson.dependencies,
+    'express-session',
+    'Your project should list "express-session" as a dependency'
+  );
+}
 ```
 
-Пов'язані залежності повинні бути правильно заповнені.
+Залежності повинні бути правильно заданими.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require.*("|')passport("|')/gi,
-        'You should have required passport'
-      );
-      assert.match(
-        data,
-        /require.*("|')express-session("|')/gi,
-        'You should have required express-session'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require.*("|')passport("|')/,
+    'You should have required passport'
   );
+  assert.match(
+    data,
+    /require.*("|')express-session("|')/,
+    'You should have required express-session'
+  );
+}
 ```
 
-Експрес застосунок має використовувати нові залежності.
+Програма Express повинна використовувати нові залежності.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /passport.initialize/gi,
-        'Your express app should use "passport.initialize()"'
-      );
-      assert.match(
-        data,
-        /passport.session/gi,
-        'Your express app should use "passport.session()"'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
-  );
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(data, /passport\.initialize/, 'Your express app should use "passport.initialize()"');
+  assert.match(data, /passport\.session/, 'Your express app should use "passport.session()"');
+}
 ```
 
-Сесія і секрет сесії мають бути правильно налаштовані.
+Сесія і секрет сесії повинні бути правильно налаштовані.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /secret *: *process\.env(\.SESSION_SECRET|\[(?<q>"|')SESSION_SECRET\k<q>\])/g,
-        'Your express app should have express-session set up with your secret as process.env.SESSION_SECRET'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /secret *:\s*process\.env(\.SESSION_SECRET|\[(?<q>"|')SESSION_SECRET\k<q>\])/,
+    'Your express app should have express-session set up with your secret as process.env.SESSION_SECRET'
   );
+}
 ```
 
 # --solutions--

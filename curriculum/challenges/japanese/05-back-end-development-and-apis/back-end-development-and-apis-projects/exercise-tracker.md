@@ -8,19 +8,25 @@ dashedName: exercise-tracker
 
 # --description--
 
-<https://exercise-tracker.freecodecamp.rocks/> と同様の機能を持つフルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
+<a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks</a> と同じような機能を持つ、フルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
--   [ GitHub リポジトリ](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/)をクローンし、ローカル環境でプロジェクトを完了させる。
--   [Replit 始動プロジェクト](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker)を使用して、プロジェクトを完了させる。
+-   <a href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でチャレンジを完了させる。
+-   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、`GitHub Link` フィールドでプロジェクトのソースコードへのリンクを送信してください。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-レスポンスには、以下の構造体が必要です。
+Your responses should have the following structures.
 
-演習:
+Exercise:
 
 ```js
 {
@@ -32,7 +38,7 @@ dashedName: exercise-tracker
 }
 ```
 
-ユーザー:
+User:
 
 ```js
 {
@@ -41,7 +47,7 @@ dashedName: exercise-tracker
 }
 ```
 
-ログ:
+Log:
 
 ```js
 {
@@ -56,11 +62,11 @@ dashedName: exercise-tracker
 }
 ```
 
-** ヒント: ** `date` プロパティについては、`Date` API の `toDateString` メソッド を使用すると期待した出力が得られます。
+**Hint:** For the `date` property, the `toDateString` method of the `Date` API can be used to achieve the expected output.
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供する必要があります。
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -71,7 +77,7 @@ dashedName: exercise-tracker
 };
 ```
 
-フォームデータ `username` を使用して `/api/users` への `POST` を実行することで、新しいユーザーを作成することができます。
+You can `POST` to `/api/users` with form data `username` to create a new user.
 
 ```js
 async (getUserInput) => {
@@ -79,7 +85,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   assert.isTrue(res.ok);
   if(!res.ok) {
@@ -88,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-フォームデータ `username` による `POST /api/users` から返されるレスポンスは、`username` および `_id` プロパティを持つオブジェクトです。
+The returned response from `POST /api/users` with form data `username` will be an object with `username` and `_id` properties.
 
 ```js
 async (getUserInput) => {
@@ -96,7 +102,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -108,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/users` への `GET` リクエストを実行することにより、すべてのユーザーのリストを取得できます。
+You can make a `GET` request to `/api/users` to get a list of all users.
 
 ```js
 async(getUserInput) => {
@@ -121,7 +127,7 @@ async(getUserInput) => {
 };
 ```
 
-`/api/users` への `GET` リクエストを実行すると、配列が返されます。
+The `GET` request to `/api/users` returns an array.
 
 ```js
 async(getUserInput) => {
@@ -136,7 +142,7 @@ async(getUserInput) => {
 };
 ```
 
-`GET /api/users` から返される配列の各要素は、ユーザーの `username` および `_id` を含むオブジェクトリテラルです。
+Each element in the array returned from `GET /api/users` is an object literal containing a user's `username` and `_id`.
 
 ```js
 async(getUserInput) => {
@@ -156,7 +162,7 @@ async(getUserInput) => {
 };
 ```
 
-`/api/users/:_id/exercises` への `POST` では、フォームデータ `description`、`duration`、および `date` (省略可) を指定できます。 日付を指定しない場合は、現在の日付が使用されます。
+You can `POST` to `/api/users/:_id/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used.
 
 ```js
 async (getUserInput) => {
@@ -164,7 +170,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -190,7 +196,7 @@ async (getUserInput) => {
 };
 ```
 
-`POST /api/users/:_id/exercises` から返されるレスポンスは、追加された演習フィールドを持つユーザーオブジェクトです。
+The response returned from `POST /api/users/:_id/exercises` will be the user object with the exercise fields added.
 
 ```js
 async (getUserInput) => {
@@ -198,7 +204,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -229,7 +235,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/users/:_id/logs` への `GET` リクエストを実行すると、任意のユーザーのすべての演習ログを取得できます。
+You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user.
 
 ```js
 async (getUserInput) => {
@@ -237,7 +243,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -268,7 +274,7 @@ async (getUserInput) => {
 };
 ```
 
-ユーザーログのリクエスト `GET /api/users/:_id/logs` は、そのユーザーに属する演習の数を表す `count` プロパティを持つユーザーオブジェクトを返します。
+A request to a user's log `GET /api/users/:_id/logs` returns a user object with a `count` property representing the number of exercises that belong to that user.
 
 ```js
 async (getUserInput) => {
@@ -276,7 +282,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -309,7 +315,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/users/:id/logs` への `GET` リクエストは、追加されたすべての演習の `log` 配列を持つユーザーオブジェクトを返します。
+A `GET` request to `/api/users/:_id/logs` will return the user object with a `log` array of all the exercises added.
 
 ```js
 async(getUserInput) => {
@@ -319,7 +325,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   })
   if(res.ok){
     const {_id, username} = await res.json();
@@ -353,7 +359,7 @@ async(getUserInput) => {
 };
 ```
 
-`GET /api/users/:id/logs` から返される `log` 配列内の各アイテムは、`description`、`duration` および `date` プロパティを持つオブジェクトです。
+Each item in the `log` array that is returned from `GET /api/users/:_id/logs` is an object that should have a `description`, `duration`, and `date` properties.
 
 ```js
 async(getUserInput) => {
@@ -363,7 +369,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -400,7 +406,7 @@ async(getUserInput) => {
 };
 ```
 
-`GET /api/users/:id/logs` から返される `log` 配列内のどのオブジェクトの `description` プロパティも、文字列である必要があります。
+The `description` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string.
 
 ```js
 async(getUserInput) => {
@@ -410,7 +416,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -447,7 +453,7 @@ async(getUserInput) => {
 };
 ```
 
-`GET /api/users/:id/logs` から返される `log` 配列内のどのオブジェクトの `duration` プロパティも、数値である必要があります。
+The `duration` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a number.
 
 ```js
 async(getUserInput) => {
@@ -457,7 +463,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -494,7 +500,7 @@ async(getUserInput) => {
 };
 ```
 
-`GET /api/users/:id/logs` から返される `log` 配列内のどのオブジェクトの `date` プロパティも、文字列である必要があります。 `Date` API の `dateString` 形式を使用してください。
+The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Use the `dateString` format of the `Date` API.
 
 ```js
 async(getUserInput) => {
@@ -504,7 +510,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -541,7 +547,7 @@ async(getUserInput) => {
 };
 ```
 
-`GET /api/users/:_id/logs` リクエストに `from`、`to` および `limit` パラメーターを追加すると、任意のユーザーについてログの対象部分を取得できます。 `from` および `to` は、`yyyy-mm-dd` 形式の日付です。 `limit` は、送信するログの数を表す整数です。
+You can add `from`, `to` and `limit` parameters to a `GET /api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
 
 ```js
 async (getUserInput) => {
@@ -549,7 +555,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();

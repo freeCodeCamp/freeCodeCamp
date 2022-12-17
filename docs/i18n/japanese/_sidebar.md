@@ -6,24 +6,25 @@
   - [リソースを翻訳する](how-to-translate-files.md)
   - [翻訳を校正する](how-to-proofread-files.md)
 - **コードのコントリビューション**
-  - [freeCodeCamp のローカル環境を構築する](how-to-setup-freecodecamp-locally.md)
-  - [モバイルアプリに貢献する](how-to-setup-freecodecamp-mobile-app-locally.md)
-  - [コードベースのベストプラクティス](codebase-best-practices.md)
-  - [プルリクエストをオープンする](how-to-open-a-pull-request.md)
-  - [コーディングチャレンジに貢献する](how-to-work-on-coding-challenges.md)
-  - [プラクティスプロジェクトに貢献する](how-to-work-on-practice-projects.md)
-  - [CodeRoad のチュートリアルに貢献する](how-to-work-on-tutorials-that-use-coderoad.md)
-  - [ローカライズされたクライアント Web アプリに貢献する](how-to-work-on-localized-client-webapp.md)
-  - [Cypress テストに貢献する](how-to-add-cypress-tests.md)
-  - [ビデオチャレンジに貢献する](how-to-help-with-video-challenges.md)
-  - [ドキュメントに貢献する](how-to-work-on-the-docs-theme.md)
-  - [コンポーネントライブラリに貢献する](how-to-work-on-the-component-library.md)
+  - [Set up freeCodeCamp](how-to-setup-freecodecamp-locally.md)
+  - [Follow best-practices](codebase-best-practices.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
+  - [Work on Codebase](how-to-contribute-to-the-codebase.md)
+  - [Work on Coding Challenges](how-to-work-on-coding-challenges.md)
+  - [Work on Component Library](how-to-work-on-the-component-library.md)
+  - [Work on Practice Projects](how-to-work-on-practice-projects.md)
+  - [Work on Mobile app](how-to-setup-freecodecamp-mobile-app-locally.md)
+  - [Work on tutorials with CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
+  - [Work on Localized Web App](how-to-work-on-localized-client-webapp.md)
+  - [Work on Cypress tests](how-to-add-cypress-tests.md)
+  - [Work on Video Challenges](how-to-help-with-video-challenges.md)
+  - [Work on Documentation](how-to-work-on-the-docs-theme.md)
 - **その他のガイド**
-  - [翻訳をローカルでテストする](how-to-test-translations-locally.md)
-  - [カリキュラムのファイル構造を理解する](curriculum-file-structure.md)
-  - [送信メールをローカルでデバッグする](how-to-catch-outgoing-emails-locally.md)
-  - [Windows (WSL) で freeCodeCamp 開発環境を構築する](how-to-setup-wsl.md)
-  - [ユーザートークンワークフロー](user-token-workflow.md)
+  - [Understand the curriculum file structure](curriculum-file-structure.md)
+  - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
+  - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
+  - [User Token Workflow](user-token-workflow.md)
+  - [Troubleshooting Development Issues](troubleshooting-development-issues.md)
 
 ---
 
@@ -32,6 +33,7 @@
   - [ランゲージリードハンドブック](language-lead-handbook.md)
   - [DevOps ハンドブック](devops.md)
   - [VSCode 拡張機能「Courses」](courses-vscode-extension.md)
+  - [Enable New Language](how-to-enable-new-languages.md)
 
 ---
 

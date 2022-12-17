@@ -14,13 +14,13 @@ dashedName: dictionaries-and-loops
 
 Додаткові ресурси:
 
-\- [Відео-урок](https://www.youtube.com/watch?v=PrhZ9qwBDD8)
+\- <a href="https://www.youtube.com/watch?v=PrhZ9qwBDD8" target="_blank" rel="noopener noreferrer nofollow">Вправа</a>
 
 # --question--
 
 ## --text--
 
-Що буде виведено на екран після виконання наведеного нижче коду?:
+Що надрукує наведений код?:
 
 ```python
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}

@@ -14,6 +14,12 @@ Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a
 -   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar o projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
+Se você usa o Replit, siga estas etapas para configurar o projeto:
+
+-   Comece importando o projeto no Replit.
+-   Em seguida, você verá uma janela `.replit`.
+-   Selecione `Use run command` e clique no botão `Done`.
+
 Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
 
 # --instructions--
@@ -79,7 +85,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   assert.isTrue(res.ok);
   if(!res.ok) {
@@ -96,7 +102,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -164,7 +170,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -198,7 +204,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -237,7 +243,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -276,7 +282,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -309,7 +315,7 @@ async (getUserInput) => {
 };
 ```
 
-Uma solicitação de `GET` a `/api/users/:id/logs` retornará o objeto do usuário com um array `log` de todos os exercícios adicionados.
+Uma solicitação de `GET` a `/api/users/:_id/logs` retornará o objeto do usuário com um array `log` de todos os exercícios adicionados.
 
 ```js
 async(getUserInput) => {
@@ -319,7 +325,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   })
   if(res.ok){
     const {_id, username} = await res.json();
@@ -353,7 +359,7 @@ async(getUserInput) => {
 };
 ```
 
-Cada item no array `log` que é retornado de `GET /api/users/:id/logs` é um objeto que deve ter as propriedades `description`, uma `duration` e uma `date`.
+Cada item no array `log` que é retornado de `GET /api/users/:_id/logs` é um objeto que deve ter as propriedades `description`, uma `duration` e uma `date`.
 
 ```js
 async(getUserInput) => {
@@ -363,7 +369,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -400,7 +406,7 @@ async(getUserInput) => {
 };
 ```
 
-A propriedade `description` de qualquer objeto no array `log` retornada de `GET /api/users/:id/logs` deve ser uma string.
+A propriedade `description` de qualquer objeto no array `log` retornada de `GET /api/users/:_id/logs` deve ser uma string.
 
 ```js
 async(getUserInput) => {
@@ -410,7 +416,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -447,7 +453,7 @@ async(getUserInput) => {
 };
 ```
 
-A propriedade `duration` de qualquer objeto no array `log` que é retornada de `GET /api/users/:id/logs` deve ser um número.
+A propriedade `duration` de qualquer objeto no array `log` que é retornada de `GET /api/users/:_id/logs` deve ser um número.
 
 ```js
 async(getUserInput) => {
@@ -457,7 +463,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -494,7 +500,7 @@ async(getUserInput) => {
 };
 ```
 
-A propriedade `date` de qualquer objeto no array `log` retornada de `GET /api/users/:id/logs` deve ser uma string. Use o formato `dateString` da API `Date`.
+A propriedade `date` de qualquer objeto no array `log` retornada de `GET /api/users/:_id/logs` deve ser uma string. Use o formato `dateString` da API `Date`.
 
 ```js
 async(getUserInput) => {
@@ -504,7 +510,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -549,7 +555,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();

@@ -8,12 +8,18 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-Estarás [trabajando en este proyecto con nuestro código inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer).
+Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código de inicio Replit</a>.
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 
 Todavía estamos desarrollando la parte interactiva del currículo de Python. Por ahora, aquí hay algunos vídeos en nuestro canal de YouTube freeCodeCamp.org que te enseñará todo lo que necesitas saber para completer este proyecto:
 
-- [Curso: Python para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-- [Curso: Aprende Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -25,20 +31,20 @@ Las filas del conjunto de datos representan a los pacientes y las columnas repre
 
 Nombre del archivo: medical_examination.csv
 
-|                    Característica                     |      Tipo de variable      |  Variable  |                            Tipo de unidad                             |
-|:-----------------------------------------------------:|:--------------------------:|:----------:|:---------------------------------------------------------------------:|
-|                         Edad                          |  Característica objetivo   |    edad    |                              int (días)                               |
-|                        Altura                         |  Característica objetivo   |   altura   |                               int (cm)                                |
-|                         Peso                          |  Característica objetivo   |    peso    |                              float (kg)                               |
-|                         Sexo                          |  Característica objetivo   |   género   |                          código de categoría                          |
-|              Presión arterial sistólica               | Características del examen |   ap_hi    |                                  int                                  |
-|              Presión arterial diastólica              | Característica del examen  |   ap_lo    |                                  int                                  |
-|                      Colesterol                       | Característica del examen  | colesterol | 1: normal, 2: por encima de lo normal, 3: muy por encima de lo normal |
-|                        Glucosa                        | Característica del examen  |  glúcido   | 1: normal, 2: por encima de lo normal, 3: muy por encima de lo normal |
-|                        Fumador                        |  Característica subjetiva  |    humo    |                                binario                                |
-|                  Consumo de alcohol                   |  Característica subjetiva  |    alco    |                                binario                                |
-|                   Actividad física                    |  Característica subjetiva  |   activo   |                                binario                                |
-| Presencia o ausencia de enfermedades cardiovasculares |     Variable objetivo      |  cardiaco  |                                binario                                |
+|                    Característica                     |      Tipo de variable      |   Variable    |                            Tipo de unidad                             |
+|:-----------------------------------------------------:|:--------------------------:|:-------------:|:---------------------------------------------------------------------:|
+|                         Edad                          |  Característica objetivo   |     `age`     |                              int (días)                               |
+|                        Altura                         |  Característica objetivo   |   `height`    |                               int (cm)                                |
+|                         Peso                          |  Característica objetivo   |   `weight`    |                              float (kg)                               |
+|                         Sexo                          |  Característica objetivo   |   `gender`    |                          código de categoría                          |
+|              Presión arterial sistólica               | Características del examen |    `ap_hi`    |                                  int                                  |
+|              Presión arterial diastólica              | Característica del examen  |    `ap_lo`    |                                  int                                  |
+|                      Colesterol                       | Característica del examen  | `cholesterol` | 1: normal, 2: por encima de lo normal, 3: muy por encima de lo normal |
+|                        Glucosa                        | Característica del examen  |    `gluc`     | 1: normal, 2: por encima de lo normal, 3: muy por encima de lo normal |
+|                        Fumador                        |  Característica subjetiva  |    `smoke`    |                                binario                                |
+|                  Consumo de alcohol                   |  Característica subjetiva  |    `alco`     |                                binario                                |
+|                   Actividad física                    |  Característica subjetiva  |   `active`    |                                binario                                |
+| Presencia o ausencia de enfermedades cardiovasculares |     Variable objetivo      |   `cardio`    |                                binario                                |
 
 ## Tareas
 
@@ -46,16 +52,16 @@ Crear un gráfico similar a `ejemplos/Figure_1. ng`, donde mostramos las cifras 
 
 Utiliza los datos para completar las siguientes tareas en `medical_data_visualizer.py`:
 
-- Agrega una columna de `sobrepeso` a los datos. Para determinar si una persona tiene sobrepeso, primero calcule su IMC dividiendo su peso en kilogramos por el cuadrado de su altura en metros. Si ese valor es > 25 entonces la persona tiene sobrepeso. Utilice el valor 0 para NO sobrepeso y el valor 1 para el sobrepeso.
-- Normaliza los datos haciendo 0 siempre bueno y 1 siempre malo. Si el valor de `cholesterol` o `gluc` es 1, haga que el valor 0. Si el valor es mayor que 1, haga el valor 1.
-- Convierte los datos en formato largo y crea un gráfico que muestre el recuento de valores de las características categóricas usando `catplot()` de seaborn. El conjunto de datos debe dividirse por 'Cardio', así que hay un gráfico por cada valor de `cardio`. El gráfico debería verse como `examples/Figure_1.png`.
-- Limpia los datos. Filtrar los siguientes segmentos de pacientes que representan datos incorrectos:
-  - la presión diastólica es más alta que la máxima (Mantén los datos correctos con `(df['ap_lo'] <= df['ap_hi'])`)
-  - la altura es menor que el 2.5º percentil (Mantén los datos correctos con `(df['height'] >= df['height'].quantile(0.025))`)
-  - la altura es superior al 97,5º percentil
-  - el peso es menor que el 2,5º percentil
-  - el peso es superior al 97,5º percentil
-- Crear una matriz de correlación usando el conjunto de datos. Grafica la matriz de correlación usando la función `heatmap()` de seaborn. Enmascarar el triángulo superior de la matriz. El gráfico debería verse como `examples/Figure_2.png`.
+- Add an `overweight` column to the data. To determine if a person is overweight, first calculate their BMI by dividing their weight in kilograms by the square of their height in meters. If that value is > 25 then the person is overweight. Use the value 0 for NOT overweight and the value 1 for overweight.
+- Normalize the data by making 0 always good and 1 always bad. If the value of `cholesterol` or `gluc` is 1, make the value 0. If the value is more than 1, make the value 1.
+- Convert the data into long format and create a chart that shows the value counts of the categorical features using seaborn's `catplot()`. The dataset should be split by 'Cardio' so there is one chart for each `cardio` value. The chart should look like `examples/Figure_1.png`.
+- Clean the data. Filter out the following patient segments that represent incorrect data:
+  - diastolic pressure is higher than systolic (Keep the correct data with `(df['ap_lo'] <= df['ap_hi'])`)
+  - height is less than the 2.5th percentile (Keep the correct data with `(df['height'] >= df['height'].quantile(0.025))`)
+  - height is more than the 97.5th percentile
+  - weight is less than the 2.5th percentile
+  - weight is more than the 97.5th percentile
+- Create a correlation matrix using the dataset. Plot the correlation matrix using seaborn's `heatmap()`. Mask the upper triangle. The chart should look like `examples/Figure_2.png`.
 
 Cada vez que una variable está establecida en `Ninguno`, asegúrese de establecerla en el código correcto.
 

@@ -8,17 +8,17 @@ dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 
 # --description--
 
-注意点として、このプロジェクトは [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) の始動プロジェクト、または [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/) からクローンされたプロジェクトに基づいて構築されています。
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>  or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `deepEqual()` は、2 つのオブジェクトが deep equal であることをアサートします。
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Equality` スイート内の `#7` に分類されたテストにおいて、テストを合格にする (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.deepEqual` または `assert.notDeepEqual` に変更してください。 アサートに渡された引数を変更しないでください。
+`tests/1_unit-tests.js` の中の、`Equality` スイート内の `#7` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.deepEqual` または `assert.notDeepEqual` に変更してください。 アサートに渡された引数を変更しないでください。
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>

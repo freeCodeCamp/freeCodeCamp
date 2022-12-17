@@ -1,13 +1,13 @@
 ---
 id: 5efae0543cbd2bbdab94e333
-title: Paso 29
+title: Paso 30
 challengeType: 0
-dashedName: step-29
+dashedName: step-30
 ---
 
 # --description--
 
-Para mejorar la accesibilidad de la imagen que acabas de añadir, añade un atributo `alt` con el texto:
+Para mejorar la accesibilidad de la imagen que agregó, agregue un atributo `alt` con el texto:
 
 `Five cats looking around a field.`
 
@@ -19,7 +19,7 @@ Tu elemento `figure` debe tener una etiqueta de apertura. Las etiquetas de apert
 assert(document.querySelectorAll('figure').length === 2);
 ```
 
-Tu elemento `ol` debe tener una etiqueta de cierre. Las etiquetas de cierre tiene una `/` después del carácter `<`.
+Tu elemento `figure` debe tener una etiqueta de cierre. Las etiquetas de cierre tiene una `/` después del carácter `<`.
 
 ```js
 assert(code.match(/<\/figure>/g).length === 2);
@@ -60,8 +60,8 @@ assert(
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->

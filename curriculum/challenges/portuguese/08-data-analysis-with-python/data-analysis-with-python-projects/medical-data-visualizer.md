@@ -10,10 +10,16 @@ dashedName: medical-data-visualizer
 
 Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
 
+-   Comece importando o projeto no Replit.
+-   Em seguida, você verá uma janela `.replit`.
+-   Selecione `Use run command` e clique no botão `Done`.
+
+
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso de Python em vídeo para todos</a> (14 horas)
-- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Curso por vídeo Aprenda Python</a>
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">Como analisar dados em Python com o Pandas</a> (10 horas)
 
 # --instructions--
 
@@ -25,20 +31,20 @@ As linhas do dataset representam os pacientes e as colunas representam informaç
 
 Nome do arquivo: medical_examination.csv
 
-|                  Funcionalidade                  | Tipo de variável  |  Variável   |                     Tipo de valor                     |
-|:------------------------------------------------:|:-----------------:|:-----------:|:-----------------------------------------------------:|
-|                      Idade                       | Recurso objetivo  |     age     |                      int (dias)                       |
-|                      Altura                      | Recurso objetivo  |   height    |                       int (cm)                        |
-|                       Peso                       | Recurso objetivo  |   weight    |                      float (kg)                       |
-|                      Gênero                      | Recurso objetivo  |   gender    |                   código categórico                   |
-|            Pressão arterial sistólica            | Recurso de exame  |    ap_hi    |                          int                          |
-|           Pressão arterial diastólica            | Recurso de exame  |    ap_lo    |                          int                          |
-|                    Colesterol                    | Recurso de exame  | cholesterol | 1: normal, 2: acima do normal, 3: bem acima do normal |
-|                     Glicose                      | Recurso de exame  |    gluc     | 1: normal, 2: acima do normal, 3: bem acima do normal |
-|                      Fumar                       | Recurso subjetivo |    smoke    |                        binário                        |
-|                Consumo de álcool                 | Recurso subjetivo |    alco     |                        binário                        |
-|                 Atividade física                 | Recurso subjetivo |   active    |                        binário                        |
-| Presença ou ausência de doenças cardiovasculares |   Variável alvo   |   cardio    |                        binário                        |
+|                  Funcionalidade                  | Tipo de variável  |   Variável    |                     Tipo de valor                     |
+|:------------------------------------------------:|:-----------------:|:-------------:|:-----------------------------------------------------:|
+|                      Idade                       | Recurso objetivo  |     `age`     |                      int (dias)                       |
+|                      Altura                      | Recurso objetivo  |   `height`    |                       int (cm)                        |
+|                       Peso                       | Recurso objetivo  |   `weight`    |                      float (kg)                       |
+|                      Gênero                      | Recurso objetivo  |   `gender`    |                   código categórico                   |
+|            Pressão arterial sistólica            | Recurso de exame  |    `ap_hi`    |                          int                          |
+|           Pressão arterial diastólica            | Recurso de exame  |    `ap_lo`    |                          int                          |
+|                    Colesterol                    | Recurso de exame  | `cholesterol` | 1: normal, 2: acima do normal, 3: bem acima do normal |
+|                     Glicose                      | Recurso de exame  |    `gluc`     | 1: normal, 2: acima do normal, 3: bem acima do normal |
+|                      Fumar                       | Recurso subjetivo |    `smoke`    |                        binário                        |
+|                Consumo de álcool                 | Recurso subjetivo |    `alco`     |                        binário                        |
+|                 Atividade física                 | Recurso subjetivo |   `active`    |                        binário                        |
+| Presença ou ausência de doenças cardiovasculares |   Variável alvo   |   `cardio`    |                        binário                        |
 
 ## Tarefas
 

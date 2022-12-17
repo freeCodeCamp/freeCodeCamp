@@ -41,6 +41,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 10px;
   flex: 1 0 33%;
   height: var(--header-height);
 }
@@ -90,7 +91,7 @@
 
 .nav-list li {
   width: 100%;
-  height: 2.2rem;
+  height: 2.5rem;
 }
 
 .nav-link {
@@ -125,11 +126,16 @@
 }
 
 .nav-link:not([aria-disabled='true']):hover {
-  color: var(--theme-color) !important;
+  color: var(--theme-color);
   text-decoration: none;
-  background-color: var(--gray-10) !important;
+  background-color: var(--gray-10);
   cursor: pointer;
   outline: none !important;
+}
+
+li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
+  background-color: var(--danger-background);
+  color: var(--danger-color);
 }
 
 .nav-link-header,
@@ -155,6 +161,10 @@
   background-color: var(--gray-00);
   color: var(--gray-90);
   cursor: pointer;
+}
+
+#nav-lang-menu li:first-child {
+  border-bottom: 0.1rem solid var(--gray-45) !important;
 }
 
 button.nav-link:focus {
@@ -207,14 +217,25 @@ button.nav-link[aria-disabled='true'] {
   top: 0;
   overflow-y: auto;
   scrollbar-width: auto;
-  /* lang menu should always be full height */
-  height: 19.9rem;
+
+  /* Ensure lang menu scrolls if there is not enough height to display all of it (this ensures keyboard accessibility).*/
+  height: min(
+    var(--lang-menu-height),
+    calc(100vh - var(--search-box-form) - var(--header-height))
+  );
 }
 
-/* main menu must be at least as tall as lang menu (when displayed) 
+@media (min-width: 601px) {
+  /* Search form is no longer between header and main menu. */
+  .nav-lang-menu {
+    height: min(var(--lang-menu-height), calc(100vh - var(--header-height)));
+  }
+}
+
+/* main menu must be at least as tall as lang menu (when displayed)
    unless there isn't enough view port height */
 .nav-list.display-lang-menu {
-  min-height: min(19.9rem, calc(100vh - var(--header-height)));
+  min-height: min(var(--lang-menu-height), calc(100vh - var(--header-height)));
 }
 
 .nav-lang-menu > button:hover {
@@ -225,20 +246,6 @@ button.nav-link[aria-disabled='true'] {
   color: #fff;
   background-color: inherit;
   padding-top: 0;
-}
-
-.nav-lang-menu .nav-link:focus {
-  color: #000;
-  background-color: var(--gray-10);
-  outline: none;
-}
-
-.nav-lang-menu .nav-link:focus:not(:focus-visible) {
-  background-color: inherit;
-}
-
-.nav-lang-menu .nav-link:hover {
-  background-color: var(--gray-10) !important;
 }
 
 .nav-lang-button {
@@ -326,7 +333,6 @@ button.nav-link[aria-disabled='true'] {
   background-color: var(--theme-color);
   cursor: pointer;
   max-height: calc(var(--header-height) - 8px);
-  margin-right: 10px;
   display: flex;
   align-items: center;
 }
@@ -431,7 +437,7 @@ button.nav-link[aria-disabled='true'] {
   max-height: calc(var(--header-height) - 6px);
   padding: 4px 12px;
   margin-left: 2px;
-  font-family: 'Roboto Mono', monospace !important;
+  font-family: 'Hack-ZeroSlash', monospace;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -439,19 +445,17 @@ button.nav-link[aria-disabled='true'] {
 
 .universal-nav-right .fcc_searchBar {
   position: absolute;
-  top: 0;
+  top: var(--header-height);
   left: 0;
 }
 
 .universal-nav-right .fcc_searchBar .ais-SearchBox-form {
   width: 100vw;
-  height: 38px;
   max-width: unset;
   padding: 0 15px;
-  left: 0;
 }
 
-/* In mobile layout, prevent search input from hanging around if the 
+/* In mobile layout, prevent search input from hanging around if the
    menu is collapsed. */
 .universal-nav-right
   #toggle-button-nav[aria-expanded='false']
@@ -460,7 +464,7 @@ button.nav-link[aria-disabled='true'] {
   display: none;
 }
 
-/* In mobile layout, prevent search results from hanging around if the 
+/* In mobile layout, prevent search results from hanging around if the
    menu is collapsed. */
 .universal-nav-right
   #toggle-button-nav[aria-expanded='false']
@@ -471,17 +475,10 @@ button.nav-link[aria-disabled='true'] {
 
 .universal-nav-right .ais-SearchBox-input {
   width: calc(100vw - 17rem);
-  padding-left: 27px;
 }
 
 .universal-nav-right .fcc_searchBar .ais-Hits {
   width: calc(100vw - 17rem);
-}
-
-.universal-nav-right .fcc_searchBar .ais-SearchBox-submit {
-  top: unset;
-  margin-top: 19px;
-  left: 18px;
 }
 
 .ais-SearchBox-input:focus {
@@ -523,9 +520,7 @@ button.nav-link[aria-disabled='true'] {
 
   .fcc_searchBar .ais-SearchBox-form {
     display: flex;
-    position: absolute;
-    top: var(--header-height);
-    left: 15px;
+    justify-content: flex-end;
     max-width: calc(100vw - 350px);
   }
 

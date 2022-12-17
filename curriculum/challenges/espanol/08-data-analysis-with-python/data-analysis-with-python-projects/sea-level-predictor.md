@@ -8,12 +8,18 @@ dashedName: sea-level-predictor
 
 # --description--
 
-Estarás [trabajando en este proyecto con nuestro código inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor).
+Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código de inicio Replit</a>.
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 
 Todavía estamos desarrollando la parte interactiva del currículo de Python. Por ahora, aquí hay algunos videos en el canal de YouTube de freeCodeCamp.org que te enseñaran todo lo que necesitas saber para completar este proyecto:
 
-- [Python para Todos Curso en Video](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-- [Aprende Python Curso en Video](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -21,11 +27,11 @@ Analizará un conjunto de datos sobre el cambio del nivel medio del mar a nivel 
 
 Utiliza los datos para completar las siguientes tareas:
 
-- Utiliza Pandas para importar los datos de `epa-sea-level.csv`.
-- Usa matplotlib para crear un diagrama de dispersión usando la columna "Year" como el eje x y la columna "CSIRO Adjusted Sea Level" como el eje y.
-- Usa la función `linregress` de `scipy.stats` para obtener la pendiente e intersección con el eje y de la línea de mejor encaje. Dibuja la línea de mejor encaje sobre el diagrama de dispersión. Haz que la línea pase por el año 2050 para predecir el aumento del nivel del mar en ese año.
-- Traza una nueva línea de mejor encaje utilizando datos del año 2000 hasta el año más reciente del conjunto de datos. Haz que la línea pase también por el año 2050 para predecir la subida del nivel del mar en 2050 si el ritmo de subida continúa como desde el año 2000.
-- La etiqueta del eje x debe ser "Year", la etiqueta del eje y debe ser "Sea Level (inches)", y el título debe ser "Rise in Sea Level".
+- Use Pandas to import the data from `epa-sea-level.csv`.
+- Use matplotlib to create a scatter plot using the `Year` column as the x-axis and the `CSIRO Adjusted Sea Level` column as the y-axix.
+- Use the `linregress` function from `scipy.stats` to get the slope and y-intercept of the line of best fit. Plot the line of best fit over the top of the scatter plot. Make the line go through the year 2050 to predict the sea level rise in 2050.
+- Plot a new line of best fit just using the data from year 2000 through the most recent year in the dataset. Make the line also go through the year 2050 to predict the sea level rise in 2050 if the rate of rise continues as it has since the year 2000.
+- The x label should be `Year`, the y label should be `Sea Level (inches)`, and the title should be `Rise in Sea Level`.
 
 Las pruebas unitarias están escritas para en `test_module.py`.
 
@@ -44,7 +50,8 @@ Importamos las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las
 Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
 
 ## Fuente de datos
-[Global Average Absolute Sea Level Change](https://datahub.io/core/sea-level-rise), 1880-2014 de la Agencia de Protección Ambiental de los Estados Unidos utilizando datos de CSIRO, 2015; NOAA, 2015.
+
+<a href="https://datahub.io/core/sea-level-rise" target="_blank" rel="noopener noreferrer nofollow">Global Average Absolute Sea Level Change</a>, 1880-2014 de la Agencia de Protección Ambiental de los Estados Unidos utilizando datos de CSIRO, 2015; NOAA, 2015.
 
 
 # --hints--

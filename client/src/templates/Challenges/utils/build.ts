@@ -5,7 +5,7 @@ import {
   ChallengeFile as PropTypesChallengeFile,
   ChallengeMeta
 } from '../../../redux/prop-types';
-import { concatHtml } from '../rechallenge/builders.js';
+import { concatHtml } from '../rechallenge/builders';
 import { getTransformers, embedFilesInHtml } from '../rechallenge/transformers';
 import {
   createTestFramer,
@@ -18,18 +18,6 @@ import {
   Source
 } from './frame';
 import createWorker from './worker-executor';
-
-const _concatHtml = ({
-  required,
-  template,
-  contents
-}: {
-  required: { src: string }[];
-  template?: string;
-  contents?: string;
-}): string => {
-  return concatHtml({ required, template, contents });
-};
 
 interface ChallengeFile extends PropTypesChallengeFile {
   source: string;
@@ -222,7 +210,7 @@ export function buildDOMChallenge(
         return {
           challengeType:
             challengeTypes.html || challengeTypes.multifileCertProject,
-          build: _concatHtml({
+          build: concatHtml({
             required: finalRequires,
             template,
             contents
@@ -265,7 +253,7 @@ export function buildJSChallenge(
 export function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
-    build: _concatHtml({ required: frameRunner }),
+    build: concatHtml({ required: frameRunner }),
     sources: { url }
   };
 }
@@ -279,12 +267,27 @@ export function updatePreview(
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multifileCertProject
   ) {
-    createMainPreviewFramer(document, proxyLogger)(buildData);
+    createMainPreviewFramer(
+      document,
+      proxyLogger,
+      getDocumentTitle(buildData)
+    )(buildData);
   } else {
     throw new Error(
       `Cannot show preview for challenge type ${buildData.challengeType}`
     );
   }
+}
+
+function getDocumentTitle(buildData: BuildChallengeData) {
+  // Give iframe a title attribute for accessibility using the preview
+  // document's <title>.
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(buildData?.sources?.index, 'text/html');
+  const title = doc.querySelector('title');
+
+  return title?.innerText ?? 'challenge';
 }
 
 export function updateProjectPreview(
@@ -295,15 +298,10 @@ export function updateProjectPreview(
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multifileCertProject
   ) {
-    // Give iframe a title attribute for accessibility using the preview
-    // document's <title>.
-    const titleMatch = buildData?.sources?.index?.match(
-      /<title>(.*?)<\/title>/
-    );
-    const frameTitle = titleMatch
-      ? titleMatch[1].trim() + ' preview'
-      : 'preview';
-    createProjectPreviewFramer(document, frameTitle)(buildData);
+    createProjectPreviewFramer(
+      document,
+      getDocumentTitle(buildData)
+    )(buildData);
   } else {
     throw new Error(
       `Cannot show preview for challenge type ${buildData.challengeType}`

@@ -12,34 +12,63 @@ dashedName: use-a-template-engines-powers
 
 在 Pug 文件中，你可以用變量名來調用變量，比如寫成 `#{variable_name}` 來實現行內調用，或像 `p=variable_name` 把元素與變量直接寫在一起，這表示 p 元素的內容等價於這個變量。
 
-建議大家在 [Pug 的 README](https://github.com/pugjs/pug) 裏看看它的語法和用法，這樣你寫出的代碼會相對簡練。 另外要注意，Pug 使用縮進來表示嵌套的代碼塊。
+Pug 是關於使用空白和製表符來顯示嵌套元素，並減少製作一個漂亮網站所需的代碼量。
 
-在 pug 的 'index.pug' 文件中，我們使用了 *title* 和 *message* 兩個變量。
+以下面的 Pug 代碼爲例：
 
-爲了從服務器傳遞這些信息，你需要給 *res.render* 的第二個參數傳入一個對象，其中包含變量對應的值。 比如，如果你想傳遞對象 `{title: 'Hello', message: 'Please login'}` 到你的主頁，
+```pug
+head
+  script(type='text/javascript').
+    if (foo) bar(1 + 5);
+body
+  if youAreUsingPug
+      p You are amazing
+    else
+      p Get on it!
+```
 
-看起來應該像這樣：`res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});`。現在刷新頁面，你應該看到那些值就像在 index.pug 文件中一樣被渲染在頁面上正確的位置。
+以上代碼生成以下 HTML：
 
-完成上述要求後，請提交你的頁面鏈接。 如果你遇到了問題，可以參考 [這裏](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871) 的答案。
+```html
+<head>
+  <script type="text/javascript">
+    if (foo) bar(1 + 5);
+  </script>
+</head>
+<body>
+  <p>You are amazing</p>
+</body>
+```
+
+你的項目中的 `index.pug` 文件使用了變量 `title` 和 `message`。
+
+爲了從服務器傳遞這些信息到 Pug 文件，你需要給 `res.render` 調用添加一個對象作爲第二個參數，其中包含變量和對應的值。 給 `title` 一個值爲 `Hello`，給 `message` 一個值爲 `Please log in`。
+
+就像這樣：
+
+```javascript
+res.render('index', { title: 'Hello', message: 'Please log in' });
+```
+
+現在刷新你的頁面， 你應該看到這些值呈現在你的視圖中正確位置，即 `index.pug` 文件中！
+
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 # --hints--
 
 Pug 應正確地展示變量。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/').then(
-    (data) => {
-      assert.match(
-        data,
-        /pug-variable("|')>Please login/gi,
-        'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /pug-variable("|')>Please log in/gi,
+    'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
   );
+}
 ```
 
 # --solutions--

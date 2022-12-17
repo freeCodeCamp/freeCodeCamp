@@ -1,13 +1,13 @@
 ---
 id: 5efae0543cbd2bbdab94e333
-title: Passo 29
+title: Passo 30
 challengeType: 0
-dashedName: step-29
+dashedName: step-30
 ---
 
 # --description--
 
-Para melhorar a acessibilidade da imagem que você acabou de adicionar, adicione um atributo `alt` com o texto:
+Para melhorar a acessibilidade da imagem que você adicionou, insira um atributo `alt` com o texto:
 
 `Five cats looking around a field.`
 
@@ -60,8 +60,8 @@ assert(
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->

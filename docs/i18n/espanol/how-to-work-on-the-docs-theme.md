@@ -1,17 +1,19 @@
-# How to work on documentation
+# Cómo trabajar en la documentación
 
-## Work on the content of the docs
+## Trabajar en el contenido de los documentos
 
-To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). When your changes are merged, they will be made available automatically at the documentation site.
+Para trabajar en las pautas de contribución, puedes editar o agregar archivos al directorio `docs`, [disponible aquí](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). Cuando tus cambios se fusionen, automáticamente estarán disponibles en el sitio de documentación.
 
-### How to create an internal link
+When adding a new file to the `docs` directory, you should evaluate if the file should also be added to the sidebar navigation. We typically create a link in the [`_sidebar.md`](_sidebar.md) file for new and independent guides. Alternatively, You may follow the instructions below on creating an internal link for supporting guides.
+
+### Cómo crear un enlace interno
 
 If you want to create a link targeting a different section of the contributing guidelines, follow this format:
 
 ```md
 [Link text](target-file-name.md#target-section-heading-id)
 
-// If the target section is within the same page, you can omit the file name
+// Si la sección de destino está dentro de la misma página, puedes omitir el nombre del archivo
 [Link text](#target-section-heading-id)
 ```
 
@@ -19,17 +21,17 @@ Make sure you include the file extension (`.md`). Don't specify the full URL or 
 
 This is necessary to make these links work for the translated version of the document. Otherwise, they will redirect to the English version of the page regardless of the language.
 
-#### Translating docs with internal links
+#### Traduciendo archivos con enlaces internos
 
 When you work on translating docs on Crowdin, make sure to replace the `#target-section-heading-id` with the id on the translated document. [Learn more about translating docs here](how-to-translate-files.md#translate-documentation).
 
-## Work on the docs theme
+## Trabajar en el tema de los documentos
 
-> [!NOTE] A quick reminder that you do not need to set up anything for working on the content for the documentation site.
+> [!NOTE] Recuerda que no necesitas establecer nada para trabajar en el contenido para el sitio de documentación.
 > 
-> To work on the contributing guidelines, see [work on the docs content](#work-on-the-docs-content) section.
+> Para trabajar en las directrices de contribución, consulte [trabajar en la sección de contenido de documentos](#work-on-the-docs-content).
 
-### Structure of the docs website
+### Estructura de los documentos de la página web
 
 The site is generated using [`docsify`](https://docsify.js.org) and served using GitHub pages.
 
@@ -37,42 +39,24 @@ Typically you would not need to change any configuration or build the site local
 
 - El código de la página de inicio para este sitio está disponible en [`docs/index.html`](index.html).
 - Servimos este archivo como SPA utilizando `docsify` y GitHub Pages.
-- The `docsify` script generates the content of `markdown` files in the `docs` directory on demand.
+- El script `docsify` genera el contenido de los archivos `lenguaje de marcado` en el directorio `docs` en linea.
 - La página de inicio se genera a partir del [`_coverpage.md`](_coverpage.md).
-- La barra de navegación lateral es generada desde [`_sidebar.md`](_sidebar.md).
+- The sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
-### Serving the documentation site locally
+### Ejecutando el sitio de documentación localmente
 
-Clone freeCodeCamp:
+Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
-```console
-git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-```
-
-Install `docsify`:
-
-```console
-npm install -g docsify
-```
-
-and serve the `/docs` directory
-
-```console
-docsify serve docs
-```
-
-Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
-
-#### Serve and launch the documentation site only
+#### Ejecutar y lanzar solo el sitio de documentación
 
 ```console
 npm run docs:serve
 ```
 
-#### Serve the documentation site alongside freeCodeCamp locally:
+#### Servir el sitio de documentación junto a freeCodeCamp local:
 
 ```console
 npm run develop
 ```
 
-> El sitio de documentación debería estar disponible en <http://localhost:3200>
+> The documentation site should be available at <http://localhost:3400>

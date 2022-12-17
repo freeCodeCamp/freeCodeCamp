@@ -34,7 +34,6 @@ export interface InitTestFrameArg {
 
 async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   const code = (e.code.contents || '').slice();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const __file = (id?: string) => {
     if (id && e.code.original) {
       return e.code.original[id];
@@ -45,7 +44,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   const editableContents = (e.code.editableContents || '').slice();
   // __testEditable allows test authors to run tests against a transitory dom
   // element built using only the code in the editable region.
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const __testEditable = (cb: () => () => unknown) => {
     const div = document.createElement('div');
     div.id = 'editable-only';
@@ -83,7 +81,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     return o;
   };
 
-  // eslint-disable-next-line no-inline-comments
   const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
   const assert = chai.assert;
   const __helpers = helpers;
@@ -93,7 +90,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   if (e.loadEnzyme) {
     /* eslint-disable prefer-const */
     let Adapter16;
-    /* eslint-disable no-inline-comments */
 
     [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
       import(/* webpackChunkName: "enzyme" */ 'enzyme'),
@@ -119,7 +115,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         // document ready:
         $(() => {
           try {
-            // eslint-disable-next-line no-eval
             const test: unknown = eval(testString);
             resolve(test);
           } catch (err) {

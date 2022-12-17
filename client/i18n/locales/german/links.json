@@ -1,0 +1,31 @@
+{
+  "help-translate-link-url": "https://contribute.freecodecamp.org/#/i18n/german/how-to-translate-files",
+  "top-contributors": "https://www.freecodecamp.org/news/freecodecamp-top-contributors/",
+  "footer": {
+    "about-url": "https://www.freecodecamp.org/news/about/",
+    "shop-url": "https://www.freecodecamp.org/shop/",
+    "support-url": "https://www.freecodecamp.org/news/support/",
+    "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
+    "honesty-url": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc-url": "https://www.freecodecamp.org/news/code-of-conduct/",
+    "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
+    "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+    "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
+  },
+  "donate": {
+    "other-ways-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp",
+    "download-irs-url": "https://s3.amazonaws.com/freecodecamp/Free+Code+Camp+Inc+IRS+Determination+Letter.pdf",
+    "download-990-url": "https://freecodecamp.s3.amazonaws.com/freeCodeCamp+2019+f990.pdf",
+    "one-time-url": "https://paypal.me/freecodecamp"
+  },
+  "nav": {
+    "forum": "https://forum.freecodecamp.org/c/german/577",
+    "news": "https://freecodecamp.org/german/news/"
+  },
+  "help": {
+    "HTML-CSS": "German/HTML-CSS",
+    "JavaScript": "German/JavaScript",
+    "Python": "German/Python",
+    "Backend Development": "German/programming-help"
+  }
+}

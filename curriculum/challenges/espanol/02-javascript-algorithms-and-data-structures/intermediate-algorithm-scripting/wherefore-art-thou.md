@@ -97,18 +97,22 @@ assert.deepEqual(
 );
 ```
 
+`whatIsInAName([{"a": 1, "b": 2, "c": 3, "d": 9999}], {"a": 1, "b": 9999, "c": 3})` debe devolver `[]`
+
+```js
+assert.deepEqual(
+  whatIsInAName([{ a: 1, b: 2, c: 3, d: 9999 }], { a: 1, b: 9999, c: 3 }),
+  []
+);
+```
+
 # --seed--
 
 ## --seed-contents--
 
 ```js
 function whatIsInAName(collection, source) {
-  const arr = [];
-  // Only change code below this line
 
-
-  // Only change code above this line
-  return arr;
 }
 
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });

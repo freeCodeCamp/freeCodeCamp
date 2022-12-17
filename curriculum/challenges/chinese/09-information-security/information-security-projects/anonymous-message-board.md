@@ -8,15 +8,21 @@ dashedName: anonymous-message-board
 
 # --description--
 
-构建一个功能上与此相似的全栈式 JavaScript 应用程序：<https://anonymous-message-board.freecodecamp.rocks/>。
+构建一个 JavaScript 的全栈应用，在功能上与这个应用相似：<a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://anonymous-message-board.freecodecamp.rocks/</a>。
 
 在这个项目中，你将使用以下方法之一编写你的代码：
 
--   克隆[这个 GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-messageboard/) 并在本地完成你的项目。
--   使用 [我们的 Replit 启动项目](https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard)来完成你的项目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-messageboard/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
 -   使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以提交一个指向项目源码的 `GitHub Link`。
+如果你使用 Replit，请按照以下步骤设置项目：
+
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮。
+
+完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后将 URL 提交到 `Solution Link` 中。 此外，将项目的源码链接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
@@ -26,20 +32,20 @@ dashedName: anonymous-message-board
 
 在 `tests/2_functional-tests.js` 中编写下以下测试：
 
--   创建一个新的主题：发送 POST 请求到 `/api/threads/{board}`。
+-   创建一个新的主题：发送 POST 请求到 `/api/threads/{board}`
 -   查看最近的 10 个主题，每个主题有 3 个回复：发送 GET 请求到 `/api/threads/{board}`
--   使用错误密码删除主题：使用错误的`delete_password`向`/api/threads/{board}`发出DELETE请求
--   用正确的密码删除一个主题：向`/api/threads/{board}`发出DELETE请求，并提供有效的`delete_password`。
--   报告一个主题：发送 PUT 请求到 `/api/threads/{board}`。
--   创建一个新的回复：发送 POST 请求到 `/api/replies/{board}`。
--   查看一个带有所有回复的主题：发送 GET 请求到`/api/replies/{board}`。
--   使用错误密码删除一个回复：使用无效的`delete_password`向`/api/replies/{board}`发出DELETE请求。
--   使用正确密码删除一个回复：使用有效的`delete_password`向`/api/replies/{board}`发出DELETE请求。
--   报告一个回复：发送 PUT 请求到 `/api/replies/{board}`。
+-   使用错误密码删除主题：使用错误的 `delete_password` 向 `/api/threads/{board}` 发出 DELETE 请求
+-   使用正确密码删除主题：使用正确的 `delete_password` 向 `/api/threads/{board}` 发出 DELETE 请求
+-   报告一个主题：发送 PUT 请求到 `/api/threads/{board}`
+-   创建一个新的回复：发送 POST 请求到 `/api/replies/{board}`
+-   查看一个带有所有回复的主题：发送 GET 请求到 `/api/replies/{board}`
+-   使用错误密码删除回复：使用无效的 `delete_password` 向 `/api/replies/{board}` 发出 DELETE 请求
+-   使用正确密码删除回复：使用有效的 `delete_password` 向 `/api/replies/{board}` 发出 DELETE 请求
+-   报告一个回复：发送 PUT 请求到 `/api/replies/{board}`
 
 # --hints--
 
-提交自己的项目，而不是示例的 URL。
+你可以提交你自己的项目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -81,7 +87,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/threads/{board}` 发送一个 POST 请求，其中包括 `text` 和 `delete_password` 的表单数据。 保存的数据库记录将至少有 `_id`、`text`、`created_on`(date & time)、`bumped_on`(date & time, starts same as `created_on`)、`reported`（布尔值）、`delete_password`、& `replies`（数组）。
+你可以向 `/api/threads/{board}` 发送一个 POST 请求，其中包括 `text` 和 `delete_password` 的表单数据。 保存的数据库记录将至少有 `_id`、`text`、`created_on`（date & time）、`bumped_on`（date & time，开头和 `created_on` 一样)、`reported`（布尔值）、`delete_password`、& `replies`（数组）。
 
 ```js
 async (getUserInput) => {
@@ -113,7 +119,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/replies/{board}` 发送一个 POST 请求，其中包括字段 `text`、`delete_password` & `thread_id`。 这将更新 `bumped_on` 日期到评论日期。 在主题的 `replies` 数组中，将保存一个对象，至少有 `_id`、`text`、`created_on`、`delete_password`、& `reported` 这些属性。
+你可以向 `/api/replies/{board}` 发送一个 POST 请求，其中包括字段 `text`、`delete_password` & `thread_id`。 这将更新 `bumped_on` 日期为评论日期。 在主题的 `replies` 数组中，将保存一个对象，至少有 `_id`、`text`、`created_on`、`delete_password`、& `reported` 这些属性。
 
 ```js
 async (getUserInput) => {
@@ -313,8 +319,8 @@ async (getUserInput) => {
 
   let res = await fetch(`${url}/api/threads/fcc_test`);
   const threads = await res.json();
-  const report_id = threads[0]._id;
-  const data = { report_id };
+  const thread_id = threads[0]._id;
+  const data = { thread_id };
 
   res = await fetch(`${url}/api/threads/fcc_test`, {
     method: 'PUT',
@@ -336,7 +342,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以通过向 `/api/replies/{board}` 发送 PUT 请求并传递 `thread_id` & `reply_id`。 返回的将是字符串 `reported`。 `reply_id` 的 `reported` 值将被改变为 `true`。
+你可以向 `/api/replies/{board}` 发送一个 PUT 请求，并传递 `thread_id` & `reply_id`。 返回的将是字符串 `reported`。 `reply_id` 的 `reported` 值将被改变为 `true`。
 
 ```js
 async (getUserInput) => {

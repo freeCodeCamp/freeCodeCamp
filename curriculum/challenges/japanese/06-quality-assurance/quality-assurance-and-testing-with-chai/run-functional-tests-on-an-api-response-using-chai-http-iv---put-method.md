@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 # --description--
 
-注意点として、このプロジェクトは [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) の始動プロジェクト、または [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/) からクローンされたプロジェクトに基づいて構築されています。
+注意点として、このプロジェクトは <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> にあるスタータープロジェクトをベースに構築されているか、または <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> からクローンされています。
 
 この演習は、前回のものと似ています。
 
@@ -37,7 +37,7 @@ PUT リクエストで、以下の JSON オブジェクトを送信してくだ�
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>

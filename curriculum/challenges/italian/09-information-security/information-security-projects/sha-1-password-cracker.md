@@ -11,11 +11,18 @@ dashedName: sha-1-password-cracker
 
 Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice iniziale su Replit</a>.
 
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
+
+
 Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Video corso Python for Everybody</a> (14 ore)
 
-- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Video corso Learn Python</a> (10 ore)
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Video corso Python Basics in Depth</a> (4 hours)
+
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Video corso Intermediate Python</a> (6 hours)
 
 # --instructions--
 

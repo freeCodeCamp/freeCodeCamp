@@ -1,14 +1,14 @@
 ---
 id: 5e4ce2eaac708cc68c1df260
 title: レーベンシュタイン距離
-challengeType: 5
+challengeType: 1
 forumTopicId: 385264
 dashedName: levenshtein-distance
 ---
 
 # --description--
 
-情報理論とコンピュータサイエンスでは、**レーベンシュタイン距離** は 2 つのシーケンスがどの程度異なっているかを測定するための [メトリック](https://en.wikipedia.org/wiki/string metric) です ([編集距離](https://en.wikipedia.org/wiki/edit distance)ともいう)。 2 つの文字列間のレーベンシュタイン距離は、1 つの文字の挿入、削除、置換を行うことで、1 つの文字列をもう 1 つの文字列に変換するために必要な最小編集回数として定義されます。
+In information theory and computer science, the **Levenshtein distance** is a metric for measuring the amount of difference between two sequences (i.e. an edit distance). 2 つの文字列間のレーベンシュタイン距離は、1 つの文字の挿入、削除、置換を行うことで、1 つの文字列をもう 1 つの文字列に変換するために必要な最小編集回数として定義されます。
 
 例:
 

@@ -181,10 +181,10 @@ Atualmente uma versão pública de testes beta está disponível em:
 |:--------- |:--------- |:---------------------------------------- |
 | Aprenda   | Inglês    | <https://www.freecodecamp.dev>           |
 |           | Espanhol  | <https://www.freecodecamp.dev/espanol>   |
-|           | Chinês    | <https://chinese.freecodecamp.dev>       |
+|           | Chinês    | <https://www.freecodecamp.dev/chinese>   |
 | Novidades | Inglês    | <https://www.freecodecamp.dev/news>      |
 | Fórum     | Inglês    | <https://forum.freecodecamp.dev>         |
-|           | Chinês    | <https://chinese.freecodecamp.dev/forum> |
+|           | Chinês    | <https://freecodecamp.dev/chinese/forum> |
 | API       | -         | `https://api.freecodecamp.dev`           |
 
 > [!NOTE] O nome do domínio é diferente de **`freeCodeCamp.org`**. Isso é intencional para evitar que ferramentas de busca indexem e evitar confusões da parte dos usuários regulares da plataforma.
@@ -459,7 +459,7 @@ Provisionando MVs com o código
 7. Compile o servidor
 
    ```console
-   npm run create:config && npm run build:curriculum && npm run build:server
+   npm run prebuild && npm run build:curriculum && npm run build:server
    ```
 
 8. Inicie instâncias
@@ -537,8 +537,8 @@ Provisionando MVs com o código
 
    ```console
    npm i -g npm@8
-   npm i -g pm2
-   npm install -g serve
+   npm i -g pm2@4
+   npm install -g serve@13
    pm2 install pm2-logrotate
    pm2 startup
    ```
@@ -555,11 +555,11 @@ Provisionando MVs com o código
    > A fazer: Esta configuração precisa ser movida para S3 ou armazenamento Azure Blob 
    > 
    > ```console
-   >    echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
+   >    echo "serve -c ../serve.json -p 50505 www" > client-start-primary.sh
    >    chmod +x client-start-primary.sh
    >    pm2 delete client-primary
    >    pm2 start  ./client-start-primary.sh --name client-primary
-   >    echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
+   >    echo "serve -c ../serve.json -p 52525 www" > client-start-secondary.sh
    >    chmod +x client-start-secondary.sh
    >    pm2 delete client-secondary
    >    pm2 start  ./client-start-secondary.sh --name client-secondary

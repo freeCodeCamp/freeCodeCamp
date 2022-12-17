@@ -15,11 +15,11 @@ const algoliaIndices = {
   },
   chinese: {
     name: 'news-zh',
-    searchPage: 'https://chinese.freecodecamp.org/news/search/'
+    searchPage: 'https://www.freecodecamp.org/chinese/news/search/'
   },
   'chinese-traditional': {
     name: 'news-zh',
-    searchPage: 'https://chinese.freecodecamp.org/news/search'
+    searchPage: 'https://www.freecodecamp.org/chinese/news/search/'
   },
   italian: {
     name: 'news-it',
@@ -37,6 +37,15 @@ const algoliaIndices = {
   japanese: {
     name: 'news-ja',
     searchPage: 'https://www.freecodecamp.org/japanese/news/search/'
+  },
+  // TODO: Replace with German news when we have more useful resources on that instance
+  german: {
+    name: 'news',
+    searchPage: 'https://www.freecodecamp.org/news/search/'
+  },
+  arabic: {
+    name: 'news-ar',
+    searchPage: 'https://www.freecodecamp.org/arabic/news/search/'
   }
 };
 

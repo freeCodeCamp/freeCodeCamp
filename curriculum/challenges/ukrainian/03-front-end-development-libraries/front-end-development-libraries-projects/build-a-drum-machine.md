@@ -8,9 +8,9 @@ dashedName: build-a-drum-machine
 
 # --description--
 
-**Завдання:** Створити додаток [CodePen.io](https://codepen.io), який функціонально схожий на цей: <https://codepen.io/freeCodeCamp/full/MJyNMd>.
+**Мета:** створити застосунок, функціонально схожий до цього: <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a>.
 
-Нижче заповніть [історії користувача](https://en.wikipedia.org/wiki/User_story) та отримайте всі тести для проходження. Надайте їм свій особистий стиль.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 Ви можете по-різному поєднувати HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux та jQuery для завершення цього проєкту. Слід використовувати frontend framework (наприклад, React), тому що цей розділ присвячений саме їх вивченню. Додаткові технології, що не перераховані вище, не рекомендовані і використовуються на власний ризик. Ми розглядаємо підтримку інших frontend framework, таких як Angular та Vue, але вони наразі не підтримуються. Ми візьмемо до уваги та спробуємо виправити всі звіти з зазначеними проблемами, пов'язані із запропонованою технологічною базою для виконання цього проєкту. Вдалого програмування!
 
@@ -28,9 +28,21 @@ dashedName: build-a-drum-machine
 
 **Історія користувача #7:** Коли `.drum-pad` запускається, рядок, що описує відповідний звуковий запис, відображається як внутрішній текст елемента `#display` (кожен рядок має бути унікальним).
 
-Ви можете створити власний проект<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>, використавши цей шаблон CodePen</a> та натиснувши `Save`, щоб створити власне перо. Або ви можете використати це посилання CDN для запуску тестів у будь-якому середовищі, яке вам подобається:`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Ось декілька зразків аудіо, які можна використовувати для драм-машини:
 
-Після того, як закінчите, надішліть URL-адресу до свого робочого проєкту з усіма його тестами.
+- [Heater 1](https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3)
+- [Heater 2](https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3)
+- [Heater 3](https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3)
+- [Heater 4](https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3)
+- [Clap](https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3)
+- [Open-HH](https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3)
+- [Kick-n'-Hat](https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3)
+- [Kick](https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3)
+- [Closed-HH](https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3)
+
+Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">використовуючи цей шаблон CodePen</a> і натиснувши `Save`. Або ж ви можете скористатися цим посиланням на CDN, щоб запустити тести в будь-якому середовищі: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+
+Після того, як ви закінчите, надішліть URL-адресу свого робочого проєкту з усіма його пройденими тестами.
 
 # --solutions--
 

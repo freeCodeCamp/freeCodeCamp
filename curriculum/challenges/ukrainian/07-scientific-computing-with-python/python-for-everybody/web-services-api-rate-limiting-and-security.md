@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f150b6c005b0e76f080
-title: 'Веб-сервіси: Обмеження частоти API і безпека'
+title: 'Вебсервіси: обмеження частоти API і безпека'
 challengeType: 11
 videoId: pI-g0lI8ngs
 bilibiliIds:
@@ -14,35 +14,35 @@ dashedName: web-services-api-rate-limiting-and-security
 
 Додаткові ресурси:
 
-\- [Відео-урок: getJSON](https://www.youtube.com/watch?v=TJGJN0T8tak)
+\- <a href="https://www.youtube.com/watch?v=TJGJN0T8tak" target="_blank" rel="noopener noreferrer nofollow">Вправа: GeoJSON</a>
 
-\- [Відео-урок: JSON](https://www.youtube.com/watch?v=vTmw5RtfGMY)
+\- <a href="https://www.youtube.com/watch?v=vTmw5RtfGMY" target="_blank" rel="noopener noreferrer nofollow">Вправа: JSON</a>
 
-\- [Відео-урок: Twitter](https://www.youtube.com/watch?v=2c7YwhvpCro)
+\- <a href="https://www.youtube.com/watch?v=2c7YwhvpCro" target="_blank" rel="noopener noreferrer nofollow">Вправа: Twitter</a>
 
-\- [Відео-урок: XML](https://www.youtube.com/watch?v=AopYOlDa-vY)
+\- <a href="https://www.youtube.com/watch?v=AopYOlDa-vY" target="_blank" rel="noopener noreferrer nofollow">Вправа: XML</a>
 
 # --question--
 
 ## --text--
 
-При створенні запиту з Twitter API яку інформацію необхідно завжди надсилати з запитом?
+Яку інформацію необхідно завжди надсилати з запитом при створенні запиту з твіттерського API?
 
 ## --answers--
 
-Twitter username
+ім'я користувача
 
 ---
 
-date range
+датовані межі
 
 ---
 
-search term
+пошуковий термін
 
 ---
 
-key
+ключ
 
 ## --video-solution--
 

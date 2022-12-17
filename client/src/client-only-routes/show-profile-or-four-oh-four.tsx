@@ -6,12 +6,12 @@ import { isBrowser } from '../../utils/index';
 import FourOhFour from '../components/FourOhFour';
 import Loader from '../components/helpers/loader';
 import Profile from '../components/profile/profile';
+import { fetchProfileForUser } from '../redux/actions';
 import {
+  usernameSelector,
   userByNameSelector,
-  userProfileFetchStateSelector,
-  fetchProfileForUser,
-  usernameSelector
-} from '../redux';
+  userProfileFetchStateSelector
+} from '../redux/selectors';
 import { User } from '../redux/prop-types';
 
 interface ShowProfileOrFourOhFourProps {

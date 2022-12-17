@@ -8,7 +8,12 @@ dashedName: probability-calculator
 
 # --description--
 
-Estarás [trabajando en este proyecto con nuestro código inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator).
+Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 
 # --instructions--
 
@@ -30,14 +35,14 @@ La clase `Hat` debe tener un método `draw` que acepte un argumento que indique 
 
 A continuación, crea una función `experiment` en `prob_calculator.py` (no dentro de la clase `Hat`). Esta función debe aceptar los siguientes argumentos:
 
-- `hat`: Un objeto sombrero que contiene bolas que deben ser copiadas dentro de la función.
-- `expected_balls`: Un objeto que indica el grupo exacto de bolas para intentar sacar del sombrero para el experimento. Por ejemplo, para determinar la probabilidad de dibujar 2 bolas azules y 1 bola roja del sombrero, establece `expected_balls` a `{"blue":2, "red":1}`.
-- `num_balls_drawn`: El número de bolas a dibujar del sombrero en cada experimento.
-- `num_experiments`: El número de experimentos a realizar. (Cuantos más experimentos se realicen, más precisa será la probabilidad aproximada)
+- `hat`: A hat object containing balls that should be copied inside the function.
+- `expected_balls`: An object indicating the exact group of balls to attempt to draw from the hat for the experiment. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
+- `num_balls_drawn`: The number of balls to draw out of the hat in each experiment.
+- `num_experiments`: The number of experiments to perform. (The more experiments performed, the more accurate the approximate probability will be.)
 
 La función `experiment` debe devolver una probabilidad.
 
-Por ejemplo, digamos que quieres determinar la probabilidad de obtener al menos 2 bolas rojas y 1 bola verde cuando dibujas 5 bolas de un sombrero que contiene 6 negras, 4 rojos y 3 verdes. Para hacer esto, realizamos `N` experimentos, cuántas veces `M` obtenemos al menos 2 bolas rojas y 1 bola verde, y estimar la probabilidad como `M/N`. Cada experimento consiste en comenzar con un sombrero que contiene las bolas especificadas, dibujar una serie de bolas, y comprobar si conseguimos las bolas que estábamos tratando de dibujar.
+Por ejemplo, digamos que quieres determinar la probabilidad de obtener al menos 2 bolas rojas y 1 bola verde cuando dibujas 5 bolas de un sombrero que contiene 6 negras, 4 rojos y 3 verdes. Para hacer esto, realizarás `N` experimentos, contarás cuantas `M` veces obtienes al menos 2 bolas rojas y 1 bola verde, y estimarás la probabilidad como `M/N`. Cada experimento consiste en comenzar con un sombrero que contiene las bolas especificadas, dibujar una serie de bolas, y comprobar si conseguimos las bolas que estábamos tratando de dibujar.
 
 Así es como se llamaría la función de `experiment` basada en el ejemplo anterior con 2000 experimentos:
 

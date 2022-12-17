@@ -13,11 +13,11 @@ dashedName: build-a-number-guessing-game
 
 # --instructions--
 
-**重要:** プロジェクトのテストすべてに合格した後に、データベースのダンプを `number_guessers.sql` ファイルに保存し、あわせて `number_guessing_game` フォルダー全体も保存することで、ステップ 2 を完了できます。 仮想マシン内にその方法についての説明があります。
+**重要:** プロジェクトのテストがすべて成功した後に、データベースのダンプを `number_guess.sql` ファイルに保存し、あわせて `number_guess.sh` ファイルも保存することで、ステップ 2 を完了できます。 仮想マシン内にその方法についての説明があります。
 
 # --notes--
 
-必須のファイル: `number_guessers.sql` と、 `number_guessing_game` フォルダー
+必須のファイル: `number_guess.sql`, `number_guess.sh`
 
 # --hints--
 

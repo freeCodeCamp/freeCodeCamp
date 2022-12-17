@@ -1,6 +1,5 @@
 .challenge-title-wrap {
   text-align: center;
-  padding-top: 10px;
 }
 
 .challenge-title {
@@ -99,7 +98,8 @@
 .title-text {
   text-decoration: none;
   min-width: 25px;
-  display: inline-block;
+  display: flex;
+  gap: 7px;
   align-items: center;
   justify-content: center;
   overflow: hidden;

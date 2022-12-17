@@ -10,19 +10,25 @@ dashedName: install-and-require-helmet
 
 Trabajar en estos desafíos implica escribir tu código usando uno de los siguientes métodos:
 
-- Clona [este repositorio de Github](https://github.com/freeCodeCamp/boilerplate-infosec/) y completa estos desafíos localmente.
-- Use [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec) para completar estos desafios.
+- Clona <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">este repositorio de GitHub </a> y completa esos retos localmente.
+- Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto de inicial Replit</a> para completar estos retos.
 - Utilice un constructor de sitios de su elección para completar el proyecto. Asegúrese de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando haya terminado, asegúrese de que un demo funcional de su proyecto esté alojado en algún lugar público. A continuación, envíe la URL en el campo `Solution Link`.
+Si usas Replit, sigue estos pasos para configurar el proyecto:
 
-Helmet te ayuda a proteger tus aplicaciones Express configurando varias cabeceras HTTP.
+-   Empieza importando el proyecto en Replit.
+-   Siguiente, tu verás una ventana `.replit`.
+-   Selecciona `Use run command`y cliquea el botón `Done`.
+
+Cuando esté hecho, asegurate que una demo de tu trabajo este hospedado en un sitio público. Luego envía la URL para ello en el campo `Solution Link`.
+
+Helmet ayuda asegurar tus aplicaciones Express apps configurando varios encabezados HTTP.
 
 # --instructions--
 
-Todo su código para estas lecciones va en el archivo `myApp.js` entre las líneas de código con las que hemos iniciado. No cambie o elimine el código que hemos añadido para usted.
+Todo el código para estas lecciones va a ir en el archivo `myApp.js` entre las líneas de código que iniciamos para ti. No cambies o borres el código que agregamos para ti.
 
-Instale la versión `3.21.3` de Helmet, luego requiérala. Puede instalar una versión específica de un paquete con `npm install --save-exact package@version`, o agregándolo a su paquete `package.json` directamente.
+Helmet version `3.21.3` ha sido instalado, este requiere que `helmet` este en `myApp.js`.
 
 # --hints--
 

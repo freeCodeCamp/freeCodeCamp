@@ -8,19 +8,25 @@ dashedName: exercise-tracker
 
 # --description--
 
-构建一个 JavaScript 的全栈应用，在功能上与这个应用相似： <https://exercise-tracker.freecodecamp.rocks/>。 在这个项目中，你将使用以下方法之一编写你的代码：
+构建一个功能类似于此的全栈 JavaScript 应用：<a href="https://exercise-tracker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://exercise-tracker.freecodecamp.rocks</a>。 在这个项目中，你将使用以下方法之一编写你的代码：
 
--   克隆 [GitHub 仓库](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) 并在本地完成你的项目。
--   使用[我们的 Replit 初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker)来完成你的项目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
 -   使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 字段中提交它的 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+如果你使用 Replit，按照以下步骤设置项目：
+
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮.
+
+当你完成后，请将一个确保正常运行的demo（项目演示）托管在可以公开访问的平台上。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
 
 # --instructions--
 
 你的答案应该有以下结构。
 
-运动：
+练习：
 
 ```js
 {
@@ -56,11 +62,11 @@ dashedName: exercise-tracker
 }
 ```
 
-**提示：** 对于 `date` 属性，`Date` API 的 `toDateString` 方法可以用于实现预期的输出。
+**提示：** 对于 `date` 属性，`Date` API 的 `toDateString` 方法可用于实现预期输出。
 
 # --hints--
 
-提交自己的项目，而不是示例的 URL。
+你应该提交你自己的项目，而不是示例 URL。
 
 ```js
 (getUserInput) => {
@@ -71,7 +77,7 @@ dashedName: exercise-tracker
 };
 ```
 
-可以将表单里的 `username` 通过 `POST` 请求发送到 `/api/users`，以创建一个新的用户。
+你可以将表单里的 `username` 通过 `POST` 请求发送到 `/api/users`，以创建一个新的用户。
 
 ```js
 async (getUserInput) => {
@@ -79,7 +85,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   assert.isTrue(res.ok);
   if(!res.ok) {
@@ -88,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-`POST /api/users` 带有表单数据 `username` 对请求，返回的响应将是一个具有 `username` 和 `_id` 属性的对象.
+从包含 `username` 的 `POST /api/users` 请求返回的结果将是一个包含 `username` 和 `_id` 属性的对象。
 
 ```js
 async (getUserInput) => {
@@ -96,7 +102,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -121,7 +127,7 @@ async(getUserInput) => {
 };
 ```
 
-对 `/api/users` 的 `GET` 请求返回一个数组。
+对 `/api/users` 的 `GET` 请求将返回一个数组。
 
 ```js
 async(getUserInput) => {
@@ -156,7 +162,7 @@ async(getUserInput) => {
 };
 ```
 
-你能用表单里的 `description`、`duration` 和 `date`（可选）发送 `POST` 请求到 `/api/users/:_id/exercises`。 如果没有传入 date，默认采用当前日期。
+你可以将表单里的 `description`，`duration` 和 `date`（可选）用 `POST` 发送请求到 `/api/users/:_id/exercises`。 如果没有传入 date，默认采用当前日期。
 
 ```js
 async (getUserInput) => {
@@ -164,7 +170,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -198,7 +204,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -229,7 +235,7 @@ async (getUserInput) => {
 };
 ```
 
-可以发送 `GET` 请求到 `/api/users/:_id/logs`，以获取任何用户的完整 exercise 日志。
+可以发送 `GET` 请求到 `/api/users/:_id/logs`，以获取任何用户的完整运动日志。
 
 ```js
 async (getUserInput) => {
@@ -237,7 +243,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -276,7 +282,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();
@@ -309,7 +315,7 @@ async (getUserInput) => {
 };
 ```
 
-对 `/api/users/:id/logs` 的 `GET` 请求将返回用户对象，其中包含添加的所有练习的 `log` 数组。
+对 `/api/users/:_id/logs` 的 `GET` 请求，将返回用户对象，其中包含添加的所有练习的 `log` 数组。
 
 ```js
 async(getUserInput) => {
@@ -319,7 +325,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   })
   if(res.ok){
     const {_id, username} = await res.json();
@@ -353,7 +359,7 @@ async(getUserInput) => {
 };
 ```
 
-从 `GET /api/users/:id/logs` 返回的 `log` 数组中的每一项都是一个应该具有 `description` 的对象， `duration` 和 `date` 属性。
+从 `GET /api/users/:_id/logs` 返回的 `log` 数组中的每个项目都是一个应该具有 `description`、`duration` 和 `date` 属性的对象。
 
 ```js
 async(getUserInput) => {
@@ -363,7 +369,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -400,7 +406,7 @@ async(getUserInput) => {
 };
 ```
 
-从 `GET /api/users/:id/logs` 返回的 `log` 数组中任何对象的 `description` 属性都应该是一个字符串。
+从 `GET /api/users/:_id/logs` 返回的 `log` 数组中任何对象的 `description` 属性都应该是一个字符串。
 
 ```js
 async(getUserInput) => {
@@ -410,7 +416,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -447,7 +453,7 @@ async(getUserInput) => {
 };
 ```
 
-从 `GET /api/users/:id/logs` 返回的 `log` 数组中任何对象的 `duration` 属性都应该是一个数字。
+从 `GET /api/users/:_id/logs` 返回的 `log` 数组中任何对象的 `duration` 属性应该是一个数字。
 
 ```js
 async(getUserInput) => {
@@ -457,7 +463,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -494,7 +500,7 @@ async(getUserInput) => {
 };
 ```
 
-从 `GET /api/users/:id/logs` 返回的 `log` 数组中任何对象的 `date` 属性应该是一个字符串。 使用 `Date` API 的 `dateString` 格式。
+从 `GET /api/users/:_id/logs` 返回的 `log` 数组中任何对象的 `date` 属性应该是一个字符串。 使用 `Date` API 的 `dateString` 格式。
 
 ```js
 async(getUserInput) => {
@@ -504,7 +510,7 @@ async(getUserInput) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0,29)
   });
   if(res.ok) {
     const {_id, username} = await res.json();
@@ -541,7 +547,7 @@ async(getUserInput) => {
 };
 ```
 
-你可以将 `from`、`to` 和 `limit` 参数添加到 `GET /api/users/:_id/logs` 请求检索任何用户的部分日志。 `from` 和 `to` 是 `yyyy-mm-dd` 形式的日期， `limit` 是希望返回的 log 数量。
+你可以将 `from`、`to` 和 `limit` 参数添加到 `GET /api/users/:_id/logs` 请求，检索任何用户的部分日志。 `from` 和 `to` 是 `yyyy-mm-dd` 形式的日期， `limit` 是一个整数，表示要送回多少份日志。
 
 ```js
 async (getUserInput) => {
@@ -549,7 +555,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
   if (res.ok) {
     const { _id, username } = await res.json();

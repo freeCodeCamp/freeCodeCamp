@@ -8,21 +8,27 @@ dashedName: url-shortener-microservice
 
 # --description--
 
-構建一個 JavaScript 的全棧應用，在功能上與這個應用相似：<https://url-shortener-microservice.freecodecamp.rocks/>。 在這個項目中，你將使用以下方法之一編寫你的代碼：
+構建一個功能類似於此的全棧 JavaScript 應用程序：<a href="https://url-shortener-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://url-shortener-microservice.freecodecamp.rocks</a>。 在這個項目中，你將使用以下方法之一編寫你的代碼：
 
--   克隆 [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-filemetadata/) 並在本地完成項目。
--   使用[我們的 Replit 初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener)來完成你的項目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-urlshortener/" target="_blank" rel="noopener noreferrer nofollow">這個 GitHub 倉庫</a>，並在本地完成你的項目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 字段中提交它的 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+如果你使用 Replit，請按照以下步驟設置項目：
+
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。 此外，將項目的源碼鏈接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
-**提示：** 請使用 body parsing 中間件來處理 POST 請求， 也可以使用 `dns` 核心模塊中的 `dns.lookup(host, cb)` 函數驗證提交的 URL。
+**提示：**不要忘記使用 body parsing 中間件來處理 POST 請求。 也可以使用 `dns` 核心模塊中的 `dns.lookup(host, cb)` 函數驗證提交的 URL。
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+你應該提交自己的項目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-當訪問 `/api/shorturl/<short_url>` 時, 將重定向到原來的 URL。
+當你訪問 `/api/shorturl/<short_url>` 時，將重定向到原來的 URL。
 
 ```js
 async (getUserInput) => {
@@ -88,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-如果傳入一個沒有遵循如 `http://www.example.com` 的無效 URL，則返回包含 `{ error: 'invalid url' }` 的 JSON 響應。
+如果你傳入了一個無效的 URL 且沒有遵循有效的 `http://www.example.com` 格式，JSON 響應將包含 `{ error: 'invalid url' }`。
 
 ```js
 async (getUserInput) => {

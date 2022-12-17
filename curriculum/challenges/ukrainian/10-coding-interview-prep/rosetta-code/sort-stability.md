@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8014
 title: Стабільне сортування
-challengeType: 5
+challengeType: 1
 forumTopicId: 302308
 dashedName: sort-stability
 ---
 
 # --description--
 
-При сортуванні записів в таблиці за певним стовпцем або полем [стабільне сортування](https://en.wikipedia.org/wiki/Stable_sort#Stability) завжди зберігає відносний порядок записів з відповідним ключем.
+When sorting records in a table by a particular column or field, a <a href="https://www.freecodecamp.org/news/stability-in-sorting-algorithms-a-treatment-of-equality-fa3140a5a539/" target="_blank" rel="noopener noreferrer nofollow">stable sort</a> will always retain the relative order of records that have the same key.
 
 Наприклад, у цій таблиці країн і міст стабільне сортування в **другому** стовпці розташує Бірмінгем у США над Бірмінгемом у Великобританії серед міст. (Хоча нестабільне сортування *може* в цьому випадку розташувати Бірмінгем у США над Бірмінгемом у Великобританії, стабільна процедура сортування це *забезпечить*).
 

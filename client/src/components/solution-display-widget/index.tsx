@@ -1,3 +1,5 @@
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Button,
   DropdownButton,
@@ -7,7 +9,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
-
 interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;
@@ -25,41 +26,51 @@ export function SolutionDisplayWidget({
 }: Props) {
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
-
-  const showOrViewText =
-    displayContext === 'settings'
-      ? t('buttons.show-solution')
-      : t('buttons.view');
+  const viewText = t('buttons.view');
+  const viewCode = t('buttons.view-code');
+  const viewProject = t('buttons.view-project');
 
   const ShowFilesSolutionForCertification = (
-    <button
-      className='project-link-button-override'
-      data-cy={dataCy}
-      onClick={showUserCode}
-    >
-      {t('certification.project.solution')}
-    </button>
+    <Button block={true} data-cy={dataCy} onClick={showUserCode}>
+      {t('buttons.view')}
+    </Button>
   );
   const ShowProjectAndGithubLinkForCertification = (
-    <>
-      <a href={solution ?? ''} rel='noopener noreferrer' target='_blank'>
+    <DropdownButton
+      block={true}
+      bsStyle='primary'
+      className='btn-invert'
+      id={`dropdown-for-${id}`}
+      title={t('buttons.view')}
+    >
+      <MenuItem
+        bsStyle='primary'
+        href={solution ?? ''}
+        rel='noopener noreferrer'
+        target='_blank'
+      >
         {t('certification.project.solution')}
-      </a>
-      ,{' '}
-      <a href={githubLink} rel='noopener noreferrer' target='_blank'>
+      </MenuItem>
+      <MenuItem
+        bsStyle='primary'
+        href={githubLink}
+        rel='noopener noreferrer'
+        target='_blank'
+      >
         {t('certification.project.source')}
-      </a>
-    </>
+      </MenuItem>
+    </DropdownButton>
   );
   const ShowProjectLinkForCertification = (
-    <a
+    <Button
+      block={true}
       className='btn-invert'
       href={solution ?? ''}
       rel='noopener noreferrer'
       target='_blank'
     >
-      {t('certification.project.solution')}
-    </a>
+      {t('buttons.view')}
+    </Button>
   );
   const MissingSolutionComponentForCertification = (
     <>{t('certification.project.no-solution')}</>
@@ -73,7 +84,7 @@ export function SolutionDisplayWidget({
       id={`btn-for-${id}`}
       onClick={showUserCode}
     >
-      {t('buttons.show-code')}
+      {viewText} <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
   );
   const ShowMultifileProjectSolution = (
@@ -86,10 +97,10 @@ export function SolutionDisplayWidget({
         title={t('buttons.view')}
       >
         <MenuItem bsStyle='primary' onClick={showUserCode}>
-          {t('buttons.show-code')}
+          {viewCode}
         </MenuItem>
         <MenuItem bsStyle='primary' onClick={showProjectPreview}>
-          {t('buttons.show-project')}
+          {viewProject}
         </MenuItem>
       </DropdownButton>
     </div>
@@ -102,7 +113,7 @@ export function SolutionDisplayWidget({
         bsStyle='primary'
         className='btn-invert'
         id={`dropdown-for-${id}`}
-        title={showOrViewText}
+        title={viewText}
       >
         <MenuItem
           bsStyle='primary'
@@ -133,7 +144,7 @@ export function SolutionDisplayWidget({
       rel='noopener noreferrer'
       target='_blank'
     >
-      {showOrViewText}
+      {viewText} <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
   );
   const MissingSolutionComponent =

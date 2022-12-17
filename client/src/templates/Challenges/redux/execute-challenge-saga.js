@@ -2,57 +2,59 @@ import i18next from 'i18next';
 import { escape } from 'lodash-es';
 import { channel } from 'redux-saga';
 import {
-  delay,
-  put,
-  select,
   call,
-  takeLatest,
-  takeEvery,
+  cancel,
+  delay,
   fork,
   getContext,
+  put,
+  select,
   take,
-  cancel
+  takeEvery,
+  takeLatest
 } from 'redux-saga/effects';
 
-import { playTone } from '../../../utils/tone';
-import {
-  buildChallenge,
-  canBuildChallenge,
-  getTestRunner,
-  challengeHasPreview,
-  updatePreview,
-  updateProjectPreview,
-  isJavaScriptChallenge,
-  isLoopProtected
-} from '../utils/build';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
-  standardizeRequestBody,
-  getStringSizeInBytes,
   bodySizeFits,
-  MAX_BODY_SIZE
+  getStringSizeInBytes,
+  MAX_BODY_SIZE,
+  standardizeRequestBody
 } from '../../../utils/challenge-request-helpers';
+import { playTone } from '../../../utils/tone';
+import {
+  buildChallenge,
+  canBuildChallenge,
+  challengeHasPreview,
+  getTestRunner,
+  isJavaScriptChallenge,
+  isLoopProtected,
+  updatePreview,
+  updateProjectPreview
+} from '../utils/build';
 import { actionTypes } from './action-types';
+import {
+  disableBuildOnError,
+  initConsole,
+  initLogs,
+  logsToConsole,
+  openModal,
+  updateConsole,
+  updateLogs,
+  updateTests
+} from './actions';
 import {
   challengeDataSelector,
   challengeMetaSelector,
   challengeTestsSelector,
-  initConsole,
-  updateConsole,
-  initLogs,
-  updateLogs,
-  logsToConsole,
-  updateTests,
-  openModal,
   isBuildEnabledSelector,
-  disableBuildOnError
-} from './';
+  portalDocumentSelector
+} from './selectors';
 
 // How long before bailing out of a preview.
 const previewTimeout = 2500;
-let previewTask;
 
 // when 'run tests' is clicked, do this first
 export function* executeCancellableChallengeSaga(payload) {
@@ -75,19 +77,11 @@ export function* executeCancellableChallengeSaga(payload) {
     }
   }
 
-  if (previewTask) {
-    yield cancel(previewTask);
-  }
   // executeChallenge with payload containing {showCompletionModal}
   const task = yield fork(executeChallengeSaga, payload);
-  previewTask = yield fork(previewChallengeSaga, { flushLogs: false });
 
   yield take(actionTypes.cancelTests);
   yield cancel(task);
-}
-
-export function* executeCancellablePreviewSaga() {
-  previewTask = yield fork(previewChallengeSaga);
 }
 
 export function* executeChallengeSaga({ payload }) {
@@ -243,7 +237,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
-        yield call(updatePreview, buildData, document, proxyLogger);
+        const portalDocument = yield select(portalDocumentSelector);
+        const finalDocument = portalDocument || document;
+
+        yield call(updatePreview, buildData, finalDocument, proxyLogger);
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {
           proxyLogger,
@@ -292,7 +289,7 @@ export function createExecuteChallengeSaga(types) {
         types.challengeMounted,
         types.resetChallenge
       ],
-      executeCancellablePreviewSaga
+      previewChallengeSaga
     ),
     takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];

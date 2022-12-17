@@ -8,21 +8,27 @@ dashedName: file-metadata-microservice
 
 # --description--
 
-构建一个 JavaScript 的全栈应用，在功能上与这个应用相似：<https://file-metadata-microservice.freecodecamp.rocks/>。 在这个项目中，你将使用以下方法之一编写你的代码：
+构建一个功能类似于此的全栈 JavaScript 应用程序：<a href="https://file-metadata-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://file-metadata-microservice.freecodecamp.rocks</a>。 在这个项目中，你将使用以下方法之一编写你的代码：
 
--   克隆 [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-filemetadata/) 并在本地完成项目。
--   使用[我们的 Replit 初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata)来完成你的项目。
+-   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-filemetadata/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
+-   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
 -   使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 字段中提交它的 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+如果你使用 Replit，按照以下步骤设置项目：
+
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮。
+
+当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 `Solution Link` 中。 此外，还可以将项目的源码链接提交到 `GitHub Link` 中。
 
 # --instructions--
 
-** 提示：** 可以使用 `multer` npm 包来处理上传文件
+** 提示：**可以使用 `multer` npm 包来处理上传文件。
 
 # --hints--
 
-提交自己的项目，而不是示例的 URL。
+你应该提交自己的项目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -34,7 +40,7 @@ dashedName: file-metadata-microservice
 };
 ```
 
-可以提交一个包含上传文件的表单。
+你可以提交一个包含上传文件的表单。
 
 ```js
 async (getUserInput) => {
@@ -45,7 +51,7 @@ async (getUserInput) => {
 };
 ```
 
-表单的文件上传标签的 `name` 属性设置成 `upfile`。
+表单文件输入字段的 `name` 属性设置成 `upfile`。
 
 ```js
 async (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-当提交一个文件时，在 JSON 响应中收到文件的 `name`、`type` 和`size`（以 bytes（字节）为单位）。
+当你提交一个文件时，在 JSON 响应中收到文件的 `name`、`type` 和 `size`，以 bytes（字节）为单位。
 
 ```js
 async (getUserInput) => {

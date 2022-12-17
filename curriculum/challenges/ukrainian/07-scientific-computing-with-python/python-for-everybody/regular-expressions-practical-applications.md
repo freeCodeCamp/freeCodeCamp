@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0b0b6c005b0e76f070
-title: 'Регулярні вирази: Практичні програми'
+title: 'Регулярні вирази: практичні програми'
 challengeType: 11
 videoId: xCjFU9G6x48
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: regular-expressions-practical-applications
 
 ## --text--
 
-Який з приведених варіантів можна використати для пошуку "$" у регулярному виразі?
+Що з наведеного шукатиме «$» у регулярному виразі?
 
 ## --answers--
 

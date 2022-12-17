@@ -1,6 +1,6 @@
 ---
 id: adf08ec01beb4f99fc7a68f2
-title: 偽値用心棒
+title: 偽値を取り除く「用心棒」
 challengeType: 1
 forumTopicId: 16014
 dashedName: falsy-bouncer
@@ -8,7 +8,7 @@ dashedName: falsy-bouncer
 
 # --description--
 
-すべての偽値を配列から取り除いてください。
+すべての偽値を配列から取り除いてください。 元の配列は変更せずに、新しい配列を返してください。
 
 JavaScriptにおける偽値とは、`false`、`null`、`0`、`""`、`undefined`、そして `NaN` です。
 
@@ -38,6 +38,14 @@ assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 
 ```js
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
+```
+
+`arr` は変更しないでください。
+
+```js
+const arr = ['a', false, 0, 'Naomi'];
+bouncer(arr);
+assert.deepEqual(arr, ['a', false, 0, 'Naomi'])
 ```
 
 # --seed--

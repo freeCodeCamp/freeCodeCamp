@@ -1,7 +1,7 @@
 ---
 id: 59e0a8df964e4540d5abe599
 title: Execute Brain****
-challengeType: 5
+challengeType: 1
 forumTopicId: 302261
 dashedName: execute-brain
 ---
@@ -10,7 +10,7 @@ dashedName: execute-brain
 
 Напишіть функцію для запуску Brain\*\*\*\* перекладача. Функція бере рядок як параметр і на виході також виходить рядок. Деталі наведено нижче:
 
-RCBF є набором [Brainf\*\*\*](https://rosettacode.org/wiki/Brainf*** "Brainf\*\*\*") компіляторів та інтерпретаторів, написаних Rosetta code різними мовами.
+RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
 
 Нижче наведено посилання на кожну з версій RCBF.
 

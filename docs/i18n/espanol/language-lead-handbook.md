@@ -1,22 +1,32 @@
-# The Official freeCodeCamp Language Lead Handbook
+# El manual oficial de liderazgo de idioma Freecodecamp
 
-This handbook will help you set up and use the tools for your localization efforts.
+Este manual lo ayudará a configurar y utilizar las herramientas para sus esfuerzos de localización.
 
-## How to invite new contributors to Ghost
+## Cómo invitar a los nuevos contribuyentes a Ghost
 
-Ghost allows you to set contributors with different levels of authorizations.
+Ghost le permite establecer contribuyentes con diferentes niveles de autorizaciones.
 
-Most of your invites will be for the "Contributor" level. This level allows the user to create drafts. Select this role when inviting a new translator.
+La mayoría de tus invitaciones serán para el nivel de "Colaborador". Este nivel permite al usuario crear borradores. Selecciona este rol cuando invitas a un nuevo traductor.
 
-The "Author" level allows the user to create Drafts and publish them.
+El nivel "autor" permite al usuario crear borradores y publicarlos.
 
-The "Editor" level allows the user to access all Drafts and publish them. Select this role when inviting a new proofreader.
+El nivel "Editor" permite al usuario acceder a todos los Borradores y publicarlos. Seleccione este rol al invitar a un nuevo revisor (proofreader).
 
-The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
+El nivel "Administrador" está reservado para el personal de freeCodeCamp y los líderes de idiomas.
 
-## How to mention the original author of a translated article
+### How are the articles built
 
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
+We use a [JAMStack](https://www.google.com/search?q=what+is+jamstack)-based approach to build and deploy the articles. This strategy makes for a speedy static site cached and served from a CDN.
+
+[Ghost](https://ghost.org) acts as our content management platform, and [11ty](https://11ty.dev) builds the articles into static assets – plain HTML, JavaScript, and CSS. Only these static assets are deployed to our servers.
+
+This process is automated and runs periodically. If you publish something now, it will be available on the news site in a few hours.
+
+You can find the up-to-date build schedules and status here: https://github.com/freeCodeCamp/news#build
+
+## Cómo mencionar al autor original de un artículo traducido
+
+El autor original y el artículo original están vinculados automáticamente agregando este código a la Inyección de Código -> sección principal en la Configuración de Borradores en Ghost.
 
 ```html
 <script>
@@ -24,18 +34,18 @@ The original author and the original article are linked automatically adding thi
 </script>
 ```
 
-With `link` being the link of the original article.
+Con `link` siendo el enlace del artículo original.
 
-## How to update trending articles
+## Cómo actualizar artículos en tendencia
 
-> [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on google results.
+> [!TIP] Cambiar los artículos en el pie de la página al menos una vez al mes significaria darle un impulso a los artículos vinculados con los resultados de Google.
 
-There are two places in which to change the trending articles.
+Hay dos lugares en los que cambiar las tendencias de artículos.
 
-- [The curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/)
-- [The CDN repository](https://github.com/freeCodeCamp/cdn)
+- [El repositorio del currículo](https://github.com/freeCodeCamp/freeCodeCamp/)
+- [El repositorio CDN](https://github.com/freeCodeCamp/cdn)
 
-For each article you will need to create a shorter title to use in the footer.
+Para cada artículo necesitarás crear un título más corto para usar en el pie de página.
 
 ### Change trending articles in the curriculum
 
@@ -45,7 +55,7 @@ This file is a `*.json` file that has the shape of an object with property keys 
 
 Each number rapresents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
 
-This is an example of how part of the `trending.json` file has to look.
+Este es un ejemplo de cómo tiene que verse parte del archivo `trending.json`.
 
 ```json
 {
@@ -65,9 +75,9 @@ This is an example of how part of the `trending.json` file has to look.
 }
 ```
 
-You will want to [build the translated client locally](how-to-test-translations-locally.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
+You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
 
-### How to update the trending articles in the cdn
+### Cómo actualizar los artículos de tendencia en el cdn
 
 The file in the cdn repository is the file `universal/trending/<language>.yaml`.
 
@@ -91,6 +101,76 @@ article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano
 You can convert from one format to the other carefully changing it manually. Or you can use [the script in this repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
 
 > [!TIP] A new workflow is being worked on, there will be only one place to change in the future.
+
+## How to translate articles in the footer links
+
+There are some links listed at the bottom of the footer (About, Alumni Network, Open Source etc.) and some of them can be translated into your language in the same way as other articles.
+
+Articles that can be translated:
+
+- About
+- Support
+- Academic Honesty
+- Code of Conduct
+
+The following articles should **not** be translated:
+
+- Shop
+- Sponsors
+- Privacy Policy
+- Terms of Service
+- Copyright Policy
+
+The following links are pointing to external sites and cannot be translated:
+
+- Alumni Network
+- Open Source
+
+### Change the footer links in the news
+
+Once you have translated and published the articles listed as "can be translated" above, you can update the links in the footer for `/news` by editing the file at `news/config/i18n/locales/<your language>/links.json` in the [freeCodeCamp/news](https://github.com/freeCodeCamp/news) repository.
+
+> [!NOTE] Pull requests to this repository are currently limited to staff only. If you want to update this file, ask someone on the staff team for help.
+
+Update the following part in the file:
+
+```json
+{
+  ...
+  "footer": {
+    "about": "https://www.freecodecamp.org/news/about/",
+    "support": "https://www.freecodecamp.org/news/support/",
+    "honesty": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc": "https://www.freecodecamp.org/news/code-of-conduct/"
+  }
+}
+```
+
+### Change the footer links in the curriculum
+
+When you have translated and published the articles listed as "can be translated" above, as well as when the curriculum in your language is ready for launch, you can update the links in the footer for `/learn` by editing the file at `client/i18n/locales/<your language>/links.json` in the [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) repository.
+
+> [!WARNING] Only "About", "Support", "Academic Honesty", and "Code of Conduct" can be translated. Leave other URLs unchanged.
+
+Update the following part in the file:
+
+```json
+{
+  ...
+  "footer": {
+    "about-url": "https://www.freecodecamp.org/news/about/",
+    "shop-url": "https://www.freecodecamp.org/shop/",
+    "support-url": "https://www.freecodecamp.org/news/support/",
+    "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
+    "honesty-url": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+    "coc-url": "https://www.freecodecamp.org/news/code-of-conduct/",
+    "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
+    "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+    "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
+  },
+  ...
+}
+```
 
 ## How to translate the info boxes headers in the documentation
 
@@ -168,11 +248,11 @@ flexibleAlerts: {
 }
 ```
 
-## How to translate the motivational quotes
+## Cómo traducir las citas motivacionales
 
 The motivational quotes can be found in the [curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/) in the `/client/i18n/locales/<language>/motivation.json` file.
 
-This file has a general structure of:
+Este archivo tiene una estructura general de:
 
 ```json
 {
@@ -277,3 +357,17 @@ Then, each target language has two columns. If you translate to Dothraki, you wi
 > [!TIP] In programs like Microsoft Excel you can hide the columns of the other languages to free up screen real-estate and see the English columns and the target language columns near each other.
 
 After you have made the changes and saved the file, you will need to make a PR with the proposed changes. After the PR is accepted, you will need to run the GitHub Action workflow to update the Crowdin Glossary. Your glossary changes will not have immediate effects, but they will come.
+
+## How to Promote a Contributor to Proofreader
+
+If you consider that a contributor could become a Crowdin Proofreader, you can give the proofreader role to them in this way:
+
+In Crowdin, individuate the `User management` on the left hand side menu.
+
+This will open the user management tools, you will be able to see the list of all the users.
+
+Search for the user that will become proofreader. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+
+The user is now a proofreader.
+
+> [!TIP] The newly promoted proofreader could benefit from reading the [How to Proofread Files](how-to-proofread-files.md) documentation.

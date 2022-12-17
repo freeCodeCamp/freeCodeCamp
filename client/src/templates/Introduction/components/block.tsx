@@ -13,7 +13,8 @@ import DropDown from '../../../assets/icons/dropdown';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Link, Spacer } from '../../../components/helpers';
-import { completedChallengesSelector, executeGA } from '../../../redux';
+import { executeGA } from '../../../redux/actions';
+import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
@@ -57,8 +58,6 @@ interface BlockProps {
   toggleBlock: typeof toggleBlock;
 }
 
-const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
-
 export class Block extends Component<BlockProps> {
   static displayName: string;
   constructor(props: BlockProps) {
@@ -82,9 +81,9 @@ export class Block extends Component<BlockProps> {
 
   renderCheckMark(isCompleted: boolean): JSX.Element {
     return isCompleted ? (
-      <GreenPass hushScreenReaderText style={mapIconStyle} />
+      <GreenPass hushScreenReaderText />
     ) : (
-      <GreenNotCompleted hushScreenReaderText style={mapIconStyle} />
+      <GreenNotCompleted hushScreenReaderText />
     );
   }
 

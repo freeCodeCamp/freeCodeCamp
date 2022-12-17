@@ -10,7 +10,7 @@ dashedName: use-destructuring-assignment-to-assign-variables-from-arrays
 
 ES6 rende la destrutturazione degli array facile come quella degli oggetti.
 
-Una differenza fondamentale tra l'operatore di propagazione e la destrutturazione dell'array è che l'operatore di diffusione spacchetta tutti i contenuti di un'array in una lista separata da virgole. Di conseguenza, non è possibile selezionare o scegliere quali elementi si desidera assegnare a delle variabili.
+Una differenza fondamentale tra l'operatore spread e la destrutturazione dell'array è che l'operatore spread spacchetta tutti i contenuti di un array in una lista separata da virgole. Di conseguenza, non è possibile selezionare o scegliere quali elementi si desidera assegnare a delle variabili.
 
 La destrutturazione di un array ci permette di fare esattamente questo:
 

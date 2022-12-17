@@ -1,6 +1,6 @@
 ---
 id: 587d7fb6367417b2b2512c06
-title: Встановлення і налаштування Mongoose
+title: Встановіть та налаштуйте Mongoose
 challengeType: 2
 forumTopicId: 301540
 dashedName: install-and-set-up-mongoose
@@ -8,21 +8,31 @@ dashedName: install-and-set-up-mongoose
 
 # --description--
 
-Робота над цими завданнями включатиме написання вашого коду з використанням одного з наступних методів:
+Робота над цими завданнями передбачає написання коду за допомогою одного з наступних методів:
 
-- Створіть [цей GitHub репозитарій](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) і локально завершіть ці завдання.
-- Використовуйте [наш стартовий проєкт Replit](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose) для виконання цих завдань.
-- Використовуйте конструктор сайту на власний розсуд, щоб завершити проєкт. Перевірте, що ви зберегли усі файли з нашого репозиторію GitHub.
+- Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-mongomongoose/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте завдання локально.
+- Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання цих завдань.
+- Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
 
-По завершенню, переконайтеся, що працююча демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL - адресу проєкту в поле `Solution Link` field.
+Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
 
-У цьому завданні, створіть базу даних MongoDB Atlas та імпортуйте необхідні пакети для підключення до неї.
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-Дотримуйтесь <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' rel='noopener noreferrer' target='_blank'>цих вказівок</a>, щоб налаштувати розміщену базу даних на MongoDB Atlas.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`.
+
+У цьому завданні створіть базу даних MongoDB Atlas та імпортуйте необхідні пакети для підключення до неї.
+
+Дотримуйтесь <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' target="_blank" rel="noopener noreferrer nofollow">цих вказівок</a>, щоб налаштувати розміщену базу даних на MongoDB Atlas.
 
 # --instructions--
 
-Додайте `mongodb@~3.6.0` і `mongoose@~5.4.0` до `package.json` проєкту. Потім, необхідно встановити mongoose як `mongoose` у `myApp.js`. Створіть файл `.env` і додайте до нього змінну `MONGO_URI`. Його значенням має бути ваш URI бази даних MongoDB Atlas. Обов'язково помістіть URI в одинарні чи подвійні лапки, і пам'ятайте, що ви не можете використовувати пробіли навколо `=` у змінних середовища. Наприклад, `MONGO_URI='VALUE'`. Після завершення, під'єднайтесь до бази даних, використовуючи наступний синтаксис:
+`mongoose@^5.11.15` додано до файлу `package.json` вашого проєкту. Спочатку необхідно встановити mongoose як `mongoose` у `myApp.js`. Потім створіть файл `.env` і додайте до нього змінну `MONGO_URI`. Значенням повинне бути URI вашої бази даних MongoDB Atlas. Обов'язково помістіть URI в одинарні чи подвійні лапки, і пам'ятайте, що ви не можете використовувати пробіли навколо `=` у змінних середовища. Наприклад, `MONGO_URI='VALUE'`.
+
+**Примітка:** якщо ви використовуєте Replit, ви не можете створити файл `.env`. Замість цього використайте вбудовану вкладку <dfn>SECRETS</dfn> для додавання змінної. <em>Не</em> беріть значення в лапки під час використання вкладки <em>SECRETS</em>.
+
+Після завершення під'єднайтесь до бази даних, використовуючи наступний синтаксис:
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -30,22 +40,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --hints--
 
-Залежність "mongodb" слід вказати в package.json
-
-```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/file/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(packJson.dependencies, 'mongodb');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
-```
-
-Залежність "mongoose" слід вказати в package.json
+Залежність «mongoose version ^5.11.15» повинна бути в package.json
 
 ```js
 (getUserInput) =>
@@ -53,6 +48,11 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
     (data) => {
       var packJson = JSON.parse(data);
       assert.property(packJson.dependencies, 'mongoose');
+      assert.match(
+        packJson.dependencies.mongoose,
+        /^\^5\.11\.15/,
+        'Wrong version of "mongoose". It should be ^5.11.15'
+      );
     },
     (xhr) => {
       throw new Error(xhr.responseText);
@@ -60,7 +60,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
   );
 ```
 
-"mongoose" слід підключити до бази даних
+«mongoose» потрібно під'єднати до бази даних
 
 ```js
 (getUserInput) =>

@@ -10,7 +10,7 @@ Beachte, dass wir für Version 7.0 des freeCodeCamp-Studienplan zu einem [vollst
 
 Um diese Aufgaben zu lösen, braucht es viel Kreativität und Liebe zum Detail. Es gibt viele Möglichkeiten, dir zu helfen. Du bekommst Unterstützung von einem ganzen Team von Mitwirkenden, an die du deine Ideen weitergeben und deine Aufgaben demonstrieren kannst.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+Und wie immer kannst du deine Fragen in der [Kategorie "Contributors" in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im ["Contributors"-Chatraum](https://discord.gg/PRyKn3Vbay) stellen.
 
 Mit deiner Hilfe können wir einen interaktiven Studienplan entwickeln, der Millionen von Menschen dabei helfen wird, in den nächsten Jahren das Programmieren zu lernen.
 
@@ -245,7 +245,7 @@ Wenn du länger als zwei Minuten brauchst, um die Aufgabe zu lösen, hast du zwe
 
 Die 2-Minuten-Regel zwingt dich, als Aufgabenersteller, deine Anweisungen kurz und präzise zu formulieren, deinen Startcode klar zu formulieren und deine Tests eindeutig zu gestalten.
 
-Wir verfolgen, wie lange die Teilnehmer/innen brauchen, um die Aufgaben zu lösen und nutzen diese Informationen, um Aufgaben zu identifizieren, die vereinfacht oder aufgeteilt werden müssen.
+Wir verfolgen, wie lange die Teilnehmer brauchen, um die Aufgaben zu lösen, und nutzen diese Informationen, um Aufgaben zu identifizieren, die vereinfacht oder aufgeteilt werden müssen.
 
 ### Modularität
 
@@ -296,17 +296,17 @@ Unser Ziel ist es, den einzelnen Aspekt der Aufgabe zu vermitteln und zu prüfen
 
 Aufgabentests können die Assertion-Bibliotheken von Node.js und Chai.js nutzen. Außerdem kann bei Bedarf auf den vom Benutzer erstellten Code in der Variable `code` zugegriffen werden. Zusätzlich stellt das Objekt `__helpers` mehrere Funktionen zur Verfügung, die das Schreiben von Tests vereinfachen. Die verfügbaren Funktionen sind in _client/src/utils/curriculum-helpers.ts_ definiert.
 
-## Formatierung des Startcodes
+## Formatting seed code
 
-Im Folgenden findest du bestimmte Formatierungsrichtlinien für den Startcode der Aufgabe:
+Here are specific formatting guidelines for the challenge seed code:
 
-- Verwende zwei Leerzeichen zum Einrücken
-- JavaScript-Anweisungen enden mit einem Semikolon
-- Verwende doppelte Anführungszeichen, wo dies möglich ist
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
-### Kommentare zum Startcode
+### Seed code comments
 
-Wir haben ein [comment dictionary](/curriculum/dictionaries/english/comments.js), das die einzigen Kommentare enthält, die im Startcode verwendet werden können. Die Groß- und Kleinschreibung und die Abstände des Kommentarwörterbuchs müssen eingehalten werden. Das Kommentarwörterbuch sollte nicht ohne vorherige Absprache mit dem Entwicklungsteam erweitert werden.
+We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. Die Groß- und Kleinschreibung und die Abstände des Kommentarwörterbuchs müssen eingehalten werden. Das Kommentarwörterbuch sollte nicht ohne vorherige Absprache mit dem Entwicklungsteam erweitert werden.
 
 Die verwendeten Kommentare sollten ein Leerzeichen zwischen den Kommentarzeichen und dem eigentlichen Kommentar enthalten. Im Allgemeinen sollten Kommentare sparsam verwendet werden. Überlege dir immer, ob du die Beschreibung oder die Instruktionen einer Aufgabe umschreiben kannst, wenn du dadurch einen Kommentar im Startcode vermeiden kannst.
 
@@ -368,7 +368,7 @@ class MyComponent extends React.Component {
 
 ### Übersetzung der Kommentare im Startcode
 
-Für jede Sprache gibt es ein eigenes Kommentarwörterbuch. Die [englische Version des Kommentarwörterbuchs](/curriculum/dictionaries/english/comments.js) ist die Grundlage für die Übersetzungen in den entsprechenden nicht-englischen Versionen der Dateien. Die nicht-englische Version des chinesischen Kommentarwörterbuchs befindet sich unter `/curriculum/dictionaries/chinese/comments.js`. Jedes Wörterbuch besteht aus einem Array von Objekten mit einer eindeutigen `id`-Eigenschaft und einer `text`-Eigenschaft. Nur der `text` sollte geändert werden, damit er die Übersetzung des entsprechenden englischen Kommentars enthält.
+Für jede Sprache gibt es ein eigenes Kommentarwörterbuch. The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. Jedes Wörterbuch besteht aus einem Array von Objekten mit einer eindeutigen `id`-Eigenschaft und einer `text`-Eigenschaft. Nur der `text` sollte geändert werden, damit er die Übersetzung des entsprechenden englischen Kommentars enthält.
 
 Einige Kommentare können ein Wort/einen Satz enthalten, das/der nicht übersetzt werden sollte. Zum Beispiel sollten Variablennamen oder Bibliotheksnamen wie "React" nicht übersetzt werden. Schau dir den Kommentar unten als Beispiel an. Das Wort `myGlobal` sollte nicht übersetzt werden.
 

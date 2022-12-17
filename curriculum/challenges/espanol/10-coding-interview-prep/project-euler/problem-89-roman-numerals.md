@@ -1,7 +1,7 @@
 ---
 id: 5900f3c51000cf542c50fed7
 title: 'Problem 89: Roman numerals'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302204
 dashedName: problem-89-roman-numerals
 ---

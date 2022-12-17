@@ -58,6 +58,20 @@ myRegex.lastIndex = 0;
 assert(!myRegex.test('Frank Roosevelt'));
 ```
 
+Tu expresión regular `myRegex` debe devolver `false` para la cadena `FranklinRoosevelt`
+
+```js
+myRegex.lastIndex = 0;
+assert(!myRegex.test('FranklinRoosevelt'));
+```
+
+Tu expresión regular `myRegex` debe devolver `false` para la cadena `EleanorRoosevelt`
+
+```js
+myRegex.lastIndex = 0;
+assert(!myRegex.test('EleanorRoosevelt'));
+```
+
 Debes usar `.test()` para probar la expresión regular.
 
 ```js
@@ -85,6 +99,6 @@ let result = false; // Change this line
 
 ```js
 let myString = "Eleanor Roosevelt";
-let myRegex = /(Franklin|Eleanor).*Roosevelt/;
+let myRegex = /(Franklin|Eleanor) (([A-Z]\.?|[A-Z][a-z]+) )?Roosevelt/;
 let result = myRegex.test(myString);
 ```

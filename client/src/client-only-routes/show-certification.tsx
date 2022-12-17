@@ -1,5 +1,6 @@
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import { isEmpty } from 'lodash-es';
+import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -7,7 +8,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import envData from '../../../config/env.json';
-import { getLangCode } from '../../../config/i18n/all-langs';
+import { getLangCode } from '../../../config/i18n';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
 import DonateForm from '../components/Donation/donate-form';
 
@@ -15,17 +16,15 @@ import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
 import { Themes } from '../components/settings/theme';
+import { showCert, executeGA, fetchProfileForUser } from '../redux/actions';
 import {
   showCertSelector,
   showCertFetchStateSelector,
-  showCert,
   userFetchStateSelector,
-  usernameSelector,
   isDonatingSelector,
-  executeGA,
   userByNameSelector,
-  fetchProfileForUser
-} from '../redux';
+  usernameSelector
+} from '../redux/selectors';
 import { UserFetchState, User } from '../redux/prop-types';
 import { certMap } from '../resources/cert-and-project-map';
 import certificateMissingMessage from '../utils/certificate-missing-message';
@@ -257,6 +256,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const donationSection = (
     <div className='donation-section'>
+      <Spacer size={2} />
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
@@ -316,7 +316,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   return (
     <Grid className='certificate-outer-wrapper'>
-      <Spacer size={2} />
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
       <Row className='certificate-wrapper certification-namespace'>
         <header>
@@ -368,6 +367,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             </p>
             <p>{t('certification.executive')}</p>
           </div>
+          <span className='qr-wrap'>
+            <QRCodeSVG className='qr-code' value={certURL} />
+          </span>
           <Row>
             <p className='verify'>
               {t('certification.verify', { certURL: certURL })}
@@ -375,11 +377,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           </Row>
         </footer>
       </Row>
-      <Spacer size={2} />
-      {signedInUserName === username ? shareCertBtns : ''}
-      <Spacer size={2} />
-      <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
-      <Spacer size={2} />
+      <div className='row certificate-links'>
+        <Spacer size={2} />
+        {signedInUserName === username ? shareCertBtns : ''}
+        <Spacer size={2} />
+        <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
+        <Spacer size={2} />
+      </div>
     </Grid>
   );
 };

@@ -8,13 +8,19 @@ dashedName: url-shortener-microservice
 
 # --description--
 
-Construye una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <https://url-shortener-microservice.freecodecamp.rocks/>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
+Crea una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <a href="https://url-shortener-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://url-shortener-microservice.freecodecamp.rocks/</a>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
--   Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-project-urlshortener/) y completa tu proyecto localmente.
--   Usa [nuestro proyecto de inicio en Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener) para completar tu proyecto.
+-   Clone este repositorio de <a href="https://github.com/freeCodeCamp/boilerplate-project-urlshortener/" target="_blank" rel="noopener noreferrer nofollow"> GitHub</a> y complete estos desafíos localmente.
+-   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+Si usas Replit, sigue estos pasos para configurar el proyecto:
+
+-   Empieza importando el proyecto en Replit.
+-   A continuación, verás una ventana de `.replit`.
+-   Selecciona `Use run command` y has clic el botón `Done`.
+
+Una vez que hayas acabado, asegúrate de que un demo funcional del proyecto esté alojado en algún sitio público. Por último, envía la URL mediante el campo `Solution Link`. Opcionalmente, también envía un enlace para el código fuente de tu proyecto en el campo `GitHub Link`.
 
 # --instructions--
 
@@ -22,7 +28,7 @@ Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté
 
 # --hints--
 
-Debes proporcionar tu propio proyecto, no la URL de ejemplo.
+Debes proporcionar tu propio proyecto, no la URL del ejemplo.
 
 ```js
 (getUserInput) => {
@@ -34,7 +40,7 @@ Debes proporcionar tu propio proyecto, no la URL de ejemplo.
 };
 ```
 
-Puedes publicar una URL en `/api/shorturl` y obtener una respuesta JSON con las propiedades `original_url` y `short_url`. Aquí hay un ejemplo: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
+Puedes POST una URL a `/api/shorturl` y obtener una respuesta JSON con propiedades `original_url` y `short_url`. Aquí hay un ejemplo: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
 async (getUserInput) => {
@@ -88,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-Si pasas una URL inválida que no sigue el formato válido `http://www.example.com` , la respuesta JSON contendrá `{ error: 'invalid url' }`
+Si pasas una URL inválida que no sigue el formato válido `http://www.example.com`, la respuesta JSON contendrá `{ error: 'invalid url' }`
 
 ```js
 async (getUserInput) => {

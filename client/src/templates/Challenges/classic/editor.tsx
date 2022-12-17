@@ -7,7 +7,8 @@ import type {
   editor
   // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
-import { highlightAllUnder } from 'prismjs';
+import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
+import Prism from 'prismjs';
 import React, {
   useEffect,
   Suspense,
@@ -24,12 +25,12 @@ import { debounce } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
+import { saveChallenge } from '../../../redux/actions';
 import {
-  userSelector,
-  saveChallenge,
   isDonationModalOpenSelector,
-  isSignedInSelector
-} from '../../../redux';
+  isSignedInSelector,
+  userSelector
+} from '../../../redux/selectors';
 import {
   ChallengeFiles,
   Dimensions,
@@ -45,31 +46,36 @@ import {
   isFinalProject
 } from '../../../../utils/challenge-types';
 import {
-  canFocusEditorSelector,
-  challengeMetaSelector,
-  consoleOutputSelector,
   executeChallenge,
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  challengeTestsSelector,
   submitChallenge,
   initTests,
-  isResettingSelector,
   stopResetting,
-  isProjectPreviewModalOpenSelector,
   openModal,
+  resetAttempts
+} from '../redux/actions';
+import {
+  attemptsSelector,
+  canFocusEditorSelector,
+  challengeMetaSelector,
+  consoleOutputSelector,
+  challengeTestsSelector,
+  isResettingSelector,
+  isProjectPreviewModalOpenSelector,
   isChallengeCompletedSelector
-} from '../redux';
+} from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
+import { enhancePrismAccessibility } from '../utils/index';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
+  attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
@@ -86,8 +92,10 @@ interface EditorProps {
   initialExt: string;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
+  isMobileLayout: boolean;
   isResetting: boolean;
   isSignedIn: boolean;
+  isUsingKeyboardInTablist: boolean;
   openHelpModal: () => void;
   openResetModal: () => void;
   output: string[];
@@ -97,6 +105,7 @@ interface EditorProps {
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
   stopResetting: () => void;
+  resetAttempts: () => void;
   tests: Test[];
   theme: Themes;
   title: string;
@@ -128,6 +137,7 @@ interface EditorProperties {
 }
 
 const mapStateToProps = createSelector(
+  attemptsSelector,
   canFocusEditorSelector,
   challengeMetaSelector,
   consoleOutputSelector,
@@ -139,6 +149,7 @@ const mapStateToProps = createSelector(
   challengeTestsSelector,
   isChallengeCompletedSelector,
   (
+    attempts: number,
     canFocus: boolean,
     { challengeType }: { challengeType: number },
     output: string[],
@@ -150,6 +161,7 @@ const mapStateToProps = createSelector(
     tests: [{ text: string; testString: string }],
     isChallengeCompleted: boolean
   ) => ({
+    attempts,
     canFocus: open ? false : canFocus,
     challengeType,
     previewOpen,
@@ -173,6 +185,7 @@ const mapDispatchToProps = {
   submitChallenge,
   initTests,
   stopResetting,
+  resetAttempts,
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset')
 };
@@ -232,7 +245,7 @@ const initialData: EditorProperties = {
 
 const Editor = (props: EditorProps): JSX.Element => {
   const { t } = useTranslation();
-  const { editorRef, initTests } = props;
+  const { editorRef, initTests, resetAttempts } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -253,26 +266,22 @@ const Editor = (props: EditorProps): JSX.Element => {
     noteIndex: number;
     shouldPlay: boolean | undefined;
   }>({
-    // eslint-disable-next-line no-undefined
     sampler: undefined,
     noteIndex: 0,
     shouldPlay: store.get('fcc-sound') as boolean | undefined
   });
-  const attemptRef = useRef<{ attempts: number }>({ attempts: 0 });
 
   // since editorDidMount runs once with the initial props object, it keeps a
   // reference to *those* props. If we want it to use the latest props, we can
   // use a ref, since it will be updated on every render.
   const testRef = useRef<Test[]>([]);
   testRef.current = props.tests;
-
-  // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
-  // available files into that order.  i.e. if it's just one file it will
-  // automatically be first, but  if there's jsx and js (for some reason) it
-  //  will be [jsx, js].
+  const attemptsRef = useRef<number>(0);
+  attemptsRef.current = props.attempts;
 
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
+    fontFamily: 'Hack-ZeroSlash, monospace',
     scrollBeyondLastLine: true,
     selectionHighlight: false,
     overviewRulerBorder: false,
@@ -337,9 +346,13 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     if (player.current.shouldPlay && !player.current.sampler) {
       void import('tone').then(tone => {
-        player.current.sampler = new tone.Sampler(
-          editorToneOptions
-        ).toDestination();
+        const newSound = new tone.Sampler(editorToneOptions).toDestination();
+        player.current.sampler = newSound;
+
+        const storedVolume = (store.get('soundVolume') as number) ?? 50;
+        const calculateDecibel = -60 * (1 - storedVolume / 100);
+
+        newSound.volume.value = calculateDecibel;
       });
     }
 
@@ -365,6 +378,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor: editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
   ) => {
+    const { isMobileLayout, isUsingKeyboardInTablist } = props;
     // TODO this should *probably* be set on focus
     editorRef.current = editor;
     dataRef.current.editor = editor;
@@ -372,6 +386,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (hasEditableRegion()) {
       initializeDescriptionAndOutputWidgets();
       addContentChangeListener();
+      resetAttempts();
       showEditableRegion(editor);
     }
 
@@ -392,15 +407,42 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility;
     };
 
+    const isTabTrapped = () => !!(store.get('monacoTabTrapped') ?? true);
+
+    const setTabTrapped = (trapped: boolean) => {
+      // Monaco uses the contextKey 'editorTabMovesFocus' to control how it
+      // reacts to the tab key. Setting this to true allows the user to tab
+      // outside of the editor. If it is false, tab will act inside the editor
+      // (i.e. create spaces).
+      editor.createContextKey('editorTabMovesFocus', !trapped);
+      store.set('monacoTabTrapped', trapped);
+      ariaAlert(
+        `${
+          trapped ? t('editor-alerts.tab-trapped') : t('editor-alerts.tab-free')
+        }`
+      );
+    };
+
+    // By default, Tab will be trapped in the monaco editor, so we only need to
+    // check if the user has turned this off.
+    if (!isTabTrapped()) {
+      setTabTrapped(false);
+    }
+
     const accessibilityMode = storedAccessibilityMode();
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
-    // Users who are using screen readers should not have to move focus from
-    // the editor to the description every time they open a challenge.
-    if (props.canFocus && !accessibilityMode) {
-      focusIfTargetEditor();
-    } else focusOnHotkeys();
+
+    // Focus should not automatically leave the 'Code' tab when using a keyboard
+    // to navigate the tablist.
+    if (!isMobileLayout || !isUsingKeyboardInTablist) {
+      // Users who are using screen readers should not have to move focus from
+      // the editor to the description every time they open a challenge.
+      if (props.canFocus && !accessibilityMode) {
+        focusIfTargetEditor();
+      } else focusOnHotkeys();
+    }
     // Removes keybind for intellisense
     // Private method - hopefully changes with future version
     // ref: https://github.com/microsoft/monaco-editor/issues/102
@@ -426,12 +468,33 @@ const Editor = (props: EditorProps): JSX.Element => {
         newLine.run();
       }
     );
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      '-actions.find',
+      null,
+      () => {}
+    );
+    // Make toggle tab setting in editor permanent
+    const tabFocusHotkeys =
+      OS === 2 /* Macintosh/iOS */
+        ? monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M
+        : monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_M;
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      'editor.action.toggleTabFocusMode',
+      tabFocusHotkeys,
+      () => {
+        setTabTrapped(!isTabTrapped());
+      }
+    );
     /* eslint-enable */
     editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
-      /* eslint-disable no-bitwise */
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter],
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
+      ],
       run: () => {
         if (props.usesMultifileEditor && !isFinalProject(props.challengeType)) {
           if (challengeIsComplete()) {
@@ -456,7 +519,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.addAction({
       id: 'save-editor-content',
       label: 'Save editor content',
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_S
+      ],
       run:
         props.challengeType === challengeTypes.multifileCertProject &&
         props.isSignedIn
@@ -468,7 +534,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.addAction({
       id: 'toggle-accessibility',
       label: 'Toggle Accessibility Mode',
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E],
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_E
+      ],
       run: () => {
         const currentAccessibility = storedAccessibilityMode();
 
@@ -584,15 +653,18 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function tryToExecuteChallenge() {
     props.executeChallenge();
-    attemptRef.current.attempts++;
   }
 
   const tryToSubmitChallenge = submitChallengeDebounceRef.current;
 
-  function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
+  function createLowerJaw(
+    outputNode: HTMLDivElement,
+    editor: editor.IStandaloneCodeEditor
+  ) {
     const { output } = props;
     const isChallengeComplete = challengeIsComplete();
     const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
+
     ReactDOM.render(
       <LowerJaw
         openHelpModal={props.openHelpModal}
@@ -600,15 +672,14 @@ const Editor = (props: EditorProps): JSX.Element => {
         tryToExecuteChallenge={tryToExecuteChallenge}
         hint={output[1]}
         testsLength={props.tests.length}
-        attemptsNumber={attemptRef.current.attempts}
+        attempts={attemptsRef.current}
         challengeIsCompleted={isChallengeComplete}
-        challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
         isEditorInFocus={isEditorInFocus}
         isSignedIn={props.isSignedIn}
+        updateContainer={() => updateOutputViewZone(outputNode, editor)}
       />,
-      outputNode,
-      callback
+      outputNode
     );
   }
 
@@ -617,13 +688,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor || !dataRef.current.outputNode) return;
 
     const outputNode = dataRef.current.outputNode;
-    createLowerJaw(outputNode, () => {
-      if (dataRef.current.outputNode) {
-        updateOutputViewZone(outputNode, editor);
-      }
-    });
+    createLowerJaw(outputNode, editor);
   };
 
+  // TODO: there's a potential performance gain to be had by only updating when
+  // the outputViewZone has actually changed.
   const updateOutputViewZone = (
     outputNode: HTMLDivElement,
     editor: editor.IStandaloneCodeEditor
@@ -666,14 +735,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       )}</span>`;
       jawHeading.appendChild(challengeTitle);
       const checkmark = ReactDOMServer.renderToStaticMarkup(
-        <GreenPass
-          hushScreenReaderText
-          style={{
-            height: '15px',
-            width: '15px',
-            marginLeft: '7px'
-          }}
-        />
+        <GreenPass hushScreenReaderText />
       );
       const completedChallengeHeader = document.createElement('div');
       completedChallengeHeader.innerHTML = checkmark;
@@ -690,7 +752,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
-    highlightAllUnder(desc);
+    Prism.hooks.add('complete', enhancePrismAccessibility);
+    Prism.highlightAllUnder(desc);
 
     domNode.style.userSelect = 'text';
 
@@ -1058,14 +1121,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     return tests.every(test => test.pass && !test.err);
   }
 
-  function challengeHasErrors() {
-    const tests = testRef.current;
-    return tests.some(test => test.err);
-  }
-
-  function resetAttampts() {
-    attemptRef.current.attempts = 0;
-  }
+  // We need to set initialize the tests, but only once
+  useEffect(() => {
+    initTests(props.initialTests);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // runs every update to the editor and when the challenge is reset
   useEffect(() => {
@@ -1084,17 +1144,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       focusIfTargetEditor();
     }
 
-    // Once a challenge has been completed, we don't want changes to the content
-    // to reset the tests since the user is already done with the challenge.
-    if (props.initialTests && !challengeIsComplete())
-      initTests(props.initialTests);
-
     if (hasEditableRegion() && editor) {
       if (props.isResetting) {
         initializeDescriptionAndOutputWidgets();
         updateDescriptionZone();
         showEditableRegion(editor);
-        resetAttampts();
         resetMarginDecorations();
       }
     }

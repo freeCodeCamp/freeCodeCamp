@@ -7,12 +7,11 @@ dashedName: discordian-date
 ---
 
 # --description--
+O calendário gregoriano é um calendário solar com 12 meses de 28-31 dias cada. Uma semana consiste em sete dias e com 52 semanas e 1 dia por ano. O ano consiste em 365 dias, com um dia a mais adicionado a fevereiro nos anos bissextos. Um ano bissexto ocorre a cada quatro anos, exceto para os primeiros três anos de virada de século de cada 400 anos.
 
-O calendário gregoriano é um calendário solar com 12 meses de 28 a 31 dias cada. O ano nos calendários consiste em 365 dias. com um dia a mais adicionado em fevereiro nos anos bissextos, à exceção de três anos que fecham um século a cada 400 anos.
+O <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">calendário discordiano</a> está alinhado ao calendário gregoriano e começa em 1º de janeiro. A semana consiste em cinco dias e com 73 semanas por ano. O ano também consiste em 365 dias, com um dia extra inserido entre o caos 59 e o caos 60 todo ano bissexto.
 
-O <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">calendário discordiano</a> está alinhado ao calendário gregoriano e começa em 1º de janeiro. A sua semana consiste em cinco dias, com 73 semanas por ano. A cada quatro anos no calendário discordiano, um dia extra é inserido entre caos 59 e caos 60.
-
-Os meses, dias de semana e eventos no calendário discordiano são fornecidos assim:
+Os meses, dias de semana, eventos de apóstolos e feriados no calendário discordiano são fornecidos assim:
 
 Estações: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
 
@@ -26,7 +25,7 @@ Feriados: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
 
 Converta uma determinada data do calendário gregoriano para o calendário discordiano.
 
-Observe que, no calendário discordiano, (1º do caos de 3188 YOLD) é equivalente a (1º de janeiro de 2022) no calendário gregoriano.
+Observe que o dia Chaos 1, 3188 YOLD (1º do Caos de 3188) do calendário discordiano é o dia 1 de janeiro de 2022 do calendário gregoriano.
 
 # --hints--
 

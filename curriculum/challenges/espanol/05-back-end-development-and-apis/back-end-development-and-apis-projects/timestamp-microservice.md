@@ -8,15 +8,21 @@ dashedName: timestamp-microservice
 
 # --description--
 
-Construye una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <https://timestamp-microservice.freecodecamp.rocks/>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
+Crea una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <a href="https://timestamp-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://timestamp-microservice.freecodecamp.rocks/</a>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
--   Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-project-timestamp/) y completa tu proyecto localmente.
--   Usa [nuestro proyecto de inicio en Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp) para completar tu proyecto.
+-   Clone este repositorio de <a href="https://github.com/freeCodeCamp/boilerplate-project-timestamp/"  target="_blank" rel="noopener noreferrer nofollow"> GitHub</a> y complete estos desafíos localmente.
+-   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp"  target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+Si usas Replit, sigue estos pasos para configurar el proyecto:
 
-**Nota:** El propósito de este proyecto no es la versión de zonas horarias, por lo que asume que todas las fechas válidas enviadas serán analizadas con `new Date()` como fechas GMT.
+-   Empieza importando el proyecto en Replit.
+-   A continuación, verás una ventana de `.replit`.
+-   Selecciona `Use run command` y has clic el botón `Done`.
+
+Una vez que hayas acabado, asegúrate de que un demo funcional del proyecto esté alojado en algún sitio público. Por último, envía la URL mediante el campo `Solution Link`. Opcionalmente, también envía un enlace para el código fuente de tu proyecto en el campo `GitHub Link`.
+
+**Nota:** La conversión de zonas horarias no es el propósito de este proyecto, por lo que asumimos que todas las fechas válidas enviadas serán analizadas con `new Date()` como fechas GMT.
 
 # --hints--
 

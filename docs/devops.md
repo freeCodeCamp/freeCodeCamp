@@ -186,10 +186,10 @@ Currently a public beta testing version is available at:
 | :---------- | :------- | :--------------------------------------- |
 | Learn       | English  | <https://www.freecodecamp.dev>           |
 |             | Espanol  | <https://www.freecodecamp.dev/espanol>   |
-|             | Chinese  | <https://chinese.freecodecamp.dev>       |
+|             | Chinese  | <https://www.freecodecamp.dev/chinese>   |
 | News        | English  | <https://www.freecodecamp.dev/news>      |
 | Forum       | English  | <https://forum.freecodecamp.dev>         |
-|             | Chinese  | <https://chinese.freecodecamp.dev/forum> |
+|             | Chinese  | <https://freecodecamp.dev/chinese/forum> |
 | API         | -        | `https://api.freecodecamp.dev`           |
 
 > [!NOTE]
@@ -482,7 +482,7 @@ Provisioning VMs with the Code
 7. Build the server
 
    ```console
-   npm run create:config && npm run build:curriculum && npm run build:server
+   npm run prebuild && npm run build:curriculum && npm run build:server
    ```
 
 8. Start Instances
@@ -564,8 +564,8 @@ Provisioning VMs with the Code
 
    ```console
    npm i -g npm@8
-   npm i -g pm2
-   npm install -g serve
+   npm i -g pm2@4
+   npm install -g serve@13
    pm2 install pm2-logrotate
    pm2 startup
    ```
@@ -583,11 +583,11 @@ Provisioning VMs with the Code
    > Todo: This setup needs to move to S3 or Azure Blob storage
 
    ```console
-   echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
+   echo "serve -c ../serve.json -p 50505 www" > client-start-primary.sh
    chmod +x client-start-primary.sh
    pm2 delete client-primary
    pm2 start  ./client-start-primary.sh --name client-primary
-   echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
+   echo "serve -c ../serve.json -p 52525 www" > client-start-secondary.sh
    chmod +x client-start-secondary.sh
    pm2 delete client-secondary
    pm2 start  ./client-start-secondary.sh --name client-secondary

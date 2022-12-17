@@ -56,7 +56,7 @@ Puedes chequear estas configuraciones yendo a > Idiomas & Librerías > Node.js y
 
 **Docker Desktop para Windows** te permite instalar y ejecutar bases de datos como MongoDB y otros servicios como NGNIX y más. Esto sirve para evitar trampas cuando se instala Mongo DB u otros servicios directamente desde Windows o WSL2.
 
-Sigue las instrucciones en la [documentación oficial](https://docs.docker.com/docker-for-windows/install) e instala Docker Desktop para Windows.
+Follow the instructions on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
 Hay unos requrimientos mínimos de hardware para una mejor experiencia.
 
@@ -127,7 +127,7 @@ Ahora que has instalado los requisitos previos, sigue[nuestra guía de configura
 
 ## Enlaces útiles
 
-- [Configuración de desarrollador de WSL2 con Ubuntu 20.04, Node.js, MongoDB, VS Code y Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - un artículo de Mrugesh Mohapatra (desarrollador de Staff en freeCodeCamp.org)
+- [Una configuración de desarrollador de WSL2 con Ubuntu 20.04, Node.js, MongoDB, VS Code y Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - un artículo de Mrugesh Mohapatra (Staff Developer en freeCodeCamp.org)
 - Preguntas frecuentes sobre:
   - [Subsistema de Windows para Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop para Windows](https://docs.docker.com/docker-for-windows/faqs)

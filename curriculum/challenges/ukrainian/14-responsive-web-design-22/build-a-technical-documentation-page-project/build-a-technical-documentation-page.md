@@ -28,7 +28,7 @@ dashedName: build-a-technical-documentation-page
 1. На пристроях звичайного розміру (портативний чи настільний комп'ютер) елемент з `id="navbar"` повинен відображатись ліворуч на екрані та завжди бути видимим для користувача
 1. Ваша технічна документація повинна використовувати принаймні один медіазапит
 
-Виконайте розповідь користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
+Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
 
 **Примітка:** Переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
 
@@ -421,7 +421,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
           equations:<br /><br />
           <code>y = 3x | y - 6 = x</code>
           A system of equations IS solvable, but it is a multi-step process. To
-          get started, we need to chose a variable we are solving for. Let's
+          get started, we need to choose a variable we are solving for. Let's
           solve for "x" first. From the second equation, we know that "x" equals
           "y - 6", but we cannot simplify that further because we do not have a
           value for "y". Except, thanks to the system of equations, we DO have a

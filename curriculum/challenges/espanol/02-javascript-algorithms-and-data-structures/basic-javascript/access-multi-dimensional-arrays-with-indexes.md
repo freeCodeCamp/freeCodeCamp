@@ -9,7 +9,7 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-Se puede pensar que un arreglo <dfn>multidimensional</dfn> es como un *arreglo de arreglos*. Cuando usas corchetes para acceder a tu arreglo, el primer par de corchetes se refiere a las entradas en el arreglo externo (el primer nivel) y cada par adicional de corchetes se refiere al siguiente nivel de entradas.
+Se puede pensar que un arreglo <dfn>multidimensional</dfn> es como un *arreglo de arreglos*. Cuando usas corchetes para acceder a un arreglo, el primer par de corchetes hace referencia a los elementos del arreglo más externo (el primer nivel), y cada par adicional va haciendo referencia a un nivel más interno.
 
 **Ejemplo**
 
@@ -21,12 +21,12 @@ const arr = [
   [[10, 11, 12], 13, 14]
 ];
 
-arr[3];
-arr[3][0];
-arr[3][0][1];
+const subarray = arr[3];
+const nestedSubarray = arr[3][0];
+const element = arr[3][0][1];
 ```
 
-`arr[3]` es `[[10, 11, 12], 13, 14]`, `arr[3][0]` es `[10, 11, 12]` y `arr[3][0][1]` es `11`.
+En este ejemplo, `subarray` tiene el valor `[[10, 11, 12], 13, 14]`, `nestedSubarray` tiene el valor `[10, 11, 12]`, y `element` tiene el valor `11`.
 
 **Nota:** No debe haber ningún espacio entre el nombre del arreglo y los corchetes, ni `array [0][0]` o `array [0] [0]` están permitidos. Aunque JavaScript pueda procesar esto correctamente, puedes confundir a otros programadores al leer tu código.
 

@@ -9,13 +9,20 @@ dashedName: port-scanner
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>. 
+
+-   Start by importing the project on Replit. 
+-   Next, you will see a `.replit` window. 
+-   Select `Use run command` and click the `Done` button. 
+
 
 We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
-- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Video Course</a> (10 hours)
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
 
 # --instructions--
 

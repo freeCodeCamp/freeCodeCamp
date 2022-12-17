@@ -1,6 +1,6 @@
 ---
 id: 5e601c775ac9d0ecd8b94aff
-title: Secure Real Time Multiplayer Game
+title: Juego multijugador seguro en tiempo real
 challengeType: 4
 forumTopicId: 462375
 dashedName: secure-real-time-multiplayer-game
@@ -8,15 +8,32 @@ dashedName: secure-real-time-multiplayer-game
 
 # --description--
 
-Develop a 2D real time multiplayer game using the HTML Canvas API and [Socket.io](https://socket.io/) that is functionally similar to this: <https://secure-real-time-multiplayer-game.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+Desarrolla un juego multijugador en tiempo real en 2D utilizando HTML Canvas API y Socket.io que sea funcionalmente similar a este: <a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clona <a href="https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">este repositorio de GitHub</a> y completa tu proyecto localmente.
+-   Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto inicial de Replit</a> para completar tu proyecto.
+-   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio GitHub.
+
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
+
+Create a secure multiplayer game in which each player can move their avatar, there is at least one collectible item, and the rank of the players is calculated based on their score.
+
+For details consult the tests below.
+
+Make sure that your game is secure! Include these security measures:
+
+- The client should not be able to guess/sniff the MIME type
+- Prevent XSS attacks
+- Do not cache anything from the website in the client
+- The headers say that the site is powered by `PHP 7.4.3`
 
 **Note**: `helmet@^3.21.3` is needed for the user stories. This means you will need to use the previous version of Helmet's docs, for information on how to achieve the user stories.
 

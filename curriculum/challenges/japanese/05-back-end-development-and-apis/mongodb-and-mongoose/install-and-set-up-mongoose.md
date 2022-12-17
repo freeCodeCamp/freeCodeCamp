@@ -10,19 +10,29 @@ dashedName: install-and-set-up-mongoose
 
 チャレンジに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
-- [GitHub レポジトリ](https://github.com/freeCodeCamp/boilerplate-mongomongoose/)をクローンし、ローカル環境でチャレンジを完了させる。
-- [Replit 始動プロジェクト](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose)を使用してチャレンジを完了させる。
+- <a href="https://github.com/freeCodeCamp/boilerplate-mongomongoose/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でプロジェクトを完了させる。
+- <a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、チャレンジを完了させる。
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。
+If you use Replit, follow these steps to set up the project:
 
-このチャレンジでは、MongoDB の Atlas データベースを設定し、それに接続するために必要なパッケージをインポートします。
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
-<a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' rel='noopener noreferrer' target='_blank'>チュートリアル</a>に従い、ホストされたデータベースを MongoDB Atlas に設定してください。
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+
+In this challenge, you will set up a MongoDB Atlas database and import the required packages to connect to it.
+
+Follow <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' target="_blank" rel="noopener noreferrer nofollow">this tutorial</a> to set up a hosted database on MongoDB Atlas.
 
 # --instructions--
 
-`mongodb@~3.6.0` と `mongoose@~5.4.0` をプロジェクトの `package.json` に追加してください。 次に、`myApp.js` で `mongoose` を require してください。 `.env` ファイルを作成し、`MONGO_URI` 変数を追加してください。 変数の値は、MongoDB Atlas データベースの URI である必要があります。 URI は一重引用符または二重引用符で囲んでください。また、環境変数では `=` の前後に空白を使用できないことに注意してください。 たとえば、`MONGO_URI='VALUE'` などとします。 完了したら、次のシンタックスを使用してデータベースに接続してください。
+`mongoose@^5.11.15` has been added to your project’s `package.json` file. First, require mongoose as `mongoose` in `myApp.js`. Next, create a `.env` file and add a `MONGO_URI` variable to it. Its value should be your MongoDB Atlas database URI. Be sure to surround the URI with single or double quotes, and remember that you can't use spaces around the `=` in environment variables. For example, `MONGO_URI='VALUE'`.
+
+**Note:** If you are using Replit, you cannot create a `.env` file. Instead, use the built-in <dfn>SECRETS</dfn> tab to add the variable. <em>Do not</em> surround the values with quotes when using the <em>SECRETS</em> tab.
+
+When you are done, connect to the database using the following syntax:
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -30,22 +40,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --hints--
 
-「mongodb」依存関係が package.json にある必要があります。
-
-```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/file/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(packJson.dependencies, 'mongodb');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
-```
-
-「mongoose」依存関係が package.json にある必要があります。
+"mongoose version ^5.11.15" dependency should be in package.json
 
 ```js
 (getUserInput) =>
@@ -53,6 +48,11 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
     (data) => {
       var packJson = JSON.parse(data);
       assert.property(packJson.dependencies, 'mongoose');
+      assert.match(
+        packJson.dependencies.mongoose,
+        /^\^5\.11\.15/,
+        'Wrong version of "mongoose". It should be ^5.11.15'
+      );
     },
     (xhr) => {
       throw new Error(xhr.responseText);
@@ -60,7 +60,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
   );
 ```
 
-「mongoose」をデータベースに接続する必要があります。
+"mongoose" should be connected to a database
 
 ```js
 (getUserInput) =>

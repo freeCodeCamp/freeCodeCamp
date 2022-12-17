@@ -7,7 +7,7 @@ import type { Dispatch } from 'redux';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
-import { executeGA } from '../../../redux';
+import { executeGA } from '../../../redux/actions';
 import { SuperBlocks } from '../../../../../config/certification-settings';
 import { ExecuteGaArg } from '../../../pages/donate';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
@@ -23,8 +23,6 @@ interface Challenges {
   superBlock: SuperBlocks;
   blockTitle?: string | null;
 }
-
-const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
 function Challenges({
   challengesWithCompleted,
@@ -44,11 +42,7 @@ function Challenges({
     });
 
   const renderCheckMark = (isCompleted: boolean) =>
-    isCompleted ? (
-      <GreenPass style={mapIconStyle} />
-    ) : (
-      <GreenNotCompleted style={mapIconStyle} />
-    );
+    isCompleted ? <GreenPass /> : <GreenNotCompleted />;
 
   const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
 

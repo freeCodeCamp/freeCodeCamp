@@ -8,11 +8,11 @@ dashedName: test-if-a-variable-or-function-is-defined
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного початкового проєкту на [ Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) або копіюється з [ GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#2` в наборі `Basic Assertions` змініть кожний `assert` на `assert.isDefined()` або `assert.isUndefined()` щоб полегшити проходження тесту (варто оцінювати як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#2` в наборі `Basic Assertions` змініть кожний `assert` на `assert.isDefined()` або `assert.isUndefined()`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -30,7 +30,7 @@ dashedName: test-if-a-variable-or-function-is-defined
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження `isDefined` або `isUndefined`.
+Ви повинні обрати правильний метод для першого твердження: `isDefined` або `isUndefined`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ dashedName: test-if-a-variable-or-function-is-defined
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження `isDefined` або `isUndefined`.
+Ви повинні обрати правильний метод для другого твердження: `isDefined` або `isUndefined`.
 
 ```js
 (getUserInput) =>
@@ -66,7 +66,7 @@ dashedName: test-if-a-variable-or-function-is-defined
   );
 ```
 
-Потрібно обрати правильний метод для третього твердження `isDefined` або `isUndefined`.
+Ви повинні обрати правильний метод для третього твердження: `isDefined` або `isUndefined`.
 
 ```js
 (getUserInput) =>

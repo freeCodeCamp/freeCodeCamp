@@ -181,10 +181,10 @@ Actualmente una versión de prueba beta pública está disponible en:
 |:---------- |:------- |:---------------------------------------- |
 | Aprende    | Inglés  | <https://www.freecodecamp.dev>           |
 |            | Español | <https://www.freecodecamp.dev/espanol>   |
-|            | Chino   | <https://chinese.freecodecamp.dev>       |
+|            | Chino   | <https://www.freecodecamp.dev/chinese>   |
 | Noticias   | Inglés  | <https://www.freecodecamp.dev/news>      |
 | Foro       | Inglés  | <https://forum.freecodecamp.dev>         |
-|            | Chino   | <https://chinese.freecodecamp.dev/forum> |
+|            | Chino   | <https://freecodecamp.dev/chinese/forum> |
 | API        | -       | `https://api.freecodecamp.dev`           |
 
 > [!NOTE] El nombre de dominio es diferente a **`freeCodeCamp.org`**. Esto es intencional para evitar la indexación de los motores de búsqueda y evitar confusiones para los usuarios habituales de la plataforma.
@@ -197,7 +197,7 @@ Actualmente una versión de prueba beta pública está disponible en:
 
 El equipo de desarrollo fusiona los cambios de la rama  `prod-staging` a `prod-current` cuando publican los cambios. El commit más reciente debe ser lo que ves en vivo en el sitio.
 
-Puedes identificar la versión exacta desplegada visitando los registros de compilación y despliegue disponibles en la sección de estado. Alternatively you can also ping us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) for a confirmation.
+Puedes identificar la versión exacta desplegada visitando los registros de compilación y despliegue disponibles en la sección de estado. Adicionalmente, también puedes contactarnos en la [sala de chat de contribuyentes](https://discord.gg/PRyKn3Vbay) para obtener una confirmación.
 
 ### Limitaciones Conocidas
 
@@ -459,7 +459,7 @@ Aprovisionamiento de MVs con el código
 7. Compila el servidor
 
    ```console
-   npm run create:config && npm run build:curriculum && npm run build:server
+   npm run prebuild && npm run build:curriculum && npm run build:server
    ```
 
 8. Inicia las Instancias
@@ -537,8 +537,8 @@ Aprovisionamiento de MVs con el código
 
    ```console
    npm i -g npm@8
-   npm i -g pm2
-   npm install -g serve
+   npm i -g pm2@4
+   npm install -g serve@13
    pm2 install pm2-logrotate
    pm2 startup
    ```
@@ -555,11 +555,11 @@ Aprovisionamiento de MVs con el código
    > Todo: Esta configuración debe moverse a S3 o al almacenamiento de Azure Blob 
    > 
    > ```console
-   >    echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
+   >    echo "serve -c ../serve.json -p 50505 www" > client-start-primary.sh
    >    chmod +x client-start-primary.sh
    >    pm2 delete client-primary
    >    pm2 start  ./client-start-primary.sh --name client-primary
-   >    echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
+   >    echo "serve -c ../serve.json -p 52525 www" > client-start-secondary.sh
    >    chmod +x client-start-secondary.sh
    >    pm2 delete client-secondary
    >    pm2 start  ./client-start-secondary.sh --name client-secondary

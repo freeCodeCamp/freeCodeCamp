@@ -1,26 +1,33 @@
 ---
 id: af4afb223120f7348cdfc9fd
-title: Мапа Debris
-challengeType: 5
+title: Карта орбіт
+challengeType: 1
 forumTopicId: 16021
 dashedName: map-the-debris
 ---
 
 # --description--
 
-Повернути новий масив, який трансформує середню висоту елементів у їхні орбітальні періоди (у секундах).
+Згідно з третім законом Кеплера, орбітальний період $T$ двох точкових мас, що обертаються навколо одна одної по круговій або еліптичній орбіті, є:
 
-Масив буде містити об'єкти у форматі `{name: 'name', avgAlt: avgAlt}`.
+$$ T = 2 \pi \sqrt{\frac{a^{3}}{\mu}} $$
 
-Ви можете прочитати про орбітальні періоди [у Вікіпедії](http://en.wikipedia.org/wiki/Orbital_period).
+- $a$ – велика піввісь орбіти
+- $μ = GM$ – стандартний гравітаційний параметр
+- $G$ – гравітаційна стала,
+- $M$ – маса масивнішого тіла.
 
-Значення потрібно округлити до найближчого цілого числа. Тіло, що знаходиться на орбіті - це Земля.
+Поверніть новий масив, який трансформує середню висоту елементів у їхні орбітальні періоди (у секундах).
 
-Радіус Землі - 6367.4447 кілометрів, а значення GM Землі - 398600.4418 km<sup>3</sup>s<sup>-2</sup>.
+Масив міститиме об'єкти у форматі `{name: 'name', avgAlt: avgAlt}`.
+
+Значення потрібно округлити до найближчого цілого числа. Тіло, навколо якого потрібно обертатися, – Земля.
+
+Радіус Землі становить 6367.4447 кілометрів, а значення GM Землі – 398600.4418 км<sup>3</sup>с<sup>-2</sup>.
 
 # --hints--
 
-`orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])` повинен повертатися як `[{name: "sputnik", orbitalPeriod: 86400}]`.
+`orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])` повинен повертати `[{name: "sputnik", orbitalPeriod: 86400}]`.
 
 ```js
 assert.deepEqual(orbitalPeriod([{ name: 'sputnik', avgAlt: 35873.5553 }]), [
@@ -28,7 +35,7 @@ assert.deepEqual(orbitalPeriod([{ name: 'sputnik', avgAlt: 35873.5553 }]), [
 ]);
 ```
 
-`orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])` повинен повертатися як `[{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]`.
+`orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])` повинен повертати `[{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]`.
 
 ```js
 assert.deepEqual(

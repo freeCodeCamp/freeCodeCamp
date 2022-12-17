@@ -8,7 +8,12 @@ dashedName: budget-app
 
 # --description--
 
-このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-budget-app)を使用して作業を行います。
+<a href="https://replit.com/github/freeCodeCamp/boilerplate-budget-app" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用します</a>。
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 
 # --instructions--
 
@@ -26,7 +31,7 @@ When the budget object is printed it should display:
 - A list of the items in the ledger. Each line should show the description and amount. The first 23 characters of the description should be displayed, then the amount. The amount should be right aligned, contain two decimal places, and display a maximum of 7 characters.
 - A line displaying the category total.
 
-Here is an example of the output:
+出力の例を次に示します。
 
 ```bash
 *************Food*************
@@ -37,13 +42,13 @@ Transfer to Clothing    -50.00
 Total: 923.96
 ```
 
-Besides the `Category` class, create a function (outside of the class) called `create_spend_chart` that takes a list of categories as an argument. It should return a string that is a bar chart.
+`Category` クラスの他に、カテゴリのリストを引数に取る `create_spend_chart` という関数を (クラスの外で) 作成してください。 この関数は棒グラフとなる文字列を返す必要があります。
 
-The chart should show the percentage spent in each category passed in to the function. The percentage spent should be calculated only with withdrawals and not with deposits. Down the left side of the chart should be labels 0 - 100. The "bars" in the bar chart should be made out of the "o" character. The height of each bar should be rounded down to the nearest 10. The horizontal line below the bars should go two spaces past the final bar. Each category name should be written vertically below the bar. There should be a title at the top that says "Percentage spent by category".
+The chart should show the percentage spent in each category passed in to the function. The percentage spent should be calculated only with withdrawals and not with deposits. Down the left side of the chart should be labels 0 - 100. The "bars" in the bar chart should be made out of the "o" character. 各棒の高さは最も近い 10 に切り下げる必要があります。 The horizontal line below the bars should go two spaces past the final bar. Each category name should be written vertically below the bar. There should be a title at the top that says "Percentage spent by category".
 
-This function will be tested with up to four categories.
+この関数は最大 4 つのカテゴリでテストされます。
 
-Look at the example output below very closely and make sure the spacing of the output matches the example exactly.
+次の出力例を参考にして、出力の間隔を例と正確に合わせてください。
 
 ```bash
 Percentage spent by category
@@ -69,7 +74,7 @@ Percentage spent by category
         g     
 ```
 
-The unit tests for this project are in `test_module.py`.
+このプロジェクトの単体テストは `test_module.py` にあります。
 
 ## 開発
 
@@ -85,7 +90,7 @@ Copy your project's URL and submit it to freeCodeCamp.
 
 # --hints--
 
-It should create a Category class and pass all tests.
+Category クラスを作成し、すべてのテストを成功させる必要があります。
 
 ```js
 
