@@ -45,6 +45,42 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     });
   };
 
+  avoidWindowfloating = (event: Event) => {
+    event.preventDefault();
+  };
+
+  setHtmlHeight = () => {
+    const vh = String(
+      Math.min(window.innerHeight - 1, visualViewport?.height as number)
+    );
+    document.documentElement.style.height = vh + 'px';
+
+    if (
+      navigator.userAgent.match(/iPhone|Android.+Mobile/) &&
+      window.innerHeight - 1 > (visualViewport?.height as number)
+    ) {
+      window.addEventListener('touchmove', this.avoidWindowfloating, {
+        passive: false
+      });
+    } else {
+      window.removeEventListener('touchmove', this.avoidWindowfloating);
+    }
+  };
+
+  componentDidMount() {
+    window.addEventListener('resize', this.setHtmlHeight);
+    visualViewport?.addEventListener('resize', this.setHtmlHeight);
+    this.setHtmlHeight();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.setHtmlHeight);
+    visualViewport?.removeEventListener('resize', this.setHtmlHeight);
+
+    window.removeEventListener('touchmove', this.avoidWindowfloating);
+    document.documentElement.style.height = '100%';
+  }
+
   handleKeyDown = (): void => this.props.updateUsingKeyboardInTablist(true);
 
   handleClick = (): void => this.props.updateUsingKeyboardInTablist(false);
