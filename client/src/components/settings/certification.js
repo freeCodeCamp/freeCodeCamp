@@ -227,7 +227,7 @@ export class CertificationSettings extends Component {
       <FullWidthRow key={certName}>
         <Spacer />
         <h3 className='text-center' id={`cert-${certSlug}`}>
-          {certName}
+          {t(`certTitles:${certName}.title`)}
         </h3>
         <Table>
           <thead>
@@ -266,7 +266,7 @@ export class CertificationSettings extends Component {
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8 col-xs-8'>
             <Link to={link}>
-              {t(`certification.project.title.${title}`, title)}
+              {t(`certTitles:${certName}.projects.${title}`)}
             </Link>
           </td>
           <td className='project-solution col-sm-4 col-xs-4'>
@@ -339,7 +339,9 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={certSlug}>
         <Spacer />
-        <h3 className='text-center'>Legacy Full Stack Certification</h3>
+        <h3 className='text-center'>
+          {t('certTitles:Legacy Full Stack Certification.title')}
+        </h3>
         <div>
           <p>
             {t('settings.claim-legacy', {
@@ -347,12 +349,18 @@ export class CertificationSettings extends Component {
             })}
           </p>
           <ul>
-            <li>Responsive Web Design</li>
-            <li>JavaScript Algorithms and Data Structures</li>
-            <li>Front End Development Libraries</li>
-            <li>Data Visualization</li>
-            <li>Back End Development and APIs</li>
-            <li>Legacy Information Security and Quality Assurance</li>
+            <li>{t('certTitles:Responsive Web Design.title')}</li>
+            <li>
+              {t('certTitles:JavaScript Algorithms and Data Structures.title')}
+            </li>
+            <li>{t('certTitles:Front End Development Libraries.title')}</li>
+            <li>{t('certTitles:Data Visualization.title')}</li>
+            <li>{t('certTitles:Back End Development and APIs.title')}</li>
+            <li>
+              {t(
+                'certTitles:Legacy Information Security and Quality Assurance.title'
+              )}
+            </li>
           </ul>
         </div>
 
