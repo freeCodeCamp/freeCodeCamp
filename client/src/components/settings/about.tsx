@@ -25,7 +25,7 @@ type FormValues = {
 
 type AboutProps = {
   about: string;
-  currentTheme: Themes;
+  currentTheme: Themes | null;
   location: string;
   name: string;
   picture: string;
@@ -34,7 +34,7 @@ type AboutProps = {
   keyboardShortcuts: boolean;
   submitNewAbout: (formValues: FormValues) => void;
   t: TFunction;
-  toggleNightMode: (theme: Themes) => void;
+  toggleNightMode: (theme: Themes | null) => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   username: string;
@@ -78,7 +78,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       picture === formValues.picture &&
       about === formValues.about
     ) {
-      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: {
           name,
