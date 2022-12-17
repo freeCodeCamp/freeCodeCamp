@@ -8,11 +8,11 @@ import { CertificationSettings } from './certification';
 
 const certificationSettings = new CertificationSettings();
 
+certificationSettings.props = { t: t => t };
+
+const { renderCertifications } = certificationSettings;
+
 it('should check legacy certification button consistency', () => {
-  certificationSettings.props = { t: t => t };
-
-  const { renderCertifications } = certificationSettings;
-
   const legacyCertifications = Object.keys(legacyProjectMap);
 
   const tree = renderer.create(
@@ -25,10 +25,6 @@ it('should check legacy certification button consistency', () => {
 });
 
 it('should check certification button consistency', () => {
-  certificationSettings.props = { t: t => t };
-
-  const { renderCertifications } = certificationSettings;
-
   const certifications = Object.keys(projectMap);
 
   const tree = renderer.create(
