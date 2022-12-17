@@ -2,10 +2,10 @@ import React from 'react';
 // import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
 
-import { ControlLabel } from '.';
+import { FormLabel } from '.';
 
-describe('<ControlLabel />', () => {
+describe('<FormLabel />', () => {
   it('should render correctly', () => {
-    <ControlLabel></ControlLabel>;
+    <FormLabel></FormLabel>;
   });
 });

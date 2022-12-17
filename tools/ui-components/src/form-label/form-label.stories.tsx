@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { FormGroup, FormGroupProps } from '.';
+import { FormLabel, FormLabelProps } from '.';
 
 const story = {
-  title: 'Example/FormGroup',
-  component: FormGroup
+  title: 'Example/FormLabel',
+  component: FormLabel
 };
 
-const Template: Story<FormGroupProps> = args => {
-  return <FormGroup {...args} />;
+const Template: Story<FormLabelProps> = args => {
+  return <FormLabel {...args} />;
 };
 
 export const Default = Template.bind({});
