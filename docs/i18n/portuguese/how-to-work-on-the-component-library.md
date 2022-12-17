@@ -91,9 +91,9 @@ Para executar testes contra a biblioteca de componentes, execute o seguinte coma
 npm run test-ui-components
 ```
 
-## Adding packages to the UI-Component library
+## Adicionar pacotes à biblioteca de componentes da UI
 
-We restrict adding new packages to the UI Components to help with the project's maintainability. In the rare chance that you think a dependency is needed, please check with the maintainers first and then use the following command to add a package:
+Restringimos a adição de novos pacotes aos componentes da UI para ajudar com a manutenção do projeto. Na hipótese de você achar que uma dependência é necessária, consulte os gestores primeiro e use o seguinte comando para adicionar um pacote:
 
 ```bash
 npm i -w=tools/ui-components package_name

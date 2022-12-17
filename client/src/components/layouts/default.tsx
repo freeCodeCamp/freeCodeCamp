@@ -39,6 +39,7 @@ import OfflineWarning from '../OfflineWarning';
 import './fonts.css';
 import './global.css';
 import './variables.css';
+import './rtl-layout.css';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
