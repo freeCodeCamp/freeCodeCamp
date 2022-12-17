@@ -57,7 +57,7 @@ const toneUrls = {
   [FlashMessages.WentWrong]: TRY_AGAIN
 } as const;
 
-type ToneStates = keyof typeof toneUrls;
+export type ToneStates = keyof typeof toneUrls;
 
 export async function playTone(state: ToneStates): Promise<void> {
   const playSound = !!store.get('fcc-sound');
