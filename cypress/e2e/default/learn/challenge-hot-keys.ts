@@ -1,4 +1,4 @@
-const selectors = {
+const hotKeySelectors = {
   instructions: '.challenge-instructions',
   instructionsPanel: '.instructions-panel',
   editorContainer: '.monaco-editor',
@@ -78,29 +78,29 @@ describe('The hotkeys should work correctly', () => {
 
   it('should be possible to focus on the editor with pressing "e"', () => {
     cy.visit(links.classic1);
-    cy.get(selectors.editorContainer).click();
+    cy.get(hotKeySelectors.editorContainer).click();
     cy.focused().as('editor').type('{esc}');
-    cy.get(selectors.instructions).click().type('e');
+    cy.get(hotKeySelectors.instructions).click().type('e');
     cy.get('@editor').should('have.focus');
   });
 
   it('should be possible to press ctrl enter to run the test', () => {
     cy.visit(links.classic1);
-    cy.get(selectors.instructions).click().type('{ctrl}{enter}');
-    cy.get(selectors.console).contains('// running tests');
+    cy.get(hotKeySelectors.instructions).click().type('{ctrl}{enter}');
+    cy.get(hotKeySelectors.console).contains('// running tests');
   });
 
   it('should be possible to go to navigation view by pressing escape', () => {
     cy.visit(links.classic1);
-    cy.get(selectors.editorContainer).click();
+    cy.get(hotKeySelectors.editorContainer).click();
     cy.focused().as('editor').type('{esc}');
     cy.get('@editor').should('not.have.focus');
   });
 
   it('it should be possible to focus on the instructions by pressing r', () => {
     cy.visit(links.classic1);
-    cy.get(selectors.editorContainer).type('{esc}');
-    cy.get(selectors.console).click().type('r');
-    cy.get(selectors.instructionsPanel).should('have.focus');
+    cy.get(hotKeySelectors.editorContainer).type('{esc}');
+    cy.get(hotKeySelectors.console).click().type('r');
+    cy.get(hotKeySelectors.instructionsPanel).should('have.focus');
   });
 });

@@ -18,7 +18,7 @@ describe('Donate page', () => {
   ];
 
   it('Should be able to submit projects', () => {
-    const submitProject = str => {
+    const submitProject = (str: string) => {
       cy.visit(
         `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${str}`
       );

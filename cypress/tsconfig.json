@@ -3,6 +3,17 @@
     "target": "es5",
     "lib": ["es5", "dom"]
   },
-  "include": ["e2e/**/*.ts", "support/**/*.ts"],
+  "include": [
+    "e2e/**/*.ts",
+    "support/**/*.ts",
+    "e2e/default/learn/challenges/sass.ts",
+    "e2e/default/learn/challenges/projects.js",
+    "e2e/default/learn/challenges/failed-updates.js",
+    "e2e/default/learn/header/universal-navigation.js",
+    "e2e/default/learn/header/universal-navigation.js",
+    "e2e/default/learn/common-components/searchBar.js",
+    "e2e/default/learn/common-components/searchBar.js",
+    "e2e/default/learn/common-components/navbar.js"
+  ],
   "extends": "../tsconfig-base.json"
 }

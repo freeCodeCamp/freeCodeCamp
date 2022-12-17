@@ -1,8 +1,8 @@
-const selectors = {
+const learnSelectors = {
   challengeMap: "[data-test-label='learn-curriculum-map']"
 };
 
-const locations = {
+const learnLocations = {
   index: '/learn'
 };
 
@@ -24,7 +24,7 @@ const superBlockNames = [
 
 describe('Learn Landing page (not logged in)', () => {
   it('Should render', () => {
-    cy.visit(locations.index);
+    cy.visit(learnLocations.index);
 
     cy.title().should(
       'eq',
@@ -33,7 +33,7 @@ describe('Learn Landing page (not logged in)', () => {
   });
 
   it('Has the correct heading for an unauthenticated User', () => {
-    cy.visit(locations.index);
+    cy.visit(learnLocations.index);
 
     cy.contains('h1', "Welcome to freeCodeCamp's curriculum.");
   });
@@ -41,12 +41,14 @@ describe('Learn Landing page (not logged in)', () => {
   it('Should render a curriculum map', () => {
     cy.document().then(document => {
       const superBlocks = document.querySelectorAll(
-        `${selectors.challengeMap} > li > a`
+        `${learnSelectors.challengeMap} > li > a`
       );
       expect(superBlocks).to.have.length(13);
 
       superBlocks.forEach((superBlock, idx) => {
-        expect(superBlock.innerText).to.have.string(superBlockNames[idx]);
+        expect((superBlock as HTMLElement).innerText).to.have.string(
+          superBlockNames[idx]
+        );
       });
     });
   });

@@ -1,7 +1,7 @@
 const save1text = 'save 1';
 const save2text = 'save 2';
 
-const selectors = {
+const databaseSelectors = {
   editor: '.react-monaco-editor-container',
   saveCodeBtn: '[data-cy="save-code-to-database-btn"]'
 };
@@ -21,8 +21,8 @@ describe('multifileCertProjects', function () {
 
   it('should save and reload user code', function () {
     // save to database (savedChallenges) when clicking save code button
-    cy.get(selectors.editor).click().focused().clear().type(save1text);
-    cy.get(selectors.saveCodeBtn).click();
+    cy.get(databaseSelectors.editor).click().focused().clear().type(save1text);
+    cy.get(databaseSelectors.saveCodeBtn).click();
     cy.contains('Your code was saved to the database.');
     // load saved code on a hard refresh
     cy.reload();
@@ -35,7 +35,7 @@ describe('multifileCertProjects', function () {
     cy.exec('npm run seed');
     // and the redux store:
     cy.reload();
-    cy.get(selectors.editor)
+    cy.get(outputSelectors.editor)
       .click()
       .focused()
       .clear()
@@ -47,7 +47,7 @@ describe('multifileCertProjects', function () {
     cy.contains('Build a Tribute Page').click();
     cy.contains(save2text);
     // trigger the warning about saving too quickly
-    cy.get(selectors.saveCodeBtn).click().click();
+    cy.get(databaseSelectors.saveCodeBtn).click().click();
     cy.contains('Your code was not saved.');
   });
 });
