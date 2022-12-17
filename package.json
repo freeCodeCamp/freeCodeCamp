@@ -153,6 +153,7 @@
     "@types/redux-actions": "2.6.2",
     "@types/sanitize-html": "2.6.2",
     "@types/store": "2.0.2",
+    "@types/testing-library__cypress": "^5.0.9",
     "@types/validator": "13.7.10",
     "@typescript-eslint/eslint-plugin": "5.46.1",
     "@typescript-eslint/parser": "5.46.1",

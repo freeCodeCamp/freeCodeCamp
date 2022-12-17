@@ -1,9 +1,9 @@
-const selectors = {
+const tocSelectors = {
   tableOfContents: '.intro-toc',
   warningMessage: '.flash-message-enter-active'
 };
 
-const locations = {
+const basicLocations = {
   index: '/learn/responsive-web-design/basic-css/'
 };
 
@@ -61,19 +61,19 @@ const warningMessage =
 
 describe('Basic Css Introduction page', function () {
   it('renders', () => {
-    cy.visit(locations.index);
+    cy.visit(basicLocations.index);
 
     cy.title().should('eq', 'Basic CSS | freeCodeCamp.org');
   });
 
   it('renders a warning user about extensions', () => {
-    cy.visit(locations.index);
-    cy.get(selectors.warningMessage).contains(warningMessage);
+    cy.visit(basicLocations.index);
+    cy.get(tocSelectors.warningMessage).contains(warningMessage);
   });
 
   it('renders a lesson index', () => {
     lessonNames.forEach(name => {
-      cy.get(selectors.tableOfContents).contains('span', name);
+      cy.get(tocSelectors.tableOfContents).contains('span', name);
     });
   });
 });

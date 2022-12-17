@@ -1,4 +1,4 @@
-const locations = {
+const responseDesignLocations = {
   chalSuper: '/challenges/responsive-web-design/',
   chalBlock: '/challenges/responsive-web-design/basic-html-and-html5',
   chalChallenge:
@@ -13,32 +13,32 @@ const locations = {
 
 describe('challenges/superblock redirect', function () {
   it('redirects to learn/superblock', () => {
-    cy.visit(locations.chalSuper);
+    cy.visit(responseDesignLocations.chalSuper);
 
     cy.title().should(
       'eq',
       'Legacy Responsive Web Design Certification | freeCodeCamp.org'
     );
     cy.location().should(loc => {
-      expect(loc.pathname).to.eq(locations.learnSuper);
+      expect(loc.pathname).to.eq(responseDesignLocations.learnSuper);
     });
   });
 });
 
 describe('challenges/superblock/block redirect', function () {
   it('redirects to learn/superblock/block', () => {
-    cy.visit(locations.chalBlock);
+    cy.visit(responseDesignLocations.chalBlock);
 
     cy.title().should('eq', 'Basic HTML and HTML5 | freeCodeCamp.org');
     cy.location().should(loc => {
-      expect(loc.pathname).to.eq(locations.learnBlock);
+      expect(loc.pathname).to.eq(responseDesignLocations.learnBlock);
     });
   });
 });
 
 describe('challenges/superblock/block/challenge redirect', function () {
   it('redirects to learn/superblock/block/challenge', () => {
-    cy.visit(locations.chalChallenge);
+    cy.visit(responseDesignLocations.chalChallenge);
 
     cy.title().should(
       'eq',
@@ -46,7 +46,7 @@ describe('challenges/superblock/block/challenge redirect', function () {
       'Basic HTML and HTML5: Say Hello to HTML Elements | freeCodeCamp.org'
     );
     cy.location().should(loc => {
-      expect(loc.pathname).to.eq(locations.learnChallenge);
+      expect(loc.pathname).to.eq(responseDesignLocations.learnChallenge);
     });
   });
 });

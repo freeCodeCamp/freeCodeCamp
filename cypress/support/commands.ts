@@ -33,7 +33,8 @@ const goToSettings = () => {
 };
 
 const typeUsername = (username: string) => {
-  cy.get('@usernameInput')
+  return cy
+    .get('@usernameInput')
     .clear({ force: true })
     .type(username, { force: true });
 };
