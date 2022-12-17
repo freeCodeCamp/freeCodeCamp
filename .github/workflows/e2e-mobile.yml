@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3
 
       - name: Checkout mobile
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3
         with:
           repository: freeCodeCamp/mobile
           path: mobile
