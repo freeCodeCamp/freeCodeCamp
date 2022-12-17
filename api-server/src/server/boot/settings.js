@@ -230,7 +230,7 @@ function updateMySocials(...args) {
 function updateMyTheme(...args) {
   const buildUpdate = body => _.pick(body, 'theme');
   const validate = ({ theme }) =>
-    theme == 'default' || theme == 'night' || theme == 'system';
+    theme === 'default' || theme === 'night' || theme === null;
   createUpdateUserProperties(buildUpdate, validate)(...args);
 }
 

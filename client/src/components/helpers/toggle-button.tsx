@@ -11,8 +11,8 @@ import ToggleCheck from '../../assets/icons/toggle-check';
 interface ButtonProps {
   name: string;
   offLabel: string;
-  onLabel: string;
   onChange: (value: string) => void;
+  onLabel: string;
   value: boolean;
   condition?: boolean;
 }
@@ -25,8 +25,8 @@ function getActiveClass(condition: ActiveClass | unknown) {
 
 export default function ToggleButton({
   name,
-  value,
   onChange,
+  value,
   onLabel = 'On',
   offLabel = 'Off'
 }: ButtonProps): JSX.Element {

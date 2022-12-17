@@ -141,7 +141,7 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
       block,
       superBlock,
       t,
-      theme = null,
+      theme,
       user
     } = this.props;
 
