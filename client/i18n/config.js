@@ -53,13 +53,6 @@ i18n.use(initReactI18next).init({
       if (clientLocale !== 'english') {
         module.exports = require('./locales/' + clientLocale + '/links.json');
       }
-    `,
-      certTitles: preval`
-      const envData = require('../../config/env.json');
-      const { clientLocale } = envData;
-      if (clientLocale !== 'english') {
-        module.exports = require('./locales/' + clientLocale + '/cert-titles.json');
-      }
     `
     },
     en: {
@@ -67,15 +60,14 @@ i18n.use(initReactI18next).init({
       trending: preval`module.exports = require('./locales/english/trending.json')`,
       intro: preval`module.exports = require('./locales/english/intro.json')`,
       metaTags: preval`module.exports = require('./locales/english/meta-tags.json')`,
-      links: preval`module.exports = require('./locales/english/links.json')`,
-      certTitles: preval`module.exports = require('./locales/english/cert-titles.json')`
+      links: preval`module.exports = require('./locales/english/links.json')`
     }
   },
-  ns: ['translations', 'trending', 'intro', 'metaTags', 'links', 'certTitles'],
+  ns: ['translations', 'trending', 'intro', 'metaTags', 'links'],
   defaultNS: 'translations',
   returnObjects: true,
   // Uncomment the next line for debug logging
-  debug: true,
+  // debug: true,
   interpolation: {
     escapeValue: false
   },
