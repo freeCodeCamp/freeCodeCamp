@@ -227,7 +227,7 @@ export class CertificationSettings extends Component {
       <FullWidthRow key={certName}>
         <Spacer />
         <h3 className='text-center' id={`cert-${certSlug}`}>
-          {t(`certTitles:${certName}.title`)}
+          {t(`certification.title.${certName}`, certName)}
         </h3>
         <Table>
           <thead>
@@ -266,7 +266,7 @@ export class CertificationSettings extends Component {
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8 col-xs-8'>
             <Link to={link}>
-              {t(`certTitles:${certName}.projects.${title}`)}
+              {t(`certification.project.title.${title}`, title)}
             </Link>
           </td>
           <td className='project-solution col-sm-4 col-xs-4'>
@@ -340,7 +340,7 @@ export class CertificationSettings extends Component {
       <FullWidthRow key={certSlug}>
         <Spacer />
         <h3 className='text-center'>
-          {t('certTitles:Legacy Full Stack Certification.title')}
+          {t('certification.title.Legacy Full Stack Certification')}
         </h3>
         <div>
           <p>
@@ -349,16 +349,18 @@ export class CertificationSettings extends Component {
             })}
           </p>
           <ul>
-            <li>{t('certTitles:Responsive Web Design.title')}</li>
-            <li>
-              {t('certTitles:JavaScript Algorithms and Data Structures.title')}
-            </li>
-            <li>{t('certTitles:Front End Development Libraries.title')}</li>
-            <li>{t('certTitles:Data Visualization.title')}</li>
-            <li>{t('certTitles:Back End Development and APIs.title')}</li>
+            <li>{t('certification.title.Responsive Web Design')}</li>
             <li>
               {t(
-                'certTitles:Legacy Information Security and Quality Assurance.title'
+                'certification.title.JavaScript Algorithms and Data Structures'
+              )}
+            </li>
+            <li>{t('certification.title.Front End Development Libraries')}</li>
+            <li>{t('certification.title.Data Visualization')}</li>
+            <li>{t('certification.title.Back End Development and APIs')}</li>
+            <li>
+              {t(
+                'certification.title.Legacy Information Security and Quality Assurance'
               )}
             </li>
           </ul>
