@@ -10,7 +10,7 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 请注意，本项目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化项目的基础上进行开发，你也可以从 <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
 
-在这个挑战中，我们要重点讨论现代浏览器中一种能有效减轻安全风险和防御很多种类型常见攻击的安全防护。 通过设置和配置内容安全策略，你可以防止在页面中无意中注入任何内容。 这会让你的应用远离 XSS 漏洞、恶意追踪、恶意 frames 和很多其他攻击。 CSP 通过配置资源白名单来避免这些问题。 你可以给任何一种类型的页面资源（脚本、样式文件、字体、frames、媒体文件等）做这个配置。 它支持很多指令，所以网站管理员可以做细致的控制。 更多详情请参考 HTML 5 Rocks 和 KeyCDN。 Unfortunately CSP is unsupported by older browsers.
+在这个挑战中，我们要重点讨论现代浏览器中一种能有效减轻安全风险和防御很多种类型常见攻击的安全防护。 通过设置和配置内容安全策略，你可以防止在页面中无意中注入任何内容。 这会让你的应用远离 XSS 漏洞、恶意追踪、恶意 frames 和很多其他攻击。 CSP 通过配置资源白名单来避免这些问题。 你可以给任何一种类型的页面资源（脚本、样式文件、字体、frames、媒体文件等）做这个配置。 它支持很多指令，所以网站管理员可以做细致的控制。 更多详情请参考 HTML 5 Rocks 和 KeyCDN。 不幸的是，一些旧的浏览器不支持 CSP。
 
 默认的指令很容易受到攻击, 所以设置 defaultSrc 指令作为降级方案很重要。 Helmet 同时支持 defaultSrc 和 default-src 命名规范。 降级方案可以应用在大部分指令上。
 

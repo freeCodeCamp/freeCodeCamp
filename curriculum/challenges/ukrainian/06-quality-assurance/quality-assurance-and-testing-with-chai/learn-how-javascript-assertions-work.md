@@ -1,6 +1,6 @@
 ---
 id: 587d824a367417b2b2512c46
-title: Дізнайтесь як працює твердження JavaScript
+title: Дізнайтесь, як працюють твердження JavaScript
 challengeType: 2
 forumTopicId: 301589
 dashedName: learn-how-javascript-assertions-work
@@ -24,11 +24,11 @@ dashedName: learn-how-javascript-assertions-work
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#1` в наборі `Basic Assertions` змініть кожний `assert` на `assert.isNull` або `assert.isNotNull`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
-All tests should pass.
+Всі тести повинні бути успішно пройдені.
 
 ```js
 (getUserInput) =>
@@ -42,7 +42,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isNull` vs. `isNotNull`.
+Ви повинні обрати правильний метод для першого твердження: `isNull` або `isNotNull`.
 
 ```js
 (getUserInput) =>
@@ -56,7 +56,7 @@ You should choose the correct method for the first assertion - `isNull` vs. `isN
   );
 ```
 
-You should choose the correct method for the second assertion - `isNull` vs. `isNotNull`.
+Ви повинні обрати правильний метод для другого твердження: `isNull` або `isNotNull`.
 
 ```js
 (getUserInput) =>

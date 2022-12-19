@@ -1,6 +1,6 @@
 ---
 id: 587d824c367417b2b2512c4c
-title: Підтвердження глибокої рівності за допомогою .deepEqual та .notDeepEqual
+title: Підтвердьте глибоку рівність за допомогою .deepEqual та .notDeepEqual
 challengeType: 2
 forumTopicId: 301587
 dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
@@ -8,17 +8,17 @@ dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>  or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>  або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`deepEqual()` підтверджує, що два об'єкти дуже однакові.
+`deepEqual()` підтверджує, що два об'єкти однакові.
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#7` в наборі `Equality` змініть кожний `assert` на `assert.deepEqual` або `assert.notDeepEqual`, щоб полегшити проходження тесту (варто оцінювати як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#7` в наборі `Equality` змініть кожний `assert` на `assert.deepEqual` або `assert.notDeepEqual`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
-Необхідно пройти всі тести.
+Всі тести повинні бути успішно пройдені.
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ As a reminder, this project is being built upon the following starter project on
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження `deepEqual` або `notDeepEqual`.
+Ви повинні обрати правильний метод для першого твердження: `deepEqual` або `notDeepEqual`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ As a reminder, this project is being built upon the following starter project on
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження `deepEqual` або `notDeepEqual`.
+Ви повинні обрати правильний метод для другого твердження: `deepEqual` або `notDeepEqual`.
 
 ```js
 (getUserInput) =>

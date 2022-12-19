@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b62
-title: تنفيذ دالة map على Prototype
+title: تنفيذ طريقة map في Prototype
 challengeType: 1
 forumTopicId: 301230
 dashedName: implement-map-on-a-prototype
@@ -8,7 +8,7 @@ dashedName: implement-map-on-a-prototype
 
 # --description--
 
-كما رأيتم من تطبيق `Array.prototype.map()`، أو `map()` من قبل، فطريقة `map` تنتج قائمة (array) من نفس طول القائمة (array) التي تم تفعيل الطريقة عليها. وهي إلى ذلك لا تغير القائمة (array) الأصلية، مادام أن وظيفتها لإعادة التفعيل (callback function) لا تفعل ذلك.
+كما رأيتم من تطبيق `Array.prototype.map()`، أو `map()` من قبل، فطريقة `map` تنتج قائمة (array) من نفس طول القائمة (array) التي تم تفعيل الطريقة (method) عليها. وهي إلى ذلك لا تغير القائمة (array) الأصلية، مادام أن وظيفتها لإعادة التفعيل (callback function) لا تفعل ذلك.
 
 بمعنى آخر، `map` هي وظيفة خالصة (pure function)، ومخرجها يعتمد فقط على مدخلاتها. إضافةً إلى ذلك، فإنها تأخذ وظيفة أخرى كوسيط (argument) لها.
 
@@ -16,7 +16,7 @@ dashedName: implement-map-on-a-prototype
 
 # --instructions--
 
-اكتب `Array.prototype.myMap()` الخاص بك، والذي يجب أن يتصرف مثل `Array.prototype.map()`. يجب ألا تستخدم طريقة `map` مبنية داخلياً (built-in method). يمكن الوصول إلى مثيل (instance) `Array` في طريقة `myMap` باستخدام `this`.
+اكتب `Array.prototype.myMap()` الخاص بك، الذي يجب أن يقلد مثل `Array.prototype.map()`. يجب ألا تستخدم طريقة `map` مبنية داخلياً (built-in method). يمكن الوصول إلى مثيل (instance) `Array` في طريقة `myMap` باستخدام `this`.
 
 # --hints--
 

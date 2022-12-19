@@ -14,25 +14,25 @@ dashedName: install-and-require-helmet
 - 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成这些挑战。
 - 使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
-If you use Replit, follow these steps to set up the project:
+如果你使用 Replit，请按照以下步骤设置项目：
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 `Solution Link` 字段中。
 
-Helmet helps you secure your Express apps by setting various HTTP headers.
+Helmet 通过设置各种 HTTP 头来保护你的 Express 应用程序。
 
 # --instructions--
 
-All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
+你在这些课程中写的所有代码都在 `myApp.js` 文件中，在初始代码之间。 不要改变或删除我们为你添加的代码。
 
-Helmet version `3.21.3` has already been installed, so require it as `helmet` in `myApp.js`.
+Helmet `3.21.3` 版已经安装完毕，所以在 `myApp.js` 中请求它作为 `helmet`。
 
 # --hints--
 
-`helmet` version `3.21.3` should be in `package.json`
+`helmet` 版本 `3.21.3` 应该在 `package.json` 中。
 
 ```js
 (getUserInput) =>

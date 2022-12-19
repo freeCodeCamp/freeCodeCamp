@@ -16,13 +16,13 @@ Trabajar en este proyecto implicará escribir tu código utilizando uno de los s
 -   Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">nuestra plantilla en Replit</a> para completar tu proyecto.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Si usas Replit, sigue estos pasos para configurar el proyecto:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Empieza importando el proyecto en Replit.
+-   Siguiente, verás una ventana`.replit`.
+-   Selecciona `Use run command` y da click en el botón `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Cuando lo hayas hecho, asegurate que haya una demo de trabajo de tu proyecto hospedada en un sitio público. Luego envía la URL para esta en el campo `Solution Link`. Opcionalmente, además envía un enlace del código fuente de tu proyecto en el campo`GitHub Link`.
 
 # --instructions--
 
@@ -30,22 +30,22 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 2.  Se recomienda crear controladores/manejadores y manejar el enrutamiento en `routes/api.js`
 3.  Añadirás cualquier característica de seguridad a `server.js`
 
-Write the following tests in `tests/2_functional-tests.js`:
+Escribe las siguientes pruebas en `tests/2_functional-tests.js`:
 
--   Creating a new thread: POST request to `/api/threads/{board}`
--   Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
--   Deleting a thread with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
--   Deleting a thread with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
--   Reporting a thread: PUT request to `/api/threads/{board}`
--   Creating a new reply: POST request to `/api/replies/{board}`
--   Viewing a single thread with all replies: GET request to `/api/replies/{board}`
--   Deleting a reply with the incorrect password: DELETE request to `/api/replies/{board}` with an invalid `delete_password`
--   Deleting a reply with the correct password: DELETE request to `/api/replies/{board}` with a valid `delete_password`
--   Reporting a reply: PUT request to `/api/replies/{board}`
+-   Creando un nuevo hilo: POST petición a `/api/threads/{board}`
+-   Visualización de los 10 más recientes hilos con 3 respuestas cada: GET petición a `/api/threads/{board}`
+-   Eliminar un hilo con la contraseña incorrecta: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
+-   Eliminar un hilo con la contraseña correcta: DELETE request to `/api/threads/{board}` with a valid `delete_password`
+-   Reportando un hilo: petición PUT a `/api/threads/{board}`
+-   Creando una nueva contestación: petición POST a`/api/replies/{board}`
+-   Visualizando un único hilo con todas las contestaciones: GET peticiones hacia `/api/replies/{board}`
+-   Eliminando una respuesta con la contraseña incorrecta: DELETE request to `/api/replies/{board}` with an invalid `delete_password`
+-   Eliminando una respuesta con la contraseña correcta: DELETE request to `/api/replies/{board}` with a valid `delete_password`
+-   Reporte de una respuesta: solicitud PUT a`/api/replies/{board}`
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Puedes proporcionar tu propio proyecto, no la URL ejemplo.
 
 ```js
 (getUserInput) => {
@@ -57,7 +57,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-Only allow your site to be loaded in an iFrame on your own pages.
+Solo permitele a tu sitio ser cargado dentro de un iFrame sobre tus propias páginas.
 
 ```js
 async (getUserInput) => {
@@ -67,7 +67,7 @@ async (getUserInput) => {
 };
 ```
 
-Do not allow DNS prefetching.
+No se permite DNS prefetching.
 
 ```js
 async (getUserInput) => {
@@ -77,7 +77,7 @@ async (getUserInput) => {
 };
 ```
 
-Only allow your site to send the referrer for your own pages.
+Solo permite a tu sitio enviar a lo concerniente para tus propias páginas.
 
 ```js
 async (getUserInput) => {
@@ -87,7 +87,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a POST request to `/api/threads/{board}` with form data including `text` and `delete_password`. The saved database record will have at least the fields `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
+Puedes enviar una petición POST a `/api/threads/{board}` con el formulario de datos incluyendo `text` and `delete_password`. El registo de base de datos tendrá al menos los campos: `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
 
 ```js
 async (getUserInput) => {
@@ -119,7 +119,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a POST request to `/api/replies/{board}` with form data including `text`, `delete_password`, & `thread_id`. This will update the `bumped_on` date to the comment's date. In the thread's `replies` array, an object will be saved with at least the properties `_id`, `text`, `created_on`, `delete_password`, & `reported`.
+Puedes enviar una petición POST a `/api/replies/{board}` con el fomulario de datos incluyendo:`text`, `delete_password`, & `thread_id`. Esto actualizará la fecha `bumped_on` en la fecha de comentarios. En el arreglo de hilos `replies`, un Objeto será guardado con al menos las propiedades: `_id`, `text`, `created_on`, `delete_password`, & `reported`.
 
 ```js
 async (getUserInput) => {
