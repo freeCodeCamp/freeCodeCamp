@@ -9,7 +9,7 @@ dashedName: build-a-student-database-part-2
 
 # --description--
 
-In this 140-lesson course, you will complete your student database while diving deeper into SQL commands.
+この 140 のレッスンから成るコースでは、SQL コマンドをより深く掘り下げながら、学生データベースを完成させます。
 
 # --instructions--
 
