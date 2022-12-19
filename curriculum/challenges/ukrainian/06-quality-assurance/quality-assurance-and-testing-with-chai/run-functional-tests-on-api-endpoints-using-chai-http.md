@@ -1,6 +1,6 @@
 ---
 id: 587d824e367417b2b2512c58
-title: Запуск функціональних тестів на кінцевих точках API за допомогою Chai-HTTP
+title: Запустіть функціональні тести на кінцевих точках API за допомогою Chai-HTTP
 challengeType: 2
 forumTopicId: 301593
 dashedName: run-functional-tests-on-api-endpoints-using-chai-http
@@ -10,9 +10,9 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-Mocha дозволяє вам тестувати асинхронні операції, такі як виклики в кінцевих точках API з плагіном `chai-http`.
+Mocha дозволяє перевіряти асинхронні операції (наприклад, виклики в кінцевих точках API) за допомогою плагіну `chai-http`.
 
-Приклад тесту за допомогою `chai-http` для набору `'GET /hello?name=[name] => "hello [name]"'`:
+Знизу наведено приклад тесту, який використовує `chai-http` для набору під назвою `'GET /hello?name=[name] => "hello [name]"'`:
 
 ```js
 suite('GET /hello?name=[name] => "hello [name]"', function () {
@@ -29,21 +29,21 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
 });
 ```
 
-Тест відправляє запит `GET` до сервера з ім’ям як рядок запиту URL (`?name=John`). У функії зворотного виклику методу `end` відповідь об'єкта (`res`) отримується і містить властивість `status`.
+Тест надсилає запит `GET` до сервера з назвою як рядок запиту URL (`?name=John`). У функії зворотного виклику методу `end` отримується об'єкт-відповідь (`res`), який містить властивість `status`.
 
-Перший `assert.equal` перевіряє, чи стан дорівнює `200`. Другий `assert.equal` перевіряє, що рядок відповіді (`res.text`) містить `"hello John"`.
+Перший `assert.equal` перевіряє, чи статус дорівнює `200`. Другий `assert.equal` перевіряє, чи рядок відповіді (`res.text`) рівний `"hello John"`.
 
-Також зверніть увагу на параметр `done` у функції тесту зворотного виклику. Виклик без аргументу в кінці тесту є необхідним, щоб асинхронна операція була завершена.
+Зверніть увагу на параметр `done` у функції тесту зворотного виклику. Його необхідно викликати без аргументу в кінці тесту, щоб повідомити, що асинхронна операція завершена.
 
 # --instructions--
 
-У межах `tests/2_functional-tests.js`, змініть тест `'Test GET /hello with no name'` (`// #1`) для перевірки відповідей `status` та `text` для проходження тесту. Не змінюйте аргументи, передані до тверджень.
+У межах `tests/2_functional-tests.js` змініть `'Test GET /hello with no name'` тесту (`// #1`) для підтвердження `status` та `text`, щоб пройти тест. Не змінюйте аргументи, передані до тверджень.
 
-Не має бути запитів URL. Без імені запиту URL кінцева точка відповідає `hello Guest`.
+Запити URL повинні бути відсутніми. Якщо немає назви запиту URL, то кінцева точка відповідає `hello Guest`.
 
 # --hints--
 
-Необхідно пройти всі тести
+Всі тести повинні бути успішно пройдені
 
 ```js
 (getUserInput) =>
@@ -57,7 +57,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-Перевірте значення `res.status` == 200
+Ви повинні перевірити, чи `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -73,7 +73,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-Перевірте значення `res.text` == `'hello Guest'`
+Ви повинні перевірити, чи `res.text` == `'hello Guest'`
 
 ```js
 (getUserInput) =>

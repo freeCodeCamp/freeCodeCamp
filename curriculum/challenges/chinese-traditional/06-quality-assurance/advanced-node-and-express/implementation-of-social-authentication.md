@@ -1,6 +1,6 @@
 ---
 id: 589a69f5f9fc0f352b528e70
-title: Implementation of Social Authentication
+title: 實現社交賬號認證
 challengeType: 2
 forumTopicId: 301559
 dashedName: implementation-of-social-authentication
@@ -10,19 +10,19 @@ dashedName: implementation-of-social-authentication
 
 在應用中這種驗證的基本路徑是：
 
-1.  User clicks a button or link sending them to your route to authenticate using a specific strategy (e.g. GitHub).
+1.  用戶點擊一個按鈕或鏈接，訪問你的路由，使用特定的策略（例如 GitHub）進行認證。
 2.  需要在路由中調用 `passport.authenticate('github')`，跳轉至 GitHub 驗證頁面。
-3.  頁面跳轉到 GitHub 上，如果用戶未登錄 GitHub，就需要在這裏進行登錄。 It then asks them to approve access to their profile from your app.
-4.  The user is then returned to your app at a specific callback url with their profile if they are approved.
+3.  頁面跳轉到 GitHub 上，如果用戶未登錄 GitHub，就需要在這裏進行登錄。 然後它要求他們批准從你的應用程序訪問他們的個人資料。
+4.  如果用戶被批准，他們會在一個特定的回調 url 上帶着他們的個人資料返回到你的應用程序。
 5.  驗證已完成。我們的應用需要查詢這個用戶是否已經存在。如果是新用戶，那我們需要把用戶信息存儲到數據庫。
 
-在 OAuth 驗證策略中，我們至少需要提供 *Client ID* 和 *Client Secret*，這樣第三方平臺就會獲悉驗證請求的來源，以及這個來源是否有效。 爲此，需要去我們使用的第三方驗證平臺（比如 GitHub）獲取這兩個字段的值。 注意，我們獲取到的這個值是唯一的，僅對我們的當前 app 有效——**因此，千萬不要分享給別人**，更不要上傳到公共倉庫或者直接寫在代碼裏。 通常，我們會把它們放在 `.env` 文件裏，並通過 `process.env.GITHUB_CLIENT_ID` 獲取。 For this challenge you are going to use the GitHub strategy.
+在 OAuth 驗證策略中，我們至少需要提供 *Client ID* 和 *Client Secret*，這樣第三方平臺就會獲悉驗證請求的來源，以及這個來源是否有效。 爲此，需要去我們使用的第三方驗證平臺（比如 GitHub）獲取這兩個字段的值。 注意，我們獲取到的這個值是唯一的，僅對我們的當前 app 有效——**因此，千萬不要分享給別人**，更不要上傳到公共倉庫或者直接寫在代碼裏。 通常，我們會把它們放在 `.env` 文件裏，並通過 `process.env.GITHUB_CLIENT_ID` 獲取。 在這個挑戰中，你要使用 GitHub 策略。
 
-Follow <a href="https://www.freecodecamp.org/news/how-to-set-up-a-github-oauth-application/" target="_blank" rel="noopener noreferrer nofollow">these instructions</a> to obtain your *Client ID and Secret* from GitHub. Set the homepage URL to your Replit homepage (**not the project code's URL**), and set the callback URL to the same homepage URL with `/auth/github/callback` appended to the end. Save the client ID and your client secret in your project's `.env` file as `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
+按照<a href="https://www.freecodecamp.org/news/how-to-set-up-a-github-oauth-application/" target="_blank" rel="noopener noreferrer nofollow">這些說明</a>從 GitHub 獲取你的 *客戶端 ID 和密鑰*。 將主頁 URL 設置爲你的 Replit 主頁（**而不是項目代碼的 URL**），並將回調 URL 設置爲相同的主頁 URL，並在末尾添加 `/auth/github/callback`。 將客戶端 ID 和你的客戶端密碼保存到你的項目的 `.env`，作爲 `GITHUB_CLIENT_ID` 和 `GITHUB_CLIENT_SECRET`。
 
-In your `routes.js` file, add `showSocialAuth: true` to the homepage route, after `showRegistration: true`. Now, create 2 routes accepting GET requests: `/auth/github` and `/auth/github/callback`. The first should only call passport to authenticate `'github'`. The second should call passport to authenticate `'github'` with a failure redirect to `/`, and then if that is successful redirect to `/profile` (similar to your last project).
+在你的 `routes.js` 文件中，添加 `showSocialAuth: true` 到主頁路由，在 `showRegistration: true` 的後面。 現在，創建兩個接收 GET 請求的路由：`/auth/github` 和 `/auth/github/callback`。 第一個應該只調用 passport 來驗證 `'github'`。 第二個應該調用 passport 來驗證 `'github'`，失敗後重定向到 `/`，然後如果成功則重定向到 `/profile`（與你的上一個項目類似）。
 
-An example of how `/auth/github/callback` should look is similar to how you handled a normal login:
+`/auth/github/callback` 的例子應該與你處理正常登錄的方式相似：
 
 ```js
 app.route('/login')
@@ -31,11 +31,11 @@ app.route('/login')
   });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-3" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
+完成之後，提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-3" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 # --hints--
 
-Route `/auth/github` should be correct.
+路由 `/auth/github` 應該是正確的。
 
 ```js
 async (getUserInput) => {
@@ -66,7 +66,7 @@ async (getUserInput) => {
 }
 ```
 
-Route `/auth/github/callback` should be correct.
+路由 `/auth/github/callback` 應該是正確的。
 
 ```js
 async (getUserInput) => {

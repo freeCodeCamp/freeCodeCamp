@@ -8,29 +8,29 @@ dashedName: how-to-put-a-profile-together
 
 # --description--
 
-Now that you can ensure the user accessing the `/profile` is authenticated, you can use the information contained in `req.user` on your page.
+现在你可以确保访问 `/profile` 的用户身份已被验证，你可以使用你的页面上包含在 `req.user` 中的信息。
 
-Pass an object containing the property `username` and value of `req.user.username` as the second argument for the `render` method of the profile view.
+传递一个包含值为 `req.user.username` 的属性 `username` 的对象，作为个人主页视图的 `render` 方法的第二个参数。
 
-Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
+然后转到你的 `profile.pug` 视图，在现有 `h1` 元素下添加以下行，并且在同一级别缩进：
 
 ```pug
 h2.center#welcome Welcome, #{username}!
 ```
 
-This creates an `h2` element with the class `center` and id `welcome` containing the text `Welcome,` followed by the username.
+这创建了一个 `h2` 元素，具有 `center` 类和包含文本 `Welcome,` 和用户名的 id `welcome`。
 
-Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user:
+另外，在 `profile.pug`中，添加一个指向 `/logout` 路由的链接，它将托管取消用户认证的逻辑：
 
 ```pug
 a(href='/logout') Logout
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-put-a-profile-together-9" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成之后，提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-put-a-profile-together-9" target="_blank" rel="noopener noreferrer nofollow">查看已完成的项目</a>。
 
 # --hints--
 
-You should correctly add a Pug render variable to `/profile`.
+你应该正确地在 `/profile` 中添加一个 Pug 渲染变量。
 
 ```js
 async (getUserInput) => {

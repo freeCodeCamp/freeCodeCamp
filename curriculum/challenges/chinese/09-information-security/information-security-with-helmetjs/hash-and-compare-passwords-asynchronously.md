@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-在你记录完成的哈希，并在比较中把 'res' 记录到控制台后，将此添加到你现有的哈希函数中（因为你需要等待哈希完成后再调用比较函数）。 You should see in the console a hash, and then 'true' is printed! If you change 'myPlaintextPassword' in the compare function to 'someOtherPlaintextPassword', then it should say false.
+在你记录完成的哈希，并在比较中把 'res' 记录到控制台后，将此添加到你现有的哈希函数中（因为你需要等待哈希完成后再调用比较函数）。 控制台中会首先输出一个哈希结果，然后输出 “true”。 如果将比较函数中的 “myPlaintextPassword” 更改为 “someOtherPlaintextPassword”，则比较的结果应显示 false。
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {

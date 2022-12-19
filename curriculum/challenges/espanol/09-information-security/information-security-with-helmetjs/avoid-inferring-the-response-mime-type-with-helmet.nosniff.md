@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3a
-title: Avoid Inferring the Response MIME Type with helmet.noSniff()
+title: Evita inferir en la Respuesta MIME Tipo con helmet.noSniff()
 challengeType: 2
 forumTopicId: 301574
 dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
@@ -8,15 +8,15 @@ dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. Browsers can use content or MIME sniffing to override response `Content-Type` headers to guess and process the data using an implicit content type. While this can be convenient in some scenarios, it can also lead to some dangerous attacks. This middleware sets the X-Content-Type-Options header to `nosniff`, instructing the browser to not bypass the provided `Content-Type`.
+Como recordatorio, este proyecto esta contruido hasta el próximo proyecto inicial en <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. Navegadores pueden usar contenido o recorte MIME para anular los encabezados de respuesta `Content-Type` headers para adivinar y procesar los datos usando un tipo de contenido implícito. Mientras esto puede ser conveniente en algunos escenarios, esto puede conducir a algunos ataques peligrosos. Este middleware configura el encabezado X-Content-Type-Options a `nosniff`, indicando al navegador no eluda el proporcionado `Content-Type`.
 
 # --instructions--
 
-Use the `helmet.noSniff()` method on your server.
+Usa el método `helmet.noSniff()` en tu servidor.
 
 # --hints--
 
-helmet.noSniff() middleware should be mounted correctly
+helmet.noSniff() middleware debe ser montado correctamente
 
 ```js
 (getUserInput) =>

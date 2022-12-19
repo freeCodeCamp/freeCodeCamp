@@ -14,25 +14,25 @@ Trabajar en estos desafíos implica escribir tu código usando uno de los siguie
 - Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto de inicial Replit</a> para completar estos retos.
 - Utilice un constructor de sitios de su elección para completar el proyecto. Asegúrese de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Si usas Replit, sigue estos pasos para configurar el proyecto:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Empieza importando el proyecto en Replit.
+-   Siguiente, tu verás una ventana `.replit`.
+-   Selecciona `Use run command`y cliquea el botón `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Cuando esté hecho, asegurate que una demo de tu trabajo este hospedado en un sitio público. Luego envía la URL para ello en el campo `Solution Link`.
 
-Helmet helps you secure your Express apps by setting various HTTP headers.
+Helmet ayuda asegurar tus aplicaciones Express apps configurando varios encabezados HTTP.
 
 # --instructions--
 
-All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
+Todo el código para estas lecciones va a ir en el archivo `myApp.js` entre las líneas de código que iniciamos para ti. No cambies o borres el código que agregamos para ti.
 
-Helmet version `3.21.3` has already been installed, so require it as `helmet` in `myApp.js`.
+Helmet version `3.21.3` ha sido instalado, este requiere que `helmet` este en `myApp.js`.
 
 # --hints--
 
-`helmet` version `3.21.3` should be in `package.json`
+`helmet` version `3.21.3` debería estar en `package.json`
 
 ```js
 (getUserInput) =>

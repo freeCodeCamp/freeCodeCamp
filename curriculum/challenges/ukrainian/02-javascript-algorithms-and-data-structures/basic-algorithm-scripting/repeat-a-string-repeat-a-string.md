@@ -1,6 +1,6 @@
 ---
 id: afcc8d540bea9ea2669306b6
-title: Повторіть рядок Повторення рядка
+title: Повторення рядка Повторення рядка
 challengeType: 1
 forumTopicId: 16041
 dashedName: repeat-a-string-repeat-a-string
@@ -8,53 +8,53 @@ dashedName: repeat-a-string-repeat-a-string
 
 # --description--
 
-Повторити заданий рядок `str` (перший елемент) `num` разів (другий елемент). Повернути порожній рядок, якщо `num` не є додатнім числом. Для цього завдання *не* використовуйте вбудований `.repeat()` метод.
+Повторіть заданий рядок `str` (перший аргумент) `num` разів (другий аргумент). Поверніть порожній рядок, якщо `num` не є додатним числом. *Не* використовуйте вбудований метод `.repeat()` для цього завдання.
 
 # --hints--
 
-`repeatStringNumTimes("*", 3)` має повернути рядок `***`.
+`repeatStringNumTimes("*", 3)` повинен повертати рядок `***`.
 
 ```js
 assert(repeatStringNumTimes('*', 3) === '***');
 ```
 
-`repeatStringNumTimes("abc", 3)` має повернути рядок `abcabcabc`.
+`repeatStringNumTimes("abc", 3)` повинен повертати рядок `abcabcabc`.
 
 ```js
 assert(repeatStringNumTimes('abc', 3) === 'abcabcabc');
 ```
 
-`repeatStringNumTimes("abc", 4)` має повернути рядок `abcabcabcabc`.
+`repeatStringNumTimes("abc", 4)` повинен повертати рядок `abcabcabcabc`.
 
 ```js
 assert(repeatStringNumTimes('abc', 4) === 'abcabcabcabc');
 ```
 
-`repeatStringNumTimes("abc", 1)` має повернути рядок `abc`.
+`repeatStringNumTimes("abc", 1)` повинен повертати рядок `abc`.
 
 ```js
 assert(repeatStringNumTimes('abc', 1) === 'abc');
 ```
 
-`repeatStringNumTimes("*", 8)` має повернути рядок `********`.
+`repeatStringNumTimes("*", 8)` повинен повертати рядок `********`.
 
 ```js
 assert(repeatStringNumTimes('*', 8) === '********');
 ```
 
-`repeatStringNumTimes("abc", -2)` має повернути порожній рядок (`""`).
+`repeatStringNumTimes("abc", -2)` повинен повертати порожній рядок (`""`).
 
 ```js
 assert(repeatStringNumTimes('abc', -2) === '');
 ```
 
-Вбудований метод `repeat()` не слід використовувати.
+Не використовуйте вбудований метод `repeat()`.
 
 ```js
 assert(!/\.repeat/g.test(code));
 ```
 
-`repeatStringNumTimes("abc", 0)` має повернути рядок `""`.
+`repeatStringNumTimes("abc", 0)` повинен повертати `""`.
 
 ```js
 assert(repeatStringNumTimes('abc', 0) === '');
