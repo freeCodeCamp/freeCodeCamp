@@ -39,7 +39,7 @@ fetch('/json/cats.json')
 # --hints--
 
 
-Your code should use the fetched data to replace the inner HTML
+要素内の HTML を、fetch で取得したデータで置き換えてください。
 
 ```js
 const catData = "dummy data";
@@ -62,13 +62,13 @@ async () => {
 ```
 
 
-Your code should make a `GET` request with `fetch`.
+`fetch` を使用して `GET` リクエストを行う必要があります。
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-Your code should use `then` to convert the response to JSON.
+`then` を使用してレスポンスを JSON に変換する必要があります。
 
 ```js
 assert(
@@ -78,13 +78,13 @@ assert(
 );
 ```
 
-Your code should use `then` to handle the data converted to JSON by the other `then`.
+`then` を使用して、他の `then` によって JSON に変換されたデータを処理する必要があります。
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-Your code should get the element with id `message` and change its inner HTML to the string of JSON data.
+`message` という id を持つ要素を取得し、その内部の HTML を JSON データの文字列に変更する必要があります。
 
 ```js
 assert(

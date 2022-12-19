@@ -53,7 +53,7 @@ You should use the `--` operator on `myVar`.
 assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
 ```
 
-You should not change code above the specified comment.
+Не змінюйте код над зазначеним коментарем.
 
 ```js
 assert(/let myVar = 11;/.test(code));

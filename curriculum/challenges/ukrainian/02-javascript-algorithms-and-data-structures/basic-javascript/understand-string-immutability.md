@@ -37,7 +37,7 @@ myStr = "Job";
 assert(myStr === 'Hello World');
 ```
 
-Не слід змінювати код над зазначеним коментарем.
+Не змінюйте код над зазначеним коментарем.
 
 ```js
 assert(/myStr = "Jello World"/.test(code));

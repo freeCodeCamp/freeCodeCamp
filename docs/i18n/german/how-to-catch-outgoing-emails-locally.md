@@ -104,19 +104,7 @@ Starte [mit der Nutzung von MailHog](#using-mailhog).
 
 ## MailHog verwenden
 
-Öffne einen neuen Browser-Tab oder ein neues Fenster und navigiere zu [http://localhost:8025](http://localhost:8025), um deinen MailHog-Posteingang zu öffnen, wenn die MailHog-Installation abgeschlossen ist und MailHog ausgeführt wird. Der Posteingang sieht dann so aus wie auf dem Screenshot unten.
-
-![MailHog Screenshot 1](https://contribute.freecodecamp.org/images/mailhog/1.jpg)
-
-Die von deiner freeCodeCamp-Installation gesendeten E-Mails werden wie folgt aussehen
-
-![MailHog Screenshot 2](https://contribute.freecodecamp.org/images/mailhog/2.jpg)
-
-Wenn du eine bestimmte E-Mail öffnest, stehen dir zwei Registerkarten zur Verfügung, auf denen du entweder den reinen Text (Plain text) oder den Quelltext (Source) anzeigen kannst. Vergewissere dich, dass die Registerkarte Plain text wie folgt ausgewählt ist.
-
-![MailHog Screenshot 3](https://contribute.freecodecamp.org/images/mailhog/3.jpg)
-
-Alle Links in der E-Mail sollten anklickbar sein und auf ihre URL verweisen.
+Open a new browser tab or window and navigate to [http://localhost:8025](http://localhost:8025) to open your MailHog inbox when the MailHog installation has completed and MailHog is running.
 
 ## Nützliche Links
 

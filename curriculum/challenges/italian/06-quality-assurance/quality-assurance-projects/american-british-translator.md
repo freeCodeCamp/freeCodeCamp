@@ -69,7 +69,7 @@ Scrivi i seguenti test in `tests/2_functional-tests.js`:
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Dovresti fornire il tuo progetto, non l'URL di esempio.
 
 ```js
 (getUserInput) => {
