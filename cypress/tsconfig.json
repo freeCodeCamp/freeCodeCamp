@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["es5", "dom"]
+    "lib": ["es2021", "dom"]
   },
   "include": [
     "e2e/**/*.ts",
@@ -9,8 +9,8 @@
     "e2e/default/learn/challenges/sass.ts",
     "e2e/default/learn/challenges/projects.ts",
     "e2e/default/learn/challenges/failed-updates.js",
-    "e2e/default/learn/header/universal-navigation.js",
-    "e2e/default/learn/header/universal-navigation.js",
+    "e2e/default/learn/header/universal-navigation.ts",
+    "e2e/default/learn/header/universal-navigation.ts",
     "e2e/default/learn/common-components/searchBar.js",
     "e2e/default/learn/common-components/searchBar.js",
     "e2e/default/learn/common-components/navbar.js",
