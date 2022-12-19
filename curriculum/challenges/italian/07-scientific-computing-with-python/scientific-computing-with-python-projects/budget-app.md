@@ -10,11 +10,16 @@ dashedName: budget-app
 
 Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-budget-app" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
 
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
+
+
 # --instructions--
 
 Completa la classe `Category` in `budget.py`. Dovrebbe essere in grado di instanziare oggetti basati su diverse categorie di budget, come *food*, *clothing*, e *entertainment*. Quando gli oggetti sono creati, ricevono come argomento il nome della categoria. La classe dovrebbe avere una classe di istanza chiamata `ledger` che è una lista. La classe dovrebbe anche contenere i seguenti metodi:
 
-- Un metodo di deposito `deposit` che accetta un valore e una descrizione. Se non è data alcuna descrizione, dovrebbe essere una stringa vuota come default. Il metodo dovrebbe aggiungere un oggetto alla lista ledger nella forma di `{"amount": valore, "description": descrizione}`.
+- Un metodo di deposito `deposit` che accetta un valore e una descrizione. Se non è data alcuna descrizione, dovrebbe essere una stringa vuota come default. Il metodo dovrebbe aggiungere un oggetto alla lista ledger nella forma di `{"amount": amount, "description": description}`.
 - Un metodo di prelievo `withdraw` che è simile al metodo `deposit`, ma il valore dato come argomento dovrebbe essere salvato in ledger come un valore negativo. Se non ci sono abbastanza fondi, nulla dovrebbe essere aggiunto al ledger. Il metodo dovrebbe restituire `True` se il prelievo ha avuto atto, e `False` altrimenti.
 - Un metodo per ottenere la giacenza attuale `get_balance` che restituisce l'ammontare nella categoria del budget basato su depositi e prelievi che hanno avuto luogo.
 - Un metodo di trasferimento `transfer` che accetta un ammontare e un'altra categoria come argomenti. Il metodo dovrebbe aggungere un prelievo con l'ammontare e la descrizione "Transfer to [Categoria del budget di destinazione]". Il metodo dovrebbe aggiungere un deposito all'altra categoria del budget con l'ammontare e la descrizione "Transfer from [Categoria del Budget di origine]". Se non ci sono abbastanza fondi, nulla dovrebbe essere aggiunto a nessuno dei due ledger. Questo metodo dovrebbe restituire `True` se il trasferimento ha avuto luogo, e `False` altrimenti.
@@ -22,7 +27,7 @@ Completa la classe `Category` in `budget.py`. Dovrebbe essere in grado di instan
 
 Quando l'oggetto budget è stampato dovrebbe mostrare:
 
-- Una riga di titolo di 30 caratteri dove il nome della cateria è centrato in una riga di caratteri `*`.
+- Una riga di titolo di 30 caratteri dove il nome della categoria è centrato in una riga di caratteri `*`.
 - Una lista delle transazioni nel ledger. Ogni linea dovrebbe mostrare la descrizione e l'ammontare. I primi 23 caratteri della descrizione dovrebbero essere mostrati, poi l'ammontare. L'ammontare dovrebbe essere allineato a destra, avere due cifre decimali, e mostrare un massimo di 7 caratteri.
 - Una riga che mostra il totale della categoria.
 

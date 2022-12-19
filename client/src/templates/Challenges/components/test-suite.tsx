@@ -26,7 +26,9 @@ function TestSuite({ tests }: TestSuiteProps): JSX.Element {
 
   return (
     <>
-      <h2 className='challenge-test-suite-heading'>Tests</h2>
+      <h2 className='challenge-test-suite-heading'>
+        {t('learn.editor-tabs.tests')}
+      </h2>
       <ul className='challenge-test-suite'>
         {testSuiteTests.map(({ err, pass = false, text = '' }, index) => {
           const isInitial = !pass && !err;

@@ -9,7 +9,7 @@ dashedName: accessing-object-properties-with-variables
 
 # --description--
 
-Ще одне використання дужкової нотації на об'єктах полягає в доступі до властивостей, які зберігаються у вигляді змінної величини. Це може бути дуже корисним для ітерації властивостей об'єкта або при отриманні доступу до пошукової таблиці.
+Дужкову нотацію також можна використати на об'єктах, щоб отримати доступ до властивостей, що зберігаються як значення змінної. Це може бути дуже корисно при ітерації властивостей об'єкта або при отриманні доступу до пошукової таблиці.
 
 Ось приклад використання змінної для отримання доступу до властивостей:
 
@@ -25,47 +25,47 @@ const myBreed = dogs[myDog];
 console.log(myBreed);
 ```
 
-У консолі відображатиметься рядок `Doberman`.
+Рядок `Doberman` повинен відображатись на консолі.
 
-Note that we do *not* use quotes around the variable name when using it to access the property because we are using the *value* of the variable, not the *name*.
+Зверніть увагу, що ми *не* використовуємо лапки із назвами змінних, якщо використовуємо їх для доступу до властивостей, оскільки ми використовуємо *значення* змінної, а не *назву*.
 
 # --instructions--
 
-Set the `playerNumber` variable to `16`. Then, use the variable to look up the player's name and assign it to `player`.
+Встановіть змінну `playerNumber` на `16`. Потім використайте змінну для пошуку імені гравця та призначте її до `player`.
 
 # --hints--
 
-`playerNumber` should be a number
+`playerNumber` повинен бути числом
 
 ```js
 assert(typeof playerNumber === 'number');
 ```
 
-The variable `player` should be a string
+Змінна `player` повинна бути рядком
 
 ```js
 assert(typeof player === 'string');
 ```
 
-The value of `player` should be the string `Montana`
+Значенням `player` повинен бути рядок `Montana`
 
 ```js
 assert(player === 'Montana');
 ```
 
-You should use bracket notation to access `testObj`
+Щоб отримати доступ до `testObj`, використайте дужкову нотацію
 
 ```js
 assert(/testObj\s*?\[.*?\]/.test(code));
 ```
 
-You should not assign the value `Montana` to the variable `player` directly.
+Не присвоюйте значення `Montana` до змінної `player` напряму.
 
 ```js
 assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
 ```
 
-You should be using the variable `playerNumber` in your bracket notation
+Ви повинні використати змінну `playerNumber` у своїй дужковій нотації
 
 ```js
 assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));

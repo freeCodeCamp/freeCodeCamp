@@ -60,6 +60,12 @@
   margin: 0 auto;
 }
 
+#mobile-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 #mobile-layout .nav-tabs {
   margin-left: 2px;
   display: flex;
@@ -81,10 +87,16 @@
 }
 
 #mobile-layout .tab-content {
-  height: calc(
-    100vh - var(--header-height, 0px) - var(--flash-message-height, 0px) - 69px
-  );
-  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: hidden;
+}
+
+#mobile-layout-pane-editor {
+  display: flex;
+  flex-direction: column;
 }
 
 #mobile-layout .tab-pane {

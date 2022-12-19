@@ -6,23 +6,25 @@
   - [Lavorare a tradurre le risorse](how-to-translate-files.md)
   - [Lavorare a correggere le risorse](how-to-proofread-files.md)
 - **Contribuire al codice**
-  - [Imposta freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
-  - [Lavorare sull'app mobile](how-to-setup-freecodecamp-mobile-app-locally.md)
-  - [Seguire le migliori pratiche di programmazione](codebase-best-practices.md)
+  - [Impostare freeCodeCamp](how-to-setup-freecodecamp-locally.md)
+  - [Seguire le migliori pratiche](codebase-best-practices.md)
   - [Aprire una pull request](how-to-open-a-pull-request.md)
-  - [Lavorare sulle sfide del curriculum](how-to-work-on-coding-challenges.md)
+  - [Lavorare sul codebase](how-to-contribute-to-the-codebase.md)
+  - [Lavorare sulle sfide di programmazione](how-to-work-on-coding-challenges.md)
+  - [Lavorare sulla libreria dei componenti](how-to-work-on-the-component-library.md)
   - [Lavorare sui progetti di pratica](how-to-work-on-practice-projects.md)
+  - [Lavorare sull'app mobile](how-to-setup-freecodecamp-mobile-app-locally.md)
   - [Lavorare sui tutorial con CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
-  - [Lavorare sul client tradotto](how-to-work-on-localized-client-webapp.md)
+  - [Lavorare sull'app web localizzata](how-to-work-on-localized-client-webapp.md)
   - [Lavorare sui test Cypress ](how-to-add-cypress-tests.md)
   - [Lavorare sulle sfide video](how-to-help-with-video-challenges.md)
   - [Lavorare sulla documentazione](how-to-work-on-the-docs-theme.md)
-  - [Lavorare sulla libreria dei componenti](how-to-work-on-the-component-library.md)
 - **Guide aggiuntive**
   - [Capire la struttura dei file del curriculum](curriculum-file-structure.md)
   - [Fare il debug delle email in uscita localmente](how-to-catch-outgoing-emails-locally.md)
   - [Settare freeCodeCamp su Windows (WSL)](how-to-setup-wsl.md)
   - [Workflow con il Token Utente](user-token-workflow.md)
+  - [Risolvere i Problemi di Sviluppo](troubleshooting-development-issues.md)
 
 ---
 

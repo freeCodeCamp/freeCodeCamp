@@ -49,7 +49,7 @@ Observe que a chave `download_language` precisa ser definida como código do idi
 
 Existem algumas etapas a serem seguidas para permitir que a base de código seja compilada no idioma desejado.
 
-Primeiro, visite o arquivo `config/i18n/all-langs.ts` para adicionar o idioma à lista de idiomas disponíveis e configurar os valores. Existem vários objetos aqui.
+Primeiro, visite o arquivo `config/i18n.ts` para adicionar o idioma à lista de idiomas disponíveis e configurar os valores. Existem vários objetos aqui.
 
 - `availableLangs`: tanto para o array `client` quanto para o array `curriculum`, adicione o nome do idioma. Esse valor é o que será usado no arquivo `.env` depois.
 - `auditedCerts`: adicione o nome do texto do idioma como a _chave_ e adicione um array de variáveis `SuperBlocks.{cert}` como o _valor_. Isto informa ao cliente quais certificações estão totalmente traduzidas.
@@ -57,8 +57,9 @@ Primeiro, visite o arquivo `config/i18n/all-langs.ts` para adicionar o idioma à
 - `LangNames`: esses são os nomes dos idiomas que aparecerão para a seleção no menu de navegação.
 - `LangCodes`: esses são os códigos de idiomas usados para formatar datas e números. Esses deverão ser códigos Unicode CLDR ao invés de códigos ISO.
 - `hiddenLangs`: Esses idiomas não serão exibidos no menu de navegação. Isto é usado para idiomas que ainda não estão prontos para liberação.
+- `rtlLangs`: estes são os idiomas que leem da direita para a esquerda.
 
-Como um exemplo, se você tivesse que habilitar o idioma Dothraki como seu idioma, os objetos  `all-langs.js` devem ficar assim:
+Como um exemplo, se você tivesse que habilitar o idioma Dothraki como seu idioma, os objetos `i18n.ts` devem ficar assim:
 
 ```js
 export const availableLangs = {
@@ -136,6 +137,8 @@ export enum LangCodes = {
 };
 
 export const hiddenLangs = ['dothraki'];
+
+export const rtlLangs = [''];
 ```
 
 > [!NOTE] Quando um idioma for configurado no pipeline de implantação E tiver uma instância pública de `/news` ativa, ele pode ser removido da matriz `hiddenLangs` e ser disponibilizado ao público.
@@ -214,7 +217,7 @@ Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, 
       ...
 ```
 
-Em seguida, adicione um id para o novo idioma para qualquer desafio em vídeo em um bloco auditado. Por exemplo, se `auditedCerts` em `all-langs.ts` inclui `scientific-computing-with-python` para `dothraki`, você deve adicionar uma entrada em `dothraki` em `videoLocaleIds`. O frontmatter dever ter essa aparência:
+Em seguida, adicione um id para o novo idioma para qualquer desafio em vídeo em um bloco auditado. Por exemplo, se `auditedCerts` em `i18n.ts` inclui `scientific-computing-with-python` para `dothraki`, você deve adicionar uma entrada em `dothraki` em `videoLocaleIds`. O frontmatter dever ter essa aparência:
 
 ```yml
 videoLocaleIds:

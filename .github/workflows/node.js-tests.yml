@@ -5,7 +5,10 @@ on:
   push:
     branches-ignore:
       - 'renovate/**'
+      - 'next-api'
   pull_request:
+    branches-ignore:
+      - 'next-api'
 
 permissions:
   contents: read
@@ -14,21 +17,20 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-20.04
-
     strategy:
-      fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
+      fail-fast: false
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3
 
       - name: Check number of lockfiles
         run: |
           if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 1 ]
           then
-            echo 'Error: found too many lockfiles in the repository'
+            echo -e 'Error: found too many lockfiles in the repository.\nWe use npm workspaces to manage packages so all dependencies should be added to the root package-lock.json'
             exit 1
           fi
 
@@ -63,11 +65,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
@@ -97,11 +99,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
@@ -132,12 +134,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
         locale: [chinese, espanol]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3

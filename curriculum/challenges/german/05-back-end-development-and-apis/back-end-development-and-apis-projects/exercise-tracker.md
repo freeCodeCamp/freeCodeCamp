@@ -14,13 +14,19 @@ Erstelle eine vollständige JavaScript-Anwendung, die eine ähnliche Funktionali
 -   Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">unser Replit Starter Projekt</a>, um dein Projekt fertigzustellen.
 -   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Achte darauf, alle Dateien aus unserem GitHub Repo zu integrieren.
 
-Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
-Deine Antworten sollten folgende Struktur haben.
+Your responses should have the following structures.
 
-Übung:
+Exercise:
 
 ```js
 {
@@ -32,7 +38,7 @@ Deine Antworten sollten folgende Struktur haben.
 }
 ```
 
-Nutzer:
+User:
 
 ```js
 {
@@ -60,7 +66,7 @@ Log:
 
 # --hints--
 
-Du solltest dein eigenes Projekt bereitstellen, nicht die Beispiel-URL.
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -71,7 +77,7 @@ Du solltest dein eigenes Projekt bereitstellen, nicht die Beispiel-URL.
 };
 ```
 
-Du kannst einen `POST` an `/api/users` mit Formulardaten senden, `username` um einen neuen Benutzer zu erstellen.
+You can `POST` to `/api/users` with form data `username` to create a new user.
 
 ```js
 async (getUserInput) => {
@@ -108,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-Du kannst eine `GET`-Anfrage an `/api/users` stellen, um eine Liste aller Nutzer zu erhalten.
+You can make a `GET` request to `/api/users` to get a list of all users.
 
 ```js
 async(getUserInput) => {
@@ -121,7 +127,7 @@ async(getUserInput) => {
 };
 ```
 
-Die `GET`-Anfrage an `/api/users` übermittelt ein Array.
+The `GET` request to `/api/users` returns an array.
 
 ```js
 async(getUserInput) => {
@@ -136,7 +142,7 @@ async(getUserInput) => {
 };
 ```
 
-Jedes Element in dem Array, das von `GET /api/users` zurückgegeben wurde, ist ein Objektliteral, das den `username` und die `_id` des Nutzers enthält.
+Each element in the array returned from `GET /api/users` is an object literal containing a user's `username` and `_id`.
 
 ```js
 async(getUserInput) => {
@@ -156,7 +162,7 @@ async(getUserInput) => {
 };
 ```
 
-`POST`-Anfragen an `/api/users/:_id/exercises` können die Formulardaten `description`, `duration` und optional auch `date` enthalten. Wird kein Datum angegeben, wird das aktuelle Datum verwendet.
+You can `POST` to `/api/users/:_id/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used.
 
 ```js
 async (getUserInput) => {
@@ -190,7 +196,7 @@ async (getUserInput) => {
 };
 ```
 
-Die von `POST /api/users/:_id/exercises` zurückgegebene Antwort besteht aus dem Nutzerobjekt mit Übungsfeldern.
+The response returned from `POST /api/users/:_id/exercises` will be the user object with the exercise fields added.
 
 ```js
 async (getUserInput) => {
@@ -229,7 +235,7 @@ async (getUserInput) => {
 };
 ```
 
-Du kannst eine `GET`-Anfrage an `/api/users/:_id/logs` übermitteln, um ein vollständiges Übungsprotokoll eines beliebigen Nutzers abzurufen.
+You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user.
 
 ```js
 async (getUserInput) => {
@@ -309,7 +315,7 @@ async (getUserInput) => {
 };
 ```
 
-Eine `GET`-Anfrage an `/api/users/:_id/logs` wird das Nutzerobjekt mit einem `log`-Array aller hinzugefügten Übungen zurückgeben.
+A `GET` request to `/api/users/:_id/logs` will return the user object with a `log` array of all the exercises added.
 
 ```js
 async(getUserInput) => {
@@ -353,7 +359,7 @@ async(getUserInput) => {
 };
 ```
 
-Jedes Element des `log`-Arrays – das von `GET /api/users/:_id/logs` zurückgegeben wird –, ist ein Objekt, das folgende Eigenschaften haben sollte: `description`, `duration` und `date`.
+Each item in the `log` array that is returned from `GET /api/users/:_id/logs` is an object that should have a `description`, `duration`, and `date` properties.
 
 ```js
 async(getUserInput) => {
@@ -494,7 +500,7 @@ async(getUserInput) => {
 };
 ```
 
-The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Verwende das Format `dateString` der `Date`-API.
+The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Use the `dateString` format of the `Date` API.
 
 ```js
 async(getUserInput) => {
@@ -541,7 +547,7 @@ async(getUserInput) => {
 };
 ```
 
-Du kannst die Parameter `from`, `to` und `limit` einer `GET /api/users/:_id/logs`-Anfrage übergeben, um Protokollteile eines beliebigen Benutzers abzurufen. `from` und `to` sind Daten im Format `yyyy-mm-dd`. `limit` ist ein Integer, der angibt, wie viele Protokolle zurückgegeben werden sollen.
+You can add `from`, `to` and `limit` parameters to a `GET /api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
 
 ```js
 async (getUserInput) => {

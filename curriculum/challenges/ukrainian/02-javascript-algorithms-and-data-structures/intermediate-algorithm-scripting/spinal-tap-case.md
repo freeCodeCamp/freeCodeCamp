@@ -1,6 +1,6 @@
 ---
 id: a103376db3ba46b2d50db289
-title: Spinal Tap Case
+title: Шашличний регістр
 challengeType: 1
 forumTopicId: 16078
 dashedName: spinal-tap-case
@@ -8,7 +8,7 @@ dashedName: spinal-tap-case
 
 # --description--
 
-Перетворити рядок в spinal case. У spinal case усі-слова-в-нижньому-регістрі-і-розділені-тире.
+Перетворіть рядок в шашличний регістр. У шашличному регістрі всі-слова-в-нижньому-регістрі-та-розділені-рискою.
 
 # --hints--
 

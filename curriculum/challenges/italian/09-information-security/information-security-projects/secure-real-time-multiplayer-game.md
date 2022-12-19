@@ -14,6 +14,12 @@ Sviluppa un gioco 2D multigiocatore in tempo reale utilizzando l'API HTML Canvas
 -   Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare il tuo progetto.
 -   Usare un costruttore di siti a tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
+Se utilizzi Replit, segui questi passaggi per impostare il progetto:
+
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
+
 Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
 
 # --instructions--
@@ -33,7 +39,7 @@ Assicurati che il tuo gioco sia sicuro! Includi queste misure di sicurezza:
 
 # --hints--
 
-È necessario fornire il proprio progetto, non l'URL di esempio.
+Puoi fornire il tuo progetto e non l'URL di esempio.
 
 ```js
 (getUserInput) => {

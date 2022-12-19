@@ -58,14 +58,14 @@ myRegex.lastIndex = 0;
 assert(!myRegex.test('Frank Roosevelt'));
 ```
 
-Your regex `myRegex` should return `false` for the string `FranklinRoosevelt`
+Dein regulärer Ausdruck `myRegex` sollte `false` für den String `FranklinRoosevelt` zurückgeben.
 
 ```js
 myRegex.lastIndex = 0;
 assert(!myRegex.test('FranklinRoosevelt'));
 ```
 
-Your regex `myRegex` should return `false` for the string `EleanorRoosevelt`
+Dein regulärer Ausdruck `myRegex` sollte `false` für den String `EleanorRoosevelt` zurückgeben.
 
 ```js
 myRegex.lastIndex = 0;

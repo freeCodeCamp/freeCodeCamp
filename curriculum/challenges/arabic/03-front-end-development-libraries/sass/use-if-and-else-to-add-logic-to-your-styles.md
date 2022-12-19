@@ -8,7 +8,7 @@ dashedName: use-if-and-else-to-add-logic-to-your-styles
 
 # --description--
 
-التوجيه `@if` في Sass مفيد لاختبار حالة محددة - إنه يعمل تماما مثل `if` بيان في JavaScript.
+التوجيه `@if` في Sass مفيد لاختبار حالة محددة - إنه يعمل تماما مثل `if` تعبير في JavaScript.
 
 ```scss
 @mixin make-bold($bool) {
@@ -57,7 +57,7 @@ heavy - 6px solid black
 assert(code.match(/@mixin\s+?border-stroke\s*?\(\s*?\$val\s*?\)\s*?{/gi));
 ```
 
-يجب أن يكون لدى mixin الخاص بك تعبير `@if` يتحقق مما إذا كان `$val` هو `light`، ولتحديد `border` بقيمة `1px solid black`.
+يجب أن يكون لديك تعبير mixin من `@if` يتحقق مما إذا كان `$val` هو `light`، ولتحديد `border` بقيمة `1px solid black`.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-يجب أن يكون لدى mixin الخاص بك تعبير `@else if` يتحقق مما إذا كان `$val` هو `medium`، ولتحديد `border` بقيمة `3px solid black`.
+يجب أن يكون لديك تعبير mixin من `@else if` يتحقق مما إذا كان `$val` هو `medium`، ولتحديد `border` بقيمة `3px solid black`.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-يجب أن يكون لدى mixin الخاص بك تعبير `@else if` يتحقق مما إذا كان `$val` هو `heavy`، ولتحديد `border` بقيمة `6px solid black`.
+يجب أن يكون لديك تعبير mixin من `@else if` يتحقق مما إذا كان `$val` هو `heavy`، ولتحديد `border` بقيمة `6px solid black`.
 
 ```js
 assert(
@@ -87,7 +87,7 @@ assert(
 );
 ```
 
-يجب أن يحتوي mixin الخاص بك على تعبير `@else` لتحديد `border` إلى `none`.
+يجب أن يكون لديك تعبير mixin من `@else` لتحديد `border` إلى `none`.
 
 ```js
 assert(code.match(/@else\s*?{\s*?border\s*?:\s*?none\s*?;\s*?}/gi));

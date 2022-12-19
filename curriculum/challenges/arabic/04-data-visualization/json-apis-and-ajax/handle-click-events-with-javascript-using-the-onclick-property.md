@@ -1,6 +1,6 @@
 ---
 id: 587d7fad367417b2b2512be1
-title: Handle Click Events with JavaScript using the onclick property
+title: التعامل مع أحداث النقر (Handle Click Events) مع JavaScript باستخدام خاصية عند النقر (onclick)
 challengeType: 6
 forumTopicId: 301503
 dashedName: handle-click-events-with-javascript-using-the-onclick-property
@@ -8,7 +8,7 @@ dashedName: handle-click-events-with-javascript-using-the-onclick-property
 
 # --description--
 
-You want your code to execute only once your page has finished loading. لهذا الغرض، يمكنك إرفاق حدث (event) من JavaScript لمستند مسمى `DOMContentLoaded`. إليك كود الذي يفعل ذلك:
+تريد تنفذ كودك بمجرد الانتهاء من تحميل الصفحة, مرة واحدة فقط. لهذا الغرض، يمكنك إرفاق حدث (event) من JavaScript لمستند مسمى `DOMContentLoaded`. إليك كود الذي يفعل ذلك:
 
 ```js
 document.addEventListener('DOMContentLoaded', function() {

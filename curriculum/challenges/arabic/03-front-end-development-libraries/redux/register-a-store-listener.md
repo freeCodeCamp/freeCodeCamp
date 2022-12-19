@@ -16,7 +16,7 @@ dashedName: register-a-store-listener
 
 # --hints--
 
-إرسال إجراء `ADD` من المتجر يجب أن يزيد الحالة بقيمة `1`.
+يجب أن يزيد إرسال (Dispatching) الإجراء (action) المسمى `ADD` من المتجر store الحالة (state) بقيمة `1`.
 
 ```js
 assert(

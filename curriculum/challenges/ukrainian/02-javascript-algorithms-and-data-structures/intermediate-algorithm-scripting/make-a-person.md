@@ -1,6 +1,6 @@
 ---
 id: a2f1d72d9b908d0bd72bb9f6
-title: Створіть об'єкт Людина
+title: Створіть людину
 challengeType: 1
 forumTopicId: 16020
 dashedName: make-a-person
@@ -8,7 +8,7 @@ dashedName: make-a-person
 
 # --description--
 
-Заповніть конструктор об’єкта методами, наведеними нижче:
+Заповніть конструктор об’єкта, використовуючи наведені нижче методи:
 
 ```js
 getFirstName()
@@ -19,11 +19,11 @@ setLastName(last)
 setFullName(firstAndLast)
 ```
 
-Запустіть тести, щоб побачити очікуваний результат для кожного методу. Методи, що приймають аргумент, повинні приймати лише один аргумент і це має бути рядок. Ці методи повинні бути єдиними доступними засобами для взаємодії з об'єктом.
+Запустіть тести, щоб побачити очікуваний вивід для кожного методу. Методи, що приймають аргумент, повинні приймати лише один аргумент і це повинен бути рядок. Ці методи повинні бути єдиними доступними засобами для взаємодії з об'єктом.
 
 # --hints--
 
-Не треба додавати жодних властивостей. `Object.keys(bob).length` повинен завжди повертатися як 6.
+Не треба додавати жодних властивостей. `Object.keys(bob).length` завжди повинен повертати 6.
 
 ```js
 assert.strictEqual(
@@ -38,19 +38,19 @@ assert.strictEqual(
  );
 ```
 
-`bob instanceof Person` повинен повертатися як `true`.
+`bob instanceof Person` повинен повертати `true`.
 
 ```js
 assert.deepEqual(bob instanceof Person, true);
 ```
 
-`bob.firstName` повинен повертатися як `undefined`.
+`bob.firstName` повинен повертати `undefined`.
 
 ```js
 assert.deepEqual(bob.firstName, undefined);
 ```
 
-`bob.lastName` повинен повертатися як `undefined`.
+`bob.lastName` повинен повертати `undefined`.
 
 ```js
 assert.deepEqual(bob.lastName, undefined);

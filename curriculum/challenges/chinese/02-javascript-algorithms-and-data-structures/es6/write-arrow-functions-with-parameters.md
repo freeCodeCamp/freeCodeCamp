@@ -41,13 +41,13 @@ multiplier(4, 2);
 应替换 `var` 关键词。
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 `myConcat` 应该是一个常量（使用`const`）。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+myConcat/g));
+assert.match(code, /const\s+myConcat/g);
 ```
 
 `myConcat` 应该是一个带有两个参数的箭头函数。
@@ -68,7 +68,7 @@ assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
 不能使用 `function` 关键字。
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/function/g));
+assert.notMatch(code, /function/g);
 ```
 
 # --seed--

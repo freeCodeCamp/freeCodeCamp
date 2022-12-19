@@ -1,6 +1,6 @@
 ---
 id: 587d7b85367417b2b2512b39
-title: إدراك أقواس الفتح والإغلاق المفقودة بعد استدعاء دالة (Catch Missing Open and Closing Parenthesis After a Function Call)
+title: إدراك أقواس (Parenthesis) الفتح والإغلاق المفقودة بعد تفعيل وظيفة (Function)
 challengeType: 1
 forumTopicId: 301185
 dashedName: catch-missing-open-and-closing-parenthesis-after-a-function-call
@@ -8,7 +8,7 @@ dashedName: catch-missing-open-and-closing-parenthesis-after-a-function-call
 
 # --description--
 
-عندما لا تأخذ الfunction أو الmethod أي arguments، قد تنسى إدراج أقواس الفتح والإغلاق (فارغة) عند استدعائها. غالباً ما يتم حفظ نتيجة استدعاء function في variable لاستخدام آخر في الكود الخاص بك. يمكن اكتشاف هذا الخطأ عن طريق تسجيل قيم الvariables (أو أنواعها) إلى الconsole وملاحظة أن القيمة المعينة للvariable هي function reference (مرجع دالة)، بدلاً من القيمة المتوقعة وهي ناتج تنفيذ ال الfunction.
+عندما لا تأخذ الوظيفة (function) أو الطريقة (method) أي وسائط (arguments)، قد تنسى إدراج أقواس الفتح والإغلاق (فارغة) عند تفعيلها. غالباً ما يتم حفظ نتيجة تفعيل وظيفة (function) في متغير (variable) لاستخدام آخر في كودك. يمكن اكتشاف هذا الخطأ عن طريق تسجيل قيم المتغيرات (variables) (أو أنواعها) إلى الوحدة (console) وملاحظة أن القيمة المعينة للمتغير (variable) هي مرجع وظيفة (function reference)، بدلاً من القيمة المتوقعة وهي ناتج تنفيذ الوظيفة (function).
 
 فتختلف المتغيرات الواردة في المثال التالي:
 
@@ -20,21 +20,21 @@ let varOne = myFunction;
 let varTwo = myFunction();
 ```
 
-هنا `varOne` هو الـ function المسماه `myFunction`، و `varTwo` هو الـ string المكون من `You rock!`.
+تكون `varOne` الوظيفة (function) هنا مسمى `myFunction`، ويكون `varTwo` المقطع نصي (string) من `You rock!`.
 
 # --instructions--
 
-أصلح الـ code بحيث يتم تعيين الـ variable المسمى `result` القيمة العائدة من استعداء الـ function المسماه `getNine`.
+أصلح الكود بحيث يتم تعيين المتغير (variable) المسمى `result` بقيمة الناتحة من تفعيل الوظيفة (function) مسمى `getNine`.
 
 # --hints--
 
-يجب أن يصلح الـ code الـ variable المسمى `result` حيث يتم تعيينه الرقم الذي يعيده الـ function المسمى `getNine`.
+يجب أن يصلح الوظيفة المتغير (variable) مسمى `result` حيث يتم تعيينه الرَّقْم الذي ينتج الوظيفة (function) مسمى `getNine`.
 
 ```js
 assert(result == 9);
 ```
 
-يجب أن يستدعي الكود الخاص بك دالة `getNine`.
+يجب أن يفعيل كودك وظيفة `getNine`.
 
 ```js
 assert(code.match(/getNine\(\)/g).length == 2);
