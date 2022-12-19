@@ -28,7 +28,7 @@ repeatRegex.test(repeatStr); // Returns true
 repeatStr.match(repeatRegex); // Returns ["row row row", "row"]
 ```
 
-سيؤدي استخدام دالة `.match()` على string إلى ارجاع array بداخله الـ substring المطابق، جنبا إلى جنب مع الـ captured groups الخاصين به.
+سيؤدي استخدام طريقة `.match()` على مقطع (string) إلى أنتاج قائمة (array) بداخلها مقطع فرعي (substring) المطابق، جنبا إلى جنب مع المجموعات المستخدمة الخاصين بها.
 
 
 # --instructions--

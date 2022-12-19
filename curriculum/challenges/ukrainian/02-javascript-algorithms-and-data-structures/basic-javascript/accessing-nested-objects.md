@@ -9,7 +9,7 @@ dashedName: accessing-nested-objects
 
 # --description--
 
-Доступ до субвластивостей об'єктів можна отримати використавши крапкову або дужкову нотацію.
+Доступ до підвластивостей об'єктів можна отримати завдяки ланцюжку точкової та дужкової нотацій.
 
 Ось вкладений об'єкт:
 
@@ -31,21 +31,21 @@ ourStorage.cabinet["top drawer"].folder2;
 ourStorage.desk.drawer;
 ```
 
-`ourStorage.cabinet["top drawer"].folder2` зміниться на `secrets`, і `ourStorage.desk.drawer` зміниться на `stapler`.
+`ourStorage.cabinet["top drawer"].folder2` буде рядком `secrets`, а `ourStorage.desk.drawer` буде рядком `stapler`.
 
 # --instructions--
 
-Отримайте доступ до `myStorage` та визначте вміст скрині `glove box` для змінної `gloveBoxContents`. Використовуйте точкову нотацію для всіх властивостей, де це можливо, в іншому випадку використовуйте дужки.
+Отримайте доступ до `myStorage` та призначте вміст властивості `glove box` до змінної `gloveBoxContents`. Використайте точкову нотацію для всіх властивостей, де можливо. В іншому випадку використайте дужкову нотацію.
 
 # --hints--
 
-`gloveBoxContents` має дорівнювати рядку `maps`.
+`gloveBoxContents` повинен дорівнювати рядку `maps`.
 
 ```js
 assert(gloveBoxContents === 'maps');
 ```
 
-Використовуйте крапкову або дужкову нотацію в коді, щоб отримати доступ до `myStorage`.
+Щоб отримати доступ до `myStorage`, використайте точкову та дужкову нотацію.
 
 ```js
 assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));

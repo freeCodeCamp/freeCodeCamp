@@ -9,9 +9,9 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-<dfn>Багатовимірні масиви</dfn> можна також описати як *масиви в масивах*. When you use brackets to access your array, the first set of brackets refers to the entries in the outermost (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
+<dfn>Багатовимірний масив</dfn> можна описати як *масив масивів*. Коли ви використовуєте дужки для доступу до масиву, перша пара дужок стосується записів зовнішнього (перший рівень) масиву, і кожна додаткова пара дужок стосується наступного рівня записів.
 
-**Наприклад**
+**Приклад**
 
 ```js
 const arr = [
@@ -26,23 +26,23 @@ const nestedSubarray = arr[3][0];
 const element = arr[3][0][1];
 ```
 
-In this example, `subarray` has the value `[[10, 11, 12], 13, 14]`, `nestedSubarray` has the value `[10, 11, 12]`,   and `element` has the value `11` .
+У цьому прикладі `subarray` має значення `[[10, 11, 12], 13, 14]`, `nestedSubarray` має значення `[10, 11, 12]`, а `element` має значення `11`.
 
-**Примітка:** ніколи не вставляйте пробіл між ім'ям масиву і квадратними дужками, наприклад, так `array [0][0]` і навіть так `array [0] [0]` не можна робити. Незважаючи на те, що для JavaScript це є дрібницею, ця звичка може ускладнити читання коду іншими програмістами.
+**Примітка:** ніколи не вставляйте пробіл між назвою масиву і квадратними дужками. Наприклад, `array [0][0]` або `array [0] [0]`. Хоча JavaScript і може це обробити, таке написання може ускладнити читання коду для інших програмістів.
 
 # --instructions--
 
-За допомогою квадратних дужок виберіть елемент із `myArray` таким чином, щоб `myData` дорівнював `8`.
+Використовуючи дужкову нотацію, виберіть елемент із `myArray` таким чином, щоб `myData` дорівнював `8`.
 
 # --hints--
 
-`myData` має дорівнювати `8`.
+`myData` повинен дорівнювати `8`.
 
 ```js
 assert(myData === 8);
 ```
 
-Ви маєте використовувати квадратні дужки, щоб зчитати правильне значення з `myArray`.
+Ви повинні використати дужкову нотацію, щоб зчитати правильне значення з `myArray`.
 
 ```js
 assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(code)));
