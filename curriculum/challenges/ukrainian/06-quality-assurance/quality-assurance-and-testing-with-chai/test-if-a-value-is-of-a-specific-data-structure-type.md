@@ -10,7 +10,7 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
 
 Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`#typeOf` стверджує, що тип значення - це заданий рядок, що визначено `Object.prototype.toString`.
+`#typeOf` підтверджує, що типом значення є наданий рядок, визначений `Object.prototype.toString`.
 
 # --instructions--
 
@@ -104,7 +104,7 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
   );
 ```
 
-Потрібно обрати правильний метод для п'ятого твердження –`typeOf` або `notTypeOf`.
+Ви повинні обрати правильний метод для п'ятого твердження: `typeOf` або `notTypeOf`.
 
 ```js
 (getUserInput) =>

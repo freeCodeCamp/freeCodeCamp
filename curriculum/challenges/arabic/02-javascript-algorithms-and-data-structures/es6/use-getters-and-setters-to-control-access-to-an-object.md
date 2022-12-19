@@ -38,7 +38,7 @@ console.log(novel.writer);
 
 ستعرض وحدة التحكم السلسلتين strings باسم `anonymous` و `newAuthor`.
 
-لاحظ الصيغة المستخدمة لاستدعاء getter و setter. حتى أنها لا تشبه الوظائف العادية. تعتبر الـ Getters و Setters مهمة لأنها تخفي تفاصيل التنفيذ الداخلية.
+لاحظ الصيغة المستخدمة لاستدعاء getter و setter. حتى أنها لا تشبه الوظائف (functions) العادية. تعتبر الـ Getters و Setters مهمة لأنها تخفي تفاصيل التنفيذ الداخلية.
 
 **ملاحظة:** من المألوف أن يسبق اسم المتغير الخاص برمز underscore هيئته (`_`). ومع ذلك، فإن الرمز نفسه لا يجعل المتغير خاصًا.
 
@@ -58,7 +58,7 @@ console.log(novel.writer);
 
 # --hints--
 
-`Thermostat` يجب أن يكون `class` مع وظيفة `constructor` محددة.
+يجب أن يكون `Thermostat` بنوع `class` مع طريقة `constructor` محددة.
 
 ```js
 assert(

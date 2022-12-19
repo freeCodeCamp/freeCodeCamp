@@ -14,21 +14,21 @@ dashedName: learn-how-javascript-assertions-work
 - 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成這些挑戰。
 - 使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-If you use Replit, follow these steps to set up the project:
+如果你使用 Replit，請按照以下步驟設置項目：
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+在 `tests/1_unit-tests.js` 文件下 `Basic Assertions` suite 內註釋爲 `#1` 的地方，將每一個 `assert` 更改爲 `assert.isNull` 或 `assert.isNotNull`，以使測試通過（應該返回 `true`）。 不要修改傳入斷言的參數。
 
 # --hints--
 
-All tests should pass.
+應通過所有測試。
 
 ```js
 (getUserInput) =>
@@ -42,7 +42,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isNull` vs. `isNotNull`.
+請爲第一個斷言選擇正確的方法——`isNull` 或 `isNotNull`。
 
 ```js
 (getUserInput) =>
@@ -56,7 +56,7 @@ You should choose the correct method for the first assertion - `isNull` vs. `isN
   );
 ```
 
-You should choose the correct method for the second assertion - `isNull` vs. `isNotNull`.
+請爲第二個斷言選擇正確的方法——`isNull` 或 `isNotNull`。
 
 ```js
 (getUserInput) =>

@@ -14,13 +14,13 @@ dashedName: personal-library
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目
 -   使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-If you use Replit, follow these steps to set up the project:
+如果你使用 Replit，請按照以下步驟設置項目：
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。 也可以將項目的源碼鏈接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
@@ -31,7 +31,7 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 # --hints--
 
-You can provide your own project, not the example URL.
+你可以提交你自己的項目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -41,7 +41,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-You can send a <b>POST</b> request to `/api/books` with `title` as part of the form data to add a book.  The returned response will be an object with the `title` and a unique `_id` as keys.  If `title` is not included in the request, the returned response should be the string `missing required field title`.
+可以發送 <b>POST</b> 請求到 `/api/books`，帶有 `title` 作爲表單數據的一部分，來添加一本書。  返回的響應將是一個包含 `title` 和唯一的 `_id` 作爲鍵的對象。  如果 `title` 未包含在請求中，返回的響應應該是字符串 `missing required field title`。
 
 ```js
 async (getUserInput) => {
@@ -62,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>GET</b> request to `/api/books` and receive a JSON response representing all the books. The JSON response will be an array of objects with each object (book) containing `title`, `_id`, and `commentcount` properties.
+你可以向 `/api/books` 發送 <b>GET</b> 請求，並返回代表所有書的 JSON 響應。 JSON 響應應該是一個對象數組，每個對象（書）包含 `title`、`_id` 和 `commentcount` 屬性。
 
 ```js
 async (getUserInput) => {
@@ -90,7 +90,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>GET</b> request to `/api/books/{_id}` to retrieve a single object of a book containing the properties `title`, `_id`, and a `comments` array (empty array if no comments present). If no book is found, return the string `no book exists`.
+你可以發送 <b>GET</b> 請求到 `/api/books/{_id}` 來檢索一本書的單個對象，返回屬性 `title`、`_id` 和 `comments` 數組（如果沒有評論，則展示空數組）。 如果找不到書，返回字符串 `no book exists`。
 
 ```js
 async (getUserInput) => {
@@ -114,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. If `comment` is not included in the request, return the string `missing required field comment`. If no book is found, return the string `no book exists`.
+你可以發送一個 <b>POST</b> 請求，其中包含 `comment` 作爲表單正文數據，請求到 `/api/books/{_id}` 以便將評論添加到書中。 返回的響應將是書對象，與先前測試中 <b>GET</b> `/api/books/{_id}` 請求類似。 如果請求中沒有包含 `comment`，返回字符串 `missing required field comment`。 如果找不到書，返回字符串 `no book exists`。
 
 ```js
 async (getUserInput) => {
@@ -152,7 +152,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>DELETE</b> request to `/api/books/{_id}` to delete a book from the collection. The returned response will be the string `delete successful` if successful. If no book is found, return the string `no book exists`.
+你可以向 `/api/books/{_id}` 發送 <b>DELETE</b> 請求，從收藏中刪除一本書。 如果成功，返回的響應將是字符串 `delete successful`。 如果找不到書，返回字符串 `no book exists`。
 
 ```js
 async (getUserInput) => {
@@ -176,7 +176,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>DELETE</b> request to `/api/books` to delete all books in the database. The returned response will be the string `complete delete successful` if successful.
+你可以向 `/api/books` 發送 <b>DELETE</b> 請求來刪除數據庫中的所有書籍。 如果成功，返回的響應將是字符串 `complete delete successful`。
 
 ```js
 async (getUserInput) => {
@@ -193,7 +193,7 @@ async (getUserInput) => {
 };
 ```
 
-All 10 functional tests required are complete and passing.
+所有 10 項功能測試都已完成並通過。
 
 ```js
 async (getUserInput) => {

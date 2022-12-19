@@ -14,52 +14,52 @@ dashedName: metric-imperial-converter
 - 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 - 使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-If you use Replit, follow these steps to set up the project:
+如果你使用 Replit，請按照以下步驟設置項目：
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。 也可以將項目的源碼鏈接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
-- Complete the necessary conversion logic in `/controllers/convertHandler.js`
-- Complete the necessary routes in `/routes/api.js`
-- Copy the `sample.env` file to `.env` and set the variables appropriately
-- To run the tests uncomment `NODE_ENV=test` in your `.env` file
-- To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+- 在 `/controllers/convertHandler.js` 中完成必要的轉換邏輯
+- 在 `/routes/api.js` 中完成必要的路由
+- 複製 `sample.env` 文件到 `.env` 並按需設置變量
+- 在 `.env` 文件中取消註釋 `NODE_ENV=test` 來運行測試
+- 使用 `npm run test` 命令在 console 中運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯
 
-Write the following tests in `tests/1_unit-tests.js`:
+在 `tests/1_unit-tests.js` 中寫下以下測試：
 
-- `convertHandler` should correctly read a whole number input.
-- `convertHandler` should correctly read a decimal number input.
-- `convertHandler` should correctly read a fractional input.
-- `convertHandler` should correctly read a fractional input with a decimal.
-- `convertHandler` should correctly return an error on a double-fraction (i.e. `3/2/3`).
-- `convertHandler` should correctly default to a numerical input of `1` when no numerical input is provided.
-- `convertHandler` should correctly read each valid input unit.
-- `convertHandler` should correctly return an error for an invalid input unit.
-- `convertHandler` should return the correct return unit for each valid input unit.
-- `convertHandler` should correctly return the spelled-out string unit for each valid input unit.
-- `convertHandler` should correctly convert `gal` to `L`.
-- `convertHandler` should correctly convert `L` to `gal`.
-- `convertHandler` should correctly convert `mi` to `km`.
-- `convertHandler` should correctly convert `km` to `mi`.
-- `convertHandler` should correctly convert `lbs` to `kg`.
-- `convertHandler` should correctly convert `kg` to `lbs`.
+- `convertHandler` 應該正確地讀取整個數字輸入。
+- `convertHandler` 應該正確地讀取一個十進制數字輸入。
+- `convertHandler` 應該正確地讀取一個分數輸入。
+- `convertHandler` 應該正確地讀取一個帶小數點的分數輸入。
+- `convertHandler` 當輸入雙分數時應該返回錯誤（`3/2/3`）。
+- `convertHandler` 在沒有提供數字輸入時應該默認爲 `1`。
+- `convertHandler` 應該正確地讀取每個有效的單位輸入。
+- `convertHandler` 在輸入無效單位時應返回錯誤。
+- `convertHandler` 在輸入有效單位時應返回正確的單位。
+- `convertHandler` 應該正確返回每個有效輸入單位的拼寫字符串。
+- `convertHandler` 應該正確地將 `gal` 轉換爲 `L`。
+- `convertHandler` 應該正確地將 `L` 轉換爲 `gal`。
+- `convertHandler` 應該正確地將 `mi` 轉換爲 `km`。
+- `convertHandler` 應該正確地將 `km` 轉換爲 `mi`。
+- `convertHandler` 應該正確地將 `lbs` 轉換爲 `kg`。
+- `convertHandler` 應該正確地將 `kg` 轉換爲 `lbs`。
 
-Write the following tests in `tests/2_functional-tests.js`:
+在 `tests/2_functional-tests.js` 中編寫下以下測試：
 
-- Convert a valid input such as `10L`: `GET` request to `/api/convert`.
-- Convert an invalid input such as `32g`: `GET` request to `/api/convert`.
-- Convert an invalid number such as `3/7.2/4kg`: `GET` request to `/api/convert`.
-- Convert an invalid number AND unit such as `3/7.2/4kilomegagram`: `GET` request to `/api/convert`.
-- Convert with no number such as `kg`: `GET` request to `/api/convert`.
+- 轉換一個有效的輸入例如 `10L`：`GET` 請求到 `/api/convert`。
+- 轉換一個無效的輸入例如 `32g`：`GET` 請求到 `/api/convert`。
+- 轉換一個無效的數字例如 `3/7.2/4kg`：`GET` 請求到 `/api/convert`。
+- 轉換一個無效的數字和單位例如 `3/7.2/4kilomegagram`：`GET` 請求到 `/api/convert`。
+- 轉換時沒有數字，例如 `kg`：`GET` 請求到 `/api/convert`。
 
 # --hints--
 
-You can provide your own project, not the example URL.
+你可以提交你自己的項目，而不是示例的 URL。
 
 ```js
 getUserInput => {
@@ -71,13 +71,13 @@ getUserInput => {
 };
 ```
 
-You can `GET` `/api/convert` with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)
+通過 `GET` 請求 `/api/convert`，傳入數字和單位的單個參數，可以將其轉換。 （提示：通過尋找第一個字符的索引來分割輸入，這將標記單位的開始）
 
 ```js
 
 ```
 
-You can convert `'gal'` to `'L'` and vice versa. (1 gal to 3.78541 L)
+你可以將 `'gal'` 轉換爲 `'L'`，反之亦然。 （1 gal 轉換爲 3.78541 L）
 
 ```js
 async getUserInput => {
@@ -100,7 +100,7 @@ async getUserInput => {
 };
 ```
 
-You can convert `'lbs'` to `'kg'` and vice versa. (1 lbs to 0.453592 kg)
+你可以將 `'lbs'` 轉換爲 `'kg'`，反之亦然。 （1 lbs 轉換爲 0.453592 kg）
 
 ```js
 async getUserInput => {
@@ -123,7 +123,7 @@ async getUserInput => {
 };
 ```
 
-You can convert `'mi'` to `'km'` and vice versa. (1 mi to 1.60934 km)
+你可以將 `'mi'` 轉換爲 `'km'` 反之亦然。 （1 mi 轉換爲 1.60934 km）
 
 ```js
 async getUserInput => {
@@ -146,7 +146,7 @@ async getUserInput => {
 };
 ```
 
-All incoming units should be accepted in both upper and lower case, but should be returned in both the `initUnit` and `returnUnit` in lower case, except for liter, which should be represented as an uppercase `'L'`.
+所有輸入單位以大寫和小寫形式都應該被接受，但在 `initUnit` 和 `returnUnit` 中應以小寫形式返回，升除外，應將其表示爲大寫的 `'L'`。
 
 ```js
 async getUserInput => {
@@ -169,7 +169,7 @@ async getUserInput => {
 };
 ```
 
-If the unit of measurement is invalid, returned will be `'invalid unit'`.
+如果測量單位無效，返回將爲 `'invalid unit'`。
 
 ```js
 async getUserInput => {
@@ -182,7 +182,7 @@ async getUserInput => {
 };
 ```
 
-If the number is invalid, returned will be `'invalid number'`.
+如果數字無效，返回將爲 `'invalid number'`。
 
 ```js
 async getUserInput => {
@@ -197,7 +197,7 @@ async getUserInput => {
 };
 ```
 
-If both the unit and number are invalid, returned will be `'invalid number and unit'`.
+如果單位和數字都無效，返回將爲 `'invalid number and unit'`。
 
 ```js
 async getUserInput => {
@@ -215,7 +215,7 @@ async getUserInput => {
 };
 ```
 
-You can use fractions, decimals or both in the parameter (ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
+你可以在參數中使用分數、小數或小數分數（例如 5、1/2、2.5/6），如果沒有提供任何內容，則默認值爲 1。
 
 ```js
 async getUserInput => {
@@ -246,7 +246,7 @@ async getUserInput => {
 };
 ```
 
-Your return will consist of the `initNum`, `initUnit`, `returnNum`, `returnUnit`, and `string` spelling out units in the format `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'` with the result rounded to 5 decimals.
+你的返回將包含 `initNum`、`initUnit`、`returnNum`、`returnUnit` 和 `string` 拼寫單位格式 `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'`，結果四捨五入爲 5 位小數。
 
 ```js
 async getUserInput => {
@@ -263,7 +263,7 @@ async getUserInput => {
 };
 ```
 
-All 16 unit tests are complete and passing.
+所有 16 項單元測試都已完成並通過。
 
 ```js
 async getUserInput => {
@@ -288,7 +288,7 @@ async getUserInput => {
 };
 ```
 
-All 5 functional tests are complete and passing.
+所有 5 項功能測試都已完成並通過。
 
 ```js
 async getUserInput => {

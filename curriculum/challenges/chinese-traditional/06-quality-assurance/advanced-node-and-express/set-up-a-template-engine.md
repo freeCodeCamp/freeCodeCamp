@@ -14,35 +14,35 @@ dashedName: set-up-a-template-engine
 - 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成這些挑戰。
 - 使用一個你選擇的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-If you use Replit, follow these steps to set up the project:
+如果你使用 Replit，請按照以下步驟設置項目：
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。
 
-A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
+模板引擎使你可以在應用程序中使用靜態模板文件（例如用 *Pug* 編寫的文件）。 在運行時，模版引擎會用服務端的真實數據替換掉模版文件中的變量。 然後將模版轉譯成發送給客戶端的 HTML 靜態文件。 這樣可以輕鬆地構造 HTML 頁面，允許在頁面直接顯示變量內容而不需要從客戶端發送 API 請求。
 
-`pug@~3.0.0` has already been installed, and is listed as a dependency in your `package.json` file.
+`pug@~3.0.0` 已經被安裝，並且在你項目的 `package.json` 文件中作爲依賴。
 
-Express needs to know which template engine you are using. Use the `set` method to assign `pug` as the `view engine` property's value:
+Express 需要知道你正在使用哪個模板引擎。 使用 `set` 方法來分配 `pug` 作爲 `view engine` 屬性的值：
 
 ```javascript
 app.set('view engine', 'pug');
 ```
 
-After that, add another `set` method that sets the `views` property of your `app` to point to the `./views/pug` directory. This tells Express to render all views relative to that directory.
+在那之後， 添加另一個 `set` 方法來設置你的 `app` 的 `views` 屬性，指向 `./views/pug` 目錄。 這告訴 Express 要渲染所有與那個目錄相關的視圖。
 
-Finally, use `res.render()` in the route for your home page, passing `index` as the first argument. This will render the `pug` template.
+最後，在主頁的路由中使用 `res.render()`，傳遞 `index` 作爲第一個參數。 這將渲染 `pug` 模板。
 
-If all went as planned, your app home page will no longer be blank. Instead, it will display a message indicating you've successfully rendered the Pug template!
+如果全部按計劃進行，你的應用主頁將不再留空。 相反，它將顯示一條消息，表明你已經成功渲染了Pug 模板！
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求後，請提交你的頁面鏈接。 如果你遇到錯誤，可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 # --hints--
 
-Pug should be a dependency.
+項目中應使用 Pug 作爲依賴。
 
 ```js
 async (getUserInput) => {
@@ -57,7 +57,7 @@ async (getUserInput) => {
 }
 ```
 
-View engine should be Pug.
+View 引擎應該是 Pug。
 
 ```js
 async (getUserInput) => {
@@ -68,7 +68,7 @@ async (getUserInput) => {
 }
 ```
 
-You should set the `views` property of the application to `./views/pug`.
+你應該將應用程序的 `views` 屬性設置爲 `./views/pug`。
 
 ```js
 async (getUserInput) => {
@@ -79,7 +79,7 @@ async (getUserInput) => {
 }
 ```
 
-Use the correct ExpressJS method to render the index page from the response.
+使用正確的 ExpressJS 方法渲染來自響應的索引頁。
 
 ```js
 async (getUserInput) => {
@@ -94,7 +94,7 @@ async (getUserInput) => {
     }
 ```
 
-Pug should be working.
+Pug 應該正常運行。
 
 ```js
 async (getUserInput) => {

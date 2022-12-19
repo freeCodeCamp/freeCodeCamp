@@ -1,0 +1,209 @@
+/* 
+breadcrumbs section
+*/
+[dir='rtl'] .breadcrumb-left::after {
+  content: '';
+  display: none;
+}
+
+[dir='rtl'] .breadcrumb-left::before {
+  background-color: var(--secondary-background);
+  content: '';
+  border-top: calc(1.375rem / 2) solid transparent;
+  border-bottom: calc(1.2rem / 2) solid transparent;
+  border-right: calc(1.1rem / 2) solid var(--quaternary-background);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+[dir='rtl'] .challenge-title-breadcrumbs ol {
+  padding-right: 0;
+}
+
+/* 
+Intro project buttons and headings 
+*/
+
+[dir='rtl'] .monaco-editor-tabs {
+  margin-right: 0;
+}
+
+[dir='rtl'] .panel-display-tabs button:first-child,
+.tabs-row > button:first-child {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+[dir='rtl'] .map-ui .superblock-link .map-icon {
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+[dir='rtl'] .map-ui .superblock-link > svg {
+  transform: rotate(180deg);
+}
+
+/* 
+fix misaligned text in button and in donation 
+*/
+
+[dir='rtl'] .link-btn,
+[dir='rtl'] .faq-item h4 {
+  text-align: right;
+}
+
+/* 
+ intro to courses section
+*/
+
+[dir='rtl'] .link-btn.btn-lg > svg {
+  transform: rotate(180deg);
+}
+
+[dir='rtl'] .block-grid .map-title > svg:last-child,
+[dir='rtl'] .map-title .course-title:last-of-type {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+[dir='rtl'] .map-title .course-title:first-of-type {
+  margin-right: 0.35em;
+  margin-left: auto;
+}
+
+/* 
+this is used to rotate arrow mark in certification block and donation
+the "not" and "is" selector is used to stop it from affecting other section and pages
+*/
+
+/* arrow icon */
+[dir='rtl']
+  :is(.block:is(:not(.open)), .faq-item:is(:not(.open)))
+  .map-title:not(.title-wrapper, .block-header-button-text)
+  > svg:first-child {
+  transform: rotate(180deg);
+}
+
+/* 
+external fontawesome link icon
+*/
+
+[dir='rtl'] .nav-link > svg,
+[dir='rtl'] td a[target='_blank'] > svg {
+  transform: rotate(270deg);
+}
+
+/* 
+universal-nav-bar
+and menu secion
+*/
+
+@media (min-width: 767.5px) {
+  [dir='rtl'] .nav-list {
+    right: auto;
+    left: 0;
+  }
+}
+
+@media (max-width: 980px) {
+  [dir='rtl'] #universal-nav-logo {
+    left: inherit;
+    right: 17px;
+  }
+}
+
+/* had to change overflow, because it clips the first words of the english articles */
+[dir='rtl'] .footer-container {
+  overflow-x: inherit;
+}
+
+/* 
+dropdown links 
+*/
+
+[dir='rtl'] .dropdown-menu {
+  text-decoration-skip-ink: all;
+}
+
+/* 
+New RWD project challenge
+*/
+
+[dir='rtl'] .tabs-row {
+  gap: 10px;
+}
+
+[dir='rtl'] .panel-display-tabs {
+  margin-left: auto;
+}
+
+[dir='rtl'] .monaco-editor-tabs button:not(:first-child) {
+  border-left: 2px solid;
+  border-right: none;
+}
+
+/* Align the the Arabic head with the corresponding English word */
+
+[dir='rtl'] .table thead:first-child tr:first-child th {
+  text-align: right;
+}
+
+/* 
+sections that need to stay left to right
+*/
+
+/* Code snippet*/
+[dir='rtl'] code,
+/* trending articles */
+[dir='rtl'] .trending-guides .trending-guides-row div a,
+[dir='rtl'] .quote-partial,
+[dir='rtl'] .overflow-guard,
+[dir='rtl'] .challenge-preview,
+[dir='rtl'] .output-text,
+/* timeline*/
+[dir='rtl'] .timeline-pagination_list {
+  direction: ltr;
+}
+
+[dir='rtl'] code {
+  word-break: normal;
+  unicode-bidi: isolate;
+}
+
+[dir='rtl'] .description-container,
+[dir='rtl'] .action-row-container,
+[dir='rtl']
+  .timeline-pagination_list
+  .timeline-pagination_list_item:not(:has(button)) {
+  direction: rtl;
+}
+
+/* Revert the editor layout to account for reverted splitter */
+
+[dir='rtl'] .desktop-layout .tabs-row,
+[dir='rtl'] .desktop-layout .reflex-container:not(.horizontal) {
+  flex-direction: row-reverse;
+}
+
+/* new Font Family because 'Hack-ZeroSlash' add letter spacing in Arabic letter which is extermely bad */
+
+[dir='rtl'] body,
+[dir='rtl'] .signup-btn,
+[dir='rtl'] h1,
+[dir='rtl'] h2,
+[dir='rtl'] h3,
+[dir='rtl'] h4,
+[dir='rtl'] h5,
+[dir='rtl'] h6,
+[dir='rtl'] p,
+[dir='rtl'] td,
+[dir='rtl'] th,
+[dir='rtl'] .donate-page-wrapper,
+[dir='rtl'] .donate-page-wrapper b,
+[dir='rtl'] .donate-page-wrapper h3,
+[dir='rtl'] .donate-page-wrapper p,
+[dir='rtl'] [name='payment-method'] {
+  font-family: 'NotoSansArabic';
+}

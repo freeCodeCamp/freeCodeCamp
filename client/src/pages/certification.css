@@ -163,28 +163,25 @@
   margin-top: calc(-1 * var(--header-height));
 }
 
+.qr-wrap {
+  display: block;
+  width: 100%;
+  height: 0;
+  position: relative;
+}
+
+.qr-code {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  top: -128px;
+  right: 60px;
+}
+
 /*mobile media queries*/
-@media screen and (max-width: 675px) {
-  .certification-namespaces.issue-date {
-    padding: 0;
-    border: 0;
-  }
-
-  .certification-namespace header {
-    height: 190px;
-  }
-
-  .certification-namespace h3 {
-    font-size: 15px;
-  }
-
-  .certification-namespace h1 {
-    font-size: 17px;
-  }
-
-  .certification-namespace h4 {
-    font-size: 15px;
-    margin-top: 20px;
+@media screen and (max-width: 1200px) {
+  .qr-code {
+    right: 40px;
   }
 }
 
@@ -235,6 +232,14 @@
   .certification-namespace h1 {
     font-size: 28px;
   }
+
+  .qr-code {
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    top: calc(-96px - 50px);
+    right: 20px;
+  }
 }
 
 @media screen and (max-width: 675px) {
@@ -258,6 +263,10 @@
   .certification-namespace h4 {
     font-size: 15px;
     margin-top: 20px;
+  }
+
+  .qr-code {
+    display: none;
   }
 }
 
