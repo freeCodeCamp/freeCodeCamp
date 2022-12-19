@@ -69,7 +69,7 @@ dashedName: american-british-translator
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Ви повинні надати власний проєкт, а не URL-адресу прикладу.
 
 ```js
 (getUserInput) => {

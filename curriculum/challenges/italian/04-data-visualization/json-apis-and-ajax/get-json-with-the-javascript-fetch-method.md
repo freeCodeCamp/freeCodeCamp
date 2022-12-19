@@ -39,7 +39,7 @@ Modifica il codice per creare e usare una richiesta `GET` all'API Cat Photo di f
 # --hints--
 
 
-Your code should use the fetched data to replace the inner HTML
+Il tuo codice dovrebbe utilizzare i dati recuperati per sostituire l'innerHTML
 
 ```js
 const catData = "dummy data";
@@ -62,13 +62,13 @@ async () => {
 ```
 
 
-Your code should make a `GET` request with `fetch`.
+Il tuo codice dovrebbe fare una richiesta `GET` usando `fetch`.
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-Your code should use `then` to convert the response to JSON.
+Il tuo codice dovrebbe usare `then` per convertire la risposta in JSON.
 
 ```js
 assert(
@@ -78,13 +78,13 @@ assert(
 );
 ```
 
-Your code should use `then` to handle the data converted to JSON by the other `then`.
+Il tuo codice dovrebbe usare `then` per gestire i dati convertiti in JSON dall'altro `then`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-Your code should get the element with id `message` and change its inner HTML to the string of JSON data.
+Il tuo codice dovrebbe selezionare l'elemento con l'id `message` e cambiare il suo innerHTML con la stringa di dati JSON.
 
 ```js
 assert(

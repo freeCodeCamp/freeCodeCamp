@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392d2
-title: Додати нові властивості об'єкту JavaScript
+title: Додавання нових властивостей до об'єкта JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe38UD'
 forumTopicId: 301169
@@ -9,9 +9,9 @@ dashedName: add-new-properties-to-a-javascript-object
 
 # --description--
 
-Ви можете додати нові властивості вже наявним об'єктам JavaScript, таким чином модифікуючи їх.
+Ви можете додати нові властивості до наявних об'єктів JavaScript так само, як ви б модифікували їх.
 
-Нижче подано як додавати властивість `bark` до `ourDog`:
+Таким чином ми б додали властивість `bark` до `ourDog`:
 
 ```js
 ourDog.bark = "bow-wow";
@@ -23,9 +23,9 @@ ourDog.bark = "bow-wow";
 ourDog["bark"] = "bow-wow";
 ```
 
-Тепер, коли оцінимо `ourDog.bark`, отримаємо його гавкання, `bow-wow`.
+Якщо ми виконаємо `ourDog.bark`, отримаємо гавкання `bow-wow`.
 
-Наприклад:
+Приклад:
 
 ```js
 const ourDog = {
@@ -40,17 +40,17 @@ ourDog.bark = "bow-wow";
 
 # --instructions--
 
-Додайте властивість `bark` до `myDog` і встановіть його на звук собаки, наприклад "гав". Ви можете використовувати крапковий запис або запис квадратними дужками.
+Додайте властивість `bark` до `myDog` і встановіть її на гавкіт собаки, наприклад «woof». Ви можете використати точкову або дужкову нотацію.
 
 # --hints--
 
-Вам потрібно додати властивість `bark` до `myDog`.
+Ви повинні додати властивість `bark` до `myDog`.
 
 ```js
 assert(myDog.bark !== undefined);
 ```
 
-Не слід додавати `bark` до ініціалізації `myDog`.
+Ви не повинні додавати `bark` до ініціалізації `myDog`.
 
 ```js
 assert(!/bark[^\n]:/.test(code));
