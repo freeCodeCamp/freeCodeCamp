@@ -30,7 +30,7 @@ assert(netWorkingCapital === 2);
 assert(!code.match(/recievables/g));
 ```
 
-يجب تعريف متغير باسم `receivables` واستخدامه بشكل صحيح في الكود.
+يجب إعلان متغير باسم `receivables` واستخدامه بشكل صحيح في الكود.
 
 ```js
 assert(code.match(/receivables/g).length == 2);
@@ -42,7 +42,7 @@ assert(code.match(/receivables/g).length == 2);
 assert(!code.match(/payable;/g));
 ```
 
-يجب تعريف متغير باسم `payables` واستخدامه بشكل صحيح في الكود.
+يجب إعلان متغير باسم `payables` واستخدامه بشكل صحيح في الكود.
 
 ```js
 assert(code.match(/payables/g).length == 2);

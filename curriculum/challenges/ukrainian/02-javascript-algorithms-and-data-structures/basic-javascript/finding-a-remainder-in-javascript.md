@@ -40,7 +40,7 @@ assert(/(const|let|var)\s+?remainder/.test(code));
 assert(remainder === 2);
 ```
 
-Вам слід використовувати оператор `%`
+Ви повинні використати оператор `%`
 
 ```js
 assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
