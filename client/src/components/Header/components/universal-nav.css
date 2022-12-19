@@ -468,6 +468,16 @@ button.nav-link[aria-disabled='true'] {
   color: #fff !important;
 }
 
+.donate-btn {
+  max-height: calc(var(--header-height) - 6px);
+  padding: 4px 12px;
+  margin-left: 12px;
+  font-family: 'Hack-ZeroSlash', monospace !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .universal-nav-right .fcc_searchBar {
   position: absolute;
   top: 0;

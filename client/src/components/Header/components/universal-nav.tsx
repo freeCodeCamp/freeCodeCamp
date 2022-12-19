@@ -102,6 +102,16 @@ export const UniversalNav = ({
             <div className='navatar'>
               <AuthOrProfile user={user} />
             </div>
+            <div>
+              <Link
+                className='btn-cta donate-btn'
+                // onKeyDown={this.handleMenuKeyDown}
+                sameTab={false}
+                to='/donate'
+              >
+                {t('buttons.donate')}
+              </Link>
+            </div>
           </>
         )}
       </div>
