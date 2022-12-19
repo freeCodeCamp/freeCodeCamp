@@ -16,7 +16,7 @@ dashedName: implement-map-on-a-prototype
 
 # --instructions--
 
-اكتب `Array.prototype.myMap()` الخاص بك، والذي يجب أن يتصرف مثل `Array.prototype.map()`. يجب ألا تستخدم طريقة `map` مبنية داخلياً (built-in method). يمكن الوصول إلى مثيل (instance) `Array` في طريقة `myMap` باستخدام `this`.
+اكتب `Array.prototype.myMap()` الخاص بك، الذي يجب أن يقلد مثل `Array.prototype.map()`. يجب ألا تستخدم طريقة `map` مبنية داخلياً (built-in method). يمكن الوصول إلى مثيل (instance) `Array` في طريقة `myMap` باستخدام `this`.
 
 # --hints--
 

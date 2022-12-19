@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c3
-title: Призначення з поверненим значенням
+title: Присвоєння з поверненим значенням
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2pEtB'
 forumTopicId: 16658
@@ -9,29 +9,29 @@ dashedName: assignment-with-a-returned-value
 
 # --description--
 
-If you'll recall from our discussion about <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">Storing Values with the Assignment Operator</a>, everything to the right of the equal sign is resolved before the value is assigned. Це означає, що ми можемо взяти повернене значення функції та присвоїти її змінній.
+If you'll recall from our discussion about <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">Storing Values with the Assignment Operator</a>, everything to the right of the equal sign is resolved before the value is assigned. Це означає, що ми можемо взяти повернене значення функції та присвоїти його змінній.
 
-Припустимо, у нас уже є визначена функція `sum`, яка додає два числа, тоді:
+Припустимо, що ми вже визначили функцію `sum`, яка додає два числа, тоді:
 
 ```js
 ourSum = sum(5, 12);
 ```
 
-вона називатиметься функцією `sum`, яка повертає значення `17` і призначає її змінній `ourSum`.
+викличе функцію `sum`, яка поверне значення `17` та призначить його змінній `ourSum`.
 
 # --instructions--
 
-Назвіть функцію `processArg` з аргументом `7` і присвойте її повернене значення змінній `processed`.
+Викличте функцію `processArg` з аргументом `7` та присвойте її повернене значення до змінної `processed`.
 
 # --hints--
 
-`processed` повинне мати значення `2`
+`processed` повинна мати значення `2`
 
 ```js
 assert(processed === 2);
 ```
 
-`processArg` потрібно призначити `processed`
+Ви повинні присвоїти `processArg` до `processed`
 
 ```js
 assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));
