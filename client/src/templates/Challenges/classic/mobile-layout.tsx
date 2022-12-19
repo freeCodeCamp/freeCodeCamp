@@ -68,7 +68,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
         });
       } else {
         document.documentElement.style.height =
-          String(window.innerHeight - 1) + 'px';
+          String(window.innerHeight) + 'px';
 
         toolPanelGroup.style.position = '';
         toolPanelGroup.style.bottom = '';
@@ -83,8 +83,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       window.addEventListener('resize', this.setToolPanelPosition);
       visualViewport?.addEventListener('resize', this.setToolPanelPosition);
 
-      document.documentElement.style.height =
-        String(window.innerHeight - 1) + 'px';
+      document.documentElement.style.height = String(window.innerHeight) + 'px';
       document.documentElement.style.overflow = 'hidden';
     }
   }
