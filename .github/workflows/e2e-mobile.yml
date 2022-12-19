@@ -14,6 +14,9 @@ jobs:
   mobile-test:
     name: Test curriculum for mobile app
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [18.x]
 
     steps:
       - name: Checkout Source Files
@@ -25,10 +28,10 @@ jobs:
           repository: freeCodeCamp/mobile
           path: mobile
 
-      - name: Use Node.js 16.x
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
-          node-version: 16.x
+          node-version: ${{ matrix.node-version }}
 
       - name: Setup Flutter 3.3.x
         uses: subosito/flutter-action@dbf1fa04f4d2e52c33185153d06cdb5443aa189d # tag=v2
