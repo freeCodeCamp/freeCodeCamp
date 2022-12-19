@@ -569,11 +569,17 @@ button.nav-link[aria-disabled='true'] {
   }
 
   .fcc_searchBar .ais-SearchBox-form {
-    display: flex;
+    display: block !important;
     position: absolute;
     top: var(--header-height);
     left: 15px;
     max-width: calc(100vw - 350px);
+  }
+
+  .ais-SearchBox-submit {
+    top: unset !important;
+    margin-top: 6px !important;
+    left: 15px !important;
   }
 
   #universal-nav-logo {
