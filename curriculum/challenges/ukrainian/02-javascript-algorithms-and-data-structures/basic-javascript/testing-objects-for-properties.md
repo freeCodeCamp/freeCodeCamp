@@ -30,7 +30,7 @@ myObj.hasOwnProperty("middle");
 
 # --hints--
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift")` має повернути рядок `pony`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift")` повинен повертати рядок `pony`.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet")` має повернути рядок `kitten`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet")` повинен повертати рядок `kitten`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house")` має повернути рядок `Not Found`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house")` повинен повертати рядок `Not Found`.
 
 ```js
 assert(
@@ -55,19 +55,19 @@ assert(
 );
 ```
 
-`checkObj({city: "Seattle"}, "city")` має повернути рядок `Seattle`.
+`checkObj({city: "Seattle"}, "city")` повинен повертати рядок `Seattle`.
 
 ```js
 assert(checkObj({ city: 'Seattle' }, 'city') === 'Seattle');
 ```
 
-`checkObj({city: "Seattle"}, "district")` має повернути рядок `Not Found`.
+`checkObj({city: "Seattle"}, "district")` повинен повертати рядок `Not Found`.
 
 ```js
 assert(checkObj({ city: 'Seattle' }, 'district') === 'Not Found');
 ```
 
-`checkObj({pet: "kitten", bed: "sleigh"}, "gift")` має повернути рядок `Not Found`.
+`checkObj({pet: "kitten", bed: "sleigh"}, "gift")` повинен повертати рядок `Not Found`.
 
 ```js
 assert(checkObj({ pet: 'kitten', bed: 'sleigh' }, 'gift') === 'Not Found');
