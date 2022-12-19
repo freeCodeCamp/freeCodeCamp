@@ -27,9 +27,11 @@ it('should check legacy certification button consistency', () => {
 it('should check certification button consistency', () => {
   const certifications = Object.keys(projectMap);
 
-  const tree = renderer.create(
-    certifications.map(certName => renderCertifications(certName, projectMap))
-  );
+  const tree = renderer
+    .create(
+      certifications.map(certName => renderCertifications(certName, projectMap))
+    )
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });

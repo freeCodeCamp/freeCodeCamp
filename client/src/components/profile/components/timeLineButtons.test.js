@@ -7,6 +7,9 @@ import { createStore } from '../../../redux/createStore';
 import TimelineInner from './time-line';
 import completedChallenges from './completedChallenges';
 
+Date.prototype.toLocaleString = jest.fn(() => 'Dec 29, 2022');
+Date.prototype.toISOString = jest.fn(() => '2016-09-28T20:31:56.730Z');
+
 jest.mock('../../../analytics');
 
 jest.mock('gatsby', () => {
@@ -45,16 +48,21 @@ jest.mock('gatsby', () => {
 });
 
 it('should check certification page consistency', () => {
-  const tree = renderer.create(
-    <Provider store={createStore()}>
-      <TimelineInner
-        completedMap={completedChallenges}
-        username='CeritifedUser'
-        onPress={() => {}}
-        t={t => t}
-      />
-    </Provider>
-  );
+  Date.toLocaleString = jest.fn(() => 'Dec 29, 2022');
+  Date.toISOString = jest.fn(() => '2016-09-28T20:31:56.730Z');
+
+  const tree = renderer
+    .create(
+      <Provider store={createStore()}>
+        <TimelineInner
+          completedMap={completedChallenges}
+          username='CeritifedUser'
+          onPress={() => {}}
+          t={t => t}
+        />
+      </Provider>
+    )
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });
