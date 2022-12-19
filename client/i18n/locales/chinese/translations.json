@@ -226,12 +226,12 @@
     "page-number": "第 {{pageNumber}} 页，共 {{totalPages}} 页"
   },
   "footer": {
-    "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 条款下具有免税资格的非营利性组织（税号：82-0779546)。",
+    "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 条款下具有免税资格的慈善组织（税号：82-0779546）。",
     "mission-statement": "我们的使命：帮助人们免费学习编程。我们通过创建成千上万的视频、文章和交互式编程课程——所有内容向公众免费开放——来实现这一目标。学员在世界各地自发成立数千个 freeCodeCamp 学习小组。",
     "donation-initiatives": "所有给 freeCodeCamp 的捐款都将用于我们的教育项目，购买服务器和其他服务，以及聘用员工。",
     "donate-text": "你可以<1>在此处进行免税捐赠</1>。",
     "trending-guides": "精选文章",
-    "our-nonprofit": "关于我们",
+    "our-nonprofit": "我们的慈善组织",
     "links": {
       "about": "简介",
       "alumni": "校友网络",
@@ -264,7 +264,7 @@
       "p8": "这套课程需要你进行数千个小时的编程练习。",
       "p9": "如果你想学习更多数学和计算机科学理论，<0>freeCodeCamp 的 \n YouTube channel</0> 还有数千个小时的视频课程。",
       "p10": "如果你想获得开发者工作或者成为自由职业开发者找到客户，那么除了编程技能，你还需要搭建自己的社交网络，打造自己作为开发者的影响力。",
-      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
+      "p11": "你还可以在 LinkedIn、Twitter、GitHub 和 <0>freeCodeCamp 论坛</0> 上做到这一点。",
       "p12": "编程愉快！"
     },
     "upcoming-lessons": "即将上线的课程",
@@ -284,7 +284,7 @@
     "sign-in-save": "登录以保存你的学习进度",
     "download-solution": "下载我的解决方案",
     "percent-complete": "完成 {{percent}}%",
-    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
+    "project-complete": "已完成 {{totalChallengesInBlock}} 认证项目中的 {{completedChallengesInBlock}}",
     "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读-搜索-提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
     "rsa": "阅读，搜索，提问",
     "rsa-forum": "<strong>在发布新帖子之前</strong> ，请确认你的问题是否<0>已经在论坛上被回答过</0>。",
@@ -308,8 +308,8 @@
       "preview": "预览"
     },
     "editor-alerts": {
-      "tab-trapped": "Pressing tab will now insert the tab character",
-      "tab-free": "Pressing tab will now move focus to the next focusable element"
+      "tab-trapped": "按下选项卡将插入选项卡字符",
+      "tab-free": "按下选项卡将焦点移动到下一个焦点元素"
     },
     "help-translate": "我们仍然在翻译以下证书。",
     "help-translate-link": "帮助我们翻译。",
@@ -330,13 +330,13 @@
     "sorry-hang-in-there": "抱歉，你的代码未通过，坚持一下。",
     "sorry-dont-giveup": "抱歉，你的代码未通过，不要放弃。",
     "challenges-completed": "已完成 {{completedCount}}/{{totalChallenges}}",
-    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
-    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
-    "building-a-university": "We're Building a Free Computer Science University Degree Program",
-    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead."
+    "season-greetings-fcc": "来自 freeCodeCamp 社区的季节问候 🎉",
+    "if-getting-value": "如果你从 freeCodeCamp 中获益良多，可以捐款支持我们的慈善组织的使命。",
+    "building-a-university": "我们正在创建一个免费计算机科学大学学位课程",
+    "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。"
   },
   "donate": {
-    "title": "支持我们的非营利组织",
+    "title": "支持我们的慈善组织",
     "processing": "我们正在处理你的捐款。",
     "redirecting": "重新引导中...",
     "thanks": "谢谢捐款",
@@ -358,11 +358,11 @@
     "your-donation": "你的 ${{usd}} 捐款将帮助世界各地的人们学习 {{hours}} 小时。",
     "your-donation-2": "你的 ${{usd}} 捐款每月将帮助世界各地的人们学习 {{hours}} 小时。",
     "your-donation-3": "你的 ${{usd}} 捐款每年将帮助世界各地的人们学习 {{hours}} 小时。",
-    "become-supporter": "Become a Supporter",
-    "duration": "成为我们非营利组织的一次性支持者",
-    "duration-2": "成为我们非营利组织的每月定期支持者",
-    "duration-3": "成为我们非营利组织的每年定期支持者",
-    "duration-4": "成为我们非营利组织的支持者",
+    "become-supporter": "成为支持者",
+    "duration": "成为我们的慈善组织的一次性支持者",
+    "duration-2": "成为我们的慈善组织的每月定期支持者",
+    "duration-3": "成为我们的慈善组织的每年定期支持者",
+    "duration-4": "成为我们的慈善组织的支持者",
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",
     "credit-card-2": "或者使用信用卡捐款：",
@@ -376,25 +376,25 @@
     "email-receipt": "邮箱（我们将把捐款税务收据发送给你）：",
     "need-help": "需要我们帮助处理你的当前或之前的捐款？",
     "forward-receipt": "将你的捐款收据副本发送至 donors@freecodecamp.org，告诉我们你需要什么帮助。",
-    "efficiency": "freeCodeCamp 是一个高效率的专注教育的非营利组织。",
+    "efficiency": "freeCodeCamp 是一个高效率的教育慈善组织。",
     "why-donate-1": "通过给 freeCodeCamp 捐款，你帮助人们学习新技能以供养家庭。",
     "why-donate-2": "你也帮助我们创建新的学习资源，你可以利用这些资源拓展自己的技术能力。",
     "bigger-donation": "给我们额度更大的一次性捐款，或寄一张支票，或通过其他方式给我们捐款？",
-    "other-ways": "有许多<0>其他方式可以支持我们的非营利组织践行使命</0>.",
+    "other-ways": "有许多<0>其他方式可以支持我们的慈善组织践行使命</0>.",
     "failed-pay": "呃，你的转账似乎没有成功，再试一次好吗？",
     "try-again": "请重试。",
     "card-number": "你的卡号：",
     "expiration": "到期日：",
     "secure-donation": "安全捐款",
     "faq": "常见问题",
-    "only-you": "只有你可以看到此消息。祝贺你获得这项认证。获得认证不是一件容易的事情，运营 freeCodeCamp 也不容易，而且需要花费很多。请帮助我们更好地帮助你和世界各地的许多其他人。今天就为我们的非营利组织提供免税捐款，支持我们。",
+    "only-you": "只有你可以看到此消息。祝贺你获得这项认证。获得认证不是一件容易的事情，运营 freeCodeCamp 也不容易，而且需要花费很多。请帮助我们更好地帮助你和世界各地的许多其他人。今天就为我们的慈善组织提供免税捐款，支持我们。",
     "get-help": "我如何利用我的捐款得到帮助？",
     "how-transparent": "freeCodeCamp.org 的透明度如何？",
     "very-transparent": "我们甚至有一个来自 GuideStar.org 的白金透明度评级。",
     "download-irs": "你可以<0>在此处下载我们的国税局认定函</0>。",
     "download-990": "你可以<0>在此处下载我们最新的 990 (年度税务报告)</0>。",
     "how-efficient": "freeCodeCamp 的效率如何？",
-    "fcc-budget": "freeCodeCamp 的预算比大多数非营利组织少得多。我们还没有引入专业募捐者，而是 Quincy 自己处理一切相关事务。",
+    "fcc-budget": "freeCodeCamp 的预算比大多数慈善组织少得多。我们还没有引入专业募捐者，而是 Quincy 自己处理一切相关事务。",
     "help-millions": "然而，在每年仅有 10 万美元的预算中，我们能够帮助数百万人。",
     "how-one-time": "我如何进行一次性捐款？",
     "one-time": "如果你喜欢一次性捐款，你可以在有闲钱时支持 freeCodeCamp 的事业。你可以使用<0>此链接，通过 PayPal 捐你认为合适的金额</0>。",
@@ -404,7 +404,7 @@
     "can-check": "我可以邮寄实物支票吗？",
     "yes-check": "是的，我们欢迎支票。你可以将其邮寄给我们：",
     "how-matching-gift": "我如何从我的雇主那里设置匹配的礼物，或者工资扣除？",
-    "employers-vary": "这因雇主而异，而我们的非营利组织已经被列入许多大型捐赠匹配数据库。",
+    "employers-vary": "这因雇主而异，而我们的慈善组织已经被列入许多大型捐赠匹配数据库。",
     "some-volunteer": "有些人能够为 freeCodeCamp 提供志愿服务，他们的雇主通过每小时志愿服务捐赠一个固定的金额进行匹配。其他雇主会对捐赠者的任何捐赠进行匹配，最高可达某一数额。",
     "help-matching-gift": "如你需要帮助，请直接给 Quincy 发送电子邮件：quincy@freecodecamp.org",
     "how-endowment": "如何为 freeCodeCamp.org 设置捐赠礼物？",
@@ -415,13 +415,13 @@
     "thank-wikimedia": "我们要感谢维基百科基金会为我们提供这种正式文书。",
     "legacy-gift-questions": "如果你对此过程有任何疑问，请给 Quincy 发送电子邮件到 Quincy@freecodecamp.org。",
     "how-stock": "如何将股票捐赠给 freeCodeCamp.org？",
-    "welcome-stock": "我们欢迎你的股票捐赠。请直接为 Quincy 发送电子邮件到 quincy@freecodecamp.org，他可以帮助你做到这一点，并分享我们的非营利经纪业务账户的详细信息。",
+    "welcome-stock": "我们欢迎你的股票捐赠。请直接给 Quincy 发送电子邮件到 quincy@freecodecamp.org，他可以帮助你，并分享我们的慈善组织的经纪账户的详细信息。",
     "how-receipt": "我能够收到捐赠收据以从我的税款中扣除我的捐赠吗？",
     "just-forward": "可以，只需将你交易的收据转发到 donors@freecodecamp.org，告诉我们你想要一个收据以及你的使用场景，我们将发给你一个收据。",
     "how-update": "我设置了每月捐款，但我需要更新或暂停每月的重复。我如何做？",
     "take-care-of-this": "只需转发你的每月捐款记录中的一个记录给 donors@freecodecamp.org， 并告诉我们你要做什么。我们会为你处理这个问题，并向你发送确认。",
     "anything-else": "还有什么关于为 freeCodeCamp.org 捐赠可以了解的吗？",
-    "other-support": "如果你想要以其他方式支持我们的非营利工作并且它的渠道没有在此列出， 或者如果你有任何问题，请给 Quincy 发送电子邮件到 quincy@freecodecamp.org。"
+    "other-support": "如果你想要通过此处未列出的其他方式支持我们的慈善组织和它的使命，或者如果你有任何问题，请给 Quincy 发送电子邮件到 quincy@freecodecamp.org。"
   },
   "report": {
     "sign-in": "你需要先登录才能举报用户",
@@ -508,7 +508,7 @@
     "step": "步骤",
     "steps": "步骤",
     "steps-for": "{{blockTitle}} 的步骤",
-    "code-example": "{{codeName}} code example"
+    "code-example": "{{codeName}} 代码示例"
   },
   "flash": {
     "honest-first": "申请认证之前，你必须先接受我们的《学术诚信条例》",
@@ -728,10 +728,10 @@
     "navigate-next": "跳转至下一个练习"
   },
   "signout": {
-    "heading": "Sign out of your account",
-    "p1": "Warning: If you continue, your progress will no longer be saved.",
-    "p2": "This action will sign you out of your account on this device and browser session only. Please confirm if you would like to proceed.",
-    "certain": "Yes, sign out of my account",
-    "nevermind": "Nevermind, I don't want to sign out"
+    "heading": "注销你的账户",
+    "p1": "警告：如果你继续，你的当前进度将不再被保存。",
+    "p2": "此操作只会将你在此设备和浏览器会话上的账号注销。请确认你是否要继续。",
+    "certain": "是的，请注销我的账户",
+    "nevermind": "算了，我不想注销账户"
   }
 }

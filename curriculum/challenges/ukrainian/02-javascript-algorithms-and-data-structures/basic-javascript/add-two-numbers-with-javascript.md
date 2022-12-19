@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb3bdef
-title: Додайте два числа з JavaScript
+title: Додавання двох чисел за допомогою JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KBAG'
 forumTopicId: 16650
@@ -9,19 +9,19 @@ dashedName: add-two-numbers-with-javascript
 
 # --description--
 
-`Number` - це такий тип в JavaScript, який передає числові дані.
+`Number` – це тип в JavaScript, який представляє числові дані.
 
 Тепер спробуємо додати два числа за допомогою JavaScript.
 
-JavaScript використовує символ `+` в ролі оператора додавання, і розміщується між двома числами.
+JavaScript використовує символ `+` як оператор додавання, якщо він розміщений між двома числами.
 
-**Наприклад:**
+**Приклад:**
 
 ```js
 const myVar = 5 + 10;
 ```
 
-`myVar` тепер матиме значення `15`.
+Тепер `myVar` має значення `15`.
 
 # --instructions--
 
@@ -35,7 +35,7 @@ const myVar = 5 + 10;
 assert(sum === 20);
 ```
 
-Вам слід використовувати оператор `+`.
+Ви повинні використати оператор `+`.
 
 ```js
 assert(/\+/.test(code));
