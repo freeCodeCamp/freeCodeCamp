@@ -64,14 +64,15 @@ export const UniversalNav = ({
       >
         <Media minWidth={MAX_MOBILE_WIDTH + 1}>{search}</Media>
       </div>
+      <div className='exposed-nav-container'>
+        <ExposedNav />
+      </div>
       <div className='universal-nav-middle'>
         <Link id='universal-nav-logo' to='/learn'>
           <NavLogo />
         </Link>
       </div>
-      <div className='exposed-nav-container'>
-        <ExposedNav />
-      </div>
+
       <div className='universal-nav-right main-nav'>
         {pending ? (
           <div className='nav-skeleton'>
