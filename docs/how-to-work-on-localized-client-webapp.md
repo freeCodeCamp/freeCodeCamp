@@ -98,11 +98,11 @@ export const availableLangs = {
 
 If you are testing a new language, create a folder with the language name as the title next to the other languages and copy the JSON files from another language into your new folder.
 
-Add the new language to the `Language` enum and the `client` array at the top of the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file.
+Add the new language to the `Languages` enum and the `client` array at the top of the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file.
 
 Next, follow the instructions in the comments in the same file to add/update the rest of the variables as needed.
 
-Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the string of the locale you want to build from the `Language` enum in the above file.
+Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the string of the locale you want to build from the `Languages` enum in the above file.
 
 ## How to Structure Components
 
