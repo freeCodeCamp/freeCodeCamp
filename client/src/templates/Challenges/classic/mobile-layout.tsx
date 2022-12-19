@@ -45,40 +45,60 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     });
   };
 
-  avoidWindowfloating = (event: Event) => {
+  avoidWindowScrolling = (event: Event) => {
     event.preventDefault();
   };
 
-  setHtmlHeight = () => {
-    const vh = String(
-      Math.min(window.innerHeight - 1, visualViewport?.height as number)
-    );
-    document.documentElement.style.height = vh + 'px';
+  setToolPanelPosition = () => {
+    const toolPanelGroup = (
+      document.getElementsByClassName(
+        'tool-panel-group-mobile'
+      ) as HTMLCollectionOf<HTMLElement>
+    )[0];
 
-    if (
-      navigator.userAgent.match(/iPhone|Android.+Mobile/) &&
-      window.innerHeight - 1 > (visualViewport?.height as number)
-    ) {
-      window.addEventListener('touchmove', this.avoidWindowfloating, {
-        passive: false
-      });
-    } else {
-      window.removeEventListener('touchmove', this.avoidWindowfloating);
+    if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+      if (window.innerHeight - 1 > (visualViewport?.height as number)) {
+        toolPanelGroup.style.position = 'absolute';
+        toolPanelGroup.style.bottom =
+          String(window.innerHeight - (visualViewport?.height as number)) +
+          'px';
+
+        window.addEventListener('touchmove', this.avoidWindowScrolling, {
+          passive: false
+        });
+      } else {
+        document.documentElement.style.height =
+          String(window.innerHeight - 1) + 'px';
+
+        toolPanelGroup.style.position = '';
+        toolPanelGroup.style.bottom = '';
+
+        window.removeEventListener('touchmove', this.avoidWindowScrolling);
+      }
     }
   };
 
   componentDidMount() {
-    window.addEventListener('resize', this.setHtmlHeight);
-    visualViewport?.addEventListener('resize', this.setHtmlHeight);
-    this.setHtmlHeight();
+    if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+      window.addEventListener('resize', this.setToolPanelPosition);
+      visualViewport?.addEventListener('resize', this.setToolPanelPosition);
+
+      document.documentElement.style.height =
+        String(window.innerHeight - 1) + 'px';
+      document.documentElement.style.overflow = 'hidden';
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.setHtmlHeight);
-    visualViewport?.removeEventListener('resize', this.setHtmlHeight);
+    if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+      window.removeEventListener('resize', this.setToolPanelPosition);
+      visualViewport?.removeEventListener('resize', this.setToolPanelPosition);
 
-    window.removeEventListener('touchmove', this.avoidWindowfloating);
-    document.documentElement.style.height = '100%';
+      window.removeEventListener('touchmove', this.avoidWindowScrolling);
+
+      document.documentElement.style.height = '100%';
+      document.documentElement.style.overflow = 'scroll';
+    }
   }
 
   handleKeyDown = (): void => this.props.updateUsingKeyboardInTablist(true);

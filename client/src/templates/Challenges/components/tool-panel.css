@@ -11,6 +11,8 @@
 .tool-panel-group-mobile {
   display: flex;
   flex-direction: row-reverse;
+  width: 100%;
+  background-color: var(--tertiary-background);
 }
 
 .tool-panel-group-mobile > .btn-block,
