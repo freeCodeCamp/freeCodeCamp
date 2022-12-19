@@ -32,11 +32,11 @@ let ducky = new Bird();
 ducky.getHatchedEggCount();
 ```
 
-هنا `getHatchedEggCount` هي method مميزة، لأنها لديها حق الوصول إلى المتغير الخاص `hatchedEgg`. هذا ممكن لأن `hatchedEgg` تم تعريفها في نفس السياق مثل `getHatchedEggCount`. في جافا سكريبت، الدالة دائما لها حق الوصول إلى السياق الذي تم إنشاؤها فيه. هذا يسمى `closure`.
+هنا `getHatchedEggCount` هي method مميزة، لأنها لديها حق الوصول إلى المتغير الخاص `hatchedEgg`. هذا ممكن لإن `hatchedEgg` أعلنت في نفس السياق مثل `getHatchedEggCount`. في جافا سكريبت، الدالة دائما لها حق الوصول إلى السياق الذي تم إنشاؤها فيه. هذا يسمى `closure`.
 
 # --instructions--
 
-قم بتغيير كيفية تعريف `weight` في دالة `Bird` بحيث يصبح متغير خاص. ثم قم بإنشاء `getWeight` لإرجاع قيمة `weight` والتي هي 15.
+غير كيفية تعلن `weight` في وظيفة `Bird` بحيث يصبح متغير خاص. ثم قم بإنشاء `getWeight` لإرجاع قيمة `weight` والتي هي 15.
 
 # --hints--
 

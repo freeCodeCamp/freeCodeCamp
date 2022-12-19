@@ -9,9 +9,9 @@ dashedName: constructing-strings-with-variables
 
 # --description--
 
-Sometimes you will need to build a string. Використовуючи оператор об'єднання (`+`), можна вставити одну або декілька змінних у рядок, який ви створюєте.
+Іноді потрібно побудувати рядок. За допомогою оператора об'єднання (`+`) можна вставити одну або більше змінних у рядок, який ви будуєте.
 
-Наприклад:
+Приклад:
 
 ```js
 const ourName = "freeCodeCamp";
@@ -22,17 +22,17 @@ const ourStr = "Hello, our name is " + ourName + ", how are you?";
 
 # --instructions--
 
-Вставте `myName` у рядок з вашим іменем і створіть `myStr` з `myName` між рядками `My name is` і `and I am well!`
+Встановіть `myName` на рядок, рівний вашому імені, і побудуйте `myStr` із `myName` між рядками `My name is` та `and I am well!`
 
 # --hints--
 
-`myName` потрібно вставити у рядок, де є принаймні три символи.
+`myName` повинен бути встановлений на рядок з принаймні трьох символів.
 
 ```js
 assert(typeof myName !== 'undefined' && myName.length > 2);
 ```
 
-Ви маєте використати два оператори `+` для створення `myStr` з `myName` всередині нього.
+Ви повинні використати два оператори `+`, щоб побудувати `myStr` із `myName` всередині.
 
 ```js
 assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
