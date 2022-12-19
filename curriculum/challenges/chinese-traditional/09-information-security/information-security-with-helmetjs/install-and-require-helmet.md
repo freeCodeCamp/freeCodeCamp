@@ -14,7 +14,13 @@ dashedName: install-and-require-helmet
 - 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成這些挑戰。
 - 使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 字段中提交它的 URL。
+如果你使用 Replit，請按照以下步驟設置項目：
+
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。
 
 Helmet 通過設置各種 HTTP 頭來保護你的 Express 應用程序。
 

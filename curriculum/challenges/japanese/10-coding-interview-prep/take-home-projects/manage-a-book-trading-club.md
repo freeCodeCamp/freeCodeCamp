@@ -10,7 +10,7 @@ dashedName: manage-a-book-trading-club
 
 **Objective:** Build an app that is functionally similar to this: <a href="https://manage-a-book-trading-club.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://manage-a-book-trading-club.freecodecamp.rocks/</a>.
 
-Fulfill the below user stories and get all of the tests to pass. 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
+以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
 
 **ユーザーストーリー:** すべてのユーザに投稿された本を見ることができます。
 

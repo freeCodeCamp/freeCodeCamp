@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c15a
-title: 'Pandas: Таблиці даних'
+title: 'Pandas: таблиці даних'
 challengeType: 11
 videoId: 7SgFBYXaiH0
 bilibiliIds:
@@ -17,13 +17,13 @@ dashedName: pandas-dataframes
 Додаткові ресурси:
 
 -  <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas" target="_blank" rel="noopener noreferrer nofollow">Блокноти на GitHub</a>
--  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub використовуючи Google Colab.</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub, використовуючи Google Colab.</a>
 
 # --question--
 
 ## --text--
 
-Який результат буде виведено на екран після виконання наведеного нижче коду?
+Що надрукує наведений код?
 
 ```py
 import pandas as pd

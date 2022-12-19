@@ -10,6 +10,10 @@ dashedName: time-calculator
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-time-calculator" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
+
 # --instructions--
 
 Напишіть функцію під назвою `add_time`, яка приймає два обов'язкових параметри та один необов'язковий параметр:
@@ -62,7 +66,7 @@ add_time("6:30 PM", "205:12")
 
 # --hints--
 
-Проєкт повинен правильно додавати час та пройти тестування.
+Проєкт повинен правильно додавати час та пройти всі тести.
 
 ```js
 

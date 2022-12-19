@@ -10,21 +10,26 @@ dashedName: budget-app
 
 Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-budget-app" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode an diesem Projekt arbeiten</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
 Vervollständige die `Category`-Klasse in `budget.py`. Es sollte in der Lage sein, Objekte basierend auf verschiedenen Haushaltskategorien, wie *food*, *clothing*, und *entertainment* zu instanziieren. Wenn Objekte erstellt werden, werden sie im Namen der Kategorie übergeben. Die Klasse sollte eine Instanzvariable namens `ledger` (Hauptbuch) haben, die eine Liste ist. Die Klasse sollte auch die folgenden Methoden beinhalten:
 
-- Eine `deposit`-Methode, die einen Betrag und eine Beschreibung akzeptiert. Wenn keine Beschreibung angegeben wird, sollte standardmäßig ein leerer String ausgegeben werden. Die Methode sollte ein Objekt zu der Hauptbuch-Liste in Form von `{"amount": amount, "description": description}` anhängen.
-- Eine `withdraw`-Methode, die ähnlich zur `deposit`-Methode ist, aber der eingegebene Wert sollte im Hauptbuch als negative Zahl eingespeichert werden. Wenn nicht genügend Mittel zur Verfügung stehen, sollte nichts zum Hauptbuch hinzugefügt werden. Diese Methode sollte `True` zurückgeben, wenn die Auszahlung bereits stattgefunden hat und ansonsten `False` ausgeben.
-- Eine `get_balance`-Methode, die das aktuelle Guthaben der Haushaltskategorie, basierend auf den eingegangen Ein-und Auszahlungen ausgibt.
-- Eine `transfer`-Methode, die einen Betrag und eine andere Budgetkategorie als Arugment akzeptiert. Die Methode sollte eine Auszahlung mit dem Betrag und der Beschreibung "Transfer zu [Zielbudget-Kategorie]" hinzufügen. Die Methode sollte dann eine Einzahlung in die andere Budgetkategorie mit dem Betrag und der Beschreibung "Transfer from [Source Budget Category]" hinzufügen. Wenn nicht genügend Mittel zur Vefügung stehen, sollte nichts zum Hauptbuch hinzugefügt werden. Diese Methode sollte `True` zurückgeben, wenn die Auszahlung bereits stattgefunden hat und ansonsten `False` ausgeben.
-- Eine `check_funds`-Methode, die einen Betrag als Argument akzeptiert. Es gibt `False` zurück, wenn der Betrag größer ist als der Betrag der Budgetkategorie und ansonsten `True`. Die Methode sollte sowohl von der `withdraw`-Methode und der `transfer`-Methode verwendet werden.
+- A `deposit` method that accepts an amount and description. If no description is given, it should default to an empty string. The method should append an object to the ledger list in the form of `{"amount": amount, "description": description}`.
+- A `withdraw` method that is similar to the `deposit` method, but the amount passed in should be stored in the ledger as a negative number. If there are not enough funds, nothing should be added to the ledger. This method should return `True` if the withdrawal took place, and `False` otherwise.
+- A `get_balance` method that returns the current balance of the budget category based on the deposits and withdrawals that have occurred.
+- A `transfer` method that accepts an amount and another budget category as arguments. The method should add a withdrawal with the amount and the description "Transfer to [Destination Budget Category]". The method should then add a deposit to the other budget category with the amount and the description "Transfer from [Source Budget Category]". If there are not enough funds, nothing should be added to either ledgers. This method should return `True` if the transfer took place, and `False` otherwise.
+- A `check_funds` method that accepts an amount as an argument. It returns `False` if the amount is greater than the balance of the budget category and returns `True` otherwise. This method should be used by both the `withdraw` method and `transfer` method.
 
 Wenn das Budgetobjekt ausgegeben wird, sollte es folgendes anzeigen:
 
-- Eine Titelzeile mit 30 Zeichen, in der der Name der Kategorie in einer Zeile von `*` Zeichen zentriert ist.
-- Eine Liste der Elemente im Hauptbuch. Jede Zeile sollte die Beschreibung und den Betrag anzeigen. Die ersten 23 Zeichen der Beschreibung sollten angezeigt werden, dann der Betrag. Der Betrag sollte rechts ausgerichtet sein, zwei Dezimalstellen enthalten und maximal 7 Zeichen anzeigen.
-- Eine Zeile, die die Summe der Kategorie anzeigt.
+- A title line of 30 characters where the name of the category is centered in a line of `*` characters.
+- A list of the items in the ledger. Each line should show the description and amount. The first 23 characters of the description should be displayed, then the amount. The amount should be right aligned, contain two decimal places, and display a maximum of 7 characters.
+- A line displaying the category total.
 
 Hier ist ein Beispiel für die Ausgabe:
 

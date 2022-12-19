@@ -10,6 +10,10 @@ dashedName: time-calculator
 
 你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-time-calculator" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
 # --instructions--
 
 編寫一個名爲 `add_time` 的函數，它接受兩個必需參數和一個可選參數：

@@ -10,6 +10,11 @@ dashedName: polygon-area-calculator
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
+
+
 # --instructions--
 
 У цьому проєкті ви будете використовувати об'єктно-орієнтоване програмування, щоб створити класи Rectangle (прямокутник) та Square (квадрат). Клас Square повинен бути підкласом до Rectangle і наслідувати його методи та атрибути.
@@ -95,7 +100,7 @@ Square(side=4)
 
 # --hints--
 
-Проєкт повинен створити класи Rectangle і Square та пройти тестування.
+Проєкт повинен створити класи Rectangle і Square та пройти всі тести.
 
 ```js
 

@@ -14,13 +14,19 @@ dashedName: set-up-a-template-engine
 - <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、チャレンジを完了させる。
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。
+If you use Replit, follow these steps to set up the project:
 
-テンプレートエンジンを使用すると、(*Pug* で記述するような) 静的なテンプレートファイルをアプリで使用できます。 実行時にテンプレートエンジンによって、テンプレートファイル内の変数がサーバーから提供される実際の値に置き換えられます。 そして、テンプレートが静的な HTML ファイルに変換され、クライアントへ送信されます。 このアプローチにより、HTML ページの設計が容易になり、クライアントから API 呼び出しを行うことなく、ページに変数を表示することができます。
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
-すでに `pug@~3.0.0` がインストールされており、プロジェクトの `package.json` ファイルに依存関係としてリストされています。
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
-どのテンプレートエンジンを使用しているかを Express に知らせる必要があります。 Use the `set` method to assign `pug` as the `view engine` property's value:
+A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
+
+`pug@~3.0.0` has already been installed, and is listed as a dependency in your `package.json` file.
+
+Express needs to know which template engine you are using. Use the `set` method to assign `pug` as the `view engine` property's value:
 
 ```javascript
 app.set('view engine', 'pug');
@@ -32,11 +38,11 @@ Finally, use `res.render()` in the route for your home page, passing `index` as 
 
 If all went as planned, your app home page will no longer be blank. Instead, it will display a message indicating you've successfully rendered the Pug template!
 
-正しいと思ったら、ページを送信してください。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
-Pug を依存関係にする必要があります。
+Pug should be a dependency.
 
 ```js
 async (getUserInput) => {
@@ -51,7 +57,7 @@ async (getUserInput) => {
 }
 ```
 
-ビューエンジンを Pug にする必要があります。
+View engine should be Pug.
 
 ```js
 async (getUserInput) => {

@@ -10,6 +10,11 @@ dashedName: sea-level-predictor
 
 You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
@@ -22,10 +27,10 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 
 データを使用して、次のタスクを完了してください。
 
-- Pandas を使用して `epa-sea-level.csv` からデータをインポートします。
+- Use Pandas to import the data from `epa-sea-level.csv`.
 - Use matplotlib to create a scatter plot using the `Year` column as the x-axis and the `CSIRO Adjusted Sea Level` column as the y-axix.
-- `scipy.stats` の `linregress` 関数を使用して、最も良く当てはまる線の傾きと y 切片を得ます。 散布図の上に最良の当てはめ線 (回帰直線) を描きます。 線を 2050 年まで伸ばし、2050 年の海面上昇を予測します。
-- データセットにある 2000 年から最新年までのデータを使用し、新しい最良の当てはめ線をプロットします。 線を 2050 年まで伸ばし、2000 年以降の上昇率が続くと仮定した場合の 2050 年の海面上昇を予測します。
+- Use the `linregress` function from `scipy.stats` to get the slope and y-intercept of the line of best fit. Plot the line of best fit over the top of the scatter plot. Make the line go through the year 2050 to predict the sea level rise in 2050.
+- Plot a new line of best fit just using the data from year 2000 through the most recent year in the dataset. Make the line also go through the year 2050 to predict the sea level rise in 2050 if the rate of rise continues as it has since the year 2000.
 - The x label should be `Year`, the y label should be `Sea Level (inches)`, and the title should be `Rise in Sea Level`.
 
 `test_module.py` の下に単体テストが記述してあります。
@@ -51,7 +56,7 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 
 # --hints--
 
-すべての Python テストに合格する必要があります。
+すべての Python テストが成功する必要があります。
 
 ```js
 

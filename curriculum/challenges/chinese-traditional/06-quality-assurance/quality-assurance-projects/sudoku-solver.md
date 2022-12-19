@@ -14,7 +14,13 @@ dashedName: sudoku-solver
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 框中提交你的項目 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+如果你使用 Replit，請按照以下步驟設置項目：
+
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。 也可以將項目的源碼鏈接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
@@ -25,19 +31,19 @@ dashedName: sudoku-solver
 - 所有路由邏輯都可以進入 `/routes/api.js`
 - 閱讀 `/controllers` 中的 `puzzle-strings.js` 文件來了解一些應用程序應該解決的示例謎題
 - 在 `.env` 文件中將 `NODE_ENV` 設置爲 `test` （沒有引號），運行這個頁面的挑戰測試。
-- 使用 `npm run test` 命令在 console 中運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯。
+- 使用 `npm run test` 命令在 console 中運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入 “open shell”，打開 Replit 控制檯
 
 在 `tests/1_unit-tests.js` 中寫下以下測試：
 
 -   邏輯處理 81 個字符的解謎字符串
--   邏輯處理無效的解謎字符串 (不是 1-9 或 `.`)
+-   邏輯處理無效的解謎字符串（不是 1-9 或 `.`）
 -   邏輯處理一個長度不是 81 個字符的解謎字符串
 -   邏輯處理有效行的位置
 -   邏輯處理無效行的位置
--   邏輯處理一個有效的列位置
--   邏輯處理無效列位置
--   邏輯處理一個有效的區域 (3x3 網格)
--   邏輯處理一個無效的區域 (3x3 網格)
+-   邏輯處理有效列的位置
+-   邏輯處理無效列的位置
+-   邏輯處理一個有效的區域（3x3 網格）
+-   邏輯處理一個無效的區域（3x3 網格）
 -   有效解謎字符串通過 solver
 -   無效解謎字符串無法通過 solver
 -   Solver 返回一個不完整謎題的的預期解決方案
@@ -51,17 +57,17 @@ dashedName: sudoku-solver
 -   解決一個無法解決的謎題：POST 請求到 `/api/solve`
 -   檢查所有字段的解謎位置：POST 請求到 `/api/check`
 -   用單個位置衝突檢查解謎位置：POST 請求到 `/api/check`
--   檢查一個有多個位置衝突的解謎位置: POST 請求到 `/api/check`
--   檢查與所有位置衝突的解謎位置: POST 請求到 `/api/check`
+-   檢查一個有多個位置衝突的解謎位置：POST 請求到 `/api/check`
+-   檢查與所有位置衝突的解謎位置：POST 請求到 `/api/check`
 -   檢查缺失所需字段的解謎位置：POST 請求到 `/api/check`
--   檢查一個有無效字符的解謎位置: POST 請求到 `/api/check`
+-   檢查一個有無效字符的解謎位置：POST 請求到 `/api/check`
 -   檢查不正確長度的解謎位置：POST 請求到 `/api/check`
 -   檢查一個無效的放置座標的解謎位置：POST 請求到 `/api/check`
 -   檢查具有無效的放置值的解謎位置：POST 請求到 `/api/check`
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+你應該提交自己的項目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -70,7 +76,7 @@ dashedName: sudoku-solver
 };
 ```
 
-可以發送 `POST` 請求到 `/api/solve`，使用包含 `puzzle` 的表單數據這將是一個包含數字 (1-9) 和點號的字符串組合，`.` 表示空格。 返回的對象將包含一個 `solution` 屬性與解決的謎題。
+你可以發送 `POST` 請求到 `/api/solve`，使用包含 `puzzle` 的表單數據，這將是一個包含數字（1-9）和點號的字符串組合，`.` 表示空格。 返回的對象將包含一個 `solution` 屬性與解決的謎題。
 
 ```js
 async (getUserInput) => {
@@ -89,7 +95,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/solve` 的對象缺失 `puzzle`，返回的值將是 `{ error: 'Required field missing' }`
+如果提交給 `/api/solve` 的對象缺失 `puzzle`，返回的值將是 `{ error: 'Required field missing' }`。
 
 ```js
 async (getUserInput) => {
@@ -107,7 +113,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/solve` 謎題包含非數字或點號的值。 返回的值將是 `{ error: 'Invalid characters in puzzle' }`
+如果提交給 `/api/solve` 謎題包含非數字或點號的值，返回的值將是 `{ error: 'Invalid characters in puzzle' }`。
 
 ```js
 async (getUserInput) => {
@@ -125,7 +131,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/solve` 的謎題大於或小於 81 個字符， 返回的值將是 `{ error: 'Expected puzzle to be 81 characters long' }`
+如果提交給 `/api/solve` 的謎題大於或小於 81 個字符，返回的值將是 `{ error: 'Expected puzzle to be 81 characters long' }`。
 
 ```js
 async (getUserInput) => {
@@ -147,7 +153,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/solve` 的謎題無效或無法解決， 返回的值將是 `{ error: 'Puzzle cannot be solved' }`
+如果提交給 `/api/solve` 的謎題無效或無法解決，返回的值將是 `{ error: 'Puzzle cannot be solved' }`。
 
 ```js
 async (getUserInput) => {
@@ -165,7 +171,7 @@ async (getUserInput) => {
 };
 ```
 
-可以發送 `POST` 請求到 `/api/check`，包含 `puzzle`、`coordinate` 和 `value` 的對象，其中 `coordinate` 是表示行的字母 A-I，後跟表示列的數字 1-9，而 `value` 是 1-9 的數字。
+你可以發送 `POST` 請求到 `/api/check`，包含 `puzzle`、`coordinate` 和 `value` 的對象，其中 `coordinate` 是表示行的字母 A-I，後跟表示列的數字 1-9，而 `value` 是 1-9 的數字。
 
 ```js
 async (getUserInput) => {
@@ -184,7 +190,7 @@ async (getUserInput) => {
 };
 ```
 
-發送 `POST` 請求到 `/api/check`，返回值是一個包含 `valid` 屬性的對象，如果數字可能放置在提供的座標中則是 `true`，否則是`false`。 如果錯誤，返回的對象還將包含一個 `conflict` 屬性，它是一個字符串 `"row"`、`"column"`, 和/或 取決於哪個區域使位置無效的`"region"` 。
+發送 `POST` 請求到 `/api/check`，返回值是一個包含 `valid` 屬性的對象，如果數字可能放置在提供的座標中則是 `true`，否則是 `false`。 如果錯誤，返回的對象還將包含一個 `conflict` 屬性，它是一個字符串 `"row"`、`"column"`，和/或 取決於哪個區域使位置無效的 `"region"` 。
 
 ```js
 async (getUserInput) => {
@@ -226,7 +232,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/check` 的謎題包含非數字或點號的值。 返回的值將是 `{ error: 'Invalid characters in puzzle' }`
+如果提交給 `/api/check` 的謎題包含非數字或點號的值，返回的值將是 `{ error: 'Invalid characters in puzzle' }`。
 
 ```js
 async (getUserInput) => {
@@ -246,7 +252,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `/api/check` 的謎題大於或小於 81 個字符， 返回的值將是 `{ error: 'Expected puzzle to be 81 characters long' }`
+如果提交給 `/api/check` 的謎題大於或小於 81 個字符，返回的值將是 `{ error: 'Expected puzzle to be 81 characters long' }`。
 
 ```js
 async (getUserInput) => {
@@ -302,7 +308,7 @@ async (getUserInput) => {
 };
 ```
 
-如果提交給 `api/check` 的座標不指向現有的網格單元格， 返回的值將是 `{ error: 'Invalid coordinate'}`
+如果提交給 `api/check` 的座標不指向現有的網格單元格，返回的值將是 `{ error: 'Invalid coordinate'}`。
 
 ```js
 async (getUserInput) => {
@@ -346,7 +352,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 12 個單元的測試都已完成並通過。 請參閱 `/tests/1_unit-tests.js` 來了解你應該寫的測試的預期行爲。
+所有 12 項單元測試都已完成並通過。 請參閱 `/tests/1_unit-tests.js` 來了解你應該寫的測試的預期行爲。
 
 ```js
 async (getUserInput) => {

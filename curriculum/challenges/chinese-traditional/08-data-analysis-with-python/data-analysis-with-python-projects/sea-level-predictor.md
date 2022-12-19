@@ -10,6 +10,11 @@ dashedName: sea-level-predictor
 
 你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
+
 我們仍在開發 Python 課程的交互式教學部分。 目前，你可以在 YouTube 上通過 freeCodeCamp.org 上傳的一些視頻學習這個項目相關的知識。
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">給所有人的 Python 課程</a>（14 小時）
@@ -23,7 +28,7 @@ dashedName: sea-level-predictor
 使用數據完成以下任務：
 
 - 使用 Pandas 從 `epa-sea-level.csv` 導入數據。
-- 使用 matplotlib 創建散點圖，使用 `Year` 列作爲 x 軸，將 `CSIRO Adjusted Sea Level` 列作爲 y 軸。
+- 使用 matplotlib 創建散點圖，將 `Year` 列作爲 x 軸，將 `CSIRO Adjusted Sea Level` 列作爲 y 軸。
 - 使用 `scipy.stats` 中的 `linregress` 函數來獲得最佳擬合線的斜率和 y 截距。 在散點圖的頂部繪製最佳擬合線。 使線穿過 2050 年以預測 2050 年的海平面上升。
 - 僅使用數據集中從 2000 年到最近一年的數據繪製一條新的最佳擬合線。 如果上升速度繼續與 2000 年一樣，則使該線也經過 2050 年以預測 2050 年的海平面上升。
 - x 標籤應爲 `Year`，y 標籤應爲 `Sea Level (inches)`，標題應爲 `Rise in Sea Level`。

@@ -22,7 +22,7 @@ dashedName: manage-a-book-trading-club
 
 Як тільки ви закінчите реалізацію цих історій користувача, введіть URL-адресу вашого онлайн додатку і, за бажанням, вашого GitHub репозиторію. Тоді натисніть кнопку "Я завершив це завдання".
 
-You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
+Ви можете отримати фідбек до свого проєкту, поділившись ним на <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">форумі freeCodeCamp</a>.
 
 # --solutions--
 

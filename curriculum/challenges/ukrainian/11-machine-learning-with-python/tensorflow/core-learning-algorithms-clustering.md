@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8f
-title: 'Базові алгоритми навчання: Кластеризація'
+title: 'Базові алгоритми навчання: кластеризація'
 challengeType: 11
 videoId: 8sqIaHc9Cz4
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: core-learning-algorithms-clustering
 
 ## --text--
 
-Що з нижчепереліченого **не** є частиною алгоритму K-Means?
+Який з нижченаведених кроків **не** є частиною алгоритму K-Means?
 
 ## --answers--
 
@@ -26,7 +26,7 @@ dashedName: core-learning-algorithms-clustering
 
 ---
 
-Перемістіть кожен К-центроїд в середину усіх його даних.
+Перемістіть кожен К-центроїд в середину усіх його точок даних.
 
 ---
 

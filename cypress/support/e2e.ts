@@ -25,7 +25,7 @@ Cypress.on('uncaught:exception', err => {
   console.log('Cypress detected uncaught exception', err.name);
   // Rapidly cy.visiting pages seems to cause uncaught exceptions. It remains
   // unclear why this is happening, but we need to ignore them in testing so
-  // that we can test other behaviour.
+  // that we can test other behavior.
   if (
     err.name === 'NS_ERROR_UNEXPECTED' ||
     err.name === 'ChunkLoadError' ||

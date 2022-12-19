@@ -14,7 +14,13 @@ dashedName: secure-real-time-multiplayer-game
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目
 -   使用您选择的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 框中提交你的项目 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+如果你使用 Replit，请按照以下步骤设置项目：
+
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮。
+
+当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 `Solution Link` 字段中。 也可以将项目的源码链接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
@@ -33,7 +39,7 @@ dashedName: secure-real-time-multiplayer-game
 
 # --hints--
 
-你应该提交你自己的项目，而不是示例 URL
+你可以提交你自己的项目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -69,7 +75,7 @@ dashedName: secure-real-time-multiplayer-game
 
 ```
 
-游戏中至少有一种可收集道具。 在 `Collectible.mjs` 中完成 `Collectible` 类来实现这一点
+游戏中至少有一种可收集道具。 在 `Collectible.mjs` 中完成 `Collectible` 类来实现这一点。
 
 ```js
 

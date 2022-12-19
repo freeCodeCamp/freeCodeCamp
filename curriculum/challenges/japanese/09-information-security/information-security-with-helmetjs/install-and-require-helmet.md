@@ -14,19 +14,25 @@ dashedName: install-and-require-helmet
 - Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。
+If you use Replit, follow these steps to set up the project:
 
-Helmet を使用すると、さまざまな HTTP ヘッダーを設定することができ、Express アプリケーションのセキュリティを確保するのに役立ちます。
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+
+Helmet helps you secure your Express apps by setting various HTTP headers.
 
 # --instructions--
 
-これらのレッスンで使用するコードはすべて、`myApp.js`ファイルの中で、最初に示したコードの行の間に記載されています。 追加したコードを変更したり削除したりしないでください。
+All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
 
 Helmet version `3.21.3` has already been installed, so require it as `helmet` in `myApp.js`.
 
 # --hints--
 
-`helmet` のバージョン `3.21.3` を `package.json` に含める必要があります。
+`helmet` version `3.21.3` should be in `package.json`
 
 ```js
 (getUserInput) =>
