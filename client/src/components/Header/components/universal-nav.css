@@ -461,6 +461,10 @@ button.nav-link[aria-disabled='true'] {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: transparent !important;
+  border: 1px solid #fff !important;
+  color: #fff !important;
 }
 
 .universal-nav-right .fcc_searchBar {
@@ -522,13 +526,13 @@ button.nav-link[aria-disabled='true'] {
   outline: none;
 }
 
-#toggle-button-nav .menu-btn-text,
-#universal-nav .login-btn-text {
+#toggle-button-nav .menu-btn-icon,
+#universal-nav .login-btn-icon {
   display: inline-block;
 }
 
-#toggle-button-nav .menu-btn-icon,
-.login-btn-icon {
+#toggle-button-nav .menu-btn-text,
+.login-btn-text {
   display: none;
 }
 

@@ -34,7 +34,7 @@ const Login = ({
   return (
     <Button
       bsStyle='default'
-      className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
+      className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn'}
       data-test-label={dataTestLabel}
       href={href}
     >
