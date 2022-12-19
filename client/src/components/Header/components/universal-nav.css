@@ -563,7 +563,7 @@ button.nav-link[aria-disabled='true'] {
   }
 
   .universal-nav-right {
-    flex: 1 0 auto;
+    flex: 1 0 0;
     display: flex;
     justify-content: flex-end;
   }
@@ -662,7 +662,7 @@ button.nav-link[aria-disabled='true'] {
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 370px) {
   #universal-nav-logo {
     max-width: none;
     left: -170px;
