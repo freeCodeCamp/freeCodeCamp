@@ -1,6 +1,6 @@
 ---
 id: 5895f700f9fc0f352b528e63
-title: Налаштування шаблону двигуна
+title: Налаштування шаблонізатора
 challengeType: 2
 forumTopicId: 301564
 dashedName: set-up-a-template-engine
@@ -8,31 +8,37 @@ dashedName: set-up-a-template-engine
 
 # --description--
 
-Робота над цими завданнями передбачає написання коду одним із таких методів:
+Робота над цими завданнями передбачає написання коду за допомогою одного з наступних методів:
 
-- Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте ці завдання локально.
+- Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте завдання локально.
 - Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання цих завдань.
-- Використовуйте конструктор сайтів на ваш розсуд для завершення проекту. Впевніться, що ви маєте усі файли з нашого GitHub репозиторію.
+- Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
 
-По завершенню, переконайтеся, що демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`.
+Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
 
-Шаблон двигуна дозволяє використовувати статичні шаблони файлів (такі як написані в *Pug*) у вашому додатку. У той час шаблон двигуна замінює варіації у файлі шаблону фактичними значеннями, які можуть надаватися вашим сервером. Потім він перетворює шаблон в статичний HTML файл, який надсилається клієнту. Цей підхід спрощує дизайн HTML сторінки та дозволяє показувати змінні на сторінці без необхідності виклику API від клієнта.
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-`pug@~3.0.0` has already been installed, and is listed as a dependency in your `package.json` file.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`.
 
-Висловіть свої потреби для розуміння, який шаблон двигуна ви використовуєте. Use the `set` method to assign `pug` as the `view engine` property's value:
+Шаблонізатор дозволяє використовувати статистичні шаблони (наприклад ті, що написані в *Pug*) у вашому додатку. Під час виконання коду шаблонізатор замінює змінні у шаблоні на фактичні значення, які може надати сервер. Потім шаблон перетворюється на статистичний файл HTML, який надсилається клієнту. Цей підхід спрощує дизайн сторінки HTML та дозволяє відображати змінні на сторінці без потреби викликати API з клієнта.
+
+`pug@~3.0.0` вже встановлений та вказаний як залежність у вашому файлі `package.json`.
+
+Express повинен знати, який шаблонізатор ви використовуєте. Використайте метод `set`, щоб присвоїти `pug` як значення властивості `view engine`:
 
 ```javascript
 app.set('view engine', 'pug');
 ```
 
-After that, add another `set` method that sets the `views` property of your `app` to point to the `./views/pug` directory. This tells Express to render all views relative to that directory.
+Після цього додайте ще один метод `set`, який встановлює властивість `views` вашого `app` так, щоб вона вказувала на директорію `./views/pug`. Це каже Express відображати все, що належить до цієї директорії.
 
-Finally, use `res.render()` in the route for your home page, passing `index` as the first argument. This will render the `pug` template.
+Вкінці використайте `res.render()` у маршруті своєї домашньої сторінки, передавши `index` як перший аргумент. Це зобразить шаблон `pug`.
 
-If all went as planned, your app home page will no longer be blank. Instead, it will display a message indicating you've successfully rendered the Pug template!
+Якщо все пройшло за планом, то домашня сторінка більше не буде порожньою. Натомість буде повідомлення про те, що ви успішно зобразили шаблон Pug!
 
-Підтвердіть свою сторінку, коли зрозумієте, що все працює коректно. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-a-template-engine-1" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
@@ -51,7 +57,7 @@ async (getUserInput) => {
 }
 ```
 
-Двигун перегляду має бути Pug.
+Двигуном перегляду повинен бути Pug.
 
 ```js
 async (getUserInput) => {
@@ -62,7 +68,7 @@ async (getUserInput) => {
 }
 ```
 
-You should set the `views` property of the application to `./views/pug`.
+Ви повинні встановити властивість `views` на `./views/pug`.
 
 ```js
 async (getUserInput) => {
@@ -73,7 +79,7 @@ async (getUserInput) => {
 }
 ```
 
-Use the correct ExpressJS method to render the index page from the response.
+Використайте правильний метод ExpressJS, щоб відобразити сторінку індексу з відповіді.
 
 ```js
 async (getUserInput) => {
@@ -88,7 +94,7 @@ async (getUserInput) => {
     }
 ```
 
-Pug should be working.
+Pug повинен працювати.
 
 ```js
 async (getUserInput) => {

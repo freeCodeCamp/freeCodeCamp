@@ -1,6 +1,6 @@
 ---
 id: 5e46f983ac417301a38fb933
-title: Злом паролів SHA-1
+title: Програма для злому паролів SHA-1
 challengeType: 10
 forumTopicId: 462374
 helpCategory: Python
@@ -11,55 +11,60 @@ dashedName: sha-1-password-cracker
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
-Ми й досі в процесі розробки інтерактивної складової навчального курсу Python. Наразі можете ознайомитись із наступними відео на YouTube каналі freeCodeCamp.org. У них ви знайдете все необхідне для завершення цього проєкту:
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
-- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
-- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 годин)
+
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 години)
+
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 годин)
 
 # --instructions--
 
-Паролі ніколи не повинні зберігатися у вигляді звичайного тексту. Їх потрібно зберігати як хеші на випадок виявлення списку паролів. Однак не всі хеші створені однаковими.
+Паролі ніколи не повинні зберігатися як звичайний текст. Їх потрібно зберігати як хеші на випадок виявлення списку паролів. Однак не всі хеші створені однаковими.
 
-По цьому проєкті ви дізнаєтеся про важливість безпеки, створивши програму для злому паролів, щоб виявити паролі, які були хешовані за допомогою SHA-1.
+У цьому проєкті ви дізнаєтеся про важливість безпеки, створивши програму для злому паролів, щоб виявити паролі, які були хешовані за допомогою SHA-1.
 
-Create a function that takes in a SHA-1 hash of a password and returns the password if it is one of the top 10,000 passwords used. If the SHA-1 hash is NOT of a password in the database, return "PASSWORD NOT IN DATABASE".
+Створіть функцію, яка приймає хеш SHA-1 і повертає пароль, якщо він є одним із 10 000 найуживаніших паролів. Якщо хеш SHA-1 НЕ є паролем у базі даних, поверніть «PASSWORD NOT IN DATABASE».
 
-The function should hash each password from `top-10000-passwords.txt` and compare it to the hash passed into the function.
+Функція повинна хешувати кожен пароль із `top-10000-passwords.txt` та порівнювати його з хешем, переданим у функцію.
 
-The function should take an optional second argument named `use_salts`. If set to true, each salt string from the file `known-salts.txt` should be appended AND prepended to each password from `top-10000-passwords.txt` before hashing and before comparing it to the hash passed into the function.
+Функція повинна приймати додатковий другий аргумент під назвою `use_salts`. Якщо значення встановлено на true, кожна сіль з файлу `known-salts.txt` повинна бути додана до ТА після кожного пароля з `top-10000-passwords.txt` перед хешуванням та перед порівнянням з хешем, переданим у функцію.
 
-Here are some hashed passwords to test the function with:
+Ось кілька хешованих паролів для перевірки функції:
 
-- `b305921a3723cd5d70a375cd21a61e60aabb84ec` should return "sammy123"
-- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` should return "abacab"
-- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` should return "password"
+- `b305921a3723cd5d70a375cd21a61e60aabb84ec` повинен повернути «sammy123»
+- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` повинен повернути «abacab»
+- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` повинен повернути «password»
 
-Here are some hashed passwords to test the function with when `use_salts` is set to `True`:
+Ось кілька хешованих паролів для тестування функції, якщо `use_salts` встановлено на `True`:
 
-- `53d8b3dc9d39f0184144674e310185e41a87ffd5` should return "superman"
-- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` should return "q1w2e3r4t5"
-- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` should return "bubbles1"
+- `53d8b3dc9d39f0184144674e310185e41a87ffd5` повинен повернути «superman»
+- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` повинен повернути «q1w2e3r4t5»
+- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` повинен повернути «bubbles1»
 
-The `hashlib` library has been imported for you. You should consider using it in your code. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Learn more about "hashlib" here</a>.
+Для вас було імпортовано бібліотеку `hashlib`. Подумайте над її використанням у своєму коді. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Дізнайтеся більше про «hashlib» тут</a>.
 
 ## Розробка
 
-Запишіть свій код в `password_cracker.py`. Для розробки, ви можете використати `main.py` для перевірки вашого коду. Натисніть клавішу "run" і `main.py` запуститься.
+Запишіть свій код у `password_cracker.py`. Для розробки ви можете використати `main.py`, щоб протестувати свій код. Натисніть кнопку «run» і `main.py` запуститься.
 
 ## Тестування
 
-Розділи з тестами для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично кожен раз, коли ви натиснете клавішу "run".
+Модульні тести для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
 
-## Надіслати
+## Надсилання
 
-Скопіюйте URL-адресу вашого проєкту і відправте його до freeCodeCamp.
+Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
 # --hints--
 
-Він повинен пройти усі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

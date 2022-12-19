@@ -14,11 +14,17 @@ Crea una aplicación full stack de JavaScript que sea funcionalmente similar a e
 -   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-headerparser" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+Si usas Replit, sigue estos pasos para configurar el proyecto:
+
+-   Empieza importando el proyecto en Replit.
+-   A continuación, verás una ventana `.replit`.
+-   Selecciona `Use run command` y has clic el botón `Done`.
+
+Una vez que hayas acabado, asegúrate de que un demo funcional del proyecto esté alojado en algún sitio público. Por último, envía la URL mediante el campo `Solution Link`. Opcionalmente, también envía un enlace para el código fuente de tu proyecto en el campo `GitHub Link`.
 
 # --hints--
 
-Debes proporcionar tu propio proyecto, no la URL de ejemplo.
+Debes proporcionar tu propio proyecto, no la URL del ejemplo.
 
 ```js
 (getUserInput) => {

@@ -14,13 +14,19 @@ dashedName: exercise-tracker
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 字段中提交它的 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+如果你使用 Replit，按照以下步驟設置項目：
+
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕.
+
+當你完成後，請將一個確保正常運行的demo（項目演示）託管在可以公開訪問的平臺上。 然後將 URL 提交到 `Solution Link` 中。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
 
 # --instructions--
 
 你的答案應該有以下結構。
 
-運動：
+練習：
 
 ```js
 {
@@ -56,11 +62,11 @@ dashedName: exercise-tracker
 }
 ```
 
-**提示：** 對於 `date` 屬性，`Date` API 的 `toDateString` 方法可以用於實現預期的輸出。
+**提示：** 對於 `date` 屬性，`Date` API 的 `toDateString` 方法可用於實現預期輸出。
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+你應該提交你自己的項目，而不是示例 URL。
 
 ```js
 (getUserInput) => {
@@ -71,7 +77,7 @@ dashedName: exercise-tracker
 };
 ```
 
-可以將表單裏的 `username` 通過 `POST` 請求發送到 `/api/users`，以創建一個新的用戶。
+你可以將表單裏的 `username` 通過 `POST` 請求發送到 `/api/users`，以創建一個新的用戶。
 
 ```js
 async (getUserInput) => {
@@ -88,7 +94,7 @@ async (getUserInput) => {
 };
 ```
 
-`POST /api/users` 帶有表單數據 `username` 對請求，返回的響應將是一個具有 `username` 和 `_id` 屬性的對象.
+從包含 `username` 的 `POST /api/users` 請求返回的結果將是一個包含 `username` 和 `_id` 屬性的對象。
 
 ```js
 async (getUserInput) => {
@@ -121,7 +127,7 @@ async(getUserInput) => {
 };
 ```
 
-對 `/api/users` 的 `GET` 請求返回一個數組。
+對 `/api/users` 的 `GET` 請求將返回一個數組。
 
 ```js
 async(getUserInput) => {
@@ -156,7 +162,7 @@ async(getUserInput) => {
 };
 ```
 
-你能用表單裏的 `description`、`duration` 和 `date`（可選）發送 `POST` 請求到 `/api/users/:_id/exercises`。 如果沒有傳入 date，默認採用當前日期。
+你可以將表單裏的 `description`，`duration` 和 `date`（可選）用 `POST` 發送請求到 `/api/users/:_id/exercises`。 如果沒有傳入 date，默認採用當前日期。
 
 ```js
 async (getUserInput) => {
@@ -229,7 +235,7 @@ async (getUserInput) => {
 };
 ```
 
-可以發送 `GET` 請求到 `/api/users/:_id/logs`，以獲取任何用戶的完整 exercise 日誌。
+可以發送 `GET` 請求到 `/api/users/:_id/logs`，以獲取任何用戶的完整運動日誌。
 
 ```js
 async (getUserInput) => {
@@ -541,7 +547,7 @@ async(getUserInput) => {
 };
 ```
 
-你可以將 `from`、`to` 和 `limit` 參數添加到 `GET /api/users/:_id/logs` 請求檢索任何用戶的部分日誌。 `from` 和 `to` 是 `yyyy-mm-dd` 形式的日期， `limit` 是希望返回的 log 數量。
+你可以將 `from`、`to` 和 `limit` 參數添加到 `GET /api/users/:_id/logs` 請求，檢索任何用戶的部分日誌。 `from` 和 `to` 是 `yyyy-mm-dd` 形式的日期， `limit` 是一個整數，表示要送回多少份日誌。
 
 ```js
 async (getUserInput) => {

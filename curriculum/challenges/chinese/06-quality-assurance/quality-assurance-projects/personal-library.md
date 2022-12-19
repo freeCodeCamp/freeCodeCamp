@@ -14,7 +14,13 @@ dashedName: personal-library
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目
 -   使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
-完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 框中提交你的项目 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+如果你使用 Replit，请按照以下步骤设置项目：
+
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮。
+
+当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 `Solution Link` 字段中。 也可以将项目的源码链接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
@@ -25,7 +31,7 @@ dashedName: personal-library
 
 # --hints--
 
-提交自己的项目，而不是示例的 URL。
+你可以提交你自己的项目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-可以向 `/api/books` 发送 <b>GET</b> 请求，并返回代表所有书的 JSON 响应。 JSON 响应应该是一个包含有 `title`、`_id` 和 `commentcount` 属性的对象数组 。
+你可以向 `/api/books` 发送 <b>GET</b> 请求，并返回代表所有书的 JSON 响应。 JSON 响应应该是一个对象数组，每个对象（书）包含 `title`、`_id` 和 `commentcount` 属性。
 
 ```js
 async (getUserInput) => {
@@ -84,7 +90,7 @@ async (getUserInput) => {
 };
 ```
 
-可以发送 <b>GET</b> 请求到 `/api/books/{_id}` 来检索一本书的单个对象，返回属性 `title`、`_id` 和 `comments` 数组 (如果没有评论，则展示空数组)。 如果找不到书, 返回字符串 `no book exists`。
+你可以发送 <b>GET</b> 请求到 `/api/books/{_id}` 来检索一本书的单个对象，返回属性 `title`、`_id` 和 `comments` 数组（如果没有评论，则展示空数组）。 如果找不到书，返回字符串 `no book exists`。
 
 ```js
 async (getUserInput) => {
@@ -108,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-可以发送一个 <b>POST</b> 请求，其中包含 `comment` 作为表单正文数据，请求到 `/api/books/{_id}` 以便将评论添加到书中。 返回的响应将是书对象，在先前测试中 <b>GET</b> `/api/books/{_id}` 类似。 如果请求中没有包含 `comment` ，返回字符串 `missing required field comment`。 如果找不到书, 返回字符串 `no book exists`。
+你可以发送一个 <b>POST</b> 请求，其中包含 `comment` 作为表单正文数据，请求到 `/api/books/{_id}` 以便将评论添加到书中。 返回的响应将是书对象，与先前测试中 <b>GET</b> `/api/books/{_id}` 请求类似。 如果请求中没有包含 `comment`，返回字符串 `missing required field comment`。 如果找不到书，返回字符串 `no book exists`。
 
 ```js
 async (getUserInput) => {
@@ -146,7 +152,7 @@ async (getUserInput) => {
 };
 ```
 
-可以向 `/api/books/{_id}` 发送 <b>DELETE</b> 请求，从收藏中删除一本书。 如果成功，返回的响应将是字符串 `delete successful`。 如果找不到书, 返回字符串 `no book exists`。
+你可以向 `/api/books/{_id}` 发送 <b>DELETE</b> 请求，从收藏中删除一本书。 如果成功，返回的响应将是字符串 `delete successful`。 如果找不到书，返回字符串 `no book exists`。
 
 ```js
 async (getUserInput) => {
@@ -170,7 +176,7 @@ async (getUserInput) => {
 };
 ```
 
-可以向 `/api/books` 发送 <b>DELETE</b> 请求来删除数据库中的所有书籍。 The returned response will be the string `complete delete successful` if successful.
+你可以向 `/api/books` 发送 <b>DELETE</b> 请求来删除数据库中的所有书籍。 如果成功，返回的响应将是字符串 `complete delete successful`。
 
 ```js
 async (getUserInput) => {

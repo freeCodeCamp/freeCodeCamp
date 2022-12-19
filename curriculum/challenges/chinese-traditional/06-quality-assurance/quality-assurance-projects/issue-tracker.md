@@ -14,36 +14,42 @@ dashedName: issue-tracker
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">我們的 Replit 初始化項目</a>來完成你的項目。
 -   使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 框中提交你的項目 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+如果你使用 Replit，請按照以下步驟設置項目：
+
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。 也可以將項目的源碼鏈接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
 -   在 `/routes/api.js` 中完成必要的路由
 -   在 `tests/2_functional-tests.js` 中創建所有的功能測試
 -   複製 `sample.env` 文件到 `.env` 並按需設置變量
--   要運行測試，在 `.env` 文件中取消註釋 `NODE_ENV=test`
--   使用 `npm run test` 命令，在 console 運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯。
+-   在 `.env` 文件中取消註釋 `NODE_ENV=test` 來運行測試
+-   使用 `npm run test` 命令在 console 中運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯
 
 在 `tests/2_functional-tests.js` 中編寫下以下測試：
 
 -   用所有字段創建 issue：POST 請求到 `/api/issues/{project}`
 -   用必填字段創建 issue：POST 請求到 `/api/issues/{project}`
 -   用缺失必填字段創建 issue：POST 請求到 `/api/issues/{project}`
--   查看 project 裏的 issue：GET 請求到 `/api/issues/{project}`
+-   查看項目裏的 issue：GET 請求到 `/api/issues/{project}`
 -   用 filter 過濾 project 裏的 issue：GET 請求到 `/api/issues/{project}`
 -   用多個 filter 過濾 project 裏的 issue：GET 請求到 `/api/issues/{project}`
 -   更新 issue 裏的一個字段：PUT 請求到 `/api/issues/{project}`
 -   更新 issue 裏的多個字段：PUT 請求到 `/api/issues/{project}`
--   在缺少 `_id` 字段的情況下更新 issue: PUT 請求到 `/api/issues/{project}`
--   在沒有字段更新的情況下調用更新：PUT 請求到 `/api/issues/{project}`
--   傳入一個無效的的 `_id` 來調用更新：PUT 請求到 `/api/issues/{project}`
+-   在缺少 `_id` 字段的情況下更新 issue：PUT 請求到 `/api/issues/{project}`
+-   在沒有字段更新的情況下更新 issue：PUT 請求到 `/api/issues/{project}`
+-   傳入一個無效的 `_id` 來更新 issue：PUT 請求到 `/api/issues/{project}`
 -   刪除一個 issue：DELETE 請求到 `/api/issues/{project}`
--   傳入一個無效的的 `_id` 來調用刪除：DELETE 請求到 `/api/issues/{project}`
--   在缺失 `_id` 的情況下來調用刪除：DELETE 請求到 `/api/issues/{project}`
+-   傳入一個無效的 `_id` 來刪除 issue：DELETE 請求到 `/api/issues/{project}`
+-   在缺失 `_id` 的情況下來刪除 issue：DELETE 請求到 `/api/issues/{project}`
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+你可以提交你自己的項目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -51,7 +57,7 @@ dashedName: issue-tracker
 };
 ```
 
-可以發送 `POST` 請求到 `/api/issues/{projectname}`，表單數據包含必填字段 `issue_title`、`issue_text`、`created_by` 和可選字段 `assigned_to` 以及 `status_text`。
+你可以發送 `POST` 請求到 `/api/issues/{projectname}`，表單數據包含必填字段 `issue_title`、`issue_text`、`created_by` 和可選字段 `assigned_to` 以及 `status_text`。
 
 ```js
 async (getUserInput) => {
@@ -73,7 +79,7 @@ async (getUserInput) => {
 };
 ```
 
-`POST` 請求到 `/api/issues/{projectname}` 將返回創建的對象，必須包含所有提交的全部字段。 如果沒有填選填字段將作爲空字符串返回. 此外，包含 `created_on` (日期/時間)、 `updated_on` (日期/時間)、 `open` (布爾型) `true` 用於打開 - 默認值， `false` 用於關閉， `_id`。
+`POST` 請求到 `/api/issues/{projectname}` 將返回創建的對象，必須包含所有提交的全部字段。 如果沒有填選填字段將作爲空字符串返回。 此外，包含 `created_on`（日期/時間）、`updated_on`（日期/時間）、`open`（布爾型，`true` 用於打開 - 默認值， `false` 用於關閉）、`_id`。
 
 ```js
 async (getUserInput) => {
@@ -107,7 +113,7 @@ async (getUserInput) => {
 };
 ```
 
-如果發送一個 `POST` 請求到 `/api/issues/{projectname}` 且缺少必填字段，會返回錯誤 `{ error: 'required field(s) missing' }`。
+如果你發送一個 `POST` 請求到 `/api/issues/{projectname}`，並且缺少必要的字段，將返回錯誤 `{ error: 'required field(s) missing' }`。
 
 ```js
 async (getUserInput) => {
@@ -125,7 +131,7 @@ async (getUserInput) => {
 };
 ```
 
-可以發送 `GET` 請求到 `/api/issues/{projectname}` 請求所有指定 `projectname` 的 issues 數組，會展示每個 issue 的所有字段。
+你可以發送一個 `GET` 請求到 `/api/issues/{projectname}` 請求所有指定 `projectname` 的 issues 數組，會展示每個 issue 的所有字段。
 
 ```js
 async (getUserInput) => {
@@ -172,7 +178,7 @@ async (getUserInput) => {
 };
 ```
 
-可以發送 `GET` 請求到 `/api/issues/{projectname}` 通過 URL 查詢傳入字段名和值過濾請求（如， `/api/issues/{project}?open=false`）。 你可以一次通過一個或多個字段/值對。
+你可以發送一個 `GET` 請求到 `/api/issues/{projectname}`，通過 URL 查詢傳入字段名和值過濾請求（如，`/api/issues/{project}?open=false`）。 你可以一次傳入一個或多個字段/值對。
 
 ```js
 async (getUserInput) => {
@@ -213,7 +219,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以發送一個 `PUT` 請求到 `/api/issues/{projectname}` 帶有一個 `_id` 以及一個或多個字段進行更新。 成功後， `updated_on` field 應該被更新，返回的應該是 `{  result: 'successfully updated', '_id': _id }`。
+你可以發送一個 `PUT` 請求到 `/api/issues/{projectname}`，帶有一個 `_id` 以及一個或多個字段進行更新。 成功後，`updated_on` field 應該被更新，返回的應該是 `{  result: 'successfully updated', '_id': _id }`。
 
 ```js
 async (getUserInput) => {
@@ -248,7 +254,7 @@ async (getUserInput) => {
 };
 ```
 
-當 `PUT` 請求發送給 `/api/issues/{projectname}` 的請求體不包含 `_id` 時應返回`{ error: 'missing _id' }`。
+當 `PUT` 請求發送給 `/api/issues/{projectname}` 的請求體不包含 `_id` 時，應返回`{ error: 'missing _id' }`。
 
 ```js
 async (getUserInput) => {
@@ -294,7 +300,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以發送一個 `DELETE` 請求到 `/api/issues/{projectname}` 帶有一個 `_id` 來刪除 issue。 如果沒有發送 `_id` ，返回值爲 `{ error: 'missing _id' }`。 成功後，返回值爲 `{ result: 'successfully deleted', '_id': _id }`。 失敗時，返回值爲 `{ error: 'could not delete', '_id': _id }`。
+你可以發送一個 `DELETE` 請求到 `/api/issues/{projectname}`，帶有一個 `_id` 來刪除 issue。 如果沒有發送 `_id`，返回值爲 `{ error: 'missing _id' }`。 成功後，返回值爲 `{ result: 'successfully deleted', '_id': _id }`。 失敗時，返回值爲 `{ error: 'could not delete', '_id': _id }`。
 
 ```js
 async (getUserInput) => {

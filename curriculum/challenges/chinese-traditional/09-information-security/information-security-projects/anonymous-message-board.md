@@ -16,7 +16,13 @@ dashedName: anonymous-message-board
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後將 URL 提交到 `Solution Link` 中。 此外，還可以提交一個指向項目源碼的 `GitHub Link`。
+如果你使用 Replit，請按照以下步驟設置項目：
+
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
+完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後將 URL 提交到 `Solution Link` 中。 此外，將項目的源碼鏈接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
@@ -26,20 +32,20 @@ dashedName: anonymous-message-board
 
 在 `tests/2_functional-tests.js` 中編寫下以下測試：
 
--   創建一個新的主題：發送 POST 請求到 `/api/threads/{board}`。
+-   創建一個新的主題：發送 POST 請求到 `/api/threads/{board}`
 -   查看最近的 10 個主題，每個主題有 3 個回覆：發送 GET 請求到 `/api/threads/{board}`
--   使用錯誤密碼刪除主題：使用錯誤的`delete_password`向`/api/threads/{board}`發出DELETE請求
--   用正確的密碼刪除一個主題：向`/api/threads/{board}`發出DELETE請求，並提供有效的`delete_password`。
--   報告一個主題：發送 PUT 請求到 `/api/threads/{board}`。
--   創建一個新的回覆：發送 POST 請求到 `/api/replies/{board}`。
--   查看一個帶有所有回覆的主題：發送 GET 請求到`/api/replies/{board}`。
--   使用錯誤密碼刪除一個回覆：使用無效的`delete_password`向`/api/replies/{board}`發出DELETE請求。
--   使用正確密碼刪除一個回覆：使用有效的`delete_password`向`/api/replies/{board}`發出DELETE請求。
--   報告一個回覆：發送 PUT 請求到 `/api/replies/{board}`。
+-   使用錯誤密碼刪除主題：使用錯誤的 `delete_password` 向 `/api/threads/{board}` 發出 DELETE 請求
+-   使用正確密碼刪除主題：使用正確的 `delete_password` 向 `/api/threads/{board}` 發出 DELETE 請求
+-   報告一個主題：發送 PUT 請求到 `/api/threads/{board}`
+-   創建一個新的回覆：發送 POST 請求到 `/api/replies/{board}`
+-   查看一個帶有所有回覆的主題：發送 GET 請求到 `/api/replies/{board}`
+-   使用錯誤密碼刪除回覆：使用無效的 `delete_password` 向 `/api/replies/{board}` 發出 DELETE 請求
+-   使用正確密碼刪除回覆：使用有效的 `delete_password` 向 `/api/replies/{board}` 發出 DELETE 請求
+-   報告一個回覆：發送 PUT 請求到 `/api/replies/{board}`
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+你可以提交你自己的項目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -81,7 +87,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/threads/{board}` 發送一個 POST 請求，其中包括 `text` 和 `delete_password` 的表單數據。 保存的數據庫記錄將至少有 `_id`、`text`、`created_on`(date & time)、`bumped_on`(date & time, starts same as `created_on`)、`reported`（布爾值）、`delete_password`、& `replies`（數組）。
+你可以向 `/api/threads/{board}` 發送一個 POST 請求，其中包括 `text` 和 `delete_password` 的表單數據。 保存的數據庫記錄將至少有 `_id`、`text`、`created_on`（date & time）、`bumped_on`（date & time，開頭和 `created_on` 一樣)、`reported`（布爾值）、`delete_password`、& `replies`（數組）。
 
 ```js
 async (getUserInput) => {
@@ -113,7 +119,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以向 `/api/replies/{board}` 發送一個 POST 請求，其中包括字段 `text`、`delete_password` & `thread_id`。 這將更新 `bumped_on` 日期到評論日期。 在主題的 `replies` 數組中，將保存一個對象，至少有 `_id`、`text`、`created_on`、`delete_password`、& `reported` 這些屬性。
+你可以向 `/api/replies/{board}` 發送一個 POST 請求，其中包括字段 `text`、`delete_password` & `thread_id`。 這將更新 `bumped_on` 日期爲評論日期。 在主題的 `replies` 數組中，將保存一個對象，至少有 `_id`、`text`、`created_on`、`delete_password`、& `reported` 這些屬性。
 
 ```js
 async (getUserInput) => {
@@ -336,7 +342,7 @@ async (getUserInput) => {
 };
 ```
 
-你可以通過向 `/api/replies/{board}` 發送 PUT 請求並傳遞 `thread_id` & `reply_id`。 返回的將是字符串 `reported`。 `reply_id` 的 `reported` 值將被改變爲 `true`。
+你可以向 `/api/replies/{board}` 發送一個 PUT 請求，並傳遞 `thread_id` & `reply_id`。 返回的將是字符串 `reported`。 `reply_id` 的 `reported` 值將被改變爲 `true`。
 
 ```js
 async (getUserInput) => {

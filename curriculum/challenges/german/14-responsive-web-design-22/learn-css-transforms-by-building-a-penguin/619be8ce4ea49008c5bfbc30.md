@@ -7,7 +7,7 @@ dashedName: step-43
 
 # --description--
 
-Increase the psuedo-element's transparency by `30%`.
+Increase the pseudo-element's transparency by `30%`.
 
 # --hints--
 

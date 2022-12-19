@@ -10,7 +10,7 @@ dashedName: everything-be-true
 
 تحقق مما إذا كان الـ argument الثاني صحيح <dfn>truthy</dfn> على جميع عناصر المجموعة (الـ argument الأول).
 
-بمعنى آخر ، يتم إعطاؤك array لمجموعة من الـ objects. سيكون المسند `pre` خاصية للـ object وتحتاج إلى إرجاع `true` إذا كانت قيمته `truthy`. خلاف ذلك، قم بإرجاع `false`.
+بمعنى آخر، يتم إعطاؤك قائمة (array) لمجموعة من الكائنات (objects). سيكون المسند `pre` خاصية للـ object وتحتاج إلى إرجاع `true` إذا كانت قيمته `truthy`. خلاف ذلك، قم بإرجاع `false`.
 
 في Javascript، القيم `truthy` هي القيم التي تترجم إلى `true` عند تقييمها في سياق منطقي (Boolean).
 

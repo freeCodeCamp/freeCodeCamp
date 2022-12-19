@@ -14,11 +14,17 @@ dashedName: request-header-parser-microservice
 -   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-headerparser" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、プロジェクトのソースコードへのリンクを `GitHub Link` フィールドへ送信してください。
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供する必要があります。
+You should provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -30,7 +36,7 @@ dashedName: request-header-parser-microservice
 };
 ```
 
-`/api/whoami` へのリクエストに対して、`ipaddress` キーに IP アドレスを持つ JSON オブジェクトを返す必要があります。
+A request to `/api/whoami` should return a JSON object with your IP address in the `ipaddress` key.
 
 ```js
 (getUserInput) =>
@@ -42,7 +48,7 @@ dashedName: request-header-parser-microservice
   );
 ```
 
-`/api/whoami` へのリクエストに対して、`language` キーに優先言語を持つ JSON オブジェクトを返す必要があります。
+A request to `/api/whoami` should return a JSON object with your preferred language in the `language` key.
 
 ```js
 (getUserInput) =>
@@ -54,7 +60,7 @@ dashedName: request-header-parser-microservice
   );
 ```
 
-`/api/whoami` へのリクエストに対して、`software` キーにソフトウェアを持つ JSON オブジェクトを返す必要があります。
+A request to `/api/whoami` should return a JSON object with your software in the `software` key.
 
 ```js
 (getUserInput) =>

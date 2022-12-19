@@ -16,11 +16,11 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Basic Assertions` スイート内の `#3` に分類されたテストにおいて、テストを合格にする (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isOk()` または `assert.isNotOk()` に変更してください。 アサートに渡された引数を変更しないでください。
+`tests/1_unit-tests.js` の中の、`Basic Assertions` スイート内の `#3` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isOk()` または `assert.isNotOk()` に変更してください。 アサートに渡された引数を変更しないでください。
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>

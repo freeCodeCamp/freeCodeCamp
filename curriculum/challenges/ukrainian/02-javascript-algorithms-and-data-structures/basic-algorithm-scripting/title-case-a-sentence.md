@@ -1,6 +1,6 @@
 ---
 id: ab6137d4e35944e21037b769
-title: Алгоритм Великі літери у реченнях
+title: Слова З Великої Літери
 challengeType: 1
 forumTopicId: 16088
 dashedName: title-case-a-sentence
@@ -8,31 +8,31 @@ dashedName: title-case-a-sentence
 
 # --description--
 
-Стрічка повинна починатись з великої літери в кожному слові. Переконайтесь, що решта букв написана у нижньому регістрі.
+Поверніть заданий рядок, де кожне слово починається з великої літери. Переконайтеся, що інші літери написані в нижньому регістрі.
 
-Для виконання завдання, вам також необхідно писати з великої літери сполучення слів `the` та `of`.
+Сполучні слова, як-от `the` та `of`, також потрібно писати з великої літери.
 
 # --hints--
 
-`titleCase("I'm a little tea pot")` має повернути рядок.
+`titleCase("I'm a little tea pot")` повинен повертати рядок.
 
 ```js
 assert(typeof titleCase("I'm a little tea pot") === 'string');
 ```
 
-`titleCase("I'm a little tea pot")` має повернути рядок `I'm A Little Tea Pot`.
+`titleCase("I'm a little tea pot")` повинен повертати рядок `I'm A Little Tea Pot`.
 
 ```js
 assert(titleCase("I'm a little tea pot") === "I'm A Little Tea Pot");
 ```
 
-`titleCase("sHoRt AnD sToUt")` має повертати рядок `Short And Stout`.
+`titleCase("sHoRt AnD sToUt")` повинен повертати рядок `Short And Stout`.
 
 ```js
 assert(titleCase('sHoRt AnD sToUt') === 'Short And Stout');
 ```
 
-`titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")` має повернути рядок `Here Is My Handle Here Is My Spout`.
+`titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")` повинен повертати рядок `Here Is My Handle Here Is My Spout`.
 
 ```js
 assert(

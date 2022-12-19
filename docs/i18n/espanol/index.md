@@ -30,6 +30,7 @@ Las certificaciones ya están disponibles en algunos de los principales idiomas 
 - [portugués (Português)](https://www.freecodecamp.org/portuguese/learn)
 - [Ucraniano (Українська)](https://www.freecodecamp.org/ukrainian/learn)
 - [Japonés (日本語)](https://www.freecodecamp.org/japanese/learn)
+- [German (Deutsch)](https://www.freecodecamp.org/german/learn)
 
 Te animamos a leer el anuncio [aquí](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) y compartirlo con tus amigos para que se sientan entusiasmados con esto.
 

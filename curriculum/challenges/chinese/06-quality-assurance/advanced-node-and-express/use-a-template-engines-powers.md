@@ -12,9 +12,9 @@ dashedName: use-a-template-engines-powers
 
 在 Pug 文件中，你可以用变量名来调用变量，比如写成 `#{variable_name}` 来实现行内调用，或像 `p=variable_name` 把元素与变量直接写在一起，这表示 p 元素的内容等价于这个变量。
 
-Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site.
+Pug 是关于使用空白和制表符来显示嵌套元素，并减少制作一个漂亮网站所需的代码量。
 
-Take the following Pug code for example:
+以下面的 Pug 代码为例：
 
 ```pug
 head
@@ -27,7 +27,7 @@ body
       p Get on it!
 ```
 
-The above yields the following HTML:
+以上代码生成以下 HTML：
 
 ```html
 <head>
@@ -40,23 +40,23 @@ The above yields the following HTML:
 </body>
 ```
 
-Your `index.pug` file included in your project, uses the variables `title` and `message`.
+你的项目中的 `index.pug` 文件使用了变量 `title` 和 `message`。
 
-Pass those from your server to the Pug file by adding an object as a second argument to your `res.render` call with the variables and their values. Give the `title` a value of `Hello` and `message` a value of `Please log in`.
+为了从服务器传递这些信息到 Pug 文件，你需要给 `res.render` 调用添加一个对象作为第二个参数，其中包含变量和对应的值。 给 `title` 一个值为 `Hello`，给 `message` 一个值为 `Please log in`。
 
-It should look like:
+就像这样：
 
 ```javascript
 res.render('index', { title: 'Hello', message: 'Please log in' });
 ```
 
-Now refresh your page, and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
+现在刷新你的页面， 你应该看到这些值呈现在你的视图中正确位置，即 `index.pug` 文件中！
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">project completed up to this point</a>.
+完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">查看已完成的项目</a>。
 
 # --hints--
 
-Pug should correctly render variables.
+Pug 应正确地展示变量。
 
 ```js
 async (getUserInput) => {

@@ -24,7 +24,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 # --instructions--
 
-اجعل كائن promise يتعامل مع النجاح والفشل. إذا كان `responseFromServer` صحيحاً `true`، فاستدعي طريقة `resolve` لإكمال كائن promisie بنجاح. مرر `resolve` إلى سلسلة (string) نصية بقيمة `We got the data`. إذا كان `responseFromServer` بـ `false`، استخدم دالة `reject` كبديل و مرر اليها الـ string الآتي: `Data not received`.
+اجعل كائن promise يتعامل مع النجاح والفشل. إذا كان `responseFromServer` صحيحاً `true`، ففعيل طريقة `resolve` لإكمال كائن promise بنجاح. مرر `resolve` إلى سلسلة (string) نصية بقيمة `We got the data`. إذا كانت حالة `responseFromServer` بنوع `false`، استخدم طريقة `reject` كبديل و مررها المقطع النصي (string) الآتي: `Data not received`.
 
 # --hints--
 

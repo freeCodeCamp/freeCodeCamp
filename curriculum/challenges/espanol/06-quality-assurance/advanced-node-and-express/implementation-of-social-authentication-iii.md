@@ -41,9 +41,9 @@ myDataBase.findOneAndUpdate(
 
 `findOneAndUpdate` te permite buscar un objeto y actualizarlo. Si el objeto no existe, será insertado y puesto a disposición de la función callback. En este ejemplo, siempre establecemos `last_login`, incrementamos el `login_count` por `1`, y sólo rellenamos la mayoría de los campos cuando se inserta un nuevo objeto (nuevo usuario). Ten en cuenta el uso de valores predeterminados. A veces un perfil devuelto no tendrá toda la información rellenada o el usuario la mantendrá privada. En este caso, lo gestionas para prevenir un error.
 
-You should be able to login to your app now. Try it!
+Debería poder iniciar sesión en su aplicación ahora. ¡Intentalo!
 
-Envía tu página cuando creas que lo has hecho bien. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-iii-5" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-iii-5" target="_blank" rel="noopener noreferrer nofollow">consulta el proyecto realizado hasta este momento</a>.
 
 # --hints--
 

@@ -18,7 +18,13 @@ dashedName: stock-price-checker
 -   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
 -   使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後將 URL 提交到 `Solution Link` 中。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+如果你使用 Replit，請按照以下步驟設置項目：
+
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。 也可以將項目的源碼鏈接提交到 `GitHub Link` 字段中。
 
 # --instructions--
 
@@ -39,7 +45,7 @@ dashedName: stock-price-checker
 
 # --hints--
 
-提交你自己的項目，而不是示例的 URL。
+你可以提交你自己的項目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -91,7 +97,7 @@ async (getUserInput) => {
 };
 ```
 
-你也可以將 `like` 字段作爲 `true`（布爾值）傳遞，讓你的偏好添加到股票中。 每個 IP 應該只接受 1 個贊（like）。
+你也可以將 `like` 字段作爲 `true`（布爾值）傳遞，將你的偏好添加到股票中。 每個 IP 應該只接受 1 個贊（like）。
 
 ```js
 

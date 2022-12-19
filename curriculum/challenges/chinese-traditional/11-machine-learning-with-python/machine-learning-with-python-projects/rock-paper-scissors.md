@@ -12,6 +12,10 @@ dashedName: rock-paper-scissors
 
 你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
 我們仍在開發機器學習課程的交互式課程部分。 現在，你需要使用其他資源來學習如何通過這一挑戰。
 
 # --instructions--
@@ -33,7 +37,7 @@ dashedName: rock-paper-scissors
 要測試你的代碼，請使用 `play` 函數玩遊戲。 `play` 函數有四個參數：
 
 - 兩個玩家互相對戰（玩家實際上是函數）
-- 比賽的比賽場數
+- 對戰中的比賽場數
 - 一個可選參數來查看每場比賽的日誌。 將其設置爲 `True` 以查看這些消息。
 
 ```py

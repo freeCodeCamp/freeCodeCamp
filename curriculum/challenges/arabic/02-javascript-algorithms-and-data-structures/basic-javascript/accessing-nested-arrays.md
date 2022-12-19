@@ -11,7 +11,7 @@ dashedName: accessing-nested-arrays
 
 وكما رأينا في أمثلة سابقة، يمكن أن تحتوي الكائنات (objects) على كائنات متدخلة (nested objects) و قائمات متداخلة (nested arrays). على غرار الوصول إلى الكائنات متدخلة nested objects، يمكن ربط bracket notation في القائمة للوصول إلى القائمات متداخلة (nested arrays).
 
-وفيما يلي مثال على كيفية الوصول إلى القائمة متداخلة nested) array):
+وفيما يلي مثال على كيفية الوصول إلى القائمة متداخلة (nested array):
 
 ```js
 const ourPets = [
