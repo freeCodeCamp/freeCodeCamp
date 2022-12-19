@@ -20,8 +20,9 @@
 
 .universal-nav-left {
   display: flex;
-  flex: 1 0 27%;
+  flex: 1 0 0%;
   margin-left: 0;
+  padding-right: 10px;
   z-index: 2000;
 }
 
