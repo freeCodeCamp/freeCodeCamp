@@ -8,7 +8,7 @@ dashedName: understand-the-immediately-invoked-function-expression-iife
 
 # --description--
 
-النمط الشائع في جافا سكريبت هو تنفيذ الـ function بمجرد إعلانه:
+النمط الشائع في JavaScript هو تنفيذ الوظيفة (function) بمجرد إعلانه:
 
 ```js
 (function () {

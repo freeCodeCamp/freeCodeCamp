@@ -1,26 +1,32 @@
 // Configuration for client side
-const durationsConfig = {
+import { DonationConfig } from '../client/src/components/Donation/types';
+
+export const durationsConfig: {
+  month: 'monthly';
+  onetime: 'one-time';
+} = {
   month: 'monthly',
   onetime: 'one-time'
 };
-const amountsConfig = {
+
+export const amountsConfig = {
   month: [1000, 2000, 3000, 4000, 5000],
   onetime: [2500, 5000, 7500, 10000, 15000]
 };
-const defaultAmount = {
+export const defaultAmount: { month: 500; onetime: 7500 } = {
   month: 500,
   onetime: 7500
 };
-const defaultDonation = {
-  donationAmount: defaultAmount['month'],
+export const defaultDonation: DonationConfig = {
+  donationAmount: defaultAmount.month,
   donationDuration: 'month'
 };
-const modalDefaultDonation = {
+export const modalDefaultDonation: DonationConfig = {
   donationAmount: 500,
   donationDuration: 'month'
 };
 
-const onetimeSKUConfig = {
+export const onetimeSKUConfig = {
   live: [
     { amount: '15000', id: 'sku_IElisJHup0nojP' },
     { amount: '10000', id: 'sku_IEliodY88lglPk' },
@@ -38,9 +44,9 @@ const onetimeSKUConfig = {
 };
 
 // Configuration for server side
-const durationKeysConfig = ['month', 'onetime'];
-const donationOneTimeConfig = [100000, 25000, 6000];
-const donationSubscriptionConfig = {
+export const durationKeysConfig = ['month', 'one-time'];
+export const donationOneTimeConfig = [100000, 25000, 6000];
+export const donationSubscriptionConfig = {
   duration: {
     month: 'Monthly'
   },
@@ -51,7 +57,7 @@ const donationSubscriptionConfig = {
 
 // Shared paypal configuration
 // keep the 5 dollars for the modal
-const paypalConfigTypes = {
+export const paypalConfigTypes = {
   live: {
     month: {
       500: { planId: 'P-1L11422374370240ULZKX3PA' },
@@ -74,42 +80,51 @@ const paypalConfigTypes = {
   }
 };
 
-const paypalConfigurator = (donationAmount, donationDuration, paypalConfig) => {
-  if (donationDuration === 'onetime') {
+export const paypalConfigurator = (
+  donationAmount: 500 | 1000 | 2000 | 3000 | 4000 | 5000,
+  donationDuration: 'one-time' | 'month',
+  paypalConfig: {
+    month: {
+      500: { planId: string };
+      1000: { planId: string };
+      2000: { planId: string };
+      3000: { planId: string };
+      4000: { planId: string };
+      5000: { planId: string };
+    };
+  }
+) => {
+  if (donationDuration === 'one-time') {
     return { amount: donationAmount, duration: donationDuration, planId: null };
   }
   return {
     amount: donationAmount,
     duration: donationDuration,
-    planId: paypalConfig[donationDuration]['' + donationAmount].planId
+    planId: paypalConfig[donationDuration][donationAmount].planId
   };
 };
 
-const donationUrls = {
+export const donationUrls = {
   successUrl: 'https://www.freecodecamp.org/news/thank-you-for-donating/',
   cancelUrl: 'https://freecodecamp.org/donate'
 };
 
-const patreonDefaultPledgeAmount = 500;
+export const patreonDefaultPledgeAmount = 500;
 
-const aBTestConfig = {
+export const aBTestConfig = {
   isTesting: true,
   type: 'secureIconButtonOnly'
 };
 
-module.exports = {
-  durationsConfig,
-  amountsConfig,
-  defaultAmount,
-  defaultDonation,
-  durationKeysConfig,
-  donationOneTimeConfig,
-  donationSubscriptionConfig,
-  modalDefaultDonation,
-  onetimeSKUConfig,
-  paypalConfigTypes,
-  paypalConfigurator,
-  donationUrls,
-  patreonDefaultPledgeAmount,
-  aBTestConfig
-};
+export enum PaymentContext {
+  Modal = 'modal',
+  DonatePage = 'donate page',
+  Certificate = 'certificate'
+}
+
+export enum PaymentProvider {
+  Paypal = 'paypal',
+  Patreon = 'patreon',
+  Stripe = 'stripe',
+  StripeCard = 'stripe card'
+}
