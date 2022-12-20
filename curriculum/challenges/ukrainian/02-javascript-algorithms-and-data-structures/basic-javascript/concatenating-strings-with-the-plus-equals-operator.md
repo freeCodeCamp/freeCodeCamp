@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b8
-title: Об'єднання рядків за допомогою оператора "плюс дорівнює"
+title: Об'єднання рядків за допомогою оператора +=
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmmC4'
 forumTopicId: 16803
@@ -9,38 +9,38 @@ dashedName: concatenating-strings-with-the-plus-equals-operator
 
 # --description--
 
-Ми можемо також використовувати оператор `+=`, щоб <dfn>з'єднувати</dfn> рядок з кінцем уже існуючого рядка змінної. Або ще для того, щоб розділяти довгий рядок над кількома рядками.
+Ми можемо також використати оператор `+=`, щоб <dfn>об'єднати</dfn> рядок з кінцем наявної змінної рядка. Це корисно ще й для того, щоб розділити довгий рядок на декілька малих.
 
-**Примітка:** Зверніть увагу на пробіли. Під час об'єднання між рядками відсутні пробіли, вам потрібно буде додати їх самостійно.
+**Примітка:** зверніть увагу на пробіли. Конкатенація не додає пробіли між об'єднаними рядками, вам потрібно додавати їх самостійно.
 
-Наприклад:
+Приклад:
 
 ```js
 let ourStr = "I come first. ";
 ourStr += "I come second.";
 ```
 
-`ourStr` зараз має значення рядка `I come first. I come second.`.
+Тепер `ourStr` має значення рядка `I come first. I come second.`.
 
 # --instructions--
 
-Введіть `myStr` над кількома рядками, об'єднуючи ці два рядки: `This is the first sentence.` і `This is the second sentence.`. Використовуйте оператор `+=`. Використовуйте `+=` оператор, подібний до того, як показно в прикладі, й обов'язково зверніть увагу на наявність пробіл між рядками. Почніть з призначення першого рядка `myStr`, а потім додайте до другого рядка.
+Побудуйте `myStr` у декількох рядках, об'єднавши ці два рядки: `This is the first sentence.` та `This is the second sentence.`, використовуючи оператор `+=`. Використайте оператор `+=` подібно до того, як показно в прикладі, та не забудьте використати пробіл між двома рядками. Почніть з присвоєння першого рядка до `myStr`, а потім додайте другий рядок.
 
 # --hints--
 
-`myStr` should have a single space character between the two strings.
+`myStr` повинен містити один пробіл між двома рядками.
 
 ```js
 assert(/sentence\. This/.test(myStr));
 ```
 
-`myStr` should have a value of the string `This is the first sentence. This is the second sentence.`
+`myStr` повинен мати значення рядка `This is the first sentence. This is the second sentence.`
 
 ```js
 assert(myStr === 'This is the first sentence. This is the second sentence.');
 ```
 
-You should use the `+=` operator to build `myStr`.
+Ви повинні використати оператор `+=`, щоб побудувати `myStr`.
 
 ```js
 assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));

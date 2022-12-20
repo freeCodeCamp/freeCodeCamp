@@ -49,31 +49,31 @@ assert(
 );
 ```
 
-`testElseIf(0)` має повернути рядок `Smaller than 5`
+`testElseIf(0)` повинен повертати рядок `Smaller than 5`
 
 ```js
 assert(testElseIf(0) === 'Smaller than 5');
 ```
 
-`testElseIf(5)` має повернути рядок `Between 5 and 10`
+`testElseIf(5)` повинен повертати рядок `Between 5 and 10`
 
 ```js
 assert(testElseIf(5) === 'Between 5 and 10');
 ```
 
-`testElseIf(7)` має повернути рядок `Between 5 and 10`
+`testElseIf(7)` повинен повертати рядок `Between 5 and 10`
 
 ```js
 assert(testElseIf(7) === 'Between 5 and 10');
 ```
 
-`testElseIf(10)` має повернути рядок `Between 5 and 10`
+`testElseIf(10)` повинен повертати рядок `Between 5 and 10`
 
 ```js
 assert(testElseIf(10) === 'Between 5 and 10');
 ```
 
-`testElseIf(12)` має повернути рядок `Greater than 10`
+`testElseIf(12)` повинен повертати рядок `Greater than 10`
 
 ```js
 assert(testElseIf(12) === 'Greater than 10');
