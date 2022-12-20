@@ -23,3 +23,14 @@
 .avatar-camper .avatar-container {
   border-width: 10px;
 }
+
+.bio-container,
+.info-container {
+  margin: 0 auto;
+  max-width: 550px;
+}
+
+.info-container p,
+.info-container div {
+  display: inline-block;
+}

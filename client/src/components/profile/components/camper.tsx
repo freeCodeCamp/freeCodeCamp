@@ -1,8 +1,4 @@
-import {
-  faAward,
-  faCalendar,
-  faHeart
-} from '@fortawesome/free-solid-svg-icons';
+import { faAward, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
@@ -88,28 +84,32 @@ function Camper({
           />
         </Col>
       </Row>
-      <SocialIcons
-        githubProfile={githubProfile}
-        linkedin={linkedin}
-        twitter={twitter}
-        username={username}
-        website={website}
-      />
+
       <br />
       <h2 className='text-center username'>@{username}</h2>
       {name && <p className='text-center name'>{name}</p>}
-      {location && <p className='text-center location'>{location}</p>}
       {isDonating && (
         <p className='text-center supporter'>
           <FontAwesomeIcon icon={faHeart} /> {t('profile.supporter')}
         </p>
       )}
-      {about && <p className='bio text-center'>{about}</p>}
-      {joinDate && (
-        <p className='bio text-center'>
-          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
-        </p>
-      )}
+      <div className='bio-container'>
+        {about && <p className='bio text-center'>{about}</p>}
+      </div>
+      <div className='info-container'>
+        {joinDate && (
+          <p className='bio text-center'>{parseDate(joinDate, t)} |</p>
+        )}
+        {location && <p className='text-center location'>{location} |</p>}
+        <SocialIcons
+          githubProfile={githubProfile}
+          linkedin={linkedin}
+          twitter={twitter}
+          username={username}
+          website={website}
+        />
+      </div>
+      <hr className='bio-container' />
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />

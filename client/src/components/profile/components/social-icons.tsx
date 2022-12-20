@@ -5,7 +5,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Row, Col } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './social-icons.css';
@@ -29,7 +28,7 @@ function LinkedInIcon(linkedIn: string, username: string): JSX.Element {
       rel='noopener noreferrer'
       target='_blank'
     >
-      <FontAwesomeIcon icon={faLinkedin} size='2x' />
+      <FontAwesomeIcon icon={faLinkedin} size='1x' />
     </a>
   );
 }
@@ -43,7 +42,7 @@ function GithubIcon(ghURL: string, username: string): JSX.Element {
       rel='noopener noreferrer'
       target='_blank'
     >
-      <FontAwesomeIcon icon={faGithub} size='2x' />
+      <FontAwesomeIcon icon={faGithub} size='1x' />
     </a>
   );
 }
@@ -57,7 +56,7 @@ function WebsiteIcon(website: string, username: string): JSX.Element {
       rel='noopener noreferrer'
       target='_blank'
     >
-      <FontAwesomeIcon icon={faLink} size='2x' />
+      <FontAwesomeIcon icon={faLink} size='1x' />
     </a>
   );
 }
@@ -71,7 +70,7 @@ function TwitterIcon(handle: string, username: string): JSX.Element {
       rel='noopener noreferrer'
       target='_blank'
     >
-      <FontAwesomeIcon icon={faTwitter} size='2x' />
+      <FontAwesomeIcon icon={faTwitter} size='1x' />
     </a>
   );
 }
@@ -84,14 +83,12 @@ function SocialIcons(props: SocialIconsProps): JSX.Element | null {
   }
 
   return (
-    <Row>
-      <Col className='text-center social-media-icons' sm={6} smOffset={3}>
-        {linkedin ? LinkedInIcon(linkedin, username) : null}
-        {githubProfile ? GithubIcon(githubProfile, username) : null}
-        {website ? WebsiteIcon(website, username) : null}
-        {twitter ? TwitterIcon(twitter, username) : null}
-      </Col>
-    </Row>
+    <div className='social-media-icons'>
+      {linkedin ? LinkedInIcon(linkedin, username) : null}
+      {githubProfile ? GithubIcon(githubProfile, username) : null}
+      {website ? WebsiteIcon(website, username) : null}
+      {twitter ? TwitterIcon(twitter, username) : null}
+    </div>
   );
 }
 
