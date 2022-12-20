@@ -1,5 +1,23 @@
 # Codebase Best Practices
 
+## Styling a component
+
+Be mindful of adding new colors to the codebase, as you will have to account for contrast and color blindness. Because of this we always use already determined variables in [variable.css](/client/src/components/layouts/variables.css).
+
+We are against adding new variables to [variable.css](/client/src/components/layouts/variables.css), because we have to account for contrast, color blindness 🙂, and cluttering the devtools which affects negatively the devtools experiences and add concerns for accessiblity.
+
+Use `!important` for accessibilty concers only after leaving a comment describing the issue, so it won't be removed by mistake in future refactoring.
+
+### RTL support
+
+We are striving to support RTL layout in the codebase, for this you need to mindful of how to style the component in your PR. Here are a quick roles of thumbs to follow:
+
+- Don't use float properties: Although it may seems best to have the component in the "perfect position", you will be climbing mountians to reach that perfect positioning in responsive layout, and you will need to reach higher heights to have it supported in RTL. 
+- - Use flexbox and Grid layouts when possible instead, as they have RTL support already built in them, and it will be easier to maintain and review
+- Don't define the direction while using `margin` and `padding`: it may seems harmless to use `padding-right` and `margin-left`, but these directions aren't mirrored when the layout change to RTL, and adding counter values for them in the RTL file makes maintaining the codebase harder.
+- - Use logical properties for them: You can add the same spacing by using `padding-inline-end` and `margin-inline-start`, and you won't need to worry about RTL layout, as they follow where the line start and ends, and you won't need to add any extra values in the RTL files, so people won't need to remember to change the same values in two files.
+- Don't use `!important` in `font-family`: RTL layout is using different font from the LTR layout, when you add `!important` in the `font-family` property it affects the RTL layout too, which causes a UI bug.
+
 ## General JavaScript
 
 In most cases, our [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
