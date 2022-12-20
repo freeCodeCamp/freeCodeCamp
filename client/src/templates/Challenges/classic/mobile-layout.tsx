@@ -57,7 +57,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     )[0];
 
     if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
-      if (window.innerHeight - 1 > (visualViewport?.height as number)) {
+      if (window.innerHeight > (visualViewport?.height as number)) {
         toolPanelGroup.style.position = 'absolute';
         toolPanelGroup.style.bottom =
           String(window.innerHeight - (visualViewport?.height as number)) +
