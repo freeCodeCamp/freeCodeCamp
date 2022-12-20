@@ -27,7 +27,7 @@ var thisVariableNameIsSoLong;
 
 # --instructions--
 
-عدّل التعريفات والتخصيصات الحالية بحيث تستخدم أسماؤها <dfn>camelCase</dfn>.
+عدّل الإعلانات والتخصيصات الحالية بحيث تستخدم أسماؤها <dfn>camelCase</dfn>.
 
 لا تنشئ أي متغيرات جديدة.
 
@@ -53,7 +53,7 @@ assert(
 assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
 ```
 
-يجب أن يستخدم `studlyCapVar` حالة camelCase في كل من أقسام التعريف والتخصيص.
+يجب أن يستخدم `studlyCapVar` حالة camelCase في كل من أقسام الإعلان والتخصيص.
 
 ```js
 assert(code.match(/studlyCapVar/g).length === 2);

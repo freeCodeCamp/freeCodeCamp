@@ -20,23 +20,23 @@ dashedName: relational-databases-and-sqlite
 
 ## --text--
 
-Which is NOT a primary data structure in a database?
+データベースの基本のデータ構造「ではない」ものはどれですか？
 
 ## --answers--
 
-index
+インデックス
 
 ---
 
-table
+テーブル
 
 ---
 
-row
+行
 
 ---
 
-column
+列
 
 ## --video-solution--
 
