@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Usare l'assegnazione destrutturante con il parametro di resto per riassegnare gli elementi dell'array
+  Destructuring via rest elements
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -22,11 +22,11 @@ console.log(arr);
 
 La console mostrerà i valori `1, 2` e `[3, 4, 5, 7]`.
 
-Le variabili `a` e `b` prendono il primo e il secondo valore dall'array. Dopodiché, a causa della presenza del parametro di resto, `arr` ottiene il resto dei valori sotto forma di un array. L'elemento di resto funziona correttamente solo come ultima variabile dell'elenco. Non è quindi possibile utilizzare il parametro di resto per catturare un sottoarray che lascia fuori l'ultimo elemento dell'array originale.
+Le variabili `a` e `b` prendono il primo e il secondo valore dall'array. After that, because of the rest syntax presence, `arr` gets the rest of the values in the form of an array. L'elemento di resto funziona correttamente solo come ultima variabile dell'elenco. As in, you cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
 
 # --instructions--
 
-Usa un'assegnazione destrutturante con il parametro rest per emulare il comportamento di `Array.prototype.slice()`. `removeFirstTwo()` dovrebbe restituire un sotto-array dell'array originario `list` con i primi due elementi omessi.
+Use a destructuring assignment with the rest syntax to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` dovrebbe restituire un sotto-array dell'array originario `list` con i primi due elementi omessi.
 
 # --hints--
 

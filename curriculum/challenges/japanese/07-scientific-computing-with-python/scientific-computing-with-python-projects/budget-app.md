@@ -17,7 +17,7 @@ dashedName: budget-app
 
 # --instructions--
 
-Complete the `Category` class in `budget.py`. It should be able to instantiate objects based on different budget categories like *food*, *clothing*, and *entertainment*. When objects are created, they are passed in the name of the category. The class should have an instance variable called `ledger` that is a list. The class should also contain the following methods:
+`budget.py` の `Category` クラスを完成させてください。 このクラスは *food* (食費)、*clothing* (服飾費)、*entertainment* (娯楽費) など、さまざまな予算のカテゴリーに応じてオブジェクトをインスタンス化できるようにする必要があります。 オブジェクトを作成する際に、カテゴリーの名前をオブジェクトに渡します。 クラスには、リスト型の `ledger` (帳簿) というインスタンス変数を持たせてください。 このクラスには次のメソッドも含める必要があります。
 
 - A `deposit` method that accepts an amount and description. If no description is given, it should default to an empty string. The method should append an object to the ledger list in the form of `{"amount": amount, "description": description}`.
 - A `withdraw` method that is similar to the `deposit` method, but the amount passed in should be stored in the ledger as a negative number. If there are not enough funds, nothing should be added to the ledger. This method should return `True` if the withdrawal took place, and `False` otherwise.
@@ -25,7 +25,7 @@ Complete the `Category` class in `budget.py`. It should be able to instantiate o
 - A `transfer` method that accepts an amount and another budget category as arguments. The method should add a withdrawal with the amount and the description "Transfer to [Destination Budget Category]". The method should then add a deposit to the other budget category with the amount and the description "Transfer from [Source Budget Category]". If there are not enough funds, nothing should be added to either ledgers. This method should return `True` if the transfer took place, and `False` otherwise.
 - A `check_funds` method that accepts an amount as an argument. It returns `False` if the amount is greater than the balance of the budget category and returns `True` otherwise. This method should be used by both the `withdraw` method and `transfer` method.
 
-When the budget object is printed it should display:
+予算オブジェクトを出力するときは以下の項目を表示する必要があります。
 
 - A title line of 30 characters where the name of the category is centered in a line of `*` characters.
 - A list of the items in the ledger. Each line should show the description and amount. The first 23 characters of the description should be displayed, then the amount. The amount should be right aligned, contain two decimal places, and display a maximum of 7 characters.
