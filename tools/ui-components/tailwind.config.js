@@ -20,6 +20,7 @@ module.exports = {
       'foreground-quaternary': 'var(--foreground-quaternary)',
       'foreground-danger': 'var(--foreground-danger)',
       'foreground-info': 'var(--foreground-info)',
+      'foreground-hightlight': 'var(--foreground-hightlight)',
       // Background
       'background-primary': 'var(--background-primary)',
       'background-secondary': 'var(--background-secondary)',
@@ -51,6 +52,7 @@ module.exports = {
         50: 'var(--blue05)',
         100: 'var(--blue10)',
         300: 'var(--blue30)',
+        400: 'var(--blue40)',
         500: 'var(--blue50)',
         700: 'var(--blue70)',
         900: 'var(--blue90)'

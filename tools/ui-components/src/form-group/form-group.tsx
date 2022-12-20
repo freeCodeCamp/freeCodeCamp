@@ -5,27 +5,27 @@ import { FormGroupProps } from './types';
 let variantClass = '';
 
 const hasSuccess = `
-[&_span:has[data-testid='help-block']]: color-var(--highlight-color)
-[&_label]: color-var(--highlight-color)
-[&_input]: bordercolor-var(--quaternary-background) shadow-inner-small
-[&_input:focus]: bordercolor-var(--tertiary-color) shadow-inner-success-focus
-[&_input_span]: text-green-700
+[&_span:has[data-testid='help-block']]: text-blue-400
+[&_label]: text-blue-400
+[&_input]: bordercolor-background-quaternary shadow-inner-small
+[&_input:focus]: bordercolor-foreground-tertiary shadow-inner-success-focus
+[&_input_span]: text-yellow-700
 `;
 
 const hasWarning = `
-[&_span:has[data-testid='help-block']]: text-amber-500
-[&_label]: text-amber-500
-[&_input]: bordercolor-var(--quaternary-background) shadow-inner-small 
-[&_input:focus]: bordercolor-var(--tertiary-color) shadow-inner-warning-focus
+[&_span:has[data-testid='help-block']]: text-blue-400
+[&_label]: text-blue-400
+[&_input]: bordercolor-background-quaternary shadow-inner-small 
+[&_input:focus]: bordercolor-foreground-tertiary shadow-inner-warning-focus
 [&_input_span]: text-green-700
 `;
 
 const hasError = `
-[&_span:has[data-testid='help-block']]: var(--danger-color)
-[&_label]: color-var(--danger-color)
-[&_input]: bordercolor-var(--quaternary-background) shadow-inner-small
-[&_input:focus]: bordercolor-var(--tertiary-color) shadow-inner-error-focus
-[&_input_span]: text-amber-500
+[&_span:has[data-testid='help-block']]: text-foreground-danger
+[&_label]: text-foreground-danger
+[&_input]: bordercolor-background-quaternary shadow-inner-small
+[&_input:focus]: bordercolor-foreground-tertiary shadow-inner-error-focus
+[&_input_span]: text-yellow-700
 `;
 
 const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
