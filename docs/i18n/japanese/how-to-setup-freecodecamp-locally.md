@@ -80,7 +80,7 @@ Some community members also develop on Windows 10 natively with Git for Windows 
 
 | 必要条件                                                                                    | バージョン   | 注                                                                                        |
 | --------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                            | `16.x`  | 「Active LTS」バージョンを使用しています。[LTS スケジュール](https://nodejs.org/en/about/releases/) を参照してください。 |
+| [Node.js](http://nodejs.org)                                                            | `18.x`  | 「Active LTS」バージョンを使用しています。[LTS スケジュール](https://nodejs.org/en/about/releases/) を参照してください。 |
 | npm (Nodeにバンドル)                                                                         | `8.x`   | Node.js Active LTS にバンドルされたバージョンを使用します。                                                  |
 | [MongoDB コミュニティサーバー](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                        |
 
