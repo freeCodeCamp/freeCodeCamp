@@ -8,7 +8,7 @@ dashedName: prevent-object-mutation
 
 # --description--
 
-كما رأينا في التحدي السابق، استخدام `const` وحده لا يحمي بياناتك من امكانية تغييرها. لضمان عدم تغيير بياناتك، توفر JavaScript وظيفة `Object.freeze` لمنع تغيير البيانات.
+كما رأينا في التحدي السابق، إعلان `const` وحده لا يحمي بياناتك من إمكانية تغييرها. لضمان عدم تغيير بياناتك، توفر JavaScript وظيفة `Object.freeze` لمنع تغيير البيانات.
 
 سيتم رفض أي محاولة لتغيير الـ object، مع اظهار خطأ إذا كان السكريبت يعمل في strict mode.
 
@@ -44,7 +44,7 @@ console.log(obj);
   assert(getUserInput('index').match(/const\s+MATH_CONSTANTS/g));
 ```
 
-لا يجب عليك تغيير التعريف الأصلي لـ `MATH_CONSTANTS`.
+لا يجب عليك تغيير الإعلان الأصلي لـ `MATH_CONSTANTS`.
 
 ```js
 (getUserInput) =>

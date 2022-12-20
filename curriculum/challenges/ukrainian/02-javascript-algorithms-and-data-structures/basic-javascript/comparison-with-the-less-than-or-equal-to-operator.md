@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d7
-title: Порівняння з оператором "менше або рівне"
+title: Порівняння з оператором «менше ніж або дорівнює»
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNVR7Am'
 forumTopicId: 16788
@@ -9,9 +9,9 @@ dashedName: comparison-with-the-less-than-or-equal-to-operator
 
 # --description--
 
-Оператор "менше або рівне"(`<=`) порівнює значення двох чисел. Якщо число ліворуч є меншим, ніж число праворуч або дорівнює йому, то видається результат `true`. Якщо число ліворуч більше за число праворуч, то видається результат `false`. Так само, як і оператор рівності, оператор "менше або рівне" конвертує типи даних.
+Оператор «менше ніж або дорівнює» (`<=`) порівнює значення двох чисел. Якщо число зліва менше чи дорівнює числу справа, оператор повертає `true`. Якщо число зліва більше за число справа, він повертає `false`. Як і оператор «дорівнює», «менше ніж або дорівнює» перетворює типи даних під час порівняння.
 
-**Наприклад:**
+**Приклади**
 
 ```js
 4   <= 5 // true
@@ -23,53 +23,53 @@ dashedName: comparison-with-the-less-than-or-equal-to-operator
 
 # --instructions--
 
-Add the less than or equal to operator to the indicated lines so that the return statements make sense.
+Додайте оператор «менше ніж або дорівнює» до вказаних рядків, щоб повернені інструкції мали сенс.
 
 # --hints--
 
-`testLessOrEqual(0)` should return the string `Smaller Than or Equal to 12`
+`testLessOrEqual(0)` повинен повертати рядок `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(0) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(11)` should return the string `Smaller Than or Equal to 12`
+`testLessOrEqual(11)` повинен повертати рядок `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(11) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(12)` should return the string `Smaller Than or Equal to 12`
+`testLessOrEqual(12)` повинен повертати рядок `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(12) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(23)` should return the string `Smaller Than or Equal to 24`
+`testLessOrEqual(23)` повинен повертати рядок `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(23) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(24)` should return the string `Smaller Than or Equal to 24`
+`testLessOrEqual(24)` повинен повертати рядок `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(24) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(25)` should return the string `More Than 24`
+`testLessOrEqual(25)` повинен повертати рядок `More Than 24`
 
 ```js
 assert(testLessOrEqual(25) === 'More Than 24');
 ```
 
-`testLessOrEqual(55)` should return the string `More Than 24`
+`testLessOrEqual(55)` повинен повертати рядок `More Than 24`
 
 ```js
 assert(testLessOrEqual(55) === 'More Than 24');
 ```
 
-You should use the `<=` operator at least twice
+Ви повинні використати оператор `<=` принаймні двічі
 
 ```js
 assert(code.match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);
