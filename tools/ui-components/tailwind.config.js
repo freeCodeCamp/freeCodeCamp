@@ -20,7 +20,6 @@ module.exports = {
       'foreground-quaternary': 'var(--foreground-quaternary)',
       'foreground-danger': 'var(--foreground-danger)',
       'foreground-info': 'var(--foreground-info)',
-      'foreground-hightlight': 'var(--foreground-hightlight)',
       // Background
       'background-primary': 'var(--background-primary)',
       'background-secondary': 'var(--background-secondary)',
