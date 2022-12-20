@@ -8,9 +8,9 @@ dashedName: add-methods-after-inheritance
 
 # --description--
 
-الـ constructor function الذي يرث `prototype` الـ object الخاص به من الـ supertype constructor function يمكن أن يكون له الـ methods الخاصة به بالإضافة إلى الـ methods الموروثة.
+الوظيفة المنشئة (constructor function) التي ترث كائنها (object) يسمى `prototype` من وظيفة منشئة كبرى (supertype) يمكن أن يكون لها طرقها (methods) بالإضافة إلى الطرق الموروثة.
 
-على سبيل المثال، `Bird` هو constructor يرث `prototype` من `Animal`:
+على سبيل المثال، `Bird` هو منشئ (constructor) يرث `prototype` من `Animal`:
 
 ```js
 function Animal() { }
@@ -22,7 +22,7 @@ Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.constructor = Bird;
 ```
 
-بالإضافة إلى ما هو موروث من `Animal`، تريد إضافة سلوك فريد إلى objects الـ `Bird`. هنا ، `Bird` سيحصل على دالة `fly()`. يتم إضافة الدوال إلى `prototype` ال `Bird's` بنفس الطريقة مثل أي constructor function:
+بالإضافة إلى ما موروث من `Animal`، تريد إضافة سلوك فريد إلى كائنات (objects) المسمى `Bird`. هنا، `Bird` سيحصل على وظيفة (function) مسمى `fly()`. تضاف الوظائف إلى `prototype` في `Bird's` بنفس الطريقة مثل أي وظيفة منشئا (constructor function):
 
 ```js
 Bird.prototype.fly = function() {
@@ -30,7 +30,7 @@ Bird.prototype.fly = function() {
 };
 ```
 
-الآن سيكون لمثيلات `Bird` الـ methods الاتية `eat()` و `fly()`:
+الآن سيكون لمثيلات `Bird` الطرق الآتية `eat()` و `fly()`:
 
 ```js
 let duck = new Bird();
@@ -38,11 +38,11 @@ duck.eat();
 duck.fly();
 ```
 
-`duck.eat()` يعرض السلسلة `nom nom nom` في وحدة التحكم و `duck.fly()` سيعرض السلسلة `I'm flying!`.
+يعرض `duck.eat()` مقطع نصي (string) بقيمة `nom nom nom` في وحدة التحكم ويعرض `duck.fly()` مقطع نصي `I'm flying!`.
 
 # --instructions--
 
-أضف كل الكود الضروري حتى يرث كائن `Dog` من `Animal` و الـ constructor الخاص بـ `prototype` الـ `Dog` تم تعيينه إلى `Dog`. ثم أضف `bark()` إلى الكائن `Dog` بحيث أن `beagle` يمكن أن يفعل `eat()` و `bark()`. يجب أن تطبع method الـ `bark()` الكلمة `Woof!` إلى وحدة التحكم.
+أضف كل الكود الضروري حتى يرث كائن `Dog` من `Animal` و عيّن المنشئ الخاص بـ `prototype` من `Dog` إلى `Dog`. ثم أضف `bark()` إلى الكائن `Dog` بحيث أن `beagle` يمكن أن يفعل `eat()` و `bark()`. يجب أن تطبع method الـ `bark()` الكلمة `Woof!` إلى وحدة التحكم.
 
 # --hints--
 
