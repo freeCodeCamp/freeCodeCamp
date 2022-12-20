@@ -1,6 +1,5 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { Button } from '../button';
 import { FormControl } from '../form-control';
 
 import { FormGroup, FormGroupProps } from '.';
@@ -22,27 +21,16 @@ const Template: Story<FormGroupProps> = ({
   validationState
 }) => {
   return (
-    <div>
-      {/* when a function runs and confirm a value it should push vaidation state into formGroup */}
-      <Button onClick={() => (validationState = 'success')}>Success</Button>
-      <Button onClick={() => (validationState = 'warning')}>Warning</Button>
-      <Button onClick={() => (validationState = 'error')}>Error</Button>
-      <FormGroup
-        controlId={controlId}
-        className={className}
-        validationState={validationState}
-      >
-        <FormControl
-          type={'text'}
-          placeholder='Hello World'
-          defaultValue='Hello World'
-          required={true}
-        >
-          {' '}
-          HelloWorld
-        </FormControl>
-      </FormGroup>
-    </div>
+    <FormGroup
+      controlId={controlId}
+      className={className}
+      validationState={validationState}
+    >
+      <FormControl type={'text'} placeholder='Hello World'>
+        {' '}
+        HelloWorld
+      </FormControl>
+    </FormGroup>
   );
 };
 
