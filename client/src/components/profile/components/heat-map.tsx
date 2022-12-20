@@ -84,48 +84,28 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
   }
 
   render() {
-    const { calendarData, currentStreak, longestStreak, pages, t } = this.props;
+    const { calendarData, currentStreak, longestStreak, pages, t, points } =
+      this.props;
     const { startOfCalendar, endOfCalendar } = pages[this.state.pageIndex];
-    const title = `${startOfCalendar.toLocaleDateString([localeCode, 'en-US'], {
-      year: 'numeric',
-      month: 'short'
-    })} - ${endOfCalendar.toLocaleDateString([localeCode, 'en-US'], {
-      year: 'numeric',
-      month: 'short'
-    })}`;
     const dataToDisplay = calendarData.filter(
       data => data.date >= startOfCalendar && data.date <= endOfCalendar
     );
 
     return (
       <FullWidthRow>
-        <Row className='heatmap-nav'>
-          <button
-            className='heatmap-nav-btn'
-            disabled={!pages[this.state.pageIndex - 1]}
-            // eslint-disable-next-line @typescript-eslint/unbound-method
-            onClick={this.prevPage}
-            style={{
-              visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
-            }}
-          >
-            &lt;
-          </button>
-          <span>{title}</span>
-          <button
-            className='heatmap-nav-btn'
-            disabled={!pages[this.state.pageIndex + 1]}
-            // eslint-disable-next-line @typescript-eslint/unbound-method
-            onClick={this.nextPage}
-            style={{
-              visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
-            }}
-          >
-            &gt;
-          </button>
-        </Row>
         <Spacer />
-
+        <Row>
+          <div className='streak-container'>
+            <b data-testid='current-streak'>{t('profile.current-streak')}</b>
+            <b data-testid='total-points'> {t('profile.total-points')}</b>
+            <b data-testid='longest-streak'>{t('profile.longest-streak')}</b>
+          </div>
+          <div className='streak-container'>
+            <p> {currentStreak || 0}</p>
+            <p>{points || 0} </p>
+            <p>{longestStreak || 0}</p>
+          </div>
+        </Row>
         <CalendarHeatMap
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           classForValue={(value: any) => {
@@ -165,16 +145,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
         <ReactTooltip className='react-tooltip' effect='solid' html={true} />
 
         <Spacer />
-        <Row>
-          <div className='streak-container'>
-            <span className='streak' data-testid='longest-streak'>
-              <b>{t('profile.longest-streak')}</b> {longestStreak || 0}
-            </span>
-            <span className='streak' data-testid='current-streak'>
-              <b>{t('profile.current-streak')}</b> {currentStreak || 0}
-            </span>
-          </div>
-        </Row>
+
         <hr />
       </FullWidthRow>
     );

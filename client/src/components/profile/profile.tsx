@@ -57,7 +57,6 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
       showHeatMap = false,
       showLocation = false,
       showName = false,
-      showPoints = false,
       showPortfolio = false,
       showTimeLine = false
     },
@@ -72,7 +71,6 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
     username,
     joinDate,
     location,
-    points,
     picture,
     portfolio,
     about,
@@ -90,7 +88,6 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
         location={showLocation ? location : ''}
         name={showName ? name : ''}
         picture={picture}
-        points={showPoints ? points : null}
         twitter={twitter}
         username={username}
         website={website}

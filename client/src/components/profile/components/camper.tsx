@@ -25,7 +25,6 @@ interface CamperProps {
   location: string;
   name: string;
   picture: string;
-  points: number | null;
   twitter: string;
   username: string;
   website: string;
@@ -59,7 +58,6 @@ function Camper({
   name,
   username,
   location,
-  points,
   picture,
   about,
   yearsTopContributor,
@@ -110,6 +108,7 @@ function Camper({
         />
       </div>
       <hr className='bio-container' />
+      <hr className='bio-container' />
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />
@@ -123,11 +122,6 @@ function Camper({
         </div>
       )}
       <br />
-      {typeof points === 'number' ? (
-        <p className='text-center points'>
-          {t('profile.total-points', { count: points })}
-        </p>
-      ) : null}
     </div>
   );
 }
