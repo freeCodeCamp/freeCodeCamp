@@ -30,7 +30,7 @@ import {
 import { isChallengeCompletedSelector } from '../redux/selectors';
 
 // Styles
-import './show.css';
+import '../video.css';
 
 // Redux Setup
 const mapStateToProps = createSelector(

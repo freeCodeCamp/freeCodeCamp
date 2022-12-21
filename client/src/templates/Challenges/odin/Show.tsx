@@ -30,6 +30,7 @@ import { isChallengeCompletedSelector } from '../redux/selectors';
 
 // Styles
 import './show.css';
+import '../video.css';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -87,7 +88,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       downloadURL: null,
       selectedOption: null,
       answer: 1,
-      showWrong: false,
+      isWrongAnswer: false,
       assignmentsCompleted: 0,
       allAssignmentsCompleted: false,
       videoIsLoaded: false
@@ -153,18 +154,16 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
   ) {
     const hasAssignments = assignments[0] != '';
     const completed = this.state.allAssignmentsCompleted;
-    const hasAssignments = assignments[0] != '';
-    const completed = this.state.allAssignmentsCompleted;
     const isCorrect = solution - 1 === this.state.selectedOption;
 
     if (isCorrect) {
       this.setState({
-        showWrong: false
+        isWrongAnswer: false
       });
       if (!hasAssignments || completed) openCompletionModal();
     } else {
       this.setState({
-        showWrong: true
+        isWrongAnswer: true
       });
     }
   }
@@ -173,7 +172,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     changeEvent: React.ChangeEvent<HTMLInputElement>
   ): void => {
     this.setState({
-      showWrong: false,
+      isWrongAnswer: false,
       selectedOption: parseInt(changeEvent.target.value, 10)
     });
   };
@@ -274,7 +273,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer />
                 <ObserveKeys>
-                  {assignments[0] != '' ? (
+                  {assignments[0] != '' && (
                     <>
                       <h2>Assignments</h2>
                       <div className='video-quiz-options'>
@@ -304,7 +303,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                         ))}
                       </div>{' '}
                     </>
-                  ) : null}
+                  )}
                   <Spacer />
                   <h2>Question</h2>
                   <PrismFormatted className={'line-numbers'} text={text} />
@@ -339,16 +338,16 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     textAlign: 'center'
                   }}
                 >
-                  {this.state.showWrong ? (
+                  {this.state.isWrongAnswer && (
                     <span>{t('learn.wrong-answer')}</span>
-                  ) : null}
+                  )}
                   {!this.state.allAssignmentsCompleted &&
-                  assignments[0] != '' ? (
-                    <>
-                      <br />
-                      <span>{t('learn.assignment-not-complete')}</span>
-                    </>
-                  ) : null}
+                    assignments[0] != '' && (
+                      <>
+                        <br />
+                        <span>{t('learn.assignment-not-complete')}</span>
+                      </>
+                    )}
                 </div>
                 <Spacer />
                 <Button
