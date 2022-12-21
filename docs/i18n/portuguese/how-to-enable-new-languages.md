@@ -51,8 +51,8 @@ Existem algumas etapas a serem seguidas para permitir que a base de código seja
 
 Primeiro, visite o arquivo `config/i18n.ts` para adicionar o idioma à lista de idiomas disponíveis e configurar os valores. Existem vários objetos aqui.
 
-- `Languages`: Add the new language to `Languages` enum, similar to the others. The string value here will be used in the `.env` file to set a build language later.
-- `availableLangs`: Add the new property from the `Languages` enum to both the `client` and `curriculum` arrays.
+- `Languages`: adiciona o novo idioma no enum `Languages`, do mesmo modo que com os outros. O valor da string aqui será usado no arquivo `.env` para definir o idioma da build posteriormente.
+- `availableLangs`: adiciona a nova propriedade do enum `Languages` aos dois arrays, `client` e `curriculum`.
 - `i18nextCodes`: esses são os códigos ISO de cada linguagem. Você vai precisar do código ISO apropriado para o idioma que você está habilitando. Eles precisam ser únicos para cada idioma.
 - `LangNames`: esses são os nomes dos idiomas que aparecerão para a seleção no menu de navegação.
 - `LangCodes`: esses são os códigos de idiomas usados para formatar datas e números. Esses deverão ser códigos Unicode CLDR ao invés de códigos ISO.
@@ -118,9 +118,9 @@ export const rtlLangs = [''];
 
 > [!NOTE] Quando um idioma for configurado no pipeline de implantação E tiver uma instância pública de `/news` ativa, ele pode ser removido da matriz `hiddenLangs` e ser disponibilizado ao público.
 
-### Configure the Language Superblock Order
+### Configurar a ordem do superbloco do idioma
 
-In the [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts) file, you need to set the order and state of all the superblocks for the new language in the `superBlockOrder` object. Copy one of the language keys and all its values, paste it to the bottom of the object (or wherever), and change the key to your new language from the `Languages` enum.
+No arquivo [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts), você precisa definir a ordem e o estado de todos os superblocos para o novo idioma no objeto `superBlockOrder`. Copie uma das chaves do idioma e todos os seus valores, cole na parte inferior do objeto (ou seja onde for) e altere a chave para o seu novo idioma do enum `Languages`.
 
 ```js
 export const superBlockOrder: SuperBlockOrder = {
@@ -170,18 +170,18 @@ export const superBlockOrder: SuperBlockOrder = {
 }
 ```
 
-The order of the superblocks in this object is how they appear on the "Landing" page and "Learn" maps. Follow the comments in that file so you know how you are allowed to order the superblocks, then move them to their proper places for the new language.
+A ordem dos superblocos neste objeto é como eles aparecem na página inicial e nos mapas em "Learn". Siga os comentários nesse arquivo para saber como você pode ordenar os superblocos. Em seguida, mova-os para os lugares apropriados para o novo idioma.
 
-> [!ATTENTION] Do not change the order of any of the keys in the object, just move the superblocks to the different arrays
+> [!ATTENTION] Não altere a ordem das chaves no objeto. Apenas mova os superblocos para os diferentes arrays
 
-The `CurriculumMaps.Landing` array should contain exactly one superblock for all our current certifications, and the `CurriculumMaps.Learn` object should have all existing superblocks in it. Translated superblocks go in `TranslationStates.Audited` and non-translated superblocks go in `TranslationStates.NotAudited`. Each of those two objects has four different states a superblock can be in.
+O array `CurriculumMaps.Landing` deve conter exatamente um superbloco para todas as nossas certificações atuais. O objeto `CurriculumMaps.Learn` deve ter em si todos os superblocos existentes. Os superblocos traduzidos vão em `TranslationStates.Audited` e os superblocos não traduzidos vão em `TranslationStates.NotAudited`. Esses dois objetos têm, cada um, quatro estados diferentes nos quais um superbloco pode estar.
 
-- `SuperBlockStates.Current`: Means that the superblock is current, `(New) Responsive Web Design` for example.
-- `SuperBlockStates.New`: These only show up when `SHOW_NEW_CURRICULUM` is set to `true` in your `.env` file. It is for displaying new superblocks on a specific build. For example, when we released the new RWD, we only showed in on English to start.
-- `SuperBlockStates.Upcoming`: These only show up when `SHOW_UPCOMING_CHANGES` is set to `true` in your `.env` file. It is to show superblocks locally while they are in development. Or, if you just need to hide a superblock from the map for some other reason.
-- `SuperBlockStates.Legacy`: A superblock is moved here when a newer version of that superblock has been fully translated and replaced it.
+- `SuperBlockStates.Current`: representa que o superbloco pertence ao currículo atual, como `(New) Responsive Web Design`, por exemplo.
+- `SuperBlockStates.New`: esses aparecem apenas quando `SHOW_NEW_CURRICULUM` estiver definido como `true` no arquivo `.env`. Ele serve para exibir novos superblocos em uma build específica. Por exemplo, quando lançamos a nova certificação de Design responsivo para a web, nós a mostramos apenas em inglês para começar.
+- `SuperBlockStates.Upcoming`: esses aparecem apenas quando `SHOW_UPCOMING_CHANGES` estiver definido como `true` no arquivo `.env`. Eles servem para mostrar os superblocos em nível local enquanto eles estão em desenvolvimento. Como alternativa, podem ser usados quando precisamos ocultar um superbloco do mapa por alguma outra razão.
+- `SuperBlockStates.Legacy`: um superbloco é movido para cá quando uma nova versão daquele superbloco já está totalmente traduzida e pronta para substituí-lo.
 
-### Configure Search
+### Configurar a busca
 
 Agora, abra o arquivo `client/src/utils/algolia-locale-setup.ts`. Esse dado é usado para a barra de busca que carrega os artigos `/news`. Embora seja improvável que você venha a testar essa funcionalidade, não ter os dados para o seu idioma pode levar a erros quando tentar criar a base de código localmente.
 

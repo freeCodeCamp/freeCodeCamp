@@ -51,8 +51,8 @@ Ci sono alcuni step da svolgere per consentire il build del codebase nella lingu
 
 Per prima cosa, visita il file `config/i18n.ts` per aggiungere la lingua alla lista delle lingue disponibili e configurare i valori. Qui ci sono diversi oggetti.
 
-- `Languages`: Add the new language to `Languages` enum, similar to the others. The string value here will be used in the `.env` file to set a build language later.
-- `availableLangs`: Add the new property from the `Languages` enum to both the `client` and `curriculum` arrays.
+- `Languages`: Aggiunge la nuova lingua all'enum `Languages` simile agli altri. Il valore della stringa qui sarà usato nel file `.env` per impostare un build della lingua in seguito.
+- `availableLangs`: Aggiunge la nuova proprietà dall'enum `Languages` a entrambi gli array `client` e `curriculum`.
 - `i18nextCodes`: Questi sono i codici ISO per le varie lingue. Dovrai aggiungere il codice ISO appropriato per la lingua che stai attivando. Devono essere unici per ogni lingua.
 - `LangNames`: Questi sono i nomi delle lingue visualizzati nel menu di navigazione.
 - `LangCodes`: Questi sono i codici delle lingue usati per formattare date e numeri. Questi devono essere codici Unicode CLDR invece di codici ISO.
@@ -118,9 +118,9 @@ export const rtlLangs = [''];
 
 > [!NOTE] Quando è stato impostato il deployment per una lingua che ha già una sezione `/news` live, può essere rimossa dall'array `hiddenLangs` e resa disponibile al pubblico.
 
-### Configure the Language Superblock Order
+### Configurare l'ordine del superblocco di una lingua
 
-In the [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts) file, you need to set the order and state of all the superblocks for the new language in the `superBlockOrder` object. Copy one of the language keys and all its values, paste it to the bottom of the object (or wherever), and change the key to your new language from the `Languages` enum.
+Nel file [config/superblock-order.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/superblock-order.ts), devi impostare l'ordine e lo stato di tutti i superblocchi per la nuova lingua nell'oggetto `superBlockOrder`. Copia una delle chiavi della lingua e tutti i suoi valori, incollala in fondo all'oggetto (o in un'altra posizione) e cambia la chiave con la nuova lingua dall'enum `Languages`.
 
 ```js
 export const superBlockOrder: SuperBlockOrder = {
@@ -170,18 +170,18 @@ export const superBlockOrder: SuperBlockOrder = {
 }
 ```
 
-The order of the superblocks in this object is how they appear on the "Landing" page and "Learn" maps. Follow the comments in that file so you know how you are allowed to order the superblocks, then move them to their proper places for the new language.
+L'ordine dei superblocchi in questo oggetto rispecchia il modo in cui appaiono sulla pagina "Landing" e sulle mappe "Learn". Segui i commenti in quel file in modo da sapere come ti è permesso ordinare i superblocchi, poi spostali nella posizione appropriata per la nuova lingua.
 
-> [!ATTENTION] Do not change the order of any of the keys in the object, just move the superblocks to the different arrays
+> [!ATTENTION] Non modificare l'ordine di alcuna chiave nell'oggetto, sposta solo i superblocchi nei diversi array
 
-The `CurriculumMaps.Landing` array should contain exactly one superblock for all our current certifications, and the `CurriculumMaps.Learn` object should have all existing superblocks in it. Translated superblocks go in `TranslationStates.Audited` and non-translated superblocks go in `TranslationStates.NotAudited`. Each of those two objects has four different states a superblock can be in.
+L'array `CurriculumMaps.Landing` dovrebbe contenere esattamente un superblocco per tutte le nostre certificazioni attuali e l'oggetto `CurriculumMaps.Learn` dovrebbe avere tutti i superblocchi esistenti al suo interno. I superblocchi tradotti vanno in `TranslationStates.Audited` e i superblocchi non tradotti vanno in `TranslationStates.NotAudited`. Ognuno di questi due oggetti ha i quattro stati diversi in cui può essere un superblocco.
 
-- `SuperBlockStates.Current`: Means that the superblock is current, `(New) Responsive Web Design` for example.
-- `SuperBlockStates.New`: These only show up when `SHOW_NEW_CURRICULUM` is set to `true` in your `.env` file. It is for displaying new superblocks on a specific build. For example, when we released the new RWD, we only showed in on English to start.
-- `SuperBlockStates.Upcoming`: These only show up when `SHOW_UPCOMING_CHANGES` is set to `true` in your `.env` file. It is to show superblocks locally while they are in development. Or, if you just need to hide a superblock from the map for some other reason.
-- `SuperBlockStates.Legacy`: A superblock is moved here when a newer version of that superblock has been fully translated and replaced it.
+- `SuperBlockStates.Current`: Significa che il superblocco è attuale, `(New) Responsive Web Design` ad esempio.
+- `SuperBlockStates.New`: Compare solo quando `SHOW_NEW_CURRICULUM` è impostato su `true` nel file `.env`. È per la visualizzazione di nuovi superblocchi su uno specifico build. Per esempio, quando abbiamo rilasciato il nuovo RWD, lo abbiamo mostrato solo in inglese per iniziare.
+- `SuperBlockStates.Upcoming`: Compare solo quando `SHOW_UPCOMING_CHANGES` è impostato su `true` nel file `.env`. È per mostrare i superblocchi localmente mentre sono in sviluppo. Oppure, se hai solo bisogno di nascondere un superblocco dalla mappa per qualche altra ragione.
+- `SuperBlockStates.Legacy`: Un superblocco viene spostato qui quando una versione più recente di quel superblocco è stata completamente tradotta e sostituita.
 
-### Configure Search
+### Configurare la ricerca
 
 Poi, apri il file `client/src/utils/algolia-locale-setup.ts`. Questi dati sono usati dalla barra di ricerca che carica gli articoli in `/news`. Anche se è poco probabile che tu stia testando questa funzione, se questi dati mancano per la tua lingua possono esserci degli errori nel costruire il codebase localmente.
 
