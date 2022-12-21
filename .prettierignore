@@ -7,6 +7,7 @@ curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 config/**/*.json
 config/i18n.js
+config/misc.js
 config/certification-settings.js
 config/donation-settings.js
 config/superblock-order.js
