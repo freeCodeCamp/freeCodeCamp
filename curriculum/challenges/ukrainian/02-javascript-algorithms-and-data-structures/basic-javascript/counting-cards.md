@@ -9,7 +9,7 @@ dashedName: counting-cards
 
 # --description--
 
-In the casino game Blackjack, a player can determine whether they have an advantage on the next hand over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called Card Counting.
+В азартній грі «Блекджек» гравець може визначити, чи він має перевагу в наступній роздачі, відстежуючи кількість старших та молодших карт, що залишились в колоді. Це називається підрахунком карт.
 
 Чим більше старших карт у колоді, тим краще для гравця. Кожній карті присвоєно значення відповідно до нижчеподаної таблиці. Коли рахунок є більшим за нуль, гравець повинен ставити старшу карту. Коли рахунок дорівнює нулю або є меншим, гравець повинен ставити молодшу карту.
 
