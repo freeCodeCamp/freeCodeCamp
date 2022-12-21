@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b83
-title: Use Inheritance So You Don't Repeat Yourself
+title: استخدام التوريث (Inheritance) حتى لا تعيد تكرار نفسك (DRY)
 challengeType: 1
 forumTopicId: 301334
 dashedName: use-inheritance-so-you-dont-repeat-yourself
@@ -8,9 +8,9 @@ dashedName: use-inheritance-so-you-dont-repeat-yourself
 
 # --description--
 
-هناك مبدأ في البرمجة يسمى <dfn>Don't Repeat Yourself (DRY)</dfn>. السبب في أن الكود المتكرر مشكلة هو أن أي تغيير يتطلب إصلاح الكود في أماكن متعددة. وهذا يعني عادة المزيد من العمل للمبرمجين والمزيد من الحيز للأخطاء.
+هناك مبدأ في البرمجة يسمى <dfn>لا تكرر نقسك (Don't Repeat Yourself (DRY))</dfn>. إن السبب وراء ضرر تكرار الكود هو أحتياج تعديل الكود في أماكن متعددة تغيير عند الرغبة بذلك. وعادة يضع هذا المزيد من العمل للمبرمجين ويزيد من احتمال وجود أخطاء.
 
-لاحظ في المثال أدناه أن `describe` مشتركة من قبل `Bird` و `Dog`:
+لاحظ في المثال أدناه إن `describe` مشتركة من قبل `Bird` و `Dog`:
 
 ```js
 Bird.prototype = {
@@ -28,7 +28,7 @@ Dog.prototype = {
 };
 ```
 
-يتم تكرار `describe` في مكانين. يمكن تعديل الكود لاتباع مبدأ DRY عن طريق إنشاء `supertype` (أو الاب) يسمى `Animal`:
+يتم تكرار طريقة (method) المسمى `describe` في مكانين. يمكن تعديل الكود لاتباع مبدأ DRY عن طريق إنشاء `supertype` (أو حاوي (parent)) يسمى `Animal`:
 
 ```js
 function Animal() { };
@@ -41,7 +41,7 @@ Animal.prototype = {
 };
 ```
 
-بما أن `Animal` يتضمن method الـ `describe` ، يمكنك إزالته من `Bird` و `Dog`:
+عند أحتواء `Animal` على طريقة `describe`، يمكنك إزالتها من `Bird` و `Dog`:
 
 ```js
 Bird.prototype = {
@@ -55,23 +55,23 @@ Dog.prototype = {
 
 # --instructions--
 
-يتم تكرار method الـ `eat` في كل من `Cat` و `Bear`. قم بتعديل الكود بروح DRY عن طريق نقل method الـ `eat` إلى `supertype` الـ `Animal`.
+يتم تكرار طريقة `eat` في كل من `Cat` و `Bear`. عدل كود بهدف عدم تكرار نفسك (DRY) عن طريق نقل طريقة `eat` داخل `Animal` الذي يكون `supertype`.
 
 # --hints--
 
-`Animal.prototype` يجب أن تحتوي على خاصية `eat`.
+يجب أن تحتوي `Animal.prototype` على خاصية `eat`.
 
 ```js
 assert(Animal.prototype.hasOwnProperty('eat'));
 ```
 
-`Bear.prototype` يجب ألا يحتوي على خاصية `eat`.
+يجب ألا يحتوي `Bear.prototype` على خاصية `eat`.
 
 ```js
 assert(!Bear.prototype.hasOwnProperty('eat'));
 ```
 
-`Cat.prototype` يجب ألا تحتوي على خاصية `eat`.
+يجب ألا تحتوي `Cat.prototype` على خاصية `eat`.
 
 ```js
 assert(!Cat.prototype.hasOwnProperty('eat'));

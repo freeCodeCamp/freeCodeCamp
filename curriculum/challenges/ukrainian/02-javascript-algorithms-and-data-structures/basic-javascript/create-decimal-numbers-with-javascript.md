@@ -9,9 +9,9 @@ dashedName: create-decimal-numbers-with-javascript
 
 # --description--
 
-Ми можемо зберігати десяткові числа також і у змінних. Десяткові числа іноді називаються числами <dfn>floating point</dfn> або <dfn>floats</dfn>.
+Десяткові числа також можна зберігати в змінних. Десяткові числа іноді називають <dfn>числами з плаваючою крапкою</dfn> або <dfn>числами з рухомою крапкою</dfn>.
 
-**Note:** when you compute numbers, they are computed with finite precision. Operations using floating points may lead to different results than the desired outcome. If you are getting one of these results, open a topic on the <a href="https://forum.freecodecamp.org/" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
+**Примітка:** під час обчислення чисел вони обчислюються зі скінченною точністю. Операції з плаваючою крапкою можуть призвести до результатів, відмінних від бажаних. Якщо ви отримуєте один із цих результатів, поділіться на <a href="https://forum.freecodecamp.org/" target="_blank" rel="noopener noreferrer nofollow">форумі freeCodeCamp</a>.
 
 # --instructions--
 
@@ -19,13 +19,13 @@ dashedName: create-decimal-numbers-with-javascript
 
 # --hints--
 
-`myDecimal` повинне бути числом.
+`myDecimal` повинна бути числом.
 
 ```js
 assert(typeof myDecimal === 'number');
 ```
 
-`myDecimal` повинне мати десяткову кому
+`myDecimal` повинна мати десяткову крапку
 
 ```js
 assert(myDecimal % 1 != 0);
