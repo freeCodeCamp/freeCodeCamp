@@ -43,7 +43,7 @@ const MenuButton = ({
   return (
     <button
       aria-expanded={displayMenu}
-      className={`toggle-button-nav${
+      className={`exposed-button-nav${
         displayMenu ? ' reverse-toggle-color' : ''
       }`}
       id='toggle-button-nav'

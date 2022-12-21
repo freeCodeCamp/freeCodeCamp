@@ -9,7 +9,7 @@ const { clientLocale } = envData;
 
 const selectors = {
   'navigation-list': '.nav-list',
-  'toggle-button': '.toggle-button-nav',
+  'toggle-button': '#toggle-button-nav',
   'language-menu': '.nav-lang-menu',
   'exit-lang-menu': "[data-value='exit-lang-menu']",
   'lang-menu-option': 'button.nav-lang-menu-option',
