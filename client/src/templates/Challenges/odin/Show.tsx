@@ -69,7 +69,7 @@ interface ShowOdinState {
   downloadURL: string | null;
   selectedOption: number | null;
   answer: number;
-  showWrong: boolean;
+  isWrongAnswer: boolean;
   assignmentsCompleted: number;
   allAssignmentsCompleted: boolean;
   videoIsLoaded: boolean;
@@ -153,21 +153,16 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
   ) {
     const hasAssignments = assignments[0] != '';
     const completed = this.state.allAssignmentsCompleted;
+    const hasAssignments = assignments[0] != '';
+    const completed = this.state.allAssignmentsCompleted;
+    const isCorrect = solution - 1 === this.state.selectedOption;
 
-    if (solution - 1 == this.state.selectedOption && hasAssignments) {
+    if (isCorrect) {
       this.setState({
         showWrong: false
       });
-
-      if (completed) {
-        openCompletionModal();
-      }
-    } else if (solution - 1 === this.state.selectedOption && !hasAssignments) {
-      this.setState({
-        showWrong: false
-      });
-      openCompletionModal();
-    } else if (solution - 1 !== this.state.selectedOption) {
+      if (!hasAssignments || completed) openCompletionModal();
+    } else {
       this.setState({
         showWrong: true
       });
@@ -185,15 +180,16 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
 
   handleAssignmentChange = (
     event: React.ChangeEvent<HTMLInputElement>,
-    assignments: number
+    totalAssignments: number
   ): void => {
-    const assCopy = this.state.assignmentsCompleted;
-    const completed = event.target.checked ? assCopy + 1 : assCopy - 1;
-    const allCompleted = assignments == completed;
+    const assignmentsCompleted = event.target.checked
+      ? this.state.assignmentsCompleted + 1
+      : this.state.assignmentsCompleted - 1;
+    const allAssignmentsCompleted = totalAssignments === assignmentsCompleted;
 
     this.setState({
-      assignmentsCompleted: completed,
-      allAssignmentsCompleted: allCompleted
+      assignmentsCompleted,
+      allAssignmentsCompleted
     });
   };
 
