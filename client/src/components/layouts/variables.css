@@ -29,8 +29,10 @@
   --editor-background-light: #fffffe;
   --editor-background-dark: #2a2b40;
 }
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  /* The selector is added to clear the devtools from the variables and provide easier time reviewing */
+  :root :is(:not(.light-palette, .dark-paletter)) {
     --gray-color-primary: var(--gray-00);
     --gray-color-secondary: var(--gray-05);
     --gray-color-tertiary: var(-gray-10);
@@ -52,7 +54,8 @@
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+  /* The selector is added to clear the devtools from the variables and provide easier time reviewing */
+  :root :is(:not(.light-palette, .dark-paletter)) {
     --gray-color-primary: var(--gray-90);
     --gray-color-secondary: var(--gray-85);
     --gray-color-tertiary: var(-gray-80);

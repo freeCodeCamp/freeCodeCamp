@@ -47,7 +47,7 @@ interface ShowSettingsProps {
   navigate: (location: string) => void;
   showLoading: boolean;
   submitNewAbout: () => void;
-  toggleNightMode: (theme: Themes) => void;
+  toggleNightMode: (theme: Themes | null) => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   updateSocials: (formValues: Socials) => void;
@@ -77,7 +77,7 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
+  toggleNightMode: (theme: Themes | null) => updateMyTheme({ theme }),
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),

@@ -1,4 +1,4 @@
-import { Form, Button } from '@freecodecamp/react-bootstrap';
+import { Form, Button, ControlLabel } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 
 import Spacer from '../../assets/icons/spacer';
@@ -30,7 +30,7 @@ export default function ThemeSettings({
       inline={true}
       onSubmit={(e: React.FormEvent): void => e.preventDefault()}
     >
-      <label>
+      <ControlLabel>
         Night Mode
         <Button
           className={`${
@@ -44,7 +44,7 @@ export default function ThemeSettings({
           ) : (
             <Spacer style={checkIconStyle} />
           )}
-          dark
+          Dark
         </Button>
         <Button
           className={`${
@@ -53,7 +53,7 @@ export default function ThemeSettings({
           disabled={currentTheme === 'default'}
           onClick={() => toggleNightMode((currentTheme = Themes.Default))}
         >
-          light
+          Light
           {currentTheme ? (
             <ToggleCheck style={checkIconStyle} />
           ) : (
@@ -67,16 +67,14 @@ export default function ThemeSettings({
           disabled={currentTheme === null}
           onClick={() => toggleNightMode((currentTheme = null))}
         >
-          system
+          System
           {currentTheme === null ? (
             <ToggleCheck style={checkIconStyle} />
           ) : (
             <Spacer style={checkIconStyle} />
           )}
         </Button>
-      </label>
+      </ControlLabel>
     </Form>
   );
 }
-
-ThemeSettings.displayName = 'ThemeSettings';

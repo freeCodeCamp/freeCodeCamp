@@ -50,7 +50,7 @@ interface NavLinksProps {
   t: TFunction;
   showMenu: () => void;
   hideMenu: () => void;
-  toggleNightMode: (theme: Themes) => void;
+  toggleNightMode: (theme: Themes | null) => void;
   user?: User;
   navigate?: (location: string) => void;
   showLanguageMenu: (elementToFocus: HTMLButtonElement) => void;
@@ -61,7 +61,7 @@ interface NavLinksProps {
 
 const mapDispatchToProps = {
   navigate,
-  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
+  toggleNightMode: (theme: Themes | null) => updateMyTheme({ theme }),
   openSignoutModal
 };
 
@@ -88,7 +88,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
 
   toggleTheme(
     currentTheme = Themes.Default,
-    toggleNightMode: (theme: Themes) => Themes
+    toggleNightMode: (theme: Themes | null) => Themes
   ) {
     toggleNightMode(
       currentTheme === Themes.Night ? Themes.Default : Themes.Night
