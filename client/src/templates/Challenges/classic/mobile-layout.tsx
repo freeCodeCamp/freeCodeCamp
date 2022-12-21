@@ -58,10 +58,14 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
 
     if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
       if (window.innerHeight > (visualViewport?.height as number)) {
-        toolPanelGroup.style.position = 'absolute';
-        toolPanelGroup.style.bottom =
-          String(window.innerHeight - (visualViewport?.height as number)) +
-          'px';
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+
+          toolPanelGroup.style.position = 'absolute';
+          toolPanelGroup.style.bottom =
+            String(window.innerHeight - (visualViewport?.height as number)) +
+            'px';
+        }, 200);
 
         window.addEventListener('touchmove', this.avoidWindowScrolling, {
           passive: false
