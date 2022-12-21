@@ -73,7 +73,6 @@ We typically do not assign issues to anyone other than long-time contributors. I
 
 Our community moderators are our heroes. Their voluntary contributions make
 freeCodeCamp a safe and welcoming community.
-
 First and foremost, we would need you to be an active participant in the
 community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/)
 (not just enforce it).
@@ -95,7 +94,6 @@ Here are some recommended paths for some of our platforms:
 Altogether, be respectful to others. We are humans from all around the world. With
 that in mind, please also consider using encouraging or supportive language and
 be mindful of cross-cultural communication.
-
 If you practice the above **consistently for a while** and our fellow moderator
 members recommend you, a staff member will reach out and onboard you to the
 moderators' team. Open source work is voluntary work and our time is limited.
