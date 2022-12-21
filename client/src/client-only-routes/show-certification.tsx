@@ -31,6 +31,7 @@ import certificateMissingMessage from '../utils/certificate-missing-message';
 import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
 import standardErrorMessage from '../utils/standard-error-message';
 
+import { PaymentContext } from '../../../config/donation-settings';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -177,20 +178,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     setIsDonationClosed(true);
   };
 
-  const handleProcessing = (
-    duration: string,
-    amount: number,
-    action: string
-  ) => {
-    props.executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `certificate ${action}`,
-        label: duration,
-        value: amount
-      }
-    });
+  const handleProcessing = () => {
     setIsDonationSubmitted(true);
   };
 
@@ -270,6 +258,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             defaultTheme={Themes.Default}
             handleProcessing={handleProcessing}
             isMinimalForm={true}
+            paymentContext={PaymentContext.Certificate}
           />
         </Col>
       </Row>

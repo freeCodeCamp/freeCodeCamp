@@ -36,7 +36,7 @@ function myFun() {
 assert(outerWear === 'T-Shirt');
 ```
 
-`myOutfit` має повертати рядок `sweater`.
+`myOutfit` повинен повертати рядок `sweater`.
 
 ```js
 assert(myOutfit() === 'sweater');

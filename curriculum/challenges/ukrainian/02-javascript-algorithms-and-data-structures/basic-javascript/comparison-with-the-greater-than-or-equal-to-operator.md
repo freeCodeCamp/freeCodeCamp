@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d5
-title: Порівняння з оператором «Більше ніж дорівнює»
+title: Порівняння з оператором «більше ніж або дорівнює»
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6KBqtV'
 forumTopicId: 16785
@@ -9,9 +9,9 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 
 # --description--
 
-Оператор "більше ніж дорівнює" (`>=`) порівнює значення двох чисел. Якщо число зліва більше чи дорівнює числу справа, тоді повертається `true`. В іншому випадку - вона `false`.
+Оператор «більше ніж або дорівнює» (`>=`) порівнює значення двох чисел. Якщо число зліва більше чи дорівнює числу справа, оператор повертає `true`. В іншому випадку він повертає `false`.
 
-Так само, як і оператор рівності, оператор "більше ніж дорівнює" конвертує типи даних під час їх порівняння.
+Як і оператор «дорівнює», «більше ніж або дорівнює» перетворює типи даних під час порівняння.
 
 **Приклади**
 
@@ -24,53 +24,53 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 
 # --instructions--
 
-Add the greater than or equal to operator to the indicated lines so that the return statements make sense.
+Додайте оператор «більше ніж або дорівнює» до вказаних рядків, щоб повернені інструкції мали сенс.
 
 # --hints--
 
-`testGreaterOrEqual(0)` має повертати рядок `Less than 10`
+`testGreaterOrEqual(0)` повинен повертати рядок `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(0) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(9)` має повертати рядок `Less than 10`
+`testGreaterOrEqual(9)` повинен повертати рядок `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(9) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(10)` має повертати рядок `10 or Over`
+`testGreaterOrEqual(10)` повинен повертати рядок `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(10) === '10 or Over');
 ```
 
-`testGreaterOrEqual(11)` має повертати рядок `10 or Over`
+`testGreaterOrEqual(11)` повинен повертати рядок `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(11) === '10 or Over');
 ```
 
-`testGreaterOrEqual(19)` має повертати рядок `10 or Over`
+`testGreaterOrEqual(19)` повинен повертати рядок `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(19) === '10 or Over');
 ```
 
-`testGreaterOrEqual(100)` має повертати рядок `20 or Over`
+`testGreaterOrEqual(100)` повинен повертати рядок `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(100) === '20 or Over');
 ```
 
-`testGreaterOrEqual(21)` має повертати рядок `20 or Over`
+`testGreaterOrEqual(21)` повинен повертати рядок `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(21) === '20 or Over');
 ```
 
-You should use the `>=` operator at least twice
+Ви повинні використати оператор `>=` принаймні двічі
 
 ```js
 assert(code.match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);
