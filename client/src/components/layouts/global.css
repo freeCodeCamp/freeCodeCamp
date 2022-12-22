@@ -49,8 +49,7 @@ body {
   for those pages.
 */
 .overflow-fix {
-  margin-right: 0;
-  margin-left: 0;
+  margin-inline: 0;
 }
 
 .default-layout {
@@ -320,7 +319,7 @@ fieldset[disabled] .btn-primary.focus {
   height: 100%;
   min-height: 20px;
   min-width: 16px;
-  margin-left: 5px;
+  margin-inline-start: 5px;
 }
 
 .link-btn:active {
