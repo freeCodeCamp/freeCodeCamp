@@ -38,13 +38,37 @@ fetch('/json/cats.json')
 
 # --hints--
 
-應該使用 `fetch` 發起 `GET` 請求。
+
+你的代碼應該使用獲取的數據來替換內部 HTML。
+
+```js
+const catData = "dummy data";
+const ref = fetch;
+fetch = () => Promise.resolve({ json: () => catData });
+async () => {
+  try {
+    document.getElementById("getMessage").click();
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    fetch = ref;
+    assert.equal(
+      document.getElementById("message").textContent,
+      JSON.stringify(catData)
+    );
+  }
+};
+```
+
+
+你的代碼應該使用 `fetch` 發起 `GET` 請求。
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-應該在 `then` 裏面將響應轉換爲 JSON。
+你的代碼應該使用 `then` 來轉換對 JSON 的響應。
 
 ```js
 assert(
@@ -54,13 +78,13 @@ assert(
 );
 ```
 
-應該使用另一個 `then` 接收 `then` 轉換的 JSON。
+你的代碼應該使用 `then` 來處理由另一個 `then` 轉換爲 JSON 的數據。
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-代碼應該選擇 id 爲 `message` 的元素然後把它的內部 HTML 改成 JSON data 的字符串。
+你的代碼應該選擇 id 爲 `message` 的元素，然後把它的內部 HTML 改成 JSON 數據的字符串。
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: a7f4d8f2483413a6ce226cac
-title: Конвертер римських цифр
+title: Конвертер римських чисел
 challengeType: 5
 forumTopicId: 16044
 dashedName: roman-numeral-converter
@@ -8,7 +8,7 @@ dashedName: roman-numeral-converter
 
 # --description--
 
-Перетворити задане число у римську систему числення.
+Перетворіть подане число в римське число.
 
 | Римські числа | Арабські числа |
 | ------------- | -------------- |

@@ -1,6 +1,6 @@
 ---
 id: 587d824c367417b2b2512c4e
-title: Перевірка, чи є одне значення нижчим або принаймні таке саме за величиною, як інше
+title: Перевірте, чи значення є меншим чи дорівнює іншому
 challengeType: 2
 forumTopicId: 301606
 dashedName: test-if-one-value-is-below-or-at-least-as-large-as-another
@@ -12,7 +12,7 @@ dashedName: test-if-one-value-is-below-or-at-least-as-large-as-another
 
 # --instructions--
 
-У межах `test/1_unit-tests.js` під тестом з міткою `#9` у наборі `Comparisons` змініть кожне `assert` на `assert.isBelow` або `assert.isAtLeast`, щоб тест міг бути успішно пройдений (слід оцінити як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#9` в наборі `Comparisons` змініть кожний `assert` на `assert.isBelow` або `assert.isAtLeast`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -30,7 +30,7 @@ dashedName: test-if-one-value-is-below-or-at-least-as-large-as-another
   );
 ```
 
-Ви повинні вибрати правильний метод для першого твердження – `isBelow` або `isAtLeast`.
+Ви повинні обрати правильний метод для першого твердження: `isBelow` або `isAtLeast`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ dashedName: test-if-one-value-is-below-or-at-least-as-large-as-another
   );
 ```
 
-Ви повинні вибрати правильний метод для другого твердження – `isBelow` або `isAtLeast`.
+Ви повинні обрати правильний метод для другого твердження: `isBelow` або `isAtLeast`.
 
 ```js
 (getUserInput) =>
@@ -66,7 +66,7 @@ dashedName: test-if-one-value-is-below-or-at-least-as-large-as-another
   );
 ```
 
-Ви повинні вибрати правильний метод для третього твердження – `isBelow` або `isAtLeast`.
+Ви повинні обрати правильний метод для третього твердження: `isBelow` або `isAtLeast`.
 
 ```js
 (getUserInput) =>
@@ -80,7 +80,7 @@ dashedName: test-if-one-value-is-below-or-at-least-as-large-as-another
   );
 ```
 
-Ви повинні вибрати правильний метод для четвертого твердження – `isBelow` або `isAtLeast`.
+Ви повинні обрати правильний метод для четвертого твердження: `isBelow` або `isAtLeast`.
 
 ```js
 (getUserInput) =>

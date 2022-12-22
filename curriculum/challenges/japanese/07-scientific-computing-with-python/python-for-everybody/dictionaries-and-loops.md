@@ -14,7 +14,7 @@ dashedName: dictionaries-and-loops
 
 その他のリソース:
 
-\- <a href="https://www.youtube.com/watch?v=PrhZ9qwBDD8" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=PrhZ9qwBDD8" target="_blank" rel="noopener noreferrer nofollow">演習</a>
 
 # --question--
 

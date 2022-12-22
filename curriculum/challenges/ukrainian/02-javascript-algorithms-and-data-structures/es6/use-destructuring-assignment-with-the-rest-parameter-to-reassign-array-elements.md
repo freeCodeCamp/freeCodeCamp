@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Використовуйте решту параметрів з деструктивним призначенням для перепризначення масиву елементів
+  Destructuring via rest elements
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -22,11 +22,11 @@ console.log(arr);
 
 У такому разі консоль відображатиме значення `1, 2` та `[3, 4, 5, 7]`.
 
-Змінні `a` та `b` приймають перші та другі значення з масиву. Після цього, завдяки параметру `arr` решта значень подаються у масиві. Решта елементів працює тільки-но у вигляді останньої змінної списку. Як і в даних, ви не можете використовувати інший параметр для охоплення підмасиву, який залишає останній елемент вихідного масиву.
+Змінні `a` та `b` приймають перші та другі значення з масиву. After that, because of the rest syntax presence, `arr` gets the rest of the values in the form of an array. Решта елементів працює тільки-но у вигляді останньої змінної списку. As in, you cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
 
 # --instructions--
 
-Use a destructuring assignment with the rest parameter to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` should return a sub-array of the original array `list` with the first two elements omitted.
+Use a destructuring assignment with the rest syntax to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` should return a sub-array of the original array `list` with the first two elements omitted.
 
 # --hints--
 

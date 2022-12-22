@@ -17,8 +17,8 @@ i18n フレームワークとツールがどのように機能するかを理解
 プラットフォームを翻訳するために必要なファイルの多くは、[`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) フォルダに入っています。 各言語には、翻訳付きの JSON ファイルを含むディレクトリがあります。
 
 ```console
-  config/i18n
-  └── all-langs.ts
+  config
+  └── i18n.ts
   ...
   client/i18n
   ├── configForTests.js
@@ -29,37 +29,33 @@ i18n フレームワークとツールがどのように機能するかを理解
   │   │   ├── links.json
   │   │   ├── meta-tags.json
   │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   │   └── translations.json
   ... ...
   │   ├── dothraki
   │   │   ├── intro.json
   │   │   ├── links.json
   │   │   ├── meta-tags.json
   │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   │   └── translations.json
   ... ...
   │   ├── english
   │   │   ├── intro.json
   │   │   ├── links.json
   │   │   ├── meta-tags.json
   │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   │   └── translations.json
   │   └── espanol
   │       ├── intro.json
   │       ├── links.json
   │       ├── meta-tags.json
   │       ├── motivation.json
-  │       ├── translations.json
-  │       └── trending.json
+  │       └── translations.json
   ├── locales.test.js
   ├── schema-validation.js
   └── validate-keys.ts
 ```
 
-これらのファイルは翻訳プラットフォーム (Crowdin) で翻訳されていますが、翻訳されていないものもあります。
+Some of these files are translated on our translation platform (Crowdin), some are translated or created via PR's on GitHub.
 
 **翻訳プラットフォーム上で翻訳されたファイル:**
 
@@ -73,28 +69,27 @@ i18n フレームワークとツールがどのように機能するかを理解
 
 - `motivation.json` ファイルは、同じ引用符、賛辞、配列の長さを含む必要はありません。 JSON 構造だけは同じです。
 
-- `trending.json` ファイルは、Web サイトのフッターにトレンドニュース記事のタイトルとリンクを含みます。
+- The `meta-tags.json` file contains the information for our website's meta tag information.
 
-- `meta-tags.json` ファイルには、Web サイトのメタタグ情報に関する情報が含まれています。
-
-  これらのファイルの変更は通常、スタッフチームによって行われます。 If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://discord.gg/PRyKn3Vbay).
+  Changes to these files are typically done by the staff team. If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 ## 世界の言語でクライアントアプリをテストする
 
-You can test the client app in any language available in the [list of languages here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.ts).
+You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
 
 ```js
-  export const availableLangs = {
+export const availableLangs = {
   client: [
-    'english',
-    'espanol',
-    'chinese',
-    'chinese-traditional',
-    'italian',
-    'portuguese',
-    'ukrainian',
-    'japanese',
-    'german'
+    Languages.English,
+    Languages.Espanol,
+    Languages.Chinese,
+    Languages.ChineseTrandational,
+    Languages.Italian,
+    Languages.Portuguese,
+    Languages.Ukrainian,
+    Languages.Japanese,
+    Languages.German,
+    Languages.Arabic
   ],
   ...
 };
@@ -102,11 +97,11 @@ You can test the client app in any language available in the [list of languages 
 
 新しい言語をテストするには、言語名をタイトルとしたフォルダを他の言語の隣に作成し、JSON ファイルを別の言語から新しいフォルダにコピーします。
 
-Add the language to the `client` array as seen above in the [`config/i18n/all-langs.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.ts) file.
+Add the new language to the `Languages` enum and the `client` array at the top of the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file.
 
 次に、同じファイルのコメント指示に従って、必要に応じて残りの変数を追加 / 更新します。
 
-最後に、`.env` ファイルの `CLIENT_LOCALE` 変数を、ビルドするロケールに設定します。これで準備が整います。
+Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the string of the locale you want to build from the `Languages` enum in the above file.
 
 ## コンポーネントの構築方法
 

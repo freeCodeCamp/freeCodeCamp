@@ -27,13 +27,13 @@ cities.splice(3, 1);
 
 # --hints--
 
-يجب أن يستخدم الكود الخاص بك دالة `slice`.
+يجب أن يستخدم كودك طريقة `slice`.
 
 ```js
 assert(code.match(/\.slice/g));
 ```
 
-يجب ألا يستخدم الكود الخاص بك دالة `splice`.
+يجب ألا يستخدم كودك طريقة `splice`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?splice/g));

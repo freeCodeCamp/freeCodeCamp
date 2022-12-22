@@ -41,9 +41,9 @@ myDataBase.findOneAndUpdate(
 
 `findOneAndUpdate` 的作用是在数据库中查询对象并更新， 如果对象不存在，将插入对象，然后我们可以在回调方法里获取到插入的新对象。 在这个例子中，我们会设置 `last_login`，而且总会为 `login_count` 加 `1`。只有在插入一个新对象（新用户）时，我们才会初始化这些字段。 另外，还需要注意默认值的使用。 有时返回的用户信息可能不全，可能是因为用户没有填写，也可能是因为用户选择不公开一部分信息。 在这种情况下，我们需要进行相应的处理，以防我们的 app 报错。
 
-You should be able to login to your app now. Try it!
+你现在应该可以登录你的应用了， 试试吧！
 
-完成上述要求后，你可以在下方提交你的页面链接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-iii-5" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求后，你可以在下方提交你的页面链接。 如果你在运行时遇到错误，可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-iii-5" target="_blank" rel="noopener noreferrer nofollow">查看已完成的项目</a>。
 
 # --hints--
 

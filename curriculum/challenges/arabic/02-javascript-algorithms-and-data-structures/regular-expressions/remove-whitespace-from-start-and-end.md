@@ -14,7 +14,7 @@ dashedName: remove-whitespace-from-start-and-end
 
 اكتب regex و استخدم الطرق المناسبة لإزالة الـ whitespace في بداية و نهاية الـ strings.
 
-**ملاحظة:** دالة `String.prototype.trim()` ستعمل هنا، ولكن ستحتاج إلى إكمال هذا التحدي باستخدام regular expressions.
+**ملاحظة:** طريقة `String.prototype.trim()` ستعمل هنا، ولكن ستحتاج إلى إكمال هذا التحدي باستخدام regular expressions.
 
 # --hints--
 
@@ -24,7 +24,7 @@ dashedName: remove-whitespace-from-start-and-end
 assert(result === 'Hello, World!');
 ```
 
-يجب ألا يستخدم الحل الخاص بك دالة `String.prototype.trim()`.
+يجب ألا يستخدم حلك طريقة `String.prototype.trim()`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?trim/));

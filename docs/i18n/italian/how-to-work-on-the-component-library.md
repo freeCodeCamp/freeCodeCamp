@@ -35,13 +35,13 @@ npm run gen-component MyComponent
 
 Il comando genererà una nuova cartella dentro la directory `ui-components`, con i seguenti file:
 
-| Nome file                  | Scopo                                                      |
-| -------------------------- | ---------------------------------------------------------- |
-| `index.ts`                 | Usato per esportare il componente e i suoi tipi.           |
-| `my-component.stories.tsx` | Usato per fare la demo del componente con Storybook.       |
-| `my-component.test.tsx`    | file di test.                                              |
-| `my-component.tsx`         | Dove implementiamo il componente.                          |
-| `types.ts`                 | It is where we locate the component's interface and types. |
+| Nome file                  | Scopo                                                |
+| -------------------------- | ---------------------------------------------------- |
+| `index.ts`                 | Usato per esportare il componente e i suoi tipi.     |
+| `my-component.stories.tsx` | Usato per fare la demo del componente con Storybook. |
+| `my-component.test.tsx`    | file di test.                                        |
+| `my-component.tsx`         | Dove implementiamo il componente.                    |
+| `types.ts`                 | Dove mettiamo l'interfaccia e i tipi del componente. |
 
 Ogni componente è diverso, ma in genere un componente dovrebbe:
 
@@ -89,6 +89,14 @@ Per eseguire i test sulla libreria componenti, esegui il seguente comando dalla 
 
 ```bash
 npm run test-ui-components
+```
+
+## Aggiungere pacchetti alla libreria dei componenti UI
+
+Limitiamo l'aggiunta di nuovi pacchetti ai Componenti UI per facilitare la manutenzione del progetto. Nel raro caso in cui pensi che sia necessaria una dipendenza, per favore, fai prima una verifica con i manutentori e quindi utilizza il seguente comando per aggiungere un pacchetto:
+
+```bash
+npm i -w=tools/ui-components nome_pacchetto
 ```
 
 ### Link utili

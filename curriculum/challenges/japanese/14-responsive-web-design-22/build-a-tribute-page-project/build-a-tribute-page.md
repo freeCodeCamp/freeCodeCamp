@@ -24,7 +24,7 @@ dashedName: build-a-tribute-page
 
 上記のユーザーストーリーを満たし、以下のすべてのテストが通るようにして、このプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
-**注:** スタイルシートをリンクして CSS が適用されるように、`<link rel="stylesheet" href="styles.css">` を HTML 内に必ず加えてください
+**注:** スタイルシートをリンクして CSS を適用するため、HTML のコード内に必ず `<link rel="stylesheet" href="styles.css">` を追加してください。
 
 # --hints--
 

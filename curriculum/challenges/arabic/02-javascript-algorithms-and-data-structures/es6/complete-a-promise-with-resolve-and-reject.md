@@ -8,7 +8,7 @@ dashedName: complete-a-promise-with-resolve-and-reject
 
 # --description--
 
-يكون للوعد (promise) ثلاث حالات: `pending`, و `fulfilled`, و `rejected`. كائن Promise الذي قمت بإنشائه في التحدي السابق معلق إلى الأبد في حالة `pending` لأنك لم تضف طريقة لإكمال كائن Promise. حجج `resolve` و `reject` المعطاة لوظفية الكائن promise تستخدم لفعل ذلك. تستخدم `resolve` عندما تريد أن ينجح الكائن promise وتستخدم `reject` عندما تريد أن يفشل الكائن promise. هذا الطرق تستقبل حَجَّة (argument)، كما هو مبين بالإدانة.
+يكون للوعد (promise) ثلاث حالات: `pending`, و `fulfilled`, و `rejected`. كائن Promise الذي قمت بإنشائه في التحدي السابق معلق إلى الأبد في حالة `pending` لأنك لم تضف طريقة لإكمال كائن Promise. تستخدم الوسائط `resolve` و `reject` المعطاة لوظيفة الكائن promise لفعل ذلك. تستخدم `resolve` عندما تريد أن ينجح الكائن promise وتستخدم `reject` عندما تريد أن يفشل الكائن promise. هذا الطرق تستقبل حَجَّة (argument)، كما هو مبين بالإدانة.
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -24,7 +24,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 # --instructions--
 
-اجعل كائن promise يتعامل مع النجاح والفشل. إذا كان `responseFromServer` صحيحاً `true`، فاستدعي طريقة `resolve` لإكمال كائن promisie بنجاح. مرر `resolve` إلى سلسلة (string) نصية بقيمة `We got the data`. إذا كان `responseFromServer` بـ `false`، استخدم دالة `reject` كبديل و مرر اليها الـ string الآتي: `Data not received`.
+اجعل كائن promise يتعامل مع النجاح والفشل. إذا كان `responseFromServer` صحيحاً `true`، ففعيل طريقة `resolve` لإكمال كائن promise بنجاح. مرر `resolve` إلى سلسلة (string) نصية بقيمة `We got the data`. إذا كانت حالة `responseFromServer` بنوع `false`، استخدم طريقة `reject` كبديل و مررها المقطع النصي (string) الآتي: `Data not received`.
 
 # --hints--
 
