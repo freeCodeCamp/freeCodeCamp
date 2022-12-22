@@ -56,7 +56,7 @@ function createQuestionEpic(action$, state$, { window }) {
         const editableRegionStrings = fileExtension => {
           const startComment = fileExtension === 'html' ? '<!--' : '/*';
           const endComment = fileExtension === 'html' ? '-->' : '*/';
-          return `\n${startComment} 'User Editable Region' ${endComment}\n`;
+          return `\n${startComment} User Editable Region ${endComment}\n`;
         };
 
         const filesWithEditableRegions = challengeFiles.map(file => {
