@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedb08845
-title: Botones de radio con estilo responsivo
+title: Botones de radio con estilo adaptable
 challengeType: 0
 forumTopicId: 18270
 required:

@@ -37,19 +37,19 @@ const answer = plusThree(5);
 assert(typeof timesFive === 'function');
 ```
 
-يجب أن ينتج `timesFive(5)` قيمة `25`
+يجب أن تنتج `timesFive(5)` قيمة `25`
 
 ```js
 assert(timesFive(5) === 25);
 ```
 
-يجب أن ينتج `timesFive(2)` قيمة `10`
+يجب أن تنتج `timesFive(2)` قيمة `10`
 
 ```js
 assert(timesFive(2) === 10);
 ```
 
-يجب أن ينتج `timesFive(0)` قيمة `0`
+يجب أن تنتج `timesFive(0)` قيمة `0`
 
 ```js
 assert(timesFive(0) === 0);

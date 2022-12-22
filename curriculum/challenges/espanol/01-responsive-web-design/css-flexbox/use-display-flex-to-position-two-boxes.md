@@ -11,7 +11,7 @@ dashedName: use-display-flex-to-position-two-boxes
 
 Esta sección utiliza estilos de desafío alternos para mostrar cómo usar CSS para posicionar elementos de una manera flexible. En primer lugar, un desafío explicará la teoría, luego un desafío práctico utilizando un simple componente de tweet aplicará el concepto de flexbox.
 
-Colocar la propiedad CSS `display: flex;` en un elemento te permite usar otras propiedades flex para construir una página responsiva.
+Colocar la propiedad CSS `display: flex;` en un elemento te permite usar otras propiedades flex para construir una página adaptable.
 
 # --instructions--
 
