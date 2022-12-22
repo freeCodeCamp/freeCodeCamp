@@ -2,9 +2,9 @@
 
 ## Styling a component
 
-Be mindful of adding new colors to the codebase, as you will have to account for contrast and color blindness. Because of this, we always use already determined variables in [variable.css](/client/src/components/layouts/variables.css).
+We recommend using our [design style guide](https://design-style-guide.freecodecamp.org/) in styling components, you will find the colors mentioned in it in our [variable.css](/client/src/components/layouts/variables.css) file, and will find the fonts in [fonts.css](/client/src/components/layouts/fonts.css) file.
 
-We are against adding new variables to [variable.css](/client/src/components/layouts/variables.css), because we have to account for contrast, color blindness 🙂, and cluttering the devtools which affects negatively the devtools experiences and add concerns for accessibility.
+We are against adding new variables to [variable.css](/client/src/components/layouts/variables.css), because the new colors have to account for contrast, color blindness, and cluttering the devtools which affects negatively the developing experiences and add concerns for accessibility.
 
 Use `!important` for accessibility concerns only after leaving a comment describing the issue, so it won't be removed by mistake in future refactoring.
 
