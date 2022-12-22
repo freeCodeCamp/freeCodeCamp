@@ -6,7 +6,10 @@ import { connect } from 'react-redux';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
-import { modalDefaultDonation } from '../../../../config/donation-settings';
+import {
+  modalDefaultDonation,
+  PaymentContext
+} from '../../../../config/donation-settings';
 import Cup from '../../assets/icons/cup';
 import Heart from '../../assets/icons/heart';
 
@@ -56,20 +59,7 @@ function DonateModal({
 }: DonateModalProps): JSX.Element {
   const [closeLabel, setCloseLabel] = React.useState(false);
   const { t } = useTranslation();
-  const handleProcessing = (
-    duration: string,
-    amount: number,
-    action: string
-  ) => {
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `Modal ${action}`,
-        label: duration,
-        value: amount
-      }
-    });
+  const handleProcessing = () => {
     setCloseLabel(true);
   };
 
@@ -93,12 +83,10 @@ function DonateModal({
   const getDonationText = () => {
     const donationDuration = modalDefaultDonation.donationDuration;
     switch (donationDuration) {
-      case 'onetime':
+      case 'one-time':
         return <b>{t('donate.duration')}</b>;
       case 'month':
         return <b>{t('donate.duration-2')}</b>;
-      case 'year':
-        return <b>{t('donate.duration-3')}</b>;
       default:
         return <b>{t('donate.duration-4')}</b>;
     }
@@ -158,6 +146,7 @@ function DonateModal({
             <DonateForm
               handleProcessing={handleProcessing}
               isMinimalForm={true}
+              paymentContext={PaymentContext.Modal}
             />
           </Col>
         </Row>

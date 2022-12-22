@@ -20,8 +20,7 @@
 .btn-group .btn.toggle-not-active,
 .btn-group .btn.toggle-active {
   border-color: var(--tertiary-color);
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-inline: 30px;
 }
 
 .btn-group .btn-primary,
@@ -46,7 +45,7 @@
 }
 
 .btn-group .btn + .btn {
-  margin-left: -2px;
+  margin-inline-start: -2px;
 }
 
 label.toggle-label {

@@ -130,11 +130,11 @@ export const reducer = handleActions(
       ...state,
       donationFormState: { ...state.donationFormState, ...payload }
     }),
-    [actionTypes.addDonation]: state => ({
+    [actionTypes.postChargeProcessing]: state => ({
       ...state,
       donationFormState: { ...defaultDonationFormState, processing: true }
     }),
-    [actionTypes.addDonationComplete]: state => {
+    [actionTypes.postChargeComplete]: state => {
       const { appUsername } = state;
       return {
         ...state,
@@ -149,56 +149,11 @@ export const reducer = handleActions(
         donationFormState: { ...defaultDonationFormState, success: true }
       };
     },
-    [actionTypes.addDonationError]: (state, { payload }) => ({
+    [actionTypes.postChargeError]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...defaultDonationFormState, error: payload }
     }),
-    [actionTypes.postChargeStripe]: state => ({
-      ...state,
-      donationFormState: { ...defaultDonationFormState, processing: true }
-    }),
-    [actionTypes.postChargeStripeComplete]: state => {
-      const { appUsername } = state;
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
-            isDonating: true
-          }
-        },
 
-        donationFormState: { ...defaultDonationFormState, success: true }
-      };
-    },
-    [actionTypes.postChargeStripeError]: (state, { payload }) => ({
-      ...state,
-      donationFormState: { ...defaultDonationFormState, error: payload }
-    }),
-    [actionTypes.postChargeStripeCard]: state => ({
-      ...state,
-      donationFormState: { ...defaultDonationFormState, processing: true }
-    }),
-    [actionTypes.postChargeStripeCardComplete]: state => {
-      const { appUsername } = state;
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
-            isDonating: true
-          }
-        },
-
-        donationFormState: { ...defaultDonationFormState, success: true }
-      };
-    },
-    [actionTypes.postChargeStripeCardError]: (state, { payload }) => ({
-      ...state,
-      donationFormState: { ...defaultDonationFormState, error: payload }
-    }),
     [actionTypes.fetchUser]: state => ({
       ...state,
       userFetchState: { ...defaultFetchState }
