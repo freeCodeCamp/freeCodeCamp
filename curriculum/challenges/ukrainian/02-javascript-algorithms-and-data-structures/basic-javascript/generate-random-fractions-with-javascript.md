@@ -9,9 +9,9 @@ dashedName: generate-random-fractions-with-javascript
 
 # --description--
 
-Випадкові числа є корисними для створення випадкової поведінки об'єкта.
+Випадкові числа корисні для створення випадкової поведінки.
 
-JavaScript має функцію `Math.random()`, що генерує випадкові десяткові числа між `0` (включно) and `1` (виключно). Таким чином `Math.random()` може повернути `0` але ніколи не поверне `1`.
+JavaScript має функцію `Math.random()`, яка генерує випадкові десяткові числа між `0` (включно) та `1` (виключно). Тому `Math.random()` може повернути `0`, але ніколи не поверне `1`.
 
 **Note:** Like <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">Storing Values with the Assignment Operator</a>, all function calls will be resolved before the `return` executes, so we can `return` the value of the `Math.random()` function.
 
