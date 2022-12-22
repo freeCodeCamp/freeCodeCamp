@@ -2,11 +2,13 @@
 
 ## Styling a component
 
-We recommend using our [design style guide](https://design-style-guide.freecodecamp.org/) in styling components, you will find the colors mentioned in it in our [variable.css](/client/src/components/layouts/variables.css) file, and will find the fonts in [fonts.css](/client/src/components/layouts/fonts.css) file.
+We recommend styling components using our [design style guide](https://design-style-guide.freecodecamp.org/). 
 
-We are against adding new variables to [variable.css](/client/src/components/layouts/variables.css), because the new colors have to account for contrast, color blindness, and cluttering the devtools which affects negatively the developing experiences and add concerns for accessibility.
+The colors are defined in [`variable.css`](/client/src/components/layouts/variables.css), and the fonts are in [`fonts.css`](/client/src/components/layouts/fonts.css).
 
-Use `!important` for accessibility concerns only after leaving a comment describing the issue, so it won't be removed by mistake in future refactoring.
+We are strongly opinionated about adding new variables/tokens to the colors. After careful research, the colors have been chosen to respect the freeCodeCamp brand identity, developer experience, and accessibility.
+
+The `!important` keyword may be used to override values in some cases (for ex.: accessibility concerns). You should add a comment describing the issue, so it doesn't get removed in future refactoring.
 
 ### RTL support
 
