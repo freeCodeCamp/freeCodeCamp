@@ -337,9 +337,10 @@ button.nav-link[aria-disabled='true'] {
   align-items: center;
 }
 
-.exposed-button-nav:hover {
-  background-color: var(--gray-90);
-  color: var(--gray-00);
+.exposed-button-nav:hover,
+.exposed-button-nav:hover:focus {
+  background-color: var(--gray-00);
+  color: var(--gray-90);
   border: 1px solid var(--gray-00);
 }
 
@@ -414,12 +415,12 @@ button.nav-link[aria-disabled='true'] {
   display: none;
 }
 
-.reverse-toggle-color {
+.exposed-button-nav.reverse-toggle-color {
   background-color: var(--gray-00);
   color: var(--theme-color);
 }
 
-.reverse-toggle-color:hover {
+.exposed-button-nav.reverse-toggle-color:hover {
   background-color: var(--gray-00);
   color: var(--theme-color);
 }
