@@ -79,7 +79,12 @@ export const UniversalNav = ({
           <>
             <Media minWidth={DONATE_NAV_EXPOSED_WIDTH + 1}>
               {' '}
-              <Link sameTab={false} to='/donate' className='exposed-button-nav'>
+              <Link
+                sameTab={false}
+                to='/donate'
+                data-test-label='nav-donate-button'
+                className='exposed-button-nav'
+              >
                 {t('buttons.donate')}
               </Link>
             </Media>

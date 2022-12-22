@@ -318,6 +318,8 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
               onKeyDown={this.handleMenuKeyDown}
               sameTab={false}
               to='/donate'
+              data-test-label='dropdown-donate-button'
+              nav-donate-button
             >
               {t('buttons.donate')}
             </Link>
