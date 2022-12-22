@@ -9,9 +9,6 @@ Object {
 <p>A second answer paragraph.</p>",
       "<p><code> code in </code> code tags</p>",
     ],
-    "assignments": Array [
-      "",
-    ],
     "solution": 3,
     "text": "<p>Question line 1</p>
 <pre><code class=\\"language-js\\">  var x = 'y';

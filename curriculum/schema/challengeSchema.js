@@ -81,7 +81,6 @@ const schema = Joi.object()
     question: Joi.object().keys({
       text: Joi.string().required(),
       answers: Joi.array().items(Joi.string()).required(),
-      assignments: Joi.array().required(),
       solution: Joi.number().required()
     }),
     required: Joi.array().items(
@@ -92,6 +91,7 @@ const schema = Joi.object()
         crossDomain: Joi.bool()
       })
     ),
+    assignments: Joi.array(),
     solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
     superBlock: Joi.string().regex(slugWithSlashRE),
     superOrder: Joi.number(),

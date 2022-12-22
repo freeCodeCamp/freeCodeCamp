@@ -213,7 +213,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             videoId,
             videoLocaleIds,
             bilibiliIds,
-            question: { text, answers, solution, assignments }
+            question: { text, answers, solution },
+            assignments
           }
         }
       },
@@ -342,7 +343,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     <span>{t('learn.wrong-answer')}</span>
                   )}
                   {!this.state.allAssignmentsCompleted &&
-                    assignments[0] != '' && (
+                    assignments.length > 0 && (
                       <>
                         <br />
                         <span>{t('learn.assignment-not-complete')}</span>
@@ -417,9 +418,9 @@ export const query = graphql`
           text
           answers
           solution
-          assignments
         }
         translationPending
+        assignments
       }
     }
   }

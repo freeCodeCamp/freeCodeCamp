@@ -121,7 +121,6 @@ type Question = {
   text: string;
   answers: string[];
   solution: number;
-  assignments: string[];
 };
 type Fields = { slug: string; blockName: string; tests: Test[] };
 type Required = {
@@ -190,6 +189,7 @@ export type ChallengeNode = {
     isPrivate: boolean;
     order: number;
     question: Question;
+    assignments: string[];
     required: Required[];
     solutions: {
       [T in FileKey]: FileKeyChallenge;
