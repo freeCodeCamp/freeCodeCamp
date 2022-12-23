@@ -23,7 +23,7 @@ const answer = plusThree(5);
 
 يحتوي `answer` على قيمة `8`.
 
-يأخذ `plusThree` قيمة <dfn>معطى</dfn> من `num` وينتج قيمة تساوي `num + 3`.
+تأخذ `plusThree` قيمة <dfn>معطى</dfn> من `num` وتنتج قيمة تساوي `num + 3`.
 
 # --instructions--
 

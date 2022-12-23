@@ -13,27 +13,27 @@ dashedName: generate-random-fractions-with-javascript
 
 JavaScript має функцію `Math.random()`, яка генерує випадкові десяткові числа між `0` (включно) та `1` (виключно). Тому `Math.random()` може повернути `0`, але ніколи не поверне `1`.
 
-**Note:** Like <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">Storing Values with the Assignment Operator</a>, all function calls will be resolved before the `return` executes, so we can `return` the value of the `Math.random()` function.
+**Примітка:** як і <a href="/ukrainian/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">збереження значень за допомогою оператора присвоєння</a>, всі виклики функцій вирішені ще до виконання `return`, тому ми можемо повернути (`return`) значення функції `Math.random()`.
 
 # --instructions--
 
-Змініть `randomFraction`, щоб повернути випадкове число замість повернення `0`.
+Змініть `randomFraction`, щоб поверталось випадкове число, а не `0`.
 
 # --hints--
 
-`randomFraction` має повернути випадкове число.
+`randomFraction` повинна повертати випадкове число.
 
 ```js
 assert(typeof randomFraction() === 'number');
 ```
 
-Число, яке повернуто `randomFraction` має бути десятковим.
+Число, яке повернула `randomFraction`, повинне бути десятковим.
 
 ```js
 assert((randomFraction() + '').match(/\./g));
 ```
 
-Вам слід використовувати `Math.random` для генерації випадкового десяткового числа.
+Ви повинні використати `Math.random`, щоб згенерувати випадкове десяткове число.
 
 ```js
 assert(code.match(/Math\.random/g).length >= 0);
