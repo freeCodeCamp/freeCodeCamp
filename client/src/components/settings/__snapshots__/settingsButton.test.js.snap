@@ -21,7 +21,7 @@ Array [
         className="text-center"
         id="cert-responsive-web-design"
       >
-        Responsive Web Design
+        certification.title.Responsive Web Design
       </h3>
       <table
         className="table"
@@ -46,7 +46,7 @@ Array [
               <a
                 href="/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form"
               >
-                Build a Survey Form
+                certification.project.title.Build a Survey Form
               </a>
             </td>
             <td
@@ -62,7 +62,7 @@ Array [
               <a
                 href="/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page"
               >
-                Build a Tribute Page
+                certification.project.title.Build a Tribute Page
               </a>
             </td>
             <td
@@ -78,7 +78,7 @@ Array [
               <a
                 href="/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page"
               >
-                Build a Technical Documentation Page
+                certification.project.title.Build a Technical Documentation Page
               </a>
             </td>
             <td
@@ -94,7 +94,7 @@ Array [
               <a
                 href="/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page"
               >
-                Build a Product Landing Page
+                certification.project.title.Build a Product Landing Page
               </a>
             </td>
             <td
@@ -110,7 +110,7 @@ Array [
               <a
                 href="/learn/2022/responsive-web-design/build-a-personal-portfolio-webpage-project/build-a-personal-portfolio-webpage"
               >
-                Build a Personal Portfolio Webpage
+                certification.project.title.Build a Personal Portfolio Webpage
               </a>
             </td>
             <td
@@ -155,7 +155,7 @@ Array [
         className="text-center"
         id="cert-javascript-algorithms-and-data-structures"
       >
-        JavaScript Algorithms and Data Structures
+        certification.title.JavaScript Algorithms and Data Structures
       </h3>
       <table
         className="table"
@@ -180,7 +180,7 @@ Array [
               <a
                 href="/learn/2022/javascript-algorithms-and-data-structures/palindrome-checker-project/palindrome-checker"
               >
-                Palindrome Checker
+                certification.project.title.Palindrome Checker
               </a>
             </td>
             <td
@@ -196,7 +196,7 @@ Array [
               <a
                 href="/learn/2022/javascript-algorithms-and-data-structures/roman-numeral-converter-project/roman-numeral-converter"
               >
-                Roman Numeral Converter
+                certification.project.title.Roman Numeral Converter
               </a>
             </td>
             <td
@@ -212,7 +212,7 @@ Array [
               <a
                 href="/learn/2022/javascript-algorithms-and-data-structures/caesars-cipher-project/caesars-cipher"
               >
-                Caesars Cipher
+                certification.project.title.Caesars Cipher
               </a>
             </td>
             <td
@@ -228,7 +228,7 @@ Array [
               <a
                 href="/learn/2022/javascript-algorithms-and-data-structures/telephone-number-validator-project/telephone-number-validator"
               >
-                Telephone Number Validator
+                certification.project.title.Telephone Number Validator
               </a>
             </td>
             <td
@@ -244,7 +244,7 @@ Array [
               <a
                 href="/learn/2022/javascript-algorithms-and-data-structures/cash-register-project/cash-register"
               >
-                Cash Register
+                certification.project.title.Cash Register
               </a>
             </td>
             <td
@@ -289,7 +289,7 @@ Array [
         className="text-center"
         id="cert-front-end-development-libraries"
       >
-        Front End Development Libraries
+        certification.title.Front End Development Libraries
       </h3>
       <table
         className="table"
@@ -314,7 +314,7 @@ Array [
               <a
                 href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine"
               >
-                Build a Random Quote Machine
+                certification.project.title.Build a Random Quote Machine
               </a>
             </td>
             <td
@@ -330,7 +330,7 @@ Array [
               <a
                 href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer"
               >
-                Build a Markdown Previewer
+                certification.project.title.Build a Markdown Previewer
               </a>
             </td>
             <td
@@ -346,7 +346,7 @@ Array [
               <a
                 href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-drum-machine"
               >
-                Build a Drum Machine
+                certification.project.title.Build a Drum Machine
               </a>
             </td>
             <td
@@ -362,7 +362,7 @@ Array [
               <a
                 href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator"
               >
-                Build a JavaScript Calculator
+                certification.project.title.Build a JavaScript Calculator
               </a>
             </td>
             <td
@@ -378,7 +378,7 @@ Array [
               <a
                 href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock"
               >
-                Build a 25 + 5 Clock
+                certification.project.title.Build a 25 + 5 Clock
               </a>
             </td>
             <td
@@ -423,7 +423,7 @@ Array [
         className="text-center"
         id="cert-data-visualization"
       >
-        Data Visualization
+        certification.title.Data Visualization
       </h3>
       <table
         className="table"
@@ -448,7 +448,7 @@ Array [
               <a
                 href="/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart"
               >
-                Visualize Data with a Bar Chart
+                certification.project.title.Visualize Data with a Bar Chart
               </a>
             </td>
             <td
@@ -464,7 +464,7 @@ Array [
               <a
                 href="/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph"
               >
-                Visualize Data with a Scatterplot Graph
+                certification.project.title.Visualize Data with a Scatterplot Graph
               </a>
             </td>
             <td
@@ -480,7 +480,7 @@ Array [
               <a
                 href="/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map"
               >
-                Visualize Data with a Heat Map
+                certification.project.title.Visualize Data with a Heat Map
               </a>
             </td>
             <td
@@ -496,7 +496,7 @@ Array [
               <a
                 href="/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map"
               >
-                Visualize Data with a Choropleth Map
+                certification.project.title.Visualize Data with a Choropleth Map
               </a>
             </td>
             <td
@@ -512,7 +512,7 @@ Array [
               <a
                 href="/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram"
               >
-                Visualize Data with a Treemap Diagram
+                certification.project.title.Visualize Data with a Treemap Diagram
               </a>
             </td>
             <td
@@ -557,7 +557,7 @@ Array [
         className="text-center"
         id="cert-relational-database-v8"
       >
-        Relational Database
+        certification.title.Relational Database
       </h3>
       <table
         className="table"
@@ -582,7 +582,7 @@ Array [
               <a
                 href="/learn/relational-database/build-a-celestial-bodies-database-project/build-a-celestial-bodies-database"
               >
-                Celestial Bodies Database
+                certification.project.title.Celestial Bodies Database
               </a>
             </td>
             <td
@@ -598,7 +598,7 @@ Array [
               <a
                 href="/learn/relational-database/build-a-world-cup-database-project/build-a-world-cup-database"
               >
-                World Cup Database
+                certification.project.title.World Cup Database
               </a>
             </td>
             <td
@@ -614,7 +614,7 @@ Array [
               <a
                 href="/learn/relational-database/build-a-salon-appointment-scheduler-project/build-a-salon-appointment-scheduler"
               >
-                Salon Appointment Scheduler
+                certification.project.title.Salon Appointment Scheduler
               </a>
             </td>
             <td
@@ -630,7 +630,7 @@ Array [
               <a
                 href="/learn/relational-database/build-a-periodic-table-database-project/build-a-periodic-table-database"
               >
-                Periodic Table Database
+                certification.project.title.Periodic Table Database
               </a>
             </td>
             <td
@@ -646,7 +646,7 @@ Array [
               <a
                 href="/learn/relational-database/build-a-number-guessing-game-project/build-a-number-guessing-game"
               >
-                Number Guessing Game
+                certification.project.title.Number Guessing Game
               </a>
             </td>
             <td
@@ -691,7 +691,7 @@ Array [
         className="text-center"
         id="cert-back-end-development-and-apis"
       >
-        Back End Development and APIs
+        certification.title.Back End Development and APIs
       </h3>
       <table
         className="table"
@@ -716,7 +716,7 @@ Array [
               <a
                 href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice"
               >
-                Timestamp Microservice
+                certification.project.title.Timestamp Microservice
               </a>
             </td>
             <td
@@ -732,7 +732,7 @@ Array [
               <a
                 href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice"
               >
-                Request Header Parser Microservice
+                certification.project.title.Request Header Parser Microservice
               </a>
             </td>
             <td
@@ -748,7 +748,7 @@ Array [
               <a
                 href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/url-shortener-microservice"
               >
-                URL Shortener Microservice
+                certification.project.title.URL Shortener Microservice
               </a>
             </td>
             <td
@@ -764,7 +764,7 @@ Array [
               <a
                 href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker"
               >
-                Exercise Tracker
+                certification.project.title.Exercise Tracker
               </a>
             </td>
             <td
@@ -780,7 +780,7 @@ Array [
               <a
                 href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice"
               >
-                File Metadata Microservice
+                certification.project.title.File Metadata Microservice
               </a>
             </td>
             <td
@@ -825,7 +825,7 @@ Array [
         className="text-center"
         id="cert-quality-assurance-v7"
       >
-        Quality Assurance
+        certification.title.Quality Assurance
       </h3>
       <table
         className="table"
@@ -850,7 +850,7 @@ Array [
               <a
                 href="/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter"
               >
-                Metric-Imperial Converter
+                certification.project.title.Metric-Imperial Converter
               </a>
             </td>
             <td
@@ -866,7 +866,7 @@ Array [
               <a
                 href="/learn/quality-assurance/quality-assurance-projects/issue-tracker"
               >
-                Issue Tracker
+                certification.project.title.Issue Tracker
               </a>
             </td>
             <td
@@ -882,7 +882,7 @@ Array [
               <a
                 href="/learn/quality-assurance/quality-assurance-projects/personal-library"
               >
-                Personal Library
+                certification.project.title.Personal Library
               </a>
             </td>
             <td
@@ -898,7 +898,7 @@ Array [
               <a
                 href="/learn/quality-assurance/quality-assurance-projects/sudoku-solver"
               >
-                Sudoku Solver
+                certification.project.title.Sudoku Solver
               </a>
             </td>
             <td
@@ -914,7 +914,7 @@ Array [
               <a
                 href="/learn/quality-assurance/quality-assurance-projects/american-british-translator"
               >
-                American British Translator
+                certification.project.title.American British Translator
               </a>
             </td>
             <td
@@ -959,7 +959,7 @@ Array [
         className="text-center"
         id="cert-scientific-computing-with-python-v7"
       >
-        Scientific Computing with Python
+        certification.title.Scientific Computing with Python
       </h3>
       <table
         className="table"
@@ -984,7 +984,7 @@ Array [
               <a
                 href="/learn/scientific-computing-with-python/scientific-computing-with-python-projects/arithmetic-formatter"
               >
-                Arithmetic Formatter
+                certification.project.title.Arithmetic Formatter
               </a>
             </td>
             <td
@@ -1000,7 +1000,7 @@ Array [
               <a
                 href="/learn/scientific-computing-with-python/scientific-computing-with-python-projects/time-calculator"
               >
-                Time Calculator
+                certification.project.title.Time Calculator
               </a>
             </td>
             <td
@@ -1016,7 +1016,7 @@ Array [
               <a
                 href="/learn/scientific-computing-with-python/scientific-computing-with-python-projects/budget-app"
               >
-                Budget App
+                certification.project.title.Budget App
               </a>
             </td>
             <td
@@ -1032,7 +1032,7 @@ Array [
               <a
                 href="/learn/scientific-computing-with-python/scientific-computing-with-python-projects/polygon-area-calculator"
               >
-                Polygon Area Calculator
+                certification.project.title.Polygon Area Calculator
               </a>
             </td>
             <td
@@ -1048,7 +1048,7 @@ Array [
               <a
                 href="/learn/scientific-computing-with-python/scientific-computing-with-python-projects/probability-calculator"
               >
-                Probability Calculator
+                certification.project.title.Probability Calculator
               </a>
             </td>
             <td
@@ -1093,7 +1093,7 @@ Array [
         className="text-center"
         id="cert-data-analysis-with-python-v7"
       >
-        Data Analysis with Python
+        certification.title.Data Analysis with Python
       </h3>
       <table
         className="table"
@@ -1118,7 +1118,7 @@ Array [
               <a
                 href="/learn/data-analysis-with-python/data-analysis-with-python-projects/mean-variance-standard-deviation-calculator"
               >
-                Mean-Variance-Standard Deviation Calculator
+                certification.project.title.Mean-Variance-Standard Deviation Calculator
               </a>
             </td>
             <td
@@ -1134,7 +1134,7 @@ Array [
               <a
                 href="/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer"
               >
-                Demographic Data Analyzer
+                certification.project.title.Demographic Data Analyzer
               </a>
             </td>
             <td
@@ -1150,7 +1150,7 @@ Array [
               <a
                 href="/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer"
               >
-                Medical Data Visualizer
+                certification.project.title.Medical Data Visualizer
               </a>
             </td>
             <td
@@ -1166,7 +1166,7 @@ Array [
               <a
                 href="/learn/data-analysis-with-python/data-analysis-with-python-projects/page-view-time-series-visualizer"
               >
-                Page View Time Series Visualizer
+                certification.project.title.Page View Time Series Visualizer
               </a>
             </td>
             <td
@@ -1182,7 +1182,7 @@ Array [
               <a
                 href="/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor"
               >
-                Sea Level Predictor
+                certification.project.title.Sea Level Predictor
               </a>
             </td>
             <td
@@ -1227,7 +1227,7 @@ Array [
         className="text-center"
         id="cert-information-security-v7"
       >
-        Information Security
+        certification.title.Information Security
       </h3>
       <table
         className="table"
@@ -1252,7 +1252,7 @@ Array [
               <a
                 href="/learn/information-security/information-security-projects/stock-price-checker"
               >
-                Stock Price Checker
+                certification.project.title.Stock Price Checker
               </a>
             </td>
             <td
@@ -1268,7 +1268,7 @@ Array [
               <a
                 href="/learn/information-security/information-security-projects/anonymous-message-board"
               >
-                Anonymous Message Board
+                certification.project.title.Anonymous Message Board
               </a>
             </td>
             <td
@@ -1284,7 +1284,7 @@ Array [
               <a
                 href="/learn/information-security/information-security-projects/port-scanner"
               >
-                Port Scanner
+                certification.project.title.Port Scanner
               </a>
             </td>
             <td
@@ -1300,7 +1300,7 @@ Array [
               <a
                 href="/learn/information-security/information-security-projects/sha-1-password-cracker"
               >
-                SHA-1 Password Cracker
+                certification.project.title.SHA-1 Password Cracker
               </a>
             </td>
             <td
@@ -1316,7 +1316,7 @@ Array [
               <a
                 href="/learn/information-security/information-security-projects/secure-real-time-multiplayer-game"
               >
-                Secure Real Time Multiplayer Game
+                certification.project.title.Secure Real Time Multiplayer Game
               </a>
             </td>
             <td
@@ -1361,7 +1361,7 @@ Array [
         className="text-center"
         id="cert-machine-learning-with-python-v7"
       >
-        Machine Learning with Python
+        certification.title.Machine Learning with Python
       </h3>
       <table
         className="table"
@@ -1386,7 +1386,7 @@ Array [
               <a
                 href="/learn/machine-learning-with-python/machine-learning-with-python-projects/rock-paper-scissors"
               >
-                Rock Paper Scissors
+                certification.project.title.Rock Paper Scissors
               </a>
             </td>
             <td
@@ -1402,7 +1402,7 @@ Array [
               <a
                 href="/learn/machine-learning-with-python/machine-learning-with-python-projects/cat-and-dog-image-classifier"
               >
-                Cat and Dog Image Classifier
+                certification.project.title.Cat and Dog Image Classifier
               </a>
             </td>
             <td
@@ -1418,7 +1418,7 @@ Array [
               <a
                 href="/learn/machine-learning-with-python/machine-learning-with-python-projects/book-recommendation-engine-using-knn"
               >
-                Book Recommendation Engine using KNN
+                certification.project.title.Book Recommendation Engine using KNN
               </a>
             </td>
             <td
@@ -1434,7 +1434,7 @@ Array [
               <a
                 href="/learn/machine-learning-with-python/machine-learning-with-python-projects/linear-regression-health-costs-calculator"
               >
-                Linear Regression Health Costs Calculator
+                certification.project.title.Linear Regression Health Costs Calculator
               </a>
             </td>
             <td
@@ -1450,7 +1450,7 @@ Array [
               <a
                 href="/learn/machine-learning-with-python/machine-learning-with-python-projects/neural-network-sms-text-classifier"
               >
-                Neural Network SMS Text Classifier
+                certification.project.title.Neural Network SMS Text Classifier
               </a>
             </td>
             <td
@@ -1500,7 +1500,7 @@ Array [
         className="text-center"
         id="cert-legacy-front-end"
       >
-        Legacy Front End
+        certification.title.Legacy Front End
       </h3>
       <table
         className="table"
@@ -1525,7 +1525,7 @@ Array [
               <a
                 href="/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage"
               >
-                Build a Personal Portfolio Webpage
+                certification.project.title.Build a Personal Portfolio Webpage
               </a>
             </td>
             <td
@@ -1541,7 +1541,7 @@ Array [
               <a
                 href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine"
               >
-                Build a Random Quote Machine
+                certification.project.title.Build a Random Quote Machine
               </a>
             </td>
             <td
@@ -1557,7 +1557,7 @@ Array [
               <a
                 href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock"
               >
-                Build a 25 + 5 Clock
+                certification.project.title.Build a 25 + 5 Clock
               </a>
             </td>
             <td
@@ -1573,7 +1573,7 @@ Array [
               <a
                 href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator"
               >
-                Build a JavaScript Calculator
+                certification.project.title.Build a JavaScript Calculator
               </a>
             </td>
             <td
@@ -1589,7 +1589,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/show-the-local-weather"
               >
-                Show the Local Weather
+                certification.project.title.Show the Local Weather
               </a>
             </td>
             <td
@@ -1605,7 +1605,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/use-the-twitch-json-api"
               >
-                Use the TwitchTV JSON API
+                certification.project.title.Use the TwitchTV JSON API
               </a>
             </td>
             <td
@@ -1621,7 +1621,7 @@ Array [
               <a
                 href="/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page"
               >
-                Build a Tribute Page
+                certification.project.title.Build a Tribute Page
               </a>
             </td>
             <td
@@ -1637,7 +1637,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/build-a-wikipedia-viewer"
               >
-                Build a Wikipedia Viewer
+                certification.project.title.Build a Wikipedia Viewer
               </a>
             </td>
             <td
@@ -1653,7 +1653,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/build-a-tic-tac-toe-game"
               >
-                Build a Tic Tac Toe Game
+                certification.project.title.Build a Tic Tac Toe Game
               </a>
             </td>
             <td
@@ -1669,7 +1669,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/build-a-simon-game"
               >
-                Build a Simon Game
+                certification.project.title.Build a Simon Game
               </a>
             </td>
             <td
@@ -1714,7 +1714,7 @@ Array [
         className="text-center"
         id="cert-legacy-back-end"
       >
-        Legacy Back End
+        certification.title.Legacy Back End
       </h3>
       <table
         className="table"
@@ -1739,7 +1739,7 @@ Array [
               <a
                 href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice"
               >
-                Timestamp Microservice
+                certification.project.title.Timestamp Microservice
               </a>
             </td>
             <td
@@ -1755,7 +1755,7 @@ Array [
               <a
                 href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice"
               >
-                Request Header Parser Microservice
+                certification.project.title.Request Header Parser Microservice
               </a>
             </td>
             <td
@@ -1771,7 +1771,7 @@ Array [
               <a
                 href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/url-shortener-microservice"
               >
-                URL Shortener Microservice
+                certification.project.title.URL Shortener Microservice
               </a>
             </td>
             <td
@@ -1787,7 +1787,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/build-an-image-search-abstraction-layer"
               >
-                Image Search Abstraction Layer
+                certification.project.title.Image Search Abstraction Layer
               </a>
             </td>
             <td
@@ -1803,7 +1803,7 @@ Array [
               <a
                 href="/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice"
               >
-                File Metadata Microservice
+                certification.project.title.File Metadata Microservice
               </a>
             </td>
             <td
@@ -1819,7 +1819,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/build-a-voting-app"
               >
-                Build a Voting App
+                certification.project.title.Build a Voting App
               </a>
             </td>
             <td
@@ -1835,7 +1835,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/build-a-nightlife-coordination-app"
               >
-                Build a Nightlife Coordination App
+                certification.project.title.Build a Nightlife Coordination App
               </a>
             </td>
             <td
@@ -1851,7 +1851,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/chart-the-stock-market"
               >
-                Chart the Stock Market
+                certification.project.title.Chart the Stock Market
               </a>
             </td>
             <td
@@ -1867,7 +1867,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/manage-a-book-trading-club"
               >
-                Manage a Book Trading Club
+                certification.project.title.Manage a Book Trading Club
               </a>
             </td>
             <td
@@ -1883,7 +1883,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/build-a-pinterest-clone"
               >
-                Build a Pinterest Clone
+                certification.project.title.Build a Pinterest Clone
               </a>
             </td>
             <td
@@ -1928,7 +1928,7 @@ Array [
         className="text-center"
         id="cert-legacy-data-visualization"
       >
-        Legacy Data Visualization
+        certification.title.Legacy Data Visualization
       </h3>
       <table
         className="table"
@@ -1953,7 +1953,7 @@ Array [
               <a
                 href="/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer"
               >
-                Build a Markdown Previewer
+                certification.project.title.Build a Markdown Previewer
               </a>
             </td>
             <td
@@ -1969,7 +1969,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/build-a-freecodecamp-forum-homepage"
               >
-                Build a freeCodeCamp Forum Homepage
+                certification.project.title.Build a freeCodeCamp Forum Homepage
               </a>
             </td>
             <td
@@ -1985,7 +1985,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/build-a-recipe-box"
               >
-                Build a Recipe Box
+                certification.project.title.Build a Recipe Box
               </a>
             </td>
             <td
@@ -2001,7 +2001,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/build-the-game-of-life"
               >
-                Build the Game of Life
+                certification.project.title.Build the Game of Life
               </a>
             </td>
             <td
@@ -2017,7 +2017,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/build-a-roguelike-dungeon-crawler-game"
               >
-                Build a Roguelike Dungeon Crawler Game
+                certification.project.title.Build a Roguelike Dungeon Crawler Game
               </a>
             </td>
             <td
@@ -2033,7 +2033,7 @@ Array [
               <a
                 href="/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart"
               >
-                Visualize Data with a Bar Chart
+                certification.project.title.Visualize Data with a Bar Chart
               </a>
             </td>
             <td
@@ -2049,7 +2049,7 @@ Array [
               <a
                 href="/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph"
               >
-                Visualize Data with a Scatterplot Graph
+                certification.project.title.Visualize Data with a Scatterplot Graph
               </a>
             </td>
             <td
@@ -2065,7 +2065,7 @@ Array [
               <a
                 href="/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map"
               >
-                Visualize Data with a Heat Map
+                certification.project.title.Visualize Data with a Heat Map
               </a>
             </td>
             <td
@@ -2081,7 +2081,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/show-national-contiguity-with-a-force-directed-graph"
               >
-                Show National Contiguity with a Force Directed Graph
+                certification.project.title.Show National Contiguity with a Force Directed Graph
               </a>
             </td>
             <td
@@ -2097,7 +2097,7 @@ Array [
               <a
                 href="/learn/coding-interview-prep/take-home-projects/map-data-across-the-globe"
               >
-                Map Data Across the Globe
+                certification.project.title.Map Data Across the Globe
               </a>
             </td>
             <td
@@ -2142,7 +2142,7 @@ Array [
         className="text-center"
         id="cert-information-security-and-quality-assurance"
       >
-        Legacy Information Security and Quality Assurance
+        certification.title.Legacy Information Security and Quality Assurance
       </h3>
       <table
         className="table"
@@ -2167,7 +2167,7 @@ Array [
               <a
                 href="/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter"
               >
-                Metric-Imperial Converter
+                certification.project.title.Metric-Imperial Converter
               </a>
             </td>
             <td
@@ -2183,7 +2183,7 @@ Array [
               <a
                 href="/learn/quality-assurance/quality-assurance-projects/issue-tracker"
               >
-                Issue Tracker
+                certification.project.title.Issue Tracker
               </a>
             </td>
             <td
@@ -2199,7 +2199,7 @@ Array [
               <a
                 href="/learn/quality-assurance/quality-assurance-projects/personal-library"
               >
-                Personal Library
+                certification.project.title.Personal Library
               </a>
             </td>
             <td
@@ -2215,7 +2215,7 @@ Array [
               <a
                 href="/learn/information-security/information-security-projects/stock-price-checker"
               >
-                Stock Price Checker
+                certification.project.title.Stock Price Checker
               </a>
             </td>
             <td
@@ -2231,7 +2231,7 @@ Array [
               <a
                 href="/learn/information-security/information-security-projects/anonymous-message-board"
               >
-                Anonymous Message Board
+                certification.project.title.Anonymous Message Board
               </a>
             </td>
             <td
