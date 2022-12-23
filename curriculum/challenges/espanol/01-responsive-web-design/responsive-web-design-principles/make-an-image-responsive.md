@@ -1,6 +1,6 @@
 ---
 id: 587d78b1367417b2b2512b09
-title: Haz una imagen responsiva
+title: Haz una imagen adaptable
 challengeType: 0
 forumTopicId: 301140
 dashedName: make-an-image-responsive
@@ -8,7 +8,7 @@ dashedName: make-an-image-responsive
 
 # --description--
 
-Hacer imágenes responsivas con CSS es realmente simple. Sólo tienes que agregar estas propiedades a una imagen:
+Hacer imágenes adaptables con CSS es realmente simple. Sólo tienes que agregar estas propiedades a una imagen:
 
 ```css
 img {
@@ -21,7 +21,7 @@ El ancho máximo `max-width` de `100%` se asegurará de que la imagen nunca es m
 
 # --instructions--
 
-Agrega las reglas de estilo a la clase `responsive-img` para hacerla responsiva. Nunca debería ser más ancha que su contenedor (en este caso, es la ventana de vista previa) y debería mantener su relación de aspecto original. Después de haber agregado tu código, redimensiona la vista previa para ver cómo se comportan tus imágenes.
+Agrega las reglas de estilo a la clase `responsive-img` para hacerla adaptable. Nunca debería ser más ancha que su contenedor (en este caso, es la ventana de vista previa) y debería mantener su relación de aspecto original. Después de haber agregado tu código, redimensiona la vista previa para ver cómo se comportan tus imágenes.
 
 # --hints--
 

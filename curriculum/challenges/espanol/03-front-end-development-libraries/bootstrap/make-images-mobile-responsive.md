@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08812
-title: Haz que las imágenes se adapten a dispositivos móviles
+title: Haz imágenes adaptables a dispositivos móviles
 challengeType: 0
 forumTopicId: 18232
 dashedName: make-images-mobile-responsive

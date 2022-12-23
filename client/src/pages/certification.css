@@ -81,7 +81,7 @@
   display: flex;
   align-items: center;
   height: 140px;
-  margin-left: 100px;
+  margin-inline-start: 100px;
 }
 
 .certification-namespace .logo svg {
@@ -94,7 +94,7 @@
   line-height: 140px;
   font-size: 20px;
   text-align: right;
-  margin-right: 100px;
+  margin-inline-end: 100px;
   color: var(--gray-00);
 }
 
@@ -191,7 +191,7 @@
   }
 
   .certification-namespace .logo {
-    margin-left: 0;
+    margin-inline-start: 0;
     padding: 20px;
     justify-content: center;
     height: 80px;
@@ -203,7 +203,7 @@
 
   .certification-namespace .issue-date {
     margin-top: 10px;
-    margin-right: 0;
+    margin-inline-end: 0;
     text-align: center;
     line-height: 0px;
     word-wrap: break-word;

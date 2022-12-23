@@ -14,22 +14,23 @@ import {
   postChargeStripe,
   postChargeStripeCard
 } from '../utils/ajax';
+import { stringifyDonationEvents } from '../utils/analyticsStrings';
+import { PaymentProvider } from '../../../config/donation-settings';
 import { actionTypes as appTypes } from './action-types';
 import {
-  addDonationComplete,
-  addDonationError,
   openDonationModal,
-  postChargeStripeCardComplete,
-  postChargeStripeCardError,
-  postChargeStripeComplete,
-  postChargeStripeError,
+  postChargeComplete,
+  postChargeProcessing,
+  postChargeError,
   preventBlockDonationRequests,
-  preventProgressDonationRequests
+  preventProgressDonationRequests,
+  executeGA
 } from './actions';
 import {
   isDonatingSelector,
   recentlyClaimedBlockSelector,
-  shouldRequestDonationSelector
+  shouldRequestDonationSelector,
+  isSignedInSelector
 } from './selectors';
 
 const defaultDonationErrorMessage = i18next.t('donate.error-2');
@@ -49,33 +50,77 @@ function* showDonateModalSaga() {
   }
 }
 
-function* addDonationSaga({ payload }) {
-  try {
-    yield call(addDonation, payload);
-    yield put(addDonationComplete());
-    yield call(setDonationCookie);
-  } catch (error) {
-    const data =
-      error.response && error.response.data
-        ? error.response.data
-        : {
-            message: defaultDonationErrorMessage
-          };
-    yield put(addDonationError(data.message));
+export function* postChargeSaga({
+  payload,
+  payload: {
+    paymentProvider,
+    paymentContext,
+    amount,
+    duration,
+    handleAuthentication,
+    paymentMethodId
   }
-}
-
-function* postChargeStripeSaga({ payload }) {
+}) {
   try {
-    yield call(postChargeStripe, payload);
-    yield put(postChargeStripeComplete());
-    yield call(setDonationCookie);
+    if (paymentProvider !== PaymentProvider.Patreon) {
+      yield put(postChargeProcessing());
+    }
+
+    if (paymentProvider === PaymentProvider.Stripe) {
+      yield call(postChargeStripe, payload);
+    } else if (paymentProvider === PaymentProvider.StripeCard) {
+      const optimizedPayload = { paymentMethodId, amount, duration };
+      const response = yield call(postChargeStripeCard, optimizedPayload);
+      const error = response?.data?.error;
+      if (error) {
+        yield stripeCardErrorHandler(
+          error,
+          handleAuthentication,
+          error.client_secret,
+          response.paymentMethodId,
+          optimizedPayload
+        );
+
+        //if the authentication does not throw an error, add a donation
+        yield call(addDonation, { amount, duration });
+      }
+    } else if (paymentProvider === PaymentProvider.Paypal) {
+      // If the user is signed in and the payment goes through call api
+      let isSignedIn = yield select(isSignedInSelector);
+      // look into skip add donation
+      // what to do with "data" that comes throug
+      if (isSignedIn) yield call(addDonation, { amount, duration });
+    }
+    if (
+      [
+        PaymentProvider.Paypal,
+        PaymentProvider.Stripe,
+        PaymentProvider.StripeCard
+      ].includes(paymentProvider)
+    ) {
+      yield put(postChargeComplete());
+      yield call(setDonationCookie);
+    }
+    yield put(
+      executeGA({
+        type: 'event',
+        data: {
+          category:
+            paymentProvider === PaymentProvider.Patreon
+              ? 'Donation Related'
+              : 'Donation',
+          action: stringifyDonationEvents(paymentContext, paymentProvider),
+          label: duration,
+          value: amount
+        }
+      })
+    );
   } catch (error) {
     const err =
       error.response && error.response.data
         ? error.response.data.error
         : defaultDonationErrorMessage;
-    yield put(postChargeStripeError(err));
+    yield put(postChargeError(err));
   }
 }
 
@@ -99,40 +144,16 @@ function* stripeCardErrorHandler(
   }
 }
 
-function* postChargeStripeCardSaga({
-  payload: { paymentMethodId, amount, duration, handleAuthentication }
-}) {
-  try {
-    const optimizedPayload = { paymentMethodId, amount, duration };
-    const {
-      data: { error }
-    } = yield call(postChargeStripeCard, optimizedPayload);
-    if (error) {
-      yield stripeCardErrorHandler(
-        error,
-        handleAuthentication,
-        error.client_secret,
-        paymentMethodId,
-        optimizedPayload
-      );
-    }
-    yield call(addDonation, optimizedPayload);
-    yield put(postChargeStripeCardComplete());
-    yield call(setDonationCookie);
-  } catch (error) {
-    const errorMessage = error.message || defaultDonationErrorMessage;
-    yield put(postChargeStripeCardError(errorMessage));
-  }
-}
-
-function* setDonationCookie() {
-  const isDonating = yield select(isDonatingSelector);
-  const isDonorCookieSet = document.cookie
-    .split(';')
-    .some(item => item.trim().startsWith('isDonor=true'));
-  if (isDonating) {
-    if (!isDonorCookieSet) {
-      document.cookie = 'isDonor=true';
+export function* setDonationCookie() {
+  if (document?.cookie) {
+    const isDonating = yield select(isDonatingSelector);
+    const isDonorCookieSet = document.cookie
+      .split(';')
+      .some(item => item.trim().startsWith('isDonor=true'));
+    if (isDonating) {
+      if (!isDonorCookieSet) {
+        document.cookie = 'isDonor=true';
+      }
     }
   }
 }
@@ -140,9 +161,7 @@ function* setDonationCookie() {
 export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
-    takeEvery(types.addDonation, addDonationSaga),
-    takeLeading(types.postChargeStripe, postChargeStripeSaga),
-    takeLeading(types.postChargeStripeCard, postChargeStripeCardSaga),
+    takeLeading(types.postCharge, postChargeSaga),
     takeEvery(types.fetchUserComplete, setDonationCookie)
   ];
 }

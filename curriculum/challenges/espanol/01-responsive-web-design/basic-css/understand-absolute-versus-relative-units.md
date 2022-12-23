@@ -15,7 +15,7 @@ Los dos tipos principales de unidades de longitud son las unidades absolutas y r
 
 Las unidades relativas, como `em` o `rem` son relativas a otro valor de longitud. Por ejemplo, `em` se basa en el tamaño de fuente de un elemento. Si la utilizas para establecer la propiedad `font-size`, es relativa al `font-size` del elemento padre.
 
-**Nota:** Hay varias opciones de unidades relativas que están vinculadas al tamaño del viewport. Veremos estas unidades relativas de medida en la sección de principios de diseño web responsivo.
+**Nota:** Hay varias opciones de unidades relativas que están vinculadas al tamaño del viewport. Veremos estas unidades relativas de medida en la sección de principios de diseño web adaptativo.
 
 # --instructions--
 

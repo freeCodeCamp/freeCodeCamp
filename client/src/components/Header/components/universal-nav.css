@@ -21,7 +21,7 @@
 .universal-nav-left {
   display: flex;
   flex: 1 0 33%;
-  margin-left: 0;
+  margin-inline-start: 0;
   z-index: 2000;
 }
 
@@ -314,14 +314,14 @@ button.nav-link[aria-disabled='true'] {
 
 .nav-skeleton {
   height: var(--header-height);
-  margin-right: 15px;
+  margin-inline-end: 15px;
   width: 350px;
 }
 
 .nav-list .fcc-loader {
   padding: 0 40px;
-  margin-left: 35px;
-  margin-right: 25px;
+  margin-inline-start: 35px;
+  margin-inline-end: 25px;
 }
 
 .toggle-button-nav {
@@ -436,7 +436,7 @@ button.nav-link[aria-disabled='true'] {
 .signup-btn {
   max-height: calc(var(--header-height) - 6px);
   padding: 4px 12px;
-  margin-left: 2px;
+  margin-inline-start: 2px;
   font-family: 'Hack-ZeroSlash', monospace;
   display: flex;
   align-items: center;

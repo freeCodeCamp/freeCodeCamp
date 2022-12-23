@@ -11,7 +11,7 @@
 }
 
 .toggle-setting-container .btn-group {
-  padding-left: 5px;
+  padding-inline: 5px;
 }
 
 .toggle-setting-container > .form-group > * {
