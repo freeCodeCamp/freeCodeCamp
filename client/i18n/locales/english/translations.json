@@ -478,10 +478,11 @@
     "hint": "Hint",
     "heart": "Heart",
     "initial": "Initial",
+    "inputReset": "Clear search terms",
     "info": "Intro Information",
     "spacer": "Spacer",
     "toggle": "Toggle Checkmark",
-    "magnifier": "magnifier"
+    "magnifier": "Submit search terms"
   },
   "aria": {
     "fcc-curriculum": "freeCodeCamp Curriculum",

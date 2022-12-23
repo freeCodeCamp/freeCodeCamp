@@ -477,6 +477,10 @@ button.nav-link[aria-disabled='true'] {
   width: calc(100vw - 17rem);
 }
 
+.universal-nav-right .ais-SearchBox-reset {
+  right: 291px;
+}
+
 .universal-nav-right .fcc_searchBar .ais-Hits {
   width: calc(100vw - 17rem);
 }
@@ -485,7 +489,8 @@ button.nav-link[aria-disabled='true'] {
   outline: 3px solid var(--blue-mid);
 }
 
-.ais-SearchBox-submit:focus {
+.ais-SearchBox-submit:focus,
+.ais-SearchBox-reset:focus {
   outline: 3px solid var(--blue-mid);
 }
 
@@ -558,6 +563,10 @@ button.nav-link[aria-disabled='true'] {
 
   .universal-nav-right .ais-SearchBox-input {
     width: calc(100vw - 30px);
+  }
+
+  .universal-nav-right .ais-SearchBox-reset {
+    right: 15px;
   }
 
   .universal-nav-right .fcc_searchBar .ais-Hits {
