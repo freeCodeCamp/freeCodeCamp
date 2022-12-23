@@ -178,7 +178,7 @@ Array [
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker"
+                href="/learn/2022/javascript-algorithms-and-data-structures/palindrome-checker-project/palindrome-checker"
               >
                 Palindrome Checker
               </a>
@@ -194,7 +194,7 @@ Array [
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter"
+                href="/learn/2022/javascript-algorithms-and-data-structures/roman-numeral-converter-project/roman-numeral-converter"
               >
                 Roman Numeral Converter
               </a>
@@ -210,7 +210,7 @@ Array [
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher"
+                href="/learn/2022/javascript-algorithms-and-data-structures/caesars-cipher-project/caesars-cipher"
               >
                 Caesars Cipher
               </a>
@@ -226,7 +226,7 @@ Array [
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator"
+                href="/learn/2022/javascript-algorithms-and-data-structures/telephone-number-validator-project/telephone-number-validator"
               >
                 Telephone Number Validator
               </a>
@@ -242,7 +242,7 @@ Array [
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register"
+                href="/learn/2022/javascript-algorithms-and-data-structures/cash-register-project/cash-register"
               >
                 Cash Register
               </a>
