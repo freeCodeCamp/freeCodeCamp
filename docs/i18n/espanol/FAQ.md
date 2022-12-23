@@ -71,21 +71,21 @@ Por lo general, no asignamos los temas a nadie más que a los colaboradores con 
 
 ### Estoy interesado en ser moderador en freeCodeCamp. ¿Dónde debería empezar?
 
-Los moderadores de la comunidad son nuestros héroes. Sus contribuciones voluntarias hacen a freeCodeCamp una comunidad segura y acogedora.
+Los moderadores de la comunidad son nuestros héroes. Their voluntary contributions make freeCodeCamp a safe and welcoming community.
 
-En primer lugar, necesitamos que seas un participante activo en la  comunidad, y vivas nuestro [código de conducta](https://www.freecodecamp.org/news/code-of-conduct/) (No solo hacerlo cumplir).
+First and foremost, we would need you to be an active participant in the community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/) (not just enforce it).
 
 Aquí hay algunas rutas para algunas de nuestras plataformas:
 
-- Para ser un moderador de **Discord/Chat**, hay que tener una presencia activa en nuestro chat y tener tratos positivos con los demás, mientras que también aprender y practicar cómo para hacer frente a los posibles conflictos que puedan surgir.
-- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Echa un vistazo a [El manual del líder del subforo](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) para más información.
-- Para ser un moderador de **GitHub**, ayuda para procesar problemas de GitHub que son planteados para ver si son válidos e (idealmente) tratar de proponer soluciones para estos problemas que deben ser recogidos por otros (o por ti mismo).
+- To be a **Discord/Chat** moderator, have an active presence in our chat and have positive engagements with others, while also learning and practicing how to deal with potential conflicts that may arise.
+- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
+- To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
 
-En total, sé respetuoso con los demás. We are humans from all around the world. Con esto en mente, por favor considera usar un lenguaje animado o de apoyo y ser consciente de la comunicación intercultural.
+En total, sé respetuoso con los demás. We are humans from all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
 
-Si practicas lo anterior de forma consistente **durante un tiempo** y nuestros compañeros moderadores los recomiendan, un miembro del personal se pondrá en contacto contigo con el equipo de moderadores. El trabajo de código abierto es voluntario, y nuestro tiempo es limitado. Reconocemos que esto probablemente también sea cierto en su caso. Así que enfatizamos ser **consistente** en lugar de comprometerse en la comunidad 24/7.
+If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. El trabajo de código abierto es voluntario, y nuestro tiempo es limitado. Reconocemos que esto probablemente también sea cierto en su caso. So we emphasize being **consistent** rather than engaging in the community 24/7.
 
-Echa un vistazo a nuestro [Manual de Moderadores](moderator-handbook.md) para una lista más exhaustiva de otras responsabilidades y expectativas que tenemos de nuestros moderadores.
+Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
 
 ### Estoy atascado en algo que no está incluido en esta documentación.
 
