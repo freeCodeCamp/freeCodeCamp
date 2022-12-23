@@ -178,7 +178,7 @@ Array [
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/palindrome-checker-project/palindrome-checker"
+                href="javascript"
               >
                 certification.project.title.Palindrome Checker
               </a>
@@ -194,7 +194,7 @@ Array [
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/roman-numeral-converter-project/roman-numeral-converter"
+                href="javascript"
               >
                 certification.project.title.Roman Numeral Converter
               </a>
@@ -210,7 +210,7 @@ Array [
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/caesars-cipher-project/caesars-cipher"
+                href="javascript"
               >
                 certification.project.title.Caesars Cipher
               </a>
@@ -226,7 +226,7 @@ Array [
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/telephone-number-validator-project/telephone-number-validator"
+                href="javascript"
               >
                 certification.project.title.Telephone Number Validator
               </a>
@@ -242,7 +242,7 @@ Array [
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/cash-register-project/cash-register"
+                href="javascript"
               >
                 certification.project.title.Cash Register
               </a>
