@@ -12,6 +12,20 @@ certificationSettings.props = { t: t => t };
 
 const { renderCertifications } = certificationSettings;
 
+beforeAll(() => {
+  for (
+    let i = 0;
+    i < projectMap['JavaScript Algorithms and Data Structures'].length;
+    i++
+  ) {
+    projectMap['JavaScript Algorithms and Data Structures'][i].link =
+      projectMap['JavaScript Algorithms and Data Structures'][i].link.replace(
+        '/2022',
+        ''
+      );
+  }
+});
+
 it('should check legacy certification button consistency', () => {
   const legacyCertifications = Object.keys(legacyProjectMap);
 
