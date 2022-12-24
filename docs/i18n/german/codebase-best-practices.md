@@ -1,20 +1,40 @@
 # Best Practices für die Codebasis
 
-## JavaScript allgemein
+## Styling a component
 
-In den meisten Fällen warnt unser [Linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) vor jeder Formatierung, die gegen die bevorzugte Vorgehensweise dieser Codebasis verstößt.
+We recommend styling components using our [design style guide](https://design-style-guide.freecodecamp.org/).
 
-Es wird empfohlen, funktionale Komponenten gegenüber klassenbasierten Komponenten zu verwenden.
+The colors are defined in [`variable.css`](/client/src/components/layouts/variables.css), and the fonts are in [`fonts.css`](/client/src/components/layouts/fonts.css).
 
-## Spezifisches TypeScript
+We are strongly opinionated about adding new variables/tokens to the colors. After careful research, the colors have been chosen to respect the freeCodeCamp brand identity, developer experience, and accessibility.
 
-### Migration einer JavaScript-Datei zu TypeScript
+The `!important` keyword may be used to override values in some cases (for ex.: accessibility concerns). You should add a comment describing the issue, so it doesn't get removed in future refactoring.
+
+### RTL support
+
+We are striving to support right-to-left (RTL) layout in the codebase for languages that are read in this direction. For this you need be mindful of how to style components. Here are a quick role of thumbs to follow:
+
+- Don't use `float` properties: Although it may seem best to have the component in the "perfect position", you will be climbing mountains to reach that perfect positioning in responsive layout, and you will need to reach higher heights to have it supported in RTL.
+- - Use Flexbox and Grid layouts instead, as they have RTL support already built-in, and those will be easier to maintain and review.
+- Don't define the direction while using `margin` and `padding`: it may seem harmless to use `padding-right` and `margin-left`, but these directions aren't mirrored when the layout changes to RTL, and adding counter values for them in the RTL file makes maintaining the codebase harder.
+- - Use logical properties for them: You can add the same spacing by using `padding-inline-end` and `margin-inline-start`, and you won't need to worry about RTL layout, as they follow where the line start and ends, and you won't need to add any extra values in the RTL files, so people won't need to remember to change the same values in two files.
+- Don't use `!important` in `font-family`: RTL layout is using different font from the LTR layout, when you add `!important` in the `font-family` property it affects the RTL layout too, which causes a UI bug.
+
+## General JavaScript
+
+In most cases, our [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
+
+It is encouraged to use functional components over class-based components.
+
+## Specific TypeScript
+
+### Migrating a JavaScript File to TypeScript
 
 #### Beibehalten des Git-Dateiverlaufs
 
-Manchmal führt das Ändern der Datei von `<Dateiname>.js` zu `<Dateiname>.ts` (oder `.tsx`) dazu, dass die ursprüngliche Datei gelöscht und eine neue erstellt wird, und manchmal ändert sich nur der Dateiname - im Sinne von Git. Idealerweise möchten wir, dass der Dateiverlauf erhalten bleibt.
+Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
 
-Um dies zu erreichen, gehe am besten wie folgt vor:
+The best bet at achieving this is to:
 
 1. Umbenennen der Datei
 2. Commit mit dem Flag `--no-verify`, damit Husky sich nicht über die Lint-Fehler beschwert
@@ -22,13 +42,13 @@ Um dies zu erreichen, gehe am besten wie folgt vor:
 
 > [!NOTE] Editoren wie VSCode zeigen dir wahrscheinlich trotzdem an, dass die Datei gelöscht und eine neue erstellt wurde. Wenn du die CLI für `git add .` verwendest, zeigt VSCode die Datei als umbenannt im Stage an
 
-### Namenskonventionen
+### Naming Conventions
 
 #### Schnittstellen und Typen
 
-In den meisten Fällen wird empfohlen, Schnittstellendeklarationen gegenüber Typdeklarationen zu verwenden.
+For the most part, it is encouraged to use interface declarations over type declarations.
 
-React Component Props - Suffix mit `Props`
+React Component Props - suffix with `Props`
 
 ```typescript
 interface MyComponentProps {}
@@ -36,7 +56,7 @@ interface MyComponentProps {}
 const MyComponent = (props: MyComponentProps) => {};
 ```
 
-React Stateful Components - Suffix mit `State`
+React Stateful Components - suffix with `State`
 
 ```typescript
 interface MyComponentState {}
@@ -44,7 +64,7 @@ interface MyComponentState {}
 class MyComponent extends Component<MyComponentProps, MyComponentState> {}
 ```
 
-Standard - Objektname in PascalCase
+Default - object name in PascalCase
 
 ```typescript
 interface MyObject {}
@@ -58,7 +78,7 @@ const myObject: MyObject = {};
 
 ## Redux
 
-### Aktionsdefinitionen
+### Action Definitions
 
 ```typescript
 enum AppActionTypes = {
@@ -73,7 +93,7 @@ export const actionFunction = (
 });
 ```
 
-### Wie man Reducer verwendet
+### How to Reduce
 
 ```typescript
 // Base reducer action without payload
@@ -100,9 +120,9 @@ export const reducer = (
 };
 ```
 
-### Wie man Dispatch verwendet
+### How to Dispatch
 
-Importiere innerhalb einer Komponente die benötigten Aktionen und Selektoren.
+Within a component, import the actions and selectors needed.
 
 ```tsx
 // Add type definition
@@ -128,7 +148,7 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 <!-- ### Redux Types File -->
 <!-- The types associated with the Redux store state are located in `client/src/redux/types.ts`... -->
 
-## Weitere Literatur
+## Further Literature
 
-- [TypeScript Dokumentation](https://www.typescriptlang.org/docs/)
-- [TypeScript mit React CheatSheet](https://github.com/typescript-cheatsheets/react#readme)
+- [TypeScript Docs](https://www.typescriptlang.org/docs/)
+- [TypeScript with React CheatSheet](https://github.com/typescript-cheatsheets/react#readme)

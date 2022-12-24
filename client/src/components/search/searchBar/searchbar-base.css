@@ -24,7 +24,8 @@
 .ais-Menu-showMore,
 .ais-RangeInput-submit,
 .ais-RefinementList-showMore,
-.ais-SearchBox-submit {
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
   padding: 0;
   overflow: visible;
   font: inherit;
@@ -47,7 +48,8 @@
 .ais-Menu-showMore::-moz-focus-inner,
 .ais-RangeInput-submit::-moz-focus-inner,
 .ais-RefinementList-showMore::-moz-focus-inner,
-.ais-SearchBox-submit::-moz-focus-inner {
+.ais-SearchBox-submit::-moz-focus-inner,
+.ais-SearchBox-reset::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
@@ -60,7 +62,8 @@
 .ais-Menu-showMore[disabled],
 .ais-RangeInput-submit[disabled],
 .ais-RefinementList-showMore[disabled],
-.ais-SearchBox-submit[disabled] {
+.ais-SearchBox-submit[disabled],
+.ais-SearchBox-reset[disabled] {
   cursor: default;
 }
 .ais-Breadcrumb-list,
@@ -609,7 +612,9 @@ a[class^='ais-'] {
 .ais-SearchBox-input:-moz-placeholder {
   color: var(--gray-15);
 }
-.ais-SearchBox-submit {
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
+  position: absolute;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -617,8 +622,8 @@ a[class^='ais-'] {
   width: 20px;
   height: 20px;
 }
-.ais-SearchBox-submit {
-  position: absolute;
+.ais-SearchBox-reset {
+  right: 0;
 }
 .ais-SearchBox-resetIcon,
 .ais-SearchBox-loadingIcon {

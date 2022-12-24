@@ -77,9 +77,9 @@ Prima di tutto, avremmo bisogno che tu sia un partecipate attivo della nostra co
 
 Ecco alcuni percorsi consigliati per alcune delle nostre piattaforme:
 
-- Per essere un moderatore per **Discord/Chat**, abbi una presenza attiva nella nostra chat e interazioni positive con gli altri, e intanto impara a e pratica come gestire i potenziali conflitti che possono verificarsi.
+- Per essere un moderatore per **Discord/Chat**, abbi una presenza attiva nella nostra chat e interazioni positive con gli altri, e intanto impara come gestire i potenziali conflitti che possono verificarsi.
 - Per essere un moderatore del **Forum**, in maniera simile ai moderatori della chat, abbi una presenza attiva e interagisci con gli utenti, supportando gli altri nel loro percorso di crescita e dando feedback quando richiesto. Dai un occhiata al [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) per maggiori informazioni.
-- Per essere un moderatore su **GitHub**, aiuta a processare le issue su GitHub che sono create per vedere se sono valide e (idealmente) prova a proporre soluzioni per queste issue che possono essere applicate da altri (o da te stesso).
+- Per essere un moderatore su **GitHub**, aiuta a processare le issue create su GitHub per vedere se sono valide e (idealmente) prova a proporre soluzioni per queste issue che possono essere applicate da altri (o da te stesso).
 
 Nel complesso, rispetta gli altri. Siamo tutti umani. Con questo in mente, per favore considera anche l'uso di un linguaggio incoraggiante e supportivo e tieni a mente la comunicazione tra culture diverse.
 
