@@ -12,7 +12,7 @@ The `!important` keyword may be used to override values in some cases (for ex.: 
 
 ### RTL support
 
-We are striving to support right-to-left (RTL) layout in the codebase for languages that are read in this direction. For this you need be mindful of how to style components. Here are a quick role of thumbs to follow:
+We are striving to support right-to-left (RTL) layout in the codebase for languages that are read in this direction. For this you need be mindful of how to style components. Here are some quick rules of thumb to follow:
 
 - Don't use `float` properties: Although it may seem best to have the component in the "perfect position", you will be climbing mountains to reach that perfect positioning in responsive layout, and you will need to reach higher heights to have it supported in RTL. 
 - - Use Flexbox and Grid layouts instead, as they have RTL support already built-in, and those will be easier to maintain and review.
