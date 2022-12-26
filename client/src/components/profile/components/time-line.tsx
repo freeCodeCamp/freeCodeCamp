@@ -103,9 +103,12 @@ function TimelineInner({
   function renderViewButton(
     completedChallenge: CompletedChallenge
   ): React.ReactNode {
+    const { id } = completedChallenge;
+    const challengeTitle = idToNameMap.get(id)?.challengeTitle;
     return (
       <SolutionDisplayWidget
         completedChallenge={completedChallenge}
+        dataCy={challengeTitle}
         showUserCode={() => viewSolution(completedChallenge)}
         showProjectPreview={() => viewProject(completedChallenge)}
         displayContext={'timeline'}

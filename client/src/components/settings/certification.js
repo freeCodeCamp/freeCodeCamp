@@ -285,7 +285,8 @@ export class CertificationSettings extends Component {
               data-cy={`btn-for-${certSlug}`}
               onClick={createClickHandler(certSlug)}
             >
-              {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
+              {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}{' '}
+              <span className='sr-only'>{certName}</span>
             </Button>
           </td>
         </tr>

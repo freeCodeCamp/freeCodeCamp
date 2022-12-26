@@ -130,7 +130,8 @@ const CertChallenge = ({
         >
           {isCertified && userLoaded
             ? t('buttons.show-cert')
-            : t('buttons.go-to-settings')}
+            : t('buttons.go-to-settings')}{' '}
+          <span className='sr-only'>{title}</span>
         </Button>
       )}
     </div>
