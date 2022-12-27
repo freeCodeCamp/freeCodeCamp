@@ -59,9 +59,11 @@ describe('Landing page', () => {
 
   it('Has links to all the certifications', function () {
     cy.get(selectors.certifications).children().its('length').should('eq', 11);
-    cy.wrap(certifications).each(cert => {
-      cy.get(selectors.certifications).contains(cert.text());
-    });
+    cy.wrap(certifications)
+      .invoke('text')
+      .each(cert => {
+        cy.get(selectors.certifications).contains(cert.toString());
+      });
   });
 
   it('Has 3 testimonial cards', function () {
