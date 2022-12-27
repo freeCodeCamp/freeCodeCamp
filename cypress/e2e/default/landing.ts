@@ -60,7 +60,7 @@ describe('Landing page', () => {
   it('Has links to all the certifications', function () {
     cy.get(selectors.certifications).children().its('length').should('eq', 11);
     cy.wrap(certifications)
-      .invoke('text')
+      .invoke('toString')
       .each(cert => {
         cy.get(selectors.certifications).contains(cert.toString());
       });
