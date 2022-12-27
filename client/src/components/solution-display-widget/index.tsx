@@ -5,6 +5,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
+import './solution-display-widget.css';
 interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;
