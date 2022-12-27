@@ -8,6 +8,7 @@ curriculum/challenges/**/*
 config/**/*.json
 config/i18n.js
 config/certification-settings.js
+config/donation-settings.js
 config/superblock-order.js
 config/superblock-order.test.js
 utils/block-nameify.js
@@ -19,3 +20,4 @@ utils/index.js
 web/.next
 curriculum-server/data/curriculum.json
 docs/**/*.md
+client/src/components/Donation/types.js

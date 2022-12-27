@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08712
-title: Utiliza diseño responsivo con contenedores de fluido de Bootstrap
+title: Utiliza diseño adaptable con contenedores de fluido de Bootstrap
 challengeType: 0
 forumTopicId: 18362
 dashedName: use-responsive-design-with-bootstrap-fluid-containers
@@ -8,11 +8,11 @@ dashedName: use-responsive-design-with-bootstrap-fluid-containers
 
 # --description--
 
-En la seccion de HTML5 y CSS de freeCodeCamp construimos un 'Cat Photo App'. Ahora volvamos a él. Esta vez, vamos a estilizarlo utilizando el popular framework CSS responsivo de Bootstrap.
+En la seccion de HTML5 y CSS de freeCodeCamp construimos un 'Cat Photo App'. Ahora volvamos a él. Esta vez, vamos a estilizarlo utilizando el popular framework CSS adaptable de Bootstrap.
 
-Bootstrap averiguará cuan ancha es tu pantalla y responderá redimensionando tus elementos HTML - de ahí el nombre <dfn>diseño responsivo</dfn>.
+Bootstrap averiguará cuan ancha es tu pantalla y responderá redimensionando tus elementos HTML - de ahí el nombre <dfn>diseño adaptable</dfn>.
 
-Con diseño responsivo, no hay necesidad de diseñar una versión móvil de tu sitio web. Se verá bien en dispositivos con pantallas de cualquier ancho.
+Con diseño adaptable, no hay necesidad de diseñar una versión móvil de tu sitio web. Se verá bien en dispositivos con pantallas de cualquier ancho.
 
 Puedes añadir Bootstrap a cualquier aplicación agregando el siguiente código en la parte superior de tu HTML:
 

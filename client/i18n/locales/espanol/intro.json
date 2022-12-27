@@ -1,8 +1,8 @@
 {
   "responsive-web-design": {
-    "title": "Diseño Web Responsivo Legado",
+    "title": "Diseño Web Adaptativo Legado",
     "intro": [
-      "En esta Certificación de Diseño Web Responsivo, aprenderás los lenguajes que los desarrolladores utilizan para construir páginas web: HTML (lenguaje de marcado de hipertexto) para el contenido, y CSS (Hojas de estilo en cascada) para el diseño.",
+      "En esta Certificación de Diseño Web Adaptativo, aprenderás los lenguajes que los desarrolladores utilizan para construir páginas web: HTML (lenguaje de marcado de hipertexto) para el contenido, y CSS (Hojas de estilo en cascada) para el diseño.",
       "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderá técnicas modernas como variables CSS mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un formulario web.",
       "Finalmente, aprenderás cómo hacer páginas web que respondan a diferentes tamaños de pantalla construyendo una tarjeta de Twitter con Flexbox, y un diseño complejo de blog con CSS Grid."
     ],
@@ -37,9 +37,9 @@
         ]
       },
       "responsive-web-design-principles": {
-        "title": "Principios de diseño web responsivo",
+        "title": "Principios de diseño web adaptativo",
         "intro": [
-          "Hay muchos dispositivos que pueden acceder a la web, y vienen en todas las formas y tamaños. El diseño web responsivo es la práctica de diseñar sitios web flexibles que pueden responder a diferentes tamaños de pantalla, orientaciones y resoluciones.",
+          "Hay muchos dispositivos que pueden acceder a la web, y vienen en todas las formas y tamaños. El diseño web adaptativo es la práctica de diseñar sitios web flexibles que pueden responder a diferentes tamaños de pantalla, orientaciones y resoluciones.",
           "En este curso, aprenderás a usar CSS para que tus páginas web luzcan bien, sin importar en qué dispositivo se vean."
         ]
       },
@@ -61,15 +61,15 @@
         "title": "Proyectos de diseño web responsivo",
         "intro": [
           "Es hora de poner tus habilidades recién aprendidas a funcionar. Al trabajar en estos proyectos, tendrás la oportunidad de aplicar todas las habilidades, principios y conceptos que has aprendido hasta ahora: HTML, CSS, diseño visual, accesibilidad y más.",
-          "Completa los cinco proyectos de programación web de abajo para obtener tu certificación de diseño web responsivo."
+          "Completa los cinco proyectos de programación web de abajo para obtener tu certificación de diseño web adaptativo."
         ]
       }
     }
   },
   "2022/responsive-web-design": {
-    "title": "(Nuevo) Diseño Web Responsivo",
+    "title": "(Nuevo) Diseño Web Adaptativo",
     "intro": [
-      "En esta certificación de Diseño Web Responsivo, aprenderás los lenguajes que los desarrolladores usan para construir páginas web: HTML (Lenguaje de Marcado de Hipertexto) para el contenido, y CSS (hojas de estilo en cascada) para el diseño.",
+      "En esta certificación de Diseño Web Adaptativo, aprenderás los lenguajes que los desarrolladores usan para construir páginas web: HTML (Lenguaje de Marcado de Hipertexto) para el contenido, y CSS (hojas de estilo en cascada) para el diseño.",
       "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderás técnicas modernas como variables CSS, mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un sitio de cuestionarios.",
       "Por último, aprenderás cómo hacer páginas web que respondan a diferentes tamaños de pantalla, mediante la construcción de una galería de fotos con Flexbox, y un diseño de artículos de revista con CSS Grid."
     ],
@@ -159,17 +159,17 @@
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "Aprende diseño web adaptable construyendo un piano",
+        "title": "Aprende diseño web adaptativo construyendo un piano",
         "intro": [
-          "El diseño web adaptable dice a tu página como debe verse en pantallas de diferentes tamaños.",
-          "En este curso, usarás CSS y Diseño Responsivo para programar un piano. También aprenderás más sobre las consultas de medios y pseudoselectores."
+          "El diseño adaptativo indica a tu página web cómo debe verse en pantallas de distintos tamaños.",
+          "En este curso, usarás CSS y Diseño Adaptativo para programar un piano. También aprenderás más sobre las consultas de medios y pseudoselectores."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
         "title": "Aprende CSS Flexbox construyendo una galería de fotos",
         "intro": [
           "Flexbox te ayuda a diseñar tu página web para que se vea bien en cualquier tamaño de pantalla.",
-          "En este curso, usarás Flexbox para crear una página web de una galería de fotos receptiva."
+          "En este curso, usarás Flexbox para crear una página web de una galería de fotos adaptativa."
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
@@ -350,8 +350,8 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap es un framework de la interfaz utilizado para diseñar páginas y aplicaciones web. Tiene un enfoque de desarrollo web centrado en los dispositivos móviles e incluye estilos y clases CSS pre-configurados, además de algunas funciones de JavaScript.",
-          "En este curso, aprenderás cómo crear sitios web responsivos con Bootstrap, y utilizarás sus clases incluidas para estilizar botones, imágenes, formularios, navegación y otros elementos."
+          "Bootstrap es un framework front end que se utiliza para diseñar páginas y aplicaciones web adaptativas. Tiene un enfoque de desarrollo web e incluye estilos y clases CSS predefinidos, además de algunas funcionalidades de JavaScript.",
+          "En este curso, aprenderás cómo crear sitios web adaptativos con Bootstrap, y utilizarás sus clases incluidas para estilizar botones, imágenes, formularios, navegación y otros elementos."
         ]
       },
       "jquery": {
@@ -797,7 +797,7 @@
     "legacy-header": "Cursos Antiguos",
     "legacy-desc": "Estos cursos ya no forman parte de la ruta de certificación, pero todavía están disponibles para tu aprendizaje.",
     "legacy-go-back": "Ve a la versión actual del plan de estudios.",
-    "new-rwd-desc": "Hemos actualizado nuestro plan de estudios de diseño web responsivo. Si anteriormente estabas trabajando en el plan de estudios de diseño web responsivo, ¡tu progreso sigue guardado! Puedes encontrarlo en la sección diseño web responsivo legado.",
+    "new-rwd-desc": "Hemos actualizado nuestro plan de estudios de diseño web adaptativo. Si anteriormente estabas trabajando en el plan de estudios de diseño web adaptativo, ¡tu progreso sigue guardado! Puedes encontrarlo en la sección diseño web adaptativo legado.",
     "new-rwd-article": "Te animamos a leer sobre los cambios que hicimos y considerar explorar el plan de estudios actualizado.",
     "viewing-upcoming-change": "Estás viendo una página beta. ",
     "go-back-to-learn": "Volver a la versión estable del currículum.",

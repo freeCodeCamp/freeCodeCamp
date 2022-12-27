@@ -228,7 +228,7 @@ function TimelineInner({
 }
 
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
-function useIdToNameMap(): Map<string, NameMap> {
+function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const {
     allChallengeNode: { edges }
   } = useStaticQuery(graphql`
@@ -251,8 +251,12 @@ function useIdToNameMap(): Map<string, NameMap> {
   `);
   const idToNameMap = new Map();
   for (const id of getCertIds()) {
+    const challengeTitle = getTitleFromId(id);
     idToNameMap.set(id, {
-      challengeTitle: `${getTitleFromId(id)} Certification`,
+      challengeTitle: `${t(
+        `certification.title.${challengeTitle}`,
+        challengeTitle
+      )} Certification`,
       certPath: getPathFromID(id)
     });
   }
@@ -282,8 +286,8 @@ function useIdToNameMap(): Map<string, NameMap> {
 }
 
 const Timeline = (props: TimelineProps): JSX.Element => {
-  const idToNameMap = useIdToNameMap();
-  const { completedMap } = props;
+  const { completedMap, t } = props;
+  const idToNameMap = useIdToNameMap(t);
   // Get the sorted timeline along with total page count.
   const { sortedTimeline, totalPages } = useMemo(() => {
     const sortedTimeline = reverse(

@@ -224,7 +224,7 @@
     margin-bottom: 3px;
   }
   .amount-values.btn-group > .btn:first-child {
-    margin-left: 2px;
+    margin-inline-start: 2px;
     margin-bottom: 3px;
   }
   .amount-values.btn-group .btn + .btn {
@@ -519,11 +519,11 @@ a.patreon-button:hover {
 }
 
 .separator:not(:empty)::before {
-  margin-right: 0.25em;
+  margin-inline-end: 0.25em;
 }
 
 .separator:not(:empty)::after {
-  margin-left: 0.25em;
+  margin-inline-start: 0.25em;
 }
 
 .faq-item div {
@@ -550,7 +550,7 @@ a.patreon-button:hover {
   margin-bottom: 0;
   padding: 0 4px;
   left: 0;
-  margin-left: -2px;
+  margin-inline-start: -2px;
 }
 
 .confirm-donation-btn svg.svg-inline--fa.fa-lock {

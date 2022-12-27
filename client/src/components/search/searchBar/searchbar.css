@@ -9,7 +9,6 @@
   color: var(--gray-00);
 }
 
-.ais-SearchBox-reset,
 .ais-SearchBox-loadingIndicator {
   display: none;
 }
@@ -22,11 +21,15 @@
   height: 26px;
 }
 
-.ais-SearchBox-submit {
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
   margin-top: 6px;
   height: 26px;
   width: 26px;
   background-color: var(--gray-75);
+}
+
+.ais-SearchBox-submit {
   padding-inline: 3px;
 }
 
@@ -38,7 +41,7 @@
 }
 
 .fcc_searchBar .ais-SearchBox-input {
-  padding-inline-start: 1.5em;
+  padding-inline: 2em;
 }
 
 .fcc_searchBar .ais-Hits {
@@ -136,16 +139,16 @@ and arrow keys */
 @media (min-width: 981px) {
   .ais-SearchBox-input {
     width: 100%;
-    max-width: 500px;
+    max-width: 100%;
   }
   .fcc_searchBar {
     position: relative;
-    max-width: 520px;
+    max-width: 500px;
   }
   .fcc_searchBar .ais-Hits {
     top: auto;
     width: 100%;
-    max-width: 500px;
+    max-width: 100%;
     left: 0px;
   }
   .fcc_searchBar .ais-SearchBox-form {
