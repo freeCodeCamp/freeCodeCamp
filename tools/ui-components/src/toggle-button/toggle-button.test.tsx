@@ -65,4 +65,30 @@ describe('<ToggleButton />', () => {
 
     expect(onChange).not.toBeCalled();
   });
+
+  it('should have value property if checked', () => {
+    render(
+      <form aria-label='form'>
+        <ToggleButton checked={true} value='value' name='radio'>
+          On
+        </ToggleButton>
+      </form>
+    );
+
+    expect(screen.getByRole('form')).toHaveFormValues({
+      radio: true
+    });
+  });
+
+  it('should not have value property if not checked', () => {
+    render(
+      <form aria-label='form'>
+        <ToggleButton value='value' name='radio'>
+          Off
+        </ToggleButton>
+      </form>
+    );
+
+    expect(screen.getByRole('form')).toHaveFormValues({});
+  });
 });

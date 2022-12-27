@@ -13,7 +13,9 @@ const story = {
         'size',
         'disabled',
         'checked',
-        'onChange'
+        'onChange',
+        'value',
+        'name'
       ]
     }
   },
@@ -34,6 +36,12 @@ const story = {
     },
     onChange: {
       action: 'changed'
+    },
+    value: {
+      type: { name: 'string' }
+    },
+    name: {
+      type: { name: 'string' }
     }
   }
 };
@@ -50,24 +58,25 @@ Default.args = {
 export const Checked = Template.bind({});
 Checked.args = {
   checked: true,
-  children: 'On'
+  children: 'On',
+  value: 'Value'
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
-  variant: 'danger',
+  bsStyle: 'danger',
   children: 'Off'
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
+  bsSize: 'large',
   children: 'Off'
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: 'medium',
+  bsSize: 'medium',
   children: 'Off'
 };
 

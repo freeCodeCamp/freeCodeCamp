@@ -1,6 +1,6 @@
 import { Switch } from '@headlessui/react';
 import React from 'react';
-import { ButtonSize, ButtonVariant, ToggleButtonProps } from './types';
+import { ButtonSize, ButtonStyle, ToggleButtonProps } from './types';
 
 const defaultClassNames = [
   'relative',
@@ -24,17 +24,17 @@ const defaultClassNames = [
 ];
 
 const computeClassNames = ({
-  size,
-  variant,
+  bsSize,
+  bsStyle,
   disabled
 }: {
-  size: ButtonSize;
-  variant: ButtonVariant;
+  bsSize: ButtonSize;
+  bsStyle: ButtonStyle;
   disabled?: boolean;
 }) => {
   const classNames = [...defaultClassNames];
 
-  switch (variant) {
+  switch (bsStyle) {
     case 'danger':
       classNames.push(
         'border-foreground-danger',
@@ -75,7 +75,7 @@ const computeClassNames = ({
       );
   }
 
-  switch (size) {
+  switch (bsSize) {
     case 'large':
       classNames.push('px-8 py-2.5 text-lg');
       break;
@@ -91,14 +91,16 @@ const computeClassNames = ({
 };
 
 export const ToggleButton = ({
-  size = 'small',
-  variant = 'primary',
+  bsSize = 'small',
+  bsStyle = 'primary',
   disabled,
   children,
   checked,
-  onChange
+  onChange,
+  value,
+  name
 }: ToggleButtonProps) => {
-  const classNames = computeClassNames({ size, variant, disabled });
+  const classNames = computeClassNames({ bsSize, bsStyle, disabled });
 
   const handleChange = () => {
     if (!disabled && onChange) {
@@ -112,6 +114,8 @@ export const ToggleButton = ({
       onChange={handleChange}
       className={classNames}
       aria-disabled={disabled}
+      value={value}
+      name={name}
     >
       {children}
     </Switch>
