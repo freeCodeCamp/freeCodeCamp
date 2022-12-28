@@ -47,6 +47,10 @@ git clean -ifdX
    <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files">
 </details>
 
+### Issues with starting database
+
+If you are using a newer node version you may need to change the value of `MONGOHQ_URL` in your env file. Replace `localhost` with `0.0.0.0` and leave everything else the same
+
 ### Issues with API, login, Challenge Submissions, etc.
 
 If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
