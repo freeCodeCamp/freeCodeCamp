@@ -104,7 +104,7 @@ Comece a [usar o MailHog](#using-mailhog).
 
 ## Usando o MailHog
 
-Open a new browser tab or window and navigate to [http://localhost:8025](http://localhost:8025) to open your MailHog inbox when the MailHog installation has completed and MailHog is running.
+Abra uma nova guia ou janela do navegador e navegue até [http://localhost:8025](http://localhost:8025) para abrir sua caixa de entrada do MailHog quando a instalação do MailHog for concluída e o MailHog estiver em execução.
 
 ## Links úteis
 

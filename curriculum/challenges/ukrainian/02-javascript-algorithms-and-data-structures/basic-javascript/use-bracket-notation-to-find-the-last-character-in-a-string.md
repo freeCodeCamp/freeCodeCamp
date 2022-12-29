@@ -36,7 +36,7 @@ const lastLetter = firstName[firstName.length - 1];
 assert(lastLetterOfLastName === 'e');
 ```
 
-Вам слід використовувати `.length`, щоб отримати останню літеру.
+Ви повинні використати `.length`, щоб отримати останню літеру.
 
 ```js
 assert(code.match(/\.length/g).length > 0);

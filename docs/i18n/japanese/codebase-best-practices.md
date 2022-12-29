@@ -1,20 +1,40 @@
 # コードベースのベストプラクティス
 
-## 一般的な JavaScript
+## Styling a component
 
-ほとんどの場合、[リンター](how-to-setup-freecodecamp-locally.md#以下の手順に従って、開発環境を準備してください。) は、コードベースの好ましいプラクティスに反するフォーマットを警告します。
+We recommend styling components using our [design style guide](https://design-style-guide.freecodecamp.org/).
 
-クラスベースのコンポーネントよりも関数コンポーネントの使用を推奨します。
+The colors are defined in [`variable.css`](/client/src/components/layouts/variables.css), and the fonts are in [`fonts.css`](/client/src/components/layouts/fonts.css).
 
-## 特定の TypeScript
+We are strongly opinionated about adding new variables/tokens to the colors. After careful research, the colors have been chosen to respect the freeCodeCamp brand identity, developer experience, and accessibility.
 
-### JavaScript ファイルを TypeScript に移行する
+The `!important` keyword may be used to override values in some cases (for ex.: accessibility concerns). You should add a comment describing the issue, so it doesn't get removed in future refactoring.
+
+### RTL support
+
+We are striving to support right-to-left (RTL) layout in the codebase for languages that are read in this direction. For this you need be mindful of how to style components. Here are a quick role of thumbs to follow:
+
+- Don't use `float` properties: Although it may seem best to have the component in the "perfect position", you will be climbing mountains to reach that perfect positioning in responsive layout, and you will need to reach higher heights to have it supported in RTL.
+- - Use Flexbox and Grid layouts instead, as they have RTL support already built-in, and those will be easier to maintain and review.
+- Don't define the direction while using `margin` and `padding`: it may seem harmless to use `padding-right` and `margin-left`, but these directions aren't mirrored when the layout changes to RTL, and adding counter values for them in the RTL file makes maintaining the codebase harder.
+- - Use logical properties for them: You can add the same spacing by using `padding-inline-end` and `margin-inline-start`, and you won't need to worry about RTL layout, as they follow where the line start and ends, and you won't need to add any extra values in the RTL files, so people won't need to remember to change the same values in two files.
+- Don't use `!important` in `font-family`: RTL layout is using different font from the LTR layout, when you add `!important` in the `font-family` property it affects the RTL layout too, which causes a UI bug.
+
+## General JavaScript
+
+In most cases, our [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
+
+It is encouraged to use functional components over class-based components.
+
+## Specific TypeScript
+
+### Migrating a JavaScript File to TypeScript
 
 #### Git のファイル履歴を保持する
 
-ファイル形式を `<filename>.js` から `<filename>.ts` (もしくは `.tsx`) へ変更すると、元のファイルが削除され新しいファイルが作成される場合があります。それ以外の場合は、Git においてファイル名が変更されます。 ファイルの履歴を保存できるのが理想です。
+Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
 
-そのための最善策は次のとおりです。
+The best bet at achieving this is to:
 
 1. ファイル名を変更する
 2. フラグ `--no-verify` でコミットして、Husky がリントエラーについて不平を言うことを防ぐ
@@ -22,13 +42,13 @@
 
 > [!NOTE] VScode 等のエディターは、ファイルが削除され新しいファイルが作成されたことを表示する可能性があります。 `git add .` に CLI を使用すると、VSCode はファイル名が変更されたものとしてステージに表示します。
 
-### 命名規則
+### Naming Conventions
 
 #### インターフェースと型
 
-ほとんどの場合、型宣言にインターフェース宣言を使用することを推奨します。
+For the most part, it is encouraged to use interface declarations over type declarations.
 
-React コンポーネントプロパティ -  サフィックスは `Props`
+React Component Props - suffix with `Props`
 
 ```typescript
 interface MyComponentProps {}
@@ -36,7 +56,7 @@ interface MyComponentProps {}
 const MyComponent = (props: MyComponentProps) => {};
 ```
 
-React ステートフルコンポーネント - サフィックスは `State`
+React Stateful Components - suffix with `State`
 
 ```typescript
 interface MyComponentState {}
@@ -44,7 +64,7 @@ interface MyComponentState {}
 class MyComponent extends Component<MyComponentProps, MyComponentState> {}
 ```
 
-デフォルト - PascalCase 内のオブジェクト名
+Default - object name in PascalCase
 
 ```typescript
 interface MyObject {}
@@ -58,7 +78,7 @@ const myObject: MyObject = {};
 
 ## Redux
 
-### Action 定義
+### Action Definitions
 
 ```typescript
 enum AppActionTypes = {
@@ -73,7 +93,7 @@ export const actionFunction = (
 });
 ```
 
-### Reduce の方法
+### How to Reduce
 
 ```typescript
 // Base reducer action without payload
@@ -100,9 +120,9 @@ export const reducer = (
 };
 ```
 
-### Dispatch の方法
+### How to Dispatch
 
-コンポーネント内で、必要なアクションとセレクターをインポートします。
+Within a component, import the actions and selectors needed.
 
 ```tsx
 // Add type definition
@@ -128,7 +148,7 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 <!-- ### Redux Types File -->
 <!-- The types associated with the Redux store state are located in `client/src/redux/types.ts`... -->
 
-## その他資料
+## Further Literature
 
-- [TypeScript ドキュメント](https://www.typescriptlang.org/docs/)
-- [React CheatSheet 付き TypeScript](https://github.com/typescript-cheatsheets/react#readme)
+- [TypeScript Docs](https://www.typescriptlang.org/docs/)
+- [TypeScript with React CheatSheet](https://github.com/typescript-cheatsheets/react#readme)

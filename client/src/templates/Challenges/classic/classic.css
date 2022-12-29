@@ -67,7 +67,7 @@
 }
 
 #mobile-layout .nav-tabs {
-  margin-left: 2px;
+  margin-inline-start: 2px;
   display: flex;
 }
 

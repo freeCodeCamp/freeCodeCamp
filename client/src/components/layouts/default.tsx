@@ -34,11 +34,13 @@ import SignoutModal from '../signout-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
+import { Loader } from '../helpers';
 
 // preload common fonts
 import './fonts.css';
 import './global.css';
 import './variables.css';
+import './rtl-layout.css';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -153,6 +155,10 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
     } = this.props;
 
     const useSystemTheme = fetchState.complete && isSignedIn === false;
+
+    if (fetchState.pending) {
+      return <Loader fullScreen={true} />;
+    }
 
     return (
       <div className='page-wrapper'>

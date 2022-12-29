@@ -80,7 +80,7 @@ Alguns membros da comunidade também desenvolvem no Windows 10 nativamente com G
 
 | Pré-requisito                                                                                       | Versão  | Observações                                                                                 |
 | --------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                        | `16.x`  | Usamos a versão "Active LTS". Consulte [Agenda LTS](https://nodejs.org/en/about/releases/). |
+| [Node.js](http://nodejs.org)                                                                        | `18.x`  | Usamos a versão "Active LTS". Consulte [Agenda LTS](https://nodejs.org/en/about/releases/). |
 | npm (vem junto com o Node)                                                                          | `8.x`   | Usamos a versão que vem com o Node.js Active LTS.                                           |
 | [Servidor da Comunidade MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                           |
 

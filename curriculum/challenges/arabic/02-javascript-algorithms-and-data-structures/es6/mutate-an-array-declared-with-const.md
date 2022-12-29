@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b42
-title: Mutate an Array Declared with const
+title: تغير القائمة (array) المعلنة عند استخدام const
 challengeType: 1
 forumTopicId: 301206
 dashedName: mutate-an-array-declared-with-const
@@ -8,13 +8,13 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-إذا كنت غير مألوفة مع `const`، تحقق <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener noreferrer nofollow">من هذا التحدي حول كلمة <code>const</code> الثابتة</a>.
+إذا كنت غير مألوفة مع `const`، تحقق <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener noreferrer nofollow">من هذا التحدي حول مصطلح <code>const</code></a>.
 
-يحتوي تعريف `const` على العديد من حالات الاستخدام في JavaScript الحديثة.
+يحتوي إعلان `const` على العديد من حالات الاستخدام في JavaScript الحديثة.
 
 بعض المطورين يفضلون تعيين جميع متغيراتهم باستخدام `const` بشكل افتراضي، ما لم يعلموا أنهم سيحتاجون إلى إعادة تعيين القيمة. فقط في تلك الحالة، يستخدمون `let`.
 
-ومع ذلك، من المهم أن نفهم أن الـ objects (بما في ذلك arrays و functions) المخصصة للمتغير باستخدام `const` لا تزال قابلة للتغيير. استخدام تعريف `const` يمنع فقط إعادة تعيين معرف المتغير.
+ومع ذلك، من المهم أن نفهم أن الـ objects (بما في ذلك arrays و functions) المخصصة للمتغير باستخدام `const` لا تزال قابلة للتغيير. استخدام إعلان `const` يمنع فقط إعادة تخصص هوية للمتغير.
 
 ```js
 const s = [5, 6, 7];
@@ -29,7 +29,7 @@ console.log(s);
 
 # --instructions--
 
-الـ array معرفة كـ `const s = [5, 7, 2]`. قم بتغيير الـ array إلى `[2, 5, 7]` باستخدام تعيينات العناصر المتنوعة.
+تعلن القائمة (array) كالآتي `const s = [5, 7, 2]`. قم بتغيير الـ array إلى `[2, 5, 7]` باستخدام تعيينات العناصر المتنوعة.
 
 # --hints--
 
@@ -45,7 +45,7 @@ console.log(s);
 (getUserInput) => assert(getUserInput('index').match(/const\s+s/g));
 ```
 
-لا يجب عليك تغيير تعريف الـ array الأصلي.
+لا يجب عليك تغيير إعلان القائمة (array) الأصلي.
 
 ```js
 (getUserInput) =>
