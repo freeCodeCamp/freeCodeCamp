@@ -163,14 +163,14 @@ Follow these steps:
    feat: add link for article for alexa skills
    ```
 
-   Make a conventional commit message. This is a good practice As a developer, and you will be following standard practices.
+   Make a conventional commit message. This is a good practice as a developer, and you will be following standard practices.
 
    Some examples of conventional commit messages are:
 
    ```md
    fix: improve HTML step
    fix: fix build scripts for Travis-CI
-   feat: add link article JavaScript hoisting
+   feat: add link to JavaScript hoisting article
    docs: update contributing guidelines
    ```
 
