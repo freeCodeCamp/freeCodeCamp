@@ -161,7 +161,7 @@
     },
     "danger": {
       "heading": "Danger Zone",
-      "be-careful": "Please be careful. Changes in this section are permanent.",
+      "be-careful": "Please be careful. All changes in this section are permanent.",
       "reset": "Reset all of my progress",
       "delete": "Delete my account",
       "delete-title": "Delete My Account",
