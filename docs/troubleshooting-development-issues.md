@@ -2,6 +2,8 @@ If you are facing issue, there is a high chance that the resolution is in this d
 
 ### Issues with installing the recommended prerequisites
 
+#### Disclaimer
+
 We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
 
 It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
@@ -11,6 +13,10 @@ If you are on a different OS or are still facing issues, see [getting help](#get
 > [!WARNING]
 >
 > Please avoid creating GitHub issues for problems with the prerequisite technologies. They are out of the scope of this project.
+
+#### Can't access the database with newer node versions
+
+In your env file, change the value of `MONGOHQ_URL` by replacing `localhost` with `0.0.0.0` and leaving everything else the same. For example, `mongodb://localhost:27017/freecodecamp` would become `mongodb://0.0.0.0:27017/freecodecamp`.
 
 ### Issues missing the UI, Fonts, language strings, or build errors.
 
@@ -46,10 +52,6 @@ git clean -ifdX
    <br>
    <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files">
 </details>
-
-### Issues with starting database
-
-If you are using a newer node version you may need to change the value of `MONGOHQ_URL` in your env file. Replace `localhost` with `0.0.0.0` and leave everything else the same
 
 ### Issues with API, login, Challenge Submissions, etc.
 
