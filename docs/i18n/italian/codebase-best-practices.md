@@ -15,9 +15,9 @@ La parola chiave `!important` può essere usata per sovrascrivere i valori in al
 Stiamo cercando di supportare il layout da destra a sinistra (right-to-left, RTL) nel codebase per le lingue che sono lette in questa direzione. Per questo è necessario essere consapevoli di come definire lo stile dei componenti. Ecco alcune rapide regole pratiche da seguire:
 
 - Non utilizzare le proprietà `float`: anche se può sembrare meglio avere il componente in "posizione perfetta", dovrai scalare una montagna per raggiungere quel posizionamento perfetto nel layout responsivo e dovrai fare ancora più fatica per averlo supportato in RTL.
-- Invece, utilizza i layout Flexbox e Grid poiché hanno già integrato il supporto RTL e saranno più facili da gestire e revisionare.
+- &rarr; Use Flexbox and Grid layouts instead, as they have RTL support already built-in, and those will be easier to maintain and review.
 - Non definire la direzione usando `margin` e `padding`: potrebbe sembrare innocuo usare `padding-right` e `margin-left`, ma queste direzioni non sono rispecchiate quando il layout cambia in RTL e l'aggiunta di valori contatori per loro nel file RTL rende il mantenimento del codebase più difficile.
-- Usa le proprietà logiche per loro: puoi aggiungere la stessa spaziatura usando `padding-inline-end` e `margin-inline-start` e non dovrai preoccuparti del layout RTL, dato che seguono l'inizio e la fine della riga e non è necessario aggiungere alcun valore aggiuntivo nei file RTL, così le persone non dovranno ricordarsi di cambiare gli stessi valori in due file.
+- &rarr; Use logical properties for them: You can add the same spacing by using `padding-inline-end` and `margin-inline-start`, and you won't need to worry about RTL layout, as they follow where the line start and ends, and you won't need to add any extra values in the RTL files, so people won't need to remember to change the same values in two files.
 - Non usare `!important` in `font-family`: il layout RTL utilizza caratteri diversi dal layout LTR, quando si aggiunge `!important` alla proprietà `font-family` influisce anche sul layout RTL, causando un bug della UI.
 
 ## JavaScript generale
