@@ -162,14 +162,14 @@ Segui questi passaggi:
    feat: add link for article for alexa skills
    ```
 
-   Crea un messaggio di commit convenzionale. Questa è una buona pratica come sviluppatore, e seguirai le pratiche standard.
+   Crea un messaggio di commit convenzionale. This is a good practice as a developer, and you will be following standard practices.
 
    Alcuni esempi di messaggi di commit convenzionali sono:
 
    ```md
    fix: improve HTML step
    fix: fix build scripts for Travis-CI
-   feat: add link article JavaScript hoisting
+   feat: add link to JavaScript hoisting article
    docs: update contributing guidelines
    ```
 
