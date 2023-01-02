@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 import { createStore } from '../src/redux/createStore';
 import TimelineInner from '../src/components/profile/components/time-line';
-import completedChallenges from './mock/completedChallenges.json';
+import completedChallenges from './mock/completed-challenges.json';
 
 Date.prototype.toLocaleString = jest.fn(() => 'Dec 29, 2022');
 Date.prototype.toISOString = jest.fn(() => '2016-09-28T20:31:56.730Z');
