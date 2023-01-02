@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c151
-title: Jupyter Notebooks Importing and Exporting Data
+title: Jupyter Notebooks Daten importieren und exportieren
 challengeType: 11
 videoId: k1msxD3JIxE
 bilibiliIds:

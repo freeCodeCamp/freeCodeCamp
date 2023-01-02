@@ -8,7 +8,7 @@ dashedName: use-the-spread-operator-to-evaluate-arrays-in-place
 
 # --description--
 
-ES6 يقدم <dfn>spread operator</dfn>، والذي يسمح لنا بتوسيع الـ arrays وغيرها من التعبيرات في الأماكن التي يتوقع أن تكون فيها معلمات أو عناصر متعددة.
+يقدم ES6 <dfn>مشغل الانتشار (spread operator)</dfn>، الذي يسمح لنا بتوسيع القوائم (arrays) وغيرها من التعبيرات في الأماكن التي يتوقع أن تكون فيها وسائط (parameters) أو عناصر متعددة.
 
 كود ES5 أدناه يستخدم `apply()` لحساب القيمة القصوى في الـ array:
 

@@ -19,17 +19,17 @@ dashedName: budget-app
 
 `budget.py` の `Category` クラスを完成させてください。 このクラスは *food* (食費)、*clothing* (服飾費)、*entertainment* (娯楽費) など、さまざまな予算のカテゴリーに応じてオブジェクトをインスタンス化できるようにする必要があります。 オブジェクトを作成する際に、カテゴリーの名前をオブジェクトに渡します。 クラスには、リスト型の `ledger` (帳簿) というインスタンス変数を持たせてください。 このクラスには次のメソッドも含める必要があります。
 
-- A `deposit` method that accepts an amount and description. If no description is given, it should default to an empty string. The method should append an object to the ledger list in the form of `{"amount": amount, "description": description}`.
-- A `withdraw` method that is similar to the `deposit` method, but the amount passed in should be stored in the ledger as a negative number. If there are not enough funds, nothing should be added to the ledger. This method should return `True` if the withdrawal took place, and `False` otherwise.
-- A `get_balance` method that returns the current balance of the budget category based on the deposits and withdrawals that have occurred.
-- A `transfer` method that accepts an amount and another budget category as arguments. The method should add a withdrawal with the amount and the description "Transfer to [Destination Budget Category]". The method should then add a deposit to the other budget category with the amount and the description "Transfer from [Source Budget Category]". If there are not enough funds, nothing should be added to either ledgers. This method should return `True` if the transfer took place, and `False` otherwise.
-- A `check_funds` method that accepts an amount as an argument. It returns `False` if the amount is greater than the balance of the budget category and returns `True` otherwise. This method should be used by both the `withdraw` method and `transfer` method.
+- `deposit` (預け入れ) メソッド。金額と説明を受け取ります。 説明がない場合は、デフォルトで空の文字列にします。 このメソッドでは、`{"amount": amount, "description": description}` という形式で帳簿リストの末尾にオブジェクトを追加する必要があります。
+- `withdraw` (引き出し) メソッド。`deposit` メソッドに似ていますが、渡された金額を負の数として帳簿に保存する必要があります。 十分な資金がない場合は、帳簿に何も追加しないでください。 このメソッドは、引き出しが行われた場合は `True` を返し、それ以外の場合は `False` を返す必要があります。
+- `get_balance` (残高確認) メソッド。発生した入出金に基づいて予算カテゴリの現在の残高を返します。
+- `transfer` (送金) メソッド。引数として金額と別の予算カテゴリを受け取ります。 このメソッドでは、金額と "Transfer to [Destination Budget Category]" ([送金先の予算カテゴリ] への送金) という記述からなる出金を追加する必要があります。 そして、金額と "Transfer from [Destination Budget Category]" ([送金元の予算カテゴリ] からの送金) という記述からなる入金額が送金先予算カテゴリに追加されます。 十分な資金がない場合は、どちらの帳簿にも何も追加しないでください。 このメソッドは、送金が行われた場合は `True` を返し、それ以外の場合は `False` を返す必要があります。
+- `check_funds` (資金確認) メソッド。引数として金額を受け取ります。 金額が予算カテゴリの残高よりも大きい場合は `False` を返し、それ以外の場合は `True` を返します。 このメソッドは `withdraw` メソッドと `transfer` メソッドの両方で使用する必要があります。
 
 予算オブジェクトを出力するときは以下の項目を表示する必要があります。
 
-- A title line of 30 characters where the name of the category is centered in a line of `*` characters.
-- A list of the items in the ledger. Each line should show the description and amount. The first 23 characters of the description should be displayed, then the amount. The amount should be right aligned, contain two decimal places, and display a maximum of 7 characters.
-- A line displaying the category total.
+- 30 文字のタイトル行。`*` 文字を並べて 1 行とし、中央にカテゴリの名前を置きます。
+- 帳簿にある品目のリスト。 各行に説明と金額を表示します。 説明の最初の 23 文字を表示し、その後に金額を表示します。 金額は右揃えで、小数点以下 2 桁までを含み、最大 7 文字まで表示します。
+- カテゴリの合計を表示する行。
 
 出力の例を次に示します。
 
@@ -44,7 +44,7 @@ Total: 923.96
 
 `Category` クラスの他に、カテゴリのリストを引数に取る `create_spend_chart` という関数を (クラスの外で) 作成してください。 この関数は棒グラフとなる文字列を返す必要があります。
 
-The chart should show the percentage spent in each category passed in to the function. The percentage spent should be calculated only with withdrawals and not with deposits. Down the left side of the chart should be labels 0 - 100. The "bars" in the bar chart should be made out of the "o" character. 各棒の高さは最も近い 10 に切り下げる必要があります。 The horizontal line below the bars should go two spaces past the final bar. Each category name should be written vertically below the bar. There should be a title at the top that says "Percentage spent by category".
+グラフでは、関数に渡された各カテゴリについて、その出費の割合を表示するようにしてください。 出費の割合は、引き出し額でのみ計算する必要があり、預け入れ額では計算しません。 グラフの左端に沿って、0 ～ 100 のラベルを付けてください。 棒グラフの「棒」は文字 "o" を使用して作成してください。 各棒の高さは最も近い 10 ごとの数字に切り下げる必要があります。 グラフの下の水平線は最後の棒からスペース 2 つ分だけ伸ばす必要があります。 各カテゴリ名は棒の下に縦書きで表示してください。 一番上には "Percentage spent by category" (カテゴリ別の出費の割合) というタイトルを付けてください。
 
 この関数は最大 4 つのカテゴリでテストされます。
 
@@ -78,15 +78,15 @@ Percentage spent by category
 
 ## 開発
 
-Write your code in `budget.py`. For development, you can use `main.py` to test your `Category` class. Click the "run" button and `main.py` will run.
+`budget.py` にコードを記述してください。 開発時には `main.py` を使用して `Category` クラスをテストできます。 "Run" ボタンをクリックすると `main.py` が実行されます。
 
 ## テスト
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+すでに `test_module.py` から `main.py` にテストをインポートしてあります。 "Run" ボタンを押すと自動的にテストが実行されます。
 
 ## 提出
 
-Copy your project's URL and submit it to freeCodeCamp.
+プロジェクトの URL をコピーし、freeCodeCamp に提出してください。
 
 # --hints--
 
