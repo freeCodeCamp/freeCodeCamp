@@ -10,17 +10,17 @@ dashedName: time-calculator
 
 Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-time-calculator" target="_blank" rel="noopener noreferrer nofollow">an diesem Projekt mit unserem Replit-Startercode arbeiten</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Beginne, indem du das Projekt in Replit importierst.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
 
 # --instructions--
 
 Erstelle eine Funktion namens `add_time`, die zwei notwendige Parameter und einen optionalen Parameter enthält:
 
-- a start time in the 12-hour clock format (ending in AM or PM)
-- a duration time that indicates the number of hours and minutes
-- (optional) a starting day of the week, case insensitive
+- eine Startzeit im 12-Stunden-Format (endend mit AM oder PM)
+- eine Zeitdauer, die die Anzahl der Stunden und Minuten angibt
+- (optional) ein Anfangstag der Woche, Groß- und Kleinschreibung wird nicht berücksichtigt
 
 Die Funktion sollte die Zeitdauer zur Startzeit hinzufügen und das Ergebnis zurückgeben.
 

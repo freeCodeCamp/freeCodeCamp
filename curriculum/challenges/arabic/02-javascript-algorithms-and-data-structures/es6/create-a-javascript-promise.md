@@ -8,7 +8,7 @@ dashedName: create-a-javascript-promise
 
 # --description--
 
-الوعد (promise) في لغة JavaScript هو التوعد بالقيام بشيء ما، عادة بشكل غير متزامن. وعندما تنتهي المهمة، إما أن تفي بالوعد أو أن تخفق في ذلك. يكون `Promise` منشئ للوظيفة، لذا تحتاج إلى استخدام كلمة `new` لإنشاء واحد. إنه يأخذ وظيفة (كحجة) مع حجتين - `resolve` و `reject`. وهذه هي الطرق المستخدمة لتحديد نتيجة الوعد. يبدو بناء الجملة كهذا:
+الوعد (promise) في لغة JavaScript هو التوعد بالقيام بشيء ما، عادة بشكل غير متزامن. وعندما تنتهي المهمة، إما أن تفي بالوعد أو أن تخفق في ذلك. يكون `Promise` منشئ للوظيفة، لذا تحتاج إلى استخدام كلمة `new` لإنشاء واحد. إنه يأخذ وظيفة (function) كمعطى, مع وسيطين (parameters) يسمان - `resolve` و `reject`. وهذه هي الطرق المستخدمة لتحديد نتيجة الوعد. يبدو بناء الجملة كهذا:
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -18,7 +18,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 # --instructions--
 
-قم بإنشاء وعد جديد يسمى `makeServerRequest`. قم بتمرير وظيفة بحجج `resolve` و `reject` ألى المنشئ (constructor).
+قم بإنشاء وعد جديد يسمى `makeServerRequest`. اعطي وظيفة مع الوسائط `resolve` و `reject` إلى المنشئ (constructor).
 
 # --hints--
 
@@ -28,7 +28,7 @@ const myPromise = new Promise((resolve, reject) => {
 assert(makeServerRequest instanceof Promise);
 ```
 
-يجب أن يتلقى الوعد الخاص بك الوظيفة مع `resolve` و `reject` كحجج.
+يجب أن يتلقى وعدك (promise) وظيفة مع `resolve` و `reject` كوسائط.
 
 ```js
 assert(
