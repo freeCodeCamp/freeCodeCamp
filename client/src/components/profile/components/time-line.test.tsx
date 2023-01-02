@@ -57,7 +57,9 @@ describe('<TimeLine />', () => {
   it('Render button when only solution is present', () => {
     // @ts-expect-error
     render(<TimeLine {...propsForOnlySolution} />, store);
-    const showViewButton = screen.getByRole('link', { name: 'buttons.view' });
+    const showViewButton = screen.getByRole('link', {
+      name: 'buttons.view settings.labels.solution-for (aria.opens-new-window)'
+    });
     expect(showViewButton).toHaveAttribute(
       'href',
       'https://github.com/freeCodeCamp/freeCodeCamp'
@@ -84,7 +86,9 @@ describe('<TimeLine />', () => {
     // @ts-expect-error
     render(<TimeLine {...propsForOnlySolution} />, store);
 
-    const viewButtons = screen.getAllByRole('button', { name: 'buttons.view' });
+    const viewButtons = screen.getAllByRole('button', {
+      name: 'buttons.view settings.labels.solution-for'
+    });
     viewButtons.forEach(button => {
       expect(button).toBeInTheDocument();
     });
