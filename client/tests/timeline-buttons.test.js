@@ -3,24 +3,24 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 
-import { createStore } from '../../../redux/createStore';
-import TimelineInner from './time-line';
-import completedChallenges from './completedChallenges';
+import { createStore } from '../src/redux/createStore';
+import TimelineInner from '../src/components/profile/components/time-line';
+import completedChallenges from './mock/completedChallenges.json';
 
 Date.prototype.toLocaleString = jest.fn(() => 'Dec 29, 2022');
 Date.prototype.toISOString = jest.fn(() => '2016-09-28T20:31:56.730Z');
 
-jest.mock('../../../analytics');
+jest.mock('../src/analytics');
 
 jest.mock('gatsby', () => {
-  const edges = require('./edges');
+  const edges = require('./mock/edges.json');
   const React = require('react');
   const gatsby = jest.requireActual('gatsby');
   return {
     ...gatsby,
     useStaticQuery: jest.fn().mockReturnValue({
       allChallengeNode: {
-        edges: edges.default
+        edges: edges
       }
     }),
     graphql: jest.fn(),
@@ -48,9 +48,6 @@ jest.mock('gatsby', () => {
 });
 
 it('should check certification page consistency', () => {
-  Date.toLocaleString = jest.fn(() => 'Dec 29, 2022');
-  Date.toISOString = jest.fn(() => '2016-09-28T20:31:56.730Z');
-
   const tree = renderer
     .create(
       <Provider store={createStore()}>

@@ -3,8 +3,8 @@ import renderer from 'react-test-renderer';
 import {
   legacyProjectMap,
   projectMap
-} from '../../resources/cert-and-project-map';
-import { CertificationSettings } from './certification';
+} from '../src/resources/cert-and-project-map';
+import { CertificationSettings } from '../src/components/settings/certification';
 
 const certificationSettings = new CertificationSettings();
 
@@ -24,11 +24,13 @@ beforeAll(() => {
 it('should check legacy certification button consistency', () => {
   const legacyCertifications = Object.keys(legacyProjectMap);
 
-  const tree = renderer.create(
-    legacyCertifications.map(certName =>
-      renderCertifications(certName, legacyProjectMap)
+  const tree = renderer
+    .create(
+      legacyCertifications.map(certName =>
+        renderCertifications(certName, legacyProjectMap)
+      )
     )
-  );
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });
