@@ -478,10 +478,11 @@
     "hint": "Suggerimento",
     "heart": "Cuore",
     "initial": "Iniziale",
+    "inputReset": "Clear search terms",
     "info": "Informazioni introduttive",
     "spacer": "Distanziatore",
     "toggle": "Attiva/Disattiva segno di spunta",
-    "magnifier": "lente d'ingrandimento"
+    "magnifier": "Submit search terms"
   },
   "aria": {
     "fcc-curriculum": "Curriculum di freeCodeCamp",

@@ -478,10 +478,11 @@
     "hint": "Dica",
     "heart": "Coração",
     "initial": "Inicial",
+    "inputReset": "Limpar termos de pesquisa",
     "info": "Informações introdutórias",
     "spacer": "Espaçador",
     "toggle": "Alternar marcação",
-    "magnifier": "lupa"
+    "magnifier": "Enviar termos de pesquisa"
   },
   "aria": {
     "fcc-curriculum": "Currículo do freeCodeCamp",
