@@ -10,16 +10,16 @@ dashedName: medical-data-visualizer
 
 Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode an diesem Projekt arbeiten</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Beginne, indem du das Projekt in Replit importierst.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
 
 
 Wir sind noch dabei, den interaktiven Teil des Python-Kurses zu entwickeln. Hier sind erstmal einige Videos auf dem freeCodeCamp.org YouTube-Kanal, die dir alles beibringen, was du wissen musst, um dieses Projekt abzuschließen:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Videokurs: Python für jedermann</a> (14 Stunden)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">Wie man Daten mit Python-Pandas analysiert </a> (10 Stunden)
 
 # --instructions--
 
@@ -31,45 +31,45 @@ Die Zeilen des Datensatzes repräsentieren Patienten und die Spalten stellen Inf
 
 Dateiname: medical_examination.csv
 
-|                 Merkmal                  |    Variablentyp     |   Variable    |                       Wert                       |
-|:----------------------------------------:|:-------------------:|:-------------:|:------------------------------------------------:|
-|                  Alter                   |  Objective Feature  |     `age`     |                    int (Tage)                    |
-|                  Größe                   |  Objective Feature  |   `height`    |                     int (cm)                     |
-|                 Gewicht                  |  Objective Feature  |   `weight`    |                    float (kg)                    |
-|                Geschlecht                |  Objective Feature  |   `gender`    |                  Kategorie-Code                  |
-|          Systolischer Blutdruck          | Examination Feature |    `ap_hi`    |                       int                        |
-|         Diastolischer Blutdruck          | Examination Feature |    `ap_lo`    |                       int                        |
-|               Cholesterin                | Examination Feature | `cholesterol` | 1: normal, 2: above normal, 3: well above normal |
-|                 Glucose                  | Examination Feature |    `gluc`     | 1: normal, 2: above normal, 3: well above normal |
-|                 Rauchen                  | Subjective Feature  |    `smoke`    |                      binary                      |
-|              Alkoholkonsum               | Subjective Feature  |    `alco`     |                      binary                      |
-|          Körperliche Aktivität           | Subjective Feature  |   `active`    |                      binary                      |
-| Leiden unter Herz-Kreislauf-Erkrankungen |   Target Variable   |   `cardio`    |                      binary                      |
+|                 Merkmal                  |    Variablentyp     |   Variable    |                        Wert                         |
+|:----------------------------------------:|:-------------------:|:-------------:|:---------------------------------------------------:|
+|                  Alter                   |  Objective Feature  |     `age`     |                     int (Tage)                      |
+|                  Größe                   |  Objective Feature  |   `height`    |                      int (cm)                       |
+|                 Gewicht                  |  Objective Feature  |   `weight`    |                     float (kg)                      |
+|                Geschlecht                |  Objective Feature  |   `gender`    |                   Kategorie-Code                    |
+|          Systolischer Blutdruck          | Examination Feature |    `ap_hi`    |                         int                         |
+|         Diastolischer Blutdruck          | Examination Feature |    `ap_lo`    |                         int                         |
+|               Cholesterin                | Examination Feature | `cholesterol` | 1: normal, 2: höher als normal, 3: weit über normal |
+|                 Glucose                  | Examination Feature |    `gluc`     | 1: normal, 2: höher als normal, 3: weit über normal |
+|                 Rauchen                  | Subjective Feature  |    `smoke`    |                        binär                        |
+|              Alkoholkonsum               | Subjective Feature  |    `alco`     |                        binär                        |
+|          Körperliche Aktivität           | Subjective Feature  |   `active`    |                        binär                        |
+| Leiden unter Herz-Kreislauf-Erkrankungen |   Target Variable   |   `cardio`    |                        binär                        |
 
 ## Tasks
 
-Create a chart similar to `examples/Figure_1.png`, where we show the counts of good and bad outcomes for the `cholesterol`, `gluc`, `alco`, `active`, and `smoke` variables for patients with cardio=1 and cardio=0 in different panels.
+Erstelle ein Diagramm, ähnlich wie `examples/Figure_1.png`, in dem wir die guten und schlechten Ergebnisse für `cholesterol`, `gluc`, `alco`, `active`, und `smoke`-Variablen der Patienten mit cardio=1 und cardio=0 in verschiedenen Panels anzeigen.
 
-Use the data to complete the following tasks in `medical_data_visualizer.py`:
+Verwende die Daten um die folgenden Aufgaben in `medical_data_visualizer.py` abzuschließen:
 
-- Add an `overweight` column to the data. To determine if a person is overweight, first calculate their BMI by dividing their weight in kilograms by the square of their height in meters. If that value is > 25 then the person is overweight. Use the value 0 for NOT overweight and the value 1 for overweight.
-- Normalize the data by making 0 always good and 1 always bad. If the value of `cholesterol` or `gluc` is 1, make the value 0. If the value is more than 1, make the value 1.
-- Convert the data into long format and create a chart that shows the value counts of the categorical features using seaborn's `catplot()`. The dataset should be split by 'Cardio' so there is one chart for each `cardio` value. The chart should look like `examples/Figure_1.png`.
-- Clean the data. Filter out the following patient segments that represent incorrect data:
+- Füge eine `overweight`-Spalte zu den Daten hinzu. Um festzustellen, ob eine Person übergewichtig ist, berechnet man zunächst ihren BMI, indem man ihr Gewicht in Kilogramm durch das Quadrat ihrer Körpergröße in Metern teilt. Wenn dieser Wert > 25 ist, dann ist die Person übergewichtig. Verwende den Wert 0 für NICHT übergewichtig und den Wert 1 für übergewichtig.
+- Normalisiere die Daten, indem du 0 immer für gut und 1 immer für schlecht verwendest. Wenn der Wert von `cholesterol` oder `gluc` 1 ist, wird der Wert auf 0 gesetzt. Wenn der Wert größer als 1 ist, setze den Wert auf 1.
+- Konvertiere die Daten in ein Langformat und erstelle ein Diagramm, das die Anzahl der Werte der kategorischen Merkmale mit seaborns `catplot()` darstellt. Der Datensatz sollte nach "Kardio" aufgeteilt werden, sodass es für jeden `cardio`-Wert ein Diagramm gibt. Das Diagramm sollte wie `examples/Figure_1.png` aussehen.
+- Bereinige die Daten. Filtere die folgenden Patientensegmente heraus, die fehlerhafte Daten darstellen:
   - diastolic pressure is higher than systolic (Keep the correct data with `(df['ap_lo'] <= df['ap_hi'])`)
   - height is less than the 2.5th percentile (Keep the correct data with `(df['height'] >= df['height'].quantile(0.025))`)
-  - height is more than the 97.5th percentile
-  - weight is less than the 2.5th percentile
-  - weight is more than the 97.5th percentile
-- Create a correlation matrix using the dataset. Plot the correlation matrix using seaborn's `heatmap()`. Mask the upper triangle. The chart should look like `examples/Figure_2.png`.
+  - die Größe liegt über dem 97,5. Perzentil
+  - das Gewicht liegt unter dem 2,5. Perzentil
+  - das Gewicht liegt über dem 97,5. Perzentil
+- Erstelle eine Korrelationsmatrix unter Verwendung des Datensatzes. Zeichne die Korrelationsmatrix mit seaborn's `heatmap()`. Decke das obere Dreieck ab. Das Diagramm sollte wie folgt aussehen `examples/Figure_2.png`.
 
-Any time a variable is set to `None`, make sure to set it to the correct code.
+Immer wenn eine Variable `None` ist, musst du sicherstellen, dass es auf den korrekten Code gesetzt wird.
 
-Unit tests are written for you under `test_module.py`.
+Modultests werden für dich in `test_module.py` geschrieben.
 
-## Development
+## Entwicklung
 
-For development, you can use `main.py` to test your functions. Click the "run" button and `main.py` will run.
+Für die Entwicklung kannst du `main.py` verwenden, um deinen Code zu testen. Click the "run" button and `main.py` will run.
 
 ## Testing
 

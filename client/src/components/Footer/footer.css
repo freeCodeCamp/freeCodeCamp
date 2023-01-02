@@ -12,10 +12,7 @@
 .footer-container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px 15px;
   font-size: 16px;
   overflow-x: hidden;
 }
@@ -57,8 +54,7 @@
   display: flex;
   flex-direction: column;
   flex: 0 0 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-inline: 15px;
   font-size: 16px;
 }
 
@@ -77,8 +73,7 @@
   flex: 1 0 90%;
   display: flex;
   flex-direction: column;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-inline: 15px;
   margin-bottom: 30px;
 }
 
@@ -125,7 +120,7 @@ p.footer-donation a:hover {
     flex-direction: row;
   }
   .footer-right {
-    padding-left: 15px;
+    padding-inline-start: 15px;
   }
   .footer-col-1,
   .footer-col-2,
@@ -152,7 +147,7 @@ p.footer-donation a:hover {
     flex-direction: column;
   }
   .footer-right {
-    padding-left: 0;
+    padding-inline-start: 0;
   }
   .footer-container .col-spacer {
     margin-top: 40px;

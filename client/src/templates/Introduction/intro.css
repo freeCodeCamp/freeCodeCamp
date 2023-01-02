@@ -80,7 +80,8 @@ a.cert-tag:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 25px 15px 10px 0;
+  padding-block: 10px 25px;
+  padding-inline: 0 15px;
   margin: 0 0 0.6rem;
   flex-grow: 2;
   flex-basis: 0;
@@ -147,7 +148,7 @@ button.map-title {
 }
 
 .map-project-checkmark {
-  padding-left: 15px;
+  padding-inline-start: 15px;
 }
 
 .block .map-cert-title {
@@ -184,7 +185,8 @@ button.map-title {
 
 .map-cert-title > h3 {
   font-size: 1.17rem;
-  margin: 0 0 0 15px;
+  margin-block: 0;
+  margin-inline: 15px 0;
 }
 
 .map-cert-title > svg {
@@ -201,13 +203,13 @@ button.map-title {
 .map-title-completed {
   margin-left: auto;
   min-width: 100px;
-  padding-left: 20px;
+  padding-inline-start: 20px;
 }
 
 .map-title-completed-big {
   margin-left: auto;
-  padding-right: 15px;
-  padding-left: 20px;
+  padding-inline-end: 15px;
+  padding-inline-start: 20px;
   position: relative;
   top: 4px;
 }
@@ -348,7 +350,7 @@ button.map-title {
 
   .map-title-completed {
     flex-shrink: 0;
-    padding-left: 15px;
+    padding-inline-start: 15px;
   }
 }
 
@@ -381,7 +383,7 @@ button.map-title {
   font-size: 1rem;
   display: block;
   margin-bottom: 5px;
-  margin-right: 5px;
+  margin-inline-end: 5px;
   padding: 4px 10px;
   color: var(--highlight-color);
   background-color: var(--highlight-background);

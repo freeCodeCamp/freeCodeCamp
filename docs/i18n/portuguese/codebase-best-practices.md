@@ -1,5 +1,25 @@
 # Práticas recomendadas da base de código
 
+## Estilizando um componente
+
+Recomendamos estilizar componentes usando nosso [guia de estilo de design](https://design-style-guide.freecodecamp.org/).
+
+As cores são definidas no arquivo [`variable.css`](/client/src/components/layouts/variables.css) e as fontes estão em [`fonts.css`](/client/src/components/layouts/fonts.css).
+
+Temos uma opinião forte sobre a adição de novas variáveis/tokens às cores. Após uma pesquisa cuidadosa, as cores foram escolhidas para respeitar a identidade da marca freeCodeCamp, a experiência do desenvolvedor e a acessibilidade.
+
+A palavra-chave `!important` pode ser usada para substituir valores em alguns casos (por exemplo, questões de acessibilidade). Você deve adicionar um comentário descrevendo a questão para que ela não seja removida em futura refatoração.
+
+### Suporte a RTL
+
+Estamos nos esforçando para apoiar o layout da direita para a esquerda (do inglês, right-to-left, ou RTL) na base de código para os idiomas que são lidos nessa direção. Por isso, você precisa estar atento à maneira como estilizar os componentes. Seguem aqui algumas dicas práticas para isso:
+
+- Não use as propriedades `float`: embora possa parecer o melhor para ter o componente na "posição perfeita", você estará fazendo um esforço incrível para alcançar o posicionamento perfeito no layout responsivo e precisará de um esforço ainda maior para dar o suporte aos idiomas lidos da direita para a esquerda.
+- &rarr; Use Flexbox and Grid layouts instead, as they have RTL support already built-in, and those will be easier to maintain and review.
+- Não defina a direção ao usar `margin` e `padding`: pode parecer inofensivo usar `padding-right` e `margin-left`, mas essas direções não são espelhadas quando o layout muda para RTL. Adicionar valores opostos para eles no arquivo RTL torna a manutenção da base de código mais difícil.
+- &rarr; Use logical properties for them: You can add the same spacing by using `padding-inline-end` and `margin-inline-start`, and you won't need to worry about RTL layout, as they follow where the line start and ends, and you won't need to add any extra values in the RTL files, so people won't need to remember to change the same values in two files.
+- Não use `!important` em `font-family`: o layout RTL usará uma fonte diferente do layout da esquerda para a direita (do inglês, left-to-right, ou LTR). Quando você adiciona `!important` na propriedade `font-family`, isso afeta o layout RTL também, o que causa um bug de UI.
+
 ## JavaScript em geral
 
 Na maioria dos casos, nosso [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) avisará sobre qualquer formatação que contradiga as práticas recomendadas desta base de código.
@@ -131,4 +151,4 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 ## Mais informações
 
 - [Documentação do TypeScript](https://www.typescriptlang.org/docs/)
-- [TypeScript com a cheatsheet do React](https://github.com/typescript-cheatsheets/react#readme)
+- [Ficha informativa de TypeScript com React](https://github.com/typescript-cheatsheets/react#readme)

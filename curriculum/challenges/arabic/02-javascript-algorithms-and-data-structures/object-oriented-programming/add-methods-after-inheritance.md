@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b87
-title: إضافة الدوال بعد الميراث (Add Methods After Inheritance)
+title: إضافة الطرق (Methods) بعد الميراث (Inheritance)
 challengeType: 1
 forumTopicId: 301315
 dashedName: add-methods-after-inheritance
@@ -8,9 +8,9 @@ dashedName: add-methods-after-inheritance
 
 # --description--
 
-الوظيفة المنشئة (constructor function) التي ترث كائنها (object) يسمى `prototype` من وظيفة منشئة كبرى (supertype) يمكن أن يكون لها طرقها (methods) بالإضافة إلى الطرق الموروثة.
+الوظيفة المنشئة (constructor function) التي ترث كائنها (object) تسمى `prototype` من وظيفة منشئة كبرى (supertype), يمكن أن تحتوي على طرقها (methods) بالإضافة إلى الطرق الموروثة.
 
-على سبيل المثال، `Bird` هو منشئ (constructor) يرث `prototype` من `Animal`:
+على سبيل المثال، يكون `Bird` منشئ (constructor) الذي يرث `prototype` من `Animal`:
 
 ```js
 function Animal() { }
@@ -22,7 +22,7 @@ Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.constructor = Bird;
 ```
 
-بالإضافة إلى ما موروث من `Animal`، تريد إضافة سلوك فريد إلى كائنات (objects) المسمى `Bird`. هنا، `Bird` سيحصل على وظيفة (function) مسمى `fly()`. تضاف الوظائف إلى `prototype` في `Bird's` بنفس الطريقة مثل أي وظيفة منشئا (constructor function):
+بالإضافة إلى ما موروث من `Animal`، تريد إضافة سلوك فريد إلى كائنات (objects) المسمى `Bird`. هنا، سيحصل `Bird` على وظيفة (function) مسمى `fly()`. تضاف الوظائف إلى `prototype` في `Bird's` بنفس الطريقة مثل أي وظيفة منشئا (constructor function):
 
 ```js
 Bird.prototype.fly = function() {
@@ -42,41 +42,41 @@ duck.fly();
 
 # --instructions--
 
-أضف كل الكود الضروري حتى يرث كائن `Dog` من `Animal` و عيّن المنشئ الخاص بـ `prototype` من `Dog` إلى `Dog`. ثم أضف `bark()` إلى الكائن `Dog` بحيث أن `beagle` يمكن أن يفعل `eat()` و `bark()`. يجب أن تطبع method الـ `bark()` الكلمة `Woof!` إلى وحدة التحكم.
+أضف كل الكود الضروري حتى يرث كائن `Dog` من `Animal` و عيّن المنشئ الخاص بـ `prototype` من `Dog` بقيمة `Dog`. ثم أضف طريقة `bark()` إلى الكائن `Dog` بحيث أن `beagle` يمكن أن ينفذ `eat()` و `bark()`. يجب أن تطبع طريقة `bark()` كلمة `Woof!` إلى وحدة التحكم (console).
 
 # --hints--
 
-`Animal` لا يجب أن يستجيب لـ `bark()`.
+يجب ألا `Animal` يستجيب إلى طريقة `bark()`.
 
 ```js
 assert(typeof Animal.prototype.bark == 'undefined');
 ```
 
-`Dog` يجب أن يرث `eat()` من `Animal`.
+يجب أن يرث `Dog` طريقة `eat()` من `Animal`.
 
 ```js
 assert(typeof Dog.prototype.eat == 'function');
 ```
 
-يجب أن يحتوي prototype الـ `Dog` على `bark()`.
+يجب أن يحتوي prototype داخل `Dog` على `bark()`.
 
 ```js
 assert('bark' in Dog.prototype);
 ```
 
-`beagle` يجب أن يكون `instanceof` من `Animal`.
+يجب أن يكون `beagle` جزء (`instanceof`) من `Animal`.
 
 ```js
 assert(beagle instanceof Animal);
 ```
 
-يجب تعيين constructor الـ `beagle` إلى `Dog`.
+يجب أن يكون منشئ `beagle` بقيمة `Dog`.
 
 ```js
 assert(beagle.constructor === Dog);
 ```
 
-`beagle.eat()` يجب أن يطبع السلسلة `nom nom nom`
+يجب أن يطبع `beagle.eat()` مقطع نصي `nom nom nom`
 
 ```js
 capture();
@@ -85,7 +85,7 @@ uncapture();
 assert(logOutput == 'nom nom nom');
 ```
 
-`beagle.bark()` يجب ان يطبع السلسلة `Woof!`
+يجب أن يطبع `beagle.bark()` مقطع نصي `Woof!`
 
 ```js
 capture();

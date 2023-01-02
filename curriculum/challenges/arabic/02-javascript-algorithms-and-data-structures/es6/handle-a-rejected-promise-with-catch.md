@@ -20,7 +20,7 @@ myPromise.catch(error => {
 
 # --instructions--
 
-أضف method الـ `catch` إلى الـ promise الخاص بك. استخدم `error` كمعلمة لـ callback function واخرج الـ `error` إلى وحدة التحكم.
+أضف method الـ `catch` إلى الـ promise الخاص بك. استخدم `error` كوسيط لوظيفة تعيد تفعيلها وسجل `error` في وحدة التحكم (console).
 
 # --hints--
 
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-يجب أن تكون لـ method الـ `catch` الـ callback function مع `error` كمعلمتها (parameter).
+يجب أن تكون لطريقة (method) المسمى `catch` الوظيفة تعيد تفعيلها (callback function) مع `error` كوسيطها (parameter).
 
 ```js
 assert(errorIsParameter);

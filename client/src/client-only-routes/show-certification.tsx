@@ -336,7 +336,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
               </h1>
               <h3>placeholder</h3>
               <h1>
-                <strong>{{ title: certTitle }}</strong>
+                <strong>
+                  {{ title: t(`certification.title.${certTitle}`, certTitle) }}
+                </strong>
               </h1>
               <h4>{{ time: completionTime }}</h4>
             </Trans>

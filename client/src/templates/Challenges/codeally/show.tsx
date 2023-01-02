@@ -294,7 +294,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                           style={{
                             height: '15px',
                             width: '15px',
-                            marginLeft: '7px'
+                            marginInlineEnd: '7px'
                           }}
                         />
                       )}
@@ -341,7 +341,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                           style={{
                             height: '15px',
                             width: '15px',
-                            marginLeft: '7px'
+                            marginInlineStart: '7px'
                           }}
                         />
                       )}

@@ -36,7 +36,7 @@ function joinBirdFraternity(candidate) {
 
 # --instructions--
 
-اكتب دالة `joinDogFraternity` التي تأخذ معلمة `candidate` و باستخدام الـ `constructor` ،قم بإرجاع `true` إذا كان المرشح `Dog`، وإلا أرجع `false`.
+اكتب وظيفة `joinDogFraternity` التي تأخذ وسيط `candidate`, وتستخدم خاصية `constructor`, لتنتج `true` عندما يكون قيمة candidate تساوي `Dog`، وتنتح `false` عندما لا يكون كذلك.
 
 # --hints--
 

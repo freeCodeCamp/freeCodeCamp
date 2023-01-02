@@ -12,7 +12,7 @@ dashedName: check-for-mixed-grouping-of-characters
 
 إذا كنت ترغب في العثور على `Penguin` او `Pumpkin` في string، يمكنك استخدام Regular Expression التالي: `/P(engu|umpk)in/g`
 
-ثم تحقق مما إذا كانت مجموعات الـ string المطلوبة موجودة في الـ test string باستخدام دالة `test()`.
+ثم تحقق مما إذا كانت مجموعات من مقطع النصي (string) المطلوبة موجودة في مقطع test النصي باستخدام طريقة (method) تسمى `test()`.
 
 ```js
 let testStr = "Pumpkin";

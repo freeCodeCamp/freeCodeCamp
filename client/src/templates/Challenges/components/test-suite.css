@@ -3,7 +3,7 @@
   justify-content: flex-start;
   flex-direction: column;
   margin: 15px 0;
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .challenge-test-suite-heading {

@@ -78,7 +78,7 @@
 }
 
 .video-quiz-input-visible {
-  margin-right: 15px;
+  margin-inline-end: 15px;
   position: relative;
   top: 2px;
   display: inline-block;

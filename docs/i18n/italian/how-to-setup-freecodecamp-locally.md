@@ -2,7 +2,7 @@ Segui queste linee guida per impostare freeCodeCamp localmente nel tuo sistema. 
 
 Alcuni di questi flussi di lavoro contributivi – come la correzione di bug nel codebase o nel curriculum – hanno bisogno di eseguire freeCodeCamp localmente sul computer.
 
-> [!TIP] Se non sei interessato a configurare freeCodeCamp localmente, considera di utilizzare Gitpod. Abbiamo automatizzato il processo di installazione di tutte le dipendenze & degli strumenti di cui avrai bisogno.
+> [!TIP] Se non sei interessato a configurare freeCodeCamp localmente, considera di utilizzare Gitpod. We have automated the process of installing all the dependencies & tools you will need.
 > 
 > Continua a leggere questa guida per saperne di più sull'uso di GitPod.
 
@@ -35,13 +35,13 @@ Questo è essenziale, in quanto consente di lavorare sulla propria copia di free
 
 ## Usare una macchina locale o GitPod
 
-Una volta che hai fatto il fork del repository, scegli tra le seguenti opzioni. Puoi utilizzare la tua macchina locale o uno spazio di lavoro basato su Gitpod per lavorare sul codebase.
+Once you have forked the repository, you can either use your own local machine or a GitPod-based workspace to work on the codebase.
 
 Per contribuire a lungo termine, ti consigliamo di impostare freeCodeCamp sulla tua macchina locale.
 
 ### Come preparare uno spazio di lavoro GitPod
 
-Abbiamo automatizzato il processo di installazione di tutte le dipendenze & degli strumenti di cui avrai bisogno. Con GitPod ottieni un ambiente gratuito pronto per programmare in pochi minuti, ed è utile se non hai accesso al computer o se desideri effettuare modifiche una tantum.
+We have automated the process of installing all the dependencies & tools you will need. Con GitPod ottieni un ambiente gratuito pronto per programmare in pochi minuti, ed è utile se non hai accesso al computer o se desideri effettuare modifiche una tantum.
 
 Ci sono vari modi per avviare uno spazio di lavoro GitPod:
 
@@ -49,17 +49,11 @@ Ci sono vari modi per avviare uno spazio di lavoro GitPod:
 
    Ad esempio, se visiti il tuo fork su `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, aggiungi `gitpod.io/#` davanti all'URL nella barra degli indirizzi e premi invio.
 
-   Ovvero, puoi navigare su
+   That is you can navigate to `gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git` and you should see a workspace created for you. This works for any repository or pull-request on GitHub.
 
-   ```
-   gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git
-   ```
+2. Alternatively install one of the below extensions for your browser.
 
-   e dovresti vedere uno spazio di lavoro creato per te. Funziona per qualsiasi repository o pull-request su GitHub.
-
-2. In alternativa, installa una delle estensioni sottostanti per il browser.
-
-   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - funziona con browser basati su Chromium come Google Chrome, Brave, Edge, ecc.
+   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - works with Chromium-based browsers like Google Chrome, Brave, Edge, etc.
    - [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
 
    Una volta installato vedrai un pulsante 'GitPod' su ogni repository, pull-request, ecc. da usare come una comoda scorciatoia per lanciare uno spazio di lavoro. Vedi la pagina delle estensioni per i dettagli, screenshot, ecc.
@@ -72,9 +66,9 @@ Inizia installando i prerequisiti software per il tuo sistema operativo.
 
 Sosteniamo principalmente lo sviluppo su sistemi Linux e basati su Unix. Il nostro staff e i collaboratori della community lavorano regolarmente con il codebase utilizzando strumenti installati su Ubuntu e macOS.
 
-Supportiamo anche Windows 10 via WSL2, che puoi preparare [leggendo questa guida](how-to-setup-wsl.md).
+We also support Windows 10 and 11 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
 
-Alcuni membri della comunità sviluppano anche su Windows 10 nativamente con Git per Windows (Git Bash) e altri strumenti installati su Windows. Al momento non disponiamo di un supporto ufficiale per una tale configurazione, consigliamo invece di utilizzare WSL2.
+Some community members also develop on Windows natively with Git for Windows (Git Bash), and other tools installed on Windows. Al momento non disponiamo di un supporto ufficiale per una tale configurazione, consigliamo invece di utilizzare WSL2.
 
 #### Prerequisiti:
 
@@ -119,7 +113,7 @@ La [Clonazione](https://help.github.com/articles/cloning-a-repository/) consiste
 
 > [!WARNING] Se stai lavorando su una Distro di Linux su WSL2, potresti avere problemi di performance e stabilità eseguendo il progetto in una cartella che è condivisa tra Windows e WSL2 (per esempio `/mnt/c/Users/`). Quindi ti raccomandiamo di clonare il repo in una cartella che è usata principalmente dalla Distro di Linux su WSL2 e non condivisa direttamente con Windows (per esempio `~/PROJECTS/`).
 > 
-> Vedi [questa issue su GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues/40632) per ulteriori informazioni su questo problema.
+> See [this GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/40632) for further information about this problem.
 
 Esegui questi comandi sulla tua macchina locale:
 
