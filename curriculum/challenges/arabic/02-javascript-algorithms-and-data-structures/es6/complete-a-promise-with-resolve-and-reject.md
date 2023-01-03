@@ -8,7 +8,7 @@ dashedName: complete-a-promise-with-resolve-and-reject
 
 # --description--
 
-يكون للوعد (promise) ثلاث حالات: `pending`, و `fulfilled`, و `rejected`. كائن Promise الذي قمت بإنشائه في التحدي السابق معلق إلى الأبد في حالة `pending` لأنك لم تضف طريقة لإكمال كائن Promise. حجج `resolve` و `reject` المعطاة لوظفية الكائن promise تستخدم لفعل ذلك. تستخدم `resolve` عندما تريد أن ينجح الكائن promise وتستخدم `reject` عندما تريد أن يفشل الكائن promise. هذا الطرق تستقبل حَجَّة (argument)، كما هو مبين بالإدانة.
+يكون للوعد (promise) ثلاث حالات: `pending`, و `fulfilled`, و `rejected`. كائن Promise الذي قمت بإنشائه في التحدي السابق معلق إلى الأبد في حالة `pending` لأنك لم تضف طريقة لإكمال كائن Promise. تستخدم الوسائط `resolve` و `reject` المعطاة لوظيفة الكائن promise لفعل ذلك. تستخدم `resolve` عندما تريد أن ينجح الكائن promise وتستخدم `reject` عندما تريد أن يفشل الكائن promise. هذا الطرق تستقبل حَجَّة (argument)، كما هو مبين بالإدانة.
 
 ```js
 const myPromise = new Promise((resolve, reject) => {

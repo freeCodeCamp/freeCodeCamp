@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+  التفكيك عن طريق عناصر rest
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -22,11 +22,11 @@ console.log(arr);
 
 ستعرض وحدة التحكم القيم `1, 2` و `[3, 4, 5, 7]`.
 
-المتغيرات `a` و `b` تأخذ القيم الأولى والثانية من الـ array. بعد ذلك، بسبب وجود rest parameter، الـ `arr` يحصل على بقية القيم في شكل array. يعمل العنصر rest بشكل صحيح فقط كآخر متغير في القائمة. بمعني انه لا يمكنك استخدام rest parameter لالتقاط subarray (اي array فرعية) تترك العنصر الأخير من الـ array الأصلية.
+المتغيرات `a` و `b` تأخذ القيم الأولى والثانية من الـ array. بعد ذلك، بسبب وجود الثلاثة نقاط التي تدعى rest، سوف يحصل المتغير `arr` على بقية القيم في شكل قائمة (array). يعمل العنصر rest بشكل صحيح فقط كآخر متغير في القائمة. بمعني، انه لا يمكنك استخدام rest للحصول على قائمة فرعية (subarray) التي لا تحتوي غلى العنصر الأخير من القائمة الأصلية.
 
 # --instructions--
 
-استخدام تشكيل مخرج للمعلومات (destructuring assignment) مع الحجة (parameter) الباقية لمحاكاة سلوك `Array.prototype.slice()`. يجب أن ينتج `removeFirstTwo()` قائمة فرعية (sub-array) من قائمة `list` الأصلية دون العنصرين الأولين.
+استخدم تشكيل rest لتعيين التركبي (destructuring assignment) لمحاكاة سلوك `Array.prototype.slice()`. يجب أن ينتج `removeFirstTwo()` قائمة فرعية (sub-array) من قائمة `list` الأصلية دون العنصرين الأولين.
 
 # --hints--
 

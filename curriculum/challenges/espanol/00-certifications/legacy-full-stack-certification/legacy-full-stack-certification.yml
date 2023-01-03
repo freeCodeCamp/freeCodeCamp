@@ -7,7 +7,7 @@ isPrivate: true
 tests:
   - 
     id: 561add10cb82ac38a17513bc
-    title: Certificación en Diseño Web Responsivo
+    title: Certificación en Diseño Web Adaptativo
   - 
     id: 561abd10cb81ac38a17513bc
     title: Certificación en Estructura de Datos y Algoritmos de Javascript

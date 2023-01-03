@@ -164,6 +164,7 @@ config/client/test-evaluator.json
 config/curriculum.json
 config/i18n.js
 config/certification-settings.js
+config/donation-settings.js
 config/superblock-order.js
 config/superblock-order.test.js
 
@@ -212,6 +213,7 @@ client/static/_redirects
 client/static/mobile
 client/static/curriculum-data
 client/i18n/locales/**/trending.json
+client/src/components/Donation/types.js
 
 ### UI Components ###
 tools/ui-components/dist

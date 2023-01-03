@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908845
-title: Alinea elementos de formulario de manera responsiva con Bootstrap
+title: Alinea elementos de formulario de manera adaptable con Bootstrap
 challengeType: 0
 forumTopicId: 18225
 required:
@@ -17,7 +17,7 @@ Ahora coloquemos tus `input` de formulario y tu `button` de envío en la misma l
 
 Coloca juntos tu campo de texto `input` y tu `button` de envío dentro de un `div` con la clase `row`. Anida tu campo de texto `input` dentro de un div con la clase `col-xs-7`. Anida tu `button` de envío del formulario dentro de un `div` con la clase `col-xs-5`.
 
-Este es el ultima desafio que vamos a hacer para nuestro 'Cat Photo App' por ahora. ¡Esperamos que hayas disfrutado aprendiendo Font Awesome, Bootstrap y diseño responsivo!
+Este es el ultima desafio que vamos a hacer para nuestro 'Cat Photo App' por ahora. ¡Esperamos que hayas disfrutado aprendiendo Font Awesome, Bootstrap y diseño adaptativo!
 
 # --hints--
 

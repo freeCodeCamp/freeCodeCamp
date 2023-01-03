@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import { scriptLoader, scriptRemover } from '../../utils/script-loaders';
 
-import type { AddDonationData } from './paypal-button';
+import type { DonationApprovalData } from './types';
 
 /* eslint-disable @typescript-eslint/naming-convention */
 type PayPalButtonScriptLoaderProps = {
@@ -30,7 +30,7 @@ type PayPalButtonScriptLoaderProps = {
   ) => unknown;
   isSubscription: boolean;
   onApprove: (
-    data: AddDonationData,
+    data: DonationApprovalData,
     actions?: { order: { capture: () => Promise<unknown> } }
   ) => unknown;
   isPaypalLoading: boolean;
@@ -66,7 +66,7 @@ declare global {
   }
 }
 
-export class PayPalButtonScriptLoader extends Component<
+export default class PayPalButtonScriptLoader extends Component<
   PayPalButtonScriptLoaderProps,
   PayPalButtonScriptLoaderState
 > {
@@ -188,7 +188,7 @@ export class PayPalButtonScriptLoader extends Component<
         onApprove={
           isSubscription
             ? (
-                data: AddDonationData,
+                data: DonationApprovalData,
                 actions: { order: { capture: () => Promise<unknown> } }
               ) => onApprove(data, actions)
             : (

@@ -11,7 +11,7 @@ dashedName: store-multiple-values-in-one-variable-using-javascript-arrays
 
 مع متغير جافا سكريبت الـ `array`، يمكننا تخزين عدة قطع من البيانات في مكان واحد.
 
-تبدأ تعريف الـ array بأقواس مربعه (square bracke) وتنهيها بأقواس مربعه، ووضع فاصلة بين كل إدخال، مثال:
+تبدأ إعلان القائمة (array) بأقواس مربعه (square bracke) وتنهيها بأقواس مربعه، ووضع فاصلة بين كل إدخال، مثال:
 
 ```js
 const sandwich = ["peanut butter", "jelly", "bread"];

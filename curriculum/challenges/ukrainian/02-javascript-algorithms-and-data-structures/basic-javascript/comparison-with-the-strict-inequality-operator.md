@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d3
-title: Порівняння з Оператором Абсолютної Нерівності
+title: Порівняння з оператором «строго не дорівнює»
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKekkUy'
 forumTopicId: 16791
@@ -9,7 +9,7 @@ dashedName: comparison-with-the-strict-inequality-operator
 
 # --description--
 
-Оператор абсолютної нерівності (`!==`) є логічною протилежністю оператора абсолютної рівності. Це означає «строго нерівно» та повертає `false`, де строга рівність повернула б `true` та *навпаки*. Оператор абсолютної нерівності не буде перетворювати типи даних.
+Оператор строгої нерівності (`!==`) є логічною протилежністю оператора строгої рівності. Це означає «строго нерівно» та повертає `false`, де строга рівність повернула б `true` та *навпаки*. Оператор «строго не дорівнює» не перетворює типи даних.
 
 **Приклади**
 
@@ -21,35 +21,35 @@ dashedName: comparison-with-the-strict-inequality-operator
 
 # --instructions--
 
-Add the strict inequality operator to the `if` statement so the function will return the string `Not Equal` when `val` is not strictly equal to `17`
+Додайте оператор «строго не дорівнює» до інструкції `if`, щоб функція повернула рядок `Not Equal`, якщо `val` строго не дорівнює `17`
 
 # --hints--
 
-`testStrictNotEqual(17)` має повернути рядок `Equal`
+`testStrictNotEqual(17)` повинен повертати рядок `Equal`
 
 ```js
 assert(testStrictNotEqual(17) === 'Equal');
 ```
 
-`testStrictNotEqual("17")` має повернути рядок `Not Equal`
+`testStrictNotEqual("17")` повинен повертати рядок `Not Equal`
 
 ```js
 assert(testStrictNotEqual('17') === 'Not Equal');
 ```
 
-`testStrictNotEqual(12)` має повернути рядок `Not Equal`
+`testStrictNotEqual(12)` повинен повертати рядок `Not Equal`
 
 ```js
 assert(testStrictNotEqual(12) === 'Not Equal');
 ```
 
-`testStrictNotEqual("bob")` має повернути рядок `Not Equal`
+`testStrictNotEqual("bob")` повинен повертати рядок `Not Equal`
 
 ```js
 assert(testStrictNotEqual('bob') === 'Not Equal');
 ```
 
-You should use the `!==` operator
+Ви повинні використати оператор `!==`
 
 ```js
 assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);

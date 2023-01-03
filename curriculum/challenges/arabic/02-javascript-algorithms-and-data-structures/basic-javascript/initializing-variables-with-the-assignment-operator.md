@@ -9,7 +9,7 @@ dashedName: initializing-variables-with-the-assignment-operator
 
 # --description--
 
-من الشائع <dfn>تعيين</dfn> للمتغير قيمة أولية في نفس السطر المعلن عنه.
+من الشائع <dfn>تهيئة</dfn> قيمة أولية للمتغير في نفس السطر المعلن عنه.
 
 ```js
 var myVar = 0;

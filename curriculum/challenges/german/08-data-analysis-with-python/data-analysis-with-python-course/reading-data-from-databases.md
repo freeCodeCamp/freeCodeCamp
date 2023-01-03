@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c163
-title: Reading Data from Databases
+title: Daten aus Datenbanken einlesen
 challengeType: 11
 videoId: MtgXS1MofRw
 bilibiliIds:
@@ -17,7 +17,7 @@ dashedName: reading-data-from-databases
 Weitere Ressourcen:
 
 -  <a href="https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas" target="_blank" rel="noopener noreferrer nofollow">Notebooks auf GitHub</a>
--  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">How to open Notebooks from GitHub using Google Colab.</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Wie man Notebooks von GitHub unter Verwendung von Google Colab öffnet.</a>
 
 # --question--
 

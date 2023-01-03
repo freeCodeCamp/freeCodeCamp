@@ -15,7 +15,7 @@
 
 .landing-page ul {
   list-style: none;
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 #featured-logos {

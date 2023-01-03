@@ -59,13 +59,13 @@ assert(typeof trueOrFalse(true) === 'string');
 assert(typeof trueOrFalse(false) === 'string');
 ```
 
-`trueOrFalse(true)` повинен повернути рядок `Yes, that was true`
+`trueOrFalse(true)` повинен повертати рядок `Yes, that was true`
 
 ```js
 assert(trueOrFalse(true) === 'Yes, that was true');
 ```
 
-`trueOrFalse(false)` повинен повернути рядок `No, that was false`
+`trueOrFalse(false)` повинен повертати рядок `No, that was false`
 
 ```js
 assert(trueOrFalse(false) === 'No, that was false');

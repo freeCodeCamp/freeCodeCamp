@@ -1,6 +1,6 @@
 ---
 id: 587d7b8a367417b2b2512b4d
-title: Use Destructuring Assignment to Pass an Object as a Function's Parameters
+title: استخدام التعيين التركيبي (Destructuring Assignment) لإعطاء كائن كوسيط للوظائف
 challengeType: 1
 forumTopicId: 301217
 dashedName: use-destructuring-assignment-to-pass-an-object-as-a-functions-parameters
@@ -27,7 +27,7 @@ const profileUpdate = ({ name, age, nationality, location }) => {
 }
 ```
 
-عندما يتم تمرير `profileData` إلى الـ function أعلاه، يتم تفصيص القيم من معلمة (parameter) الـ function لاستخدامها داخل الـ function.
+عندما يتم تمرير `profileData` إلى الوظيفة (function) أعلاه، تفكيك القيم من وسيط (parameter) الوظيفة لاستخدامها داخل الوظيفة.
 
 # --instructions--
 
@@ -53,7 +53,7 @@ assert(half(stats) === 28.015);
 assert(__helpers.removeWhiteSpace(code).match(/half=\({\w+,\w+}\)/));
 ```
 
-وينبغي استخدام Destructured parameter.
+ينبغي استخدام وسيط التركيبي (Destructured parameter).
 
 ```js
 assert(!code.match(/stats\.max|stats\.min/));

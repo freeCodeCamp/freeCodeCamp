@@ -53,28 +53,12 @@ export const fetchUser = createAction(actionTypes.fetchUser);
 export const fetchUserComplete = createAction(actionTypes.fetchUserComplete);
 export const fetchUserError = createAction(actionTypes.fetchUserError);
 
-export const addDonation = createAction(actionTypes.addDonation);
-export const addDonationComplete = createAction(
-  actionTypes.addDonationComplete
+export const postCharge = createAction(actionTypes.postCharge);
+export const postChargeProcessing = createAction(
+  actionTypes.postChargeProcessing
 );
-export const addDonationError = createAction(actionTypes.addDonationError);
-
-export const postChargeStripe = createAction(actionTypes.postChargeStripe);
-export const postChargeStripeComplete = createAction(
-  actionTypes.postChargeStripeComplete
-);
-export const postChargeStripeError = createAction(
-  actionTypes.postChargeStripeError
-);
-export const postChargeStripeCard = createAction(
-  actionTypes.postChargeStripeCard
-);
-export const postChargeStripeCardComplete = createAction(
-  actionTypes.postChargeStripeCardComplete
-);
-export const postChargeStripeCardError = createAction(
-  actionTypes.postChargeStripeCardError
-);
+export const postChargeComplete = createAction(actionTypes.postChargeComplete);
+export const postChargeError = createAction(actionTypes.postChargeError);
 
 export const fetchProfileForUser = createAction(
   actionTypes.fetchProfileForUser

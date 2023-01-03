@@ -20,7 +20,7 @@ myPromise.then(result => {
 
 # --instructions--
 
-أضف method الـ `then` إلى الـ promise الخاص بك. استخدم `result` كمعلمة لـ callback function واخرج الـ `result` إلى وحدة التحكم.
+أضف method الـ `then` إلى الـ promise الخاص بك. استخدم `result` كوسيط لوظيفة تعيد تفعيلها وسجل قيمة `result` في وحدة التحكم (console).
 
 # --hints--
 
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-يجب أن تكون لـ method الـ `then` الـ callback function مع `result` كمعلمتها (parameter).
+يجب أن تكون لطريقة (method) المسمى `then` الوظيفة تعيد تفعيلها (callback function) مع `result` كوسيط (parameter).
 
 ```js
 assert(resultIsParameter);

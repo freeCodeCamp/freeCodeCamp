@@ -34,13 +34,13 @@
 }
 
 .timeline-cert-link {
-  margin-right: 20px;
+  margin-inline-end: 20px;
 }
 
 .timeline-cert-link > svg {
   display: inline-block;
   height: 25px;
   width: auto;
-  margin-left: 10px;
+  margin-inline-start: 10px;
   position: absolute;
 }

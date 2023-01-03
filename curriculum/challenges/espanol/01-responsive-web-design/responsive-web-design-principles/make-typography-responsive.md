@@ -1,6 +1,6 @@
 ---
 id: 587d78b1367417b2b2512b0c
-title: Haz tipografía responsiva
+title: Haz tipografía adaptable
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pzrPu4/crzN7T8'
 forumTopicId: 301141
@@ -9,7 +9,7 @@ dashedName: make-typography-responsive
 
 # --description--
 
-En lugar de usar `em` o `px` para dimensionar texto, puedes usar unidades de viewport para obtener una tipografía responsiva. Las unidades de viewport, como los porcentajes, son unidades relativas, pero se basan en objetos diferentes. Las unidades de viewport son relativas a las dimensiones del viewport (ancho o alto) de un dispositivo, y los porcentajes son relativos al tamaño del elemento contenedor padre.
+En lugar de usar `em` o `px` para dimensionar texto, puedes usar unidades de viewport para obtener una tipografía adaptable. Las unidades de viewport, como los porcentajes, son unidades relativas, pero se basan en objetos diferentes. Las unidades de viewport son relativas a las dimensiones del viewport (ancho o alto) de un dispositivo, y los porcentajes son relativos al tamaño del elemento contenedor padre.
 
 Las cuatro diferentes unidades de viewport son:
 
