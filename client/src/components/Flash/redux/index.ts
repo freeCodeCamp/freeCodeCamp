@@ -15,7 +15,7 @@ export const flashMessageSelector = (state: State): FlashState['message'] =>
 
 // ACTION DEFINITIONS
 
-enum FlashActionTypes {
+export enum FlashActionTypes {
   CreateFlashMessage = 'createFlashMessage',
   RemoveFlashMessage = 'removeFlashMessage'
 }
@@ -49,7 +49,7 @@ export const removeFlashMessage =
   });
 
 // REDUCER
-type ReducerBase<T> = { type: T };
+export type ReducerBase<T> = { type: T };
 type ReducerPayload<T extends FlashActionTypes> =
   T extends FlashActionTypes.CreateFlashMessage
     ? ReducerBase<T> & {

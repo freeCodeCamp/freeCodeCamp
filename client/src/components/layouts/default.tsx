@@ -28,8 +28,6 @@ import {
 } from '../../redux/selectors';
 import { UserFetchState, User } from '../../redux/prop-types';
 import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
-import Flash from '../Flash';
-import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 import SignoutModal from '../signout-modal';
 import Footer from '../Footer';
 import Header from '../Header';
@@ -44,22 +42,18 @@ import './rtl-layout.css';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
-  flashMessageSelector,
   isOnlineSelector,
   isServerOnlineSelector,
   userFetchStateSelector,
   userSelector,
   (
     isSignedIn,
-    flashMessage,
     isOnline: boolean,
     isServerOnline: boolean,
     fetchState: UserFetchState,
     user: User
   ) => ({
     isSignedIn,
-    flashMessage,
-    hasMessage: !!flashMessage.message,
     isOnline,
     isServerOnline,
     fetchState,
@@ -74,7 +68,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       fetchUser,
-      removeFlashMessage,
       onlineStatusChange,
       serverStatusChange,
       executeGA
@@ -138,13 +131,10 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
   render() {
     const {
       children,
-      hasMessage,
       fetchState,
-      flashMessage,
       isOnline,
       isServerOnline,
       isSignedIn,
-      removeFlashMessage,
       showFooter = true,
       isChallenge = false,
       block,
@@ -226,12 +216,6 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
             isServerOnline={isServerOnline}
             isSignedIn={isSignedIn}
           />
-          {hasMessage && flashMessage ? (
-            <Flash
-              flashMessage={flashMessage}
-              removeFlashMessage={removeFlashMessage}
-            />
-          ) : null}
           <SignoutModal />
           {isChallenge && (
             <div className='breadcrumbs-demo'>
