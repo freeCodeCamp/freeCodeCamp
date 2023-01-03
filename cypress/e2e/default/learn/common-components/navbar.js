@@ -4,7 +4,7 @@ const selectors = {
   navigationLinks: '.nav-list',
   avatarContainer: '.avatar-container',
   defaultAvatar: '.avatar-container',
-  menuButton: '#toggle-button-nav',
+  menuButton: '.toggle-button-nav',
   avatarImage: '.avatar-container .avatar'
 };
 

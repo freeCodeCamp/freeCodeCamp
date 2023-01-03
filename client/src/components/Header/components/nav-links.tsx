@@ -3,16 +3,15 @@
 // @ts-nocheck
 import {
   faCheckSquare,
+  faHeart,
   faSquare,
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Media from 'react-responsive';
 import React, { Component, Fragment, createRef } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import envData from '../../../../../config/env.json';
-import { DONATE_NAV_EXPOSED_WIDTH } from '../../../../../config/misc';
 import {
   availableLangs,
   LangNames,
@@ -297,7 +296,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
       fetchState,
       t,
       toggleNightMode,
-      user: { username, theme }
+      user: { isDonating = false, username, theme }
     }: NavLinksProps = this.props;
 
     const { pending } = fetchState;
@@ -311,20 +310,25 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
           isLanguageMenuDisplayed ? ' display-lang-menu' : ''
         }`}
       >
-        <Media maxWidth={DONATE_NAV_EXPOSED_WIDTH}>
+        {isDonating ? (
+          <li key='donate'>
+            <div className='nav-link nav-link-flex nav-link-header'>
+              <span>{t('donate.thanks')}</span>
+              <FontAwesomeIcon icon={faHeart} />
+            </div>
+          </li>
+        ) : (
           <li key='donate'>
             <Link
               className='nav-link'
               onKeyDown={this.handleMenuKeyDown}
               sameTab={false}
               to='/donate'
-              data-test-label='dropdown-donate-button'
-              nav-donate-button
             >
               {t('buttons.donate')}
             </Link>
           </li>
-        </Media>
+        )}
         <li key='learn'>
           <Link
             className='nav-link'
