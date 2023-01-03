@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface FormLabelProps
+export interface ControlLabelProps
   extends React.LabelHTMLAttributes<HTMLLabelElement> {
   htmlFor?: string;
   srOnly?: boolean;

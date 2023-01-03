@@ -1,9 +1,13 @@
 import React, { useContext } from 'react';
 import { FormContext } from '../form-context';
 
-import { FormLabelProps } from './types';
+import { ControlLabelProps } from './types';
 
-export const FormLabel = ({ htmlFor, srOnly, ...props }: FormLabelProps) => {
+export const ControlLabel = ({
+  htmlFor,
+  srOnly,
+  ...props
+}: ControlLabelProps) => {
   const { controlId } = useContext(FormContext);
   let screenReaderClass;
   if (srOnly) screenReaderClass = ' srOnly';
