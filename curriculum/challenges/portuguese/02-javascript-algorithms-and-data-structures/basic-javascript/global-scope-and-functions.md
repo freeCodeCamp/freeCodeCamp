@@ -88,7 +88,7 @@ uncapture();
 
 
 function fun1() {
-  // Assign 5 to oopsGlobal Here
+  // Assign 5 to oopsGlobal here
 
 }
 
