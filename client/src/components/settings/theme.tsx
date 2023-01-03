@@ -1,7 +1,7 @@
 import { Form, Button, ControlLabel } from '@freecodecamp/react-bootstrap';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-import Spacer from '../../assets/icons/spacer';
 import ToggleCheck from '../../assets/icons/toggle-check';
 
 const checkIconStyle = {
@@ -12,8 +12,7 @@ const checkIconStyle = {
 
 export enum Themes {
   Night = 'night',
-  Default = 'default',
-  System = 'system'
+  Default = 'default'
 }
 
 type ThemeProps = {
@@ -25,13 +24,15 @@ export default function ThemeSettings({
   currentTheme,
   toggleNightMode
 }: ThemeProps): JSX.Element {
+  const { t } = useTranslation();
+
   return (
     <Form
       inline={true}
       onSubmit={(e: React.FormEvent): void => e.preventDefault()}
     >
-      <ControlLabel>
-        Night Mode
+      <ControlLabel className='setting-theme'>
+        {t('settings.labels.theme-mode')}
         <Button
           className={`${
             currentTheme !== 'night' ? 'toggle-not-active' : 'toggle-active'
@@ -39,12 +40,9 @@ export default function ThemeSettings({
           disabled={currentTheme === 'night'}
           onClick={() => toggleNightMode((currentTheme = Themes.Night))}
         >
-          {currentTheme === 'night' ? (
-            <ToggleCheck style={checkIconStyle} />
-          ) : (
-            <Spacer style={checkIconStyle} />
-          )}
-          Dark
+          {t('settings.labels.dark-theme')}
+          <span className='sr-only'>{t('settings.labels.sr-theme')}</span>
+          {currentTheme === 'night' && <ToggleCheck style={checkIconStyle} />}
         </Button>
         <Button
           className={`${
@@ -53,12 +51,9 @@ export default function ThemeSettings({
           disabled={currentTheme === 'default'}
           onClick={() => toggleNightMode((currentTheme = Themes.Default))}
         >
-          Light
-          {currentTheme ? (
-            <ToggleCheck style={checkIconStyle} />
-          ) : (
-            <Spacer style={checkIconStyle} />
-          )}
+          {t('settings.labels.light-theme')}
+          <span className='sr-only'>{t('settings.labels.sr-theme')}</span>
+          {currentTheme === 'default' && <ToggleCheck style={checkIconStyle} />}
         </Button>
         <Button
           className={`${
@@ -67,12 +62,9 @@ export default function ThemeSettings({
           disabled={currentTheme === null}
           onClick={() => toggleNightMode((currentTheme = null))}
         >
-          System
-          {currentTheme === null ? (
-            <ToggleCheck style={checkIconStyle} />
-          ) : (
-            <Spacer style={checkIconStyle} />
-          )}
+          {t('settings.labels.system-theme')}
+          <span className='sr-only'>{t('settings.labels.sr-theme')}</span>
+          {currentTheme === null && <ToggleCheck style={checkIconStyle} />}
         </Button>
       </ControlLabel>
     </Form>

@@ -1,3 +1,15 @@
+.setting-theme {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.setting-theme button:first-child {
+  margin-inline-start: auto;
+}
+
 .toggle-setting-container .form-group {
   display: flex;
   justify-content: space-between;
@@ -7,21 +19,18 @@
 .toggle-setting-container .toggle-label {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-.toggle-setting-container .btn-group {
-  padding-left: 5px;
-}
-
-.toggle-setting-container > .form-group > * {
-  flex: 1 1 0;
+  justify-content: flex-start;
 }
 
 .toggle-setting-container .btn-group {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+  padding-left: 5px;
+}
+
+.toggle-setting-container > .form-group > * {
+  flex: 1 1 0;
 }
 
 @media (max-width: 440px) {
@@ -31,10 +40,6 @@
 
   .toggle-setting-container > .form-group > * {
     flex: 0 1 auto;
-  }
-
-  .toggle-setting-container .toggle-label {
-    justify-content: flex-start;
   }
 
   .toggle-setting-container .help-block {

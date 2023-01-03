@@ -149,6 +149,10 @@
       "my-donations": "My donations",
       "night-mode": "Night Mode",
       "theme-mode": "Theme Mode",
+      "dark-theme": "Night",
+      "light-theme": "Light",
+      "system-theme": "System",
+      "sr-theme": "Theme",
       "sound-mode": "Campfire Mode",
       "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
