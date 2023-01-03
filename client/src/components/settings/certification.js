@@ -213,6 +213,7 @@ export class CertificationSettings extends Component {
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         dataCy={projectTitle}
+        projectTitle={projectTitle}
         showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}
         displayContext={'settings'}

@@ -104,11 +104,11 @@ function TimelineInner({
     completedChallenge: CompletedChallenge
   ): React.ReactNode {
     const { id } = completedChallenge;
-    const challengeTitle = idToNameMap.get(id)?.challengeTitle;
+    const projectTitle = idToNameMap.get(id)?.challengeTitle || '';
     return (
       <SolutionDisplayWidget
         completedChallenge={completedChallenge}
-        dataCy={challengeTitle}
+        projectTitle={projectTitle}
         showUserCode={() => viewSolution(completedChallenge)}
         showProjectPreview={() => viewProject(completedChallenge)}
         displayContext={'timeline'}

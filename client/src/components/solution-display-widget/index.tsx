@@ -9,6 +9,7 @@ import './solution-display-widget.css';
 interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;
+  projectTitle: string;
   showUserCode: () => void;
   showProjectPreview?: () => void;
   displayContext: 'timeline' | 'settings' | 'certification';
@@ -17,6 +18,7 @@ interface Props {
 export function SolutionDisplayWidget({
   completedChallenge,
   dataCy,
+  projectTitle,
   showUserCode,
   showProjectPreview,
   displayContext
@@ -33,7 +35,7 @@ export function SolutionDisplayWidget({
     <Button block={true} data-cy={dataCy} onClick={showUserCode}>
       {viewText}{' '}
       <span className='sr-only'>
-        {t('settings.labels.solution-for', { projectTitle: dataCy })}
+        {t('settings.labels.solution-for', { projectTitle })}
       </span>
     </Button>
   );
@@ -42,7 +44,7 @@ export function SolutionDisplayWidget({
       <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
         {viewText}{' '}
         <span className='sr-only'>
-          {t('settings.labels.solution-for', { projectTitle: dataCy })}
+          {t('settings.labels.solution-for', { projectTitle })}
         </span>
       </Dropdown.Toggle>
       <Dropdown.Menu>
@@ -79,7 +81,7 @@ export function SolutionDisplayWidget({
     >
       {viewText}{' '}
       <span className='sr-only'>
-        {t('settings.labels.solution-for', { projectTitle: dataCy })} (
+        {t('settings.labels.solution-for', { projectTitle })} (
         {t('aria.opens-new-window')})
       </span>
       <FontAwesomeIcon icon={faExternalLinkAlt} />
@@ -98,7 +100,7 @@ export function SolutionDisplayWidget({
     >
       {viewText}{' '}
       <span className='sr-only'>
-        {t('settings.labels.solution-for', { projectTitle: dataCy })}
+        {t('settings.labels.solution-for', { projectTitle })}
       </span>
     </Button>
   );
@@ -108,7 +110,7 @@ export function SolutionDisplayWidget({
         <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
           {viewText}{' '}
           <span className='sr-only'>
-            {t('settings.labels.solution-for', { projectTitle: dataCy })}
+            {t('settings.labels.solution-for', { projectTitle })}
           </span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
@@ -129,7 +131,7 @@ export function SolutionDisplayWidget({
         <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
           {viewText}{' '}
           <span className='sr-only'>
-            {t('settings.labels.solution-for', { projectTitle: dataCy })}
+            {t('settings.labels.solution-for', { projectTitle })}
           </span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
@@ -168,7 +170,7 @@ export function SolutionDisplayWidget({
     >
       {viewText}{' '}
       <span className='sr-only'>
-        {t('settings.labels.solution-for', { projectTitle: dataCy })} (
+        {t('settings.labels.solution-for', { projectTitle })} (
         {t('aria.opens-new-window')})
       </span>
       <FontAwesomeIcon icon={faExternalLinkAlt} />
