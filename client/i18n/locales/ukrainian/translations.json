@@ -478,10 +478,11 @@
     "hint": "Підказка",
     "heart": "Серце",
     "initial": "Початковий",
+    "inputReset": "Clear search terms",
     "info": "Інформація",
     "spacer": "Роздільник",
     "toggle": "Перемкнути галочку",
-    "magnifier": "лупа"
+    "magnifier": "Submit search terms"
   },
   "aria": {
     "fcc-curriculum": "Навчальний план freeCodeCamp",

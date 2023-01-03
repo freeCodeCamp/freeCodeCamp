@@ -8,44 +8,44 @@ dashedName: anonymous-message-board
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://anonymous-message-board.freecodecamp.rocks/</a>.
+Erstelle eine vollständige JavaScript-Anwendung, die eine ähnliche Funktionalität wie <a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://anonymous-message-board.freecodecamp.rocks/</a> aufweist.
 
 Bei der Arbeit an diesem Projekt musst du deinen Code mit einer der folgenden Methoden schreiben:
 
--   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-messageboard/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
--   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Be sure to incorporate all the files from our GitHub repo.
+-   Klone <a href="https://github.com/freeCodeCamp/boilerplate-project-messageboard/" target="_blank" rel="noopener noreferrer nofollow">diese GitHub-Repo</a> und schließe dein Projekt lokal ab.
+-   Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starter-Projekt</a>, um dein Projekt fertigzustellen.
+-   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Achte darauf, alle Dateien unserer GitHub-Repo einzubauen.
 
-If you use Replit, follow these steps to set up the project:
+Wenn du Replit verwendest, folge diesen Schritten, um das Projekt einzurichten:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Beginne, indem du das Projekt in Replit importierst.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Gib dann die URL dazu in das Feld `Solution Link` ein. Optional kannst du auch einen Link zum Quellcode deines Projekts in das Feld `GitHub Link` eingeben.
 
 # --instructions--
 
 1.  Set `NODE_ENV` to test without quotes when ready to write tests and DB to your databases connection string (in `.env`)
-2.  Recommended to create controllers/handlers and handle routing in `routes/api.js`
+2.  Es wird empfohlen, Controller/Handler zu erstellen und das Routing in `routes/api.js` durchzuführen
 3.  Füge alle Security-Features zu `server.js` hinzu
 
-Write the following tests in `tests/2_functional-tests.js`:
+Schreibe die folgenden Tests in `tests/2_functional-tests.js`:
 
--   Creating a new thread: POST request to `/api/threads/{board}`
--   Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
--   Deleting a thread with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
--   Deleting a thread with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
--   Reporting a thread: PUT request to `/api/threads/{board}`
--   Creating a new reply: POST request to `/api/replies/{board}`
--   Viewing a single thread with all replies: GET request to `/api/replies/{board}`
--   Deleting a reply with the incorrect password: DELETE request to `/api/replies/{board}` with an invalid `delete_password`
--   Deleting a reply with the correct password: DELETE request to `/api/replies/{board}` with a valid `delete_password`
--   Reporting a reply: PUT request to `/api/replies/{board}`
+-   Erstellung eines neuen Threads: POST-Anfrage an `/api/threads/{board}`
+-   Die 10 neuesten Threads mit je 3 Antworten anzeigen: GET-Anfrage an `/api/threads/{board}`
+-   Löschen eines Threads mit falschem Passwort: DELETE-Anfrage an `/api/threads/{board}` mit ungültigem `delete_password`
+-   Löschen eines Threads mit richtigem Passwort: DELETE-Anfrage an `/api/threads/{board}` mit gültigem `delete_password`
+-   Melden eines Threads: PUT-Anfrage an `/api/threads/{board}`
+-   Erstellen einer neuen Antwort: POST-Anfrage an `/api/replies/{board}`
+-   Anzeigen eines einzigen Threads mit allen Antworten: GET-Anfrage an `/api/replies/{board}`
+-   Löschen einer Antwort mit falschem Passwort: DELETE-Anfrage an `/api/replies/{board}` mit ungültigem `delete_password`
+-   Löschen einer Antwort mit richtigem Passwort: DELETE-Anfrage an `/api/replies/{board}` mit gültigem `delete_password`
+-   Melden einer Antwort: PUT-Anfrage an `/api/replies/{board}`
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Du kannst dein eigenes Projekt angeben, nicht die Beispiel-URL.
 
 ```js
 (getUserInput) => {
@@ -57,7 +57,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-Only allow your site to be loaded in an iFrame on your own pages.
+Erlaube deiner Webseite nur, in einem iFrame geladen zu werden, wenn es sich um eigene Seiten handelt.
 
 ```js
 async (getUserInput) => {
@@ -67,7 +67,7 @@ async (getUserInput) => {
 };
 ```
 
-Do not allow DNS prefetching.
+DNS-Prefetching nicht zulassen.
 
 ```js
 async (getUserInput) => {
@@ -77,7 +77,7 @@ async (getUserInput) => {
 };
 ```
 
-Only allow your site to send the referrer for your own pages.
+Erlaube nur deiner Website, den Referrer für deine eigenen Seiten zu senden.
 
 ```js
 async (getUserInput) => {
@@ -87,7 +87,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a POST request to `/api/threads/{board}` with form data including `text` and `delete_password`. The saved database record will have at least the fields `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
+Du kannst eine POST-Anfrage an `/api/threads/{board}` mit Formulardaten wie `text` und `delete_password` übermitteln. Der gespeicherte Datensatz enthält mindestens die Felder `_id`, `text`, `created_on`(Datum & Zeit), `bumped_on`(Datum & Zeit, startet wie `created_on`), `reported` (Boolean), `delete_password`, & `replies` (Array).
 
 ```js
 async (getUserInput) => {
@@ -119,7 +119,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a POST request to `/api/replies/{board}` with form data including `text`, `delete_password`, & `thread_id`. This will update the `bumped_on` date to the comment's date. In the thread's `replies` array, an object will be saved with at least the properties `_id`, `text`, `created_on`, `delete_password`, & `reported`.
+Du kannst eine POST-Anfrage an `/api/replies/{board}` mit Formulardaten übermitteln, die `text`, `delete_password`, & `thread_id` enthalten. Dadurch wird das `bumped_on` Datum auf das Datum des Kommentars aktualisiert. In dem `replies`-Array des Threads wird ein Objekt gespeichert, das mindestens die Eigenschaften `_id`, `text`, `created_on`, `delete_password`, & `reported` enthält.
 
 ```js
 async (getUserInput) => {
@@ -156,7 +156,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a GET request to `/api/threads/{board}`. Returned will be an array of the most recent 10 bumped threads on the board with only the most recent 3 replies for each. The `reported` and `delete_password` fields will not be sent to the client.
+Du kannst eine GET-Anfrage an `/api/threads/{board}` übermitteln. Zurückgegeben wird eine Anordnung der letzten 10 Bumped Threads des Boards mit nur den letzten 3 Antworten für jeden. Die Felder `reported` und `delete_password` werden nicht an den Client gesendet.
 
 ```js
 async (getUserInput) => {
@@ -187,7 +187,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a GET request to `/api/replies/{board}?thread_id={thread_id}`. Returned will be the entire thread with all its replies, also excluding the same fields from the client as the previous test.
+Du kannst eine GET-Anfrage an `/api/replies/{board}?thread_id={thread_id}` übermitteln. Zurückgegeben wird der gesamte Thread mit all seinen Antworten, wobei dieselben Felder des Clients wie beim vorherigen Test ausgeschlossen werden.
 
 ```js
 async (getUserInput) => {
@@ -219,7 +219,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a DELETE request to `/api/threads/{board}` and pass along the `thread_id` & `delete_password` to delete the thread. Returned will be the string `incorrect password` or `success`.
+Du kannst eine DELETE-Anfrage an `/api/threads/{board}` übermitteln und dieser die Argumente `thread_id` & `delete_password` übergeben, um den Thread zu löschen. Zurückgegeben wird der String `incorrect password` oder `success`.
 
 ```js
 async (getUserInput) => {
@@ -256,7 +256,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a DELETE request to `/api/replies/{board}` and pass along the `thread_id`, `reply_id`, & `delete_password`. Returned will be the string `incorrect password` or `success`. On success, the text of the `reply_id` will be changed to `[deleted]`.
+Du kannst eine DELETE-Anfrage an `/api/replies/{board}` übermitteln und dieser die Argumente `thread_id`, `reply_id` & `delete_password` übergeben. Zurückgegeben wird die Zeichenkette `incorrect password` oder `success`. Bei Erfolg wird der Text `reply_id` in `[deleted]` geändert.
 
 ```js
 async (getUserInput) => {
@@ -311,7 +311,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a PUT request to `/api/threads/{board}` and pass along the `thread_id`. Returned will be the string `reported`. The `reported` value of the `thread_id` will be changed to `true`.
+Du kannst eine PUT-Anfrage an `/api/threads/{board}` übermitteln und dieser das Argument `thread_id` übergeben. Zurückgegeben wird der String `reported`. Der `reported`-Wert der `thread_id` wird auf `true` geändert.
 
 ```js
 async (getUserInput) => {
@@ -342,7 +342,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a PUT request to `/api/replies/{board}` and pass along the `thread_id` & `reply_id`. Returned will be the string `reported`. The `reported` value of the `reply_id` will be changed to `true`.
+Du kannst eine PUT-Anfrage an `/api/replies/{board}` übermitteln und dieser `thread_id` & `reply_id` übergeben. Der String `reported` wird zurückgegeben. Der `reported`-Wert der `reply_id` wird auf `true` geändert.
 
 ```js
 async (getUserInput) => {
@@ -374,7 +374,7 @@ async (getUserInput) => {
 };
 ```
 
-All 10 functional tests are complete and passing.
+Alle 10 Funktionstests sind abgeschlossen und bestanden.
 
 ```js
 async (getUserInput) => {

@@ -34,11 +34,11 @@ socket.on('user', data => {
 });
 ```
 
-Schicke deine Seite ab, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can check out <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135/3#announce-new-users-10" target="_blank" rel="noopener noreferrer nofollow">the project completed up to this point </a>.
+Schicke deine Seite ab, wenn du davon ausgehst, alles richtig gemacht zu haben. Wenn du auf Fehler stößt, kannst du dir <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135/3#announce-new-users-10" target="_blank" rel="noopener noreferrer nofollow">das bis zu diesem Punkt abgeschlossene Projekt</a> ansehen.
 
 # --hints--
 
-Event `'user'` should be emitted with `name`, `currentUsers`, and `connected`.
+Das Ereignis `'user'` sollte gemeinsam mit `name`, `currentUsers` und `connected` emittiert werden.
 
 ```js
 async (getUserInput) => {

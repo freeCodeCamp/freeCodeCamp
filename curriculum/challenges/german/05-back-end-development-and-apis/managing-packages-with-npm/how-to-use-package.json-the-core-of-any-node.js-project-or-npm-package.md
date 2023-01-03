@@ -14,19 +14,19 @@ Bei der Bearbeitung dieser Aufgaben musst du deinen Code nach einer der folgende
 - Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starterprojekt</a>, um diese Aufgabe fertigzustellen.
 - Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Achte darauf, alle Dateien aus unserer GitHub-Repo zu integrieren.
 
-If you use Replit, follow these steps to set up the project:
+Wenn du Replit verwendest, folge diesen Schritten, um das Projekt einzurichten:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Beginne, indem du das Projekt in Replit importierst.
+-   Als nächstes wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` aus und klicke die `Done`-Schaltfläche.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Gib anschließend die URL dazu in das `Solution Link`-Feld ein.
 
-The `package.json` file is the center of any Node.js project or npm package. It stores information about your project, similar to how the &lt;head> section of an HTML document describes the content of a webpage. It consists of a single JSON object where information is stored in key-value pairs. There are only two required fields; "name" and "version", but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+Die `package.json`-Datei stellt das Zentrum eines Node.js-Projekts oder npm-Pakets dar. Es speichert Informationen über dein Projekt, ähnlich wie der &lt;head>-Abschnitt eines HTML-Dokuments den Inhalt einer Webseite beschreibt. Es besteht aus einem einzigen JSON-Objekt, in dem Informationen in Schlüssel-Wert-Paaren gespeichert sind. Es gibt dort nur zwei Pflichtfelder: "name" und "version". Es ist jedoch empfehlenswert, zusätzliche Informationen über dein Projekt anzugeben, die für zukünfige Benutzer oder Maintainer nützlich sein könnten.
 
-If you look at the file tree of your project, you will find the package.json file on the top level of the tree. This is the file that you will be improving in the next couple of challenges.
+Wenn du dir den Dateibaum deines Projekts ansiehst, wirst du die package.json-Datei auf der obersten Ebene des Baums finden. Das ist die Datei, die du in den nächsten paar Aufgaben verbessern wirst.
 
-One of the most common pieces of information in this file is the `author` field. It specifies who created the project, and can consist of a string or an object with contact or other details. An object is recommended for bigger projects, but a simple string like the following example will do for this project.
+Eine der häufigsten Angaben in dieser Datei stellt das `author`-Feld dar. Es gibt an, wer das Projekt erstellt hat, und kann aus einer Zeichenfolge oder einem Objekt mit Kontaktdaten oder anderen Informationen bestehen. Für größere Projekte wird ein Objekt empfohlen, aber eine einfache Zeichenfolge wie das folgende Beispiel ist für dieses Projekt ausreichend.
 
 ```json
 "author": "Jane Doe",
@@ -34,13 +34,13 @@ One of the most common pieces of information in this file is the `author` field.
 
 # --instructions--
 
-Add your name as the `author` of the project in the package.json file.
+Trage in der package.json-Datei deinen Namen als `author` des Projekts ein.
 
-**Note:** Remember that you’re writing JSON, so all field names must use double-quotes (") and be separated with a comma (,).
+**Hinweis:** Denk daran, dass du JSON schreibst, daher müssen alle Feldnamen in doppelten Anführungszeichen (") gesetzt und durch ein Komma (,) getrennt werden.
 
 # --hints--
 
-package.json should have a valid "author" key
+package.json sollte über einen gültigen "author"-Schlüssel verfügen
 
 ```js
 (getUserInput) =>
