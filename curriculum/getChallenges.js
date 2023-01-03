@@ -32,17 +32,6 @@ const COMMENT_TRANSLATIONS = createCommentMap(
   path.resolve(__dirname, 'dictionaries')
 );
 
-function getTranslatableComments(dictionariesDir) {
-  const COMMENTS_TO_TRANSLATE = require(path.resolve(
-    dictionariesDir,
-    'english',
-    'comments.json'
-  ));
-  return Object.values(COMMENTS_TO_TRANSLATE);
-}
-
-exports.getTranslatableComments = getTranslatableComments;
-
 function createCommentMap(dictionariesDir) {
   // get all the languages for which there are dictionaries.
   const languages = fs

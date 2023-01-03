@@ -71,21 +71,21 @@ If you think you've found a bug, first read the ["How to Report a Bug"](https://
 
 ### freeCodeCamp のモデレーターになりたいです。 何から始めればいいですか？
 
-コミュニティモデレーターは、私たちのヒーローです。 モデレーターの自発的な貢献により、freeCodeCamp は安全で快適なコミュニティになっています。
+コミュニティモデレーターは、私たちのヒーローです。 Their voluntary contributions make freeCodeCamp a safe and welcoming community.
 
-何よりもまず、コミュニティの積極的な参加者となり、[行動規範](https://www.freecodecamp.org/japanese/news/code-of-conduct/) を強制するだけでなくその規範に従って行動する必要があります。
+First and foremost, we would need you to be an active participant in the community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/) (not just enforce it).
 
 いくつかのプラットフォームで推奨されるパスを以下に示します。
 
-- **Discord／チャット**  のモデレーターになるには、チャットに積極的に参加し、発生する可能性のある潜在的な衝突への対処方法を学ぶとともに実践しながら、他の人と積極的に関わってください。
-- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. 詳細については、[サブフォーラムリーダーハンドブック](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) をご覧ください。
-- **GitHub** モデレーターになるには、提起された GitHub Issue の処理を手伝います。それらが有効であるかどうかを確認し、(理想的には) Issue に対するソリューションを提案して、他の人 (または自分自身) が対応できる状態にします。
+- To be a **Discord/Chat** moderator, have an active presence in our chat and have positive engagements with others, while also learning and practicing how to deal with potential conflicts that may arise.
+- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
+- To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
 
-つまり、他の人に敬意を払ってください。 We are humans from all around the world. これを念頭に置いて、励ましの言葉または応援する言葉を使用し、異文化間のコミュニケーションを意識してください。
+つまり、他の人に敬意を払ってください。 We are humans from all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
 
-**一定期間、着実に** 上記を実行し、仲間のモデレーターがあなたを推薦した場合に、スタッフから連絡が来て、モデレーターチームに加わることができます。 オープンソース作業はボランティアであり、私たちの時間は限られています。 皆様も、おそらく同じだと思います。 したがって、24 時間年中無休でコミュニティに参加するのではなく、**着実に** 取り組んでいただきたいです。
+If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. オープンソース作業はボランティアであり、私たちの時間は限られています。 皆様も、おそらく同じだと思います。 So we emphasize being **consistent** rather than engaging in the community 24/7.
 
-モデレーターの責任と期待に関する包括的なリストは、[モデレーターハンドブック](moderator-handbook.md) をご覧ください。
+Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
 
 ### このドキュメントに記載されていない問題で困っています。
 

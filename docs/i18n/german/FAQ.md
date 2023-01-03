@@ -71,21 +71,21 @@ Normalerweise weisen wir die Issues nur langjährigen Mitwirkenden zu. Stattdess
 
 ### Ich bin daran interessiert, beim freeCodeCamp als Moderator zu mitzuwirken. Wo sollte ich anfangen?
 
-Unsere Community-Moderatoren sind unsere Helden. Ihre freiwilligen Beiträge machen das freeCodeCamp zu einer sicheren und einladenden Gemeinschaft.
+Unsere Community-Moderatoren sind unsere Helden. Their voluntary contributions make freeCodeCamp a safe and welcoming community.
 
-In erster Linie möchten wir, dass du ein aktiver Teilnehmer in der Gemeinschaft bist und dich an unseren [Verhaltenskodex](https://www.freecodecamp.org/news/code-of-conduct/) hältst (und ihn nicht nur durchsetzt).
+First and foremost, we would need you to be an active participant in the community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/) (not just enforce it).
 
 Hier sind einige empfohlene Wege für einige unserer Plattformen:
 
-- Ein **Discord/Chat**-Moderator zu sein, eine aktive Präsenz in unserem Chat zu haben und positiv auf andere einzugehen und gleichzeitig zu lernen und zu üben, wie man mit möglichen Konflikten umgeht, die entstehen können.
-- Ein **Forum**-Moderator zu sein, ähnlich wie ein Chat-Moderator, eine aktive Präsenz zu zeigen und mit anderen Forenpostern in Kontakt zu treten, andere bei ihrem Lernprozess zu unterstützen und sogar Feedback zu geben, wenn du gefragt wirst. Sieh dir das [Das Handbuch für Subforenleiter](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) für weitere Informationen an.
-- Als **GitHub**-Moderator hilfst du bei der Bearbeitung von GitHub-Issues, die aufgeworfen werden und versuchst (idealerweise), Lösungen für diese Issues vorzuschlagen, die dann von anderen (oder von dir selbst) aufgegriffen werden.
+- To be a **Discord/Chat** moderator, have an active presence in our chat and have positive engagements with others, while also learning and practicing how to deal with potential conflicts that may arise.
+- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
+- To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
 
-Sei insgesamt respektvoll gegenüber anderen. Wir sind Menschen aus allen Teilen der Welt. Mit Blick darauf denke auch daran, eine ermutigende oder unterstützende Sprache zu verwenden und achte auf die interkulturelle Kommunikation.
+Sei insgesamt respektvoll gegenüber anderen. Wir sind Menschen aus allen Teilen der Welt. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
 
-Wenn du das oben genannte **eine Weile lang konsequent praktizierst** und unsere anderen Moderatoren dich empfehlen, wird ein Mitarbeiter auf dich zukommen und dich in das Moderatorenteam aufnehmen. Open-Source-Arbeit ist freiwillige Arbeit und unsere Zeit ist begrenzt. Wir erkennen an, dass dies wahrscheinlich auch in deiner Situation der Fall ist. Deshalb betonen wir **konsequent** zu sein, anstatt sich rund um die Uhr (24/7) in der Community zu engagieren.
+If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. Open-Source-Arbeit ist freiwillige Arbeit und unsere Zeit ist begrenzt. Wir erkennen an, dass dies wahrscheinlich auch in deiner Situation der Fall ist. So we emphasize being **consistent** rather than engaging in the community 24/7.
 
-In unserem [Moderatorenhandbuch](moderator-handbook.md) findest du eine ausführliche Liste mit weiteren Aufgaben und Erwartungen, die wir an unsere Moderatoren haben.
+Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
 
 ### Ich komme mit etwas nicht weiter, das in dieser Dokumentation nicht enthalten ist.
 

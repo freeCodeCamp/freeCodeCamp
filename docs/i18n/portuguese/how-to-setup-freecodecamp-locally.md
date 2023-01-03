@@ -35,7 +35,7 @@ Isso é essencial, pois permite que você trabalhe em sua própria cópia do fre
 
 ## Usar uma máquina local ou o GitPod
 
-Depois de ter feito o fork do repositório, escolha uma das opções abaixo. Você pode usar seu próprio computador local ou um espaço de trabalho baseado no GitPod para trabalhar no código.
+Após ter realizado o fork do repositório, você pode usar seu próprio computador local ou um espaço de trabalho baseado no GitPod para trabalhar no código.
 
 Para contribuir a longo prazo, recomendamos que você instale o freeCodeCamp em seu computador.
 
@@ -49,17 +49,11 @@ Existem várias maneiras de se abrir um espaço de trabalho no GitPod:
 
    Por exemplo, se você for visitar o seu fork em `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, adicione `gitpod.io/#` na frente do URL na barra de endereços e clique em enter.
 
-   Ou seja, você pode navegar para
-
-   ```
-   gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git
-   ```
-
-   e verá um espaço de trabalho criado para você. Isso funciona para qualquer repositório ou pull request no GitHub.
+   Isso significa que você pode navegar para `gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git` e você verá uma área de trabalho criada para você. Isso funciona para qualquer repositório ou pull request no GitHub.
 
 2. Como alternativa, instale uma das extensões abaixo para o seu navegador.
 
-   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - trabalha com navegadores baseados em Chrome, como o Google Chrome, o Brave, o Edge etc.
+   - [Chrome Webstore](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) - trabalha com navegadores baseados no Chromium, como o Google Chrome, o Brave, o Edge etc.
    - [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/gitpod) - Firefox
 
    Uma vez instalado, você verá um botão 'GitPod' em cada repositório, pull request etc. Ele será um atalho útil para abrir um espaço de trabalho a partir de lá. Veja a página da extensão para detalhes, capturas de tela etc.
@@ -72,9 +66,9 @@ Comece instalando o software pré-requisito para seu sistema operacional.
 
 Apoiamos principalmente o desenvolvimento em sistemas Linux e Unix. Nossa equipe e colaboradores da comunidade trabalham regularmente com a base de código usando ferramentas instaladas no Ubuntu e no macOS.
 
-Também suportamos o Windows 10 via WSL2, que você pode preparar [lendo este guia](how-to-setup-wsl.md).
+Também suportamos o Windows 10 e 11 via WSL2, que você pode preparar [lendo este guia](how-to-setup-wsl.md).
 
-Alguns membros da comunidade também desenvolvem no Windows 10 nativamente com Git para Windows (Git Bash), e outras ferramentas instaladas no Windows. Neste momento, não dispomos de apoio oficial para esse tipo de instalações, recomendamos que se utilize WSL2.
+Alguns membros da comunidade também desenvolvem no Windows nativamente com o Git para Windows (Git Bash) e outras ferramentas instaladas no Windows. Neste momento, não dispomos de apoio oficial para esse tipo de instalações, recomendamos que se utilize WSL2.
 
 #### Pré-requisitos:
 
@@ -119,7 +113,7 @@ Depois de ter os pré-requisitos instalados, você precisa preparar seu ambiente
 
 > [!WARNING] Se você está usando uma distribuição WSL2 Linux, você talvez tenha problemas relacionados a performance e estabilidade ao executar esse projeto em uma pasta compartilhada entre Windows e WSL2 (ex. `/mnt/c/Users/`). Recomendarmos clonar esse repositório em uma pasta que é principalmente usada pela sua distribuição WSL2 Linux e não diretamente compartilhada com Windows (ex. `~/PROJECTS/`).
 > 
-> Veja [essa issue no GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues/40632) para mais informações sobre este problema.
+> Veja [essa issue no GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues/40632) para mais informações sobre esse problema.
 
 Execute esses comandos em sua máquina local:
 

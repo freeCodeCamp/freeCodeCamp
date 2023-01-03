@@ -478,10 +478,11 @@
     "hint": "Hint",
     "heart": "Heart",
     "initial": "Initial",
+    "input-reset": "Clear search terms",
     "info": "Intro Information",
     "spacer": "Spacer",
     "toggle": "Toggle Checkmark",
-    "magnifier": "magnifier"
+    "magnifier": "Submit search terms"
   },
   "aria": {
     "fcc-curriculum": "freeCodeCamp Curriculum",
@@ -708,7 +709,7 @@
       "Legacy Back End": "Legacy Back End",
       "legacy-back-end": "Back End Certification",
       "Legacy Data Visualization": "Legacy Data Visualization",
-      "legacy-data-visualization": " Data Visualization Certification",
+      "legacy-data-visualization": "Data Visualization Certification",
       "Legacy Information Security and Quality Assurance": "Legacy Information Security and Quality Assurance",
       "information-security-and-quality-assurance": "Information Security and Quality Assurance Certification",
       "Legacy Full Stack Certification": "Legacy Full Stack Certification",
