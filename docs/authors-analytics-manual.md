@@ -1,6 +1,6 @@
 # Authors Analytics Manual
 
-Authors who have access to the publication's Google Analytics Property (News) can use the following guide to view their articles' engagement and search articles' analytics by publication language.
+If you are an author with access to the publication's Google Analytics Property (News), you can use this guide to view your articles engagement and search for articles by publication language."
 
 ### Search  language
 
