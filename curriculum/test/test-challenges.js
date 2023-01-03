@@ -70,29 +70,25 @@ const commentExtractors = {
 
 const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 
-// rethrow unhandled rejections to make sure the tests exit with -1
+// rethrow unhandled rejections to make sure the tests exit with non-zero code
 process.on('unhandledRejection', err => handleRejection(err));
 // If an uncaught exception gets here, then mocha is in an unexpected state. All
 // we can do is log the exception and exit with a non-zero code.
 process.on('uncaughtException', err => {
-  console.error('Uncaught exception:', err.message);
-  console.error(err.stack);
-  // eslint-disable-next-line no-process-exit
+  console.error('Uncaught exception:');
+  console.error(err);
   process.exit(1);
 });
 
+// some errors *may* not be reported, since cleanup is triggered by the first
+// error and that starts shutting down the browser and the server.
 const handleRejection = err => {
   // setting the error code because node does not (yet) exit with a non-zero
   // code on unhandled exceptions.
   process.exitCode = 1;
   cleanup();
-  if (process.env.FULL_OUTPUT === 'true') {
-    // some errors *may* not be reported, since cleanup is triggered by the
-    // first error and that starts shutting down the browser and the server.
-    console.error(err);
-  } else {
-    throw err;
-  }
+  console.error(err);
+  if (process.env.FULL_OUTPUT !== 'true') process.exit();
 };
 
 const dom = new jsdom.JSDOM('');
