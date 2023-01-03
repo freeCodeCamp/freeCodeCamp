@@ -9,7 +9,7 @@ const { clientLocale } = envData;
 
 const selectors = {
   'navigation-list': '.nav-list',
-  'toggle-button': '.toggle-button-nav',
+  'toggle-button': '#toggle-button-nav',
   'language-menu': '.nav-lang-menu',
   'exit-lang-menu': "[data-value='exit-lang-menu']",
   'lang-menu-option': 'button.nav-lang-menu-option',
@@ -18,7 +18,9 @@ const selectors = {
   'avatar-container': '.avatar-container',
   'sign-out-button': "[data-value='sign-out-button']",
   signout: "[data-test-label='signout']",
-  'cancel-signout': "[data-test-label='cancel-signout']"
+  'cancel-signout': "[data-test-label='cancel-signout']",
+  'navigation-donate-button': "[data-test-label='nav-donate-button']",
+  'dropwodn-donate-button': "[data-test-label='dropdown-donate-button']"
 };
 
 const links = {
@@ -39,7 +41,6 @@ describe('Default Navigation Menu', () => {
     cy.get(selectors['language-menu']).should('not.be.visible');
     cy.get(selectors['toggle-button']).should('be.visible').click();
     cy.get(selectors['navigation-list']).contains('Sign in to change theme.');
-    testLink('Donate');
     testLink('Curriculum');
     testLink('Forum');
     testLink('News');
@@ -214,8 +215,20 @@ describe('Donor Navigation Menu', () => {
   it('should show donor avatar border.', () => {
     cy.get(selectors['avatar-container']).should('have.class', 'gold-border');
   });
-  it('should show thank you message.', () => {
-    cy.get(selectors['navigation-list']).contains('Thanks for donating');
+});
+
+describe('Donate button', () => {
+  it('should render in the toggle menu in small screens', () => {
+    cy.viewport(550, 750);
+    cy.visit('/learn');
+    testLink('Donate');
+    cy.get(selectors['navigation-donate-button']).should('not.exist');
+  });
+  it('should render in the universal nav in large screens', () => {
+    cy.viewport(1550, 750);
+    cy.visit('/learn');
+    cy.get(selectors['dropdown-donate-button']).should('not.exist');
+    cy.get(selectors['navigation-donate-button']).should('be.visible');
   });
 });
 
