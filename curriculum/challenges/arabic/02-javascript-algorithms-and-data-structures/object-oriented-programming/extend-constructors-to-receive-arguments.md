@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b79
-title: Extend Constructors to Receive Arguments
+title: تمديد المنشئات (Constructors) لتلقي المعطيات (Arguments)
 challengeType: 1
 forumTopicId: 18235
 dashedName: extend-constructors-to-receive-arguments
@@ -26,7 +26,7 @@ function Bird(name, color) {
 }
 ```
 
-ثم مرر القيم كحجج (arguments) لتعريف كل طائر فريد إلى constructor باسم `Bird`: التعليمات البرمجية `let cardinal = new Bird("Bruce", "red");` ينشئ مثيل جديد من `Bird` بخصائص `name` و `color` بقيم `Bruce` و `red` علي التوالي. مازالت خاصية `numLegs` بقيمة 2. يحتوي `cardinal` على هذه الخواص:
+ثم مرر القيم كمعطيات (arguments) لتحديد كل طائر فريد في منشئ (constructor) باسم `Bird`: ينشئ `let cardinal = new Bird("Bruce", "red");` مثيل (instance) جديد من `Bird` بخصائص `name` و `color` بقيم `Bruce` و `red` علي التوالي. مازالت خاصية `numLegs` بقيمة 2. يحتوي `cardinal` على هذه الخواص:
 
 ```js
 cardinal.name
@@ -38,17 +38,17 @@ cardinal.numLegs
 
 # --instructions--
 
-إنشاء constructor آخر باسم `Dog`. هذه المرة، اضبطه لأخذ وسائط (Parameters) الآتية `name` و `color`، واجعل الخاصية `numLegs` ثابتة عند 4. ثم قم بإنشاء `Dog` جديد محفوظ في متغير اسمه `terrier`. مرر اليه اثنان strings كـ arguments للخصائص `name` و `color`.
+إنشاء constructor آخر باسم `Dog`. هذه المرة، اضبطه لأخذ وسائط (Parameters) الآتية `name` و `color`، واجعل الخاصية `numLegs` ثابتة عند 4. ثم قم بإنشاء `Dog` جديد محفوظ في متغير اسمه `terrier`. مرر له مقطعان نصيان (strings) كمعطيات للخصائص `name` و `color`.
 
 # --hints--
 
-`Dog` يجب أن يتلقى argument لـ `name`.
+يجب أن يتلقى `Dog` معطى `name`.
 
 ```js
 assert(new Dog('Clifford').name === 'Clifford');
 ```
 
-`Dog` يجب أن يتلقى argument لـ `color`.
+يجب أن يتلقى `Dog` معطى `color`.
 
 ```js
 assert(new Dog('Clifford', 'yellow').color === 'yellow');
