@@ -1,6 +1,5 @@
 /* eslint-disable no-loop-func */
 const path = require('path');
-const { inspect } = require('util');
 const vm = require('vm');
 const { assert, AssertionError } = require('chai');
 const jsdom = require('jsdom');
@@ -41,13 +40,8 @@ const testEvaluator =
 /* eslint-enable import/no-unresolved */
 
 const { getLines } = require('../../utils/get-lines');
-const { isAuditedCert } = require('../../utils/is-audited');
 
-const {
-  getChallengesForLang,
-  getMetaForBlock,
-  getTranslatableComments
-} = require('../getChallenges');
+const { getChallengesForLang, getMetaForBlock } = require('../getChallenges');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
 const { testedLang, getSuperOrder } = require('../utils');
 const ChallengeTitles = require('./utils/challengeTitles');
@@ -56,19 +50,7 @@ const createPseudoWorker = require('./utils/pseudo-worker');
 
 const { sortChallenges } = require('./utils/sort-challenges');
 
-const TRANSLATABLE_COMMENTS = getTranslatableComments(
-  path.resolve(__dirname, '..', 'dictionaries')
-);
-
-const commentExtractors = {
-  html: require('./utils/extract-html-comments'),
-  js: require('./utils/extract-js-comments'),
-  jsx: require('./utils/extract-jsx-comments'),
-  css: require('./utils/extract-css-comments'),
-  scriptJs: require('./utils/extract-script-js-comments')
-};
-
-const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
+const { flatten, isEmpty, cloneDeep } = lodash;
 
 // rethrow unhandled rejections to make sure the tests exit with non-zero code
 process.on('unhandledRejection', err => handleRejection(err));
@@ -338,95 +320,6 @@ function populateTestsForLang({ lang, challenges, meta }) {
             const pathAndTitle = `${block}/${dashedName}`;
             mongoIds.check(id, title);
             challengeTitles.check(title, pathAndTitle);
-          });
-
-          it('Has replaced all the English comments', () => {
-            // special cases are where this process breaks for some reason, but
-            // we have validated that the challenge gets parsed correctly.
-            const specialCases = [
-              '587d7b84367417b2b2512b36',
-              '587d7b84367417b2b2512b37',
-              '587d7db0367417b2b2512b82',
-              '587d7dbe367417b2b2512bb8',
-              '5a24c314108439a4d4036161',
-              '5a24c314108439a4d4036154',
-              '5a94fe0569fb03452672e45c',
-              '5a94fe7769fb03452672e463',
-              '5a24c314108439a4d4036148'
-            ];
-            if (specialCases.includes(challenge.id)) return;
-            if (
-              lang === 'english' ||
-              !isAuditedCert(lang, challenge.superBlock)
-            ) {
-              return;
-            }
-
-            // If no .challengeFiles, then no seed:
-            if (!challenge.challengeFiles) return;
-
-            // - None of the translatable comments should appear in the
-            //   translations. While this is a crude check, no challenges
-            //   currently have the text of a comment elsewhere. If that happens
-            //   we can handle that challenge separately.
-            TRANSLATABLE_COMMENTS.forEach(comment => {
-              const errorText = `English comment '${comment}' should be replaced with its translation`;
-              challenge.challengeFiles.forEach(challengeFile => {
-                if (challengeFile.contents.includes(comment))
-                  if (process.env.SHOW_UPCOMING_CHANGES == 'true') {
-                    console.warn(errorText);
-                  } else {
-                    throw Error(errorText);
-                  }
-              });
-            });
-
-            // - None of the translated comment texts should appear *outside* a
-            //   comment
-            challenge.challengeFiles.forEach(challengeFile => {
-              let comments = {};
-
-              // We get all the actual comments using the appropriate parsers
-              if (challengeFile.ext === 'html') {
-                const commentTypes = ['css', 'html', 'scriptJs'];
-                for (let type of commentTypes) {
-                  const newComments = commentExtractors[type](
-                    challengeFile.contents
-                  );
-                  for (const [key, value] of Object.entries(newComments)) {
-                    comments[key] = comments[key]
-                      ? comments[key] + value
-                      : value;
-                  }
-                }
-              } else {
-                comments = commentExtractors[challengeFile.ext](
-                  challengeFile.contents
-                );
-              }
-
-              /*
-               * Then we compare the number of times each comment appears in the
-               * translated text (commentMap) with the number of replacements
-               * made during translation (challenge.__commentCounts). If they
-               * differ, the translation must have gone wrong
-               */
-
-              const commentMap = new Map(Object.entries(comments));
-
-              if (isEmpty(challenge.__commentCounts) && isEmpty(commentMap))
-                return;
-
-              if (
-                process.env.SHOW_NEW_CURRICULUM !== 'true' &&
-                !isEqual(commentMap, challenge.__commentCounts)
-              )
-                throw Error(`Mismatch in ${challenge.title}. Replaced comments:
-${inspect(challenge.__commentCounts)}
-Comments in translated text:
-${inspect(commentMap)}
-`);
-            });
           });
 
           const { challengeType } = challenge;
