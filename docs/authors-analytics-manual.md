@@ -2,22 +2,22 @@
 
 If you are an author with access to the publication's Google Analytics Property (News), you can use this guide to view your articles engagement and search for articles by publication language."
 
-### Search  language
+### Search by Language
 
-Use the following steps in order to search the engagement reports by a publication language:
+To search for engagement reports by a specific language:
 
 ![Image - Show steps to search by language on googla analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
 
-1. Choose `News` from the top dropdown menu.
-1. Click on `Reports` from the sidebar.
-1. Select `Engagement` from the secondary sidebar.
+1. From the top dropdown menu, select `News`.
+1. From the sidebar, click on `Reports`.
+1. From the secondary sidebar, select `Engagement`.
 1. Click on `Pages and Screens`.
 1. In the search bar, type the subpath for the desired language.
-1. Choose `Page path and screen class` from the dropdown under the search bar.
+1. From the dropdown under the search bar, choose `Page path and screen class`.
 
 
 
-### Filter reports by Author
+### Filter Reports by Author
 
 After arriving at the `Pages and Screens` reports mentioned above, use the following steps to filter the results by specific authors.
 
@@ -25,5 +25,5 @@ After arriving at the `Pages and Screens` reports mentioned above, use the follo
 
 1. Click on the `Add filter` button.
 1. From the side navigation include `Author`.
-1. Choose an author name from the `Dimensions values` dropdown.
+1. From the `Dimensions values` dropdown, choose an author's name.
 1. Click on the `Apply` button to apply changes.
