@@ -100,6 +100,28 @@ universal-nav-bar
 and menu secion
 */
 
+@media (max-width: 768px) {
+  [dir='rtl'] .fcc_searchBar .ais-Hits {
+    left: auto;
+    right: 15px;
+  }
+}
+
+[dir='rtl'] .ais-SearchBox-reset {
+  right: auto;
+  left: 0;
+}
+
+[dir='rtl'] .universal-nav-right .ais-SearchBox-reset {
+  left: 291px;
+}
+
+@media (max-width: 600px) {
+  [dir='rtl'] .universal-nav-right .ais-SearchBox-reset {
+    left: 15px;
+  }
+}
+
 @media (min-width: 767.5px) {
   [dir='rtl'] .nav-list {
     right: auto;
