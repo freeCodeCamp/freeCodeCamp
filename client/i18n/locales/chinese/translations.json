@@ -478,10 +478,11 @@
     "hint": "提示",
     "heart": "爱心",
     "initial": "初始",
+    "inputReset": "Clear search terms",
     "info": "介绍信息",
     "spacer": "间隔",
     "toggle": "切换选中标记",
-    "magnifier": "放大镜"
+    "magnifier": "Submit search terms"
   },
   "aria": {
     "fcc-curriculum": "freeCodeCamp 课程",

@@ -188,7 +188,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
     const { isDropdownEnabled, isSearchFocused, innerRef, t } = this.props;
     const { index } = this.state;
     const submitTitle = t ? t('icons.magnifier') : '';
-    const resetTitle = t ? t('icons.inputReset') : '';
+    const resetTitle = t ? t('icons.input-reset') : '';
     const placeholder = t ? t('search.placeholder') : '';
 
     return (

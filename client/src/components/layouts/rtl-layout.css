@@ -207,3 +207,9 @@ sections that need to stay left to right
 [dir='rtl'] [name='payment-method'] {
   font-family: 'NotoSansArabic';
 }
+
+@media (min-width: 980px) {
+  [dir='rtl'] .donate-page-wrapper > .row {
+    display: flex;
+  }
+}
