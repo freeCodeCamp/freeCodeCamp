@@ -63,6 +63,8 @@ const schema = Joi.object().keys({
   article29link: Joi.string().uri({ scheme: 'https' }).required()
 });
 
-export const trendingSchemaValidator = trendingObj => {
+export const trendingSchemaValidator = (
+  trendingObj: Record<string, string>
+) => {
   return schema.validate(trendingObj);
 };
