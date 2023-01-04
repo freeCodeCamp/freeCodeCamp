@@ -225,8 +225,8 @@ function mobileLogin(app) {
 
     return User.findOne$({ where: { email: email } })
       .do(async user => {
-        const token = await user.mobileLoginByRequest(req, res);
-        return res.json(token);
+        await user.mobileLoginByRequest(req, res);
+        res.end();
       })
       .subscribe(() => {}, next);
   };
