@@ -339,6 +339,7 @@
     "title": "当団体への支援",
     "processing": "いただいた寄付を処理中です。",
     "redirecting": "リダイレクト中...",
+    "thanks": "Thanks for donating",
     "thank-you": "サポーターとなってくださり、ありがとうございます。",
     "additional": "任意の金額を、追加で 1 回ずつご寄付いただけるリンクはこちら: <0>{{url}}</0>",
     "help-more": "私たちのさらなる活動をご支援ください",
