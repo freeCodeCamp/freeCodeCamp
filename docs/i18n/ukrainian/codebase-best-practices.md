@@ -1,24 +1,24 @@
 # Рекомендації щодо кодової бази
 
-## Styling a component
+## Стилізація компоненту
 
-We recommend styling components using our [design style guide](https://design-style-guide.freecodecamp.org/).
+Ми рекомендуємо стилізувати компоненти, використовуючи наш [посібник зі стилю](https://design-style-guide.freecodecamp.org/).
 
-The colors are defined in [`variable.css`](/client/src/components/layouts/variables.css), and the fonts are in [`fonts.css`](/client/src/components/layouts/fonts.css).
+Кольори визначені у [`variable.css`](/client/src/components/layouts/variables.css), а шрифти визначені у [`fonts.css`](/client/src/components/layouts/fonts.css).
 
-We are strongly opinionated about adding new variables/tokens to the colors. After careful research, the colors have been chosen to respect the freeCodeCamp brand identity, developer experience, and accessibility.
+Ми категоричні щодо додавання нових змінних/токенів до кольорів. Після ретельного аналізу ми обрали кольори, які відповідають ідентичності бренду freeCodeCamp, досвіду розробників і доступності.
 
-The `!important` keyword may be used to override values in some cases (e.g. accessibility concerns). You should add a comment describing the issue, so it doesn't get removed in future refactoring.
+Ключове слово `!important` може бути використане для заміни значень у деяких випадках (наприклад, проблеми доступності). Ви повинні додати коментар з описом проблеми, щоб її не видалили у майбутньому рефакторингу.
 
-### RTL support
+### Підтримка RTL
 
-We are striving to support right-to-left (RTL) layout in the codebase for languages that are read in this direction. For this you need be mindful of how to style components. Here are some quick rules of thumb to follow:
+Ми прагнемо підтримувати макети справа наліво (RTL) у кодовій базі для мов, які використовують письмо в такому напрямку. Для цього потрібно бути уважними щодо стилізації компонентів. Ось деякі правила, яких потрібно дотримуватись:
 
-- Don't use `float` properties
-  - Use Flexbox and Grid layouts instead, as they have RTL support already built-in, and those will be easier to maintain and review.
-- Don't define the direction while using `margin` and `padding`: it may seem harmless to use `padding-right` and `margin-left`, but these directions aren't mirrored when the layout changes to RTL, and adding counter values for them in the RTL file makes maintaining the codebase harder.
-  - Use logical properties for them: You can add the same spacing by using `padding-inline-end` and `margin-inline-start`, and you won't need to worry about RTL layout, as they follow where the line starts and ends, and you won't need to add any extra values in the RTL files, so people won't need to remember to change the same values in two files.
-- Don't use `!important` in `font-family`: RTL layout uses different fonts compared to the LTR layout, when you add `!important` in the `font-family` property it affects the RTL layout too.
+- Не використовуйте властивості `float`
+  - Натомість використовуйте макети Flexbox та Grid, оскільки вони мають вбудовану підтримку RTL, і їх буде простіше підтримувати та переглядати.
+- Не визначайте напрямок, використовуючи `margin` та `padding`: використання `padding-right` та `margin-left` може здаватись безобідним, але ці напрямки не відображаються, коли макет змінюється на RTL, а додавання протилежних значень ускладнює утримання кодової бази.
+  - Використовуйте логічні властивості: ви можете додати однаковий інтервал, використовуючи `padding-inline-end` та `margin-inline-start`, і вам не доведеться переживати про макет RTL, оскільки вони відповідають тому, де починається на закінчується рядок. Крім того, вам не доведеться турбуватися про додавання додаткових значень до файлів RTL, і, відповідно, не доведеться пам’ятати про зміну однакових значень у двох файлах.
+- Не використовуйте `!important` у `font-family`: для макетів RTL та LTR використовуються різні шрифти; додавання `!important` до властивості `font-family` впливає й на макет RTL.
 
 ## General JavaScript
 
@@ -42,7 +42,7 @@ The best bet at achieving this is to:
 
 > [!NOTE] Такі редактори, як VSCode, однаково показуватимуть, що файл видалено та створено новий. Якщо ви використовуєте CLI для `git add .`, то VSCode показуватиме файл як перейменований
 
-### Naming Conventions
+### Конвенції про іменування
 
 #### Інтерфейси та типи
 
@@ -148,7 +148,7 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 <!-- ### Redux Types File -->
 <!-- The types associated with the Redux store state are located in `client/src/redux/types.ts`... -->
 
-## Further Literature
+## Додаткова література
 
-- [TypeScript Docs](https://www.typescriptlang.org/docs/)
-- [TypeScript with React CheatSheet](https://github.com/typescript-cheatsheets/react#readme)
+- [Документація TypeScript](https://www.typescriptlang.org/docs/)
+- [Шпаргалка для TypeScript із React](https://github.com/typescript-cheatsheets/react#readme)
