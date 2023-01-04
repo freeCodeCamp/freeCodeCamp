@@ -113,9 +113,7 @@
   },
   "dependencies": {
     "dotenv": "16.0.3",
-    "express-rate-limit": "^6.7.0",
-    "invariant": "2.2.4",
-    "rate-limit-mongo": "^2.3.2"
+    "invariant": "2.2.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",
