@@ -125,10 +125,6 @@ and arrow keys */
   font-weight: 300;
 }
 
-.ais-SearchBox-input {
-  width: calc(100vw - 350px);
-}
-
 .fcc_searchBar .ais-SearchBox-form {
   margin-bottom: 0;
   display: flex;
