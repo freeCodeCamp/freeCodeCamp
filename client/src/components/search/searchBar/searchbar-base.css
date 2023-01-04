@@ -590,6 +590,13 @@ a[class^='ais-'] {
   display: block;
   position: relative;
 }
+.ais-SearchBox-form:focus-within {
+  outline: 3px solid var(--blue-mid);
+}
+.ais-SearchBox-form:has(.ais-SearchBox-submit:focus),
+.ais-SearchBox-form:has(.ais-SearchBox-reset:focus) {
+  outline: none;
+}
 .ais-SearchBox-input {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -614,16 +621,12 @@ a[class^='ais-'] {
 }
 .ais-SearchBox-submit,
 .ais-SearchBox-reset {
-  position: absolute;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   z-index: 100;
   width: 20px;
   height: 20px;
-}
-.ais-SearchBox-reset {
-  right: 0;
 }
 .ais-SearchBox-resetIcon,
 .ais-SearchBox-loadingIcon {
