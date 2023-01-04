@@ -33,7 +33,6 @@ export const actionTypes = createTypes(
     'setShowPreviewPortal',
     'closeModal',
     'openModal',
-    'setIsAdvancing',
 
     'previewMounted',
     'projectPreviewMounted',
