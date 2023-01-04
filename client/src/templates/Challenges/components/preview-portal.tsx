@@ -101,6 +101,11 @@ class PreviewPortal extends Component<PreviewPortalProps> {
     });
 
     this.props.storePortalWindow(this.externalWindow);
+
+    // close the portal if the main window closes
+    this.mainWindow?.addEventListener('beforeunload', () => {
+      this.externalWindow?.close();
+    });
   }
 
   componentWillUnmount() {
