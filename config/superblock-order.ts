@@ -167,7 +167,6 @@ export const superBlockOrder: SuperBlockOrder = {
       },
       [TranslationStates.NotAudited]: {
         [SuperBlockStates.Current]: [
-          SuperBlocks.RespWebDesignNew,
           SuperBlocks.RelationalDb,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
