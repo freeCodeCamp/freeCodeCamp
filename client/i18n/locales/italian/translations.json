@@ -339,7 +339,6 @@
     "title": "Supporta il nostro ente",
     "processing": "Stiamo elaborando la tua donazione.",
     "redirecting": "Reindirizzamento...",
-    "thanks": "Grazie per la donazione",
     "thank-you": "Grazie per essere un sostenitore.",
     "additional": "Puoi effettuare una donazione una tantum aggiuntiva di qualsiasi importo utilizzando questo link: <0>{{url}}</0>",
     "help-more": "Aiutaci a fare di più",
@@ -478,11 +477,11 @@
     "hint": "Suggerimento",
     "heart": "Cuore",
     "initial": "Iniziale",
-    "inputReset": "Clear search terms",
+    "input-reset": "Cancella termini di ricerca",
     "info": "Informazioni introduttive",
     "spacer": "Distanziatore",
     "toggle": "Attiva/Disattiva segno di spunta",
-    "magnifier": "Submit search terms"
+    "magnifier": "Invia i termini di ricerca"
   },
   "aria": {
     "fcc-curriculum": "Curriculum di freeCodeCamp",
@@ -709,7 +708,7 @@
       "Legacy Back End": "Back End Legacy",
       "legacy-back-end": "Certificazione Back End",
       "Legacy Data Visualization": "Visualizzazione Dati Legacy",
-      "legacy-data-visualization": " Certificazione Visualizzazione Dati",
+      "legacy-data-visualization": "Certificazione Visualizzazione Dati",
       "Legacy Information Security and Quality Assurance": "Sicurezza delle Informazioni e Garanzia di Qualità Legacy",
       "information-security-and-quality-assurance": "Certificazione di Sicurezza delle Informazioni e Garanzia di Qualità",
       "Legacy Full Stack Certification": "Certificazione Full Stack Legacy",

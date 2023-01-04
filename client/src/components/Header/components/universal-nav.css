@@ -323,7 +323,7 @@ button.nav-link[aria-disabled='true'] {
   margin-inline-end: 25px;
 }
 
-.exposed-button-nav {
+.toggle-button-nav {
   padding: 2px 14px;
   border: 1px solid var(--gray-00);
   font-family: 'lato', sans-serif;
@@ -336,21 +336,18 @@ button.nav-link[aria-disabled='true'] {
   align-items: center;
 }
 
-.exposed-button-nav:hover,
-.exposed-button-nav:hover:focus {
-  background-color: var(--gray-00);
-  color: var(--gray-90);
+.toggle-button-nav:hover {
+  background-color: var(--theme-color);
+  color: var(--gray-00);
   border: 1px solid var(--gray-00);
 }
 
-.exposed-button-nav:focus {
+.toggle-button-nav:focus {
   outline: 3px solid var(--blue-mid);
   outline-offset: 0;
-  background-color: var(--gray-90);
-  color: var(--gray-00);
 }
 
-.exposed-button-nav:focus:not(:focus-visible) {
+.toggle-button-nav:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -414,12 +411,12 @@ button.nav-link[aria-disabled='true'] {
   display: none;
 }
 
-.exposed-button-nav.reverse-toggle-color {
+.reverse-toggle-color {
   background-color: var(--gray-00);
   color: var(--theme-color);
 }
 
-.exposed-button-nav.reverse-toggle-color:hover {
+.reverse-toggle-color:hover {
   background-color: var(--gray-00);
   color: var(--theme-color);
 }
@@ -586,7 +583,7 @@ button.nav-link[aria-disabled='true'] {
   #universal-nav .login-btn-icon {
     display: inline-block;
   }
-  .exposed-button-nav {
+  .toggle-button-nav {
     padding: 2px 8px;
   }
   #universal-nav-logo svg {

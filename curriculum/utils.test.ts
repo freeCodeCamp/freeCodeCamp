@@ -43,7 +43,7 @@ const upcomingTest = {
 };
 
 const espanolTest = {
-  [SuperBlocks.RespWebDesign]: 0,
+  [SuperBlocks.RespWebDesignNew]: 0,
   [SuperBlocks.JsAlgoDataStruct]: 1,
   [SuperBlocks.FrontEndDevLibs]: 2,
   [SuperBlocks.DataVis]: 3,
@@ -51,7 +51,7 @@ const espanolTest = {
   [SuperBlocks.QualityAssurance]: 5,
   [SuperBlocks.SciCompPy]: 6,
   [SuperBlocks.DataAnalysisPy]: 7,
-  [SuperBlocks.RespWebDesignNew]: 8,
+  [SuperBlocks.RespWebDesign]: 8,
   [SuperBlocks.RelationalDb]: 9,
   [SuperBlocks.InfoSec]: 10,
   [SuperBlocks.MachineLearningPy]: 11,

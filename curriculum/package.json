@@ -34,8 +34,6 @@
     "@babel/preset-env": "7.20.2",
     "@babel/preset-typescript": "7.18.6",
     "@babel/register": "7.18.9",
-    "acorn": "8.8.1",
-    "acorn-jsx": "5.3.2",
     "babel-plugin-dynamic-import-node": "2.3.3",
     "babel-plugin-lodash": "3.3.4",
     "babel-plugin-transform-runtime": "6.23.0",
@@ -56,9 +54,7 @@
     "mock-require": "3.0.3",
     "puppeteer": "10.4.0",
     "readdirp": "3.6.0",
-    "rehype": "11.0.0",
     "string-similarity": "4.0.4",
-    "unist-util-visit": "2.0.3",
-    "vfile": "4.2.1"
+    "unist-util-visit": "2.0.3"
   }
 }

@@ -8,7 +8,7 @@ dashedName: everything-be-true
 
 # --description--
 
-تحقق مما إذا كان الـ argument الثاني صحيح <dfn>truthy</dfn> على جميع عناصر المجموعة (الـ argument الأول).
+تحقق مما إذا كان المعطى (argument) الثاني <dfn>صحيح (truthy)</dfn> على جميع عناصر المجموعة (المعطى الأول).
 
 بمعنى آخر، يتم إعطاؤك قائمة (array) لمجموعة من الكائنات (objects). سيكون المسند `pre` خاصية للـ object وتحتاج إلى إرجاع `true` إذا كانت قيمته `truthy`. خلاف ذلك، قم بإرجاع `false`.
 
