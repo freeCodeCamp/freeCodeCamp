@@ -14,6 +14,8 @@ const { apiLocation } = envData;
 
 const base = apiLocation;
 
+const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+
 const defaultOptions: RequestInit = {
   credentials: 'include'
 };
@@ -34,8 +36,13 @@ export interface ResponseWithData<T> {
 // TODO: Might want to handle flash messages as close to the request as possible
 // to make use of the Response object (message, status, etc)
 async function get<T>(path: string): Promise<ResponseWithData<T>> {
-  const response = await fetch(`${base}${path}`, defaultOptions);
+  // Check local storage for a token called 'debugdelay'
+  const debugdelay = localStorage.getItem('debug_delay');
+  if (debugdelay) {
+    await delay(Number(debugdelay));
+  }
 
+  const response = await fetch(`${base}${path}`, defaultOptions);
   return combineDataWithResponse(response);
 }
 
