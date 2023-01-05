@@ -14,6 +14,12 @@ exports[`<Loader /> matches the fullScreen render snapshot 1`] = `
     <div />
     <div />
   </div>
+  <br />
+  <p
+    class="text-center"
+  >
+    Looks like this is taking longer than usual, please try refreshing the page.
+  </p>
 </div>
 `;
 
