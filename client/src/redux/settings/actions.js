@@ -46,6 +46,7 @@ export const updateMySoundComplete = createAction(
 );
 export const updateMySoundError = createAction(types.updateMySoundError);
 
+// Clicking on system trigger clicking on night button, too. but it doesn't apply it.
 export const updateMyTheme = createAction(types.updateMyTheme);
 export const updateMyThemeComplete = createAction(
   types.updateMyThemeComplete,

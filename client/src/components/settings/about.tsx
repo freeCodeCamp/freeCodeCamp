@@ -25,7 +25,7 @@ type FormValues = {
 
 type AboutProps = {
   about: string;
-  currentTheme: Themes | null;
+  currentTheme: Themes;
   location: string;
   name: string;
   picture: string;
@@ -34,7 +34,7 @@ type AboutProps = {
   keyboardShortcuts: boolean;
   submitNewAbout: (formValues: FormValues) => void;
   t: TFunction;
-  toggleNightMode: (theme: Themes | null) => void;
+  toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   username: string;
