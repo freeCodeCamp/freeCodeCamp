@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b1
-title: التخصيص المركب مع الضرب المعزز (Compound Assignment With Augmented Multiplication)
+title: التعيين المركب مع الضرب المعزز
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c83vrfa'
 forumTopicId: 16662
