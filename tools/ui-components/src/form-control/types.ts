@@ -2,23 +2,15 @@ import React from 'react';
 
 export type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
 
-type Values =
-  | {
-      value: string;
-      onChange: (event: React.ChangeEvent<FormControlElement>) => void;
-    }
-  | {
-      value?: never;
-      onChange?: never;
-    }
-  | {
-      value?: never;
-      readonly?: never;
-    }
-  | {
-      value: string;
-      readOnly: true;
-    };
+type Values = {
+  value: string;
+  onChange?: (event: React.ChangeEvent<FormControlElement>) => void;
+  readOnly?: boolean;
+} | {
+  value?: never;
+  onChange?: never;
+  readOnly?: never;
+}
 
 export type FormControlProps = Values &
   React.HTMLAttributes<FormControlElement> & {
