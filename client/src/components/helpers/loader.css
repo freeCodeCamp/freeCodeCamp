@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1em;
 }
 
 .fcc-loader .sk-spinner,
