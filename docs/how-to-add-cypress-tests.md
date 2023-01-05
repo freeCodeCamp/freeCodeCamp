@@ -42,7 +42,6 @@ To run tests against production builds, replace `dev` with `prd` below.
   ```console
   npm run cypress -- run --spec=cypress/e2e/default/landing.js
   ```
-  ```
 
 - To create a development build, start the development server, and run all existing cypress end-to-end tests:
 
