@@ -527,6 +527,8 @@ a.patreon-button:hover {
 }
 
 .faq-item h3 {
+  font-size: 1rem;
+  line-height: 1.5;
   margin: 0;
 }
 
