@@ -49,9 +49,7 @@ const FaqItem = (
     <div className={`faq-item ${isExpanded ? 'open' : ''}`} key={key}>
       <button className='map-title' onClick={() => setExpanded(!isExpanded)}>
         <Caret />
-        <h4>
-          <b>{title}</b>
-        </h4>
+        <h3>{title}</h3>
       </button>
       {isExpanded && (
         <>
