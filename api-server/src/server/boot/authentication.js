@@ -226,9 +226,9 @@ function mobileLogin(app) {
     if (!isEmail(email)) {
       return next(
         wrapHandledError(new TypeError('decoded email is invalid'), {
-          type: 'info',
-          message: 'The email encoded in the link is incorrectly formatted',
-          redirectTo: `${origin}/signin`
+          type: 'danger',
+          message: 'The email is incorrectly formatted',
+          status: 400
         })
       );
     }
