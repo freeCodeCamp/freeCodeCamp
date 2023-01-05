@@ -9,7 +9,7 @@ dashedName: subtract-one-number-from-another-with-javascript
 
 # --description--
 
-يمكننا أيضا أن نطرح رقما من الآخر.
+يمكننا أيضا أن نطرح رقما من آخر.
 
 يستخدم JavaScript رمز `-` للطرح.
 
@@ -32,7 +32,7 @@ const myVar = 12 - 6;
 assert(difference === 12);
 ```
 
-يجب عليك طرح رَقَم واحد فقط من 45.
+يجب أن تطرح رَقَم واحد فقط من 45.
 
 ```js
 assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
