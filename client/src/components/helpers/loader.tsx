@@ -5,31 +5,29 @@ import './loader.css';
 
 interface LoaderProps {
   fullScreen?: boolean;
-  delayedLoaderTimer?: number;
-  delayedMessageTimer?: number;
+  loaderDelay?: number;
+  messageDelay?: number;
 }
 function Loader({
   fullScreen,
-  delayedLoaderTimer,
-  delayedMessageTimer
+  loaderDelay,
+  messageDelay
 }: LoaderProps): JSX.Element {
-  const [showSpinner, setShowSpinner] = useState(!delayedLoaderTimer);
-  const [showMessage, setShowMessage] = useState(!delayedMessageTimer);
+  const [showSpinner, setShowSpinner] = useState(!loaderDelay);
+  const [showMessage, setShowMessage] = useState(!messageDelay);
   useEffect(() => {
-    let timerId: ReturnType<typeof setTimeout>;
-    if (!showSpinner) {
-      timerId = setTimeout(() => setShowSpinner(true), delayedLoaderTimer);
+    if (loaderDelay) {
+      const timerId = setTimeout(() => setShowSpinner(true), loaderDelay);
+      return () => clearTimeout(timerId);
     }
-    return () => clearTimeout(timerId);
-  }, [setShowSpinner, showSpinner, delayedLoaderTimer]);
+  }, [loaderDelay]);
 
   useEffect(() => {
-    let timerId: ReturnType<typeof setTimeout>;
-    if (!showMessage) {
-      timerId = setTimeout(() => setShowMessage(true), delayedMessageTimer);
+    if (messageDelay) {
+      const timerId = setTimeout(() => setShowMessage(true), messageDelay);
+      return () => clearTimeout(timerId);
     }
-    return () => clearTimeout(timerId);
-  }, [setShowMessage, showMessage, delayedMessageTimer]);
+  }, [messageDelay]);
 
   return (
     <div
