@@ -622,7 +622,7 @@ a[class^='ais-'] {
   height: 20px;
 }
 .ais-SearchBox-reset {
-  margin-left: 10px;
+  margin-inline-start: 10px;
 }
 .ais-SearchBox-resetIcon,
 .ais-SearchBox-loadingIcon {
