@@ -45,9 +45,7 @@ exports.getTranslatableComments = getTranslatableComments;
 
 function createCommentMap(dictionariesDir) {
   // get all the languages for which there are dictionaries.
-  const languages = fs
-    .readdirSync(dictionariesDir)
-    .filter(x => x !== 'english');
+  const languages = fs.readdirSync(dictionariesDir);
 
   // get all their dictionaries
   const dictionaries = languages.reduce(
