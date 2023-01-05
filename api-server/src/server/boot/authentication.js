@@ -211,6 +211,16 @@ function mobileLogin(app) {
       }
     );
 
+    if (!auth0Res.ok) {
+      return next(
+        wrapHandledError(new Error('Invalid Auth0 token'), {
+          type: 'danger',
+          message: 'We could not log you in, please try again in a moment.',
+          status: auth0Res.status
+        })
+      );
+    }
+
     const { email } = await auth0Res.json();
 
     if (!isEmail(email)) {
