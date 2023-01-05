@@ -2,7 +2,7 @@ import { writeFileSync } from 'fs';
 import fetch from 'node-fetch';
 import yaml from 'js-yaml';
 import envData from '../../../config/env.json';
-import { trendingSchemaValidator } from './schema/trendingSchema';
+import { trendingSchemaValidator } from './schema/trending-schema';
 
 const { clientLocale } = envData;
 
