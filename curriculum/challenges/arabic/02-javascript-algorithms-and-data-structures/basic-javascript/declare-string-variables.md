@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c444eddfaeb5bdef
-title: أنشاء متغيرات المقاطع نصية (Declare String Variables)
+title: إعلان متغيرات المقاطع نصية (Declare String Variables)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvWU6'
 forumTopicId: 17557
@@ -9,13 +9,13 @@ dashedName: declare-string-variables
 
 # --description--
 
-في السابق كنت تستخدم الكود التالي لإنشاء متغير:
+في السابق كنت تستخدم الكود التالي لإعلان متغير:
 
 ```js
 var myName;
 ```
 
-ولكن يمكنك أيضا أنشاء متغير المقطع بهذه الطريقة:
+ولكن يمكنك أيضا إعلان متغير المقطع النصي (string) بهذه الطريقة:
 
 ```js
 var myName = "your name";

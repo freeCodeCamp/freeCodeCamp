@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244af
-title: التخصيص المركب مع الجمع المعزز (Compound Assignment With Augmented Addition)
+title: التعيين المركب مع الجمع المعزز
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDR6LCb'
 forumTopicId: 16661

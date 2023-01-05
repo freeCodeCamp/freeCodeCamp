@@ -18,11 +18,11 @@ Aggiungiamo una variabile d'ambiente come opzione di configurazione.
 
 Crea un file `.env` nella directory principale del tuo progetto e memorizza la variabile `MESSAGE_STYLE=uppercase` in esso.
 
-Poi, all'interno del gestore della rotta `/json` GET che hai creato nell'ultima sfida accedi a `process.env.MESSAGE_STYLE` e trasforma la proprietà `message` dell'oggetto di risposta in maiuscolo se la variabile è uguale a `uppercase`. L'oggetto della risposta dovrebbe essere `{"message": "Hello json"}` o `{"message": "HELLO JSON"}`, a seconda del valore di `MESSAGE_STYLE`.
+Poi, all'interno del gestore della rotta `/json` GET che hai creato nell'ultima sfida accedi a `process.env.MESSAGE_STYLE` e trasforma la proprietà `message` dell'oggetto di risposta in maiuscolo se la variabile è uguale a `uppercase`. L'oggetto della risposta dovrebbe essere `{"message": "Hello json"}` o `{"message": "HELLO JSON"}`, a seconda del valore di `MESSAGE_STYLE`. Nota che, per come vengono eseguiti i test, occorre leggere il valore di `process.env.MESSAGE_STYLE` **all'interno** del gestore di rotta, non al di fuori.
 
 **Nota:** Se stai usando Replit, non puoi creare un file `.env`. Utilizza invece la scheda <dfn>SECRETS</dfn> integrata per aggiungere la variabile.
 
-Se stai lavorando in locale, avrai bisogno del pacchetto `dotenv`. Carica le variabili ambientali dal tuo file `.env` in `process.env`. Il pacchetto `dotenv` è già stato installato ed è nel file `package.json` del tuo progetto. Quindi, in cima al tuo file `myApp.js`, importa e carica le variabili con `require('dotenv').config()`.
+Se stai lavorando in locale, avrai bisogno del pacchetto `dotenv`. Carica le variabili ambientali dal tuo file `.env` in `process.env`. Il pacchetto `dotenv` è già stato installato ed è nel file `package.json` del tuo progetto. In cima al file `myApp.js`, aggiungi `require('dotenv').config()` per caricare le variabili di ambiente.
 
 # --hints--
 

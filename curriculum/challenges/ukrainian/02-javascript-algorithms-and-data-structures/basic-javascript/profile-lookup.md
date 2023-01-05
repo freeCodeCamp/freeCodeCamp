@@ -23,7 +23,7 @@ dashedName: profile-lookup
 
 # --hints--
 
-`lookUpProfile("Kristian", "lastName")` повинен повернути рядок `Vos`
+`lookUpProfile("Kristian", "lastName")` повинен повертати рядок `Vos`
 
 ```js
 assert(lookUpProfile('Kristian', 'lastName') === 'Vos');
@@ -44,13 +44,13 @@ assert.deepEqual(lookUpProfile('Sherlock', 'likes'), [
 assert(typeof lookUpProfile('Harry', 'likes') === 'object');
 ```
 
-`lookUpProfile("Bob", "number")` повинен повернути рядок `No such contact`
+`lookUpProfile("Bob", "number")` повинен повертати рядок `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'number') === 'No such contact');
 ```
 
-`lookUpProfile("Bob", "potato")` повинен повернути рядок `No such contact`
+`lookUpProfile("Bob", "potato")` повинен повертати рядок `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'potato') === 'No such contact');

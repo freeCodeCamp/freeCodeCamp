@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Verwende die Destrukturierungszuweisung mit dem Rest-Parameter, um Array-Elemente neu zuzuweisen
+  Destructuring via rest elements
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -22,11 +22,11 @@ console.log(arr);
 
 Die Konsole würde die Werte `1, 2` und `[3, 4, 5, 7]` anzeigen.
 
-Die Variablen `a` und `b` entnehmen den ersten und zweiten Wert aus dem Array. Danach erhält `arr` die restlichen Werte in Form eines Arrays, da der Rest-Parameter vorhanden ist. Das Rest-Element funktioniert nur als letzte Variable in der Liste richtig. Das heißt, du kannst den Rest-Parameter nicht verwenden, um ein Subarray zu erfassen, das das letzte Element des ursprünglichen Arrays auslässt.
+Die Variablen `a` und `b` entnehmen den ersten und zweiten Wert aus dem Array. After that, because of the rest syntax presence, `arr` gets the rest of the values in the form of an array. Das Rest-Element funktioniert nur als letzte Variable in der Liste richtig. As in, you cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
 
 # --instructions--
 
-Use a destructuring assignment with the rest parameter to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` should return a sub-array of the original array `list` with the first two elements omitted.
+Use a destructuring assignment with the rest syntax to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` should return a sub-array of the original array `list` with the first two elements omitted.
 
 # --hints--
 

@@ -217,7 +217,7 @@ export async function createStripeCardDonation(req, res, stripe) {
    * if user is already donating and the donation isn't one time only,
    * throw error
    */
-  if (user.isDonating && duration !== 'onetime') {
+  if (user.isDonating && duration !== 'one-time') {
     throw {
       message: `User already has active recurring donation(s).`,
       type: 'AlreadyDonatingError'

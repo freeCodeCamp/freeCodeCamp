@@ -10,16 +10,16 @@ dashedName: demographic-data-analyzer
 
 Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">an diesem Projekt mit unserem Replit-Startercode arbeiten</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Beginne, indem du das Projekt in Replit importierst.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
 
 
 Wir sind noch dabei, den interaktiven Teil des Python-Kurses zu entwickeln. Hier sind erstmal einige Videos auf dem freeCodeCamp.org YouTube-Kanal, die dir alles beibringen, was du wissen musst, um dieses Projekt abzuschließen:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Videokurs: Python für jedermann</a> (14 Stunden)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">Wie man Daten mit Python-Pandas analysiert </a> (10 Stunden)
 
 # --instructions--
 
@@ -37,15 +37,15 @@ Bei dieser Aufgabe musst du demographische Daten mit Hilfe von Pandas analysiere
 
 Du musst Pandas verwenden, um die folgenden Fragen zu beantworten:
 
-- How many people of each race are represented in this dataset? This should be a Pandas series with race names as the index labels. (`race` column)
-- What is the average age of men?
-- What is the percentage of people who have a Bachelor's degree?
-- What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?
-- What percentage of people without advanced education make more than 50K?
-- What is the minimum number of hours a person works per week?
-- What percentage of the people who work the minimum number of hours per week have a salary of more than 50K?
-- What country has the highest percentage of people that earn >50K and what is that percentage?
-- Identify the most popular occupation for those who earn >50K in India.
+- Wie viele Personen jeder ethnischen Gruppe sind in diesem Datensatz vertreten? Dies sollte eine Pandas-Reihe mit den Namen der verschiedenen Ethnien als Indexbezeichnungen sein. (`race` Spalte)
+- Wie hoch ist das Durchschnittsalter der Männer?
+- Wie hoch ist der Prozentsatz von Menschen, die einen Bachelorabschluss haben?
+- Wie hoch ist der Prozentsatz der Menschen mit einer weiterführenden Bildung (`Bachelors`, `Masters`, oder `Doctorate`), die mehr als 50K verdienen?
+- Wie hoch ist der Prozentsatz der Menschen ohne weiterführende Bildung, die mehr als 50K verdienen?
+- Wie hoch ist die Mindestanzahl an Arbeitsstunden, die eine Person pro Woche arbeitet?
+- Wie hoch ist der Prozentsatz von Menschen, die die Mindestarbeitszeit arbeiten und mehr als 50K verdienen?
+- Welches Land hat den höchsten Prozentsatz an Menschen, die >50K verdienen und wie viel Prozent sind es?
+- Ermittle den bekanntesten Beruf für diejenigen, die in Indien >50K verdienen.
 
 Benutze den Starter-Code in der Datei `demographic_data_analyzer`. Aktualisiere den Code, damit alle Variablen, die auf "Keine" gesetzt sind, auf die entsprechende Berechnung oder den entsprechenden Code gesetzt werden. Runde alle Dezimalstellen auf die nächste Zehnerstelle.
 

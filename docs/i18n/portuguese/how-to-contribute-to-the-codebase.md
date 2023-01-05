@@ -169,8 +169,8 @@ Siga estes passos:
    ```md
    fix: melhorar o passo do HTML
    fix: consertar scripts de build para o Travis-CI
-   feat: adicionar link do artigo sobre hoisting em JavaScript
-   docs: atuaizar as diretrizes de colaboração
+   feat: adicionar o link para o artigo de hoisting do JavaScript
+   docs: atualizar as diretrizes de colaboração
    ```
 
    Escreva pouco, não mais do que 50 caracteres. Você sempre pode adicionar informações extras na descrição da mensagem de commit.

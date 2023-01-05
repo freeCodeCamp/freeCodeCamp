@@ -19,67 +19,67 @@ In the game of Golf, each hole has a `par`, meaning, the average number of `stro
 
 # --hints--
 
-Рахунок `(4, 1)` має виводити стрічку `В лунку з першого удару!`
+`golfScore(4, 1)` повинен повертати рядок `Hole-in-one!`
 
 ```js
 assert(golfScore(4, 1) === 'Hole-in-one!');
 ```
 
-Рахунок `(4, 2)` має виводити стрічку `Орел`
+`golfScore(4, 2)` повинен повертати рядок `Eagle`
 
 ```js
 assert(golfScore(4, 2) === 'Eagle');
 ```
 
-Рахунок `(5, 2)` має виводити стрічку `Орел`
+`golfScore(5, 2)` повинен повертати рядок `Eagle`
 
 ```js
 assert(golfScore(5, 2) === 'Eagle');
 ```
 
-Рахунок `(4, 3)` має виводити стрічку `Пташка`
+`golfScore(4, 3)` повинен повертати рядок `Birdie`
 
 ```js
 assert(golfScore(4, 3) === 'Birdie');
 ```
 
-Рахунок `(4, 4)` має виводити стрічку `Середнячок`
+`golfScore(4, 4)` повинен повертати рядок `Par`
 
 ```js
 assert(golfScore(4, 4) === 'Par');
 ```
 
-Рахунок `(1, 1)` має виводити стрічку `В лунку з першого удару!`
+`golfScore(1, 1)` повинен повертати рядок `Hole-in-one!`
 
 ```js
 assert(golfScore(1, 1) === 'Hole-in-one!');
 ```
 
-Рахунок `(5, 5)` має виводити стрічку `Середнячок`
+`golfScore(5, 5)` повинен повертати рядок `Par`
 
 ```js
 assert(golfScore(5, 5) === 'Par');
 ```
 
-Рахунок `(4, 5)` має виводити стрічку `Страшко`
+`golfScore(4, 5)` повинен повертати рядок `Bogey`
 
 ```js
 assert(golfScore(4, 5) === 'Bogey');
 ```
 
-Рахунок `(4, 6)` має виводити стрічку `Двічі Страшко`
+`golfScore(4, 6)` повинен повертати рядок `Double Bogey`
 
 ```js
 assert(golfScore(4, 6) === 'Double Bogey');
 ```
 
-Рахунок `(4, 7)` має виводити стрічку `Йди додому!`
+`golfScore(4, 7)` повинен повертати рядок `Go Home!`
 
 ```js
 assert(golfScore(4, 7) === 'Go Home!');
 ```
 
-Рахунок `(5, 9)` має виводити стрічку `Йди додому!`
+`golfScore(5, 9)` повинен повертати рядок `Go Home!`
 
 ```js
 assert(golfScore(5, 9) === 'Go Home!');

@@ -137,7 +137,7 @@ export const superBlockOrder: SuperBlockOrder = {
   },
   [Languages.Espanol]: {
     [CurriculumMaps.Landing]: [
-      SuperBlocks.RespWebDesign,
+      SuperBlocks.RespWebDesignNew,
       SuperBlocks.JsAlgoDataStruct,
       SuperBlocks.FrontEndDevLibs,
       SuperBlocks.DataVis,
@@ -152,7 +152,7 @@ export const superBlockOrder: SuperBlockOrder = {
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
         [SuperBlockStates.Current]: [
-          SuperBlocks.RespWebDesign,
+          SuperBlocks.RespWebDesignNew,
           SuperBlocks.JsAlgoDataStruct,
           SuperBlocks.FrontEndDevLibs,
           SuperBlocks.DataVis,
@@ -163,11 +163,10 @@ export const superBlockOrder: SuperBlockOrder = {
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [],
-        [SuperBlockStates.Legacy]: []
+        [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
         [SuperBlockStates.Current]: [
-          SuperBlocks.RespWebDesignNew,
           SuperBlocks.RelationalDb,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,

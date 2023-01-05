@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 0;
+  margin-inline-start: 0;
   border: 1px solid #efefef;
 }
 

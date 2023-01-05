@@ -37,7 +37,7 @@ test(false);
 
 # --instructions--
 
-أنشئ تعبير `if` داخل الوظيفة لينتج `Yes, that was true` إذا حالة الحجة `wasThatTrue` تكون `true` وتنتج `No, that was false` خلافا لذلك.
+أنشئ تعبير `if` داخل الوظيفة لينتج `Yes, that was true` إذا حالة الوسيط `wasThatTrue` تكون `true` وينتج `No, that was false` خلافا لذلك.
 
 # --hints--
 

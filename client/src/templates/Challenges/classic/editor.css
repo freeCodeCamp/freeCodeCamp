@@ -34,7 +34,8 @@ textarea.inputarea {
 
 .editor-upper-jaw,
 .editor-lower-jaw {
-  padding: 15px 15px 15px 0px;
+  padding-inline: 0 15px;
+  padding-block: 15px;
 }
 
 .editor-upper-jaw {
@@ -93,8 +94,7 @@ textarea.inputarea {
 .myEditableLineDecoration {
   background-color: var(--gray-45);
   width: 15px !important;
-  margin-left: 5px !important;
-  margin-right: 5px !important;
+  margin-inline: 5px !important;
 }
 
 .myEditableLineDecoration.tests-passed {
@@ -191,5 +191,5 @@ textarea.inputarea {
 }
 
 .lower-jaw-icon-bar > button:last-child {
-  margin-right: 0;
+  margin-inline-end: 0;
 }
