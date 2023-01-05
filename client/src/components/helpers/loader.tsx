@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import Spinner from 'react-spinkit';
 
 import './loader.css';
@@ -13,6 +14,8 @@ function Loader({
   loaderDelay,
   messageDelay
 }: LoaderProps): JSX.Element {
+  const { t } = useTranslation();
+
   const [showSpinner, setShowSpinner] = useState(!loaderDelay);
   const [showMessage, setShowMessage] = useState(!messageDelay);
   useEffect(() => {
@@ -38,10 +41,7 @@ function Loader({
       {showMessage && fullScreen && (
         <>
           <br />
-          <p className='text-center'>
-            Looks like this is taking longer than usual, please try refreshing
-            the page.
-          </p>
+          <p className='text-center'>{t('misc.slow-load-msg')}</p>
         </>
       )}
     </div>
