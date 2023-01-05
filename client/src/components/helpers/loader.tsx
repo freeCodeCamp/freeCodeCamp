@@ -3,19 +3,18 @@ import Spinner from 'react-spinkit';
 
 import './loader.css';
 
-interface LoaderProps {
+interface Props {
   fullScreen?: boolean;
-  timeout?: number;
+  delay?: number;
 }
-function Loader({ fullScreen, timeout }: LoaderProps): JSX.Element {
-  const [showSpinner, setShowSpinner] = useState(!timeout);
+function Loader({ fullScreen, delay }: Props): JSX.Element {
+  const [showSpinner, setShowSpinner] = useState(!delay);
   useEffect(() => {
-    let timerId: ReturnType<typeof setTimeout>;
     if (!showSpinner) {
-      timerId = setTimeout(() => setShowSpinner(true), timeout);
+      const timerId = setTimeout(() => setShowSpinner(true), delay);
+      return () => clearTimeout(timerId);
     }
-    return () => clearTimeout(timerId);
-  }, [setShowSpinner, showSpinner, timeout]);
+  }, [setShowSpinner, showSpinner, delay]);
   return (
     <div
       className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}
