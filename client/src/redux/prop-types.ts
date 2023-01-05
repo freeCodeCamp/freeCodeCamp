@@ -1,77 +1,7 @@
-import PropTypes from 'prop-types';
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../config/certification-settings';
 import { Themes } from '../components/settings/theme';
 import { certMap } from '../resources/cert-and-project-map';
-
-export const UserPropType = PropTypes.shape({
-  about: PropTypes.string,
-  completedChallenges: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      solution: PropTypes.string,
-      githubLink: PropTypes.string,
-      challengeType: PropTypes.number,
-      completedDate: PropTypes.number,
-      challengeFiles: PropTypes.array
-    })
-  ),
-  email: PropTypes.string,
-  githubProfile: PropTypes.string,
-  is2018DataVisCert: PropTypes.bool,
-  isApisMicroservicesCert: PropTypes.bool,
-  isBackEndCert: PropTypes.bool,
-  isDataVisCert: PropTypes.bool,
-  isEmailVerified: PropTypes.bool,
-  isFrontEndCert: PropTypes.bool,
-  isFrontEndLibsCert: PropTypes.bool,
-  isFullStackCert: PropTypes.bool,
-  isHonest: PropTypes.bool,
-  isInfosecQaCert: PropTypes.bool,
-  isQaCertV7: PropTypes.bool,
-  isInfosecCertV7: PropTypes.bool,
-  isJsAlgoDataStructCert: PropTypes.bool,
-  isRelationalDatabaseCertV8: PropTypes.bool,
-  isRespWebDesignCert: PropTypes.bool,
-  isSciCompPyCertV7: PropTypes.bool,
-  isDataAnalysisPyCertV7: PropTypes.bool,
-  isMachineLearningPyCertV7: PropTypes.bool,
-  linkedin: PropTypes.string,
-  location: PropTypes.string,
-  name: PropTypes.string,
-  picture: PropTypes.string,
-  points: PropTypes.number,
-  portfolio: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string,
-      url: PropTypes.string,
-      image: PropTypes.string,
-      description: PropTypes.string
-    })
-  ),
-  savedChallenges: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      challengeFiles: PropTypes.array
-    })
-  ),
-  sendQuincyEmail: PropTypes.bool,
-  sound: PropTypes.bool,
-  theme: PropTypes.string,
-  keyboardShortcuts: PropTypes.bool,
-  twitter: PropTypes.string,
-  username: PropTypes.string,
-  website: PropTypes.string
-});
-
-export const CurrentCertsPropType = PropTypes.arrayOf(
-  PropTypes.shape({
-    show: PropTypes.bool,
-    title: PropTypes.string,
-    certSlug: PropTypes.string
-  })
-);
 
 export type Steps = {
   isHonest?: boolean;
