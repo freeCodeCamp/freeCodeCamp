@@ -472,7 +472,7 @@ button.nav-link[aria-disabled='true'] {
 
 .universal-nav-right .ais-SearchBox-form {
   width: calc(100vw - 17rem);
-  margin-left: 15px;
+  margin-inline-start: 15px;
 }
 
 .universal-nav-right .fcc_searchBar .ais-Hits {
