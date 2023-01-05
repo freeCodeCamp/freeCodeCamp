@@ -479,9 +479,23 @@ button.nav-link[aria-disabled='true'] {
   width: calc(100vw - 17rem);
 }
 
+.ais-SearchBox-input:focus {
+  box-sizing: content-box;
+  left: -32px;
+  padding-inline-start: 35px;
+  padding-inline-end: 36px;
+  border-right: 2px solid var(--blue-mid);
+  border-left: 2px solid var(--blue-mid);
+  outline: 3px solid var(--blue-mid);
+}
+
 .ais-SearchBox-submit:focus,
 .ais-SearchBox-reset:focus {
   outline: 3px solid var(--blue-mid);
+}
+
+.ais-SearchBox-submit:focus:not(:focus-visible) {
+  outline: none;
 }
 
 #toggle-button-nav .menu-btn-text,
