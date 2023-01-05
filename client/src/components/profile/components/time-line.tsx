@@ -111,7 +111,7 @@ function TimelineInner({
         projectTitle={projectTitle}
         showUserCode={() => viewSolution(completedChallenge)}
         showProjectPreview={() => viewProject(completedChallenge)}
-        displayContext={'timeline'}
+        displayContext='timeline'
       ></SolutionDisplayWidget>
     );
   }

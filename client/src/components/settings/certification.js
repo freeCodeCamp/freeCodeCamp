@@ -216,7 +216,7 @@ export class CertificationSettings extends Component {
         projectTitle={projectTitle}
         showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}
-        displayContext={'settings'}
+        displayContext='settings'
       ></SolutionDisplayWidget>
     );
   };
