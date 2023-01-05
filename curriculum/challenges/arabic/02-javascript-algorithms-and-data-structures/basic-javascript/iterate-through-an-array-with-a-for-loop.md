@@ -27,7 +27,7 @@ for (let i = 0; i < arr.length; i++) {
 
 # --hints--
 
-يجب تعريف وتهيئة `total` إلى 0.
+يجب إعلان وتهيئة `total` بقيمة 0.
 
 ```js
 assert(code.match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8a367417b2b2512b4f
-title: Write Concise Object Literal Declarations Using Object Property Shorthand
+title: أكتب إعلانات واضح للكائن (Object) باستعمال خاصية تختصر الكائن
 challengeType: 1
 forumTopicId: 301225
 dashedName: write-concise-object-literal-declarations-using-object-property-shorthand

@@ -25,7 +25,7 @@ if (num > 10) {
 
 # --hints--
 
-Ви повинні отримати одну команду `if` у редакторі
+Ви повинні мати лише одну інструкцію `if` у редакторі
 
 ```js
 assert(code.match(/if/g).length === 1);
@@ -37,25 +37,25 @@ assert(code.match(/if/g).length === 1);
 assert(/else/g.test(code));
 ```
 
-`testElse(4)` повинен видати рядок `5 or Smaller`
+`testElse(4)` повинен повертати рядок `5 or Smaller`
 
 ```js
 assert(testElse(4) === '5 or Smaller');
 ```
 
-`testElse(5)` повинен видати рядок `5 or Smaller`
+`testElse(5)` повинен повертати рядок `5 or Smaller`
 
 ```js
 assert(testElse(5) === '5 or Smaller');
 ```
 
-`testElse(6)` повинен видати рядок `Bigger than 5`
+`testElse(6)` повинен повертати рядок `Bigger than 5`
 
 ```js
 assert(testElse(6) === 'Bigger than 5');
 ```
 
-`testElse(10)` повинен видати рядок `Bigger than 5`
+`testElse(10)` повинен повертати рядок `Bigger than 5`
 
 ```js
 assert(testElse(10) === 'Bigger than 5');

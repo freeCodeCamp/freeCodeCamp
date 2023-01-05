@@ -35,7 +35,7 @@ function findGreater(a, b) {
 
 # --instructions--
 
-Використовуйте умовний оператор у функції `checkEqual`, щоб перевірити чи два числа рівні, чи ні. Функція має повернути рядок `Equal` або рядок `Not Equal`.
+Використовуйте умовний оператор у функції `checkEqual`, щоб перевірити чи два числа рівні, чи ні. Функція повинна повернути рядок `Equal` або рядок `Not Equal`.
 
 # --hints--
 
@@ -45,19 +45,19 @@ function findGreater(a, b) {
 assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
 ```
 
-`checkEqual(1, 2)` має повернути рядок `Not Equal`
+`checkEqual(1, 2)` повинен повертати рядок `Not Equal`
 
 ```js
 assert(checkEqual(1, 2) === 'Not Equal');
 ```
 
-`checkEqual(1, 1)` має повернути рядок `Equal`
+`checkEqual(1, 1)` повинен повертати рядок `Equal`
 
 ```js
 assert(checkEqual(1, 1) === 'Equal');
 ```
 
-`checkEqual(1, -1)` має повернути рядок `Not Equal`
+`checkEqual(1, -1)` повинен повертати рядок `Not Equal`
 
 ```js
 assert(checkEqual(1, -1) === 'Not Equal');

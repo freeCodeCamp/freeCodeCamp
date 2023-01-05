@@ -1,5 +1,25 @@
 # Buone pratiche per il codebase
 
+## Definire lo stile di un componente
+
+Consigliamo di definire lo stile dei componenti seguendo la nostra [guida di stile](https://design-style-guide.freecodecamp.org/).
+
+I colori sono definiti in [`variable.css`](/client/src/components/layouts/variables.css) e i font in [`fonts.css`](/client/src/components/layouts/fonts.css).
+
+Siamo estremamente categorici circa l'aggiunta di nuove variabili/token ai colori. Dopo un'attenta ricerca, i colori sono stati scelti per rispettare l'identità del marchio freeCodeCamp, l'esperienza dello sviluppatore e l'accessibilità.
+
+The `!important` keyword may be used to override values in some cases (e.g. accessibility concerns). È necessario aggiungere un commento che descriva il problema, in modo che non venga rimosso in un futuro refactoring.
+
+### Supporto RTL
+
+Stiamo cercando di supportare il layout da destra a sinistra (right-to-left, RTL) nel codebase per le lingue che sono lette in questa direzione. Per questo è necessario essere consapevoli di come definire lo stile dei componenti. Ecco alcune rapide regole pratiche da seguire:
+
+- Don't use `float` properties
+  - Use Flexbox and Grid layouts instead, as they have RTL support already built-in, and those will be easier to maintain and review.
+- Don't define the direction while using `margin` and `padding`: it may seem harmless to use `padding-right` and `margin-left`, but these directions aren't mirrored when the layout changes to RTL, and adding counter values for them in the RTL file makes maintaining the codebase harder.
+  - Use logical properties for them: You can add the same spacing by using `padding-inline-end` and `margin-inline-start`, and you won't need to worry about RTL layout, as they follow where the line starts and ends, and you won't need to add any extra values in the RTL files, so people won't need to remember to change the same values in two files.
+- Don't use `!important` in `font-family`: RTL layout uses different fonts compared to the LTR layout, when you add `!important` in the `font-family` property it affects the RTL layout too.
+
 ## JavaScript generale
 
 Nella maggior parte dei casi, il nostro [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) darà un avvertimento nel caso di un format che va contro le preferenze del nostro codebase.
@@ -12,7 +32,7 @@ Si incoraggia l'utilizzo di componenti funzionali invece di componenti basati su
 
 #### Mantenere la cronologia del file con Git
 
-A volte cambiare il file da `<filename>.js` a `<filename>.ts` (o `.tsx`) causa che il file originale viene cancellato e uno nuovo viene creato, altre volte è solo il nome del file a cambiare - per quanto riguarda Git. Idealmente, vogliamo che la storia del file sia conservata.
+A volte cambiare il file da `<filename>.js` a `<filename>.ts` (o `.tsx`) fa sì che il file originale venga cancellato e  ne venga creato uno nuovo, altre volte è solo il nome del file a cambiare - per quanto riguarda Git. Idealmente, vogliamo che la cronologia dei file sia conservata.
 
 Il modo migliore per assicurarsene è:
 

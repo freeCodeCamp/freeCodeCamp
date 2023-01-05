@@ -1,20 +1,40 @@
 # Рекомендації щодо кодової бази
 
-## Загально про JavaScript
+## Стилізація компоненту
 
-У більшості випадків наш [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) попереджатиме про будь-яке форматування, яке суперечить бажаному варіанту кодової бази.
+Ми рекомендуємо стилізувати компоненти, використовуючи наш [посібник зі стилю](https://design-style-guide.freecodecamp.org/).
 
-Рекомендовано використовувати функціональні компоненти замість класових компонентів.
+Кольори визначені у [`variable.css`](/client/src/components/layouts/variables.css), а шрифти визначені у [`fonts.css`](/client/src/components/layouts/fonts.css).
 
-## Специфіка TypeScript
+Ми категоричні щодо додавання нових змінних/токенів до кольорів. Після ретельного аналізу ми обрали кольори, які відповідають ідентичності бренду freeCodeCamp, досвіду розробників і доступності.
 
-### Перенесення файлу JavaScript до TypeScript
+Ключове слово `!important` може бути використане для заміни значень у деяких випадках (наприклад, проблеми доступності). Ви повинні додати коментар з описом проблеми, щоб її не видалили у майбутньому рефакторингу.
+
+### Підтримка RTL
+
+Ми прагнемо підтримувати макети справа наліво (RTL) у кодовій базі для мов, які використовують письмо в такому напрямку. Для цього потрібно бути уважними щодо стилізації компонентів. Ось деякі правила, яких потрібно дотримуватись:
+
+- Не використовуйте властивості `float`
+  - Натомість використовуйте макети Flexbox та Grid, оскільки вони мають вбудовану підтримку RTL, і їх буде простіше підтримувати та переглядати.
+- Не визначайте напрямок, використовуючи `margin` та `padding`: використання `padding-right` та `margin-left` може здаватись безобідним, але ці напрямки не відображаються, коли макет змінюється на RTL, а додавання протилежних значень ускладнює утримання кодової бази.
+  - Використовуйте логічні властивості: ви можете додати однаковий інтервал, використовуючи `padding-inline-end` та `margin-inline-start`, і вам не доведеться переживати про макет RTL, оскільки вони відповідають тому, де починається на закінчується рядок. Крім того, вам не доведеться турбуватися про додавання додаткових значень до файлів RTL, і, відповідно, не доведеться пам’ятати про зміну однакових значень у двох файлах.
+- Не використовуйте `!important` у `font-family`: для макетів RTL та LTR використовуються різні шрифти; додавання `!important` до властивості `font-family` впливає й на макет RTL.
+
+## General JavaScript
+
+In most cases, our [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
+
+It is encouraged to use functional components over class-based components.
+
+## Specific TypeScript
+
+### Migrating a JavaScript File to TypeScript
 
 #### Збереження історії файлів Git
 
-Іноді зміна файлу з `<filename>.js` на `<filename>.ts` (або `.tsx`) призводить до видалення вихідного файлу та створення нового, а в інших випадках назва файлу просто змінюється, згідно Git. В ідеалі ми хочемо, щоб історія файлів була збережена.
+Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
 
-Щоб цього досягти потрібно:
+The best bet at achieving this is to:
 
 1. Перейменувати файл
 2. Затвердити прапорцем `--no-verify`, щоб запобігти скаргам Хаскі на помилки lint
@@ -26,9 +46,9 @@
 
 #### Інтерфейси та типи
 
-Рекомендовано використовувати оголошення інтерфейсу замість оголошення типів.
+For the most part, it is encouraged to use interface declarations over type declarations.
 
-React Component Props - суфікс `Props`
+React Component Props - suffix with `Props`
 
 ```typescript
 interface MyComponentProps {}
@@ -36,7 +56,7 @@ interface MyComponentProps {}
 const MyComponent = (props: MyComponentProps) => {};
 ```
 
-React Stateful Components - суфікс `State`
+React Stateful Components - suffix with `State`
 
 ```typescript
 interface MyComponentState {}
@@ -44,7 +64,7 @@ interface MyComponentState {}
 class MyComponent extends Component<MyComponentProps, MyComponentState> {}
 ```
 
-За замовчуванням - ім'я об'єкта ВерблюдячимРегістром
+Default - object name in PascalCase
 
 ```typescript
 interface MyObject {}
@@ -58,7 +78,7 @@ const myObject: MyObject = {};
 
 ## Redux
 
-### Визначення дій
+### Action Definitions
 
 ```typescript
 enum AppActionTypes = {
@@ -73,7 +93,7 @@ export const actionFunction = (
 });
 ```
 
-### Як використовувати Reduce
+### How to Reduce
 
 ```typescript
 // Base reducer action without payload
@@ -100,9 +120,9 @@ export const reducer = (
 };
 ```
 
-### Як використовувати Dispatch
+### How to Dispatch
 
-Усередині компонента імпортуйте необхідні дії та селектори.
+Within a component, import the actions and selectors needed.
 
 ```tsx
 // Add type definition
@@ -130,5 +150,5 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 
 ## Додаткова література
 
-- [Документація по TypeScript](https://www.typescriptlang.org/docs/)
-- [Підказки по TypeScript з React](https://github.com/typescript-cheatsheets/react#readme)
+- [Документація TypeScript](https://www.typescriptlang.org/docs/)
+- [Шпаргалка для TypeScript із React](https://github.com/typescript-cheatsheets/react#readme)

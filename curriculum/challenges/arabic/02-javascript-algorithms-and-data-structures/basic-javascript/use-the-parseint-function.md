@@ -19,7 +19,7 @@ const a = parseInt("007");
 
 # --instructions--
 
-استخدم `parseInt()` في وظيفة اسمها `convertToInteger` تقبل حجة اسمها `str` هي مقطع، تحوله إلى عدد صحيح وترجعه.
+استخدم `parseInt()` في وظيفة اسمها `convertToInteger` لتخول قيمة المقطع النصي `str` إلى عدد صحيح, وتنتجه.
 
 # --hints--
 

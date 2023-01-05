@@ -39,7 +39,7 @@ fetch('/json/cats.json')
 # --hints--
 
 
-Your code should use the fetched data to replace the inner HTML
+你的代碼應該使用獲取的數據來替換內部 HTML。
 
 ```js
 const catData = "dummy data";
@@ -62,13 +62,13 @@ async () => {
 ```
 
 
-Your code should make a `GET` request with `fetch`.
+你的代碼應該使用 `fetch` 發起 `GET` 請求。
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-Your code should use `then` to convert the response to JSON.
+你的代碼應該使用 `then` 來轉換對 JSON 的響應。
 
 ```js
 assert(
@@ -78,13 +78,13 @@ assert(
 );
 ```
 
-Your code should use `then` to handle the data converted to JSON by the other `then`.
+你的代碼應該使用 `then` 來處理由另一個 `then` 轉換爲 JSON 的數據。
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-Your code should get the element with id `message` and change its inner HTML to the string of JSON data.
+你的代碼應該選擇 id 爲 `message` 的元素，然後把它的內部 HTML 改成 JSON 數據的字符串。
 
 ```js
 assert(

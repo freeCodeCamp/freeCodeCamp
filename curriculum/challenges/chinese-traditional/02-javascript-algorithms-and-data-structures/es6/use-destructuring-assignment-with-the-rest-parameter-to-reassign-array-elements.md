@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  使用解構賦值配合 rest 操作符來重新分配數組元素
+  通過 rest 參數解構
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -22,11 +22,11 @@ console.log(arr);
 
 控制檯將顯示 `1, 2` 和 `[3, 4, 5, 7]`。
 
-變量 `a` 和 `b` 分別接收數組的第一個和第二個值。 之後，因爲 rest 操作符的存在，`arr` 獲取了原數組剩餘的元素的值。 rest 操作符只能對數組列表最後的元素起作用。 這意味着你不能使用 rest 操作符來截取原數組中間的元素作爲子數組。
+變量 `a` 和 `b` 分別接收數組的第一個和第二個值。 之後，因爲 rest 語法，`arr` 以數組形式接收了剩餘的值。 rest 參數只能對數組列表最後的元素起作用。 這意味着你不能使用 rest 語法來省略原數組最後一個元素、截取中間的元素作爲子數組。
 
 # --instructions--
 
-使用一個帶有 rest 參數的解構賦值來模擬 `Array.prototype.slice()` 的行爲。 `removeFirstTwo()` 應該返回原始數組 `list` 的子數組，前兩個元素被省略。
+使用一個帶有 rest 語法的解構賦值來模擬 `Array.prototype.slice()` 的行爲。 `removeFirstTwo()` 應該返回原始數組 `list` 的子數組，前兩個元素被省略。
 
 # --hints--
 

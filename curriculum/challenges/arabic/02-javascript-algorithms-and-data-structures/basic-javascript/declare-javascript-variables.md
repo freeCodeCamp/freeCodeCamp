@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c443eddfaeb5bdef
-title: إنشاء متغيرات في JavaScript
+title: أعلان متغيرات في JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNanrHq'
 forumTopicId: 17556
@@ -17,7 +17,7 @@ dashedName: declare-javascript-variables
 
 المتغيرات مشابهة للمتغيرات x و y التي تستخدمها في الرياضيات، مما يعني أنهم اسم بسيط لتمثيل البيانات التي نريد الرجوع إليها. وتختلف متغيرات الحاسوب عن المتغيرات الرياضية من حيث أنها تستطيع تخزين قيم مختلفة في أوقات مختلفة.
 
-نحن نطلب من JavaScript إنشاء أو <dfn>تعين</dfn> متغير عن طريق وضع الكلمة `var` أمامه، مثل ذلك:
+نحن نطلب من JavaScript إنشاء أو <dfn>تعلن</dfn> متغير عن طريق وضع الكلمة `var` أمامه، مثل ذلك:
 
 ```js
 var ourName;
@@ -34,7 +34,7 @@ var ourName;
 
 # --hints--
 
-يجب أن تعرف `myName` باستخدام كلمة `var` و تنهي بالفاصلة المنقوطة (;)
+يجب أن تعلن `myName` باستخدام كلمة `var` و تنهي بالفاصلة المنقوطة (;)
 
 ```js
 assert(/var\s+myName\s*;/.test(code));

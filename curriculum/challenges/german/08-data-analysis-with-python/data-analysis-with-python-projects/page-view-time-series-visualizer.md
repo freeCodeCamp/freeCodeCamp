@@ -12,12 +12,12 @@ Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-t
 
 -   Start by importing the project on Replit.
 -   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
 
 
 Wir sind noch dabei, den interaktiven Teil des Python-Kurses zu entwickeln. Hier sind erstmal einige Videos auf dem freeCodeCamp.org YouTube-Kanal, die dir alles beibringen, was du wissen musst, um dieses Projekt abzuschließen:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Videokurs: Python für jedermann</a> (14 Stunden)
 
 - <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
@@ -27,11 +27,11 @@ Für dieses Projekt visualisierst du die Daten der Zeitserie mit Hilfe eines Lin
 
 Benutze die Daten, um die folgenden Aufgaben abzuschließen:
 
-- Use Pandas to import the data from "fcc-forum-pageviews.csv". Set the index to the `date` column.
-- Clean the data by filtering out days when the page views were in the top 2.5% of the dataset or bottom 2.5% of the dataset.
-- Create a `draw_line_plot` function that uses Matplotlib to draw a line chart similar to "examples/Figure_1.png". The title should be `Daily freeCodeCamp Forum Page Views 5/2016-12/2019`. The label on the x axis should be `Date` and the label on the y axis should be `Page Views`.
-- Create a `draw_bar_plot` function that draws a bar chart similar to "examples/Figure_2.png". It should show average daily page views for each month grouped by year. The legend should show month labels and have a title of `Months`. On the chart, the label on the x axis should be `Years` and the label on the y axis should be `Average Page Views`.
-- Create a `draw_box_plot` function that uses Seaborn to draw two adjacent box plots similar to "examples/Figure_3.png". These box plots should show how the values are distributed within a given year or month and how it compares over time. The title of the first chart should be `Year-wise Box Plot (Trend)` and the title of the second chart should be `Month-wise Box Plot (Seasonality)`. Make sure the month labels on bottom start at `Jan` and the x and y axis are labeled correctly. The boilerplate includes commands to prepare the data.
+- Verwende Pandas, um die Daten aus "fcc-forum-pageviews.csv" zu importieren. Setze den Index auf die Spalte `date`.
+- Bereinige die Daten, indem du die Tage herausfilterst, an denen die Seitenaufrufe in den oberen 2,5 % des Datensatzes oder den unteren 2,5 % des Datensatzes lagen.
+- Erstelle eine `draw_line_plot` Funktion, die Matplotlib verwendet, um ein Liniendiagramm ähnlich wie in "examples/Figure_1.png" zu zeichnen. Der Titel sollte `Daily freeCodeCamp Forum Page Views 5/2016-12/2019` sein. Die Beschriftung der x-Achse sollte `Date` und die Beschriftung auf der y-Achse sollte `Page Views` lauten.
+- Erstelle eine `draw_bar_plot` Funktion, die ein Balkendiagramm ähnlich wie in "examples/Figure_2.png" zeichnet. Es sollte die durchschnittlichen täglichen Seitenaufrufe für jeden Monat, gruppiert nach Jahr, anzeigen. Die Legende sollte Monatsbezeichnungen zeigen und den Titel `Months` haben. Im Diagramm sollte die Beschriftung auf der x-Achse `Years` und die Beschriftung auf der y-Achse `Average Page Views` sein.
+- Erstelle eine `draw_box_plot`-Funktion, die Seaborn verwendet, um zwei angrenzende Boxplots, ähnlich wie "examples/Figure_3.png" zu zeichnen. Diese Boxplots sollen zeigen, wie die Werte innerhalb eines bestimmten Jahres oder Monats verteilt sind und wie sie sich im Zeitvergleich darstellen. Der Titel des ersten Diagramms sollte `Year-wise Box Plot (Trend)` und der des zweiten Diagramms sollte `Month-wise Box Plot (Seasonality)` lauten. Vergewissere dich, dass die Monatsbeschriftungen unten mit `Jan` beginnen und die x- und y-Achse korrekt beschriftet sind. Die Boilerplate enthält Befehle zur Vorbereitung der Daten.
 
 Bitte verwende für jedes Diagramm eine Kopie des Dataframes. Unit-Tests werden für dich unter `test_module.py` geschrieben.
 

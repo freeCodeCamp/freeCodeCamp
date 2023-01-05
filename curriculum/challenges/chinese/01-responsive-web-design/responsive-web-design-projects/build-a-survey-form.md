@@ -84,7 +84,7 @@ const el = document.getElementById('name')
 assert(!!el && el.type === 'text')
 ```
 
-你的 `#name` 元素应该需要输入。
+你的 `#name` 元素应该在表单中是必填项。
 
 ```js
 const el = document.getElementById('name')

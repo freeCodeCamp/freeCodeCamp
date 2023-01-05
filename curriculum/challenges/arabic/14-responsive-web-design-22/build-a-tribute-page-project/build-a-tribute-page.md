@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
-title: بناء مشروع صفحة الثناء
+title: ابن مشروع صفحة الثناء (Tribute Page)
 challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page
@@ -8,7 +8,7 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Objective:** قم ببناء تطبيق يشبه وظيفيا إلى <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
+**Objective:** ابني تطبيق يشابه وظيفيا إلي <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
 
 **المتطلبات:**
 
