@@ -3,8 +3,8 @@ import renderer from 'react-test-renderer';
 import {
   legacyProjectMap,
   projectMap
-} from '../src/resources/cert-and-project-map';
-import { CertificationSettings } from '../src/components/settings/certification';
+} from '../resources/cert-and-project-map';
+import { CertificationSettings } from '../components/settings/certification';
 
 const certificationSettings = new CertificationSettings();
 

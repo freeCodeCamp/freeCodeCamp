@@ -9,8 +9,8 @@
     "tools/challenge-editor/**/*",
     "tools/challenge-helper-scripts/**/*.ts",
     "tools/scripts/**/*.ts",
-    "client/tests/settings-button.test.js",
-    "client/tests/timeline-buttons.test.js"
+    "client/src/__tests__/settings-button.test.js",
+    "client/src/__tests__/timeline-buttons.test.js"
   ],
   "extends": "./tsconfig-base.json"
 }
