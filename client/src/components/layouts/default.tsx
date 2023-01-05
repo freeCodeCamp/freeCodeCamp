@@ -157,7 +157,7 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
     const useSystemTheme = fetchState.complete && isSignedIn === false;
 
     if (fetchState.pending) {
-      return <Loader fullScreen={true} />;
+      return <Loader fullScreen={true} delayedMessageTimer={5000} />;
     }
 
     return (
