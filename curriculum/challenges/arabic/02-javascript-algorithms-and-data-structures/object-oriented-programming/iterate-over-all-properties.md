@@ -58,7 +58,7 @@ assert.deepEqual(ownProps, ['name']);
 assert.deepEqual(prototypeProps, ['numLegs']);
 ```
 
-يجب عليك حل هذا التحدي دون استخدام الدالة المدمجة في `Object.keys()`.
+يجب عليك حل هذا التحدي دون استخدام الوظيفة المدمجة في `Object.keys()`.
 
 ```js
 assert(!/\Object.keys/.test(code));

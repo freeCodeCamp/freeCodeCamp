@@ -20,7 +20,7 @@ dashedName: chart-the-stock-market
 
 **Історія користувача:** Ви можете бачити зміни в режимі реального часу, коли будь-який інший користувач додає або видаляє акції. Для цього вам потрібно буде використовувати Web Sockets.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --solutions--
 

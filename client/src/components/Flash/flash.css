@@ -5,8 +5,8 @@
   margin-bottom: 0px;
   padding-top: 3px;
   padding-bottom: 3px;
+  position: fixed;
   width: 100%;
-  position: relative;
   z-index: 150;
 }
 

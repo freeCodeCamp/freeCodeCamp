@@ -18,7 +18,7 @@ Build a full stack JavaScript app that allows you to search for images like this
 
 **ユーザーストーリー:** ごく最近に提出された検索文字列のリストを取得できます。
 
-完了したら、プロジェクトの動作デモがどこか公の場でホストされていることを確認してください。 次に、`Solution Link` フィールドへプロジェクトの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも `GitHub Link` フィールドへ提出してください。
+完了したら、プロジェクトの動作デモがどこか公の場でホストされていることを確認してください。 Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --solutions--
 
