@@ -18,7 +18,7 @@ exports[`<Loader /> matches the fullScreen render snapshot 1`] = `
   <p
     class="text-center"
   >
-    Looks like this is taking longer than usual, please try refreshing the page.
+    misc.slow-load-msg
   </p>
 </div>
 `;
