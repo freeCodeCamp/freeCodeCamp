@@ -22,60 +22,51 @@ type ThemeProps = {
   toggleNightMode: (theme: Themes) => void;
 };
 
-export default function ThemeSettings({
-  currentTheme,
-  toggleNightMode
-}: ThemeProps): JSX.Element {
-  const { t } = useTranslation();
+type ButtonProps = ThemeProps & {
+  newTheme: Themes;
+  children: React.ReactNode;
+};
 
+function ThemeButton({
+  currentTheme,
+  newTheme,
+  toggleNightMode,
+  children
+}: ButtonProps) {
+  const { t } = useTranslation();
+  return (
+    <Button
+      className={`${
+        currentTheme === newTheme ? 'toggle-active' : 'toggle-not-active'
+      }`}
+      disabled={currentTheme === newTheme}
+      onClick={() => toggleNightMode(newTheme)}
+    >
+      {children}
+      <span className='sr-only'>{t('settings.labels.sr-theme')}</span>
+      {currentTheme === newTheme ? (
+        <ToggleCheck style={checkIconStyle} />
+      ) : (
+        <Spacer style={checkIconStyle} />
+      )}
+    </Button>
+  );
+}
+
+export default function ThemeSettings(themeProps: ThemeProps): JSX.Element {
+  const { t } = useTranslation();
   return (
     <div className='setting-theme'>
       <p>{t('settings.labels.theme-mode')}</p>
-      <Button
-        className={`${
-          currentTheme !== 'night' ? 'toggle-not-active' : 'toggle-active'
-        }`}
-        disabled={currentTheme === 'night'}
-        onClick={() => toggleNightMode((currentTheme = Themes.Night))}
-      >
+      <ThemeButton {...themeProps} newTheme={Themes.Night}>
         {t('settings.labels.dark-theme')}
-        <span className='sr-only'>{t('settings.labels.sr-theme')}</span>
-        {currentTheme === 'night' ? (
-          <ToggleCheck style={checkIconStyle} />
-        ) : (
-          <Spacer style={checkIconStyle} />
-        )}
-      </Button>
-      <Button
-        className={`${
-          currentTheme !== 'default' ? 'toggle-not-active' : 'toggle-active'
-        }`}
-        disabled={currentTheme === 'default'}
-        onClick={() => toggleNightMode((currentTheme = Themes.Default))}
-      >
+      </ThemeButton>
+      <ThemeButton {...themeProps} newTheme={Themes.Default}>
         {t('settings.labels.light-theme')}
-        <span className='sr-only'>{t('settings.labels.sr-theme')}</span>
-        {currentTheme === 'default' ? (
-          <ToggleCheck style={checkIconStyle} />
-        ) : (
-          <Spacer style={checkIconStyle} />
-        )}
-      </Button>
-      <Button
-        className={`${
-          currentTheme !== 'system' ? 'toggle-not-active' : 'toggle-active'
-        }`}
-        disabled={currentTheme === 'system'}
-        onClick={() => toggleNightMode((currentTheme = Themes.System))}
-      >
+      </ThemeButton>
+      <ThemeButton {...themeProps} newTheme={Themes.System}>
         {t('settings.labels.system-theme')}
-        <span className='sr-only'>{t('settings.labels.sr-theme')}</span>
-        {currentTheme === 'system' ? (
-          <ToggleCheck style={checkIconStyle} />
-        ) : (
-          <Spacer style={checkIconStyle} />
-        )}
-      </Button>
+      </ThemeButton>
     </div>
   );
 }
