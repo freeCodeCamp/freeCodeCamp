@@ -5,6 +5,6 @@ export function getLines(contents: string, range?: number[]) {
 
   const lines = contents.split('\n');
   const editableLines =
-    !range || range[1] <= range[0] ? [] : lines.slice(range[0], range[1] - 1);
+    range[1] <= range[0] ? [] : lines.slice(range[0], range[1] - 1);
   return editableLines.join('\n');
 }
