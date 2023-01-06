@@ -147,7 +147,6 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
       user
     } = this.props;
 
-
     if (fetchState.pending) {
       return <Loader fullScreen={true} />;
     }
