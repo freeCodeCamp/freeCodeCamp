@@ -449,7 +449,9 @@ button.nav-link[aria-disabled='true'] {
 }
 
 .universal-nav-right .fcc_searchBar .ais-SearchBox-form {
-  width: 100vw;
+  /* the width value should be changed because it overflow the parent values,
+   the best solution is to have width auto and follow the parent size so it respect the scroll bar*/
+  width: 98vw;
   max-width: unset;
   padding: 0 15px;
 }
