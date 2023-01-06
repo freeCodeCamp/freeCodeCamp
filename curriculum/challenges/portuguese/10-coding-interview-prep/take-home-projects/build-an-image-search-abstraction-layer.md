@@ -18,7 +18,7 @@ Aqui estão as histórias de usuário que você deve implementar para este proje
 
 **História de usuário:** você pode obter uma lista das strings de pesquisa enviadas mais recentemente.
 
-Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --solutions--
 

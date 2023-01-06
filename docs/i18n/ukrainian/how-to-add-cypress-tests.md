@@ -33,7 +33,13 @@
 - Для запуску одного тесту:
 
   ```console
-  npm run cypress:dev:run -- --spec=cypress/pathToYourSpec/youSpecFileName.js
+  npm run cypress -- run --spec=cypress/<path_to_test_file>
+  ```
+
+  For example:
+
+  ```console
+  npm run cypress -- run --spec=cypress/e2e/default/landing.js
   ```
 
 - Щоб створити збірку розробки, запустіть сервер розробки і виконайте всі наявні тести cypress:

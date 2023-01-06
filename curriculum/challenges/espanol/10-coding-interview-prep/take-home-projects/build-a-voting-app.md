@@ -28,7 +28,7 @@ Estas son las historias de usuario específicas que debes implementar para este 
 
 **User Story:** As an authenticated user, if you don't like the options on a poll, you can create a new option.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --solutions--
 

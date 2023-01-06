@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Destructuring via rest elements
+  通过 rest 参数解构
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -22,11 +22,11 @@ console.log(arr);
 
 控制台将显示 `1, 2` 和 `[3, 4, 5, 7]`。
 
-变量 `a` 和 `b` 分别接收数组的第一个和第二个值。 After that, because of the rest syntax presence, `arr` gets the rest of the values in the form of an array. rest 操作符只能对数组列表最后的元素起作用。 As in, you cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
+变量 `a` 和 `b` 分别接收数组的第一个和第二个值。 之后，因为 rest 语法，`arr` 以数组形式接收了剩余的值。 rest 参数只能对数组列表最后的元素起作用。 这意味着你不能使用 rest 语法来省略原数组最后一个元素、截取中间的元素作为子数组。
 
 # --instructions--
 
-Use a destructuring assignment with the rest syntax to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` 应该返回原始数组 `list` 的子数组，前两个元素被省略。
+使用一个带有 rest 语法的解构赋值来模拟 `Array.prototype.slice()` 的行为。 `removeFirstTwo()` 应该返回原始数组 `list` 的子数组，前两个元素被省略。
 
 # --hints--
 
