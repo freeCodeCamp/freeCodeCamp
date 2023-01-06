@@ -1,6 +1,6 @@
 ---
 id: 587d7fb0367417b2b2512bed
-title: ノードコンソールを確認する
+title: Node コンソールに触れる
 challengeType: 2
 forumTopicId: 301515
 dashedName: meet-the-node-console
@@ -14,27 +14,27 @@ dashedName: meet-the-node-console
 - <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、チャレンジを完了させる。
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-If you use Replit, follow these steps to set up the project:
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 Then submit the URL to it in the Solution Link field.
 
-During the development process, it is important to be able to check what’s going on in your code.
+開発プロセスでは、コード内で何が起きているかを確認できることが重要です。
 
-Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see console output in a terminal. On Replit, a terminal is open in the right pane by default.
+Node は単なる JavaScript 環境にすぎません。 クライアントサイド JavaScript と同様に、コンソールを使用して有用なデバッグ情報を表示できます。 ローカルマシンでは、ターミナルでコンソール出力を確認できます。 Replit では、デフォルトで右側のペインにターミナルが開きます。
 
-We recommend to keep the terminal open while working at these challenges. By reading the output in the terminal, you can see any errors that may occur.
+チャレンジの作業中はターミナルを開いたままにしておくことをお勧めします。 ターミナルの出力を見て、発生したエラーを確認することができます。
 
 # --instructions--
 
-Modify the `myApp.js` file to log "Hello World" to the console.
+`myApp.js` ファイルを変更して、コンソールログに「Hello World」と出力してください。
 
 # --hints--
 
-`"Hello World"` should be in the console
+`"Hello World"` がコンソールに表示されます。
 
 ```js
 (getUserInput) =>

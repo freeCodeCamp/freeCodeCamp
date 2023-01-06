@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
-title: ابن مشروع صفحة الثناء (Tribute Page)
+title: أنشئ مشروع صفحة الثناء
 challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page

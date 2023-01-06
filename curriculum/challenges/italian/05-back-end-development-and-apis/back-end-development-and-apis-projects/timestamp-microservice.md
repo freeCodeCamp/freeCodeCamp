@@ -20,7 +20,7 @@ Se utilizzi Replit, segui questi passaggi per impostare il progetto:
 -   Poi vedrai una finestra `.replit`.
 -   Seleziona `Use run command` e clicca sul pulsante `Done`.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 **Nota:** la conversione tra fusi orari non è un proposito di questo progetto, quindi assumi che tutte le date valide saranno passate a `new Date()` come date GMT.
 

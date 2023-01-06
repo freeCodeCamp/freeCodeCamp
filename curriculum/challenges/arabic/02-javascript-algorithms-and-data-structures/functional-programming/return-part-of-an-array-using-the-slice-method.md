@@ -21,7 +21,7 @@ const newArray = arr.slice(1, 3);
 
 # --instructions--
 
-استخدم طريقة `slice` في `sliceArray` لإرجاع جزء من مصفوفة `anim` بالنظر إلى مؤشري `beginSlice` و `endSlice`. يجب أن تعيد الدالة array.
+استخدم طريقة `slice` في `sliceArray` لإرجاع جزء من مصفوفة `anim` بالنظر إلى مؤشري `beginSlice` و `endSlice`. يجب أن تعيد الوظيفة array.
 
 # --hints--
 

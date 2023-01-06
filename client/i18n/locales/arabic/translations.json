@@ -339,7 +339,7 @@
     "title": "ادعم مؤسستنا الخيرية",
     "processing": "نحن نقوم بمعالجة تبرعك.",
     "redirecting": "جارٍ إعادة توجيهك...",
-    "thanks": "Thanks for donating",
+    "thanks": "شكرا على التبرع",
     "thank-you": "شكراً لكونك داعماً.",
     "additional": "يمكنك تقديم تبرع إضافي لمرة واحدة بأي مبلغ باستخدام هذا الرابط: <0>{{url}}</0>",
     "help-more": "ساعدنا على القيام بالمزيد",
@@ -605,7 +605,7 @@
       "source": "المصدر",
       "footnote": "إذا كنت تشك في أن أيا من هذه المشاريع ينتهك <2>سياسة الأمانة الأكاديمية</2>، يرجى <5>إبلاغ فريقنا بهذا </5>.",
       "title": {
-        "Build a Personal Portfolio Webpage": "قم ببناء مشروع صفحة ويب لعرض نماذج الاعمال الشخصية",
+        "Build a Personal Portfolio Webpage": "أنشئ معرضا لأعمالك الخاصة",
         "Build a Random Quote Machine": "بناء آلة عرض اقتباسات عشوائية",
         "Build a 25 + 5 Clock": "بناء ساعة 25 + 5",
         "Build a JavaScript Calculator": "بناء حاسبة بإستخدام JavaScript",

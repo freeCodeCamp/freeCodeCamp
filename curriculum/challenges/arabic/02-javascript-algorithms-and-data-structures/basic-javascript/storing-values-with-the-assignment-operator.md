@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244a8
-title: تخزين القيم مع مشغل التعيين (Storing Values with the Assignment Operator)
+title: تخزين القيم مع مشغل التعيين (=)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEanysE'
 forumTopicId: 18310

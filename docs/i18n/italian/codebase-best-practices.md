@@ -8,17 +8,17 @@ I colori sono definiti in [`variable.css`](/client/src/components/layouts/variab
 
 Siamo estremamente categorici circa l'aggiunta di nuove variabili/token ai colori. Dopo un'attenta ricerca, i colori sono stati scelti per rispettare l'identità del marchio freeCodeCamp, l'esperienza dello sviluppatore e l'accessibilità.
 
-The `!important` keyword may be used to override values in some cases (e.g. accessibility concerns). È necessario aggiungere un commento che descriva il problema, in modo che non venga rimosso in un futuro refactoring.
+La parola chiave `!important` può essere usata per sovrascrivere i valori in alcuni casi (per esempio: problemi di accessibilità). È necessario aggiungere un commento che descriva il problema, in modo che non venga rimosso in un futuro refactoring.
 
 ### Supporto RTL
 
 Stiamo cercando di supportare il layout da destra a sinistra (right-to-left, RTL) nel codebase per le lingue che sono lette in questa direzione. Per questo è necessario essere consapevoli di come definire lo stile dei componenti. Ecco alcune rapide regole pratiche da seguire:
 
-- Don't use `float` properties
-  - Use Flexbox and Grid layouts instead, as they have RTL support already built-in, and those will be easier to maintain and review.
-- Don't define the direction while using `margin` and `padding`: it may seem harmless to use `padding-right` and `margin-left`, but these directions aren't mirrored when the layout changes to RTL, and adding counter values for them in the RTL file makes maintaining the codebase harder.
-  - Use logical properties for them: You can add the same spacing by using `padding-inline-end` and `margin-inline-start`, and you won't need to worry about RTL layout, as they follow where the line starts and ends, and you won't need to add any extra values in the RTL files, so people won't need to remember to change the same values in two files.
-- Don't use `!important` in `font-family`: RTL layout uses different fonts compared to the LTR layout, when you add `!important` in the `font-family` property it affects the RTL layout too.
+- Non utilizzare le proprietà `float`
+  - Invece, utilizza i layout Flexbox e Grid poiché hanno già integrato il supporto RTL e saranno più facili da gestire e revisionare.
+- Non definire la direzione usando `margin` e `padding`: potrebbe sembrare innocuo usare `padding-right` e `margin-left`, ma queste direzioni non sono rispecchiate quando il layout cambia in RTL e l'aggiunta di valori contatori per loro nel file RTL rende il mantenimento del codebase più difficile.
+  - Usa le proprietà logiche per loro: puoi aggiungere la stessa spaziatura usando `padding-inline-end` e `margin-inline-start` e non dovrai preoccuparti del layout RTL, dato che segue l'inizio e la fine della riga e non è necessario aggiungere alcun valore aggiuntivo nei file RTL, così le persone non dovranno ricordarsi di cambiare gli stessi valori in due file.
+- Non usare `!important` in `font-family`: il layout RTL utilizza caratteri diversi rispetto al layout LTR, aggiungendo `!important` alla proprietà `font-family` si influisce anche sul layout RTL.
 
 ## JavaScript generale
 

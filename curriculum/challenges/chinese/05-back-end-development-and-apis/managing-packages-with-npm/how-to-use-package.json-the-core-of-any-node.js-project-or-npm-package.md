@@ -20,7 +20,7 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 -   接着，你将看到一个 `.replit` 窗口。
 -   选择 `Use run command` 并点击 `Done` 按钮。
 
-当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 `Solution Link` 字段中。
+当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 Then submit the URL to it in the Solution Link field.
 
 `package.json` 文件是所有 Node.js 项目和 npm 包的枢纽， 和 HTML 文档中的 &lt;head> 部分用来描述网页的配置信息（元数据）一样，它存储你的项目的相关信息。 它由单个 JSON 对象组成，并以键值对的形式存储项目信息， 且至少包含两个必填字段：“name” 和 “version”——但是最好提供有关项目的其他信息，这将对用户或者维护者有所帮助。
 

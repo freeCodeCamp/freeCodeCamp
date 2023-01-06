@@ -20,7 +20,7 @@ dashedName: timestamp-microservice
 -   接着，你將看到一個 `.replit` 窗口。
 -   選擇 `Use run command` 並點擊 `Done` 按鈕。
 
-當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 `Solution Link` 字段中。 此外，將項目的源碼鏈接提交到 `GitHub Link` 字段中。
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 **注意：**時區轉換不是本項目的目的，因此假設所有發送的有效日期將使用 `new Date()` 解析爲 GMT 日期。
 
