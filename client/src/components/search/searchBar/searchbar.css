@@ -14,8 +14,7 @@
 }
 
 .ais-SearchBox-input {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-block: 0;
   padding-inline-start: 5px;
   font-size: 18px;
   display: inline-block;
