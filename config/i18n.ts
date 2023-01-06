@@ -101,7 +101,7 @@ export const LangCodes = {
 /**
  * This array contains languages that should NOT appear in the language selector.
  */
-export const hiddenLangs = [''];
+export const hiddenLangs = ['arabic'];
 
 /**
  * This array contains languages that use the RTL layouts.

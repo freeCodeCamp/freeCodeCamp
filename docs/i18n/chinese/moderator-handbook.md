@@ -1,47 +1,47 @@
-# The Official freeCodeCamp Moderator Handbook
+# freeCodeCamp 官方管理员手册
 
-This handbook will help you moderate different places in our community. This covers conversations and interactions in issues and pull request threads on GitHub, the community forum, the chat rooms, and other official communities that we foster.
+该手册将帮助您管理我们社区中的不同地方。 This covers conversations and interactions in issues and pull request threads on GitHub, the community forum, the chat rooms, and other official communities that we foster.
 
-> [!NOTE] All freeCodeCamp moderators are community-wide moderators. That means we trust you to oversee any of these places.
+> [!NOTE] 所有 freeCodeCamp 管理员都是全社区管理员。 That means we trust you to oversee any of these places.
 
-You can serve as a moderator on any of the platforms that are of the most interest to you. Some moderators just help out on GitHub, while others just help out on the forum. Some moderators are active everywhere.
+你可以在你感兴趣的任何平台上担任管理员。 一些管理员只在 GitHub 上提供帮助，而其他管理员在论坛上提供帮助。 一些管理员在各个地方都很活跃。
 
-The bottom line is that we want you to enjoy being a moderator, and invest your scarce time in places that are of interest to you.
+最重要的是，我们希望你享受作为管理员的乐趣，并将你宝贵的时间投入到你感兴趣的地方。
 
-> "With great power comes great responsibility." - Uncle Ben
+> “拥有权利的同时也被赋予了重大的责任。” - 本叔叔
 
-As a moderator, temperament is more important than technical skill.
+作为一名管理员，气质比技术能力更重要。
 
-Listen. Be helpful. Don't abuse your power.
+聆听。 Be helpful. 不要滥用你的权力。
 
-freeCodeCamp is an inclusive community, and we need to keep it that way.
+freeCodeCamp 是一个包容的社区，我们需要保持这种状态。
 
-We have a single [Code of Conduct](https://code-of-conduct.freecodecamp.org) that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
+We have a single [Code of Conduct](https://code-of-conduct.freecodecamp.org) that governs our entire community. 规则越少，就越容易记住。 你可以在[这里](https://code-of-conduct.freecodecamp.org)阅读这些规则，并把它们记在心里。
 
 > [!NOTE] As a moderator we would add you to one or more teams on GitHub, our community forums & chat servers. If you are missing access on a platform that you would like to moderate, please [reach out to a staff member](FAQ.md#additional-assistance).
 
-## Moderating GitHub
+## 管理 GitHub
 
-Moderators have two primary responsibilities on GitHub:
+管理员在 GitHub 上有两个主要职责：
 
 1. Triaging and responding to issues.
 2. Reviewing and merging pull requests (aka QA).
 
-### Moderating GitHub Issues
+### 管理 GitHub Issue
 
-We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) repository as a common issue tracker for all of our repositories. We get new issues every day, all of which need to be triaged, labeled, and addressed. This is also a great place to start helping with open-source codebase contributions.
+We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) repository as a common issue tracker for all of our repositories. We get new issues every day, all of which need to be triaged, labeled, and addressed. 这也是一个开始帮助开源代码库贡献的好地方。
 
-#### Issue Triage
+#### Issue 分流
 
-[Triaging](https://en.wikipedia.org/wiki/Triage) is a process of prioritizing attention to each new issue report. We have an extensive list of labels that we use to mark each issue's priority, category, status, and scope.
+[分流](https://en.wikipedia.org/wiki/Triage)是一个优先关注每个新 issue 报告的过程。 我们有一个广泛的标签列表，用于标记每个 issue 的优先级、类别、状态和范围。
 
-You can help us organize and triage the issue reports by applying labels from [this list](https://github.com/freeCodeCamp/freeCodeCamp/labels). Usually, a description is available alongside the label explaining its meaning.
+你可以通过从[这个列表](https://github.com/freeCodeCamp/freeCodeCamp/labels)中使用标签来帮助我们组织和分类 issue 报告。 通常，标签旁边有描述说明其含义。
 
-Please pay special attention to the labels `"help wanted"` and `"first timers only"`. These are to be added to threads that you think can be opened up to potential contributors for making a pull request.
+请特别注意标签 `"help wanted"`（“需要帮助”）和 `"first timers only"`（“仅限新手使用”）。 这些标签将添加到你认为可以向潜在贡献者开放，以便他们提出拉取请求的主题中。
 
-A `"first timers only"` label should be applied to a trivial issue (ie a typo fix) and should include additional information. You can use this [reply template](moderator-handbook.md#first-timer-only-issues) for triage.
+A `"first timers only"` label should be applied to a trivial issue (ie a typo fix) and should include additional information. 你可以使用这个[回复模板](moderator-handbook.md#first-timer-only-issues)去分流。
 
-#### Closing Stale, Outdated, Inactive Issues and Pull Requests
+#### 关闭陈旧的、过时的、不活跃的 issue 和拉取请求
 
 - Stale issues or PRs are those that have not seen any activity from the author for 21 days (3 weeks from the last activity), but only after a moderator has requested more information/changes.
 
@@ -51,7 +51,7 @@ A `"first timers only"` label should be applied to a trivial issue (ie a typo fi
 
 > [!TIP] We recommend you use this list of standard [reply templates](moderator-handbook.md#reply-templates) while triaging issues.
 
-### Moderating Pull Requests
+### 管理拉取请求（Pull Requests）
 
 Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's repository. We must perform Quality Assurance (QA) on pull requests before we decide whether to merge them, request changes, or close them.
 
@@ -61,7 +61,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    These are changes to the text of challenges - the description, instructions, or test text.
 
-   You can also review these right on GitHub and decide whether to merge them. We need to be a bit more careful about these because millions of people will encounter this text as they work through the freeCodeCamp curriculum. Does the pull request make the text more clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and as short as possible. They aren't the place for obscure details. Contributors may try to add links to resources to the challenges.
+   You can also review these right on GitHub and decide whether to merge them. 因为会有无数的人通过 freeCodeCamp 课程读到这段文字， 所以我们应该要更加认真对待。 Does the pull request make the text more clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and as short as possible. They aren't the place for obscure details. Contributors may try to add links to resources to the challenges.
 
    You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
@@ -152,7 +152,7 @@ Also, you should never accept your own PRs. They must be reviewed by another mod
 
 If you notice anyone breaking the [Code of Conduct](https://code-of-conduct.freecodecamp.org) on GitHub issues, or opening pull requests with malicious content or code, email `support[at]freecodecamp.org` with a link to the offending pull request, and we can consider banning them from freeCodeCamp's GitHub organization entirely.
 
-## Moderating the Forum
+## 管理论坛
 
 As a moderator, you help keep our community an enjoyable place for anyone to learn and get help. You will deal with flagged posts and handle spam, off-topic, and other inappropriate conversations.
 
@@ -215,7 +215,7 @@ Moderating the forum is possible via a cell-phone but you may encounter some usa
 - The moderator's 'wrench' is at the bottom of the view-port but if you click it and cannot see the "Select Posts" button because it has scrolled out of view, you may need to try to scroll to it, though sometimes that doesn't work in which case moving to a desktop/laptop monitor may be needed.
 - Sometimes clicking on the three-dot menu below a post can hide the reply icon. Reload the page to get it back.
 
-## Moderating Facebook
+## 管理 Facebook 小组
 
 If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
 

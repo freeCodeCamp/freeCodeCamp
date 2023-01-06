@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
       fail-fast: true
 
     steps:

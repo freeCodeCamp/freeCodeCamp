@@ -37,10 +37,10 @@ The site is generated using [`docsify`](https://docsify.js.org) and served using
 
 Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
-- The homepage's source for this site is available in [`docs/index.html`](index.html).
-- We serve this file as a SPA using `docsify` and GitHub Pages.
+- 此站點的主頁源在 [`docs/index.html`](index.html) 中。
+- 我們使用 `docsify`  和 GitHub Pages 將這個文件作爲一個 SPA。
 - The `docsify` script generates the content of `markdown` files in the `docs` directory on demand.
-- The homepage is generated from the [`_coverpage.md`](_coverpage.md).
+- 主頁是由 [`_coverpage.md`](_coverpage.md) 生成的。
 - The sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
 ### Serving the documentation site locally
