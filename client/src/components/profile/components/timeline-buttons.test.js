@@ -3,17 +3,17 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 
-import { createStore } from '../redux/createStore';
-import TimelineInner from '../components/profile/components/time-line';
-import completedChallenges from '../__mocks__/completed-challenges.json';
+import { createStore } from '../../../redux/createStore';
+import completedChallenges from '../../../__mocks__/completed-challenges.json';
+import TimelineInner from './time-line';
 
 Date.prototype.toLocaleString = jest.fn(() => 'Dec 29, 2022');
 Date.prototype.toISOString = jest.fn(() => '2016-09-28T20:31:56.730Z');
 
-jest.mock('../analytics');
+jest.mock('../../../analytics');
 
 jest.mock('gatsby', () => {
-  const edges = require('../__mocks__/edges.json');
+  const edges = require('../../../__mocks__/edges.json');
   const React = require('react');
   const gatsby = jest.requireActual('gatsby');
   return {
