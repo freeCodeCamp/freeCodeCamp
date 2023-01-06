@@ -1,8 +1,8 @@
 # Authors Analytics Manual
 
-If you are an author with access to the publication's Google Analytics Property (News), you can use this guide to view your articles engagement and search for articles by publication language."
+If you are an author with access to the publication's Google Analytics Property (News), you can use this guide to view your articles engagement and search for articles by publication language.
 
-### Search by Language
+## Search by Language
 
 To search for engagement reports by a specific language:
 
@@ -15,9 +15,7 @@ To search for engagement reports by a specific language:
 1. In the search bar, type the subpath for the desired language.
 1. From the dropdown under the search bar, choose `Page path and screen class`.
 
-
-
-### Filter Reports by Author
+## Filter Reports by Author
 
 After arriving at the `Pages and Screens` reports mentioned above, use the following steps to filter the results by specific authors.
 
