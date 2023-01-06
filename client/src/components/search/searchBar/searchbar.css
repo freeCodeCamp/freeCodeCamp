@@ -23,7 +23,6 @@
 
 .ais-SearchBox-submit,
 .ais-SearchBox-reset {
-  position: relative;
   height: 26px;
   width: 26px;
   background-color: var(--gray-75);
@@ -31,6 +30,10 @@
 
 .ais-SearchBox-submit {
   padding-inline: 3px;
+}
+
+.ais-SearchBox-reset {
+  padding-block: 0 2px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,

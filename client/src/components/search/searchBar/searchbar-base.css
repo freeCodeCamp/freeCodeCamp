@@ -624,14 +624,6 @@ a[class^='ais-'] {
 .ais-SearchBox-reset {
   margin-inline-start: 10px;
 }
-.ais-SearchBox-resetIcon,
-.ais-SearchBox-loadingIcon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
 .ais-SearchBox-submitIcon path,
 .ais-SearchBox-resetIcon path {
   fill: var(--gray-15);
