@@ -20,7 +20,7 @@ Se utilizzi Replit, segui questi passaggi per impostare il progetto:
 -   Poi vedrai una finestra `.replit`.
 -   Seleziona `Use run command` e clicca sul pulsante `Done`.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Then submit the URL to it in the Solution Link field.
 
 Durante il processo di sviluppo, è importante essere in grado di controllare cosa sta succedendo nel tuo codice.
 

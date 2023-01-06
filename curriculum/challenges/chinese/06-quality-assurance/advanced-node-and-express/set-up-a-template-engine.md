@@ -20,7 +20,7 @@ dashedName: set-up-a-template-engine
 -   接着，你将看到一个 `.replit` 窗口。
 -   选择 `Use run command` 并点击 `Done` 按钮。
 
-当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 `Solution Link` 字段中。
+当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 Then submit the URL to it in the Solution Link field.
 
 模板引擎使你可以在应用程序中使用静态模板文件（例如用 *Pug* 编写的文件）。 在运行时，模版引擎会用服务端的真实数据替换掉模版文件中的变量。 然后将模版转译成发送给客户端的 HTML 静态文件。 这样可以轻松地构造 HTML 页面，允许在页面直接显示变量内容而不需要从客户端发送 API 请求。
 
