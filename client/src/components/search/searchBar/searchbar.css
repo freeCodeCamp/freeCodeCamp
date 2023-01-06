@@ -14,7 +14,9 @@
 }
 
 .ais-SearchBox-input {
-  padding: 0 0 0 5px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-inline-start: 5px;
   font-size: 18px;
   display: inline-block;
   height: 26px;
@@ -123,7 +125,6 @@ and arrow keys */
 .fcc_searchBar .ais-SearchBox-form {
   display: grid;
   grid-template-columns: 26px auto 36px;
-  grid-gap: 0;
   grid-template-areas: 'submit input reset';
   margin-bottom: 0;
   gap: 0.25em;

@@ -481,9 +481,9 @@ button.nav-link[aria-disabled='true'] {
 
 .ais-SearchBox-input:focus {
   box-sizing: content-box;
-  left: -30px;
+  margin-inline-start: -30px;
   padding-inline-start: 35px;
-  padding-inline-end: 36px;
+  padding-inline-end: 35px;
   outline: 3px solid var(--blue-mid);
 }
 
