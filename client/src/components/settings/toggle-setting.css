@@ -3,10 +3,20 @@
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
-.setting-theme button:first-child {
+.setting-theme > p {
+  margin: 0;
+}
+
+.setting-theme button {
+  padding-inline: 1em;
+  display: grid;
+  grid-template-columns: 1fr 20px;
+}
+
+.setting-theme button:first-of-type {
   margin-inline-start: auto;
 }
 

@@ -31,17 +31,7 @@
 
 .btn.toggle-active > .tick,
 .btn.toggle-not-active > .tick {
-  position: absolute;
-}
-
-.btn:first-child > .tick {
-  left: 9px;
-  top: calc(50% - 8pt);
-}
-
-.btn:last-child > .tick {
-  right: 6px;
-  top: calc(50% - 8pt);
+  position: relative;
 }
 
 .btn-group .btn + .btn {
