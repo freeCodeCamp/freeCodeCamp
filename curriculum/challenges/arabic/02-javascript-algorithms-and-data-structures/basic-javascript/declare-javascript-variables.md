@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c443eddfaeb5bdef
-title: أعلان متغيرات في JavaScript
+title: أعلان المتغيرات في JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNanrHq'
 forumTopicId: 17556

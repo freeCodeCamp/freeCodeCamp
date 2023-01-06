@@ -71,21 +71,21 @@ freeCodeCamp працює на сучасному стеку JavaScript. Якщ�
 
 ### Я хочу бути модератором freeCodeCamp. З чого мені варто почати?
 
-Модератори нашої  спільноти – наші герої. Their voluntary contributions make freeCodeCamp a safe and welcoming community.
+Модератори нашої  спільноти – наші герої. Їхні добровільні внески роблять freeCodeCamp безпечною та гостинною спільнотою.
 
-First and foremost, we would need you to be an active participant in the community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/) (not just enforce it).
+Перш за все, ви повинні бути активним учасником нашої спільноти та дотримуватись нашого [кодексу поведінки](https://www.freecodecamp.org/news/code-of-conduct/) (а не просто обіцяти його виконання).
 
 Декілька рекомендацій стосовно наших платформ:
 
-- To be a **Discord/Chat** moderator, have an active presence in our chat and have positive engagements with others, while also learning and practicing how to deal with potential conflicts that may arise.
-- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
-- To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
+- Щоб бути модератором **дискорду/чату**, будьте активними у нашому чаті та взаємодійте з іншими, навчаючись та практикуючи вирішення потенційних конфліктів.
+- Щоб бути модератором **форуму**, будьте активними та взаємодійте з іншими людьми на форумі, підтримуйте їх та надавайте зворотний зв'язок за потреби. Див. [посібник керівника підфоруму](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) для додаткової інформації.
+- Щоб бути модератором **GitHub**, допомагайте з обробкою завдань GitHub, перевіряючи, чи вони дійсні та (в ідеалі) пропонуйте їх вирішення (власне чи чуже).
 
-Коротко: поважайте інших. Ми – люди з усього світу. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
+Коротко: поважайте інших. Ми – люди з усього світу. Зважаючи на це, будь ласка, слідкуйте за своїм спілкуванням із людьми інших культур.
 
-If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. Відкрита робота є волонтерською роботою, і наш час обмежений. Ми розуміємо, що в вашому випадку це правда. So we emphasize being **consistent** rather than engaging in the community 24/7.
+Якщо ви практикували вищезгадане **деякий час** та хтось із модераторів рекомендує вас, з вами зв'яжеться співробітник та залучить до команди модераторів. Відкрита робота є волонтерською роботою, і наш час обмежений. Ми розуміємо, що в вашому випадку це правда. Тому ми наголошуємо на тому, щоб бути **послідовними**, а не взаємодіяти у спільноті 24/7.
 
-Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
+Див. наш [довідник модератора](moderator-handbook.md) для детальнішого списку обов'язків модератора та наших очікувань від них.
 
 ### Моя проблема не висвітлена у цій документації.
 

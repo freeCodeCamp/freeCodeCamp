@@ -16,7 +16,7 @@ duck.constructor === Object;
 duck instanceof Bird;
 ```
 
-بالترتيب، سيتم تقييم هذه التعبيرات إلى `false`، و `true`، و `true`.
+بالترتيب، سيتم تقييم هذه العبارات إلى `false`، و `true`، و `true`.
 
 لإصلاح هذا، عندما يتم تعيين prototype يدوياً إلى كائن جديد، تذكر أن تحدد خاصية `constructor`:
 
