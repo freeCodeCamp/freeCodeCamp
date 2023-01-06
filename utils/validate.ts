@@ -1,9 +1,4 @@
-interface ErrorInterface {
-  valid: boolean;
-  error: null | string;
-}
-
-export const invalidCharError: ErrorInterface = {
+export const invalidCharError = {
   valid: false,
   error: 'contains invalid characters'
 };
