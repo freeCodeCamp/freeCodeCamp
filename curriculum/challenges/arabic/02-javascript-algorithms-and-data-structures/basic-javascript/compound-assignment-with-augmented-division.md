@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b2
-title: التخصيص المركب مع التقسيم المعزز (Compound Assignment With Augmented Division)
+title: التعيين المركب مع التقسيم المعزز
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvKT2'
 forumTopicId: 16659

@@ -1,6 +1,6 @@
 ---
 id: 61abc7ebf3029b56226de5b6
-title: Implement Binary Search
+title: Implementiere eine Binärsuche
 challengeType: 1
 forumTopicId: 487618
 dashedName: implement-binary-search
@@ -8,25 +8,25 @@ dashedName: implement-binary-search
 
 # --description--
 
-Binary search is an **O(log(n))** efficiency algorithm for searching a sorted array to find an element. It operates using the following steps:
+Die binäre Suche ist ein **O(log(n))** Effizienz-Algorithmus zum Finden eines Elements innerhalb eines sortierten Arrays. Dieser funktioniert auf folgende Weise:
 
-1. Find the middle `value` of a sorted array. If `value == target` return (found it!).
-1. If middle `value < target`, search right half of array in next compare.
-1. If middle `value > target`, search left half of array in next compare.
+1. Finde die mittlere `value` des sortierten Arrays. Falls `value == target`, gebe den Wert zurück (gefunden!).
+1. Falls die mittlere `value < target`, durchsuche im nächsten Schritt nur die rechte Hälfte des Arrays.
+1. Falls die mittlere `value > target`, durchsuche im nächsten Schritt nur die linke Hälfte des Arrays.
 
-As you can see, you are successively halving an array, which gives you the log(n) efficiency. For this challenge, we want you to show your work - how you got to the target value... the path you took!
+Wie du siehst, halbierst du so erfolgreich einen Array mit einer Effizienz von log(n). Für diese Herausforderung wollen wir, dass du zeigst, wie du arbeitest – wie du zum Zielwert gelangt bist... welchen Weg du eingeschlagen hast!
 
 # --instructions--
 
-Write a function `binarySearch` that implements the binary search algorithm on an array, returning the path you took (each middle value comparison) to find the target in an array.
+Schreibe die Funktion `binarySearch`, welche einen binären Suchalgorithmus für einen Array implementiert – dieser soll dann einen Array mit dem von dir verwendeten Weg (jeder Mittelwertvergleich), um den Zielwert im Array zu finden, zurückgeben.
 
-The function takes a sorted array of integers and a target value as input. It returns an array containing (in-order) the middle value you found at each halving of the original array until you found the target value. The target value should be the last element of the returned array. If value not is found, return the string `Value Not Found`.
+Der Funktion wird ein sortierter Array mit Integern sowie ein Zielwert übergeben. Es wird ein Array zurückgegeben, das (in Reihenfolge) den mittleren Wert enthält, den du bei jeder Halbierung des ursprünglichen Arrays gefunden hast, bis du den Zielwert gefunden hast. Der Zielwert sollte das letzte Element des zurückgegebenen Arrays sein. Falls der Zielwert nicht gefunden wurde, gib den String `Value Not Found` zurück.
 
-For example, `binarySearch([1,2,3,4,5,6,7], 5)` would return `[4,6,5]`.
+Beispielsweise sollte `binarySearch([1,2,3,4,5,6,7], 5)` den Array `[4,6,5]` zurückgeben.
 
-For this challenge, when halving, you MUST use `Math.floor()` when doing division: `Math.floor(x/2)`. This will give a consistent, testable path.
+Für diese Aufgabe MUSS – bei Halbierungen – `Math.floor()` verwendet werden, und bei Divisionen `Math.floor(x/2)`. Hierdurch wird ein konsistenter und überprüfbarer Pfad zurückgegeben.
 
-**Note:** The following array will be used in tests:
+**Hinweis:** Folgender Array wird in den Tests verwendet:
 
 ```js
 const testArray = [
@@ -37,7 +37,7 @@ const testArray = [
 
 # --hints--
 
-`binarySearch` should be a function.
+`binarySearch` sollte eine Funktion sein.
 
 ```js
 assert(typeof binarySearch == 'function');
@@ -62,7 +62,7 @@ assert.deepEqual(binarySearch(_testArray, 1), [13, 5, 2, 0, 1]);
 assert.deepEqual(binarySearch(_testArray, 2), [13, 5, 2]);
 ```
 
-`binarySearch(testArray, 6)` should return the string `Value Not Found`.
+`binarySearch(testArray, 6)` sollte den String `Value Not Found` zurückgeben.
 
 ```js
 assert.strictEqual(binarySearch(_testArray, 6), 'Value Not Found');

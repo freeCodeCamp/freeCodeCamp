@@ -33,7 +33,13 @@ Um Tests mit Produktions-Builds durchzuführen, ersetze unten `dev` durch `prd`.
 - Um einen einzelnen Test durchzuführen:
 
   ```console
-  npm run cypress:dev:run -- --spec=cypress/pathToYourSpec/youSpecFileName.js
+  npm run cypress -- run --spec=cypress/<path_to_test_file>
+  ```
+
+  For example:
+
+  ```console
+  npm run cypress -- run --spec=cypress/e2e/default/landing.js
   ```
 
 - Um einen Entwicklungs-Build zu erstellen, starte den Entwicklungsserver und führe alle vorhandenen Cypress-End-to-End-Tests aus:

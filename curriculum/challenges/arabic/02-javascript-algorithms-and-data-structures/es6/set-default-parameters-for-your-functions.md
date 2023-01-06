@@ -21,7 +21,7 @@ console.log(greeting());
 
 ستعرض وحدة التحكم الـ strings الآتية `Hello John` و `Hello Anonymous`.
 
-يبدأ الـ default parameter في العمل عندما لا يتم تحديد الـ argument (عندما تكون undefined). كما ترون في المثال أعلاه، الـ parameter الآتي `name` سوف يتلقى القيمة الافتراضية `Anonymous` ، عندما لا تقدم قيمة للـ parameter. يمكنك إضافة القيم الافتراضية لاي عدد من الـ parameters كما تريد.
+يبدأ الوسيط الافتراضي (default parameter) في العمل عندما لا يتم تحديد المعطى argument (عندما تكون undefined). كما ترون في المثال أعلاه، سوف يتلقى الوسيط (parameter) المسمى `name` الآتي القيمة الافتراضية `Anonymous`، عندما لا تقدم قيمة للوسيط. يمكنك إضافة القيم الافتراضية لأي عدد من الوسائط (parameters) كما تريد.
 
 # --instructions--
 
@@ -41,7 +41,7 @@ assert(increment(5, 2) === 7);
 assert(increment(5) === 6);
 ```
 
-قيمة الـ default parameter لـ `1` يجب استخدامها لـ `value`.
+يجب استخدام قيمة `1` للوسائط الافتراضية (default parameter) في `value`.
 
 ```js
 assert(code.match(/value\s*=\s*1/g));

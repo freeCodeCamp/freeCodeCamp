@@ -478,10 +478,11 @@
     "hint": "Suggerimento",
     "heart": "Cuore",
     "initial": "Iniziale",
+    "input-reset": "Cancella termini di ricerca",
     "info": "Informazioni introduttive",
     "spacer": "Distanziatore",
     "toggle": "Attiva/Disattiva segno di spunta",
-    "magnifier": "lente d'ingrandimento"
+    "magnifier": "Invia i termini di ricerca"
   },
   "aria": {
     "fcc-curriculum": "Curriculum di freeCodeCamp",
@@ -708,7 +709,7 @@
       "Legacy Back End": "Back End Legacy",
       "legacy-back-end": "Certificazione Back End",
       "Legacy Data Visualization": "Visualizzazione Dati Legacy",
-      "legacy-data-visualization": " Certificazione Visualizzazione Dati",
+      "legacy-data-visualization": "Certificazione Visualizzazione Dati",
       "Legacy Information Security and Quality Assurance": "Sicurezza delle Informazioni e Garanzia di Qualità Legacy",
       "information-security-and-quality-assurance": "Certificazione di Sicurezza delle Informazioni e Garanzia di Qualità",
       "Legacy Full Stack Certification": "Certificazione Full Stack Legacy",

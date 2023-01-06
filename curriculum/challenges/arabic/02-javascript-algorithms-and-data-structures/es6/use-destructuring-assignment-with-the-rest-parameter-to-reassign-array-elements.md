@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Destructuring via rest elements
+  التفكيك عن طريق عناصر rest
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -22,11 +22,11 @@ console.log(arr);
 
 ستعرض وحدة التحكم القيم `1, 2` و `[3, 4, 5, 7]`.
 
-المتغيرات `a` و `b` تأخذ القيم الأولى والثانية من الـ array. After that, because of the rest syntax presence, `arr` gets the rest of the values in the form of an array. يعمل العنصر rest بشكل صحيح فقط كآخر متغير في القائمة. As in, you cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
+المتغيرات `a` و `b` تأخذ القيم الأولى والثانية من الـ array. بعد ذلك، بسبب وجود الثلاثة نقاط التي تدعى rest، سوف يحصل المتغير `arr` على بقية القيم في شكل قائمة (array). يعمل العنصر rest بشكل صحيح فقط كآخر متغير في القائمة. بمعني، انه لا يمكنك استخدام rest للحصول على قائمة فرعية (subarray) التي لا تحتوي غلى العنصر الأخير من القائمة الأصلية.
 
 # --instructions--
 
-Use a destructuring assignment with the rest syntax to emulate the behavior of `Array.prototype.slice()`. يجب أن ينتج `removeFirstTwo()` قائمة فرعية (sub-array) من قائمة `list` الأصلية دون العنصرين الأولين.
+استخدم تشكيل rest لتعيين التركبي (destructuring assignment) لمحاكاة سلوك `Array.prototype.slice()`. يجب أن ينتج `removeFirstTwo()` قائمة فرعية (sub-array) من قائمة `list` الأصلية دون العنصرين الأولين.
 
 # --hints--
 

@@ -12,7 +12,7 @@ dashedName: use-the-map-method-to-extract-data-from-an-array
 
 هذه هي البداية فقط. وكما يوحي اسمها، فإن ال functional programming تتمحور حول نظرية ال functions.
 
-سيكون من المنطقي أن تكون قادرًا على تمريرها كـ arguments ل functions أخرى ، وإرجاع function من function أخر. تعتبر الدوال <dfn>first class objects</dfn> في جافا سكريبت، مما يعني أنه يمكن استخدامها مثل أي object آخر. يمكن حفظها في المتغيرات، أو تخزينها في object ما، أو تمريرها كـ function arguments.
+سيكون من المنطقي أن تكون قادرًا على تمريرها كـ arguments ل functions أخرى ، وإرجاع function من function أخر. تعتبر الوظائف <dfn>first class objects</dfn> في جافا سكريبت، مما يعني أنه يمكن استخدامها مثل أي object آخر. يمكن حفظها في المتغيرات، أو تخزينها في object ما، أو تمريرها كـ function arguments.
 
 دعونا نبدأ ببعض الـ array functions البسيطة، التي هي methods على ال array object prototype. في هذا التمرين نحن ننظر إلى `Array.prototype.map()`أو ببساطة `map`.
 

@@ -1,54 +1,54 @@
 # Рекомендації щодо кодової бази
 
-## Styling a component
+## Стилізація компоненту
 
-We recommend styling components using our [design style guide](https://design-style-guide.freecodecamp.org/).
+Ми рекомендуємо стилізувати компоненти, використовуючи наш [посібник зі стилю](https://design-style-guide.freecodecamp.org/).
 
-The colors are defined in [`variable.css`](/client/src/components/layouts/variables.css), and the fonts are in [`fonts.css`](/client/src/components/layouts/fonts.css).
+Кольори визначені у [`variable.css`](/client/src/components/layouts/variables.css), а шрифти визначені у [`fonts.css`](/client/src/components/layouts/fonts.css).
 
-We are strongly opinionated about adding new variables/tokens to the colors. After careful research, the colors have been chosen to respect the freeCodeCamp brand identity, developer experience, and accessibility.
+Ми категоричні щодо додавання нових змінних/токенів до кольорів. Після ретельного аналізу ми обрали кольори, які відповідають ідентичності бренду freeCodeCamp, досвіду розробників і доступності.
 
-The `!important` keyword may be used to override values in some cases (for ex.: accessibility concerns). You should add a comment describing the issue, so it doesn't get removed in future refactoring.
+Ключове слово `!important` може бути використане для заміни значень у деяких випадках (наприклад, проблеми доступності). Ви повинні додати коментар з описом проблеми, щоб її не видалили у майбутньому рефакторингу.
 
-### RTL support
+### Підтримка RTL
 
-We are striving to support right-to-left (RTL) layout in the codebase for languages that are read in this direction. For this you need be mindful of how to style components. Here are a quick role of thumbs to follow:
+Ми прагнемо підтримувати макети справа наліво (RTL) у кодовій базі для мов, які використовують письмо в такому напрямку. Для цього потрібно бути уважними щодо стилізації компонентів. Ось деякі правила, яких потрібно дотримуватись:
 
-- Don't use `float` properties: Although it may seem best to have the component in the "perfect position", you will be climbing mountains to reach that perfect positioning in responsive layout, and you will need to reach higher heights to have it supported in RTL.
-- - Use Flexbox and Grid layouts instead, as they have RTL support already built-in, and those will be easier to maintain and review.
-- Don't define the direction while using `margin` and `padding`: it may seem harmless to use `padding-right` and `margin-left`, but these directions aren't mirrored when the layout changes to RTL, and adding counter values for them in the RTL file makes maintaining the codebase harder.
-- - Use logical properties for them: You can add the same spacing by using `padding-inline-end` and `margin-inline-start`, and you won't need to worry about RTL layout, as they follow where the line start and ends, and you won't need to add any extra values in the RTL files, so people won't need to remember to change the same values in two files.
-- Don't use `!important` in `font-family`: RTL layout is using different font from the LTR layout, when you add `!important` in the `font-family` property it affects the RTL layout too, which causes a UI bug.
+- Не використовуйте властивості `float`
+  - Натомість використовуйте макети Flexbox та Grid, оскільки вони мають вбудовану підтримку RTL, і їх буде простіше підтримувати та переглядати.
+- Не визначайте напрямок, використовуючи `margin` та `padding`: використання `padding-right` та `margin-left` може здаватись безобідним, але ці напрямки не відображаються, коли макет змінюється на RTL, а додавання протилежних значень ускладнює утримання кодової бази.
+  - Використовуйте логічні властивості: ви можете додати однаковий інтервал, використовуючи `padding-inline-end` та `margin-inline-start`, і вам не доведеться переживати про макет RTL, оскільки вони відповідають тому, де починається та закінчується рядок. Крім того, вам не доведеться турбуватися про додавання додаткових значень до файлів RTL, і, відповідно, не доведеться пам’ятати про зміну однакових значень у двох файлах.
+- Не використовуйте `!important` у `font-family`: для макетів RTL та LTR використовуються різні шрифти; додавання `!important` до властивості `font-family` впливає й на макет RTL.
 
-## General JavaScript
+## Загальний JavaScript
 
-In most cases, our [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
+У більшості випадків наш [лінтер](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) попереджатиме про будь-яке форматування, яке суперечить вподобанням нашої кодової бази.
 
-It is encouraged to use functional components over class-based components.
+Рекомендовано використовувати функціональні компоненти, а не класові.
 
-## Specific TypeScript
+## Особливий TypeScript
 
-### Migrating a JavaScript File to TypeScript
+### Перенесення файлу JavaScript до TypeScript
 
 #### Збереження історії файлів Git
 
-Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
+Іноді зміна файлу з `<filename>.js` на `<filename>.ts` (або `.tsx`) призводить до видалення вихідного файлу та створення нового, а в іншому випадку просто змінюється назва файлу, згідно з Git. В ідеалі ми хочемо, щоб історія файлів була збережена.
 
-The best bet at achieving this is to:
+Для цього потрібно:
 
 1. Перейменувати файл
-2. Затвердити прапорцем `--no-verify`, щоб запобігти скаргам Хаскі на помилки lint
-3. Провести реорганізацію коду в TypeScript, в окремому коміті
+2. Позначити прапорцем `--no-verify`, щоб Хаскі не скаржився на помилки лінтера
+3. Провести рефакторинг для перенесення у TypeScript в окремому коміті
 
-> [!NOTE] Такі редактори, як VSCode, однаково показуватимуть, що файл видалено та створено новий. Якщо ви використовуєте CLI для `git add .`, то VSCode показуватиме файл як перейменований
+> [!NOTE] Редактори типу VSCode однаково показуватимуть, що файл видалено та створено новий. Якщо ви використаєте CLI для `git add .`, то VSCode показуватиме файл як перейменований
 
-### Naming Conventions
+### Конвенції про іменування
 
 #### Інтерфейси та типи
 
-For the most part, it is encouraged to use interface declarations over type declarations.
+У більшості випадків рекомендовано використовувати оголошення інтерфейсу, а не оголошення типу.
 
-React Component Props - suffix with `Props`
+Пропси компоненту React – суфікс `Props`
 
 ```typescript
 interface MyComponentProps {}
@@ -56,7 +56,7 @@ interface MyComponentProps {}
 const MyComponent = (props: MyComponentProps) => {};
 ```
 
-React Stateful Components - suffix with `State`
+Stateful-компоненти React – суфікс `State`
 
 ```typescript
 interface MyComponentState {}
@@ -64,7 +64,7 @@ interface MyComponentState {}
 class MyComponent extends Component<MyComponentProps, MyComponentState> {}
 ```
 
-Default - object name in PascalCase
+За замовчуванням – ім’я об’єкта ВерблюдячимРегістром
 
 ```typescript
 interface MyObject {}
@@ -78,7 +78,7 @@ const myObject: MyObject = {};
 
 ## Redux
 
-### Action Definitions
+### Визначення дій
 
 ```typescript
 enum AppActionTypes = {
@@ -93,7 +93,7 @@ export const actionFunction = (
 });
 ```
 
-### How to Reduce
+### Як використовувати reduce
 
 ```typescript
 // Base reducer action without payload
@@ -120,9 +120,9 @@ export const reducer = (
 };
 ```
 
-### How to Dispatch
+### Як використовувати dispatch
 
-Within a component, import the actions and selectors needed.
+Імпортуйте необхідні дії та селектори всередині компонента.
 
 ```tsx
 // Add type definition
@@ -148,7 +148,7 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 <!-- ### Redux Types File -->
 <!-- The types associated with the Redux store state are located in `client/src/redux/types.ts`... -->
 
-## Further Literature
+## Додаткова література
 
-- [TypeScript Docs](https://www.typescriptlang.org/docs/)
-- [TypeScript with React CheatSheet](https://github.com/typescript-cheatsheets/react#readme)
+- [Документація TypeScript](https://www.typescriptlang.org/docs/)
+- [Шпаргалка для TypeScript із React](https://github.com/typescript-cheatsheets/react#readme)

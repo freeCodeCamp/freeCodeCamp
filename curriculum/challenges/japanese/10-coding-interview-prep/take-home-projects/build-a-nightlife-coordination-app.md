@@ -22,7 +22,7 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 
 **Hint:** Try using the Yelp API to find venues in the cities your users search for. Yelp API を使用する場合は、そのことをアプリ内で言及しているか確認してください。
 
-完了したら、プロジェクトの動作デモが、どこか公の場でホストされていることを確認してください。 次に、`Solution Link` フィールドへプロジェクトの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも、`GitHub Link` フィールドへ提出してください。
+完了したら、プロジェクトの動作デモが、どこか公の場でホストされていることを確認してください。 Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --solutions--
 

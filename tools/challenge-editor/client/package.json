@@ -34,7 +34,7 @@
     ]
   },
   "devDependencies": {
-    "@types/codemirror": "5.60.5",
+    "@types/codemirror": "5.60.6",
     "cross-env": "7.0.3",
     "eslint-plugin-react-hooks": "4.6.0",
     "shx": "0.3.4"
