@@ -20,7 +20,7 @@ Si usas Replit, sigue estos pasos para configurar el proyecto:
 -   A continuación, verás una ventana de `.replit`.
 -   Selecciona `Use run command` y has clic el botón `Done`.
 
-Una vez que hayas acabado, asegúrate de que un demo funcional del proyecto esté alojado en algún sitio público. Por último, envía la URL mediante el campo `Solution Link`.
+Una vez que hayas acabado, asegúrate de que un demo funcional del proyecto esté alojado en algún sitio público. Then submit the URL to it in the Solution Link field.
 
 En este desafío, configurarás una base de datos de MongoDB Atlas e importarás los paquetes necesarios para conectarse a él.
 

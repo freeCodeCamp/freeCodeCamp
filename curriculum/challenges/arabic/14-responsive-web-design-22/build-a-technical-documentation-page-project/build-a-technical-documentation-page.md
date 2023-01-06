@@ -1,6 +1,6 @@
 ---
 id: 587d78b0367417b2b2512b05
-title: ابني صفحة التوثيق التقني (Technical Documentation)
+title: أنشئ صفحة التوثيق التقني
 challengeType: 14
 forumTopicId: 301146
 dashedName: build-a-technical-documentation-page

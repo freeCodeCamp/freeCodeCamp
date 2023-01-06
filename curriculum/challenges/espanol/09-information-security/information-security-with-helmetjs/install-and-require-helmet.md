@@ -20,7 +20,7 @@ Si usas Replit, sigue estos pasos para configurar el proyecto:
 -   Siguiente, tu verás una ventana `.replit`.
 -   Selecciona `Use run command`y cliquea el botón `Done`.
 
-Cuando esté hecho, asegurate que una demo de tu trabajo este hospedado en un sitio público. Luego envía la URL para ello en el campo `Solution Link`.
+Cuando esté hecho, asegurate que una demo de tu trabajo este hospedado en un sitio público. Then submit the URL to it in the Solution Link field.
 
 Helmet ayuda asegurar tus aplicaciones Express apps configurando varios encabezados HTTP.
 

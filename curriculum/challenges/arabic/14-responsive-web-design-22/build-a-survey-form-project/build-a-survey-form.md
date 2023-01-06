@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b03
-title: ابني نموذج استطلاع رأي (Survey Form)
+title: أنشئ نموذج استطلاع رأي
 challengeType: 14
 forumTopicId: 301145
 dashedName: build-a-survey-form
