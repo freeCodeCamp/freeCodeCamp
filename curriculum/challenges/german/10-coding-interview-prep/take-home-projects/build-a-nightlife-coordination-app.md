@@ -22,7 +22,7 @@ Here are the specific user stories you should implement for this project:
 
 **Hint:** Try using the Yelp API to find venues in the cities your users search for. If you use Yelp's API, be sure to mention so in your app.
 
-Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
+Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --solutions--
 

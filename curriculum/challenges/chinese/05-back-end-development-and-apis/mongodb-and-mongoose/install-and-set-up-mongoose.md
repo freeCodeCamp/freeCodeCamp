@@ -20,7 +20,7 @@ dashedName: install-and-set-up-mongoose
 -   接着，你将看到一个 `.replit` 窗口。
 -   选择 `Use run command` 并点击 `Done` 按钮。
 
-当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 `Solution Link` 字段中。
+当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 Then submit the URL to it in the Solution Link field.
 
 在这个挑战中，你将建立一个 MongoDB Atlas 数据库并导入连接到它所需的软件包。
 

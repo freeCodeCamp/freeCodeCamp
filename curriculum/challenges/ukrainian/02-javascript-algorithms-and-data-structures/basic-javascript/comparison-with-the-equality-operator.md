@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d0
-title: Порівняння з Оператором Рівності
+title: Порівняння з оператором «дорівнює»
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKyVMAL'
 forumTopicId: 16784
@@ -9,9 +9,9 @@ dashedName: comparison-with-the-equality-operator
 
 # --description--
 
-У JavaScript є багато <dfn>операторів порівняння</dfn>. Всі ці оператори присвоюють логічне `true` або `false` значення.
+У JavaScript існує багато <dfn>операторів порівняння</dfn>. Всі ці оператори повертають логічне значення `true` або `false`.
 
-Основним є оператор рівності `==`. Оператор рівності порівнює два значення і видає `true`, якщо вони еквівалентні, або `false`, якщо ні. Зверніть увагу, що рівність відрізняється від присвоєння (`=`), яке закріплює за змінною ліворуч значення праворуч від оператора.
+Основним є оператор «дорівнює» (`==`). Оператор «дорівнює» порівнює два значення та повертає `true`, якщо вони еквівалентні. В іншому випадку він повертає `false`. Зверніть увагу, що рівність відрізняється від присвоєння (`=`), яке присвоює значення праворуч від оператора до змінної зліва.
 
 ```js
 function equalityTest(myVal) {
@@ -22,7 +22,7 @@ function equalityTest(myVal) {
 }
 ```
 
-Якщо `myVal` рівнозначний `10`, оператор рівності видає `true`, тож код у фігурних дужках виконається, і функція буде `Equal`. В іншому випадку, функція буде `Not Equal`. Для того, щоб JavaScript порівняв два різні <dfn>типи даних</dfn> (наприклад, `numbers` і `strings`), потрібно конвертувати один тип в інший. Це називається Перетворення Типів. Однак, після його виконання поняття порівнюються наступним чином:
+Якщо `myVal` дорівнює `10`, то оператор «дорівнює» повертає `true`, тому код у фігурних дужках виконається і функція поверне `Equal`. В іншому випадку функція поверне `Not Equal`. Для того, щоб JavaScript порівняв два різні <dfn>типи даних</dfn> (наприклад, `numbers` та `strings`), потрібно конвертувати один тип в інший. Це називається приведенням типів. Після конвертації вони порівнюються наступним чином:
 
 ```js
 1   ==  1  // true
@@ -33,29 +33,29 @@ function equalityTest(myVal) {
 
 # --instructions--
 
-Add the equality operator to the indicated line so that the function will return the string `Equal` when `val` is equivalent to `12`.
+Додайте оператор «дорівнює» до зазначеного рядка, щоб функція повернула рядок `Equal`, якщо `val` дорівнює `12`.
 
 # --hints--
 
-`testEqual(10)` should return the string `Not Equal`
+`testEqual(10)` повинен повертати рядок `Not Equal`
 
 ```js
 assert(testEqual(10) === 'Not Equal');
 ```
 
-`testEqual(12)` should return the string `Equal`
+`testEqual(12)` повинен повертати рядок `Equal`
 
 ```js
 assert(testEqual(12) === 'Equal');
 ```
 
-`testEqual("12")` should return the string `Equal`
+`testEqual("12")` повинен повертати рядок `Equal`
 
 ```js
 assert(testEqual('12') === 'Equal');
 ```
 
-You should use the `==` operator
+Ви повинні використати оператор `==`
 
 ```js
 assert(code.match(/==/g) && !code.match(/===/g));

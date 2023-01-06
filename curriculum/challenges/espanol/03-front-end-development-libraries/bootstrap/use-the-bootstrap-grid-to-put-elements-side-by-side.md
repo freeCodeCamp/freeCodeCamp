@@ -8,7 +8,7 @@ dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
 
 # --description--
 
-Bootstrap utiliza un sistema responsivo de cuadrilla de 12 columnas, el cual hace que sea fácil poner elementos en dos filas y especificar la anchura relativa de cada elemento. La mayoría de las clases de Bootstrap pueden ser aplicadas a un elemento `div`.
+Bootstrap utiliza un sistema adaptable de cuadrilla de 12 columnas, el cual hace que sea fácil poner elementos en dos filas y especificar la anchura relativa de cada elemento. La mayoría de las clases de Bootstrap pueden ser aplicadas a un elemento `div`.
 
 Bootstrap tiene diferentes atributos de ancho de columna que usa dependiendo cuan ancha es la pantalla del usuario. Por ejemplo, los teléfonos tienen pantallas más angostas y las laptops tienen pantallas más anchas.
 

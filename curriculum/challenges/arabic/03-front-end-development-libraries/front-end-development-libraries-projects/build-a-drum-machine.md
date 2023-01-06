@@ -1,6 +1,6 @@
 ---
 id: 587d7dbc367417b2b2512bae
-title: أنشئ Drum Machine
+title: أنشئ ألة الطبول
 challengeType: 3
 forumTopicId: 301370
 dashedName: build-a-drum-machine

@@ -1,6 +1,6 @@
 ---
 id: 587d7db2367417b2b2512b8b
-title: Understand the Immediately Invoked Function Expression (IIFE)
+title: أدراك الوظائف المنفذة عند إعلانهم (Immediately Invoked Function Expression (IIFE))
 challengeType: 1
 forumTopicId: 301328
 dashedName: understand-the-immediately-invoked-function-expression-iife
@@ -8,7 +8,7 @@ dashedName: understand-the-immediately-invoked-function-expression-iife
 
 # --description--
 
-النمط الشائع في جافا سكريبت هو تنفيذ الـ function بمجرد إعلانه:
+النمط الشائع في JavaScript هو تنفيذ الوظيفة (function) بمجرد إعلانه:
 
 ```js
 (function () {
@@ -16,13 +16,13 @@ dashedName: understand-the-immediately-invoked-function-expression-iife
 })();
 ```
 
-هذا اسمه anonymous function expression الذي ينفذ على الفور، ويخرج `Chirp, chirp!` على الفور.
+هذا اسمه تعبير غامض للوظيفة (anonymous function expression) الذي ينفذ على الفور، وينتج `Chirp, chirp!` على الفور.
 
-لاحظ أن ال function ليس له اسم وليس مخزن في متغير. ويؤدي القوسان () الواردان في نهاية ال function expression إلى تنفيذه أو استدعاءه على الفور. هذا النمط يعرف بـ <dfn>immediately invoked function expression</dfn> او <dfn>IIFE</dfn>.
+لاحظ إن الوظيفة ليس لها اسم وليست مخزنة في متغير. ويؤدي القوسان () الواردان في نهاية ال function expression إلى تنفيذه أو استدعاءه على الفور. هذا النمط يعرف بـ <dfn>immediately invoked function expression</dfn> او <dfn>IIFE</dfn>.
 
 # --instructions--
 
-أعد كتابة الدالة `makeNest` وأزيل استدعائها بحيث أنها تصبح anonymous immediately invoked function expression (IIFE).
+أعد كتابة الوظيفة `makeNest` وأزيل استدعائها بحيث أنها تصبح anonymous immediately invoked function expression (IIFE).
 
 # --hints--
 
@@ -32,7 +32,7 @@ dashedName: understand-the-immediately-invoked-function-expression-iife
 assert(/\((function|\(\))(=>|\(\)){?/.test(code.replace(/\s/g, '')));
 ```
 
-يجب أن يكون ال function الخاص بك بين قوسين في نهاية التعبير لاستدعائه على الفور.
+يجب أن يكون ال function الخاص بك بين قوسين في نهاية العبارة لاستدعائه على الفور.
 
 ```js
 assert(/\(.*(\)\(|\}\(\))\)/.test(code.replace(/[\s;]/g, '')));

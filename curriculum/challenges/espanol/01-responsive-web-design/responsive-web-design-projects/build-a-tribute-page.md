@@ -19,7 +19,7 @@ dashedName: build-a-tribute-page
 1. Dentro del elemento `#img-div`, debes ver un elemento con un `id="img-caption"` correspondiente que contiene contenido textual describiendo la imagen mostrada en `#img-div`
 1. Debes ver un elemento con un correspondiente `id="tribute-info"`, que contiene contenido textual que describe el tema de la página de tributo
 1. Debes ver un elemento `a` con su `id="tribute-link"` correspondiente, que enlaza con un sitio externo, que contiene información adicional sobre el tema de la página de tributo. CONSEJO: Debes dar a tu elemento un atributo de `target` y establecerlo a `_blank` para que tu enlace se abra en una nueva pestaña
-1. Tu `#image` debe usar las propiedades `max-width` y `height` para redimensionar, de forma responsiva, relativo al ancho de su elemento padre, sin exceder su tamaño original
+1. Tu `#image` debe usar las propiedades `max-width` y `height` para redimensionar, de forma adaptable, relativo al ancho de su elemento padre, sin exceder su tamaño original
 1. Tu elemento `img` debe estar centrado dentro de su elemento padre
 
 Completa las historias de usuario y pasa todas las pruebas a continuación para completar este proyecto. Dale tu propio estilo personal. ¡Feliz día programando!

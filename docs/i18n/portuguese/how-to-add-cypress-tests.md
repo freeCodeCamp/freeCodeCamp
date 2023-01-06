@@ -33,7 +33,13 @@ Para executar testes usando compilações de produção, substitua `dev` por `pr
 - Para executar um único teste:
 
   ```console
-  npm run cypress:dev:run -- --spec=cypress/pathToYourSpec/youSpecFileName.js
+  npm run cypress -- run --spec=cypress/<path_to_test_file>
+  ```
+
+  For example:
+
+  ```console
+  npm run cypress -- run --spec=cypress/e2e/default/landing.js
   ```
 
 - Para criar uma versão de compilação, inicie o servidor de desenvolvimento e execute todos os testes cypress contínuos e funcionais existentes:

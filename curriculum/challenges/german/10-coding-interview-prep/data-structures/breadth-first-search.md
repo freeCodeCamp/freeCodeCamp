@@ -8,7 +8,7 @@ dashedName: breadth-first-search
 
 # --description--
 
-So far, we've learned different ways of creating representations of graphs. What now? One natural question to have is what are the distances between any two nodes in the graph? Enter <dfn>graph traversal algorithms</dfn>.
+Bis jetzt haben wir verschiedene Methoden zur Darstellung von Graphen gelernt. Was nun? Eine natürliche Frage ist, wie groß die Abstände zwischen zwei beliebigen Knoten im Diagramm sind? Enter <dfn>graph traversal algorithms</dfn>.
 
 <dfn>Traversal algorithms</dfn> are algorithms to traverse or visit nodes in a graph. One type of traversal algorithm is the breadth-first search algorithm.
 

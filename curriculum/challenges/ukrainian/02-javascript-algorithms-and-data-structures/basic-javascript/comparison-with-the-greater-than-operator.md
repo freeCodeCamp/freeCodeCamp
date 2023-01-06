@@ -9,9 +9,9 @@ dashedName: comparison-with-the-greater-than-operator
 
 # --description--
 
-Оператор «більше ніж» (`>`) порівнює значення двох чисел. Якщо число зліва більше за число справа, то воно повертається `true`. В іншому випадку видається результат `false`.
+Оператор «більше ніж» (`>`) порівнює значення двох чисел. Якщо число зліва більше за число справа, оператор повертає `true`. В іншому випадку він повертає `false`.
 
-Як і оператор «рівність», «більше ніж» перетворюватиме типи даних під час порівняння.
+Як і оператор «дорівнює», «більше ніж» перетворює типи даних під час порівняння.
 
 **Приклади**
 
@@ -24,53 +24,53 @@ dashedName: comparison-with-the-greater-than-operator
 
 # --instructions--
 
-Add the greater than operator to the indicated lines so that the return statements make sense.
+Додайте оператор «більше ніж» до вказаних рядків, щоб повернені інструкції мали сенс.
 
 # --hints--
 
-`testGreaterThan(0)` має повернути рядок `10 or Under`
+`testGreaterThan(0)` повинен повертати рядок `10 or Under`
 
 ```js
 assert(testGreaterThan(0) === '10 or Under');
 ```
 
-`testGreaterThan(10)` має повернути рядок `10 or Under`
+`testGreaterThan(10)` повинен повертати рядок `10 or Under`
 
 ```js
 assert(testGreaterThan(10) === '10 or Under');
 ```
 
-`testGreaterThan(11)` має повернути рядок `Over 10`
+`testGreaterThan(11)` повинен повертати рядок `Over 10`
 
 ```js
 assert(testGreaterThan(11) === 'Over 10');
 ```
 
-`testGreaterThan(99)` має повернути рядок `Over 10`
+`testGreaterThan(99)` повинен повертати рядок `Over 10`
 
 ```js
 assert(testGreaterThan(99) === 'Over 10');
 ```
 
-`testGreaterThan(100)` має повернути рядок `Over 10`
+`testGreaterThan(100)` повинен повертати рядок `Over 10`
 
 ```js
 assert(testGreaterThan(100) === 'Over 10');
 ```
 
-`testGreaterThan(101)` має повернути рядок `Over 100`
+`testGreaterThan(101)` повинен повертати рядок `Over 100`
 
 ```js
 assert(testGreaterThan(101) === 'Over 100');
 ```
 
-`testGreaterThan(150)` має повернути рядок `Over 100`
+`testGreaterThan(150)` повинен повертати рядок `Over 100`
 
 ```js
 assert(testGreaterThan(150) === 'Over 100');
 ```
 
-You should use the `>` operator at least twice
+Ви повинні використати оператор `>` принаймні двічі
 
 ```js
 assert(code.match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);
