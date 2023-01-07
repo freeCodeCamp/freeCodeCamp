@@ -40,11 +40,13 @@ function ThemeButton({
       }`}
       aria-pressed={currentTheme === newTheme}
       aria-disabled={currentTheme === newTheme}
-      onClick={() => toggleNightMode(newTheme)}
+      onClick={() => currentTheme !== newTheme && toggleNightMode(newTheme)}
     >
       {children}
       <span className='sr-only'>{t('settings.labels.sr-theme')}</span>
-      {currentTheme === newTheme && <ToggleCheck style={checkIconStyle} />}
+      {currentTheme === newTheme && (
+        <ToggleCheck aria-hidden='true' style={checkIconStyle} />
+      )}
     </Button>
   );
 }
