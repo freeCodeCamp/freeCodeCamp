@@ -1,4 +1,12 @@
 /* 
+Increase the spacing in paragraphs
+*/
+
+[dir='rtl'] p {
+  line-height: 2rem;
+}
+
+/* 
 breadcrumbs section
 */
 [dir='rtl'] .breadcrumb-left::after {
