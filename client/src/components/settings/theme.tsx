@@ -39,7 +39,7 @@ function ThemeButton({
       className={`${
         currentTheme === newTheme ? 'toggle-active' : 'toggle-not-active'
       }`}
-      disabled={currentTheme === newTheme}
+      aria-pressed={currentTheme === newTheme}
       onClick={() => toggleNightMode(newTheme)}
     >
       {children}
