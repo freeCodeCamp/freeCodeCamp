@@ -11,6 +11,7 @@
     "view": "View",
     "view-code": "View Code",
     "view-project": "View Project",
+    "view-cert-title": "View {{certTitle}}",
     "show-cert": "Show Certification",
     "claim-cert": "Claim Certification",
     "save-progress": "Save Progress",
