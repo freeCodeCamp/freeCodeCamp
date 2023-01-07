@@ -1206,7 +1206,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const { theme } = props;
   const editorTheme = theme === Themes.Night ? 'vs-dark-custom' : 'vs-custom';
   return (
-    <Suspense fallback={<Loader timeout={600} />}>
+    <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>
         <MonacoEditor
           editorDidMount={editorDidMount}
