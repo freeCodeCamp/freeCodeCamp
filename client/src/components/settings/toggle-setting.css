@@ -1,13 +1,21 @@
 .setting-theme {
-  display: flex;
-  justify-content: flex-end;
+  display: inline-flex;
   align-items: center;
   width: 100%;
   margin-bottom: 25px;
 }
 
-.setting-theme > p {
+.setting-theme > legend {
   margin: 0;
+  display: block;
+  padding: 0;
+  width: auto;
+  margin-bottom: 0;
+  float: left;
+  bottom: auto;
+  font-size: inherit;
+  color: inherit;
+  border: none;
 }
 
 .setting-theme button {
