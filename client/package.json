@@ -102,7 +102,7 @@
     "react-hotkeys": "2.0.0",
     "react-i18next": "11.18.6",
     "react-instantsearch-core": "6.38.2",
-    "react-instantsearch-dom": "6.38.1",
+    "react-instantsearch-dom": "6.38.2",
     "react-lazy-load": "3.1.14",
     "react-monaco-editor": "0.40.0",
     "react-redux": "5.1.2",
