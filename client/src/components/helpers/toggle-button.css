@@ -1,4 +1,5 @@
-.toggle-active.btn[disabled] {
+.toggle-active.btn[disabled],
+.toggle-active.btn[aria-disabled] {
   background-color: var(--secondary-color);
   color: var(--secondary-background);
   opacity: 1;
