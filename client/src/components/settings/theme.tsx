@@ -40,6 +40,7 @@ function ThemeButton({
         currentTheme === newTheme ? 'toggle-active' : 'toggle-not-active'
       }`}
       aria-pressed={currentTheme === newTheme}
+      aria-disabled={currentTheme === newTheme}
       onClick={() => toggleNightMode(newTheme)}
     >
       {children}
