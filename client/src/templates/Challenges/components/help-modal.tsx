@@ -16,7 +16,7 @@ import './help-modal.css';
 interface HelpModalProps {
   closeHelpModal: () => void;
   createQuestion: () => void;
-  executeGA: (attributes: { type: string; data: string }) => void;
+  executeGA: (attributes: { event: string; pagePath: string }) => void;
   isOpen?: boolean;
   t: (text: string) => string;
   challengeTitle: string;
@@ -54,7 +54,7 @@ function HelpModal({
   challengeTitle
 }: HelpModalProps): JSX.Element {
   if (isOpen) {
-    executeGA({ type: 'modal', data: '/help-modal' });
+    executeGA({ event: 'pageview', pagePath: '/help-modal' });
   }
   return (
     <Modal dialogClassName='help-modal' onHide={closeHelpModal} show={isOpen}>
