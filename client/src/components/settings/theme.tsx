@@ -1,7 +1,6 @@
 import { Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Spacer from '../../assets/icons/spacer';
 
 import ToggleCheck from '../../assets/icons/toggle-check';
 
@@ -45,11 +44,7 @@ function ThemeButton({
     >
       {children}
       <span className='sr-only'>{t('settings.labels.sr-theme')}</span>
-      {currentTheme === newTheme ? (
-        <ToggleCheck style={checkIconStyle} />
-      ) : (
-        <Spacer style={checkIconStyle} />
-      )}
+      {currentTheme === newTheme && <ToggleCheck style={checkIconStyle} />}
     </Button>
   );
 }
