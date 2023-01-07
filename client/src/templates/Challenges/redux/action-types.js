@@ -14,7 +14,6 @@ export const actionTypes = createTypes(
     'updateConsole',
     'updateChallengeMeta',
     'updateFile',
-    'updateJSEnabled',
     'updateSolutionFormValues',
     'updateSuccessMessage',
     'updateTests',

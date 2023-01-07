@@ -140,8 +140,6 @@ const CertChallenge = ({
 
 CertChallenge.displayName = 'CertChallenge';
 
-export { CertChallenge };
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps

@@ -57,8 +57,7 @@ interface BlockProps {
   t: TFunction;
   toggleBlock: typeof toggleBlock;
 }
-
-export class Block extends Component<BlockProps> {
+class Block extends Component<BlockProps> {
   static displayName: string;
   constructor(props: BlockProps) {
     super(props);

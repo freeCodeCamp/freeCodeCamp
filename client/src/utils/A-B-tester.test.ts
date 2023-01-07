@@ -1,4 +1,4 @@
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { emailToABVariant } from './A-B-tester';
 
 describe('client/src is-email-variation-a', () => {

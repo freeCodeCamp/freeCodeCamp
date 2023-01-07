@@ -6,7 +6,8 @@
       "src/html.tsx",
       "src/pages/*.tsx",
       "src/templates/Challenges/**/{s,S}how.tsx",
-      "src/templates/Introduction/**/{intro,super-block-intro}.tsx"
+      "src/templates/Introduction/**/{intro,super-block-intro}.tsx",
+      "**/*.test.{js,ts,tsx}"
     ],
     "projectFiles": [
       "**/*.{js,ts,tsx}",
@@ -17,8 +18,6 @@
       "!src/client/frame-runner.ts",
       "!src/client/workers/**",
       "!webpack-workers.js",
-      "!**/*.test.{js,ts,tsx}",
-      "!**/i18n/config-for-tests.ts",
       "!**/__mocks__/**",
       "!**/__fixtures/**",
       "!**/node_modules/**",
