@@ -56,8 +56,8 @@ function ThemeButton({
 export default function ThemeSettings(themeProps: ThemeProps): JSX.Element {
   const { t } = useTranslation();
   return (
-    <fieldset className='setting-theme'>
-      <legend>{t('settings.labels.theme-mode')}</legend>
+    <div className='setting-theme'>
+      <p>{t('settings.labels.theme-mode')}</p>
       <ThemeButton {...themeProps} newTheme={Themes.Night}>
         {t('settings.labels.dark-theme')}
       </ThemeButton>
@@ -67,6 +67,6 @@ export default function ThemeSettings(themeProps: ThemeProps): JSX.Element {
       <ThemeButton {...themeProps} newTheme={Themes.System}>
         {t('settings.labels.system-theme')}
       </ThemeButton>
-    </fieldset>
+    </div>
   );
 }
