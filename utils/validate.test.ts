@@ -47,7 +47,7 @@ describe('isValidUsername', () => {
 
     for (let code = 0; code <= finalCode; code++) {
       const char = String.fromCharCode(code);
-      let expected = invalidCharError;
+      let expected: { valid: boolean; error: null | string } = invalidCharError;
       if (allowedCharactersList.includes(char)) expected = validationSuccess;
       if (inRange(code, numbers)) expected = validationSuccess;
       if (inRange(code, upperCase)) expected = validationSuccess;
