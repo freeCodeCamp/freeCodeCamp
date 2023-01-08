@@ -1,11 +1,9 @@
-import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-
+import './test.css';
 import envData from '../../../config/env.json';
-import { Spacer } from '../components/helpers';
-import FullWidthRow from '../components/helpers/full-width-row';
 
 const { apiLocation } = envData;
 
@@ -20,31 +18,22 @@ function ShowUnsubscribed({
       <Helmet>
         <title>{t('metaTags:youre-unsubscribed')} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid>
-        <main>
-          <FullWidthRow>
-            <Spacer size={2} />
-            <Panel bsStyle='primary' className='text-center'>
-              <Spacer />
-              <h2>{t('misc.unsubscribed')}</h2>
-              <p>{t('misc.keep-coding')}</p>
-            </Panel>
-          </FullWidthRow>
-          {unsubscribeId ? (
-            <FullWidthRow>
-              <Button
-                block={true}
-                bsSize='lg'
-                bsStyle='primary'
-                href={`${apiLocation}/resubscribe/${unsubscribeId}`}
-              >
-                {t('buttons.resubscribe')}
-              </Button>
-            </FullWidthRow>
-          ) : null}
-          <Spacer size={2} />
-        </main>
-      </Grid>
+      <main className='test'>
+        <section className='panel'>
+          <h2>{t('misc.unsubscribed')}</h2>
+          <p>{t('misc.keep-coding')}</p>
+        </section>
+        {unsubscribeId && (
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='primary'
+            href={`${apiLocation}/resubscribe/${unsubscribeId}`}
+          >
+            {t('buttons.resubscribe')}
+          </Button>
+        )}
+      </main>
     </>
   );
 }

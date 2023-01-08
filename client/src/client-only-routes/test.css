@@ -1,0 +1,11 @@
+.test {
+  display: grid;
+  place-content: center;
+  height: 50vh;
+  text-align: center;
+}
+
+.panel {
+  box-shadow: 1px 0.5px 2px var(--primary-color);
+  padding: 2em 6em;
+}
