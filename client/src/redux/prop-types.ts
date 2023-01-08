@@ -26,7 +26,7 @@ export type MarkdownRemark = {
     superBlock: SuperBlocks;
     // TODO: make enum like superBlock
     certification: string;
-    title: typeof certMap[number]['title'];
+    title: (typeof certMap)[number]['title'];
   };
   headings: [
     {
