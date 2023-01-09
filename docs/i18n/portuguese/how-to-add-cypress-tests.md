@@ -36,7 +36,7 @@ Para executar testes usando compilações de produção, substitua `dev` por `pr
   npm run cypress -- run --spec=cypress/<path_to_test_file>
   ```
 
-  For example:
+  Por exemplo:
 
   ```console
   npm run cypress -- run --spec=cypress/e2e/default/landing.js
