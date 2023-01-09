@@ -1,27 +1,27 @@
-# Authors Analytics Manual
+# Manuale Analytics per gli autori
 
-If you are an author with access to the publication's Google Analytics Property (News), you can use this guide to view your articles engagement and search for articles by publication language.
+Se sei un autore con accesso alla proprietà Google Analytics della pubblicazione (News), puoi utilizzare questa guida per visualizzare l'impatto degli articoli e cercare gli articoli per lingua di pubblicazione.
 
-## Search by Language
+## Cercare per lingua
 
-To search for engagement reports by a specific language:
+Per cercare rapporti di engagement per una lingua specifica:
 
-![Image - Show steps to search by language on googla analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
+![Immagine - Mostra i passaggi per cercare per lingua su google analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
 
-1. From the top dropdown menu, select `News`.
-1. From the sidebar, click on `Reports`.
-1. From the secondary sidebar, select `Engagement`.
-1. Click on `Pages and Screens`.
-1. In the search bar, type the subpath for the desired language.
-1. From the dropdown under the search bar, choose `Page path and screen class`.
+1. Dal menu a discesa in alto, seleziona `News`.
+1. Nella barra laterale, clicca su `Reports`.
+1. Dalla barra laterale secondaria, seleziona `Engagement`.
+1. Clicca su `Pages and Screens`.
+1. Nella barra di ricerca, digita il sotto-percorso per la lingua desiderata.
+1. Dal menu a discesa sotto la barra di ricerca, scegli `Page path and screen class`.
 
-## Filter Reports by Author
+## Filtrare i report per autore
 
-After arriving at the `Pages and Screens` reports mentioned above, use the following steps to filter the results by specific authors.
+Dopo essere arrivati ai report `Pages and Screens` menzionati sopra, utilizza i seguenti passaggi per filtrare i risultati in base all'autore.
 
-![Image - Show steps to search by language on googla analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
+![Immagine - Mostra i passaggi per cercare per lingua su google analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
 
-1. Click on the `Add filter` button.
-1. From the side navigation include `Author`.
-1. From the `Dimensions values` dropdown, choose an author's name.
-1. Click on the `Apply` button to apply changes.
+1. Clicca sul pulsante `Add filter`.
+1. Dalla barra di navigazione laterale includi `Author`.
+1. Dal menu a discesa `Dimensions values`, scegli il nome dell'autore.
+1. Clicca sul pulsante `Apply` per applicare le modifiche.
