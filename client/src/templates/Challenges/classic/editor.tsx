@@ -1207,10 +1207,8 @@ const Editor = (props: EditorProps): JSX.Element => {
   const preferDarkScheme = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches;
-  const editorTheme =
-    theme === Themes.Night || (preferDarkScheme && !isSignedIn)
-      ? 'vs-dark-custom'
-      : 'vs-custom';
+  const isDarkTheme = theme === Themes.Night || (preferDarkScheme && !isSignedIn);
+  const editorTheme = isDarkTheme ? 'vs-dark-custom' : 'vs-custom';
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>
