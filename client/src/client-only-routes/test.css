@@ -1,11 +1,16 @@
 .test {
   display: grid;
   place-content: center;
-  height: 50vh;
   text-align: center;
+  padding-bottom: 60px;
+  padding-inline: 15px;
 }
 
 .panel {
-  box-shadow: 1px 0.5px 2px var(--primary-color);
-  padding: 2em 6em;
+  /* box-shadow: 1px 0.5px 2px var(--primary-color); */
+  margin-block: 60px 25px;
+  max-width: 768px;
+  width: 93vw;
+  border: 1px solid var(--primary-color);
+  padding-top: 30px;
 }
