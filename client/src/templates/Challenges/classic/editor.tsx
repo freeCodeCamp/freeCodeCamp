@@ -1208,9 +1208,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     '(prefers-color-scheme: dark)'
   ).matches;
   const editorTheme =
-    theme === Themes.Night
-      ? 'vs-dark-custom'
-      : preferDarkScheme && !isSignedIn
+    theme === Themes.Night || (preferDarkScheme && !isSignedIn)
       ? 'vs-dark-custom'
       : 'vs-custom';
   return (
