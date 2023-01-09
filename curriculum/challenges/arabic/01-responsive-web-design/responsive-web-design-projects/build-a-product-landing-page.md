@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b04
-title: Build a Product Landing Page
+title: أنشئ صفحة لعرض المنتج
 challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
