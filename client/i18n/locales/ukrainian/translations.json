@@ -11,6 +11,7 @@
     "view": "Перегляд",
     "view-code": "Переглянути код",
     "view-project": "Переглянути проєкт",
+    "view-cert-title": "View {{certTitle}}",
     "show-cert": "Показати сертифікацію",
     "claim-cert": "Отримати сертифікацію",
     "save-progress": "Зберегти прогрес",
@@ -463,7 +464,8 @@
     "iframe-preview": "Передперегляд {{title}}",
     "iframe-alert": "Зазвичай це посилання перенесло б вас на інший вебсайт! Воно працює. Це посилання на: {{externalLink}}",
     "iframe-form-submit-alert": "Зазвичай ця форма буде відправлена! Вона буде відправлена на: {{externalLink}}",
-    "document-notfound": "документ не знайдено"
+    "document-notfound": "документ не знайдено",
+    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
   },
   "icons": {
     "gold-cup": "Золотий кубок",
@@ -508,7 +510,8 @@
     "step": "Крок",
     "steps": "Кроки",
     "steps-for": "Кроки для {{blockTitle}}",
-    "code-example": "Приклад коду {{codeName}}"
+    "code-example": "Приклад коду {{codeName}}",
+    "opens-new-window": "Opens in new window"
   },
   "flash": {
     "honest-first": "Щоб отримати сертифікацію, ви повинні спочатку прийняти нашу політику академічної доброчесності",
