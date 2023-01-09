@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd17
-title: أنشئ حاسبة باستخدام JavaScript
+title: بناء آلة حاسبة باستخدام JavaScript
 challengeType: 3
 forumTopicId: 301371
 dashedName: build-a-javascript-calculator

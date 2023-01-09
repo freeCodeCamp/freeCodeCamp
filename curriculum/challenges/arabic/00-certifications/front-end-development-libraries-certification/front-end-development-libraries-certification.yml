@@ -13,10 +13,10 @@ tests:
     title: بناء عارض Markdown
   - 
     id: 587d7dbc367417b2b2512bae
-    title: بناء آلة الدرامز
+    title: أنشئ آلة الطبول
   - 
     id: bd7158d8c442eddfaeb5bd17
-    title: بناء آلة حاسبة بإستخدام JavaScript
+    title: ابن آلة حاسبة باستخدام JavaScript
   - 
     id: bd7158d8c442eddfaeb5bd0f
     title: بناء ساعة 25 + 5

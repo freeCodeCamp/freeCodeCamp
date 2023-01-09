@@ -22,7 +22,7 @@ Aqui estão as histórias de usuário que você deve implementar para este proje
 
 **Dica:** tente usar a API Yelp para encontrar espaços nas cidades que seus usuários procuram. Se você usar a API da Yelp, certifique-se de mencionar isso na aplicação.
 
-Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para a solução no campo Solution Link. Como opção, envie também um link para o código-fonte do projeto no campo GitHub Link.
 
 # --solutions--
 

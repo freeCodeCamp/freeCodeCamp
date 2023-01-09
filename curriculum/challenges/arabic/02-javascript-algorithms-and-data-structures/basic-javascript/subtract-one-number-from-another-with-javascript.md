@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb4bdef
-title: طرح رقم من الآخر باستخدام JavaScript
+title: طرح رَقَم من رَقَم آخر باستخدام JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cP3yQtk'
 forumTopicId: 18314
@@ -9,7 +9,7 @@ dashedName: subtract-one-number-from-another-with-javascript
 
 # --description--
 
-يمكننا أيضا أن نطرح رقما من آخر.
+يمكننا أيضا أن نطرح رقما من رقما آخر.
 
 يستخدم JavaScript رمز `-` للطرح.
 
