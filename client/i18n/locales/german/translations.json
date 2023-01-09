@@ -11,6 +11,7 @@
     "view": "Anzeigen",
     "view-code": "Code anschauen",
     "view-project": "Projekt anschauen",
+    "view-cert-title": "View {{certTitle}}",
     "show-cert": "Zertifikat anzeigen",
     "claim-cert": "Zertifizierung anfordern",
     "save-progress": "Fortschritt speichern",
@@ -463,7 +464,8 @@
     "iframe-preview": "{{title}} Vorschau",
     "iframe-alert": "Normalerweise würde dieser Link dich auf eine andere Website führen! Er funktioniert. Dies ist ein Link zu: {{externalLink}}",
     "iframe-form-submit-alert": "Normalerweise würde dieses Formular übermittelt werden! Es funktioniert. Dies wird übermittelt an: {{externalLink}}",
-    "document-notfound": "Dokument wurde nicht gefunden"
+    "document-notfound": "Dokument wurde nicht gefunden",
+    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
   },
   "icons": {
     "gold-cup": "Goldpokal",
@@ -508,7 +510,8 @@
     "step": "Schritt",
     "steps": "Schritte",
     "steps-for": "Schritte für {{blockTitle}}",
-    "code-example": "{{codeName}} code example"
+    "code-example": "{{codeName}} code example",
+    "opens-new-window": "Opens in new window"
   },
   "flash": {
     "honest-first": "Um eine Zertifizierung zu erlangen, musst du zunächst unsere Richtlinie zur akademischen Ehrlichkeit akzeptieren",
