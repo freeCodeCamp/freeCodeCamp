@@ -553,7 +553,7 @@
     "intro": [
       "ここまでは、JavaScript をフロントエンドで使用して、ページに対話性を加えたり、アルゴリズムチャレンジを解決したり、SPA を構築したりしてきました。しかし JavaScript は、バックエンド (サーバー) でも使用でき、ウェブアプリケーション全体を構築することができます。",
       "現在、アプリケーションを構築する一般的な方法の一つはマイクロサービスを使用する方法です。これは、小さなモジュール式のアプリケーションを組み合わせて、より大きな全体を形成する方法です。",
-      "バックエンド開発と API 認定講座では、Node.js と npm (Node Package Manager) を使用してバックエンドアプリを記述する方法を学習します。また、Express フレームワークでウェブアプリケーションを構築し、そして MongoDB と Mongoose ライブラリで People Finder マイクロサービスを構築します。"
+      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
