@@ -201,7 +201,7 @@ function mobileLogin(app) {
   } = app;
   return async function getPasswordlessAuth(req, res, next) {
     const {
-      headers: { token: accessToken }
+      headers: { token }
     } = req;
 
     const auth0Res = await fetch(
