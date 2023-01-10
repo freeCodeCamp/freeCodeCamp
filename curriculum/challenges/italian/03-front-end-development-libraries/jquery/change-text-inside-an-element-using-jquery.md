@@ -22,7 +22,7 @@ jQuery ha anche una funzione simile chiamata `.text()` che modifica solo il test
 
 Cambia il pulsante con id `target4` enfatizzando il suo testo.
 
-[Vedi il nostro articolo delle news su &lt;em>](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element) per comprendere la differenza tra `<i>` e `<em>` e quando usarli.
+<a href="https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element" target="_blank" rel="noopener noreferrer nofollow">Vedi il nostro articolo delle news su &lt;em&gt;</a> per comprendere la differenza tra `<i>` e `<em>` e quando usarli.
 
 Nota che il tag `<i>` era tradizionalmente utilizzato per mettere in corsivo il testo, ma oggi è usato come tag per le icone. Il tag `<em>` è ora ampiamente accettato come tag per l'enfasi. Entrambi funzioneranno per questa sfida.
 

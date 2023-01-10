@@ -14,7 +14,7 @@ dashedName: neural-networks-activation-functions
 
 ## --text--
 
-Qual função de ativação alterna valores entre -1 e 1?
+Qual função de ativação concentra os valores entre -1 e 1?
 
 ## --answers--
 

@@ -1,8 +1,8 @@
 ---
 id: 5f3cade99dda4e6071a85dfd
-title: Passo 47
+title: Passo 46
 challengeType: 0
-dashedName: step-47
+dashedName: step-46
 ---
 
 # --description--
@@ -41,20 +41,18 @@ assert($('main').children('section').length === 2);
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cafe Menu</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet"/>
   </head>
   <body>
     <div class="menu">
-      <header>
+      <main>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
-      </header>
-      <main>
 --fcc-editable-region--
         <section>
           <h2>Coffee</h2>
@@ -78,7 +76,7 @@ assert($('main').children('section').length === 2);
       </main>
     </div>
   </body>
-<html>
+</html>
 ```
 
 ```css

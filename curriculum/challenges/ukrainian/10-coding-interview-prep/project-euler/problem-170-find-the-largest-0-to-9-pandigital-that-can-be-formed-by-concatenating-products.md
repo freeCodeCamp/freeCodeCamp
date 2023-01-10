@@ -2,7 +2,7 @@
 id: 5900f4161000cf542c50ff29
 title: >-
   Завдання 170: Знайдіть найбільше число від 0 до 9, яке можна утворити шляхом об'єднання добутків
-challengeType: 5
+challengeType: 1
 forumTopicId: 301805
 dashedName: >-
   problem-170-find-the-largest-0-to-9-pandigital-that-can-be-formed-by-concatenating-products

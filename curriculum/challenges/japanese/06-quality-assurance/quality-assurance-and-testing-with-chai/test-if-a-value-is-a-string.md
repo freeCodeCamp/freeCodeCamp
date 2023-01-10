@@ -8,17 +8,17 @@ dashedName: test-if-a-value-is-a-string
 
 # --description--
 
-注意点として、このプロジェクトは [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) の始動プロジェクト、または [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/) からクローンされたプロジェクトに基づいて構築されています。
+注意点として、このプロジェクトは <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> にあるスタータープロジェクトをベースに構築されているか、または <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> からクローンされています。
 
 `isString` または `isNotString` は、実際の値が文字列であることをアサートします。
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Strings` スイート内の `#13` に分類されたテストにおいて、テストを合格にする (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isString` または `assert.isNotString` に変更してください。 アサートに渡された引数を変更しないでください。
+`tests/1_unit-tests.js` の中の、`Strings` スイート内の `#13` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isString` または `assert.isNotString` に変更してください。 アサートに渡された引数を変更しないでください。
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>

@@ -1,7 +1,7 @@
 ---
 id: 5900f3ee1000cf542c50ff00
 title: 'Problema 130: Numeri compositi con la proprietà dei primi repunit'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301758
 dashedName: problem-130-composites-with-prime-repunit-property
 ---

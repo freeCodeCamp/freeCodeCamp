@@ -1,14 +1,14 @@
 ---
 id: 59880443fb36441083c6c20e
 title: Метод Ейлера
-challengeType: 5
+challengeType: 1
 forumTopicId: 302258
 dashedName: euler-method
 ---
 
 # --description--
 
-Метод Ейлера чисельно наближує рішення звичайних рівнянь першого порядку (ODE) з заданим початковим значенням. Це явний метод вирішення проблем із початковими значеннями (IVP), описаний у [цій статті](https://www.freecodecamp.org/news/eulers-method-explained-with-examples/ "news: Euler's Method Explained with Examples").
+Метод Ейлера чисельно наближує рішення звичайних рівнянь першого порядку (ODE) з заданим початковим значенням. It is an explicit method for solving initial value problems (IVPs), as described in <a href="https://www.freecodecamp.org/news/eulers-method-explained-with-examples/" title="Euler's Method Explained with Examples" target="_blank" rel="noopener noreferrer nofollow">this article</a>.
 
 ODE повинен бути наданий за такою формою:
 

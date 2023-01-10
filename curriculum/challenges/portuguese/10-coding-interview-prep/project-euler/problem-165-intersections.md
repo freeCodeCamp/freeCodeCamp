@@ -1,7 +1,7 @@
 ---
 id: 5900f4111000cf542c50ff24
 title: 'Problema 165: Interseções'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301799
 dashedName: problem-165-intersections
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f4cb1000cf542c50ffdd
 title: 'Задача 350: Обмеження найменшого найбільшим та найбільшого найменшим'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302010
 dashedName: problem-350-constraining-the-least-greatest-and-the-greatest-least
 ---

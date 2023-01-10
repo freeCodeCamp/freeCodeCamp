@@ -13,3 +13,12 @@ pre.output-text code {
   font-size: 90%;
   padding: 2px 4px;
 }
+
+.output-text:focus {
+  outline: 2px solid var(--blue-mid);
+  outline-offset: -2px;
+}
+
+.output-text:focus:not(:focus-visible) {
+  outline: none;
+}

@@ -14,7 +14,7 @@ dashedName: iterations-more-patterns
 
 Más recursos:
 
-\- [Ejercicio](https://www.youtube.com/watch?v=kjxXZQw0uPg)
+\- <a href="https://www.youtube.com/watch?v=kjxXZQw0uPg" target="_blank" rel="noopener noreferrer nofollow">Ejercicio</a>
 
 # --question--
 

@@ -1,72 +1,66 @@
 ---
 id: 5e6dd1278e6ca105cde40ea9
 title: 最長共通部分列
-challengeType: 5
+challengeType: 1
 forumTopicId: 385271
 dashedName: longest-common-subsequence
 ---
 
 # --description--
 
-グループAおよびBの **最長共通部分列** (または [**LCS**](http://en.wikipedia.org/wiki/Longest_common_subsequence_problem)) とは、2つのグループ間で共通していて、各グループで同じ順序であるAおよびBの要素の最長グループです。 たとえば、数列 "1234" と "1224533324" の LCS は "1234" です。
+The **longest common subsequence** (or **LCS**) of groups A and B is the longest group of elements from A and B that are common between the two groups and in the same order in each group. For example, the sequences `1234` and `1224533324` have an LCS of `1234`:<u>1234</u>
+<u>12</u>245<u>3</u>332<u>4</u>
 
-***1234***
+For a string example, consider the sequences `thisisatest` and `testing123testing`. An LCS would be `tsitest`:
+<u>t</u>hi<u>si</u>sa<u>test</u>
 
-***12***245***3***332***4***
+<u>t</u>e<u>s</u>t<u>i</u>ng123<u>test</u>ing.
 
-文字列の例として、文字列 "thisisatest" と "testing123testing" の場合を考えてみましょう。 LCS は "tsitest" となります。
-
-***t***hi***si***sa***test***
-
-***t***e***s***t***i***ng123***test***ing.
-
-今回のコードでは文字列のみを扱います。
-
-この問題の詳細については、 [Wikipedia](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem) を参照してください。
+Your code only needs to deal with strings.
 
 # --instructions--
 
-2 つの文字列の LCS を返す関数 (大文字と小文字を区別する) を記述してください。 複数の LCS を表示する必要はありません。
+Write a case-sensitive function that returns the LCS of two strings. You don't need to show multiple LCS's.
 
 # --hints--
 
-`lcs` は関数とします。
+`lcs` should be a function.
 
 ```js
 assert(typeof lcs == 'function');
 ```
 
-`lcs("thisisatest", "testing123testing")` は文字列を返す必要があります。
+`lcs("thisisatest", "testing123testing")` should return a string.
 
 ```js
 assert(typeof lcs('thisisatest', 'testing123testing') == 'string');
 ```
 
-`lcs("thisisatest", "testing123testing")` は `"tsitest"` を返す必要があります。
+`lcs("thisisatest", "testing123testing")` should return `"tsitest"`.
 
 ```js
 assert.equal(lcs('thisisatest', 'testing123testing'), 'tsitest');
 ```
 
-`lcs("ABCDGH", "AEDFHR")` は `"ADH"` を返す必要があります。
+`lcs("ABCDGH", "AEDFHR")` should return `"ADH"`.
 
 ```js
 assert.equal(lcs('ABCDGH', 'AEDFHR'), 'ADH');
 ```
 
-`lcs("AGGTAB", "GXTXAYB")` は `"GTAB"` を返す必要があります。
+`lcs("AGGTAB", "GXTXAYB")` should return `"GTAB"`.
 
 ```js
 assert.equal(lcs('AGGTAB', 'GXTXAYB'), 'GTAB');
 ```
 
-`lcs("BDACDB", "BDCB")` は `"BDCB"` を返す必要があります。
+`lcs("BDACDB", "BDCB")` should return `"BDCB"`.
 
 ```js
 assert.equal(lcs('BDACDB', 'BDCB'), 'BDCB');
 ```
 
-`lcs("ABAZDC", "BACBAD")` は `"ABAD"` を返す必要があります。
+`lcs("ABAZDC", "BACBAD")` should return `"ABAD"`.
 
 ```js
 assert.equal(lcs('ABAZDC', 'BACBAD'), 'ABAD');
@@ -86,8 +80,8 @@ function lcs(a, b) {
 
 ```js
 function lcs(a, b) {
-  var aSub = a.substr(0, a.length - 1);
-  var bSub = b.substr(0, b.length - 1);
+  var aSub = a.substring(0, a.length - 1);
+  var bSub = b.substring(0, b.length - 1);
 
   if (a.length === 0 || b.length === 0) {
     return '';

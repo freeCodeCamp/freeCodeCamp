@@ -12,24 +12,35 @@ ES6 fornisce una nuova sintassi per creare oggetti, utilizzando la parola chiave
 
 Va notato che la sintassi `class` è appunto solo una sintassi, e non la vera e propria implementazione basata su classi di un paradigma orientato agli oggetti, a differenza di quanto accade in linguaggi come Java, Python, Ruby, ecc.
 
-In ES5, di solito definiamo una funzione `constructor` e usiamo la parola chiave `new` per istanziare un oggetto.
+In ES5, un oggetto può essere creato definendo una funzione `constructor` e usando la parola chiave `new` per istanziare l'oggetto.
+
+In ES6, una dichiarazione `class` possiede un metodo `constructor` che viene invocato con la parola chiave `new`. Se il metodo `constructor` non viene esplicitamente definito, allora è definito implicitamente senza argomenti.
 
 ```js
-var SpaceShuttle = function(targetPlanet){
-  this.targetPlanet = targetPlanet;
-}
-var zeus = new SpaceShuttle('Jupiter');
-```
-
-La sintassi `class` sostituisce semplicemente la creazione della funzione `constructor`:
-
-```js
+// Explicit constructor
 class SpaceShuttle {
   constructor(targetPlanet) {
     this.targetPlanet = targetPlanet;
   }
+  takeOff() {
+    console.log("To " + this.targetPlanet + "!");
+  }
 }
+
+// Implicit constructor 
+class Rocket {
+  launch() {
+    console.log("To the moon!");
+  }
+}
+
 const zeus = new SpaceShuttle('Jupiter');
+// prints To Jupiter! in console
+zeus.takeOff();
+
+const atlas = new Rocket();
+// prints To the moon! in console
+atlas.launch();
 ```
 
 Va notato che la parola chiave `class` dichiara una nuova funzione, alla quale viene aggiunto un costruttore. Questo costruttore viene invocato quando `new` viene chiamata per creare un nuovo oggetto.

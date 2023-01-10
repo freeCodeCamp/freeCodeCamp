@@ -1,6 +1,6 @@
 ---
 id: 587d8254367417b2b2512c6e
-title: Perform a Difference on Two Sets of Data
+title: Realizar una diferencia en dos conjuntos de datos
 challengeType: 1
 forumTopicId: 301706
 dashedName: perform-a-difference-on-two-sets-of-data
@@ -8,13 +8,13 @@ dashedName: perform-a-difference-on-two-sets-of-data
 
 # --description--
 
-In this exercise we are going to perform a difference on 2 sets of data. We will create a method on our `Set` data structure called `difference`. A difference of sets should compare two sets and return the items present in the first set that are absent in the second. This method should take another `Set` as an argument and return the `difference` of the two sets.
+En este ejercicio vamos a hacer una diferencia en dos conjuntos de datos. Crearemos un método en nuestra estructura de datos `Set` llamada `diferencia`. Una diferencia de conjuntos debe comparar dos conjuntos y devolver los elementos presentes en el primer conjunto que están ausentes en el segundo. Este método debe tomar otro `Set` como argumento y retornar la `diferencia` de los dos sets.
 
-For example, if `setA = ['a','b','c']` and `setB = ['a','b','d','e']`, then the difference of setA and setB is: `setA.difference(setB) = ['c']`.
+Por ejemplo, si `setA = ['a','b','c']` y `setB = ['a', b','d','e']`, entonces la diferencia de setA y setB es: `setA. ifference(setB) = ['c']`.
 
 # --hints--
 
-Your `Set` class should have a `difference` method.
+Tu clase `Set` debe tener un método `remove`.
 
 ```js
 assert(
@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-Your `difference` method should return the proper collection.
+El método `difference` debe retornar la colección adecuada.
 
 ```js
 assert(

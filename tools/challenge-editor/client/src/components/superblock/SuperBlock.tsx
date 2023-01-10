@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Block } from '../../../interfaces/Block';
+import { API_LOCATION } from '../../utils/handleRequest';
 
 const SuperBlock = () => {
   const [error, setError] = useState<Error | null>(null);
@@ -15,7 +16,7 @@ const SuperBlock = () => {
 
   const fetchData = () => {
     setLoading(true);
-    fetch(`http://localhost:3200/${params.superblock}`)
+    fetch(`${API_LOCATION}/${params.superblock}`)
       .then(res => res.json() as Promise<Block[]>)
       .then(
         blocks => {

@@ -16,7 +16,7 @@ dashedName: search-within-a-linked-list
 
 # --instructions--
 
-Напишіть метод `isEmpty`, який перевірятиме, чи зв'язаний список порожній; метод `indexOf`, який повертає індекс `index` даного елементу; метод `elementAt`, який повертає `element` за заданим індексом `index.`
+Write an `isEmpty` method that checks if the linked list is empty, an `indexOf` method that returns the `index` of a given element, and an `elementAt` that returns an `element` at a given `index`.
 
 # --hints--
 

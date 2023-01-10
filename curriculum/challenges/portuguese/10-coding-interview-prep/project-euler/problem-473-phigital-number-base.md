@@ -1,7 +1,7 @@
 ---
 id: 5900f5461000cf542c510058
 title: 'Problema 473: Base de números phigitais'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302150
 dashedName: problem-473-phigital-number-base
 ---

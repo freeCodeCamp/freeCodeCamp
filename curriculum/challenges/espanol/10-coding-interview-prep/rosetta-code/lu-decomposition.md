@@ -1,20 +1,20 @@
 ---
 id: 5e6decd8ec8d7db960950d1c
 title: LU decomposition
-challengeType: 5
+challengeType: 1
 forumTopicId: 385280
 dashedName: lu-decomposition
 ---
 
 # --description--
 
-Every square matrix $A$ can be decomposed into a product of a lower triangular matrix $L$ and a upper triangular matrix $U$, as described in [LU decomposition](https://en.wikipedia.org/wiki/LU decomposition).
+Every square matrix $A$ can be decomposed into a product of a lower triangular matrix $L$ and a upper triangular matrix $U$. This is known as the LU decomposition.
 
 $A = LU$
 
 It is a modified form of Gaussian elimination.
 
-While the [Cholesky decomposition](http://rosettacode.org/wiki/Cholesky decomposition) only works for symmetric, positive definite matrices, the more general LU decomposition works for any square matrix.
+While the Cholesky decomposition only works for symmetric, positive definite matrices, the more general LU decomposition works for any square matrix.
 
 There are several algorithms for calculating $L$ and $U$.
 
@@ -70,7 +70,7 @@ The solution to this problem is *pivoting* $A$, which means rearranging the rows
 
 $PA \\Rightarrow A'$
 
-Example:
+Ejemplo:
 
 \\begin{align} \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 1 & 4 \\\\ 2 & 3 \\end{pmatrix} \\Rightarrow \\begin{pmatrix} 2 & 3 \\\\ 1 & 4 \\end{pmatrix} \\end{align}
 

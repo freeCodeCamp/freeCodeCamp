@@ -29,7 +29,7 @@ Vamos tentar fazer um laço while funcionar empurrando valores para um array.
 
 # --instructions--
 
-Adicione os números de 5 até 1 (inclusive) em ordem descendente para `myArray` usando um laço `while`.
+Adicione os números de 5 até 0 (inclusive) em ordem descendente para `myArray` usando um laço `while`.
 
 # --hints--
 

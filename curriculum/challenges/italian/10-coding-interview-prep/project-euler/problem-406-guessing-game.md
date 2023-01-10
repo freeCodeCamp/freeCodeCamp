@@ -1,7 +1,7 @@
 ---
 id: 5900f5021000cf542c510015
 title: 'Problema 406: gioco degli indovinelli'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302074
 dashedName: problem-406-guessing-game
 ---

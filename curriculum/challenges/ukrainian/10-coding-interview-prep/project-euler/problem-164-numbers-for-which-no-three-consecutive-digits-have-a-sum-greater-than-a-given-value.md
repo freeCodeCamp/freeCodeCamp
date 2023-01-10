@@ -2,7 +2,7 @@
 id: 5900f4111000cf542c50ff23
 title: >-
   Завдання 164: Числа, для яких сума будь-яких трьох послідовних цифр не є більшою за задане значення
-challengeType: 5
+challengeType: 1
 forumTopicId: 301798
 dashedName: >-
   problem-164-numbers-for-which-no-three-consecutive-digits-have-a-sum-greater-than-a-given-value

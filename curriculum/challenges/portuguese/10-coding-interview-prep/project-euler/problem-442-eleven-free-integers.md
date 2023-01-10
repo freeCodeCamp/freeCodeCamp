@@ -1,7 +1,7 @@
 ---
 id: 5900f5271000cf542c510039
 title: 'Problema 442: Inteiros sem onze'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302114
 dashedName: problem-442-eleven-free-integers
 ---

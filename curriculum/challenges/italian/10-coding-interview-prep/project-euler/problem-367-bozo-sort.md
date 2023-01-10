@@ -1,7 +1,7 @@
 ---
 id: 5900f4db1000cf542c50ffee
 title: 'Problema 367: Bozo sort'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302028
 dashedName: problem-367-bozo-sort
 ---

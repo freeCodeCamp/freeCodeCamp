@@ -1,8 +1,8 @@
 {
   "responsive-web-design": {
-    "title": "Diseño Web Responsivo Legado",
+    "title": "Diseño Web Adaptativo Legado",
     "intro": [
-      "En esta Certificación de Diseño Web Responsivo, aprenderás los lenguajes que los desarrolladores utilizan para construir páginas web: HTML (lenguaje de marcado de hipertexto) para el contenido, y CSS (Hojas de estilo en cascada) para el diseño.",
+      "En esta Certificación de Diseño Web Adaptativo, aprenderás los lenguajes que los desarrolladores utilizan para construir páginas web: HTML (lenguaje de marcado de hipertexto) para el contenido, y CSS (Hojas de estilo en cascada) para el diseño.",
       "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderá técnicas modernas como variables CSS mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un formulario web.",
       "Finalmente, aprenderás cómo hacer páginas web que respondan a diferentes tamaños de pantalla construyendo una tarjeta de Twitter con Flexbox, y un diseño complejo de blog con CSS Grid."
     ],
@@ -37,9 +37,9 @@
         ]
       },
       "responsive-web-design-principles": {
-        "title": "Principios de diseño web responsivo",
+        "title": "Principios de diseño web adaptativo",
         "intro": [
-          "Hay muchos dispositivos que pueden acceder a la web, y vienen en todas las formas y tamaños. El diseño web responsivo es la práctica de diseñar sitios web flexibles que pueden responder a diferentes tamaños de pantalla, orientaciones y resoluciones.",
+          "Hay muchos dispositivos que pueden acceder a la web, y vienen en todas las formas y tamaños. El diseño web adaptativo es la práctica de diseñar sitios web flexibles que pueden responder a diferentes tamaños de pantalla, orientaciones y resoluciones.",
           "En este curso, aprenderás a usar CSS para que tus páginas web luzcan bien, sin importar en qué dispositivo se vean."
         ]
       },
@@ -61,17 +61,17 @@
         "title": "Proyectos de diseño web responsivo",
         "intro": [
           "Es hora de poner tus habilidades recién aprendidas a funcionar. Al trabajar en estos proyectos, tendrás la oportunidad de aplicar todas las habilidades, principios y conceptos que has aprendido hasta ahora: HTML, CSS, diseño visual, accesibilidad y más.",
-          "Completa los cinco proyectos de programación web de abajo para obtener tu certificación de diseño web responsivo."
+          "Completa los cinco proyectos de programación web de abajo para obtener tu certificación de diseño web adaptativo."
         ]
       }
     }
   },
   "2022/responsive-web-design": {
-    "title": "(Nuevo) Diseño Web Responsivo",
+    "title": "(Nuevo) Diseño Web Adaptativo",
     "intro": [
-      "En esta certificación de Diseño Web Responsivo, aprenderás los lenguajes que los desarrolladores usan para construir páginas web: HTML (Lenguaje de Marcado de Hipertexto) para el contenido, y CSS (hojas de estilo en cascada) para el diseño.",
-      "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderás técnicas modernas como variables CSS mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un formulario web.",
-      "Finalmente, aprenderás cómo hacer páginas web que respondan a diferentes tamaños de pantalla construyendo una tarjeta de Twitter con Flexbox, y un diseño complejo de blog con CSS Grid."
+      "En esta certificación de Diseño Web Adaptativo, aprenderás los lenguajes que los desarrolladores usan para construir páginas web: HTML (Lenguaje de Marcado de Hipertexto) para el contenido, y CSS (hojas de estilo en cascada) para el diseño.",
+      "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderás técnicas modernas como variables CSS, mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un sitio de cuestionarios.",
+      "Por último, aprenderás cómo hacer páginas web que respondan a diferentes tamaños de pantalla, mediante la construcción de una galería de fotos con Flexbox, y un diseño de artículos de revista con CSS Grid."
     ],
     "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o extensiones de modo oscuro pueden interferir con las pruebas. Si tienes algun problema, te recomendamos deshabilitar las extensiones que modifiquen el contenido de la página, mientras tomas el curso.",
     "blocks": {
@@ -159,17 +159,17 @@
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "Aprende diseño web adaptable construyendo un piano",
+        "title": "Aprende diseño web adaptativo construyendo un piano",
         "intro": [
-          "El diseño web adaptable dice a tu página como debe verse en pantallas de diferentes tamaños.",
-          "En este curso, usarás CSS y Diseño Responsivo para programar un piano. También aprenderás más sobre las consultas de medios y pseudoselectores."
+          "El diseño adaptativo indica a tu página web cómo debe verse en pantallas de distintos tamaños.",
+          "En este curso, usarás CSS y Diseño Adaptativo para programar un piano. También aprenderás más sobre las consultas de medios y pseudoselectores."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
         "title": "Aprende CSS Flexbox construyendo una galería de fotos",
         "intro": [
           "Flexbox te ayuda a diseñar tu página web para que se vea bien en cualquier tamaño de pantalla.",
-          "En este curso, usarás Flexbox para crear una página web de una galería de fotos receptiva."
+          "En este curso, usarás Flexbox para crear una página web de una galería de fotos adaptativa."
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
@@ -301,67 +301,40 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Algoritmos de JavaScript y estructuras de datos (beta)",
-    "intro": [
-      "marcador de posición",
-      "marcador de posición"
-    ],
+    "intro": ["marcador de posición", "marcador de posición"],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Construye un proyecto de cifrado cesar",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-cash-register-project": {
         "title": "Construye un proyecto de caja registradora",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-palindrome-checker-project": {
         "title": "Construye un proyecto de comprobación de palíndromos",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Construye un proyecto de conversión de números romanos",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Construye un proyecto validador de números de teléfono",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Aprende JavaScript básico construyendo un juego de rol",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Aprende a validar formularios construyendo un contador de calorías",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprende programación funcional construyendo una hoja de cálculo",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -369,7 +342,7 @@
     "title": "Librerías de desarrollo de la interfaz",
     "intro": [
       "Ahora que estás familiarizado con HTML, CSS y JavaScript, mejora tus habilidades aprendiendo algunas de las librerías de interfaz más populares en la industria.",
-      "En la certificación de librerías de la interfaz, aprenderás a darle estilo a tu sitio rápidamente con Bootstrap. También aprenderás cómo añadir lógica a tus estilos CSS y extenderlos con Sass.",
+      "En la certificación de bibliotecas de desarrollo front-end, aprenderá cómo diseñar su sitio rápidamente con Bootstrap. También aprenderá cómo agregar lógica a sus estilos CSS y extenderlos con Sass.",
       "Después, construirás un carrito de compras y otras aplicaciones para aprender a crear poderosas aplicaciones de página única (SPAs) con React y Redux."
     ],
     "note": "",
@@ -377,8 +350,8 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap es un framework de la interfaz utilizado para diseñar páginas y aplicaciones web. Tiene un enfoque de desarrollo web centrado en los dispositivos móviles e incluye estilos y clases CSS pre-configurados, además de algunas funciones de JavaScript.",
-          "En este curso, aprenderás cómo crear sitios web responsivos con Bootstrap, y utilizarás sus clases incluidas para estilizar botones, imágenes, formularios, navegación y otros elementos."
+          "Bootstrap es un framework front end que se utiliza para diseñar páginas y aplicaciones web adaptativas. Tiene un enfoque de desarrollo web e incluye estilos y clases CSS predefinidos, además de algunas funcionalidades de JavaScript.",
+          "En este curso, aprenderás cómo crear sitios web adaptativos con Bootstrap, y utilizarás sus clases incluidas para estilizar botones, imágenes, formularios, navegación y otros elementos."
         ]
       },
       "jquery": {
@@ -463,10 +436,7 @@
       },
       "d3-dashboard": {
         "title": "Panel D3",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -583,7 +553,7 @@
     "intro": [
       "Hasta este punto, solo has usado JavaScript en la parte de front-end para agregar interactividad a una página, resolver los desafíos de algoritmos o construir un SPA. Pero JavaScript también se puede utilizar en el back-end, o servidor, para construir aplicaciones web completas.",
       "Hoy en día, una de las formas populares para construir aplicaciones es a través de microservicios, que son pequeñas aplicaciones modulares que trabajan juntas para formar una aplicación más grande.",
-      "En la Certificación Desarrollo de Back End y APIs, aprenderás cómo escribir aplicaciones de back-end con Node.js y npm (Node Package Manager). También construirás aplicaciones web con el framework Express, y un microservicio \"People Finder\" con MongoDB y la biblioteca Mongoose."
+      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -606,8 +576,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB y Mongoose",
         "intro": [
-          "MongoDB es una aplicación de base de datos que almacena documentos (o registros) JSON que puedes utilizar en tu aplicación. A diferencia de SQL, otro tipo de base de datos, Mongo es una base de datos no relacional o \"NoSQL\". Esto significa que Mongo almacena todos los datos asociados dentro de un registro, en lugar de almacenarlos en varias tablas predefinidas como en una base de datos SQL.",
-          "Mongoose es un popular paquete npm que a menudo se instala junto con Mongo. Con Mongoose, puedes utilizar objetos de JavaScript simples en lugar de JSON, lo que hace más fácil trabajar con Mongo. Además, te permite crear plantillas para tus documentos llamados esquemas, para que no guarde accidentalmente el tipo equivocado de datos y cause errores más tarde.",
+          "MongoDB es una aplicación de base de datos que almacena documentos JSON (o registros) que puede usar en su aplicación. A diferencia de SQL, otro tipo de base de datos, MongoDB es una base de datos no relacional o \"NoSQL\". Esto significa que MongoDB almacena todos los datos asociados dentro de un registro, en lugar de almacenarlos en muchas tablas preestablecidas como en una base de datos SQL.",
+          "Mongoose es un paquete npm popular para interactuar con MongoDB. Con Mongoose, puede usar objetos de JavaScript sin formato en lugar de JSON, lo que facilita el trabajo con MongoDB. Además, le permite crear planos para sus documentos llamados esquemas, para que no guarde accidentalmente el tipo de datos incorrecto y provoque errores más adelante.",
           "En los cursos de MongoDB y Mongoose, aprenderás los fundamentos para trabajar con datos persistentes, incluyendo cómo configurar un modelo, guardar, eliminar y encontrar documentos en la base de datos."
         ]
       },
@@ -804,7 +774,8 @@
         "title": "Rosetta Code",
         "intro": [
           "Sube tu nivel de habilidad de resolución creativa de problemas con estas tareas de programación gratis de la clásica librería de Rosetta Code.",
-          "Estos desafíos pueden resultar difíciles, pero empujarán tu lógica de algoritmos a nuevas alturas."
+          "Estos desafíos pueden resultar difíciles, pero empujarán tu lógica de algoritmos a nuevas alturas.",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Atributo: Código Rosetta</a>"
         ]
       },
       "project-euler": {
@@ -826,7 +797,7 @@
     "legacy-header": "Cursos Antiguos",
     "legacy-desc": "Estos cursos ya no forman parte de la ruta de certificación, pero todavía están disponibles para tu aprendizaje.",
     "legacy-go-back": "Ve a la versión actual del plan de estudios.",
-    "new-rwd-desc": "Hemos actualizado nuestro plan de estudios de diseño web responsivo. Si anteriormente estabas trabajando en el plan de estudios de diseño web responsivo, ¡tu progreso sigue guardado! Puedes encontrarlo en la sección diseño web responsivo legado.",
+    "new-rwd-desc": "Hemos actualizado nuestro plan de estudios de diseño web adaptativo. Si anteriormente estabas trabajando en el plan de estudios de diseño web adaptativo, ¡tu progreso sigue guardado! Puedes encontrarlo en la sección diseño web adaptativo legado.",
     "new-rwd-article": "Te animamos a leer sobre los cambios que hicimos y considerar explorar el plan de estudios actualizado.",
     "viewing-upcoming-change": "Estás viendo una página beta. ",
     "go-back-to-learn": "Volver a la versión estable del currículum.",

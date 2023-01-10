@@ -1,7 +1,7 @@
 ---
 id: 5900f4de1000cf542c50fff1
 title: 'Problema 370: Triangoli geometrici'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302032
 dashedName: problem-370-geometric-triangles
 ---

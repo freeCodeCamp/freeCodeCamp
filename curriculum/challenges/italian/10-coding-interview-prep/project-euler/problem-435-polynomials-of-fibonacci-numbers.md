@@ -1,7 +1,7 @@
 ---
 id: 5900f5201000cf542c510032
 title: 'Problema 435: Polinomiali di numeri di Fibonacci'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302106
 dashedName: problem-435-polynomials-of-fibonacci-numbers
 ---

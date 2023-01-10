@@ -1,7 +1,7 @@
 ---
 id: 5900f3d21000cf542c50fee4
 title: 'Problema 101: Polinômio ideal'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301725
 dashedName: problem-101-optimum-polynomial
 ---

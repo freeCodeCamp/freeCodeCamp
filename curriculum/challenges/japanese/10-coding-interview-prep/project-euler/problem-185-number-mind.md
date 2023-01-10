@@ -1,7 +1,7 @@
 ---
 id: 5900f4251000cf542c50ff38
 title: '問題 185: ナンバーマインド'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301821
 dashedName: problem-185-number-mind
 ---

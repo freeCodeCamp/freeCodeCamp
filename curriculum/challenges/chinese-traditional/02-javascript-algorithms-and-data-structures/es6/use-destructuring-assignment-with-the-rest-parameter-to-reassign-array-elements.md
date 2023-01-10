@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  使用解構賦值配合 rest 操作符來重新分配數組元素
+  通過 rest 參數解構
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -22,24 +22,28 @@ console.log(arr);
 
 控制檯將顯示 `1, 2` 和 `[3, 4, 5, 7]`。
 
-變量 `a` 和 `b` 分別接收數組的第一個和第二個值。 之後，因爲 rest 操作符的存在，`arr` 獲取了原數組剩餘的元素的值。 rest 操作符只能對數組列表最後的元素起作用。 這意味着你不能使用 rest 操作符來截取原數組中間的元素作爲子數組。
+變量 `a` 和 `b` 分別接收數組的第一個和第二個值。 之後，因爲 rest 語法，`arr` 以數組形式接收了剩餘的值。 rest 參數只能對數組列表最後的元素起作用。 這意味着你不能使用 rest 語法來省略原數組最後一個元素、截取中間的元素作爲子數組。
 
 # --instructions--
 
-使用解構賦值以及 rest 操作符來進行和 `Array.prototype.slice()` 相同的操作，使 `arr` 是原數組 `source` 除開前兩個元素的子數組。
+使用一個帶有 rest 語法的解構賦值來模擬 `Array.prototype.slice()` 的行爲。 `removeFirstTwo()` 應該返回原始數組 `list` 的子數組，前兩個元素被省略。
 
 # --hints--
 
-`arr` 應該是 `[3,4,5,6,7,8,9,10]`。
+`removeFirstTwo([1, 2, 3, 4, 5])` 應該返回 `[3, 4, 5]`。
 
 ```js
-assert(arr.every((v, i) => v === i + 3) && arr.length === 8);
+const testArr_ = [1, 2, 3, 4, 5];
+const testArrWORemoved_ = removeFirstTwo(testArr_);
+assert(testArrWORemoved_.every((e, i) => e === i + 3) && testArrWORemoved_.length === 3);
 ```
 
-`source` 應該是 `[1,2,3,4,5,6,7,8,9,10]`。
+`removeFirstTwo()` 不應該修改 `list`。
 
 ```js
-assert(source.every((v, i) => v === i + 1) && source.length === 10);
+const testArr_ = [1, 2, 3, 4, 5];
+const testArrWORemoved_ = removeFirstTwo(testArr_);
+assert(testArr_.every((e, i) => e === i + 1) && testArr_.length === 5);
 ```
 
 不應該使用 `Array.slice()`。
@@ -54,7 +58,7 @@ assert(source.every((v, i) => v === i + 1) && source.length === 10);
 assert(
   __helpers
     .removeWhiteSpace(code)
-    .match(/\[(([_$a-z]\w*)?,){1,}\.\.\.arr\]=list/i)
+    .match(/\[(([_$a-z]\w*)?,){1,}\.\.\.shorterList\]=list/i)
 );
 ```
 
@@ -63,23 +67,25 @@ assert(
 ## --seed-contents--
 
 ```js
-const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
   // Only change code below this line
-  const arr = list; // Change this line
+  const shorterList = list; // Change this line
   // Only change code above this line
-  return arr;
+  return shorterList;
 }
-const arr = removeFirstTwo(source);
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
 ```
 
 # --solutions--
 
 ```js
-const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
-  const [, , ...arr] = list;
-  return arr;
+  const [, , ...shorterList] = list;
+  return shorterList;
 }
-const arr = removeFirstTwo(source);
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
 ```

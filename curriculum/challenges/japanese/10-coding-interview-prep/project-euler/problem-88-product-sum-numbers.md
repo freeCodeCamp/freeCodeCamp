@@ -1,7 +1,7 @@
 ---
 id: 5900f3c51000cf542c50fed6
 title: '問題 88: 積和数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302203
 dashedName: problem-88-product-sum-numbers
 ---

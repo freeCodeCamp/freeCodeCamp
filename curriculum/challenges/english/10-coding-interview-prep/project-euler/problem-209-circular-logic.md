@@ -1,7 +1,7 @@
 ---
 id: 5900f43e1000cf542c50ff4f
 title: 'Problem 209: Circular Logic'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301850
 dashedName: problem-209-circular-logic
 ---

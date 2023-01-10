@@ -26,7 +26,7 @@ dashedName: create-a-map-data-structure
 
 # --hints--
 
-Повинна існувати структура даних Map.
+The `Map` data structure should exist.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Об'єкт Map має містити такі методи: add, remove, get, has, values, clear, and size.
+The `Map` object should have the following methods: `add`, `remove`, `get`, `has`, `values`, `clear`, and `size`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Метод add має додавати елементи до карти.
+The `add` method should add items to the map.
 
 ```js
 assert(
@@ -79,7 +79,7 @@ assert(
 );
 ```
 
-Метод has має повертати true для доданих елементів та false - для відсутніх.
+The `has` method should return `true` for added items and `false` for absent items.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-Метод get має приймати ключі в якості вхідних даних та повертати пов'язані з ними значення.
+The `get` method should accept keys as input and should return the associated values.
 
 ```js
 assert(
@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-Метод values має повертати всі значення, що зберігаються в карті, у вигляді рядків масиву.
+The `values` method should return all the values stored in the map as strings in an array.
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 );
 ```
 
-Метод clear має очистити карту, а метод size - повернути кількість елементів, що місяться в карті.
+The `clear` method should empty the map and the `size` method should return the number of items present in the map.
 
 ```js
 assert(

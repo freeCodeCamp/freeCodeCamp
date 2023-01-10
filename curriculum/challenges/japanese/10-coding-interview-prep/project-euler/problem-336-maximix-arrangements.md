@@ -1,7 +1,7 @@
 ---
 id: 5900f4bd1000cf542c50ffcf
 title: '問題 336: 最も不ぞろいな配置'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301994
 dashedName: problem-336-maximix-arrangements
 ---

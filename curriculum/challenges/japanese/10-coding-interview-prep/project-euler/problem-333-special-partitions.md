@@ -1,7 +1,7 @@
 ---
 id: 5900f4b91000cf542c50ffcc
 title: '問題 333: 特殊な分割'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301991
 dashedName: problem-333-special-partitions
 ---

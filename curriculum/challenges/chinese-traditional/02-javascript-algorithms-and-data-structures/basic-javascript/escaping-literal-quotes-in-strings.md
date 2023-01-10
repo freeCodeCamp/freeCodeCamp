@@ -39,7 +39,7 @@ I am a "double quoted" string inside "double quotes".
 assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
 ```
 
-變量 myStr 應該包含字符串 `I am a "double quoted" string inside "double quotes".`
+變量 `myStr` 應該包含字符串 `I am a "double quoted" string inside "double quotes".`
 
 ```js
 assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(myStr));

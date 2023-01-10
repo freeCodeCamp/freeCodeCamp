@@ -1,18 +1,16 @@
 ---
 id: a202eed8fc186c8434cb6d61
 title: 文字列の反転
-challengeType: 5
+challengeType: 1
 forumTopicId: 16043
 dashedName: reverse-a-string
 ---
 
 # --description--
 
-指定された文字列を反転させてください。
+与えられた文字列を反転させて、反転した文字列を返してください。
 
-場合によっては、文字列を反転させる前に文字列を配列に変換する必要があります。
-
-結果は必ず文字列にする必要があります。
+例えば、`"hello"` は `"olleh"` となるようにしてください。
 
 # --hints--
 

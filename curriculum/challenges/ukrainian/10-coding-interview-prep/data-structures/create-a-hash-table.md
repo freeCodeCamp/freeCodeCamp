@@ -24,7 +24,7 @@ dashedName: create-a-hash-table
 
 # --hints--
 
-Повинна існувати структура даних HashTable.
+The `HashTable` data structure should exist.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-HashTable має містити метод add.
+The `HashTable` should have an `add` method.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-HashTable має мати метод lookup.
+The `HashTable` should have a `lookup` method.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-HashTable має мати метод remove.
+The `HashTable` should have a `remove` method.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-Метод add повинен додати пари ключів-значень, а метод lookup повинен повернути значення, пов'язані з заданим ключем.
+The `add` method should add key value pairs and the `lookup` method should return the values associated with a given key.
 
 ```js
 assert(
@@ -95,7 +95,7 @@ assert(
 );
 ```
 
-Після введення ключа метод remove вилучає асоціативну пару ключ-значення.
+The `remove` method should accept a key as input and should remove the associated key value pair.
 
 ```js
 assert(
@@ -113,7 +113,7 @@ assert(
 );
 ```
 
-Метод remove вилучає тільки правильну пару ключ-значення.
+The `remove` method should only remove the correct key value pair.
 
 ```js
 assert(

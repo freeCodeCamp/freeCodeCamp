@@ -11,12 +11,12 @@ import createRedirect from '../components/create-redirect';
 import { ButtonSpacer, Spacer, Loader } from '../components/helpers';
 import { apiLocation } from '../../../config/env.json';
 
+import { acceptTerms } from '../redux/actions';
 import {
-  acceptTerms,
+  signInLoadingSelector,
   userSelector,
-  isSignedInSelector,
-  signInLoadingSelector
-} from '../redux';
+  isSignedInSelector
+} from '../redux/selectors';
 
 import './email-sign-up.css';
 interface AcceptPrivacyTermsProps {

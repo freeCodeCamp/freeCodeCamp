@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8005
 title: Алгоритми сортування/Сортування гребінцем
-challengeType: 5
+challengeType: 1
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
 ---
@@ -10,28 +10,22 @@ dashedName: sorting-algorithmscomb-sort
 
 Виконайте *сортування гребінцем*.
 
-**Сортування гребінцем** – це один з варіантів [сортування бульбашкою](https://rosettacode.org/wiki/Bubble Sort).
+The **Comb Sort** is a variant of the Bubble Sort.
 
-Як і [сортування Шелла](https://rosettacode.org/wiki/Shell sort), сортування гребінцем збільшує розрив, який використовується при порівняннях і обмінах.
+Like the Shell sort, the Comb Sort increases the gap used in comparisons and exchanges.
 
 Поділ розриву найкраще здійснити на $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$, але значення 1.3 може бути практичнішим.
 
 Деякі реалізації використовують сортування включенням, коли розрив менший за певну величину.
 
-**Дивіться також**
+Variants:
 
 <ul>
-  <li>стаття Вікіпедії: <a href='https://en.wikipedia.org/wiki/Comb sort' target='_blank'>Сортування гребінцем</a>.</li>
+  <li>Combsort11 makes sure the gap ends in (11, 8, 6, 4, 3, 2, 1), which is significantly faster than the other two possible endings.</li>
+  <li>Combsort with different endings changes to a more efficient sort when the data is almost sorted (when the gap is small). Comb sort with a low gap isn't much better than the Bubble Sort.</li>
 </ul>
 
-Варіанти:
-
-<ul>
-  <li>Combsort11 забезпечує закінчення розриву на (11, 8, 6, 4, 3, 2, 1), що значно швидше, ніж два інших можливих закінчення.</li>
-  <li>Сортування гребінцем з різними закінченнями змінюється на ефективніше сортування, коли дані майже відсортовані (коли розрив невеликий). Сортування гребінцем з малим розривом не набагато краще, ніж сортування бульбашкою.</li>
-</ul>
-
-Псевдокод:
+Pseudocode:
 
 <pre><b>function</b> combsort(<b>array</b> input)
   gap := input<b>.size</b> <i>//встановити розмір розриву</i>
@@ -59,7 +53,7 @@ dashedName: sorting-algorithmscomb-sort
 
 # --instructions--
 
-Напишіть функцію, яка упорядкує даний масив, використовуючи сортування гребінцем.
+Write a function that sorts a given array using Comb sort.
 
 # --hints--
 

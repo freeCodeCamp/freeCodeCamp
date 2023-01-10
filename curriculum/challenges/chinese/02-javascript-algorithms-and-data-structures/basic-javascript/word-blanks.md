@@ -9,11 +9,9 @@ dashedName: word-blanks
 
 # --description--
 
-现在，我们来用字符串的相关知识实现一个 "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)" 类的文字游戏，称为 "Word Blanks"。 你将创建一个（可选幽默的）“填空”样式句子。
+给你一些不完整的句子，这些句子会缺少一些例如名词、动词、形容词或者副词之类的字词。 然后你需要使用你选择的词语去填补这些缺失的地方，使得这个句子变得完整且有意义。
 
-在 "Mad Libs" 游戏中，提供一个缺少一些单词的句子，缺少的单词包括名词、动词、形容词和副词等。 然后，你选择一些单词填写句子缺失的地方，使句子完整并且有意义。
-
-思考一下这句话 - It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**。 这句话有三个缺失的部分 - 形容词、动词和副词，选择合适单词填入完成它。 然后将完成的句子赋值给变量，如下所示：
+思考一下这个句子：它真的非常**\_\_\_\_**，我们**\_\_\_\_**我们自己**\_\_\_\_**。 这个句子有三处缺失：一个形容词、一个动词和一个副词。我们可以将选择的词语加进去完成它。 然后我们可以将完成的句子赋给一个变量，如下所示：
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -21,21 +19,21 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 
 # --instructions--
 
-在这个挑战中，我们为你提供名词、动词、形容词和副词。 你需要使用合适单词以及我们提供的单词来形成完整的句子。
+在这个挑战中，我们会提供给你一个名词、一个动词、一个形容词和一个副词。 你需要在我们提供的词语中，选择你要使用的词语来使这个句子变得完整。
 
-你需要使用字符串连接运算符 `+` 来拼接字符串变量：`myNoun`、`myAdjective`、`myVerb` 和 `myAdverb` 来构建一个新字符串。 然后，将新字符串赋给 `wordBlanks` 变量。 您不应该更改分配给变量的单词。
+你需要使用字符串连接操作符 `+` 和提供的变量 `myNoun`、`myAdjective`、`myVerb` 和 `myAdverb` 来构建一个新的字符串。 然后，将这个改好的新字符串赋值给 `wordBlanks` 变量。 不要去更改已经赋值给这些变量的单词。
 
-你还需要考虑字符串中的空格，确保句子的所有单词之间有空格。 结果应该是一个完整的句子。
+你还需要确认字符串里的空格，以确保最后的句子里的每个单词之间都有空格。 最后的结果应该是一个完整的句子。
 
 # --hints--
 
-`wordBlanks` 应该返回一个字符串。
+`wordBlanks` 应该是一个字符串.
 
 ```js
 assert(typeof wordBlanks === 'string');
 ```
 
-不能改变 `myNoun`、`myVerb`、`myAdjective` 或者 `myAdverb` 的值。
+不要改变赋值给 `myNoun`, `myVerb`、`myAdjective` 或者`myAdverb` 这些变量的值。
 
 ```js
 assert(
@@ -46,7 +44,7 @@ assert(
 );
 ```
 
-您不应该直接使用 `dog`、`ran`、`big` 或 `quickly` 来创建 `wordBlanks`。
+不要直接使用 `dog`、`ran`、`big` 或者 `quickly` 的值去创建 `wordBlanks`。
 
 ```js
 const newCode = removeAssignments(code);
@@ -58,7 +56,7 @@ assert(
 );
 ```
 
-`wordBlanks` 应包含赋值给变量 `myNoun`、`myVerb`、`myAdjective` 和 `myAdverb` 的所有单词，并用非单词字符（以及 madlib 中的其它单词）分隔。
+`wordBlanks` 应该包含分配给变量 `myNoun`、`myVerb`、`myAdjective` 和 `myAdverb` 的所有单词，用非单词字符（和你选择的任何其他单词）分隔。
 
 ```js
 assert(

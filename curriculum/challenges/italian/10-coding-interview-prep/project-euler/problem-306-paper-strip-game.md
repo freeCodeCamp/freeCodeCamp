@@ -1,7 +1,7 @@
 ---
 id: 5900f49f1000cf542c50ffb1
 title: 'Problema 306: Gioco della striscia di carta'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301960
 dashedName: problem-306-paper-strip-game
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f3b41000cf542c50fec7
 title: '問題 72: 分数を数え上げる'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302185
 dashedName: problem-72-counting-fractions
 ---

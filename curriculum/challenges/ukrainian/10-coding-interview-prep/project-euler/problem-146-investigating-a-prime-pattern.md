@@ -1,7 +1,7 @@
 ---
 id: 5900f3fe1000cf542c50ff11
 title: 'Завдання 146: дослідження моделі простих чисел'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301775
 dashedName: problem-146-investigating-a-prime-pattern
 ---

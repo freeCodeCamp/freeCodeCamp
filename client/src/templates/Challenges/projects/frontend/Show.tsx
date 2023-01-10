@@ -18,11 +18,11 @@ import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/help-modal';
 import {
   challengeMounted,
-  isChallengeCompletedSelector,
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues
-} from '../../redux';
+} from '../../redux/actions';
+import { isChallengeCompletedSelector } from '../../redux/selectors';
 import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
@@ -174,9 +174,7 @@ class Project extends Component<ProjectProps> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
                 <ChallengeTitle
-                  block={block}
                   isCompleted={isChallengeCompleted}
-                  superBlock={superBlock}
                   translationPending={translationPending}
                 >
                   {title}
@@ -204,7 +202,7 @@ class Project extends Component<ProjectProps> {
                 certification={certification}
                 superBlock={superBlock}
               />
-              <HelpModal />
+              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
         </LearnLayout>

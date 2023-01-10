@@ -1,7 +1,7 @@
 ---
 id: 5958469238c0d8d2632f46db
 title: Combinations
-challengeType: 5
+challengeType: 1
 forumTopicId: 302233
 dashedName: combinations
 ---
@@ -10,7 +10,7 @@ dashedName: combinations
 
 Given non-negative integers `m` and `n`, generate all size `m` combinations of the integers from `0` (zero) to `n-1` in sorted order (each combination is sorted and the entire table is sorted).
 
-**Example:**
+**例如：**
 
 `3` comb `5` is:
 

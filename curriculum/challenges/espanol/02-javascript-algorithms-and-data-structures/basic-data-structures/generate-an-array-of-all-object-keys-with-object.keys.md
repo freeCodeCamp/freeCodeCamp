@@ -8,7 +8,7 @@ dashedName: generate-an-array-of-all-object-keys-with-object-keys
 
 # --description--
 
-También podemos generar un arreglo que contenga todas las claves almacenadas en un objeto utilizando el método `Object.keys()` y pasando un objeto como argumento. Esto devolverá un arreglo con cadenas que representan cada propiedad del objeto. De nuevo, no habrá un orden específico para las entradas en el arreglo.
+También podemos generar un arreglo que contenga todas las claves almacenadas en un objeto utilizando el método `Object.keys()`. Este método toma un objeto como argumento y devuelve un arrelgo de cadenas que representan cada propiedad en el objeto. De nuevo, no habrá un orden específico para las entradas en el arreglo.
 
 # --instructions--
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f3d21000cf542c50fee5
 title: 'Problem 102: Triangle containment'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301726
 dashedName: problem-102-triangle-containment
 ---

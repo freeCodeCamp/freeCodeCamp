@@ -1,7 +1,7 @@
 ---
 id: 5900f4ae1000cf542c50ffbf
 title: '問題 320: 巨大な整数で割り切れる階乗'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301977
 dashedName: problem-320-factorials-divisible-by-a-huge-integer
 ---

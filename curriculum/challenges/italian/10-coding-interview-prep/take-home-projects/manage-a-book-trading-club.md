@@ -8,9 +8,9 @@ dashedName: manage-a-book-trading-club
 
 # --description--
 
-**Obiettivo:** Costruisci un'app [Replit](https://replit.com/) funzionalmente simile a questa: [https://p2phttps://manage-a-book-trading-club.freecodecamp.rocks/](https://manage-a-book-trading-club.freecodecamp.rocks/).
+**Obiettivo:** crea un'app funzionalmente simile a questa: <a href="https://manage-a-book-trading-club.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://manage-a-book-trading-club.freecodecamp.rocks</a>.
 
-Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
+Soddisfa le user story qui sotto e supera tutti i test. Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
 **User Story:** Posso vedere tutti i libri postati da ogni utente.
 
@@ -22,7 +22,7 @@ Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Uti
 
 Una volta terminata l'implementazione di queste user story, scrivi l'URL della tua app live e, opzionalmente, il tuo repository GitHub. Quindi clicca sul pulsante "Ho completato questa sfida".
 
-Puoi ottenere un feedback sul tuo progetto condividendolo sul forum [freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
+Puoi ottenere un feedback sul tuo progetto condividendolo sul <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">forum di freeCodeCamp</a>.
 
 # --solutions--
 

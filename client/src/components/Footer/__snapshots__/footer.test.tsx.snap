@@ -38,11 +38,11 @@ exports[`<Footer /> matches snapshot 1`] = `
       <div
         className="trending-guides"
       >
-        <div
+        <h2
           className="col-header"
         >
           footer.trending-guides
-        </div>
+        </h2>
         <div
           className="trending-guides-row"
         >
@@ -282,11 +282,11 @@ exports[`<Footer /> matches snapshot 1`] = `
     <div
       className="footer-bottom"
     >
-      <div
+      <h2
         className="col-header"
       >
         footer.our-nonprofit
-      </div>
+      </h2>
       <div
         className="footer-divder"
       />

@@ -1,14 +1,14 @@
 ---
 id: 5ea28156e79528a9ab248f27
 title: Teste de Luhn de números de cartão de crédito
-challengeType: 5
+challengeType: 1
 forumTopicId: 385284
 dashedName: luhn-test-of-credit-card-numbers
 ---
 
 # --description--
 
-O [teste de Luhn](https://en.wikipedia.org/wiki/Luhn algorithm) é usado por algumas empresas de cartões de crédito para distinguir números válidos de cartão de crédito do que poderia ser uma seleção aleatória de dígitos.
+O teste de Luhn é usado por algumas empresas de cartões de crédito para distinguir números válidos de cartão de crédito do que poderia ser uma seleção aleatória de dígitos.
 
 Essas empresas que usam números de cartão de crédito que podem ser validados pelo teste de Luhn têm números que passam no teste a seguir:
 

@@ -7,4 +7,3 @@ export { default as Spacer } from './spacer';
 export { default as Link } from './link';
 export { default as ImageLoader } from './image-loader';
 export { default as AvatarRenderer } from './avatar-renderer';
-export { default as borderColorPicker } from './border-color-picker';

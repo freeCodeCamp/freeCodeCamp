@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7e1e
 title: Prodotto scalare
-challengeType: 5
+challengeType: 1
 forumTopicId: 302251
 dashedName: dot-product
 ---
 
 # --description--
 
-Crea una funzione per calcolare il **[prodotto scalare](https://en.wikipedia.org/wiki/Dot product)** di due vettori.
+Crea una funzione per calcolare il **prodotto scalare** di due vettori.
 
 # --hints--
 

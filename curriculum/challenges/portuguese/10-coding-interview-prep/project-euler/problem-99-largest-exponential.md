@@ -1,7 +1,7 @@
 ---
 id: 5900f3d01000cf542c50fee2
 title: 'Problema 99: Maior exponencial'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302216
 dashedName: problem-99-largest-exponential
 ---

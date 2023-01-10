@@ -21,7 +21,7 @@ animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
 
 # --instructions--
 
-为了看贝塞尔曲线的运动效果，把 id 为 `red` 的元素的 `animation-timing-function` 属性改为 `cubic-bezier` 函数，其中 x1，y1，x2，y2 值分别为 0、0、0.58、1。 这会使两个元素运动过程类似。
+要查看此贝塞尔曲线的实际效果，请将 id 为 `red` 的元素的 `animation-timing-function` 更改为 `cubic-bezier` 函数，x1、y1、x2、y2 的值分别设置为 `0, 0, 0.58, 1`。 这会使两个元素运动过程类似。
 
 # --hints--
 

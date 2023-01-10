@@ -10,10 +10,7 @@ const { clientLocale, curriculumLocale, homeLocation, sentryClientDSN } =
   envData;
 
 const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
-const pathPrefix =
-  clientLocale === 'english' || clientLocale === 'chinese'
-    ? ''
-    : '/' + clientLocale;
+const pathPrefix = clientLocale === 'english' ? '' : '/' + clientLocale;
 
 module.exports = {
   flags: {

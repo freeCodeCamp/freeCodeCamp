@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-Il `values` dovrebbe ritornare tutti i valori immagazzinati nella mappa come stringhe in una variabile.
+Il metodo `values` dovrebbe restituire tutti i valori immagazzinati nella mappa come stringhe in un array.
 
 ```js
 assert(

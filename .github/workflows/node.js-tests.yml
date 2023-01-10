@@ -1,9 +1,14 @@
-name: Node.js CI
+name: CI - Node.js Test Current
+env:
+  NODE_OPTIONS: '--max_old_space_size=6144'
 on:
   push:
     branches-ignore:
       - 'renovate/**'
+      - 'next-api'
   pull_request:
+    branches-ignore:
+      - 'next-api'
 
 permissions:
   contents: read
@@ -12,29 +17,27 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-20.04
-
     strategy:
-      fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
+      fail-fast: false
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
 
       - name: Check number of lockfiles
         run: |
           if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 1 ]
           then
-            echo 'Error: found too many lockfiles in the repository'
+            echo -e 'Error: found too many lockfiles in the repository.\nWe use npm workspaces to manage packages so all dependencies should be added to the root package-lock.json'
             exit 1
           fi
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048 # tag=v3
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
 
       - name: Set Environment variables
         run: |
@@ -62,17 +65,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048 # tag=v3
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
 
       - name: Set Environment variables
         run: |
@@ -97,17 +99,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048 # tag=v3
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
 
       - name: Set Environment variables
         run: |
@@ -133,18 +134,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
         locale: [chinese, espanol]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048 # tag=v3
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
 
       - name: Set Environment variables
         run: |

@@ -1,15 +1,17 @@
 ---
 id: 5dfa371beacea3f48c6300af
-title: Step 18
+title: Step 19
 challengeType: 0
-dashedName: step-18
+dashedName: step-19
 ---
 
 # --description--
 
 When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.
 
-After the last `h2` element of the second `section` element, add an `h3` element with the text `Things cats love:`.
+After the last `h2` element of the second `section` element, add an `h3` element with this text:
+
+`Things cats love:`
 
 # --hints--
 
@@ -62,17 +64,18 @@ assert(
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
-        <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
+        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
         <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
       </section>
 --fcc-editable-region--
       <section>
         <h2>Cat Lists</h2>
+        
       </section>
 --fcc-editable-region--
     </main>

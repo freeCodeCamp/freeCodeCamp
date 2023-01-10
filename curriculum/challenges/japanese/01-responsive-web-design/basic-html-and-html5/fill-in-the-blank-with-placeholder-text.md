@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08833
-title: プレイスホルダ―テキストで空白を埋める
+title: プレイスホルダーテキストで空白を埋める
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cgR7Dc7'
 forumTopicId: 18178
@@ -9,9 +9,9 @@ dashedName: fill-in-the-blank-with-placeholder-text
 
 # --description--
 
-Web 開発者は慣習的に <dfn>lorem ipsum</dfn> テキストをプレイスホルダ―テキストとして使用します。 lorem ipsum テキストとは、古代ローマの哲学者キケロの書いた有名な文章をランダムに抜粋したものです。
+Web 開発者は慣習的に <dfn>lorem ipsum</dfn> テキストをプレイスホルダーテキストとして使用します。 lorem ipsum テキストとは、古代ローマの哲学者キケロの書いた有名な文章をランダムに抜粋したものです。
 
-lorem ipsum テキストはプレイスホルダ―テキストとして 16 世紀から植字工たちに使用されており、この伝統がウェブに引き継がれています。
+lorem ipsum テキストはプレイスホルダーテキストとして 16 世紀から植字工たちに使用されており、この伝統がウェブに引き継がれています。
 
 5 世紀も使われていれば十分でしょう。 私たちは今猫の写真アプリを作っているので、「kitty ipsum」というテキストを使ってみましょう。
 

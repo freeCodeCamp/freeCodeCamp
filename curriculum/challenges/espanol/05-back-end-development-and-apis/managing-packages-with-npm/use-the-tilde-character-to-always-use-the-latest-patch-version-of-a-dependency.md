@@ -18,15 +18,15 @@ Para permitir que una dependencia de npm se actualice a la última versión de P
 
 # --instructions--
 
-En el archivo package.json, su regla actual para que npm pueda actualizar la dependencia "moment" es usar una versión específica (2.10.2). Pero ahora, quieres permitir la última versión 2.10.x.
+En el archivo package.json, tu regla actual para como npm puede actualizar `@freecodecamp/example` es utilizando específicamente la versión (1.2.13). Pero ahora quieres permitir la última versión 1.2.x.
 
-Usa el tilde (`~`) para anteponer la versión de moment en tus dependencias y permitir a npm actualizarlo a cualquier nueva versión PATCH.
+Usa el carácter tilde (`~`) para fijar la versión de `@freecodecamp/example` en tus dependencias y permitir a npm actualizarla a cualquier nuevo lanzamiento de _patch_.
 
 **Nota:** Los números de versión no deben ser cambiados.
 
 # --hints--
 
-"dependencies" debe incluir "moment"
+`"dependencies"` debe incluir `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ Usa el tilde (`~`) para anteponer la versión de moment en tus dependencias y pe
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ Usa el tilde (`~`) para anteponer la versión de moment en tus dependencias y pe
   );
 ```
 
-la versión de "moment" debe coincidir con "~2.10.2"
+La versión de `"@freecodecamp/example"` debe coincidir con `"~1.2.13"`.
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ la versión de "moment" debe coincidir con "~2.10.2"
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^\~2\.10\.2/,
-        'Wrong version of "moment". It should be ~2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\~1\.2\.13/,
+        'Wrong version of "@freecodecamp/example". It should be ~1.2.13'
       );
     },
     (xhr) => {

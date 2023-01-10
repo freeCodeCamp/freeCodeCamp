@@ -1,7 +1,7 @@
 ---
 id: 5900f4421000cf542c50ff55
 title: '問題 214: トーティエント鎖'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301856
 dashedName: problem-214-totient-chains
 ---

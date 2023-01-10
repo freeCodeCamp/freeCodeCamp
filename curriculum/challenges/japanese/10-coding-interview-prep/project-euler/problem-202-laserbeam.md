@@ -1,7 +1,7 @@
 ---
 id: 5900f4371000cf542c50ff49
 title: '問題 202: レーザー光線'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301843
 dashedName: problem-202-laserbeam
 ---

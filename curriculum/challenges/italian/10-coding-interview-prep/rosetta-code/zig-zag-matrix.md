@@ -1,14 +1,14 @@
 ---
 id: 594810f028c0303b75339ad8
 title: Matrice a zig-zag
-challengeType: 5
+challengeType: 1
 forumTopicId: 302348
 dashedName: zig-zag-matrix
 ---
 
 # --description--
 
-Un array 'zig-zag' è una disposizione quadrata dei primi $N^2$ interi, dove i numeri aumentano sequenzialmente mentre si zig-zaga lungo le [anti-diagonali](https://en.wiktionary.org/wiki/antidiagonal) dell'array.
+Un array a zig zag è un arrangiamento quadrato dei primi $N^2$ numeri interi, dove i numeri crescono sequenzialmente a zig-zag lungo l'anti diagonale dell'array.
 
 Per esempio, se come input viene fornito `5`, questo dovrebbe essere il risultato prodotto:
 

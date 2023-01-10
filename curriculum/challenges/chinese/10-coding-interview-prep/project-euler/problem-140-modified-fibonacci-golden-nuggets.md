@@ -1,7 +1,7 @@
 ---
 id: 5900f3fa1000cf542c50ff0c
 title: '问题 140：改进的斐波那契金块'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301769
 dashedName: problem-140-modified-fibonacci-golden-nuggets
 ---

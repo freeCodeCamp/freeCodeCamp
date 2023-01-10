@@ -1,6 +1,6 @@
 ---
 id: 587d825d367417b2b2512c96
-title: Depth-First Search
+title: Búsqueda en Profundidad
 challengeType: 1
 forumTopicId: 301640
 dashedName: depth-first-search
@@ -8,31 +8,31 @@ dashedName: depth-first-search
 
 # --description--
 
-Similar to <dfn>breadth-first search</dfn>, here we will learn about another graph traversal algorithm called <dfn>depth-first search</dfn>.
+Similar a <dfn>breadth-first-search</dfn>, aquí aprendermos sobre otro algoritmo de recorrido de grafos llamado <dfn>depth-first-search</dfn>.
 
-Whereas the breadth-first search searches incremental edge lengths away from the source node, <dfn>depth-first search</dfn> first goes down a path of edges as far as it can.
+Donde la búsqueda en profundidad busca de manera incremental arista alejándose del nodo fuente, <dfn>depth-first-search</dfn> primero baja sobre un camino se aristas tan lejos como pueda.
 
-Once it reaches one end of a path, the search will backtrack to the last node with an un-visited edge path and continue searching.
+Una vez que alcance el extremo de una ruta, la búsqueda retrocederá al último nodo con una arista no visitado y continuará la búsqueda.
 
-The animation below shows how the algorithm works. The algorithm starts with the top node and visits the nodes in the numbered order.
+La animación siguiente muestra como funciona el algoritmo. El algoritmo inicia con el nodo de arriba y visita los nodos en orden numerado.
 
 <img class='img-responsive' src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966' />
 
-Notice how, unlike breadth-first search, every time a node is visited, it doesn't visit all of its neighbors. Instead, it first visits one of its neighbors and continues down that path until there are no more nodes to be visited on that path.
+Observa como, a diferencia de la búsqueda en anchura, cada vez que un nodo es visitado, no visita a todos sus vecinos. En cambio, primero visita uno de sus vecinos y continúa por ese camino hasta que no haya más nodos para ser visitados en ese camino.
 
-To implement this algorithm, you'll want to use a stack. A stack is an array where the last element added is the first to be removed. This is also known as a <dfn>Last-In-First-Out</dfn> data structure. A stack is helpful in depth-first search algorithms because, as we add neighbors to the stack, we want to visit the most recently added neighbors first and remove them from the stack.
+Para implementar este algoritmo, querrás usar una pila. Una pila es un arreglo donde el último elemento añadido es el primero en ser eliminado. Esto también es conocido como una estructura de datos <dfn>Last-In-First-Out</dfn>. Una pila es útil en el algoritmo de búsqueda en profundidad porque, como agregamos vecinos a la pila, queremos visitar los vecinos añadido más recientes y eliminarlo de la pila.
 
-A simple output of this algorithm is a list of nodes which are reachable from a given node. Therefore, you'll also want to keep track of the nodes you visit.
+Un salida simple de este algoritmo es una lista de nodos los cuales son alcanzables desde un nodo determinado. Por lo tanto, también querrá llevar un seguimiento de los nodos que visita.
 
 # --instructions--
 
-Write a function `dfs()` that takes an undirected, adjacency matrix `graph` and a node label `root` as parameters. The node label will just be the numeric value of the node between `0` and `n - 1`, where `n` is the total number of nodes in the graph.
+Escribe una función `dfs()` que tome una matriz, de adyacencia de un `graph` no dirigido y una etiqueta de nodo `root` como parámetros. La etiqueta de nodo solo debe ser el valor numérico del nodo entre `0` y `n - 1`, donde `n` es el número total de nodos en el grafo.
 
-Your function should output an array of all nodes reachable from `root`.
+Tu función debe mostrar un arreglo de todos los nodos alcanzables desde `root`.
 
 # --hints--
 
-The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `1` should return an array with `0`, `1`, `2`, and `3`.
+La entrada del grafo `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` con un nodo inicial de `1` debe devolver un arreglo con `0`, `1`,`2`, y `3`.
 
 ```js
 assert.sameMembers(
@@ -49,7 +49,24 @@ assert.sameMembers(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `1` should return an array with four elements.
+La entrada del grafo `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` con un nodo inicial `3` debe devolver un arreglo con `3`,`2`,`1`, y `0`.
+
+```js
+assert.sameMembers(
+  (function () {
+    var graph = [
+      [0, 1, 0, 0],
+      [1, 0, 1, 0],
+      [0, 1, 0, 1],
+      [0, 0, 1, 0]
+    ];
+    return dfs(graph, 3);
+  })(),
+  [3, 2, 1, 0]
+);
+```
+
+El grafo de entrada `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` con un nodo de inicio `1` debe devolver un arreglo con cuatro elementos.
 
 ```js
 assert(
@@ -65,7 +82,7 @@ assert(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` with a start node of `3` should return an array with `3`.
+El grafo de entrada `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` con un nodo de inicio `3` debe devolver un arreglo con `3`.
 
 ```js
 assert.sameMembers(
@@ -82,7 +99,7 @@ assert.sameMembers(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` with a start node of `3` should return an array with one element.
+El grafo de entrada `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` con un nodo de inicio `3` debe devolver un arreglo con un elemento.
 
 ```js
 assert(
@@ -98,7 +115,7 @@ assert(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `3` should return an array with `2` and `3`.
+El grafo de entrada `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` con un nodo de inicio `3` debe devolver un arreglo con `2` y `3`.
 
 ```js
 assert.sameMembers(
@@ -115,7 +132,7 @@ assert.sameMembers(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `3` should return an array with two elements.
+El grafo de entrada `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` con un nodo de inicio `3` debe devolver un arreglo con dos elementos.
 
 ```js
 assert(
@@ -131,7 +148,7 @@ assert(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `0` should return an array with `0` and `1`.
+El grafo de entrada `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` con un nodo de inicio `0` debe devolver un arreglo con `0` y `1`.
 
 ```js
 assert.sameMembers(
@@ -148,7 +165,7 @@ assert.sameMembers(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `0` should return an array with two elements.
+El grafo de entrada `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` con un nodo de inicio `0` debe devolver un arreglo con dos elementos.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c02
-title: Використовуйте символ тильди (~), щоб завжди мати доступ до останньої версії залежностей Patch
+title: Використайте символ «Тильда» для останньої патч версії залежностей
 challengeType: 2
 forumTopicId: 301532
 dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-dependency
@@ -8,9 +8,9 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --description--
 
-В останньому завданні ви сказали npm включати тільки конкретну версію пакету. Це корисний спосіб призупинити блокування ваших залежностей, якщо вам потрібно переконатися, що різні частини вашого проєкту залишаються сумісними одна з одною. Але в більшості випадків ви не захочете пропустити виправлення помилок, оскільки вони часто містять важливі патчі безпеки і (як можна сподіватися) не порушують при цьому речі.
+В останньому завданні ви сказали npm включати тільки конкретну версію пакету. Це корисний спосіб призупинити блокування своїх залежностей, якщо вам потрібно переконатися, що різні частини проєкту залишаються сумісними між собою. Але в більшості випадків не варто пропускати виправлення помилок, оскільки вони часто містять важливі патчі безпеки і (як можна сподіватися) нічого при цьому не порушують.
 
-Щоб npm залежність оновилася до останньої версії PATCH, можна встановити префікс версії залежностей з символом тильди (`~`). Ось приклад оновлення для будь-якої версії 1.3.x.
+Щоб npm-залежність оновилася до останньої версії PATCH, можна встановити префікс версії залежностей з символом тильди (`~`). Ось приклад оновлення для будь-якої версії 1.3.x.
 
 ```json
 "package": "~1.3.8"
@@ -18,15 +18,15 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --instructions--
 
-У файлі package.json вашим поточним правилом для моменту оновлення npm є використання конкретної версії (2.10.2). Але тепер ви захочете останню версію 2.10.x.
+У файлі package.json вашим поточним правилом для оновлення `@freecodecamp/example` є використання конкретної версії (1.2.13). Але тепер потрібна остання версія 1.2.x.
 
-Використовуйте символ тильди (`~`), щоб встановити префікс версії моменту у ваших залежностях і дозволити npm оновити його до будь-якого оновлення версії PATCH.
+Використайте символ тильда (`~`), щоб встановити префікс версії `@freecodecamp/example` у своїх залежностях і дозволити npm оновлення до будь-якої версії _патч_.
 
-**Примітка:** Номери версій не слід змінювати.
+**Примітка:** не потрібно змінювати номери версій.
 
 # --hints--
 
-"dependencies" повинні містити "moment"
+`"dependencies"` повинні містити `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
   );
 ```
 
-версія "moment" повинна бути "~2.10.2"
+Версія `"@freecodecamp/example"` повинна відповідати `"~1.2.13"`.
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^\~2\.10\.2/,
-        'Wrong version of "moment". It should be ~2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\~1\.2\.13/,
+        'Wrong version of "@freecodecamp/example". It should be ~1.2.13'
       );
     },
     (xhr) => {

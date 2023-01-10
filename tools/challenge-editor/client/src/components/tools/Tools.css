@@ -9,4 +9,5 @@ input {
   border: 2px solid var(--content);
   padding: 6px 12px;
   margin-left: 10px;
+  color: white;
 }

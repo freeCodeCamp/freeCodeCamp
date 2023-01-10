@@ -37,7 +37,7 @@ O código deve adicionar um atributo `accesskey` à tag `a` com o `id` de `secon
 assert($('#second').attr('accesskey'));
 ```
 
-O código deve definir o atributo `accesskey` na tag `a` com o `id` de `first` para `g`. Observe que letras maiúsculas e minúsculas diferem.
+O código deve definir o atributo `accesskey` na tag `a` com o `id` de `first` para `g`. Observe que maiúsculas e minúsculas diferem.
 
 ```js
 assert($('#first').attr('accesskey') == 'g');

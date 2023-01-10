@@ -8,17 +8,23 @@ dashedName: stock-price-checker
 
 # --description--
 
-Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <https://stock-price-checker.freecodecamp.rocks/>.
+Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <a href="https://stock-price-checker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker.freecodecamp.rocks/</a>.
 
-Poiché tutte le API di stock price affidabili richiedono una chiave API, abbiamo costruito una soluzione alternativa. Usa <https://stock-price-checker-proxy.freecodecamp.rocks/> per ottenere informazioni aggiornate sul prezzo delle azioni senza doverti iscrivere per ottenere la tua chiave.
+Poiché tutte le API di stock price affidabili richiedono una chiave API, abbiamo costruito una soluzione alternativa. Usa <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker-proxy.freecodecamp.rocks/</a> per ottenere informazioni aggiornate sul prezzo delle azioni senza doverti iscrivere per ottenere la tua chiave.
 
 Lavorare su questo progetto ti porterà a scrivere il tuo codice utilizzando uno dei seguenti metodi:
 
--   Clonare [questo repository GitHub](https://github.com/freeCodeCamp/boilerplate-project-stockchecker/) e completare il tuo progetto localmente.
--   Usare [la nostra bozza di progetto su Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker) per completare il tuo progetto.
+-   Clonare <a href="https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow">questo repository GitHub</a> e completare il tuo progetto localmente.
+-   Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare il tuo progetto.
 -   Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
+Se utilizzi Replit, segui questi passaggi per impostare il progetto:
+
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
+
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo Link alla soluzione. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo Link GitHub.
 
 # --instructions--
 
@@ -27,7 +33,7 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 3.  Aggiungerai tutte le funzionalità di sicurezza a `server.js`
 4.  Creerai tutti i test funzionali in `tests/2_functional-tests.js`
 
-**Nota** Considerazioni sulla privacy: a causa del requisito che solo 1 like per IP dovrebbe essere accettato, è necessario salvare gli indirizzi IP. È importante mantenere il rispetto delle leggi sulla privacy dei dati come il General Data Protection Regulation. Una opzione è quella di ottenere il permesso di salvare i dati dell'utente, ma è molto più semplice anonimizzarlo. Per questa sfida, ricordati di anonimizzare gli indirizzi IP prima di salvarli nel database. Se hai bisogno di idee su come farlo, puoi scegliere di fare l'hash dei dati, troncare l'IP, o impostare parte dell'indirizzo IP a 0.
+**Nota** Considerazioni sulla privacy: a causa del requisito che solo 1 like per IP dovrebbe essere accettato, è necessario salvare gli indirizzi IP. È importante mantenere il rispetto delle leggi sulla privacy dei dati come il General Data Protection Regulation. Una opzione è quella di ottenere il permesso di salvare i dati dell'utente, ma è molto più semplice renderlo anonimo. Per questa sfida, ricordati di anonimizzare gli indirizzi IP prima di salvarli nel database. Se hai bisogno di idee su come farlo, puoi scegliere di fare l'hash dei dati, troncare l'IP, o impostare parte dell'indirizzo IP a 0.
 
 Scrivi i seguenti test in `tests/2_functional-tests.js`:
 
@@ -39,7 +45,7 @@ Scrivi i seguenti test in `tests/2_functional-tests.js`:
 
 # --hints--
 
-È necessario fornire il proprio progetto, non l'URL di esempio.
+Puoi fornire il tuo progetto e non l'URL di esempio.
 
 ```js
 (getUserInput) => {
@@ -112,7 +118,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 5 test funzionali richiesti sono completi e superati.
+Tutti i 5 test funzionali sono completi e superati.
 
 ```js
 async (getUserInput) => {

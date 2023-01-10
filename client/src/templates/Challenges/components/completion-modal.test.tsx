@@ -5,15 +5,10 @@ jest.mock('../../../analytics');
 const completedChallengesIds = ['1', '3', '5'],
   currentBlockIds = ['1', '3', '5', '7'],
   id = '7',
-  fakeId = '12345',
   fakeCompletedChallengesIds = ['1', '3', '5', '7', '8'];
 
 describe('<CompletionModal />', () => {
   describe('getCompletedPercent', () => {
-    it('returns 0 if no challenges have been completed', () => {
-      expect(getCompletedPercent([], currentBlockIds, fakeId)).toBe(0);
-    });
-
     it('returns 25 if one out of four challenges are complete', () => {
       expect(getCompletedPercent([], currentBlockIds, currentBlockIds[1])).toBe(
         25

@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc800b
 title: Алгоритми сортування/Млинцеве сортування
-challengeType: 5
+challengeType: 1
 forumTopicId: 302315
 dashedName: sorting-algorithmspancake-sort
 ---
 
 # --description--
 
-Напишіть функцію для сортування масиву цілих чисел (будь-якого зручного розміру) у порядку зростання за допомогою [млинцевого сортування](https://en.wikipedia.org/wiki/Pancake sorting). Функція має повернути впорядкований масив.
+Write a function to sort an array of integers (of any convenient size) into ascending order using Pancake sorting. Функція має повернути впорядкований масив.
 
 Коротко кажучи, замість сортування окремих елементів єдина дозволена операція – це «перевертання» одного кінця списку, наприклад:
 

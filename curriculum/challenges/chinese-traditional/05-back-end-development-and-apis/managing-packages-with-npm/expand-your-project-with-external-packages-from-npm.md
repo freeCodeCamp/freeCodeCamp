@@ -22,13 +22,13 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --instructions--
 
-在 package.json 文件的 `dependencies` 字段中添加一個版本號爲“2.14.0”的“moment”包。
+將 `@freecodecamp/example` 包的版本 “1.1.0” 添加到 `package.json` 文件的 `dependencies` 字段。
 
-**注意：** Moment 是一個非常方便地用來處理時間和日期的庫。
+**注意：** `@freecodecamp/example` 是一個用作學習工具的仿包。
 
 # --hints--
 
-“dependencies”字段應該包含“moment”
+`"dependencies"` 應包括 `"@freecodecamp/example"`。
 
 ```js
 (getUserInput) =>
@@ -37,8 +37,8 @@ dashedName: expand-your-project-with-external-packages-from-npm
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -47,7 +47,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
   );
 ```
 
-“moment”的版本應該是“2.14.0”
+`"@freecodecamp/example"` 版本應爲 `"1.1.0"`。
 
 ```js
 (getUserInput) =>
@@ -55,9 +55,9 @@ dashedName: expand-your-project-with-external-packages-from-npm
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^[\^\~]?2\.14\.0/,
-        'Wrong version of "moment" installed. It should be 2.14.0'
+        packJson.dependencies["@freecodecamp/example"],
+        /^[\^\~]?1\.1\.0/,
+        'Wrong version of "@freecodecamp/example" installed. It should be 1.1.0'
       );
     },
     (xhr) => {

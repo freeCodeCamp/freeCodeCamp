@@ -1,7 +1,7 @@
 ---
 id: 5900f4ed1000cf542c50ffff
 title: 'Problema 383: comparazione di divisibilità tra fattoriali'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302047
 dashedName: problem-383-divisibility-comparison-between-factorials
 ---

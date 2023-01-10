@@ -15,7 +15,7 @@ dashedName: practice-comparing-different-values
 
 **示例**
 
-`3 == '3'` 返回 `true` ，因为 JavaScript 执行了从字符串到数字类型的转换。 `3 === '3'` 返回 false，因为类型不同且类型转换没有执行。
+`3 == '3'` 返回 `true` ，因为 JavaScript 执行了从字符串到数字类型的转换。 `3 === '3'` 返回 `false`，因为类型不同，没有进行类型转换。
 
 **提示** 在 JavaScript 中，你可以使用 `typeof` 运算符确定变量或值的类型，如下所示：
 

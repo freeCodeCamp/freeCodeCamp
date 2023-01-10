@@ -21,12 +21,12 @@ const arr = [
   [[10, 11, 12], 13, 14]
 ];
 
-arr[3];
-arr[3][0];
-arr[3][0][1];
+const subarray = arr[3];
+const nestedSubarray = arr[3][0];
+const element = arr[3][0][1];
 ```
 
-`arr[3]` é `[[10, 11, 12], 13, 14]`, `arr[3][0]` é `[10, 11, 12]`, e `arr[3][0][1]` é `11`.
+Neste exemplo, `subarray` tem o valor de `[[10, 11, 12], 13, 14]`, `nestedSubarray` tem o valor de `[10, 11, 12]` e `element` tem o valor de `11` .
 
 **Observação:** não deve haver nenhum espaço entre o nome do array e os colchetes como `array [0][0]` e até mesmo `array [0] [0]` não é permitido. Embora JavaScript seja capaz de processar isso corretamente, isso pode confundir outros programadores lendo seu código.
 

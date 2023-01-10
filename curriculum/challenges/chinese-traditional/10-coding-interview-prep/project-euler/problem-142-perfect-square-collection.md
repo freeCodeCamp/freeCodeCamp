@@ -1,7 +1,7 @@
 ---
 id: 5900f3fa1000cf542c50ff0d
 title: '問題 142：完全平方數合集'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301771
 dashedName: problem-142-perfect-square-collection
 ---

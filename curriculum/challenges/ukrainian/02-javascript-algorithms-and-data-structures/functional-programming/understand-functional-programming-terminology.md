@@ -18,7 +18,7 @@ dashedName: understand-functional-programming-terminology
 
 Функції, що призначені для змінної, передані в іншу функцію, або навпаки повернені від іншої функції, так само як інше звичайне значення, називається функції <dfn>first class</dfn>. У JavaScript, всі функції - це функції першого класу.
 
-Функції, що приймають функцію як аргумент, або повертають функцію як повернуте значення, називаються <dfn>higher order</dfn> функції.
+The functions that take a function as an argument, or return a function as a return value, are called <dfn>higher order</dfn> functions.
 
 Коли функції передаються або повертаються від іншої функції, тоді ті функції, які були передані або повернені, можуть називатися <dfn>lambda</dfn>.
 

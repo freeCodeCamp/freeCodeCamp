@@ -4,3 +4,6 @@ export const handleRequest = (makeRequest: () => Promise<Response>) => () => {
     .then(data => alert(JSON.stringify(data)))
     .catch(err => console.error(err));
 };
+
+export const API_LOCATION = process.env
+  .REACT_APP_CHALLENGE_EDITOR_API_LOCATION as string;

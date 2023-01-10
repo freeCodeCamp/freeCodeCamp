@@ -1,27 +1,27 @@
 ---
 id: 5900f4d01000cf542c50ffe3
 title: 'Problem 356: Largest roots of cubic polynomials'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302016
 dashedName: problem-356-largest-roots-of-cubic-polynomials
 ---
 
 # --description--
 
-Let an be the largest real root of a polynomial g(x) = x3 - 2n·x2 + n.
+Let $a_n$ be the largest real root of a polynomial $g(x) = x^3 - 2^n \times x^2 + n$.
 
-For example, a2 = 3.86619826...
+For example, $a_2 = 3.86619826\ldots$
 
-Find the last eight digits of.
+Find the last eight digits of $\displaystyle\sum_{i = 1}^{30} \lfloor {a_i}^{987654321}\rfloor$.
 
-Note: represents the floor function.
+**Note:** $\lfloor a\rfloor$ represents the floor function.
 
 # --hints--
 
-`euler356()` should return 28010159.
+`rootsOfCubicPolynomials()` should return `28010159`.
 
 ```js
-assert.strictEqual(euler356(), 28010159);
+assert.strictEqual(rootsOfCubicPolynomials(), 28010159);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler356(), 28010159);
 ## --seed-contents--
 
 ```js
-function euler356() {
+function rootsOfCubicPolynomials() {
 
   return true;
 }
 
-euler356();
+rootsOfCubicPolynomials();
 ```
 
 # --solutions--

@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8038
 title: Subleq
-challengeType: 5
+challengeType: 1
 forumTopicId: 302328
 dashedName: subleq
 ---

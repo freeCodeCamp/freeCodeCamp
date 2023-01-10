@@ -2,7 +2,7 @@
 id: 5900f41a1000cf542c50ff2d
 title: >-
   問題 174: 1, 2, 3, ... 種類の配置を作れる「穴あき」正方層を数え上げる
-challengeType: 5
+challengeType: 1
 forumTopicId: 301809
 dashedName: >-
   problem-174-counting-the-number-of-hollow-square-laminae-that-can-form-one-two-three-----distinct-arrangements

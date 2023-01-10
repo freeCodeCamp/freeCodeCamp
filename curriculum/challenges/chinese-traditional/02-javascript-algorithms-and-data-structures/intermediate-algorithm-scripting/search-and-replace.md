@@ -1,7 +1,7 @@
 ---
 id: a0b5010f579e69b815e7c5d6
 title: 搜索與替換
-challengeType: 5
+challengeType: 1
 forumTopicId: 16045
 dashedName: search-and-replace
 ---

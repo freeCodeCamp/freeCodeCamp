@@ -69,9 +69,9 @@ Scegli un file markdown dalle opzioni sopra.
 
 ### Guarda velocemente il video associato alla sfida e crea una domanda a scelta multipla
 
-Come prima cosa, trova l'id del video.
+Come prima cosa, trova `videoId`.
 
-Ad esempio, nel seguente codice preso dall'intestazione di un file di markdown di una sfida video, il videoId è "nVAaxZ34khk". Su GitHub, le informazioni dovrebbero essere visibili in una tabella.
+Ad esempio, nel seguente codice preso dall'intestazione di un file di markdown di una sfida video, `videoId` è "nVAaxZ34khk". Su GitHub, le informazioni dovrebbero essere visibili in una tabella.
 
 ````
 ---
@@ -81,12 +81,12 @@ videoId: nVAaxZ34khk
 ```
 
 Come cosa successiva, accedi al video YouYube con quel `videoId`. L'URL di quel video sarà:
-https://www.youtube.com/watch?v=[videoId] (sostisci `videoId` nell'URL con l'ID del video - senza parentesi quadre)
+https://www.youtube.com/watch?v=[videoId] (sostituisci `videoId` nell'URL con l'ID del video - senza parentesi quadre)
 
 Nell'esempio sopra, l'URL è 
 https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Guarda velocemente il video YouTube con quel videoId e pensa a una domanda a crocette basata sul contenuto del video.
+Guarda velocemente il video YouTube con quel `videoId` e pensa a una domanda a crocette basata sul contenuto del video.
 
 ### Aggiungere la domanda al file markdown
 

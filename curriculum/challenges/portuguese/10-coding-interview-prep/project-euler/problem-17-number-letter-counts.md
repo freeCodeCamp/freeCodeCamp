@@ -1,7 +1,7 @@
 ---
 id: 5900f37d1000cf542c50fe90
 title: 'Problema 17: Contador de letras'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301804
 dashedName: problem-17-number-letter-counts
 ---

@@ -39,7 +39,7 @@ Dovresti usare due virgolette doppie (`"`) e quattro virgolette doppie con escap
 assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
 ```
 
-La variabile myStr dovrebbe contenere la stringa: `I am a "double quoted" string inside "double quotes".`
+La variabile `myStr` dovrebbe contenere la stringa: `I am a "double quoted" string inside "double quotes".`
 
 ```js
 assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(myStr));

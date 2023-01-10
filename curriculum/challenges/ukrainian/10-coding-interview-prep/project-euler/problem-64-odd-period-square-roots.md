@@ -1,7 +1,7 @@
 ---
 id: 5900f3ac1000cf542c50febf
 title: 'Завдання 64: Квадратні корені з непарним періодом'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302176
 dashedName: problem-64-odd-period-square-roots
 ---
@@ -12,7 +12,7 @@ dashedName: problem-64-odd-period-square-roots
 
 $\\displaystyle \\quad \\quad \\sqrt{N}=a_0+\\frac 1 {a_1+\\frac 1 {a_2+ \\frac 1 {a3+ \\dots}}}$
 
-Наприклад, розгляньмо $\\sqrt{23}:$:
+For example, let us consider $\\sqrt{23}$:
 
 $\\quad \\quad \\sqrt{23}=4+\\sqrt{23}-4=4+\\frac 1 {\\frac 1 {\\sqrt{23}-4}}=4+\\frac 1 {1+\\frac{\\sqrt{23}-3}7}$
 

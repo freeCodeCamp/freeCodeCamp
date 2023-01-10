@@ -22,11 +22,11 @@ Content-Length: 20
 name=John+Doe&age=25
 ```
 
-正如你所看到的，正文被編碼成類似查詢字符串的形式， 這是 HTML 表單使用的默認格式。 我們還可以通過 Ajax 使用 JSON 來處理具有更復雜結構的數據。 還有另一種類型的編碼：multipart/form-data， 它被用來上傳二進制文件。 在本練習中，我們將使用 URL 編碼請求正文。 要解析來自 POST 請求的數據，你必須安裝 `body-parser` 包， 這個包包含一套可以解碼不同格式數據的中間件。
+正如你所看到的，正文被編碼成類似查詢字符串的形式， 這是 HTML 表單使用的默認格式。 我們還可以通過 Ajax 使用 JSON 來處理具有更復雜結構的數據。 還有另一種類型的編碼：multipart/form-data， 它被用來上傳二進制文件。 在本練習中，你將使用 URL 編碼的正文。 要解析來自 POST 請求的數據，你必須使用 `body-parser` 包。 這個包包含一套可以解碼不同格式數據的中間件。
 
 # --instructions--
 
-在 `package.json` 中安裝 `body-parser` 模塊， 然後在文件頂部 `require` 進來， 用變量 `bodyParser` 保存它。 通過中間件的 `bodyParser.urlencoded({extended: false})` 方法處理 URL 編碼數據， 將通過先前的方法調用返回的函數傳遞到 `app.use()`。 中間件通常掛載在所有需要它的路由之前。
+`body-parser` 已經安裝並且在你項目的 `package.json` 文件中。 在 `myApp.js` 文件的頂部包含（`require`）它，並將其存儲在名爲 `bodyParser` 的變量中。 `bodyParser.urlencoded({extended: false})` 返回處理 URL 編碼數據的中間件。 將上一個方法調用返回的函數傳遞給 `app.use()`。 像往常一樣，中間件必須在所有依賴它的路由之前安裝。
 
 **注意：** `extended` 是一個配置選項, 告訴 `body-parser` 需要使用哪個解析。 當 `extended=false` 時，它使用經典編碼 `querystring` 庫。 當 `extended=true`時，它使用 `qs` 庫進行解析。
 

@@ -18,15 +18,15 @@ Para permitir que uma dependência do npm atualize para a última versão de PAT
 
 # --instructions--
 
-No arquivo package.json, sua regra atual de como o npm pode atualizar o moment é usar uma versão específica (2.10.2). Mas agora, você deseja permitir a última versão de 2.10.x.
+No arquivo package.json, a regra atual de como o npm pode atualizar `@freecodecamp/example` é usar uma versão específica (1.2.13). Mas agora, você deseja permitir a última versão de 1.2.x.
 
-Use o caractere de til (`~`) para prefixar a versão do momento em suas dependências e permitir que o npm atualize para qualquer versão de PATCH.
+Use o til (`~`) para prefixar a versão de `@freecodecamp/example` nas dependências e permitir que o npm atualize o pacote para qualquer nova versão _patch_.
 
 **Observação:** os números da versão em si não devem ser alterados.
 
 # --hints--
 
-"dependencies" deve incluir o "moment"
+`"dependencies"` deve incluir `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ Use o caractere de til (`~`) para prefixar a versão do momento em suas dependê
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ Use o caractere de til (`~`) para prefixar a versão do momento em suas dependê
   );
 ```
 
-A versão do "moment" deve corresponder a "~2.10.2"
+A versão de `"@freecodecamp/example"` deve corresponder a `"~1.2.13"`.
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ A versão do "moment" deve corresponder a "~2.10.2"
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^\~2\.10\.2/,
-        'Wrong version of "moment". It should be ~2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\~1\.2\.13/,
+        'Wrong version of "@freecodecamp/example". It should be ~1.2.13'
       );
     },
     (xhr) => {

@@ -1,6 +1,6 @@
 ---
 id: 587d8259367417b2b2512c83
-title: Invert a Binary Tree
+title: Invertir un árbol binario
 challengeType: 1
 forumTopicId: 301704
 dashedName: invert-a-binary-tree
@@ -8,11 +8,11 @@ dashedName: invert-a-binary-tree
 
 # --description--
 
-Here will we create a function to invert a binary tree. Given a binary tree, we want to produce a new tree that is equivalently the mirror image of this tree. Running an inorder traversal on an inverted tree will explore the nodes in reverse order when compared to the inorder traversal of the original tree. Write a method to do this called `invert` on our binary tree. Calling this method should invert the current tree structure. Ideally, we would like to do this in-place in linear time. That is, we only visit each node once and we modify the existing tree structure as we go, without using any additional memory. Good luck!
+Aquí crearemos una función para invertir un árbol binario. Dado un árbol binario, queremos producir un nuevo árbol que sea equivalentemente la imagen espejo de este árbol. Ejecutar un transversal en orden inverso en un árbol invertido explorará los nodos en orden inverso, cuando se compara con el travesía en orden inordenado del árbol original. Escribe un método para hacer esto llamado `invert` en nuestro árbol binario. Llamar a este método debería invertir la estructura actual del árbol. Idealmente, nos gustaría hacerlo en su lugar en el tiempo lineal. Es decir, sólo visitamos cada nodo una vez y modificamos la estructura de árbol existente a medida que vamos, sin necesidad de usar ningún recuerdo adicional. ¡Buena suerte!
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+La estructura de datos `BinarySearchTree` debe existir.
 
 ```js
 assert(
@@ -26,7 +26,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `invert`.
+El árbol binario de búsqueda debe tener un método llamado `invert`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-The `invert` method should correctly invert the tree structure.
+El método `invert` debe invertir correctamente la estructura del árbol.
 
 ```js
 assert(
@@ -70,7 +70,7 @@ assert(
 );
 ```
 
-Inverting an empty tree should return `null`.
+Invertir una lista vacía debe devolver `null`.
 
 ```js
 assert(

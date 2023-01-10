@@ -1,8 +1,8 @@
 ---
 id: 5dfb5ecbeacea3f48c6300b1
-title: Step 20
+title: Step 21
 challengeType: 0
-dashedName: step-20
+dashedName: step-21
 ---
 
 # --description--
@@ -16,7 +16,9 @@ Usa gli elementi list item (`li`) per creare punti in una lista. Ecco un esempio
 </ul>
 ```
 
-Annida tre elementi list item all'interno dell'elemento `ul` per visualizzare tre cose che i gatti amano: `cat nip`, `laser pointers` e `lasagna`.
+Dentro l'elemento `ul` annida tre elementi `li` per mostrare tre cose che piacciono ai gatti:
+
+`cat nip` `laser pointers` `lasagna`
 
 # --hints--
 
@@ -54,12 +56,12 @@ assert(
 ```html
 <html>
   <body>
-    <h1>CatPhotoApp</h1>
     <main>
+      <h1>CatPhotoApp</h1>
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
-        <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
+        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
         <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
       </section>
       <section>
@@ -67,6 +69,7 @@ assert(
         <h3>Things cats love:</h3>
 --fcc-editable-region--
         <ul>
+
         </ul>
 --fcc-editable-region--
       </section>

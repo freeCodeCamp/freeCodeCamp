@@ -1,7 +1,7 @@
 ---
 id: 5900f4c01000cf542c50ffd2
 title: 'Problem 339: Peredur fab Efrawg'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301997
 dashedName: problem-339-peredur-fab-efrawg
 ---

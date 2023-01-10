@@ -11,28 +11,26 @@ dashedName: using-objects-for-lookups
 
 Об'єкти можна вважати сховищем ключів та значень, як словники. Якщо ви маєте табличні дані, ви краще можете використати об'єкт для пошуку значень, ніж `switch` твердження або `if/else` ланцюжок. Це найбільш корисно, коли ви знаєте, що ваші вхідні дані обмежені до певного діапазону.
 
-Ось приклад простого пошуку алфавіту в зворотньому порядку:
+Here is an example of an article object:
 
 ```js
-const alpha = {
-  1:"Z",
-  2:"Y",
-  3:"X",
-  4:"W",
-  ...
-  24:"C",
-  25:"B",
-  26:"A"
+const article = {
+  "title": "How to create objects in JavaScript",
+  "link": "https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/",
+  "author": "Kaashan Hussain",
+  "language": "JavaScript",
+  "tags": "TECHNOLOGY",
+  "createdAt": "NOVEMBER 28, 2018"
 };
 
-alpha[2];
-alpha[24];
+const articleAuthor = article["author"];
+const articleLink = article["link"];
 
-const value = 2;
-alpha[value];
+const value = "title";
+const valueLookup = article[value];
 ```
 
-`alpha[2]` - це рядок `Y`, `alpha[24]` - це рядок `C`, а `alpha[value]` - це рядок `Y`.
+`articleAuthor` is the string `Kaashan Hussain`, `articleLink` is the string `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`, and `valueLookup` is the string `How to create objects in JavaScript`.
 
 # --instructions--
 

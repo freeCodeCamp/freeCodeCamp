@@ -1,7 +1,7 @@
 ---
 id: 5900f4691000cf542c50ff7b
 title: '問題 252: 凸状の穴'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301900
 dashedName: problem-252-convex-holes
 ---

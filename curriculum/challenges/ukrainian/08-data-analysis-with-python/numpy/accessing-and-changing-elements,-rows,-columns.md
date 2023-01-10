@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed4
-title: 'Доступ та зміна елементів, рядків, стовпців'
+title: 'Доступ та зміна елементів, рядків, стовпчиків'
 challengeType: 11
 videoId: v-7Y7koJ_N0
 bilibiliIds:

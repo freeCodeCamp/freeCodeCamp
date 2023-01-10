@@ -1,14 +1,14 @@
 ---
 id: 5eaf48389ee512d4d103684b
 title: Self Describing Numbers
-challengeType: 5
+challengeType: 1
 forumTopicId: 385289
 dashedName: self-describing-numbers
 ---
 
 # --description--
 
-There are several so-called "self describing" or ["self-descriptive"](https://en.wikipedia.org/wiki/Self-descriptive_number) integers.
+There are several so-called "self-describing" or "self-descriptive" integers.
 
 An integer is said to be "self-describing" if it has the property that, when digit positions are labeled 0 to N-1, the digit in each position is equal to the number of times that digit appears in the number.
 
@@ -25,7 +25,7 @@ Self-describing numbers &lt; 100,000,000 are: 1210, 2020, 21200, 3211000, 421010
 
 # --instructions--
 
-Write a function that takes a positive integer as a parameter. If it is self-describing return true. Otherwise, return false.
+Write a function that takes a positive integer as a parameter. If it is self-describing return true. 否則，返回 false。
 
 # --hints--
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f4f91000cf542c51000c
 title: 'Problema 397: Triângulo na parábola'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302062
 dashedName: problem-397-triangle-on-parabola
 ---

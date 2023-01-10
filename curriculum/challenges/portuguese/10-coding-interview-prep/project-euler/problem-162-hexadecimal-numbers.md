@@ -1,7 +1,7 @@
 ---
 id: 5900f40e1000cf542c50ff21
 title: 'Problema 162: Números hexadecimais'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301796
 dashedName: problem-162-hexadecimal-numbers
 ---

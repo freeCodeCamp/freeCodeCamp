@@ -1,7 +1,7 @@
 ---
 id: 5900f51f1000cf542c510031
 title: 'Problem 434: Rigid graphs'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302105
 dashedName: problem-434-rigid-graphs
 ---
@@ -18,18 +18,32 @@ A rigid graph is an embedding of a graph which is not flexible.
 
 Informally, a graph is rigid if by replacing the vertices with fully rotating hinges and the edges with rods that are unbending and inelastic, no parts of the graph can be moved independently from the rest of the graph.
 
-The grid graphs embedded in the Euclidean plane are not rigid, as the following animation demonstrates: However, one can make them rigid by adding diagonal edges to the cells. For example, for the 2x3 grid graph, there are 19 ways to make the graph rigid: Note that for the purposes of this problem, we do not consider changing the orientation of a diagonal edge or adding both diagonal edges to a cell as a different way of making a grid graph rigid.
+The grid graphs embedded in the Euclidean plane are not rigid, as the following animation demonstrates:
 
-Let R(m,n) be the number of ways to make the m × n grid graph rigid. E.g. R(2,3) = 19 and R(5,5) = 23679901
+<img class="img-responsive center-block" alt="animation showing grid graphs are not rigid in Euclidean plane" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px;" />
 
-Define S(N) as ∑R(i,j) for 1 ≤ i, j ≤ N. E.g. S(5) = 25021721. Find S(100), give your answer modulo 1000000033
+However, one can make them rigid by adding diagonal edges to the cells. For example, for the 2x3 grid graph, there are 19 ways to make the graph rigid:
+
+<img class="img-responsive center-block" alt="19 ways to make 2x3 grid graph rigid" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px;" />
+
+Note that for the purposes of this problem, we do not consider changing the orientation of a diagonal edge or adding both diagonal edges to a cell as a different way of making a grid graph rigid.
+
+Let $R(m, n)$ be the number of ways to make the $m × n$ grid graph rigid.
+
+E.g. $R(2, 3) = 19$ and $R(5, 5) = 23\\,679\\,901$.
+
+Define $S(N)$ as $\sum R(i, j)$ for $1 ≤ i$, $j ≤ N$.
+
+E.g. $S(5) = 25\\,021\\,721$.
+
+Find $S(100)$, give your answer modulo $1\\,000\\,000\\,033$.
 
 # --hints--
 
-`euler434()` should return 863253606.
+`rigidGraphs()` should return `863253606`.
 
 ```js
-assert.strictEqual(euler434(), 863253606);
+assert.strictEqual(rigidGraphs(), 863253606);
 ```
 
 # --seed--
@@ -37,12 +51,12 @@ assert.strictEqual(euler434(), 863253606);
 ## --seed-contents--
 
 ```js
-function euler434() {
+function rigidGraphs() {
 
   return true;
 }
 
-euler434();
+rigidGraphs();
 ```
 
 # --solutions--

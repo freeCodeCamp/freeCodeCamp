@@ -8,13 +8,19 @@ dashedName: file-metadata-microservice
 
 # --description--
 
-<https://file-metadata-microservice.freecodecamp.rocks/> と同様の機能を持つフルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
+<a href="https://file-metadata-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://file-metadata-microservice.freecodecamp.rocks</a> と同じような機能を持つ、フルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
--   [GitHub リポジトリ](https://github.com/freeCodeCamp/boilerplate-project-filemetadata/)をクローンし、ローカル環境でプロジェクトを完了させる。
--   [Replit 始動プロジェクト](https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata)を使用して、プロジェクトを完了させる。
+-   <a href="https://github.com/freeCodeCamp/boilerplate-project-filemetadata/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でチャレンジを完了させる。
+-   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、プロジェクトのソースコードへのリンクも、`GitHub Link` フィールドへ提出してください。
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
+
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
+
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
@@ -22,7 +28,7 @@ dashedName: file-metadata-microservice
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供する必要があります。
+サンプルの URL ではなく、自分で作成したプロジェクトを提出する必要があります。
 
 ```js
 (getUserInput) => {
@@ -45,7 +51,7 @@ async (getUserInput) => {
 };
 ```
 
-フォームのファイル入力フィールドの `name` 属性を `upfile` に設定します。
+フォームのファイル入力フィールドの `name` 属性が `upfile` に設定されています。
 
 ```js
 async (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-ファイルを送信すると、JSON レスポンスの中で `name`、`type` および `size` (バイト単位) を受け取ります。
+ファイルを送信すると、`name`、`type` および `size` (バイト単位) を含む JSON レスポンスを受け取ります。
 
 ```js
 async (getUserInput) => {

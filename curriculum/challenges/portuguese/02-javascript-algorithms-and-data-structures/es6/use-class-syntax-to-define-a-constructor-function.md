@@ -12,24 +12,35 @@ ES6 fornece uma nova sintaxe para criar objetos, usando a palavra-chave <dfn>cla
 
 Deve ser notado que a sintaxe `class` é apenas sintaxe, um <dfn>syntatical sugar</dfn>. JavaScript ainda não oferece suporte completo ao paradigma orientado a objetos, ao contrário do que acontece em linguagens como Java, Python, Ruby, etc.
 
-No ES5, geralmente definimos uma função construtora (`constructor` function) e usamos a palavra-chave `new` para instanciar um objeto.
+No ES5, um objeto pode ser criado definindo uma função `constructor` e usando a palavra-chave `new` para instanciar o objeto.
+
+No ES6, uma declaração de `class` tem um método `constructor`, que é invocado com a palavra-chave `new`. Se o método `constructor` não for explicitamente definido, ele será definido implicitamente sem argumentos.
 
 ```js
-var SpaceShuttle = function(targetPlanet){
-  this.targetPlanet = targetPlanet;
-}
-var zeus = new SpaceShuttle('Jupiter');
-```
-
-A sintaxe `class` simplesmente substitui a criação da função construtora (`constructor`):
-
-```js
+// Explicit constructor
 class SpaceShuttle {
   constructor(targetPlanet) {
     this.targetPlanet = targetPlanet;
   }
+  takeOff() {
+    console.log("To " + this.targetPlanet + "!");
+  }
 }
+
+// Implicit constructor 
+class Rocket {
+  launch() {
+    console.log("To the moon!");
+  }
+}
+
 const zeus = new SpaceShuttle('Jupiter');
+// prints To Jupiter! in console
+zeus.takeOff();
+
+const atlas = new Rocket();
+// prints To the moon! in console
+atlas.launch();
 ```
 
 Deve ser notado que a palavra-chave `class` declara uma nova função, para qual um construtor é adicionado. Esse construtor é invocado quando `new` é chamado na criação de um novo objeto.

@@ -1,7 +1,7 @@
 ---
 id: 5900f4a71000cf542c50ffba
 title: 'Problema 315: orologi a radici digitali'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301971
 dashedName: problem-315-digital-root-clocks
 ---

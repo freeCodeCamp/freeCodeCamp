@@ -1,14 +1,14 @@
 ---
 id: 594810f028c0303b75339ad8
 title: ジグザグ行列
-challengeType: 5
+challengeType: 1
 forumTopicId: 302348
 dashedName: zig-zag-matrix
 ---
 
 # --description--
 
-「ジグザグ」配列は、最初の $N^2$ 個の整数の正方形の配置であり、配列の[反対角](https://en.wiktionary.org/wiki/antidiagonal)に沿ってジグザグに進むにつれて、数値が順番に増加します。
+A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's anti-diagonals.
 
 例えば、入力 `5`の場合、次の結果となります。
 

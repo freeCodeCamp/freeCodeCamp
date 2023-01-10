@@ -1,7 +1,7 @@
 ---
 id: 5900f3a41000cf542c50feb7
 title: 'Problema 56: Poderosa soma de algarismos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302167
 dashedName: problem-56-powerful-digit-sum
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f50c1000cf542c51001e
 title: '問題 415: タイタニック集合'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302084
 dashedName: problem-415-titanic-sets
 ---

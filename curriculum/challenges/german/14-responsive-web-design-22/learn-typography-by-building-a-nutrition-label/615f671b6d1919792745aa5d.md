@@ -1,0 +1,153 @@
+---
+id: 615f671b6d1919792745aa5d
+title: Step 39
+challengeType: 0
+dashedName: step-39
+---
+
+# --description--
+
+Create a new `div` element below your `.md` element. Give it a `class` attribute set to `daily-value sm-text`. Within this new `div`, add a `p` element with the text `% Daily Value *`, and set the `class` attribute to `right bold`.
+
+# --hints--
+
+You should create a new `div` element after your `.md` element.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.localName === 'div');
+assert(document.querySelector('.label')?.lastElementChild?.previousElementSibling?.classList?.contains('divider'));
+assert(document.querySelector('.label')?.lastElementChild?.previousElementSibling?.classList?.contains('md'));
+```
+
+Your new `div` should have a `class` attribute set to `daily-value sm-text`.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.classList?.contains('daily-value'));
+assert(document.querySelector('.label')?.lastElementChild?.classList?.contains('sm-text'));
+```
+
+Your new `div` element should have a `p` element.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.firstElementChild?.localName === 'p');
+```
+
+Your new `p` element should have the text `% Daily Value *`.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.firstElementChild?.textContent === '% Daily Value *');
+```
+
+Your new `p` element should have a `class` attribute set to `right bold`.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.firstElementChild?.classList?.contains('right'));
+assert(document.querySelector('.label')?.lastElementChild?.firstElementChild?.classList?.contains('bold'));
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Nutrition Label</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="label">
+      <header>
+        <h1 class="bold">Nutrition Facts</h1>
+        <div class="divider"></div>
+        <p>8 servings per container</p>
+        <p class="bold">Serving size <span class="right">2/3 cup (55g)</span></p>
+      </header>
+      <div class="divider lg"></div>
+      <div class="calories-info">
+        <p class="bold sm-text">Amount per serving</p>
+        <h1>Calories <span class="right">230</span></h1>
+      </div>
+      <div class="divider md"></div>
+--fcc-editable-region--
+
+--fcc-editable-region--
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.label {
+  border: 2px solid black;
+  width: 270px;
+  margin: 20px auto;
+  padding: 0 7px;
+}
+
+header h1 {
+  text-align: center;
+  margin: -4px 0;
+  letter-spacing: 0.15px
+}
+
+p {
+  margin: 0;
+}
+
+.divider {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.right {
+  float: right;
+}
+
+.lg {
+  height: 10px;
+}
+
+.lg, .md {
+  background-color: black;
+  border: 0;
+}
+
+.md {
+  height: 5px;
+}
+
+.sm-text {
+  font-size: 0.85rem;
+}
+
+.calories-info h1 {
+  margin: -5px -2px;
+  overflow: hidden;
+}
+
+.calories-info span {
+  font-size: 1.2em;
+  margin-top: -7px;
+}
+```

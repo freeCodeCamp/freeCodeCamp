@@ -1,7 +1,7 @@
 ---
 id: 5900f4411000cf542c50ff53
 title: '問題 212: 直方体の総体積'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301854
 dashedName: problem-212-combined-volume-of-cuboids
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f3f61000cf542c50ff09
 title: 'Problema 138: Triangoli isoscele speciali'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301766
 dashedName: problem-138-special-isosceles-triangles
 ---

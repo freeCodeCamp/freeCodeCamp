@@ -1,7 +1,7 @@
 ---
 id: 5900f4c81000cf542c50ffdb
 title: '問題 348: 平方数と立方数の和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302007
 dashedName: problem-348-sum-of-a-square-and-a-cube
 ---

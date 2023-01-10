@@ -1,7 +1,7 @@
 ---
 id: 5900f4f11000cf542c510003
 title: 'Problema 387: Numeri di Harshad'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302051
 dashedName: problem-387-harshad-numbers
 ---

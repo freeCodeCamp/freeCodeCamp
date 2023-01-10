@@ -1,7 +1,8 @@
 import { ofType } from 'redux-observable';
 import { map } from 'rxjs/operators';
+
 import { actionTypes } from './action-types';
-import { unlockCode } from './';
+import { unlockCode } from './actions';
 
 function codeLockEpic(action$) {
   return action$.pipe(ofType(actionTypes.updateFile), map(unlockCode));

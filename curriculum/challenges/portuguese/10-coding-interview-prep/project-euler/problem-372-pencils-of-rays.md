@@ -1,7 +1,7 @@
 ---
 id: 5900f4e11000cf542c50fff3
 title: 'Problema 372: Feixe de raios'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302034
 dashedName: problem-372-pencils-of-rays
 ---

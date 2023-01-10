@@ -1,7 +1,7 @@
 ---
 id: 5900f45d1000cf542c50ff6f
 title: '問題 240: サイコロの目の上位'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301887
 dashedName: problem-240-top-dice
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f4701000cf542c50ff82
 title: 'Завдання 259: Досяжні Числа'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301907
 dashedName: problem-259-reachable-numbers
 ---

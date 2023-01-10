@@ -1,3 +1,5 @@
+@import './colors.css';
+
 @tailwind base;
 
 @layer base {

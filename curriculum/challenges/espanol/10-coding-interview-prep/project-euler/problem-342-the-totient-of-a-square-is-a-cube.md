@@ -1,7 +1,7 @@
 ---
 id: 5900f4c31000cf542c50ffd5
 title: 'Problem 342: The totient of a square is a cube'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302001
 dashedName: problem-342-the-totient-of-a-square-is-a-cube
 ---
@@ -10,20 +10,19 @@ dashedName: problem-342-the-totient-of-a-square-is-a-cube
 
 Consider the number 50.
 
-502 = 2500 = 22 × 54, so φ(2500) = 2 × 4 × 53 = 8 × 53 = 23 × 53. 1
+${50}^2 = 2500 = 2^2 × 5^4$, so $φ(2500) = 2 × 4 × 5^3 = 8 × 5^3 = 2^3 × 5^3$. $φ$ denotes Euler's totient function.
 
-So 2500 is a square and φ(2500) is a cube.
+So 2500 is a square and $φ(2500)$ is a cube.
 
-Find the sum of all numbers n, 1 &lt; n &lt; 1010 such that φ(n2) is a cube.
+Find the sum of all numbers $n$, $1 &lt; n &lt; {10}^{10}$ such that $φ(n^2)$ is a cube.
 
-1 φ denotes Euler's totient function.
 
 # --hints--
 
-`euler342()` should return 5943040885644.
+`totientOfSquare()` should return `5943040885644`.
 
 ```js
-assert.strictEqual(euler342(), 5943040885644);
+assert.strictEqual(totientOfSquare(), 5943040885644);
 ```
 
 # --seed--
@@ -31,12 +30,12 @@ assert.strictEqual(euler342(), 5943040885644);
 ## --seed-contents--
 
 ```js
-function euler342() {
+function totientOfSquare() {
 
   return true;
 }
 
-euler342();
+totientOfSquare();
 ```
 
 # --solutions--

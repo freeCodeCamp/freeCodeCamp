@@ -8,12 +8,18 @@ dashedName: mean-variance-standard-deviation-calculator
 
 # --description--
 
-Estarás [trabajando en este proyecto con nuestro código inicial en Replit](https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator).
+Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator" target="_blank" rel="noopener noreferrer nofollow" mark="crwd-mark ">trabajando en este proyecto con nuestro código de inicio Replit</a>.
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 
 Todavía estamos desarrollando la parte interactiva del currículo de Python. Por ahora, aquí hay algunos videos en el canal de YouTube de freeCodeCamp.org que te enseñaran todo lo que necesitas saber para completar este proyecto:
 
-- [Python para todo el mundo Curso en Video](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-- [Aprende el Video Curso de Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 

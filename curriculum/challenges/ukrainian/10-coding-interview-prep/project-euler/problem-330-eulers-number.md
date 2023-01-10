@@ -1,7 +1,7 @@
 ---
 id: 5900f4b71000cf542c50ffc9
 title: 'Завдання 330: Число Ейлера'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301988
 dashedName: problem-330-eulers-number
 ---

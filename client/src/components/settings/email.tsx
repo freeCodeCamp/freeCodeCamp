@@ -14,7 +14,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import isEmail from 'validator/lib/isEmail';
 
-import { updateMyEmail } from '../../redux/settings';
+import { updateMyEmail } from '../../redux/settings/actions';
 import { maybeEmailRE } from '../../utils';
 
 import BlockSaveButton from '../helpers/form/block-save-button';

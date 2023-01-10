@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ecb
 title: K-D ツリー
-challengeType: 5
+challengeType: 1
 forumTopicId: 302295
 dashedName: k-d-tree
 ---

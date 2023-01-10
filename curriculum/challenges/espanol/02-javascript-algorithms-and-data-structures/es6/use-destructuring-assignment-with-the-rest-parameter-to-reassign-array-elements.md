@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Utiliza la sintaxis de desestructuración con el parámetro rest para reasignar elementos de un arreglo
+  Desestructuración vía elementos rest
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -22,24 +22,28 @@ console.log(arr);
 
 La consola mostrará los valores `1, 2` y `[3, 4, 5, 7]`.
 
-Las variables `a` y `b` toman el primer y segundo valor del arreglo. Después de eso, debido a la presencia del parámetro rest, `arr` obtiene el resto de los valores en forma de un arreglo. El elemento rest sólo funciona correctamente como la última variable en la lista. Por ejemplo, no puedes usar el parámetro rest para capturar un sub-arreglo que deje fuera el último elemento del arreglo original.
+Las variables `a` y `b` toman el primer y segundo valor del arreglo. Luego de esto, debido a la presencia de sintaxis rest `arr` obtiene el rest de los valores en forma de un arreglo. El elemento rest sólo funciona correctamente como la última variable en la lista. Es decir, no se puede utilizar la sintaxis rest para capturar un sub arreglo que deje fuera el último elemento del arreglo original.
 
 # --instructions--
 
-Utiliza la sintaxis de desestructuración con el parámetro rest para realizar un `Array.prototype.slice()` eficaz, de tal manera que `arr` sea un sub-arreglo del arreglo original `source` con los dos primeros elementos omitidos.
+Utiliza una asignación de desestructuración con la sintaxis rest para emular el comportamiento de `Array.prototype.slice()`. `removeFirstTwo()` debe devolver un sub arreglo del arreglo original `list` con los dos primeros elementos omitidos.
 
 # --hints--
 
-`arr` debe ser `[3,4,5,6,7,8,9,10]`
+`removeFirstTwo([1, 2, 3, 4, 5])` debe devolver `[3, 4, 5]`
 
 ```js
-assert(arr.every((v, i) => v === i + 3) && arr.length === 8);
+const testArr_ = [1, 2, 3, 4, 5];
+const testArrWORemoved_ = removeFirstTwo(testArr_);
+assert(testArrWORemoved_.every((e, i) => e === i + 3) && testArrWORemoved_.length === 3);
 ```
 
-`source` debe ser `[1,2,3,4,5,6,7,8,9,10]`
+`removeFirstTwo()` no debe modificar `list`
 
 ```js
-assert(source.every((v, i) => v === i + 1) && source.length === 10);
+const testArr_ = [1, 2, 3, 4, 5];
+const testArrWORemoved_ = removeFirstTwo(testArr_);
+assert(testArr_.every((e, i) => e === i + 1) && testArr_.length === 5);
 ```
 
 `Array.slice()` no debe ser usado.
@@ -54,7 +58,7 @@ Se debe utilizar desestructuración en `list`.
 assert(
   __helpers
     .removeWhiteSpace(code)
-    .match(/\[(([_$a-z]\w*)?,){1,}\.\.\.arr\]=list/i)
+    .match(/\[(([_$a-z]\w*)?,){1,}\.\.\.shorterList\]=list/i)
 );
 ```
 
@@ -63,23 +67,25 @@ assert(
 ## --seed-contents--
 
 ```js
-const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
   // Only change code below this line
-  const arr = list; // Change this line
+  const shorterList = list; // Change this line
   // Only change code above this line
-  return arr;
+  return shorterList;
 }
-const arr = removeFirstTwo(source);
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
 ```
 
 # --solutions--
 
 ```js
-const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
-  const [, , ...arr] = list;
-  return arr;
+  const [, , ...shorterList] = list;
+  return shorterList;
 }
-const arr = removeFirstTwo(source);
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
 ```

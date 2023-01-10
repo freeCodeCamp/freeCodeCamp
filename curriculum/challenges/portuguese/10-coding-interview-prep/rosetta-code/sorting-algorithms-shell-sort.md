@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8010
 title: Ordenar algoritmos/ordenação de concha
-challengeType: 5
+challengeType: 1
 forumTopicId: 302317
 dashedName: sorting-algorithmsshell-sort
 ---

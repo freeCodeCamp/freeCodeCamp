@@ -1,7 +1,7 @@
 ---
 id: 5900f3e01000cf542c50fef3
 title: '問題 116: 赤タイル・緑タイル・青タイルのいずれか'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301742
 dashedName: problem-116-red-green-or-blue-tiles
 ---

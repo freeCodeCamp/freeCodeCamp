@@ -1,7 +1,7 @@
 ---
 id: 5900f4e51000cf542c50fff6
 title: 'Problem 374: Maximum Integer Partition Product'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302036
 dashedName: problem-374-maximum-integer-partition-product
 ---

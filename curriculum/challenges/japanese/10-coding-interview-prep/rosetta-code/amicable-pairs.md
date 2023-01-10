@@ -1,49 +1,51 @@
 ---
 id: 5949b579404977fbaefcd737
 title: 友愛数
-challengeType: 5
+challengeType: 1
 forumTopicId: 302225
 dashedName: amicable-pairs
 ---
 
 # --description--
 
-2つの整数、$N$と$M$は、 $N \\neq M$であり、[真の約数](https://rosettacode.org/wiki/Proper divisors "Proper divisors") の合計に関して、$N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ かつ $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$である場合に、[友愛数](https://en.wikipedia.org/wiki/Amicable numbers "wp: Amicable numbers")です。
+Two integers $N$ and $M$ are said to be amicable pairs if $N \\neq M$ and the sum of the proper divisors of $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ as well as $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
 
 **例:**
 
 **1184** と **1210** は、真の約数の和から友愛数だと分かります。
 
 <ul>
-  <li>1、2、4、8、16、32、37、74、148、296、592</li>
-  <li>1、2、5、10、11、22、55、110、121、242、605</li>
+  <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 and</li>
+  <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605 respectively.</li>
 </ul>
+
+The sum of the divisors for the first value, **1184**, is **1210** and the sum of the divisors for the second value, **1210**, is **1184**.
 
 # --instructions--
 
-計算して、20,000 以下の 友愛数を表示します (8 つあります)。
+Calculate and show here the Amicable pairs below 20,000 (there are eight).
 
 # --hints--
 
-`amicablePairsUpTo` という関数です。
+`amicablePairsUpTo` should be a function.
 
 ```js
 assert(typeof amicablePairsUpTo === 'function');
 ```
 
-`amicablePairsUpTo(300)` は `[[220,284]]` を返します。
+`amicablePairsUpTo(300)` should return `[[220,284]]`.
 
 ```js
 assert.deepEqual(amicablePairsUpTo(300), answer300);
 ```
 
-`amicablePairsUpTo(3000)` は `[[220,284],[1184,1210],[2620,2924]]` を返します。
+`amicablePairsUpTo(3000)` should return `[[220,284],[1184,1210],[2620,2924]]`.
 
 ```js
 assert.deepEqual(amicablePairsUpTo(3000), answer3000);
 ```
 
-`amicablePairsUpTo(20000)` は `[[220,284],[1184,1210],[2620,2924],[5020,5564],[6232,6368],[10744,10856],[12285,14595],[17296,18416]]` を返します。
+`amicablePairsUpTo(20000)` should return `[[220,284],[1184,1210],[2620,2924],[5020,5564],[6232,6368],[10744,10856],[12285,14595],[17296,18416]]`.
 
 ```js
 assert.deepEqual(amicablePairsUpTo(20000), answer20000);

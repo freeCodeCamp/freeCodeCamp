@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e84
 title: 最大部分配列
-challengeType: 5
+challengeType: 1
 forumTopicId: 302278
 dashedName: greatest-subsequential-sum
 ---

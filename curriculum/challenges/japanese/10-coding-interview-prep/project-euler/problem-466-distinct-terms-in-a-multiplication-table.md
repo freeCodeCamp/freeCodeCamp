@@ -1,7 +1,7 @@
 ---
 id: 5900f53e1000cf542c510051
 title: '問題 466: 掛け算表の相異なる項'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302141
 dashedName: problem-466-distinct-terms-in-a-multiplication-table
 ---

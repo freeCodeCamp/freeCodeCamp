@@ -1,7 +1,7 @@
 ---
 id: 5900f3e41000cf542c50fef7
 title: '問題 120: 平方数で除した余り'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301747
 dashedName: problem-120-square-remainders
 ---

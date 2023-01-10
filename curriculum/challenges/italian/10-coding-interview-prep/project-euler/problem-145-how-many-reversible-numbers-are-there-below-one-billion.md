@@ -1,7 +1,7 @@
 ---
 id: 5900f3fd1000cf542c50ff10
 title: 'Problema 145: Quanti numeri reversibili ci sono sotto un miliardo?'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301774
 dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
 ---

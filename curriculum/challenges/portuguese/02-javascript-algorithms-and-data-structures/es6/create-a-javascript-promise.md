@@ -33,7 +33,7 @@ A promessa deve receber uma função com os parâmetros `resolve` e `reject`.
 ```js
 assert(
   code.match(
-    /Promise\(\s*(function\s*\(\s*resolve\s*,\s*reject\s*\)\s*{|\(\s*resolve\s*,\s*reject\s*\)\s*=>\s*{)[^}]*}/g
+    /Promise\s*\(\s*(function\s*\(\s*resolve\s*,\s*reject\s*\)\s*{|\(\s*resolve\s*,\s*reject\s*\)\s*=>\s*{)[^}]*}/g
   )
 );
 ```

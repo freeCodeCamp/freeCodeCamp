@@ -1,7 +1,7 @@
 ---
 id: a5229172f011153519423690
 title: Suma todos los números impares de Fibonacci
-challengeType: 5
+challengeType: 1
 forumTopicId: 16084
 dashedName: sum-all-odd-fibonacci-numbers
 ---

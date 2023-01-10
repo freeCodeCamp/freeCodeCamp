@@ -1,7 +1,7 @@
 ---
 id: 5900f3a01000cf542c50feb3
 title: 'Problema 52: Múltiplos permutados'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302163
 dashedName: problem-52-permuted-multiples
 ---

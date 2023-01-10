@@ -1,27 +1,27 @@
 ---
 id: 5900f3e51000cf542c50fef8
 title: 'Problem 121: Disc game prize fund'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301748
 dashedName: problem-121-disc-game-prize-fund
 ---
 
 # --description--
 
-A bag contains one red disc and one blue disc. In a game of chance a player takes a disc at random and its colour is noted. After each turn the disc is returned to the bag, an extra red disc is added, and another disc is taken at random.
+A bag contains one red disc and one blue disc. 在机会游戏中，玩家随机拿一张圆盘并记录它的颜色。 每转一圈后，将圆盘放回包中，额外添加一个红色圆盘，并随机取出另一圆盘。
 
-The player pays £1 to play and wins if they have taken more blue discs than red discs at the end of the game.
+玩家支付 1 英镑来参加游戏，如果他在游戏结束时获得的蓝盘比红盘多则获得胜利。
 
-If the game is played for four turns, the probability of a player winning is exactly 11/120, and so the maximum prize fund the banker should allocate for winning in this game would be £10 before they would expect to incur a loss. Note that any payout will be a whole number of pounds and also includes the original £1 paid to play the game, so in the example given the player actually wins £9.
+如果游戏进行四回合，那么玩家获胜的概率恰好是 11/120，因此庄家为这场游戏中分配的最高奖金应该是 10 英镑，以避免产生期望损失。 请注意，任何支付都将是一个整数英镑，包含为玩游戏而支付的原始 1 英镑，因此在给出的示例中，玩家实际上赢得了 9 英镑。
 
-Find the maximum prize fund that should be allocated to a single game in which fifteen turns are played.
+找到玩 15 个回合时分配给单局游戏的最大奖金。
 
 # --hints--
 
-`euler121()` should return 2269.
+`discGamePrize()` 应该返回 `2269`。
 
 ```js
-assert.strictEqual(euler121(), 2269);
+assert.strictEqual(discGamePrize(), 2269);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler121(), 2269);
 ## --seed-contents--
 
 ```js
-function euler121() {
+function discGamePrize() {
 
   return true;
 }
 
-euler121();
+discGamePrize();
 ```
 
 # --solutions--

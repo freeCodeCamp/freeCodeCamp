@@ -1,7 +1,7 @@
 ---
 id: 5900f54c1000cf542c51005f
 title: 'Завдання 480: Останнє завдання'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302158
 dashedName: problem-480-the-last-question
 ---

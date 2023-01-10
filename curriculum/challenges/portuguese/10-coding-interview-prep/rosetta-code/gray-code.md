@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e80
 title: Código de Gray
-challengeType: 5
+challengeType: 1
 forumTopicId: 302276
 dashedName: gray-code
 ---

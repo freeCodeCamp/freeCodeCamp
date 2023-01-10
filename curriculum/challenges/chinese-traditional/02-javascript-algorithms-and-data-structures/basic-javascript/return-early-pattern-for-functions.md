@@ -29,7 +29,7 @@ myFun();
 修改函數 `abTest` 當 `a` 或 `b` 小於 `0` 時，函數立即返回一個 `undefined` 並退出。
 
 **提示**  
-記住 [`undefined` 是一個關鍵字](https://chinese.freecodecamp.org/news/how-to-install-arch-linux/#how-to-install-arch-linux)，而不是一個字符串。
+記住 <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow"><code>undefined</code> 是關鍵字 </a>，不是字符串.
 
 # --hints--
 

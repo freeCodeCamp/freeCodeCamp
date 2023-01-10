@@ -1,7 +1,7 @@
 ---
 id: 5900f4071000cf542c50ff19
 title: 'Problema 154: Esplorare la piramide di Pascal'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301785
 dashedName: problem-154-exploring-pascals-pyramid
 ---

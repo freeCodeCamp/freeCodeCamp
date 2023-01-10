@@ -1,7 +1,7 @@
 ---
 id: 598eea87e5cf4b116c3ff81a
 title: Фактори числа Мерсенна
-challengeType: 5
+challengeType: 1
 forumTopicId: 302264
 dashedName: factors-of-a-mersenne-number
 ---
@@ -12,7 +12,7 @@ dashedName: factors-of-a-mersenne-number
 
 Якщо `P` є простим, то число Мерсенна може бути простим числом Мерсенна. (Якщо `P` не є простим, число Мерсенна також не є простим.)
 
-У пошуку простих чисел Мерсенна вигідно усунути експоненти, знайшовши невеликий фактор перед початком, потенційно довжину, [тест Лукас-Лемер](https://rosettacode.org/wiki/Lucas-Lehmer test "Lucas-Lehmer test").
+In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a, potentially lengthy, <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" target="_blank" rel="noopener noreferrer nofollow">Lucas-Lehmer test</a>.
 
 Існують дуже ефективні алгоритми визначення, чи число ділиться на <code>2<sup>P</sup>-1</code> (або відповідно, якщо <code>2<sup>P</sup> мод (число) = 1</code>).
 
@@ -48,7 +48,7 @@ dashedName: factors-of-a-mersenne-number
 
 Будь-який фактор, `q` з <code>2<sup>P</sup>-1</code> повинен бути у вигляді `2kP+1`, `k` це додатне ціле число або нуль. Крім того, `q` має бути `1` або `7 mod 8`.
 
-Нарешті будь-який потенційний множник `q` має бути [prime](https://rosettacode.org/wiki/Primality by Trial Division "Primality by Trial Division").
+Finally any potential factor `q` must be <a href="https://rosettacode.org/wiki/Primality_by_trial_division" target="_blank" rel="noopener noreferrer nofollow">prime</a>.
 
 Як і в інших алгоритмах пробного ділення, алгоритм припиняється, коли `2kP+1 > sqrt(N)`. Ці в першу чергу тести працюють лише з цифрами Мерсенна, де `P` - це просте число. Наприклад, <code>M<sub>4</sub>=15</code> не дає ніяких чинників, використовуючи ці технології, але фактори в 3 та 5, жоден з яких не відповідає `2kP+1`.
 

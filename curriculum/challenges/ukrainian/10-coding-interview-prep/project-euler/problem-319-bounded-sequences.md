@@ -1,7 +1,7 @@
 ---
 id: 5900f4ab1000cf542c50ffbe
 title: 'Проблема 319: Обмежені послідовності'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301975
 dashedName: problem-319-bounded-sequences
 ---

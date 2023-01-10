@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8043
 title: Sum to 100
-challengeType: 5
+challengeType: 1
 forumTopicId: 302335
 dashedName: sum-to-100
 ---
@@ -12,7 +12,7 @@ Find solutions to the *sum to one hundred* puzzle.
 
 Add (insert) the mathematical operators **+** or **─** (plus or minus) before any of the digits in the decimal numeric string **123456789** such that the resulting mathematical expression adds up to a particular sum (in this iconic case, **100**).
 
-Example:
+Ejemplo:
 
 <pre><b>123 + 4 - 5 + 67 - 89   =   100</b></pre>
 

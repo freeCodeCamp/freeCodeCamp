@@ -1,7 +1,7 @@
 ---
 id: 5900f3931000cf542c50fea5
 title: 'Завдання 38: Панцифрові кратні числа'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302042
 dashedName: problem-38-pandigital-multiples
 ---

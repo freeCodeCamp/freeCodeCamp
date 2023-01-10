@@ -19,25 +19,25 @@ No elemento de classe "blue-box", adicione a propriedade `margin` com um valor d
 
 # --hints--
 
-A classe `blue-box` deve criar uma margem (`margin`) de `40px` acima do elemento.
+A classe `blue-box` deve dar aos elementos uma margem (`margin`) superior de `40px`.
 
 ```js
 assert($('.blue-box').css('margin-top') === '40px');
 ```
 
-A classe `blue-box` deve criar uma margem (`margin`) de `20px` à direita do elemento.
+A classe `blue-box` deve dar aos elementos uma margem (`margin`) à direita de `20px`.
 
 ```js
 assert($('.blue-box').css('margin-right') === '20px');
 ```
 
-A classe `blue-box` deve criar uma margem (`margin`) de `20px` abaixo do elemento.
+A classe `blue-box` deve dar aos elementos uma margem (`margin`) inferior de `20px`.
 
 ```js
 assert($('.blue-box').css('margin-bottom') === '20px');
 ```
 
-A classe `blue-box` deve criar uma margem (`margin` de `40px` à esquerda do elemento.
+A classe `blue-box` deve dar aos elementos uma margem (`margin`) à esquerda de `40px`.
 
 ```js
 assert($('.blue-box').css('margin-left') === '40px');

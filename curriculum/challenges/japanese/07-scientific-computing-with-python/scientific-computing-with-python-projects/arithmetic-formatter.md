@@ -8,11 +8,16 @@ dashedName: arithmetic-formatter
 
 # --description--
 
-このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter)を使用して作業を行います。
+<a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用します</a>。
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 
 # --instructions--
 
-Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
+小学校の算数では計算問題を解きやすくするために縦書きにすることが多くあります。 たとえば「235 + 52」を次のように記述します。
 
 ```py
   235
@@ -20,17 +25,17 @@ Students in primary school often arrange arithmetic problems vertically to make 
 -----
 ```
 
-Create a function that receives a list of strings that are arithmetic problems and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to `True`, the answers should be displayed.
+計算問題を表す文字列のリストを受け取り、問題を縦書きに整形して返す関数を作成してください。 この関数はオプションで第 2 引数を受け取れるようにしてください。 第 2 引数が `True` に設定されている場合は、解答を表示する必要があります。
 
 ## 例
 
-Function Call:
+関数呼び出し:
 
 ```py
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 ```
 
-Output:
+出力:
 
 ```py
    32      3801      45      123
@@ -38,13 +43,13 @@ Output:
 -----    ------    ----    -----
 ```
 
-Function Call:
+関数呼び出し:
 
 ```py
 arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 ```
 
-Output:
+出力:
 
 ```py
   32         1      9999      523
@@ -55,7 +60,7 @@ Output:
 
 ## ルール
 
-The function will return the correct conversion if the supplied problems are properly formatted, otherwise, it will **return** a **string** that describes an error that is meaningful to the user.
+入力された問題が正しく整形されている場合、この関数は正しい変換結果を返します。それ以外の場合は、ユーザーにとって意味のあるエラーを記述した**文字列****を返します**。
 
 
 - Situations that will return an error:
@@ -64,26 +69,26 @@ The function will return the correct conversion if the supplied problems are pro
   - Each number (operand) should only contain digits. Otherwise, the function will return: `Error: Numbers must only contain digits.`
   - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be: `Error: Numbers cannot be more than four digits.`
 - If the user supplied the correct format of problems, the conversion you return will follow these rules:
-  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom.
+  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
   - Numbers should be right-aligned.
   - There should be four spaces between each problem.
   - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
 
 ## 開発
 
-Write your code in `arithmetic_arranger.py`. For development, you can use `main.py` to test your `arithmetic_arranger()` function. Click the "run" button and `main.py` will run.
+`arithmetic_arranger.py` にコードを記述してください。 開発時には `main.py` を使用して `arithmetic_arranger()` 関数をテストできます。 「Run」ボタンをクリックすると `main.py` が実行されます。
 
 ## テスト
 
-The unit tests for this project are in `test_module.py`. We are running the tests from `test_module.py` in `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button. Alternatively you may run the tests by inputting `pytest` in the console.
+このプロジェクトの単体テストは `test_module.py` にあります。 `test_module.py` のテストを `main.py` で実行できるようになっています。 「Run」ボタンを押すと自動的にテストが実行されます。 または、コンソールに `pytest` と入力してテストを実行することもできます。
 
 ## 提出
 
-Copy your project's URL and submit it below.
+プロジェクトの URL をコピーし、下記に提出してください。
 
 # --hints--
 
-It should correctly format an arithmetic problem and pass all tests.
+計算問題を正しく整形し、すべてのテストを成功させる必要があります。
 
 ```js
 

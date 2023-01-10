@@ -1,14 +1,14 @@
 ---
 id: 594810f028c0303b75339ad8
 title: Зигзагоподібна матриця
-challengeType: 5
+challengeType: 1
 forumTopicId: 302348
 dashedName: zig-zag-matrix
 ---
 
 # --description--
 
-"Зигзагоподібний" масив — це квадратне розташування перших $N^2$ цілих чисел, де числа послідовно збільшуються, коли ви рухаєтесь зигзагоподібно по антидіагоналі[ масиву](https://en.wiktionary.org/wiki/antidiagonal).
+A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's anti-diagonals.
 
 Наприклад, для введення `5` такий результат має згенеруватися:
 

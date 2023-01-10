@@ -13,11 +13,11 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { isValidUsername } from '../../../../utils/validate';
+import { usernameValidationSelector } from '../../redux/settings/selectors';
 import {
   validateUsername,
-  usernameValidationSelector,
   submitNewUsername
-} from '../../redux/settings';
+} from '../../redux/settings/actions';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import FullWidthRow from '../helpers/full-width-row';
 

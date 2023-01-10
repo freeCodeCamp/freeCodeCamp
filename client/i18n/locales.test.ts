@@ -1,10 +1,6 @@
 import fs from 'fs';
 import { setup } from 'jest-json-schema-extended';
-import {
-  availableLangs,
-  LangNames,
-  LangCodes
-} from '../../config/i18n/all-langs';
+import { availableLangs, LangNames, LangCodes } from '../../config/i18n';
 
 setup();
 
@@ -14,9 +10,6 @@ const filesThatShouldExist = [
   },
   {
     name: 'motivation.json'
-  },
-  {
-    name: 'trending.json'
   },
   {
     name: 'intro.json'

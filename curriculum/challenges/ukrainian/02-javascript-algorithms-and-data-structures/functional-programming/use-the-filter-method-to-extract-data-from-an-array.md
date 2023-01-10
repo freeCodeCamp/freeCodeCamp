@@ -10,7 +10,7 @@ dashedName: use-the-filter-method-to-extract-data-from-an-array
 
 Інша зручна формула масиву є `Array.prototype.filter()`, або ж просто `filter()`.
 
-`filter` викликає функцію в кожному елементі масиву й повертає новий масив, що містить в собі ті елементи, що повертає функція `true`. Іншими словами, він фільтрує масив, на основі функції, яка передана до нього. Як і `map`, це робиться без необхідності зміни початкового масиву.
+`filter` calls a function on each element of an array and returns a new array containing only the elements for which that function returns a truthy value - that is, a value which returns `true` if passed to the `Boolean()` constructor. Іншими словами, він фільтрує масив, на основі функції, яка передана до нього. Як і `map`, це робиться без необхідності зміни початкового масиву.
 
 Функція зворотнього виклику приймає три аргументи. Перший аргумент - це поточний елемент, який опрацьовується. Другий є індексом цього елемента, а третій - масивом, на якому було викликано метод `filter`.
 

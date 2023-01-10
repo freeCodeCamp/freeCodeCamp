@@ -10,7 +10,7 @@ dashedName: authentication-with-socket-io
 
 今の時点で、誰がウェブソケットに接続しているかを判断することはできません。 `req.user` にはユーザーオブジェクトが含まれていますが、そうなっているのはユーザーがウェブサーバーとやり取りするときだけであり、ウェブソケットでは `req` (リクエスト) がないため、ユーザーデータはありません。 誰がウェブソケットに接続しているのかを知るための方法の 1 つとして、Passport セッションを含む Cookie を解析してデコードした後、デシリアライズしてユーザーオブジェクトを取得することができます。 幸い、 NPM にはまさにこのためのパッケージがあり、複雑な作業をシンプルにしてくれます！
 
-`passport.socketio@~3.7.0`、`connect-mongo@~3.2.0` および `cookie-parser@~1.4.5` を依存関係として追加し、それらをそれぞれ `passportSocketIo`、`MongoStore` および `cookieParser` として require してください。 また、前に require した `express-session` から、新しいメモリストアを初期化する必要があります。 次のようになります。
+すでに `passport.socketio@~3.7.0`、`connect-mongo@~3.2.0`、`cookie-parser@~1.4.5` が依存関係として追加されています。 それぞれ `passportSocketIo`、`MongoStore`、`cookieParser` として require します。 また、前に require した `express-session` から、新しいメモリストアを初期化する必要があります。 次のようになります。
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -60,87 +60,73 @@ function onAuthorizeFail(data, message, error, accept) {
 これでソケットオブジェクトでユーザーオブジェクトに `socket.request.user` としてアクセスできるようになりました。 たとえば、次のように追加できます。
 
 ```js
-console.log('user ' + socket.request.user.name + ' connected');
+console.log('user ' + socket.request.user.username + ' connected');
 ```
 
 接続したサーバーコンソールにログインします！
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、[こちら](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254)でここまでのプロジェクトを確認できます。
+正しいと思ったら、ページを送信してください。 If you're running into errors, you can  <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
 
 # --hints--
 
 `passport.socketio` を依存関係にする必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'passport.socketio',
-        'Your project should list "passport.socketio" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'passport.socketio',
+    'Your project should list "passport.socketio" as a dependency'
   );
+}
 ```
 
 `cookie-parser` を依存関係にする必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'cookie-parser',
-        'Your project should list "cookie-parser" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/package.json", getUserInput("url"));
+  const res = await fetch(url);
+  const packJson = await res.json();
+  assert.property(
+    packJson.dependencies,
+    'cookie-parser',
+    'Your project should list "cookie-parser" as a dependency'
   );
+}
 ```
 
 passportSocketIo を適切に require する必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /require\((['"])passport\.socketio\1\)/gi,
-        'You should correctly require and instantiate "passport.socketio"'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /require\((['"])passport\.socketio\1\)/gi,
+    'You should correctly require and instantiate "passport.socketio"'
   );
+}
 ```
 
 passportSocketIo を正しく設定する必要があります。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /io\.use\(\s*\w+\.authorize\(/,
-        'You should register "passport.socketio" as socket.io middleware and provide it correct options'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /io\.use\(\s*\w+\.authorize\(/,
+    'You should register "passport.socketio" as socket.io middleware and provide it correct options'
   );
+}
 ```
 
 # --solutions--

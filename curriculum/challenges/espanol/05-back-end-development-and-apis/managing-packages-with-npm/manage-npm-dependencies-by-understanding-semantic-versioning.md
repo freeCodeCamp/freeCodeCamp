@@ -20,11 +20,11 @@ La versión MAJOR debe incrementarse cuando hagas cambios de API incompatibles. 
 
 # --instructions--
 
-En la sección de dependencias de tu archivo package.json, cambia la `version` de moment para que coincida con la versión 2 de MAJOR, la versión 10 de MINOR y la versión 2 de PATCH
+En la sección de dependencias de `package.json`, cambie la versión de `@freecodecamp/example` para que coincida con MAJOR versión 1, la MINOR versión 2 y PATCH versión 13
 
 # --hints--
 
-"dependencies" debe incluir "moment"
+`"dependencies"` debería incluir `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -33,8 +33,8 @@ En la sección de dependencias de tu archivo package.json, cambia la `version` d
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -43,7 +43,7 @@ En la sección de dependencias de tu archivo package.json, cambia la `version` d
   );
 ```
 
-la versión de "moment" debe ser "2.10.2"
+`"@freecodecamp/example"` debería tener la versión `"1.2.13"`.
 
 ```js
 (getUserInput) =>
@@ -51,9 +51,9 @@ la versión de "moment" debe ser "2.10.2"
     (data) => {
       var packJson = JSON.parse(data);
       assert.equal(
-        packJson.dependencies.moment,
-        '2.10.2',
-        'Wrong version of "moment". It should be 2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        '1.2.13',
+        'Wrong version of "@freecodecamp/example". It should be 1.2.13'
       );
     },
     (xhr) => {

@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad7
 title: Algoritmo de afinamento de Zhang-Suen
-challengeType: 5
+challengeType: 1
 forumTopicId: 302347
 dashedName: zhang-suen-thinning-algorithm
 ---

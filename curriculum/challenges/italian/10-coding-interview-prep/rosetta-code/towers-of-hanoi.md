@@ -1,20 +1,20 @@
 ---
 id: 5951ed8945deab770972ae56
 title: Torri di Hanoi
-challengeType: 5
+challengeType: 1
 forumTopicId: 302341
 dashedName: towers-of-hanoi
 ---
 
 # --description--
 
-Risolvi il problema delle [Torri di Hanoi](https://en.wikipedia.org/wiki/Towers_of_Hanoi "wp: Towers_of_Hanoi").
+Risolvi il problema della Torre di Hanoi. Il numeri di oggetti sarà dato che terzo parametro, seguito dalle stringhe usate per identificare ogni pila di oggetti. Crea un array annidato che contiene la lista delle mosse, `["source", "destination"]`.
 
-La soluzione dovrebbe accettare il numero di dischi come primo parametro, e tre stringhe usate per identificare ciascuna delle tre pile di dischi, ad esempio `towerOfHanoi(4, 'A', 'B', 'C')`. La funzione dovrebbe restituire un array di array contenente l'elenco delle mosse, sorgente -> destinazione.
+Per esempio, i parametri `(4, 'A', 'B', 'C')`, risulteranno nell'array annidato di mosse `[['A', 'C'], ['B', 'A']]`, indicando che la prima mossa sia muovere un oggetto dalla pila `A` alla pila `C` e la seconda mossa sia muovere un oggetto dalla pila `B` alla pila `A`.
 
-Per esempio, l'array `[['A', 'C'], ['B', 'A']]` indica che la prima mossa è stata di spostare un disco dalla pila A alla C, e la seconda mossa è stata quella di spostare un disco dalla pila B alla A.
+# --instructions--
 
-<p></p>
+Scrivi una funzione che restituisce le mosse per impilare gli oggetti in un array annidato.
 
 # --hints--
 

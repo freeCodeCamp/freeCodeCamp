@@ -8,7 +8,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --description--
 
-注意点として、このプロジェクトは [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) の始動プロジェクト、または [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/) からクローンされたプロジェクトに基づいて構築されています。
+注意点として、このプロジェクトは <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> にあるスタータープロジェクトをベースに構築されているか、または <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> からクローンされています。
 
 ```javascript
 .approximately(actual, expected, delta, [message])
@@ -18,13 +18,13 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Comparisons` スイート内の `#10` に分類されたテストにおいて、テストを合格にする (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.approximately` に変更してください。
+`tests/1_unit-tests.js` の中の、`Comparisons` スイート内の `#10` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.approximately` に変更してください。
 
-テストを常に合格にするには、最小範囲 (3 番目のパラメータ) を選択してください。 範囲は、1 未満でなければなりません。
+テストを常に成功させるには、最小範囲 (3 番目のパラメータ) を選択してください。 範囲は、1 未満でなければなりません。
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>

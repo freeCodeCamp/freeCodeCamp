@@ -1,7 +1,7 @@
 ---
 id: 5900f46b1000cf542c50ff7d
 title: '問題 254: 各位の階乗の和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301902
 dashedName: problem-254-sums-of-digit-factorials
 ---

@@ -1,7 +1,7 @@
 ---
 id: ab306dbdcc907c7ddfc30830
 title: 数组扁平化
-challengeType: 5
+challengeType: 1
 forumTopicId: 16079
 dashedName: steamroller
 ---
@@ -40,6 +40,13 @@ assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 
 ```js
 assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
+```
+
+不应使用全局变量。
+
+```js
+steamrollArray([1, {}, [3, [[4]]]])
+assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4])
 ```
 
 # --seed--

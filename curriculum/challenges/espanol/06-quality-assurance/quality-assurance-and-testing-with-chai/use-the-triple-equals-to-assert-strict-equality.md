@@ -8,7 +8,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
 
 # --description--
 
-Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Recuerda, este proyecto se está construyendo partir de una plantilla en <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> o clonado de <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `strictEqual()` compara objetos usando `===`.
 

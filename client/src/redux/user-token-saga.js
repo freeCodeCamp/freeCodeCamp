@@ -1,8 +1,9 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
+
 import { createFlashMessage } from '../components/Flash/redux';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import { deleteUserToken } from '../utils/ajax';
-import { deleteUserTokenComplete } from '.';
+import { deleteUserTokenComplete } from './actions';
 
 const message = {
   deleted: {
@@ -17,12 +18,9 @@ const message = {
 
 function* deleteUserTokenSaga() {
   try {
-    const response = yield call(deleteUserToken);
+    const { data } = yield call(deleteUserToken);
 
-    if (
-      response &&
-      Object.prototype.hasOwnProperty.call(response, 'userToken')
-    ) {
+    if (data && Object.prototype.hasOwnProperty.call(data, 'userToken')) {
       yield put(deleteUserTokenComplete());
       yield put(createFlashMessage(message.deleted));
     } else {

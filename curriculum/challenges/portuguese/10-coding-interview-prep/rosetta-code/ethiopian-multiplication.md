@@ -1,7 +1,7 @@
 ---
 id: 599d1566a02b571412643b84
 title: Multiplicação etíope
-challengeType: 5
+challengeType: 1
 forumTopicId: 302257
 dashedName: ethiopian-multiplication
 ---

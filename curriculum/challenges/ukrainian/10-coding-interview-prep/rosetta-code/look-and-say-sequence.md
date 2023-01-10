@@ -1,14 +1,14 @@
 ---
 id: 5e6dd14797f5ce267c2f19d0
 title: Послідовність "подивися-і-скажи"
-challengeType: 5
+challengeType: 1
 forumTopicId: 385277
 dashedName: look-and-say-sequence
 ---
 
 # --description--
 
-[Послідовність "подивися-і-скажи" ](https://en.wikipedia.org/wiki/Look and say sequence) - це рекурсивна послідовність певних чисел.
+The Look and say sequence is a recursively defined sequence of numbers.
 
 Визначення послідовності
 

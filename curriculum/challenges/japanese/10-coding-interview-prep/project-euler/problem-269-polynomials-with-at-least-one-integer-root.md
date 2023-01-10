@@ -1,7 +1,7 @@
 ---
 id: 5900f4791000cf542c50ff8c
 title: '問題 269: 少なくとも 1 つの整数根を持つ多項式'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301918
 dashedName: problem-269-polynomials-with-at-least-one-integer-root
 ---

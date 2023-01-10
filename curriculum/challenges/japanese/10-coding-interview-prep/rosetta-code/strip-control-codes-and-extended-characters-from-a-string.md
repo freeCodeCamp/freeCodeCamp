@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8036
 title: 文字列から制御コードと拡張文字を削除する
-challengeType: 5
+challengeType: 1
 forumTopicId: 302327
 dashedName: strip-control-codes-and-extended-characters-from-a-string
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f5141000cf542c510027
 title: 'Problema 423: Lançamentos consecutivos de dados'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302093
 dashedName: problem-423-consecutive-die-throws
 ---

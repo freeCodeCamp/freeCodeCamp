@@ -1,7 +1,7 @@
 ---
 id: 5900f4b11000cf542c50ffc4
 title: 'Problema 325: Gioco delle pietre II'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301982
 dashedName: problem-325-stone-game-ii
 ---

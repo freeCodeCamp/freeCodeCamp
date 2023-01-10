@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import { defaultUserImage } from '../../../../config/misc';
 import DefaultAvatar from '../../assets/icons/default-avatar';
-import { borderColorPicker } from '.';
+import borderColorPicker from './border-color-picker';
 
 interface AvatarRendererProps {
   isDonating?: boolean;

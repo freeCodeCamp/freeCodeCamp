@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import { BlockRequiredProps } from '../../../interfaces/PropTypes';
-import { handleRequest } from '../../utils/handleRequest';
+import { API_LOCATION, handleRequest } from '../../utils/handleRequest';
 
 const CreateEmptySteps = ({ superblock, block }: BlockRequiredProps) => {
   const [num, setNum] = useState(0);
 
   const click = handleRequest(() =>
-    fetch(
-      `http://localhost:3200/${superblock}/${block}/_tools/create-empty-steps`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ num })
-      }
-    )
+    fetch(`${API_LOCATION}/${superblock}/${block}/_tools/create-empty-steps`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ num })
+    })
   );
 
   const changeNum = (e: React.ChangeEvent<HTMLInputElement>) => {

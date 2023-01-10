@@ -1,7 +1,7 @@
 ---
 id: 5900f4ab1000cf542c50ffbd
 title: 'Проблема 318: дев''ятки 2011'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301974
 dashedName: problem-318-2011-nines
 ---

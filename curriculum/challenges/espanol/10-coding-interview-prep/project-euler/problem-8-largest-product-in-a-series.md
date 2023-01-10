@@ -1,14 +1,14 @@
 ---
 id: 5900f3741000cf542c50fe87
-title: 'Problem 8: Largest product in a series'
-challengeType: 5
+title: 'Problema 8: Mayor producto en una serie'
+challengeType: 1
 forumTopicId: 302193
 dashedName: problem-8-largest-product-in-a-series
 ---
 
 # --description--
 
-The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
+Los cuatro dígitos adyacentes en el número de 1000 dígitos que tienen el mayor producto son 9 x 9 x 8 x 9 = 5832.
 
 <div style='text-align: center;'>73167176531330624919225119674426574742355349194934</div>
 <div style='text-align: center;'>96983520312774506326239578318016984801869478851843</div>
@@ -22,7 +22,7 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 <div style='text-align: center;'>52584907711670556013604839586446706324415722155397</div>
 <div style='text-align: center;'>53697817977846174064955149290862569321978468622482</div>
 <div style='text-align: center;'>83972241375657056057490261407972968652414535100474</div>
-<div style='text-align: center;'>82166370484403199890008895243450658541227588666881</div>
+<div style='text-align: center;'>821663704844031<b>9989</b>0008895243450658541227588666881</div>
 <div style='text-align: center;'>16427171479924442928230863465674813919123162824586</div>
 <div style='text-align: center;'>17866458359124566529476545682848912883142607690042</div>
 <div style='text-align: center;'>24219022671055626321111109370544217506941658960408</div>
@@ -31,23 +31,23 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 <div style='text-align: center;'>05886116467109405077541002256983155200055935729725</div>
 <div style='text-align: center;'>71636269561882670428252483600823257530420752963450</div>
 
-Find the `n` adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
+Encuentra los `n` dígitos adyacentes en el número de 1000 dígitos que tengan el mayor producto. ¿Cuál es el valor de dicho producto?
 
 # --hints--
 
-`largestProductinaSeries(4)` should return a number.
+`largestProductinaSeries(4)` debe devolver un número.
 
 ```js
 assert(typeof largestProductinaSeries(4) === 'number');
 ```
 
-`largestProductinaSeries(4)` should return 5832.
+`largestProductinaSeries(4)` debe devolver 5832.
 
 ```js
 assert.strictEqual(largestProductinaSeries(4), 5832);
 ```
 
-`largestProductinaSeries(13)` should return 23514624000.
+`largestProductinaSeries(13)` debe devolver 23514624000.
 
 ```js
 assert.strictEqual(largestProductinaSeries(13), 23514624000);

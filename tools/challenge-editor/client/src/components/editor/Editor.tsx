@@ -12,6 +12,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ChallengeContent } from '../../../interfaces/ChallengeContent';
 import SaveChallenge from '../buttons/SaveChallenge';
 import './Editor.css';
+import { API_LOCATION } from '../../utils/handleRequest';
 
 const Editor = () => {
   const [error, setError] = useState<Error | null>(null);
@@ -35,7 +36,7 @@ const Editor = () => {
   const fetchData = () => {
     setLoading(true);
     fetch(
-      `http://localhost:3200/${params.superblock}/${params.block}/${params.challenge}`
+      `${API_LOCATION}/${params.superblock}/${params.block}/${params.challenge}`
     )
       .then(res => res.json() as Promise<ChallengeContent>)
       .then(

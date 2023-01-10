@@ -1,7 +1,7 @@
 ---
 id: 5900f5271000cf542c51003a
 title: 'Problema 443: sequenza GCD'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302115
 dashedName: problem-443-gcd-sequence
 ---

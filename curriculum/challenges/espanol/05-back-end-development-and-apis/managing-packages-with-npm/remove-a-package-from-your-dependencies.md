@@ -12,17 +12,17 @@ Ahora has probado algunas maneras en que puedes gestionar las dependencias de tu
 
 Pero, ¿Qué pasa si deseas eliminar un paquete externo que ya no necesitas? Puede que ya lo hayas adivinado, simplemente elimina el par clave-valor correspondiente a ese paquete de tus dependencias.
 
-Este mismo método se aplica para eliminar otros campos de tu package.json
+Este mismo método se aplica para eliminar otros zonas de tu package.json.
 
 # --instructions--
 
-Elimina el paquete moment de tus dependencias.
+Retire el paquete `@freecodecamp/example` de sus dependencias.
 
 **Nota:** Asegúrate de que tienes la cantidad correcta de comas después de eliminarlo.
 
 # --hints--
 
-Las "dependencies" no deben incluir "moment"
+`"dependencies"` no debe incluir `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -31,8 +31,8 @@ Las "dependencies" no deben incluir "moment"
       var packJson = JSON.parse(data);
       assert.notProperty(
         packJson.dependencies,
-        'moment',
-        '"dependencies" still includes "moment"'
+        '@freecodecamp/example',
+        '"dependencies" still includes "@freecodecamp/example"'
       );
     },
     (xhr) => {

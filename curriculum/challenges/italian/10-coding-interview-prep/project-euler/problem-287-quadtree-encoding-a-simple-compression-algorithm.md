@@ -1,7 +1,7 @@
 ---
 id: 5900f48b1000cf542c50ff9e
 title: 'Problema 287: Codifica Quadtree (un semplice algoritmo di compressione)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301938
 dashedName: problem-287-quadtree-encoding-a-simple-compression-algorithm
 ---

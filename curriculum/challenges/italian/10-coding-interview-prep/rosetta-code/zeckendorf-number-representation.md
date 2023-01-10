@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad6
 title: Rappresentazione di Zeckendorf dei numeri
-challengeType: 5
+challengeType: 1
 forumTopicId: 302346
 dashedName: zeckendorf-number-representation
 ---

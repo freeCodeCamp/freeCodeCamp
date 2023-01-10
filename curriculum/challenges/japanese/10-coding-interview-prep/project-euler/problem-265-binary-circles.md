@@ -1,7 +1,7 @@
 ---
 id: 5900f4761000cf542c50ff88
 title: '問題 265: 2 進数の円'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301914
 dashedName: problem-265-binary-circles
 ---

@@ -10,11 +10,17 @@ dashedName: meet-the-node-console
 
 Working on these challenges will involve you writing your code using one of the following methods:
 
-- Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-express/) and complete these challenges locally.
-- Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-express) to complete these challenges.
+- Clone <a href="https://github.com/freeCodeCamp/boilerplate-express/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
+- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
 - Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+If you use Replit, follow these steps to set up the project:
+
+-   Start by importing the project on Replit. 
+-   Next, you will see a `.replit` window. 
+-   Select `Use run command` and click the `Done` button. 
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field.
 
 During the development process, it is important to be able to check what’s going on in your code.
 

@@ -1,25 +1,28 @@
 ---
 id: 5900f3d61000cf542c50fee7
-title: 'Problem 103: Special subset sums: optimum'
-challengeType: 5
+title: '問題 103：特殊子集和：最優'
+challengeType: 1
 forumTopicId: 301727
 dashedName: problem-103-special-subset-sums-optimum
 ---
 
 # --description--
 
-Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
+設 $S(A)$ 是大小爲 n 的集合 A 中所有元素之和。 若任取集合 A 中任意兩個非空且沒有交集的集合 B 和 C，滿足下列兩個條件，那麼我們就稱集合 A 爲特殊的和集：
 
-1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+1. $S(B) ≠ S(C)$; 即任意子集所有元素的和均不相同。
+2. 如果集合 B 中的元素個數多於集合 C，那麼 $S(B) > S(C)$。
 
-If $S(A)$ is minimised for a given n, we shall call it an optimum special sum set. The first five optimum special sum sets are given below.
+對於給定的數字 n，我們稱使得 $S(A)$ 最小的集合 A 爲最優特殊和集。 下面給出前五個最優特殊和集。
 
-$$\begin{align} & n = 1: \\{1\\} \\\\ & n = 2: \\{1, 2\\} \\\\ & n = 3: \\{2, 3, 4\\} \\\\ & n = 4: \\{3, 5, 6, 7\\} \\\\ & n = 5: \\{6, 9, 11, 12, 13\\} \\\\ \end{align}$$
+$$\begin{align}   & n = 1: \\{1\\} \\\\
+  & n = 2: \\{1, 2\\} \\\\   & n = 3: \\{2, 3, 4\\} \\\\
+  & n = 4: \\{3, 5, 6, 7\\} \\\\   & n = 5: \\{6, 9, 11, 12, 13\\} \\\\
+\end{align}$$
 
-It seems that for a given optimum set, $A = \\{a_1, a_2, \ldots, a_n\\}$, the next optimum set is of the form $B = \\{b, a_1 + b, a_2 + b, \ldots, a_n + b\\}$, where b is the "middle" element on the previous row.
+由上述規律可以猜測，似乎對於一個給定的最優特殊和集 $A = \\{a_1, a_2, \ldots, a_n\\}$，下一個最優特殊和集將會是 $B = \\{b, a_1 + b, a_2 + b, \ldots, a_n + b\\}$，其中 b 是集合 A 的“中間”元素。
 
-By applying this "rule" we would expect the optimum set for $n = 6$ to be $A = \\{11, 17, 20, 22, 23, 24\\}$, with $S(A) = 117$. However, this is not the optimum set, as we have merely applied an algorithm to provide a near optimum set. The optimum set for $n = 6$ is $A = \\{11, 18, 19, 20, 22, 25\\}$, with $S(A) = 115$ and corresponding set string: `111819202225`.
+通過上述“規則”，我們猜測當 $n = 6$ 時，最優特殊和集應爲 $A = \\{11, 17, 20, 22, 23, 24\\}$，且 $S(A) = 117$。 However, this is not the optimum set, as we have merely applied an algorithm to provide a near optimum set. The optimum set for $n = 6$ is $A = \\{11, 18, 19, 20, 22, 25\\}$, with $S(A) = 115$ and corresponding set string: `111819202225`.
 
 Given that A is an optimum special sum set for $n = 7$, find its set string.
 

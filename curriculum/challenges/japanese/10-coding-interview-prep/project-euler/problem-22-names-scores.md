@@ -1,7 +1,7 @@
 ---
 id: 5a51eabcad78bf416f316e2a
 title: '問題 22: 名前スコア'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301862
 dashedName: problem-22-names-scores
 ---

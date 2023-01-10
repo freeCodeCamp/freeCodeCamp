@@ -1,7 +1,7 @@
 ---
 id: 5900f4c81000cf542c50ffda
 title: 'Problema 345: Soma interna da matriz'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302004
 dashedName: problem-345-matrix-sum
 ---

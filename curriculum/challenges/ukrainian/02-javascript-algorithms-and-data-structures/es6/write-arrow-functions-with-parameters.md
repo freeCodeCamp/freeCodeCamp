@@ -41,13 +41,13 @@ multiplier(4, 2);
 Вам слід замінити ключове слово `var`.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 `myConcat` має бути постійною змінною (використовуйте `const`).
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+myConcat/g));
+assert.match(code, /const\s+myConcat/g);
 ```
 
 `myConcat` має бути функцією з 2 параметрами
@@ -68,7 +68,7 @@ assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
 Не використовуйте ключове слово `function`.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/function/g));
+assert.notMatch(code, /function/g);
 ```
 
 # --seed--

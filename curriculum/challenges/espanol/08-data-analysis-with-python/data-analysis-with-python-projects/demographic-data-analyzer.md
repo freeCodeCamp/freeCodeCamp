@@ -8,12 +8,18 @@ dashedName: demographic-data-analyzer
 
 # --description--
 
-Trabajarás [este proyecto utilizando nuestro código inicial Replit](https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer).
+Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
 
 Todavía estamos desarrollando la parte interactiva del currículo de Python. Por el momento, aquí hay algunos videos en el canal de YouTube de freeCodeCamp.org que te enseñaran todo lo que necesitas saber para completar este proyecto:
 
-- [Curso de vídeo de Python para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-- [Curso de vídeo para aprender Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
 # --instructions--
 
@@ -31,15 +37,15 @@ En este desafío debe analizar los datos demográficos usando Pandas. Se le da u
 
 Debes usar Pandas para responder a las siguientes preguntas:
 
-- ¿Cuántas personas de cada raza están representadas en este dataset? Esta debería ser una Pandas series con nombres de raza como las etiquetas de índice. (columna `race`)
-- ¿Cuál es la edad promedio de los hombres?
-- ¿Cuál es el porcentaje de personas que tienen un grado de licenciatura?
-- ¿Que porcentaje de personas con una educación avanzada (`Bachelors`, `Masters` o `Doctorate`) generan mas de 50k?
-- ¿Que porcentaje de personas sin una educación avanzada generan mas de 50k?
-- ¿Cuál es el mínimo número de horas que una persona trabaja por semana?
-- ¿Qué porcentaje de personas que trabajan el minimo de horas por semana tienen un salario de mas de 50k?
-- ¿Qué país tiene el mas alto porcentaje de personjas que ganan >50k y cual es ese porcentaje?
-- Identifica la ocupacion mas popular de aquellos que ganan >50k en India.
+- How many people of each race are represented in this dataset? This should be a Pandas series with race names as the index labels. (`race` column)
+- What is the average age of men?
+- What is the percentage of people who have a Bachelor's degree?
+- What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?
+- What percentage of people without advanced education make more than 50K?
+- What is the minimum number of hours a person works per week?
+- What percentage of the people who work the minimum number of hours per week have a salary of more than 50K?
+- What country has the highest percentage of people that earn >50K and what is that percentage?
+- Identify the most popular occupation for those who earn >50K in India.
 
 Utilice el código de inicio en el archivo `demographic_data_analyzer`. Actualice el código para que todas las variables definidas como "None" se establezcan al cálculo o código apropiado. Redondea todos los decimales a la décima más cercana.
 
@@ -59,7 +65,7 @@ Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
 
 ## Fuente de datos
 
-Dua, D. y Graff, C. (2019). [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml). Irvine, CA: University of California, School of Information and Computer Science.
+Dua, D. y Graff, C. (2019). <a href="http://archive.ics.uci.edu/ml" target="_blank" rel="noopener noreferrer nofollow">UCI Machine Learning Repositorio</a>. Irvine, CA: University of California, School of Information and Computer Science.
 
 # --hints--
 

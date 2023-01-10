@@ -123,7 +123,7 @@ Ogni volta che viene fatto click sul pulsante, lo stato del contatore deve esser
 })();
 ```
 
-Quando il componente `GameOfChance` viene montato per la prima volta nel DOM e ogni volta che il bottone viene cliccato successivamente, dovrebbe essere restituito un singolo elemento `h1` che scrive casualmente `You Win!` o `You Lose!`.
+Quando il componente `GameOfChance` viene montato per la prima volta nel DOM e, successivamente, ogni volta che il bottone viene cliccato, dovrebbe essere restituito un singolo elemento `h1` che restituisce casualmente `You Win!` o `You Lose!`. Nota: può fallire casualmente. Se ciò accade, riprova.
 
 ```js
 (() => {
@@ -265,6 +265,11 @@ class GameOfChance extends React.Component {
 # --solutions--
 
 ```jsx
+// We want this to be deterministic for testing purposes.
+const randomSequence = [true, false, false, true, true, false, false, true, true, false];
+let index = 0;
+const fiftyFifty = () => randomSequence[index++ % randomSequence.length];
+
 class Results extends React.Component {
   constructor(props) {
     super(props);
@@ -290,11 +295,10 @@ class GameOfChance extends React.Component {
     });
   }
   render() {
-    const expression = Math.random() >= 0.5;
     return (
       <div>
         <button onClick={this.handleClick}>Play Again</button>
-        <Results fiftyFifty={expression} />
+        <Results fiftyFifty={fiftyFifty()} />
         <p>{'Turn: ' + this.state.counter}</p>
       </div>
     );

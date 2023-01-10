@@ -1,7 +1,7 @@
 ---
 id: 5900f4c51000cf542c50ffd7
 title: 'Problem 344: Silver dollar game'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302003
 dashedName: problem-344-silver-dollar-game
 ---

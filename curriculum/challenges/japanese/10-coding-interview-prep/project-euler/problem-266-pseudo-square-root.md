@@ -1,7 +1,7 @@
 ---
 id: 5900f4771000cf542c50ff89
 title: '問題 266: 擬似平方根'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301915
 dashedName: problem-266-pseudo-square-root
 ---

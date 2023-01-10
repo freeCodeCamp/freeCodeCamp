@@ -10,7 +10,7 @@ dashedName: moving-forward-from-here
 
 恭喜！ 你完成了 React 和 Redux 的所有课程！ 结束之前，还要再提一点。 通常，我们不会在这样的编辑器中编写 React 应用代码。 如果你在自己的计算机上使用 npm 和文件系统，这个挑战可让你一瞥 React 应用的语法之貌。 除了使用 `import` 语句（这些语句引入了各挑战中提供的所有依赖关系），其代码看起来类似。 “管理包（含 npm）”这一节更详细地介绍了 npm。
 
-最后，写 React 和 Redux 的代码通常需要一些配置， 且很快会变得复杂起来。 如果你有兴趣在自己的电脑上尝试，<a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="nofollow">Create React App</a> 已配置好，并准备就绪。
+最后，写 React 和 Redux 的代码通常需要一些配置， 且很快会变得复杂起来。 如果你有兴趣在自己的机器上进行实验，<a href="https: www.freecodecamp.org/news/install-react-with-create-react-app/" target="_blank" rel="noopener noreferrer nofollow">Create React App</a> 已配置好并准备就绪。
 
 或者，你可以在 CodePen 中启用 Babel 作为 JavaScript 预处理器，将 React 和 ReactDOM 添加为外部 JavaScript 资源，这样编写应用。
 

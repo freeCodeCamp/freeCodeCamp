@@ -1,7 +1,7 @@
 ---
 id: 5900f3c51000cf542c50fed8
 title: 'Problema 87: triplette di potenze di numeri primi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302201
 dashedName: problem-87-prime-power-triples
 ---

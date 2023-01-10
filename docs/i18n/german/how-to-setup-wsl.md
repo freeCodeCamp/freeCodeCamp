@@ -56,7 +56,7 @@ Du kannst diese Einstellungen überprüfen, indem du zu Einstellungen > Sprachen
 
 **Docker Desktop für Windows** ermöglicht es dir, Datenbanken wie MongoDB und andere Dienste wie NGINX und mehr zu installieren und auszuführen. Dies ist nützlich, um häufige Fallstricke bei der Installation von MongoDB oder anderen Diensten direkt auf Windows oder WSL2 zu vermeiden.
 
-Folge der Anleitung in der [offiziellen Dokumentation](https://docs.docker.com/docker-for-windows/install) und installiere Docker Desktop für deine Windows-Distribution.
+Follow the instructions on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
 Es gibt einige Mindestanforderungen an die Hardware für das beste Erlebnis.
 
@@ -127,7 +127,7 @@ Nachdem du nun die Voraussetzungen erfüllt hast, folge [unserem Leitfaden zur l
 
 ## Nützliche Links
 
-- [Ein WSL2 Dev Setup mit Ubuntu 20.04, Node.js, MongoDB, VS Code und Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - ein Artikel von Mrugesh Mohapatra (Staff Developer bei freeCodeCamp.org)
+- [Ein WSL2 Dev Setup mit Ubuntu 20.04, Node.js, MongoDB, VS Code und Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - ein Artikel von Mrugesh Mohapatra (Staff Developer bei freeCodeCamp.org)
 - Häufig gestellte Fragen zu:
   - [Windows Subsystem für Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop für Windows](https://docs.docker.com/docker-for-windows/faqs)

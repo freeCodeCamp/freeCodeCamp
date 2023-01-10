@@ -22,7 +22,7 @@ this.state = {
 
 # --instructions--
 
-コードエディターにあるコンポーネントでは、`state` から `name` プロパティをレンダーしようとしています。 しかし、`state` が定義されていません。 `constructor` で `state` を使用してコンポーネントを初期化し、`name` というプロパティに名前を割り当ててください。
+コードエディターには `state` から `firstName` プロパティをレンダーしようとしているコンポーネントがあります。 しかし、`state` が定義されていません。 `constructor` で `state` を使用してコンポーネントを初期化し、`firstName` というプロパティにあなたの名前を割り当ててください。
 
 # --hints--
 
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-`StatefulComponent` の state を初期化し、プロパティ `name` に文字列を設定します。
+`StatefulComponent` の state を初期化し、プロパティ `firstName` に文字列を設定します。
 
 ```js
 assert(
@@ -65,13 +65,13 @@ assert(
     );
     const initialState = mockedComponent.state();
     return (
-      typeof initialState === 'object' && typeof initialState.name === 'string'
+      typeof initialState === 'object' && typeof initialState.firstName === 'string'
     );
   })()
 );
 ```
 
-`StatefulComponent` の state にあるプロパティ `name` を `h1` 要素にレンダーします。
+`StatefulComponent` の state にあるプロパティ `firstName` を `h1` 要素にレンダーします。
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
       React.createElement(StatefulComponent)
     );
     const initialState = mockedComponent.state();
-    return mockedComponent.find('h1').text() === initialState.name;
+    return mockedComponent.find('h1').text() === initialState.firstName;
   })()
 );
 ```
@@ -106,7 +106,7 @@ class StatefulComponent extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        <h1>{this.state.firstName}</h1>
       </div>
     );
   }
@@ -120,13 +120,13 @@ class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'freeCodeCamp!'
+      firstName: 'freeCodeCamp!'
     }
   }
   render() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        <h1>{this.state.firstName}</h1>
       </div>
     );
   }

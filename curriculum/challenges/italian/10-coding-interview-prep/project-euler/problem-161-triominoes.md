@@ -1,7 +1,7 @@
 ---
 id: 5900f40d1000cf542c50ff20
 title: 'Problema 161: Triomini'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301795
 dashedName: problem-161-triominoes
 ---

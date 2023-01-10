@@ -8,7 +8,7 @@ const readDirP = require('readdirp');
 const { helpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
 const { curriculum: curriculumLangs } =
-  require('../config/i18n/all-langs').availableLangs;
+  require('../config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
 /* eslint-disable max-len */
 const {
@@ -32,22 +32,9 @@ const COMMENT_TRANSLATIONS = createCommentMap(
   path.resolve(__dirname, 'dictionaries')
 );
 
-function getTranslatableComments(dictionariesDir) {
-  const COMMENTS_TO_TRANSLATE = require(path.resolve(
-    dictionariesDir,
-    'english',
-    'comments.json'
-  ));
-  return Object.values(COMMENTS_TO_TRANSLATE);
-}
-
-exports.getTranslatableComments = getTranslatableComments;
-
 function createCommentMap(dictionariesDir) {
   // get all the languages for which there are dictionaries.
-  const languages = fs
-    .readdirSync(dictionariesDir)
-    .filter(x => x !== 'english');
+  const languages = fs.readdirSync(dictionariesDir);
 
   // get all their dictionaries
   const dictionaries = languages.reduce(
@@ -300,7 +287,10 @@ ${getFullPath('english', filePath)}
     if (missingAuditedChallenge)
       throw Error(`Missing ${lang} audited challenge for
 ${filePath}
-No audited challenges should fallback to English.
+
+Explanation:
+
+Challenges that have been already audited cannot fall back to their English versions. If you are seeing this, please update, and approve these Challenges on Crowdin first, followed by downloading them to the main branch using the GitHub workflows.
     `);
   }
 
@@ -371,18 +361,18 @@ No audited challenges should fallback to English.
 
     await validate(filePath, meta.superBlock);
 
-    const useEnglish =
-      lang === 'english' ||
-      !isAuditedCert(lang, meta.superBlock) ||
-      !fs.existsSync(getFullPath(lang, filePath));
+    // We always try to translate comments (even English ones) to confirm that translations exist.
+    const translateComments =
+      isAuditedCert(lang, meta.superBlock) &&
+      fs.existsSync(getFullPath(lang, filePath));
 
-    const challenge = await (useEnglish
-      ? parseMD(getFullPath('english', filePath))
-      : parseTranslation(
+    const challenge = await (translateComments
+      ? parseTranslation(
           getFullPath(lang, filePath),
           COMMENT_TRANSLATIONS,
           lang
-        ));
+        )
+      : parseMD(getFullPath('english', filePath)));
 
     addMetaToChallenge(challenge, meta);
 

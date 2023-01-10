@@ -1,7 +1,7 @@
 ---
 id: 5900f3b61000cf542c50fec9
 title: 'Problema 74: Cadeia de fatoriais'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302187
 dashedName: problem-74-digit-factorial-chains
 ---

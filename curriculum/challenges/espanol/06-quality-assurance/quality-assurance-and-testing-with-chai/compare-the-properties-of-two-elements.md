@@ -8,11 +8,11 @@ dashedName: compare-the-properties-of-two-elements
 
 # --description--
 
-Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Repl.it</a>, o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 # --instructions--
 
-Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#8` en `Comparisons` suite, cambiar cada `assert` a `assert.isAbove` o `assert.isAtMost` para que el test sea superado (debe evaluarse a `true`). No modifiques los argumentos pasados ​​a los verificadores.
+Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#8` en `Comparisons` suite, cambiar cada `assert` a `assert.isAbove` o `assert.isAtMost` para que el test sea aprovado (debe evaluarse a `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 
@@ -48,7 +48,7 @@ Debe elegir el método correcto para la primera aserción - `isAbove` vs. `isAtM
   );
 ```
 
-Debe elegir el método correcto para la segunda aserción - `isAbove` vs. `isAtMost`.
+Debes elegir el método correcto para la segunda aserción - `isAbove` vs. `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ Debe elegir el método correcto para la segunda aserción - `isAbove` vs. `isAtM
   );
 ```
 
-Debe elegir el método correcto para la tercera aserción - `isAbove` vs. `isAtMost`.
+Debes elegir el método correcto para la tercera aserción - `isAbove` vs. `isAtMost`.
 
 ```js
 (getUserInput) =>

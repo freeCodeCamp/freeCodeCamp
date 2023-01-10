@@ -1,20 +1,20 @@
 ---
 id: 5900f3e21000cf542c50fef5
-title: 'Problem 118: Pandigital prime sets'
-challengeType: 5
+title: '问题 118：全数字（Pandigital）素数集'
+challengeType: 1
 forumTopicId: 301744
 dashedName: problem-118-pandigital-prime-sets
 ---
 
 # --description--
 
-Using all of the digits 1 through 9 and concatenating them freely to form decimal integers, different sets can be formed. Interestingly with the set $\\{2, 5, 47, 89, 631\\}$, all of the elements belonging to it are prime.
+Using all of the digits 1 through 9 and concatenating them freely to form decimal integers, different sets can be formed. 有趣的是，对于集合 $\\{2, 5, 47, 89, 631\\}$，所有属于它的元素都是素数。
 
 How many distinct sets containing each of the digits one through nine exactly once contain only prime elements?
 
 # --hints--
 
-`pandigitalPrimeSets()` should return `44680`.
+`pandigitalPrimeSets()` 应该返回 `44680`。
 
 ```js
 assert.strictEqual(pandigitalPrimeSets(), 44680);

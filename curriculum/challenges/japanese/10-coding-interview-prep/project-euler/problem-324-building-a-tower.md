@@ -1,7 +1,7 @@
 ---
 id: 5900f4b11000cf542c50ffc3
 title: '問題 324: 塔を建設する'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301981
 dashedName: problem-324-building-a-tower
 ---

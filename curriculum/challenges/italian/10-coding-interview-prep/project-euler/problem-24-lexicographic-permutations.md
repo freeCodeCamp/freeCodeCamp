@@ -1,7 +1,7 @@
 ---
 id: 5900f3841000cf542c50fe97
 title: 'Problema 24: permutazioni lessicografiche'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301885
 dashedName: problem-24-lexicographic-permutations
 ---

@@ -22,7 +22,7 @@ jQuery には `.text()` という同様の関数もあります。この関数�
 
 id が `target4` のボタンを変更して、テキストを強調表示してください。
 
-`<i>` と `<em>` の違いとそれらの用例については、[&lt;em> についてのニュース記事](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element)を参照してください。
+`<i>` と `<em>` の違いと用例については、<a href="https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp ニュースブログの &lt;em&gt; に関する記事</a>を参照してください。
 
 `<i>` タグは従来からテキストの強調に使用されていますが、最近ではアイコンのタグとして採用されています。 `<em>` タグは現在、強調用のタグとして広く使用されています。 このチャレンジではどちらも正しく機能します。
 

@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7eb0
 title: I before E except after C
-challengeType: 5
+challengeType: 1
 forumTopicId: 302288
 dashedName: i-before-e-except-after-c
 ---
 
 # --description--
 
-["I before E, except after C"](https://en.wikipedia.org/wiki/I before E except after C) は広く知られているニーモニック (覚え歌) で、英単語を綴る場合に役立つものです。
+**<a href="http://www.rosettacode.org/wiki/I_before_E_except_after_C" target="_blank" rel="noopener noreferrer nofollow">"I before E, except after C"</a>** is a general rule for English language spelling. If one is unsure whether a word is spelled with the digraph `ei` or `ie`, the rhyme suggests that the correct order is `ie` unless the preceding letter is `c`, in which case it may be `ei`.
 
 与えられた単語を使用して、フレーズの2つの従属節がそれぞれ妥当かどうかを確認します。
 

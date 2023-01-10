@@ -1,6 +1,6 @@
 ---
 id: 587d78b0367417b2b2512b05
-title: Build a Technical Documentation Page
+title: Створіть сторінку технічної документації
 challengeType: 14
 forumTopicId: 301146
 dashedName: build-a-technical-documentation-page
@@ -8,45 +8,47 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank">https://technical-documentation-page.freecodecamp.rocks</a>
+**Мета:** Створити застосунок, функціонально схожий до <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
 
-**User Stories:**
+**Історія користувача:**
 
-1. You can see a `main` element with a corresponding `id="main-doc"`, which contains the page's main content (technical documentation)
-1. Within the `#main-doc` element, you can see several `section` elements, each with a class of `main-section`. There should be a minimum of five
-1. The first element within each `.main-section` should be a `header` element, which contains text that describes the topic of that section.
-1. Each `section` element with the class of `main-section` should also have an `id` that corresponds with the text of each `header` contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "JavaScript and Java" should have a corresponding `id="JavaScript_and_Java"`)
-1. The `.main-section` elements should contain at least ten `p` elements total (not each)
-1. The `.main-section` elements should contain at least five `code` elements total (not each)
-1. The `.main-section` elements should contain at least five `li` items total (not each)
-1. You can see a `nav` element with a corresponding `id="navbar"`
-1. The navbar element should contain one `header` element which contains text that describes the topic of the technical documentation
-1. Additionally, the navbar should contain link (`a`) elements with the class of `nav-link`. There should be one for every element with the class `main-section`
-1. The `header` element in the `#navbar` must come before any link (`a`) elements in the navbar
-1. Each element with the class of `nav-link` should contain text that corresponds to the `header` text within each `section` (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world")
-1. When you click on a navbar element, the page should navigate to the corresponding section of the `main-doc` element (e.g. If you click on a `nav-link` element that contains the text "Hello world", the page navigates to a `section` element with that id, and contains the corresponding header)
-1. On regular sized devices (laptops, desktops), the element with `id="navbar"` should be shown on the left side of the screen and should always be visible to the user
-1. Your technical documentation should use at least one media query
+1. Можна побачити елемент `main` з відповідним ідентифікатором `id="main-doc"`, який містить основний вміст сторінки (технічна документація)
+1. В межах елемента `#main-doc` можна побачити декілька елементів `section`, кожен з яких має клас `main-section`. Їх має бути щонайменше п'ять
+1. Перший елемент кожної `.main-section` повинен бути елементом `header`, який має текст, що описує тему секції.
+1. Кожен елемент `section` класу `main-section` також повинен мати `id`, що відповідає тексту кожного `header`, вміщеного в ньому. Будь-які прогалини слід замінити знаками підкреслення (наприклад, секція із заголовком «JavaScript and Java» повинна мати відповідний `id="JavaScript_and_Java"`)
+1. Елементи `.main-section` повинні містити щонайменше десять елементів `p` загалом (не кожен)
+1. Елементи `.main-section` повинні містити щонайменше п'ять елементів `code` загалом (не кожен)
+1. Елементи `.main-section` повинні містити щонайменше п'ять елементів `li` загалом (не кожен)
+1. Можна побачити елемент `nav` з відповідним `id="navbar"`
+1. Елемент навігаційної панелі повинен містити один елемент `header`, який містить текст, що описує тему технічної документації
+1. Крім того, навігаційна панель повинна містити елементи зв'язку (`a`) класу `nav-link`. Має бути по одному для кожного елемента класу `main-section`
+1. Елемент `header` в `#navbar` повинен йти перед елементами зв'язку (`a`) в навігаційній панелі
+1. Кожен елемент класу `nav-link` повинен містити текст, який відповідає тексту `header` в межах кожної `section` (наприклад, якщо у вас є секція/заголовок «Hello world», ваша навігаційна панель повинна містити елемент, який має текст «Hello world»)
+1. Якщо натиснути на елемент навігаційної панелі, то сторінка має перейти до відповідної секції елемента `#main-doc` (наприклад, якщо ви натискаєте на елемент `.nav-link`, що містить текст «Hello world», то сторінка скеровує до елемента `section` з тим ідентифікатором, та містить відповідний заголовок)
+1. На пристроях звичайного розміру (портативний чи настільний комп'ютер) елемент з `id="navbar"` повинен відображатись ліворуч на екрані та завжди бути видимим для користувача
+1. Ваша технічна документація повинна використовувати принаймні один медіазапит
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
+
+**Примітка:** переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
 
 # --hints--
 
-You should have a `main` element with an `id` of `main-doc`
+Ви повинні мати елемент `main` з `id` зі значенням `main-doc`.
 
 ```js
 const el = document.getElementById('main-doc')
 assert(!!el)
 ```
 
-You should have at least five `section` elements with a class of `main-section`
+Ви повинні мати щонайменше п'ять елементів `section` класу `main-section`.
 
 ```js
 const els = document.querySelectorAll('#main-doc section')
 assert(els.length >= 5)
 ```
 
-All of your `.main-section` elements should be `section` elements
+Всі елементи `.main-section` повинні бути елементами `section`.
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -56,14 +58,14 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-You should have at least five `.main-section` elements that are descendants of `#main-doc`
+Ви повинні мати щонайменше п'ять елементів `.main-section`, які є нащадками `#main-doc`.
 
 ```js
 const els = document.querySelectorAll('#main-doc .main-section')
 assert(els.length >= 5)
 ```
 
-The first child of each `.main-section` should be a `header` element
+Перший дочірній елемент кожної `.main-section` повинен бути елементом `header`.
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -73,7 +75,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-None of your `header` elements should be empty
+Жоден з елементів `header` не повинен бути порожнім.
 
 ```js
 const els = document.querySelectorAll('header')
@@ -83,7 +85,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-All of your `.main-section` elements should have an `id`
+Всі елементи `.main-section` повинні мати `id`.
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -93,7 +95,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Each `.main-section` should have an `id` that matches the text of its first child, having any spaces in the child's text replaced with underscores (`_`) for the id’s
+Кожен `.main-section` повинен мати `id`, що відповідає тексту першого дочірнього елемента з заміною прогалин в тексті на знаки підкреслення (`_`) для ідентифікаторів.
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -104,49 +106,49 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-You should have at least 10 `p` elements (total) within your `.main-section` elements
+Ви повинні мати щонайменше 10 елементів `p` (сумарно) в межах елементів `.main-section`.
 
 ```js
 const els = document.querySelectorAll('.main-section p')
 assert(els.length >= 10)
 ```
 
-You should have at least five `code` elements that are descendants of `.main-section` elements
+Ви повинні мати щонайменше п'ять елементів `code`, що є нащадками елементів `.main-section`.
 
 ```js
 const els = document.querySelectorAll('.main-section code')
 assert(els.length >= 5)
 ```
 
-You should have at least five `li` elements that are descendants of `.main-section` elements
+Ви повинні мати щонайменше п'ять елементів `li`, що є нащадками елементів `.main-section`.
 
 ```js
 const els = document.querySelectorAll('.main-section li')
 assert(els.length >= 5)
 ```
 
-You should have a `nav` element with an `id` of `navbar`
+Ви повинні мати елемент `nav` з `id` зі значенням `navbar`.
 
 ```js
 const el = document.getElementById('navbar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Your `#navbar` should have exactly one `header` element within it
+Ваш `#navbar` повинен мати один елемент `header` всередині.
 
 ```js
 const els = document.querySelectorAll('#navbar header')
 assert(els.length === 1)
 ```
 
-You should have at least one `a` element with a class of `nav-link`
+Ви повинні мати щонайменше один елемент `a` з класом `nav-link`.
 
 ```js
-const els = document.querySelectorAll('a[class="nav-link"]')
+const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
-All of your `.nav-link` elements should be anchor (`a`) elements
+Всі ваші елементи `.nav-link` повинні бути елементами прив'язки (`a`).
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -156,7 +158,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-All of your `.nav-link` elements should be in the `#navbar`
+Всі елементи `.nav-link` повинні бути в `#navbar`.
 
 ```js
 const els1 = document.querySelectorAll('.nav-link')
@@ -164,7 +166,7 @@ const els2 = document.querySelectorAll('#navbar .nav-link')
 assert(els2.length > 0 && els1.length === els2.length)
 ```
 
-You should have the same number of `.nav-link` and `.main-section` elements
+Ви повинні мати однакову кількість елементів `.nav-link` та `.main-section`.
 
 ```js
 const els1 = document.querySelectorAll('.main-section')
@@ -172,7 +174,7 @@ const els2 = document.querySelectorAll('.nav-link')
 assert(els1.length > 0 && els2.length > 0 && els1.length === els2.length)
 ```
 
-The `header` element in the `#navbar` should come before any link (`a`) elements also in the `#navbar`
+Елемент `header` в `#navbar` повинен йти перед елементами прив'язки (`a`), також в `#navbar`.
 
 ```js
 const navLinks = document.querySelectorAll('#navbar a.nav-link');
@@ -188,7 +190,7 @@ navLinks.forEach((navLink) => {
 assert(!!header)
 ```
 
-Each `.nav-link` should have text that corresponds to the `header` text of its related `section` (e.g. if you have a "Hello world" section/header, your `#navbar` should have a `.nav-link` which has the text "Hello world")
+Кожен `.nav-link` повинен мати текст, який відповідає тексту `header` пов'язаної `section` (наприклад, якщо ви маєте секцію/заголовок «Hello world», ваш `#navbar` повинен мати `.nav-link` з текстом «Hello world»).
 
 ```js
 const headerText = Array.from(document.querySelectorAll('.main-section')).map(el =>
@@ -201,7 +203,7 @@ const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
 assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
 ```
 
-Each `.nav-link` should have an `href` attribute that links to its corresponding `.main-section` (e.g. If you click on a `.nav-link` element that contains the text "Hello world", the page navigates to a `section` element with that id)
+Кожен `.nav-link` повинен мати атрибут `href`, що посилає на відповідний `.main-section` (наприклад, якщо натиснути на елемент `.nav-link`, що містить текст «Hello world», сторінка скерує на елемент `section` з таким ідентифікатором).
 
 ```js
 const hrefValues = Array.from(document.querySelectorAll('.nav-link')).map(el => el.getAttribute('href'))
@@ -210,7 +212,7 @@ const missingHrefValues = mainSectionIDs.filter(str => hrefValues.indexOf('#' + 
 assert(hrefValues.length > 0 && mainSectionIDs.length > 0 && missingHrefValues.length === 0)
 ```
 
-Your `#navbar` should always be on the left edge of the window
+Ваш `#navbar` завжди повинен знаходитись у верхній частині вюпорту.
 
 ```js
 const el = document.getElementById('navbar')
@@ -219,10 +221,12 @@ const left2 = el?.offsetLeft
 assert(!!el && left1 >= -15 && left1 <= 15 && left2 >= -15 && left2 <= 15)
 ```
 
-Your Technical Documentation project should use at least one media query
+Ваш проєкт «Технічна документація» повинен використовувати принаймні один медіазапит.
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 # --seed--
@@ -244,7 +248,7 @@ assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Technical Documentation Page</title>
   </head>
   <body>

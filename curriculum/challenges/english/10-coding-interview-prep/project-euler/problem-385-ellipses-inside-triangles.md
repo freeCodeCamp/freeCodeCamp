@@ -1,7 +1,7 @@
 ---
 id: 5900f4ee1000cf542c510000
 title: 'Problem 385: Ellipses inside triangles'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302049
 dashedName: problem-385-ellipses-inside-triangles
 ---
@@ -10,7 +10,7 @@ dashedName: problem-385-ellipses-inside-triangles
 
 For any triangle $T$ in the plane, it can be shown that there is a unique ellipse with largest area that is completely inside $T$.
 
-<img class="img-responsive center-block" alt="ellipse completely insisde of triangle" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="ellipse completely inside a triangle" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;">
 
 For a given $n$, consider triangles $T$ such that:
 

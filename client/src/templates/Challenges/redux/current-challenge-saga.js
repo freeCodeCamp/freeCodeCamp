@@ -2,11 +2,10 @@ import { put, takeEvery } from 'redux-saga/effects';
 import store from 'store';
 
 import { randomCompliment } from '../../../utils/get-words';
-import { updateSuccessMessage } from './';
+import { CURRENT_CHALLENGE_KEY } from './action-types';
+import { updateSuccessMessage } from './actions';
 
-export const CURRENT_CHALLENGE_KEY = 'currentChallengeId';
-
-export function* currentChallengeSaga({ payload: id }) {
+function* currentChallengeSaga({ payload: id }) {
   yield store.set(CURRENT_CHALLENGE_KEY, id);
   //     // Temporarily removed to reduce calls to database
   //     // will need to re-import things at the top
@@ -27,7 +26,7 @@ export function* currentChallengeSaga({ payload: id }) {
   // }
 }
 
-export function* updateSuccessMessageSaga() {
+function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
 }
 

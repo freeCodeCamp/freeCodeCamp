@@ -1,7 +1,7 @@
 ---
 id: 5900f52a1000cf542c51003b
 title: 'Problem 444: The Roundtable Lottery'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302116
 dashedName: problem-444-the-roundtable-lottery
 ---

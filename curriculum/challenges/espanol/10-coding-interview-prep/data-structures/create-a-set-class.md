@@ -1,6 +1,6 @@
 ---
 id: 8d1323c8c441eddfaeb5bdef
-title: Create a Set Class
+title: Crea una Clase Set
 challengeType: 1
 forumTopicId: 301632
 dashedName: create-a-set-class
@@ -8,7 +8,7 @@ dashedName: create-a-set-class
 
 # --description--
 
-In this exercise we are going to create a class named `Set` to emulate an abstract data structure called "set". A set is like an array, but it cannot contain duplicate values. The typical use for a set is to simply check for the presence of an item. We can see how the ES6 `Set` object works in the example below:
+En este ejercicio vamos a crear una clase llamada `Set` para simular una estructura de datos abstracta llamada "set". Un set es como un arreglo, pero no puede contener valores duplicados. El uso típico para un set es simplemente verificar la presencia de un elemento. Podemos ver como funciona el objeto `Set` ES6 en el siguiente ejemplo:
 
 ```js
 const set1 = new Set([1, 2, 3, 5, 5, 2, 0]);
@@ -20,17 +20,17 @@ console.log(set1.has(6));
 // output: false
 ```
 
-First, we will create an add method that adds a value to our set collection as long as the value does not already exist in the set. Then we will create a remove method that removes a value from the set collection if it already exists. And finally, we will create a size method that returns the number of elements inside the set collection.
+Primero, crearemos un método add que agregará un valor a nuestra colección siempre y cuando el valor aun no exista en el set. Luego crearemos un método remove que eliminará un valor de la colleción set si ya existe. Y finalmente, crearemos un método size que devolverá el número de elementos en el interior de la colleción set.
 
 # --instructions--
 
-Create an `add` method that adds a unique value to the set collection and returns `true` if the value was successfully added and `false` otherwise.
+Cre un método `add` que añada un valor único a la colleción set y devuelva `true` si el valor fue añadido exitosamente y `false` de lo contrario.
 
-Create a `remove` method that accepts a value and checks if it exists in the set. If it does, then this method should remove it from the set collection, and return `true`. Otherwise, it should return `false`. Create a `size` method that returns the size of the set collection.
+Crea un método `remove` que acepte un valor y compruebe si existe en el set. Si existe, entonces este método debe eliminarlo de la colección set, y devolver `true`. De lo contrario, debe devolver `false`. Crea un método `size` que devuelva el tamaño de la colleción set.
 
 # --hints--
 
-Your `Set` class should have an `add` method.
+Tu clase `Set` debe tener un método `add`.
 
 ```js
 assert(
@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-Your `add` method should not add duplicate values.
+Tu método `add` no debe agregar valores duplicados.
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-Your `add` method should return `true` when a value has been successfully added.
+Tu método `add` debe devolver `true` cuando un valor ha sido añadido exitosamente.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-Your `add` method should return `false` when a duplicate value is added.
+Tu método `add` debe devolver `false` cuando un valor duplicado es añadido.
 
 ```js
 assert(
@@ -81,7 +81,7 @@ assert(
 );
 ```
 
-Your `Set` class should have a `remove` method.
+Tu clase `Set` debe tener un método `remove`.
 
 ```js
 assert(
@@ -92,7 +92,7 @@ assert(
 );
 ```
 
-Your `remove` method should only remove items that are present in the set.
+Tu método `remove` solo debe eliminar elementos que estén presentes en el set.
 
 ```js
 assert.deepEqual(
@@ -107,7 +107,7 @@ assert.deepEqual(
 );
 ```
 
-Your `remove` method should remove the given item from the set.
+Tu método `remove` debe eliminar el elemento dado del set.
 
 ```js
 assert(
@@ -122,7 +122,7 @@ assert(
 );
 ```
 
-Your `Set` class should have a `size` method.
+Tu clase `Set` debe tener un método `size`.
 
 ```js
 assert(
@@ -133,7 +133,7 @@ assert(
 );
 ```
 
-The `size` method should return the number of elements in the collection.
+El método `size` debe devolver el número de elementos en la colleción.
 
 ```js
 assert(

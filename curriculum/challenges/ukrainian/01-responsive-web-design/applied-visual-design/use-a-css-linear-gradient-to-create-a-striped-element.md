@@ -47,7 +47,7 @@ assert(!code.match(/90deg/gi));
 assert(code.match(/yellow\s+?0(px)?/gi));
 ```
 
-Один стоп-колір на рівні 40 пікселів повинен бути `yellow` (жовтий).
+Перший стоп-колір на 40 пікселях повинен бути `yellow`.
 
 ```js
 assert(code.match(/yellow\s+?40px/gi));

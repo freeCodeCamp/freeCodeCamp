@@ -1,7 +1,7 @@
 ---
 id: 5900f52d1000cf542c510040
 title: 'Завдання 449: Цукерки, покриті шоколадом'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302121
 dashedName: problem-449-chocolate-covered-candy
 ---

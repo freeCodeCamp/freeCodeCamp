@@ -1,14 +1,24 @@
 ---
 id: 5a23c84252665b21eecc8017
 title: Алгоритм Саундекс
-challengeType: 5
+challengeType: 1
 forumTopicId: 302320
 dashedName: soundex
 ---
 
 # --description--
 
-Саундекс — це алгоритм створення індексів для слів на основі їх вимови. Метою є кодування омофонів до одного представлення, щоб їх можна було зіставити, незважаючи на незначні відмінності у написанні (зі [статті у Вікіпедії](https://en.wikipedia.org/wiki/soundex)). Великою проблемою в багатьох реалізаціях є розрізнення приголосних із однаковим саундекс-кодом! Згідно з [ офіційними правилами](https://www.archives.gov/research/census/soundex.html). Тому перевірте, наприклад, чи **Ashcraft** закодовано як **A-261**.
+**Soundex Algorithm** deals with the *intentions* of the words. It creates a representation for similar sounding words.
+
+It is used for searching <em>names</em> and <em>addresses</em>. This means that the person who filled in the <em>name</em>, can focus on how it sounds instead of correcting the spelling of <em>names</em>.
+
+Наприклад:
+
+If you are hearing the name `Quenci` for the first time, and misspelled it, you will get **Soundex** code `Q520`.
+
+When you spell the name `Quincy` correctly next time, you will still get the same code `Q520`, which means you can link multiple name pronunciations into the same <em>person</em> without the need for adding every spelling.
+
+Ось правила: 
 
 <ul>
   <li>Якщо голосний (A, E, I, O, U) звук розділяє два приголосні, які мають однаковий саундекс-код, кодується приголосний праворуч від голосного. Tymczak кодується як T-522 (T, 5 замість M, 2 замість C, Z ігнорується (див. правило "Пліч-о-пліч" вище), 2 замість K). Оскільки голосний "A" розділяє літери Z та К, літера К кодується.</li>
@@ -17,7 +27,7 @@ dashedName: soundex
 
 # --instructions--
 
-Напишіть функцію, яка приймає рядок як параметр та повертає закодований рядок.
+Write a function that takes a string as a parameter and returns the encoded string.
 
 # --hints--
 
@@ -39,7 +49,7 @@ assert(typeof soundex('Soundex') == 'string');
 assert.equal(soundex('Soundex'), 'S532');
 ```
 
-`soundex("Example")`має повернути `"E251"`.
+`soundex("Example")` має повернути `"E251"`.
 
 ```js
 assert.equal(soundex('Example'), 'E251');

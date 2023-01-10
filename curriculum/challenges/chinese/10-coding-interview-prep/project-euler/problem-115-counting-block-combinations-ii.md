@@ -1,7 +1,7 @@
 ---
 id: 5900f3df1000cf542c50fef1
 title: '问题 115：计数块组合 II'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301741
 dashedName: problem-115-counting-block-combinations-ii
 ---

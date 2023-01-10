@@ -10,7 +10,7 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 和上一个挑战中我们学到的用波浪号来安装最新的修订版依赖一样，脱字符（`^`）也允许 npm 来安装功能更新。 它们的不同之处在于：脱字符允许次版本和修订版更新。
 
-现在项目中的 moment 依赖包的版本应该是“~2.10.2”，这意味着 npm 可以安装最新的 2.10.x 版的 moment， 如果使用脱字符（^）来替换版本号的前缀，那么 npm 可以将 moment 升级安装到任何 2.x.x 的版本。
+你当前的 `@freecodecamp/example` 版本应该是“~1.2.13”，它允许 npm 安装到最新的 1.2.x 版本。 如果使用插入符号（^）作为版本前缀，npm 将被允许更新到任何 1.x.x 版本。
 
 ```json
 "package": "^1.3.8"
@@ -20,13 +20,13 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 # --instructions--
 
-在依赖项中，使用脱字符（`^`）为 moment 的版本添加前缀，允许 npm 更新依赖包到任意新的次版本。
+使用插入符号（`^`）为依赖项中的 `@freecodecamp/example` 版本添加前缀，并允许 npm 将其更新到任何新的 MINOR 版本。
 
 **注意：** 原来的版本号不用更改。
 
 # --hints--
 
-“dependencies”字段中应包含“moment”
+`"dependencies"` 应包括 `"@freecodecamp/example"`。
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
   );
 ```
 
-“moment”的版本应是“^2.x.x”
+`"@freecodecamp/example"` 版本应匹配 `"^1.x.x"`。
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^\^2\./,
-        'Wrong version of "moment". It should be ^2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\^1\./,
+        'Wrong version of "@freecodecamp/example". It should be ^1.2.13'
       );
     },
     (xhr) => {

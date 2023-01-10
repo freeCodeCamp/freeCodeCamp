@@ -11,7 +11,7 @@ dashedName: import-a-google-font
 
 Oltre a specificare i caratteri comuni che si trovano nella maggior parte dei sistemi operativi, possiamo anche specificare font web personalizzati non standard per l'uso nel nostro sito web. Ci sono molte fonti dove reperire i web fonts su Internet. Per questo esempio ci concentreremo sulla libreria Google Fonts.
 
-[Google Fonts](https://fonts.google.com/) è una libreria gratuita di web fonts che puoi usare nel tuo CSS facendo riferimento all'URL del font.
+Google Fonts è una libreria gratuita di font che puoi utilizzare in CSS facendo riferimento all'URL del font.
 
 Quindi, andiamo avanti e importiamo e applichiamo un carattere di Google (nota che se Google è bloccato nel vostro paese, dovrai saltare questa fase).
 

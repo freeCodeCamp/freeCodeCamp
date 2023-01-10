@@ -1,7 +1,7 @@
 ---
 id: 5900f4041000cf542c50ff17
 title: '問題 152: 1/2 を平方数の逆数の和で表す'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301783
 dashedName: problem-152-writing-one-half-as-a-sum-of-inverse-squares
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f4491000cf542c50ff5c
 title: 'Problema 221: Interi Alessandrini'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301864
 dashedName: problem-221-alexandrian-integers
 ---

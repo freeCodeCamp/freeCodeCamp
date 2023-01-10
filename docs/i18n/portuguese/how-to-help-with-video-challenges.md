@@ -69,9 +69,9 @@ Escolha um arquivo dentre as opções acima.
 
 ### Explore o vídeo associado ao desafio e crie uma questão de múltipla escolha
 
-Primeiro, localize o videoId.
+Primeiro, localize o `videoId`.
 
-Por exemplo, no código a seguir a partir do cabeçalho de um arquivo markdown de desafio de vídeo, o videoId é "nVAaxZ34khk". No GitHub, a informação deve estar contida em formato tabular.
+Por exemplo, no código a seguir a partir do cabeçalho de um arquivo markdown de desafio de vídeo, o `videoId` é "nVAaxZ34khk". No GitHub, a informação deve estar contida em formato tabular.
 
 ````
 ---
@@ -85,7 +85,7 @@ https://www.youtube.com/watch?v=[videoId]  (troque `videoId` na URL pelo ID do v
 
 No exemplo acima, a URL seria https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Assista ao vídeo no YouTube daquele videoId e pense em uma questão de múltipla escolha baseada em seu conteúdo.
+Assista ao vídeo no YouTube daquele `videoId` e pense em uma questão de múltipla escolha baseada em seu conteúdo.
 
 ### Adicione a pergunta ao arquivo markdown
 

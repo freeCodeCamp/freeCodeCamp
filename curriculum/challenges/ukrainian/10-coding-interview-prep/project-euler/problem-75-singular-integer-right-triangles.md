@@ -1,7 +1,7 @@
 ---
 id: 5900f3b71000cf542c50feca
 title: 'Завдання 75: Одиничні цілочисельні прямокутні трикутники'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302188
 dashedName: problem-75-singular-integer-right-triangles
 ---

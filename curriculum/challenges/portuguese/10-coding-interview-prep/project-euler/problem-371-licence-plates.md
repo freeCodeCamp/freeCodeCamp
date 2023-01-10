@@ -1,7 +1,7 @@
 ---
 id: 5900f4e01000cf542c50fff2
 title: 'Problema 371: Placas de carro'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302033
 dashedName: problem-371-licence-plates
 ---

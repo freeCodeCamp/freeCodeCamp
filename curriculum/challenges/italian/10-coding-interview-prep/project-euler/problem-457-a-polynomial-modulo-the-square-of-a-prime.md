@@ -1,7 +1,7 @@
 ---
 id: 5900f5361000cf542c510048
 title: 'Problema 457: Un polinomiale modulo il quadrato di un primo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302131
 dashedName: problem-457-a-polynomial-modulo-the-square-of-a-prime
 ---

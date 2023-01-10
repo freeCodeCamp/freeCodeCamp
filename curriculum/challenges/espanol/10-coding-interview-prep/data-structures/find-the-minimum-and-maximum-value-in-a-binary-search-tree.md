@@ -1,6 +1,6 @@
 ---
 id: 587d8256367417b2b2512c7a
-title: Find the Minimum and Maximum Value in a Binary Search Tree
+title: Encuentra el Valor Mínimo y Máximo en un Árbol Binario de Búsqueda
 challengeType: 1
 forumTopicId: 301642
 dashedName: find-the-minimum-and-maximum-value-in-a-binary-search-tree
@@ -8,11 +8,11 @@ dashedName: find-the-minimum-and-maximum-value-in-a-binary-search-tree
 
 # --description--
 
-In this challenge you will define two methods, `findMin` and `findMax`. These methods should return the minimum and maximum value held in the binary search tree (don't worry about adding values to the tree for now, we have added some in the background). If you get stuck, reflect on the invariant that must be true for binary search trees: each left subtree is less than or equal to its parent and each right subtree is greater than or equal to its parent. Let's also say that our tree can only store integer values. If the tree is empty, either method should return `null`.
+En este desafío definirás dos métodos, `findMin` and `findMax`. Estos métodos deben devolver el valor mínimo y máximo en el árbol binario de búsqueda ( no te preocupes por agregar valores al árbol por ahora, hemos agregado algunos por defecto). Si te quedas estancado, reflexiona sobre el invariante que debe ser true para los árboles binarios de búsqueda: cada subárbol izquierdo es menor o igual que su padre y cada subárbol derecho es mayor o igual que su padre. Digamos también que nuestro árbol solo puede almacenar valores enteros. Si el árbol está vacío, cualquiera de los métodos debe devolver `null`.
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+La estructura de datos `BinarySearchTree` debe existir.
 
 ```js
 assert(
@@ -26,7 +26,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `findMin`.
+El árbol binario de búsqueda debe tener un método llamado `findMin`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `findMax`.
+El árbol binario de búsqueda debe tener un método llamado `findMax`.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-The `findMin` method should return the minimum value in the binary search tree.
+El método `findMin` debe devolver el valor mínimo del árbol binario de búsqueda.
 
 ```js
 assert(
@@ -85,7 +85,7 @@ assert(
 );
 ```
 
-The `findMax` method should return the maximum value in the binary search tree.
+El método `findMax` debe devolver el valor máximo en el árbol binario de búsqueda.
 
 ```js
 assert(
@@ -112,7 +112,7 @@ assert(
 );
 ```
 
-The `findMin` and `findMax` methods should return `null` for an empty tree.
+Los métodos `findMin` y `findMax` deben devolver `null` para un árbol vacío.
 
 ```js
 assert(

@@ -29,7 +29,7 @@ Tente dar ao seu formulário, que agora tem o atributo `id` de `cat-photo-form`,
 
 # --hints--
 
-O elemento `form` deve ter o id de `cat-photo-form`.
+O elemento `form` deve ter o atributo id com o valor `cat-photo-form`.
 
 ```js
 assert($('form').attr('id') === 'cat-photo-form');

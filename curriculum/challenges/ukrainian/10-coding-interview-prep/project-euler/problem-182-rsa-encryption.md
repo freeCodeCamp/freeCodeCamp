@@ -1,7 +1,7 @@
 ---
 id: 5900f4231000cf542c50ff35
 title: 'Завдання 182: шифрування RSA'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301818
 dashedName: problem-182-rsa-encryption
 ---

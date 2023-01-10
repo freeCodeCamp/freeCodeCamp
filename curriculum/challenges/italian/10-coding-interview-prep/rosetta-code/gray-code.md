@@ -1,18 +1,18 @@
 ---
 id: 5a23c84252665b21eecc7e80
 title: Codice Gray
-challengeType: 5
+challengeType: 1
 forumTopicId: 302276
 dashedName: gray-code
 ---
 
 # --description--
 
-[Il codice Gray](https://en.wikipedia.org/wiki/Gray code) è una forma di codifica binaria in cui le transizioni tra numeri consecutivi differiscono di un solo bit.
+Il codice grigio è una forma di codifica binaria dove la transizione tra numeri consecutivi differisce di un solo bit.
 
 Si tratta di una codifica utile per ridurre il rischio di perdita di dati hardware con valori che cambiano rapidamente e/o si collegano a un hardware più lento come input.
 
-È utile anche per generare input per [mappe Karnaugh](https://en.wikipedia.org/wiki/Karnaugh map) in ordine da sinistra a destra o dall'alto al basso.
+È anche utile generare gli input per le mappe di Karnaugh in ordine da sinistra a destra o da sopra a sotto.
 
 # --instructions--
 

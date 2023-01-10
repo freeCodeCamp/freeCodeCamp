@@ -1,7 +1,7 @@
 ---
 id: 5900f4ba1000cf542c50ffcd
 title: 'Problem 334: Spilling the beans'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301992
 dashedName: problem-334-spilling-the-beans
 ---
@@ -12,7 +12,7 @@ In Plato's heaven, there exist an infinite number of bowls in a straight line. E
 
 For example, consider two adjacent bowls containing 2 and 3 beans respectively, all other bowls being empty. The following eight moves will finish the game:
 
-<img class="img-responsive center-block" alt="animation of game when two adjacent bowls contains 2 and 3 beans respectivelly" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="animation of game when two adjacent bowls contain 2 and 3 beans respectively" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;">
 
 You are given the following sequences:
 

@@ -1,7 +1,7 @@
 ---
 id: af4afb223120f7348cdfc9fd
 title: Mapea el Debris
-challengeType: 5
+challengeType: 1
 forumTopicId: 16021
 dashedName: map-the-debris
 ---

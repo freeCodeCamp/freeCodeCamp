@@ -1,7 +1,7 @@
 ---
 id: 5900f3911000cf542c50fea4
 title: 'Problema 37: numeri primi troncabili'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302031
 dashedName: problem-37-truncatable-primes
 ---

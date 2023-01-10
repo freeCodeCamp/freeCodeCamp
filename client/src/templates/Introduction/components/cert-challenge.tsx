@@ -12,12 +12,12 @@ import {
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
-  userFetchStateSelector,
   isSignedInSelector,
+  userFetchStateSelector,
   currentCertsSelector
-} from '../../../redux';
+} from '../../../redux/selectors';
 import { User, Steps } from '../../../redux/prop-types';
-import { verifyCert } from '../../../redux/settings';
+import { verifyCert } from '../../../redux/settings/actions';
 import { certMap } from '../../../resources/cert-and-project-map';
 
 interface CertChallengeProps {
@@ -34,7 +34,7 @@ interface CertChallengeProps {
   currentCerts: Steps['currentCerts'];
   superBlock: SuperBlocks;
   t: TFunction;
-  title: typeof certMap[number]['title'];
+  title: (typeof certMap)[number]['title'];
   user: User;
   verifyCert: typeof verifyCert;
 }
@@ -130,7 +130,8 @@ const CertChallenge = ({
         >
           {isCertified && userLoaded
             ? t('buttons.show-cert')
-            : t('buttons.go-to-settings')}
+            : t('buttons.go-to-settings')}{' '}
+          <span className='sr-only'>{title}</span>
         </Button>
       )}
     </div>
@@ -138,8 +139,6 @@ const CertChallenge = ({
 };
 
 CertChallenge.displayName = 'CertChallenge';
-
-export { CertChallenge };
 
 export default connect(
   mapStateToProps,

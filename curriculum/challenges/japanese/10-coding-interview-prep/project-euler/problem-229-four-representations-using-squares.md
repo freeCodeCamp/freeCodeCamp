@@ -1,7 +1,7 @@
 ---
 id: 5900f4521000cf542c50ff64
 title: '問題 229: 平方数を使った 4 通りの表現'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301872
 dashedName: problem-229-four-representations-using-squares
 ---

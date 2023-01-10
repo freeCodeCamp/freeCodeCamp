@@ -1,7 +1,7 @@
 ---
 id: 5900f4361000cf542c50ff48
 title: '問題 201: 唯一の和を持つ部分集合'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301841
 dashedName: problem-201-subsets-with-a-unique-sum
 ---

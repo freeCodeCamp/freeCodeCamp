@@ -1,6 +1,6 @@
 ---
 id: 5e46f979ac417301a38fb932
-title: Port Scanner
+title: Сканер портів
 challengeType: 10
 forumTopicId: 462372
 helpCategory: Python
@@ -9,32 +9,39 @@ dashedName: port-scanner
 
 # --description--
 
-You will be [working on this project with our Replit starter code](https://replit.com/github/freeCodeCamp/boilerplate-port-scanner).
+Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-- [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
 
-- [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 hours)
+Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
+
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 годин)
+
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 години)
+
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 годин)
 
 # --instructions--
 
-Create a port scanner using Python.
+Створіть сканер портів за допомогою Python.
 
-In the `port_scanner.py` file, create a function called `get_open_ports` that takes a `target` argument and a `port_range` argument. `target` can be a URL or IP address. `port_range` is a list of two numbers indicating the first and last numbers of the range of ports to check.
+У файлі `port_scanner.py` створіть функцію під назвою `get_open_ports`, яка приймає аргументи `target` та `port_range`. `target` може бути URL-адресою або IP-адресою. `port_range` є списком із двох чисел, які позначають перше та останнє число діапазону портів для перевірки.
 
-Here are examples of how the function may be called:
+Ось приклади того, як можна викликати функцію:
 
 ```py
 get_open_ports("209.216.230.240", [440, 445])
 get_open_ports("www.stackoverflow.com", [79, 82])
 ```
 
-The function should return a list of open ports in the given range.
+Функція повинна повернути список відкритих портів у вказаному діапазоні.
 
-The `get_open_ports` function should also take an optional third argument of `True` to indicate "Verbose" mode. If this is set to true, the function should return a descriptive string instead of a list of ports.
+Функція `get_open_ports` також повинна приймати необов’язковий третій аргумент `True`, щоб вказати режим «Детальний». Якщо це встановлено на True, функція повинна повертати описовий рядок замість списку портів.
 
-Here is the format of the string that should be returned in verbose mode (text inside `{}` indicates the information that should appear):
+Ось формат рядка, який повинен бути повернутий у детальному режимі (текст всередині `{}` вказує на інформацію, яка має з’явитися):
 
 ```bash
 Open ports for {URL} ({IP address})
@@ -43,15 +50,15 @@ PORT     SERVICE
 {port}   {service name}
 ```
 
-You can use the dictionary in `common_ports.py` to get the correct service name for each port.
+Ви можете використати словник у `common_ports.py`, щоб отримати правильну назву сервісу для кожного порту.
 
-For example, if the function is called like this:
+Наприклад, якщо функція викликається так:
 
 ```py
 port_scanner.get_open_ports("scanme.nmap.org", [20, 80], True)
 ```
 
-It should return the following:
+Вона повинна повернути наступне:
 
 ```bash
 Open ports for scanme.nmap.org (45.33.32.156)
@@ -60,27 +67,27 @@ PORT     SERVICE
 80       http
 ```
 
-Make sure to include proper spacing and new line characters.
+Обов’язково додайте правильні пробіли та символи нового рядка.
 
-If the URL passed into the `get_open_ports` function is invalid, the function should return the string: "Error: Invalid hostname".
+Якщо адреса ресурсу (URL), передана у функцію `get_open_ports`, недійсна, то функція повинна повернути рядок «Error: Invalid hostname».
 
-If the IP address passed into the `get_open_ports` function is invalid, the function should return the string: "Error:  Invalid IP address".
+Якщо IP-адреса, передана у функцію `get_open_ports`, недійсна, то функція повинна повернути рядок «Error:  Invalid IP address».
 
-## Development
+## Розробка
 
-Write your code in `port_scanner.py`. For development, you can use `main.py` to test your code. Click the "run" button and `main.py` will run.
+Запишіть свій код у `port_scanner.py`. Для розробки ви можете використати `main.py`, щоб протестувати свій код. Натисніть кнопку «run» і `main.py` запуститься.
 
-## Testing
+## Тестування
 
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+Модульні тести для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
 
-## Submitting
+## Надсилання
 
-Copy your project's URL and submit it to freeCodeCamp.
+Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
 # --hints--
 
-It should pass all Python tests.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

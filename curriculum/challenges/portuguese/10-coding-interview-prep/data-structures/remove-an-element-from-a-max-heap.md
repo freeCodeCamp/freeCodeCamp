@@ -27,7 +27,7 @@ A estrutura de dados `MaxHeap` deve existir.
 ```js
 assert(
   (function () {
-    var test = false;
+    let test = false;
     if (typeof MaxHeap !== 'undefined') {
       test = new MaxHeap();
     }
@@ -41,7 +41,7 @@ assert(
 ```js
 assert(
   (function () {
-    var test = false;
+    let test = false;
     if (typeof MaxHeap !== 'undefined') {
       test = new MaxHeap();
     } else {
@@ -57,7 +57,7 @@ assert(
 ```js
 assert(
   (function () {
-    var test = false;
+    let test = false;
     if (typeof MaxHeap !== 'undefined') {
       test = new MaxHeap();
     } else {
@@ -73,7 +73,7 @@ assert(
 ```js
 assert(
   (function () {
-    var test = false;
+    let test = false;
     if (typeof MaxHeap !== 'undefined') {
       test = new MaxHeap();
     } else {
@@ -87,24 +87,50 @@ assert(
 O método `remove` deve remover o maior elemento do Max Heap ao mesmo tempo em que mantém a propriedade do Max Heap.
 
 ```js
+function isHeap(arr, i, n) {
+  if (i >= (n - 1) / 2) {
+    return true;
+  }
+  if (
+    arr[i] >= arr[2 * i + 1] &&
+    arr[i] >= arr[2 * i + 2] &&
+    isHeap(arr, 2 * i + 1, n) &&
+    isHeap(arr, 2 * i + 2, n)
+  ) {
+    return true;
+  }
+  return false;
+}
+
 assert(
   (function () {
-    var test = false;
+    let test = false;
     if (typeof MaxHeap !== 'undefined') {
       test = new MaxHeap();
     } else {
       return false;
     }
-    test.insert(30);
-    test.insert(300);
-    test.insert(500);
-    test.insert(10);
-    let result = [];
-    result.push(test.remove());
-    result.push(test.remove());
-    result.push(test.remove());
-    result.push(test.remove());
-    return result.join('') == '5003003010';
+  let max = Infinity;
+  const [result, vals] = [[], [2, 15, 3, 7, 12, 7, 10, 90]];
+  vals.forEach((val) => test.insert(val));
+  for (let i = 0; i < vals.length; i++) {
+    const curHeap = test.print();
+    const arr = curHeap[0] === null ? curHeap.slice(1) : curHeap;
+    if (!isHeap(arr, 0, arr.length - 1)) {
+      return false;
+    }
+    const removed = test.remove();
+    if (!vals.includes(removed)) return false;
+    if (removed > max) return false
+    max = removed;
+    result.push(removed);
+  }
+  for (let i = 0; i < vals.length; i++) {
+     if (!result.includes(vals[i])) {
+       return false;
+     }
+  }
+  return true
   })()
 );
 ```
@@ -114,7 +140,7 @@ assert(
 ## --seed-contents--
 
 ```js
-var MaxHeap = function () {
+const MaxHeap = function () {
   this.heap = [];
   this.parent = index => {
     return Math.floor((index - 1) / 2);

@@ -1,18 +1,16 @@
 ---
 id: a202eed8fc186c8434cb6d61
 title: Inverter uma string
-challengeType: 5
+challengeType: 1
 forumTopicId: 16043
 dashedName: reverse-a-string
 ---
 
 # --description--
 
-Inverta a string fornecida.
+Inverta a string fornecida e retorne-a com a inversão.
 
-Você pode ter que transformar a string em um array antes de poder inverter.
-
-Seu resultado deve ser uma string.
+Por exemplo, `"hello"` deve se tornar `"olleh"`.
 
 # --hints--
 

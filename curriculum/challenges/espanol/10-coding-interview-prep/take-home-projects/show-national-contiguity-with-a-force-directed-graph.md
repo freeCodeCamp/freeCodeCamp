@@ -1,6 +1,6 @@
 ---
 id: bd7198d8c242eddfaeb5bd13
-title: Show National Contiguity with a Force Directed Graph
+title: Muestra la contigüidad nacional con un gráfico dirigido por fuerza
 challengeType: 3
 forumTopicId: 302367
 dashedName: show-national-contiguity-with-a-force-directed-graph
@@ -8,9 +8,9 @@ dashedName: show-national-contiguity-with-a-force-directed-graph
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/xVopBo>.
+**Objective:** Build an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/XWEONRz>.
 
-Fulfill the following [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Fulfill the below user stories and get all of the tests to pass. Utiliza las librerías o APIs que necesites. Dale su propio estilo personal.
 
 **User Story:** I can see a Force-directed Graph that shows which countries share borders.
 
@@ -20,9 +20,9 @@ Fulfill the following [user stories](https://en.wikipedia.org/wiki/User_story). 
 
 **Hint:** You can create a spritesheet of national flags at <https://www.flag-sprites.com>.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Cuando hayas terminado, incluye un enlace a tu proyecto en CodePen y haz clic en el botón "He completado este desafío".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

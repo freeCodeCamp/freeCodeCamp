@@ -1,7 +1,7 @@
 ---
 id: 5900f3a81000cf542c50febb
 title: 'Problem 60: Prime pair sets'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302172
 dashedName: problem-60-prime-pair-sets
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f53e1000cf542c510051
 title: 'Problema 466: termini distinti in una tabella di moltiplicazione'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302141
 dashedName: problem-466-distinct-terms-in-a-multiplication-table
 ---

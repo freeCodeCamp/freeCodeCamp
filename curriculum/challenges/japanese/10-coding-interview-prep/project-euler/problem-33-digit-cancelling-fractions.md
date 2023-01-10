@@ -1,7 +1,7 @@
 ---
 id: 5900f38d1000cf542c50fea0
 title: '問題 33: 分数の数字を消す'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301987
 dashedName: problem-33-digit-cancelling-fractions
 ---

@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8010
 title: Алгоритми сортування/Сортува́ння Ше́лла
-challengeType: 5
+challengeType: 1
 forumTopicId: 302317
 dashedName: sorting-algorithmsshell-sort
 ---
 
 # --description--
 
-Напишіть функцію для сортування масиву елементів за допомогою алгоритму [>сортування Шелла](https://en.wikipedia.org/wiki/Shell sort), сортування за зменшенням приросту. Функція має повернути впорядкований масив.
+Write a function to sort an array of elements using the Shell sort algorithm, a diminishing increment sort. Функція має повернути впорядкований масив.
 
 Сортування Шелла( також відомий як Шеллове сортування або метод Шелла) названо на честь винахідника Дональда Шелла, який опублікував алгоритм у 1959.
 

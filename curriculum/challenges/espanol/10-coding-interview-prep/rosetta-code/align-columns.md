@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad0
 title: Align columns
-challengeType: 5
+challengeType: 1
 forumTopicId: 302224
 dashedName: align-columns
 ---
@@ -38,7 +38,7 @@ const testText = [
 - The minimum space between columns should be computed from the text and not hard-coded.
 - It is not a requirement to add separating characters between or around columns.
 
-For example, one of the lines from the `testText`, after jusitifing to the right, left and center respectivelly:
+For example, one of the lines from the `testText`, after justifying to the right, left and center respectively:
 
 ```js
 '    column        are separated     by     at    least       one space.\n'

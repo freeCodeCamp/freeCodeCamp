@@ -8,7 +8,7 @@ dashedName: render-conditionally-from-props
 
 # --description--
 
-Поки ви бачили, як використовувати `if/else`, `&&` та трикомпонентний оператор (`condition ? expressionIfTrue : expressionIfFalse`) для прийняття умовних рішень про те, що треба рендерити та коли. Проте залишилася ще одна важлива для огляду тема, вивчення якої дозволить поєднувати всі ці поняття з іншою потужною функцією React: пропс. Використання пропсів для умовного рендерингу коду є дуже поширеним явищем серед React-розробників, таким чином, вони використовують значення даного пропсу для автоматичного прийняття рішень про те, що рендерити.
+Наразі ви бачили, як використовувати `if/else`, `&&` та тернарний оператор (`condition ? expressionIfTrue : expressionIfFalse`), щоб приймати умовні рішення про те, що і коли відображати. Проте залишилася ще одна важлива для огляду тема, вивчення якої дозволить поєднувати всі ці поняття з іншою потужною функцією React: пропси. Використання пропсів для умовного рендерингу коду є дуже поширеним явищем серед React-розробників: вони використовують значення даного пропсу для автоматичного прийняття рішень про те, що відображати.
 
 В цьому завданні вам доведеться налаштовувати дочірній компонент задля прийняття рішень на основі пропс стосовно рендерингу. Також ви зіштовхнетеся з використанням трикомпонентного оператора та побачите, як деякі з інших, описаних у минулих завданнях, понять можуть бути настільки ж корисними у даному контексті.
 
@@ -123,7 +123,7 @@ assert.strictEqual(
 })();
 ```
 
-Коли компонент `GameOfChance` спочатку підключається до DOM, і далі, після кожного натискання кнопки, має повертатися одинарний елемент `h1`, який випадковим чином відображає або `You Win!`, або `You Lose!`.
+Коли компонент `GameOfChance` підключається спочатку до DOM і після того, як натискають на кнопку, має повертатися одинарний елемент `h1`, який випадковим чином показує `You Win!` або `You Lose!`. Примітка: це може випадково вийти з ладу. Якщо це сталося, спробуйте ще раз.
 
 ```js
 (() => {
@@ -265,6 +265,11 @@ class GameOfChance extends React.Component {
 # --solutions--
 
 ```jsx
+// We want this to be deterministic for testing purposes.
+const randomSequence = [true, false, false, true, true, false, false, true, true, false];
+let index = 0;
+const fiftyFifty = () => randomSequence[index++ % randomSequence.length];
+
 class Results extends React.Component {
   constructor(props) {
     super(props);
@@ -290,11 +295,10 @@ class GameOfChance extends React.Component {
     });
   }
   render() {
-    const expression = Math.random() >= 0.5;
     return (
       <div>
         <button onClick={this.handleClick}>Play Again</button>
-        <Results fiftyFifty={expression} />
+        <Results fiftyFifty={fiftyFifty()} />
         <p>{'Turn: ' + this.state.counter}</p>
       </div>
     );

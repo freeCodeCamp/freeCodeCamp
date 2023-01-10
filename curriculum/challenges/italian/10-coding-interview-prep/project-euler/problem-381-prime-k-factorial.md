@@ -1,7 +1,7 @@
 ---
 id: 5900f4ea1000cf542c50fffc
 title: 'Problema 381: (primo-k) fattoriale'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302045
 dashedName: problem-381-prime-k-factorial
 ---

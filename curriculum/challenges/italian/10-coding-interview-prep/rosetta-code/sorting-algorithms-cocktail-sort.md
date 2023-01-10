@@ -1,36 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8004
 title: Algoritmi di Ordinamento/Cocktail Sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302312
 dashedName: sorting-algorithmscocktail-sort
 ---
 
 # --description--
 
-L'algoritmo cocktail shaker sort è un miglioramento rispetto a [Bubble Sort](https://rosettacode.org/wiki/Bubble Sort). Il miglioramento è fondamentalmente che valuta "bolle" in entrambe le direzioni attraverso l'array, perché ad ogni iterazione il cocktail shaker ordina le bolle una volta avanti e una volta all'indietro. Pseudocodice per l'algoritmo (da [wikipedia](https://en.wikipedia.org/wiki/Cocktail sort)):
-
-<pre><b>function</b> <i>cocktailSort</i>( A : list of sortable items )
-  <b>do</b>
-    swapped := false
-    <b>for each</b> i <b>in</b> 0 <b>to</b> length( A ) - 2 <b>do</b>
-      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b> <i>// test whether the two</i>
-                                <i>// elements are in the wrong</i>
-                                <i>// order</i>
-        swap( A[ i ], A[ i+1 ] ) <i>// let the two elements</i>
-                                 <i>// change places</i>
-        swapped := true;
-    <b>if</b> swapped = false <b>then</b>
-      <i>// we can exit the outer loop here if no swaps occurred.</i>
-      <b>break do-while loop</b>;
-    swapped := false
-    <b>for each</b> i <b>in</b> length( A ) - 2 <b>down to</b> 0 <b>do</b>
-      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b>
-        swap( A[ i ], A[ i+1 ] )
-        swapped := true;
-  <b>while</b> swapped; <i>// if no elements have been swapped,</i>
-                <i>// then the list is sorted</i>
-</pre>
+L'algoritmo <a href="https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort" target="_blank" rel="noopener noreferrer nofollow">cocktail sort</a> è un miglioramento dell'algoritmo Bubble Sort. Dato un array di numeri, il cocktail sort percorrerà l'array dall'inizio alla fine, muovendo il numero più grande alla fine. Quindi, attraverserà l'array all'indietro e muoverà il numero più piccolo all'inizio. Ripete questi due passi, muovendo il prossimo numero più grande/più piccolo alla sua posizione corretta nell'array fino a che non è ordinato.
 
 # --instructions--
 

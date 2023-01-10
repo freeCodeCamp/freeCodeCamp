@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8041
 title: Soma de uma série
-challengeType: 5
+challengeType: 1
 forumTopicId: 302333
 dashedName: sum-of-a-series
 ---
 
 # --description--
 
-Calcule o **n**<sup></sup>-ésimo termo de uma [série](https://en.wikipedia.org/wiki/Series (mathematics)), ou seja, a soma dos **n** primeiros termos da [sequência](https://en.wikipedia.org/wiki/sequence) correspondente. Informalmente, esse valor, ou seu limite quando **n** tende ao infinito, é também chamado de *soma da série*, razão do título desta tarefa. Para esta tarefa, use: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
+Calcule o **n**<sup></sup>-ésimo termo de uma <em>série</em>, ou seja, a soma dos **n** primeiros termos da <em>sequência</em> correspondente. Informalmente, esse valor, ou seu limite quando **n** tende ao infinito, é também chamado de *soma da série*, razão do título desta tarefa. Para esta tarefa, use: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
 
 # --instructions--
 

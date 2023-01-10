@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8e
-title: 'Базові алгоритми навчання: Побудова моделі'
+title: 'Базові алгоритми навчання: побудова моделі'
 challengeType: 11
 videoId: 5wHw8BTd2ZQ
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: core-learning-algorithms-building-the-model
 
 ## --text--
 
-Який тип оцінки/моделювання TensorFlow рекомендує використовувати для класифікації?
+Який тип оцінки/моделювання TensorFlow рекомендовано використовувати для класифікації?
 
 ## --answers--
 

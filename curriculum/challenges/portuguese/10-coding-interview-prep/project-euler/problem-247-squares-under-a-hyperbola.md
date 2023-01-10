@@ -1,7 +1,7 @@
 ---
 id: 5900f4641000cf542c50ff76
 title: 'Problema 247: Quadrados sob uma hipérbole'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301894
 dashedName: problem-247-squares-under-a-hyperbola
 ---

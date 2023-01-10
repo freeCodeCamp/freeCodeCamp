@@ -1,7 +1,7 @@
 ---
 id: 5900f51d1000cf542c51002f
 title: '問題 433: ユークリッドの互除法のステップ数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302104
 dashedName: problem-433-steps-in-euclids-algorithm
 ---

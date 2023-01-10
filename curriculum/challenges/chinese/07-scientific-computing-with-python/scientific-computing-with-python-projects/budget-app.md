@@ -8,22 +8,27 @@ dashedName: budget-app
 
 # --description--
 
-你将[使用我们的 Replit 入门代码来完成这个项目](https://replit.com/github/freeCodeCamp/boilerplate-budget-app)。
+你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-budget-app" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
+
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮。
+
 
 # --instructions--
 
 完成 `budget.py` 中的 `Category` 类。 它应该能够根据不同的预算类别实例化对象，例如 *食物* 、 *服装* 和 *娱乐* 。 创建对象时，它们以类别的名称传递。 该类应该有一个名为 `ledger` 的实例变量，它是一个列表。 该类还应包含以下方法：
 
 - 接受金额和描述的 `deposit` 方法。 如果没有给出描述，它应该默认为一个空字符串。 该方法应以 `{"amount": amount, "description": description}` 的形式将对象附加到账本列表。
-- `withdraw` 方法类似于 `deposit` 方法，但传入的金额应作为负数存储在分类帐中。 如果没有足够的资金，则不应向分类帐添加任何内容。 如果取款发生，此方法应返回 `True`，否则返回 `False`。
+- `withdraw` 方法类似于 `deposit` 方法，但传入的金额应作为负数存储在账本中。 如果没有足够的资金，则不应向账本添加任何内容。 如果取款发生，此方法应返回 `True`，否则返回 `False`。
 - `get_balance` 方法，根据发生的存款和取款返回预算类别的当前余额。
-- 一个 `transfer` 方法，它接受一个金额和另一个预算类别作为参数。 该方法应添加带有金额和描述“Transfer to [目标预算类别]”的提款。 然后，该方法应将存款添加到其他预算类别，其金额和描述为“Transfer from [来源预算类别]”。 如果没有足够的资金，则不应向任一分类帐添加任何内容。 如果转账发生，此方法应返回 `True`，否则返回 `False`。
+- `transfer` 方法，它接受一个金额和另一个预算类别作为参数。 该方法应添加带有金额和描述 “Transfer to [目的地预算类别]”的提款。 然后，该方法应将存款添加到其他预算类别，其金额和描述为 “Transfer from [来源预算类别]”。 如果没有足够的资金，则不应向任一账本添加任何内容。 如果转账发生，此方法应返回 `True`，否则返回 `False`。
 - 接受金额作为参数的 `check_funds` 方法。 如果金额大于预算类别的余额，则返回 `False`，否则返回 `True`。 `withdraw` 方法和 `transfer` 方法都应该使用此方法。
 
 打印预算对象时，它应显示：
 
 - 30 个字符的标题行，类别名称居中在一行 `*` 字符中。
-- 分类帐中的项目列表。 每行应显示描述和金额。 应显示描述的前 23 个字符，然后是金额。 金额应右对齐，包含两位小数，最多显示 7 个字符。
+- 账本中的项目列表。 每行应显示描述和金额。 应显示描述的前 23 个字符，然后是金额。 金额应右对齐，包含两位小数，最多显示 7 个字符。
 - 一行显示类别总数。
 
 下面是一个输出示例：

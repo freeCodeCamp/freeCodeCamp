@@ -1,7 +1,7 @@
 ---
 id: 5900f4a71000cf542c50ffb9
 title: 'Problem 314: The Mouse on the Moon'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301970
 dashedName: problem-314-the-mouse-on-the-moon
 ---
@@ -18,7 +18,7 @@ Although not allowed, but to get an idea if this is anything better: if you plac
 
 However, if you cut off from the square four triangles with sides 75 m, 75 m and $75\sqrt{2}$ m the total area becomes 238750 $\text{m}^2$ and the perimeter becomes $1400 + 300\sqrt{2}$ m. So this gives an $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio of 130.87, which is significantly better.
 
-<img class="img-responsive center-block" alt="picture showing difference in encosed-area between circle and square with cut off four triangles" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="picture showing difference in enclosed-area between circle and square with cut off four triangles" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;">
 
 Find the maximum $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio. Give your answer rounded to 8 places behind the decimal point in the form abc.defghijk.
 

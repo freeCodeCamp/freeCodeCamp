@@ -176,6 +176,7 @@ section.cover.show ~ .sidebar-toggle {
 }
 
 /****** Sidebar ******/
+
 .sidebar ul li a:hover {
   color: var(--theme-color);
 }
@@ -332,6 +333,7 @@ body.close .github-corner {
 }
 
 /****** CODE HIGHLIGHTING ******/
+
 .token.string {
   color: #42b983;
 }
@@ -347,6 +349,7 @@ body.close .github-corner {
 }
 
 /****** COPY TO CLIPBOARD ******/
+
 .docsify-copy-code-button {
   font-size: 0.7em !important;
 }

@@ -1,7 +1,7 @@
 ---
 id: 5900f4201000cf542c50ff33
 title: 'Problema 180: Zeri razionali di una funzione di tre variabili'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301816
 dashedName: problem-180-rational-zeros-of-a-function-of-three-variables
 ---

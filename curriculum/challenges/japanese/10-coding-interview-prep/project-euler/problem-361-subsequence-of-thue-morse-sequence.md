@@ -1,7 +1,7 @@
 ---
 id: 5900f4d51000cf542c50ffe8
 title: '問題 361: トゥエ-モース数列の部分列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302022
 dashedName: problem-361-subsequence-of-thue-morse-sequence
 ---

@@ -9,7 +9,7 @@ dashedName: assignment-with-a-returned-value
 
 # --description--
 
-如果你還記得我們在[使用賦值運算符存儲值](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator)中的討論的話，等號右側的所有操作都會在賦值之前完成。 這意味着我們可以獲取函數的返回值，並將其賦值給一個變量。
+如果你還記得我們在這一節<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">使用賦值運算符存儲值</a>中的討論，賦值之前，先完成等號右邊的操作。 這意味着我們可以獲取函數的返回值，並將其賦值給一個變量。
 
 假設我們有一個預先定義的函數 `sum` ，它將兩個數相加，然後：
 

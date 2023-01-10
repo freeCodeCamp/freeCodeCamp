@@ -22,7 +22,7 @@ this.state = {
 
 # --instructions--
 
-代碼編輯器中有一個組件試圖從其 `state` 中渲染一個 `name` 屬性， 但是 `state` 還沒有定義。 在 `constructor` 中使用 `state` 初始化組件，並將你的名字賦給 `name` 屬性。
+在代碼編輯器裏，有一個組件嘗試渲染 `state` 中的 `firstName` 屬性。 但是 `state` 還沒有定義。 在 `constructor` 中使用 `state` 初始化這個組件，並將你的名字賦值給 `firstName` 屬性。
 
 # --hints--
 
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-應使用被設置爲字符串的 `name` 屬性來初始化 `StatefulComponent` 的 state。
+`StatefulComponent` 中的 state 應該初始化爲被設置成字符串的 `firstName` 屬性。
 
 ```js
 assert(
@@ -65,13 +65,13 @@ assert(
     );
     const initialState = mockedComponent.state();
     return (
-      typeof initialState === 'object' && typeof initialState.name === 'string'
+      typeof initialState === 'object' && typeof initialState.firstName === 'string'
     );
   })()
 );
 ```
 
-`StatefulComponent` 中 state 的 `name` 屬性應該渲染在 `h1` 元素裏。
+`StatefulComponent` 狀態中的屬性 `firstName` 應該呈現在 `h1` 元素中。
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
       React.createElement(StatefulComponent)
     );
     const initialState = mockedComponent.state();
-    return mockedComponent.find('h1').text() === initialState.name;
+    return mockedComponent.find('h1').text() === initialState.firstName;
   })()
 );
 ```
@@ -106,7 +106,7 @@ class StatefulComponent extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        <h1>{this.state.firstName}</h1>
       </div>
     );
   }
@@ -120,13 +120,13 @@ class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'freeCodeCamp!'
+      firstName: 'freeCodeCamp!'
     }
   }
   render() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        <h1>{this.state.firstName}</h1>
       </div>
     );
   }

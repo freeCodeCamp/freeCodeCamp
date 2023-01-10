@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f090b6c005b0e76f068
-title: 'Словники: загального використання'
+title: 'Словники: загальне використання'
 challengeType: 11
 videoId: f17xPfIXct0
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: dictionaries-common-applications
 
 ## --text--
 
-Що буде результатом виконання даного коду?
+Що надрукує наведений код?
 
 ```python
 counts = { 'quincy' : 1 , 'mrugesh' : 42, 'beau': 100, '0': 10}
@@ -39,7 +39,7 @@ quincy
 
 ---
 
-помилка
+[помилка]
 
 ## --video-solution--
 

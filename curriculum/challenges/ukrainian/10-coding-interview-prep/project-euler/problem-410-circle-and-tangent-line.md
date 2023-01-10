@@ -1,7 +1,7 @@
 ---
 id: 5900f5071000cf542c510018
 title: 'Завдання 410: Коло та дотична лінія'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302079
 dashedName: problem-410-circle-and-tangent-line
 ---

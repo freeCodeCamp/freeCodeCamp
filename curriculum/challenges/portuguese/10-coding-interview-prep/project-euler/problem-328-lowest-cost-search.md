@@ -1,7 +1,7 @@
 ---
 id: 5900f4b41000cf542c50ffc7
 title: 'Problema 328: Pesquisa pelo menor custo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301985
 dashedName: problem-328-lowest-cost-search
 ---

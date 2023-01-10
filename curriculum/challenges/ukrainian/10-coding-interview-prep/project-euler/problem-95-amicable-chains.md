@@ -1,7 +1,7 @@
 ---
 id: 5900f3cc1000cf542c50fede
 title: 'Задача 95: Ланцюжки дружніх чисел'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302212
 dashedName: problem-95-amicable-chains
 ---

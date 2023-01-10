@@ -1,7 +1,7 @@
 ---
 id: 5900f4f91000cf542c51000c
 title: '問題 397: 放物線上の三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302062
 dashedName: problem-397-triangle-on-parabola
 ---

@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad3
 title: Vector dot product
-challengeType: 5
+challengeType: 1
 forumTopicId: 302343
 dashedName: vector-dot-product
 ---

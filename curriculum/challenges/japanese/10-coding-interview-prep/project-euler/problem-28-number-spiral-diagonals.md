@@ -1,7 +1,7 @@
 ---
 id: 5900f3881000cf542c50fe9b
 title: '問題 28: らせん状に配置された数字の対角線'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301930
 dashedName: problem-28-number-spiral-diagonals
 ---

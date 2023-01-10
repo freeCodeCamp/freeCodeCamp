@@ -1,7 +1,7 @@
 ---
 id: 5900f3d71000cf542c50fee9
 title: '問題 106: 特殊和部分集合: メタ検証'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301730
 dashedName: problem-106-special-subset-sums-meta-testing
 ---

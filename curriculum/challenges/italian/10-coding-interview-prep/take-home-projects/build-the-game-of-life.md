@@ -8,13 +8,24 @@ dashedName: build-the-game-of-life
 
 # --description--
 
-**Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: [https://codepen.io/freeCodeCamp/full/BpwMZv](https://codepen.io/freeCodeCamp/full/BpwMZv/).
+**Obiettivo:** crea un'app funzionalmente simile a questa: <a href="https://codepen.io/freeCodeCamp/full/BpwMZv/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/BpwMZv</a>.
 
-Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
+Il Gioco della Vita è un automaton cellulare creato dal matematico inglese John Horton Conway. È un <em>gioco a zero-giocatori</em>, cioè la sua evoluzione è determinata dal suo stato iniziale, senza richiedere input ulteriori. Si interagisce con il Gioco della Vita creando una configurazione iniziale e osservando come evolve.
+
+L'universo del Gioco della Vita è una griglia infinita bidimensionale ortogonale di celle quadrate, ognuna con due stati possibili: popolato e non-popolato. Ogni cella interagisce con i suoi otto vicini, che sono le celle che sono adiacenti in orizzontale, verticale o diagonale.
+
+A ogni step nel tempo, avviene la seguente transizione:
+
+- Ogni cella viva con meno di due vicini vivi muore, perché sottopopolata.
+- Ogni cella viva con due o tre vicine vive, vive fino alla generazione successiva.
+- Ogni cella viva con più di tre celle vive vicine muore, per sovrappopolazione.
+- Qualsiasi cella morta con esattamente tre vicini vivi diventa una cella viva, come per riproduzione.
+
+Soddisfa le user story qui sotto e supera tutti i test. Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
 **User Story:** Quando apro il gioco, genererà casualmente un tabellone e inizierà a giocare.
 
-**User Story:** Posso iniziare e fermare il tabellore.
+**User Story:** Posso iniziare e fermare il tabellone.
 
 **User Story:** Posso configurare il tabellone.
 
@@ -24,13 +35,9 @@ Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Uti
 
 **User Story:** Ogni volta che il tabellone cambia, posso vedere quante generazioni sono passate.
 
-**Suggerimento:**Ecco una spiegazione del Gioco della Vita di Conway da John Conway stesso: <https://www.youtube.com/watch?v=E8kUJL04ELA>
+Quando hai finito, includi un link al tuo progetto e clicca sul pulsante "Ho completato questa sfida".
 
-**Suggerimento:** Ecco una descrizione del Gioco della Vita di Conway con le regole per tuo riferimento: [https://it.wikipedia.org/wiki/Gioco_della_vita](https://it.wikipedia.org/wiki/Gioco_della_vita)
-
-Quando hai finito, includi un link al tuo progetto su CodePen e clicca sul pulsante "Ho completato questa sfida".
-
-Puoi ottenere un feedback sul tuo progetto condividendolo sul forum [freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
+Puoi ottenere un feedback sul tuo progetto condividendolo sul <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">forum di freeCodeCamp</a>.
 
 # --solutions--
 

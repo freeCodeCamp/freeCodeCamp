@@ -1,14 +1,14 @@
 ---
 id: 5ea28156e79528a9ab248f27
 title: Тест Луна для визначення номерів кредитних карток
-challengeType: 5
+challengeType: 1
 forumTopicId: 385284
 dashedName: luhn-test-of-credit-card-numbers
 ---
 
 # --description--
 
-Тест [Луна](https://en.wikipedia.org/wiki/Luhn algorithm) використовується деякими компаніями, які мають справу з кредитними картками, для того, щоб відрізнити дійсні номери кредитних карток від випадкового набору цифр.
+The Luhn test is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
 
 Ті компанії, які використовують номери кредитних карток, котрі можна перевірити за допомогою тесту Луна, мають номери, які проходять наступний тест:
 

@@ -8,11 +8,13 @@ dashedName: create-new-middleware
 
 # --description--
 
-Tal como está, cualquier usuario puede ir a `/profile` si se ha autentificado o no, escribiendo la url. Queremos evitar esto, comprobando si el usuario está autentificado primero antes de mostrar la página de perfil. Este es el ejemplo perfecto de cuándo crear un middleware.
+Tal y como está, cualquier usuario puede simplemente ir a `/profile` se haya autenticado o no, escribiendo la url. Para evitar esto, comprueba si el usuario está autenticado antes de mostrar la página de perfil. Este es el ejemplo perfecto de cuándo crear un middleware.
 
-El desafío aquí es crear la función middleware `ensureAuthenticated(req, res, next)`, el cual comprobará si un usuario está autentificado llamando al método `isAuthenticated` del pasaporte en la `request` que, a su vez, comprueba si `req.user` está definido. Si lo es, entonces se debe llamar a `next()`, de lo contrario, podemos simplemente responder a la solicitud con una redirección a nuestra página de inicio para iniciar sesión. Una implementación de este middleware es:
+El reto aquí es crear la función de middleware `ensureAuthenticated(req, res, next)`, que comprobará si un usuario está autenticado llamando al método `isAuthenticated` de Passport sobre el `request` que comprueba si `req.user` está definido. Si lo es, entonces `next()` debe ser llamado. De lo contrario, puedes responder a la solicitud con una redirección a tu página de inicio para iniciar sesión.
 
-```js
+Una implementación de este middleware es:
+
+```javascript
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
@@ -21,59 +23,53 @@ function ensureAuthenticated(req, res, next) {
 };
 ```
 
-Ahora añade *ensureAuthenticated* como middleware a la petición de la página de perfil antes del argumento de la petición get que contiene la función que renderiza la página.
+Crea la función middleware anterior y, luego, pasa `ensureAuthenticated` como middleware a las solicitudes para la página de perfil antes del argumento a la solicitud GET:
 
-```js
+```javascript
 app
  .route('/profile')
  .get(ensureAuthenticated, (req,res) => {
-    res.render(process.cwd() + '/views/pug/profile');
+    res.render('profile');
  });
 ```
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/ae49b8778cab87e93284a91343da0959).
+Envía tu página cuando creas que la has hecho bien. Si te encuentras con errores, puedes <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#create-new-middleware-8" target="_blank" rel="noopener noreferrer nofollow">consultar el proyecto completado hasta este momento</a>.
 
 # --hints--
 
-El Middleware ensureAuthenticated debe ser implementado y en nuestra ruta /profile.
+El middleware `ensureAuthenticated` debe ser implementado y adjunto a la ruta `/profile`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /ensureAuthenticated[^]*req.isAuthenticated/gi,
-        'Your ensureAuthenticated middleware should be defined and utilize the req.isAuthenticated function'
-      );
-      assert.match(
-        data,
-        /profile[^]*get[^]*ensureAuthenticated/gi,
-        'Your ensureAuthenticated middleware should be attached to the /profile route'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/server.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /ensureAuthenticated[^]*req.isAuthenticated/,
+    'Your ensureAuthenticated middleware should be defined and utilize the req.isAuthenticated function'
   );
+  assert.match(
+    data,
+    /profile[^]*get[^]*ensureAuthenticated/,
+    'Your ensureAuthenticated middleware should be attached to the /profile route'
+  );
+}
 ```
 
-Una petición Get a /profile debe redirigir correctamente a / ya que no estamos autentificados.
+Una petición GET no autenticada a `/profile` debe redirigir correctamente a `/`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/profile').then(
-    (data) => {
-      assert.match(
-        data,
-        /Home page/gi,
-        'An attempt to go to the profile at this point should redirect to the homepage since we are not logged in'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/profile", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /Home page/,
+    'An attempt to go to the profile at this point should redirect to the homepage since we are not logged in'
   );
+}
 ```
 
 # --solutions--

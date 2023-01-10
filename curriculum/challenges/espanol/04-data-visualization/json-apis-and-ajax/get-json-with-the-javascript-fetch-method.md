@@ -15,10 +15,10 @@ Aquí está el código para hacer una solicitud GET a `/json/cats.json`
 ```js
 
 fetch('/json/cats.json')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('message').innerHTML = JSON.stringify(data);
-    })
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('message').innerHTML = JSON.stringify(data);
+  })
 
 ```
 
@@ -37,6 +37,30 @@ Ahora, selecciona el elemento que recibirá los datos usando `document.getElemen
 Actualiza el código para crear y enviar una solicitud `GET` a la API de foto del gato de freeCodeCamp. Pero esta vez, usando el método `fetch` en lugar de `XMLHttpRequest`.
 
 # --hints--
+
+
+Tu código debe usar los datos obtenidos para reemplazar el HTML interno
+
+```js
+const catData = "dummy data";
+const ref = fetch;
+fetch = () => Promise.resolve({ json: () => catData });
+async () => {
+  try {
+    document.getElementById("getMessage").click();
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    fetch = ref;
+    assert.equal(
+      document.getElementById("message").textContent,
+      JSON.stringify(catData)
+    );
+  }
+};
+```
+
 
 Tu código debe hacer una solicitud `GET` con `fetch`.
 
@@ -60,7 +84,7 @@ Tu código debe usar `then` para manejar los datos convertidos a JSON por el otr
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-Tu código debe obtener el elemento con id `message` y cambiar su HTML interno a la cadena de datos JSON.
+Tu código debe obtener el elemento con el id `message` y cambiar su HTML interno a la cadena de datos JSON.
 
 ```js
 assert(

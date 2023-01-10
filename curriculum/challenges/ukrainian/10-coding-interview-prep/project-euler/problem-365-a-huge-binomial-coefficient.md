@@ -1,7 +1,7 @@
 ---
 id: 5900f4da1000cf542c50ffec
 title: 'Задача 365: Величезний біноміальний коефіцієнт'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302026
 dashedName: problem-365-a-huge-binomial-coefficient
 ---

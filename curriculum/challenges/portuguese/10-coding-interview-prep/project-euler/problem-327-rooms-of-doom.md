@@ -1,7 +1,7 @@
 ---
 id: 5900f4b31000cf542c50ffc6
 title: 'Problema 327: Salas da destruição'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301984
 dashedName: problem-327-rooms-of-doom
 ---

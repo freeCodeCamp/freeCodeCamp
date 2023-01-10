@@ -10,7 +10,23 @@ dashedName: roman-numeral-converter
 
 把傳入的數字轉爲羅馬數字。
 
-轉換後的[羅馬數字](http://www.mathsisfun.com/roman-numerals.html)字母必須都是大寫。
+| 羅馬數字 | 阿拉伯數字 |
+| ---- | ----- |
+| M    | 1000  |
+| CM   | 900   |
+| D    | 500   |
+| CD   | 400   |
+| C    | 100   |
+| XC   | 90    |
+| L    | 50    |
+| XL   | 40    |
+| X    | 10    |
+| IX   | 9     |
+| V    | 5     |
+| IV   | 4     |
+| I    | 1     |
+
+所有羅馬數字答案都應該大寫。
 
 # --hints--
 

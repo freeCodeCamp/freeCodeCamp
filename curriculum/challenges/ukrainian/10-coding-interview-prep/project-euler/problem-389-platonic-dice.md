@@ -1,7 +1,7 @@
 ---
 id: 5900f4f21000cf542c510004
 title: 'Задача 389: Platonic Dice (Правильний многокутник)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302053
 dashedName: problem-389-platonic-dice
 ---

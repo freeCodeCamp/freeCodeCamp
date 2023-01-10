@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94db3
-title: Розробка Отримувача прапорця
+title: Розробка банер-грабера
 challengeType: 11
 videoId: CeGW761BIsA
 bilibiliIds:

@@ -1,7 +1,7 @@
 ---
 id: 5900f4f11000cf542c510002
 title: 'Задача 388: Окремі лінії'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302052
 dashedName: problem-388-distinct-lines
 ---

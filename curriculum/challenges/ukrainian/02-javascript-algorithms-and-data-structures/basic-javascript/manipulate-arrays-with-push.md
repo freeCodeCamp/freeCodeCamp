@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cb
-title: Керування масивами за допомогою push()
+title: Маніпулювання масивами за допомогою push()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237
@@ -9,9 +9,9 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-Найпростіший спосіб додати дані до кінця масиву - це використати функцію `push()`.
+Найпростіший спосіб додати дані до кінця масиву – використати функцію `push()`.
 
-`.push()` приймає один або більше <dfn>parameters</dfn> і "виштовхує" їх в кінець масиву.
+`.push()` приймає один або більше <dfn>параметрів</dfn> і «виштовхує» їх в кінець масиву.
 
 Приклади:
 
@@ -23,7 +23,7 @@ const arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
-`arr1` зараз набуває значення `[1, 2, 3, 4]` та `arr2` набуває значення `["Stimpson", "J", "cat", ["happy", "joy"]]`.
+Тепер `arr1` має значення `[1, 2, 3, 4]`, а `arr2` має значення `["Stimpson", "J", "cat", ["happy", "joy"]]`.
 
 # --instructions--
 
@@ -31,7 +31,7 @@ arr2.push(["happy", "joy"]);
 
 # --hints--
 
-`myArray` тепер має дорівнювати `[["John", 23], ["cat", 2], ["dog", 3]]`.
+Тепер `myArray` повинен дорівнювати `[["John", 23], ["cat", 2], ["dog", 3]]`.
 
 ```js
 assert(

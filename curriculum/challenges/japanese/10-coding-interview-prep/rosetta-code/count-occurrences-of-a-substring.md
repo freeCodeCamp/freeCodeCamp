@@ -1,7 +1,7 @@
 ---
 id: 596fda99c69f779975a1b67d
 title: 部分文字列の出現回数を数える
-challengeType: 5
+challengeType: 1
 forumTopicId: 302237
 dashedName: count-occurrences-of-a-substring
 ---

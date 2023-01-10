@@ -9,6 +9,7 @@ import { SuperBlocks } from '../../config/certification-settings';
 import { blockNameify } from '../../utils/block-nameify';
 import { createStepFile } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
+import { Meta } from './helpers/project-metadata';
 
 const helpCategories = ['HTML-CSS', 'JavaScript', 'Python'] as const;
 
@@ -22,20 +23,6 @@ type SuperBlockInfo = {
 };
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
-
-export type Meta = {
-  name: string;
-  isUpcomingChange: boolean;
-  dashedName: string;
-  order: number;
-  time: string;
-  template: string;
-  required: string[];
-  superBlock: string;
-  superOrder: number;
-  isBeta: boolean;
-  challengeOrder: string[][];
-};
 
 interface CreateProjectArgs {
   superBlock: SuperBlocks;

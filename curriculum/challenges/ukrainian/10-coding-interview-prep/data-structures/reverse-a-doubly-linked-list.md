@@ -12,7 +12,7 @@ dashedName: reverse-a-doubly-linked-list
 
 # --hints--
 
-Повинна існувати структура даних DoublyLinkedList.
+The `DoublyLinkedList` data structure should exist.
 
 ```js
 assert(
@@ -26,7 +26,7 @@ assert(
 );
 ```
 
-DoublyLinkedList повинен мати метод під назвою reverse.
+`DoublyLinkedList` повинен мати метод під назвою `reverse`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-Спроба перевернути порожній список повинна повернутися як null.
+Reversing an empty list should return `null`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-Метод reverse повинен перевертати список.
+The `reverse` method should reverse the list.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-У перевернутому списку повинні правильно підтримуватися посилання на наступні та попередні елементи.
+The `next` and `previous` references should be correctly maintained when a list is reversed.
 
 ```js
 assert(

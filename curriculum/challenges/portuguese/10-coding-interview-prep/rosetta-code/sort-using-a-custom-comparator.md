@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8016
 title: Ordenar usando um comparador personalizado
-challengeType: 5
+challengeType: 1
 forumTopicId: 302309
 dashedName: sort-using-a-custom-comparator
 ---

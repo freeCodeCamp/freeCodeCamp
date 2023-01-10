@@ -1,22 +1,20 @@
 import { combineEpics, ofType } from 'redux-observable';
 import { of } from 'rxjs';
-import { filter, switchMap, map, tap, ignoreElements } from 'rxjs/operators';
+import { filter, ignoreElements, map, switchMap, tap } from 'rxjs/operators';
 import store from 'store';
 
-import { setContent, isPoly } from '../../../../../utils/polyvinyl';
+import { isPoly, setContent } from '../../../../../utils/polyvinyl';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
+import { savedChallengesSelector } from '../../../redux/selectors';
 import { actionTypes as appTypes } from '../../../redux/action-types';
-import { savedChallengesSelector } from '../../../redux';
-
 import { actionTypes } from './action-types';
+import { noStoredCodeFound, storedCodeFound } from './actions';
 import {
-  storedCodeFound,
-  noStoredCodeFound,
-  isCodeLockedSelector,
   challengeFilesSelector,
-  challengeMetaSelector
-} from './';
+  challengeMetaSelector,
+  isCodeLockedSelector
+} from './selectors';
 
 const legacyPrefixes = [
   'Bonfire: ',

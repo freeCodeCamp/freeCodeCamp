@@ -1,7 +1,7 @@
 ---
 id: 5900f4b21000cf542c50ffc5
 title: 'Problema 326: sommatoria dei moduli'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301983
 dashedName: problem-326-modulo-summations
 ---

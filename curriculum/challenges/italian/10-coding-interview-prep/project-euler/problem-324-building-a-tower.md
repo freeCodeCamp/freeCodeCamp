@@ -1,7 +1,7 @@
 ---
 id: 5900f4b11000cf542c50ffc3
 title: 'Problema 324: Costruire una torre'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301981
 dashedName: problem-324-building-a-tower
 ---

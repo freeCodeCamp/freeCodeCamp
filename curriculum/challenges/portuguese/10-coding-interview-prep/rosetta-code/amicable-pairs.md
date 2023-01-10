@@ -1,7 +1,7 @@
 ---
 id: 5949b579404977fbaefcd737
 title: Pares amigáveis
-challengeType: 5
+challengeType: 1
 forumTopicId: 302225
 dashedName: amicable-pairs
 ---
@@ -19,7 +19,7 @@ Dizemos que dois números inteiros, $N$ e $M$, são pares amigáveis se $N \\neq
   <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605, respectivamente.</li>
 </ul>
 
-A soma dos divisores pelo primeiro valor, **1184**, é **1210** e a soma dos divisores pelo segundo valor, **1210**', é **1184**.
+A soma dos divisores pelo primeiro valor, **1184**, é **1210** e a soma dos divisores pelo segundo valor, **1210**, é **1184**.
 
 # --instructions--
 

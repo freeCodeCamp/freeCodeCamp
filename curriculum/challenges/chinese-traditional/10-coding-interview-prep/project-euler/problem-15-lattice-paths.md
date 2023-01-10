@@ -1,40 +1,40 @@
 ---
 id: 5900f37b1000cf542c50fe8e
-title: 'Problem 15: Lattice paths'
-challengeType: 5
+title: '問題 15：網格路徑'
+challengeType: 1
 forumTopicId: 301780
 dashedName: problem-15-lattice-paths
 ---
 
 # --description--
 
-Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
+從一個 2 × 2 的網格左上角出發，規定只允許向右或向下移動，則到達右下角的路徑恰好有 6 條。
 
-<img class="img-responsive center-block" alt="a diagram of 6 2 by 2 grids showing all the routes to the bottom right corner" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="圖片展示了到達 2 × 2 網格右下角的所有 6 條路徑" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
 
-How many such routes are there through a given `gridSize`?
+給定網格大小爲 `gridSize`，請求出這樣的路徑有多少條?
 
 # --hints--
 
-`latticePaths(4)` should return a number.
+`latticePaths(4)` 應該返回一個數字。
 
 ```js
 assert(typeof latticePaths(4) === 'number');
 ```
 
-`latticePaths(4)` should return 70.
+`latticePaths(4)` 應該返回 70。
 
 ```js
 assert.strictEqual(latticePaths(4), 70);
 ```
 
-`latticePaths(9)` should return 48620.
+`latticePaths(9)` 應該返回 48620。
 
 ```js
 assert.strictEqual(latticePaths(9), 48620);
 ```
 
-`latticePaths(20)` should return 137846528820.
+`latticePaths(20)` 應該返回 137846528820。
 
 ```js
 assert.strictEqual(latticePaths(20), 137846528820);

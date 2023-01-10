@@ -7,7 +7,7 @@ dashedName: simulate-actions-using-a-headless-browser
 
 # --description--
 
-Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Repl. it</a>, o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 En los siguientes desafíos, simularás la interacción humana con una página usando un navegador sin interfaz gráfica.
 

@@ -1,14 +1,14 @@
 ---
 id: 5900f3c31000cf542c50fed5
 title: 'Problema 86: Rota de um cuboide'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302200
 dashedName: problem-86-cuboid-route
 ---
 
 # --description--
 
-Uma aranha, S, está no canto de uma sala em formato de cubo, medindo 6 por 3, e uma mosca, F, fica no canto oposto. Ao passear pelas superfícies da sala, a menor distância de "linha reta" entre S e F é 10 e o caminho é mostrado no diagrama.
+Uma aranha, S, está no canto de uma sala em formato de cubo, medindo 6 por 5 por 3, e uma mosca, F, fica no canto oposto. Ao passear pelas superfícies da sala, a menor distância de "linha reta" entre S e F é 10 e o caminho é mostrado no diagrama.
 
 <img class="img-responsive center-block" alt="um diagrama do caminho entre uma aranha e uma mosca a partir de um canto de uma sala no formato de cubo até o canto oposto" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
 

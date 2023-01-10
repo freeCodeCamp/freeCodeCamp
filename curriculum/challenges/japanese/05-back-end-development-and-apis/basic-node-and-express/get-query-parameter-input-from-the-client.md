@@ -20,7 +20,7 @@ API エンドポイントを構築し、`GET /name` でマウントしてくだ�
 
 # --hints--
 
-テスト 1: API エンドポイントは、正しい名前で応答する必要があります。
+Test 1 : Your API endpoint should respond with `{ "name": "Mick Jagger" }` when the `/name` endpoint is called with `?first=Mick&last=Jagger`
 
 ```js
 (getUserInput) =>
@@ -38,7 +38,7 @@ API エンドポイントを構築し、`GET /name` でマウントしてくだ�
   );
 ```
 
-テスト 2: API エンドポイントは、正しい名前で応答する必要があります。
+Test 2 : Your API endpoint should respond with `{ "name": "Keith Richards" }` when the `/name` endpoint is called with `?first=Keith&last=Richards`
 
 ```js
 (getUserInput) =>

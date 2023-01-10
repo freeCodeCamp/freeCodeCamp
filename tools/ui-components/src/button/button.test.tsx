@@ -72,8 +72,8 @@ describe('Button', () => {
     expect(onClick).not.toBeCalled();
   });
 
-  it('should render an anchor element if the `to` prop is defined', () => {
-    render(<Button to='https://www.freecodecamp.org'>freeCodeCamp</Button>);
+  it('should render an anchor element if the `href` prop is defined', () => {
+    render(<Button href='https://www.freecodecamp.org'>freeCodeCamp</Button>);
 
     const link = screen.getByRole('link', { name: /freeCodeCamp/i });
     const button = screen.queryByRole('button', { name: /freeCodeCamp/i });
@@ -84,9 +84,9 @@ describe('Button', () => {
     expect(button).not.toBeInTheDocument();
   });
 
-  it('should render a button element if the `to` and `disabled` props are both defined', () => {
+  it('should render a button element if the `href` and `disabled` props are both defined', () => {
     render(
-      <Button to='https://www.freecodecamp.org' disabled>
+      <Button href='https://www.freecodecamp.org' disabled>
         freeCodeCamp
       </Button>
     );

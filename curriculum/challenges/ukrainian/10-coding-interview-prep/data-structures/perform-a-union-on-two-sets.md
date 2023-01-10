@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-Спроба об'єднання множини, що містить значення ["a", "b", "c"], та множини, що містить значення ["c", "d"], повинна повертатися як нова множина зі значеннями ["a", "b", "c", "d"].
+The union of a `Set` containing values `["a", "b", "c"]` and a `Set` containing values `["c", "d"]` should return a new `Set` containing values `["a", "b", "c", "d"]`.
 
 ```js
 assert(

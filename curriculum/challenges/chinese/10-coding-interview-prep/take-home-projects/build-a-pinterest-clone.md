@@ -8,9 +8,9 @@ dashedName: build-a-pinterest-clone
 
 # --description--
 
-**Objective:** Build a [Replit](https://replit.com/) app that is functionally similar to this: <https://build-a-pinterest-clone.freecodecamp.rocks/>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://build-a-pinterest-clone.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://build-a-pinterest-clone.freecodecamp.rocks/</a>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
 **User Story:** As an unauthenticated user, I can login with GitHub.
 
@@ -24,11 +24,11 @@ Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use 
 
 **User Story:** As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)
 
-**Hint:** [Masonry.js](https://masonry.desandro.com/) is a library that allows for Pinterest-style image grids.
+**Hint:** Masonry.js is a library that allows for Pinterest-style image grids.
 
 Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

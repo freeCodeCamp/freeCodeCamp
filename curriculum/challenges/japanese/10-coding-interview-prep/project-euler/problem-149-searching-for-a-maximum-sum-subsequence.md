@@ -1,7 +1,7 @@
 ---
 id: 5900f4021000cf542c50ff13
 title: '問題 149: 和が最大である部分列を探索する'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301778
 dashedName: problem-149-searching-for-a-maximum-sum-subsequence
 ---

@@ -49,7 +49,7 @@ assert(!code.match(/i\s?=\s*?1\s*?;/g));
 應該設置循環的終止條件，使循環在最後一個索引處停止。
 
 ```js
-assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1);
+assert(code.match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
 ```
 
 應該修復循環的終止條件，使循環在索引爲字符串長度減 1 的位置停止。

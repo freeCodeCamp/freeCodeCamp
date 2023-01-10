@@ -1,7 +1,7 @@
 ---
 id: 5900f4371000cf542c50ff49
 title: 'Завдання 202: Лазерний промінь'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301843
 dashedName: problem-202-laserbeam
 ---

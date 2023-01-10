@@ -50,11 +50,11 @@ Cuando la instalación finalice, puedes comenzar a [usar MailHog](#using-mailhog
 
 <details><summary>Instalando MailHog en Windows</summary>
 
-Descarga la última versión de MailHog del [repositorio oficial de MailHog](https://github.com/mailhog/MailHog/releases). Ubica y haz clic en el enlace para tu versión de Windows (32 o 64 bits) y se descargará un archivo .exe en tu computadora.
+Descarga la última versión de MailHog del [repositorio oficial de MailHog](https://github.com/mailhog/MailHog/releases). Locate and click on the link for your Windows version (32 or 64 bit) and a `.exe` file will be downloaded to your computer.
 
 Cuando la descarga finalice, haz clic en el archivo para abrirlo. Puede aparecer una notificación del cortafuegos de Windows solicitando permiso de acceso para MailHog. Se abrirá una línea de comandos estándar de Windows donde se ejecutará MailHog una vez que se le otorgue el permiso del cortafuegos.
 
-Detén MailHog cerrando la ventana de comandos. Para iniciar MailHog nuevamente, haz clic en el archivo ejecutable de MailHog (.exe) que se descargó inicialmente; no es necesario descargar un nuevo archivo de instalación de MailHog.
+Detén MailHog cerrando la ventana de comandos. To start MailHog again, click on the MailHog executable (`.exe`) file that was downloaded initially - it is not necessary to download a new MailHog installation file.
 
 Comienza a [usar MailHog](#using-mailhog).
 
@@ -104,19 +104,7 @@ Comienza a [usar MailHog](#using-mailhog).
 
 ## Usando MailHog
 
-Abre una nueva pestaña o ventana del navegador y dirígete a [http://localhost:8025](http://localhost:8025) para abrir tu bandeja de entrada de MailHog una vez este instalado y en funcionamiento. La bandeja de entrada aparecerá similar a la captura de pantalla de abajo.
-
-![Captura de pantalla de MailHog 1](https://contribute.freecodecamp.org/images/mailhog/1.jpg)
-
-Los correos enviados por tu instalación de freeCodeCamp aparecerán como se presenta a continuación
-
-![Captura de pantalla de MailHog 2](https://contribute.freecodecamp.org/images/mailhog/2.jpg)
-
-Dos pestañas que te permiten ver texto plano o contenido fuente estarán disponibles cuando abras un correo electrónico dado. Asegúrate de que la pestaña de texto plano está seleccionada de la siguiente manera.
-
-![Captura de pantalla de MailHog 3](https://contribute.freecodecamp.org/images/mailhog/3.jpg)
-
-Todos los enlaces en el correo electrónico deben poder ser cliqueables y resolver a sus respectivos URL.
+Open a new browser tab or window and navigate to [http://localhost:8025](http://localhost:8025) to open your MailHog inbox when the MailHog installation has completed and MailHog is running.
 
 ## Enlaces útiles
 

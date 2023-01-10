@@ -1,7 +1,7 @@
 ---
 id: 5900f5001000cf542c510012
 title: 'Problema 404: Elipses cruzadas'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302072
 dashedName: problem-404-crisscross-ellipses
 ---

@@ -11,9 +11,9 @@ dashedName: use-hex-code-for-specific-colors
 
 CSS で色を表現する方法は他にもあることをご存知でしたか？ これらの方法の一つは 16 進数 (hexadecimal) カラーコード、または hexadecimal を略して hex コードと呼ばれます。
 
-私達は日常的に <dfn>10 進数</dfn>、つまり基数が 10 の数字を使用しています。10 進数では各桁に 0 から 9 の記号を使用します。 <dfn>16 進数</dfn> (または <dfn>16 進、ヘクサ、hex</dfn> など) は基数が 16 の数字です。 これは 16 個の異なる記号を使用することを意味します。 10 進数と同様に、0-9 の記号は 0 から 9 までの値を表します。 その後、A、B、C、D、E、F は 10 から 15 の値を表します。 これを合わせて 0 ～ F で 16 進数の 1 桁を表し、合計 16 個の値をとることができます。 [16 進数について詳しくはこちら](https://www.freecodecamp.org/news/hexadecimal-number-system/) を参照してください。
+私達は日常的に <dfn>10 進数</dfn>、つまり基数が 10 の数字を使用しています。10 進数では各桁に 0 から 9 の記号を使用します。 <dfn>16 進数</dfn> (または <dfn>16 進、ヘクサ、hex</dfn> など) は基数が 16 の数字です。 これは 16 個の異なる記号を使用することを意味します。 10 進数と同様に、0-9 の記号は 0 から 9 までの値を表します。 その後、A、B、C、D、E、F は 10 から 15 の値を表します。 これを合わせて 0 ～ F で 16 進数の 1 桁を表し、合計 16 個の値をとることができます。 <a href="https://www.freecodecamp.org/news/hexadecimal-number-system/" target="_blank" rel="noopener noreferrer nofollow">16 進数について詳しくはこちら</a> を参照してください。
 
-CSS では、6 桁の 16 進数の数字を使用して色を表すことができます。2 桁ごとに赤 (R)、緑 (G)、青 (B) の成分を表します。 例えば、`#000000` は黒を表し、また表すことができる最も低い値です。 [RGB カラーモデルについて詳しくはこちら](https://www.freecodecamp.org/news/rgb-color-html-and-css-guide/#whatisthergbcolormodel) を参照してください。
+CSS では、6 桁の 16 進数の数字を使用して色を表すことができます。2 桁ごとに赤 (R)、緑 (G)、青 (B) の成分を表します。 例えば、`#000000` は黒を表し、また表すことができる最も低い値です。 <a href="https://www.freecodecamp.org/news/rgb-color-html-and-css-guide/#whatisthergbcolormodel" target="_blank" rel="noopener noreferrer nofollow">RGB カラーモデルについて詳しくはこちら</a> を参照してください。
 
 ```css
 body {

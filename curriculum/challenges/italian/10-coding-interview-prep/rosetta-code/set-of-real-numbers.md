@@ -1,7 +1,7 @@
 ---
 id: 5eb3e4b20aa93c437f9e9717
 title: Insieme di numeri reali
-challengeType: 5
+challengeType: 1
 forumTopicId: 385322
 dashedName: set-of-real-numbers
 ---

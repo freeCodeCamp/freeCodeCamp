@@ -1,7 +1,7 @@
 ---
 id: 5900f3c81000cf542c50fedb
 title: 'Завдання 92: Послідовності квадратів цифр'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302209
 dashedName: problem-92-square-digit-chains
 ---

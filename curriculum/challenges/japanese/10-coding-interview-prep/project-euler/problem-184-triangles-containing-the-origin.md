@@ -1,7 +1,7 @@
 ---
 id: 5900f4241000cf542c50ff37
 title: '問題 184: 原点を内包する三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301820
 dashedName: problem-184-triangles-containing-the-origin
 ---

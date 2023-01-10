@@ -1,0 +1,49 @@
+name: i18n - Curriculum PR Validation
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: Validate i18n Builds
+    # run only on PRs that camperbot opens with title that matches the curriculum sync
+    if: ${{ github.event.pull_request.user.login == 'camperbot' && contains(github.event.pull_request.title, 'chore(i18n,learn)') }}
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Set freeCodeCamp Environment Variables
+        run: cp sample.env .env
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Validate Challenge Files
+        id: validate
+        run: npm run audit-challenges
+
+      - name: Create Comment
+        # Run if the validate challenge files step fails, specifically. Note that we need the failure() call for this step to trigger if the action fails.
+        if: ${{ failure() && steps.validate.conclusion == 'failure' }}
+        uses: actions/github-script@d556feaca394842dc55e4734bf3bb9f685482fa0 # tag=v6
+        with:
+          github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "Hey @freecodecamp/i18n, it looks like we have new English curriculum files that need to be translated."
+            })

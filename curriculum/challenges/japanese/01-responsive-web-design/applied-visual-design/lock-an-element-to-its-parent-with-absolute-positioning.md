@@ -9,7 +9,7 @@ dashedName: lock-an-element-to-its-parent-with-absolute-positioning
 
 # --description--
 
-CSS の `position` プロパティの次のオプションは `absolute` です。これは、要素を親コンテナからの相対的な位置に固定します。 `relative` の配置と異なり、このオプションは要素をドキュメントの通常フローから削除するため、周りの項目はその要素を無視します。 CSS オフセットプロパティ (top または bottom および left または right) は位置を調整するために使われます。
+CSS の `position` プロパティの次のオプションは `absolute` です。これは、要素を親コンテナーからの相対的な位置に固定します。 `relative` の配置と異なり、このオプションは要素をドキュメントの通常フローから削除するため、周りの項目はその要素を無視します。 CSS オフセットプロパティ (top または bottom および left または right) は位置を調整するために使われます。
 
 絶対位置指定の注意点の一つは、最も近い *position 指定がされている* 祖先要素に対して固定されることです。 親となる項目に position ルールを追加する (一般的に `position: relative;` が使われます) ことをもし忘れると、ブラウザは一連の要素を辿って探し続け、最終的には `body` タグがデフォルトとして使われます。
 

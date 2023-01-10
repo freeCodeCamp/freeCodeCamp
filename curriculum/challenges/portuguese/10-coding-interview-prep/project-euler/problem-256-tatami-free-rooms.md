@@ -1,7 +1,7 @@
 ---
 id: 5900f46c1000cf542c50ff7e
 title: 'Problema 256: Cômodos sem tatami'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301904
 dashedName: problem-256-tatami-free-rooms
 ---

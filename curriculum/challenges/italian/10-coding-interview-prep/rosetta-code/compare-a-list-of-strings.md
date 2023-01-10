@@ -1,14 +1,20 @@
 ---
 id: 596e457071c35c882915b3e4
 title: Confronta un elenco di stringhe
-challengeType: 5
+challengeType: 1
 forumTopicId: 302235
 dashedName: compare-a-list-of-strings
 ---
 
 # --description--
 
-Data una [lista](https://it.wikipedia.org/wiki/Lista_(informatica)) di un numero arbitrario di stringhe, implementa una funzione per ognuna delle seguenti condizioni:
+Una lista è un set ordinato di valori che potrebbe contenere duplicati. Ecco un esempio:
+
+```js
+const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
+```
+
+Data una lista di un numero arbitrario di stringhe, implementa una funzione per ognuna della seguenti condizioni:
 
 <ul>
   <li>testa se sono tutte lessicamente uguali</li>

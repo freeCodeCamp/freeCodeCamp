@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339acd
 title: '余剰数、不足数、完全数の分類'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302221
 dashedName: abundant-deficient-and-perfect-number-classifications
 ---

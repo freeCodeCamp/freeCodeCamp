@@ -1,7 +1,7 @@
 ---
 id: 5900f44e1000cf542c50ff60
 title: 'Завдання 225: Неподільні числа Трібоначчі'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301868
 dashedName: problem-225-tribonacci-non-divisors
 ---

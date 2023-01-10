@@ -8,7 +8,7 @@ dashedName: use-recursion-to-create-a-countdown
 
 # --description--
 
-У [попередньому завданні](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion) ви навчилися використовувати рекурсію для заміни циклу `for`. Тепер подивимося на більш складну функцію, яка повертає масив послідовних чисел, починаючи з `1` до числа, переданого функції.
+In a <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion" target="_blank" rel="noopener noreferrer nofollow">previous challenge</a>, you learned how to use recursion to replace a `for` loop. Тепер подивимося на більш складну функцію, яка повертає масив послідовних чисел, починаючи з `1` до числа, переданого функції.
 
 Як уже було згадано в попередньому завданні, це буде <dfn>base case</dfn>. Він повідомляє рекурсивній функції, коли їй більше не потрібно викликати саму себе. Це простий випадок, коли значення, яке повертається, вже відоме. Також існує <dfn>recursive call</dfn>, який виконує початкову функцію з різними параметрами. Якщо функція написана правильно, то буде досягнутий базовий випадок.
 
@@ -69,6 +69,13 @@ assert(
 assert(
   countdown.toString().match(/countdown\s*\(.+\)/)
 );
+```
+
+Global variables should not be used to cache the array.
+
+```js
+countdown(1)
+assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
 ```
 
 # --seed--

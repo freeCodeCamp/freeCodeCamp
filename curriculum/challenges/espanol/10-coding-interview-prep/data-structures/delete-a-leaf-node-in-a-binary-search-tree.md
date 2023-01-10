@@ -1,6 +1,6 @@
 ---
 id: 587d8258367417b2b2512c80
-title: Delete a Leaf Node in a Binary Search Tree
+title: Elimina un Nodo Hoja en un Arbol de búsqueda binaria
 challengeType: 1
 forumTopicId: 301637
 dashedName: delete-a-leaf-node-in-a-binary-search-tree
@@ -8,15 +8,15 @@ dashedName: delete-a-leaf-node-in-a-binary-search-tree
 
 # --description--
 
-This is the first of three challenges where we will implement a more difficult operation in binary search trees: deletion. Deletion is difficult because removing nodes breaks links in the tree. These links must be carefully reestablished to ensure the binary tree structure is maintained. For some deletions, this means the tree must be rearranged. In general, you will encounter one of three cases when trying to delete a node: Leaf Node: The target to delete has zero children. One Child: The target to delete only has one child. Two Children: The target to delete has two child nodes. Removing a leaf node is easy, we simply remove it. Deleting a node with one child is also relatively easy, we simply remove it and link its parent to child of the node we deleted. Removing a node with two children is more difficult, however, because this creates two child nodes that need to be reconnected to the parent tree. We'll see how to deal with this case in the third challenge. Additionally, you need to be mindful of some edge cases when handling deletion. What if the tree is empty? What if the node to delete is the root node? What if there are only two elements in the tree? For now, let's handle the first case where we delete a leaf node.
+Este es el primero de tres desafíos donde implementaremos una operación más difícil en un árboles binarios de búsqueda: eliminación. La eliminación es difícil porque la eliminación de nodos rompe enlaces en el árbol. Estos enlaces deben ser restablecidos de manera cuidadosa para asegurar que la estructura del árbol binario es mantenida. Para algunas eliminaciones, esto significa que el árbol debe ser reorganizado. En general, econtrarás uno de los tres casos cuando trates de eliminar un nodo: Nodo Hoja: El objetivo a eliminar tiene cero hijos. Un Hijo: el objetivo a eliminar solo tiene un hijo. Dos hijos: El objetivo a eliminar tiene dos hijos. Eliminar un nodo hoja es fácil, simplemente lo eliminamos. Eliminar un nodo con un hijo es también relativamente fácil, simplemente los eliminamos y vinculamos a su padres el hijo del nodo que eliminamos. Eliminar un nodo con dos hijos es más difícil, sin embargo, porque esto crea dos nodos hijos que necesitan ser reconectados al árbol padre. Veremos como tratar con este caso en el tercer desafío. Adicionalmente, debe tener en cuenta algunos casos de aristas cuando manejemos la eliminación. ¿Qué pasa si el árbol está vacío? ¿Qué pasa si el nodo a eliminar es el nodo raíz? ¿Qué pasa si sólo hay dos elementos en el árbol? Por ahora, vamos a manejar el primer caso donde eliminamos un nodo hoja.
 
 # --instructions--
 
-Create a method on our binary tree called `remove`. We'll build the logic for our deletion operation in here. First, you'll want to create a function within remove that finds the node we are trying to delete in the current tree. If the node is not present in the tree, `remove` should return `null`. Now, if the target node is a leaf node with no children, then the parent reference to it should be set to `null`. This effectively deletes the node from the tree. To do this, you will have to keep track of the parent of the node we are trying to delete as well. It will also be useful to create a way to track the number of children the target node has, as this will determine which case our deletion falls under. We will handle the second and third cases in the next challenges. Good luck!
+Crea un método en nuestro árbol binario llamado `remove`. Construiremos la lógica de nuestra operación de eliminación aquí. Primero, querrás crear una función dentro de la eliminación que encuentre el nodo que estamos tratando de eliminar en el árbol actual. Si el nodo no está presente en el árbol, `remove` debe devolver `null`. Ahora, si el nodo objetivo es un nodo hoja sin hijos, entonces la referencia al padre debe ser establecida a `null`. Esto elimina efectivamente el nodo del árbol. Para hacer esto, deberás mantener el seguimiento del padre del nodo que estamos tratando de eliminar también. También será útil crear una forma de rastrear el número de hijos que tiene el nodo objetivo, ya que esto determinará que casp de eliminación tenemos. Manejaremos el segundo y tercer caso en los siguientes desafíos. ¡Buena Suerte!
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+La estructura de datos `BinarySearchTree` debe existir.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `remove`.
+El árbol binario de búsqueda debe tener un método llamado `remove`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-Trying to remove an element that does not exist should return `null`.
+Tratar de eliminar un elemento de un árbol vacío debe devolver `null`.
 
 ```js
 assert(
@@ -65,7 +65,28 @@ assert(
 );
 ```
 
-If the root node has no children, deleting it should set the root to `null`.
+Tratar de eliminar un elemento que no existe debe devolver `null`.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.remove !== 'function') {
+      return false;
+    }
+    test.add(15);
+    test.add(30);
+    return test.remove(100) == null;
+  })()
+);
+```
+
+Si el nodo raís no tiene hijos, eliminarlo debe establecer la raíz a `null`.
 
 ```js
 assert(
@@ -86,7 +107,7 @@ assert(
 );
 ```
 
-The `remove` method should remove leaf nodes from the tree.
+El método `remove` debe eliminar nodos hojas en el árbol.
 
 ```js
 assert(

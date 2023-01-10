@@ -1,7 +1,7 @@
 ---
 id: 5900f3f91000cf542c50ff0b
 title: '問題 141：累進平方數 n'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301770
 dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-square
 ---

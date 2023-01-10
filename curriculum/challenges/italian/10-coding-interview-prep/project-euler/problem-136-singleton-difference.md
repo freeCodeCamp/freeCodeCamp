@@ -1,7 +1,7 @@
 ---
 id: 5900f3f51000cf542c50ff07
 title: 'Problema 136: Differenza singola'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301764
 dashedName: problem-136-singleton-difference
 ---

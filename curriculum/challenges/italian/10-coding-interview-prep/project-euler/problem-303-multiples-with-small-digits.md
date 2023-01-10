@@ -1,7 +1,7 @@
 ---
 id: 5900f49b1000cf542c50ffae
 title: 'Problema 303: Moltiplicazioni con cifre piccole'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301957
 dashedName: problem-303-multiples-with-small-digits
 ---

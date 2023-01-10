@@ -1,7 +1,7 @@
 ---
 id: 5900f3851000cf542c50fe98
 title: 'Problema 25: Número Fibonacci de 1000 algarismos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301897
 dashedName: problem-25-1000-digit-fibonacci-number
 ---

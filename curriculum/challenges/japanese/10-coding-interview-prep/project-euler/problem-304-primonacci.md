@@ -1,7 +1,7 @@
 ---
 id: 5900f49d1000cf542c50ffaf
 title: '問題 304: 素数フィボナッチ数列 (Primonacci)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301958
 dashedName: problem-304-primonacci
 ---

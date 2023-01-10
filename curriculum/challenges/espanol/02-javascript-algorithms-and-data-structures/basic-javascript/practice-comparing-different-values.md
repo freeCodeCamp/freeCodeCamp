@@ -15,7 +15,7 @@ Si los valores que se comparan no son del mismo tipo, el operador de igualdad re
 
 **Ejemplos**
 
-`3 == '3'` devuelve `true` porque JavaScript realiza la conversión de tipo de cadena a número. `3 === '3'` devuelve false porque los tipos son diferentes y la conversión de tipo no se realiza.
+`3 == '3'` devuelve `true` porque JavaScript realiza la conversión de tipo de cadena a número. `3 === '3'` devuelve `false` porque los tipos son diferentes y la conversión de tipo no se realiza.
 
 **Nota:** En JavaScript, puedes determinar el tipo de una variable o un valor con el operador `typeof`, de la siguiente manera:
 

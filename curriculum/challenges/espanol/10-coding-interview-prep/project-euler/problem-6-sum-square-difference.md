@@ -1,46 +1,46 @@
 ---
 id: 5900f3721000cf542c50fe85
-title: 'Problem 6: Sum square difference'
-challengeType: 5
+title: 'Problema 6: Diferencia de suma de cuadrados'
+challengeType: 1
 forumTopicId: 302171
 dashedName: problem-6-sum-square-difference
 ---
 
 # --description--
 
-The sum of the squares of the first ten natural numbers is,
+La suma de los cuadrados de los primeros diez números naturales es,
 
 <div style='text-align: center;'>1<sup>2</sup> + 2<sup>2</sup> + ... + 10<sup>2</sup> = 385</div>
 
-The square of the sum of the first ten natural numbers is,
+El cuadrado de la suma de los diez primeros números naturales es,
 
 <div style='text-align: center;'>(1 + 2 + ... + 10)<sup>2</sup> = 55<sup>2</sup> = 3025</div>
 
-Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
+Así pues, la diferencia entre la suma de los cuadrados y el cuadrado de la suma de los diez primeros números naturales es 3025 − 385 = 2640.
 
-Find the difference between the sum of the squares of the first `n` natural numbers and the square of the sum.
+Encuentra la diferencia entre la suma de los cuadrados y el cuadrado de la suma de los primeros `n` números naturales.
 
 # --hints--
 
-`sumSquareDifference(10)` should return a number.
+`sumSquareDifference(10)` debe devolver un número.
 
 ```js
 assert(typeof sumSquareDifference(10) === 'number');
 ```
 
-`sumSquareDifference(10)` should return 2640.
+`sumSquareDifference(10)` debe devolver 2640.
 
 ```js
 assert.strictEqual(sumSquareDifference(10), 2640);
 ```
 
-`sumSquareDifference(20)` should return 41230.
+`sumSquareDifference(20)` debe devolver 41230.
 
 ```js
 assert.strictEqual(sumSquareDifference(20), 41230);
 ```
 
-`sumSquareDifference(100)` should return 25164150.
+`sumSquareDifference(100)` debe devolver 25164150.
 
 ```js
 assert.strictEqual(sumSquareDifference(100), 25164150);

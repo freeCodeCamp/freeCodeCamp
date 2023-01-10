@@ -13,11 +13,15 @@ import DropDown from '../../../assets/icons/dropdown';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Link, Spacer } from '../../../components/helpers';
-import { completedChallengesSelector, executeGA } from '../../../redux';
+import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
+import {
+  isCodeAllyPractice,
+  isFinalProject
+} from '../../../../utils/challenge-types';
 import Challenges from './challenges';
 import '../intro.css';
 
@@ -40,22 +44,18 @@ const mapStateToProps = (
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ toggleBlock, executeGA }, dispatch);
+  bindActionCreators({ toggleBlock }, dispatch);
 
 interface BlockProps {
   blockDashedName: string;
   challenges: ChallengeNode[];
   completedChallengeIds: string[];
-  executeGA: typeof executeGA;
   isExpanded: boolean;
   superBlock: SuperBlocks;
   t: TFunction;
   toggleBlock: typeof toggleBlock;
 }
-
-const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
-
-export class Block extends Component<BlockProps> {
+class Block extends Component<BlockProps> {
   static displayName: string;
   constructor(props: BlockProps) {
     super(props);
@@ -64,23 +64,16 @@ export class Block extends Component<BlockProps> {
   }
 
   handleBlockClick(): void {
-    const { blockDashedName, toggleBlock, executeGA } = this.props;
+    const { blockDashedName, toggleBlock } = this.props;
     void playTone('block-toggle');
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Map Block Click',
-        action: blockDashedName
-      }
-    });
     toggleBlock(blockDashedName);
   }
 
   renderCheckMark(isCompleted: boolean): JSX.Element {
     return isCompleted ? (
-      <GreenPass hushScreenReaderText style={mapIconStyle} />
+      <GreenPass hushScreenReaderText />
     ) : (
-      <GreenNotCompleted hushScreenReaderText style={mapIconStyle} />
+      <GreenNotCompleted hushScreenReaderText />
     );
   }
 
@@ -120,23 +113,12 @@ export class Block extends Component<BlockProps> {
     });
 
     const isProjectBlock = challenges.some(({ challenge }) => {
-      const isJsProject =
-        [3, 6, 10, 14, 17].includes(challenge.order) &&
-        challenge.challengeType === 5;
-
-      const isOtherProject =
-        challenge.challengeType === 3 ||
-        challenge.challengeType === 4 ||
-        challenge.challengeType === 10 ||
-        challenge.challengeType === 12 ||
-        challenge.challengeType === 13 ||
-        challenge.challengeType === 14;
-
       const isTakeHomeProject = blockDashedName === 'take-home-projects';
 
       return (
-        (isJsProject && !isTakeHomeProject) ||
-        (isOtherProject && !isTakeHomeProject)
+        (isFinalProject(challenge.challengeType) ||
+          isCodeAllyPractice(challenge.challengeType)) &&
+        !isTakeHomeProject
       );
     });
 
@@ -193,12 +175,23 @@ export class Block extends Component<BlockProps> {
               }}
             >
               <Caret />
-              <h4 className='course-title'>
-                {`${isExpanded ? collapseText : expandText}`}
-              </h4>
+              <div className='course-title'>
+                {`${isExpanded ? collapseText : expandText}`}{' '}
+                <span className='sr-only'>{blockTitle}</span>
+              </div>
               <div className='map-title-completed course-title'>
                 {this.renderCheckMark(isBlockCompleted)}
-                <span className='map-completed-count'>{`${completedCount}/${challengesWithCompleted.length}`}</span>
+                <span
+                  aria-hidden='true'
+                  className='map-completed-count'
+                >{`${completedCount}/${challengesWithCompleted.length}`}</span>
+                <span className='sr-only'>
+                  ,{' '}
+                  {t('learn.challenges-completed', {
+                    completedCount,
+                    totalChallenges: challengesWithCompleted.length
+                  })}
+                </span>
               </div>
             </button>
             {isExpanded && (
@@ -268,7 +261,7 @@ export class Block extends Component<BlockProps> {
                 <span className='block-header-button-text map-title'>
                   {this.renderCheckMark(isBlockCompleted)}
                   <span>
-                    {blockTitle}{' '}
+                    {blockTitle}
                     <span className='sr-only'>
                       , {courseCompletionStatus()}
                     </span>
@@ -293,13 +286,12 @@ export class Block extends Component<BlockProps> {
             </div>
             {isExpanded && this.renderBlockIntros(blockIntroArr)}
             {isExpanded && (
-              <>
-                <Challenges
-                  challengesWithCompleted={challengesWithCompleted}
-                  isProjectBlock={isProjectBlock}
-                  superBlock={superBlock}
-                />
-              </>
+              <Challenges
+                challengesWithCompleted={challengesWithCompleted}
+                isProjectBlock={isProjectBlock}
+                superBlock={superBlock}
+                blockTitle={blockTitle}
+              />
             )}
           </div>
         </ScrollableAnchor>

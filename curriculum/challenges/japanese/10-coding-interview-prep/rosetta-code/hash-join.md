@@ -1,19 +1,19 @@
 ---
 id: 5956795bc9e2c415eb244de1
 title: ハッシュ結合 (hash join)
-challengeType: 5
+challengeType: 1
 forumTopicId: 302284
 dashedName: hash-join
 ---
 
 # --description--
 
-[内部結合 (inner join)](https://www.freecodecamp.org/news/sql-join-types-inner-join-vs-outer-join-example/#how-to-use-an-inner-join-in-sql "news: SQL Join Types – Inner Join VS Outer Join Example#How to Use an INNER JOIN in SQL") は、一致している列の値に基づいて、2つのデータテーブルを1つのテーブルに結合する操作です。 この操作を実行する最も簡単な方法は、 [nested loop join](https://en.wikipedia.org/wiki/Nested loop join "wp: Nested loop join") アルゴリズムを使用する方法ですが、 よりスケーラブルな代替方法として、[hash join](https://en.wikipedia.org/wiki/hash join "wp: hash join") アルゴリズムを使用する方法が挙げられます。
+An inner join is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the nested loop join algorithm, but a more scalable alternative is the hash join algorithm.
 
 「hash join」アルゴリズムは次の 2 つのステップで構成されています。
 
 <ol>
-  <li><strong>Hash phase:</strong> 2つのテーブルのいずれかから <a href='https://en.wikipedia.org/wiki/Multimap' title='wp: Multimap' target='_blank'>multimap</a> を作成し、 各結合列の値をそれを含むすべての行にマッピングします。</li>
+  <li><strong>Hash phase:</strong> Create a multimap from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
   <ul>
     <li>multimapは単純な線形探索よりもスケーラブルなハッシュベースの探索をサポートする必要があります。それこそが、このアルゴリズムの肝要な点だからです。</li>
     <li>理想としては、小さい方のテーブルのmultimapを作成することを推奨します。これにより、作成時間とメモリサイズを最小化できます。</li>

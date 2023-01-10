@@ -1,7 +1,7 @@
 ---
 id: 5900f4af1000cf542c50ffc1
 title: 'Problema 322: Coeficientes binomiais divisíveis por 10'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301979
 dashedName: problem-322-binomial-coefficients-divisible-by-10
 ---

@@ -1,7 +1,7 @@
 ---
 id: 594dc6c729e5700999302b45
 title: 対の括弧
-challengeType: 5
+challengeType: 1
 forumTopicId: 302230
 dashedName: balanced-brackets
 ---

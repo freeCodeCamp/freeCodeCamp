@@ -1,7 +1,7 @@
 ---
 id: 5900f3e21000cf542c50fef5
 title: 'Problema 118: set di numeri primi pandigitali'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301744
 dashedName: problem-118-pandigital-prime-sets
 ---

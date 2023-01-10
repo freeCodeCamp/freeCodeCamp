@@ -1,7 +1,7 @@
 ---
 id: 5900f4531000cf542c50ff65
 title: '問題 230: フィボナッチ文字列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301874
 dashedName: problem-230-fibonacci-words
 ---

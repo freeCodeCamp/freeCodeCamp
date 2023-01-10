@@ -1,7 +1,7 @@
 ---
 id: 5900f4341000cf542c50ff46
 title: '問題 199: 反復的に円を埋める'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301837
 dashedName: problem-199-iterative-circle-packing
 ---

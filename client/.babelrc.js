@@ -53,11 +53,12 @@ const config = {
           'javascript',
           'markup',
           'mathml',
+          'pug',
           'python',
-          'svg',
-          'xml',
           'sql',
-          'typescript'
+          'svg',
+          'typescript',
+          'xml'
         ],
         theme: 'default',
         css: true,

@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8036
 title: Strip control codes and extended characters from a string
-challengeType: 5
+challengeType: 1
 forumTopicId: 302327
 dashedName: strip-control-codes-and-extended-characters-from-a-string
 ---

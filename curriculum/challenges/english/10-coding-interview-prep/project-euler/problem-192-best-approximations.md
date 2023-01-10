@@ -1,7 +1,7 @@
 ---
 id: 5900f42c1000cf542c50ff3f
 title: 'Problem 192: Best Approximations'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301830
 dashedName: problem-192-best-approximations
 ---

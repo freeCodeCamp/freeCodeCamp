@@ -1,7 +1,7 @@
 ---
 id: 5900f3a91000cf542c50febc
 title: 'Problem 61: Cyclical figurate numbers'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302173
 dashedName: problem-61-cyclical-figurate-numbers
 ---
@@ -12,10 +12,10 @@ Triangle, square, pentagonal, hexagonal, heptagonal, and octagonal numbers are a
 
 | Type of Number | Formula                       | Sequence              |
 | -------------- | ----------------------------- | --------------------- |
-| Triangle       | $P_3(n) = \frac{n(n+1)}{2}$  | 1, 3, 6, 10, 15, ...  |
+| 三角形            | $P_3(n) = \frac{n(n+1)}{2}$  | 1, 3, 6, 10, 15, ...  |
 | Square         | $P_4(n) = n^2$                | 1, 4, 9, 16, 25, ...  |
-| Pentagonal     | $P_5(n) = \frac{n(3n−1)}2$   | 1, 5, 12, 22, 35, ... |
-| Hexagonal      | $P_6(n) = n(2n−1)$            | 1, 6, 15, 28, 45, ... |
+| 五角形            | $P_5(n) = \frac{n(3n−1)}2$   | 1, 5, 12, 22, 35, ... |
+| 六角形            | $P_6(n) = n(2n−1)$            | 1, 6, 15, 28, 45, ... |
 | Heptagonal     | $P_7(n) = \frac{n(5n−3)}{2}$ | 1, 7, 18, 34, 55, ... |
 | Octagonal      | $P_8(n) = n(3n−2)$            | 1, 8, 21, 40, 65, ... |
 

@@ -10,7 +10,7 @@ dashedName: moving-forward-from-here
 
 ¡Felicidades! Has terminado las lecciones sobre React y Redux. Hay un último punto que vale la pena señalar antes de seguir adelante. Por lo general, no escribirás aplicaciones React en un editor de código como este. Este desafío te da una idea de cómo es la sintaxis si trabajas con npm y un sistema de archivos en tu propia máquina. El código debería ser similar, excepto por el uso de las sentencias `import` (éstas traen todas las dependencias que se te han proporcionado en los desafíos). La sección "Gestión de paquetes con npm" cubre npm con más detalle.
 
-Por último, escribir código React y Redux generalmente requiere cierta configuración. Esto puede complicarse rápidamente. Si te interesa experimentar en tu propia máquina, <a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="nofollow">Create React App</a> viene configurado y listo para funcionar.
+Por último, escribir código React y Redux generalmente requiere cierta configuración. Esto puede complicarse rápidamente. Si te interesa experimentar en tu propia máquina, <a href="https://www.freecodecamp.org/news/install-react-with-create-react-app/" target="_blank" rel="noopener noreferrer nofollow">Create React App</a> viene configurado y listo para funcionar.
 
 Alternativamente, puedes habilitar Babel como un preprocesador de JavaScript en CodePen, añadir React y ReactDOM como recursos externos de JavaScript, y trabajar allí también.
 

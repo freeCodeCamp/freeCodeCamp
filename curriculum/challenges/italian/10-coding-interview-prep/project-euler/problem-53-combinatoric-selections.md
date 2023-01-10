@@ -1,7 +1,7 @@
 ---
 id: 5900f3a11000cf542c50feb4
 title: 'Problema 53: selezione combinatoria'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302164
 dashedName: problem-53-combinatoric-selections
 ---

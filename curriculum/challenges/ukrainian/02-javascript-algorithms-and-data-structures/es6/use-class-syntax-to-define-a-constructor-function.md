@@ -12,24 +12,35 @@ ES6 забезпечує новий синтаксис для створення
 
 Варто зазначити, що синтаксис `class` є просто синтаксисом, а не повноцінною реалізацією об'єктно-орієнтованої парадигми, на відміну від таких мов як Java, Python, Ruby, і т.д.
 
-В ES5 зазвичай визначається функція `constructor` та використовується ключове слово `new` для створення об'єкта.
+In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
+
+In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
 
 ```js
-var SpaceShuttle = function(targetPlanet){
-  this.targetPlanet = targetPlanet;
-}
-var zeus = new SpaceShuttle('Jupiter');
-```
-
-Синтаксис `class` просто замінює створення функції `constructor`:
-
-```js
+// Explicit constructor
 class SpaceShuttle {
   constructor(targetPlanet) {
     this.targetPlanet = targetPlanet;
   }
+  takeOff() {
+    console.log("To " + this.targetPlanet + "!");
+  }
 }
+
+// Implicit constructor 
+class Rocket {
+  launch() {
+    console.log("To the moon!");
+  }
+}
+
 const zeus = new SpaceShuttle('Jupiter');
+// prints To Jupiter! in console
+zeus.takeOff();
+
+const atlas = new Rocket();
+// prints To the moon! in console
+atlas.launch();
 ```
 
 Варто зазначити, що ключове слово `class` оголошує нову функцію, до якої додається конструктор. Конструктор викликається, коли ключове слово `new` використовується для створення нового об'єкту.

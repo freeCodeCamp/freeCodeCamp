@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08d
-title: Представлення відносин у реляційній базі даних
+title: Представлення відношень у реляційній базі даних
 challengeType: 11
 videoId: '-orenCNdC2Q'
 bilibiliIds:
@@ -30,7 +30,7 @@ dashedName: representing-relationships-in-a-relational-database
 
 ---
 
-Ключ, який "реальний світ" може використовувати для пошуку необхідного рядка.
+Ключ, який «реальний світ» може використовувати для пошуку необхідного рядка.
 
 ## --video-solution--
 

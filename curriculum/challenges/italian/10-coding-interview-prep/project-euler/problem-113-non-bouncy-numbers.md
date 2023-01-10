@@ -1,7 +1,7 @@
 ---
 id: 5900f3dd1000cf542c50fef0
 title: 'Problema 113: Numeri non rimbalzanti'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301739
 dashedName: problem-113-non-bouncy-numbers
 ---

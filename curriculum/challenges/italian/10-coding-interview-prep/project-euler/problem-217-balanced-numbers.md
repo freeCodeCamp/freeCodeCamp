@@ -1,7 +1,7 @@
 ---
 id: 5900f4461000cf542c50ff58
 title: 'Problema 217: Numeri Bilanciati'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301859
 dashedName: problem-217-balanced-numbers
 ---

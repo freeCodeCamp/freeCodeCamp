@@ -8,7 +8,7 @@ dashedName: build-a-wikipedia-viewer
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <https://codepen.io/freeCodeCamp/full/wGqEga/>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://codepen.io/freeCodeCamp/full/wGqEga/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/wGqEga/</a>.
 
 O software MediaWiki auxilia a Wikipédia a recolher e organizar o conhecimento e disponibilizá-lo às pessoas.
 
@@ -22,7 +22,7 @@ Atenda às histórias de usuário abaixo e faça com que todos os testes passem.
 
 Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 
-Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">fórum freeCodeCamp</a>.
 
 # --solutions--
 

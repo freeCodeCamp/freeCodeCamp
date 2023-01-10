@@ -1,7 +1,7 @@
 ---
 id: 5900f3951000cf542c50fea8
 title: '問題 41: パンデジタル素数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302078
 dashedName: problem-41-pandigital-prime
 ---

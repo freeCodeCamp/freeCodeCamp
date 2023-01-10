@@ -16,7 +16,7 @@ Let's also implement a method that does the opposite: an `elementAt` method that
 
 # --instructions--
 
-Write an `isEmpty` method that checks if the linked list is empty, an `indexOf` method that returns the `index` of a given element, and an `elementAt` that returns an `element` at a given `index.`
+Write an `isEmpty` method that checks if the linked list is empty, an `indexOf` method that returns the `index` of a given element, and an `elementAt` that returns an `element` at a given `index`.
 
 # --hints--
 

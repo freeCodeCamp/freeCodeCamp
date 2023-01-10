@@ -1,7 +1,7 @@
 ---
 id: 5900f5231000cf542c510034
 title: '問題 438: 多項式の解の整数部'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302109
 dashedName: problem-438-integer-part-of-polynomial-equations-solutions
 ---
@@ -19,7 +19,7 @@ $n = 4$ のとき、両方の条件を満たす $n$ 個の整数の組は 12 個
 
 $t$ 内の整数の絶対値の和を $S(t)$ とします。
 
-$n = 4$ のとき、両方の条件を満たす $n$ 個の整数の組 $t$ のすべてについて $\sum S(t) = 2087$ となることを確認できます。
+For $n = 4$ we can verify that $\sum S(t) = 2087$ for all $n$-tuples $t$ which satisfy both conditions.
 
 $n = 7$ のとき、$\sum S(t)$ を求めなさい。
 

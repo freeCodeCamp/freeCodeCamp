@@ -1,7 +1,7 @@
 ---
 id: 5900f5381000cf542c51004b
 title: '問題 460: 歩き回るアリ'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302135
 dashedName: problem-460-an-ant-on-the-move
 ---

@@ -8,7 +8,11 @@ dashedName: time-calculator
 
 # --description--
 
-このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-time-calculator)を使用して作業を行います。
+<a href="https://replit.com/github/freeCodeCamp/boilerplate-time-calculator" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用します</a>。
+
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
 # --instructions--
 

@@ -123,7 +123,7 @@ assert.strictEqual(
 })();
 ```
 
-当 `GameOfChance` 组件第一次挂载到 DOM 上时，每次按钮被点击，都应该返回一个 `h1` 元素，元素中随机渲染 `You Win!` 或者 `You Lose!`。
+当 `GameOfChance` 组件第一次挂载到 DOM 上时，每次按钮被点击，都应该返回一个 `h1` 元素，元素中随机渲染 `You Win!` 或者 `You Lose!`。 注意：这有时可能会失败。 如果发生这种情况，请再试一次。
 
 ```js
 (() => {
@@ -265,6 +265,11 @@ class GameOfChance extends React.Component {
 # --solutions--
 
 ```jsx
+// We want this to be deterministic for testing purposes.
+const randomSequence = [true, false, false, true, true, false, false, true, true, false];
+let index = 0;
+const fiftyFifty = () => randomSequence[index++ % randomSequence.length];
+
 class Results extends React.Component {
   constructor(props) {
     super(props);
@@ -290,11 +295,10 @@ class GameOfChance extends React.Component {
     });
   }
   render() {
-    const expression = Math.random() >= 0.5;
     return (
       <div>
         <button onClick={this.handleClick}>Play Again</button>
-        <Results fiftyFifty={expression} />
+        <Results fiftyFifty={fiftyFifty()} />
         <p>{'Turn: ' + this.state.counter}</p>
       </div>
     );

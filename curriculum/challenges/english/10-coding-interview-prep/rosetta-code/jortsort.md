@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ec4
 title: JortSort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302293
 dashedName: jortsort
 ---

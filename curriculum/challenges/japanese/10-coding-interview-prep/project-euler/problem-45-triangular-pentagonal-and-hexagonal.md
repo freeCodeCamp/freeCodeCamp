@@ -1,7 +1,7 @@
 ---
 id: 5900f3991000cf542c50feac
 title: '問題 45: 三角数、五角数、六角数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302122
 dashedName: problem-45-triangular-pentagonal-and-hexagonal
 ---

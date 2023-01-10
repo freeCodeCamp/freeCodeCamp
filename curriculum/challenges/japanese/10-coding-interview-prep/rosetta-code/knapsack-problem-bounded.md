@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ed2
 title: ナップサック問題 / 個数制限付き
-challengeType: 5
+challengeType: 1
 forumTopicId: 323652
 dashedName: knapsack-problembounded
 ---

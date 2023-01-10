@@ -1,6 +1,6 @@
 ---
 id: 5f1a4ef5d5d6b5ab580fc6ae
-title: Build a Celestial Bodies Database
+title: Створіть базу даних «Небесні тіла»
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-celestial-bodies-database
@@ -9,15 +9,15 @@ dashedName: build-a-celestial-bodies-database
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will build a database of celestial bodies using PostgreSQL.
+Це один з обов'язкових проєктів для отримання сертифікату. У цьому проєкті ви побудуєте базу даних небесних тіл, використовуючи PostgreSQL.
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `universe.sql` file so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Важливо:** після проходження всіх тестів проєкту збережіть звалище своєї бази даних у файлі `universe.sql`, щоб ви могли виконати крок 2. Там будуть інструкції, як це зробити у віртуальній машині.
 
 # --notes--
 
-Required files: `universe.sql`
+Необхідні файли: `universe.sql`
 
 # --hints--
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f39c1000cf542c50feaf
 title: 'Problema 48: Elevado à base'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302157
 dashedName: problem-48-self-powers
 ---

@@ -1,18 +1,20 @@
 ---
 id: 5a23c84252665b21eecc7edf
 title: Найменше спільне кратне
-challengeType: 5
+challengeType: 1
 forumTopicId: 302301
 dashedName: least-common-multiple
 ---
 
 # --description--
 
-Найменше спільне кратне 12 та 18 це 36, оскільки 12 - коефіцієнт (12 × 3 = 36), та 18 - коефіцієнт (18 × 2 = 36), і немає цілого додатного числа менше ніж 36, яке мало б обидва коефіцієнти. В окремому випадку, якщо *m* або *n* дорівнює нулю, то найменше спільне кратне дорівнює нулю. Одним зі способів обчислення найменшого спільного кратного є повторення всіх кратних *m*, доки не буде знайдено таке, що є кратним *n*. Якщо у вас вже є *gcd* для [greatest common divisor](https://rosettacode.org/wiki/greatest common divisor), в такому випадку ця формула вираховує *lcm*. ( \\operatorname{lcm}(m, n) = \\frac{|m \\times n|}{\\operatorname{gcd}(m, n)} )
+Найменше спільне кратне 12 та 18 це 36, оскільки 12 - коефіцієнт (12 × 3 = 36), та 18 - коефіцієнт (18 × 2 = 36), і немає цілого додатного числа менше ніж 36, яке мало б обидва коефіцієнти. As a special case, if either $m$ or $n$ is zero, then the least common multiple is zero. One way to calculate the least common multiple is to iterate all the multiples of $m$, until you find one that is also a multiple of $n$. If you already have $gcd$ for <a href="https://rosettacode.org/wiki/Greatest_common_divisor" target="_blank" rel="noopener noreferrer nofollow">greatest common divisor</a>, then this formula calculates $lcm$.
+
+$$ \\operatorname{lcm}(m, n) = \\frac{|m \\times n|}{\\operatorname{gcd}(m, n)} $$
 
 # --instructions--
 
-Обчисліть найменше спільне кратне масиву цілих чисел. З огляду на значення *m* та *n*, найменше спільне кратне - це найменше позитивне ціле число, яке має як *m*, так і *n* у якості факторів.
+Compute the least common multiple of an array of integers. Given *m* and *n*, the least common multiple is the smallest positive integer that has both *m* and *n* as factors.
 
 # --hints--
 
@@ -22,7 +24,7 @@ dashedName: least-common-multiple
 assert(typeof LCM == 'function');
 ```
 
-`LCM([2, 4, 8])` має повернути число.
+`LCM([2, 4, 8])` має повертати число.
 
 ```js
 assert(typeof LCM([2, 4, 8]) == 'number');

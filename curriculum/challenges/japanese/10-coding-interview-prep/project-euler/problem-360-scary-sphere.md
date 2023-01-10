@@ -1,7 +1,7 @@
 ---
 id: 5900f4d41000cf542c50ffe7
 title: '問題 360: 恐ろしい球体'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302021
 dashedName: problem-360-scary-sphere
 ---

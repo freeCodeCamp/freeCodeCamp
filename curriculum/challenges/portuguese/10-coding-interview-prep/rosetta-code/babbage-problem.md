@@ -1,7 +1,7 @@
 ---
 id: 594db4d0dedb4c06a2a4cefd
 title: Problema de Babbage
-challengeType: 5
+challengeType: 1
 forumTopicId: 302229
 dashedName: babbage-problem
 ---

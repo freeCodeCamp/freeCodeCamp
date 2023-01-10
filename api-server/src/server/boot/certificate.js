@@ -357,6 +357,7 @@ function createShowCert(app) {
     const certTitle = certTypeTitleMap[certType];
     const completionTime = completionHours[certType] || 300;
     return findUserByUsername$(username, {
+      isBanned: true,
       isCheater: true,
       isFrontEndCert: true,
       isBackEndCert: true,
@@ -391,25 +392,26 @@ function createShowCert(app) {
           ]
         });
       }
-      const { isLocked, showCerts, showName } = user.profileUI;
+      const { isLocked, showCerts, showName, showTimeLine } = user.profileUI;
 
-      if (!user.name) {
-        return res.json({
-          messages: [
-            {
-              type: 'info',
-              message: 'flash.add-name'
-            }
-          ]
-        });
-      }
-
-      if (user.isCheater) {
+      if (user.isCheater || user.isBanned) {
         return res.json({
           messages: [
             {
               type: 'info',
               message: 'flash.not-eligible'
+            }
+          ]
+        });
+      }
+
+      if (!user.isHonest) {
+        return res.json({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.not-honest',
+              variables: { username: username }
             }
           ]
         });
@@ -427,6 +429,17 @@ function createShowCert(app) {
         });
       }
 
+      if (!user.name) {
+        return res.json({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.add-name'
+            }
+          ]
+        });
+      }
+
       if (!showCerts) {
         return res.json({
           messages: [
@@ -439,12 +452,12 @@ function createShowCert(app) {
         });
       }
 
-      if (!user.isHonest) {
+      if (!showTimeLine) {
         return res.json({
           messages: [
             {
               type: 'info',
-              message: 'flash.not-honest',
+              message: 'flash.timeline-private',
               variables: { username: username }
             }
           ]

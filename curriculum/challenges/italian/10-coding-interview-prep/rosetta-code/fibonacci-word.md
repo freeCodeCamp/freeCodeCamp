@@ -1,14 +1,14 @@
 ---
 id: 5992e222d397f00d21122931
 title: Parola di Fibonacci
-challengeType: 5
+challengeType: 1
 forumTopicId: 302269
 dashedName: fibonacci-word
 ---
 
 # --description--
 
-La Parola di Fibonacci può essere creata in una maniera analoga alla Sequenza di Fibonacci [come descritto qui](https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf):
+La Sequenza di Parole di Fibonacci può essere creata in maniera analoga alla Sequenza di Fibonacci, ma utilizza la concatenazione iterativa.
 
 <pre>Definisci  F_Word<sub>1</sub>  come  <strong>1</strong>
 Definisci  F_Word<sub>2</sub>  come  <strong>0</strong>
@@ -16,9 +16,11 @@ Definisci   F_Word<sub>3</sub>  come  F_Word<sub>2</sub>   concatenato con  F_Wo
 Forma   F_Word<sub>n</sub>  come  F_Word<sub>n-1</sub>  concatento con with  F_word<sub>n-2</sub>
 </pre>
 
+Calcolare l'entropia è un requisito di questa sfida, come mostrato in <a href="https://www.freecodecamp.org/italian/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">questa sfida di Rosetta</a>
+
 # --instructions--
 
-Scrivi una funzione che restituisci le Parole di Fibonacci fino a `n`. `n` verrà fornito come parametro per la funzione. La funzione dovrebbe restituire un array di oggetti. Gli oggetti dovrebberi essere della forma: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` è calcolata per la parola `Word` [come descritto qui](https://en.wikipedia.org/wiki/Entropy_%28information_theory%29) e arrotondato a 8 cifre decimali di accuratezza.
+Scrivi una funzione che restituisce le prime `n` Parole di Fibonacci. Il numero di `n` è dato come parametro alla funzione. La funzione dovrebbe restituire un array di oggetti. Gli oggetti dovrebberi essere della forma: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` (l'entropia) è computata per la stringa `Word` e arrotondata a 8 cifre decimali di precisione. Nota che gli indici di questa sequenza iniziano da `1`.
 
 # --hints--
 

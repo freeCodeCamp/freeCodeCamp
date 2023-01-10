@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8d
-title: 'Базові алгоритми навчання: Класифікація'
+title: 'Базові алгоритми навчання: класифікація'
 challengeType: 11
 videoId: qFF7ZQNvK9E
 bilibiliIds:

@@ -1,7 +1,7 @@
 ---
 id: 5900f3fa1000cf542c50ff0c
 title: 'Problema 140: Pepitas de ouro de Fibonacci modificado'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301769
 dashedName: problem-140-modified-fibonacci-golden-nuggets
 ---

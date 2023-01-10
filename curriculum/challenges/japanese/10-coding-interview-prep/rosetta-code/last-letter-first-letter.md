@@ -1,7 +1,7 @@
 ---
 id: 5e4ce2b6ac708cc68c1df25e
 title: しりとり (Last letter-first letter)
-challengeType: 5
+challengeType: 1
 forumTopicId: 385256
 dashedName: last-letter-first-letter
 ---

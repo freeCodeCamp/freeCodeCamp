@@ -1,14 +1,16 @@
 ---
 id: 59d9c6bc214c613ba73ff012
 title: SEDOLs (списки ідентифікаційних кодів цінних паперів)
-challengeType: 5
+challengeType: 1
 forumTopicId: 302305
 dashedName: sedols
 ---
 
 # --description--
 
-Для кожного списку чисел з 6-цифрових [SEDOL](https://en.wikipedia.org/wiki/SEDOL "wp: SEDOL")s, порахуйте та додайте цифру контрольної суми. Тобто, враховуючи вхідний рядок зліва, ваша функція повинна повернутися відповідним рядком справа:
+<abbr title="Stock Exchange Daily Official List">SEDOL</abbr> is a list of securities identification numbers issued by the London Stock Exchange.
+
+For each number list of 6-digit <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>s, calculate and append the checksum digit. That is, given the input string on the left, your function should return the corresponding string on the right:
 
 <pre>
 710889 => 7108899
@@ -24,7 +26,7 @@ B0YBKT => B0YBKT7
 B00030 => B000300
 </pre>
 
-Перевірте, щоб кожне введення було правильно сформовано, особливо стосовно допустимих символів, дозволених у рядку SEDOL. Ваша функція повинна повернути `null` на недопустиме введення.
+Check that each input is correctly formed, especially with respect to valid characters allowed in a SEDOL string. Your function should return `null` on an invalid input.
 
 # --hints--
 
@@ -34,25 +36,25 @@ B00030 => B000300
 assert(typeof sedol === 'function');
 ```
 
-`sedol('a')` має повернутись нулем.
+`sedol('a')` should return null.
 
 ```js
 assert(sedol('a') === null);
 ```
 
-`sedol('710889')` має повернути '7108899'.
+`sedol('710889')` should return '7108899'.
 
 ```js
 assert(sedol('710889') === '7108899');
 ```
 
-`sedol('BOATER')` має повернутись нулем.
+`sedol('BOATER')` should return null.
 
 ```js
 assert(sedol('BOATER') === null);
 ```
 
-`sedol('228276')` має повернути '2282765'.
+`sedol('228276')` should return '2282765'.
 
 ```js
 assert(sedol('228276') === '2282765');
@@ -64,8 +66,9 @@ assert(sedol('228276') === '2282765');
 
 ```js
 function sedol(input) {
+  const checkSum = 0
 
-  return true;
+  return checkSum;
 }
 ```
 
@@ -90,7 +93,7 @@ function sedolCheckDigit(char6) {
   for (let i = 0; i < char6.length; i++) {
     sum += weight[i] * parseInt(char6.charAt(i), 36);
   }
-  const check = (10 - (sum % 10)) % 10;
-  return check.toString();
+  const checkSum = (10 - (sum % 10)) % 10;
+  return checkSum.toString();
 }
 ```

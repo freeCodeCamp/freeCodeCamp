@@ -11,18 +11,19 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { SuperBlocks } from '../../../../config/certification-settings';
+import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
+import { tryToShowDonationModal } from '../../redux/actions';
 import {
+  isSignedInSelector,
+  userSelector,
   currentChallengeIdSelector,
   userFetchStateSelector,
-  signInLoadingSelector,
-  isSignedInSelector,
-  tryToShowDonationModal,
-  userSelector
-} from '../../redux';
+  signInLoadingSelector
+} from '../../redux/selectors';
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
@@ -177,14 +178,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     nodesForSuperBlock.map(({ challenge: { block } }) => block)
   );
 
-  const i18nSuperBlock = t(`intro:${superBlock}.title`);
-  const i18nTitle =
-    superBlock === SuperBlocks.CodingInterviewPrep
-      ? i18nSuperBlock
-      : t(`intro:misc-text.certification`, {
-          cert: i18nSuperBlock
-        });
-
+  const i18nTitle = getSuperBlockTitleForMap(superBlock);
   const defaultCurriculumNames = blockDashedNames;
 
   return (

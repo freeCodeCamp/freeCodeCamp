@@ -1,7 +1,7 @@
 ---
 id: a6e40f1041b06c996f7b2406
 title: Chi trova tiene
-challengeType: 5
+challengeType: 1
 forumTopicId: 16016
 dashedName: finders-keepers
 ---

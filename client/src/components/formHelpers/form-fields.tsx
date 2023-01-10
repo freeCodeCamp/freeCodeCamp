@@ -11,7 +11,6 @@ import normalizeUrl from 'normalize-url';
 import React from 'react';
 import { Field } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
-import { FormOptions } from './form';
 import {
   editorValidator,
   localhostValidator,
@@ -19,6 +18,15 @@ import {
   fCCValidator,
   httpValidator
 } from './form-validators';
+
+export type FormOptions = {
+  ignored?: string[];
+  isEditorLinkAllowed?: boolean;
+  isLocalLinkAllowed?: boolean;
+  required?: string[];
+  types?: { [key: string]: string };
+  placeholders?: { [key: string]: string };
+};
 
 type FormFieldsProps = {
   formFields: { name: string; label: string }[];

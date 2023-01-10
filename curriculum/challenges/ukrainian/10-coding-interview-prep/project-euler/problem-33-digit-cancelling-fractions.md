@@ -1,7 +1,7 @@
 ---
 id: 5900f38d1000cf542c50fea0
 title: 'Завдання 33: Числове скорочення дробів'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301987
 dashedName: problem-33-digit-cancelling-fractions
 ---

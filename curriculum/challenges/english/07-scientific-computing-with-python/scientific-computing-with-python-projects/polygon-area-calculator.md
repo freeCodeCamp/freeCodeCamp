@@ -8,7 +8,12 @@ dashedName: polygon-area-calculator
 
 # --description--
 
-You will be [working on this project with our Replit starter code](https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator).
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+
+-   Start by importing the project on Replit. 
+-   Next, you will see a `.replit` window. 
+-   Select `Use run command` and click the `Done` button. 
+
 
 # --instructions--
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f4d01000cf542c50ffe2
 title: 'Problema 355: Massimo sottoinsieme di coprimi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302015
 dashedName: problem-355-maximal-coprime-subset
 ---

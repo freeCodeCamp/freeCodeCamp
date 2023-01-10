@@ -14,15 +14,15 @@ dashedName: relational-databases-many-to-many-relationships
 
 更多資料：
 
-\- [練習：電子郵件](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
+\- <a href="https://www.youtube.com/watch?v=uQ3Qv1z_Vao" target="_blank" rel="noopener noreferrer nofollow">練習：Email</a>
 
-\- [練習：名冊](https://www.youtube.com/watch?v=qEkUEAz8j3o)
+\- <a href="https://www.youtube.com/watch?v=qEkUEAz8j3o" target="_blank" rel="noopener noreferrer nofollow">練習：Roster</a>
 
-\- [練習：曲目](https://www.youtube.com/watch?v=I-E7avcPeSE)
+\- <a href="https://www.youtube.com/watch?v=I-E7avcPeSE" target="_blank" rel="noopener noreferrer nofollow">練習：Tracks</a>
 
-\- [練習：推特好友](https://www.youtube.com/watch?v=RZRAoBFIH6A)
+\- <a href="https://www.youtube.com/watch?v=RZRAoBFIH6A" target="_blank" rel="noopener noreferrer nofollow">練習：Twfriends</a>
 
-\- [練習：推特爬蟲](https://www.youtube.com/watch?v=xBaJddvJL4A)
+\- <a href="https://www.youtube.com/watch?v=xBaJddvJL4A" target="_blank" rel="noopener noreferrer nofollow">練習：Twspider</a>
 
 # --question--
 

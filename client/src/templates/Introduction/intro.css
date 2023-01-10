@@ -44,9 +44,21 @@ a.cert-tag:active {
 }
 
 .block-grid-title {
-  font-size: 1.2rem;
   margin: 0;
   overflow-wrap: break-word;
+}
+
+.block-grid .challenge-jump-link {
+  margin: 0 25px 25px;
+}
+
+.block-grid .challenge-jump-link a:focus {
+  outline: 3px solid var(--blue-mid);
+  outline-offset: 0;
+}
+
+.block-grid .challenge-jump-link a:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .block-title-translation-cta {
@@ -68,7 +80,8 @@ a.cert-tag:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 25px 15px 10px 0;
+  padding-block: 10px 25px;
+  padding-inline: 0 15px;
   margin: 0 0 0.6rem;
   flex-grow: 2;
   flex-basis: 0;
@@ -77,6 +90,8 @@ a.cert-tag:active {
 }
 
 .course-title {
+  display: flex;
+  align-items: center;
   font-size: 1.13rem;
   overflow-wrap: break-word;
 }
@@ -125,6 +140,7 @@ button.map-title {
 .map-challenge-wrap > a,
 .map-project-wrap > a {
   display: flex;
+  gap: 7px;
 }
 
 .map-project-wrap > a {
@@ -132,8 +148,7 @@ button.map-title {
 }
 
 .map-project-checkmark {
-  margin-right: 7px;
-  padding-left: 15px;
+  padding-inline-start: 15px;
 }
 
 .block .map-cert-title {
@@ -170,7 +185,8 @@ button.map-title {
 
 .map-cert-title > h3 {
   font-size: 1.17rem;
-  margin: 0 0 0 15px;
+  margin-block: 0;
+  margin-inline: 15px 0;
 }
 
 .map-cert-title > svg {
@@ -187,20 +203,19 @@ button.map-title {
 .map-title-completed {
   margin-left: auto;
   min-width: 100px;
-  padding-left: 20px;
+  padding-inline-start: 20px;
 }
 
 .map-title-completed-big {
   margin-left: auto;
-  padding-right: 15px;
-  padding-left: 20px;
+  padding-inline-end: 15px;
+  padding-inline-start: 20px;
   position: relative;
   top: 4px;
 }
 
 .map-title svg {
   width: 14px;
-  margin-right: 10px;
   flex-shrink: 0;
   fill: var(--color-quaternary) !important;
   stroke: var(--color-quaternary);
@@ -234,11 +249,33 @@ button.map-title {
 .map-challenge-title a {
   width: 100%;
   padding: 10px 15px;
+  align-items: center;
+}
+
+.map-challenges-grid .map-challenge-title a {
+  width: 3.4rem;
+  height: 3.4rem;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+}
+
+.map-challenges-grid .map-challenge-title a:focus {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: -3px;
+}
+
+.map-challenges-grid .map-challenge-title a:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .map-challenges-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 3.4rem);
+  grid-gap: 3px;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: calc(100% - 50px);
 }
 .map-challenge-title-grid {
   flex: 0 1 60px;
@@ -261,6 +298,13 @@ button.map-title {
 
 .challenge-completed {
   background: var(--highlight-background);
+  position: relative;
+}
+
+.challenge-completed span {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-top: -0.05rem;
 }
 
 @media screen and (max-width: 500px) {
@@ -306,7 +350,7 @@ button.map-title {
 
   .map-title-completed {
     flex-shrink: 0;
-    padding-left: 15px;
+    padding-inline-start: 15px;
   }
 }
 
@@ -339,14 +383,14 @@ button.map-title {
   font-size: 1rem;
   display: block;
   margin-bottom: 5px;
-  margin-right: 5px;
+  margin-inline-end: 5px;
   padding: 4px 10px;
   color: var(--highlight-color);
   background-color: var(--highlight-background);
 }
 
 .block-grid {
-  border-bottom: 3px solid var(--secondary-background);
+  border-bottom: 4px solid var(--secondary-background);
 }
 
 .block-grid .block-header {
@@ -366,7 +410,7 @@ button.map-title {
 }
 
 .block-grid .block-header[aria-expanded='true'] {
-  border-bottom: 3px solid var(--secondary-background);
+  border-bottom: 2px solid var(--secondary-background);
 }
 
 .block-header-button-text {
@@ -385,8 +429,10 @@ button.map-title {
   padding: 25px;
 }
 
+/* this margin is used to center the element. 
+ToDo: find out why, and remove the need for it */
 .block-grid .map-title > svg {
-  margin: 10px;
+  margin-bottom: 4px;
 }
 
 .title-wrapper {
@@ -394,6 +440,12 @@ button.map-title {
   flex-direction: row;
   align-items: center;
   width: 100%;
+}
+.course-title,
+.map-title,
+.block-header-button-text,
+.title-wrapper {
+  gap: 10px;
 }
 
 .block-grid .progress-wrapper {

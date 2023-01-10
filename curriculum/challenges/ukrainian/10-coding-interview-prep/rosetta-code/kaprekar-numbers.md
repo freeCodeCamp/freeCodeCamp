@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7eca
 title: Числа Капрекара
-challengeType: 5
+challengeType: 1
 forumTopicId: 302296
 dashedName: kaprekar-numbers
 ---
 
 # --description--
 
-Додатнє ціле число — це [число Капрекара](https://en.wikipedia.org/wiki/Kaprekar number), якщо:
+A positive integer is a Kaprekar number if:
 
 <ul>
   <li>Це 1, або</li>
@@ -21,7 +21,7 @@ dashedName: kaprekar-numbers
 
 <ul>
   <li><code>2223</code> це число Капрекар, оскільки <code>2223 * 2223 = 4941729</code> <code>4941729</code> може бути розділено на <code>494</code> та <code>1729</code>, та <code>494 + 1729 = 2223</code></li>
-  <li>Серія чисел Kaprekar відома як <a href='https://oeis.org/A006886' target='_blank'>A006886</a>, і починається <code>1, 9, 45, 55, ...</code></li>
+  <li>The series of Kaprekar numbers is known as A006886, and begins as <code>1, 9, 45, 55, ...</code></li>
 </ul>
 
 # --instructions--

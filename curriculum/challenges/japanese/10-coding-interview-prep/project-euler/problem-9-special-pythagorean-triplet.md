@@ -1,7 +1,7 @@
 ---
 id: 5900f3761000cf542c50fe88
 title: '問題 9: 特殊なピタゴラスの三つ組数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302205
 dashedName: problem-9-special-pythagorean-triplet
 ---
@@ -30,7 +30,7 @@ assert(typeof specialPythagoreanTriplet(24) === 'number');
 assert.strictEqual(specialPythagoreanTriplet(24), 480);
 ```
 
-`specialPythagoreanTriplet(120)` は 49920, 55080, 60000 のいずれかを返す必要があります。
+`specialPythagoreanTriplet(120)` should return 49920, 55080 or 60000.
 
 ```js
 assert([49920, 55080, 60000].includes(specialPythagoreanTriplet(120)));

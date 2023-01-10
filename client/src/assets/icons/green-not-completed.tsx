@@ -17,9 +17,9 @@ function GreenNotCompleted(props: GreenNotCompletedProps): JSX.Element {
       )}
       <svg
         aria-hidden='true'
-        height='50'
+        height='15'
         viewBox='0 0 200 200'
-        width='50'
+        width='15'
         xmlns='http://www.w3.org/2000/svg'
         {...rest}
       >

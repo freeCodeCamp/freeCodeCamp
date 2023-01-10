@@ -1,6 +1,6 @@
 ---
 id: 5f8884f4c46685731aabfc41
-title: Запуск функціональних тестів за допомогою Headless Browser II
+title: Запустіть функціональні тести за допомогою headless браузера II
 challengeType: 2
 forumTopicId: 301594
 dashedName: run-functional-tests-using-a-headless-browser-ii
@@ -8,27 +8,27 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі початкового проєкту на [ Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) або копіюється з [ GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 # --instructions--
 
-У межах `tests/2_functional-tests.js` у тесті `'Submit the surname "Vespucci" in the HTML form'` (`// #5`) потрібно автоматизувати такі умови:
+У межах `tests/2_functional-tests.js` у тесті `'Submit the surname "Vespucci" in the HTML form'` (`// #6`) автоматизуйте наступне:
 
 1.  Впишіть у форму прізвище `Vespucci`
 2.  Натисніть кнопку підтвердження
 
 У межах кнопки зворотного виклику `pressButton`:
 
-1.  Підтвердьте, що статус – OK `200`
-2.  Підтвердьте, що текст всередині елемента `span#name` – це `'Amerigo'`
-3.  Підтвердьте, що текст всередині елемента `span#surname` – це `'Vespucci'`
-4.  Підтвердьте, що елемент(и) `span#dates` існують і їхній підрахунок дорівнює `1`
+1.  Підтвердьте, що статус становить OK `200`
+2.  Підтвердьте, що текстом всередині елемента `span#name` є `'Amerigo'`
+3.  Підтвердьте, що текстом всередині елемента `span#surname` є `'Vespucci'`
+4.  Підтвердьте, що елемент(и) `span#dates` існують та їхня кількість дорівнює `1`
 
 Не забудьте видалити виклик `assert.fail()`.
 
 # --hints--
 
-Необхідно пройти всі тести.
+Всі тести повинні бути успішно пройдені.
 
 ```js
 (getUserInput) =>
@@ -42,7 +42,7 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
   );
 ```
 
-Вам слід підтвердити, що запит безголового браузера був успішним.
+Ви повинні підтвердити, що запит headless браузера був успішним.
 
 ```js
 (getUserInput) =>
@@ -56,7 +56,7 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
   );
 ```
 
-Підтвердьте, що текст всередині елемента `span#name`> – це `'Amerigo'`.
+Ви повинні підтвердити, що текстом всередині елемента `span#name` є `'Amerigo'`.
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
   );
 ```
 
-Підтвердьте, що текст всередині елемента `span#surname` – це `'Vespucci'`.
+Ви повинні підтвердити, що текстом всередині елемента `span#surname` є `'Vespucci'`.
 
 ```js
 (getUserInput) =>
@@ -88,7 +88,7 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
   );
 ```
 
-Підтвердьте, що елемент `span#dates` існує, а його підрахунок - 1.
+Ви повинні підтвердити, що існує лише один елемент `span#dates`.
 
 ```js
 (getUserInput) =>

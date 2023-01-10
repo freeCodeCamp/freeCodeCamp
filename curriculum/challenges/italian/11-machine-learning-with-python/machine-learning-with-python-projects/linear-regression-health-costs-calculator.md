@@ -8,7 +8,7 @@ dashedName: linear-regression-health-costs-calculator
 
 # --description--
 
-[Lavorerai su questo progetto con Google Colaboratory](https://colab.research.google.com/github/freeCodeCamp/boilerplate-linear-regression-health-costs-calculator/blob/master/fcc_predict_health_costs_with_regression.ipynb).
+<a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-linear-regression-health-costs-calculator/blob/master/fcc_predict_health_costs_with_regression.ipynb" target="_blank" rel="noopener noreferrer nofollow">Lavorerai su questo progetto con Google Colaboratory</a>.
 
 Dopo essere andato a quel collegamento, crea una copia del notebook nel tuo account o localmente. Una volta completato il progetto e superato il test (incluso a quel link), invia il link del progetto qui sotto. Se stai inviando un link di Google Colaboratory, assicurati di attivare la condivisione di link per "anyone with the link"
 

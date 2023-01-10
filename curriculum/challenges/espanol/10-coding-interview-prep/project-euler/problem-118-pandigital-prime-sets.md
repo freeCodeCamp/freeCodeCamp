@@ -1,7 +1,7 @@
 ---
 id: 5900f3e21000cf542c50fef5
 title: 'Problem 118: Pandigital prime sets'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301744
 dashedName: problem-118-pandigital-prime-sets
 ---
@@ -14,7 +14,7 @@ How many distinct sets containing each of the digits one through nine exactly on
 
 # --hints--
 
-`pandigitalPrimeSets()` should return `44680`.
+`pandigitalPrimeSets()` debería devolver `44680`.
 
 ```js
 assert.strictEqual(pandigitalPrimeSets(), 44680);

@@ -1,7 +1,7 @@
 ---
 id: 5900f5191000cf542c51002b
 title: 'Завдання 428: Намисто кіл'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302098
 dashedName: problem-428-necklace-of-circles
 ---

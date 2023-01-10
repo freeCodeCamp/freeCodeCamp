@@ -49,7 +49,7 @@ assert(!code.match(/i\s?=\s*?1\s*?;/g));
 ループが最後のインデックスで止まるように、ループの終了条件を設定します。
 
 ```js
-assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1);
+assert(code.match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
 ```
 
 ループが length の 1 つ前で止まるように、ループの終了条件を修正します。

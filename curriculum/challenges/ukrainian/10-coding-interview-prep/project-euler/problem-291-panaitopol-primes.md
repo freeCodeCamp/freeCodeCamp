@@ -1,7 +1,7 @@
 ---
 id: 5900f48f1000cf542c50ffa2
 title: 'Завдання 291: Прості числа Панайтополя'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301943
 dashedName: problem-291-panaitopol-primes
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f38a1000cf542c50fe9d
 title: 'Problem 30: Digit n powers'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301953
 dashedName: problem-30-digit-n-powers
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f4ee1000cf542c510000
 title: 'Problema 385: Ellissi dentro triangoli'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302049
 dashedName: problem-385-ellipses-inside-triangles
 ---
@@ -10,7 +10,7 @@ dashedName: problem-385-ellipses-inside-triangles
 
 Per qualsiasi triangolo $T$ nel piano, si può dimostrare che esiste un'unica ellisse con l'area più grande che è completamente all'interno di $T$.
 
-<img class="img-responsive center-block" alt="ellisse completamente all'interno del triangolo" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="ellisse completamente all'interno di un triangolo" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;" />
 
 Per un dato $n$, considera i triangoli $T$ in modo che:
 

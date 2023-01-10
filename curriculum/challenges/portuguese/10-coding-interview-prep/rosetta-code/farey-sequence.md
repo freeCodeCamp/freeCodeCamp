@@ -1,7 +1,7 @@
 ---
 id: 59c3ec9f15068017c96eb8a3
 title: Sequência de Farey
-challengeType: 5
+challengeType: 1
 forumTopicId: 302266
 dashedName: farey-sequence
 ---

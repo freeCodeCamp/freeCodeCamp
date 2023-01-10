@@ -22,7 +22,7 @@ jQuery 还有一个类似的函数 `.text()`，可以在不添加标签的前提
 
 给 id 为 `target4` 的按钮的文本添加强调效果。
 
-查看这篇[关于 &lt;em> 的文章](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element)来了解更多 `<i>` 和 `<em>` 的区别和用法。
+<a href="https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element" target="_blank" rel="noopener noreferrer nofollow">查看我们的专栏文章 &lt;em&gt;</a>来了解 `<i>` 和 `<em>` 及其用途之间的差异。
 
 注意，`<i>` 标签虽然传统上用来强调文本，但此后常用作图标的标签。 `<em>` 标签作为强调标签现在已被广泛接受。 可以使用任意一种完成这个挑战。
 

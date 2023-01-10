@@ -1,7 +1,7 @@
 ---
 id: 5900f3d21000cf542c50fee4
 title: 'Завдання 101: Оптимальний многочлен'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301725
 dashedName: problem-101-optimum-polynomial
 ---

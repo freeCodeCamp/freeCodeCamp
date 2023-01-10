@@ -16,7 +16,7 @@ prop の型が事前にわかっている場合は `propTypes` を設定する�
 MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }
 ```
 
-この例では、`PropTypes.func` の部分で `handleClick` が関数かどうかをチェックします。 `isRequired` を追加することで、`handleClick` がそのコンポーネントに必要なプロパティであることを React に伝えます。 その prop が指定されていない場合は警告が表示されます。 また、`func` は `function` を表します。 JavaScript の 7 つのプリミティブ型の中で、`function` と `boolean` (`bool` と記述) の 2 つだけは通常と異なるスペルを使用します。 プリミティブ型に加えて、他にも利用可能な型があります。 たとえば、prop が React の要素かどうかをチェックできます。 オプションの一覧については、[ドキュメント](https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes)を参照してください。
+この例では、`PropTypes.func` の部分で `handleClick` が関数かどうかをチェックします。 `isRequired` を追加することで、`handleClick` がそのコンポーネントに必要なプロパティであることを React に伝えます。 その prop が指定されていない場合は警告が表示されます。 また、`func` は `function` を表します。 JavaScript の 7 つのプリミティブ型の中で、`function` と `boolean` (`bool` と記述) の 2 つだけは通常と異なるスペルを使用します。 プリミティブ型に加えて、他にも利用可能な型があります。 たとえば、prop が React の要素かどうかをチェックできます。 オプションの一覧については <a href="https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes" target="_blank" rel="noopener noreferrer nofollow">ドキュメント</a>を参照してください。
 
 **注:** React v15.5.0 では `PropTypes` は React とは独立してインポートされます (例: `import PropTypes from 'prop-types';`)。
 

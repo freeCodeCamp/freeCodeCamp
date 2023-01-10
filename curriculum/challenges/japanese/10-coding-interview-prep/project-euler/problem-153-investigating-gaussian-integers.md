@@ -1,7 +1,7 @@
 ---
 id: 5900f4051000cf542c50ff18
 title: '問題 153: ガウス整数を調べ上げる'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301784
 dashedName: problem-153-investigating-gaussian-integers
 ---

@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import cors from 'cors';
 import express from 'express';
 import { blockRoute } from './routes/blockRoute';
@@ -11,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'http://localhost:3300'
+    origin: process.env.CHALLENGE_EDITOR_CLIENT_LOCATION
   })
 );
 

@@ -1,18 +1,18 @@
 ---
 id: 5a23c84252665b21eecc7e80
 title: グレイコード
-challengeType: 5
+challengeType: 1
 forumTopicId: 302276
 dashedName: gray-code
 ---
 
 # --description--
 
-[グレイコード](https://en.wikipedia.org/wiki/Gray code)はバイナリエンコーディングの一形態で、連続する数値の変化が 1 ビットのみとなっています。
+Gray code is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
 
 これは、急速に変化する値を持つ場合や入力時に動作の遅いハードウェアに接続する場合に、ハードウェアのデータハザードを減少させるのに役立つエンコーディングです。
 
-また、 [カルノー図](https://en.wikipedia.org/wiki/Karnaugh map) への入力を左から右へ、または上から下へと順に生成するのにも便利です。
+It is also useful for generating inputs for Karnaugh maps in order from left to right or top to bottom.
 
 # --instructions--
 

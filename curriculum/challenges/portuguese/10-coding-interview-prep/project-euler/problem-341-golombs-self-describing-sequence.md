@@ -1,7 +1,7 @@
 ---
 id: 5900f4c11000cf542c50ffd3
 title: 'Problema 341: Sequência autodescritiva de Golomb'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302000
 dashedName: problem-341-golombs-self-describing-sequence
 ---

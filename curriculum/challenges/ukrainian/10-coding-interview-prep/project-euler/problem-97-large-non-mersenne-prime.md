@@ -1,7 +1,7 @@
 ---
 id: 5900f3ce1000cf542c50fee0
 title: 'Завдання 97: Велике просте число не-Мерсенна'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302214
 dashedName: problem-97-large-non-mersenne-prime
 ---

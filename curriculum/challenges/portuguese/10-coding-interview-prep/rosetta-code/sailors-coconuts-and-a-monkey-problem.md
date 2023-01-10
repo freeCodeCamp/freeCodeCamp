@@ -1,7 +1,7 @@
 ---
 id: 59da22823d04c95919d46269
 title: 'Problema dos marinheiros, dos cocos e do macaco'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302304
 dashedName: sailors-coconuts-and-a-monkey-problem
 ---

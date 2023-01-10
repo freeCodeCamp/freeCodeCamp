@@ -1,14 +1,14 @@
 ---
 id: 594810f028c0303b75339ad1
 title: ハッピー数
-challengeType: 5
+challengeType: 1
 forumTopicId: 302280
 dashedName: happy-numbers
 ---
 
 # --description--
 
-[ハッピー数](https://en.wikipedia.org/wiki/Happy_number) は次のプロセスで定義されます。
+A happy number is defined by the following process:
 
 任意の正の整数から開始して、その各桁をそれぞれ 2 乗して足した数で置き換え、この数が `1` に等しくなる (1 からは変化しない) か、`1`を含まないサイクルで無限ループするまでこのプロセスを繰り返します。 このプロセスが`1`で終わる場合の数字がハッピー数となり、`1`で終わらない場合はアンハッピー数となります。
 

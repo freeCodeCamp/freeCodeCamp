@@ -1,7 +1,7 @@
 ---
 id: 5900f5131000cf542c510025
 title: 'Problema 422: Sequenza di punti su un''iperbole'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302092
 dashedName: problem-422-sequence-of-points-on-a-hyperbola
 ---

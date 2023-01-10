@@ -1,8 +1,8 @@
 ---
 id: 5f3ef6e0e0c3feaebcf647ad
-title: Step 48
+title: Step 47
 challengeType: 0
-dashedName: step-48
+dashedName: step-47
 ---
 
 # --description--
@@ -35,20 +35,18 @@ assert($('h2')[1].innerText.match(/Desserts/i));
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cafe Menu</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet"/>
   </head>
   <body>
     <div class="menu">
-      <header>
+      <main>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
-      </header>
-      <main>
         <section>
           <h2>Coffee</h2>
           <article class="item">
@@ -74,7 +72,7 @@ assert($('h2')[1].innerText.match(/Desserts/i));
       </main>
     </div>
   </body>
-<html>
+</html>
 ```
 
 ```css

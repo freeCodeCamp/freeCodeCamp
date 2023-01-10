@@ -1,7 +1,7 @@
 ---
 id: 5900f4d91000cf542c50ffea
 title: 'Problema 364: Distanza confortevole'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302025
 dashedName: problem-364-comfortable-distance
 ---

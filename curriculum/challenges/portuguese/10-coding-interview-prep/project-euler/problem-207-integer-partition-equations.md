@@ -1,7 +1,7 @@
 ---
 id: 5900f43c1000cf542c50ff4e
 title: 'Problema 207: Equações de partições inteiras'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301848
 dashedName: problem-207-integer-partition-equations
 ---

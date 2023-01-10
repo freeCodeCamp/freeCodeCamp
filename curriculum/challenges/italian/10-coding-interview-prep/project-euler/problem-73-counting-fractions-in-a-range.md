@@ -1,7 +1,7 @@
 ---
 id: 5900f3b61000cf542c50fec8
 title: 'Problema 73: contare frazioni in un range'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302186
 dashedName: problem-73-counting-fractions-in-a-range
 ---

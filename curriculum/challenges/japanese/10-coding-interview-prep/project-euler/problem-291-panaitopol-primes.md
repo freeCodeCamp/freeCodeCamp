@@ -1,7 +1,7 @@
 ---
 id: 5900f48f1000cf542c50ffa2
 title: '問題 291: Panaitopol 素数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301943
 dashedName: problem-291-panaitopol-primes
 ---

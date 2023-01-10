@@ -8,7 +8,7 @@ dashedName: neural-network-sms-text-classifier
 
 # --description--
 
-[Lavorerai su questo progetto con Google Colaboratory](https://colab.research.google.com/github/freeCodeCamp/boilerplate-neural-network-sms-text-classifier/blob/master/fcc_sms_text_classification.ipynb).
+<a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-neural-network-sms-text-classifier/blob/master/fcc_sms_text_classification.ipynb" target="_blank" rel="noopener noreferrer nofollow">Lavorerai su questo progetto con Google Colaboratory</a>.
 
 Dopo essere andato a quel collegamento, crea una copia del notebook nel tuo account o localmente. Una volta completato il progetto e superato il test (incluso a quel link), invia il link del progetto qui sotto. Se stai inviando un link di Google Colaboratory, assicurati di attivare la condivisione di link per "anyone with the link"
 
@@ -20,7 +20,7 @@ In questa sfida, dovrai creare un modello di machine learning che classificherà
 
 Dovresti creare una funzione chiamata `predict_message` che prende un messaggio sotto forma di stringa e restituisce una lista. Il primo elemento della lista dovrebbe essere un numero tra zero e uno che inidica la probabilità di "ham" (0) o "spam" (1). Il secondo elemento nella lista dovrebbe essere la parola "ham" o "spam" a seconda di quale è più probabile.
 
-Per questa sfida, userai il dataset [SMS Spam Collection](http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/). Il dataset è già stato diviso tra dati di allenamento e dati di test.
+Per questa sfida, userai il dataset <a href="http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/" target="_blank" rel="noopener noreferrer nofollow">SMS Spam Collection</a>. Il dataset è già stato diviso tra dati di allenamento e dati di test.
 
 Le prime due celle importano le librerie e i dati. L'ultima cella testa il tuo modello e funzione. Aggiungi il tuo codice tra queste due celle.
 

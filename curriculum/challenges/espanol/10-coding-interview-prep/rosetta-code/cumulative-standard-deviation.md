@@ -1,14 +1,39 @@
 ---
 id: 5a23c84252665b21eecc7e03
 title: Desviación estándar acumulada
-challengeType: 5
+challengeType: 1
 forumTopicId: 302240
 dashedName: cumulative-standard-deviation
 ---
 
 # --description--
 
-Escriba una función que tome un array de números como parámetro y devuelva la [ desviación estándard](https://en.wikipedia.org/wiki/Standard_deviation) de la serie.
+Suponiendo que la población total de interés es de ocho estudiantes de una clase en particular. Para un conjunto finito de números, la desviación del estándar de población se encuentra tomando la raíz cuadrada del promedio de las desviaciones cuadradas de los valores restados de su valor medio. Las marcas de una clase de ocho estudiantes (es decir, una población estadística) son los siguientes ocho valores:
+
+$2, 4, 4, 4, 5, 5, 7, 9$
+
+Estos ocho puntos de datos tienen la media (media) de 5:
+
+$$\mu ={\frac {2+4+4+4+5+5+7+9}{8}}={\frac {40}{8}}=5$$
+
+Primero, calcular las desviaciones de cada punto de datos de la media y cuadra el resultado de cada una:
+
+| Desviaciones de cada dato | Cuadra el resultado  |
+| ------------------------- | -------------------- |
+| $(2-5)^{2}=(-3)^{2}=9$    | $(5-5)^{2}=0^{2}=0$  |
+| $(4-5)^{2}=(-1)^{2}=1$    | $(5-5)^{2}=0^{2}=0$  |
+| $(4-5)^{2}=(-1)^{2}=1$    | $(7-5)^{2}=2^{2}=4$  |
+| $(4-5)^{2}=(-1)^{2}=1$    | $(9-5)^{2}=4^{2}=16$ |
+
+La variación es la media de estos valores:
+
+$$\sigma ^{2}={\frac {9+1+1+1+0+0+4+16}{8}}={\frac {32}{8}}=4$$
+
+y la desviación del estándar de población es igual a la raíz cuadrada de la varianza:
+
+$$\sigma ={\sqrt {4}}=2$$
+
+Escriba una función que tome una matríz de números como parámetros y devuelva la <a href="https://rosettacode.org/wiki/Standard_deviation" target="_blank" rel="noopener noreferrer nofollow"> desviación estándar</a> de las series.
 
 # --hints--
 

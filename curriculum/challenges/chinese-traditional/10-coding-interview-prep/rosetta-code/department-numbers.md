@@ -1,7 +1,7 @@
 ---
 id: 59f40b17e79dbf1ab720ed7a
-title: Department Numbers
-challengeType: 5
+title: 部門編號
+challengeType: 1
 forumTopicId: 302249
 dashedName: department-numbers
 ---

@@ -25,26 +25,32 @@ Ejemplo:
 const ourStr = "I come first. " + "I come second.";
 ```
 
-La cadena `I come first. I come second.` se mostrará en la consola.
+La cadena `I come first. I come second.` se mostraría en la consola.
 # --instructions--
 
 Construye `myStr` a partir de las cadenas `This is the start.` y `This is the end.` utilizando el operador `+`. Asegúrate de incluir un espacio entre las dos cadenas.
 
 # --hints--
 
-`myStr` debe tener una cadena con valor `This is the start. This is the end.`
+`myStr` Debe tener un solo carácter de espacio entre las dos cadenas.
+
+```js
+assert(/start\. This/.test(myStr));
+```
+
+`myStr` debe tener un valor de la cadena `This is the start. This is the end.`
 
 ```js
 assert(myStr === 'This is the start. This is the end.');
 ```
 
-Debes usar el operador `+` para construir `myStr`.
+Deberías usar el operador `+` para construir `myStr`.
 
 ```js
 assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
-`myStr` debe ser creada usando la palabra clave `const`.
+`myStr` Debe crearse una variable con la palabra reservada `const`.
 
 ```js
 assert(/const\s+myStr/.test(code));

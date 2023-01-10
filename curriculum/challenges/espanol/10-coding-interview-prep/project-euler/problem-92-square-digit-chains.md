@@ -1,7 +1,7 @@
 ---
 id: 5900f3c81000cf542c50fedb
 title: 'Problem 92: Square digit chains'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302209
 dashedName: problem-92-square-digit-chains
 ---
@@ -10,9 +10,10 @@ dashedName: problem-92-square-digit-chains
 
 A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
 
-For example,
+Por ejemplo,
 
-$$\begin{align} & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\ & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
+$$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
+  & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
 
 Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at 1 or 89.
 

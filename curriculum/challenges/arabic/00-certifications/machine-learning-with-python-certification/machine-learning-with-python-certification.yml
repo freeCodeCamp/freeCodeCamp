@@ -1,0 +1,23 @@
+---
+id: 5e46fc95ac417301a38fb935
+title: مشاريع تعلم الآله باستخدام Python
+certification: machine-learning-with-python
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5e46f8d6ac417301a38fb92d
+    title: حجر ورقة مقص
+  - 
+    id: 5e46f8dcac417301a38fb92e
+    title: مصنف صور القطط والكلاب
+  - 
+    id: 5e46f8e3ac417301a38fb92f
+    title: محرك توصية للكتب باستخدام KNN
+  - 
+    id: 5e46f8edac417301a38fb930
+    title: حاسبة التكاليف الصحية بالانحدار الخطي
+  - 
+    id: 5e46f8edac417301a38fb931
+    title: مصنف الرسائل SMS بالشبكة العصبية
+

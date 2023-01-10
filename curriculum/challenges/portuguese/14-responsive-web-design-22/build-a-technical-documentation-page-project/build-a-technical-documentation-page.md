@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante a <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank">https://technical-documentation-page.freecodecamp.rocks</a>
+**Objetivo:** criar uma aplicação que funcione de modo semelhante a <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
 
 **Histórias de usuário:**
 
@@ -248,7 +248,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Technical Documentation Page</title>
   </head>
   <body>
@@ -421,7 +421,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
           equations:<br /><br />
           <code>y = 3x | y - 6 = x</code>
           A system of equations IS solvable, but it is a multi-step process. To
-          get started, we need to chose a variable we are solving for. Let's
+          get started, we need to choose a variable we are solving for. Let's
           solve for "x" first. From the second equation, we know that "x" equals
           "y - 6", but we cannot simplify that further because we do not have a
           value for "y". Except, thanks to the system of equations, we DO have a

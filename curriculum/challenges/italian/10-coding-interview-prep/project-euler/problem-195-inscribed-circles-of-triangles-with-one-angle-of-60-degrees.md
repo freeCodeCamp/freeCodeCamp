@@ -1,7 +1,7 @@
 ---
 id: 5900f4311000cf542c50ff43
 title: 'Problema 195: Cerchi inscritti in triangoli con un angolo di 60 gradi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301833
 dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degrees
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f4091000cf542c50ff1c
 title: 'Problema 157: Resolução da equação diofantina'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301788
 dashedName: problem-157-solving-the-diophantine-equation
 ---

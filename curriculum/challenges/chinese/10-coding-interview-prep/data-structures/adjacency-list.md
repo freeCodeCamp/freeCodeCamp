@@ -58,7 +58,7 @@ There should be an edge between `Jill` and `Jenny`.
 ```js
 assert(
   undirectedAdjList.Jill.indexOf('Jenny') !== -1 &&
-    undirectedAdjList.Jill.indexOf('Jenny') !== -1
+    undirectedAdjList.Jenny.indexOf('Jill') !== -1
 );
 ```
 

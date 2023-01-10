@@ -1,7 +1,7 @@
 ---
 id: 5e94a54cc7b022105bf0fd2c
 title: Frequência de palavras
-challengeType: 5
+challengeType: 1
 forumTopicId: 393913
 dashedName: word-frequency
 ---

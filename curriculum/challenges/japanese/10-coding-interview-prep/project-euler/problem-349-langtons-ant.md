@@ -1,7 +1,7 @@
 ---
 id: 5900f4ca1000cf542c50ffdc
 title: '問題 349: ラングトンのアリ'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302008
 dashedName: problem-349-langtons-ant
 ---

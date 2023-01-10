@@ -1,7 +1,7 @@
 ---
 id: 5900f3931000cf542c50fea5
 title: 'Problema 38: Múltiplos pandigitais'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302042
 dashedName: problem-38-pandigital-multiples
 ---

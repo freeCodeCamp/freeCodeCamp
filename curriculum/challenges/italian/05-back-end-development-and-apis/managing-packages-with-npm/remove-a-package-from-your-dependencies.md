@@ -12,17 +12,17 @@ Ora hai testato alcuni modi per gestire le dipendenze del tuo progetto utilizzan
 
 Ma cosa dovresti fare per rimuovere un pacchetto esterno di cui non hai più bisogno? Potresti già averlo indovinato, basta rimuovere dalle dipendenze la coppia chiave-valore corrispondente a quel pacchetto.
 
-Questo stesso metodo si applica anche alla rimozione di altri campi nel tuo package.json
+Questo stesso metodo si applica anche alla rimozione di altri campi nel tuo package.json.
 
 # --instructions--
 
-Rimuovi il pacchetto moment dalle tue dipendenze.
+Rimuovi il pacchetto `@freecodecamp/example` dalle tue dipendenze.
 
 **Nota:** Assicurati di avere la giusta quantità di virgole dopo averlo rimosso.
 
 # --hints--
 
-"dependencies" non dovrebbe includere "moment"
+`"dependencies"` non dovrebbe includere `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -31,8 +31,8 @@ Rimuovi il pacchetto moment dalle tue dipendenze.
       var packJson = JSON.parse(data);
       assert.notProperty(
         packJson.dependencies,
-        'moment',
-        '"dependencies" still includes "moment"'
+        '@freecodecamp/example',
+        '"dependencies" still includes "@freecodecamp/example"'
       );
     },
     (xhr) => {

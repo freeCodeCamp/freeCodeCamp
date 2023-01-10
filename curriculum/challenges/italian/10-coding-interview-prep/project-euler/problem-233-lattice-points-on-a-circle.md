@@ -1,7 +1,7 @@
 ---
 id: 5900f4551000cf542c50ff68
 title: 'Problema 233: I punti di reticolo su un cerchio'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301877
 dashedName: problem-233-lattice-points-on-a-circle
 ---

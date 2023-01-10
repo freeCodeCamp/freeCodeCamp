@@ -16,21 +16,21 @@ import { FullWidthRow } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
 
-interface InternetFormValues {
+export interface Socials {
   githubProfile: string;
   linkedin: string;
   twitter: string;
   website: string;
 }
 
-interface InternetProps extends InternetFormValues {
+interface InternetProps extends Socials {
   t: TFunction;
-  updateInternetSettings: (formValues: InternetFormValues) => void;
+  updateSocials: (formValues: Socials) => void;
 }
 
 type InternetState = {
-  formValues: InternetFormValues;
-  originalValues: InternetFormValues;
+  formValues: Socials;
+  originalValues: Socials;
 };
 
 class InternetSettings extends Component<InternetProps, InternetState> {
@@ -95,8 +95,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
   }
 
   createHandleChange =
-    (key: keyof InternetFormValues) =>
-    (e: React.FormEvent<HTMLInputElement>) => {
+    (key: keyof Socials) => (e: React.FormEvent<HTMLInputElement>) => {
       const value = (e.target as HTMLInputElement).value.slice(0);
       return this.setState(state => ({
         formValues: {
@@ -108,14 +107,14 @@ class InternetSettings extends Component<InternetProps, InternetState> {
 
   isFormPristine = () => {
     const { formValues, originalValues } = this.state;
-    return (Object.keys(originalValues) as Array<keyof InternetFormValues>)
+    return (Object.keys(originalValues) as Array<keyof Socials>)
       .map(key => originalValues[key] === formValues[key])
       .every(bool => bool);
   };
 
   isFormValid = (): boolean => {
     const { formValues, originalValues } = this.state;
-    const valueReducer = (obj: InternetFormValues) => {
+    const valueReducer = (obj: Socials) => {
       return Object.values(obj).reduce(
         (acc, cur): boolean => (acc ? acc : cur !== ''),
         false
@@ -128,8 +127,8 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     // check if user had values but wants to delete them all
     if (OriginalHasValues && !formHasValues) return true;
 
-    return (Object.keys(formValues) as Array<keyof InternetFormValues>).reduce(
-      (bool: boolean, key: keyof InternetFormValues): boolean => {
+    return (Object.keys(formValues) as Array<keyof Socials>).reduce(
+      (bool: boolean, key: keyof Socials): boolean => {
         const maybeUrl = formValues[key];
         return maybeUrl ? isURL(maybeUrl) : bool;
       },
@@ -142,15 +141,9 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     if (!this.isFormPristine() && this.isFormValid()) {
       // // Only submit the form if is has changed, and if it is valid
       const { formValues } = this.state;
-      const isSocial = {
-        isGithub: !!formValues.githubProfile,
-        isLinkedIn: !!formValues.linkedin,
-        isTwitter: !!formValues.twitter,
-        isWebsite: !!formValues.website
-      };
 
-      const { updateInternetSettings } = this.props;
-      return updateInternetSettings({ ...isSocial, ...formValues });
+      const { updateSocials } = this.props;
+      return updateSocials({ ...formValues });
     }
     return null;
   };

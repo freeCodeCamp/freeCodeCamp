@@ -27,7 +27,7 @@ Substitua as palavras que representam cores no elemento `style` por seus código
 
 # --hints--
 
-O elemento `h1` com o texto `I am red!` deve receber a propriedade `color` com um valor de vermelho.
+O elemento `h1` com o texto `I am red!` deve receber a propriedade `color` com o valor hexadecimal que representa a cor vermelha.
 
 ```js
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
@@ -39,7 +39,7 @@ O código hexadecimal (`hex code`) para a cor vermelha deve ser usado em vez da 
 assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?(#FF0000|#F00)\s*?;?\s*?}/gi));
 ```
 
-O elemento `h1` com o texto `I am green!` deve receber a propriedade `color` com um valor de verde.
+O elemento `h1` com o texto `I am green!` deve receber a propriedade `color` com o valor hexadecimal que representa a cor verde.
 
 ```js
 assert($('.green-text').css('color') === 'rgb(0, 255, 0)');

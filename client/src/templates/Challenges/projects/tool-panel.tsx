@@ -4,7 +4,7 @@ import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
-import { openModal } from '../redux';
+import { openModal } from '../redux/actions';
 
 import './tool-panel.css';
 
@@ -24,7 +24,7 @@ interface ToolPanelProps {
   t: TFunction;
 }
 
-export function ToolPanel({
+function ToolPanel({
   guideUrl,
   openHelpModal,
   t

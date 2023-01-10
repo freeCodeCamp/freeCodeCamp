@@ -69,9 +69,9 @@ Wähle eine Aufgaben-Markdown-Datei aus den obigen Optionen aus.
 
 ### Überfliege das Video, das mit der Aufgabe verbunden ist, und erstelle eine Multiple-Choice-Frage.
 
-Finde zunächst die videoId.
+Finde zunächst die `videoId`.
 
-Im folgenden Code aus dem Header einer Videoaufgaben-Markdown-Datei lautet die videoId zum Beispiel "nVAaxZ34khk". Auf GitHub sollten die Informationen in einem Tabellenformat dargestellt werden.
+Im folgenden Code aus der Kopfzeile einer Video-Challenge-Markdown-Datei lautet die `videoId` beispielsweise "nVAaxZ34khk". Auf GitHub sollten die Informationen in einem Tabellenformat dargestellt werden.
 
 ````
 ---
@@ -81,11 +81,11 @@ videoId: nVAaxZ34khk
 ```
 
 Als Nächstes rufst du das YouTube-Video mit dieser Video-ID auf. Die URL für das Video lautet dann:
-https://www.youtube.com/watch?v=[videoId] (ersetze `videoId` in der URL durch die ID des Videos - ohne eckige Klammern)
+https://www.youtube.com/watch?v=[videoId] (Ersetze `videoId` in der URL durch die ID des Videos - ohne eckige Klammern`.)
 
 Im obigen Beispiel lautet die URL https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Überfliege das YouTube-Video mit dieser videoId und überlege dir eine Multiple-Choice-Frage, die auf dem Inhalt des Videos basiert.
+Überfliege das YouTube-Video mit dieser `videoId` und überlege dir eine Multiple-Choice-Frage, die auf dem Inhalt des Videos basiert.
 
 ### Füge die Frage zur Markdown-Datei hinzu.
 

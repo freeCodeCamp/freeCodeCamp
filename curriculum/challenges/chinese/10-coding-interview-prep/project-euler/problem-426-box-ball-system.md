@@ -1,7 +1,7 @@
 ---
 id: 5900f5171000cf542c510029
 title: 'Problem 426: Box-ball system'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302096
 dashedName: problem-426-box-ball-system
 ---
@@ -14,20 +14,31 @@ A turn consists of moving each ball exactly once according to the following rule
 
 After one turn the sequence (2, 2, 2, 1, 2) becomes (2, 2, 1, 2, 3) as can be seen below; note that we begin the new sequence starting at the first occupied box.
 
+<img class="img-responsive center-block" alt="animation showing one complete turn from (2, 2, 2, 1, 2) to (2, 2, 1, 2, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-1.gif" style="background-color: white; padding: 10px;" />
+
 A system like this is called a Box-Ball System or BBS for short.
 
-It can be shown that after a sufficient number of turns, the system evolves to a state where the consecutive numbers of occupied boxes is invariant. In the example below, the consecutive numbers of occupied boxes evolves to \[1, 2, 3]; we shall call this the final state.
+It can be shown that after a sufficient number of turns, the system evolves to a state where the consecutive numbers of occupied boxes is invariant. In the example below, the consecutive numbers of occupied boxes evolves to [1, 2, 3]; we shall call this the final state.
 
-We define the sequence {ti}:s0 = 290797 sk+1 = sk2 mod 50515093 tk = (sk mod 64) + 1
+<img class="img-responsive center-block" alt="four turns from occupied boxes [2, 2, 2] to final state [1, 2, 3]" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-2.gif" style="background-color: white; padding: 10px;" />
 
-Starting from the initial configuration (t0, t1, …, t10), the final state becomes \[1, 3, 10, 24, 51, 75]. Starting from the initial configuration (t0, t1, …, t10 000 000), find the final state. Give as your answer the sum of the squares of the elements of the final state. For example, if the final state is \[1, 2, 3] then 14 ( = 12 + 22 + 32) is your answer.
+We define the sequence $\\{t_i\\}$:
+
+$$\begin{align}   & s_0 = 290\\,797 \\\\
+  & s_{k + 1} = {s_k}^2\bmod 50\\,515\\,093 \\\\ & t_k = (s_k\bmod 64) + 1 \end{align}$$
+
+Starting from the initial configuration $(t_0, t_1, \ldots, t_{10})$, the final state becomes [1, 3, 10, 24, 51, 75].
+
+Starting from the initial configuration $(t_0, t_1, \ldots, t_{10\\,000\\,000})$, find the final state.
+
+Give as your answer the sum of the squares of the elements of the final state. For example, if the final state is [1, 2, 3] then $14 (= 1^2 + 2^2 + 3^2)$ is your answer.
 
 # --hints--
 
-`euler426()` should return 31591886008.
+`boxBallSystem()` should return `31591886008`.
 
 ```js
-assert.strictEqual(euler426(), 31591886008);
+assert.strictEqual(boxBallSystem(), 31591886008);
 ```
 
 # --seed--
@@ -35,12 +46,12 @@ assert.strictEqual(euler426(), 31591886008);
 ## --seed-contents--
 
 ```js
-function euler426() {
+function boxBallSystem() {
 
   return true;
 }
 
-euler426();
+boxBallSystem();
 ```
 
 # --solutions--

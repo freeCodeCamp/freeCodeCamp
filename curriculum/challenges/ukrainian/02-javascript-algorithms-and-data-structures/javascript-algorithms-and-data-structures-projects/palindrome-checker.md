@@ -8,137 +8,112 @@ dashedName: palindrome-checker
 
 # --description--
 
-Повернути `true` якщо заданий рядок є паліндромом. В іншому випадку, повернути `false`.
+Поверніть `true`, якщо заданий рядок є паліндромом. В іншому випадку, поверніть `false`.
 
-A <dfn>palindrome</dfn  - це слово чи речення, що однаково пишеться в обох напрямках (зліва направо та справа наліво), незважаючи на розділові знаки, регістр та пробіли.</p> 
+<dfn>Паліндром</dfn> – це слово чи речення, що однаково пишеться в обох напрямках (зліва направо та справа наліво), незважаючи на розділові знаки, велику/малу літеру чи пробіли.
 
-<p spaces-before="0">
-  <strong x-id="1">Примітка:</strong> Вам потрібно буде прибрати <strong x-id="1">усі неалфавітні символи</strong> (розділові знаки, пробіли та символи) і перетворити увесь текст в однаковий регістр (нижній або верхній регістр) для перевірки паліндромів.
-</p>
+**Примітка:** вам потрібно прибрати **всі неалфавітні символи** (розділові знаки, пробіли та символи) і написати весь текст одинаково (великими або малими літерами) для перевірки паліндромів.
 
-<p spaces-before="0">
-  Ми будемо пропускати рядки з різними форматами, наприклад <code>racecar</code>, <code>RaceCar</code>, і <code>race CAR</code> у числі інших.
-</p>
+Ми будемо передавати рядки з різними форматами, наприклад `racecar`, `RaceCar` та `race CAR` серед інших.
 
-<p spaces-before="0">
-  Ми також будемо пропускати рядки з спеціальними символами, наприклад <code>2A3*3a2</code>, <code>2A3 3a2</code>, і <code>2_A3*3#A2</code>.
-</p>
+Ми також будемо передавати рядки з спеціальними символами, наприклад `2A3*3a2`, `2A3 3a2` та `2_A3*3#A2`.
 
-<h1 spaces-before="0">
-  --hints--
-</h1>
+# --hints--
 
-<p spaces-before="0">
-  <code>palindrome("eye")</code> повинен повертатися як логічне значення.
-</p>
+`palindrome("eye")` повинен повертати булеве значення.
 
-<pre><code class="js">assert(typeof palindrome('eye') === 'boolean');
-</code></pre>
+```js
+assert(typeof palindrome('eye') === 'boolean');
+```
 
-<p spaces-before="0">
-  <code>palindrome("eye")</code> повинен повертатися як <code>true</code>.
-</p>
+`palindrome("eye")` повинен повертати `true`.
 
-<pre><code class="js">assert(palindrome('eye') === true);
-</code></pre>
+```js
+assert(palindrome('eye') === true);
+```
 
-<p spaces-before="0">
-  <code>palindrome("_eye")</code> повинен повертатися як <code>true</code>.
-</p>
+`palindrome("_eye")` повинен повертати `true`.
 
-<pre><code class="js">assert(palindrome('_eye') === true);
-</code></pre>
+```js
+assert(palindrome('_eye') === true);
+```
 
-<p spaces-before="0">
-  <code>palindrome("race car")</code> повинен повертатися як <code>true</code>.
-</p>
+`palindrome("race car")` повинен повертати `true`.
 
-<pre><code class="js">assert(palindrome('race car') === true);
-</code></pre>
+```js
+assert(palindrome('race car') === true);
+```
 
-<p spaces-before="0">
-  <code>palindrome("not a palindrome")</code> повинен повертатися як <code>false</code>.
-</p>
+`palindrome("not a palindrome")` повинен повертати `false`.
 
-<pre><code class="js">assert(palindrome('not a palindrome') === false);
-</code></pre>
+```js
+assert(palindrome('not a palindrome') === false);
+```
 
-<p spaces-before="0">
-  <code>palindrome("A man, a plan, a canal. Panama")</code> повинен повертатися як <code>true</code>.
-</p>
+`palindrome("A man, a plan, a canal. Panama")` повинен повертати `true`.
 
-<pre><code class="js">assert(palindrome('A man, a plan, a canal. Panama') === true);
-</code></pre>
+```js
+assert(palindrome('A man, a plan, a canal. Panama') === true);
+```
 
-<p spaces-before="0">
-  <code>palindrome("never odd or even")</code> повинен повертатися як <code>true</code>.
-</p>
+`palindrome("never odd or even")` повинен повертати `true`.
 
-<pre><code class="js">assert(palindrome('never odd or even') === true);
-</code></pre>
+```js
+assert(palindrome('never odd or even') === true);
+```
 
-<p spaces-before="0">
-  <code>palindrome("nope")</code> повинен повертатися як <code>false</code>.
-</p>
+`palindrome("nope")` повинен повертати `false`.
 
-<pre><code class="js">assert(palindrome('nope') === false);
-</code></pre>
+```js
+assert(palindrome('nope') === false);
+```
 
-<p spaces-before="0">
-  <code>palindrome("almostomla")</code> повинен повертатися як <code>false</code>.
-</p>
+`palindrome("almostomla")` повинен повертати `false`.
 
-<pre><code class="js">assert(palindrome('almostomla') === false);
-</code></pre>
+```js
+assert(palindrome('almostomla') === false);
+```
 
-<p spaces-before="0">
-  <code>palindrome("My age is 0, 0 si ega ym.")</code> повинен повертатися як <code>true</code>.
-</p>
+`palindrome("My age is 0, 0 si ega ym.")` повинен повертати `true`.
 
-<pre><code class="js">assert(palindrome('My age is 0, 0 si ega ym.') === true);
-</code></pre>
+```js
+assert(palindrome('My age is 0, 0 si ega ym.') === true);
+```
 
-<p spaces-before="0">
-  <code>palindrome("1 eye for of 1 eye.")</code> повинен повертатися як <code>false</code>.
-</p>
+`palindrome("1 eye for of 1 eye.")` повинен повертати `false`.
 
-<pre><code class="js">assert(palindrome('1 eye for of 1 eye.') === false);
-</code></pre>
+```js
+assert(palindrome('1 eye for of 1 eye.') === false);
+```
 
-<p spaces-before="0">
-  <code>palindrome("0_0 (: /-\ :) 0-0")</code> повинен повертатися як <code>true</code>.
-</p>
+`palindrome("0_0 (: /-\ :) 0-0")` повинен повертати `true`.
 
-<pre><code class="js">assert(palindrome('0_0 (: /- :) 0-0') === true);
-</code></pre>
+```js
+assert(palindrome('0_0 (: /- :) 0-0') === true);
+```
 
-<p spaces-before="0">
-  <code>palindrome("five|\_/|four")</code> повинен повертатися як <code>false</code>.
-</p>
+`palindrome("five|\_/|four")` повинен повертати `false`.
 
-<pre><code class="js">assert(palindrome('five|_/|four') === false);
-</code></pre>
+```js
+assert(palindrome('five|_/|four') === false);
+```
 
-<h1 spaces-before="0">
-  --seed--
-</h1>
+# --seed--
 
-<h2 spaces-before="0">
-  --seed-contents--
-</h2>
+## --seed-contents--
 
-<pre><code class="js">function palindrome(str) {
+```js
+function palindrome(str) {
   return true;
 }
 
 palindrome("eye");
-</code></pre>
+```
 
-<h1 spaces-before="0">
-  --solutions--
-</h1>
+# --solutions--
 
-<pre><code class="js">function palindrome(str) {
+```js
+function palindrome(str) {
   var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');
   var aux = string.split('');
   if (aux.join('') === aux.reverse().join('')){
@@ -147,4 +122,4 @@ palindrome("eye");
 
   return false;
 }
-</code></pre>
+```

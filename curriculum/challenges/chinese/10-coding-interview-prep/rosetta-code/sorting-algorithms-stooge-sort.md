@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8012
 title: Sorting algorithms/Stooge sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302318
 dashedName: sorting-algorithmsstooge-sort
 ---
 
 # --description--
 
-Write a function to perform [Stooge Sort](https://en.wikipedia.org/wiki/Stooge sort) on an array of integers. The function should return a sorted array.
+Write a function to perform Stooge Sort on an array of integers. The function should return a sorted array.
 
 The Stooge Sort algorithm is as follows:
 

@@ -2,7 +2,7 @@
 id: 5900f40a1000cf542c50ff1d
 title: >-
   Problema 158: Esplorare le stringhe per le quali un solo carattere viene lessicograficamente dopo il suo vicino a sinistra
-challengeType: 5
+challengeType: 1
 forumTopicId: 301789
 dashedName: >-
   problem-158-exploring-strings-for-which-only-one-character-comes-lexicographically-after-its-neighbour-to-the-left

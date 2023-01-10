@@ -2,7 +2,7 @@
 id: 5900f4181000cf542c50ff2a
 title: >-
   Problem 171: Finding numbers for which the sum of the squares of the digits is a square
-challengeType: 5
+challengeType: 1
 forumTopicId: 301806
 dashedName: >-
   problem-171-finding-numbers-for-which-the-sum-of-the-squares-of-the-digits-is-a-square
@@ -10,22 +10,20 @@ dashedName: >-
 
 # --description--
 
-For a positive integer n, let f(n) be the sum of the squares of the digits (in base 10) of n, e.g.
+For a positive integer $n$, let $f(n)$ be the sum of the squares of the digits (in base 10) of $n$, e.g.
 
-f(3) = 32 = 9,
+$$\begin{align}   & f(3) = 3^2 = 9 \\\\
+  & f(25) = 2^2 + 5^2 = 4 + 25 = 29 \\\\   & f(442) = 4^2 + 4^2 + 2^2 = 16 + 16 + 4 = 36 \\\\
+\end{align}$$
 
-f(25) = 22 + 52 = 4 + 25 = 29,
-
-f(442) = 42 + 42 + 22 = 16 + 16 + 4 = 36
-
-Find the last nine digits of the sum of all n, 0 &lt; n &lt; 1020, such that f(n) is a perfect square.
+Find the last nine digits of the sum of all $n$, $0 &lt; n &lt; {10}^{20}$, such that $f(n)$ is a perfect square.
 
 # --hints--
 
-`euler171()` should return 142989277.
+`lastDigitsSumOfPerfectSquare()` should return `142989277`.
 
 ```js
-assert.strictEqual(euler171(), 142989277);
+assert.strictEqual(lastDigitsSumOfPerfectSquare(), 142989277);
 ```
 
 # --seed--
@@ -33,12 +31,12 @@ assert.strictEqual(euler171(), 142989277);
 ## --seed-contents--
 
 ```js
-function euler171() {
+function lastDigitsSumOfPerfectSquare() {
 
   return true;
 }
 
-euler171();
+lastDigitsSumOfPerfectSquare();
 ```
 
 # --solutions--

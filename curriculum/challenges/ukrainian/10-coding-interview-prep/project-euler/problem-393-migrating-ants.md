@@ -1,7 +1,7 @@
 ---
 id: 5900f4f61000cf542c510008
 title: 'Задача 393: Міграція мурах'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302058
 dashedName: problem-393-migrating-ants
 ---

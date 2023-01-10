@@ -27,19 +27,19 @@ Cambia il `background-color` di ogni elemento `div` basandoti sui nomi delle cla
 
 # --hints--
 
-Il tuo codice dovrebbe usare le funzioni `hsl()` per dichiarare il colore verde.
+Il codice dovrebbe avere la funzione `hsl()` per dichiarare il colore verde.
 
 ```js
 assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Il tuo codice dovrebbe utilizzare le funzioni `hsl()` per dichiarare il colore ciano.
+Il codice dovrebbe avere la funzione `hsl()` per dichiarare il colore ciano.
 
 ```js
 assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Il tuo codice dovrebbe utilizzare le funzioni `hsl()` per dichiarare il colore blu.
+Il codice dovrebbe avere la funzione `hsl()` per dichiarare il colore blu.
 
 ```js
 assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));

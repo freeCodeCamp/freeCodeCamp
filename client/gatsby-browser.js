@@ -8,6 +8,7 @@ import i18n from './i18n/config';
 import AppMountNotifier from './src/components/app-mount-notifier';
 import { createStore } from './src/redux/createStore';
 import layoutSelector from './utils/gatsby/layout-selector';
+import GrowthBookProvider from './src/components/growth-book/growth-book-wrapper';
 
 const store = createStore();
 
@@ -15,7 +16,9 @@ export const wrapRootElement = ({ element }) => {
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
-        <AppMountNotifier render={() => element} />
+        <GrowthBookProvider>
+          <AppMountNotifier render={() => element} />
+        </GrowthBookProvider>
       </I18nextProvider>
     </Provider>
   );
@@ -30,9 +33,6 @@ export const wrapPageElement = layoutSelector;
 export const disableCorePrefetching = () => true;
 
 export const onClientEntry = () => {
-  // purge the csrf cookies, rather than relying what the browser decides a
-  // Session duration is
-  cookies.erase('_csrf');
   // the token must be erased since it is only valid for the old _csrf secret
   cookies.erase('csrf_token');
 };
