@@ -106,7 +106,7 @@ Seu projeto pode tratar as datas que podem ser analisadas com sucesso por `new D
   );
 ```
 
-Se a string de data de entrada for inválida, a api retorna um objeto que tem a estrutura `{ error : "Invalid Date" }`
+If the input date string is invalid, the API returns an object having the structure `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cb
-title: Керування складними об'єктами
+title: Маніпулювання складними об'єктами
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNMfR'
 forumTopicId: 18208
@@ -9,7 +9,7 @@ dashedName: manipulating-complex-objects
 
 # --description--
 
-Іноді ви можете зберігати дані в гнучкій <dfn>Data Structure</dfn>. Об'єкт JavaScript є одним із способів обробки гнучких даних. Вони створюють можливість довільних комбінацій <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, <dfn>functions</dfn> та <dfn>objects</dfn>.
+Іноді ви можете зберігати дані в гнучкій <dfn>структурі даних</dfn>. Об'єкт JavaScript є одним із способів обробки гнучких даних. Вони дозволяють створювати комбінації <dfn>рядків</dfn>, <dfn>чисел</dfn>, <dfn>булевих значень</dfn>, <dfn>масивів</dfn>, <dfn>функцій</dfn> та <dfn>об’єктів</dfn>.
 
 Ось приклад структури складних даних:
 

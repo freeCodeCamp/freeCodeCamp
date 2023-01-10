@@ -106,7 +106,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-如果輸入的日期字符串無效，api 將返回一個具有結構 `{ error : "Invalid Date" }` 的對象。
+If the input date string is invalid, the API returns an object having the structure `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>
