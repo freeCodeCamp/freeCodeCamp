@@ -19,7 +19,7 @@ Para procurar relatórios de engajamento por um idioma específico:
 
 Depois de chegar aos relatórios de `Pages and Screens` mencionados acima, use as seguintes etapas para filtrar os resultados por autores específicos.
 
-![Imagem - Mostrar etapas para pesquisar por idioma no Google Analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
+![Imagem - Mostrar etapas para pesquisar por idioma no Google Analytics](https://contribute.freecodecamp.org/images/google-analytics/filter-by-author.png)
 
 1. Clique no botão `Add filter`.
 1. A partir da navegação lateral, inclua `Author`.

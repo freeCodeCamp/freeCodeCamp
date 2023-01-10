@@ -19,7 +19,7 @@ Per cercare rapporti di engagement per una lingua specifica:
 
 Dopo essere arrivati ai report `Pages and Screens` menzionati sopra, utilizza i seguenti passaggi per filtrare i risultati in base all'autore.
 
-![Immagine - Mostra i passaggi per cercare per lingua su google analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
+![Immagine - Mostra i passaggi per cercare per lingua su google analytics](https://contribute.freecodecamp.org/images/google-analytics/filter-by-author.png)
 
 1. Clicca sul pulsante `Add filter`.
 1. Dalla barra di navigazione laterale includi `Author`.

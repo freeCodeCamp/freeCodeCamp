@@ -19,7 +19,7 @@ To search for engagement reports by a specific language:
 
 After arriving at the `Pages and Screens` reports mentioned above, use the following steps to filter the results by specific authors.
 
-![Image - Show steps to search by language on googla analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
+![Image - Show steps to search by language on googla analytics](https://contribute.freecodecamp.org/images/google-analytics/filter-by-author.png)
 
 1. Click on the `Add filter` button.
 1. From the side navigation include `Author`.

@@ -1,27 +1,27 @@
-# Authors Analytics Manual
+# Керівництво з аналітики
 
-If you are an author with access to the publication's Google Analytics Property (News), you can use this guide to view your articles engagement and search for articles by publication language.
+Якщо ви є автором публікацій та маєте доступ до Google Analytics (News), ви можете використати це керівництво для перегляду статистики публікацій та пошуку публікацій за мовою.
 
-## Search by Language
+## Пошук за мовою
 
-To search for engagement reports by a specific language:
+Перегляд статистики певної мови:
 
-![Image - Show steps to search by language on googla analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
+![Зображення - Кроки для пошуку за мовою в google analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
 
-1. From the top dropdown menu, select `News`.
-1. From the sidebar, click on `Reports`.
-1. From the secondary sidebar, select `Engagement`.
-1. Click on `Pages and Screens`.
-1. In the search bar, type the subpath for the desired language.
-1. From the dropdown under the search bar, choose `Page path and screen class`.
+1. Оберіть `News` із верхнього випадного меню.
+1. Натисніть `Reports` на бічній панелі.
+1. У другорядній бічній панелі оберіть `Engagement`.
+1. Натисніть `Pages and Screens`.
+1. У рядку пошуку введіть підшлях потрібної мови.
+1. Оберіть `Page path and screen class` у випадному меню під рядком пошуку.
 
-## Filter Reports by Author
+## Статистика автора
 
-After arriving at the `Pages and Screens` reports mentioned above, use the following steps to filter the results by specific authors.
+Після отримання вищезгаданої статистики `Pages and Screens` використайте наступні кроки, щоб переглянути статистику певного автора.
 
-![Image - Show steps to search by language on googla analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
+![Зображення - Кроки для пошуку за мовою в google analytics](https://contribute.freecodecamp.org/images/google-analytics/filter-by-author.png)
 
-1. Click on the `Add filter` button.
-1. From the side navigation include `Author`.
-1. From the `Dimensions values` dropdown, choose an author's name.
-1. Click on the `Apply` button to apply changes.
+1. Натисніть на кнопку `Add filter`.
+1. Оберіть `Author` на бічній навігації.
+1. Виберіть ім’я автора із випадного меню `Dimensions values`.
+1. Натисніть на кнопку `Apply`, щоб застосувати зміни.
