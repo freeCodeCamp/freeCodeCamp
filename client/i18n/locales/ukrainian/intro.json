@@ -553,7 +553,7 @@
     "intro": [
       "До цього моменту ви використовували JavaScript тільки для фронтенду, аби зробити вебсторінку інтерактивнішою, розв'язати завдання з алгоритмами, або створити SPA. Але JavaScript можна використовувати й в бекенд, або на сервері, для створення цілих вебзастосунків.",
       "Сьогодні один із найпопулярніших способів створення застосунків – за допомогою мікросервісів, маленьких модульних застосунків, які разом формують єдине ціле.",
-      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "У сертифікації «Розробка Back End та API» ви навчитеся писати бекенд програми за допомогою Node.js та npm. Ви також створите вебзастосунок за допомогою фреймворку Express та мікросервіс для пошуку людей за допомогою MongoDB і бібліотеки Mongoose."
     ],
     "note": "",
     "blocks": {
