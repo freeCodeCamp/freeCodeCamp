@@ -20,7 +20,7 @@ dashedName: timestamp-microservice
 -   Потім ви побачите вікно `.replit`.
 -   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту в полі «Посилання на рішення». За бажанням введіть посилання на початковий код проєкту в полі «Посилання на GitHub».
 
 **Примітка:** конвертація часових зон не є головною метою проєкту, тому вважайте, що всі надіслані дійсні дати будуть проаналізовані за допомогою `new Date()` як дати GMT.
 
@@ -106,7 +106,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-Якщо введений рядок дати недійсний, api повертає об'єкт зі структурою `{ error : "Invalid Date" }`
+If the input date string is invalid, the API returns an object having the structure `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>

@@ -106,7 +106,7 @@ Your project can handle dates that can be successfully parsed by `new Date(date_
   );
 ```
 
-If the input date string is invalid, the api returns an object having the structure `{ error : "Invalid Date" }`
+If the input date string is invalid, the API returns an object having the structure `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>
