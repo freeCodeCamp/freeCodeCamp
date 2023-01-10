@@ -411,7 +411,7 @@ The `description` property of any object in the `log` array that is returned fro
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -458,7 +458,7 @@ The `duration` property of any object in the `log` array that is returned from `
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -505,7 +505,7 @@ The `date` property of any object in the `log` array that is returned from `GET 
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
