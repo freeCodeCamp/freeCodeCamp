@@ -233,10 +233,10 @@ function mobileLogin(app) {
       );
     }
 
-    return User.findOne$({ where: { email: email } })
+    return User.findOne$({ where: { email } })
       .do(async user => {
         if (!user) {
-          user = await User.create({ email: email });
+          user = await User.create({ email });
         }
         await user.mobileLoginByRequest(req, res);
         res.end();
