@@ -1,6 +1,6 @@
 ---
 id: aa2e6f85cab2ab736c9a9b24
-title: Cash Register
+title: مكنة لتسجيل النقود
 challengeType: 5
 forumTopicId: 16012
 dashedName: cash-register
@@ -8,11 +8,11 @@ dashedName: cash-register
 
 # --description--
 
-قم بتصميم دالة درج تسجيل المدفوعات `checkCashRegister()` التي تقبل سعر الشراء كـ argument أولى (`price`)، و الدفع كـ argument ثانية (`cash`) ، و cash-in-drawer اي النقود في الدرج (`cid`) كـ argument ثالثة.
+صمم وظيفة درج لتسجيل النقود `checkCashRegister()` التي تقبل سعر الشراء كمعطى أولى (`price`)، و الدفع كمعطى ثاني (`cash`)، و cash-in-drawer أي النقود في الدرج (`cid`) كمعطى ثالث.
 
 `cid` عبارة عن array ثنائية الأبعاد للعملة المتاحة.
 
-يجب أن تقوم دالة `checkCashRegister()` دائما بإرجاع object يحتوي على key الـ `status` و key الـ `change`.
+يجب أن تقوم وظيفة `checkCashRegister()` دائما بإنتاج كائن يحتوي على الهوية (key) المسمى `status` و الهوية `change`.
 
 قم بإرجاع `{status: "INSUFFICIENT_FUNDS", change: []}` إذا كان cash-in-drawer أقل من الباقي المستحق، أو إذا كنت لا تستطيع إرجاع الباقي بالضبط.
 
@@ -40,7 +40,7 @@ dashedName: cash-register
 
 # --hints--
 
-`checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` يجب ان يرجع object.
+يجب أن ينتج `checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` كائن.
 
 ```js
 assert.deepEqual(
@@ -61,7 +61,7 @@ assert.deepEqual(
 );
 ```
 
-`checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` يجب ان يرجع `{status: "OPEN", change: [["QUARTER", 0.5]]}`.
+يجب أن ينتج `checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` كائن `{status: "OPEN", change: [["QUARTER", 0.5]]}`.
 
 ```js
 assert.deepEqual(
@@ -80,7 +80,7 @@ assert.deepEqual(
 );
 ```
 
-`checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` يجب ان يرجع `{status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}`.
+يجب أن ينتج `checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])` كائن `{status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}`.
 
 ```js
 assert.deepEqual(
@@ -110,7 +110,7 @@ assert.deepEqual(
 );
 ```
 
-`checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` يجب ان يرجع `{status: "INSUFFICIENT_FUNDS", change: []}`.
+يجب أن ينتج `checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` كائن `{status: "INSUFFICIENT_FUNDS", change: []}`.
 
 ```js
 assert.deepEqual(
@@ -129,7 +129,7 @@ assert.deepEqual(
 );
 ```
 
-`checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` يجب ان يرجع `{status: "INSUFFICIENT_FUNDS", change: []}`.
+يجب أن ينتج `checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` كائن `{status: "INSUFFICIENT_FUNDS", change: []}`.
 
 ```js
 assert.deepEqual(
@@ -148,7 +148,7 @@ assert.deepEqual(
 );
 ```
 
-`checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` يجب ان يرجع `{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}`.
+يجب أن ينتج `checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])` كائن `{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}`.
 
 ```js
 assert.deepEqual(

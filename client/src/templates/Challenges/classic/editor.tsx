@@ -1203,10 +1203,15 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
   }
 
-  const { theme } = props;
-  const editorTheme = theme === Themes.Night ? 'vs-dark-custom' : 'vs-custom';
+  const { isSignedIn, theme } = props;
+  const preferDarkScheme = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
+  const isDarkTheme =
+    theme === Themes.Night || (preferDarkScheme && !isSignedIn);
+  const editorTheme = isDarkTheme ? 'vs-dark-custom' : 'vs-custom';
   return (
-    <Suspense fallback={<Loader timeout={600} />}>
+    <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>
         <MonacoEditor
           editorDidMount={editorDidMount}

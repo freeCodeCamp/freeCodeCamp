@@ -11,6 +11,7 @@
     "view": "Visualizza",
     "view-code": "Visualizza il Codice",
     "view-project": "Visualizza il Progetto",
+    "view-cert-title": "View {{certTitle}}",
     "show-cert": "Mostra la Certificazione",
     "claim-cert": "Richiedi la Certificazione",
     "save-progress": "Salva l'avanzamento",
@@ -463,7 +464,8 @@
     "iframe-preview": "Anteprima {{title}}",
     "iframe-alert": "Solitamente questo link ti porterebbe su un altro sito web! Funziona. Questo è un link per {{externalLink}}",
     "iframe-form-submit-alert": "Normalmente questo modulo sarebbe stato inviato! Funziona. Sarà inviato a: {{externalLink}}",
-    "document-notfound": "documento non trovato"
+    "document-notfound": "documento non trovato",
+    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
   },
   "icons": {
     "gold-cup": "Coppa d'Oro",
@@ -508,7 +510,8 @@
     "step": "Step",
     "steps": "Step",
     "steps-for": "Step per {{blockTitle}}",
-    "code-example": "{{codeName}} esempio di codice"
+    "code-example": "{{codeName}} esempio di codice",
+    "opens-new-window": "Opens in new window"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",

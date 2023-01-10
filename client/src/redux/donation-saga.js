@@ -103,16 +103,13 @@ export function* postChargeSaga({
     }
     yield put(
       executeGA({
-        type: 'event',
-        data: {
-          category:
-            paymentProvider === PaymentProvider.Patreon
-              ? 'Donation Related'
-              : 'Donation',
-          action: stringifyDonationEvents(paymentContext, paymentProvider),
-          label: duration,
-          value: amount
-        }
+        event:
+          paymentProvider === PaymentProvider.Patreon
+            ? 'donationrelated'
+            : 'donation',
+        action: stringifyDonationEvents(paymentContext, paymentProvider),
+        duration,
+        amount
       })
     );
   } catch (error) {

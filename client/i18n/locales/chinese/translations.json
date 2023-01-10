@@ -11,6 +11,7 @@
     "view": "查看",
     "view-code": "查看代码",
     "view-project": "查看项目",
+    "view-cert-title": "View {{certTitle}}",
     "show-cert": "显示认证",
     "claim-cert": "申请认证",
     "save-progress": "保存进度",
@@ -463,7 +464,8 @@
     "iframe-preview": "{{title}} 预览",
     "iframe-alert": "通常，此链接会将你带到另一个网站！一切正常，这个链接指向：{{externalLink}}。",
     "iframe-form-submit-alert": "通常这个表单将被提交！工作正常，这将被提交到：{{externalLink}}",
-    "document-notfound": "找不到文件"
+    "document-notfound": "找不到文件",
+    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
   },
   "icons": {
     "gold-cup": "金奖杯",
@@ -508,7 +510,8 @@
     "step": "步骤",
     "steps": "步骤",
     "steps-for": "{{blockTitle}} 的步骤",
-    "code-example": "{{codeName}} 代码示例"
+    "code-example": "{{codeName}} 代码示例",
+    "opens-new-window": "Opens in new window"
   },
   "flash": {
     "honest-first": "申请认证之前，你必须先接受我们的《学术诚信条例》",
