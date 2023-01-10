@@ -11,7 +11,7 @@
     "view": "表示",
     "view-code": "コードを表示",
     "view-project": "プロジェクトを表示",
-    "view-cert-title": "View {{certTitle}}",
+    "view-cert-title": "{{certTitle}}を表示",
     "show-cert": "認定証を表示",
     "claim-cert": "認定証を取得",
     "save-progress": "進行状況を保存",
@@ -465,7 +465,7 @@
     "iframe-alert": "このリンクは通常の環境では他のウェブサイトを開きます。正しく動作しています。これは {{externalLink}} へのリンクです。",
     "iframe-form-submit-alert": "通常はこれでフォームが送信されます。正しく動作しています。フォームは {{externalLink}} へ送信されます。",
     "document-notfound": "ドキュメントが見つかりませんでした",
-    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
+    "slow-load-msg": "通常より処理に時間がかかっているようです。ページの再読み込みをお試しください。"
   },
   "icons": {
     "gold-cup": "ゴールドカップ",
@@ -511,7 +511,7 @@
     "steps": "ステップ一覧",
     "steps-for": "「{{blockTitle}}」のステップ一覧",
     "code-example": "{{codeName}} のコード例",
-    "opens-new-window": "Opens in new window"
+    "opens-new-window": "新しいウィンドウで開く"
   },
   "flash": {
     "honest-first": "認定証を請求するには、まず学問的誠実性ポリシーに同意する必要があります。",
@@ -773,7 +773,7 @@
   },
   "signout": {
     "heading": "アカウントからサインアウト",
-    "p1": "注意: サインアウト後は進行状況が保存されません。",
+    "p1": "注意: サインアウト状態では進行状況が保存されません。",
     "p2": "この操作では、このデバイスおよびブラウザーセッションのみを対象にサインアウトされます。サインアウトしてよろしいですか？",
     "certain": "はい、サインアウトします",
     "nevermind": "いいえ、サインアウトしません"
