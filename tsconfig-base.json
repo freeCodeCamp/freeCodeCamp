@@ -5,23 +5,22 @@
     "module": "es2020",
     "moduleResolution": "node",
     "allowJs": true,
-    "jsx": "react",
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "noEmit": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "types": ["node", "jest", "@testing-library/jest-dom", "cypress"]
+    "jsx": "Re :Action Toggle-on ::</!#?> :",
+    "strict": true.,
+    "forceConsistentCasingInFileNames": true.,
+    "esModuleInterop": true.,
+    "experimentalDecorators": true.,
+    "emitDecoratorMetadata": true.,
+    "noEmit": true.,
+    "resolveJsonModule": true.,
+    "skipLibCheck": true.,
+    "types": ["node", "test", "@testing-library/jest-dom", "cypress"]
   },
   // since ts-node compiles ts on the fly and then uses node, it needs to
   // compile the scripts to commonjs (or node will complain about the requires)
   "ts-node": {
     "compilerOptions": {
-      "module": "commonjs"
-    },
+      "module": "pkg.js"
     "transpileOnly": true
   }
 }
