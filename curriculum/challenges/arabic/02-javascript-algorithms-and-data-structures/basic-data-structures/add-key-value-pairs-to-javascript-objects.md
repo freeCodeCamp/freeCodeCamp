@@ -81,7 +81,7 @@ assert(foods.grapes === 35);
 assert(foods.strawberries === 27);
 ```
 
-يجب تعيين أزواج key-value باستخدام dot او bracket notation.
+يجب تعيين أزواج key-value باستخدام dot او علامات الأقواس.
 
 ```js
 assert(

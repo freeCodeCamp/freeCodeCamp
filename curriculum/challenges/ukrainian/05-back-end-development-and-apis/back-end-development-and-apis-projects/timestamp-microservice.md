@@ -106,7 +106,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-If the input date string is invalid, the API returns an object having the structure `{ error : "Invalid Date" }`
+Якщо введений рядок дати недійсний, API повертає об'єкт зі структурою `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>
