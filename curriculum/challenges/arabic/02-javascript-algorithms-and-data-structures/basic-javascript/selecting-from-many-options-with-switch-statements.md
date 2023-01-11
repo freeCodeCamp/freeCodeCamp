@@ -36,19 +36,19 @@ switch (lowercaseLetter) {
 
 # --hints--
 
-`caseInSwitch(1)` يجب أن يكون له قيمة السلسلة (string) النصية `alpha`
+`caseInSwitch(1)` يجب أن يكون له قيمة المقطع (string) النصي `alpha`
 
 ```js
 assert(caseInSwitch(1) === 'alpha');
 ```
 
-`caseInSwitch(2)` يجب أن يكون له قيمة السلسلة (string) النصية `beta`
+`caseInSwitch(2)` يجب أن يكون له قيمة المقطع (string) النصي `beta`
 
 ```js
 assert(caseInSwitch(2) === 'beta');
 ```
 
-`caseInSwitch(3)` يجب أن يكون له قيمة السلسلة (string) النصية `gamma`
+`caseInSwitch(3)` يجب أن يكون له قيمة المقطع (string) النصي `gamma`
 
 ```js
 assert(caseInSwitch(3) === 'gamma');

@@ -411,7 +411,7 @@ La propiedad `description` de cualquier objeto en el arreglo `log` que es devuel
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -458,7 +458,7 @@ La propiedad `duration` de cualquier objeto en el arreglo `log` que es devuelto 
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -505,7 +505,7 @@ La propiedad `date` de cualquier objeto en el arreglo `log` que es devuelto desd
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',

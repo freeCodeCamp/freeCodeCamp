@@ -411,7 +411,7 @@ async(getUserInput) => {
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -458,7 +458,7 @@ async(getUserInput) => {
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -505,7 +505,7 @@ async(getUserInput) => {
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
