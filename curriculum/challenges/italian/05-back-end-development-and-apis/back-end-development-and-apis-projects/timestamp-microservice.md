@@ -106,7 +106,7 @@ Il tuo progetto può gestire date che possono essere lette con successo da `new 
   );
 ```
 
-If the input date string is invalid, the API returns an object having the structure `{ error : "Invalid Date" }`
+Se la stringa della data di input non è valida, l'API restituisce un oggetto con la struttura `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>
