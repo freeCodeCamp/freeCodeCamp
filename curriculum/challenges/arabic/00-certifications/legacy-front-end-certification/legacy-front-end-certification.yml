@@ -16,7 +16,7 @@ tests:
     title: قم ببناء ساعة 25 + 5
   - 
     id: bd7158d8c442eddfaeb5bd17
-    title: بناء آلة حاسبة بإستخدام JavaScript
+    title: بناء آلة حاسبة باستخدام JavaScript
   - 
     id: bd7158d8c442eddfaeb5bd10
     title: إظهار الطقس المحلي

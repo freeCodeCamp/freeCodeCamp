@@ -1,6 +1,6 @@
 ---
 id: 587d78b0367417b2b2512b05
-title: أنشئ صفحة التوثيق التقني
+title: أنشئ صفحة التوثيق التقنية
 challengeType: 14
 forumTopicId: 301146
 dashedName: build-a-technical-documentation-page
@@ -8,11 +8,11 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Objective:** قم ببناء تطبيق يشبه وظيفيا إلى <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
+**Objective:** أنشئ تطبيق يشبه وظيفيا إلى <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
 
 **المتطلبات:**
 
-1. يمكنك مشاهدة عنصر `main` مع `id="main-doc"`، والذي يحتوي على المحتوى الرئيسي للصفحة (الوثائق التقنية)
+1. يمكنك مشاهدة عنصر `main` مع `id="main-doc"`، الذي يحتوي على المحتوى الرئيسي للصفحة (الوثائق التقنية)
 1. ضمن عنصر `#main-doc` ، يمكنك رؤية عدة عناصر `section`، كل منها مع class بقيمة `main-section`. وينبغي أن يكون هناك خمسة على الأقل
 1. العنصر الأول في كل `.main-section` يجب أن يكون عنصر `header`، والذي يحتوي على نص يصف موضوع ذلك القسم.
 1. كل عنصر من عناصر `section` مع class بقيمة `main-section` يجب أن يكون لديه `id` يتوافق مع نص كل `header` موجود داخله. يجب استبدال أي مسافات بتسطير سفلي (underscore) (على سبيل المثال القسم الذي يحتوي على header "JavaScript and Java" يجب أن يكون لديه `id="JavaScript_and_Java"`)
@@ -203,7 +203,7 @@ const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
 assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
 ```
 
-يجب أن يكون لكل `.nav-link` سمة `href` التي تربط مع `.main-section` (على سبيل المثال ، إذا نقرت على العنصر `.nav-link` الذي يحتوي على النص "Hello world" ، تنتقل الصفحة إلى عنصر `section` بهذا الـ id).
+يجب أن يكون لكل `.nav-link` سمة `href` التي تربط مع `.main-section` (على سبيل المثال، إذا نقرت على العنصر `.nav-link` الذي يحتوي على النص "Hello world"، تنتقل الصفحة إلى عنصر `section` بهذا المعرف (id)).
 
 ```js
 const hrefValues = Array.from(document.querySelectorAll('.nav-link')).map(el => el.getAttribute('href'))

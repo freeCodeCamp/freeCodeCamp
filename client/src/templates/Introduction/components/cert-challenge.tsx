@@ -34,7 +34,7 @@ interface CertChallengeProps {
   currentCerts: Steps['currentCerts'];
   superBlock: SuperBlocks;
   t: TFunction;
-  title: typeof certMap[number]['title'];
+  title: (typeof certMap)[number]['title'];
   user: User;
   verifyCert: typeof verifyCert;
 }

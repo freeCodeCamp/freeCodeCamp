@@ -11,6 +11,7 @@
     "view": "عرض",
     "view-code": "أظهار الكود",
     "view-project": "إظهار المشروع",
+    "view-cert-title": "View {{certTitle}}",
     "show-cert": "عرض الشهادة",
     "claim-cert": "المطالبة بالشهادة",
     "save-progress": "حفظ التقدم",
@@ -463,7 +464,8 @@
     "iframe-preview": "معاينة {{title}}",
     "iframe-alert": "عادة هذا الرابط من شأنه أن يجلبك إلى موقع آخر! إنه يعمل. هذا رابط: {{externalLink}}",
     "iframe-form-submit-alert": "عادة سيتم تقديم هذا النموذج! إنه يعمل. سيتم إرسال هذا إلى: {{externalLink}}",
-    "document-notfound": "لم يوجد المستند"
+    "document-notfound": "لم يوجد المستند",
+    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
   },
   "icons": {
     "gold-cup": "كأس الذهب",
@@ -508,7 +510,8 @@
     "step": "الخطوة",
     "steps": "الخطوات",
     "steps-for": "خطوات {{blockTitle}}",
-    "code-example": "{{codeName}} مثال على الكود"
+    "code-example": "{{codeName}} مثال على الكود",
+    "opens-new-window": "Opens in new window"
   },
   "flash": {
     "honest-first": "للمطالبة بشهادة ، يجب عليك أولاً قبول سياسة الصدق الأكاديمي الخاصة بنا",
@@ -608,7 +611,7 @@
         "Build a Personal Portfolio Webpage": "أنشئ معرضا لأعمالك الخاصة",
         "Build a Random Quote Machine": "بناء آلة عرض اقتباسات عشوائية",
         "Build a 25 + 5 Clock": "بناء ساعة 25 + 5",
-        "Build a JavaScript Calculator": "بناء حاسبة بإستخدام JavaScript",
+        "Build a JavaScript Calculator": "بناء آلة حاسبة باستخدام JavaScript",
         "Show the Local Weather": "إظهار الطقس المحلي",
         "Use the TwitchTV JSON API": "استخدام TwitchTV JSON API",
         "Stylize Stories on Camper News": "نسق قصص على أخبار Camper",
@@ -642,14 +645,14 @@
         "Anonymous Message Board": "لوحة الرسائل المجهولة",
         "Build a Tribute Page": "بناء مشروع صفحة الثناء",
         "Build a Survey Form": "بناء مشروع نموذج الدراسة الاستقصائية",
-        "Build a Product Landing Page": "بناء صفحة هبوط لمنتج",
+        "Build a Product Landing Page": "أنشئ صفحة لعرض المنتج",
         "Build a Technical Documentation Page": "بناء مشروع صفحة التوثيق التقني",
         "Palindrome Checker": "مدقق باليندروم",
         "Roman Numeral Converter": "تحويل الأرقام الرومانية",
         "Caesars Cipher": "Caesars Cipher",
         "Telephone Number Validator": "مدقق رقم الهاتف",
         "Cash Register": "سجل النقدية",
-        "Build a Drum Machine": "بناء آلة الدرامز",
+        "Build a Drum Machine": "أنشئ آلة الطبول",
         "Visualize Data with a Choropleth Map": "التصوير المرئي للبيانات باستخدام خريطة التمثيل اللوني",
         "Visualize Data with a Treemap Diagram": "التصوير المرئي للبيانات باستخدام الخريطة الشجرية",
         "Exercise Tracker": "متعقب التمارين",

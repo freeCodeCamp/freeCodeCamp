@@ -553,7 +553,7 @@
     "intro": [
       "Bis zu diesem Punkt hast du JavaScript nur im Front-End verwendet, um einer Seite Interaktivität hinzuzufügen, Aufgaben mit Algorithmen zu lösen oder eine SPA zu bauen. Aber JavaScript kann auch im Back-End, also auf dem Server, verwendet werden, um ganze Webanwendungen zu erstellen.",
       "Heutzutage ist eine der beliebtesten Arten, Anwendungen zu erstellen, Microservices. Das sind kleine, modulare Anwendungen, die zusammenarbeiten und ein größeres Ganzes bilden.",
-      "In der Zertifizierung für Back-End-Entwicklung und APIs lernst du, wie du Back-End-Apps mit Node.js und npm (Node Package Manager) schreibst. Du wirst auch Webanwendungen mit dem Express-Framework erstellen und einen Personensuche-Microservice mit MongoDB und der Mongoose-Bibliothek bauen."
+      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
