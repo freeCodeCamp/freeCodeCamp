@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c452eddfaeb5bdef
-title: استخدم رمز آلأقواس المعكوفان للعثور على حرف معين قبل الأخر في مقطع
+title: استخدم علامات الأقواس للعثور على رمز معين قبل الأخر في المقطع النصي
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cw4vkh9'
 forumTopicId: 18344
@@ -24,7 +24,7 @@ const thirdToLastLetter = firstName[firstName.length - 3];
 
 # --instructions--
 
-استخدم <dfn>رمز آلأقواس المعكوفان</dfn> للعثور على الحرف الثاني إلى الأخير في مقطع `lastName`.
+استخدم <dfn>علامات الأقواس</dfn> للعثور على الحرف الثاني إلى الأخير في مقطع `lastName`.
 
 **تلميح:** حاول النظر إلى المثال أعلاه إذا كنت عالق.
 

@@ -11,6 +11,7 @@
     "view": "View",
     "view-code": "View Code",
     "view-project": "View Project",
+    "view-cert-title": "View {{certTitle}}",
     "show-cert": "Show Certification",
     "claim-cert": "Claim Certification",
     "save-progress": "Save Progress",
@@ -463,7 +464,8 @@
     "iframe-preview": "{{title}} preview",
     "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
     "iframe-form-submit-alert": "Normally this form would be submitted! It works. This will be submitted to: {{externalLink}}",
-    "document-notfound": "document not found"
+    "document-notfound": "document not found",
+    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
   },
   "icons": {
     "gold-cup": "Gold Cup",
@@ -508,7 +510,8 @@
     "step": "Step",
     "steps": "Steps",
     "steps-for": "Steps for {{blockTitle}}",
-    "code-example": "{{codeName}} code example"
+    "code-example": "{{codeName}} code example",
+    "opens-new-window": "Opens in new window"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",

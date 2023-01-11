@@ -26,13 +26,13 @@ const myVar = 12 - 6;
 
 # --hints--
 
-變量 `difference` 的值應該爲 12。
+The variable `difference` should be equal to `12`.
 
 ```js
 assert(difference === 12);
 ```
 
-您只能從 45 中減去一個數字。
+You should only subtract one number from `45`.
 
 ```js
 assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));

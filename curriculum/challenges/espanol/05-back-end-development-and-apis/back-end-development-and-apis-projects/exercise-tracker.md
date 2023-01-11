@@ -20,7 +20,7 @@ Si usas Replit, sigue los siguientes pasos para configurar el proyecto:
 -   Después, verás una ventana `.replit`.
 -   Selecciona `Use run command` y haz clic en el botón `Done`.
 
-Cuando hayas terminado, asegúrate que un demo funcional de tu proyecto esté alojado en algún sitio público. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Cuando hayas terminado, asegúrate que un demo funcional de tu proyecto esté alojado en algún sitio público. A continuación, introduce la URL en el campo enlace a la solución. Si lo deseas, también puedes enviar un enlace al código fuente de tu proyecto en el campo enlace GitHub.
 
 # --instructions--
 
@@ -411,7 +411,7 @@ La propiedad `description` de cualquier objeto en el arreglo `log` que es devuel
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -458,7 +458,7 @@ La propiedad `duration` de cualquier objeto en el arreglo `log` que es devuelto 
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -505,7 +505,7 @@ La propiedad `date` de cualquier objeto en el arreglo `log` que es devuelto desd
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',

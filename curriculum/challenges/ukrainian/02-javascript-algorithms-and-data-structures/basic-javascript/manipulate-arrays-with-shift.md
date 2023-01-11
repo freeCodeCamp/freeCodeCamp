@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cd
-title: Керування масивами за допомогою shift()
+title: Маніпулювання масивами за допомогою shift()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVETW'
 forumTopicId: 18238
@@ -9,26 +9,26 @@ dashedName: manipulate-arrays-with-shift
 
 # --description--
 
-`pop()` завжди видаляє останній елемент масиву. А якщо ти хочеш видалити перший?
+`pop()` завжди видаляє останній елемент масиву. А якщо потрібно видалити перший?
 
-Саме тут нам на допомогу може прийти `.shift()`. Це працює точно так як `.pop()`, за винятком того, що видаляє перший елемент замість останнього.
+Саме тут нам на допомогу приходить `.shift()`. Вона працює так само, як і `.pop()`, але видаляє перший елемент замість останнього.
 
-Наприклад:
+Приклад:
 
 ```js
 const ourArray = ["Stimpson", "J", ["cat"]];
 const removedFromOurArray = ourArray.shift();
 ```
 
-`removedFromOurArray` матиме значення рядка `Stimpson` та `ourArray` отримає `["J", ["cat"]]`.
+`removedFromOurArray` матиме значення рядка `Stimpson`, а `ourArray` матиме значення `["J", ["cat"]]`.
 
 # --instructions--
 
-Використовуйте функцію `.shift()`, щоб видалити перший елемент з `myArray` та призначивши значення "викреслено" для нової змінної `removedFromMyArray`.
+Використайте функцію `.shift()`, щоб вилучити перший елемент з `myArray` та призначити виведене значення до нової змінної `removedFromMyArray`.
 
 # --hints--
 
-`myArray` має дорівнювати `[["dog", 3]]`.
+Тепер `myArray` повинен дорівнювати `[["dog", 3]]`.
 
 ```js
 assert(

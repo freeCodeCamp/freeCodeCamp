@@ -14,16 +14,15 @@
 }
 
 .ais-SearchBox-input {
-  padding: 0 10px;
+  padding-block: 0;
+  padding-inline-start: 5px;
   font-size: 18px;
   display: inline-block;
-  margin-top: 6px;
   height: 26px;
 }
 
 .ais-SearchBox-submit,
 .ais-SearchBox-reset {
-  margin-top: 6px;
   height: 26px;
   width: 26px;
   background-color: var(--gray-75);
@@ -33,15 +32,15 @@
   padding-inline: 3px;
 }
 
+.ais-SearchBox-reset {
+  padding-block: 0 2px;
+}
+
 .fcc_searchBar .ais-SearchBox-input,
 .fcc_searchBar .ais-Hits {
   z-index: 100;
   background-color: var(--gray-75);
   color: var(--gray-00);
-}
-
-.fcc_searchBar .ais-SearchBox-input {
-  padding-inline: 2em;
 }
 
 .fcc_searchBar .ais-Hits {
@@ -125,15 +124,26 @@ and arrow keys */
   font-weight: 300;
 }
 
-.ais-SearchBox-input {
-  width: calc(100vw - 350px);
+.fcc_searchBar .ais-SearchBox-form {
+  display: grid;
+  grid-template-columns: 26px auto 36px;
+  grid-template-areas: 'submit input reset';
+  margin-bottom: 0;
+  gap: 0.25em;
+  margin-top: 6px;
+  background-color: var(--gray-75);
 }
 
-.fcc_searchBar .ais-SearchBox-form {
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 0.25em;
+.ais-SearchBox-input {
+  grid-area: input;
+}
+
+.ais-SearchBox-submit {
+  grid-area: submit;
+}
+
+.ais-SearchBox-reset {
+  grid-area: reset;
 }
 
 @media (min-width: 981px) {
@@ -152,8 +162,6 @@ and arrow keys */
     left: 0px;
   }
   .fcc_searchBar .ais-SearchBox-form {
-    display: flex;
-    justify-content: flex-end;
     top: auto;
   }
 }

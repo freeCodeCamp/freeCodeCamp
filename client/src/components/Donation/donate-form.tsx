@@ -19,8 +19,7 @@ import {
   userSelector,
   isDonatingSelector,
   signInLoadingSelector,
-  donationFormStateSelector,
-  isVariantASelector
+  donationFormStateSelector
 } from '../../redux/selectors';
 import Spacer from '../helpers/spacer';
 import { Themes } from '../settings/theme';
@@ -87,7 +86,6 @@ type DonateFormProps = {
   ) => string;
   theme: Themes;
   updateDonationFormState: (state: DonationApprovalData) => unknown;
-  isVariantA: boolean;
   paymentContext: PaymentContext;
 };
 
@@ -97,22 +95,19 @@ const mapStateToProps = createSelector(
   isDonatingSelector,
   donationFormStateSelector,
   userSelector,
-  isVariantASelector,
   (
     showLoading: DonateFormProps['showLoading'],
     isSignedIn: DonateFormProps['isSignedIn'],
     isDonating: DonateFormProps['isDonating'],
     donationFormState: DonateFormState,
-    { email, theme }: { email: string; theme: Themes },
-    isVariantA: boolean
+    { email, theme }: { email: string; theme: Themes }
   ) => ({
     isSignedIn,
     isDonating,
     showLoading,
     donationFormState,
     email,
-    theme,
-    isVariantA
+    theme
   })
 );
 
@@ -280,8 +275,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       t,
       isMinimalForm,
       isSignedIn,
-      isDonating,
-      isVariantA
+      isDonating
     } = this.props;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
     const isOneTime = donationDuration === 'one-time';
@@ -335,7 +329,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
                 processing={processing}
                 t={t}
                 theme={priorityTheme}
-                isVariantA={isVariantA}
               />
             </>
           )}

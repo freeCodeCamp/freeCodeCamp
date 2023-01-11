@@ -23,7 +23,7 @@ import { createShowCertSaga } from './show-cert-saga';
 import updateCompleteEpic from './update-complete-epic';
 import { createUserTokenSaga } from './user-token-saga';
 
-export const defaultFetchState = {
+const defaultFetchState = {
   pending: true,
   complete: false,
   errored: false,
@@ -41,7 +41,7 @@ export const defaultDonationFormState = {
   }
 };
 
-export const initialState = {
+const initialState = {
   appUsername: '',
   recentlyClaimedBlock: null,
   canRequestProgressDonation: true,
