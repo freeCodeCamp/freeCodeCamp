@@ -15,6 +15,7 @@ import SoundSettings from './sound';
 import ThemeSettings, { Themes } from './theme';
 import UsernameSettings from './username';
 import KeyboardShortcutsSettings from './keyboard-shortcuts';
+import SectionHeader from './section-header';
 
 type FormValues = {
   name: string;
@@ -213,6 +214,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
         <UsernameSettings username={username} />
         <br />
         <FullWidthRow>
+          <SectionHeader>{t('Profile Settings')}</SectionHeader>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
             <FormGroup controlId='about-name'>
               <ControlLabel>
