@@ -9,7 +9,7 @@ dashedName: updating-object-properties
 
 # --description--
 
-بعد إنشاء كائن JavaScript، يمكنك تحديث خصائصه في أي وقت كما يمكنك تحديث أي متغير آخر. يمكنك استخدام أي من تدوين النِّقَاط أو تدوين الأقواس المعكوفان (dot or bracket notation).
+بعد إنشاء كائن JavaScript، يمكنك تحديث خصائصه في أي وقت كما يمكنك تحديث أي متغير آخر. يمكنك استخدام أي من رمز النقطة أو علامات الأقواس (dot or bracket notation).
 
 على سبيل المثال، دعونا ننظر إلى `ourDog`:
 
@@ -26,7 +26,7 @@ const ourDog = {
 
 # --instructions--
 
-حدث خاصية اسم الكائن `myDog`. غيّر اسمه من `Coder` إلى `Happy Coder`. يمكنك استخدام أي من تدوين النِّقَاط أو تدوين الأقواس المعكوفان (dot or bracket notation).
+حدث خاصية اسم الكائن `myDog`. غيّر اسمه من `Coder` إلى `Happy Coder`. يمكنك استخدام أي من رمز النقطة أو علامات الأقواس (dot or bracket notation).
 
 # --hints--
 

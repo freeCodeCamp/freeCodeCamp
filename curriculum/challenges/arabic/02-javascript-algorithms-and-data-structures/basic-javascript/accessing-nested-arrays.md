@@ -41,7 +41,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-باستخدام dot و bracket notation، وعيّن المتغير `secondTree` إلى العنصر الثاني في قائمة `trees` من object باسم `myPlants`.
+استخدم dot و علامات الأقواس, لتعيّن المتغير `secondTree` إلى العنصر الثاني في قائمة `trees` من object باسم `myPlants`.
 
 # --hints--
 
