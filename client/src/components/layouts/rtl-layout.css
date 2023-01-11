@@ -100,7 +100,7 @@ universal-nav-bar
 and menu secion
 */
 
-@media (min-width: 600.5px) {
+@media (min-width: 601px) {
   [dir='rtl'] .nav-list {
     right: auto;
     left: 0;
