@@ -16,22 +16,26 @@ Many helpful resources out there keep referring to HTML and CSS as programming l
 
 ## --assignment--
 
-Read <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#What_is_HTML" target="_blank">the HTML vs CSS vs JavaScript article</a>. It is a quick overview of the relationships between HTML, CSS and JavaScript.
+Read <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#What_is_HTML" target="_blank">the HTML vs CSS vs JavaScript article</a>. It is a quick overview of the relationships between HTML, CSS, and JavaScript.
     
 ## --text--
 
 Which of the following statements is true?
 ## --answers--
 
-Your website's structure is created using CSS, and its style is created using HTML.
+Which of the following statements is true?
+
+## --answers--
+
+CSS is used to create the basic structure of a webpage, and HTML is used to add style.
 
 ---
 
-HTML creates the basic structure, and CSS styles it.
+HTML is used to create the basic structure of a webpage, and CSS is used to add style.
 
 ---
 
-For styling, HTML and CSS are used, and JavaScript is used for basic structure.
+HTML and CSS are used to add style to a webpage, and JavaScript is used to create the basic structure.
 
 
 ## --video-solution--

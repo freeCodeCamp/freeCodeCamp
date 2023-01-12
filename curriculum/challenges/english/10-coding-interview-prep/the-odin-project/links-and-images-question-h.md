@@ -79,19 +79,18 @@ Read about the  <a href="https://www.internetingishard.com/html-and-css/links-an
 ## --text--
 
 What are the four main image formats that you can use for images on the web?
+
 ## --answers--
 
-The four main image formats are: `TIFF`, `GIF`, `PNG`and `SVG`.
+TIFF, GIF, PNG, and SVG.
 
 ---
 
-The four main image formats are: `JPG,` `PNG`, `GIF` and `SVG`.
+JPG, PNG, GIF, and SVG.
 
 ---
 
-The four main image formats are `JPG`, `PDF`, `SVG` and `GIF`.
-
-
+JPG, PDF, SVG, and GIF.
 
 ## --video-solution--
 

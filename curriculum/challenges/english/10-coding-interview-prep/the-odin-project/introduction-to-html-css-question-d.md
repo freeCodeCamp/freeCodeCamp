@@ -16,19 +16,19 @@ Many helpful resources out there keep referring to HTML and CSS as programming l
     
 ## --text--
 
-What is the difference between HTML, CSS and JavaScript?
+What is the difference between HTML, CSS, and JavaScript?
 
 ## --answers--
 
-HTML  is for creating interactive elements, CSS is for the look and feel and JavaScript is for creating the structure of your page.
+HTML is for creating interactive elements, CSS is for the look and feel, and JavaScript is for creating the structure of a webpage.
 
 ---
 
-CSS is for the look and feel of your website, JavaScript is for creating interactive elements and HTML is for the structure of your page.
+CSS is for the look and feel, JavaScript is for creating interactive elements, and HTML is for creating the structure of a webpage.
 
 ---
 
-JavaScript is for the look and feel of your website, CSS is for creating the structure of your page and HTML is for creating interactive elements.
+JavaScript is for the look and feel, CSS is for creating the structure, and HTML is for creating interactive elements of a webpage.
 
 ## --video-solution--
 

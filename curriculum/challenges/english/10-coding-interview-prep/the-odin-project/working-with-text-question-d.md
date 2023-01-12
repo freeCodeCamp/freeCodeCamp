@@ -23,16 +23,15 @@ What element should you use to make text italicized to add emphasis?
 
 ## --answers--
 
-This is an italicized element: <br> `<strong> This is an italic message </strong>`
+`<strong>This is an italic message</strong>`
 
 ---
 
-This is an italicized element: <br> `<em> This is an italic message </em>`
+`<em>This is an italic message</em>`
 
 ---
 
-This is an italicized element: <br> `<italic> This is an italic message </italic>`
-
+`<italic>This is an italic message</italic>`
 
 ## --video-solution--
 

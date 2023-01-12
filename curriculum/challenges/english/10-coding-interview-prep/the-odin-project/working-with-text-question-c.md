@@ -31,17 +31,15 @@ What element should you use to make text bold and important?
 
 ## --answers--
 
-This is an important element: <br> `<em> This is an important message </em>`
+`<em>This is an important message</em>`
 
 ---
 
-This is an important element: <br> `<h1> This is an important message </h1>`
-
+`<h1>This is an important message</h1>`
 
 ---
 
-This is an important element: <br> `<strong> This is an important message </strong>`
-
+`<strong>This is an important message</strong>`
 
 ## --video-solution--
 

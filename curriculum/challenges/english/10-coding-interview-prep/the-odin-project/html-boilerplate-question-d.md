@@ -39,7 +39,7 @@ This is where you tell the browser how to render the webpage correctly.
 
 ---
 
-This is where all content will be displayed on the page such images, text and links.
+This is where all content will be displayed on the page such images, text, and links.
 
 
 ## --video-solution--

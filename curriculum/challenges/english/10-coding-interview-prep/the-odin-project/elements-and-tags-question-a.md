@@ -33,19 +33,19 @@ Watch Kevin Powell’s [Introduction to HTML video](https://www.youtube.com/watc
     
 ## --text--
 
-What is a tag?
+What are HTML tags?
 
 ## --answers--
 
-The HTML tag tells the browser what the element contains.
+HTML tags tell the browser what content an element contains.
 
 ---
 
-The HTML tag tells the browser when to load its content.
+HTML tags tell the browser when to load its content.
 
 ---
 
-The HTML tag tells the browser what the next element contains.
+HTML tags tell the browser what content the next element contains.
 
 
 ## --video-solution--

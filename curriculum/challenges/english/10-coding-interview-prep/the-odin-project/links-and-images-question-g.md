@@ -74,18 +74,19 @@ This is how the The Odin Project logo example you used earlier looks with an alt
     
 ## --text--
 
-How do you access a parent file path?
+How do you access a parent directory in a filepath?
+
 ## --answers--
 
-To go to the parent directory you always need to use `../`
+`../`
 
 ---
 
-To go to the parent directory you always need to use `./`
+`./`
 
 ---
 
-To go to the parent directory you always need to use `.../`
+`.../`
 
 ## --video-solution--
 

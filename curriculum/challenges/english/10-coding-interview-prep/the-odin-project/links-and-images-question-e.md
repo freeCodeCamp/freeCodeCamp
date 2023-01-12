@@ -79,19 +79,18 @@ Watch Kevin Powell’s HTML Images Video above.
 ## --text--
 
 Which tag is used to display an image?
+
 ## --answers--
 
-The `<link>` tag is used to display an image.
+`<link>`
 
 ---
 
-The `<a>` tag is used to display an image.
+`<a>`
 
 ---
 
-The `<img>` tag is used to display an image.
-
-
+`<img>`
 
 ## --video-solution--
 

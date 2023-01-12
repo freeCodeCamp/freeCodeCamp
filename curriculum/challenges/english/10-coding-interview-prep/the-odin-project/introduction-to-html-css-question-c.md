@@ -15,19 +15,19 @@ Many helpful resources out there keep referring to HTML and CSS as programming l
     
 ## --text--
 
-Between HTML and CSS, which would you use for changing the font and background color of a button?
+Between HTML and CSS, which should you use to change the font and background color of a button?
 
 ## --answers--
 
-You should use CSS to change the background color and font of your button.
+You should use CSS to change the background color and font of a button.
 
 ---
 
-You should use JavaScript to change the background color and font of your button.
+You should use JavaScript to change the background color and font of a button.
 
 ---
 
-You should use HTML to change the background color and font of your button.
+You should use HTML to change the background color and font of a button.
 
 ## --video-solution--
 

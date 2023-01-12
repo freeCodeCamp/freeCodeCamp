@@ -33,16 +33,15 @@ How do you create HTML comments?
 
 ## --answers--
 
-You create a HTML comment by doing the following: <br> `/* This is an HTML comment */`
+`/* This is an HTML comment */`
 
 ---
 
-You create a HTML comment by doing the following: <br> `<!-- This is an HTML comment  -->` 
+`<!-- This is an HTML comment -->` 
 
 ---
 
-You create a HTML comment by doing the following: <br> `<--  This is an HTML comment --!>`
-
+`<-- This is an HTML comment --!>`
 
 ## --video-solution--
 

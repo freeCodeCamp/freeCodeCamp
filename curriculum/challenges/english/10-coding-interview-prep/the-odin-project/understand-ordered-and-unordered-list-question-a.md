@@ -45,20 +45,19 @@ Make an ordered list of your all time top 5 favorite video games or movies.
     
 ## --text--
 
-What HTML is used to create an unordered list?
+What HTML tag is used to create an unordered list?
 
 ## --answers--
 
-You should use the `<li>` tag to make an unordered list
+`<li>`
 
 ---
 
-You should use the `<ul>` tag to make an unordered list
+`<ul>`
 
 ---
 
-You should use the `<ol>` tag to make an unordered list
-
+`<ol>`
 
 ## --video-solution--
 

@@ -17,19 +17,19 @@ Many helpful resources out there keep referring to HTML and CSS as programming l
     
 ## --text--
 
-Between HTML and CSS, which would you use for putting paragraphs of text on a webpage?
+Between HTML and CSS, which should you use to add paragraphs of text on a webpage?
 
 ## --answers--
 
-You should use CSS to put paragraphs on your website.
+CSS
 
 ---
 
-You should use JavaScript for putting paragraphs on your website.
+JavaScript
 
 ---
 
-You should use HTML for putting paragraphs on your website.
+HTML
 
 
 ## --video-solution--

@@ -29,16 +29,15 @@ What HTML tag is used to create an ordered list?
 
 ## --answers--
 
-You should use the `<ol>` tag to make an ordered list
+`<ol>`
 
 ---
 
-You should use the `<li>` tag to make an ordered list
+`<li>`
 
 ---
 
-You should use the `<ul>` tag to make an ordered list
-
+`<ul>`
 
 ## --video-solution--
 

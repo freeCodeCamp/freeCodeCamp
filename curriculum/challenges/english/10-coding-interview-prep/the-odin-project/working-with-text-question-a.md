@@ -39,19 +39,19 @@ Watch and follow along to Kevin Powell’s HTML Paragraph and Headings Video abo
     
 ## --text--
 
-How do you create paragraphs in HTML?
+How do you create a paragraph in HTML?
 
 ## --answers--
 
-You make a paragraph by doing the following: <br> `<h3> This is a paragraph </h3>`
+`<h3>This is a paragraph</h3>`
 
 ---
 
-You make a paragraph by doing the following: <br> `<p> This is a paragraph </p>`
+`<p>This is a paragraph</p>`
 
 ---
 
-You make a paragraph by doing the following: <br> `<strong> This is a paragraph <strong>`
+`<strong>This is a paragraph<strong>`
 
 
 ## --video-solution--

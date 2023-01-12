@@ -96,16 +96,15 @@ What is the difference between an absolute and a relative link?
 
 ## --answers--
 
-An absolute link will link to elements and pages on the website, a relative link will link to other websites.
+An absolute link is a link to another page on the current website. A relative link is a link to another website.
 
 ---
 
-An absolute link will link to other websites, relative links will link to elements and pages on the website.
+An absolute link is a link to another website. A relative link is a link another page on the current website.
 
 ---
 
-Both absolute and relative can link to other pages or to elements on the same page.
-
+There is no difference between absolute and relative links.
 
 ## --video-solution--
 

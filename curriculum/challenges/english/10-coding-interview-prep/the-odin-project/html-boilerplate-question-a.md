@@ -39,15 +39,15 @@ What is the purpose of the `DOCTYPE` declaration?
 
 ## --answers--
 
-It is to tell the browser which version of HTML to use to render the document.
+It tells the browser which version of HTML to use to render the document.
 
 ---
 
-It is to tell the browser that this document uses JavaScript.
+It tells the browser that this document uses JavaScript.
 
 ---
 
-It is used to tell important information such as the title of the document.
+It tells the browser the title of the document.
 
 
 ## --video-solution--

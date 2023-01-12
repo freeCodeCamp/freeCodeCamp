@@ -50,16 +50,15 @@ What relationship do two elements have if they are at the same level of nesting?
 
 ## --answers--
 
-If elements have the same level of nesting the elements are parents of each other.
+The elements are each other's parents.
 
 ---
 
-If elements have the same level of nesting the elements are children to each other.
+The elements are each other's children.
 
 ---
 
-If elements have the same level of nesting they are siblings of each other.
-
+The elements are siblings.
 
 ## --video-solution--
 

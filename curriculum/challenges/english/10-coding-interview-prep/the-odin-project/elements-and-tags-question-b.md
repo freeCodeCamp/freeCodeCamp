@@ -29,19 +29,19 @@ Using the correct elements for content is called semantic HTML. You will explore
     
 ## --text--
 
-What are the three parts of an HTML element?
+What are the three parts of most HTML elements?
 
 ## --answers--
 
-It has an opening tag, self closing tag and content.
+An opening tag, self closing tag, and content.
 
 ---
 
-It has an opening tag, closing tag and content.
+An opening tag, closing tag, and content.
 
 ---
 
-It has an opening tag, closing tag and attribute.
+An opening tag, closing tag, and attribute.
 
 
 ## --video-solution--

@@ -24,18 +24,16 @@ How many different levels of headings are there and what is the difference betwe
 
 ## --answers--
 
-There are 5 different headings, `h5` is the smallest and `h1` is the biggest heading.
+There are 5 different levels of headings. `h5` is the smallest and least important heading, and `h1` is the largest and most important heading.
 
 ---
 
-There are 6 different headings, `h6` is the biggest and `h1` is the smallest heading.
-
+There are 6 different levels of headings. `h6` is the largest and most important heading, and `h1` is the smallest and least important heading.
 
 ---
 
-There are 6 different headings, `h1` is the biggest and `h6` is the smallest heading.
-
+There are 6 different levels of headings. `h1` is the largest and most important heading, and `h6` is the smallest and least important heading.
 
 ## --video-solution--
 
-2
+3
