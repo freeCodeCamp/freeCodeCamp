@@ -28,7 +28,7 @@ Analizzerai un set di dati del cambiamento globale medio del livello del mare da
 Usa i dati per completare le seguenti attività:
 
 - Usa Pandas per importare i dati da `epa-sea-level.csv`.
-- Usa matplotlib per creare un grafico a dispersione usando la colonna `Year` come asse x e la colonna `CSIRO Adjusted Sea Level` come asse y.
+- Use matplotlib to create a scatter plot using the `Year` column as the x-axis and the `CSIRO Adjusted Sea Level` column as the y-axis.
 - Usa la funzione `linregress` da `scipy.stats` per ottenere la pendenza e l'intercetta y della retta di regressione. Traccia la retta di regressione sopra la parte superiore del grafico a dispersione. Fai passare la linea attraverso l'anno 2050 per prevedere l'aumento del livello del mare nel 2050.
 - Traccia una nuova retta di regressione utilizzando i dati dall'anno 2000 all'anno più recente nel set di dati. Fai passare la linea anche per l'anno 2050 per prevedere quale sarà l'aumento del livello del mare nel 2050 se il tasso di crescita continuerà come ha fatto dal 2000 in poi.
 - L'asse x dovrebbe essere `Year`, l'asse y dovrebbe essere `Sea Level (inches)` e il titolo dovrebbe essere `Rise in Sea Level`.

@@ -10,9 +10,10 @@ dashedName: implement-binary-search
 
 A busca binária é um algoritmo de eficiência **O(log(n))** para procurar um elemento em um array ordenado. Ele opera usando as seguintes etapas:
 
-1. Encontrar o `value` do meio de um array ordenado. Se `value == target`, retornar (encontramos!).
+1. Encontrar o `value` do meio de um array ordenado. If `value == target` return `true` (The value has been found and the search is complete).
 1. Se `value < target`, procurar à direita do meio do array na próxima comparação.
 1. Se `value > target`, procurar à esquerda do meio do array na próxima comparação.
+1. If after searching the whole array the value is not present, return `false` (The array has been searched and the value is not in the array).
 
 Como você pode ver, você está dividindo um array para metade com sucesso, o que traz a eficiência log(n). Para este desafio, queremos que você mostre seu trabalho - como você conseguiu o valor de destino... o caminho que você fez!
 
@@ -20,7 +21,7 @@ Como você pode ver, você está dividindo um array para metade com sucesso, o q
 
 Escreva uma função `binarySearch` que implemente o algoritmo de busca binária em um array, retornando o caminho que você utilizou (cada comparação com o valor do meio) para encontrar o destino em um array.
 
-A função recebe um array ordenado de números inteiros e um valor de destino como entrada. Ele retorna um array contendo (em ordem) o valor do meio que você encontrou a cada divisão do array original até encontrar o valor de destino. O valor de destino deve ser o último elemento do array retornado. Se o valor não for encontrado, retorne a string `Value Not Found`.
+A função recebe um array ordenado de números inteiros e um valor de destino como entrada. Ele retorna um array contendo (em ordem) o valor do meio que você encontrou a cada divisão do array original até encontrar o valor de destino. O valor de destino deve ser o último elemento do array retornado. If the value is not found, return the string `Value Not Found`.
 
 Por exemplo, `binarySearch([1,2,3,4,5,6,7], 5)` retornará `[4,6,5]`.
 
