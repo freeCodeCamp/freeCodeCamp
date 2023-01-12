@@ -15,19 +15,10 @@ type HonestyProps = {
 
 const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
   const { t } = useTranslation();
-  const button = isHonest ? (
-    <Button block={true} bsStyle='primary' disabled={true}>
-      {t('buttons.accepted-honesty')}
-    </Button>
-  ) : (
-    <Button
-      block={true}
-      bsStyle='primary'
-      onClick={() => updateIsHonest({ isHonest: true })}
-    >
-      {t('buttons.agree')}
-    </Button>
-  );
+  const buttonText = isHonest
+    ? t('buttons.accepted-honesty')
+    : t('buttons.agree');
+
   return (
     <section id='honesty-policy'>
       <SectionHeader>{t('settings.headings.honesty')}</SectionHeader>
@@ -36,7 +27,14 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
           <HonestyPolicy />
         </Panel>
         <Spacer />
-        {button}
+        <Button
+          block={true}
+          bsStyle='primary'
+          aria-pressed={isHonest}
+          onClick={() => !isHonest && updateIsHonest({ isHonest: true })}
+        >
+          {buttonText}
+        </Button>
       </FullWidthRow>
     </section>
   );
