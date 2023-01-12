@@ -1,15 +1,13 @@
 ---
-id: 63b61584def8fa2ebcc259e0
-title: Step 19
+id: 63bf5cf03b50bf36cfbe94ea
+title: Step 37
 challengeType: 0
-dashedName: step-19
+dashedName: step-37
 ---
 
 # --description--
 
-You need to split your `str` into individual characters. Remember that strings have a `.split()` method, and if you pass an empty string it will split on every character.
-
-Declare a `strArray` variable and assign it that split value.
+<!--Next is the addEntry function pls-->
 
 # --hints--
 
@@ -168,9 +166,17 @@ const clearButton = document.getElementById('clear');
 const output = document.getElementById('output');
 let isError = false;
 
---fcc-editable-region--
 function cleanInputString(str) {
-  
+  const regex = /[+-\s]/g;
+  return str.match(regex);
 }
+
+function isInvalidInput(str) {
+  const regex = /\d+e\d+/i;
+  return str.match(regex);
+}
+
+--fcc-editable-region--
+  
 --fcc-editable-region--
 ```
