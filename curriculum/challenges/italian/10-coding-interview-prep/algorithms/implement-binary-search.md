@@ -10,9 +10,10 @@ dashedName: implement-binary-search
 
 Binary Search è un algoritmo con efficienza **O(log(n))** che permette di cercare un elemento dentro a un array ordinato. Funziona usando i seguenti step:
 
-1. Trova il `value` centrale di un array ordinato. Se `value == target` allora restituiscilo (trovato!).
+1. Trova il `value` centrale di un array ordinato. If `value == target` return `true` (The value has been found and the search is complete).
 1. Se invece `value < target`, cerca nella metà destra dell'array nella prossima comparazione.
 1. Se invece `value > target`, cerca nella metà sinistra dell'array nella prossima comparazione.
+1. If after searching the whole array the value is not present, return `false` (The array has been searched and the value is not in the array).
 
 Come puoi vedere, stai dimessando successivamente un array, cosa che da l'efficienza log(n). Per questa sfida vogliamo vedere il tuo lavoro - come sei arrivato al valore target... la strada che hai preso!
 
@@ -20,7 +21,7 @@ Come puoi vedere, stai dimessando successivamente un array, cosa che da l'effici
 
 Scrivi una funzione `binarySearch` che implementa un algoritmo di ricerca binaria su un array, restituendo il percorso che hai preso (ogni valore centrale di comparazione) per trovare il target nell'array.
 
-La funzione riceve un array di numeri interi ordinati, e un valore target come input. Restituisce un array contentente in ordine i valori centrali che hai trovato ad ogni dimezzamento dell'array originale fino a che non hai trovato il valore target. Il valore target dovrebbe essere l'ultimo elemento dell'array restituito. Se il valore non è stato trovato, restituisci `Value Not Found`.
+La funzione riceve un array di numeri interi ordinati, e un valore target come input. Restituisce un array contentente in ordine i valori centrali che hai trovato ad ogni dimezzamento dell'array originale fino a che non hai trovato il valore target. Il valore target dovrebbe essere l'ultimo elemento dell'array restituito. If the value is not found, return the string `Value Not Found`.
 
 Per esempio, `binarySearch([1,2,3,4,5,6,7], 5)` dovrebbe restituisce `[4,6,5]`.
 
