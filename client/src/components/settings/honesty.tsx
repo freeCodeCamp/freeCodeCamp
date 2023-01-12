@@ -15,6 +15,7 @@ type HonestyProps = {
 
 const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
   const { t } = useTranslation();
+  //  panel-Test2
   const button = isHonest ? (
     <Button
       block={true}
@@ -22,7 +23,7 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
       className='disabled-agreed'
       disabled={true}
     >
-      <p>{t('buttons.accepted-honesty')}</p>
+      {t('buttons.accepted-honesty')}
     </Button>
   ) : (
     <Button

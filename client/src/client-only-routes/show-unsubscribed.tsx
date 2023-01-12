@@ -2,10 +2,10 @@ import { Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import './test.css';
-import envData from '../../../config/env.json';
+import { apiLocation } from '../../../config/env.json';
 
-const { apiLocation } = envData;
+import './test.css';
+// Panel-test1
 
 function ShowUnsubscribed({
   unsubscribeId
