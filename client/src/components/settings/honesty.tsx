@@ -17,7 +17,7 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
   const { t } = useTranslation();
   const buttonText = isHonest
     ? t('buttons.accepted-honesty')
-    : t('buttons.agree');
+    : t('buttons.agree-honesty');
 
   return (
     <section id='honesty-policy'>
@@ -30,7 +30,7 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
         <Button
           block={true}
           bsStyle='primary'
-          aria-pressed={isHonest}
+          aria-disabled={isHonest}
           onClick={() => !isHonest && updateIsHonest({ isHonest: true })}
         >
           {buttonText}

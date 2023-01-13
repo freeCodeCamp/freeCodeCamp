@@ -16,14 +16,14 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
     <Spacer />
     <Button
       active={false}
-      aria-pressed={false}
+      aria-disabled={false}
       block={true}
       bsClass="btn"
       bsStyle="primary"
       disabled={false}
       onClick={[Function]}
     >
-      buttons.agree
+      buttons.agree-honesty
     </Button>
   </FullWidthRow>
 </section>
@@ -45,7 +45,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
     <Spacer />
     <Button
       active={false}
-      aria-pressed={true}
+      aria-disabled={true}
       block={true}
       bsClass="btn"
       bsStyle="primary"
