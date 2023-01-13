@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { certificatesByNameSelector } from '../../redux/selectors';
-import { CurrentCert } from '../../redux/prop-types.ts';
+import type { CurrentCert } from '../../redux/prop-types';
 
 import './styles.css';
 
