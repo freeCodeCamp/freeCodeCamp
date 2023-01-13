@@ -1,17 +1,19 @@
 import React from 'react';
 import GreenPass from '../../../assets/icons/green-pass';
 
-export const RenderTestStatus = ({
-  children,
-  congratulationText,
-  showFeedback,
-  testText
-}: {
+interface LowerJawStatusProps {
   children: React.ReactNode;
   congratulationText: string;
   showFeedback: boolean;
   testText: string;
-}) => {
+}
+
+export const LowerJawStatus = ({
+  children,
+  congratulationText,
+  showFeedback,
+  testText
+}: LowerJawStatusProps) => {
   return (
     <div className='test-status fade-in' aria-hidden={showFeedback}>
       <div className='status-icon' aria-hidden='true'>

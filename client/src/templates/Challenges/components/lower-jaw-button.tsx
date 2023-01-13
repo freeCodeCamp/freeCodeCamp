@@ -2,29 +2,25 @@ import React from 'react';
 import { Button } from '@freecodecamp/react-bootstrap';
 import { apiLocation } from '../../../../../config/env.json';
 
-interface ButtonProps {
+interface LowerJawButtonProps {
   signed: boolean;
   completeChallenge: boolean;
   signInText: string;
-  buttonAriaHidden: boolean;
   excuteChallenge: () => void;
   submitChallenge: () => void;
   checkButtonText: string;
   submitButtonText: string;
-  ref: React.RefObject<HTMLButtonElement>;
 }
 
-export const RenderButtons = ({
+export const LowerJawButtons = ({
   signed,
   completeChallenge,
   signInText,
-  buttonAriaHidden,
   excuteChallenge,
   submitChallenge,
   checkButtonText,
-  submitButtonText,
-  ref
-}: ButtonProps) => {
+  submitButtonText
+}: LowerJawButtonProps) => {
   return (
     <div id='action-buttons-container'>
       {!signed && completeChallenge && (
@@ -33,23 +29,12 @@ export const RenderButtons = ({
         </Button>
       )}
       <button
-        id='test-button'
-        data-cy='run-tests-button'
-        className={`btn-block btn ${completeChallenge ? 'sr-only' : ''}`}
-        aria-hidden={buttonAriaHidden}
-        onClick={excuteChallenge}
+        className={'btn-block btn'}
+        id='lowerJaw-button'
+        data-cy='lowerJaw-button'
+        onClick={completeChallenge ? submitChallenge : excuteChallenge}
       >
-        {checkButtonText}
-      </button>
-      <button
-        id='submit-button'
-        data-cy='submit-button'
-        aria-hidden={!completeChallenge}
-        className='btn-block btn'
-        onClick={submitChallenge}
-        ref={ref}
-      >
-        {submitButtonText}
+        {completeChallenge ? submitButtonText : checkButtonText}
       </button>
     </div>
   );

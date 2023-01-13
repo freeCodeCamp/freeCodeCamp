@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RenderButtons } from '../components/lower-jaw-button';
-import { RenderContextualActionRow } from '../components/lower-jaw-icons';
-import { RenderTestHint } from '../components/lower-jaws-hint';
-import { RenderTestStatus } from '../components/lower-jaws-status';
+import { LowerJawButtons } from '../components/lower-jaw-button';
+import { LowerJawContext } from '../components/lower-jaw-icons';
+import { LowerJawTips } from '../components/lower-jaws-tip';
+import { LowerJawStatus } from '../components/lower-jaws-status';
 
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
@@ -39,9 +39,7 @@ const LowerJaw = ({
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
-  const [ariaHidden, setTestBtnAriaHidden] = useState(false);
   const { t } = useTranslation();
-  const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
@@ -52,7 +50,6 @@ const LowerJaw = ({
     if (attempts === 0) {
       setCurrentAttempts(0);
       setRunningTests(false);
-      setTestBtnAriaHidden(false);
       setIsFeedbackHidden(false);
       hintRef.current = '';
     } else if (attempts > 0 && hint) {
@@ -74,21 +71,6 @@ const LowerJaw = ({
     }
   }, [attempts, hint, currentAttempts]);
 
-  useEffect(() => {
-    if (challengeIsCompleted) {
-      if (!isEditorInFocus) submitButtonRef?.current?.focus();
-      setTimeout(() => {
-        setTestBtnAriaHidden(true);
-      }, 500);
-    }
-
-    setTestBtnAriaHidden(challengeIsCompleted);
-    // Since submitButtonRef changes every render, we have to ignore it here or,
-    // once the challenges is completed, every render (including ones triggered
-    // by typing in the editor) will focus the button.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [challengeIsCompleted]);
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (testFeedbackRef.current) {
@@ -99,7 +81,9 @@ const LowerJaw = ({
     updateContainer();
   });
 
-  const currentText = `<h2 className="hint">{t('learn.hint')}</h2> ${hintRef.current}`;
+  const currentText = `<h2 className="hint">${t('learn.hint')}</h2> ${
+    hintRef.current
+  }`;
   const sentencePicker = () => {
     const sentenceArray = [
       'learn.sorry-try-again',
@@ -126,15 +110,13 @@ const LowerJaw = ({
 
   return (
     <div className='action-row-container'>
-      <RenderButtons
+      <LowerJawButtons
         signed={isSignedIn}
         completeChallenge={challengeIsCompleted}
         signInText={t('learn.sign-in-save')}
-        buttonAriaHidden={ariaHidden}
         excuteChallenge={tryToExecuteChallenge}
         checkButtonText={checkButton}
         submitChallenge={tryToSubmitChallenge}
-        ref={submitButtonRef}
         submitButtonText={t('buttons.submit-and-go')}
       />
       <div
@@ -148,7 +130,7 @@ const LowerJaw = ({
           <span className='sr-only'>{t('aria.running-tests')}</span>
         )}
         {challengeIsCompleted && (
-          <RenderTestStatus
+          <LowerJawStatus
             testText={t('learn.test')}
             showFeedback={isFeedbackHidden}
             congratulationText={t('learn.congratulations')}
@@ -156,10 +138,10 @@ const LowerJaw = ({
             {runningChallenge && (
               <span className='sr-only'>{t('testScreenReaderText')}</span>
             )}
-          </RenderTestStatus>
+          </LowerJawStatus>
         )}
-        {hintRef.current && (
-          <RenderTestHint
+        {hintRef.current && !challengeIsCompleted && (
+          <LowerJawTips
             showFeedback={isFeedbackHidden}
             testText={t('learn.test')}
             htmlDescription={currentText}
@@ -167,7 +149,7 @@ const LowerJaw = ({
           />
         )}
       </div>
-      <RenderContextualActionRow
+      <LowerJawContext
         resetButtonName={t('buttons.reset-code')}
         resetButtonEvent={openResetModal}
         hideHelpButton={Boolean(

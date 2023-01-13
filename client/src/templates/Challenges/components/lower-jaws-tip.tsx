@@ -2,17 +2,19 @@ import React from 'react';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 
-export const RenderTestHint = ({
-  testText,
-  learnEncouragementText,
-  showFeedback,
-  htmlDescription
-}: {
+interface LowerJawTipsProps {
   testText: string;
   learnEncouragementText: string;
   htmlDescription: string;
   showFeedback: boolean;
-}) => {
+}
+
+export const LowerJawTips = ({
+  testText,
+  learnEncouragementText,
+  showFeedback,
+  htmlDescription
+}: LowerJawTipsProps) => {
   return (
     <>
       <div

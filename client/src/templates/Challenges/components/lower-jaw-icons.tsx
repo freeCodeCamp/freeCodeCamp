@@ -2,19 +2,21 @@ import React from 'react';
 import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
 
-export const RenderContextualActionRow = ({
-  resetButtonName,
-  helpButtonName,
-  resetButtonEvent,
-  hideHelpButton,
-  helpButtonEvent
-}: {
+interface LowerJawActionRow {
   resetButtonName: string;
   helpButtonName: string;
   resetButtonEvent: () => void;
   helpButtonEvent: () => void;
   hideHelpButton: boolean;
-}) => {
+}
+
+export const LowerJawContext = ({
+  resetButtonName,
+  helpButtonName,
+  resetButtonEvent,
+  hideHelpButton,
+  helpButtonEvent
+}: LowerJawActionRow) => {
   return (
     <div>
       <hr />
