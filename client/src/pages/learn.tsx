@@ -89,6 +89,7 @@ function LearnPage({
       amount: defaultDonation.donationAmount
     });
   };
+
   return (
     <LearnLayout>
       <Helmet title={t('metaTags:title')} />

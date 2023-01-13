@@ -3,6 +3,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { randomQuote } from '../../utils/get-words';
 import Login from '../Header/components/Login';
 import { Link, Spacer, Loader } from '../helpers';
+import ProgressIndicator from '../ProgressIndicator';
 import IntroDescription from './components/IntroDescription';
 
 import './intro.css';
@@ -76,6 +77,7 @@ const Intro = ({
         ) : (
           ''
         )}
+        <ProgressIndicator completedChallengeCount={completedChallengeCount} />
       </>
     );
   } else {

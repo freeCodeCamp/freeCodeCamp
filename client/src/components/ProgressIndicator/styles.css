@@ -1,0 +1,8 @@
+.simple-text {
+  border: 3px solid var(--secondary-color);
+  padding: 16px;
+  margin-bottom: 10px;
+}
+.simple-text > ul {
+  list-style: square;
+}
