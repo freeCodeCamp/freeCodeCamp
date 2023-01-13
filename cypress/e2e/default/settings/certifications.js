@@ -13,7 +13,7 @@ describe('Settings certifications area', () => {
         expect($btns).to.have.length(16);
       });
       cy.findByText('Show Certification').should('not.exist');
-      cy.contains('Agree');
+      cy.contains(`I accept freeCodeCamp's Academic Honesty Policy`);
       cy.contains('Claim Certification').click();
       cy.contains(
         'To claim a certification, you must first accept our academic honesty policy'
@@ -29,7 +29,7 @@ describe('Settings certifications area', () => {
 
     it('Should update the user as they try to claim their certifications', () => {
       cy.visit('/settings');
-      cy.contains('Agree').click();
+      cy.contains(`I accept freeCodeCamp's Academic Honesty Policy`).click();
       cy.contains('You have accepted our Academic Honesty Policy.');
       cy.contains('Claim Certification').click();
       cy.contains(
