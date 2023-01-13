@@ -9,9 +9,9 @@ dashedName: using-objects-for-lookups
 
 # --description--
 
-Об'єкти можна вважати сховищем ключів та значень, як словники. Якщо ви маєте табличні дані, ви краще можете використати об'єкт для пошуку значень, ніж `switch` твердження або `if/else` ланцюжок. Це найбільш корисно, коли ви знаєте, що ваші вхідні дані обмежені до певного діапазону.
+Об'єкти можна вважати сховищем ключів/значень, як словники. Якщо ви маєте табличні дані, для пошуку значень краще використати об'єкт, а не інструкцію `switch` чи ланцюжок `if/else`. В такому випадку найкраще, якщо ви знаєте, що ваші вхідні дані обмежені до певного діапазону.
 
-Here is an example of an article object:
+Ось приклад об’єкта-публікації:
 
 ```js
 const article = {
@@ -30,11 +30,11 @@ const value = "title";
 const valueLookup = article[value];
 ```
 
-`articleAuthor` is the string `Kaashan Hussain`, `articleLink` is the string `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`, and `valueLookup` is the string `How to create objects in JavaScript`.
+`articleAuthor` є рядком `Kaashan Hussain`, `articleLink` є рядком `https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/`, а `valueLookup` є рядком `How to create objects in JavaScript`.
 
 # --instructions--
 
-Переробіть ключове твердження на об'єкт, що називається `lookup`. Використовуйте його, щоб шукати `val` і призначати пов'язаний рядок до `result` змінної.
+Перетворіть інструкцію switch на об’єкт під назвою `lookup`. Використайте його, щоб знайти `val` та призначати пов'язаний рядок до змінної `result`.
 
 # --hints--
 
@@ -80,13 +80,13 @@ assert(phoneticLookup('foxtrot') === 'Frank');
 assert(typeof phoneticLookup('') === 'undefined');
 ```
 
-Вам не слід змінювати `return` твердження
+Ви не повинні змінювати інструкцію `return`
 
 ```js
 assert(code.match(/return\sresult;/));
 ```
 
-Вам не слід використовувати `case`, `switch` або `if` твердження
+Ви не повинні використовувати інструкції `case`, `switch` або `if`
 
 ```js
 assert(

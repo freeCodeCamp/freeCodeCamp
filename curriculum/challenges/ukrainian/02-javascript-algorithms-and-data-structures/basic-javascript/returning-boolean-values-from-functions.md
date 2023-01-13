@@ -1,6 +1,6 @@
 ---
 id: 5679ceb97cbaa8c51670a16b
-title: Повернення логічних значень з функцій
+title: Повернення булевих значень із функцій
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp62qAQ'
 forumTopicId: 18273
@@ -9,9 +9,9 @@ dashedName: returning-boolean-values-from-functions
 
 # --description--
 
-You may recall from <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener noreferrer nofollow">Comparison with the Equality Operator</a> that all comparison operators return a boolean `true` or `false` value.
+Як ви можете пригадати з <a href="/ukrainian/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener noreferrer nofollow">порівняння з оператором «дорівнює»</a>, всі оператори порівняння повертають булеве значення `true` або `false`.
 
-Інколи люди використовують `if/else` команду для того, щоб зробити порівняння на зразок цього:
+Іноді люди використовують інструкцію `if/else`, щоб виконати порівняння:
 
 ```js
 function isEqual(a, b) {
@@ -23,7 +23,7 @@ function isEqual(a, b) {
 }
 ```
 
-Але є кращий спосіб це зробити. Оскільки `===` повертає `true` або `false`, ми можемо повернути результат порівняння:
+Але існує кращий спосіб. Оскільки `===` повертає `true` або `false`, ми можемо повернути результат порівняння:
 
 ```js
 function isEqual(a, b) {
@@ -33,23 +33,23 @@ function isEqual(a, b) {
 
 # --instructions--
 
-Виправте функцію `isLess` для того, щоб видалити `if/else` команду.
+Виправте функцію `isLess` так, щоб видалити інструкції `if/else`.
 
 # --hints--
 
-`isLess(10, 15)` повинен повернути `true`
+`isLess(10, 15)` повинна повертати `true`
 
 ```js
 assert(isLess(10, 15) === true);
 ```
 
-`isLess(15, 10)` повинен повернути `false`
+`isLess(15, 10)` повинна повертати `false`
 
 ```js
 assert(isLess(15, 10) === false);
 ```
 
-Вам не слід використовувати будь-які `if` чи `else` команди
+Ви не повинні використовувати інструкції `if` або `else`
 
 ```js
 assert(!/if|else/g.test(code));

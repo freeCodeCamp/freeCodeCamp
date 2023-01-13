@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b4
-title: Цитування рядків з одинарними лапками
+title: Цитування рядків одинарними лапками
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmnhM'
 forumTopicId: 18260

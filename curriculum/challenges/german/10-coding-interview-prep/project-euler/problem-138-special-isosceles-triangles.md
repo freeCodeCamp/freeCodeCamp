@@ -1,6 +1,6 @@
 ---
 id: 5900f3f61000cf542c50ff09
-title: 'Problem 138: Special isosceles triangles'
+title: 'Problem 130: Besondere gleichschenklige Dreiecke'
 challengeType: 1
 forumTopicId: 301766
 dashedName: problem-138-special-isosceles-triangles
@@ -10,17 +10,17 @@ dashedName: problem-138-special-isosceles-triangles
 
 Consider the isosceles triangle with base length, $b = 16$, and legs, $L = 17$.
 
-<img class="img-responsive center-block" alt="isosceles triangle with edges named as L - two edges with the same length and base of the triangle as b; and height of the triangle - h from the base of the triangle to the angle between L edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="gleichschenkliges Dreieck mit Kanten, die als L bezeichnet werden - zwei Kanten mit der gleichen Länge und der Basis des Dreiecks wie b; und Höhe des Dreiecks - h von der Basis des Dreiecks bis zum Winkel zwischen den L-Kanten" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
 
-By using the Pythagorean theorem, it can be seen that the height of the triangle, $h = \sqrt{{17}^2 − 8^2} = 15$, which is one less than the base length.
+Mit Hilfe des Satzes des Pythagoras kannst du feststellen, dass die Höhe des Dreiecks $h = \sqrt{{17}^2 - 8^2} = 15$ ist, also um eins kleiner als die Basislänge.
 
-With $b = 272$ and $L = 305$, we get $h = 273$, which is one more than the base length, and this is the second smallest isosceles triangle with the property that $h = b ± 1$.
+Mit $b = 272$ und $L = 305$ erhalten wir $h = 273$, was eins mehr als die Basislänge ist, und dies ist das zweitkleinste gleichschenklige Dreieck mit der Eigenschaft, dass $h = b ± 1$ gilt.
 
-Find $\sum{L}$ for the twelve smallest isosceles triangles for which $h = b ± 1$ and $b$, $L$ are positive integers.
+Finde $\sum{L}$ für die zwölf kleinsten gleichschenkligen Dreiecke, für die $h = b ± 1$ gilt und $b$, $L$ positive ganze Zahlen sind.
 
 # --hints--
 
-`isoscelesTriangles()` should return `1118049290473932`.
+`isoscelesTriangles()` sollte `1118049290473932` ausgeben.
 
 ```js
 assert.strictEqual(isoscelesTriangles(), 1118049290473932);
