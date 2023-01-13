@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/react-bootstrap';
+import { RenderButtons } from '../components/lower-jaw-button';
 
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
@@ -9,7 +9,6 @@ import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
 
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
-import { apiLocation } from '../../../../../config/env.json';
 
 interface LowerJawProps {
   hint?: string;
@@ -43,7 +42,7 @@ const LowerJaw = ({
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
-  const [testBtnAriaHidden, setTestBtnAriaHidden] = useState(false);
+  const [ariaHidden, setTestBtnAriaHidden] = useState(false);
   const { t } = useTranslation();
   const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
@@ -217,48 +216,23 @@ const LowerJaw = ({
 
   const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;
 
-  const renderButtons = () => {
-    return (
-      <>
-        <div id='action-buttons-container'>
-          {isSignedIn ? null : challengeIsCompleted ? (
-            <Button
-              block={true}
-              href={`${apiLocation}/signin`}
-              className='btn-cta'
-            >
-              {t('learn.sign-in-save')}
-            </Button>
-          ) : null}
-          <button
-            id='test-button'
-            data-cy='run-tests-button'
-            className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
-            aria-hidden={testBtnAriaHidden}
-            onClick={tryToExecuteChallenge}
-          >
-            {showDesktopButton
-              ? t('buttons.check-code')
-              : t('buttons.check-code-2')}
-          </button>
-          <button
-            id='submit-button'
-            data-cy='submit-button'
-            aria-hidden={!challengeIsCompleted}
-            className='btn-block btn'
-            onClick={tryToSubmitChallenge}
-            ref={submitButtonRef}
-          >
-            {t('buttons.submit-and-go')}
-          </button>
-        </div>
-      </>
-    );
-  };
+  const checkButton = showDesktopButton
+    ? t('buttons.check-code')
+    : t('buttons.check-code-2');
 
   return (
     <div className='action-row-container'>
-      {renderButtons()}
+      <RenderButtons
+        signed={isSignedIn}
+        completeChallenge={challengeIsCompleted}
+        signInText={t('learn.sign-in-save')}
+        buttonAriaHidden={ariaHidden}
+        excuteChallenge={tryToExecuteChallenge}
+        checkButtonText={checkButton}
+        submitChallenge={tryToSubmitChallenge}
+        ref={submitButtonRef}
+        submitButtonText={t('buttons.submit-and-go')}
+      />
       <div
         style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
         className={`test-feedback`}

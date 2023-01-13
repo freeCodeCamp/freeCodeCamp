@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
