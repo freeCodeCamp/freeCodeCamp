@@ -7,30 +7,31 @@ type Props = {
   completedChallengeCount?: number;
 };
 
-type AllChallengeNodeData = {
+type NodeData = {
   allChallengeNode: {
-    edges: [];
+    totalCount: number;
+  };
+  allCertificateNode: {
+    totalCount: number;
   };
 };
 
 const ProgressIndicator = (props: Props): JSX.Element => {
   const { completedChallengeCount } = props;
-  const data: AllChallengeNodeData = useStaticQuery(graphql`
+
+  const data: NodeData = useStaticQuery(graphql`
     query {
       allChallengeNode {
-        edges {
-          node {
-            challenge {
-              id
-            }
-          }
-        }
+        totalCount
+      }
+      allCertificateNode {
+        totalCount
       }
     }
   `);
-  const { edges } = data.allChallengeNode;
+  const { allChallengeNode, allCertificateNode } = data;
 
-  const computePercentage = (completed = 0, length: number): number => {
+  const computePercentage = ({ completed = 0, length = 0 } = {}): number => {
     const result = (completed / length) * 100;
 
     if (result < 1) {
@@ -39,18 +40,26 @@ const ProgressIndicator = (props: Props): JSX.Element => {
     return Math.floor(result);
   };
 
-  const completedChallengePercentage = computePercentage(
-    completedChallengeCount,
-    edges.length
-  );
+  const completedChallengePercentage = computePercentage({
+    completed: completedChallengeCount,
+    length: allChallengeNode.totalCount
+  });
+
+  const completedCertificatePercentage = computePercentage({
+    length: allCertificateNode.totalCount
+  });
 
   return (
     <div className='simple-text'>
       <h3>Progress Summary:</h3>
       <ul>
         <li>
-          {completedChallengeCount}/{edges.length} challenges completed (
-          {completedChallengePercentage}%)
+          {completedChallengeCount}/{allChallengeNode.totalCount} challenges
+          completed ({completedChallengePercentage}%)
+        </li>
+        <li>
+          {0}/{allCertificateNode.totalCount} certificates earned (
+          {completedCertificatePercentage}%)
         </li>
       </ul>
     </div>
