@@ -173,6 +173,11 @@ section.cover.show ~ .sidebar-toggle {
     width: 100%;
     margin: 0.2rem 0;
   }
+  
+  section.cover .cover-main > p:last-child a:last-child {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /****** Sidebar ******/
