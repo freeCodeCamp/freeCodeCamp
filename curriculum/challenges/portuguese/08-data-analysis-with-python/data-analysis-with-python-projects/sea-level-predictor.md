@@ -28,7 +28,7 @@ Você analisará um dataset da mudança média do nível do mar global desde 188
 Use os dados para completar as seguintes tarefas:
 
 - Use o Pandas para importar os dados de `epa-sea-level.csv`.
-- Use matplotlib to create a scatter plot using the `Year` column as the x-axis and the `CSIRO Adjusted Sea Level` column as the y-axis.
+- Use a matplotlib para criar um diagrama de dispersão usando a coluna `Year` como eixo x e a coluna `CSIRO Adjusted Sea Level` (Nível do mar ajustado) como o eixo y.
 - Use a função `linregress` do `scipy.stats` para obter o coeficiente angular e o ponto de interceptação da linha de y do melhor ajuste. Trace a linha de melhor ajuste na parte superior do diagrama de dispersão. Faça a linha passar pelo ano 2050 para prever o aumento do nível do mar em 2050.
 - Trace uma nova linha do melhor ajuste utilizando apenas os dados do ano 2000 ao longo do último ano no dataset. Faça com que a linha passe também pelo ano 2050 para prever o aumento do nível do mar em 2050 se a taxa de crescimento continuar como está desde o ano 2000.
 - O rótulo de x deve ser `Year` e o rótulo de y deve ser `Sea Level (inches)` (Nível do mar, em polegadas), e o título deve ser `Rise in Sea Level` (Aumento do nível do mar).

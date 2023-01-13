@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c12feddfaeb3bdef
-title: Використання умовної логіки з командою if
+title: Використання умовної логіки з інструкцією if
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87mf3'
 forumTopicId: 18348
@@ -9,15 +9,15 @@ dashedName: use-conditional-logic-with-if-statements
 
 # --description--
 
-Інструкції `If` використовуються для прийняття рішень у коді. Ключове слово `if` наказує JavaScript виконати код у фігурних дужках за певних умов, вказаних у круглих дужках. Ці умови ще називаються умовами `Boolean` і вони можуть бути лише `true` або `false`.
+Інструкції `if` використовують для прийняття рішень у коді. Ключове слово `if` вказує JavaScript виконати код у фігурних дужках за певних умов, вказаних у круглих дужках. Ці умови ще називаються булевими умовами (`Boolean`), і вони можуть бути лише `true` або `false`.
 
-Коли умова є оціненою як `true`, програма виконує команду у фігурних дужках. Коли булева умова є оцінена як `false`, команда у фігурних дужках не буде виконана.
+Якщо умова оцінена як `true`, програма виконує інструкцію у фігурних дужках. Якщо булева умова оцінена як `false`, команда у фігурних дужках не виконується.
 
 **Псевдокод**
 
-<blockquote>if (<i>condition is true</i>) {<br>  <i>statement is executed</i><br>}</blockquote>
+<blockquote>if (<i>умова оцінена як true</i>) {<br>  <i>інструкція виконується</i><br>}</blockquote>
 
-**Наприклад:**
+**Приклад**
 
 ```js
 function test (myCondition) {
@@ -33,39 +33,39 @@ test(false);
 
 `test(true)` повертає рядок `It was true`, а `test(false)` повертає рядок `It was false`.
 
-Коли `test` отримує значення `true`, оператор `if` оцінює `myCondition`, щоб побачити чи воно є `true` чи ні. Оскільки це `true`, функція повертає `It was true`. Коли ми викликаємо `test` зі значенням `false`, `myCondition` *не* `true`, інструкція у круглих дужках не виконується та функція повертає `It was false`.
+Коли `test` викликається зі значенням `true`, інструкція `if` оцінює `myCondition`, щоб побачити чи воно `true`. Оскільки воно `true`, функція повертає `It was true`. Коли ми викликаємо `test` зі значенням `false`, то `myCondition` *не* оцінюється як `true`, інструкція у круглих дужках не виконується та функція повертає `It was false`.
 
 # --instructions--
 
-Створіть оператора `if` всередині функції, щоб повернути `Yes, that was true`, якщо параметр `wasThatTrue` є `true` та повернути `No, that was false` у протилежному випадку.
+Створіть інструкцію `if` всередині функції, щоб повернути `Yes, that was true`, якщо параметр `wasThatTrue` є `true` та повернути `No, that was false` у протилежному випадку.
 
 # --hints--
 
-`trueOrFalse` повинен бути функцією
+`trueOrFalse` повинна бути функцією
 
 ```js
 assert(typeof trueOrFalse === 'function');
 ```
 
-`trueOrFalse(true)` повинен повертати рядок
+`trueOrFalse(true)` повинна повертати рядок
 
 ```js
 assert(typeof trueOrFalse(true) === 'string');
 ```
 
-`trueOrFalse(false)` повинен повертати рядок
+`trueOrFalse(false)` повинна повертати рядок
 
 ```js
 assert(typeof trueOrFalse(false) === 'string');
 ```
 
-`trueOrFalse(true)` повинен повертати рядок `Yes, that was true`
+`trueOrFalse(true)` повинна повертати рядок `Yes, that was true`
 
 ```js
 assert(trueOrFalse(true) === 'Yes, that was true');
 ```
 
-`trueOrFalse(false)` повинен повертати рядок `No, that was false`
+`trueOrFalse(false)` повинна повертати рядок `No, that was false`
 
 ```js
 assert(trueOrFalse(false) === 'No, that was false');

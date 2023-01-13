@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c4
-title: Повернення початкового шаблона для функцій
+title: Повернення початкового шаблону функцій
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272
@@ -9,9 +9,9 @@ dashedName: return-early-pattern-for-functions
 
 # --description--
 
-Коли ви досягнули команди `return`, виконання поточної функції припиняється і об'єкт керування повертається до місця виклику.
+Коли досягається інструкція `return`, виконання поточної функції припиняється, а керування повертається до місця, де було викликано функцію.
 
-**Наприклад**
+**Приклад**
 
 ```js
 function myFun() {
@@ -22,54 +22,54 @@ function myFun() {
 myFun();
 ```
 
-Показане вище відобразить рядок `Hello` у консолі і поверне рядок `World`. Рядок `byebye` ніколи не відобразиться у консолі, тому що функція виходить з команди `return`.
+Вищеподане покаже рядок `Hello` на консолі та поверне рядок `World`. Рядок `byebye` ніколи не зобразиться на консолі, оскільки функція виходить з інструкції `return`.
 
 # --instructions--
 
-Модифікуйте функцію `abTest` і тому, якщо `a` або `b` дорівнюватиме менше `0`, функція відразу вийде зі значенням `undefined`.
+Змініть функцію `abTest` таким чином, що коли `a` або `b` буде менше за `0`, функція одразу вийде зі значенням `undefined`.
 
-**Hint**  
-Remember that <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow"><code>undefined</code> is a keyword</a>, not a string.
+**Підказка**  
+Пам’ятайте, що <a href="https://www.freecodecamp.org/ukrainian/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow"><code>undefined</code> є ключовим словом</a>, а не рядком.
 
 # --hints--
 
-`abTest(2, 2)` повинен повернути число
+`abTest(2, 2)` повинна повертати число
 
 ```js
 assert(typeof abTest(2, 2) === 'number');
 ```
 
-`abTest(2, 2)` повинен повернути `8`
+`abTest(2, 2)` повинна повертати `8`
 
 ```js
 assert(abTest(2, 2) === 8);
 ```
 
-`abTest(-2, 2)` повинен повернути `undefined`
+`abTest(-2, 2)` повинна повертати `undefined`
 
 ```js
 assert(abTest(-2, 2) === undefined);
 ```
 
-`abTest(2, -2)` повинен повернути `undefined`
+`abTest(2, -2)` повинна повертати `undefined`
 
 ```js
 assert(abTest(2, -2) === undefined);
 ```
 
-`abTest(2, 8)` повинен повернути `18`
+`abTest(2, 8)` повинна повертати `18`
 
 ```js
 assert(abTest(2, 8) === 18);
 ```
 
-`abTest(3, 3)` повинен повернути `12`
+`abTest(3, 3)` повинна повертати `12`
 
 ```js
 assert(abTest(3, 3) === 12);
 ```
 
-`abTest(0, 0)` повинен повернути `0`
+`abTest(0, 0)` повинна повертати `0`
 
 ```js
 assert(abTest(0, 0) === 0);
