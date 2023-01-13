@@ -1,11 +1,20 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
+import { certificatesByNameSelector } from '../../redux/selectors';
+import { CurrentCert } from '../../redux/prop-types.ts';
 
 import './styles.css';
 
-type Props = {
+interface Props {
   completedChallengeCount?: number;
-};
+  currentCerts?: CurrentCert[];
+  hasLegacyCert?: boolean;
+  hasModernCert?: boolean;
+  legacyCerts?: CurrentCert[];
+  username: string;
+}
 
 type NodeData = {
   allChallengeNode: {
@@ -16,8 +25,35 @@ type NodeData = {
   };
 };
 
+const mapStateToProps = (state: Record<string, unknown>, props: Props) =>
+  createSelector(
+    certificatesByNameSelector(props.username.toLowerCase()),
+    ({
+      currentCerts,
+      legacyCerts
+    }: Pick<
+      Props,
+      'hasModernCert' | 'hasLegacyCert' | 'currentCerts' | 'legacyCerts'
+    >) => ({
+      currentCerts,
+      legacyCerts
+    })
+  )(state);
+
 const ProgressIndicator = (props: Props): JSX.Element => {
-  const { completedChallengeCount } = props;
+  const { completedChallengeCount, currentCerts, legacyCerts } = props;
+
+  let earnedCertificateCount = 0;
+  currentCerts?.forEach((cert: { show: boolean }) => {
+    if (cert.show) {
+      earnedCertificateCount += 1;
+    }
+  });
+  legacyCerts?.forEach((cert: { show: boolean }) => {
+    if (cert.show) {
+      earnedCertificateCount += 1;
+    }
+  });
 
   const data: NodeData = useStaticQuery(graphql`
     query {
@@ -46,6 +82,7 @@ const ProgressIndicator = (props: Props): JSX.Element => {
   });
 
   const completedCertificatePercentage = computePercentage({
+    completed: earnedCertificateCount,
     length: allCertificateNode.totalCount
   });
 
@@ -58,12 +95,12 @@ const ProgressIndicator = (props: Props): JSX.Element => {
           completed ({completedChallengePercentage}%)
         </li>
         <li>
-          {0}/{allCertificateNode.totalCount} certificates earned (
-          {completedCertificatePercentage}%)
+          {earnedCertificateCount}/{allCertificateNode.totalCount} certificates
+          earned ({completedCertificatePercentage}%)
         </li>
       </ul>
     </div>
   );
 };
 
-export default ProgressIndicator;
+export default connect(mapStateToProps)(ProgressIndicator);

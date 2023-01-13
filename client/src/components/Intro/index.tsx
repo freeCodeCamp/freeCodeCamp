@@ -77,7 +77,10 @@ const Intro = ({
         ) : (
           ''
         )}
-        <ProgressIndicator completedChallengeCount={completedChallengeCount} />
+        <ProgressIndicator
+          completedChallengeCount={completedChallengeCount}
+          username={'developmentuser'}
+        />
       </>
     );
   } else {
