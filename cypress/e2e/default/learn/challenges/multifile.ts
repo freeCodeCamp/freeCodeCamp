@@ -4,7 +4,7 @@ const location =
 const selectors = {
   monacoTabs: '.monaco-editor-tabs',
   signInButton: '#action-buttons-container a[href$="/signin"]',
-  lowerJawButton: '[data-cy=lower-jaw-button]',
+  lowerJawButton: '[data-cy=lowerJaw-button]',
   resetCodeButton: '[data-cy=reset-code-button]',
   instructionContainer: '.action-row-container'
 };
