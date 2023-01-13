@@ -2,6 +2,18 @@ import React from 'react';
 import { Button } from '@freecodecamp/react-bootstrap';
 import { apiLocation } from '../../../../../config/env.json';
 
+interface ButtonProps {
+  signed: boolean;
+  completeChallenge: boolean;
+  signInText: string;
+  buttonAriaHidden: boolean;
+  excuteChallenge: () => void;
+  submitChallenge: () => void;
+  checkButtonText: string;
+  submitButtonText: string;
+  ref: React.RefObject<HTMLButtonElement>;
+}
+
 export const RenderButtons = ({
   signed,
   completeChallenge,
@@ -12,17 +24,7 @@ export const RenderButtons = ({
   checkButtonText,
   submitButtonText,
   ref
-}: {
-  signed: boolean;
-  completeChallenge: boolean;
-  signInText: string;
-  buttonAriaHidden: boolean;
-  excuteChallenge: () => void;
-  submitChallenge: () => void;
-  checkButtonText: string;
-  submitButtonText: string;
-  ref: React.RefObject<HTMLButtonElement>;
-}): JSX.Element => {
+}: ButtonProps) => {
   return (
     <div id='action-buttons-container'>
       {!signed && completeChallenge && (

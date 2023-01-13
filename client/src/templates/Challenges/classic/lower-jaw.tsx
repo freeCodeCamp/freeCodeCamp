@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RenderButtons } from '../components/lower-jaw-button';
+import { RenderContextualActionRow } from '../components/lower-jaw-icons';
 
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
-import Help from '../../../assets/icons/help';
-import Reset from '../../../assets/icons/reset';
 
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
@@ -177,42 +176,10 @@ const LowerJaw = ({
     return sentenceArray[currentAttempts % sentenceArray.length];
   };
 
-  const renderContextualActionRow = () => {
-    const isAttemptsLargerThanTest =
-      currentAttempts &&
-      testsLength &&
-      (currentAttempts >= testsLength || currentAttempts >= 3);
-
-    return (
-      <div>
-        <hr />
-        <div className='lower-jaw-icon-bar'>
-          <button
-            className='btn fade-in'
-            title={t('buttons.reset-code')}
-            aria-label={t('buttons.reset-code')}
-            data-cy='reset-code-button'
-            onClick={openResetModal}
-          >
-            <Reset />
-          </button>
-
-          {isAttemptsLargerThanTest && !challengeIsCompleted ? (
-            <button
-              className='btn fade-in'
-              id='get-help-button'
-              title={t('buttons.get-help')}
-              aria-label={t('buttons.get-help')}
-              data-cy='get-help-button'
-              onClick={openHelpModal}
-            >
-              <Help />
-            </button>
-          ) : null}
-        </div>
-      </div>
-    );
-  };
+  const isAttemptsLargerThanTest =
+    currentAttempts &&
+    testsLength &&
+    (currentAttempts >= testsLength || currentAttempts >= 3);
 
   const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;
 
@@ -242,7 +209,15 @@ const LowerJaw = ({
       >
         {renderTestFeedbackContainer()}
       </div>
-      {renderContextualActionRow()}
+      <RenderContextualActionRow
+        resetButtonName={t('buttons.reset-code')}
+        resetButtonEvent={openResetModal}
+        hideHelpButton={Boolean(
+          isAttemptsLargerThanTest && !challengeIsCompleted
+        )}
+        helpButtonName={t('buttons.get-help')}
+        helpButtonEvent={openHelpModal}
+      />
     </div>
   );
 };
