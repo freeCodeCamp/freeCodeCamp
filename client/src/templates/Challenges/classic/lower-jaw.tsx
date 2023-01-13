@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RenderButtons } from '../components/lower-jaw-button';
 import { RenderContextualActionRow } from '../components/lower-jaw-icons';
-
-import Fail from '../../../assets/icons/fail';
-import LightBulb from '../../../assets/icons/lightbulb';
-import GreenPass from '../../../assets/icons/green-pass';
+import { RenderTestHint } from '../components/lower-jaws-hint';
+import { RenderTestStatus } from '../components/lower-jaws-status';
 
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
@@ -101,70 +99,7 @@ const LowerJaw = ({
     updateContainer();
   });
 
-  const renderTestFeedbackContainer = () => {
-    if (runningTests) {
-      return <span className='sr-only'>{t('aria.running-tests')}</span>;
-    } else if (challengeIsCompleted) {
-      const submitKeyboardInstructions = isEditorInFocus ? (
-        <span className='sr-only'>{t('aria.submit')}</span>
-      ) : (
-        ''
-      );
-      return (
-        <div className='test-status fade-in' aria-hidden={isFeedbackHidden}>
-          <div className='status-icon' aria-hidden='true'>
-            <span>
-              <GreenPass />
-            </span>
-          </div>
-          <div className='test-status-description'>
-            <h2>{t('learn.test')}</h2>
-            <p className='status'>
-              {t('learn.congratulations')}
-              {submitKeyboardInstructions}
-            </p>
-          </div>
-        </div>
-      );
-    } else if (hintRef.current) {
-      const hintDescription = `<h2 class="hint">${t('learn.hint')}</h2> ${
-        hintRef.current
-      }`;
-      return (
-        <>
-          <div
-            data-cy='failing-test-feedback'
-            className='test-status fade-in'
-            aria-hidden={isFeedbackHidden}
-          >
-            <div className='status-icon' aria-hidden='true'>
-              <span>
-                <Fail />
-              </span>
-            </div>
-            <div className='test-status-description'>
-              <h2>{t('learn.test')}</h2>
-              <p>{t(sentencePicker())}</p>
-            </div>
-          </div>
-          <div className='hint-status fade-in' aria-hidden={isFeedbackHidden}>
-            <div className='hint-icon' aria-hidden='true'>
-              <span>
-                <LightBulb />
-              </span>
-            </div>
-            <div
-              className='hint-description'
-              dangerouslySetInnerHTML={{ __html: hintDescription }}
-            />
-          </div>
-        </>
-      );
-    } else {
-      return null;
-    }
-  };
-
+  const currentText = `<h2 className="hint">{t('learn.hint')}</h2> ${hintRef.current}`;
   const sentencePicker = () => {
     const sentenceArray = [
       'learn.sorry-try-again',
@@ -187,6 +122,8 @@ const LowerJaw = ({
     ? t('buttons.check-code')
     : t('buttons.check-code-2');
 
+  const runningChallenge = challengeIsCompleted && isEditorInFocus;
+
   return (
     <div className='action-row-container'>
       <RenderButtons
@@ -207,7 +144,28 @@ const LowerJaw = ({
         aria-live='assertive'
         ref={testFeedbackRef}
       >
-        {renderTestFeedbackContainer()}
+        {runningTests && (
+          <span className='sr-only'>{t('aria.running-tests')}</span>
+        )}
+        {challengeIsCompleted && (
+          <RenderTestStatus
+            testText={t('learn.test')}
+            showFeedback={isFeedbackHidden}
+            congratulationText={t('learn.congratulations')}
+          >
+            {runningChallenge && (
+              <span className='sr-only'>{t('testScreenReaderText')}</span>
+            )}
+          </RenderTestStatus>
+        )}
+        {hintRef.current && (
+          <RenderTestHint
+            showFeedback={isFeedbackHidden}
+            testText={t('learn.test')}
+            htmlDescription={currentText}
+            learnEncouragementText={t(sentencePicker())}
+          />
+        )}
       </div>
       <RenderContextualActionRow
         resetButtonName={t('buttons.reset-code')}
