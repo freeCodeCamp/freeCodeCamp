@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { createRef, useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LowerJawButtons } from '../components/lower-jaw-button';
 import { LowerJawContext } from '../components/lower-jaw-icons';
@@ -34,13 +34,29 @@ const LowerJaw = ({
   isSignedIn,
   updateContainer
 }: LowerJawProps): JSX.Element => {
-  const hintRef = React.useRef('');
+  const hintRef = useRef('');
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
   const { t } = useTranslation();
-  const testFeedbackRef = React.createRef<HTMLDivElement>();
+  const submitButtonRef = createRef<HTMLButtonElement>();
+  const testFeedbackRef = createRef<HTMLDivElement>();
+
+  //attempt to set focus
+  useEffect(() => {
+    submitButtonRef?.current?.focus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [challengeIsCompleted]);
+  // attempt to set focus
+  const test = () => {
+    submitButtonRef?.current?.focus();
+
+    if (challengeIsCompleted) {
+      tryToSubmitChallenge;
+    }
+    tryToExecuteChallenge;
+  };
 
   useEffect(() => {
     // prevent unnecessary updates:
@@ -106,18 +122,19 @@ const LowerJaw = ({
     ? t('buttons.check-code')
     : t('buttons.check-code-2');
 
-  const runningChallenge = challengeIsCompleted && isEditorInFocus;
+  const showScreenReadSubmit = challengeIsCompleted && isEditorInFocus;
 
   return (
     <div className='action-row-container'>
       <LowerJawButtons
         signed={isSignedIn}
-        completeChallenge={challengeIsCompleted}
+        challengeIsCompleted={challengeIsCompleted}
+        buttonText={
+          challengeIsCompleted ? t('buttons.submit-and-go') : checkButton
+        }
+        onClick={test}
         signInText={t('learn.sign-in-save')}
-        excuteChallenge={tryToExecuteChallenge}
-        checkButtonText={checkButton}
-        submitChallenge={tryToSubmitChallenge}
-        submitButtonText={t('buttons.submit-and-go')}
+        ref={submitButtonRef}
       />
       <div
         style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
@@ -135,8 +152,8 @@ const LowerJaw = ({
             showFeedback={isFeedbackHidden}
             congratulationText={t('learn.congratulations')}
           >
-            {runningChallenge && (
-              <span className='sr-only'>{t('testScreenReaderText')}</span>
+            {showScreenReadSubmit && (
+              <span className='sr-only'>{t('aria.submit')}</span>
             )}
           </LowerJawStatus>
         )}

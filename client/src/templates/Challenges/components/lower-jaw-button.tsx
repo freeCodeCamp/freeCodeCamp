@@ -4,26 +4,24 @@ import { apiLocation } from '../../../../../config/env.json';
 
 interface LowerJawButtonProps {
   signed: boolean;
-  completeChallenge: boolean;
+  buttonText: string;
   signInText: string;
-  excuteChallenge: () => void;
-  submitChallenge: () => void;
-  checkButtonText: string;
-  submitButtonText: string;
+  onClick: () => void;
+  challengeIsCompleted: boolean;
+  ref: React.RefObject<HTMLButtonElement>;
 }
 
 export const LowerJawButtons = ({
   signed,
-  completeChallenge,
+  challengeIsCompleted,
+  buttonText,
   signInText,
-  excuteChallenge,
-  submitChallenge,
-  checkButtonText,
-  submitButtonText
+  onClick,
+  ref
 }: LowerJawButtonProps) => {
   return (
     <div id='action-buttons-container'>
-      {!signed && completeChallenge && (
+      {!signed && challengeIsCompleted && (
         <Button block={true} href={`${apiLocation}/signin`} className='btn-cta'>
           {signInText}
         </Button>
@@ -32,9 +30,10 @@ export const LowerJawButtons = ({
         className={'btn-block btn'}
         id='lowerJaw-button'
         data-cy='lowerJaw-button'
-        onClick={completeChallenge ? submitChallenge : excuteChallenge}
+        onClick={onClick}
+        ref={ref}
       >
-        {completeChallenge ? submitButtonText : checkButtonText}
+        {buttonText}
       </button>
     </div>
   );
