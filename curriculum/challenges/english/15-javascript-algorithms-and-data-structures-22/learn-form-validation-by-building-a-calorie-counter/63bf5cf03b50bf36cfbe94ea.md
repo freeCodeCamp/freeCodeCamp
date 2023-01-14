@@ -7,7 +7,7 @@ dashedName: step-37
 
 # --description--
 
-<!--Next is the addEntry function pls-->
+Your next step is to allow users to add entries to the calorie counter. Declare an empty function `addEntry`. This function should not take any parameters.
 
 # --hints--
 
