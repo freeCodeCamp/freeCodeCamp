@@ -40,7 +40,7 @@ describe('Learn Landing page (not logged in)', () => {
 
   it('Should render a curriculum map', () => {
     cy.document().then(document => {
-      const superBlocks = document.querySelectorAll(
+      const superBlocks = document.querySelectorAll<HTMLElement>(
         `${selectors.challengeMap} > li > a`
       );
       expect(superBlocks).to.have.length(13);
@@ -81,3 +81,5 @@ describe('Superblocks and Blocks', () => {
     });
   });
 });
+
+export {};
