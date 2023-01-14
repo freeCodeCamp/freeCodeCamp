@@ -55,7 +55,7 @@
     "create:utils": "tsc -p utils",
     "precypress": "node ./cypress-install.js",
     "cypress": "cypress",
-    "cypress:dev:run": "npm run cypress -- run --spec cypress/e2e/default/learn/index.ts",
+    "cypress:dev:run": "npm run cypress -- run --spec cypress/e2e/default/**/*.js",
     "cypress:dev:watch": "npm run cypress -- open",
     "cypress:prd:run": "npm run cypress -- run --spec cypress/e2e/default/**/*.js",
     "cypress:prd:watch": "npm run cypress -- open",
