@@ -42,7 +42,7 @@ delete ourDog.bark;
 
 # --instructions--
 
-احذف خاصية `tails` من `myDog`. يمكنك استخدام النقطة (dot) أو الأقواس المربعة (bracket notation).
+احذف خاصية `tails` من `myDog`. يمكنك استخدام النقطة (dot) أو علامات الأقواس (bracket notation).
 
 # --hints--
 

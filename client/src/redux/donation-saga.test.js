@@ -22,13 +22,10 @@ const postChargeDataMock = {
 };
 
 const analyticsDataMock = {
-  type: 'event',
-  data: {
-    category: 'Donation',
-    action: 'Donate Page Stripe Payment Submission',
-    label: 'monthly',
-    value: '500'
-  }
+  event: 'donation',
+  action: 'Donate Page Stripe Payment Submission',
+  duration: 'monthly',
+  amount: '500'
 };
 
 describe('donation-saga', () => {
@@ -48,7 +45,7 @@ describe('donation-saga', () => {
     };
 
     const stripeCardAnalyticsDataMock = analyticsDataMock;
-    stripeCardAnalyticsDataMock.data.action =
+    stripeCardAnalyticsDataMock.action =
       'Donate Page Stripe Card Payment Submission';
 
     const { paymentMethodId, amount, duration } = stripeCardDataMock.payload;
@@ -68,8 +65,7 @@ describe('donation-saga', () => {
     };
 
     const paypalAnalyticsDataMock = analyticsDataMock;
-    paypalAnalyticsDataMock.data.action =
-      'Donate Page Paypal Payment Submission';
+    paypalAnalyticsDataMock.action = 'Donate Page Paypal Payment Submission';
 
     const storeMock = {
       app: {
@@ -94,8 +90,7 @@ describe('donation-saga', () => {
     };
 
     const paypalAnalyticsDataMock = analyticsDataMock;
-    paypalAnalyticsDataMock.data.action =
-      'Donate Page Paypal Payment Submission';
+    paypalAnalyticsDataMock.action = 'Donate Page Paypal Payment Submission';
 
     const storeMock = {
       app: {}
@@ -117,9 +112,8 @@ describe('donation-saga', () => {
     };
 
     const patreonAnalyticsDataMock = analyticsDataMock;
-    patreonAnalyticsDataMock.data.action =
-      'Donate Page Patreon Payment Redirection';
-    patreonAnalyticsDataMock.data.category = 'Donation Related';
+    patreonAnalyticsDataMock.action = 'Donate Page Patreon Payment Redirection';
+    patreonAnalyticsDataMock.event = 'donationrelated';
     return expectSaga(postChargeSaga, patreonDataMock)
       .not.call.fn(addDonation)
       .not.call.fn(postChargeStripeCard)

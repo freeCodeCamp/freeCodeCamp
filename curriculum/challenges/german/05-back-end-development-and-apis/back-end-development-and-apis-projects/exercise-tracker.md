@@ -20,7 +20,7 @@ Wenn du Replit verwendest, dann folge diesen Schritten, um das Projekt einzurich
 -   Daraufhin wird ein `.replit`-Fenster angezeigt.
 -   Wähle `Use run command` aus und klicke die `Done`-Schaltfläche.
 
-Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Gib anschließend die URL in das `Solution Link`-Feld ein. Optional kannst du auch einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld eingeben.
+Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --instructions--
 
@@ -411,7 +411,7 @@ Die `description`-Eigenschaft eines beliebigen Objekts im `log` Array, das von `
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -458,7 +458,7 @@ Die `duration`-Eigenschaft eines beliebigen Objekts im `log`-Array, das von `GET
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -505,7 +505,7 @@ Die `date`-Eigenschaft eines beliebigen Objekts im `log`-Array, das von `GET /ap
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',

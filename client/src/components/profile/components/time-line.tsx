@@ -103,12 +103,15 @@ function TimelineInner({
   function renderViewButton(
     completedChallenge: CompletedChallenge
   ): React.ReactNode {
+    const { id } = completedChallenge;
+    const projectTitle = idToNameMap.get(id)?.challengeTitle || '';
     return (
       <SolutionDisplayWidget
         completedChallenge={completedChallenge}
+        projectTitle={projectTitle}
         showUserCode={() => viewSolution(completedChallenge)}
         showProjectPreview={() => viewProject(completedChallenge)}
-        displayContext={'timeline'}
+        displayContext='timeline'
       ></SolutionDisplayWidget>
     );
   }

@@ -22,7 +22,7 @@ dashedName: anonymous-message-board
 -   接着，你將看到一個 `.replit` 窗口。
 -   選擇 `Use run command` 並點擊 `Done` 按鈕。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後將 URL 提交到 `Solution Link` 中。 此外，將項目的源碼鏈接提交到 `GitHub Link` 字段中。
+完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --instructions--
 

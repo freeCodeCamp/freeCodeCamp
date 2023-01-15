@@ -20,7 +20,7 @@ Si usas Replit, sigue estos pasos para configurar el proyecto:
 -   Siguiente, verás una ventana `.replit`.
 -   Selecciona `Use run command` y click en el botón `Done`.
 
-Cuando este hecho, asegurate que una demo de trabajo de tu proyecto este hospedad en algún sitio público. Luego envía la URL para esto en el campo `Solution Link`. Opcionalmente, también envía un enlace para el código fuente de tu proyecto en el campo `GitHub Link`.
+Cuando este hecho, asegurate que una demo de trabajo de tu proyecto este hospedad en algún sitio público. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --instructions--
 

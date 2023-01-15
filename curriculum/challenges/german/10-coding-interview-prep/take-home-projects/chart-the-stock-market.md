@@ -20,7 +20,7 @@ Here are the specific user stories you should implement for this project:
 
 **User Story:** You can see changes in real-time when any other user adds or removes a stock. For this you will need to use Web Sockets.
 
-Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Gib dann die URL in das `Solution Link`-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das `GitHub Link`-Feld ein.
+Wenn du fertig bist, stelle sicher, dass dein Projekt öffentlich zugänglich gehostet ist. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --solutions--
 

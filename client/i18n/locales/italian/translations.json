@@ -11,6 +11,7 @@
     "view": "Visualizza",
     "view-code": "Visualizza il Codice",
     "view-project": "Visualizza il Progetto",
+    "view-cert-title": "Visualizza {{certTitle}}",
     "show-cert": "Mostra la Certificazione",
     "claim-cert": "Richiedi la Certificazione",
     "save-progress": "Salva l'avanzamento",
@@ -80,7 +81,7 @@
     "big-heading-1": "Impara a programmare — gratis.",
     "big-heading-2": "Costruisci progetti.",
     "big-heading-3": "Ottieni certificazioni.",
-    "h2-heading": "Dal 2014, più di 40.000 laureati di freeCodeCamp.org hanno ottenuto posti di lavoro presso aziende tecnologiche, tra cui:",
+    "h2-heading": "Dal 2014, più di 40.000 studenti di freeCodeCamp.org hanno ottenuto posti di lavoro presso aziende tecnologiche, tra cui:",
     "hero-img-description": "Studenti di un gruppo di studio locale di freeCodeCamp in Corea del Sud.",
     "as-seen-in": "Hanno parlato di noi:",
     "testimonials": {
@@ -339,6 +340,7 @@
     "title": "Supporta il nostro ente",
     "processing": "Stiamo elaborando la tua donazione.",
     "redirecting": "Reindirizzamento...",
+    "thanks": "Grazie per la donazione",
     "thank-you": "Grazie per essere un sostenitore.",
     "additional": "Puoi effettuare una donazione una tantum aggiuntiva di qualsiasi importo utilizzando questo link: <0>{{url}}</0>",
     "help-more": "Aiutaci a fare di più",
@@ -462,7 +464,8 @@
     "iframe-preview": "Anteprima {{title}}",
     "iframe-alert": "Solitamente questo link ti porterebbe su un altro sito web! Funziona. Questo è un link per {{externalLink}}",
     "iframe-form-submit-alert": "Normalmente questo modulo sarebbe stato inviato! Funziona. Sarà inviato a: {{externalLink}}",
-    "document-notfound": "documento non trovato"
+    "document-notfound": "documento non trovato",
+    "slow-load-msg": "Sembra che sia necessario più tempo del solito, per favore prova ad aggiornare la pagina."
   },
   "icons": {
     "gold-cup": "Coppa d'Oro",
@@ -507,7 +510,8 @@
     "step": "Step",
     "steps": "Step",
     "steps-for": "Step per {{blockTitle}}",
-    "code-example": "{{codeName}} esempio di codice"
+    "code-example": "{{codeName}} esempio di codice",
+    "opens-new-window": "Apri in una nuova finestra"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",

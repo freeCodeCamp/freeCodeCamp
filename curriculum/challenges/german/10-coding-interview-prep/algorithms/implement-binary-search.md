@@ -10,9 +10,10 @@ dashedName: implement-binary-search
 
 Die binäre Suche ist ein **O(log(n))** Effizienz-Algorithmus zum Finden eines Elements innerhalb eines sortierten Arrays. Dieser funktioniert auf folgende Weise:
 
-1. Finde die mittlere `value` des sortierten Arrays. Falls `value == target`, gebe den Wert zurück (gefunden!).
+1. Finde die mittlere `value` des sortierten Arrays. If `value == target` return `true` (The value has been found and the search is complete).
 1. Falls die mittlere `value < target`, durchsuche im nächsten Schritt nur die rechte Hälfte des Arrays.
 1. Falls die mittlere `value > target`, durchsuche im nächsten Schritt nur die linke Hälfte des Arrays.
+1. If after searching the whole array the value is not present, return `false` (The array has been searched and the value is not in the array).
 
 Wie du siehst, halbierst du so erfolgreich einen Array mit einer Effizienz von log(n). Für diese Herausforderung wollen wir, dass du zeigst, wie du arbeitest – wie du zum Zielwert gelangt bist... welchen Weg du eingeschlagen hast!
 
@@ -20,7 +21,7 @@ Wie du siehst, halbierst du so erfolgreich einen Array mit einer Effizienz von l
 
 Schreibe die Funktion `binarySearch`, welche einen binären Suchalgorithmus für einen Array implementiert – dieser soll dann einen Array mit dem von dir verwendeten Weg (jeder Mittelwertvergleich), um den Zielwert im Array zu finden, zurückgeben.
 
-Der Funktion wird ein sortierter Array mit Integern sowie ein Zielwert übergeben. Es wird ein Array zurückgegeben, das (in Reihenfolge) den mittleren Wert enthält, den du bei jeder Halbierung des ursprünglichen Arrays gefunden hast, bis du den Zielwert gefunden hast. Der Zielwert sollte das letzte Element des zurückgegebenen Arrays sein. Falls der Zielwert nicht gefunden wurde, gib den String `Value Not Found` zurück.
+Der Funktion wird ein sortierter Array mit Integern sowie ein Zielwert übergeben. Es wird ein Array zurückgegeben, das (in Reihenfolge) den mittleren Wert enthält, den du bei jeder Halbierung des ursprünglichen Arrays gefunden hast, bis du den Zielwert gefunden hast. Der Zielwert sollte das letzte Element des zurückgegebenen Arrays sein. If the value is not found, return the string `Value Not Found`.
 
 Beispielsweise sollte `binarySearch([1,2,3,4,5,6,7], 5)` den Array `[4,6,5]` zurückgeben.
 

@@ -553,7 +553,7 @@
     "intro": [
       "在這之前，你只是在前端使用 JavaScript 來給頁面添加交互、解決算法挑戰，或構建一個 SPA（單頁應用程序）。但 JavaScript 也可以用於後端或者服務器來構建整個 web 應用程序。",
       "今天，構建應用軟件的廣受歡迎的方法之一是微服務，這些微服務是一種小型模塊化的應用，能夠共同形成一個更大的整體。",
-      "在後端開發和 APIs 認證中，你將學習如何使用 Node.js 和 npm（Node 包管理工具）來寫後端。你還將使用 Express 框架構建 web 應用程序，並使用 MongoDB 和 Mongoose 庫構建一個 People Finder 微服務。"
+      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {

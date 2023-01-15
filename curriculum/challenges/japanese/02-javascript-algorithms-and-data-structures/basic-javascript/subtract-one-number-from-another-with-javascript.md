@@ -26,13 +26,13 @@ const myVar = 12 - 6;
 
 # --hints--
 
-変数 `difference` は 12 に等しくなる必要があります。
+The variable `difference` should be equal to `12`.
 
 ```js
 assert(difference === 12);
 ```
 
-45 から 1 つの数値だけを引いてください。
+You should only subtract one number from `45`.
 
 ```js
 assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));

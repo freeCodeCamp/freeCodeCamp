@@ -11,6 +11,7 @@
     "view": "Visualizar",
     "view-code": "Ver código",
     "view-project": "Ver o projeto",
+    "view-cert-title": "Ver {{certTitle}}",
     "show-cert": "Exibir certificado",
     "claim-cert": "Solicitar certificação",
     "save-progress": "Salvar progresso",
@@ -339,6 +340,7 @@
     "title": "Ajude nossa instituição",
     "processing": "Estamos processando a sua doação.",
     "redirecting": "Redirecionando...",
+    "thanks": "Agradecemos por sua doação",
     "thank-you": "Obrigado pelo seu apoio.",
     "additional": "Você pode fazer uma doação adicional de qualquer valor usando este link: <0>{{url}}</0>",
     "help-more": "Ajude-nos a fazer mais",
@@ -462,7 +464,8 @@
     "iframe-preview": "Visualização de {{title}}",
     "iframe-alert": "Normalmente, este link levaria você para outro site da web! Funciona. Esse é um link para: {{externalLink}}",
     "iframe-form-submit-alert": "Normalmente, esse formulário seria enviado! Funciona. Ele será enviado para: {{externalLink}}",
-    "document-notfound": "documento não encontrado"
+    "document-notfound": "documento não encontrado",
+    "slow-load-msg": "Parece que está demorando mais do que o normal. Tente atualizar a página."
   },
   "icons": {
     "gold-cup": "Taça de ouro",
@@ -507,7 +510,8 @@
     "step": "Passo",
     "steps": "Passos",
     "steps-for": "Passos para {{blockTitle}}",
-    "code-example": "Exemplo de código de {{codeName}}"
+    "code-example": "Exemplo de código de {{codeName}}",
+    "opens-new-window": "Abre em uma nova janela"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",

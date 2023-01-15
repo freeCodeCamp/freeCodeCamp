@@ -22,7 +22,7 @@ dashedName: build-a-nightlife-coordination-app
 
 **Hint:** Try using the Yelp API to find venues in the cities your users search for. Якщо ви використовуєте Yelp API, не забудьте вказати це у вашому додатку.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту у поле `Solution Link`. За бажанням введіть посилання на початковий код проєкту в полі `GitHub Link`.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --solutions--
 

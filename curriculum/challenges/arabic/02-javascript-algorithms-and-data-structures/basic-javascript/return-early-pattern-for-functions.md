@@ -29,7 +29,7 @@ myFun();
 عدّل الوظيفة `abTest` بحيث إذا كان `a` أو `b` أقل من `0` ستنتج الوظيفة قيمة `undefined` فوراً.
 
 **تلميح**  
-تذكر أن <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow">تكون <code>undefined</code> كلمة</a> وليست مقتطع.
+تذكر أن <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow">تكون <code>undefined</code> مصطلح </a> وليست مقطع نصي.
 
 # --hints--
 

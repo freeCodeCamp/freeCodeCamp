@@ -1,6 +1,6 @@
 ---
 id: 56592a60ddddeae28f7aa8e1
-title: الوصول إلى القائمات المتعددة الأبعاد باستخدام الترتيب (Access Multi-Dimensional Arrays With Indexes)
+title: الوصول إلى القائمات المتعددة الأبعاد باستخدام الترتيب
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckND4Cq'
 forumTopicId: 16159
@@ -32,7 +32,7 @@ const element = arr[3][0][1];
 
 # --instructions--
 
-باستخدام bracket notation، اختر عنصرا من `myArray` بحيث أن `myData` يساوي `8`.
+اختر عنصرا من `myArray` باستخدام علامات الأقواس بحيث أن `myData` يساوي `8`.
 
 # --hints--
 
@@ -42,7 +42,7 @@ const element = arr[3][0][1];
 assert(myData === 8);
 ```
 
-يجب أن تستخدم bracket notation لقراءة القيمة الصحيحة من `myArray`.
+يجب أن تستخدم علامات الأقواس لقراءة القيمة الصحيحة من `myArray`.
 
 ```js
 assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(code)));

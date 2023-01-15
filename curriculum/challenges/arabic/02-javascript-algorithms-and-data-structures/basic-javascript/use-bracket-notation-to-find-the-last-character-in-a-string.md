@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c451eddfaeb5bdef
-title: استخدم رمز آلأقواس (Bracket Notation) للعثور على آخر حرف في سلسلة (String)
+title: استخدم علامات الأقواس (Bracket Notation) للعثور على آخر حرف في مقطع نصي (String)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQGcv'
 forumTopicId: 18342
@@ -24,7 +24,7 @@ const lastLetter = firstName[firstName.length - 1];
 
 # --instructions--
 
-استخدم <dfn>رمز الأقواس</dfn> للعثور على الحرف الأخير في المتغير `lastName`.
+استخدم <dfn>علامات الأقواس</dfn> للعثور على الحرف الأخير في المتغير `lastName`.
 
 **تلميح:** حاول النظر إلى المثال أعلاه إذا كنت عالق.
 

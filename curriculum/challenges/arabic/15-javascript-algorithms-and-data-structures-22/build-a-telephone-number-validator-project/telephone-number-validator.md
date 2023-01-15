@@ -1,6 +1,6 @@
 ---
 id: aff0395860f5d3034dc0bfc9
-title: Build a Telephone Number Validator
+title: بناء مدقق الأرقام الهواتف
 challengeType: 5
 forumTopicId: 16090
 dashedName: build-a-telephone-number-validator

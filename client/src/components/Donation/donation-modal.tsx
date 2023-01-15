@@ -66,16 +66,12 @@ function DonateModal({
   useEffect(() => {
     if (show) {
       void playTone('donation');
-      executeGA({ type: 'modal', data: '/donation-modal' });
+      executeGA({ event: 'pageview', pagePath: '/donation-modal' });
       executeGA({
-        type: 'event',
-        data: {
-          category: 'Donation View',
-          action: `Displayed ${
-            recentlyClaimedBlock ? 'block' : 'progress'
-          } donation modal`,
-          nonInteraction: true
-        }
+        event: 'donationview',
+        action: `Displayed ${
+          recentlyClaimedBlock ? 'Block' : 'Progress'
+        } Donation Modal`
       });
     }
   }, [show, recentlyClaimedBlock, executeGA]);

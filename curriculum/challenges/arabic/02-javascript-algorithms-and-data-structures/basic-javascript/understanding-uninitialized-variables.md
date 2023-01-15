@@ -9,7 +9,7 @@ dashedName: understanding-uninitialized-variables
 
 # --description--
 
-عند الإعلان المتغيرات في JavaScript، يكون لها قيمة أولية وهي `undefined`. إذا قمت بعملية رياضية على متغير `undefined` ستكون نتيجتك `NaN` مما يعني <dfn>"Not a Number"</dfn> إي "ليس رقما". إذا ربط مقطع مع متغير `undefined`، فستحصل على <dfn>مقطع</dfn> بقيمة `undefined`.
+عند الإعلان المتغيرات في JavaScript، يكون لها قيمة أولية وهي `undefined`. إذا قمت بعملية رياضية على متغير `undefined` ستكون نتيجتك `NaN` مما يعني <dfn>"Not a Number"</dfn> إي "ليس رقما". إذا ربط مقطع نصي مع متغير `undefined`، فستحصل على <dfn>مقطع نصي</dfn> بقيمة `undefined`.
 
 # --instructions--
 

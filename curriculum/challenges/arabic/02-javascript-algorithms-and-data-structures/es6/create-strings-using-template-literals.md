@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-وينبغي استخدام Template strings و expression interpolation.
+وينبغي استخدام template strings و expression interpolation.
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
