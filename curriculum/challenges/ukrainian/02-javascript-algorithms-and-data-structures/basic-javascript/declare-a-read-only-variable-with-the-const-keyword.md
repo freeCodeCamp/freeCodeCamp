@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b41
-title: Оголосіть змінну, доступну лише для читання, з ключовим словом Const
+title: Оголошення змінної для читання з ключовим словом const
 challengeType: 1
 forumTopicId: 301201
 dashedName: declare-a-read-only-variable-with-the-const-keyword
@@ -10,57 +10,57 @@ dashedName: declare-a-read-only-variable-with-the-const-keyword
 
 Ключове слово `let` є не єдиним новим способом оголосити змінну. В ES6 можливо також оголосити змінні, використовуючи ключове слово `const`.
 
-У `const` є ті ж круті функції, що й в `let` з приємним бонусом — тепер змінні, оголошені за допомогою `const`, доступні лише для читання. Вони мають константне значення. Тобто, як тільки змінна стає призначеною `const`, її вже неможливо призначити знову:
+`const` має ті ж круті функції, що й `let`, але з бонусом: тепер змінні, оголошені за допомогою `const`, доступні лише для читання. Вони мають константне значення, тобто після присвоєння змінної з `const`, її неможливо присвоїти знову:
 
 ```js
 const FAV_PET = "Cats";
 FAV_PET = "Dogs";
 ```
 
-Консоль показуватиме помилку через перепризначення значення `FAV_PET`.
+Консоль показуватиме помилку через повторне присвоєння значення `FAV_PET`.
 
-Змінні, які не передбачають перепризначення, слід називати, використовуючи ключове слово `const`. Це може знадобитися, якщо ви випадково спробуєте перепризначити змінну, яка повинна бути константною.
+Змінні, які не передбачають повторного присвоєння, потрібно називати, використовуючи ключове слово `const`. Це може знадобитися, якщо ви випадково спробуєте повторно присвоїти змінну, яка повинна залишатись константною.
 
-**Note:** It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays). You will learn more about objects, arrays, and immutable and mutable values in later challenges. Also in later challenges, you will see examples of uppercase, lowercase, or camelCase variable identifiers.
+**Примітка:** зазвичай розробники використовують ідентифікатори змінних у верхньому регістрі для незмінних значень та у нижньому регістрі чи верблюдячомуРегістрі для змінних значень (об’єктів чи масивів). Ви дізнаєтесь більше про об’єкти, масиви, а також змінні та незмінні значення в наступних завданнях. Також ви побачите приклади ідентифікаторів змінних у верхньому регістрі, нижньому регістрі та верблюдячомуРегістрі.
 
 # --instructions--
 
-Change the code so that all variables are declared using `let` or `const`. Use `let` when you want the variable to change, and `const` when you want the variable to remain constant. Also, rename variables declared with `const` to conform to common practices. Do not change the strings assigned to the variables.
+Змініть код так, щоб усі змінні були оголошені за допомогою `let` або `const`. Використайте `let` для змінних значень, а `const` для незмінних значень. Крім того, перейменуйте змінні, оголошені за допомогою `const`, щоб відповідати загальним практикам. Не змінюйте рядки, які присвоєні змінним.
 
 # --hints--
 
-`var` should not exist in your code.
+`var` повинне бути відсутнім у коді.
 
 ```js
 assert.notMatch(code, /var/g);
 ```
 
-You should change `fCC` to all uppercase.
+Ви повинні змінити `fCC` на верхній регістр.
 
 ```js
 assert.match(code, /(FCC)/);
 assert.notMatch(code, /(fCC)/);
 ```
 
-`FCC` should be a constant variable declared with `const`.
+`FCC` повинна бути константною змінною, оголошеною з `const`.
 
 ```js
 assert.match(code, /const\s+FCC/);
 ```
 
-The string assigned to `FCC` should not be changed.
+Не потрібно змінювати рядок, присвоєний до `FCC`.
 
 ```js
 assert.equal(FCC, 'freeCodeCamp');
 ```
 
-`fact` should be declared with `let`.
+`fact` повинна бути оголошеною із `let`.
 
 ```js
 assert.match(code, /(let\s+fact)/g);
 ```
 
-`console.log` should be changed to print the `FCC` and `fact` variables.
+`console.log` потрібно змінити так, щоб виводились змінні `FCC` та `fact`.
 
 ```js
 assert.match(code, /console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g);

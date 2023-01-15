@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c2
-title: Повернути значення за допомогою функції повернення
+title: Повернення значення функції за допомогою return
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87wue'
 forumTopicId: 18271
@@ -9,9 +9,9 @@ dashedName: return-a-value-from-a-function-with-return
 
 # --description--
 
-Ми можемо передати значення у функцію за допомогою <dfn>аргументів</dfn>. Ви можете використати команду `return`, щоб надіслати значення назад за межі фунції.
+Ми можемо передати значення до функції за допомогою <dfn>аргументів</dfn>. Ви можете використати інструкцію `return`, щоб надіслати значення з фунції.
 
-**Наприклад**
+**Приклад**
 
 ```js
 function plusThree(num) {
@@ -31,25 +31,25 @@ const answer = plusThree(5);
 
 # --hints--
 
-`timesFive` має бути функцією
+`timesFive` повинна бути функцією
 
 ```js
 assert(typeof timesFive === 'function');
 ```
 
-`timesFive(5)` має повернутися до `25`
+`timesFive(5)` повинна повертати `25`
 
 ```js
 assert(timesFive(5) === 25);
 ```
 
-`timesFive(2)` має повернутися до `10`
+`timesFive(2)` повинна повертати `10`
 
 ```js
 assert(timesFive(2) === 10);
 ```
 
-`timesFive(0)` має повернутися до `0`
+`timesFive(0)` повинна повертати `0`
 
 ```js
 assert(timesFive(0) === 0);
