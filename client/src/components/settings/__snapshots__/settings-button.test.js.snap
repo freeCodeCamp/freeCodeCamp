@@ -1,23 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should check certification button consistency 1`] = `
-<section
-  className="certification-settings"
->
-  <div
-    className="row"
-  >
-    <div
-      className="col-sm-8 col-sm-offset-2 col-xs-12"
-    >
-      <h2
-        className="text-center"
-      >
-        settings.headings.certs
-      </h2>
-      <hr />
-    </div>
-  </div>
+Array [
   <div
     className="row"
   >
@@ -157,7 +141,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -200,7 +184,7 @@ exports[`should check certification button consistency 1`] = `
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker"
+                href="javascript"
               >
                 certification.project.title.Palindrome Checker
               </a>
@@ -216,7 +200,7 @@ exports[`should check certification button consistency 1`] = `
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter"
+                href="javascript"
               >
                 certification.project.title.Roman Numeral Converter
               </a>
@@ -232,7 +216,7 @@ exports[`should check certification button consistency 1`] = `
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher"
+                href="javascript"
               >
                 certification.project.title.Caesars Cipher
               </a>
@@ -248,7 +232,7 @@ exports[`should check certification button consistency 1`] = `
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator"
+                href="javascript"
               >
                 certification.project.title.Telephone Number Validator
               </a>
@@ -264,7 +248,7 @@ exports[`should check certification button consistency 1`] = `
               className="project-title col-sm-8 col-xs-8"
             >
               <a
-                href="/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register"
+                href="javascript"
               >
                 certification.project.title.Cash Register
               </a>
@@ -297,7 +281,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -437,7 +421,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -577,7 +561,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -717,7 +701,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -857,7 +841,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -997,7 +981,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -1137,7 +1121,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -1277,7 +1261,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -1417,7 +1401,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -1557,97 +1541,12 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
-  <div
-    className="row"
-  >
-    <div
-      className="col-sm-8 col-sm-offset-2 col-xs-12"
-    >
-      <h2
-        className="text-center"
-      >
-        settings.headings.legacy-certs
-      </h2>
-      <hr />
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    <div
-      className="col-sm-8 col-sm-offset-2 col-xs-12"
-    >
-      <div
-        className="spacer"
-        style={
-          Object {
-            "height": "1px",
-            "padding": "15px 0",
-          }
-        }
-      />
-      <h3
-        className="text-center"
-      >
-        certification.title.Legacy Full Stack Certification
-      </h3>
-      <div>
-        <p>
-          settings.claim-legacy
-        </p>
-        <ul>
-          <li>
-            certification.title.Responsive Web Design
-          </li>
-          <li>
-            certification.title.JavaScript Algorithms and Data Structures
-          </li>
-          <li>
-            certification.title.Front End Development Libraries
-          </li>
-          <li>
-            certification.title.Data Visualization
-          </li>
-          <li>
-            certification.title.Back End Development and APIs
-          </li>
-          <li>
-            certification.title.Legacy Information Security and Quality Assurance
-          </li>
-        </ul>
-      </div>
-      <div
-        className="col-xs-12"
-      >
-        <button
-          className="col-xs-12 btn btn-sm btn-primary"
-          disabled={true}
-          id="button-full-stack"
-          style={
-            Object {
-              "fontSize": "18px",
-              "marginBottom": "30px",
-              "padding": "6px 12px",
-            }
-          }
-          target="_blank"
-          type="button"
-        >
-          buttons.claim-cert
-        </button>
-      </div>
-      <div
-        className="spacer"
-        style={
-          Object {
-            "height": "1px",
-            "padding": "15px 0",
-          }
-        }
-      />
-    </div>
-  </div>
+  </div>,
+]
+`;
+
+exports[`should check legacy certification button consistency 1`] = `
+Array [
   <div
     className="row"
   >
@@ -1867,7 +1766,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -2087,7 +1986,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -2307,7 +2206,7 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </div>,
   <div
     className="row"
   >
@@ -2447,6 +2346,6 @@ exports[`should check certification button consistency 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
-</section>
+  </div>,
+]
 `;
