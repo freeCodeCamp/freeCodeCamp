@@ -2,10 +2,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import { createStore } from '../../../redux/createStore';
 import completedChallenges from '../../../__mocks__/completed-challenges.json';
-import TimelineInner from './time-line';
+import Timeline from './time-line';
 
 Date.prototype.toLocaleString = jest.fn(() => 'Dec 29, 2022');
 Date.prototype.toISOString = jest.fn(() => '2016-09-28T20:31:56.730Z');
@@ -48,18 +49,22 @@ jest.mock('gatsby', () => {
 });
 
 it('should check certification page consistency', () => {
-  const tree = renderer
-    .create(
+  const TimeLine = () => {
+    const { t } = useTranslation();
+
+    return (
       <Provider store={createStore()}>
-        <TimelineInner
+        <Timeline
           completedMap={completedChallenges}
           username='CeritifedUser'
           onPress={() => {}}
-          t={t => t}
+          t={t}
         />
       </Provider>
-    )
-    .toJSON();
+    );
+  };
+
+  const tree = renderer.create(<TimeLine />).toJSON();
 
   expect(tree).toMatchSnapshot();
 });

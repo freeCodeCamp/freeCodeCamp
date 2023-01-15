@@ -6,9 +6,9 @@ import {
 } from '../../resources/cert-and-project-map';
 import { CertificationSettings } from './certification';
 
-const certificationSettings = new CertificationSettings();
+const props = { t: val => val };
 
-certificationSettings.props = { t: t => t };
+const certificationSettings = new CertificationSettings(props);
 
 const { renderCertifications } = certificationSettings;
 

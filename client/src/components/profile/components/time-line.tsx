@@ -285,7 +285,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   /* eslint-enable */
 }
 
-const Timeline = (props: TimelineProps): JSX.Element => {
+export const Timeline = (props: TimelineProps): JSX.Element => {
   const { completedMap, t } = props;
   const idToNameMap = useIdToNameMap(t);
   // Get the sorted timeline along with total page count.
