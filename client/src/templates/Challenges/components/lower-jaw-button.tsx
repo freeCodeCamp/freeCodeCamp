@@ -20,7 +20,7 @@ export const LowerJawButtons = ({
   ref
 }: LowerJawButtonProps) => {
   return (
-    <div id='action-buttons-container'>
+    <>
       {!signed && challengeIsCompleted && (
         <Button block={true} href={`${apiLocation}/signin`} className='btn-cta'>
           {signInText}
@@ -28,13 +28,12 @@ export const LowerJawButtons = ({
       )}
       <button
         className={'btn-block btn'}
-        id='lowerJaw-button'
         data-cy='lowerJaw-button'
         onClick={onClick}
         ref={ref}
       >
         {buttonText}
       </button>
-    </div>
+    </>
   );
 };

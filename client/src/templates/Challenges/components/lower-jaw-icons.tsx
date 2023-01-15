@@ -18,7 +18,7 @@ export const LowerJawContext = ({
   helpButtonEvent
 }: LowerJawActionRow) => {
   return (
-    <div>
+    <>
       <hr />
       <div className='lower-jaw-icon-bar'>
         <button
@@ -44,6 +44,6 @@ export const LowerJawContext = ({
           </button>
         )}
       </div>
-    </div>
+    </>
   );
 };

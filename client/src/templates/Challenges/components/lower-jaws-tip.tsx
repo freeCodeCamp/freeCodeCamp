@@ -22,22 +22,12 @@ export const LowerJawTips = ({
         className='test-status fade-in'
         aria-hidden={showFeedback}
       >
-        <div className='status-icon' aria-hidden='true'>
-          <span>
-            <Fail />
-          </span>
-        </div>
-        <div className='test-status-description'>
-          <h2>{testText}</h2>
-          <p>{learnEncouragementText}</p>
-        </div>
+        <Fail aria-hidden='true' />
+        <h2>{testText}</h2>
+        <p>{learnEncouragementText}</p>
       </div>
       <div className='hint-status fade-in' aria-hidden={showFeedback}>
-        <div className='hint-icon' aria-hidden='true'>
-          <span>
-            <LightBulb />
-          </span>
-        </div>
+        <LightBulb aria-hidden='true' />
         <div
           className='hint-description'
           dangerouslySetInnerHTML={{ __html: htmlDescription }}

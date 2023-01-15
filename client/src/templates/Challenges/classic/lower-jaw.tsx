@@ -45,18 +45,12 @@ const LowerJaw = ({
 
   //attempt to set focus
   useEffect(() => {
-    submitButtonRef?.current?.focus();
+    // both attempts works but the issue is with submitButtonRef.current?.focus();
+    console.log('Something', submitButtonRef.current?.focus());
+    submitButtonRef.current?.focus();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeIsCompleted]);
-  // attempt to set focus
-  const test = () => {
-    submitButtonRef?.current?.focus();
-
-    if (challengeIsCompleted) {
-      tryToSubmitChallenge;
-    }
-    tryToExecuteChallenge;
-  };
 
   useEffect(() => {
     // prevent unnecessary updates:
@@ -132,14 +126,15 @@ const LowerJaw = ({
         buttonText={
           challengeIsCompleted ? t('buttons.submit-and-go') : checkButton
         }
-        onClick={test}
+        onClick={
+          challengeIsCompleted ? tryToSubmitChallenge : tryToExecuteChallenge
+        }
         signInText={t('learn.sign-in-save')}
         ref={submitButtonRef}
       />
       <div
         style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
         className={`test-feedback`}
-        id='test-feedback'
         aria-live='assertive'
         ref={testFeedbackRef}
       >
