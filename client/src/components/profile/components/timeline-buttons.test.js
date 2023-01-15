@@ -2,7 +2,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 
 import { createStore } from '../../../redux/createStore';
 import completedChallenges from '../../../__mocks__/completed-challenges.json';
@@ -49,22 +48,17 @@ jest.mock('gatsby', () => {
 });
 
 it('should check certification page consistency', () => {
-  const TimeLine = () => {
-    const { t } = useTranslation();
-
-    return (
+  const tree = renderer
+    .create(
       <Provider store={createStore()}>
         <Timeline
           completedMap={completedChallenges}
           username='CeritifedUser'
           onPress={() => {}}
-          t={t}
         />
       </Provider>
-    );
-  };
-
-  const tree = renderer.create(<TimeLine />).toJSON();
+    )
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });
