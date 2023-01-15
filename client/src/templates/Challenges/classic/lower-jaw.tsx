@@ -43,13 +43,6 @@ const LowerJaw = ({
   const { t } = useTranslation();
   const testFeedbackRef = createRef<HTMLDivElement>();
 
-  //attempt to set focus
-  useEffect(() => {
-    // both attempts works but the issue is with submitButtonRef.current?.focus();
-    console.log('Something', submitButtonRef.current?.focus());
-    submitButtonRef.current?.focus();
-  }, [challengeIsCompleted]);
-
   useEffect(() => {
     // prevent unnecessary updates:
     if (attempts === currentAttempts) return;
@@ -79,11 +72,19 @@ const LowerJaw = ({
     }
   }, [attempts, hint, currentAttempts]);
 
+  useEffect(() => {
+    if (challengeIsCompleted && !isEditorInFocus) {
+      submitButtonRef?.current?.focus();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [challengeIsCompleted]);
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (testFeedbackRef.current) {
       setTestFeedbackHeight(testFeedbackRef.current.clientHeight);
     }
+    // ToDo: turn it into Grid and remove the need for useEffect.
     // Every render could change the shape of the jaw, so this effect will let
     // monaco know it might need to resize
     updateContainer();
