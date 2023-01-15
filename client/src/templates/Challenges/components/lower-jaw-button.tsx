@@ -8,7 +8,7 @@ interface LowerJawButtonProps {
   signInText: string;
   onClick: () => void;
   challengeIsCompleted: boolean;
-  ref: React.RefObject<HTMLButtonElement>;
+  ref: React.MutableRefObject<HTMLButtonElement | null>;
 }
 
 export const LowerJawButtons = ({

@@ -35,12 +35,12 @@ const LowerJaw = ({
   updateContainer
 }: LowerJawProps): JSX.Element => {
   const hintRef = useRef('');
+  const submitButtonRef = useRef<HTMLButtonElement>(null);
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
   const { t } = useTranslation();
-  const submitButtonRef = createRef<HTMLButtonElement>();
   const testFeedbackRef = createRef<HTMLDivElement>();
 
   //attempt to set focus
@@ -48,8 +48,6 @@ const LowerJaw = ({
     // both attempts works but the issue is with submitButtonRef.current?.focus();
     console.log('Something', submitButtonRef.current?.focus());
     submitButtonRef.current?.focus();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeIsCompleted]);
 
   useEffect(() => {
