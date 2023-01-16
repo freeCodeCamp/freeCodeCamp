@@ -158,12 +158,12 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    ```console
    git checkout <pr-branch-name>
 
-   # example:
+   # приклад:
    # git checkout feat/add-numpy-video-question
 
    git checkout -b <backup-branch-name>
 
-   # example:
+   # приклад:
    #  git checkout -b backup-feat/add-numpy-video-question
 
    git branch -D <pr-branch-name>
@@ -174,7 +174,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-   # example:
+   # приклад:
    #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
    ```
 
@@ -193,7 +193,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    npm ci
    npm run test:curriculum --superblock=<superblock-name>
 
-   # example:
+   # приклад:
 
    # npm run test:curriculum --superblock=python-for-everybody
 
