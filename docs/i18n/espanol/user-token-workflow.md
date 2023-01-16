@@ -4,7 +4,7 @@ Los tokens de usuario se utilizan para identificar usuarios a terceros de modo q
 
 ## Cómo se crean
 
-Por el momento, los tokens sólo se utilizan para presentar los retos de la base de datos relacional. Un token se crea cuando un usuario firmado hace clic en los botones "Haga clic aquí para iniciar el curso" o "Haga clic aquí para iniciar el proyecto" para iniciar uno de los cursos o proyectos de la base de datos relacional.
+Por el momento, los tokens sólo se utilizan para presentar los retos de la base de datos relacional. A token gets created when a signed-in user clicks the "Click here to start the course" or "Click here to start the project" buttons to start one of the Relational Database courses or projects.
 
 ## Cuando se eliminan
 
@@ -12,4 +12,4 @@ Se eliminará un token de usuario cuando un usuario se desconecte de freeCodeCam
 
 ## Cómo funcionan
 
-Los tokens se almacenan en una colección de `UserToken` en la base de datos. Cada registro tiene un único `_id`, que es el token, y un `user_id` que enlaza a la cuenta del usuario desde la colección `user`. El token se codifica usando JWT y se envía al cliente cuando se crea. Ese token codificado es dado a servicios de terceros que lo necesitan y enviado a nuestra API cuando un desafío se completa. Cuando nuestro API lo recibe, está decodificado para que podamos identificar al usuario que envía un desafío y guardar el desafío completado en sus `Desafíos completos`.
+Los tokens se almacenan en una colección de `UserToken` en la base de datos. Cada registro tiene un único `_id`, que es el token, y un `user_id` que enlaza a la cuenta del usuario desde la colección `user`. El token se codifica usando JWT y se envía al cliente cuando se crea. That encoded token is then given to third-party services that need it and sent to our API by them when a challenge is completed. Cuando nuestro API lo recibe, está decodificado para que podamos identificar al usuario que envía un desafío y guardar el desafío completado en sus `Desafíos completos`.

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c8
-title: الوصول خصائص (Properties) الكائن (Object) بواسطة Bracket Notation
+title: الوصول لخصائص (Properties) الكائن (Object) بواسطة استخدام dot و علامات الأقواس
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBvmEHP'
 forumTopicId: 16163
@@ -9,11 +9,11 @@ dashedName: accessing-object-properties-with-bracket-notation
 
 # --description--
 
-الطريقة الثانية للوصول إلى خصائص الكائن هي القوسان المعكوفان (`[]`). في حال إن خاصية الكائن الذي تحاول الوصول إليه يحتوي على مسافة في اسمه, سوف تحتاج إلى استخدام القوسان المعكوفان (bracket notation).
+الطريقة الثانية للوصول إلى خصائص الكائن هي استخدام علامات الأقواس (`[]`). في حال إن خاصية الكائن الذي تحاول الوصول إليه يحتوي على مسافة في اسمه, سوف تحتاج إلى استخدام علامات الأقواس (bracket notation).
 
 على أية حال, فانه يمكنك أستخدام bracket notation على خصائص الكائن من دون مسافات.
 
-هذا مثال على استخدام bracket notation لقراءة خاصية الكائن:
+هذا مثال على استخدام علامات الأقواس لقراءة خاصية الكائن:
 
 ```js
 const myObj = {
@@ -33,7 +33,7 @@ myObj["NoSpace"];
 
 # --instructions--
 
-أقراء قيم خصائص `an entree` و `the drink` في `testObj` باستخدام القوسان المعكوفان وتعينهم إلى `entreeValue` و `drinkValue` على التوالي.
+أقراء قيم خصائص `an entree` و `the drink` في `testObj` باستخدام علامات الأقواس وعينهم إلى `entreeValue` و `drinkValue` على التوالي.
 
 # --hints--
 
@@ -61,7 +61,7 @@ assert(typeof drinkValue === 'string');
 assert(drinkValue === 'water');
 ```
 
-يجب عليك أستخدام القوسان المعكوفان مرتين
+يجب عليك أستخدام علامات الأقواس مرتين
 
 ```js
 assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);

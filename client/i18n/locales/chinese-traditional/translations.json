@@ -11,6 +11,7 @@
     "view": "查看",
     "view-code": "查看代碼",
     "view-project": "查看項目",
+    "view-cert-title": "View {{certTitle}}",
     "show-cert": "顯示認證",
     "claim-cert": "申請認證",
     "save-progress": "保存進度",
@@ -339,7 +340,7 @@
     "title": "支持我們的慈善組織",
     "processing": "我們正在處理你的捐款。",
     "redirecting": "重新引導中...",
-    "thanks": "謝謝捐款",
+    "thanks": "Thanks for donating",
     "thank-you": "謝謝你成爲我們的支持者。",
     "additional": "你可以使用這個鏈接 <0>{{url}}</0> 額外進行一次性捐款：",
     "help-more": "幫助我們做更多",
@@ -361,7 +362,6 @@
     "become-supporter": "成爲支持者",
     "duration": "成爲我們的慈善組織的一次性支持者",
     "duration-2": "成爲我們的慈善組織的每月定期支持者",
-    "duration-3": "成爲我們的慈善組織的每年定期支持者",
     "duration-4": "成爲我們的慈善組織的支持者",
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",
@@ -464,7 +464,8 @@
     "iframe-preview": "{{title}} 預覽",
     "iframe-alert": "通常，此鏈接會將你帶到另一個網站！一切正常，這個鏈接指向：{{externalLink}}。",
     "iframe-form-submit-alert": "通常這個表單將被提交！工作正常，這將被提交到：{{externalLink}}",
-    "document-notfound": "找不到文件"
+    "document-notfound": "找不到文件",
+    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
   },
   "icons": {
     "gold-cup": "金獎盃",
@@ -479,10 +480,11 @@
     "hint": "提示",
     "heart": "愛心",
     "initial": "初始",
+    "input-reset": "Clear search terms",
     "info": "介紹信息",
     "spacer": "間隔",
     "toggle": "切換選中標記",
-    "magnifier": "放大鏡"
+    "magnifier": "Submit search terms"
   },
   "aria": {
     "fcc-curriculum": "freeCodeCamp 課程",
@@ -508,7 +510,8 @@
     "step": "步驟",
     "steps": "步驟",
     "steps-for": "{{blockTitle}} 的步驟",
-    "code-example": "{{codeName}} 代碼示例"
+    "code-example": "{{codeName}} 代碼示例",
+    "opens-new-window": "Opens in new window"
   },
   "flash": {
     "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",
@@ -672,8 +675,49 @@
         "Cat and Dog Image Classifier": "貓和狗圖像分類器",
         "Book Recommendation Engine using KNN": "基於 KNN 的圖書推薦引擎",
         "Linear Regression Health Costs Calculator": "線性迴歸健康成本計算器",
-        "Neural Network SMS Text Classifier": "神經網絡短信分類器"
+        "Neural Network SMS Text Classifier": "神經網絡短信分類器",
+        "Celestial Bodies Database": "Celestial Bodies Database",
+        "World Cup Database": "World Cup Database",
+        "Salon Appointment Scheduler": "Salon Appointment Scheduler",
+        "Periodic Table Database": "Periodic Table Database",
+        "Number Guessing Game": "Number Guessing Game",
+        "Build a freeCodeCamp Forum Homepage": "Build a freeCodeCamp Forum Homepage"
       }
+    },
+    "title": {
+      "Responsive Web Design": "Responsive Web Design",
+      "responsive-web-design": "Responsive Web Design Certification",
+      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
+      "Front End Development Libraries": "Front End Development Libraries",
+      "front-end-development-libraries": "Front End Development Libraries Certification",
+      "Data Visualization": "Data Visualization",
+      "data-visualization": "Data Visualization Certification",
+      "Relational Database": "Relational Database",
+      "relational-database-v8": "Relational Database Certification",
+      "Back End Development and APIs": "Back End Development and APIs",
+      "back-end-development-and-apis": "Back End Development and APIs Certification",
+      "Quality Assurance": "Quality Assurance",
+      "quality-assurance-v7": "Quality Assurance Certification",
+      "Scientific Computing with Python": "Scientific Computing with Python",
+      "scientific-computing-with-python-v7": "Scientific Computing with Python Certification",
+      "Data Analysis with Python": "Data Analysis with Python",
+      "data-analysis-with-python-v7": "Data Analysis with Python Certification",
+      "Information Security": "Information Security",
+      "information-security-v7": "Information Security Certification",
+      "Machine Learning with Python": "Machine Learning with Python",
+      "machine-learning-with-python-v7": "Machine Learning with Python Certification",
+      "Legacy Front End": "Legacy Front End",
+      "legacy-front-end": "Front End Certification",
+      "Legacy Back End": "Legacy Back End",
+      "legacy-back-end": "Back End Certification",
+      "Legacy Data Visualization": "Legacy Data Visualization",
+      "legacy-data-visualization": "Data Visualization Certification",
+      "Legacy Information Security and Quality Assurance": "Legacy Information Security and Quality Assurance",
+      "information-security-and-quality-assurance": "Information Security and Quality Assurance Certification",
+      "Legacy Full Stack Certification": "Legacy Full Stack Certification",
+      "Legacy Full Stack": "Legacy Full Stack",
+      "full-stack": "Full Stack Certification"
     }
   },
   "certification-card": {

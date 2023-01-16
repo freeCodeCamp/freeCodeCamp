@@ -1,6 +1,6 @@
 ---
 id: aaa48de84e1ecc7c742e1124
-title: Build A Palindrome Checker
+title: أنشئ مدقق لمعاكس المقطع النصي
 challengeType: 5
 forumTopicId: 16004
 dashedName: build-a-palindrome-checker

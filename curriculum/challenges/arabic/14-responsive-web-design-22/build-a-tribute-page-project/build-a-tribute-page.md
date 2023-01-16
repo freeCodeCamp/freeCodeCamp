@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
-title: بناء مشروع صفحة الثناء
+title: أنشئ مشروع صفحة الثناء
 challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page
@@ -8,12 +8,12 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Objective:** قم ببناء تطبيق يشبه وظيفيا إلى <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
+**Objective:** ابني تطبيق يشابه وظيفيا إلي <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
 
 **المتطلبات:**
 
-1. يجب أن يكون لصفحة الثناء الخاصة بك عنصر `main` مع `id` بقيمة `main`، والذي يحتوي على جميع العناصر الأخرى
-1. يجب أن ترى عنصرا مع `id` بقيمة `title`، الذي يحتوي على string (اي نص) ،يصف موضوع صفحة الثناء (مثل "الدكتور نورمان بورلاوغ")
+1. يجب أن يكون لصفحتك الثناء عنصر `main` مع `id` بقيمة `main`، الذي يحتوي على جميع العناصر الأخرى
+1. يجب أن ترى عنصرا مع `id` بقيمة `title`، الذي يحتوي على مقطع نصي (string)، يصف موضوع صفحة الثناء (مثل "الدكتور نورمان بورلاوغ")
 1. يجب أن ترى إما عنصر `figure` أو `div` مع `id` بقيمة `img-div`
 1. داخل عنصر `#img-div` يمكنك رؤية عنصر `img` مع `id="image"`
 1. داخل عنصر `#img-div` ، يجب أن ترى عنصرا مع `id="img-caption"` يحتوي على محتوى نصي يصف الصورة المعروضة في `#img-div`

@@ -1,6 +1,6 @@
 ---
 id: 587d781d367417b2b2512ac8
-title: Adjust the Hover State of an Anchor Tag
+title: اضبط حالة التأشير بالحوم في علامة الرابط
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
@@ -25,7 +25,7 @@ The code editor has a CSS rule to style all `a` tags black. Add a rule so that w
 
 # --hints--
 
-يجب أن تبقى علامة الرابط `color` سوداء, أضف الفئة الزائفة `:hover` من قواعد CSS فقط.
+علامة الرابط `color` يجب أن تبقى سوداء. فقط أضف قواعد CSS لدولة `:hover`.
 
 ```js
 assert($('a').css('color') == 'rgb(0, 0, 0)');

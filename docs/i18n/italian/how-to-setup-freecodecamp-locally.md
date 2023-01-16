@@ -35,7 +35,7 @@ Questo è essenziale, in quanto consente di lavorare sulla propria copia di free
 
 ## Usare una macchina locale o GitPod
 
-Una volta che hai fatto il fork del repository, scegli tra le seguenti opzioni. Puoi utilizzare la tua macchina locale o uno spazio di lavoro basato su Gitpod per lavorare sul codebase.
+Una volta eseguito il fork del repository, puoi utilizzare la tua macchina locale o uno spazio di lavoro basato su Gitpod per lavorare sul codebase.
 
 Per contribuire a lungo termine, ti consigliamo di impostare freeCodeCamp sulla tua macchina locale.
 
@@ -49,13 +49,7 @@ Ci sono vari modi per avviare uno spazio di lavoro GitPod:
 
    Ad esempio, se visiti il tuo fork su `https://github.com/YOUR_USER_NAME/freeCodeCamp.git`, aggiungi `gitpod.io/#` davanti all'URL nella barra degli indirizzi e premi invio.
 
-   Ovvero, puoi navigare su
-
-   ```
-   gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git
-   ```
-
-   e dovresti vedere uno spazio di lavoro creato per te. Funziona per qualsiasi repository o pull-request su GitHub.
+   Cioè puoi andare su `gitpod.io/#https://github.com/YOUR_USER_NAME/freeCodeCamp.git` e dovresti vedere uno spazio di lavoro creato per te. Funziona per qualsiasi repository o pull-request su GitHub.
 
 2. In alternativa, installa una delle estensioni sottostanti per il browser.
 
@@ -72,15 +66,15 @@ Inizia installando i prerequisiti software per il tuo sistema operativo.
 
 Sosteniamo principalmente lo sviluppo su sistemi Linux e basati su Unix. Il nostro staff e i collaboratori della community lavorano regolarmente con il codebase utilizzando strumenti installati su Ubuntu e macOS.
 
-Supportiamo anche Windows 10 via WSL2, che puoi preparare [leggendo questa guida](how-to-setup-wsl.md).
+Supportiamo anche Windows 10 e 11 via WSL2, che puoi preparare [leggendo questa guida](how-to-setup-wsl.md).
 
-Alcuni membri della comunità sviluppano anche su Windows 10 nativamente con Git per Windows (Git Bash) e altri strumenti installati su Windows. Al momento non disponiamo di un supporto ufficiale per una tale configurazione, consigliamo invece di utilizzare WSL2.
+Alcuni membri della comunità sviluppano anche su Windows  nativamente con Git per Windows (Git Bash) e altri strumenti installati su Windows. Al momento non disponiamo di un supporto ufficiale per una tale configurazione, consigliamo invece di utilizzare WSL2.
 
 #### Prerequisiti:
 
 | Prerequisito                                                                                  | Versione | Note                                                                                         |
 | --------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                  | `16.x`   | Usiamo la versione "Active LTS", Vedi [LTS Schedule](https://nodejs.org/en/about/releases/). |
+| [Node.js](http://nodejs.org)                                                                  | `18.x`   | Usiamo la versione "Active LTS", Vedi [LTS Schedule](https://nodejs.org/en/about/releases/). |
 | npm (viene fornito in bundle con node)                                                        | `8.x`    | Usiamo la versione in bundle con Node.js Active LTS.                                         |
 | [Server Community MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x`  | -                                                                                            |
 

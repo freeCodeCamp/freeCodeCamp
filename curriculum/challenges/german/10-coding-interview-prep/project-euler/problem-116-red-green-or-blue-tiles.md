@@ -1,6 +1,6 @@
 ---
 id: 5900f3e01000cf542c50fef3
-title: 'Problem 116: Red, green or blue tiles'
+title: 'Problem 116: Rote, grüne oder blaue Fliesen'
 challengeType: 1
 forumTopicId: 301742
 dashedName: problem-116-red-green-or-blue-tiles
@@ -8,7 +8,7 @@ dashedName: problem-116-red-green-or-blue-tiles
 
 # --description--
 
-A row of five black square tiles is to have a number of its tiles replaced with coloured oblong tiles chosen from red (length two), green (length three), or blue (length four).
+Bei einer Reihe von fünf schwarzen quadratischen Steinen wird eine bestimmte Anzahl von Spielsteinen durch farbige längliche Spielsteine ersetzt, die entweder rot (Länge zwei), grün (Länge drei) oder blau (Länge vier) sind.
 
 If red tiles are chosen there are exactly seven ways this can be done.
 
@@ -16,19 +16,19 @@ If red tiles are chosen there are exactly seven ways this can be done.
 
 If green tiles are chosen there are three ways.
 
-<img class="img-responsive center-block" alt="Possible ways of placing green oblong on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Möglichkeiten, das grüne Rechteck in einer Reihe mit einer Länge von fünf Einheiten zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-2.png" style="background-color: white; padding: 10px;" />
 
-And if blue tiles are chosen there are two ways.
+Und wenn blaue Steine gewählt werden, gibt es zwei Möglichkeiten.
 
-<img class="img-responsive center-block" alt="Possible ways of placing blue oblong on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-3.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Möglichkeiten, das blaue Rechteck in einer Reihe mit einer Länge von fünf Einheiten zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-3.png" style="background-color: white; padding: 10px;" />
 
-Assuming that colors cannot be mixed there are 7 + 3 + 2 = 12 ways of replacing the black tiles in a row measuring five units in length. How many different ways can the black tiles in a row measuring fifty units in length be replaced if colors cannot be mixed and at least one colored tile must be used?
+Unter der Annahme, dass Farben nicht gemischt werden können, gibt es 7 + 3 + 2 = 12 Möglichkeiten, die schwarzen Steine in einer Reihe von fünf Einheiten Länge zu ersetzen. Auf wie viele verschiedene Arten können die schwarzen Steine in einer Reihe von fünfzig Einheiten Länge ersetzt werden, wenn die Farben nicht gemischt werden können und mindestens ein farbiger Stein verwendet werden muss?
 
-**Note:** This is related to Problem 117.
+**Hinweis:** Dies bezieht sich auf Problem 117.
 
 # --hints--
 
-`redGreenBlueOne()` should return `20492570929`.
+`redGreenBlueOne()` sollte `20492570929` zurückgeben.
 
 ```js
 assert.strictEqual(redGreenBlueOne(), 20492570929);

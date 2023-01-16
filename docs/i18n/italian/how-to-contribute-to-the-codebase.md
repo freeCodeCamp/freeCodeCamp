@@ -169,7 +169,7 @@ Segui questi passaggi:
    ```md
    fix: improve HTML step
    fix: fix build scripts for Travis-CI
-   feat: add link article JavaScript hoisting
+   feat: add link to JavaScript hoisting article
    docs: update contributing guidelines
    ```
 

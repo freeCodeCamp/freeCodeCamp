@@ -31,6 +31,7 @@ import certificateMissingMessage from '../utils/certificate-missing-message';
 import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
 import standardErrorMessage from '../utils/standard-error-message';
 
+import { PaymentContext } from '../../../config/donation-settings';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -154,12 +155,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     ) {
       setIsDonationDisplayed(true);
       executeGA({
-        type: 'event',
-        data: {
-          category: 'Donation View',
-          action: 'Displayed Certificate Donation',
-          nonInteraction: true
-        }
+        event: 'donationview',
+        action: 'Displayed Certificate Donation'
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -177,20 +174,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     setIsDonationClosed(true);
   };
 
-  const handleProcessing = (
-    duration: string,
-    amount: number,
-    action: string
-  ) => {
-    props.executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `certificate ${action}`,
-        label: duration,
-        value: amount
-      }
-    });
+  const handleProcessing = () => {
     setIsDonationSubmitted(true);
   };
 
@@ -270,6 +254,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             defaultTheme={Themes.Default}
             handleProcessing={handleProcessing}
             isMinimalForm={true}
+            paymentContext={PaymentContext.Certificate}
           />
         </Col>
       </Row>
@@ -347,7 +332,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
               </h1>
               <h3>placeholder</h3>
               <h1>
-                <strong>{{ title: certTitle }}</strong>
+                <strong>
+                  {{ title: t(`certification.title.${certTitle}`, certTitle) }}
+                </strong>
               </h1>
               <h4>{{ time: completionTime }}</h4>
             </Trans>

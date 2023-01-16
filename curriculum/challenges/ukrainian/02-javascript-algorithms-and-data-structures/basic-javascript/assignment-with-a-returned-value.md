@@ -9,7 +9,7 @@ dashedName: assignment-with-a-returned-value
 
 # --description--
 
-If you'll recall from our discussion about <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">Storing Values with the Assignment Operator</a>, everything to the right of the equal sign is resolved before the value is assigned. Це означає, що ми можемо взяти повернене значення функції та присвоїти його змінній.
+Якщо пригадати з нашої розмови про <a href="/ukrainian/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">збереження значень за допомогою оператора присвоєння</a>, все, що знаходиться праворуч від знака рівності вирішено ще до того, як значення буде присвоєне. Це означає, що ми можемо взяти повернене значення функції та присвоїти його змінній.
 
 Припустимо, що ми вже визначили функцію `sum`, яка додає два числа, тоді:
 

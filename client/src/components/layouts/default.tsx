@@ -1,6 +1,7 @@
 import React, { Component, ReactNode } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
+// import TagManager from 'react-gtm-module';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -16,8 +17,7 @@ import { isBrowser } from '../../../utils';
 import {
   fetchUser,
   onlineStatusChange,
-  serverStatusChange,
-  executeGA
+  serverStatusChange
 } from '../../redux/actions';
 import {
   isSignedInSelector,
@@ -34,6 +34,7 @@ import SignoutModal from '../signout-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
+import { Loader } from '../helpers';
 
 // preload common fonts
 import './fonts.css';
@@ -75,8 +76,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       fetchUser,
       removeFlashMessage,
       onlineStatusChange,
-      serverStatusChange,
-      executeGA
+      serverStatusChange
     },
     dispatch
   );
@@ -104,22 +104,12 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
   static displayName = 'DefaultLayout';
 
   componentDidMount() {
-    const { isSignedIn, fetchUser, pathname, executeGA } = this.props;
+    const { isSignedIn, fetchUser } = this.props;
     if (!isSignedIn) {
       fetchUser();
     }
-    executeGA({ type: 'page', data: pathname });
-
     window.addEventListener('online', this.updateOnlineStatus);
     window.addEventListener('offline', this.updateOnlineStatus);
-  }
-
-  componentDidUpdate(prevProps: DefaultLayoutProps) {
-    const { pathname, executeGA } = this.props;
-    const { pathname: prevPathname } = prevProps;
-    if (pathname !== prevPathname) {
-      executeGA({ type: 'page', data: pathname });
-    }
   }
 
   componentWillUnmount() {
@@ -154,6 +144,10 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
     } = this.props;
 
     const useSystemTheme = fetchState.complete && isSignedIn === false;
+
+    if (fetchState.pending) {
+      return <Loader fullScreen={true} messageDelay={5000} />;
+    }
 
     return (
       <div className='page-wrapper'>

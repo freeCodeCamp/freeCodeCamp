@@ -131,7 +131,7 @@ interface CompletionModalInnerState {
   completedChallengesInBlock: number;
 }
 
-export class CompletionModalInner extends Component<
+class CompletionModalInner extends Component<
   CompletionModalsProps,
   CompletionModalInnerState
 > {
@@ -254,7 +254,7 @@ export class CompletionModalInner extends Component<
     const totalChallengesInBlock = currentBlockIds?.length ?? 0;
 
     if (isOpen) {
-      executeGA({ type: 'modal', data: '/completion-modal' });
+      executeGA({ event: 'pageview', pagePath: '/completion-modal' });
     }
     // normally dashedName should be graphQL queried and then passed around,
     // but it's only used to make a nice filename for downloading, so dasherize

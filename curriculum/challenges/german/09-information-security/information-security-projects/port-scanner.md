@@ -11,35 +11,35 @@ dashedName: port-scanner
 
 Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode</a> an diesem Projekt arbeiten.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Beginne mit dem Importieren des Projekts in Replit.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
 
 
 Wir sind noch dabei, den interaktiven Teil des Python-Kurses zu entwickeln. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Videokurs: Python für jedermann</a> (14 Stunden)
 
-- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Lerne ausführlich die Python-Grundlagen </a> (4 Stunden)
 
-- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Python-Kurs für Fortgeschrittene</a> (6 Stunden)
 
 # --instructions--
 
 Create a port scanner using Python.
 
-In the `port_scanner.py` file, create a function called `get_open_ports` that takes a `target` argument and a `port_range` argument. `target` can be a URL or IP address. `port_range` is a list of two numbers indicating the first and last numbers of the range of ports to check.
+Erstelle eine Funktion in der `port_scanner.py`-Datei namens `get_open_ports`, die ein `target` Argument und ein `port_range` Argument verwendet. `target` kann eine URL oder IP-Adresse sein. `port_range` ist eine Liste von zwei Zahlen, die die erste und letzte Zahl des zu überprüfenden Ports angeben.
 
-Here are examples of how the function may be called:
+Hier sind Beispiele dafür, wie die Funktion aufgerufen werden kann:
 
 ```py
 get_open_ports("209.216.230.240", [440, 445])
 get_open_ports("www.stackoverflow.com", [79, 82])
 ```
 
-The function should return a list of open ports in the given range.
+Die Funktion sollte eine Liste der offenen Ports im angegebenen Bereich übermitteln.
 
-The `get_open_ports` function should also take an optional third argument of `True` to indicate "Verbose" mode. If this is set to true, the function should return a descriptive string instead of a list of ports.
+Die `get_open_ports` Funktion sollte auch ein optionales drittes Argument von `True` verwenden, um den "Verbose"-Modus anzuzeigen. Wenn diese Option auf true gesetzt ist, sollte die Funktion einen beschreibenden String anstelle einer Liste von Ports zurückgeben.
 
 Here is the format of the string that should be returned in verbose mode (text inside `{}` indicates the information that should appear):
 
@@ -50,15 +50,15 @@ PORT     SERVICE
 {port}   {service name}
 ```
 
-You can use the dictionary in `common_ports.py` to get the correct service name for each port.
+Du kannst das Wörterbuch in `common_ports.py` verwenden, um den korrekten Dienstnamen für jeden Port zu erhalten.
 
-For example, if the function is called like this:
+Zum Beispiel, wenn die Funktion wie folgt aufgerufen wird:
 
 ```py
 port_scanner.get_open_ports("scanme.nmap.org", [20, 80], True)
 ```
 
-It should return the following:
+Sollte sie folgendes übermitteln:
 
 ```bash
 Open ports for scanme.nmap.org (45.33.32.156)
@@ -73,7 +73,7 @@ If the URL passed into the `get_open_ports` function is invalid, the function sh
 
 If the IP address passed into the `get_open_ports` function is invalid, the function should return the string: "Error:  Invalid IP address".
 
-## Development
+## Entwicklung
 
 Write your code in `port_scanner.py`. For development, you can use `main.py` to test your code. Click the "run" button and `main.py` will run.
 

@@ -47,11 +47,13 @@ const FaqItem = (
   const [isExpanded, setExpanded] = useState(false);
   return (
     <div className={`faq-item ${isExpanded ? 'open' : ''}`} key={key}>
-      <button className='map-title' onClick={() => setExpanded(!isExpanded)}>
+      <button
+        className='map-title'
+        onClick={() => setExpanded(!isExpanded)}
+        aria-expanded={isExpanded}
+      >
         <Caret />
-        <h4>
-          <b>{title}</b>
-        </h4>
+        <h3>{title}</h3>
       </button>
       {isExpanded && (
         <>

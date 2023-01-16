@@ -8,7 +8,7 @@ dashedName: wherefore-art-thou
 
 # --description--
 
-قم بإنشاء function يبحث في array من الـ objects (الـ argument الأولى) ويرجع array من جميع الـ objects التي لديها أزواج مطابقة من name و value (الـ argument الثانية). يجب أن يكون كل name و value من الـ object المصدر، موجودا في الـ object من الـ collection، إذا كان يراد إدراجه في الـ array التي تم ارجاعها.
+أنشئ وظيفة (function) يبحث في قائمة (array) من الكائنات (objects) (المعطى (argument) الأولى) وينتج قائمة من جميع الكائنات التي لديها أزواج مطابقة من name و value (المعطى الثانية). يجب أن يكون كل name و value من الـ object المصدر، موجودا في الـ object من الـ collection، إذا كان يراد إدراجه في الـ array التي تم ارجاعها.
 
 على سبيل المثال، إذا كانت الـ argument الأولى هي `[{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }]`, والـ argument الثانية هي `{ last: "Capulet" }`، يجب عليك إعادة الـ object الثالث من الـ array (الـ argument الأولى)، لأنه يحتوي على الاسم وقيمته، وهذا ما تم إرساله كـ argument ثانية.
 

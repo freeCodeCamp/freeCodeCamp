@@ -20,7 +20,7 @@ describe('<certification />', () => {
 
     expect(
       screen.getByRole('link', {
-        name: 'buttons.show-cert'
+        name: /^buttons.show-cert\s+\S+/
       })
     ).toHaveAttribute(
       'href',
@@ -33,7 +33,7 @@ describe('<certification />', () => {
     renderWithRedux(<CertificationSettings {...defaultTestProps} />);
 
     const allClaimedCerts = screen.getAllByRole('link', {
-      name: 'buttons.show-cert'
+      name: /^buttons.show-cert\s+\S+/
     });
 
     allClaimedCerts.forEach(cert => {
@@ -49,7 +49,7 @@ describe('<certification />', () => {
     renderWithRedux(<CertificationSettings {...defaultTestProps} />);
 
     const allClaimedCerts = screen.getAllByRole('link', {
-      name: 'buttons.show-cert'
+      name: /^buttons.show-cert\s+\S+/
     });
 
     allClaimedCerts.forEach(cert => {
@@ -65,7 +65,7 @@ describe('<certification />', () => {
 
     expect(
       screen.getByRole('link', {
-        name: 'buttons.view'
+        name: 'buttons.view settings.labels.solution-for (aria.opens-new-window)'
       })
     ).toHaveAttribute('href', 'https://github.com/freeCodeCamp/freeCodeCamp');
   });

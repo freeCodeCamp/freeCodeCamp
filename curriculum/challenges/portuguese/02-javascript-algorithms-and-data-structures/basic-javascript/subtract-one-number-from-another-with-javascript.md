@@ -26,13 +26,13 @@ Altere o `0` para que a variável difference seja igual a `12`.
 
 # --hints--
 
-A variável `difference` deve ser igual a 12.
+A variável `difference` deve ser igual a `12`.
 
 ```js
 assert(difference === 12);
 ```
 
-Você só deve subtrair um número de 45.
+Você só deve subtrair um número de `45`.
 
 ```js
 assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
