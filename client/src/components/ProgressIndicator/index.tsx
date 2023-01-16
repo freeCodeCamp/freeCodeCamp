@@ -68,7 +68,13 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
       }
     }
   `);
-  const { allChallengeNode, allCertificateNode } = data;
+
+  let allChallengeCount = 0;
+  let allCertificateCount = 0;
+  if (data) {
+    allChallengeCount = data.allChallengeNode.totalCount;
+    allCertificateCount = data.allCertificateNode.totalCount;
+  }
 
   const computePercentage = ({ completed = 0, length = 0 } = {}): number => {
     const result = (completed / length) * 100;
@@ -81,12 +87,12 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
 
   const completedChallengePercentage = computePercentage({
     completed: completedChallengeCount,
-    length: allChallengeNode.totalCount
+    length: allChallengeCount
   });
 
   const completedCertificatePercentage = computePercentage({
     completed: earnedCertificateCount,
-    length: allCertificateNode.totalCount
+    length: allCertificateCount
   });
 
   return (
@@ -94,12 +100,12 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
       <h3>Progress Summary:</h3>
       <ul>
         <li>
-          {completedChallengeCount}/{allChallengeNode.totalCount} challenges
-          completed ({completedChallengePercentage}%)
+          {completedChallengeCount}/{allChallengeCount} challenges completed (
+          {completedChallengePercentage}%)
         </li>
         <li>
-          {earnedCertificateCount}/{allCertificateNode.totalCount} certificates
-          earned ({completedCertificatePercentage}%)
+          {earnedCertificateCount}/{allCertificateCount} certificates earned (
+          {completedCertificatePercentage}%)
         </li>
       </ul>
     </div>
