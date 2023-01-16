@@ -7,7 +7,7 @@ import type { CurrentCert } from '../../redux/prop-types';
 
 import './styles.css';
 
-interface Props {
+interface ProgressIndicatorProps {
   completedChallengeCount?: number;
   currentCerts?: CurrentCert[];
   hasLegacyCert?: boolean;
@@ -25,14 +25,17 @@ type NodeData = {
   };
 };
 
-const mapStateToProps = (state: Record<string, unknown>, props: Props) =>
+const mapStateToProps = (
+  state: Record<string, unknown>,
+  props: ProgressIndicatorProps
+) =>
   createSelector(
     certificatesByNameSelector(props.username.toLowerCase()),
     ({
       currentCerts,
       legacyCerts
     }: Pick<
-      Props,
+      ProgressIndicatorProps,
       'hasModernCert' | 'hasLegacyCert' | 'currentCerts' | 'legacyCerts'
     >) => ({
       currentCerts,
@@ -40,7 +43,7 @@ const mapStateToProps = (state: Record<string, unknown>, props: Props) =>
     })
   )(state);
 
-const ProgressIndicator = (props: Props): JSX.Element => {
+const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
   const { completedChallengeCount, currentCerts, legacyCerts } = props;
 
   let earnedCertificateCount = 0;
