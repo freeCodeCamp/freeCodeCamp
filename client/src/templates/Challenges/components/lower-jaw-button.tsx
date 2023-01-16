@@ -8,7 +8,6 @@ interface LowerJawButtonProps {
   signInText: string;
   onClick: () => void;
   challengeIsCompleted: boolean;
-  ref: React.MutableRefObject<HTMLButtonElement | null>;
 }
 
 export const LowerJawButtons = ({
@@ -16,8 +15,7 @@ export const LowerJawButtons = ({
   challengeIsCompleted,
   buttonText,
   signInText,
-  onClick,
-  ref
+  onClick
 }: LowerJawButtonProps) => {
   return (
     <>
@@ -30,7 +28,6 @@ export const LowerJawButtons = ({
         className={'btn-block btn'}
         data-cy='lowerJaw-button'
         onClick={onClick}
-        ref={ref}
       >
         {buttonText}
       </button>

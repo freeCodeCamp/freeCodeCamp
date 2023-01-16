@@ -35,7 +35,6 @@ const LowerJaw = ({
   updateContainer
 }: LowerJawProps): JSX.Element => {
   const hintRef = useRef('');
-  const submitButtonRef = useRef<HTMLButtonElement>(null);
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
@@ -72,19 +71,12 @@ const LowerJaw = ({
     }
   }, [attempts, hint, currentAttempts]);
 
-  useEffect(() => {
-    if (challengeIsCompleted && !isEditorInFocus) {
-      submitButtonRef?.current?.focus();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [challengeIsCompleted]);
-
+  // ToDo: turn it into a grid to remove the need for useEffect.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (testFeedbackRef.current) {
       setTestFeedbackHeight(testFeedbackRef.current.clientHeight);
     }
-    // ToDo: turn it into Grid and remove the need for useEffect.
     // Every render could change the shape of the jaw, so this effect will let
     // monaco know it might need to resize
     updateContainer();
@@ -129,7 +121,6 @@ const LowerJaw = ({
           challengeIsCompleted ? tryToSubmitChallenge : tryToExecuteChallenge
         }
         signInText={t('learn.sign-in-save')}
-        ref={submitButtonRef}
       />
       <div
         style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}

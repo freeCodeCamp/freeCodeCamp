@@ -52,12 +52,10 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.signInButton).should('not.exist');
   });
 
-  // Can I delete this? it shouldn't matter because we are using react now
   it('focuses the submit button after testing a valid solution', () => {
     cy.visit(location);
     cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
     cy.get(selectors.lowerJawButton).should('not.be.focused');
-    // whelp this is trippy
     cy.get(selectors.lowerJawButton).click();
     cy.get(selectors.lowerJawButton).should('be.focused');
   });
@@ -68,6 +66,6 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.instructionContainer)
       .click('topRight')
       .trigger('keydown', { ctrlKey: true, keyCode: 13 }); // keyCode : 13 enter key
-    cy.get(selectors.lowerJawButton).should('be.focused');
+    cy.get(selectors.lowerJawButton).should('not.be.focused');
   });
 });
