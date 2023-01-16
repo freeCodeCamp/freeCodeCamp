@@ -21,9 +21,6 @@ Read <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#W
 ## --text--
 
 Which of the following statements is true?
-## --answers--
-
-Which of the following statements is true?
 
 ## --answers--
 
