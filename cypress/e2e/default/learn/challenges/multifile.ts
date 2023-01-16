@@ -3,7 +3,7 @@ const location =
   '/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-2';
 const selectors = {
   monacoTabs: '.monaco-editor-tabs',
-  signInButton: '#action-buttons-container a[href$="/signin"]',
+  signInButton: '[data-cy=sign-in-button]',
   lowerJawButton: '[data-cy=lowerJaw-button]',
   resetCodeButton: '[data-cy=reset-code-button]',
   instructionContainer: '.action-row-container'

@@ -20,7 +20,12 @@ export const LowerJawButtons = ({
   return (
     <>
       {!signed && challengeIsCompleted && (
-        <Button block={true} href={`${apiLocation}/signin`} className='btn-cta'>
+        <Button
+          data-cy='sign-in-button'
+          block={true}
+          href={`${apiLocation}/signin`}
+          className='btn-cta'
+        >
           {signInText}
         </Button>
       )}
