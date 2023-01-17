@@ -53,7 +53,7 @@
     "check-code": "檢查您的代碼 (Ctrl + Enter)",
     "check-code-2": "檢查你的代碼",
     "reset": "重置",
-    "reset-code": "重置所有代碼",
+    "reset-step": "Reset This Step",
     "help": "幫助",
     "get-help": "獲得幫助",
     "watch-video": "觀看視頻",

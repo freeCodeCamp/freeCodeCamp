@@ -53,7 +53,7 @@
     "check-code": "コードをチェック (Ctrl + Enter)",
     "check-code-2": "コードをチェック",
     "reset": "リセット",
-    "reset-code": "全てのコードをリセット",
+    "reset-step": "Reset This Step",
     "help": "ヘルプ",
     "get-help": "助けを求める",
     "watch-video": "動画を見る",
