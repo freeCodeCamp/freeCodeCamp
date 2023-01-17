@@ -53,7 +53,7 @@
     "check-code": "Überprüfe deinen Code (Strg + Enter)",
     "check-code-2": "Prüfe deinen Code",
     "reset": "Zurücksetzen",
-    "reset-code": "Den Quellcode zurücksetzen",
+    "reset-step": "Reset This Step",
     "help": "Hilfe",
     "get-help": "Hilfe bekommen",
     "watch-video": "Ein Video ansehen",
