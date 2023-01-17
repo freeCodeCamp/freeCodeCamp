@@ -112,10 +112,12 @@ function LearnPage({
               onDonationAlertClick={onDonationAlertClick}
               isDonating={isDonating}
             />
-            <ProgressIndicator
-              completedChallengeCount={completedChallengeCount}
-              username={username}
-            />
+            {isSignedIn && (
+              <ProgressIndicator
+                completedChallengeCount={completedChallengeCount}
+                username={username}
+              />
+            )}
             <Map />
             <Spacer size={2} />
           </Col>
