@@ -18,7 +18,7 @@ HTML サーバーは HTML を提供しますが、API はデータを提供し�
 
 # --hints--
 
-エンドポイント `/json` は json オブジェクト `{"message": "Hello json"}` を提供する必要があります。
+The endpoint `/json` should serve the JSON object `{"message": "Hello json"}`
 
 ```js
 (getUserInput) =>

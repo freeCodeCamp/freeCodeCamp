@@ -28,7 +28,7 @@ numbers.every(function(currentValue) {
 
 # --hints--
 
-Використовуйте у коді метод `every`.
+Ваш код повинен використовувати метод `every`.
 
 ```js
 assert(code.match(/\.every/g));

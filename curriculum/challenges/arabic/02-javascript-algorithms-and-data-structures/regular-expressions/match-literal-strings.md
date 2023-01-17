@@ -1,6 +1,6 @@
 ---
 id: 587d7db3367417b2b2512b8f
-title: مطابقة السلاسل النصية (Match Literal Strings)
+title: مطابقة النصوص الحرفية
 challengeType: 1
 forumTopicId: 301355
 dashedName: match-literal-strings
@@ -49,7 +49,7 @@ waldoRegex.lastIndex = 0;
 assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 ```
 
-يجب عليك إجراء مطابقة حرفية لالمقطع (string) النصية باستخدام regex الخاص بك.
+يجب عليك إجراء مطابقة حرفية للمقطع النصية (string) باستخدام regex الخاص بك.
 
 ```js
 assert(!/\/.*\/i/.test(code));

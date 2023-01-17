@@ -18,11 +18,11 @@ dashedName: use-the--env-file
 
 在项目根目录创建一个 `.env` 文件，并存储变量 `MESSAGE_STYLE=uppercase`。
 
-然后，在你在上个挑战中创建的 `/json` GET 路由处理程序中访问 `process.env.MESSAGE_STYLE`，并且如果变量等于 `uppercase`，将响应对象的 `message` 转换为大写。 响应对象应该是 `{"message": "Hello json"}` or `{"message": "HELLO JSON"}`，取决于 `MESSAGE_STYLE` 的值。 Note that you must read the value of `process.env.MESSAGE_STYLE` **inside** the route handler, not outside of it, due to the way our tests run.
+然后，在你在上个挑战中创建的 `/json` GET 路由处理程序中访问 `process.env.MESSAGE_STYLE`，并且如果变量等于 `uppercase`，将响应对象的 `message` 转换为大写。 响应对象应该是 `{"message": "Hello json"}` or `{"message": "HELLO JSON"}`，取决于 `MESSAGE_STYLE` 的值。 请注意，因为我们的测试运行的方式，你必须阅读路由处理器**里面**（而不是外面）`process.env.MESSAGE_STYLE` 的值。
 
 **注意：** 如果你正在使用 Replit，你无法创建一个 `.env` 文件。 相反，使用内置的 <dfn>SECRETS</dfn> 标签添加变量。
 
-如果你在本地工作，你将需要 `dotenv` 包。 它将环境变量从你的 `.env` 文件加载到 `process.env` 中。 `dotenv` 包已经安装，并且在你项目的 `package.json` 文件中。 At the top of your `myApp.js` file, add `require('dotenv').config()` to load the environment variables.
+如果你在本地工作，你将需要 `dotenv` 包。 它将环境变量从你的 `.env` 文件加载到 `process.env` 中。 `dotenv` 包已经安装，并且在你项目的 `package.json` 文件中。 在你的 `myApp.js` 文件的顶端，添加 `require('dotenv').config()` 以加载环境变量。
 
 # --hints--
 

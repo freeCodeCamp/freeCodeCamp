@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c444eddfaeb5bdef
-title: إعلان متغيرات المقاطع نصية (Declare String Variables)
+title: إعلان متغيرات المقاطع النصية
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvWU6'
 forumTopicId: 17557
@@ -21,15 +21,15 @@ var myName;
 var myName = "your name";
 ```
 
-`"your name"` يسمي <dfn>مقطع</dfn> <dfn>حرفي</dfn>. المقطع النصي أو مقطع هي مقطع تتكون من رمز أو أكثر، مرفقين في علامات اقتباس (Quotes) مفردة أو مزدوجة.
+يسمي`"your name"` <dfn>المقطع</dfn> <dfn>موضوعي</dfn>. يتكون المقطع الموضوعي أو المقطع النصي من رمز أو رموز، مرفقين في علامات اقتباس (quotes) مفردة أو مزدوجة.
 
 # --instructions--
 
-إنشاء متغيرين مقطعين جديدين: `myFirstName` و `myLastName` وعيين قيم الاسم الأول والاسم الأخير على التوالي.
+إنشاء متغيرين مقطعين جديدين: وعين `myFirstName` و `myLastName` بقيم اسمك والاسم عائلتك على التوالي.
 
 # --hints--
 
-يجب أن يحتوي مقطع `myFirstName` على حرف واحد في الأقل.
+يجب أن يحتوي مقطع `myFirstName` على رمز واحد في الأقل.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-يجب أن يحتوي مقطع `myLastName` على حرف واحد في الأقل.
+يجب أن يحتوي مقطع `myLastName` على رمز واحد في الأقل.
 
 ```js
 assert(

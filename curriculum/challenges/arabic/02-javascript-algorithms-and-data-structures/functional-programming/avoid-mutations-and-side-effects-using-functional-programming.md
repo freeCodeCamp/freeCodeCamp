@@ -12,7 +12,7 @@ dashedName: avoid-mutations-and-side-effects-using-functional-programming
 
 هذا مثال صغير لنمط أكبر بكثير- يمكنك تفعيل وظيفة (function) للتأثير على متغير (variable)، أو قائمة (array)، أو كائن (object). وتغير الوظيفة المتغير أو شيء ما في الكائن.
 
-وأحد المبادئ الأساسية للبرمجة الوظيفية هو عدم تغيير الأشياء. التغييرات تؤدي إلى أعطال. من الأسهل منع الأعطال علما بأن وظائفك (functions) لا تغير أي شيء، بما في ذلك معطيات (arguments) الوظيفة أو أي متغير (variable) عام.
+وأحد المبادئ الأساسية للبرمجة الوظيفية هو عدم تغيير الأشياء. التغييرات تؤدي إلى أعطال. من الأسهل منع الأعطال علما بأن وظائفك (functions) لا تغير أي شيء، بما في ذلك معطيات (arguments) الوظيفة أو أي متغير (variable) شامل.
 
 المثال السابق لم يكن به أي عمليات معقدة ولكن `splice` غيرت القائمة (array) الأصلية، وأسفرت عن حدوث خطأ.
 
@@ -22,7 +22,7 @@ dashedName: avoid-mutations-and-side-effects-using-functional-programming
 
 # --instructions--
 
-اكتب الكود للوظيفة `incrementer` حتي تنتج قيمة المتغير العام `fixedValue` بعد زيادة قيمته بواحد.
+اكتب الكود للوظيفة `incrementer` حتي تنتج قيمة المتغير الشامل `fixedValue` بعد زيادة قيمته بواحد.
 
 # --hints--
 
@@ -40,7 +40,7 @@ const __newValue = incrementer();
 assert(__newValue === 5);
 ```
 
-يجب أن تنتج الوظيفة `incrementer` قيمة استناداً إلى قيمة المتغير العام `fixedValue`.
+يجب أن تنتج الوظيفة `incrementer` قيمة استناداً إلى قيمة المتغير الشامل `fixedValue`.
 
 ```js
 (function () {
