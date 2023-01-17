@@ -8,7 +8,7 @@ dashedName: match-literal-strings
 
 # --description--
 
-في التحدي الأخير، بحثت عن كلمة `Hello` باستخدام regular expression الاتي `/Hello/`. هذا regex يبحث عن مطابقة حرفية في string الآتي `Hello`. إليك مثال آخر يبحث عن مطابقة حرفية في string الآتي `Kevin`:
+في التحدي الأخير، بحثت عن كلمة `Hello` باستخدام regular expression الاتي `/Hello/`. هذا regex يبحث عن مطابقة حرفية في المقطع النصي الآتي `Hello`. إليك مثال آخر يبحث عن مطابقة حرفية في المقطع النصي الآتي `Kevin`:
 
 ```js
 let testStr = "Hello, my name is Kevin.";
@@ -31,11 +31,11 @@ wrongRegex.test(testStr);
 
 # --instructions--
 
-أكمل regex الأتي `waldoRegex` للعثور على `"Waldo"` في السلسلة (string) النصية `waldoIsHiding` مع مطابقة حرفية.
+أكمل regex الأتي `waldoRegex` للعثور على `"Waldo"` في المقطع (string) النصية `waldoIsHiding` مع مطابقة حرفية.
 
 # --hints--
 
-إن regex الخاص بك `waldoRegex` يجب أن يجد string الآتي `Waldo`
+إن regex الخاص بك `waldoRegex` يجب أن يجد المقطع النصي الآتي `Waldo`
 
 ```js
 waldoRegex.lastIndex = 0;
@@ -49,7 +49,7 @@ waldoRegex.lastIndex = 0;
 assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 ```
 
-يجب عليك إجراء مطابقة حرفية للسلسلة (string) النصية باستخدام regex الخاص بك.
+يجب عليك إجراء مطابقة حرفية لالمقطع (string) النصية باستخدام regex الخاص بك.
 
 ```js
 assert(!/\/.*\/i/.test(code));

@@ -28,7 +28,7 @@ dashedName: sea-level-predictor
 使用数据完成以下任务：
 
 - 使用 Pandas 从 `epa-sea-level.csv` 导入数据。
-- 使用 matplotlib 创建散点图，将 `Year` 列作为 x 轴，将 `CSIRO Adjusted Sea Level` 列作为 y 轴。
+- Use matplotlib to create a scatter plot using the `Year` column as the x-axis and the `CSIRO Adjusted Sea Level` column as the y-axis.
 - 使用 `scipy.stats` 中的 `linregress` 函数来获得最佳拟合线的斜率和 y 截距。 在散点图的顶部绘制最佳拟合线。 使线穿过 2050 年以预测 2050 年的海平面上升。
 - 仅使用数据集中从 2000 年到最近一年的数据绘制一条新的最佳拟合线。 如果上升速度继续与 2000 年一样，则使该线也经过 2050 年以预测 2050 年的海平面上升。
 - x 标签应为 `Year`，y 标签应为 `Sea Level (inches)`，标题应为 `Rise in Sea Level`。

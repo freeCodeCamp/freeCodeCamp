@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b23
-title: Використовуйте Функцію parseInt
+title: Використання функції parseInt
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm83LSW'
 forumTopicId: 301183
@@ -15,39 +15,39 @@ dashedName: use-the-parseint-function
 const a = parseInt("007");
 ```
 
-Наведена вище функція перетворює рядок `007` у ціле `7`. Якщо перший символ у рядку не може бути перетвореним у число, тоді він повертає `NaN`.
+Наведена вище функція перетворює рядок `007` на ціле число `7`. Якщо перший символ у рядку не можна перетворити на число, повертається `NaN`.
 
 # --instructions--
 
-Використовуйте `parseInt()` у функції `convertToInteger`, щоб вона конвертувала вхідний рядок `str` у ціле число та повернула його.
+Використайте `parseInt()` у функції `convertToInteger`, щоб вхідний рядок `str` перетворився на ціле число та повернувся.
 
 # --hints--
 
-`convertToInteger` має використати функцію `parseInt()`
+`convertToInteger` повинна використовувати функцію `parseInt()`
 
 ```js
 assert(/parseInt/g.test(code));
 ```
 
-`convertToInteger("56")` має повернути число
+`convertToInteger("56")` повинна повертати число
 
 ```js
 assert(typeof convertToInteger('56') === 'number');
 ```
 
-`convertToInteger("56")` має повернути 56
+`convertToInteger("56")` повинна повертати 56
 
 ```js
 assert(convertToInteger('56') === 56);
 ```
 
-`convertToInteger("77")` має повернути 77
+`convertToInteger("77")` повинна повертати 77
 
 ```js
 assert(convertToInteger('77') === 77);
 ```
 
-`convertToInteger("JamesBond")` має повернути `NaN`
+`convertToInteger("JamesBond")` повинна повертати `NaN`
 
 ```js
 assert.isNaN(convertToInteger('JamesBond'));

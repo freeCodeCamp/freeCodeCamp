@@ -8,9 +8,9 @@ dashedName: problem-112-bouncy-numbers
 
 # --description--
 
-Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
+Wenn man von links nach rechts arbeitet und keine Ziffer durch die Ziffer links davon übertroffen wird, spricht man von einer aufsteigenden Zahl, zum Beispiel 134468.
 
-Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+Ähnlich verhält es sich, wenn keine Ziffer von der Ziffer rechts überschritten wird, wird es eine abnehmende Zahl genannt; zum Beispiel, 66420.
 
 We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
 

@@ -26,13 +26,13 @@ const myVar = 12 - 6;
 
 # --hints--
 
-يجب أن يساوي `difference` قيمة 12.
+The variable `difference` should be equal to `12`.
 
 ```js
 assert(difference === 12);
 ```
 
-يجب أن تطرح رَقَم واحد فقط من 45.
+You should only subtract one number from `45`.
 
 ```js
 assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));

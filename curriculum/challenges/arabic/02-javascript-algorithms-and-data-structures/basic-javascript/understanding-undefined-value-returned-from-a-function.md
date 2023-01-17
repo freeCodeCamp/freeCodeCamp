@@ -23,7 +23,7 @@ function addSum(num) {
 addSum(3);
 ```
 
-تكون `addSum` وظيفة دون `return`. سيغير وظيفة المتغير `sum` العالمي الآتي, ولكن تكون القيمة المرتجعة للوظيفة `undefined`.
+تكون `addSum` وظيفة دون `return`. ستغير الوظيفة المتغير الشامل `sum`، ولكن تكون القيمة المرتجعة للوظيفة `undefined`.
 
 # --instructions--
 

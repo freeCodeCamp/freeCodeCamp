@@ -98,7 +98,7 @@ the "not" and "is" selector is used to stop it from affecting other section and 
 external fontawesome link icon
 */
 
-[dir='rtl'] .nav-link > svg,
+[dir='rtl'] .nav-link > .fa-up-right-from-square,
 [dir='rtl'] td a[target='_blank'] > svg {
   transform: rotate(270deg);
 }
@@ -108,7 +108,7 @@ universal-nav-bar
 and menu secion
 */
 
-@media (min-width: 767.5px) {
+@media (min-width: 601px) {
   [dir='rtl'] .nav-list {
     right: auto;
     left: 0;
@@ -119,6 +119,16 @@ and menu secion
   [dir='rtl'] #universal-nav-logo {
     left: inherit;
     right: 17px;
+  }
+
+  [dir='rtl'] .fcc_searchBar .ais-Hits {
+    left: auto;
+    right: 15px;
+  }
+
+  [dir='rtl'] .universal-nav-right .fcc_searchBar {
+    left: auto;
+    right: 0;
   }
 }
 

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244db
-title: Вступ до інструкцій «else if»
+title: Вступ до інструкцій else if
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeJ2hm'
 forumTopicId: 18206

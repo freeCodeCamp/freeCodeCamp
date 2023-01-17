@@ -8,17 +8,17 @@ dashedName: problem-133-repunit-nonfactors
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$; for example, $R(6) = 111111$.
+Eine Zahl, die ausschließlich aus Einsen besteht, nennt man Repunit. Wir definieren $R(k)$ als Repunit der Länge $k$; zum Beispiel $R(6) = 111111$.
 
-Let us consider repunits of the form $R({10}^n)$.
+Wir betrachten Repunits in der Form $R({10}^n)$.
 
-Although $R(10)$, $R(100)$, or $R(1000)$ are not divisible by 17, $R(10000)$ is divisible by 17. Yet there is no value of n for which $R({10}^n)$ will divide by 19. Remarkably, 11, 17, 41, and 73 are the only four primes below one-hundred that can be a factor of $R({10}^n)$.
+Obwohl $R(10)$, $R(100)$ oder $R(1000)$ nicht durch 17 teilbar sind, ist $R(10000)$ durch 17 teilbar. Es gibt jedoch keinen Wert von n, für den $R({10}^n)$ durch 19 teilbar wäre. Bemerkenswerterweise sind 11, 17, 41 und 73 die einzigen vier Primzahlen unter Hundert, die ein Faktor von $R({10}^n)$ sein können.
 
-Find the sum of all the primes below one-hundred thousand that will never be a factor of $R({10}^n)$.
+Finde die Summe aller Primzahlen unter einhunderttausend, die niemals ein Faktor von $R({10}^n)$ sein wird.
 
 # --hints--
 
-`repunitNonfactors()` should return `453647705`.
+`repunitNonfactors()` sollte `453647705` zurückgeben.
 
 ```js
 assert.strictEqual(repunitNonfactors(), 453647705);

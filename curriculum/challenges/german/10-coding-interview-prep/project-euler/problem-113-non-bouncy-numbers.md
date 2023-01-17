@@ -8,19 +8,19 @@ dashedName: problem-113-non-bouncy-numbers
 
 # --description--
 
-Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
+Wenn man von links nach rechts arbeitet und keine Ziffer durch die Ziffer links davon übertroffen wird, spricht man von einer aufsteigenden Zahl, zum Beispiel 134468.
 
-Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+Ähnlich verhält es sich, wenn keine Ziffer von der Ziffer rechts daneben übertroffen wird. Man spricht dann von einer absteigenden Zahl, zum Beispiel 66420.
 
 We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
 
 As n increases, the proportion of bouncy numbers below n increases such that there are only 12951 numbers below one-million that are not bouncy and only 277032 non-bouncy numbers below ${10}^{10}$.
 
-How many numbers below a googol (${10}^{100}$) are not bouncy?
+Wie viele Zahlen unterhalb eines Googols (${10}^{100}$) sind nicht sprunghaft?
 
 # --hints--
 
-`nonBouncyNumbers()` should return `51161058134250`.
+`nonBouncyNumbers()` sollte `51161058134250` zurückgeben.
 
 ```js
 assert.strictEqual(nonBouncyNumbers(), 51161058134250);
