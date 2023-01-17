@@ -4,9 +4,9 @@ import { Button } from '@freecodecamp/react-bootstrap';
 import { LowerJawContext } from '../components/lower-jaw-icons';
 import { LowerJawTips } from '../components/lower-jaws-tip';
 import { LowerJawStatus } from '../components/lower-jaws-status';
-import { apiLocation } from '../../../../../config/env.json';
 
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+import { apiLocation } from '../../../../../config/env.json';
 
 const lowerJawButtonStyle = 'btn-block btn';
 
