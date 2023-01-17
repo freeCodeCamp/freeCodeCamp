@@ -9,6 +9,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 
 import Intro from '../components/Intro';
 import Map from '../components/Map';
+import ProgressIndicator from '../components/ProgressIndicator';
 import { Spacer } from '../components/helpers';
 import LearnLayout from '../components/layouts/learn';
 import { defaultDonation } from '../../../config/donation-settings';
@@ -70,7 +71,12 @@ function LearnPage({
   isSignedIn,
   executeGA,
   fetchState: { pending, complete },
-  user: { name = '', completedChallengeCount = 0, isDonating = false },
+  user: {
+    name = '',
+    completedChallengeCount = 0,
+    isDonating = false,
+    username = ''
+  },
   data: {
     challengeNode: {
       challenge: {
@@ -105,6 +111,10 @@ function LearnPage({
               slug={slug}
               onDonationAlertClick={onDonationAlertClick}
               isDonating={isDonating}
+            />
+            <ProgressIndicator
+              completedChallengeCount={completedChallengeCount}
+              username={username}
             />
             <Map />
             <Spacer size={2} />
