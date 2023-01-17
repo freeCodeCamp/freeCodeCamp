@@ -4,6 +4,11 @@ export type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
 
 type ChangibleValues =
   | {
+      value?: never;
+      onChange?: never;
+      readonly?: never;
+    }
+  | {
       value: string;
       onChange?: never;
       readonly: boolean;
@@ -11,21 +16,20 @@ type ChangibleValues =
   | {
       value: string;
       onChange: (event: React.ChangeEvent<FormControlElement>) => void;
-      readonly?: never;
+      readonly: never;
     };
 
-export type FormControlProps = ChangibleValues &
-  React.HTMLAttributes<FormControlElement> & {
-    className?: string;
-    id?: string;
-    testId?: string;
-    componentClass?: typeof React.Component;
-    placeholder?: string;
-    name?: string;
-    required?: boolean;
-    rows?: number;
-    type?: 'text' | 'email' | 'url';
-  };
+export type FormControlProps = React.HTMLAttributes<FormControlElement> & {
+  className?: string;
+  id?: string;
+  testId?: string;
+  componentClass?: typeof React.Component;
+  placeholder?: string;
+  name?: string;
+  required?: boolean;
+  rows?: number;
+  type?: 'text' | 'email' | 'url';
+} & ChangibleValues;
 
 export interface FormControlVariationProps {
   className?: string;
