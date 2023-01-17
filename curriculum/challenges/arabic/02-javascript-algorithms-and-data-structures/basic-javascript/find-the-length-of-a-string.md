@@ -9,7 +9,7 @@ dashedName: find-the-length-of-a-string
 
 # --description--
 
-يمكنك العثور على قيمة طول `String` بكتابة `.length` بعد متغير المقطع (string) أو المقطع النصي (string literal).
+يمكنك العثور على قيمة طول `String` بكتابة `.length` بعد متغير المقطع النصي أو بعد مقطع حرفي (string literal).
 
 ```js
 console.log("Alan Peter".length);

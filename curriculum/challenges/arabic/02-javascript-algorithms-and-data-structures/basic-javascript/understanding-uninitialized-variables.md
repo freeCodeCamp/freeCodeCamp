@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244aa
-title: فهم المتغيرات غير المهيأة (Understanding Uninitialized Variables)
+title: فهم المتغيرات غير المهيأة
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBa2JAL'
 forumTopicId: 18335
@@ -9,7 +9,7 @@ dashedName: understanding-uninitialized-variables
 
 # --description--
 
-عند الإعلان المتغيرات في JavaScript، يكون لها قيمة أولية وهي `undefined`. إذا قمت بعملية رياضية على متغير `undefined` ستكون نتيجتك `NaN` مما يعني <dfn>"Not a Number"</dfn> إي "ليس رقما". إذا ربط مقطع نصي مع متغير `undefined`، فستحصل على <dfn>مقطع نصي</dfn> بقيمة `undefined`.
+عند إعلان المتغيرات في JavaScript، يكون لها قيمة أولية وهي `undefined`. إذا قمت بعملية رياضية على متغير قيمته `undefined` ستكون نتيجتك `NaN` مما يعني <dfn>"Not a Number"</dfn> إي "ليس رقما". إذا ربط مقطع نصي مع متغير `undefined`، فستحصل على <dfn>مقطع نصي</dfn> بقيمة `undefined`.
 
 # --instructions--
 

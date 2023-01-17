@@ -28,7 +28,7 @@ numbers.some(function(currentValue) {
 
 # --hints--
 
-Використовуйте у коді метод `some`.
+Ваш код повинен використовувати метод `some`.
 
 ```js
 assert(code.match(/\.some/g));

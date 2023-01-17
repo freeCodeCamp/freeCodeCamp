@@ -1,6 +1,6 @@
 ---
 id: 587d7dab367417b2b2512b6d
-title: Застосуйте функціональне програмування для перетворення рядків в URL потоки
+title: Застосування функційного програмування для перетворення рядків на URL-слаги
 challengeType: 1
 forumTopicId: 301227
 dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
@@ -8,11 +8,11 @@ dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
 
 # --description--
 
-Останні кілька викликів охопили ряд корисних масивів та рядкових методів, що дотримуються принципів функціонального програмування. Ми також дізналися про `reduce`, який є потужним методом, що використовується для зменшення проблем для більш простої форми. Від середнього рівня обчислення до сортування, будь-яку масивну операцію можна досягти шляхом її застосування. Згадайте, що `map` і `filter` є особливими випадками `reduce`.
+Декілька попередніх завдань охоплювали ряд корисних методів масивів та рядків, які дотримуються принципів функційного програмування. Ми також дізналися про потужний метод `reduce`, який використовується для скорочення задач. За його допомогою можна виконати будь-яку операцію над масивом: від обчислення до сортування. Пригадайте, що `map` та `filter` є особливими випадками `reduce`.
 
-Об'єднаймо те, що ми навчилися вирішувати практичні проблеми.
+Об’єднаємо вивчене, щоб розв’язати практичне завдання.
 
-Багато сайтів управління контентом (CMS) мають заголовки матеріалу, доданих до частини URL для простих закладок. Наприклад, якщо ви напишете середній пост під назвою `Stop Using Reduce`, ймовірно, що URL буде мати певний формат рядка з заголовком (`.../stop-using-reduce`). Можливо, ви вже помітили це на сайті freeCodeCamp.
+Багато сайтів керування вмістом (CMS) додають заголовки дописів до частини URL в цілях соціальних закладок. Наприклад, якщо ви напишете середній допис під назвою `Stop Using Reduce`, ймовірно, URL міститиме заголовок (`.../stop-using-reduce`). Можливо, ви вже помітили це на сайті freeCodeCamp.
 
 # --instructions--
 
@@ -28,25 +28,25 @@ dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
 
 # --hints--
 
-Не використовуйте метод `replace` у вашому коді для цього завдання.
+Ваш код не повинен використовувати метод `replace` у цьому завданні.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?replace/g));
 ```
 
-`urlSlug("Winter Is Coming")` повинен повернути рядок `winter-is-coming`.
+`urlSlug("Winter Is Coming")` повинна повертати рядок `winter-is-coming`.
 
 ```js
 assert(urlSlug('Winter Is Coming') === 'winter-is-coming');
 ```
 
-`urlSlug("Winter Is  Coming")`  повернути рядок `winter-is-coming`.
+`urlSlug(" Winter Is  Coming")` повинна повертати рядок `winter-is-coming`.
 
 ```js
 assert(urlSlug(' Winter Is  Coming') === 'winter-is-coming');
 ```
 
-`urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")` потрібно повернути рядок `a-mind-needs-books-like-a-sword-needs-needs-a-whetstone`.
+`urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")` повинна повертати рядок `a-mind-needs-books-like-a-sword-needs-a-whetstone`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-`urlSlug(" Hold The Door")`слід повернути рядок `hold-door`.
+`urlSlug("Hold The Door")` повинна повертати рядок `hold-the-door`.
 
 ```js
 assert(urlSlug('Hold The Door') === 'hold-the-door');
