@@ -2,22 +2,19 @@ import React from 'react';
 
 export type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
 
-type Values =
-  | ({
-      value: string;
-    } & (
-      | { onChange: (event: React.ChangeEvent<FormControlElement>) => void }
-      | {
-          readOnly: boolean;
-        }
-    ))
+type ChangibleValues =
   | {
-      value?: never;
+      value: string;
       onChange?: never;
-      readOnly?: never;
+      readonly: boolean;
+    }
+  | {
+      value: string;
+      onChange: (event: React.ChangeEvent<FormControlElement>) => void;
+      readonly?: never;
     };
 
-export type FormControlProps = Values &
+export type FormControlProps = ChangibleValues &
   React.HTMLAttributes<FormControlElement> & {
     className?: string;
     id?: string;
