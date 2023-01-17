@@ -1,4 +1,5 @@
-const store = require('store');
+import store from 'store';
+import { ChallengeData } from '../../../../../tools/challenge-editor/api/interfaces/ChallengeData';
 
 const failedUpdates = [
   {
@@ -12,10 +13,13 @@ const failedUpdates = [
     id: 'ea289e2f-a5d2-45e0-b795-0f9f4afc5124'
   }
 ];
-
 const failedUpdatesKey = 'fcc-failed-updates';
 
-describe('failed update flushing', () => {
+function getCompletedIds(completedChallenges: ChallengeData[]): string[] {
+  return completedChallenges.map((challenge: ChallengeData) => challenge.id);
+}
+
+describe('failed update flushing', function () {
   before(() => {
     cy.exec('npm run seed');
     cy.login();
@@ -29,9 +33,8 @@ describe('failed update flushing', () => {
     store.set(failedUpdatesKey, failedUpdates);
     cy.request('http://localhost:3000/user/get-session-user')
       .its('body.user.developmentuser.completedChallenges')
-      .then(completedChallenges => {
-        const completedIds = completedChallenges.map(challenge => challenge.id);
-
+      .then((completedChallenges: ChallengeData[]) => {
+        const completedIds: string[] = getCompletedIds(completedChallenges);
         failedUpdates.forEach(failedUpdate => {
           expect(completedIds).not.to.include(failedUpdate.payload.id);
         });
@@ -47,9 +50,8 @@ describe('failed update flushing', () => {
     cy.wait('@completed');
     cy.request('http://localhost:3000/user/get-session-user')
       .its('body.user.developmentuser.completedChallenges')
-      .then(completedChallenges => {
-        const completedIds = completedChallenges.map(challenge => challenge.id);
-
+      .then((completedChallenges: ChallengeData[]) => {
+        const completedIds: string[] = getCompletedIds(completedChallenges);
         failedUpdates.forEach(failedUpdate => {
           expect(completedIds).to.include(failedUpdate.payload.id);
         });
