@@ -4,7 +4,8 @@ const location =
 const selectors = {
   monacoTabs: '.monaco-editor-tabs',
   signInButton: '[data-cy=sign-in-button]',
-  lowerJawButton: '[data-cy=lowerJaw-button]',
+  submitLowerJawButton: '[data-cy=submit-lowerJaw-button]',
+  checkLowerJawButton: '[data-cy=check-lowerJaw-button]',
   resetCodeButton: '[data-cy=reset-code-button]',
   instructionContainer: '.action-row-container'
 };
@@ -21,10 +22,12 @@ describe('Challenge with multifile editor', () => {
 
   it('checks for correct text at different widths', () => {
     cy.viewport(768, 660);
-    cy.get(selectors.lowerJawButton).contains('Check Your Code (Ctrl + Enter)');
+    cy.get(selectors.checkLowerJawButton).contains(
+      'Check Your Code (Ctrl + Enter)'
+    );
 
     cy.viewport(767, 660);
-    cy.get(selectors.lowerJawButton)
+    cy.get(selectors.checkLowerJawButton)
       .should('not.contain.text', '(Ctrl + Enter)')
       .contains('Check Your Code');
   });
@@ -55,9 +58,9 @@ describe('Challenge with multifile editor', () => {
   it('focuses the submit button after testing a valid solution', () => {
     cy.visit(location);
     cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
-    cy.get(selectors.lowerJawButton).should('not.be.focused');
-    cy.get(selectors.lowerJawButton).click();
-    cy.get(selectors.lowerJawButton).should('be.focused');
+    cy.get(selectors.checkLowerJawButton).should('not.be.focused');
+    cy.get(selectors.checkLowerJawButton).click();
+    cy.get(selectors.submitLowerJawButton).should('be.focused');
   });
 
   it('checks hotkeys when instruction is focused', () => {
@@ -66,6 +69,6 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.instructionContainer)
       .click('topRight')
       .trigger('keydown', { ctrlKey: true, keyCode: 13 }); // keyCode : 13 enter key
-    cy.get(selectors.lowerJawButton).should('not.be.focused');
+    cy.get(selectors.submitLowerJawButton).should('not.be.focused');
   });
 });

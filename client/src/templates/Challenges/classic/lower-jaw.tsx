@@ -1,11 +1,14 @@
 import React, { createRef, useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { LowerJawButtons } from '../components/lower-jaw-button';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { LowerJawContext } from '../components/lower-jaw-icons';
 import { LowerJawTips } from '../components/lower-jaws-tip';
 import { LowerJawStatus } from '../components/lower-jaws-status';
+import { apiLocation } from '../../../../../config/env.json';
 
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+
+const lowerJawButtonStyle = 'btn-block btn';
 
 interface LowerJawProps {
   hint?: string;
@@ -103,25 +106,42 @@ const LowerJaw = ({
 
   const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;
 
-  const checkButton = showDesktopButton
+  const checkButtonText = showDesktopButton
     ? t('buttons.check-code')
     : t('buttons.check-code-2');
 
   const showScreenReadSubmit = challengeIsCompleted && isEditorInFocus;
+  const showSignInButton = !isSignedIn && challengeIsCompleted;
 
   return (
     <div className='action-row-container'>
-      <LowerJawButtons
-        signed={isSignedIn}
-        challengeIsCompleted={challengeIsCompleted}
-        buttonText={
-          challengeIsCompleted ? t('buttons.submit-and-go') : checkButton
-        }
-        onClick={
-          challengeIsCompleted ? tryToSubmitChallenge : tryToExecuteChallenge
-        }
-        signInText={t('learn.sign-in-save')}
-      />
+      {showSignInButton && (
+        <Button
+          data-cy='sign-in-button'
+          block={true}
+          href={`${apiLocation}/signin`}
+          className='btn-cta'
+        >
+          {t('learn.sign-in-save')}
+        </Button>
+      )}
+      {challengeIsCompleted ? (
+        <button
+          className={lowerJawButtonStyle}
+          data-cy='submit-lowerJaw-button'
+          onClick={tryToSubmitChallenge}
+        >
+          {t('buttons.submit-and-go')}
+        </button>
+      ) : (
+        <button
+          className={lowerJawButtonStyle}
+          data-cy='check-lowerJaw-button'
+          onClick={tryToExecuteChallenge}
+        >
+          {checkButtonText}
+        </button>
+      )}
       <div
         style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
         className={`test-feedback`}
