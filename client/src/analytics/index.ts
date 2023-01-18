@@ -10,13 +10,13 @@ import envData from '../../../config/env.json';
 
 const { deploymentEnv, clientLocale } = envData;
 
-const analyticsIDSelecor = () => {
+const analyticsIDSelector = () => {
   if (deploymentEnv === 'staging') return devAnalyticsId;
   else if (clientLocale === 'espanol') return prodAnalyticsESId;
   else return prodAnalyticsId;
 };
 
-const gtmId = analyticsIDSelecor();
+const gtmId = analyticsIDSelector();
 
 if (typeof document !== `undefined`) {
   TagManager.initialize({ gtmId });
