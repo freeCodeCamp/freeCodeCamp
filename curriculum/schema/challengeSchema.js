@@ -91,7 +91,7 @@ const schema = Joi.object()
         crossDomain: Joi.bool()
       })
     ),
-    assignments: Joi.array(),
+    assignments: Joi.array().items(Joi.string()),
     solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
     superBlock: Joi.string().regex(slugWithSlashRE),
     superOrder: Joi.number(),
