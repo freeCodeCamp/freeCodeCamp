@@ -2,12 +2,12 @@ import React from 'react';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { SuperBlocks } from '../../../../config/certification-settings';
-import ToggleCheck from '../../assets/icons/toggle-check';
 import {
   isSignedInSelector,
   userSelector,
   userFetchStateSelector
 } from '../../redux/selectors';
+import CircleCheckRegular from './assets/circle-check-regular';
 
 interface FetchState {
   pending: boolean;
@@ -111,7 +111,7 @@ const CertificateEarned = (props: CertificateEarnedProps): JSX.Element => {
       break;
   }
 
-  return certsMap[superBlock] ? <ToggleCheck /> : <></>;
+  return certsMap[superBlock] ? <CircleCheckRegular /> : <></>;
 };
 
 export default connect(mapStateToProps)(CertificateEarned);
