@@ -158,7 +158,8 @@
       "honesty": "Academic Honesty Policy",
       "internet": "Your Internet Presence",
       "portfolio": "Portfolio Settings",
-      "privacy": "Privacy Settings"
+      "privacy": "Privacy Settings",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "Danger Zone",
