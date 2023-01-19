@@ -1,10 +1,14 @@
-const selectors = {
+const landingPageElements = {
   heading: "[data-test-label='landing-header']",
   callToAction: "[data-test-label='landing-big-cta']",
   certifications: "[data-test-label='certifications']",
   testimonials: "[data-test-label='testimonial-cards']",
   landingPageImage: '.landing-page-image'
-};
+} as const;
+
+type LandingPageTypes<T> = T[keyof T];
+
+type LandingPageLogs = LandingPageTypes<typeof landingPageElements>;
 
 const certifications = [
   '(New) Responsive Web Design',
@@ -27,12 +31,12 @@ describe('Landing page', () => {
       'eq',
       'Learn to Code — For Free — Coding Courses for Busy People'
     );
-    cy.contains(selectors.callToAction, "Get started (it's free)");
-    cy.get(selectors.callToAction).should('have.length', 2);
+    cy.contains(landingPageElements.callToAction, "Get started (it's free)");
+    cy.get(landingPageElements.callToAction).should('have.length', 2);
   });
 
   it('Has visible header and sub-header', () => {
-    cy.contains(selectors.heading, 'Learn to code — for free.');
+    cy.contains(landingPageElements.heading, 'Learn to code — for free.');
     cy.contains('Build projects.').should('be.visible');
     cy.contains('Earn certifications.').should('be.visible');
 
@@ -52,19 +56,29 @@ describe('Landing page', () => {
   });
 
   it('Has a visible large image on large viewports', function () {
-    cy.viewport(1200, 660).get(selectors.landingPageImage).should('be.visible');
+    cy.viewport(1200, 660)
+      .get(landingPageElements.landingPageImage)
+      .should('be.visible');
 
-    cy.viewport(1199, 660).get(selectors.landingPageImage).should('not.exist');
+    cy.viewport(1199, 660)
+      .get(landingPageElements.landingPageImage)
+      .should('not.exist');
   });
 
   it('Has links to all the certifications', function () {
-    cy.get(selectors.certifications).children().its('length').should('eq', 11);
-    cy.wrap(certifications).each(cert => {
-      cy.get(selectors.certifications).contains(cert);
+    cy.get(landingPageElements.certifications)
+      .children()
+      .its('length')
+      .should('eq', 11);
+    cy.wrap(certifications).each((cert: LandingPageLogs) => {
+      cy.get(landingPageElements.certifications).contains(cert);
     });
   });
 
   it('Has 3 testimonial cards', function () {
-    cy.get(selectors.testimonials).children().its('length').should('eq', 3);
+    cy.get(landingPageElements.testimonials)
+      .children()
+      .its('length')
+      .should('eq', 3);
   });
 });
