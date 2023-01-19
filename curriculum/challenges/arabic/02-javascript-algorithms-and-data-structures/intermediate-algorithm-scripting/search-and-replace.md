@@ -20,7 +20,7 @@ dashedName: search-and-replace
 
 # --hints--
 
-`myReplace("Let us go to the store", "store", "mall")` يجب أن يعيد السلسلة النصية `Let us go to the mall`.
+`myReplace("Let us go to the store", "store", "mall")` يجب أن يعيد المقطع النصي `Let us go to the mall`.
 
 ```js
 assert.deepEqual(
@@ -29,7 +29,7 @@ assert.deepEqual(
 );
 ```
 
-`myReplace("He is Sleeping on the couch", "Sleeping", "sitting")` يجب أن يعيد السلسلة النصية `He is Sitting on the couch`.
+`myReplace("He is Sleeping on the couch", "Sleeping", "sitting")` يجب أن يعيد المقطع النصي `He is Sitting on the couch`.
 
 ```js
 assert.deepEqual(
@@ -38,7 +38,7 @@ assert.deepEqual(
 );
 ```
 
-`myReplace("I think we should look up there", "up", "Down")` يجب أن يعيد السلسلة النصية `I think we should look down there`.
+`myReplace("I think we should look up there", "up", "Down")` يجب أن يعيد المقطع النصي `I think we should look down there`.
 
 ```js
 assert.deepEqual(
@@ -47,7 +47,7 @@ assert.deepEqual(
 );
 ```
 
-`myReplace("This has a spellngi error", "spellngi", "spelling")` يجب أن يعيد السلسلة النصية `This has a spelling error`.
+`myReplace("This has a spellngi error", "spellngi", "spelling")` يجب أن يعيد المقطع النصي `This has a spelling error`.
 
 ```js
 assert.deepEqual(
@@ -56,7 +56,7 @@ assert.deepEqual(
 );
 ```
 
-`myReplace("His name is Tom", "Tom", "john")` يجب أن يعيد السلسلة النصية `His name is John`.
+`myReplace("His name is Tom", "Tom", "john")` يجب أن يعيد المقطع النصي `His name is John`.
 
 ```js
 assert.deepEqual(

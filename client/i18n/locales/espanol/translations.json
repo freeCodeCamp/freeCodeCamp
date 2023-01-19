@@ -53,7 +53,7 @@
     "check-code": "Comprueba tu código (Ctrl + Enter)",
     "check-code-2": "Comprueba tu código",
     "reset": "Restablecer",
-    "reset-code": "Restablecer todo el código",
+    "reset-step": "Reset This Step",
     "help": "Ayuda",
     "get-help": "Obtener ayuda",
     "watch-video": "Ver un Video",

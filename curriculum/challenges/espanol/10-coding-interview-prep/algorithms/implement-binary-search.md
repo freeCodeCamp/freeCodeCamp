@@ -10,9 +10,10 @@ dashedName: implement-binary-search
 
 La búsqueda binaria es un algoritmo de eficiencia **O(log(n))** para la busqueda de elementos en un arreglo ordenado. Funciona de la siguiente manera:
 
-1. Encuentra el valor (`value`) intermedio de un arreglo ordenado. Si este valor es igual al valor que estamos buscando (`value == target`) return (¡Lo encontramos!).
+1. Encuentra el valor (`value`) intermedio de un arreglo ordenado. If `value == target` return `true` (The value has been found and the search is complete).
 1. Si el valor intermedio es menor del valor que estamos buscando (`value < target`), repetiremos el paso uno en la mitad más chica de nuestro arreglo.
 1. Si el valor intermedio es menor del valor que estamos buscando (`value > target`), repetiremos el paso uno en la mitad más chica de nuestro arreglo.
+1. If after searching the whole array the value is not present, return `false` (The array has been searched and the value is not in the array).
 
 Como lo habrás notado, estamos dividiendo al mitad a un arreglo sucesivamente, por lo que tendremos una eficiencia de log(n). Para este desafío, queremos que muestres tu trabajo: cómo llegaste al valor objetivo... ¡el camino que tomaste!
 
@@ -20,7 +21,7 @@ Como lo habrás notado, estamos dividiendo al mitad a un arreglo sucesivamente, 
 
 Escribe la función `binarySearch` (búsqueda binaria) que implemente el algoritmo de búsqueda binaria en un arreglo, devolviendo el camino tomado (cada valor intermedio comparado) para encontrar el valor en un arreglo.
 
-La función recibe como parametros un arreglo de números enteros y el número que queremos buscar. Devuleve un arreglo (ordenado) que contiene todos los valores intermedios del arreglo original descartados antes de encontrar el valor deseado. El valor que estamos buscando deberá ser el ultima elemento de nuestro arreglo retornado. Si no encontramos el valor estabamos buscando, devolvemos la cadena `Value Not Found` (Valor no encontrado).
+La función recibe como parametros un arreglo de números enteros y el número que queremos buscar. Devuleve un arreglo (ordenado) que contiene todos los valores intermedios del arreglo original descartados antes de encontrar el valor deseado. El valor que estamos buscando deberá ser el ultima elemento de nuestro arreglo retornado. If the value is not found, return the string `Value Not Found`.
 
 Por ejemplo `binarySearch([1,2,3,4,5,6,7], 5)` deberá retornar `[4,6,5]`.
 

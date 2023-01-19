@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244dd
-title: Вибір з багатьох опцій за допомогою перемикачів
+title: Вибір із багатьох варіантів за допомогою інструкцій switch
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c4mv4fm'
 forumTopicId: 18277
@@ -9,9 +9,9 @@ dashedName: selecting-from-many-options-with-switch-statements
 
 # --description--
 
-Якщо у вас є багато опцій для вибору, використовуйте команду <dfn>switch</dfn>. `switch` тести на значення і може мати багато <dfn> випадків </dfn> інструкцій, які визначають різні значення. Інструкції виконуються від першого узгодженого значення `case<code> до тих пір, поки <code>break<code> не відбудиться.</p>
+Якщо ви маєте багато варіантів для вибору, використовуйте інструкцію <dfn>switch</dfn>. Інструкція `switch` тестує значення та може мати багато інструкцій <dfn>case</dfn>, які визначають можливі значення. Інструкції виконуються від першого відповідного значення `case` до тих пір, поки не зіткнуться із `break`.
 
-<p spaces-before="0">Ось наводиться приклад інструкції <code>switch`:
+Ось приклад інструкції `switch`:
 
 ```js
 switch (lowercaseLetter) {
@@ -24,11 +24,11 @@ switch (lowercaseLetter) {
 }
 ```
 
-`case` значень перевіряється абсолютною рівністю (`===`). `break` пропонує JavaScript припинити виконання інструкцій. Якщо `break` пропущений, тоді наступна команда буде виконуватись.
+Значення `case` перевіряються за допомогою строгої рівності (`===`). `break` вказує JavaScript зупинити запущені інструкції. Якщо пропустити `break`, виконується наступна інструкція.
 
 # --instructions--
 
-Напишіть команду switch, щоб встановити `answer` за наступних умов:  
+Напишіть інструкцію switch, яка перевіряє `val` та встановлює `answer` для наступних умов:  
 `1` - `alpha`  
 `2` - `beta`  
 `3` - `gamma`  
@@ -36,31 +36,31 @@ switch (lowercaseLetter) {
 
 # --hints--
 
-`caseInSwitch(1)` повинно відповідати значенню рядка `alpha`
+`caseInSwitch(1)` повинна мати значення рядка `alpha`
 
 ```js
 assert(caseInSwitch(1) === 'alpha');
 ```
 
-`caseInSwitch(2)` повинно відповідати значенню рядка `beta`
+`caseInSwitch(2)` повинна мати значення рядка `beta`
 
 ```js
 assert(caseInSwitch(2) === 'beta');
 ```
 
-`caseInSwitch(3)` повинно відповідати значенню рядка `gamma`
+`caseInSwitch(3)` повинна мати значення рядка `gamma`
 
 ```js
 assert(caseInSwitch(3) === 'gamma');
 ```
 
-`caseInSwitch(4)` повинно відповідати значенню рядка `delta`
+`caseInSwitch(4)` повинна мати значення рядка `delta`
 
 ```js
 assert(caseInSwitch(4) === 'delta');
 ```
 
-Не варто використовувати `if` або `else` команди
+Ви не повинні використовувати інструкції `if` чи `else`
 
 ```js
 assert(!/else/g.test(code) || !/if/g.test(code));

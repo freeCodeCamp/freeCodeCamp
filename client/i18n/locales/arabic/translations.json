@@ -53,7 +53,7 @@
     "check-code": "تيقن من كودك (Ctrl + Enter)",
     "check-code-2": "تيقن من كودك",
     "reset": "إعادة ضبط",
-    "reset-code": "أعد جميع الكود ألى حالتهم الأولية",
+    "reset-step": "Reset This Step",
     "help": "مساعدة",
     "get-help": "الحصول على المساعدة",
     "watch-video": "شاهد الفيديو",

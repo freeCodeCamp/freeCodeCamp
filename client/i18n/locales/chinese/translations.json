@@ -53,7 +53,7 @@
     "check-code": "检查您的代码 (Ctrl + Enter)",
     "check-code-2": "检查你的代码",
     "reset": "重置",
-    "reset-code": "重置所有代码",
+    "reset-step": "Reset This Step",
     "help": "帮助",
     "get-help": "获得帮助",
     "watch-video": "观看视频",

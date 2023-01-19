@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b90
-title: طابق سلسلة حرفية (Literal String) مع احتمالات مختلفة
+title: طابق مقطع نصي حرفي (Literal String) مع احتمالات مختلفة
 challengeType: 1
 forumTopicId: 301345
 dashedName: match-a-literal-string-with-different-possibilities
@@ -8,9 +8,9 @@ dashedName: match-a-literal-string-with-different-possibilities
 
 # --description--
 
-باستخدام regexes مثل `/coding/`، يمكنك البحث عن النمط `coding` في سلسلة (string) أخرى.
+باستخدام regexes مثل `/coding/`، يمكنك البحث عن النمط `coding` في مقطع نصي أخر.
 
-هذا جيد للبحث عن سلسلة (string) واحدة، لكنه يقتصر على نمط واحد فقط. يمكنك البحث عن أنماط متعددة باستخدام `alternation` أو رمز `OR` التالي: `|`.
+هذا جيد للبحث في مقطع نصي (string) واحد، لكنه يقتصر على نمط واحد فقط. يمكنك البحث عن أنماط متعددة باستخدام `alternation` أو رمز `OR` التالي: `|`.
 
 هذا المشغل يطابق الأنماط قبله أو بعده. على سبيل المثال، إذا كنت ترغب في مطابقة السلاسل (strings) باسم `yes` أو `no`، تريد regex إن يكون `/yes|no/`.
 
@@ -22,49 +22,49 @@ dashedName: match-a-literal-string-with-different-possibilities
 
 # --hints--
 
-الـ regex الآتي `petRegex` يجب أن يرجع `true` للسلسلة `John has a pet dog.`
+نمطـ regex الآتي `petRegex` يجب أن يرجع `true` للمقطع النصي `John has a pet dog.`
 
 ```js
 petRegex.lastIndex = 0;
 assert(petRegex.test('John has a pet dog.'));
 ```
 
-الـ regexا لآتي `petRegex` يجب أن يرجع `false` للسلسلة `Emma has a pet rock.`
+نمط regex الآتي `petRegex` يجب أن يرجع `false` للمقطع النصي `Emma has a pet rock.`
 
 ```js
 petRegex.lastIndex = 0;
 assert(!petRegex.test('Emma has a pet rock.'));
 ```
 
-الـ regex الآتي `petRegex` يجب أن يرجع `true` للسلسلة `Emma has a pet bird.`
+نمط regex الآتي `petRegex` يجب أن يرجع `true` للمقطع النصي `Emma has a pet bird.`
 
 ```js
 petRegex.lastIndex = 0;
 assert(petRegex.test('Emma has a pet bird.'));
 ```
 
-الـ regex الآتي `petRegex` يجب أن يرجع `true` للسلسلة `Liz has a pet cat.`
+نمطـ regex الآتي `petRegex` يجب أن يرجع `true` للمقطع النصي `Liz has a pet cat.`
 
 ```js
 petRegex.lastIndex = 0;
 assert(petRegex.test('Liz has a pet cat.'));
 ```
 
-الـ regex الآتي `petRegex` يجب أن يرجع `false` للسلسلة `Kara has a pet dolphin.`
+نمط regex الآتي `petRegex` يجب أن يرجع `false` للمقطع النصي `Kara has a pet dolphin.`
 
 ```js
 petRegex.lastIndex = 0;
 assert(!petRegex.test('Kara has a pet dolphin.'));
 ```
 
-الـ regex الآتي `petRegex` يجب أن يرجع `true` للسلسلة `Alice has a pet fish.`
+نمط regex الآتي `petRegex` يجب أن يرجع `true` للمقطع النصي `Alice has a pet fish.`
 
 ```js
 petRegex.lastIndex = 0;
 assert(petRegex.test('Alice has a pet fish.'));
 ```
 
-الـ regex الآتي `petRegex` يجب أن يرجع `false` للسلسلة `Jimmy has a pet computer.`
+نمط regex الآتي `petRegex` يجب أن يرجع `false` للمقطع النصي `Jimmy has a pet computer.`
 
 ```js
 petRegex.lastIndex = 0;

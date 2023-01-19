@@ -173,7 +173,7 @@ const LowerJaw = ({
         )}
       </div>
       <LowerJawContext
-        resetButtonName={t('buttons.reset-code')}
+        resetButtonName={t('buttons.reset-step')}
         resetButtonEvent={openResetModal}
         hideHelpButton={Boolean(
           isAttemptsLargerThanTest && !challengeIsCompleted
