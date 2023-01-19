@@ -39,7 +39,7 @@ We encourage you to read the [announcement here](https://www.freecodecamp.org/ne
 
 ## Learning Platform
 
-Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more. 
 
 Broadly, we have a Node.js based API server, a set of React-based client applications, testing scripts to evaluate camper-submitted curriculum projects, and more. If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
 
