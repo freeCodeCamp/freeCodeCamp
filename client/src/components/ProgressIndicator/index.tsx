@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 import { certificatesByNameSelector } from '../../redux/selectors';
 import type { CurrentCert } from '../../redux/prop-types';
 
-import './styles.css';
+import './progress-indicator.css';
 
 interface ProgressIndicatorProps {
   completedChallengeCount?: number;
