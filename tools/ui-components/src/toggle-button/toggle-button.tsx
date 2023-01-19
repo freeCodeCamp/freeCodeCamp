@@ -1,4 +1,3 @@
-import { Switch } from '@headlessui/react';
 import React from 'react';
 import { ButtonSize, ButtonStyle, ToggleButtonProps } from './types';
 
@@ -7,6 +6,7 @@ const defaultClassNames = [
   'border-3',
   'text-center',
   'inline-block',
+  'cursor-pointer',
   'active:before:w-full',
   'active:before:h-full',
   'active:before:absolute',
@@ -18,21 +18,26 @@ const defaultClassNames = [
   'focus:outline-none', // Hide the default browser outline
   'focus:ring',
   'focus:ring-focus-outline-color',
-  'ui-checked:cursor-not-allowed', // ui-checked from @headlessui/tailwindcss plugin
+  'focus-within:ring',
+  'focus-within:ring-focus-outline-color',
   'aria-disabled:cursor-not-allowed',
-  'aria-disabled:opacity-50'
+  'aria-disabled:opacity-50',
+  'ml-[-3px]',
+  'first:ml-0'
 ];
 
 const computeClassNames = ({
   bsSize,
   bsStyle,
+  checked,
   disabled
 }: {
   bsSize: ButtonSize;
   bsStyle: ButtonStyle;
+  checked?: boolean;
   disabled?: boolean;
 }) => {
-  const classNames = [...defaultClassNames];
+  const classNames = [...defaultClassNames, checked ? 'cursor-default' : ''];
 
   switch (bsStyle) {
     case 'danger':
@@ -40,8 +45,7 @@ const computeClassNames = ({
         'border-foreground-danger',
         'bg-background-danger',
         'text-foreground-danger',
-        'ui-checked:bg-foreground-danger',
-        'ui-checked:text-background-danger',
+        ...(checked ? ['bg-foreground-danger', 'text-background-danger'] : []),
         ...(disabled
           ? ['active:before:hidden']
           : [
@@ -49,8 +53,9 @@ const computeClassNames = ({
               'hover:text-background-danger',
               'dark:hover:bg-background-danger',
               'dark:hover:text-foreground-danger',
-              'ui-checked:hover:bg-background-danger',
-              'ui-checked:hover:text-foreground-danger'
+              ...(checked
+                ? ['hover:bg-background-danger', 'hover:text-foreground-danger']
+                : [])
             ])
       );
       break;
@@ -60,8 +65,9 @@ const computeClassNames = ({
         'border-foreground-secondary',
         'bg-background-quaternary',
         'text-foreground-secondary',
-        'ui-checked:bg-foreground-primary',
-        'ui-checked:text-background-primary',
+        ...(checked
+          ? ['bg-foreground-primary', 'text-background-primary']
+          : []),
         ...(disabled
           ? ['active:before:hidden']
           : [
@@ -69,8 +75,12 @@ const computeClassNames = ({
               'hover:text-background-primary',
               'dark:hover:bg-background-primary',
               'dark:hover:text-foreground-primary',
-              'ui-checked:hover:bg-background-quaternary',
-              'ui-checked:hover:text-foreground-secondary'
+              ...(checked
+                ? [
+                    'hover:bg-background-quaternary',
+                    'hover:text-foreground-secondary'
+                  ]
+                : [])
             ])
       );
   }
@@ -93,6 +103,7 @@ const computeClassNames = ({
 export const ToggleButton = ({
   bsSize = 'small',
   bsStyle = 'primary',
+  type = 'button',
   disabled,
   children,
   checked,
@@ -100,7 +111,7 @@ export const ToggleButton = ({
   value,
   name
 }: ToggleButtonProps) => {
-  const classNames = computeClassNames({ bsSize, bsStyle, disabled });
+  const classNames = computeClassNames({ bsSize, bsStyle, disabled, checked });
 
   const handleChange = () => {
     if (!disabled && onChange) {
@@ -108,16 +119,32 @@ export const ToggleButton = ({
     }
   };
 
+  if (type === 'radio') {
+    return (
+      <label htmlFor='toggle-btn-radio' className={classNames}>
+        <input
+          type='radio'
+          id='toggle-btn-radio'
+          name={name}
+          value={value}
+          onChange={handleChange}
+          checked={checked}
+          aria-disabled={disabled}
+          className='absolute h-0 w-0 opacity-0'
+        />
+        {children}
+      </label>
+    );
+  }
+
   return (
-    <Switch
-      checked={checked}
-      onChange={handleChange}
-      className={classNames}
+    <button
+      aria-pressed={checked}
       aria-disabled={disabled}
-      value={value}
-      name={name}
+      className={classNames}
+      onClick={handleChange}
     >
       {children}
-    </Switch>
+    </button>
   );
 };

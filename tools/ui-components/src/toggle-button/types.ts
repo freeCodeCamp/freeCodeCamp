@@ -12,4 +12,5 @@ export interface ToggleButtonProps {
   className?: string;
   value?: string;
   name?: string;
+  type?: 'button' | 'radio';
 }

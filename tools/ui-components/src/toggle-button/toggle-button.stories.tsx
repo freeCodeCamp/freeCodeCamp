@@ -86,6 +86,23 @@ Disabled.args = {
   disabled: true
 };
 
+export const RadioChecked = Template.bind({});
+RadioChecked.args = {
+  type: 'radio',
+  children: 'On',
+  value: 'radio',
+  name: 'radio',
+  checked: true
+};
+
+export const RadioUnchecked = Template.bind({});
+RadioUnchecked.args = {
+  type: 'radio',
+  children: 'Off',
+  value: 'radio',
+  name: 'radio'
+};
+
 export const InsideToggleGroup = () => {
   const [checked, setChecked] = useState(true);
 

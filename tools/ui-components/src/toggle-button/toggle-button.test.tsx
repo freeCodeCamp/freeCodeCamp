@@ -8,46 +8,42 @@ describe('<ToggleButton />', () => {
   it('should render the toggle button and text', () => {
     render(<ToggleButton>On</ToggleButton>);
 
-    expect(screen.getByRole('switch', { name: /on/i })).toBeInTheDocument();
-  });
-
-  it('should be checked on click', () => {
-    render(<ToggleButton>On</ToggleButton>);
-
-    const toggleButton = screen.getByRole('switch', { name: /on/i });
-
-    expect(toggleButton).not.toBeChecked();
-
-    userEvent.click(toggleButton);
-
-    expect(toggleButton).toBeChecked();
+    expect(screen.getByRole('button', { name: /on/i })).toBeInTheDocument();
   });
 
   it('should call onChange when clicked', () => {
     const onChange = jest.fn();
     render(<ToggleButton onChange={onChange}>On</ToggleButton>);
 
-    userEvent.click(screen.getByRole('switch', { name: /on/i }));
+    userEvent.click(screen.getByRole('button', { name: /on/i }));
 
     expect(onChange).toBeCalledTimes(1);
   });
 
   it('should be checked if checked prop is true', () => {
-    render(<ToggleButton checked={true}>On</ToggleButton>);
+    render(
+      <ToggleButton checked={true} type='radio'>
+        On
+      </ToggleButton>
+    );
 
-    expect(screen.getByRole('switch', { name: /on/i })).toBeChecked();
+    expect(screen.getByRole('radio')).toBeChecked();
   });
 
   it('should be unchecked if checked prop is false', () => {
-    render(<ToggleButton checked={false}>On</ToggleButton>);
+    render(
+      <ToggleButton checked={false} type='radio'>
+        On
+      </ToggleButton>
+    );
 
-    expect(screen.getByRole('switch', { name: /on/i })).not.toBeChecked();
+    expect(screen.getByRole('radio')).not.toBeChecked();
   });
 
   it('should be aria-disabled if disabled prop is true', () => {
     render(<ToggleButton disabled={true}>On</ToggleButton>);
 
-    expect(screen.getByRole('switch', { name: /on/i })).toHaveAttribute(
+    expect(screen.getByRole('button', { name: /on/i })).toHaveAttribute(
       'aria-disabled',
       'true'
     );
@@ -61,34 +57,22 @@ describe('<ToggleButton />', () => {
       </ToggleButton>
     );
 
-    userEvent.click(screen.getByRole('switch', { name: /on/i }));
+    userEvent.click(screen.getByRole('button', { name: /on/i }));
 
     expect(onChange).not.toBeCalled();
   });
 
-  it('should have value property if checked', () => {
+  it('should have value property if radio', () => {
     render(
       <form aria-label='form'>
-        <ToggleButton checked={true} value='value' name='radio'>
+        <ToggleButton checked={true} type='radio' value='value' name='radio'>
           On
         </ToggleButton>
       </form>
     );
 
     expect(screen.getByRole('form')).toHaveFormValues({
-      radio: true
+      radio: 'value'
     });
-  });
-
-  it('should not have value property if not checked', () => {
-    render(
-      <form aria-label='form'>
-        <ToggleButton value='value' name='radio'>
-          Off
-        </ToggleButton>
-      </form>
-    );
-
-    expect(screen.getByRole('form')).toHaveFormValues({});
   });
 });
