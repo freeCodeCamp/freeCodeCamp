@@ -14,13 +14,13 @@ dashedName: metric-imperial-converter
 - <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-If you use Replit, follow these steps to set up the project:
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
@@ -28,9 +28,9 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 - Complete the necessary routes in `/routes/api.js`
 - Copy the `sample.env` file to `.env` and set the variables appropriately
 - To run the tests uncomment `NODE_ENV=test` in your `.env` file
-- To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+- コンソールでテストを実行するには、コマンド `npm run test` を使用してください。 Replit コンソールを開くには、Ctrl+Shift+P (Macの場合はCmd) を押して「open shell」と入力してください。
 
-Write the following tests in `tests/1_unit-tests.js`:
+`tests/1_unit-tests.js` に以下のテストを記述してください。
 
 - `convertHandler` should correctly read a whole number input.
 - `convertHandler` should correctly read a decimal number input.
@@ -49,7 +49,7 @@ Write the following tests in `tests/1_unit-tests.js`:
 - `convertHandler` should correctly convert `lbs` to `kg`.
 - `convertHandler` should correctly convert `kg` to `lbs`.
 
-Write the following tests in `tests/2_functional-tests.js`:
+次のテストを `tests/2_functional-tests.js` に記述してください。
 
 - Convert a valid input such as `10L`: `GET` request to `/api/convert`.
 - Convert an invalid input such as `32g`: `GET` request to `/api/convert`.
@@ -263,7 +263,7 @@ async getUserInput => {
 };
 ```
 
-All 16 unit tests are complete and passing.
+16 件のユニットテストがすべて記述され、成功する状態になっています。
 
 ```js
 async getUserInput => {
@@ -288,7 +288,7 @@ async getUserInput => {
 };
 ```
 
-All 5 functional tests are complete and passing.
+5 件の機能テストがすべて記述され、成功する状態になっています。
 
 ```js
 async getUserInput => {

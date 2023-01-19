@@ -14,13 +14,13 @@ dashedName: sudoku-solver
 -   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-If you use Replit, follow these steps to set up the project:
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
@@ -31,9 +31,9 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 - All routing logic can go into `/routes/api.js`
 - See the `puzzle-strings.js` file in `/controllers` for some sample puzzles your application should solve
 - To run the challenge tests on this page, set `NODE_ENV` to `test` without quotes in the `.env` file
-- To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+- コンソールでテストを実行するには、コマンド `npm run test` を使用してください。 Replit コンソールを開くには、Ctrl+Shift+P (Macの場合はCmd) を押して「open shell」と入力してください。
 
-Write the following tests in `tests/1_unit-tests.js`:
+`tests/1_unit-tests.js` に以下のテストを記述してください。
 
 -   Logic handles a valid puzzle string of 81 characters
 -   Logic handles a puzzle string with invalid characters (not 1-9 or `.`)
@@ -352,7 +352,7 @@ async (getUserInput) => {
 };
 ```
 
-All 12 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
+12 件のユニットテストがすべて記述され、成功する状態になっています。 テストを記述すべき期待動作については、`/tests/1_unit-tests.js` を参照してください。
 
 ```js
 async (getUserInput) => {
@@ -377,7 +377,7 @@ async (getUserInput) => {
 };
 ```
 
-All 14 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the expected functionality you should write tests for.
+14 件の機能テストがすべて記述され、成功する状態になっています。 テストを記述すべき期待される機能については、`/tests/2_functional-tests.js` を参照してください。
 
 ```js
 async (getUserInput) => {

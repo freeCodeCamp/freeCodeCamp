@@ -14,13 +14,13 @@ dashedName: american-british-translator
 -   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-If you use Replit, follow these steps to set up the project:
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
@@ -29,36 +29,36 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 -   Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`
 -   See the JavaScript files in `/components` for the different spelling and terms your application should translate
 -   To run the tests on Replit, set `NODE_ENV` to `test` without quotes in the `.env` file
--   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+-   コンソールでテストを実行するには、コマンド `npm run test` を使用してください。 Replit コンソールを開くには、Ctrl+Shift+P (Macの場合はCmd) を押して「open shell」と入力してください。
 
-Write the following tests in `tests/1_unit-tests.js`:
+`tests/1_unit-tests.js` に以下のテストを記述してください。
 
--   Translate `Mangoes are my favorite fruit.` to British English
--   Translate `I ate yogurt for breakfast.` to British English
--   Translate `We had a party at my friend's condo.` to British English
--   Translate `Can you toss this in the trashcan for me?` to British English
--   Translate `The parking lot was full.` to British English
--   Translate `Like a high tech Rube Goldberg machine.` to British English
--   Translate `To play hooky means to skip class or work.` to British English
--   Translate `No Mr. Bond, I expect you to die.` to British English
--   Translate `Dr. Grosh will see you now.` to British English
--   Translate `Lunch is at 12:15 today.` to British English
--   Translate `We watched the footie match for a while.` to American English
--   Translate `Paracetamol takes up to an hour to work.` to American English
--   Translate `First, caramelise the onions.` to American English
--   Translate `I spent the bank holiday at the funfair.` to American English
--   Translate `I had a bicky then went to the chippy.` to American English
--   Translate `I've just got bits and bobs in my bum bag.` to American English
--   Translate `The car boot sale at Boxted Airfield was called off.` to American English
--   Translate `Have you met Mrs Kalyani?` to American English
--   Translate `Prof Joyner of King's College, London.` to American English
--   Translate `Tea time is usually around 4 or 4.30.` to American English
--   Highlight translation in `Mangoes are my favorite fruit.`
--   Highlight translation in `I ate yogurt for breakfast.`
--   Highlight translation in `We watched the footie match for a while.`
--   Highlight translation in `Paracetamol takes up to an hour to work.`
+-   `Mangoes are my favorite fruit.` をイギリス英語に変換してください
+-   `I ate yogurt for breakfast.` をイギリス英語に変換してください
+-   `We had a party at my friend's condo.` をイギリス英語に変換してください
+-   `Can you toss this in the trashcan for me?` をイギリス英語に変換してください
+-   `The parking lot was full.` をイギリス英語に変換してください
+-   `Like a high tech Rube Goldberg machine.` をイギリス英語に変換してください
+-   `To play hooky means to skip class or work.` をイギリス英語に変換してください
+-   `No Mr. Bond, I expect you to die.` をイギリス英語に変換してください
+-   `Dr. Grosh will see you now.` をイギリス英語に変換してください
+-   `Lunch is at 12:15 today.` をイギリス英語に変換してください
+-   `We watched the footie match for a while.` をアメリカ英語に変換してください
+-   `Paracetamol takes up to an hour to work.` をアメリカ英語に変換してください
+-   `First, caramelise the onions.` をアメリカ英語に変換してください
+-   `I spent the bank holiday at the funfair.` をアメリカ英語に変換してください
+-   `I had a bicky then went to the chippy.` をアメリカ英語に変換してください
+-   `I've just got bits and bobs in my bum bag.` をアメリカ英語に変換してください
+-   `The car boot sale at Boxted Airfield was called off.` をアメリカ英語に変換してください
+-   `Have you met Mrs Kalyani?` をアメリカ英語に変換してください
+-   `Prof Joyner of King's College, London.` をアメリカ英語に変換してください
+-   `Tea time is usually around 4 or 4.30.` をアメリカ英語に変換してください
+-   `Mangoes are my favorite fruit.` の変換部分をハイライト表示してください
+-   `I ate yogurt for breakfast.` の変換部分をハイライト表示してください
+-   `We watched the footie match for a while.` の変換部分をハイライト表示してください
+-   `Paracetamol takes up to an hour to work.` の変換部分をハイライト表示してください
 
-Write the following tests in `tests/2_functional-tests.js`:
+次のテストを `tests/2_functional-tests.js` に記述してください。
 
 -   Translation with text and locale fields: POST request to `/api/translate`
 -   Translation with text and invalid locale field: POST request to `/api/translate`
@@ -69,7 +69,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-You should provide your own project, not the example URL.
+サンプルの URL ではなく、自分で作成したプロジェクトを提出する必要があります。
 
 ```js
 (getUserInput) => {
