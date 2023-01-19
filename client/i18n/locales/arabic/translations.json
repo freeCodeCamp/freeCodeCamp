@@ -11,7 +11,7 @@
     "view": "عرض",
     "view-code": "أظهار الكود",
     "view-project": "إظهار المشروع",
-    "view-cert-title": "View {{certTitle}}",
+    "view-cert-title": "عرض {{certTitle}}",
     "show-cert": "عرض الشهادة",
     "claim-cert": "المطالبة بالشهادة",
     "save-progress": "حفظ التقدم",
@@ -53,7 +53,7 @@
     "check-code": "تيقن من كودك (Ctrl + Enter)",
     "check-code-2": "تيقن من كودك",
     "reset": "إعادة ضبط",
-    "reset-step": "Reset This Step",
+    "reset-step": "إعادة الخطوة إلى حالتها الأولية",
     "help": "مساعدة",
     "get-help": "الحصول على المساعدة",
     "watch-video": "شاهد الفيديو",
@@ -465,7 +465,7 @@
     "iframe-alert": "عادة هذا الرابط من شأنه أن يجلبك إلى موقع آخر! إنه يعمل. هذا رابط: {{externalLink}}",
     "iframe-form-submit-alert": "عادة سيتم تقديم هذا النموذج! إنه يعمل. سيتم إرسال هذا إلى: {{externalLink}}",
     "document-notfound": "لم يوجد المستند",
-    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
+    "slow-load-msg": "يبدو أن هذا يستغرق وقتاً أطول من المعتاد، الرجاء محاولة تحديث الصفحة."
   },
   "icons": {
     "gold-cup": "كأس الذهب",
@@ -511,7 +511,7 @@
     "steps": "الخطوات",
     "steps-for": "خطوات {{blockTitle}}",
     "code-example": "{{codeName}} مثال على الكود",
-    "opens-new-window": "Opens in new window"
+    "opens-new-window": "فتح في نافذة جديدة"
   },
   "flash": {
     "honest-first": "للمطالبة بشهادة ، يجب عليك أولاً قبول سياسة الصدق الأكاديمي الخاصة بنا",

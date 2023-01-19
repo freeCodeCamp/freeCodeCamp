@@ -553,7 +553,7 @@
     "intro": [
       "حتى هذه النقطة، لقد استخدمت JavaScript فقط في الواجهة الأمامية لإضافة تفاعل إلى صفحة، أو حل تحديات الخوارزميات، أو بناء SPA. ولكن يمكن أيضاً استخدام JavaScript في الواجهة الخلفية back end، أو السيرفر، لبناء تطبيقات ويب برمتها.",
       "واليوم، فإن إحدى الطرق الشائعة لبناء التطبيقات هي من خلال الخدمات المصّغرة microservices، وهي تطبيقات صغيرة ومحددة تعمل معاً لتشًكل وحدة اكبر.",
-      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "في شهادة تطوير واجهات الBack End و الAPIs، سوف تتعلم كيف تنشئ تطبيقات back end باستخدام Node.js و npm. سوف تقوم أيضا ببناء تطبيقات الويب باستخدام إطار العمل Express، و بناء microservice لإيجاد الأفراد باستخدام MongoDB ومكتبة Mongoose."
     ],
     "note": "",
     "blocks": {
