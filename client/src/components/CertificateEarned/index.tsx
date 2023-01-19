@@ -7,7 +7,7 @@ import {
   userSelector,
   userFetchStateSelector
 } from '../../redux/selectors';
-import CircleCheckRegular from './assets/circle-check-regular';
+import CircleCheckRegular from './components/circle-check-regular';
 
 interface FetchState {
   pending: boolean;
