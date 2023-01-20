@@ -151,9 +151,7 @@ class Block extends Component<BlockProps> {
 
     const Block = (
       <>
-        {console.log(
-          blockDashedName + 'isExpanded' + `${isExpanded.toString()}`
-        )}
+        {' '}
         <ScrollableAnchor id={blockDashedName}>
           <div className={`block ${isExpanded ? 'open' : ''}`}>
             <div className='block-header'>
