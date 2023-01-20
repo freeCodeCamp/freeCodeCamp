@@ -158,7 +158,8 @@
       "honesty": "Akademischer Ehrlichkeitskodex",
       "internet": "Dein Internetauftritt",
       "portfolio": "Portfolio-Einstellungen",
-      "privacy": "Privatsphäre-Einstellungen"
+      "privacy": "Privatsphäre-Einstellungen",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "Gefahrenzone",
@@ -273,6 +274,7 @@
     "add-subtitles": "Hilf mit Untertitel hinzuzufügen oder zu verbessern",
     "wrong-answer": "Sorry, das ist nicht die richtige Antwort. Möchtest du noch einen Anlauf wagen?",
     "check-answer": "Klick unten auf den Button, um deine Antwort zu überprüfen.",
+    "assignment-not-complete": "Please finish the assignments",
     "solution-link": "Lösungs-Link",
     "github-link": "GitHub Link",
     "submit-and-go": "Absenden und zur nächsten Herausforderung gehen",

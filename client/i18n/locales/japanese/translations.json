@@ -158,7 +158,8 @@
       "honesty": "学問的誠実性ポリシー",
       "internet": "他サービスのリンク",
       "portfolio": "ポートフォリオ設定",
-      "privacy": "プライバシー設定"
+      "privacy": "プライバシー設定",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "危険な操作",
@@ -273,6 +274,7 @@
     "add-subtitles": "字幕の改善や追加を支援する",
     "wrong-answer": "残念、正しい答えではありません。もう一度挑戦してみましょう。",
     "check-answer": "以下のボタンをクリックして解答を確認してください。",
+    "assignment-not-complete": "Please finish the assignments",
     "solution-link": "回答のリンク",
     "github-link": "GitHub のリンク",
     "submit-and-go": "提出して次のチャレンジに進む",

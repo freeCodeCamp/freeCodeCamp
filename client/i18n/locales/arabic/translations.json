@@ -158,7 +158,8 @@
       "honesty": "سياسة الصدق الأكاديمي",
       "internet": "حضورك على الإنترنت",
       "portfolio": "إعدادات المحفظة",
-      "privacy": "إعدادات الخصوصية"
+      "privacy": "إعدادات الخصوصية",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "منطقة الخطر",
@@ -273,6 +274,7 @@
     "add-subtitles": "المساعدة في تحسين أو إضافة ترجمات",
     "wrong-answer": "عذراً، هذه ليست الإجابة الصحيحة. قم بالمحاولة مرة أخرى؟",
     "check-answer": "انقر على الزر أدناه للتحقق من إجابتك.",
+    "assignment-not-complete": "Please finish the assignments",
     "solution-link": "رابط الحل",
     "github-link": "رابط Github",
     "submit-and-go": "أرسل وانتقل إلى التحدي التالي",
