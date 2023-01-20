@@ -17,7 +17,6 @@ import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/Hotkeys';
 import VideoPlayer from '../components/VideoPlayer';
-import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
@@ -152,7 +151,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     openCompletionModal: () => void,
     assignments: string[]
   ) {
-    const hasAssignments = assignments[0] != '';
+    const hasAssignments = assignments.length > 0;
     const completed = this.state.allAssignmentsCompleted;
     const isCorrect = solution - 1 === this.state.selectedOption;
 
@@ -209,7 +208,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             superBlock,
             certification,
             block,
-            translationPending,
             videoId,
             videoLocaleIds,
             bilibiliIds,
@@ -222,8 +220,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
-      t,
-      isChallengeCompleted
+      t
     } = this.props;
 
     const blockNameTitle = `${t(
@@ -245,13 +242,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
           <Grid>
             <Row>
               <Spacer />
-              <ChallengeTitle
-                isCompleted={isChallengeCompleted}
-                translationPending={translationPending}
-              >
-                {title}
-              </ChallengeTitle>
-
               <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
                 <div className='video-wrapper'>
                   {!this.state.videoIsLoaded ? (
@@ -268,15 +258,16 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     videoLocaleIds={videoLocaleIds}
                   />
                 </div>
+                <Spacer />
               </Col>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <h2>{title}</h2>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer />
                 <ObserveKeys>
-                  {assignments[0] != '' && (
+                  {assignments.length > 0 && (
                     <>
-                      <h2>Assignments</h2>
+                      <h2>{t('learn.assignments')}</h2>
                       <div className='video-quiz-options'>
                         {assignments.map((assignment, index) => (
                           <label
@@ -286,7 +277,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                             <input
                               name='assignment'
                               type='checkbox'
-                              className='video-quiz-checkbox-input'
                               onChange={event =>
                                 this.handleAssignmentChange(
                                   event,
@@ -303,10 +293,11 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                           </label>
                         ))}
                       </div>{' '}
+                      <Spacer />
                     </>
                   )}
-                  <Spacer />
-                  <h2>Question</h2>
+
+                  <h2>{t('learn.question')}</h2>
                   <PrismFormatted className={'line-numbers'} text={text} />
                   <div className='video-quiz-options'>
                     {answers.map((option, index) => (
