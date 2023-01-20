@@ -150,7 +150,9 @@ class Block extends Component<BlockProps> {
 
     const Block = (
       <>
-        {' '}
+        {console.log(
+          blockDashedName + 'isExpanded' + `${isExpanded.toString()}`
+        )}
         <ScrollableAnchor id={blockDashedName}>
           <div className={`block ${isExpanded ? 'open' : ''}`}>
             <div className='block-header'>
@@ -332,7 +334,7 @@ class Block extends Component<BlockProps> {
     );
 
     const blockrenderer = () => {
-      if (isProjectBlock)
+      if (isProjectBlock && blockDashedName != 'the-odin-project')
         return isNewResponsiveWebDesign || isNewJsAlgos
           ? GridProjectBlock
           : ProjectBlock;
