@@ -43,6 +43,7 @@ const LowerJaw = ({
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
+  const [testBtnAriaHidden, setTestBtnAriaHidden] = useState(false);
   const { t } = useTranslation();
   const testFeedbackRef = createRef<HTMLDivElement>();
 
@@ -55,6 +56,7 @@ const LowerJaw = ({
       setCurrentAttempts(0);
       setRunningTests(false);
       setIsFeedbackHidden(false);
+      setTestBtnAriaHidden(false);
       hintRef.current = '';
     } else if (attempts > 0 && hint) {
       //hide the feedback from SR until the "Running tests" are displayed and removed.
@@ -74,6 +76,19 @@ const LowerJaw = ({
       }, 300);
     }
   }, [attempts, hint, currentAttempts]);
+
+  useEffect(() => {
+    if (challengeIsCompleted) {
+      setTimeout(() => {
+        setTestBtnAriaHidden(true);
+      }, 500);
+    }
+
+    setTestBtnAriaHidden(challengeIsCompleted);
+    // Since submitButtonRef changes every render, we have to ignore it here or,
+    // once the challenges is completed, every render (including ones triggered
+    // by typing in the editor) will focus the button.
+  }, [challengeIsCompleted]);
 
   // ToDo: turn it into a grid to remove the need for useEffect.
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -139,6 +154,7 @@ const LowerJaw = ({
           className={lowerJawButtonStyle}
           data-cy='check-lowerJaw-button'
           onClick={tryToExecuteChallenge}
+          aria-hidden={testBtnAriaHidden}
         >
           {checkButtonText}
         </button>
