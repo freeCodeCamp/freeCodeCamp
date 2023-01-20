@@ -9,7 +9,7 @@ dashedName: use-bracket-notation-to-find-the-last-character-in-a-string
 
 # --description--
 
-للحصول على آخر حرف من سلسلة (String)، يمكنك طرح واحد من طول السلسلة (String).
+للحصول على آخر حرف من المقطع النصي (String)، يمكنك طرح واحد من طوله.
 
 على سبيل المثال، إذا `const firstName = "Ada"`، يمكنك الحصول على قيمة الحرف الأخير من السلسلة باستخدام `firstName[firstName.length - 1]`.
 

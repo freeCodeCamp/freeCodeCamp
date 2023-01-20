@@ -8,15 +8,15 @@ dashedName: implement-the-filter-method-on-a-prototype
 
 # --description--
 
-Ви можете багато дізнатись про метод `filter`, якщо ви реалізуєте вашу власну версію. Рекомендується використовувати код циклу `for` або `Array.prototype.forEach()`.
+Ви можете багато дізнатись про метод `filter`, якщо реалізуєте власну версію. Рекомендовано використовувати цикл `for` або `Array.prototype.forEach()`.
 
 # --instructions--
 
-Напишіть ваш власний `Array.prototype.myFilter()`, який буде поводити себе точно так як `Array.prototype.filter()`. Ви не повинні використовувати вбудований метод `filter`. Приклад `Array` може бути доступним за допомогою методу `myFilter` з використанням `this`.
+Напишіть свій `Array.prototype.myFilter()`, який поводиться як `Array.prototype.filter()`. Ви не повинні використовувати вбудований метод `filter`. Доступ до екземпляра `Array` можна отримати у методі `myFilter` за допомогою `this`.
 
 # --hints--
 
-`[23, 65, 98, 5, 13].myFilter(item => item % 2)` should equal `[23, 65, 5, 13]`.
+`[23, 65, 98, 5, 13].myFilter(item => item % 2)` повинна дорівнювати `[23, 65, 5, 13]`.
 
 ```js
 const _test_s = [23, 65, 98, 5, 13];
@@ -24,7 +24,7 @@ const _callback = item => item % 2;
 assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
 ```
 
-`["naomi", "quincy", "camperbot"].myFilter(element => element === "naomi")` should return `["naomi"]`.
+`["naomi", "quincy", "camperbot"].myFilter(element => element === "naomi")` повинна повертати `["naomi"]`.
 
 ```js
 const _test_s = ["naomi", "quincy", "camperbot"];
@@ -32,7 +32,7 @@ const _callback = element => element === "naomi";
 assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
 ```
 
-`[1, 1, 2, 5, 2].myFilter((element, index, array) => array.indexOf(element) === index)` should return `[1, 2, 5]`.
+`[1, 1, 2, 5, 2].myFilter((element, index, array) => array.indexOf(element) === index)` повинна повертати `[1, 2, 5]`.
 
 ```js
 const _test_s = [1, 1, 2, 5, 2];

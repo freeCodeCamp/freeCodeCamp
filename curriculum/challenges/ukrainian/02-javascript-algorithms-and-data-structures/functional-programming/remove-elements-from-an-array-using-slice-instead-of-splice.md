@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])` повинен повертатися як `["Chicago", "Delhi", "Islamabad"]`.
+`nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])` повинна повертати `["Chicago", "Delhi", "Islamabad"]`.
 
 ```js
 assert(

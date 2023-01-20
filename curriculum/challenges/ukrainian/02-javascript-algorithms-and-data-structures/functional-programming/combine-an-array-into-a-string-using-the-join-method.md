@@ -1,6 +1,6 @@
 ---
 id: 587d7daa367417b2b2512b6c
-title: Об'єднання масиву у рядок з використанням методу Join
+title: Об’єднання масиву в рядок за допомогою методу join
 challengeType: 1
 forumTopicId: 18221
 dashedName: combine-an-array-into-a-string-using-the-join-method
@@ -8,7 +8,7 @@ dashedName: combine-an-array-into-a-string-using-the-join-method
 
 # --description--
 
-Метод `join` використовується для об'єднання елементів масиву для створення стрічки. Потрібний аргумент для розділювача, який використовується для відокремлення елементів масиву у рядку.
+Метод `join` використовують, щоб об'єднати елементи масиву та створити з них рядок. Він приймає потрібний аргумент для розділювача, який використовується для відокремлення елементів масиву у рядку.
 
 Ось приклад:
 
@@ -20,7 +20,7 @@ const str = arr.join(" ");
 `str` матиме значення рядка `Hello World`.
 # --instructions--
 
-Використовуйте метод `join` (з-поміж інших) у функції `sentensify` для створення речення зі слів у рядку `str`. Ваша функція повинна повертати рядок. Наприклад, `I-like-Star-Wars` буде перетворений в `I like Star Wars`. Для цього завдання не використовуйте метод `replace`.
+Використайте метод `join` (з-поміж інших) всередині функції `sentensify`, щоб створити речення зі слів у рядку `str`. Ваша функція повинна повертати рядок. Наприклад, `I-like-Star-Wars` буде перетворено в `I like Star Wars`. Не використовуйте метод `replace` у цьому завданні.
 
 # --hints--
 
@@ -36,19 +36,19 @@ assert(code.match(/\.join/g));
 assert(!code.match(/\.?[\s\S]*?replace/g));
 ```
 
-`sentensify("May-the-force-be-with-you")` повинен повертати рядок.
+`sentensify("May-the-force-be-with-you")` повинна повертати рядок.
 
 ```js
 assert(typeof sentensify('May-the-force-be-with-you') === 'string');
 ```
 
-`sentensify("May-the-force-be-with-you")` повинен повертати рядок `May the force be with you`.
+`sentensify("May-the-force-be-with-you")` повинна повертати рядок `May the force be with you`.
 
 ```js
 assert(sentensify('May-the-force-be-with-you') === 'May the force be with you');
 ```
 
-`sentensify("The.force.is.strong.with.this.one")` повинен повертати рядок `The force is strong with this one`.
+`sentensify("The.force.is.strong.with.this.one")` повинна повертати рядок `The force is strong with this one`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-`sentensify("There,has,been,an,awakening")` повинен повертати рядок `There has been an awakening`.
+`sentensify("There,has,been,an,awakening")` повинна повертати рядок `There has been an awakening`.
 
 ```js
 assert(
