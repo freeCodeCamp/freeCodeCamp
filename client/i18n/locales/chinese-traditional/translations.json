@@ -158,7 +158,8 @@
       "honesty": "學術誠信條例",
       "internet": "你在各平臺的賬號",
       "portfolio": "作品集設置",
-      "privacy": "隱私設置"
+      "privacy": "隱私設置",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "危險區域",
@@ -273,6 +274,7 @@
     "add-subtitles": "幫助我們完善或添加字幕",
     "wrong-answer": "抱歉，這個答案不正確。再試一次？",
     "check-answer": "點擊下方按鈕，查看你的答案。",
+    "assignment-not-complete": "Please finish the assignments",
     "solution-link": "解決方案鏈接",
     "github-link": "GitHub 鏈接",
     "submit-and-go": "提交併訪問下一個挑戰",

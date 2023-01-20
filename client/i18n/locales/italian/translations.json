@@ -158,7 +158,8 @@
       "honesty": "Politica di Onestà Accademica",
       "internet": "La Tua presenza su Internet",
       "portfolio": "Impostazioni Portfolio",
-      "privacy": "Impostazioni Privacy"
+      "privacy": "Impostazioni Privacy",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "Zona di Pericolo",
@@ -273,6 +274,7 @@
     "add-subtitles": "Aiuta a migliorare o aggiungi sottotitoli",
     "wrong-answer": "Siamo spiacenti, non è la risposta giusta. Vuoi riprovare?",
     "check-answer": "Fai clic sul pulsante qui sotto per controllare la tua risposta.",
+    "assignment-not-complete": "Please finish the assignments",
     "solution-link": "Link alla soluzione",
     "github-link": "Link GitHub",
     "submit-and-go": "Invia e vai alla prossima sfida",

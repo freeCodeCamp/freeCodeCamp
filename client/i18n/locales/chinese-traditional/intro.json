@@ -778,6 +778,10 @@
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>屬性：Rosetta 代碼</a>"
         ]
       },
+      "the-odin-project": {
+        "title": "The Odin Project",
+        "intro": ["A description is to be determined"]
+      },
       "project-euler": {
         "title": "歐拉計劃",
         "intro": [
