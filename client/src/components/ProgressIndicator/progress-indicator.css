@@ -1,8 +1,13 @@
-.simple-text {
+.progress-summary {
   border: 3px solid var(--secondary-color);
   padding: 16px;
   margin-bottom: 10px;
 }
-.simple-text > ul {
+
+.progress-summary__main-header {
+  text-align: center;
+}
+
+.challenges {
   list-style: square;
 }

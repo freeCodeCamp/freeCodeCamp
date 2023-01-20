@@ -96,18 +96,21 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
   });
 
   return (
-    <div className='simple-text'>
-      <h3>Progress Summary:</h3>
-      <ul>
-        <li>
-          {completedChallengeCount}/{allChallengeCount} challenges completed (
-          {completedChallengePercentage}%)
-        </li>
-        <li>
-          {earnedCertificateCount}/{allCertificateCount} certificates earned (
-          {completedCertificatePercentage}%)
-        </li>
-      </ul>
+    <div className='progress-summary'>
+      <h3 className='progress-summary__main-header'>Progress Summary</h3>
+      <section>
+        <h4>Overall</h4>
+        <ul className='challenges'>
+          <li>
+            {completedChallengeCount}/{allChallengeCount} challenges completed (
+            {completedChallengePercentage}%)
+          </li>
+          <li>
+            {earnedCertificateCount}/{allCertificateCount} certificates earned (
+            {completedCertificatePercentage}%)
+          </li>
+        </ul>
+      </section>
     </div>
   );
 };
