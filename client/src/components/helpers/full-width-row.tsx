@@ -7,11 +7,7 @@ interface FullWidthRowProps {
   key?: string;
 }
 
-export const FullWidthRow = ({
-  children,
-  className,
-  key
-}: FullWidthRowProps) => {
+const FullWidthRow = ({ children, className, key }: FullWidthRowProps) => {
   return (
     <Row className={className} key={key}>
       <Col sm={8} smOffset={2} xs={12}>
@@ -20,3 +16,7 @@ export const FullWidthRow = ({
     </Row>
   );
 };
+
+FullWidthRow.displayName = 'FullWidthRow';
+
+export default FullWidthRow;
