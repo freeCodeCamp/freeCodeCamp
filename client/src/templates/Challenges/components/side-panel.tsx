@@ -71,11 +71,7 @@ export function SidePanel({
   }, [block]);
 
   return (
-    <div
-      className='instructions-panel'
-      ref={instructionsPanelRef}
-      tabIndex={-1}
-    >
+    <div className='instructions-panel' ref={instructionsPanelRef}>
       {challengeTitle}
       {challengeDescription}
       {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}

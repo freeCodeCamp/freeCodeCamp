@@ -8,7 +8,5 @@
 
 .instructions-panel {
   padding: 0 10px;
-  overflow-y: scroll;
-  height: 100%;
   width: 100%;
 }
