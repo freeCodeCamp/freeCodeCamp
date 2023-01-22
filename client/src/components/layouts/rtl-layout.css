@@ -9,22 +9,6 @@ Increase the spacing in paragraphs
 /* 
 breadcrumbs section
 */
-[dir='rtl'] .breadcrumb-left::after {
-  content: '';
-  display: none;
-}
-
-[dir='rtl'] .breadcrumb-left::before {
-  background-color: var(--secondary-background);
-  content: '';
-  border-top: calc(1.375rem / 2) solid transparent;
-  border-bottom: calc(1.2rem / 2) solid transparent;
-  border-right: calc(1.1rem / 2) solid var(--quaternary-background);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-}
 
 [dir='rtl'] .challenge-title-breadcrumbs ol {
   padding-right: 0;
