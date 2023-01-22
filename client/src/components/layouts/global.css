@@ -628,6 +628,8 @@ blockquote .small {
 .alert {
   border-radius: 0;
   overflow-wrap: break-word;
+  display:flex;
+  align-items: center;
 }
 
 .alert .btn {

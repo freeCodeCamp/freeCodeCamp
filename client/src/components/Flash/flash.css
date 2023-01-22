@@ -8,6 +8,7 @@
   position: fixed;
   width: 100%;
   z-index: 150;
+  font-size: clamp(14px,2.5vw,18px);
 }
 
 .flash-message div {
