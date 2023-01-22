@@ -46,7 +46,7 @@ let complexArray = [
 
 # --instructions--
 
-لقد حددنا متغير يسمى `yourArray`. أكمل البيان بتعيين array من 5 عناصر في الأقل في الطول لمتغير `yourArray`. يجب أن تحتوي array على <dfn>string</dfn>واحد علي الأفل و <dfn>number</dfn> واحد و <dfn>boolean</dfn> واحد.
+لقد أعلنا متغير يسمى `yourArray`. أكمل البيان بتعيين array من 5 عناصر في الأقل في الطول لمتغير `yourArray`. يجب أن تحتوي array على <dfn>string</dfn>واحد علي الأفل و <dfn>number</dfn> واحد و <dfn>boolean</dfn> واحد.
 
 # --hints--
 

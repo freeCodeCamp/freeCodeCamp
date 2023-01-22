@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392ce
-title: Керування масивами за допомогою unshift()
+title: Маніпулювання масивами за допомогою unshift()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckNDESv'
 forumTopicId: 18239
@@ -13,7 +13,7 @@ dashedName: manipulate-arrays-with-unshift
 
 `.unshift()` працює в точності як `.push()`, але замість додавання елемента в кінець масиву, `unshift()` додає елемент на початку масиву.
 
-Наприклад:
+Приклад:
 
 ```js
 const ourArray = ["Stimpson", "J", "cat"];
@@ -29,7 +29,7 @@ ourArray.unshift("Happy");
 
 # --hints--
 
-`myArray` тепер має мати `[["Paul", 35], ["dog", 3]]`.
+Тепер `myArray` повинен мати `[["Paul", 35], ["dog", 3]]`.
 
 ```js
 assert(

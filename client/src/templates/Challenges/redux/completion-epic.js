@@ -62,6 +62,7 @@ function submitModern(type, state) {
   const tests = challengeTestsSelector(state);
   if (
     challengeType === 11 ||
+    challengeType === 15 ||
     (tests.length > 0 && tests.every(test => test.pass && !test.err))
   ) {
     if (type === actionTypes.checkChallenge) {

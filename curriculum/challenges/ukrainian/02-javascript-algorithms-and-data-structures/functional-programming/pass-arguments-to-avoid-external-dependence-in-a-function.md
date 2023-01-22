@@ -28,19 +28,19 @@ dashedName: pass-arguments-to-avoid-external-dependence-in-a-function
 
 # --hints--
 
-Ваша функція `incrementer` не повинна змінювати значення `fixedValue` (яка є `4`).
+Ваша функція `incrementer` не повинна змінювати значення `fixedValue` (дорівнює `4`).
 
 ```js
 assert(fixedValue === 4);
 ```
 
-Ваша функція `incrementer` повинна прийняти аргумент.
+Ваша функція `incrementer` повинна приймати аргумент.
 
 ```js
 assert(incrementer.length === 1);
 ```
 
-Ваша функція `incrementer` повинна повернути значення, що на одиницю більше значення `fixedValue` value.
+Ваша функція `incrementer` повинна повертати значення, яке більше на одиницю за `fixedValue`.
 
 ```js
 const __newValue = incrementer(fixedValue);

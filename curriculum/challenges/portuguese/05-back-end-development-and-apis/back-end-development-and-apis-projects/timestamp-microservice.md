@@ -20,7 +20,7 @@ Se você usa o Replit, siga estas etapas para configurar o projeto:
 -   Em seguida, você verá uma janela `.replit`.
 -   Selecione `Use run command` e clique no botão `Done`.
 
-Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para a solução no campo Solution Link. Como opção, envie também um link para o código-fonte do projeto no campo GitHub Link.
 
 **Observação:** a conversão de fusos horários não é um dos objetivos deste projeto, então suponha que todas as datas válidas enviadas serão analisadas com `new Date()` como datas GMT.
 
@@ -106,7 +106,7 @@ Seu projeto pode tratar as datas que podem ser analisadas com sucesso por `new D
   );
 ```
 
-Se a string de data de entrada for inválida, a api retorna um objeto que tem a estrutura `{ error : "Invalid Date" }`
+Se a string de data de entrada for inválida, a API retorna um objeto que tem a estrutura `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>

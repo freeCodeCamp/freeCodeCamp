@@ -20,7 +20,7 @@ dashedName: exercise-tracker
 -   接着，你将看到一个 `.replit` 窗口。
 -   选择 `Use run command` 并点击 `Done` 按钮.
 
-当你完成后，请将一个确保正常运行的demo（项目演示）托管在可以公开访问的平台上。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+当你完成后，请将一个确保正常运行的demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 Solution Link 字段中。 也可以将项目的源码链接提交到 GitHub Link 字段中。
 
 # --instructions--
 
@@ -411,7 +411,7 @@ async(getUserInput) => {
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -458,7 +458,7 @@ async(getUserInput) => {
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -505,7 +505,7 @@ async(getUserInput) => {
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',

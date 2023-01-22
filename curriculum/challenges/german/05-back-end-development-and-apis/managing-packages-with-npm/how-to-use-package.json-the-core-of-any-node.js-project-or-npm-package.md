@@ -20,7 +20,7 @@ Wenn du Replit verwendest, folge diesen Schritten, um das Projekt einzurichten:
 -   Als nächstes wird ein `.replit`-Fenster angezeigt.
 -   Wähle `Use run command` aus und klicke die `Done`-Schaltfläche.
 
-Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Gib anschließend die URL dazu in das `Solution Link`-Feld ein.
+Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Then submit the URL to it in the Solution Link field.
 
 Die `package.json`-Datei stellt das Zentrum eines Node.js-Projekts oder npm-Pakets dar. Es speichert Informationen über dein Projekt, ähnlich wie der &lt;head>-Abschnitt eines HTML-Dokuments den Inhalt einer Webseite beschreibt. Es besteht aus einem einzigen JSON-Objekt, in dem Informationen in Schlüssel-Wert-Paaren gespeichert sind. Es gibt dort nur zwei Pflichtfelder: "name" und "version". Es ist jedoch empfehlenswert, zusätzliche Informationen über dein Projekt anzugeben, die für zukünfige Benutzer oder Maintainer nützlich sein könnten.
 

@@ -155,12 +155,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     ) {
       setIsDonationDisplayed(true);
       executeGA({
-        type: 'event',
-        data: {
-          category: 'Donation View',
-          action: 'Displayed Certificate Donation',
-          nonInteraction: true
-        }
+        event: 'donationview',
+        action: 'Displayed Certificate Donation'
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

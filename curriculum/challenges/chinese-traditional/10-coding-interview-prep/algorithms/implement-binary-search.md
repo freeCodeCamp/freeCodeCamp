@@ -10,9 +10,10 @@ dashedName: implement-binary-search
 
 二分搜索是一種 **O(log(n))** 效率的算法，用於在已排序的數組以查找元素。 它通過以下步驟運行：
 
-1. 查找已排序數組的中間值 `value`。 如果 `value == target`，則返回（找到了！）。
+1. 查找已排序數組的中間值 `value`。 If `value == target` return `true` (The value has been found and the search is complete).
 1. 如果中間值 `value < target`，則在下一次比較中搜索數組的右半部分。
 1. 如果中間值 `value > target`，則在下一次比較中搜索數組的左半部分。
+1. If after searching the whole array the value is not present, return `false` (The array has been searched and the value is not in the array).
 
 如你所見，你連續將數組減半，這爲你提供了 log(n) 效率。 對於這個挑戰，我們希望你展示你的工作——你是如何到達目標值的……你走過的路！
 
@@ -20,7 +21,7 @@ dashedName: implement-binary-search
 
 編寫一個函數 `binarySearch` 來實現對數組的二分查找算法，返回在數組中查找目標所採用的路徑（每個中間值比較）。
 
-該函數將一個排序的整數數組和一個目標值作爲輸入。 它返回一個數組，其中包含（按順序）你在原始數組的每個減半處找到的中間值，直到你找到目標值。 目標值應該是返回數組的最後一個元素。 如果未找到值，則返回字符串 `Value Not Found`。
+該函數將一個排序的整數數組和一個目標值作爲輸入。 它返回一個數組，其中包含（按順序）你在原始數組的每個減半處找到的中間值，直到你找到目標值。 目標值應該是返回數組的最後一個元素。 If the value is not found, return the string `Value Not Found`.
 
 例如，`binarySearch([1,2,3,4,5,6,7], 5)` 將返回 `[4,6,5]`。
 

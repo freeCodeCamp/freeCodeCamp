@@ -1,6 +1,6 @@
 ---
 id: 598e8944f009e646fc236146
-title: فهم القيم غير المحددة المرتجعة من الوظيفة (Understanding Undefined Value returned from a Function)
+title: فهم القيم غير المحددة المرتجعة من الوظيفة
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2p7cL'
 forumTopicId: 301177
@@ -23,7 +23,7 @@ function addSum(num) {
 addSum(3);
 ```
 
-تكون `addSum` وظيفة دون `return`. سيغير وظيفة المتغير `sum` العالمي الآتي, ولكن تكون القيمة المرتجعة للوظيفة `undefined`.
+تكون `addSum` وظيفة دون `return`. ستغير الوظيفة المتغير الشامل `sum`، ولكن تكون القيمة المرتجعة للوظيفة `undefined`.
 
 # --instructions--
 

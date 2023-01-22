@@ -101,7 +101,7 @@ function ToolPanel({
           className='btn-invert'
           onClick={openResetModal}
         >
-          {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
+          {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
         </Button>
       )}
       <DropdownButton

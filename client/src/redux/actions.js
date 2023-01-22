@@ -90,9 +90,5 @@ export const hideCodeAlly = createAction(actionTypes.hideCodeAlly);
 export const showCodeAlly = createAction(actionTypes.showCodeAlly);
 export const tryToShowCodeAlly = createAction(actionTypes.tryToShowCodeAlly);
 
-export const updateCurrentChallengeId = createAction(
-  actionTypes.updateCurrentChallengeId
-);
-
 export const closeSignoutModal = createAction(actionTypes.closeSignoutModal);
 export const openSignoutModal = createAction(actionTypes.openSignoutModal);

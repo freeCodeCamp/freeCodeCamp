@@ -175,6 +175,15 @@ section.cover.show ~ .sidebar-toggle {
   }
 }
 
+@media (max-width: 400px) {
+  section.cover .cover-main > p:last-child a:last-child {
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 /****** Sidebar ******/
 
 .sidebar ul li a:hover {
