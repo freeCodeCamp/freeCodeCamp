@@ -17,7 +17,6 @@ import { PaymentProvider } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
 import { Themes } from '../settings/theme';
 import { DonationApprovalData, PostPayment } from './types';
-import SecurityLockIcon from './security-lock-icon';
 
 const { stripePublicKey }: { stripePublicKey: string | null } = envData;
 
@@ -27,7 +26,6 @@ interface FormPropTypes {
   t: (label: string) => string;
   theme: Themes;
   processing: boolean;
-  isVariantA: boolean;
 }
 
 interface Element {
@@ -43,8 +41,7 @@ const StripeCardForm = ({
   t,
   onDonationStateChange,
   postPayment,
-  processing,
-  isVariantA
+  processing
 }: FormPropTypes): JSX.Element => {
   const [isSubmissionValid, setSubmissionValidity] = useState(true);
   const [isTokenizing, setTokenizing] = useState(false);
@@ -166,7 +163,6 @@ const StripeCardForm = ({
         disabled={!stripe || !elements || isSubmitting}
         type='submit'
       >
-        {!isVariantA && <SecurityLockIcon />}
         {t('buttons.donate')}
       </Button>
     </Form>

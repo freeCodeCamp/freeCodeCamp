@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`add(bookList, "A Brief History of Time")` повинен повернути `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
+`add(bookList, "A Brief History of Time")` повинна повертати `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-`remove(bookList, "On The Electrodynamics of Moving Bodies")` повинен повернути `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
+`remove(bookList, "On The Electrodynamics of Moving Bodies")` повинна повертати `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
 
 ```js
 assert(

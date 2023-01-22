@@ -2,7 +2,6 @@ import { challengeTypes } from '../../../../utils/challenge-types';
 import { completedChallengesSelector } from '../../../redux/selectors';
 import { ns } from './action-types';
 
-export const currentTabSelector = state => state[ns].currentTab;
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;

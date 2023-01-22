@@ -49,17 +49,3 @@ interface DefaultDonationFormState {
   success: boolean;
   error: null | string;
 }
-
-export const defaultFetchState = {
-  pending: true,
-  complete: false,
-  errored: false,
-  error: null
-};
-
-export const defaultDonationFormState = {
-  redirecting: false,
-  processing: false,
-  success: false,
-  error: ''
-};

@@ -20,7 +20,7 @@ Wenn du Replit verwendest, dann folge diesen Schritten, um das Projekt einzurich
 -   Daraufhin wird ein `.replit`-Fenster angezeigt.
 -   Wähle `Use run command` aus und klicke auf die `Done`-Schaltfläche.
 
-Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts an einem öffentlichen Ort gehostet wird. Gib anschließend die URL dazu in das `Solution Link`-Feld ein.
+Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts an einem öffentlichen Ort gehostet wird. Then submit the URL to it in the Solution Link field.
 
 Während des Entwicklungsprozesses ist es wichtig, überprüfen zu können, was in deinem Code passiert.
 

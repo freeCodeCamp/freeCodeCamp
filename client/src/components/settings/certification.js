@@ -213,9 +213,10 @@ export class CertificationSettings extends Component {
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         dataCy={projectTitle}
+        projectTitle={projectTitle}
         showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}
-        displayContext={'settings'}
+        displayContext='settings'
       ></SolutionDisplayWidget>
     );
   };
@@ -285,7 +286,8 @@ export class CertificationSettings extends Component {
               data-cy={`btn-for-${certSlug}`}
               onClick={createClickHandler(certSlug)}
             >
-              {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
+              {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}{' '}
+              <span className='sr-only'>{certName}</span>
             </Button>
           </td>
         </tr>

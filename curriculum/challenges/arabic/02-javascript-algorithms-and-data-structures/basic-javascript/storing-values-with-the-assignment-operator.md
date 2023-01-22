@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244a8
-title: تخزين القيم مع مشغل التعيين (Storing Values with the Assignment Operator)
+title: تخزين القيم مع مشغل التعيين (=)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEanysE'
 forumTopicId: 18310
@@ -17,7 +17,7 @@ myVariable = 5;
 
 هذا يعين `Number` بقيمة `5` إلى `myVariable`.
 
-إذا كانت هناك أي حسابات إلى يمين مشغل `=`، يتم أداء هذه حسابات قبل تعيين القيمة إلى المتغير الموجود على يسار المشغل.
+إذا كانت هناك أي حسابات إلى يمين مشغل `=`، يتم أداء هذه الحسابات قبل تعيين القيمة إلى المتغير الموجود على يسار المشغل.
 
 ```js
 var myVar;

@@ -25,7 +25,7 @@ const newArray = arr.slice(1, 3);
 
 # --hints--
 
-Використовуйте метод «`slice`» у своєму коді.
+Ваш код повинен використовувати метод `slice`.
 
 ```js
 assert(code.match(/\.slice/g));

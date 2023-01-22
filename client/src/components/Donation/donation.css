@@ -526,6 +526,12 @@ a.patreon-button:hover {
   margin-inline-start: 0.25em;
 }
 
+.faq-item h3 {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .faq-item div {
   width: 100%;
   padding: 10px 15px;

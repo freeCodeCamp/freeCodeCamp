@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Destructuring via rest elements
+  Desestructuración vía elementos rest
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -22,11 +22,11 @@ console.log(arr);
 
 La consola mostrará los valores `1, 2` y `[3, 4, 5, 7]`.
 
-Las variables `a` y `b` toman el primer y segundo valor del arreglo. After that, because of the rest syntax presence, `arr` gets the rest of the values in the form of an array. El elemento rest sólo funciona correctamente como la última variable en la lista. As in, you cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
+Las variables `a` y `b` toman el primer y segundo valor del arreglo. Luego de esto, debido a la presencia de sintaxis rest `arr` obtiene el rest de los valores en forma de un arreglo. El elemento rest sólo funciona correctamente como la última variable en la lista. Es decir, no se puede utilizar la sintaxis rest para capturar un sub arreglo que deje fuera el último elemento del arreglo original.
 
 # --instructions--
 
-Use a destructuring assignment with the rest syntax to emulate the behavior of `Array.prototype.slice()`. `removeFirstTwo()` debe devolver un sub-arreglo del arreglo original `list` sin los dos primeros elementos.
+Utiliza una asignación de desestructuración con la sintaxis rest para emular el comportamiento de `Array.prototype.slice()`. `removeFirstTwo()` debe devolver un sub arreglo del arreglo original `list` con los dos primeros elementos omitidos.
 
 # --hints--
 

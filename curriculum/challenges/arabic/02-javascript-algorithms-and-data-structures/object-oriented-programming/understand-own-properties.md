@@ -54,7 +54,7 @@ assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);
 assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
 ```
 
-يجب عليك حل هذا التحدي بدون hardcoding مصفوفة `ownProps`.
+يجب عليك حل هذا التحدي بدون إدخال قيم مثبتة (hard-coding) في قائمة `ownProps`.
 
 ```js
 assert(

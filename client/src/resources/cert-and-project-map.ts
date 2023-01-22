@@ -727,7 +727,7 @@ function getJavaScriptAlgoPath(project: string) {
 }
 
 const titles = certMap.map(({ title }) => title);
-type Title = typeof titles[number];
+type Title = (typeof titles)[number];
 const legacyProjectMap: Partial<Record<Title, unknown>> = {};
 const projectMap: Partial<Record<Title, unknown>> = {};
 

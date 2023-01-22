@@ -1,6 +1,6 @@
 ---
 id: 5664820f61c48e80c9fa476c
-title: Golf Code
+title: Гольф-код
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9ykNUR'
 forumTopicId: 18195
@@ -9,13 +9,13 @@ dashedName: golf-code
 
 # --description--
 
-In the game of Golf, each hole has a `par`, meaning, the average number of `strokes` a golfer is expected to make in order to sink the ball in the hole to complete the play. Залежно від того, на скільки вище або нижче `par` є ваші `удари`, існують різні псевдоніми.
+У грі в гольф кожна лунка має `par`, що відповідає середній кількості ударів (`strokes`), які повинен зробити гравець, щоб забити м’яч у лунку та завершити гру. Існують різні псевдоніми залежно від того, де знаходяться ваші удари (`strokes`) відповідно до `par`.
 
-Ваша функція проходитиме аргументи `par` та `strokes`. Поверніть правильний рядок відповідно до цієї таблиці, яка перелічує удари в порядку пріоритету; зверху (найвищий) до низу (найнижчий):
+Вашій функції буде передано аргументи `par` та `strokes`. Поверніть правильний рядок відповідно до цієї таблиці, в якій перелічено удари за пріоритетом зверху (найвищий) донизу (найнижчий):
 
-<table class='table table-striped'><thead><tr><th>Удари</th><th>Відображений результат</th></tr></thead><tbody><tr><td>1</td><td>"В лунку з першого удару"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Орел"</td></tr><tr><td>par - 1</td><td>"Пташка"</td></tr><tr><td>par</td><td>"Середнячок"</td></tr><tr><td>par + 1</td><td>"Страшко"</td></tr><tr><td>par + 2</td><td>"Двічі Страшко"</td></tr><tr><td>>= par + 3</td><td>"Йди додому!"</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Удари</th><th>Повернений рядок</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
 
-`par` та `удари` завжди будуть числовими та додатніми. Ми додали масив усіх ваших імен для зручності.
+`par` та `strokes` завжди будуть додатними числами. Ми додали масив усіх імен для вашої зручності.
 
 # --hints--
 

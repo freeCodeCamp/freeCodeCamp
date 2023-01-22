@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c450eddfaeb5bdef
-title: استخدم رمز آلأقواس المعكوفان للعثور على حرف معين في مقطع
+title: استخدم علامات الأقواس للعثور على حرف معين في مقطع
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVJua'
 forumTopicId: 18343
@@ -9,7 +9,7 @@ dashedName: use-bracket-notation-to-find-the-nth-character-in-a-string
 
 # --description--
 
-يمكنك أيضًا استخدام <dfn>رمز الأقواس المعكوفان</dfn> للحصول على الحرف في مواقع أخرى داخل مقطع.
+يمكنك أيضًا استخدام <dfn> علامات الأقواس</dfn> للحصول على الحرف في مواقع أخرى داخل مقطع.
 
 تذكر أن أجهزة الكمبيوتر تبدأ في العد في `0`، لذا فإن الحرف الأول هو في الواقع الحرف صفر.
 
@@ -24,7 +24,7 @@ const secondLetterOfFirstName = firstName[1];
 
 # --instructions--
 
-دعونا نحاول تعيين `thirdLetterOfLastName` مساوية للحرف الثالث من متغير `lastName` باستخدام رمز آلأقواس المعكوفان.
+دعونا نحاول تعيين `thirdLetterOfLastName` مساوية للحرف الثالث من متغير `lastName` باستخدام علامات الأقواس.
 
 **تلميح:** حاول النظر إلى المثال أعلاه إذا كنت عالق.
 
@@ -36,7 +36,7 @@ const secondLetterOfFirstName = firstName[1];
 assert(thirdLetterOfLastName === 'v');
 ```
 
-يجب عليك استخدام رمز آلأقواس المعكوفان.
+يجب عليك استخدام علامات الأقواس.
 
 ```js
 assert(code.match(/thirdLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
