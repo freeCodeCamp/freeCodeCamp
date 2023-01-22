@@ -52,9 +52,9 @@
   background-color: inherit;
 }
 
-.breadcrumb-left {
+.breadcrumb-left,
+.breadcrumb-right {
   text-decoration: none;
-  min-width: 3rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -63,6 +63,10 @@
   white-space: nowrap;
   flex-grow: 1;
   flex-shrink: 2;
+}
+
+.breadcrumb-left {
+  min-width: 3rem;
 }
 
 .breadcrumb-left a {
@@ -85,16 +89,7 @@
 }
 
 .breadcrumb-right {
-  text-decoration: none;
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
   min-width: 50px;
-  flex-grow: 2;
-  flex-shrink: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   padding: 0;
 }
 
