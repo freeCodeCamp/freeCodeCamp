@@ -4,50 +4,18 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import React from 'react';
 import Helmet from 'react-helmet';
-import { withTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
-import { createSelector } from 'reselect';
 import { User } from '../../redux/prop-types';
-import { userSelector } from '../../redux/selectors';
-import { FlashMessageArg } from '../../redux/types';
-import Flash from '../Flash';
-import {
-  FlashActionTypes,
-  flashMessageSelector,
-  ReducerBase,
-  removeFlashMessage
-} from '../Flash/redux';
+
 import UniversalNav from './components/universal-nav';
 
 import './header.css';
 
-const mapStateToProps = createSelector(
-  flashMessageSelector,
-  userSelector,
-  flashMessage => ({
-    flashMessage,
-    hasMessage: !!flashMessage.message
-  })
-);
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(
-    {
-      removeFlashMessage
-    },
-    dispatch
-  );
 interface HeaderProps {
   fetchState: { pending: boolean };
   user: User;
-  flashMessage: { id: string } & FlashMessageArg;
-  hasMessage: boolean;
-  removeFlashMessage: () => ReducerBase<FlashActionTypes.RemoveFlashMessage>;
 }
-type StateProps = ReturnType<typeof mapStateToProps> & HeaderProps;
-
 export class Header extends React.Component<
-  StateProps,
+  HeaderProps,
   { displayMenu: boolean; isLanguageMenuDisplayed: boolean }
 > {
   menuButtonRef: React.RefObject<HTMLButtonElement>;
@@ -115,8 +83,7 @@ export class Header extends React.Component<
 
   render(): JSX.Element {
     const { displayMenu, isLanguageMenuDisplayed } = this.state;
-    const { fetchState, user, hasMessage, flashMessage, removeFlashMessage } =
-      this.props;
+    const { fetchState, user } = this.props;
     return (
       <>
         <Helmet>
@@ -143,12 +110,6 @@ export class Header extends React.Component<
             user={user}
           />
         </header>
-        {hasMessage && flashMessage ? (
-          <Flash
-            flashMessage={flashMessage}
-            removeFlashMessage={removeFlashMessage}
-          />
-        ) : null}
       </>
     );
   }
@@ -156,7 +117,4 @@ export class Header extends React.Component<
 
 Header.displayName = 'Header';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(Header));
+export default Header;
