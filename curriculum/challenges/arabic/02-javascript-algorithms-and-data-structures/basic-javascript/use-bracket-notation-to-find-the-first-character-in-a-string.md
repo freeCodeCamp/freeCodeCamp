@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c549eddfaeb5bdef
-title: استخدم علامات الأقواس للعثور على اول حرف في مقطع
+title: استخدم رمز الاقواس للعثور على اول حرف في مقطع (Use Bracket Notation to Find the First Character in a String)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8JwhW'
 forumTopicId: 18341
@@ -9,7 +9,7 @@ dashedName: use-bracket-notation-to-find-the-first-character-in-a-string
 
 # --description--
 
-<dfn>القوسان المعكوفان</dfn> هي طريقة للحصول على رمز في ترتيب معين داخل مقطع نصي.
+<dfn>القوسان المعكوفان</dfn> هي طريقة للحصول على رمز في ترتيب معين داخل المقطع.
 
 معظم لغات البرمجة الحديثة، مثل JavaScript، لا تبدأ في العد من 1 كما يفعل البشر. إنهم يبدؤون عند الصفر. يشار إلى هذا بالترتيب <dfn>مبني على الصفر</dfn>.
 
@@ -38,7 +38,7 @@ const firstLetter = firstName[0];
 assert(firstLetterOfLastName === 'L');
 ```
 
-يجب عليك استخدام علامات الأقواس.
+يجب عليك استخدام رمز الأقواس المعكوفان.
 
 ```js
 assert(code.match(/firstLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));

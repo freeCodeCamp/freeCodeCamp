@@ -65,7 +65,7 @@ const mapDispatchToProps = {
   openSignoutModal
 };
 
-class NavLinks extends Component<NavLinksProps, NavlinkStates> {
+export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
   static displayName: string;
   langButtonRef: React.RefObject<HTMLButtonElement>;
   firstLangOptionRef: React.RefObject<HTMLButtonElement>;

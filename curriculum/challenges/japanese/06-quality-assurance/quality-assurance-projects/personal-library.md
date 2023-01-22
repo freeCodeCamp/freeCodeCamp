@@ -14,13 +14,13 @@ dashedName: personal-library
 -   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
+If you use Replit, follow these steps to set up the project:
 
--   まず、Replit でプロジェクトをインポートします。
--   すると、`.replit` ファイルのウィンドウが表示されます。
--   `Use run command` を選択して `Done` ボタンをクリックします。
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
 # --instructions--
 
@@ -31,7 +31,7 @@ Replit を使用する場合は、下記の手順でプロジェクトをセッ�
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提出してください。
+You can provide your own project, not the example URL.
 
 ```js
 (getUserInput) => {
@@ -193,7 +193,7 @@ async (getUserInput) => {
 };
 ```
 
-10 件の機能テストがすべて記述され、成功する状態になっています。
+All 10 functional tests required are complete and passing.
 
 ```js
 async (getUserInput) => {

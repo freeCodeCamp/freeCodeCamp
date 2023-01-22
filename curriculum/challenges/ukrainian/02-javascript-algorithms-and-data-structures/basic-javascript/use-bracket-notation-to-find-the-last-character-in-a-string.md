@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c451eddfaeb5bdef
-title: Дужкова нотація для пошуку останнього символа рядка
+title: Використовуйте Дужкову Нотацію для Пошуку Останнього Символу в Рядку
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQGcv'
 forumTopicId: 18342
@@ -9,28 +9,28 @@ dashedName: use-bracket-notation-to-find-the-last-character-in-a-string
 
 # --description--
 
-Щоб отримати останню літеру рядка, можна відняти одиницю від довжини рядка.
+Щоб отримати останню літеру рядка, ви можете відняти її від довжини рядка.
 
-Наприклад, якщо `const firstName = "Ada"`, ви можете отримати значення останньої літери, використавши `firstName[firstName.length - 1]`.
+Наприклад, якщо `const firstName = "Ada"`, ви можете отримати значення останньої літери, використовуючи `firstName[firstName.length - 1]`.
 
-Приклад:
+Наприклад:
 
 ```js
 const firstName = "Ada";
 const lastLetter = firstName[firstName.length - 1];
 ```
 
-`lastLetter` матиме значення рядка `a`.
+`lastLetter` повинна мати значення рядка `a`.
 
 # --instructions--
 
-Використайте <dfn>дужкову нотацію</dfn>, щоб знайти останній символ у змінній `lastName`.
+Використовуйте <dfn>дужкову нотацію</dfn>, щоб знайти останній символ у змінній `lastName`.
 
-**Підказка:** якщо застрягли, перегляньте вищеподаний приклад.
+**Підказка:**Спробуйте подивитися на приклад вище, якщо застрягли.
 
 # --hints--
 
-`lastLetterOfLastName` повинна бути літера `e`.
+`lastLetterOfLastName` повинно бути літерою `e`.
 
 ```js
 assert(lastLetterOfLastName === 'e');

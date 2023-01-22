@@ -16,13 +16,13 @@ dashedName: return-a-sorted-array-without-changing-the-original-array
 
 # --hints--
 
-Ваш код повинен використовувати метод `sort`.
+Використовуйте метод «`sort`» у вашому коді.
 
 ```js
 assert(nonMutatingSort.toString().match(/\.sort/g));
 ```
 
-Змінна `globalArray` не повинна змінюватись.
+Змінна `globalArray` не повинна змінитися.
 
 ```js
 assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]));

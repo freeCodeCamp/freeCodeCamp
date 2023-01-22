@@ -24,11 +24,11 @@ storyRegex.test(noEnding);
 
 # --instructions--
 
-استخدم رمز الدولار (`$`) لمطابقة المقطع النصي `caboose` في نهاية `caboose`.
+استخدم رمز الدولار (`$`) لمطابقة السلسلة `caboose` في نهاية السلسة `caboose`.
 
 # --hints--
 
-يجب عليك البحث عن `caboose` باستخدام علامة الدولار `$` في نمط regex.
+يجب عليك البحث عن `caboose` باستخدام علامة الدولار `$` في الـ regex.
 
 ```js
 assert(lastRegex.source == 'caboose$');

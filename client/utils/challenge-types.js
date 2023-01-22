@@ -14,7 +14,6 @@ const video = 11;
 const codeAllyPractice = 12;
 const codeAllyCert = 13;
 const multifileCertProject = 14;
-const theOdinProject = 15;
 
 // individual exports
 exports.backend = backend;
@@ -39,8 +38,7 @@ exports.challengeTypes = {
   video,
   codeAllyPractice,
   codeAllyCert,
-  multifileCertProject,
-  theOdinProject
+  multifileCertProject
 };
 
 exports.isFinalProject = challengeType => {
@@ -62,6 +60,12 @@ exports.isCodeAllyPractice = challengeType => {
   return challengeType === codeAllyPractice;
 };
 
+// turn challengeType to file ext
+exports.pathsMap = {
+  [html]: 'html',
+  [js]: 'js',
+  [jsProject]: 'js'
+};
 // determine the component view for each challenge
 exports.viewTypes = {
   [html]: 'classic',
@@ -77,8 +81,7 @@ exports.viewTypes = {
   [video]: 'video',
   [codeAllyPractice]: 'codeAlly',
   [codeAllyCert]: 'codeAlly',
-  [multifileCertProject]: 'classic',
-  [theOdinProject]: 'odin'
+  [multifileCertProject]: 'classic'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -100,8 +103,7 @@ exports.submitTypes = {
   [modern]: 'tests',
   [video]: 'tests',
   [codeAllyCert]: 'project.frontEnd',
-  [multifileCertProject]: 'tests',
-  [theOdinProject]: 'tests'
+  [multifileCertProject]: 'tests'
 };
 
 // determine which help forum questions should be posted to

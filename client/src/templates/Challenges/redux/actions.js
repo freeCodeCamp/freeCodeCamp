@@ -31,6 +31,7 @@ export const updateChallengeMeta = createAction(
 export const updateFile = createAction(actionTypes.updateFile);
 export const updateConsole = createAction(actionTypes.updateConsole);
 export const updateLogs = createAction(actionTypes.updateLogs);
+export const updateJSEnabled = createAction(actionTypes.updateJSEnabled);
 export const updateSolutionFormValues = createAction(
   actionTypes.updateSolutionFormValues
 );

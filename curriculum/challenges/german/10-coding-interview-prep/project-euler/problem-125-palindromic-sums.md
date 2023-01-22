@@ -1,6 +1,6 @@
 ---
 id: 5900f3e91000cf542c50fefc
-title: 'Problem 125: Palindromische Summen'
+title: 'Problem 125: Palindromic sums'
 challengeType: 1
 forumTopicId: 301752
 dashedName: problem-125-palindromic-sums
@@ -8,14 +8,14 @@ dashedName: problem-125-palindromic-sums
 
 # --description--
 
-Die palindromische Zahl 595 ist interessant, weil sie als Summe aufeinander folgender Quadrate geschrieben werden kann: $6^2 + 7^2 + 8^2 + 9^2 + 10^2 + 11^2 + 11^2 + 12^2$.
+The palindromic number 595 is interesting because it can be written as the sum of consecutive squares: $6^2 + 7^2 + 8^2 + 9^2 + 10^2 + 11^2 + 12^2$.
 
-Es gibt genau elf Palindrome unter eintausend, die als aufeinanderfolgende Quadratsummen geschrieben werden können, und die Summe dieser Palindrome ist 4164. Man beachte, dass $1 = 0^2 + 1^2$ nicht berücksichtigt wurde, da es sich bei diesem Problem um die Quadrate positiver ganzer Zahlen handelt.
+There are exactly eleven palindromes below one-thousand that can be written as consecutive square sums, and the sum of these palindromes is 4164. Note that $1 = 0^2 + 1^2$ has not been included as this problem is concerned with the squares of positive integers.
 
-Finde die Summe aller Zahlen, die kleiner als `limit` sind, die beide palindromisch sind und als Summe aufeinanderfolgender Quadrate geschrieben werden können.
+Find the sum of all the numbers less than the  `limit`  that are both palindromic and can be written as the sum of consecutive squares.
 
 # --hints--
-`palindromicSums(100000000)` sollte `2906969179` zurückgeben.
+`palindromicSums(100000000)` should return `2906969179`.
 
 ```js
 
@@ -23,13 +23,13 @@ assert.strictEqual(palindromicSums(100000000), 2906969179);
 
 ```
 
-`palindromicSums(100)` sollte `137` zurückgeben.
+`palindromicSums(100)` should return `137`.
 
 ```js
 assert.strictEqual(palindromicSums(100), 137);
 ```
 
-`palindromicSums(1000)` sollte `4164` zurückgeben.
+`palindromicSums(1000)` should return `4164`.
 
 ```js
 assert.strictEqual(palindromicSums(1000),4164);

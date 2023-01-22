@@ -1,52 +1,52 @@
-# Як відкрити запит на пул (PR)
+# How to open a Pull Request (PR)
 
-Запит на пул (PR) дозволяє надсилати зміни зі свого форку на GitHub до головного репозиторію freeCodeCamp.org. Як тільки ви закінчите вносити зміни до коду, дотримуйтесь цих рекомендацій, щоб відкрити запит на пул.
+A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-Ми очікуємо, що наші помічники обізнані щодо процесу проєкту. Ви отримаєте повагу тих, хто відповідає за технічне обслуговування, і заощадите час, дотримуючись цих вказівок.
+We expect our contributors to be aware of the process specific to this project. Following the guidelines religiously earns you the respect of fellow maintainers and saves everyone time.
 
-Деякі приклади:
+Some examples of this are:
 
-1. Не редагуйте файли напряму через GitHub, це не дуже хороша ідея.
-2. Переконайтесь, що дотримуєтесь контрольного списку PR, а не просто ставите галочки. В такому випадку ми не сприйматимемо вас серйозно.
-3. Використайте правильний спосіб пов’язати завдання в описі PR, оновивши `XXXXXX`. Не додавайте номери завдань будь-де.
-4. Не «@згадуйте» чи запитуйте відгук кілька разів.
+1. Do not edit files directly through GitHub – while you can, it's not a good idea.
+2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
+3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
+4. Do not "@mention" or request someone for reviews too many times.
 
-   Ми розуміємо, що ви раді зробити свій внесок. Модераторам подобається відповідати кожному, однак пам’ятайте: вони зайняті люди, які розглядають сотні запитів. Рано чи пізно, хтось дійде і до вашого запиту.
+   We understand you are excited about contributing. As much as a maintainer will love to get back to you, they are busy people looking after hundreds of requests just like yours. Be patient, someone will get to you sooner or later.
 
-5. Не працюйте напряму зі своєї гілки `main`. Створіть нову гілку для змін, над якими ви працюєте.
+5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
 
-> [!NOTE] Ваш PR повинен націлюватись лише на зміни навчальної програми англійською мовою. Див. [цей довідник](index.md#translations), щоб зробити внесок до перекладу.
+> [!NOTE] Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
 
-## Підготуйте хороший заголовок для PR
+## Prepare a good PR title
 
-Ми рекомендуємо використовувати [ загальноприйняті заголовки та повідомлення](https://www.conventionalcommits.org/) для комітів і запитів на пул. Конвенція вимагає наступного формату:
+We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
-> `<тип>([область (необов’язково)]): <опис>`
+> `<type>([optional scope(s)]): <description>`
 > 
-> Наприклад:
+> For example:
 > 
-> `fix(learn): тести для завдання з циклу do...while`
+> `fix(learn): tests for the do...while loop challenge`
 
-Щоразу, коли ви відкриваєте запит на пул (PR), використовуйте нижчеподану інформацію, щоб визначити тип, область та опис.
+Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
-**Тип:**
+**Type:**
 
-| Тип   | Коли обирати                                                               |
-|:----- |:-------------------------------------------------------------------------- |
-| fix   | Змінені або оновлені/вдосконалені функції, тести, формулювання уроку тощо. |
-| feat  | Лише при додаванні нової функції, тестів тощо.                             |
-| chore | Зміни, які не повʼязані з кодом, тестами або формулюванням уроку.          |
-| docs  | Зміни до директорії `/docs` чи настанов щодо внесків тощо.                 |
+| Type  | When to select                                                                   |
+|:----- |:-------------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, the verbiage of a lesson, etc. |
+| feat  | Only if you are adding new functionality, tests, etc.                            |
+| chore | Changes that are not related to code, tests, or verbiage of a lesson.            |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.                |
 
-**Область:**
+**Scope:**
 
-Область можна обрати із [цього списку міток](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
+You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
-**Опис:**
+**Description:**
 
-Опис повинен бути коротким (не більше 30 символів) та простим; більше інформації можна додати в полі опису PR та коментарях.
+Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
 
-Декілька прикладів хороших заголовків:
+Some examples of good PR titles would be:
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`
@@ -58,7 +58,7 @@
 1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
    <details>
-   <summary>Переглянути знімок екрану</summary>
+   <summary>See screenshot</summary>
 
    ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
@@ -69,7 +69,7 @@
    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
    <details>
-   <summary>Переглянути знімок екрану</summary>
+   <summary>See screenshot</summary>
 
    ![Image - Comparing forks when making a pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
@@ -93,13 +93,13 @@
 
    - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
 
-## Зворотний зв’язок по PR
+## Feedback on pull requests
 
-> :tada: Вітаємо зі створенням PR та дуже дякуємо, що знайшли час зробити свій внесок.
+> :tada: Congratulations on making a PR and thanks a lot for taking the time to contribute.
 
-Наші модератори все переглянуть та залишать свій відгук. Будь ласка, наберіться терпіння та поважайте їхній час. Усі запити на пул розглядаються за усталеним порядком.
+Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
-І як завжди, не соромтеся ставити питання [на нашому форумі в категорії «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чат-кімнаті «contributors»](https://discord.gg/PRyKn3Vbay).
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
 
@@ -123,11 +123,11 @@ When you are working on regular bugs and features on our development branch `mai
 2. Resolve any conflicts and add / edit commits
 
    ```console
-   # Або
+   # Either
    git add .
    git commit -m "chore: resolve conflicts"
 
-   # Або
+   # Or
    git add .
    git commit --amend --no-edit
    ```
@@ -158,12 +158,12 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    ```console
    git checkout <pr-branch-name>
 
-   # приклад:
+   # example:
    # git checkout feat/add-numpy-video-question
 
    git checkout -b <backup-branch-name>
 
-   # приклад:
+   # example:
    #  git checkout -b backup-feat/add-numpy-video-question
 
    git branch -D <pr-branch-name>
@@ -174,7 +174,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-   # приклад:
+   # example:
    #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
    ```
 
@@ -193,7 +193,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    npm ci
    npm run test:curriculum --superblock=<superblock-name>
 
-   # приклад:
+   # example:
 
    # npm run test:curriculum --superblock=python-for-everybody
 

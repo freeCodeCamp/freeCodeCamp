@@ -24,7 +24,7 @@ interface ToolPanelProps {
   t: TFunction;
 }
 
-function ToolPanel({
+export function ToolPanel({
   guideUrl,
   openHelpModal,
   t

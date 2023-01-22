@@ -57,7 +57,7 @@ import {
 const previewTimeout = 2500;
 
 // when 'run tests' is clicked, do this first
-function* executeCancellableChallengeSaga(payload) {
+export function* executeCancellableChallengeSaga(payload) {
   const { challengeType, id } = yield select(challengeMetaSelector);
   const { challengeFiles } = yield select(challengeDataSelector);
 
@@ -84,7 +84,7 @@ function* executeCancellableChallengeSaga(payload) {
   yield cancel(task);
 }
 
-function* executeChallengeSaga({ payload }) {
+export function* executeChallengeSaga({ payload }) {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;

@@ -83,7 +83,6 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         dataCy={`${projectTitle} solution`}
-        projectTitle={projectTitle}
         displayContext='certification'
         showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}

@@ -1,6 +1,6 @@
 ---
 id: 5900f3f11000cf542c50ff03
-title: 'Problem 132: Große Repunit-Faktoren'
+title: 'Problem 132: Large repunit factors'
 challengeType: 1
 forumTopicId: 301760
 dashedName: problem-132-large-repunit-factors
@@ -8,15 +8,15 @@ dashedName: problem-132-large-repunit-factors
 
 # --description--
 
-Eine Zahl, die alleinig aus Einsen besteht, wird Repunit genannt. We shall define $R(k)$ to be a repunit of length $k$.
+A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$.
 
-Zum Beispiel gilt, dass $R(10) = 1111111111 = 11 × 41 × 271 × 9091$ und die Summe dieser Primfaktoren 9414 ist.
+For example, $R(10) = 1111111111 = 11 × 41 × 271 × 9091$, and the sum of these prime factors is 9414.
 
-Finde die Summe der ersten 40 Primfaktoren von $R({10}^9)$.
+Find the sum of the first forty prime factors of $R({10}^9)$.
 
 # --hints--
 
-`largeRepunitFactors()` sollte `843296` ausgeben.
+`largeRepunitFactors()` should return `843296`.
 
 ```js
 assert.strictEqual(largeRepunitFactors(), 843296);

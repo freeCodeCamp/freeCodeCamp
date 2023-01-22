@@ -1,6 +1,6 @@
 ---
 id: 5900f3f21000cf542c50ff05
-title: 'Problem 134: Primzahl-Paar-Verbindungen'
+title: 'Problem 134: Prime pair connection'
 challengeType: 1
 forumTopicId: 301762
 dashedName: problem-134-prime-pair-connection
@@ -8,15 +8,15 @@ dashedName: problem-134-prime-pair-connection
 
 # --description--
 
-Betrachte die aufeinanderfolgenden Primzahlen $p_1 = 19$ und $p_2 = 23$. Es kann bewiesen werden, dass 1219 die kleinste Zahl ist, so dass die letzten Ziffern mit $p_1$ gebildet werden, während sie auch durch $p_2$ teilbar sind.
+Consider the consecutive primes $p_1 = 19$ and $p_2 = 23$. It can be verified that 1219 is the smallest number such that the last digits are formed by $p_1$ whilst also being divisible by $p_2$.
 
-Tatsächlich gibt es mit Ausnahme von $p_1 = 3$ und $p_2 = 5$ für jedes Paar von aufeinanderfolgenden Primzahlen $p_2 > p_1$ Werte von $n$, für die die letzten Ziffern durch $p_1$ gebildet werden und $n$ durch $p_2$ teilbar ist. Lass $S$ den kleinsten dieser Werte von $n$ sein.
+In fact, with the exception of $p_1 = 3$ and $p_2 = 5$, for every pair of consecutive primes, $p_2 > p_1$, there exist values of $n$ for which the last digits are formed by $p_1$ and $n$ is divisible by $p_2$. Let $S$ be the smallest of these values of $n$.
 
-Finde $\sum{S}$ für jedes Paar der aufeinanderfolgenden Primzahlen mit $5 ≤ p_1 ≤ 1000000$.
+Find $\sum{S}$ for every pair of consecutive primes with $5 ≤ p_1 ≤ 1000000$.
 
 # --hints--
 
-`primePairConnection()` sollte `18613426663617120` zurückgeben.
+`primePairConnection()` should return `18613426663617120`.
 
 ```js
 assert.strictEqual(primePairConnection(), 18613426663617120);

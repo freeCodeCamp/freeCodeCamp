@@ -1,6 +1,6 @@
 ---
 id: 561add10cb82ac38a17213bd
-title: شهادة الـ Full Stack التراثية
+title: شهادة الـ Full Stack القديمة
 certification: legacy-full-stack
 challengeType: 7
 isPrivate: true
@@ -13,13 +13,13 @@ tests:
     title: شهادة الخوارزميات وهياكل البيانات في JavaScript
   - 
     id: 561acd10cb82ac38a17513bc
-    title: شهادة مكتبات Front End
+    title: شهادة مكتبات تطوير واجهة المستخدم (Front End Libraries)
   - 
     id: 5a553ca864b52e1d8bceea14
-    title: شهادة التصور المرئي للبيانات
+    title: شهادة Data Visualization
   - 
     id: 561add10cb82ac38a17523bc
-    title: شهادة واجهة برمجة التطبيقات (API) والخدمات المصغّرة
+    title: شهادة API's and Microservice
   - 
     id: 561add10cb82ac38a17213bc
-    title: شهادة أمن المعلومات التراثية وشهادة ضمان الجودة
+    title: شهادة أمن المعلومات القديمة وشهادة ضمان الجودة

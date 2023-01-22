@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b67
-title: Додавання елементів в кінець масиву за допомогою concat замість push
+title: Додати елементи в кінець масиву за допомогою контикату  замість натискання
 challengeType: 1
 forumTopicId: 301226
 dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
@@ -8,32 +8,32 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 # --description--
 
-Найважливішим у функційному програмуванні є створення та використання незмінних функцій.
+Функціональне програмування - це створення та використання функцій, що не змінюються.
 
-У попередньому завданні ви дізнались про метод `concat`, за допомогою якого можна злити масиви в один, не змінюючи початкові масиви. Порівняйте метод `concat` з методом `push`. `push` додає елементи в кінець того масиву, в якому викликаний, тим самим змінюючи його. Ось приклад:
+The last challenge introduced the `concat` method as a way to merge arrays into a new array without mutating the original arrays. Порівняйте метод `concat` з методом `push`. `push` adds items to the end of the same array it is called on, which mutates that array. Ось один із прикладів:
 
 ```js
 const arr = [1, 2, 3];
 arr.push(4, 5, 6);
 ```
 
-`arr` матиме змінене значення `[1, 2, 3, 4, 5, 6]`, що не відповідає функційному програмуванню.
+`arr` would have a modified value of `[1, 2, 3, 4, 5, 6]`, which is not the functional programming way.
 
-`concat` надає можливість додавати нові елементи в кінець масиву без побічних ефектів.
+`concat` offers a way to merge new items to the end of an array without any mutating side effects.
 
 # --instructions--
 
-Змініть функцію `nonMutatingPush` так, щоб вона використовувала `concat`, аби додати `newItem` в кінець `original`, не змінюючи масиви `original` чи `newItem`. Функція повинна повертати масив.
+Change the `nonMutatingPush` function so it uses `concat` to merge `newItem` to the end of `original` without mutating `original` or `newItem` arrays. Функція повинна повертати масив.
 
 # --hints--
 
-Ваш код повинен використовувати метод `concat`.
+Ваш код повинен застосовувати метод `concat`.
 
 ```js
 assert(code.match(/\.concat/g));
 ```
 
-Ваш код не повинен використовувати метод `push`.
+Не застосовуйте метод `push` у вашому коді.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?push/g));
@@ -51,7 +51,7 @@ assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
 assert(JSON.stringify(second) === JSON.stringify([4, 5]));
 ```
 
-`nonMutatingPush([1, 2, 3], [4, 5])` повинна повертати `[1, 2, 3, 4, 5]`.
+`nonMutatingConcat([1, 2, 3], [4, 5])` повинен змінюватися на  `[1, 2, 3, 4, 5]`.
 
 ```js
 assert(

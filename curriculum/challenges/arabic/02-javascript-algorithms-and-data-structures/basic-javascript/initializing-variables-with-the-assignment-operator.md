@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244a9
-title: تهيئة المتغيرات باستخدام مشغل التعيين
+title: تهيئة المتغيرات باستخدام مشغل التعيين (Initializing Variables with the Assignment Operator)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
 forumTopicId: 301171
@@ -19,7 +19,7 @@ var myVar = 0;
 
 # --instructions--
 
-أعلن متغير `a` باستخدام `var` و هيئ له قيمة `9`.
+عرّف متغير `a` باستخدام `var` و عيّن له قيمة `9`.
 
 # --hints--
 

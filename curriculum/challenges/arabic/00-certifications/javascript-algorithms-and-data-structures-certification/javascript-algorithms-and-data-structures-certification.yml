@@ -7,16 +7,16 @@ isPrivate: true
 tests:
   - 
     id: aaa48de84e1ecc7c742e1124
-    title: مدقق لمعاكس المقطع النصي
+    title: فاحص الـ Palindrome
   - 
     id: a7f4d8f2483413a6ce226cac
-    title: محول للأرقام الرومانية
+    title: محول الأرقام الرومانية
   - 
     id: 56533eb9ac21ba0edf2244e2
-    title: شفرة قيصر
+    title: شفرة قيصر (Caesars Cipher)
   - 
     id: aff0395860f5d3034dc0bfc9
-    title: مدقق لرقم الهاتف
+    title: مدقق رقم الهاتف
   - 
     id: aa2e6f85cab2ab736c9a9b24
-    title: مكنة لتسجيل النقود
+    title: ماكينة تسجيل المدفوعات النقدية

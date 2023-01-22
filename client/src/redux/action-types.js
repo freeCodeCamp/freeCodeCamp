@@ -23,6 +23,7 @@ export const actionTypes = createTypes(
     'showCodeAlly',
     'submitComplete',
     'updateComplete',
+    'updateCurrentChallengeId',
     'updateFailed',
     'updateDonationFormState',
     'updateUserToken',

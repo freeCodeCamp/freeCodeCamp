@@ -25,7 +25,6 @@
   - [freeCodeCamp unter Windows einrichten (WSL)](how-to-setup-wsl.md)
   - [Benutzer-Token Workflow](user-token-workflow.md)
   - [Troubleshooting Development Issues](troubleshooting-development-issues.md)
-  - [Authors Analytics Manual](authors-analytics-manual.md)
 
 ---
 

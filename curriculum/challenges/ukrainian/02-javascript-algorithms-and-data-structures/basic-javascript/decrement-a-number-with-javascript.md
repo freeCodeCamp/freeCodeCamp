@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ad
-title: Зменшення числа за допомогою JavaScript
+title: Зменшення числа з JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KeS2'
 forumTopicId: 17558
@@ -9,7 +9,7 @@ dashedName: decrement-a-number-with-javascript
 
 # --description--
 
-Ви можете легко <dfn>зменшити</dfn> або відняти одиницю від змінної за допомогою оператора `--`.
+Ви можете легко <dfn>зменшити</dfn> або збільшити змінну на один за допомогою оператора `--`.
 
 ```js
 i--;

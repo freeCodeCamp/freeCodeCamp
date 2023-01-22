@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244aa
-title: Неініціалізовані змінні
+title: Розуміння неініціалізованих змінних
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBa2JAL'
 forumTopicId: 18335
@@ -9,7 +9,7 @@ dashedName: understanding-uninitialized-variables
 
 # --description--
 
-Коли змінні у JavaScript оголошено, вони отримують початкове значення `undefined`. Якщо виконати математичну дію на змінній `undefined`, то результатом буде `NaN`, що означає «Not a Number» <dfn>(укр. «не є числом»)</dfn>. Якщо об’єднати рядок зі змінною `undefined`, ви отримаєте <dfn>рядок</dfn> з `undefined`.
+Коли змінні JavaScript проголошено, вони мають початкове значення `undefined`. Якщо ви виконуєте математичну дію з `undefined` змінної, вашим результатом буде `NaN`, що означає <dfn>"Not a Number"</dfn>. If you concatenate a string with an `undefined` variable, you will get a <dfn>string</dfn> of `undefined`.
 
 # --instructions--
 
@@ -17,25 +17,25 @@ dashedName: understanding-uninitialized-variables
 
 # --hints--
 
-`a` повинна бути визначеною та мати кінцеве значення `6`.
+`a` should be defined and have a final value of `6`.
 
 ```js
 assert(typeof a === 'number' && a === 6);
 ```
 
-`b` повинна бути визначеною та мати кінцеве значення `15`.
+`b` should be defined and have a final value of `15`.
 
 ```js
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` не повинна містити `undefined` та повинна мати кінцеве значення рядка `I am a String!`
+`c` should not contain `undefined` and should have a final value of the string `I am a String!`
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');
 ```
 
-Не змінюйте код під зазначеним коментарем.
+Вам не слід змінювати код під зазначеним коментарем.
 
 ```js
 assert(

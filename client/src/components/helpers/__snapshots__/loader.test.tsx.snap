@@ -14,12 +14,6 @@ exports[`<Loader /> matches the fullScreen render snapshot 1`] = `
     <div />
     <div />
   </div>
-  <br />
-  <p
-    class="text-center"
-  >
-    misc.slow-load-msg
-  </p>
 </div>
 `;
 

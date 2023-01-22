@@ -21,7 +21,7 @@ Remember to use `#` as your `a` element's `href` property in order to turn it in
 
 # --instructions--
 
-ضع عنصر الصورة داخل عنصر `a` (*anchor*) الحالي.
+Place the existing image element within an `a` (*anchor*) element.
 
 Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link.
 

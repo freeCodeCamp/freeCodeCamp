@@ -614,6 +614,7 @@ a[class^='ais-'] {
 }
 .ais-SearchBox-submit,
 .ais-SearchBox-reset {
+  position: absolute;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -622,7 +623,15 @@ a[class^='ais-'] {
   height: 20px;
 }
 .ais-SearchBox-reset {
-  margin-inline-start: 10px;
+  right: 0;
+}
+.ais-SearchBox-resetIcon,
+.ais-SearchBox-loadingIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 .ais-SearchBox-submitIcon path,
 .ais-SearchBox-resetIcon path {

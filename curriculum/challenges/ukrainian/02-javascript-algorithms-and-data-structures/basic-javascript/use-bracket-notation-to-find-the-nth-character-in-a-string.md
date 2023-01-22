@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c450eddfaeb5bdef
-title: Дужкова нотація для пошуку n-го символа рядка
+title: Використовуйте Дужкову Нотацію для Пошуку N-го Символу в Рядку
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVJua'
 forumTopicId: 18343
@@ -9,24 +9,24 @@ dashedName: use-bracket-notation-to-find-the-nth-character-in-a-string
 
 # --description--
 
-Ви також можете використати <dfn>дужкову нотацію</dfn>, щоб отримати символ на інших позиціях рядка.
+Ви можете також використовувати <dfn>дужкову нотацію</dfn>, щоб отримати символ на інших позиціях в рядку.
 
-Пам’ятайте, що комп’ютер починає рахувати з `0`, тому насправді першим символом є нульовий.
+Пам'ятайте, що комп'ютер починає рахувати з `0`, тому перший символ є в дійсності нульовим.
 
-Приклад:
+Наприклад:
 
 ```js
 const firstName = "Ada";
 const secondLetterOfFirstName = firstName[1];
 ```
 
-`secondLetterOfFirstName` матиме значення рядка `d`.
+`secondLetterOfFirstName` повинна мати значення рядка `d`.
 
 # --instructions--
 
-Спробуйте встановити `thirdLetterOfLastName`, щоб вона дорівнювала третій літері змінної `lastName`, використовуючи дужкову нотацію.
+Спробуйте встановити `thirdLetterOfLastName` на рівні третьої літери змінної `lastName`, використовуючи дужкову нотацію.
 
-**Підказка:** якщо застрягли, перегляньте вищеподаний приклад.
+**Підказка:** Спробуйте подивитися на приклад вище, якщо застрягли.
 
 # --hints--
 
@@ -36,7 +36,7 @@ const secondLetterOfFirstName = firstName[1];
 assert(thirdLetterOfLastName === 'v');
 ```
 
-Ви повинні використати дужкову нотацію.
+Вам слід використовувати дужкову нотацію.
 
 ```js
 assert(code.match(/thirdLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));

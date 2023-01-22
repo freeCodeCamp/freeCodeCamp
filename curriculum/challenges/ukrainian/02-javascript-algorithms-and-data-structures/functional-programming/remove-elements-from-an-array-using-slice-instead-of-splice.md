@@ -27,13 +27,13 @@ cities.splice(3, 1);
 
 # --hints--
 
-Ваш код повинен використовувати метод `slice`.
+Використовуйте метод «`slice`» у своєму коді.
 
 ```js
 assert(code.match(/\.slice/g));
 ```
 
-Ваш код не повинен використовувати метод `splice`.
+Не використовуйте метод «`splice`» у своєму коді.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?splice/g));
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])` повинна повертати `["Chicago", "Delhi", "Islamabad"]`.
+`nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])` повинен повертатися як `["Chicago", "Delhi", "Islamabad"]`.
 
 ```js
 assert(

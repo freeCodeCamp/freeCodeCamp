@@ -12,26 +12,26 @@ The most naive way of computing $n^{15}$ requires fourteen multiplications:
 
 $$n × n × \ldots × n = n^{15}$$
 
-Mit einer "binären" Methode kann man sie jedoch in sechs Multiplikationen berechnen:
+But using a "binary" method you can compute it in six multiplications:
 
 $$\begin{align}   & n × n = n^2\\\\
   & n^2 × n^2 = n^4\\\\   & n^4 × n^4 = n^8\\\\
   & n^8 × n^4 = n^{12}\\\\   & n^{12} × n^2 = n^{14}\\\\
   & n^{14} × n = n^{15} \end{align}$$
 
-Es ist jedoch möglich, ihn in nur fünf Multiplikationen zu berechnen:
+However it is yet possible to compute it in only five multiplications:
 
 $$\begin{align}   & n × n = n^2\\\\
   & n^2 × n = n^3\\\\   & n^3 × n^3 = n^6\\\\
   & n^6 × n^6 = n^{12}\\\\ & n^{12} × n^3 = n^{15} \end{align}$$
 
-Wir definieren $m(k)$ als die minimale Anzahl von Multiplikationen zur Berechnung von $n^k$; zum Beispiel $m(15) = 5$.
+We shall define $m(k)$ to be the minimum number of multiplications to compute $n^k$; for example $m(15) = 5$.
 
-Für $1 ≤ k ≤ 200$, finde $\sum{m(k)}$.
+For $1 ≤ k ≤ 200$, find $\sum{m(k)}$.
 
 # --hints--
 
-`efficientExponentation()` sollte `1582` zurückgeben.
+`efficientExponentation()` should return `1582`.
 
 ```js
 assert.strictEqual(efficientExponentation(), 1582);

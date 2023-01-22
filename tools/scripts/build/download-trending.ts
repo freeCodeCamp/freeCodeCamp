@@ -1,9 +1,9 @@
 import { writeFileSync } from 'fs';
 import fetch from 'node-fetch';
 import yaml from 'js-yaml';
-import envData from '../../../config/env.json';
-import { trendingSchemaValidator } from './schema/trending-schema';
+import { trendingSchemaValidator } from '../../../client/i18n/schema/trendingSchema';
 
+import envData from '../../../config/env.json';
 const { clientLocale } = envData;
 
 const createCdnUrl = (lang: string) =>

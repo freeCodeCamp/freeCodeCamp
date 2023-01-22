@@ -48,7 +48,7 @@ function withActions(...fns: Array<() => void>) {
 function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
   if (isOpen) {
-    executeGA({ event: 'pageview', pagePath: '/reset-modal' });
+    executeGA({ type: 'modal', data: '/reset-modal' });
   }
   return (
     <Modal

@@ -37,7 +37,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-function ShortcutsModal({
+export function ShortcutsModal({
   closeShortcutsModal,
   toggleKeyboardShortcuts,
   isOpen,

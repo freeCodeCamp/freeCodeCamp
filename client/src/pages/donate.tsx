@@ -22,10 +22,14 @@ import { signInLoadingSelector, userSelector } from '../redux/selectors';
 import { PaymentContext } from '../../../config/donation-settings';
 
 export interface ExecuteGaArg {
-  event: string;
-  action: string;
-  duration?: string;
-  amount?: number;
+  type: string;
+  data: {
+    category: string;
+    action: string;
+    nonInteraction?: boolean;
+    label?: string;
+    value?: number;
+  };
 }
 interface DonatePageProps {
   executeGA: (arg: ExecuteGaArg) => void;
@@ -55,8 +59,12 @@ function DonatePage({
 }: DonatePageProps) {
   useEffect(() => {
     executeGA({
-      event: 'donationview',
-      action: `Displayed Donate Page`
+      type: 'event',
+      data: {
+        category: 'Donation View',
+        action: `Displayed donate page`,
+        nonInteraction: true
+      }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

@@ -5,7 +5,7 @@ import { randomCompliment } from '../../../utils/get-words';
 import { CURRENT_CHALLENGE_KEY } from './action-types';
 import { updateSuccessMessage } from './actions';
 
-function* currentChallengeSaga({ payload: id }) {
+export function* currentChallengeSaga({ payload: id }) {
   yield store.set(CURRENT_CHALLENGE_KEY, id);
   //     // Temporarily removed to reduce calls to database
   //     // will need to re-import things at the top
@@ -26,7 +26,7 @@ function* currentChallengeSaga({ payload: id }) {
   // }
 }
 
-function* updateSuccessMessageSaga() {
+export function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
 }
 

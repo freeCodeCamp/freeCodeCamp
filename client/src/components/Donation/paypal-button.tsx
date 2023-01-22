@@ -59,7 +59,10 @@ const {
     deploymentEnv: 'staging' | 'live';
   };
 
-class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
+export class PaypalButton extends Component<
+  PaypalButtonProps,
+  PaypalButtonState
+> {
   static displayName = 'PaypalButton';
   state: PaypalButtonState = {
     amount: defaultDonation.donationAmount,

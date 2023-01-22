@@ -134,7 +134,7 @@ Follow these steps:
    git status
    ```
 
-   Вивід:
+   Output:
 
    ```console
    On branch feat/documentation
@@ -155,7 +155,7 @@ Follow these steps:
    git commit -m "fix: my short commit message"
    ```
 
-   Декілька прикладів:
+   Some examples:
 
    ```md
    fix: add test for JavaScript - for loop step
@@ -201,7 +201,7 @@ After you've committed your changes, check here for [how to open a Pull Request]
 
 A quick reference to the commands that you will need when working.
 
-| команда                                                        | опис                                                                                |
+| command                                                        | description                                                                         |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
 | `npm run test-client`                                          | Run the client test suite.                                                          |

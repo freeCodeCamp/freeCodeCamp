@@ -11,7 +11,6 @@
     "view": "查看",
     "view-code": "查看代碼",
     "view-project": "查看項目",
-    "view-cert-title": "View {{certTitle}}",
     "show-cert": "顯示認證",
     "claim-cert": "申請認證",
     "save-progress": "保存進度",
@@ -53,7 +52,7 @@
     "check-code": "檢查您的代碼 (Ctrl + Enter)",
     "check-code-2": "檢查你的代碼",
     "reset": "重置",
-    "reset-step": "Reset This Step",
+    "reset-code": "重置所有代碼",
     "help": "幫助",
     "get-help": "獲得幫助",
     "watch-video": "觀看視頻",
@@ -158,8 +157,7 @@
       "honesty": "學術誠信條例",
       "internet": "你在各平臺的賬號",
       "portfolio": "作品集設置",
-      "privacy": "隱私設置",
-      "personal-info": "Personal Information"
+      "privacy": "隱私設置"
     },
     "danger": {
       "heading": "危險區域",
@@ -274,7 +272,6 @@
     "add-subtitles": "幫助我們完善或添加字幕",
     "wrong-answer": "抱歉，這個答案不正確。再試一次？",
     "check-answer": "點擊下方按鈕，查看你的答案。",
-    "assignment-not-complete": "Please finish the assignments",
     "solution-link": "解決方案鏈接",
     "github-link": "GitHub 鏈接",
     "submit-and-go": "提交併訪問下一個挑戰",
@@ -342,7 +339,6 @@
     "title": "支持我們的慈善組織",
     "processing": "我們正在處理你的捐款。",
     "redirecting": "重新引導中...",
-    "thanks": "Thanks for donating",
     "thank-you": "謝謝你成爲我們的支持者。",
     "additional": "你可以使用這個鏈接 <0>{{url}}</0> 額外進行一次性捐款：",
     "help-more": "幫助我們做更多",
@@ -466,8 +462,7 @@
     "iframe-preview": "{{title}} 預覽",
     "iframe-alert": "通常，此鏈接會將你帶到另一個網站！一切正常，這個鏈接指向：{{externalLink}}。",
     "iframe-form-submit-alert": "通常這個表單將被提交！工作正常，這將被提交到：{{externalLink}}",
-    "document-notfound": "找不到文件",
-    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
+    "document-notfound": "找不到文件"
   },
   "icons": {
     "gold-cup": "金獎盃",
@@ -512,8 +507,7 @@
     "step": "步驟",
     "steps": "步驟",
     "steps-for": "{{blockTitle}} 的步驟",
-    "code-example": "{{codeName}} 代碼示例",
-    "opens-new-window": "Opens in new window"
+    "code-example": "{{codeName}} 代碼示例"
   },
   "flash": {
     "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",

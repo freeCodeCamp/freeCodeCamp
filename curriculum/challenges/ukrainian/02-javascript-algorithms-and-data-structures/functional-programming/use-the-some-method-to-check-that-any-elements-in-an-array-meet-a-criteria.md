@@ -24,29 +24,29 @@ numbers.some(function(currentValue) {
 
 # --instructions--
 
-Використовуйте метод `some` всередині функції `checkPositive`, щоб перевірити, чи будь-який елемент у `arr` додатній. Функція повинна повертати булеве значення.
+Використовуйте метод `some` всередині функції `checkPositive`, щоб перевірити, чи будь-який елемент у `arr` додатній. Функція має повернути булеве значення.
 
 # --hints--
 
-Ваш код повинен використовувати метод `some`.
+Використовуйте у коді метод `some`.
 
 ```js
 assert(code.match(/\.some/g));
 ```
 
-`checkPositive([1, 2, 3, -4, 5])` повинна повертати `true`.
+`checkPositive([1, 2, 3, -4, 5])` має повернути `true`.
 
 ```js
 assert(checkPositive([1, 2, 3, -4, 5]));
 ```
 
-`checkPositive([1, 2, 3, 4, 5])` повинна повертати `true`.
+`checkPositive([1, 2, 3, 4, 5])` має повернути `true`.
 
 ```js
 assert(checkPositive([1, 2, 3, 4, 5]));
 ```
 
-`checkPositive([-1, -2, -3, -4, -5])` повинна повертати `false`.
+`checkPositive([-1, -2, -3, -4, -5])` має повернути `false`.
 
 ```js
 assert(!checkPositive([-1, -2, -3, -4, -5]));

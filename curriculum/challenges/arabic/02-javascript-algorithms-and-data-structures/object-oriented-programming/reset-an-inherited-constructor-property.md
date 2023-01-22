@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b86
-title: إعادة تعيين خاصية موروثة
+title: إعادة تعيين خاصية موروثة (Reset an Inherited Constructor Property)
 challengeType: 1
 forumTopicId: 301324
 dashedName: reset-an-inherited-constructor-property

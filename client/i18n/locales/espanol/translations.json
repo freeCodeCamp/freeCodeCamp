@@ -11,7 +11,6 @@
     "view": "Ver",
     "view-code": "Mostrar Código",
     "view-project": "Mostrar Proyecto",
-    "view-cert-title": "View {{certTitle}}",
     "show-cert": "Mostrar certificación",
     "claim-cert": "Solicitar certificación",
     "save-progress": "Guardar progreso",
@@ -53,7 +52,7 @@
     "check-code": "Comprueba tu código (Ctrl + Enter)",
     "check-code-2": "Comprueba tu código",
     "reset": "Restablecer",
-    "reset-step": "Reset This Step",
+    "reset-code": "Restablecer todo el código",
     "help": "Ayuda",
     "get-help": "Obtener ayuda",
     "watch-video": "Ver un Video",
@@ -158,8 +157,7 @@
       "honesty": "Política de Honestidad Académica",
       "internet": "Tu presencia en Internet",
       "portfolio": "Ajustes de portafolio",
-      "privacy": "Ajustes de privacidad",
-      "personal-info": "Personal Information"
+      "privacy": "Ajustes de privacidad"
     },
     "danger": {
       "heading": "Zona de peligro",
@@ -274,7 +272,6 @@
     "add-subtitles": "Ayudar a mejorar o agregar subtítulos",
     "wrong-answer": "Lo siento, esa no es la respuesta correcta. ¡Vuelve a intentarlo!",
     "check-answer": "Haz clic en el botón de abajo para verificar tu respuesta.",
-    "assignment-not-complete": "Please finish the assignments",
     "solution-link": "Enlace a la solución",
     "github-link": "Enlace de GitHub",
     "submit-and-go": "Enviar y pasar a mi siguiente desafío",
@@ -342,7 +339,6 @@
     "title": "Support our charity",
     "processing": "Estamos procesando tu donación.",
     "redirecting": "Redirigiendo...",
-    "thanks": "Thanks for donating",
     "thank-you": "Gracias por tu apoyo.",
     "additional": "Puede hacer una donación adicional única de cualquier monto utilizando este enlace: <0>{{url}}</0>",
     "help-more": "Ayúdanos a hacer más",
@@ -466,8 +462,7 @@
     "iframe-preview": "{{title}} Vista previa",
     "iframe-alert": "¡Normalmente este link te llevaría a otro sitio web! Funciona. Este es un enlace a: {{externalLink}}",
     "iframe-form-submit-alert": "¡Normalmente, se enviaría este formulario! Funciona. Esto se enviará a: {{externalLink}}",
-    "document-notfound": "documento no encontrado",
-    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
+    "document-notfound": "documento no encontrado"
   },
   "icons": {
     "gold-cup": "Copa de Oro",
@@ -512,8 +507,7 @@
     "step": "Paso",
     "steps": "Pasos",
     "steps-for": "Pasos para {{blockTitle}}",
-    "code-example": "ejemplo de código de {{codeName}}",
-    "opens-new-window": "Opens in new window"
+    "code-example": "ejemplo de código de {{codeName}}"
   },
   "flash": {
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica.",

@@ -8,7 +8,7 @@ dashedName: problem-30-digit-n-powers
 
 # --description--
 
-Überraschenderweise gibt es nur drei Zahlen, die sich als Summe von vierten Potenzen ihrer Ziffern schreiben lassen:
+Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
 
 <div style='margin-left: 4em;'>
   1634 = 1<sup>4</sup> + 6<sup>4</sup> + 3<sup>4</sup> + 4<sup>4</sup><br>
@@ -18,37 +18,37 @@ dashedName: problem-30-digit-n-powers
 
 As 1 = 1<sup>4</sup> is not a sum it is not included.
 
-Die Summe dieser Zahlen ist 1634 + 8208 + 9474 = 19316.
+The sum of these numbers is 1634 + 8208 + 9474 = 19316.
 
-Finde die Summe aller Zahlen, die sich als Summe von `n` Potenzen ihrer Ziffern schreiben lassen.
+Find the sum of all the numbers that can be written as the sum of `n` powers of their digits.
 
 # --hints--
 
-`digitnPowers(2)` sollte eine Zahl zurückgeben.
+`digitnPowers(2)` should return a number.
 
 ```js
 assert(typeof digitnPowers(2) === 'number');
 ```
 
-`digitnPowers(2)` sollte 0 zurückgeben.
+`digitnPowers(2)` should return 0.
 
 ```js
 assert(digitnPowers(2) == 0);
 ```
 
-`digitnPowers(3)` sollte 1301 zurückgeben.
+`digitnPowers(3)` should return 1301.
 
 ```js
 assert(digitnPowers(3) == 1301);
 ```
 
-`digitnPowers(4)` sollte 19316 zurückgeben.
+`digitnPowers(4)` should return 19316.
 
 ```js
 assert(digitnPowers(4) == 19316);
 ```
 
-`digitnPowers(5)` sollte 443839 zurückgeben.
+`digitnPowers(5)` should return 443839.
 
 ```js
 assert(digitnPowers(5) == 443839);

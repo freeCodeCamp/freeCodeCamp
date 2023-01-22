@@ -55,9 +55,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
             to={`/certification/${username}/${cert.certSlug}`}
             data-cy='claimed-certification'
           >
-            {t('buttons.view-cert-title', {
-              certTitle: t(`certification.title.${cert.certSlug}`)
-            })}
+            View {t(`certification.title.${cert.certSlug}`)}
           </Link>
         </Col>
       </Row>
