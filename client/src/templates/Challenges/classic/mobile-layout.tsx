@@ -55,56 +55,58 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
         'tool-panel-group-mobile'
       ) as HTMLCollectionOf<HTMLElement>
     )[0];
+    const toolPanelHeight = 37;
 
-    if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
-      if (
-        visualViewport?.height &&
-        window.innerHeight > visualViewport.height
-      ) {
-        setTimeout(() => {
-          window.scrollTo(0, 0);
+    // The former of the if statements is for avoiding a TypeScript error and the latter to detect the appearance of the virtual keyboard on iPhone.
+    if (visualViewport?.height && window.innerHeight > visualViewport.height) {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
 
-          toolPanelGroup.style.position = 'absolute';
-          if (visualViewport?.height !== undefined) {
-            toolPanelGroup.style.bottom =
-              String(window.innerHeight - visualViewport.height) + 'px';
-          }
-        }, 200);
+        if (visualViewport?.height !== undefined) {
+          toolPanelGroup.style.top =
+            String(visualViewport.height - toolPanelHeight) + 'px';
+        }
+      }, 200);
 
-        window.addEventListener('touchmove', this.avoidWindowScrolling, {
-          passive: false
-        });
-      } else {
-        document.documentElement.style.height =
-          String(window.innerHeight) + 'px';
+      window.addEventListener('touchmove', this.avoidWindowScrolling, {
+        passive: false
+      });
+    } else {
+      document.documentElement.style.height = String(window.innerHeight) + 'px';
 
-        toolPanelGroup.style.position = '';
-        toolPanelGroup.style.bottom = '';
-
-        window.removeEventListener('touchmove', this.avoidWindowScrolling);
+      if (visualViewport?.height !== undefined) {
+        toolPanelGroup.style.top =
+          String(window.innerHeight - toolPanelHeight) + 'px';
       }
+
+      window.removeEventListener('touchmove', this.avoidWindowScrolling);
     }
   };
 
   componentDidMount() {
+    const toolPanelGroup = (
+      document.getElementsByClassName(
+        'tool-panel-group-mobile'
+      ) as HTMLCollectionOf<HTMLElement>
+    )[0];
+    const toolPanelHeight = 37;
+
     if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
-      window.addEventListener('resize', this.setToolPanelPosition);
       visualViewport?.addEventListener('resize', this.setToolPanelPosition);
 
       document.documentElement.style.height = String(window.innerHeight) + 'px';
-      document.documentElement.style.overflow = 'hidden';
+      toolPanelGroup.style.top =
+        String(window.innerHeight - toolPanelHeight) + 'px';
     }
   }
 
   componentWillUnmount() {
     if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
-      window.removeEventListener('resize', this.setToolPanelPosition);
       visualViewport?.removeEventListener('resize', this.setToolPanelPosition);
 
       window.removeEventListener('touchmove', this.avoidWindowScrolling);
 
       document.documentElement.style.height = '100%';
-      document.documentElement.style.overflow = 'scroll';
     }
   }
 
