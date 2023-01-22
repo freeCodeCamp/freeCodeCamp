@@ -61,17 +61,22 @@
   margin-bottom: 15px;
 }
 
+.completion-block-meta {
+  text-align: center;
+  color: var(--tertiary-color);
+  margin-top: 10px;
+}
+
 .progress-bar-wrap {
   width: 400px;
-  height: 50px;
+  height: 20px;
   position: relative;
 }
 
 .progress-bar-background {
   width: 400px;
-  height: 50px;
+  height: 20px;
   color: var(--primary-color);
-  border: 3px solid var(--primary-color);
   background-color: var(--quaternary-background);
   display: flex;
   align-items: center;
@@ -92,7 +97,7 @@
 .progress-bar-foreground {
   color: var(--primary-background);
   width: 400px;
-  height: 50px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,7 +119,7 @@
   .progress-bar-background,
   .progress-bar-foreground {
     width: 260px;
-    height: 40px;
+    height: 20px;
   }
 
   .completion-success-icon {

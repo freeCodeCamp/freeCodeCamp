@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
-import { useStaticQuery, graphql } from 'gatsby';
 import { noop } from 'lodash-es';
 import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
@@ -10,12 +9,10 @@ import { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { dasherize } from '../../../../../utils/slugs';
-import { isFinalProject } from '../../../../utils/challenge-types';
 import Login from '../../../components/Header/components/Login';
 import { executeGA, allowBlockDonationRequests } from '../../../redux/actions';
 import { isSignedInSelector } from '../../../redux/selectors';
-import { AllChallengeNode, ChallengeFiles } from '../../../redux/prop-types';
-
+import { ChallengeFiles } from '../../../redux/prop-types';
 import { closeModal, submitChallenge } from '../redux/actions';
 import {
   completedChallengesIds,
@@ -24,7 +21,8 @@ import {
   challengeFilesSelector,
   challengeMetaSelector
 } from '../redux/selectors';
-import CompletionModalBody from './completion-modal-body';
+import GreenPass from '../../../assets/icons/green-pass';
+import ProgressBar from '../../../components/ProgressBar';
 
 import './completion-modal.css';
 
@@ -236,22 +234,7 @@ class CompletionModalInner extends Component<
   }
 
   render(): JSX.Element {
-    const {
-      block,
-      close,
-      currentBlockIds,
-      id,
-      isOpen,
-      isSignedIn,
-      message,
-      superBlock = '',
-      t,
-      title
-    } = this.props;
-
-    const { completedPercent, completedChallengesInBlock } = this.state;
-
-    const totalChallengesInBlock = currentBlockIds?.length ?? 0;
+    const { close, isOpen, isSignedIn, message, t, title } = this.props;
 
     if (isOpen) {
       executeGA({ event: 'pageview', pagePath: '/completion-modal' });
@@ -278,16 +261,15 @@ class CompletionModalInner extends Component<
           <Modal.Title className='completion-message'>{message}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
-          <CompletionModalBody
-            {...{
-              block,
-              completedPercent,
-              completedChallengesInBlock,
-              currentChallengeId: id,
-              superBlock,
-              totalChallengesInBlock
-            }}
-          />
+          <div className='completion-challenge-details'>
+            <GreenPass
+              className='completion-success-icon'
+              data-testid='fcc-completion-success-icon'
+            />
+          </div>
+          <div className='completion-block-details'>
+            <ProgressBar />
+          </div>
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (
@@ -320,82 +302,8 @@ class CompletionModalInner extends Component<
   }
 }
 
-interface Options {
-  isFinalProjectBlock: boolean;
-}
-
-interface CertificateNode {
-  challenge: {
-    // TODO: use enum
-    certification: string;
-    tests: { id: string }[];
-  };
-}
-
-const useCurrentBlockIds = (
-  block: string,
-  certification: string,
-  options?: Options
-) => {
-  const {
-    allChallengeNode: { edges: challengeEdges },
-    allCertificateNode: { nodes: certificateNodes }
-  }: {
-    allChallengeNode: AllChallengeNode;
-    allCertificateNode: { nodes: CertificateNode[] };
-  } = useStaticQuery(graphql`
-    query getCurrentBlockNodes {
-      allChallengeNode(
-        sort: {
-          fields: [
-            challenge___superOrder
-            challenge___order
-            challenge___challengeOrder
-          ]
-        }
-      ) {
-        edges {
-          node {
-            challenge {
-              block
-              id
-            }
-          }
-        }
-      }
-      allCertificateNode {
-        nodes {
-          challenge {
-            certification
-            tests {
-              id
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const currentCertificateIds = certificateNodes
-    .filter(
-      node => dasherize(node.challenge.certification) === certification
-    )[0]
-    ?.challenge.tests.map(test => test.id);
-  const currentBlockIds = challengeEdges
-    .filter(edge => edge.node.challenge.block === block)
-    .map(edge => edge.node.challenge.id);
-
-  return options?.isFinalProjectBlock ? currentCertificateIds : currentBlockIds;
-};
-
 const CompletionModal = (props: CompletionModalsProps) => {
-  const currentBlockIds = useCurrentBlockIds(
-    props.block || '',
-    props.certification || '',
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    { isFinalProjectBlock: isFinalProject(props.challengeType) }
-  );
-  return <CompletionModalInner currentBlockIds={currentBlockIds} {...props} />;
+  return <CompletionModalInner {...props} />;
 };
 
 CompletionModal.displayName = 'CompletionModal';
