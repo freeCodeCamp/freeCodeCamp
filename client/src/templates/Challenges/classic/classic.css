@@ -44,7 +44,7 @@
 
 .monaco-editor-tabs {
   display: flex;
-  margin-right: auto;
+  margin-inline-end: auto;
 }
 
 .monaco-editor-tabs button:not(:first-child) {
