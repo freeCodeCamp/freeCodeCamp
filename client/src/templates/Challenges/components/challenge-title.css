@@ -45,6 +45,7 @@
 }
 
 .challenge-title-breadcrumbs ol a:hover {
+  background-color: inherit;
   text-decoration: underline;
   background-color: inherit;
 }
