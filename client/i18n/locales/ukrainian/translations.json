@@ -159,7 +159,7 @@
       "internet": "Ваші соціальні мережі",
       "portfolio": "Налаштування портфоліо",
       "privacy": "Налаштування конфіденційності",
-      "personal-info": "Personal Information"
+      "personal-info": "Особиста інформація"
     },
     "danger": {
       "heading": "Небезпечна зона",
@@ -274,7 +274,7 @@
     "add-subtitles": "Допомогти покращити або додати субтитри",
     "wrong-answer": "Нам шкода, але це неправильна відповідь. Спробуєте ще раз?",
     "check-answer": "Натисніть кнопку нижче, щоб перевірити свою відповідь.",
-    "assignment-not-complete": "Please finish the assignments",
+    "assignment-not-complete": "Будь ласка, завершіть завдання",
     "solution-link": "Посилання на рішення",
     "github-link": "Посилання на GitHub",
     "submit-and-go": "Відправити та перейти до мого наступного завдання",
