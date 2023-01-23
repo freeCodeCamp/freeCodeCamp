@@ -25,6 +25,7 @@ import {
   signInLoadingSelector
 } from '../../redux/selectors';
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
+import ProgressIndicator from '../../components/ProgressIndicator';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -181,6 +182,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
   const defaultCurriculumNames = blockDashedNames;
 
+  const superBlockTotalChallengesCount = edges.length;
+
   return (
     <>
       <Helmet>
@@ -197,7 +200,12 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
               </h2>
-              <Spacer />
+              <ProgressIndicator
+                username={user.username}
+                superBlockTotalChallengesCount={superBlockTotalChallengesCount}
+                superBlock={superBlock}
+              />
+              <Spacer size={2} />
               <div className='block-ui'>
                 {defaultCurriculumNames.map(blockDashedName => (
                   <Fragment key={blockDashedName}>
