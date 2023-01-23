@@ -8,21 +8,21 @@ dashedName: problem-34-digit-factorials
 
 # --description--
 
-145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
+145 ist eine merkwürdige Zahl, denn 1! + 4! + 5! = 1 + 24 + 120 = 145.
 
-Find the numbers and the sum of the numbers which are equal to the sum of the factorial of their digits.
+Finde die Zahlen und die Summe der Zahlen, die gleich der Summe der Fakultäten ihrer Ziffern sind.
 
-**Note:** as 1! = 1 and 2! = 2 are not sums they are not included.
+**Hinweis:** Da 1! = 1 und 2! = 2 keine Summen sind, werden sie nicht berücksichtigt.
 
 # --hints--
 
-`digitFactorial()` should return an object.
+`digitFactorial()` sollte ein Objekt zurückgeben.
 
 ```js
 assert.typeOf(digitFactorial(), 'object');
 ```
 
-`digitFactorial()` should return { sum: 40730, numbers: [145, 40585] }.
+`digitFactorial()` sollte { sum: 40730, Zahlen: [145, 40585] }.
 
 ```js
 assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] });

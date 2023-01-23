@@ -34,19 +34,19 @@ dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
 assert(!code.match(/\.?[\s\S]*?replace/g));
 ```
 
-`urlSlug("Winter Is Coming")` повинна повертати рядок `winter-is-coming`.
+`urlSlug("Winter Is Coming")` має повертати рядок `winter-is-coming`.
 
 ```js
 assert(urlSlug('Winter Is Coming') === 'winter-is-coming');
 ```
 
-`urlSlug(" Winter Is  Coming")` повинна повертати рядок `winter-is-coming`.
+`urlSlug(" Winter Is  Coming")` має повертати рядок `winter-is-coming`.
 
 ```js
 assert(urlSlug(' Winter Is  Coming') === 'winter-is-coming');
 ```
 
-`urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")` повинна повертати рядок `a-mind-needs-books-like-a-sword-needs-a-whetstone`.
+`urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")` має повертати рядок `a-mind-needs-books-like-a-sword-needs-a-whetstone`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-`urlSlug("Hold The Door")` повинна повертати рядок `hold-the-door`.
+`urlSlug("Hold The Door")` має повертати рядок `hold-the-door`.
 
 ```js
 assert(urlSlug('Hold The Door') === 'hold-the-door');

@@ -352,7 +352,7 @@ async (getUserInput) => {
 };
 ```
 
-Todos os 12 testes de unidade foram concluídos e deram aprovação. Veja `/tests/1_unit-tests.js` para o comportamento esperado para o qual você deve escrever os testes.
+All 12 unit tests are complete and passing.
 
 ```js
 async (getUserInput) => {
@@ -377,7 +377,7 @@ async (getUserInput) => {
 };
 ```
 
-Todos os 14 testes funcionais foram concluídos e deram aprovação. Veja `/tests/2_functional-tests.js` para a funcionalidade esperada para o qual você deve escrever os testes.
+All 14 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {
