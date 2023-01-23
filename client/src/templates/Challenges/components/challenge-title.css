@@ -49,10 +49,10 @@
   text-decoration: underline;
 }
 
-.breadcrumb-left {
+.breadcrumb-left,
+.breadcrumb-right {
   text-decoration: none;
-  min-width: 3rem;
-  display: inline-block;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -60,10 +60,13 @@
   white-space: nowrap;
   flex-grow: 1;
   flex-shrink: 2;
+  padding: 0;
+}
+
+.breadcrumb-left {
+  min-width: 3rem;
   background-color: var(--quaternary-background);
-  padding-block: 0;
-  padding-inline: 0 0.57rem;
-  position: relative;
+  margin-inline-end: 0.57rem;
 }
 
 .breadcrumb-left:after {
@@ -71,25 +74,12 @@
   content: '';
   border-top: calc(1.375rem / 2) solid transparent;
   border-bottom: calc(1.2rem / 2) solid transparent;
-  border-left: calc(1.1rem / 2) solid var(--quaternary-background);
-  position: absolute;
-  top: 0;
-  right: 0;
+  border-inline-start: calc(1.1rem / 2) solid var(--quaternary-background);
   height: 100%;
 }
 
 .breadcrumb-right {
-  text-decoration: none;
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
   min-width: 50px;
-  flex-grow: 2;
-  flex-shrink: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding: 0;
 }
 
 .breadcrumb-rule {
