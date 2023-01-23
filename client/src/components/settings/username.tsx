@@ -237,7 +237,10 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
             disabled={
               !(isValidUsername && valid && !isFormPristine) || submitClicked
             }
-          />
+          >
+            {t('buttons.save')}{' '}
+            <span className='sr-only'>{t('settings.labels.username')}</span>
+          </BlockSaveButton>
         </FullWidthRow>
       </form>
     );
