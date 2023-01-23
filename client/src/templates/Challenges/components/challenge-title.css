@@ -22,7 +22,7 @@
   justify-content: space-around;
   list-style-type: none;
   margin-bottom: 0;
-  padding-left: 0;
+  padding-inline-start: 0;
   width: 100%;
 }
 
