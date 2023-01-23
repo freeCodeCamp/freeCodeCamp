@@ -20,7 +20,7 @@ const str = arr.join(" ");
 `str` матиме значення рядка `Hello World`.
 # --instructions--
 
-Використайте метод `join` (з-поміж інших) всередині функції `sentensify`, щоб створити речення зі слів у рядку `str`. Ваша функція повинна повертати рядок. Наприклад, `I-like-Star-Wars` буде перетворено в `I like Star Wars`. Не використовуйте метод `replace` у цьому завданні.
+Використайте метод `join` (з-поміж інших) всередині функції `sentensify`, щоб створити речення зі слів у рядку `str`. Функція повинна повертати рядок. Наприклад, `I-like-Star-Wars` буде перетворено в `I like Star Wars`. Не використовуйте метод `replace` у цьому завданні.
 
 # --hints--
 
@@ -36,19 +36,19 @@ assert(code.match(/\.join/g));
 assert(!code.match(/\.?[\s\S]*?replace/g));
 ```
 
-`sentensify("May-the-force-be-with-you")` повинна повертати рядок.
+`sentensify("May-the-force-be-with-you")` має повертати рядок.
 
 ```js
 assert(typeof sentensify('May-the-force-be-with-you') === 'string');
 ```
 
-`sentensify("May-the-force-be-with-you")` повинна повертати рядок `May the force be with you`.
+`sentensify("May-the-force-be-with-you")` має повертати рядок `May the force be with you`.
 
 ```js
 assert(sentensify('May-the-force-be-with-you') === 'May the force be with you');
 ```
 
-`sentensify("The.force.is.strong.with.this.one")` повинна повертати рядок `The force is strong with this one`.
+`sentensify("The.force.is.strong.with.this.one")` має повертати рядок `The force is strong with this one`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-`sentensify("There,has,been,an,awakening")` повинна повертати рядок `There has been an awakening`.
+`sentensify("There,has,been,an,awakening")` має повертати рядок `There has been an awakening`.
 
 ```js
 assert(
