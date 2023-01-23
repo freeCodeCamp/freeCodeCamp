@@ -12,11 +12,11 @@ import ResetModal from './reset-modal';
 
 import './danger-zone.css';
 
-type DangerZoneProps = {
+interface DangerZoneProps {
   deleteAccount: () => void;
   resetProgress: () => void;
   t: TFunction;
-};
+}
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -42,50 +42,48 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
   }
 
   return (
-    <div className='danger-zone text-center'>
-      <FullWidthRow>
-        <Panel bsStyle='danger'>
-          <Panel.Heading>{t('settings.danger.heading')}</Panel.Heading>
+    <FullWidthRow className='danger-zone text-center'>
+      <Panel bsStyle='danger'>
+        <Panel.Heading>{t('settings.danger.heading')}</Panel.Heading>
+        <Spacer />
+        <p>{t('settings.danger.be-careful')}</p>
+        <FullWidthRow>
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='danger'
+            className='btn-danger'
+            onClick={toggleResetModal}
+            type='button'
+          >
+            {t('settings.danger.reset')}
+          </Button>
+          <ButtonSpacer />
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='danger'
+            className='btn-danger'
+            onClick={toggleDeleteModal}
+            type='button'
+          >
+            {t('settings.danger.delete')}
+          </Button>
           <Spacer />
-          <p>{t('settings.danger.be-careful')}</p>
-          <FullWidthRow>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='danger'
-              className='btn-danger'
-              onClick={toggleResetModal}
-              type='button'
-            >
-              {t('settings.danger.reset')}
-            </Button>
-            <ButtonSpacer />
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='danger'
-              className='btn-danger'
-              onClick={toggleDeleteModal}
-              type='button'
-            >
-              {t('settings.danger.delete')}
-            </Button>
-            <Spacer />
-          </FullWidthRow>
-        </Panel>
+        </FullWidthRow>
+      </Panel>
 
-        <ResetModal
-          onHide={toggleResetModal}
-          reset={resetProgress}
-          show={reset}
-        />
-        <DeleteModal
-          delete={deleteAccount}
-          onHide={toggleDeleteModal}
-          show={delete_}
-        />
-      </FullWidthRow>
-    </div>
+      <ResetModal
+        onHide={toggleResetModal}
+        reset={resetProgress}
+        show={reset}
+      />
+      <DeleteModal
+        delete={deleteAccount}
+        onHide={toggleDeleteModal}
+        show={delete_}
+      />
+    </FullWidthRow>
   );
 }
 
