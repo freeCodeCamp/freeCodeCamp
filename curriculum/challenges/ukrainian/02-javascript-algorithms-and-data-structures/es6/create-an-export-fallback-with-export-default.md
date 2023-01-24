@@ -1,6 +1,6 @@
 ---
 id: 587d7b8c367417b2b2512b58
-title: Створіть резервне значення з експортом за замовчуванням
+title: Створення резервного експорту за допомогою export default
 challengeType: 1
 forumTopicId: 301199
 dashedName: create-an-export-fallback-with-export-default

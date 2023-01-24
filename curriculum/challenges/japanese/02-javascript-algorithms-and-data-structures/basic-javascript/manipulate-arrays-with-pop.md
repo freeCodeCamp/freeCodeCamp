@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cc
-title: pop() による配列の操作
+title: Manipulate Arrays With pop Method
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236

@@ -44,7 +44,7 @@ multiplier(4, 2);
 assert.notMatch(code, /var/g);
 ```
 
-`myConcat` має бути постійною змінною (використовуйте `const`).
+`myConcat` повинна бути константною змінною (використовуйте `const`).
 
 ```js
 assert.match(code, /const\s+myConcat/g);
