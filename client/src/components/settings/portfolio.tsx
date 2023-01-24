@@ -219,7 +219,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const { state: descriptionState, message: descriptionMessage } =
       this.getDescriptionValidation(description);
     return (
-      <FullWidthRow key={id}>
+      <FullWidthRow>
         <form onSubmit={e => this.handleSubmit(e, id)}>
           <FormGroup
             controlId={`${id}-title`}
