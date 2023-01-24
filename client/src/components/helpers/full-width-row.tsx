@@ -2,7 +2,7 @@ import { Row, Col } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 
 interface FullWidthRowProps {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   className?: string;
 }
 
