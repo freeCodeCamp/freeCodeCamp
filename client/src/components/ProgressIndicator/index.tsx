@@ -9,16 +9,17 @@ import type { CurrentCert } from '../../redux/prop-types';
 import './progress-indicator.css';
 import { SuperBlocks } from '../../../../config/certification-settings';
 
-interface ProgressIndicatorProps {
-  completedChallengeCount?: number;
-  pathname?: string;
-  superBlock?: SuperBlocks;
-  superBlockTotalChallengesCount?: number;
-  superBlockTotalProjectsCount?: number;
-  currentCerts?: CurrentCert[];
-  legacyCerts?: CurrentCert[];
-  username: string;
-}
+type CompletedChallenge = {
+  id: string;
+};
+
+type NodeChallenge = {
+  node: {
+    challenge: {
+      id: string;
+    };
+  };
+};
 
 type NodeData = {
   allChallengeNode: {
@@ -28,6 +29,19 @@ type NodeData = {
     totalCount: number;
   };
 };
+
+interface ProgressIndicatorProps {
+  completedChallengeCount?: number;
+  completedChallengesList?: CompletedChallenge[];
+  pathname?: string;
+  superBlock?: SuperBlocks;
+  superBlockChallengesList?: NodeChallenge[];
+  superBlockTotalChallengesCount?: number;
+  superBlockTotalProjectsCount?: number;
+  currentCerts?: CurrentCert[];
+  legacyCerts?: CurrentCert[];
+  username: string;
+}
 
 const mapStateToProps = (
   state: Record<string, unknown>,
@@ -47,8 +61,10 @@ const mapStateToProps = (
 const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
   const {
     completedChallengeCount = 0,
+    completedChallengesList = [],
     pathname = '',
     superBlock = '',
+    superBlockChallengesList = [],
     superBlockTotalChallengesCount = 0,
     superBlockTotalProjectsCount = 5,
     currentCerts,
@@ -129,7 +145,30 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
    *
    */
 
-  const superBlockCompletedChallengesCount = 0;
+  const getCompletedChallengesCount = ({
+    completedChallengesList = [],
+    superBlockChallengesList = []
+  }: {
+    completedChallengesList: CompletedChallenge[];
+    superBlockChallengesList: NodeChallenge[];
+  }) => {
+    const completedChallengesIDs = completedChallengesList.map(challenge => {
+      return challenge.id;
+    });
+
+    const completedChallengeObjects = superBlockChallengesList.filter(
+      challenge => {
+        return completedChallengesIDs.includes(challenge.node.challenge.id);
+      }
+    );
+
+    return completedChallengeObjects.length;
+  };
+
+  const superBlockCompletedChallengesCount = getCompletedChallengesCount({
+    completedChallengesList,
+    superBlockChallengesList
+  });
   const superBlockCompletedChallengesPercent = computePercentage({
     completed: superBlockCompletedChallengesCount,
     length: superBlockTotalChallengesCount

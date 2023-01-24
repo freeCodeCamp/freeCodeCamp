@@ -183,6 +183,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const defaultCurriculumNames = blockDashedNames;
 
   const superBlockTotalChallengesCount = edges.length;
+  const superBlockChallengesList = edges;
+  const completedChallengesList = user.completedChallenges;
 
   return (
     <>
@@ -204,6 +206,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 username={user.username}
                 superBlockTotalChallengesCount={superBlockTotalChallengesCount}
                 superBlock={superBlock}
+                superBlockChallengesList={superBlockChallengesList}
+                completedChallengesList={completedChallengesList}
               />
               <Spacer size={2} />
               <div className='block-ui'>
