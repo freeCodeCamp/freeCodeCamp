@@ -8,7 +8,7 @@ input[type='checkbox'] {
   min-height: 1.15em;
   max-width: 1.15em;
   max-height: 1.15em;
-  margin-right: 15px;
+  margin-inline-end: 15px;
   border: 2px solid black;
   border-radius: 0.15em;
   transform: translateY(-0.075em);

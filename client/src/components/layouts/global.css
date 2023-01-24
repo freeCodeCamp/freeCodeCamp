@@ -644,6 +644,10 @@ blockquote .small {
   border-color: #31708f;
 }
 
+.alert-dismissable .close {
+  top: 0;
+}
+
 .annual-donation-alert {
   background: linear-gradient(
       -10deg,

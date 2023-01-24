@@ -159,7 +159,7 @@
       "internet": "Sua presença na internet",
       "portfolio": "Configurações do portfólio",
       "privacy": "Configurações de privacidade",
-      "personal-info": "Personal Information"
+      "personal-info": "Informações pessoais"
     },
     "danger": {
       "heading": "Zona de perigo",
@@ -274,7 +274,7 @@
     "add-subtitles": "Ajudar a melhorar ou adicionar legendas",
     "wrong-answer": "Desculpe, essa não é a resposta correta. Quer tentar novamente?",
     "check-answer": "Clique no botão abaixo para verificar sua resposta.",
-    "assignment-not-complete": "Please finish the assignments",
+    "assignment-not-complete": "Termine as tarefas",
     "solution-link": "Link da solução",
     "github-link": "Link do GitHub",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",

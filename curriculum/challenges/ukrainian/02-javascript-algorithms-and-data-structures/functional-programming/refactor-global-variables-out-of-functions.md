@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b60
-title: Зміна глобальних змінних поза функціями
+title: Рефакторинг глобальних змінних поза функціями
 challengeType: 1
 forumTopicId: 301235
 dashedName: refactor-global-variables-out-of-functions
@@ -8,23 +8,23 @@ dashedName: refactor-global-variables-out-of-functions
 
 # --description--
 
-На сьогодні ми спостерігаємо два окремих принципи функціонального програмування:
+Наразі ми розглянули два окремих принципи функційного програмування:
 
-1) Не змінюйте змінну чи об'єкт - створюйте нові змінні і об'єкти та повертайте їх через функцію, якщо це необхідно. Підказка: використання чогось на зразок `const newArr = arrVar` (де `arrVar` є масивом) просто створить посилання на оригінальну змінну, а не копію. Таким чином, зміна значення в `newArr` змінить значення в `arrVar`.
+1) Не змінюйте змінну чи об’єкт – створюйте нові змінні та об’єкти і, якщо потрібно, повертайте їх з функції. Підказка: якщо використати щось схоже до `const newArr = arrVar` (де `arrVar` є масивом), ви просто створите посилання на наявну змінну, а не копію. Тому, змінивши значення в `newArr`, зміниться значення в `arrVar`.
 
-2) Оголошення параметрів функції - будь-яке обчислення всередині функції залежить лише від аргументів, переданих функції, а не від будь-якого глобального об'єкту чи змінної.
+2) Оголошення параметрів функції – будь-яке обчислення всередині функції залежить лише від аргументів, переданих до функції, а не від глобального об’єкта чи змінної.
 
-Додавання такого числа не є дуже захопливим, але ми можемо застосувати ці принципи при роботі з масивами або більш складними об'єктами.
+Додавання одиниці до числа не дуже цікаве, але ми можемо застосувати ці принципи при роботі з масивами або складнішими об’єктами.
 
 # --instructions--
 
-Перепишіть код так, щоб глобальний масив `bookList` не змінювався всередині кожної функції. Функція `add` повинна додати цей код `bookName` в кінець масиву та повернути новий масив ( список). Функція `remove` повинна видалити вказану `bookName` з масиву, переданого до неї.
+Перепишіть код так, щоб глобальний масив `bookList` не змінювався всередині жодної з функцій. Функція `add` повинна додати наданий `bookName` в кінець переданого масиву та повернути новий масив (список). Функція `remove` повинна видалити наданий `bookName` з переданого масиву.
 
-**Note:** Обидві функції повинні повертати масив, і будь-які нові параметри повинні бути додані перед параметром `bookName`.
+**Примітка:** обидві функції повинні повертати масив, і будь-які нові параметри повинні бути додані перед параметром `bookName`.
 
 # --hints--
 
-`bookList` не повинен змінюватися і, як і раніше, дорівнювати `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
+`bookList` не повинен змінюватись та досі повинен дорівнювати `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
 
 ```js
 add(bookList, "Test");
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`add(bookList, "A Brief History of Time")` повинна повертати `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
+`add(bookList, "A Brief History of Time")` має повертати `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-`remove(bookList, "On The Electrodynamics of Moving Bodies")` повинна повертати `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
+`remove(bookList, "On The Electrodynamics of Moving Bodies")` має повертати `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-`remove(add(bookList, "A Brief History of Time"), "On The Electrodynamics of Moving Bodies");` повинен дорівнювати `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
+`remove(add(bookList, "A Brief History of Time"), "On The Electrodynamics of Moving Bodies");` має дорівнювати `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
 
 ```js
 assert(

@@ -20,7 +20,7 @@ dashedName: implement-map-on-a-prototype
 
 # --hints--
 
-`[23, 65, 98, 5, 13].myMap(item => item * 2)` повинна дорівнювати `[46, 130, 196, 10, 26]`.
+`[23, 65, 98, 5, 13].myMap(item => item * 2)` має дорівнювати `[46, 130, 196, 10, 26]`.
 
 ```js
 const _test_s = [23, 65, 98, 5, 13];
@@ -28,7 +28,7 @@ const _callback = item => item * 2;
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-`["naomi", "quincy", "camperbot"].myMap(element => element.toUpperCase())` повинна повертати `["NAOMI", "QUINCY", "CAMPERBOT"]`.
+`["naomi", "quincy", "camperbot"].myMap(element => element.toUpperCase())` має повертати `["NAOMI", "QUINCY", "CAMPERBOT"]`.
 
 ```js
 const _test_s = ["naomi", "quincy", "camperbot"];
@@ -36,7 +36,7 @@ const _callback = element => element.toUpperCase();
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-`[1, 1, 2, 5, 2].myMap((element, index, array) => array[index + 1] || array[0])` повинна повертати `[1, 2, 5, 2, 1]`.
+`[1, 1, 2, 5, 2].myMap((element, index, array) => array[index + 1] || array[0])` має повертати `[1, 2, 5, 2, 1]`.
 
 ```js
 const _test_s = [1, 1, 2, 5, 2];

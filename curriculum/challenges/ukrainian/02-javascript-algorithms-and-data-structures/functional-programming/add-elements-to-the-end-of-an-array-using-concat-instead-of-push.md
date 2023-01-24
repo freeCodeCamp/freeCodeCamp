@@ -51,7 +51,7 @@ assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
 assert(JSON.stringify(second) === JSON.stringify([4, 5]));
 ```
 
-`nonMutatingPush([1, 2, 3], [4, 5])` повинна повертати `[1, 2, 3, 4, 5]`.
+`nonMutatingPush([1, 2, 3], [4, 5])` має повертати `[1, 2, 3, 4, 5]`.
 
 ```js
 assert(
