@@ -62,6 +62,7 @@ interface LearnPageProps {
       };
     };
   };
+  path: string;
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -83,7 +84,8 @@ function LearnPage({
         fields: { slug }
       }
     }
-  }
+  },
+  path
 }: LearnPageProps) {
   const { t } = useTranslation();
 
@@ -116,6 +118,7 @@ function LearnPage({
               <ProgressIndicator
                 completedChallengeCount={completedChallengeCount}
                 username={username}
+                pathname={path}
               />
             )}
             <Map />

@@ -11,6 +11,7 @@ import { SuperBlocks } from '../../../../config/certification-settings';
 
 interface ProgressIndicatorProps {
   completedChallengeCount?: number;
+  pathname?: string;
   superBlock?: SuperBlocks;
   superBlockTotalChallengesCount?: number;
   superBlockTotalProjectsCount?: number;
@@ -45,13 +46,16 @@ const mapStateToProps = (
 
 const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
   const {
-    completedChallengeCount,
+    completedChallengeCount = 0,
+    pathname = '',
     superBlock = '',
     superBlockTotalChallengesCount = 0,
-    superBlockTotalProjectsCount = 0,
+    superBlockTotalProjectsCount = 5,
     currentCerts,
     legacyCerts
   } = props;
+
+  const isLearnPage = '/learn/'; // current path of main (learn) page
 
   // Get the current superblock name
   const { t } = useTranslation();
@@ -140,33 +144,37 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
   return (
     <div className='progress-summary'>
       <h3 className='progress-summary__main-header'>Progress Summary</h3>
-      <section>
-        <h4>Overall</h4>
-        <ul className='challenges'>
-          <li>
-            {completedChallengeCount}/{allChallengeCount} challenges completed (
-            {completedChallengePercentage}%)
-          </li>
-          <li>
-            {earnedCertificateCount}/{allCertificateCount} certificates earned (
-            {completedCertificatePercentage}%)
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h4>{i18nSuperBlock}</h4>
-        <ul className='challenges'>
-          <li>
-            {superBlockCompletedChallengesCount}/
-            {superBlockTotalChallengesCount} challenges completed (
-            {superBlockCompletedChallengesPercent}%)
-          </li>
-          <li>
-            {superBlockCompletedProjectsCount}/{superBlockTotalProjectsCount}{' '}
-            projects completed ({superBlockCompletedProjectsPercent}%)
-          </li>
-        </ul>
-      </section>
+      {pathname === isLearnPage && (
+        <section>
+          <h4>Overall</h4>
+          <ul className='challenges'>
+            <li>
+              {completedChallengeCount}/{allChallengeCount} challenges completed
+              ({completedChallengePercentage}%)
+            </li>
+            <li>
+              {earnedCertificateCount}/{allCertificateCount} certificates earned
+              ({completedCertificatePercentage}%)
+            </li>
+          </ul>
+        </section>
+      )}
+      {superBlock !== '' && (
+        <section>
+          <h4>{i18nSuperBlock}</h4>
+          <ul className='challenges'>
+            <li>
+              {superBlockCompletedChallengesCount}/
+              {superBlockTotalChallengesCount} challenges completed (
+              {superBlockCompletedChallengesPercent}%)
+            </li>
+            <li>
+              {superBlockCompletedProjectsCount}/{superBlockTotalProjectsCount}{' '}
+              projects completed ({superBlockCompletedProjectsPercent}%)
+            </li>
+          </ul>
+        </section>
+      )}
     </div>
   );
 };
