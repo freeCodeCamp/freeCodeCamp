@@ -20,7 +20,7 @@ Se você usa o Replit, siga estas etapas para configurar o projeto:
 -   Em seguida, você verá uma janela `.replit`.
 -   Selecione `Use run command` e clique no botão `Done`.
 
-Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para a solução no campo Solution Link. Como opção, envie também um link para o código-fonte do projeto no campo GitHub Link.
 
 # --instructions--
 
@@ -282,7 +282,7 @@ async (getUserInput) => {
 };
 ```
 
-Todos os 24 testes de unidade foram concluídos e deram aprovação. Veja `/tests/1_unit-tests.js` para o comportamento esperado para o qual você deve escrever os testes.
+All 24 unit tests are complete and passing.
 
 ```js
 async (getUserInput) => {
@@ -307,7 +307,7 @@ async (getUserInput) => {
 };
 ```
 
-Todos os 6 testes funcionais foram concluídos e deram aprovação. Veja `/tests/2_functional-tests.js` para o comportamento esperado para o qual você deve escrever os testes.
+All 6 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

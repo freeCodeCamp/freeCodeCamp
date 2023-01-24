@@ -20,7 +20,7 @@ dashedName: american-british-translator
 -   Потім ви побачите вікно `.replit`.
 -   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту в полі «Посилання на рішення». За бажанням введіть посилання на початковий код проєкту в полі «Посилання на GitHub».
 
 # --instructions--
 
@@ -282,7 +282,7 @@ async (getUserInput) => {
 };
 ```
 
-Усі 24 модульних тестів завершено та успішно пройдено. Перегляньте `/tests/1_unit-tests.js` очікуваної поведінки, для якої ви пишете тести.
+All 24 unit tests are complete and passing.
 
 ```js
 async (getUserInput) => {
@@ -307,7 +307,7 @@ async (getUserInput) => {
 };
 ```
 
-Усі 6 функціональних тестів завершено та успішно пройдено. Перегляньте `/tests/2_functional-tests.js` функціональності, для якої ви пишете тести.
+All 6 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

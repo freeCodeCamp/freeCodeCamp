@@ -553,7 +553,7 @@
     "intro": [
       "Até esse ponto, você usou JavaScript apenas no front-end para adicionar interatividade a uma página, resolver desafios de algoritmos ou construir uma SPA. Mas o JavaScript também pode ser usado no back-end, ou servidor, para construir aplicações web inteiras.",
       "Hoje em dia, uma das formas populares de se criar aplicações é através do uso de microsserviços, que são pequenas aplicações modulares que trabalham em conjunto para formar uma aplicação maior inteira.",
-      "Na certificação de APIs e desenvolvimento de back-end, você aprenderá a escrever aplicações de back-end com o Node.js e o npm (Node Package Manager). Você também vai construir aplicações web com o framework Express e criará um microsserviço de localização de pessoas com o MongoDB e com a biblioteca Mongoose."
+      "Na certificação de APIs e desenvolvimento de back-end, você aprenderá a escrever aplicações de back-end com o Node.js e o npm. Você também vai construir aplicações web com o framework Express e criará um microsserviço de localização de pessoas com o MongoDB e com a biblioteca Mongoose."
     ],
     "note": "",
     "blocks": {
@@ -777,6 +777,10 @@
           "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares.",
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
+      },
+      "the-odin-project": {
+        "title": "The Odin Project",
+        "intro": ["Uma descrição deve ser determinada"]
       },
       "project-euler": {
         "title": "Projeto Euler",

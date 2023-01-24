@@ -18,7 +18,7 @@ Serve the object `{"message": "Hello json"}` as a response, in JSON format, to G
 
 # --hints--
 
-The endpoint `/json` should serve the json object `{"message": "Hello json"}`
+The endpoint `/json` should serve the JSON object `{"message": "Hello json"}`
 
 ```js
 (getUserInput) =>

@@ -56,7 +56,7 @@ assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
 assert.deepStrictEqual(rangeOfNumbers(4, 4), [4]);
 ```
 
-لا ينبغي استخدام المتغيرات العالمية (Global variables) للتخزين المؤقت القائمة (array).
+لا ينبغي استخدام المتغيرات الشاملة (Global variables) للتخزين المؤقت للقائمة (array).
 
 ```js
 rangeOfNumbers(1, 3)

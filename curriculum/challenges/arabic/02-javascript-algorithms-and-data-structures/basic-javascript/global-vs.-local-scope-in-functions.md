@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c0
-title: النطاق العام مقابل النطاق المحلي في الوظائف (Global vs. Local Scope in Functions)
+title: المجال الشامل مقابل النطاق المحدد في الوظائف
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QwKH2'
 forumTopicId: 18194
@@ -9,7 +9,7 @@ dashedName: global-vs--local-scope-in-functions
 
 # --description--
 
-من الممكن الحصول على متغيرات <dfn>محالية (Local)</dfn> و <dfn>عامة (Global)</dfn> بنفس الاسم. عندما تقوم ذلك، يكون المتغير المحالي (local) له الأسبقية على المتغير العام (global).
+من الممكن الحصول على متغيرات <dfn>محدودة (local)</dfn> و <dfn>شاملة (global)</dfn> بنفس الاسم. عندما تقوم ذلك، يكون المتغير المحدود (local) له الأسبقية على المتغير الشامل (global).
 
 وفي هذا المثال:
 
@@ -22,15 +22,15 @@ function myFun() {
 }
 ```
 
-سوف تنتج الوظيفة `myFun` السلسلة `Head` لأن النسخة المحالية (local) من المتغير موجودة.
+سوف تنتج الوظيفة `myFun` المقطع النصي `Head` لأن النسخة المحدودة (local) من المتغير موجودة.
 
 # --instructions--
 
-أضف متغير محالي (local) إلى وظيفة `myOutfit` لتجاوز قيمة `outerWear` بالمقطع `sweater`.
+أضف متغير محدود (local) إلى وظيفة `myOutfit` لتجاوز قيمة `outerWear` بالمقطع النصي `sweater`.
 
 # --hints--
 
-لا يجب عليك تغيير قيمة العام (global) الآتي `outerWear`.
+لا يجب عليك تغيير قيمة المتغير الشامل (global) الآتي `outerWear`.
 
 ```js
 assert(outerWear === 'T-Shirt');

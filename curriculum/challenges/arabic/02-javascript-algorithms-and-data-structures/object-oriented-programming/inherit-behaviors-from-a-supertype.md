@@ -44,13 +44,13 @@ animal instanceof Animal;
 
 # --hints--
 
-يجب تعريف متغير `duck`.
+يجب إعلان متغير `duck`.
 
 ```js
 assert(typeof duck !== 'undefined');
 ```
 
-يجب تعريف متغير `beagle`.
+يجب إعلان متغير `beagle`.
 
 ```js
 assert(typeof beagle !== 'undefined');

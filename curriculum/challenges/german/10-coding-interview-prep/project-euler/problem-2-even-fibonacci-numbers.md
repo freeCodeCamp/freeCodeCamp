@@ -1,6 +1,6 @@
 ---
 id: 5900f36e1000cf542c50fe81
-title: 'Aufgabe 2: Gerade Fibonacci-Zahlen'
+title: 'Problem 2: Gerade Fibonacci-Zahlen'
 challengeType: 1
 forumTopicId: 301838
 dashedName: problem-2-even-fibonacci-numbers

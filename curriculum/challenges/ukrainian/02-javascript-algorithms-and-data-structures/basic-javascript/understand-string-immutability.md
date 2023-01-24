@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ba
-title: Розуміння нестійкості рядка
+title: Незмінність рядка
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVaUR'
 forumTopicId: 18331
@@ -9,16 +9,16 @@ dashedName: understand-string-immutability
 
 # --description--
 
-У JavaScript, `String` значення <dfn>immutable</dfn>, означає, що їх не можна буде змінити після створення.
+Значення рядка (`String`) у JavaScript є <dfn>незмінним</dfn>, тобто його не можна змінити після створення.
 
-For example, the following code will produce an error because the letter `B` in the string `Bob` cannot be changed to the letter `J`:
+Наприклад, наступний код спричинить помилку, оскільки літеру `B` у рядку `Bob` не можна змінити на літеру `J`:
 
 ```js
 let myStr = "Bob";
 myStr[0] = "J";
 ```
 
-Note that this does *not* mean that `myStr` could not be re-assigned. The only way to change `myStr` would be to assign it with a new value, like this:
+Зауважте, що це *не* означає, що `myStr` не можна повторно присвоїти. Єдиний спосіб змінити `myStr` – присвоїти нове значення:
 
 ```js
 let myStr = "Bob";
@@ -27,11 +27,11 @@ myStr = "Job";
 
 # --instructions--
 
-Виправте призначення `myStr` так, щоб код містив рядок зі значенням `Hello World`, використовуючи підхід, показаний вище.
+Використовуючи приклад вище, виправте присвоєння `myStr` так, щоб значенням рядка було `Hello World`.
 
 # --hints--
 
-`myStr` має мати значення рядка `Hello World`.
+`myStr` повинен мати значення рядка `Hello World`.
 
 ```js
 assert(myStr === 'Hello World');

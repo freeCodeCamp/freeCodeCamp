@@ -33,10 +33,10 @@ Per eseguire i test su build di produzione, sostituisci `dev` con `prd` nella pa
 - Per eseguire un singolo test:
 
   ```console
-  npm run cypress -- run --spec=cypress/<path_to_test_file>
+  npm run cypress -- run --spec=cypress/<percorso_file_test>
   ```
 
-  For example:
+  Ad esempio:
 
   ```console
   npm run cypress -- run --spec=cypress/e2e/default/landing.js

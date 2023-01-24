@@ -20,7 +20,7 @@ Ecco le specifiche user story da implementare per questo progetto:
 
 **User Story:** Puoi vedere cambiamenti in tempo reale quando altri utenti aggiungono o rimuovono titoli. Per questo dovrai usare Web Socket.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo Link alla soluzione. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo Link GitHub.
 
 # --solutions--
 

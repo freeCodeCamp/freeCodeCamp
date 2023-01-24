@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cf
-title: Створення багаторазового коду JavaScript за допомогою функцій
+title: Написання багаторазового JavaScript із функціями
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cL6dqfy'
 forumTopicId: 18378
@@ -9,7 +9,7 @@ dashedName: write-reusable-javascript-with-functions
 
 # --description--
 
-У JavaScript можна розділити код на повторно використовувані частини, які називаються <dfn>функціями</dfn>.
+У JavaScript можна розділити код на багаторазові частини, які називаються <dfn>функціями</dfn>.
 
 Приклад функції:
 
@@ -19,13 +19,13 @@ function functionName() {
 }
 ```
 
-Ви можете викликати або <dfn>активувати</dfn> цю функцію, використавши дужки для написання її назви, ось так: `functionName();`. При кожному виклику функції на консоль буде виводитись повідомлення `Hello World`. Щоразу як буде викликана функція, увесь код між фігурними дужками буде виконуватись.
+Ви можете викликати або <dfn>активувати</dfn> цю функцію, використавши дужки для написання її назви, ось так: `functionName();`. При кожному виклику функції на консоль буде виводитись повідомлення `Hello World`. При кожному виклику функції буде виконуватись код у фігурних дужках.
 
 # --instructions--
 
 <ol>
   <li>
-    Створіть функцію, яка називається <code>reusableFunction</code>, що друкує рядок <code>Hi World</code> на консоль розробників.
+    Створіть функцію під назвою <code>reusableFunction</code>, яка друкує рядок <code>Hi World</code> на консоль.
   </li>
   <li>
     Викличте функцію.
@@ -34,19 +34,19 @@ function functionName() {
 
 # --hints--
 
-`reusableFunction` повинен бути функцією.
+`reusableFunction` повинна бути функцією.
 
 ```js
 assert(typeof reusableFunction === 'function');
 ```
 
-Якщо `reusableFunction` буде викликано, то він має виводити рядок `Hi World` на консоль.
+Якщо `reusableFunction` буде викликано, то вона повинна виводити рядок `Hi World` на консоль.
 
 ```js
 assert(testConsole());
 ```
 
-Викличте функцію `reusableFunction` після її визначення.
+Ви повинні викликати `reusableFunction` після її визначення.
 
 ```js
 const functionStr = reusableFunction && __helpers.removeWhiteSpace(reusableFunction.toString());

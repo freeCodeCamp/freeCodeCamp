@@ -36,7 +36,7 @@
   npm run cypress -- run --spec=cypress/<path_to_test_file>
   ```
 
-  For example:
+  Наприклад:
 
   ```console
   npm run cypress -- run --spec=cypress/e2e/default/landing.js

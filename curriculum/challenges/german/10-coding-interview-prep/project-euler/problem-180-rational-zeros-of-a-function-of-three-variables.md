@@ -1,6 +1,6 @@
 ---
 id: 5900f4201000cf542c50ff33
-title: 'Aufgabe 180: Rationale Nullstellen einer Funktion von drei Variablen'
+title: 'Problem 180: Rationale Nullstellen einer Funktion von drei Variablen'
 challengeType: 1
 forumTopicId: 301816
 dashedName: problem-180-rational-zeros-of-a-function-of-three-variables

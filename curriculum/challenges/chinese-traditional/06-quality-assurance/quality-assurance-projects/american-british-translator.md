@@ -20,7 +20,7 @@ dashedName: american-british-translator
 -   接着，你將看到一個 `.replit` 窗口。
 -   選擇 `Use run command` 並點擊 `Done` 按鈕。
 
-當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 Solution Link 字段中。 也可以將項目的源碼鏈接提交到 GitHub Link 字段中。
 
 # --instructions--
 
@@ -282,7 +282,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 24 項單元測試都已完成並通過。 請參閱 `/tests/1_unit-tests.js` 來了解你應該寫的測試的預期行爲。
+All 24 unit tests are complete and passing.
 
 ```js
 async (getUserInput) => {
@@ -307,7 +307,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 6 項功能測試都已完成並通過。 請參閱 `/tests/2_functional-tests.js` 來了解你應該編寫的測試的功能。
+All 6 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

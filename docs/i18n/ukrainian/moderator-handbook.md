@@ -315,11 +315,11 @@ This is a standard message notifying you that, since you don't seem to have been
 If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting us know.
 ```
 
-## How Our Contributors Room Works
+## Як працює кімната помічників
 
-Anyone is welcome in the [contributors room on our chat server](https://discord.gg/PRyKn3Vbay). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
+Ми вітаємо кожного у [кімнаті помічників на нашому чат-сервері](https://discord.gg/PRyKn3Vbay). Ми створили її для модераторів та інших кемперів, які роблять внесок до нашої спільноти будь-яким чином, включно з навчальними групами.
 
-We assume contributors will read anything in this room that directly mentions them with an **@username**. Everything else is optional, but feel free to read anything anyone posts in there and interact.
+Ми прискаємо, що помічники читають всі повідомлення, у яких вони згадуються через **@username**. Все інше за бажанням, однак не соромтесь читати інші дописи та взаємодіяти з ними.
 
 ## Комунікація із посередниками
 
@@ -414,7 +414,7 @@ git fetch upstream
 git pull upstream main
 ````
 
-If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
+Якщо ви використовуєте графічний інтерфейс користувача, просто виконайте команду `Add a new remote...` та використайте посилання `git://github.com/freeCodeCamp/freeCodeCamp.git`.
 
 Once you sync your fork and pass the build, we will be able to review your PR and merge it. 😊
 
@@ -441,7 +441,7 @@ If you're not familiar with the merge conflict process, feel free to look over G
 Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
-¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
+¹ Якщо у новачка виникає конфлікт злиття, то спеціалісти розв’яжуть цю проблему замість нього.
 
 ### Дублікат
 
