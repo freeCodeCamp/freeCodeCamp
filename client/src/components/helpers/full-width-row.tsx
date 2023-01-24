@@ -4,12 +4,11 @@ import React from 'react';
 interface FullWidthRowProps {
   children?: React.ReactNode;
   className?: string;
-  key?: string;
 }
 
-const FullWidthRow = ({ children, className, key }: FullWidthRowProps) => {
+const FullWidthRow = ({ children, className }: FullWidthRowProps) => {
   return (
-    <Row className={className} key={key}>
+    <Row className={className}>
       <Col sm={8} smOffset={2} xs={12}>
         {children}
       </Col>
