@@ -7,30 +7,12 @@ Increase the spacing in paragraphs
 }
 
 /* 
-breadcrumbs section
-*/
-
-[dir='rtl'] .challenge-title-breadcrumbs ol {
-  padding-right: 0;
-}
-
-/* 
 Intro project buttons and headings 
 */
 
 [dir='rtl'] .monaco-editor-tabs {
-  margin-right: 0;
-}
-
-[dir='rtl'] .panel-display-tabs button:first-child,
-.tabs-row > button:first-child {
-  margin-right: 0;
-  margin-left: 10px;
-}
-
-[dir='rtl'] .map-ui .superblock-link .map-icon {
-  margin-right: 5px;
-  margin-left: 20px;
+  /* need to remove the margin because the editor is reversed */
+  margin-inline-end: 0;
 }
 
 [dir='rtl'] .map-ui .superblock-link > svg {
@@ -52,17 +34,6 @@ fix misaligned text in button and in donation
 
 [dir='rtl'] .link-btn.btn-lg > svg {
   transform: rotate(180deg);
-}
-
-[dir='rtl'] .block-grid .map-title > svg:last-child,
-[dir='rtl'] .map-title .course-title:last-of-type {
-  margin-right: auto;
-  margin-left: 0;
-}
-
-[dir='rtl'] .map-title .course-title:first-of-type {
-  margin-right: 0.35em;
-  margin-left: auto;
 }
 
 /* 
@@ -135,10 +106,6 @@ New RWD project challenge
 
 [dir='rtl'] .tabs-row {
   gap: 10px;
-}
-
-[dir='rtl'] .panel-display-tabs {
-  margin-left: auto;
 }
 
 [dir='rtl'] .monaco-editor-tabs button:not(:first-child) {
