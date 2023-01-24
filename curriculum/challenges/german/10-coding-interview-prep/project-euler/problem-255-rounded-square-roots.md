@@ -1,6 +1,6 @@
 ---
 id: 5900f46d1000cf542c50ff7f
-title: 'Problem 255: Rounded Square Roots'
+title: 'Problem 255: Gerundete Quadratwurzeln'
 challengeType: 1
 forumTopicId: 301903
 dashedName: problem-255-rounded-square-roots
@@ -8,40 +8,40 @@ dashedName: problem-255-rounded-square-roots
 
 # --description--
 
-We define the rounded-square-root of a positive integer $n$ as the square root of $n$ rounded to the nearest integer.
+Wir definieren die gerundete Quadratwurzel einer positiven ganzen Zahl $n$ als die Quadratwurzel von $n$, gerundet auf die nächste ganze Zahl.
 
-The following procedure (essentially Heron's method adapted to integer arithmetic) finds the rounded-square-root of $n$:
+Die folgende Prozedur (im Wesentlichen die Methode von Heron, angepasst an die ganzzahlige Arithmetik) findet die gerundete Quadratwurzel von $n$:
 
-Let $d$ be the number of digits of the number $n$.
+Lasse $d$ die Anzahl der Ziffern der Zahl $n$ sein.
 
-If $d$ is odd, set $x_0 = 2 × {10}^{\frac{d - 1}{2}}$.
+Falls $d$ ungerade ist, setze $x_0 = 2 × {10}^{\frac{d - 1}{2}}}$.
 
-If $d$ is even, set $x_0 = 7 × {10}^{\frac{d - 2}{2}}$.
+Falls $d$ gerade ist, setze $x_0 = 7 × {10}^{d - 2}{2}}$.
 
-Repeat:
+Wiederhole:
 
 $$x_{k + 1} = \left\lfloor\frac{x_k + \left\lceil\frac{n}{x_k}\right\rceil}{2}\right\rfloor$$
 
-until $x_{k + 1} = x_k$.
+bis $x_{k + 1} = x_k$.
 
-As an example, let us find the rounded-square-root of $n = 4321$.
+Als Beispiel wollen wir die gerundete Quadratwurzel von $n = 4321$ finden.
 
-$n$ has 4 digits, so $x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$.
+$n$ hat 4 Ziffern, also $x_0 = 7 × {10}^{frac{4-2}{2}}} = 70$.
 
 $$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\
 x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
 
-Since $x_2 = x_1$, we stop here. So, after just two iterations, we have found that the rounded-square-root of 4321 is 66 (the actual square root is 65.7343137…).
+Da $x_2 = x_1$ ist, hören wir hier auf. Nach nur zwei Iterationen haben wir also festgestellt, dass die gerundete Quadratwurzel von 4321 66 ist (die tatsächliche Quadratwurzel ist 65,7343137...).
 
-The number of iterations required when using this method is surprisingly low. For example, we can find the rounded-square-root of a 5-digit integer ($10\\,000 ≤ n ≤ 99\\,999$) with an average of 3.2102888889 iterations (the average value was rounded to 10 decimal places).
+Die Anzahl der erforderlichen Iterationen ist bei dieser Methode erstaunlich gering. Zum Beispiel können wir die gerundete Quadratwurzel einer 5-stelligen ganzen Zahl ($10\\.000 ≤ n ≤ 99\\.999$) mit durchschnittlich 3,2102888889 Iterationen finden (der Durchschnittswert wurde auf 10 Dezimalstellen gerundet).
 
-Using the procedure described above, what is the average number of iterations required to find the rounded-square-root of a 14-digit number (${10}^{13} ≤ n &lt; {10}^{14}$)? Give your answer rounded to 10 decimal places.
+Wie viele Iterationen sind durchschnittlich erforderlich, um mit dem oben beschriebenen Verfahren die gerundete Quadratwurzel einer 14-stelligen Zahl (${10}^{13} ≤ n &lt; {10}^{14}$) zu finden? Gib deine Antwort auf 10 Dezimalstellen gerundet an.
 
-**Note:** The symbols $⌊x⌋$ and $⌈x⌉$ represent the floor function and ceiling function respectively.
+**Hinweis:** Die Symbole $⌊x⌋$ und $⌈x⌉$ stehen für die Aufrundungs-und Abrundungsfunktion.
 
 # --hints--
 
-`roundedSquareRoots()` should return `4.447401118`.
+`roundedSquareRoots()` sollte `4.447401118` zurückgeben.
 
 ```js
 assert.strictEqual(roundedSquareRoots(), 4.447401118);

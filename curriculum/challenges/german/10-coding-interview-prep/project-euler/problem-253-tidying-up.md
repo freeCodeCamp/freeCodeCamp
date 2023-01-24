@@ -1,6 +1,6 @@
 ---
 id: 5900f4691000cf542c50ff7c
-title: 'Problem 253: Tidying up'
+title: 'Problem 253: Aufräumen'
 challengeType: 1
 forumTopicId: 301901
 dashedName: problem-253-tidying-up
@@ -8,28 +8,28 @@ dashedName: problem-253-tidying-up
 
 # --description--
 
-A small child has a "number caterpillar" consisting of forty jigsaw pieces, each with one number on it, which, when connected together in a line, reveal the numbers 1 to 40 in order.
+Ein kleines Kind hat eine "Zahlenraupe", die aus vierzig Puzzlestücken besteht, auf denen jeweils eine Zahl steht, die, wenn sie in einer Reihe zusammengefügt werden, die Zahlen 1 bis 40 ergeben.
 
-Every night, the child's father has to pick up the pieces of the caterpillar that have been scattered across the play room. He picks up the pieces at random and places them in the correct order.
+Jeden Abend muss der Vater des Kindes die Teile der Raupe aufsammeln, die im Spielzimmer verstreut sind. Er hebt die Teile nach dem Zufallsprinzip auf und bringt sie in die richtige Reihenfolge.
 
-As the caterpillar is built up in this way, it forms distinct segments that gradually merge together. The number of segments starts at zero (no pieces placed), generally increases up to about eleven or twelve, then tends to drop again before finishing at a single segment (all pieces placed).
+Während die Raupe auf diese Weise aufgebaut wird, bildet sie verschiedene Segmente, die allmählich ineinander übergehen. Die Anzahl der Segmente beginnt bei Null (keine Spielsteine), steigt im Allgemeinen auf etwa elf oder zwölf an und nimmt dann wieder ab, bevor sie bei einem einzigen Segment endet (alle Spielsteine sind platziert).
 
-For example:
+Zum Beispiel:
 
-| Piece Placed | Segments So Far |
-| ------------ | --------------- |
-| 12           | 1               |
-| 4            | 2               |
-| 29           | 3               |
-| 6            | 4               |
-| 34           | 5               |
-| 5            | 4               |
-| 35           | 4               |
-| …            | …               |
+| Piece Placed | Bisherige Segmente |
+| ------------ | ------------------ |
+| 12           | 1                  |
+| 4            | 2                  |
+| 29           | 3                  |
+| 6            | 4                  |
+| 34           | 5                  |
+| 5            | 4                  |
+| 35           | 4                  |
+| …            | …                  |
 
-Let $M$ be the maximum number of segments encountered during a random tidy-up of the caterpillar. For a caterpillar of ten pieces, the number of possibilities for each $M$ is
+Lasse $M$ die maximale Anzahl von Segmenten sein, die beim Aufräumen der Raupe zufällig gefunden werden. Bei einer zehnteiligen Raupe ist die Anzahl der Möglichkeiten für jedes $M$
 
-| M | Possibilities |
+| M | Möglichkeiten |
 | - | ------------- |
 | 1 | 512           |
 | 2 | 250912        |
@@ -37,13 +37,13 @@ Let $M$ be the maximum number of segments encountered during a random tidy-up of
 | 4 | 1418112       |
 | 5 | 144000        |
 
-so the most likely value of $M$ is 3 and the average value is $\frac{385\\,643}{113\\,400} = 3.400732$, rounded to six decimal places.
+der wahrscheinlichste Wert von $M$ ist also 3 und der Durchschnittswert ist $\frac{385\\,643}{113\\,400} = 3,400732$, gerundet auf sechs Dezimalstellen.
 
-The most likely value of $M$ for a forty-piece caterpillar is 11; but what is the average value of $M$? Give your answer rounded to six decimal places.
+Der wahrscheinlichste Wert von $M$ für eine vierzigteilige Raupe ist 11; aber was ist der durchschnittliche Wert von $M$? Gib deine Antwort auf sechs Dezimalstellen gerundet an.
 
 # --hints--
 
-`tidyingUp()` should return `11.492847`.
+`tidyingUp()` sollte `11.492847` zurückgeben.
 
 ```js
 assert.strictEqual(tidyingUp(), 11.492847);

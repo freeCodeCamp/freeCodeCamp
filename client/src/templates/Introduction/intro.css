@@ -201,13 +201,13 @@ button.map-title {
 }
 
 .map-title-completed {
-  margin-left: auto;
+  margin-inline-start: auto;
   min-width: 100px;
   padding-inline-start: 20px;
 }
 
 .map-title-completed-big {
-  margin-left: auto;
+  margin-inline-start: auto;
   padding-inline-end: 15px;
   padding-inline-start: 20px;
   position: relative;
@@ -227,7 +227,7 @@ button.map-title {
 
 .block-grid .map-title > svg:last-child {
   transform: rotate(180deg);
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 
 .block-grid.open .map-title > svg:last-child {

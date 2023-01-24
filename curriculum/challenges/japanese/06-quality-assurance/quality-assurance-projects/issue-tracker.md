@@ -14,17 +14,17 @@ dashedName: issue-tracker
 -   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-If you use Replit, follow these steps to set up the project:
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
--   Complete the necessary routes in `/routes/api.js`
+-   `/routes/api.js` で、必要なルートを完成させてください。
 -   `tests/2_functional-tests.js` にすべての機能テストを作成してください。
 -   `sample.env` ファイルを `.env` ファイルにコピーし、変数を適切に設定してください。
 -   テストを実行するには、`.env` ファイルの `NODE_ENV=test` をコメント解除してください。
@@ -32,20 +32,20 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 `tests/2_functional-tests.js` に次のテストを記述してください。
 
--   Create an issue with every field: POST request to `/api/issues/{project}`
--   Create an issue with only required fields: POST request to `/api/issues/{project}`
--   Create an issue with missing required fields: POST request to `/api/issues/{project}`
--   View issues on a project: GET request to `/api/issues/{project}`
--   View issues on a project with one filter: GET request to `/api/issues/{project}`
--   View issues on a project with multiple filters: GET request to `/api/issues/{project}`
--   Update one field on an issue: PUT request to `/api/issues/{project}`
--   Update multiple fields on an issue: PUT request to `/api/issues/{project}`
--   Update an issue with missing `_id`: PUT request to `/api/issues/{project}`
--   Update an issue with no fields to update: PUT request to `/api/issues/{project}`
--   Update an issue with an invalid `_id`: PUT request to `/api/issues/{project}`
--   Delete an issue: DELETE request to `/api/issues/{project}`
--   Delete an issue with an invalid `_id`: DELETE request to `/api/issues/{project}`
--   Delete an issue with missing `_id`: DELETE request to `/api/issues/{project}`
+-   すべてのフィールドを指定して課題を作成する: `/api/issues/{project}` への POST リクエスト
+-   必須フィールドのみを指定して課題を作成する: `/api/issues/{project}` への POST リクエスト
+-   必須フィールドが不足した状態で課題を作成する: `/api/issues/{project}` への POST リクエスト
+-   プロジェクトの課題を表示する: `/api/issues/{project}` への GET リクエスト
+-   プロジェクトの課題を、フィルターを 1 つ指定して表示する: `/api/issues/{project}` への GET リクエスト
+-   プロジェクトの課題を、フィルターを複数指定して表示する: `/api/issues/{project}` への GET リクエスト
+-   課題のフィールドを 1 つ更新する: `/api/issues/{project}` への PUT リクエスト
+-   課題の複数フィールドを更新する: `/api/issues/{project}` への PUT リクエスト
+-   `_id` が不足している状態で課題を更新する: `/api/issues/{project}` への PUT リクエスト
+-   更新すべきフィールドがない状態で課題を更新する: `/api/issues/{project}` への PUT リクエスト
+-   無効な `_id` を使用して課題を更新する: `/api/issues/{project}` への PUT リクエスト
+-   課題を削除する: `/api/issues/{project}` への DELETE リクエスト
+-   無効な `_id` を使用して課題を削除する: `/api/issues/{project}` への DELETE リクエスト
+-   `_id` が不足している状態で課題を削除する: `/api/issues/{project}` への DELETE リクエスト
 
 # --hints--
 
@@ -57,7 +57,7 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 };
 ```
 
-You can send a `POST` request to `/api/issues/{projectname}` with form data containing the required fields `issue_title`, `issue_text`, `created_by`, and optionally `assigned_to` and `status_text`.
+必須フィールド `issue_title`、`issue_text`、`created_by`、およびオプションフィールド `assigned_to` および `status_text` を含むフォームデータを使用して、`/api/issues/{projectname}` へ `POST` リクエストを送信することができます。
 
 ```js
 async (getUserInput) => {
@@ -79,7 +79,7 @@ async (getUserInput) => {
 };
 ```
 
-The `POST` request to `/api/issues/{projectname}` will return the created object, and must include all of the submitted fields. Excluded optional fields will be returned as empty strings. Additionally, include `created_on` (date/time), `updated_on` (date/time), `open` (boolean, `true` for open - default value, `false` for closed), and `_id`.
+`/api/issues/{projectname}` への `POST` リクエストは、そのリクエストで作成されたオブジェクトを返します。また、送信したすべてのフィールドが含まれている必要があります。 除外したオプションフィールドは空の文字列として返します。 さらに、`created_on` (日付/時間)、`updated_on` (日付/時間)、`open` (ブール値、open の場合は `true` (こちらがデフォルト値) 、closed の場合は `false`) および `_id` を含めてください。
 
 ```js
 async (getUserInput) => {
@@ -113,7 +113,7 @@ async (getUserInput) => {
 };
 ```
 
-If you send a `POST` request to `/api/issues/{projectname}` without the required fields, returned will be the error `{ error: 'required field(s) missing' }`
+`/api/issues/{projectname}` への `POST` リクエストを必須フィールドなしで送信した場合は、エラー `{ error: 'required field(s) missing' }` を返します。
 
 ```js
 async (getUserInput) => {
@@ -131,7 +131,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `GET` request to `/api/issues/{projectname}` for an array of all issues for that specific `projectname`, with all the fields present for each issue.
+`/api/issues/{projectname}` へ `GET` リクエストを送信して、特定の `projectname` に対するすべての課題の配列 (課題ごとに存在するすべてのフィールドを含む) を取得できます。
 
 ```js
 async (getUserInput) => {
@@ -178,7 +178,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `GET` request to `/api/issues/{projectname}` and filter the request by also passing along any field and value as a URL query (ie. `/api/issues/{project}?open=false`). You can pass one or more field/value pairs at once.
+`/api/issues/{projectname}` へ `GET` リクエストを送信し、任意のフィールドと値を URL クエリとして渡すことにより、リクエストをフィルターで絞り込むことができます (例: `/api/issues/{project}?open=false`)。 1 つ以上のフィールド/値のペアを一度に渡すことができます。
 
 ```js
 async (getUserInput) => {
@@ -219,7 +219,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `PUT` request to `/api/issues/{projectname}` with an `_id` and one or more fields to update. On success, the `updated_on` field should be updated, and returned should be `{  result: 'successfully updated', '_id': _id }`.
+`_id` と 1 つ 以上の更新対象のフィールドを指定して、`/api/issues/{projectname}` へ `PUT` リクエストを送信することができます。 成功した場合は、`updated_on` フィールドを更新し、`{  result: 'successfully updated', '_id': _id }` を返す必要があります。
 
 ```js
 async (getUserInput) => {
@@ -254,7 +254,7 @@ async (getUserInput) => {
 };
 ```
 
-When the `PUT` request sent to `/api/issues/{projectname}` does not include an `_id`, the return value is `{ error: 'missing _id' }`.
+`/api/issues/{projectname}` へ送信した `PUT` リクエストに `_id` が含まれていない場合、戻り値は `{ error: 'missing _id' }` です。
 
 ```js
 async (getUserInput) => {
@@ -270,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-When the `PUT` request sent to `/api/issues/{projectname}` does not include update fields, the return value is `{ error: 'no update field(s) sent', '_id': _id }`. On any other error, the return value is `{ error: 'could not update', '_id': _id }`.
+`/api/issues/{projectname}` へ送信した `PUT` リクエストに更新フィールドが含まれていない 場合、戻り値は `{ error: 'no update field(s) sent', '_id': _id }` です。 それ以外のエラーでは、戻り値は `{ error: 'could not update', '_id': _id }` です。
 
 ```js
 async (getUserInput) => {
@@ -300,7 +300,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `DELETE` request to `/api/issues/{projectname}` with an `_id` to delete an issue. If no `_id` is sent, the return value is `{ error: 'missing _id' }`. On success, the return value is `{ result: 'successfully deleted', '_id': _id }`. On failure, the return value is `{ error: 'could not delete', '_id': _id }`.
+`_id` を指定して `/api/issues/{projectname}` へ `DELETE` リクエストを送信して、課題を削除することができます。 `_id` が送信されなかった場合、戻り値は `{ error: 'missing _id' }` です。 成功した場合、戻り値は `{ result: 'successfully deleted', '_id': _id }` です。 失敗した場合、戻り値は `{ error: 'could not delete', '_id': _id }` です。
 
 ```js
 async (getUserInput) => {

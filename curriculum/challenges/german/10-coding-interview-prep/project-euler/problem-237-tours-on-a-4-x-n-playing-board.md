@@ -1,6 +1,6 @@
 ---
 id: 5900f4591000cf542c50ff6c
-title: 'Problem 237: Tours on a 4 x n playing board'
+title: 'Problem 237: Touren auf einem 4 x n Spielbrett'
 challengeType: 1
 forumTopicId: 301882
 dashedName: problem-237-tours-on-a-4-x-n-playing-board
@@ -8,22 +8,22 @@ dashedName: problem-237-tours-on-a-4-x-n-playing-board
 
 # --description--
 
-Let $T(n)$ be the number of tours over a 4 × $n$ playing board such that:
+Lass $T(n)$ die Anzahl der Touren auf einem 4 × $n$ Spielbrett sein, so dass:
 
-- The tour starts in the top left corner.
-- The tour consists of moves that are up, down, left, or right one square.
-- The tour visits each square exactly once.
-- The tour ends in the bottom left corner.
+- Die Tour beginnt in der oberen linken Ecke.
+- Die Tour besteht aus Zügen, die ein Feld nach oben, unten, links oder rechts gehen.
+- Die Tour durchläuft jedes Feld genau einmal.
+- Die Tour endet in der linken unteren Ecke.
 
-The diagram shows one tour over a 4 × 10 board:
+Das Diagramm zeigt eine Tour über einem 4 × 10 Board:
 
-<img class="img-responsive center-block" alt="one tour over 4 x 10 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="eine Tour über 4 x 10 Brett" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;" />
 
-$T(10)$ is 2329. What is $T({10}^{12})$ modulo ${10}^8$?
+$T(10) $ ist 2329. Was ist $T({10}^{12})$ moduo ${10}^8$?
 
 # --hints--
 
-`toursOnPlayingBoard()` should return `15836928`.
+`toursOnPlayingBoard()` sollte `15836928` zurückgeben.
 
 ```js
 assert.strictEqual(toursOnPlayingBoard(), 15836928);
