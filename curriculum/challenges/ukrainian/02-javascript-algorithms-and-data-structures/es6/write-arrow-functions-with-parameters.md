@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b44
-title: Запис функції Arrow з параметрами
+title: Написання стрілкових функцій з параметрами
 challengeType: 1
 forumTopicId: 301223
 dashedName: write-arrow-functions-with-parameters
@@ -8,29 +8,29 @@ dashedName: write-arrow-functions-with-parameters
 
 # --description--
 
-Так само, як і у звичайній функції, ви можете передавати аргументи в функцію Arrow.
+До стрілкової функції так само можна передати аргументи, як і до звичайної.
 
 ```js
 const doubler = (item) => item * 2;
 doubler(4);
 ```
 
-`doubler(4)` повинен перетворюватись на `8`.
+`doubler(4)` повертатиме значення `8`.
 
-Якщо функція arrow має один параметр, то дужки можуть бути опущені.
+Якщо стрілкова функція має один параметр, то дужки можна опустити.
 
 ```js
 const doubler = item => item * 2;
 ```
 
-Функція може вміщати в себе більше одного аргументу.
+До стрілкової функції можна передати більше одного аргументу.
 
 ```js
 const multiplier = (item, multi) => item * multi;
 multiplier(4, 2);
 ```
 
-`multiplier(4, 2)` повинен перетворюватись на `8`.
+`multiplier(4, 2)` повертатиме значення `8`.
 
 # --instructions--
 
@@ -38,7 +38,7 @@ multiplier(4, 2);
 
 # --hints--
 
-Вам слід замінити ключове слово `var`.
+Ви повинні замінити ключове слово `var`.
 
 ```js
 assert.notMatch(code, /var/g);
@@ -59,7 +59,7 @@ assert(
 );
 ```
 
-`myConcat()` перетворюється на `[1, 2, 3, 4, 5]`.
+`myConcat()` має повертати `[1, 2, 3, 4, 5]`.
 
 ```js
 assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
