@@ -200,43 +200,47 @@ function mobileLogin(app) {
     models: { User }
   } = app;
   return async function getPasswordlessAuth(req, res, next) {
-    const auth0Res = await fetch(
-      `https://${process.env.AUTH0_DOMAIN}/userinfo`,
-      {
-        headers: { Authorization: req.headers.authorization }
-      }
-    );
-
-    if (!auth0Res.ok) {
-      return next(
-        wrapHandledError(new Error('Invalid Auth0 token'), {
-          type: 'danger',
-          message: 'We could not log you in, please try again in a moment.',
-          status: auth0Res.status
-        })
-      );
-    }
-
-    const { email } = await auth0Res.json();
-
-    if (!isEmail(email)) {
-      return next(
-        wrapHandledError(new TypeError('decoded email is invalid'), {
-          type: 'danger',
-          message: 'The email is incorrectly formatted',
-          status: 400
-        })
-      );
-    }
-
-    User.findOne$({ where: { email } })
-      .do(async user => {
-        if (!user) {
-          user = await User.create({ email });
+    try {
+      const auth0Res = await fetch(
+        `https://${process.env.AUTH0_DOMAIN}/userinfo`,
+        {
+          headers: { Authorization: req.headers.authorization }
         }
-        await user.mobileLoginByRequest(req, res);
-        res.end();
-      })
-      .subscribe(() => {}, next);
+      );
+
+      if (!auth0Res.ok) {
+        return next(
+          wrapHandledError(new Error('Invalid Auth0 token'), {
+            type: 'danger',
+            message: 'We could not log you in, please try again in a moment.',
+            status: auth0Res.status
+          })
+        );
+      }
+
+      const { email } = await auth0Res.json();
+
+      if (!isEmail(email)) {
+        return next(
+          wrapHandledError(new TypeError('decoded email is invalid'), {
+            type: 'danger',
+            message: 'The email is incorrectly formatted',
+            status: 400
+          })
+        );
+      }
+
+      User.findOne$({ where: { email } })
+        .do(async user => {
+          if (!user) {
+            user = await User.create({ email });
+          }
+          await user.mobileLoginByRequest(req, res);
+          res.end();
+        })
+        .subscribe(() => {}, next);
+    } catch (err) {
+      next(err);
+    }
   };
 }
