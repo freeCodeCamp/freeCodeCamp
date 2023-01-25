@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn Modern JavaScript Methods By Building Sports Team Cards
-block: learn-modern-javascript-methods-by-building-sports-team-cards
-superBlock: Responsive Web Design
+block: Learn Modern JavaScript Methods By Building Sports Team Cards
+superBlock: JavaScript Algorithms and Data Structures
 isBeta: true
 ---
 
