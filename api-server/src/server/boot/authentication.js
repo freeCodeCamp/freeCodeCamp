@@ -229,7 +229,7 @@ function mobileLogin(app) {
       );
     }
 
-    return User.findOne$({ where: { email } })
+    User.findOne$({ where: { email } })
       .do(async user => {
         if (!user) {
           user = await User.create({ email });
