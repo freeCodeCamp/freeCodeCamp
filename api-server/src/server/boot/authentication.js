@@ -200,10 +200,6 @@ function mobileLogin(app) {
     models: { User }
   } = app;
   return async function getPasswordlessAuth(req, res, next) {
-    const {
-      headers: { token }
-    } = req;
-
     const auth0Res = await fetch(
       `https://${process.env.AUTH0_DOMAIN}/userinfo`,
       {
