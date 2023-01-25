@@ -14,10 +14,6 @@ input[type='checkbox'] {
   transform: translateY(-0.075em);
 }
 
-input[type='checkbox']:focus {
-  outline: none;
-}
-
 input[type='checkbox']::before {
   content: '';
   width: 0.65em;
