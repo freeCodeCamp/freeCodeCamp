@@ -28,6 +28,7 @@ importers:
       dotenv: 16.0.3
       eslint: 7.32.0
       eslint-config-prettier: 8.7.0
+      eslint-plugin-filenames-simple: 0.8.0
       eslint-plugin-import: 2.27.5
       eslint-plugin-jest-dom: 3.9.4
       eslint-plugin-jsx-a11y: 6.7.1
@@ -84,6 +85,7 @@ importers:
       docsify-cli: 4.4.4
       eslint: 7.32.0
       eslint-config-prettier: 8.7.0_eslint@7.32.0
+      eslint-plugin-filenames-simple: 0.8.0_eslint@7.32.0
       eslint-plugin-import: 2.27.5_eslint@7.32.0
       eslint-plugin-jest-dom: 3.9.4_eslint@7.32.0
       eslint-plugin-jsx-a11y: 6.7.1_eslint@7.32.0
@@ -14796,6 +14798,16 @@ packages:
       - supports-color
     dev: true
 
+  /eslint-plugin-filenames-simple/0.8.0_eslint@7.32.0:
+    resolution: {integrity: sha512-8+uBzNBE5gSUMQv7bmMBiOD26eKzD4/5flPtD5Vl3dzZLXotSwXK3W7ZZqKQfU0Qyoborh+LqbN76EfmbBcU8A==}
+    engines: {node: ^14.17.0 || ^16.0.0 || ^18.0.0}
+    peerDependencies:
+      eslint: '>=7.0.0 <9.0.0'
+    dependencies:
+      eslint: 7.32.0
+      pluralize: 8.0.0
+    dev: true
+
   /eslint-plugin-flowtype/5.10.0_eslint@7.32.0:
     resolution: {integrity: sha512-vcz32f+7TP+kvTUyMXZmCnNujBQZDNmcqPImw8b9PZ+16w1Qdm6ryRuYZYVaG9xRqqmAPr2Cs9FAX5gN+x/bjw==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -24226,6 +24238,11 @@ packages:
 
   /platform/1.3.6:
     resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
+
+  /pluralize/8.0.0:
+    resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
+    engines: {node: '>=4'}
+    dev: true
 
   /pm2-axon-rpc/0.7.1:
     resolution: {integrity: sha512-FbLvW60w+vEyvMjP/xom2UPhUN/2bVpdtLfKJeYM3gwzYhoTEEChCOICfFzxkxuoEleOlnpjie+n1nue91bDQw==}
