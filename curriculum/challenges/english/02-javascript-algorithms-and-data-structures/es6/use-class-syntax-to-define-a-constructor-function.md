@@ -10,8 +10,6 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 ES6 provides a new syntax to create objects, using the <dfn>class</dfn> keyword.
 
-It should be noted that the `class` syntax is just syntax, and not a full-fledged class-based implementation of an object-oriented paradigm, unlike in languages such as Java, Python, Ruby, etc.
-
 In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
 
 In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.

@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cc
-title: 使用 pop() 操作數組
+title: Manipulate Arrays With pop Method
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236

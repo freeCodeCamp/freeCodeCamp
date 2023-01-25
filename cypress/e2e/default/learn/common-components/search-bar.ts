@@ -106,6 +106,8 @@ describe('Search bar', () => {
 
     cy.get('.ais-SearchBox-form').submit();
 
-    cy.url().should('eq', 'http://localhost:8000/learn/');
+    cy.location().should(loc => {
+      expect(loc.pathname).to.eq('/learn/');
+    });
   });
 });

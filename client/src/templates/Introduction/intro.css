@@ -123,7 +123,7 @@ a.cert-tag:active {
   padding: 18px 0;
   background: transparent;
   border: none;
-  text-align: left;
+  text-align: start;
   width: 100%;
 }
 
