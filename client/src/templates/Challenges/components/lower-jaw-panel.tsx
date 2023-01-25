@@ -10,7 +10,7 @@ interface LowerJawActionRow {
   hideHelpButton: boolean;
 }
 
-export const LowerJawContext = ({
+export const LowerButtonsPanel = ({
   resetButtonName,
   helpButtonName,
   resetButtonEvent,
