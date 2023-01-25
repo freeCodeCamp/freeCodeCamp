@@ -127,6 +127,7 @@
     "docsify-cli": "4.4.4",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.7.0",
+    "eslint-plugin-filenames-simple": "0.8.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jest-dom": "3.9.4",
     "eslint-plugin-jsx-a11y": "6.7.1",
