@@ -1,13 +1,23 @@
-const selectors = {
+const editorElement = {
   editor: '.monaco-editor'
 };
 
 describe('Editor Shortcuts', () => {
-  it('Should handle Alt+Enter', () => {
+  beforeEach(() => {
     cy.visit(
       'learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
     );
-    cy.get(selectors.editor, { timeout: 15000 })
+  });
+
+  it('Editor and body should have the same theme', () => {
+    cy.login();
+    cy.get('body').should('have.class', 'light-palette');
+    // I don't know how to create these tests 🤷‍♀️
+    cy.get('');
+  });
+
+  it('Should handle Alt+Enter', () => {
+    cy.get(editorElement.editor, { timeout: 15000 })
       .first()
       .click()
       .focused()
@@ -16,10 +26,7 @@ describe('Editor Shortcuts', () => {
   });
 
   it('Should ignore Ctrl+Enter', () => {
-    cy.visit(
-      'learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
-    );
-    cy.get(selectors.editor, { timeout: 15000 })
+    cy.get(editorElement.editor, { timeout: 15000 })
       .first()
       .click()
       .focused()
