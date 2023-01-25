@@ -20,15 +20,6 @@ Intro project buttons and headings
 }
 
 /* 
-fix misaligned text in button and in donation 
-*/
-
-[dir='rtl'] .link-btn,
-[dir='rtl'] .faq-item h4 {
-  text-align: right;
-}
-
-/* 
  intro to courses section
 */
 
