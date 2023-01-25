@@ -1,0 +1,76 @@
+{
+  "name": "Learn Modern JavaScript Methods By Building Sports Team Cards",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-modern-javascript-methods-by-building-sports-team-cards",
+  "order": 4,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superOrder": 4,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "63c620161fc2b49ac340ffc4",
+      "Step 1"
+    ],
+    [
+      "63cf7e324c1831f8d936b3ae",
+      "Step 2"
+    ],
+    [
+      "63cf7f97e7f99af9348f5068",
+      "Step 3"
+    ],
+    [
+      "63cf812bb8ecd4f9cf749b8f",
+      "Step 4"
+    ],
+    [
+      "63cf83fdbb51d9fa54654ae6",
+      "Step 5"
+    ],
+    [
+      "63cf8ec006a776ff5f6e3c68",
+      "Step 6"
+    ],
+    [
+      "63cf90d4696d8f00851873a4",
+      "Step 7"
+    ],
+    [
+      "63cf91b0ff6e9300ead140cc",
+      "Step 8"
+    ],
+    [
+      "63cf920228531a0145abd0b3",
+      "Step 9"
+    ],
+    [
+      "63cf93472de77d01bf8474bf",
+      "Step 10"
+    ],
+    [
+      "63d120a05ee93f38353b84c0",
+      "Step 11"
+    ],
+    [
+      "63d1214a0ac7a9389793269b",
+      "Step 12"
+    ],
+    [
+      "63d128eaedcc773d2ded2128",
+      "Step 13"
+    ],
+    [
+      "63d12b9c7aaee43de1ba265d",
+      "Step 14"
+    ],
+    [
+      "63d12fe2a595263e8f5084f7",
+      "Step 15"
+    ]
+  ]
+}
