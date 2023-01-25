@@ -227,6 +227,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
               onChange={this.handleChange}
               value={formValue}
               data-cy='username-input'
+              id='username-settings'
             />
           </FormGroup>
         </FullWidthRow>
