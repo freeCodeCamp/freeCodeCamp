@@ -42,7 +42,6 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
     >
       <HonestyPolicy />
     </Uncontrolled(Panel)>
-    <Spacer />
     <Button
       active={false}
       aria-disabled={true}
