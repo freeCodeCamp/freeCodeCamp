@@ -203,7 +203,7 @@ function mobileLogin(app) {
     const auth0Res = await fetch(
       `https://${process.env.AUTH0_DOMAIN}/userinfo`,
       {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: req.headers.authorization }
       }
     );
 
