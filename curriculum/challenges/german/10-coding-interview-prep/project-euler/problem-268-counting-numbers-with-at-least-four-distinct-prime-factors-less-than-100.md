@@ -1,7 +1,7 @@
 ---
 id: 5900f4791000cf542c50ff8b
 title: >-
-  Problem 268: Counting numbers with at least four distinct prime factors less than 100
+  Problem 268: Zählen von Zahlen mit mindestens vier verschiedenen Primfaktoren kleiner als 100
 challengeType: 1
 forumTopicId: 301917
 dashedName: >-
@@ -10,13 +10,13 @@ dashedName: >-
 
 # --description--
 
-It can be verified that there are 23 positive integers less than 1000 that are divisible by at least four distinct primes less than 100.
+Es kann nachgewiesen werden, dass es 23 positive ganze Zahlen kleiner als 1000 gibt, die durch mindestens vier verschiedene Primzahlen kleiner als 100 teilbar sind.
 
-Find how many positive integers less than ${10}^{16}$ are divisible by at least four distinct primes less than 100.
+Finde heraus, wie viele positive ganze Zahlen kleiner als ${10}^{16}$ durch mindestens vier verschiedene Primzahlen kleiner als 100 teilbar sind.
 
 # --hints--
 
-`fourDistinctPrimeFactors()` should return `785478606870985`.
+`fourDistinctPrimeFactors()` sollte `785478606870985` zurückgeben.
 
 ```js
 assert.strictEqual(fourDistinctPrimeFactors(), 785478606870985);

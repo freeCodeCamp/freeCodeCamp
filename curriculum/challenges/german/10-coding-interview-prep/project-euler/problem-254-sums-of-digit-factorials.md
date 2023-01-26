@@ -8,21 +8,21 @@ dashedName: problem-254-sums-of-digit-factorials
 
 # --description--
 
-Define $f(n)$ as the sum of the factorials of the digits of $n$. For example, $f(342) = 3! + 4! + 2! = 32$.
+Define $f(n)$ as the sum of the factorials of the digits of $n$. Zum Beispiel, $f(342) = 3! + 4! + 2! = 32$.
 
-Define $sf(n)$ as the sum of the digits of $f(n)$. So $sf(342) = 3 + 2 = 5$.
+Definiere $sf(n)$ als die Summe der Ziffern von $f(n)$. Also $sf(342) = 3 + 2 = 5$.
 
-Define $g(i)$ to be the smallest positive integer $n$ such that $sf(n) = i$. Though $sf(342)$ is 5, $sf(25)$ is also 5, and it can be verified that $g(5)$ is 25.
+Definiere $g(i)$ als die kleinste positive Ganzzahl $n$, so dass $sf(n) = i$. Obwohl $sf(342)$ 5 ist, ist $sf(25)$ auch 5, und es kann nachgewiesen werden, dass $g(5)$ 25 ist.
 
-Define $sg(i)$ as the sum of the digits of $g(i)$. So $sg(5) = 2 + 5 = 7$.
+Definiere $sg(i)$ als eine Summe von Ziffern von $g(i)$. Also $sg(5) = 2 + 5 = 7$.
 
-Further, it can be verified that $g(20)$ is 267 and $\sum sg(i)$ for $1 ≤ i ≤ 20$ is 156.
+Des Weiteren kann nachgewiesen werden, dass $g(20)$ 267 und $\sum sg(i)$ für $1 ≤ i ≤ 20$ is 156 ist.
 
-What is $\sum sg(i)$ for $1 ≤ i ≤ 150$?
+Was ist $\sum sg(i)$ für $1 ≤ i ≤ 150$?
 
 # --hints--
 
-`sumsOfDigitFactorials()` should return `8184523820510`.
+`sumsOfDigitFactorials()` sollte `8184523820510` zurückgeben.
 
 ```js
 assert.strictEqual(sumsOfDigitFactorials(), 8184523820510);

@@ -352,7 +352,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 12 test funzionali richiesti sono completi e superati. Vedi `/tests/1_unit-tests.js` per il comportamento previsto per il quale dovresti scrivere dei test.
+Tutti i 12 test funzionali richiesti sono completati e superati.
 
 ```js
 async (getUserInput) => {
@@ -377,7 +377,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 14 test funzionali richiesti sono completi e superati. Vedi `/tests/2_functional-tests.js` per le funzionalità attese per le quali dovresti scrivere dei test.
+Tutti i 14 test funzionali richiesti sono completati e superati.
 
 ```js
 async (getUserInput) => {

@@ -10,8 +10,7 @@
 }
 
 .footer-container {
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline: auto;
   padding: 40px 15px;
   font-size: 16px;
   overflow-x: hidden;

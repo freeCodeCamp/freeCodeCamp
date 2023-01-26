@@ -11,6 +11,7 @@ const isReservedHeading = (context, str) => {
     'hints',
     'instructions',
     'question',
+    'assignments',
     'seed',
     'seed-contents',
     'solutions',
