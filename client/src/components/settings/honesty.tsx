@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import HonestyPolicy from '../../resources/honesty-policy';
-import { FullWidthRow, Spacer } from '../helpers';
+import { FullWidthRow } from '../helpers';
 import SectionHeader from './section-header';
 
 import './honesty.css';
@@ -26,7 +26,6 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
         <Panel className='honesty-panel'>
           <HonestyPolicy />
         </Panel>
-        <Spacer />
         <Button
           block={true}
           bsStyle='primary'
