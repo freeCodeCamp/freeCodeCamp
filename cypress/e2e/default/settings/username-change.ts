@@ -5,7 +5,8 @@ describe('Username input field', () => {
   });
 
   it('Should be possible to type', () => {
-    cy.typeUsername('twaha').should('have.attr', 'value', 'twaha');
+    cy.typeUsername('twaha');
+    cy.get('@usernameInput').should('have.attr', 'value', 'twaha');
   });
 
   it('Should show message when validating name', () => {
