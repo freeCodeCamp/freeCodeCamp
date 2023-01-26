@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import {
   storePortalWindow,
   removePortalWindow,
+  setShowPreviewPortal,
   setIsAdvancing
 } from '../redux/actions';
 import {
@@ -15,12 +16,12 @@ import {
 
 interface PreviewPortalProps {
   children: ReactElement | null;
-  togglePane: (pane: string) => void;
   windowTitle: string;
   t: TFunction;
   storePortalWindow: (window: Window | null) => void;
   removePortalWindow: () => void;
   portalWindow: null | Window;
+  setShowPreviewPortal: (arg: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
   isAdvancing: boolean;
 }
@@ -28,6 +29,7 @@ interface PreviewPortalProps {
 const mapDispatchToProps = {
   storePortalWindow,
   removePortalWindow,
+  setShowPreviewPortal,
   setIsAdvancing
 };
 
@@ -97,7 +99,7 @@ class PreviewPortal extends Component<PreviewPortalProps> {
     );
     this.externalWindow?.document.body.appendChild(this.containerEl);
     this.externalWindow?.addEventListener('beforeunload', () => {
-      this.props.togglePane('showPreviewPortal');
+      this.props.setShowPreviewPortal(false);
     });
 
     this.props.storePortalWindow(this.externalWindow);

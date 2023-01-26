@@ -236,9 +236,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
       </ReflexContainer>
       {displayPreviewPortal && (
-        <PreviewPortal togglePane={togglePane} windowTitle={windowTitle}>
-          {preview}
-        </PreviewPortal>
+        <PreviewPortal windowTitle={windowTitle}>{preview}</PreviewPortal>
       )}
     </div>
   );
