@@ -28,7 +28,7 @@ Du analysierst einen Datensatz über die durchschnittliche Veränderung des glob
 Benutze die Daten, um folgende Aufgaben abzuschließen:
 
 - Verwende Pandas, um die Daten aus `epa-sea-level.csv` zu importieren.
-- Verwende matplotlib, um ein Streudiagramm mit der `Year`-Spalte als x-Achse und der `CSIRO Adjusted Sea Level`-Spalte als y-Achse zu erstellen.
+- Use matplotlib to create a scatter plot using the `Year` column as the x-axis and the `CSIRO Adjusted Sea Level` column as the y-axis.
 - Verwende die `linregress` Funktion aus `scipy.stats`, um die Steigerung und den y-Achsenabschnitt der Mittelwertsgerade zu erhalten. Zeichne die Linie der besten Anpassung über das Streudiagramm. Lass die Linie durch das Jahr 2050 verlaufen, um den Meeresspielanstieg im Jahr 2050 vorherzusagen.
 - Zeichne eine neue Linie der besten Passform nur mit den Daten vom Jahr 2000 bis zum jüngsten Jahr im Datensatz. Lass die Linie auch durch das Jahr 2050 laufen, um den Anstieg des Meeresspiegels im Jahr 2050 vorherzusagen, wenn die Anstiegsrate weiterhin so verläuft wie seit dem Jahr 2000.
 - Die x-Beschriftung sollte `Year`, die y-Beschriftung sollte `Sea Level (inches)` und der Titel sollte `Rise in Sea Level` lauten.

@@ -8,7 +8,7 @@ dashedName: write-concise-object-literal-declarations-using-object-property-shor
 
 # --description--
 
-يضيف ES6 بعض الدعم اللطيف لتعريف الـ objects بسهولة.
+يضيف ES6 بعض الدعم اللطيف لتعريف الكائنات بسهولة.
 
 ضع في اعتبارك الكود التالي:
 
@@ -27,7 +27,7 @@ const getMousePosition = (x, y) => ({ x, y });
 
 # --instructions--
 
-قم باستخدام خاصية الـ object القصير مع object literals لإنشاء وإرجاع object بخصائص `name` و `age` و `gender`.
+استخدم خاصية الكائن المختصرة مع حروف الكائن لإنشاء كائن بخصائص `name`, و `age`, و `gender`.
 
 # --hints--
 

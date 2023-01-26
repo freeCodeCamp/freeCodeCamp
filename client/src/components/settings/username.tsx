@@ -227,6 +227,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
               onChange={this.handleChange}
               value={formValue}
               data-cy='username-input'
+              id='username-settings'
             />
           </FormGroup>
         </FullWidthRow>
@@ -237,7 +238,10 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
             disabled={
               !(isValidUsername && valid && !isFormPristine) || submitClicked
             }
-          />
+          >
+            {t('buttons.save')}{' '}
+            <span className='sr-only'>{t('settings.labels.username')}</span>
+          </BlockSaveButton>
         </FullWidthRow>
       </form>
     );

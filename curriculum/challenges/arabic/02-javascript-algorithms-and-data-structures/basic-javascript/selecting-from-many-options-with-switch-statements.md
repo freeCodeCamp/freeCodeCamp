@@ -54,7 +54,7 @@ assert(caseInSwitch(2) === 'beta');
 assert(caseInSwitch(3) === 'gamma');
 ```
 
-`caseInSwitch(4)` يجب أن يكون له قيمة السلسلة (string) النصية `delta`
+`caseInSwitch(4)` يجب أن يكون له قيمة المقطع (string) النصي `delta`
 
 ```js
 assert(caseInSwitch(4) === 'delta');

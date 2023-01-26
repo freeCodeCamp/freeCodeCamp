@@ -778,6 +778,10 @@
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
       },
+      "the-odin-project": {
+        "title": "The Odin Project",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
       "project-euler": {
         "title": "Projeto Euler",
         "intro": [

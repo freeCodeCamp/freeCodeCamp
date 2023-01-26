@@ -10,13 +10,13 @@ dashedName: problem-120-square-remainders
 
 Let `r` be the remainder when ${(a − 1)}^n + {(a + 1)}^n$ is divided by $a^2$.
 
-For example, if $a = 7$ and $n = 3$, then $r = 42: 6^3 + 8^3 = 728 ≡ 42 \\ \text{mod}\\ 49$. And as `n` varies, so too will `r`, but for $a = 7$ it turns out that $r_{max} = 42$.
+Wenn zum Beispiel $a = 7$ und $n = 3$, dann ist $r = 42: 6^3 + 8^3 = 728 ≡ 42 \\ \text{mod}\ 49$. Und so wie `n` variiert, so wird auch `r` variieren, aber für $a = 7$ stellt sich heraus, dass $r_{max} = 42$ ist.
 
-For $3 ≤ a ≤ 1000$, find $\sum{r}_{max}$.
+Für $3 ≤ a ≤ 1000$, finde $\sum{r}_{max}$.
 
 # --hints--
 
-`squareRemainders()` should return `333082500`.
+`squareRemainders()` sollte `333082500` zurückgeben.
 
 ```js
 assert.strictEqual(squareRemainders(), 333082500);

@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c441eddfaeb5bdef
-title: Розуміння булевих значень
+title: Булеві значення
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9Me8t4'
 forumTopicId: 301176
@@ -9,9 +9,9 @@ dashedName: understanding-boolean-values
 
 # --description--
 
-Інший тип даних це <dfn>Boolean</dfn>. Булеві значення можуть мати лише два значення: `true` чи `false`. Фактично, це маленькі перемикачі, де `true` це "увімкнено" і `false` - "вимкнено". Ці два стани несумісні.
+Іншим типом даних є <dfn>булеві</dfn>. Булеві можуть мати лише два значення: `true` або `false`. По суті, це маленькі перемикачі, де `true` означає «увімкнено», а `false` означає «вимкнено». Ці два стани несумісні.
 
-**Note:** Булеві вирази ніколи не записуються в дужках. Рядки `"true"` й `"false"` не булеві і не мають особливого значення в JavaScript.
+**Примітка:** булеві значення завжди записують без лапок. Рядки `"true"` та `"false"` не є булевими та не мають особливого значення у JavaScript.
 
 # --instructions--
 
@@ -19,13 +19,13 @@ dashedName: understanding-boolean-values
 
 # --hints--
 
-Функція `welcomeToBooleans()` має повернути значення (`true` or `false`).
+Функція `welcomeToBooleans()` повинна повертати булеве значення (`true` або `false`).
 
 ```js
 assert(typeof welcomeToBooleans() === 'boolean');
 ```
 
-`welcomeToBooleans()` має повернути `true`.
+`welcomeToBooleans()` повинна повертати `true`.
 
 ```js
 assert(welcomeToBooleans() === true);

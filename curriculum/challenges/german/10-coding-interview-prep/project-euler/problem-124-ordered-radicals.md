@@ -112,11 +112,11 @@ If we calculate $rad(n)$ for $1 ≤ n ≤ 10$, then sort them on $rad(n)$, and s
   </table>
 </div><br>
 
-Let $E(k)$ be the $k$th element in the sorted $n$ column; for example, $E(4) = 8$ and $E(6) = 9$. If $rad(n)$ is sorted for $1 ≤ n ≤ 100000$, find $E(10000)$.
+Lasse $E(k)$ das $k$th Element in der geordneten $n$ Spalte sein; zum Beispiel, $E(4) = 8$ und $E(6) = 9$. Wenn $rad(n)$ für $1 ≤ n ≤ 100000$ geordnet ist, findest du $E(10000)$.
 
 # --hints--
 
-`orderedRadicals()` should return `21417`.
+`orderedRadicals()` sollte `21417` zurückgeben.
 
 ```js
 assert.strictEqual(orderedRadicals(), 21417);

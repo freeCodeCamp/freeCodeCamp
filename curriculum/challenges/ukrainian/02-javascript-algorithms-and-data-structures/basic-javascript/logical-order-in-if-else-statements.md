@@ -1,6 +1,6 @@
 ---
 id: 5690307fddb111c6084545d7
-title: Логічна послідовність в інструкції «if else»
+title: Логічна послідовність в інструкції if else
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cwNvMUV'
 forumTopicId: 18228

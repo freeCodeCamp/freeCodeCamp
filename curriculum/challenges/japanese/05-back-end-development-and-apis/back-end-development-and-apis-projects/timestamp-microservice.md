@@ -106,7 +106,7 @@ Replit を使用する場合は、下記の手順でプロジェクトをセッ�
   );
 ```
 
-If the input date string is invalid, the API returns an object having the structure `{ error : "Invalid Date" }`
+入力された日付文字列が無効な場合、API は `{ error : "Invalid Date" }` という構造のオブジェクトを返します。
 
 ```js
 (getUserInput) =>

@@ -10,9 +10,9 @@ dashedName: arithmetic-formatter
 
 <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用します</a>。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
 
 
 # --instructions--
@@ -63,16 +63,16 @@ arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 入力された問題が正しく整形されている場合、この関数は正しい変換結果を返します。それ以外の場合は、ユーザーにとって意味のあるエラーを記述した**文字列****を返します**。
 
 
-- Situations that will return an error:
-  - If there are **too many problems** supplied to the function. The limit is **five**, anything more will return: `Error: Too many problems.`
-  - The appropriate operators the function will accept are **addition** and **subtraction**. Multiplication and division will return an error. Other operators not mentioned in this bullet point will not need to be tested. The error returned will be: `Error: Operator must be '+' or '-'.`
-  - Each number (operand) should only contain digits. Otherwise, the function will return: `Error: Numbers must only contain digits.`
-  - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be: `Error: Numbers cannot be more than four digits.`
-- If the user supplied the correct format of problems, the conversion you return will follow these rules:
-  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
-  - Numbers should be right-aligned.
-  - There should be four spaces between each problem.
-  - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
+- エラーを返す場合:
+  - 関数に入力した**問題の数が多すぎる**場合。 上限を **5** つとし、それを超える場合は `Error: Too many problems.` (エラー: 問題が多すぎます) を返します。
+  - 関数が受け取ることのできる適切な演算子は**足し算**と**引き算**です。 掛け算と割り算はエラーを返します。 この箇条書きで指示していない他の演算子についてはテストする必要はありません。 次のようなエラーを返します: `Error: Operator must be '+' or '-'.` (エラー: '+' または '-' の演算子を使用してください)。
+  - 数値 (オペランド) にはそれぞれ数字だけしか入れることができません。 数値以外の場合、関数は次のエラーを返します: `Error: Numbers must only contain digits.` (エラー: 数値には数字のみを含める必要があります)。
+  - それぞれのオペランド (演算子の両側の数値) の幅は最大 4 桁です。 それ以外の場合は、次のようなエラー文字列を返します: `Error: Numbers cannot be more than four digits.` (エラー: 数値は 4 桁以内にする必要があります)。
+- ユーザーが問題を正しい形式で入力した場合は、次のルールに従って変換結果を返します。
+  - 2 つの項の長い方と演算子の間が、スペース 1 つ分空くようにしてください。演算子は 2 つ目の項と同じ行に置き、両方の項は与えられたとおりの順序に配置してください (1 つ目の項を上に、2 つ目の項を下に配置してください) 。
+  - 数値は右揃えにする必要があります。
+  - それぞれの問題の間に 4 つのスペースが必要です。
+  - それぞれの問題の一番下にダッシュが必要です。 ダッシュは、各問題の全体の長さに沿った長さにする必要があります (上の表示例を参考にしてください)
 
 ## 開発
 

@@ -18,7 +18,7 @@ dashedName: serve-json-on-a-specific-route
 
 # --hints--
 
-Кінцева точка `/json` повинна обслуговувати об'єкт json `{"message": "Hello json"}`
+Кінцева точка `/json` повинна обслуговувати об'єкт JSON `{"message": "Hello json"}`
 
 ```js
 (getUserInput) =>
