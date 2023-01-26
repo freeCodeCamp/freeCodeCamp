@@ -1,4 +1,4 @@
-const selectors = {
+const introPageSelectors = {
   firstBlock: '[data-cy="learn-html-by-building-a-cat-photo-app"]'
 };
 
@@ -33,11 +33,11 @@ describe('Certification intro page', () => {
     ).should('not.exist');
 
     // Block should handle toggle clicks correctly
-    cy.get(selectors.firstBlock).click();
+    cy.get(introPageSelectors.firstBlock).click();
     cy.contains(
       'HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.'
     ).should('not.exist');
-    cy.get(selectors.firstBlock).click();
+    cy.get(introPageSelectors.firstBlock).click();
     cy.contains(
       'HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.'
     ).should('be.visible');
