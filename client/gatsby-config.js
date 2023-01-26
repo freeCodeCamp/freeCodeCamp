@@ -38,18 +38,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
     {
-      resolve: 'gatsby-plugin-create-client-paths',
-      options: {
-        prefixes: [
-          '/certification/*',
-          '/unsubscribed/*',
-          '/user/*',
-          '/settings/*',
-          '/n/*'
-        ]
-      }
-    },
-    {
       resolve: 'fcc-source-challenges',
       options: {
         name: 'challenges',
