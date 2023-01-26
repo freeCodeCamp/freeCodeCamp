@@ -275,6 +275,8 @@
     "wrong-answer": "抱歉，这个答案不正确。再试一次？",
     "check-answer": "点击下方按钮，查看你的答案。",
     "assignment-not-complete": "Please finish the assignments",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "解决方案链接",
     "github-link": "GitHub 链接",
     "submit-and-go": "提交并访问下一个挑战",

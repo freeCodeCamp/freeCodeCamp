@@ -275,6 +275,8 @@
     "wrong-answer": "Нам шкода, але це неправильна відповідь. Спробуєте ще раз?",
     "check-answer": "Натисніть кнопку нижче, щоб перевірити свою відповідь.",
     "assignment-not-complete": "Будь ласка, завершіть завдання",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "Посилання на рішення",
     "github-link": "Посилання на GitHub",
     "submit-and-go": "Відправити та перейти до мого наступного завдання",
