@@ -275,6 +275,8 @@
     "wrong-answer": "Siamo spiacenti, non è la risposta giusta. Vuoi riprovare?",
     "check-answer": "Fai clic sul pulsante qui sotto per controllare la tua risposta.",
     "assignment-not-complete": "Please finish the assignments",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "Link alla soluzione",
     "github-link": "Link GitHub",
     "submit-and-go": "Invia e vai alla prossima sfida",
