@@ -212,44 +212,67 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
     length: superBlockTotalProjectsCount
   });
 
+  const headerText = i18nSuperBlock ? i18nSuperBlock : 'Overall';
+
   return (
     <div className='progress-summary'>
-      <h3 className='progress-summary__main-header'>Progress Summary</h3>
+      <h3 className='progress-summary__main-header'>
+        {headerText} Progress Summary
+      </h3>
       {pathname === isLearnPage && (
-        <section>
-          <h4>Overall</h4>
-          <ul className='challenges'>
-            <li>
-              {completedChallengeCount}/{allChallengeCount} challenges completed
-              ({completedChallengePercentage}%)
-            </li>
-            <li>
+        <section className='progress-summary__section'>
+          <article>
+            <div className='progress-summary__completed'>
+              <span>
+                {completedChallengeCount}/{allChallengeCount} challenges
+                completed
+              </span>
+              <span>{completedChallengePercentage}%</span>
+            </div>
+            <div>
               <ProgressBar now={completedChallengePercentage} />
-            </li>
-            <li>
-              {earnedCertificateCount}/{allCertificateCount} certificates earned
-              ({completedCertificatePercentage}%)
-            </li>
-            <li>
+            </div>
+          </article>
+          <article>
+            <div className='progress-summary__completed'>
+              <span>
+                {earnedCertificateCount}/{allCertificateCount} certificates
+                earned
+              </span>
+              <span>{completedCertificatePercentage}%</span>
+            </div>
+            <div>
               <ProgressBar now={completedCertificatePercentage} />
-            </li>
-          </ul>
+            </div>
+          </article>
         </section>
       )}
       {superBlock !== '' && (
-        <section>
-          <h4>{i18nSuperBlock}</h4>
-          <ul className='challenges'>
-            <li>
-              {superBlockCompletedChallengesCount}/
-              {superBlockTotalChallengesCount} challenges completed (
-              {superBlockCompletedChallengesPercent}%)
-            </li>
-            <li>
-              {superBlockCompletedProjectsCount}/{superBlockTotalProjectsCount}{' '}
-              projects completed ({superBlockCompletedProjectsPercent}%)
-            </li>
-          </ul>
+        <section className='progress-summary__section'>
+          <article>
+            <div className='progress-summary__completed'>
+              <span>
+                {superBlockCompletedChallengesCount}/
+                {superBlockTotalChallengesCount} challenges completed
+              </span>
+              <span>{superBlockCompletedChallengesPercent}%</span>
+            </div>
+            <div>
+              <ProgressBar now={superBlockCompletedChallengesCount} />
+            </div>
+          </article>
+          <article>
+            <div className='progress-summary__completed'>
+              <span>
+                {superBlockCompletedProjectsCount}/
+                {superBlockTotalProjectsCount} projects completed
+              </span>
+              <span>{superBlockCompletedProjectsPercent}%</span>
+            </div>
+            <div>
+              <ProgressBar now={superBlockCompletedProjectsPercent} />
+            </div>
+          </article>
         </section>
       )}
     </div>
