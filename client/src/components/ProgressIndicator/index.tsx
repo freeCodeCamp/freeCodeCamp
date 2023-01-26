@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
+import { ProgressBar } from '@freecodecamp/react-bootstrap';
 import { certificatesByNameSelector } from '../../redux/selectors';
 import type { CurrentCert } from '../../redux/prop-types';
 import { SuperBlocks } from '../../../../config/certification-settings';
@@ -11,7 +12,7 @@ import './progress-indicator.css';
 
 type CompletedChallenge = {
   id: string;
-  challengeType: number;
+  challengeType?: number;
 };
 
 type NodeChallenge = {
@@ -223,8 +224,14 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
               ({completedChallengePercentage}%)
             </li>
             <li>
+              <ProgressBar now={completedChallengePercentage} />
+            </li>
+            <li>
               {earnedCertificateCount}/{allCertificateCount} certificates earned
               ({completedCertificatePercentage}%)
+            </li>
+            <li>
+              <ProgressBar now={completedCertificatePercentage} />
             </li>
           </ul>
         </section>
