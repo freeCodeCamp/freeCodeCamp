@@ -42,14 +42,6 @@ const views = {
   // quiz: Quiz
 };
 
-function getIsFirstStep(_node, index, nodeArray) {
-  const current = nodeArray[index];
-  const previous = nodeArray[index - 1];
-
-  if (!previous) return true;
-  return previous.node.challenge.block !== current.node.challenge.block;
-}
-
 function getNextChallengePath(_node, index, nodeArray) {
   const next = nodeArray[index + 1];
   return next ? next.node.challenge.fields.slug : '/learn';
@@ -87,7 +79,6 @@ exports.createChallengePages = function (createPage) {
           certification,
           superBlock,
           block,
-          isFirstStep: getIsFirstStep(challenge, index, allChallengeEdges),
           template,
           required,
           nextChallengePath: getNextChallengePath(

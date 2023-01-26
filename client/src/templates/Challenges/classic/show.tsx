@@ -480,7 +480,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const {
       executeChallenge,
       pageContext: {
-        challengeMeta: { isFirstStep, nextChallengePath, prevChallengePath },
+        challengeMeta: { nextChallengePath, prevChallengePath },
         projectPreview: { challengeData, showProjectPreview }
       },
       challengeFiles,
@@ -539,7 +539,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               instructions={this.renderInstructionsPanel({
                 showToolPanel: true
               })}
-              isFirstStep={isFirstStep}
               layoutState={this.state.layout}
               notes={this.renderNotes(notes)}
               preview={this.renderPreview()}

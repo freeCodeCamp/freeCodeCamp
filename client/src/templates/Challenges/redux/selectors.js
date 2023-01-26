@@ -30,6 +30,7 @@ export const successMessageSelector = state => state[ns].successMessage;
 
 export const projectFormValuesSelector = state =>
   state[ns].projectFormValues || {};
+export const isAdvancingToChallengeSelector = state => state[ns].isAdvancing;
 export const portalDocumentSelector = state => state[ns].portalWindow?.document;
 export const portalWindowSelector = state => state[ns].portalWindow;
 

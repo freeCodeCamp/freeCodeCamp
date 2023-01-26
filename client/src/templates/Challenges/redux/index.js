@@ -45,7 +45,8 @@ const initialState = {
   showPreviewPortal: false,
   showPreviewPane: true,
   projectFormValues: {},
-  successMessage: 'Happy Coding!'
+  successMessage: 'Happy Coding!',
+  isAdvancing: false
 };
 
 export const epics = [
@@ -199,6 +200,10 @@ export const reducer = handleActions(
     [actionTypes.updateSuccessMessage]: (state, { payload }) => ({
       ...state,
       successMessage: payload
+    }),
+    [actionTypes.setIsAdvancing]: (state, { payload }) => ({
+      ...state,
+      isAdvancing: payload
     }),
     [actionTypes.closeModal]: (state, { payload }) => ({
       ...state,

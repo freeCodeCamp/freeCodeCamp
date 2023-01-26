@@ -6,13 +6,11 @@ import { createSelector } from 'reselect';
 import {
   storePortalWindow,
   removePortalWindow,
-  setShowPreviewPane,
-  setShowPreviewPortal
+  setIsAdvancing
 } from '../redux/actions';
 import {
   portalWindowSelector,
-  showPreviewPaneSelector,
-  showPreviewPortalSelector
+  isAdvancingToChallengeSelector
 } from '../redux/selectors';
 
 interface PreviewPortalProps {
@@ -23,30 +21,21 @@ interface PreviewPortalProps {
   storePortalWindow: (window: Window | null) => void;
   removePortalWindow: () => void;
   portalWindow: null | Window;
-  setShowPreviewPane: (arg: boolean) => void;
-  setShowPreviewPortal: (arg: boolean) => void;
-  showPreviewPane: boolean;
-  showPreviewPortal: boolean;
+  setIsAdvancing: (arg: boolean) => void;
+  isAdvancing: boolean;
 }
 
 const mapDispatchToProps = {
   storePortalWindow,
   removePortalWindow,
-  setShowPreviewPane,
-  setShowPreviewPortal
+  setIsAdvancing
 };
 
 const mapStateToProps = createSelector(
-  showPreviewPaneSelector,
-  showPreviewPortalSelector,
+  isAdvancingToChallengeSelector,
   portalWindowSelector,
-  (
-    showPreviewPane: boolean,
-    showPreviewPortal: boolean,
-    portalWindow: null | Window
-  ) => ({
-    showPreviewPane,
-    showPreviewPortal,
+  (isAdvancing: boolean, portalWindow: null | Window) => ({
+    isAdvancing,
     portalWindow
   })
 );
@@ -55,8 +44,7 @@ class PreviewPortal extends Component<PreviewPortalProps> {
   static displayName = 'PreviewPortal';
   mainWindow: Window;
   externalWindow: Window | null = null;
-  showPreviewPane: boolean;
-  showPreviewPortal: boolean;
+  isAdvancing: boolean;
   containerEl;
   titleEl;
   styleEl;
@@ -65,8 +53,7 @@ class PreviewPortal extends Component<PreviewPortalProps> {
     super(props);
     this.mainWindow = window;
     this.externalWindow = this.props.portalWindow;
-    this.showPreviewPane = this.props.showPreviewPane;
-    this.showPreviewPortal = this.props.showPreviewPortal;
+    this.isAdvancing = this.props.isAdvancing;
     this.containerEl = document.createElement('div');
     this.titleEl = document.createElement('title');
     this.styleEl = document.createElement('style');
@@ -122,8 +109,11 @@ class PreviewPortal extends Component<PreviewPortalProps> {
   }
 
   componentWillUnmount() {
-    this.externalWindow?.close();
+    if (!this.props.isAdvancing) {
+      this.externalWindow?.close();
+    }
     this.props.removePortalWindow();
+    this.props.setIsAdvancing(false);
   }
 
   render() {

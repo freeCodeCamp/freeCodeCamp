@@ -1,5 +1,5 @@
 import { first } from 'lodash-es';
-import React, { useState, useEffect, ReactElement } from 'react';
+import React, { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
@@ -29,7 +29,6 @@ interface DesktopLayoutProps {
   hasNotes: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
-  isFirstStep: boolean;
   layoutState: {
     codePane: Pane;
     editorPane: Pane;
@@ -91,12 +90,12 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const togglePane = (pane: string): void => {
     switch (pane) {
       case 'showPreviewPane':
-        if (showPreviewPortal) setShowPreviewPortal(false);
-        portalWindow?.close();
+        if (!showPreviewPane && showPreviewPortal) setShowPreviewPortal(false);
         setShowPreviewPane(!showPreviewPane);
+        portalWindow?.close();
         break;
       case 'showPreviewPortal':
-        if (showPreviewPane) setShowPreviewPane(false);
+        if (!showPreviewPortal && showPreviewPane) setShowPreviewPane(false);
         setShowPreviewPortal(!showPreviewPortal);
         if (showPreviewPortal) portalWindow?.close();
         break;
@@ -131,23 +130,12 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     testOutput,
     hasNotes,
     hasPreview,
-    isFirstStep,
     layoutState,
     notes,
     preview,
     hasEditableBoundaries,
     windowTitle
   } = props;
-
-  // on mount
-  useEffect(() => {
-    if (isFirstStep) {
-      setShowPreviewPortal(false);
-      portalWindow?.close();
-      setShowPreviewPane(true);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;

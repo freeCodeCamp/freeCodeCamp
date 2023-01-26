@@ -52,6 +52,7 @@ export const disableBuildOnError = createAction(
 export const storedCodeFound = createAction(actionTypes.storedCodeFound);
 export const noStoredCodeFound = createAction(actionTypes.noStoredCodeFound);
 export const saveEditorContent = createAction(actionTypes.saveEditorContent);
+export const setIsAdvancing = createAction(actionTypes.setIsAdvancing);
 export const closeModal = createAction(actionTypes.closeModal);
 export const openModal = createAction(actionTypes.openModal);
 
