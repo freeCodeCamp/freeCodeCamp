@@ -10,11 +10,9 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 ES6 提供了一個新的創建對象的語法，使用關鍵字 <dfn>class</dfn>。
 
-值得注意的是，`class` 只是一個語法糖，它並不像 Java、Python 或者 Ruby 這一類的語言一樣，嚴格履行了面向對象的開發規範。
+In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
 
-在 ES5 裏面，我們通常會定義一個函數 `constructor`，然後使用 `new` 關鍵字來實例化一個對象。
-
-在 ES6 裏，`class` 聲明有一個 `constructor` 方法，與 `new` 關鍵字一起被調用。 如果 `constructor` 方法沒有明確定義，那麼它就被含蓄地定義爲沒有參數。
+In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
 
 ```js
 // Explicit constructor
@@ -43,21 +41,21 @@ const atlas = new Rocket();
 atlas.launch();
 ```
 
-應該注意 `class` 關鍵字聲明瞭一個新的函數，裏面添加了一個構造函數。 當用 `new` 創建一個新的對象時，構造函數會被調用。
+It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.
 
-**注意：**首字母大寫駝峯命名法 UpperCamelCase 是 ES6 class 命名的慣例，就像上面的 `SpaceShuttle`。
+**Note:** UpperCamelCase should be used by convention for ES6 class names, as in `SpaceShuttle` used above.
 
-`constructor` 方法是一個特殊方法，用於創建和初始化 class 創建的對象。 在 JavaScript 算法和數據結構認證的面向對象編程章節裏會更深入介紹它。
+The `constructor` method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.
 
 # --instructions--
 
-使用 `class` 關鍵詞，寫一個 `constructor` 來創建 `Vegetable` class。
+Use the `class` keyword and write a `constructor` to create the `Vegetable` class.
 
-`Vegetable` 這個 class 可以創建 vegetable 對象，這個對象擁有一個在 `constructor` 中賦值的 `name` 屬性。
+The `Vegetable` class allows you to create a vegetable object with a property `name` that gets passed to the `constructor`.
 
 # --hints--
 
-`Vegetable` 應該是一個 `class`，並在其中定義了 `constructor`。
+`Vegetable` should be a `class` with a defined `constructor` method.
 
 ```js
 assert(
@@ -65,13 +63,13 @@ assert(
 );
 ```
 
-應使用 `class` 關鍵字。
+The `class` keyword should be used.
 
 ```js
 assert(code.match(/class/g));
 ```
 
-`Vegetable` 可以被實例化。
+`Vegetable` should be able to be instantiated.
 
 ```js
 assert(() => {
@@ -80,7 +78,7 @@ assert(() => {
 });
 ```
 
-`carrot.name` 應該返回 `carrot`。
+`carrot.name` should return `carrot`.
 
 ```js
 assert(carrot.name == 'carrot');
