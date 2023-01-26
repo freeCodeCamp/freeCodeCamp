@@ -5,12 +5,13 @@ import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 import { certificatesByNameSelector } from '../../redux/selectors';
 import type { CurrentCert } from '../../redux/prop-types';
+import { SuperBlocks } from '../../../../config/certification-settings';
 
 import './progress-indicator.css';
-import { SuperBlocks } from '../../../../config/certification-settings';
 
 type CompletedChallenge = {
   id: string;
+  challengeType: number;
 };
 
 type NodeChallenge = {
@@ -165,6 +166,34 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
     return completedChallengeObjects.length;
   };
 
+  const getSuperBlockCompletedProjectsCount = ({
+    completedChallengesList = []
+  }: {
+    completedChallengesList: CompletedChallenge[];
+  }) => {
+    // Collect the id of challenges with challengeType === 14.
+    // Not sure yet if all challenges with challengeType of 14 are all projects.
+    // Mark null to id (item) without the challengeType property.
+    const completedProjectObjects = completedChallengesList.map(challenge => {
+      return challenge.challengeType && challenge.challengeType === 14
+        ? challenge.id
+        : null;
+    });
+    // Remove those items (id) which is null.
+    const completedProjectIDs = completedProjectObjects.filter(
+      id => id !== null
+    );
+
+    // Filter the projects for the current superblock.
+    const completedSuperBlockProjects = superBlockChallengesList.filter(
+      challenge => {
+        return completedProjectIDs.includes(challenge.node.challenge.id);
+      }
+    );
+
+    return completedSuperBlockProjects.length;
+  };
+
   const superBlockCompletedChallengesCount = getCompletedChallengesCount({
     completedChallengesList,
     superBlockChallengesList
@@ -174,7 +203,9 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
     length: superBlockTotalChallengesCount
   });
 
-  const superBlockCompletedProjectsCount = 0;
+  const superBlockCompletedProjectsCount = getSuperBlockCompletedProjectsCount({
+    completedChallengesList
+  });
   const superBlockCompletedProjectsPercent = computePercentage({
     completed: superBlockCompletedProjectsCount,
     length: superBlockTotalProjectsCount
