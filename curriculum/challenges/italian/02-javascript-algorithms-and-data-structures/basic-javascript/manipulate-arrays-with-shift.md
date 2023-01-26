@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cd
-title: Manipulate Arrays With shift Method
+title: Manipolare gli array con il metodo shift
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVETW'
 forumTopicId: 18238

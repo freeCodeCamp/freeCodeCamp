@@ -219,100 +219,96 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const { state: descriptionState, message: descriptionMessage } =
       this.getDescriptionValidation(description);
     return (
-      <div key={id}>
-        <FullWidthRow>
-          <form onSubmit={e => this.handleSubmit(e, id)}>
-            <FormGroup
-              controlId={`${id}-title`}
-              validationState={
-                pristine || (!pristine && !title) ? null : titleState
-              }
-            >
-              <ControlLabel>{t('settings.labels.title')}</ControlLabel>
-              <FormControl
-                onChange={this.createOnChangeHandler(id, 'title')}
-                required={true}
-                type='text'
-                value={title}
-              />
-              {titleMessage ? <HelpBlock>{titleMessage}</HelpBlock> : null}
-            </FormGroup>
-            <FormGroup
-              controlId={`${id}-url`}
-              validationState={
-                pristine || (!pristine && !url) ? null : urlState
-              }
-            >
-              <ControlLabel>{t('settings.labels.url')}</ControlLabel>
-              <FormControl
-                onChange={this.createOnChangeHandler(id, 'url')}
-                required={true}
-                type='url'
-                value={url}
-              />
-              {urlMessage ? <HelpBlock>{urlMessage}</HelpBlock> : null}
-            </FormGroup>
-            <FormGroup
-              controlId={`${id}-image`}
-              validationState={pristine ? null : imageState}
-            >
-              <ControlLabel>{t('settings.labels.image')}</ControlLabel>
-              <FormControl
-                onChange={this.createOnChangeHandler(id, 'image')}
-                type='url'
-                value={image}
-              />
-              {imageMessage ? <HelpBlock>{imageMessage}</HelpBlock> : null}
-            </FormGroup>
-            <FormGroup
-              controlId={`${id}-description`}
-              validationState={pristine ? null : descriptionState}
-            >
-              <ControlLabel>{t('settings.labels.description')}</ControlLabel>
-              <FormControl
-                componentClass='textarea'
-                onChange={this.createOnChangeHandler(id, 'description')}
-                value={description}
-              />
-              {descriptionMessage ? (
-                <HelpBlock>{descriptionMessage}</HelpBlock>
-              ) : null}
-            </FormGroup>
-            <BlockSaveButton
-              disabled={
-                pristine ||
-                !title ||
-                !isURL(url, {
-                  protocols: ['http', 'https'],
-                  /* eslint-disable camelcase, @typescript-eslint/naming-convention */
-                  require_tld: true,
-                  require_protocol: true
-                  /* eslint-enable camelcase, @typescript-eslint/naming-convention */
-                })
-              }
-            >
-              {t('buttons.save-portfolio')}
-            </BlockSaveButton>
-            <ButtonSpacer />
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='danger'
-              onClick={() => this.handleRemoveItem(id)}
-              type='button'
-            >
-              {t('buttons.remove-portfolio')}
-            </Button>
-          </form>
-          {index + 1 !== arr.length && (
-            <>
-              <Spacer />
-              <hr />
-              <Spacer />
-            </>
-          )}
-        </FullWidthRow>
-      </div>
+      <FullWidthRow key={id}>
+        <form onSubmit={e => this.handleSubmit(e, id)}>
+          <FormGroup
+            controlId={`${id}-title`}
+            validationState={
+              pristine || (!pristine && !title) ? null : titleState
+            }
+          >
+            <ControlLabel>{t('settings.labels.title')}</ControlLabel>
+            <FormControl
+              onChange={this.createOnChangeHandler(id, 'title')}
+              required={true}
+              type='text'
+              value={title}
+            />
+            {titleMessage ? <HelpBlock>{titleMessage}</HelpBlock> : null}
+          </FormGroup>
+          <FormGroup
+            controlId={`${id}-url`}
+            validationState={pristine || (!pristine && !url) ? null : urlState}
+          >
+            <ControlLabel>{t('settings.labels.url')}</ControlLabel>
+            <FormControl
+              onChange={this.createOnChangeHandler(id, 'url')}
+              required={true}
+              type='url'
+              value={url}
+            />
+            {urlMessage ? <HelpBlock>{urlMessage}</HelpBlock> : null}
+          </FormGroup>
+          <FormGroup
+            controlId={`${id}-image`}
+            validationState={pristine ? null : imageState}
+          >
+            <ControlLabel>{t('settings.labels.image')}</ControlLabel>
+            <FormControl
+              onChange={this.createOnChangeHandler(id, 'image')}
+              type='url'
+              value={image}
+            />
+            {imageMessage ? <HelpBlock>{imageMessage}</HelpBlock> : null}
+          </FormGroup>
+          <FormGroup
+            controlId={`${id}-description`}
+            validationState={pristine ? null : descriptionState}
+          >
+            <ControlLabel>{t('settings.labels.description')}</ControlLabel>
+            <FormControl
+              componentClass='textarea'
+              onChange={this.createOnChangeHandler(id, 'description')}
+              value={description}
+            />
+            {descriptionMessage ? (
+              <HelpBlock>{descriptionMessage}</HelpBlock>
+            ) : null}
+          </FormGroup>
+          <BlockSaveButton
+            disabled={
+              pristine ||
+              !title ||
+              !isURL(url, {
+                protocols: ['http', 'https'],
+                /* eslint-disable camelcase, @typescript-eslint/naming-convention */
+                require_tld: true,
+                require_protocol: true
+                /* eslint-enable camelcase, @typescript-eslint/naming-convention */
+              })
+            }
+          >
+            {t('buttons.save-portfolio')}
+          </BlockSaveButton>
+          <ButtonSpacer />
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='danger'
+            onClick={() => this.handleRemoveItem(id)}
+            type='button'
+          >
+            {t('buttons.remove-portfolio')}
+          </Button>
+        </form>
+        {index + 1 !== arr.length && (
+          <>
+            <Spacer />
+            <hr />
+            <Spacer />
+          </>
+        )}
+      </FullWidthRow>
     );
   };
 
