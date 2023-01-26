@@ -1,13 +1,12 @@
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 
-function FullWidthRow({
-  children,
-  className
-}: {
-  children?: React.ReactNode;
+interface FullWidthRowProps {
+  children: React.ReactNode;
   className?: string;
-}): JSX.Element {
+}
+
+const FullWidthRow = ({ children, className }: FullWidthRowProps) => {
   return (
     <Row className={className}>
       <Col sm={8} smOffset={2} xs={12}>
@@ -15,7 +14,7 @@ function FullWidthRow({
       </Col>
     </Row>
   );
-}
+};
 
 FullWidthRow.displayName = 'FullWidthRow';
 
