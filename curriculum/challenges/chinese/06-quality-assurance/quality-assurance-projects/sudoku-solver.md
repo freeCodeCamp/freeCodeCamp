@@ -352,7 +352,7 @@ async (getUserInput) => {
 };
 ```
 
-All 12 unit tests are complete and passing.
+所有 12 项单元测试都已完成并通过。
 
 ```js
 async (getUserInput) => {
@@ -377,7 +377,7 @@ async (getUserInput) => {
 };
 ```
 
-All 14 functional tests are complete and passing.
+所有 14 项功能测试都已完成并通过。
 
 ```js
 async (getUserInput) => {

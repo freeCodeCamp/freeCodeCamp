@@ -80,7 +80,7 @@ assert(() => {
 });
 ```
 
-`carrot.name` повинен повертатись як `carrot`.
+`carrot.name` має повертати `carrot`.
 
 ```js
 assert(carrot.name == 'carrot');

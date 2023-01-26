@@ -31,7 +31,7 @@ const getMousePosition = (x, y) => ({ x, y });
 
 # --hints--
 
-`createPerson("Zodiac Hasbro", 56, "male")` має стати `{name: "Zodiac Hasbro", age: 56, gender: "male"}`.
+`createPerson("Zodiac Hasbro", 56, "male")` має повертати `{name: "Zodiac Hasbro", age: 56, gender: "male"}`.
 
 ```js
 assert.deepEqual(
