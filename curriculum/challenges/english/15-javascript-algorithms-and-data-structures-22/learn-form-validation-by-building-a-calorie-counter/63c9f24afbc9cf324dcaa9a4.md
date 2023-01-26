@@ -1,8 +1,8 @@
 ---
 id: 63c9f24afbc9cf324dcaa9a4
-title: Step 93
+title: Step 92
 challengeType: 0
-dashedName: step-93
+dashedName: step-92
 ---
 
 # --description--
@@ -179,7 +179,7 @@ function isInvalidInput(str) {
 }
 
 function addEntry() {
-  const targetInputContainer = document.querySelector(`#${eventDropdown.value} .input-container`);
+  const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
   const HTMLString = `
   <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
@@ -237,7 +237,7 @@ function getCaloriesFromInputs(list) {
     const invalidInputMatch = isInvalidInput(list[i].value);
 
     if (invalidInputMatch) {
-      alert(`Invalid input: ${invalidInputMatch[0]}`);
+      alert(`Invalid Input: ${invalidInputMatch[0]}`);
       isError = true;
       return null;
     }

@@ -1,8 +1,8 @@
 ---
 id: 63bf5cf03b50bf36cfbe94ea
-title: Step 37
+title: Step 36
 challengeType: 0
-dashedName: step-37
+dashedName: step-36
 ---
 
 # --description--
@@ -11,10 +11,22 @@ Your next step is to allow users to add entries to the calorie counter. Declare 
 
 # --hints--
 
-Test 1
+You should declare an `addEntry` variable.
 
 ```js
+assert.isDefined(addEntry);
+```
 
+Your `addEntry` variable should be a function.
+
+```js
+assert.isFunction(addEntry);
+```
+
+Your `addEntry` function should not take any parameters.
+
+```js
+assert.match(addEntry?.toString(), /\(\s*\)/);
 ```
 
 # --seed--
