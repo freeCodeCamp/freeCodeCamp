@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b46
-title: Виставлення параметрів за замовчуванням для ваших функцій
+title: Налаштування параметрів функцій за замовчуванням
 challengeType: 1
 forumTopicId: 301209
 dashedName: set-default-parameters-for-your-functions
