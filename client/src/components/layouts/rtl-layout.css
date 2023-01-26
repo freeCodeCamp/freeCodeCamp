@@ -7,6 +7,15 @@ Increase the spacing in paragraphs
 }
 
 /* 
+Profile section
+*/
+
+[dir='rtl'] .media-left,
+.media > .pull-left {
+  padding-left: 10px;
+}
+
+/* 
 breadcrumbs section
 */
 
