@@ -48,6 +48,22 @@ type AboutState = {
   isPictureUrlValid: boolean;
 };
 
+const ShowImageValidationWarning = ({
+  closeLabel,
+  alertContent
+}: {
+  closeLabel: string;
+  alertContent: string;
+}) => {
+  return (
+    <HelpBlock>
+      <Alert bsStyle='info' closeLabel={closeLabel}>
+        {alertContent}
+      </Alert>
+    </HelpBlock>
+  );
+};
+
 class AboutSettings extends Component<AboutProps, AboutState> {
   validationImage: HTMLImageElement;
   static displayName: string;
@@ -79,7 +95,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       picture === formValues.picture &&
       about === formValues.about
     ) {
-      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: {
           name,
@@ -170,21 +185,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }));
   };
 
-  showImageValidationWarning = () => {
-    const { t } = this.props;
-    if (this.state.isPictureUrlValid === false) {
-      return (
-        <HelpBlock>
-          <Alert bsStyle='info' closeLabel={t('buttons.close')}>
-            {t('validation.url-not-image')}
-          </Alert>
-        </HelpBlock>
-      );
-    } else {
-      return true;
-    }
-  };
-
   handleAboutChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
@@ -210,9 +210,9 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       toggleKeyboardShortcuts
     } = this.props;
     return (
-      <div className='about-settings'>
+      <>
         <UsernameSettings username={username} />
-        <br />
+        <Spacer />
         <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
@@ -246,7 +246,12 @@ class AboutSettings extends Component<AboutProps, AboutState> {
                   type='url'
                   value={picture}
                 />
-                {this.showImageValidationWarning()}
+                {!this.state.isPictureUrlValid && (
+                  <ShowImageValidationWarning
+                    closeLabel={t('buttons.close')}
+                    alertContent={t('validation.url-not-image')}
+                  />
+                )}
               </FormGroup>
               <FormGroup controlId='about-about'>
                 <ControlLabel>
@@ -279,7 +284,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
           />
         </FullWidthRow>
-      </div>
+      </>
     );
   }
 }
