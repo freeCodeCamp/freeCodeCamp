@@ -10,9 +10,9 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 ES6 fornisce una nuova sintassi per creare oggetti, utilizzando la parola chiave <dfn>class</dfn> (classe).
 
-In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
+In ES5, un oggetto può essere creato definendo una funzione `constructor` (costruttore) e usando la parola chiave `new` per istanziare l'oggetto.
 
-In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
+In ES6, una dichiarazione `class` possiede un metodo `constructor` che viene invocato con la parola chiave `new`. Se il metodo `constructor` non viene esplicitamente definito, allora è definito implicitamente senza argomenti.
 
 ```js
 // Explicit constructor
@@ -41,21 +41,21 @@ const atlas = new Rocket();
 atlas.launch();
 ```
 
-It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.
+Va notato che la parola chiave `class` dichiara una nuova funzione, alla quale viene aggiunto un costruttore. Questo costruttore viene invocato quando `new` viene chiamata per creare un nuovo oggetto.
 
-**Note:** UpperCamelCase should be used by convention for ES6 class names, as in `SpaceShuttle` used above.
+**Nota:** per i nomi di classi ES6 dovrebbe essere usato per convenzione lo stile di scrittura UpperCamelCase, come fatto sopra in `SpaceShuttle`.
 
-The `constructor` method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.
+Il metodo `constructor` è un metodo speciale per creare e inizializzare un oggetto creato con class. Potrai approfondire la questione nella sezione Programmazione Orientata agli Oggetti della certificazione Algoritmi e Strutture Dati in JavaScript.
 
 # --instructions--
 
-Use the `class` keyword and write a `constructor` to create the `Vegetable` class.
+Usa la parola chiave `class` e scrivi una funzione `constructor` per creare la classe `Vegetable`.
 
-The `Vegetable` class allows you to create a vegetable object with a property `name` that gets passed to the `constructor`.
+La classe `Vegetable` consente di creare un oggetto con una proprietà `name` che viene passata al `constructor`.
 
 # --hints--
 
-`Vegetable` should be a `class` with a defined `constructor` method.
+`Vegetable` dovrebbe essere una `class` con un metodo `constructor` definito.
 
 ```js
 assert(
@@ -63,13 +63,13 @@ assert(
 );
 ```
 
-The `class` keyword should be used.
+Dovresti usare la parola chiave `class`.
 
 ```js
 assert(code.match(/class/g));
 ```
 
-`Vegetable` should be able to be instantiated.
+`Vegetable` dovrebbe poter essere istanziata.
 
 ```js
 assert(() => {
@@ -78,7 +78,7 @@ assert(() => {
 });
 ```
 
-`carrot.name` should return `carrot`.
+`carrot.name` dovrebbe restituire `carrot`.
 
 ```js
 assert(carrot.name == 'carrot');
