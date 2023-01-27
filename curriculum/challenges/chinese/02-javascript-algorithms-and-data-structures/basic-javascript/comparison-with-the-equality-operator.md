@@ -25,13 +25,11 @@ function equalityTest(myVal) {
 如果 `myVal` 等于 `10`，相等运算符会返回 `true`，因此大括号里面的代码会被执行，函数将返回 `Equal`。 否则，函数返回 `Not Equal`。 在 JavaScript 中，为了让两个不同的<dfn>数据类型</dfn>（例如 `numbers` 和 `strings`）的值可以作比较，它必须把一种类型转换为另一种类型。 这叫作 “类型强制转换”。 转换之后，可以像下面这样来比较：
 
 ```js
-1   ==  1
-1   ==  2
-1   == '1'
-"3" ==  3
+1   ==  1  // true
+1   ==  2  // false
+1   == '1' // true
+"3" ==  3  // true
 ```
-
-按顺序，这些表达式会返回 `true`、`false`、`true`、`true`。
 
 # --instructions--
 
@@ -57,7 +55,7 @@ assert(testEqual(12) === 'Equal');
 assert(testEqual('12') === 'Equal');
 ```
 
-应该使用 `==` 运算符。
+应该使用 `==` 运算符
 
 ```js
 assert(code.match(/==/g) && !code.match(/===/g));

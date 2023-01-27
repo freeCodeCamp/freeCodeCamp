@@ -1,7 +1,7 @@
 ---
 id: 5900f50f1000cf542c510021
 title: 'Problema 418: Trios de fatoração'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302087
 dashedName: problem-418-factorisation-triples
 ---

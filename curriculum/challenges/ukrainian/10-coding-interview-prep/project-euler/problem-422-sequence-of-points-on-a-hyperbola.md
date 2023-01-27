@@ -1,7 +1,7 @@
 ---
 id: 5900f5131000cf542c510025
 title: 'Задача 422: Послідовність точок на гіперболі'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302092
 dashedName: problem-422-sequence-of-points-on-a-hyperbola
 ---

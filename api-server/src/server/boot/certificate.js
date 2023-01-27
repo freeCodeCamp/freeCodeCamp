@@ -16,6 +16,7 @@ import {
 } from '../../../../config/certification-settings';
 import { reportError } from '../middlewares/sentry-error-handler.js';
 
+import { deprecatedEndpoint } from '../utils/disabled-endpoints';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUser401 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
@@ -51,17 +52,8 @@ export default function bootCertificate(app) {
 
   api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
   api.get('/certificate/showCert/:username/:certSlug', showCert);
-  api.get('/certificate/verify-can-claim-cert', verifyCanClaimCert);
+  api.get('/certificate/verify-can-claim-cert', deprecatedEndpoint);
   app.use(api);
-}
-
-function verifyCanClaimCert(_req, res) {
-  return res.status(410).json({
-    message: {
-      type: 'info',
-      message: 'Please reload the app, this feature is no longer available.'
-    }
-  });
 }
 
 export function getFallbackFullStackDate(completedChallenges, completedDate) {
@@ -76,7 +68,7 @@ export function getFallbackFullStackDate(completedChallenges, completedDate) {
 
   const latestCertDate = completedChallenges
     .filter(chal => chalIds.includes(chal.id))
-    .sort((a, b) => b.completedDate - a.completedDate)[0].completedDate;
+    .sort((a, b) => b.completedDate - a.completedDate)[0]?.completedDate;
 
   return latestCertDate ? latestCertDate : completedDate;
 }
@@ -165,7 +157,8 @@ function sendCertifiedEmail(
     isInfosecCertV7,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
-    isMachineLearningPyCertV7
+    isMachineLearningPyCertV7,
+    isRelationalDatabaseCertV8
   },
   send$
 ) {
@@ -180,7 +173,8 @@ function sendCertifiedEmail(
     !isInfosecCertV7 ||
     !isSciCompPyCertV7 ||
     !isDataAnalysisPyCertV7 ||
-    !isMachineLearningPyCertV7
+    !isMachineLearningPyCertV7 ||
+    !isRelationalDatabaseCertV8
   ) {
     return Observable.just(false);
   }
@@ -363,6 +357,7 @@ function createShowCert(app) {
     const certTitle = certTypeTitleMap[certType];
     const completionTime = completionHours[certType] || 300;
     return findUserByUsername$(username, {
+      isBanned: true,
       isCheater: true,
       isFrontEndCert: true,
       isBackEndCert: true,
@@ -397,25 +392,26 @@ function createShowCert(app) {
           ]
         });
       }
-      const { isLocked, showCerts, showName } = user.profileUI;
+      const { isLocked, showCerts, showName, showTimeLine } = user.profileUI;
 
-      if (!user.name) {
-        return res.json({
-          messages: [
-            {
-              type: 'info',
-              message: 'flash.add-name'
-            }
-          ]
-        });
-      }
-
-      if (user.isCheater) {
+      if (user.isCheater || user.isBanned) {
         return res.json({
           messages: [
             {
               type: 'info',
               message: 'flash.not-eligible'
+            }
+          ]
+        });
+      }
+
+      if (!user.isHonest) {
+        return res.json({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.not-honest',
+              variables: { username: username }
             }
           ]
         });
@@ -433,6 +429,17 @@ function createShowCert(app) {
         });
       }
 
+      if (!user.name) {
+        return res.json({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.add-name'
+            }
+          ]
+        });
+      }
+
       if (!showCerts) {
         return res.json({
           messages: [
@@ -445,12 +452,12 @@ function createShowCert(app) {
         });
       }
 
-      if (!user.isHonest) {
+      if (!showTimeLine) {
         return res.json({
           messages: [
             {
               type: 'info',
-              message: 'flash.not-honest',
+              message: 'flash.timeline-private',
               variables: { username: username }
             }
           ]

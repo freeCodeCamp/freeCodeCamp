@@ -1,7 +1,7 @@
 ---
 id: 5900f4d01000cf542c50ffe2
 title: '問題 355: 最大の互いに素な部分集合'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302015
 dashedName: problem-355-maximal-coprime-subset
 ---

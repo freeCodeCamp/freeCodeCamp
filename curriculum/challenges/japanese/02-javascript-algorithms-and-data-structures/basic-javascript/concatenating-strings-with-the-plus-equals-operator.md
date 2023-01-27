@@ -28,6 +28,12 @@ ourStr += "I come second.";
 
 # --hints--
 
+`myStr` は、2 つの文字列の間に空白文字を含む必要があります。
+
+```js
+assert(/sentence\. This/.test(myStr));
+```
+
 `myStr` の値が文字列値 `This is the first sentence. This is the second sentence.` になる必要があります。
 
 ```js

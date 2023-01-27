@@ -1,16 +1,28 @@
 ---
 id: 5a23c84252665b21eecc8013
 title: Algoritmos de ordenação/ordenação strand
-challengeType: 5
+challengeType: 1
 forumTopicId: 302319
 dashedName: sorting-algorithmsstrand-sort
 ---
 
 # --description--
 
-Escreva uma função para ordenar um array usando o algoritmo de ordenação [Strand sort](https://pt.wikipedia.org/wiki/Strand_sort). A função deve retornar o array ordenado.
+A ordenação **Strand Sort** cria subconjuntos ordenados que são mesclados para criar o resultado final.
 
-Esta é uma forma de ordenar números extraindo sequências mais curtas de números já ordenados de uma lista não ordenada.
+Considere `unsortedArray = [3, 1, 4, 2]`. Escolha o primeiro item `3` e copie-o para um array separado. Procure por qualquer item maior após este item. Quando você encontrar um item maior, neste caso, `4`, copie-o para o array separado, `[3, 4]`, e compare os itens a seguir com este novo valor, `4`.
+
+Após chegar ao fim do array, remova os itens que você copiou, `[3, 4]`, e comece novamente com o primeiro item restante no `unsortedArray`, neste caso `1`.
+
+Após este processo, teremos dois arrays ordenados, `[3, 4]` e `[1, 2]`. Mescle esses dois arrays para criar o `strandSortedArray`.
+
+```js
+const unsortedArray = [3, 1, 4, 2];
+const strandsortedArray = [1, 2, 3, 4];
+```
+
+Escreva uma função para ordenar um array usando a **Strand sort**. A função deve retornar o array ordenado.
+
 
 # --hints--
 

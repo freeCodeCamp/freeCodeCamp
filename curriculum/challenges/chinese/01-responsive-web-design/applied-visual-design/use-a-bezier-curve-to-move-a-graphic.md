@@ -11,7 +11,7 @@ dashedName: use-a-bezier-curve-to-move-a-graphic
 
 前面的关卡涉及了使用 `ease-out` 预定义值描述了动画以高速开始低速结束。 右边的动画展示了 `ease-out` 效果（蓝色的元素）和 `linear` 效果（红色的元素）的区别。 同样的，`ease-out` 预定义值也可以用贝塞尔曲线函数实现。
 
-通俗的讲，将一条直线放在范围只有 1 的坐标轴中，并从中间拿 `p1` 和 `p2` 两个点来拉扯（X 轴的取值区间是 \[0, 1]，Y 轴任意），最后形成的曲线就是动画的贝塞尔速度曲线。 下面是贝塞尔曲线模仿 ease-out 预定义值的例子：
+通俗的讲，将一条直线放在范围只有 1 的坐标轴中，并从中间拿 `p1` 和 `p2` 两个点来拉扯（X 轴的取值区间是 \[0, 1]，Y 轴任意），最后形成的曲线就是动画的贝塞尔速度曲线。 下面是一个使用值来模仿 `ease-out` 样式的 Bezier 曲线示例：
 
 ```css
 animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
@@ -21,7 +21,7 @@ animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
 
 # --instructions--
 
-为了看贝塞尔曲线的运动效果，把 id 为 `red` 的元素的 `animation-timing-function` 属性改为 `cubic-bezier` 函数，其中 x1，y1，x2，y2 值分别为 0、0、0.58、1。 这会使两个元素运动过程类似。
+要查看此贝塞尔曲线的实际效果，请将 id 为 `red` 的元素的 `animation-timing-function` 更改为 `cubic-bezier` 函数，x1、y1、x2、y2 的值分别设置为 `0, 0, 0.58, 1`。 这会使两个元素运动过程类似。
 
 # --hints--
 

@@ -7,8 +7,7 @@ const story = {
   component: Alert,
   argTypes: {
     children: { control: { type: 'text' } },
-    className: { control: { type: 'text' } },
-    dismissLabel: { control: { type: 'text' } }
+    className: { control: { type: 'text' } }
   }
 };
 
@@ -65,14 +64,6 @@ WithHeadingAndParagraphs.args = {
       </p>
     </>
   )
-};
-
-export const Dismissable = Template.bind({});
-Dismissable.args = {
-  children: 'Hello, Alert!',
-  variant: 'success',
-  dismissLabel: 'Close alert',
-  onDismiss: () => console.log('Close alert!')
 };
 
 export default story;

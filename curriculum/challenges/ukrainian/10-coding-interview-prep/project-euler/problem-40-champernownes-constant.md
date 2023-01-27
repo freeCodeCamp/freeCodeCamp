@@ -1,7 +1,7 @@
 ---
 id: 5900f3941000cf542c50fea7
 title: 'Завдання 40: Константа Чамперноуна'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302066
 dashedName: problem-40-champernownes-constant
 ---

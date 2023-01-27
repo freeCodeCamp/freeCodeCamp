@@ -1,7 +1,7 @@
 ---
 id: 595011cba5a81735713873bd
 title: Classifica superiore per gruppo
-challengeType: 5
+challengeType: 1
 forumTopicId: 302339
 dashedName: top-rank-per-group
 ---

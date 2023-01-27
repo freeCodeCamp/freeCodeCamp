@@ -1,7 +1,7 @@
 ---
 id: 5900f5101000cf542c510022
 title: 'Problema 419: Sequência para olhar e dizer'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302088
 dashedName: problem-419-look-and-say-sequence
 ---

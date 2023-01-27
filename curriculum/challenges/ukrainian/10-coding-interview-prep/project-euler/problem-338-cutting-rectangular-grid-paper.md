@@ -1,7 +1,7 @@
 ---
 id: 5900f4be1000cf542c50ffd1
 title: 'Задача 338: Вирізання прямокутної сітчастої сітки'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301996
 dashedName: problem-338-cutting-rectangular-grid-paper
 ---

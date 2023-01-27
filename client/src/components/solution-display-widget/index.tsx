@@ -1,97 +1,62 @@
-import {
-  Button,
-  DropdownButton,
-  MenuItem
-} from '@freecodecamp/react-bootstrap';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button, Dropdown, MenuItem } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
-
+import './solution-display-widget.css';
 interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;
-  showFilesSolution: () => void;
+  projectTitle: string;
+  showUserCode: () => void;
+  showProjectPreview?: () => void;
   displayContext: 'timeline' | 'settings' | 'certification';
 }
 
 export function SolutionDisplayWidget({
   completedChallenge,
   dataCy,
-  showFilesSolution,
+  projectTitle,
+  showUserCode,
+  showProjectPreview,
   displayContext
 }: Props) {
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
-
-  const dropdownTitle =
-    displayContext === 'settings' ? 'Show Solutions' : 'View';
-  const projectLinkText =
-    displayContext === 'settings'
-      ? t('buttons.show-solution')
-      : t('buttons.view');
-
+  const viewText = t('buttons.view');
+  const viewCode = t('buttons.view-code');
+  const viewProject = t('buttons.view-project');
+  // We need to add a random number for dropdown button id's since there may be
+  // two dropdowns for the same project on the page.
+  const randomIdSuffix = Math.floor(Math.random() * 1_000_000);
   const ShowFilesSolutionForCertification = (
-    <button
-      className='project-link-button-override'
-      data-cy={dataCy}
-      onClick={showFilesSolution}
-    >
-      {t('certification.project.solution')}
-    </button>
-  );
-  const ShowProjectAndGithubLinkForCertification = (
-    <>
-      <a href={solution ?? ''} rel='noopener noreferrer' target='_blank'>
-        {t('certification.project.solution')}
-      </a>
-      ,{' '}
-      <a href={githubLink} rel='noopener noreferrer' target='_blank'>
-        {t('certification.project.source')}
-      </a>
-    </>
-  );
-  const ShowProjectLinkForCertification = (
-    <a
-      className='btn-invert'
-      href={solution ?? ''}
-      rel='noopener noreferrer'
-      target='_blank'
-    >
-      {t('certification.project.solution')}
-    </a>
-  );
-  const MissingSolutionComponentForCertification = (
-    <>{t('certification.project.no-solution')}</>
-  );
-  const ShowFilesSolution = (
-    <Button
-      block={true}
-      bsStyle='primary'
-      className='btn-invert'
-      data-cy={dataCy}
-      id={`btn-for-${id}`}
-      onClick={showFilesSolution}
-    >
-      {t('buttons.show-code')}
+    <Button block={true} data-cy={dataCy} onClick={showUserCode}>
+      {viewText}{' '}
+      <span className='sr-only'>
+        {t('settings.labels.solution-for', { projectTitle })}
+      </span>
     </Button>
   );
-  const ShowProjectAndGithubLinks = (
-    <div className='solutions-dropdown'>
-      <DropdownButton
-        block={true}
-        bsStyle='primary'
-        className='btn-invert'
-        id={`dropdown-for-${id}`}
-        title={dropdownTitle}
-      >
+  const ShowProjectAndGithubLinkForCertification = (
+    <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
+      <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
+        {viewText}{' '}
+        <span className='sr-only'>
+          {t('settings.labels.solution-for', { projectTitle })}
+        </span>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
         <MenuItem
           bsStyle='primary'
-          href={solution}
+          href={solution ?? ''}
           rel='noopener noreferrer'
           target='_blank'
         >
-          {t('buttons.frontend')}
+          {t('certification.project.solution')}
+          <span className='sr-only'>({t('aria.opens-new-window')})</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
         </MenuItem>
         <MenuItem
           bsStyle='primary'
@@ -99,9 +64,99 @@ export function SolutionDisplayWidget({
           rel='noopener noreferrer'
           target='_blank'
         >
-          {t('buttons.backend')}
+          {t('certification.project.source')}
+          <span className='sr-only'>({t('aria.opens-new-window')})</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
         </MenuItem>
-      </DropdownButton>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+  const ShowProjectLinkForCertification = (
+    <Button
+      block={true}
+      className='btn-invert'
+      href={solution ?? ''}
+      rel='noopener noreferrer'
+      target='_blank'
+    >
+      {viewText}{' '}
+      <span className='sr-only'>
+        {t('settings.labels.solution-for', { projectTitle })} (
+        {t('aria.opens-new-window')})
+      </span>
+      <FontAwesomeIcon icon={faExternalLinkAlt} />
+    </Button>
+  );
+  const MissingSolutionComponentForCertification = (
+    <>{t('certification.project.no-solution')}</>
+  );
+  const ShowUserCode = (
+    <Button
+      block={true}
+      bsStyle='primary'
+      className='btn-invert'
+      data-cy={dataCy}
+      onClick={showUserCode}
+    >
+      {viewText}{' '}
+      <span className='sr-only'>
+        {t('settings.labels.solution-for', { projectTitle })}
+      </span>
+    </Button>
+  );
+  const ShowMultifileProjectSolution = (
+    <div className='solutions-dropdown'>
+      <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
+        <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
+          {viewText}{' '}
+          <span className='sr-only'>
+            {t('settings.labels.solution-for', { projectTitle })}
+          </span>
+        </Dropdown.Toggle>
+        <Dropdown.Menu>
+          <MenuItem bsStyle='primary' onClick={showUserCode}>
+            {viewCode}
+          </MenuItem>
+          <MenuItem bsStyle='primary' onClick={showProjectPreview}>
+            {viewProject}
+          </MenuItem>
+        </Dropdown.Menu>
+      </Dropdown>
+    </div>
+  );
+
+  const ShowProjectAndGithubLinks = (
+    <div className='solutions-dropdown'>
+      <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
+        <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
+          {viewText}{' '}
+          <span className='sr-only'>
+            {t('settings.labels.solution-for', { projectTitle })}
+          </span>
+        </Dropdown.Toggle>
+        <Dropdown.Menu>
+          <MenuItem
+            bsStyle='primary'
+            href={solution}
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            {t('buttons.frontend')}{' '}
+            <span className='sr-only'>({t('aria.opens-new-window')})</span>
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
+          </MenuItem>
+          <MenuItem
+            bsStyle='primary'
+            href={githubLink}
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            {t('buttons.backend')}{' '}
+            <span className='sr-only'>({t('aria.opens-new-window')})</span>
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
+          </MenuItem>
+        </Dropdown.Menu>
+      </Dropdown>
     </div>
   );
   const ShowProjectLink = (
@@ -110,11 +165,15 @@ export function SolutionDisplayWidget({
       bsStyle='primary'
       className='btn-invert'
       href={solution}
-      id={`btn-for-${id}`}
       rel='noopener noreferrer'
       target='_blank'
     >
-      {projectLinkText}
+      {viewText}{' '}
+      <span className='sr-only'>
+        {t('settings.labels.solution-for', { projectTitle })} (
+        {t('aria.opens-new-window')})
+      </span>
+      <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
   );
   const MissingSolutionComponent =
@@ -125,14 +184,16 @@ export function SolutionDisplayWidget({
   const displayComponents =
     displayContext === 'certification'
       ? {
-          showFilesSolution: ShowFilesSolutionForCertification,
-          showProjectAndGitHubLinks: ShowProjectAndGithubLinkForCertification,
+          showUserCode: ShowFilesSolutionForCertification,
+          showMultifileProjectSolution: ShowMultifileProjectSolution,
+          showProjectAndGithubLinks: ShowProjectAndGithubLinkForCertification,
           showProjectLink: ShowProjectLinkForCertification,
           none: MissingSolutionComponentForCertification
         }
       : {
-          showFilesSolution: ShowFilesSolution,
-          showProjectAndGitHubLinks: ShowProjectAndGithubLinks,
+          showUserCode: ShowUserCode,
+          showMultifileProjectSolution: ShowMultifileProjectSolution,
+          showProjectAndGithubLinks: ShowProjectAndGithubLinks,
           showProjectLink: ShowProjectLink,
           none: MissingSolutionComponent
         };

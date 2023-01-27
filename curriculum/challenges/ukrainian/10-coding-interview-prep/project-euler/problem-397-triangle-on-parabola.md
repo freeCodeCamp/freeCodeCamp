@@ -1,7 +1,7 @@
 ---
 id: 5900f4f91000cf542c51000c
 title: 'Задача 397: Трикутник на параболі'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302062
 dashedName: problem-397-triangle-on-parabola
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f47c1000cf542c50ff8e
 title: 'Problema 270: Corte dos quadrados'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301920
 dashedName: problem-270-cutting-squares
 ---

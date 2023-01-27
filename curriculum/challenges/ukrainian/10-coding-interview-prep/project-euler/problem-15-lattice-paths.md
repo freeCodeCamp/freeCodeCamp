@@ -1,7 +1,7 @@
 ---
 id: 5900f37b1000cf542c50fe8e
 title: 'Завдання 15: Доріжки на сітці'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301780
 dashedName: problem-15-lattice-paths
 ---

@@ -16,17 +16,15 @@ dashedName: comparison-with-the-strict-equality-operator
 **示例**
 
 ```js
-3 ===  3
-3 === '3'
+3 ===  3  // true
+3 === '3' // false
 ```
-
-这些条件将分别返回 `true` and `false`。
 
 在第二个例子中，`3` 是一个 `Number` 类型，而 `'3'` 是一个 `String` 类型。
 
 # --instructions--
 
-在 `if` 语句中使用严格相等运算符，这样当 `val` 严格等于 `7` 时，函数将返回字符串 `Equal`。
+在 `if` 语句中使用严格相等运算符，这样函数将在 `val` 严格等于 `7` 时返回字符串 `Equal`。
 
 # --hints--
 
@@ -48,7 +46,7 @@ assert(testStrict(7) === 'Equal');
 assert(testStrict('7') === 'Not Equal');
 ```
 
-你应该使用 `===` 运算符。
+应该使用 `===` 运算符
 
 ```js
 assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);

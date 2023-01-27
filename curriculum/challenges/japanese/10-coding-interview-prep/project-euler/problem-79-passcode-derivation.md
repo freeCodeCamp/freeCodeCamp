@@ -1,7 +1,7 @@
 ---
 id: 5900f3bb1000cf542c50fece
 title: '問題 79: パスコードの導出'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302192
 dashedName: problem-79-passcode-derivation
 ---

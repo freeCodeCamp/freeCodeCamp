@@ -8,7 +8,7 @@ dashedName: implementation-of-social-authentication-iii
 
 # --description--
 
-Кінцева частина стратегії керує профілем поверненим з GitHub. Якщо існує об'єкт бази даних користувача, необхідно його завантажити. У разі відсутності, потрібно його створити. Потім заповнюємо поля профілю і повертаємо об'єкт користувача. У межах кожного профілю GitHub надає нам унікальний *id*, який можна використовувати для пошуку для того, щоб серіалізувати користувача (уже реалізовано). Нижче наведено приклад реалізації, який ви можете використовувати у вашому проєкті - це відбувається завдяки функції, яка є другим аргументом для нової стратегії, нижче де `console.log(profile);` наразі є:
+Фінальна частина стратегії обробляє профіль, повернений з GitHub. Нам потрібно завантажити базу даних користувача, якщо вона існує (або створити, якщо її немає), та заповнити поля профілю, а потім повернути об’єкт користувача. У межах кожного профілю GitHub надає нам унікальний *id*, який можна використовувати для того, щоб знайти та серіалізувати користувача (уже реалізовано). Нижче наведено приклад реалізації, який ви можете використати у своєму проєкті. Він входить до функції, яка є другим аргументом для нової стратегії, одразу під місцем, де `console.log(profile);` наразі такий:
 
 ```js
 myDataBase.findOneAndUpdate(
@@ -16,6 +16,7 @@ myDataBase.findOneAndUpdate(
   {
     $setOnInsert: {
       id: profile.id,
+      username: profile.username,
       name: profile.displayName || 'John Doe',
       photo: profile.photos[0].value || '',
       email: Array.isArray(profile.emails)
@@ -38,35 +39,32 @@ myDataBase.findOneAndUpdate(
 );
 ```
 
-`findOneAndUpdate` дозволяє шукати та оновлювати об'єкт. У разі, якщо об'єкта не існує, його вставлять та зроблять доступним для функції зворотнього зв'язку. У цьому прикладі, ми завжди встановлюємо `last_login`, збільшуємо `login_count` на `1` та після додавання нового об'єкту (користувача) лише заповнюємо більшість полів. Зверніть увагу на використання значень за замовчуванням. Іноді повернений профіль не міститиме усієї інформації або ж користувач зробить її приватною. У такому випадку, ви його обробляєте задля уникнення помилки.
+`findOneAndUpdate` дозволяє шукати та оновлювати об'єкт. Якщо об'єкта не існує, його вставлять та зроблять доступним для функції зворотнього зв'язку. У цьому прикладі ми завжди встановлюємо `last_login`, збільшуємо `login_count` на `1` та заповнюємо більшість полів після додавання нового об'єкта (користувача). Зверніть увагу на використання значень за замовчуванням. Іноді повернений профіль не міститиме усієї інформації або ж користувач зробить її приватною. У такому випадку ви його обробляєте, щоб уникнути помилки.
 
-Ви повинні мати змогу увійти в ваш додаток прямо зараз — спробуйте!
+Тепер ви можете увійти у свій додаток. Спробуйте!
 
-Підтвердьте сторінку, якщо все виконано вірно. Якщо виникла помилка, ви можете перевірити виконання проєкту до цього етапу [тут](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745).
+Відправте свою сторінку коли впевнились, що все правильно. Якщо виникають помилки, ви можете <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-iii-5" target="_blank" rel="noopener noreferrer nofollow">переглянути проєкт, виконаний до цього етапу</a>.
 
 # --hints--
 
 Ви повинні завершити налаштування стратегії GitHub.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/auth.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /GitHubStrategy[^]*myDataBase/gi,
-        'Strategy should use now use the database to search for the user'
-      );
-      assert.match(
-        data,
-        /GitHubStrategy[^]*return cb/gi,
-        'Strategy should return the callback function "cb"'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
+async (getUserInput) => {
+  const url = new URL("/_api/auth.js", getUserInput("url"));
+  const res = await fetch(url);
+  const data = await res.text();
+  assert.match(
+    data,
+    /GitHubStrategy[^]*myDataBase/gi,
+    'Strategy should use now use the database to search for the user'
   );
+  assert.match(
+    data,
+    /GitHubStrategy[^]*return cb/gi,
+    'Strategy should return the callback function "cb"'
+  );
+}
 ```
 
 # --solutions--

@@ -1,7 +1,7 @@
 ---
 id: 5900f4041000cf542c50ff17
 title: 'Завдання 152. Написання половини як суми обернених квадратів'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301783
 dashedName: problem-152-writing-one-half-as-a-sum-of-inverse-squares
 ---

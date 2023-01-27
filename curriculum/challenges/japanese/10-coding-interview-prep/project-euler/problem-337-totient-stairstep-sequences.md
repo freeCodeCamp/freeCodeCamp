@@ -1,7 +1,7 @@
 ---
 id: 5900f4be1000cf542c50ffd0
 title: '問題 337: トーティエント階段型数列 (Stairstep Sequence)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301995
 dashedName: problem-337-totient-stairstep-sequences
 ---

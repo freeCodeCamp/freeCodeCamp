@@ -1,7 +1,7 @@
 ---
 id: 5900f3b01000cf542c50fec3
 title: 'Завдання 68: Магічне 5-кутне кільце'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302180
 dashedName: problem-68-magic-5-gon-ring
 ---

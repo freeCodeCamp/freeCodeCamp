@@ -1,16 +1,16 @@
 ---
 id: 5e4ce2eaac708cc68c1df260
 title: Levenshtein distance
-challengeType: 5
+challengeType: 1
 forumTopicId: 385264
 dashedName: levenshtein-distance
 ---
 
 # --description--
 
-In information theory and computer science, the **Levenshtein distance** is a [metric](https://en.wikipedia.org/wiki/string metric) for measuring the amount of difference between two sequences (i.e. an [edit distance](https://en.wikipedia.org/wiki/edit distance)). The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being insertion, deletion, or substitution of a single character.
+In information theory and computer science, the **Levenshtein distance** is a metric for measuring the amount of difference between two sequences (i.e. an edit distance). The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being insertion, deletion, or substitution of a single character.
 
-Example:
+Ejemplo:
 
 The Levenshtein distance between "**kitten**" and "**sitting**" is 3, since the following three edits change one into the other, and there isn't a way to do it with fewer than three edits:
 

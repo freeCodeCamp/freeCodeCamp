@@ -8,7 +8,7 @@ dashedName: test-for-truthiness
 
 # --description--
 
-注意点として、このプロジェクトは [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) の始動プロジェクト、または [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/) からクローンされたプロジェクトに基づいて構築されています。
+注意点として、このプロジェクトは <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> にあるスタータープロジェクトをベースに構築されているか、または <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> からクローンされています。
 
 `isTrue()` は、ブール値 `true` かどうかをテストし、`isNotTrue()` は、ブール値 `true` 以外の値である場合にテストにパスします。
 
@@ -22,11 +22,11 @@ assert.isTrue(1, 'This will NOT pass with the number value 1');
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Basic Assertions` スイート内の `#4` に分類されたテストにおいて、テストを合格にする (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isTrue` または `assert.isNotTrue` に変更してください。 アサートに渡された引数を変更しないでください。
+`tests/1_unit-tests.js` の中の、`Basic Assertions` スイート内の `#4` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isTrue` または `assert.isNotTrue` に変更してください。 アサートに渡された引数を変更しないでください。
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>

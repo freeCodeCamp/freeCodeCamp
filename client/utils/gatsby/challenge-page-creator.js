@@ -32,13 +32,19 @@ const video = path.resolve(
   '../../src/templates/Challenges/video/Show.tsx'
 );
 
+const odin = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/odin/Show.tsx'
+);
+
 const views = {
   backend,
   classic,
   modern: classic,
   frontend,
   video,
-  codeAlly
+  codeAlly,
+  odin
   // quiz: Quiz
 };
 
@@ -123,12 +129,10 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
     showProjectPreview:
       challengeOrder === 0 &&
       usesMultifileEditor &&
-      challengeType !== challengeTypes.multiFileCertProject,
+      challengeType !== challengeTypes.multifileCertProject,
     challengeData: {
       challengeType: lastChallenge.challengeType,
-      challengeFiles: projectPreviewChallengeFiles,
-      required: lastChallenge.required,
-      template: lastChallenge.template
+      challengeFiles: projectPreviewChallengeFiles
     }
   };
 }

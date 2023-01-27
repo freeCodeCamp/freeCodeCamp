@@ -19,17 +19,15 @@ Gli indici degli array sono scritti nella stessa notazione tra parentesi usata d
 
 ```js
 const array = [50, 60, 70];
-array[0];
+console.log(array[0]);
 const data = array[1];
 ```
 
-`array[0]` ora è `50` e `data` ha il valore `60`.
-
-**Nota:** Non ci dovrebbero essere spazi tra il nome dell'array e le parentesi quadre, come in `array [0]`. Anche se JavaScript è in grado di elaborarlo correttamente, questo potrebbe confondere altri programmatori che leggono il tuo codice.
+`console.log(array[0])` scrive `50`, e `data` ha il valore `60`.
 
 # --instructions--
 
-Crea una variabile chiamata `myData` e impostala al primo valore di `myArray` usando la notazione a parentesi.
+Crea una variabile chiamata `myData` e imponila uguale al primo valore di `myArray` usando la notazione a parentesi quadre.
 
 # --hints--
 
@@ -51,7 +49,7 @@ assert(
 );
 ```
 
-Si dovrebbe accedere ai dati nella variabile `myArray` utilizzando la notazione a parentesi.
+Dovresti accedere ai dati nella variabile `myArray` usando la notazione a parentesi quadre.
 
 ```js
 assert(

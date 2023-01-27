@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc800b
 title: Algoritmos de ordenação/ordenação da panqueca
-challengeType: 5
+challengeType: 1
 forumTopicId: 302315
 dashedName: sorting-algorithmspancake-sort
 ---
 
 # --description--
 
-Escreva uma função para ordenar um array de inteiros (de qualquer tamanho conveniente) em ordem ascendente usando o método de ordenação [Pancake sorting](https://en.wikipedia.org/wiki/Pancake sorting). A função deve retornar o array ordenado.
+Escreva uma função para ordenar um array de números inteiros (de qualquer tamanho conveniente) em ordem ascendente usando a ordenação de Panqueca. A função deve retornar o array ordenado.
 
 Em resumo, em vez de serem ordenados elementos individuais, a única operação permitida é "virar" uma extremidade da lista, assim:
 

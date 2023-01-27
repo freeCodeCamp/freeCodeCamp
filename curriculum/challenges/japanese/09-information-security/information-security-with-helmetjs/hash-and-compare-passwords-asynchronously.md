@@ -8,7 +8,7 @@ dashedName: hash-and-compare-passwords-asynchronously
 
 # --description--
 
-注意点として、このプロジェクトは [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt) にある次のスタータープロジェクトをベースに構築されているか、または [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/) からクローンされています。
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 ハッシュは計算量が多くなるように設計されているので、ハッシュ処理中に接続がブロックされないように、サーバー上で非同期的に処理することをお勧めします。 次の呼び出しを実行するだけで、パスワードを非同期にハッシュ化できます。
 
@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-完了したハッシュを出力し、compare の中でコンソールに "res" と出力した後、これを既存のハッシュ関数に追加してください (compare 関数を呼び出す前にハッシュの完了を待つ必要があるため)。 コンソールにハッシュが出力され、次に 'true' と出力されるはずです。 compare 関数の 'myPlaintextPassword' を 'someOtherPlaintextPassword' に変更すると、false と表示されます。
+完了したハッシュを出力し、compare の中でコンソールに "res" と出力した後、これを既存のハッシュ関数に追加してください (compare 関数を呼び出す前にハッシュの完了を待つ必要があるため)。 You should see in the console a hash, and then 'true' is printed! If you change 'myPlaintextPassword' in the compare function to 'someOtherPlaintextPassword', then it should say false.
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {

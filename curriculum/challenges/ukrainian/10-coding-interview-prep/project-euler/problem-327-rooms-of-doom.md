@@ -1,7 +1,7 @@
 ---
 id: 5900f4b31000cf542c50ffc6
 title: 'Завдання 327: Кімнати Страху'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301984
 dashedName: problem-327-rooms-of-doom
 ---

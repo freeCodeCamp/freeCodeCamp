@@ -19,7 +19,7 @@ Entrambi restituirebbero `true`.
 
 # --instructions--
 
-Finisci di scrivere la funzione in modo che restituisca true se l'oggetto ad essa passato contiene tutti e quattro i nomi, `Alan`, `Jeff`, `Sarah` e `Ryan`, e false altrimenti.
+Finisci di scrivere la funzione in modo che restituisca `true` se l'oggetto ad essa passato contiene tutti e quattro i nomi, `Alan`, `Jeff`, `Sarah` e `Ryan`, altrimenti da come risultato `false`.
 
 # --hints--
 

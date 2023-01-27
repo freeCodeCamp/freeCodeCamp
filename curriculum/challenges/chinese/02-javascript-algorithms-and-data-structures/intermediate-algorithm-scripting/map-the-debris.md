@@ -1,20 +1,27 @@
 ---
 id: af4afb223120f7348cdfc9fd
 title: 计算轨道周期
-challengeType: 5
+challengeType: 1
 forumTopicId: 16021
 dashedName: map-the-debris
 ---
 
 # --description--
 
-在这道题目中，我们需要写一个计算天体轨道周期（单位是秒）的函数。
+根据开普勒第三定律，在环状或椭圆轨道上在轨两个点质量的 $T$ 轨道期为：
 
-它接收一个对象数组参数 arr，对象中包含表示天体名称的 name 属性，及表示天体表面平均海拔的 avgAlt 属性。 就像这样：`{name: 'name', avgAlt: avgAlt}`。
+$$ T = 2 \pi \sqrt{\frac{a^{3}}{\mu}} $$
 
-你可以在这条[维基百科](http://en.wikipedia.org/wiki/Orbital_period)的链接中找到轨道周期的计算公式：
+- $a$ 是轨道的半主轴
+- $μ = GM$ 是标准重力参数
+- $G$ 是引力常量
+- $M$ 是较大天体的质量
 
-最终的计算结果应取整到最接近的整数。 在这里计算地球的轨道周期。
+返回一个新数组，将元素的平均高度转换为轨道周期（以秒为单位）。
+
+数组将包含 `{name: 'name', avgAlt: avgAlt}` 格式的对象 。
+
+最终的计算结果应取整到最接近的整数。 正在轨道上的物体是地球。
 
 地球半径为 6367.4447 公里，地球的 GM 值为 398600.4418 km <sup>3</sup> s <sup>-2</sup> 。
 

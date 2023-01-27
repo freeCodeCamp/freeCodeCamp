@@ -1,9 +1,9 @@
-name: Crowdin Docs Upload
+name: i18n - Upload Docs
 on:
   workflow_dispatch:
   schedule:
-    # runs everyday at 11:00 AM UTC
-    - cron: '0 11 * * *'
+    # runs every weekday at 11:00 AM UTC
+    - cron: '0 11 * * 1-5'
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
 
       - name: Generate Crowdin Config
         uses: freecodecamp/crowdin-action@main

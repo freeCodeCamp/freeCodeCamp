@@ -1,7 +1,7 @@
 ---
 id: 5900f4671000cf542c50ff79
 title: 'Problema 249: Soma de subconjuntos de números primos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301896
 dashedName: problem-249-prime-subset-sums
 ---

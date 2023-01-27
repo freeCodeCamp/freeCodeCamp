@@ -1,9 +1,9 @@
-name: Crowdin Docs Download
+name: i18n - Download Docs
 on:
   workflow_dispatch:
   schedule:
-    # runs every day at 12:00 noon UTC
-    - cron: '0 12 * * *'
+    # runs every weekday at 12:00 noon UTC
+    - cron: '0 12 * * 1-5'
 
 env:
   GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
         with:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 

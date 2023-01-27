@@ -28,15 +28,15 @@ dashedName: create-a-more-complex-shape-using-css-and-html
 
 # --instructions--
 
-画面に表示されている要素をハート形に変換しましょう。 `heart::after` セレクターで、`background-color` を `pink` に、`border-radius` を 50% に変更してください。
+画面に表示されている要素をハート形に変換しましょう。 `.heart::after` セレクターで、`background-color` を `pink` に、`border-radius` を 50% に変更してください。
 
 次に、クラス `heart` (`heart` のみ) の要素に対し、`transform` プロパティを入力します。 `rotate()` 関数を -45deg を指定して使用してください。
 
-最後に、`heart::before` セレクターの中で `content` プロパティを空文字列に設定してください。
+最後に、`.heart::before` セレクターの中で `content` プロパティを空文字列に設定してください。
 
 # --hints--
 
-`heart::after` セレクターの `background-color` プロパティは `pink` である必要があります。
+`.heart::after` セレクターの `background-color` プロパティは `pink` である必要があります。
 
 ```js
 const heartAfter = code.match(/\.heart::after\s*{[\s\S]+?[^\}]}/g)[0];
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-`heart::after` セレクターの `border-radius` は 50% である必要があります。
+`.heart::after` セレクターの `border-radius` は 50% である必要があります。
 
 ```js
 assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2);
@@ -57,7 +57,7 @@ assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2);
 assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi));
 ```
 
-`heart::before` セレクターの `content` は空文字列である必要があります。
+`.heart::before` セレクターの `content` は空文字列である必要があります。
 
 ```js
 assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));

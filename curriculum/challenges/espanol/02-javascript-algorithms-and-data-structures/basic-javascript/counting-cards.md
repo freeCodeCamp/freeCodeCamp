@@ -9,7 +9,7 @@ dashedName: counting-cards
 
 # --description--
 
-En el juego de casino Blackjack el jugador puede sacarle ventaja a la casa llevando un registro del numero relativo de cartas altas y bajas que quedan en la baraja. Esto es llamado [conteo de cartas](https://es.wikipedia.org/wiki/Conteo_de_cartas).
+En el juego de casino Blackjack, un jugador puede determinar si tiene una ventaja en la siguiente mano sobre la casa llevando la cuenta del número relativo de cartas altas y bajas que quedan en la baraja. Esto se llama cuenta de tarjetas.
 
 Tener más cartas altas en la baraja es una ventaja para el jugador. Se le asigna un valor a cada carta de acuerdo a la siguiente tabla. Cuando el conteo es positivo, el jugador debería apostar alto. Cuando el conteo da 0 o negativo, el jugador debería apostar bajo.
 
@@ -24,6 +24,19 @@ NO reinicies `count` a 0 cuando el valor sea 7, 8 o 9. NO devuelvas un arreglo.
 NO incluyas comillas (individuales o dobles) en el resultado.
 
 # --hints--
+
+Su función debe devolver un valor para el conteo y el texto (`Bet` o `Hold`) con un carácter de espacio entre ellos.
+
+```js
+assert(//
+  (function () {
+    count = 0;
+    let out = cc(10);
+    const hasSpace = /-?\d+ (Bet|Hold)/.test('' + out);
+    return hasSpace;
+  })()
+);
+```
 
 La secuencia de cartas 2, 3, 4, 5, 6 debe devolver la cadena `5 Bet`
 

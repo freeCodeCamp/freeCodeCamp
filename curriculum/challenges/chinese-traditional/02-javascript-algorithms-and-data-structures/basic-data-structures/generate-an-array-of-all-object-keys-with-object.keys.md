@@ -8,7 +8,7 @@ dashedName: generate-an-array-of-all-object-keys-with-object-keys
 
 # --description--
 
-我們可以給 `Object.keys()` 方法傳入一個對象作爲參數，來生成包含對象所有鍵的數組。 這會返回一個由對象中所有屬性（字符串）組成的數組。 需要注意的是，數組中元素的順序是不確定的。
+我們可以給 `Object.keys()` 方法傳入一個對象作爲參數，來生成包含對象所有鍵的數組。 這個方法將對象作爲參數並返回代表對象中每個屬性的字符串數組。 需要注意的是，數組中元素的順序是不確定的。
 
 # --instructions--
 

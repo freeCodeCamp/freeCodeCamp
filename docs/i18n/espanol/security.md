@@ -1,46 +1,54 @@
-# Security Policy
+# Política de Seguridad de freeCodeCamp.org
 
-This document outlines our security policy for the codebases, platforms that we operate, and how to report vulnerabilities.
+Este documento describe nuestra política de seguridad para los códigos, plataformas que operamos, y cómo reportar vulnerabilidades.
 
-## Reporting a Vulnerability
+## Informar una vulnerabilidad
 
-If you think you have found a vulnerability, _please report responsibly_. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+> [!NOTE] Si crees que has encontrado una vulnerabilidad, **por favor, informa de ella de forma responsable**. No cree propuestas de GitHub para problemas de seguridad. En su lugar, siga esta guía.
 
-Ensure that you are using the **latest**, **stable** and **updated** version of the Operating System and Web Browser available to you on your machine.
+### Directrices
 
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+Agradecemos la divulgación responsable de las vulnerabilidades que puedan afectar a la integridad de nuestras plataformas y usuarios. En aras de ahorrar tiempo a todo el mundo, le animamos a informar de las vulnerabilidades teniendo en cuenta esto:
 
-Once you report a vulnerability, we will look into it and make sure that it is not a false positive. We will get back to you if we need to clarify any details. You can submit separate reports for each issue you find.
+1. Asegúrese de que está utilizando las versiones **más recientes**, **estables** y **actualizadas** del sistema operativo y del navegador o navegadores web disponibles en su máquina.
+2. Consideramos que el uso de herramientas y utilidades en línea para informar de problemas con las configuraciones de SPF y DKIM, las pruebas del servidor SSL, etc., entra en la categoría de ["mendigar recompensas"](https://www.troyhunt.com/beg-bounties) y no podemos responder a estos informes.
+3. Aunque por el momento no ofrecemos recompensas ni botines, estaremos encantados de incluir tu nombre en nuestra lista del [Salón de la Fama](security-hall-of-fame.md), siempre que los informes no sean de bajo esfuerzo.
 
-While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](security-hall-of-fame.md) list, provided the reports are not low-effort.
+### Reportando
 
-We consider using tools & online utilities to report issues with SPF & DKIM configs, or SSL Server tests, etc. in the category of ["beg bounties"](https://www.troyhunt.com/beg-bounties/) and are unable to respond to these reports.
+Después de confirmar las directrices anteriores, no dude en enviar un correo electrónico a `possible-security-issue [at] freecodecamp.org`. También puede enviarnos un mensaje cifrado con PGP a `flowcrypt.com/me/freecodecamp`.
 
-## Platforms & Codebases
+Una vez que nos informe de una vulnerabilidad, la investigaremos y nos aseguraremos de que no sea un falso positivo. Si necesitamos aclarar algún detalle, nos pondremos en contacto con usted. Puede enviar informes separados para cada problema que encuentre. Tenga en cuenta que no podremos responder a las cuestiones que consideremos que están fuera de las directrices.
 
-Here is a list of the platforms and codebases we are accepting reports for:
+## Plataformas y Bases de Código
 
-### Learn Platform
+Esta es una lista de las plataformas y bases de código para las que aceptamos informes:
 
-| Version     | Branch         | Supported | Website active           |
-| ----------- | -------------- | --------- | ------------------------ |
-| production  | `prod-current` | Yes       | `freecodecamp.org/learn` |
-| staging     | `prod-staging` | Yes       | `freecodecamp.dev/learn` |
-| development | `main`         | No        |                          |
+### Plataforma de Aprendizaje
 
-### Publication Platform
+| Versión    | Rama           | Soportado | Sitio web activo         |
+| ---------- | -------------- | --------- | ------------------------ |
+| producción | `prod-current` | Sí        | `freecodecamp.org/learn` |
+| escenario  | `prod-staging` | Sí        | `freecodecamp.dev/learn` |
+| desarrollo | `principal`    | No        |                          |
 
-| Version    | Supported | Website active                           |
+### Plataforma de Publicación
+
+| Versión    | Soportado | Sitio web activo                         |
 | ---------- | --------- | ---------------------------------------- |
-| production | Yes       | `freecodecamp.org/news`                  |
-| localized  | Yes       | `freecodecamp.org/<language>/news` |
+| producción | Sí        | `freecodecamp.org/news`                  |
+| localizado | Sí        | `freecodecamp.org/<language>/news` |
 
-### Mobile app
+### Aplicación Móvil
 
-| Version    | Supported | Website active                                                   |
+| Versión    | Soportado | Sitio web activo                                                 |
 | ---------- | --------- | ---------------------------------------------------------------- |
-| production | Yes       | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
+| producción | Sí        | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
 
-Apart from the above, we are also accepting reports for repositories hosted on GitHub, under the freeCodeCamp organization.
+### Otras Plataformas
 
-We self-host some of our platforms using open-source software like Ghost & Discourse. If you are reporting a vulnerability please ensure that it is not a bug in the upstream software.
+Aparte de lo anterior, también aceptamos informes para los repositorios alojados en GitHub bajo la organización de freeCodeCamp.
+
+### Otras Aplicaciones Autoalojadas
+
+Algunas de nuestras plataformas las alojamos nosotros mismos utilizando software de código abierto como Ghost y Discourse. Si está informando de una vulnerabilidad, asegúrese de que no se trata de un error en el software de origen.

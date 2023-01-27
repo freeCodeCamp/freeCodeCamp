@@ -9,7 +9,7 @@ dashedName: build-a-bike-rental-shop
 
 # --description--
 
-Neste curso intermediário, você vai construir um programa de Bash interativo que armazena informações de aluguel para sua loja de aluguel de bicicletas utilizando PostgreSQL.
+Neste curso de 210 aulas, você vai construir um programa de Bash interativo que armazena informações de aluguel para sua loja de aluguel de bicicletas utilizando PostgreSQL.
 
 # --instructions--
 

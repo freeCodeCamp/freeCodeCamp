@@ -1,7 +1,7 @@
 ---
 id: 598ee8b91b410510ae82efef
 title: 拡張可能な素数ジェネレータ
-challengeType: 5
+challengeType: 1
 forumTopicId: 302262
 dashedName: extensible-prime-generator
 ---

@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc803c
 title: Судоку
-challengeType: 5
+challengeType: 1
 forumTopicId: 302329
 dashedName: sudoku
 ---
 
 # --description--
 
-Напишіть функцію, яка вирішить частково заповнений стандартний квадрат [судоку](https://en.wikipedia.org/wiki/Sudoku) розміром 9х9 та поверне результат. Порожні поля представлені як `-1`. [Алгоритми вирішення судоку](https://en.wikipedia.org/wiki/Algorithmics_of_sudoku) можуть допомогти з реалізацією.
+Write a function to solve a partially filled-in normal 9x9 Sudoku grid and return the result. Порожні поля представлені як `-1`.
 
 # --hints--
 

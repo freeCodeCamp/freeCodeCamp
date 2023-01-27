@@ -1,7 +1,7 @@
 ---
 id: 5e6dd139859c290b6ab80292
 title: Maior subsequência crescente
-challengeType: 5
+challengeType: 1
 forumTopicId: 385272
 dashedName: longest-increasing-subsequence
 ---
@@ -12,13 +12,13 @@ O problema da maior subsequência crescente é encontrar uma subsequência de um
 
 Para o seguinte array:
 
-$\\{3, 10, 2, 1, 20\\}$
+```js
+const array = [3, 10, 2, 1, 20];
+```
 
 A maior subsequência crescente é:
 
 $\\{3, 10, 20\\}$
-
-Para obter mais informações sobre esse problema, consulte a [Wikipedia](https://en.wikipedia.org/wiki/Longest increasing subsequence).
 
 # --instructions--
 

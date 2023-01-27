@@ -1,14 +1,14 @@
 ---
 id: 59667989bf71cf555dd5d2ff
 title: S-вирази
-challengeType: 5
+challengeType: 1
 forumTopicId: 302303
 dashedName: s-expressions
 ---
 
 # --description--
 
-[S-вирази](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") - це зручний спосіб для аналізу та зберігання даних.
+<a href="https://rosettacode.org/wiki/S-expressions" target="_blank" rel="noopener noreferrer nofollow">S-Expressions</a> are one convenient way to parse and store data.
 
 # --instructions--
 
@@ -32,7 +32,7 @@ dashedName: s-expressions
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-і перетворити його на початкову структуру даних. (Дивіться [Pike](https://rosettacode.org/wiki/S-Expressions#Pike "\#Pike"), [Python](https://rosettacode.org/wiki/S-Expressions#Python "\#Python") and [Ruby](https://rosettacode.org/wiki/S-Expressions#Ruby "\#Ruby") implementations задля прикладів початкових структур даних.)
+and turn it into a native data structure.
 
 # --hints--
 

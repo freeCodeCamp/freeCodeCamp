@@ -1,7 +1,7 @@
 ---
 id: af7588ade1100bde429baf20
 title: Encontrar as letras faltando
-challengeType: 5
+challengeType: 1
 forumTopicId: 16023
 dashedName: missing-letters
 ---

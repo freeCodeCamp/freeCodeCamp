@@ -1,6 +1,6 @@
 ---
 id: 8d5823c8c441eddfaeb5bdef
-title: Create a Map Data Structure
+title: 创建映射数据结构
 challengeType: 1
 forumTopicId: 301629
 dashedName: create-a-map-data-structure
@@ -26,7 +26,7 @@ Let's get some practice creating our own map. Because JavaScript objects provide
 
 # --hints--
 
-The Map data structure should exist.
+The `Map` data structure should exist.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The Map object should have the following methods: add, remove, get, has, values, clear, and size.
+The `Map` object should have the following methods: `add`, `remove`, `get`, `has`, `values`, `clear`, and `size`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-The add method should add items to the map.
+The `add` method should add items to the map.
 
 ```js
 assert(
@@ -79,7 +79,7 @@ assert(
 );
 ```
 
-The has method should return true for added items and false for absent items.
+The `has` method should return `true` for added items and `false` for absent items.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The get method should accept keys as input and should return the associated values.
+The `get` method should accept keys as input and should return the associated values.
 
 ```js
 assert(
@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-The values method should return all the values stored in the map as strings in an array.
+The `values` method should return all the values stored in the map as strings in an array.
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 );
 ```
 
-The clear method should empty the map and the size method should return the number of items present in the map.
+The `clear` method should empty the map and the `size` method should return the number of items present in the map.
 
 ```js
 assert(

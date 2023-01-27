@@ -1,14 +1,14 @@
 ---
 id: 594810f028c0303b75339ace
 title: アキュムレータ・ファクトリ
-challengeType: 5
+challengeType: 1
 forumTopicId: 302222
 dashedName: accumulator-factory
 ---
 
 # --description--
 
-[ポール・グレアム](https://en.wikipedia.org/wiki/Paul_Graham_(programmer)) は、1 つの数値引数を取り、アキュムレータである別の関数を返す関数を作成する問題を考え出しました。 返されたアキュムレータ関数は、1つの数値引数を取り、これまでにアキュムレータに渡されたすべての数値の合計 (アキュムレータが作成されたときに渡された初期値を含む) を返します。
+A problem posed by Paul Graham is that of creating a function that takes a single (numeric) argument and which returns another function that is an accumulator. 返されたアキュムレータ関数は、1つの数値引数を取り、これまでにアキュムレータに渡されたすべての数値の合計 (アキュムレータが作成されたときに渡された初期値を含む) を返します。
 
 # --instructions--
 

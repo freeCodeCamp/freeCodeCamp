@@ -22,13 +22,13 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --instructions--
 
-Package.json ファイルの `dependencies` フィールドに、"moment" パッケージのバージョン "2.14.0" を追加してください。
+`package.json` ファイルの `dependencies` フィールドに、`@freecodecamp/example` パッケージのバージョン "1.1.0" を追加してください。
 
-** 注: ** moment は、時間と日付を扱う際に便利なライブラリです。
+**注:** `@freecodecamp/example` は、学習用のツールとして使用する架空のパッケージです。
 
 # --hints--
 
-「dependencies」には、「moment」を含める必要があります。
+`"dependencies"` に `"@freecodecamp/example"` を含める必要があります。
 
 ```js
 (getUserInput) =>
@@ -37,8 +37,8 @@ Package.json ファイルの `dependencies` フィールドに、"moment" パッ
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -47,7 +47,7 @@ Package.json ファイルの `dependencies` フィールドに、"moment" パッ
   );
 ```
 
-「moment」のバージョンを「2.14.0」にする必要があります。
+`"@freecodecamp/example"` のバージョンは `"1.1.0"` である必要があります。
 
 ```js
 (getUserInput) =>
@@ -55,9 +55,9 @@ Package.json ファイルの `dependencies` フィールドに、"moment" パッ
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^[\^\~]?2\.14\.0/,
-        'Wrong version of "moment" installed. It should be 2.14.0'
+        packJson.dependencies["@freecodecamp/example"],
+        /^[\^\~]?1\.1\.0/,
+        'Wrong version of "@freecodecamp/example" installed. It should be 1.1.0'
       );
     },
     (xhr) => {

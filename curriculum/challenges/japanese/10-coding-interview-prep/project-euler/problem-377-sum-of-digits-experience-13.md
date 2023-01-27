@@ -1,7 +1,7 @@
 ---
 id: 5900f4e51000cf542c50fff8
 title: '問題 377: 各位の和 - 13 に注目'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302039
 dashedName: problem-377-sum-of-digits-experience-13
 ---

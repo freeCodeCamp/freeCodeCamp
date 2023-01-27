@@ -1,7 +1,7 @@
 ---
 id: ac6993d51946422351508a41
 title: 文字列の省略
-challengeType: 5
+challengeType: 1
 forumTopicId: 16089
 dashedName: truncate-a-string
 ---

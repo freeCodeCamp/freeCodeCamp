@@ -1,14 +1,16 @@
 ---
 id: 59d9c6bc214c613ba73ff012
 title: SEDOLs
-challengeType: 5
+challengeType: 1
 forumTopicId: 302305
 dashedName: sedols
 ---
 
 # --description--
 
-Para cada lista de números de 6 algarismos [SEDOL](https://en.wikipedia.org/wiki/SEDOL "wp: SEDOL"), calcule e acrescente o algarismo da soma de verificação. Ou seja, dada a string de entrada à esquerda, sua função deve retornar a string correspondente à direita:
+A <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> é uma lista de números de identificação de segurança emitidos pela Bolsa de Valores de Londres.
+
+Para cada lista de números de 6 algarismos da <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>, calcule e acrescente o algarismo da soma de verificação. Ou seja, dada a string de entrada à esquerda, sua função deve retornar a string correspondente à direita:
 
 <pre>
 710889 => 7108899
@@ -64,8 +66,9 @@ assert(sedol('228276') === '2282765');
 
 ```js
 function sedol(input) {
+  const checkSum = 0
 
-  return true;
+  return checkSum;
 }
 ```
 
@@ -90,7 +93,7 @@ function sedolCheckDigit(char6) {
   for (let i = 0; i < char6.length; i++) {
     sum += weight[i] * parseInt(char6.charAt(i), 36);
   }
-  const check = (10 - (sum % 10)) % 10;
-  return check.toString();
+  const checkSum = (10 - (sum % 10)) % 10;
+  return checkSum.toString();
 }
 ```

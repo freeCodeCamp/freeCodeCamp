@@ -10,7 +10,7 @@ dashedName: create-a-model
 
 **C**RUD I Parte I - CREATE
 
-Em primeiro lugar, precisamos de um schema. Cada schema mapeia para uma coleção do MongoDB. Ele define a forma dos documentos dentro daquela coleção. Os schemas são os blocos que compõem os modelos. Eles podem ser aninhados para criar modelos complexos, mas nesse caso vamos simplificar as coisas. Um modelo permite que você crie instâncias de seus objetos, chamados documentos.
+Em primeiro lugar, precisamos de um schema. Cada schema mapeia para uma coleção do MongoDB. Ele define a forma dos documentos dentro daquela coleção. Os schemas são os blocos que compõem os modelos. Eles podem ser aninhados para criar modelos complexos, mas, neste caso, vamos simplificar as coisas. Um modelo permite que você crie instâncias de seus objetos, chamados documentos.
 
 O Replit é um servidor real. Em servidores reais, as interações com o banco de dados acontecem em funções de manipulador. Estas funções são executadas quando algum evento acontece (por exemplo, alguém atinge um endpoint na sua API). Seguiremos a mesma abordagem nestes exercícios. A função `done()` é um callback que nos diz que podemos prosseguir após concluir uma operação assíncrona, como inserir, pesquisar, atualizar ou excluir. Ela segue a convenção do Node e deve ser chamada como `done(null, data)` quando houver sucesso, ou `done(err)` quando houver erro.
 
@@ -38,7 +38,7 @@ age :  number
 favoriteFoods : array of strings (*)
 ```
 
-Use os tipos de schemas básicos de Mongoose. Se você quiser, também pode adicionar mais campos, usar validadores simples, como required ou unique, e definir valores padrão. Veja a [documentação do Mongoose](http://mongoosejs.com/docs/guide.html).
+Use os tipos de schemas básicos de Mongoose. Se você quiser, também pode adicionar mais campos, usar validadores simples, como required ou unique, e definir valores padrão. Veja nosso <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">artigo sobre o Mongoose</a>.
 
 Agora, crie um modelo chamado `Person` do `personSchema`.
 

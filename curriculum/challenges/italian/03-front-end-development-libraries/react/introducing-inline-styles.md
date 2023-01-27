@@ -8,7 +8,7 @@ dashedName: introducing-inline-styles
 
 # --description--
 
-Ci sono altri concetti complessi che aggiungono potenti funzionalità al tuo codice React. Ma forse ti stai chiedendo come stilizzare quegli elementi JSX che crei in React. Probabilmente sai che non sarà esattamente come lavorare con HTML a causa del [modo in cui applichi le classi agli elementi JSX](/italian/learn/front-end-development-libraries/react/define-an-html-class-in-jsx).
+Ci sono altri concetti complessi che aggiungono potenti funzionalità al tuo codice React. Ma forse ti stai chiedendo come stilizzare quegli elementi JSX che crei in React. Probabilmente sai che non sarà esattamente come lavorare con HTML a causa del <a href="/learn/front-end-development-libraries/react/define-an-html-class-in-jsx" target="_blank" rel="noopener noreferrer nofollow">modo in cui applichi le classi agli elementi JSX</a>.
 
 Se importi degli stili da un foglio di stile, non è poi così diverso. Applichi una classe al tuo elemento JSX usando l'attributo `className` e applichi gli stili alla classe nel tuo foglio di stile. Un'altra opzione è quella di applicare degli stili in linea, che sono molto comuni nello sviluppo di ReactJS.
 

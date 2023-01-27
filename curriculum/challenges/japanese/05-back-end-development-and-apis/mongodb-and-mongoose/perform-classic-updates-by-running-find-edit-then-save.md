@@ -14,7 +14,7 @@ dashedName: perform-classic-updates-by-running-find-edit-then-save
 
 `findEditThenSave` 関数を変更し、パラメーター `personId` を検索キーとして `_id` で個人を検索してください (上記メソッドのいずれかを使用してください) 。 検索したその個人の `favoriteFoods` リストに、`"hamburger"` を追加してください (`Array.push()` を使用することが可能です)。 そして、検索コールバックの中で、更新した `Person` を `save()` してください。
 
-**注:** スキーマでタイプ (たとえば、`[String]`) を指定せずに `favoriteFoods` を配列として宣言した場合は、多少わかりにくくなるかもしれません。 その場合、`favoriteFoods` はデフォルトで Mixed タイプに設定されるので、`document.markModified('edited-field')` を使用して手動で編集済みにマークする必要があります。 [Mongoose のドキュメント](https://mongoosejs.com/docs/schematypes.html#Mixed) を参照してください。
+**注:** スキーマでタイプ (たとえば、`[String]`) を指定せずに `favoriteFoods` を配列として宣言した場合は、多少わかりにくくなるかもしれません。 その場合、`favoriteFoods` はデフォルトで Mixed タイプに設定されるので、`document.markModified('edited-field')` を使用して手動で編集済みにマークする必要があります。 <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">Mongoose の記事</a>を参照してください。
 
 # --hints--
 

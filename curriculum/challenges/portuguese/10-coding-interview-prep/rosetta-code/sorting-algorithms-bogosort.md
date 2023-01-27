@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8002
 title: Algoritmos de ordenação/Bogosort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302311
 dashedName: sorting-algorithmsbogosort
 ---
 
 # --description--
 
-Faça o [Bogosort](https://en.wikipedia.org/wiki/Bogosort) de uma lista de números.
+Faça a ordenação Bogosort de uma lista de números.
 
 O Bogosort simplesmente embaralha uma coleção aleatoriamente até que ela fica ordenada.
 

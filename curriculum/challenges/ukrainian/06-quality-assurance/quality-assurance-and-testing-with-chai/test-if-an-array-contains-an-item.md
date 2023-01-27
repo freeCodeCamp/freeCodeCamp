@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c51
-title: Перевірте, чи містить масив предмет
+title: Перевірте, чи масив містить предмет
 challengeType: 2
 forumTopicId: 301603
 dashedName: test-if-an-array-contains-an-item
@@ -8,11 +8,11 @@ dashedName: test-if-an-array-contains-an-item
 
 # --description--
 
-Нагадуємо, що цей проєкт створено на основі наступного стартового проєкту[ Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) або кальковано з [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#12` в наборі `Arrays` змініть кожний `assert` на `assert.include` або `assert.notInclude`, щоб полегшити проходження тесту (варто оцінювати як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#12` в наборі `Arrays` змініть кожний `assert` на `assert.include` або `assert.notInclude`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -30,7 +30,7 @@ dashedName: test-if-an-array-contains-an-item
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження `include` або `notInclude`.
+Ви повинні обрати правильний метод для першого твердження: `include` або `notInclude`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ dashedName: test-if-an-array-contains-an-item
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження `include` або `notInclude`.
+Ви повинні обрати правильний метод для другого твердження: `include` або `notInclude`.
 
 ```js
 (getUserInput) =>

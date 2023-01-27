@@ -1,14 +1,14 @@
 ---
 id: 5900f46e1000cf542c50ff80
 title: 'Problema 257: Bissetores angulares'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301905
 dashedName: problem-257-angular-bisectors
 ---
 
 # --description--
 
-Você recebe um triângulo com o comprimento dos lados de números inteiros $ABC$ com lados $a ≤ b ≤ c$. ($AB = c$, $BC = a$ e $AC = b$).
+É fornecido um triângulo de lado inteiro $ABC$ com lados $a ≤ b ≤ c$ ($AB = c$, $BC = a$ e $AC = b$).
 
 Os bissetores angulares do triângulo cruzam os lados nos pontos $E$, $F$ e $G$ (veja a imagem abaixo).
 

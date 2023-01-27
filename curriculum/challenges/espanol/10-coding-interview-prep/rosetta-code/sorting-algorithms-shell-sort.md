@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8010
 title: Sorting algorithms/Shell sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302317
 dashedName: sorting-algorithmsshell-sort
 ---
 
 # --description--
 
-Write a function to sort an array of elements using the [Shell sort](https://en.wikipedia.org/wiki/Shell sort) algorithm, a diminishing increment sort. The function should return the sorted array.
+Write a function to sort an array of elements using the Shell sort algorithm, a diminishing increment sort. The function should return the sorted array.
 
 The Shell sort (also known as Shellsort or Shell's method) is named after its inventor, Donald Shell, who published the algorithm in 1959.
 

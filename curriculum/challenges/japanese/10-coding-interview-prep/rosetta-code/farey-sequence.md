@@ -1,14 +1,14 @@
 ---
 id: 59c3ec9f15068017c96eb8a3
 title: ファレイ数列
-challengeType: 5
+challengeType: 1
 forumTopicId: 302266
 dashedName: farey-sequence
 ---
 
 # --description--
 
-位数 `n` の [ファレイ数列](https://en.wikipedia.org/wiki/Farey sequence "wp: Farey sequence") <code>F<sub>n</sub></code> は、`0` から `1` の間の既約分数の数列であり、`n` 以下の分母を持ち、昇順に並べられます。
+The Farey sequence <code>F<sub>n</sub></code> of order `n` is the sequence of completely reduced fractions between `0` and `1` which, when in lowest terms, have denominators less than or equal to `n`, arranged in order of increasing size.
 
 *ファレイ数列* は、 間違って *ファレイseries* と呼ばれることがあります。
 

@@ -15,12 +15,13 @@ export const certTypes = {
   machineLearningPyV7: 'isMachineLearningPyCertV7',
   fullStack: 'isFullStackCert',
   relationalDatabaseV8: 'isRelationalDatabaseCertV8'
-};
+} as const;
 
 export enum SuperBlocks {
   RespWebDesignNew = '2022/responsive-web-design',
   RespWebDesign = 'responsive-web-design',
   JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
+  JsAlgoDataStructNew = '2022/javascript-algorithms-and-data-structures',
   FrontEndDevLibs = 'front-end-development-libraries',
   DataVis = 'data-visualization',
   RelationalDb = 'relational-database',
@@ -53,9 +54,9 @@ export const certIds = {
 };
 
 export const completionHours = {
-  [certTypes.frontEnd]: 400,
-  [certTypes.backEnd]: 400,
-  [certTypes.dataVis]: 400,
+  [certTypes.frontEnd]: 300,
+  [certTypes.backEnd]: 300,
+  [certTypes.dataVis]: 300,
   [certTypes.infosecQa]: 300,
   [certTypes.fullStack]: 1800,
   [certTypes.respWebDesign]: 300,
@@ -83,7 +84,9 @@ export const certSlugTypeMap = {
 
   // modern
   [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
+  [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
   [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
+  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct,
   [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
   [SuperBlocks.DataVis]: certTypes.dataVis2018,
   [SuperBlocks.BackEndDevApis]: certTypes.apisMicroservices,
@@ -118,7 +121,8 @@ export const superBlockCertTypeMap = {
 
   // post-modern
   // TODO: use enum
-  '2022/responsive-web-design': certTypes.respWebDesign
+  [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
+  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct
 };
 
 export const certTypeIdMap = {

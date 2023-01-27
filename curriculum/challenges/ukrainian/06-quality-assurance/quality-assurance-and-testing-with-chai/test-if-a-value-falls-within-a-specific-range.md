@@ -8,19 +8,19 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного початкового проєкту на [ Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) або копіюється з [ GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 ```javascript
 .approximately(actual, expected, delta, [message])
 ```
 
-Перевіряє, щоб `actual` дорівнював `expected`, у межах +/- `delta` діапазону.
+Підтверджує, що `actual` рівний `expected`, у межах діапазону +/- `delta`.
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#10` в наборі `Comparisons` змініть кожний `assert` на `assert.approximately`, щоб полегшити проходження тесту (варто оцінювати як `true`).
+У межах `tests/1_unit-tests.js` під тестом з міткою `#10` в наборі `Comparisons` змініть кожен `assert` на `assert.approximately`, щоб пройти тест (повинен дорівнювати `true`).
 
-Виберіть мінімальний діапазон (третій параметр) для того, щоб тест можна було проходити завжди. Він має бути менше ніж 1.
+Виберіть мінімальний діапазон (третій параметр) для того, щоб тест завжди проходив. Він повинен бути менший за 1.
 
 # --hints--
 
@@ -38,7 +38,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
   );
 ```
 
-Оберіть правильний діапазон для першого твердження - `approximately(actual, expected, range)`.
+Ви повинні обрати правильний діапазон для першого твердження: `approximately(actual, expected, range)`.
 
 ```js
 (getUserInput) =>
@@ -57,7 +57,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
   );
 ```
 
-Оберіть правильний діапазон для другого твердження - `approximately(actual, expected, range)`.
+Ви повинні обрати правильний діапазон для другого твердження: `approximately(actual, expected, range)`.
 
 ```js
 (getUserInput) =>

@@ -1,7 +1,7 @@
 ---
 id: 5900f3861000cf542c50fe99
 title: 'Завдання 26: Зворотні цикли'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301908
 dashedName: problem-26-reciprocal-cycles
 ---

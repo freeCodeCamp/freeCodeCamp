@@ -1,7 +1,7 @@
 ---
 id: 5900f47d1000cf542c50ff8f
 title: 'Проблема 272: Модульні Кубики, частина 2'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301922
 dashedName: problem-272-modular-cubes-part-2
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f51a1000cf542c51002d
 title: 'Завдання 430: Перевертання рядів'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302101
 dashedName: problem-430-range-flips
 ---

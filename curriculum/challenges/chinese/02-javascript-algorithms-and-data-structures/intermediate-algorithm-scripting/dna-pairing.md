@@ -1,22 +1,20 @@
 ---
 id: afd15382cdfb22c9efe8b7de
 title: DNA 配对
-challengeType: 5
+challengeType: 1
 forumTopicId: 16009
 dashedName: dna-pairing
 ---
 
 # --description--
 
-给出的 DNA 链上缺少配对元素。 请基于每个字符，获取与其配对的元素，并将结果作为二维数组返回。
+脱氧核糖核酸组由核酸对组成。 基本配对的字符是 <em>AT</em> and <em>CG</em>，这些字符形成了 DNA 双螺旋的构件。
 
-DNA 的[碱基对](http://en.wikipedia.org/wiki/Base_pair) 有两种形式：一种是 A 与 T，一种是 C 与 G。 请为参数中给出的每个字符配对相应的碱基。
-
-注意，参数中给出的字符应作为每个子数组中的第一个元素返回。
+DNA 链缺少配对元素。 写一个函数来匹配缺失的 DNA 字符串。 对于提供的字符串中的每个字符，找出基本的配对字符。 返回二维数组的结果。
 
 例如，传入 `GCG` 时，应返回 `[["G", "C"], ["C","G"], ["G", "C"]]`。
 
-字符和它的配对组成一个数组中，所有配对数组放在一个数组里。
+字符和它的配对组成一个数组，所有配对数组放在一个数组里。
 
 # --hints--
 

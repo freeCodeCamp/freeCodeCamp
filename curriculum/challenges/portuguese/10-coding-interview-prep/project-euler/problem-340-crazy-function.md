@@ -1,7 +1,7 @@
 ---
 id: 5900f4c21000cf542c50ffd4
 title: 'Problema 340: Função maluca'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301999
 dashedName: problem-340-crazy-function
 ---
@@ -10,7 +10,8 @@ dashedName: problem-340-crazy-function
 
 Para números inteiros fixos $a$, $b$, $c$, defina a função maluca $F(n)$ da seguinte forma:
 
-$$\begin{align} & F(n) = n - c \\;\text{ para todo } n > b \\\\ & F(n) = F(a + F(a + F(a + F(a + n)))) \\;\text{ para todo } n ≤ b. \end{align}$$
+$$\begin{align}   & F(n) = n - c \\;\text{ para todo } n > b \\\\
+  & F(n) = F(a + F(a + F(a + F(a + n)))) \\;\text{ para todo } n ≤ b. \end{align}$$
 
 Além disso, defina $S(a, b, c) = \displaystyle\sum_{n = 0}^b F(n)$.
 

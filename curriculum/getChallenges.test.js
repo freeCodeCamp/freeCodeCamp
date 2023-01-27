@@ -1,7 +1,7 @@
 const path = require('path');
 
 const {
-  createChallenge,
+  generateChallengeCreator,
   hasEnglishSource,
   createCommentMap
 } = require('./getChallenges');
@@ -12,21 +12,25 @@ const MISSING_CHALLENGE_PATH = 'no/challenge.md';
 const basePath = '__fixtures__';
 
 describe('create non-English challenge', () => {
-  describe('createChallenge', () => {
-    it('throws if lang is an invalid language', async () => {
-      await expect(
-        createChallenge(basePath, EXISTING_CHALLENGE_PATH, 'notlang', {})
-      ).rejects.toThrow('notlang is not a accepted language');
-    });
-    it('throws an error if the source challenge is missing', async () => {
-      await expect(
-        createChallenge(basePath, MISSING_CHALLENGE_PATH, 'chinese', {})
-      ).rejects.toThrow(
-        `Missing English challenge for
+  describe('generateChallengeCreator', () => {
+    describe('createChallenge', () => {
+      it('throws if lang is an invalid language', async () => {
+        const createChallenge = generateChallengeCreator(basePath, 'notlang');
+        await expect(
+          createChallenge(EXISTING_CHALLENGE_PATH, {})
+        ).rejects.toThrow('notlang is not a accepted language');
+      });
+      it('throws an error if the source challenge is missing', async () => {
+        const createChallenge = generateChallengeCreator(basePath, 'chinese');
+        await expect(
+          createChallenge(MISSING_CHALLENGE_PATH, {})
+        ).rejects.toThrow(
+          `Missing English challenge for
 ${MISSING_CHALLENGE_PATH}
 It should be in
 `
-      );
+        );
+      });
     });
   });
   describe('hasEnglishSource', () => {
@@ -69,9 +73,15 @@ It should be in
       expect(typeof createCommentMap(dictionaryDir)).toBe('object');
     });
 
-    it('throws if an entry is missing', () => {
-      expect.assertions(1);
-      expect(() => createCommentMap(incompleteDictDir)).toThrow();
+    it('fallback to the untranslated string', () => {
+      expect.assertions(2);
+      const commentMap = createCommentMap(incompleteDictDir);
+      expect(commentMap['To be translated one'].spanish).toEqual(
+        'Spanish translation one'
+      );
+      expect(commentMap['To be translated two'].spanish).toEqual(
+        'To be translated two'
+      );
     });
 
     it('returns an object with an expected form', () => {

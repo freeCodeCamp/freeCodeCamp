@@ -18,7 +18,7 @@ Ogni colonna rappresenterà un arco unico. Inoltre, ogni arco collegherà due no
 
 <blockquote>    1<br>   ---<br>1 | 1<br>2 | 0<br>3 | 1</blockquote>
 
-Ecco un esempio di una `incidence matrix` con 4 archi e 4 nodi. Ricorda, le colonne sono gli archi e le righe sono i nodi.
+Ecco un esempio di matrice di incidenza con 4 archi e 4 nodi. Ricorda, le colonne sono gli archi e le righe sono i nodi.
 
 <blockquote>    1 2 3 4<br>   --------<br>1 | 0 1 1 1<br>2 | 1 1 0 0<br>3 | 1 0 0 1<br>4 | 0 0 1 0</blockquote>
 

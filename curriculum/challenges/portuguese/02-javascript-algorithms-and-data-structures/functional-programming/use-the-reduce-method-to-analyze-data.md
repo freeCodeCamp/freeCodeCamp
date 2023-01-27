@@ -51,7 +51,7 @@ O console mostra o valor `{ John: 34, Amy: 20, camperCat: 10 }`.
 
 # --instructions--
 
-A variável `watchList` armazena um array de objetos com informações de diversos filmes. Use `reduce` para encontrar a média da classificação IMDB dos filmes direcionados por `Christopher Nolan`. Você já aprendeu em desafios passados como filtrar e mapear dados de array com `filter` e `map`. Você pode precisar usar outras variáveis para retornar a nota média da função `getRating`. Observe que os valores das notas estão salvas como strings nos objetos e precisam ser convertidos para números antes que possam ser usados em operações matemáticas.
+A variável `watchList` armazena um array de objetos com informações de diversos filmes. Use `reduce` para encontrar a média da classificação IMDB dos filmes dirigidos por `Christopher Nolan`. Você já aprendeu em desafios passados como filtrar e mapear dados de array com `filter` e `map`. Você pode precisar usar outras variáveis para retornar a nota média da função `getRating`. Observe que os valores das notas estão salvas como strings nos objetos e precisam ser convertidos para números antes que possam ser usados em operações matemáticas.
 
 # --hints--
 
@@ -81,7 +81,7 @@ Você não deve usar loops `for`.
 assert(!code.match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-A função deve retornar o valor correto após manipular `watchList` com filter, map e reduce.
+Você deve retornar o resultado correto após a modificação do objeto `watchList`.
 
 ```js
 assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);

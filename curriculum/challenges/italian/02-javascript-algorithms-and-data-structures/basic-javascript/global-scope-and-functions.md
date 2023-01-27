@@ -17,7 +17,7 @@ Le variabili che vengono dichiarate senza la parola chiave `let` o la parola chi
 
 Usando `let` o `const`, dichiara una variabile globale denominata `myGlobal` al di fuori di qualsiasi funzione. Inizializzala con un valore di `10`.
 
-All'interno della funzione `fun1`, assegna `5` a `oopsGlobal` ***senza*** utilizzare le parole chiave `let` o `const`.
+All'interno della funzione `fun1`, assegna `5` a `oopsGlobal` ***senza*** utilizzare le parole chiave `var`, `let` o `const`.
 
 # --hints--
 
@@ -88,14 +88,14 @@ uncapture();
 
 
 function fun1() {
-  // Assign 5 to oopsGlobal Here
+  // Assign 5 to oopsGlobal here
 
 }
 
 // Only change code above this line
 
 function fun2() {
-  var output = "";
+  let output = "";
   if (typeof myGlobal != "undefined") {
     output += "myGlobal: " + myGlobal;
   }
@@ -116,7 +116,7 @@ function fun1() {
 }
 
 function fun2() {
-  var output = "";
+  let output = "";
   if(typeof myGlobal != "undefined") {
     output += "myGlobal: " + myGlobal;
   }

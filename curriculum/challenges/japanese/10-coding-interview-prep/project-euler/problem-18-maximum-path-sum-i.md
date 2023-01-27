@@ -1,7 +1,7 @@
 ---
 id: 5900f37e1000cf542c50fe91
 title: '問題 18: 経路の最大和 (1)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301815
 dashedName: problem-18-maximum-path-sum-i
 ---

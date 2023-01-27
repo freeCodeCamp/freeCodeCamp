@@ -1,7 +1,7 @@
 ---
 id: 5900f36e1000cf542c50fe81
 title: 'Problema 2: Apenas números pares da sequência de Fibonacci'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301838
 dashedName: problem-2-even-fibonacci-numbers
 ---
@@ -22,7 +22,7 @@ Considerando os números na sequência de Fibonacci cujos valores não excedem `
 assert(typeof fiboEvenSum(10) === 'number');
 ```
 
-A função deve retornar um valor par (`even`).
+A função deve retornar um valor par (even).
 
 ```js
 assert.equal(fiboEvenSum(10) % 2 === 0, true);

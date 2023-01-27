@@ -33,29 +33,29 @@ function equalityTest(myVal) {
 
 # --instructions--
 
-Add the equality operator to the indicated line so that the function will return the string `Equal` when `val` is equivalent to `12`.
+`val` が `12` と等しい場合に関数が文字列 `Equal` を返すように、指定された行に等価演算子を追加してください。
 
 # --hints--
 
-`testEqual(10)` should return the string `Not Equal`
+`testEqual(10)` は文字列 `Not Equal` を返す必要があります。
 
 ```js
 assert(testEqual(10) === 'Not Equal');
 ```
 
-`testEqual(12)` should return the string `Equal`
+`testEqual(12)` は文字列 `Equal` を返す必要があります。
 
 ```js
 assert(testEqual(12) === 'Equal');
 ```
 
-`testEqual("12")` should return the string `Equal`
+`testEqual("12")` は文字列 `Equal` を返す必要があります。
 
 ```js
 assert(testEqual('12') === 'Equal');
 ```
 
-You should use the `==` operator
+`==` 演算子を使用してください。
 
 ```js
 assert(code.match(/==/g) && !code.match(/===/g));

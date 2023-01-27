@@ -1,18 +1,18 @@
 ---
 id: 5a23c84252665b21eecc7ed5
 title: ナイトツアー
-challengeType: 5
+challengeType: 1
 forumTopicId: 302297
 dashedName: knights-tour
 ---
 
 # --description--
 
-[ナイトツアー](https://en.wikipedia.org/wiki/Knight%27s_tour)の問題: 空の `w` \* `h` のチェスボードがあり、その上の任意のマスに 1 つのナイトの駒が置いてあります。 ナイトは一連のルールに従って動き、チェスボード上のすべてのマスを 1 度だけ訪れなければなりません。 ツアーを「終了する」必要は*ない*ことに注意してください。つまり、ナイトは開始地点の一手以内を終了地点にする必要はありません。
+Knight's Tour Problem: You have an empty `width` \* `height` chessboard, but for a single knight on some square. ナイトは一連のルールに従って動き、チェスボード上のすべてのマスを 1 度だけ訪れなければなりません。 ツアーを「終了する」必要は*ない*ことに注意してください。つまり、ナイトは開始地点の一手以内を終了地点にする必要はありません。
 
 # --instructions--
 
-パラメータとして `w` と `h` を取る関数を記述し、上記のタスクの達成が可能な開始位置の数値を返してください。
+Write a function that takes `width` and `height` as parameters and returns the number of initial positions from where it is possible to achieve the task stated above.
 
 # --hints--
 
@@ -63,7 +63,7 @@ assert.equal(knightTour(8, 6), 48);
 ## --seed-contents--
 
 ```js
-function knightTour(w, h) {
+function knightTour(width, height) {
 
 }
 ```
@@ -71,7 +71,7 @@ function knightTour(w, h) {
 # --solutions--
 
 ```js
-function knightTour(w, h) {
+function knightTour(width, height) {
   function createBoards(rows, columns) {
     const board = [];
     const visited = [];
@@ -210,11 +210,11 @@ function knightTour(w, h) {
     [1, -2]
   ];
 
-  const [baseBoard, baseVisited] = createBoards(h, w);
+  const [baseBoard, baseVisited] = createBoards(height, width);
   fillAllowedMovesCounts(baseBoard);
   let solvedCount = 0;
-  for (let row = 0; row < h; row++) {
-    for (let column = 0; column < w; column++) {
+  for (let row = 0; row < height; row++) {
+    for (let column = 0; column < width; column++) {
       if (solveStart(baseBoard, baseVisited, row, column)) {
         solvedCount++;
       }

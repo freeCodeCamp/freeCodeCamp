@@ -1,7 +1,7 @@
 ---
 id: 5900f3a91000cf542c50febc
 title: 'Завдання 61: Циклічні фігурні числа'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302173
 dashedName: problem-61-cyclical-figurate-numbers
 ---

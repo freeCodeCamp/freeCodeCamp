@@ -44,7 +44,7 @@
 
 実行が正常に完了すると、ビルドパイプラインは対応するリリースパイプラインをトリガーします。 リリースパイプラインは、ビルドアーティファクトを収集し、それらをサーバーに移動し、稼働させる責任があります。
 
-ビルドとリリースのステータスは [こちら](#ビルド、テスト、デプロイスのテータス) からご確認いただけます。
+ビルドとリリースのステータスは [こちら](#ビルド、テスト、デプロイのステータス) からご確認いただけます。
 
 ## ビルドをトリガー・テスト・デプロイする
 
@@ -154,7 +154,7 @@
 
 スタッフがリリースを承認すると、パイプラインは freeCodeCamp.org の本番用 CDN および API サーバーにその変更を反映させます。
 
-## ビルド、テスト、デプロイスのテータス
+## ビルド、テスト、デプロイのステータス
 
 ここでは、コードベースの現在のテスト、ビルド、およびデプロイの状況を示します。
 
@@ -181,10 +181,10 @@
 |:-------- |:----- |:---------------------------------------- |
 | 学習       | 英語    | <https://www.freecodecamp.dev>           |
 |          | スペイン語 | <https://www.freecodecamp.dev/espanol>   |
-|          | 中国語   | <https://chinese.freecodecamp.dev>       |
+|          | 中国語   | <https://www.freecodecamp.dev/chinese>   |
 | ニュース     | 英語    | <https://www.freecodecamp.dev/news>      |
 | フォーラム    | 英語    | <https://forum.freecodecamp.dev>         |
-|          | 中国語   | <https://chinese.freecodecamp.dev/forum> |
+|          | 中国語   | <https://freecodecamp.dev/chinese/forum> |
 | API      | -     | `https://api.freecodecamp.dev`           |
 
 > [!NOTE] ドメイン名は **`freeCodeCamp.org`** とは異なります。 これは、検索エンジンのインデックス作成を防止し、プラットフォームの通常ユーザーの混乱を避けるための、意図的なものです。
@@ -197,7 +197,7 @@
 
 開発者チームは、リリース変更時に、`prod-staging` ブランチから `prod-current` への変更をマージします。 トップコミットは、サイト上で表示されるもののはずです。
 
-状況セクションにあるデプロイログおよびビルドにアクセスして、デプロイされた正確なバージョンを確認できます。 あるいは、[contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) で確認することもできます。
+ステータスセクションにあるビルド & デプロイログにアクセスして、デプロイされた正確なバージョンを確認できます。 または[コントリビューターチャットルーム](https://discord.gg/PRyKn3Vbay)で問い合わせてください。
 
 ### 既知の制限
 
@@ -459,14 +459,14 @@ sudo apt install build-essential
 7. サーバーを構築します。
 
    ```console
-   npm run create:config && npm run build:curriculum && npm run build:server
+   npm run prebuild && npm run build:curriculum && npm run build:server
    ```
 
 8. インスタンスを開始します。
 
    ```console
    cd api-server
-   pm2 start ./lib/production-start.js -i max --max-memory-restart 600M --name org
+   pm2 reload ecosystem.config.js
    ```
 
 ### ログとモニタリング
@@ -537,8 +537,8 @@ sudo apt install build-essential
 
    ```console
    npm i -g npm@8
-   npm i -g pm2
-   npm install -g serve
+   npm i -g pm2@4
+   npm install -g serve@13
    pm2 install pm2-logrotate
    pm2 startup
    ```
@@ -555,11 +555,11 @@ sudo apt install build-essential
    > Todo: この設定は S3 または Azure Blob ストレージに移動する必要があります。 
    > 
    > ```console
-   >    echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
+   >    echo "serve -c ../serve.json -p 50505 www" > client-start-primary.sh
    >    chmod +x client-start-primary.sh
    >    pm2 delete client-primary
    >    pm2 start  ./client-start-primary.sh --name client-primary
-   >    echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
+   >    echo "serve -c ../serve.json -p 52525 www" > client-start-secondary.sh
    >    chmod +x client-start-secondary.sh
    >    pm2 delete client-secondary
    >    pm2 start  ./client-start-secondary.sh --name client-secondary

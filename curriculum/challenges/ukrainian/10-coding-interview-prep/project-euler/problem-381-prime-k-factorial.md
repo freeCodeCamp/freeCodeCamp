@@ -1,7 +1,7 @@
 ---
 id: 5900f4ea1000cf542c50fffc
 title: 'Задача 381: Факторіал простого числа-k'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302045
 dashedName: problem-381-prime-k-factorial
 ---

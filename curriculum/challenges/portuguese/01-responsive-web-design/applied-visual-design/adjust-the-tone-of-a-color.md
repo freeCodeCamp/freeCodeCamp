@@ -20,9 +20,11 @@ Todos os elementos, por padrão, têm a propriedade `background-color` com o val
 O elemento `nav` deve ter a propriedade `background-color` de tom ciano usando a função `hsl()`.
 
 ```js
-assert(
-  code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi)
-);
+// Estilo calculado de hsl(180, 80%, 25%) resulta em rgb(13,115,115)
+assert.equal(
+  new __helpers.CSSHelp(document).getStyle('nav').getPropVal('background-color', true), 
+  'rgb(13,115,115)'
+)
 ```
 
 # --seed--

@@ -1,7 +1,7 @@
 ---
 id: 5900f3d61000cf542c50fee7
 title: '問題 103: 特殊和部分集合: 最適'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301727
 dashedName: problem-103-special-subset-sums-optimum
 ---
@@ -15,7 +15,10 @@ dashedName: problem-103-special-subset-sums-optimum
 
 与えられた n に対して $S(A)$ が最小化されている集合を、「最適な特殊和集合」と呼ぶことにします。 最初の 5 つの最適な特殊和集合は次のとおりです。
 
-$$\begin{align} & n = 1: \\{1\\} \\\\ & n = 2: \\{1, 2\\} \\\\ & n = 3: \\{2, 3, 4\\} \\\\ & n = 4: \\{3, 5, 6, 7\\} \\\\ & n = 5: \\{6, 9, 11, 12, 13\\} \\\\ \end{align}$$
+$$\begin{align}   & n = 1: \\{1\\} \\\\
+  & n = 2: \\{1, 2\\} \\\\   & n = 3: \\{2, 3, 4\\} \\\\
+  & n = 4: \\{3, 5, 6, 7\\} \\\\   & n = 5: \\{6, 9, 11, 12, 13\\} \\\\
+\end{align}$$
 
 与えられた最適な集合 $A = \\{a_1, a_2, \ldots, a_n\\}$ に対して、次に出現する最適な集合は $B = \\{b, a_1 + b, a_2 + b, \ldots, a_n + b\\}$ であり、ここで、b は前行の「途中の」要素です。
 

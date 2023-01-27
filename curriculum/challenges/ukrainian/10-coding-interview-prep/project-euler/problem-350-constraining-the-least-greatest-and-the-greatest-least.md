@@ -1,7 +1,7 @@
 ---
 id: 5900f4cb1000cf542c50ffdd
 title: 'Задача 350: Обмеження найменшого найбільшим та найбільшого найменшим'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302010
 dashedName: problem-350-constraining-the-least-greatest-and-the-greatest-least
 ---
@@ -16,7 +16,9 @@ dashedName: problem-350-constraining-the-least-greatest-and-the-greatest-least
 
 $f(G, L, N)$ - це кількість списків розміру $N$ з $gcd ≥ G$ та $lcm ≤ L$. Наприклад:
 
-$$\begin{align} & f(10, 100, 1) = 91 \\\\ & f(10, 100, 2) = 327 \\\\ & f(10, 100, 3) = 1135 \\\\ & f(10, 100, 1000)\bmod {101}^4 = 3\\,286\\,053 \end{align}$$
+$$\begin{align}   & f(10, 100, 1) = 91 \\\\
+  & f(10, 100, 2) = 327 \\\\   & f(10, 100, 3) = 1135 \\\\
+  & f(10, 100, 1000)\bmod {101}^4 = 3\\,286\\,053 \end{align}$$
 
 Знайдіть $f({10}^6, {10}^{12}, {10}^{18})\bmod {101}^4$.
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f4e81000cf542c50fffb
 title: '問題 380: 驚くべき迷路！'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302044
 dashedName: problem-380-amazing-mazes
 ---

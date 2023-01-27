@@ -123,7 +123,7 @@ assert.strictEqual(
 })();
 ```
 
-`GameOfChance` コンポーネントが初めて DOM にマウントされたら、その後ボタンがクリックされるたびに、`You Win!` または `You Lose!` のいずれかをランダムにレンダーする単一の `h1` 要素を返します。
+`GameOfChance` コンポーネントが初めて DOM にマウントされたら、その後ボタンがクリックされるたびに、`You Win!` または `You Lose!` のいずれかをランダムにレンダーする単一の `h1` 要素を返します。 注: このテストはランダムに失敗する可能性があります。 その場合は再実行してください。
 
 ```js
 (() => {
@@ -265,6 +265,11 @@ class GameOfChance extends React.Component {
 # --solutions--
 
 ```jsx
+// We want this to be deterministic for testing purposes.
+const randomSequence = [true, false, false, true, true, false, false, true, true, false];
+let index = 0;
+const fiftyFifty = () => randomSequence[index++ % randomSequence.length];
+
 class Results extends React.Component {
   constructor(props) {
     super(props);
@@ -290,11 +295,10 @@ class GameOfChance extends React.Component {
     });
   }
   render() {
-    const expression = Math.random() >= 0.5;
     return (
       <div>
         <button onClick={this.handleClick}>Play Again</button>
-        <Results fiftyFifty={expression} />
+        <Results fiftyFifty={fiftyFifty()} />
         <p>{'Turn: ' + this.state.counter}</p>
       </div>
     );

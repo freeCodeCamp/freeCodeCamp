@@ -1,8 +1,12 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9a
-title: 'Convolutional Neural Networks: Picking a Pretrained Model'
+title: 'Redes Neuronales Convolucionales: Eligiendo un Modelo Pre-entrenado'
 challengeType: 11
 videoId: h1XUt1AgIOI
+bilibiliIds:
+  aid: 463063633
+  bvid: BV1qL411x73q
+  cid: 409132626
 dashedName: convolutional-neural-networks-picking-a-pretrained-model
 ---
 
@@ -10,7 +14,7 @@ dashedName: convolutional-neural-networks-picking-a-pretrained-model
 
 ## --text--
 
-Fill in the blanks below to use Google's pre-trained MobileNet V2 model as a base for a convolutional neural network:
+Completa los siguientes espacios en blanco para utilizar el modelo pre-entrenado MobileNet V2 de Google como base para una red neuronal convolucional:
 
 ```py
 base_model = tf.__A__.applications.__B__(input_shape=(160, 160, 3),

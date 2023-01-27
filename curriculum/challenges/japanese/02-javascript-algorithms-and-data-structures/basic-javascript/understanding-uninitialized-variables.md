@@ -9,7 +9,7 @@ dashedName: understanding-uninitialized-variables
 
 # --description--
 
-JavaScript で変数が宣言されるとき、その初期値は `undefined` です。 `undefined` の変数に対して数値演算を行うと、結果は `NaN` になります。これは、<dfn>"Not a Number" (数字ではない)</dfn> という意味です。 `undefined` の変数と文字列を連結すると、文字通り `undefined` という<dfn>文字列</dfn>が得られます。
+JavaScript で変数が宣言されるとき、その初期値は `undefined` です。 `undefined` の変数に対して数値演算を行うと、結果は `NaN` になります。これは、<dfn>"Not a Number" (数字ではない)</dfn> という意味です。 `undefined` の変数を文字列と連結した場合には、`undefined` という<dfn>文字列</dfn>が得られます。
 
 # --instructions--
 
@@ -17,19 +17,19 @@ JavaScript で変数が宣言されるとき、その初期値は `undefined` �
 
 # --hints--
 
-`a` を定義し、計算の結果 `6` の値を持つようにしてください。
+`a` を定義し、最終的な値が `6` になるようにしてください。
 
 ```js
 assert(typeof a === 'number' && a === 6);
 ```
 
-`b` を定義し、計算の結果 `15` の値を持つようにしてください。
+`b` を定義し、最終的な値が `15` になるようにしてください。
 
 ```js
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` は `undefined` を含まず、文字列の値 `I am a String!` を持つようにしてください。
+`c` は `undefined` を含まず、最終的な値が文字列の `I am a String!` になるようにしてください。
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');

@@ -1,7 +1,7 @@
 ---
 id: a9bd25c716030ec90084d8a1
 title: Dividir e agrupar arrays
-challengeType: 5
+challengeType: 1
 forumTopicId: 16005
 dashedName: chunky-monkey
 ---

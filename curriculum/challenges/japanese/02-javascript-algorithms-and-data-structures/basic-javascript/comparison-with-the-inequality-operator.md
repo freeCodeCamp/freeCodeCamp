@@ -23,41 +23,41 @@ dashedName: comparison-with-the-inequality-operator
 
 # --instructions--
 
-Add the inequality operator `!=` in the `if` statement so that the function will return the string `Not Equal` when `val` is not equivalent to `99`.
+`val` が `99` と等しくない場合に関数が文字列 `Not Equal` を返すように、`if` ステートメントに不等価演算子 `!=` を追加してください。
 
 # --hints--
 
-`testNotEqual(99)` should return the string `Equal`
+`testNotEqual(99)` は文字列 `Equal` を返す必要があります。
 
 ```js
 assert(testNotEqual(99) === 'Equal');
 ```
 
-`testNotEqual("99")` should return the string `Equal`
+`testNotEqual("99")` は文字列 `Equal` を返す必要があります。
 
 ```js
 assert(testNotEqual('99') === 'Equal');
 ```
 
-`testNotEqual(12)` should return the string `Not Equal`
+`testNotEqual(12)` は文字列 `Not Equal` を返す必要があります。
 
 ```js
 assert(testNotEqual(12) === 'Not Equal');
 ```
 
-`testNotEqual("12")` should return the string `Not Equal`
+`testNotEqual("12")` は文字列 `Not Equal` を返す必要があります。
 
 ```js
 assert(testNotEqual('12') === 'Not Equal');
 ```
 
-`testNotEqual("bob")` should return the string `Not Equal`
+`testNotEqual("bob")` は文字列 `Not Equal` を返す必要があります。
 
 ```js
 assert(testNotEqual('bob') === 'Not Equal');
 ```
 
-You should use the `!=` operator
+`!=` 演算子を使用してください。
 
 ```js
 assert(code.match(/(?!!==)!=/));

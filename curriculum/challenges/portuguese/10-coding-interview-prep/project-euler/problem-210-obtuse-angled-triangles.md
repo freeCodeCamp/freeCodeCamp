@@ -1,7 +1,7 @@
 ---
 id: 5900f43e1000cf542c50ff50
 title: 'Problema 210: Triângulos de ângulos obtusos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301852
 dashedName: problem-210-obtuse-angled-triangles
 ---

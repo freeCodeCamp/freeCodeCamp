@@ -1,19 +1,19 @@
 ---
 id: 5a23c84252665b21eecc7eaf
 title: IBAN
-challengeType: 5
+challengeType: 1
 forumTopicId: 302289
 dashedName: iban
 ---
 
 # --description--
 
-The [International Bank Account Number (IBAN)](https://en.wikipedia.org/wiki/International_Bank_Account_Number) is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating [transcription errors](https://en.wikipedia.org/wiki/Transcription_error).
+The International Bank Account Number (IBAN) is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating transcription errors.
 
-The IBAN consists of up to 34 alphanumeric characters:
+The <abbr title="International Bank Account Number">IBAN</abbr> consists of up to 34 alphanumeric characters:
 
 <ul>
-  <li>first the two-letter ISO 3166-1 alpha-2 country code</li>
+  <li>first the two-letter <abbr title="International Organization for Standardization">ISO</abbr> 3166-1 alpha-2 country code</li>
   <li>then two check digits, and</li>
   <li>finally a country-specific Basic Bank Account Number (BBAN).</li>
 </ul>
@@ -95,10 +95,10 @@ function isValid(iban) {
     iban = __helpers.removeWhiteSpace(iban)
     if (!iban.match(/^[\dA-Z]+$/)) return false
     var len = iban.length
-    if (len != ibanLen[iban.substr(0,2)]) return false
-    iban = iban.substr(4) + iban.substr(0,4)
+    if (len != ibanLen[iban.substring(0,2)]) return false
+    iban = iban.substring(4) + iban.substring(0,4)
     for (var s='', i=0; i<len; i+=1) s+=parseInt(iban.charAt(i),36)
-    for (var m=s.substr(0,15)%97, s=s.substr(15); s; s=s.substr(13)) m=(m+s.substr(0,13))%97
+    for (var m=s.substring(0,15)%97, s=s.substring(15); s; s=s.substring(13)) m=(m+s.substring(0,13))%97
     return m == 1
 }
 ```

@@ -1,7 +1,7 @@
 ---
 id: 5900f5181000cf542c51002a
 title: 'Завдання 427: n-послідовності'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302097
 dashedName: problem-427-n-sequences
 ---

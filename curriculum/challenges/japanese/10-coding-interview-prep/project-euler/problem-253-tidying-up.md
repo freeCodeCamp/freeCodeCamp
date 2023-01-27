@@ -1,7 +1,7 @@
 ---
 id: 5900f4691000cf542c50ff7c
 title: '問題 253: パズルを片付ける'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301901
 dashedName: problem-253-tidying-up
 ---

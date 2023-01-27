@@ -1,7 +1,7 @@
 ---
 id: 5900f3d61000cf542c50fee7
 title: 'Problema 103: Quantidade especial de subconjuntos: ideal'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301727
 dashedName: problem-103-special-subset-sums-optimum
 ---
@@ -15,7 +15,10 @@ Vamos $S(A)$ representar a soma dos elementos no conjunto A, de tamanho n. Vamos
 
 Se $S(A)$ for minimizado por um determinado n, vamos chamar de um conjunto de soma especial ideal. Os primeiros cinco conjuntos de somas especiais ideais são fornecidos abaixo.
 
-$$\begin{align} & n = 1: \\{1\\} \\\\ & n = 2: \\{1, 2\\} \\\\ & n = 3: \\{2, 3, 4\\} \\\\ & n = 4: \\{3, 5, 6, 7\\} \\\\ & n = 5: \\{6, 9, 11, 12, 13\\} \\\\ \end{align}$$
+$$\begin{align}   & n = 1: \\{1\\} \\\\
+  & n = 2: \\{1, 2\\} \\\\   & n = 3: \\{2, 3, 4\\} \\\\
+  & n = 4: \\{3, 5, 6, 7\\} \\\\   & n = 5: \\{6, 9, 11, 12, 13\\} \\\\
+\end{align}$$
 
 Parece que, para um determinado conjunto ideal, $A = \\{a_1, a_2, \ldots, a_n\\}$, o próximo conjunto ideal é do formato $B = \\{b, a_1 + b, a_2 + b, \ldots, a_n + b\\}$, onde b é o elemento do "meio" na linha anterior.
 

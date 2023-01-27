@@ -16,13 +16,11 @@ Al igual que el operador de igualdad, el operador mayor que convertirá los tipo
 **Ejemplos**
 
 ```js
-5   >  3
-7   > '3'
-2   >  3
-'1' >  9
+5   >  3  // true
+7   > '3' // true
+2   >  3  // false
+'1' >  9  // false
 ```
-
-En orden, estas expresiones se evaluarían como `true`, `true`, `false` y `false`.
 
 # --instructions--
 

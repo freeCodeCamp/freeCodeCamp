@@ -1,7 +1,7 @@
 ---
 id: 5900f4841000cf542c50ff97
 title: 'Problem 280: Ant and seeds'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301931
 dashedName: problem-280-ant-and-seeds
 ---

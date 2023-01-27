@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7e78
 title: Спільний FizzBuzz
-challengeType: 5
+challengeType: 1
 forumTopicId: 302273
 dashedName: general-fizzbuzz
 ---
 
 # --description--
 
-Напишіть спрощену версію [FizzBuzz](https://rosettacode.org/wiki/FizzBuzz) яка спрацює для буль якого переліку факторів, разом з їх словами.
+Write a generalized version of <a href="https://rosettacode.org/wiki/FizzBuzz" target="_blank" rel="noopener noreferrer nofollow">FizzBuzz</a> that works for any list of factors, along with their words.
 
 В основному, це реалізація "fizzbuzz", де надаються правила гри користувачу. Створіть функцію для реалізації цього. Функція повинна приймати два параметри.
 

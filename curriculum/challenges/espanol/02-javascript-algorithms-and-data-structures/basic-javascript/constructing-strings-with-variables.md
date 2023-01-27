@@ -9,7 +9,7 @@ dashedName: constructing-strings-with-variables
 
 # --description--
 
-A veces necesitarás construir una cadena, al estilo [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs). Al usar el operador de concatenación (`+`), puedes insertar una o más variables en una cadena que estés construyendo.
+A veces necesitarás construir una cadena. Al usar el operador de concatenación (`+`), puedes insertar una o más variables en una cadena que estés construyendo.
 
 Ejemplo:
 

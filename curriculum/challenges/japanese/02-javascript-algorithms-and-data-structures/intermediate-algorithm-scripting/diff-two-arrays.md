@@ -1,7 +1,7 @@
 ---
 id: a5de63ebea8dbee56860f4f2
 title: 2 つの配列の違い
-challengeType: 5
+challengeType: 1
 forumTopicId: 16008
 dashedName: diff-two-arrays
 ---

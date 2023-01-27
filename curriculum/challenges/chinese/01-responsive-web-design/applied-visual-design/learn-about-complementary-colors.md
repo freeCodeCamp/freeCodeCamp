@@ -17,7 +17,7 @@ dashedName: learn-about-complementary-colors
 
 <blockquote>红色（#FF0000）和蓝绿色 (#00FFFF)<br>绿色（#00FF00）和品红色（#FF00FF）<br>蓝色（#0000FF）和黄色（#FFFF00）</blockquote>
 
-这与我们许多人在学校学的过时的 RYB 色彩模式不同，RYB 有不同的原色和补色。 现代色彩理论使用 RGB 模型（如在计算机屏幕上）和 CMY（K）模型（如在印刷中）。 在[这里](https://en.wikipedia.org/wiki/Color_model)阅读了解更多有关这个复杂主题的信息。
+这与我们许多人在学校学的过时的 RYB 色彩模式不同，RYB 有不同的原色和补色。 现代色彩理论使用 RGB 模型（如在计算机屏幕上）和 CMY（K）模型（如在印刷中）。
 
 现在，很多在线选色工具也为我们提供了寻找补色的功能。
 

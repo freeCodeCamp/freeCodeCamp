@@ -8,7 +8,7 @@ dashedName: hash-and-compare-passwords-asynchronously
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+Lembrando que este projeto está sendo construído a partir do <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, ou pode ser clonado no <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Como o hashing é projetado para ser computacionalmente intensivo, é recomendável fazê-lo de maneira assíncrona em seu servidor para evitar o bloqueio de conexões de entrada enquanto você faz o hash. Tudo o que você precisa fazer para fazer o hash de uma senha de modo assíncrona é a chamada
 
@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-Adicione isso à sua função de hash existente (já que você precisa esperar que o hash termine antes de chamar a função de comparação) depois de registrar o hash completo e registra 'res' para o console dentro da comparação. Você deve ver um hash no console. Em seguida, 'true' é impresso! Se você mudar 'myPlaintextPassword' na função de comparação para 'someOtherPlaintextPassword', então ela deve dizer false.
+Adicione isso à sua função de hash existente (já que você precisa esperar que o hash termine antes de chamar a função de comparação) depois de registrar o hash completo e registra 'res' para o console dentro da comparação. Você deve ver um hash no console e a palavra 'true' é impressa! Se você mudar 'myPlaintextPassword' na função de comparação para 'qualquerOutraSenha', então ela deve dizer false.
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {

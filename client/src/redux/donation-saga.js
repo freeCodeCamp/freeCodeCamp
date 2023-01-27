@@ -1,11 +1,12 @@
+import i18next from 'i18next';
 import {
+  call,
+  delay,
   put,
   select,
+  take,
   takeEvery,
-  takeLeading,
-  delay,
-  call,
-  take
+  takeLeading
 } from 'redux-saga/effects';
 
 import {
@@ -13,23 +14,26 @@ import {
   postChargeStripe,
   postChargeStripeCard
 } from '../utils/ajax';
+import { stringifyDonationEvents } from '../utils/analyticsStrings';
+import { PaymentProvider } from '../../../config/donation-settings';
 import { actionTypes as appTypes } from './action-types';
-
 import {
   openDonationModal,
+  postChargeComplete,
+  postChargeProcessing,
+  postChargeError,
   preventBlockDonationRequests,
-  shouldRequestDonationSelector,
   preventProgressDonationRequests,
+  executeGA
+} from './actions';
+import {
+  isDonatingSelector,
   recentlyClaimedBlockSelector,
-  addDonationComplete,
-  addDonationError,
-  postChargeStripeComplete,
-  postChargeStripeError,
-  postChargeStripeCardComplete,
-  postChargeStripeCardError
-} from './';
+  shouldRequestDonationSelector,
+  isSignedInSelector
+} from './selectors';
 
-const defaultDonationErrorMessage = `Something is not right. Please contact donors@freecodecamp.org`;
+const defaultDonationErrorMessage = i18next.t('donate.error-2');
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
@@ -46,31 +50,74 @@ function* showDonateModalSaga() {
   }
 }
 
-function* addDonationSaga({ payload }) {
-  try {
-    yield call(addDonation, payload);
-    yield put(addDonationComplete());
-  } catch (error) {
-    const data =
-      error.response && error.response.data
-        ? error.response.data
-        : {
-            message: defaultDonationErrorMessage
-          };
-    yield put(addDonationError(data.message));
+export function* postChargeSaga({
+  payload,
+  payload: {
+    paymentProvider,
+    paymentContext,
+    amount,
+    duration,
+    handleAuthentication,
+    paymentMethodId
   }
-}
-
-function* postChargeStripeSaga({ payload }) {
+}) {
   try {
-    yield call(postChargeStripe, payload);
-    yield put(postChargeStripeComplete());
+    if (paymentProvider !== PaymentProvider.Patreon) {
+      yield put(postChargeProcessing());
+    }
+
+    if (paymentProvider === PaymentProvider.Stripe) {
+      yield call(postChargeStripe, payload);
+    } else if (paymentProvider === PaymentProvider.StripeCard) {
+      const optimizedPayload = { paymentMethodId, amount, duration };
+      const response = yield call(postChargeStripeCard, optimizedPayload);
+      const error = response?.data?.error;
+      if (error) {
+        yield stripeCardErrorHandler(
+          error,
+          handleAuthentication,
+          error.client_secret,
+          response.paymentMethodId,
+          optimizedPayload
+        );
+
+        //if the authentication does not throw an error, add a donation
+        yield call(addDonation, { amount, duration });
+      }
+    } else if (paymentProvider === PaymentProvider.Paypal) {
+      // If the user is signed in and the payment goes through call api
+      let isSignedIn = yield select(isSignedInSelector);
+      // look into skip add donation
+      // what to do with "data" that comes throug
+      if (isSignedIn) yield call(addDonation, { amount, duration });
+    }
+    if (
+      [
+        PaymentProvider.Paypal,
+        PaymentProvider.Stripe,
+        PaymentProvider.StripeCard
+      ].includes(paymentProvider)
+    ) {
+      yield put(postChargeComplete());
+      yield call(setDonationCookie);
+    }
+    yield put(
+      executeGA({
+        event:
+          paymentProvider === PaymentProvider.Patreon
+            ? 'donationrelated'
+            : 'donation',
+        action: stringifyDonationEvents(paymentContext, paymentProvider),
+        duration,
+        amount
+      })
+    );
   } catch (error) {
     const err =
       error.response && error.response.data
         ? error.response.data.error
         : defaultDonationErrorMessage;
-    yield put(postChargeStripeError(err));
+    yield put(postChargeError(err));
   }
 }
 
@@ -94,34 +141,24 @@ function* stripeCardErrorHandler(
   }
 }
 
-function* postChargeStripeCardSaga({
-  payload: { paymentMethodId, amount, duration, handleAuthentication }
-}) {
-  try {
-    const optimizedPayload = { paymentMethodId, amount, duration };
-    const { error } = yield call(postChargeStripeCard, optimizedPayload);
-    if (error) {
-      yield stripeCardErrorHandler(
-        error,
-        handleAuthentication,
-        error.client_secret,
-        paymentMethodId,
-        optimizedPayload
-      );
+export function* setDonationCookie() {
+  if (document?.cookie) {
+    const isDonating = yield select(isDonatingSelector);
+    const isDonorCookieSet = document.cookie
+      .split(';')
+      .some(item => item.trim().startsWith('isDonor=true'));
+    if (isDonating) {
+      if (!isDonorCookieSet) {
+        document.cookie = 'isDonor=true';
+      }
     }
-    yield call(addDonation, optimizedPayload);
-    yield put(postChargeStripeCardComplete());
-  } catch (error) {
-    const errorMessage = error.message || defaultDonationErrorMessage;
-    yield put(postChargeStripeCardError(errorMessage));
   }
 }
 
 export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
-    takeEvery(types.addDonation, addDonationSaga),
-    takeLeading(types.postChargeStripe, postChargeStripeSaga),
-    takeLeading(types.postChargeStripeCard, postChargeStripeCardSaga)
+    takeLeading(types.postCharge, postChargeSaga),
+    takeEvery(types.fetchUserComplete, setDonationCookie)
   ];
 }

@@ -45,13 +45,13 @@ Reescribe la función asignada a la variable `magic`, la cual devuelve una `new 
 Debes reemplazar la palabra clave `var`.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g)
 ```
 
 `magic` debe ser una variable constante (utilizando `const`).
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+magic/g));
+assert.match(code, /const\s+magic/g)
 ```
 
 `magic` debe ser una función (`function`).
@@ -69,7 +69,7 @@ assert(magic().setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0));
 La palabra clave `function` no debe ser usada.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/function/g));
+assert.notMatch(code, /function/g)
 ```
 
 # --seed--

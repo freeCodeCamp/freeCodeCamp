@@ -5,8 +5,12 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
-
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
+import { connect } from 'react-redux';
+
+import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
+import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
+import { openModal } from '../../templates/Challenges/redux/actions';
 import {
   projectMap,
   legacyProjectMap
@@ -50,9 +54,14 @@ const propTypes = {
   isRelationalDatabaseCertV8: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
   isSciCompPyCertV7: PropTypes.bool,
+  openModal: PropTypes.func,
   t: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
+};
+
+const mapDispatchToProps = {
+  openModal
 };
 
 const certifications = Object.keys(projectMap);
@@ -161,7 +170,7 @@ export class CertificationSettings extends Component {
   getUserIsCertMap = () => isCertMapSelector(this.props);
 
   getProjectSolution = (projectId, projectTitle) => {
-    const { completedChallenges } = this.props;
+    const { completedChallenges, openModal } = this.props;
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
@@ -171,8 +180,7 @@ export class CertificationSettings extends Component {
     }
 
     const { solution, challengeFiles } = completedProject;
-
-    const onClickHandler = () =>
+    const showUserCode = () =>
       this.setState({
         solutionViewer: {
           projectTitle,
@@ -182,12 +190,33 @@ export class CertificationSettings extends Component {
         }
       });
 
+    const challengeData = completedProject
+      ? {
+          ...completedProject,
+          challengeFiles:
+            completedProject?.challengeFiles?.map(regeneratePathAndHistory) ??
+            null
+        }
+      : null;
+
+    const showProjectPreview = () => {
+      this.setState({
+        projectViewer: {
+          previewTitle: projectTitle,
+          challengeData
+        }
+      });
+      openModal('projectPreview');
+    };
+
     return (
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         dataCy={projectTitle}
-        showFilesSolution={onClickHandler}
-        displayContext={'settings'}
+        projectTitle={projectTitle}
+        showUserCode={showUserCode}
+        showProjectPreview={showProjectPreview}
+        displayContext='settings'
       ></SolutionDisplayWidget>
     );
   };
@@ -199,7 +228,7 @@ export class CertificationSettings extends Component {
       <FullWidthRow key={certName}>
         <Spacer />
         <h3 className='text-center' id={`cert-${certSlug}`}>
-          {certName}
+          {t(`certification.title.${certName}`, certName)}
         </h3>
         <Table>
           <thead>
@@ -236,10 +265,12 @@ export class CertificationSettings extends Component {
     return projectsMap[certName]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
-          <td className='project-title col-sm-8'>
-            <Link to={link}>{title}</Link>
+          <td className='project-title col-sm-8 col-xs-8'>
+            <Link to={link}>
+              {t(`certification.project.title.${title}`, title)}
+            </Link>
           </td>
-          <td className='project-solution col-sm-4'>
+          <td className='project-solution col-sm-4 col-xs-4'>
             {this.getProjectSolution(id, title)}
           </td>
         </tr>
@@ -250,11 +281,13 @@ export class CertificationSettings extends Component {
             <Button
               block={true}
               bsStyle='primary'
+              className={'col-xs-12'}
               href={certLocation}
               data-cy={`btn-for-${certSlug}`}
               onClick={createClickHandler(certSlug)}
             >
-              {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
+              {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}{' '}
+              <span className='sr-only'>{certName}</span>
             </Button>
           </td>
         </tr>
@@ -308,20 +341,30 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={certSlug}>
         <Spacer />
-        <h3 className='text-center'>Legacy Full Stack Certification</h3>
+        <h3 className='text-center'>
+          {t('certification.title.Legacy Full Stack Certification')}
+        </h3>
         <div>
           <p>
             {t('settings.claim-legacy', {
-              cert: 'Legacy Full Stack Certification'
+              cert: t('certification.title.Legacy Full Stack Certification')
             })}
           </p>
           <ul>
-            <li>Responsive Web Design</li>
-            <li>JavaScript Algorithms and Data Structures</li>
-            <li>Front End Development Libraries</li>
-            <li>Data Visualization</li>
-            <li>Back End Development and APIs</li>
-            <li>Legacy Information Security and Quality Assurance</li>
+            <li>{t('certification.title.Responsive Web Design')}</li>
+            <li>
+              {t(
+                'certification.title.JavaScript Algorithms and Data Structures'
+              )}
+            </li>
+            <li>{t('certification.title.Front End Development Libraries')}</li>
+            <li>{t('certification.title.Data Visualization')}</li>
+            <li>{t('certification.title.Back End Development and APIs')}</li>
+            <li>
+              {t(
+                'certification.title.Legacy Information Security and Quality Assurance'
+              )}
+            </li>
           </ul>
         </div>
 
@@ -361,11 +404,9 @@ export class CertificationSettings extends Component {
   };
 
   render() {
-    const {
-      solutionViewer: { challengeFiles, solution, isOpen, projectTitle }
-    } = this.state;
-
+    const { solutionViewer, projectViewer } = this.state;
     const { t } = this.props;
+
     return (
       <ScrollableAnchor id='certification-settings'>
         <section className='certification-settings'>
@@ -378,16 +419,15 @@ export class CertificationSettings extends Component {
           {legacyCertifications.map(certName =>
             this.renderCertifications(certName, legacyProjectMap)
           )}
-          {isOpen ? (
-            <ProjectModal
-              challengeFiles={challengeFiles}
-              handleSolutionModalHide={this.handleSolutionModalHide}
-              isOpen={isOpen}
-              projectTitle={projectTitle}
-              solution={solution}
-              t={t}
-            />
-          ) : null}
+          <ProjectModal
+            {...solutionViewer}
+            handleSolutionModalHide={this.handleSolutionModalHide}
+          />
+          <ProjectPreviewModal
+            {...projectViewer}
+            closeText={t('buttons.close')}
+            showProjectPreview={true}
+          />
         </section>
       </ScrollableAnchor>
     );
@@ -397,4 +437,7 @@ export class CertificationSettings extends Component {
 CertificationSettings.displayName = 'CertificationSettings';
 CertificationSettings.propTypes = propTypes;
 
-export default withTranslation()(CertificationSettings);
+export default connect(
+  null,
+  mapDispatchToProps
+)(withTranslation()(CertificationSettings));

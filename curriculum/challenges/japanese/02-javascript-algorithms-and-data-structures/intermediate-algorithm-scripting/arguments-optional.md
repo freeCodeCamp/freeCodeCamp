@@ -1,7 +1,7 @@
 ---
 id: a97fd23d9b809dac9921074f
 title: 省略可能な引数
-challengeType: 5
+challengeType: 1
 forumTopicId: 14271
 dashedName: arguments-optional
 ---
@@ -64,6 +64,12 @@ assert.isUndefined(addTogether(2)([3]));
 
 ```js
 assert.isUndefined(addTogether('2', 3));
+```
+
+`addTogether(5, undefined)` は `undefined` を返す必要があります。
+
+```js
+assert.isUndefined(addTogether(5, undefined));
 ```
 
 # --seed--

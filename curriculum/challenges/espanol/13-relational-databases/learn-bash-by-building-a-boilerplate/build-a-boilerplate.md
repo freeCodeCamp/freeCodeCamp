@@ -1,6 +1,6 @@
 ---
 id: 5ea8adfab628f68d805bfc5e
-title: Build a Boilerplate
+title: Construye un Boilerplate
 challengeType: 12
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate
@@ -9,7 +9,7 @@ dashedName: build-a-boilerplate
 
 # --description--
 
-In this 170 lesson course, you will learn basic commands by creating a website boilerplate using only the command line.
+En este curso de 170 lecciones, aprenderá los comandos del terminal creando un boilerplate del sitio web usando sólo la línea de comandos.
 
 # --instructions--
 

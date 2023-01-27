@@ -1,0 +1,111 @@
+---
+id: 615f4f9e4a40566b776a8f38
+title: Step 27
+challengeType: 0
+dashedName: step-27
+---
+
+# --description--
+
+Create a new `.large` selector and give it a `height` property set to `10px`. Also create an `.large, .medium` selector and set the `background-color` property to `black`.
+
+# --hints--
+
+You should have a new `.large` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.large'));
+```
+
+Your `.large` selector should have a `height` property set to `10px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.large')?.height === '10px');
+```
+
+You should have a new `.large, .medium` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.large, .medium'));
+```
+
+Your `.large, .medium` selector should have a `background-color` property set to `black`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.large, .medium')?.backgroundColor === 'black');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nutrition Label</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="label">
+    <header>
+      <h1 class="bold">Nutrition Facts</h1>
+      <div class="divider"></div>
+      <p>8 servings per container</p>
+      <p class="bold">Serving size <span>2/3 cup (55g)</span></p>
+    </header>
+    <div class="divider large"></div>
+  </div>
+</body>
+</html>
+```
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.label {
+  border: 2px solid black;
+  width: 270px;
+  margin: 20px auto;
+  padding: 0 7px;
+}
+
+header h1 {
+  text-align: center;
+  margin: -4px 0;
+  letter-spacing: 0.15px
+}
+
+p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+```

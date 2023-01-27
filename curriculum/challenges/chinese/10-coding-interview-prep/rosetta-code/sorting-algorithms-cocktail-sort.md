@@ -1,36 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8004
 title: Sorting algorithms/Cocktail sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302312
 dashedName: sorting-algorithmscocktail-sort
 ---
 
 # --description--
 
-The cocktail shaker sort is an improvement on the [Bubble Sort](https://rosettacode.org/wiki/Bubble Sort). The improvement is basically that values "bubble" both directions through the array, because on each iteration the cocktail shaker sort bubble sorts once forwards and once backwards. Pseudocode for the algorithm (from [wikipedia](https://en.wikipedia.org/wiki/Cocktail sort)):
-
-<pre><b>function</b> <i>cocktailSort</i>( A : list of sortable items )
-  <b>do</b>
-    swapped := false
-    <b>for each</b> i <b>in</b> 0 <b>to</b> length( A ) - 2 <b>do</b>
-      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b> <i>// test whether the two</i>
-                                <i>// elements are in the wrong</i>
-                                <i>// order</i>
-        swap( A[ i ], A[ i+1 ] ) <i>// let the two elements</i>
-                                 <i>// change places</i>
-        swapped := true;
-    <b>if</b> swapped = false <b>then</b>
-      <i>// we can exit the outer loop here if no swaps occurred.</i>
-      <b>break do-while loop</b>;
-    swapped := false
-    <b>for each</b> i <b>in</b> length( A ) - 2 <b>down to</b> 0 <b>do</b>
-      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b>
-        swap( A[ i ], A[ i+1 ] )
-        swapped := true;
-  <b>while</b> swapped; <i>// if no elements have been swapped,</i>
-                <i>// then the list is sorted</i>
-</pre>
+The <a href="https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort" target="_blank" rel="noopener noreferrer nofollow">cocktail sort</a> is an improvement on the Bubble Sort. Given an array of numbers, the cocktail sort will traverse the array from start to finish, moving the largest number to the end. Then, it will traverse the array backwards and move the smallest number to the start. It repeats these two passes, moving the next largest/smallest number to its correct position in the array until it is sorted.
 
 # --instructions--
 

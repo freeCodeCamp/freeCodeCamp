@@ -23,11 +23,11 @@ obj.newProp = "Test";
 console.log(obj); 
 ```
 
-Gli assegnamenti `obj.review` e `obj.newProp` provocheranno errori, perché il nostro editor viene eseguito in modalità rigorosa per impostazione predefinita, e la console visualizzerà il valore `{ name: "FreeCodeCamp", review: "Awesome" }`.
+Gli assegnamenti `obj.review` e `obj.newProp` provocheranno errori, perché il nostro editor viene eseguito in modalità rigorosa per impostazione predefinita e la console mostrerà il valore `{ name: "FreeCodeCamp", review: "Awesome" }`.
 
 # --instructions--
 
-In questa utilizzerai `Object.freeze` per impedire di cambiare le costanti matematiche. È necessario congelare l'oggetto `MATH_CONSTANTS` in modo che nessuno sia in grado di modificare il valore di `PI`, aggiungere o eliminare proprietà.
+In questa sfida utilizzerai `Object.freeze` per impedire di cambiare le costanti matematiche. È necessario congelare l'oggetto `MATH_CONSTANTS` in modo che nessuno sia in grado di modificare il valore di `PI`, aggiungere o eliminare proprietà.
 
 # --hints--
 

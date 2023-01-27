@@ -1,4 +1,6 @@
-name: Node.js CI - Test Upcoming
+name: CI - Node.js Test Upcoming
+env:
+  NODE_OPTIONS: '--max_old_space_size=6144'
 on:
   push:
     branches:
@@ -9,25 +11,27 @@ on:
     # run this Action every 14 days
     - cron: '0 * */14 * *'
   workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   lint:
     name: Lint
     runs-on: ubuntu-20.04
-
     strategy:
-      fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
+      fail-fast: false
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
 
       - name: Set Environment variables
         run: |
@@ -40,6 +44,8 @@ jobs:
         run: |
           npm ci
           npm run create:config
+          npm i --prefix=curriculum-server
+          npm i --prefix=web
           npm run build:curriculum
           npm run lint
 
@@ -51,17 +57,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
 
       - name: Set Environment variables
         run: |

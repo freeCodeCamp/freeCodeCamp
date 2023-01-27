@@ -23,53 +23,53 @@ dashedName: comparison-with-the-less-than-or-equal-to-operator
 
 # --instructions--
 
-Add the less than or equal to operator to the indicated lines so that the return statements make sense.
+return ステートメントの意味が正しくなるように、指定された行に小なりイコール演算子を追加してください。
 
 # --hints--
 
-`testLessOrEqual(0)` should return the string `Smaller Than or Equal to 12`
+`testLessOrEqual(0)` は文字列 `Smaller Than or Equal to 12` を返す必要があります。
 
 ```js
 assert(testLessOrEqual(0) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(11)` should return the string `Smaller Than or Equal to 12`
+`testLessOrEqual(11)` は文字列 `Smaller Than or Equal to 12` を返す必要があります。
 
 ```js
 assert(testLessOrEqual(11) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(12)` should return the string `Smaller Than or Equal to 12`
+`testLessOrEqual(12)` は文字列 `Smaller Than or Equal to 12` を返す必要があります。
 
 ```js
 assert(testLessOrEqual(12) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(23)` should return the string `Smaller Than or Equal to 24`
+`testLessOrEqual(23)` は文字列 `Smaller Than or Equal to 24` を返す必要があります。
 
 ```js
 assert(testLessOrEqual(23) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(24)` should return the string `Smaller Than or Equal to 24`
+`testLessOrEqual(24)` は文字列 `Smaller Than or Equal to 24` を返す必要があります。
 
 ```js
 assert(testLessOrEqual(24) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(25)` should return the string `More Than 24`
+`testLessOrEqual(25)` は文字列 `More Than 24` を返す必要があります。
 
 ```js
 assert(testLessOrEqual(25) === 'More Than 24');
 ```
 
-`testLessOrEqual(55)` should return the string `More Than 24`
+`testLessOrEqual(55)` は文字列 `More Than 24` を返す必要があります。
 
 ```js
 assert(testLessOrEqual(55) === 'More Than 24');
 ```
 
-You should use the `<=` operator at least twice
+`<=` 演算子を 2 回以上使用してください。
 
 ```js
 assert(code.match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);

@@ -1,14 +1,14 @@
 ---
 id: 594db4d0dedb4c06a2a4cefd
 title: バベッジの問題
-challengeType: 5
+challengeType: 1
 forumTopicId: 302229
 dashedName: babbage-problem
 ---
 
 # --description--
 
-[チャールズ・バベッジ](https://en.wikipedia.org/wiki/Charles_Babbage "wp: Charles_Babbage")は、解析機関が解決できる問題の種類に目を向け、次の例を挙げました。
+Charles Babbage, looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:
 
 <blockquote>
   2乗の末尾が269,696になる最小の正の整数は何ですか?

@@ -1,14 +1,14 @@
 ---
 id: 594db4d0dedb4c06a2a4cefd
 title: Babbage problem
-challengeType: 5
+challengeType: 1
 forumTopicId: 302229
 dashedName: babbage-problem
 ---
 
 # --description--
 
-[Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage "wp: Charles_Babbage"), looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:
+Charles Babbage, looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:
 
 <blockquote>
   What is the smallest positive integer whose square ends in the digits 269,696?
@@ -17,7 +17,7 @@ dashedName: babbage-problem
 
 He thought the answer might be 99,736, whose square is 9,947,269,696; but he couldn't be certain.
 
-The task is to find out if Babbage had the right answer.
+任務是找出巴貝奇是否有正確的答案。
 
 # --instructions--
 

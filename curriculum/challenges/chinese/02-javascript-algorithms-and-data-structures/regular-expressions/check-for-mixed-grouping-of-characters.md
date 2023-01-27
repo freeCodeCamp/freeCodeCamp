@@ -58,6 +58,20 @@ myRegex.lastIndex = 0;
 assert(!myRegex.test('Frank Roosevelt'));
 ```
 
+你的正则 `myRegex` 测试 `FranklinRoosevelt` 应该返回 `false`。
+
+```js
+myRegex.lastIndex = 0;
+assert(!myRegex.test('FranklinRoosevelt'));
+```
+
+你的正则 `myRegex` 测试 `EleanorRoosevelt` 应该返回 `false`。
+
+```js
+myRegex.lastIndex = 0;
+assert(!myRegex.test('EleanorRoosevelt'));
+```
+
 你应该使用 `.test()` 方法来检测正则表达式。
 
 ```js
@@ -85,6 +99,6 @@ let result = false; // Change this line
 
 ```js
 let myString = "Eleanor Roosevelt";
-let myRegex = /(Franklin|Eleanor).*Roosevelt/;
+let myRegex = /(Franklin|Eleanor) (([A-Z]\.?|[A-Z][a-z]+) )?Roosevelt/;
 let result = myRegex.test(myString);
 ```

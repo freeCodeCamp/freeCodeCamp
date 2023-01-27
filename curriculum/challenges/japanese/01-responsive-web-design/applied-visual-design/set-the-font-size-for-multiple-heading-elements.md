@@ -11,7 +11,9 @@ dashedName: set-the-font-size-for-multiple-heading-elements
 
 `font-size` プロパティは、指定された要素内のテキストの大きさを指定するために使われます。 このルールは色々な要素に使うことができ、ページ上のテキストの視覚的な一貫性を作成するために使われます。 このチャレンジでは、見出しのサイズのバランスをとるために `h1` から `h6` タグすべての値を設定してみましょう。
 
-# --instructions-- <p><code>style</code> タグの中で、以下の <code>font-size</code> を設定してください。</p>
+# --instructions--
+
+  <p><code>style</code> タグの中で、以下の <code>font-size</code> を設定してください。</p>
 
   <ul>
     <li><code>h1</code> タグを 68px に</li>

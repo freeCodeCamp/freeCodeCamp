@@ -1,14 +1,14 @@
 ---
 id: 594d966a1467eb84194f0086
 title: Medie/medie pitagoriche
-challengeType: 5
+challengeType: 1
 forumTopicId: 302227
 dashedName: averagespythagorean-means
 ---
 
 # --description--
 
-Calcola le tre [medie pitagoriche](https://en.wikipedia.org/wiki/Pythagorean means "wp: Pythagorean means") dei numeri interi tra $1$ e $10$ (inclusivo).
+Calcola le tre <a href="https://en.wikipedia.org/wiki/Pythagorean_means" target="_blank" rel="noopener noreferrer nofollow">medie pitagoriche</a> dei numeri interi tra $1$ e $10$ (inclusivo).
 
 Mostra che $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ per questo set di numeri positivi interi.
 

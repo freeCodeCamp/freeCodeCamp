@@ -5,7 +5,7 @@ import { Trans } from 'react-i18next';
 const editorRegex =
   /repl\.?it(\.com)?\/(@|join\/)|glitch\.com\/edit\/#!|codesandbox\.io\/s\/|github\.com/;
 const fCCRegex =
-  /codepen\.io\/freecodecamp|freecodecamp\.rocks|github\.com\/freecodecamp/i;
+  /codepen\.io\/freecodecamp|freecodecamp\.rocks|github\.com\/freecodecamp|\.freecodecamp\.org/i;
 const localhostRegex = /localhost:/;
 const httpRegex = /http(?!s|([^s]+?localhost))/;
 
@@ -23,7 +23,7 @@ export const localhostValidator = (value: string): React.ReactElement | null =>
 export const httpValidator = (value: string): React.ReactElement | null =>
   httpRegex.test(value) ? <Trans>validation.http-url</Trans> : null;
 
-export type Validator = (value: string) => React.ReactElement | null;
+type Validator = (value: string) => React.ReactElement | null;
 export function composeValidators(...validators: (Validator | null)[]) {
   return (value: string): ReturnType<Validator> | null =>
     validators.reduce(

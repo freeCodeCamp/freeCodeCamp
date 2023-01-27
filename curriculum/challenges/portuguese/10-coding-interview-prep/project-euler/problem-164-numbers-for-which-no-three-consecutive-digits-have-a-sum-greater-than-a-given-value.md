@@ -2,7 +2,7 @@
 id: 5900f4111000cf542c50ff23
 title: >-
   Problema 164: Números para os quais nenhuma sequência de três algarismos consecutivos têm uma soma maior que um determinado valor
-challengeType: 5
+challengeType: 1
 forumTopicId: 301798
 dashedName: >-
   problem-164-numbers-for-which-no-three-consecutive-digits-have-a-sum-greater-than-a-given-value

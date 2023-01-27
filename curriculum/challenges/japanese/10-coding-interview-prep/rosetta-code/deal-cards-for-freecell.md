@@ -1,18 +1,18 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
 title: フリーセルのカードを配る
-challengeType: 5
+challengeType: 1
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
 ---
 
 # --description--
 
-*フリーセル* は、ポール・アルフィレ (Paul Alfille) が1978年にPLATOシステムに導入したソリティアというカードゲームです。 Microsoftのジム・ホーン (Jim Horne) は、ゲーム名をフリーセルに変更し、[DOS](https://rosettacode.org/wiki/DOS "DOS")向け、そして[Windows](https://rosettacode.org/wiki/Windows "Windows")向けに、ゲームを再実装しました。 このバージョンでは、32000のゲーム番号が導入されました。
+*フリーセル* は、ポール・アルフィレ (Paul Alfille) が1978年にPLATOシステムに導入したソリティアというカードゲームです。 Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for DOS, then Windows. このバージョンでは、32000のゲーム番号が導入されました。
 
 ゲームが普及し、ジム・ホーンがアルゴリズムを開示したため、他のフリーセル実装でもMicrosoftと同様のアルゴリズムでカードが配られるようになりました。 カードの配り方には1から32000まで番号が付けられています。 Microsoftの新しいバージョンでは、1から1000000までの番号が付けられた100万のゲーム番号があります。一部の実装では、この範囲外の番号も使用されています。
 
-Microsoft Cにおける [線形合同法](https://rosettacode.org/wiki/linear congruential generator "linear congruential generator") をアルゴリズムに使用しています。
+The algorithm uses this linear congruential generator from Microsoft C:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
@@ -24,7 +24,7 @@ Microsoft Cにおける [線形合同法](https://rosettacode.org/wiki/linear co
 
 <ol>
   <li>RNGにゲーム番号を与えます。
-  </li><li>52枚のカードの <a href='https://rosettacode.org/wiki/array' title='array' target='_blank'>配列</a> を作成します。クラブのエース、ダイヤモンドのエース、ハートのエース、スペードのエース、クラブの2、ダイヤモンドの2、と続きます。エース、2、3、4、5、6、7、8、9、10、ジャック、クイーン、キングの順番です。 配列インデックスは0から51で、クラブのエースは0、スペードのキングは51です。</li>
+  </li><li>Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. 配列インデックスは0から51で、クラブのエースは0、スペードのキングは51です。</li>
   <li>配列が空になるまでです。</li>
   <li>インデックスでランダムなカードを選択します≡ 次の乱数(Mod配列の長さ)。</li>
     <ul>
@@ -79,35 +79,33 @@ Microsoft Cにおける [線形合同法](https://rosettacode.org/wiki/linear co
 
 ゲーム番号を受け取り、このアルゴリズムと同じ順序でカードを配る関数を作成します。 この関数はフリーセルボードを表す2次元配列を返します。
 
-ゲーム番号は、[1000000ゲームのフリーセルソリューション](https://freecellgamesolutions.com/) に照らし合わせて確認することもできます (ビデオソリューションを呼び出し、最初のゲーム番号を表示する)。
-
 # --hints--
 
-`dealFreeCell` という関数です。
+`dealFreeCell` should be a function.
 
 ```js
 assert(typeof dealFreeCell === 'function');
 ```
 
-`dealFreeCell(seed)` はオブジェクトを返します。
+`dealFreeCell(seed)` should return an object.
 
 ```js
 assert(typeof dealFreeCell(1) === 'object');
 ```
 
-`dealFreeCell(seed)` は長さ7の配列を返します。
+`dealFreeCell(seed)` should return an array of length 7.
 
 ```js
 assert(dealFreeCell(1).length === 7);
 ```
 
-`dealFreeCell(1)` は例「Game #1」と同一の配列を返します。
+`dealFreeCell(1)` should return an array identical to example "Game #1"
 
 ```js
 assert.deepEqual(dealFreeCell(1), game1);
 ```
 
-`dealFreeCell(617)` は「Game #617」と同一の配列を返します。
+`dealFreeCell(617)` should return an array identical to example "Game #617"
 
 ```js
 assert.deepEqual(dealFreeCell(617), game617);

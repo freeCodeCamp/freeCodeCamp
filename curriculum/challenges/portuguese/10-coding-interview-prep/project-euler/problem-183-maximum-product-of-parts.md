@@ -1,7 +1,7 @@
 ---
 id: 5900f4231000cf542c50ff36
 title: 'Problema 183: Produto máximo das partes'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301819
 dashedName: problem-183-maximum-product-of-parts
 ---

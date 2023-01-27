@@ -1,7 +1,7 @@
 ---
 id: 5900f5431000cf542c510055
 title: 'Завдання 470: Супер Рамвок'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302146
 dashedName: problem-470-super-ramvok
 ---

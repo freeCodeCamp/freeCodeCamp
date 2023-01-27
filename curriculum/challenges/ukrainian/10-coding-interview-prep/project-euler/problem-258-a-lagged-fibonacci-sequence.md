@@ -1,7 +1,7 @@
 ---
 id: 5900f46e1000cf542c50ff81
 title: 'Завдання 258: Метод Фібоначчі із запізнюваннями'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301906
 dashedName: problem-258-a-lagged-fibonacci-sequence
 ---

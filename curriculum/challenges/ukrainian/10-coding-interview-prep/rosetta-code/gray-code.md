@@ -1,18 +1,18 @@
 ---
 id: 5a23c84252665b21eecc7e80
 title: Код Грея
-challengeType: 5
+challengeType: 1
 forumTopicId: 302276
 dashedName: gray-code
 ---
 
 # --description--
 
-[ код Грея ](https://en.wikipedia.org/wiki/Gray code) - це форма бінарного кодування, де переходи між послідовними числами відрізняються лише на один біт.
+Gray code is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
 
 Це корисне кодування для зменшення ризиків настання небезпеки для апаратних даних зі значеннями, що швидко змінюються та/або підключаються до повільнішого апаратного забезпечення як вхідних даних.
 
-Це також корисно для генерації даних для [Karnaugh maps](https://en.wikipedia.org/wiki/Karnaugh map) у порядку зліва направо або зверху вниз.
+It is also useful for generating inputs for Karnaugh maps in order from left to right or top to bottom.
 
 # --instructions--
 

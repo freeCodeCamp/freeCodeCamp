@@ -1,3 +1,5 @@
+import '../src/base.css';
+
 export const parameters = {
   controls: {
     matchers: {

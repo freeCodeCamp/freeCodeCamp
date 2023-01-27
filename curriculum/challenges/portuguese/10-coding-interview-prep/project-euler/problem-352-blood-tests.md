@@ -1,7 +1,7 @@
 ---
 id: 5900f4cd1000cf542c50ffdf
 title: 'Problema 352: Testes sanguíneos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302012
 dashedName: problem-352-blood-tests
 ---

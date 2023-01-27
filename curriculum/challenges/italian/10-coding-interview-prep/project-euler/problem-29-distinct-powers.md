@@ -1,7 +1,7 @@
 ---
 id: 5900f3891000cf542c50fe9c
 title: 'Problema 29: Potenze distinte'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301941
 dashedName: problem-29-distinct-powers
 ---

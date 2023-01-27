@@ -1,7 +1,7 @@
 ---
 id: 5900f3ce1000cf542c50fee0
 title: 'Problema 97: Grande número primo que não seja de Mersenne'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302214
 dashedName: problem-97-large-non-mersenne-prime
 ---

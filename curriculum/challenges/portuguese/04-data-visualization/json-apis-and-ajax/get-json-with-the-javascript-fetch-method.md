@@ -15,10 +15,10 @@ Aqui está o código para fazer uma solicitação de GET para `/json/cats.json`
 ```js
 
 fetch('/json/cats.json')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('message').innerHTML = JSON.stringify(data);
-    })
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('message').innerHTML = JSON.stringify(data);
+  })
 
 ```
 
@@ -37,6 +37,30 @@ Agora, ele seleciona o elemento que receberá os dados usando `document.getEleme
 Atualize o código para criar e enviar uma solicitação de `GET` para a API de fotos de gatos do freeCodeCamp. Desta vez, porém, use o método `fetch` em vez de `XMLHttpRequest`.
 
 # --hints--
+
+
+O código deve usar os dados capturados para substituir o HTML interno
+
+```js
+const catData = "dummy data";
+const ref = fetch;
+fetch = () => Promise.resolve({ json: () => catData });
+async () => {
+  try {
+    document.getElementById("getMessage").click();
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    fetch = ref;
+    assert.equal(
+      document.getElementById("message").textContent,
+      JSON.stringify(catData)
+    );
+  }
+};
+```
+
 
 O código deve fazer uma solicitação de `GET` com `fetch`.
 

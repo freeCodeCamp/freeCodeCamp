@@ -10,7 +10,7 @@ O freeCodeCamp é executado em uma stack de JavaScript moderna. Se estiver inter
 
 Sim. Você pode contribuir com qualquer um dos mais de 30 idiomas disponíveis em nossa plataforma de tradução.
 
-Temos traduções enviadas por usuários ao vivo em alguns idiomas. Pretendemos traduzir o freeCodeCamp para vários idiomas. Você pode ler mais sobre isso em nosso [anúncio aqui](https://www.freecodecamp.org/news/world-language-translation-effort).
+Temos traduções enviadas por usuários ao vivo em alguns idiomas. Pretendemos traduzir o freeCodeCamp para vários idiomas. Você pode ler mais sobre isso em nosso [anúncio aqui](https://www.freecodecamp.org/portuguese/news/como-ajudar-a-traduzir-o-freecodecamp-para-seu-idioma/).
 
 Se você está interessado em contribuir com as traduções, certifique-se de [ler este guia](how-to-translate-files.md) primeiro.
 
@@ -24,7 +24,7 @@ Para nos ajudar a fazer vídeos educacionais para nosso canal do YouTube, você 
 
 ### Como posso relatar um novo erro?
 
-Se você acha que encontrou um erro, primeiro leia o artigo ["Socorro, encontrei um erro"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) e siga suas instruções.
+Se você acha que encontrou um erro, primeiro leia o artigo ["Como relatar um erro"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) e siga suas instruções.
 
 Se você está confiante de que é um novo erro, vá em frente e crie uma nova issue no GitHub. Certifique-se de incluir o máximo de informações possível para que possamos reproduzir o erro. Temos um modelo predefinido de issue para ajudar você.
 
@@ -32,7 +32,7 @@ Observe que essas issues do GitHub são para discussões e questões relacionada
 
 ### Como posso relatar um problema de segurança?
 
-Não crie issues no GitHub para problemas de segurança. Em vez disso, envie um e-mail para `security@freecodecamp.org` e nós vamos investigar isso imediatamente.
+Não crie issues no GitHub para problemas de segurança. Em vez disso, [siga nossa política de segurança](https://contribute.freecodecamp.org/#/security).
 
 ### Eu sou estudante. Posso trabalhar em um recurso para créditos acadêmicos?
 
@@ -92,7 +92,7 @@ Dê uma olhada no nosso [Manual do Moderador](moderator-handbook.md) para obter 
 **Fique à vontade para pedir ajuda em:**
 
 - A categoria `Contributors` do [fórum da nossa comunidade](https://forum.freecodecamp.org/c/contributors).
-- O canal `#Contributors` em nosso [servidor](https://chat.freecodecamp.org/channel/contributors).
+- O canal `#Contributors` em nosso [servidor](https://discord.gg/PRyKn3Vbay).
 
 Estamos animados em ajudar você a contribuir com qualquer tópico que desejar. Se você nos perguntar algo relacionado às issues, vamos ficar felizes em esclarecer. Certifique-se de pesquisar sua pergunta antes de postar uma nova.
 

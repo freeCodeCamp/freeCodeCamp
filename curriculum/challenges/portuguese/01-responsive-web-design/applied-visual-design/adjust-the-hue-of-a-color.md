@@ -9,7 +9,7 @@ dashedName: adjust-the-hue-of-a-color
 
 # --description--
 
-As cores têm várias características, incluindo tonalidade, saturação e luminosidade. CSS3 introduziu a função `hsl()` como uma forma alternativa de escolher uma cor informando diretamente essas características.
+As cores têm várias características, incluindo tonalidade, saturação e luminosidade. O CSS3 introduziu a função `hsl()` como uma forma alternativa de escolher uma cor informando diretamente essas características.
 
 **Tonalidade** é o que as pessoas geralmente chamam de 'cor'. Se você imaginar um espectro de cores começando com o vermelho à esquerda, passando pelo verde no meio e pelo azul à direita, a tonalidade é qualquer cor que esteja dentro deste espectro. No `hsl()`, a tonalidade é definida usando o conceito de círculo cromático em vez de um espectro, onde o ângulo da cor no círculo é um valor entre 0 e 360.
 
@@ -27,19 +27,19 @@ Altere a propriedade `background-color` de cada elemento `div` com base nos nome
 
 # --hints--
 
-Você deve usar a função `hsl()` para declarar a cor `green` (verde).
+Você deve usar a função `hsl()` para declarar a cor verde.
 
 ```js
 assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Você deve usar a função `hsl()` para declarar a cor `cyan` (ciano).
+Você deve usar a função `hsl()` para declarar a cor ciano.
 
 ```js
 assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Você deve usar a função `hsl()` para declarar a cor `blue` (blue).
+Você deve usar a função `hsl()` para declarar a cor azul.
 
 ```js
 assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));
@@ -51,13 +51,13 @@ O elemento `div` com a classe `green` deve ter apropriedade `background-color` c
 assert($('.green').css('background-color') == 'rgb(0, 255, 0)');
 ```
 
-O elemento `div` com a classe `cyan` deve ter apropriedade `background-color` com o valor cyan (ciano).
+O elemento `div` com a classe `cyan` deve ter a propriedade `background-color` com o valor cyan (ciano).
 
 ```js
 assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
 ```
 
-O elemento `div` com a classe `blue` deve ter apropriedade `background-color` com o valor blue (azul).
+O elemento `div` com a classe `blue` deve ter a propriedade `background-color` com o valor blue (azul).
 
 ```js
 assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');

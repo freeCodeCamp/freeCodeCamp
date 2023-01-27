@@ -15,11 +15,11 @@ Creerai un oggetto rotondo trasparente con un'ombra netta leggermente sfalsata s
 
 Per creare un oggetto rotondo, la proprietà `border-radius` dovrebbe essere impostata su un valore del 50%.
 
-Potresti ricordare da una sfida precedente che la proprietà `box-shadow` richiede dei valori per `offset-x`, `offset-y`, `blur-radius`, `spread-radius`, e un valore per il colore, in quest'ordine. I valori `blur-radius` e `spread-radius` sono opzionali.
+Potresti ricordare da una sfida precedente che la proprietà `box-shadow` richiede dei valori per `offset-x`, `offset-y`, `blur-radius`, `spread-radius`, e un valore per `color`, in quest'ordine. I valori `blur-radius` e `spread-radius` sono opzionali.
 
 # --instructions--
 
-Manipola l'elemento quadrato nell'editor per creare la forma della luna. Innanzitutto, cambia il `background-color` con `transparent`, quindi imposta la proprietà `border-radius` al 50% per rendere la forma circolare. Infine, cambia la proprietà `box-shadow` per impostare l'`offset-x` a 25px, l'`offset-y` a 10px, il `blur-radius` a 0, lo `spread-radius` a 0, e il colore a `blue`.
+Manipola l'elemento quadrato nell'editor per creare la forma della luna. Innanzitutto, cambia il `background-color` con `transparent`, quindi imposta la proprietà `border-radius` al 50% per rendere la forma circolare. Infine, cambia la proprietà `box-shadow` per impostare l'`offset-x` a 25px, l'`offset-y` a 10px, il `blur-radius` a 0, lo `spread-radius` a 0, e `color` a `blue`.
 
 # --hints--
 
@@ -35,7 +35,7 @@ Il valore della proprietà `border-radius` dovrebbe essere impostato a `50%`.
 assert(code.match(/border-radius:\s*?50%;/gi));
 ```
 
-I valori della proprietà `box-shadow` dovrebbero essere impostati a 25px per l'`offset-x`, 10px per l'`offset-y`, 0 per il `blur-radius`, 0 per lo `spread-radius`, e infine `blue` per il colore.
+I valori della proprietà `box-shadow` dovrebbero essere impostati a 25px per l'`offset-x`, 10px per l'`offset-y`, 0 per il `blur-radius`, 0 per lo `spread-radius`, e infine `blue` per `color`.
 
 ```js
 assert(

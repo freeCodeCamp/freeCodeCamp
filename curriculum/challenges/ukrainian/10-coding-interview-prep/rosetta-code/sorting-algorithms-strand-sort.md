@@ -1,16 +1,28 @@
 ---
 id: 5a23c84252665b21eecc8013
 title: Алгоритми сортування/Ниткоподібне сортування
-challengeType: 5
+challengeType: 1
 forumTopicId: 302319
 dashedName: sorting-algorithmsstrand-sort
 ---
 
 # --description--
 
-Напишіть функцію для сортування масиву, використовуючи [Ниткоподібне сортування](https://en.wikipedia.org/wiki/Strand sort). Функція має повернути впорядкований масив.
+The **Strand sort** creates sorted subsets that are merged to create the final result.
 
-Це спосіб сортування чисел шляхом вилучення коротших послідовностей уже відсортованих чисел із несортованого списку.
+Consider an `unsortedArray = [3, 1, 4, 2]`. Pick the first item `3` and copy it into a separate array. Search for any bigger item following this item. When you find the a larger item, in this case `4`, copy it to the separate array, `[3, 4]`, and compare the following items to this new value, `4`.
+
+After you have reached the end of the array, remove the items you copied, `[3, 4]`, and start again with the first item remaining in the `unsortedArray`, in this case `1`.
+
+Following this process results in two sorted arrays, `[3, 4]` and `[1, 2]`. Merge these two arrays to create the `strandSortedArray`.
+
+```js
+const unsortedArray = [3, 1, 4, 2];
+const strandsortedArray = [1, 2, 3, 4];
+```
+
+Write a function to sort an array using the **Strand sort**. The function should return the sorted array.
+
 
 # --hints--
 
@@ -20,31 +32,31 @@ dashedName: sorting-algorithmsstrand-sort
 assert(typeof strandSort == 'function');
 ```
 
-`strandSort([25, 32, 12, 7, 20])` має повернути масив.
+`strandSort([25, 32, 12, 7, 20])` should return an array.
 
 ```js
 assert(Array.isArray(strandSort([25, 32, 12, 7, 20])));
 ```
 
-`strandSort([25, 32, 12, 7, 20])` має повернути `[7, 12, 20, 25, 32]`.
+`strandSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(strandSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`strandSort([38, 45, 35, 8, 13])` має повернути `[8, 13, 35, 38, 45]`.
+`strandSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(strandSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`strandSort([43, 36, 20, 34, 24])` має повернути `[20, 24, 34, 36, 43]`.
+`strandSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(strandSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`strandSort([12, 33, 26, 18, 1, 16, 38])` має повернути `[1, 12, 16, 18, 26, 33, 38]`.
+`strandSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(strandSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -58,7 +70,7 @@ assert.deepEqual(strandSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`strandSort([3, 39, 48, 16, 1, 4, 29])` має повернути `[1, 3, 4, 16, 29, 39, 48]`.
+`strandSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(strandSort([3, 39, 48, 16, 1, 4, 29]), [

@@ -1,14 +1,14 @@
 ---
 id: 599d15309e88c813a40baf58
 title: Entropia
-challengeType: 5
+challengeType: 1
 forumTopicId: 302254
 dashedName: entropy
 ---
 
 # --description--
 
-Calcule a entropia H de de uma string de entrada fornecida.
+Calcule a entropia H de Shannon de uma string fornecida como entrada.
 
 Dada a variável aleatória discreta $X$, que é uma string de "símbolos" $N$ (total de caracteres) que consiste em $n$ caracteres diferentes (n=2 para binário), a entropia de Shannon de X em bits/símbolo é:
 

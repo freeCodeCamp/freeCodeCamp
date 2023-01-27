@@ -11,7 +11,9 @@ dashedName: set-the-font-size-for-multiple-heading-elements
 
 `font-size` 属性用来指定元素内文字的大小。 我们可以为多个元素添加这个规则，让页面内不同元素的文字大小得以统一。 在本挑战里，你需要设置从 `h1` 到 `h6` 的文字大小。
 
-# --instructions-- <p>在 <code>style</code> 标签中, 对各元素的 <code>font-size</code> 进行如下设置：</p>
+# --instructions--
+
+  <p>在 <code>style</code> 标签中, 对各元素的 <code>font-size</code> 进行如下设置：</p>
 
   <ul>
     <li>将 <code>h1</code> 标签的文字大小设为 68px。</li>

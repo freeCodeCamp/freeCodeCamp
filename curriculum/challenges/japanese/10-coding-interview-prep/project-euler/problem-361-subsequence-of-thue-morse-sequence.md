@@ -1,7 +1,7 @@
 ---
 id: 5900f4d51000cf542c50ffe8
 title: '問題 361: トゥエ-モース数列の部分列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302022
 dashedName: problem-361-subsequence-of-thue-morse-sequence
 ---
@@ -20,7 +20,8 @@ $\\{T_n\\}$ の最初のいくつかの項が次のように与えられます: 
 
 $A_n$ の最初のいくつかの項が次のように与えられます。
 
-$$\begin{array}{cr} n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12 & \ldots \\\\ A_n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 9 & 10 & 11 & 12 & 13 & 18 & \ldots \end{array}$$
+$$\begin{array}{cr}   n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12 & \ldots \\\\
+  A_n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 9 & 10 & 11 & 12 & 13 & 18 & \ldots \end{array}$$
 
 また、$A_{100} = 3251$ および $A_{1000} = 80\\,852\\,364\\,498$ であることも確認できます。
 

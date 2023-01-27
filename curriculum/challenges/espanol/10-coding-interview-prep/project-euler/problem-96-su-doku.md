@@ -1,14 +1,14 @@
 ---
 id: 5900f3cc1000cf542c50fedf
-title: 'Problem 96: Su Doku'
-challengeType: 5
+title: 'Problema 96: Sudoku'
+challengeType: 1
 forumTopicId: 302213
 dashedName: problem-96-su-doku
 ---
 
 # --description--
 
-Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
+Sudoku (japonés que significa *número sólo*) es el nombre dado a un concepto de rompecabezas popular. Su origen no está claro, pero el crédito debe ser atribuido a Leonhard Euler, quien inventó una idea similar y mucho más difícil de rompecabezas llamada Plaza Latina. Sin embargo, el objetivo del Sudoku es reemplazar los blancos (o ceros) en una cuadrícula de 9 por 9 números en cada fila, agrupados en cajas de 3 x 3, cada caja contiene los dígitos del 1 a 9. A continuación se muestra un ejemplo típico del inicio y solución de un rompecabezas.
 
 <div style="margin: auto; background-color: white; padding: 10px; width: 80%; text-align: center;">
   <table border="0" cellpadding="0" cellspacing="0" align="center">
@@ -100,27 +100,27 @@ Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle 
   </table>
 </div>
 
-A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
+Un Sudoku bien construido tiene una solución única y puede resolverse por lógica, aunque puede ser necesario emplear métodos de "adivinar y probar" para eliminar opciones (hay muchas opiniones diversas sobre el tema). La complejidad de las búsquedas determina la dificultad del rompecabezas; el ejemplo anterior se considera fácil porque puede ser resuelto por una sencilla deducción.
 
-The `puzzlesArr` array contains different Su Doku puzzle strings ranging in difficulty, but all with unique solutions.
+El array `puzzlesArr` contiene diferentes combinaciones de Sudoku que varían en dificultades, pero todas con una solución única.
 
-By solving all puzzles in `puzzlesArr`, find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
+Al resolver todos los rompecabezas de `puzzlesArr`, se encuentra la suma de los números de 3 dígitos situados en la esquina superior izquierda de cada cuadrícula de solución; por ejemplo, 483 es el número de 3 dígitos que se encuentra en la esquina superior izquierda de la cuadrícula de la solución anterior.
 
 # --hints--
 
-`suDoku(testPuzzles1)` should return a number.
+`suDoku(testPuzzles1)` debe devolver un número.
 
 ```js
 assert(typeof suDoku(_testPuzzles1) === 'number');
 ```
 
-`suDoku(testPuzzles1)` should return `1190`.
+`suDoku(testPuzzles1)` debe devolver `1190`.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles1), 1190);
 ```
 
-`suDoku(testPuzzles2)` should return `24702`.
+`suDoku(testPuzzles2)` debe devolver `24702`.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles2), 24702);

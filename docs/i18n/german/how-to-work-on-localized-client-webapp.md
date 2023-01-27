@@ -17,8 +17,8 @@ Wir wollen verstehen, wie die i18n-Frameworks und -Werkzeuge funktionieren.
 Die meisten Dateien für die Übersetzung der Plattform befinden sich im Ordner [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n). Für jede Sprache gibt es ein Verzeichnis, das JSON-Dateien mit den Übersetzungen enthält.
 
 ```console
-  config/i18n
-  └── all-langs.ts
+  config
+  └── i18n.ts
   ...
   client/i18n
   ├── configForTests.js
@@ -29,37 +29,33 @@ Die meisten Dateien für die Übersetzung der Plattform befinden sich im Ordner 
   │   │   ├── links.json
   │   │   ├── meta-tags.json
   │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   │   └── translations.json
   ... ...
   │   ├── dothraki
   │   │   ├── intro.json
   │   │   ├── links.json
   │   │   ├── meta-tags.json
   │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   │   └── translations.json
   ... ...
   │   ├── english
   │   │   ├── intro.json
   │   │   ├── links.json
   │   │   ├── meta-tags.json
   │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
+  │   │   └── translations.json
   │   └── espanol
   │       ├── intro.json
   │       ├── links.json
   │       ├── meta-tags.json
   │       ├── motivation.json
-  │       ├── translations.json
-  │       └── trending.json
+  │       └── translations.json
   ├── locales.test.js
   ├── schema-validation.js
   └── validate-keys.ts
 ```
 
-Einige dieser Dateien werden auf unserer Übersetzungsplattform (Crowdin) übersetzt, andere nicht.
+Some of these files are translated on our translation platform (Crowdin), some are translated or created via PR's on GitHub.
 
 **Dateien, die auf unserer Übersetzungsplattform übersetzt wurden:**
 
@@ -73,30 +69,39 @@ Einige dieser Dateien werden auf unserer Übersetzungsplattform (Crowdin) übers
 
 - Die `motivation.json` Dateien müssen nicht die gleichen Zitate, Komplimente oder Array-Längen haben. Nur die gleiche JSON-Struktur.
 
-- Die Datei `trending.json` enthält die Titel und Links für die angesagtesten Nachrichtenartikel in der Fußzeile der Website.
+- The `meta-tags.json` file contains the information for our website's meta tag information.
 
-- Die Datei `meta-tags.json` enthält die Informationen für die Meta-Tag-Informationen unserer Website.
-
-  Änderungen an diesen Dateien werden normalerweise von dem Mitarbeiterteam vorgenommen.  Wenn dir etwas Ungewöhnliches auffällt, empfehlen wir dir, uns im [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) anzusprechen.
+  Changes to these files are typically done by the staff team. If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 ## Das Testen der Client-App in einer Weltsprache
 
-Du kannst die Client-App in jeder Sprache testen, die in der [Liste der Sprachen](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5) verfügbar ist.
+You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
 
 ```js
-  const availableLangs = {
-    client: ['english', 'espanol', 'chinese'],
-    ...
-  };
+export const availableLangs = {
+  client: [
+    Languages.English,
+    Languages.Espanol,
+    Languages.Chinese,
+    Languages.ChineseTrandational,
+    Languages.Italian,
+    Languages.Portuguese,
+    Languages.Ukrainian,
+    Languages.Japanese,
+    Languages.German,
+    Languages.Arabic
+  ],
+  ...
+};
 ```
 
 Wenn du eine neue Sprache testest, erstelle einen Ordner mit dem Namen der Sprache als Titel neben den anderen Sprachen und kopiere die JSON-Dateien aus einer anderen Sprache in deinen neuen Ordner.
 
-Füge die Sprache zum `client`-Array hinzu, wie oben in der [`config/i18n/all-langs.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.js) Datei zu sehen.
+Add the new language to the `Languages` enum and the `client` array at the top of the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file.
 
 Befolge dann die Anweisungen in den Kommentaren in derselben Datei, um die restlichen Variablen nach Bedarf hinzuzufügen/zu aktualisieren.
 
-Zum Schluss stellst du die Variable `CLIENT_LOCALE` in deiner `.env`-Datei auf die Sprache ein, die du verwenden willst, und schon bist du fertig.
+Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the string of the locale you want to build from the `Languages` enum in the above file.
 
 ## Wie du Komponenten strukturierst
 

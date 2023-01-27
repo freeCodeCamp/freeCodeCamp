@@ -1,14 +1,14 @@
 ---
 id: 5900f3a81000cf542c50febb
 title: 'Problem 60: Prime pair sets'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302172
 dashedName: problem-60-prime-pair-sets
 ---
 
 # --description--
 
-The primes 3, 7, 109, and 673, are quite remarkable. By taking any two primes and concatenating them in any order the result will always be prime. For example, taking 7 and 109, both 7109 and 1097 are prime. The sum of these four primes, 792, represents the lowest sum for a set of four primes with this property.
+質數 3、7、109 和 673 非常引人注目。 通過取任何兩個素數並以任何順序連接它們，結果將始終是素數。 例如，取 7 和 109，7109 和 1097 都是質數。 這四個素數的總和，792，代表具有此屬性的一組四個素數的最低和。
 
 Find the lowest sum for a set of five primes for which any two primes concatenate to produce another prime.
 

@@ -15,7 +15,7 @@ CSS 變量可以簡化媒體查詢的定義方式。
 
 # --instructions--
 
-在 `media query`（媒體查詢）聲明的 `:root` 選擇器裏，重定義 `--penguin-size` 的值爲 `200px`。 同時，重新定義 `--penguin-skin` 的值爲 `black`， 然後通過縮放頁面來查看它們是否生效。
+在媒體查詢聲明的 `:root` 選擇器裏，重定義 `--penguin-size` 的值爲 `200px`。 同時，重新定義 `--penguin-skin` 的值爲 `black`， 然後通過縮放頁面來查看它們是否生效。
 
 # --hints--
 

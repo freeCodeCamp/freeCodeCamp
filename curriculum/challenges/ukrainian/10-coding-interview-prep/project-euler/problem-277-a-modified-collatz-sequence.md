@@ -1,7 +1,7 @@
 ---
 id: 5900f4811000cf542c50ff94
 title: 'Завдання 277: Найдовша послідовність Коллатца'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301927
 dashedName: problem-277-a-modified-collatz-sequence
 ---

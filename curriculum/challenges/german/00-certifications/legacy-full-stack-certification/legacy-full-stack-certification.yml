@@ -1,0 +1,25 @@
+---
+id: 561add10cb82ac38a17213bd
+title: Legacy Zertifizierung für Full Stack
+certification: legacy-full-stack
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 561add10cb82ac38a17513bc
+    title: Zertifizierung für Responsive Web Design
+  - 
+    id: 561abd10cb81ac38a17513bc
+    title: Zertifizierung für JavaScript-Algorithmen und Datenstrukturen
+  - 
+    id: 561acd10cb82ac38a17513bc
+    title: Zertifizierung für Front-End Bibliotheken
+  - 
+    id: 5a553ca864b52e1d8bceea14
+    title: Zertifizierung für Datenvisualisierung
+  - 
+    id: 561add10cb82ac38a17523bc
+    title: Zertifizierung für API's und Microservices
+  - 
+    id: 561add10cb82ac38a17213bc
+    title: Legacy Zertifizierung für Sicherheit und Qualitätssicherung

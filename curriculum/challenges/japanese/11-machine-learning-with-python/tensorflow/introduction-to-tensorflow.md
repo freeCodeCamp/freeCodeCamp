@@ -26,7 +26,7 @@ dashedName: introduction-to-tensorflow
 
 ---
 
-プレイスホルダ―
+プレイスホルダー
 
 ---
 

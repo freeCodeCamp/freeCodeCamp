@@ -19,7 +19,7 @@ Adicione a propriedade `display: flex` a todos os itens a seguir - note que os s
 
 # --hints--
 
-O elemento de classe `.follow-btn` deve aparecer renderizado na página. Lembre-se de desativar quaisquer extensões do tipo bloqueadores de anúncios.
+O elemento de classe `.follow-btn` deve ser renderizado na página. Lembre-se de desativar as extensões que bloqueiam anúncios.
 
 ```js
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');

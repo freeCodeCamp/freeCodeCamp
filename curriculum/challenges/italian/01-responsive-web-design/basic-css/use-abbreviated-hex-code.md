@@ -29,7 +29,7 @@ Il tuo elemento `h1` con il testo `I am red!` dovrebbe ricevere il `color` rosso
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-L'`hex code` abbreviato per il colore rosso dovrebbe essere utilizzato al posto del codice hex `#FF0000`.
+Dovresti usare il codice esadecimale abbreviato per il colore rosso al posto del codice `#FF0000`.
 
 ```js
 assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
@@ -41,7 +41,7 @@ Al tuo elemento `h1` con il testo `I am green!` dovrebbe essere assegnato il `co
 assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 ```
 
-L'`hex code` abbreviato per il colore verde deve essere utilizzato al posto della parola `#00FF00`.
+Dovresti usare il codice esadecimale abbreviato per il colore verde al posto del codice `#00FF00`.
 
 ```js
 assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
@@ -53,7 +53,7 @@ Il tuo elemento `h1` con il testo `I am cyan!` dovrebbe ricevere il `color` cian
 assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
 ```
 
-L'`hex code` abbreviato per il colore ciano dovrebbe essere utilizzato al posto della parola `#00FFFF`.
+Dovresti usare il codice esadecimale abbreviato per il colore ciano al posto del codice `#00FFFF`.
 
 ```js
 assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
@@ -65,7 +65,7 @@ Il tuo elemento `h1` con il testo `I am fuchsia!` dovrebbe ricevere il `color` f
 assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
 ```
 
-L'`hex code` abbreviato per il colore fucsia dovrebbe essere utilizzato al posto dell'hex code `#FF00FF`.
+Dovresti usare il codice esadecimale abbreviato per il colore fucsia invece del codice `#FF00FF`.
 
 ```js
 assert(code.match(/\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi));

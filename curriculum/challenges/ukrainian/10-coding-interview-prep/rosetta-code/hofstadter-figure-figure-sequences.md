@@ -1,43 +1,35 @@
 ---
 id: 59622f89e4e137560018a40e
 title: Послідовність Хофштадтера
-challengeType: 5
+challengeType: 1
 forumTopicId: 302286
 dashedName: hofstadter-figure-figure-sequences
 ---
 
 # --description--
 
-Ці дві послідовності додатніх чисел визначаються як:
+The Hofstadter Figure-Figure sequences $R_n$ and $S_n$ are given by
 
-$R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
+$R_1 = 1\\ ;\\ S_1 = 2 \\\\R_n = R_{n-1} + S_{n-1}, \\quad n>1.$
 
-Послідовність $S(n)$ далі визначається як послідовність натуральних чисел, яких немає в $R(n)$.
-
-Послідовність $R$ запущена:
+Specifically, the sequence $R_n$ contains the values
 
 <pre>1, 3, 7, 12, 18, ...</pre>
 
-Послідовність $R$ запущена:
+and the sequence $S_n$ contains the values
 
 <pre>2, 4, 5, 6, 8, ...</pre>
 
+The sequence $R_n$ is defined by the recurrence relation $R_n = R_{n-1} + S_{n-1}$, while $S_n$ is defined as sequence of positive integers that are not included in the sequence $R_n$.
+
 # --instructions--
 
-Створіть 2 функції названі як `ffr` і `ffs` коли їм надають `n` повернення` R(n)` або ` S(n)` відповідно. (Зверніть увагу на те, щоб R(1) = 1 і S(1) = 2 уникати окремих помилок).
+Create two functions named `ffr` and `ffs` that return `R(n)` or `S(n)`, respectively, for any index `n`. Note that the Hofstadter Figure-Figure sequences are 1-indexed, with $R_1 = 1$ and $S_1 = 2$.
 
 Не слід припускати жодного максимального значення для ` n `.
 
-**Посилання**
+**Посилання**<p>Rosetta: <a href='https://rosettacode.org/wiki/Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a></p>.
 
-<ul>
-  <li>
-    Sloane's <a href='https://oeis.org/A005228' target='_blank'>A005228</a> і <a href='https://oeis.org/A030124' target='_blank'>A030124</a>.
-  </li>
-  <li>
-    Вікіпедія: <a href='https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' title='wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' target='_blank'> Послідовність Хофштадтера</a>.
-  </li>
-</ul>
 
 # --hints--
 
@@ -47,67 +39,67 @@ $R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
 assert(typeof ffr === 'function');
 ```
 
-`ffr` має бути функцією.
+`ffs` має бути функцією.
 
 ```js
 assert(typeof ffs === 'function');
 ```
 
-`ffr` повинен повернути ціле число.
+`ffr` should return integer.
 
 ```js
 assert(Number.isInteger(ffr(1)));
 ```
 
-`ffr` повинен повернути ціле число.
+`ffs` should return integer.
 
 ```js
 assert(Number.isInteger(ffs(1)));
 ```
 
-`ffr(10)` повинен повертатися `69`
+`ffr(10)` should return `69`
 
 ```js
 assert.equal(ffr(ffrParamRes[0][0]), ffrParamRes[0][1]);
 ```
 
-`ffr(50)` повинен повертатися ` 1509`
+`ffr(50)` should return `1509`
 
 ```js
 assert.equal(ffr(ffrParamRes[1][0]), ffrParamRes[1][1]);
 ```
 
-`ffr(100)` повинен повертатися ` 5764 `
+`ffr(100)` should return `5764`
 
 ```js
 assert.equal(ffr(ffrParamRes[2][0]), ffrParamRes[2][1]);
 ```
 
-`ffr(1000)` повинен повертатися ` 526334`
+`ffr(1000)` should return `526334`
 
 ```js
 assert.equal(ffr(ffrParamRes[3][0]), ffrParamRes[3][1]);
 ```
 
-`ffs(10)` повинен повертатися ` 14`
+`ffs(10)` should return `14`
 
 ```js
 assert.equal(ffs(ffsParamRes[0][0]), ffsParamRes[0][1]);
 ```
 
-`ffr(50)` повинен повертатися ` 59`
+`ffs(50)` should return `59`
 
 ```js
 assert.equal(ffs(ffsParamRes[1][0]), ffsParamRes[1][1]);
 ```
 
-`ffr(100)` повинен повертатися ` 112`
+`ffs(100)` should return `112`
 
 ```js
 assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1]);
 ```
 
-`ffs(1000)` повинен повертатися ` 1041`
+`ffs(1000)` should return `1041`
 
 ```js
 assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1]);

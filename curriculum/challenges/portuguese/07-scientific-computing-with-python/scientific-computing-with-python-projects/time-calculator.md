@@ -8,13 +8,11 @@ dashedName: time-calculator
 
 # --description--
 
-Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-time-calculator).
+Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-time-calculator" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
 
-Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
-
-- [Curso de Python em vídeo para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-
-- [Curso Aprenda Python em vídeo](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+-   Comece importando o projeto no Replit.
+-   Em seguida, você verá uma janela `.replit`.
+-   Selecione `Use run command` e clique no botão `Done`.
 
 # --instructions--
 

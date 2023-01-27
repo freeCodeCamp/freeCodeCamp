@@ -17,7 +17,7 @@ A continuación hay algunos ejemplos de colores con sus códigos hexadecimales:
 
 <blockquote>rojo (#FF0000) y cian (#00FFFF)<br>verde(#00FF00) y magenta (#FF00FF)<br>azul (#0000FF) y amarillo (#FFFF00)</blockquote>
 
-Esto es diferente del anticuado modelo de color RYB que muchos de nosotros aprendimos en la escuela, que tiene diferentes colores primarios y complementarios. La teoría moderna del color utiliza el modelo aditivo RGB (como en una pantalla de computadora) y el modelo restante CMY(K) (como en la impresión). Lee [aquí](https://en.wikipedia.org/wiki/Color_model) para obtener más información sobre este complejo tema.
+Esto es diferente del anticuado modelo de color RYB que muchos de nosotros aprendimos en la escuela, que tiene diferentes colores primarios y complementarios. La teoría moderna del color utiliza el modelo aditivo RGB (como en una pantalla de computadora) y el modelo restante CMY(K) (como en la impresión).
 
 Hay muchas herramientas de selección de color disponibles en línea que tienen la opción de encontrar el complemento de un color.
 

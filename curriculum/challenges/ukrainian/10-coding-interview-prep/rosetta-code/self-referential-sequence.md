@@ -1,14 +1,14 @@
 ---
 id: 5eb3e4a21f462f409d656c73
 title: Самовідносна послідовність
-challengeType: 5
+challengeType: 1
 forumTopicId: 385317
 dashedName: self-referential-sequence
 ---
 
 # --description--
 
-Існує декілька шляхів створення самовідносної послідовності. Найрозповсюдженішим([ Послідовність перегляду](https://rosettacode.org/wiki/Look-and-say sequence))є почати із додатного цілого числа, а потім створити наступну умову, об'єднавши перелічені групи суміжних однакових цифр:
+Існує декілька шляхів створення самовідносної послідовності. One very common one (the <a href="https://rosettacode.org/wiki/Look-and-say_sequence" target="_blank" rel="noopener noreferrer nofollow">Look-and-say sequence</a>) is to start with a positive integer, then generate the next term by concatenating enumerated groups of adjacent alike digits:
 
 <pre>0, 10, 1110, 3110, 132110, 1113122110, 311311222110 ...</pre>
 

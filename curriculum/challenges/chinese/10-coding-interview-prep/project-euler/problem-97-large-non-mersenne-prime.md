@@ -1,7 +1,7 @@
 ---
 id: 5900f3ce1000cf542c50fee0
 title: 'Problem 97: Large non-Mersenne prime'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302214
 dashedName: problem-97-large-non-mersenne-prime
 ---

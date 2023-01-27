@@ -13,7 +13,7 @@ If the `break` statement is omitted from a `switch` statement's `case`, the foll
 
 ```js
 let result = "";
-switch(val) {
+switch (val) {
   case 1:
   case 2:
   case 3:
@@ -127,7 +127,7 @@ sequentialSizes(1);
 function sequentialSizes(val) {
   let answer = "";
 
-  switch(val) {
+  switch (val) {
     case 1:
     case 2:
     case 3:

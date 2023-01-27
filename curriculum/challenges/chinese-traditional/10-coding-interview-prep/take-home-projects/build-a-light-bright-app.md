@@ -8,27 +8,27 @@ dashedName: build-a-light-bright-app
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/eyLYXE>.
+**Objective:** Build an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/eyLYXE>.
 
-**Rule #1:** Don't look at the example project's code. Figure it out for yourself.
+**規則＃1：** 不要查看示例項目的代碼。 自己搞清楚。
 
-**Rule #2:** Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+**Rule #2:** Fulfill the below user stories and get all of the tests to pass. 使用你需要的任何庫或 API。 賦予它你自己的個人風格。
 
-**User Story:** I can click or drag the mouse cursor to color the circles.
+**用戶故事：** 我可以單擊或拖動鼠標光標爲圓圈着色。
 
-**User Story:** I can double-click on a colored circle to remove the color.
+**用戶故事：** 我可以雙擊彩色圓圈去除顏色。
 
-**User Story:** I can click on a colored circle to change its color.
+**用戶故事：** 我可以點擊彩色圓圈來改變它的顏色。
 
-**User Story:** I should get a circle of different color on each click.
+**用戶故事：** 每次點擊我都會得到一個不同顏色的圓圈。
 
-**User Story:** I can click on the 'Reset' button to remove the recent color.
+**用戶故事：** 我可以點擊“重置”按鈕刪除最近的顏色。
 
-**User Story:** I can click on the 'Reset All' button to remove all the colors from the circles.
+**用戶故事：** 我可以單擊“全部重置”按鈕刪除圓圈中的所有顏色。
 
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

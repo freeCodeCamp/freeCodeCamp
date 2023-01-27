@@ -14,7 +14,7 @@ dashedName: intermediate-strings
 
 Додаткові ресурси:
 
-\- [Відео-урок](https://www.youtube.com/watch?v=1bSqHot-KwE)
+\- <a href="https://www.youtube.com/watch?v=1bSqHot-KwE" target="_blank" rel="noopener noreferrer nofollow">Вправа</a>
 
 # --question--
 

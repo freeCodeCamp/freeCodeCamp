@@ -1,7 +1,7 @@
 ---
 id: 5900f3841000cf542c50fe97
 title: '問題 24: 辞書式順列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301885
 dashedName: problem-24-lexicographic-permutations
 ---

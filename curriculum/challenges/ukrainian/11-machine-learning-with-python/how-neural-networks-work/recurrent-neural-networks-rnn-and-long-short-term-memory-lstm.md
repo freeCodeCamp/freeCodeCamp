@@ -1,6 +1,6 @@
 ---
 id: 5e9a0e9ef99a403d019610cb
-title: Рекурентні нейронні мережі RNN і Довга короткочасна пам'ять LSTM
+title: Рекурентні нейронні мережі (RNN) і довга короткочасна пам'ять (LSTM)
 challengeType: 11
 videoId: UVimlsy9eW0
 dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
@@ -18,11 +18,11 @@ dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
 
 ---
 
-Передбачення, набір зібраних можливостей, та вибірка.
+Передбачення, набір зібраних можливостей та вибірка.
 
 ---
 
-Передбачення, ігнорування, забування, та вибірка.
+Передбачення, ігнорування, забування та вибірка.
 
 ## --video-solution--
 

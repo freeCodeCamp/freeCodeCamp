@@ -1,14 +1,14 @@
 ---
 id: 594d8d0ab97724821379b1e6
 title: Médias/Moda
-challengeType: 5
+challengeType: 1
 forumTopicId: 302226
 dashedName: averagesmode
 ---
 
 # --description--
 
-Escreva um programa que encontre o valor da [moda](https://en.wikipedia.org/wiki/Mode (statistics) "wp: Mode (statistics)") de uma coleção.
+Escreva uma função `mode` para encontrar o valor que mais aparece em um array.
 
 O caso em que a coleção está vazia pode ser ignorado. É preciso ter cuidado para lidar com o caso em que a moda não é única.
 

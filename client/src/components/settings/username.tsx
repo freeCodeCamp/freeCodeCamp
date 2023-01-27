@@ -13,11 +13,11 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { isValidUsername } from '../../../../utils/validate';
+import { usernameValidationSelector } from '../../redux/settings/selectors';
 import {
   validateUsername,
-  usernameValidationSelector,
   submitNewUsername
-} from '../../redux/settings';
+} from '../../redux/settings/actions';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import FullWidthRow from '../helpers/full-width-row';
 
@@ -212,7 +212,11 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     const { isValidUsername, t, validating } = this.props;
 
     return (
-      <form id='usernameSettings' onSubmit={this.handleSubmit}>
+      <form
+        id='usernameSettings'
+        onSubmit={this.handleSubmit}
+        data-cy='username-form'
+      >
         <FullWidthRow>
           <FormGroup>
             <ControlLabel htmlFor='username-settings'>
@@ -222,6 +226,8 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
               name='username-settings'
               onChange={this.handleChange}
               value={formValue}
+              data-cy='username-input'
+              id='username-settings'
             />
           </FormGroup>
         </FullWidthRow>
@@ -232,7 +238,10 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
             disabled={
               !(isValidUsername && valid && !isFormPristine) || submitClicked
             }
-          />
+          >
+            {t('buttons.save')}{' '}
+            <span className='sr-only'>{t('settings.labels.username')}</span>
+          </BlockSaveButton>
         </FullWidthRow>
       </form>
     );

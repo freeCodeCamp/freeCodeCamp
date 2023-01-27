@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-`nonMutatingSort(globalArray)` não deve conter um array prontamente ordenado.
+O conteúdo de `nonMutatingSort(globalArray)` não deve ser inserido de antemão.
 
 ```js
 assert(!nonMutatingSort.toString().match(/\[.*?[23569].*?\]/gs));

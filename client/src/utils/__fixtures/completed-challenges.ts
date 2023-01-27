@@ -27,6 +27,11 @@ export const withChallenges = {
   challengeFiles
 }
 
+export const multifileSolution = {
+  ...withChallenges,
+  challengeType: 14
+}
+
 export const onlyGithubLink = {
   ...baseChallenge,
   githubLink: 'https://some.thing'

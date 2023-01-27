@@ -37,12 +37,6 @@ assert(code.match(/quotient/g).length === 1);
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(y){return 'quotient = '+y;})(quotient);
-```
-
 ## --seed-contents--
 
 ```js

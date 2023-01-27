@@ -1,11 +1,11 @@
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChallengeFiles } from '../../redux/prop-types';
+import { CompletedChallenge } from '../../redux/prop-types';
 import SolutionViewer from './SolutionViewer';
 
 type ProjectModalProps = {
-  challengeFiles: ChallengeFiles;
+  challengeFiles: CompletedChallenge['challengeFiles'] | null;
   handleSolutionModalHide: () => void;
   isOpen: boolean;
   projectTitle: string;
@@ -26,12 +26,11 @@ const ProjectModal = ({
       bsSize='large'
       onHide={handleSolutionModalHide}
       show={isOpen}
+      size='lg'
     >
-      <Modal.Header className='this-one?' closeButton={true}>
+      <Modal.Header closeButton={true}>
         <Modal.Title id='solution-viewer-modal-title'>
-          {t('settings.labels.solution-for', {
-            projectTitle: projectTitle
-          })}
+          {t('settings.labels.solution-for', { projectTitle })}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

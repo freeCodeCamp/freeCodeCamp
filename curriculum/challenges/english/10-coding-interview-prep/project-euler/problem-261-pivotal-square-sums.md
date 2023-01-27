@@ -1,7 +1,7 @@
 ---
 id: 5900f4711000cf542c50ff84
 title: 'Problem 261: Pivotal Square Sums'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301910
 dashedName: problem-261-pivotal-square-sums
 ---

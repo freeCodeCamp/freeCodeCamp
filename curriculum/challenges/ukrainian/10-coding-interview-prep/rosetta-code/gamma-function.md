@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7e76
 title: Гамма-функція
-challengeType: 5
+challengeType: 1
 forumTopicId: 302271
 dashedName: gamma-function
 ---
 
 # --description--
 
-Реалізуйте один (або більше) алгоритм для обчислення [гамма-функції](https://en.wikipedia.org/wiki/Gamma function) ($\\Gamma$) (тільки в реальному полі).
+Implement one algorithm (or more) to compute the Gamma function (in the real field only).
 
 Гамма-функція може бути визначена як:
 

@@ -1,14 +1,14 @@
 ---
 id: 598ee8b91b410510ae82efef
 title: Extensible prime generator
-challengeType: 5
+challengeType: 1
 forumTopicId: 302262
 dashedName: extensible-prime-generator
 ---
 
 # --description--
 
-Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.
+按順序編寫一個素數生成器，它會自動調整以適應任何合理的高素數的生成。
 
 The generator should be able to:
 

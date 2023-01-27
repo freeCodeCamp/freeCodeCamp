@@ -1,7 +1,7 @@
 ---
 id: 5900f41c1000cf542c50ff2f
 title: '問題 176: 隣辺を共有する直角三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301811
 dashedName: problem-176-right-angled-triangles-that-share-a-cathetus
 ---

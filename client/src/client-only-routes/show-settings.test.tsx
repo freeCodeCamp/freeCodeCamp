@@ -43,7 +43,7 @@ const loggedInProps = {
   showLoading: false,
   submitNewAbout: jest.fn(),
   toggleNightMode: jest.fn(),
-  updateInternetSettings: jest.fn(),
+  updateSocials: jest.fn(),
   updateIsHonest: jest.fn(),
   updatePortfolio: jest.fn(),
   updateQuincyEmail: jest.fn(),

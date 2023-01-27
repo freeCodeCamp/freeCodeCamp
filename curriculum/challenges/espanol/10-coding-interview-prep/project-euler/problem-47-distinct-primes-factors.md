@@ -1,7 +1,7 @@
 ---
 id: 5900f39c1000cf542c50feae
 title: 'Problem 47: Distinct primes factors'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302145
 dashedName: problem-47-distinct-primes-factors
 ---
@@ -68,46 +68,27 @@ distinctPrimeFactors(4, 4);
 
 ```js
 function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {
-  function numberOfPrimeFactors(n) {
-    let factors = 0;
+  const primeLimit = targetNumPrimes * targetConsecutive * 10000;
+  const numFactors = Array(primeLimit).fill(0);
 
-    //  Considering 2 as a special case
-    let firstFactor = true;
-    while (n % 2 == 0) {
-      n = n / 2;
-      if (firstFactor) {
-        factors++;
-        firstFactor = false;
+  let numConsecutive = 0;
+  for (let i = 2; i < primeLimit; i++) {
+    if (numFactors[i] === targetNumPrimes) {
+      // Current number is composite with target num factors
+      numConsecutive++;
+      if (numConsecutive === targetConsecutive) {
+        return i - numConsecutive + 1;
       }
-    }
-    // Adding other factors
-    for (let i = 3; i < Math.sqrt(n); i += 2) {
-      firstFactor = true;
-      while (n % i == 0) {
-        n = n / i;
-        if (firstFactor) {
-          factors++;
-          firstFactor = false;
+    } else {
+      // Current number is not matching composite
+      numConsecutive = 0;
+      if (numFactors[i] === 0) {
+        // Current number is prime
+        for (let j = i; j < primeLimit; j += i) {
+          numFactors[j]++;
         }
       }
     }
-
-    if (n > 1) { factors++; }
-
-    return factors;
   }
-
-  let number = 0;
-  let consecutive = 0;
-
-  while (consecutive < targetConsecutive) {
-    number++;
-    if (numberOfPrimeFactors(number) >= targetNumPrimes) {
-      consecutive++;
-    } else {
-      consecutive = 0;
-    }
-  }
-  return number - targetConsecutive + 1;
 }
 ```

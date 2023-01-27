@@ -17,17 +17,15 @@ import {
 
 import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/campers-image';
-import { signInLoadingSelector, userSelector, executeGA } from '../redux';
+import { executeGA } from '../redux/actions';
+import { signInLoadingSelector, userSelector } from '../redux/selectors';
+import { PaymentContext } from '../../../config/donation-settings';
 
 export interface ExecuteGaArg {
-  type: string;
-  data: {
-    category: string;
-    action: string;
-    nonInteraction?: boolean;
-    label?: string;
-    value?: number;
-  };
+  event: string;
+  action: string;
+  duration?: string;
+  amount?: number;
 }
 interface DonatePageProps {
   executeGA: (arg: ExecuteGaArg) => void;
@@ -57,27 +55,11 @@ function DonatePage({
 }: DonatePageProps) {
   useEffect(() => {
     executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation View',
-        action: `Displayed donate page`,
-        nonInteraction: true
-      }
+      event: 'donationview',
+      action: `Displayed Donate Page`
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  function handleProcessing(duration: string, amount: number, action: string) {
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `donate page ${action}`,
-        label: duration,
-        value: amount
-      }
-    });
-  }
 
   return showLoading ? (
     <Loader fullScreen={true} />
@@ -100,8 +82,8 @@ function DonatePage({
                 </Col>
               </Row>
               {isDonating ? (
-                <Alert closeLabel={t('buttons.close')}>
-                  <p>{t('donate.thank-you-2')}</p>
+                <Alert data-cy='donate-alert' closeLabel={t('buttons.close')}>
+                  <p data-cy='donate.thank-you'>{t('donate.thank-you')}</p>
                   <br />
                   <DonationOptionsAlertText />
                 </Alert>
@@ -109,7 +91,7 @@ function DonatePage({
               <DonationText />
               <Row>
                 <Col xs={12}>
-                  <DonateForm handleProcessing={handleProcessing} />
+                  <DonateForm paymentContext={PaymentContext.DonatePage} />
                 </Col>
               </Row>
               <Spacer size={3} />

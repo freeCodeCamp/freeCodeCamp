@@ -1,7 +1,7 @@
 ---
 id: 5900f3a91000cf542c50febc
 title: '問題 61: 循環的な多角数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302173
 dashedName: problem-61-cyclical-figurate-numbers
 ---

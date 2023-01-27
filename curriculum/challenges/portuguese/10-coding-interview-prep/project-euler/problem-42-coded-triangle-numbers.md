@@ -1,7 +1,7 @@
 ---
 id: 5900f3961000cf542c50fea9
 title: 'Problema 42: Números triangulares codificados'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302089
 dashedName: problem-42-coded-triangle-numbers
 ---

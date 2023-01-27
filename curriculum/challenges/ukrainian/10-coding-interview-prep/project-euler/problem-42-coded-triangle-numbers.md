@@ -1,7 +1,7 @@
 ---
 id: 5900f3961000cf542c50fea9
 title: 'Завдання 42: Закодовані трикутні числа'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302089
 dashedName: problem-42-coded-triangle-numbers
 ---

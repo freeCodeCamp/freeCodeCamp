@@ -1,27 +1,33 @@
 ---
 id: 5900f4151000cf542c50ff27
-title: 'Problem 168: Number Rotations'
-challengeType: 5
+title: 'Problema 168: Rotaciones númericas'
+challengeType: 1
 forumTopicId: 301802
 dashedName: problem-168-number-rotations
 ---
 
 # --description--
 
-Consider the number 142857. We can right-rotate this number by moving the last digit (7) to the front of it, giving us 714285.
+Considera el número 142857. Podemos rotar-derecha este número moviendo el último dígito (7) al frente de este dándonos 714285.
 
-It can be verified that 714285=5×142857.
+Puede ser verificado que $714285 = 5 × 142857$.
 
-This demonstrates an unusual property of 142857: it is a divisor of its right-rotation.
+Esto demuestra la propiedad inusual de 142857: este es un divisor de su rotación-derecha.
 
-Find the last 5 digits of the sum of all integers n, 10 &lt; n &lt; 10100, that have this property.
+Para los dígitos del numero entero $a$ y $b$, encuentra los últimos 5 dígitos de la sumatoria de todos los enteros $n$, $10^a &lt; n &lt; 10^b$, que tengan esta propiedad.
 
 # --hints--
 
-`euler168()` should return 59206.
+`numberRotations(2, 10)` deberia devolver `98311`.
 
 ```js
-assert.strictEqual(euler168(), 59206);
+assert.strictEqual(numberRotations(2, 10), 98311);
+```
+
+`numberRotations(2, 100)` debería devolver `59206`.
+
+```js
+assert.strictEqual(numberRotations(2, 100), 59206);
 ```
 
 # --seed--
@@ -29,16 +35,48 @@ assert.strictEqual(euler168(), 59206);
 ## --seed-contents--
 
 ```js
-function euler168() {
+function numberRotations(a, b) {
 
-  return true;
+  return 0;
 }
 
-euler168();
+numberRotations();
 ```
 
 # --solutions--
 
 ```js
-// solution required
+function numberRotations(minDigits, maxDigits) {
+  const DIGITS_TO_KEEP = 100000n;
+  const powersOfTen = Array(maxDigits).fill(0);
+  powersOfTen[0] = 1n;
+  for (let i = 1; i < maxDigits; i++) {
+    powersOfTen[i] = powersOfTen[i - 1] * 10n;
+  }
+
+  // We want numbers of the form xd * m = dx
+  // Or more precisely:
+  //   (x * 10 + d) * m = d*10^(n-1) + x
+  // Solving for x:
+  //   x = d (10^(n-1) - m) / (10 * m - 1)
+  let total = 0n;
+  for (let numDigits = minDigits; numDigits <= maxDigits; numDigits++) {
+    // Check all multiplier - digit pairs to see if a candidate can be built
+    //  with the correct number of digits
+    for (let multiplier = 1n; multiplier < 10n; multiplier++) {
+      for (let lastDigit = 1n; lastDigit < 10n; lastDigit++) {
+        const numerator   = lastDigit * (powersOfTen[numDigits - 1] - multiplier);
+        const denominator = (powersOfTen[1] * multiplier - 1n);
+        if (numerator % denominator === 0n) {
+          const candidate = (numerator / denominator) * 10n + lastDigit;
+          if (candidate.toString().length === numDigits) {
+            total = (total + candidate) % DIGITS_TO_KEEP;
+          }
+        }
+      }
+    }
+  }
+
+  return parseInt(total);
+}
 ```

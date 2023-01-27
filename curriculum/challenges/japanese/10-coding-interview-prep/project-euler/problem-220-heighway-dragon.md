@@ -1,7 +1,7 @@
 ---
 id: 5900f4481000cf542c50ff5b
 title: '問題 220: ハイウェイドラゴン'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301863
 dashedName: problem-220-heighway-dragon
 ---

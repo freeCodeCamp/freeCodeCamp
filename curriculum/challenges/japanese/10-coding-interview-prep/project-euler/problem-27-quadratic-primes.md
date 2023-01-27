@@ -1,7 +1,7 @@
 ---
 id: 5900f3871000cf542c50fe9a
 title: '問題 27: 二次素数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301919
 dashedName: problem-27-quadratic-primes
 ---

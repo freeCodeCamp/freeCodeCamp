@@ -32,7 +32,7 @@ Aggiungi due istruzioni `console.log()` per controllare il `typeof` di ciascuna 
 Il tuo codice dovrebbe utilizzare `typeof` in due istruzioni `console.log()` per controllare il tipo delle variabili.
 
 ```js
-assert(code.match(/console\.log\(typeof[\( ].*\)?\)/g).length == 2);
+assert(code.match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
 ```
 
 Il tuo codice dovrebbe utilizzare `typeof` per controllare il tipo della variabile `seven`.

@@ -1,6 +1,6 @@
 ---
 id: 587d8257367417b2b2512c7e
-title: Use Depth First Search in a Binary Search Tree
+title: Usa Primera Búsqueda en Profundidad en un Árbol de Búsqueda Binaria
 challengeType: 1
 forumTopicId: 301719
 dashedName: use-depth-first-search-in-a-binary-search-tree
@@ -8,7 +8,7 @@ dashedName: use-depth-first-search-in-a-binary-search-tree
 
 # --description--
 
-We know how to search a binary search tree for a specific value. But what if we just want to explore the entire tree? Or what if we don't have an ordered tree and we need to just search for a value? Here we will introduce some tree traversal methods which can be used to explore tree data structures. First up is depth-first search. In depth-first search, a given subtree is explored as deeply as possible before the search continues on to another subtree. There are three ways this can be done: In-order: Begin the search at the left-most node and end at the right-most node. Pre-order: Explore all the roots before the leaves. Post-order: Explore all the leaves before the roots. As you may guess, you may choose different search methods depending on what type of data your tree is storing and what you are looking for. For a binary search tree, an inorder traversal returns the nodes in sorted order.
+Conocemos como buscar un árbol de búsqueda binaria search para un valor específico. Pero qué pasa si solo queremos explorar el árbol entero? O ¿qué pasa si no tenemos un árbol ordenado y necesitamos buscar un valor? Aquí presentaremos algunos métodos de recorrido de árbol que pueden ser usados para explorar estructuras de datos árbol. El primero es búsqueda profundidad-primero (depth-first). En la búsqueda profundidad-primero, un sub árbol dado es explorado profundamente como sea posible antes que la búsqueda continue sobre otro sub árbol. Hay tres formas en las que esto puede hacerse: En orden (In-order): Inicia la búsqueda desde el nodo más a la izquierda y finaliza en el nodo más a la derecha. Pre ordenado (Pre-order): Explora todas las raíces antes que las hojas. Orden posterior (Post-order): Explora todas las hojas antes que las raíces. Como pudiste suponer, puedes escoger diferentes métodos de búsqueda dependiendo de que tipo de dato esta almacenando tu árbol y lo que estés buscando. Para una búsqueda de árbol binario, un recorrido en orden devuelve los nodos de forma ordenada.
 
 # --instructions--
 

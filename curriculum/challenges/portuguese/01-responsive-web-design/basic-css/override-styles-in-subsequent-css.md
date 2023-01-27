@@ -27,7 +27,7 @@ class="class1 class2"
 
 **Observação:** a ordem das classes dentro do atributo "class" não é importante.
 
-O importante é a ordem em que as classes (`class`) são declaradas dentro da tag `<style>`. A última declaração sempre terá prioridade sobre a anterior. Como a classe `.blue-text` é declarada por último, ela sobrescreve os estilos que foram declarados na classe `.pink-text`
+O importante é a ordem em que as classes (`class`) são declaradas dentro da tag `<style>`. A última declaração sempre terá prioridade sobre a anterior. Como `.blue-text` é declarado em segundo lugar, ele substitui os atributos de `.pink-text`.
 
 # --hints--
 

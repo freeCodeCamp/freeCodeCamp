@@ -1,7 +1,7 @@
 ---
 id: 5900f44f1000cf542c50ff61
 title: 'Problema 227: A caçada'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301870
 dashedName: problem-227-the-chase
 ---

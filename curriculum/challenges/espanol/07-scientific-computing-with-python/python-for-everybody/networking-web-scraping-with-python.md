@@ -1,26 +1,30 @@
 ---
 id: 5e7b9f0d0b6c005b0e76f076
-title: 'Networking: Web Scraping with Python'
+title: 'Redes: Web Scraping con Python'
 challengeType: 11
 videoId: Uyioq2q4cEg
+bilibiliIds:
+  aid: 674382625
+  bvid: BV1oU4y1n7zQ
+  cid: 377331774
 dashedName: networking-web-scraping-with-python
 ---
 
 # --description--
 
-More resources:
+Más recursos:
 
-\- [Exercise: socket1](https://www.youtube.com/watch?v=dWLdI143W-g)
+\- <a href="https://www.youtube.com/watch?v=dWLdI143W-g" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: socket1</a>
 
-\- [Exercise: urllib](https://www.youtube.com/watch?v=8yis2DvbBkI)
+\- <a href="https://www.youtube.com/watch?v=8yis2DvbBkI" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: urllib</a>
 
-\- [Exercise: urllinks](https://www.youtube.com/watch?v=g9flPDG9nnY)
+\- <a href="https://www.youtube.com/watch?v=g9flPDG9nnY" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: urllinks</a>
 
 # --question--
 
 ## --text--
 
-What Python library is used for parsing HTML documents and extracting data from HTML documents?
+¿Qué librería de Python se usa para analizar documentos HTML y extraer datos de ellos?
 
 ## --answers--
 

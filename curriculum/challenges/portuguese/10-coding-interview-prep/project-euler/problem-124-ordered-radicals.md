@@ -1,7 +1,7 @@
 ---
 id: 5900f3e81000cf542c50fefb
 title: 'Problema 124: Radicais ordenados'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301751
 dashedName: problem-124-ordered-radicals
 ---

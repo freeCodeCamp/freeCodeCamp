@@ -2,7 +2,7 @@
 id: 5900f41a1000cf542c50ff2c
 title: >-
   Problema 173: Usando até um milhão de blocos, quantas lâminas quadradas "ocas" diferentes podem ser formadas?
-challengeType: 5
+challengeType: 1
 forumTopicId: 301808
 dashedName: >-
   problem-173-using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed

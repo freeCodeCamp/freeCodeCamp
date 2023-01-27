@@ -1,7 +1,7 @@
 ---
 id: 5900f3fc1000cf542c50ff0f
 title: 'Problema 144: Investigação das várias reflexões de um raio laser'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301773
 dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
 ---

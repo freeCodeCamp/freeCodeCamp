@@ -1,7 +1,7 @@
 ---
 id: 5900f3e51000cf542c50fef8
 title: 'Problem 121: Disc game prize fund'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301748
 dashedName: problem-121-disc-game-prize-fund
 ---
@@ -18,10 +18,10 @@ Find the maximum prize fund that should be allocated to a single game in which f
 
 # --hints--
 
-`euler121()` should return 2269.
+`discGamePrize()` should return `2269`.
 
 ```js
-assert.strictEqual(euler121(), 2269);
+assert.strictEqual(discGamePrize(), 2269);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler121(), 2269);
 ## --seed-contents--
 
 ```js
-function euler121() {
+function discGamePrize() {
 
   return true;
 }
 
-euler121();
+discGamePrize();
 ```
 
 # --solutions--

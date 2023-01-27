@@ -1,7 +1,7 @@
 ---
 id: 5900f3741000cf542c50fe87
 title: 'Problema 8: Maior produto em uma série'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302193
 dashedName: problem-8-largest-product-in-a-series
 ---

@@ -1,14 +1,14 @@
 ---
 id: 594db4d0dedb4c06a2a4cefd
 title: Il problema di Babbage
-challengeType: 5
+challengeType: 1
 forumTopicId: 302229
 dashedName: babbage-problem
 ---
 
 # --description--
 
-[Charles Babbage](https://it.wikipedia.org/wiki/Charles_Babbage "wp: Charles_Babbage"), guardando al futuro di quello che la sua Macchina Analitica avrebbe potuto risolvere, diede questo esempio:
+Charles Babbage, riguardo al tipo di problemi che il suo Analytical Engine sarebbe stato in grado di risolvere, diede questo esempio:
 
 <blockquote>
   Quale è il più piccolo numero positivo intero il quale quadrato finisce con le cifre 269696?

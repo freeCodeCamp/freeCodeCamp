@@ -1,7 +1,7 @@
 ---
 id: 5900f3db1000cf542c50feec
 title: 'Problem 109: Darts'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301733
 dashedName: problem-109-darts
 ---
@@ -20,7 +20,12 @@ There are many variations of rules but in the most popular game the players will
 
 When a player is able to finish on their current score it is called a "checkout" and the highest checkout is 170: T20 T20 D25 (two treble 20s and double bull). There are exactly eleven distinct ways to checkout on a score of 6:
 
-$$\begin{array} \text{D3} &    &    \\\\ D1        & D2 &    \\\\ S2        & D2 &    \\\\ D2        & D1 &    \\\\ S4        & D1 &    \\\\ S1        & S1 & D2 \\\\ S1        & T1 & D1 \\\\ S1        & S3 & D1 \\\\ D1        & D1 & D1 \\\\ D1        & S2 & D1 \\\\ S2        & S2 & D1 \end{array}$$
+$$\begin{array}   \text{D3} &    &    \\\\
+  D1        & D2 &    \\\\   S2        & D2 &    \\\\
+  D2        & D1 &    \\\\   S4        & D1 &    \\\\
+  S1        & S1 & D2 \\\\   S1        & T1 & D1 \\\\
+  S1        & S3 & D1 \\\\   D1        & D1 & D1 \\\\
+  D1        & S2 & D1 \\\\ S2        & S2 & D1 \end{array}$$
 
 Note that D1 D2 is considered different from D2 D1 as they finish on different doubles. However, the combination S1 T1 D1 is considered the same as T1 S1 D1. In addition, we shall not include misses in considering combinations; for example, D3 is the same as 0 D3 and 0 0 D3. Incredibly there are 42336 distinct ways of checking out in total. How many distinct ways can a player checkout with a score less than 100?
 

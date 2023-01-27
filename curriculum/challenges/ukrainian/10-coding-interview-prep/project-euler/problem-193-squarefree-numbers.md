@@ -1,7 +1,7 @@
 ---
 id: 5900f42f1000cf542c50ff41
 title: 'Завдання 193: Безквадратні числа'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301831
 dashedName: problem-193-squarefree-numbers
 ---

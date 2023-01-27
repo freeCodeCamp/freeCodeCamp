@@ -1,14 +1,14 @@
 ---
 id: 594ecc0d9a8cf816e3340187
 title: Taxicab numbers
-challengeType: 5
+challengeType: 1
 forumTopicId: 302337
 dashedName: taxicab-numbers
 ---
 
 # --description--
 
-A [taxicab number](https://en.wikipedia.org/wiki/Hardy–Ramanujan number "wp: Hardy–Ramanujan number") (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
+A taxicab number (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
 
 The first taxicab number is `1729`, which is:
 
@@ -28,13 +28,6 @@ Taxicab numbers are also known as:
 # --instructions--
 
 Write a function that returns the lowest `n` taxicab numbers. For each of the taxicab numbers, show the number as well as its constituent cubes.
-
-**See also:**
-
-<ul>
-  <li><a href='https://oeis.org/A001235' target='_blank'>A001235 taxicab numbers</a> on The On-Line Encyclopedia of Integer Sequences.</li>
-  <li><a href='https://en.wikipedia.org/wiki/Taxicab_number' target='_blank'>taxicab number</a> on Wikipedia.</li>
-</ul>
 
 # --hints--
 

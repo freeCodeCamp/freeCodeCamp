@@ -1,7 +1,7 @@
 ---
 id: 5900f3931000cf542c50fea6
 title: '問題 39: 整数辺を持つ直角三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302054
 dashedName: problem-39-integer-right-triangles
 ---

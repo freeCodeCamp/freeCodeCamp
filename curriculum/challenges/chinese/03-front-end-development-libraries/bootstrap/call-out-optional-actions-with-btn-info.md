@@ -10,7 +10,7 @@ dashedName: call-out-optional-actions-with-btn-info
 
 Bootstrap 有着丰富的预定义按钮颜色。 浅蓝色的 `btn-info` class 通常用在备选操作上。
 
-在 `Like` 按钮下方创建包含文本 `Info` 的块级 Bootstrap 按钮，然后为该按钮添加 Bootstrap 的 `btn-info` 和 `btn-block` classes。
+在 `Like` 按钮下方使用文本 `Info` 创建一个新的块级 Bootstrap 按钮，并向其中添加 Bootstrap 的 `btn-info` 类。
 
 注意：这些按钮仍然需要 `btn` 和 `btn-block` class。
 

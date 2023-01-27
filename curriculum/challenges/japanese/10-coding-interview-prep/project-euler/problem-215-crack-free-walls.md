@@ -1,7 +1,7 @@
 ---
 id: 5900f4431000cf542c50ff56
 title: '問題 215: 伝播亀裂が生じない壁'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301857
 dashedName: problem-215-crack-free-walls
 ---

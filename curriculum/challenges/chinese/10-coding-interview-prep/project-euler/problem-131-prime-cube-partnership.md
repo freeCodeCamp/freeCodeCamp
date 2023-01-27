@@ -1,7 +1,7 @@
 ---
 id: 5900f3ef1000cf542c50ff02
 title: '问题 131：立方伙伴素数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301759
 dashedName: problem-131-prime-cube-partnership
 ---

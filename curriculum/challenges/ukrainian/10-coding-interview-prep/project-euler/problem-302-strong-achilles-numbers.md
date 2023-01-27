@@ -1,7 +1,7 @@
 ---
 id: 5900f49b1000cf542c50ffad
 title: 'Завдання 302: Сильні Ахіллесові числа'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301956
 dashedName: problem-302-strong-achilles-numbers
 ---

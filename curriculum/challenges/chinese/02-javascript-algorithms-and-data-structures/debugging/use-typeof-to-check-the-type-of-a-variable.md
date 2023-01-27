@@ -21,7 +21,7 @@ console.log(typeof {});
 
 控制台将按顺序显示字符串 `string`、`number`、`object` 和 `object`。
 
-JavaScript 有六种原始（不可变）数据类型：`Boolean`、`Null`、`Undefined`、`Number`、`String` 和 `Symbol`（ES6 中新增的），和一种可变的数据类型：`Object`。 注意：在 JavaScript 中，数组在本质上是一种对象。
+JavaScript 有七种原始（不可变）数据类型： `Boolean`，`Null`，`Undefined`，`Number`，`String`，`Symbol` （new with ES6），`BigInt` （new with ES2020）和一种可变数据类型：`Object`。 注意：在 JavaScript 中，数组在本质上是一种对象。
 
 # --instructions--
 
@@ -32,7 +32,7 @@ JavaScript 有六种原始（不可变）数据类型：`Boolean`、`Null`、`Un
 应在两个 `console.log()` 语句中使用 `typeof` 来检查变量的类型。
 
 ```js
-assert(code.match(/console\.log\(typeof[\( ].*\)?\)/g).length == 2);
+assert(code.match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
 ```
 
 应使用 `typeof` 来检查变量 `seven` 的类型。

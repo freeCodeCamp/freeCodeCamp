@@ -15,7 +15,7 @@ Para criar uma variável no CSS, você precisa dar um nome, prefixar este nome c
 --penguin-skin: gray;
 ```
 
-Isso vai criar uma variável chamada `--penguin-skin` e atribuir a ela o valor de `gray`. Agora você pode usar essa variável em outro lugar do seu CSS para alterar o valor de outros elementos para cinza (gray).
+Isso vai criar uma variável chamada `--penguin-skin` e atribuir a ela o valor de `gray`. Agora você pode usar essa variável em outro lugar do seu CSS para alterar o valor de outras propriedades para cinza (gray).
 
 # --instructions--
 
@@ -23,7 +23,7 @@ Na classe `penguin`, crie uma variável chamada `--penguin-skin` e atribua a ela
 
 # --hints--
 
-A classe `penguin` deve declarar a variável `--penguin-skin` e atribuí-la o valor de `gray`.
+A classe `penguin` deve declarar a variável `--penguin-skin` e atribuir a ela o valor `gray` (cinza).
 
 ```js
 assert(

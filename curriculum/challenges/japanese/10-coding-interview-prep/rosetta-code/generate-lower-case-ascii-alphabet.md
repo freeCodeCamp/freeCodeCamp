@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e7a
 title: 小文字の ASCII アルファベットを生成する
-challengeType: 5
+challengeType: 1
 forumTopicId: 302274
 dashedName: generate-lower-case-ascii-alphabet
 ---

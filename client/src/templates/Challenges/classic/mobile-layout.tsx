@@ -14,6 +14,7 @@ interface MobileLayoutProps {
   instructions: JSX.Element;
   notes: ReactElement;
   preview: JSX.Element;
+  updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
   videoUrl: string;
   usesMultifileEditor: boolean;
@@ -44,6 +45,10 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     });
   };
 
+  handleKeyDown = () => this.props.updateUsingKeyboardInTablist(true);
+
+  handleClick = () => this.props.updateUsingKeyboardInTablist(false);
+
   render() {
     const { currentTab } = this.state;
     const {
@@ -73,13 +78,17 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
         <Tabs
           activeKey={currentTab}
           defaultActiveKey={currentTab}
-          id='challenge-page-tabs'
+          id='mobile-layout'
+          onKeyDown={this.handleKeyDown}
+          onMouseDown={this.handleClick}
           onSelect={this.switchTab}
+          onTouchStart={this.handleClick}
         >
           {!hasEditableBoundaries && (
             <TabPane
               eventKey={Tab.Instructions}
               title={i18next.t('learn.editor-tabs.info')}
+              tabIndex={0}
             >
               {instructions}
             </TabPane>
@@ -115,8 +124,8 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               {preview}
             </TabPane>
           )}
+          <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
         </Tabs>
-        <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
       </>
     );
   }

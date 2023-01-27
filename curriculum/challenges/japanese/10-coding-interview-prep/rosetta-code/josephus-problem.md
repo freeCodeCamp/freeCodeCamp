@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7ec5
 title: ヨセフスの問題
-challengeType: 5
+challengeType: 1
 forumTopicId: 302294
 dashedName: josephus-problem
 ---
 
 # --description--
 
-[ヨセフスの問題](https://en.wikipedia.org/wiki/Josephus problem) とは、次のような恐ろしい描写付きの数学パズルです。$n$ 人の囚人が円状に立っており、$0$ から順に $n-1$ まで番号が付けられています。
+Josephus problem is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
 
 死刑執行人が円の周囲を歩きながら、囚人 $0$ から始め、$k$ 番目ごとに囚人を処刑していきます。
 
@@ -26,7 +26,7 @@ dashedName: josephus-problem
 
 # --instructions--
 
-囚人の最初の数と「k」をパラメータとして取り、生き残った囚人の番号を返す関数を記述してください。
+Write a function that takes the initial number of prisoners and `k` as parameters and returns the number of the prisoner that survives.
 
 # --hints--
 

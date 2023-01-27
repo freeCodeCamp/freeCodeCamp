@@ -1,7 +1,7 @@
 ---
 id: 5900f4931000cf542c50ffa6
 title: 'Завдання 295: Лінзоподібні отвори'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301947
 dashedName: problem-295-lenticular-holes
 ---
@@ -16,7 +16,8 @@ dashedName: problem-295-lenticular-holes
 
 Розглянемо ці кола:
 
-$$\begin{align} & C_0: x^2 + y^2 = 25 \\\\ & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
+$$\begin{align}   & C_0: x^2 + y^2 = 25 \\\\
+  & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
 
 Кола $C_0$, $C_1$ та $C_2$ намальовані на малюнку нижче.
 

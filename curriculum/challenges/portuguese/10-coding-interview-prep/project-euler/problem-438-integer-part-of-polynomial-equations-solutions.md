@@ -1,7 +1,7 @@
 ---
 id: 5900f5231000cf542c510034
 title: 'Problema 438: Parte inteira das soluções da equação polinomial'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302109
 dashedName: problem-438-integer-part-of-polynomial-equations-solutions
 ---
@@ -19,7 +19,7 @@ No caso de $n = 4$, há 12 tuplas $n$ de números inteiros que satisfazem ambas 
 
 Definimos $S(t)$ como a soma de valores absolutos dos números inteiros em $t$.
 
-Para $n = 4$ podemos verificar que $\sum S(t) = 2087$ para todas as tuplas $n$ t que satisfazem ambas as condições.
+Para $n = 4$ podemos verificar que $\sum S(t) = 2087$ para todas as tuplas $n$ $t$ que satisfazem ambas as condições.
 
 Encontre a $\sum S(t)$ para $n = 7$.
 

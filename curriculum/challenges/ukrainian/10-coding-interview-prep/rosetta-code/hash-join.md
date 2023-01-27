@@ -1,19 +1,19 @@
 ---
 id: 5956795bc9e2c415eb244de1
 title: Хеш-приєднання
-challengeType: 5
+challengeType: 1
 forumTopicId: 302284
 dashedName: hash-join
 ---
 
 # --description--
 
-[ внутрішнє з'єднання ](https://www.freecodecamp.org/news/sql-join-types-inner-join-vs-outer-join-example/#how-to-use-an-inner-join-in-sql "news: SQL Join Types – Inner Join VS Outer Join Example#How to Use an INNER JOIN in SQL") — це операція, яка об'єднує дві таблиці даних в одну таблицю на основі відповідності значень стовпців. Найпростіший спосіб виконати цю операцію: [приєднання вкладеного циклу](https://en.wikipedia.org/wiki/Nested loop join "wp: Nested loop join")алгоритм, а більш масштабованою альтернативою є[хеш-приєднання](https://en.wikipedia.org/wiki/hash join "wp: hash join")алгоритм.
+An inner join is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the nested loop join algorithm, but a more scalable alternative is the hash join algorithm.
 
 Алгоритм "хеш-приєднання" складається з двох кроків:
 
 <ol>
-  <li><strong>хеш фаза:</strong> Створіть <a href='https://en.wikipedia.org/wiki/Multimap' title='wp: Multimap' target='_blank'>,багатофункціональної карти</a> з однієї із двох таблиць, зіставляючи значення кожного стовпця до всіх рядків, що містять його.</li>
+  <li><strong>Hash phase:</strong> Create a multimap from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
   <ul>
     <li>Багатофункціональна карта повинна підтримувати хеш пошук, який оцінює краще звичайного лінійного пошуку, оскільки це і є суть алгоритму.</li>
     <li>В ідеалі, ми створюємо мультимедійне відображення для меншої таблиці, таким чином мінімізуючи час створення та розмір пам'яті.</li>

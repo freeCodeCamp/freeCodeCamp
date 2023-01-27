@@ -14,6 +14,8 @@ import BlockSaveButton from '../helpers/form/block-save-button';
 import SoundSettings from './sound';
 import ThemeSettings, { Themes } from './theme';
 import UsernameSettings from './username';
+import KeyboardShortcutsSettings from './keyboard-shortcuts';
+import SectionHeader from './section-header';
 
 type FormValues = {
   name: string;
@@ -30,10 +32,12 @@ type AboutProps = {
   picture: string;
   points: number;
   sound: boolean;
+  keyboardShortcuts: boolean;
   submitNewAbout: (formValues: FormValues) => void;
   t: TFunction;
   toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
+  toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   username: string;
 };
 
@@ -152,7 +156,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     const value = (e.target as HTMLInputElement).value.slice(0);
     // eslint-disable-next-line @typescript-eslint/naming-convention
     if (isURL(value, { require_protocol: true })) {
-      this.validationImage.src = value;
+      this.validationImage.src = encodeURI(value);
     } else {
       this.setState({
         isPictureUrlValid: false
@@ -198,59 +202,69 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     const {
       currentTheme,
       sound,
+      keyboardShortcuts,
       username,
       t,
       toggleNightMode,
-      toggleSoundMode
+      toggleSoundMode,
+      toggleKeyboardShortcuts
     } = this.props;
     return (
       <div className='about-settings'>
         <UsernameSettings username={username} />
         <br />
+        <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
-            <FormGroup controlId='about-name'>
-              <ControlLabel>
-                <strong>{t('settings.labels.name')}</strong>
-              </ControlLabel>
-              <FormControl
-                onChange={this.handleNameChange}
-                type='text'
-                value={name}
-              />
-            </FormGroup>
-            <FormGroup controlId='about-location'>
-              <ControlLabel>
-                <strong>{t('settings.labels.location')}</strong>
-              </ControlLabel>
-              <FormControl
-                onChange={this.handleLocationChange}
-                type='text'
-                value={location}
-              />
-            </FormGroup>
-            <FormGroup controlId='about-picture'>
-              <ControlLabel>
-                <strong>{t('settings.labels.picture')}</strong>
-              </ControlLabel>
-              <FormControl
-                onChange={this.handlePictureChange}
-                type='url'
-                value={picture}
-              />
-              {this.showImageValidationWarning()}
-            </FormGroup>
-            <FormGroup controlId='about-about'>
-              <ControlLabel>
-                <strong>{t('settings.labels.about')}</strong>
-              </ControlLabel>
-              <FormControl
-                componentClass='textarea'
-                onChange={this.handleAboutChange}
-                value={about}
-              />
-            </FormGroup>
-            <BlockSaveButton disabled={this.isFormPristine()} />
+            <div role='group' aria-label={t('settings.headings.personal-info')}>
+              <FormGroup controlId='about-name'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.name')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handleNameChange}
+                  type='text'
+                  value={name}
+                />
+              </FormGroup>
+              <FormGroup controlId='about-location'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.location')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handleLocationChange}
+                  type='text'
+                  value={location}
+                />
+              </FormGroup>
+              <FormGroup controlId='about-picture'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.picture')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handlePictureChange}
+                  type='url'
+                  value={picture}
+                />
+                {this.showImageValidationWarning()}
+              </FormGroup>
+              <FormGroup controlId='about-about'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.about')}</strong>
+                </ControlLabel>
+                <FormControl
+                  componentClass='textarea'
+                  onChange={this.handleAboutChange}
+                  value={about}
+                />
+              </FormGroup>
+            </div>
+            <BlockSaveButton disabled={this.isFormPristine()}>
+              {t('buttons.save')}{' '}
+              <span className='sr-only'>
+                {t('settings.headings.personal-info')}
+              </span>
+            </BlockSaveButton>
           </form>
         </FullWidthRow>
         <Spacer />
@@ -260,6 +274,10 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             toggleNightMode={toggleNightMode}
           />
           <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
+          <KeyboardShortcutsSettings
+            keyboardShortcuts={keyboardShortcuts}
+            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+          />
         </FullWidthRow>
       </div>
     );

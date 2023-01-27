@@ -162,6 +162,8 @@ export default function initializeUser(User) {
   User.definition.properties.rand.default = getRandomNumber;
   // increase user accessToken ttl to 900 days
   User.settings.ttl = 900 * 24 * 60 * 60 * 1000;
+  // Sets ttl to 900 days for mobile login created access tokens
+  User.settings.maxTTL = 900 * 24 * 60 * 60 * 1000;
 
   // username should not be in blocklist
   User.validatesExclusionOf('username', {
@@ -338,6 +340,21 @@ export default function initializeUser(User) {
       Observable.fromPromise(updateUser),
       req.logIn(this),
       accessToken => accessToken
+    );
+  };
+
+  User.prototype.mobileLoginByRequest = function mobileLoginByRequest(
+    req,
+    res
+  ) {
+    return new Promise((resolve, reject) =>
+      this.createAccessToken({}, (err, accessToken) => {
+        if (err) {
+          return reject(err);
+        }
+        setAccessTokenToResponse({ accessToken }, req, res);
+        return resolve(accessToken);
+      })
     );
   };
 
@@ -992,6 +1009,20 @@ export default function initializeUser(User) {
     return this.constructor.findOne$(filter).map(user => {
       this.completedChallenges = user.completedChallenges;
       return user.completedChallenges;
+    });
+  };
+  User.prototype.getSavedChallenges$ = function getSavedChallenges$() {
+    if (Array.isArray(this.savedChallenges) && this.savedChallenges.length) {
+      return Observable.of(this.savedChallenges);
+    }
+    const id = this.getId();
+    const filter = {
+      where: { id },
+      fields: { savedChallenges: true }
+    };
+    return this.constructor.findOne$(filter).map(user => {
+      this.savedChallenges = user.savedChallenges;
+      return user.savedChallenges;
     });
   };
 

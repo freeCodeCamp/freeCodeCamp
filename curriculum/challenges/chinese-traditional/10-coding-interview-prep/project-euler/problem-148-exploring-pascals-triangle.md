@@ -1,7 +1,7 @@
 ---
 id: 5900f4021000cf542c50ff14
 title: '問題 148：帕斯卡三角形的研究'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301777
 dashedName: problem-148-exploring-pascals-triangle
 ---
@@ -10,7 +10,7 @@ dashedName: problem-148-exploring-pascals-triangle
 
 可以輕易證明，帕斯卡三角形前七行中，沒有一個數字可以被 7 整除。
 
-```
+```markup
             1
           1   1
         1   2   1

@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7ec5
 title: Задача Йосифа Флавія
-challengeType: 5
+challengeType: 1
 forumTopicId: 302294
 dashedName: josephus-problem
 ---
 
 # --description--
 
-[ Задача Йосифа Флавія](https://en.wikipedia.org/wiki/Josephus problem) це математична головоломка з похмурим описом: $n$ ув'язнені стоять у колі, послідовно пронумеровані від $0$ до $n-1$.
+Josephus problem is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
 
 Кат йде по колу, починаючи від ув’язненого $0$, виводить кожного $k$-го ув’язненого і вбиває його.
 
@@ -26,7 +26,7 @@ dashedName: josephus-problem
 
 # --instructions--
 
-Напишіть функцію, яка бере початкову кількість ув'язнених і "k" в якості параметра і повертає номер в'язня, який вижив.
+Write a function that takes the initial number of prisoners and `k` as parameters and returns the number of the prisoner that survives.
 
 # --hints--
 

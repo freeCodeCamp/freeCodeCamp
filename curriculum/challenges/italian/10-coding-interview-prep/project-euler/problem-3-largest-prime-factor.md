@@ -1,7 +1,7 @@
 ---
 id: 5900f36f1000cf542c50fe82
 title: 'Problema 3: il più grande fattore primo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301952
 dashedName: problem-3-largest-prime-factor
 ---

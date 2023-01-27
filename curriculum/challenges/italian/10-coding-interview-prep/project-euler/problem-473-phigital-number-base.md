@@ -1,7 +1,7 @@
 ---
 id: 5900f5461000cf542c510058
 title: 'Problema 473: Base numerica pi-greco'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302150
 dashedName: problem-473-phigital-number-base
 ---
@@ -22,7 +22,7 @@ $2 = \varphi + \varphi^{-2}$ e $3 = \varphi^{2} + \varphi^{-2}$
 
 Per rappresentare la somma delle potenze di $\varphi$ usiamo una stringa di 0 e 1 con un punto per indicare dove gli esponenti negativi iniziano. Chiamiamo questa rappresentazione in base pi-greco.
 
-Quindi $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ e $14 = 100100.001001_{\varphi}$. Le stringhe rappresentanti 1, 2 e 14 nella base pi-greco sono palindromiche, mentre la stringa rappresentante 3 non lo è. (il punto non è il carattere centrale).
+Quindi $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ e $14 = 100100.001001_{\varphi}$. Le stringhe che rappresentano 1,2 e 14 nella base numerica phigitale sono palindrome, mentre la stringa che rappresenta 3 non lo è ( il punto phigitale non è il carattere al centro).
 
 La somma dei numeri interi che non eccedono 1000 la cui rappresentazione in base pi-greco è palindromica è 4345.
 

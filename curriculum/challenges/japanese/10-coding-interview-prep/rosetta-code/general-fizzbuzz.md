@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7e78
 title: 一般的な FizzBuzz プログラム
-challengeType: 5
+challengeType: 1
 forumTopicId: 302273
 dashedName: general-fizzbuzz
 ---
 
 # --description--
 
-[FizzBuzz](https://rosettacode.org/wiki/FizzBuzz) プログラムの一般化されたバージョンを記述します。このバージョンは、倍数と単語を含むあらゆるリストに適しています。
+Write a generalized version of <a href="https://rosettacode.org/wiki/FizzBuzz" target="_blank" rel="noopener noreferrer nofollow">FizzBuzz</a> that works for any list of factors, along with their words.
 
 これは基本的に、このゲームのルールをユーザーに提供する "fizzbuzz" 実装です。 これを実装する関数を作成します。 この関数は 2 つのパラメーターを取得する必要があります。
 

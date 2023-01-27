@@ -14,58 +14,56 @@ dashedName: comparison-with-the-less-than-operator
 **例如：**
 
 ```js
-2   < 5
-'3' < 7
-5   < 5
-3   < 2
-'8' < 4
+2   < 5 // true
+'3' < 7 // true
+5   < 5 // false
+3   < 2 // false
+'8' < 4 // false
 ```
-
-按順序，這些表達式會返回 `true`、`true`、`false`、`false` 和 `false`。
 
 # --instructions--
 
-添加小於運算符到指定行，使得函數的返回語句有意義。
+將小於運算符添加到指示的行，以便返回語句有意義。
 
 # --hints--
 
-`testLessThan(0)` 應該返回字符串 `Under 25`。
+`testLessThan(0)` 應該返回字符串 `Under 25`
 
 ```js
 assert(testLessThan(0) === 'Under 25');
 ```
 
-`testLessThan(24)` 應該返回字符串 `Under 25`。
+`testLessThan(24)` 應該返回字符串 `Under 25`
 
 ```js
 assert(testLessThan(24) === 'Under 25');
 ```
 
-`testLessThan(25)` 應該返回字符串 `Under 55`。
+`testLessThan(25)` 應該返回字符串 `Under 55`
 
 ```js
 assert(testLessThan(25) === 'Under 55');
 ```
 
-`testLessThan(54)` 應該返回字符串 `Under 55`。
+`testLessThan(54)` 應該返回字符串 `Under 55`
 
 ```js
 assert(testLessThan(54) === 'Under 55');
 ```
 
-`testLessThan(55)` 應該返回字符串 `55 or Over`。
+`testLessThan(55)` 應該返回字符串 `55 or Over`
 
 ```js
 assert(testLessThan(55) === '55 or Over');
 ```
 
-`testLessThan(99)` 應該返回字符串 `55 or Over`。
+`testLessThan(99)` 應該返回字符串 `55 or Over`
 
 ```js
 assert(testLessThan(99) === '55 or Over');
 ```
 
-應該使用 `<` 運算符至少兩次。
+應該使用 `<` 運算符至少兩次
 
 ```js
 assert(code.match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);

@@ -9,7 +9,7 @@ dashedName: constructing-strings-with-variables
 
 # --description--
 
-Às vezes, você precisará criar uma string, no estilo [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs). Usando o operador de concatenação (`+`), você pode inserir uma ou mais variáveis em uma string que você está criando.
+Às vezes, você precisará criar uma string. Usando o operador de concatenação (`+`), você pode inserir uma ou mais variáveis em uma string que você está criando.
 
 Exemplo:
 

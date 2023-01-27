@@ -1,7 +1,7 @@
 ---
 id: 5e6dee7749a0b85a3f1fc7d5
 title: Lucas-Lehmer test
-challengeType: 5
+challengeType: 1
 forumTopicId: 385281
 dashedName: lucas-lehmer-test
 ---

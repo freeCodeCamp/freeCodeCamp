@@ -18,7 +18,7 @@ dashedName: learn-how-script-tags-and-document-ready-work
 
 在 `script` 标签中添加代码 `$(document).ready(function() {`。 然后在后面（仍在该 `script` 标签内）用 `});` 闭合它。
 
-稍后将详细介绍 `functions`， 现在需要知道的是，只要浏览器加载页面，`function` 中放入的代码就会运行。
+稍后将详细介绍 `functions`， 重要的是要知道，在浏览器加载页面后，你放入此 `function` 的代码将立即运行。
 
 有一点很重要，如果没有 `document ready function`，代码将在 HTML 页面呈现之前运行，这可能会导致错误。
 

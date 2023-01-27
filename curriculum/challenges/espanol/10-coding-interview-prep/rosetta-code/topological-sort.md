@@ -1,7 +1,7 @@
 ---
 id: 594fa2746886f41f7d8bf225
 title: Topological sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302340
 dashedName: topological-sort
 ---
@@ -43,7 +43,7 @@ The compiling of a library in the VHDL language has the constraint that a librar
 
 The input of the function will be a multiline string, each line will consist of the name of the library, followed by its dependencies (if exist).
 
-For example:
+Por ejemplo:
 
 ```js
 const libsSimple =

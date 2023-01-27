@@ -19,13 +19,11 @@ Os índices de um array são escritos na mesma notação com colchetes que as st
 
 ```js
 const array = [50, 60, 70];
-array[0];
+console.log(array[0]);
 const data = array[1];
 ```
 
-`array[0]` agora é `50` e `data` tem o valor `60`.
-
-**Observação:** não deve haver nenhum espaço entre o nome do array e os colchetes, como `array [0]`. Embora JavaScript seja capaz de processar isso corretamente, isso pode confundir outros programadores lendo seu código.
+O `console.log(array[0])` exibirá `50` e `data` terá o valor de `60`.
 
 # --instructions--
 

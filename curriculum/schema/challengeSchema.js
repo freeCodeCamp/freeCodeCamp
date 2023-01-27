@@ -23,12 +23,12 @@ const fileJoi = Joi.object().keys({
 
 const schema = Joi.object()
   .keys({
-    block: Joi.string().regex(slugRE),
+    block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
     removeComments: Joi.bool(),
     certification: Joi.string().regex(slugRE),
-    challengeType: Joi.number().min(0).max(14).required(),
+    challengeType: Joi.number().min(0).max(15).required(),
     checksum: Joi.number(),
     // __commentCounts is only used to test the comment replacement
     __commentCounts: Joi.object(),
@@ -91,6 +91,7 @@ const schema = Joi.object()
         crossDomain: Joi.bool()
       })
     ),
+    assignments: Joi.array().items(Joi.string()),
     solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
     superBlock: Joi.string().regex(slugWithSlashRE),
     superOrder: Joi.number(),

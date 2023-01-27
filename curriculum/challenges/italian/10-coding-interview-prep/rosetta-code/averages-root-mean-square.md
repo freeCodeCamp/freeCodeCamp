@@ -1,18 +1,16 @@
 ---
 id: 594da033de4190850b893874
 title: Medie/Valore efficace
-challengeType: 5
+challengeType: 1
 forumTopicId: 302228
 dashedName: averagesroot-mean-square
 ---
 
 # --description--
 
-Calcola il [Valore efficace](https://it.wikipedia.org/wiki/Valore_efficace "wp: Valore efficace") dei numeri da 1 a 10 inclusivo.
+Calcola la media quadratica (RMS - Root Mean Square) dei numeri tra 1 e 10 inclusi.
 
-Il *valore efficace* è anche noto con le iniziali RMS (o rms dall'inglese root mean square), e come **media quadratica**.
-
-Il RMS è calcolato come la radice quadrata della media dei quadrati dei numeri:
+La <abbr title="media quadratica">RMS</abbr> è calcolata prendendo la radice quadrata della media del quadrato dei numeri, dato dall'equazione:
 
 $$x\_{\\mathrm{rms}} = \\sqrt {{{x_1}^2 + {x_2}^2 + \\cdots + {x_n}^2} \\over n}. $$
 

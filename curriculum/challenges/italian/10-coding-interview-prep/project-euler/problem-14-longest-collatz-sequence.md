@@ -1,7 +1,7 @@
 ---
 id: 5900f37a1000cf542c50fe8d
 title: 'Problema 14: la sequenza di Collatz più lunga'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301768
 dashedName: problem-14-longest-collatz-sequence
 ---

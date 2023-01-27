@@ -10,12 +10,8 @@
 }
 
 .footer-container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  margin-inline: auto;
+  padding: 40px 15px;
   font-size: 16px;
   overflow-x: hidden;
 }
@@ -38,26 +34,26 @@
 
 .footer-container .col-header {
   flex: 0 0 100%;
-  padding-bottom: 15px;
   font-weight: 700;
   font-size: 16px;
   text-align: center;
   padding: 0 15px 15px;
+  margin-bottom: 0;
+  font-family: Lato, sans-serif;
 }
 
 .footer-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0px;
+  margin: 0;
 }
 
 .footer-col {
   display: flex;
   flex-direction: column;
   flex: 0 0 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-inline: 15px;
   font-size: 16px;
 }
 
@@ -69,15 +65,14 @@
 }
 
 .footer-col a {
-  padding: 5px 0px;
+  padding: 5px 0;
 }
 
 .footer-desc-col {
   flex: 1 0 90%;
   display: flex;
   flex-direction: column;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-inline: 15px;
   margin-bottom: 30px;
 }
 
@@ -124,7 +119,7 @@ p.footer-donation a:hover {
     flex-direction: row;
   }
   .footer-right {
-    padding-left: 15px;
+    padding-inline-start: 15px;
   }
   .footer-col-1,
   .footer-col-2,
@@ -151,7 +146,7 @@ p.footer-donation a:hover {
     flex-direction: column;
   }
   .footer-right {
-    padding-left: 0px;
+    padding-inline-start: 0;
   }
   .footer-container .col-spacer {
     margin-top: 40px;

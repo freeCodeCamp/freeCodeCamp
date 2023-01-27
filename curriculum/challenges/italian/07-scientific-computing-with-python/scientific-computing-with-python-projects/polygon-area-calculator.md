@@ -8,13 +8,12 @@ dashedName: polygon-area-calculator
 
 # --description--
 
-Lavorerari a [questo progetto con il nostro codice d'inizio su Replit](https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator).
+Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
 
-Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
 
-- [Video corso Python for Everybody](https://www.freecodecamp.org/news/python-for-everybody/) (14 ore)
-
-- [Video corso Learn Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 ore)
 
 # --instructions--
 
@@ -29,7 +28,7 @@ Quando viene creato un oggetto Rectangle, dovrebbe essere inizializzato con attr
 - `get_area`: Restituisce l'area (`width * height`)
 - `get_perimeter`: Restituisce il perimetro (`2 * width + 2 * height`)
 - `get_diagonal`: Restituisce la diagonale (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: Restituisce una stringa che rappresenta la forma usando linee di "\*". Il numero di righe dovrebbe essere uguale all'altezza e il numero di "\*" in ogni riga dovrebbe essere uguale alla larghezza. Ci dovrebbe essere un carattere di nuova linea (`\n`) alla fine di ogni riga. Se la larghezza o l'altezza è maggiore di 50, questo dovrebbe restituire la stringa: `"Too big for picture."`.
+- `get_picture`: Restituisce una stringa che rappresenta la forma usando linee di "\*". Il numero di righe dovrebbe essere uguale all'altezza e il numero di "\*" in ogni riga dovrebbe essere uguale alla larghezza. Ci dovrebbe essere un carattere di nuova riga (`\n`) alla fine di ogni riga. Se la larghezza o l'altezza è maggiore di 50, occorre restituire la stringa: "Too big for picture.".
 - `get_amount_inside`: Prende un'altra forma (quadrato o rettangolo) come argomento. Restituisce il numero di volte che la forma passata potrebbe adattarsi all'interno della forma (senza rotazioni). Per esempio, un rettangolo con una larghezza di 4 e un'altezza di 8 potrebbe contenere due quadrati con lati di 4.
 
 Inoltre, se un'istanza di Rectangle è rappresentata come una stringa, dovrebbe apparire come: `Rectangle(width=5, height=10)`
@@ -89,11 +88,11 @@ I test unitari per questo progetto sono in `test_module.py`.
 
 ## Sviluppo
 
-Scrivi il tuo codice in `shape_calculator.py`. Per lo sviluppo, puoi usare `main.py` per testare la tua funzione `shape_calculator()`. Usa il bottone "run" e `main.py` eseguirà.
+Scrivi il tuo codice in `shape_calculator.py`. Per lo sviluppo, puoi usare `main.py` per testare la tua funzione `shape_calculator()`. Usa il bottone "run" e `main.py` sarà eseguito.
 
 ## Test
 
-Abbiamo importato i test da `test_module.py` in `main.py` per la tua convenienza. I test eseguiranno automaticamente quando usi il bottone "run".
+Abbiamo importato i test da `test_module.py` in `main.py` per tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run".
 
 ## Invio
 

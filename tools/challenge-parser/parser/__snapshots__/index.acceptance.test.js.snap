@@ -2,6 +2,7 @@
 
 exports[`challenge parser it should not parse directives we do not use 1`] = `
 Object {
+  "assignments": Array [],
   "description": "<section id=\\"description\\">
 <p>:root appears, :import appears</p>
 <p>the next paragraph should appear</p>
@@ -19,6 +20,7 @@ a container directive
 
 exports[`challenge parser it should parse video questions 1`] = `
 Object {
+  "assignments": Array [],
   "description": "<section id=\\"description\\">
 <p>Paragraph 1</p>
 <pre><code class=\\"language-html\\">code example
@@ -48,6 +50,7 @@ Object {
 
 exports[`challenge parser should import md from other files 1`] = `
 Object {
+  "assignments": Array [],
   "challengeFiles": Array [
     Object {
       "contents": "<html>
@@ -112,6 +115,7 @@ for (let index = 0; index < array.length; index++) {
 
 exports[`challenge parser should not mix other YAML with the frontmatter 1`] = `
 Object {
+  "assignments": Array [],
   "challengeFiles": Array [
     Object {
       "contents": "<html>
@@ -176,6 +180,7 @@ Object {
 
 exports[`challenge parser should parse a more realistic md file 1`] = `
 Object {
+  "assignments": Array [],
   "challengeFiles": Array [
     Object {
       "contents": "<html>
@@ -365,6 +370,7 @@ assert(
 
 exports[`challenge parser should parse a simple md file 1`] = `
 Object {
+  "assignments": Array [],
   "challengeFiles": Array [
     Object {
       "contents": "<html>
@@ -465,6 +471,7 @@ if(let x of xs) {
 
 exports[`challenge parser should parse frontmatter 1`] = `
 Object {
+  "assignments": Array [],
   "challengeFiles": Array [
     Object {
       "contents": "<html>
@@ -526,6 +533,7 @@ Object {
 
 exports[`challenge parser should parse gfm strikethrough and frontmatter 1`] = `
 Object {
+  "assignments": Array [],
   "challengeFiles": Array [
     Object {
       "contents": "<html>

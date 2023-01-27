@@ -1,7 +1,7 @@
 ---
 id: 5900f45d1000cf542c50ff70
 title: 'Problem 241: Perfection Quotients'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301888
 dashedName: problem-241-perfection-quotients
 ---

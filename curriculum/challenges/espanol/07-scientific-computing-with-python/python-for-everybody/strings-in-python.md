@@ -1,8 +1,12 @@
 ---
 id: 5e7b9f070b6c005b0e76f060
-title: Strings in Python
+title: Cadenas en Python
 challengeType: 11
 videoId: LYZj207fKpQ
+bilibiliIds:
+  aid: 504434218
+  bvid: BV1Lg41177s8
+  cid: 376531802
 dashedName: strings-in-python
 ---
 
@@ -10,7 +14,7 @@ dashedName: strings-in-python
 
 ## --text--
 
-What will the following code print?:
+¿Qué imprimirá el siguiente código?:
 
 ```python
 for n in "banana":

@@ -9,6 +9,7 @@
 
 'platform: api':
   - api-server/**/*
+  - api/**/*
 
 'scope: tools/scripts':
   - cypress/**/*

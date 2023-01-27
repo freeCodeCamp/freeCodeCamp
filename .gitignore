@@ -162,9 +162,22 @@ config/client/sass-compile.json
 config/client/frame-runner.json
 config/client/test-evaluator.json
 config/curriculum.json
-config/i18n/all-langs.js
+config/i18n.js
 config/certification-settings.js
+config/donation-settings.js
+config/superblock-order.js
+config/superblock-order.test.js
 
+### Generated utils files ###
+utils/block-nameify.js
+utils/block-nameify.test.js
+utils/slugs.js
+utils/slugs.test.js
+utils/index.js
+utils/get-lines.js
+utils/get-lines.test.js
+utils/validate.js
+utils/validate.test.js
 
 ### vim ###
 # Swap
@@ -201,6 +214,10 @@ api-server/lib/*
 curriculum/dist
 curriculum/build
 client/static/_redirects
+client/static/mobile
+client/static/curriculum-data
+client/i18n/locales/**/trending.json
+client/src/components/Donation/types.js
 
 ### UI Components ###
 tools/ui-components/dist

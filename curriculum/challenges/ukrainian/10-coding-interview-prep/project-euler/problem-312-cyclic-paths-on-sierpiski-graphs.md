@@ -1,7 +1,7 @@
 ---
 id: 5900f4a51000cf542c50ffb7
 title: 'Задача 312: Циклічні шляхи на графах Серпінського'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301968
 dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
 ---
@@ -19,7 +19,9 @@ dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
 
 Також можна перевірити, що:
 
-$$\begin{align} & C(1) = C(2) = 1 \\\\ & C(5) = 71\\,328\\,803\\,586\\,048 \\\\ & C(10 000)\bmod {10}^8 = 37\\,652\\,224 \\\\ & C(10 000)\bmod {13}^8 = 617\\,720\\,485 \\\\ \end{align}$$
+$$\begin{align}   & C(1) = C(2) = 1 \\\\
+  & C(5) = 71\\,328\\,803\\,586\\,048 \\\\   & C(10 000)\bmod {10}^8 = 37\\,652\\,224 \\\\
+  & C(10 000)\bmod {13}^8 = 617\\,720\\,485 \\\\ \end{align}$$
 
 Знайдіть $C(C(C(10\\,000)))\bmod {13}^8$.
 

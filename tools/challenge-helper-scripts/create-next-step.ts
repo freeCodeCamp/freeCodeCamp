@@ -1,10 +1,6 @@
-import { getLastStepFileContent } from './helpers/get-last-step-file-content';
-import { getProjectPath } from './helpers/get-project-path';
-import { reorderSteps, createStepFile } from './utils';
+import { getLastStep } from './helpers/get-last-step-file-number';
+import { insertStep } from './commands';
+import { validateMetaData } from './helpers/project-metadata';
 
-const projectPath = getProjectPath();
-const { nextStepNum, challengeSeeds } = getLastStepFileContent();
-
-createStepFile({ stepNum: nextStepNum, projectPath, challengeSeeds });
-console.log(`Sucessfully added step #${nextStepNum}`);
-reorderSteps();
+validateMetaData();
+insertStep(getLastStep().stepNum + 1);

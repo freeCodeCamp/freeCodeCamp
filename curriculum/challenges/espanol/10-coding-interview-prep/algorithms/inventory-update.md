@@ -1,18 +1,18 @@
 ---
 id: a56138aff60341a09ed6c480
-title: Inventory Update
-challengeType: 5
+title: Actualización de Inventario
+challengeType: 1
 forumTopicId: 16019
 dashedName: inventory-update
 ---
 
 # --description--
 
-Compare and update the inventory stored in a 2D array against a second 2D array of a fresh delivery. Update the current existing inventory item quantities (in `arr1`). If an item cannot be found, add the new item and quantity into the inventory array. The returned inventory array should be in alphabetical order by item.
+Compara y actualiza el inventario en un arreglo de 2 dimensiones contra un segundo arreglo de 2 dimensiones de una entrega nueva. Actualizar las cantidades actuales del artículo del inventario (en `arr1`). Si un artículo no se puede encontrar, agregue el nuevo artículo con su cantidad al arreglo de inventario. El arreglo de inventario devuelto deberá estar en orden alfabético por elemento.
 
 # --hints--
 
-The function `updateInventory` should return an array.
+La función `updateInventory` debe devolver un arreglo.
 
 ```js
 assert.isArray(
@@ -33,7 +33,7 @@ assert.isArray(
 );
 ```
 
-`updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])` should return an array with a length of 6.
+Traducciónes: update inventory: actualización del inventario. Bowling ball: bola de boliche. Dirty sock: calcetín sucio. Hair pin: pasador de cabello. Microphone: micrófono. Half-eaten apple: manzana media comida. Toothpaste: pasta de dientes. `updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])` debería devolver un arreglo con una longitud de 6.
 
 ```js
 assert.equal(
@@ -55,7 +55,7 @@ assert.equal(
 );
 ```
 
-`updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])` should return `[[88, "Bowling Ball"], [2, "Dirty Sock"], [3, "Hair Pin"], [3, "Half-Eaten Apple"], [5, "Microphone"], [7, "Toothpaste"]]`.
+`updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])` debería devolver `[[88, "Bowling Ball"], [2, "Dirty Sock"], [3, "Hair Pin"], [3, "Half-Eaten Apple"], [5, "Microphone"], [7, "Toothpaste"]]`.
 
 ```js
 assert.deepEqual(
@@ -84,7 +84,7 @@ assert.deepEqual(
 );
 ```
 
-`updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [])` should return `[[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]]`.
+`updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [])` debería regresar `[[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]]`.
 
 ```js
 assert.deepEqual(
@@ -106,7 +106,7 @@ assert.deepEqual(
 );
 ```
 
-`updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])` should return `[[67, "Bowling Ball"], [2, "Hair Pin"], [3, "Half-Eaten Apple"], [7, "Toothpaste"]]`.
+`updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])` debería regresar `[[67, "Bowling Ball"], [2, "Hair Pin"], [3, "Half-Eaten Apple"], [7, "Toothpaste"]]`.
 
 ```js
 assert.deepEqual(
@@ -128,7 +128,7 @@ assert.deepEqual(
 );
 ```
 
-`updateInventory([[0, "Bowling Ball"], [0, "Dirty Sock"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]])` should return `[[1, "Bowling Ball"], [0, "Dirty Sock"], [1, "Hair Pin"], [1, "Half-Eaten Apple"], [0, "Microphone"], [1, "Toothpaste"]]`.
+`updateInventory([[0, "Bowling Ball"], [0, "Dirty Sock"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]])` debería regresar `[[1, "Bowling Ball"], [0, "Dirty Sock"], [1, "Hair Pin"], [1, "Half-Eaten Apple"], [0, "Microphone"], [1, "Toothpaste"]]`.
 
 ```js
 assert.deepEqual(

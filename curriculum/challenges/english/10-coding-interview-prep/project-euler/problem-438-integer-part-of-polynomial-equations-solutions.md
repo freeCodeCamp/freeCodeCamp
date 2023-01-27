@@ -1,7 +1,7 @@
 ---
 id: 5900f5231000cf542c510034
 title: 'Problem 438: Integer part of polynomial equation''s solutions'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302109
 dashedName: problem-438-integer-part-of-polynomial-equations-solutions
 ---
@@ -19,7 +19,7 @@ In the case of $n = 4$, there are 12 $n$-tuples of integers which satisfy both c
 
 We define $S(t)$ as the sum of the absolute values of the integers in $t$.
 
-For $n = 4$ we can verify that $\sum S(t) = 2087$ for all $n$-tuples t which satisfy both conditions.
+For $n = 4$ we can verify that $\sum S(t) = 2087$ for all $n$-tuples $t$ which satisfy both conditions.
 
 Find $\sum S(t)$ for $n = 7$.
 

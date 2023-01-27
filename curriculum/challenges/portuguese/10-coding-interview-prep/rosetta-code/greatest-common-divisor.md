@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e82
 title: Máximo divisor comum
-challengeType: 5
+challengeType: 1
 forumTopicId: 302277
 dashedName: greatest-common-divisor
 ---

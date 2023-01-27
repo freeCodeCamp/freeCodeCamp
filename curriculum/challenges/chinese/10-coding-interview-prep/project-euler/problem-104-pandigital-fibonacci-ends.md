@@ -1,7 +1,7 @@
 ---
 id: 5900f3d51000cf542c50fee6
 title: 'Problem 104: Pandigital Fibonacci ends'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301728
 dashedName: problem-104-pandigital-fibonacci-ends
 ---

@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Використовуйте решту параметрів з деструктивним призначенням для перепризначення масиву елементів
+  Деструктуризація через залишкові елементи
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -10,7 +10,7 @@ dashedName: >-
 
 # --description--
 
-У деяких ситуаціях нам потрібно зберегти елементи в окремий масив.
+У деяких ситуаціях, які стосуються деструктуризації масивів, потрібно зберегти залишки елементів в окремому масиві.
 
 Результат схожий на `Array.prototype.slice()`, як показано нижче:
 
@@ -22,39 +22,43 @@ console.log(arr);
 
 У такому разі консоль відображатиме значення `1, 2` та `[3, 4, 5, 7]`.
 
-Змінні `a` та `b` приймають перші та другі значення з масиву. Після цього, завдяки параметру `arr` решта значень подаються у масиві. Решта елементів працює тільки-но у вигляді останньої змінної списку. Як і в даних, ви не можете використовувати інший параметр для охоплення підмасиву, який залишає останній елемент вихідного масиву.
+Змінні `a` та `b` приймають перше та друге значення з масиву. Після цього, оскільки є залишковий синтаксис, `arr` отримує решту значень у формі масиву. Залишковий елемент працює правильно лише у вигляді останньої змінної списку. Тому залишковий синтаксис неможливо використовувати для збору підмасиву, який не містить останній елемент вихідного масиву.
 
 # --instructions--
 
-Використовуйте деструктивне привласнення з рештою параметрів `Array.prototype.slice()`, так як `arr` є підмасивом оригінального масиву `source` з опущеними двома елементами.
+Використайте деструктуроване присвоєння з залишковим синтаксисом, щоб емулювати поведінку `Array.prototype.slice()`. `removeFirstTwo()` має повернути підмасив вихідного масиву `list` з пропущеними першими двома елементами.
 
 # --hints--
 
-`arr` має бути `[3,4,5,6,7,8,9,10]`
+`removeFirstTwo([1, 2, 3, 4, 5])` має бути `[3, 4, 5]`
 
 ```js
-assert(arr.every((v, i) => v === i + 3) && arr.length === 8);
+const testArr_ = [1, 2, 3, 4, 5];
+const testArrWORemoved_ = removeFirstTwo(testArr_);
+assert(testArrWORemoved_.every((e, i) => e === i + 3) && testArrWORemoved_.length === 3);
 ```
 
-`source` має бути `[1,2,3,4,5,6,7,8,9,10]`
+`removeFirstTwo()` не має змінювати `list`
 
 ```js
-assert(source.every((v, i) => v === i + 1) && source.length === 10);
+const testArr_ = [1, 2, 3, 4, 5];
+const testArrWORemoved_ = removeFirstTwo(testArr_);
+assert(testArr_.every((e, i) => e === i + 1) && testArr_.length === 5);
 ```
 
-`Array.slice()` не варто використовувати.
+Не використовуйте `Array.slice()`.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/slice/g));
 ```
 
-Необхідно використовувати деструктуризацію `list`.
+Використайте деструктуризацію на `list`.
 
 ```js
 assert(
   __helpers
     .removeWhiteSpace(code)
-    .match(/\[(([_$a-z]\w*)?,){1,}\.\.\.arr\]=list/i)
+    .match(/\[(([_$a-z]\w*)?,){1,}\.\.\.shorterList\]=list/i)
 );
 ```
 
@@ -63,23 +67,25 @@ assert(
 ## --seed-contents--
 
 ```js
-const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
   // Only change code below this line
-  const arr = list; // Change this line
+  const shorterList = list; // Change this line
   // Only change code above this line
-  return arr;
+  return shorterList;
 }
-const arr = removeFirstTwo(source);
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
 ```
 
 # --solutions--
 
 ```js
-const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
-  const [, , ...arr] = list;
-  return arr;
+  const [, , ...shorterList] = list;
+  return shorterList;
 }
-const arr = removeFirstTwo(source);
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
 ```

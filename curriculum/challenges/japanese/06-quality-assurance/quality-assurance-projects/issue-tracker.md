@@ -8,42 +8,48 @@ dashedName: issue-tracker
 
 # --description--
 
-<https://issue-tracker.freecodecamp.rocks/> と同様の機能を持つフルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
+<a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a> と同じような機能を持つ、フルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
--   [GitHub リポジトリ](https://github.com/freeCodeCamp/boilerplate-project-issuetracker/)をクローンし、ローカル環境でプロジェクトを完了させる。
--   [Replit 始動プロジェクト](https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker)を使用して、プロジェクトを完了させる。
+-   <a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でチャレンジを完了させる。
+-   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、`GitHub Link` フィールドでプロジェクトのソースコードへのリンクを送信してください。
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
+
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
+
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
 -   `/routes/api.js` で、必要なルートを完成させてください。
 -   `tests/2_functional-tests.js` にすべての機能テストを作成してください。
--   `sample.env` ファイルを `.env` にコピーし、変数を適切に設定してください。
+-   `sample.env` ファイルを `.env` ファイルにコピーし、変数を適切に設定してください。
 -   テストを実行するには、`.env` ファイルの `NODE_ENV=test` をコメント解除してください。
 -   コンソールでテストを実行するには、コマンド `npm run test` を使用してください。 Replit コンソールを開くには、Ctrl+Shift+P (Macの場合はCmd) を押して「open shell」と入力してください。
 
-`tests/2_functional-tests.js` に以下のテストを記述してください。
+`tests/2_functional-tests.js` に次のテストを記述してください。
 
--   すべてのフィールドについて課題を作成してください: `/api/issues/{project}` への POST リクエスト
--   必須フィールドのみについて課題を作成してください: `/api/issues/{project}` への POST リクエスト
--   不足している必須フィールドについて課題を作成してください: `/api/issues/{project}` への POST リクエスト
--   プロジェクトの課題を表示してください: `/api/issues/{project}` への GET リクエスト
--   1 つのフィルターでプロジェクトの課題を表示してください: `/api/issues/{project}` への GET リクエスト
--   複数のフィルターでプロジェクトの課題を表示してください: `/api/issues/{project}` への GET リクエスト
--   課題の 1 つのフィールドを更新してください: `/api/issues/{project}` への PUT リクエスト
--   課題の複数フィールドを更新してください: `/api/issues/{project}` への PUT リクエスト
--   `_id` が不足している課題を更新してください: `/api/issues/{project}` への PUT リクエスト
--   更新すべきフィールドがない課題を更新してください: `/api/issues/{project}` への PUT リクエスト
--   無効な `_id` の課題を更新してください: `/api/issues/{project}` への PUT リクエスト
--   課題を削除してください: `/api/issues/{project}` への DELETE リクエスト
--   無効な `_id` の課題を削除してください: `/api/issues/{project}` への DELETE リクエスト
--   `_id` が不足している課題を削除してください: `/api/issues/{project}` への DELETE リクエスト
+-   すべてのフィールドを指定して課題を作成する: `/api/issues/{project}` への POST リクエスト
+-   必須フィールドのみを指定して課題を作成する: `/api/issues/{project}` への POST リクエスト
+-   必須フィールドが不足した状態で課題を作成する: `/api/issues/{project}` への POST リクエスト
+-   プロジェクトの課題を表示する: `/api/issues/{project}` への GET リクエスト
+-   プロジェクトの課題を、フィルターを 1 つ指定して表示する: `/api/issues/{project}` への GET リクエスト
+-   プロジェクトの課題を、フィルターを複数指定して表示する: `/api/issues/{project}` への GET リクエスト
+-   課題のフィールドを 1 つ更新する: `/api/issues/{project}` への PUT リクエスト
+-   課題の複数フィールドを更新する: `/api/issues/{project}` への PUT リクエスト
+-   `_id` が不足している状態で課題を更新する: `/api/issues/{project}` への PUT リクエスト
+-   更新すべきフィールドがない状態で課題を更新する: `/api/issues/{project}` への PUT リクエスト
+-   無効な `_id` を使用して課題を更新する: `/api/issues/{project}` への PUT リクエスト
+-   課題を削除する: `/api/issues/{project}` への DELETE リクエスト
+-   無効な `_id` を使用して課題を削除する: `/api/issues/{project}` への DELETE リクエスト
+-   `_id` が不足している状態で課題を削除する: `/api/issues/{project}` への DELETE リクエスト
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供することができます。
+サンプルの URL ではなく、自分で作成したプロジェクトを提出してください。
 
 ```js
 (getUserInput) => {
@@ -73,7 +79,7 @@ async (getUserInput) => {
 };
 ```
 
-`/api/issues/{projectname}` への `POST` リクエストは、作成されたオブジェクトを返します。また、送信したすべてのフィールドが含まれている必要があります。 除外されたオプションフィールドは空の文字列として返します。 さらに、`created_on` (日付/時間)、`updated_on` (日付/時間)、`open` (ブール値、open の場合はデフォルト値の `true`、closed の場合は `false`) および `_id` を含めてください。
+`/api/issues/{projectname}` への `POST` リクエストは、そのリクエストで作成されたオブジェクトを返します。また、送信したすべてのフィールドが含まれている必要があります。 除外したオプションフィールドは空の文字列として返します。 さらに、`created_on` (日付/時間)、`updated_on` (日付/時間)、`open` (ブール値、open の場合は `true` (こちらがデフォルト値) 、closed の場合は `false`) および `_id` を含めてください。
 
 ```js
 async (getUserInput) => {
@@ -125,7 +131,7 @@ async (getUserInput) => {
 };
 ```
 
-特定の `projectname` に対するすべての課題の配列 (課題ごとにすべてのフィールドが存在します) に対して、`/api/issues/{projectname}` へ `GET` リクエストを送信できます。
+`/api/issues/{projectname}` へ `GET` リクエストを送信して、特定の `projectname` に対するすべての課題の配列 (課題ごとに存在するすべてのフィールドを含む) を取得できます。
 
 ```js
 async (getUserInput) => {
@@ -213,7 +219,7 @@ async (getUserInput) => {
 };
 ```
 
-`_id` と 1 つ 以上の更新すべきフィールドを指定して、`/api/issues/{projectname}` へ `PUT` リクエストを送信することができます。 成功した場合は、`updated_on` フィールドを更新し、 `{  result: 'successfully updated', '_id': _id }` を返す必要があります。
+`_id` と 1 つ 以上の更新対象のフィールドを指定して、`/api/issues/{projectname}` へ `PUT` リクエストを送信することができます。 成功した場合は、`updated_on` フィールドを更新し、`{  result: 'successfully updated', '_id': _id }` を返す必要があります。
 
 ```js
 async (getUserInput) => {
@@ -294,7 +300,7 @@ async (getUserInput) => {
 };
 ```
 
-`_id` を指定して `/api/issues/{projectname}` へ `DELETE` リクエストを送信して、課題を削除することができます。 `_id` が送信されていない場合、戻り値は `{ error: 'missing _id' }` です。 成功した場合、戻り値は `{ result: 'successfully deleted', '_id': _id }` です。 失敗した場合、戻り値は `{ error: 'could not delete', '_id': _id }` です。
+`_id` を指定して `/api/issues/{projectname}` へ `DELETE` リクエストを送信して、課題を削除することができます。 `_id` が送信されなかった場合、戻り値は `{ error: 'missing _id' }` です。 成功した場合、戻り値は `{ result: 'successfully deleted', '_id': _id }` です。 失敗した場合、戻り値は `{ error: 'could not delete', '_id': _id }` です。
 
 ```js
 async (getUserInput) => {
@@ -336,7 +342,7 @@ async (getUserInput) => {
 };
 ```
 
-14 種類の機能テストがすべて完了し、合格しています。
+14 件の機能テストがすべて記述され、成功する状態になっています。
 
 ```js
 async (getUserInput) => {

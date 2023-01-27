@@ -26,7 +26,7 @@ dashedName: create-a-map-data-structure
 
 # --hints--
 
-Map データ構造が存在する必要があります。
+The `Map` data structure should exist.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Map オブジェクトには add、remove、get、has、value、clear、size の各メソッドが必要です 。
+The `Map` object should have the following methods: `add`, `remove`, `get`, `has`, `values`, `clear`, and `size`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-add メソッドはマップに要素を追加する必要があります。
+The `add` method should add items to the map.
 
 ```js
 assert(
@@ -79,7 +79,7 @@ assert(
 );
 ```
 
-has メソッドは、追加された要素に対して true を、存在しない要素に対して false を返す必要があります。
+The `has` method should return `true` for added items and `false` for absent items.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-get メソッドはキーを入力として受け入れ、関連付けられた値を返す必要があります。
+The `get` method should accept keys as input and should return the associated values.
 
 ```js
 assert(
@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-values メソッドは、マップに格納されているすべての値を、文字列の配列として返す必要があります。
+The `values` method should return all the values stored in the map as strings in an array.
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 );
 ```
 
-clear メソッドはマップを空にし、size メソッドはマップに存在する要素の数を返す必要があります。
+The `clear` method should empty the map and the `size` method should return the number of items present in the map.
 
 ```js
 assert(

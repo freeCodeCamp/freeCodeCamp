@@ -1,14 +1,14 @@
 ---
 id: 5eb3e4aa847216613aa81983
 title: Semiprimi
-challengeType: 5
+challengeType: 1
 forumTopicId: 385318
 dashedName: semiprime
 ---
 
 # --description--
 
-I numeri semiprimi sono numeri naturali che sono il prodotto di esattamente due [numeri primi](https://rosettacode.org/wiki/prime_number) (anche uguali).
+I numeri semiprimi sono numeri naturali che sono il prodotto di esattamente due <a href="https://rosettacode.org/wiki/prime_number" target="_blank" rel="noopener noreferrer nofollow">numeri primi</a> (anche uguali).
 
 <pre>1679  =  23 x 73</pre>
 

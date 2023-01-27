@@ -1,46 +1,50 @@
 ---
 id: 5e7b9f190b6c005b0e76f090
-title: 'Relational Databases: Many-to-many Relationships'
+title: 'Base de datos relacionales: relaciones de muchos-a-muchos'
 challengeType: 11
 videoId: z-SBYcvEQOc
+bilibiliIds:
+  aid: 291965127
+  bvid: BV1Af4y1L7BK
+  cid: 377543409
 dashedName: relational-databases-many-to-many-relationships
 ---
 
 # --description--
 
-More resources:
+Mas recursos:
 
-\- [Exercise: Email](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
+\- <a href="https://www.youtube.com/watch?v=uQ3Qv1z_Vao" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Correo electrónico</a>
 
-\- [Exercise: Roster](https://www.youtube.com/watch?v=qEkUEAz8j3o)
+\- <a href="https://www.youtube.com/watch?v=qEkUEAz8j3o" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Lista</a>
 
-\- [Exercise: Tracks](https://www.youtube.com/watch?v=I-E7avcPeSE)
+\- <a href="https://www.youtube.com/watch?v=I-E7avcPeSE" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Pistas</a>
 
-\- [Exercise: Twfriends](https://www.youtube.com/watch?v=RZRAoBFIH6A)
+\- <a href="https://www.youtube.com/watch?v=RZRAoBFIH6A" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Twfriends</a>
 
-\- [Exercise: Twspider](https://www.youtube.com/watch?v=xBaJddvJL4A)
+\- <a href="https://www.youtube.com/watch?v=xBaJddvJL4A" target="_blank" rel="noopener noreferrer nofollow">Ejercicio: Twspider</a>
 
 # --question--
 
 ## --text--
 
-Which is an example of a many-to-many relationship?
+¿Cuál es un ejemplo de una relación de muchos-a-muchos?
 
 ## --answers--
 
-teacher to student
+maestro a estudiante
 
 ---
 
-customer to order
+cliente a pedido
 
 ---
 
-book to pages
+libro a paginas
 
 ---
 
-city to country
+ciudad a pais
 
 ## --video-solution--
 

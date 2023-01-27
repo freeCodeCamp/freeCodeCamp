@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8042
 title: 平方和
-challengeType: 5
+challengeType: 1
 forumTopicId: 302334
 dashedName: sum-of-squares
 ---

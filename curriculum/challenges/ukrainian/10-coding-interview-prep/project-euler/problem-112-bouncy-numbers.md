@@ -1,7 +1,7 @@
 ---
 id: 5900f3dd1000cf542c50feef
 title: 'Завдання 112: стрибучі числа'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301738
 dashedName: problem-112-bouncy-numbers
 ---

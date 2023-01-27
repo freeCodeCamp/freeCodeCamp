@@ -1,7 +1,7 @@
 ---
 id: 5900f4d51000cf542c50ffe8
 title: 'Проблема 361: Підпослідовність послідовності Thue-Morse'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302022
 dashedName: problem-361-subsequence-of-thue-morse-sequence
 ---
@@ -20,7 +20,8 @@ dashedName: problem-361-subsequence-of-thue-morse-sequence
 
 Перші кілька термінів $A_n$ наведені наступним чином:
 
-$$\begin{array}{cr} n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12 & \ldots \\\\ A_n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 9 & 10 & 11 & 12 & 13 & 18 & \ldots \end{array}$$
+$$\begin{array}{cr}   n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12 & \ldots \\\\
+  A_n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 9 & 10 & 11 & 12 & 13 & 18 & \ldots \end{array}$$
 
 Ми також можемо підтвердити, що $A_{100} = 3251$ та $A_{1000} = 80\\,852\\,364\\,498$.
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f4841000cf542c50ff96
 title: 'Задача 279: Трикутники зі сторонами та кутом, що вимірюються цілими числами'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301929
 dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
 ---

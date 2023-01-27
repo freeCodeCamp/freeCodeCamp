@@ -1,24 +1,28 @@
 ---
 id: 5e7b9f050b6c005b0e76f057
-title: Intermediate Expressions
+title: Expresiones intermedias
 challengeType: 11
 videoId: dKgUaIa5ATg
+bilibiliIds:
+  aid: 334428894
+  bvid: BV1uw411R7gH
+  cid: 376318468
 dashedName: intermediate-expressions
 ---
 
 # --description--
 
-More resources:
+Más recursos:
 
-\- [Exercise 1](https://youtu.be/t_4DPwsaGDY)
+\- <a href="https://youtu.be/t_4DPwsaGDY" target="_blank" rel="noopener noreferrer nofollow">Ejercicio 1</a>
 
-\- [Exercise 2](https://youtu.be/wgkC8SxraAQ)
+\- <a href="https://youtu.be/wgkC8SxraAQ" target="_blank" rel="noopener noreferrer nofollow">Ejercicio 2</a>
 
 # --question--
 
 ## --text--
 
-What will print out after running this code:
+Qué se imprimirá después de ejecutar este código:
 
 ```python
 width = 15

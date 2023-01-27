@@ -1,7 +1,7 @@
 ---
 id: 5900f3b31000cf542c50fec6
 title: 'Problema 71: frazioni ordinate'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302184
 dashedName: problem-71-ordered-fractions
 ---

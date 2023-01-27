@@ -31,13 +31,13 @@ assert(
 );
 ```
 
-执行 `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")` 后，`tracks` 的最后一个元素应该为字符串 `Take a Chance on Me`。
+在 `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")` 之后，`tracks` 应该有字符串 `Take a Chance on Me` 作为最后一个也是唯一的元素。
 
 ```js
 assert(
-  updateRecords(_recordCollection, 5439, 'tracks', 'Take a Chance on Me')[5439][
-    'tracks'
-  ].pop() === 'Take a Chance on Me'
+  updateRecords(_recordCollection, 5439, 'tracks', 'Take a Chance on Me') &&
+  _recordCollection[5439]['tracks'].length === 1 &&
+  _recordCollection[5439]['tracks'].pop() === 'Take a Chance on Me'
 );
 ```
 

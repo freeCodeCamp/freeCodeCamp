@@ -1,7 +1,7 @@
 ---
 id: 5900f4741000cf542c50ff86
 title: '問題 263: エンジニアの夢がかなう'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301912
 dashedName: problem-263-an-engineers-dream-come-true
 ---

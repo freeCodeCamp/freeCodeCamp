@@ -1,7 +1,7 @@
 ---
 id: 5900f3781000cf542c50fe8a
-title: 'Problem 11: Largest product in a grid'
-challengeType: 5
+title: '問題 11：矩陣中最大的乘積'
+challengeType: 1
 forumTopicId: 301734
 dashedName: problem-11-largest-product-in-a-grid
 ---

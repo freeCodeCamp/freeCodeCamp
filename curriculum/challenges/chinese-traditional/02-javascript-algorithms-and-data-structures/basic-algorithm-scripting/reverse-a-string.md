@@ -1,18 +1,16 @@
 ---
 id: a202eed8fc186c8434cb6d61
 title: 反轉字符串
-challengeType: 5
+challengeType: 1
 forumTopicId: 16043
 dashedName: reverse-a-string
 ---
 
 # --description--
 
-請反轉傳入函數的字符串。
+反轉提供的字符串並返回反轉後的字符串。
 
-在反轉字符串之前，你可能需要將其切分成包含字符的數組。
-
-函數的返回結果應爲字符串。
+例如， `"hello"` 應該變成 `"olleh"`。
 
 # --hints--
 

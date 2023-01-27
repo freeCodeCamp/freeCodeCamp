@@ -8,17 +8,23 @@ dashedName: request-header-parser-microservice
 
 # --description--
 
-<https://request-header-parser-microservice.freecodecamp.rocks/> と同様の機能を持つフルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
+<a href="https://request-header-parser-microservice.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://request-header-parser-microservice.freecodecamp.rocks/</a> と同じような機能を持つ、フルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
--   [GitHub リポジトリ](https://github.com/freeCodeCamp/boilerplate-project-headerparser/)をクローンし、ローカル環境でプロジェクトを完了させる。
--   [Replit 始動プロジェクト](https://replit.com/github/freeCodeCamp/boilerplate-project-headerparser)を使用して、プロジェクトを完了させる。
+-   <a href="https://github.com/freeCodeCamp/boilerplate-project-headerparser/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でチャレンジを完了させる。
+-   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-headerparser" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、プロジェクトのソースコードへのリンクを `GitHub Link` フィールドへ送信してください。
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
+
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
+
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供する必要があります。
+サンプルの URL ではなく、自分で作成したプロジェクトを提出する必要があります。
 
 ```js
 (getUserInput) => {
@@ -30,7 +36,7 @@ dashedName: request-header-parser-microservice
 };
 ```
 
-`/api/whoami` へのリクエストに対して、`ipaddress` キーに IP アドレスを持つ JSON オブジェクトを返す必要があります。
+`/api/whoami` へのリクエストに対して、`ipaddress` キーにあなた (リクエストの送信者) の IP アドレスを持つ JSON オブジェクトを返す必要があります。
 
 ```js
 (getUserInput) =>
@@ -42,7 +48,7 @@ dashedName: request-header-parser-microservice
   );
 ```
 
-`/api/whoami` へのリクエストに対して、`language` キーに優先言語を持つ JSON オブジェクトを返す必要があります。
+`/api/whoami` へのリクエストに対して、`language` キーにあなたの優先言語を持つ JSON オブジェクトを返す必要があります。
 
 ```js
 (getUserInput) =>
@@ -54,7 +60,7 @@ dashedName: request-header-parser-microservice
   );
 ```
 
-`/api/whoami` へのリクエストに対して、`software` キーにソフトウェアを持つ JSON オブジェクトを返す必要があります。
+`/api/whoami` へのリクエストに対して、`software` キーにあなたの使用しているソフトウェア情報を持つ JSON オブジェクトを返す必要があります。
 
 ```js
 (getUserInput) =>

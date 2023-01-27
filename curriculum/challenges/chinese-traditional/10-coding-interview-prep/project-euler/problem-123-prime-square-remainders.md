@@ -1,7 +1,7 @@
 ---
 id: 5900f3e71000cf542c50fefa
 title: '問題 123：素數平方餘數'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301750
 dashedName: problem-123-prime-square-remainders
 ---

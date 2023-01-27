@@ -1,7 +1,7 @@
 ---
 id: 598ee8b91b410510ae82efef
 title: Extensible prime generator
-challengeType: 5
+challengeType: 1
 forumTopicId: 302262
 dashedName: extensible-prime-generator
 ---

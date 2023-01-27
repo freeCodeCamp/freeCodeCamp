@@ -22,13 +22,13 @@ En esta sección, los paquetes que tu proyecto necesita se almacenan usando el s
 
 # --instructions--
 
-Añade la versión "2.14.0" del paquete "moment" al campo `dependencies` del archivo package.json.
+Añade la versión "1.1.0" del paquete `@freecodecamp/example` al campo `dependencies` del archivo `package.json`.
 
-**Nota:** Moment es una biblioteca muy útil para trabajar con tiempo y fechas.
+**Nota:** `@freecodecamp/example` es un paquete falso usado como una herramienta de aprendizaje.
 
 # --hints--
 
-"dependencies" debe incluir "moment"
+`"dependencies"` debería incluir `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -37,8 +37,8 @@ Añade la versión "2.14.0" del paquete "moment" al campo `dependencies` del arc
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -47,7 +47,7 @@ Añade la versión "2.14.0" del paquete "moment" al campo `dependencies` del arc
   );
 ```
 
-la versión de "moment" debe ser "2.14.0"
+`"@freecodecamp/example"` debería tener la versión `"1.1.0"`.
 
 ```js
 (getUserInput) =>
@@ -55,9 +55,9 @@ la versión de "moment" debe ser "2.14.0"
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^[\^\~]?2\.14\.0/,
-        'Wrong version of "moment" installed. It should be 2.14.0'
+        packJson.dependencies["@freecodecamp/example"],
+        /^[\^\~]?1\.1\.0/,
+        'Wrong version of "@freecodecamp/example" installed. It should be 1.1.0'
       );
     },
     (xhr) => {

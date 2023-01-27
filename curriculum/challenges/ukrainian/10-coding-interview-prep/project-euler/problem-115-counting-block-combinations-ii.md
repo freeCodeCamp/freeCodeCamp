@@ -1,7 +1,7 @@
 ---
 id: 5900f3df1000cf542c50fef1
 title: 'Завдання 115: Підрахунок комбінацій блоків ІІ'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301741
 dashedName: problem-115-counting-block-combinations-ii
 ---

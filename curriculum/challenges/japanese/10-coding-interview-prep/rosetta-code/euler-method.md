@@ -1,14 +1,14 @@
 ---
 id: 59880443fb36441083c6c20e
 title: オイラー法
-challengeType: 5
+challengeType: 1
 forumTopicId: 302258
 dashedName: euler-method
 ---
 
 # --description--
 
-オイラー法は、所定の初期値を持つ1階の常微分方程式 (ODE) の解における近似値を求めます。 [記事](https://www.freecodecamp.org/news/eulers-method-explained-with-examples/ "news: Euler's Method Explained with Examples") で論説されているように、初期値の問題(IVP)を解くための明示的な方法です。
+オイラー法は、所定の初期値を持つ1階の常微分方程式 (ODE) の解における近似値を求めます。 It is an explicit method for solving initial value problems (IVPs), as described in <a href="https://www.freecodecamp.org/news/eulers-method-explained-with-examples/" title="Euler's Method Explained with Examples" target="_blank" rel="noopener noreferrer nofollow">this article</a>.
 
 ODEは以下の形式で書きます。
 

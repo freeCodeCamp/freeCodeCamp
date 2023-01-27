@@ -19,7 +19,7 @@ Ambos retornariam `true`.
 
 # --instructions--
 
-Termine de escrever a função para que ela retorne true se o objeto passado a ela contiver todos os quatro nomes, `Alan`, `Jeff`, `Sarah` e `Ryan` e retorne false do contrário.
+Termine de escrever a função para que ela retorne `true` se o objeto passado a ela contiver todos os quatro nomes, `Alan`, `Jeff`, `Sarah` e `Ryan` e retorne `false` do contrário.
 
 # --hints--
 

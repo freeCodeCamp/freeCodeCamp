@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94daf
-title: Розуміння сокетів і створення TCP-сервера
+title: Розуміння сокетів і створення сервера TCP
 challengeType: 11
 videoId: F1QI9tNuDQg
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: understanding-sockets-and-creating-a-tcp-server
 
 ## --text--
 
-Яка з наступних функцій створює об'єкт Сокет?
+Яка з перелічених функцій створює об'єкт-сокет?
 
 ## --answers--
 

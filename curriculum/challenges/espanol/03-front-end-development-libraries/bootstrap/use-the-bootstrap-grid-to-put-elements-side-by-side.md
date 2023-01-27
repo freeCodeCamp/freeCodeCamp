@@ -8,13 +8,13 @@ dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
 
 # --description--
 
-Bootstrap utiliza un sistema responsivo de cuadrilla de 12 columnas, el cual hace que sea fácil poner elementos en dos filas y especificar la anchura relativa de cada elemento. La mayoría de las clases de Bootstrap pueden ser aplicadas a un elemento `div`.
+Bootstrap utiliza un sistema adaptable de cuadrilla de 12 columnas, el cual hace que sea fácil poner elementos en dos filas y especificar la anchura relativa de cada elemento. La mayoría de las clases de Bootstrap pueden ser aplicadas a un elemento `div`.
 
 Bootstrap tiene diferentes atributos de ancho de columna que usa dependiendo cuan ancha es la pantalla del usuario. Por ejemplo, los teléfonos tienen pantallas más angostas y las laptops tienen pantallas más anchas.
 
 Tomemos por ejemplo la clase de Bootstrap `col-md-*`. Aquí, `md` significa mediano y `*` es un número que especifica cuántas columnas de ancho deben tener los elementos. En este caso, el ancho de columna de un elemento en una pantalla de tamaño mediano, como una laptop, está siendo especificado.
 
-En el 'Cat Photo App' que estamos armando, vamos a usar `col-xs-*`, donde `xs` significa extra pequeño ("extra small" como una pantalla de teléfono), y `*` es el número de columnas que va a tomar el elemento en anchura.
+En el 'Cat Photo App' que estamos creando, vamos a usar `col-xs-*`, donde `xs` significa extra pequeño ("extra small" como una pantalla de teléfono), y `*` es el número de columnas que va a tomar el elemento en anchura.
 
 Pon los botones `Like`, `Info` y `Delete` lado a lado, anidando los tres dentro de un elemento `<div class="row">`, luego, cada uno de ellos dentro de un elemento `<div class="col-xs-4">`.
 

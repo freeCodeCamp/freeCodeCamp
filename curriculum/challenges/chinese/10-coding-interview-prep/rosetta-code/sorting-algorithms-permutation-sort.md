@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc800c
 title: Sorting algorithms/Permutation sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302316
 dashedName: sorting-algorithmspermutation-sort
 ---
@@ -10,7 +10,7 @@ dashedName: sorting-algorithmspermutation-sort
 
 Write a function to implement a permutation sort, which proceeds by generating the possible permutations of the input array until discovering the sorted one. The function should return the sorted array.
 
-Pseudocode:
+伪代码：
 
 <pre><b>while not</b> InOrder(list) <b>do</b>
   nextPermutation(list)

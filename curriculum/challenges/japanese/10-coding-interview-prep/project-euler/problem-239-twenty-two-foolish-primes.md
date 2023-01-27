@@ -1,7 +1,7 @@
 ---
 id: 5900f45c1000cf542c50ff6e
 title: '問題 239: 22 個の愚かな素数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301884
 dashedName: problem-239-twenty-two-foolish-primes
 ---

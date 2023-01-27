@@ -18,7 +18,7 @@ Vamos implementar o Heap Sort com um Min Heap. Sinta-se à vontade para adaptar 
 
 # --hints--
 
-A estrutura de dados MinHeap deve existir.
+A estrutura de dados `MinHeap` deve existir.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-MinHeap deve ter um método chamado insert.
+`MinHeap` deve ter um método chamado `insert`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-MinHeap deve ter um método chamado remove.
+`MinHeap` deve ter um método chamado `remove`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-MinHeap deve ter um método chamado sort.
+`MinHeap` deve ter um método chamado `sort`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-O método sort deve retornar um array que contenha todos os itens adicionados ao Min Heap ordenados.
+O método `sort` deve retornar um array que contenha todos os itens adicionados ao MinHeap ordenados.
 
 ```js
 assert(

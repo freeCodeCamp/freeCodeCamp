@@ -1,7 +1,7 @@
 ---
 id: 5900f4bd1000cf542c50ffce
 title: 'Задача 335: Збір бобів'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301993
 dashedName: problem-335-gathering-the-beans
 ---

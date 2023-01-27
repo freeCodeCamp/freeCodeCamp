@@ -1,7 +1,7 @@
 ---
 id: 5900f4511000cf542c50ff63
 title: 'Завдання 228: Сума Мінковського'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301871
 dashedName: problem-228-minkowski-sums
 ---
@@ -10,7 +10,8 @@ dashedName: problem-228-minkowski-sums
 
 Нехай $S_n$ — це правильний $n$-сторонній багатокутник або фігура, у якої вершини $v_k (k = 1, 2, \ldots, n)$ мають координати:
 
-$$\begin{align} & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\ & y_k = sin(\frac{2k - 1}{n} × 180°) \end{align}$$
+$$\begin{align} & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\
+& y_k = sin(\frac{2k - 1}{n} × 180°) \end{align}$$
 
 Кожен $S_n$ зображено зафарбованою фігурою, яка складається з усіх точок на периметрі та всередині.
 

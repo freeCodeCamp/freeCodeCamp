@@ -1,7 +1,7 @@
 ---
 id: 5900f4b91000cf542c50ffcc
 title: 'Problema 333: Partições especiais'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301991
 dashedName: problem-333-special-partitions
 ---
@@ -14,7 +14,8 @@ Consideremos apenas aquelas partições em que nenhum dos termos pode dividir qu
 
 Muitos números inteiros têm mais de uma partição válida, sendo o primeiro 11 tendo as duas partições que seguem.
 
-$$\begin{align} & 11 = 2 + 9 = (2^1 \times 3^0 + 2^0 \times 3^2) \\\\ & 11 = 8 + 3 = (2^3 \times 3^0 + 2^0 \times 3^1) \end{align}$$
+$$\begin{align}   & 11 = 2 + 9 = (2^1 \times 3^0 + 2^0 \times 3^2) \\\\
+  & 11 = 8 + 3 = (2^3 \times 3^0 + 2^0 \times 3^1) \end{align}$$
 
 Vamos definir $P(n)$ como o número de partições válidas de $n$. Por exemplo, $P(11) = 2$.
 

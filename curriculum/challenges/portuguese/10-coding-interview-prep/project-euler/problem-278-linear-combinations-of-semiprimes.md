@@ -1,7 +1,7 @@
 ---
 id: 5900f4831000cf542c50ff95
 title: 'Problema 278: Combinações lineares de semiprimos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301928
 dashedName: problem-278-linear-combinations-of-semiprimes
 ---

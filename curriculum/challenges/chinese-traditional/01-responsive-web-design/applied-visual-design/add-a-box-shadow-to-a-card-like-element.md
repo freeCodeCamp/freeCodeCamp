@@ -11,13 +11,13 @@ dashedName: add-a-box-shadow-to-a-card-like-element
 
 `box-shadow` 屬性用來給元素添加陰影，該屬性值是由逗號分隔的一個或多個陰影列表。
 
-`box-shadow` 屬性的陰影依次由下面這些值描述：
+`box-shadow` 屬性按順序採用以下值：
 
 <ul>
-  <li><code>offset-x</code> 陰影的水平偏移量；</li>
-  <li><code>offset-y</code> 陰影的垂直偏移量；</li>
-  <li><code>blur-radius</code> 模糊半徑；</li>
-  <li><code>spread-radius</code> 陰影擴展半徑；</li>
+  <li><code>offset-x</code> （陰影的水平偏移量），</li>
+  <li><code>offset-y</code> （陰影的垂直偏移量），</li>
+  <li><code>blur-radius</code></li>
+  <li><code>spread-radius</code></li>
   <li><code>color</code></li>
 </ul>
 

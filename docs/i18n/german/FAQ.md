@@ -10,9 +10,9 @@ freeCodeCamp läuft auf einem modernen JavaScript-Stack. Wenn du daran interessi
 
 Ja - du kannst zu jeder der über 30 Sprachen beitragen, die wir auf unserer Übersetzungsplattform aktiviert haben.
 
-In einigen Sprachen haben wir von Nutzern erstellte Übersetzungen online. Wir haben vor, das freeCodeCamp in mehrere wichtige Weltsprachen zu lokalisieren. Du kannst alles darüber in unserer [Ankündigung ](https://www.freecodecamp.org/news/world-language-translation-effort) lesen.
+In einigen Sprachen haben wir von Nutzern erstellte Übersetzungen online. Wir haben vor, das freeCodeCamp in mehrere wichtige Weltsprachen zu lokalisieren. Du kannst alles darüber in unserer [Ankündigung](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) lesen.
 
-Wenn du daran interessiert bist, zu Übersetzungen beizutragen, stelle bitte sicher, dass du [diesen Leitfaden](how-to-translate-files.md) zuerst gelesen hast.
+Wenn du daran interessiert bist, zu Übersetzungen beizutragen, stelle bitte sicher, dass du zuerst [diesen Leitfaden](how-to-translate-files.md) gelesen hast.
 
 ### Kann ich Artikel für die freeCodeCamp News oder Videos für den YouTube-Kanal von freeCodeCamp beisteuern?
 
@@ -24,7 +24,7 @@ Um uns zu helfen, Lehrvideos für unseren YouTube-Kanal zu erstellen, kannst du 
 
 ### Wie kann ich einen neuen Fehler melden?
 
-Wenn du glaubst, dass du einen Fehler gefunden hast, lies zuerst den ["Hilfe, ich habe einen Fehler gefunden"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) Artikel und folge den Anweisungen darin.
+Wenn du glaubst, einen Fehler gefunden zu haben, lies zuerst den Artikel ["Wie melde ich einen Fehler"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) und befolge die darin enthaltenen Anweisungen.
 
 Wenn du sicher bist, dass es sich um einen neuen Fehler handelt, kannst du einen neuen Issue auf GitHub erstellen. Gib so viele Informationen wie möglich an, damit wir den Fehler reproduzieren können. Wir haben eine vorgefertigte Issue-Vorlage, die dir dabei hilft.
 
@@ -32,7 +32,7 @@ Bitte beachte, dass diese GitHub Issues für Codebasis-bezogene Probleme und Dis
 
 ### Wie kann ich ein Sicherheitsproblem melden?
 
-Bitte erstelle keine GitHub Issues für Sicherheitsprobleme. Schicke stattdessen bitte eine E-Mail an `security@freecodecamp.org` und wir werden uns sofort darum kümmern.
+Bitte erstelle keine GitHub Issues für Sicherheitsprobleme. Bitte beachte stattdessen [unsere Sicherheitsrichtlinien](https://contribute.freecodecamp.org/#/security).
 
 ### Ich bin ein Student. Kann ich für akademische Credits an einem Feature arbeiten?
 
@@ -71,19 +71,19 @@ Normalerweise weisen wir die Issues nur langjährigen Mitwirkenden zu. Stattdess
 
 ### Ich bin daran interessiert, beim freeCodeCamp als Moderator zu mitzuwirken. Wo sollte ich anfangen?
 
-Unsere Community-Moderatoren sind unsere Helden. Ihre freiwilligen Beiträge machen das freeCodeCamp zu einer sicheren und einladenden Gemeinschaft.
+Unsere Community-Moderatoren sind unsere Helden. Their voluntary contributions make freeCodeCamp a safe and welcoming community.
 
-In erster Linie möchten wir, dass du ein aktiver Teilnehmer in der Gemeinschaft bist und dich an unseren [Verhaltenskodex](https://www.freecodecamp.org/news/code-of-conduct/) hältst (und ihn nicht nur durchsetzt).
+First and foremost, we would need you to be an active participant in the community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/) (not just enforce it).
 
 Hier sind einige empfohlene Wege für einige unserer Plattformen:
 
-- Ein **Discord/Chat**-Moderator zu sein, eine aktive Präsenz in unserem Chat zu haben und positiv auf andere einzugehen und gleichzeitig zu lernen und zu üben, wie man mit möglichen Konflikten umgeht, die entstehen können.
-- Ein **Forum**-Moderator zu sein, ähnlich wie ein Chat-Moderator, eine aktive Präsenz zu zeigen und mit anderen Forumspostern in Kontakt zu treten, andere in ihrem Lernprozess zu unterstützen und auf Wunsch auch Feedback zu geben. Sieh dir das [Das Handbuch für Subforenleiter](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) für weitere Informationen an.
-- Als **GitHub**-Moderator hilfst du bei der Bearbeitung von GitHub-Issues, die aufgeworfen werden und versuchst (idealerweise), Lösungen für diese Issues vorzuschlagen, die dann von anderen (oder von dir selbst) aufgegriffen werden.
+- To be a **Discord/Chat** moderator, have an active presence in our chat and have positive engagements with others, while also learning and practicing how to deal with potential conflicts that may arise.
+- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
+- To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
 
-Sei insgesamt respektvoll gegenüber anderen. Wir sind Menschen überall auf der Welt. Mit Blick darauf denke auch daran, eine ermutigende oder unterstützende Sprache zu verwenden und achte auf die interkulturelle Kommunikation.
+Sei insgesamt respektvoll gegenüber anderen. Wir sind Menschen aus allen Teilen der Welt. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
 
-Wenn du das oben genannte **eine Weile lang konsequent praktizierst** und unsere anderen Moderatoren dich empfehlen, wird ein Mitarbeiter auf dich zukommen und dich in das Moderatorenteam aufnehmen. Open-Source-Arbeit ist freiwillige Arbeit und unsere Zeit ist begrenzt. Wir erkennen an, dass dies wahrscheinlich auch in deiner Situation der Fall ist. Deshalb betonen wir **konsequent** zu sein, anstatt sich rund um die Uhr (24/7) in der Community zu engagieren.
+If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. Open-Source-Arbeit ist freiwillige Arbeit und unsere Zeit ist begrenzt. Wir erkennen an, dass dies wahrscheinlich auch in deiner Situation der Fall ist. So we emphasize being **consistent** rather than engaging in the community 24/7.
 
 Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
 
@@ -91,8 +91,8 @@ Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaus
 
 **Frag einfach nach Hilfe in:**
 
-- Der `Contributors` Kategorie von [unserem Community Forum](https://forum.freecodecamp.org/c/contributors).
-- Dem `#Contributors` Kanal auf[ unserem Chat Server](https://chat.freecodecamp.org/channel/contributors).
+- der `Contributors` Kategorie von [unserem Community-Forum](https://forum.freecodecamp.org/c/contributors).
+- dem `#Contributors` Kanal auf [unserem Chatserver](https://discord.gg/PRyKn3Vbay).
 
 Wir freuen uns, dir dabei zu helfen, einen Beitrag zu den Themen zu leisten, an denen du gerne arbeiten möchtest. Wenn du uns in den entsprechenden Issue Threads Fragen stellst, helfen wir dir gerne weiter. Achte darauf, dass du nach deiner Frage suchst, bevor du eine neue stellst.
 

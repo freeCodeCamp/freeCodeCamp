@@ -8,7 +8,7 @@ dashedName: write-a-counter-with-redux
 
 # --description--
 
-¡Ahora ya has aprendido todos los principios básicos de Redux! Has visto cómo crear acciones y creadores de acción, crear un almacén Redux, enviar tus acciones contra el almacén y diseñar actualizaciones de estado con reductores puros. Incluso has visto cómo gestionar estados complejos con la composición de reductores y manejar acciones asíncronas. Estos ejemplos son simplistas, pero estos conceptos son los principios básicos de Redux. Si los entiendes bien, estás listo para empezar a construir tu propia aplicación Redux. Los próximos desafíos cubren algunos de los detalles relacionados con la inmutabilidad de `state`, pero primero, aquí hay un repaso de todo lo que has aprendido hasta ahora.
+¡Ahora ya has aprendido todos los principios básicos de Redux! Has visto cómo crear acciones y creadores de acción, crear un almacén Redux, enviar tus acciones contra el almacén y diseñar actualizaciones de estado con reductores puros. Incluso has visto cómo gestionar estados complejos con la composición de reductores y manejar acciones asíncronas. Estos ejemplos son simplistas, pero estos conceptos son los principios básicos de Redux. Si los entiendes bien, estás listo para empezar a crear tu propia aplicación Redux. Los próximos desafíos cubren algunos de los detalles relacionados con la inmutabilidad de `state`, pero primero, aquí hay un repaso de todo lo que has aprendido hasta ahora.
 
 # --instructions--
 
@@ -31,7 +31,7 @@ assert(decAction().type === DECREMENT);
 El almacén Redux debe inicializarse con un `state` de 0.
 
 ```js
-assert(store.getState() === 0);
+assert(_store.getState() === 0);
 ```
 
 El envío de `incAction` en el almacén Redux debe incrementar el `state` en 1.
@@ -39,9 +39,9 @@ El envío de `incAction` en el almacén Redux debe incrementar el `state` en 1.
 ```js
 assert(
   (function () {
-    const initialState = store.getState();
-    store.dispatch(incAction());
-    const incState = store.getState();
+    const initialState = _store.getState();
+    _store.dispatch(incAction());
+    const incState = _store.getState();
     return initialState + 1 === incState;
   })()
 );
@@ -52,9 +52,9 @@ El envío de `decAction` en el almacén Redux debe disminuir el `state` en 1.
 ```js
 assert(
   (function () {
-    const initialState = store.getState();
-    store.dispatch(decAction());
-    const decState = store.getState();
+    const initialState = _store.getState();
+    _store.dispatch(decAction());
+    const decState = _store.getState();
     return initialState - 1 === decState;
   })()
 );
@@ -81,6 +81,12 @@ const incAction = null; // Define an action creator for incrementing
 const decAction = null; // Define an action creator for decrementing
 
 const store = null; // Define the Redux store here, passing in your reducers
+```
+
+## --after-user-code--
+
+```js
+const _store = Redux.createStore(counterReducer)
 ```
 
 # --solutions--

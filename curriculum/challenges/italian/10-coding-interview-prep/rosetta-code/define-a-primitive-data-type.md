@@ -1,7 +1,7 @@
 ---
 id: 597089c87eec450c68aa1643
 title: Definire un tipo di dato primitivo
-challengeType: 5
+challengeType: 1
 forumTopicId: 302248
 dashedName: define-a-primitive-data-type
 ---

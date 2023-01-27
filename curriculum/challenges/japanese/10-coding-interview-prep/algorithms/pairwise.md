@@ -1,7 +1,7 @@
 ---
 id: a3f503de51cfab748ff001aa
 title: ペアワイズ
-challengeType: 5
+challengeType: 1
 forumTopicId: 301617
 dashedName: pairwise
 ---

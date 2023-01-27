@@ -1,40 +1,40 @@
 ---
 id: 5900f37d1000cf542c50fe90
-title: 'Problem 17: Number letter counts'
-challengeType: 5
+title: 'Problema 17: Contar las letras del número'
+challengeType: 1
 forumTopicId: 301804
 dashedName: problem-17-number-letter-counts
 ---
 
 # --description--
 
-If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+Si se escriben con letras los números del 1 al 5: one, two, three, four, five, se han usado 3 + 3 + 5 + 4 + 4 = 19 letras en total.
 
-If all the numbers from 1 to given `limit` inclusive were written out in words, how many letters would be used?
+Si se escriben con letras todos los números desde el 1 hasta el `limit` dado inclusive, ¿cuántas letras serán necesarias?
 
-**Note:** Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+**Nota:** no contar espacios o guiones. Por ejemplo, 342 (three hundred and forty-two) contiene 23 letras y 115 (one hundred and fifteen) contiene 20 letras. El uso de "and" al escribir los números es conforme a la costumbre británica.
 
 # --hints--
 
-`numberLetterCounts(5)` should return a number.
+`numberLetterCounts(5)` debe devolver un número.
 
 ```js
 assert(typeof numberLetterCounts(5) === 'number');
 ```
 
-`numberLetterCounts(5)` should return 19.
+`numberLetterCounts(5)` debe devolver 19.
 
 ```js
 assert.strictEqual(numberLetterCounts(5), 19);
 ```
 
-`numberLetterCounts(150)` should return 1903.
+`numberLetterCounts(150)` debe devolver 1903.
 
 ```js
 assert.strictEqual(numberLetterCounts(150), 1903);
 ```
 
-`numberLetterCounts(1000)` should return 21124.
+`numberLetterCounts(1000)` debe devolver 21124.
 
 ```js
 assert.strictEqual(numberLetterCounts(1000), 21124);

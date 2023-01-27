@@ -38,18 +38,22 @@ assert(myVar === 10);
 `myVar = myVar - 1;` を書き換える必要があります。
 
 ```js
-assert(
-  /let\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code)
-);
+assert(!code.match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
 ```
 
-`myVar` で `--` 演算子を使用する必要があります。
+`myVar` に `10` を代入してはいけません。
+
+```js
+assert(!code.match(/myVar\s*=\s*10.*?;?/));
+```
+
+`myVar` には `--` 演算子を使用する必要があります。
 
 ```js
 assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
 ```
 
-指定のコメントより上にあるコードを変更しないでください。
+指定されたコメントより上のコードを変更してはいけません。
 
 ```js
 assert(/let myVar = 11;/.test(code));

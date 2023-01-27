@@ -14,18 +14,16 @@ dashedName: comparison-with-the-less-than-or-equal-to-operator
 **例如**
 
 ```js
-4   <= 5
-'7' <= 7
-5   <= 5
-3   <= 2
-'8' <= 4
+4   <= 5 // true
+'7' <= 7 // true
+5   <= 5 // true
+3   <= 2 // false
+'8' <= 4 // false
 ```
-
-按顺序，这些表达式会返回 `true`、`true`、`true`、`false` 和 `false`。
 
 # --instructions--
 
-添加小于等于运算符到指定行，使得函数的返回语句有意义。
+将小于或等于运算符添加到指示的行，以便返回语句有意义。
 
 # --hints--
 

@@ -1,46 +1,54 @@
-# Security Policy
+# Політика безпеки freeCodeCamp.org
 
-This document outlines our security policy for the codebases, platforms that we operate, and how to report vulnerabilities.
+Цей документ визначає нашу політику безпеки для бази кодів, платформ, які ми використовуємо, та як повідомити про вразливість.
 
-## Reporting a Vulnerability
+## Повідомлення про вразливість
 
-If you think you have found a vulnerability, _please report responsibly_. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+> [!NOTE] Якщо ви вважаєте, що знайшли вразливість, **будь ласка, повідомте про це**. Не створюйте завдань на GitHub щодо питань безпеки. Натомість слідуйте цій інструкції.
 
-Ensure that you are using the **latest**, **stable** and **updated** version of the Operating System and Web Browser available to you on your machine.
+### Настанови
 
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+Ми цінуємо відповідальне розкриття інформації, що може вплинути на цілісність наших платформ та користувачів. В інтересах збереження часу ми просимо вас повідомити про вразливість, враховуючи наступне:
 
-Once you report a vulnerability, we will look into it and make sure that it is not a false positive. We will get back to you if we need to clarify any details. You can submit separate reports for each issue you find.
+1. Переконайтесь, що використовуєте **найновіші**, **стабільні** та **оновлені** версії операційної системи та веббраузера, доступних на вашій машині.
+2. Ми відносимо звіти, для яких використовувались інструменти та утиліти про повідомлення проблеми із конфігурацією SPF та DKIM, тестами SSL тощо, до категорії [«випрошування щедрот»](https://www.troyhunt.com/beg-bounties) та не відповідаємо на них.
+3. Поки ми не пропонуємо жодних винагород, ми будемо раді розмістити ваше ім'я у нашому списку [Зали слави](security-hall-of-fame.md), при умові, що звіти забрали чимало зусиль.
 
-While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](security-hall-of-fame.md) list, provided the reports are not low-effort.
+### Звітність
 
-We consider using tools & online utilities to report issues with SPF & DKIM configs, or SSL Server tests, etc. in the category of ["beg bounties"](https://www.troyhunt.com/beg-bounties/) and are unable to respond to these reports.
+Після підтвердження вищезгаданих настанов, будь ласка, напишіть на `possible-security-issue [at] freecodecamp.org`. Також ви можете надіслати PGP-зашифроване повідомлення на `flowcrypt.com/me/freecodecamp`.
 
-## Platforms & Codebases
+Як тільки ви повідомите про вразливість, ми розглянемо та впевнимось, що вона не хибно позитивна. Якщо нам необхідно прояснити будь-яку інформацію, то ми зв'яжемося з вами. Ви можете надіслати окремі звіти для кожної знайденої вами проблеми. Зверніть увагу, що ми не можемо відповісти на проблеми, які, на нашу думку, не входять до настанов.
 
-Here is a list of the platforms and codebases we are accepting reports for:
+## Платформи та кодові бази
 
-### Learn Platform
+Ось перелік платформ та кодових баз, на які ми приймаємо звіти:
 
-| Version     | Branch         | Supported | Website active           |
-| ----------- | -------------- | --------- | ------------------------ |
-| production  | `prod-current` | Yes       | `freecodecamp.org/learn` |
-| staging     | `prod-staging` | Yes       | `freecodecamp.dev/learn` |
-| development | `main`         | No        |                          |
+### Платформа для навчання
 
-### Publication Platform
+| Версія          | Гілка          | Підтримується | Актив вебсайту           |
+| --------------- | -------------- | ------------- | ------------------------ |
+| кінцева версія  | `prod-current` | Так           | `freecodecamp.org/learn` |
+| проміжна версія | `prod-staging` | Так           | `freecodecamp.dev/learn` |
+| розробка        | `main`         | Ні            |                          |
 
-| Version    | Supported | Website active                           |
-| ---------- | --------- | ---------------------------------------- |
-| production | Yes       | `freecodecamp.org/news`                  |
-| localized  | Yes       | `freecodecamp.org/<language>/news` |
+### Платформа для публікацій
 
-### Mobile app
+| Версія              | Підтримується | Актив вебсайту                           |
+| ------------------- | ------------- | ---------------------------------------- |
+| кінцева версія      | Так           | `freecodecamp.org/news`                  |
+| локалізована версія | Так           | `freecodecamp.org/<language>/news` |
 
-| Version    | Supported | Website active                                                   |
-| ---------- | --------- | ---------------------------------------------------------------- |
-| production | Yes       | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
+### Мобільний додаток
 
-Apart from the above, we are also accepting reports for repositories hosted on GitHub, under the freeCodeCamp organization.
+| Версія         | Підтримується | Актив вебсайту                                                   |
+| -------------- | ------------- | ---------------------------------------------------------------- |
+| кінцева версія | Так           | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
 
-We self-host some of our platforms using open-source software like Ghost & Discourse. If you are reporting a vulnerability please ensure that it is not a bug in the upstream software.
+### Інші платформи
+
+Крім вищезазначеного, ми також приймаємо звіти для репозиторіїв, розміщених на GitHub під організацією freeCodeCamp.
+
+### Інші програми із самостійним розміщенням
+
+Ми самостійно розміщуємо деякі з наших платформ, використовуючи програмне забезпечення із відкритим кодом, наприклад Ghost та Discourse. Перш ніж повідомити про вразливість, будь ласка, переконайтеся, що помилка не належить до програмного забезпечення.

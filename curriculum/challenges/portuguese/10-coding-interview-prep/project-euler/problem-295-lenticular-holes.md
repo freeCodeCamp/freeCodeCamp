@@ -1,7 +1,7 @@
 ---
 id: 5900f4931000cf542c50ffa6
 title: 'Problema 295: Orifícios lenticulares'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301947
 dashedName: problem-295-lenticular-holes
 ---
@@ -16,7 +16,8 @@ Chamamos a área convexa criada no cruzamento de dois círculos de um orifício 
 
 Considere os círculos:
 
-$$\begin{align} & C_0: x^2 + y^2 = 25 \\\\ & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
+$$\begin{align}   & C_0: x^2 + y^2 = 25 \\\\
+  & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
 
 Os círculos $C_0$, $C_1$ e $C_2$ estão desenhados na imagem abaixo.
 

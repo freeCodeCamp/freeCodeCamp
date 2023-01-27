@@ -1,7 +1,7 @@
 ---
 id: 5951815dd895584b06884620
 title: 2点を通る指定半径の円
-challengeType: 5
+challengeType: 1
 forumTopicId: 302231
 dashedName: circles-of-given-radius-through-two-points
 ---

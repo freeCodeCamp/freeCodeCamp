@@ -24,53 +24,53 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 
 # --instructions--
 
-Add the greater than or equal to operator to the indicated lines so that the return statements make sense.
+return ステートメントの意味が正しくなるように、指定された行に大なりイコール演算子を追加してください。
 
 # --hints--
 
-`testGreaterOrEqual(0)` should return the string `Less than 10`
+`testGreaterOrEqual(0)` は文字列 `Less than 10` を返す必要があります。
 
 ```js
 assert(testGreaterOrEqual(0) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(9)` should return the string `Less than 10`
+`testGreaterOrEqual(9)` は文字列 `Less than 10` を返す必要があります。
 
 ```js
 assert(testGreaterOrEqual(9) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(10)` should return the string `10 or Over`
+`testGreaterOrEqual(10)` は文字列 `10 or Over` を返す必要があります。
 
 ```js
 assert(testGreaterOrEqual(10) === '10 or Over');
 ```
 
-`testGreaterOrEqual(11)` should return the string `10 or Over`
+`testGreaterOrEqual(11)` は文字列 `10 or Over` を返す必要があります。
 
 ```js
 assert(testGreaterOrEqual(11) === '10 or Over');
 ```
 
-`testGreaterOrEqual(19)` should return the string `10 or Over`
+`testGreaterOrEqual(19)` は文字列 `10 or Over` を返す必要があります。
 
 ```js
 assert(testGreaterOrEqual(19) === '10 or Over');
 ```
 
-`testGreaterOrEqual(100)` should return the string `20 or Over`
+`testGreaterOrEqual(100)` は文字列 `20 or Over` を返す必要があります。
 
 ```js
 assert(testGreaterOrEqual(100) === '20 or Over');
 ```
 
-`testGreaterOrEqual(21)` should return the string `20 or Over`
+`testGreaterOrEqual(21)` は文字列 `20 or Over` を返す必要があります。
 
 ```js
 assert(testGreaterOrEqual(21) === '20 or Over');
 ```
 
-You should use the `>=` operator at least twice
+`>=` 演算子を 2 回以上使用してください。
 
 ```js
 assert(code.match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);

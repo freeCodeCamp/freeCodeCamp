@@ -1,16 +1,20 @@
 ---
 id: 59713da0a428c1a62d7db430
 title: Regola di Cramer
-challengeType: 5
+challengeType: 1
 forumTopicId: 302239
 dashedName: cramers-rule
 ---
 
 # --description--
 
-In <a href="https://it.wikipedia.org/wiki/Algebra_lineare"">algebra lineare</a>, la [regola di Cramer](https://it.wikipedia.org/wiki/Regola_di_Cramer "wp: Regola di Cramer") è una formula esplicita per la risoluzione di un [sistema di equazioni lineari](https://it.wikipedia.org/wiki/Sistema_di_equazioni_lineari) con tante soluzioni quante sono le variabili, valida ogni volta che il sistema ha una soluzione unica. Esprime la soluzione in termine di determinanti della matrice quadrata dei coefficienti e delle matrici ottenute da essa sostituendo una delle colonne con il vettore dei termini a destra dell'uguale nelle equazioni.
+<a href="https://rosettacode.org/wiki/Cramer%27s_rule" target="_blank" rel="noopener noreferrer nofollow">La regola di Cramer</a> è una formula per risolvere un sistema di equazioni lineari usando i determinanti di matrici formate da sottoinsiemi dei coefficienti e dei valori del lato destro delle equazioni.
 
-Dati
+Il determinante di una matrice con 2 righe e due colonne è dato da:
+
+$\begin{aligned}|A|={\begin{vmatrix}a&b\\\c&d\end{vmatrix}}=ad-bc.\end{aligned}$
+
+Dato un sistema di equazioni lineari:
 
 $\\left\\{\\begin{matrix}a_1x + b_1y + c_1z&= {\\color{red}d_1}\\\\a_2x + b_2y + c_2z&= {\\color{red}d_2}\\\\a_3x + b_3y + c_3z&= {\\color{red}d_3}\\end{matrix}\\right.$
 
@@ -18,7 +22,7 @@ che in forma matriciale è
 
 $\\begin{bmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{bmatrix}\\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix}=\\begin{bmatrix} {\\color{red}d_1} \\\\ {\\color{red}d_2} \\\\ {\\color{red}d_3} \\end{bmatrix}.$
 
-Allora i valodi di $x, y$ e $z$ possono essere trovati come segue:
+Allora i valori di $x, y$ e $z$ possono essere trovati come segue:
 
 $x = \\frac{\\begin{vmatrix} {\\color{red}d_1} & b_1 & c_1 \\\\ {\\color{red}d_2} & b_2 & c_2 \\\\ {\\color{red}d_3} & b_3 & c_3 \\end{vmatrix} } { \\begin{vmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{vmatrix}}, \\quad y = \\frac {\\begin{vmatrix} a_1 & {\\color{red}d_1} & c_1 \\\\ a_2 & {\\color{red}d_2} & c_2 \\\\ a_3 & {\\color{red}d_3} & c_3 \\end{vmatrix}} {\\begin{vmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{vmatrix}}, \\text{ and }z = \\frac { \\begin{vmatrix} a_1 & b_1 & {\\color{red}d_1} \\\\ a_2 & b_2 & {\\color{red}d_2} \\\\ a_3 & b_3 & {\\color{red}d_3} \\end{vmatrix}} {\\begin{vmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{vmatrix} }.$
 

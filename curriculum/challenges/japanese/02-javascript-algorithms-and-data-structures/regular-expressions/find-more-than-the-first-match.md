@@ -18,7 +18,7 @@ testStr.match(ourRegex);
 
 この `match` は `["Repeat"]` を返します。
 
-パターンを複数回検索または抽出するには、`g` フラグを使用します。
+パターンを複数回検索または抽出するには、グローバルサーチフラグ `g` を使用します。
 
 ```js
 let repeatRegex = /Repeat/g;

@@ -12,11 +12,11 @@ dashedName: create-a-trie-search-tree
 
 # --instructions--
 
-単語を格納するためのトライを作成しましょう。 そのトライは、`add` メソッドで単語を受け入れ、それらをトライデータ構造に格納します。 また、与えられた文字列が単語かどうかを問い合わせるために `isWord` メソッドを使ったり、トライに格納されたすべての単語を取得するために `print` メソッドを使ったりできます。 `isWord` はブール値を返し、print はこれらすべての単語の配列を文字列値として返す必要があります。 このデータ構造が正しく実装されていることを確認するために、木の各ノードに `Node` 構造が用意されています。 各ノードは、JavaScript Map オブジェクトである `keys` プロパティを持つオブジェクトです。 これには、各ノードの有効なキーである個々の文字が格納されます。 また、各ノードには `end` プロパティが既に作成されており、ノードが単語の終了を表す場合にこのプロパティを `true` に設定することができます。
+単語を格納するためのトライを作成しましょう。 そのトライは、`add` メソッドで単語を受け入れ、それらをトライデータ構造に格納します。 また、与えられた文字列が単語かどうかを問い合わせるために `isWord` メソッドを使ったり、トライに格納されたすべての単語を取得するために `print` メソッドを使ったりできます。 `isWord` should return a boolean value and `print` should return an array of all these words as string values. このデータ構造が正しく実装されていることを確認するために、木の各ノードに `Node` 構造が用意されています。 各ノードは、JavaScript Map オブジェクトである `keys` プロパティを持つオブジェクトです。 これには、各ノードの有効なキーである個々の文字が格納されます。 また、各ノードには `end` プロパティが既に作成されており、ノードが単語の終了を表す場合にこのプロパティを `true` に設定することができます。
 
 # --hints--
 
-Trie に add メソッドが必要です。
+The `Trie` should have an `add` method.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-Trie に print メソッドが必要です。
+The `Trie` should have a `print` method.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-Trie に isWord メソッドが必要です。
+The `Trie` should have an `isWord` method.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-print メソッドは、トライに追加されたすべての値を文字列の配列として返す必要があります。
+The `print` method should return all items added to the trie as strings in an array.
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-isWord メソッドは、トライに追加された単語に対してのみ true を返し、他のすべての単語に対して false を返す必要があります。
+The `isWord` method should return `true` only for words added to the trie and `false` for all other words.
 
 ```js
 assert(

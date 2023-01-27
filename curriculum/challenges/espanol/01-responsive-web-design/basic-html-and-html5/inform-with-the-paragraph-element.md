@@ -9,7 +9,7 @@ dashedName: inform-with-the-paragraph-element
 
 # --description--
 
-Los elementos `p` son el elemento preferido para el texto de los párrafos en los sitios web. `p` es la abreviatura de "párrafo" (paragraph).
+El elemento `p` es el elemento preferido para el texto de los párrafos en los sitios web. `p` es la abreviatura de "párrafo" (paragraph).
 
 Puedes crear un elemento párrafo de esta manera:
 

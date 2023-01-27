@@ -16,11 +16,9 @@ Si los valores que se comparan tienen diferentes tipos, se consideran desiguales
 **Ejemplos**
 
 ```js
-3 ===  3
-3 === '3'
+3 ===  3  // true
+3 === '3' // false
 ```
-
-Estas condiciones devuelven `true` y `false` respectivamente.
 
 En el segundo ejemplo, `3` es de tipo `Number` (número) y `'3'` es de tipo `String` (cadena).
 

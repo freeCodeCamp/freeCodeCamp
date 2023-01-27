@@ -1,7 +1,7 @@
 ---
 id: 5900f3f71000cf542c50ff0a
 title: 'Problem 139: Pythagorean tiles'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301767
 dashedName: problem-139-pythagorean-tiles
 ---

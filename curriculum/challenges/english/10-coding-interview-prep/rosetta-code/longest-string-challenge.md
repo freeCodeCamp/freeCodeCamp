@@ -1,7 +1,7 @@
 ---
 id: 5e6dd14192286d95fc43046e
 title: Longest string challenge
-challengeType: 5
+challengeType: 1
 forumTopicId: 385275
 dashedName: longest-string-challenge
 ---

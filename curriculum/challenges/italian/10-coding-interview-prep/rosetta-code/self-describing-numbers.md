@@ -1,14 +1,14 @@
 ---
 id: 5eaf48389ee512d4d103684b
 title: Numeri autodescrittivi
-challengeType: 5
+challengeType: 1
 forumTopicId: 385289
 dashedName: self-describing-numbers
 ---
 
 # --description--
 
-Ci sono diversi cosiddetti interi "auto-descriventi" o ["auto-descrittivi"](https://en.wikipedia.org/wiki/Self-descriptive_number) interi.
+Ci sono svariati numeri che sono "auto-descriventi".
 
 Si dice che un intero è "auto-descritto" se ha la proprietà che, quando le posizioni di cifra sono etichettate da 0 a N-1, la cifra in ogni posizione è uguale al numero di volte che la cifra appare nel numero.
 

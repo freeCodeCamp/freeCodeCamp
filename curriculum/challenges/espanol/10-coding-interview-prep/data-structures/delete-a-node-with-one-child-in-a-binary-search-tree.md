@@ -1,6 +1,6 @@
 ---
 id: 587d8258367417b2b2512c81
-title: Delete a Node with One Child in a Binary Search Tree
+title: Eliminar un nodo con un Hijo en un árbol binario de búsqueda
 challengeType: 1
 forumTopicId: 301638
 dashedName: delete-a-node-with-one-child-in-a-binary-search-tree
@@ -8,15 +8,15 @@ dashedName: delete-a-node-with-one-child-in-a-binary-search-tree
 
 # --description--
 
-Now that we can delete leaf nodes let's move on to the second case: deleting a node with one child. For this case, say we have a tree with the following nodes 1 — 2 — 3 where 1 is the root. To delete 2, we simply need to make the right reference in 1 point to 3. More generally to delete a node with only one child, we make that node's parent reference the next node in the tree.
+Ahora que podemos eliminar nodos hoja pasaremos el segundo caso: eliminar un nodo con un hijo. Para este caso, digamos que tenemos un árbol con los siguientes nodos 1 - 2 - 3 donde 1 es la raíz. Para eliminar 2, simplemente necesitamos hacer que la referencia derecha en 1 apunte a 3. Más generalmente para eliminar un nodo con sólo un hijo, hacemos que la referencia padre del nodo sea el siguiente nodo en el árbol.
 
 # --instructions--
 
-We've provided some code in our `remove` method that accomplishes the tasks from the last challenge. We find the target to delete and its parent and define the number of children the target node has. Let's add the next case here for target nodes with only one child. Here, we'll have to determine if the single child is a left or right branch in the tree and then set the correct reference in the parent to point to this node. In addition, let's account for the case where the target is the root node (this means the parent node will be `null`). Feel free to replace all the starter code with your own as long as it passes the tests.
+Hemos proporcionado algún código en nuestro método `remove` que cumple con las tareas del último desafío. Encontramos el objetivo a eliminar y su padre y definimos el número de hijos que el nodo objetivo tiene. Vamos a añadir el siguiente caso aquí para los nodos objetivos con sólo un hijo. Aquí, tendremos que determinar si el hijo individual es un hijo izquierdo o derecho y luego establecer la referencia correcta en el padre para apuntar a este nodo. Adicionalmente, vamos a tener en cuenta el caso done el objetivo en el nodo raíz (esto significa que el padre será `null`). Sientéte libre de reemplazar el código inicial por el tuyo mientras pase las pruebas.
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+La estructura de datos `BinarySearchTree` debe existir.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `remove`.
+El árbol binario de búsqueda debe tener un método llamado `remove`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-Trying to remove an element that does not exist should return `null`.
+Tratar de eliminar un elemento que no existe debe devolver `null`.
 
 ```js
 assert(
@@ -65,7 +65,7 @@ assert(
 );
 ```
 
-If the root node has no children, deleting it should set the root to `null`.
+Si el nodo raíz no tiene hijos, eliminar debe establecer la raíz a `null`.
 
 ```js
 assert(
@@ -86,7 +86,7 @@ assert(
 );
 ```
 
-The `remove` method should remove leaf nodes from the tree.
+El método `remove` debe nodos hojas del árbol.
 
 ```js
 assert(
@@ -114,7 +114,7 @@ assert(
 );
 ```
 
-The `remove` method should remove nodes with one child.
+El método `remove` debe eliminar nodos con un hijo.
 
 ```js
 assert(
@@ -128,19 +128,20 @@ assert(
     if (typeof test.remove !== 'function') {
       return false;
     }
-    test.add(-1);
+    test.add(1);
+    test.add(4);
     test.add(3);
-    test.add(7);
-    test.add(16);
-    test.remove(16);
-    test.remove(7);
+    test.add(2);
+    test.add(6);
+    test.add(8);
+    test.remove(6);
     test.remove(3);
-    return test.inorder().join('') == '-1';
+    return test.inorder().join('') == '1248';
   })()
 );
 ```
 
-Removing the root in a tree with two nodes should set the second to be the root.
+Eliminar la raíz en un árbol con dos nodos debe establecer el segundo para ser la raíz.
 
 ```js
 assert(

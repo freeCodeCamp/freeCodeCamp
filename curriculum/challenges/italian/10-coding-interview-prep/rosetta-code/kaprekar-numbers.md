@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7eca
 title: Numeri di Kaprekar
-challengeType: 5
+challengeType: 1
 forumTopicId: 302296
 dashedName: kaprekar-numbers
 ---
 
 # --description--
 
-Un numero intero positivo è un [numero di Kaprekar](https://en.wikipedia.org/wiki/Kaprekar number) se:
+Un numero intero positivo è un numero di Kaprekar se:
 
 <ul>
   <li>È 1 o,</li>
@@ -21,7 +21,7 @@ Esempi di numeri di Kaprekar:
 
 <ul>
   <li><code>2223</code> è un numero Kaprekar, poiché <code>2223 * 2223 = 4941729</code>, <code>4941729</code> può essere suddiviso in <code>494</code> e <code>1729</code>and <code>494 + 1729 = 2223</code></li>
-  <li>La serie di numeri Kaprekar è conosciuta come <a href='https://oeis.org/A006886' target='_blank'>A006886</a> e inizia con <code>1, 9, 45, 55, ...</code></li>
+  <li>La serie di numeri di Kaprekar è nota come A006886 e inizia con <code>1, 9, 45, 55, ...</code></li>
 </ul>
 
 # --instructions--

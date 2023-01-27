@@ -1,6 +1,6 @@
 ---
 id: 5e9a0e9ef99a403d019610ca
-title: Як працюють нейронні мережі глибинного навчання
+title: Як працюють глибинні нейронні мережі
 challengeType: 11
 videoId: zvalnHWGtx4
 dashedName: how-deep-neural-networks-work
@@ -10,7 +10,7 @@ dashedName: how-deep-neural-networks-work
 
 ## --text--
 
-Чому обраховувати кутовий коефіцієнт краще ніж похідну за напрямком, а не чисельно?
+Чому обраховувати кутовий коефіцієнт краще за напрямком, а не чисельно?
 
 ## --answers--
 

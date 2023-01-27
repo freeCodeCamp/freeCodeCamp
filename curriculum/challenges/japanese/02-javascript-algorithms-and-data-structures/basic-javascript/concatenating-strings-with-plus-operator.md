@@ -32,7 +32,13 @@ const ourStr = "I come first. " + "I come second.";
 
 # --hints--
 
-`myStr` の値が文字列 `This is the start.` `This is the end.` になる必要があります。
+`myStr` は、2 つの文字列の間に空白文字を含む必要があります。
+
+```js
+assert(/start\. This/.test(myStr));
+```
+
+`myStr` は、文字列の値 `This is the start. This is the end.` を持つ必要があります。
 
 ```js
 assert(myStr === 'This is the start. This is the end.');

@@ -27,7 +27,7 @@ class="class1 class2"
 
 **Nota:** No importa el orden en que las clases estén enlistadas dentro del elemento HTML.
 
-Sin embargo, lo importante es el orden de las declaraciones de `class` clases en la sección `<style>`. La segunda declaración siempre tendrá prioridad sobre la primera. Debido a que `.blue-text` ha sido declarada en segundo lugar, sobrescribirá los atributos de `.pink-text`
+Sin embargo, lo importante es el orden de las declaraciones de `class` clases en la sección `<style>`. La segunda declaración siempre tendrá prioridad sobre la primera. Debido a que `.blue-text` fue declaradado segundo, este sobreescribirá los atributos de `.pink-text`.
 
 # --hints--
 

@@ -1,14 +1,14 @@
 ---
 id: 5ea28156e79528a9ab248f27
 title: クレジットカード番号のLuhnテスト
-challengeType: 5
+challengeType: 1
 forumTopicId: 385284
 dashedName: luhn-test-of-credit-card-numbers
 ---
 
 # --description--
 
-[Luhnテスト](https://en.wikipedia.org/wiki/Luhn algorithm) は、クレジットカード会社によって有効なクレジットカード番号と数字のランダムな選択を区別するために使用されることがあります。
+The Luhn test is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
 
 Luhnテストで検証可能なクレジットカード番号を使用している企業が発行するカード番号は、以下のテストをパスします。
 

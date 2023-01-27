@@ -1,5 +1,4 @@
-name: 'CodeQL'
-
+name: CI - Run CodeQL Analysis
 on:
   push:
     branches: [main]
@@ -10,8 +9,18 @@ on:
     paths-ignore:
       - 'docs/**'
 
+permissions:
+  contents: read
+
 jobs:
   analyse:
+    permissions:
+      # for github/codeql-action/init to get workflow details
+      actions: read
+      # for actions/checkout to fetch code
+      contents: read
+      # for github/codeql-action/analyze to upload SARIF results
+      security-events: write
     name: Analyse
     runs-on: ubuntu-20.04
     if: ${{ github.actor != 'renovate[bot]' && github.actor != 'camperbot' }}
@@ -21,10 +30,10 @@ jobs:
         language: ['javascript']
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
       - name: Setup CodeQL
-        uses: github/codeql-action/init@v1
+        uses: github/codeql-action/init@a34ca99b4610d924e04c68db79e503e1f79f9f02 # v2
         with:
           languages: ${{ matrix.language }}
       - name: Perform Analysis
-        uses: github/codeql-action/analyze@v1
+        uses: github/codeql-action/analyze@a34ca99b4610d924e04c68db79e503e1f79f9f02 # v2

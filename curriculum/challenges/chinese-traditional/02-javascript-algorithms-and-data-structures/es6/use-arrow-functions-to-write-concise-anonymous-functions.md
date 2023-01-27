@@ -45,13 +45,13 @@ const myFunc = () => "value";
 應該替換 `var` 關鍵字。
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g)
 ```
 
 `magic` 應該爲一個常量（使用 `const`）。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+magic/g));
+assert.match(code, /const\s+magic/g)
 ```
 
 `magic` 應該是一個函數 `function`。
@@ -69,7 +69,7 @@ assert(magic().setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0));
 不要使用 `function` 關鍵字。
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/function/g));
+assert.notMatch(code, /function/g)
 ```
 
 # --seed--

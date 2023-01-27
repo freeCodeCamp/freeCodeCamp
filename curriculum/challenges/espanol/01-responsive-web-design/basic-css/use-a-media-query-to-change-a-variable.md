@@ -15,7 +15,7 @@ Por ejemplo, cuando la pantalla es más pequeña o más grande que el breakpoint
 
 # --instructions--
 
-Modifica el selector `:root` de la `media query` para que `--penguin-size` sea redefinido y reciba un valor de `200px`. Además, redefine `--penguin-skin` y asígnale el valor `black` (negro). Luego, cambia el tamaño de la vista previa para ver este cambio en acción.
+Modifica el selector de la media query `:root` para que `--penguin-size` se redefina y asigne el valor de `200px`. Además, redefine `--penguin-skin` y asígnale el valor `black` (negro). Luego, cambia el tamaño de la vista previa para ver este cambio en acción.
 
 # --hints--
 

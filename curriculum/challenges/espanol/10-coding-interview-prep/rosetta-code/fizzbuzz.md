@@ -1,58 +1,58 @@
 ---
 id: 5e9ddb06ec35240f39657419
 title: FizzBuzz
-challengeType: 5
+challengeType: 1
 forumTopicId: 385370
 dashedName: fizzbuzz
 ---
 
 # --description--
 
-Write a program that generates an array of integers from 1 to 100 (inclusive). But:
+Write a program that generates an array of integers from 1 to 100 (inclusive). Pero:
 
 <ul>
-    <li>for multiples of 3, add <code>"Fizz"</code> to the array instead of the number</li>
-    <li>for multiples of 5, add <code>"Buzz"</code> to the array instead of the number</li>
-    <li>for multiples of 3 and 5, add <code>"FizzBuzz"</code> to the array instead of the number</li>
+    <li>para múltiplos de 3, suma<code>"Fizz"</code> a la matriz en lugar del número</li>
+    <li>para múltiplos de 5, suma<code>"Buzz"</code> a la matriz en lugar del número</li>
+    <li>para múltiplos de 3 y 5, suma<code>"FizzBuzz"</code> a la matriz en lugar del número</li>
 </ul>
 
 # --instructions--
 
-Your program should return an array containing the results based on the rules above.
+Su programa debe devolver una matriz que contenga los resultados según las reglas anteriores.
 
 # --hints--
 
-`fizzBuzz` should be a function.
+`fizzBuzz` debe ser una función.
 
 ```js
 assert(typeof fizzBuzz == 'function');
 ```
 
-`fizzBuzz()` should return an Array.
+`fizzBuzz()` debe devolver una matriz.
 
 ```js
 assert(Array.isArray(fizzBuzz()) == true);
 ```
 
-Numbers divisible by only 3 should return `"Fizz"`.
+Los números divisibles por solo 3 deberían regresar`"Fizz"`.
 
 ```js
 assert.equal(fizzBuzz()[2], 'Fizz');
 ```
 
-Numbers divisible by only 5 should return `"Buzz"`.
+Los números divisibles por solo 5 deberían regresar `"Buzz"`.
 
 ```js
 assert.equal(fizzBuzz()[99], 'Buzz');
 ```
 
-Numbers divisible by both 3 and 5 should return `"FizzBuzz"`.
+Los números divisibles por 3 y 5 deberían regresar `"FizzBuzz"`.
 
 ```js
 assert.equal(fizzBuzz()[89], 'FizzBuzz');
 ```
 
-Numbers not divisible by either 3 or 5 should return the number itself.
+Los números que no son divisibles por 3 o 5 deben devolver el número en sí.
 
 ```js
 assert.equal(fizzBuzz()[12], 13);

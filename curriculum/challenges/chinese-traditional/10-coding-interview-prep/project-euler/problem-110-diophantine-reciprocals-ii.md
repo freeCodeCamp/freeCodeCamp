@@ -1,7 +1,7 @@
 ---
 id: 5900f3db1000cf542c50feed
-title: 'Problem 110: Diophantine Reciprocals II'
-challengeType: 5
+title: '問題 110：丟番圖倒數 II'
+challengeType: 1
 forumTopicId: 301735
 dashedName: problem-110-diophantine-reciprocals-ii
 ---

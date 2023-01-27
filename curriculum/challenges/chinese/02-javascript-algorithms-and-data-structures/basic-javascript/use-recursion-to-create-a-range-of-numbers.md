@@ -56,6 +56,13 @@ assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
 assert.deepStrictEqual(rangeOfNumbers(4, 4), [4]);
 ```
 
+不应使用全局变量来缓存数组。
+
+```js
+rangeOfNumbers(1, 3)
+assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
+```
+
 # --seed--
 
 ## --seed-contents--

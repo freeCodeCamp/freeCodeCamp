@@ -1,7 +1,7 @@
 ---
 id: 5900f5231000cf542c510035
 title: 'Problema 439: Soma da soma dos divisores'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302110
 dashedName: problem-439-sum-of-sum-of-divisors
 ---

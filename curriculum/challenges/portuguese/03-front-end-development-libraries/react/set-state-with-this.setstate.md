@@ -16,7 +16,7 @@ this.setState({
 });
 ```
 
-React espera que você nunca modifique o `state` diretamente, em vez disso sempre use `this.setState()` quando as mudanças de estado ocorrerem. Além disso, você deve notar que React pode agrupar várias atualizações de estado para melhorar o desempenho. Isso significa que atualizações de estado através do método `setState` podem ser assíncronas. Existe uma sintaxe alternativa para o método `setState` que fornece uma forma de contornar esse problema. Isso raramente é necessário, mas é bom ter isso em mente! Consulte a [documentação do React](https://reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous) para saber mais detalhes.
+React espera que você nunca modifique o `state` diretamente, em vez disso sempre use `this.setState()` quando as mudanças de estado ocorrerem. Além disso, você deve notar que React pode agrupar várias atualizações de estado para melhorar o desempenho. Isso significa que atualizações de estado através do método `setState` podem ser assíncronas. Existe uma sintaxe alternativa para o método `setState` que fornece uma forma de contornar esse problema. Isso raramente é necessário, mas é bom ter isso em mente! Consulte nosso <a href="https://www.freecodecamp.org/news/what-is-state-in-react-explained-with-examples/" target="_blank" rel="noopener noreferrer nofollow">artigo sobre React</a> para saber mais detalhes.
 
 # --instructions--
 

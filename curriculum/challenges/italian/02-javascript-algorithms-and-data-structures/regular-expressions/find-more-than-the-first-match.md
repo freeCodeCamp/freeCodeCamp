@@ -18,7 +18,7 @@ testStr.match(ourRegex);
 
 Qui `match` restituirà `["Repeat"]`.
 
-Per cercare o estrarre un pattern più di una volta, è possibile utilizzare il flag `g`.
+Per cercare o estrarre un pattern più di una volta, puoi usare l'opzione di ricerca globale: `g`.
 
 ```js
 let repeatRegex = /Repeat/g;

@@ -1,7 +1,7 @@
 ---
 id: 5900f3701000cf542c50fe83
 title: '問題 4: 回文数である最大の積'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302065
 dashedName: problem-4-largest-palindrome-product
 ---

@@ -18,15 +18,15 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --instructions--
 
-package.json ファイルに、npm に許可する moment のアップグレード方法が示されていますが、現在のルールでは特定のバージョン (2.10.2) が使用されます。 しかし、ここでは最新の 2.10.x バージョンを許可したいとします。
+package.json ファイルに、npm に許可する `@freecodecamp/example` のアップグレード方法が示されていますが、現在のルールでは特定のバージョン (1.2.13) が使用されます。 しかし、ここでは最新の 1.2.x バージョンを許可したいとします。
 
-依存関係内の moment のバージョンの前にプレフィックスとしてチルダ (`~`) 文字を使用し、npm によって新しい PATCH リリースに更新されるようにしてください。
+依存関係内の `@freecodecamp/example` のバージョンの前にプレフィックスとしてチルダ (`~`) 文字を使用し、npm によって新しい _patch_ リリースに更新されるようにしてください。
 
 **注:** バージョン番号自体は変更しないでください。
 
 # --hints--
 
-「dependencies」に「moment」を含める必要があります。
+`"dependencies"` に `"@freecodecamp/example"` を含める必要があります。
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ package.json ファイルに、npm に許可する moment のアップグレー�
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'moment',
-        '"dependencies" does not include "moment"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ package.json ファイルに、npm に許可する moment のアップグレー�
   );
 ```
 
-「moment」のバージョンを「~2.10.2」にする必要があります。
+`"@freecodecamp/example"` のバージョンは `"~1.2.13"` である必要があります。
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ package.json ファイルに、npm に許可する moment のアップグレー�
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.moment,
-        /^\~2\.10\.2/,
-        'Wrong version of "moment". It should be ~2.10.2'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\~1\.2\.13/,
+        'Wrong version of "@freecodecamp/example". It should be ~1.2.13'
       );
     },
     (xhr) => {

@@ -1,7 +1,7 @@
 ---
 id: 5900f38c1000cf542c50fe9f
 title: 'Завдання 32: Панцифрові добутки'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301976
 dashedName: problem-32-pandigital-products
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f4691000cf542c50ff7c
 title: 'Problema 253: Organização'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301901
 dashedName: problem-253-tidying-up
 ---

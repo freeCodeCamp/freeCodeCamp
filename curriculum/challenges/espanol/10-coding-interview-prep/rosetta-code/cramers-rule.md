@@ -1,16 +1,20 @@
 ---
 id: 59713da0a428c1a62d7db430
 title: Cramer's rule
-challengeType: 5
+challengeType: 1
 forumTopicId: 302239
 dashedName: cramers-rule
 ---
 
 # --description--
 
-In [linear algebra](https://en.wikipedia.org/wiki/linear algebra "wp: linear algebra"), [Cramer's rule](https://en.wikipedia.org/wiki/Cramer's rule "wp: Cramer's rule") is an explicit formula for the solution of a [system of linear equations](https://en.wikipedia.org/wiki/system of linear equations "wp: system of linear equations") with as many equations as unknowns, valid whenever the system has a unique solution. It expresses the solution in terms of the determinants of the (square) coefficient matrix and of matrices obtained from it by replacing one column by the vector of right hand sides of the equations.
+<a href="https://rosettacode.org/wiki/Cramer%27s_rule" target="_blank" rel="noopener noreferrer nofollow">Cramer's rule</a> is a formula for solving a system of linear equations by using the determinants of matrices formed from subsets of the coefficients and right hand side values.
 
-Given
+The determinant of a matrix with 2 rows and two columns is given by:
+
+$\begin{aligned}|A|={\begin{vmatrix}a&b\\\c&d\end{vmatrix}}=ad-bc.\end{aligned}$
+
+Given a system of linear equations:
 
 $\\left\\{\\begin{matrix}a_1x + b_1y + c_1z&= {\\color{red}d_1}\\\\a_2x + b_2y + c_2z&= {\\color{red}d_2}\\\\a_3x + b_3y + c_3z&= {\\color{red}d_3}\\end{matrix}\\right.$
 

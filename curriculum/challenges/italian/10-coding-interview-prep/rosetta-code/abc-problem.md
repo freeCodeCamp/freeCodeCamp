@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339acc
 title: Problema ABC
-challengeType: 5
+challengeType: 1
 forumTopicId: 302220
 dashedName: abc-problem
 ---

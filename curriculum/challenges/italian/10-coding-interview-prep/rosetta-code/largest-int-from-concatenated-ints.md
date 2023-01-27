@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7edb
 title: Intero più grande da interi concatenati
-challengeType: 5
+challengeType: 1
 forumTopicId: 302298
 dashedName: largest-int-from-concatenated-ints
 ---

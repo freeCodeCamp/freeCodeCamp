@@ -14,14 +14,12 @@ El operador de desigualdad (`!=`) es lo opuesto al operador de igualdad. Esto qu
 **Ejemplos**
 
 ```js
-1 !=  2
-1 != "1"
-1 != '1'
-1 != true
-0 != false
+1 !=  2    // true
+1 != "1"   // false
+1 != '1'   // false
+1 != true  // false
+0 != false // false
 ```
-
-En orden, estas expresiones se evaluarían como `true`, `false`, `false`, `false` y `false`.
 
 # --instructions--
 

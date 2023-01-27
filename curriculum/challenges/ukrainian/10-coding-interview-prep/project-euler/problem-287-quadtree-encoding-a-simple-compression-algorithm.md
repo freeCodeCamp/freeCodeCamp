@@ -1,7 +1,7 @@
 ---
 id: 5900f48b1000cf542c50ff9e
 title: 'Проблема 287: Кодування Дерева квадратів (простий алгоритм стиснення)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301938
 dashedName: problem-287-quadtree-encoding-a-simple-compression-algorithm
 ---

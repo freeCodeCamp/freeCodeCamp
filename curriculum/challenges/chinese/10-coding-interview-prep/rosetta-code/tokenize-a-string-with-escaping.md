@@ -1,14 +1,14 @@
 ---
 id: 594faaab4e2a8626833e9c3d
-title: Tokenize a string with escaping
-challengeType: 5
+title: 使用转义标记字符串
+challengeType: 1
 forumTopicId: 302338
 dashedName: tokenize-a-string-with-escaping
 ---
 
 # --description--
 
-Write a function or program that can split a string at each non-escaped occurrence of a separator character.
+编写一个函数或程序，可以在分隔符的每个非转义出现处拆分字符串。
 
 It should accept three input parameters:
 

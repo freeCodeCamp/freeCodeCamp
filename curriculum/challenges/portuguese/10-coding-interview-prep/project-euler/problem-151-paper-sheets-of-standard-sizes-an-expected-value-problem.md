@@ -1,7 +1,7 @@
 ---
 id: 5900f4031000cf542c50ff16
 title: 'Problema 151: Folhas de papel de tamanhos padrão: um problema de valor esperado'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301782
 dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
 ---

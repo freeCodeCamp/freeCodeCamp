@@ -35,7 +35,7 @@ Lembre-se de que você pode aplicar várias classes a um mesmo elemento usando o
 
 # --hints--
 
-O elemento `img` deve possuir a classe `smaller-image`.
+O elemento `img` deve ter a classe `smaller-image`.
 
 ```js
 assert($('img').hasClass('smaller-image'));

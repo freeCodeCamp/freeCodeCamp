@@ -1,7 +1,7 @@
 ---
 id: 5900f5171000cf542c510029
 title: 'Завдання 426: Система коробка-м''яч'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302096
 dashedName: problem-426-box-ball-system
 ---
@@ -24,7 +24,8 @@ dashedName: problem-426-box-ball-system
 
 Ми визначили послідовність $\\{t_i\\}$:
 
-$$\begin{align} & s_0 = 290\\,797 \\\\ & s_{k + 1} = {s_k}^2\bmod 50\\,515\\,093 \\\\ & t_k = (s_k\bmod 64) + 1 \end{align}$$
+$$\begin{align}   & s_0 = 290\\,797 \\\\
+  & s_{k + 1} = {s_k}^2\bmod 50\\,515\\,093 \\\\ & t_k = (s_k\bmod 64) + 1 \end{align}$$
 
 Починаючи з початкової конфігурації $(t_0, t_1, \ldots, t_{10})$, кінцевим станом стане [1, 3, 10, 24, 51, 75].
 

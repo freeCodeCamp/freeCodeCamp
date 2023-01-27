@@ -14,7 +14,7 @@ dashedName: remove-elements-from-a-linked-list-by-index
 
 Зазвичай, щоб пройтися елементами зв'язаного списку, користуються технікою, що містить <dfn>'runner'</dfn>, або вартового, який "вказує" на вузли, які порівнює ваш код. Оскільки в нашому випадку ми почнемо з `head` (голови) списку, то змінна `currentIndex` починається з `0`. `currentIndex` має збільшуватись на одиницю для кожного пройденого вузла.
 
-Як і з методом `remove(element)`, який [ми вивчили на минулому уроці](/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list), потрібно бути обережним, щоб не осиротити решту елементів нашого списку при видаленні вузла за допомогою методу `removeAt(index)`. Ми зберігаємо ланцюг вузлів, переконавшись, що вузол, в якому міститься посилання на видалений вузол, має ще й посилання на наступний.
+Just like our `remove(element)` method, which <a href="/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list" target="_blank" rel="noopener noreferrer nofollow">we covered in a previous lesson</a>, we need to be careful not to orphan the rest of our list when we remove the node in our `removeAt(index)` method. Ми зберігаємо ланцюг вузлів, переконавшись, що вузол, в якому міститься посилання на видалений вузол, має ще й посилання на наступний.
 
 # --instructions--
 

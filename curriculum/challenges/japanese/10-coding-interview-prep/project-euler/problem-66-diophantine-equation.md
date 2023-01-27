@@ -1,7 +1,7 @@
 ---
 id: 5900f3ae1000cf542c50fec1
 title: '問題 66: ディオファントス方程式'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302178
 dashedName: problem-66-diophantine-equation
 ---
@@ -40,25 +40,25 @@ assert(typeof diophantineEquation(7) === 'number');
 
 `diophantineEquation(7)` は `5` を返す必要があります。
 
-```
+```js
 assert.strictEqual(diophantineEquation(7), 5);
 ```
 
 `diophantineEquation(100)` は `61` を返す必要があります。
 
-```
+```js
 assert.strictEqual(diophantineEquation(100), 61);
 ```
 
 `diophantineEquation(409)` は `409` を返す必要があります。
 
-```
+```js
 assert.strictEqual(diophantineEquation(409), 409);
 ```
 
 `diophantineEquation(500)` は `421` を返す必要があります。
 
-```
+```js
 assert.strictEqual(diophantineEquation(500), 421);
 ```
 

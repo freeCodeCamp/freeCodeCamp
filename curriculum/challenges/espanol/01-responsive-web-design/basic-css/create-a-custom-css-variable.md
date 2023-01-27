@@ -15,7 +15,7 @@ Para crear una variable CSS, solo tienes que darle un nombre que comience con do
 --penguin-skin: gray;
 ```
 
-Esto creará una variable llamada `--penguin-skin` y le asignará el valor `gray`. Ahora puedes usar esa variable en cualquier otro lugar de tu código CSS para cambiar el valor de otros elementos a "gray" (gris).
+Esto creará una variable llamada `--penguin-skin` y le asignará el valor `gray`. Ahora puedes usar esa variable en cualquier lugar de tu CSS para cambiar el valor de otras propiedades a gris.
 
 # --instructions--
 

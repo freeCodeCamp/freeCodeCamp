@@ -1,7 +1,7 @@
 ---
 id: 5900f4e81000cf542c50fffb
 title: 'Задача 380: Дивовижні лабіринти!'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302044
 dashedName: problem-380-amazing-mazes
 ---

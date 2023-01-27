@@ -1,14 +1,14 @@
 ---
 id: 5900f4c51000cf542c50ffd7
 title: '問題 344: 銀貨ゲーム'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302003
 dashedName: problem-344-silver-dollar-game
 ---
 
 # --description--
 
-ニコラース・ホーヴァート・ ド・ブラウンの銀貨ゲームにはいくつかバリエーションがあり、その一つは次のように説明されます。
+One variant of N.G. de Bruijn's silver dollar game can be described as follows:
 
 マスが並ぶ細長い盤上に硬貨が何枚か置かれています (1 マスにたかだか 1 枚)。 銀貨 (1 ドル硬貨) と呼ばれる 1 枚しかない硬貨に、任意の価値があります。 2 人のプレイヤーが交互にプレイします。 各ターンで、プレイヤーは通常の移動または特別な移動を行う必要があります。
 

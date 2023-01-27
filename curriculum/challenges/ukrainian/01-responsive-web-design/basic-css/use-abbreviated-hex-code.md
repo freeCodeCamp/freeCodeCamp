@@ -29,7 +29,7 @@ dashedName: use-abbreviated-hex-code
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-Замість `hex code` для червоного кольору слід використовувати абревіатуру hex коду `#FF0000`.
+Замість повного шістнадцяткового коду `#FF0000` для червоного кольору потрібно використати абревіатуру.
 
 ```js
 assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
@@ -41,7 +41,7 @@ assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
 assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 ```
 
-Замість `hex code` для зеленого кольору слід використовувати абревіатуру hex коду `#00FF00`.
+Замість повного шістнадцяткового коду `#00FF00` для зеленого кольору потрібно використати абревіатуру.
 
 ```js
 assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
@@ -53,7 +53,7 @@ assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
 assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
 ```
 
-Замість `hex code` для блакитного кольору слід використовувати абревіатуру hex коду `#00FFFF`.
+Замість повного шістнадцяткового коду `#00FFFF` для блакитного кольору потрібно використати абревіатуру.
 
 ```js
 assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
@@ -65,7 +65,7 @@ assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
 assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
 ```
 
-Замість `hex code` для кольору фуксії слід використовувати абревіатуру hex коду `#FF00FF`.
+Замість повного шістнадцяткового коду `#FF00FF` для кольору фуксія потрібно використати абревіатуру.
 
 ```js
 assert(code.match(/\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi));

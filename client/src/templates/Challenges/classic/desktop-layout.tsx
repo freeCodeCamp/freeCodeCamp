@@ -8,12 +8,12 @@ import {
   ChallengeFiles,
   ResizeProps
 } from '../../../redux/prop-types';
+import PreviewPortal from '../components/preview-portal';
 import ActionRow from './action-row';
 
 type Pane = { flex: number };
 
 interface DesktopLayoutProps {
-  block: string;
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
@@ -32,8 +32,8 @@ interface DesktopLayoutProps {
   notes: ReactElement;
   preview: ReactElement;
   resizeProps: ResizeProps;
-  superBlock: string;
   testOutput: ReactElement;
+  windowTitle: string;
 }
 
 const reflexProps = {
@@ -42,13 +42,20 @@ const reflexProps = {
 
 const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const [showNotes, setShowNotes] = useState(false);
-  const [showPreview, setShowPreview] = useState(true);
+  const [showPreviewPane, setShowPreviewPane] = useState(true);
+  const [showPreviewPortal, setShowPreviewPortal] = useState(false);
   const [showConsole, setShowConsole] = useState(false);
+  const [showInstructions, setShowInstuctions] = useState(true);
 
   const togglePane = (pane: string): void => {
     switch (pane) {
-      case 'showPreview':
-        setShowPreview(!showPreview);
+      case 'showPreviewPane':
+        if (!showPreviewPane && showPreviewPortal) setShowPreviewPortal(false);
+        setShowPreviewPane(!showPreviewPane);
+        break;
+      case 'showPreviewPortal':
+        if (!showPreviewPortal && showPreviewPane) setShowPreviewPane(false);
+        setShowPreviewPortal(!showPreviewPortal);
         break;
       case 'showConsole':
         setShowConsole(!showConsole);
@@ -56,9 +63,14 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       case 'showNotes':
         setShowNotes(!showNotes);
         break;
+      case 'showInstructions':
+        setShowInstuctions(!showInstructions);
+        break;
       default:
+        setShowInstuctions(true);
         setShowConsole(false);
-        setShowPreview(false);
+        setShowPreviewPane(true);
+        setShowPreviewPortal(false);
         setShowNotes(false);
     }
   };
@@ -69,7 +81,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   };
 
   const {
-    block,
     challengeType,
     resizeProps,
     instructions,
@@ -81,20 +92,18 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     notes,
     preview,
     hasEditableBoundaries,
-    superBlock
+    windowTitle
   } = props;
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
-  const isMultiFileCertProject =
-    challengeType === challengeTypes.multiFileCertProject;
-  const displayPreview =
-    projectBasedChallenge || isMultiFileCertProject
-      ? showPreview && hasPreview
-      : hasPreview;
+  const isMultifileCertProject =
+    challengeType === challengeTypes.multifileCertProject;
+  const displayPreviewPane = hasPreview && showPreviewPane;
+  const displayPreviewPortal = hasPreview && showPreviewPortal;
   const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
   const displayConsole =
-    projectBasedChallenge || isMultiFileCertProject ? showConsole : true;
+    projectBasedChallenge || isMultifileCertProject ? showConsole : true;
   const {
     codePane,
     editorPane,
@@ -106,24 +115,25 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   return (
     <div className='desktop-layout'>
-      {(projectBasedChallenge || isMultiFileCertProject) && (
+      {(projectBasedChallenge || isMultifileCertProject) && (
         <ActionRow
-          block={block}
           hasNotes={hasNotes}
+          isProjectBasedChallenge={projectBasedChallenge}
           showConsole={showConsole}
           showNotes={showNotes}
-          showPreview={showPreview}
-          superBlock={superBlock}
+          showInstructions={showInstructions}
+          showPreviewPane={showPreviewPane}
+          showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
         />
       )}
       <ReflexContainer orientation='vertical'>
-        {!projectBasedChallenge && (
+        {!projectBasedChallenge && showInstructions && (
           <ReflexElement flex={instructionPane.flex} {...resizeProps}>
             {instructions}
           </ReflexElement>
         )}
-        {!projectBasedChallenge && (
+        {!projectBasedChallenge && showInstructions && (
           <ReflexSplitter propagate={true} {...resizeProps} />
         )}
 
@@ -162,13 +172,20 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           </ReflexElement>
         )}
 
-        {displayPreview && <ReflexSplitter propagate={true} {...resizeProps} />}
-        {displayPreview && (
+        {displayPreviewPane && (
+          <ReflexSplitter propagate={true} {...resizeProps} />
+        )}
+        {displayPreviewPane && (
           <ReflexElement flex={previewPane.flex} {...resizeProps}>
             {preview}
           </ReflexElement>
         )}
       </ReflexContainer>
+      {displayPreviewPortal && (
+        <PreviewPortal togglePane={togglePane} windowTitle={windowTitle}>
+          {preview}
+        </PreviewPortal>
+      )}
     </div>
   );
 };

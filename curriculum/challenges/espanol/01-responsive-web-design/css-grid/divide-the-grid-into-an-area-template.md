@@ -17,7 +17,7 @@ grid-template-areas:
   "advert footer footer";
 ```
 
-El código anterior agrupa las celdas de la cuadrícula en cuatro áreas; `header`, `advert`, `content`y `footer`. Cada palabra representa una celda y cada par de comillas representa una fila.
+El código anterior agrupa las celdas de la cuadrícula en cuatro áreas; `header`, `advert`, `content` y `footer`. Cada palabra representa una celda y cada par de comillas representa una fila.
 
 # --instructions--
 

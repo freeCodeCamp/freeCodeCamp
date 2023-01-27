@@ -9,7 +9,7 @@ dashedName: adjust-the-hue-of-a-color
 
 # --description--
 
-Los colores tienen varias características tales como el matiz, la saturación y la ligereza. CSS3 introdujo la propiedad `hsl()` como una forma alternativa de elegir un color indicando directamente estas características.
+Los colores tienen varias características tales como el matiz, la saturación y la ligereza. CSS3 introdujo la función `hsl()` como una forma alternativa para elegir un color declarando directamente estas características.
 
 Se suele pensar que **Hue** es el "color". Si imaginas un espectro de colores con un rojo en la izquierda que se torna verde en el medio y azul en la derecha, el tono es donde cabe un color a lo largo de esta línea. En `hsl()`, el tono usa un concepto de círculo cromático en lugar del espectro, donde el ángulo del color en el círculo se da como un valor entre 0 y 360.
 
@@ -19,7 +19,7 @@ Se suele pensar que **Hue** es el "color". Si imaginas un espectro de colores co
 
 Aquí hay algunos ejemplos de `hsl()` con colores de iluminación normales y completamente saturados:
 
-<table class='table table-striped'><thead><tr><th>Color</th><th>HSL</th></tr></thead><tbody><tr><td>rojo</td><td>hsl(0, 100 %, 50 %)</td></tr><tr><td>amarillo</td><td>hsl(60, 100 %, 50 %)</td></tr><tr><td>verde</td><td>hsl(120, 100 %, 50 %)</td></tr><tr><td>cian</td><td>hsl(180, 100 %, 50 %)</td></tr><tr><td>azul</td><td>hsl(240, 100 %, 50 %)</td></tr><tr><td>magenta</td><td>hsl(300, 100 %, 50 %)</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Color</th><th>HSL</th></tr></thead><tbody><tr><td>rojo</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>amarillo</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>verde</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>cian</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>azul</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>magenta</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
 
 # --instructions--
 
@@ -27,19 +27,19 @@ Cambia el `background-color` de cada elemento `div` sobre la base de los nombres
 
 # --hints--
 
-Tu código debe usar la propiedad `hsl()` para declarar el color `green`.
+Tu código debe tener la propiedad `hsl()` para declarar el color verde.
 
 ```js
 assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Tu código debe usar la propiedad `hsl()` para declarar el color `cyan`.
+Tu código debe tener la propiedad `hsl()` para declarar el color cyan.
 
 ```js
 assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Tu código debe usar la propiedad `hsl()` para declarar el color `blue`.
+Tu código debe tener la propiedad `hsl()` para declarar el color blue.
 
 ```js
 assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));

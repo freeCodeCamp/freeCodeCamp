@@ -1,14 +1,14 @@
 ---
 id: 594db4d0dedb4c06a2a4cefd
 title: Babbage problem
-challengeType: 5
+challengeType: 1
 forumTopicId: 302229
 dashedName: babbage-problem
 ---
 
 # --description--
 
-[Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage "wp: Charles_Babbage"), looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:
+Charles Babbage, looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:
 
 <blockquote>
   What is the smallest positive integer whose square ends in the digits 269,696?

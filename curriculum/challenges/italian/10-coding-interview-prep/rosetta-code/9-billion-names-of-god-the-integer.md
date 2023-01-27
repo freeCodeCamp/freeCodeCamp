@@ -1,14 +1,14 @@
 ---
 id: 5949b579404977fbaefcd736
 title: I 9 miliardi di nomi di Dio
-challengeType: 5
+challengeType: 1
 forumTopicId: 302219
 dashedName: 9-billion-names-of-god-the-integer
 ---
 
 # --description--
 
-Questa sfida è una variazione [della storia breve di Arthur C. Clarke](https://it.wikipedia.org/wiki/I_nove_miliardi_di_nomi_di_Dio).
+Questa sfida è una variazione della storia breve scritta da Arthur C. Clarke.
 
 (I risolutori dovrebbero essere consapevoli delle consequenze di completare questa sfida)
 

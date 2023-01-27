@@ -1,7 +1,7 @@
 ---
 id: 5900f4b51000cf542c50ffc8
 title: '問題 329: 素数ガエル'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301986
 dashedName: problem-329-prime-frog
 ---

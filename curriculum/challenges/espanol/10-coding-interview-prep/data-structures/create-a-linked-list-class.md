@@ -1,6 +1,6 @@
 ---
 id: 587d8251367417b2b2512c62
-title: Create a Linked List Class
+title: Crea una clase de Lista Enlazada
 challengeType: 1
 forumTopicId: 301628
 dashedName: create-a-linked-list-class
@@ -8,25 +8,25 @@ dashedName: create-a-linked-list-class
 
 # --description--
 
-Let's create a `linked list` class. Every linked list should start out with a few basic properties: a `head` (the first item in your list) and a `length` (number of items in your list). Sometimes you'll see implementations of linked lists that incorporate a `tail` for the last element of the list, but for now we'll just stick with these two. Whenever we add an element to the linked list, our `length` property should be incremented by one.
+Vamos a crear un clase `linked list`. Cada lista enlazada debe comenzar con unas cuantas propiedades básicas: una `head` ( el primer elemento en tu lista) y un `length` (numero de elementos en tu lista). A veces verás implementaciones de listas enlazadas que incorporan una `tail` para el último elemento en la lista, por ahora solamente nos quedaremos con estos dos. Cuando agreguemos un elemento a la lista enlazada, nuestra propiedad `length` debe incrementarse en uno.
 
-We'll want to have a way to add items to our linked list, so the first method we'll want to create is the `add` method.
+Queremos tener una forma de agregar elementos a nuestra lista enlazada, por eso el primer método que queremos crear es el método `add`.
 
-If our list is empty, adding an element to our linked list is straightforward enough: we just wrap that element in a `Node` class, and we assign that node to the `head` of our linked list.
+Si nuestra lista está vacía, agregar un elemento a nuestra lista enlazada es bastante sencillo, simplemente envolver ese elemento en una clase `Node`, y asignar ese nodo a `head` de nuestra lista enlazada.
 
-But what if our list already has one or more members? How do we add an element to the list? Recall that each node in a linked list has a `next` property. To add a node to the list, find the last node in the list, and point that last node's `next` property at our new node. (Hint: you know you've reached the end of a linked list when a node's `next` property is `null`.)
+Pero ¿qué pasa si nuestra lista ya tiene uno o más elementos? ¿Como agregarmos un elemento a la lista? Recuerda que cada nodo en una lista enlazada tiene una propiedad `next`. Para agregar un nodo a la lista, encuentra el último nodo en la lista, y apunta la propiedad `next` del último nodo a nuestro nuevo nodo. (Sugerencia: sabes que has llegado el final de una lista enlazada cuando la propiedad `next` de un nodo es `null`.)
 
 # --instructions--
 
-Write an add method that assigns the first node you push to the linked list to the `head`; after that, whenever adding a node, every node should be referenced by the previous node's `next` property.
+Escribe un método agregar que asigne el primer nodo que pongas en la lista enlazada al `head`; después de esto, siempre que agreguemos un nodo, cada node debe ser referenciado en la propiedad `next` del nodo anterior.
 
-Note
+Nota
 
-Your list's `length` should increase by one every time an element is added to the linked list.
+La propiedad `length` de tu lista debe incrementarse en uno al momento que un elemento es añadido a la lista enlazada.
 
 # --hints--
 
-Your `LinkedList` class should have a `add` method.
+Tu clase `LinkedList` debe tener un método `add`.
 
 ```js
 assert(
@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-Your `LinkedList` class should assign `head` to the first node added.
+Tu clase `LinkedList` debe asignar al `head` el primer nodo agregado.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-The previous `node` in your `LinkedList` class should have reference to the newest node created.
+El `node` anterior en tu clase `LinkedList` debe tener una referencia al nuevo nodo creado.
 
 ```js
 assert(
@@ -57,12 +57,13 @@ assert(
     var test = new LinkedList();
     test.add('cat');
     test.add('dog');
-    return test.head().next.element === 'dog';
+    test.add('fish');
+    return test.head().next.element === 'dog' && test.head().next.next.element === 'fish';
   })()
 );
 ```
 
-The  `size` of your `LinkedList` class should equal the amount of nodes in the linked list.
+El `size` de tu clase `LinkedList` deber ser igual a la cantidad de nodos en la lista enlazada.
 
 ```js
 assert(

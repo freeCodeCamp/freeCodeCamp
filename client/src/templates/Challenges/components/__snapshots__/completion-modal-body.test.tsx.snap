@@ -9,9 +9,9 @@ exports[`<CompletionModalBody /> matches snapshot 1`] = `
       aria-label="icons.passed"
       class="completion-success-icon"
       data-testid="fcc-completion-success-icon"
-      height="50"
+      height="15"
       viewBox="0 0 200 200"
-      width="50"
+      width="15"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g

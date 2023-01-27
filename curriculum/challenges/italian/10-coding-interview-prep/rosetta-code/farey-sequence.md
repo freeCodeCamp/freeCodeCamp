@@ -1,14 +1,14 @@
 ---
 id: 59c3ec9f15068017c96eb8a3
 title: Sequenza di Farey
-challengeType: 5
+challengeType: 1
 forumTopicId: 302266
 dashedName: farey-sequence
 ---
 
 # --description--
 
-La [sequenza Farey](https://en.wikipedia.org/wiki/Farey sequence "wp: Farey sequence") <code>F<sub>n</sub></code> di ordine `n` è la sequenza di frazioni completamente ridotte tra `0` e `1` che, ai minimi termini, hanno denominatori minori o uguali a `n`, disposti in ordine di dimensioni crescenti.
+La sequenza Farey <code>F<sub>n</sub></code> di ordine `n` è la sequenza di frazioni completamente ridotte tra `0` e `1` che, ai minimi termini, hanno denominatori minori o uguali a `n`, disposti in ordine di dimensioni crescenti.
 
 La *sequenza Farey* è a volte erroneamente chiamata una *serie di Farey*.
 

@@ -8,7 +8,7 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-`const` に慣れていない方は、[こちらのチャレンジ](/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword)をご覧ください。
+`const` に不慣れな場合は、<a href="/japanese/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener noreferrer nofollow"><code>const</code> キーワードに関するこちらのチャレンジ</a>をご覧ください。
 
 `const` 宣言は、現在の JavaScript では多くの用法があります。
 
@@ -23,7 +23,7 @@ s[2] = 45;
 console.log(s);
 ```
 
-`s = [1, 2, 3]` はエラーになります。 `console.log` には値 `[5, 6, 45]` が表示されます。
+`s = [1, 2, 3]` はエラーになります。 この行をコメントアウトすると、`console.log` に値 `[5, 6, 45]` が表示されます。
 
 ご覧のように、オブジェクト `[5, 6, 7]` それ自体をミューテートさせることができ、その場合も変数 `s` は変更された配列 `[5, 6, 45]` を指し示します。 あらゆる配列と同様に、`s` 内の配列要素はミュータブルですが、`const` を使用したため、代入演算子を使用して異なる配列を指し示すように変数識別子 `s` を使用することはできません。
 

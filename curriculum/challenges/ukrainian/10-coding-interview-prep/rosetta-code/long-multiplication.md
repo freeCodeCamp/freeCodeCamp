@@ -1,14 +1,14 @@
 ---
 id: 5e4ce2a1ac708cc68c1df25d
 title: Множення в стовпчик
-challengeType: 5
+challengeType: 1
 forumTopicId: 385269
 dashedName: long-multiplication
 ---
 
 # --description--
 
-Без сумніву застосовуйте [множення в стовпчик](https://en.wikipedia.org/wiki/long multiplication).
+Explicitly implement long multiplication.
 
 Це один з можливих підходів у довгій арифметиці.
 

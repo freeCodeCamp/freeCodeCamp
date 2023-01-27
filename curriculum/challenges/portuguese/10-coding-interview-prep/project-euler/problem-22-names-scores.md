@@ -1,14 +1,14 @@
 ---
 id: 5a51eabcad78bf416f316e2a
 title: 'Problema 22: Pontuações de nomes'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301862
 dashedName: problem-22-names-scores
 ---
 
 # --description--
 
-Neste desafio, existe uma variável chamada `names`, que possui um array com mais de 5 mil nomes. Você pode acessá-la através do argumento passado para sua função. A primeira coisa que você precisa fazer é ordenar estes nomes alfabeticamente. Em seguida, descubra a posição de cada letra do nome e some todas as posições. Após calcular a soma, multiplique este valor pela posição do nome dentro do array de nomes.
+Usando `names`, um array em segundo plano contendo mais de 5 mil nomes, a primeira coisa que você precisa fazer é ordenar estes nomes alfabeticamente. Em seguida, descubra a posição de cada letra do nome e some todas as posições. Após calcular a soma, multiplique este valor pela posição do nome dentro do array de nomes.
 
 Por exemplo, após ordenar a lista alfabeticamente, o nome COLIN, cujas letras valem 3 + 15 + 12 + 9 + 14 = 53, é o 938º nome na lista. Portanto, o nome COLIN obteria a pontuação de 938 × 53 = 49714.
 

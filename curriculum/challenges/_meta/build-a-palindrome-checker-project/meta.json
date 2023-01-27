@@ -1,0 +1,16 @@
+{
+    "name": "Build a Palindrome Checker Project",
+    "isUpcomingChange": false,
+    "usesMultifileEditor": false,
+    "order": 3,
+    "time": "30 hours",
+    "template": "",
+    "required": [],
+    "superBlock": "2022/javascript-algorithms-and-data-structures",
+    "challengeOrder": [
+        [
+            "aaa48de84e1ecc7c742e1124",
+            "Build a Palindrome Checker"
+          ]
+    ]}
+  

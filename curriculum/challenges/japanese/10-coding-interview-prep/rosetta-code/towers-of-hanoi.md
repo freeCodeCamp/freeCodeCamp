@@ -1,48 +1,48 @@
 ---
 id: 5951ed8945deab770972ae56
 title: ハノイの塔
-challengeType: 5
+challengeType: 1
 forumTopicId: 302341
 dashedName: towers-of-hanoi
 ---
 
 # --description--
 
-[ハノイの塔](https://en.wikipedia.org/wiki/Towers_of_Hanoi "wp: Towers_of_Hanoi") の問題を解いてください。
+Solve the Towers of Hanoi problem. The number of objects will be given as the first parameter, followed by the strings used to identify each stack of objects. Create a nested array containing the list of moves, `["source", "destination"]`.
 
-解では最初のパラメータとしてディスクの数を取り、ディスクを重ねるそれぞれの塔の名前として3つの文字列を使用します。たとえば、`towerOfHanoi(4, 'A', 'B', 'C')` のように記述します。 関数は、元の位置から目的地となる位置への移動のリストを含む配列の配列を返さなければなりません。
+For example, the parameters `(4, 'A', 'B', 'C')`, will result in nested array of moves `[['A', 'C'], ['B', 'A']]`, indicating that the 1st move was to move an object from stack `A` to `C` and the 2nd move was to move an object from stack `B` to `A`.
 
-例えば、配列 `[['A', 'C'], ['B', 'A']]` は、最初の移動で塔 Aから塔 Cにディスクを動かし、2 回目の移動で塔 Bから塔 Aにディスクを動かすことを意味します。
+# --instructions--
 
-<p></p>
+Write a function that returns the moves to stack the objects in a nested array.
 
 # --hints--
 
-`towerOfHanoi` は関数とします。
+`towerOfHanoi` should be a function.
 
 ```js
 assert(typeof towerOfHanoi === 'function');
 ```
 
-`towerOfHanoi(3, ...)` は 7 回分の移動を返す必要があります。
+`towerOfHanoi(3, ...)` should return 7 moves.
 
 ```js
 assert(res3.length === 7);
 ```
 
-`towerOfHanoi(3, 'A', 'B', 'C')` は `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]` を返す必要があります。
+`towerOfHanoi(3, 'A', 'B', 'C')` should return `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]`.
 
 ```js
 assert.deepEqual(towerOfHanoi(3, 'A', 'B', 'C'), res3Moves);
 ```
 
-`towerOfHanoi(5, "X", "Y", "Z")` の 10 番目の移動は Y -> X となる必要があります。
+`towerOfHanoi(5, "X", "Y", "Z")` 10th move should be Y -> X.
 
 ```js
 assert.deepEqual(res5[9], ['Y', 'X']);
 ```
 
-`towerOfHanoi(7, 'A', 'B', 'C')` の最初の10 回の移動は `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B'], ['A','C'], ['B','C'], ['B','A']]` となる必要があります。
+`towerOfHanoi(7, 'A', 'B', 'C')` first ten moves should be `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B'], ['A','C'], ['B','C'], ['B','A']]`
 
 ```js
 assert.deepEqual(towerOfHanoi(7, 'A', 'B', 'C').slice(0, 10), res7First10Moves);

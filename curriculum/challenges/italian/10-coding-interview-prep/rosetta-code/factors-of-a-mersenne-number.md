@@ -1,7 +1,7 @@
 ---
 id: 598eea87e5cf4b116c3ff81a
 title: I fattori di un numero di Mersenne
-challengeType: 5
+challengeType: 1
 forumTopicId: 302264
 dashedName: factors-of-a-mersenne-number
 ---
@@ -12,7 +12,7 @@ Un numero di Mersenne è un numero nella forma di <code>2<sup>P</sup>-1</code>.
 
 Se `P` è primo, il numero di Mersenne può essere un primo di Mersenne. (Se `P` non è primo, anche il numero di Mersenne non è primo.)
 
-Nella ricerca di numeri primari di Mersenne è vantaggioso eliminare gli esponenti trovando un piccolo fattore prima di iniziare un potenzialmente lungo [test di Lucas-Lehmer](https://rosettacode.org/wiki/Lucas-Lehmer test "Lucas-Lehmer test").
+Nella ricerca di numeri primari di Mersenne è vantaggioso eliminare gli esponenti trovando un piccolo fattore prima di iniziare un potenzialmente lungo <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" target="_blank" rel="noopener noreferrer nofollow">test di Lucas-Lehmer</a>.
 
 Ci sono algoritmi molto efficienti per determinare se un numero divide <code>2<sup>P</sup>-1</code> (o equivalentemente, se <code>2<sup>P</sup> mod (il numero) = 1</code>).
 
@@ -48,7 +48,7 @@ Ulteriori proprietà dei numeri di Mersenne ci permettono di affinare il process
 
 Qualsiasi fattore `q` di <code>2<sup>P</sup>-1</code> deve essere modulo `2kP+1`, essendo `k` un numero intero positivo o uguale a zero. Inoltre, `q` deve essere `1` o `7 mod 8`.
 
-Infine qualsiasi fattore potenziale `q` deve essere [primo](https://rosettacode.org/wiki/Primality by Trial Division "Primality by Trial Division").
+Infine ogni potenziale fattore `q` deve essere <a href="https://rosettacode.org/wiki/Primality_by_trial_division" target="_blank" rel="noopener noreferrer nofollow">un numero primo</a>.
 
 Come in altri algoritmi di divisione di prova, l'algoritmo si ferma quando `2kP+1 > sqrt(N)`. Questi test funzionano principalmente solo su numeri Mersenne dove `P` è primo. Ad esempio, <code>M<sub>4</sub>=15</code> non produce fattori che utilizzano queste tecniche, ma fattori in 3 e 5, nessuno dei quali nella forma `2kP+1`.
 

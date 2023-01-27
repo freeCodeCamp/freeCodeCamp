@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { render, screen } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
 import React from 'react';
+
+import { render, screen } from '../../../../utils/test-utils';
+import { createStore } from '../../../redux/createStore';
 import TimeLine from './time-line';
 
+const store = createStore();
+
 beforeEach(() => {
-  // @ts-ignore
+  // @ts-expect-error
   useStaticQuery.mockImplementationOnce(() => ({
     allChallengeNode: {
       edges: [
@@ -50,9 +54,11 @@ beforeEach(() => {
 
 describe('<TimeLine />', () => {
   it('Render button when only solution is present', () => {
-    // @ts-ignore
-    render(<TimeLine {...propsForOnlySolution} />);
-    const showViewButton = screen.getByRole('link', { name: 'buttons.view' });
+    // @ts-expect-error
+    render(<TimeLine {...propsForOnlySolution} />, store);
+    const showViewButton = screen.getByRole('link', {
+      name: 'buttons.view settings.labels.solution-for (aria.opens-new-window)'
+    });
     expect(showViewButton).toHaveAttribute(
       'href',
       'https://github.com/freeCodeCamp/freeCodeCamp'
@@ -60,8 +66,8 @@ describe('<TimeLine />', () => {
   });
 
   it('Render button when both githubLink and solution is present', () => {
-    // @ts-ignore
-    render(<TimeLine {...propsForOnlySolution} />);
+    // @ts-expect-error
+    render(<TimeLine {...propsForOnlySolution} />, store);
 
     const menuItems = screen.getAllByRole('menuitem');
     expect(menuItems).toHaveLength(2);
@@ -76,11 +82,15 @@ describe('<TimeLine />', () => {
   });
 
   it('rendering the correct button when files is present', () => {
-    // @ts-ignore
-    render(<TimeLine {...propsForOnlySolution} />);
+    // @ts-expect-error
+    render(<TimeLine {...propsForOnlySolution} />, store);
 
-    const button = screen.getByText('buttons.show-code');
-    expect(button).toBeInTheDocument();
+    const viewButtons = screen.getAllByRole('button', {
+      name: 'buttons.view settings.labels.solution-for'
+    });
+    viewButtons.forEach(button => {
+      expect(button).toBeInTheDocument();
+    });
   });
 });
 

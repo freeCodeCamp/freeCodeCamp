@@ -1,0 +1,22 @@
+---
+id: 561add10cb82ac38a17523bc
+title: Zertifizierung von Backend-Entwicklung und APIs
+certification: back-end-development-and-apis
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c443edefaeb5bdef
+    title: Zeitstempel Microservice
+  - 
+    id: bd7158d8c443edefaeb5bdff
+    title: Microservice zum Parsen von Anfrage-Headern
+  - 
+    id: bd7158d8c443edefaeb5bd0e
+    title: URL-Verkürzungs-Microservice
+  - 
+    id: 5a8b073d06fa14fcfde687aa
+    title: Übungs-Tracker
+  - 
+    id: bd7158d8c443edefaeb5bd0f
+    title: Datei-Metadaten-Mikroservice

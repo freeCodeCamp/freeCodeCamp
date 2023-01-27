@@ -1,6 +1,6 @@
 ---
 id: 5f87ac112ae598023a42df1a
-title: Build a Salon Appointment Scheduler
+title: 創建一個沙龍預約安排程序
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-salon-appointment-scheduler
@@ -9,15 +9,15 @@ dashedName: build-a-salon-appointment-scheduler
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon.
+這是你獲得認證的必做項目之一。 對於這個項目，你將創建一個交互式 Bash 程序，該程序使用 PostgreSQL 來跟蹤你的沙龍的參與者和預約。
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `salon.sql` file, as well as your `salon.sh` file, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**重要：**在你通過所有項目測試後，將你的數據庫存放到一個 `salon.sql` 文件中，和你的 `salon.sh` 文件，以便你完成步驟 2。 你將看到如何在虛擬機中完成這一點的提示。
 
 # --notes--
 
-Required files: `salon.sql`, `salon.sh`
+需要的文件：`salon.sql`，`salon.sh`
 
 # --hints--
 

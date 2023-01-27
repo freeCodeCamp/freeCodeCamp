@@ -9,7 +9,7 @@ dashedName: inform-with-the-paragraph-element
 
 # --description--
 
-Elementos `p` são os preferidos para textos de parágrafos em sites. `p` é a abreviação de "parágrafo".
+O elemento `p` é o preferido para textos de parágrafos em sites. `p` é a abreviação de "parágrafo".
 
 Você pode criar um elemento de parágrafo da seguinte forma:
 

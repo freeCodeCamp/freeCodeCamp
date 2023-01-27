@@ -1,21 +1,20 @@
 import { combineEpics, ofType } from 'redux-observable';
 import { of } from 'rxjs';
-import { filter, switchMap, map, tap, ignoreElements } from 'rxjs/operators';
+import { filter, ignoreElements, map, switchMap, tap } from 'rxjs/operators';
 import store from 'store';
 
-import { setContent, isPoly } from '../../../../../utils/polyvinyl';
+import { isPoly, setContent } from '../../../../../utils/polyvinyl';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
+import { savedChallengesSelector } from '../../../redux/selectors';
 import { actionTypes as appTypes } from '../../../redux/action-types';
-
 import { actionTypes } from './action-types';
+import { noStoredCodeFound, storedCodeFound } from './actions';
 import {
-  storedCodeFound,
-  noStoredCodeFound,
-  isCodeLockedSelector,
   challengeFilesSelector,
-  challengeMetaSelector
-} from './';
+  challengeMetaSelector,
+  isCodeLockedSelector
+} from './selectors';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -136,9 +135,20 @@ function loadCodeEpic(action$, state$) {
       const fileKeys = challengeFiles.map(x => x.fileKey);
       const invalidForLegacy = fileKeys.length > 1;
       const { title: legacyKey } = challenge;
-
       const codeFound = getCode(id);
-      if (codeFound && isFilesAllPoly(codeFound)) {
+
+      // first check if the store (which is syncronized with the db) has saved
+      // code
+      const savedChallenges = savedChallengesSelector(state);
+      const savedChallenge = savedChallenges?.find(saved => {
+        return saved.id === challenge.id;
+      });
+
+      // if the store is already populated with the saved files, we should not
+      // overwrite them with the local storage data
+      if (savedChallenge) {
+        return of(noStoredCodeFound());
+      } else if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
           let foundChallengeFile = {};
           // TODO: after sufficient time, say 6 months from this commit, we can

@@ -8,7 +8,15 @@ dashedName: create-an-es6-javascript-map
 
 # --description--
 
-У новій версії JavaScript вбудований об'єкт Map, який передбачає наявність усіх тих функцій, які до цього ми мали писати самостійно. Незважаючи на те, що обʼєкт Map схожий на звичайні обʼєкти JavaScript, у ньому вбудований корисний функціонал, який відсутній у звичайних. Наприклад, ES6 Map відстежує порядок вставки елементів, які додаються до нього. Серед його методів є такі: метод `.has(key)` повертає true або false з огляду на наявність ключа; метод `.get(key)` повертає значення, повʼязане з ключем; метод `.set(key, value)` задає нову пару ключ-значення; метод `.delete(key)` видаляє пару ключ-значення; метод `.clear()` видаляє всі пари ключів-значень; метод `.entries()` повертає весь масив ключів у порядку їх вставки; метод `.values()` повертає весь масив значень у порядку їх вставки
+У новій версії JavaScript вбудований об'єкт Map, який передбачає наявність усіх тих функцій, які до цього ми мали писати самостійно. Незважаючи на те, що обʼєкт Map схожий на звичайні обʼєкти JavaScript, у ньому вбудований корисний функціонал, який відсутній у звичайних. Наприклад, ES6 Map відстежує порядок вставки елементів, які додаються до нього. Here is a more complete overview of its methods:
+
+- `.has(key)` returns true or false based on the presence of a key
+- `.get(key)` returns the value associated with a key
+- `.set(key, value)` sets a new key, value pair
+- `.delete(key)` removes a key, value pair
+- `.clear()` removes all key, value pairs
+- `.entries()` returns an array of all the keys in insertion order
+- `.values()` returns an array of all the values in insertion order
 
 # --instructions--
 
@@ -16,13 +24,13 @@ dashedName: create-an-es6-javascript-map
 
 # --hints--
 
-Повинен існувати об'єкт myMap.
+The `myMap` object should exist.
 
 ```js
 assert(typeof myMap === 'object');
 ```
 
-myMap повинен містити пару ключ-значення `freeCodeCamp`, `Awesome!`.
+`myMap` should contain the key value pair `freeCodeCamp`, `Awesome!`.
 
 ```js
 assert(myMap.get('freeCodeCamp') === 'Awesome!');

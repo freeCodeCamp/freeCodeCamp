@@ -1,7 +1,7 @@
 ---
 id: 5900f3891000cf542c50fe9c
 title: '問題 29: 相異なる累乗'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301941
 dashedName: problem-29-distinct-powers
 ---

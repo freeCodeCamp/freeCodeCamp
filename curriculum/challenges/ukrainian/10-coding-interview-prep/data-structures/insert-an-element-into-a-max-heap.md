@@ -48,7 +48,7 @@ dashedName: insert-an-element-into-a-max-heap
 
 # --hints--
 
-Дані незростаючої купи повинні бути структуровані.
+The `MaxHeap` data structure should exist.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Незростаюча купа повинна містити процедуру insert.
+`MaxHeap` повинен мати метод під назвою `insert`.
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-Незростаюча купа повинна містити процедуру print.
+`MaxHeap` повинен мати метод під назвою `print`.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-Процедура insert додає елементи відповідно до властивостей купи.
+The `insert` method should add elements according to the max heap property.
 
 ```js
 assert(

@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ed3
 title: ナップサック問題 / 連続
-challengeType: 5
+challengeType: 1
 forumTopicId: 323654
 dashedName: knapsack-problemcontinuous
 ---

@@ -17,7 +17,7 @@ Dopo aver creato un modello di area per il contenitore griglia, come mostrato ne
 }
 ```
 
-Questo consente alla griglia di sapere che vuoi che la classe `item1` vada nell'area denominata `header`. In questo caso, l'elemento userà l'intera riga in alto perché essa è definita come area di intestazione (header).
+Questo consente alla griglia di sapere che vuoi che la classe `item1` vada nell'area denominata `header`. In questo caso, l'elemento userà l'intera riga in alto perché essa è definita come area `header`.
 
 # --instructions--
 

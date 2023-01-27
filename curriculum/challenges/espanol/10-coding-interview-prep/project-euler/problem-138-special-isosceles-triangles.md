@@ -1,23 +1,29 @@
 ---
 id: 5900f3f61000cf542c50ff09
-title: 'Problem 138: Special isosceles triangles'
-challengeType: 5
+title: 'Problema 138: Triángulos de isóceles especiales'
+challengeType: 1
 forumTopicId: 301766
 dashedName: problem-138-special-isosceles-triangles
 ---
 
 # --description--
 
-Consider the isosceles triangle with base length, b = 16, and legs, L = 17.
+Considere el triángulo de isóceles con longitud base, $b = 16$, y lados, $L = 17$.
 
-By using the Pythagorean theorem it can be seen that the height of the triangle, h = √(172 − 82) = 15, which is one less than the base length. With b = 272 and L = 305, we get h = 273, which is one more than the base length, and this is the second smallest isosceles triangle with the property that h = b ± 1. Find ∑ L for the twelve smallest isosceles triangles for which h = b ± 1 and b, L are positive integers.
+<img class="img-responsive center-block" alt="triángulo isóceles con bordes llamados L - dos bordes con la misma longitud y base del triángulo como b; y altura del triángulo - h desde la base del triángulo hasta el ángulo entre los bordes L" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
+
+Usando el teorema Pitágórico, se puede ver que la altura del triángulo, $h = \sqrt{{17}^2  8^2} = 15$, que es una longitud menor que la de la base.
+
+Con $b = 272$ y $L = 305$, obtenemos $h = 273$, que es uno más que la longitud base, y este es el segundo triángulo isóceles más pequeño con la propiedad $h = b ± 1$.
+
+Encuentra $\sum{L}$ para los doce triángulos de isócelas más pequeños para los cuales $h = b ± 1$ y $b$, $L$ son enteros positivos.
 
 # --hints--
 
-`euler138()` should return 1118049290473932.
+`isoscelesTriangles()` debe devolver `1118049290473932`.
 
 ```js
-assert.strictEqual(euler138(), 1118049290473932);
+assert.strictEqual(isoscelesTriangles(), 1118049290473932);
 ```
 
 # --seed--
@@ -25,12 +31,12 @@ assert.strictEqual(euler138(), 1118049290473932);
 ## --seed-contents--
 
 ```js
-function euler138() {
+function isoscelesTriangles() {
 
   return true;
 }
 
-euler138();
+isoscelesTriangles();
 ```
 
 # --solutions--

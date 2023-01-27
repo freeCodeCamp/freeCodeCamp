@@ -2,7 +2,7 @@
 id: 5900f41a1000cf542c50ff2c
 title: >-
   問題 173: 最大 100 万枚のタイルを使って「穴あき」正方層を何通り作れるか
-challengeType: 5
+challengeType: 1
 forumTopicId: 301808
 dashedName: >-
   problem-173-using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed

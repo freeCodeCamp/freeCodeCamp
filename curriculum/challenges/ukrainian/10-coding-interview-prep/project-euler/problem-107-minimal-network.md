@@ -1,7 +1,7 @@
 ---
 id: 5900f3d91000cf542c50feea
 title: 'Завдання 107: мінімальна мережа'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301731
 dashedName: problem-107-minimal-network
 ---
@@ -27,7 +27,7 @@ dashedName: problem-107-minimal-network
 
 Однак можна оптимізувати мережу, видаливши деякі ребра, при цьому всі точки мережі залишаться з'єднаними. Нижче відображена максимально оптимізована мережа. Вона має вагу - 93, оптимізація становить 243 − 93 = 150 з вихідної мережі.
 
-<img class="img-responsive center-block" alt="Мережа з сімома вершинами та шістьма ребрами, що залишились: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Network with seven vertices and left six edges: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
 
 Використовуючи `network`, 2D масив, що представляє мережу у формі матриці, знайдіть максимальний рівень оптимізації, який можна досягти, усунувши зайві ребра, при цьому мережа повинна залишатись з'єднаною. Вершини, що не мають з'єднання, будуть представлені `-1`.
 

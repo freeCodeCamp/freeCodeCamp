@@ -1,7 +1,7 @@
 ---
 id: 5900f4451000cf542c50ff57
 title: 'Problem 216: Investigating the primality of numbers of the form 2n2-1'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301858
 dashedName: problem-216-investigating-the-primality-of-numbers-of-the-form-2n2-1
 ---

@@ -1,14 +1,14 @@
 ---
 id: 5eaf48389ee512d4d103684b
 title: Самоописувальні числа
-challengeType: 5
+challengeType: 1
 forumTopicId: 385289
 dashedName: self-describing-numbers
 ---
 
 # --description--
 
-Існує декілька так званих "самоописів" або ["самоописувальних"](https://en.wikipedia.org/wiki/Self-descriptive_number) цілих чисел.
+There are several so-called "self-describing" or "self-descriptive" integers.
 
 Ціле число називають самоописувальним, якщо воно має такі властивості, коли розряд цифри позначений від 0 до N-1, а цифра в кожній позиції дорівнює тій кількості разів, за яку вона з'являється в числі.
 

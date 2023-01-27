@@ -1,14 +1,20 @@
 ---
 id: 5a23c84252665b21eecc8029
 title: Перекидна шахова дошка
-challengeType: 5
+challengeType: 1
 forumTopicId: 302325
 dashedName: straddling-checkerboard
 ---
 
 # --description--
 
-Застосуйте функції для шифрування та дешифрування повідомлення, використовуючи [метод перекидної шахової дошки](https://en.wikipedia.org/wiki/Straddling_checkerboard). Функції прийматимуть рядок і масив як параметри. Масив має 3 рядки, які представляють собою 3 ряди шахової дошки. Значення функції буде серією із десяткових чисел. Цифри мають бути зашифровані шляхом вставлення екранованого символу перед кожною цифрою, а потім включати дешифровану цифру. Для дешифрування цей процес має бути зворотнім.
+Implement functions to encrypt and decrypt a message using the **straddling checkerboard** method.
+
+Each function will take two arguments, a `message` string and an `alphabet` array. The `alphabet` array will contain 3 strings representing the 3 rows of the straddling checkerboard.
+
+The output of the `straddle()` function should be a series of decimal digits. Numbers should be encrypted by inserting the escape character before each digit, then including the digit <em>unencrypted</em>.
+
+This should be reversed for decryption with the `unstraddle()` function.
 
 # --hints--
 
@@ -18,7 +24,7 @@ dashedName: straddling-checkerboard
 assert(typeof straddle == 'function');
 ```
 
-`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` має повернутись рядком.
+`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return a string.
 
 ```js
 assert(
@@ -29,7 +35,7 @@ assert(
 );
 ```
 
-`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` має повернутись `"34045747525284613427502840425027537379697175891898898898584619028294547488"`.
+`straddle("One night-it was on the twentieth of March, 1888-I was returning.",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return `"34045747525284613427502840425027537379697175891898898898584619028294547488"`.
 
 ```js
 assert.equal(
@@ -41,7 +47,7 @@ assert.equal(
 );
 ```
 
-`straddle("One night-it was on the twentieth of March, 1888-I was returning",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` має повернутись `"139539363509369743061399059745399365901344308320791798798798367430685972839363935"`.
+`straddle("One night-it was on the twentieth of March, 1888-I was returning",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` should return `"139539363509369743061399059745399365901344308320791798798798367430685972839363935"`.
 
 ```js
 assert.equal(
@@ -54,7 +60,7 @@ assert.equal(
 );
 ```
 
-`straddle("Thecheckerboardcakerecipespecifies3largeeggsand2.25cupsofflour.",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` має повернутись `"125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769"`.
+`straddle("Thecheckerboardcakerecipespecifies3largeeggsand2.25cupsofflour.",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` should return `"125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769"`.
 
 ```js
 assert.equal(
@@ -73,7 +79,7 @@ assert.equal(
 assert(typeof unstraddle == 'function');
 ```
 
-`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` має повернутись стрічкою.
+`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return a string.
 
 ```js
 assert(
@@ -84,7 +90,7 @@ assert(
 );
 ```
 
-`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` має повернутись `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING."`.
+`unstraddle("34045747525284613427502840425027537379697175891898898898584619028294547488",["ESTONIA  R", "BCDFGHJKLM", "PQUVWXYZ./"])` should return `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING."`.
 
 ```js
 assert.equal(
@@ -96,7 +102,7 @@ assert.equal(
 );
 ```
 
-`unstraddle("139539363509369743061399059745399365901344308320791798798798367430685972839363935",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` має повернутись `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING"`.
+`unstraddle("139539363509369743061399059745399365901344308320791798798798367430685972839363935",["HOL MES RT", "ABCDFGIJKN", "PQUVWXYZ./"])` should return `"ONENIGHTITWASONTHETWENTIETHOFMARCH1888IWASRETURNING"`.
 
 ```js
 assert.equal(
@@ -108,7 +114,7 @@ assert.equal(
 );
 ```
 
-`unstraddle("125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` має повернутись `"THECHECKERBOARDCAKERECIPESPECIFIES3LARGEEGGSAND2.25CUPSOFFLOUR."`.
+`unstraddle("125021250212707204372221327070218600960021823809623283724002424935226226962262521636094232328463769",["ET AON RIS", "BCDFGHJKLM", "PQ/UVWXYZ."])` should return `"THECHECKERBOARDCAKERECIPESPECIFIES3LARGEEGGSAND2.25CUPSOFFLOUR."`.
 
 ```js
 assert.equal(

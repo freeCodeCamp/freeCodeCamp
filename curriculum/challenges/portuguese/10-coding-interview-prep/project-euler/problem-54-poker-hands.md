@@ -1,7 +1,7 @@
 ---
 id: 5900f3a21000cf542c50feb5
 title: 'Problema 54: Mãos do pôquer'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302165
 dashedName: problem-54-poker-hands
 ---

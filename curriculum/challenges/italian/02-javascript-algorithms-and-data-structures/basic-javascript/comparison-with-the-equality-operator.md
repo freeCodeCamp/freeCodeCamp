@@ -25,13 +25,11 @@ function equalityTest(myVal) {
 Se `myVal` è uguale a `10`, l'operatore di uguaglianza restituisce `true`, quindi il codice tra le parentesi graffe sarà eseguito, e la funzione restituirà `Equal`. In caso contrario, la funzione restituirà `Not Equal`. Affinché JavaScript possa confrontare due differenti <dfn>tipi di dato</dfn> (per esempio `numbers` e `strings`), deve convertire un tipo in un altro. Questa operazione è nota come conversione implicita. Dopo che è stata fatta, è possibile confrontare i termini come segue:
 
 ```js
-1   ==  1
-1   ==  2
-1   == '1'
-"3" ==  3
+1   ==  1  // true
+1   ==  2  // false
+1   == '1' // true
+"3" ==  3  // true
 ```
-
-Nell'ordine, queste espressioni saranno valutate come `true`, `false`, `true`, e `true`.
 
 # --instructions--
 

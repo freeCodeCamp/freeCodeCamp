@@ -1,0 +1,14 @@
+@import './colors.css';
+
+@tailwind base;
+
+@layer base {
+  /* Override Tailwind's default `text-decoration` rule. */
+  /* https://github.com/tailwindlabs/tailwindcss/blob/master/src/css/preflight.css#L85 */
+  a {
+    @apply underline;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;

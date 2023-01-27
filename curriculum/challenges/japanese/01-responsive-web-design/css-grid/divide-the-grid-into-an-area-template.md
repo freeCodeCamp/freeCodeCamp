@@ -8,7 +8,7 @@ dashedName: divide-the-grid-into-an-area-template
 
 # --description--
 
-グリッドのセルを<dfn>エリア (area)</dfn> にまとめてグループ化し、そのエリアにカスタム名を付けることができます。 次のようにコンテナで `grid-template-areas` を使用してください:
+グリッドのセルを<dfn>エリア (area)</dfn> にまとめてグループ化し、そのエリアにカスタム名を付けることができます。 次のようにコンテナーで `grid-template-areas` を使用してください:
 
 ```css
 grid-template-areas:

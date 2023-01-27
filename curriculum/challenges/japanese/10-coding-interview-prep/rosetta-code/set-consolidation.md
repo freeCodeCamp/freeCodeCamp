@@ -1,7 +1,7 @@
 ---
 id: 5eb3e4af7d0e7b760b46cedc
 title: セットの結合
-challengeType: 5
+challengeType: 1
 forumTopicId: 385319
 dashedName: set-consolidation
 ---

@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7e1e
 title: Produto escalar
-challengeType: 5
+challengeType: 1
 forumTopicId: 302251
 dashedName: dot-product
 ---
 
 # --description--
 
-Crie uma função, para calcular o **[Produto escalar](https://en.wikipedia.org/wiki/Dot product)**, também conhecido como **produto interno** entre dois vetores.
+Crie uma função, para calcular o **produto escalar**, também conhecido como **produto interno** entre dois vetores.
 
 # --hints--
 

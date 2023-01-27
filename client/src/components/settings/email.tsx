@@ -14,7 +14,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import isEmail from 'validator/lib/isEmail';
 
-import { updateMyEmail } from '../../redux/settings';
+import { updateMyEmail } from '../../redux/settings/actions';
 import { maybeEmailRE } from '../../utils';
 
 import BlockSaveButton from '../helpers/form/block-save-button';
@@ -175,38 +175,46 @@ function EmailSettings({
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
             <FormControl.Static>{currentEmail}</FormControl.Static>
           </FormGroup>
-          <FormGroup controlId='new-email' validationState={newEmailValidation}>
-            <ControlLabel>{t('settings.email.new')}</ControlLabel>
-            <FormControl
-              onChange={createHandleEmailFormChange('newEmail')}
-              type='email'
-              value={newEmail}
-            />
-            {newEmailValidationMessage ? (
-              <HelpBlock>{newEmailValidationMessage}</HelpBlock>
-            ) : null}
-          </FormGroup>
-          <FormGroup
-            controlId='confirm-email'
-            validationState={confirmEmailValidation}
-          >
-            <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
-            <FormControl
-              onChange={createHandleEmailFormChange('confirmNewEmail')}
-              type='email'
-              value={confirmNewEmail}
-            />
-            {confirmEmailValidationMessage ? (
-              <HelpBlock>{confirmEmailValidationMessage}</HelpBlock>
-            ) : null}
-          </FormGroup>
+          <div role='group' aria-label={t('settings.email.heading')}>
+            <FormGroup
+              controlId='new-email'
+              validationState={newEmailValidation}
+            >
+              <ControlLabel>{t('settings.email.new')}</ControlLabel>
+              <FormControl
+                onChange={createHandleEmailFormChange('newEmail')}
+                type='email'
+                value={newEmail}
+              />
+              {newEmailValidationMessage ? (
+                <HelpBlock>{newEmailValidationMessage}</HelpBlock>
+              ) : null}
+            </FormGroup>
+            <FormGroup
+              controlId='confirm-email'
+              validationState={confirmEmailValidation}
+            >
+              <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
+              <FormControl
+                onChange={createHandleEmailFormChange('confirmNewEmail')}
+                type='email'
+                value={confirmNewEmail}
+              />
+              {confirmEmailValidationMessage ? (
+                <HelpBlock>{confirmEmailValidationMessage}</HelpBlock>
+              ) : null}
+            </FormGroup>
+          </div>
           <BlockSaveButton
             disabled={
               newEmailValidation !== 'success' ||
               confirmEmailValidation !== 'success' ||
               isPristine
             }
-          />
+          >
+            {t('buttons.save')}{' '}
+            <span className='sr-only'>{t('settings.email.heading')}</span>
+          </BlockSaveButton>
         </form>
       </FullWidthRow>
       <Spacer />

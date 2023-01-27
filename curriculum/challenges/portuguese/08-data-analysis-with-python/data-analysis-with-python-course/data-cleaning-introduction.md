@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c15d
-title: Introduzir a limpeza de dados
+title: Introdução à limpeza de dados
 challengeType: 11
 videoId: ovYNhnltVxY
 bilibiliIds:
@@ -16,8 +16,8 @@ dashedName: data-cleaning-introduction
 
 Mais recursos:
 
--   [Notebooks no GitHub](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
--   [Como abrir notebooks do GitHub usando o Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-  <a href="https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp" target="_blank" rel="noopener noreferrer nofollow">Notebooks no GitHub</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Como abrir notebooks do GitHub usando o Google Colab.</a>
 
 # --question--
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f4e81000cf542c50fffa
 title: '問題 379: 最小公倍数に関する数え上げ'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302041
 dashedName: problem-379-least-common-multiple-count
 ---

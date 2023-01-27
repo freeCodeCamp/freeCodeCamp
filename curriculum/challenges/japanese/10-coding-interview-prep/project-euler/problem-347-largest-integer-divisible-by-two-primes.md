@@ -1,7 +1,7 @@
 ---
 id: 5900f4c81000cf542c50ffd9
 title: '問題 347: 2 つの素数で割り切れる最大の整数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302006
 dashedName: problem-347-largest-integer-divisible-by-two-primes
 ---

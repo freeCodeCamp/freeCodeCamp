@@ -25,7 +25,7 @@ function Footer(): JSX.Element {
             </p>
           </div>
           <div className='trending-guides'>
-            <div className='col-header'>{t('footer.trending-guides')}</div>
+            <h2 className='col-header'>{t('footer.trending-guides')}</h2>
             <div className='trending-guides-row'>
               <div className='footer-col footer-col-1'>
                 <Link external={false} to={t('trending:article0link')}>
@@ -132,7 +132,7 @@ function Footer(): JSX.Element {
           </div>
         </div>
         <div className='footer-bottom'>
-          <div className='col-header'>{t('footer.our-nonprofit')}</div>
+          <h2 className='col-header'>{t('footer.our-nonprofit')}</h2>
           <div className='footer-divder' />
           <div className='our-nonprofit'>
             <Link external={false} to={t('links:footer.about-url')}>

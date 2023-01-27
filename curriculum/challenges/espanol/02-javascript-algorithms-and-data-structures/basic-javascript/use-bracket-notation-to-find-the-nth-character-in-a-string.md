@@ -39,7 +39,7 @@ assert(thirdLetterOfLastName === 'v');
 Debes usar la notación de corchetes.
 
 ```js
-assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
+assert(code.match(/thirdLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
 ```
 
 # --seed--

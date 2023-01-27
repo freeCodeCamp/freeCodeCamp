@@ -30,7 +30,7 @@ Usando o laço `for`, essa função itera o array, acessa cada elemento do array
 
 # --instructions--
 
-Definimos uma função, `filteredArray`, a qual recebe `arr`, um array aninhado, e `elem` como argumentos, e retornamos um novo array. `elem` representa um elemento que pode ou não estar presente em um ou mais dos arrays aninhados dentro de `arr`. Modifique a função, usando o laço `for`, para retornar uma versão filtrada do array recebido mode que qualquer array aninhado dentro de `arr` e contendo `elem` seja removido.
+Definimos uma função, `filteredArray`, a qual recebe `arr`, um array aninhado, e `elem` como argumentos, e retornamos um novo array. `elem` representa um elemento que pode ou não estar presente em um ou mais dos arrays aninhados dentro de `arr`. Modifique a função, usando o laço `for`, para retornar uma versão filtrada do array recebido de modo que qualquer array aninhado dentro de `arr` e contendo `elem` seja removido.
 
 # --hints--
 

@@ -8,15 +8,15 @@ dashedName: compare-the-properties-of-two-elements
 
 # --description--
 
-注意点として、このプロジェクトは [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) の始動プロジェクト、または [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/) からクローンされたプロジェクトに基づいて構築されています。
+注意点として、このプロジェクトは <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> にあるスタータープロジェクトをベースに構築されているか、または <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> からクローンされています。
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Comparisons` スイート内の `#8` に分類されたテストにおいて、テストを合格にする (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isAbove` または `assert.isAtMost` に変更してください。 アサートに渡された引数を変更しないでください。
+`tests/1_unit-tests.js` の中の、`Comparisons` スイート内の `#8` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isAbove` または `assert.isAtMost` に変更してください。 アサートに渡された引数を変更しないでください。
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ dashedName: compare-the-properties-of-two-elements
   );
 ```
 
-2 番目のアサーションに、正しいメソッドを選ぶ必要があります- `isAbove` もしくは `isAtMost` です。
+2 番目のアサーションに、正しいメソッドを選ぶ必要があります - `isAbove` もしくは `isAtMost` です。
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ dashedName: compare-the-properties-of-two-elements
   );
 ```
 
-3 番目のアサーションに、正しいメソッドを選ぶ必要があります- `isAbove` もしくは `isAtMost` です。
+3 番目のアサーションに、正しいメソッドを選ぶ必要があります - `isAbove` もしくは `isAtMost` です。
 
 ```js
 (getUserInput) =>

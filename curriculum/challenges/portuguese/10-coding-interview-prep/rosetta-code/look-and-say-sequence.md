@@ -1,14 +1,14 @@
 ---
 id: 5e6dd14797f5ce267c2f19d0
 title: Sequência para olhar e dizer
-challengeType: 5
+challengeType: 1
 forumTopicId: 385277
 dashedName: look-and-say-sequence
 ---
 
 # --description--
 
-A [sequência de olhar e dizer](https://en.wikipedia.org/wiki/Look and say sequence) é uma sequência de números definida recursivamente.
+A sequência para olhar e dizer é uma sequência de números recursivamente definida.
 
 Definição da sequência
 

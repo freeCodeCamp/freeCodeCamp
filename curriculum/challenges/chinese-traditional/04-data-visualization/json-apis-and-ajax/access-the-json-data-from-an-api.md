@@ -12,7 +12,7 @@ dashedName: access-the-json-data-from-an-api
 
 現在，你將進一步觀察返回的數據，以更好地瞭解 JSON 格式。 回憶一下 JavaScript 中的一些符號：
 
-<blockquote>[ ] -> 方括號表示數組<br>{ } -> 大括號表示對象<br>" " -> 雙引號表示字符串， 它們還用於表示 JSON 中的鍵名</blockquote>
+<blockquote>[ ] -> 方括號表示數組<br>{ } -> 大括號表示對象<br>" " -> 雙引號表示字符串。 它們還用於表示 JSON 中的鍵名。</blockquote>
 
 理解 API 返回數據的結構是必需的，它將影響你如何獲取你所需的值。
 

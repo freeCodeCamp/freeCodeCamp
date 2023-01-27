@@ -1,7 +1,7 @@
 ---
 id: 5900f47b1000cf542c50ff8d
 title: 'Problema 271: Cubos modulares, parte 1'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301921
 dashedName: problem-271-modular-cubes-part-1
 ---

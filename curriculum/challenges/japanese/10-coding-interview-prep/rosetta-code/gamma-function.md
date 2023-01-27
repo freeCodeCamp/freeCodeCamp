@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7e76
 title: ガンマ関数
-challengeType: 5
+challengeType: 1
 forumTopicId: 302271
 dashedName: gamma-function
 ---
 
 # --description--
 
-1 つのアルゴリズム (またはそれ以上) を実装して、 [ガンマ](https://en.wikipedia.org/wiki/Gamma function) ($\\Gamma$) 関数を計算します(実体においてのみ)。
+Implement one algorithm (or more) to compute the Gamma function (in the real field only).
 
 ガンマ関数は次のように定義できます。
 

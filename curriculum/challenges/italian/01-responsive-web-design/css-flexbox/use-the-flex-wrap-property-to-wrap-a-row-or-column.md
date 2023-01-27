@@ -9,7 +9,7 @@ dashedName: use-the-flex-wrap-property-to-wrap-a-row-or-column
 
 # --description--
 
-Flexbox ha una funzione per dividere un elemento flex in più righe (o colonne). Per impostazione predefinita, un contenitore flex si adatterà a tutti gli elementi flex insieme. Ad esempio, una riga sarà tutta su una riga.
+Flexbox ha una funzione per dividere un contenitore flex in più righe (o colonne). Per impostazione predefinita, un contenitore flex si adatterà a tutti gli elementi flex insieme. Ad esempio, una riga sarà tutta su una riga.
 
 Tuttavia, usando la proprietà `flex-wrap` potremo dire a CSS di mandare a capo gli oggetti. Questo significa che gli elementi extra si sposteranno in una nuova riga o colonna. Il punto di rottura in cui avviene il ritorno a capo dipende dalle dimensioni degli oggetti e dalle dimensioni del contenitore.
 

@@ -1,14 +1,14 @@
 ---
 id: 59713bd26bdeb8a594fb9413
 title: Підрахунок монет
-challengeType: 5
+challengeType: 1
 forumTopicId: 302238
 dashedName: count-the-coins
 ---
 
 # --description--
 
-У валюті [США](https://en.wikipedia.org/wiki/United_States) існує чотири типи звичайних монет:
+There are four types of common coins in US currency:
 
 <ul>
   <li>четвертаки (25 центів)</li>
@@ -46,7 +46,7 @@ assert(typeof countCoins === 'function');
 assert.equal(countCoins(15), 6);
 ```
 
-`countCoins(85)` має повертати `163`.
+`countCoins(85)` should return `163`.
 
 ```js
 assert.equal(countCoins(85), 163);

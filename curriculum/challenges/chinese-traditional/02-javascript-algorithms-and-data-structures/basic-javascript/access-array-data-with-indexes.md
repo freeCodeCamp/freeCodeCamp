@@ -19,21 +19,19 @@ dashedName: access-array-data-with-indexes
 
 ```js
 const array = [50, 60, 70];
-array[0];
+console.log(array[0]);
 const data = array[1];
 ```
 
-現在 `array[0]` 的值是 `50`， `data` 的值爲 `60`.
-
-**注意：**數組名與方括號之間不應該有任何空格，比如`array [0]` 。 儘管 JavaScript 能夠正確處理這種情況，但是當其他程序員閱讀你寫的代碼時，這可能讓他們感到困惑。
+`console.log(array[0])` 打印 `50`，`data` 的值爲 `60`。
 
 # --instructions--
 
-創建一個名爲 `myData` 的變量，使用方括號取出 `myArray` 數組中第一個元素的值並將其賦值給新創建的變量。
+創建一個名爲 `myData` 的變量，並使用括號表示法將其設置爲等於 `myArray` 的第一個值。
 
 # --hints--
 
-變量 `myData` 應該等於`myArray` 數組中第一個元素的值。
+變量 `myData` 應該等於 `myArray` 的第一個值。
 
 ```js
 assert(
@@ -51,7 +49,7 @@ assert(
 );
 ```
 
-應該使用括號訪問變量 `myArray` 中的數據。
+應使用括號表示法訪問變量 `myArray` 中的數據。
 
 ```js
 assert(

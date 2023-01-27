@@ -8,12 +8,12 @@ dashedName: arithmetic-formatter
 
 # --description--
 
-Lavorerari a [questo progetto con il nostro codice d'inizio su Replit](https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter).
+Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
 
-Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
 
-- [Video corso Python for Everybody](https://www.freecodecamp.org/news/python-for-everybody/) (14 ore)
-- [Video corso Learn Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 ore)
 
 # --instructions--
 
@@ -64,23 +64,23 @@ La funzione restituirà la conversione corretta se i problemi dati sono corretta
 
 
 - Situazioni che devono restituire un errore:
-  - Se ci sono **troppi problemi** dati alla funzione. Il limite è **cinque**, più di ciò deve restiture: `Error: Too many problems.`
+  - Se ci sono **troppi problemi** dati alla funzione. Il limite è **cinque**, più di ciò deve restituire: `Error: Too many problems.`
   - Gli operatori appropriati che la funzione accetterà sono **addizione** e **sottrazione**. Moltiplicazione e divisione devono dare un errore. Altri operatori non menzionati in questa lista non serve che vengano testati. L'errore restituito deve essere: `Error: Operator must be '+' or '-'.`
   - Ogni numero (operando) deve contenere solo cifre. Altrimenti, la funzione deve restituire: `Error: Numbers must only contain digits.`
   - Ogni operando (numero da ogni lato dell'operatore) ha una lunghezza di massimo 4 cirre. Altrimenti, la funzione deve restituire: `Error: Numbers cannot be more than four digits.`
 - Se l'utente ha dato i problemi nel formato corretto, la conversione che restituisci deve seguire le seguenti regole:
-  - Ci deve essere un singolo spazio tra l'operatore e il più lungo dei due operandi, l'operatore deve essere sulla stessa riga del secondo operando, entrambi gli operandi devono essere nell'ordine dato (il primo in alto, il secondo in basso.
+  - Ci deve essere un singolo spazio tra l'operatore e il più lungo dei due operandi, l'operatore deve essere sulla stessa riga del secondo operando, entrambi gli operandi devono essere nell'ordine dato (il primo in alto, il secondo in basso).
   - I numeri devono essere allineati a destra.
   - Devono esserci quattro spazi tra ogni problema.
   - Ci devono essere dei trattini sotto ogni problema. I trattini devono avere la stessa larghezza del singolo problema. (L'esempio sopra mostra come deve apparire.)
 
 ## Sviluppo
 
-Scrivi il tuo codice in `arithmetic_arranger.py`. Per lo sviluppo, puoi usare `main.py` per testare la tua funzione `arithmetic_arranger()`. Usa il bottone "run" e `main.py` eseguirà.
+Scrivi il tuo codice in `arithmetic_arranger.py`. Per lo sviluppo, puoi usare `main.py` per testare la tua funzione `arithmetic_arranger()`. Fai clic sul pulsante "Run" e `main.py` verrà eseguito.
 
 ## Testare
 
-I test unitari per questo progetto sono in `test_module.py`. Stiamo eseguendo i test da `test_module.py` in `main.py` per la tua convenienza. I test eseguiranno automaticamente quando usi il bottone "run". In alternativa puoi eseguire i test eseguendo `pytest` nella console.
+I test unitari per questo progetto sono in `test_module.py`. Stiamo eseguendo i test da `test_module.py` in `main.py` per la tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run". In alternativa puoi eseguire i test eseguendo `pytest` nella console.
 
 ## Consegnare
 

@@ -92,7 +92,7 @@ module.exports = {
   },
 
   sentry: {
-    dns: SENTRY_DSN
+    dsn: SENTRY_DSN
   },
 
   stripe: {

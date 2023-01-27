@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c36
-title: Install and Require Helmet
+title: Instalar y Requerir Helmet
 challengeType: 2
 forumTopicId: 301581
 dashedName: install-and-require-helmet
@@ -8,25 +8,31 @@ dashedName: install-and-require-helmet
 
 # --description--
 
-Working on these challenges will involve you writing your code using one of the following methods:
+Trabajar en estos desafíos implica escribir tu código usando uno de los siguientes métodos:
 
-- Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-infosec/) and complete these challenges locally.
-- Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-infosec) to complete these challenges.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+- Clona <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">este repositorio de GitHub </a> y completa esos retos localmente.
+- Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto de inicial Replit</a> para completar estos retos.
+- Utilice un constructor de sitios de su elección para completar el proyecto. Asegúrese de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Si usas Replit, sigue estos pasos para configurar el proyecto:
 
-Helmet helps you secure your Express apps by setting various HTTP headers.
+-   Empieza importando el proyecto en Replit.
+-   Siguiente, tu verás una ventana `.replit`.
+-   Selecciona `Use run command`y cliquea el botón `Done`.
+
+Cuando esté hecho, asegurate que una demo de tu trabajo este hospedado en un sitio público. Then submit the URL to it in the Solution Link field.
+
+Helmet ayuda asegurar tus aplicaciones Express apps configurando varios encabezados HTTP.
 
 # --instructions--
 
-All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
+Todo el código para estas lecciones va a ir en el archivo `myApp.js` entre las líneas de código que iniciamos para ti. No cambies o borres el código que agregamos para ti.
 
-Install Helmet version `3.21.3`, then require it. You can install a specific version of a package with `npm install --save-exact package@version`, or by adding it to your `package.json` directly.
+Helmet version `3.21.3` ha sido instalado, este requiere que `helmet` este en `myApp.js`.
 
 # --hints--
 
-`helmet` version `3.21.3` should be in `package.json`
+`helmet` version `3.21.3` debería estar en `package.json`
 
 ```js
 (getUserInput) =>

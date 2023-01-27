@@ -1,7 +1,7 @@
 ---
 id: 5900f4f71000cf542c51000a
 title: 'Problema 395: Árvore de Pitágoras'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302060
 dashedName: problem-395-pythagorean-tree
 ---

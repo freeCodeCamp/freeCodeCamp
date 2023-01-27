@@ -15,7 +15,7 @@ Por exemplo, quando sua tela for menor ou maior do que o media query definido, v
 
 # --instructions--
 
-Dentro da `media query` existe um seletor `:root`. Mude-o de forma que a variável `--penguin-size` seja redefinida e receba o valor de `200px`. Além disso, redefina a variável `--penguin-skin` e atribua a ela o valor `black`. Em seguida, redimensione a tela de visualização para ver a mudança.
+Dentro da media query existe um seletor `:root`. Mude-o de maneira que a variável `--penguin-size` seja redefinida e receba o valor de `200px`. Além disso, redefina a variável `--penguin-skin` e atribua a ela o valor `black`. Em seguida, redimensione a tela de visualização para ver a mudança.
 
 # --hints--
 

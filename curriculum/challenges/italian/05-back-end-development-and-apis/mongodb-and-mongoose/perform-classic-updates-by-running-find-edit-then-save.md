@@ -14,7 +14,7 @@ Nei bei tempi andati, questo era quello che dovevi fare se volevi modificare un 
 
 Modifica la funzione `findEditThenSave` per trovare una persona in base al suo `_id` (utilizza uno qualsiasi dei metodi visti in precedenza) con il parametro `personId` come chiave di ricerca. Aggiungi `"hamburger"` alla lista dei `favoriteFoods` della persona (puoi usare `Array.push()`). Quindi - all'interno della callback find - salva (`save()`) la `Person` aggiornata.
 
-**Nota:** Potrebbe essere complicato, se nel tuo Schema, hai dichiarato `favoriteFoods` come Array, senza specificare il tipo (cioè `[String]`). In questo caso, `favoriteFoods` prende di default il tipo misto, e devi contrassegnarlo manualmente come modificato utilizzando `document.markModified('edited-field')`. Vedi la [Documentazione di Mongoose](https://mongoosejs.com/docs/schematypes.html#Mixed)
+**Nota:** Potrebbe essere complicato, se nel tuo Schema, hai dichiarato `favoriteFoods` come Array, senza specificare il tipo (cioè `[String]`). In questo caso, `favoriteFoods` prende di default il tipo misto, e devi contrassegnarlo manualmente come modificato utilizzando `document.markModified('edited-field')`. Vedi il nostro <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">articolo su Mongoose</a>.
 
 # --hints--
 

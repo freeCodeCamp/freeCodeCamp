@@ -1,14 +1,14 @@
 ---
 id: 59667989bf71cf555dd5d2ff
 title: S式
-challengeType: 5
+challengeType: 1
 forumTopicId: 302303
 dashedName: s-expressions
 ---
 
 # --description--
 
-[S式](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") はデータの解析や保存に便利な方法です。
+<a href="https://rosettacode.org/wiki/S-expressions" target="_blank" rel="noopener noreferrer nofollow">S-Expressions</a> are one convenient way to parse and store data.
 
 # --instructions--
 
@@ -32,7 +32,7 @@ dashedName: s-expressions
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-それをネイティブデータ構造に変換します (ネイティブデータ構造の実装例については、[Pike](https://rosettacode.org/wiki/S-Expressions#Pike "\#Pike")、[Python](https://rosettacode.org/wiki/S-Expressions#Python "\#Python")、[Ruby](https://rosettacode.org/wiki/S-Expressions#Ruby "\#Ruby") を参照してください。)
+and turn it into a native data structure.
 
 # --hints--
 

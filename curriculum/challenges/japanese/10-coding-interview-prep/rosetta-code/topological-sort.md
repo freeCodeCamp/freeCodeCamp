@@ -1,7 +1,7 @@
 ---
 id: 594fa2746886f41f7d8bf225
 title: トポロジカルソート
-challengeType: 5
+challengeType: 1
 forumTopicId: 302340
 dashedName: topological-sort
 ---

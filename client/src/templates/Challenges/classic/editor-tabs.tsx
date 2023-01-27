@@ -4,11 +4,11 @@ import { createSelector } from 'reselect';
 
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import { ChallengeFile, ChallengeFiles } from '../../../redux/prop-types';
+import { toggleVisibleEditor } from '../redux/actions';
 import {
-  toggleVisibleEditor,
   visibleEditorsSelector,
   challengeFilesSelector
-} from '../redux';
+} from '../redux/selectors';
 
 type VisibleEditors = {
   [key: string]: boolean;
@@ -43,8 +43,8 @@ class EditorTabs extends Component<EditorTabsProps> {
           (challengeFile: ChallengeFile) => (
             <button
               aria-expanded={visibleEditors[challengeFile.fileKey] ?? 'false'}
-              className='monaco-editor-tab'
               key={challengeFile.fileKey}
+              data-cy={`editor-tab-${challengeFile.fileKey}`}
               onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
             >
               {`${challengeFile.name}.${challengeFile.ext}`}{' '}
