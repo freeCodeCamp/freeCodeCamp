@@ -27,6 +27,5 @@ module.exports = (on, config) => {
   });
 
   config.env.API_LOCATION = process.env.API_LOCATION;
-  config.env.FORUM_LOCATION = process.env.FORUM_LOCATION;
   return config;
 };
