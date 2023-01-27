@@ -32,7 +32,6 @@ describe('create-question-epic', () => {
     const multiCertChallengeFiles = [
       {
         contents: '<h1>Hello World</h1>',
-        editableRegionBoundaries: [],
         ext: 'html',
         fileKey: 'indexhtml',
         history: ['index.html'],
@@ -45,7 +44,6 @@ describe('create-question-epic', () => {
       },
       {
         contents: '',
-        editableRegionBoundaries: [],
         ext: 'css',
         fileKey: 'stylescss',
         history: ['styles.css'],
@@ -84,6 +82,11 @@ describe('create-question-epic', () => {
       challengeFiles.forEach(({ contents }) => {
         expect(contents).toContain('User Editable Region');
       });
+    });
+    it('should not throw if editableRegionBoundaries is undefined', () => {
+      expect(() =>
+        insertEditableRegions(multiCertChallengeFiles)
+      ).not.toThrow();
     });
   });
 });
