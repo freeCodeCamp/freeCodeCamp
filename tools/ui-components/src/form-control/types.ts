@@ -16,7 +16,7 @@ type ChangibleValues =
   | {
       value: string;
       onChange: (event: React.ChangeEvent<FormControlElement>) => void;
-      readonly: never;
+      readonly?: never;
     };
 
 export type FormControlProps = React.HTMLAttributes<FormControlElement> & {
