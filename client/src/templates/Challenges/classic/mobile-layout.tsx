@@ -1,7 +1,7 @@
 import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
 import React, { Component, ReactElement } from 'react';
-
+import { TOOL_PANEL_HEIGHT } from '../../../../../config/misc';
 import ToolPanel from '../components/tool-panel';
 import EditorTabs from './editor-tabs';
 
@@ -45,67 +45,44 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     });
   };
 
-  avoidWindowScrolling = (event: Event) => {
-    event.preventDefault();
-  };
-
-  setToolPanelPosition = () => {
-    const toolPanelGroup = (
+  getToolPanelGroup = () =>
+    (
       document.getElementsByClassName(
         'tool-panel-group-mobile'
       ) as HTMLCollectionOf<HTMLElement>
     )[0];
-    const toolPanelHeight = 37;
 
-    // The former of the if statements is for avoiding a TypeScript error and the latter to detect the appearance of the virtual keyboard on iPhone.
+  // Keep the tool panel visible when mobile address bar and/or keyboard are in view.
+  setToolPanelPosition = () => {
+    const toolPanelGroup = this.getToolPanelGroup();
+    // Detect the appearance of the mobile virtual keyboard.
     if (visualViewport?.height && window.innerHeight > visualViewport.height) {
       setTimeout(() => {
-        window.scrollTo(0, 0);
-
         if (visualViewport?.height !== undefined) {
           toolPanelGroup.style.top =
-            String(visualViewport.height - toolPanelHeight) + 'px';
+            String(visualViewport.height - TOOL_PANEL_HEIGHT) + 'px';
         }
       }, 200);
-
-      window.addEventListener('touchmove', this.avoidWindowScrolling, {
-        passive: false
-      });
     } else {
-      document.documentElement.style.height = String(window.innerHeight) + 'px';
-
       if (visualViewport?.height !== undefined) {
         toolPanelGroup.style.top =
-          String(window.innerHeight - toolPanelHeight) + 'px';
+          String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
       }
-
-      window.removeEventListener('touchmove', this.avoidWindowScrolling);
     }
   };
 
   componentDidMount() {
-    const toolPanelGroup = (
-      document.getElementsByClassName(
-        'tool-panel-group-mobile'
-      ) as HTMLCollectionOf<HTMLElement>
-    )[0];
-    const toolPanelHeight = 37;
-
+    const toolPanelGroup = this.getToolPanelGroup();
     if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
       visualViewport?.addEventListener('resize', this.setToolPanelPosition);
-
-      document.documentElement.style.height = String(window.innerHeight) + 'px';
       toolPanelGroup.style.top =
-        String(window.innerHeight - toolPanelHeight) + 'px';
+        String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
     }
   }
 
   componentWillUnmount() {
     if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
       visualViewport?.removeEventListener('resize', this.setToolPanelPosition);
-
-      window.removeEventListener('touchmove', this.avoidWindowScrolling);
-
       document.documentElement.style.height = '100%';
     }
   }
