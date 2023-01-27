@@ -3,30 +3,12 @@ import { FormContext } from '../form-context';
 import { FormGroupProps } from './types';
 
 let variantClass = '';
-
-const hasSuccess = `
-[&_span:has[data-testid='help-block']]: text-blue-400
-[&_label]: text-blue-400
-[&_input]: bordercolor-background-quaternary shadow-inner-small
-[&_input:focus]: bordercolor-foreground-tertiary shadow-inner-success-focus
-[&_input_span]: text-yellow-700
-`;
-
-const hasWarning = `
-[&_span:has[data-testid='help-block']]: text-blue-400
-[&_label]: text-blue-400
-[&_input]: bordercolor-background-quaternary shadow-inner-small 
-[&_input:focus]: bordercolor-foreground-tertiary shadow-inner-warning-focus
-[&_input_span]: text-green-700
-`;
-
-const hasError = `
-[&_span:has[data-testid='help-block']]: text-foreground-danger
-[&_label]: text-foreground-danger
-[&_input]: bordercolor-background-quaternary shadow-inner-small
-[&_input:focus]: bordercolor-foreground-tertiary shadow-inner-error-focus
-[&_input_span]: text-yellow-700
-`;
+const hasSuccess =
+  "[&_span:has[data-testid='help-block']]: text-foreground-info [&_label]: text-foreground-info";
+const hasWarning =
+  "[&_span:has[data-testid='help-block']]: text-foreground-warning [&_label]: text-foreground-warning";
+const hasError =
+  "[&_span:has[data-testid='help-block']]: text-foreground-danger [&_label]: text-foreground-danger";
 
 const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
   (

@@ -51,7 +51,6 @@ module.exports = {
         50: 'var(--blue05)',
         100: 'var(--blue10)',
         300: 'var(--blue30)',
-        400: 'var(--blue40)',
         500: 'var(--blue50)',
         700: 'var(--blue70)',
         900: 'var(--blue90)'
