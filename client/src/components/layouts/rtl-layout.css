@@ -10,7 +10,7 @@ Increase the spacing in paragraphs
 Profile section
 */
 
-[dir='rtl'] :is(.media-left, .media > .pull-left) {
+[dir='rtl'] #profile-image {
   padding-left: 10px;
 }
 
