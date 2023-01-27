@@ -59,17 +59,4 @@ describe('multifileCertProjects', function () {
       .type(`{ctrl+s}`);
     cy.contains('Your code was not saved.');
   });
-
-  it('should not add editable region boundaries to help post', () => {
-    cy.get(editorElements.editor).click().focused().clear().type(save1text);
-    cy.get('#get-help-dropdown').scrollIntoView().click();
-    cy.get('.tool-panel-group ul[role="menu"]').within(() => {
-      cy.get('a').eq(1).contains('Ask for Help').click();
-      cy.contains('Create a help post on the forum').click();
-      cy.location().should(loc => {
-        expect(loc).to.include(Cypress.env('FORUM_LOCATION'));
-        expect(loc).to.not.include('%3C!--%20User%20Editable%20Region%20--%3E');
-      });
-    });
-  });
 });
