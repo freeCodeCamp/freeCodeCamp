@@ -1,9 +1,7 @@
-.toggle-active.btn[disabled],
-#honesty-policy button[aria-disabled] {
+.toggle-active.btn[disabled] {
   background-color: var(--secondary-color);
   color: var(--secondary-background);
-  opacity: 0.65;
-  cursor: not-allowed;
+  opacity: 1;
 }
 
 .toggle-not-active {

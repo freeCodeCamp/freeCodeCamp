@@ -1,3 +1,11 @@
+#honesty-policy
+  :is(button[aria-disabled], button[aria-disabled]:is(:focus, :hover)) {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 .honesty-panel p {
   margin-inline: 10px;
   font-family: 'Lato', sans-serif;
