@@ -14,7 +14,8 @@ import { setShowPreviewPortal, setShowPreviewPane } from '../redux/actions';
 import {
   portalWindowSelector,
   showPreviewPortalSelector,
-  showPreviewPaneSelector
+  showPreviewPaneSelector,
+  isAdvancingToChallengeSelector
 } from '../redux/selectors';
 import PreviewPortal from '../components/preview-portal';
 import ActionRow from './action-row';
@@ -29,6 +30,7 @@ interface DesktopLayoutProps {
   hasNotes: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
+  isAdvancing: boolean;
   isFirstStep: boolean;
   layoutState: {
     codePane: Pane;
@@ -60,15 +62,18 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = createSelector(
+  isAdvancingToChallengeSelector,
   showPreviewPortalSelector,
   showPreviewPaneSelector,
   portalWindowSelector,
 
   (
+    isAdvancing: boolean,
     showPreviewPortal: boolean,
     showPreviewPane: boolean,
     portalWindow: null | Window
   ) => ({
+    isAdvancing,
     showPreviewPortal,
     showPreviewPane,
     portalWindow
@@ -131,6 +136,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     testOutput,
     hasNotes,
     hasPreview,
+    isAdvancing,
     isFirstStep,
     layoutState,
     notes,
@@ -145,6 +151,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       setShowPreviewPortal(false);
       portalWindow?.close();
       setShowPreviewPane(true);
+    } else if (!isAdvancing && !showPreviewPane && !showPreviewPortal) {
+      togglePane('showPreviewPane');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
