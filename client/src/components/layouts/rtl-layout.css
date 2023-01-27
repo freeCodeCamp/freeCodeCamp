@@ -1,25 +1,9 @@
 /* 
-breadcrumbs section
+Increase the spacing in paragraphs
 */
-[dir='rtl'] .breadcrumb-left::after {
-  content: '';
-  display: none;
-}
 
-[dir='rtl'] .breadcrumb-left::before {
-  background-color: var(--secondary-background);
-  content: '';
-  border-top: calc(1.375rem / 2) solid transparent;
-  border-bottom: calc(1.2rem / 2) solid transparent;
-  border-right: calc(1.1rem / 2) solid var(--quaternary-background);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-}
-
-[dir='rtl'] .challenge-title-breadcrumbs ol {
-  padding-right: 0;
+[dir='rtl'] p {
+  line-height: 2rem;
 }
 
 /* 
@@ -27,31 +11,12 @@ Intro project buttons and headings
 */
 
 [dir='rtl'] .monaco-editor-tabs {
-  margin-right: 0;
-}
-
-[dir='rtl'] .panel-display-tabs button:first-child,
-.tabs-row > button:first-child {
-  margin-right: 0;
-  margin-left: 10px;
-}
-
-[dir='rtl'] .map-ui .superblock-link .map-icon {
-  margin-right: 5px;
-  margin-left: 20px;
+  /* need to remove the margin because the editor is reversed */
+  margin-inline-end: 0;
 }
 
 [dir='rtl'] .map-ui .superblock-link > svg {
   transform: rotate(180deg);
-}
-
-/* 
-fix misaligned text in button and in donation 
-*/
-
-[dir='rtl'] .link-btn,
-[dir='rtl'] .faq-item h4 {
-  text-align: right;
 }
 
 /* 
@@ -60,17 +25,6 @@ fix misaligned text in button and in donation
 
 [dir='rtl'] .link-btn.btn-lg > svg {
   transform: rotate(180deg);
-}
-
-[dir='rtl'] .block-grid .map-title > svg:last-child,
-[dir='rtl'] .map-title .course-title:last-of-type {
-  margin-right: auto;
-  margin-left: 0;
-}
-
-[dir='rtl'] .map-title .course-title:first-of-type {
-  margin-right: 0.35em;
-  margin-left: auto;
 }
 
 /* 
@@ -90,7 +44,7 @@ the "not" and "is" selector is used to stop it from affecting other section and 
 external fontawesome link icon
 */
 
-[dir='rtl'] .nav-link > svg,
+[dir='rtl'] .nav-link > .fa-up-right-from-square,
 [dir='rtl'] td a[target='_blank'] > svg {
   transform: rotate(270deg);
 }
@@ -100,7 +54,7 @@ universal-nav-bar
 and menu secion
 */
 
-@media (min-width: 767.5px) {
+@media (min-width: 601px) {
   [dir='rtl'] .nav-list {
     right: auto;
     left: 0;
@@ -111,6 +65,16 @@ and menu secion
   [dir='rtl'] #universal-nav-logo {
     left: inherit;
     right: 17px;
+  }
+
+  [dir='rtl'] .fcc_searchBar .ais-Hits {
+    left: auto;
+    right: 15px;
+  }
+
+  [dir='rtl'] .universal-nav-right .fcc_searchBar {
+    left: auto;
+    right: 0;
   }
 }
 
@@ -133,10 +97,6 @@ New RWD project challenge
 
 [dir='rtl'] .tabs-row {
   gap: 10px;
-}
-
-[dir='rtl'] .panel-display-tabs {
-  margin-left: auto;
 }
 
 [dir='rtl'] .monaco-editor-tabs button:not(:first-child) {
@@ -206,4 +166,10 @@ sections that need to stay left to right
 [dir='rtl'] .donate-page-wrapper p,
 [dir='rtl'] [name='payment-method'] {
   font-family: 'NotoSansArabic';
+}
+
+@media (min-width: 980px) {
+  [dir='rtl'] .donate-page-wrapper > .row {
+    display: flex;
+  }
 }

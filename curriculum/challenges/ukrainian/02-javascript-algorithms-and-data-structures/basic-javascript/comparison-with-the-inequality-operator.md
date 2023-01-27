@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d2
-title: Порівняння з Оператором "Не дорівнює"
+title: Порівняння з оператором «не дорівнює»
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBm9Sr'
 forumTopicId: 16787
@@ -9,7 +9,7 @@ dashedName: comparison-with-the-inequality-operator
 
 # --description--
 
-Оператор "не дорівнює" (`!=`) є протилежним до оператора рівності. Це означає, що вирази не еквівалентні і що вони повернуться `false`, де рівність повернеться `true` і *навпаки*. Так само, як і оператор рівності, оператор "не дорівнює" конвертує типи даних під час їх порівняння.
+Оператор «не дорівнює» (`!=`) є протилежним до оператора «дорівнює». Це означає, що значення не еквівалентні і оператор повертає `false`, де рівність повернула б `true` та *навпаки*. Як і оператор «дорівнює», «не дорівнює» перетворює типи даних під час порівняння.
 
 **Приклади**
 
@@ -23,41 +23,41 @@ dashedName: comparison-with-the-inequality-operator
 
 # --instructions--
 
-Add the inequality operator `!=` in the `if` statement so that the function will return the string `Not Equal` when `val` is not equivalent to `99`.
+Додайте оператор «не дорівнює» (`!=`) в інструкції `if`, щоб функція повернула рядок `Not Equal`, якщо `val` не дорівнює `99`.
 
 # --hints--
 
-`testNotEqual(99)` має повернути рядок `Equal`
+`testNotEqual(99)` повинен повертати рядок `Equal`
 
 ```js
 assert(testNotEqual(99) === 'Equal');
 ```
 
-`testNotEqual("99")` має повернути рядок `Equal`
+`testNotEqual("99")` повинен повертати рядок `Equal`
 
 ```js
 assert(testNotEqual('99') === 'Equal');
 ```
 
-`testNotEqual(12)` має повернути рядок `Not Equal`
+`testNotEqual(12)` повинен повертати рядок `Not Equal`
 
 ```js
 assert(testNotEqual(12) === 'Not Equal');
 ```
 
-`testNotEqual("12")` має повернути рядок `Not Equal`
+`testNotEqual("12")` повинен повертати рядок `Not Equal`
 
 ```js
 assert(testNotEqual('12') === 'Not Equal');
 ```
 
-`testNotEqual("bob")` має повернути рядок `Not Equal`
+`testNotEqual("bob")` повинен повертати рядок `Not Equal`
 
 ```js
 assert(testNotEqual('bob') === 'Not Equal');
 ```
 
-You should use the `!=` operator
+Ви повинні використати оператор `!=`
 
 ```js
 assert(code.match(/(?!!==)!=/));

@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cb
-title: تغيير القوائم (Arrays) باستخدام push()
+title: Manipulate Arrays With push Method
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237
@@ -11,7 +11,7 @@ dashedName: manipulate-arrays-with-push
 
 طريقة سهلة لإضافة البيانات إلى نهاية القائمة هي عن طريق وظيفة `push()`.
 
-يأخذ `.push()` واحد أو أكثر من <dfn>الحجج</dfn> و "يدفعها" إلى نهاية القائمة.
+تأخذ `.push()` واحد أو أكثر من <dfn>الوسائط</dfn> و "تدفعها" إلى نهاية القائمة.
 
 على سبيل المثال:
 

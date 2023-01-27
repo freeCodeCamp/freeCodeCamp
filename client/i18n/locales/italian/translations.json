@@ -11,6 +11,7 @@
     "view": "Visualizza",
     "view-code": "Visualizza il Codice",
     "view-project": "Visualizza il Progetto",
+    "view-cert-title": "Visualizza {{certTitle}}",
     "show-cert": "Mostra la Certificazione",
     "claim-cert": "Richiedi la Certificazione",
     "save-progress": "Salva l'avanzamento",
@@ -52,7 +53,7 @@
     "check-code": "Verifica il tuo codice (Ctrl + Invio)",
     "check-code-2": "Verifica il tuo codice",
     "reset": "Resetta",
-    "reset-code": "Resetta tutto il codice",
+    "reset-step": "Resetta questo step",
     "help": "Guida",
     "get-help": "Ottieni Aiuto",
     "watch-video": "Guarda un video",
@@ -80,7 +81,7 @@
     "big-heading-1": "Impara a programmare — gratis.",
     "big-heading-2": "Costruisci progetti.",
     "big-heading-3": "Ottieni certificazioni.",
-    "h2-heading": "Dal 2014, più di 40.000 laureati di freeCodeCamp.org hanno ottenuto posti di lavoro presso aziende tecnologiche, tra cui:",
+    "h2-heading": "Dal 2014, più di 40.000 studenti di freeCodeCamp.org hanno ottenuto posti di lavoro presso aziende tecnologiche, tra cui:",
     "hero-img-description": "Studenti di un gruppo di studio locale di freeCodeCamp in Corea del Sud.",
     "as-seen-in": "Hanno parlato di noi:",
     "testimonials": {
@@ -157,7 +158,8 @@
       "honesty": "Politica di Onestà Accademica",
       "internet": "La Tua presenza su Internet",
       "portfolio": "Impostazioni Portfolio",
-      "privacy": "Impostazioni Privacy"
+      "privacy": "Impostazioni Privacy",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "Zona di Pericolo",
@@ -231,7 +233,7 @@
     "donation-initiatives": "Le donazioni a freeCodeCamp vanno alle nostre iniziative educative e aiutano a pagare i server, i servizi e il personale.",
     "donate-text": "Puoi fare una <1>donazione deducibile dalle tasse qui</1>.",
     "trending-guides": "Guide Di Tendenza",
-    "our-nonprofit": "Il nostro ente",
+    "our-nonprofit": "La nostra Charity",
     "links": {
       "about": "Informazioni",
       "alumni": "Rete degli allievi",
@@ -272,6 +274,9 @@
     "add-subtitles": "Aiuta a migliorare o aggiungi sottotitoli",
     "wrong-answer": "Siamo spiacenti, non è la risposta giusta. Vuoi riprovare?",
     "check-answer": "Fai clic sul pulsante qui sotto per controllare la tua risposta.",
+    "assignment-not-complete": "Please finish the assignments",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "Link alla soluzione",
     "github-link": "Link GitHub",
     "submit-and-go": "Invia e vai alla prossima sfida",
@@ -361,7 +366,6 @@
     "become-supporter": "Diventa sostenitore",
     "duration": "Diventa un sostenitore una tantum del nostro ente di beneficenza.",
     "duration-2": "Diventa un sostenitore mensile del nostro ente di beneficenza.",
-    "duration-3": "Diventa un sostenitore annuale del nostro ente di beneficenza",
     "duration-4": "Diventa un sostenitore del nostro ente di beneficenza",
     "nicely-done": "Ben fatto. Hai appena completato {{block}}.",
     "credit-card": "Carta di credito",
@@ -464,7 +468,8 @@
     "iframe-preview": "Anteprima {{title}}",
     "iframe-alert": "Solitamente questo link ti porterebbe su un altro sito web! Funziona. Questo è un link per {{externalLink}}",
     "iframe-form-submit-alert": "Normalmente questo modulo sarebbe stato inviato! Funziona. Sarà inviato a: {{externalLink}}",
-    "document-notfound": "documento non trovato"
+    "document-notfound": "documento non trovato",
+    "slow-load-msg": "Sembra che sia necessario più tempo del solito, per favore prova ad aggiornare la pagina."
   },
   "icons": {
     "gold-cup": "Coppa d'Oro",
@@ -479,10 +484,11 @@
     "hint": "Suggerimento",
     "heart": "Cuore",
     "initial": "Iniziale",
+    "input-reset": "Cancella termini di ricerca",
     "info": "Informazioni introduttive",
     "spacer": "Distanziatore",
     "toggle": "Attiva/Disattiva segno di spunta",
-    "magnifier": "lente d'ingrandimento"
+    "magnifier": "Invia i termini di ricerca"
   },
   "aria": {
     "fcc-curriculum": "Curriculum di freeCodeCamp",
@@ -508,7 +514,8 @@
     "step": "Step",
     "steps": "Step",
     "steps-for": "Step per {{blockTitle}}",
-    "code-example": "{{codeName}} esempio di codice"
+    "code-example": "{{codeName}} esempio di codice",
+    "opens-new-window": "Apri in una nuova finestra"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
@@ -672,8 +679,49 @@
         "Cat and Dog Image Classifier": "Classificatore di immagini di gatti e cani",
         "Book Recommendation Engine using KNN": "Motore per la raccomandazione di libri che usa KNN",
         "Linear Regression Health Costs Calculator": "Calcolatore di costi per la salute con la Regressione Lineare",
-        "Neural Network SMS Text Classifier": "Classificatore neurale di messaggi SMS"
+        "Neural Network SMS Text Classifier": "Classificatore neurale di messaggi SMS",
+        "Celestial Bodies Database": "Database Corpi Celesti",
+        "World Cup Database": "Database Coppa Del Mondo",
+        "Salon Appointment Scheduler": "Pianificatore Appuntamento Salone",
+        "Periodic Table Database": "Database della Tavola Periodica",
+        "Number Guessing Game": "Gioco di indovinare il numero",
+        "Build a freeCodeCamp Forum Homepage": "Costruisci l'Homepage del Forum di freeCodeCamp"
       }
+    },
+    "title": {
+      "Responsive Web Design": "Web Design Responsivo",
+      "responsive-web-design": "Certificazione Web Design Responsivo",
+      "JavaScript Algorithms and Data Structures": "Algoritmi e Strutture Dati in JavaScript",
+      "javascript-algorithms-and-data-structures": "Certificazione Algoritmi e Strutture Dati in JavaScript",
+      "Front End Development Libraries": "Librerie di Sviluppo Front End",
+      "front-end-development-libraries": "Certificazione Librerie di Sviluppo Front End",
+      "Data Visualization": "Visualizzazione Dati",
+      "data-visualization": "Certificazione Visualizzazione Dati",
+      "Relational Database": "Database Relazionale",
+      "relational-database-v8": "Certificazione Database Relazionale",
+      "Back End Development and APIs": "Sviluppo Back End e API",
+      "back-end-development-and-apis": "Certificazione di Sviluppo Back End e API",
+      "Quality Assurance": "Garanzia di Qualità",
+      "quality-assurance-v7": "Certificazione Garanzia di Qualità",
+      "Scientific Computing with Python": "Calcolo Scientifico con Python",
+      "scientific-computing-with-python-v7": "Certificazione Calcolo Scientifico con Python",
+      "Data Analysis with Python": "Analisi dei Dati con Python",
+      "data-analysis-with-python-v7": "Certificazione Analisi dei Dati con Python",
+      "Information Security": "Sicurezza dell'Informazione",
+      "information-security-v7": "Certificazione Sicurezza dell'Informazione",
+      "Machine Learning with Python": "Machine Learning con Python",
+      "machine-learning-with-python-v7": "Certificazione Machine Learning con Python",
+      "Legacy Front End": "Front End Legacy",
+      "legacy-front-end": "Certificazione Front End",
+      "Legacy Back End": "Back End Legacy",
+      "legacy-back-end": "Certificazione Back End",
+      "Legacy Data Visualization": "Visualizzazione Dati Legacy",
+      "legacy-data-visualization": "Certificazione Visualizzazione Dati",
+      "Legacy Information Security and Quality Assurance": "Sicurezza delle Informazioni e Garanzia di Qualità Legacy",
+      "information-security-and-quality-assurance": "Certificazione di Sicurezza delle Informazioni e Garanzia di Qualità",
+      "Legacy Full Stack Certification": "Certificazione Full Stack Legacy",
+      "Legacy Full Stack": "Full Stack Legacy",
+      "full-stack": "Certificazione Full Stack"
     }
   },
   "certification-card": {

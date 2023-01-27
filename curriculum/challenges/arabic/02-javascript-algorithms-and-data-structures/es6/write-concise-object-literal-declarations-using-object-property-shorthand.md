@@ -1,6 +1,6 @@
 ---
 id: 587d7b8a367417b2b2512b4f
-title: Write Concise Object Literal Declarations Using Object Property Shorthand
+title: أكتب إعلانات واضح للكائن (Object) باستعمال خاصية تختصر الكائن
 challengeType: 1
 forumTopicId: 301225
 dashedName: write-concise-object-literal-declarations-using-object-property-shorthand
@@ -8,7 +8,7 @@ dashedName: write-concise-object-literal-declarations-using-object-property-shor
 
 # --description--
 
-يضيف ES6 بعض الدعم اللطيف لتعريف الـ objects بسهولة.
+يضيف ES6 بعض الدعم اللطيف لتعريف الكائنات بسهولة.
 
 ضع في اعتبارك الكود التالي:
 
@@ -27,7 +27,7 @@ const getMousePosition = (x, y) => ({ x, y });
 
 # --instructions--
 
-قم باستخدام خاصية الـ object القصير مع object literals لإنشاء وإرجاع object بخصائص `name` و `age` و `gender`.
+استخدم خاصية الكائن المختصرة مع حروف الكائن لإنشاء كائن بخصائص `name`, و `age`, و `gender`.
 
 # --hints--
 

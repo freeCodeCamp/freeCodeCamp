@@ -69,7 +69,7 @@ declare namespace Cypress {
     preserveSession: typeof preserveSession;
     setPrivacyTogglesToPublic: typeof setPrivacyTogglesToPublic;
     goToSettings: typeof goToSettings;
-    typeUsername: typeof typeUsername;
+    typeUsername(username: string): Chainable<JQuery<HTMLElement>>;
     resetUsername: typeof resetUsername;
   }
 }

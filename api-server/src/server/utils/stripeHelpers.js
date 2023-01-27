@@ -9,7 +9,7 @@ export function validStripeForm(amount, duration, email) {
   return isEmail('' + email) &&
     isNumeric('' + amount) &&
     durationKeysConfig.includes(duration) &&
-    duration === 'onetime'
+    duration === 'one-time'
     ? donationOneTimeConfig.includes(amount)
     : donationSubscriptionConfig.plans[duration];
 }

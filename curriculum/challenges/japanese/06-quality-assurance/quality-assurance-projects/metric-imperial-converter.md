@@ -14,52 +14,52 @@ dashedName: metric-imperial-converter
 - <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-If you use Replit, follow these steps to set up the project:
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
-- Complete the necessary conversion logic in `/controllers/convertHandler.js`
-- Complete the necessary routes in `/routes/api.js`
-- Copy the `sample.env` file to `.env` and set the variables appropriately
-- To run the tests uncomment `NODE_ENV=test` in your `.env` file
-- To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+- `/controllers/convertHandler.js` で、必要な変換ロジックを完成させてください。
+- `/routes/api.js` で、必要なルートを完成させてください。
+- `sample.env` ファイルを `.env` ファイルにコピーし、変数を適切に設定してください。
+- テストを実行するには、`.env` ファイルの `NODE_ENV=test` をコメント解除してください。
+- コンソールでテストを実行するには、コマンド `npm run test` を使用してください。 Replit コンソールを開くには、Ctrl+Shift+P (Macの場合はCmd) を押して「open shell」と入力してください。
 
-Write the following tests in `tests/1_unit-tests.js`:
+`tests/1_unit-tests.js` に以下のテストを記述してください。
 
-- `convertHandler` should correctly read a whole number input.
-- `convertHandler` should correctly read a decimal number input.
-- `convertHandler` should correctly read a fractional input.
-- `convertHandler` should correctly read a fractional input with a decimal.
-- `convertHandler` should correctly return an error on a double-fraction (i.e. `3/2/3`).
-- `convertHandler` should correctly default to a numerical input of `1` when no numerical input is provided.
-- `convertHandler` should correctly read each valid input unit.
-- `convertHandler` should correctly return an error for an invalid input unit.
-- `convertHandler` should return the correct return unit for each valid input unit.
-- `convertHandler` should correctly return the spelled-out string unit for each valid input unit.
-- `convertHandler` should correctly convert `gal` to `L`.
-- `convertHandler` should correctly convert `L` to `gal`.
-- `convertHandler` should correctly convert `mi` to `km`.
-- `convertHandler` should correctly convert `km` to `mi`.
-- `convertHandler` should correctly convert `lbs` to `kg`.
-- `convertHandler` should correctly convert `kg` to `lbs`.
+- `convertHandler` は、整数の入力を正しく読み取る必要があります。
+- `convertHandler` は、小数の入力を正しく読み取る必要があります。
+- `convertHandler` は、分数の入力を正しく読み取る必要があります。
+- `convertHandler` は、小数を使用した分数の入力を正しく読み取る必要があります。
+- `convertHandler` は、二重分数 (`3/2/3` など) の場合にエラーを正しく返す必要があります。
+- 数値が入力されていない場合、`convertHandler` は、デフォルトで数値 `1` を正しく入力する必要があります。
+- `convertHandler` は、それぞれの有効な入力単位を正しく読み取る必要があります。
+- `convertHandler` は、無効な入力単位の場合にエラーを正しく返す必要があります。
+- `convertHandler` は、有効な入力単位ごとに正しい戻り値の単位を返す必要があります。
+- `convertHandler` は、有効な入力単位ごとに説明の文字列を正しく返す必要があります。
+- `convertHandler` は、`gal` を `L` に正しく変換する必要があります。
+- `convertHandler` は、`L` を `gal` に正しく変換する必要があります。
+- `convertHandler` は、`mi` を `km` に正しく変換する必要があります。
+- `convertHandler` は、`km` を `mi` に正しく変換する必要があります。
+- `convertHandler` は、`lbs` を `kg` に正しく変換する必要があります。
+- `convertHandler` は、`kg` を `lbs` に正しく変換する必要があります。
 
-Write the following tests in `tests/2_functional-tests.js`:
+次のテストを `tests/2_functional-tests.js` に記述してください。
 
-- Convert a valid input such as `10L`: `GET` request to `/api/convert`.
-- Convert an invalid input such as `32g`: `GET` request to `/api/convert`.
-- Convert an invalid number such as `3/7.2/4kg`: `GET` request to `/api/convert`.
-- Convert an invalid number AND unit such as `3/7.2/4kilomegagram`: `GET` request to `/api/convert`.
-- Convert with no number such as `kg`: `GET` request to `/api/convert`.
+- `10L` など、有効な入力を変換する: `/api/convert` への `GET` リクエスト
+- `32g` など、無効な入力を変換する: `/api/convert` への`GET` リクエスト
+- `3/7.2/4kg` など、無効な数値を変換する: `/api/convert` への `GET` リクエスト
+- `3/7.2/4kilomegagram` など、数値も単位も無効な入力を変換する: `/api/convert` への `GET` リクエスト
+- `kg` など、数値のない入力を変換する: `/api/convert` への `GET` リクエスト
 
 # --hints--
 
-You can provide your own project, not the example URL.
+サンプルの URL ではなく、自分で作成したプロジェクトを提出してください。
 
 ```js
 getUserInput => {
@@ -71,13 +71,13 @@ getUserInput => {
 };
 ```
 
-You can `GET` `/api/convert` with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)
+受け取った数値と単位を含む 1 つのパラメーターを設定して `/api/convert` への `GET` を実行し、変換を実行することができます。 (ヒント: 単位の始まりを示す最初の文字のインデックスを探して、入力を分割してください)
 
 ```js
 
 ```
 
-You can convert `'gal'` to `'L'` and vice versa. (1 gal to 3.78541 L)
+`'gal'` を `'L'` に変換できます。その逆も可能です。 (1 gal は 3.78541 L)
 
 ```js
 async getUserInput => {
@@ -100,7 +100,7 @@ async getUserInput => {
 };
 ```
 
-You can convert `'lbs'` to `'kg'` and vice versa. (1 lbs to 0.453592 kg)
+`'lbs'` を `'kg'` に変換できます。その逆も可能です。 (1 lbs は 0.453592 kg)
 
 ```js
 async getUserInput => {
@@ -123,7 +123,7 @@ async getUserInput => {
 };
 ```
 
-You can convert `'mi'` to `'km'` and vice versa. (1 mi to 1.60934 km)
+`'mi'` を `'km'` に変換できます。その逆も可能です。 (1 mi は 1.60934 km)
 
 ```js
 async getUserInput => {
@@ -146,7 +146,7 @@ async getUserInput => {
 };
 ```
 
-All incoming units should be accepted in both upper and lower case, but should be returned in both the `initUnit` and `returnUnit` in lower case, except for liter, which should be represented as an uppercase `'L'`.
+すべての入力単位は大文字と小文字の両方で受け付けられるようにする必要がありますが、`initUnit` と `returnUnit` はどちらも小文字で返す必要があります。ただし、リットルのみは例外で、大文字の `'L'` で表示する必要があります。
 
 ```js
 async getUserInput => {
@@ -169,7 +169,7 @@ async getUserInput => {
 };
 ```
 
-If the unit of measurement is invalid, returned will be `'invalid unit'`.
+測定単位が無効の場合は、`'invalid unit'` を返します。
 
 ```js
 async getUserInput => {
@@ -182,7 +182,7 @@ async getUserInput => {
 };
 ```
 
-If the number is invalid, returned will be `'invalid number'`.
+数値が無効の場合は、`'invalid number'` を返します。
 
 ```js
 async getUserInput => {
@@ -197,7 +197,7 @@ async getUserInput => {
 };
 ```
 
-If both the unit and number are invalid, returned will be `'invalid number and unit'`.
+単位と数値の両方が無効な場合は、`'invalid number and unit'` を返します。
 
 ```js
 async getUserInput => {
@@ -215,7 +215,7 @@ async getUserInput => {
 };
 ```
 
-You can use fractions, decimals or both in the parameter (ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
+パラメーターでは分数、小数または両方を使用できますが (5、1/2、2.5/6 など)、何も指定されていない場合はデフォルトで 1 になります。
 
 ```js
 async getUserInput => {
@@ -246,7 +246,7 @@ async getUserInput => {
 };
 ```
 
-Your return will consist of the `initNum`, `initUnit`, `returnNum`, `returnUnit`, and `string` spelling out units in the format `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'` with the result rounded to 5 decimals.
+戻り値は、`initNum`、`initUnit`、`returnNum`、`returnUnit`、およびそれぞれの単位を `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'` という形式 (結果は小数点 5 桁に丸める) で説明した `string` で構成されます。
 
 ```js
 async getUserInput => {
@@ -263,7 +263,7 @@ async getUserInput => {
 };
 ```
 
-All 16 unit tests are complete and passing.
+16 件のユニットテストがすべて記述され、成功する状態になっています。
 
 ```js
 async getUserInput => {
@@ -288,7 +288,7 @@ async getUserInput => {
 };
 ```
 
-All 5 functional tests are complete and passing.
+5 件の機能テストがすべて記述され、成功する状態になっています。
 
 ```js
 async getUserInput => {

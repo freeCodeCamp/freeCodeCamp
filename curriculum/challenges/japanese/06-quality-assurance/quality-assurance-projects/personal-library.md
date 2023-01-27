@@ -14,13 +14,13 @@ dashedName: personal-library
 -   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-If you use Replit, follow these steps to set up the project:
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
@@ -31,7 +31,7 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 # --hints--
 
-You can provide your own project, not the example URL.
+サンプルの URL ではなく、自分で作成したプロジェクトを提出してください。
 
 ```js
 (getUserInput) => {
@@ -41,7 +41,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-You can send a <b>POST</b> request to `/api/books` with `title` as part of the form data to add a book.  The returned response will be an object with the `title` and a unique `_id` as keys.  If `title` is not included in the request, the returned response should be the string `missing required field title`.
+フォームデータの一部として `title` を指定して `/api/books` へ <b>POST</b> リクエストを送信し、本を追加することができます。  返されるレスポンスは、`title` と一意の `_id` をキーとして持つオブジェクトになります。  `title` がリクエストに含まれていない場合、返されるレスポンスは文字列 `missing required field title` である必要があります。
 
 ```js
 async (getUserInput) => {
@@ -62,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>GET</b> request to `/api/books` and receive a JSON response representing all the books. The JSON response will be an array of objects with each object (book) containing `title`, `_id`, and `commentcount` properties.
+<b>GET</b> リクエストを `/api/books` へ送信し、すべての本を表す JSON レスポンスを受け取ることができます。 JSON レスポンスはオブジェクトの配列であり、それぞれのオブジェクト (book) に `title`、`_id` および `commentcount` プロパティが含まれます。
 
 ```js
 async (getUserInput) => {
@@ -90,7 +90,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>GET</b> request to `/api/books/{_id}` to retrieve a single object of a book containing the properties `title`, `_id`, and a `comments` array (empty array if no comments present). If no book is found, return the string `no book exists`.
+<b>GET</b> リクエストを `/api/books/{_id}` へ送信して、プロパティ `title`、`_id` および `comments` 配列 (コメントがない場合は、空の配列) を含む book のオブジェクトを 1 つ取得できます。 本が見つからない場合は、文字列 `no book exists` を返してください。
 
 ```js
 async (getUserInput) => {
@@ -114,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. If `comment` is not included in the request, return the string `missing required field comment`. If no book is found, return the string `no book exists`.
+`comment` をフォームデータ (ボディデータ) として含む <b>POST</b> リクエストを `/api/books/{_id}` へ送信し、本にコメントを追加することができます。 返されるレスポンスは、前述のテストの <b>GET</b> `/api/books/{_id}` リクエストと同様の book オブジェクトになります。 `comment` がリクエストに含まれていない場合は、文字列 `missing required field comment` を返してください。 本が見つからない場合、文字列 `no book exists` を返してください。
 
 ```js
 async (getUserInput) => {
@@ -152,7 +152,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>DELETE</b> request to `/api/books/{_id}` to delete a book from the collection. The returned response will be the string `delete successful` if successful. If no book is found, return the string `no book exists`.
+<b>DELETE</b> リクエストを `/api/books/{_id}` へ送信して、コレクションから本を削除できます。 成功した場合、文字列 `delete successful` のレスポンスを返します。 本が見つからない場合は、文字列 `no book exists` を返してください。
 
 ```js
 async (getUserInput) => {
@@ -176,7 +176,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>DELETE</b> request to `/api/books` to delete all books in the database. The returned response will be the string `complete delete successful` if successful.
+<b>DELETE</b> リクエストを `/api/books` へ送信して、データベース内のすべての本を削除することができます。 成功した場合、文字列 `complete delete successful` のレスポンスを返します。
 
 ```js
 async (getUserInput) => {
@@ -193,7 +193,7 @@ async (getUserInput) => {
 };
 ```
 
-All 10 functional tests required are complete and passing.
+10 件の機能テストがすべて記述され、成功する状態になっています。
 
 ```js
 async (getUserInput) => {

@@ -164,6 +164,7 @@ config/client/test-evaluator.json
 config/curriculum.json
 config/i18n.js
 config/certification-settings.js
+config/donation-settings.js
 config/superblock-order.js
 config/superblock-order.test.js
 
@@ -173,6 +174,10 @@ utils/block-nameify.test.js
 utils/slugs.js
 utils/slugs.test.js
 utils/index.js
+utils/get-lines.js
+utils/get-lines.test.js
+utils/validate.js
+utils/validate.test.js
 
 ### vim ###
 # Swap
@@ -212,6 +217,7 @@ client/static/_redirects
 client/static/mobile
 client/static/curriculum-data
 client/i18n/locales/**/trending.json
+client/src/components/Donation/types.js
 
 ### UI Components ###
 tools/ui-components/dist

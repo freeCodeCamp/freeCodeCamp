@@ -1,6 +1,6 @@
 ---
 id: 587d7b8b367417b2b2512b50
-title: Write Concise Declarative Functions with ES6
+title: أكتب وظائف تعلين (Declarative Functions) واضحة في ES6
 challengeType: 1
 forumTopicId: 301224
 dashedName: write-concise-declarative-functions-with-es6
@@ -42,7 +42,7 @@ const person = {
 (getUserInput) => assert(!code.match(/function/));
 ```
 
-`setGear` يجب أن تكون declarative function.
+يجب أن تكون `setGear` وظيفة معلنا (declarative function).
 
 ```js
 assert(

@@ -12,3 +12,8 @@
   height: 100%;
   width: 100%;
 }
+
+#mobile-layout-pane-instructions > .instructions-panel {
+  height: auto;
+  overflow-y: none;
+}

@@ -58,7 +58,7 @@ assert('totalUsers' in userActivity.data && 'online' in userActivity.data);
 assert(userActivity.data.online === 45);
 ```
 
-يجب تعيين خاصية `online` باستخدام dot او bracket notation.
+يجب تعيين خاصية `online` باستخدام dot او علامات الأقواس.
 
 ```js
 assert.strictEqual(code.search(/online: 45/), -1);

@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c452eddfaeb5bdef
-title: Використовуйте Дужкову Нотацію для Пошуку Символу N-го до Останнього в Рядку
+title: Дужкова нотація для пошуку n-го символа з кінця рядка
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cw4vkh9'
 forumTopicId: 18344
@@ -9,34 +9,34 @@ dashedName: use-bracket-notation-to-find-the-nth-to-last-character-in-a-string
 
 # --description--
 
-Ви можете використовувати той самий принцип, який ми використовували для отримання останнього символу в рядку, щоб отримати символ N-го до останнього.
+Ви можете використати той самий принцип, який ми щойно використовували для отримання останнього символу в рядку, щоб отримати n-ий символ з кінця.
 
-Наприклад, ви можете отримати значення третьої до останньої літери рядка `const firstName = "Augusta"`, використовуючи `firstName[firstName.length - 3]`
+Наприклад, ви можете отримати значення третьої з кінця літери рядка `const firstName = "Augusta"`, використавши `firstName[firstName.length - 3]`
 
-Наприклад:
+Приклад:
 
 ```js
 const firstName = "Augusta";
 const thirdToLastLetter = firstName[firstName.length - 3];
 ```
 
-`thirdToLastLetter` повинен мати значення рядка `s`.
+`thirdToLastLetter` матиме значення рядка `s`.
 
 # --instructions--
 
-Використовуйте <dfn>дужкову нотацію</dfn> для пошуку передостаннього символу в `lastName` в рядку.
+Використайте <dfn>дужкову нотацію</dfn>, щоб знайти другий з кінця символ у рядку `lastName`.
 
-**Підказка:**Спробуйте подивитися на приклад вище, якщо застрягли.
+**Підказка:** якщо застрягли, перегляньте вищеподаний приклад.
 
 # --hints--
 
-`secondToLastLetterOfLastName` повинно бути літерою `c`.
+`secondToLastLetterOfLastName` повинна бути літера `c`.
 
 ```js
 assert(secondToLastLetterOfLastName === 'c');
 ```
 
-Вам слід використовувати `.length`, щоб отримати передостанню літеру.
+Ви повинні використати `.length`, щоб отримати передостанню літеру.
 
 ```js
 assert(code.match(/\.length/g).length > 0);

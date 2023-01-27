@@ -11,6 +11,7 @@
     "view": "Перегляд",
     "view-code": "Переглянути код",
     "view-project": "Переглянути проєкт",
+    "view-cert-title": "Переглянути {{certTitle}}",
     "show-cert": "Показати сертифікацію",
     "claim-cert": "Отримати сертифікацію",
     "save-progress": "Зберегти прогрес",
@@ -52,7 +53,7 @@
     "check-code": "Перевірити код (Ctrl + Enter)",
     "check-code-2": "Перевірити код",
     "reset": "Скинути",
-    "reset-code": "Скинути весь код",
+    "reset-step": "Скинути цей крок",
     "help": "Допомога",
     "get-help": "Отримати допомогу",
     "watch-video": "Подивитися відео",
@@ -157,7 +158,8 @@
       "honesty": "Політика академічної доброчесності",
       "internet": "Ваші соціальні мережі",
       "portfolio": "Налаштування портфоліо",
-      "privacy": "Налаштування конфіденційності"
+      "privacy": "Налаштування конфіденційності",
+      "personal-info": "Особиста інформація"
     },
     "danger": {
       "heading": "Небезпечна зона",
@@ -272,6 +274,9 @@
     "add-subtitles": "Допомогти покращити або додати субтитри",
     "wrong-answer": "Нам шкода, але це неправильна відповідь. Спробуєте ще раз?",
     "check-answer": "Натисніть кнопку нижче, щоб перевірити свою відповідь.",
+    "assignment-not-complete": "Будь ласка, завершіть завдання",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "Посилання на рішення",
     "github-link": "Посилання на GitHub",
     "submit-and-go": "Відправити та перейти до мого наступного завдання",
@@ -361,7 +366,6 @@
     "become-supporter": "Зробити внесок",
     "duration": "Станьте одноразовим спонсором нашої некомерційної організації.",
     "duration-2": "Станьте спонсором нашої некомерційної організації (щомісячний внесок).",
-    "duration-3": "Станьте спонсором нашої некомерційної організації (щорічний внесок)",
     "duration-4": "Станьте спонсором нашої некомерційної організації",
     "nicely-done": "Чудово. Ви щойно завершили {{block}}.",
     "credit-card": "Кредитна картка",
@@ -464,7 +468,8 @@
     "iframe-preview": "Передперегляд {{title}}",
     "iframe-alert": "Зазвичай це посилання перенесло б вас на інший вебсайт! Воно працює. Це посилання на: {{externalLink}}",
     "iframe-form-submit-alert": "Зазвичай ця форма буде відправлена! Вона буде відправлена на: {{externalLink}}",
-    "document-notfound": "документ не знайдено"
+    "document-notfound": "документ не знайдено",
+    "slow-load-msg": "Схоже, це займає більше часу, ніж зазвичай. Будь ласка, спробуйте оновити сторінку."
   },
   "icons": {
     "gold-cup": "Золотий кубок",
@@ -479,10 +484,11 @@
     "hint": "Підказка",
     "heart": "Серце",
     "initial": "Початковий",
+    "input-reset": "Очистити пошукові запити",
     "info": "Інформація",
     "spacer": "Роздільник",
     "toggle": "Перемкнути галочку",
-    "magnifier": "лупа"
+    "magnifier": "Надіслати пошукові запити"
   },
   "aria": {
     "fcc-curriculum": "Навчальний план freeCodeCamp",
@@ -508,7 +514,8 @@
     "step": "Крок",
     "steps": "Кроки",
     "steps-for": "Кроки для {{blockTitle}}",
-    "code-example": "Приклад коду {{codeName}}"
+    "code-example": "Приклад коду {{codeName}}",
+    "opens-new-window": "Відкривається у новому вікні"
   },
   "flash": {
     "honest-first": "Щоб отримати сертифікацію, ви повинні спочатку прийняти нашу політику академічної доброчесності",
@@ -672,8 +679,49 @@
         "Cat and Dog Image Classifier": "Класифікатор зображень котів і собак",
         "Book Recommendation Engine using KNN": "Інструмент рекомендацій книг із використанням KNN",
         "Linear Regression Health Costs Calculator": "Калькулятор лінійної регресії витрат на охорону здоров'я",
-        "Neural Network SMS Text Classifier": "Нейронна мережа для класифікації текстових SMS"
+        "Neural Network SMS Text Classifier": "Нейронна мережа для класифікації текстових SMS",
+        "Celestial Bodies Database": "База даних «Небесні тіла»",
+        "World Cup Database": "База даних «Чемпіонат світу»",
+        "Salon Appointment Scheduler": "Планувальник «Записи в салоні»",
+        "Periodic Table Database": "База даних «Періодична таблиця»",
+        "Number Guessing Game": "Гра «Вгадай число»",
+        "Build a freeCodeCamp Forum Homepage": "Створіть головну сторінку для форуму freeCodeCamp"
       }
+    },
+    "title": {
+      "Responsive Web Design": "Адаптивний вебдизайн",
+      "responsive-web-design": "Сертифікація «Адаптивний вебдизайн»",
+      "JavaScript Algorithms and Data Structures": "Алгоритми JavaScript та структури даних",
+      "javascript-algorithms-and-data-structures": "Сертифікація «Алгоритми JavaScript та структури даних»",
+      "Front End Development Libraries": "Бібліотеки Front End",
+      "front-end-development-libraries": "Сертифікація «Бібліотеки Front End»",
+      "Data Visualization": "Візуалізація даних",
+      "data-visualization": "Сертифікація «Візуалізація даних»",
+      "Relational Database": "Реляційна база даних",
+      "relational-database-v8": "Сертифікація «Реляційна база даних»",
+      "Back End Development and APIs": "Розробка Back End та API",
+      "back-end-development-and-apis": "Сертифікація «Розробка Back End та API»",
+      "Quality Assurance": "Забезпечення якості",
+      "quality-assurance-v7": "Сертифікація «Забезпечення якості»",
+      "Scientific Computing with Python": "Наукові обчислення з Python",
+      "scientific-computing-with-python-v7": "Сертифікація «Наукові обчислення з Python»",
+      "Data Analysis with Python": "Аналіз даних з Python",
+      "data-analysis-with-python-v7": "Сертифікація «Аналіз даних з Python»",
+      "Information Security": "Інформаційна безпека",
+      "information-security-v7": "Сертифікація «Інформаційна безпека»",
+      "Machine Learning with Python": "Машинне навчання з Python",
+      "machine-learning-with-python-v7": "Сертифікація «Машинне навчання з Python»",
+      "Legacy Front End": "Застарілий Front End",
+      "legacy-front-end": "Сертифікація «Front End»",
+      "Legacy Back End": "Застарілий Back End",
+      "legacy-back-end": "Сертифікація «Back End»",
+      "Legacy Data Visualization": "Застаріла візуалізація даних",
+      "legacy-data-visualization": "Сертифікація «Візуалізація даних»",
+      "Legacy Information Security and Quality Assurance": "Застаріла інформаційна безпека та забезпечення якості",
+      "information-security-and-quality-assurance": "Сертифікація «Інформаційна безпека та забезпечення якості»",
+      "Legacy Full Stack Certification": "Застаріла сертифікація «Full Stack»",
+      "Legacy Full Stack": "Застарілий Full Stack",
+      "full-stack": "Сертифікація «Full Stack»"
     }
   },
   "certification-card": {

@@ -11,6 +11,7 @@
     "view": "查看",
     "view-code": "查看代码",
     "view-project": "查看项目",
+    "view-cert-title": "View {{certTitle}}",
     "show-cert": "显示认证",
     "claim-cert": "申请认证",
     "save-progress": "保存进度",
@@ -52,7 +53,7 @@
     "check-code": "检查您的代码 (Ctrl + Enter)",
     "check-code-2": "检查你的代码",
     "reset": "重置",
-    "reset-code": "重置所有代码",
+    "reset-step": "Reset This Step",
     "help": "帮助",
     "get-help": "获得帮助",
     "watch-video": "观看视频",
@@ -157,7 +158,8 @@
       "honesty": "学术诚信条例",
       "internet": "你在各平台的账号",
       "portfolio": "作品集设置",
-      "privacy": "隐私设置"
+      "privacy": "隐私设置",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "危险区域",
@@ -272,6 +274,9 @@
     "add-subtitles": "帮助我们完善或添加字幕",
     "wrong-answer": "抱歉，这个答案不正确。再试一次？",
     "check-answer": "点击下方按钮，查看你的答案。",
+    "assignment-not-complete": "Please finish the assignments",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "解决方案链接",
     "github-link": "GitHub 链接",
     "submit-and-go": "提交并访问下一个挑战",
@@ -339,7 +344,7 @@
     "title": "支持我们的慈善组织",
     "processing": "我们正在处理你的捐款。",
     "redirecting": "重新引导中...",
-    "thanks": "谢谢捐款",
+    "thanks": "Thanks for donating",
     "thank-you": "谢谢你成为我们的支持者。",
     "additional": "你可以使用这个链接 <0>{{url}}</0> 额外进行一次性捐款：",
     "help-more": "帮助我们做更多",
@@ -361,7 +366,6 @@
     "become-supporter": "成为支持者",
     "duration": "成为我们的慈善组织的一次性支持者",
     "duration-2": "成为我们的慈善组织的每月定期支持者",
-    "duration-3": "成为我们的慈善组织的每年定期支持者",
     "duration-4": "成为我们的慈善组织的支持者",
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",
@@ -464,7 +468,8 @@
     "iframe-preview": "{{title}} 预览",
     "iframe-alert": "通常，此链接会将你带到另一个网站！一切正常，这个链接指向：{{externalLink}}。",
     "iframe-form-submit-alert": "通常这个表单将被提交！工作正常，这将被提交到：{{externalLink}}",
-    "document-notfound": "找不到文件"
+    "document-notfound": "找不到文件",
+    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
   },
   "icons": {
     "gold-cup": "金奖杯",
@@ -479,10 +484,11 @@
     "hint": "提示",
     "heart": "爱心",
     "initial": "初始",
+    "input-reset": "Clear search terms",
     "info": "介绍信息",
     "spacer": "间隔",
     "toggle": "切换选中标记",
-    "magnifier": "放大镜"
+    "magnifier": "Submit search terms"
   },
   "aria": {
     "fcc-curriculum": "freeCodeCamp 课程",
@@ -508,7 +514,8 @@
     "step": "步骤",
     "steps": "步骤",
     "steps-for": "{{blockTitle}} 的步骤",
-    "code-example": "{{codeName}} 代码示例"
+    "code-example": "{{codeName}} 代码示例",
+    "opens-new-window": "Opens in new window"
   },
   "flash": {
     "honest-first": "申请认证之前，你必须先接受我们的《学术诚信条例》",
@@ -672,8 +679,49 @@
         "Cat and Dog Image Classifier": "猫和狗图像分类器",
         "Book Recommendation Engine using KNN": "基于 KNN 的图书推荐引擎",
         "Linear Regression Health Costs Calculator": "线性回归健康成本计算器",
-        "Neural Network SMS Text Classifier": "神经网络短信分类器"
+        "Neural Network SMS Text Classifier": "神经网络短信分类器",
+        "Celestial Bodies Database": "Celestial Bodies Database",
+        "World Cup Database": "World Cup Database",
+        "Salon Appointment Scheduler": "Salon Appointment Scheduler",
+        "Periodic Table Database": "Periodic Table Database",
+        "Number Guessing Game": "Number Guessing Game",
+        "Build a freeCodeCamp Forum Homepage": "Build a freeCodeCamp Forum Homepage"
       }
+    },
+    "title": {
+      "Responsive Web Design": "Responsive Web Design",
+      "responsive-web-design": "Responsive Web Design Certification",
+      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
+      "Front End Development Libraries": "Front End Development Libraries",
+      "front-end-development-libraries": "Front End Development Libraries Certification",
+      "Data Visualization": "Data Visualization",
+      "data-visualization": "Data Visualization Certification",
+      "Relational Database": "Relational Database",
+      "relational-database-v8": "Relational Database Certification",
+      "Back End Development and APIs": "Back End Development and APIs",
+      "back-end-development-and-apis": "Back End Development and APIs Certification",
+      "Quality Assurance": "Quality Assurance",
+      "quality-assurance-v7": "Quality Assurance Certification",
+      "Scientific Computing with Python": "Scientific Computing with Python",
+      "scientific-computing-with-python-v7": "Scientific Computing with Python Certification",
+      "Data Analysis with Python": "Data Analysis with Python",
+      "data-analysis-with-python-v7": "Data Analysis with Python Certification",
+      "Information Security": "Information Security",
+      "information-security-v7": "Information Security Certification",
+      "Machine Learning with Python": "Machine Learning with Python",
+      "machine-learning-with-python-v7": "Machine Learning with Python Certification",
+      "Legacy Front End": "Legacy Front End",
+      "legacy-front-end": "Front End Certification",
+      "Legacy Back End": "Legacy Back End",
+      "legacy-back-end": "Back End Certification",
+      "Legacy Data Visualization": "Legacy Data Visualization",
+      "legacy-data-visualization": "Data Visualization Certification",
+      "Legacy Information Security and Quality Assurance": "Legacy Information Security and Quality Assurance",
+      "information-security-and-quality-assurance": "Information Security and Quality Assurance Certification",
+      "Legacy Full Stack Certification": "Legacy Full Stack Certification",
+      "Legacy Full Stack": "Legacy Full Stack",
+      "full-stack": "Full Stack Certification"
     }
   },
   "certification-card": {

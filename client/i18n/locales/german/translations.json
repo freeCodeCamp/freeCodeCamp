@@ -11,6 +11,7 @@
     "view": "Anzeigen",
     "view-code": "Code anschauen",
     "view-project": "Projekt anschauen",
+    "view-cert-title": "View {{certTitle}}",
     "show-cert": "Zertifikat anzeigen",
     "claim-cert": "Zertifizierung anfordern",
     "save-progress": "Fortschritt speichern",
@@ -52,7 +53,7 @@
     "check-code": "Überprüfe deinen Code (Strg + Enter)",
     "check-code-2": "Prüfe deinen Code",
     "reset": "Zurücksetzen",
-    "reset-code": "Den Quellcode zurücksetzen",
+    "reset-step": "Reset This Step",
     "help": "Hilfe",
     "get-help": "Hilfe bekommen",
     "watch-video": "Ein Video ansehen",
@@ -157,7 +158,8 @@
       "honesty": "Akademischer Ehrlichkeitskodex",
       "internet": "Dein Internetauftritt",
       "portfolio": "Portfolio-Einstellungen",
-      "privacy": "Privatsphäre-Einstellungen"
+      "privacy": "Privatsphäre-Einstellungen",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "Gefahrenzone",
@@ -272,6 +274,9 @@
     "add-subtitles": "Hilf mit Untertitel hinzuzufügen oder zu verbessern",
     "wrong-answer": "Sorry, das ist nicht die richtige Antwort. Möchtest du noch einen Anlauf wagen?",
     "check-answer": "Klick unten auf den Button, um deine Antwort zu überprüfen.",
+    "assignment-not-complete": "Please finish the assignments",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "Lösungs-Link",
     "github-link": "GitHub Link",
     "submit-and-go": "Absenden und zur nächsten Herausforderung gehen",
@@ -339,7 +344,7 @@
     "title": "Support our charity",
     "processing": "Wir bearbeiten deine Spende.",
     "redirecting": "Weiterleiten...",
-    "thanks": "Vielen Dank für die Spende",
+    "thanks": "Thanks for donating",
     "thank-you": "Vielen Dank für deine Unterstützung.",
     "additional": "Du kannst eine zusätzliche einmalige Spende in beliebiger Höhe über diesen Link tätigen: <0>{{url}}</0>",
     "help-more": "Hilf uns, mehr zu tun",
@@ -361,7 +366,6 @@
     "become-supporter": "Become a Supporter",
     "duration": "Become a one-time supporter of our charity.",
     "duration-2": "Become a monthly supporter of our charity.",
-    "duration-3": "Become an annual supporter of our charity",
     "duration-4": "Become a supporter of our charity",
     "nicely-done": "Großartig. Du hast soeben {{block}} abgeschlossen.",
     "credit-card": "Kreditkarte",
@@ -464,7 +468,8 @@
     "iframe-preview": "{{title}} Vorschau",
     "iframe-alert": "Normalerweise würde dieser Link dich auf eine andere Website führen! Er funktioniert. Dies ist ein Link zu: {{externalLink}}",
     "iframe-form-submit-alert": "Normalerweise würde dieses Formular übermittelt werden! Es funktioniert. Dies wird übermittelt an: {{externalLink}}",
-    "document-notfound": "Dokument wurde nicht gefunden"
+    "document-notfound": "Dokument wurde nicht gefunden",
+    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
   },
   "icons": {
     "gold-cup": "Goldpokal",
@@ -479,10 +484,11 @@
     "hint": "Hinweis",
     "heart": "Herz",
     "initial": "Initial",
+    "input-reset": "Clear search terms",
     "info": "Einführungsinformationen",
     "spacer": "Abstandhalter",
     "toggle": "Häkchen umschalten",
-    "magnifier": "Lupe"
+    "magnifier": "Submit search terms"
   },
   "aria": {
     "fcc-curriculum": "freeCodeCamp Studienplan",
@@ -508,7 +514,8 @@
     "step": "Schritt",
     "steps": "Schritte",
     "steps-for": "Schritte für {{blockTitle}}",
-    "code-example": "{{codeName}} code example"
+    "code-example": "{{codeName}} code example",
+    "opens-new-window": "Opens in new window"
   },
   "flash": {
     "honest-first": "Um eine Zertifizierung zu erlangen, musst du zunächst unsere Richtlinie zur akademischen Ehrlichkeit akzeptieren",
@@ -672,8 +679,49 @@
         "Cat and Dog Image Classifier": "Katzen- und Hundebildklassifizierer",
         "Book Recommendation Engine using KNN": "Buchempfehlungsmaschine mithilfe von KNN",
         "Linear Regression Health Costs Calculator": "Gesundheitskostenrechner mit einer linearen Regression",
-        "Neural Network SMS Text Classifier": "SMS-Textklassifizierung mittels neuronalem Netzwerk"
+        "Neural Network SMS Text Classifier": "SMS-Textklassifizierung mittels neuronalem Netzwerk",
+        "Celestial Bodies Database": "Celestial Bodies Database",
+        "World Cup Database": "World Cup Database",
+        "Salon Appointment Scheduler": "Salon Appointment Scheduler",
+        "Periodic Table Database": "Periodic Table Database",
+        "Number Guessing Game": "Number Guessing Game",
+        "Build a freeCodeCamp Forum Homepage": "Build a freeCodeCamp Forum Homepage"
       }
+    },
+    "title": {
+      "Responsive Web Design": "Responsive Web Design",
+      "responsive-web-design": "Responsive Web Design Certification",
+      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
+      "Front End Development Libraries": "Front End Development Libraries",
+      "front-end-development-libraries": "Front End Development Libraries Certification",
+      "Data Visualization": "Data Visualization",
+      "data-visualization": "Data Visualization Certification",
+      "Relational Database": "Relational Database",
+      "relational-database-v8": "Relational Database Certification",
+      "Back End Development and APIs": "Back End Development and APIs",
+      "back-end-development-and-apis": "Back End Development and APIs Certification",
+      "Quality Assurance": "Quality Assurance",
+      "quality-assurance-v7": "Quality Assurance Certification",
+      "Scientific Computing with Python": "Scientific Computing with Python",
+      "scientific-computing-with-python-v7": "Scientific Computing with Python Certification",
+      "Data Analysis with Python": "Data Analysis with Python",
+      "data-analysis-with-python-v7": "Data Analysis with Python Certification",
+      "Information Security": "Information Security",
+      "information-security-v7": "Information Security Certification",
+      "Machine Learning with Python": "Machine Learning with Python",
+      "machine-learning-with-python-v7": "Machine Learning with Python Certification",
+      "Legacy Front End": "Legacy Front End",
+      "legacy-front-end": "Front End Certification",
+      "Legacy Back End": "Legacy Back End",
+      "legacy-back-end": "Back End Certification",
+      "Legacy Data Visualization": "Legacy Data Visualization",
+      "legacy-data-visualization": "Data Visualization Certification",
+      "Legacy Information Security and Quality Assurance": "Legacy Information Security and Quality Assurance",
+      "information-security-and-quality-assurance": "Information Security and Quality Assurance Certification",
+      "Legacy Full Stack Certification": "Legacy Full Stack Certification",
+      "Legacy Full Stack": "Legacy Full Stack",
+      "full-stack": "Full Stack Certification"
     }
   },
   "certification-card": {

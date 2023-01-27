@@ -250,7 +250,7 @@ export function buildJSChallenge(
   }
 }
 
-export function buildBackendChallenge({ url }: BuildChallengeData) {
+function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
     build: concatHtml({ required: frameRunner }),

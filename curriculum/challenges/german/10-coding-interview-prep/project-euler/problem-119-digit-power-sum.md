@@ -8,17 +8,17 @@ dashedName: problem-119-digit-power-sum
 
 # --description--
 
-The number 512 is interesting because it is equal to the sum of its digits raised to some power: $5 + 1 + 2 = 8$, and $8^3 = 512$. Another example of a number with this property is $614656 = 28^4$.
+Die Zahl 512 ist interessant, weil sie gleich der Summe ihrer Ziffern in einer Potenz ist: $5 + 1 + 2 = 8$, und $8^3 = 512$. Ein weiteres Beispiel für eine Zahl mit dieser Eigenschaft ist $614656 = 28^4$.
 
-We shall define $a_n$ to be the $n-th$ term of this sequence and insist that a number must contain at least two digits to have a sum.
+Wir definieren $a_n$ als den $n-th$ Term dieser Folge und bestehen darauf, dass eine Zahl mindestens zwei Ziffern enthalten muss, um eine Summe zu haben.
 
-You are given that $a_2 = 512$ and $a_{10} = 614656$.
+Es ist gegeben, dass $a_2 = 512$ und $a_{10} = 614656$.
 
-Find $a_{30}$.
+Finde $a_{30}$.
 
 # --hints--
 
-`digitPowerSum()` should return `248155780267521`.
+`digitPowerSum()` sollte `248155780267521` zurückgeben.
 
 ```js
 assert.strictEqual(digitPowerSum(), 248155780267521);

@@ -10,9 +10,9 @@ dashedName: pass-arguments-to-avoid-external-dependence-in-a-function
 
 التحدي الأخير كان يقترب خطوة من مبادئ الـ functional programming، ولكن لا يزال هناك شيء مفقود.
 
-لم نقم بتغيير قيمة المتغير الـ global، ولكن الدالة `incrementer` لن تعمل بدون وجود المتغير الـ global و هو `fixedValue`، هناك.
+لم نقم بتغيير قيمة المتغير الشامل (global)، ولكن الوظيفة `incrementer` لن تعمل بدون وجود المتغير الـشامل و هو `fixedValue`، هناك.
 
-وهناك مبدأ آخر للـ functional programming وهو تعريف تبعياتك بشكل صريح. هذا يعني إذا كان الـ function يعتمد على متغير أو object موجود، قم بتمرير هذا المتغير أو الـ object مباشرة إلى الـ function كـ argument.
+وهناك مبدأ آخر للبرمجة الوظيفية (functional programming) وهو إعلان تبعياتك (dependencies) بشكل صريح. هذا يعني إذا كان الـ function يعتمد على متغير أو object موجود، قم بتمرير هذا المتغير أو الـ object مباشرة إلى الـ function كـ argument.
 
 وهناك عدة نتائج جيدة لهذا المبدأ. الـ function يصبح أسهل لاختباره، فأنت تعرف بالضبط المدخلات التي يتطلبها، ولن يعتمد على أي شيء آخر في برنامجك.
 
@@ -22,7 +22,7 @@ dashedName: pass-arguments-to-avoid-external-dependence-in-a-function
 
 # --instructions--
 
-دعونا نقوم بتحديث دالة `incrementer` لنعرف بوضوح تبعياتها.
+حدث وظيفة `incrementer` لتعلن بوضوح تبعياتها.
 
 اكتب دالة `incrementer` بحيث أنها تأخذ arguments، ثم ترجع نتيجة بعد زيادة القيمة بواحد.
 

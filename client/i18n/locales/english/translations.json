@@ -11,6 +11,7 @@
     "view": "View",
     "view-code": "View Code",
     "view-project": "View Project",
+    "view-cert-title": "View {{certTitle}}",
     "show-cert": "Show Certification",
     "claim-cert": "Claim Certification",
     "save-progress": "Save Progress",
@@ -52,7 +53,7 @@
     "check-code": "Check Your Code (Ctrl + Enter)",
     "check-code-2": "Check Your Code",
     "reset": "Reset",
-    "reset-code": "Reset All Code",
+    "reset-step": "Reset This Step",
     "help": "Help",
     "get-help": "Get Help",
     "watch-video": "Watch a Video",
@@ -157,7 +158,8 @@
       "honesty": "Academic Honesty Policy",
       "internet": "Your Internet Presence",
       "portfolio": "Portfolio Settings",
-      "privacy": "Privacy Settings"
+      "privacy": "Privacy Settings",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "Danger Zone",
@@ -272,6 +274,9 @@
     "add-subtitles": "Help improve or add subtitles",
     "wrong-answer": "Sorry, that's not the right answer. Give it another try?",
     "check-answer": "Click the button below to check your answer.",
+    "assignment-not-complete": "Please finish the assignments",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "Solution Link",
     "github-link": "GitHub Link",
     "submit-and-go": "Submit and go to my next challenge",
@@ -361,7 +366,6 @@
     "become-supporter": "Become a Supporter",
     "duration": "Become a one-time supporter of our charity.",
     "duration-2": "Become a monthly supporter of our charity.",
-    "duration-3": "Become an annual supporter of our charity",
     "duration-4": "Become a supporter of our charity",
     "nicely-done": "Nicely done. You just completed {{block}}.",
     "credit-card": "Credit Card",
@@ -464,7 +468,8 @@
     "iframe-preview": "{{title}} preview",
     "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
     "iframe-form-submit-alert": "Normally this form would be submitted! It works. This will be submitted to: {{externalLink}}",
-    "document-notfound": "document not found"
+    "document-notfound": "document not found",
+    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
   },
   "icons": {
     "gold-cup": "Gold Cup",
@@ -479,10 +484,11 @@
     "hint": "Hint",
     "heart": "Heart",
     "initial": "Initial",
+    "input-reset": "Clear search terms",
     "info": "Intro Information",
     "spacer": "Spacer",
     "toggle": "Toggle Checkmark",
-    "magnifier": "magnifier"
+    "magnifier": "Submit search terms"
   },
   "aria": {
     "fcc-curriculum": "freeCodeCamp Curriculum",
@@ -508,7 +514,8 @@
     "step": "Step",
     "steps": "Steps",
     "steps-for": "Steps for {{blockTitle}}",
-    "code-example": "{{codeName}} code example"
+    "code-example": "{{codeName}} code example",
+    "opens-new-window": "Opens in new window"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
@@ -672,8 +679,49 @@
         "Cat and Dog Image Classifier": "Cat and Dog Image Classifier",
         "Book Recommendation Engine using KNN": "Book Recommendation Engine using KNN",
         "Linear Regression Health Costs Calculator": "Linear Regression Health Costs Calculator",
-        "Neural Network SMS Text Classifier": "Neural Network SMS Text Classifier"
+        "Neural Network SMS Text Classifier": "Neural Network SMS Text Classifier",
+        "Celestial Bodies Database": "Celestial Bodies Database",
+        "World Cup Database": "World Cup Database",
+        "Salon Appointment Scheduler": "Salon Appointment Scheduler",
+        "Periodic Table Database": "Periodic Table Database",
+        "Number Guessing Game": "Number Guessing Game",
+        "Build a freeCodeCamp Forum Homepage": "Build a freeCodeCamp Forum Homepage"
       }
+    },
+    "title": {
+      "Responsive Web Design": "Responsive Web Design",
+      "responsive-web-design": "Responsive Web Design Certification",
+      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
+      "Front End Development Libraries": "Front End Development Libraries",
+      "front-end-development-libraries": "Front End Development Libraries Certification",
+      "Data Visualization": "Data Visualization",
+      "data-visualization": "Data Visualization Certification",
+      "Relational Database": "Relational Database",
+      "relational-database-v8": "Relational Database Certification",
+      "Back End Development and APIs": "Back End Development and APIs",
+      "back-end-development-and-apis": "Back End Development and APIs Certification",
+      "Quality Assurance": "Quality Assurance",
+      "quality-assurance-v7": "Quality Assurance Certification",
+      "Scientific Computing with Python": "Scientific Computing with Python",
+      "scientific-computing-with-python-v7": "Scientific Computing with Python Certification",
+      "Data Analysis with Python": "Data Analysis with Python",
+      "data-analysis-with-python-v7": "Data Analysis with Python Certification",
+      "Information Security": "Information Security",
+      "information-security-v7": "Information Security Certification",
+      "Machine Learning with Python": "Machine Learning with Python",
+      "machine-learning-with-python-v7": "Machine Learning with Python Certification",
+      "Legacy Front End": "Legacy Front End",
+      "legacy-front-end": "Front End Certification",
+      "Legacy Back End": "Legacy Back End",
+      "legacy-back-end": "Back End Certification",
+      "Legacy Data Visualization": "Legacy Data Visualization",
+      "legacy-data-visualization": "Data Visualization Certification",
+      "Legacy Information Security and Quality Assurance": "Legacy Information Security and Quality Assurance",
+      "information-security-and-quality-assurance": "Information Security and Quality Assurance Certification",
+      "Legacy Full Stack Certification": "Legacy Full Stack Certification",
+      "Legacy Full Stack": "Legacy Full Stack",
+      "full-stack": "Full Stack Certification"
     }
   },
   "certification-card": {

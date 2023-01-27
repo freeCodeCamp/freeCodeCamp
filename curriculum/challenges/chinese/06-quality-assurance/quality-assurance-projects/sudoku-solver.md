@@ -20,7 +20,7 @@ dashedName: sudoku-solver
 -   接着，你将看到一个 `.replit` 窗口。
 -   选择 `Use run command` 并点击 `Done` 按钮。
 
-当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 `Solution Link` 字段中。 也可以将项目的源码链接提交到 `GitHub Link` 字段中。
+当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 Solution Link 字段中。 也可以将项目的源码链接提交到 GitHub Link 字段中。
 
 # --instructions--
 
@@ -352,7 +352,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 12 项单元测试都已完成并通过。 请参阅 `/tests/1_unit-tests.js` 来了解你应该写的测试的预期行为。
+所有 12 项单元测试都已完成并通过。
 
 ```js
 async (getUserInput) => {
@@ -377,7 +377,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 14 项功能测试都已完成并通过。 请参阅 `/tests/2_functional-tests.js` 来了解你应该编写的测试的功能。
+所有 14 项功能测试都已完成并通过。
 
 ```js
 async (getUserInput) => {

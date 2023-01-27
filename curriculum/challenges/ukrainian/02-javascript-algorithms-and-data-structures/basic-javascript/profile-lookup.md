@@ -9,21 +9,21 @@ dashedName: profile-lookup
 
 # --description--
 
-У нас є безліч об'єктів, що представляють різних людей у наших списках контактів.
+У нас є масив об'єктів, які представляють різних людей зі списку контактів.
 
-Функція `lookUpProfile` яка приймає `name` та властивість (`prop`) як аргументи були попередньо записані для вас.
+Функція `lookUpProfile`, яка приймає `name` та властивість (`prop`) як аргументи, вже записана для вас.
 
-Функція має перевірити, чи `name` є фактичним контактом `firstName` і даний параметр (`prop`) є властивістю цього контакту.
+Функція повинна перевірити, чи `name` дійсно є ім’ям (`firstName`) контакту і надана властивість (`prop`) є властивістю цього контакту.
 
-Якщо обидва є правдою, то поверніть "значення" цієї власності.
+Якщо обидва є істинними, то поверніть значення цієї власності.
 
 Якщо `name` не відповідає жодному контакту, поверніть рядок `No such contact`.
 
-Якщо `prop` не відповідає жодним дійсним властивостям контакту, знайденим за відповідністю  `name`  потім поверніться на рядок `No such property`.
+Якщо `prop` не збігається з жодною дійсною властивістю контакту, що відповідає `name`, поверніть рядок `No such property`.
 
 # --hints--
 
-`lookUpProfile("Kristian", "lastName")` повинен повернути рядок `Vos`
+`lookUpProfile("Kristian", "lastName")` повинен повертати рядок `Vos`
 
 ```js
 assert(lookUpProfile('Kristian', 'lastName') === 'Vos');
@@ -44,13 +44,13 @@ assert.deepEqual(lookUpProfile('Sherlock', 'likes'), [
 assert(typeof lookUpProfile('Harry', 'likes') === 'object');
 ```
 
-`lookUpProfile("Bob", "number")` повинен повернути рядок `No such contact`
+`lookUpProfile("Bob", "number")` повинен повертати рядок `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'number') === 'No such contact');
 ```
 
-`lookUpProfile("Bob", "potato")` повинен повернути рядок `No such contact`
+`lookUpProfile("Bob", "potato")` повинен повертати рядок `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'potato') === 'No such contact');

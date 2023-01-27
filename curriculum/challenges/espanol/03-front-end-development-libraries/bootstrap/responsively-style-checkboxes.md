@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aeda08845
-title: Casillas de verificación con estilo responsivo
+title: Casillas de verificación con estilo adaptativo
 challengeType: 0
 forumTopicId: 18269
 required:
