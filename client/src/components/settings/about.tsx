@@ -1,4 +1,5 @@
 import {
+  FormGroup,
   ControlLabel,
   FormControl,
   HelpBlock,
@@ -8,7 +9,7 @@ import React, { Component } from 'react';
 
 import { TFunction, withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
-import { FullWidthRow, Grid, Spacer } from '../helpers';
+import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SoundSettings from './sound';
 import ThemeSettings, { Themes } from './theme';
@@ -78,6 +79,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       picture === formValues.picture &&
       about === formValues.about
     ) {
+      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: {
           name,
@@ -214,48 +216,49 @@ class AboutSettings extends Component<AboutProps, AboutState> {
         <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
-            <Grid
-              role='group'
-              aria-label={t('settings.headings.personal-info')}
-            >
-              <ControlLabel htmlFor='about-name'>
-                <strong>{t('settings.labels.name')}</strong>
-              </ControlLabel>
-              <FormControl
-                id='about-name'
-                onChange={this.handleNameChange}
-                type='text'
-                value={name}
-              />
-              <ControlLabel htmlFor='about-location'>
-                <strong>{t('settings.labels.location')}</strong>
-              </ControlLabel>
-              <FormControl
-                id='about-location'
-                onChange={this.handleLocationChange}
-                type='text'
-                value={location}
-              />
-              <ControlLabel htmlFor='about-picture'>
-                <strong>{t('settings.labels.picture')}</strong>
-              </ControlLabel>
-              <FormControl
-                id='about-picture'
-                onChange={this.handlePictureChange}
-                type='url'
-                value={picture}
-              />
-              {this.showImageValidationWarning()}
-              <ControlLabel htmlFor='about-about'>
-                <strong>{t('settings.labels.about')}</strong>
-              </ControlLabel>
-              <FormControl
-                id='about-about'
-                componentClass='textarea'
-                onChange={this.handleAboutChange}
-                value={about}
-              />
-            </Grid>
+            <div role='group' aria-label={t('settings.headings.personal-info')}>
+              <FormGroup controlId='about-name'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.name')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handleNameChange}
+                  type='text'
+                  value={name}
+                />
+              </FormGroup>
+              <FormGroup controlId='about-location'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.location')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handleLocationChange}
+                  type='text'
+                  value={location}
+                />
+              </FormGroup>
+              <FormGroup controlId='about-picture'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.picture')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handlePictureChange}
+                  type='url'
+                  value={picture}
+                />
+                {this.showImageValidationWarning()}
+              </FormGroup>
+              <FormGroup controlId='about-about'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.about')}</strong>
+                </ControlLabel>
+                <FormControl
+                  componentClass='textarea'
+                  onChange={this.handleAboutChange}
+                  value={about}
+                />
+              </FormGroup>
+            </div>
             <BlockSaveButton disabled={this.isFormPristine()}>
               {t('buttons.save')}{' '}
               <span className='sr-only'>
