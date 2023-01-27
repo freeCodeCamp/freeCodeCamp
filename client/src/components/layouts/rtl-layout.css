@@ -10,7 +10,7 @@ Increase the spacing in paragraphs
 Profile section
 */
 
-[dir='rtl'] #profile-image {
+[dir='rtl'] #profile-portfolio-image {
   padding-left: 10px;
 }
 
