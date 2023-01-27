@@ -1,6 +1,6 @@
 ---
 id: 587d7b8b367417b2b2512b53
-title: Використовуйте клас синтаксису для визначення функції Constructor
+title: Синтаксис class для визначення конструктурної функції
 challengeType: 1
 forumTopicId: 301212
 dashedName: use-class-syntax-to-define-a-constructor-function
@@ -8,11 +8,11 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 # --description--
 
-ES6 забезпечує новий синтаксис для створення об'єктів, використовуючи ключове слово <dfn>class</dfn>.
+ES6 надає новий синтаксис для створення об’єктів, використовуючи ключове слово <dfn>class</dfn>.
 
-In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
+В ES5 можна створити об’єкт, визначивши функцію `constructor` та використавши ключове слово `new`, щоб конкретизувати об’єкт.
 
-In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
+В ES6 оголошення `class` має метод `constructor`, який викликається з ключовим словом `new`. Якщо метод `constructor` не визначений явно, то він визначається неявно без аргументів.
 
 ```js
 // Explicit constructor
@@ -41,21 +41,21 @@ const atlas = new Rocket();
 atlas.launch();
 ```
 
-It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.
+Варто зазначити, що ключове слово `class` оголошує нову функцію, до якої додається конструктор. Конструктор прокидається, коли для створення нового об’єкта викликають `new`.
 
-**Note:** UpperCamelCase should be used by convention for ES6 class names, as in `SpaceShuttle` used above.
+**Примітка:** згідно з конвенцією для назв класів потрібно використовувати ВерхнійВерблюдячийРегістр, як у `SpaceShuttle` вище.
 
-The `constructor` method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.
+Метод `constructor` є спеціальним методом для створення та ініціалізації об’єкта, створеного за допомогою класу. Ви дізнаєтесь про це детальніше у розділі об’єктноорієнтованого програмування сертифікації «Алгоритми JavaScript та структури даних».
 
 # --instructions--
 
-Use the `class` keyword and write a `constructor` to create the `Vegetable` class.
+Використайте ключове слово `class` та напишіть `constructor`, щоб створити клас `Vegetable`.
 
-The `Vegetable` class allows you to create a vegetable object with a property `name` that gets passed to the `constructor`.
+Клас `Vegetable` дозволяє створити об’єкт-овоч із властивістю `name`, що передається до `constructor`.
 
 # --hints--
 
-`Vegetable` should be a `class` with a defined `constructor` method.
+`Vegetable` повинен бути класом (`class`) із визначеним методом `constructor`.
 
 ```js
 assert(
@@ -63,13 +63,13 @@ assert(
 );
 ```
 
-The `class` keyword should be used.
+Використайте ключове слово `class`.
 
 ```js
 assert(code.match(/class/g));
 ```
 
-`Vegetable` should be able to be instantiated.
+`Vegetable` повинен бути реалізованим.
 
 ```js
 assert(() => {
@@ -78,7 +78,7 @@ assert(() => {
 });
 ```
 
-`carrot.name` should return `carrot`.
+`carrot.name` має повертати `carrot`.
 
 ```js
 assert(carrot.name == 'carrot');
