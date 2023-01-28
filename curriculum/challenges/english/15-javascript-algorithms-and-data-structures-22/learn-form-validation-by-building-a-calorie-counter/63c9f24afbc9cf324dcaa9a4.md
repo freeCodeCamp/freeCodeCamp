@@ -13,10 +13,22 @@ The difference between `innerText` and `innerHTML` is that `innerText` will not 
 
 # --hints--
 
-Test 1
+Your `clearForm` function should access the `innerText` property of the `output` element.
 
 ```js
+assert.match(clearForm.toString(), /output\.innerText/);
+```
 
+Your `clearForm` function should set the `innerText` property of the `output` element to an empty string.
+
+```js
+assert.match(clearForm.toString(), /output\.innerText\s*=\s*('|"|`)\1/);
+```
+
+You should modify `output` after modifying `budgetNumberInput`.
+
+```js
+assert.isAbove(clearForm.toString().indexOf('output'), clearForm.toString().indexOf('budgetNumberInput'));
 ```
 
 # --seed--
@@ -170,7 +182,7 @@ let isError = false;
 
 function cleanInputString(str) {
   const regex = /[+-\s]/g;
-  return str.match(regex);
+  return str.replace(regex, '');
 }
 
 function isInvalidInput(str) {
@@ -191,7 +203,7 @@ function addEntry() {
     id="${entryDropdown.value}-${entryNumber}-calories"
     placeholder="Calories"
   />`;
-  targetInputContainer.insertAdjacentHTML();
+  targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
 }
 
 function calculateCalories(e) {
