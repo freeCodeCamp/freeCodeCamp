@@ -221,7 +221,7 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
       </h3>
       {pathname === isLearnPage && (
         <section className='progress-summary__section'>
-          <article>
+          <section>
             <div className='progress-summary__completed'>
               <span>
                 {completedChallengeCount}/{allChallengeCount} challenges
@@ -232,8 +232,8 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
             <div>
               <ProgressBar now={completedChallengePercentage} />
             </div>
-          </article>
-          <article>
+          </section>
+          <section>
             <div className='progress-summary__completed'>
               <span>
                 {earnedCertificateCount}/{allCertificateCount} certificates
@@ -244,12 +244,12 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
             <div>
               <ProgressBar now={completedCertificatePercentage} />
             </div>
-          </article>
+          </section>
         </section>
       )}
       {superBlock !== '' && (
         <section className='progress-summary__section'>
-          <article>
+          <section>
             <div className='progress-summary__completed'>
               <span>
                 {superBlockCompletedChallengesCount}/
@@ -260,8 +260,8 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
             <div>
               <ProgressBar now={superBlockCompletedChallengesCount} />
             </div>
-          </article>
-          <article>
+          </section>
+          <section>
             <div className='progress-summary__completed'>
               <span>
                 {superBlockCompletedProjectsCount}/
@@ -272,7 +272,7 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
             <div>
               <ProgressBar now={superBlockCompletedProjectsPercent} />
             </div>
-          </article>
+          </section>
         </section>
       )}
     </div>

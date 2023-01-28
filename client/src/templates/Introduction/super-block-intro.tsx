@@ -199,9 +199,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               <LegacyLinks superBlock={superBlock} />
               <SuperBlockIntro superBlock={superBlock} />
               <Spacer size={2} />
-              <h2 className='text-center big-subheading'>
-                {t(`intro:misc-text.courses`)}
-              </h2>
               <ProgressIndicator
                 username={user.username}
                 superBlockTotalChallengesCount={superBlockTotalChallengesCount}
@@ -209,6 +206,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 superBlockChallengesList={superBlockChallengesList}
                 completedChallengesList={completedChallengesList}
               />
+              <Spacer size={2} />
+              <h2 className='text-center big-subheading'>
+                {t(`intro:misc-text.courses`)}
+              </h2>
               <Spacer size={2} />
               <div className='block-ui'>
                 {defaultCurriculumNames.map(blockDashedName => (
