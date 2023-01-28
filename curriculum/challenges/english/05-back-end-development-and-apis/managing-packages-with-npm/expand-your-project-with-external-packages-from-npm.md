@@ -15,14 +15,14 @@ In this section, packages your project requires are stored using the following f
 ```json
 "dependencies": {
   "package-name": "version",
-  "express": "&lrm;4.14.0"
+  "express": "4.14.0"
 }
 
 ```
 
 # --instructions--
 
-Add version "&lrm;1.1.0" of the `@freecodecamp/example` package to the `dependencies` field of your `package.json` file.
+Add version 1.1.0 of the `@freecodecamp/example` package to the `dependencies` field of your `package.json` file.
 
 **Note:** `@freecodecamp/example` is a faux package used as a learning tool.
 
@@ -47,7 +47,7 @@ Add version "&lrm;1.1.0" of the `@freecodecamp/example` package to the `dependen
   );
 ```
 
-`"@freecodecamp/example"` version should be `"&lrm;1.1.0"`.
+`"@freecodecamp/example"` version should be `1.1.0`.
 
 ```js
 (getUserInput) =>
@@ -57,7 +57,7 @@ Add version "&lrm;1.1.0" of the `@freecodecamp/example` package to the `dependen
       assert.match(
         packJson.dependencies["@freecodecamp/example"],
         /^[\^\~]?1\.1\.0/,
-        'Wrong version of "@freecodecamp/example" installed. It should be &lrm;1.1.0'
+        'Wrong version of "@freecodecamp/example" installed. It should be 1.1.0'
       );
     },
     (xhr) => {
