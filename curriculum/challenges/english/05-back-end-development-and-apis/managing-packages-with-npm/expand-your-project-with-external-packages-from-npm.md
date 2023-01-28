@@ -15,7 +15,7 @@ In this section, packages your project requires are stored using the following f
 ```json
 "dependencies": {
   "package-name": "version",
-  "express": "`4.14.0`"
+  "express": `"4.14.0"`
 }
 
 ```
