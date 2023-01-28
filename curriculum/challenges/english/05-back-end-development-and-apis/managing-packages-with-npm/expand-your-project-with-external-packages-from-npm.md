@@ -15,7 +15,7 @@ In this section, packages your project requires are stored using the following f
 ```json
 "dependencies": {
   "package-name": "version",
-  "express": `"4.14.0"`
+  "express": "4.14.0"
 }
 
 ```
@@ -57,7 +57,7 @@ Add version 1.1.0 of the `@freecodecamp/example` package to the `dependencies` f
       assert.match(
         packJson.dependencies["@freecodecamp/example"],
         /^[\^\~]?1\.1\.0/,
-        'Wrong version of "@freecodecamp/example" installed. It should be `1.1.0`'
+        'Wrong version of "@freecodecamp/example" installed. It should be 1.1.0'
       );
     },
     (xhr) => {
