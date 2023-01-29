@@ -1,5 +1,7 @@
-#honesty-policy
-  :is(button[aria-disabled="true"], button[aria-disabled="true"]:is(:focus, :hover)) {
+#honesty-policy:is(
+    button[aria-disabled='true'],
+    button[aria-disabled='true']:is(:focus, :hover)
+  ) {
   background-color: var(--quaternary-background);
   color: var(--secondary-color);
   opacity: 0.65;
