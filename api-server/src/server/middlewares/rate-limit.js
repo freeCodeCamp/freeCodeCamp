@@ -12,6 +12,7 @@ export default function rateLimitMiddleware() {
     standardHeaders: true,
     legacyHeaders: false,
     store: new MongoStore({
+      collectionName: 'UserRateLimit',
       uri: url,
       expireTimeMs: 15 * 60 * 1000
     })
