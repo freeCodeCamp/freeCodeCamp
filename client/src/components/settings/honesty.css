@@ -1,4 +1,5 @@
-#honesty-policy:is(
+#honesty-policy
+  :is(
     button[aria-disabled='true'],
     button[aria-disabled='true']:is(:focus, :hover)
   ) {
