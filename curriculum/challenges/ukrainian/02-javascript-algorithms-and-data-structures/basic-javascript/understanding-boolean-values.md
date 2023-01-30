@@ -25,7 +25,7 @@ dashedName: understanding-boolean-values
 assert(typeof welcomeToBooleans() === 'boolean');
 ```
 
-`welcomeToBooleans()` повинна повертати `true`.
+`welcomeToBooleans()` має повертати `true`.
 
 ```js
 assert(welcomeToBooleans() === true);

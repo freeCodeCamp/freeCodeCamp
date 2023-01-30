@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cd
-title: Manipulate Arrays With shift Method
+title: Маніпулювання масивами за допомогою методу shift
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVETW'
 forumTopicId: 18238
@@ -11,7 +11,7 @@ dashedName: manipulate-arrays-with-shift
 
 `pop()` завжди видаляє останній елемент масиву. А якщо потрібно видалити перший?
 
-Саме тут нам на допомогу приходить `.shift()`. Вона працює так само, як і `.pop()`, але видаляє перший елемент замість останнього.
+Саме тут нам на допомогу приходить `.shift()`. Він працює так само, як і `.pop()`, але видаляє перший елемент замість останнього.
 
 Приклад:
 
@@ -28,7 +28,7 @@ const removedFromOurArray = ourArray.shift();
 
 # --hints--
 
-Тепер `myArray` повинен дорівнювати `[["dog", 3]]`.
+Тепер `myArray` має дорівнювати `[["dog", 3]]`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-`removedFromMyArray` повинен містити `["John", 23]`.
+`removedFromMyArray` має містити `["John", 23]`.
 
 ```js
 assert(

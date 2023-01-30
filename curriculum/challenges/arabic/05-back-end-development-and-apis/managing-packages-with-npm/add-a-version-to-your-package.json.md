@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512bff
-title: Add a Version to Your package.json
+title: إضافة رقم الإصدار (Version) إلى package.json
 challengeType: 2
 forumTopicId: 301525
 dashedName: add-a-version-to-your-package-json
@@ -8,7 +8,7 @@ dashedName: add-a-version-to-your-package-json
 
 # --description--
 
-A `version` is one of the required fields of your package.json file. This field describes the current version of your project. Here's an example:
+إن `version` أحد الخانات المطلوبة في ملفك package.json. هذه الخانة تصف الإصدار الحالي من مشروعك. إليك مثال:
 
 ```json
 "version": "1.2.0",
@@ -16,11 +16,11 @@ A `version` is one of the required fields of your package.json file. This field 
 
 # --instructions--
 
-Add a `version` to the package.json file of your project.
+أضف `version` إلى ملف package.json لمشروعك.
 
 # --hints--
 
-package.json should have a valid "version" key
+يجب أن يحتوي package.json على هوية "version" صحيحة
 
 ```js
 (getUserInput) =>

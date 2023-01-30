@@ -30,7 +30,7 @@ const lastLetter = firstName[firstName.length - 1];
 
 # --hints--
 
-`lastLetterOfLastName` повинна бути літера `e`.
+`lastLetterOfLastName` має бути літера `e`.
 
 ```js
 assert(lastLetterOfLastName === 'e');

@@ -37,19 +37,19 @@ function equalityTest(myVal) {
 
 # --hints--
 
-`testEqual(10)` повинен повертати рядок `Not Equal`
+`testEqual(10)` має повертати рядок `Not Equal`
 
 ```js
 assert(testEqual(10) === 'Not Equal');
 ```
 
-`testEqual(12)` повинен повертати рядок `Equal`
+`testEqual(12)` має повертати рядок `Equal`
 
 ```js
 assert(testEqual(12) === 'Equal');
 ```
 
-`testEqual("12")` повинен повертати рядок `Equal`
+`testEqual("12")` має повертати рядок `Equal`
 
 ```js
 assert(testEqual('12') === 'Equal');

@@ -47,7 +47,7 @@ for (let i = 0; i < 5; i++) {
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` повинен дорівнювати `[1, 2, 3, 4, 5]`.
+`myArray` має дорівнювати `[1, 2, 3, 4, 5]`.
 
 ```js
 assert.deepEqual(myArray, [1, 2, 3, 4, 5]);

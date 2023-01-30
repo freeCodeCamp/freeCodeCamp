@@ -1,6 +1,6 @@
 ---
 id: 587d7fb3367417b2b2512bfc
-title: Add a Description to Your package.json
+title: إضافة وصف (Description) إلى package.json
 challengeType: 2
 forumTopicId: 301522
 dashedName: add-a-description-to-your-package-json
@@ -8,11 +8,11 @@ dashedName: add-a-description-to-your-package-json
 
 # --description--
 
-The next part of a good package.json file is the `description` field; where a short, but informative description about your project belongs.
+إن الجزء التالي من ملف package.json الجيد يكون خانة `description`؛ حيث يوجد وصف قصير ولكن زاخر بالمعلومات حول مشروعك.
 
-If some day you plan to publish a package to npm, this is the string that should sell your idea to the user when they decide whether to install your package or not. However, that’s not the only use case for the description, it’s a great way to summarize what a project does. It’s just as important in any Node.js project to help other developers, future maintainers or even your future self understand the project quickly.
+إذا خطط في يوم ما أن تنشر حزمة إلى npm، فهذا هو المقطع النصي الذي يشرح فكرتك للمستخدمون عندما يقررون تثبيت حزمتك أو لا. بالإضافة هذا ليس الاستخدام الوحيد لذلك الوصف. إنه طريقة رائعة لتلخيص وظيفة المشروع. وأيضا في أي مشروع Node.js فهو مهما بنفس القدر لمساعدة المطورين الآخرين، أو المشرفين في المستقبل، أو حتى لفهمك الخاص للمشروع بسرعة.
 
-Regardless of what you plan for your project, a description is definitely recommended. Here's an example:
+بغض النظر عن ما تخطط لمشروعك، فإن الوصف موصى به بكل تأكيد. إليك مثال:
 
 ```json
 "description": "A project that does something awesome",
@@ -20,13 +20,13 @@ Regardless of what you plan for your project, a description is definitely recomm
 
 # --instructions--
 
-Add a `description` to the package.json file of your project.
+أضف خانة الوصف `description` إلى ملف package.json لمشروعك.
 
-**Note:** Remember to use double-quotes for field-names (") and commas (,) to separate fields.
+**ملاحظة:** تذكر أن تستخدم علامات الاقتباس المزدوجة لأسماء الخانات، (") والفواصل (,) للفصل ما بينهم.
 
 # --hints--
 
-package.json should have a valid "description" key
+يجب أن يحتوي package.json على هوية "description" صحيحة
 
 ```js
 (getUserInput) =>

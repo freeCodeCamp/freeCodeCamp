@@ -27,7 +27,7 @@ ourStr += anAdjective;
 
 # --hints--
 
-`someAdjective` повинен бути встановлений як рядок з принаймні 3 символів.
+`someAdjective` має бути встановлений як рядок з принаймні 3 символів.
 
 ```js
 assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);

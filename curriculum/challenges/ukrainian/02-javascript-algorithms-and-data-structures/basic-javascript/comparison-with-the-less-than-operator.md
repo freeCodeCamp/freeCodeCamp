@@ -27,37 +27,37 @@ dashedName: comparison-with-the-less-than-operator
 
 # --hints--
 
-`testLessThan(0)` повинен повертати рядок `Under 25`
+`testLessThan(0)` має повертати рядок `Under 25`
 
 ```js
 assert(testLessThan(0) === 'Under 25');
 ```
 
-`testLessThan(24)` повинен повертати рядок `Under 25`
+`testLessThan(24)` має повертати рядок `Under 25`
 
 ```js
 assert(testLessThan(24) === 'Under 25');
 ```
 
-`testLessThan(25)` повинен повертати рядок `Under 55`
+`testLessThan(25)` має повертати рядок `Under 55`
 
 ```js
 assert(testLessThan(25) === 'Under 55');
 ```
 
-`testLessThan(54)` повинен повертати рядок `Under 55`
+`testLessThan(54)` має повертати рядок `Under 55`
 
 ```js
 assert(testLessThan(54) === 'Under 55');
 ```
 
-`testLessThan(55)` повинен повертати рядок `55 or Over`
+`testLessThan(55)` має повертати рядок `55 or Over`
 
 ```js
 assert(testLessThan(55) === '55 or Over');
 ```
 
-`testLessThan(99)` повинен повертати рядок `55 or Over`
+`testLessThan(99)` має повертати рядок `55 or Over`
 
 ```js
 assert(testLessThan(99) === '55 or Over');
