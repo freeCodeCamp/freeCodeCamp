@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c03
-title: Use the Caret-Character to Use the Latest Minor Version of a Dependency
+title: استخدم رمز Caret لاستخدام أحدث نسخة ثانوي من التبعية
 challengeType: 2
 forumTopicId: 301531
 dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-dependency
@@ -8,25 +8,25 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 # --description--
 
-Similar to how the tilde we learned about in the last challenge allows npm to install the latest PATCH for a dependency, the caret (`^`) allows npm to install future updates as well. The difference is that the caret will allow both MINOR updates and PATCHes.
+شبيهة بالطريقة التي تعلمنا بها عن tilde في التحدي الأخير وكيف يسمح لـ npm بتثبيت أحدث PATCH للاعتماد، يسمح رمز caret (`^`) إلى npm تثبيت التحديثات المستقبلية أيضًا. إن الفرق سيسمح رمز caret لكل من التحديثات من MINOR و PATCH.
 
-Your current version of `@freecodecamp/example` should be "~1.2.13" which allows npm to install to the latest 1.2.x version. If you were to use the caret (^) as a version prefix instead, npm would be allowed to update to any 1.x.x version.
+يجب أن يكون إصدار `@freecodecamp/example` الخاص بك الحالي من "~1.2.13" الذي يسمح npm بتثبيت أحدث إصدار 1.2.x. إذا كنت ستستخدم caret (^) كبادئة إصدار بدلاً من ذلك، سيسمح لـ npm بالتحديث إلى أي إصدار x.x.1.
 
 ```json
 "package": "^1.3.8"
 ```
 
-This would allow updates to any 1.x.x version of the package.
+وهذا سيسمح بالتحديث إلى إي نسخة 1.x.x من الحزمة.
 
 # --instructions--
 
-Use the caret (`^`) to prefix the version of `@freecodecamp/example` in your dependencies and allow npm to update it to any new MINOR release.
+استخدم رمز (`^`) لبادئة رَقَم إصدار `@freecodecamp/example` في تبعياتك (dependencies). ذلك يسمح ل npm بتحديثها إلى أي إصدار جديد نوع MINOR.
 
-**Note:** The version numbers themselves should not be changed.
+**ملاحظة:** لا تغيير أرقام الإصدار نفسها.
 
 # --hints--
 
-`"dependencies"` should include `"@freecodecamp/example"`.
+يجب أن تتضمن `"dependencies"` مقطع `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -45,7 +45,7 @@ Use the caret (`^`) to prefix the version of `@freecodecamp/example` in your dep
   );
 ```
 
-`"@freecodecamp/example"` version should match `"^1.x.x"`.
+يجب أن تطابق `"@freecodecamp/example"` إصدارها `"^1.x.x"`.
 
 ```js
 (getUserInput) =>

@@ -37,19 +37,19 @@ const answer = plusThree(5);
 assert(typeof timesFive === 'function');
 ```
 
-`timesFive(5)` повинна повертати `25`
+`timesFive(5)` має повертати `25`
 
 ```js
 assert(timesFive(5) === 25);
 ```
 
-`timesFive(2)` повинна повертати `10`
+`timesFive(2)` має повертати `10`
 
 ```js
 assert(timesFive(2) === 10);
 ```
 
-`timesFive(0)` повинна повертати `0`
+`timesFive(0)` має повертати `0`
 
 ```js
 assert(timesFive(0) === 0);

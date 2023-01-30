@@ -14,7 +14,7 @@ dashedName: wherefore-art-thou
 
 # --hints--
 
-`whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })` повинен повертати `[{ first: "Tybalt", last: "Capulet" }]`.
+`whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })` має повертати `[{ first: "Tybalt", last: "Capulet" }]`.
 
 ```js
 assert.deepEqual(
@@ -30,7 +30,7 @@ assert.deepEqual(
 );
 ```
 
-`whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 })` повинен повертати `[{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }]`.
+`whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 })` має повертати `[{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }]`.
 
 ```js
 assert.deepEqual(
@@ -41,7 +41,7 @@ assert.deepEqual(
 );
 ```
 
-`whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })` повинен повертати `[{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }]`.
+`whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })` має повертати `[{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }]`.
 
 ```js
 assert.deepEqual(
@@ -56,7 +56,7 @@ assert.deepEqual(
 );
 ```
 
-`whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })` повинен повертати `[{ "apple": 1, "bat": 2, "cookie": 2 }]`.
+`whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })` має повертати `[{ "apple": 1, "bat": 2, "cookie": 2 }]`.
 
 ```js
 assert.deepEqual(
@@ -68,7 +68,7 @@ assert.deepEqual(
 );
 ```
 
-`whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 })` повинен повертати `[{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }]`.
+`whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 })` має повертати `[{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }]`.
 
 ```js
 assert.deepEqual(
@@ -88,7 +88,7 @@ assert.deepEqual(
 );
 ```
 
-`whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3})` повинен повертати `[]`
+`whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3})` має повертати `[]`
 
 ```js
 assert.deepEqual(
@@ -97,7 +97,7 @@ assert.deepEqual(
 );
 ```
 
-`whatIsInAName([{"a": 1, "b": 2, "c": 3, "d": 9999}], {"a": 1, "b": 9999, "c": 3})` повинен повертати `[]`
+`whatIsInAName([{"a": 1, "b": 2, "c": 3, "d": 9999}], {"a": 1, "b": 9999, "c": 3})` має повертати `[]`
 
 ```js
 assert.deepEqual(

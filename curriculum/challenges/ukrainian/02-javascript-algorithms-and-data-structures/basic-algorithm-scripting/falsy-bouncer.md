@@ -16,25 +16,25 @@ dashedName: falsy-bouncer
 
 # --hints--
 
-`bouncer([7, "ate", "", false, 9])` повинен повертати `[7, "ate", 9]`.
+`bouncer([7, "ate", "", false, 9])` має повертати `[7, "ate", 9]`.
 
 ```js
 assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9]);
 ```
 
-`bouncer(["a", "b", "c"])` повинен повертати `["a", "b", "c"]`.
+`bouncer(["a", "b", "c"])` має повертати `["a", "b", "c"]`.
 
 ```js
 assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c']);
 ```
 
-`bouncer([false, null, 0, NaN, undefined, ""])` повинен повертати `[]`.
+`bouncer([false, null, 0, NaN, undefined, ""])` має повертати `[]`.
 
 ```js
 assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 ```
 
-`bouncer([null, NaN, 1, 2, undefined])` повинен повертати `[1, 2]`.
+`bouncer([null, NaN, 1, 2, undefined])` має повертати `[1, 2]`.
 
 ```js
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);

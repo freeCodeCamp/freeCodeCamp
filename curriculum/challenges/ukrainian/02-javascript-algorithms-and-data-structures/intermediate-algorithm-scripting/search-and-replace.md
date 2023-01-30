@@ -14,13 +14,13 @@ dashedName: search-and-replace
 
 Другим аргументом є слово, яке ви будете заміняти (до).
 
-Третім аргументом є слово, на яке ви заміните другий аргумент (після).
+Третім аргументом є слово, яким ви заміните другий аргумент (після).
 
 **Примітка:** збережіть регістр першого символу початкового слова, коли ви замінюєте його. Наприклад, якщо ви хочете замінити слово `Book` словом `dog`, його потрібно замінювати як `Dog`
 
 # --hints--
 
-`myReplace("Let us go to the store", "store", "mall")` повинен повертати рядок `Let us go to the mall`.
+`myReplace("Let us go to the store", "store", "mall")` має повертати рядок `Let us go to the mall`.
 
 ```js
 assert.deepEqual(
@@ -29,7 +29,7 @@ assert.deepEqual(
 );
 ```
 
-`myReplace("He is Sleeping on the couch", "Sleeping", "sitting")` повинен повертати рядок `He is Sitting on the couch`.
+`myReplace("He is Sleeping on the couch", "Sleeping", "sitting")` має повертати рядок `He is Sitting on the couch`.
 
 ```js
 assert.deepEqual(
@@ -38,7 +38,7 @@ assert.deepEqual(
 );
 ```
 
-`myReplace("I think we should look up there", "up", "Down")` повинен повертати рядок `I think we should look down there`.
+`myReplace("I think we should look up there", "up", "Down")` має повертати рядок `I think we should look down there`.
 
 ```js
 assert.deepEqual(
@@ -47,7 +47,7 @@ assert.deepEqual(
 );
 ```
 
-`myReplace("This has a spellngi error", "spellngi", "spelling")` повинен повертати рядок `This has a spelling error`.
+`myReplace("This has a spellngi error", "spellngi", "spelling")` має повертати рядок `This has a spelling error`.
 
 ```js
 assert.deepEqual(
@@ -56,7 +56,7 @@ assert.deepEqual(
 );
 ```
 
-`myReplace("His name is Tom", "Tom", "john")` повинен повертати рядок `His name is John`.
+`myReplace("His name is Tom", "Tom", "john")` має повертати рядок `His name is John`.
 
 ```js
 assert.deepEqual(
@@ -65,7 +65,7 @@ assert.deepEqual(
 );
 ```
 
-`myReplace("Let us get back to more Coding", "Coding", "algorithms")` повинен повертати рядок `Let us get back to more Algorithms`.
+`myReplace("Let us get back to more Coding", "Coding", "algorithms")` має повертати рядок `Let us get back to more Algorithms`.
 
 ```js
 assert.deepEqual(

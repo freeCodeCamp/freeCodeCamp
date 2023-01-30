@@ -30,7 +30,7 @@ const thirdToLastLetter = firstName[firstName.length - 3];
 
 # --hints--
 
-`secondToLastLetterOfLastName` повинна бути літера `c`.
+`secondToLastLetterOfLastName` має бути літера `c`.
 
 ```js
 assert(secondToLastLetterOfLastName === 'c');

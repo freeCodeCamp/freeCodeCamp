@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ad
-title: Зменшення числа за допомогою JavaScript
+title: Декремент числа з JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KeS2'
 forumTopicId: 17558
@@ -29,7 +29,7 @@ i = i - 1;
 
 # --hints--
 
-`myVar` повинна дорівнювати `10`.
+`myVar` має дорівнювати `10`.
 
 ```js
 assert(myVar === 10);

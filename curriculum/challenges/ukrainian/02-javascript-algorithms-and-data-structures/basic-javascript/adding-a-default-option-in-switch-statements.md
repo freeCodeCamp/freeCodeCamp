@@ -38,31 +38,31 @@ switch (num) {
 
 # --hints--
 
-`switchOfStuff("a")` повинен повертати рядок `apple`
+`switchOfStuff("a")` має повертати рядок `apple`
 
 ```js
 assert(switchOfStuff('a') === 'apple');
 ```
 
-`switchOfStuff("b")` повинен повертати рядок `bird`
+`switchOfStuff("b")` має повертати рядок `bird`
 
 ```js
 assert(switchOfStuff('b') === 'bird');
 ```
 
-`switchOfStuff("c")` повинен повертати рядок `cat`
+`switchOfStuff("c")` має повертати рядок `cat`
 
 ```js
 assert(switchOfStuff('c') === 'cat');
 ```
 
-`switchOfStuff("d")` повинен повертати рядок `stuff`
+`switchOfStuff("d")` має повертати рядок `stuff`
 
 ```js
 assert(switchOfStuff('d') === 'stuff');
 ```
 
-`switchOfStuff(4)` повинен повертати рядок `stuff`
+`switchOfStuff(4)` має повертати рядок `stuff`
 
 ```js
 assert(switchOfStuff(4) === 'stuff');

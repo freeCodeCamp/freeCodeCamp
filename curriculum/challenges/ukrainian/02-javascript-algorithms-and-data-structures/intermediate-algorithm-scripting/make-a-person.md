@@ -23,7 +23,7 @@ setFullName(firstAndLast)
 
 # --hints--
 
-Не треба додавати жодних властивостей. `Object.keys(bob).length` завжди повинен повертати 6.
+Не треба додавати жодних властивостей. `Object.keys(bob).length` завжди має повертати 6.
 
 ```js
 assert.strictEqual(
@@ -38,43 +38,43 @@ assert.strictEqual(
  );
 ```
 
-`bob instanceof Person` повинен повертати `true`.
+`bob instanceof Person` має повертати `true`.
 
 ```js
 assert.deepEqual(bob instanceof Person, true);
 ```
 
-`bob.firstName` повинен повертати `undefined`.
+`bob.firstName` має повертати `undefined`.
 
 ```js
 assert.deepEqual(bob.firstName, undefined);
 ```
 
-`bob.lastName` повинен повертати `undefined`.
+`bob.lastName` має повертати `undefined`.
 
 ```js
 assert.deepEqual(bob.lastName, undefined);
 ```
 
-`bob.getFirstName()` повинен повертати рядок `Bob`.
+`bob.getFirstName()` має повертати рядок `Bob`.
 
 ```js
 assert.deepEqual(bob.getFirstName(), 'Bob');
 ```
 
-`bob.getLastName()` повинен повертати рядок `Ross`.
+`bob.getLastName()` має повертати рядок `Ross`.
 
 ```js
 assert.deepEqual(bob.getLastName(), 'Ross');
 ```
 
-`bob.getFullName()` повинен повертати рядок `Bob Ross`.
+`bob.getFullName()` має повертати рядок `Bob Ross`.
 
 ```js
 assert.deepEqual(bob.getFullName(), 'Bob Ross');
 ```
 
-`bob.getFullName()` повинен повертати рядок `Haskell Ross` після `bob.setFirstName("Haskell")`.
+`bob.getFullName()` має повертати рядок `Haskell Ross` після `bob.setFirstName("Haskell")`.
 
 ```js
 assert.strictEqual(
@@ -86,7 +86,7 @@ assert.strictEqual(
 );
 ```
 
-`bob.getFullName()` повинен повертати рядок `Haskell Curry` після `bob.setLastName("Curry")`.
+`bob.getFullName()` має повертати рядок `Haskell Curry` після `bob.setLastName("Curry")`.
 
 ```js
 assert.strictEqual(
@@ -99,7 +99,7 @@ assert.strictEqual(
 );
 ```
 
-`bob.getFullName()` повинен повертати рядок `Haskell Curry` після `bob.setFullName("Haskell Curry")`.
+`bob.getFullName()` має повертати рядок `Haskell Curry` після `bob.setFullName("Haskell Curry")`.
 
 ```js
 assert.strictEqual(
@@ -111,7 +111,7 @@ assert.strictEqual(
 );
 ```
 
-`bob.getFirstName()` повинен повертати рядок `Haskell` після `bob.setFullName("Haskell Curry")`.
+`bob.getFirstName()` має повертати рядок `Haskell` після `bob.setFullName("Haskell Curry")`.
 
 ```js
 assert.strictEqual(
@@ -123,7 +123,7 @@ assert.strictEqual(
 );
 ```
 
-`bob.getLastName()` повинен повертати рядок `Curry` після `bob.setFullName("Haskell Curry")`.
+`bob.getLastName()` має повертати рядок `Curry` після `bob.setFullName("Haskell Curry")`.
 
 ```js
 assert.strictEqual(

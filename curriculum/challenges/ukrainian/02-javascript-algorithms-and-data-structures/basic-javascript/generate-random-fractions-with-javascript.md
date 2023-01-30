@@ -21,7 +21,7 @@ JavaScript має функцію `Math.random()`, яка генерує випа
 
 # --hints--
 
-`randomFraction` повинна повертати випадкове число.
+`randomFraction` має повертати випадкове число.
 
 ```js
 assert(typeof randomFraction() === 'number');

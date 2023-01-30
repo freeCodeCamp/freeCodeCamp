@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512c00
-title: Expand Your Project with External Packages from npm
+title: توسيع مشروعك مع الحزم الخارجية من npm
 challengeType: 2
 forumTopicId: 301527
 dashedName: expand-your-project-with-external-packages-from-npm
@@ -8,9 +8,9 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --description--
 
-One of the biggest reasons to use a package manager, is their powerful dependency management. Instead of manually having to make sure that you get all dependencies whenever you set up a project on a new computer, npm automatically installs everything for you. But how can npm know exactly what your project needs? Meet the `dependencies` section of your package.json file.
+إحدى الأسباب الأكبر لاستخدام مدير الحزم هي إدارة تبعياتك القوية. بدلاً من أن تتأكد يدوياً أنك حصلت على جميع التبعيات كلما أعددت مشروع على جهاز كمبيوتر جديد، npm يقوم بتثبيت كل شيء لك تلقائياً. ولكن كيف يعرف npm احتياجات مشروعك بالضبط؟ تعرَّف إلى قسم التبعيات `dependencies` من ملف package.json الخاص بك.
 
-In this section, packages your project requires are stored using the following format:
+في هذا القسم، يخزن اسم الحزم الذي يتطلبها مشروعك باستخدام التنسيق التالي:
 
 ```json
 "dependencies": {
@@ -22,13 +22,13 @@ In this section, packages your project requires are stored using the following f
 
 # --instructions--
 
-Add version "1.1.0" of the `@freecodecamp/example` package to the `dependencies` field of your `package.json` file.
+ضف الإصدار "1.1.0" من حزمة `@freecodecamp/example` إلى خانة `dependencies` من ملف `package.json`.
 
-**Note:** `@freecodecamp/example` is a faux package used as a learning tool.
+**ملاحظة:** إن `@freecodecamp/example` حزمة زائفة تستخدم كأداة للتعلم.
 
 # --hints--
 
-`"dependencies"` should include `"@freecodecamp/example"`.
+`"dependencies"` يجب أن تتضمن `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -47,7 +47,7 @@ Add version "1.1.0" of the `@freecodecamp/example` package to the `dependencies`
   );
 ```
 
-`"@freecodecamp/example"` version should be `"1.1.0"`.
+يجب أن يكون إصدار `"@freecodecamp/example"` بقيمة `"1.1.0"`.
 
 ```js
 (getUserInput) =>

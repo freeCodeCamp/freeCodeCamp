@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cc
-title: Доступ до вкладених об'єктів
+title: Доступ до вкладених об’єктів
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRnRnfa'
 forumTopicId: 16161
@@ -9,9 +9,9 @@ dashedName: accessing-nested-objects
 
 # --description--
 
-Доступ до підвластивостей об'єктів можна отримати завдяки ланцюжку точкової та дужкової нотацій.
+Доступ до підвластивостей об’єктів можна отримати завдяки ланцюжку точкової та дужкової нотацій.
 
-Ось вкладений об'єкт:
+Ось вкладений об’єкт:
 
 ```js
 const ourStorage = {
@@ -39,7 +39,7 @@ ourStorage.desk.drawer;
 
 # --hints--
 
-`gloveBoxContents` повинен дорівнювати рядку `maps`.
+`gloveBoxContents` має дорівнювати рядку `maps`.
 
 ```js
 assert(gloveBoxContents === 'maps');

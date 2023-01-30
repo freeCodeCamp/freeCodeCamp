@@ -7,11 +7,13 @@ dashedName: step-15
 
 # --description--
 
-قم بتحويل الصورة إلى رابط عن طريق احاطتها بـ tags العنصر الضرورية. استخدم `https://freecatphotoapp.com` كقيمة السمة `href`.
+In previous steps you used an anchor element to turn text into a link. Other types of content can also be turned into a link by wrapping it in anchor tags.
+
+Turn the image into a link by surrounding it with necessary element tags. Use `https://freecatphotoapp.com` as the anchor's `href` attribute value.
 
 # --hints--
 
-يجب أن يكون لديك عنصر `img` بقيمة `src` من `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. ربما قمت بحذفها عن طريق الخطأ.
+You should have an `img` element with an `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. You may have accidentally deleted it.
 
 ```js
 assert(
@@ -21,37 +23,37 @@ assert(
 );
 ```
 
-يجب أن يحتوي العنصر (`a`) على opening tag. Opening tags تكتب هكذا: `<elementName>`.
+Your anchor (`a`) element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
 ```js
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-يجب عليك إضافة opening tag واحد فقط للـ (`a`). الرجاء إزالة أي زيادات.
+You should only add one opening anchor (`a`) tag. Please remove any extras.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);
 ```
 
-يجب أن يحتوي العنصر (`a`) على closing tag. Closing tags لها `/` مباشرة بعد رمز `<`.
+Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
 ```js
 assert(code.match(/<\/a>/g).length >= 2);
 ```
 
-يجب عليك إضافة closing tag واحد فقط للـ (`a`). الرجاء إزالة أي زيادات.
+You should only add one closing anchor (`a`) tag. Please remove any extras.
 
 ```js
 assert(code.match(/<\/a>/g).length === 2);
 ```
 
-عنصر (`a`) الخاص بك ليس لديه سمة `href`. تحقق من وجود مسافة بعد اسم الـ opening tag و/أو ان هناك مسافات قبل جميع أسماء السمات.
+Your anchor (`a`) element does not have an `href` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
 
 ```js
 assert(document.querySelector('a').hasAttribute('href'));
 ```
 
-(`a`) الخاص بك يجب أن يحيل الي `https://freecatphotoapp.com`. إما أنك حذفت الـ URL أو لديك خطأ إملائي.
+Your anchor (`a`) element should link to `https://freecatphotoapp.com`. You have either omitted the URL or have a typo.
 
 ```js
 assert(
@@ -60,7 +62,7 @@ assert(
 );
 ```
 
-يجب أن يكون عنصر `img` الخاص بك متداخلا داخل عنصر الرابط (`a`). يجب أن يكون عنصر `img` بأكمله داخل الـ opening و الـ closing tags لعنصر الرابط (`a`).
+Your `img` element should be nested within the anchor (`a`) element. The entire `img` element should be inside the opening and closing tags of the anchor (`a`) element.
 
 ```js
 assert(document.querySelector('img').parentNode.nodeName === 'A');
