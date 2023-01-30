@@ -55,8 +55,8 @@ const LowerJaw = ({
     if (attempts === 0) {
       setCurrentAttempts(0);
       setRunningTests(false);
-      setIsFeedbackHidden(false);
       setTestBtnAriaHidden(false);
+      setIsFeedbackHidden(false);
       hintRef.current = '';
     } else if (attempts > 0 && hint) {
       //hide the feedback from SR until the "Running tests" are displayed and removed.
