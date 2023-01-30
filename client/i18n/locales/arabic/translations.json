@@ -275,6 +275,8 @@
     "wrong-answer": "عذراً، هذه ليست الإجابة الصحيحة. قم بالمحاولة مرة أخرى؟",
     "check-answer": "انقر على الزر أدناه للتحقق من إجابتك.",
     "assignment-not-complete": "يرجى إنهاء المهام",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "رابط الحل",
     "github-link": "رابط Github",
     "submit-and-go": "أرسل وانتقل إلى التحدي التالي",

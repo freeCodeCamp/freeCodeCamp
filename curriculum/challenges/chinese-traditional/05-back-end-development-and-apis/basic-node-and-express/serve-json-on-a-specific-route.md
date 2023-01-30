@@ -18,7 +18,7 @@ HTML 服務器提供 HTML 服務，而 API 提供數據服務。 <dfn>REST</dfn>
 
 # --hints--
 
-The endpoint `/json` should serve the JSON object `{"message": "Hello json"}`
+端口 `/json` 應該返回一個 JSON 對象 `{"message": "Hello json"}`
 
 ```js
 (getUserInput) =>

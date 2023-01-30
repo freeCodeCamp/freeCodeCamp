@@ -1,4 +1,4 @@
-const search = query => {
+const search = (query: string) => {
   cy.get('.ais-SearchBox').within(() => {
     cy.get('input').type(query);
   });
@@ -106,6 +106,8 @@ describe('Search bar', () => {
 
     cy.get('.ais-SearchBox-form').submit();
 
-    cy.url('/');
+    cy.location().should(loc => {
+      expect(loc.pathname).to.eq('/learn/');
+    });
   });
 });

@@ -12,7 +12,7 @@ As is, any user can just go to `/profile` whether they have authenticated or not
 
 The challenge here is creating the middleware function `ensureAuthenticated(req, res, next)`, which will check if a user is authenticated by calling Passport's `isAuthenticated` method on the `request` which checks if `req.user` is defined. If it is, then `next()` should be called. Otherwise, you can just respond to the request with a redirect to your homepage to login.
 
-An implementation of this middleware is:
+このミドルウェアの実装は次のようになります。
 
 ```javascript
 function ensureAuthenticated(req, res, next) {
@@ -33,7 +33,7 @@ app
  });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#create-new-middleware-8" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+正しいと思ったら、ページを送信してください。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#create-new-middleware-8" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

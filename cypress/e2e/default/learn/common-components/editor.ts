@@ -9,13 +9,6 @@ describe('Editor Shortcuts', () => {
     );
   });
 
-  it('Editor and body should have the same theme', () => {
-    cy.login();
-    cy.get('body').should('have.class', 'light-palette');
-    // I don't know how to create these tests 🤷‍♀️
-    cy.get('');
-  });
-
   it('Should handle Alt+Enter', () => {
     cy.get(editorElement.editor, { timeout: 15000 })
       .first()

@@ -10,9 +10,7 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 ES6 fornisce una nuova sintassi per creare oggetti, utilizzando la parola chiave <dfn>class</dfn> (classe).
 
-Va notato che la sintassi `class` è appunto solo una sintassi, e non la vera e propria implementazione basata su classi di un paradigma orientato agli oggetti, a differenza di quanto accade in linguaggi come Java, Python, Ruby, ecc.
-
-In ES5, un oggetto può essere creato definendo una funzione `constructor` e usando la parola chiave `new` per istanziare l'oggetto.
+In ES5, un oggetto può essere creato definendo una funzione `constructor` (costruttore) e usando la parola chiave `new` per istanziare l'oggetto.
 
 In ES6, una dichiarazione `class` possiede un metodo `constructor` che viene invocato con la parola chiave `new`. Se il metodo `constructor` non viene esplicitamente definito, allora è definito implicitamente senza argomenti.
 
@@ -45,9 +43,9 @@ atlas.launch();
 
 Va notato che la parola chiave `class` dichiara una nuova funzione, alla quale viene aggiunto un costruttore. Questo costruttore viene invocato quando `new` viene chiamata per creare un nuovo oggetto.
 
-**Nota:** Per i nomi di classi ES6 dovrebbe essere usato per convenzione lo stile di scrittura UpperCamelCase, come fatto sopra in `SpaceShuttle`.
+**Nota:** per i nomi di classi ES6 dovrebbe essere usato per convenzione lo stile di scrittura UpperCamelCase, come fatto sopra in `SpaceShuttle`.
 
-Il metodo costruttore `constructor` è un metodo speciale per creare e inizializzare un oggetto creato con class. Potrai approfondire la cosa nella sezione Programmazione Orientata agli Oggetti della certificazione Algoritmi e Strutture Dati in JavaScript.
+Il metodo `constructor` è un metodo speciale per creare e inizializzare un oggetto creato con class. Potrai approfondire la questione nella sezione Programmazione Orientata agli Oggetti della certificazione Algoritmi e Strutture Dati in JavaScript.
 
 # --instructions--
 
@@ -65,7 +63,7 @@ assert(
 );
 ```
 
-Dovrebbe essere usata la parola chiave `class`.
+Dovresti usare la parola chiave `class`.
 
 ```js
 assert(code.match(/class/g));

@@ -10,11 +10,9 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 يوفر ES6 طريقة syntax جديدة لإنشاء objects، باستخدام كلمة <dfn>class</dfn>.
 
-وتجدر الإشارة إلى أن syntax الـ `class` هو مجرد syntax وليس تنفيذًا كاملًا للـ class لنموذج البرمجة الشيئية (object-oriented)، على عكس لغات مثل Java و Python و Ruby ، إلخ.
+In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
 
-في ES5، ينشئ كائن (object) عند تحدد وظيفة (function) يسمى `constructor` واستخدام مصطلح `new` لتمثيل كائن (object).
-
-في ES6، يحتوي إعلان `class` على طريقة `constructor` التي يتم استدعاؤها مع مصطلح `new` جديدة. إذا لم يتم تعريف طريقة `constructor` بوضوح، فعندها يتم تعريفها ضمنيا دون أي حجج (arguments).
+In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
 
 ```js
 // Explicit constructor
@@ -43,21 +41,21 @@ const atlas = new Rocket();
 atlas.launch();
 ```
 
-وتجدر الإشارة إلى أن كلمة `class` تعرف function جديد، تمت إضافة الـ constructor إليه. يتم استدعاء هذا الـ constructor عندما يتم استدعاء `new` لإنشاء object جديد.
+It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.
 
-**ملاحظة:** يجب أن تستخدم UpperCamelCase لاسماء الـ class في ES6، كما في `SpaceShuttle` المستخدمة أعلاه.
+**Note:** UpperCamelCase should be used by convention for ES6 class names, as in `SpaceShuttle` used above.
 
-Method الـ `constructor` هي method خاصة لإنشاء وتهيئة object تم إنشاؤه عن طريق class. سوف تتعلم المزيد عنها في قسم البرمجة الشيئية في شهادة خوارزميات جافا سكريبت وهياكل البيانات.
+The `constructor` method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.
 
 # --instructions--
 
-استخدم كلمة `class` واكتب `constructor` لإنشاء class الـ `Vegetable`.
+Use the `class` keyword and write a `constructor` to create the `Vegetable` class.
 
-Class الـ `Vegetable` يتيح لك إنشاء vegetable object مع خاصية `name` والتي يتم تمريرها إلى الـ `constructor`.
+The `Vegetable` class allows you to create a vegetable object with a property `name` that gets passed to the `constructor`.
 
 # --hints--
 
-`Vegetable` يجب أن تكون `class` مع method معرفة للـ `constructor`.
+`Vegetable` should be a `class` with a defined `constructor` method.
 
 ```js
 assert(
@@ -65,13 +63,13 @@ assert(
 );
 ```
 
-يجب استخدام كلمة `class`.
+The `class` keyword should be used.
 
 ```js
 assert(code.match(/class/g));
 ```
 
-`Vegetable` يجب أن يتم انشاء مثيل له.
+`Vegetable` should be able to be instantiated.
 
 ```js
 assert(() => {
@@ -80,7 +78,7 @@ assert(() => {
 });
 ```
 
-`carrot.name` يجب أن يرجع `carrot`.
+`carrot.name` should return `carrot`.
 
 ```js
 assert(carrot.name == 'carrot');
