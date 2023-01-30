@@ -606,11 +606,11 @@
     "fulltext": "<0>ここに</0> <1>{{user}}</1> <2>が freeCodeCamp.org の約 {{time}} 時間の課程に相当する</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4>",
     "project": {
       "heading-legacy-full-stack": "レガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
-      "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました:",
+      "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",
       "solution": "解答",
       "no-solution": "解答の表示中にエラーが発生しました。 support@freeCodeCamp.org までメールにてお問い合わせください。",
       "source": "ソースコード",
-      "footnote": "これらのプロジェクトのいずれかが <2>学問的誠実性ポリシー</2> に違反すると思われる場合、<5>freeCodeCamp チームに報告</5> してください。",
+      "footnote": "これらのプロジェクトのいずれかが<2>学問的誠実性ポリシー</2>に反すると思われる場合は、<5>freeCodeCamp チームに報告</5>してください。",
       "title": {
         "Build a Personal Portfolio Webpage": "個人ポートフォリオのウェブページを作成する",
         "Build a Random Quote Machine": "ランダムクォートマシンを作成する",
