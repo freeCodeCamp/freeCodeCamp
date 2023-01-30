@@ -210,7 +210,6 @@ section {
   top: 0;
   background: #0a0a23;
   color: #fff;
-  z-index: 999;
   padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
   margin: 0 -2px;
 }
