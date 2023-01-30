@@ -49,17 +49,13 @@ type AboutState = {
 };
 
 const ShowImageValidationWarning = ({
-  closeLabel,
   alertContent
 }: {
-  closeLabel: string;
   alertContent: string;
 }) => {
   return (
     <HelpBlock>
-      <Alert bsStyle='info' closeLabel={closeLabel}>
-        {alertContent}
-      </Alert>
+      <Alert bsStyle='info'>{alertContent}</Alert>
     </HelpBlock>
   );
 };
@@ -248,7 +244,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
                 />
                 {!this.state.isPictureUrlValid && (
                   <ShowImageValidationWarning
-                    closeLabel={t('buttons.close')}
                     alertContent={t('validation.url-not-image')}
                   />
                 )}
