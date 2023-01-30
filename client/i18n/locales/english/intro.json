@@ -778,6 +778,19 @@
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
       },
+      "project-euler": {
+        "title": "Project Euler",
+        "intro": [
+          "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
+          "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+        ]
+      }
+    }
+  },
+  "the-odin-project": {
+    "title": "The Odin Project",
+    "intro": ["Intro is to be determined"],
+    "blocks": {
       "the-odin-project": {
         "title": "The Odin Project",
         "intro": ["A description is to be determined"]
@@ -785,13 +798,6 @@
       "the-odin-project-projects": {
         "title": "The Odin Project Projects",
         "intro": ["A description is to be determined"]
-      },
-      "project-euler": {
-        "title": "Project Euler",
-        "intro": [
-          "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
-          "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
-        ]
       }
     }
   },
