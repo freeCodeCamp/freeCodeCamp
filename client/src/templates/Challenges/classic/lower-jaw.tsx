@@ -1,4 +1,4 @@
-import React, { createRef, useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/react-bootstrap';
 
@@ -38,14 +38,14 @@ const LowerJaw = ({
   isSignedIn,
   updateContainer
 }: LowerJawProps): JSX.Element => {
-  const hintRef = useRef('');
+  const hintRef = React.useRef('');
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
   const [testBtnAriaHidden, setTestBtnAriaHidden] = useState(false);
   const { t } = useTranslation();
-  const testFeedbackRef = createRef<HTMLDivElement>();
+  const testFeedbackRef = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
     // prevent unnecessary updates:
