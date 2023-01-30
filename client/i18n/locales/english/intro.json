@@ -791,12 +791,12 @@
     "title": "The Odin Project",
     "intro": ["Intro is to be determined"],
     "blocks": {
-      "the-odin-project": {
-        "title": "The Odin Project",
+      "top-html-foundations": {
+        "title": "HTML Foundations",
         "intro": ["A description is to be determined"]
       },
-      "the-odin-project-projects": {
-        "title": "The Odin Project Projects",
+      "top-build-a-recipe-page-project": {
+        "title": "Learn HTML Foundations by Building a Recipe Page",
         "intro": ["A description is to be determined"]
       }
     }

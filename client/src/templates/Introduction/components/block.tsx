@@ -80,9 +80,13 @@ class Block extends Component<BlockProps> {
   renderBlockIntros(arr: string[]): JSX.Element {
     return (
       <div className='block-description'>
-        {arr.map((str, i) => (
-          <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
-        ))}
+        {arr.map(
+          (str, i) => (
+            console.log('first block incorrect'),
+            console.log(str),
+            (<p dangerouslySetInnerHTML={{ __html: str }} key={i} />)
+          )
+        )}
       </div>
     );
   }
