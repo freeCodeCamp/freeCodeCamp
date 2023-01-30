@@ -1,0 +1,16 @@
+{
+    "name": "The Odin Project Projects",
+    "isUpcomingChange": true,
+    "dashedName": "the-odin-project-projects",
+    "order": 6,
+    "time": "",
+    "template": "",
+    "required": [],
+    "superBlock": "coding-interview-prep",
+    "challengeOrder": [
+        [
+            "6391d1a4f7ac71efd0621380",
+            "Build a Recipe Page Project"
+        ]
+    ]
+}
