@@ -102,8 +102,13 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
   const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
-  const displayConsole =
-    projectBasedChallenge || isMultifileCertProject ? showConsole : true;
+  const displayEditorConsole = !(
+    projectBasedChallenge || isMultifileCertProject
+  )
+    ? true
+    : false;
+  const displayPreviewConsole =
+    (projectBasedChallenge || isMultifileCertProject) && showConsole;
   const {
     codePane,
     editorPane,
@@ -150,10 +155,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               >
                 {editor}
               </ReflexElement>
-              {displayConsole && (
+              {displayEditorConsole && (
                 <ReflexSplitter propagate={true} {...resizeProps} />
               )}
-              {displayConsole && (
+              {displayEditorConsole && (
                 <ReflexElement
                   flex={testsPane.flex}
                   {...reflexProps}
@@ -177,7 +182,20 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
         {displayPreviewPane && (
           <ReflexElement flex={previewPane.flex} {...resizeProps}>
-            {preview}
+            <ReflexContainer orientation='horizontal'>
+              <ReflexElement flex={previewPane.flex} {...resizeProps}>
+                {preview}
+              </ReflexElement>
+              {displayPreviewConsole && (
+                <ReflexSplitter propagate={true} {...resizeProps} />
+              )}
+              {displayPreviewConsole && (
+                <ReflexElement flex={testsPane.flex} {...resizeProps}>
+                  <ReflexSplitter propagate={true} {...resizeProps} />
+                  {testOutput}
+                </ReflexElement>
+              )}
+            </ReflexContainer>
           </ReflexElement>
         )}
       </ReflexContainer>
