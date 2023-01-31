@@ -41,6 +41,7 @@ import './fonts.css';
 import './global.css';
 import './variables.css';
 import './rtl-layout.css';
+import { Themes } from '../settings/theme';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -63,7 +64,8 @@ const mapStateToProps = createSelector(
     isOnline,
     isServerOnline,
     fetchState,
-    theme: user.theme,
+    //  need to figure out the theme before the component render
+    theme: user.theme || Themes.System,
     user
   })
 );

@@ -84,6 +84,7 @@ const StripeCardForm = ({
     style: {
       base: {
         fontSize: '18px',
+        // whelp
         color: `${theme === Themes.Night ? '#fff' : '#0a0a23'}`,
         '::placeholder': {
           color: `#858591`

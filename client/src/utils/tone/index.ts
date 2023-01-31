@@ -2,12 +2,21 @@ import store from 'store';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
 import { Themes } from '../../components/settings/theme';
 
+const preferDarkScheme = window.matchMedia(
+  '(prefers-color-scheme: dark)'
+).matches;
+
+const campfireMusicSystem = preferDarkScheme
+  ? 'https://campfire-mode.freecodecamp.org/night.mp3'
+  : 'https://campfire-mode.freecodecamp.org/day.mp3';
+
 const TRY_AGAIN = 'https://campfire-mode.freecodecamp.org/try-again.mp3';
 const CHAL_COMP = 'https://campfire-mode.freecodecamp.org/chal-comp.mp3';
 
 const toneUrls = {
   [Themes.Default]: 'https://campfire-mode.freecodecamp.org/day.mp3',
   [Themes.Night]: 'https://campfire-mode.freecodecamp.org/night.mp3',
+  [Themes.System]: campfireMusicSystem,
   donation: 'https://campfire-mode.freecodecamp.org/donate.mp3',
   'tests-completed': CHAL_COMP,
   'block-toggle': 'https://tonejs.github.io/audio/berklee/guitar_chord1.mp3',

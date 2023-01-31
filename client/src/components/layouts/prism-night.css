@@ -5,6 +5,8 @@
  * @author Rose Pritchard
  */
 
+/* Whelp */
+
 .dark-palette code[class*='language-'],
 .dark-palette pre[class*='language-'] {
   color: var(--secondary-color);

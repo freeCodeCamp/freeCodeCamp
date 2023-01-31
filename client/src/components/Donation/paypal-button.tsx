@@ -94,6 +94,7 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
     const { duration, planId, amount } = this.state;
     const { t, theme, isPaypalLoading, isMinimalForm } = this.props;
     const isSubscription = duration !== 'one-time';
+    // Whelp, need to be changed too
     const buttonColor = theme === Themes.Night ? 'white' : 'gold';
     if (!paypalClientId) {
       return null;

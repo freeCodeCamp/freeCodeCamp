@@ -1203,13 +1203,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
   }
 
-  const { isSignedIn, theme } = props;
+  const { theme } = props;
   const preferDarkScheme = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches;
-  const isDarkTheme =
-    theme === Themes.Night || (preferDarkScheme && !isSignedIn);
+  const preferDarkTheme = preferDarkScheme && theme !== Themes.Default;
+  const isDarkTheme = theme === Themes.Night || preferDarkTheme;
   const editorTheme = isDarkTheme ? 'vs-dark-custom' : 'vs-custom';
+  console.log(theme);
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>

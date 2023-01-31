@@ -60,7 +60,8 @@ const config = {
           'typescript',
           'xml'
         ],
-        theme: 'default',
+        // how to change this to system without babel shouting, do I need to even?
+        theme: 'system',
         css: true,
         plugins: ['line-numbers']
       }

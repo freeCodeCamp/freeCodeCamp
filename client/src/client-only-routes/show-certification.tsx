@@ -251,7 +251,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <DonateForm
-            defaultTheme={Themes.Default}
+            // why not move the logic to the body, if we setting the theme in three places
+            defaultTheme={Themes.System}
             handleProcessing={handleProcessing}
             isMinimalForm={true}
             paymentContext={PaymentContext.Certificate}

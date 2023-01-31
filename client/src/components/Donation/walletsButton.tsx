@@ -101,6 +101,7 @@ const WalletsButton = ({
             style: {
               paymentRequestButton: {
                 type: 'default',
+                // whelp
                 theme: theme === Themes.Night ? 'light' : 'dark',
                 height: '43px'
               }
