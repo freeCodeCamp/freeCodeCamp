@@ -28,6 +28,8 @@ const app = loopback();
 app.set('state namespace', '__fcc__');
 app.set('port', process.env.API_PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
+app.set('trust proxy', ['loopback', 'linklocal', 'uniquelocal']);
+
 app.use(loopback.token());
 app.use(
   morgan(reqLogFormat, { stream: { write: msg => log(_.split(msg, '\n')[0]) } })
