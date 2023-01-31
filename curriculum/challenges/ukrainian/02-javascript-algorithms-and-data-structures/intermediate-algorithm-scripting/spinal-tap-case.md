@@ -12,19 +12,19 @@ dashedName: spinal-tap-case
 
 # --hints--
 
-`spinalCase("This Is Spinal Tap")` повинен повертати рядок `this-is-spinal-tap`.
+`spinalCase("This Is Spinal Tap")` має повертати рядок `this-is-spinal-tap`.
 
 ```js
 assert.deepEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap');
 ```
 
-`spinalCase("thisIsSpinalTap")` повинен повертати рядок `this-is-spinal-tap`.
+`spinalCase("thisIsSpinalTap")` має повертати рядок `this-is-spinal-tap`.
 
 ```js
 assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap');
 ```
 
-`spinalCase("The_Andy_Griffith_Show")` повинен повертати рядок `the-andy-griffith-show`.
+`spinalCase("The_Andy_Griffith_Show")` має повертати рядок `the-andy-griffith-show`.
 
 ```js
 assert.strictEqual(
@@ -33,7 +33,7 @@ assert.strictEqual(
 );
 ```
 
-`spinalCase("Teletubbies say Eh-oh")` повинен повертати рядок `teletubbies-say-eh-oh`.
+`spinalCase("Teletubbies say Eh-oh")` має повертати рядок `teletubbies-say-eh-oh`.
 
 ```js
 assert.strictEqual(
@@ -42,7 +42,7 @@ assert.strictEqual(
 );
 ```
 
-`spinalCase("AllThe-small Things")` повинен повертати рядок `all-the-small-things`.
+`spinalCase("AllThe-small Things")` має повертати рядок `all-the-small-things`.
 
 ```js
 assert.strictEqual(spinalCase('AllThe-small Things'), 'all-the-small-things');

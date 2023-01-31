@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-`rangeOfNumbers` повинна використовувати рекурсію (викликати саму себе), щоб розв’язати це завдання.
+`rangeOfNumbers` має використовувати рекурсію (викликати саму себе), щоб розв’язати це завдання.
 
 ```js
 assert(
@@ -38,19 +38,19 @@ assert(
 );
 ```
 
-`rangeOfNumbers(1, 5)` повинна повертати `[1, 2, 3, 4, 5]`.
+`rangeOfNumbers(1, 5)` має повертати `[1, 2, 3, 4, 5]`.
 
 ```js
 assert.deepStrictEqual(rangeOfNumbers(1, 5), [1, 2, 3, 4, 5]);
 ```
 
-`rangeOfNumbers(6, 9)` повинна повертати `[6, 7, 8, 9]`.
+`rangeOfNumbers(6, 9)` має повертати `[6, 7, 8, 9]`.
 
 ```js
 assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
 ```
 
-`rangeOfNumbers(4, 4)` повинна повертати `[4]`.
+`rangeOfNumbers(4, 4)` має повертати `[4]`.
 
 ```js
 assert.deepStrictEqual(rangeOfNumbers(4, 4), [4]);

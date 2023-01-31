@@ -39,10 +39,7 @@
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
     "./middlewares/flash-cheaters": {},
-    "./middlewares/passport-login": {},
-    "./middlewares/rate-limit": {
-      "paths": ["/mobile-login"]
-    }
+    "./middlewares/passport-login": {}
   },
   "files": {},
   "final:after": {

@@ -49,49 +49,49 @@ assert(code.match(/&&/g).length === 1);
 assert(code.match(/if/g).length === 1);
 ```
 
-`testLogicalAnd(0)` повинен повертати рядок `No`
+`testLogicalAnd(0)` має повертати рядок `No`
 
 ```js
 assert(testLogicalAnd(0) === 'No');
 ```
 
-`testLogicalAnd(24)` повинен повертати рядок `No`
+`testLogicalAnd(24)` має повертати рядок `No`
 
 ```js
 assert(testLogicalAnd(24) === 'No');
 ```
 
-`testLogicalAnd(25)` повинен повертати рядок `Yes`
+`testLogicalAnd(25)` має повертати рядок `Yes`
 
 ```js
 assert(testLogicalAnd(25) === 'Yes');
 ```
 
-`testLogicalAnd(30)` повинен повертати рядок `Yes`
+`testLogicalAnd(30)` має повертати рядок `Yes`
 
 ```js
 assert(testLogicalAnd(30) === 'Yes');
 ```
 
-`testLogicalAnd(50)` повинен повертати рядок `Yes`
+`testLogicalAnd(50)` має повертати рядок `Yes`
 
 ```js
 assert(testLogicalAnd(50) === 'Yes');
 ```
 
-`testLogicalAnd(51)` повинен повертати рядок `No`
+`testLogicalAnd(51)` має повертати рядок `No`
 
 ```js
 assert(testLogicalAnd(51) === 'No');
 ```
 
-`testLogicalAnd(75)` повинен повертати рядок `No`
+`testLogicalAnd(75)` має повертати рядок `No`
 
 ```js
 assert(testLogicalAnd(75) === 'No');
 ```
 
-`testLogicalAnd(80)` повинен повертати рядок `No`
+`testLogicalAnd(80)` має повертати рядок `No`
 
 ```js
 assert(testLogicalAnd(80) === 'No');

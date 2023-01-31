@@ -12,13 +12,13 @@ dashedName: convert-html-entities
 
 # --hints--
 
-`convertHTML("Dolce & Gabbana")` повинен повертати рядок `Dolce &amp; Gabbana`.
+`convertHTML("Dolce & Gabbana")` має повертати рядок `Dolce &amp; Gabbana`.
 
 ```js
 assert.match(convertHTML('Dolce & Gabbana'), /Dolce &amp; Gabbana/);
 ```
 
-`convertHTML("Hamburgers < Pizza < Tacos")` повинен повертати рядок `Hamburgers &lt; Pizza &lt; Tacos`.
+`convertHTML("Hamburgers < Pizza < Tacos")` має повертати рядок `Hamburgers &lt; Pizza &lt; Tacos`.
 
 ```js
 assert.match(
@@ -27,13 +27,13 @@ assert.match(
 );
 ```
 
-`convertHTML("Sixty > twelve")` повинен повертати рядок `Sixty &gt; twelve`.
+`convertHTML("Sixty > twelve")` має повертати рядок `Sixty &gt; twelve`.
 
 ```js
 assert.match(convertHTML('Sixty > twelve'), /Sixty &gt; twelve/);
 ```
 
-`convertHTML('Stuff in "quotation marks"')` повинен повертати рядок `Stuff in &quot;quotation marks&quot;`.
+`convertHTML('Stuff in "quotation marks"')` має повертати рядок `Stuff in &quot;quotation marks&quot;`.
 
 ```js
 assert.match(
@@ -42,19 +42,19 @@ assert.match(
 );
 ```
 
-`convertHTML("Schindler's List")` повинен повертати рядок `Schindler&apos;s List`.
+`convertHTML("Schindler's List")` має повертати рядок `Schindler&apos;s List`.
 
 ```js
 assert.match(convertHTML("Schindler's List"), /Schindler&apos;s List/);
 ```
 
-`convertHTML("<>")` повинен повертати рядок `&lt;&gt;`.
+`convertHTML("<>")` має повертати рядок `&lt;&gt;`.
 
 ```js
 assert.match(convertHTML('<>'), /&lt;&gt;/);
 ```
 
-`convertHTML("abc")` повинен повертати рядок `abc`.
+`convertHTML("abc")` має повертати рядок `abc`.
 
 ```js
 assert.strictEqual(convertHTML('abc'), 'abc');

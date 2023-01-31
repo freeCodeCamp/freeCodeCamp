@@ -12,7 +12,7 @@ dashedName: finders-keepers
 
 # --hints--
 
-`findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })` повинен повертати `8`.
+`findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })` має повертати `8`.
 
 ```js
 assert.strictEqual(
@@ -23,7 +23,7 @@ assert.strictEqual(
 );
 ```
 
-`findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })` повинен повертати `undefined`.
+`findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })` має повертати `undefined`.
 
 ```js
 assert.strictEqual(

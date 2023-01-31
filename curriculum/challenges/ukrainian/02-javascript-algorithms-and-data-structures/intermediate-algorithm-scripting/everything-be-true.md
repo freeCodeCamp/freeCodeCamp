@@ -18,7 +18,7 @@ dashedName: everything-be-true
 
 # --hints--
 
-`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot")` повинен повертати `false`.
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot")` має повертати `false`.
 
 ```js
 assert.strictEqual(truthCheck(
@@ -30,7 +30,7 @@ assert.strictEqual(truthCheck(
   "isBot"), false);
 ```
 
-`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "name")` повинен повертати `true`.
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "name")` має повертати `true`.
 
 ```js
 assert.strictEqual(truthCheck(
@@ -42,7 +42,7 @@ assert.strictEqual(truthCheck(
   "name"), true);
 ```
 
-`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "role")` повинен повертати `false`.
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "role")` має повертати `false`.
 
 ```js
 assert.strictEqual(truthCheck(
@@ -54,7 +54,7 @@ assert.strictEqual(truthCheck(
   "role"), false);
 ```
 
-`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number")` повинен повертати `true`.
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number")` має повертати `true`.
 
 ```js
 assert.strictEqual(truthCheck(
@@ -65,7 +65,7 @@ assert.strictEqual(truthCheck(
   "number"), true);
 ```
 
-`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "caught")` повинен повертати `false`.
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "caught")` має повертати `false`.
 
 ```js
 assert.strictEqual(truthCheck(
@@ -77,7 +77,7 @@ assert.strictEqual(truthCheck(
   "caught"), false);
 ```
 
-`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "number")` повинен повертати `false`.
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "number")` має повертати `false`.
 
 ```js
 assert.strictEqual(truthCheck(
@@ -89,7 +89,7 @@ assert.strictEqual(truthCheck(
   "number"), false);
 ```
 
-`truthCheck([{name: "Quincy", username: "QuincyLarson"}, {name: "Naomi", username: "nhcarrigan"}, {name: "Camperbot"}], "username")` повинен повертати `false`.
+`truthCheck([{name: "Quincy", username: "QuincyLarson"}, {name: "Naomi", username: "nhcarrigan"}, {name: "Camperbot"}], "username")` має повертати `false`.
 
 ```js
 assert.strictEqual(truthCheck(
@@ -101,7 +101,7 @@ assert.strictEqual(truthCheck(
   "username"), false);
 ```
 
-`truthCheck([{name: "freeCodeCamp", users: [{name: "Quincy"}, {name: "Naomi"}]}, {name: "Code Radio", users: [{name: "Camperbot"}]}, {name: "", users: []}], "users")` повинен повертати `true`.
+`truthCheck([{name: "freeCodeCamp", users: [{name: "Quincy"}, {name: "Naomi"}]}, {name: "Code Radio", users: [{name: "Camperbot"}]}, {name: "", users: []}], "users")` має повертати `true`.
 
 ```js
 assert.strictEqual(truthCheck(
@@ -113,7 +113,7 @@ assert.strictEqual(truthCheck(
   "users"), true);
 ```
 
-`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "data")` повинен повертати `true`.
+`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "data")` має повертати `true`.
 
 ```js
 assert.strictEqual(truthCheck(
@@ -125,7 +125,7 @@ assert.strictEqual(truthCheck(
   "data"), true);
 ```
 
-`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "id")` повинен повертати `false`.
+`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "id")` має повертати `false`.
 
 ```js
 assert.strictEqual(truthCheck(
