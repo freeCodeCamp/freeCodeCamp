@@ -162,8 +162,6 @@ export default function initializeUser(User) {
   User.definition.properties.rand.default = getRandomNumber;
   // increase user accessToken ttl to 900 days
   User.settings.ttl = 900 * 24 * 60 * 60 * 1000;
-  // Sets ttl to 900 days for mobile login created access tokens
-  User.settings.maxTTL = 900 * 24 * 60 * 60 * 1000;
 
   // username should not be in blocklist
   User.validatesExclusionOf('username', {
@@ -340,21 +338,6 @@ export default function initializeUser(User) {
       Observable.fromPromise(updateUser),
       req.logIn(this),
       accessToken => accessToken
-    );
-  };
-
-  User.prototype.mobileLoginByRequest = function mobileLoginByRequest(
-    req,
-    res
-  ) {
-    return new Promise((resolve, reject) =>
-      this.createAccessToken({}, (err, accessToken) => {
-        if (err) {
-          return reject(err);
-        }
-        setAccessTokenToResponse({ accessToken }, req, res);
-        return resolve(accessToken);
-      })
     );
   };
 
