@@ -79,7 +79,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       picture === formValues.picture &&
       about === formValues.about
     ) {
-      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: {
           name,
@@ -259,7 +258,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
                 />
               </FormGroup>
             </div>
-            <BlockSaveButton disabled={this.isFormPristine()}>
+            <BlockSaveButton aria-disabled={this.isFormPristine()}>
               {t('buttons.save')}{' '}
               <span className='sr-only'>
                 {t('settings.headings.personal-info')}

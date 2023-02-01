@@ -4,6 +4,24 @@
   opacity: 1;
 }
 
+:is(
+    .about-settings,
+    .privacy-settings,
+    .email-settings,
+    #internet-presence,
+    #portfolio-items,
+    #honesty-policy
+  )
+  :is(
+    button[aria-disabled='true'],
+    button[aria-disabled='true']:is(:focus, :hover)
+  ) {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 .toggle-not-active {
   background-color: var(--quaternary-background);
   color: var(--secondary-color);

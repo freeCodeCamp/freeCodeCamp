@@ -66,7 +66,6 @@ class InternetSettings extends Component<InternetProps, InternetState> {
       twitter !== originalValues.twitter ||
       website !== originalValues.website
     ) {
-      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: { githubProfile, linkedin, twitter, website }
       });
@@ -244,7 +243,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
               </FormGroup>
             </div>
             <BlockSaveButton
-              disabled={this.isFormPristine() || !this.isFormValid()}
+              aria-disabled={this.isFormPristine() || !this.isFormValid()}
             >
               {t('buttons.save')}{' '}
               <span className='sr-only'>{t('settings.headings.internet')}</span>

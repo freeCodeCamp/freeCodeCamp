@@ -132,7 +132,10 @@ function EmailSettings({
     state: confirmEmailValidation,
     message: confirmEmailValidationMessage
   } = getValidationForConfirmEmail();
-
+  const isDisabled =
+    newEmailValidation !== 'success' ||
+    confirmEmailValidation !== 'success' ||
+    isPristine;
   if (!currentEmail) {
     return (
       <div>
@@ -206,11 +209,8 @@ function EmailSettings({
             </FormGroup>
           </div>
           <BlockSaveButton
-            disabled={
-              newEmailValidation !== 'success' ||
-              confirmEmailValidation !== 'success' ||
-              isPristine
-            }
+            aria-disabled={isDisabled}
+            {...(isDisabled && { onClick: {} })}
           >
             {t('buttons.save')}{' '}
             <span className='sr-only'>{t('settings.email.heading')}</span>

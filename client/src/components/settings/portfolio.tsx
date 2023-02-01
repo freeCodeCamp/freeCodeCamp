@@ -220,7 +220,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       this.getDescriptionValidation(description);
     return (
       <FullWidthRow key={id}>
-        <form onSubmit={e => this.handleSubmit(e, id)}>
+        <form onSubmit={e => this.handleSubmit(e, id)} id='portfolio-items'>
           <FormGroup
             controlId={`${id}-title`}
             validationState={
@@ -276,7 +276,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             ) : null}
           </FormGroup>
           <BlockSaveButton
-            disabled={
+            aria-disabled={
               pristine ||
               !title ||
               !isURL(url, {
