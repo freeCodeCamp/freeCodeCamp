@@ -9,15 +9,14 @@ const navBarselectors = {
 };
 
 let appHasStarted: boolean;
-function spyOnListener(this: void, win: Cypress.AUTWindow, ...args: any[]) {
+function spyOnListener(this: EventTarget, win: Cypress.AUTWindow, ...args: [type: string, callback: EventListenerOrEventListenerObject | null]) {
   const addListener = win.EventTarget.prototype.addEventListener.bind(this);
   win.EventTarget.prototype.addEventListener = function (name: string) {
     if (name === 'click') {
       appHasStarted = true;
       win.EventTarget.prototype.addEventListener = addListener;
     }
-
-    return addListener.apply(this, [win, args]);
+    return addListener.apply(this, args);
   };
 }
 
