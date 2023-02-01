@@ -1,4 +1,4 @@
-const location =
+const sassPathLocation =
   '/learn/front-end-development-libraries/sass/' +
   'use-for-to-create-a-sass-loop';
 
@@ -9,12 +9,12 @@ const getIframeBody = () => {
     .should('exist')
     .its('body')
     .should('not.be.undefined')
-    .then(cy.wrap);
+    .then(body => cy.wrap(body));
 };
 
 describe('Sass Challenge', () => {
   before(() => {
-    cy.visit(location);
+    cy.visit(sassPathLocation);
     cy.wait(5000);
   });
 
