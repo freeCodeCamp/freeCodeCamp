@@ -107,7 +107,6 @@ function DynamicForm({
           {hideButton ? null : (
             <BlockSaveButton
               disabled={(pristine && !enableSubmit) || (error as boolean)}
-              style={{ margin: '0 15px' }}
             >
               {buttonText ? buttonText : null}
             </BlockSaveButton>
