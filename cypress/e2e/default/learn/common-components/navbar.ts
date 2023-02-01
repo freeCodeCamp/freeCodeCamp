@@ -16,7 +16,8 @@ function spyOnListener(win: Cypress.AUTWindow) {
       appHasStarted = true;
       win.EventTarget.prototype.addEventListener = addListener;
     }
-    return addListener.apply(this, Array.from(win));
+
+    return addListener.apply(this, arguments);
   };
 }
 
