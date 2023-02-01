@@ -174,27 +174,26 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           </ReflexElement>
         )}
 
-        {displayPreviewPane && (
-          <ReflexSplitter propagate={true} {...resizeProps} />
-        )}
-        {displayPreviewPane && (
-          <ReflexElement flex={previewPane.flex} {...resizeProps}>
-            <ReflexContainer orientation='horizontal'>
-              <ReflexElement flex={previewPane.flex} {...resizeProps}>
-                {preview}
-              </ReflexElement>
-              {displayConsole && (
-                <ReflexSplitter propagate={true} {...resizeProps} />
-              )}
-              {displayConsole && (
-                <ReflexElement flex={testsPane.flex} {...resizeProps}>
+        {(projectBasedChallenge || isMultifileCertProject) &&
+          (displayPreviewPane || displayConsole) && (
+            <ReflexSplitter propagate={true} {...resizeProps} />
+          )}
+        {(projectBasedChallenge || isMultifileCertProject) &&
+          (displayPreviewPane || displayConsole) && (
+            <ReflexElement flex={previewPane.flex} {...resizeProps}>
+              <ReflexContainer orientation='horizontal'>
+                {displayPreviewPane && <ReflexElement>{preview}</ReflexElement>}
+                {displayPreviewPane && displayConsole && (
                   <ReflexSplitter propagate={true} {...resizeProps} />
-                  {testOutput}
-                </ReflexElement>
-              )}
-            </ReflexContainer>
-          </ReflexElement>
-        )}
+                )}
+                {displayConsole && (
+                  <ReflexElement flex={testsPane.flex} {...resizeProps}>
+                    {testOutput}
+                  </ReflexElement>
+                )}
+              </ReflexContainer>
+            </ReflexElement>
+          )}
       </ReflexContainer>
       {displayPreviewPortal && (
         <PreviewPortal togglePane={togglePane} windowTitle={windowTitle}>
