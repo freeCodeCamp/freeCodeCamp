@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { BlockRequiredProps } from '../../../interfaces/PropTypes';
-import { API_LOCATION, handleRequest } from '../../utils/handleRequest';
+import { BlockRequiredProps } from '../../../interfaces/prop-types';
+import { API_LOCATION, handleRequest } from '../../utils/handle-request';
 
-const InsertStep = ({ superblock, block }: BlockRequiredProps) => {
+const CreateEmptySteps = ({ superblock, block }: BlockRequiredProps) => {
   const [num, setNum] = useState(0);
 
   const click = handleRequest(() =>
-    fetch(`${API_LOCATION}/${superblock}/${block}/_tools/insert-step`, {
+    fetch(`${API_LOCATION}/${superblock}/${block}/_tools/create-empty-steps`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -22,12 +22,12 @@ const InsertStep = ({ superblock, block }: BlockRequiredProps) => {
   return (
     <div>
       <label htmlFor='num'>
-        Step Number:
+        Number of steps to create:
         <input id='num' type='number' onChange={changeNum} />
       </label>
-      <button onClick={click}>Insert Step</button>
+      <button onClick={click}>Create Empty Steps</button>
     </div>
   );
 };
 
-export default InsertStep;
+export default CreateEmptySteps;

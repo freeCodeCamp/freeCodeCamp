@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ChallengeData } from '../../../interfaces/ChallengeData';
-import { API_LOCATION } from '../../utils/handleRequest';
-import './Block.css';
+import { ChallengeData } from '../../../interfaces/challenge-data';
+import { API_LOCATION } from '../../utils/handle-request';
+import './block.css';
 
 const Block = () => {
   const [error, setError] = useState<Error | null>(null);

@@ -3,7 +3,7 @@ import { join } from 'path';
 
 import matter from 'gray-matter';
 
-import { PartialMeta } from '../interfaces/PartialMeta';
+import { PartialMeta } from '../interfaces/partial-meta';
 import { CHALLENGE_DIR, META_DIR } from '../configs/paths';
 
 const getFileOrder = (id: string, meta: PartialMeta) => {
