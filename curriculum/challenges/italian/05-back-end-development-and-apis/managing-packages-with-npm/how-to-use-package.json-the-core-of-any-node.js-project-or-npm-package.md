@@ -22,9 +22,9 @@ Se utilizzi Replit, segui questi passaggi per impostare il progetto:
 
 Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo Link alla soluzione.
 
-Il file `package.json` è il centro di qualsiasi progetto Node.js o pacchetto npm. Memorizza informazioni sul tuo progetto, in modo simile a come la sezione &lt;head> di un documento HTML descrive il contenuto di una pagina web. Consiste di un singolo oggetto JSON dove le informazioni sono memorizzate in coppie chiave-valore. Ci sono solo due campi obbligatori; "name" e "version", ma è buona pratica fornire ulteriori informazioni sul tuo progetto che potrebbero essere utili per futuri utenti o manutentori.
+Il file `package.json` è il centro di qualsiasi progetto Node.js o pacchetto npm. It stores information about your project, similar to how the `head` section of an HTML document describes the content of a webpage. Consiste di un singolo oggetto JSON dove le informazioni sono memorizzate in coppie chiave-valore. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
 
-Se guardi l'albero dei file del tuo progetto, troverai il file package.json al livello superiore dell'albero. Questo è il file che andremo a migliorare nelle prossime due sfide.
+If you look at the file tree of your project, you will find the `package.json` file on the top level of the tree. Questo è il file che andremo a migliorare nelle prossime due sfide.
 
 Una delle informazioni più comuni in questo file è il campo `author`. Specifica chi ha creato il progetto e può consistere in una stringa o un oggetto con informazioni di contatto o altri dettagli. Un oggetto è consigliato per progetti più grandi, ma una semplice stringa come l'esempio seguente farà al caso nostro per questo progetto.
 
@@ -34,13 +34,13 @@ Una delle informazioni più comuni in questo file è il campo `author`. Specific
 
 # --instructions--
 
-Aggiungi il tuo nome come `author` del progetto nel file package.json.
+Add your name as the `author` of the project in the `package.json` file.
 
 **Nota:** Ricorda che stai scrivendo JSON, quindi tutti i nomi dei campi devono usare virgolette doppie (") ed essere separati con una virgola (,).
 
 # --hints--
 
-package.json deve avere una chiave "author" valida
+`package.json` should have a valid "author" key
 
 ```js
 (getUserInput) =>

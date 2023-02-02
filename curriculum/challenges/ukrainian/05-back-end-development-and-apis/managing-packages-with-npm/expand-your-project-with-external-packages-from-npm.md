@@ -22,7 +22,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --instructions--
 
-Додайте версію «1.1.0» пакета `@freecodecamp/example` у поле `dependencies` свого файлу `package.json`.
+Add version `1.1.0` of the `@freecodecamp/example` package to the `dependencies` field of your `package.json` file.
 
 **Примітка:** `@freecodecamp/example` є фальшивим пакетом, який використовується як навчальний інструмент.
 
