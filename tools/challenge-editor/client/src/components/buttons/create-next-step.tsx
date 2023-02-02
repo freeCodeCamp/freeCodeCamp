@@ -1,6 +1,6 @@
 import React from 'react';
-import { BlockRequiredProps } from '../../../interfaces/PropTypes';
-import { API_LOCATION, handleRequest } from '../../utils/handleRequest';
+import { BlockRequiredProps } from '../../../interfaces/prop-types';
+import { API_LOCATION, handleRequest } from '../../utils/handle-request';
 
 const CreateNextStep = ({ superblock, block }: BlockRequiredProps) => {
   const click = handleRequest(() =>

@@ -1,11 +1,11 @@
 import React, { Link, useParams } from 'react-router-dom';
-import CreateEmptySteps from '../buttons/CreateEmptySteps';
-import CreateNextStep from '../buttons/CreateNextStep';
-import DeleteStep from '../buttons/DeleteStep';
-import InsertStep from '../buttons/InsertStep';
-import UpdateStepTitles from '../buttons/UpdateStepTitles';
+import CreateEmptySteps from '../buttons/create-empty-steps';
+import CreateNextStep from '../buttons/create-next-step';
+import DeleteStep from '../buttons/delete-step';
+import InsertStep from '../buttons/insert-step';
+import UpdateStepTitles from '../buttons/update-step-titles';
 
-import './Tools.css';
+import './tools.css';
 
 const Tools = () => {
   const { block, superblock } = useParams() as {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Block } from '../../../interfaces/Block';
-import { API_LOCATION } from '../../utils/handleRequest';
+import { Block } from '../../../interfaces/block';
+import { API_LOCATION } from '../../utils/handle-request';
 
 const SuperBlock = () => {
   const [error, setError] = useState<Error | null>(null);

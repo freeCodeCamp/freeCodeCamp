@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { saveStep } from '../utils/saveStep';
+import { saveStep } from '../utils/save-step';
 
 export const saveRoute = async (req: Request, res: Response) => {
   const { superblock, block, step } = req.params;
