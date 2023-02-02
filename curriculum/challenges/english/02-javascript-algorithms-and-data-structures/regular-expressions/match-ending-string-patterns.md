@@ -24,7 +24,7 @@ The first `test` call would return `true`, while the second would return `false`
 
 # --instructions--
 
-Use the anchor character (`$`) to match the string `caboose` at the end of the string `caboose`.
+Use the dollar sign character (`$`) to match the string `caboose` at the end of the string `caboose`.
 
 # --hints--
 
