@@ -10,7 +10,7 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 في التحدي الأخير، أخبرت npm أن يتضمن نسخة محددة فقط من الحزمة. هذه طريقة مفيدة لتجميد التبعية إذا كنت بحاجة إلى التأكد من أن أجزاء مختلفة من مشروعك تبقى متوافقة مع بعضها البعض. ولكن في معظم حالات الاستخدام، لا ترد أن تفوتك إصلاحات الأخطاء لأنها غالباً ما تتضمن التصحيحات الأمنية الهامة ومن الآمل أنها لا تتسبب لتخريب تطبيقك بذلك.
 
-للسماح للتبعية npm للتحديث إلى أحدث إصدار PATCH، يمكنك أن تضيف رمز (`~`) في بداية الإصدار للتبعية. إليك مثال على كيفية السماح بالتحديثات لأي إصدار 1.3.x.
+للسماح للتبعية npm للتحديث إلى أحدث إصدار PATCH، يمكنك أن تضيف رمز (`~`) في بداية الإصدار للتبعية. Here's an example of how to allow updates to any `1.3.x` version.
 
 ```json
 "package": "~1.3.8"
@@ -18,7 +18,7 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --instructions--
 
-في ملف package.json، القاعدة الحالية لكيفية لترقية `@freecodecamp/example` بواسطة npm هي استخدام إصدار محدد (1.2.13). لكن الآن، تريد أن تسمح بأحدث إصدار 1.2.x.
+In the package.json file, your current rule for how npm may upgrade `@freecodecamp/example` is to use a specific version (`1.2.13`). But now, you want to allow the latest `1.2.x` version.
 
 استخدم رمز (`~`) لبادئة رقم إصدار `@freecodecamp/example` في تبعياتك (dependencies). ذلك يسمح ل npm بتحديثها إلى أي إصدار _patch_ جديد.
 

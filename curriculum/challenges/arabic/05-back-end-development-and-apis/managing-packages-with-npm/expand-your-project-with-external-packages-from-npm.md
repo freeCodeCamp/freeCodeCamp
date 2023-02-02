@@ -22,7 +22,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --instructions--
 
-ضف الإصدار "1.1.0" من حزمة `@freecodecamp/example` إلى خانة `dependencies` من ملف `package.json`.
+Add version `1.1.0` of the `@freecodecamp/example` package to the `dependencies` field of your `package.json` file.
 
 **ملاحظة:** إن `@freecodecamp/example` حزمة زائفة تستخدم كأداة للتعلم.
 
