@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/react-bootstrap';
 
-import { LowerButtonsPanel } from '../components/lower-jaw-panel';
-import { LowerJawTips } from '../components/lower-jaws-tip';
-import { LowerJawStatus } from '../components/lower-jaws-status';
-
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
+import GreenPass from '../../../assets/icons/green-pass';
+import Reset from '../../../assets/icons/reset';
+import Help from '../../../assets/icons/help';
+import Fail from '../../../assets/icons/fail';
+import LightBulb from '../../../assets/icons/lightbulb';
 
 const lowerJawButtonStyle = 'btn-block btn';
 
@@ -24,6 +25,112 @@ interface LowerJawProps {
   isSignedIn: boolean;
   updateContainer: () => void;
 }
+
+interface LowerJawActionRow {
+  resetButtonName: string;
+  helpButtonName: string;
+  resetButtonEvent: () => void;
+  helpButtonEvent: () => void;
+  hideHelpButton: boolean;
+}
+
+interface LowerJawTipsProps {
+  testText: string;
+  learnEncouragementText: string;
+  htmlDescription: string;
+  showFeedback: boolean;
+}
+
+interface LowerJawStatusProps {
+  children: React.ReactNode;
+  congratulationText: string;
+  showFeedback: boolean;
+  testText: string;
+}
+
+const LowerButtonsPanel = ({
+  resetButtonName,
+  helpButtonName,
+  resetButtonEvent,
+  hideHelpButton,
+  helpButtonEvent
+}: LowerJawActionRow) => {
+  return (
+    <>
+      <hr />
+      <div className='lower-jaw-icon-bar'>
+        <button
+          className='btn fade-in'
+          title={resetButtonName}
+          aria-label={resetButtonName}
+          data-cy='reset-code-button'
+          onClick={resetButtonEvent}
+        >
+          <Reset />
+        </button>
+
+        {hideHelpButton && (
+          <button
+            className='btn fade-in'
+            id='get-help-button'
+            title={helpButtonName}
+            aria-label={helpButtonName}
+            data-cy='get-help-button'
+            onClick={helpButtonEvent}
+          >
+            <Help />
+          </button>
+        )}
+      </div>
+    </>
+  );
+};
+
+const LowerJawTips = ({
+  testText,
+  learnEncouragementText,
+  showFeedback,
+  htmlDescription
+}: LowerJawTipsProps) => {
+  return (
+    <>
+      <div
+        data-cy='failing-test-feedback'
+        className='test-status fade-in'
+        aria-hidden={showFeedback}
+      >
+        <Fail aria-hidden='true' />
+        <h2>{testText}</h2>
+        <p>{learnEncouragementText}</p>
+      </div>
+      <div className='hint-status fade-in' aria-hidden={showFeedback}>
+        <LightBulb aria-hidden='true' />
+        <div
+          className='hint-description'
+          dangerouslySetInnerHTML={{ __html: htmlDescription }}
+        />
+      </div>
+    </>
+  );
+};
+
+const LowerJawStatus = ({
+  children,
+  congratulationText,
+  showFeedback,
+  testText
+}: LowerJawStatusProps) => {
+  return (
+    <div className='test-status fade-in' aria-hidden={showFeedback}>
+      <GreenPass aria-hidden='true' />
+      <h2>{testText}</h2>
+      <p className='status'>
+        {congratulationText}
+        {children}
+      </p>
+    </div>
+  );
+};
 
 const LowerJaw = ({
   openHelpModal,
