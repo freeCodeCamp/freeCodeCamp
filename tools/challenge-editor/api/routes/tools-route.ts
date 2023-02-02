@@ -3,7 +3,7 @@ import { join } from 'path';
 import { promisify } from 'util';
 
 import { Request, Response } from 'express';
-import { ToolsSwitch } from '../interfaces/Tools';
+import { ToolsSwitch } from '../interfaces/tools';
 
 const asyncExec = promisify(exec);
 

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getStepContent } from '../utils/getStepContent';
+import { getStepContent } from '../utils/get-step-contents';
 
 export const stepRoute = async (req: Request, res: Response) => {
   const { superblock, block, step } = req.params;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { ChallengeContentRequiredProps } from '../../../interfaces/PropTypes';
-import { API_LOCATION, handleRequest } from '../../utils/handleRequest';
+import { ChallengeContentRequiredProps } from '../../../interfaces/prop-types';
+import { API_LOCATION, handleRequest } from '../../utils/handle-request';
 
 const SaveChallenge = ({
   superblock,

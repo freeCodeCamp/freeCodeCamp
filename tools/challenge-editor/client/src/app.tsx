@@ -1,12 +1,12 @@
 import * as React from 'react';
-import './App.css';
+import './app.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/header/Header';
-import Landing from './components/landing/Landing';
-import SuperBlock from './components/superblock/SuperBlock';
-import Block from './components/block/Block';
-import Editor from './components/editor/Editor';
-import Tools from './components/tools/Tools';
+import Header from './components/header/header';
+import Landing from './components/landing/landing';
+import SuperBlock from './components/superblock/super-block';
+import Block from './components/block/block';
+import Editor from './components/editor/editor';
+import Tools from './components/tools/tools';
 
 const App = () => {
   return (
