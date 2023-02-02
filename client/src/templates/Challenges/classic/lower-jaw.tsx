@@ -2,31 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/react-bootstrap';
 
-import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
-import { apiLocation } from '../../../../../config/env.json';
-import GreenPass from '../../../assets/icons/green-pass';
-import Reset from '../../../assets/icons/reset';
-import Help from '../../../assets/icons/help';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
+import GreenPass from '../../../assets/icons/green-pass';
+import Help from '../../../assets/icons/help';
+import Reset from '../../../assets/icons/reset';
+import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+import { apiLocation } from '../../../../../config/env.json';
 
 const lowerJawButtonStyle = 'btn-block btn';
 
-interface LowerJawProps {
-  hint?: string;
-  challengeIsCompleted: boolean;
-  openHelpModal: () => void;
-  tryToExecuteChallenge: () => void;
-  tryToSubmitChallenge: () => void;
-  isEditorInFocus?: boolean;
-  testsLength?: number;
-  attempts: number;
-  openResetModal: () => void;
-  isSignedIn: boolean;
-  updateContainer: () => void;
-}
-
-interface LowerJawActionRow {
+interface LowerJawPanelProps {
   resetButtonName: string;
   helpButtonName: string;
   resetButtonEvent: () => void;
@@ -48,13 +34,27 @@ interface LowerJawStatusProps {
   testText: string;
 }
 
+interface LowerJawProps {
+  hint?: string;
+  challengeIsCompleted: boolean;
+  openHelpModal: () => void;
+  tryToExecuteChallenge: () => void;
+  tryToSubmitChallenge: () => void;
+  isEditorInFocus?: boolean;
+  testsLength?: number;
+  attempts: number;
+  openResetModal: () => void;
+  isSignedIn: boolean;
+  updateContainer: () => void;
+}
+
 const LowerButtonsPanel = ({
   resetButtonName,
   helpButtonName,
   resetButtonEvent,
   hideHelpButton,
   helpButtonEvent
-}: LowerJawActionRow) => {
+}: LowerJawPanelProps) => {
   return (
     <>
       <hr />
