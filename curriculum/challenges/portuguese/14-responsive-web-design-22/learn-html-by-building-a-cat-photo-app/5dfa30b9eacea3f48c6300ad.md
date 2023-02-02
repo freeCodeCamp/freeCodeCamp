@@ -7,6 +7,8 @@ dashedName: step-15
 
 # --description--
 
+Nos passos anteriores, você usou um elemento de âncora para transformar texto em um link. Outros tipos de conteúdo também podem ser transformados em link, colocando-os dentro de tags de elementos de âncora.
+
 Transforme a imagem em um link, envolvendo-a com as tags dos elementos necessários. Use `https://freecatphotoapp.com` como valor do atributo `href` do elemento de âncora.
 
 # --hints--

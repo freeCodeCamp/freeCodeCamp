@@ -9,11 +9,11 @@ dashedName: add-two-numbers-with-javascript
 
 # --description--
 
-`Number` (رَقَم) هو نوع من أنواع البيانات في لغة JavaScript و هو يمثل بيانات رقمية.
+`Number` هو نوع من أنواع البيانات في لغة JavaScript و هو يمثل بيانات رقمية.
 
 حاول إضافة رقمين باستخدام JavaScript.
 
-تستخدم JavaScript رمز `+` كمعامل الإضافة عند وضعه بين رقمين.
+تستخدم JavaScript رمز `+` كمشغل الإضافة عند وضعه بين رقمين.
 
 **مثال:**
 

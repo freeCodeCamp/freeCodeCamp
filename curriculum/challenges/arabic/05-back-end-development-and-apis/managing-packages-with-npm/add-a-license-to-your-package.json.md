@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512bfe
-title: Add a License to Your package.json
+title: إضافة ترخيص (License) إلى package.json
 challengeType: 2
 forumTopicId: 301523
 dashedName: add-a-license-to-your-package-json
@@ -8,9 +8,9 @@ dashedName: add-a-license-to-your-package-json
 
 # --description--
 
-The `license` field is where you inform users of what they are allowed to do with your project.
+إن خانة `license` المكان الذي تقوم فيه بإبلاغ المستخدمين بما يسمح لهم بفعله بمشروعك.
 
-Some common licenses for open source projects include MIT and BSD. License information is not required, and copyright laws in most countries will give you ownership of what you create by default. However, it’s always a good practice to explicitly state what users can and can’t do. Here's an example of the license field:
+وتشمل بعض التراخيص الشائعة للمشاريع المفتوحة المصدر (open source) ترخيص معهد ماساتشوستس للتكنولوجيا (MIT) وبرنامج بي اس دي (BSD). معلومات الترخيص غير مطلوبة، وقوانين حقوق التأليف والنشر (copyright laws) في معظم البلدان ستعطيك ملكية لما تنشئه بشكل افتراضي. ولكن يستحسن دائما أن نذكر صراحة ما يمكن للمستخدمين القيام به وما لا يمكنهم القيام به. إليك مثال لخانة الترخيص:
 
 ```json
 "license": "MIT",
@@ -18,11 +18,11 @@ Some common licenses for open source projects include MIT and BSD. License infor
 
 # --instructions--
 
-Fill the `license` field in the package.json file of your project as you find suitable.
+املأ خانة `license` في ملف package.json لمشروعك بما تجده مناسبا.
 
 # --hints--
 
-package.json should have a valid "license" key
+يجب أن يحتوي package.json على هوية "license" صحيحة
 
 ```js
 (getUserInput) =>

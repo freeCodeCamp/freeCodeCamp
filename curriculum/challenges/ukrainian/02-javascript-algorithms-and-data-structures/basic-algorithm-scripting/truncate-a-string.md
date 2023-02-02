@@ -12,7 +12,7 @@ dashedName: truncate-a-string
 
 # --hints--
 
-`truncateString("A-tisket a-tasket A green and yellow basket", 8)` повинен повертати рядок `A-tisket...`.
+`truncateString("A-tisket a-tasket A green and yellow basket", 8)` має повертати рядок `A-tisket...`.
 
 ```js
 assert(
@@ -21,7 +21,7 @@ assert(
 );
 ```
 
-`truncateString("Peter Piper picked a peck of pickled peppers", 11)` повинен повертати рядок `Peter Piper...`.
+`truncateString("Peter Piper picked a peck of pickled peppers", 11)` має повертати рядок `Peter Piper...`.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-`truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length)` повинен повертати рядок `A-tisket a-tasket A green and yellow basket`.
+`truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length)` має повертати рядок `A-tisket a-tasket A green and yellow basket`.
 
 ```js
 assert(
@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-`truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2)` повинен повертати рядок `A-tisket a-tasket A green and yellow basket`.
+`truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2)` має повертати рядок `A-tisket a-tasket A green and yellow basket`.
 
 ```js
 assert(
@@ -52,13 +52,13 @@ assert(
 );
 ```
 
-`truncateString("A-", 1)` повинен повертати рядок `A...`.
+`truncateString("A-", 1)` має повертати рядок `A...`.
 
 ```js
 assert(truncateString('A-', 1) === 'A...');
 ```
 
-`truncateString("Absolutely Longer", 2)` повинен повертати рядок `Ab...`.
+`truncateString("Absolutely Longer", 2)` має повертати рядок `Ab...`.
 
 ```js
 assert(truncateString('Absolutely Longer', 2) === 'Ab...');

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb3367417b2b2512bfb
-title: 'How to Use package.json, the Core of Any Node.js Project or npm Package'
+title: 'استخدام package.json، مركز أي مشروع Node.js أو حزمة npm'
 challengeType: 2
 forumTopicId: 301528
 dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-package
@@ -8,25 +8,25 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 # --description--
 
-Working on these challenges will involve you writing your code using one of the following methods:
+العمل على هذه التحديات سوف ينطوي على كتابة كودك باستخدام إحدى الطرق التالية:
 
-- Clone <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
-- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+- انسخ <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow"> هذا المستودع من GitHub</a> واكمل مشروعك محلياً.
+- استخدم <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">مشروعنا المبدئي على Replit</a> لإكمال هذه التحديات.
+- استخدم أي منشئ موقع لإكمال المشروع. تحقق انك أضفت جميع الملفات من مستودعنا في GitHub في مشروعك.
 
-If you use Replit, follow these steps to set up the project:
+إذا استخدمت Replit، اتبع هذه الخطوات لإعداد المشروع:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   ابدأ باستيراد (import) المشروع إلى Replit.
+-   بعد ذلك، سترى نافذة `.replit`.
+-   اختار `Use run command` وانقر على زر `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field.
+عند الانتهاء، تأكد من استضافة ديمو لمشروعك في مكان عام. ثم أرسل عنوانه (URL) في خانة "رابط الحل".
 
-The `package.json` file is the center of any Node.js project or npm package. It stores information about your project, similar to how the &lt;head> section of an HTML document describes the content of a webpage. It consists of a single JSON object where information is stored in key-value pairs. There are only two required fields; "name" and "version", but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+إن ملف `package.json` مركز أي مشروع Node.js أو حزمة npm. وإنه يخزن معلومات حول مشروعك، مثلما يخزن قسم &lt;head> من مستند HTML محتوى صفحة ويب. ويتكون من كائن JSON واحد حيث يتم تخزين المعلومات في أزواج key-value. وهناك مجالان مطلوبان فقط؛ "name" و "version"، ولكن الممارسة الجيدة هي أن تقدِّم معلومات إضافية عن مشروعك، التي يمكن أن تكون مفيدة للمستخدمين أو المشرفين في المستقبل.
 
-If you look at the file tree of your project, you will find the package.json file on the top level of the tree. This is the file that you will be improving in the next couple of challenges.
+إذا نظرت إلى شجرة ملف مشروعك، سوف تجد ملف package.json في أعلى مستوى من الشجرة. هذا هو الملف الذي سوف تحسنه في التحديات القادمة.
 
-One of the most common pieces of information in this file is the `author` field. It specifies who created the project, and can consist of a string or an object with contact or other details. An object is recommended for bigger projects, but a simple string like the following example will do for this project.
+واحدة من أكثر المعلومات شيوعا في هذا الملف هي خانة `author`. تحدد اسم منشئ المشروع، وممكن أن يتكون من مقطع نصي أو كائن مع جهة اتصال أو تفاصيل أخرى. يوصى باستخدام كائن لمشاريع أكبر، ولكن مقطع نصي بسيط مثل المثال التالي ينفع لهذا المشروع.
 
 ```json
 "author": "Jane Doe",
@@ -34,13 +34,13 @@ One of the most common pieces of information in this file is the `author` field.
 
 # --instructions--
 
-Add your name as the `author` of the project in the package.json file.
+أضف اسمك كمؤلف للمشروع بداخل `author` في ملف المشروع package.json.
 
-**Note:** Remember that you’re writing JSON, so all field names must use double-quotes (") and be separated with a comma (,).
+**ملاحظة:** تذكر أنك تكتب JSON، لذلك يجب أن تستخدم جميع أسماء الخانات علامات اقتباس مزدوجة (") وأن تكون مفصولة بفاصلة (,).
 
 # --hints--
 
-package.json should have a valid "author" key
+يجب أن يحتوي package.json على هوية "author" صحيحة
 
 ```js
 (getUserInput) =>

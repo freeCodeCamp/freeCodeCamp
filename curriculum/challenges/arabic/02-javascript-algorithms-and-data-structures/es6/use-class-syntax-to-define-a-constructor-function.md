@@ -10,9 +10,9 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 يوفر ES6 طريقة syntax جديدة لإنشاء objects، باستخدام كلمة <dfn>class</dfn>.
 
-In ES5, an object can be created by defining a `constructor` function and using the `new` keyword to instantiate the object.
+في ES5، ينشئ كائن (object) عند تحدد وظيفة (function) يسمى `constructor` واستخدام مصطلح `new` لتمثيل كائن.
 
-In ES6, a `class` declaration has a `constructor` method that is invoked with the `new` keyword. If the `constructor` method is not explicitly defined, then it is implicitly defined with no arguments.
+في ES6، يحتوي إعلان `class` على طريقة `constructor` التي تنفذ مع مصطلح `new` جديدة. إذا لم يتم تعريف طريقة `constructor` بوضوح، فعندها تعرّف ضمنيا دون أي معطيات (arguments).
 
 ```js
 // Explicit constructor
@@ -41,21 +41,21 @@ const atlas = new Rocket();
 atlas.launch();
 ```
 
-It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.
+وتجدر الإشارة إلى أن كلمة `class` تعرف وظيفة جديد، تضاف المنشئ إليها. يستدعى هذا المنشئ عندما تنفيذ `new` لإنشاء كائن جديد.
 
-**Note:** UpperCamelCase should be used by convention for ES6 class names, as in `SpaceShuttle` used above.
+**ملاحظة:** يجب أن تستخدم UpperCamelCase لاسماء الفئات في ES6، كما في `SpaceShuttle` المستخدمة أعلاه.
 
-The `constructor` method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.
+إن طريقة `constructor` خاصة لإنشاء وتهيئة كائن منشئ بواسطة فئة. سوف تتعلم المزيد عنها في قسم البرمجة الكائنية في شهادة خوارزميات JavaScript وهياكل البيانات.
 
 # --instructions--
 
-Use the `class` keyword and write a `constructor` to create the `Vegetable` class.
+استخدم مصطلح `class` واكتب `constructor` لإنشاء فئة `Vegetable`.
 
-The `Vegetable` class allows you to create a vegetable object with a property `name` that gets passed to the `constructor`.
+تتيح فئة `Vegetable` لك إنشاء كائن vegetable مع خاصية `name` التي تمرر إلى الـ `constructor`.
 
 # --hints--
 
-`Vegetable` should be a `class` with a defined `constructor` method.
+يجب أن تكون`Vegetable` بنوع `class` مع وظيفة `constructor` محددة.
 
 ```js
 assert(
@@ -63,13 +63,13 @@ assert(
 );
 ```
 
-The `class` keyword should be used.
+يجب استخدام مصطلح `class`.
 
 ```js
 assert(code.match(/class/g));
 ```
 
-`Vegetable` should be able to be instantiated.
+يجب أن يمثل `Vegetable`.
 
 ```js
 assert(() => {
@@ -78,7 +78,7 @@ assert(() => {
 });
 ```
 
-`carrot.name` should return `carrot`.
+يجب أن ينتج `carrot.name` قيمة `carrot`.
 
 ```js
 assert(carrot.name == 'carrot');

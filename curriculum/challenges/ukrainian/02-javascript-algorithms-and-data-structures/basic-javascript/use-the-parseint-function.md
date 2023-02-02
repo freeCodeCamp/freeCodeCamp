@@ -23,31 +23,31 @@ const a = parseInt("007");
 
 # --hints--
 
-`convertToInteger` повинна використовувати функцію `parseInt()`
+`convertToInteger` має використовувати функцію `parseInt()`
 
 ```js
 assert(/parseInt/g.test(code));
 ```
 
-`convertToInteger("56")` повинна повертати число
+`convertToInteger("56")` має повертати число
 
 ```js
 assert(typeof convertToInteger('56') === 'number');
 ```
 
-`convertToInteger("56")` повинна повертати 56
+`convertToInteger("56")` має повертати 56
 
 ```js
 assert(convertToInteger('56') === 56);
 ```
 
-`convertToInteger("77")` повинна повертати 77
+`convertToInteger("77")` має повертати 77
 
 ```js
 assert(convertToInteger('77') === 77);
 ```
 
-`convertToInteger("JamesBond")` повинна повертати `NaN`
+`convertToInteger("JamesBond")` має повертати `NaN`
 
 ```js
 assert.isNaN(convertToInteger('JamesBond'));

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c02
-title: Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency
+title: استخدم رمز Tilde لاستخدام أحدث نسخة patch من التبعية دائما
 challengeType: 2
 forumTopicId: 301532
 dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-dependency
@@ -8,9 +8,9 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --description--
 
-In the last challenge, you told npm to only include a specific version of a package. That’s a useful way to freeze your dependencies if you need to make sure that different parts of your project stay compatible with each other. But in most use cases, you don’t want to miss bug fixes since they often include important security patches and (hopefully) don’t break things in doing so.
+في التحدي الأخير، أخبرت npm أن يتضمن نسخة محددة فقط من الحزمة. هذه طريقة مفيدة لتجميد التبعية إذا كنت بحاجة إلى التأكد من أن أجزاء مختلفة من مشروعك تبقى متوافقة مع بعضها البعض. ولكن في معظم حالات الاستخدام، لا ترد أن تفوتك إصلاحات الأخطاء لأنها غالباً ما تتضمن التصحيحات الأمنية الهامة ومن الآمل أنها لا تتسبب لتخريب تطبيقك بذلك.
 
-To allow an npm dependency to update to the latest PATCH version, you can prefix the dependency’s version with the tilde (`~`) character. Here's an example of how to allow updates to any 1.3.x version.
+للسماح للتبعية npm للتحديث إلى أحدث إصدار PATCH، يمكنك أن تضيف رمز (`~`) في بداية الإصدار للتبعية. إليك مثال على كيفية السماح بالتحديثات لأي إصدار 1.3.x.
 
 ```json
 "package": "~1.3.8"
@@ -18,15 +18,15 @@ To allow an npm dependency to update to the latest PATCH version, you can prefix
 
 # --instructions--
 
-In the package.json file, your current rule for how npm may upgrade `@freecodecamp/example` is to use a specific version (1.2.13). But now, you want to allow the latest 1.2.x version.
+في ملف package.json، القاعدة الحالية لكيفية لترقية `@freecodecamp/example` بواسطة npm هي استخدام إصدار محدد (1.2.13). لكن الآن، تريد أن تسمح بأحدث إصدار 1.2.x.
 
-Use the tilde (`~`) character to prefix the version of `@freecodecamp/example` in your dependencies, and allow npm to update it to any new _patch_ release.
+استخدم رمز (`~`) لبادئة رقم إصدار `@freecodecamp/example` في تبعياتك (dependencies). ذلك يسمح ل npm بتحديثها إلى أي إصدار _patch_ جديد.
 
-**Note:** The version numbers themselves should not be changed.
+**ملاحظة:** لا تغيير أرقام الإصدار نفسها.
 
 # --hints--
 
-`"dependencies"` should include `"@freecodecamp/example"`.
+يجب أن تتضمن `"dependencies"` مقطع `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -45,7 +45,7 @@ Use the tilde (`~`) character to prefix the version of `@freecodecamp/example` i
   );
 ```
 
-`"@freecodecamp/example"` version should match `"~1.2.13"`.
+يجب أن تطابق `"@freecodecamp/example"` إصدارها `"~1.2.13"`.
 
 ```js
 (getUserInput) =>

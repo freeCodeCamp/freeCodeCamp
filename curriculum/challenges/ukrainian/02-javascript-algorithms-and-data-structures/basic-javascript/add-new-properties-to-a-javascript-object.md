@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392d2
-title: Додавання нових властивостей до об'єкта JavaScript
+title: Додавання нових властивостей до об’єкта JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe38UD'
 forumTopicId: 301169
@@ -9,7 +9,7 @@ dashedName: add-new-properties-to-a-javascript-object
 
 # --description--
 
-Ви можете додати нові властивості до наявних об'єктів JavaScript так само, як ви б модифікували їх.
+Ви можете додати нові властивості до наявних об’єктів JavaScript так само, як ви б модифікували їх.
 
 Таким чином ми б додали властивість `bark` до `ourDog`:
 

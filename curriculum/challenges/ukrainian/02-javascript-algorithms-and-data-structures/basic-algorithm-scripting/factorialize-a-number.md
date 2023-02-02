@@ -20,31 +20,31 @@ dashedName: factorialize-a-number
 
 # --hints--
 
-`factorialize(5)` повинен повертати число.
+`factorialize(5)` має повертати число.
 
 ```js
 assert(typeof factorialize(5) === 'number');
 ```
 
-`factorialize(5)` повинен повертати `120`.
+`factorialize(5)` має повертати `120`.
 
 ```js
 assert(factorialize(5) === 120);
 ```
 
-`factorialize(10)` повинен повертати `3628800`.
+`factorialize(10)` має повертати `3628800`.
 
 ```js
 assert(factorialize(10) === 3628800);
 ```
 
-`factorialize(20)` повинен повертати `2432902008176640000`.
+`factorialize(20)` має повертати `2432902008176640000`.
 
 ```js
 assert(factorialize(20) === 2432902008176640000);
 ```
 
-`factorialize(0)` повинен повертати `1`.
+`factorialize(0)` має повертати `1`.
 
 ```js
 assert(factorialize(0) === 1);

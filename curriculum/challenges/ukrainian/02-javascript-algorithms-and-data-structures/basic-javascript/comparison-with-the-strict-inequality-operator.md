@@ -25,25 +25,25 @@ dashedName: comparison-with-the-strict-inequality-operator
 
 # --hints--
 
-`testStrictNotEqual(17)` повинен повертати рядок `Equal`
+`testStrictNotEqual(17)` має повертати рядок `Equal`
 
 ```js
 assert(testStrictNotEqual(17) === 'Equal');
 ```
 
-`testStrictNotEqual("17")` повинен повертати рядок `Not Equal`
+`testStrictNotEqual("17")` має повертати рядок `Not Equal`
 
 ```js
 assert(testStrictNotEqual('17') === 'Not Equal');
 ```
 
-`testStrictNotEqual(12)` повинен повертати рядок `Not Equal`
+`testStrictNotEqual(12)` має повертати рядок `Not Equal`
 
 ```js
 assert(testStrictNotEqual(12) === 'Not Equal');
 ```
 
-`testStrictNotEqual("bob")` повинен повертати рядок `Not Equal`
+`testStrictNotEqual("bob")` має повертати рядок `Not Equal`
 
 ```js
 assert(testStrictNotEqual('bob') === 'Not Equal');

@@ -782,6 +782,10 @@
         "title": "The Odin Project",
         "intro": ["Uma descrição deve ser determinada"]
       },
+      "the-odin-project-projects": {
+        "title": "Os projetos do The Odin Project",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
       "project-euler": {
         "title": "Projeto Euler",
         "intro": [

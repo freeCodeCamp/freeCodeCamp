@@ -34,7 +34,7 @@ function functionName() {
 
 # --hints--
 
-`reusableFunction` повинна бути функцією.
+`reusableFunction` має бути функцією.
 
 ```js
 assert(typeof reusableFunction === 'function');

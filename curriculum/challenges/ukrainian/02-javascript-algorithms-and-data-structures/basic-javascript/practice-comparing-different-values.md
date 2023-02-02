@@ -32,13 +32,13 @@ typeof '3'
 
 # --hints--
 
-`compareEquality(10, "10")` повинен повертати рядок `Not Equal`
+`compareEquality(10, "10")` має повертати рядок `Not Equal`
 
 ```js
 assert(compareEquality(10, '10') === 'Not Equal');
 ```
 
-`compareEquality("20", 20)` повинен повертати рядок `Not Equal`
+`compareEquality("20", 20)` має повертати рядок `Not Equal`
 
 ```js
 assert(compareEquality('20', 20) === 'Not Equal');
