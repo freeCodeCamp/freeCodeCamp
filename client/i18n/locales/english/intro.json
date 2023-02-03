@@ -436,6 +436,10 @@
           "Mastering essential string and array methods like the <code>find()</code>, <code>forEach()</code>, <code>map()</code>, and <code>join()</code> methods is crucial for developing dynamic web applications.",
           "In this project you will build out a basic MP3 player using HTML, CSS, and JavaScript. The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, previous, and shuffle functionalities, as well as dynamically updating the user interface based on the current song."
         ]
+      },
+      "learn-recursion-by-building-a-decimal-to-binary-converter": {
+        "title": "Learn Recursion by Building a Decimal to Binary Converter",
+        "intro": ["", ""]
       }
     }
   },

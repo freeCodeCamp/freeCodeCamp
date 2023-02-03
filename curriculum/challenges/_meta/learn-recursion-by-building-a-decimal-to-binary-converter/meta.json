@@ -1,0 +1,473 @@
+{
+  "name": "Learn Recursion by Building a Decimal to Binary Converter",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-recursion-by-building-a-decimal-to-binary-converter",
+  "helpCategory": "JavaScript",
+  "order": 6,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superOrder": 6,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "63db7f4677d06d7500a13321",
+      "Step 1"
+    ],
+    [
+      "63e9d64d7439bec882442311",
+      "Step 2"
+    ],
+    [
+      "63e9de47885cd4d08c29f8e2",
+      "Step 3"
+    ],
+    [
+      "63e9e5bcec5d33d21b82397e",
+      "Step 4"
+    ],
+    [
+      "6448e475f904ad580cd7e722",
+      "Step 5"
+    ],
+    [
+      "6448d62ce222044458b75931",
+      "Step 6"
+    ],
+    [
+      "6448fefcd6445d6b3d9d63db",
+      "Step 7"
+    ],
+    [
+      "63e9eb5b2328eed3d194b28a",
+      "Step 8"
+    ],
+    [
+      "6459fb5a8af2bc092985e624",
+      "Step 9"
+    ],
+    [
+      "64005ab13a78eb062547c12d",
+      "Step 10"
+    ],
+    [
+      "644905b34f614973a8252a26",
+      "Step 11"
+    ],
+    [
+      "64005eb6d2d06a15d9f7611f",
+      "Step 12"
+    ],
+    [
+      "640067f276acd525509646cc",
+      "Step 13"
+    ],
+    [
+      "64007367d54d2a7efbf44fcf",
+      "Step 14"
+    ],
+    [
+      "64475c0b61cddb6feaab4e2e",
+      "Step 15"
+    ],
+    [
+      "644760f4fb15ce765baebb62",
+      "Step 16"
+    ],
+    [
+      "645a0da76b8e3829a841fbfa",
+      "Step 17"
+    ],
+    [
+      "6448ab52a902de04fc56b3fa",
+      "Step 18"
+    ],
+    [
+      "6448b2c9aec64c0ecd41573d",
+      "Step 19"
+    ],
+    [
+      "645b9ea45d3a9a9d711df81a",
+      "Step 20"
+    ],
+    [
+      "6448b4107aadc110a6ab4f65",
+      "Step 21"
+    ],
+    [
+      "644a0eadcbccaf1d13c7d137",
+      "Step 22"
+    ],
+    [
+      "644a2013b2ceea32c44d09f9",
+      "Step 23"
+    ],
+    [
+      "644a37d773b7610ac5ede66e",
+      "Step 24"
+    ],
+    [
+      "645b5c05986aba539ba6ca03",
+      "Step 25"
+    ],
+    [
+      "644b6a23d398bb5f05ef796b",
+      "Step 26"
+    ],
+    [
+      "644b82e0dc8e5e7ca47fcd9b",
+      "Step 27"
+    ],
+    [
+      "644b6ad4fa8dfd600a9dff2c",
+      "Step 28"
+    ],
+    [
+      "644b71f678b5e1687666c88d",
+      "Step 29"
+    ],
+    [
+      "644b765b3bf09e6dff5e0931",
+      "Step 30"
+    ],
+    [
+      "644b77a563c51f6ff5237b99",
+      "Step 31"
+    ],
+    [
+      "644b7ac994d7dd73a61b4fa6",
+      "Step 32"
+    ],
+    [
+      "645b65b681a62f5fa125ff62",
+      "Step 33"
+    ],
+    [
+      "645b6693d8e1bf60f2d92e67",
+      "Step 34"
+    ],
+    [
+      "645b6c92876e836832538e34",
+      "Step 35"
+    ],
+    [
+      "645b6dad50514e69df601df6",
+      "Step 36"
+    ],
+    [
+      "645b7f6a575ffc807877a8c6",
+      "Step 37"
+    ],
+    [
+      "645b9d56b48971997a8055dd",
+      "Step 38"
+    ],
+    [
+      "645b9de38df75b9a5cfc2e85",
+      "Step 39"
+    ],
+    [
+      "645c803cad8434791a5f57b6",
+      "Step 40"
+    ],
+    [
+      "645c80ee8b65917a24afcb14",
+      "Step 41"
+    ],
+    [
+      "645c81579c54a57ae7c1a5f7",
+      "Step 42"
+    ],
+    [
+      "645c81683d816b7b3a044143",
+      "Step 43"
+    ],
+    [
+      "645c82268b9a8d7c4debd8dc",
+      "Step 44"
+    ],
+    [
+      "645c85251dc1827fe4a6c4ce",
+      "Step 45"
+    ],
+    [
+      "645c86f92a102d82250ce3e8",
+      "Step 46"
+    ],
+    [
+      "645c8a55eca2118650ee3ce3",
+      "Step 47"
+    ],
+    [
+      "645cb99035b8f046f1d669e4",
+      "Step 48"
+    ],
+    [
+      "645cbad5f77ce948b35cf83e",
+      "Step 49"
+    ],
+    [
+      "645cbb5ab1296e49946adb6e",
+      "Step 50"
+    ],
+    [
+      "645cc5925f158b5b33e2698f",
+      "Step 51"
+    ],
+    [
+      "645ccf7ec9aca267d84b053e",
+      "Step 52"
+    ],
+    [
+      "645cd17b061afb6a8cba945a",
+      "Step 53"
+    ],
+    [
+      "645cd267410ac06bfcaf0bd4",
+      "Step 54"
+    ],
+    [
+      "645cd2b76488fd6cb8d1ae79",
+      "Step 55"
+    ],
+    [
+      "645cd4eb6edf6e6f91acabbb",
+      "Step 56"
+    ],
+    [
+      "645cd5b506ed8970b7ea953d",
+      "Step 57"
+    ],
+    [
+      "645cd65c33bdc871bb72def4",
+      "Step 58"
+    ],
+    [
+      "645cd6db00a66472900c811f",
+      "Step 59"
+    ],
+    [
+      "645cd86bc94c1074876bf0a2",
+      "Step 60"
+    ],
+    [
+      "645cd8b7f4d8e27526694448",
+      "Step 61"
+    ],
+    [
+      "645ca158fb7fa3237437fbbd",
+      "Step 62"
+    ],
+    [
+      "645c8fe0c9505407650c4ac6",
+      "Step 63"
+    ],
+    [
+      "645c9e6cf5c7251f7b3308f6",
+      "Step 64"
+    ],
+    [
+      "645ca381c8f87f263034954f",
+      "Step 65"
+    ],
+    [
+      "645ca5ca11d0d7293e61c6c7",
+      "Step 66"
+    ],
+    [
+      "645ca62092c53f29f4ea9bf6",
+      "Step 67"
+    ],
+    [
+      "645cb1306eb27a397be7f18c",
+      "Step 68"
+    ],
+    [
+      "645cb07132281a380223e458",
+      "Step 69"
+    ],
+    [
+      "645cb0ce6dc93738b442b0d0",
+      "Step 70"
+    ],
+    [
+      "645ce315efe609814258b0bc",
+      "Step 71"
+    ],
+    [
+      "645ce3c80f1c29824f1a8359",
+      "Step 72"
+    ],
+    [
+      "645ce4375221138326895726",
+      "Step 73"
+    ],
+    [
+      "6461f79f4ea2ef042fb2c0f4",
+      "Step 74"
+    ],
+    [
+      "6461fd4c1bc6620aed6435b2",
+      "Step 75"
+    ],
+    [
+      "64620068f97fe70ea47a9e75",
+      "Step 76"
+    ],
+    [
+      "646203cdc054d012b5d71428",
+      "Step 77"
+    ],
+    [
+      "6462060b0a8a2c15726649ec",
+      "Step 78"
+    ],
+    [
+      "64620800e0c6ab17f0e31d6d",
+      "Step 79"
+    ],
+    [
+      "646463be7341819690797ad2",
+      "Step 80"
+    ],
+    [
+      "6464650a962e3d9852713549",
+      "Step 81"
+    ],
+    [
+      "64646577f28ade99100a55c3",
+      "Step 82"
+    ],
+    [
+      "646467130d7acc9b4e565c42",
+      "Step 83"
+    ],
+    [
+      "646467683f25e19bfc9cf9b0",
+      "Step 84"
+    ],
+    [
+      "64646bc0e5a60ea131e03f91",
+      "Step 85"
+    ],
+    [
+      "64646db2c684b7a3a174a1d0",
+      "Step 86"
+    ],
+    [
+      "646477c82475ffaf0c3c0771",
+      "Step 87"
+    ],
+    [
+      "64647cf70a4556b5105e65b2",
+      "Step 88"
+    ],
+    [
+      "64648534ff5498bee5dceb28",
+      "Step 89"
+    ],
+    [
+      "646486adf52652c0ee103aab",
+      "Step 90"
+    ],
+    [
+      "64648963e014f8c42a65b83a",
+      "Step 91"
+    ],
+    [
+      "646493b7dc53b5d45c9c50fc",
+      "Step 92"
+    ],
+    [
+      "64648c3703ad2ec796ab8d1e",
+      "Step 93"
+    ],
+    [
+      "64648cf52e1ce1c8c00956ae",
+      "Step 94"
+    ],
+    [
+      "6464905afec9efcf7328ce58",
+      "Step 95"
+    ],
+    [
+      "646491d2c856afd17c2f380d",
+      "Step 96"
+    ],
+    [
+      "646492f5c672c9d32f340c22",
+      "Step 97"
+    ],
+    [
+      "64649b243b9cc3ddabacc593",
+      "Step 98"
+    ],
+    [
+      "64649c6d77059edf80279a32",
+      "Step 99"
+    ],
+    [
+      "64649d2459ad94e0a772fc3f",
+      "Step 100"
+    ],
+    [
+      "64649efb555939e30462c79b",
+      "Step 101"
+    ],
+    [
+      "64649f91446721e3ff391d88",
+      "Step 102"
+    ],
+    [
+      "6464a057702d04e537d56d49",
+      "Step 103"
+    ],
+    [
+      "6464a6d98c43acecb8a7867b",
+      "Step 104"
+    ],
+    [
+      "6464a9f7d81939f08d04f435",
+      "Step 105"
+    ],
+    [
+      "6464aabd17cd45f1d17cfe56",
+      "Step 106"
+    ],
+    [
+      "6464ab8c06ea92f30bc548d5",
+      "Step 107"
+    ],
+    [
+      "6464abfb6cf778f3cb33d379",
+      "Step 108"
+    ],
+    [
+      "6464ad3c9b2e6cf58224cfa9",
+      "Step 109"
+    ],
+    [
+      "6464b1384318a5087190950a",
+      "Step 110"
+    ],
+    [
+      "6464b25851863b0a119eb7b1",
+      "Step 111"
+    ],
+    [
+      "6464b3adeee9310bd37ff636",
+      "Step 112"
+    ],
+    [
+      "6464b8ccb1a5d612c2f857d1",
+      "Step 113"
+    ],
+    [
+      "6464c6d6698a8027f8c9d6be",
+      "Step 114"
+    ]
+  ]
+}
