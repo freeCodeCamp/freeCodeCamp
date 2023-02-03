@@ -27,9 +27,11 @@
   },
   "dependencies": {
     "@monaco-editor/react": "4.4.6",
+    "i18next": "^22.4.9",
     "next": "12.3.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-i18next": "^12.1.5"
   },
   "devDependencies": {
     "concurrently": "7.6.0"
