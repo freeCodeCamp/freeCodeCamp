@@ -7,13 +7,13 @@ dashedName: step-15
 
 # --description--
 
-In previous steps you used an anchor element to turn text into a link. Other types of content can also be turned into a link by wrapping it in anchor tags.
+У попередніх кроках ви використовували елемент прив’язки, щоб перетворити текст на посилання. Інші типи вмісту також можна перетворити на посилання, загорнувши їх в теги прив’язки.
 
-Turn the image into a link by surrounding it with necessary element tags. Use `https://freecatphotoapp.com` as the anchor's `href` attribute value.
+Перетворіть зображення на посилання, оточивши його необхідними теґами елементів. Використайте `https://freecatphotoapp.com` як значення атрибута `href` елемента прив'язки.
 
 # --hints--
 
-You should have an `img` element with an `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. You may have accidentally deleted it.
+Ви повинні мати елемент `img` з `src` зі значенням `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Можливо, ви випадково видалили його.
 
 ```js
 assert(
@@ -23,37 +23,37 @@ assert(
 );
 ```
 
-Your anchor (`a`) element should have an opening tag. Opening tags have this syntax: `<elementName>`.
+Ваш елемент прив'язки (`a`) повинен мати початковий теґ. Початкові теґи мають такий синтаксис: `<elementName>`.
 
 ```js
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-You should only add one opening anchor (`a`) tag. Please remove any extras.
+Ви повинні додати лише один початковий теґ прив'язки (`a`). Будь ласка, видаліть всі зайві.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);
 ```
 
-Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
+Ваш елемент прив'язки (`a`) повинен мати кінцевий теґ. Кінцеві теґи мають `/` відразу після символу `<`.
 
 ```js
 assert(code.match(/<\/a>/g).length >= 2);
 ```
 
-You should only add one closing anchor (`a`) tag. Please remove any extras.
+Ви повинні додати лише один кінцевий теґ прив'язки (`a`). Будь ласка, видаліть всі зайві.
 
 ```js
 assert(code.match(/<\/a>/g).length === 2);
 ```
 
-Your anchor (`a`) element does not have an `href` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+Ваш елемент прив'язки (`a`) не має атрибута `href`. Перевірте, чи є пробіл після назви початкового теґа та/або є пробіли перед усіма назвами атрибутів.
 
 ```js
 assert(document.querySelector('a').hasAttribute('href'));
 ```
 
-Your anchor (`a`) element should link to `https://freecatphotoapp.com`. You have either omitted the URL or have a typo.
+Ваш елемент прив'язки (`a`) повинен посилати на `https://freecatphotoapp.com`. Ви або не написали URL-адресу, або маєте друкарську помилку.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Your `img` element should be nested within the anchor (`a`) element. The entire `img` element should be inside the opening and closing tags of the anchor (`a`) element.
+Ваш елемент `img` повинен бути вкладеним в межах елемента прив'язки (`a`). Весь елемент `img` повинен бути всередині початкового та кінцевого теґів елемента прив'язки (`a`).
 
 ```js
 assert(document.querySelector('img').parentNode.nodeName === 'A');
