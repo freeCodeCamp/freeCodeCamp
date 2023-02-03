@@ -1,0 +1,129 @@
+.red {
+  color: red;
+}
+
+.large-p {
+  font-size: 24px;
+}
+
+/* Buttons with a lot of text can overflow and mess up formatting on small
+     screens, this stops that unless the word itself is too large. */
+
+.btn {
+  white-space: pre-line;
+}
+
+.cert-btn {
+  margin-top: 40px;
+}
+
+.landing-page ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+#featured-logos {
+  max-width: 600px;
+}
+.landing-top h1:first-child {
+  margin-top: 0;
+}
+
+.landing-page h1,
+.landing-page h2,
+.landing-page p {
+  font-family: 'Lato', sans-serif;
+}
+
+p.caption {
+  margin: 10px 0 0;
+  font-size: 0.8rem;
+  color: var(--quaternary-color);
+}
+
+.as-seen-in {
+  background-color: var(--gray-75);
+  color: var(--gray-15);
+}
+
+.as-seen-in .big-heading {
+  color: var(--gray-15);
+}
+
+.landing-page .big-heading {
+  height: 100%;
+  margin-bottom: 40px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.campers-images {
+  display: none !important;
+}
+
+@media (min-width: 1200px) {
+  .campers-images {
+    display: inline-block !important;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.logo-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  margin: 10px 0;
+}
+
+.logo-row svg {
+  height: 40px;
+}
+
+@media (min-width: 370px) {
+  .logo-row svg {
+    margin: 5px 15px;
+  }
+}
+
+@media (min-width: 480px) {
+  .logo-row svg {
+    height: 25px;
+    margin: 5px;
+  }
+}
+
+@media (min-width: 550px) {
+  .logo-row {
+    justify-content: space-between;
+  }
+
+  .logo-row svg {
+    height: 40px;
+  }
+}
+
+.landing-top p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.6rem 0;
+}
+
+.landing-top,
+.as-seen-in,
+.certification-section,
+.testimonials {
+  padding: 4vw 0;
+}
+
+.map-ui .btn {
+  min-height: 80px;
+}
+
+@media (min-width: 500px) {
+  .landing-top p {
+    font-size: 1.25rem;
+  }
+}
