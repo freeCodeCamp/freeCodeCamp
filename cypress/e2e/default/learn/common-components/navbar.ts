@@ -8,38 +8,12 @@ const navBarselectors = {
   avatarImage: '.avatar-container .avatar'
 };
 
-let appHasStarted: boolean;
-function spyOnListener(win: Cypress.AUTWindow, type: string, callback: EventListenerOrEventListenerObject | null, options?: boolean | AddEventListenerOptions | undefined) {
 
-  const addEventListener = win.EventTarget.prototype.addEventListener;
-  win.EventTarget.prototype.addEventListener = function (name: string) {
-    if (name === 'click') {
-      appHasStarted = true;
-      win.EventTarget.prototype.addEventListener = addEventListener;
-    }
-    return addEventListener.apply(this, [type, callback, options]);
-  };
-}
 
-function waitForAppStart() {
-  return new Promise(resolve => {
-    const isReady = () => {
-      if (appHasStarted) {
-        return resolve(null);
-      }
-      return setTimeout(isReady, 0);
-    };
-    isReady();
-  });
-}
 
 describe('Navbar when logged out', () => {
   beforeEach(() => {
-    appHasStarted = false;
-    cy.visit('/', {
-      onBeforeLoad: spyOnListener
-    }).then(waitForAppStart);
-    cy.viewport(1300, 660);
+    cy.visit('/').then(() => cy.viewport(1200, 660));
   });
 
   it('Should have a "Sign in" button', () => {
@@ -60,12 +34,7 @@ describe('Navbar when logged out', () => {
 
 describe('Navbar Logged in', () => {
   beforeEach(() => {
-    cy.login();
-    appHasStarted = false;
-    cy.visit('/', {
-      onBeforeLoad: spyOnListener
-    }).then(waitForAppStart);
-    cy.viewport(1300, 660);
+    cy.visit('/').then(() => cy.login()).then(() => cy.viewport(1200, 660));
   });
 
   it('Should render properly', () => {
