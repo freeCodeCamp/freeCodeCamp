@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Grid } from '@freecodecamp/react-bootstrap';
 import Testimonials from '../components/landing/testimonials';
+import LandingTop from '../components/landing/lading-top';
 import styles from '../styles/landing/Landing.module.css';
 
 export default function Landing() {
@@ -14,7 +15,9 @@ export default function Landing() {
       </Head>
       <main>
         <main className={styles['landing-page']}>
-          <Grid>{/* <LandingTop pageName={'landing'} /> */}</Grid>
+          <Grid>
+            <LandingTop pageName={'landing'} />
+          </Grid>
           <Grid fluid={true}>{/* <AsSeenIn /> */}</Grid>
           <Grid>
             <Testimonials />
