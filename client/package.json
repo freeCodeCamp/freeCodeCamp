@@ -129,7 +129,7 @@
     "typescript": "4.9.5",
     "util": "0.12.5",
     "uuid": "8.3.2",
-    "validator": "13.7.0"
+    "validator": "13.9.0"
   },
   "devDependencies": {
     "@babel/types": "7.20.7",
