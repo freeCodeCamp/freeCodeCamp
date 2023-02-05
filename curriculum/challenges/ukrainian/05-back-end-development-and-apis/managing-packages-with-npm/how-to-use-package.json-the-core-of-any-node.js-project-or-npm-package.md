@@ -22,9 +22,9 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту в полі «Посилання на рішення».
 
-Файл `package.json` є центром будь-якого проєкту Node.js або пакету npm. It stores information about your project, similar to how the `head` section of an HTML document describes the content of a webpage. Він складається з одного об'єкту JSON, де зберігається інформація у парах ключ-значення. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+Файл `package.json` є центром будь-якого проєкту Node.js або пакету npm. У ньому зберігається інформація про ваш проєкт, схоже до того, як розділ `head` HTML-документу описує вміст вебсторінки. Він складається з одного об'єкту JSON, де зберігається інформація у парах ключ-значення. Існує лише два обов'язкові поля: `name` та `version`, але краще надавати додаткову інформацію про свій проєкт, яка може бути корисною для майбутніх користувачів або спеціалістів.
 
-If you look at the file tree of your project, you will find the `package.json` file on the top level of the tree. Ви будете покращувати цей файл у наступних завданнях.
+Якщо глянути на дерево файлів вашого проєкту, то файл `package.json` буде зверху. Ви будете покращувати цей файл у наступних завданнях.
 
 Одним із найважливішого у цьому файлі є поле `author`. Воно вказує на те, хто створив проєкт, і може складатися з рядка або об'єкта з контактом чи іншими деталями. Об’єкт рекомендований для масштабніших проєктів, а простий рядок (як у прикладі) зійде для цього проєкту.
 
@@ -34,13 +34,13 @@ If you look at the file tree of your project, you will find the `package.json` f
 
 # --instructions--
 
-Add your name as the `author` of the project in the `package.json` file.
+Додайте своє ім'я як `author` проєкту у файл `package.json`.
 
 **Примітка:** пам'ятайте, що ви пишете JSON, тому всі назви полів повинні використовувати подвійні лапки (") і бути розділені комою (,).
 
 # --hints--
 
-`package.json` should have a valid "author" key
+`package.json` повинен мати дійсний ключ «author»
 
 ```js
 (getUserInput) =>
