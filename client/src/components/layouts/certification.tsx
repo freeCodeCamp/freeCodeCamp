@@ -33,7 +33,7 @@ class CertificationLayout extends Component<CertificationProps> {
 
     return (
       <>
-        <Helmet bodyAttributes={{ class: 'light-palette' }} />
+        <Helmet bodyAttributes={{ class: 'light' }} />
         {children}
       </>
     );

@@ -43,9 +43,7 @@ module.exports = {
       green: {
         50: 'var(--green05)',
         100: 'var(--green10)',
-        400: 'var(--green40)',
-        700: 'var(--green70)',
-        900: 'var(--green90)'
+        700: 'var(--green70)'
       },
       blue: {
         50: 'var(--blue05)',
@@ -60,9 +58,7 @@ module.exports = {
         100: 'var(--yellow10)',
         400: 'var(--yellow40)',
         450: 'var(--yellow45)',
-        500: 'var(--yellow50)',
-        700: 'var(--yellow70)',
-        900: 'var(--yellow90)'
+        700: 'var(--yellow70)'
       },
       red: {
         50: 'var(--red05)',

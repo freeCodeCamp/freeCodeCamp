@@ -5,8 +5,8 @@
  * @author Rose Pritchard
  */
 
-.dark-palette code[class*='language-'],
-.dark-palette pre[class*='language-'] {
+.dark code[class*='language-'],
+.dark pre[class*='language-'] {
   color: var(--secondary-color);
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1em;
@@ -28,12 +28,12 @@
   text-shadow: none;
 }
 
-.dark-palette pre[class*='language-'] code[class*='language-'] {
+.dark pre[class*='language-'] code[class*='language-'] {
   color: var(--quaternary-color);
 }
 
 /* Code blocks */
-.dark-palette pre[class*='language-'] {
+.dark pre[class*='language-'] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
@@ -41,108 +41,108 @@
 
 /* Without this, the above selector takes precedence and messes up the answer
 padding in night mode */
-.dark-palette .video-quiz-option > pre {
+.dark .video-quiz-option > pre {
   padding: 0;
   margin: 0;
 }
 
-.dark-palette :not(pre) > code[class*='language-'],
-.dark-palette pre[class*='language-'] {
+.dark :not(pre) > code[class*='language-'],
+.dark pre[class*='language-'] {
   background: var(--primary-background);
 }
 
-.dark-palette pre[class*='language-']::selection,
-.dark-palette pre[class*='language-'] ::selection,
-.dark-palette code[class*='language-']::selection,
-.dark-palette code[class*='language-'] ::selection {
+.dark pre[class*='language-']::selection,
+.dark pre[class*='language-'] ::selection,
+.dark code[class*='language-']::selection,
+.dark code[class*='language-'] ::selection {
   background: var(--selection-color);
 }
 
 /* Inline code */
-.dark-palette :not(pre) > code[class*='language-'] {
+.dark :not(pre) > code[class*='language-'] {
   padding: 0.1em;
   border-radius: 0.3em;
   white-space: normal;
 }
 
-.dark-palette .token.comment,
-.dark-palette .token.block-comment,
-.dark-palette .token.prolog,
-.dark-palette .token.doctype,
-.dark-palette .token.cdata {
+.dark .token.comment,
+.dark .token.block-comment,
+.dark .token.prolog,
+.dark .token.doctype,
+.dark .token.cdata {
   color: #608b4e;
 }
 
-.dark-palette .token.punctuation {
+.dark .token.punctuation {
   color: #ffff00;
 }
 
-.dark-palette .token.tag,
-.dark-palette .token.attr-name,
-.dark-palette .token.namespace,
-.dark-palette .token.deleted {
+.dark .token.tag,
+.dark .token.attr-name,
+.dark .token.namespace,
+.dark .token.deleted {
   color: #e2777a;
 }
 
-.dark-palette .token.function-name {
+.dark .token.function-name {
   color: #d4d4d4;
 }
 
-.dark-palette .token.boolean,
-.dark-palette .token.number,
-.dark-palette .token.function {
+.dark .token.boolean,
+.dark .token.number,
+.dark .token.function {
   color: #569cd6;
 }
 
-.dark-palette .token.property,
-.dark-palette .token.class-name,
-.dark-palette .token.constant,
-.dark-palette .token.symbol {
+.dark .token.property,
+.dark .token.class-name,
+.dark .token.constant,
+.dark .token.symbol {
   color: #f8c555;
 }
 
-.dark-palette .token.selector,
-.dark-palette .token.important,
-.dark-palette .token.atrule,
-.dark-palette .token.keyword,
-.dark-palette .token.builtin {
+.dark .token.selector,
+.dark .token.important,
+.dark .token.atrule,
+.dark .token.keyword,
+.dark .token.builtin {
   color: #569cd6;
 }
 
-.dark-palette .token.string,
-.dark-palette .token.char,
-.dark-palette .token.attr-value,
-.dark-palette .token.regex,
-.dark-palette .token.variable {
+.dark .token.string,
+.dark .token.char,
+.dark .token.attr-value,
+.dark .token.regex,
+.dark .token.variable {
   color: #7ec699;
 }
 
 /* CSS code block strings have low contrast in night mode. This attempts to increase contrast above 4.5:1 */
-.dark-palette .language-css .token.string,
-.dark-palette .style .token.string {
+.dark .language-css .token.string,
+.dark .style .token.string {
   color: #ec9126;
   background: hsl(0 0% 100% / 0.12);
 }
 
-.dark-palette .token.operator,
-.dark-palette .token.entity,
-.dark-palette .token.url {
+.dark .token.operator,
+.dark .token.entity,
+.dark .token.url {
   color: #67cdcc;
   background: none;
 }
 
-.dark-palette .token.important,
-.dark-palette .token.bold {
+.dark .token.important,
+.dark .token.bold {
   font-weight: bold;
 }
-.dark-palette .token.italic {
+.dark .token.italic {
   font-style: italic;
 }
 
-.dark-palette .token.entity {
+.dark .token.entity {
   cursor: help;
 }
 
-.dark-palette .token.inserted {
+.dark .token.inserted {
   color: green;
 }

@@ -450,7 +450,7 @@ ToDo: find out why, and remove the need for it */
 }
 
 .block-grid .progress-bar {
-  background-color: var(--blue-mid);
+  background-color: var(--blue-50);
 }
 
 .tags-wrapper {

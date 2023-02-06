@@ -109,8 +109,8 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
 const getSystemTheme = () =>
   `${
     window.matchMedia('(prefers-color-scheme: dark)').matches === true
-      ? 'dark-palette'
-      : 'light-palette'
+      ? 'dark'
+      : 'light'
   }`;
 
 function DefaultLayout({
@@ -168,7 +168,7 @@ function DefaultLayout({
           bodyAttributes={{
             class: useSystemTheme
               ? getSystemTheme()
-              : `${theme === 'night' ? 'dark' : 'light'}-palette`
+              : `${theme === 'night' ? 'dark' : 'light'}`
           }}
           meta={[
             {

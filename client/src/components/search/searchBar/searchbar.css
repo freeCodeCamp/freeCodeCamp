@@ -98,7 +98,7 @@
 
 /* Hit selected with arrow keys or mouse */
 .selected {
-  background-color: var(--blue-dark);
+  background-color: var(--blue-90);
 }
 
 /* Override for rule in global.css to prevent

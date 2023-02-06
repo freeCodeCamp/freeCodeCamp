@@ -9,9 +9,7 @@
   --gray85: #1b1b32;
   --gray90: #0a0a23;
 
-  --purple10: #dbb8ff;
   --purple50: #9400d3;
-  --purple90: #5a01a7;
 
   --yellow05: #fcf8e3;
   --yellow10: #faebcc;
@@ -19,7 +17,6 @@
   --yellow45: #ffbf00;
   --yellow50: #f1be32;
   --yellow70: #8a6d3b;
-  --yellow90: #4d3800;
 
   --blue05: #d9edf7;
   --blue10: #bce8f1;
@@ -30,9 +27,7 @@
 
   --green05: #dff0d8;
   --green10: #d6e9c6;
-  --green40: #acd157;
   --green70: #3c763d;
-  --green90: #00471b;
 
   --red05: #f2dede;
   --red10: #ebccd1;
@@ -55,11 +50,8 @@
   --gray85: var(--gray85);
   --gray90: var(--gray90);
 
-  --purple10: var(--purple10);
   --purple50: var(--purple50);
-  --purple90: var(--purple90);
 
-  --yellow05: var(--yellow05);
   --yellow10: var(--yellow10);
   --yellow40: var(--yellow40);
   --yellow45: var(--yellow45);
@@ -76,9 +68,7 @@
 
   --green05: var(--green05);
   --green10: var(--green10);
-  --green40: var(--green40);
   --green70: var(--green70);
-  --green90: var(--green90);
 
   --red05: var(--red05);
   --red10: var(--red10);
@@ -89,8 +79,7 @@
   --red90: var(--red90);
 }
 
-html,
-div.light {
+.light {
   --foreground-primary: var(--gray90);
   --foreground-secondary: var(--gray85);
   --foreground-tertiary: var(--gray80);
@@ -109,8 +98,7 @@ div.light {
   --focus-outline-color: var(--blue50);
 }
 
-html.dark,
-div.dark {
+.dark {
   --foreground-primary: var(--gray00);
   --foreground-secondary: var(--gray05);
   --foreground-tertiary: var(--gray10);

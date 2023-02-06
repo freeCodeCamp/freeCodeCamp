@@ -1,6 +1,4 @@
 :root {
-  --theme-color: #0a0a23;
-  --yellow-gold: #ffbf00;
   --gray-00: #ffffff;
   --gray-05: #f5f6f7;
   --gray-10: #dfdfe2;
@@ -10,30 +8,43 @@
   --gray-80: #2a2a40;
   --gray-85: #1b1b32;
   --gray-90: #0a0a23;
-  --purple-light: #dbb8ff;
-  --purple-dark: #5a01a7;
-  --yellow-light: #ffc300;
-  --yellow-dark: #4d3800;
-  --blue-light: rgb(153, 201, 255);
+
+  --red-05: #f2dede;
+  --red-10: #ebccd1;
+  --red-15: #ffadad;
+  --red-30: #f8577c;
+  --red-70: #a94442;
+  --red-80: #f82153;
+  --red-90: #850000;
+
+  --yellow-05: #fcf8e3;
+  --yellow-10: #faebcc;
+  --yellow-40: #ffc300;
+  --yellow-45: #ffbf00;
+  --yellow-70: #8a6d3b;
+
+  --blue-05: #d9edf7;
+  --blue-30: #99c9ff;
   --blue-light-translucent: rgba(153, 201, 255, 0.3);
-  --blue-dark: rgb(0, 46, 173);
+  --blue-50: #198eee;
+  --blue-70: #31708f;
+  --blue-90: #002ead;
   --blue-dark-translucent: rgba(0, 46, 173, 0.3);
-  --green-light: #acd157;
-  --blue-mid: #198eee;
-  --purple-mid: #9400d3;
-  --green-dark: #00471b;
-  --red-light: #ffadad;
-  --red-dark: #850000;
-  --love-light: #f8577c;
-  --love-dark: #f82153;
+
+  --green05: #dff0d8;
+  --green10: #d6e9c6;
+  --green70: #3c763d;
+
+  --purple-50: #9400d3;
+
   --editor-background-light: #fffffe;
   --editor-background-dark: #2a2b40;
-  --focus-outline-color: var(--blue-mid);
+  --focus-outline-color: var(--blue-50);
   --font-family-sans-serif: 'Lato', sans-serif;
   --font-family-monospace: 'Hack-ZeroSlash', monospace;
 }
 
-.dark-palette {
+.dark {
   --primary-color: var(--gray-00);
   --secondary-color: var(--gray-05);
   --tertiary-color: var(--gray-10);
@@ -42,18 +53,16 @@
   --tertiary-background: var(--gray-80);
   --secondary-background: var(--gray-85);
   --primary-background: var(--gray-90);
-  --highlight-color: var(--blue-light);
-  --highlight-background: var(--blue-dark);
+  --highlight-color: var(--blue-30);
+  --highlight-background: var(--blue-90);
   --selection-color: var(--blue-light-translucent);
-  --success-color: var(--green-light);
-  --success-background: var(--green-dark);
-  --danger-color: var(--red-light);
-  --danger-background: var(--red-dark);
-  --love-color: var(--love-light);
+  --danger-color: var(--red-15);
+  --danger-background: var(--red-90);
+  --love-color: var(--red-30);
   --editor-background: var(--editor-background-dark);
 }
 
-.light-palette {
+.light {
   --primary-color: var(--gray-90);
   --secondary-color: var(--gray-85);
   --tertiary-color: var(--gray-80);
@@ -62,13 +71,11 @@
   --tertiary-background: var(--gray-10);
   --secondary-background: var(--gray-05);
   --primary-background: var(--gray-00);
-  --highlight-color: var(--blue-dark);
-  --highlight-background: var(--blue-light);
+  --highlight-color: var(--blue-90);
+  --highlight-background: var(--blue-30);
   --selection-color: var(--blue-dark-translucent);
-  --success-color: var(--green-dark);
-  --success-background: var(--green-light);
-  --danger-color: var(--red-dark);
-  --danger-background: var(--red-light);
-  --love-color: var(--love-dark);
+  --danger-color: var(--red-90);
+  --danger-background: var(--red-15);
+  --love-color: var(--red-80);
   --editor-background: var(--editor-background-light);
 }

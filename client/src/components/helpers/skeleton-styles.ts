@@ -8,7 +8,7 @@ const styles = `
 .sprite-svg {
   height: 100%;
   width: 100%;
-  background: var(--theme-color);
+  background: var(--gray-90);
 
 }
 

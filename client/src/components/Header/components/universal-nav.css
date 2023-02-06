@@ -4,7 +4,7 @@
   align-items: flex-start;
   font-size: 18px;
   height: var(--header-height);
-  background: var(--theme-color);
+  background: var(--gray-90);
   position: fixed;
   z-index: 1000;
   color: var(--gray-00);
@@ -60,7 +60,7 @@
 .nav-list {
   display: none;
   position: absolute;
-  background-color: var(--theme-color);
+  background-color: var(--gray-90);
   right: 0;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -84,7 +84,7 @@
     [aria-expanded='false'].force-show
   ) {
   background-color: var(--gray-10);
-  color: var(--theme-color);
+  color: var(--gray-90);
   border: 1px solid var(--gray-00);
   fill: var(--gray-10);
 }
@@ -199,7 +199,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   border: 1px solid var(--gray-00);
   font-size: 18px;
   color: var(--gray-00);
-  background-color: var(--theme-color);
+  background-color: var(--gray-90);
   cursor: pointer;
   max-height: calc(var(--header-height) - 8px);
   display: flex;
@@ -226,7 +226,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 
 .avatar-nav-link:hover,
 .avatar-nav-link:focus {
-  background-color: var(--theme-color);
+  background-color: var(--gray-90);
 }
 
 .avatar-nav-link .avatar-container {
@@ -241,15 +241,15 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 }
 
 .gold-border {
-  border: 2px solid var(--yellow-gold);
+  border: 2px solid var(--yellow-45);
 }
 
 .blue-border {
-  border: 2px solid var(--blue-mid);
+  border: 2px solid var(--blue-50);
 }
 
 .purple-border {
-  border: 2px solid var(--purple-mid);
+  border: 2px solid var(--purple-50);
 }
 
 .default-border {
@@ -276,12 +276,12 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 
 .exposed-button-nav.reverse-toggle-color {
   background-color: var(--gray-00);
-  color: var(--theme-color);
+  color: var(--gray-90);
 }
 
 .exposed-button-nav.reverse-toggle-color:hover {
   background-color: var(--gray-00);
-  color: var(--theme-color);
+  color: var(--gray-90);
 }
 
 .nav-line {

@@ -11,7 +11,7 @@
   max-width: 1500px;
   width: 100%;
   padding: 30px;
-  border: var(--theme-color) 15px solid;
+  border: var(--gray-90) 15px solid;
   border-radius: 3px;
   background-color: var(--gray-00);
 }
@@ -58,7 +58,7 @@
 .certification-namespace header {
   width: 100%;
   height: 140px;
-  background-color: var(--theme-color);
+  background-color: var(--gray-90);
   position: relative;
 }
 
@@ -116,7 +116,7 @@
 
 .certification-namespace h1 {
   font-size: 40px;
-  color: var(--theme-color);
+  color: var(--gray-90);
 }
 
 .certification-namespace .signatures {
@@ -269,13 +269,13 @@
   }
 
   .certification-namespace {
-    border-color: var(--theme-color) !important;
+    border-color: var(--gray-90) !important;
   }
 
   .certificate-outer-wrapper header {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
-    background-color: var(--theme-color) !important;
+    background-color: var(--gray-90) !important;
     display: flex;
     align-items: center;
     justify-content: space-around;

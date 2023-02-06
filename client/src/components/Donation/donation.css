@@ -142,7 +142,7 @@
 .donate-tabs > .nav-pills > li > a {
   text-transform: capitalize;
   text-decoration: none;
-  border: 3px solid var(--yellow-light);
+  border: 3px solid var(--yellow-40);
   border-radius: 0;
   color: var(--gray-85);
   margin: 0 1px;
@@ -158,8 +158,8 @@
 .donate-tabs > .nav-pills > li.active > a:hover,
 .donate-tabs > .nav-pills > li.active > a:focus {
   color: var(--gray-85);
-  background-color: var(--yellow-light);
-  border: 3px solid var(--yellow-light);
+  background-color: var(--yellow-40);
+  border: 3px solid var(--yellow-40);
   text-decoration: none;
   border-radius: 0;
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
@@ -177,7 +177,7 @@
 .amount-values > label {
   margin: 0 2px;
   color: var(--gray-85);
-  border: 3px solid var(--yellow-light);
+  border: 3px solid var(--yellow-40);
   border-radius: 0;
   background-color: transparent;
 }
@@ -192,7 +192,7 @@
   background-color: #ffe18f;
   cursor: pointer;
   color: var(--gray-85);
-  border-color: var(--yellow-light);
+  border-color: var(--yellow-40);
 }
 
 .amount-values > label:focus,
@@ -206,8 +206,8 @@
 .amount-values > label.active:hover,
 .amount-values > label.active:focus {
   color: var(--gray-85);
-  background-color: var(--yellow-light);
-  border: 3px solid var(--yellow-light);
+  background-color: var(--yellow-40);
+  border: 3px solid var(--yellow-40);
   border-radius: 0;
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
@@ -406,8 +406,8 @@ button.confirm-donation-btn {
   justify-content: center;
   align-content: center;
   border-radius: 5px;
-  background-color: var(--yellow-light);
-  border-color: var(--yellow-light);
+  background-color: var(--yellow-40);
+  border-color: var(--yellow-40);
   color: black;
   font-weight: bold;
   width: 100%;
@@ -441,16 +441,16 @@ a.patreon-button:hover {
   background-color: #e13d47;
 }
 
-.dark-palette a.patreon-button {
+.dark a.patreon-button {
   background-color: white;
 }
 
-.dark-palette a.patreon-button svg {
+.dark a.patreon-button svg {
   fill: #ff424d;
 }
-.dark-palette a.patreon-button:active,
-.dark-palette a.patreon-button:active:focus,
-.dark-palette a.patreon-button:hover {
+.dark a.patreon-button:active,
+.dark a.patreon-button:active:focus,
+.dark a.patreon-button:hover {
   background-color: #efefef;
 }
 
