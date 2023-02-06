@@ -1,5 +1,5 @@
-import { Location } from '@reach/router';
-import type { WindowLocation } from '@reach/router';
+import { Location } from '@gatsbyjs/reach-router';
+import type { WindowLocation } from '@gatsbyjs/reach-router';
 import algoliasearch from 'algoliasearch/lite';
 import { navigate } from 'gatsby';
 import qs from 'query-string';

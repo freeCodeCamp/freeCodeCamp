@@ -1,5 +1,5 @@
 import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
-import { WindowLocation } from '@reach/router';
+import { WindowLocation } from '@gatsbyjs/reach-router';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';

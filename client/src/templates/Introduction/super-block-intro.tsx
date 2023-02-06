@@ -1,5 +1,5 @@
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
-import { WindowLocation } from '@reach/router';
+import { WindowLocation } from '@gatsbyjs/reach-router';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
 import React, { Fragment, useEffect, memo } from 'react';
