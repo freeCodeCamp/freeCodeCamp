@@ -277,6 +277,7 @@ export type ChallengeMeta = {
   block: string;
   id: string;
   introPath: string;
+  isFirstStep: boolean;
   nextChallengePath: string;
   prevChallengePath: string;
   removeComments: boolean;

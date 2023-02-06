@@ -1,6 +1,8 @@
 import { first } from 'lodash-es';
-import React, { useState, ReactElement } from 'react';
+import React, { useState, useEffect, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import {
@@ -8,6 +10,13 @@ import {
   ChallengeFiles,
   ResizeProps
 } from '../../../redux/prop-types';
+import { setShowPreviewPortal, setShowPreviewPane } from '../redux/actions';
+import {
+  portalWindowSelector,
+  showPreviewPortalSelector,
+  showPreviewPaneSelector,
+  isAdvancingToChallengeSelector
+} from '../redux/selectors';
 import PreviewPortal from '../components/preview-portal';
 import ActionRow from './action-row';
 
@@ -21,6 +30,8 @@ interface DesktopLayoutProps {
   hasNotes: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
+  isAdvancing: boolean;
+  isFirstStep: boolean;
   layoutState: {
     codePane: Pane;
     editorPane: Pane;
@@ -34,16 +45,51 @@ interface DesktopLayoutProps {
   resizeProps: ResizeProps;
   testOutput: ReactElement;
   windowTitle: string;
+  showPreviewPortal: boolean;
+  showPreviewPane: boolean;
+  setShowPreviewPortal: (arg: boolean) => void;
+  setShowPreviewPane: (arg: boolean) => void;
+  portalWindow: null | Window;
 }
 
 const reflexProps = {
   propagateDimensions: true
 };
 
+const mapDispatchToProps = {
+  setShowPreviewPortal,
+  setShowPreviewPane
+};
+
+const mapStateToProps = createSelector(
+  isAdvancingToChallengeSelector,
+  showPreviewPortalSelector,
+  showPreviewPaneSelector,
+  portalWindowSelector,
+
+  (
+    isAdvancing: boolean,
+    showPreviewPortal: boolean,
+    showPreviewPane: boolean,
+    portalWindow: null | Window
+  ) => ({
+    isAdvancing,
+    showPreviewPortal,
+    showPreviewPane,
+    portalWindow
+  })
+);
+
 const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
+  const {
+    showPreviewPane,
+    showPreviewPortal,
+    setShowPreviewPane,
+    setShowPreviewPortal,
+    portalWindow
+  } = props;
+
   const [showNotes, setShowNotes] = useState(false);
-  const [showPreviewPane, setShowPreviewPane] = useState(true);
-  const [showPreviewPortal, setShowPreviewPortal] = useState(false);
   const [showConsole, setShowConsole] = useState(false);
   const [showInstructions, setShowInstuctions] = useState(true);
 
@@ -52,10 +98,12 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       case 'showPreviewPane':
         if (!showPreviewPane && showPreviewPortal) setShowPreviewPortal(false);
         setShowPreviewPane(!showPreviewPane);
+        portalWindow?.close();
         break;
       case 'showPreviewPortal':
         if (!showPreviewPortal && showPreviewPane) setShowPreviewPane(false);
         setShowPreviewPortal(!showPreviewPortal);
+        if (showPreviewPortal) portalWindow?.close();
         break;
       case 'showConsole':
         setShowConsole(!showConsole);
@@ -88,12 +136,26 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     testOutput,
     hasNotes,
     hasPreview,
+    isAdvancing,
+    isFirstStep,
     layoutState,
     notes,
     preview,
     hasEditableBoundaries,
     windowTitle
   } = props;
+
+  // on mount
+  useEffect(() => {
+    if (isFirstStep) {
+      setShowPreviewPortal(false);
+      portalWindow?.close();
+      setShowPreviewPane(true);
+    } else if (!isAdvancing && !showPreviewPane && !showPreviewPortal) {
+      togglePane('showPreviewPane');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
@@ -197,9 +259,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
       </ReflexContainer>
       {displayPreviewPortal && (
-        <PreviewPortal togglePane={togglePane} windowTitle={windowTitle}>
-          {preview}
-        </PreviewPortal>
+        <PreviewPortal windowTitle={windowTitle}>{preview}</PreviewPortal>
       )}
     </div>
   );
@@ -207,4 +267,4 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
 DesktopLayout.displayName = 'DesktopLayout';
 
-export default DesktopLayout;
+export default connect(mapStateToProps, mapDispatchToProps)(DesktopLayout);
