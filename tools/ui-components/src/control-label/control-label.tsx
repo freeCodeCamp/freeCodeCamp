@@ -10,7 +10,7 @@ export const ControlLabel = ({
 }: ControlLabelProps) => {
   const { controlId } = useContext(FormContext);
   let screenReaderClass;
-  if (srOnly) screenReaderClass = ' srOnly';
+  if (srOnly) screenReaderClass += ' srOnly';
   return (
     <label
       className={screenReaderClass}
