@@ -222,7 +222,7 @@ const defineMonacoThemes = (
     inherit: true,
     // TODO: Use actual color from style-guide
     colors: {
-      'editor.background': options.usesMultifileEditor ? '#eee' : '#fff',
+      'editor.background': options.usesMultifileEditor ? '#eeeeee' : '#ffffff',
       'editor.lineHighlightBorder': '#cee8fc'
     },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
@@ -280,7 +280,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
-    renderIndentGuides: false,
+    guides: {
+      highlightActiveIndentation: false
+    },
     minimap: {
       enabled: false
     },
@@ -475,8 +477,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     // Make toggle tab setting in editor permanent
     const tabFocusHotkeys =
       OS === 2 /* Macintosh/iOS */
-        ? monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M
-        : monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_M;
+        ? monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KeyM
+        : monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyM;
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       'editor.action.toggleTabFocusMode',
@@ -518,8 +520,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       id: 'save-editor-content',
       label: 'Save editor content',
       keybindings: [
-        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S,
-        monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_S
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
       ],
       run:
         props.challengeType === challengeTypes.multifileCertProject &&
@@ -533,8 +535,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       id: 'toggle-accessibility',
       label: 'Toggle Accessibility Mode',
       keybindings: [
-        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E,
-        monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_E
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyE,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyE
       ],
       run: () => {
         const currentAccessibility = storedAccessibilityMode();
@@ -552,7 +554,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       id: 'toggle-aria-roledescription',
       label: 'Toggle aria-roledescription',
       keybindings: [
-        monaco.KeyMod.Shift | monaco.KeyMod.Alt | monaco.KeyCode.KEY_R
+        monaco.KeyMod.Shift | monaco.KeyMod.Alt | monaco.KeyCode.KeyR
       ],
       run: toggleAriaRoledescription
     });
