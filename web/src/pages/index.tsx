@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { Grid } from '@freecodecamp/react-bootstrap';
+import AsSeenIn from '../components/landing/as-seen-in';
 import Testimonials from '../components/landing/testimonials';
+import Certifications from '../components/landing/certifications';
 import LandingTop from '../components/landing/lading-top';
 import styles from '../styles/landing/Landing.module.css';
 
@@ -18,10 +20,12 @@ export default function Landing() {
           <Grid>
             <LandingTop pageName={'landing'} />
           </Grid>
-          <Grid fluid={true}>{/* <AsSeenIn /> */}</Grid>
+          <Grid fluid={true}>
+            <AsSeenIn />
+          </Grid>
           <Grid>
             <Testimonials />
-            {/* <Certifications pageName={'landing'} />  */}
+            <Certifications pageName={'landing'} />
           </Grid>
         </main>
       </main>
