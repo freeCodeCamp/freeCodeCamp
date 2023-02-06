@@ -795,8 +795,8 @@
       "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
     ],
     "blocks": {
-      "top-html-foundations": {
-        "title": "HTML Foundations",
+      "top-learn-html-foundations": {
+        "title": "Learn HTML Foundations",
         "intro": ["A description is to be determined"]
       },
       "top-build-a-recipe-project": {
