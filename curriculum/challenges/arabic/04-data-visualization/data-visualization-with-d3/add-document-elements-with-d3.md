@@ -10,13 +10,13 @@ dashedName: add-document-elements-with-d3
 
 يحتوي D3 على عدة طرق (methods) التي تسمح لك بإضافة وتغيير العناصر في وثيقتك.
 
-تختار طريقة (method) تسمى `select()` عنصراً واحداً من الوثيقة. إنها تأخذ وسيط (argument) كاسم العنصر الذي تريده وتنتج نقطة لتواصل (node) من HTML للعنصر الأول في المستند الذي يطابق الاسم. Here's an example:
+تختار طريقة (method) `select()` عنصراً واحداً من الوثيقة. إنها تأخذ اسم العنصر الذي تريده كمعطى (argument)، وتنتج node HTML لأول عنصر في المستند يطابق الاسم. Here's an example:
 
 ```js
 const anchor = d3.select("a");
 ```
 
-يجد المثال السابق أول علامة رابط (anchor) في الصفحة ويحفظ نقطتها لتواصل (node) من HTML في المتغير `anchor`. يمكنك استخدام طريقة الاختيار (select) مع الطرق (methods) أخرى. The `d3` part of the example is a reference to the D3 object, which is how you access D3 methods.
+يجد المثال السابق أول علامة رابط (anchor) في الصفحة ويحفظ HTML node لها في المتغير `anchor`. يمكنك استخدام طريقة الاختيار (selection) مع طرق (methods) أخرى. The `d3` part of the example is a reference to the D3 object, which is how you access D3 methods.
 
 Two other useful methods are `append()` and `text()`.
 
