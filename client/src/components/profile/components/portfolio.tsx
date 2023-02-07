@@ -1,4 +1,3 @@
-import { Media } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -20,8 +19,8 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
     <FullWidthRow>
       <h2 className='text-center'>{t('profile.portfolio')}</h2>
       {portfolio.map(({ title, url, image, description, id }) => (
-        <Media key={id}>
-          <Media.Left align='middle'>
+        <div className='portfolio-container' key={id}>
+          <div className='screen-shot-container'>
             {image && (
               <img
                 alt={t('profile.screen-shot', { title: title })}
@@ -29,16 +28,13 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
                 src={image}
               />
             )}
-          </Media.Left>
-          <Media.Body>
-            <Media.Heading className='portfolio-heading'>
-              <a href={url} rel='nofollow noopener noreferrer'>
-                {title}
-              </a>
-            </Media.Heading>
-            <p>{description}</p>
-          </Media.Body>
-        </Media>
+          </div>
+          <h3>{title}</h3>
+          <a href={url} rel='nofollow noopener noreferrer'>
+            live URL <span className='sr-only'>for {title}</span>
+          </a>
+          <p>{description}</p>
+        </div>
       ))}
       <hr />
     </FullWidthRow>
