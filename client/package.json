@@ -181,7 +181,7 @@
     "jest-environment-jsdom": "29.5.0",
     "jest-json-schema-extended": "1.0.1",
     "monaco-editor-webpack-plugin": "^7.0.1",
-    "react-test-renderer": "16.14.0",
+    "react-test-renderer": "^17.0.2",
     "redux-mock-store": "1.5.4",
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
