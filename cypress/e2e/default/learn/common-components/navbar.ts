@@ -8,12 +8,11 @@ const navBarselectors = {
   avatarImage: '.avatar-container .avatar'
 };
 
-
-
-
 describe('Navbar when logged out', () => {
   beforeEach(() => {
-    cy.visit('/').then(() => cy.viewport(1200, 660));
+    cy.visit('/');
+    cy.viewport(1200, 660);
+    cy.contains('Learn to code — for free.').should('exist');
   });
 
   it('Should have a "Sign in" button', () => {
@@ -22,7 +21,7 @@ describe('Navbar when logged out', () => {
 
   it(
     'Should have `Sign in` link on landing and learn pages' +
-    ' when not signed in',
+      ' when not signed in',
     () => {
       cy.contains(navBarselectors.smallCallToAction, 'Sign in');
       cy.get(navBarselectors.menuButton).click();
@@ -34,7 +33,11 @@ describe('Navbar when logged out', () => {
 
 describe('Navbar Logged in', () => {
   beforeEach(() => {
-    cy.visit('/').then(() => cy.login()).then(() => cy.viewport(1200, 660));
+    cy.visit('/');
+    cy.viewport(1200, 660);
+    cy.contains('Learn to code — for free.')
+      .should('exist')
+      .then(() => cy.login());
   });
 
   it('Should render properly', () => {
@@ -55,7 +58,7 @@ describe('Navbar Logged in', () => {
   // have the curriculum and CTA on landing and /learn pages.
   it(
     'Should have `Radio`, `Forum`, and `Curriculum` links on landing and learn pages' +
-    'page when not signed in',
+      'page when not signed in',
     () => {
       cy.get(navBarselectors.menuButton).click();
       cy.get(navBarselectors.navigationLinks).contains('Forum');
@@ -74,7 +77,10 @@ describe('Navbar Logged in', () => {
   });
 
   it('Should have a profile image with class `default-border`', () => {
-    cy.get(navBarselectors.avatarContainer).should('have.class', 'default-border');
+    cy.get(navBarselectors.avatarContainer).should(
+      'have.class',
+      'default-border'
+    );
     cy.get(navBarselectors.defaultAvatar).should('exist');
   });
 
