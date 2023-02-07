@@ -89,7 +89,7 @@ assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]));
     const w = 500;
     const h = 500;
 
-    // Padding between the SVG canvas boundary and the plot
+    // Padding between the SVG area boundary and the plot
     const padding = 30;
 
     // Create an x and y scale
