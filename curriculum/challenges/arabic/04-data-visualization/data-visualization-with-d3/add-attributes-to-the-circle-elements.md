@@ -8,17 +8,17 @@ dashedName: add-attributes-to-the-circle-elements
 
 # --description--
 
-أنشئت في التحدي السابق عناصر `circle` لكل نقطة في `dataset`، وربطهم بلوحة (canvas) في SVG. لكن D3 يحتاج إلى مزيد من المعلومات حول موضع (position) وحجم (size) كل `circle` لعرضها بشكل صحيح.
+أنشئت في التحدي السابق عناصر `circle` لكل نقطة في `dataset`، وربطهم بلوحة (canvas) SVG. لكن D3 يحتاج إلى مزيد من المعلومات حول موقع (position) وحجم (size) كل `circle` لعرضها بشكل صحيح.
 
-لدي `circle` في SVG ثلاث سمات (attributes) رئيسية. تكون السمات (attributes) المسمى `cx` و `cy` إحداثيات. ويخبروا D3 أين يضع (position) *مركز (center)* للشكل على اللوحة (canvas) من SVG. تغير سمة (attribute) نصف قطر (radius) (تكتب مثل: `r`) يأثر على حجم `circle`.
+لدي `circle` في SVG ثلاث سمات (attributes) رئيسية. تكون السمات (attributes) المسمى `cx` و `cy` إحداثيات. ويخبروا D3 أين موقع (position) *مركز (center)* للشكل على لوحة (canvas) SVG. تغير سمة (attribute) نصف قطر (radius) (تكتب مثل: `r`) يأثر على حجم `circle`.
 
-مثل مقياس الإحداثيات `y` داخل `rect`، تقاس `cy` داخل `circle` من الجزء العلوي للوحة (canvas) في SVG، ليس من الأسفل.
+مثل مقياس الإحداثيات `rect` داخل `y`، تقاس `cy` داخل `circle` من الجزء العلوي للوحة (canvas) SVG، ليس من الأسفل.
 
-تقدر السمات (attributes) الثلاث جميعها استخدام وظيفة تعيد تفعيل (callback function) لتحديد قيمها بشكل ديناميكي. تذكر أن جميع الطرق (methods) مرتبطة بوظيفة `data(dataset)` تفعّل مرة واحدة لكل عنصر في `dataset`. The `d` parameter in the callback function refers to the current item in `dataset`, which is an array for each point. You use bracket notation, like `d[0]`, to access the values in that array.
+تستطيع جميع السمات (attributes) الثلاث باستخدام وظيفة لإعادة التفعيل (callback function) لتحديد قيمها بشكل ديناميكي. تذكر أن جميع الطرق (methods) المسلسلة بعد وظيفة `data(dataset)` تفعّل مرة واحدة لكل عنصر في `dataset`. تشير `d` في وظيفة إعادة التفعيل إلى العنصر الحالي في `dataset`، وهو قائمة لكل نقطة. استخدم رمز الأقواس، مثل `d[0]`، للوصول إلى القيم في تلك القائمة.
 
 # --instructions--
 
-Add `cx`, `cy`, and `r` attributes to the `circle` elements. The `cx` value should be the first number in the array for each item in `dataset`. The `cy` value should be based off the second number in the array, but make sure to show the chart right-side-up and not inverted. The `r` value should be `5` for all circles.
+أضف السمات `cx` و `cy` و `r` إلى العناصر المسمى `circle`. The `cx` value should be the first number in the array for each item in `dataset`. The `cy` value should be based off the second number in the array, but make sure to show the chart right-side-up and not inverted. The `r` value should be `5` for all circles.
 
 # --hints--
 
