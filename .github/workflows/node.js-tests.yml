@@ -40,7 +40,9 @@ jobs:
             echo -e 'Error: found too many lockfiles in the repository.\nWe use npm workspaces to manage packages so all dependencies should be added to the root package-lock.json'
             exit 1
           fi
-
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.26.3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
@@ -57,7 +59,7 @@ jobs:
       - name: Lint Source Files
         run: |
           echo npm version $(npm -v)
-          npm ci
+          pnpm install
           npm run create:config
           npm i --prefix=curriculum-server
           npm i --prefix=web
@@ -91,7 +93,7 @@ jobs:
       - name: Install Dependencies
         run: |
           echo npm version $(npm -v)
-          npm ci
+          pnpm install
           npm run create:config
           npm run build:curriculum
 
@@ -126,7 +128,7 @@ jobs:
       - name: Install Dependencies
         run: |
           echo npm version $(npm -v)
-          npm ci
+          pnpm install
           npm run create:config
           npm run build:curriculum
 
@@ -164,7 +166,7 @@ jobs:
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
           echo npm version $(npm -v)
-          npm ci
+          pnpm install
           npm run create:config
           npm run build:curriculum
 

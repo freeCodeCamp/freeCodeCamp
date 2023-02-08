@@ -44,8 +44,8 @@ tasks:
     # so we should put all the heavy initialization here
     init: >
       cp sample.env .env &&
-      npm ci &&
-      gp sync-done npm-ci &&
+      pnpm install &&
+      gp sync-done pnpm-install &&
       gp ports await 27017 &&
       npm run seed &&
       mongo --eval "db.fsyncLock(); db.fsyncUnlock()"
@@ -59,7 +59,7 @@ tasks:
     before: export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000) && export CYPRESS_BASE_URL=$(gp url 8000)
     init: >
       cd ./client &&
-      gp sync-await npm-ci &&
+      gp sync-await pnpm-install &&
       npm run predevelop &&
       cd ..
     command: >

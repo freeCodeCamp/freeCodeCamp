@@ -36,7 +36,9 @@ jobs:
         with:
           repository: freeCodeCamp/client-config
           path: client-config
-
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.26.3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
@@ -52,7 +54,7 @@ jobs:
 
       - name: Install and Build
         run: |
-          npm ci
+          pnpm install
           npm run build
       - name: Seed Database
         run: npm run seed

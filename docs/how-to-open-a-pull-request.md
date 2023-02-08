@@ -193,7 +193,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    ```console
    npm run clean
 
-   npm ci
+   pnpm install
    npm run test:curriculum --superblock=<superblock-name>
 
    # example:

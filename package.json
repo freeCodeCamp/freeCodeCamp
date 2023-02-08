@@ -31,7 +31,7 @@
     "challenge-editor:client": "cd ./tools/challenge-editor/client && npm start",
     "challenge-editor:server": "cd ./tools/challenge-editor/api && npm start",
     "clean": "npm-run-all -p clean:*",
-    "clean-and-develop": "npm run clean && npm ci && npm run develop",
+    "clean-and-develop": "npm run clean && pnpm install && npm run develop",
     "clean:client": "cd ./client && npm run clean",
     "clean:curriculum": "npx --yes rimraf ./config/curriculum.json",
     "clean:packages": "npx --yes rimraf ./**/node_modules",

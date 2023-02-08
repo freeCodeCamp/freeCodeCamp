@@ -476,7 +476,7 @@ Provisioning VMs with the Code
 6. Install dependencies
 
    ```console
-   npm ci
+   pnpm install
    ```
 
 7. Build the server
@@ -522,7 +522,7 @@ pm2 stop all
 2. Install dependencies
 
 ```console
-npm ci
+pnpm install
 ```
 
 3. Build the server
@@ -824,7 +824,7 @@ ssh into the VM (hosted on Digital Ocean).
 ```console
 cd tools
 git pull origin master
-npm ci
+pnpm install
 npm run build
 pm2 restart contribute-app
 ```

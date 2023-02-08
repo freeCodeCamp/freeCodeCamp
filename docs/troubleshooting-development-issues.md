@@ -18,7 +18,7 @@ When you build the client, Gatsby will cache the Fonts, language strings and UI.
 
 ```console
 npm run clean
-npm ci
+pnpm install
 npm run seed
 npm run develop
 ```
