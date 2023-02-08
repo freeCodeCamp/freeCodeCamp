@@ -58,5 +58,9 @@ export const superBlockList = [
   {
     name: 'The Odin Project',
     path: '16-the-odin-project'
+  },
+  {
+    name: 'Project Euler',
+    path: '17-project-euler'
   }
 ];

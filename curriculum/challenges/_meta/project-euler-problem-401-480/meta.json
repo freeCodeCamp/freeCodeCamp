@@ -6,7 +6,7 @@
     "time": "",
     "template": "",
     "required": [],
-    "superBlock": "coding-interview-prep",
+    "superBlock": "project-euler",
     "challengeOrder": [    [
         "5900f4fd1000cf542c51000f",
         "Problem 401: Sum of squares of divisors"

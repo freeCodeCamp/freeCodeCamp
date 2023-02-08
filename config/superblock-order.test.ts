@@ -151,6 +151,7 @@ describe("'superBlockOrder' helper functions", () => {
       SuperBlocks.CodingInterviewPrep,
       SuperBlocks.JsAlgoDataStructNew,
       SuperBlocks.TheOdinProject,
+      SuperBlocks.ProjectEuler,
       SuperBlocks.RespWebDesign
     ];
     expect(learnSuperBlocks).toStrictEqual(test);

@@ -181,6 +181,11 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
   const defaultCurriculumNames = blockDashedNames;
 
+  const superblockWithoutCert = [
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.TheOdinProject
+  ];
+
   return (
     <>
       <Helmet>
@@ -210,17 +215,16 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                     />
                   </Fragment>
                 ))}
-                {superBlock !== SuperBlocks.CodingInterviewPrep &&
-                  superBlock !== SuperBlocks.TheOdinProject && (
-                    <div>
-                      <CertChallenge
-                        certification={certification}
-                        superBlock={superBlock}
-                        title={title}
-                        user={user}
-                      />
-                    </div>
-                  )}
+                {!superblockWithoutCert.includes(superBlock) && (
+                  <div>
+                    <CertChallenge
+                      certification={certification}
+                      superBlock={superBlock}
+                      title={title}
+                      user={user}
+                    />
+                  </div>
+                )}
               </div>
               {!isSignedIn && !signInLoading && (
                 <div>

@@ -6,7 +6,7 @@
     "time": "",
     "template": "",
     "required": [],
-    "superBlock": "coding-interview-prep",
+    "superBlock": "project-euler",
     "challengeOrder": [[
         "5900f3d21000cf542c50fee4",
         "Problem 101: Optimum polynomial"

@@ -22,7 +22,8 @@ const englishTest = {
   [SuperBlocks.InfoSec]: 9,
   [SuperBlocks.MachineLearningPy]: 10,
   [SuperBlocks.CodingInterviewPrep]: 11,
-  [SuperBlocks.RespWebDesign]: 12
+  [SuperBlocks.ProjectEuler]: 12,
+  [SuperBlocks.RespWebDesign]: 13
 };
 
 const upcomingTest = {
@@ -38,9 +39,10 @@ const upcomingTest = {
   [SuperBlocks.InfoSec]: 9,
   [SuperBlocks.MachineLearningPy]: 10,
   [SuperBlocks.CodingInterviewPrep]: 11,
-  [SuperBlocks.JsAlgoDataStructNew]: 12,
-  [SuperBlocks.TheOdinProject]: 13,
-  [SuperBlocks.RespWebDesign]: 14
+  [SuperBlocks.ProjectEuler]: 12,
+  [SuperBlocks.JsAlgoDataStructNew]: 13,
+  [SuperBlocks.TheOdinProject]: 14,
+  [SuperBlocks.RespWebDesign]: 15
 };
 
 const espanolTest = {
@@ -56,7 +58,9 @@ const espanolTest = {
   [SuperBlocks.RelationalDb]: 9,
   [SuperBlocks.InfoSec]: 10,
   [SuperBlocks.MachineLearningPy]: 11,
-  [SuperBlocks.CodingInterviewPrep]: 12
+  [SuperBlocks.CodingInterviewPrep]: 13,
+  [SuperBlocks.ProjectEuler]: 14,
+  [SuperBlocks.RespWebDesign]: 15
 };
 
 const chineseTest = {
@@ -72,7 +76,8 @@ const chineseTest = {
   [SuperBlocks.MachineLearningPy]: 9,
   [SuperBlocks.RespWebDesign]: 10,
   [SuperBlocks.RelationalDb]: 11,
-  [SuperBlocks.CodingInterviewPrep]: 12
+  [SuperBlocks.CodingInterviewPrep]: 12,
+  [SuperBlocks.ProjectEuler]: 13
 };
 
 describe('createSuperOrder', () => {
