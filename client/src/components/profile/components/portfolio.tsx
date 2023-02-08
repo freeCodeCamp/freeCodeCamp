@@ -27,7 +27,9 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
           </div>
           <h3>{title}</h3>
           <a href={url} rel='nofollow noopener noreferrer'>
-            <span className='sr-only'>live URL for {title}</span>
+            <span className='sr-only'>
+              {t('profile.portfolio_link', { title: title })}
+            </span>
           </a>
           <p>{description}</p>
         </div>
