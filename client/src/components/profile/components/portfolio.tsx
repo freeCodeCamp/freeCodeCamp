@@ -22,16 +22,12 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
         <div className='portfolio-container' key={id}>
           <div className='screen-shot-container'>
             {image && (
-              <img
-                alt={t('profile.screen-shot', { title: title })}
-                className='portfolio-screen-shot'
-                src={image}
-              />
+              <img alt='' className='portfolio-screen-shot' src={image} />
             )}
           </div>
           <h3>{title}</h3>
           <a href={url} rel='nofollow noopener noreferrer'>
-            live URL <span className='sr-only'>for {title}</span>
+            <span className='sr-only'>live URL for {title}</span>
           </a>
           <p>{description}</p>
         </div>
