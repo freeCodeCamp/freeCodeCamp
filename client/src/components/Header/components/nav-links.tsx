@@ -524,5 +524,7 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
 
 NavLinks.displayName = 'NavLinks';
 
-// to please this action.js need to migrate to TypeScript
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+//@ts-ignore
+// to please TypeScript, action.js needs to be migrated to TypeScript
 export default connect(null, mapDispatchToProps)(withTranslation()(NavLinks));
