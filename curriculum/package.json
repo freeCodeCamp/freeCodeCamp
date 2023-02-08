@@ -25,8 +25,8 @@
     "delete-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-step",
     "lint": "ts-node --project ../tsconfig.json lint-localized",
     "update-step-titles": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
-    "test": "ts-node ../node_modules/mocha/bin/mocha --delay --exit --reporter progress --bail",
-    "test:full-output": "cross-env FULL_OUTPUT=true ts-node ../node_modules/mocha/bin/mocha --delay --reporter progress"
+    "test": "ts-node ../node_modules/mocha/bin/mocha.js --delay --exit --reporter progress --bail",
+    "test:full-output": "cross-env FULL_OUTPUT=true ts-node ../node_modules/mocha/bin/mocha.js --delay --reporter progress"
   },
   "devDependencies": {
     "@babel/core": "7.20.12",
@@ -50,7 +50,7 @@
     "jsdom": "16.7.0",
     "live-server": "1.2.2",
     "lodash": "4.17.21",
-    "mocha": "9.2.2",
+    "mocha": "10.2.0",
     "mock-require": "3.0.3",
     "puppeteer": "10.4.0",
     "readdirp": "3.6.0",

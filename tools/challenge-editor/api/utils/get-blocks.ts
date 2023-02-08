@@ -2,7 +2,7 @@ import { readdir, readFile } from 'fs/promises';
 import { join } from 'path';
 import { CHALLENGE_DIR, META_DIR } from '../configs/paths';
 
-import { PartialMeta } from '../interfaces/PartialMeta';
+import { PartialMeta } from '../interfaces/partial-meta';
 
 export const getBlocks = async (sup: string) => {
   const filePath = join(CHALLENGE_DIR, sup);

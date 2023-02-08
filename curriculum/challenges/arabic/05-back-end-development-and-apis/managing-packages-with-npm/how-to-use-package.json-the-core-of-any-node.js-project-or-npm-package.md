@@ -22,9 +22,9 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 عند الانتهاء، تأكد من استضافة ديمو لمشروعك في مكان عام. ثم أرسل عنوانه (URL) في خانة "رابط الحل".
 
-إن ملف `package.json` مركز أي مشروع Node.js أو حزمة npm. وإنه يخزن معلومات حول مشروعك، مثلما يخزن قسم &lt;head> من مستند HTML محتوى صفحة ويب. ويتكون من كائن JSON واحد حيث يتم تخزين المعلومات في أزواج key-value. وهناك مجالان مطلوبان فقط؛ "name" و "version"، ولكن الممارسة الجيدة هي أن تقدِّم معلومات إضافية عن مشروعك، التي يمكن أن تكون مفيدة للمستخدمين أو المشرفين في المستقبل.
+إن ملف `package.json` مركز أي مشروع Node.js أو حزمة npm. It stores information about your project, similar to how the `head` section of an HTML document describes the content of a webpage. ويتكون من كائن JSON واحد حيث يتم تخزين المعلومات في أزواج key-value. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
 
-إذا نظرت إلى شجرة ملف مشروعك، سوف تجد ملف package.json في أعلى مستوى من الشجرة. هذا هو الملف الذي سوف تحسنه في التحديات القادمة.
+If you look at the file tree of your project, you will find the `package.json` file on the top level of the tree. هذا هو الملف الذي سوف تحسنه في التحديات القادمة.
 
 واحدة من أكثر المعلومات شيوعا في هذا الملف هي خانة `author`. تحدد اسم منشئ المشروع، وممكن أن يتكون من مقطع نصي أو كائن مع جهة اتصال أو تفاصيل أخرى. يوصى باستخدام كائن لمشاريع أكبر، ولكن مقطع نصي بسيط مثل المثال التالي ينفع لهذا المشروع.
 
@@ -34,13 +34,13 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 # --instructions--
 
-أضف اسمك كمؤلف للمشروع بداخل `author` في ملف المشروع package.json.
+Add your name as the `author` of the project in the `package.json` file.
 
 **ملاحظة:** تذكر أنك تكتب JSON، لذلك يجب أن تستخدم جميع أسماء الخانات علامات اقتباس مزدوجة (") وأن تكون مفصولة بفاصلة (,).
 
 # --hints--
 
-يجب أن يحتوي package.json على هوية "author" صحيحة
+`package.json` should have a valid "author" key
 
 ```js
 (getUserInput) =>

@@ -22,7 +22,6 @@ export const createQuestion = createAction(actionTypes.createQuestion);
 export const initTests = createAction(actionTypes.initTests);
 export const updateTests = createAction(actionTypes.updateTests);
 export const cancelTests = createAction(actionTypes.cancelTests);
-
 export const initConsole = createAction(actionTypes.initConsole);
 export const initLogs = createAction(actionTypes.initLogs);
 export const updateChallengeMeta = createAction(
@@ -37,6 +36,10 @@ export const updateSolutionFormValues = createAction(
 export const updateSuccessMessage = createAction(
   actionTypes.updateSuccessMessage
 );
+export const setShowPreviewPortal = createAction(
+  actionTypes.setShowPreviewPortal
+);
+export const setShowPreviewPane = createAction(actionTypes.setShowPreviewPane);
 
 export const logsToConsole = createAction(actionTypes.logsToConsole);
 
@@ -48,7 +51,7 @@ export const disableBuildOnError = createAction(
 export const storedCodeFound = createAction(actionTypes.storedCodeFound);
 export const noStoredCodeFound = createAction(actionTypes.noStoredCodeFound);
 export const saveEditorContent = createAction(actionTypes.saveEditorContent);
-
+export const setIsAdvancing = createAction(actionTypes.setIsAdvancing);
 export const closeModal = createAction(actionTypes.closeModal);
 export const openModal = createAction(actionTypes.openModal);
 
@@ -57,12 +60,8 @@ export const projectPreviewMounted = createAction(
   actionTypes.projectPreviewMounted
 );
 
-export const storePortalDocument = createAction(
-  actionTypes.storePortalDocument
-);
-export const removePortalDocument = createAction(
-  actionTypes.removePortalDocument
-);
+export const storePortalWindow = createAction(actionTypes.storePortalWindow);
+export const removePortalWindow = createAction(actionTypes.removePortalWindow);
 
 export const challengeMounted = createAction(actionTypes.challengeMounted);
 export const checkChallenge = createAction(actionTypes.checkChallenge);
