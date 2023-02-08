@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
     "@testing-library/user-event": "13.5.0",
+    "codemirror": "5",
     "react": "16.14.0",
     "react-codemirror2": "7.2.1",
     "react-dom": "16.14.0",
@@ -31,6 +32,12 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
     ]
   },
   "devDependencies": {

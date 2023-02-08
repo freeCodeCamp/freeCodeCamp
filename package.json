@@ -18,21 +18,6 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
-  "workspaces": [
-    "api",
-    "api-server",
-    "client",
-    "client/plugins/fcc-source-challenges",
-    "client/plugins/gatsby-remark-node-identity",
-    "curriculum",
-    "tools/challenge-editor/api",
-    "tools/challenge-editor/client",
-    "tools/challenge-helper-scripts",
-    "tools/challenge-parser",
-    "tools/scripts/build",
-    "tools/scripts/seed",
-    "tools/ui-components"
-  ],
   "scripts": {
     "audit-challenges": "npm run create:config && ts-node tools/challenge-auditor/index.ts",
     "analyze-bundle": "webpack-bundle-analyzer",
