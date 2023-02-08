@@ -43,7 +43,7 @@ Each of your three checkbox elements should be nested in its own `label` element
 assert($('label > input[type="checkbox"]:only-child').length > 2);
 ```
 
-Make sure each of your `label` elements has a closing tag.
+تأكد أن كل `label` له علامة إغلاق.
 
 ```js
 assert(

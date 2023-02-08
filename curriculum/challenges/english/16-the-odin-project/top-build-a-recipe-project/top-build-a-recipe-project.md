@@ -2,7 +2,7 @@
 id: 6391d1a4f7ac71efd0621380
 title: Build a Recipe Page Project
 challengeType: 14
-dashedName: project-create-a-recipe-page
+dashedName: top-build-a-recipe-project
 ---
 
 # --description--

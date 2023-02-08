@@ -42,9 +42,9 @@ Transfer to Clothing    -50.00
 Total: 923.96
 ```
 
-Besides the `Category` class, create a function (outside of the class) called `create_spend_chart` that takes a list of categories as an argument. يجب أن تنتج مخطط بياني للأعمدة بصيغة string.
+Besides the `Category` class, create a function (outside of the class) called `create_spend_chart` that takes a list of categories as an argument. يجب أن تنتج مخطط أعمدة بصيغة string.
 
-The chart should show the percentage spent in each category passed in to the function. The percentage spent should be calculated only with withdrawals and not with deposits. Down the left side of the chart should be labels 0 - 100. كل عمود من مخطط بياني للأعمدة يتكون من رمز " o". The height of each bar should be rounded down to the nearest 10. The horizontal line below the bars should go two spaces past the final bar. Each category name should be written vertically below the bar. There should be a title at the top that says "Percentage spent by category".
+The chart should show the percentage spent in each category passed in to the function. The percentage spent should be calculated only with withdrawals and not with deposits. Down the left side of the chart should be labels 0 - 100. يتكون كل عمود من مخطط ألأعمدة من الحرف " o". The height of each bar should be rounded down to the nearest 10. The horizontal line below the bars should go two spaces past the final bar. Each category name should be written vertically below the bar. There should be a title at the top that says "Percentage spent by category".
 
 This function will be tested with up to four categories.
 

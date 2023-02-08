@@ -23,7 +23,7 @@ Background images usually fall under the 'decorative' label as well. However, th
 
 # --instructions--
 
-Camper Cat has coded a skeleton page for the blog part of his website. He's planning to add a visual break between his two articles with a decorative image of a samurai sword. Add an `alt` attribute to the `img` tag and set it to an empty string. (Note that the image `src` doesn't link to an actual file - don't worry that there are no swords showing in the display.)
+قام Camper Cat ببرمجة هيكل الصفحة لمدونة موقعه. He's planning to add a visual break between his two articles with a decorative image of a samurai sword. Add an `alt` attribute to the `img` tag and set it to an empty string. (Note that the image `src` doesn't link to an actual file - don't worry that there are no swords showing in the display.)
 
 # --hints--
 

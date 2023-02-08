@@ -22,7 +22,7 @@ tests:
     title: بناء لعبة Roguelike Dungeon Crawler
   - 
     id: bd7168d8c242eddfaeb5bd13
-    title: التصوير المرئي للبيانات باستخدام مخطط بياني للأعمدة
+    title: التصوير المرئي للبيانات باستخدام مخطط الأعمدة
   - 
     id: bd7178d8c242eddfaeb5bd13
     title: التصوير المرئي للبيانات باستخدام مخطط التشتت

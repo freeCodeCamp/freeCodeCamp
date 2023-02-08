@@ -1,6 +1,6 @@
 ---
 id: bd7168d8c242eddfaeb5bd13
-title: Visualize Data with a Bar Chart
+title: التمثيل البياني باستخدام مخطط الأعمدة
 challengeType: 3
 forumTopicId: 301464
 dashedName: visualize-data-with-a-bar-chart
@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-bar-chart
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://bar-chart.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://bar-chart.freecodecamp.rocks</a>.
+**متطلبات:** قم ببناء تطبيق يُشبه في وظيفته <a href="https://bar-chart.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://bar-chart.freecodecamp.rocks</a>.
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
@@ -16,13 +16,13 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. T
 
 **User Story #1:** My chart should have a title with a corresponding `id="title"`.
 
-**User Story #2:** My chart should have a `g` element x-axis with a corresponding `id="x-axis"`.
+**قصة المستخدم الثانية 2#:**: يجب أن يحتوي المخطط علي عنصر `g` علي المحور x (الأفقي) مع `id="x-axis"`.
 
-**User Story #3:** My chart should have a `g` element y-axis with a corresponding `id="y-axis"`.
+**قصة المُستخدم الثالثة 3#:** يجب أن يحتوى المخطط علي عُنصر `g` علي المحور y (العمودي) مع `id="y-axis"`.
 
 **User Story #4:** Both axes should contain multiple tick labels, each with a corresponding `class="tick"`.
 
-**User Story #5:** My chart should have a `rect` element for each data point with a corresponding `class="bar"` displaying the data.
+**قصة المٌستخدم الخامسة 5#:** يَجب أن يحتوي المخطط على عُنصر من نوع `rect` لكل معلومة مع عرض للبيانات بواسطة سمة `class="bar"`.
 
 **User Story #6:** Each bar should have the properties `data-date` and `data-gdp` containing `date` and `GDP` values.
 

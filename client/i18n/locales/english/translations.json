@@ -302,7 +302,6 @@
       "certs": "{{title}} Certification"
     },
     "editor-tabs": {
-      "info": "Info",
       "code": "Code",
       "tests": "Tests",
       "restart": "Restart",
