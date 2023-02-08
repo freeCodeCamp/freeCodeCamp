@@ -10,7 +10,6 @@
 .portfolio-screen-shot {
   width: 100%;
   height: 100%;
-  max-height: 300px;
   display: block;
 }
 
@@ -32,14 +31,20 @@
   word-break: break-all;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 990px) {
+  .portfolio-screen-shot {
+    max-height: 300px;
+  }
+}
+
+@media (min-width: 995px) {
   .portfolio-container {
     grid-template-rows: 0.1fr 1fr;
   }
 
   .screen-shot-container {
     grid-column: 1;
-    grid-row: 1 / 3;
+    grid-row: 1 / -1;
   }
 
   .portfolio-container h3 {
