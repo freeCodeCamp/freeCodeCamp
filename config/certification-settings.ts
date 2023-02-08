@@ -32,7 +32,8 @@ export enum SuperBlocks {
   InfoSec = 'information-security',
   MachineLearningPy = 'machine-learning-with-python',
   CodingInterviewPrep = 'coding-interview-prep',
-  TheOdinProject = 'the-odin-project'
+  TheOdinProject = 'the-odin-project',
+  ProjectEuler = 'project-euler'
 }
 
 export const certIds = {

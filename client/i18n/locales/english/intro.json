@@ -777,13 +777,6 @@
           "These challenges can prove to be difficult, but they will push your algorithm logic to new heights.",
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
-      },
-      "project-euler": {
-        "title": "Project Euler",
-        "intro": [
-          "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
-          "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
-        ]
       }
     }
   },
@@ -802,6 +795,35 @@
       "top-build-a-recipe-project": {
         "title": "Learn HTML Foundations by Building a Recipe Page",
         "intro": ["A description is to be determined"]
+      }
+    }
+  },
+  "project-euler": {
+    "tilte": "Project Euler",
+    "intro": [
+      "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
+      "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+    ],
+    "blocks": {
+      "project-euler-problem-1-100": {
+        "title": "Project Euler Problem 1 to 100",
+        "intro": "Project Euler Step 1 to 100"
+      },
+      "project-euler-problem-101-200": {
+        "title": "Project Euler Problem 101 to 100",
+        "intro": ""
+      },
+      "project-euler-problem-201-300": {
+        "title": "Project Euler problem 201 to 300",
+        "intro": ""
+      },
+      "project-euler-problem-301-400": {
+        "title": "Project Euler problem 301 to 400",
+        "intro": ""
+      },
+      "project-euler-problem-401-480": {
+        "title": "Project Euler problem 401 to 480",
+        "intro": ""
       }
     }
   },
