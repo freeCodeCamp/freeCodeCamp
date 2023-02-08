@@ -10,13 +10,13 @@ dashedName: render-html-elements-to-the-dom
 
 حتى الآن، تعلمت أن JSX أداة مناسبة لكتابة HTML مقروءة داخل JavaScript. مع React، يمكننا تقديم JSX قاصدًا إلى HTML DOM باستخدام React الذي يقدم API المعروف باسم ReactDOM.
 
-ReactDOM يوفر طريقة بسيطة لتقديم عناصر React إلى DOM التي تبدو مثل: `ReactDOM.render(componentToRender, targetNode)`, حيث الحَجَّة الأولى هي عنصر React أو المكون الذي تريد أن تنتجه، والحجة الثانية هي نقطة التواصل DOM التي تريد تقديم المكون إليها.
+ReactDOM يوفر طريقة بسيطة لتقديم عناصر React إلى DOM التي تبدو مثل: `ReactDOM.render(componentToRender, targetNode)`, حيث الحَجَّة الأولى هي عنصر React أو المكون الذي تريد أن تنتجه، والحجة الثانية هي node DOM التي تريد تقديم المكون إليها.
 
 كما تتوقع، `ReactDOM.render()` يجب أن يستدعى بعد إعلانات عناصر JSX، تماما مثل كيفية الإعلان عن المتغيرات قبل استخدامها.
 
 # --instructions--
 
-يحتوي محرر التعليمات البرمجية على مكون JSX بسيط. استخدم طريقة `ReactDOM.render()` لإضافة هذا المكون إلى الصفحة. يمكنك تمرير عناصر JSX المحددة قاصدًا كالحجة الأولى واستخدام `document.getElementById()` لتحديد نقطة التواصل DOM لتقديمها إليها. هناك `div` مع `id='challenge-node'` متاح لك للاستخدام. تيقن من عدم تغيير ثابت `JSX`.
+يحتوي محرر التعليمات البرمجية على مكون JSX بسيط. استخدم طريقة `ReactDOM.render()` لإضافة هذا المكون إلى الصفحة. يمكنك تمرير عناصر JSX المحددة قاصدًا كالحجة الأولى واستخدام `document.getElementById()` لتحديد DOM node لتقديمها إليها. هناك `div` مع `id='challenge-node'` متاح لك للاستخدام. تيقن من عدم تغيير ثابت `JSX`.
 
 # --hints--
 
@@ -38,7 +38,7 @@ assert(JSX.props.children[0].type === 'h1');
 assert(JSX.props.children[1].type === 'p');
 ```
 
-يجب أن ينتج عنصر JSX المقدم إلى نقطة التواصل DOM مع معرف `challenge-node`.
+يجب أن ينتج عنصر JSX المقدم إلى DOM node مع معرف `challenge-node`.
 
 ```js
 assert(

@@ -8,9 +8,9 @@ dashedName: add-attributes-to-the-circle-elements
 
 # --description--
 
-أنشئت في التحدي السابق عناصر `circle` لكل نقطة في `dataset`، وربطهم بلوحة (canvas) SVG. لكن D3 يحتاج إلى مزيد من المعلومات حول موقع (position) وحجم (size) كل `circle` لعرضها بشكل صحيح.
+أنشئت في التحدي السابق عناصر `circle` لكل نقطة في `dataset`، وأضفتهم بلوحة (canvas) SVG. لكن D3 يحتاج إلى مزيد من المعلومات حول موقع (position) وحجم (size) كل `circle` لعرضها بشكل صحيح.
 
-لدي `circle` في SVG ثلاث سمات (attributes) رئيسية. تكون السمات (attributes) المسمى `cx` و `cy` إحداثيات. ويخبروا D3 أين موقع (position) *مركز (center)* للشكل على لوحة (canvas) SVG. تغير سمة (attribute) نصف قطر (radius) (تكتب مثل: `r`) يأثر على حجم `circle`.
+لدي `circle` في SVG ثلاث سمات (attributes) رئيسية. تكون السمات (attributes) المسمى `cx` و `cy` إحداثيات. ويخبروا D3 أين تضع *وَسَط (center)* الشكل على لوحة SVG. تحدد سمة نصف قطر (radius) (وتكتب: `r`) حجم الدائرة (`circle`).
 
 مثل مقياس الإحداثيات `rect` داخل `y`، تقاس `cy` داخل `circle` من الجزء العلوي للوحة (canvas) SVG، ليس من الأسفل.
 
