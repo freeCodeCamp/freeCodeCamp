@@ -210,16 +210,17 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                     />
                   </Fragment>
                 ))}
-                {superBlock !== SuperBlocks.CodingInterviewPrep && (
-                  <div>
-                    <CertChallenge
-                      certification={certification}
-                      superBlock={superBlock}
-                      title={title}
-                      user={user}
-                    />
-                  </div>
-                )}
+                {superBlock !== SuperBlocks.CodingInterviewPrep &&
+                  superBlock !== SuperBlocks.TheOdinProject && (
+                    <div>
+                      <CertChallenge
+                        certification={certification}
+                        superBlock={superBlock}
+                        title={title}
+                        user={user}
+                      />
+                    </div>
+                  )}
               </div>
               {!isSignedIn && !signInLoading && (
                 <div>

@@ -1,12 +1,11 @@
 {
-    "name": "The Odin Project",
+    "name": "TOP Learn HTML Foundations",
     "isUpcomingChange": true,
-    "dashedName": "the-odin-project",
-    "order": 5,
+    "order": 0,
     "time": "",
     "template": "",
     "required": [],
-    "superBlock": "coding-interview-prep",
+    "superBlock": "the-odin-project",
     "challengeOrder": [
         [
             "6374f208de18c50e48ba767b",
