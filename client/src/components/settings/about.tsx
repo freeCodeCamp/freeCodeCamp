@@ -106,7 +106,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     e.preventDefault();
     const { formValues } = this.state;
     const { submitNewAbout } = this.props;
-    if (this.state.isPictureUrlValid === true) {
+    if (this.state.isPictureUrlValid === true && !this.isFormPristine()) {
       return this.setState({ formClicked: true }, () =>
         submitNewAbout(formValues)
       );

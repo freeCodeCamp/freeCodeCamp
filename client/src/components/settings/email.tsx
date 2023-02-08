@@ -173,7 +173,12 @@ function EmailSettings({
         </FullWidthRow>
       )}
       <FullWidthRow>
-        <form id='form-update-email' onSubmit={handleSubmit}>
+        <form
+          id='form-update-email'
+          {...(!isDisabled
+            ? { onSubmit: handleSubmit }
+            : { onSubmit: e => e.preventDefault() })}
+        >
           <FormGroup controlId='current-email'>
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
             <FormControl.Static>{currentEmail}</FormControl.Static>
@@ -208,10 +213,7 @@ function EmailSettings({
               ) : null}
             </FormGroup>
           </div>
-          <BlockSaveButton
-            aria-disabled={isDisabled}
-            {...(isDisabled && { onClick: {} })}
-          >
+          <BlockSaveButton aria-disabled={isDisabled}>
             {t('buttons.save')}{' '}
             <span className='sr-only'>{t('settings.email.heading')}</span>
           </BlockSaveButton>
