@@ -13,7 +13,7 @@
     "emitDecoratorMetadata": true,
     "noEmit": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "include": ["i18n/**/*", "plugins/**/*", "src/**/*", "utils/**/*"]
 }
