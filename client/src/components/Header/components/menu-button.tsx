@@ -25,8 +25,6 @@ const MenuButton = ({
   const handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
     if (
       event.relatedTarget &&
-      // @ts-expect-error this version of @types/react does not allow for the
-      // possibility of relatedTarget being an Element.
       !event.relatedTarget.closest('.universal-nav-right') &&
       displayMenu
     ) {
