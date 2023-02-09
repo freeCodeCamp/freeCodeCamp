@@ -101,13 +101,15 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             {usesMultifileEditor && <EditorTabs />}
             {editor}
           </TabPane>
-          <TabPane
-            eventKey={Tab.Console}
-            title={i18next.t('learn.editor-tabs.console')}
-            {...editorTabPaneProps}
-          >
-            {testOutput}
-          </TabPane>
+          {usesMultifileEditor && (
+            <TabPane
+              eventKey={Tab.Console}
+              title={i18next.t('learn.editor-tabs.console')}
+              {...editorTabPaneProps}
+            >
+              {testOutput}
+            </TabPane>
+          )}
           {hasNotes && usesMultifileEditor && (
             <TabPane
               eventKey={Tab.Notes}
