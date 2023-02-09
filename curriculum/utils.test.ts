@@ -58,9 +58,9 @@ const espanolTest = {
   [SuperBlocks.RelationalDb]: 9,
   [SuperBlocks.InfoSec]: 10,
   [SuperBlocks.MachineLearningPy]: 11,
-  [SuperBlocks.CodingInterviewPrep]: 13,
-  [SuperBlocks.ProjectEuler]: 14,
-  [SuperBlocks.RespWebDesign]: 15
+  [SuperBlocks.CodingInterviewPrep]: 12,
+  [SuperBlocks.ProjectEuler]: 13,
+  [SuperBlocks.RespWebDesign]: 14
 };
 
 const chineseTest = {
