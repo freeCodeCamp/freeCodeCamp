@@ -12,7 +12,7 @@ const social = {
 
 const scripts = {
   mathjax: {
-    selector: 'head script[id="mathjax"]',
+    selector: 'body script[id="mathjax"]',
     src: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML'
   }
 };
@@ -63,14 +63,14 @@ describe('The Document Metadata', () => {
     });
   });
   describe('responsive webdesign challenges', () => {
-    it('should not have mathjax script', () => {
+    it('should not have mathjax body script', () => {
       cy.visit(challenges.responsiveWebDesign);
       cy.contains('Basic HTML and HTML5');
       cy.get(scripts.mathjax.selector).should('not.exist');
     });
   });
   describe('project euler challenges', () => {
-    it('should have mathjax script', () => {
+    it('should have mathjax body script', () => {
       // TODO: this is flaky, because (somehow) a chunk error is thrown when
       // visiting this page and browser (somehow) ends up on
       // challenges/responsiveWebDesign
@@ -85,7 +85,7 @@ describe('The Document Metadata', () => {
     });
   });
   describe('rosetta code challenges', () => {
-    it('should have mathjax script', () => {
+    it('should have mathjax body script', () => {
       cy.visit(challenges.rosettaCode);
       cy.contains('Rosetta Code');
       cy.get(scripts.mathjax.selector).should(
