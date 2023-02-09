@@ -1,8 +1,8 @@
 {
-    "name": "Project Euler",
+    "name": "project euler problem 1 to 101",
     "isUpcomingChange": false,
-    "dashedName": "project-euler",
-    "order": 4,
+    "dashedName": "project-euler-problem-1-100",
+    "order": 0,
     "time": "",
     "template": "",
     "required": [],
