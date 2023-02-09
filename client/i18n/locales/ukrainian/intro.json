@@ -778,20 +778,30 @@
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Атрибут: Rosetta Code</a>"
         ]
       },
-      "the-odin-project": {
-        "title": "Проєкт «Odin»",
-        "intro": ["Опис буде надано пізніше"]
-      },
-      "the-odin-project-projects": {
-        "title": "Проєкти «Odin»",
-        "intro": ["Опис буде надано пізніше"]
-      },
       "project-euler": {
         "title": "Проєкт «Ейлер»",
         "intro": [
           "Виконайте завдання з програмування з архівів проєкту «Ейлер». Вони удосконалять ваші алгоритмічні та математичні знання.",
           "Тут є завдання різної складності, а для багатьох здобуття досвіду полягає в індуктивному методі навчання. Тобто, вирішення одного завдання прояснить нову концепцію та дозволить вирішити раніше незрозумілу задачу. Чи під силу вам вирішити кожну?"
         ]
+      }
+    }
+  },
+  "the-odin-project": {
+    "title": "The Odin Project",
+    "intro": [
+      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
+      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
+      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
+    ],
+    "blocks": {
+      "top-learn-html-foundations": {
+        "title": "Learn HTML Foundations",
+        "intro": ["A description is to be determined"]
+      },
+      "top-build-a-recipe-project": {
+        "title": "Learn HTML Foundations by Building a Recipe Page",
+        "intro": ["A description is to be determined"]
       }
     }
   },
