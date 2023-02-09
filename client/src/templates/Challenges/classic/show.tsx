@@ -373,6 +373,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       description,
       forumTopicId,
       instructions,
+      superBlock,
       title,
       translationPending
     } = this.getChallenge();
@@ -385,6 +386,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             block={block}
             description={description}
             instructions={instructions}
+            superBlock={superBlock}
           />
         }
         challengeTitle={
@@ -398,6 +400,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         guideUrl={getGuideUrl({ forumTopicId, title })}
         instructionsPanelRef={this.instructionsPanelRef}
         showToolPanel={showToolPanel}
+        superBlock={superBlock}
         videoUrl={this.getVideoUrl()}
       />
     );
