@@ -50,47 +50,45 @@ const ActionRow = ({
   }
 
   return (
-    <div className='action-row'>
-      <div className='tabs-row'>
-        {!isProjectBasedChallenge && (
-          <button
-            aria-expanded={!!showInstructions}
-            onClick={() => togglePane('showInstructions')}
-          >
-            {t('learn.editor-tabs.instructions')}
-          </button>
-        )}
-        <EditorTabs />
-        <div className='panel-display-tabs'>
-          <button
-            aria-expanded={!!showConsole}
-            onClick={() => togglePane('showConsole')}
-          >
-            {t('learn.editor-tabs.console')}
-          </button>
-          {hasNotes && (
-            <button
-              aria-expanded={!!showNotes}
-              onClick={() => togglePane('showNotes')}
-            >
-              {t('learn.editor-tabs.notes')}
-            </button>
-          )}
-          <button
-            aria-expanded={!!showPreviewPane}
-            onClick={() => togglePane('showPreviewPane')}
-          >
-            <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
-            <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
-          </button>
-          <button
-            aria-expanded={!!showPreviewPortal}
-            onClick={() => togglePane('showPreviewPortal')}
-          >
-            <span className='sr-only'>{getPreviewBtnsSrText().portal}</span>
-            <FontAwesomeIcon icon={faWindowRestore} />
-          </button>
-        </div>
+    <div className='monaco-editor-tabs'>
+      {!isProjectBasedChallenge && (
+        <button
+          aria-expanded={showInstructions}
+          onClick={() => togglePane('showInstructions')}
+        >
+          {t('learn.editor-tabs.instructions')}
+        </button>
+      )}
+      <EditorTabs />
+      <button
+        aria-expanded={showConsole}
+        onClick={() => togglePane('showConsole')}
+      >
+        {t('learn.editor-tabs.console')}
+      </button>
+      {hasNotes && (
+        <button
+          aria-expanded={showNotes}
+          onClick={() => togglePane('showNotes')}
+        >
+          {t('learn.editor-tabs.notes')}
+        </button>
+      )}
+      <div className='preview-buttons-section'>
+        <button
+          aria-expanded={showPreviewPane}
+          onClick={() => togglePane('showPreviewPane')}
+        >
+          <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
+          <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
+        </button>
+        <button
+          aria-expanded={showPreviewPortal}
+          onClick={() => togglePane('showPreviewPortal')}
+        >
+          <span className='sr-only'>{getPreviewBtnsSrText().portal}</span>
+          <FontAwesomeIcon icon={faWindowRestore} />
+        </button>
       </div>
     </div>
   );

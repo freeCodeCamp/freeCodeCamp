@@ -17,13 +17,7 @@
   display: none !important;
 }
 
-.action-row {
-  padding: 10px;
-  border-bottom: 1px solid var(--quaternary-background);
-}
-
-.monaco-editor-tabs [aria-expanded='true'],
-.action-row [aria-expanded='true'] {
+.monaco-editor-tabs [aria-expanded='true'] {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);
@@ -43,15 +37,20 @@
 }
 
 .monaco-editor-tabs {
+  padding: 10px;
+  border-bottom: 1px solid var(--quaternary-background);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
 }
 
 .monaco-editor-tabs button:not(:first-child) {
   border-left: none;
 }
 
-.panel-display-tabs button:first-child,
+.preview-buttons-section {
+  display: inline-flex;
+}
+
 .tabs-row > button:first-child {
   margin: 0 10px 0 0;
 }
@@ -121,11 +120,6 @@
 #mobile-layout .nav-tabs > li.active > a {
   color: var(--quaternary-color);
   background-color: var(--quaternary-background);
-}
-
-#mobile-layout .monaco-editor-tabs {
-  padding: 10px;
-  width: 100%;
 }
 
 /* Focus indicator for tab panel */
