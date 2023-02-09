@@ -302,7 +302,6 @@
       "certs": "{{title}} 認證"
     },
     "editor-tabs": {
-      "info": "信息",
       "code": "編程",
       "tests": "測試",
       "restart": "重啓",
