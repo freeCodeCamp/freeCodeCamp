@@ -3,7 +3,7 @@ const challenges = {
     '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements',
   rosettaCode: '/learn/coding-interview-prep/rosetta-code/100-doors',
   projectEuler:
-    '/learn/coding-interview-prep/project-euler/problem-1-multiples-of-3-and-5'
+    '/learn/project-euler/project-euler-problem-1-100/problem-1-multiples-of-3-and-5'
 };
 
 const social = {
@@ -12,7 +12,7 @@ const social = {
 
 const scripts = {
   mathjax: {
-    selector: 'body script[id="mathjax"]',
+    selector: 'head script[id="mathjax"]',
     src: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML'
   }
 };
@@ -63,14 +63,14 @@ describe('The Document Metadata', () => {
     });
   });
   describe('responsive webdesign challenges', () => {
-    it('should not have mathjax body script', () => {
+    it('should not have mathjax script', () => {
       cy.visit(challenges.responsiveWebDesign);
       cy.contains('Basic HTML and HTML5');
       cy.get(scripts.mathjax.selector).should('not.exist');
     });
   });
   describe('project euler challenges', () => {
-    it('should have mathjax body script', () => {
+    it('should have mathjax script', () => {
       // TODO: this is flaky, because (somehow) a chunk error is thrown when
       // visiting this page and browser (somehow) ends up on
       // challenges/responsiveWebDesign
@@ -85,7 +85,7 @@ describe('The Document Metadata', () => {
     });
   });
   describe('rosetta code challenges', () => {
-    it('should have mathjax body script', () => {
+    it('should have mathjax script', () => {
       cy.visit(challenges.rosettaCode);
       cy.contains('Rosetta Code');
       cy.get(scripts.mathjax.selector).should(
