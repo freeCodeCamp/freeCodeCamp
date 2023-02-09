@@ -21,6 +21,7 @@
   "devDependencies": {
     "@types/js-yaml": "4.0.5",
     "@types/node-fetch": "2.6.2",
+    "chai": "4.3.7",
     "debug": "4.3.4",
     "dotenv": "16.0.3",
     "joi": "17.7.0",

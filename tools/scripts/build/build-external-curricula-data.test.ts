@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 
 import readdirp from 'readdirp';
+// TODO: remove chai and use jest's assertion errors
 import { AssertionError } from 'chai';
 import envData from '../../../config/env.json';
 import { SuperBlocks } from '../../../config/certification-settings';
