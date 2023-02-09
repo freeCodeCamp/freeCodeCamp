@@ -14,7 +14,7 @@ import {
   getTitleFromId
 } from '../../../../../utils';
 import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
-import CertificationIcon from '../../../assets/icons/certification-icon';
+import CertificationIcon from '../../../assets/icons/certification';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
