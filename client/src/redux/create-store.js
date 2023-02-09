@@ -5,9 +5,9 @@ import createSagaMiddleware from 'redux-saga';
 
 import envData from '../../../config/env.json';
 import { isBrowser } from '../../utils';
-import rootEpic from './rootEpic';
-import rootReducer from './rootReducer';
-import rootSaga from './rootSaga';
+import rootEpic from './root-epic';
+import rootReducer from './root-reducer';
+import rootSaga from './root-saga';
 
 const { environment } = envData;
 
@@ -47,8 +47,8 @@ export const createStore = () => {
   epicMiddleware.run(rootEpic);
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
-    module.hot.accept('./rootReducer', () => {
-      const nextRootReducer = require('./rootReducer');
+    module.hot.accept('./root-reducer', () => {
+      const nextRootReducer = require('./root-reducer');
       store.replaceReducer(nextRootReducer);
     });
   }
