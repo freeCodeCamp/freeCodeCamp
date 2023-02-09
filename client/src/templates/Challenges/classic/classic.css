@@ -43,8 +43,8 @@
 }
 
 .monaco-editor-tabs {
-  display: flex;
-  margin-inline-end: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
 }
 
 .monaco-editor-tabs button:not(:first-child) {
@@ -87,11 +87,9 @@
 }
 
 #mobile-layout .tab-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  overflow-y: hidden;
+  display: grid;
+  height: 100vh;
+  height: 100dvh;
 }
 
 #mobile-layout-pane-editor {
@@ -128,11 +126,6 @@
 #mobile-layout .monaco-editor-tabs {
   padding: 10px;
   width: 100%;
-}
-
-#mobile-layout .monaco-editor-tabs button {
-  flex: 1;
-  max-width: 50%;
 }
 
 /* Focus indicator for tab panel */
