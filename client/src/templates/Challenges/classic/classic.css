@@ -53,6 +53,14 @@
 
 #mobile-layout {
   display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  grid-template-rows: 30px 1fr;
+}
+
+#mobile-layout .tab-content {
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 #mobile-layout .nav-tabs {
