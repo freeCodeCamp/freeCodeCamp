@@ -147,9 +147,9 @@ describe('getSuperOrder', () => {
     }
 
     if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
-      expect.assertions(13);
+      expect.assertions(14);
     } else {
-      expect.assertions(15);
+      expect.assertions(16);
     }
 
     expect(getSuperOrder(SuperBlocks.RespWebDesignNew)).toBe(0);
@@ -164,13 +164,14 @@ describe('getSuperOrder', () => {
     expect(getSuperOrder(SuperBlocks.InfoSec)).toBe(9);
     expect(getSuperOrder(SuperBlocks.MachineLearningPy)).toBe(10);
     expect(getSuperOrder(SuperBlocks.CodingInterviewPrep)).toBe(11);
+    expect(getSuperOrder(SuperBlocks.ProjectEuler)).toBe(12);
 
     if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
       expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(13);
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(14);
       expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(15);
     } else {
-      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(12);
+      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(13);
     }
   });
 });
