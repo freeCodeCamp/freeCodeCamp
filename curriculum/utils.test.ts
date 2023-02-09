@@ -167,9 +167,9 @@ describe('getSuperOrder', () => {
     expect(getSuperOrder(SuperBlocks.CodingInterviewPrep)).toBe(11);
 
     if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
-      expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(12);
-      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(13);
-      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(14);
+      expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(13);
+      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(14);
+      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(15);
     } else {
       expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(12);
     }
@@ -182,7 +182,7 @@ describe('getSuperBlockFromPath', () => {
   );
 
   it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(16);
+    expect.assertions(17);
 
     for (const directory of directories) {
       expect(() => getSuperBlockFromDir(directory)).not.toThrow();
@@ -190,7 +190,7 @@ describe('getSuperBlockFromPath', () => {
   });
 
   it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
-    expect.assertions(16);
+    expect.assertions(17);
 
     const superBlockPaths = directories.filter(x => x !== '00-certifications');
 
