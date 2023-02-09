@@ -4,6 +4,7 @@ import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
@@ -16,7 +17,8 @@ import { isBrowser } from '../../../utils';
 import {
   fetchUser,
   onlineStatusChange,
-  serverStatusChange
+  serverStatusChange,
+  loadAllChallengesInfo
 } from '../../redux/actions';
 import {
   isSignedInSelector,
@@ -26,7 +28,12 @@ import {
   userFetchStateSelector
 } from '../../redux/selectors';
 
-import { UserFetchState, User } from '../../redux/prop-types';
+import {
+  UserFetchState,
+  User,
+  AllChallengeNode,
+  CertificateNode
+} from '../../redux/prop-types';
 import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
@@ -77,7 +84,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       fetchUser,
       removeFlashMessage,
       onlineStatusChange,
-      serverStatusChange
+      serverStatusChange,
+      loadAllChallengesInfo
     },
     dispatch
   );
@@ -117,10 +125,13 @@ function DefaultLayout({
   t,
   theme = Themes.Default,
   user,
-  fetchUser
+  fetchUser,
+  loadAllChallengesInfo
 }: DefaultLayoutProps): JSX.Element {
+  const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
     // componentDidMount
+    loadAllChallengesInfo({ challengeEdges, certificateNodes });
     if (!isSignedIn) {
       fetchUser();
     }
@@ -236,6 +247,49 @@ function DefaultLayout({
     );
   }
 }
+
+const useGetAllBlockIds = () => {
+  const {
+    allChallengeNode: { edges: challengeEdges },
+    allCertificateNode: { nodes: certificateNodes }
+  }: {
+    allChallengeNode: AllChallengeNode;
+    allCertificateNode: { nodes: CertificateNode[] };
+  } = useStaticQuery(graphql`
+    query getBlockNod {
+      allChallengeNode(
+        sort: {
+          fields: [
+            challenge___superOrder
+            challenge___order
+            challenge___challengeOrder
+          ]
+        }
+      ) {
+        edges {
+          node {
+            challenge {
+              block
+              id
+            }
+          }
+        }
+      }
+      allCertificateNode {
+        nodes {
+          challenge {
+            certification
+            tests {
+              id
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  return { challengeEdges, certificateNodes };
+};
 
 DefaultLayout.displayName = 'DefaultLayout';
 
