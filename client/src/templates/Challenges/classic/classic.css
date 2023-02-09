@@ -17,30 +17,23 @@
   display: none !important;
 }
 
+.monaco-editor-tabs {
+  padding: 10px;
+  border-bottom: 1px solid var(--quaternary-background);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+}
+
 .monaco-editor-tabs [aria-expanded='true'] {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);
 }
 
-.tabs-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.tabs-row button,
 .monaco-editor-tabs button {
   padding: 6px 12px;
   border-width: 2px;
   border-style: solid;
-}
-
-.monaco-editor-tabs {
-  padding: 10px;
-  border-bottom: 1px solid var(--quaternary-background);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
 }
 
 .monaco-editor-tabs button:not(:first-child) {
@@ -51,18 +44,12 @@
   display: inline-flex;
 }
 
-.tabs-row > button:first-child {
-  margin: 0 10px 0 0;
-}
-
 .restart-step-tab {
   margin: 0 auto;
 }
 
 #mobile-layout {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  display: grid;
 }
 
 #mobile-layout .nav-tabs {
@@ -85,20 +72,9 @@
   color: var(--gray-85);
 }
 
-#mobile-layout .tab-content {
-  display: grid;
-  height: 100vh;
-  height: 100dvh;
-}
-
 #mobile-layout-pane-editor {
   display: flex;
   flex-direction: column;
-}
-
-#mobile-layout .tab-pane {
-  height: 100%;
-  overflow: hidden;
 }
 
 #mobile-layout #mobile-layout-pane-instructions {
