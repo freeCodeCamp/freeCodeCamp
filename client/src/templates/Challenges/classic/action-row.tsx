@@ -61,6 +61,7 @@ const ActionRow = ({
       )}
       <EditorTabs />
       <button
+        className='editor-console-button'
         aria-expanded={showConsole}
         onClick={() => togglePane('showConsole')}
       >

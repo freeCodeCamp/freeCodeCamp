@@ -21,7 +21,7 @@
   padding: 10px;
   border-bottom: 1px solid var(--quaternary-background);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
 }
 
 .monaco-editor-tabs [aria-expanded='true'] {
@@ -36,12 +36,15 @@
   border-style: solid;
 }
 
-.monaco-editor-tabs button:not(:first-child) {
-  border-left: none;
-}
-
 .preview-buttons-section {
   display: inline-flex;
+  grid-column-end: -1;
+}
+
+.editor-console-button {
+  width: 6rem;
+  margin-inline-start: 1.5rem;
+  grid-column-end: -2;
 }
 
 .restart-step-tab {
