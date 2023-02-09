@@ -14,7 +14,6 @@ const {
   translateCommentsInChallenge
 } = require('../tools/challenge-parser/translation-parser');
 /* eslint-enable max-len*/
-
 const { isAuditedCert } = require('../utils/is-audited');
 const { createPoly } = require('../utils/polyvinyl');
 const { dasherize } = require('../utils/slugs');

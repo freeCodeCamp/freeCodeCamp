@@ -807,23 +807,23 @@
     "blocks": {
       "project-euler-problem-1-100": {
         "title": "Project Euler Problem 1 to 100",
-        "intro": "-"
+        "intro": ["this is an intro"]
       },
       "project-euler-problem-101-200": {
         "title": "Project Euler Problem 101 to 100",
-        "intro": "-"
+        "intro": ["this is an intro"]
       },
       "project-euler-problem-201-300": {
-        "title": "Project Euler problem 201 to 300",
-        "intro": "-"
+        "title": "Project Euler Problem 201 to 300",
+        "intro": ["this is an intro"]
       },
       "project-euler-problem-301-400": {
-        "title": "Project Euler problem 301 to 400",
-        "intro": "-"
+        "title": "Project Euler Problem 301 to 400",
+        "intro": ["this is an intro"]
       },
       "project-euler-problem-401-480": {
-        "title": "Project Euler problem 401 to 480",
-        "intro": "-"
+        "title": "Project Euler Problem 401 to 480",
+        "intro": ["this is an intro"]
       }
     }
   },

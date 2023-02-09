@@ -183,7 +183,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
 
   const superblockWithoutCert = [
     SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.TheOdinProject
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.ProjectEuler
   ];
 
   return (
