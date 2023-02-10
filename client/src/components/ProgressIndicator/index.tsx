@@ -229,7 +229,10 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
               </span>
               <span>{completedChallengePercentage}%</span>
             </div>
-            <ProgressBar now={completedChallengePercentage} />
+            <ProgressBar
+              aria-hidden='true'
+              now={completedChallengePercentage}
+            />
           </section>
           <section>
             <div className='progress-summary__completed'>
@@ -239,7 +242,10 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
               </span>
               <span>{completedCertificatePercentage}%</span>
             </div>
-            <ProgressBar now={completedCertificatePercentage} />
+            <ProgressBar
+              aria-hidden='true'
+              now={completedCertificatePercentage}
+            />
           </section>
         </section>
       )}
@@ -253,7 +259,10 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
               </span>
               <span>{superBlockCompletedChallengesPercent}%</span>
             </div>
-            <ProgressBar now={superBlockCompletedChallengesCount} />
+            <ProgressBar
+              aria-hidden='true'
+              now={superBlockCompletedChallengesCount}
+            />
           </section>
           <section>
             <div className='progress-summary__completed'>
@@ -263,7 +272,10 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
               </span>
               <span>{superBlockCompletedProjectsPercent}%</span>
             </div>
-            <ProgressBar now={superBlockCompletedProjectsPercent} />
+            <ProgressBar
+              aria-hidden='true'
+              now={superBlockCompletedProjectsPercent}
+            />
           </section>
         </section>
       )}
