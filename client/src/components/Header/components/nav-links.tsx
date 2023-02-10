@@ -162,7 +162,7 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
   ): void => {
     const { menuButtonRef, showLanguageMenu, hideMenu } = this.props;
 
-    // eslint naming convention should be ignored in key press function, because following the name convention harms accessiblity.
+    // the strings in map need to start with a Capital latter, because event.key preduce a string that starts with a capital latter
     const DoKeyPress = new Map<string, { select: () => void }>([
       [
         'Escape',
