@@ -111,7 +111,11 @@ const CertificateEarned = (props: CertificateEarnedProps): JSX.Element => {
       break;
   }
 
-  return certsMap[superBlock] ? <CircleCheckRegular /> : <></>;
+  return certsMap[superBlock] ? (
+    <CircleCheckRegular aria-label='earned' />
+  ) : (
+    <></>
+  );
 };
 
 export default connect(mapStateToProps)(CertificateEarned);

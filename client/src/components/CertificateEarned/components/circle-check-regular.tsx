@@ -4,6 +4,7 @@ const CircleCheckRegular = (
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element => (
   <svg
+    role='img'
     id='circle-check-regular'
     xmlns='http://www.w3.org/2000/svg'
     viewBox='0 0 512 512'
