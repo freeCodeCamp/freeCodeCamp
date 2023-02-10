@@ -121,6 +121,7 @@ function LearnPage({
                 pathname={path}
               />
             )}
+            <h2 className='sr-only'>{t('settings.headings.certs')}</h2>
             <Map />
             <Spacer size={2} />
           </Col>
