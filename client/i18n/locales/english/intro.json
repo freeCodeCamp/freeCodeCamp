@@ -747,7 +747,7 @@
       "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered.",
       "This section contains hundreds of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio."
     ],
-    "note": "",
+    "note": "The Project Euler Project, has been moved to it's own course. Go back to curriculum to see the list of courses we offer.",
     "blocks": {
       "algorithms": {
         "title": "Algorithms",
@@ -807,23 +807,33 @@
     "blocks": {
       "project-euler-problem-1-100": {
         "title": "Project Euler Problem 1 to 100",
-        "intro": ["this is an intro"]
+        "intro": [
+          "In this part, you will dive into solving Project Euler problems, which are designed to help you improve your problem-solving and coding skills."
+        ]
       },
       "project-euler-problem-101-200": {
         "title": "Project Euler Problem 101 to 100",
-        "intro": ["this is an intro"]
+        "intro": [
+          "You will build upon the skills learned in the first part of the course and introduce more advanced mathematical and programming concepts."
+        ]
       },
       "project-euler-problem-201-300": {
         "title": "Project Euler Problem 201 to 300",
-        "intro": ["this is an intro"]
+        "intro": [
+          "You will learn how to use algorithms and data structures to solve problems more effectively."
+        ]
       },
       "project-euler-problem-301-400": {
         "title": "Project Euler Problem 301 to 400",
-        "intro": ["this is an intro"]
+        "intro": [
+          "You will tackle some of the most challenging Project Euler problems and develop your problem-solving skills."
+        ]
       },
       "project-euler-problem-401-480": {
         "title": "Project Euler Problem 401 to 480",
-        "intro": ["this is an intro"]
+        "intro": [
+          "You will work on projects that involve multiple Project Euler problems and apply the techniques you have learned to solve complex problems."
+        ]
       }
     }
   },
