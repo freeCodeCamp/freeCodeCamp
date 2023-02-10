@@ -216,9 +216,9 @@ const ProgressIndicator = (props: ProgressIndicatorProps): JSX.Element => {
 
   return (
     <div className='progress-summary'>
-      <h3 className='progress-summary__main-header'>
+      <h2 className='progress-summary__main-header'>
         {headerText} Progress Summary
-      </h3>
+      </h2>
       {pathname === isLearnPage && (
         <section className='progress-summary__section'>
           <section>
