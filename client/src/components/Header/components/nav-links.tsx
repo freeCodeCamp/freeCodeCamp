@@ -163,27 +163,37 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     const { menuButtonRef, showLanguageMenu, hideMenu } = this.props;
 
     // eslint naming convention should be ignored in key press function, because following the name convention harms accessiblity.
-    const DoKeyPress = {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      Escape: () => {
-        menuButtonRef.current?.focus();
-        hideMenu();
-        event.preventDefault();
-      },
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      ArrowDown: () => {
-        showLanguageMenu(this.firstLangOptionRef.current);
-        event.preventDefault();
-      },
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      ArrowUp: () => {
-        showLanguageMenu(this.lastLangOptionRef.current);
-        event.preventDefault();
-      }
-    };
-    if (event.key === 'ArrowUp') DoKeyPress.ArrowUp();
-    if (event.key === 'ArrowDown') DoKeyPress.ArrowDown();
-    if (event.key === 'Escape') DoKeyPress.Escape();
+    const DoKeyPress = new Map<string, { select: () => void }>([
+      [
+        'Escape',
+        {
+          select: () => {
+            menuButtonRef.current?.focus();
+            hideMenu();
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'ArrowDown',
+        {
+          select: () => {
+            showLanguageMenu(this.firstLangOptionRef.current);
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'ArrowUp',
+        {
+          select: () => {
+            showLanguageMenu(this.lastLangOptionRef.current);
+            event.preventDefault();
+          }
+        }
+      ]
+    ]);
+    DoKeyPress.get(event.key)?.select();
   };
 
   handleLanguageMenuKeyDown = (
@@ -198,79 +208,88 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
       this.lastLangOptionRef.current?.focus();
       event.preventDefault();
     };
-    const DoKeyPress = {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      Tab: () => {
-        if (!event.shiftKey) {
-          // Let the Tab work as normal.
-          hideLanguageMenu();
-          // Close the menu if focus is now outside of the menu. This will
-          // happen when there is no Sign Out menu item.
-          setTimeout(() => {
-            const currentlyFocusedElement = document.activeElement;
-            if (
-              currentlyFocusedElement &&
-              !currentlyFocusedElement.closest('.nav-list')
-            ) {
-              hideMenu();
+    const DoKeyPress = new Map<string, { select: () => void }>([
+      [
+        'Tab',
+        {
+          select: () => {
+            if (!event.shiftKey) {
+              // Let the Tab work as normal.
+              hideLanguageMenu();
+              // Close the menu if focus is now outside of the menu. This will
+              // happen when there is no Sign Out menu item.
+              setTimeout(() => {
+                const currentlyFocusedElement = document.activeElement;
+                if (
+                  currentlyFocusedElement &&
+                  !currentlyFocusedElement.closest('.nav-list')
+                ) {
+                  hideMenu();
+                }
+              }, 200);
+              return;
             }
-          }, 200);
-          return;
+            // Because FF adds an extra Tab stop to the lang menu (because it
+            // is scrollable) we need to manually focus the previous menu item.
+            const currentButton = this.langButtonRef.current;
+            this.getPreviousMenuItem(currentButton)?.focus();
+            hideLanguageMenu();
+            event.preventDefault();
+          }
         }
-        // Because FF adds an extra Tab stop to the lang menu (because it
-        // is scrollable) we need to manually focus the previous menu item.
-        const currentButton = this.langButtonRef.current;
-        this.getPreviousMenuItem(currentButton)?.focus();
-        hideLanguageMenu();
-        event.preventDefault();
-      },
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      ArrowUp: () => {
-        const isFocusOnCancelButton =
-          event.target === this.firstLangOptionRef.current;
-        const selectLastLanguage = this.lastLangOptionRef.current?.focus();
-        // selectPreviousLanguage is a childNode and doesn't have focus property but it still works somehow,
-        // IDK how it works, and how to please TypeScript, for now I am lying to TypeScript
-        const selectPreviousLanguage = (
-          event.currentTarget.parentNode?.previousSibling
-            ?.firstChild as HTMLButtonElement
-        )?.focus();
-        isFocusOnCancelButton ? selectLastLanguage : selectPreviousLanguage;
-        event.preventDefault();
-      },
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      ArrowDown: () => {
-        const isFocusOnLastLanguageOption =
-          event.target === this.lastLangOptionRef.current;
-        const selectCancelButton = this.firstLangOptionRef.current?.focus();
-        const selectNextLanguage = (
-          event.currentTarget.parentNode?.nextSibling
-            ?.firstChild as HTMLButtonElement
-        )?.focus();
-        isFocusOnLastLanguageOption ? selectCancelButton : selectNextLanguage;
-        event.preventDefault();
-      },
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      Escape: () => {
-        // Set focus to language button first so we don't lose focus
-        // for screen readers.
-        this.langButtonRef.current?.focus();
-        hideLanguageMenu();
-        event.preventDefault();
-      },
-      Home: focusFirstLanguageMenuItem,
-      PageUp: focusFirstLanguageMenuItem,
-      End: focusLastLanguageMenuItem,
-      PageDown: focusLastLanguageMenuItem
-    };
-    if (event.key === 'ArrowDown') DoKeyPress.ArrowDown();
-    if (event.key === 'ArrowUp') DoKeyPress.ArrowUp();
-    if (event.key === 'End') DoKeyPress.End();
-    if (event.key === 'Escape') DoKeyPress.Escape();
-    if (event.key === 'Home') DoKeyPress.Home();
-    if (event.key === 'PageDown') DoKeyPress.PageDown();
-    if (event.key === 'PageUp') DoKeyPress.PageUp();
-    if (event.key === 'Tab') DoKeyPress.Tab();
+      ],
+      [
+        'Escape',
+        {
+          select: () => {
+            this.langButtonRef.current?.focus();
+            hideLanguageMenu();
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'ArrowDown',
+        {
+          select: () => {
+            const isFocusOnLastLanguageOption =
+              event.target === this.lastLangOptionRef.current;
+            const selectCancelButton = this.firstLangOptionRef.current?.focus();
+            const selectNextLanguage = (
+              event.currentTarget.parentNode?.nextSibling
+                ?.firstChild as HTMLButtonElement
+            )?.focus();
+            isFocusOnLastLanguageOption
+              ? selectCancelButton
+              : selectNextLanguage;
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'ArrowUp',
+        {
+          select: () => {
+            const isFocusOnCancelButton =
+              event.target === this.firstLangOptionRef.current;
+            const selectLastLanguage = this.lastLangOptionRef.current?.focus();
+            // selectPreviousLanguage is a childNode and doesn't have focus property but it still works somehow,
+            // IDK how it works, and how to please TypeScript, for now I am lying to TypeScript
+            const selectPreviousLanguage = (
+              event.currentTarget.parentNode?.previousSibling
+                ?.firstChild as HTMLButtonElement
+            )?.focus();
+            isFocusOnCancelButton ? selectLastLanguage : selectPreviousLanguage;
+            event.preventDefault();
+          }
+        }
+      ],
+      ['Home', { select: focusFirstLanguageMenuItem }],
+      ['PageUp', { select: focusFirstLanguageMenuItem }],
+      ['End', { select: focusLastLanguageMenuItem }],
+      ['PageDown', { select: focusLastLanguageMenuItem }]
+    ]);
+    DoKeyPress.get(event.key)?.select();
   };
 
   // Added to the last item in the nav menu. Will close the menu if
