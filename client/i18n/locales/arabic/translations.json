@@ -15,8 +15,8 @@
     "show-cert": "عرض الشهادة",
     "claim-cert": "المطالبة بالشهادة",
     "save-progress": "حفظ التقدم",
-    "accepted-honesty": "لقد قبلت سياسة الصدق الأكاديمي الخاصة بنا.",
-    "agree": "موافق",
+    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
+    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
     "save-portfolio": "حفظ عنصر الحافظة هذا",
     "remove-portfolio": "إزالة عنصر الحافظة هذا",
     "add-portfolio": "إضافة عنصر حافظة جديد",
@@ -517,7 +517,7 @@
     "opens-new-window": "فتح في نافذة جديدة"
   },
   "flash": {
-    "honest-first": "للمطالبة بشهادة ، يجب عليك أولاً قبول سياسة الصدق الأكاديمي الخاصة بنا",
+    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "حدث شيء غريب حقاً، إذا حدث مرة أخرى، يرجى النظر في الإبلاغ عنها على https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "يبدو ان هناك خطأ ما. لقد تم إنشاء تقرير وتم إخطار فريق freeCodeCamp.org",
     "went-wrong": "حدث خطأ ما، الرجاء التحقق والمحاولة مرة أخرى",

@@ -15,8 +15,8 @@
     "show-cert": "認定証を表示",
     "claim-cert": "認定証を取得",
     "save-progress": "進行状況を保存",
-    "accepted-honesty": "学問的誠実性ポリシーに同意しました。",
-    "agree": "同意する",
+    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
+    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
     "save-portfolio": "このポートフォリオアイテムを保存",
     "remove-portfolio": "このポートフォリオアイテムを削除",
     "add-portfolio": "新規ポートフォリオアイテムを追加",
@@ -517,7 +517,7 @@
     "opens-new-window": "新しいウィンドウで開く"
   },
   "flash": {
-    "honest-first": "認定証を請求するには、まず学問的誠実性ポリシーに同意する必要があります。",
+    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "予期しない問題が発生しました。この問題が何度も発生するようであれば、https://github.com/freeCodeCamp/freeCodeCamp/issues/new への Issue 登録をご検討ください。",
     "not-right": "問題が発生しました。レポートが生成され、freeCodeCamp.org チームへ通知されました。",
     "went-wrong": "問題が発生しました。ご確認の上もう一度お試しください。",

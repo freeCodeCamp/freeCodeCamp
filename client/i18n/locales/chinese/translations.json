@@ -15,8 +15,8 @@
     "show-cert": "显示认证",
     "claim-cert": "申请认证",
     "save-progress": "保存进度",
-    "accepted-honesty": "你已接受我们的《学术诚信条例》",
-    "agree": "同意",
+    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
+    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
     "save-portfolio": "保存这个作品集项目",
     "remove-portfolio": "移除这个作品集项目",
     "add-portfolio": "增加一个新的作品集项目",
@@ -517,7 +517,7 @@
     "opens-new-window": "Opens in new window"
   },
   "flash": {
-    "honest-first": "申请认证之前，你必须先接受我们的《学术诚信条例》",
+    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "出现了一些奇怪的情况。如果再出现这种情况，请考虑在 https://github.com/freeCodeCamp/freeCodeCamp/issues/new 提交 issue。",
     "not-right": "有些不对劲。已生成报告，通知 freeCodeCamp.org 团队。",
     "went-wrong": "出了点问题，请检查并重试。",
