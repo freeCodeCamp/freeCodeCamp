@@ -248,6 +248,7 @@ function DefaultLayout({
   }
 }
 
+// TODO: get challenge nodes directly rather than wrapped in edges
 const useGetAllBlockIds = () => {
   const {
     allChallengeNode: { edges: challengeEdges },
@@ -256,7 +257,7 @@ const useGetAllBlockIds = () => {
     allChallengeNode: AllChallengeNode;
     allCertificateNode: { nodes: CertificateNode[] };
   } = useStaticQuery(graphql`
-    query getBlockNod {
+    query getBlockNode {
       allChallengeNode(
         sort: {
           fields: [
