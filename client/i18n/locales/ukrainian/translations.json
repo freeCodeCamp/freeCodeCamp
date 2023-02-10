@@ -15,8 +15,8 @@
     "show-cert": "Показати сертифікацію",
     "claim-cert": "Отримати сертифікацію",
     "save-progress": "Зберегти прогрес",
-    "accepted-honesty": "Ви прийняли нашу Політику академічної доброчесності.",
-    "agree": "Прийняти",
+    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
+    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
     "save-portfolio": "Зберегти цей елемент портфоліо",
     "remove-portfolio": "Видалити цей елемент портфоліо",
     "add-portfolio": "Додати новий елемент портфоліо",
@@ -517,7 +517,7 @@
     "opens-new-window": "Відкривається у новому вікні"
   },
   "flash": {
-    "honest-first": "Щоб отримати сертифікацію, ви повинні спочатку прийняти нашу політику академічної доброчесності",
+    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "Щось пішло не так. Якщо це повториться, будь ласка, повідомте про це за посиланням: https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "Щось пішло не так. Звіт було сформовано і команду freeCodeCamp.org вже сповістили.",
     "went-wrong": "Щось пішло не так. Будь ласка, перевірте та повторіть спробу.",

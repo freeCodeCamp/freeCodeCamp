@@ -15,8 +15,8 @@
     "show-cert": "Mostra la Certificazione",
     "claim-cert": "Richiedi la Certificazione",
     "save-progress": "Salva l'avanzamento",
-    "accepted-honesty": "Hai accettato la nostra Politica di Onestà Accademica.",
-    "agree": "Accetta",
+    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
+    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
     "save-portfolio": "Salva questo elemento del portfolio",
     "remove-portfolio": "Rimuovi questo elemento del portfolio",
     "add-portfolio": "Aggiungi un nuovo elemento nel portfolio",
@@ -517,7 +517,7 @@
     "opens-new-window": "Apri in una nuova finestra"
   },
   "flash": {
-    "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
+    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "È successo qualcosa di veramente strano, se succede di nuovo, ti preghiamo di considerare di sollevare un problema su https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "Qualcosa non è del tutto giusto. Un rapporto è stato generato e il team freeCodeCamp.org è stato avvisato",
     "went-wrong": "Qualcosa è andato storto, controlla e riprova",
