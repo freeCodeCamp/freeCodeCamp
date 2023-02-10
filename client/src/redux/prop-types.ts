@@ -142,6 +142,19 @@ export type ChallengeNode = {
   };
 };
 
+export type CertificateNode = {
+  challenge: {
+    // TODO: use enum
+    certification: string;
+    tests: { id: string }[];
+  };
+};
+
+export type AllChallengesInfo = {
+  challengeEdges: { node: ChallengeNode }[];
+  certificateNodes: CertificateNode[];
+};
+
 export type AllChallengeNode = {
   edges: [
     {
