@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Controlled as CodeMirror } from 'react-codemirror2';
+import CodeMirror from '@uiw/react-codemirror';
 import * as codemirror from 'codemirror';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
@@ -52,12 +52,9 @@ const Editor = () => {
       );
   };
 
-  const handleChange = (
-    editor: codemirror.Editor,
-    data: codemirror.EditorChange,
-    value: string
-  ) => {
-    setInput(value);
+  const handleChange = (instance: codemirror.Editor) => {
+    const valueInstance = instance.getValue();
+    setInput(valueInstance);
   };
 
   if (error) {
@@ -74,7 +71,7 @@ const Editor = () => {
       </span>
       <CodeMirror
         value={input}
-        onBeforeChange={handleChange}
+        onChange={handleChange}
         options={{
           mode: {
             name: 'markdown',
