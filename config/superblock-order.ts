@@ -578,8 +578,8 @@ function shouldShowSuperblocks({
 
 type Config = {
   language: string;
-  showNewCurriculum: string;
-  showUpcomingChanges: string;
+  showNewCurriculum?: string;
+  showUpcomingChanges?: string;
 };
 
 export function getLearnSuperBlocks({
