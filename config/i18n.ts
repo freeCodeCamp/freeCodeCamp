@@ -68,7 +68,7 @@ export const i18nextCodes = {
 };
 
 // These are for the language selector dropdown menu in the footer
-export const LangNames = {
+export const LangNames: { [key: string]: string } = {
   [Languages.English]: 'English',
   [Languages.Espanol]: 'Español',
   [Languages.Chinese]: '中文（简体字）',
