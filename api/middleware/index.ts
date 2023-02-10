@@ -1,7 +1,12 @@
+import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import { NextFunction } from '../utils';
 
-export async function auth0Verify() {
-  // Verify user authorization code with Auth0
+export async function auth0Verify(
+  this: FastifyInstance,
+  request: FastifyRequest,
+  reply: FastifyReply
+) {
+  await this.authenticate(request, reply);
 }
 
 export function testMiddleware(
