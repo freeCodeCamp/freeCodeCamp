@@ -37,13 +37,13 @@ function isEqual(a, b) {
 
 # --hints--
 
-`isLess(10, 15)` повинна повертати `true`
+`isLess(10, 15)` має повертати `true`
 
 ```js
 assert(isLess(10, 15) === true);
 ```
 
-`isLess(15, 10)` повинна повертати `false`
+`isLess(15, 10)` має повертати `false`
 
 ```js
 assert(isLess(15, 10) === false);

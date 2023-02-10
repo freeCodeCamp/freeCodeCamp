@@ -3,7 +3,7 @@ import { Trans, useTranslation } from 'react-i18next';
 
 const HonestyPolicy = (): JSX.Element => {
   const { t } = useTranslation();
-  const email = 'team@freecodecamp.org';
+  const email = 'support@freecodecamp.org';
 
   return (
     <>

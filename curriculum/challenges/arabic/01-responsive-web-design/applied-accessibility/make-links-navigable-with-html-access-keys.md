@@ -21,7 +21,7 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an `accesskey` attribute to both links and set the first one to `g` (for Garfield) and the second one to `c` (for Chuck Norris).
+يريد Camper Cat أن يكون للرابطان حول عنوان مقالات المدونة اختصارات لوحة المفاتيح (keyboard shortcuts) حتى يتمكن مستخدمو موقعه من الانتقال بسرعة إلى القصة الكاملة. Add an `accesskey` attribute to both links and set the first one to `g` (for Garfield) and the second one to `c` (for Chuck Norris).
 
 # --hints--
 

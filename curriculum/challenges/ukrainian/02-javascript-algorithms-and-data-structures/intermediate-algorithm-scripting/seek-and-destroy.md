@@ -14,31 +14,31 @@ dashedName: seek-and-destroy
 
 # --hints--
 
-`destroyer([1, 2, 3, 1, 2, 3], 2, 3)` повинен повертати `[1, 1]`.
+`destroyer([1, 2, 3, 1, 2, 3], 2, 3)` має повертати `[1, 1]`.
 
 ```js
 assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1]);
 ```
 
-`destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)` повинен повертати `[1, 5, 1]`.
+`destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)` має повертати `[1, 5, 1]`.
 
 ```js
 assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1]);
 ```
 
-`destroyer([3, 5, 1, 2, 2], 2, 3, 5)` повинен повертати `[1]`.
+`destroyer([3, 5, 1, 2, 2], 2, 3, 5)` має повертати `[1]`.
 
 ```js
 assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1]);
 ```
 
-`destroyer([2, 3, 2, 3], 2, 3)` повинен повертати `[]`.
+`destroyer([2, 3, 2, 3], 2, 3)` має повертати `[]`.
 
 ```js
 assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), []);
 ```
 
-`destroyer(["tree", "hamburger", 53], "tree", 53)` повинен повертати `["hamburger"]`.
+`destroyer(["tree", "hamburger", 53], "tree", 53)` має повертати `["hamburger"]`.
 
 ```js
 assert.deepEqual(destroyer(['tree', 'hamburger', 53], 'tree', 53), [
@@ -46,7 +46,7 @@ assert.deepEqual(destroyer(['tree', 'hamburger', 53], 'tree', 53), [
 ]);
 ```
 
-`destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")` повинен повертати `[12,92,65]`.
+`destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")` має повертати `[12,92,65]`.
 
 ```js
 assert.deepEqual(

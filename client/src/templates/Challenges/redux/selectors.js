@@ -29,8 +29,9 @@ export const successMessageSelector = state => state[ns].successMessage;
 
 export const projectFormValuesSelector = state =>
   state[ns].projectFormValues || {};
-
-export const portalDocumentSelector = state => state[ns].portalDocument;
+export const isAdvancingToChallengeSelector = state => state[ns].isAdvancing;
+export const portalDocumentSelector = state => state[ns].portalWindow?.document;
+export const portalWindowSelector = state => state[ns].portalWindow;
 
 export const challengeDataSelector = state => {
   const { challengeType } = challengeMetaSelector(state);
@@ -84,3 +85,5 @@ export const challengeDataSelector = state => {
 export const attemptsSelector = state => state[ns].attempts;
 export const canFocusEditorSelector = state => state[ns].canFocusEditor;
 export const visibleEditorsSelector = state => state[ns].visibleEditors;
+export const showPreviewPortalSelector = state => state[ns].showPreviewPortal;
+export const showPreviewPaneSelector = state => state[ns].showPreviewPane;

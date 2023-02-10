@@ -3,7 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 
-import { createStore } from '../../../redux/createStore';
+import { createStore } from '../../../redux/create-store';
 import completedChallenges from '../../../__mocks__/completed-challenges.json';
 import Timeline from './time-line';
 

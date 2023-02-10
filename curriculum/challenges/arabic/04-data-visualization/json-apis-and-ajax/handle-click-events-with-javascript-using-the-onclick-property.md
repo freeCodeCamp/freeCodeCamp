@@ -1,6 +1,6 @@
 ---
 id: 587d7fad367417b2b2512be1
-title: التعامل مع أحداث النقر (Handle Click Events) مع JavaScript باستخدام خاصية عند النقر (onclick)
+title: التعامل مع أحداث النقر (Handle Click Events) مع JavaScript باستخدام خاصية onclick عند النقر
 challengeType: 6
 forumTopicId: 301503
 dashedName: handle-click-events-with-javascript-using-the-onclick-property
@@ -8,7 +8,7 @@ dashedName: handle-click-events-with-javascript-using-the-onclick-property
 
 # --description--
 
-تريد تنفذ كودك بمجرد الانتهاء من تحميل الصفحة, مرة واحدة فقط. لهذا الغرض، يمكنك إرفاق حدث (event) من JavaScript لمستند مسمى `DOMContentLoaded`. إليك كود الذي يفعل ذلك:
+تريد أن ينفذ كودك فقط عندما ينتهي تحميل الصفحة. لهذا الغرض، يمكنك إرفاق حدث (event) من JavaScript لمستند مسمى `DOMContentLoaded`. إليك الكود الذي يفعل ذلك:
 
 ```js
 document.addEventListener('DOMContentLoaded', function() {
@@ -24,11 +24,11 @@ document.getElementById('getMessage').onclick = function(){};
 
 # --instructions--
 
-أضف معالج أحداث النقر داخل وظيفة `DOMContentLoaded` للعنصر مع معرف `getMessage`.
+أضف معالج الأحداث (event handler) داخل وظيفة `DOMContentLoaded` للعنصر الذي له id قيمته `getMessage`.
 
 # --hints--
 
-يجب أن تستخدم كودك طريقة `document.getElementById` لتحديد عنصر `getMessage`.
+يجب أن يستخدم كودك طريقة `document.getElementById` لتحديد عنصر `getMessage`.
 
 ```js
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));

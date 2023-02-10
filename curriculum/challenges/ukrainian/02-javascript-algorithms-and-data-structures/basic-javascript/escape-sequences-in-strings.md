@@ -70,7 +70,7 @@ assert(/\\SecondLine/.test(myStr));
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` повинна містити лише символи, вказані в інструкціях
+`myStr` має містити лише символи, вказані в інструкціях
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');

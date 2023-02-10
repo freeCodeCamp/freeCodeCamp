@@ -37,25 +37,25 @@ assert(code.match(/if/g).length === 1);
 assert(/else/g.test(code));
 ```
 
-`testElse(4)` повинен повертати рядок `5 or Smaller`
+`testElse(4)` має повертати рядок `5 or Smaller`
 
 ```js
 assert(testElse(4) === '5 or Smaller');
 ```
 
-`testElse(5)` повинен повертати рядок `5 or Smaller`
+`testElse(5)` має повертати рядок `5 or Smaller`
 
 ```js
 assert(testElse(5) === '5 or Smaller');
 ```
 
-`testElse(6)` повинен повертати рядок `Bigger than 5`
+`testElse(6)` має повертати рядок `Bigger than 5`
 
 ```js
 assert(testElse(6) === 'Bigger than 5');
 ```
 
-`testElse(10)` повинен повертати рядок `Bigger than 5`
+`testElse(10)` має повертати рядок `Bigger than 5`
 
 ```js
 assert(testElse(10) === 'Bigger than 5');

@@ -59,13 +59,13 @@ do {
 assert(code.match(/do/g));
 ```
 
-`myArray` повинен дорівнювати `[10]`.
+`myArray` має дорівнювати `[10]`.
 
 ```js
 assert.deepEqual(myArray, [10]);
 ```
 
-`i` повинна дорівнювати `11`
+`i` має дорівнювати `11`
 
 ```js
 assert.equal(i, 11);

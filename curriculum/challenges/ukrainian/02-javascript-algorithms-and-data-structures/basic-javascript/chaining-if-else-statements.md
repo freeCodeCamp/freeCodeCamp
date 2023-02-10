@@ -9,7 +9,7 @@ dashedName: chaining-if-else-statements
 
 # --description--
 
-Інструкції `if/else` можна об'єднати для складної логіки. Ось <dfn>псевдокод</dfn> декількох об'єднаних інструкцій `if` / `else if`:
+Інструкції `if/else` можна об’єднати для складної логіки. Ось <dfn>псевдокод</dfn> декількох об’єднаних інструкцій `if` / `else if`:
 
 ```js
 if (condition1) {
@@ -26,7 +26,7 @@ if (condition1) {
 
 # --instructions--
 
-Напишіть об'єднані інструкції `if`/`else if`, щоб виконати наступні умови:
+Напишіть об’єднані інструкції `if`/`else if`, щоб виконати наступні умови:
 
 `num < 5` повертає `Tiny`  
 `num < 10` повертає `Small`  
@@ -54,61 +54,61 @@ assert(code.match(/if/g).length > 3);
 assert(code.match(/return/g).length >= 1);
 ```
 
-`testSize(0)` повинен повертати рядок `Tiny`
+`testSize(0)` має повертати рядок `Tiny`
 
 ```js
 assert(testSize(0) === 'Tiny');
 ```
 
-`testSize(4)` повинен повертати рядок `Tiny`
+`testSize(4)` має повертати рядок `Tiny`
 
 ```js
 assert(testSize(4) === 'Tiny');
 ```
 
-`testSize(5)` повинен повертати рядок `Small`
+`testSize(5)` має повертати рядок `Small`
 
 ```js
 assert(testSize(5) === 'Small');
 ```
 
-`testSize(8)` повинен повертати рядок `Small`
+`testSize(8)` має повертати рядок `Small`
 
 ```js
 assert(testSize(8) === 'Small');
 ```
 
-`testSize(10)` повинен повертати рядок `Medium`
+`testSize(10)` має повертати рядок `Medium`
 
 ```js
 assert(testSize(10) === 'Medium');
 ```
 
-`testSize(14)` повинен повертати рядок `Medium`
+`testSize(14)` має повертати рядок `Medium`
 
 ```js
 assert(testSize(14) === 'Medium');
 ```
 
-`testSize(15)` повинен повертати рядок `Large`
+`testSize(15)` має повертати рядок `Large`
 
 ```js
 assert(testSize(15) === 'Large');
 ```
 
-`testSize(17)` повинен повертати рядок `Large`
+`testSize(17)` має повертати рядок `Large`
 
 ```js
 assert(testSize(17) === 'Large');
 ```
 
-`testSize(20)` повинен повертати рядок `Huge`
+`testSize(20)` має повертати рядок `Huge`
 
 ```js
 assert(testSize(20) === 'Huge');
 ```
 
-`testSize(25)` повинен повертати рядок `Huge`
+`testSize(25)` має повертати рядок `Huge`
 
 ```js
 assert(testSize(25) === 'Huge');

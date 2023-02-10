@@ -1,3 +1,14 @@
+#honesty-policy
+  :is(
+    button[aria-disabled='true'],
+    button[aria-disabled='true']:is(:focus, :hover)
+  ) {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 .honesty-panel p {
   margin-inline: 10px;
   font-family: 'Lato', sans-serif;
@@ -5,11 +16,6 @@
 
 .honesty-panel {
   padding-top: 15px;
-}
-
-.honesty-policy .disabled-agreed p {
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .honesty-panel .btn-invert {

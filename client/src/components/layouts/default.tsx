@@ -1,7 +1,6 @@
-import React, { Component, ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
-// import TagManager from 'react-gtm-module';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -26,6 +25,7 @@ import {
   isServerOnlineSelector,
   userFetchStateSelector
 } from '../../redux/selectors';
+
 import { UserFetchState, User } from '../../redux/prop-types';
 import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
@@ -95,53 +95,49 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   t: TFunction;
 }
 
-class DefaultLayout extends Component<DefaultLayoutProps> {
-  static displayName = 'DefaultLayout';
-
-  componentDidMount() {
-    const { isSignedIn, fetchUser } = this.props;
+function DefaultLayout({
+  children,
+  hasMessage,
+  fetchState,
+  flashMessage,
+  isOnline,
+  isServerOnline,
+  isSignedIn,
+  removeFlashMessage,
+  showFooter = true,
+  isChallenge = false,
+  block,
+  superBlock,
+  t,
+  theme,
+  user,
+  fetchUser
+}: DefaultLayoutProps): JSX.Element {
+  useEffect(() => {
+    // componentDidMount
     if (!isSignedIn) {
       fetchUser();
     }
-    window.addEventListener('online', this.updateOnlineStatus);
-    window.addEventListener('offline', this.updateOnlineStatus);
-  }
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
 
-  componentWillUnmount() {
-    window.removeEventListener('online', this.updateOnlineStatus);
-    window.removeEventListener('offline', this.updateOnlineStatus);
-  }
+    return () => {
+      // componentWillUnmount.
+      window.removeEventListener('online', updateOnlineStatus);
+      window.removeEventListener('offline', updateOnlineStatus);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  updateOnlineStatus = () => {
-    const { onlineStatusChange } = this.props;
+  const updateOnlineStatus = () => {
     const isOnline =
       isBrowser() && 'navigator' in window ? window.navigator.onLine : null;
     return typeof isOnline === 'boolean' ? onlineStatusChange(isOnline) : null;
   };
 
-  render() {
-    const {
-      children,
-      hasMessage,
-      fetchState,
-      flashMessage,
-      isOnline,
-      isServerOnline,
-      isSignedIn,
-      removeFlashMessage,
-      showFooter = true,
-      isChallenge = false,
-      block,
-      superBlock,
-      t,
-      theme,
-      user
-    } = this.props;
-
-    if (fetchState.pending) {
-      return <Loader fullScreen={true} messageDelay={5000} />;
-    }
-
+  if (fetchState.pending) {
+    return <Loader fullScreen={true} messageDelay={5000} />;
+  } else {
     return (
       <div className='page-wrapper'>
         <Helmet
@@ -236,6 +232,8 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
     );
   }
 }
+
+DefaultLayout.displayName = 'DefaultLayout';
 
 export default connect(
   mapStateToProps,

@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb3bdef
-title: Додавання двох чисел за допомогою JavaScript
+title: Додавання двох чисел з JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KBAG'
 forumTopicId: 16650
@@ -29,7 +29,7 @@ const myVar = 5 + 10;
 
 # --hints--
 
-`sum` повинен дорівнювати `20`.
+`sum` має дорівнювати `20`.
 
 ```js
 assert(sum === 20);
