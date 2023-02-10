@@ -194,8 +194,10 @@ const LowerJaw = ({
             aria-label={t('buttons.reset-step')}
             data-cy='reset-code-button'
             onClick={openResetModal}
+            style={{display: 'flex' , justifyContent: 'center' , alignItems : 'center'}}
           >
             <Reset />
+            <div style={{paddingLeft: '.3rem'}}>Reset</div>
           </button>
 
           {isAttemptsLargerThanTest && !challengeIsCompleted ? (
@@ -206,8 +208,10 @@ const LowerJaw = ({
               aria-label={t('buttons.get-help')}
               data-cy='get-help-button'
               onClick={openHelpModal}
+            style={{display: 'flex' , justifyContent: 'center' , alignItems : 'center'}}
             >
               <Help />
+            <div style={{paddingLeft: '.3rem'}}>Help</div>
             </button>
           ) : null}
         </div>
