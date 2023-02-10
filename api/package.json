@@ -7,6 +7,7 @@
     "@fastify/middie": "8.0.0",
     "@fastify/mongodb": "6.1.0",
     "fastify": "4.9.2",
+    "fastify-auth0-verify": "^1.0.0",
     "fastify-plugin": "4.3.0"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
