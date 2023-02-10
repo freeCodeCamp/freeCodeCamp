@@ -15,7 +15,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
-      - uses: pnpm/action-setup@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
           version: 7.26.3
       - name: Use Node.js ${{ matrix.node-version }}
