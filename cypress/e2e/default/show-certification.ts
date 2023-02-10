@@ -2,7 +2,7 @@ const certifiedUser = '/certification/certifieduser/responsive-web-design';
 
 describe('A certification,', function () {
   before(() => {
-    cy.exec('npm run seed:certified-user');
+    cy.exec('pnpm run seed:certified-user');
   });
 
   describe('while viewing your own,', function () {

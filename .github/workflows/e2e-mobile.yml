@@ -51,8 +51,8 @@ jobs:
       - name: Install and Build
         run: |
           npm ci
-          npm run create:config
-          npm run build:curriculum
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Generate mobile test files
         run: |

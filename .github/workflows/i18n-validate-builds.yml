@@ -31,4 +31,4 @@ jobs:
         run: pnpm install
 
       - name: Validate Challenge Files
-        run: npm run audit-challenges
+        run: pnpm run audit-challenges

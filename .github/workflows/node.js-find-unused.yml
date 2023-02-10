@@ -40,4 +40,4 @@ jobs:
         run: |
           echo npm version $(npm -v)
           pnpm install
-          npm run knip
+          pnpm run knip

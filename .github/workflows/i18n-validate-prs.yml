@@ -34,7 +34,7 @@ jobs:
 
       - name: Validate Challenge Files
         id: validate
-        run: npm run audit-challenges
+        run: pnpm run audit-challenges
 
       - name: Create Comment
         # Run if the validate challenge files step fails, specifically. Note that we need the failure() call for this step to trigger if the action fails.

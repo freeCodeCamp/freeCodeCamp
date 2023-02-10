@@ -10,7 +10,7 @@ These instructions will tell you how to use our challenge editor tool to work on
 
 ### Starting the Editor
 
-To start the editor, make sure you are in the root freecodecamp directory. Then, run `npm run challenge-editor` to start both the client and the API that powers the editor.
+To start the editor, make sure you are in the root freecodecamp directory. Then, run `pnpm run challenge-editor` to start both the client and the API that powers the editor.
 
 The client will run on port `3300`, so you can access it at `http://localhost:3300`. The API runs on port `3200`, to avoid conflicts with the learn client and server. This will allow you to run the freeCodeCamp application at the same time as the editor, so you can test your changes locally.
 
@@ -60,7 +60,7 @@ The `tools/challenge-helper-scripts` folder contains tools to help facilitate th
 
 ### Create a new project
 
-Run `npm run create-project` from the root directory. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+Run `pnpm run create-project` from the root directory. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
 If you want to create new steps, the following tools simplify that process.
 
@@ -74,7 +74,7 @@ A one-off script that will automatically add the next step based on the last ste
 2. Run the following npm command:
 
 ```bash
-npm run create-next-step
+pnpm run create-next-step
 ```
 
 ### create-empty-steps
@@ -89,7 +89,7 @@ A one-off script that automatically adds a specified number of steps. The challe
 2. Run the following npm command:
 
 ```bash
-npm run create-empty-steps X # where X is the number of steps to create.
+pnpm run create-empty-steps X # where X is the number of steps to create.
 ```
 
 ### insert-step
@@ -104,7 +104,7 @@ A one-off script that automatically adds a new step at a specified position, inc
 2. Run the following npm command:
 
 ```bash
-npm run insert-step X # where X is the position to insert the new step.
+pnpm run insert-step X # where X is the position to insert the new step.
 ```
 
 ### delete-step
@@ -119,7 +119,7 @@ A one-off script that deletes an existing step, decrementing all subsequent step
 2. Run the following npm command:
 
 ```bash
-npm run delete-step X # where X is the step number to be deleted.
+pnpm run delete-step X # where X is the step number to be deleted.
 ```
 
 ### update-step-titles
@@ -132,5 +132,5 @@ A one-off script that automatically updates the frontmatter in a project's markd
 2. Run the following npm command:
 
 ```bash
-npm run update-step-titles
+pnpm run update-step-titles
 ```

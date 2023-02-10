@@ -63,11 +63,11 @@ jobs:
         run: |
           echo npm version $(npm -v)
           pnpm install
-          npm run create:config
+          pnpm run create:config
           npm i --prefix=curriculum-server
           npm i --prefix=web
-          npm run build:curriculum
-          npm run lint
+          pnpm run build:curriculum
+          pnpm run lint
 
   test:
     name: Test
@@ -102,8 +102,8 @@ jobs:
         run: |
           echo npm version $(npm -v)
           pnpm install
-          npm run create:config
-          npm run build:curriculum
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Run Tests
         run: npm test
@@ -142,8 +142,8 @@ jobs:
         run: |
           echo npm version $(npm -v)
           pnpm install
-          npm run create:config
-          npm run build:curriculum
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Run Tests
         run: npm test
@@ -185,8 +185,8 @@ jobs:
         run: |
           echo npm version $(npm -v)
           pnpm install
-          npm run create:config
-          npm run build:curriculum
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Run Tests
         env:

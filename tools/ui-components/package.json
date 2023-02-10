@@ -60,7 +60,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "storybook:theming": "npm run storybook --no-manager-cache",
+    "storybook:theming": "pnpm run storybook --no-manager-cache",
     "build-storybook": "build-storybook",
     "build": "cross-env NODE_ENV=production rollup -c",
     "build:css": "npx tailwindcss -i ./src/base.css -o ./dist/base.css --minify",

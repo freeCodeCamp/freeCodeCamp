@@ -261,7 +261,7 @@ Make sure to replace `3.6` with the version you have installed
 Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
 ```console
-npm run seed
+pnpm run seed
 ```
 
 #### Step 4: Start the freeCodeCamp client application and API server
@@ -269,7 +269,7 @@ npm run seed
 You can now start up the API server and the client applications.
 
 ```console
-npm run develop
+pnpm run develop
 ```
 
 This single command will fire up all the services, including the API server and the client applications available for you to work on.
@@ -281,7 +281,7 @@ The API serves endpoints at `http://localhost:3000`. The Gatsby app serves the c
 While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
 
 > [!WARNING]
-> Clearing your cookies or running `npm run seed:certified-user` will log you out, and you will have to sign in again.
+> Clearing your cookies or running `pnpm run seed:certified-user` will log you out, and you will have to sign in again.
 
 If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md)
 
@@ -292,6 +292,6 @@ A quick reference to the commands that you will need when working locally.
 | command           | description                                                                   |
 | ----------------- | ----------------------------------------------------------------------------- |
 | `pnpm install`          | Installs / re-install all dependencies and bootstraps the different services. |
-| `npm run seed`    | Creates authorized test users and inserts them into mongodb.        |
-| `npm run develop` | Starts the freeCodeCamp API Server and Client Applications.                   |
-| `npm run clean`   | Uninstalls all dependencies and cleans up caches.                             |
+| `pnpm run seed`    | Creates authorized test users and inserts them into mongodb.        |
+| `pnpm run develop` | Starts the freeCodeCamp API Server and Client Applications.                   |
+| `pnpm run clean`   | Uninstalls all dependencies and cleans up caches.                             |

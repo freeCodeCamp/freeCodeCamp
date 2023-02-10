@@ -296,13 +296,13 @@ jobs:
         run: |
           echo npm version $(npm -v)
           pnpm install
-          npm run create:config
-          npm run build:curriculum
-          npm run build:server
+          pnpm run create:config
+          pnpm run build:curriculum
+          pnpm run build:server
 
       - name: Lint and Format Files
         run: |
-          npm run format:curriculum
+          pnpm run format:curriculum
 
       # We do not need to run tests because they are run after the PR is created.
 

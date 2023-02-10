@@ -191,14 +191,14 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 4. Resolve any conflicts, cleanup, install dependencies and run tests
 
    ```console
-   npm run clean
+   pnpm run clean
 
    pnpm install
-   npm run test:curriculum --superblock=<superblock-name>
+   pnpm run test:curriculum --superblock=<superblock-name>
 
    # example:
 
-   # npm run test:curriculum --superblock=python-for-everybody
+   # pnpm run test:curriculum --superblock=python-for-everybody
 
    ```
 
