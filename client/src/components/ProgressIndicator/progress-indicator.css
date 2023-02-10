@@ -21,7 +21,6 @@
 }
 
 .progress {
-  overflow: hidden;
   box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
   height: 15px;
   background-color: var(--primary-background);
