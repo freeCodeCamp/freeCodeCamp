@@ -16,7 +16,7 @@ import {
 import { ns as appNameSpace } from './action-types';
 import { ns as settingsNameSpace, reducer as settings } from './settings';
 import { FlashApp as flashNameSpace } from './types';
-import { reducer as app } from './';
+import { reducer as app } from '.';
 
 export default combineReducers({
   [appNameSpace]: app,
