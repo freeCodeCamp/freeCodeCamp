@@ -18,7 +18,7 @@ import {
   fetchUser,
   onlineStatusChange,
   serverStatusChange,
-  loadAllChallengesInfo
+  updateAllChallengesInfo
 } from '../../redux/actions';
 import {
   isSignedInSelector,
@@ -85,7 +85,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       removeFlashMessage,
       onlineStatusChange,
       serverStatusChange,
-      loadAllChallengesInfo
+      updateAllChallengesInfo
     },
     dispatch
   );
@@ -126,12 +126,12 @@ function DefaultLayout({
   theme = Themes.Default,
   user,
   fetchUser,
-  loadAllChallengesInfo
+  updateAllChallengesInfo
 }: DefaultLayoutProps): JSX.Element {
   const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
     // componentDidMount
-    loadAllChallengesInfo({ challengeEdges, certificateNodes });
+    updateAllChallengesInfo({ challengeEdges, certificateNodes });
     if (!isSignedIn) {
       fetchUser();
     }

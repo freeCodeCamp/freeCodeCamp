@@ -53,8 +53,8 @@ export const fetchUser = createAction(actionTypes.fetchUser);
 export const fetchUserComplete = createAction(actionTypes.fetchUserComplete);
 export const fetchUserError = createAction(actionTypes.fetchUserError);
 
-export const loadAllChallengesInfo = createAction(
-  actionTypes.loadAllChallengesInfo
+export const updateAllChallengesInfo = createAction(
+  actionTypes.updateAllChallengesInfo
 );
 
 export const postCharge = createAction(actionTypes.postCharge);

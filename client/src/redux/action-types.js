@@ -27,7 +27,7 @@ export const actionTypes = createTypes(
     'updateDonationFormState',
     'updateUserToken',
     'postChargeProcessing',
-    'loadAllChallengesInfo',
+    'updateAllChallengesInfo',
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('postCharge'),
     ...createAsyncTypes('fetchProfileForUser'),
