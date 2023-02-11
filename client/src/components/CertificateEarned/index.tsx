@@ -67,8 +67,7 @@ interface CertificateEarnedProps {
   user: User;
 }
 
-const CertificateEarned = ({superBlock, user}: CertificateEarnedProps) => {
-
+const CertificateEarned = ({ superBlock, user }: CertificateEarnedProps) => {
   // Update the values of certsMap with fetched user data
   switch (superBlock) {
     case SuperBlocks.RespWebDesign:
