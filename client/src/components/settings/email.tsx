@@ -213,7 +213,10 @@ function EmailSettings({
               ) : null}
             </FormGroup>
           </div>
-          <BlockSaveButton aria-disabled={isDisabled}>
+          <BlockSaveButton
+            aria-disabled={isDisabled}
+            {...(isDisabled && { tabindex: -1 })}
+          >
             {t('buttons.save')}{' '}
             <span className='sr-only'>{t('settings.email.heading')}</span>
           </BlockSaveButton>

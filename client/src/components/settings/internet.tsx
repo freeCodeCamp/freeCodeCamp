@@ -178,7 +178,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
 
     const { state: websiteValidation, message: websiteValidationMessage } =
       this.getValidationStateFor(website);
-
+    const isDisabled = this.isFormPristine() || !this.isFormValid();
     return (
       <>
         <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
@@ -243,7 +243,8 @@ class InternetSettings extends Component<InternetProps, InternetState> {
               </FormGroup>
             </div>
             <BlockSaveButton
-              aria-disabled={this.isFormPristine() || !this.isFormValid()}
+              aria-disabled={isDisabled}
+              {...(isDisabled && { tabindex: -1 })}
             >
               {t('buttons.save')}{' '}
               <span className='sr-only'>{t('settings.headings.internet')}</span>

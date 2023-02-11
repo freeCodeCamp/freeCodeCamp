@@ -259,7 +259,10 @@ class AboutSettings extends Component<AboutProps, AboutState> {
                 />
               </FormGroup>
             </div>
-            <BlockSaveButton aria-disabled={this.isFormPristine()}>
+            <BlockSaveButton
+              aria-disabled={this.isFormPristine()}
+              {...(this.isFormPristine() && { tabindex: -1 })}
+            >
               {t('buttons.save')}{' '}
               <span className='sr-only'>
                 {t('settings.headings.personal-info')}

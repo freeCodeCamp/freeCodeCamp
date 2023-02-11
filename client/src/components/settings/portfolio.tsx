@@ -288,7 +288,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               <HelpBlock>{descriptionMessage}</HelpBlock>
             ) : null}
           </FormGroup>
-          <BlockSaveButton aria-disabled={isDisabled}>
+          <BlockSaveButton
+            aria-disabled={isDisabled}
+            {...(isDisabled && { tabindex: -1 })}
+          >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
           <ButtonSpacer />
