@@ -133,7 +133,7 @@ function createReadSessionUser(app) {
         })
       );
     Observable.if(
-      () => !queryUser,
+      () => !queryUser || !queryUser.toJSON().username,
       Observable.of({ user: {}, result: '' }),
       Observable.defer(() => source)
         .map(
