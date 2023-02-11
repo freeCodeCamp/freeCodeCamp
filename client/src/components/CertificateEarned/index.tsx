@@ -67,8 +67,7 @@ interface CertificateEarnedProps {
   user: User;
 }
 
-const CertificateEarned = (props: CertificateEarnedProps): JSX.Element => {
-  const { superBlock, user } = props;
+const CertificateEarned = ({superBlock, user}: CertificateEarnedProps) => {
 
   // Update the values of certsMap with fetched user data
   switch (superBlock) {
