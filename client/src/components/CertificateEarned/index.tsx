@@ -112,7 +112,7 @@ const CertificateEarned = (props: CertificateEarnedProps): JSX.Element => {
   }
 
   return certsMap[superBlock] ? (
-    <CircleCheckRegular aria-label='earned' />
+    <CircleCheckRegular role='img' aria-label='earned' />
   ) : (
     <></>
   );
