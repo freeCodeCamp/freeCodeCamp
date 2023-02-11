@@ -26,7 +26,7 @@ Here's an example:
 
 # --instructions--
 
-Time to take a break from Camper Cat and meet fellow camper Zersiax (@zersiax), a champion of accessibility and a screen reader user. To hear a clip of his screen reader in action, add an `audio` element after the `p`. Include the `controls` attribute. Then place a `source` tag inside the `audio` tags with the `src` attribute set to `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` and `type` attribute set to `"audio/mpeg"`.
+حان الوقت لأخذ استراحة من Camper Cat و مقابلة الزميل camper Zersiax (@zersiax), بطل ال accessibility و مستخدم لتقنية قارئ الشاشة (screen reader). To hear a clip of his screen reader in action, add an `audio` element after the `p`. Include the `controls` attribute. Then place a `source` tag inside the `audio` tags with the `src` attribute set to `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` and `type` attribute set to `"audio/mpeg"`.
 
 **Note:** The audio clip may sound fast and be difficult to understand, but that is a normal speed for screen reader users.
 

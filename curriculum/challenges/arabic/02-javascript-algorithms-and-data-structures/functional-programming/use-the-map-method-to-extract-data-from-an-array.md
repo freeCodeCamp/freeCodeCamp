@@ -33,7 +33,7 @@ const names = users.map(user => user.name);
 console.log(names);
 ```
 
-ستعرض وحدة التحكم القيمة `[ 'John', 'Amy', 'camperCat' ]`.
+سيعرض الكونسول القيمة `[ 'John', 'Amy', 'camperCat' ]`.
 
 # --instructions--
 

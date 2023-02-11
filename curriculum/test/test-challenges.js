@@ -44,8 +44,8 @@ const { getLines } = require('../../utils/get-lines');
 const { getChallengesForLang, getMetaForBlock } = require('../getChallenges');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
 const { testedLang, getSuperOrder } = require('../utils');
-const ChallengeTitles = require('./utils/challengeTitles');
-const MongoIds = require('./utils/mongoIds');
+const ChallengeTitles = require('./utils/challenge-titles');
+const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
 
 const { sortChallenges } = require('./utils/sort-challenges');

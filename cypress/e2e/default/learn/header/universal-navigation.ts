@@ -7,7 +7,7 @@ import envData from '../../../../../config/env.json';
 
 const { clientLocale } = envData;
 
-const selectors = {
+const selectors: { [key: string]: string } = {
   'navigation-list': '.nav-list',
   'toggle-button': '.toggle-button-nav',
   'language-menu': '.nav-lang-menu',
@@ -21,7 +21,7 @@ const selectors = {
   'cancel-signout': "[data-test-label='cancel-signout']"
 };
 
-const links = {
+const links: { [key: string]: string } = {
   'sign-in': '/signin',
   donate: '/donate',
   curriculum: '/learn',
@@ -223,31 +223,44 @@ const testAllLanguages = () => {
   const availableLangNames = availableLangs.client
     .filter(lang => !hiddenLangs.includes(lang))
     .map(lang => LangNames[lang]);
-  availableLangNames.forEach(langName =>
-    cy.get(selectors['language-menu']).contains(langName)
-  );
+  for (let i = 0; i < availableLangNames.length; i++) {
+    const langName = availableLangNames[i];
+    cy.get(selectors['language-menu']).contains(langName);
+  }
 };
 
-const testLink = (item, selector = 'navigation-list', checkParent) => {
+const testLink = (
+  item: string,
+  selector = 'navigation-list',
+  checkParent = false
+) => {
   if (checkParent) {
     return cy
       .get(selectors[selector])
       .should('contain.text', item)
       .should('have.attr', 'href')
-      .and('contain', links[item.replaceAll(' ', '-').toLowerCase()]);
+      .and('contain', links[item.replace(/\s+/g, '-').toLowerCase()]);
+    //.and('contain', links[item.replaceAll(' ', '-').toLowerCase()]);
   }
-  return cy
-    .get(selectors[selector])
-    .contains(item)
-    .should('have.attr', 'href')
-    .and('contain', links[item.replaceAll(' ', '-').toLowerCase()]);
+  return (
+    cy
+      .get(selectors[selector])
+      .contains(item)
+      .should('have.attr', 'href')
+      //.and('contain', links[item.replaceAll(' ', '-').toLowerCase()]);
+
+      .and('contain', links[item.replace(/\s+/g, '-').toLowerCase()])
+  );
 };
 
-const navigateLanguagesWithKey = direction => {
+const navigateLanguagesWithKey = (direction: string) => {
   const directions = ['downArrow', 'upArrow'];
   if (!directions.includes(direction)) {
     throw new Error(
-      'Invalid direction: ' + direction + '\nMust be one of: ' + directions
+      'Invalid direction: ' +
+        direction +
+        '\nMust be one of: ' +
+        directions.join(',')
     );
   }
   const availableLangNames = availableLangs.client

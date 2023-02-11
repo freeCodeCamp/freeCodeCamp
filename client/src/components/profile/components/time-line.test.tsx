@@ -4,7 +4,7 @@ import { useStaticQuery } from 'gatsby';
 import React from 'react';
 
 import { render, screen } from '../../../../utils/test-utils';
-import { createStore } from '../../../redux/createStore';
+import { createStore } from '../../../redux/create-store';
 import TimeLine from './time-line';
 
 const store = createStore();
