@@ -530,7 +530,7 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
               className='nav-link nav-link-signout'
               data-value='sign-out-button'
               onClick={this.handleSignOutClick}
-              onKeyDown={this.handleLanguageMenuKeyDown}
+              onKeyDown={this.handleMenuKeyDown}
             >
               {t('buttons.sign-out')}
             </button>
