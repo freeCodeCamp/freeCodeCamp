@@ -1,6 +1,7 @@
 import { config } from 'dotenv';
 config({ path: '../.env' });
 import fastifyAuth0 from 'fastify-auth0-verify';
+import jwtAuthz from 'fastify-jwt-authz';
 import Fastify from 'fastify';
 import middie from '@fastify/middie';
 
@@ -25,6 +26,7 @@ const start = async () => {
     domain: process.env.AUTH0_DOMAIN,
     audience: process.env.AUTH0_AUDIENCE
   });
+  void fastify.register(jwtAuthz);
 
   // @ts-expect-error Types are not exported from Fastify,
   // and TypeScript is not smart enough to realise types
