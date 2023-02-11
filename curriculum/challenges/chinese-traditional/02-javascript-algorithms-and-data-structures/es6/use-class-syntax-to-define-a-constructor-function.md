@@ -10,9 +10,7 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 ES6 提供了一個新的創建對象的語法，使用關鍵字 <dfn>class</dfn>。
 
-值得注意的是，`class` 只是一個語法糖，它並不像 Java、Python 或者 Ruby 這一類的語言一樣，嚴格履行了面向對象的開發規範。
-
-在 ES5 裏面，我們通常會定義一個函數 `constructor`，然後使用 `new` 關鍵字來實例化一個對象。
+在 ES5 裏面，我們通過定義一個函數 `constructor` 來創建一個對象，然後使用 `new` 關鍵字來實例化對象。
 
 在 ES6 裏，`class` 聲明有一個 `constructor` 方法，與 `new` 關鍵字一起被調用。 如果 `constructor` 方法沒有明確定義，那麼它就被含蓄地定義爲沒有參數。
 
@@ -57,7 +55,7 @@ atlas.launch();
 
 # --hints--
 
-`Vegetable` 應該是一個 `class`，並在其中定義了 `constructor`。
+`Vegetable` 應該是一個 `class`，並在其中定義了 `constructor` 方法。
 
 ```js
 assert(

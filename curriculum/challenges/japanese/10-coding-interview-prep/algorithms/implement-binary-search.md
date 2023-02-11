@@ -10,9 +10,10 @@ dashedName: implement-binary-search
 
 二分探索はソートされた配列内で要素を検索するアルゴリズムで、その時間計算量は **O(log(n))** です。 次のように演算が行われます。
 
-1. ソートされた配列内の中央の `value` (値) を探します。 `value == target` であれば、「見つけた！」 を返します。
+1. ソートされた配列内の中央の `value` (値) を探します。 If `value == target` return `true` (The value has been found and the search is complete).
 1. 中央の `value < target` であれば、次の比較で配列の右半分を検索します。
 1. 中央の `value > target` であれば、次の比較で配列の左半分を検索します。
+1. If after searching the whole array the value is not present, return `false` (The array has been searched and the value is not in the array).
 
 このように配列を連続的に半減させており、時間計算量は log(n) になります。 このチャレンジでは、あなたがどのような経路をたどって目標値に到達したかを提示していただきます。
 
@@ -20,7 +21,7 @@ dashedName: implement-binary-search
 
 二分探索アルゴリズムを配列に実装し、配列内で目標値を見つけるためにたどった経路 (各回の中間値比較) を返すような関数 `binarySearch` を記述してください。
 
-この関数は、ソートされた整数配列と目標値を入力として取ります。 そして目標値を見つけるまで、元の配列の各 2 分割で見つけた中間値が含まれる配列を返します (通りがけ順)。 目標値は、返される配列の最後の要素でなければなりません。 値が見つからない場合は、文字列 `Value Not Found` (値が見つかりません) を返します。
+この関数は、ソートされた整数配列と目標値を入力として取ります。 そして目標値を見つけるまで、元の配列の各 2 分割で見つけた中間値が含まれる配列を返します (通りがけ順)。 目標値は、返される配列の最後の要素でなければなりません。 If the value is not found, return the string `Value Not Found`.
 
 例えば、`binarySearch([1,2,3,4,5,6,7], 5)` は `[4,6,5]` を返します。
 

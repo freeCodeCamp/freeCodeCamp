@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392ce
-title: تغيير القوائم (Arrays) باستخدام unshift()
+title: تغيير القوائم باستخدام طريقة unshift
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckNDESv'
 forumTopicId: 18239

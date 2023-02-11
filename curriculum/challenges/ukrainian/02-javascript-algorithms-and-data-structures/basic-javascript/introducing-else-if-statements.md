@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244db
-title: Вступ до інструкцій «else if»
+title: Вступ до інструкцій else if
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeJ2hm'
 forumTopicId: 18206
@@ -49,31 +49,31 @@ assert(
 );
 ```
 
-`testElseIf(0)` повинен повертати рядок `Smaller than 5`
+`testElseIf(0)` має повертати рядок `Smaller than 5`
 
 ```js
 assert(testElseIf(0) === 'Smaller than 5');
 ```
 
-`testElseIf(5)` повинен повертати рядок `Between 5 and 10`
+`testElseIf(5)` має повертати рядок `Between 5 and 10`
 
 ```js
 assert(testElseIf(5) === 'Between 5 and 10');
 ```
 
-`testElseIf(7)` повинен повертати рядок `Between 5 and 10`
+`testElseIf(7)` має повертати рядок `Between 5 and 10`
 
 ```js
 assert(testElseIf(7) === 'Between 5 and 10');
 ```
 
-`testElseIf(10)` повинен повертати рядок `Between 5 and 10`
+`testElseIf(10)` має повертати рядок `Between 5 and 10`
 
 ```js
 assert(testElseIf(10) === 'Between 5 and 10');
 ```
 
-`testElseIf(12)` повинен повертати рядок `Greater than 10`
+`testElseIf(12)` має повертати рядок `Greater than 10`
 
 ```js
 assert(testElseIf(12) === 'Greater than 10');

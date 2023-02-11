@@ -19,7 +19,7 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat's Mortal Kombat survey results are in! Wrap a `time` tag around the text `Thursday, September 15<sup>th</sup>` and add a `datetime` attribute to it set to `2016-09-15`.
+صدرت نتائج استقصاء Camper Cat في Mortal Kombat! Wrap a `time` tag around the text `Thursday, September 15<sup>th</sup>` and add a `datetime` attribute to it set to `2016-09-15`.
 
 # --hints--
 

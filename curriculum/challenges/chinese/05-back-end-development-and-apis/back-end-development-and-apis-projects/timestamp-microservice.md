@@ -20,7 +20,7 @@ dashedName: timestamp-microservice
 -   接着，你将看到一个 `.replit` 窗口。
 -   选择 `Use run command` 并点击 `Done` 按钮。
 
-当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 Solution Link 字段中。 也可以将项目的源码链接提交到 GitHub Link 字段中。
 
 **注意：**时区转换不是本项目的目的，因此假设所有发送的有效日期将使用 `new Date()` 解析为 GMT 日期。
 
@@ -106,7 +106,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-If the input date string is invalid, the API returns an object having the structure `{ error : "Invalid Date" }`
+如果输入的日期字符串无效，API 将返回一个具有结构 `{ error : "Invalid Date" }` 的对象。
 
 ```js
 (getUserInput) =>

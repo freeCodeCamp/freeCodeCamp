@@ -1,6 +1,6 @@
 ---
 id: 5900f4571000cf542c50ff6a
-title: 'Problem 235: An Arithmetic Geometric sequence'
+title: 'Problem 235: Eine arithmetisch-geometrische Folge'
 challengeType: 1
 forumTopicId: 301879
 dashedName: problem-235-an-arithmetic-geometric-sequence
@@ -8,17 +8,17 @@ dashedName: problem-235-an-arithmetic-geometric-sequence
 
 # --description--
 
-Given is the arithmetic-geometric sequence $u(k) = (900 - 3k)r^{k - 1}$.
+Gegeben ist die arithmetisch-geometrische Folge $u(k) = (900 - 3k)r^{k - 1}$.
 
-Let $s(n) = \sum_{k=1 \ldots n} u(k)$.
+Lasse $s(n) = \sum_{k=1 \ldots n} u(k)$.
 
-Find the value of $r$ for which $s(5000) = -600\\,000\\,000\\,000$.
+Finde den Wert von $r$ für den $s(5000) = -600\\,000\\,000\\,000$.
 
-Give your answer rounded to 12 places behind the decimal point.
+Gib deine Antwort auf 12 Stellen hinter dem Komma gerundet an.
 
 # --hints--
 
-`arithmeticGeometricSequence()` should return `1.002322108633`.
+`arithmeticGeometricSequence()` sollte `1.002322108633` zurückgeben.
 
 ```js
 assert.strictEqual(arithmeticGeometricSequence(), 1.002322108633);

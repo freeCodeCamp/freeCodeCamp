@@ -15,8 +15,8 @@
     "show-cert": "Show Certification",
     "claim-cert": "Claim Certification",
     "save-progress": "Save Progress",
-    "accepted-honesty": "You have accepted our Academic Honesty Policy.",
-    "agree": "Agree",
+    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
+    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
     "save-portfolio": "Save this portfolio item",
     "remove-portfolio": "Remove this portfolio item",
     "add-portfolio": "Add a new portfolio Item",
@@ -53,7 +53,7 @@
     "check-code": "Check Your Code (Ctrl + Enter)",
     "check-code-2": "Check Your Code",
     "reset": "Reset",
-    "reset-code": "Reset All Code",
+    "reset-step": "Reset This Step",
     "help": "Help",
     "get-help": "Get Help",
     "watch-video": "Watch a Video",
@@ -158,7 +158,8 @@
       "honesty": "Academic Honesty Policy",
       "internet": "Your Internet Presence",
       "portfolio": "Portfolio Settings",
-      "privacy": "Privacy Settings"
+      "privacy": "Privacy Settings",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "Danger Zone",
@@ -273,6 +274,9 @@
     "add-subtitles": "Help improve or add subtitles",
     "wrong-answer": "Sorry, that's not the right answer. Give it another try?",
     "check-answer": "Click the button below to check your answer.",
+    "assignment-not-complete": "Please finish the assignments",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "Solution Link",
     "github-link": "GitHub Link",
     "submit-and-go": "Submit and go to my next challenge",
@@ -298,7 +302,6 @@
       "certs": "{{title}} Certification"
     },
     "editor-tabs": {
-      "info": "Info",
       "code": "Code",
       "tests": "Tests",
       "restart": "Restart",
@@ -514,7 +517,7 @@
     "opens-new-window": "Opens in new window"
   },
   "flash": {
-    "honest-first": "To claim a certification, you must first accept our academic honesty policy",
+    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "Something really weird happened, if it happens again, please consider raising an issue on https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "Something is not quite right. A report has been generated and the freeCodeCamp.org team have been notified",
     "went-wrong": "Something went wrong, please check and try again",

@@ -87,14 +87,14 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           {!hasEditableBoundaries && (
             <TabPane
               eventKey={Tab.Instructions}
-              title={i18next.t('learn.editor-tabs.info')}
+              title={i18next.t('learn.editor-tabs.instructions')}
+              tabIndex={0}
             >
               {instructions}
             </TabPane>
           )}
           <TabPane
             eventKey={Tab.Editor}
-            tabIndex='0'
             title={i18next.t('learn.editor-tabs.code')}
             {...editorTabPaneProps}
           >
@@ -103,7 +103,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           </TabPane>
           <TabPane
             eventKey={Tab.Console}
-            title={i18next.t('learn.editor-tabs.tests')}
+            title={i18next.t('learn.editor-tabs.console')}
             {...editorTabPaneProps}
           >
             {testOutput}

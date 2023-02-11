@@ -9,7 +9,10 @@ enum SuperBlockI18nKeys {
 // the key above is used to create the last word for superBlock titles used on
 // the map and window. e.g. 'Certification' in Responsive Web Design
 // Certification
-const superBlocksWithoutLastWord = [SuperBlocks.CodingInterviewPrep];
+const superBlocksWithoutLastWord = [
+  SuperBlocks.CodingInterviewPrep,
+  SuperBlocks.TheOdinProject
+];
 
 export function getSuperBlockTitleForMap(superBlock: SuperBlocks) {
   const i18nSuperBlock = i18next.t(`intro:${superBlock}.title`);

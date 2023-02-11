@@ -47,7 +47,11 @@ export type MarkdownRemark = {
   };
 };
 
-type Question = { text: string; answers: string[]; solution: number };
+type Question = {
+  text: string;
+  answers: string[];
+  solution: number;
+};
 type Fields = { slug: string; blockName: string; tests: Test[] };
 type Required = {
   link: string;
@@ -115,6 +119,7 @@ export type ChallengeNode = {
     isPrivate: boolean;
     order: number;
     question: Question;
+    assignments: string[];
     required: Required[];
     solutions: {
       [T in FileKey]: FileKeyChallenge;
@@ -135,6 +140,19 @@ export type ChallengeNode = {
     bilibiliIds?: BilibiliIds;
     videoUrl: string;
   };
+};
+
+export type CertificateNode = {
+  challenge: {
+    // TODO: use enum
+    certification: string;
+    tests: { id: string }[];
+  };
+};
+
+export type AllChallengesInfo = {
+  challengeEdges: { node: ChallengeNode }[];
+  certificateNodes: CertificateNode[];
 };
 
 export type AllChallengeNode = {
@@ -272,6 +290,7 @@ export type ChallengeMeta = {
   block: string;
   id: string;
   introPath: string;
+  isFirstStep: boolean;
   nextChallengePath: string;
   prevChallengePath: string;
   removeComments: boolean;

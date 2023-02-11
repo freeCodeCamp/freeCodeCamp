@@ -14,25 +14,25 @@ dashedName: confirm-the-ending
 
 # --hints--
 
-`confirmEnding("Bastian", "n")` повинен повертати `true`.
+`confirmEnding("Bastian", "n")` має повертати `true`.
 
 ```js
 assert(confirmEnding('Bastian', 'n') === true);
 ```
 
-`confirmEnding("Congratulation", "on")` повинен повертати `true`.
+`confirmEnding("Congratulation", "on")` має повертати `true`.
 
 ```js
 assert(confirmEnding('Congratulation', 'on') === true);
 ```
 
-`confirmEnding("Connor", "n")` повинен повертати `false`.
+`confirmEnding("Connor", "n")` має повертати `false`.
 
 ```js
 assert(confirmEnding('Connor', 'n') === false);
 ```
 
-`confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")` повинен повертати `false`.
+`confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")` має повертати `false`.
 
 ```js
 assert(
@@ -43,31 +43,31 @@ assert(
 );
 ```
 
-`confirmEnding("He has to give me a new name", "name")` повинен повертати `true`.
+`confirmEnding("He has to give me a new name", "name")` має повертати `true`.
 
 ```js
 assert(confirmEnding('He has to give me a new name', 'name') === true);
 ```
 
-`confirmEnding("Open sesame", "same")` повинен повертати `true`.
+`confirmEnding("Open sesame", "same")` має повертати `true`.
 
 ```js
 assert(confirmEnding('Open sesame', 'same') === true);
 ```
 
-`confirmEnding("Open sesame", "sage")` повинен повертати `false`.
+`confirmEnding("Open sesame", "sage")` має повертати `false`.
 
 ```js
 assert(confirmEnding('Open sesame', 'sage') === false);
 ```
 
-`confirmEnding("Open sesame", "game")` повинен повертати `false`.
+`confirmEnding("Open sesame", "game")` має повертати `false`.
 
 ```js
 assert(confirmEnding('Open sesame', 'game') === false);
 ```
 
-`confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")` повинен повертати `false`.
+`confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")` має повертати `false`.
 
 ```js
 assert(
@@ -78,13 +78,13 @@ assert(
 );
 ```
 
-`confirmEnding("Abstraction", "action")` повинен повертати `true`.
+`confirmEnding("Abstraction", "action")` має повертати `true`.
 
 ```js
 assert(confirmEnding('Abstraction', 'action') === true);
 ```
 
-У вашому коді не повинен використовуватися вбудований метод `.endsWith()` для вирішення завдання.
+Ваш код не повинен використовувати вбудований метод `.endsWith()`, щоб розв’язати це завдання.
 
 ```js
 assert(!/\.endsWith\(.*?\)\s*?;?/.test(code) && !/\['endsWith'\]/.test(code));

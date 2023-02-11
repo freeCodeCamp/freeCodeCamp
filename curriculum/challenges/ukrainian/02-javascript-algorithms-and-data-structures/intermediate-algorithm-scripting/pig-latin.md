@@ -20,43 +20,43 @@ dashedName: pig-latin
 
 # --hints--
 
-`translatePigLatin("california")` повинен повертати рядок `aliforniacay`.
+`translatePigLatin("california")` має повертати рядок `aliforniacay`.
 
 ```js
 assert.deepEqual(translatePigLatin('california'), 'aliforniacay');
 ```
 
-`translatePigLatin("paragraphs")` повинен повертати рядок `aragraphspay`.
+`translatePigLatin("paragraphs")` має повертати рядок `aragraphspay`.
 
 ```js
 assert.deepEqual(translatePigLatin('paragraphs'), 'aragraphspay');
 ```
 
-`translatePigLatin("glove")` повинен повертати рядок `oveglay`.
+`translatePigLatin("glove")` має повертати рядок `oveglay`.
 
 ```js
 assert.deepEqual(translatePigLatin('glove'), 'oveglay');
 ```
 
-`translatePigLatin("algorithm")` повинен повертати рядок `algorithmway`.
+`translatePigLatin("algorithm")` має повертати рядок `algorithmway`.
 
 ```js
 assert.deepEqual(translatePigLatin('algorithm'), 'algorithmway');
 ```
 
-`translatePigLatin("eight")` повинен повертати рядок `eightway`.
+`translatePigLatin("eight")` має повертати рядок `eightway`.
 
 ```js
 assert.deepEqual(translatePigLatin('eight'), 'eightway');
 ```
 
-Ваша програма повинна обробляти слова, у яких перший голосний звук у середині слова.  `translatePigLatin("schwartz")` повинен повертати рядок `artzschway`.
+Ваша програма повинна обробляти слова, у яких перший голосний звук у середині слова.  `translatePigLatin("schwartz")` має повертати рядок `artzschway`.
 
 ```js
 assert.deepEqual(translatePigLatin('schwartz'), 'artzschway');
 ```
 
-Ваша програма повинна обробляти слова без голосних звуків. `translatePigLatin("rhythm")` повинен повертати рядок `rhythmay`.
+Ваша програма повинна обробляти слова без голосних звуків. `translatePigLatin("rhythm")` має повертати рядок `rhythmay`.
 
 ```js
 assert.deepEqual(translatePigLatin('rhythm'), 'rhythmay');

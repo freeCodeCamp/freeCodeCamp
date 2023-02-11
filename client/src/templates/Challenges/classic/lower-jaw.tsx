@@ -190,8 +190,8 @@ const LowerJaw = ({
         <div className='lower-jaw-icon-bar'>
           <button
             className='btn fade-in'
-            title={t('buttons.reset-code')}
-            aria-label={t('buttons.reset-code')}
+            title={t('buttons.reset-step')}
+            aria-label={t('buttons.reset-step')}
             data-cy='reset-code-button'
             onClick={openResetModal}
           >

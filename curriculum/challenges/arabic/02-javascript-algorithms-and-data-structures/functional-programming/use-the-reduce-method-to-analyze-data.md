@@ -47,7 +47,7 @@ const usersObj = users.reduce((obj, user) => {
 console.log(usersObj);
 ```
 
-ستعرض وحدة التحكم القيمة `{ John: 34, Amy: 20, camperCat: 10 }`.
+سيعرض الكونسول القيمة `{ John: 34, Amy: 20, camperCat: 10 }`.
 
 # --instructions--
 

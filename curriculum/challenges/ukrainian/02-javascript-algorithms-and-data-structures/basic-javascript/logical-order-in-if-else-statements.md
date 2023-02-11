@@ -1,6 +1,6 @@
 ---
 id: 5690307fddb111c6084545d7
-title: Логічна послідовність в інструкції «if else»
+title: Логічна послідовність в інструкції if else
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cwNvMUV'
 forumTopicId: 18228
@@ -58,19 +58,19 @@ bar(0)
 
 # --hints--
 
-`orderMyLogic(4)` повинен повертати рядок `Less than 5`
+`orderMyLogic(4)` має повертати рядок `Less than 5`
 
 ```js
 assert(orderMyLogic(4) === 'Less than 5');
 ```
 
-`orderMyLogic(6)` повинен повертати рядок `Less than 10`
+`orderMyLogic(6)` має повертати рядок `Less than 10`
 
 ```js
 assert(orderMyLogic(6) === 'Less than 10');
 ```
 
-`orderMyLogic(11)` повинен повертати рядок `Greater than or equal to 10`
+`orderMyLogic(11)` має повертати рядок `Greater than or equal to 10`
 
 ```js
 assert(orderMyLogic(11) === 'Greater than or equal to 10');

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb0367417b2b2512bee
-title: Start a Working Express Server
+title: بدء سيرفر Express مُفعل
 challengeType: 2
 forumTopicId: 301519
 dashedName: start-a-working-express-server
@@ -8,9 +8,9 @@ dashedName: start-a-working-express-server
 
 # --description--
 
-In the first two lines of the file `myApp.js`, you can see how easy it is to create an Express app object. This object has several methods, and you will learn many of them in these challenges. One fundamental method is `app.listen(port)`. It tells your server to listen on a given port, putting it in running state. For testing reasons, we need the app to be running in the background so we added this method in the `server.js` file for you.
+في السطر الأول من الملف `myApp.js`، يمكنك أن ترى مدى سهولة إنشاء كائن تطبيق Express. هذا الكائن لديه العديد من الطرق، وسوف تتعلم الكثير منها في هذه التحديات. إحدى الطرق الأساسية هي `app.listen(port)`. إنه يخبر سيرفرك أن يستمع إلى منفذ (port) معين، وأن يضعه في حالة تشغيل. لأسباب الاختبار، نحن بحاجة إلى أن يكون التطبيق قيد التشغيل في الخلفية لذلك أضفنا لك هذه الطريقة في ملف `server.js`.
 
-Let’s serve our first string! In Express, routes takes the following structure: `app.METHOD(PATH, HANDLER)`. METHOD is an http method in lowercase. PATH is a relative path on the server (it can be a string, or even a regular expression). HANDLER is a function that Express calls when the route is matched. Handlers take the form `function(req, res) {...}`, where req is the request object, and res is the response object. For example, the handler
+هيا نمدد المقطع النصي الأول! في Express، تأخذ المسارات البنية التالية: `app.METHOD(PATH, HANDLER)`. إن METHOD طريقة http مكتوبة بحروف صغيرة. إن PATH المنفذ نسبي في السيرفر (يمكن أن يكون مقطع نصي أو حتى عبارة (expression) عادية). إن HANDLER وظيفة معالجة ينفذها Express عند مطابقة ال route. تكتب تلك الوظائف المعالجة مثل `function(req, res) {...}`، حيث req هو كائن الطلب، و res هو كائن الاستجابة. على سبيل المثال المعالج
 
 ```js
 function(req, res) {
@@ -18,17 +18,17 @@ function(req, res) {
 }
 ```
 
-will serve the string 'Response String'.
+سوف يمدد المقطع النصي 'Response String'.
 
 # --instructions--
 
-Use the `app.get()` method to serve the string "Hello Express" to GET requests matching the `/` (root) path. Be sure that your code works by looking at the logs, then see the results in the preview if you are using Replit.
+استخدم طريقة `app.get()` لتمديد المقطع "Hello Express" إلى طلبات GET المطابقة للمسار `/` (منفذ المصدر). أنظر إلى السجلات لتتأكد من أن الكود يعمل، ثم شاهد النتائج في علامة تبويب preview إذا كنت تستخدم Replit.
 
-**Note:** All the code for these lessons should be added in between the few lines of code we have started you off with.
+**ملاحظة:** يجب إضافة كل الكود لهذه الدروس بين سطور الكود التي بدأنا بها.
 
 # --hints--
 
-Your app should serve the string 'Hello Express'
+يجب أن يخدم تطبيقك المقطع النصي 'Hello Express'
 
 ```js
 (getUserInput) =>

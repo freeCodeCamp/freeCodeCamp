@@ -8,17 +8,17 @@ dashedName: problem-117-red-green-and-blue-tiles
 
 # --description--
 
-Using a combination of black square tiles and oblong tiles chosen from: red tiles measuring two units, green tiles measuring three units, and blue tiles measuring four units, it is possible to tile a row measuring five units in length in exactly fifteen different ways.
+Mit einer Kombination aus schwarzen quadratischen Steinen und länglichen Steinen, ausgewählt aus roten Steinen mit einer Größe von zwei Einheiten, grünen Steinen mit einer Größe von drei Einheiten und blauen Steinen mit einer Größe von vier Einheiten, ist es möglich, eine Reihe mit einer Länge von fünf Einheiten auf genau fünfzehn verschiedene Arten zu verlegen.
 
-<img class="img-responsive center-block" alt="Possible ways of placing red, green and blue oblongs on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Möglichkeiten, rote, grüne und blaue Rechtecke in einer Reihe mit einer Länge von fünf Einheiten zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
 
-How many ways can a row measuring fifty units in length be tiled?
+Auf wie viele Arten kann eine Reihe mit einer Länge von fünfzig Einheiten übereinander gelegt werden?
 
-**Note**: This is related to Problem 116.
+**Hinweis**: Dies hängt mit Problem 116 zusammen.
 
 # --hints--
 
-`redGreenBlueTilesTwo()` should return `100808458960497`.
+`redGreenBlueTilesTwo()` sollte `100808458960497` zurückgeben.
 
 ```js
 assert.strictEqual(redGreenBlueTilesTwo(), 100808458960497);
