@@ -32,7 +32,7 @@
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
   },
   "scripts": {
-    "build": "tsc index.ts",
+    "build": "tsc",
     "develop": "nodemon index.ts",
     "start": "NODE_ENV=production node index.js",
     "test": "NODE_OPTIONS='--test-only' ts-node **/*.test.ts"
