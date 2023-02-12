@@ -14,13 +14,33 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ## Table of Contents
 
+- [Getting Started](#getting-started)
 - [Certifications](#certifications)
+- [Code of Conduct](#code-of-conduct)
 - [The Learning Platform](#the-learning-platform)
+- [Support](#support)
 - [Reporting Bugs and Issues](#reporting-bugs-and-issues)
 - [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
 - [Contributing](#contributing)
 - [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
 - [License](#license)
+
+### Getting Started
+
+1. To sign up, users need to click on the orange Get Started button in the center of the website.
+[![Sign Up Button](/Users/elisaarenas/Desktop/clickHere.png)](https:/www.freecodecamp.org/)
+
+2. From there, users need an email address to create an account.
+[![Log In Page](/Users/elisaarenas/Desktop/signUp.png)](https://www.freecodecamp.org/)
+
+
+3. Once the user arrives to the main page, they can choose from 12 different certificates, live coding prep, or search from 9,000+ tutorials.
+
+
+4. In each section, it is divided into courses and multiple sections, allowing an easy to use and clear user interface.
+
+
+5. Good luck and happy coding! 
 
 ### Certifications
 
@@ -31,8 +51,6 @@ Each of these 50 projects in the freeCodeCamp.org curriculum has its own agile u
 You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Replit - or even on your local computer's development environment.
 
 Once you've earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or resume. And when your prospective employers or freelance clients click that link, they'll see a verified certification specific to you.
-
-The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
 
 Here are our ten core certifications:
 
@@ -153,6 +171,14 @@ We also have 4 legacy certifications dating back to our 2015 curriculum, which a
 - Legacy Back End Development Certification
 - Legacy Information Security and Quality Assurance Certification
 
+### Code of Conduct
+
+The one exception to getting certificates is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
+
+By using freeCampCode, users agree to no harassment, trolling, or spamming. 
+
+For more details, read the [Code of Conduct](https://www.freecodecamp.org/news/code-of-conduct/) page.
+
 ### The Learning Platform
 
 This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
@@ -165,6 +191,15 @@ Our community also has:
 - A [Discord server](https://discord.gg/Z7Fm39aNtZ) where you can hang out and talk with developers and people who are learning to code.
 
 > #### [Join the community here](https://www.freecodecamp.org/signin).
+
+### Support
+The community has answered valuable and important questions from over thousands of users.
+If you have a question, check out these links for possible answers.
+
+> #### [Forum](https://forum.freecodecamp.org/)
+> #### [Frequently Asked Questions](https://www.freecodecamp.org/news/about)
+> #### [Technical Support Questions](https://www.freecodecamp.org/news/support/)
+> #### [Copyright Policy](https://www.freecodecamp.org/news/copyright-policy/)
 
 ### Reporting Bugs and Issues
 
