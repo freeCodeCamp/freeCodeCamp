@@ -1,26 +1,25 @@
 ---
-id: 63e062d6090ebb486a4eda3a
-title: Step 25
+id: 63e94dae6dcedbad73f2f6ee
+title: Step 27
 challengeType: 0
-dashedName: step-25
+dashedName: step-27
 ---
 
 # --description--
 
-Function parameters can be initialized with default values. If a function is called without an argument, then the default value will be used. 
+The `arr` contains a series of objects that each contain a `name`, `position`, `number`, `isCaptain` and `nickname` property. In order to access each of those properties inside our callback function, you will need to use object destructuring.
+
+Here is an example.
 
 ```js
 
-const greeting = (name = "Anonymous") => {
-  return "Hello " + name;
-} 
+function myExampleFunction({name, age, job, city}) {
 
-console.log(greeting("John")); // Hello John
-console.log(greeting()); // Hello Anonymous
+}
 
 ```
 
-Add a new parameter to your `setPlayerCards` function called `arr` and assign it a default value of `players`.
+Inside the parameter list in the callback function for the `map` method, list out all 5 object properties from the `arr` using object destructuring.
 
 # --hints--
 
@@ -451,10 +450,16 @@ teamName.innerHTML = team;
 worldCupYear.innerHTML = year;
 headCoach.innerHTML = coachName;
 
---fcc-editable-region--
-
-const setPlayerCards = () => {};
+const setPlayerCards = (arr = players) => {
 
 --fcc-editable-region--
+
+  playerCards.innerHTML += arr.map(() => {
+
+  })
+
+--fcc-editable-region--
+
+};
 
 ```
