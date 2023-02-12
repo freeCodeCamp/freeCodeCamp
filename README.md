@@ -28,10 +28,10 @@ Our full-stack web development and machine learning curriculum is completely fre
 ### Getting Started
 
 1. To sign up, users need to click on the orange Get Started button in the center of the website.
-[![Sign Up Button](/Users/elisaarenas/Desktop/clickHere.png)](https:/www.freecodecamp.org/)
+[![Get Started Button](https://www.freecodecamp.org/news/content/images/2021/08/Screen-Shot-2021-08-21-at-12.10.19-AM.png)
 
 2. From there, users need an email address to create an account.
-[![Log In Page](/Users/elisaarenas/Desktop/signUp.png)](https://www.freecodecamp.org/)
+[![Log In Page](https://miro.medium.com/max/1400/0*kbB877bbZ2lleLYz)
 
 
 3. Once the user arrives to the main page, they can choose from 12 different certificates, live coding prep, or search from 9,000+ tutorials.
