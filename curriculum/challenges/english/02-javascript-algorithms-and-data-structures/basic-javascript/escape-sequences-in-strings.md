@@ -9,10 +9,7 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Quotes are not the only characters that can be <dfn>escaped</dfn> inside a string. There are two reasons to use escaping characters:
-
-1.  To allow you to use characters you may not otherwise be able to type out, such as a newline.
-2.  To allow you to represent multiple quotes in a string without JavaScript misinterpreting what you mean.
+Quotes are not the only characters that can be <dfn>escaped</dfn> inside a string. Escape sequences allow you to use characters you may not otherwise be able to use in a string.
 
 We learned this in the previous challenge.
 
