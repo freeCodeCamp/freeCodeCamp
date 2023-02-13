@@ -1,19 +1,23 @@
 export function CamperRole(role: 'camper' | 'honestCamper' | 'topContributor') {
   switch (role) {
     case 'camper':
-      return { camper: 'Camper' };
+      return { camper: 'Camper' } as const;
     case 'honestCamper':
-      return { camper: 'HonestCamper' };
+      return { camper: 'HonestCamper' } as const;
     case 'topContributor':
-      return { camper: 'TopContributor' };
+      return { camper: 'TopContributor' } as const;
   }
 }
 
 /*
-type is const honestCamper: {
-    camper: string;
-} 
-*/
+  type is const honestCamper: {
+    readonly camper: "Camper";
+} | {
+    readonly camper: "HonestCamper";
+} | {
+    readonly camper: "TopContributor";
+}
+  */
 const honestCamper = CamperRole('honestCamper');
 
 // we have to use if statements to check if something is an actual type
