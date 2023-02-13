@@ -1,6 +1,9 @@
 import { first } from 'lodash-es';
 import React, { useState, useEffect, ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
+import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
@@ -18,7 +21,97 @@ import {
   isAdvancingToChallengeSelector
 } from '../redux/selectors';
 import PreviewPortal from '../components/preview-portal';
-import ActionRow from './action-row';
+import EditorTabs from './editor-tabs';
+
+// const getPreviewBtnsSrText = () => {
+//   // no preview open
+//   const previewBtnsSrText = {
+//     pane: t('aria.show-preview'),
+//     portal: t('aria.open-preview-in-new-window')
+//   };
+
+//   // preview open in main window
+//   if (showPreviewPane && !showPreviewPortal) {
+//     previewBtnsSrText.pane = t('aria.hide-preview');
+//     previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
+
+//     // preview open in external window
+//   } else if (showPreviewPortal && !showPreviewPane) {
+//     previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
+//     previewBtnsSrText.portal = t('aria.close-external-preview-window');
+//   }
+
+//   return previewBtnsSrText;
+// }
+
+interface ActionRowProps {
+  hasNotes: boolean;
+  isProjectBasedChallenge: boolean;
+  showConsole: boolean;
+  showNotes: boolean;
+  showInstructions: boolean;
+  showPreviewPane: boolean;
+  showPreviewPortal: boolean;
+  togglePane: (pane: string) => void;
+}
+
+const ActionRow = ({
+  hasNotes,
+  togglePane,
+  showNotes,
+  showPreviewPane,
+  showPreviewPortal,
+  showConsole,
+  showInstructions,
+  isProjectBasedChallenge
+}: ActionRowProps) => {
+  // sets screen reader text for the two preview buttons
+  const { t } = useTranslation();
+  return (
+    <div className='monaco-editor-tabs'>
+      {!isProjectBasedChallenge && (
+        <button
+          aria-expanded={showInstructions}
+          onClick={() => togglePane('showInstructions')}
+        >
+          {t('learn.editor-tabs.instructions')}
+        </button>
+      )}
+      <EditorTabs />
+      <button
+        className='editor-console-button'
+        aria-expanded={showConsole}
+        onClick={() => togglePane('showConsole')}
+      >
+        {t('learn.editor-tabs.console')}
+      </button>
+      {hasNotes && (
+        <button
+          aria-expanded={showNotes}
+          onClick={() => togglePane('showNotes')}
+        >
+          {t('learn.editor-tabs.notes')}
+        </button>
+      )}
+      <div className='preview-buttons-section'>
+        <button
+          aria-expanded={showPreviewPane}
+          onClick={() => togglePane('showPreviewPane')}
+        >
+          <span className='sr-only'>pane</span>
+          <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
+        </button>
+        <button
+          aria-expanded={showPreviewPortal}
+          onClick={() => togglePane('showPreviewPortal')}
+        >
+          <span className='sr-only'>portal</span>
+          <FontAwesomeIcon icon={faWindowRestore} />
+        </button>
+      </div>
+    </div>
+  );
+};
 
 type Pane = { flex: number };
 
