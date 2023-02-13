@@ -12,11 +12,11 @@ export function CamperRole(
 ): Camper | HonestCamper | TopContributor {
   switch (role) {
     case 'camper':
-      return { camper: 'averageCamper' };
+      return { camper: 'Camper' };
     case 'honestCamper':
-      return { camper: 'aGoodCamper' };
+      return { camper: 'HonestCamper' };
     case 'topContributor':
-      return { camper: 'anAwesomeCamper' };
+      return { camper: 'TopContributor' };
   }
 }
 // type is const honestCamper: HonestCamper
