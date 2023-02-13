@@ -1,14 +1,21 @@
 name: CI - Node.js Test Current
 env:
   NODE_OPTIONS: '--max_old_space_size=6144'
+
 on:
+  # Run on push events, but only for the below branches
   push:
-    branches-ignore:
-      - 'renovate/**'
-      - 'next-api'
+    branches:
+      - 'main'
+      - 'prod-**'
+  # Run on pull requests, but only for the below targets
   pull_request:
-    branches-ignore:
-      - 'next-api'
+    branches:
+      - 'main'
+      - 'next-**'
+  # Run on Merge Queue
+  merge_group:
+    types: [checks_requested]
 
 permissions:
   contents: read
