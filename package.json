@@ -28,7 +28,6 @@
     "tools/challenge-editor/client",
     "tools/challenge-helper-scripts",
     "tools/challenge-parser",
-    "tools/crowdin",
     "tools/scripts/build",
     "tools/scripts/seed",
     "tools/ui-components"
