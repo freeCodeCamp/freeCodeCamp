@@ -4,7 +4,7 @@
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
   "dependencies": {
-    "@fastify/middie": "8.0.0",
+    "@fastify/middie": "8.1",
     "@fastify/mongodb": "6.1.0",
     "fastify": "4.9.2",
     "fastify-plugin": "4.3.0"
@@ -32,7 +32,7 @@
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
   },
   "scripts": {
-    "build": "tsc index.ts",
+    "build": "tsc",
     "develop": "nodemon index.ts",
     "start": "NODE_ENV=production node index.js",
     "test": "NODE_OPTIONS='--test-only' ts-node **/*.test.ts"
