@@ -43,7 +43,7 @@ Within the `odin-links-and-images` directory, create another HTML file named `ab
 </html>
 ```
 
-Back in the index page, add the following anchor element to create a link to the about page:
+Back in the `index` page, add the following anchor element to create a link to the `about` page:
 
 ```html
 <body>
@@ -54,17 +54,17 @@ Back in the index page, add the following anchor element to create a link to the
 </body>
 ```
 
-Open the index file in a browser and click on the about link to make sure it is all wired together correctly. Clicking the link should go to the about page you just created.
+Open the `index.html` file in a browser and click on the about link to make sure it is all wired together correctly. Clicking the link should go to the `about` page you just created.
 
-This works because the index and about page are in the same directory. That means you can simply use its name (`about.html`) as the link’s href value.
+This works because the `index` and `about` page are in the same directory. That means you can simply use its name (`about.html`) as the link’s `href` value.
 
 But you will usually want to organize your website directories a little better. Normally you would only have the `index.html` at the root directory and all other HTML files in their own directory.
 
 Create a directory named `pages` within the `odin-links-and-images` directory and move the `about.html` file into this new directory.
 
-Refresh the index page in the browser and then click on the about link. It will now be broken. This is because the location of the about page file has changed.
+Refresh the `index` page in the browser and then click on the `about` link. It will now be broken. This is because the location of the `about` page file has changed.
 
-To fix this, you just need to update the about link `href` value to include the `pages/` directory since that is the new location of the about file relative to the index file.
+To fix this, you just need to update the `about` link `href` value to include the `pages/` directory since that is the new location of the `about.html` file relative to the `index.html` file.
 
 ```html
 <body>
@@ -73,7 +73,7 @@ To fix this, you just need to update the about link `href` value to include the 
 </body>
 ```
 
-Refresh the index page in the browser and try clicking the about link again, it should now be back in working order.
+Refresh the `index` page in the browser and try clicking the `about` link again, it should now be back in working order.
 
 In many cases, this will work just fine; however, you can still run into unexpected issues with this approach. Prepending `./` before the link will in most cases prevent such issues. By adding `./` you are specifying to your code that it should start looking for the file/directory relative to the **current** directory.
 
