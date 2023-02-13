@@ -18,9 +18,6 @@ const start = async () => {
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(middie);
 
-  // @ts-expect-error Types are not exported from Fastify,
-  // and TypeScript is not smart enough to realise types
-  // defined within this module have the same signature
   void fastify.use('/test', testMiddleware);
 
   void fastify.register(dbConnector);
