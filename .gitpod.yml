@@ -21,7 +21,6 @@ ports:
 
 tasks:
   - before: |
-      nvm install --lts && nvm alias default lts/*
       echo '
       export COOKIE_DOMAIN=gitpod.io
       export HOME_LOCATION=$(gp url 8000)
