@@ -35,7 +35,6 @@ export async function testRoutes(fastify: FastifyInstance) {
     },
     (req, res) => {
       const {
-        user,
         body: { quincyEmails }
       } = req;
 
