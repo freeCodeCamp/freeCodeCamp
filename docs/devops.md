@@ -540,7 +540,7 @@ npm run create:config && npm run build:curriculum && npm run build:server
 #### 2. Rolling updates - Used for logical changes to code.
 
 ```console
-cd api-server && pm2 reload ecosystem.config.js cd .. && pm2 logs
+cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
 ```
 
 > [!NOTE] We are handling rolling updates to code, logic, via pipelines. You
