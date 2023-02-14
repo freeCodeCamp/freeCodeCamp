@@ -21,6 +21,9 @@ export async function testRoutes(fastify: FastifyInstance) {
           _res,
           done
         ) {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-call
           req.jwtAuthz(['write:user'], done);
         }
       ],

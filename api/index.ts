@@ -1,6 +1,8 @@
 import { config } from 'dotenv';
 config({ path: '../.env' });
 import fastifyAuth0 from 'fastify-auth0-verify';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import jwtAuthz from 'fastify-jwt-authz';
 import Fastify from 'fastify';
 import middie from '@fastify/middie';
@@ -26,6 +28,7 @@ const start = async () => {
     domain: process.env.AUTH0_DOMAIN,
     audience: process.env.AUTH0_AUDIENCE
   });
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   void fastify.register(jwtAuthz);
 
   // Auth0 plugin
