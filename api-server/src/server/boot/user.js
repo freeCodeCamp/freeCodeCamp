@@ -2,7 +2,6 @@ import debugFactory from 'debug';
 import dedent from 'dedent';
 import { body } from 'express-validator';
 import { pick } from 'lodash';
-import { Observable } from 'rx';
 
 import {
   fixCompletedChallengeItem,
@@ -95,7 +94,7 @@ function deleteUserTokenResponse(req, res) {
 function createReadSessionUser(app) {
   const { Donation } = app.models;
 
-  return async function getSessionUser(req, res, next) {
+  return async function getSessionUser(req, res) {
     const queryUser = req.user;
 
     const userTokenArr = await queryUser.userTokens({
@@ -110,73 +109,63 @@ function createReadSessionUser(app) {
       encodedUserToken = encodeUserToken(userToken);
     }
 
-    const source =
-      queryUser &&
-      Observable.forkJoin(
-        queryUser.getCompletedChallenges$(),
-        queryUser.getPartiallyCompletedChallenges$(),
-        queryUser.getSavedChallenges$(),
-        queryUser.getPoints$(),
-        Donation.getCurrentActiveDonationCount$(),
-        (
-          completedChallenges,
-          partiallyCompletedChallenges,
-          savedChallenges,
-          progressTimestamps,
-          activeDonations
-        ) => ({
-          activeDonations,
-          completedChallenges,
-          partiallyCompletedChallenges,
-          progress: getProgress(progressTimestamps, queryUser.timezone),
-          savedChallenges
-        })
+    if (!queryUser || !queryUser.toJSON().username) {
+      // TODO: This should return an error status
+      return res.json({ user: {}, result: '' });
+    }
+
+    try {
+      const [
+        activeDonations,
+        completedChallenges,
+        partiallyCompletedChallenges,
+        progressTimestamps,
+        savedChallenges
+      ] = await Promise.all(
+        [
+          Donation.getCurrentActiveDonationCount$(),
+          queryUser.getCompletedChallenges$(),
+          queryUser.getPartiallyCompletedChallenges$(),
+          queryUser.getPoints$(),
+          queryUser.getSavedChallenges$()
+        ].map(obs => obs.toPromise())
       );
-    Observable.if(
-      () => !queryUser,
-      Observable.of({ user: {}, result: '' }),
-      Observable.defer(() => source)
-        .map(
-          ({
-            activeDonations,
-            completedChallenges,
-            partiallyCompletedChallenges,
-            progress,
-            savedChallenges
-          }) => ({
-            user: {
-              ...queryUser.toJSON(),
-              ...progress,
-              completedChallenges: completedChallenges.map(
-                fixCompletedChallengeItem
-              ),
-              partiallyCompletedChallenges: partiallyCompletedChallenges.map(
-                fixPartiallyCompletedChallengeItem
-              ),
-              savedChallenges: savedChallenges.map(fixSavedChallengeItem)
-            },
-            sessionMeta: { activeDonations }
-          })
-        )
-        .map(({ user, sessionMeta }) => ({
-          user: {
-            [user.username]: {
-              ...pick(user, userPropsForSession),
-              username: user.usernameDisplay || user.username,
-              isEmailVerified: !!user.emailVerified,
-              isGithub: !!user.githubProfile,
-              isLinkedIn: !!user.linkedin,
-              isTwitter: !!user.twitter,
-              isWebsite: !!user.website,
-              ...normaliseUserFields(user),
-              joinDate: user.id.getTimestamp(),
-              userToken: encodedUserToken
-            }
-          },
-          sessionMeta,
-          result: user.username
-        }))
-    ).subscribe(user => res.json(user), next);
+
+      const progress = getProgress(progressTimestamps, queryUser.timezone);
+      const user = {
+        ...queryUser.toJSON(),
+        ...progress,
+        completedChallenges: completedChallenges.map(fixCompletedChallengeItem),
+        partiallyCompletedChallenges: partiallyCompletedChallenges.map(
+          fixPartiallyCompletedChallengeItem
+        ),
+        savedChallenges: savedChallenges.map(fixSavedChallengeItem)
+      };
+      const response = {
+        user: {
+          [user.username]: {
+            ...pick(user, userPropsForSession),
+            username: user.usernameDisplay || user.username,
+            isEmailVerified: !!user.emailVerified,
+            isGithub: !!user.githubProfile,
+            isLinkedIn: !!user.linkedin,
+            isTwitter: !!user.twitter,
+            isWebsite: !!user.website,
+            ...normaliseUserFields(user),
+            joinDate: user.id.getTimestamp(),
+            userToken: encodedUserToken
+          }
+        },
+        sessionMeta: {
+          activeDonations
+        },
+        result: user.username
+      };
+      return res.json(response);
+    } catch (e) {
+      // TODO: This should return an error status
+      return res.json({ user: {}, result: '' });
+    }
   };
 }
 
