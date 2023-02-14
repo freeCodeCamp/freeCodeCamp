@@ -111,7 +111,7 @@ export const rtlLangs = ['arabic'];
 // locale is sourced from a JSON file, so we use getLangCode to
 // find the associated enum values
 
-export function getLangCode(locale: PropertyKey) {
+export function getLangCode(locale: PropertyKey): string {
   if (isPropertyOf(LangCodes, locale)) return LangCodes[locale];
   throw new Error(`${String(locale)} is not a valid locale`);
 }

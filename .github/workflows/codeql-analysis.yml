@@ -1,13 +1,15 @@
 name: CI - Run CodeQL Analysis
 on:
   push:
-    branches: [main]
     paths-ignore:
       - 'docs/**'
+    branches:
+      - 'main'
   pull_request:
-    branches: [main]
     paths-ignore:
       - 'docs/**'
+    branches:
+      - 'main'
 
 permissions:
   contents: read

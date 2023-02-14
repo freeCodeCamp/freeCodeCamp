@@ -14,7 +14,7 @@ const superBlocksWithoutLastWord = [
   SuperBlocks.TheOdinProject
 ];
 
-export function getSuperBlockTitleForMap(superBlock: SuperBlocks) {
+export function getSuperBlockTitleForMap(superBlock: SuperBlocks): string {
   const i18nSuperBlock = i18next.t(`intro:${superBlock}.title`);
 
   return superBlocksWithoutLastWord.includes(superBlock)

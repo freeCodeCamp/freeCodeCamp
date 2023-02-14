@@ -25,7 +25,10 @@ const toolsSwitch: ToolsSwitch = {
   }
 };
 
-export const toolsRoute = async (req: Request, res: Response) => {
+export const toolsRoute = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   const { superblock, block, command } = req.params;
   const { num } = req.body as Record<string, number>;
   const directory = join(
