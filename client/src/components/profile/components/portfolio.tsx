@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import type { Portfolio as PortfolioData } from '../../../redux/prop-types';
+import { FullWidthRow } from '../../helpers';
 
 import './portfolio.css';
 
@@ -15,7 +16,7 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
     return null;
   }
   return (
-    <>
+    <FullWidthRow>
       <h2 className='text-center'>{t('profile.portfolio')}</h2>
       {portfolio.map(({ title, url, image, description, id }) => (
         <div className='portfolio-container' key={id}>
@@ -31,7 +32,7 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
         </div>
       ))}
       <hr />
-    </>
+    </FullWidthRow>
   );
 }
 
