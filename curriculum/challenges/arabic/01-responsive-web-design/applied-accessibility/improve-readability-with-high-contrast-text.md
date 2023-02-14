@@ -15,7 +15,7 @@ The Web Content Accessibility Guidelines (WCAG) recommend at least a 4.5 to 1 co
 
 # --instructions--
 
-Camper Cat's choice of light gray text on a white background for his recent blog post has a 1.5:1 contrast ratio, making it hard to read. Change the `color` of the text from the current gray (`#D3D3D3`) to a darker gray (`#636363`) to improve the contrast ratio to 6:1.
+اختيار Camper Cat للنص الرمادي الخفيف على خلفية بيضاء لمشاركته الأخيرة يحتوي على 1.5:1 نسبة التباين، مما يجعل من الصعب قراءتها. Change the `color` of the text from the current gray (`#D3D3D3`) to a darker gray (`#636363`) to improve the contrast ratio to 6:1.
 
 # --hints--
 

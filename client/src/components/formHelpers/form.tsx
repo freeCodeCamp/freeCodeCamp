@@ -12,7 +12,6 @@ import {
 import FormFields, { FormOptions } from './form-fields';
 
 import { default as BlockSaveButton } from './block-save-button';
-import { default as BlockSaveWrapper } from './block-save-wrapper';
 
 type URLValues = {
   [key: string]: string;
@@ -105,15 +104,13 @@ function DynamicForm({
           style={{ width: '100%' }}
         >
           <FormFields formFields={formFields} options={options} />
-          <BlockSaveWrapper>
-            {hideButton ? null : (
-              <BlockSaveButton
-                disabled={(pristine && !enableSubmit) || (error as boolean)}
-              >
-                {buttonText ? buttonText : null}
-              </BlockSaveButton>
-            )}
-          </BlockSaveWrapper>
+          {hideButton ? null : (
+            <BlockSaveButton
+              disabled={(pristine && !enableSubmit) || (error as boolean)}
+            >
+              {buttonText ? buttonText : null}
+            </BlockSaveButton>
+          )}
         </form>
       )}
     </Form>

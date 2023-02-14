@@ -1,4 +1,4 @@
-export function getLines(contents: string, range?: number[]) {
+export function getLines(contents: string, range?: number[]): string {
   if (!range) {
     return '';
   }

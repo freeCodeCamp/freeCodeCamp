@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { saveStep } from '../utils/save-step';
 
-export const saveRoute = async (req: Request, res: Response) => {
+export const saveRoute = async (req: Request, res: Response): Promise<void> => {
   const { superblock, block, step } = req.params;
   const content = (req.body as { content: string }).content;
 

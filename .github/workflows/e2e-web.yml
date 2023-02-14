@@ -3,14 +3,14 @@ on:
   push:
     paths-ignore:
       - 'docs/**'
-    branches-ignore:
-      - 'renovate/**'
-      - 'next-api'
+    branches:
+      - 'main'
   pull_request:
     paths-ignore:
       - 'docs/**'
-    branches-ignore:
-      - 'next-api'
+    branches:
+      - 'main'
+      - 'next-**'
 
 jobs:
   build-client:
