@@ -44,6 +44,14 @@ import './donation.css';
 const numToCommas = (num: number) =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
+// the number is used to indicate to the doner about how much hours of free education their dontation will provide.
+const contributedHoursOfFreeEduction = 50;
+const convertAmountToUSD = 100;
+const convertToTimeContributed = (amount: number) =>
+  numToCommas((amount / convertAmountToUSD) * contributedHoursOfFreeEduction);
+const formattedAmountLabel = (amount: number) =>
+  numToCommas(amount / convertAmountToUSD);
+
 type DonateFormState = {
   processing: boolean;
   redirecting: boolean;
@@ -114,13 +122,6 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   postCharge,
   updateDonationFormState
-};
-const convertToTimeContributed = (amount: number) => {
-  return numToCommas((amount / 100) * 50);
-};
-
-const formattedAmountLabel = (amount: number) => {
-  return numToCommas(amount / 100);
 };
 
 const PaymentButtonsLoader = () => {
@@ -263,7 +264,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     const isOneTime = donationDuration === 'one-time';
     const walletlabel = `${t(
       isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
-      { usd: donationAmount / 100 }
+      { usd: donationAmount / convertAmountToUSD }
     )}:`;
     const showMinimalPayments = isSignedIn && (isMinimalForm || !isDonating);
 
