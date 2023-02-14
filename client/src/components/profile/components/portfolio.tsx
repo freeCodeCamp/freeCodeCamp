@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import type { Portfolio as PortfolioData } from '../../../redux/prop-types';
-import { FullWidthRow } from '../../helpers';
 
 import './portfolio.css';
 
@@ -16,26 +15,23 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
     return null;
   }
   return (
-    <FullWidthRow>
+    <>
       <h2 className='text-center'>{t('profile.portfolio')}</h2>
       {portfolio.map(({ title, url, image, description, id }) => (
         <div className='portfolio-container' key={id}>
-          <div className='screen-shot-container'>
-            {image && (
-              <img alt='' className='portfolio-screen-shot' src={image} />
-            )}
-          </div>
-          <h3>{title}</h3>
-          <a href={url} rel='nofollow noopener noreferrer'>
-            <span className='sr-only'>
-              {t('profile.portfolio_link', { title: title })}
-            </span>
-          </a>
+          <h3>
+            <a href={url} rel='nofollow noopener noreferrer'>
+              {title}
+            </a>
+          </h3>
+          {image && (
+            <img alt='' className='portfolio-screen-shot' src={image} />
+          )}
           <p>{description}</p>
         </div>
       ))}
       <hr />
-    </FullWidthRow>
+    </>
   );
 }
 

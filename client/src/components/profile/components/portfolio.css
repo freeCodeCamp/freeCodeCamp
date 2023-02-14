@@ -1,7 +1,8 @@
 .portfolio-container {
   display: grid;
-  grid-template-columns: 300px repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   position: relative;
+  border: 1px solid var(--secondary-color);
   gap: 0.5rem;
   margin-top: 1em;
   margin-bottom: 3em;
@@ -11,22 +12,22 @@
   width: 100%;
   height: 100%;
   display: block;
-}
-
-.screen-shot-container {
   grid-column: 1/ -1;
   grid-row: 1;
+  object-fit: cover;
 }
 
 .portfolio-container h3 {
   font-size: 1.5rem;
-  margin-top: 0.25em;
+  margin-top: 0.5em;
+  margin-inline-start: 0.5em;
   grid-column: 1/ 1;
   grid-row: 2;
 }
 
 .portfolio-container p {
   grid-column: 1/ -1;
+  margin-inline-start: 0.5em;
   grid-row: 3;
   word-break: break-all;
 }
@@ -40,9 +41,10 @@
 @media (min-width: 995px) {
   .portfolio-container {
     grid-template-rows: 0.1fr 1fr;
+    grid-template-columns: 300px repeat(2, 1fr);
   }
 
-  .screen-shot-container {
+  .portfolio-screen-shot {
     grid-column: 1;
     grid-row: 1 / -1;
   }
@@ -59,6 +61,10 @@
 }
 
 .portfolio-container a {
+  text-decoration: none;
+}
+
+.portfolio-container a::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -70,7 +76,6 @@
 .portfolio-container a:hover,
 .portfolio-container a:focus {
   background-color: revert;
-  outline: 3px solid var(--blue-mid);
 }
 
 /* Timeline pagination */
