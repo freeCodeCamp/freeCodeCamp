@@ -9,7 +9,11 @@
 }
 
 .tool-panel-group-mobile {
+  position: fixed;
+  bottom: 0;
   display: flex;
+  width: 100%;
+  gap: 0;
   flex-direction: row-reverse;
 }
 

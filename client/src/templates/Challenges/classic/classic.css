@@ -51,11 +51,16 @@
   margin: 0 auto;
 }
 
+/* in the old Editor, JavaScript course, we will need to have this value otherwise the console will be out of view */
+.reflex-container > .reflex-element {
+  height: 100vh;
+}
+
 #mobile-layout {
   display: grid;
   min-height: 100vh;
   min-height: 100dvh;
-  grid-template-rows: 30px 1fr;
+  grid-template-rows: auto 1fr;
 }
 
 #mobile-layout .tab-content {

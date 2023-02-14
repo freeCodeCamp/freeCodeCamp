@@ -1,7 +1,5 @@
 .challenge-test-suite {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
+  display: grid;
   margin: 15px 0;
   padding-inline-start: 0;
 }
