@@ -4,17 +4,19 @@ import { useTranslation } from 'react-i18next';
 
 function BlockSaveButton({
   children,
+  bgSize,
   ...restProps
 }: {
   children?: React.ReactNode;
   disabled?: boolean;
+  bgSize?: string;
 }): JSX.Element {
   const { t } = useTranslation();
 
   return (
     <Button
       block={true}
-      bsSize='lg'
+      bsSize={bgSize || 'lg'}
       bsStyle='primary'
       type='submit'
       {...restProps}

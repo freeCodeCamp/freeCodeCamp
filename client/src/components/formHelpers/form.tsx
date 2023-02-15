@@ -103,6 +103,7 @@ export const StrictSolutionForm = ({
           <FormFields formFields={formFields} options={options} />
           <BlockSaveButton
             disabled={(pristine && !enableSubmit) || (error as boolean)}
+            bgSize='none'
           >
             {buttonText}
           </BlockSaveButton>
