@@ -16,6 +16,7 @@ import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
 import {
   ChallengeFile,
+  ChallengeNode,
   Dimensions,
   Ext,
   FileKey,
@@ -29,6 +30,7 @@ type VisibleEditors = {
   [key: string]: boolean;
 };
 interface MultifileEditorProps {
+  data?: { challengeNode: ChallengeNode };
   canFocus?: boolean;
   challengeFiles: ChallengeFile[];
   containerRef: RefObject<HTMLElement>;
@@ -77,6 +79,7 @@ const mapStateToProps = createSelector(
 
 const MultifileEditor = (props: MultifileEditorProps) => {
   const {
+    data,
     challengeFiles,
     containerRef,
     description,
@@ -143,6 +146,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                   key={key}
                 >
                   <Editor
+                    data={data}
                     canFocusOnMountRef={canFocusOnMountRef}
                     challengeFiles={challengeFiles}
                     containerRef={containerRef}

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`share template snapshot 1`] = `
+<button
+  class="btn-block btn"
+  data-testid="share-template"
+>
+  <span>
+      
+    buttons.copy-link-to-share
+     
+  </span>
+</button>
+`;
+
+exports[`share template snapshot after copied 1`] = `
+<button
+  class="btn-block btn"
+  data-testid="share-template"
+>
+  <span>
+     
+    buttons.copied-succesfully
+      
+  </span>
+</button>
+`;
+
+exports[`share template snapshot before copied 1`] = `
+<button
+  class="btn-block btn"
+  data-testid="share-template"
+>
+  <span>
+      
+    buttons.copy-link-to-share
+     
+  </span>
+</button>
+`;

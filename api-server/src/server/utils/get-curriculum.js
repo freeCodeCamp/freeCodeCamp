@@ -19,3 +19,17 @@ export function getChallenges() {
       return [...challengeArray, ...flatten(challengesForBlock)];
     }, []);
 }
+
+export function getChallengesList({ userInputSuperBlock, userInputBlock }) {
+  for (let superBlock in curriculum) {
+    if (superBlock === userInputSuperBlock) {
+      for (let block in curriculum[superBlock].blocks) {
+        if (block === userInputBlock) {
+          return curriculum[superBlock].blocks[block].challenges.sort(
+            (a, b) => a.title.split(' ')[1] - b.title.split(' ')[1]
+          );
+        }
+      }
+    }
+  }
+}

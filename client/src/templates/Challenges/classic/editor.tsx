@@ -33,6 +33,7 @@ import {
 } from '../../../redux/selectors';
 import {
   ChallengeFiles,
+  ChallengeNode,
   Dimensions,
   Ext,
   FileKey,
@@ -75,6 +76,7 @@ import './editor.css';
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
+  data?: { challengeNode: ChallengeNode };
   attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
@@ -667,6 +669,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     ReactDOM.render(
       <LowerJaw
+        data={props.data}
         openHelpModal={props.openHelpModal}
         openResetModal={props.openResetModal}
         tryToExecuteChallenge={tryToExecuteChallenge}

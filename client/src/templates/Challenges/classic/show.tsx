@@ -422,6 +422,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     return (
       challengeFiles && (
         <MultifileEditor
+          data={this.props.data}
           challengeFiles={challengeFiles}
           containerRef={this.containerRef}
           description={description}

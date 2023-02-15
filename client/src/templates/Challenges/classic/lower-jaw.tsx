@@ -5,13 +5,16 @@ import { Button } from '@freecodecamp/react-bootstrap';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
-import Help from '../../../assets/icons/help';
-import Reset from '../../../assets/icons/reset';
 
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
 
+import { ChallengeNode, ChallengeWithCompletedNode } from '../../../redux/prop-types';
+import { getChallengesList } from '../../../../../api-server/src/server/utils/get-curriculum';
+import { Share } from '../../../components/share';
+
 interface LowerJawProps {
+  data?: { challengeNode: ChallengeNode };
   hint?: string;
   challengeIsCompleted: boolean;
   openHelpModal: () => void;
@@ -26,6 +29,7 @@ interface LowerJawProps {
 }
 
 const LowerJaw = ({
+  data,
   openHelpModal,
   challengeIsCompleted,
   hint,
@@ -47,6 +51,7 @@ const LowerJaw = ({
   const { t } = useTranslation();
   const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
+  const endOfProject = React.useRef<boolean>(false);
 
   useEffect(() => {
     // prevent unnecessary updates:
@@ -184,32 +189,49 @@ const LowerJaw = ({
       testsLength &&
       (currentAttempts >= testsLength || currentAttempts >= 3);
 
+    const challengeOrder:ChallengeWithCompletedNode[] = getChallengesList({
+      userInputSuperBlock: data?.challengeNode.challenge.superBlock,
+      userInputBlock: data?.challengeNode.challenge.block
+    });
+    if (
+      challengeOrder[challengeOrder.length - 1].id ===
+      data?.challengeNode.challenge.id
+    ) {
+      endOfProject.current = true;
+    }
     return (
       <div>
         <hr />
-        <div className='lower-jaw-icon-bar'>
-          <button
-            className='btn fade-in'
-            title={t('buttons.reset-step')}
-            aria-label={t('buttons.reset-step')}
-            data-cy='reset-code-button'
-            onClick={openResetModal}
-          >
-            <Reset />
-          </button>
-
+        <div>
           {isAttemptsLargerThanTest && !challengeIsCompleted ? (
             <button
-              className='btn fade-in'
+              className='btn-block btn .m15'
               id='get-help-button'
               title={t('buttons.get-help')}
               aria-label={t('buttons.get-help')}
               data-cy='get-help-button'
               onClick={openHelpModal}
             >
-              <Help />
+              {t('buttons.ask-for-help')}
             </button>
           ) : null}
+
+          {challengeIsCompleted && endOfProject.current ? (
+            <Share
+              superBlock={data?.challengeNode.challenge.superBlock || ''}
+              block={data?.challengeNode.challenge.block || ''}
+            />
+          ) : (
+            <button
+              className='btn-block btn'
+              title={t('buttons.reset-step')}
+              aria-label={t('buttons.reset-step')}
+              data-cy='reset-code-button'
+              onClick={openResetModal}
+            >
+              {t('buttons.reset-lesson')}
+            </button>
+          )}
         </div>
       </div>
     );

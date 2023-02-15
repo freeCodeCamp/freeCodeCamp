@@ -66,6 +66,7 @@
     "update-email": "Update my Email",
     "verify-email": "Verify Email",
     "submit-and-go": "Submit and go to next challenge",
+    "share": "Copy link to share",
     "go-to-next": "Go to next challenge",
     "ask-later": "Ask me later",
     "start-coding": "Start coding!",
@@ -75,7 +76,9 @@
     "change-language": "Change Language",
     "cancel-change": "Cancel Change",
     "resume-project": "Resume project",
-    "start-project": "Start project"
+    "start-project": "Start project",
+    "copy-link-to-share": "Copy link to share",
+    "copied-succesfully": "Copied succesfully!!!"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
