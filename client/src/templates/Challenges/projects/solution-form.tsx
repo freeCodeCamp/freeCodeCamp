@@ -9,21 +9,24 @@ import {
   frontEndProject,
   pythonProject
 } from '../../../../utils/challenge-types';
-import { Form, ValidatedValues } from '../../../components/formHelpers';
+import {
+  StrictSolutionForm,
+  ValidatedValues
+} from '../../../components/formHelpers/form';
 
 interface SubmitProps {
   showCompletionModal: boolean;
 }
 
-interface FormProps extends WithTranslation {
+interface SolutionFormProps extends WithTranslation {
   challengeType: number;
   description?: string;
   onSubmit: (arg0: SubmitProps) => void;
   updateSolutionForm: (arg0: Record<string, unknown>) => void;
 }
 
-export class SolutionForm extends Component<FormProps> {
-  constructor(props: FormProps) {
+export class SolutionForm extends Component<SolutionFormProps> {
+  constructor(props: SolutionFormProps) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -115,7 +118,7 @@ export class SolutionForm extends Component<FormProps> {
     }
 
     return (
-      <Form
+      <StrictSolutionForm
         buttonText={`${buttonCopy}`}
         formFields={formFields}
         id={solutionFormID}
