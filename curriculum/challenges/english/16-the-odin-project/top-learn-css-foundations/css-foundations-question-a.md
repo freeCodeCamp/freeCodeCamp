@@ -58,15 +58,15 @@ What is the syntax for class and ID selectors?
 
 ## --answers--
 
-To select a class you use `$` and to select an ID you use `#`
+To select a `class` you use `$` and to select an `id` you use `#`
 
 ---
 
-To select a class you use `.` and to select an ID you use `*`
+To select a `class` you use `.` and to select an `id` you use `*`
 
 ---
 
-To select a class you use `.` and to select an ID you use `#`
+To select a `class` you use `.` and to select an `id` you use `#`
 
 
 ## --video-solution--
