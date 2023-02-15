@@ -13,7 +13,6 @@
   bottom: 0;
   display: flex;
   width: 100%;
-  gap: 0;
   flex-direction: row-reverse;
 }
 
