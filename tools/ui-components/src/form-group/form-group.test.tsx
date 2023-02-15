@@ -1,27 +1,34 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { FormControl } from '../form-control/.';
 import { FormGroup } from '.';
 
-describe('<FormGroup />', () => {
-  it('should render correctly', () => {
+describe('<FormGroup>', () => {
+  it('renders children', () => {
     render(
       <FormGroup data-testid='test-id'>
-        <span className='child1' />
-        <span className='child2' />
+        <span className='firstChild' />
+        <span className='secondChild' />
       </FormGroup>
     );
-  }),
-    it('provided controlId to label and control', () => {
-      render(
-        <FormGroup data-testid='test-id'>
-          <label htmlFor='test-id'>label</label>
-          <FormControl />
-        </FormGroup>
-      );
-    }),
-    it('Should have div as default component', () => {
-      render(<FormGroup />);
-    });
+
+    const element = screen.getByTestId('test-id');
+    element.childElementCount.should.equal(2);
+
+    const formGroupChildren = screen.getAllByRole('span');
+    formGroupChildren.length.should.equal(2);
+    formGroupChildren[0].className.should.equal('firstChild');
+    formGroupChildren[1].className.should.equal('secondChild');
+  });
+
+  it('provided controlId to label and control', () => {
+    render(
+      <FormGroup controlId='my-control' data-testid='test-id'>
+        <FormControl />
+      </FormGroup>
+    );
+    const input = screen.getByRole('input');
+    input.id.should.equal('my-control');
+  });
 });
