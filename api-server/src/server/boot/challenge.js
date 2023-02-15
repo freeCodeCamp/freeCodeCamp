@@ -272,11 +272,15 @@ export function isValidChallengeCompletion(req, res, next) {
   return next();
 }
 
-export async function modernChallengeCompleted(req, res) {
+export async function modernChallengeCompleted(req, res, next) {
   const user = req.user;
 
-  // This is an ugly hack to update `user.completedChallenges`
-  await user.getCompletedChallenges$().toPromise();
+  try {
+    // This is an ugly way to update `user.completedChallenges`
+    await user.getCompletedChallenges$().toPromise();
+  } catch (e) {
+    return next(e);
+  }
 
   const completedDate = Date.now();
   const { id, files, challengeType } = req.body;
@@ -306,21 +310,22 @@ export async function modernChallengeCompleted(req, res) {
   );
 
   const points = alreadyCompleted ? user.points : user.points + 1;
-  const updatedUser = await user.updateAttributes(updateData);
 
-  if (!updatedUser) {
-    return res.status(500).send('Unable to update user');
-  }
+  user.updateAttributes(updateData, (err, _updatedUser) => {
+    if (err) {
+      return next(err);
+    }
 
-  return res.json({
-    points,
-    alreadyCompleted,
-    completedDate,
-    savedChallenges
+    return res.json({
+      points,
+      alreadyCompleted,
+      completedDate,
+      savedChallenges
+    });
   });
 }
 
-async function projectCompleted(req, res) {
+async function projectCompleted(req, res, next) {
   const { user, body = {} } = req;
 
   const completedChallenge = pick(body, [
@@ -361,8 +366,12 @@ async function projectCompleted(req, res) {
     }
   }
 
-  // This is an ugly hack to update `user.completedChallenges`
-  await user.getCompletedChallenges$().toPromise();
+  try {
+    // This is an ugly hack to update `user.completedChallenges`
+    await user.getCompletedChallenges$().toPromise();
+  } catch (e) {
+    return next(e);
+  }
 
   const { alreadyCompleted, updateData } = buildUserUpdate(
     user,
@@ -370,25 +379,30 @@ async function projectCompleted(req, res) {
     completedChallenge
   );
 
-  const updatedUser = user.updateAttributes(updateData);
-  if (!updatedUser) {
-    return res.status(500).send('Unable to update user');
-  }
+  user.updateAttributes(updateData, (err, _updatedUser) => {
+    if (err) {
+      return next(err);
+    }
 
-  return res.json({
-    alreadyCompleted,
-    points: alreadyCompleted ? user.points : user.points + 1,
-    completedDate: completedChallenge.completedDate
+    return res.json({
+      alreadyCompleted,
+      points: alreadyCompleted ? user.points : user.points + 1,
+      completedDate: completedChallenge.completedDate
+    });
   });
 }
 
-async function backendChallengeCompleted(req, res) {
+async function backendChallengeCompleted(req, res, next) {
   const { user, body = {} } = req;
 
   const completedChallenge = pick(body, ['id', 'solution']);
   completedChallenge.completedDate = Date.now();
 
-  await user.getCompletedChallenges$().toPromise();
+  try {
+    await user.getCompletedChallenges$().toPromise();
+  } catch (e) {
+    return next(e);
+  }
 
   const { alreadyCompleted, updateData } = buildUserUpdate(
     user,
@@ -396,19 +410,20 @@ async function backendChallengeCompleted(req, res) {
     completedChallenge
   );
 
-  const updatedUser = user.updateAttributes(updateData);
-  if (!updatedUser) {
-    return res.status(500).send('Unable to update user');
-  }
+  user.updateAttributes(updateData, (err, updatedUser) => {
+    if (err) {
+      return next(err);
+    }
 
-  return res.json({
-    alreadyCompleted,
-    points: alreadyCompleted ? user.points : user.points + 1,
-    completedDate: completedChallenge.completedDate
+    return res.json({
+      alreadyCompleted,
+      points: alreadyCompleted ? updatedUser.points : updatedUser.points + 1,
+      completedDate: completedChallenge.completedDate
+    });
   });
 }
 
-async function saveChallenge(req, res) {
+async function saveChallenge(req, res, next) {
   const user = req.user;
   const { savedChallenges = [] } = user;
   const { id: challengeId, files = [] } = req.body;
@@ -425,7 +440,11 @@ async function saveChallenge(req, res) {
     )
   };
 
-  await user.getSavedChallenges$().toPromise();
+  try {
+    await user.getSavedChallenges$().toPromise();
+  } catch (e) {
+    return next(e);
+  }
 
   const savedIndex = savedChallenges.findIndex(({ id }) => challengeId === id);
   const $push = {},
@@ -443,13 +462,14 @@ async function saveChallenge(req, res) {
   if (!isEmpty($set)) updateData.$set = $set;
   if (!isEmpty($push)) updateData.$push = $push;
 
-  const updatedUser = await user.updateAttributes(updateData);
-  if (!updatedUser) {
-    return res.status(500).send('Unable to update user');
-  }
+  user.updateAttributes(updateData, (err, _updatedUser) => {
+    if (err) {
+      return next(err);
+    }
 
-  return res.json({
-    savedChallenges
+    return res.json({
+      savedChallenges
+    });
   });
 }
 
