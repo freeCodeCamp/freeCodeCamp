@@ -9,12 +9,7 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Лапки – не єдині символи, що можуть бути <dfn>екрановані</dfn> в рядку. Існує дві причини використовувати екрановані символи:
-
-1.  Щоб дозволити вам використовувати символи, які ви не можете ввести по-іншому, як-от новий рядок.
-2.  Щоб дозволити вам відобразити декілька лапок в рядку без неправильного тлумачення JavaScript того, що ви маєте на увазі.
-
-Ми дізналися про це в попередньому завданні.
+Лапки – не єдині символи, що можуть бути <dfn>екрановані</dfn> в рядку. Екрановані символи дозволяють використовувати символи, які інакше неможливо використати.
 
 <table class='table table-striped'><thead><tr><th>Код</th><th>Вивід</th></tr></thead><tbody><tr><td><code>\'</code></td><td>одинарні лапки</td></tr><tr><td><code>\"</code></td><td>подвійні лапки</td></tr><tr><td><code>\\</code></td><td>зворотна коса риска</td></tr><tr><td><code>\n</code></td><td>новий рядок</td></tr><tr><td><code>\t</code></td><td>табуляція</td></tr><tr><td><code>\r</code></td><td>повернення каретки</td></tr><tr><td><code>\b</code></td><td>границі слова</td></tr><tr><td><code>\f</code></td><td>перевід сторінки</td></tr></tbody></table>
 
@@ -70,7 +65,7 @@ assert(/\\SecondLine/.test(myStr));
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` має містити лише символи, вказані в інструкціях
+`myStr` повинна містити лише символи, вказані в інструкціях
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');

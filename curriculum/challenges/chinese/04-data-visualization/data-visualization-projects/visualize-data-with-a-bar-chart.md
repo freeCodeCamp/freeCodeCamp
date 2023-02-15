@@ -24,17 +24,17 @@ dashedName: visualize-data-with-a-bar-chart
 
 **需求 #5：** 在图表里，每个数据点都应该有一个具有 `class="bar"` 属性的 `rect` 元素来展示数据。
 
-**需求 #6：** 每个数据条应该具有值为 `date` 的 `data-date` 属性以及值为 `GDP` 的 `data-gdp` 属性。
+**User Story #6:** Each `.bar` should have the properties `data-date` and `data-gdp` containing `date` and `GDP` values.
 
-**需求 #7：** 数据条元素的 `data-date` 属性应与提供的数据的顺序相匹配。
+**User Story #7:** The `.bar` elements' `data-date` properties should match the order of the provided data.
 
-**需求 #8：** 数据条元素的 `data-gdp` 属性应与提供的数据的顺序相匹配。
+**User Story #8:** The `.bar` elements' `data-gdp` properties should match the order of the provided data.
 
-**需求 #9：** 每个数据条元素的高度应准确地表示其数据所对应的 `GDP` 值。
+**User Story #9:** Each `.bar` element's height should accurately represent the data's corresponding `GDP`.
 
-**需求 #10：** `data-date` 属性和它对应的数据条元素应与 x 轴上的相应的值对齐。
+**User Story #10:** The `data-date` attribute and its corresponding `.bar` element should align with the corresponding value on the x-axis.
 
-**需求 #11：** `data-gdp` 属性和它对应的数据条元素应与 y 轴上的相应的值对齐。
+**User Story #11:** The `data-gdp` attribute and its corresponding `.bar` element should align with the corresponding value on the y-axis.
 
 **需求 #12：** 我可以将鼠标悬停在某个区域上，并查看具有 `id="tooltip"` 属性的提示框，它会显示有关该区域的更多信息。
 

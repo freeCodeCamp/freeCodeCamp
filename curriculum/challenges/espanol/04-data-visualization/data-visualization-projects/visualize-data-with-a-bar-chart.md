@@ -24,17 +24,17 @@ Puedes utilizar HTML, JavaScript, CSS y la librería D3 de visualización basada
 
 **Historia de usuario #5:** Mi gráfica debe tener un elemento `rect` por cada punto de datos con su correspondiente `class="bar"` mostrando los datos.
 
-**Historia de usuario #6:** Cada barra debe tener la propiedad `data-date` y `data-gdp` conteniendo los valores `date` y `GDP`.
+**User Story #6:** Each `.bar` should have the properties `data-date` and `data-gdp` containing `date` and `GDP` values.
 
-**Historia de usuario #7:** Las propiedades `data-date` de los elementos de la barra deben coincidir con el orden de los datos proporcionados.
+**User Story #7:** The `.bar` elements' `data-date` properties should match the order of the provided data.
 
-**Historia de usuario #8:** Las propiedades `data-gdp` de los elementos de la barra deben coincidir con el orden de los datos proporcionados.
+**User Story #8:** The `.bar` elements' `data-gdp` properties should match the order of the provided data.
 
-**Historia de usuario #9:** La altura de cada elemento de barra debe representar con exactitud el `GDP` correspondiente a los datos.
+**User Story #9:** Each `.bar` element's height should accurately represent the data's corresponding `GDP`.
 
-**Historia de usuario #10:** El atributo `data-date` y su correspondiente elemento de barra deben alinearse con el valor correspondiente en el eje-x.
+**User Story #10:** The `data-date` attribute and its corresponding `.bar` element should align with the corresponding value on the x-axis.
 
-**Historia de usuario #11:** El atributo `data-gdp` y su correspondiente elemento de barra deben alinearse con el valor correspondiente en el eje-y.
+**User Story #11:** The `data-gdp` attribute and its corresponding `.bar` element should align with the corresponding value on the y-axis.
 
 **Historia de usuario #12:** Puedo pasar el ratón por encima de un área y ver un cuadro emergente con su correspondiente `id="tooltip"` que muestra más información acerca del área.
 

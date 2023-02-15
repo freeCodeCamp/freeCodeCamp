@@ -1,6 +1,6 @@
 ---
 id: 5900f4461000cf542c50ff58
-title: 'Problem 217: Balanced Numbers'
+title: 'Problem 217: Ausgeglichene Zahlen'
 challengeType: 1
 forumTopicId: 301859
 dashedName: problem-217-balanced-numbers

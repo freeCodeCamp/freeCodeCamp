@@ -8,7 +8,7 @@ dashedName: use-recursion-to-create-a-countdown
 
 # --description--
 
-In einer <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion" target="_blank" rel="noopener noreferrer nofollow">vorherigen Aufgabe</a> hast du gelernt, wie man eine `for`-Schleife durch Rekursion ersetzt. Schauen wir uns nun eine komplexere Funktion an, die ein Array von aufeinanderfolgenden ganzen Zahlen (Intergers) zurückgibt, beginnend mit `1` bis zu der an die Funktion übergebenen Zahl.
+In einer <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion" target="_blank" rel="noopener noreferrer nofollow">vorherigen Aufgabe</a> hast du gelernt, wie man eine `for`-Schleife durch Rekursion ersetzt. Schauen wir uns nun eine komplexere Funktion an, die ein Array von aufeinanderfolgenden ganzen Zahlen (Integers) zurückgibt, beginnend mit `1` bis zu der an die Funktion übergebenen Zahl.
 
 Wie in der vorhergehenden Aufgabe erwähnt, wird es einen <dfn>Basisfall</dfn> geben. Der Basisfall teilt der rekursiven Funktion mit, wann sie sich nicht mehr selbst aufrufen muss. Es handelt sich um einen einfachen Fall, bei dem der Rückgabewert bereits bekannt ist. Es wird auch einen <dfn>rekursiven Aufruf</dfn> geben, der die ursprüngliche Funktion mit anderen Argumenten ausführt. Wenn die Funktion richtig geschrieben ist, wird schließlich der Basisfall erreicht.
 
