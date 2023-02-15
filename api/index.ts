@@ -30,12 +30,6 @@ const start = async () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   void fastify.register(jwtAuthz);
 
-  // Auth0 plugin
-  void fastify.register(fastifyAuth0, {
-    domain: process.env.AUTH0_DOMAIN,
-    audience: process.env.AUTH0_AUDIENCE
-  });
-
   void fastify.use('/test', testMiddleware);
 
   // Hooks
