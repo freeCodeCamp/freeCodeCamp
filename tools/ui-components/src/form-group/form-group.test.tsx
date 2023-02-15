@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 
 import { FormControl } from '../form-control/.';
 import { FormGroup } from '.';
-
+const sameNumberOfChildren = 2;
 describe('<FormGroup>', () => {
   it('renders children', () => {
     render(
@@ -14,10 +14,10 @@ describe('<FormGroup>', () => {
     );
 
     const element = screen.getByTestId('test-id');
-    element.childElementCount.should.equal(2);
+    element.childNodes.length.should.equals(sameNumberOfChildren);
 
     const formGroupChildren = screen.getAllByRole('span');
-    formGroupChildren.length.should.equal(2);
+    formGroupChildren.length.should.equal(sameNumberOfChildren);
     formGroupChildren[0].className.should.equal('firstChild');
     formGroupChildren[1].className.should.equal('secondChild');
   });
