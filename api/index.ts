@@ -1,8 +1,7 @@
 import { config } from 'dotenv';
 config({ path: '../.env' });
 import fastifyAuth0 from 'fastify-auth0-verify';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
+// @ts-expect-error declaration files will be provided
 import jwtAuthz from 'fastify-jwt-authz';
 import Fastify from 'fastify';
 import middie from '@fastify/middie';
