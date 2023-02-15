@@ -21,8 +21,7 @@ export async function testRoutes(fastify: FastifyInstance) {
           _res,
           done
         ) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
+          // @ts-expect-error the types will be added
           // eslint-disable-next-line @typescript-eslint/no-unsafe-call
           req.jwtAuthz(['write:user'], done);
         }
