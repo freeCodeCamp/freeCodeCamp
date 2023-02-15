@@ -11,7 +11,7 @@ import {
 } from './form-validators';
 import FormFields, { FormOptions } from './form-fields';
 
-import { default as BlockSaveButton } from './block-save-button';
+import BlockSaveButton from './block-save-button';
 
 type URLValues = {
   [key: string]: string;
@@ -73,7 +73,6 @@ export type FormProps = {
   buttonText?: string;
   enableSubmit?: boolean;
   formFields: { name: string; label: string }[];
-  hideButton?: boolean;
   id: string;
   initialValues?: Record<string, unknown>;
   options: FormOptions;
@@ -87,8 +86,7 @@ function DynamicForm({
   options,
   submit,
   buttonText,
-  enableSubmit,
-  hideButton
+  enableSubmit
 }: FormProps): JSX.Element {
   return (
     <Form
@@ -104,13 +102,11 @@ function DynamicForm({
           style={{ width: '100%' }}
         >
           <FormFields formFields={formFields} options={options} />
-          {hideButton ? null : (
-            <BlockSaveButton
-              disabled={(pristine && !enableSubmit) || (error as boolean)}
-            >
-              {buttonText ? buttonText : null}
-            </BlockSaveButton>
-          )}
+          <BlockSaveButton
+            disabled={(pristine && !enableSubmit) || (error as boolean)}
+          >
+            {buttonText}
+          </BlockSaveButton>
         </form>
       )}
     </Form>
