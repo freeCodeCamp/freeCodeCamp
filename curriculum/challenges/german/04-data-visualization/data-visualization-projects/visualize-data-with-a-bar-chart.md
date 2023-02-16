@@ -24,17 +24,17 @@ Du kannst HTML, Javascript, CSS und die D3-SVG-basierte Visualisierungs-Biblioth
 
 **User Story #5:** Mein Diagramm sollte ein `rect` Element für jeden Datenpunkt mit einer entsprechenden `class="bar"` haben, welche die Daten anzeigt.
 
-**User Story #6:** Jeder Balken sollte die Eigenschaften `data-date` und `data-gdp` haben, welche die Werte `date` und `GDP` beinhalten.
+**User Story #6:** Each `.bar` should have the properties `data-date` and `data-gdp` containing `date` and `GDP` values.
 
-**User Story #7:** Die Eigenschaft `data-date` der Balkenelemente sollte mit der Reihenfolge der angegebenen Daten übereinstimmen.
+**User Story #7:** The `.bar` elements' `data-date` properties should match the order of the provided data.
 
-**User Story #8:** Die Eigenschaft `data-gdp` des Balkendiagramms sollte mit den angegebenen Daten übereinstimmen.
+**User Story #8:** The `.bar` elements' `data-gdp` properties should match the order of the provided data.
 
-**User Story #9:** Die Höhe jedes Balkenelements sollte das zugehörige `GDP` exakt darstellen.
+**User Story #9:** Each `.bar` element's height should accurately represent the data's corresponding `GDP`.
 
-**User Story #10:** Das `data-date`-Attribut und sein zugehöriges Balkenelement sollten sich mit dem entsprechenden Wert auf der x-Achse ausrichten.
+**User Story #10:** The `data-date` attribute and its corresponding `.bar` element should align with the corresponding value on the x-axis.
 
-**User Story #11:** Das `data-gdp`-Attribut und sein zugehöriges Balkenelement sollten sich mit dem entsprechenden Wert auf der y-Achse ausrichten.
+**User Story #11:** The `data-gdp` attribute and its corresponding `.bar` element should align with the corresponding value on the y-axis.
 
 **User Story #12:** Ich kann mit meiner Maus über einen Bereich fahren und einen Tooltip mit einem entsprechenden `id="tooltip"` sehen, das mir mehr Informationen über den Bereich anzeigt.
 

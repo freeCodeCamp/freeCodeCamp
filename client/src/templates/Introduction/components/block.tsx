@@ -99,7 +99,6 @@ class Block extends Component<BlockProps> {
 
     const isNewResponsiveWebDesign = isNewRespCert(superBlock);
     const isNewJsAlgos = isNewJsCert(superBlock);
-    const isOdinProject = blockDashedName == 'the-odin-project';
 
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(({ challenge }) => {
@@ -333,7 +332,7 @@ class Block extends Component<BlockProps> {
     );
 
     const blockrenderer = () => {
-      if (isProjectBlock && !isOdinProject)
+      if (isProjectBlock)
         return isNewResponsiveWebDesign || isNewJsAlgos
           ? GridProjectBlock
           : ProjectBlock;

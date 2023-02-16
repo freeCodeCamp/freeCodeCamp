@@ -38,6 +38,31 @@ function filesToMarkdown(challengeFiles = {}) {
   }, '\n');
 }
 
+export function insertEditableRegions(challengeFiles = []) {
+  if (challengeFiles?.some(file => file.editableRegionBoundaries?.length > 0)) {
+    const editableRegionStrings = fileExtension => {
+      const startComment = fileExtension === 'html' ? '<!--' : '/*';
+      const endComment = fileExtension === 'html' ? '-->' : '*/';
+      return `\n${startComment} User Editable Region ${endComment}\n`;
+    };
+
+    const filesWithEditableRegions = challengeFiles.map(file => {
+      const { contents, editableRegionBoundaries, ext } = file;
+      if (editableRegionBoundaries.length > 0) {
+        const comment = editableRegionStrings(ext);
+        const [start, end] = editableRegionBoundaries;
+        const lines = contents.split('\n');
+        lines.splice(start, 0, comment);
+        lines.splice(end, 0, comment);
+        return { ...file, contents: lines.join('\n') };
+      }
+      return file;
+    });
+    return filesWithEditableRegions;
+  }
+  return challengeFiles;
+}
+
 function createQuestionEpic(action$, state$, { window }) {
   return action$.pipe(
     ofType(actionTypes.createQuestion),
@@ -50,29 +75,9 @@ function createQuestionEpic(action$, state$, { window }) {
         block,
         helpCategory
       } = challengeMetaSelector(state);
-      if (
-        challengeFiles?.some(file => file.editableRegionBoundaries.length > 0)
-      ) {
-        const editableRegionStrings = fileExtension => {
-          const startComment = fileExtension === 'html' ? '<!--' : '/*';
-          const endComment = fileExtension === 'html' ? '-->' : '*/';
-          return `\n${startComment} User Editable Region ${endComment}\n`;
-        };
 
-        const filesWithEditableRegions = challengeFiles.map(file => {
-          const { contents, editableRegionBoundaries, ext } = file;
-          if (editableRegionBoundaries.length > 0) {
-            const comment = editableRegionStrings(ext);
-            const [start, end] = editableRegionBoundaries;
-            const lines = contents.split('\n');
-            lines.splice(start, 0, comment);
-            lines.splice(end, 0, comment);
-            return { ...file, contents: lines.join('\n') };
-          }
-          return file;
-        });
-        challengeFiles = filesWithEditableRegions;
-      }
+      challengeFiles = insertEditableRegions(challengeFiles);
+
       const {
         navigator: { userAgent },
         location: { pathname, origin }

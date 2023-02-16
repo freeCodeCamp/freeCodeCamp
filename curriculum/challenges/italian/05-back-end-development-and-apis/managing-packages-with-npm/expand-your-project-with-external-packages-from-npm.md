@@ -22,7 +22,7 @@ In questa sezione, i pacchetti richiesti dal progetto vengono memorizzati nel se
 
 # --instructions--
 
-Aggiungi la versione "1.1.0" del pacchetto `@freecodecamp/example` al campo `dependencies` del tuo file `package.json`.
+Aggiungi la versione `1.1.0` del pacchetto `@freecodecamp/example` al campo `dependencies` del tuo file `package.json`.
 
 **Nota:** `@freecodecamp/example` è un pacchetto fasullo utilizzato come strumento di apprendimento.
 

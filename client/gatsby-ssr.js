@@ -4,7 +4,7 @@ import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 
 import i18n from './i18n/config';
-import { createStore } from './src/redux/createStore';
+import { createStore } from './src/redux/create-store';
 import layoutSelector from './utils/gatsby/layout-selector';
 import { getheadTagComponents, getPostBodyComponents } from './utils/tags';
 import GrowthBookProvider from './src/components/growth-book/growth-book-wrapper';

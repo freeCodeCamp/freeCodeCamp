@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
-import { useStaticQuery, graphql } from 'gatsby';
 import { noop } from 'lodash-es';
 import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
@@ -13,8 +12,11 @@ import { dasherize } from '../../../../../utils/slugs';
 import { isFinalProject } from '../../../../utils/challenge-types';
 import Login from '../../../components/Header/components/Login';
 import { executeGA, allowBlockDonationRequests } from '../../../redux/actions';
-import { isSignedInSelector } from '../../../redux/selectors';
-import { AllChallengeNode, ChallengeFiles } from '../../../redux/prop-types';
+import {
+  isSignedInSelector,
+  allChallengesInfoSelector
+} from '../../../redux/selectors';
+import { AllChallengesInfo, ChallengeFiles } from '../../../redux/prop-types';
 
 import { closeModal, submitChallenge } from '../redux/actions';
 import {
@@ -34,6 +36,7 @@ const mapStateToProps = createSelector(
   completedChallengesIds,
   isCompletionModalOpenSelector,
   isSignedInSelector,
+  allChallengesInfoSelector,
   successMessageSelector,
   (
     challengeFiles: ChallengeFiles,
@@ -45,6 +48,7 @@ const mapStateToProps = createSelector(
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
+    allChallengesInfo: AllChallengesInfo,
     message: string
   ) => ({
     challengeFiles,
@@ -54,6 +58,7 @@ const mapStateToProps = createSelector(
     completedChallengesIds,
     isOpen,
     isSignedIn,
+    allChallengesInfo,
     message
   })
 );
@@ -118,6 +123,7 @@ interface CompletionModalsProps {
   id: string;
   isOpen: boolean;
   isSignedIn: boolean;
+  allChallengesInfo: AllChallengesInfo;
   message: string;
   submitChallenge: () => void;
   superBlock: string;
@@ -324,58 +330,13 @@ interface Options {
   isFinalProjectBlock: boolean;
 }
 
-interface CertificateNode {
-  challenge: {
-    // TODO: use enum
-    certification: string;
-    tests: { id: string }[];
-  };
-}
-
 const useCurrentBlockIds = (
+  allChallengesInfo: AllChallengesInfo,
   block: string,
   certification: string,
   options?: Options
 ) => {
-  const {
-    allChallengeNode: { edges: challengeEdges },
-    allCertificateNode: { nodes: certificateNodes }
-  }: {
-    allChallengeNode: AllChallengeNode;
-    allCertificateNode: { nodes: CertificateNode[] };
-  } = useStaticQuery(graphql`
-    query getCurrentBlockNodes {
-      allChallengeNode(
-        sort: {
-          fields: [
-            challenge___superOrder
-            challenge___order
-            challenge___challengeOrder
-          ]
-        }
-      ) {
-        edges {
-          node {
-            challenge {
-              block
-              id
-            }
-          }
-        }
-      }
-      allCertificateNode {
-        nodes {
-          challenge {
-            certification
-            tests {
-              id
-            }
-          }
-        }
-      }
-    }
-  `);
-
+  const { challengeEdges, certificateNodes } = allChallengesInfo;
   const currentCertificateIds = certificateNodes
     .filter(
       node => dasherize(node.challenge.certification) === certification
@@ -390,6 +351,7 @@ const useCurrentBlockIds = (
 
 const CompletionModal = (props: CompletionModalsProps) => {
   const currentBlockIds = useCurrentBlockIds(
+    props.allChallengesInfo,
     props.block || '',
     props.certification || '',
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call

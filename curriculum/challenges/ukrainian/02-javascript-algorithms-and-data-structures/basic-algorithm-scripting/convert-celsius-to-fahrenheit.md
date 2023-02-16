@@ -14,37 +14,37 @@ dashedName: convert-celsius-to-fahrenheit
 
 # --hints--
 
-`convertCtoF(0)` повинен повертати число
+`convertCtoF(0)` має повертати число
 
 ```js
 assert(typeof convertCtoF(0) === 'number');
 ```
 
-`convertCtoF(-30)` повинен повертати значення `-22`
+`convertCtoF(-30)` має повертати значення `-22`
 
 ```js
 assert(convertCtoF(-30) === -22);
 ```
 
-`convertCtoF(-10)` повинен повертати значення `14`
+`convertCtoF(-10)` має повертати значення `14`
 
 ```js
 assert(convertCtoF(-10) === 14);
 ```
 
-`convertCtoF(0)` повинен повертати значення `32`
+`convertCtoF(0)` має повертати значення `32`
 
 ```js
 assert(convertCtoF(0) === 32);
 ```
 
-`convertCtoF(20)` повинен повертати значення `68`
+`convertCtoF(20)` має повертати значення `68`
 
 ```js
 assert(convertCtoF(20) === 68);
 ```
 
-`convertCtoF(30)` повинен повертати значення `86`
+`convertCtoF(30)` має повертати значення `86`
 
 ```js
 assert(convertCtoF(30) === 86);

@@ -1,6 +1,6 @@
 ---
 id: bd7993c9c69feddfaeb8bdef
-title: تخزين قيم متعددة في متغير واحد باستخدام مصفوفات جافا سكريبت (Store Multiple Values in one Variable using JavaScript Arrays)
+title: تخزين قيم متعددة في متغير واحد باستخدام قائمات JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/crZQWAm'
 forumTopicId: 18309
@@ -9,7 +9,7 @@ dashedName: store-multiple-values-in-one-variable-using-javascript-arrays
 
 # --description--
 
-مع متغير جافا سكريبت الـ `array`، يمكننا تخزين عدة قطع من البيانات في مكان واحد.
+بواسطة المتغيرات من نوع `array` في JavaScript، يمكننا تخزين عدة قطع من البيانات في مكان واحد.
 
 تبدأ إعلان القائمة (array) بأقواس مربعه (square bracke) وتنهيها بأقواس مربعه، ووضع فاصلة بين كل إدخال، مثال:
 
@@ -19,7 +19,7 @@ const sandwich = ["peanut butter", "jelly", "bread"];
 
 # --instructions--
 
-قم بتعديل الـ array الجديدة `myArray` بحيث تحتوي على string ورقم في نفس الوقت (بهذا الترتيب).
+عدِّل الـقائمة الجديدة `myArray` بحيث تحتوي على string ورقم في نفس الوقت (بهذا الترتيب).
 
 # --hints--
 

@@ -28,43 +28,43 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 
 # --hints--
 
-`testGreaterOrEqual(0)` повинен повертати рядок `Less than 10`
+`testGreaterOrEqual(0)` має повертати рядок `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(0) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(9)` повинен повертати рядок `Less than 10`
+`testGreaterOrEqual(9)` має повертати рядок `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(9) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(10)` повинен повертати рядок `10 or Over`
+`testGreaterOrEqual(10)` має повертати рядок `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(10) === '10 or Over');
 ```
 
-`testGreaterOrEqual(11)` повинен повертати рядок `10 or Over`
+`testGreaterOrEqual(11)` має повертати рядок `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(11) === '10 or Over');
 ```
 
-`testGreaterOrEqual(19)` повинен повертати рядок `10 or Over`
+`testGreaterOrEqual(19)` має повертати рядок `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(19) === '10 or Over');
 ```
 
-`testGreaterOrEqual(100)` повинен повертати рядок `20 or Over`
+`testGreaterOrEqual(100)` має повертати рядок `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(100) === '20 or Over');
 ```
 
-`testGreaterOrEqual(21)` повинен повертати рядок `20 or Over`
+`testGreaterOrEqual(21)` має повертати рядок `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(21) === '20 or Over');

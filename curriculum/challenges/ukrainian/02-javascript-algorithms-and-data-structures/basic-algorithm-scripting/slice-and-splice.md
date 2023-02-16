@@ -14,23 +14,23 @@ dashedName: slice-and-splice
 
 Розпочніть вставляти елементи з індексу `n` другого масиву.
 
-Поверніться до отриманого масиву. Вхідні масиви повинні залишатись незмінними після запуску функції.
+Поверніть отриманий масив. Вхідні масиви повинні залишатись незмінними після запуску функції.
 
 # --hints--
 
-`frankenSplice([1, 2, 3], [4, 5], 1)` повинен повертати `[4, 1, 2, 3, 5]`.
+`frankenSplice([1, 2, 3], [4, 5], 1)` має повертати `[4, 1, 2, 3, 5]`.
 
 ```js
 assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5]);
 ```
 
-`frankenSplice([1, 2], ["a", "b"], 1)` повинен повертати `["a", 1, 2, "b"]`.
+`frankenSplice([1, 2], ["a", "b"], 1)` має повертати `["a", 1, 2, "b"]`.
 
 ```js
 assert.deepEqual(frankenSplice(testArr1, testArr2, 1), ['a', 1, 2, 'b']);
 ```
 
-`frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2)` повинен повертати `["head", "shoulders", "claw", "tentacle", "knees", "toes"]`.
+`frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2)` має повертати `["head", "shoulders", "claw", "tentacle", "knees", "toes"]`.
 
 ```js
 assert.deepEqual(
@@ -43,7 +43,7 @@ assert.deepEqual(
 );
 ```
 
-Всі елементи з першого масиву повинні бути доданими до другого масиву за початковим порядком. `frankenSplice([1, 2, 3, 4], [], 0)` повинен повертати `[1, 2, 3, 4]`.
+Всі елементи з першого масиву повинні бути доданими до другого масиву за початковим порядком. `frankenSplice([1, 2, 3, 4], [], 0)` має повертати `[1, 2, 3, 4]`.
 
 ```js
 assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4]);

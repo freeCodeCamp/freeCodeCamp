@@ -24,17 +24,17 @@ Você pode usar HTML, JavaScript, CSS e a biblioteca de visualização D3, basea
 
 **História de usuário nº 5:** meu gráfico deve ter um elemento `rect` para cada ponto com uma classe `class="bar"` correspondente exibindo os dados.
 
-**História de usuário nº 6:** cada barra deve ter as propriedades `data-date` e `data-gdp`, contendo os valores `date` e `GDP`, respectivamente.
+**História de usuário nº 6:** cada `.bar` deve ter as propriedades `data-date` e `data-gdp`, contendo os valores `date` e `GDP`, respectivamente.
 
-**História de usuário nº 7:** as propriedades `data-date` das barras devem corresponder à ordem fornecida pelos dados.
+**História de usuário nº 7:** as propriedades `data-date` das `.bar` devem corresponder à ordem fornecida pelos dados.
 
-**História de usuário nº 8:** as propriedades `data-gdp` das barras devem corresponder à ordem fornecida pelos dados.
+**História de usuário nº 8:** as propriedades `data-gdp` das `.bar` devem corresponder à ordem fornecida pelos dados.
 
-**História de usuário nº 9:** a altura de cada barra deve representar corretamente os dados de `GDP` correspondentes.
+**História de usuário nº 9:** a altura de cada `.bar` deve representar corretamente os dados de `GDP` correspondentes.
 
-**História de usuário nº 10:** o atributo `data-date` e sua barra correspondente devem estar alinhados com o seu valor correspondente no eixo x.
+**História de usuário nº 10:** o atributo `data-date` e sua `.bar` correspondente devem estar alinhados com o seu valor correspondente no eixo x.
 
-**História de usuário nº 11:** o atributo `data-gdp` e sua barra correspondente devem estar alinhados com o seu valor correspondente no eixo y.
+**História de usuário nº 11:** o atributo `data-gdp` e sua `.bar` correspondente devem estar alinhados com o seu valor correspondente no eixo y.
 
 **História de usuário nº 12:** eu posso passar o mouse sobre uma área e ver uma dica com uma `id="tooltip"` correspondente, que exibe mais informações sobre a área.
 

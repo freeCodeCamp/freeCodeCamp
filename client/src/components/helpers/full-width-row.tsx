@@ -6,15 +6,16 @@ interface FullWidthRowProps {
   className?: string;
 }
 
-const FullWidthRow = ({ children, className }: FullWidthRowProps) => {
-  return (
-    <Row className={className}>
-      <Col sm={8} smOffset={2} xs={12}>
-        {children}
-      </Col>
-    </Row>
-  );
-};
+const FullWidthRow = ({
+  children,
+  className
+}: FullWidthRowProps): JSX.Element => (
+  <Row className={className}>
+    <Col sm={8} smOffset={2} xs={12}>
+      {children}
+    </Col>
+  </Row>
+);
 
 FullWidthRow.displayName = 'FullWidthRow';
 

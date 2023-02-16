@@ -21,7 +21,7 @@ dashedName: global-scope-and-functions
 
 # --hints--
 
-`myGlobal` потрібно визначити
+`myGlobal` повинна бути визначеною
 
 ```js
 assert(typeof myGlobal != 'undefined');

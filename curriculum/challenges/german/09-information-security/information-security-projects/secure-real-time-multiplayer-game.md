@@ -12,7 +12,7 @@ Entwickle ein 2D-Echtzeit-Multiplayer-Spiel mit der HTML-Canvas-API und Socket.i
 
 -   Klone <a href="https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">dieses GitHub repo</a> und vervollständige dein Projekt lokal.
 -   Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starter-Projekt</a>, um dein Projekt zu vervollständigen.
--   Verwende einen Site Builder deiner Wahl, um das Projekt fertigzustellen. Achte darauf, alle Dateien aus unserem GitHub Repo zu integrieren.
+-   Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
 
 Wenn du Replit verwendest, folge diesen Schritten, um das Projekt einzurichten:
 

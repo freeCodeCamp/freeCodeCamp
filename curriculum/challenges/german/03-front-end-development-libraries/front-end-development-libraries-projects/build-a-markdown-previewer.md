@@ -26,7 +26,7 @@ Du kannst jede Mischung aus HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux
 
 **User Story #6:** Wenn mein Markdown-Previewer zum ersten Mal geladen wird, sollte das Standard-Markdown im `#editor`-Feld als HTML im `#preview`-Element dargestellt werden.
 
-**Optionaler Bonus (du musst diesen Test nicht bestehen):** Mein Markdown-Previewer interpretiert Zeilenumbrüche und gibt sie als `br` (Zeilenumbruch) Elemente aus.
+**Optional Bonus (you do not need to make this test pass):** My markdown previewer interprets carriage returns and renders them as `br` (line break) elements.
 
 Du kannst dein Projekt aufbauen, indem du <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">diese CodePen-Vorlage</a> verwendest und auf `Save` klickst, um deinen eigenen Pen zu erstellen. Oder du kannst diesen CDN-Link verwenden, um die Tests in jeder beliebigen Umgebung auszuführen: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 

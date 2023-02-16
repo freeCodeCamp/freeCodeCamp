@@ -36,7 +36,7 @@ return "Yes";
 
 # --instructions--
 
-Об'єднайте дві інструкції `if` в одну інструкцію, яка поверне рядок `Outside`, якщо `val` не знаходиться між `10` та `20` (включно). В іншому випадку поверніть рядок `Inside`.
+Об’єднайте дві інструкції `if` в одну інструкцію, яка поверне рядок `Outside`, якщо `val` не знаходиться між `10` та `20` (включно). В іншому випадку поверніть рядок `Inside`.
 
 # --hints--
 
@@ -52,49 +52,49 @@ assert(code.match(/\|\|/g).length === 1);
 assert(code.match(/if/g).length === 1);
 ```
 
-`testLogicalOr(0)` повинен повертати рядок `Outside`
+`testLogicalOr(0)` має повертати рядок `Outside`
 
 ```js
 assert(testLogicalOr(0) === 'Outside');
 ```
 
-`testLogicalOr(9)` повинен повертати рядок `Outside`
+`testLogicalOr(9)` має повертати рядок `Outside`
 
 ```js
 assert(testLogicalOr(9) === 'Outside');
 ```
 
-`testLogicalOr(10)` повинен повертати рядок `Inside`
+`testLogicalOr(10)` має повертати рядок `Inside`
 
 ```js
 assert(testLogicalOr(10) === 'Inside');
 ```
 
-`testLogicalOr(15)` повинен повертати рядок `Inside`
+`testLogicalOr(15)` має повертати рядок `Inside`
 
 ```js
 assert(testLogicalOr(15) === 'Inside');
 ```
 
-`testLogicalOr(19)` повинен повертати рядок `Inside`
+`testLogicalOr(19)` має повертати рядок `Inside`
 
 ```js
 assert(testLogicalOr(19) === 'Inside');
 ```
 
-`testLogicalOr(20)` повинен повертати рядок `Inside`
+`testLogicalOr(20)` має повертати рядок `Inside`
 
 ```js
 assert(testLogicalOr(20) === 'Inside');
 ```
 
-`testLogicalOr(21)` повинен повертати рядок `Outside`
+`testLogicalOr(21)` має повертати рядок `Outside`
 
 ```js
 assert(testLogicalOr(21) === 'Outside');
 ```
 
-`testLogicalOr(25)` повинен повертати рядок `Outside`
+`testLogicalOr(25)` має повертати рядок `Outside`
 
 ```js
 assert(testLogicalOr(25) === 'Outside');

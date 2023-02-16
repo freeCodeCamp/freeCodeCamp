@@ -813,12 +813,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     // has changed or if content is dragged between regions)
 
     const coveringRange = getLinesCoveringEditableRegion();
-    const editableRegionBoundaries =
-      (coveringRange && [
-        coveringRange.startLineNumber - 1,
-        coveringRange.endLineNumber + 1
-      ]) ??
-      undefined;
+    const editableRegionBoundaries = coveringRange
+      ? [coveringRange.startLineNumber - 1, coveringRange.endLineNumber + 1]
+      : [];
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (player.current.sampler?.loaded && player.current.shouldPlay) {

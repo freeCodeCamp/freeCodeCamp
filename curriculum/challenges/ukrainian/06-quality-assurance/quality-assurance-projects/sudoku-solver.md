@@ -352,7 +352,7 @@ async (getUserInput) => {
 };
 ```
 
-All 12 unit tests are complete and passing.
+Усі 12 модульних тестів завершено та успішно пройдено.
 
 ```js
 async (getUserInput) => {
@@ -377,7 +377,7 @@ async (getUserInput) => {
 };
 ```
 
-All 14 functional tests are complete and passing.
+Усі 14 функціональних тестів завершено та успішно пройдено.
 
 ```js
 async (getUserInput) => {

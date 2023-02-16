@@ -27,7 +27,7 @@ $$ T = 2 \pi \sqrt{\frac{a^{3}}{\mu}} $$
 
 # --hints--
 
-`orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])` повинен повертати `[{name: "sputnik", orbitalPeriod: 86400}]`.
+`orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])` має повертати `[{name: "sputnik", orbitalPeriod: 86400}]`.
 
 ```js
 assert.deepEqual(orbitalPeriod([{ name: 'sputnik', avgAlt: 35873.5553 }]), [
@@ -35,7 +35,7 @@ assert.deepEqual(orbitalPeriod([{ name: 'sputnik', avgAlt: 35873.5553 }]), [
 ]);
 ```
 
-`orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])` повинен повертати `[{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]`.
+`orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])` має повертати `[{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]`.
 
 ```js
 assert.deepEqual(

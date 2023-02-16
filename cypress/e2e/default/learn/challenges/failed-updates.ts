@@ -1,5 +1,5 @@
 import store from 'store';
-import { ChallengeData } from '../../../../../tools/challenge-editor/api/interfaces/ChallengeData';
+import { ChallengeData } from '../../../../../tools/challenge-editor/api/interfaces/challenge-data';
 
 const failedUpdates = [
   {

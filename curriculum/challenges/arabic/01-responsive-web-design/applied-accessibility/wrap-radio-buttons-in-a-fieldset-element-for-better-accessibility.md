@@ -1,6 +1,6 @@
 ---
 id: 587d778b367417b2b2512aa7
-title: Wrap Radio Buttons in a fieldset Element for Better Accessibility
+title: تغليف Radio Buttons داخل fieldset لتحسينا لإمكانيه الوصول
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVefw'
 forumTopicId: 301030
@@ -9,13 +9,13 @@ dashedName: wrap-radio-buttons-in-a-fieldset-element-for-better-accessibility
 
 # --description--
 
-The next form topic covers the accessibility of radio buttons. Each choice is given a `label` with a `for` attribute tying to the `id` of the corresponding item as covered in the last challenge. Since radio buttons often come in a group where the user must choose one, there's a way to semantically show the choices are part of a set.
+يغطي الموضوع التالي إمكانية الوصول إلى أزرار الاختيار في النموذج. كل اختيار يعطى `label` وله سمة `for` مرتبطة بـسمة `id` في العنصر المقابل, كما هو مشمول في التحدي الأخير. نظرًا لأن أزرار الراديو (radio buttons) غالبا ما تأتي في مجموعات حيث يجب على المستخدم أن يختار زر واحد فقط من المجموعة، هناك طريقة لإظهار الخيارات بشكل لُغَوي أنها فعلا جزء من نفس المجموعة.
 
-The `fieldset` tag surrounds the entire grouping of radio buttons to achieve this. It often uses a `legend` tag to provide a description for the grouping, which screen readers read for each choice in the `fieldset` element.
+يحيط علامة (tag) `fieldset` بكامل مجموعة الأزرار الراديو ( radio buttons) لتحقيق ذلك. غالبا ما تستخدم علامة (tag) `legend` لتقديم وصف للمجموعة، أي قارئ الشاشة (screen readers) سيقرأ كل اختيار في عنصر `fieldset`.
 
-The `fieldset` wrapper and `legend` tag are not necessary when the choices are self-explanatory, like a gender selection. Using a `label` with the `for` attribute for each radio button is sufficient.
+العلامة `fieldset` و `legend` ليست ضرورية عندما تكون الاختيارات غنية عن التفسير، مثل اختيار نوع الجنس. استخدام `label` مع سمة `for` لكل زر راديو هو كاف.
 
-Here's an example:
+إليك مثال:
 
 ```html
 <form>
@@ -33,17 +33,17 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons and learned from our last lesson to use `label` tags with `for` attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the `div` tag surrounding the radio buttons to a `fieldset` tag, and change the `p` tag inside it to a `legend`.
+يريد Camper Cat معلومات عن مستوى النينجا لمستخدميه عند تسجيلهم لقائمة بريده الإلكتروني. لقد أضاف مجموعة من أزرار الراديو وتعلمنا من درسنا الأخير استخدام علامات `label` مع سمات `for` لكل اختيار. اذهب يا Camper Cat! However, his code still needs some help. تغيير علامة `div` الذي يحيط بأزرار الراديو إلى علامة `fieldset`، و قم بتغيير علامة `p` بداخلها إلى `legend`.
 
 # --hints--
 
-Your code should have a `fieldset` tag around the radio button set.
+يجب أن يكون الكود الخاص بك فيه علامة `fieldset` حول مجموعة أزرار الراديو.
 
 ```js
 assert($('fieldset').length == 1);
 ```
 
-The `fieldset` element should have a closing tag.
+يجب أن يكون لعلامة `fieldset` علامة اغلاق أيضا.
 
 ```js
 assert(
@@ -52,19 +52,19 @@ assert(
 );
 ```
 
-Your code should have a `legend` tag around the text asking what level ninja a user is.
+يجب أن يحتوي الكود الخاصة بك على علامة `legend` حول النص الذي يسأل عن مستوى النينجا للمستخدم.
 
 ```js
 assert($('legend').length == 1);
 ```
 
-Your code should not have any `div` tags.
+يجب ألا يحتوي الكود الخاص بك على أي علامة `div`.
 
 ```js
 assert($('div').length == 0);
 ```
 
-Your code should no longer have a `p` tag around the text asking what level ninja a user is.
+يجب ألا يحتوي الكود الخاصة بك على علامة `p` حول النص الذي يسأل عن مستوى النينجا للمستخدم.
 
 ```js
 assert($('p').length == 4);
