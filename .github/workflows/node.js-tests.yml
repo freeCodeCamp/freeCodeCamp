@@ -61,7 +61,7 @@ jobs:
       # currently, built as workspaces.
       - name: Lint Source Files
         run: |
-          echo npm version $(npm -v)
+          echo pnpm version $(pnpm -v)
           pnpm install
           pnpm run create:config
           npm i --prefix=curriculum-server
