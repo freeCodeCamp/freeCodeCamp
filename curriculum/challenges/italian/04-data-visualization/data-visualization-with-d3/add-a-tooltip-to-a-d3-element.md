@@ -8,7 +8,7 @@ dashedName: add-a-tooltip-to-a-d3-element
 
 # --description--
 
-Un suggerimento (tooltip) mostra maggiori informazioni su un elemento in una pagina quando l'utente passa sopra di esso. Ci sono diversi modi per aggiungere un suggerimento a una visualizzazione, questa sfida utilizza l'elemento SVG `title`.
+Un suggerimento (tooltip) mostra maggiori informazioni su un elemento in una pagina quando l'utente passa sopra di esso. Ci sono diversi modi per aggiungere un suggerimento a una visualizzazione. Questa sfida utilizza l'elemento SVG `title`.
 
 `title` va in coppia con il metodo `text()` per aggiungere dinamicamente dati alle barre.
 

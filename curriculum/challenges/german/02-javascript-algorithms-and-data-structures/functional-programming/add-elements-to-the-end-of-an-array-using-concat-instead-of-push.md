@@ -8,16 +8,16 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 # --description--
 
-Bei funktionalem Programmieren geht es um das Erstellen und Benutzen von nicht mutierenden Funktionen.
+Functional programming is all about creating and using non-mutating functions.
 
-The last challenge introduced the `concat` method as a way to merge arrays into a new array without mutating the original arrays. Vergleiche die `concat`- mit der `push`-Methode. `push` adds items to the end of the same array it is called on, which mutates that array. Hier ist ein Beispiel:
+In der letzten Aufgabe wurde die `concat`-Methode als eine Möglichkeit vorgestellt, Arrays zu einem neuen Array zusammenzuführen, ohne die ursprünglichen Arrays zu verändern. Vergleiche die `concat`- mit der `push`-Methode. `push` adds items to the end of the same array it is called on, which mutates that array. Hier ist ein Beispiel:
 
 ```js
 const arr = [1, 2, 3];
 arr.push(4, 5, 6);
 ```
 
-`arr` hätte nun den modifizierten Wert `[1, 2, 3, 4, 5, 6]`, was nicht dem praktischen Programmierweg entspricht.
+`arr` would have a modified value of `[1, 2, 3, 4, 5, 6]`, which is not the functional programming way.
 
 `concat` offers a way to merge new items to the end of an array without any mutating side effects.
 
@@ -27,25 +27,25 @@ Change the `nonMutatingPush` function so it uses `concat` to merge `newItem` to 
 
 # --hints--
 
-Dein Code sollte die `concat` Methode verwenden.
+Dein Code sollte die `concat`-Methode verwenden.
 
 ```js
 assert(code.match(/\.concat/g));
 ```
 
-Dein Code sollte nicht die `push` Methode verwenden.
+Dein Code sollte nicht die `push`-Methode verwenden.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?push/g));
 ```
 
-Das `first` Array sollte sich nicht ändern.
+The `first` array should not change.
 
 ```js
 assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
 ```
 
-Das `second` Array sollte sich nicht ändern.
+The `second` array should not change.
 
 ```js
 assert(JSON.stringify(second) === JSON.stringify([4, 5]));

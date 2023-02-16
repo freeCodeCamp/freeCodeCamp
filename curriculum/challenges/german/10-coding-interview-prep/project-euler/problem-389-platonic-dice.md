@@ -8,21 +8,21 @@ dashedName: problem-389-platonic-dice
 
 # --description--
 
-An unbiased single 4-sided die is thrown and its value, $T$, is noted.
+Ein gewöhnlicher 4-seitiger Würfel wird geworfen und sein Wert, $T$, wird notiert.
 
-$T$ unbiased 6-sided dice are thrown and their scores are added together. The sum, $C$, is noted.
+$T$ gewöhnliche 6-seitige Würfel werden geworfen und ihre Ergebnisse werden addiert. Die Summe, $C$, wird notiert.
 
-$C$ unbiased 8-sided dice are thrown and their scores are added together. The sum, $O$, is noted.
+$C$ gewöhnliche 8-seitige Würfel werden geworfen und ihre Ergebnisse werden addiert. Die Summe, $O$, wird notiert.
 
-$O$ unbiased 12-sided dice are thrown and their scores are added together. The sum, $D$, is noted.
+$O$ gewöhnliche 12-seitige Würfel werden geworfen und ihre Ergebnisse werden addiert. Die Summe, $D$, wird notiert.
 
-$D$ unbiased 20-sided dice are thrown and their scores are added together. The sum, $I$, is noted.
+$D$ gewöhnliche 20-seitige Würfel werden geworfen und ihre Ergebnisse werden addiert. Die Summe, $I$, wird notiert.
 
-Find the variance of $I$, and give your answer rounded to 4 decimal places.
+Ermittle die Varianz von $I$, und gib deine Antwort auf 4 Dezimalstellen gerundet an.
 
 # --hints--
 
-`platonicDice()` should return `2406376.3623`.
+`platonicDice()` sollte `2406376.3623` zurückgeben.
 
 ```js
 assert.strictEqual(platonicDice(), 2406376.3623);
