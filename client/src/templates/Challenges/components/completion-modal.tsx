@@ -24,10 +24,9 @@ import {
   challengeFilesSelector,
   challengeMetaSelector
 } from '../redux/selectors';
-import CompletionModalBody from './completion-modal-body';
 import { Share } from '../../../components/share';
+import CompletionModalBody from './completion-modal-body';
 import './completion-modal.css';
-
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -315,9 +314,10 @@ class CompletionModalInner extends Component<
               {t('learn.download-solution')}
             </Button>
           ) : null}
-          {currentBlockIds && currentBlockIds[currentBlockIds.length - 1] === id && (
-            <Share superBlock={superBlock} block={block} />
-          )}
+          {currentBlockIds &&
+            currentBlockIds[currentBlockIds.length - 1] === id && (
+              <Share superBlock={superBlock} block={block} />
+            )}
         </Modal.Footer>
       </Modal>
     );

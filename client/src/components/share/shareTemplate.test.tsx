@@ -1,6 +1,6 @@
 import React from 'react';
-import { ShareTemplate } from './shareTemplate';
 import { render, fireEvent, screen } from '@testing-library/react';
+import { ShareTemplate } from './shareTemplate';
 
 test('share template snapshot before copied', () => {
   render(<ShareTemplate handleClick={jest.fn()} isCopied={false} />);
@@ -16,7 +16,7 @@ test('share template snapshot after copied', () => {
 
 test('testing share templete when isCopied false', () => {
   const clickFn = jest.fn();
-  let isCopied = false;
+  const isCopied = false;
   render(<ShareTemplate handleClick={clickFn} isCopied={isCopied} />);
 
   const isCopyToShareButtonExists = screen.getByText(
@@ -28,7 +28,7 @@ test('testing share templete when isCopied false', () => {
 });
 
 test('testing share templete when isCopied true', () => {
-  let isCopied = true;
+  const isCopied = true;
   const clickFn = jest.fn();
   render(<ShareTemplate handleClick={clickFn} isCopied={isCopied} />);
 
