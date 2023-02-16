@@ -66,13 +66,13 @@ const standardSuccessMessage = {
   message: 'flash.updated-preferences'
 };
 
-const createStandardHandler = (req, res, next, alertMessage) => err => {
-  if (err) {
-    res.status(500).json(standardErrorMessage);
-    return next(err);
-  }
-  return res.status(200).json(alertMessage || standardSuccessMessage);
-};
+// const createStandardHandler = (req, res, next, alertMessage) => err => {
+//   if (err) {
+//     res.status(500).json(standardErrorMessage);
+//     return next(err);
+//   }
+//   return res.status(200).json(alertMessage);
+// };
 
 const updateMyEmailValidators = [
   check('email').isEmail().withMessage('Email format is invalid.')
@@ -135,11 +135,13 @@ function updateMyProfileUI(req, res, next) {
     user,
     body: { profileUI }
   } = req;
-  user.updateAttribute(
-    'profileUI',
-    profileUI,
-    createStandardHandler(req, res, next)
-  );
+  user.updateAttribute('profileUI', profileUI, err => {
+    if (err) {
+      res.status(500).json(standardErrorMessage);
+      return next(err);
+    }
+    return res.status(200).json(standardErrorMessage);
+  });
 }
 
 function updateMyAbout(req, res, next) {
@@ -152,10 +154,13 @@ function updateMyAbout(req, res, next) {
   const update = isURL(picture, { require_protocol: true })
     ? { name, location, about, picture }
     : { name, location, about };
-  return user.updateAttributes(
-    update,
-    createStandardHandler(req, res, next, 'flash.update-about-me')
-  );
+  return user.updateAttributes(update, err => {
+    if (err) {
+      res.status(500).json(standardErrorMessage);
+      return next(err);
+    }
+    return res.status(200).json('flash.update-about-me');
+  });
 }
 
 function createUpdateMyUsername(app) {
@@ -283,11 +288,13 @@ function updateMyQuincyEmail(...args) {
   const buildUpdate = body => _.pick(body, 'sendQuincyEmail');
   const validate = ({ sendQuincyEmail }) =>
     typeof sendQuincyEmail === 'boolean';
-  createUpdateUserProperties({
-    buildUpdate,
-    validate,
-    successMessage: 'flash.subscribe-to-quincy-updated'
-  })(...args);
+  createUpdateUserProperties(
+    {
+      buildUpdate,
+      validate,
+      successMessage: 'flash.subscribe-to-quincy-updated'
+    }(...args)
+  );
 }
 
 function createUpdateUserProperties({ buildUpdate, validate, successMessage }) {
@@ -295,10 +302,13 @@ function createUpdateUserProperties({ buildUpdate, validate, successMessage }) {
     const { user, body } = req;
     const update = buildUpdate(body);
     if (validate(update)) {
-      user.updateAttributes(
-        update,
-        createStandardHandler(req, res, next, successMessage)
-      );
+      user.updateAttributes(update, err => {
+        if (err) {
+          res.status(500).json(standardErrorMessage);
+          return next(err);
+        }
+        return res.status(200).json(successMessage);
+      });
     } else {
       handleInvalidUpdate(res);
     }
@@ -325,7 +335,13 @@ function updateUserFlag(req, res, next) {
     'website'
   ];
   if (Object.keys(update).every(key => allowedKeys.includes(key))) {
-    return user.updateAttributes(update, createStandardHandler(req, res, next));
+    return user.updateAttributes(update, err => {
+      if (err) {
+        res.status(500).json(standardErrorMessage);
+        return next(err);
+      }
+      return res.status(200).json(standardSuccessMessage);
+    });
   }
   return res.status(403).json({
     type: 'danger',
