@@ -98,8 +98,7 @@
   },
   "dependencies": {
     "dotenv": "16.0.3",
-    "invariant": "2.2.4",
-    "semver": "^7.3.8"
+    "invariant": "2.2.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",
