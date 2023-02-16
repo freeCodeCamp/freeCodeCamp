@@ -1,5 +1,5 @@
 ---
-id: 63ecc5679bf07d8217f0bc2a
+id: 63ee352b0d8d4841c3a7091c
 videoId: LGQuIIv2RVA
 title: CSS Foundations Question C
 challengeType: 15
@@ -7,79 +7,83 @@ dashedName: css-foundations-question-c
 ---
 # --description--
 
-Another way to use selectors is to chain them as a list without any separation. Let’s say we had the following HTML:
-
-```html
-<div>
-  <div class="subsection header">Latest Posts</div>
-  <p class="subsection preview">This is where a preview for a post might go.</p>
-</div>
-```
-
-We have two elements with the `subsection` class that have some sort of unique styles, but what if we only want to apply a separate rule to the element that also has `header` as a second class? Well, we could chain both the `class` selectors together in our `CSS` like so:
+What if we have two groups of elements that share some of their style declarations?
 
 ```css
-.subsection.header {
-  color: red;
+.read {
+  color: white;
+  background-color: black;
+  /* several unique declarations */
+}
+
+.unread {
+  color: white;
+  background-color: black;
+  /* several unique declarations */
 }
 ```
 
-What `.subsection.header` does is it selects any element that has both the `subsection` and `header` classes. Notice how there isn’t any space between the `.subsection` and `.header` `class` selectors. This syntax basically works for chaining any combination of selectors, except for chaining more than one type selector.
-
-This can also be used to chain a class and an ID, as shown below:
-
-```html
-<div>
-  <div class="subsection header">Latest Posts</div>
-  <p class="subsection" id="preview">This is where a preview for a post might go.</p>
-</div>
-```
-
-You can take the two elements above and combine them with the following:
+Both our `.read` and `.unread` selectors share the `color: white;` and `background-color: black;` declarations, but otherwise have several of their own unique declarations. To cut down on the repetition, we can group these two selectors together as a comma-separated list:
 
 ```css
-.subsection.header {
-  color: red;
+.read,
+.unread {
+  color: white;
+  background-color: black;
 }
 
-.subsection#preview {
-  color: blue;
+.read {
+  /* several unique declarations */
+}
+
+.unread {
+  /* several unique declarations */
 }
 ```
 
-In general, you can’t chain more than one type selector since an element can’t be two different types at once. For example, chaining two type selectors like `div` and `p` would give us the selector `divp`, which wouldn’t work since the selector would try to find a literal `<divp>` element, which doesn’t exist.
+Both of the examples above (with and without grouping) will have the same result, but the second example reduces the repetition of declarations and makes it easier to edit either the `color` or `background-color` for both classes at once.
 
 # --question--    
 
 ## --text--
 
-Given an element that has an ID of `title` and a class of `primary`, how would you use both attributes for a single rule?
+How would you apply a single rule to two different selectors, `.red-box` and `.yellow-box`?
 
 ## --answers--
 
 ```css
-.title.primary {
-  ...
+.red-box,
+.yellow-box {
+  width: 25px;
+  height: 25px;
 }
 ```
 
 ---
 
 ```css
-.title > primary {
-  ...
+.red-box {
+  width: 25px;
+  height: 25px;
+}
+
+.yellow-box {
+  width: 25px;
+  height: 25px;
 }
 ```
 
 ---
 
 ```css
-#title.primary { 
-  ...
+.red-box { 
+  width: 25px;
+  .yellow-box {
+    height: 25px;
+  }
 }
 ```
-
 
 ## --video-solution--
 
-3
+1

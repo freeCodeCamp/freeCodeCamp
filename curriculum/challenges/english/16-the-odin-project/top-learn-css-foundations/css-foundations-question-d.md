@@ -1,5 +1,5 @@
 ---
-id: 63ecc5829bf07d8217f0bc2b
+id: 63ee35300d8d4841c3a7091d
 videoId: LGQuIIv2RVA
 title: CSS Foundations Question D
 challengeType: 15
@@ -7,52 +7,77 @@ dashedName: css-foundations-question-d
 ---
 # --description--
 
-Combinators allow us to combine multiple selectors differently than either grouping or chaining them, as they show a relationship between the selectors. There are four types of combinators in total, but for right now we’re going to only show you the descendant combinator, which is represented in `CSS` by a single space between selectors. A descendant combinator will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc) that matches the previous selector.
-
-So something like `.ancestor .child` would select an element with the class `child` if it has an ancestor with the class `ancestor`. Another way to think of it is child will only be selected if it is nested inside of `ancestor`, no matter how deep. Take a quick look at the example below and see if you can tell which elements would be selected based on the `CSS` rule provided:
+Another way to use selectors is to chain them as a list without any separation. Let’s say we had the following HTML:
 
 ```html
-<!-- index.html -->
-
-<div class="ancestor"> <!-- A -->
-  <div class="contents"> <!-- B -->
-    <div class="contents"> <!-- C -->
-    </div>
-  </div>
+<div>
+  <div class="subsection header">Latest Posts</div>
+  <p class="subsection preview">This is where a preview for a post might go.</p>
 </div>
-
-<div class="contents"></div> <!-- D -->
 ```
 
-```css
-/* styles.css */
+We have two elements with the `subsection` class that have some sort of unique styles, but what if we only want to apply a separate rule to the element that also has `header` as a second class? Well, we could chain both the `class` selectors together in our `CSS` like so:
 
-.ancestor .contents {
-  /* some declarations */
+```css
+.subsection.header {
+  color: red;
 }
 ```
 
-In the above example, the first two elements with the `contents` class (`B` and `C`) would be selected, but that last element (`D`) won’t be. Was your guess correct?
+What `.subsection.header` does is it selects any element that has both the `subsection` and `header` classes. Notice how there isn’t any space between the `.subsection` and `.header` `class` selectors. This syntax basically works for chaining any combination of selectors, except for chaining more than one type selector.
 
-There’s really no limit to how many combinators you can add to a rule, so `.one .two .three .four` would be totally valid. This would just select an element that has a class of `four` if it has an ancestor with a class of `three`, and if that ancestor has its own ancestor with a class of `two`, and so on. You generally want to avoid trying to select elements that need this level of nesting, though, as it can get pretty confusing and long, and it can cause issues when it comes to specificity.
+This can also be used to chain a class and an ID, as shown below:
+
+```html
+<div>
+  <div class="subsection header">Latest Posts</div>
+  <p class="subsection" id="preview">This is where a preview for a post might go.</p>
+</div>
+```
+
+You can take the two elements above and combine them with the following:
+
+```css
+.subsection.header {
+  color: red;
+}
+
+.subsection#preview {
+  color: blue;
+}
+```
+
+In general, you can’t chain more than one type selector since an element can’t be two different types at once. For example, chaining two type selectors like `div` and `p` would give us the selector `divp`, which wouldn’t work since the selector would try to find a literal `<divp>` element, which doesn’t exist.
 
 # --question--    
 
 ## --text--
 
-What does the descendant combinator do?
+Given an element that has an ID of `title` and a class of `primary`, how would you use both attributes for a single rule?
 
 ## --answers--
 
-It groups certain classes together which share the same declarations.
+```css
+.title.primary {
+  ...
+}
+```
 
 ---
 
-It gives the ability to select an element that shares the same `class` and `id`.
+```css
+.title > primary {
+  ...
+}
+```
 
 ---
 
-It allows you to select an element based on its relationship with its ancestor (parent, grandparent, and so on).
+```css
+#title.primary { 
+  ...
+}
+```
 
 
 ## --video-solution--

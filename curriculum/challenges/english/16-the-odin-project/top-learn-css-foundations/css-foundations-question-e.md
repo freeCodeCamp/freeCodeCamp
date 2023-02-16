@@ -1,5 +1,5 @@
 ---
-id: 63ecc5909bf07d8217f0bc2c
+id: 63ee35370d8d4841c3a7091e
 videoId: LGQuIIv2RVA
 title: CSS Foundations Question E
 challengeType: 15
@@ -7,40 +7,54 @@ dashedName: css-foundations-question-e
 ---
 # --description--
 
-Okay, we went over quite a bit so far. The only thing left for now is to go over how to add all this CSS to our HTML. There are three methods to do so.
+Combinators allow us to combine multiple selectors differently than either grouping or chaining them, as they show a relationship between the selectors. There are four types of combinators in total, but for right now we’re going to only show you the descendant combinator, which is represented in `CSS` by a single space between selectors. A descendant combinator will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc) that matches the previous selector.
 
-External `CSS` is the most common method you will come across, and it involves creating a separate file for the `CSS` and linking it inside of an `HTML`’s opening and closing `<head>` tags with a self-closing `<link>` element:
+So something like `.ancestor .child` would select an element with the class `child` if it has an ancestor with the class `ancestor`. Another way to think of it is child will only be selected if it is nested inside of `ancestor`, no matter how deep. Take a quick look at the example below and see if you can tell which elements would be selected based on the `CSS` rule provided:
 
-First, we add a self-closing `<link>` element inside of the opening and closing `<head>` tags of the HTML file. The `href` attribute is the location of the `CSS` file, either an absolute `URL` or, what you’ll be utilizing, a `URL` relative to the location of the `HTML` file. In our example above, we are assuming both files are located in the same directory. The `rel` attribute is required, and it specifies the relationship between the `HTML` file and the linked file.
+```html
+<!-- index.html -->
 
-Then inside of the newly created `styles.css` file, we have the selector (the `div` and `p`), followed by a pair of opening and closing curly braces, which create a “declaration block”. Finally, we place any declarations inside of the declaration block. `color: white; ` is one declaration, with `color` being the property and `white` being the value, and `background-color: black;` is another declaration.
+<div class="ancestor"> <!-- A -->
+  <div class="contents"> <!-- B -->
+    <div class="contents"> <!-- C -->
+    </div>
+  </div>
+</div>
 
-A note on file names: `styles.css` is just what we went with as the file name here. You can name the file whatever you want as long as the file type is `.css`, though “style” or “styles” is most commonly used.
+<div class="contents"></div> <!-- D -->
+```
 
-A couple of the pros to this method are:
+```css
+/* styles.css */
 
-1. It keeps our `HTML` and `CSS` separated, which results in the HTML file being smaller and making things look cleaner.
-2. We only need to edit the `CSS` in one place, which is especially handy for websites with many pages that all share similar styles.
+.ancestor .contents {
+  /* some declarations */
+}
+```
+
+In the above example, the first two elements with the `contents` class (`B` and `C`) would be selected, but that last element (`D`) won’t be. Was your guess correct?
+
+There’s really no limit to how many combinators you can add to a rule, so `.one .two .three .four` would be totally valid. This would just select an element that has a class of `four` if it has an ancestor with a class of `three`, and if that ancestor has its own ancestor with a class of `two`, and so on. You generally want to avoid trying to select elements that need this level of nesting, though, as it can get pretty confusing and long, and it can cause issues when it comes to specificity.
 
 # --question--    
 
 ## --text--
 
-Which of the following best describes the purpose of the `rel` attribute in the `<link>` element when linking an external `CSS` file to an `HTML` file?
+What does the descendant combinator do?
 
 ## --answers--
 
-It specifies the location of the `CSS` file relative to the location of the `HTML` file.
+It groups certain classes together which share the same declarations.
 
 ---
 
-It specifies the relationship between the `HTML` file and the linked file.
+It gives the ability to select an element that shares the same `class` and `id`.
 
 ---
 
-It specifies the type of file being linked (e.g. "stylesheet").
+It allows you to select an element based on its relationship with its ancestor (parent, grandparent, and so on).
 
 
 ## --video-solution--
 
-2
+3

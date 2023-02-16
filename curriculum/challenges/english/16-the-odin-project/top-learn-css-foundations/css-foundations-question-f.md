@@ -1,53 +1,46 @@
 ---
-id: 63ecc7159bf07d8217f0bc2d
+id: 63ee353e0d8d4841c3a7091f
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question F
+title: CSS Foundations Question f
 challengeType: 15
 dashedName: css-foundations-question-f
 ---
 # --description--
 
-Internal `CSS` (or embedded `CSS`) involves adding the `CSS` within the `HTML` file itself instead of creating a completely separate file. With the internal method, you place all the rules inside of a pair of opening and closing `<style>` tags, which are then placed inside of the opening and closing `<head>` tags of your HTML file. Since the styles are being placed directly inside of the `<head>` tags, we no longer need a `<link>` element that the external method requires.
+Okay, we went over quite a bit so far. The only thing left for now is to go over how to add all this CSS to our HTML. There are three methods to do so.
 
-Besides these differences, the syntax is exactly the same as the external method (selector, curly braces, declarations):
+External `CSS` is the most common method you will come across, and it involves creating a separate file for the `CSS` and linking it inside of an `HTML`’s opening and closing `<head>` tags with a self-closing `<link>` element:
 
-```html
-<head>
-  <style>
-    div {
-      color: white;
-      background-color: black;
-    }
+First, we add a self-closing `<link>` element inside of the opening and closing `<head>` tags of the HTML file. The `href` attribute is the location of the `CSS` file, either an absolute `URL` or, what you’ll be utilizing, a `URL` relative to the location of the `HTML` file. In our example above, we are assuming both files are located in the same directory. The `rel` attribute is required, and it specifies the relationship between the `HTML` file and the linked file.
 
-    p {
-      color: red;
-    }
-  </style>
-</head>
-<body>...</body>
-```
+Then inside of the newly created `styles.css` file, we have the selector (the `div` and `p`), followed by a pair of opening and closing curly braces, which create a “declaration block”. Finally, we place any declarations inside of the declaration block. `color: white; ` is one declaration, with `color` being the property and `white` being the value, and `background-color: black;` is another declaration.
 
-This method can be useful for adding unique styles to a single page of a website, but it doesn’t keep things separate like the external method, and depending on how many rules and declarations there are it can cause the `HTML` file to get pretty big.
+A note on file names: `styles.css` is just what we went with as the file name here. You can name the file whatever you want as long as the file type is `.css`, though “style” or “styles” is most commonly used.
+
+A couple of the pros to this method are:
+
+1. It keeps our `HTML` and `CSS` separated, which results in the HTML file being smaller and making things look cleaner.
+2. We only need to edit the `CSS` in one place, which is especially handy for websites with many pages that all share similar styles.
 
 # --question--    
 
 ## --text--
 
-Which of the following is a difference between internal and external CSS methods?
+Which of the following best describes the purpose of the `rel` attribute in the `<link>` element when linking an external `CSS` file to an `HTML` file?
 
 ## --answers--
 
-The external method places `CSS` rules in a separate file, while the internal method places `CSS` rules within the `HTML` file itself.
+It specifies the location of the `CSS` file relative to the location of the `HTML` file.
 
 ---
 
-The internal method keeps `CSS` separate from `HTML`, while the external method embeds `CSS` directly in HTML.
+It specifies the relationship between the `HTML` file and the linked file.
 
 ---
 
-The internal method uses `<link>` element to link `CSS` to `HTML`, while the external method embeds `CSS` directly in `HTML`.
+It specifies the type of file being linked (e.g. "stylesheet").
 
 
 ## --video-solution--
 
-1
+2

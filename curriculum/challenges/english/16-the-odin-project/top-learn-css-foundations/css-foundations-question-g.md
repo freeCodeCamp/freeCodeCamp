@@ -1,5 +1,5 @@
 ---
-id: 63ece39b9bf07d8217f0bc2e
+id: 63ee35450d8d4841c3a70920
 videoId: LGQuIIv2RVA
 title: CSS Foundations Question g
 challengeType: 15
@@ -7,41 +7,47 @@ dashedName: css-foundations-question-g
 ---
 # --description--
 
-Inline `CSS` makes it possible to add styles directly to `HTML` elements, though this method isn’t as recommended:
+Internal `CSS` (or embedded `CSS`) involves adding the `CSS` within the `HTML` file itself instead of creating a completely separate file. With the internal method, you place all the rules inside of a pair of opening and closing `<style>` tags, which are then placed inside of the opening and closing `<head>` tags of your HTML file. Since the styles are being placed directly inside of the `<head>` tags, we no longer need a `<link>` element that the external method requires.
+
+Besides these differences, the syntax is exactly the same as the external method (selector, curly braces, declarations):
 
 ```html
-<body>
-  <div style="color: white; background-color: black;">...</div>
-</body>
+<head>
+  <style>
+    div {
+      color: white;
+      background-color: black;
+    }
+
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>...</body>
 ```
 
-The first thing to note is that we don’t actually use any selectors here, since the styles are being added directly to the opening `<div>` tag itself. Next, we have the `style` attribute, with its value within the pair of quotation marks being the declarations.
-
-If you need to add a unique style for a single element, this method can work just fine. Generally, though, this isn’t exactly a recommended way for adding `CSS` to `HTML` for a few reasons:
-
-It can quickly become pretty messy once you start adding a lot of declarations to a single element, causing your `HTML` file to become unnecessarily bloated.
-If you want many elements to have the same style, you would have to copy + paste the same style to each individual element, causing lots of unnecessary repetition and more bloat.
-Any inline `CSS` will override the other two methods, which can cause unexpected results. (While we won’t dive into it here, this can actually be taken advantage of).
+This method can be useful for adding unique styles to a single page of a website, but it doesn’t keep things separate like the external method, and depending on how many rules and declarations there are it can cause the `HTML` file to get pretty big.
 
 # --question--    
 
 ## --text--
 
-Which of the following is the main disadvantage of using inline CSS?
+Which of the following is a difference between internal and external CSS methods?
 
 ## --answers--
 
-It can quickly become pretty messy once you start adding a lot of declarations to a single element, causing your `HTML` file to become unnecessarily bloated.
+The external method places `CSS` rules in a separate file, while the internal method places `CSS` rules within the `HTML` file itself.
 
 ---
 
-It requires using selectors, which can be complicated for beginners.
+The internal method keeps `CSS` separate from `HTML`, while the external method embeds `CSS` directly in HTML.
 
 ---
 
-Any inline `CSS` will override the other two methods (internal and external), which can cause unexpected results.
+The internal method uses `<link>` element to link `CSS` to `HTML`, while the external method embeds `CSS` directly in `HTML`.
 
 
 ## --video-solution--
 
-3
+1
