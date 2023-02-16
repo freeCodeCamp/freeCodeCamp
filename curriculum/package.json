@@ -48,13 +48,13 @@
     "joi-objectid": "3.0.1",
     "js-yaml": "4.0.0",
     "jsdom": "16.7.0",
-    "live-server": "1.2.2",
     "lodash": "4.17.21",
     "mocha": "10.2.0",
     "mock-require": "3.0.3",
     "puppeteer": "10.4.0",
     "readdirp": "3.6.0",
     "string-similarity": "4.0.4",
-    "unist-util-visit": "2.0.3"
+    "unist-util-visit": "2.0.3",
+    "@compodoc/live-server": "^1.2.3"
   }
 }
