@@ -1,18 +1,18 @@
 ---
 id: 637f4e7972c65bc8e73dfe2b
 videoId: gW6cBZLUk6M
-title: Working With Text Question E
+title: Questão E de Trabalhando com textos
 challengeType: 15
 dashedName: working-with-text-question-e
 ---
 
 # --description--
 
-You may have noticed that in all the examples in this lesson you indent any elements that are within other elements. This is known as nesting elements.
+Você deve ter notado que em todos os exemplos desta lição, você faz a indentação de elementos que estejam dentro de outros elementos. Isso é conhecido como aninhamento de elementos.
 
-When you nest elements within other elements, you create a parent and child relationship between them. The nested elements are the children and the element they are nested within is the parent.
+Quando você aninha elementos dentro de outros elementos, cria um relacionamento de pai e filho entre eles. Os elementos aninhados são os filhos e o elemento dentro dos quais eles estão aninhados é o pai.
 
-In the following example, the `body` element is the parent and the `p` is the child:
+No exemplo seguinte, `body` é o pai e o elemento `p` é o filho:
 
 ```html
 <html>
@@ -24,9 +24,9 @@ In the following example, the `body` element is the parent and the `p` is the ch
  </html>
 ```
 
-Just as in human relationships, HTML parent elements can have many children. Elements at the same level of nesting are considered to be siblings.
+Assim como nas relações humanas, os elementos-pai do HTML podem ter muitos filhos. Elementos no mesmo nível de aninhamento são considerados irmãos.
 
-For example, the two `p` elements in the following code are siblings, since they are both children of the `body` tag and are at the same level of nesting as each other:
+Por exemplo, os dois elementos `p` do código a seguir são irmãos, já que ambos são filhos de `body` e estão no mesmo nível de aninhamento um do outro:
 
 ```html
 <html>
@@ -39,27 +39,27 @@ For example, the two `p` elements in the following code are siblings, since they
  </html>
 ```
 
-You use indentation to make the level of nesting clear and readable for yourselves and other developers who will work with your HTML in the future. It is recommended to indent any child elements by two spaces.
+Você usa a indentação para tornar o nível de aninhamento claro e legível para você e para outros desenvolvedores que trabalharão com o seu HTML no futuro. Recomenda-se a indentação de qualquer elemento filho com dois espaços.
 
-The parent, child, and sibling relationships between elements will become much more important later when you start styling your HTML with CSS and adding behavior with JavaScript. For now, however, it is just important to know the distinction between how elements are related and the terminology used to describe their relationships.
+As relações de pai, filho e irmãos entre os elementos se tornarão muito mais importantes depois, ao começar a estilizar seu HTML com CSS e ao adicionar um comportamento com JavaScript. Agora, porém, é apenas importante conhecer a distinção entre o modo como os elementos estão relacionados e a terminologia utilizada para descrever as suas relações.
 
 # --question--
 
 ## --text--
 
-What relationship do two elements have if they are at the same level of nesting?
+Que relação existe entre dois elementos se eles estiverem no mesmo nível de aninhamento?
 
 ## --answers--
 
-The elements are each other's parents.
+Os elementos são os pais um do outro.
 
 ---
 
-The elements are each other's children.
+Os elementos são os filhos um do outro.
 
 ---
 
-The elements are siblings.
+Os elementos são irmãos.
 
 ## --video-solution--
 

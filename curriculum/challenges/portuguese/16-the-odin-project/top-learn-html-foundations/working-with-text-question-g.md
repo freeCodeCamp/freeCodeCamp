@@ -1,16 +1,16 @@
 ---
 id: 637f4e8772c65bc8e73dfe2d
 videoId: gW6cBZLUk6M
-title: Working With Text Question G
+title: Questão G de Trabalhando com textos
 challengeType: 15
 dashedName: working-with-text-question-g
 ---
 
 # --description--
 
-HTML comments are not visible to the browser; they allow us to comment on your code so that other developers or your future selves can read them and get some context about something that might not be clear in the code.
+Os comentários em HTML não são visíveis para o navegador. Eles nos permitem comentar o código para que outros desenvolvedores ou você mesmo no futuro possam lê-los e ter algum contexto sobre algo que pode não estar claro no código.
 
-Writing an HTML comment is simple: You just enclose the comment with `<!--` and `-->`tags. For example:
+Escrever um comentário em HTML é simples: basta envolver o comentário com as tags `<!--` e `-->`. Por exemplo:
 
 ```html
 <h1> View the html to see the hidden comments </h1>
@@ -26,11 +26,11 @@ Writing an HTML comment is simple: You just enclose the comment with `<!--` and 
 
 ## --assignment--
 
-To get some practice working with text in HTML, create a plain blog article page which uses different headings, uses paragraphs, and has some text in the paragraphs bolded and italicized. You can use [Lorem Ipsum](https://loremipsum.io) to generate dummy text, in place of real text as you build your sites.
+Para praticar um pouco o trabalho com textos em HTML, crie uma página simples de artigos de blog que use títulos diferentes e parágrafos. Coloque algum texto nos parágrafos em negritos e em itálico. Você pode usar o [Lorem Ipsum](https://loremipsum.io) para gerar texto fictício, no lugar do texto real, enquanto cria seus sites.
 
 ## --text--
 
-How do you create HTML comments?
+Como você cria comentários em HTML?
 
 ## --answers--
 

@@ -1,32 +1,32 @@
 ---
 id: 637f700b72c65bc8e73dfe2f
 videoId: 0xoztJCHpbQ
-title: Links and Images Question H
+title: Questão H de Links e imagens
 challengeType: 15
 dashedName: links-and-images-question-h
 ---
 
 # --description--
 
-Websites would be fairly boring if they could only display text. Luckily HTML provides a wide variety of elements for displaying all sorts of different media. The most widely used of these is the image element.
+Os sites da web seriam muito chatos se apenas pudessem exibir texto. Felizmente, o HTML fornece uma grande variedade de elementos para exibir todos os tipos diferentes de mídias. O mais utilizado é o elemento de imagem.
 
-To display an image in HTML you use the `<img>` element. Unlike the other elements you have encountered, the `<img>` element is self-closing. Empty, self-closing HTML elements do not need a closing tag.
+Para exibir uma imagem em HTML, você usa o elemento `<img>`. Diferente dos outros elementos que você encontrou, o elemento `<img>` tem fechamento próprio. Os elementos vazios ou de fechamento próprio do HTML não precisam de uma tag de fechamento.
 
-Instead of wrapping content with an opening and closing tag, it embeds an image into the page using a `src` attribute which tells the browser where the image file is located. The `src` attribute works much like the `href` attribute for anchor tags. It can embed an image using both absolute and relative paths.
+Em vez de envolver o conteúdo com uma tag de abertura e fechamento, esse elemento incorpora uma imagem na página usando um atributo `src`, que informa ao navegador onde o arquivo da imagem está localizado. O atributo `src` funciona muito como o atributo `href` para tags de âncora. Ele pode incorporar uma imagem usando caminhos relativos e absolutos.
 
-For example, using an absolute path you can display an image located on The Odin Project site:
+Por exemplo, ao usar um caminho absoluto, você pode exibir uma imagem localizada no site do The Odin Project:
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/gORbExZ?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=gORbExZ&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_gORbExZ"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/gORbExZ?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=gORbExZ&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen incorporado" loading="lazy" id="cp_embed_gORbExZ"></iframe>
 
-To use images that you have on your own websites, you can use a relative path.
+Para usar imagens que você tem em seus próprios sites, você pode usar um caminho relativo.
 
-- Create a new directory named `images` within the `odin-links-and-images` project.
+- Crie um diretório chamado `images` dentro do projeto `odin-links-and-images`.
 
-- Next, download [this image](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) and move it into the images directory you just created.
+- Em seguida, faça o download [desta imagem](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) e mova-a para o diretório de imagens que você acabou de criar.
 
-- Rename the image to `dog.jpg`.
+- Renomeie a imagem para `dog.jpg`.
 
-Finally add the image to the `index.html` file:
+Por fim, adicione a imagem ao arquivo `index.html`:
 
 ```html
 <body>
@@ -39,59 +39,59 @@ Finally add the image to the `index.html` file:
 </body>
 ```
 
-Save the `index.html` file and open it in a browser to view Charles in all his glory.
+Salve o arquivo `index.html` e abra-o em um navegador para conhecer o Charles e ver como ele é lindo.
 
 
-## Parent Directories
+## Diretórios pai
 
-What if you want to use the dog image in the `about` page? You would first have to go up one level out of the pages directory into its parent directory so you could then access the images directory.
+Como usar a imagem do cachorro na página `about`? Primeiro, você precisa subir um nível no diretório de páginas para o diretório pai para depois poder acessar o diretório de imagens.
 
-To go to the parent directory you need to use two dots in the relative filepath like this: `../.` Let’s see this in action, within the `body` of the `about.html` file, add the following image below the heading you added earlier:
+Para subir para o diretório pai, você precisa usar dois pontos no caminho relativo, assim: `../.` Vamos ver isso em ação, dentro do `body` do arquivo `about.html`, adicione a seguinte imagem abaixo do título que você adicionou anteriormente:
 
 ```html
 <img src="../images/dog.jpg">
 ```
 
-To break this down:
+Em detalhes:
 
-- First, you are going to the parent directory of the pages directory which is `odin-links-and-images`.
+- Primeiro, você vai ao diretório pai do diretório das páginas, que é o `odin-links-and-images`.
 
-- Then, from the parent directory, you can go into the `images` directory.
+- Em seguida, a partir do diretório pai, você pode ir para o diretório `images`.
 
-- Finally, you can access the `dog.jpg` file.
+- Por fim, você pode acessar o arquivo `dog.jpg`.
 
-Using the metaphor we used earlier, using `../` in a filepath is kind of like stepping out from the room you are currently in to the main hallway so you can go to another room.
+Usando a metáfora que usamos anteriormente, usar `../` em um caminho de arquivo é como sair do quarto em que você está no momento, indo para o corredor principal para que você possa chegar à sala.
 
-## Alt attribute
+## Atributo alt
 
-Besides the `src` attribute, every image element should also have an `alt` (alternative text) attribute.
+Além do atributo `src`, cada elemento de imagem deve ter também um atributo `alt` (texto alternativo).
 
-The `alt` attribute is used to describe an image. It will be used in place of the image if it cannot be loaded. It is also used with screen readers to describe what the image is to visually impaired users.
+O atributo `alt` é usado para descrever uma imagem. Ele será usado no lugar da imagem, caso ela não possa ser carregada. Ele também é usado com leitores de tela para descrever a imagem para usuários com deficiência visual.
 
-This is how the The Odin Project logo example you used earlier looks with an alt attribute included:
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
+É assim que o logotipo do The Odin Project que você usou anteriormente fica com um atributo alt incluído:
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen incorporado" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
 # --question--
 
 ## --assignment--
 
-Read about the  <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">four main image formats</a> that can be used on the web.
+Leia sobre os <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">quatro formatos principais de imagens</a> que podem ser usados na web.
 
 ## --text--
 
-What are the four main image formats that you can use for images on the web?
+Quais são os quatro formatos principais de imagens que você pode usar na web?
 
 ## --answers--
 
-TIFF, GIF, PNG, and SVG.
+TIFF, GIF, PNG e SVG.
 
 ---
 
-JPG, PNG, GIF, and SVG.
+JPG, PNG, GIF e SVG.
 
 ---
 
-JPG, PDF, SVG, and GIF.
+JPG, PDF, SVG e GIF.
 
 ## --video-solution--
 

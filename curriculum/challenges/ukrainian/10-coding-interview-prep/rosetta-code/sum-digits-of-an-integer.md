@@ -19,7 +19,7 @@ dashedName: sum-digits-of-an-integer
 
 # --hints--
 
-`sumDigits`повинна бути функцією.
+`sumDigits` має бути функцією.
 
 ```js
 assert(typeof sumDigits == 'function');

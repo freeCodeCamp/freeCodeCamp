@@ -1,39 +1,39 @@
 ---
 id: 637f4e5f72c65bc8e73dfe28
 videoId: yqcd-XkxZNM
-title: Working With Text Question B
+title: Questão B de Trabalhando com textos
 challengeType: 15
 dashedName: working-with-text-question-b
 ---
 
 # --description--
 
-Headings are different from other HTML text elements: they are displayed larger and bolder than other text to signify that they are headings.
+Títulos são diferentes de outros elementos de texto do HTML: eles são exibidos maiores e com a fonte mais forte do que outros textos para representar que são títulos.
 
-There are 6 different levels of headings starting from `<h1>` to `<h6>`. The number within a heading tag represents that heading’s level. The largest and most important heading is `h1`, while `h6` is the tiniest heading at the lowest level.
+Existem 6 níveis diferentes de títulos, de `<h1>` até `<h6>`. O número dentro de uma tag de título representa o nível desse título. O título maior e mais importante é `h1`, enquanto `h6` é o menor título, de nível mais baixo.
 
-Headings are defined much like paragraphs. For example, to create an `h1` heading, we wrap our heading text in a `<h1>` tag.
+Os títulos são definidos do mesmo modo que os parágrafos. Por exemplo, para criar um título `h1`, envolvemos o texto do título com uma tag `<h1>`.
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_3" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/LYLPLbg?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=LYLPLbg&amp;user=TheOdinProjectExamples&amp;name=cp_embed_3" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_LYLPLbg"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_3" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/LYLPLbg?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=LYLPLbg&amp;user=TheOdinProjectExamples&amp;name=cp_embed_3" style="width: 100%; overflow:hidden; display:block;" title="CodePen incorporado" loading="lazy" id="cp_embed_LYLPLbg"></iframe>
 
-Using the correct level of heading is important as levels provide a hierarchy to the content. An `h1` heading should always be used for the heading of the overall page, and the lower level headings should be used as the headings for content in smaller sections of the page.
+Usar o nível correto de título é importante porque os níveis fornecem uma hierarquia para o conteúdo. Um título `h1` deve ser sempre usado para o título geral da página. Os títulos de nível inferior devem ser usados como títulos para o conteúdo em seções menores da página.
 
 # --question--
 ## --text--
 
-How many different levels of headings are there and what is the difference between them?
+Quantos níveis diferentes de títulos existem e qual é a diferença entre eles?
 
 ## --answers--
 
-There are 5 different levels of headings. `h5` is the smallest and least important heading, and `h1` is the largest and most important heading.
+Existem 5 níveis diferentes de títulos. `h5` é o título menor e de menor importância, enquanto `h1` é a maior e mais importante.
 
 ---
 
-There are 6 different levels of headings. `h6` is the largest and most important heading, and `h1` is the smallest and least important heading.
+Existem 6 níveis diferentes de títulos. `h6` é o título maior e de maior importância, enquanto `h1` é o menor e menos importante.
 
 ---
 
-There are 6 different levels of headings. `h1` is the largest and most important heading, and `h6` is the smallest and least important heading.
+Existem 6 níveis diferentes de títulos. `h1` é o título maior e de maior importância, enquanto `h6` é o menor e menos importante.
 
 ## --video-solution--
 
