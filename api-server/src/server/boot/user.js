@@ -107,7 +107,9 @@ function createReadSessionUser(app) {
       });
 
       // only encode if a userToken was found
-      encodedUserToken = encodeUserToken(userToken?.id);
+      if (userToken) {
+        encodedUserToken = encodeUserToken(userToken.id);
+      }
     }
 
     const source =
