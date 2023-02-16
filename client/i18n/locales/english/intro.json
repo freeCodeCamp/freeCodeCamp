@@ -806,6 +806,10 @@
       "top-learn-css-foundations": {
         "title": "Learn CSS Foundations",
         "intro": ["A description is to be determined"]
+      },
+      "top-learn-css-foundations-projects": {
+        "title": "Learn CSS Foundations Projects",
+        "intro": ["A description is to be determined"]
       }
     }
   },
