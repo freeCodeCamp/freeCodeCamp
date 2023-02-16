@@ -76,7 +76,7 @@ Some community members also develop on Windows natively with Git for Windows (Gi
 | Prerequisite                                                                                  | Version | Notes                                                                                       |
 | --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                  | `18.x`  | We use the "Active LTS" version, See [LTS Schedule](https://nodejs.org/en/about/releases/). |
-| npm (comes bundled with Node)                                                                 | `8.x`   | We use the version bundled with Node.js Active LTS.                                         |
+| [pnpm](https://pnpm.io/installation)                                                              | `7.x`   |-                                      |
 | [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                           |
 
 > [!ATTENTION]
@@ -86,7 +86,7 @@ If Node.js is already installed on your machine, run the following commands to v
 
 ```console
 node -v
-npm -v
+pnpm -v
 ```
 
 > [!TIP]
