@@ -5,26 +5,28 @@ export interface UseShareProps {
   block: string | null;
 }
 
+const freeCodeCampBaseUrl = 'https://www.freecodecamp.org/learn';
 const useShare = ({ superBlock, block }: UseShareProps) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const modifyUrl = (superBlock: string | null, block: string | null) => {
     if (superBlock && block) {
-      return 'https://www.freecodecamp.org/learn/' + superBlock + '/' + block;
+      return freeCodeCampBaseUrl + '/' + superBlock + '/' + block;
     } else if (superBlock) {
-      return 'https://www.freecodecamp.org/learn/' + superBlock;
+      return freeCodeCampBaseUrl + '/' + superBlock;
     } else {
-      return 'https://www.freecodecamp.org/learn/';
+      return freeCodeCampBaseUrl;
     }
   };
 
-  const copyToClipboard = () => {
-    navigator.clipboard
-      .writeText('<empty clipboard>')
-      .then(() => modifyUrl(superBlock, block))
-      .catch(() => 'error');
-
-    setIsCopied(true);
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(modifyUrl(superBlock, block));
+      setIsCopied(true);
+    } catch (err) {
+      await navigator.clipboard.writeText(freeCodeCampBaseUrl);
+      setIsCopied(true);
+    }
   };
 
   return { copyToClipboard, isCopied };
