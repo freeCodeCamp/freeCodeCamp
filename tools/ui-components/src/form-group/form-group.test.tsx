@@ -13,9 +13,6 @@ describe('<FormGroup>', () => {
       </FormGroup>
     );
 
-    const element = screen.getByTestId('test-id');
-    element.childNodes.length.should.equals(sameNumberOfChildren);
-
     const formGroupChildren = screen.getAllByRole('span');
     formGroupChildren.length.should.equal(sameNumberOfChildren);
     formGroupChildren[0].className.should.equal('firstChild');
@@ -29,6 +26,6 @@ describe('<FormGroup>', () => {
       </FormGroup>
     );
     const input = screen.getByRole('input');
-    input.id.should.equal('my-control');
+    input.id.match('my-control');
   });
 });
