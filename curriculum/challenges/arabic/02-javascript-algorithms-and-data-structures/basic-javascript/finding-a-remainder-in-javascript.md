@@ -28,7 +28,7 @@ dashedName: finding-a-remainder-in-javascript
 
 # --hints--
 
-يجب تهيئة المتغير `remainder` بمعني أخر يجب أن يكون initialized
+يجب تهيئة المتغير `remainder`. بمعنى آخر، يجب أن يكون initialized
 
 ```js
 assert(/(const|let|var)\s+?remainder/.test(code));

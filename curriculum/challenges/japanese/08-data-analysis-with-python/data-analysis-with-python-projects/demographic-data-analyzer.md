@@ -8,11 +8,11 @@ dashedName: demographic-data-analyzer
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+<a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用して取り組んでください</a>。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
 
 
 Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。

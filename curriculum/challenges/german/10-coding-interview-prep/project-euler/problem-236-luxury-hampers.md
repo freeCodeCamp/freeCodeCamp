@@ -8,38 +8,38 @@ dashedName: problem-236-luxury-hampers
 
 # --description--
 
-Suppliers 'A' and 'B' provided the following numbers of products for the luxury hamper market:
+Die Anbieter "A" und "B" lieferten die folgende Anzahl von Produkten für den Markt für Luxuskörbe:
 
-| Product            | 'A'  | 'B'  |
+| Produkt            | 'A'  | 'B'  |
 | ------------------ | ---- | ---- |
-| Beluga Caviar      | 5248 | 640  |
-| Christmas Cake     | 1312 | 1888 |
+| Beluga-Kaviar      | 5248 | 640  |
+| Weihnachtskuchen   | 1312 | 1888 |
 | Gammon Joint       | 2624 | 3776 |
-| Vintage Port       | 5760 | 3776 |
-| Champagne Truffles | 3936 | 5664 |
+| Vintage-Port       | 5760 | 3776 |
+| Champagner Trüffel | 3936 | 5664 |
 
-Although the suppliers try very hard to ship their goods in perfect condition, there is inevitably some spoilage - i.e. products gone bad.
+Obwohl sich die Lieferanten sehr bemühen, ihre Waren in einwandfreiem Zustand zu versenden, kommt es zwangsläufig zu einem gewissen Verderb - d.h. zu verdorbenen Produkten.
 
-The suppliers compare their performance using two types of statistic:
+Die Anbieter vergleichen ihre Leistungen anhand von zwei Arten von Statistiken:
 
-- The five per-product spoilage rates for each supplier are equal to the number of products gone bad divided by the number of products supplied, for each of the five products in turn.
-- The overall spoilage rate for each supplier is equal to the total number of products gone bad divided by the total number of products provided by that supplier.
+- Die fünf Verderbnisraten pro Produkt für jeden Lieferanten entsprechen der Anzahl der verdorbenen Produkte geteilt durch die Anzahl der gelieferten Produkte, und zwar für jedes der fünf Produkte der Reihe nach.
+- Die Gesamtverderbnisrate für jeden Lieferanten ist gleich der Gesamtzahl der verdorbenen Produkte geteilt durch die Gesamtzahl der von diesem Lieferanten gelieferten Produkte.
 
-To their surprise, the suppliers found that each of the five per-product spoilage rates was worse (higher) for 'B' than for 'A' by the same factor (ratio of spoilage rates), $m > 1$; and yet, paradoxically, the overall spoilage rate was worse for 'A' than for 'B', also by a factor of $m$.
+Zu ihrer Überraschung stellten die Lieferanten fest, dass jede der fünf Verderbnisraten pro Produkt bei "B" um denselben Faktor (Verhältnis der Verderbnisraten), $m > 1$, schlechter (höher) war als bei "A"; und dennoch war paradoxerweise die Gesamtverderbnisrate bei "A" schlechter als bei "B", ebenfalls um einen Faktor $m$.
 
-There are thirty-five $m > 1$ for which this surprising result could have occurred, the smallest of which is $\frac{1476}{1475}$.
+Es gibt fünfunddreißig $m > 1$, für die dieses überraschende Ergebnis eingetreten sein könnte, wobei die kleinste davon $\frac{1476}{1475}$ ist.
 
-What's the largest possible value of $m$? Give your answer as a string with fraction reduced to its lowest terms, in the form `u/v`.
+Was ist der größtmögliche Wert von $m$? Gib deine Antwort als Zeichenkette mit dem auf die kleinsten Terme reduzierten Bruch in der Form `u/v` an.
 
 # --hints--
 
-`luxuryHampers()` should return a string.
+`luxuryHampers()` sollte einen String zurückgeben.
 
 ```js
 assert(typeof luxuryHampers() === 'string');
 ```
 
-`luxuryHampers()` should return the string `123/59`.
+`luxuryHampers()` sollte einen String `123/59` zurückgeben.
 
 ```js
 assert.strictEqual(luxuryHampers(), '123/59');

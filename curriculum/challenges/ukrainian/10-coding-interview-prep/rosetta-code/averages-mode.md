@@ -16,7 +16,7 @@ Write a function `mode` to find the value that appears most in an array.
 
 # --hints--
 
-`mode` повинен бути функцією.
+`mode` має бути функцією.
 
 ```js
 assert(typeof mode === 'function');

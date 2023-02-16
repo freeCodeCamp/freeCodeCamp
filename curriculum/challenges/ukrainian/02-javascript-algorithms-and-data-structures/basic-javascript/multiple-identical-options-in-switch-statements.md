@@ -37,55 +37,55 @@ switch (val) {
 
 # --hints--
 
-`sequentialSizes(1)` повинен повертати рядок `Low`
+`sequentialSizes(1)` має повертати рядок `Low`
 
 ```js
 assert(sequentialSizes(1) === 'Low');
 ```
 
-`sequentialSizes(2)` повинен повертати рядок `Low`
+`sequentialSizes(2)` має повертати рядок `Low`
 
 ```js
 assert(sequentialSizes(2) === 'Low');
 ```
 
-`sequentialSizes(3)` повинен повертати рядок `Low`
+`sequentialSizes(3)` має повертати рядок `Low`
 
 ```js
 assert(sequentialSizes(3) === 'Low');
 ```
 
-`sequentialSizes(4)` повинен повертати рядок `Mid`
+`sequentialSizes(4)` має повертати рядок `Mid`
 
 ```js
 assert(sequentialSizes(4) === 'Mid');
 ```
 
-`sequentialSizes(5)` повинен повертати рядок `Mid`
+`sequentialSizes(5)` має повертати рядок `Mid`
 
 ```js
 assert(sequentialSizes(5) === 'Mid');
 ```
 
-`sequentialSizes(6)` повинен повертати рядок `Mid`
+`sequentialSizes(6)` має повертати рядок `Mid`
 
 ```js
 assert(sequentialSizes(6) === 'Mid');
 ```
 
-`sequentialSizes(7)` повинен повертати рядок `High`
+`sequentialSizes(7)` має повертати рядок `High`
 
 ```js
 assert(sequentialSizes(7) === 'High');
 ```
 
-`sequentialSizes(8)` повинен повертати рядок `High`
+`sequentialSizes(8)` має повертати рядок `High`
 
 ```js
 assert(sequentialSizes(8) === 'High');
 ```
 
-`sequentialSizes(9)` повинен повертати рядок `High`
+`sequentialSizes(9)` має повертати рядок `High`
 
 ```js
 assert(sequentialSizes(9) === 'High');

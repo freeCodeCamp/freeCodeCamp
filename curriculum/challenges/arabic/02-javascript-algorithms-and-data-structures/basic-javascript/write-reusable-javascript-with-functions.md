@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cf
-title: كتابة JavaScript قابلة لإعادة الاستخدام مع الوظائف (Functions)
+title: كتابة JavaScript قابلة لإعادة الاستخدام بواسطة الوظائف (Functions)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cL6dqfy'
 forumTopicId: 18378
@@ -19,16 +19,16 @@ function functionName() {
 }
 ```
 
-يمكنك تنفيذ أو <dfn>تفعيل</dfn> هذه الوظيفة باستخدام اسمه متبوعا بقوسين، هكذا: `functionName();` في كل مرة تنفذ الوظيفة، ستطبع الرسالة `Hello World` في وحدة التحكم (console). سيتم تنفيذ الكود بين الأقواس المتعرجة في كل مرة تنفيذ الوظيفة.
+يمكنك تنفيذ أو <dfn>تفعيل</dfn> هذه الوظيفة باستخدام اسمها متبوعا بقوسين، هكذا: `functionName();`. في كل مرة تفعَّل الوظيفة، ستطبع الرسالة `Hello World` في الكونسول (console). سيتم تنفيذ الكود بين الأقواس المقرونة في كل مرة تفعَّل الوظيفة.
 
 # --instructions--
 
 <ol>
   <li>
-    أنشئ وظيفة تسمى <code>reusableFunction</code> التي تطبع مقطع <code>Hi World</code> في وحدة التحكم.
+    أنشئ وظيفة تسمى <code>reusableFunction</code> التي تطبع مقطع <code>Hi World</code> في الكونسول.
   </li>
   <li>
-    نفذ الوظيفة.
+    فعِّل الوظيفة.
   </li>
 </ol>
 
@@ -40,13 +40,13 @@ function functionName() {
 assert(typeof reusableFunction === 'function');
 ```
 
-إذا تم استدعاء `reusableFunction`، فيجب طباعة مقطع `Hi World` في وحدة التحكم.
+إذا تم تفعيل `reusableFunction`، فيجب طباعة مقطع `Hi World` في الكونسول.
 
 ```js
 assert(testConsole());
 ```
 
-يجب عليك استدعاء `reusableFunction` بمجرد تعريفها.
+يجب عليك تفعيل `reusableFunction` بمجرد تعريفها.
 
 ```js
 const functionStr = reusableFunction && __helpers.removeWhiteSpace(reusableFunction.toString());

@@ -18,7 +18,7 @@ dashedName: dna-pairing
 
 # --hints--
 
-`pairElement("ATCGA")` повинен повертати `[["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]`.
+`pairElement("ATCGA")` має повертати `[["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]`.
 
 ```js
 assert.deepEqual(pairElement('ATCGA'), [
@@ -30,7 +30,7 @@ assert.deepEqual(pairElement('ATCGA'), [
 ]);
 ```
 
-`pairElement("TTGAG")` повинен повертати `[["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]`.
+`pairElement("TTGAG")` має повертати `[["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]`.
 
 ```js
 assert.deepEqual(pairElement('TTGAG'), [
@@ -42,7 +42,7 @@ assert.deepEqual(pairElement('TTGAG'), [
 ]);
 ```
 
-`pairElement("CTCTA")` повинен повертати `[["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]`.
+`pairElement("CTCTA")` має повертати `[["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]`.
 
 ```js
 assert.deepEqual(pairElement('CTCTA'), [

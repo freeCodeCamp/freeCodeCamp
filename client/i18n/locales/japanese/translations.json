@@ -15,8 +15,8 @@
     "show-cert": "認定証を表示",
     "claim-cert": "認定証を取得",
     "save-progress": "進行状況を保存",
-    "accepted-honesty": "学問的誠実性ポリシーに同意しました。",
-    "agree": "同意する",
+    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
+    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
     "save-portfolio": "このポートフォリオアイテムを保存",
     "remove-portfolio": "このポートフォリオアイテムを削除",
     "add-portfolio": "新規ポートフォリオアイテムを追加",
@@ -110,7 +110,7 @@
     "data": "アカウントに保存されているデータを確認するには、下の「データをダウンロード」ボタンをクリックしてください",
     "disabled": "非公開に設定されている場合、認定証は無効化されます。",
     "private-name": "非公開に設定されている場合、あなたの名前は認定証に表示されません。",
-    "claim-legacy": "以下の freeCodeCamp 認定証を取得すると、 {{cert}} を受け取ることができます。",
+    "claim-legacy": "以下の freeCodeCamp 認定証を取得すると、{{cert}}を受け取ることができます。",
     "for": "{{username}} さんのアカウント設定",
     "sound-mode": "これは快適なアコースティックギターの音をウェブサイトの至る所へ追加します。エディターにタイプしたり、チャレンジを完了したり、認定証を請求したり、その他いろいろなことをする度に音のフィードバックを受け取ります。",
     "sound-volume": "キャンプファイアモードの音量:",
@@ -158,7 +158,8 @@
       "honesty": "学問的誠実性ポリシー",
       "internet": "他サービスのリンク",
       "portfolio": "ポートフォリオ設定",
-      "privacy": "プライバシー設定"
+      "privacy": "プライバシー設定",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "危険な操作",
@@ -273,6 +274,9 @@
     "add-subtitles": "字幕の改善や追加を支援する",
     "wrong-answer": "残念、正しい答えではありません。もう一度挑戦してみましょう。",
     "check-answer": "以下のボタンをクリックして解答を確認してください。",
+    "assignment-not-complete": "Please finish the assignments",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "回答のリンク",
     "github-link": "GitHub のリンク",
     "submit-and-go": "提出して次のチャレンジに進む",
@@ -298,7 +302,6 @@
       "certs": "{{title}} 認定講座"
     },
     "editor-tabs": {
-      "info": "詳細",
       "code": "コード",
       "tests": "テスト",
       "restart": "リスタート",
@@ -514,7 +517,7 @@
     "opens-new-window": "新しいウィンドウで開く"
   },
   "flash": {
-    "honest-first": "認定証を請求するには、まず学問的誠実性ポリシーに同意する必要があります。",
+    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "予期しない問題が発生しました。この問題が何度も発生するようであれば、https://github.com/freeCodeCamp/freeCodeCamp/issues/new への Issue 登録をご検討ください。",
     "not-right": "問題が発生しました。レポートが生成され、freeCodeCamp.org チームへ通知されました。",
     "went-wrong": "問題が発生しました。ご確認の上もう一度お試しください。",
@@ -602,11 +605,11 @@
     "fulltext": "<0>ここに</0> <1>{{user}}</1> <2>が freeCodeCamp.org の約 {{time}} 時間の課程に相当する</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4>",
     "project": {
       "heading-legacy-full-stack": "レガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
-      "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました:",
+      "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",
       "solution": "解答",
       "no-solution": "解答の表示中にエラーが発生しました。 support@freeCodeCamp.org までメールにてお問い合わせください。",
       "source": "ソースコード",
-      "footnote": "これらのプロジェクトのいずれかが <2>学問的誠実性ポリシー</2> に違反すると思われる場合、<5>freeCodeCamp チームに報告</5> してください。",
+      "footnote": "これらのプロジェクトのいずれかが<2>学問的誠実性ポリシー</2>に反すると思われる場合は、<5>freeCodeCamp チームに報告</5>してください。",
       "title": {
         "Build a Personal Portfolio Webpage": "個人ポートフォリオのウェブページを作成する",
         "Build a Random Quote Machine": "ランダムクォートマシンを作成する",

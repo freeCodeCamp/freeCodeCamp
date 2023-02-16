@@ -14,31 +14,31 @@ dashedName: missing-letters
 
 # --hints--
 
-`fearNotLetter("abce")` повинен повертати рядок `d`.
+`fearNotLetter("abce")` має повертати рядок `d`.
 
 ```js
 assert.deepEqual(fearNotLetter('abce'), 'd');
 ```
 
-`fearNotLetter("abcdefghjklmno")` повинен повертати рядок `i`.
+`fearNotLetter("abcdefghjklmno")` має повертати рядок `i`.
 
 ```js
 assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i');
 ```
 
-`fearNotLetter("stvwx")` повинен повертати рядок `u`.
+`fearNotLetter("stvwx")` має повертати рядок `u`.
 
 ```js
 assert.deepEqual(fearNotLetter('stvwx'), 'u');
 ```
 
-`fearNotLetter("bcdf")` повинен повертати рядок `e`.
+`fearNotLetter("bcdf")` має повертати рядок `e`.
 
 ```js
 assert.deepEqual(fearNotLetter('bcdf'), 'e');
 ```
 
-`fearNotLetter("abcdefghijklmnopqrstuvwxyz")` повинен повертати `undefined`.
+`fearNotLetter("abcdefghijklmnopqrstuvwxyz")` має повертати `undefined`.
 
 ```js
 assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'));

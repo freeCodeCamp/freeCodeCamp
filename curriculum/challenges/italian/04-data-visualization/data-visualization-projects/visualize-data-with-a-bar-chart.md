@@ -24,17 +24,17 @@ Puoi usare HTML, JavaScript, CSS e la libreria di visualizzazione basata su svg 
 
 **User Story #5:** Il mio grafico dovrebbe avere un elemento `rect` che mostra i dati di ogni data point con una corrispondente `class="bar"`.
 
-**User Story #6:** Ogni bar dovrebbe avere le proprietà `data-date` e `data-gdp` contenenti i valori `date` e `GDP`.
+**User Story #6:** Ogni`.bar` dovrebbe avere le proprietà `data-date` e `data-gdp` contenenti i valori `date` e `GDP`.
 
-**User Story #7:** Le proprietà `data-date` degli elementi bar dovrebbero corrispondere all'ordine dei dati messi a disposizione.
+**User Story #7:** Le proprietà `data-date` degli elementi `.bar` dovrebbero corrispondere all'ordine dei dati forniti.
 
-**User Story #8:** Le proprietà `data-gdp` degli elementi bar dovrebbero corrispondere all'ordine dei dati messi a disposizione.
+**User Story #8:** Le proprietà `data-gdp` degli elementi `.bar` dovrebbero corrispondere all'ordine dei dati forniti.
 
-**User Story #9:** L'altezza di ogni barra dovrebbe rappresentare accuratamente il corrispondente dato `GDP`.
+**User Story #9:** L'altezza di ogni elemento `.bar` dovrebbe rappresentare accuratamente il corrispondente dato `GDP`.
 
-**User Story #10:** L'attributo `data-date` e il suo corrispondente elemento bar dovrebbero allinearsi con il corrispondente valore dell'asse x.
+**User Story #10:** L'attributo `data-date` e il suo corrispondente elemento `.bar` dovrebbero allinearsi con il corrispondente valore dell'asse x.
 
-**User Story #11:** L'attributo `data-gdp` e il suo corrispondente elemento bar dovrebbero allinerasi con il corrispondente valore dell'asse y.
+**User Story #11:** L'attributo `data-gdp` e il suo corrispondente elemento `.bar` dovrebbero allinearsi con il corrispondente valore dell'asse y.
 
 **User Story #12:** Posso passare con il mouse su un'area e vedere un tooltip con un corrispondente `id="tooltip"` che mostra maggiori informazioni sull'area.
 

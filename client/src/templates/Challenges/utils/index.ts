@@ -35,7 +35,7 @@ export function transformEditorLink(url: string): string {
 
 export function enhancePrismAccessibility(
   prismEnv: Prism.hooks.ElementHighlightedEnvironment
-) {
+): void {
   const langs: { [key: string]: string } = {
     js: 'JavaScript',
     javascript: 'JavaScript',

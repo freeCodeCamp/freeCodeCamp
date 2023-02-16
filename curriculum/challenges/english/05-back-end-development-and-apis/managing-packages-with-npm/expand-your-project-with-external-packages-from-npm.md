@@ -22,7 +22,7 @@ In this section, packages your project requires are stored using the following f
 
 # --instructions--
 
-Add version "1.1.0" of the `@freecodecamp/example` package to the `dependencies` field of your `package.json` file.
+Add version `1.1.0` of the `@freecodecamp/example` package to the `dependencies` field of your `package.json` file.
 
 **Note:** `@freecodecamp/example` is a faux package used as a learning tool.
 

@@ -196,7 +196,7 @@ const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-Deine `#email` sollte ein `name` Attribut von `email` haben.
+Deine `#email` sollte ein `name`-Attribut von `email` haben.
 
 ```js
 const el = document.getElementById('email')

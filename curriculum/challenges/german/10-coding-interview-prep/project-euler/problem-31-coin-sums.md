@@ -1,6 +1,6 @@
 ---
 id: 5900f38b1000cf542c50fe9e
-title: 'Problem 31: Coin sums'
+title: 'Problem 31: Münzsummen'
 challengeType: 1
 forumTopicId: 301965
 dashedName: problem-31-coin-sums
@@ -8,43 +8,43 @@ dashedName: problem-31-coin-sums
 
 # --description--
 
-In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:
+In England besteht die Währung aus Pfund, £, und Pence, p, und es sind acht Münzen im Umlauf:
 
 <div style='margin-left: 4em;'>1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p).</div>
 
-It is possible to make £2 in the following way:
+Er kann £2 auf folgende Weise herstellen:
 
 <div style='margin-left: 4em;'>1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p</div>
 
-How many different ways can `n` pence be made using any number of coins?
+Wie viele verschiedene Möglichkeiten gibt es, `n` Pence aus einer beliebigen Anzahl von Münzen zu erhalten?
 
 # --hints--
 
-`coinSums(50)` should return a number.
+`coinSums(50)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof coinSums(50) === 'number');
 ```
 
-`coinSums(50)` should return 451.
+`coinSums(50)` sollte 451 zurückgeben.
 
 ```js
 assert(coinSums(50) == 451);
 ```
 
-`coinSums(100)` should return 4563.
+`coinSums(100)` sollte 4563 zurückgeben.
 
 ```js
 assert(coinSums(100) == 4563);
 ```
 
-`coinSums(150)` should return 21873.
+`coinSums(150)` sollte 21873 zurückgeben.
 
 ```js
 assert(coinSums(150) == 21873);
 ```
 
-`coinSums(200)` should return 73682.
+`coinSums(200)` sollte 73682 zurückgeben.
 
 ```js
 assert(coinSums(200) == 73682);

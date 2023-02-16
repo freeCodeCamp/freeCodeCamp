@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ac
-title: Збільшення числа за допомогою JavaScript
+title: Інкремент числа з JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GLT9'
 forumTopicId: 18201
@@ -29,7 +29,7 @@ i = i + 1;
 
 # --hints--
 
-`myVar` повинна дорівнювати `88`.
+`myVar` має дорівнювати `88`.
 
 ```js
 assert(myVar === 88);

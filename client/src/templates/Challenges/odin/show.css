@@ -1,0 +1,28 @@
+input[type='checkbox'] {
+  display: grid;
+  place-content: center;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  min-width: 1.15em;
+  min-height: 1.15em;
+  max-width: 1.15em;
+  max-height: 1.15em;
+  margin-inline-end: 15px;
+  border: 2px solid black;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+}
+
+input[type='checkbox']::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em black;
+}
+
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}

@@ -23,35 +23,35 @@ dashedName: comparison-with-the-inequality-operator
 
 # --instructions--
 
-Додайте оператор «не дорівнює» (`!=`) в інструкції `if`, щоб функція повернула рядок `Not Equal`, якщо `val` не дорівнює `99`.
+Додайте оператор «не дорівнює» (`!=`) до інструкції `if`, щоб функція повернула рядок `Not Equal`, якщо `val` не дорівнює `99`.
 
 # --hints--
 
-`testNotEqual(99)` повинен повертати рядок `Equal`
+`testNotEqual(99)` має повертати рядок `Equal`
 
 ```js
 assert(testNotEqual(99) === 'Equal');
 ```
 
-`testNotEqual("99")` повинен повертати рядок `Equal`
+`testNotEqual("99")` має повертати рядок `Equal`
 
 ```js
 assert(testNotEqual('99') === 'Equal');
 ```
 
-`testNotEqual(12)` повинен повертати рядок `Not Equal`
+`testNotEqual(12)` має повертати рядок `Not Equal`
 
 ```js
 assert(testNotEqual(12) === 'Not Equal');
 ```
 
-`testNotEqual("12")` повинен повертати рядок `Not Equal`
+`testNotEqual("12")` має повертати рядок `Not Equal`
 
 ```js
 assert(testNotEqual('12') === 'Not Equal');
 ```
 
-`testNotEqual("bob")` повинен повертати рядок `Not Equal`
+`testNotEqual("bob")` має повертати рядок `Not Equal`
 
 ```js
 assert(testNotEqual('bob') === 'Not Equal');

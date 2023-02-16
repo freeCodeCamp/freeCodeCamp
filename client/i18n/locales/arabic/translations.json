@@ -11,12 +11,12 @@
     "view": "عرض",
     "view-code": "أظهار الكود",
     "view-project": "إظهار المشروع",
-    "view-cert-title": "View {{certTitle}}",
+    "view-cert-title": "عرض {{certTitle}}",
     "show-cert": "عرض الشهادة",
     "claim-cert": "المطالبة بالشهادة",
     "save-progress": "حفظ التقدم",
-    "accepted-honesty": "لقد قبلت سياسة الصدق الأكاديمي الخاصة بنا.",
-    "agree": "موافق",
+    "accepted-honesty": "لقد وافقت على سياستنا للصدق الأكاديمي.",
+    "agree-honesty": "أوافق على سياسة freeCodeCamp للصدق الأكاديمي.",
     "save-portfolio": "حفظ عنصر الحافظة هذا",
     "remove-portfolio": "إزالة عنصر الحافظة هذا",
     "add-portfolio": "إضافة عنصر حافظة جديد",
@@ -53,7 +53,7 @@
     "check-code": "تيقن من كودك (Ctrl + Enter)",
     "check-code-2": "تيقن من كودك",
     "reset": "إعادة ضبط",
-    "reset-step": "Reset This Step",
+    "reset-step": "إعادة الخطوة إلى حالتها الأولية",
     "help": "مساعدة",
     "get-help": "الحصول على المساعدة",
     "watch-video": "شاهد الفيديو",
@@ -158,7 +158,8 @@
       "honesty": "سياسة الصدق الأكاديمي",
       "internet": "حضورك على الإنترنت",
       "portfolio": "إعدادات المحفظة",
-      "privacy": "إعدادات الخصوصية"
+      "privacy": "إعدادات الخصوصية",
+      "personal-info": "البيانات الشخصية"
     },
     "danger": {
       "heading": "منطقة الخطر",
@@ -273,6 +274,9 @@
     "add-subtitles": "المساعدة في تحسين أو إضافة ترجمات",
     "wrong-answer": "عذراً، هذه ليست الإجابة الصحيحة. قم بالمحاولة مرة أخرى؟",
     "check-answer": "انقر على الزر أدناه للتحقق من إجابتك.",
+    "assignment-not-complete": "يرجى إنهاء المهام",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "رابط الحل",
     "github-link": "رابط Github",
     "submit-and-go": "أرسل وانتقل إلى التحدي التالي",
@@ -298,7 +302,6 @@
       "certs": "شهادة {{title}}"
     },
     "editor-tabs": {
-      "info": "معلومات",
       "code": "الكود",
       "tests": "الاختبارات",
       "restart": "أعد التشغيل",
@@ -465,7 +468,7 @@
     "iframe-alert": "عادة هذا الرابط من شأنه أن يجلبك إلى موقع آخر! إنه يعمل. هذا رابط: {{externalLink}}",
     "iframe-form-submit-alert": "عادة سيتم تقديم هذا النموذج! إنه يعمل. سيتم إرسال هذا إلى: {{externalLink}}",
     "document-notfound": "لم يوجد المستند",
-    "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page."
+    "slow-load-msg": "يبدو أن هذا يستغرق وقتاً أطول من المعتاد، الرجاء محاولة تحديث الصفحة."
   },
   "icons": {
     "gold-cup": "كأس الذهب",
@@ -511,10 +514,10 @@
     "steps": "الخطوات",
     "steps-for": "خطوات {{blockTitle}}",
     "code-example": "{{codeName}} مثال على الكود",
-    "opens-new-window": "Opens in new window"
+    "opens-new-window": "فتح في نافذة جديدة"
   },
   "flash": {
-    "honest-first": "للمطالبة بشهادة ، يجب عليك أولاً قبول سياسة الصدق الأكاديمي الخاصة بنا",
+    "honest-first": "للمطالبة بشهادة، يجب عليك أولاً الموافقة على سياسة للصدق الأكاديمي",
     "really-weird": "حدث شيء غريب حقاً، إذا حدث مرة أخرى، يرجى النظر في الإبلاغ عنها على https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "يبدو ان هناك خطأ ما. لقد تم إنشاء تقرير وتم إخطار فريق freeCodeCamp.org",
     "went-wrong": "حدث خطأ ما، الرجاء التحقق والمحاولة مرة أخرى",

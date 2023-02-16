@@ -12,37 +12,37 @@ Let d(`n`) be defined as the sum of proper divisors of `n` (numbers less than `n
 
 If d(`a`) = `b` and d(`b`) = `a`, where `a` ≠ `b`, then `a` and `b` are an amicable pair and each of `a` and `b` are called amicable numbers.
 
-For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
+Zum Beispiel sind die richtigen Teiler von 220 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 und 110; daher ist d(220) = 284. Die richtigen Teiler von 284 sind 1, 2, 4, 71 und 142; also ist d(284) = 220.
 
-Evaluate the sum of all the amicable numbers under `n`.
+Berechne die Summe aller gütigen Zahlen unter `n`.
 
 # --hints--
 
-`sumAmicableNum(1000)` should return a number.
+`sumAmicableNum(1000)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof sumAmicableNum(1000) === 'number');
 ```
 
-`sumAmicableNum(1000)` should return 504.
+`sumAmicableNum(1000)` sollte 504 zurückgeben.
 
 ```js
 assert.strictEqual(sumAmicableNum(1000), 504);
 ```
 
-`sumAmicableNum(2000)` should return 2898.
+`sumAmicableNum(2000)` sollte 2898 zurückgeben.
 
 ```js
 assert.strictEqual(sumAmicableNum(2000), 2898);
 ```
 
-`sumAmicableNum(5000)` should return 8442.
+`sumAmicableNum(5000)` sollte 8442 zurückgeben.
 
 ```js
 assert.strictEqual(sumAmicableNum(5000), 8442);
 ```
 
-`sumAmicableNum(10000)` should return 31626.
+`sumAmicableNum(10000)` sollte 31626 zurückgeben.
 
 ```js
 assert.strictEqual(sumAmicableNum(10000), 31626);

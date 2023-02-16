@@ -215,7 +215,7 @@ const schemaValidation = (
   if (
     fileName === 'motivation' &&
     !(fileJson.motivationalQuotes as MotivationalQuotes).every(
-      (object: object) =>
+      object =>
         Object.prototype.hasOwnProperty.call(object, 'quote') &&
         Object.prototype.hasOwnProperty.call(object, 'author')
     )

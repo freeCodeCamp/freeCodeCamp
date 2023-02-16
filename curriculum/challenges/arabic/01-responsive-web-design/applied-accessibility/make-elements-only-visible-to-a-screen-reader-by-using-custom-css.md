@@ -35,7 +35,7 @@ Here's an example of the CSS rules that accomplish this:
 
 # --instructions--
 
-Camper Cat created a really cool stacked bar chart for his training page, and put the data into a table for his visually impaired users. The table already has an `sr-only` class, but the CSS rules aren't filled in yet. Give the `position` an `absolute` value, the `left` a `-10000px` value, and the `width` and `height` both `1px` values.
+أنشأ Camper Cat مخطط أعمدة مكدسة رائع جدا لصفحة التدريب، و وضع البيانات في جدول لمستخدميه ذوي الإعاقة البصرية. The table already has an `sr-only` class, but the CSS rules aren't filled in yet. Give the `position` an `absolute` value, the `left` a `-10000px` value, and the `width` and `height` both `1px` values.
 
 # --hints--
 

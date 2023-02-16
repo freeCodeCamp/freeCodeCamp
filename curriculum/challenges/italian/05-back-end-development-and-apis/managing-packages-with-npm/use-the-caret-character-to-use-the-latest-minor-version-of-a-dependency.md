@@ -10,13 +10,13 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 Simile a come la tilde vista nell'ultima sfida permette a npm di installare l'ultima PATCH per una dipendenza, l'accento circonflesso (caret, `^`) permette a npm di installare anche aggiornamenti futuri. La differenza è che l'accento circonflesso permette sia aggiornamenti di versione minore che di Patch.
 
-La versione attuale di `@freecodecamp/example` dovrebbe essere "~1.2.13" che permette a npm di installare all'ultima versione 1.2.x. Se invece dovessi usare il caret (^) come prefisso di versione, npm avrebbe il permesso di aggiornare a qualsiasi versione 1.x.x.
+La versione attuale di `@freecodecamp/example` dovrebbe essere `~1.2.13` che permette a npm di installare l'ultima versione `1.2.x`. Se invece dovessi usare il caret (^) come prefisso di versione, npm avrebbe il permesso di aggiornare a qualsiasi versione `1.x.x`.
 
 ```json
 "package": "^1.3.8"
 ```
 
-Questo permetterebbe di aggiornare qualsiasi versione 1.x.x del pacchetto.
+Questo permetterebbe di aggiornare qualsiasi versione `1.x.x` del pacchetto.
 
 # --instructions--
 

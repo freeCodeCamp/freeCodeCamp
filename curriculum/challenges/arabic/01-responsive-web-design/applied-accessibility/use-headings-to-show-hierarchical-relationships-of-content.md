@@ -23,7 +23,7 @@ One final point, each page should always have one (and only one) `h1` element, w
 
 # --instructions--
 
-Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the `h5` tags to the proper heading level to indicate they are subsections of the `h2` ones. Use `h3` tags for the purpose.
+يريد Camper Cat صفحة مخصصة على موقعه الإلكتروني لتعليم النينجا. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the `h5` tags to the proper heading level to indicate they are subsections of the `h2` ones. Use `h3` tags for the purpose.
 
 # --hints--
 

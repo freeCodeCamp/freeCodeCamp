@@ -1,6 +1,6 @@
 ---
 id: 5900f3dd1000cf542c50fef0
-title: 'Problem 113: Non-bouncy numbers'
+title: 'Problem 113: Nicht sprunghafte Zahlen'
 challengeType: 1
 forumTopicId: 301739
 dashedName: problem-113-non-bouncy-numbers

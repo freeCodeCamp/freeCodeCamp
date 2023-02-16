@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c04
-title: Remove a Package from Your Dependencies
+title: إزالة حزمة (Package) من تبعياتك (Dependency)
 challengeType: 2
 forumTopicId: 301530
 dashedName: remove-a-package-from-your-dependencies
@@ -8,21 +8,21 @@ dashedName: remove-a-package-from-your-dependencies
 
 # --description--
 
-You have now tested a few ways you can manage dependencies of your project by using the package.json's dependencies section. You have also included external packages by adding them to the file and even told npm what types of versions you want, by using special characters such as the tilde or the caret.
+لقد اختبرت الآن بعض الطرق الذي يمكنك بها إدارة التبعيات لمشروعك باستخدام قسم التبعيات في package.json. لقد قمت أيضا بإدراج حزم خارجية عن طريق إضافتها إلى الملف وأخبرت npm ما هي أنواع الإصدارات التي تريدها، باستخدام أحرف خاصة مثل tilde (~) أو caret (^).
 
-But what if you want to remove an external package that you no longer need? You might already have guessed it, just remove the corresponding key-value pair for that package from your dependencies.
+ولكن ماذا لو أردت إزالة حزمة خارجية لم تعد بحاجة إليها؟ ربما قد خمنتها فعلًا، عليك فقط أن تزيل زوج key-value المقابل لتلك الحزمة من تبعياتك (dependencies).
 
-This same method applies to removing other fields in your package.json as well.
+تنطبق نفس الطريقة على إزالة الخانات الأخرى في package.json أيضا.
 
 # --instructions--
 
-Remove the `@freecodecamp/example` package from your dependencies.
+أزل حزمة `@freecodecamp/example` من تبعياتك.
 
-**Note:** Make sure you have the right amount of commas after removing it.
+**ملاحظة:** تأكد من أن لديك العدد الصحيح من الفواصل بعد إزالتها.
 
 # --hints--
 
-`"dependencies"` should not include `"@freecodecamp/example"`.
+يجب ألا تتضمن `"dependencies"` مقطع `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>

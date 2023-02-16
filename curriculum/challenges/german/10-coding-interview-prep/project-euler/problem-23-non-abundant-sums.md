@@ -1,6 +1,6 @@
 ---
 id: 5900f3831000cf542c50fe96
-title: 'Problem 23: Non-abundant sums'
+title: 'Problem 23: Nicht-abundante Summen'
 challengeType: 1
 forumTopicId: 301873
 dashedName: problem-23-non-abundant-sums
@@ -8,7 +8,7 @@ dashedName: problem-23-non-abundant-sums
 
 # --description--
 
-A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
+A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. Die Summe der richtigen Teiler von 28 wäre zum Beispiel 1 + 2 + 4 + 7 + 14 = 28, was bedeutet, dass 28 eine perfekte Zahl ist.
 
 A number `n` is called deficient if the sum of its proper divisors is less than `n` and it is called abundant if this sum exceeds `n`.
 
@@ -18,31 +18,31 @@ Find the sum of all positive integers &lt;= `n` which cannot be written as the s
 
 # --hints--
 
-`sumOfNonAbundantNumbers(10000)` should return a number.
+`sumOfNonAbundantNumbers(10000)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof sumOfNonAbundantNumbers(10000) === 'number');
 ```
 
-`sumOfNonAbundantNumbers(10000)` should return 3731004.
+`sumOfNonAbundantNumbers(10000)` sollte 3731004 zurückgeben.
 
 ```js
 assert(sumOfNonAbundantNumbers(10000) === 3731004);
 ```
 
-`sumOfNonAbundantNumbers(15000)` should return 4039939.
+`sumOfNonAbundantNumbers(15000)` sollte 4039939 zurückgeben.
 
 ```js
 assert(sumOfNonAbundantNumbers(15000) === 4039939);
 ```
 
-`sumOfNonAbundantNumbers(20000)` should return 4159710.
+`sumOfNonAbundantNumbers(20000)` sollte 4159710 zurückgeben.
 
 ```js
 assert(sumOfNonAbundantNumbers(20000) === 4159710);
 ```
 
-`sumOfNonAbundantNumbers(28123)` should return 4179871.
+`sumOfNonAbundantNumbers(28123)` sollte 4179871 zurückgeben.
 
 ```js
 assert(sumOfNonAbundantNumbers(28123) === 4179871);

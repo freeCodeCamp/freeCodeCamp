@@ -26,7 +26,7 @@ By applying this "rule" we would expect the optimum set for $n = 6$ to be $A = \
 
 Given that A is an optimum special sum set for $n = 7$, find its set string.
 
-**Note:** This problem is related to Problem 105 and Problem 106.
+**Hinweis:** Dieses Problem steht im Zusammenhang mit Problem 105 und 106.
 
 # --hints--
 

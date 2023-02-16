@@ -10,13 +10,13 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 和上一个挑战中我们学到的用波浪号来安装最新的修订版依赖一样，脱字符（`^`）也允许 npm 来安装功能更新。 它们的不同之处在于：脱字符允许次版本和修订版更新。
 
-你当前的 `@freecodecamp/example` 版本应该是“~1.2.13”，它允许 npm 安装到最新的 1.2.x 版本。 如果使用插入符号（^）作为版本前缀，npm 将被允许更新到任何 1.x.x 版本。
+你当前的 `@freecodecamp/example` 版本应该是 `~1.2.13`，它允许 npm 安装到最新的 `1.2.x` 版本。 如果你使用插入符号（^）作为版本前缀，npm 将被允许更新到任何 `1.x.x` 版本。
 
 ```json
 "package": "^1.3.8"
 ```
 
-这会将依赖包更新到任意的 1.x.x 版本。
+这会将依赖包更新到任意的 `1.x.x` 版本。
 
 # --instructions--
 

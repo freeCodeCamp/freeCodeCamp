@@ -84,7 +84,7 @@ $PA = LU$
 
 # --hints--
 
-`luDecomposition` повинне бути функцією.
+`luDecomposition` має бути функцією.
 
 ```js
 assert(typeof luDecomposition == 'function');

@@ -1,6 +1,6 @@
 ---
 id: 587d78ad367417b2b2512afb
-title: Use the flex-shrink Property to Shrink Items
+title: استعمال خاصية flex-shrink لتقليص الأصناف
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PBfr'
 forumTopicId: 301113
@@ -9,11 +9,11 @@ dashedName: use-the-flex-shrink-property-to-shrink-items
 
 # --description--
 
-So far, all the properties in the challenges apply to the flex container (the parent of the flex items). However, there are several useful properties for the flex items.
+وتنطبق حتى الآن جميع الخواص في التحديات على الحاوية المرنة ( flex container وهو أصل الأصناف المرنة). غير أن هناك عدة خصائص مفيدة للأصناف المرنة (flex items).
 
 The first is the `flex-shrink` property. When it's used, it allows an item to shrink if the flex container is too small. Items shrink when the width of the parent container is smaller than the combined widths of all the flex items within it.
 
-The `flex-shrink` property takes numbers as values. The higher the number, the more it will shrink compared to the other items in the container. For example, if one item has a `flex-shrink` value of `1` and the other has a `flex-shrink` value of `3`, the one with the value of `3` will shrink three times as much as the other.
+الخاصية `flex-shrink` تأخذ الأرقام كقيم. وكلما ارتفع العدد، سيتقلص العدد مقارنة بالاصناف الأخرى في الحاوية. For example, if one item has a `flex-shrink` value of `1` and the other has a `flex-shrink` value of `3`, the one with the value of `3` will shrink three times as much as the other.
 
 # --instructions--
 

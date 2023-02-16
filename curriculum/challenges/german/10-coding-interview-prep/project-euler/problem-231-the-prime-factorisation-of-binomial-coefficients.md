@@ -1,6 +1,6 @@
 ---
 id: 5900f4531000cf542c50ff66
-title: 'Problem 231: The prime factorisation of binomial coefficients'
+title: 'Problem 231: Die Primfaktorzerlegung der Binomialkoeffizienten'
 challengeType: 1
 forumTopicId: 301875
 dashedName: problem-231-the-prime-factorisation-of-binomial-coefficients
@@ -8,17 +8,17 @@ dashedName: problem-231-the-prime-factorisation-of-binomial-coefficients
 
 # --description--
 
-The binomial coefficient $\displaystyle\binom{10}{3} = 120$.
+Der Binomialkoeffizient $\displaystyle\binom{10}{3} = 120$.
 
-$120 = 2^3 × 3 × 5 = 2 × 2 × 2 × 3 × 5$, and $2 + 2 + 2 + 3 + 5 = 14$.
+$120 = 2^3 × 3 × 5 = 2 × 2 × 2 × 3 × 5$, und $2 + 2 + 2 + 3 + 5 = 14$.
 
-So the sum of the terms in the prime factorisation of $\displaystyle\binom{10}{3}$ is $14$.
+Die Summe der Begriffe in der Primfaktorzerlegung von $\displaystyle\binom{10}{3}$ ist also $14$.
 
-Find the sum of the terms in the prime factorisation of $\binom{20\\,000\\,000}{15\\,000\\,000}$.
+Finde die Summe der Begriffe in der Primfaktorzerlegung von $\binom{20\\,000\\,000}{15\\,000\,000}$.
 
 # --hints--
 
-`primeFactorisation()` should return `7526965179680`.
+`primeFactorisation()` sollte `7526965179680` zurückgeben.
 
 ```js
 assert.strictEqual(primeFactorisation(), 7526965179680);

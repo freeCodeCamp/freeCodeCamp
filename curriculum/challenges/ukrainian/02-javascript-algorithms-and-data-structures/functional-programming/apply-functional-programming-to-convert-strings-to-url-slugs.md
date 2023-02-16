@@ -16,13 +16,13 @@ dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
 
 # --instructions--
 
-Заповніть функцію `urlSlug`, щоб вона конвертувала рядок `title` і повертала версію з дефісом для URL. Ви можете використати будь-який з методів, використаних у цьому розділі, і не використовуйте `replace`. Ось вимоги:
+Заповніть функцію `urlSlug` так, щоб вона конвертувала рядок `title` та повертала URL, написану через дефіси. Ви можете використати будь-який з методів, описаних у цьому розділі, але не використовуйте `replace`. Ось вимоги:
 
-Вхідний - це рядок з пробілами і текстовими словами
+Вхідними даними є рядок зі словами з великої літери, розділеними пробілом
 
-Вихідний рядок з пробілами між словами, заміненим на дефіс (`-`)
+Вихідними даними є рядок зі словами, де пробіли замінено на дефіс (`-`)
 
-Вихідний рядок повинен бути весь малими літерами
+Вихідні дані повинні бути у нижньому регістрі
 
 Вихідний рядок не повинен мати жодних пробілів
 
@@ -34,19 +34,19 @@ dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
 assert(!code.match(/\.?[\s\S]*?replace/g));
 ```
 
-`urlSlug("Winter Is Coming")` повинна повертати рядок `winter-is-coming`.
+`urlSlug("Winter Is Coming")` має повертати рядок `winter-is-coming`.
 
 ```js
 assert(urlSlug('Winter Is Coming') === 'winter-is-coming');
 ```
 
-`urlSlug(" Winter Is  Coming")` повинна повертати рядок `winter-is-coming`.
+`urlSlug(" Winter Is  Coming")` має повертати рядок `winter-is-coming`.
 
 ```js
 assert(urlSlug(' Winter Is  Coming') === 'winter-is-coming');
 ```
 
-`urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")` повинна повертати рядок `a-mind-needs-books-like-a-sword-needs-a-whetstone`.
+`urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")` має повертати рядок `a-mind-needs-books-like-a-sword-needs-a-whetstone`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-`urlSlug("Hold The Door")` повинна повертати рядок `hold-the-door`.
+`urlSlug("Hold The Door")` має повертати рядок `hold-the-door`.
 
 ```js
 assert(urlSlug('Hold The Door') === 'hold-the-door');

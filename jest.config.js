@@ -2,11 +2,11 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/'],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|svg|woff|woff2)$':
-      '<rootDir>/client/src/__mocks__/fileMock.ts',
+      '<rootDir>/client/src/__mocks__/file-mock.ts',
     // Plain CSS - match css files that don't end with
     // '.module.css' https://regex101.com/r/VzwrKH/4
     '^(?!.*\\.module\\.css$).*\\.css$':
-      '<rootDir>/client/src/__mocks__/styleMock.ts',
+      '<rootDir>/client/src/__mocks__/style-mock.ts',
     // CSS Modules - match files that end with 'module.css'
     '\\.module\\.css$': 'identity-obj-proxy',
     '^lodash-es$': 'lodash'

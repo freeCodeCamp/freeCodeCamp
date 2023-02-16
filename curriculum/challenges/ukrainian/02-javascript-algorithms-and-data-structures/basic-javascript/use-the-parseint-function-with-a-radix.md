@@ -31,31 +31,31 @@ const a = parseInt("11", 2);
 
 # --hints--
 
-`convertToInteger` повинна використовувати функцію `parseInt()`
+`convertToInteger` має використовувати функцію `parseInt()`
 
 ```js
 assert(/parseInt/g.test(code));
 ```
 
-`convertToInteger("10011")` повинна повертати число
+`convertToInteger("10011")` має повертати число
 
 ```js
 assert(typeof convertToInteger('10011') === 'number');
 ```
 
-`convertToInteger("10011")` повинна повертати 19
+`convertToInteger("10011")` має повертати 19
 
 ```js
 assert(convertToInteger('10011') === 19);
 ```
 
-`convertToInteger("111001")` повинна повертати 57
+`convertToInteger("111001")` має повертати 57
 
 ```js
 assert(convertToInteger('111001') === 57);
 ```
 
-`convertToInteger("JamesBond")` повинна повертати `NaN`
+`convertToInteger("JamesBond")` має повертати `NaN`
 
 ```js
 assert.isNaN(convertToInteger('JamesBond'));

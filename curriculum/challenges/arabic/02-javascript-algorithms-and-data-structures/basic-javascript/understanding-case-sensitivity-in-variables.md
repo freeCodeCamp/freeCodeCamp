@@ -39,7 +39,7 @@ var thisVariableNameIsSoLong;
 assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
 ```
 
-يجب أن يتم تعريف`properCamelCase` وأن تكون له قيمة `A String` بنوع مقطع.
+يجب أن يتم تعريف`properCamelCase` وأن تكون له قيمة المقطع النصي `A String`.
 
 ```js
 assert(

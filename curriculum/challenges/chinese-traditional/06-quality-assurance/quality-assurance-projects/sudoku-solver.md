@@ -352,7 +352,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 12 項單元測試都已完成並通過。 請參閱 `/tests/1_unit-tests.js` 來了解你應該寫的測試的預期行爲。
+所有 12 項單元測試都已完成並通過。
 
 ```js
 async (getUserInput) => {
@@ -377,7 +377,7 @@ async (getUserInput) => {
 };
 ```
 
-所有 14 項功能測試都已完成並通過。 請參閱 `/tests/2_functional-tests.js` 來了解你應該編寫的測試的功能。
+所有 14 項功能測試都已完成並通過。
 
 ```js
 async (getUserInput) => {

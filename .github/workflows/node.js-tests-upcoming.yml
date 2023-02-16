@@ -2,14 +2,20 @@ name: CI - Node.js Test Upcoming
 env:
   NODE_OPTIONS: '--max_old_space_size=6144'
 on:
+  # Run on push events, but only for the below branches
   push:
     branches:
-      # Treat the below branches as special case for working on workflows
-      - actions-**
-      - upcoming-**
+      - 'main'
+      - 'prod-**'
+  # Run on pull requests, but only for the below targets
+  pull_request:
+    branches:
+      - 'main'
+      - 'next-**'
   schedule:
     # run this Action every 14 days
     - cron: '0 * */14 * *'
+  # Run on demand
   workflow_dispatch:
 
 permissions:

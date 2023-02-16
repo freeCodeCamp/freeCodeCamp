@@ -7,7 +7,7 @@ import {
   fetchUserComplete,
   fetchUserError
 } from './actions';
-import { jwt } from './cookieValues';
+import { jwt } from './cookie-values';
 
 function* fetchSessionUser() {
   if (!jwt) {

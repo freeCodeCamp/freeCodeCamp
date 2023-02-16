@@ -46,7 +46,8 @@ import {
   previewMounted,
   updateChallengeMeta,
   openModal,
-  setEditorFocusability
+  setEditorFocusability,
+  setIsAdvancing
 } from '../redux/actions';
 import {
   challengeFilesSelector,
@@ -84,7 +85,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       cancelTests,
       previewMounted,
       openModal,
-      setEditorFocusability
+      setEditorFocusability,
+      setIsAdvancing
     },
     dispatch
   );
@@ -113,6 +115,7 @@ interface ShowClassicProps {
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
   setEditorFocusability: (canFocus: boolean) => void;
+  setIsAdvancing: (arg: boolean) => void;
   previewMounted: () => void;
   savedChallenges: CompletedChallenge[];
 }
@@ -292,6 +295,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       initTests,
       updateChallengeMeta,
       openModal,
+      setIsAdvancing,
       savedChallenges,
       data: {
         challengeNode: {
@@ -327,6 +331,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
+    setIsAdvancing(false);
   }
 
   componentWillUnmount() {
@@ -480,7 +485,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const {
       executeChallenge,
       pageContext: {
-        challengeMeta: { nextChallengePath, prevChallengePath },
+        challengeMeta: { isFirstStep, nextChallengePath, prevChallengePath },
         projectPreview: { challengeData, showProjectPreview }
       },
       challengeFiles,
@@ -539,6 +544,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               instructions={this.renderInstructionsPanel({
                 showToolPanel: true
               })}
+              isFirstStep={isFirstStep}
               layoutState={this.state.layout}
               notes={this.renderNotes(notes)}
               preview={this.renderPreview()}

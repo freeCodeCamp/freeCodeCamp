@@ -347,7 +347,7 @@ export class CertificationSettings extends Component {
         <div>
           <p>
             {t('settings.claim-legacy', {
-              cert: 'Legacy Full Stack Certification'
+              cert: t('certification.title.Legacy Full Stack Certification')
             })}
           </p>
           <ul>
