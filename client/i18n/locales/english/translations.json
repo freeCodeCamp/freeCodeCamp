@@ -427,7 +427,7 @@
     "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org."
   },
   "report": {
-    "sign-in": "You need to be signed in to report a user",
+    "sign-to-report": "You need to be signed in to report a user",
     "details": "Please provide as much detail as possible about the account or behavior you are reporting.",
     "portfolio": "Report a users portfolio",
     "portfolio-2": "Do you want to report {{username}}'s portfolio for abuse?",

@@ -85,18 +85,10 @@ function ShowUser({
         <FullWidthRow>
           <Spacer size={2} />
           <Panel bsStyle='info' className='text-center'>
-            <Panel.Heading>
-              <Panel.Title componentClass='h3'>
-                {t('report.sign-in')}
-              </Panel.Title>
-            </Panel.Heading>
-            <Panel.Body className='text-center'>
-              <Spacer size={2} />
-              <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
-                <Login block={true}>{t('buttons.click-here')}</Login>
-              </Col>
-              <Spacer size={3} />
-            </Panel.Body>
+            <Panel.Heading>{t('report.sign-report')}</Panel.Heading>
+            <Spacer size={2} />
+            <Login block={true}>{t('buttons.click-here')}</Login>
+            <Spacer size={2} />
           </Panel>
         </FullWidthRow>
       </main>
