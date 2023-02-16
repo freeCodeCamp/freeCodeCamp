@@ -8,27 +8,28 @@ describe('<FormGroup>', () => {
   it('renders children', () => {
     render(
       <FormGroup data-testid='test-id'>
-        <span className='firstChild' />
-        <span className='secondChild' />
+        <span title='Child' />
+        <span title='Child' />
       </FormGroup>
     );
 
     const element = screen.getByTestId('test-id');
     expect(element.childElementCount).toBe(sameNumberOfChildren);
 
-    const formGroupChildren = screen.getAllByRole('span');
+    const formGroupChildren = screen.getAllByTitle('Child');
     expect(formGroupChildren.length).toBe(sameNumberOfChildren);
-    expect(formGroupChildren[0].className).toBe('firstChild');
-    expect(formGroupChildren[1].className).toBe('secondChild');
+    element.childNodes.forEach((child, index) => {
+      expect(child).toBe(formGroupChildren[index]);
+    });
   });
 
   it('provided controlId to label and control', () => {
     render(
       <FormGroup controlId='my-control' data-testid='test-id'>
-        <FormControl />
+        <FormControl role='switch' />
       </FormGroup>
     );
-    const input = screen.getByRole('input');
+    const input = screen.getByRole('switch');
     expect(input.id).toBe('my-control');
   });
 });
