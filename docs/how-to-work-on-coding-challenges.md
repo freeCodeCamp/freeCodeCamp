@@ -463,11 +463,11 @@ pnpm run test:curriculum
 2. You can also test a block or a superblock of challenges with these commands
 
 ```
-pnpm run test:curriculum --block='Basic HTML and HTML5'
+FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 ```
 
 ```
-pnpm run test:curriculum --superblock=responsive-web-design
+FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
 You are also able to test one challenge individually by performing the following steps:

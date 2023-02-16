@@ -194,11 +194,11 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    pnpm run clean
 
    pnpm install
-   pnpm run test:curriculum --superblock=<superblock-name>
+   FCC_SUPERBLOCK='<superblock-name>' pnpm run test:curriculum 
 
    # example:
 
-   # pnpm run test:curriculum --superblock=python-for-everybody
+   # FCC_SUPERBLOCK='python-for-everybody' pnpm run test:curriculum
 
    ```
 
