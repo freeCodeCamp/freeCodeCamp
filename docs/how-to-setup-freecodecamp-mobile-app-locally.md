@@ -378,7 +378,7 @@ A quick reference to the commands that you will need when working locally.
 | command                                                        | description                                                                         |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
-| `pnpm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              | -->
+| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              | -->
 
 ## Troubleshooting
 
