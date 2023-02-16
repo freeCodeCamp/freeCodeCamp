@@ -1,53 +1,53 @@
 ---
 id: 637f703572c65bc8e73dfe35
 videoId: tsEQgGjSmkM
-title: Links and Images Question B
+title: Questão B de Links e imagens
 challengeType: 15
 dashedName: links-and-images-question-b
 ---
 
 # --description--
 
-To get some practice using links and images throughout this lesson you need an HTML project to work with.
+Para fazer alguns exercícios práticos usando links e imagens nesta lição, você precisa de um projeto de HTML para trabalhar.
 
-- Create a new directory named `odin-links-and-images`.
+- Crie um diretório chamado `odin-links-and-images`.
 
-- Within that directory, create a new file named `index.html`.
+- Dentro desse diretório, crie um arquivo e dê a ele o nome de `index.html`.
 
-- Fill in the usual HTML boilerplate.
+- Preencha o boilerplate do HTML de sempre.
 
-- finally, add the following `h1` to the `body`: `<h1>Homepage</h1>`
+- Por fim, adicione o seguinte `h1` ao `body`: `<h1>Homepage</h1>`
 
-## Anchor Elements
-To create a link in HTML, you use the anchor element. An anchor element is defined by wrapping the text or another HTML element you want to be a link with an `<a>` tag. Add the following to the `body` of the `index.html` page you created and open it in the browser:
+## Elementos de âncora
+Para criar um link em HTML, use o elemento de âncora. Um elemento de âncora é definido agregando o texto ou outro elemento do HTML que você que seja um link à tag `<a>`. Adicione o seguinte ao `body` da página `index.html` que você criou e abra a página no navegador:
 
 ```html
 <a>click me</a>
 ```
 
-You may have noticed that clicking this link doesn’t do anything. This is because an anchor tag on its own won’t know where you want to link to. You have to tell it a destination to go to. You do this by using an HTML attribute. An HTML attribute gives additional information to an HTML element and always goes in the element’s opening tag. An attribute is usually made up of two parts: a name, and a value; however, not all attributes require a value. In your case, you need to add a `href` (hyperlink reference) attribute to the opening anchor tag. The value of the `href` attribute is the destination you want your link to go to. Add the following `href` attribute to the anchor element you created previously and try clicking it again, don’t forget to refresh the browser so the new changes can be applied.
+Você pode ter notado que, ao clicar nesse link, nada acontece. Isso ocorre porque uma tag de âncora sozinha não saberá para onde você quer ir. Você tem que informar a ela um destino. Você faz isso utilizando um atributo do HTML. Um atributo do HTML fornece informações adicionais para um elemento do HTML e sempre vai na tag de abertura do elemento. Um atributo é geralmente composto por duas partes: um nome e um valor. No entanto, nem todos os atributos requerem um valor. No seu caso, você precisa adicionar um atributo `href` (referência de hiperlink) à tag de abertura do elemento de âncora. O valor do atributo `href` é o destino para o qual você quer o seu link vá. Adicione o atributo `href` abaixo ao elemento âncora que você criou anteriormente e tente clicar novamente. Não se esqueça de atualizar o navegador para que as novas alterações possam ser aplicadas.
 
 ```html
 <a href="https://www.theodinproject.com/about">click me</a>
 ```
 
-By default, any text wrapped with an anchor tag without a `href` attribute will look like plain text. If the `href` attribute is present, the browser will give the text a blue color and underline it to signify it is a link. It’s worth noting you can use anchor tags to link to any kind of resource on the internet, not just other HTML documents. You can link to videos, pdf files, images, and so on, but for the most part, you will be linking to other HTML documents.
+Por padrão, qualquer texto agregado a uma tag de âncora sem um atributo `href` parecerá texto simples. Se o atributo `href` estiver presente, o navegador dará ao texto uma cor azul e vai sublinhá-lo para representar um link. Vale a pena notar que você pode usar tags de âncora para vincular qualquer tipo de recurso na internet, não apenas outros documentos HTML. Você pode vincular vídeos, arquivos em PDF, imagens e assim por diante. Na maioria das vezes, no entanto, você vinculará a tag a outros documentos HTML.
 
 # --question--
 ## --text--
 
-What is an attribute?
+O que é um atributo?
 ## --answers--
 
-An HTML attribute gives additional information to an HTML element and always goes in the element’s closing tag.
+Um atributo do HTML fornece informações adicionais para um elemento do HTML e sempre vai na tag de fechamento do elemento.
 
 ---
 
-An HTML attribute is used to tell the browser what the element contains.
+Um atributo do HTML é usado para informar ao navegador o que o elemento contém.
 
 ---
 
-An HTML attribute gives additional information to an HTML element and always goes in the element’s opening tag.
+Um atributo do HTML fornece informações adicionais para um elemento do HTML e sempre vai na tag de abertura do elemento.
 
 
 ## --video-solution--

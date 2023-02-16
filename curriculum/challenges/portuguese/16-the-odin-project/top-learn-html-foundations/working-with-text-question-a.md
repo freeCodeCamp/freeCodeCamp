@@ -1,14 +1,14 @@
 ---
 id: 637f4e5872c65bc8e73dfe27
 videoId: yqcd-XkxZNM
-title: Working With Text Question A
+title: Questão A de Trabalhando com textos
 challengeType: 15
 dashedName: working-with-text-question-a
 ---
 
 # --description--
 
-What would you expect the following text to output on an HTML page?
+O que você esperaria que o seguinte texto exibisse em uma página HTML?
 
 ```html
 <body>
@@ -20,27 +20,27 @@ What would you expect the following text to output on an HTML page?
 </body>
 ```
 
-It looks like two paragraphs of text, and so you might expect it to display in that way. However that is not the case, as you can see in the output below:
+Parece que há dois parágrafos do texto. Ou seja, pode-se esperar que sejam exibidos desse modo. No entanto, esse não é o caso, como você pode ver pelo resultado abaixo:
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/xxrKqeV?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=xxrKqeV&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_xxrKqeV"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/xxrKqeV?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=xxrKqeV&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen incorporado" loading="lazy" id="cp_embed_xxrKqeV"></iframe>
 
-When the browser encounters new lines like this in your HTML, it will compress them down into one single space. The result of this compression is that all of the text is clumped together into one long line.
+Quando o navegador encontrar novas linhas como essa em seu HTML, ele as comprimirá em um único espaço. O resultado desta compressão é que todo o texto é colocado em uma única linha.
 
-If you want to create paragraphs in HTML, you need to use the paragraph element, which will add a newline after each of your paragraphs. A paragraph element is defined by wrapping text content with a `<p>` tag.
+Se quiser criar parágrafos em HTML, é preciso utilizar o elemento de parágrafo, que acrescentará uma nova linha após cada um dos parágrafos. Um elemento de parágrafo é definido envolvendo o conteúdo do texto com uma tag `<p>`.
 
-Changing our example from before to use paragraph elements fixes the issue:
+Ao mudar nosso exemplo de antes para usar elementos dos parágrafos, corrigimos o problema:
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/mdwbmdp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=mdwbmdp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_mdwbmdp"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/mdwbmdp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=mdwbmdp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen incorporado" loading="lazy" id="cp_embed_mdwbmdp"></iframe>
 
 # --question--
 
 ## --assignment--
 
-Watch and follow along to Kevin Powell’s HTML Paragraph and Headings Video above.
+Assista o vídeo de Kevin Powell sobre Parágrafos e títulos do HTML acima.
 
 ## --text--
 
-How do you create a paragraph in HTML?
+Como se cria um parágrafo em HTML?
 
 ## --answers--
 

@@ -1,52 +1,52 @@
 ---
 id: 637f4e3e72c65bc8e73dfe24
 videoId: kcHKFZBVtf4
-title: Understand Ordered and Unordered List Question A
+title: Questão A sobre Entender listas ordenadas e não ordenadas
 challengeType: 15
 dashedName: understand-ordered-and-unordered-list-question-a
 ---
 
 # --description--
 
-If you want to have a list of items where the order doesn’t matter, like a shopping list of items that can be bought in any order, then you can use an unordered list.
+Se você quer ter uma lista de itens onde a ordem não importa, como uma lista de compras de itens que podem ser comprados em qualquer ordem, então você pode usar uma lista não ordenada.
 
-Unordered lists are created using the `<ul>` element, and each item within the list is created using the list item element `<li>`.
+Listas não ordenadas são criadas usando o elemento `<ul>`. Cada item na lista é criado usando o elemento de item de lista `<li>`.
 
-Each list item in an unordered list begins with a bullet point:
+Cada item de lista de uma lista não ordenada começa com um ponto:
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/powjajd?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=powjajd&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_powjajd"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/powjajd?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=powjajd&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen incorporado" loading="lazy" id="cp_embed_powjajd"></iframe>
 
-If you instead want to create a list of items where the order does matter, like step-by-step instructions for a recipe, or your top 10 favorite TV shows, then you can use an ordered list.
+Se você preferir criar uma lista de itens onde a ordem importa, por outro lado, como instruções passo a passo para uma receita ou seus 10 programas favoritos de TV, então pode usar uma lista ordenada.
 
-Ordered lists are created using the `<ol>` element. Each individual item in them is again created using the list item element `<li>`. However, each list item in an ordered list begins with a number instead:
+Listas ordenadas são criadas usando o elemento `<ol>`. Cada item individual dentro deles é criado usando novamente o elemento de item de lista `<li>`. No entanto, cada item da lista em uma lista ordenada começa com um número:
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/yLXYvYp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=yLXYvYp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_yLXYvYp"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/yLXYvYp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=yLXYvYp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen incorporado" loading="lazy" id="cp_embed_yLXYvYp"></iframe>
 
 # --question--
 
 ## --assignment--
 
-Watch the first three minutes of Kevin Powell's video on Ordered and Unordered lists above.
+Assista os três primeiros minutos do vídeo de Kevin Powell sobre listas ordenadas e não ordenadas acima.
 
 ---
 
-Make an unordered shopping list of your favorite foods.
+Faça uma lista não ordenada de compras dos seus alimentos favoritos.
 
 ---
 
-Make an ordered list of todo’s you need to get done today.
+Faça uma lista ordenada de tarefas que você precisa fazer hoje.
 
 ---
 
-Make an unordered list of places you’d like to visit someday.
+Faça uma lista não ordenada de lugares que você gostaria de visitar um dia.
 
 ---
 
-Make an ordered list of your all time top 5 favorite video games or movies.
+Faça uma lista ordenada dos seus 5 melhores videogames ou filmes favoritos.
 
 ## --text--
 
-What HTML tag is used to create an unordered list?
+Qual é a tag do HTML usada para criar uma lista não ordenada?
 
 ## --answers--
 

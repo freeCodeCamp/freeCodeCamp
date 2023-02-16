@@ -9,7 +9,7 @@ dashedName: passing-values-to-functions-with-arguments
 
 # --description--
 
-إن <dfn>الوسائط (parameters)</dfn> متغيرات تعمل كعناصر ناقلة للقيم الذي يجب أن تكون مدخلة للوظيفة (function) عند تفعيلها. عندما يتم تعريف الوظيفة، فإنها تُعرَّف عادة مع واحد أو أكثر من وسيط. القيم الفعلية التي تدخل (أو <dfn>"تمرر"</dfn>) إلى وظيفة عند استدعائها هي معروفة باسم <dfn>الحجج (arguments)</dfn>.
+إن <dfn>الوسائط (parameters)</dfn> متغيرات تعمل كعناصر ناقلة للقيم الذي تعطى لوظيفة (function) عند تفعيلها. عندما يتم تعريف وظيفة، فإنها تُعرَّف عادة مع واحد أو أكثر من الوسائط. القيم الفعلية التي تدخل (أو <dfn>"تمرر"</dfn>) إلى وظيفة عند استدعائها هي معروفة باسم <dfn>المعطيات (arguments)</dfn>.
 
 إليك وظيفة ذات وسيطين، `param1` و `param2`:
 
@@ -19,11 +19,11 @@ function testFun(param1, param2) {
 }
 ```
 
-ثم يمكننا استدعاء `testFun` مثل: `testFun("Hello", "World");`. لقد تمريرنا حجج من نوع مقطع, `Hello` و `World`. داخل الحجة، `param1` سيتساوى مع المقطع `Hello` و `param2` سيتساوى مع المقطع `World`. لاحظ أنه يمكنك تنفيذ `testFun` مرة أخرى مع معطيات (arguments) مختلفة ووسائط (parameters) لتأخذ قيمة المعطيات الجديدة.
+ثم يمكننا تفعيل `testFun` مثل: `testFun("Hello", "World");`. لقد مرَّرنا معطيين من نوع مقطع نصي، `Hello` و `World`. داخل الوظيفة، `param1` سيتساوى مع المقطع `Hello` و `param2` سيتساوى مع المقطع `World`. لاحظ أنه يمكنك تنفيذ `testFun` مرة أخرى مع معطيات (arguments) مختلفة ووسائط (parameters) لتأخذ قيمة المعطيات الجديدة.
 
 # --instructions--
 
-<ol><li>أنشاء وظيفة تسمى <code>functionWithArgs</code> تقبل حجج وتخرج المجموع الخاص بهم إلى وحدة التحكم.</li><li>استدعي الوظيفة برقمين كحجتين.</li></ol>
+<ol><li>أنشئ وظيفة تسمى <code>functionWithArgs</code> تقبل معطييّن وتخرج المجموع الخاص بهم إلى الكونسول.</li><li>استدعي الوظيفة برقمين كحجتين.</li></ol>
 
 # --hints--
 
@@ -55,7 +55,7 @@ if (typeof functionWithArgs === 'function') {
 assert(logOutput == 16);
 ```
 
-يجب عليك استدعاء `functionWithArgs` برقمين بعد تعريفه.
+يجب عليك استدعاء `functionWithArgs` برقمين بعد تعريفها.
 
 ```js
 assert(
