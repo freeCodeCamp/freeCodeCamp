@@ -13,10 +13,13 @@ describe('<FormGroup>', () => {
       </FormGroup>
     );
 
+    const element = screen.getByTestId('test-id');
+    expect(element.childElementCount).toBe(sameNumberOfChildren);
+
     const formGroupChildren = screen.getAllByRole('span');
-    formGroupChildren.length.should.equal(sameNumberOfChildren);
-    formGroupChildren[0].className.should.equal('firstChild');
-    formGroupChildren[1].className.should.equal('secondChild');
+    expect(formGroupChildren.length).toBe(sameNumberOfChildren);
+    expect(formGroupChildren[0].className).toBe('firstChild');
+    expect(formGroupChildren[1].className).toBe('secondChild');
   });
 
   it('provided controlId to label and control', () => {
@@ -26,6 +29,6 @@ describe('<FormGroup>', () => {
       </FormGroup>
     );
     const input = screen.getByRole('input');
-    input.id.match('my-control');
+    expect(input.id).toBe('my-control');
   });
 });
