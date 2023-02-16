@@ -66,12 +66,12 @@ const standardSuccessMessage = {
   message: 'flash.updated-preferences'
 };
 
-const createStandardHandler = (req, res, next) => err => {
+const createStandardHandler = (req, res, next, alertMessage) => err => {
   if (err) {
     res.status(500).json(standardErrorMessage);
     return next(err);
   }
-  return res.status(200).json(standardSuccessMessage);
+  return res.status(200).json(alertMessage || standardSuccessMessage);
 };
 
 const updateMyEmailValidators = [
@@ -123,7 +123,11 @@ function updateMyPortfolio(...args) {
   const validate = ({ portfolio }) => portfolio?.every(isPortfolioElement);
   const isPortfolioElement = elem =>
     Object.values(elem).every(val => typeof val == 'string');
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties({
+    buildUpdate,
+    validate,
+    successMessage: 'flash.portoflio-item-updated'
+  })(...args);
 }
 
 function updateMyProfileUI(req, res, next) {
@@ -148,7 +152,10 @@ function updateMyAbout(req, res, next) {
   const update = isURL(picture, { require_protocol: true })
     ? { name, location, about, picture }
     : { name, location, about };
-  return user.updateAttributes(update, createStandardHandler(req, res, next));
+  return user.updateAttributes(
+    update,
+    createStandardHandler(req, res, next, 'flash.update-about-me')
+  );
 }
 
 function createUpdateMyUsername(app) {
@@ -224,47 +231,74 @@ function updateMySocials(...args) {
     _.pick(body, ['githubProfile', 'linkedin', 'twitter', 'website']);
   const validate = update =>
     Object.values(update).every(x => typeof x === 'string');
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties({
+    buildUpdate,
+    validate,
+    successMessage: 'flash.updated-socials'
+  })(...args);
 }
 
 function updateMyTheme(...args) {
   const buildUpdate = body => _.pick(body, 'theme');
   const validate = ({ theme }) => theme == 'default' || theme == 'night';
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties({
+    buildUpdate,
+    validate,
+    successMessage: 'flash.updated-themes'
+  })(...args);
 }
 
 function updateMySound(...args) {
   const buildUpdate = body => _.pick(body, 'sound');
   const validate = ({ sound }) => typeof sound === 'boolean';
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties({
+    buildUpdate,
+    validate,
+    successMessage: 'flash.sound-updated'
+  })(...args);
 }
 
 function updateMyKeyboardShortcuts(...args) {
   const buildUpdate = body => _.pick(body, 'keyboardShortcuts');
   const validate = ({ keyboardShortcuts }) =>
     typeof keyboardShortcuts === 'boolean';
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties({
+    buildUpdate,
+    validate,
+    successMessage: 'flash.keyboard-shortcut-updated'
+  })(...args);
 }
 
 function updateMyHonesty(...args) {
   const buildUpdate = body => _.pick(body, 'isHonest');
   const validate = ({ isHonest }) => isHonest === true;
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties({
+    buildUpdate,
+    validate,
+    successMessage: 'buttons.accepted-honesty'
+  })(...args);
 }
 
 function updateMyQuincyEmail(...args) {
   const buildUpdate = body => _.pick(body, 'sendQuincyEmail');
   const validate = ({ sendQuincyEmail }) =>
     typeof sendQuincyEmail === 'boolean';
-  createUpdateUserProperties(buildUpdate, validate)(...args);
+  createUpdateUserProperties({
+    buildUpdate,
+    validate,
+    successMessage: 'flash.subscribe-to-quincy-updated'
+  })(...args);
 }
 
-function createUpdateUserProperties(buildUpdate, validate) {
+function createUpdateUserProperties({ buildUpdate, validate, successMessage }) {
   return (req, res, next) => {
     const { user, body } = req;
     const update = buildUpdate(body);
     if (validate(update)) {
-      user.updateAttributes(update, createStandardHandler(req, res, next));
+      user.updateAttributes(
+        update,
+        createStandardHandler(req, res, next, successMessage)
+      );
     } else {
       handleInvalidUpdate(res);
     }
