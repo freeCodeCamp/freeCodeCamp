@@ -12,19 +12,14 @@ const hasError =
 
 const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
   (
-    {
-      className,
-      validationState,
-      controlId,
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      componentClass: Component = 'div',
-      ...props
-    },
+    { className, validationState, controlId, as, ...props },
     ref
   ): JSX.Element => {
     const defaultClasses = 'mb-3.5';
     const context = useMemo(() => ({ controlId }), [controlId]);
-    // this works on render but the class doesn't change
+    const componentClass = as;
+    const Component = componentClass || 'div';
+
     useEffect(() => {
       if (validationState !== null) {
         const setDefaultClass = (validValue?: string) => {
@@ -42,6 +37,7 @@ const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
         <Component
           ref={ref}
           className={classes}
+          as={as}
           id={controlId}
           {...props}
           validationstate={validationState}

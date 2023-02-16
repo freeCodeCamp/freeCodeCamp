@@ -11,6 +11,7 @@ const story = {
     children: { control: { type: 'object' } },
     className: { control: { type: 'text' } },
     controlId: { control: { type: 'text' } },
+    as: { control: { type: 'text' } },
     validationState: { options: ['success', 'warning', 'error'] }
   }
 };
@@ -18,6 +19,7 @@ const story = {
 const Template: Story<FormGroupProps> = ({
   controlId,
   className,
+  as,
   validationState
 }) => {
   return (
@@ -25,6 +27,7 @@ const Template: Story<FormGroupProps> = ({
       controlId={controlId}
       className={className}
       validationState={validationState}
+      as={as}
     >
       <FormControl type={'text'} placeholder='Hello World'>
         {' '}
