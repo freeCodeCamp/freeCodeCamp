@@ -100,13 +100,13 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          echo npm version $(npm -v)
+          echo pnpm version $(pnpm -v)
           pnpm install
           pnpm run create:config
           pnpm run build:curriculum
 
       - name: Run Tests
-        run: npm test
+        run: pnpm test
 
   test-upcoming:
     name: Test Upcoming Changes
@@ -140,13 +140,13 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          echo npm version $(npm -v)
+          echo pnpm version $(pnpm -v)
           pnpm install
           pnpm run create:config
           pnpm run build:curriculum
 
       - name: Run Tests
-        run: npm test
+        run: pnpm test
 
   test-localization:
     name: Localize
@@ -183,7 +183,7 @@ jobs:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
-          echo npm version $(npm -v)
+          echo pnpm version $(pnpm -v)
           pnpm install
           pnpm run create:config
           pnpm run build:curriculum
@@ -192,4 +192,4 @@ jobs:
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
-        run: npm test
+        run: pnpm test

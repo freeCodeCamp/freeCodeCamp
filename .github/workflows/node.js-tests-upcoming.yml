@@ -91,4 +91,4 @@ jobs:
           pnpm run build:curriculum
 
       - name: Run Tests
-        run: npm test
+        run: pnpm test

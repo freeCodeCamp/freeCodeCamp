@@ -38,6 +38,6 @@ jobs:
 
       - name: Run Checks
         run: |
-          echo npm version $(npm -v)
+          echo pnpm version $(pnpm -v)
           pnpm install
           pnpm run knip

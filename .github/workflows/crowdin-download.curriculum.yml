@@ -294,7 +294,7 @@ jobs:
 
       - name: Build Source Files
         run: |
-          echo npm version $(npm -v)
+          echo pnpm version $(pnpm -v)
           pnpm install
           pnpm run create:config
           pnpm run build:curriculum
