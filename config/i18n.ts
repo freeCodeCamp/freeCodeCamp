@@ -68,7 +68,7 @@ export const i18nextCodes = {
 };
 
 // These are for the language selector dropdown menu in the footer
-export const LangNames = {
+export const LangNames: { [key: string]: string } = {
   [Languages.English]: 'English',
   [Languages.Espanol]: 'Español',
   [Languages.Chinese]: '中文（简体字）',
@@ -111,7 +111,7 @@ export const rtlLangs = ['arabic'];
 // locale is sourced from a JSON file, so we use getLangCode to
 // find the associated enum values
 
-export function getLangCode(locale: PropertyKey) {
+export function getLangCode(locale: PropertyKey): string {
   if (isPropertyOf(LangCodes, locale)) return LangCodes[locale];
   throw new Error(`${String(locale)} is not a valid locale`);
 }

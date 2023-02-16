@@ -136,6 +136,8 @@ function parseApiResponseToClientUser(data: ApiUser): UserResponse {
   };
 }
 
+// TODO: this at least needs a few aliases so it's human readable
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function mapFilesToChallengeFiles<File, Rest>(
   fileContainer: ({ files: (File & { key: string })[] } & Rest)[] = []
 ) {

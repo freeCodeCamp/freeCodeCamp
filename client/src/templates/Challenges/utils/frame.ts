@@ -132,11 +132,15 @@ const createHeader = (id = mainPreviewId) => `
   </script>
 `;
 
+type TestResult =
+  | { pass: boolean }
+  | { err: { message: string; stack?: string } };
+
 export const runTestInTestFrame = async function (
   document: Document,
   test: string,
   timeout: number
-) {
+): Promise<TestResult | undefined> {
   const { contentDocument: frame } = document.getElementById(
     testId
   ) as HTMLIFrameElement;
@@ -309,7 +313,7 @@ export const createMainPreviewFramer = (
   document: Document,
   proxyLogger: ProxyLogger,
   frameTitle: string
-) =>
+): ((args: Context) => void) =>
   createFramer(
     document,
     mainPreviewId,
@@ -322,7 +326,7 @@ export const createMainPreviewFramer = (
 export const createProjectPreviewFramer = (
   document: Document,
   frameTitle: string
-) =>
+): ((args: Context) => void) =>
   createFramer(
     document,
     projectPreviewId,
@@ -336,7 +340,8 @@ export const createTestFramer = (
   document: Document,
   proxyLogger: ProxyLogger,
   frameReady: () => void
-) => createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
+): ((args: Context) => void) =>
+  createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
 
 const createFramer = (
   document: Document,
