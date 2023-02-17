@@ -140,7 +140,9 @@ function updateMyProfileUI(req, res, next) {
       res.status(500).json(standardErrorMessage);
       return next(err);
     }
-    return res.status(200).json(standardErrorMessage);
+    return res
+      .status(200)
+      .json({ type: 'success', message: 'flash.privacy-updated' });
   });
 }
 
