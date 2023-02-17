@@ -34,7 +34,7 @@ const story = {
 };
 
 const DefaultTemplate: Story<FormControlProps> = args => {
-  return <FormControl role='alert' {...args} />;
+  return <FormControl {...args} />;
 };
 
 export const Default = DefaultTemplate.bind({});

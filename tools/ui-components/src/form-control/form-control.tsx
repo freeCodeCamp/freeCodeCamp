@@ -40,6 +40,7 @@ const FormControl = ({
       id={id}
       data-testid={testId}
       className={classes}
+      as={componentClass}
       value={value}
       required={required}
       onChange={onChange}
