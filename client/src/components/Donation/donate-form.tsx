@@ -41,8 +41,16 @@ import {
 
 import './donation.css';
 
-const numToCommas = (num: number): string =>
+const numToCommas = (num: number) =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+
+// the number is used to indicate to the doner about how much hours of free education their dontation will provide.
+const contributedHoursOfFreeEduction = 50;
+const convertAmountToUSD = 100;
+const convertToTimeContributed = (amount: number) =>
+  numToCommas((amount / convertAmountToUSD) * contributedHoursOfFreeEduction);
+const formattedAmountLabel = (amount: number) =>
+  numToCommas(amount / convertAmountToUSD);
 
 type DonateFormState = {
   processing: boolean;
@@ -116,6 +124,18 @@ const mapDispatchToProps = {
   updateDonationFormState
 };
 
+const PaymentButtonsLoader = () => {
+  return (
+    <div className=' donation-completion donation-completion-loading'>
+      <Spinner
+        className='script-loading-spinner'
+        fadeIn='none'
+        name='line-scale'
+      />
+    </div>
+  );
+};
+
 class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
   static displayName = 'DonateForm';
   durations: { month: 'monthly'; onetime: 'one-time' };
@@ -163,18 +183,10 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     });
   }
 
-  convertToTimeContributed(amount: number) {
-    return numToCommas((amount / 100) * 50);
-  }
-
-  getFormattedAmountLabel(amount: number): string {
-    return `${numToCommas(amount / 100)}`;
-  }
-
   getDonationButtonLabel() {
     const { donationAmount, donationDuration } = this.state;
     const { t } = this.props;
-    const usd = this.getFormattedAmountLabel(donationAmount);
+    const usd = formattedAmountLabel(donationAmount);
     let donationBtnLabel = t('donate.confirm');
     if (donationDuration === 'one-time') {
       donationBtnLabel = t('donate.confirm-2', {
@@ -222,37 +234,8 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     this.setState({ donationAmount });
   }
 
-  renderDonationDescription() {
-    const { donationAmount, donationDuration } = this.state;
-    const { t } = this.props;
-    const usd = this.getFormattedAmountLabel(donationAmount);
-    const hours = this.convertToTimeContributed(donationAmount);
-
-    let donationDescription = t('donate.your-donation-3', { usd, hours });
-
-    if (donationDuration === 'one-time') {
-      donationDescription = t('donate.your-donation', { usd, hours });
-    } else if (donationDuration === 'month') {
-      donationDescription = t('donate.your-donation-2', { usd, hours });
-    }
-
-    return <p className='donation-description'>{donationDescription}</p>;
-  }
-
   resetDonation() {
     return this.props.updateDonationFormState({ ...defaultDonationFormState });
-  }
-
-  paymentButtonsLoader() {
-    return (
-      <div className=' donation-completion donation-completion-loading'>
-        <Spinner
-          className='script-loading-spinner'
-          fadeIn='none'
-          name='line-scale'
-        />
-      </div>
-    );
   }
 
   renderCompletion(props: {
@@ -281,7 +264,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     const isOneTime = donationDuration === 'one-time';
     const walletlabel = `${t(
       isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
-      { usd: donationAmount / 100 }
+      { usd: donationAmount / convertAmountToUSD }
     )}:`;
     const showMinimalPayments = isSignedIn && (isMinimalForm || !isDonating);
 
@@ -297,7 +280,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             {t('donate.secure-donation')}
           </legend>
 
-          {loading.stripe && loading.paypal && this.paymentButtonsLoader()}
+          {loading.stripe && loading.paypal && <PaymentButtonsLoader />}
           <WalletsWrapper
             amount={donationAmount}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
@@ -338,9 +321,21 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
   }
 
   renderPageForm() {
+    const { donationAmount, donationDuration } = this.state;
+    const { t } = this.props;
+    const usd = formattedAmountLabel(donationAmount);
+    const hours = convertToTimeContributed(donationAmount);
+
+    let donationDescription = t('donate.your-donation-3', { usd, hours });
+
+    if (donationDuration === 'one-time') {
+      donationDescription = t('donate.your-donation', { usd, hours });
+    } else if (donationDuration === 'month') {
+      donationDescription = t('donate.your-donation-2', { usd, hours });
+    }
     return (
       <>
-        <div>{this.renderDonationDescription()}</div>
+        <p className='donation-description'>{donationDescription}</p>
         <div>{this.renderButtonGroup()}</div>
       </>
     );
