@@ -61,17 +61,27 @@ const standardErrorMessage = {
   message: 'flash.wrong-updating'
 };
 
-const standardSuccessMessage = {
-  type: 'success',
-  message: 'flash.updated-preferences'
-};
-
 const createStandardHandler = (req, res, next, alertMessage) => err => {
   if (err) {
     res.status(500).json(standardErrorMessage);
     return next(err);
   }
   return res.status(200).json({ type: 'success', message: alertMessage });
+};
+
+const createUpdateUserProperties = (buildUpdate, validate, successMessage) => {
+  return (req, res, next) => {
+    const { user, body } = req;
+    const update = buildUpdate(body);
+    if (validate(update)) {
+      user.updateAttributes(
+        update,
+        createStandardHandler(req, res, next, successMessage)
+      );
+    } else {
+      handleInvalidUpdate(res);
+    }
+  };
 };
 
 const updateMyEmailValidators = [
@@ -218,13 +228,10 @@ const updatePrivacyTerms = (req, res, next) => {
     acceptedPrivacyTerms: true,
     sendQuincyEmail: !!quincyEmails
   };
-  return user.updateAttributes(update, err => {
-    if (err) {
-      res.status(500).json(standardErrorMessage);
-      return next(err);
-    }
-    return res.status(200).json(standardSuccessMessage);
-  });
+  return user.updateAttributes(
+    update,
+    createStandardHandler(req, res, next, 'flash.privacy-updated')
+  );
 };
 
 function updateMySocials(...args) {
@@ -232,72 +239,63 @@ function updateMySocials(...args) {
     _.pick(body, ['githubProfile', 'linkedin', 'twitter', 'website']);
   const validate = update =>
     Object.values(update).every(x => typeof x === 'string');
-  const successMessage = { type: 'success', message: 'flash.updated-socials' };
-  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.updated-socials'
+  )(...args);
 }
 
 function updateMyTheme(...args) {
   const buildUpdate = body => _.pick(body, 'theme');
   const validate = ({ theme }) => theme == 'default' || theme == 'night';
-  const successMessage = { type: 'success', message: 'flash.updated-themes' };
-  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.updated-themes'
+  )(...args);
 }
 
 function updateMySound(...args) {
   const buildUpdate = body => _.pick(body, 'sound');
   const validate = ({ sound }) => typeof sound === 'boolean';
-  const successMessage = { type: 'success', message: 'flash.updated-sound' };
-  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.updated-sound'
+  )(...args);
 }
 
 function updateMyKeyboardShortcuts(...args) {
   const buildUpdate = body => _.pick(body, 'keyboardShortcuts');
   const validate = ({ keyboardShortcuts }) =>
     typeof keyboardShortcuts === 'boolean';
-  const successMessage = {
-    type: 'success',
-    message: 'flash.keyboard-shortcut-updated'
-  };
-  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.keyboard-shortcut-updated'
+  )(...args);
 }
 
 function updateMyHonesty(...args) {
   const buildUpdate = body => _.pick(body, 'isHonest');
   const validate = ({ isHonest }) => isHonest === true;
-  const successMessage = {
-    type: 'success',
-    message: 'buttons.accepted-honesty'
-  };
-  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'buttons.accepted-honesty'
+  )(...args);
 }
 
 function updateMyQuincyEmail(...args) {
   const buildUpdate = body => _.pick(body, 'sendQuincyEmail');
   const validate = ({ sendQuincyEmail }) =>
     typeof sendQuincyEmail === 'boolean';
-  const successMessage = {
-    type: 'success',
-    message: 'flash.subscribe-to-quincy-updated'
-  };
-  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
-}
-
-function createUpdateUserProperties(buildUpdate, validate, successMessage) {
-  return (req, res, next) => {
-    const { user, body } = req;
-    const update = buildUpdate(body);
-    if (validate(update)) {
-      user.updateAttributes(update, err => {
-        if (err) {
-          res.status(500).json(standardErrorMessage);
-          return next(err);
-        }
-        return res.status(200).json(successMessage);
-      });
-    } else {
-      handleInvalidUpdate(res);
-    }
-  };
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.subscribe-to-quincy-updated'
+  )(...args);
 }
 
 function handleInvalidUpdate(res) {
