@@ -85,10 +85,7 @@ function updateMyEmail(req, res, next) {
   } = req;
   return user
     .requestUpdateEmail(email)
-    .subscribe(
-      res.json({ type: 'success', message: 'flash.email-valid' }),
-      next
-    );
+    .subscribe(message => res.json({ message }), next);
 }
 
 // Re-enable once we can handle the traffic
@@ -219,6 +216,7 @@ function createUpdateMyUsername(app) {
 }
 
 // why quincy emails is related to this? shouldn't it be it own function
+// what is this for? why did the api function work, even when it isn't here?
 const updatePrivacyTerms = (req, res, next) => {
   const {
     user,
@@ -242,72 +240,58 @@ function updateMySocials(...args) {
     _.pick(body, ['githubProfile', 'linkedin', 'twitter', 'website']);
   const validate = update =>
     Object.values(update).every(x => typeof x === 'string');
-  createUpdateUserProperties({
-    buildUpdate,
-    validate,
-    successMessage: { type: 'success', message: 'flash.updated-socials' }
-  })(...args);
+  const successMessage = { type: 'success', message: 'flash.updated-socials' };
+  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
 }
 
 function updateMyTheme(...args) {
   const buildUpdate = body => _.pick(body, 'theme');
   const validate = ({ theme }) => theme == 'default' || theme == 'night';
-  createUpdateUserProperties({
-    buildUpdate,
-    validate,
-    successMessage: { type: 'success', message: 'flash.updated-themes' }
-  })(...args);
+  const successMessage = { type: 'success', message: 'flash.updated-themes' };
+  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
 }
 
 function updateMySound(...args) {
   const buildUpdate = body => _.pick(body, 'sound');
   const validate = ({ sound }) => typeof sound === 'boolean';
-  createUpdateUserProperties({
-    buildUpdate,
-    validate,
-    successMessage: { type: 'success', message: 'flash.updated-sound' }
-  })(...args);
+  const successMessage = { type: 'success', message: 'flash.updated-sound' };
+  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
 }
 
 function updateMyKeyboardShortcuts(...args) {
   const buildUpdate = body => _.pick(body, 'keyboardShortcuts');
   const validate = ({ keyboardShortcuts }) =>
     typeof keyboardShortcuts === 'boolean';
-  createUpdateUserProperties({
-    buildUpdate,
-    validate,
-    successMessage: {
-      type: 'success',
-      message: 'flash.keyboard-shortcut-updated'
-    }
-  })(...args);
+  const successMessage = {
+    type: 'success',
+    message: 'flash.keyboard-shortcut-updated'
+  };
+  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
 }
 
 function updateMyHonesty(...args) {
   const buildUpdate = body => _.pick(body, 'isHonest');
   const validate = ({ isHonest }) => isHonest === true;
-  createUpdateUserProperties({
-    buildUpdate,
-    validate,
-    successMessage: { type: 'success', message: 'buttons.accepted-honesty' }
-  })(...args);
+  const successMessage = {
+    type: 'success',
+    message: 'buttons.accepted-honesty'
+  };
+  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
 }
 
 function updateMyQuincyEmail(...args) {
   const buildUpdate = body => _.pick(body, 'sendQuincyEmail');
   const validate = ({ sendQuincyEmail }) =>
     typeof sendQuincyEmail === 'boolean';
-  createUpdateUserProperties({
-    buildUpdate,
-    validate,
-    successMessage: {
-      type: 'success',
-      message: 'flash.subscribe-to-quincy-updated'
-    }
-  })(...args);
+  const successMessage = {
+    type: 'success',
+    message: 'flash.subscribe-to-quincy-updated'
+  };
+  createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
 }
 
-function createUpdateUserProperties({ buildUpdate, validate, successMessage }) {
+// did changing this function make update privacy fail? But why should it care?
+function createUpdateUserProperties(buildUpdate, validate, successMessage) {
   return (req, res, next) => {
     const { user, body } = req;
     const update = buildUpdate(body);
