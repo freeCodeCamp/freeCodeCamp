@@ -11,6 +11,7 @@ import { testRoutes } from './routes/test';
 import { auth0Routes } from './routes/auth0';
 import { dbConnector } from './db';
 import { testMiddleware } from './middleware';
+
 import {
   AUTH0_AUDIENCE,
   AUTH0_DOMAIN,
@@ -19,6 +20,10 @@ import {
   MONGOHQ_URL,
   SESSION_SECRET
 } from './utils/env';
+
+import { prismaRoute } from './routes/prisma';
+
+import prismaPlugin from './db/prisma';
 
 const fastify = Fastify({
   logger: { level: NODE_ENV === 'development' ? 'debug' : 'fatal' }
@@ -56,7 +61,9 @@ const start = async () => {
   void fastify.use('/test', testMiddleware);
 
   void fastify.register(dbConnector);
+  void fastify.register(prismaPlugin);
   void fastify.register(testRoutes);
+  void fastify.register(prismaRoute);
   void fastify.register(auth0Routes, { prefix: '/auth0' });
 
   try {
