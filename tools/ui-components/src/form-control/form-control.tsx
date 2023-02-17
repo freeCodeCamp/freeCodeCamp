@@ -53,5 +53,3 @@ const FormControl = ({
 const MainFormControl = Object.assign(FormControl, { Feedback, Static });
 
 export { MainFormControl as FormControl };
-
-<FormControl role='checkbox'></FormControl>;
