@@ -13,7 +13,6 @@ const FormControl = ({
   testId,
   onChange,
   value,
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   componentClass,
   placeholder,
   name,
