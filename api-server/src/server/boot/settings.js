@@ -133,11 +133,11 @@ function updateMyPortfolio(...args) {
   const validate = ({ portfolio }) => portfolio?.every(isPortfolioElement);
   const isPortfolioElement = elem =>
     Object.values(elem).every(val => typeof val == 'string');
-  createUpdateUserProperties({
+  createUpdateUserProperties(
     buildUpdate,
     validate,
-    successMessage: { type: 'success', message: 'flash.portoflio-item-updated' }
-  })(...args);
+    'flash.portoflio-item-updated'
+  )(...args);
 }
 
 // This API is reponsible for what campers decide to make public in their porfoile, and what is private.
