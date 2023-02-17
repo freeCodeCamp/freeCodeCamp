@@ -66,13 +66,13 @@ const standardSuccessMessage = {
   message: 'flash.updated-preferences'
 };
 
-// const createStandardHandler = (req, res, next, alertMessage) => err => {
-//   if (err) {
-//     res.status(500).json(standardErrorMessage);
-//     return next(err);
-//   }
-//   return res.status(200).json(alertMessage);
-// };
+const createStandardHandler = (req, res, next, alertMessage) => err => {
+  if (err) {
+    res.status(500).json(standardErrorMessage);
+    return next(err);
+  }
+  return res.status(200).json({ type: 'success', message: alertMessage });
+};
 
 const updateMyEmailValidators = [
   check('email').isEmail().withMessage('Email format is invalid.')
@@ -130,20 +130,17 @@ function updateMyPortfolio(...args) {
   })(...args);
 }
 
+// This API is reponsible for what campers decide to make public in their porfoile, and what is private.
 function updateMyProfileUI(req, res, next) {
   const {
     user,
     body: { profileUI }
   } = req;
-  user.updateAttribute('profileUI', profileUI, err => {
-    if (err) {
-      res.status(500).json(standardErrorMessage);
-      return next(err);
-    }
-    return res
-      .status(200)
-      .json({ type: 'success', message: 'flash.privacy-updated' });
-  });
+  user.updateAttribute(
+    'profileUI',
+    profileUI,
+    createStandardHandler(req, res, next, 'flash.privacy-updated')
+  );
 }
 
 function updateMyAbout(req, res, next) {
@@ -156,15 +153,10 @@ function updateMyAbout(req, res, next) {
   const update = isURL(picture, { require_protocol: true })
     ? { name, location, about, picture }
     : { name, location, about };
-  return user.updateAttributes(update, err => {
-    if (err) {
-      res.status(500).json(standardErrorMessage);
-      return next(err);
-    }
-    return res
-      .status(200)
-      .json({ type: 'success', message: 'flash.updated-about-me' });
-  });
+  return user.updateAttributes(
+    update,
+    createStandardHandler(req, res, next, 'flash.updated-about-me')
+  );
 }
 
 function createUpdateMyUsername(app) {
@@ -217,8 +209,6 @@ function createUpdateMyUsername(app) {
   };
 }
 
-// why quincy emails is related to this? shouldn't it be it own function
-// what is this for? why did the api function work, even when it isn't here?
 const updatePrivacyTerms = (req, res, next) => {
   const {
     user,
@@ -292,7 +282,6 @@ function updateMyQuincyEmail(...args) {
   createUpdateUserProperties(buildUpdate, validate, successMessage)(...args);
 }
 
-// did changing this function make update privacy fail? But why should it care?
 function createUpdateUserProperties(buildUpdate, validate, successMessage) {
   return (req, res, next) => {
     const { user, body } = req;
@@ -331,13 +320,10 @@ function updateUserFlag(req, res, next) {
     'website'
   ];
   if (Object.keys(update).every(key => allowedKeys.includes(key))) {
-    return user.updateAttributes(update, err => {
-      if (err) {
-        res.status(500).json(standardErrorMessage);
-        return next(err);
-      }
-      return res.status(200).json(standardSuccessMessage);
-    });
+    return user.updateAttributes(
+      update,
+      createStandardHandler(req, res, next, 'flash.updated-socials')
+    );
   }
   return res.status(403).json({
     type: 'danger',
