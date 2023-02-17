@@ -1,12 +1,21 @@
 import { challengeTypes } from '../../../../utils/challenge-types';
-import { completedChallengesSelector } from '../../../redux/selectors';
+import {
+  completedChallengesSelector,
+  allChallengesInfoSelector,
+  isSignedInSelector
+} from '../../../redux/selectors';
+import {
+  getCurrentBlockIds,
+  getCompletedChallengesInBlock,
+  getCompletedPercentage
+} from '../../../utils/get-completion-percentage';
 import { ns } from './action-types';
 
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
-export const completedChallengesIds = state =>
+export const completedChallengesIdsSelector = state =>
   completedChallengesSelector(state).map(node => node.id);
 export const isChallengeCompletedSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
@@ -80,6 +89,53 @@ export const challengeDataSelector = state => {
     };
   }
   return challengeData;
+};
+
+export const currentBlockIdsSelector = state => {
+  const { block, certification, challengeType } = challengeMetaSelector(state);
+  const allChallengesInfo = allChallengesInfoSelector(state);
+  const currentBlockIds = getCurrentBlockIds(
+    allChallengesInfo,
+    block,
+    certification,
+    challengeType
+  );
+
+  return currentBlockIds;
+};
+
+export const completedChallengesInBlockSelector = state => {
+  const completedChallengesIds = completedChallengesIdsSelector(state);
+  const currentBlockIds = currentBlockIdsSelector(state);
+  const { id } = challengeMetaSelector(state);
+  const completedChallengesInBlock = getCompletedChallengesInBlock(
+    completedChallengesIds,
+    currentBlockIds,
+    id
+  );
+  return completedChallengesInBlock;
+};
+
+export const completedPercentageSelector = state => {
+  const isSignedIn = isSignedInSelector(state);
+  if (isSignedIn) {
+    const completedChallengesIds = completedChallengesIdsSelector(state);
+    const { id } = challengeMetaSelector(state);
+    const currentBlockIds = currentBlockIdsSelector(state);
+    const completedPercentage = getCompletedPercentage(
+      completedChallengesIds,
+      currentBlockIds,
+      id
+    );
+    return completedPercentage;
+  } else return 0;
+};
+
+export const isBlockNewlyCompletedSelector = state => {
+  const completedPercentage = completedPercentageSelector(state);
+  const completedChallengesIds = completedChallengesIdsSelector(state);
+  const { id } = challengeMetaSelector(state);
+  return completedPercentage === 100 && !completedChallengesIds.includes(id);
 };
 
 export const attemptsSelector = state => state[ns].attempts;
