@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
+type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
 
 type ChangibleValues =
   | {
