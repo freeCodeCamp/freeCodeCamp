@@ -543,6 +543,7 @@
     "username-used": "Username is already associated with this account",
     "username-taken": "Username is already associated with a different account",
     "username-updated": "Your username is updated to {{username}}",
+    "privacy-updated": "Your privacy setting has been updated",
     "could-not-logout": "We could not log you out, please try again in a moment",
     "email-encoded-wrong": "The email encoded in the link is incorrectly formatted",
     "oops-not-right": "Oops, something is not right, please request a fresh link to sign in / sign up",

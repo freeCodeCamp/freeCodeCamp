@@ -85,7 +85,10 @@ function updateMyEmail(req, res, next) {
   } = req;
   return user
     .requestUpdateEmail(email)
-    .subscribe(message => res.json({ message }), next);
+    .subscribe(
+      res.json({ type: 'success', message: 'flash.email-valid' }),
+      next
+    );
 }
 
 // Re-enable once we can handle the traffic
@@ -126,7 +129,7 @@ function updateMyPortfolio(...args) {
   createUpdateUserProperties({
     buildUpdate,
     validate,
-    successMessage: 'flash.portoflio-item-updated'
+    successMessage: { type: 'success', message: 'flash.portoflio-item-updated' }
   })(...args);
 }
 
@@ -159,7 +162,9 @@ function updateMyAbout(req, res, next) {
       res.status(500).json(standardErrorMessage);
       return next(err);
     }
-    return res.status(200).json('flash.update-about-me');
+    return res
+      .status(200)
+      .json({ type: 'success', message: 'flash.updated-about-me' });
   });
 }
 
@@ -213,6 +218,7 @@ function createUpdateMyUsername(app) {
   };
 }
 
+// why quincy emails is related to this? shouldn't it be it own function
 const updatePrivacyTerms = (req, res, next) => {
   const {
     user,
@@ -239,7 +245,7 @@ function updateMySocials(...args) {
   createUpdateUserProperties({
     buildUpdate,
     validate,
-    successMessage: 'flash.updated-socials'
+    successMessage: { type: 'success', message: 'flash.updated-socials' }
   })(...args);
 }
 
@@ -249,7 +255,7 @@ function updateMyTheme(...args) {
   createUpdateUserProperties({
     buildUpdate,
     validate,
-    successMessage: 'flash.updated-themes'
+    successMessage: { type: 'success', message: 'flash.updated-themes' }
   })(...args);
 }
 
@@ -259,7 +265,7 @@ function updateMySound(...args) {
   createUpdateUserProperties({
     buildUpdate,
     validate,
-    successMessage: 'flash.sound-updated'
+    successMessage: { type: 'success', message: 'flash.updated-sound' }
   })(...args);
 }
 
@@ -270,7 +276,10 @@ function updateMyKeyboardShortcuts(...args) {
   createUpdateUserProperties({
     buildUpdate,
     validate,
-    successMessage: 'flash.keyboard-shortcut-updated'
+    successMessage: {
+      type: 'success',
+      message: 'flash.keyboard-shortcut-updated'
+    }
   })(...args);
 }
 
@@ -280,7 +289,7 @@ function updateMyHonesty(...args) {
   createUpdateUserProperties({
     buildUpdate,
     validate,
-    successMessage: 'buttons.accepted-honesty'
+    successMessage: { type: 'success', message: 'buttons.accepted-honesty' }
   })(...args);
 }
 
@@ -288,13 +297,14 @@ function updateMyQuincyEmail(...args) {
   const buildUpdate = body => _.pick(body, 'sendQuincyEmail');
   const validate = ({ sendQuincyEmail }) =>
     typeof sendQuincyEmail === 'boolean';
-  createUpdateUserProperties(
-    {
-      buildUpdate,
-      validate,
-      successMessage: 'flash.subscribe-to-quincy-updated'
-    }(...args)
-  );
+  createUpdateUserProperties({
+    buildUpdate,
+    validate,
+    successMessage: {
+      type: 'success',
+      message: 'flash.subscribe-to-quincy-updated'
+    }
+  })(...args);
 }
 
 function createUpdateUserProperties({ buildUpdate, validate, successMessage }) {
