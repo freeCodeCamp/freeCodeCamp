@@ -124,6 +124,6 @@ let result = reRegex.test(repeatNum);
 
 ```js
 let repeatNum = "42 42 42";
-let reRegex = /^(\d+)\s\1\s\1$/;
+let reRegex = /^(\d+) \1 \1$/;
 let result = reRegex.test(repeatNum);
 ```
