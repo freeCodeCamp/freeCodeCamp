@@ -534,7 +534,7 @@ npm run create:config && npm run build:curriculum && npm run build:server
 4. Start Instances
 
 ```console
-   cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
+cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
    ```
 
 #### 2. Rolling updates - Used for logical changes to code.
