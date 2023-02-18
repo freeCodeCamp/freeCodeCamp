@@ -13,20 +13,20 @@ The <dfn>remainder</dfn> operator `%` gives the remainder of the division of two
 
 **Example**
 
-```js
-const five = 5;
-const two = 2;
-const quotient = Math.floor(5 / 2);
-console.log(quotient); // logs 2
-```
+<pre>
+5 % 2 = 1
+5 / 2 = 2 remainder 1
+2 * 2 = 4
+5 - 4 = 1
+</pre>
 
 **Usage**  
-In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`.
+In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`. Even numbers have a remainder of `0`, while odd numbers a remainder of `1`.
 
-```js
-const oddNumber = 17;
-const evenNumber = 48;
-```
+<pre>
+17 % 2 = 1
+48 % 2 = 0
+</pre>
 
 **Note:** The <dfn>remainder</dfn> operator is sometimes incorrectly referred to as the modulus operator. It is very similar to modulus, but does not work properly with negative numbers.
 
