@@ -50,7 +50,7 @@ Submit your page when you think you've got it right. If you're running into erro
 
 # --hints--
 
-You should serialize user object correctly.
+You should serialize the user object correctly.
 
 ```js
 async (getUserInput) => {
