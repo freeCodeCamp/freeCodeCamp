@@ -120,7 +120,7 @@
     "redux-saga": "1.2.2",
     "reselect": "4.1.7",
     "rxjs": "6.6.7",
-    "sanitize-html": "2.9.0",
+    "sanitize-html": "2.10.0",
     "sass.js": "0.11.1",
     "sha-1": "1.0.0",
     "store": "2.0.12",
