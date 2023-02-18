@@ -66,7 +66,6 @@ class InternetSettings extends Component<InternetProps, InternetState> {
       twitter !== originalValues.twitter ||
       website !== originalValues.website
     ) {
-      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: { githubProfile, linkedin, twitter, website }
       });
@@ -179,7 +178,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
 
     const { state: websiteValidation, message: websiteValidationMessage } =
       this.getValidationStateFor(website);
-
+    const isDisabled = this.isFormPristine() || !this.isFormValid();
     return (
       <>
         <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
@@ -244,7 +243,8 @@ class InternetSettings extends Component<InternetProps, InternetState> {
               </FormGroup>
             </div>
             <BlockSaveButton
-              disabled={this.isFormPristine() || !this.isFormValid()}
+              aria-disabled={isDisabled}
+              {...(isDisabled && { tabindex: -1 })}
             >
               {t('buttons.save')}{' '}
               <span className='sr-only'>{t('settings.headings.internet')}</span>
