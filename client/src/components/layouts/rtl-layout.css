@@ -130,6 +130,12 @@ sections that need to stay left to right
   unicode-bidi: isolate;
 }
 
+/* bootstrap display block breaks the code elements when they are stacked on top of each other to sort this, we remove it for display: grid  */
+
+[dir='rtl'] pre[class*='language-']:has(code) {
+  display: grid;
+}
+
 [dir='rtl'] .description-container,
 [dir='rtl'] .action-row-container,
 [dir='rtl']
