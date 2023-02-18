@@ -138,7 +138,7 @@
     "@types/prismjs": "1.26.0",
     "@types/reach__router": "1.3.11",
     "@types/react": "17.0.53",
-    "@types/react-dom": "17.0.18",
+    "@types/react-dom": "17.0.19",
     "@types/react-helmet": "6.1.6",
     "@types/react-instantsearch-core": "6.26.3",
     "@types/react-instantsearch-dom": "6.12.3",
