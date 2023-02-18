@@ -123,6 +123,7 @@ sections that need to stay left to right
 */
 
 /* Code snippet*/
+[dir='rtl'] :has(#learn-app-wrapper) pre,
 [dir='rtl'] code,
 /* trending articles */
 [dir='rtl'] .trending-guides .trending-guides-row div a,
