@@ -70,7 +70,7 @@ async (getUserInput) => {
 }
 ```
 
-You should deserialize user object correctly.
+You should deserialize the user object correctly.
 
 ```js
 async (getUserInput) => {
