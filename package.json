@@ -129,7 +129,7 @@
     "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/eslint": "7.29.0",
     "@types/estree": "0.0.52",
-    "@types/inquirer": "8.2.5",
+    "@types/inquirer": "8.2.6",
     "@types/jest": "27.5.2",
     "@types/jquery": "3.5.16",
     "@types/loadable__component": "5.13.4",
