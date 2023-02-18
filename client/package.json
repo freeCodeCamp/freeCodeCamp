@@ -133,8 +133,8 @@
   },
   "devDependencies": {
     "@babel/types": "7.20.7",
-    "@codesee/babel-plugin-instrument": "0.498.0",
-    "@codesee/tracker": "0.498.0",
+    "@codesee/babel-plugin-instrument": "0.513.0",
+    "@codesee/tracker": "0.513.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
     "@types/react-gtm-module": "2.0.1",
