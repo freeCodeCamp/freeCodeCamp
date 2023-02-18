@@ -43,7 +43,6 @@ describe('Username input field', () => {
       .should('have.class', 'alert alert-info');
   });
 
-  // eslint-disable-next-line
   it('Should be able to click the `Save` button if username is available', () => {
     cy.typeUsername('oliver');
 
@@ -63,7 +62,6 @@ describe('Username input field', () => {
       .should('have.class', 'alert alert-warning');
   });
 
-  // eslint-disable-next-line
   it('Should not be possible to click the `Save` button if username is unavailable', () => {
     cy.typeUsername('twaha');
 
@@ -83,7 +81,6 @@ describe('Username input field', () => {
     cy.get('@usernameForm').contains('Save').should('be.disabled');
   });
 
-  // eslint-disable-next-line max-len
   it('Should not be possible to click the `Save` button if user types their current name', () => {
     cy.typeUsername('developmentuser');
 
@@ -101,7 +98,6 @@ describe('Username input field', () => {
       .should('have.class', 'alert alert-danger');
   });
 
-  // eslint-disable-next-line max-len
   it('Should not be able to click the `Save` button if username includes invalid character', () => {
     cy.typeUsername('Quincy Larson');
 
@@ -134,11 +130,7 @@ describe('Username input field', () => {
     cy.typeUsername('nhcarrigan');
     cy.contains('Username is available');
 
-    // temporary fix until https://github.com/cypress-io/cypress/issues/20562 is fixed
-    cy.contains(`Save`).click();
-
-    // revert to this when it is
-    // cy.get('@usernameInput').type('{enter}', { force: true, release: false });
+    cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
     cy.contains('We have updated your username to nhcarrigan')
       .should('be.visible')
@@ -156,11 +148,7 @@ describe('Username input field', () => {
     cy.typeUsername('bjorno');
     cy.contains('Username is available');
 
-    // temporary fix until https://github.com/cypress-io/cypress/issues/20562 is fixed
-    cy.contains(`Save`).click();
-
-    // revert to this when it is
-    // cy.get('@usernameInput').type('{enter}', { force: true, release: false });
+    cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
     cy.contains('We have updated your username to bjorno').within(() => {
       cy.get('button').click();
@@ -175,11 +163,7 @@ describe('Username input field', () => {
     cy.typeUsername('symbol');
     cy.contains('Username is available');
 
-    // temporary fix until https://github.com/cypress-io/cypress/issues/20562 is fixed
-    cy.contains(`Save`).click();
-
-    // revert to this when it is
-    // cy.get('@usernameInput').type('{enter}', { force: true, release: false });
+    cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
     cy.contains('Account Settings for symbol').should('be.visible');
 
