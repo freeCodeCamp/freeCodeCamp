@@ -20,7 +20,7 @@ Add all your code for these lessons in the `server.js` file between the code we 
 
 BCrypt has already been added as a dependency, so require it as `bcrypt` in your server.
 
-Submit your page when you think you've got it right.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben.
 
 # --hints--
 

@@ -20,7 +20,7 @@ Explicitly implement long multiplication.
 
 # --hints--
 
-`mult` повинен бути функцією.
+`mult` має бути функцією.
 
 ```js
 assert(typeof mult == 'function');

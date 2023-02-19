@@ -118,7 +118,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     e.preventDefault();
     const { formValues } = this.state;
     const { submitNewAbout } = this.props;
-    if (this.state.isPictureUrlValid === true) {
+    if (this.state.isPictureUrlValid === true && !this.isFormPristine()) {
       return this.setState({ formClicked: true }, () =>
         submitNewAbout(formValues)
       );
@@ -259,7 +259,10 @@ class AboutSettings extends Component<AboutProps, AboutState> {
                 />
               </FormGroup>
             </div>
-            <BlockSaveButton disabled={this.isFormPristine()}>
+            <BlockSaveButton
+              aria-disabled={this.isFormPristine()}
+              {...(this.isFormPristine() && { tabindex: -1 })}
+            >
               {t('buttons.save')}{' '}
               <span className='sr-only'>
                 {t('settings.headings.personal-info')}

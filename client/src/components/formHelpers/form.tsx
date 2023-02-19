@@ -2,6 +2,7 @@ import React, { FormEvent } from 'react';
 import { Form } from 'react-final-form';
 import normalizeUrl from 'normalize-url';
 
+import BlockSaveButton from '../helpers/form/block-save-button';
 import {
   localhostValidator,
   editorValidator,
@@ -10,8 +11,6 @@ import {
   httpValidator
 } from './form-validators';
 import FormFields, { FormOptions } from './form-fields';
-
-import { default as BlockSaveButton } from './block-save-button';
 
 type URLValues = {
   [key: string]: string;
@@ -69,27 +68,25 @@ function formatUrlValues(
   return validatedValues;
 }
 
-export type FormProps = {
+export type StrictSolutionFormProps = {
   buttonText?: string;
   enableSubmit?: boolean;
   formFields: { name: string; label: string }[];
-  hideButton?: boolean;
   id: string;
   initialValues?: Record<string, unknown>;
   options: FormOptions;
   submit: (values: ValidatedValues, ...args: unknown[]) => void;
 };
 
-function DynamicForm({
+export const StrictSolutionForm = ({
   id,
   formFields,
   initialValues,
   options,
   submit,
   buttonText,
-  enableSubmit,
-  hideButton
-}: FormProps): JSX.Element {
+  enableSubmit
+}: StrictSolutionFormProps): JSX.Element => {
   return (
     <Form
       initialValues={initialValues}
@@ -104,19 +101,14 @@ function DynamicForm({
           style={{ width: '100%' }}
         >
           <FormFields formFields={formFields} options={options} />
-          {hideButton ? null : (
-            <BlockSaveButton
-              disabled={(pristine && !enableSubmit) || (error as boolean)}
-            >
-              {buttonText ? buttonText : null}
-            </BlockSaveButton>
-          )}
+          <BlockSaveButton
+            disabled={(pristine && !enableSubmit) || (error as boolean)}
+            bgSize='none'
+          >
+            {buttonText}
+          </BlockSaveButton>
         </form>
       )}
     </Form>
   );
-}
-
-DynamicForm.displayName = 'DynamicForm';
-
-export default DynamicForm;
+};

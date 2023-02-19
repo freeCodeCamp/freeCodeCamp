@@ -2,6 +2,7 @@ const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 
 const Sentry = require('@sentry/node');
+const Tracing = require('@sentry/tracing');
 const createDebugger = require('debug');
 const _ = require('lodash');
 const loopback = require('loopback');
@@ -13,15 +14,6 @@ const { setupPassport } = require('./component-passport');
 
 const log = createDebugger('fcc:server');
 const reqLogFormat = ':date[iso] :status :method :response-time ms - :url';
-
-if (sentry.dsn === 'dsn_from_sentry_dashboard') {
-  log('Sentry reporting disabled unless DSN is provided.');
-} else {
-  Sentry.init({
-    dsn: sentry.dsn
-  });
-  log('Sentry initialized');
-}
 
 const app = loopback();
 
@@ -62,6 +54,7 @@ db.on(
   'connected',
   _.once(() => log('db connected'))
 );
+
 app.start = _.once(function () {
   const server = app.listen(app.get('port'), function () {
     app.emit('started');
@@ -88,6 +81,25 @@ app.start = _.once(function () {
     });
   });
 });
+
+if (sentry.dsn === 'dsn_from_sentry_dashboard') {
+  log('Sentry reporting disabled unless DSN is provided.');
+} else {
+  Sentry.init({
+    dsn: sentry.dsn,
+    integrations: [
+      new Sentry.Integrations.Http({ tracing: true }),
+      new Tracing.Integrations.Express({
+        app
+      })
+    ],
+    // Capture 20% of transactions to avoid
+    // overwhelming Sentry and remain within
+    // the usage quota
+    tracesSampleRate: 0.2
+  });
+  log('Sentry initialized');
+}
 
 module.exports = app;
 

@@ -169,6 +169,7 @@ function updateMyAbout(req, res, next) {
   );
 }
 
+// why is this failing? I haven't touched it.
 function createUpdateMyUsername(app) {
   const { User } = app.models;
   return async function updateMyUsername(req, res, next) {

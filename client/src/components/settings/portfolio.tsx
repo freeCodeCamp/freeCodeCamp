@@ -84,11 +84,6 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       });
     };
 
-  handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
-    e.preventDefault();
-    this.updateItem(id);
-  };
-
   updateItem = (id: string) => {
     const { portfolio, unsavedItemId } = this.state;
     if (unsavedItemId === id) {
@@ -218,9 +213,27 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     );
     const { state: descriptionState, message: descriptionMessage } =
       this.getDescriptionValidation(description);
+
+    const isDisabled =
+      pristine ||
+      !title ||
+      !isURL(url, {
+        protocols: ['http', 'https'],
+        /* eslint-disable camelcase, @typescript-eslint/naming-convention */
+        require_tld: true,
+        require_protocol: true
+        /* eslint-enable camelcase, @typescript-eslint/naming-convention */
+      });
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
+      e.preventDefault();
+      if (isDisabled) return null;
+      return this.updateItem(id);
+    };
+
     return (
       <FullWidthRow key={id}>
-        <form onSubmit={e => this.handleSubmit(e, id)}>
+        <form onSubmit={e => handleSubmit(e, id)} id='portfolio-items'>
           <FormGroup
             controlId={`${id}-title`}
             validationState={
@@ -276,17 +289,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             ) : null}
           </FormGroup>
           <BlockSaveButton
-            disabled={
-              pristine ||
-              !title ||
-              !isURL(url, {
-                protocols: ['http', 'https'],
-                /* eslint-disable camelcase, @typescript-eslint/naming-convention */
-                require_tld: true,
-                require_protocol: true
-                /* eslint-enable camelcase, @typescript-eslint/naming-convention */
-              })
-            }
+            aria-disabled={isDisabled}
+            {...(isDisabled && { tabindex: -1 })}
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>

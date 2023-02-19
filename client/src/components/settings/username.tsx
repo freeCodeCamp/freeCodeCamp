@@ -96,7 +96,6 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     const { username } = this.props;
     const { formValue } = this.state;
     if (prevUsername !== username && prevFormValue === formValue) {
-      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         isFormPristine: username === formValue,
         submitClicked: false,
@@ -165,6 +164,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
       return (
         <FullWidthRow>
           <Alert bsStyle='warning' closeLabel={t('buttons.close')}>
+            {/* how did changing alert affect this? */}
             {t('settings.username.unavailable')}
           </Alert>
         </FullWidthRow>
@@ -210,7 +210,8 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
       submitClicked
     } = this.state;
     const { isValidUsername, t, validating } = this.props;
-
+    const isDisabled =
+      !(isValidUsername && valid && !isFormPristine) || submitClicked;
     return (
       <form
         id='usernameSettings'
@@ -235,9 +236,8 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
           this.renderAlerts(validating, error, isValidUsername)}
         <FullWidthRow>
           <BlockSaveButton
-            disabled={
-              !(isValidUsername && valid && !isFormPristine) || submitClicked
-            }
+            aria-disabled={isDisabled}
+            {...(isDisabled && { tabindex: -1 })}
           >
             {t('buttons.save')}{' '}
             <span className='sr-only'>{t('settings.labels.username')}</span>
