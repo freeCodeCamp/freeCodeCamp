@@ -24,29 +24,29 @@ dashedName: add-an-accessible-date-picker
 
 # --instructions--
 
-يقوم Camper Cat بإعداد بطولة Mortal Kombat ويريد أن يطلب من منافسيه معرفة التاريخ الأفضل. أضف وسم `input` مع سمة `type` من نوع `date` ، وسمة `id` بقيمة `pickdate`، و سمة `name` بقيمة `date`.
+يقوم Camper Cat بإعداد بطولة Mortal Kombat ويريد أن يطلب من منافسيه معرفة التاريخ الأفضل. أضف علامة `input` مع سمة `type` من نوع `date`، و مع سمة `id` بقيمة `pickdate`، و أيضا سمة `name` بقيمة `date`.
 
 # --hints--
 
-يجب أن يحتوي الكود علي وسم `input` واحد لحقل محدد التاريخ.
+يجب أن يحتوي الكود علي علامة `input` واحد لخانة محدد التاريخ.
 
 ```js
 assert($('input').length == 2);
 ```
 
-يجب أن يحتوي وسم `input` على سمة `type` بقيمة `date`.
+يجب أن يحتوي علامة `input` على سمة `type` بقيمة `date`.
 
 ```js
 assert($('input').attr('type') == 'date');
 ```
 
-يجب أن يحتوي وسم `input` على سمة `id` بقيمة `pickdate`.
+يجب أن يحتوي علامة `input` على سمة `id` بقيمة `pickdate`.
 
 ```js
 assert($('input').attr('id') == 'pickdate');
 ```
 
-يجب أن يحتوي وسم `input` على سمة `name` بقيمة `date`.
+يجب أن يحتوي علامة `input` على سمة `name` بقيمة `date`.
 
 ```js
 assert($('input').attr('name') == 'date');

@@ -9,7 +9,7 @@ type Props = {
 };
 type Solution = Pick<ChallengeFile, 'ext' | 'contents' | 'fileKey'>;
 
-function SolutionViewer({ challengeFiles, solution }: Props) {
+function SolutionViewer({ challengeFiles, solution }: Props): JSX.Element {
   const isLegacy = !challengeFiles || !challengeFiles.length;
   const solutions = isLegacy
     ? [

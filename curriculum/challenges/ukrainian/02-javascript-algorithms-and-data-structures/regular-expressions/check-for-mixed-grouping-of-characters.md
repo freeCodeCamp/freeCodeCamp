@@ -78,7 +78,7 @@ You should use `.test()` to test the regex.
 assert(code.match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
-Your result should return `true`.
+У результаті ви повинні отримати `true`.
 
 ```js
 assert(result === true);

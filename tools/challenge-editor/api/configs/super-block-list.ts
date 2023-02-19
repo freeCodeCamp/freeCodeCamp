@@ -54,5 +54,9 @@ export const superBlockList = [
   {
     name: 'JavaScript Algorithms and Data Structures (Beta)',
     path: '15-javascript-algorithms-and-data-structures-22'
+  },
+  {
+    name: 'The Odin Project',
+    path: '16-the-odin-project'
   }
 ];

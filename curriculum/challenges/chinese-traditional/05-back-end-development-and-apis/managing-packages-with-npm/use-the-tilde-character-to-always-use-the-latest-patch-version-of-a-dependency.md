@@ -10,7 +10,7 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 在上一個挑戰中，npm 只包含特定版本的依賴包。 如果想讓項目各個部分保持相互兼容，鎖定依賴包版本是一個行之有效的辦法。 但是大多數情況下，我們並不希望錯過依賴項的問題修復，因爲它們通常包含重要的安全補丁，而且它們理論上也會兼容我們既有的代碼。
 
-可以在依賴項的版本號前加一個波浪號（`~`），以讓 npm 依賴項更新到最新的修訂版。 Here's an example of how to allow updates to any `1.3.x` version.
+可以在依賴項的版本號前加一個波浪號（`~`），以讓 npm 依賴項更新到最新的修訂版。 這裏有一個允許升級到任何 `1.3.x` 的例子。
 
 ```json
 "package": "~1.3.8"
@@ -18,7 +18,7 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --instructions--
 
-In the package.json file, your current rule for how npm may upgrade `@freecodecamp/example` is to use a specific version (`1.2.13`). But now, you want to allow the latest `1.2.x` version.
+在 package.json 文件中，你當前關於 npm 如何升級 `@freecodecamp/example` 的規則是使用特定版本（`1.2.13`）。 但現在，你想允許最新的 `1.2.x` 版本。
 
 在依賴項中使用波浪號（`~`）字符作爲 `@freecodecamp/example` 版本的前綴，並允許 npm 將其更新爲任何新的*補丁*發佈。
 

@@ -8,24 +8,24 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
+**Aufgabe:** Erstelle eine Anwendung, die eine ähnliche Funktionalität wie <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a> aufweist
 
 **User Stories:**
 
 1. Du kannst ein `main`-Element mit einer entsprechenden `id="main-doc"` sehen, das den Hauptinhalt der Seite enthält (technische Dokumentation)
-1. Within the `#main-doc` element, you can see several `section` elements, each with a class of `main-section`. Es sollten mindestens 5 sein
+1. Innerhalb des `#main-doc`-Elements kannst du mehrere `section`-Elemente sehen, jedes mit einer `main-section`-Klasse. Es sollten mindestens 5 sein
 1. Das erste Element innerhalb jeder `.main-section` sollte ein `header`-Element sein, das einen Text enthält, der das Thema dieses Abschnitts beschreibt.
-1. Each `section` element with the class of `main-section` should also have an `id` that corresponds with the text of each `header` contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "JavaScript and Java" should have a corresponding `id="JavaScript_and_Java"`)
-1. The `.main-section` elements should contain at least ten `p` elements total (not each)
-1. The `.main-section` elements should contain at least five `code` elements total (not each)
-1. The `.main-section` elements should contain at least five `li` items total (not each)
+1. Jedes `section`-Element der Klasse `main-section` sollte auch eine `id` haben, die mit dem Text von jedem `header` übereinstimmt. Alle Leerzeichen sollten durch Unterstriche ersetzt werden (z.B. sollte der Abschnitt, der die Überschrift „JavaScript und Java“ enthält, eine entsprechende `id="JavaScript_and_Java"` enthalten)
+1. Die `.main-section`-Elemente sollten mindestens zehn `p`-Elemente enthalten (insgesamt)
+1. Die `.main-section`-Elemente sollten mindestens fünf `code`-Elemente enthalten (insgesamt)
+1. Die `.main-section`-Elemente sollten mindestens fünf `li`-Elemente enthalten (insgesamt)
 1. You can see a `nav` element with a corresponding `id="navbar"`
 1. Das navbar-Element sollte ein `header`-Element enthalten, das einen Text enthält, der das Thema der technischen Dokumentation beschreibt
-1. Additionally, the navbar should contain link (`a`) elements with the class of `nav-link`. There should be one for every element with the class `main-section`
-1. The `header` element in the `#navbar` must come before any link (`a`) elements in the navbar
-1. Each element with the class of `nav-link` should contain text that corresponds to the `header` text within each `section` (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world")
-1. When you click on a navbar element, the page should navigate to the corresponding section of the `#main-doc` element (e.g. If you click on a `.nav-link` element that contains the text "Hello world", the page navigates to a `section` element with that id, and contains the corresponding header)
-1. On regular sized devices (laptops, desktops), the element with `id="navbar"` should be shown on the left side of the screen and should always be visible to the user
+1. Additionally, the navbar should contain link (`a`) elements with the class of `nav-link`. Es sollte eines für jedes Element der Klasse `main-section` geben
+1. Das `header`-Element in der `#navbar` muss vor jedem Link-Element (`a`) in der Navigationsleiste stehen
+1. Jedes Element der Klasse `nav-link` sollte einen Text enthalten, der zu dem entsprechenden `header`-Text jeder `section` passt (wenn du z.B. einen Header bzw. eine Sektion mit „Hello world" hast, sollte deine Navigationsleiste ein Element mit eben jenem Text enthalten)
+1. Wenn du auf ein Element der Navigationsleiste klickst, sollte die Seite zu der entsprechenden Sektion des `#main-doc`-Elements navigieren (klickst du z.B. auf ein `.nav-link`-Element, das den Text „Hello World" enthält, sollte die Seite zu einem `section`-Element mit dieser ID navigieren und nun den entsprechenden Header enthalten)
+1. Auf Geräten mit regulärer Größe (Laptops, Desktop-PCs) sollte das Element mit der `id="navbar"` auf der linken Seite des Bildschirms angezeigt werden und für den Nutzer immer sichtbar sein
 1. Deine technische Dokumentation sollte mindestens eine Media Query verwenden
 
 Erfülle die folgenden User Stories und bestehe alle Tests, um dieses Projekt abzuschließen. Gib dem Ganzen deinen persönlichen Stil. Viel Spaß beim Programmieren!
@@ -95,7 +95,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Each `.main-section` should have an `id` that matches the text of its first child, having any spaces in the child's text replaced with underscores (`_`) for the id's.
+Jede `.main-section` sollte eine `id` haben, die dem Text seines ersten untergeordneten Elementes entspricht, wobei bei den IDs Leerzeichen mit Unterstrichen (`_`) ersetzt werden.
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -190,7 +190,7 @@ navLinks.forEach((navLink) => {
 assert(!!header)
 ```
 
-Each `.nav-link` should have text that corresponds to the `header` text of its related `section` (e.g. if you have a "Hello world" section/header, your `#navbar` should have a `.nav-link` which has the text "Hello world").
+Jedes `.nav-link`-Element sollte einen Text beinhalten, der dem `header`-Text der jeweiligen `section` entspricht (wenn du z.B. ein "Hello-World"-Sektion/Header hast, sollte dein `#navbar` ein `.nav-link` mit dem Text "Hello World" haben).
 
 ```js
 const headerText = Array.from(document.querySelectorAll('.main-section')).map(el =>
