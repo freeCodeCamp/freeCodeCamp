@@ -157,6 +157,32 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     }
   };
 
+  handleSignOutKeys = (
+    event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
+    const { menuButtonRef, hideMenu } = this.props;
+    const DoKeyPress = new Map<string, { select: () => void }>([
+      [
+        'Escape',
+        {
+          select: () => {
+            menuButtonRef.current?.focus();
+            hideMenu();
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'Tab',
+        {
+          select: () => {
+            hideMenu();
+          }
+        }
+      ]
+    ]);
+    DoKeyPress.get(event.key)?.select();
+  };
   handleLanguageButtonKeyDown = (
     event: React.KeyboardEvent<HTMLButtonElement>
   ): void => {
@@ -530,7 +556,7 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
               className='nav-link nav-link-signout'
               data-value='sign-out-button'
               onClick={this.handleSignOutClick}
-              onKeyDown={this.handleMenuKeyDown}
+              onKeyDown={this.handleSignOutKeys}
             >
               {t('buttons.sign-out')}
             </button>
