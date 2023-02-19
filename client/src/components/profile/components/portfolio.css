@@ -25,6 +25,10 @@
   grid-row: 2;
 }
 
+.portfolio-container a {
+  display: block;
+}
+
 .portfolio-container p {
   grid-column: 1/ -1;
   margin-inline-start: 0.5em;
@@ -40,7 +44,7 @@
 @media (min-width: 995px) {
   .portfolio-container {
     grid-template-rows: 0.1fr 1fr;
-    grid-template-columns: 300px repeat(2, 1fr);
+    grid-template-columns: 300px 1fr;
   }
 
   .portfolio-screen-shot {
@@ -49,12 +53,12 @@
   }
 
   .portfolio-container h3 {
-    grid-column: 2 / -1;
+    grid-column: 2;
     grid-row: 1;
   }
 
   .portfolio-container p {
-    grid-column: 2 / -1;
+    grid-column: 2;
     grid-row: 2;
   }
 }
@@ -72,8 +76,9 @@
   z-index: 1;
 }
 
-.portfolio-container a:hover,
-.portfolio-container a:focus {
+.portfolio-container a:is(:hover, :focus, :focus-visible) {
+  outline: 3px solid var(--blue-mid);
+  outline-offset: 1px;
   background-color: revert;
 }
 
