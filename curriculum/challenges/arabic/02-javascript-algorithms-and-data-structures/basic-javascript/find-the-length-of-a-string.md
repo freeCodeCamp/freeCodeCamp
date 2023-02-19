@@ -15,9 +15,9 @@ dashedName: find-the-length-of-a-string
 console.log("Alan Peter".length);
 ```
 
-سوف يتم عرض القيمة `10` في وحدة التحكم. لاحظ أن رمز المسافة بين "Alan" و "Peter" يتم حسابه أيضا.
+سوف يتم عرض القيمة `10` في الكونسول. لاحظ أن رمز المسافة بين "Alan" و "Peter" يتم عدُّه أيضا.
 
-على سبيل المثال، إذا أنشئت متغير `const firstName = "Ada"`، يمكننا معرفة طول المقطع النصي (string) الآتي `Ada` باستخدام `firstName.length`.
+على سبيل المثال، إذا أنشئت متغير `const firstName = "Ada"`، يمكننا معرفة طول المقطع النصي الآتي `Ada` باستخدام `firstName.length`.
 
 # --instructions--
 

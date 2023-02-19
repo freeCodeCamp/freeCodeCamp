@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb7bdef
-title: أدخال قائمة في قائمة اخري
+title: إدخال قائمة في قائمة اخرى
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/crZQZf8'
 forumTopicId: 18247
@@ -9,7 +9,7 @@ dashedName: nest-one-array-within-another-array
 
 # --description--
 
-يمكنك أيضًا ادخال قوائم داخل القوائم الأخرى، مثل أدناه:
+يمكنك أيضًا إدخال قوائم داخل قوائم أخرى، مثل أدناه:
 
 ```js
 const teams = [["Bulls", 23], ["White Sox", 45]];
@@ -19,11 +19,11 @@ const teams = [["Bulls", 23], ["White Sox", 45]];
 
 # --instructions--
 
-أنشئ قوائم متداخلة تسمى `myArray`.
+أنشئ قائمة متداخلة تسمى `myArray`.
 
 # --hints--
 
-يجب أن تحتوي `myArray` على الأقل علي قائمة واحدة متداخلة داخل قائمة أخرى.
+يجب أن تحتوي `myArray` على الأقل علي قائمة واحدة متداخلة في قائمة أخرى.
 
 ```js
 assert(Array.isArray(myArray) && myArray.some(Array.isArray));

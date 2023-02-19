@@ -9,36 +9,31 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-الاقتباسات (Quotes) ليست الرموز الوحيدة التي يمكن أن تكتب <dfn>مخرَّجة</dfn> داخل المقطع النصي (string). وهناك سببان لاستخدام رموز احتيالية (escaping characters):
-
-1.  للسماح لك باستخدام الرموز التي قد لا تتمكن من استخدامها، مثل سطر جديد (newline).
-2.  للسماح لك بتمثيل الاقتباسات (Quotes) متعددة في مقطع نصي دون أن يسيء JavaScript فهم ما تعنيه.
-
-وقد تعلمنا ذلك في التحدي السابق.
+الاقتباسات (quotes) ليست الرموز الوحيدة التي يمكن أن تكتب <dfn>مخرَّجة</dfn> (escaped) داخل مقطع نصي (string). Escape sequences allow you to use characters you may not otherwise be able to use in a string.
 
 <table class='table table-striped'><thead><tr><th>الكود</th><th>الناتج</th></tr></thead><tbody><tr><td><code>\'</code></td><td>single quote</td></tr><tr><td><code>\"</code></td><td>double quote</td></tr><tr><td><code>\\</code></td><td>backslash</td></tr><tr><td><code>\n</code></td><td>newline</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\b</code></td><td>word boundary</td></tr><tr><td><code>\f</code></td><td>form feed</td></tr></tbody></table>
 
-*لاحظ أن يجب أن يكون الخط المائل (backslash) نفسه يخرَّج (escaped) ليتم عرضه كخط مائل backslash.*
+*Note that the backslash itself must be escaped in order to display as a backslash.*
 
 # --instructions--
 
-عيّن الأسطر الثلاثة التالية من النص في المتغير `myStr` الوحيد باستخدام تسلسل التخريج (escape sequences).
+Assign the following three lines of text into the single variable `myStr` using escape sequences.
 
 <blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
 
-سوف تحتاج إلى استخدام تسلسل تخريج لإدراج الرموز الخاصة (special characters) بشكل صحيح. ستحتاج أيضًا إلى اتباع التباعد كما هو موضح أعلاه، دون مسافات بين تسلسل التخريج escape sequences أو الكلمات.
+You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.
 
-**ملاحظة:** يتم الحصول على التباعد (indentation) في `SecondLine` باستخدام رمز التخريح الشريط (tab escape character) وليس المسافة الفارغة (space).
+**Note:** The indentation for `SecondLine` is achieved with the tab escape character, not spaces.
 
 # --hints--
 
-يجب ألا يحتوي `myStr` على أي مسافات
+`myStr` should not contain any spaces
 
 ```js
 assert(!/ /.test(myStr));
 ```
 
-يجب أن يحتوي `myStr` على المقطع (string) الآتي `FirstLine`, و `SecondLine`, و `ThirdLine` (تذكر الحساسية حالة الحرف (case sensitivity))
+`myStr` should contain the strings `FirstLine`, `SecondLine` and `ThirdLine` (remember case sensitivity)
 
 ```js
 assert(
@@ -46,31 +41,31 @@ assert(
 );
 ```
 
-يجب أن يتبع `FirstLine` رمز السطر الجديد (newline character) الاتي `\n`
+`FirstLine` should be followed by the newline character `\n`
 
 ```js
 assert(/FirstLine\n/.test(myStr));
 ```
 
-يجب أن يحتوي `myStr` على رمز الشريط (tab character) وهو `\t` الذي يتبع رمز السطر الجديد (newline character)
+`myStr` should contain a tab character `\t` which follows a newline character
 
 ```js
 assert(/\n\t/.test(myStr));
 ```
 
-يجب أن يسبق `SecondLine` رمز خط مائل (backslash character) يكتب هكذا `\`
+`SecondLine` should be preceded by the backslash character `\`
 
 ```js
 assert(/\\SecondLine/.test(myStr));
 ```
 
-يجب أن يكون هناك رمز السطر الجديد (newline character) بين `SecondLine` و `ThirdLine`
+There should be a newline character between `SecondLine` and `ThirdLine`
 
 ```js
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-يجب أن يحتوي `myStr` فقط على الرموز التي تظهر في التعليمات
+`myStr` should only contain characters shown in the instructions
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');

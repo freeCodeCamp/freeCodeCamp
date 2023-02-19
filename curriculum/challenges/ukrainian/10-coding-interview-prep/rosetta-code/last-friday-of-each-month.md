@@ -12,7 +12,7 @@ dashedName: last-friday-of-each-month
 
 # --hints--
 
-`lastFriday` повинен бути функцією.
+`lastFriday` має бути функцією.
 
 ```js
 assert(typeof lastFriday == 'function');
