@@ -1,11 +1,10 @@
 import { config } from 'dotenv';
 config({ path: '../.env' });
 import fastifyAuth0 from 'fastify-auth0-verify';
-// @ts-expect-error declaration files will be provided
-import jwtAuthz from 'fastify-jwt-authz';
 import Fastify from 'fastify';
 import middie from '@fastify/middie';
 
+import jwtAuthz from './plugins/fastify-jwt-authz';
 import { testRoutes } from './routes/test';
 import { dbConnector } from './db';
 import { auth0Verify, testMiddleware } from './middleware';
@@ -27,7 +26,6 @@ const start = async () => {
     domain: process.env.AUTH0_DOMAIN,
     audience: process.env.AUTH0_AUDIENCE
   });
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   void fastify.register(jwtAuthz);
 
   void fastify.use('/test', testMiddleware);
