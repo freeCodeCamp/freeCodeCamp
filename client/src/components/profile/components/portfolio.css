@@ -21,7 +21,7 @@
   font-size: 1.5rem;
   margin-top: 0.5em;
   margin-inline-start: 0.5em;
-  grid-column: 1/ 1;
+  grid-column: 1/ -1;
   grid-row: 2;
 }
 
@@ -29,7 +29,6 @@
   grid-column: 1/ -1;
   margin-inline-start: 0.5em;
   grid-row: 3;
-  word-break: break-all;
 }
 
 @media (max-width: 990px) {
@@ -50,7 +49,7 @@
   }
 
   .portfolio-container h3 {
-    grid-column: 2;
+    grid-column: 2 / -1;
     grid-row: 1;
   }
 
