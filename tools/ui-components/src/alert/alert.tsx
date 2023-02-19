@@ -3,13 +3,21 @@ import { CloseButton } from '../close-button';
 
 type AlertVariant = 'success' | 'info' | 'warning' | 'danger';
 
-export interface AlertProps {
+type DismissableAlertProps =
+  | {
+      closeLabel?: never;
+      onDismiss?: never;
+    }
+  | {
+      closeLabel: string;
+      onDismiss: () => void;
+    };
+
+export type AlertProps = {
   children: React.ReactNode;
   className?: string;
-  closeLabel?: string;
-  onDismiss?: () => void;
   variant: AlertVariant;
-}
+} & DismissableAlertProps;
 
 const variantClasses = {
   success: 'text-green-700 bg-green-50 border-green-100',
@@ -40,11 +48,7 @@ export const Alert = ({
 
   return (
     <div className={classes} role='alert'>
-      {canDismiss ? (
-        <CloseButton onClick={onDismiss} label={closeLabel ?? 'Close Alert'} />
-      ) : (
-        <></>
-      )}
+      {canDismiss && <CloseButton onClick={onDismiss} label={closeLabel} />}
       {children}
     </div>
   );
