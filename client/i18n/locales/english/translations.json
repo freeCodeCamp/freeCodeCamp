@@ -251,6 +251,7 @@
   },
   "learn": {
     "heading": "Welcome to freeCodeCamp's curriculum.",
+    "skip-to-content": "Skip to content",
     "welcome-1": "Welcome back, {{name}}.",
     "welcome-2": "Welcome to freeCodeCamp.org",
     "start-at-beginning": "If you are new to coding, we recommend you <0>start at the beginning</0>.",
