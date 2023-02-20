@@ -30,22 +30,22 @@ Replit を使用する場合は、下記の手順でプロジェクトをセッ�
 2.  `routes/api.js` でコントローラー/ハンドラーを作成し、ルーティングを処理することを推奨します。
 3.  `server.js` にセキュリティ機能を追加します。
 
-Write the following tests in `tests/2_functional-tests.js`:
+次のテストを `tests/2_functional-tests.js` に記述してください。
 
--   Creating a new thread: POST request to `/api/threads/{board}`
--   Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
--   Deleting a thread with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
--   Deleting a thread with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
--   Reporting a thread: PUT request to `/api/threads/{board}`
--   Creating a new reply: POST request to `/api/replies/{board}`
--   Viewing a single thread with all replies: GET request to `/api/replies/{board}`
--   Deleting a reply with the incorrect password: DELETE request to `/api/replies/{board}` with an invalid `delete_password`
--   Deleting a reply with the correct password: DELETE request to `/api/replies/{board}` with a valid `delete_password`
--   Reporting a reply: PUT request to `/api/replies/{board}`
+-   新しいスレッドを作成する: `/api/threads/{board}` への POST リクエスト
+-   最新のスレッドを 10 個、返信を 3 つずつ持った状態で表示する: `/api/threads/{board}` への GET リクエスト
+-   間違ったパスワードでスレッドを削除する: 無効な `delete_password` による `/api/threads/{board}` への DELETE リクエスト
+-   正しいパスワードでスレッドを削除する: 有効な `delete_password` による `/api/threads/{board}` への DELETE リクエスト
+-   スレッドを報告する: `/api/threads/{board}` への PUT リクエスト
+-   新しい返信を作成する: `/api/replies/{board}` への POST リクエスト
+-   1 つのスレッドをすべての返信を持つ状態で表示する: `/api/replies/{board}` への GET リクエスト
+-   間違ったパスワードで返信を削除する: 無効な `delete_password` による `/api/replies/{board}` への DELETE リクエスト
+-   正しいパスワードで返信を削除する: 有効な `delete_password` による `/api/replies/{board}` への DELETE リクエスト
+-   返信を報告する: `/api/replies/{board}` への PUT リクエスト
 
 # --hints--
 
-You can provide your own project, not the example URL.
+サンプルの URL ではなく、自分で作成したプロジェクトを提出してください。
 
 ```js
 (getUserInput) => {
@@ -57,7 +57,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-Only allow your site to be loaded in an iFrame on your own pages.
+自分のページの iFrame には自分のサイトだけを読み込めるようにします。
 
 ```js
 async (getUserInput) => {
@@ -67,7 +67,7 @@ async (getUserInput) => {
 };
 ```
 
-Do not allow DNS prefetching.
+DNS プリフェッチを許可しないでください。
 
 ```js
 async (getUserInput) => {
@@ -77,7 +77,7 @@ async (getUserInput) => {
 };
 ```
 
-Only allow your site to send the referrer for your own pages.
+自分のサイトだけが、自分のページに対するリファラーを送信できるようにします。
 
 ```js
 async (getUserInput) => {
@@ -87,7 +87,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a POST request to `/api/threads/{board}` with form data including `text` and `delete_password`. The saved database record will have at least the fields `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
+`text` と `delete_password` を含むフォームデータを使用して、`/api/threads/{board}` への POST リクエストを送信できます。 The saved database record will have at least the fields `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
 
 ```js
 async (getUserInput) => {

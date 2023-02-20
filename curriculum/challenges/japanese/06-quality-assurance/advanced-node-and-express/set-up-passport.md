@@ -25,15 +25,15 @@ app.use(session({
 }));
 ```
 
-Be sure to add `SESSION_SECRET` to your `.env` file, and give it a random value. This is used to compute the hash used to encrypt your cookie!
+Be sure to add `SESSION_SECRET` to your `.env` file, and give it a random value. この値を使用して、Cookie の暗号化に使用されるハッシュを計算します！
 
 After you do all that, tell your express app to **use** `passport.initialize()` and `passport.session()`.
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-passport-3" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成したと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-passport-3" target="_blank" rel="noopener noreferrer nofollow">この時点までの完成形のコードをこちらで確認できます</a>。
 
 # --hints--
 
-Passport and Express-session should be dependencies.
+Passport と express-session を依存関係にする必要があります。
 
 ```js
 async (getUserInput) => {
@@ -53,7 +53,7 @@ async (getUserInput) => {
 }
 ```
 
-Dependencies should be correctly required.
+依存関係を正しく require する必要があります。
 
 ```js
 async (getUserInput) => {
@@ -73,7 +73,7 @@ async (getUserInput) => {
 }
 ```
 
-Express app should use new dependencies.
+Express アプリで新しい依存関係を使用する必要があります。
 
 ```js
 async (getUserInput) => {
@@ -85,7 +85,7 @@ async (getUserInput) => {
 }
 ```
 
-Session and session secret should be correctly set up.
+セッションとセッションシークレットを正しく設定する必要があります。
 
 ```js
 async (getUserInput) => {
