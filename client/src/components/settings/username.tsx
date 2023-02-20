@@ -236,6 +236,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
         <FullWidthRow>
           <BlockSaveButton
             aria-disabled={isDisabled}
+            bgSize='lg'
             {...(isDisabled && { tabindex: -1 })}
           >
             {t('buttons.save')}{' '}
