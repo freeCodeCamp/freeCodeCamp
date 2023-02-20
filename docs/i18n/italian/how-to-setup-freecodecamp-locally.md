@@ -279,9 +279,9 @@ Se hai problemi durante l'installazione, consulta la sezione [risoluzione dei pr
 
 Un rapido richiamo ai comandi di cui avrai bisogno quando lavorerai localmente.
 
-| comando           | descrizione                                                              |
-| ----------------- | ------------------------------------------------------------------------ |
-| `npm ci`          | Installa / reinstalla tutte le dipendenze e avvia i diversi servizi.     |
-| `npm run seed`    | Analizza tutti i file di markdown della sfida e li inserisce in MongoDB. |
-| `npm run develop` | Avvia il server API freeCodeCamp e le applicazioni client.               |
-| `npm run clean`   | Disistalla tutte le dipendenze e pulisce la cache.                       |
+| comando           | descrizione                                                          |
+| ----------------- | -------------------------------------------------------------------- |
+| `npm ci`          | Installa / reinstalla tutte le dipendenze e avvia i diversi servizi. |
+| `npm run seed`    | Creates authorized test users and inserts them into mongodb.         |
+| `npm run develop` | Avvia il server API freeCodeCamp e le applicazioni client.           |
+| `npm run clean`   | Disistalla tutte le dipendenze e pulisce la cache.                   |
