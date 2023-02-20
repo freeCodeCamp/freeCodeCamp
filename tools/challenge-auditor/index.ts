@@ -29,7 +29,8 @@ const superBlockFolderMap = {
   'relational-database': '13-relational-database',
   '2022/responsive-web-design': '14-responsive-web-design-22',
   '2022/javascript-algorithms-and-data-structures':
-    '15-javascript-algorithms-and-data-structures-22'
+    '15-javascript-algorithms-and-data-structures-22',
+  'the-odin-project': '16-the-odin-project'
 };
 
 // These blocks are in the incorrect superblock. They should be moved but, for

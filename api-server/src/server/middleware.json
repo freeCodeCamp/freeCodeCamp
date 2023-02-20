@@ -1,6 +1,7 @@
 {
   "initial:before": {
-    "./middlewares/sentry-request-handler": {}
+    "./middlewares/sentry-request-handler": {},
+    "./middlewares/sentry-tracing-handler": {}
   },
   "initial": {
     "compression": {},
@@ -39,7 +40,10 @@
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
     "./middlewares/flash-cheaters": {},
-    "./middlewares/passport-login": {}
+    "./middlewares/passport-login": {},
+    "./middlewares/rate-limit": {
+      "paths": ["/mobile-login"]
+    }
   },
   "files": {},
   "final:after": {

@@ -33,7 +33,7 @@ test(false);
 
 `test(true)` повертає рядок `It was true`, а `test(false)` повертає рядок `It was false`.
 
-Коли `test` викликається зі значенням `true`, інструкція `if` оцінює `myCondition`, щоб побачити чи воно `true`. Оскільки воно `true`, функція повертає `It was true`. Коли ми викликаємо `test` зі значенням `false`, то `myCondition` *не* оцінюється як `true`, інструкція у круглих дужках не виконується та функція повертає `It was false`.
+Коли `test` викликається зі значенням `true`, інструкція `if` оцінює `myCondition`, щоб побачити чи умова `true`. Оскільки вона `true`, функція повертає `It was true`. Коли ми викликаємо `test` зі значенням `false`, то `myCondition` *не* оцінюється як `true`, інструкція у круглих дужках не виконується та функція повертає `It was false`.
 
 # --instructions--
 
@@ -41,31 +41,31 @@ test(false);
 
 # --hints--
 
-`trueOrFalse` повинна бути функцією
+`trueOrFalse` має бути функцією
 
 ```js
 assert(typeof trueOrFalse === 'function');
 ```
 
-`trueOrFalse(true)` повинна повертати рядок
+`trueOrFalse(true)` має повертати рядок
 
 ```js
 assert(typeof trueOrFalse(true) === 'string');
 ```
 
-`trueOrFalse(false)` повинна повертати рядок
+`trueOrFalse(false)` має повертати рядок
 
 ```js
 assert(typeof trueOrFalse(false) === 'string');
 ```
 
-`trueOrFalse(true)` повинна повертати рядок `Yes, that was true`
+`trueOrFalse(true)` має повертати рядок `Yes, that was true`
 
 ```js
 assert(trueOrFalse(true) === 'Yes, that was true');
 ```
 
-`trueOrFalse(false)` повинна повертати рядок `No, that was false`
+`trueOrFalse(false)` має повертати рядок `No, that was false`
 
 ```js
 assert(trueOrFalse(false) === 'No, that was false');

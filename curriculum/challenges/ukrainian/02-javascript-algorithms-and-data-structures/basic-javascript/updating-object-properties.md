@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392d1
-title: Оновлення властивостей об'єкта
+title: Оновлення властивостей об’єкта
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yEJT4'
 forumTopicId: 18336
@@ -22,11 +22,11 @@ const ourDog = {
 };
 ```
 
-Оскільки це особливо щаслива собака, змінимо його ім'я на рядок `Happy Camper`. Ось як ми оновлюємо властивість назви об’єкта: `ourDog.name = "Happy Camper";` або `ourDog["name"] = "Happy Camper";`. Тепер, коли ми визначаємо `ourDog.name`, замість `Camper` ми отримуватимемо нове ім’я `Happy Camper`.
+Оскільки це особливо щаслива собака, змінимо його ім’я на рядок `Happy Camper`. Ось як ми оновлюємо властивість назви об’єкта: `ourDog.name = "Happy Camper";` або `ourDog["name"] = "Happy Camper";`. Тепер, коли ми визначаємо `ourDog.name`, замість `Camper` ми отримуватимемо нове ім’я `Happy Camper`.
 
 # --instructions--
 
-Оновіть властивість імені об'єкта `myDog`. Змінимо ім'я з `Coder` на `Happy Coder`. Ви можете використати точкову або дужкову нотацію.
+Оновіть властивість імені об’єкта `myDog`. Змінимо ім’я з `Coder` на `Happy Coder`. Ви можете використати точкову або дужкову нотацію.
 
 # --hints--
 

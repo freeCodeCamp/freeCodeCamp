@@ -14,7 +14,7 @@ type DeleteModalProps = {
 
 function DeleteModal(props: DeleteModalProps): JSX.Element {
   const { show, onHide } = props;
-  const email = 'team@freecodecamp.org';
+  const email = 'support@freecodecamp.org';
   const { t } = useTranslation();
   return (
     <Modal

@@ -24,17 +24,17 @@ HTML、JavaScript、CSS、および D3 の SVG ベースのビジュアライゼ
 
 **ユーザーストーリー #5:** 私のチャートには、各データポイントに対して、`rect` 要素と、それに対応してデータを表示する `class="bar"` が必要です。
 
-**ユーザーストーリー #6:** 各バーには、`date` 値を格納している `data-date` プロパティと、`GDP` 値を格納している `data-gdp` プロパティが必要です。
+**User Story #6:** Each `.bar` should have the properties `data-date` and `data-gdp` containing `date` and `GDP` values.
 
-**ユーザーストーリー #7:** バー要素の `data-date` プロパティは、提供されたデータの順序と一致する必要があります。
+**User Story #7:** The `.bar` elements' `data-date` properties should match the order of the provided data.
 
-**ユーザーストーリー #8:** バー要素の `data-gdp` プロパティは、提供されたデータの順序と一致する必要があります。
+**User Story #8:** The `.bar` elements' `data-gdp` properties should match the order of the provided data.
 
-**ユーザーストーリー #9:** 各バーの要素の高さは、そのデータに対応する `GDP` を正確に表す必要があります。
+**User Story #9:** Each `.bar` element's height should accurately represent the data's corresponding `GDP`.
 
-**ユーザーストーリー #10:** `data-date` 属性とそれに対応するバー要素は、x 軸上の対応する値と一致している必要があります。
+**User Story #10:** The `data-date` attribute and its corresponding `.bar` element should align with the corresponding value on the x-axis.
 
-**ユーザーストーリー #11:** `data-gdp` 属性とそれに対応する bar 要素は、y 軸上の対応する値と一致している必要があります。
+**User Story #11:** The `data-gdp` attribute and its corresponding `.bar` element should align with the corresponding value on the y-axis.
 
 **ユーザーストーリー #12:** ある領域にマウスカーソルを合わせると、その領域の詳細情報を表示するための、対応する `id="tooltip"` を持つツールチップが表示されます。
 

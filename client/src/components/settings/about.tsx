@@ -48,6 +48,18 @@ type AboutState = {
   isPictureUrlValid: boolean;
 };
 
+const ShowImageValidationWarning = ({
+  alertContent
+}: {
+  alertContent: string;
+}) => {
+  return (
+    <HelpBlock>
+      <Alert bsStyle='info'>{alertContent}</Alert>
+    </HelpBlock>
+  );
+};
+
 class AboutSettings extends Component<AboutProps, AboutState> {
   validationImage: HTMLImageElement;
   static displayName: string;
@@ -79,7 +91,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       picture === formValues.picture &&
       about === formValues.about
     ) {
-      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: {
           name,
@@ -107,7 +118,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     e.preventDefault();
     const { formValues } = this.state;
     const { submitNewAbout } = this.props;
-    if (this.state.isPictureUrlValid === true) {
+    if (this.state.isPictureUrlValid === true && !this.isFormPristine()) {
       return this.setState({ formClicked: true }, () =>
         submitNewAbout(formValues)
       );
@@ -170,21 +181,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }));
   };
 
-  showImageValidationWarning = () => {
-    const { t } = this.props;
-    if (this.state.isPictureUrlValid === false) {
-      return (
-        <HelpBlock>
-          <Alert bsStyle='info' closeLabel={t('buttons.close')}>
-            {t('validation.url-not-image')}
-          </Alert>
-        </HelpBlock>
-      );
-    } else {
-      return true;
-    }
-  };
-
   handleAboutChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
@@ -210,54 +206,68 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       toggleKeyboardShortcuts
     } = this.props;
     return (
-      <div className='about-settings'>
+      <>
         <UsernameSettings username={username} />
-        <br />
+        <Spacer />
         <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
-            <FormGroup controlId='about-name'>
-              <ControlLabel>
-                <strong>{t('settings.labels.name')}</strong>
-              </ControlLabel>
-              <FormControl
-                onChange={this.handleNameChange}
-                type='text'
-                value={name}
-              />
-            </FormGroup>
-            <FormGroup controlId='about-location'>
-              <ControlLabel>
-                <strong>{t('settings.labels.location')}</strong>
-              </ControlLabel>
-              <FormControl
-                onChange={this.handleLocationChange}
-                type='text'
-                value={location}
-              />
-            </FormGroup>
-            <FormGroup controlId='about-picture'>
-              <ControlLabel>
-                <strong>{t('settings.labels.picture')}</strong>
-              </ControlLabel>
-              <FormControl
-                onChange={this.handlePictureChange}
-                type='url'
-                value={picture}
-              />
-              {this.showImageValidationWarning()}
-            </FormGroup>
-            <FormGroup controlId='about-about'>
-              <ControlLabel>
-                <strong>{t('settings.labels.about')}</strong>
-              </ControlLabel>
-              <FormControl
-                componentClass='textarea'
-                onChange={this.handleAboutChange}
-                value={about}
-              />
-            </FormGroup>
-            <BlockSaveButton disabled={this.isFormPristine()} />
+            <div role='group' aria-label={t('settings.headings.personal-info')}>
+              <FormGroup controlId='about-name'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.name')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handleNameChange}
+                  type='text'
+                  value={name}
+                />
+              </FormGroup>
+              <FormGroup controlId='about-location'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.location')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handleLocationChange}
+                  type='text'
+                  value={location}
+                />
+              </FormGroup>
+              <FormGroup controlId='about-picture'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.picture')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handlePictureChange}
+                  type='url'
+                  value={picture}
+                />
+                {!this.state.isPictureUrlValid && (
+                  <ShowImageValidationWarning
+                    alertContent={t('validation.url-not-image')}
+                  />
+                )}
+              </FormGroup>
+              <FormGroup controlId='about-about'>
+                <ControlLabel>
+                  <strong>{t('settings.labels.about')}</strong>
+                </ControlLabel>
+                <FormControl
+                  componentClass='textarea'
+                  onChange={this.handleAboutChange}
+                  value={about}
+                />
+              </FormGroup>
+            </div>
+            <BlockSaveButton
+              aria-disabled={this.isFormPristine()}
+              {...(this.isFormPristine() && { tabindex: -1 })}
+            >
+              {t('buttons.save')}{' '}
+              <span className='sr-only'>
+                {t('settings.headings.personal-info')}
+              </span>
+            </BlockSaveButton>
           </form>
         </FullWidthRow>
         <Spacer />
@@ -272,7 +282,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
           />
         </FullWidthRow>
-      </div>
+      </>
     );
   }
 }

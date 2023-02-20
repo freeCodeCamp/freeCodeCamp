@@ -23,13 +23,13 @@ dashedName: profile-lookup
 
 # --hints--
 
-`lookUpProfile("Kristian", "lastName")` повинен повертати рядок `Vos`
+`lookUpProfile("Kristian", "lastName")` має повертати рядок `Vos`
 
 ```js
 assert(lookUpProfile('Kristian', 'lastName') === 'Vos');
 ```
 
-`lookUpProfile("Sherlock", "likes")` повинен повернутись як `["Intriguing Cases", "Violin"]`
+`lookUpProfile("Sherlock", "likes")` має повертати `["Intriguing Cases", "Violin"]`
 
 ```js
 assert.deepEqual(lookUpProfile('Sherlock', 'likes'), [
@@ -38,25 +38,25 @@ assert.deepEqual(lookUpProfile('Sherlock', 'likes'), [
 ]);
 ```
 
-`lookUpProfile("Harry", "likes")` повинен повернути об'єкт
+`lookUpProfile("Harry", "likes")` має повертати масив
 
 ```js
 assert(typeof lookUpProfile('Harry', 'likes') === 'object');
 ```
 
-`lookUpProfile("Bob", "number")` повинен повертати рядок `No such contact`
+`lookUpProfile("Bob", "number")` має повертати рядок `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'number') === 'No such contact');
 ```
 
-`lookUpProfile("Bob", "potato")` повинен повертати рядок `No such contact`
+`lookUpProfile("Bob", "potato")` має повертати рядок `No such contact`
 
 ```js
 assert(lookUpProfile('Bob', 'potato') === 'No such contact');
 ```
 
-`lookUpProfile("Akira", "address")` повинен повертати рядок `No such property`
+`lookUpProfile("Akira", "address")` має повертати рядок `No such property`
 
 ```js
 assert(lookUpProfile('Akira', 'address') === 'No such property');

@@ -14,25 +14,25 @@ dashedName: title-case-a-sentence
 
 # --hints--
 
-`titleCase("I'm a little tea pot")` повинен повертати рядок.
+`titleCase("I'm a little tea pot")` має повертати рядок.
 
 ```js
 assert(typeof titleCase("I'm a little tea pot") === 'string');
 ```
 
-`titleCase("I'm a little tea pot")` повинен повертати рядок `I'm A Little Tea Pot`.
+`titleCase("I'm a little tea pot")` має повертати рядок `I'm A Little Tea Pot`.
 
 ```js
 assert(titleCase("I'm a little tea pot") === "I'm A Little Tea Pot");
 ```
 
-`titleCase("sHoRt AnD sToUt")` повинен повертати рядок `Short And Stout`.
+`titleCase("sHoRt AnD sToUt")` має повертати рядок `Short And Stout`.
 
 ```js
 assert(titleCase('sHoRt AnD sToUt') === 'Short And Stout');
 ```
 
-`titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")` повинен повертати рядок `Here Is My Handle Here Is My Spout`.
+`titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")` має повертати рядок `Here Is My Handle Here Is My Spout`.
 
 ```js
 assert(

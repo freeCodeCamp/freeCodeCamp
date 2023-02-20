@@ -15,8 +15,8 @@
     "show-cert": "Exibir certificado",
     "claim-cert": "Solicitar certificação",
     "save-progress": "Salvar progresso",
-    "accepted-honesty": "Você aceitou nossa política de honestidade acadêmica.",
-    "agree": "Aceitar",
+    "accepted-honesty": "Você concordou com nossa política de honestidade acadêmica.",
+    "agree-honesty": "Concordo com a Política de Honestidade Acadêmica do FreeCodeCamp.",
     "save-portfolio": "Salvar esse item de portfólio",
     "remove-portfolio": "Remover este item de portfólio",
     "add-portfolio": "Adicionar um novo item de portfólio",
@@ -158,7 +158,8 @@
       "honesty": "Política de honestidade acadêmica",
       "internet": "Sua presença na internet",
       "portfolio": "Configurações do portfólio",
-      "privacy": "Configurações de privacidade"
+      "privacy": "Configurações de privacidade",
+      "personal-info": "Informações pessoais"
     },
     "danger": {
       "heading": "Zona de perigo",
@@ -273,6 +274,9 @@
     "add-subtitles": "Ajudar a melhorar ou adicionar legendas",
     "wrong-answer": "Desculpe, essa não é a resposta correta. Quer tentar novamente?",
     "check-answer": "Clique no botão abaixo para verificar sua resposta.",
+    "assignment-not-complete": "Termine as tarefas",
+    "assignments": "Tarefas",
+    "question": "Questão",
     "solution-link": "Link da solução",
     "github-link": "Link do GitHub",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
@@ -298,7 +302,6 @@
       "certs": "Certificação {{title}}"
     },
     "editor-tabs": {
-      "info": "Informações",
       "code": "Código",
       "tests": "Testes",
       "restart": "Reiniciar",
@@ -514,7 +517,7 @@
     "opens-new-window": "Abre em uma nova janela"
   },
   "flash": {
-    "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",
+    "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",
     "really-weird": "Algo realmente estranho aconteceu. Se acontecer novamente, considere apresentar um problema pelo endereço https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "Algo não está certo. Um relatório foi gerado e a equipe do freeCodeCamp.org foi notificada",
     "went-wrong": "Algo deu errado. Verifique e tente novamente",

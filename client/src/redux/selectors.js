@@ -202,6 +202,8 @@ export const certificatesByNameSelector = username => state => {
 };
 
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
+export const allChallengesInfoSelector = state =>
+  state[MainApp].allChallengesInfo;
 export const userProfileFetchStateSelector = state =>
   state[MainApp].userProfileFetchState;
 export const usernameSelector = state => state[MainApp].appUsername;

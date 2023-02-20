@@ -1,6 +1,6 @@
 ---
 id: bd7993c9c69feddfaeb7bdef
-title: Множення двох десяткових чисел за допомогою JavaScript
+title: Множення двох десяткових чисел з JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2GeHq'
 forumTopicId: 301173

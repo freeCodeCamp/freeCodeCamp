@@ -39,7 +39,7 @@ while (i < 5) {
 assert(code.match(/while/g));
 ```
 
-`myArray` повинен дорівнювати `[5, 4, 3, 2, 1, 0]`.
+`myArray` має дорівнювати `[5, 4, 3, 2, 1, 0]`.
 
 ```js
 assert.deepEqual(myArray, [5, 4, 3, 2, 1, 0]);

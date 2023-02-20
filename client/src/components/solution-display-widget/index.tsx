@@ -22,7 +22,7 @@ export function SolutionDisplayWidget({
   showUserCode,
   showProjectPreview,
   displayContext
-}: Props) {
+}: Props): JSX.Element | null {
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
   const viewText = t('buttons.view');

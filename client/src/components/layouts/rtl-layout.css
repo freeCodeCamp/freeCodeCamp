@@ -7,27 +7,11 @@ Increase the spacing in paragraphs
 }
 
 /* 
-breadcrumbs section
+Profile section
 */
-[dir='rtl'] .breadcrumb-left::after {
-  content: '';
-  display: none;
-}
 
-[dir='rtl'] .breadcrumb-left::before {
-  background-color: var(--secondary-background);
-  content: '';
-  border-top: calc(1.375rem / 2) solid transparent;
-  border-bottom: calc(1.2rem / 2) solid transparent;
-  border-right: calc(1.1rem / 2) solid var(--quaternary-background);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-}
-
-[dir='rtl'] .challenge-title-breadcrumbs ol {
-  padding-right: 0;
+[dir='rtl'] #profile-portfolio-image {
+  padding-left: 10px;
 }
 
 /* 
@@ -35,31 +19,12 @@ Intro project buttons and headings
 */
 
 [dir='rtl'] .monaco-editor-tabs {
-  margin-right: 0;
-}
-
-[dir='rtl'] .panel-display-tabs button:first-child,
-.tabs-row > button:first-child {
-  margin-right: 0;
-  margin-left: 10px;
-}
-
-[dir='rtl'] .map-ui .superblock-link .map-icon {
-  margin-right: 5px;
-  margin-left: 20px;
+  /* need to remove the margin because the editor is reversed */
+  margin-inline-end: 0;
 }
 
 [dir='rtl'] .map-ui .superblock-link > svg {
   transform: rotate(180deg);
-}
-
-/* 
-fix misaligned text in button and in donation 
-*/
-
-[dir='rtl'] .link-btn,
-[dir='rtl'] .faq-item h4 {
-  text-align: right;
 }
 
 /* 
@@ -68,17 +33,6 @@ fix misaligned text in button and in donation
 
 [dir='rtl'] .link-btn.btn-lg > svg {
   transform: rotate(180deg);
-}
-
-[dir='rtl'] .block-grid .map-title > svg:last-child,
-[dir='rtl'] .map-title .course-title:last-of-type {
-  margin-right: auto;
-  margin-left: 0;
-}
-
-[dir='rtl'] .map-title .course-title:first-of-type {
-  margin-right: 0.35em;
-  margin-left: auto;
 }
 
 /* 
@@ -153,10 +107,6 @@ New RWD project challenge
   gap: 10px;
 }
 
-[dir='rtl'] .panel-display-tabs {
-  margin-left: auto;
-}
-
 [dir='rtl'] .monaco-editor-tabs button:not(:first-child) {
   border-left: 2px solid;
   border-right: none;
@@ -173,13 +123,12 @@ sections that need to stay left to right
 */
 
 /* Code snippet*/
+[dir='rtl'] :has(#learn-app-wrapper) pre,
 [dir='rtl'] code,
 /* trending articles */
 [dir='rtl'] .trending-guides .trending-guides-row div a,
-[dir='rtl'] .quote-partial,
 [dir='rtl'] .overflow-guard,
 [dir='rtl'] .challenge-preview,
-[dir='rtl'] .output-text,
 /* timeline*/
 [dir='rtl'] .timeline-pagination_list {
   direction: ltr;
@@ -188,6 +137,12 @@ sections that need to stay left to right
 [dir='rtl'] code {
   word-break: normal;
   unicode-bidi: isolate;
+}
+
+/* bootstrap display block breaks the code elements when they are stacked on top of each other to sort this, we remove it for display: grid  */
+
+[dir='rtl'] pre[class*='language-']:has(code) {
+  display: grid;
 }
 
 [dir='rtl'] .description-container,

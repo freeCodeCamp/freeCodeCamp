@@ -22,7 +22,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --instructions--
 
-`package.json` ファイルの `dependencies` フィールドに、`@freecodecamp/example` パッケージのバージョン "1.1.0" を追加してください。
+Add version `1.1.0` of the `@freecodecamp/example` package to the `dependencies` field of your `package.json` file.
 
 **注:** `@freecodecamp/example` は、学習用のツールとして使用する架空のパッケージです。
 

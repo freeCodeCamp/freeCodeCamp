@@ -1,4 +1,4 @@
-import * as Sentry from '@sentry/gatsby';
+import { captureException } from '@sentry/gatsby';
 import envData from '../../../config/env.json';
 
 const { sentryClientDSN } = envData;
@@ -11,5 +11,5 @@ export function reportClientSideError(
 ): string | void {
   return sentryClientDSN === null
     ? console.error(`Client: ${message}`, e)
-    : Sentry.captureException(e);
+    : captureException(e);
 }

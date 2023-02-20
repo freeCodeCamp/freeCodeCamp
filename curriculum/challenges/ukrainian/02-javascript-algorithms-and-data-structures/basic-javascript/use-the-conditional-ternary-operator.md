@@ -39,25 +39,25 @@ function findGreater(a, b) {
 
 # --hints--
 
-`checkEqual` повинна використовувати умовний оператор
+`checkEqual` має використовувати умовний оператор
 
 ```js
 assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
 ```
 
-`checkEqual(1, 2)` повинна повертати рядок `Not Equal`
+`checkEqual(1, 2)` має повертати рядок `Not Equal`
 
 ```js
 assert(checkEqual(1, 2) === 'Not Equal');
 ```
 
-`checkEqual(1, 1)` повинна повертати рядок `Equal`
+`checkEqual(1, 1)` має повертати рядок `Equal`
 
 ```js
 assert(checkEqual(1, 1) === 'Equal');
 ```
 
-`checkEqual(1, -1)` повинна повертати рядок `Not Equal`
+`checkEqual(1, -1)` має повертати рядок `Not Equal`
 
 ```js
 assert(checkEqual(1, -1) === 'Not Equal');
