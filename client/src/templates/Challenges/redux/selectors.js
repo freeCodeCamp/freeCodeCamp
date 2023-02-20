@@ -101,6 +101,10 @@ export const currentBlockIdsSelector = state => {
     challengeType
   );
 
+  if (!currentBlockIds) {
+    return [];
+  }
+
   return currentBlockIds;
 };
 
