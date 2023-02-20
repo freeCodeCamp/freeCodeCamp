@@ -7,6 +7,14 @@ Increase the spacing in paragraphs
 }
 
 /* 
+Profile section
+*/
+
+[dir='rtl'] #profile-portfolio-image {
+  padding-left: 10px;
+}
+
+/* 
 Intro project buttons and headings 
 */
 
@@ -115,6 +123,7 @@ sections that need to stay left to right
 */
 
 /* Code snippet*/
+[dir='rtl'] :has(#learn-app-wrapper) pre,
 [dir='rtl'] code,
 /* trending articles */
 [dir='rtl'] .trending-guides .trending-guides-row div a,
@@ -128,6 +137,12 @@ sections that need to stay left to right
 [dir='rtl'] code {
   word-break: normal;
   unicode-bidi: isolate;
+}
+
+/* bootstrap display block breaks the code elements when they are stacked on top of each other to sort this, we remove it for display: grid  */
+
+[dir='rtl'] pre[class*='language-']:has(code) {
+  display: grid;
 }
 
 [dir='rtl'] .description-container,

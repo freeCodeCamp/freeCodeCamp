@@ -1,9 +1,9 @@
 import { render, fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 
-import Form, { FormProps } from './form';
+import { StrictSolutionForm, StrictSolutionFormProps } from './form';
 
-const defaultTestProps: FormProps = {
+const defaultTestProps: StrictSolutionFormProps = {
   buttonText: 'Submit',
   formFields: [
     { name: 'name', label: 'name Label' },
@@ -21,7 +21,7 @@ const defaultTestProps: FormProps = {
 };
 
 test('should render', () => {
-  render(<Form {...defaultTestProps} />);
+  render(<StrictSolutionForm {...defaultTestProps} />);
 
   const nameInput = screen.getByLabelText(/name Label/);
   expect(nameInput).not.toBeRequired();
@@ -41,7 +41,7 @@ test('should render with default values', () => {
   const nameValue = 'John';
 
   render(
-    <Form
+    <StrictSolutionForm
       {...defaultTestProps}
       enableSubmit={true}
       initialValues={{ name: nameValue, website: websiteValue }}
@@ -66,7 +66,7 @@ test('should submit', () => {
   };
   const websiteValue = 'http://mysite.com';
 
-  render(<Form {...props} />);
+  render(<StrictSolutionForm {...props} />);
 
   const websiteInput = screen.getByLabelText(/WebSite label/);
   fireEvent.change(websiteInput, { target: { value: websiteValue } });
