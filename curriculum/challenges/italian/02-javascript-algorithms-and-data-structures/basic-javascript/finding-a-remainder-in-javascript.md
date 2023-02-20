@@ -13,12 +13,20 @@ L’operatore <dfn>resto</dfn> `%` fornisce il resto della divisione di due nume
 
 **Esempio**
 
-<blockquote>5 % 2 = 1 perché<br>Math.floor(5 / 2) = 2 (Quoziente)<br>2 * 2 = 4<br>5 - 4 = 1 (Resto)</blockquote>
+<pre>
+5 % 2 = 1
+5 / 2 = 2 remainder 1
+2 * 2 = 4
+5 - 4 = 1
+</pre>
 
-**Uso**  
-In matematica si può verificare se un numero è pari o dispari controllando il resto della divisione del numero per `2`.
+**Usage**  
+In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`. Even numbers have a remainder of `0`, while odd numbers a remainder of `1`.
 
-<blockquote>17 % 2 = 1 (17 è dispari)<br>48 % 2 = 0 (48 è pari)</blockquote>
+<pre>
+17 % 2 = 1
+48 % 2 = 0
+</pre>
 
 **Nota:** L'operatore <dfn>resto</dfn> è a volte erroneamente indicato come l'operatore del modulo. Esso è molto simile al modulo, ma non funziona correttamente con numeri negativi.
 
@@ -51,7 +59,9 @@ assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
 ## --after-user-code--
 
 ```js
-(function(y){return 'remainder = '+y;})(remainder);
+(function (y) {
+  return 'remainder = ' + y;
+})(remainder);
 ```
 
 ## --seed-contents--

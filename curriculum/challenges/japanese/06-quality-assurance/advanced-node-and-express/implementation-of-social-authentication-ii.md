@@ -31,7 +31,7 @@ passport.use(new GitHubStrategy({
 
 認証はまだ成功せず、データベースロジックとコールバックがないためエラーになりますが、コンソールに GitHub プロファイルが出力されるはずです！
 
-正しいと思ったら、ページを送信してください。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-ii-4" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+正しいと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-ii-4" target="_blank" rel="noopener noreferrer nofollow">この時点までの完成形のコードをこちらで確認できます</a>。
 
 # --hints--
 

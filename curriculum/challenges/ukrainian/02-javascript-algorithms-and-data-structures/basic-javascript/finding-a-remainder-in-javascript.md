@@ -13,12 +13,20 @@ dashedName: finding-a-remainder-in-javascript
 
 **Приклад**
 
-<blockquote>5 % 2 = 1, оскільки<br>Math.floor(5 / 2) = 2 (частка)<br>2 * 2 = 4<br>5 - 4 = 1 (остача)</blockquote>
+<pre>
+5 % 2 = 1
+5 / 2 = 2 remainder 1
+2 * 2 = 4
+5 - 4 = 1
+</pre>
 
-**Використання**  
-У математиці число можна перевірити як парне чи непарне, поділивши його на `2`.
+**Usage**  
+In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`. Even numbers have a remainder of `0`, while odd numbers a remainder of `1`.
 
-<blockquote>17 % 2 = 1 (17 є непарним)<br>48 % 2 = 0 (48 є парним)</blockquote>
+<pre>
+17 % 2 = 1
+48 % 2 = 0
+</pre>
 
 **Примітка:** оператор <dfn>остачі</dfn> іноді неправильно називають оператором модуля. Він дуже схожий на модуль, але працює неправильно з від’ємними числами.
 
@@ -51,7 +59,9 @@ assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
 ## --after-user-code--
 
 ```js
-(function(y){return 'remainder = '+y;})(remainder);
+(function (y) {
+  return 'remainder = ' + y;
+})(remainder);
 ```
 
 ## --seed-contents--

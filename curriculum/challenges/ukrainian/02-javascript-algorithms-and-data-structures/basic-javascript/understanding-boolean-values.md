@@ -15,7 +15,7 @@ dashedName: understanding-boolean-values
 
 # --instructions--
 
-Змініть функцію `welcomeToBooleans` так, щоб вона повертала `true` замість `false`, коли натискається кнопка запуску.
+Modify the `welcomeToBooleans` function so that it returns `true` instead of `false`.
 
 # --hints--
 

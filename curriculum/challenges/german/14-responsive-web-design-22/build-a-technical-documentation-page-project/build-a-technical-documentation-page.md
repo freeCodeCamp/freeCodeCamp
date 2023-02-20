@@ -19,9 +19,9 @@ dashedName: build-a-technical-documentation-page
 1. Die `.main-section`-Elemente sollten mindestens zehn `p`-Elemente enthalten (insgesamt)
 1. Die `.main-section`-Elemente sollten mindestens fünf `code`-Elemente enthalten (insgesamt)
 1. Die `.main-section`-Elemente sollten mindestens fünf `li`-Elemente enthalten (insgesamt)
-1. You can see a `nav` element with a corresponding `id="navbar"`
+1. Du kannst ein `nav`-Element mit entsprechender `id="navbar"` sehen
 1. Das navbar-Element sollte ein `header`-Element enthalten, das einen Text enthält, der das Thema der technischen Dokumentation beschreibt
-1. Additionally, the navbar should contain link (`a`) elements with the class of `nav-link`. Es sollte eines für jedes Element der Klasse `main-section` geben
+1. Außerdem sollte die Navigationsleiste auch (`a`) -Link-Elemente der Klasse `nav-link` enthalten. Es sollte eines für jedes Element der Klasse `main-section` geben
 1. Das `header`-Element in der `#navbar` muss vor jedem Link-Element (`a`) in der Navigationsleiste stehen
 1. Jedes Element der Klasse `nav-link` sollte einen Text enthalten, der zu dem entsprechenden `header`-Text jeder `section` passt (wenn du z.B. einen Header bzw. eine Sektion mit „Hello world" hast, sollte deine Navigationsleiste ein Element mit eben jenem Text enthalten)
 1. Wenn du auf ein Element der Navigationsleiste klickst, sollte die Seite zu der entsprechenden Sektion des `#main-doc`-Elements navigieren (klickst du z.B. auf ein `.nav-link`-Element, das den Text „Hello World" enthält, sollte die Seite zu einem `section`-Element mit dieser ID navigieren und nun den entsprechenden Header enthalten)
@@ -41,7 +41,7 @@ const el = document.getElementById('main-doc')
 assert(!!el)
 ```
 
-You should have at least five `section` elements with a class of `main-section`.
+Du solltest mindestens fünf `section`-Elemente der Klasse `main-section` haben.
 
 ```js
 const els = document.querySelectorAll('#main-doc section')
@@ -127,28 +127,28 @@ const els = document.querySelectorAll('.main-section li')
 assert(els.length >= 5)
 ```
 
-You should have a `nav` element with an `id` of `navbar`.
+Du solltest ein `nav`-Element mit einer `id` von `navbar` haben.
 
 ```js
 const el = document.getElementById('navbar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Your `#navbar` should have exactly one `header` element within it.
+Deine `#navbar` sollte genau ein `header`-Element enthalten.
 
 ```js
 const els = document.querySelectorAll('#navbar header')
 assert(els.length === 1)
 ```
 
-You should have at least one `a` element with a class of `nav-link`.
+Du solltest mindestens ein `a`-Element der Klasse `nav-link` haben.
 
 ```js
 const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
-All of your `.nav-link` elements should be anchor (`a`) elements.
+All deine `.nav-link`-Elemente sollten Ankerelemente (`a`) sein.
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -158,7 +158,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-All of your `.nav-link` elements should be in the `#navbar`.
+All deine `.nav-link`-Elemente sollten sich in der `#navbar` befinden.
 
 ```js
 const els1 = document.querySelectorAll('.nav-link')
@@ -221,7 +221,7 @@ const left2 = el?.offsetLeft
 assert(!!el && left1 >= -15 && left1 <= 15 && left2 >= -15 && left2 <= 15)
 ```
 
-Your Technical Documentation project should use at least one media query.
+Dein Projekt für die Technische Dokumentation sollte mindestens eine Media Query (Medienabfrage) verwenden.
 
 ```js
 const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
