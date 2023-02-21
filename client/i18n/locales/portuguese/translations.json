@@ -251,6 +251,7 @@
   },
   "learn": {
     "heading": "Boas-vindas ao currículo do freeCodeCamp.",
+    "skip-to-content": "Ir para o conteúdo",
     "welcome-1": "Bem-vindo(a) de volta, {{name}}.",
     "welcome-2": "Boas-vindas ao freeCodeCamp.org",
     "start-at-beginning": "Se você é novo em programação, recomendamos que você <0>comece no início</0>.",
