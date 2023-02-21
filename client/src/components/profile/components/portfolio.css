@@ -1,57 +1,71 @@
 .portfolio-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   position: relative;
+  padding: 0 1em 1em 0;
+  max-height: 300px;
   border: 1px solid var(--secondary-color);
-  gap: 0.5rem;
-  margin-top: 1em;
-  margin-bottom: 3em;
+  gap: 1rem 1rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .portfolio-screen-shot {
-  width: 100%;
-  height: 100%;
   display: block;
+  width: 300px;
+  height: 300px;
   grid-column: 1/ -1;
   grid-row: 1;
-  object-fit: cover;
+}
+
+.portfolio-container h2 {
+  grid-column: 1/ -1;
+  grid-row: 2;
 }
 
 .portfolio-container h3 {
-  margin-top: 0.5em;
-  margin-inline: 0.5rem;
   grid-column: 1/ -1;
-  grid-row: 3;
+  grid-row: 4;
   font-size: unset;
+  justify-self: end;
+  width: 60%;
 }
 
 .portfolio-container a {
+  display: flex;
   background-color: var(--primary-color);
   color: var(--primary-background);
-  display: flex;
   justify-content: center;
-  text-align: center;
-  padding-inline: 0.75rem;
-  padding-block: 0.5rem;
+  padding: 0.5rem;
   border-radius: 15px;
 }
 
 .portfolio-container p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   grid-column: 1/ -1;
-  margin-inline-start: 0.5em;
-  grid-row: 2;
+  grid-row: 3;
+}
+
+#link-icon {
+  margin-left: 1rem;
 }
 
 @media (max-width: 990px) {
   .portfolio-screen-shot {
     max-height: 300px;
   }
+
+  .portfolio-container {
+    max-height: 900px;
+    max-width: 300px;
+  }
 }
 
 @media (min-width: 995px) {
   .portfolio-container {
-    grid-template-rows: 1fr 0.1fr;
-    grid-template-columns: 300px 1fr;
+    grid-template-rows: 75px 125px 100px;
+    grid-template-columns: 300px 1.2fr;
   }
 
   .portfolio-screen-shot {
@@ -59,14 +73,19 @@
     grid-row: 1 / -1;
   }
 
-  .portfolio-container h3 {
+  .portfolio-container h2 {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1;
   }
 
   .portfolio-container p {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 2;
+  }
+
+  .portfolio-container h3 {
+    grid-column: 2;
+    grid-row: 3;
   }
 }
 
