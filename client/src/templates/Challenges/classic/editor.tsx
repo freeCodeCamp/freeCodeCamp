@@ -703,6 +703,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         dataRef.current.descriptionZoneTop =
           editor.getTopForLineNumber(getLineBeforeEditableRegion() + 1) -
           domNode.offsetHeight;
+        if (dataRef.current.descriptionWidget)
+          editor.layoutContentWidget(dataRef.current.descriptionWidget);
       }
     };
 
