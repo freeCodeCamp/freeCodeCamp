@@ -18,17 +18,28 @@
 }
 
 .portfolio-container h3 {
-  font-size: 1.5rem;
   margin-top: 0.5em;
-  margin-inline-start: 0.5em;
+  margin-inline: 0.5rem;
   grid-column: 1/ -1;
-  grid-row: 2;
+  grid-row: 3;
+  font-size: unset;
+}
+
+.portfolio-container a {
+  background-color: var(--primary-color);
+  color: var(--primary-background);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-inline: 0.75rem;
+  padding-block: 0.5rem;
+  border-radius: 15px;
 }
 
 .portfolio-container p {
   grid-column: 1/ -1;
   margin-inline-start: 0.5em;
-  grid-row: 3;
+  grid-row: 2;
 }
 
 @media (max-width: 990px) {
@@ -39,7 +50,7 @@
 
 @media (min-width: 995px) {
   .portfolio-container {
-    grid-template-rows: 0.1fr 1fr;
+    grid-template-rows: 1fr 0.1fr;
     grid-template-columns: 300px 1fr;
   }
 
@@ -50,12 +61,12 @@
 
   .portfolio-container h3 {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 2;
   }
 
   .portfolio-container p {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1;
   }
 }
 
@@ -73,9 +84,8 @@
 }
 
 .portfolio-container a:is(:hover, :focus, :focus-visible) {
-  background-color: revert;
-  text-decoration: underline;
-  text-decoration-color: var(--blue-mid);
+  outline: 2px solid var(--blue-mid);
+  outline-offset: 2px;
 }
 
 /* Timeline pagination */
