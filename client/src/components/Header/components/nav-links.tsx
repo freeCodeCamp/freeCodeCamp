@@ -176,7 +176,10 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
         'Tab',
         {
           select: () => {
-            hideMenu();
+            const camperPressedTheShiftKey = event.shiftKey;
+            if (!camperPressedTheShiftKey) {
+              hideMenu();
+            }
           }
         }
       ]
@@ -490,6 +493,13 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
           </button>
         </li>
         <li key='lang-menu'>
+          {/* 
+           The div existences create edge case in which camper skips the change language,
+           when they press "shift+tab" on signout button whenever signout focus events uses `getPreviousMenuItem`.
+           To fix this we need to remove `div`, but this creates a bug which close the menu when someone interact with it any other way except the keyboard.
+           This is a complexy and footgun that can break the site without notices and we shouldn't carry,
+           to sort this we need to remove the div and make focus events simpler, but that's a ToDo for later.
+          */}
           <div className='nav-lang' key='language-dropdown'>
             <button
               aria-controls='nav-lang-menu'
