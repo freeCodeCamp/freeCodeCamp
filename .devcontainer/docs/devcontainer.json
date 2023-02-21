@@ -1,13 +1,15 @@
 {
-  "extensions": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "freeCodeCamp.freecodecamp-dark-vscode-theme"
-  ],
   "context": "../..",
   "customizations": {
     "codespaces": {
       "openFiles": ["docs/how-to-work-on-the-docs-theme.md"]
+    },
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "freeCodeCamp.freecodecamp-dark-vscode-theme"
+      ]
     }
   },
   "dockerFile": "Dockerfile",

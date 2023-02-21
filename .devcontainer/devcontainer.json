@@ -1,10 +1,14 @@
 {
-  "extensions": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "freeCodeCamp.freecodecamp-dark-vscode-theme"
-  ],
   "context": "..",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "freeCodeCamp.freecodecamp-dark-vscode-theme"
+      ]
+    }
+  },
   "dockerFile": "Dockerfile",
   "forwardPorts": [3000, 8000],
   "portsAttributes": {
