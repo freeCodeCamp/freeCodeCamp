@@ -94,30 +94,25 @@ export const challengeDataSelector = state => {
 export const currentBlockIdsSelector = state => {
   const { block, certification, challengeType } = challengeMetaSelector(state);
   const allChallengesInfo = allChallengesInfoSelector(state);
-  const currentBlockIds = getCurrentBlockIds(
+
+  return getCurrentBlockIds(
     allChallengesInfo,
     block,
     certification,
     challengeType
   );
-
-  if (!currentBlockIds) {
-    return [];
-  }
-
-  return currentBlockIds;
 };
 
 export const completedChallengesInBlockSelector = state => {
   const completedChallengesIds = completedChallengesIdsSelector(state);
   const currentBlockIds = currentBlockIdsSelector(state);
   const { id } = challengeMetaSelector(state);
-  const completedChallengesInBlock = getCompletedChallengesInBlock(
+
+  return getCompletedChallengesInBlock(
     completedChallengesIds,
     currentBlockIds,
     id
   );
-  return completedChallengesInBlock;
 };
 
 export const completedPercentageSelector = state => {

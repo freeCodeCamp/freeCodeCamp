@@ -23,7 +23,7 @@ export function getCompletedChallengesInBlock(
   completedChallengesIds: string[],
   currentBlockIds: string[],
   currentChallengeId: string
-) {
+): number {
   const oldCompletionCount = completedChallengesIds.filter(challengeId =>
     currentBlockIds.includes(challengeId)
   ).length;
@@ -39,13 +39,14 @@ export const getCurrentBlockIds = (
   block: string,
   certification: string,
   challengeType: number
-) => {
+): string[] => {
   const { challengeEdges, certificateNodes } = allChallengesInfo;
-  const currentCertificateIds = certificateNodes
-    .filter(
-      node => dasherize(node.challenge.certification) === certification
-    )[0]
-    ?.challenge.tests.map(test => test.id);
+  const currentCertificateIds =
+    certificateNodes
+      .filter(
+        node => dasherize(node.challenge.certification) === certification
+      )[0]
+      ?.challenge.tests.map(test => test.id) ?? [];
   const currentBlockIds = challengeEdges
     .filter(edge => edge.node.challenge.block === block)
     .map(edge => edge.node.challenge.id);
