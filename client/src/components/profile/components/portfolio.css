@@ -25,10 +25,6 @@
   grid-row: 2;
 }
 
-.portfolio-container a {
-  display: block;
-}
-
 .portfolio-container p {
   grid-column: 1/ -1;
   margin-inline-start: 0.5em;
@@ -77,9 +73,9 @@
 }
 
 .portfolio-container a:is(:hover, :focus, :focus-visible) {
-  outline: 3px solid var(--blue-mid);
-  outline-offset: 1px;
   background-color: revert;
+  text-decoration: underline;
+  text-decoration-color: var(--blue-mid);
 }
 
 /* Timeline pagination */
