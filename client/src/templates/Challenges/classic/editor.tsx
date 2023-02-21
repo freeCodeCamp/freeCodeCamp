@@ -989,8 +989,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     const afterRender = () => {
       if (getTop) {
         domNode.style.left = '0';
-        domNode.style.display = 'block';
-        domNode.style.visibility = 'visible';
       }
     };
 
