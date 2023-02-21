@@ -15,7 +15,7 @@ Outro tipo de dado é o <dfn>booleano</dfn>. Booleanos podem ser apenas dois val
 
 # --instructions--
 
-Modify the `welcomeToBooleans` function so that it returns `true` instead of `false`.
+Modifique a função `welcomeToBooleans` para que retorne `true` ao invés de `false`.
 
 # --hints--
 

@@ -54,7 +54,7 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 
 - データに `overweight` 列を追加します。 overweight (太りすぎ) かどうかを判断するには、まず、体重 (キログラム単位) を身長 (メートル単位) の 2 乗で割って BMI (ボディマス指数) を計算します。 その値が 25 より大きい場合、その人は太りすぎです。 太りすぎではない場合は値 0 を使用し、太りすぎの場合は値 1 を使用します。
 - 0 を常に良とし、1 を常に悪としてデータを正規化します。 `cholesterol` または `gluc` の値が 1 の場合は、この値を 0 にします。 値が 1 より大きい場合は、値を 1 とします。
-- Convert the data into long format and create a chart that shows the value counts of the categorical features using seaborn's `catplot()`. データセットは 'Cardio' 別に分割し、`cardio` の値ごとに 1 つずつグラフを作成します。 `examples/Figure_1.png` のようなグラフを表示する必要があります。
+- データをロング形式 (long-form) に変換し、seabornの `catplot()` を使用して、カテゴリ特徴の値の数を示すグラフを作成します。 データセットは 'Cardio' 別に分割し、`cardio` の値ごとに 1 つずつグラフを作成します。 `examples/Figure_1.png` のようなグラフを表示する必要があります。
 - データをクリーニングします。 正しくないデータを表す次の患者セグメントを除外します。
   - 最低血圧が最高血圧よりも高い (`(df['ap_lo'] <= df['ap_hi'])`) で正しいデータを保持できます)
   - 身長が 2.5 パーセンタイルを下回る (`(df['height'] >= df['height'].quantile(0.025))` で正しいデータを保持できます)

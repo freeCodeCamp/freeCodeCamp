@@ -1,6 +1,5 @@
 ---
 id: 637f4e8772c65bc8e73dfe2d
-videoId: gW6cBZLUk6M
 title: Questão G de Trabalhando com textos
 challengeType: 15
 dashedName: working-with-text-question-g
