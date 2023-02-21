@@ -251,6 +251,7 @@
   },
   "learn": {
     "heading": "freeCodeCamp のカリキュラムへようこそ。",
+    "skip-to-content": "Skip to content",
     "welcome-1": "{{name}} さん、おかえりなさい。",
     "welcome-2": "freeCodeCamp.org へようこそ",
     "start-at-beginning": "コーディングが初めての場合は、<0>最初から開始する</0> ことをお勧めします。",

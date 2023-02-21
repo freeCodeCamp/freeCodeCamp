@@ -251,6 +251,7 @@
   },
   "learn": {
     "heading": "欢迎学习 freeCodeCamp 的课程。",
+    "skip-to-content": "Skip to content",
     "welcome-1": "欢迎回来，{{name}}。",
     "welcome-2": "欢迎来到 freeCodeCamp.org",
     "start-at-beginning": "如果你刚开始学习编程，我们建议你<0>从头开始</0>。",

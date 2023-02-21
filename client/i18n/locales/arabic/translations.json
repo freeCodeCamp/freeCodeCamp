@@ -251,6 +251,7 @@
   },
   "learn": {
     "heading": "مرحباً بكم في منهج freeCodeCamp.",
+    "skip-to-content": "Skip to content",
     "welcome-1": "مرحباً بعودتك، {{name}}.",
     "welcome-2": "مرحباً بك في freeCodeCamp.org",
     "start-at-beginning": "إذا كنت جديداً على البرمجة، ننصحك على <0>البدء من البداية</0>.",
