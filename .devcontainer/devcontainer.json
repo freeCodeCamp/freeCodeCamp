@@ -1,5 +1,4 @@
 {
-  "context": "..",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -9,7 +8,7 @@
       ]
     }
   },
-  "dockerFile": "Dockerfile",
+  "dockerComposeFile": "docker-compose.yml",
   "forwardPorts": [3000, 8000],
   "portsAttributes": {
     "8000": {
@@ -17,5 +16,8 @@
       "onAutoForward": "openPreview"
     }
   },
-  "postAttachCommand": "npm run develop"
+  "postCreateCommand": "npm ci",
+  "postAttachCommand": "npm run develop",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
 }
