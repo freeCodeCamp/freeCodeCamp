@@ -18,7 +18,7 @@ function BlockSaveButton({
       block={true}
       // the button is used to submit solutions in projects that require external URL
       // these buttons don't use bgSize, that's why the bgSize is optional.
-      bsSize={bgSize || 'lg'}
+      bsSize={bgSize}
       bsStyle='primary'
       type='submit'
       {...restProps}
