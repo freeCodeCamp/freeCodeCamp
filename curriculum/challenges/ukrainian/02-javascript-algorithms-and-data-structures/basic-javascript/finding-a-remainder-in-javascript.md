@@ -15,13 +15,13 @@ dashedName: finding-a-remainder-in-javascript
 
 <pre>
 5 % 2 = 1
-5 / 2 = 2 remainder 1
+5 / 2 = 2 остача 1
 2 * 2 = 4
 5 - 4 = 1
 </pre>
 
-**Usage**  
-In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`. Even numbers have a remainder of `0`, while odd numbers a remainder of `1`.
+**Використання**  
+У математиці можна перевірити число як парне чи непарне, поділивши його на `2`. Парні числа мають остачу `0`, а непарні числа мають остачу `1`.
 
 <pre>
 17 % 2 = 1
