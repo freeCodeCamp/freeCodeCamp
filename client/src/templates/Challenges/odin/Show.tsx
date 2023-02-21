@@ -243,6 +243,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             <Row>
               {videoId && (
                 <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
+                  <Spacer />
                   <div className='video-wrapper'>
                     {!this.state.videoIsLoaded ? (
                       <div className='video-placeholder-loader'>
@@ -258,7 +259,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                       videoLocaleIds={videoLocaleIds}
                     />
                   </div>
-                  <Spacer />
                 </Col>
               )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
