@@ -18,15 +18,15 @@ dashedName: introduction-why-program
 
 Додаткові ресурси:
 
-\- <a href="https://youtu.be/F7mtLrYzZP8" target="_blank" rel="noopener noreferrer nofollow">Install Python on Windows</a>
+\- <a href="https://youtu.be/F7mtLrYzZP8" target="_blank" rel="noopener noreferrer nofollow">Встановити Python на Windows</a>
 
-\- <a href="https://youtu.be/wfLnZP-4sZw" target="_blank" rel="noopener noreferrer nofollow">Install Python on MacOS</a>
+\- <a href="https://youtu.be/wfLnZP-4sZw" target="_blank" rel="noopener noreferrer nofollow">Встановити Python на MacOS</a>
 
 # --question--
 
 ## --text--
 
-Кому варто навчатися програмуванню?
+Кому варто навчатися програмування?
 
 ## --answers--
 

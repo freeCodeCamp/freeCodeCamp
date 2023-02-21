@@ -10,7 +10,7 @@ dashedName: neural-network-sms-text-classifier
 
 このプロジェクトには <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-neural-network-sms-text-classifier/blob/master/fcc_sms_text_classification.ipynb" target="_blank" rel="noopener noreferrer nofollow">Google Colaboratory</a> を使用して取り組んでください。
 
-このリンクにアクセスした後、自分のアカウントに、またはローカルに、ノートブックのコピーを作成してください。 プロジェクトを完了し、テストに合格したら (テストはリンクに含まれています)、下記にプロジェクトリンクを送信してください。 Google Colaboratory のリンクを送信する場合は、リンクの共有設定を必ず「リンクを知っている全員」に設定してください。
+このリンクにアクセスした後、自分のアカウントに、またはローカルに、ノートブックのコピーを作成してください。 プロジェクトを完了し、テストが成功したら (テストはリンクに含まれています)、下記にプロジェクトリンクを送信してください。 Google Colaboratory のリンクを送信する場合は、リンクの共有設定を必ず「リンクを知っている全員」に設定してください。
 
 機械学習カリキュラム向けの対話型教育コンテンツを引き続き開発中です。 現在、この認定講座のビデオチャレンジを受講できます。 また、実際のプロジェクトの取り組みと同様に、場合によってはその他の学習資料を探す必要もあります。
 
@@ -26,7 +26,7 @@ dashedName: neural-network-sms-text-classifier
 
 # --hints--
 
-すべての Python テストに合格する必要があります。
+すべての Python テストが成功する必要があります。
 
 ```js
 

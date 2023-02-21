@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b1
-title: التخصيص المركب مع الضرب المعزز (Compound Assignment With Augmented Multiplication)
+title: التعيين المركب مع الضرب المعزز
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c83vrfa'
 forumTopicId: 16662
@@ -9,13 +9,13 @@ dashedName: compound-assignment-with-augmented-multiplication
 
 # --description--
 
-يقوم المشغل `*=` مضاعفة متغير في عدد.
+يقوم المشغل `*=` f بمضاعفة متغير في عدد.
 
 ```js
 myVar = myVar * 5;
 ```
 
-سوف تضاعف `myVar` في `5`. ويمكن إعادة كتابة هذا على النحو التالي:
+سيتم ضرب `myVar` في `5`. ويمكن إعادة كتابة هذا على النحو التالي:
 
 ```js
 myVar *= 5;

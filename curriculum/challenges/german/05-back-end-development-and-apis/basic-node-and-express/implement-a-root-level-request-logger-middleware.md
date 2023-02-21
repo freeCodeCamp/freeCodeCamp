@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf3
-title: Implement a Root-Level Request Logger Middleware
+title: Implementiere eine Anfragenlogger-Middleware auf Hauptverzeichnisebene
 challengeType: 2
 forumTopicId: 301514
 dashedName: implement-a-root-level-request-logger-middleware
@@ -29,7 +29,7 @@ Baue einen einfachen Logger. Für jede Anfrage sollte ein String folgenden Forma
 
 # --hints--
 
-Root level logger middleware should be active
+Logger-Middleware auf Hauptverzeichnisebene sollte aktiv sein
 
 ```js
 (getUserInput) =>

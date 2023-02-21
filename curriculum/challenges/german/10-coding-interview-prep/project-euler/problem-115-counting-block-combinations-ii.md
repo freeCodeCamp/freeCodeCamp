@@ -1,6 +1,6 @@
 ---
 id: 5900f3df1000cf542c50fef1
-title: 'Problem 115: Counting block combinations II'
+title: 'Problem 115: Zählen von Blockkombinationen II'
 challengeType: 1
 forumTopicId: 301741
 dashedName: problem-115-counting-block-combinations-ii
@@ -8,23 +8,23 @@ dashedName: problem-115-counting-block-combinations-ii
 
 # --description--
 
-A row measuring `n` units in length has red blocks with a minimum length of `m` units placed on it, such that any two red blocks (which are allowed to be different lengths) are separated by at least one black square.
+Auf eine Reihe mit einer Länge von `n` Einheiten werden rote Blöcke mit einer Mindestlänge von `m` Einheiten gelegt, so dass zwei rote Blöcke (die unterschiedlich lang sein dürfen) durch mindestens ein schwarzes Quadrat getrennt sind.
 
-Let the fill-count function, $F(m, n)$, represent the number of ways that a row can be filled.
+Die Füllfunktion $F(m, n)$ soll die Anzahl der Möglichkeiten darstellen, wie eine Zeile gefüllt werden kann.
 
-For example, $F(3, 29) = 673135$ and $F(3, 30) = 1089155$.
+Zum Beispiel $F(3, 29) = 673135$ und $F(3, 30) = 1089155$.
 
-That is, for m = 3, it can be seen that n = 30 is the smallest value for which the fill-count function first exceeds one million.
+Das heißt, für m = 3 ist n = 30 der kleinste Wert, für den die Fill-Count-Funktion erstmals eine Million überschreitet.
 
-In the same way, for m = 10, it can be verified that $F(10, 56) = 880711$ and $F(10, 57) = 1148904$, so n = 57 is the least value for which the fill-count function first exceeds one million.
+Auf die gleiche Weise kann für m = 10 nachgewiesen werden, dass $F(10, 56) = 880711$ und $F(10, 57) = 1148904$, also n = 57 der kleinste Wert ist, für den die Fill-Count-Funktion erstmals eine Million überschreitet.
 
-For m = 50, find the least value of `n` for which the fill-count function first exceeds one million.
+Finde für m = 50 den kleinsten Wert von `n`, für den die Funktion fill-count zuerst eine Million überschreitet.
 
-**Note:** This is a more difficult version of Problem 114.
+**Hinweis:** Dies ist eine schwierigere Version von Problem 114.
 
 # --hints--
 
-`countingBlockTwo()` should return `168`.
+`countingBlockTwo()` sollte `168` zurückgeben.
 
 ```js
 assert.strictEqual(countingBlockTwo(), 168);

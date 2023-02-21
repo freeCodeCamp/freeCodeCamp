@@ -20,7 +20,7 @@ Erstelle einen API-Endpunkt, der unter `GET /name` eingebunden ist. Antworte mit
 
 # --hints--
 
-Test 1: Dein API-Endpunkt sollte mit dem richtigen Namen antworten
+Test 1: Dein API-Endpunkt sollte mit `{ "name": "Mick Jagger" }` antworten, wenn der `/name`-Endpunkt mit `?first=Mick&last=Jagger` aufgerufen wird
 
 ```js
 (getUserInput) =>
@@ -38,7 +38,7 @@ Test 1: Dein API-Endpunkt sollte mit dem richtigen Namen antworten
   );
 ```
 
-Test 2: Dein API-Endpunkt sollte mit dem richtigen Namen antworten
+Test 2: Dein API-Endpunkt sollte mit `{ "name": "Keith Richards" }` anworten, wenn der `/name`-Endpunkt mit `?first=Keith&last=Richards` aufgerufen wird
 
 ```js
 (getUserInput) =>

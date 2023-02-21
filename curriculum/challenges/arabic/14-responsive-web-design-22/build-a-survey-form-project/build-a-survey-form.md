@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b03
-title: بناء نموذج استطلاع رأي
+title: أنشئ نموذج استطلاع رأي
 challengeType: 14
 forumTopicId: 301145
 dashedName: build-a-survey-form
@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Objective:** كم ببناء تطبيق يشبه وظيفيا إلي <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
+**Objective:** أنشئ تطبيق يشبه وظيفيا إلي <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
 
 **المطلبيات:**
 
@@ -259,7 +259,7 @@ const els = document.querySelectorAll('#dropdown option:not([disabled])')
 assert(els.length >= 2)
 ```
 
-`#dropdown` الخاص بك يجب أن يكون تابعا لـ `#survey-form`.
+يجب أن يكون `#dropdown` الخاص بك فرع من `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #dropdown')

@@ -8,9 +8,9 @@ dashedName: add-a-description-to-your-package-json
 
 # --description--
 
-正しい package.json ファイルを構成する次の部分は `description` フィールドです。ここにはプロジェクトに関する簡潔で有益な説明があります。
+正しい package.json ファイルを構成する次の部分は `description` フィールドです。これはプロジェクトに関する簡潔な説明です。
 
-If some day you plan to publish a package to npm, this is the string that should sell your idea to the user when they decide whether to install your package or not. しかし、説明の用法はそれだけではなく、プロジェクトが何をするものなのかをまとめておくのに最適な場所です。 どの Node.js プロジェクトでも、他の開発者や将来の保守作業者、あるいは今後皆さん自身が、プロジェクトについて素早く理解できるようにしておくことが重要です。
+将来パッケージを npm に公開する予定がある場合は、ここにパッケージについて十分理解してもらえるだけの情報を入力してください。ユーザーがこのパッケージをインストールするかどうかを決める時の参考になるからです。 しかし、説明の用法はそれだけではなく、プロジェクトが何をするものなのかをまとめておくのに最適な場所です。 どの Node.js プロジェクトでも、他の開発者や将来の保守作業者、あるいは今後皆さん自身が、プロジェクトについて素早く理解できるようにしておくことが重要です。
 
 プロジェクトの内容に関わらず、説明を記述しておくことをぜひ推奨します。 例を次に示します。
 

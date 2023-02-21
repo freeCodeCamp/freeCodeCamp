@@ -30,13 +30,13 @@ passport.use(new LocalStrategy((username, password, done) => {
 }));
 ```
 
-This is defining the process to use when you try to authenticate someone locally. First, it tries to find a user in your database with the username entered. Then, it checks for the password to match. Finally, if no errors have popped up that you checked for (e.g. an incorrect password), the `user` object is returned and they are authenticated.
+Esto es definir el proceso a utilizar cuando intentas autenticar a alguien localmente. Primero, intenta encontrar un usuario en tu base de datos con el nombre de usuario introducido. Luego, comprueba que la contraseña coincida. Finalmente, si no han aparecido errores que hayas comprobado (por ejemplo, una contraseña incorrecta), se devuelve el objeto `user` y están autenticados.
 
-Many strategies are set up using different settings. Generally, it is easy to set it up based on the README in that strategy's repository. A good example of this is the GitHub strategy where you don't need to worry about a username or password because the user will be sent to GitHub's auth page to authenticate. As long as they are logged in and agree then GitHub returns their profile for you to use.
+Muchas estrategias están configuradas usando diferentes ajustes. Generalmente, es fácil de configurar basándose en el README en el repositorio de esa estrategia. Un buen ejemplo de esto es la estrategia de GitHub, donde no necesitamos preocuparnos por un nombre de usuario o una contraseña porque el usuario será enviado a la página de autenticación de GitHub para autenticarse. Siempre que hayan iniciado sesión y estén de acuerdo, GitHub nos devuelve su perfil para que lo utilicemos.
 
-In the next step, you will set up how to actually call the authentication strategy to validate a user based on form data.
+En el siguiente paso, configurarás cómo llamar realmente a la estrategia de autenticación para validar a un usuario basándote en los datos del formulario.
 
-Envía tu página cuando creas que lo has hecho bien. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-strategies-6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-strategies-6" target="_blank" rel="noopener noreferrer nofollow">consultar el proyecto realizado hasta este momento</a>.
 
 # --hints--
 
@@ -55,7 +55,7 @@ async (getUserInput) => {
 }
 ```
 
-Passport-local should be correctly required and set up.
+Passport-local debe ser correctamente requerido y configurado.
 
 ```js
 async (getUserInput) => {

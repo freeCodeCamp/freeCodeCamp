@@ -6,7 +6,10 @@ import { connect } from 'react-redux';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
-import { modalDefaultDonation } from '../../../../config/donation-settings';
+import {
+  modalDefaultDonation,
+  PaymentContext
+} from '../../../../config/donation-settings';
 import Cup from '../../assets/icons/cup';
 import Heart from '../../assets/icons/heart';
 
@@ -20,10 +23,12 @@ import { playTone } from '../../utils/tone';
 import { Spacer } from '../helpers';
 import DonateForm from './donate-form';
 
+type RecentlyClaimedBlock = null | { block: string; superBlock: string };
+
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
   recentlyClaimedBlockSelector,
-  (show: boolean, recentlyClaimedBlock: string) => ({
+  (show: boolean, recentlyClaimedBlock: RecentlyClaimedBlock) => ({
     show,
     recentlyClaimedBlock
   })
@@ -43,7 +48,7 @@ type DonateModalProps = {
   closeDonationModal: typeof closeDonationModal;
   executeGA: typeof executeGA;
   location?: WindowLocation;
-  recentlyClaimedBlock: string;
+  recentlyClaimedBlock: RecentlyClaimedBlock;
   show: boolean;
 };
 
@@ -56,49 +61,30 @@ function DonateModal({
 }: DonateModalProps): JSX.Element {
   const [closeLabel, setCloseLabel] = React.useState(false);
   const { t } = useTranslation();
-  const handleProcessing = (
-    duration: string,
-    amount: number,
-    action: string
-  ) => {
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `Modal ${action}`,
-        label: duration,
-        value: amount
-      }
-    });
+  const handleProcessing = () => {
     setCloseLabel(true);
   };
 
   useEffect(() => {
     if (show) {
       void playTone('donation');
-      executeGA({ type: 'modal', data: '/donation-modal' });
+      executeGA({ event: 'pageview', pagePath: '/donation-modal' });
       executeGA({
-        type: 'event',
-        data: {
-          category: 'Donation View',
-          action: `Displayed ${
-            recentlyClaimedBlock ? 'block' : 'progress'
-          } donation modal`,
-          nonInteraction: true
-        }
+        event: 'donationview',
+        action: `Displayed ${
+          recentlyClaimedBlock !== null ? 'Block' : 'Progress'
+        } Donation Modal`
       });
     }
   }, [show, recentlyClaimedBlock, executeGA]);
 
-  const getDonationText = () => {
+  const getCommonDonationText = () => {
     const donationDuration = modalDefaultDonation.donationDuration;
     switch (donationDuration) {
-      case 'onetime':
+      case 'one-time':
         return <b>{t('donate.duration')}</b>;
       case 'month':
         return <b>{t('donate.duration-2')}</b>;
-      case 'year':
-        return <b>{t('donate.duration-3')}</b>;
       default:
         return <b>{t('donate.duration-4')}</b>;
     }
@@ -111,32 +97,28 @@ function DonateModal({
     }
   };
 
-  const blockDonationText = (
+  const donationText = (
     <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
-        <Cup className='donation-icon' />
-      </div>
-      <Row>
-        {!closeLabel && (
-          <Col sm={10} smOffset={1} xs={12}>
-            <b>{t('donate.nicely-done', { block: recentlyClaimedBlock })}</b>
-            <br />
-            {getDonationText()}
-          </Col>
+        {recentlyClaimedBlock !== null ? (
+          <Cup className='donation-icon' />
+        ) : (
+          <Heart className='donation-icon' />
         )}
-      </Row>
-    </div>
-  );
-
-  const progressDonationText = (
-    <div className='text-center progress-modal-text'>
-      <div className='donation-icon-container'>
-        <Heart className='donation-icon' />
       </div>
       <Row>
         {!closeLabel && (
           <Col sm={10} smOffset={1} xs={12}>
-            {getDonationText()}
+            {recentlyClaimedBlock !== null && (
+              <b>
+                {t('donate.nicely-done', {
+                  block: t(
+                    `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
+                  )
+                })}
+              </b>
+            )}
+            {getCommonDonationText()}
           </Col>
         )}
       </Row>
@@ -151,13 +133,14 @@ function DonateModal({
       show={show}
     >
       <Modal.Body>
-        {recentlyClaimedBlock ? blockDonationText : progressDonationText}
+        {donationText}
         <Spacer />
         <Row>
           <Col xs={12}>
             <DonateForm
               handleProcessing={handleProcessing}
               isMinimalForm={true}
+              paymentContext={PaymentContext.Modal}
             />
           </Col>
         </Row>

@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cb
-title: تغيير القوائم (Arrays) باستخدام push()
+title: تغيير القوائم باستخدام طريقة push
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237
@@ -9,9 +9,9 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-طريقة سهلة لإضافة البيانات إلى نهاية القائمة هي عن طريق وظيفة `push()`.
+يوجد طريقة سهلة لإضافة البيانات إلى نهاية القائمة و هي عن طريق وظيفة `push()`.
 
-يأخذ `.push()` واحد أو أكثر من <dfn>الحجج</dfn> و "يدفعها" إلى نهاية القائمة.
+تأخذ `.push()` واحد أو أكثر من <dfn>الوسائط</dfn> و "تدفعها" إلى نهاية القائمة.
 
 على سبيل المثال:
 
@@ -23,11 +23,11 @@ const arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
-لدي `arr1` قيمة `[1, 2, 3, 4]` الآن ولدي `arr2` قيمة `["Stimpson", "J", "cat", ["happy", "joy"]]`.
+ألأن `arr1` لديه قيمة `[1, 2, 3, 4]` ولدي `arr2` قيمة `["Stimpson", "J", "cat", ["happy", "joy"]]`.
 
 # --instructions--
 
-اضف `["dog", 3]` إلي نهاية المتغير `myArray`.
+ضف `["dog", 3]` إلي نهاية المتغير `myArray`.
 
 # --hints--
 

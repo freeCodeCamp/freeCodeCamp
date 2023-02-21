@@ -1,6 +1,6 @@
 ---
 id: 5900f38a1000cf542c50fe9d
-title: 'Problem 30: Digit n powers'
+title: 'Problema 30: Dígitos de n potencias'
 challengeType: 1
 forumTopicId: 301953
 dashedName: problem-30-digit-n-powers
@@ -8,7 +8,7 @@ dashedName: problem-30-digit-n-powers
 
 # --description--
 
-Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
+Sorprendentemente, solo hay tres números que se pueden escribir como la suma de las cuartas potencias de sus dígitos:
 
 <div style='margin-left: 4em;'>
   1634 = 1<sup>4</sup> + 6<sup>4</sup> + 3<sup>4</sup> + 4<sup>4</sup><br>
@@ -16,39 +16,39 @@ Surprisingly there are only three numbers that can be written as the sum of four
   9474 = 9<sup>4</sup> + 4<sup>4</sup> + 7<sup>4</sup> + 4<sup>4</sup><br>
 </div>
 
-As 1 = 1<sup>4</sup> is not a sum it is not included.
+Como 1 = 1<sup>4</sup> no es una suma que no esté incluida.
 
-The sum of these numbers is 1634 + 8208 + 9474 = 19316.
+La suma de estos números es 1634 + 8208 + 9474 = 19316.
 
-Find the sum of all the numbers that can be written as the sum of `n` powers of their digits.
+Encuentre la suma de todos los números que se pueden escribir como la suma de `n` potencias de sus dígitos.
 
 # --hints--
 
-`digitnPowers(2)` should return a number.
+`digitnPowers(2)` debe devolver un número.
 
 ```js
 assert(typeof digitnPowers(2) === 'number');
 ```
 
-`digitnPowers(2)` should return 0.
+`digitnPowers(2)` debe devolver 0.
 
 ```js
 assert(digitnPowers(2) == 0);
 ```
 
-`digitnPowers(3)` should return 1301.
+`digitnPowers(3)` debe devolver 1301.
 
 ```js
 assert(digitnPowers(3) == 1301);
 ```
 
-`digitnPowers(4)` should return 19316.
+`digitnPowers(4)` debe devolver 19316.
 
 ```js
 assert(digitnPowers(4) == 19316);
 ```
 
-`digitnPowers(5)` should return 443839.
+`digitnPowers(5)` debe devolver 443839.
 
 ```js
 assert(digitnPowers(5) == 443839);

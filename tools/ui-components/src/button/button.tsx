@@ -116,7 +116,8 @@ export const Button = React.forwardRef<
       children,
       disabled,
       block,
-      to,
+      href,
+      download,
       target
     },
     ref
@@ -140,7 +141,7 @@ export const Button = React.forwardRef<
       [onClick]
     );
 
-    const renderButton = useCallback(() => {
+    const renderButton: () => JSX.Element = useCallback(() => {
       return (
         <button
           ref={ref as React.ForwardedRef<HTMLButtonElement>}
@@ -154,7 +155,7 @@ export const Button = React.forwardRef<
       );
     }, [children, classes, ref, type, handleClick, disabled]);
 
-    const renderLink = useCallback(() => {
+    const renderLink: () => JSX.Element = useCallback(() => {
       // Render a `button` tag if `disabled` is defined to keep the component semantically correct
       // as a link cannot be disabled.
       if (disabled) {
@@ -165,15 +166,25 @@ export const Button = React.forwardRef<
         <a
           ref={ref as React.ForwardedRef<HTMLAnchorElement>}
           className={classes}
-          href={to}
+          href={href}
+          download={download}
           target={target}
         >
           {children}
         </a>
       );
-    }, [children, classes, ref, disabled, to, target, renderButton]);
+    }, [
+      children,
+      classes,
+      ref,
+      disabled,
+      href,
+      target,
+      renderButton,
+      download
+    ]);
 
-    if (to) {
+    if (href) {
       return renderLink();
     } else {
       return renderButton();

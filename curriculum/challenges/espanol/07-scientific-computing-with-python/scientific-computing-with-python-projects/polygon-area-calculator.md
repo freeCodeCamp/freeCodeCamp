@@ -10,6 +10,11 @@ dashedName: polygon-area-calculator
 
 Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
 En este proyecto usarás programación orientada a objetos para crear una clase Rectangle y una clase Square. La clase Square debe ser una subclase de Rectangle y heredar métodos y atributos.
@@ -20,11 +25,11 @@ Cuando se crea un objeto Rectangle, debe ser inicializado con los atributos `wid
 
 - `set_width`
 - `set_height`
-- `get_area`: Retorna area (`width * height`)
-- `get_perimeter`: Retorna el perímetro (`2 * width + 2 * height`)
-- `get_diagonal`: Retorna diagonal (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: Retorna una cadena que representa la figura usando líneas de "\*". El número de líneas deberá ser igual a la altura y el número de "\*" en cada línea deberá ser igual al ancho. Debería haber una nueva línea (`\n`) al final de cada línea. Si el ancho o el alto es mayor que 50, esto debería devolver la cadena: "Demasiado grande para la imagen.".
-- `get_amount_inside`: Toma otra forma (cuadrado o rectángulo) como un argumento. Devuelve el número de veces que la figura pasada podría caber dentro de la figura (sin rotaciones). Por ejemplo, un rectángulo con un ancho de 4 y un alto de 8 podría caber en dos cuadrados con lados de 4.
+- `get_area`: Returns area (`width * height`)
+- `get_perimeter`: Returns perimeter (`2 * width + 2 * height`)
+- `get_diagonal`: Returns diagonal (`(width ** 2 + height ** 2) ** .5`)
+- `get_picture`: Returns a string that represents the shape using lines of "\*". The number of lines should be equal to the height and the number of "\*" in each line should be equal to the width. There should be a new line (`\n`) at the end of each line. If the width or height is larger than 50, this should return the string: "Too big for picture.".
+- `get_amount_inside`: Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
 
 Además, si una instancia de un Rectángulo se representa como una cadena, debería verse como: `Rectangle(width=5, height=10)`
 

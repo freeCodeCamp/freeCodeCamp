@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 现在我们的 *express 应用*已经包含了 *http* 服务，接下来我们需要监听 *http* 服务的事件。 为此，我们需要把 `app.listen` 更新为 `http.listen`。
 
-需要处理的第一件事是监听客户端的新连接。 <dfn>on</dfn> 关键字就是监听这个特定事件。 它需要 2 个参数：一个包含所发出事件标题的字符串，以及一个用于传递数据的函数。 In the case of our connection listener, use `socket` to define the data in the second argument. socket 就是指已连接到服务器的客户端。
+需要处理的第一件事是监听客户端的新连接。 <dfn>on</dfn> 关键字就是监听这个特定事件。 它需要 2 个参数：一个包含所发出事件标题的字符串，以及一个用于传递数据的函数。 在连接监听器中，我们用 `socket` 来定义第二个参数中的数据。 socket 就是指已连接到服务器的客户端。
 
 为了可以监听服务器的连接事件，我们在数据库连接的部分加入如下代码：
 
@@ -36,13 +36,13 @@ io.on('connection', socket => {
 let socket = io();
 ```
 
-在这个文件中，我们没有定义 “io” 变量，但第一行的注释会阻止运行时产生的报错。 You have already added a reliable CDN to the Socket.IO library on the page in `chat.pug`.
+在这个文件中，我们没有定义 “io” 变量，但第一行的注释会阻止运行时产生的报错。 你已经在 `chat.pug` 中在页面上为 Socket.IO 库添加了一个可靠的CDN。
 
-Now try loading up your app and authenticate and you should see in your server console `A user has connected`.
+现在你可以重启一下你的 app，尝试一下验证用户，然后你应该会看到服务器的 console 里输出了 `A user has connected`。
 
 **注意：**只有在连接到处于同一个 url/server 上的 socket 时，`io()`才可以正常执行。 如果需要连接到外部的 socket，就需要这样调用：`io.connect('URL');`。
 
-完成上述要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-the-environment-6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求后，请提交你的页面链接。 如果你遇到错误，可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-the-environment-6" target="_blank" rel="noopener noreferrer nofollow">查看已完成的项目</a>。
 
 # --hints--
 

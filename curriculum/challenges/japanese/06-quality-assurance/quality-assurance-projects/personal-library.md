@@ -14,7 +14,13 @@ dashedName: personal-library
 -   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、`GitHub Link` フィールドでプロジェクトのソースコードへのリンクを送信してください。
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
+
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
+
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
@@ -25,7 +31,7 @@ dashedName: personal-library
 
 # --hints--
 
-サンプルの URL ではなく、自分で作成したプロジェクトを提供することができます。
+サンプルの URL ではなく、自分で作成したプロジェクトを提出してください。
 
 ```js
 (getUserInput) => {
@@ -35,7 +41,7 @@ dashedName: personal-library
 };
 ```
 
-フォームデータの一部として `title` を指定して、`/api/books` へ <b>POST</b> リクエストを送信し、ブックを追加することができます。  返されるレスポンスは、`title` と一意の `_id` をキーとして持つオブジェクトになります。  `title` がリクエストに含まれていない場合、返されるレスポンスは文字列 `missing required field title` である必要があります。
+フォームデータの一部として `title` を指定して `/api/books` へ <b>POST</b> リクエストを送信し、本を追加することができます。  返されるレスポンスは、`title` と一意の `_id` をキーとして持つオブジェクトになります。  `title` がリクエストに含まれていない場合、返されるレスポンスは文字列 `missing required field title` である必要があります。
 
 ```js
 async (getUserInput) => {
@@ -56,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-<b>GET</b> リクエストを `/api/books` へ送信し、すべてのブックを表す JSON レスポンスを受け取ることができます。 JSON レスポンスはオブジェクトの配列であり、それぞれのオブジェクト (ブック) に `title`、`_id` および `commentcount` プロパティが含まれます。
+<b>GET</b> リクエストを `/api/books` へ送信し、すべての本を表す JSON レスポンスを受け取ることができます。 JSON レスポンスはオブジェクトの配列であり、それぞれのオブジェクト (book) に `title`、`_id` および `commentcount` プロパティが含まれます。
 
 ```js
 async (getUserInput) => {
@@ -84,7 +90,7 @@ async (getUserInput) => {
 };
 ```
 
-<b>GET</b> リクエストを `/api/books/{_id}` へ送信して、プロパティ `title`、`_id` および `comments` 配列 (コメントがない場合は、空の配列) を含むブックの単一のオブジェクトを取得できます。 ブックが見つからない場合は、文字列 `no book exists` を返してください。
+<b>GET</b> リクエストを `/api/books/{_id}` へ送信して、プロパティ `title`、`_id` および `comments` 配列 (コメントがない場合は、空の配列) を含む book のオブジェクトを 1 つ取得できます。 本が見つからない場合は、文字列 `no book exists` を返してください。
 
 ```js
 async (getUserInput) => {
@@ -108,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-`comment` を含む フォームボディデータとして指定して、<b>POST</b> リクエストを `/api/books/{_id}` へ送信し、ブックにコメントを追加することができます。 返されるレスポンスは、前述のテストの <b>GET</b> `/api/books/{_id}` リクエストと同様のブックオブジェクトになります。 `comment` がリクエストに含まれていない場合は、文字列 `missing required field comment` を返してください。 ブックが見つからない場合は、文字列 `no book exists` を返してください。
+`comment` をフォームデータ (ボディデータ) として含む <b>POST</b> リクエストを `/api/books/{_id}` へ送信し、本にコメントを追加することができます。 返されるレスポンスは、前述のテストの <b>GET</b> `/api/books/{_id}` リクエストと同様の book オブジェクトになります。 `comment` がリクエストに含まれていない場合は、文字列 `missing required field comment` を返してください。 本が見つからない場合、文字列 `no book exists` を返してください。
 
 ```js
 async (getUserInput) => {
@@ -146,7 +152,7 @@ async (getUserInput) => {
 };
 ```
 
-<b>DELETE</b> リクエストを `/api/books/{_id}` へ送信して、コレクションからブックを削除できます。 成功した場合、文字列 `delete successful` のレスポンスを返します。 ブックが見つからない場合、文字列 `no book exists` を返してください。
+<b>DELETE</b> リクエストを `/api/books/{_id}` へ送信して、コレクションから本を削除できます。 成功した場合、文字列 `delete successful` のレスポンスを返します。 本が見つからない場合は、文字列 `no book exists` を返してください。
 
 ```js
 async (getUserInput) => {
@@ -170,7 +176,7 @@ async (getUserInput) => {
 };
 ```
 
-<b>DELETE</b> リクエストを `/api/books` へ送信して、データベース内のすべてのブックを削除することができます。 成功した場合、文字列 `'complete delete successful` のレスポンスを返します。
+<b>DELETE</b> リクエストを `/api/books` へ送信して、データベース内のすべての本を削除することができます。 成功した場合、文字列 `complete delete successful` のレスポンスを返します。
 
 ```js
 async (getUserInput) => {
@@ -187,7 +193,7 @@ async (getUserInput) => {
 };
 ```
 
-10 種類の必須の機能テストがすべて完了し、合格しています。
+10 件の機能テストがすべて記述され、成功する状態になっています。
 
 ```js
 async (getUserInput) => {

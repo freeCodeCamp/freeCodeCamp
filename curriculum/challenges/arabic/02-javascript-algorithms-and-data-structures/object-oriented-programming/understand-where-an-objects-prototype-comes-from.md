@@ -8,7 +8,7 @@ dashedName: understand-where-an-objects-prototype-comes-from
 
 # --description--
 
-تمامًا مثل الأشخاص الذين يرثون الجينات من آبائهم ، يرث الكائن الـ `prototype` مباشرةً من الـ constructor function الذي أنشئه. على سبيل المثال ، هنا constructor الـ `Bird` يقوم بإنشاء كائن `duck`:
+تمامًا مثل الأشخاص الذين يرثون الجينات من آبائهم، يرث الكائن `prototype` من المنشئ (constructor function) التي أنشئه مباشرةً. على سبيل المثال ، هنا constructor الـ `Bird` يقوم بإنشاء كائن `duck`:
 
 ```js
 function Bird(name) {
@@ -18,7 +18,7 @@ function Bird(name) {
 let duck = new Bird("Donald");
 ```
 
-`duck` يرث الـ `prototype` من الـ constructor function الخاص بـ `Bird`. يمكنك إظهار هذه العلاقة باستخدام `isPrototypeOf`:
+يرث `duck` كائنه `prototype` من المنشئ (constructor function) مسمى `Bird`. يمكنك إظهار هذه العلاقة باستخدام `isPrototypeOf`:
 
 ```js
 Bird.prototype.isPrototypeOf(duck);

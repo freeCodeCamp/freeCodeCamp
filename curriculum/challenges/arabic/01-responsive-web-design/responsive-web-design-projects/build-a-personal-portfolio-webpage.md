@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
-title: Build a Personal Portfolio Webpage
+title: أنشئ معرضا لأعمالك الخاصة
 challengeType: 14
 forumTopicId: 301143
 dashedName: build-a-personal-portfolio-webpage

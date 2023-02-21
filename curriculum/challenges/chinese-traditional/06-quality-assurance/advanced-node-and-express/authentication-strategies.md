@@ -10,13 +10,13 @@ dashedName: authentication-strategies
 
 策略是認證用戶的一種方式。 如果你讓用戶在註冊時填寫了用戶信息，那你就可以基於這些信息進行驗證。或者也可以引入第三方登錄，如 Google 或者 Github。 在這個項目中，我們將使用 Passport 中間件。 Passport 提供了一套全面的策略，支持使用用戶名和密碼、GitHub、谷歌等進行認證。
 
-`passport-local@~1.0.0` has already been added as a dependency. Add it to your server as follows:
+`passport-local@~1.0.0` 已經被添加爲依賴項。 將其添加到你的服務器，如下所示：
 
 ```javascript
 const LocalStrategy = require('passport-local');
 ```
 
-Tell passport to **use** an instantiated `LocalStrategy` object with a few settings defined. Make sure this (as well as everything from this point on) is encapsulated in the database connection since it relies on it!:
+然後，需要讓 passport **使用**一個實例化的 `LocalStrategy` 對象，這個對象的一些設置已完成。 請注意，接下來的所有代碼都應寫在連接數據庫的回調中，因爲它們的執行都依賴數據庫。
 
 ```javascript
 passport.use(new LocalStrategy((username, password, done) => {
@@ -30,13 +30,13 @@ passport.use(new LocalStrategy((username, password, done) => {
 }));
 ```
 
-This is defining the process to use when you try to authenticate someone locally. First, it tries to find a user in your database with the username entered. Then, it checks for the password to match. Finally, if no errors have popped up that you checked for (e.g. an incorrect password), the `user` object is returned and they are authenticated.
+這是定義當你試圖在本地驗證某人時要使用的程序： 首先，它試圖在你的數據庫中找到一個具有輸入的用戶名的用戶。 然後檢查密碼是否匹配。 最後，如果沒有彈出你檢查的錯誤（例如，一個錯誤的密碼），返回 `user` 對象，並且它們已經被驗證。
 
-Many strategies are set up using different settings. Generally, it is easy to set it up based on the README in that strategy's repository. A good example of this is the GitHub strategy where you don't need to worry about a username or password because the user will be sent to GitHub's auth page to authenticate. As long as they are logged in and agree then GitHub returns their profile for you to use.
+許多策略是通過不同的設置來制定的。 一般來說，很容易根據該策略的倉庫中的 README 來建立它。 一個很好的例子是 GitHub 策略。在該策略中，你不需要寫用戶名或密碼的相關驗證邏輯，因爲用戶將被引導到 GitHub 頁面進行驗證。 只要用戶登錄並同意，GitHub 就會返回用戶的個人信息供你使用。
 
-In the next step, you will set up how to actually call the authentication strategy to validate a user based on form data.
+下一步，你將根據表單數據設置如何實際調用認證策略來驗證用戶。
 
-完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-strategies-6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-strategies-6" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 # --hints--
 
@@ -55,7 +55,7 @@ async (getUserInput) => {
 }
 ```
 
-Passport-local should be correctly required and set up.
+應該正確地引入和配置 Passport-local。
 
 ```js
 async (getUserInput) => {

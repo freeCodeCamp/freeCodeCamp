@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c154
-title: 'Numpy: Масиви'
+title: 'Numpy: масиви'
 challengeType: 11
 videoId: VDYVFHBL1AM
 bilibiliIds:
@@ -17,13 +17,13 @@ dashedName: numpy-arrays
 Додаткові ресурси:
 
 -  <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy" target="_blank" rel="noopener noreferrer nofollow">Блокноти на GitHub</a>
--  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub використовуючи Google Colab.</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub, використовуючи Google Colab.</a>
 
 # --question--
 
 ## --text--
 
-Який результат буде виведено на екран після виконання наведеного нижче коду?
+Що надрукує наведений код?
 
 ```py
 A = np.array([

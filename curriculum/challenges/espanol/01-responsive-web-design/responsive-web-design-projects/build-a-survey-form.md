@@ -19,7 +19,7 @@ dashedName: build-a-survey-form
 1. Dentro del elemento form debe ser **obligatorio** (required) ingresar tu nombre en un campo de `input` que tenga un `id` de `email`
 1. Si introduces un correo electrónico que no tiene el formato correcto, tú debes ver una alerta de validación en THML5
 1. Dentro de tu form, tu puedes introducir un número en un campo `input` que tenga un `id` de `number`
-1. The number input should not accept non-numbers, either by preventing you from typing them or by showing an HTML5 validation error (depending on your browser).
+1. Las entradas de números no deben aceptar caracteres no numéricos, ya sea impidiendo escribirlos o mostrando un error de validación HTML5 (dependiendo del navegador).
 1. Si introduces un número fuera del rango de la entrada de números, los cuales están definidos por los atributos `min` y `max`, debes ver una alerta de validación en HTML5
 1. Para los campos de entrada de nombre, correo electrónico y número, podrás ver los correspondientes elementos `label` en el formulario, que describen el propósito de cada campo con los siguientes ids: `id="name-label"`, `id="email-label"`, y `id="number-label"`
 1. Para los campos de entrada de nombre, correo electrónico y número, podrás ver un texto provisional que da una descripción o instrucciones para cada campo

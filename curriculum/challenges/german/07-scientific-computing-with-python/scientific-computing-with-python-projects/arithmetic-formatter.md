@@ -10,6 +10,11 @@ dashedName: arithmetic-formatter
 
 Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode an diesem Projekt arbeiten</a>.
 
+-   Beginne mit dem Importieren des Projekts in Replit.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
+
+
 # --instructions--
 
 Schüler der Grundschule stellen oft arithmetische Probleme vertikal auf, um sie leichter lösen zu können. Zum Beispiel wird "235 + 52" zu:
@@ -59,11 +64,11 @@ Die Funktion gibt die korrekte Konvertierung zurück, wenn die übergebenen Prob
 
 
 - Situationen, die einen Fehler zurückgeben:
-  - Wenn **zu viele Probleme** an die Funktion übermittelt werden. Das Limit liegt bei **fünf**, alles weitere wird `Error: Too many problems.` zurückgeben
-  - Die entsprechenden Operatoren, die die Funktion akzeptieren wird, sind **Addition** und **Subtraktion**. Multiplikation und Division geben einen Fehler zurück. Andere Operatoren, die nicht in diesem Punkt erwähnt werden, müssen nicht getestet werden. Der zurückgegebene Fehler wird `Error: Operator must be '+' or '-'.` lauten
-  - Jede Zahl (Operand) sollte nur Zahlen enthalten. Andernfalls gibt die Funktion zurück: `Error: Numbers must only contain digits.`
-  - Jeder Operand (alias Nummer auf jeder Seite des Operators) hat eine maximale Länge von vier Ziffern. Andernfalls lautet die zurückgegebene Fehlerzeichenfolge: `Error: Numbers cannot be more than four digits.`
-- Wenn der Benutzer das richtige Problemformat angegeben hat, wird die von dir zurückgegebene Konvertierung folgende Regeln folgen:
+  - Wenn **too many problems** an die Funktion übermittelt werden. Das Limit liegt bei **fünf**, alles weitere wird `Error: Too many problems.` zurückgeben
+  - Die entsprechenden Operatoren, die die Funktion akzeptieren wird, sind **Addition** und **Subtraktion**. Multiplikation und Division geben einen Fehler zurück. Andere Operatoren, die nicht in diesem Punkt erwähnt werden, müssen nicht getestet werden. Der zurückgegebene Fehler lautet: `Error: Operator must be '+' or '-'.`
+  - Jede Zahl (Operand) sollte nur Ziffern enthalten. Andernfalls wird die Funktion zurückgegeben: `Error: Numbers must only contain digits.`
+  - Jeder Operand (d. h. die Zahl auf jeder Seite des Operators) ist maximal vier Stellen breit. Andernfalls lautet die zurückgegebene Fehlerzeichenfolge: `Error: Numbers cannot be more than four digits.`
+- Wenn der Nutzer das richtige Format der Probleme angegeben hat, wird die von dir zurückgegebene Konvertierung diesen Regeln folgen:
   - Zwischen dem Operator und dem längsten der beiden Operanden sollte ein einzelnes Leerzeichen stehen, der Operator steht in derselben Zeile wie der zweite Operand, beide Operanden stehen in derselben Reihenfolge wie angegeben (der erste ist der oberste, der zweite der unterste).
   - Zahlen sollten rechts-ausgerichtet sein.
   - Zwischen den einzelnen Aufgaben sollten vier Leerzeichen stehen.

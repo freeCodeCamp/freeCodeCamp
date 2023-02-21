@@ -10,6 +10,11 @@ dashedName: polygon-area-calculator
 
 Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode an diesem Projekt arbeiten</a>.
 
+-   Beginne, indem du das Projekt in Replit importierst.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` aus und klicke auf die `Done`-Schaltfläche.
+
+
 # --instructions--
 
 In diesem Projekt wirst du mit Hilfe der objektorientierten Programmierung eine Rectangle-Klasse und eine Square-Klasse erstellen. Die Square-Klasse sollte eine Unterklasse von Rechtecke sein und Methoden und Attribute erben.
@@ -20,10 +25,10 @@ Es sollte mit den Attributen `width` und `height` initialisiert werden, wenn ein
 
 - `set_width`
 - `set_height`
-- `get_area`: Gibt den Bereich zurück (`width * height`)
-- `get_perimeter`: Gibt den Umfang zurück (`2 * width + 2 * height`)
-- `get_diagonal`: Gibt die Diagonale zurück (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: Gibt einen String zurück, der die Form mit Hilfe von Linien aus "\*" darstellt. Die Anzahl der Zeilen sollte der Höhe und die Anzahl der "\*" in jeder Zeile sollte der Breite entsprechen. Am Ende jeder Zeile sollte eine neue Zeile (`\n`) stehen. Wenn die Breite oder Höhe größer als 50 ist, sollte dies den String zurückgeben: "Zu groß für das Bild.".
+- `get_area`: Gibt den Bereich (`width * height`) zurück
+- `get_perimeter`: Gibt den Umfang (`2 * width + 2 * height`) zurück
+- `get_diagonal`: Gibt die Diagonale (`(width ** 2 + height ** 2) ** .5`) zurück
+- `get_picture`: Gibt eine Zeichenfolge zurück, die die Form mit Hilfe von Zeilen aus "\*" darstellt. Die Anzahl der Zeilen sollte der Höhe und die Anzahl der "\*" in jeder Zeile sollte der Breite entsprechen. Am Ende jeder Zeile sollte eine neue Zeile (`\n`) stehen. Wenn die Breite oder Höhe größer als 50 ist, sollte dies die Zeichenfolge zurückgeben: "Zu groß für das Bild.".
 - `get_amount_inside`: Nimmt eine andere Form (Quadrat oder Rechteck) als Argument. Gibt die Anzahl der Male zurück, die die übergebene Form in die Form passen könnte (ohne Drehungen). Zum Beispiel könnte ein Rechteck mit einer Breite von 4 und einer Höhe von 8 in zwei Quadrate mit 4 Seiten passen.
 
 Er sollte außerdem, wenn eine Instanz eines Rechtecks als String dargestellt wird, wie folgt aussehen: `Rectangle(width=5, height=10)`

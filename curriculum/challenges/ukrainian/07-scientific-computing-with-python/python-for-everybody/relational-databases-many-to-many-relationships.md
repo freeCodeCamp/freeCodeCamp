@@ -14,21 +14,21 @@ dashedName: relational-databases-many-to-many-relationships
 
 Додаткові ресурси:
 
-\- <a href="https://www.youtube.com/watch?v=uQ3Qv1z_Vao" target="_blank" rel="noopener noreferrer nofollow">Exercise: Email</a>
+\- <a href="https://www.youtube.com/watch?v=uQ3Qv1z_Vao" target="_blank" rel="noopener noreferrer nofollow">Вправа: Email</a>
 
-\- <a href="https://www.youtube.com/watch?v=qEkUEAz8j3o" target="_blank" rel="noopener noreferrer nofollow">Exercise: Roster</a>
+\- <a href="https://www.youtube.com/watch?v=qEkUEAz8j3o" target="_blank" rel="noopener noreferrer nofollow">Вправа: Roster</a>
 
-\- <a href="https://www.youtube.com/watch?v=I-E7avcPeSE" target="_blank" rel="noopener noreferrer nofollow">Exercise: Tracks</a>
+\- <a href="https://www.youtube.com/watch?v=I-E7avcPeSE" target="_blank" rel="noopener noreferrer nofollow">Вправа: Tracks</a>
 
-\- <a href="https://www.youtube.com/watch?v=RZRAoBFIH6A" target="_blank" rel="noopener noreferrer nofollow">Exercise: Twfriends</a>
+\- <a href="https://www.youtube.com/watch?v=RZRAoBFIH6A" target="_blank" rel="noopener noreferrer nofollow">Вправа: Twfriends</a>
 
-\- <a href="https://www.youtube.com/watch?v=xBaJddvJL4A" target="_blank" rel="noopener noreferrer nofollow">Exercise: Twspider</a>
+\- <a href="https://www.youtube.com/watch?v=xBaJddvJL4A" target="_blank" rel="noopener noreferrer nofollow">Вправа: Twspider</a>
 
 # --question--
 
 ## --text--
 
-Що є прикладом зв'язку типу багато-багато?
+Що є прикладом відношення типу багато-багато?
 
 ## --answers--
 

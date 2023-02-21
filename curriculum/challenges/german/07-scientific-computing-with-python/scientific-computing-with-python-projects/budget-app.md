@@ -10,21 +10,26 @@ dashedName: budget-app
 
 Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-budget-app" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode an diesem Projekt arbeiten</a>.
 
+-   Beginne mit dem Importieren des Projekts in Replit.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` aus und klicke auf die `Done`-Schaltfläche.
+
+
 # --instructions--
 
 Vervollständige die `Category`-Klasse in `budget.py`. Es sollte in der Lage sein, Objekte basierend auf verschiedenen Haushaltskategorien, wie *food*, *clothing*, und *entertainment* zu instanziieren. Wenn Objekte erstellt werden, werden sie im Namen der Kategorie übergeben. Die Klasse sollte eine Instanzvariable namens `ledger` (Hauptbuch) haben, die eine Liste ist. Die Klasse sollte auch die folgenden Methoden beinhalten:
 
-- Eine `deposit`-Methode, die einen Betrag und eine Beschreibung akzeptiert. Wenn keine Beschreibung angegeben wird, sollte standardmäßig ein leerer String ausgegeben werden. Die Methode sollte ein Objekt zu der Hauptbuch-Liste in Form von `{"amount": amount, "description": description}` anhängen.
-- Eine `withdraw`-Methode, die ähnlich zur `deposit`-Methode ist, aber der eingegebene Wert sollte im Hauptbuch als negative Zahl eingespeichert werden. Wenn nicht genügend Mittel zur Verfügung stehen, sollte nichts zum Hauptbuch hinzugefügt werden. Diese Methode sollte `True` zurückgeben, wenn die Auszahlung bereits stattgefunden hat und ansonsten `False` ausgeben.
-- Eine `get_balance`-Methode, die das aktuelle Guthaben der Haushaltskategorie, basierend auf den eingegangen Ein-und Auszahlungen ausgibt.
-- Eine `transfer`-Methode, die einen Betrag und eine andere Budgetkategorie als Arugment akzeptiert. Die Methode sollte eine Auszahlung mit dem Betrag und der Beschreibung "Transfer zu [Zielbudget-Kategorie]" hinzufügen. Die Methode sollte dann eine Einzahlung in die andere Budgetkategorie mit dem Betrag und der Beschreibung "Transfer from [Source Budget Category]" hinzufügen. Wenn nicht genügend Mittel zur Vefügung stehen, sollte nichts zum Hauptbuch hinzugefügt werden. Diese Methode sollte `True` zurückgeben, wenn die Auszahlung bereits stattgefunden hat und ansonsten `False` ausgeben.
-- Eine `check_funds`-Methode, die einen Betrag als Argument akzeptiert. Es gibt `False` zurück, wenn der Betrag größer ist als der Betrag der Budgetkategorie und ansonsten `True`. Die Methode sollte sowohl von der `withdraw`-Methode und der `transfer`-Methode verwendet werden.
+- Eine `deposit`-Methode, die einen Betrag und eine Beschreibung annimmt. Wenn keine Beschreibung angegeben wird, sollte standardmäßig eine leere Zeichenfolge ausgegeben werden. Die Methode sollte ein Objekt in Form von `{"amount": amount, "description": description}` an die Ledgerliste anhängen.
+- Eine `withdraw`-Methode, die der `deposit`-Methode ähnelt, bei der der übergebene Betrag jedoch als negative Zahl im Hauptbuch gespeichert werden soll. Wenn die Mittel nicht ausreichen, sollte nichts in das Hauptbuch eingetragen werden. Diese Methode sollte `True` zurückgeben, wenn die Auszahlung stattgefunden hat, ansonsten sollte sie `False` ausgeben.
+- A `get_balance` method that returns the current balance of the budget category based on the deposits and withdrawals that have occurred.
+- Eine `transfer`-Methode, die einen Betrag und eine andere Budgetkategorie als Argument akzeptiert. Die Methode sollte eine Entnahme mit dem Betrag und der Beschreibung "Transfer to [Destination Budget Category]" hinzufügen. Die Methode sollte dann eine Einzahlung in die andere Budgetkategorie mit dem Betrag und der Beschreibung "Übertragung von [Source Budget Category]" hinzufügen. If there are not enough funds, nothing should be added to either ledgers. This method should return `True` if the transfer took place, and `False` otherwise.
+- Eine `check_funds`-Methode, die einen Betrag als Argument akzeptiert. Es wird `False` zurückgegeben, wenn der Betrag größer ist als der Saldo der Budgetkategorie, ansonsten wird `True` zurückgegeben. Diese Methode sollte sowohl von der Methode `withdraw` als auch von der Methode `transfer` verwendet werden.
 
 Wenn das Budgetobjekt ausgegeben wird, sollte es folgendes anzeigen:
 
-- Eine Titelzeile mit 30 Zeichen, in der der Name der Kategorie in einer Zeile von `*` Zeichen zentriert ist.
-- Eine Liste der Elemente im Hauptbuch. Jede Zeile sollte die Beschreibung und den Betrag anzeigen. Die ersten 23 Zeichen der Beschreibung sollten angezeigt werden, dann der Betrag. Der Betrag sollte rechts ausgerichtet sein, zwei Dezimalstellen enthalten und maximal 7 Zeichen anzeigen.
-- Eine Zeile, die die Summe der Kategorie anzeigt.
+- Eine Titelzeile mit 30 Zeichen, in der der Name der Kategorie in einer Zeile mit `*`-Zeichen zentriert ist.
+- Eine Liste der Elemente im Hauptbuch. Jede Zeile sollte die Beschreibung und den Betrag anzeigen. Die ersten 23 Zeichen der Beschreibung sollten angezeigt werden und dann der Betrag. Der Betrag sollte rechts ausgerichtet sein, zwei Dezimalstellen enthalten und maximal 7 Zeichen anzeigen.
+- Eine Zeile, die die Gesamtanzahl der Kategorien anzeigt.
 
 Hier ist ein Beispiel für die Ausgabe:
 

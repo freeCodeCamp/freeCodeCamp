@@ -162,14 +162,14 @@ Follow these steps:
    feat: add link for article for alexa skills
    ```
 
-   Make a conventional commit message. This is a good practice As a developer, and you will be following standard practices.
+   Make a conventional commit message. This is a good practice as a developer, and you will be following standard practices.
 
    Some examples of conventional commit messages are:
 
    ```md
    fix: improve HTML step
    fix: fix build scripts for Travis-CI
-   feat: add link article JavaScript hoisting
+   feat: add link to JavaScript hoisting article
    docs: update contributing guidelines
    ```
 
@@ -203,7 +203,6 @@ A quick reference to the commands that you will need when working.
 
 | command                                                        | description                                                                         |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `npm run storybook`                                            | Starts Storybook for component library development.                                 |
 | `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
 | `npm run test-client`                                          | Run the client test suite.                                                          |
 | `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
@@ -213,3 +212,4 @@ A quick reference to the commands that you will need when working.
 | `npm run test-server`                                          | Run the server test suite.                                                          |
 | `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
 | `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
+| `npm run storybook`                                            | Starts Storybook for component library development.                                 |

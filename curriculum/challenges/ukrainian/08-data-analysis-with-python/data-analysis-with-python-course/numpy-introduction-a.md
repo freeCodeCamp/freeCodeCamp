@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c152
-title: 'Numpy: Вступ А'
+title: 'Numpy: вступ А'
 challengeType: 11
 videoId: P-JjV6GBCmk
 bilibiliIds:
@@ -17,17 +17,17 @@ dashedName: numpy-introduction-a
 Додаткові ресурси:
 
 -  <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy" target="_blank" rel="noopener noreferrer nofollow">Блокноти на GitHub</a>
--  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub використовуючи Google Colab.</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub, використовуючи Google Colab.</a>
 
 # --question--
 
 ## --text--
 
-Чому Numpy є важливою, але непопулярною Python бібліотекою?
+Чому Numpy є важливою, але непопулярною бібліотекою Python?
 
 ## --answers--
 
-Зазвичай безпосередньо бібліотеку Numpy не використовують.
+Зазвичай бібліотеку Numpy не використовують напряму.
 
 ---
 

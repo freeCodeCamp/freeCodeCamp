@@ -10,366 +10,87 @@ dashedName: medical-data-visualizer
 
 Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código de inicio Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 Todavía estamos desarrollando la parte interactiva del currículo de Python. Por ahora, aquí hay algunos vídeos en nuestro canal de YouTube freeCodeCamp.org que te enseñará todo lo que necesitas saber para completer este proyecto:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso de video de Python para todos< /a>(14 horas)</p></li> 
-  
-  <li>
-    <p spaces-before="0">
-      <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">Cómo analizar datos con Python Pandas</a> (10 horas)
-    </p>
-  </li></ul>
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
 
-<h1 spaces-before="0">
-  --instructions--
-</h1>
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
-<p spaces-before="0">
-  En este proyecto, visualizarás y harás algunos cálculos a partir de datos de exámenes médicos utilizando matplotlib, seabron y pandas. Los valores del conjunto de datos (dataset) se recogieron durante los exámenes médicos.
-</p>
+# --instructions--
 
-<h2 spaces-before="0">
-  Descripción de datos
-</h2>
+En este proyecto, visualizarás y harás algunos cálculos a partir de datos de exámenes médicos utilizando matplotlib, seabron y pandas. Los valores del conjunto de datos (dataset) se recogieron durante los exámenes médicos.
 
-<p spaces-before="0">
-  Las filas del conjunto de datos representan a los pacientes y las columnas representan información como medidas corporales, resultados de varios análisis de sangre y opciones de estilo de vida. Utilizarás el conjunto de datos para explorar la relación entre enfermedades cardiacas, medidas del cuerpo, indicadores sanguíneos y opciones de estilo de vida.
-</p>
+## Descripción de datos
 
-<p spaces-before="0">
-  Nombre del archivo: medical_examination.csv
-</p>
+Las filas del conjunto de datos representan a los pacientes y las columnas representan información como medidas corporales, resultados de varios análisis de sangre y opciones de estilo de vida. Utilizarás el conjunto de datos para explorar la relación entre enfermedades cardiacas, medidas del cuerpo, indicadores sanguíneos y opciones de estilo de vida.
 
-<table spaces-before="0">
-  <tr>
-    <th align="center">
-      Característica
-    </th>
-    
-    <th align="center">
-      Tipo de variable
-    </th>
-    
-    <th align="center">
-      Variable
-    </th>
-    
-    <th align="center">
-      Tipo de unidad
-    </th>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Edad
-    </td>
-    
-    <td align="center">
-      Característica objetivo
-    </td>
-    
-    <td align="center">
-      <code>age</code>
-    </td>
-    
-    <td align="center">
-      int (días)
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Altura
-    </td>
-    
-    <td align="center">
-      Característica objetivo
-    </td>
-    
-    <td align="center">
-      <code>height</code>
-    </td>
-    
-    <td align="center">
-      int (cm)
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Peso
-    </td>
-    
-    <td align="center">
-      Característica objetivo
-    </td>
-    
-    <td align="center">
-      <code>weight</code>
-    </td>
-    
-    <td align="center">
-      float (kg)
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Sexo
-    </td>
-    
-    <td align="center">
-      Característica objetivo
-    </td>
-    
-    <td align="center">
-      <code>gender</code>
-    </td>
-    
-    <td align="center">
-      código de categoría
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Presión arterial sistólica
-    </td>
-    
-    <td align="center">
-      Características del examen
-    </td>
-    
-    <td align="center">
-      <code>ap_hi</code>
-    </td>
-    
-    <td align="center">
-      int
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Presión arterial diastólica
-    </td>
-    
-    <td align="center">
-      Característica del examen
-    </td>
-    
-    <td align="center">
-      <code>ap_lo</code>
-    </td>
-    
-    <td align="center">
-      int
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Colesterol
-    </td>
-    
-    <td align="center">
-      Característica del examen
-    </td>
-    
-    <td align="center">
-      <code>cholesterol</code>
-    </td>
-    
-    <td align="center">
-      1: normal, 2: por encima de lo normal, 3: muy por encima de lo normal
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Glucosa
-    </td>
-    
-    <td align="center">
-      Característica del examen
-    </td>
-    
-    <td align="center">
-      <code>gluc</code>
-    </td>
-    
-    <td align="center">
-      1: normal, 2: por encima de lo normal, 3: muy por encima de lo normal
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Fumador
-    </td>
-    
-    <td align="center">
-      Característica subjetiva
-    </td>
-    
-    <td align="center">
-      <code>smoke</code>
-    </td>
-    
-    <td align="center">
-      binario
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Consumo de alcohol
-    </td>
-    
-    <td align="center">
-      Característica subjetiva
-    </td>
-    
-    <td align="center">
-      <code>alco</code>
-    </td>
-    
-    <td align="center">
-      binario
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Actividad física
-    </td>
-    
-    <td align="center">
-      Característica subjetiva
-    </td>
-    
-    <td align="center">
-      <code>active</code>
-    </td>
-    
-    <td align="center">
-      binario
-    </td>
-  </tr>
-  
-  <tr>
-    <td align="center">
-      Presencia o ausencia de enfermedades cardiovasculares
-    </td>
-    
-    <td align="center">
-      Variable objetivo
-    </td>
-    
-    <td align="center">
-      <code>cardio</code>
-    </td>
-    
-    <td align="center">
-      binario
-    </td>
-  </tr>
-</table>
+Nombre del archivo: medical_examination.csv
 
-<h2 spaces-before="0">
-  Tareas
-</h2>
+|                    Característica                     |      Tipo de variable      |   Variable    |                            Tipo de unidad                             |
+|:-----------------------------------------------------:|:--------------------------:|:-------------:|:---------------------------------------------------------------------:|
+|                         Edad                          |  Característica objetivo   |     `age`     |                              int (días)                               |
+|                        Altura                         |  Característica objetivo   |   `height`    |                               int (cm)                                |
+|                         Peso                          |  Característica objetivo   |   `weight`    |                              float (kg)                               |
+|                         Sexo                          |  Característica objetivo   |   `gender`    |                          código de categoría                          |
+|              Presión arterial sistólica               | Características del examen |    `ap_hi`    |                                  int                                  |
+|              Presión arterial diastólica              | Característica del examen  |    `ap_lo`    |                                  int                                  |
+|                      Colesterol                       | Característica del examen  | `cholesterol` | 1: normal, 2: por encima de lo normal, 3: muy por encima de lo normal |
+|                        Glucosa                        | Característica del examen  |    `gluc`     | 1: normal, 2: por encima de lo normal, 3: muy por encima de lo normal |
+|                        Fumador                        |  Característica subjetiva  |    `smoke`    |                                binario                                |
+|                  Consumo de alcohol                   |  Característica subjetiva  |    `alco`     |                                binario                                |
+|                   Actividad física                    |  Característica subjetiva  |   `active`    |                                binario                                |
+| Presencia o ausencia de enfermedades cardiovasculares |     Variable objetivo      |   `cardio`    |                                binario                                |
 
-<p spaces-before="0">
-  Crear un gráfico similar a <code>ejemplos/Figure_1. ng</code>, donde mostramos las cifras de resultados buenos y malos para las variables <code>colesterol</code>, <code>gluc</code>, <code>alco</code>, <code>activo</code> y <code>humo</code> en los pacientes con cardio=1 y cardio=0 en diferentes paneles.
-</p>
+## Tareas
 
-<p spaces-before="0">
-  Utiliza los datos para completar las siguientes tareas en <code>medical_data_visualizer.py</code>:
-</p>
+Crear un gráfico similar a `ejemplos/Figure_1. ng`, donde mostramos las cifras de resultados buenos y malos para las variables `colesterol`, `gluc`, `alco`, `activo` y `humo` en los pacientes con cardio=1 y cardio=0 en diferentes paneles.
 
-<ul>
-  <li>
-    Agrega una columna de <code>sobrepeso</code> a los datos. Para determinar si una persona tiene sobrepeso, primero calcule su IMC dividiendo su peso en kilogramos por el cuadrado de su altura en metros. Si ese valor es > 25 entonces la persona tiene sobrepeso. Utilice el valor 0 para NO sobrepeso y el valor 1 para el sobrepeso.
-  </li>
-  <li>
-    Normaliza los datos haciendo 0 siempre bueno y 1 siempre malo. Si el valor de <code>cholesterol</code> o <code>gluc</code> es 1, haga que el valor 0. Si el valor es mayor que 1, haga el valor 1.
-  </li>
-  <li>
-    Convierte los datos en formato largo y crea un gráfico que muestre el recuento de valores de las características categóricas usando <code>catplot()</code> de seaborn. El conjunto de datos debe dividirse por 'Cardio', así que hay un gráfico por cada valor de <code>cardio</code>. El gráfico debería verse como <code>examples/Figure_1.png</code>.
-  </li>
-  <li>
-    Limpia los datos. Filtrar los siguientes segmentos de pacientes que representan datos incorrectos: <ul>
-      <li>
-        la presión diastólica es más alta que la máxima (Mantén los datos correctos con <code>(df['ap_lo'] &lt;= df['ap_hi'])</code>)
-      </li>
-      <li>
-        la altura es menor que el 2.5º percentil (Mantén los datos correctos con <code>(df['height'] &gt;= df['height'].quantile(0.025))</code>)
-      </li>
-      <li>
-        la altura es superior al 97,5º percentil
-      </li>
-      <li>
-        el peso es menor que el 2,5º percentil
-      </li>
-      <li>
-        el peso es superior al 97,5º percentil
-      </li>
-    </ul>
-  </li>
-  <li>
-    Crear una matriz de correlación usando el conjunto de datos. Grafica la matriz de correlación usando la función <code>heatmap()</code> de seaborn. Enmascarar el triángulo superior de la matriz. El gráfico debería verse como <code>examples/Figure_2.png</code>.
-  </li>
-</ul>
+Utiliza los datos para completar las siguientes tareas en `medical_data_visualizer.py`:
 
-<p spaces-before="0">
-  Cada vez que una variable está establecida en <code>Ninguno</code>, asegúrese de establecerla en el código correcto.
-</p>
+- Add an `overweight` column to the data. To determine if a person is overweight, first calculate their BMI by dividing their weight in kilograms by the square of their height in meters. If that value is > 25 then the person is overweight. Use the value 0 for NOT overweight and the value 1 for overweight.
+- Normalize the data by making 0 always good and 1 always bad. If the value of `cholesterol` or `gluc` is 1, make the value 0. If the value is more than 1, make the value 1.
+- Convert the data into long format and create a chart that shows the value counts of the categorical features using seaborn's `catplot()`. The dataset should be split by 'Cardio' so there is one chart for each `cardio` value. The chart should look like `examples/Figure_1.png`.
+- Clean the data. Filter out the following patient segments that represent incorrect data:
+  - diastolic pressure is higher than systolic (Keep the correct data with `(df['ap_lo'] <= df['ap_hi'])`)
+  - height is less than the 2.5th percentile (Keep the correct data with `(df['height'] >= df['height'].quantile(0.025))`)
+  - height is more than the 97.5th percentile
+  - weight is less than the 2.5th percentile
+  - weight is more than the 97.5th percentile
+- Create a correlation matrix using the dataset. Plot the correlation matrix using seaborn's `heatmap()`. Mask the upper triangle. The chart should look like `examples/Figure_2.png`.
 
-<p spaces-before="0">
-  Las pruebas unitarias están escritas en <code>test_module.py</code>.
-</p>
+Cada vez que una variable está establecida en `Ninguno`, asegúrese de establecerla en el código correcto.
 
-<h2 spaces-before="0">
-  Desarrollo
-</h2>
+Las pruebas unitarias están escritas en `test_module.py`.
 
-<p spaces-before="0">
-  Para el desarrollo, puedes usar <code>main.py</code> para probar tus funciones. Haz clic en el botón "run" y se ejecutará <code>main.py</code>.
-</p>
+## Desarrollo
 
-<h2 spaces-before="0">
-  Pruebas
-</h2>
+Para el desarrollo, puedes usar `main.py` para probar tus funciones. Haz clic en el botón "run" y se ejecutará `main.py`.
 
-<p spaces-before="0">
-  Hemos importado las pruebas de <code>test_module.py</code> a <code>main.py</code> para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que pulses el botón "run".
-</p>
+## Pruebas
 
-<h2 spaces-before="0">
-  Envío
-</h2>
+Hemos importado las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que pulses el botón "run".
 
-<p spaces-before="0">
-  Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
-</p>
+## Envío
 
-<h1 spaces-before="0">
-  --hints--
-</h1>
+Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
 
-<p spaces-before="0">
-  Debería pasar todas las pruebas de Python.
-</p>
+# --hints--
 
-<pre><code class="js">
-</code></pre>
+Debería pasar todas las pruebas de Python.
 
-<h1 spaces-before="0">
-  --solutions--
-</h1>
+```js
 
-<pre><code class="py">  # Python challenges don't need solutions,
+```
+
+# --solutions--
+
+```py
+  # Python challenges don't need solutions,
   # because they would need to be tested against a full working project.
   # Please check our contributing guidelines to learn more.
-</code></pre>
+```

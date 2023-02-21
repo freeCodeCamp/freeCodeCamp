@@ -13,7 +13,7 @@ dashedName: build-a-world-cup-database
 
 # --instructions--
 
-**重要:** プロジェクトのテストすべてに合格した後に、データベースのダンプを `worldcup.sql` ファイルに保存し、あわせて `insert_data.sh` と `queries.sh` ファイルも保存することで、ステップ 2 を完了できます。 仮想マシン内にその方法についての説明があります。
+**重要:** プロジェクトのテストがすべて成功した後に、データベースのダンプを `worldcup.sql` ファイルに保存し、あわせて `insert_data.sh` と `queries.sh` ファイルも保存することで、ステップ 2 を完了できます。 仮想マシン内にその方法についての説明があります。
 
 # --notes--
 

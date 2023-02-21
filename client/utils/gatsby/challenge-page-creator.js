@@ -32,15 +32,29 @@ const video = path.resolve(
   '../../src/templates/Challenges/video/Show.tsx'
 );
 
+const odin = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/odin/Show.tsx'
+);
+
 const views = {
   backend,
   classic,
   modern: classic,
   frontend,
   video,
-  codeAlly
+  codeAlly,
+  odin
   // quiz: Quiz
 };
+
+function getIsFirstStep(_node, index, nodeArray) {
+  const current = nodeArray[index];
+  const previous = nodeArray[index - 1];
+
+  if (!previous) return true;
+  return previous.node.challenge.block !== current.node.challenge.block;
+}
 
 function getNextChallengePath(_node, index, nodeArray) {
   const next = nodeArray[index + 1];
@@ -79,6 +93,7 @@ exports.createChallengePages = function (createPage) {
           certification,
           superBlock,
           block,
+          isFirstStep: getIsFirstStep(challenge, index, allChallengeEdges),
           template,
           required,
           nextChallengePath: getNextChallengePath(

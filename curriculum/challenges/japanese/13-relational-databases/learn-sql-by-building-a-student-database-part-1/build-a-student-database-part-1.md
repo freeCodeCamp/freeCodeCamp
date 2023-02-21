@@ -9,7 +9,7 @@ dashedName: build-a-student-database-part-1
 
 # --description--
 
-In this 140-lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL.
+この 140 のレッスンから成るコースでは、SQL でコンピューター科学の学生達の情報を PostgreSQL データベースに入力する、Bash スクリプトを作成します。
 
 # --instructions--
 

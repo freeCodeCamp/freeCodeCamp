@@ -1,6 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bde
-title: Use a Pre-Defined Scale to Place Elements
+title: Verwende eine vordefinierte Skala um Elemente zu platzieren
 challengeType: 6
 forumTopicId: 301494
 dashedName: use-a-pre-defined-scale-to-place-elements
@@ -8,22 +8,22 @@ dashedName: use-a-pre-defined-scale-to-place-elements
 
 # --description--
 
-With the scales set up, it's time to map the scatter plot again. The scales are like processing functions that turn the `x` and `y` raw data into values that fit and render correctly on the SVG canvas. They keep the data within the screen's plotting area.
+Nachdem die Skalen festgelegt wurden, können nun erneut Daten in das Streudiagramm eingetragen werden. Skalen gleichen Verarbeitungsfunktionen, die `x`- und `y`-Rohdaten in Werte umwandeln, die in SVG-Canvas passen und korrekt dargestellt werden können. Sie halten die Daten innerhalb des Bildschirm-Darstellungsbereichs.
 
-You set the coordinate attribute values for an SVG shape with the scaling function. This includes `x` and `y` attributes for `rect` or `text` elements, or `cx` and `cy` for `circles`. Here's an example:
+Die Koordinaten-Attributwerte einer SVG-Form setzt du mithilfe der Skalierungsfunktion. Damit sind sowohl `x`- und `y`-Attribute für `rect`- bzw. `text`-Elemente als auch `cx`- und `cy`-Attribute für `circles` gemeint. Hier ein Beispiel:
 
 ```js
 shape
   .attr("x", (d) => xScale(d[0]))
 ```
 
-Scales set shape coordinate attributes to place the data points onto the SVG canvas. You don't need to apply scales when you display the actual data value, for example, in the `text()` method for a tooltip or label.
+Skalen setzen Formkoordinaten-Attribute fest, um Datenpunkte auf den SVG-Canvas zu platzieren. Die Anwendung von Skalen ist nicht notwendig, wenn du den eigentlichen Datenwert wiedergibst, wie beispielsweise in den `text()`-Methoden für Kurzinformationen oder Beschriftungen.
 
 # --instructions--
 
-Use `xScale` and `yScale` to position both the `circle` and `text` shapes onto the SVG canvas. For the `circles`, apply the scales to set the `cx` and `cy` attributes. Give them a radius of `5` units, too.
+Verwende `xScale` und `yScale`, um die `circle`- und `text`-Formen im SVG-Canvas zu positionieren. Wende für `circles`-Skalen zur Festlegung der `cx`- und `cy`-Attribute an. Gib ihnen auch einen Radius von `5` Einheiten.
 
-For the `text` elements, apply the scales to set the `x` and `y` attributes. The labels should be offset to the right of the dots. To do this, add `10` units to the `x` data value before passing it to the `xScale`.
+Wende für `text`-Elemente Skalen zur Festlegung der `x`- und `y`-Attribute an. Die Beschriftungen sollten rechts neben den Punkten angezeigt werden. Erhöhe den `x`-Datenwert um `10` Einheiten, bevor du diesen an `xScale` übergibst, um das zu erreichen.
 
 # --hints--
 
@@ -33,7 +33,7 @@ Dein Code sollte 10 `circle`-Elemente enthalten.
 assert($('circle').length == 10);
 ```
 
-The first `circle` element should have a `cx` value of approximately `91` and a `cy` value of approximately `368` after applying the scales. It should also have an `r` value of `5`.
+Das erste `circle`-Element sollte – nach Anwendung der Skalen – über einen `cx`-Wert von ungefähr `91` und einen `cy`-Wert von etwa `368` verfügen. Zudem sollte sein `r`-Wert auf `5` gesetzt sein.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-The second `circle` element should have a `cx` value of approximately `159` and a `cy` value of approximately `181` after applying the scales. It should also have an `r` value of `5`.
+Das zweite `circle`-Element sollte – nach Anwendung der Skalen – über einen `cx`-Wert von ungefähr `159` und einen `cy`-Wert von etwa `181` verfügen. Zudem sollte sein `r`-Wert auf `5` gesetzt sein.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-The third `circle` element should have a `cx` value of approximately `340` and a `cy` value of approximately `329` after applying the scales. It should also have an `r` value of `5`.
+Das dritte `circle`-Element sollte – nach Anwendung der Skalen – über einen `cx`-Wert von ungefähr `340` und einen `cy`-Wert von etwa `329` verfügen. Zudem sollte sein `r`-Wert auf `5` gesetzt sein.
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-The fourth `circle` element should have a `cx` value of approximately `131` and a `cy` value of approximately `60` after applying the scales. It should also have an `r` value of `5`.
+Das vierte `circle`-Element sollte – nach Anwendung der Skalen – über einen `cx`-Wert von ungefähr `131` und einen `cy`-Wert von etwa `60` verfügen. Zudem sollte sein `r`-Wert auf `5` gesetzt sein.
 
 ```js
 assert(
@@ -73,7 +73,7 @@ assert(
 );
 ```
 
-The fifth `circle` element should have a `cx` value of approximately `440` and a `cy` value of approximately `237` after applying the scales. It should also have an `r` value of `5`.
+Das fünfte `circle`-Element sollte – nach Anwendung der Skalen – über einen `cx`-Wert von ungefähr `440` und einen `cy`-Wert von etwa `237` verfügen. Zudem sollte sein `r`-Wert auf `5` gesetzt sein.
 
 ```js
 assert(
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-The sixth `circle` element should have a `cx` value of approximately `271` and a `cy` value of approximately `306` after applying the scales. It should also have an `r` value of `5`.
+Das sechste `circle`-Element sollte – nach Anwendung der Skalen – über einen `cx`-Wert von ungefähr `271` und einen `cy`-Wert von etwa `306` verfügen. Zudem sollte sein `r`-Wert auf `5` gesetzt sein.
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-The seventh `circle` element should have a `cx` value of approximately `361` and a `cy` value of approximately `351` after applying the scales. It should also have an `r` value of `5`.
+Das siebte `circle`-Element sollte – nach Anwendung der Skalen – über einen `cx`-Wert von ungefähr `361` und einen `cy`-Wert von etwa `351` verfügen. Zudem sollte sein `r`-Wert auf `5` gesetzt sein.
 
 ```js
 assert(
@@ -103,7 +103,7 @@ assert(
 );
 ```
 
-The eighth `circle` element should have a `cx` value of approximately `261` and a `cy` value of approximately `132` after applying the scales. It should also have an `r` value of `5`.
+Das achte `circle`-Element sollte – nach Anwendung der Skalen – über einen `cx`-Wert von ungefähr `261` und einen `cy`-Wert von etwa `132` verfügen. Zudem sollte sein `r`-Wert auf `5` gesetzt sein.
 
 ```js
 assert(
@@ -113,7 +113,7 @@ assert(
 );
 ```
 
-The ninth `circle` element should have a `cx` value of approximately `131` and a `cy` value of approximately `144` after applying the scales. It should also have an `r` value of `5`.
+Das neunte `circle`-Element sollte – nach Anwendung der Skalen – über einen `cx`-Wert von ungefähr `131` und einen `cy`-Wert von etwa `144` verfügen. Zudem sollte sein `r`-Wert auf `5` gesetzt sein.
 
 ```js
 assert(
@@ -123,7 +123,7 @@ assert(
 );
 ```
 
-The tenth `circle` element should have a `cx` value of approximately `79` and a `cy` value of approximately `326` after applying the scales. It should also have an `r` value of `5`.
+Das zehnte `circle`-Element sollte – nach Anwendung der Skalen – über einen `cx`-Wert von ungefähr `79` und einen `cy`-Wert von etwa `326` verfügen. Zudem sollte sein `r`-Wert auf `5` gesetzt sein.
 
 ```js
 assert(
@@ -139,7 +139,7 @@ Dein Code sollte 10 `text`-Elemente enthalten.
 assert($('text').length == 10);
 ```
 
-The first label should have an `x` value of approximately `100` and a `y` value of approximately `368` after applying the scales.
+Die erste Beschriftung sollte – nach Anwendung der Skalen – über einen `x`-Wert von ungefähr `100` und einen `y`-Wert von etwa `368` verfügen.
 
 ```js
 assert(
@@ -148,7 +148,7 @@ assert(
 );
 ```
 
-The second label should have an `x` value of approximately `168` and a `y` value of approximately `181` after applying the scales.
+Die zweite Beschriftung sollte – nach Anwendung der Skalen – über einen `x`-Wert von ungefähr `168` und einen `y`-Wert von etwa `181` verfügen.
 
 ```js
 assert(
@@ -157,7 +157,7 @@ assert(
 );
 ```
 
-The third label should have an `x` value of approximately `350` and a `y` value of approximately `329` after applying the scales.
+Die dritte Beschriftung sollte – nach Anwendung der Skalen – über einen `x`-Wert von ungefähr `350` und einen `y`-Wert von etwa `329` verfügen.
 
 ```js
 assert(
@@ -166,7 +166,7 @@ assert(
 );
 ```
 
-The fourth label should have an `x` value of approximately `141` and a `y` value of approximately `60` after applying the scales.
+Die vierte Beschriftung sollte – nach Anwendung der Skalen – über einen `x`-Wert von ungefähr `141` und einen `y`-Wert von etwa `60` verfügen.
 
 ```js
 assert(
@@ -175,7 +175,7 @@ assert(
 );
 ```
 
-The fifth label should have an `x` value of approximately `449` and a `y` value of approximately `237` after applying the scales.
+Die fünfte Beschriftung sollte – nach Anwendung der Skalen – über einen `x`-Wert von ungefähr `449` und einen `y`-Wert von etwa `237` verfügen.
 
 ```js
 assert(
@@ -184,7 +184,7 @@ assert(
 );
 ```
 
-The sixth label should have an `x` value of approximately `280` and a `y` value of approximately `306` after applying the scales.
+Die sechste Beschriftung sollte – nach Anwendung der Skalen – über einen `x`-Wert von ungefähr `280` und einen `y`-Wert von etwa `306` verfügen.
 
 ```js
 assert(
@@ -193,7 +193,7 @@ assert(
 );
 ```
 
-The seventh label should have an `x` value of approximately `370` and a `y` value of approximately `351` after applying the scales.
+Die siebte Beschriftung sollte – nach Anwendung der Skalen – über einen `x`-Wert von ungefähr `370` und einen `y`-Wert von etwa `351` verfügen.
 
 ```js
 assert(
@@ -202,7 +202,7 @@ assert(
 );
 ```
 
-The eighth label should have an `x` value of approximately `270` and a `y` value of approximately `132` after applying the scales.
+Die achte Beschriftung sollte – nach Anwendung der Skalen – über einen `x`-Wert von ungefähr `270` und einen `y`-Wert von etwa `132` verfügen.
 
 ```js
 assert(
@@ -211,7 +211,7 @@ assert(
 );
 ```
 
-The ninth label should have an `x` value of approximately `140` and a `y` value of approximately `144` after applying the scales.
+Die neunte Beschriftung sollte – nach Anwendung der Skalen – über einen `x`-Wert von ungefähr `140` und einen `y`-Wert von etwa `144` verfügen.
 
 ```js
 assert(
@@ -220,7 +220,7 @@ assert(
 );
 ```
 
-The tenth label should have an `x` value of approximately `88` and a `y` value of approximately `326` after applying the scales.
+Die zehnte Beschriftung sollte – nach Anwendung der Skalen – über einen `x`-Wert von ungefähr `88` und einen `y`-Wert von etwa `326` verfügen.
 
 ```js
 assert(

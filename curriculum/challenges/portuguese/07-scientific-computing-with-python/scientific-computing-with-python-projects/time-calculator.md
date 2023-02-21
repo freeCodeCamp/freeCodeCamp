@@ -10,6 +10,10 @@ dashedName: time-calculator
 
 Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-time-calculator" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
 
+-   Comece importando o projeto no Replit.
+-   Em seguida, você verá uma janela `.replit`.
+-   Selecione `Use run command` e clique no botão `Done`.
+
 # --instructions--
 
 Escreva uma função chamada `add_time`, que recebe dois parâmetros necessários e um parâmetro opcional:

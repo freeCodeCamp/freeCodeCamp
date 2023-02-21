@@ -14,7 +14,13 @@ Crea una aplicación full stack de JavaScript que sea funcionalmente similar a e
 -   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+Si usas Replit, sigue los siguientes pasos para configurar el proyecto:
+
+-   Comienza importando el proyecto en Replit.
+-   Después, verás una ventana `.replit`.
+-   Selecciona `Use run command` y haz clic en el botón `Done`.
+
+Cuando hayas terminado, asegúrate que un demo funcional de tu proyecto esté alojado en algún sitio público. A continuación, introduce la URL en el campo enlace a la solución. Si lo deseas, también puedes enviar un enlace al código fuente de tu proyecto en el campo enlace GitHub.
 
 # --instructions--
 
@@ -60,7 +66,7 @@ Log:
 
 # --hints--
 
-Debes proporcionar tu propio proyecto, no la URL de ejemplo.
+Debes proporcionar tu propio proyecto, no la URL del ejemplo.
 
 ```js
 (getUserInput) => {
@@ -268,7 +274,7 @@ async (getUserInput) => {
 };
 ```
 
-Una solicitud al log de un usuario `GET /api/users/:_id/logs` devuelve un objeto de usuario con una propiedad `count` representando el número de ejercicios que pertenecen a ese usuario.
+Una solicitud al log del usuario `GET /api/users/:_id/logs` devuelve un objeto de usuario con una propiedad `count` representando el número de ejercicios que pertenecen a ese usuario.
 
 ```js
 async (getUserInput) => {
@@ -405,7 +411,7 @@ La propiedad `description` de cualquier objeto en el arreglo `log` que es devuel
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -452,7 +458,7 @@ La propiedad `duration` de cualquier objeto en el arreglo `log` que es devuelto 
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -494,12 +500,12 @@ async(getUserInput) => {
 };
 ```
 
-La propiedad `date` de cualquier objeto en el arrelgo `log` que es devuelto desde `GET /api/users/:_id/logs` debe ser una cadena. Utiliza el formato `dateString` de la API `Date`.
+La propiedad `date` de cualquier objeto en el arreglo `log` que es devuelto desde `GET /api/users/:_id/logs` debe ser una cadena. Utiliza el formato `dateString` de la API `Date`.
 
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users/', {
+  const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',

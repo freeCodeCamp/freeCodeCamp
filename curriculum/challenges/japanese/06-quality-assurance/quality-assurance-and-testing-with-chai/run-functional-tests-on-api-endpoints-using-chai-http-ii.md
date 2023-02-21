@@ -12,13 +12,13 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
 
 # --instructions--
 
-`tests/2_functional-tests.js` 内で、`'Test GET /hello with your name'` テスト (`// #2`) を変更し、レスポンスの `status` と `text` をアサートしてテストに合格させてください。
+`tests/2_functional-tests.js` 内の `'Test GET /hello with your name'` というテスト (`// #2`) を変更し、テストが成功するように、レスポンスの `status` と `text` をアサートしてください。
 
 ルートに `?name=<your_name>` を追加して名前を URL クエリとして送信してください。 エンドポイントは `'hello <your_name>'` で応答します。
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>

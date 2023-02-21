@@ -7,7 +7,7 @@ dashedName: step-30
 
 # --description--
 
-لتحسين إمكانية الوصول (accessibility) إلى الصورة التي أضفتها للتو، أضف خاصية `alt` مع النص:
+لتسهيل المنال (accessibility) في الصورة التي أضفتها، أضف خاصية `alt` مع النص:
 
 `Five cats looking around a field.`
 
@@ -65,7 +65,7 @@ assert(
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
-        <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
+        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
         <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
       </section>
       <section>

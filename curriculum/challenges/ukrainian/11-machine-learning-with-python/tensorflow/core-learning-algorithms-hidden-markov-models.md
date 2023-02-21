@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d90
-title: 'Базові алгоритми навчання: Приховані моделі Маркова'
+title: 'Базові алгоритми навчання: приховані моделі Маркова'
 challengeType: 11
 videoId: IZg24y4wEPY
 bilibiliIds:

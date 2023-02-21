@@ -10,15 +10,20 @@ dashedName: demographic-data-analyzer
 
 Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+-   Почніть з імпорту проєкту на Replit.
+-   Потім ви побачите вікно `.replit`.
+-   Оберіть `Use run command` та натисніть кнопку `Done`.
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
-- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
+Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
+
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 годин)
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 годин)
 
 # --instructions--
 
-In this challenge you must analyze demographic data using Pandas. You are given a dataset of demographic data that was extracted from the 1994 Census database. Here is a sample of what the data looks like:
+У цьому завдання ви повинні проаналізувати демографічні дані за допомогою Pandas. Вам надається набір демографічних даних, отриманих з бази даних перепису населення 1994 року. Ось приклад того, як виглядають дані:
 
 ```markdown
 |    |   age | workclass        |   fnlwgt | education   |   education-num | marital-status     | occupation        | relationship   | race   | sex    |   capital-gain |   capital-loss |   hours-per-week | native-country   | salary   |
@@ -30,41 +35,41 @@ In this challenge you must analyze demographic data using Pandas. You are given 
 |  4 |    28 | Private          |   338409 | Bachelors   |              13 | Married-civ-spouse | Prof-specialty    | Wife           | Black  | Female |              0 |              0 |               40 | Cuba             | <=50K    |
 ```
 
-You must use Pandas to answer the following questions:
+Ви повинні використати Pandas, щоб відповісти на наступні запитання:
 
-- How many people of each race are represented in this dataset? This should be a Pandas series with race names as the index labels. (`race` column)
-- What is the average age of men?
-- What is the percentage of people who have a Bachelor's degree?
-- What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?
-- What percentage of people without advanced education make more than 50K?
-- What is the minimum number of hours a person works per week?
-- What percentage of the people who work the minimum number of hours per week have a salary of more than 50K?
-- What country has the highest percentage of people that earn >50K and what is that percentage?
-- Identify the most popular occupation for those who earn >50K in India.
+- Скільки людей кожної раси представлено в цьому наборі даних? Це повинна бути серія Pandas з назвами рас як індексними мітками. (стовпчик `race`)
+- Який середній вік людей?
+- Який відсоток людей, у яких є ступінь бакалавра?
+- Який відсоток людей з вищою освітою (`Bachelors`, `Masters` або `Doctorate`) заробляє понад 50 тисяч?
+- Який відсоток людей без вищої освіти заробляє понад 50 тисяч?
+- Яку мінімальну кількість годин на тиждень працює людина?
+- Який відсоток людей, які працюють мінімальну кількість годин на тиждень та отримують зарплату понад 50 тисяч?
+- У якій країні найбільший відсоток людей, які заробляють >50 тисяч і який цей відсоток?
+- Визначте найпопулярнішу професію для тих, хто заробляє >50 тисяч в Індії.
 
-Use the starter code in the file `demographic_data_analyzer`. Update the code so all variables set to "None" are set to the appropriate calculation or code. Round all decimals to the nearest tenth.
+Використайте початковий код у файлі `demographic_data_analyzer`. Оновіть код, щоб для всіх змінних, для яких встановлено значення "None", було встановлено відповідне обчислення або код. Заокругліть усі десяткові дроби до найближчих десятків.
 
-Unit tests are written for you under `test_module.py`.
+Для вас складені модульні тести у `test_module.py`.
 
-## Development
+## Розробка
 
-For development, you can use `main.py` to test your functions. Натисніть кнопку «запустити» і `main.py` запуститься.
+Для розробки ви можете використати `main.py`, щоб протестувати свій код. Натисніть кнопку «run» і `main.py` запуститься.
 
-## Testing
+## Тестування
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. Тести запустяться автоматично, коли ви натиснете на кнопку «запустити».
+Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
 
-## Submitting
+## Надсилання
 
-Copy your project's URL and submit it to freeCodeCamp.
+Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
-## Dataset Source
+## Джерело даних
 
 Dua, D. and Graff, C. (2019). <a href="http://archive.ics.uci.edu/ml" target="_blank" rel="noopener noreferrer nofollow">UCI Machine Learning Repository</a>. Irvine, CA: University of California, School of Information and Computer Science.
 
 # --hints--
 
-Він повинен пройти усі тести Python.
+Проєкт повинен пройти усі тести Python.
 
 ```js
 

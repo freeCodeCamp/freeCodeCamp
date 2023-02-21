@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403614c
-title: احصل على الحالة (false) من متجر Redux
+title: احصل على State من متجر Redux
 challengeType: 6
 forumTopicId: 301443
 dashedName: get-state-from-the-redux-store
@@ -12,17 +12,17 @@ dashedName: get-state-from-the-redux-store
 
 # --instructions--
 
-تم إعادة كتابة التعليمات البرمجية من التحدي السابق بشكل أكثر إيجازا في محرر التعليمات البرمجية. استخدم `store.getState()` لاسترداد `state` من `store`، وتعيين هذا إلى متغير جديد `currentState`.
+تم إعادة كتابة التعليمات البرمجية من التحدي السابق بشكل أكثر إيجازا في محرر التعليمات البرمجية. استخدم `store.getState()` لاسترداد `state` من `store`، وتعيين هذا إلى متغير (variable) جديد `currentState`.
 
 # --hints--
 
-يجب أن يكون للمتجر Redux حالة بقيمة 5 المبدئة.
+يجب أن يحتوي للمتجر Redux على state مبدئة بقيمة 5.
 
 ```js
 assert(store.getState() === 5);
 ```
 
-يجب أن يكون المتغير `currentState` موجوداً ويجب تعيين الحالة (state) الحالية لمتجر Redux.
+يجب أن يكون المتغير `currentState` موجوداً ويجب تعيين state الحالية لمتجر Redux.
 
 ```js
 (getUserInput) =>

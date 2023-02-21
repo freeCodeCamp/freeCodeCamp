@@ -9,7 +9,7 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-<dfn>多次元</dfn>配列は、*配列の配列*として考えることができます。 When you use brackets to access your array, the first set of brackets refers to the entries in the outermost (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
+<dfn>多次元</dfn>配列は、*配列の配列*として考えることができます。 ブラケット (角括弧) を使用して配列にアクセスする場合、最初のブラケットの組は、一番外側 (最初の階層) の配列の項目を参照します。ブラケットを追加するたびに、そのひとつ内側の階層の項目を参照します。
 
 **例**
 

@@ -38,6 +38,44 @@
   font-display: fallback;
 }
 
+/* NotoSansArabic */
+
+@font-face {
+  font-family: 'NotoSansArabic';
+  src: url('../../../static/fonts/noto-sans-arabic/NotoSansArabic-Light.woff')
+    format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'NotoSansArabic';
+  src: url('../../../static/fonts/noto-sans-arabic/NotoSansArabic-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'NotoSansArabic';
+  src: url('../../../static/fonts/noto-sans-arabic/NotoSansArabic-Bold.woff')
+    format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'NotoSansArabic';
+  src: url('../../../static/fonts/noto-sans-arabic/NotoSansArabic-Black.woff')
+    format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: fallback;
+}
+
 /* hack zeroslash */
 
 @font-face {

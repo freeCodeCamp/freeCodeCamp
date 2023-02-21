@@ -10,6 +10,11 @@ dashedName: arithmetic-formatter
 
 Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow"> trabalhará neste projeto com nosso código inicial do Replit</a>.
 
+-   Comece importando o projeto no Replit.
+-   Em seguida, você verá uma janela `.replit`.
+-   Selecione `Use run command` e clique no botão `Done`.
+
+
 # --instructions--
 
 Os alunos da escola primária geralmente organizam problemas aritméticos de modo vertical para facilitar a sua resolução. Por exemplo, "235 + 52" se torna:
@@ -64,7 +69,7 @@ A função retornará a conversão correta se os problemas fornecidos forem form
   - Cada número (operando) deve conter apenas algarismos. Caso contrário, a função retornará: `Error: Numbers must only contain digits.`
   - Cada operando (ou seja, o número de cada lado do operador) tem, no máximo, quatro algarismos. Do contrário, a string de erro retornada será: `Error: Numbers cannot be more than four digits.`
 - Se o usuário forneceu o formato correto dos problemas, a conversão retornada seguirá estas regras:
-  - Deve haver um único espaço entre o operador e o maior entre os dois operandos. O operador estará na mesma linha do segundo operando. Ambos os operadores estarão na mesma ordem fornecida - o primeiro será o de cima e o segundo será o de baixo).
+  - Deve haver um único espaço entre o operador e o maior entre os dois operandos. O operador estará na mesma linha do segundo operando. Ambos os operadores estarão na mesma ordem fornecida – o primeiro será o de cima e o segundo será o de baixo.
   - Os números devem estar alinhados à direita.
   - Deve haver quatro espaços entre cada problema.
   - Deve haver travessões abaixo de cada problema. Os travessões devem compreender todo o tamanho de cada problema individualmente. (O exemplo acima mostra como deve ser a aparência do resultado.)

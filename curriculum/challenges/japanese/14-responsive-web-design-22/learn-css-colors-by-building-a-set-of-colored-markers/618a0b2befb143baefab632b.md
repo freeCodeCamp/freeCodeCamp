@@ -11,7 +11,7 @@ dashedName: step-37
 
 1 つの色を主要な色として使い、その補色をページの特定のコンテンツに注意を向けさせるためのアクセントとして使うのが良い方法とされています。
 
-では最初に、`h1` ルール内で、`rgb` 関数を使用して背景色をシアンに設定してください。
+First, in the `h1` rule, use the `rgb` function to set its `background-color` to cyan.
 
 # --hints--
 

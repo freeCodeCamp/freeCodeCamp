@@ -10,7 +10,7 @@ dashedName: build-a-freecodecamp-forum-homepage
 
 **目標:** こちらと似た機能を持つアプリを構築してください: <https://codepen.io/freeCodeCamp/full/JqdoMV>
 
-Fulfill the below user stories and get all of the tests to pass. 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
+以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
 
 **ユーザーストーリー:** freeCodeCamp フォーラムの、最新の投稿の一覧を見ることができます。
 

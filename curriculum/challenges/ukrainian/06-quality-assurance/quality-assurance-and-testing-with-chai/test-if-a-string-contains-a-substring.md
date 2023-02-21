@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c53
-title: Перевірте, чи містить рядковий тип підрядок
+title: Перевірте, чи рядок містить підрядок
 challengeType: 2
 forumTopicId: 301597
 dashedName: test-if-a-string-contains-a-substring
@@ -10,11 +10,11 @@ dashedName: test-if-a-string-contains-a-substring
 
 Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`include()` та `notInclude()` також працює і для рядків! `include()` перевіряє, чи містить фактичний рядок очікуваний підрядок.
+`include()` та `notInclude()` працюють й для рядків! `include()` підтверджує, що рядок містить очікуваний підрядок.
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#14` в наборі `Strings` змініть кожний `assert` на `assert.include` або `assert.notInclude` щоб полегшити проходження тесту (варто оцінювати як `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#14` в наборі `Strings` змініть кожний `assert` на `assert.include` або `assert.notInclude`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
@@ -32,7 +32,7 @@ dashedName: test-if-a-string-contains-a-substring
   );
 ```
 
-Потрібно обрати правильний метод для першого твердження `include` або `notInclude`.
+Ви повинні обрати правильний метод для першого твердження: `include` або `notInclude`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ dashedName: test-if-a-string-contains-a-substring
   );
 ```
 
-Потрібно обрати правильний метод для другого твердження `include` або `notInclude`.
+Ви повинні обрати правильний метод для другого твердження: `include` або `notInclude`.
 
 ```js
 (getUserInput) =>

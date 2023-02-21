@@ -81,7 +81,7 @@
   display: flex;
   align-items: center;
   height: 140px;
-  margin-left: 100px;
+  margin-inline-start: 100px;
 }
 
 .certification-namespace .logo svg {
@@ -94,7 +94,7 @@
   line-height: 140px;
   font-size: 20px;
   text-align: right;
-  margin-right: 100px;
+  margin-inline-end: 100px;
   color: var(--gray-00);
 }
 
@@ -163,28 +163,25 @@
   margin-top: calc(-1 * var(--header-height));
 }
 
+.qr-wrap {
+  display: block;
+  width: 100%;
+  height: 0;
+  position: relative;
+}
+
+.qr-code {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  top: -128px;
+  right: 60px;
+}
+
 /*mobile media queries*/
-@media screen and (max-width: 675px) {
-  .certification-namespaces.issue-date {
-    padding: 0;
-    border: 0;
-  }
-
-  .certification-namespace header {
-    height: 190px;
-  }
-
-  .certification-namespace h3 {
-    font-size: 15px;
-  }
-
-  .certification-namespace h1 {
-    font-size: 17px;
-  }
-
-  .certification-namespace h4 {
-    font-size: 15px;
-    margin-top: 20px;
+@media screen and (max-width: 1200px) {
+  .qr-code {
+    right: 40px;
   }
 }
 
@@ -194,7 +191,7 @@
   }
 
   .certification-namespace .logo {
-    margin-left: 0;
+    margin-inline-start: 0;
     padding: 20px;
     justify-content: center;
     height: 80px;
@@ -206,7 +203,7 @@
 
   .certification-namespace .issue-date {
     margin-top: 10px;
-    margin-right: 0;
+    margin-inline-end: 0;
     text-align: center;
     line-height: 0px;
     word-wrap: break-word;
@@ -235,6 +232,14 @@
   .certification-namespace h1 {
     font-size: 28px;
   }
+
+  .qr-code {
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    top: calc(-96px - 50px);
+    right: 20px;
+  }
 }
 
 @media screen and (max-width: 675px) {
@@ -258,6 +263,10 @@
   .certification-namespace h4 {
     font-size: 15px;
     margin-top: 20px;
+  }
+
+  .qr-code {
+    display: none;
   }
 }
 

@@ -7,7 +7,7 @@ dashedName: step-131
 
 # --description--
 
-Finish the `defeatMonster` function by calling the `update` function with `locations[4]` as the argument.
+Закінчіть функцію `defeatMonster`, викликавши функцію `update` з `locations[4]` як аргумент.
 
 # --hints--
 
@@ -17,7 +17,7 @@ Finish the `defeatMonster` function by calling the `update` function with `locat
 assert.match(defeatMonster.toString(), /update/);
 ```
 
-You should pass `locations[4]` as the argument.
+Ви повинні передати `locations[4]` як аргумент.
 
 ```js
 assert.match(defeatMonster.toString(), /update\(locations\[4\]\)/);

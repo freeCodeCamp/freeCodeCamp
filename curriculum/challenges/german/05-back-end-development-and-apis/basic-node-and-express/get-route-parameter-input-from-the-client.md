@@ -1,6 +1,6 @@
 ---
 id: 587d7fb2367417b2b2512bf5
-title: Get Route Parameter Input from the Client
+title: Routen-Eingabeparameter vom Kunden erhalten
 challengeType: 2
 forumTopicId: 301513
 dashedName: get-route-parameter-input-from-the-client

@@ -10,6 +10,11 @@ dashedName: probability-calculator
 
 你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
+
 # --instructions--
 
 假設有一頂帽子，裏面有 5 個藍球、4 個紅球和 2 個綠球。 隨機抽取的 4 個球中至少包含 1 個紅球和 2 個綠球的概率是多少？ 雖然可以使用高等數學來計算概率，但更簡單的方法是編寫一個程序來執行大量實驗來估計近似概率。

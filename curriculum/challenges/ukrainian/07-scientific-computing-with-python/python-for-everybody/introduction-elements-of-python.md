@@ -1,6 +1,6 @@
 ---
 id: 5e6a54c358d3af90110a60a3
-title: 'Вступ: Елементи мови Python'
+title: 'Вступ: елементи мови Python'
 challengeType: 11
 videoId: aRY_xjL35v0
 bilibiliIds:

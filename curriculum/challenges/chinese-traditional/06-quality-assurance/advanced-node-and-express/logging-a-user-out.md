@@ -8,9 +8,9 @@ dashedName: logging-a-user-out
 
 # --description--
 
-創建退出登錄的邏輯是比較簡單的。 The route should just unauthenticate the user, and redirect to the home page instead of rendering any view.
+創建退出登錄的邏輯是比較簡單的。 路由應該取消用戶的認證，並重定向到主頁，而不是渲染任何視圖。
 
-In passport, unauthenticating a user is as easy as just calling `req.logout()` before redirecting. Add this `/logout` route to do that:
+在 passport 裏，只需要在重定向前調用 `req.logout()` 即可完成用戶的退出登錄。 添加 `/logout` 路由來實現：
 
 ```js
 app.route('/logout')
@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-You may have noticed that you are not handling missing pages (404). 在 Node 中我們通常會用如下的中間件來處理。 請在所有路由之後添加這段代碼：
+你可能已經注意到我們還沒有處理 404 錯誤，這個錯誤碼代表頁面無法找到。 在 Node 中我們通常會用如下的中間件來處理。 請在所有路由之後添加這段代碼：
 
 ```js
 app.use((req, res, next) => {
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 });
 ```
 
-完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#logging-a-user-out-10" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#logging-a-user-out-10" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 # --hints--
 
@@ -49,7 +49,7 @@ async (getUserInput) => {
 }
 ```
 
-`/logout` should redirect to the home page.
+`/logout` 應重定向到主頁。
 
 ```js
 async (getUserInput) => {

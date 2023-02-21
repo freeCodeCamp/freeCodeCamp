@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b43
-title: استخدام Arrow Functions لكتابة الدوال المجهولة الموجزة (Use Arrow Functions to Write Concise Anonymous Functions)
+title: استخدام Arrow Functions لكتابة الوظائف المجهولة الموجزة
 challengeType: 1
 forumTopicId: 301211
 dashedName: use-arrow-functions-to-write-concise-anonymous-functions

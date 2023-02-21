@@ -44,7 +44,7 @@
 
 .monaco-editor-tabs {
   display: flex;
-  margin-right: auto;
+  margin-inline-end: auto;
 }
 
 .monaco-editor-tabs button:not(:first-child) {
@@ -60,8 +60,14 @@
   margin: 0 auto;
 }
 
+#mobile-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 #mobile-layout .nav-tabs {
-  margin-left: 2px;
+  margin-inline-start: 2px;
   display: flex;
 }
 
@@ -81,15 +87,37 @@
 }
 
 #mobile-layout .tab-content {
-  height: calc(
-    100vh - var(--header-height, 0px) - var(--flash-message-height, 0px) - 69px
-  );
-  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: hidden;
+}
+
+#mobile-layout-pane-editor {
+  display: flex;
+  flex-direction: column;
 }
 
 #mobile-layout .tab-pane {
   height: 100%;
   overflow: hidden;
+}
+
+#mobile-layout #mobile-layout-pane-instructions {
+  overflow-y: auto;
+}
+
+#mobile-layout-pane-instructions:focus-visible {
+  outline: 3px solid var(--blue-mid);
+  outline-offset: -2px;
+}
+
+@supports not selector(:focus-visible) {
+  #mobile-layout-pane-instructions:focus {
+    outline: 3px solid var(--blue-mid);
+    outline-offset: -2px;
+  }
 }
 
 #mobile-layout .nav-tabs > li.active > a {

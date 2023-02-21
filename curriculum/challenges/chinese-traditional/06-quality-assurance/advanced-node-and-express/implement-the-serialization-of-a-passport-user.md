@@ -8,11 +8,11 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 # --description--
 
-You are not loading an actual user object since the database is not set up. Connect to the database once, when you start the server, and keep a persistent connection for the full life-cycle of the app. To do this, add your database's connection string (for example: `mongodb+srv://<username>:<password>@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) to the environment variable `MONGO_URI`. 我們會在 `connection.js` 文件中調用它。
+你沒有加載一個實際的用戶對象，因爲數據庫沒有設置好。 當你啓動服務器時，連接到數據庫一次，並在應用程序的整個生命週期中保持持久連接。 爲此，你需要在環境變量 `MONGO_URI` 中添加你的數據庫連接字符串（比如：`mongodb+srv://<username>:<password>@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`）。 我們會在 `connection.js` 文件中調用它。
 
-*If you are having issues setting up a free database on MongoDB Atlas, check out this <a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">tutorial</a>.*
+*如果你在 MongoDB Atlas 設置免費數據庫時遇到問題，請查看這個<a href="https://chinese.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">教程</a>。*
 
-Now you want to connect to your database, then start listening for requests. The purpose of this is to not allow requests before your database is connected or if there is a database error. To accomplish this, encompass your serialization and app routes in the following code:
+現在你想要連接到數據庫，然後開始監聽請求。 這樣做的目的是在連接數據庫之前或者出現數據庫錯誤時，不接收任何請求。 要實現這一點，你需要在以下代碼中包含序列化和應用的路由：
 
 ```javascript
 myDB(async client => {
@@ -40,7 +40,7 @@ myDB(async client => {
 
 記得要取消 `deserializeUser` 中 `myDataBase` 的註釋，並把 `doc` 添加到 `done(null, null)`。
 
-完成上述要求後，請提交你的頁面鏈接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implement-the-serialization-of-a-passport-user-5" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求後，請提交你的頁面鏈接。 如果你在運行時遇到錯誤，你可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implement-the-serialization-of-a-passport-user-5" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 # --hints--
 

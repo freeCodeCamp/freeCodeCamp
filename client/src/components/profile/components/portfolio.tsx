@@ -21,7 +21,7 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
       <h2 className='text-center'>{t('profile.portfolio')}</h2>
       {portfolio.map(({ title, url, image, description, id }) => (
         <Media key={id}>
-          <Media.Left align='middle'>
+          <Media.Left id='profile-portfolio-image' align='middle'>
             {image && (
               <img
                 alt={t('profile.screen-shot', { title: title })}

@@ -1,6 +1,6 @@
 ---
 id: 587d7b85367417b2b2512b3a
-title: Catch Arguments Passed in the Wrong Order When Calling a Function
+title: إدراك المعطيات (Arguments) المارة بترتيب خاطئ عند تفعيل وظيفة
 challengeType: 1
 forumTopicId: 301184
 dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
@@ -8,11 +8,11 @@ dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
 
 # --description--
 
-متابعة للمناقشة حول استدعاد الـ functions، الخطأ التالي الذي يجب مراقبته هو عندما يتم تقديم الـ function's arguments بالترتيب غير الصحيح. إذا كانت الـ arguments مختلفة الأنواع، مثل الـ function التي تتوقع array وعدد صحيح، فمن المرجح أن يؤدي ذلك إلى خطأ في وقت التشغيل. إذا كانت الـ arguments هي من نفس النوع (كلها أعداد، على سبيل المثال)، فلن يكون لمنطق الكود أي معنى. تأكد من تقديم جميع الـ arguments المطلوبة، بالترتيب الصحيح لتجنب هذه المشاكل.
+متابعة للمناقشة حول تفعيل الوظائف (functions)، الخطأ التالي الذي يجب مراقبته هو عندما يقدم الوسائط (arguments) الوظيفة بالترتيب غير الصحيح. إذا كانت المعطيات (arguments) مختلفة الأنواع، مثل الوظيفة (function) التي تتوقع قائمة (array) وعدد صحيح، فمن المرجح أن يؤدي ذلك إلى خطأ في وقت التفعيل. إذا كانت المعطيات (arguments) من نفس النوع (كلها أعداد، على سبيل المثال)، فلن يكون لمنطق الكود أي معنى. تأكد من تقديم جميع المعطيات (arguments) المطلوبة، بالترتيب الصحيح لتجنب هذه المشاكل.
 
 # --instructions--
 
-ترفع الدالة `raiseToPower` الأساس (base) إلى الأس (exponent). لسوء الحظ، لم يتم استدعائها بشكل صحيح - أصلح الكود حتي تكون قيمة `power` هي 8 المتوقعة.
+ترفع الوظيفة (function) مسمى `raiseToPower` الأساس (base) إلى الأس (exponent). لسوء الحظ، لم يتم استدعائها بشكل صحيح - أصلح الكود حتي تكون قيمة `power` هي 8 المتوقعة.
 
 # --hints--
 
@@ -22,7 +22,7 @@ dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
 assert(power == 8);
 ```
 
-يجب أن يستخدم الكود الخاص بك الترتيب الصحيح للـ arguments لاستدعاء الدالة `raiseToPower`.
+يجب أن يستخدم كودك الترتيب الصحيح لمعطيات (arguments) لتفعيل الوظيفة (funciton) المسمى `raiseToPower`.
 
 ```js
 assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));

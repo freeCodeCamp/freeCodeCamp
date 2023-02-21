@@ -41,13 +41,13 @@ Schreibe die Funktion `myConcat`, die den Inhalt von `arr2` an `arr1` anhängt, 
 Du solltest das Schlüsselwort `var` ersetzen.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 `myConcat` sollte eine konstante Variable sein (durch Verwendung von `const`).
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+myConcat/g));
+assert.match(code, /const\s+myConcat/g);
 ```
 
 `myConcat` sollte eine Pfeilfunktion mit zwei Parametern sein
@@ -68,7 +68,7 @@ assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
 Das Schlüsselwort `function` sollte nicht verwendet werden.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/function/g));
+assert.notMatch(code, /function/g);
 ```
 
 # --seed--

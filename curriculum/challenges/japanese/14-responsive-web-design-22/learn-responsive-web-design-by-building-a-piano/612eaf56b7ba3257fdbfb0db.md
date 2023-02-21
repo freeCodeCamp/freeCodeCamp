@@ -27,7 +27,7 @@ assert(img?.nextElementSibling?.className === 'keys');
 assert(img?.previousElementSibling === null);
 ```
 
-Your `img` element should have a `class` set to `logo`.
+`img` 要素には値が `logo` に設定されている `class` が必要です。
 
 ```js
 const img = document.querySelector('img');

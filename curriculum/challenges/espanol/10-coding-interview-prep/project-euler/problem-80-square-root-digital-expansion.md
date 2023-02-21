@@ -1,6 +1,6 @@
 ---
 id: 5900f3bc1000cf542c50fecf
-title: 'Problem 80: Square root digital expansion'
+title: 'Problema 80: Raíz cuadrada expansión digital'
 challengeType: 1
 forumTopicId: 302194
 dashedName: problem-80-square-root-digital-expansion
@@ -8,33 +8,33 @@ dashedName: problem-80-square-root-digital-expansion
 
 # --description--
 
-It is well known that if the square root of a natural number is not an integer, then it is irrational. The decimal expansion of such square roots is infinite without any repeating pattern at all.
+Es bien conocido que si la raíz cuadrada de un número natural no es un entero, entonces es un irraccional. La expansión decimal de tal raíz cuadrada es infinita sin patrones repetitivos.
 
-The square root of two is `1.41421356237309504880...`, and the digital sum of the first one hundred decimal digits is `475`.
+La raíz cuadrada de es `1.41421356237309504880...`, ya la suma de los primeros cien dígitos decimales es `475`.
 
-For the first `n` natural numbers, find the total of the digital sums of the first one hundred decimal digits for all the irrational square roots.
+Para los primeros `n` números naturales, encuentra la sumatoria total de los cien primeros dígitos para todas las raíces cuadradas irracionales.
 
 # --hints--
 
-`sqrtDigitalExpansion(2)` should return a number.
+`sqrtDigitalExpansion(2)` debe devolver un número.
 
 ```js
 assert(typeof sqrtDigitalExpansion(2) === 'number');
 ```
 
-`sqrtDigitalExpansion(2)` should return `475`.
+`sqrtDigitalExpansion(2)` debe devolver `475`.
 
 ```js
 assert.strictEqual(sqrtDigitalExpansion(2), 475);
 ```
 
-`sqrtDigitalExpansion(50)` should return `19543`.
+`sqrtDigitalExpansion(50)` debe devolver `19543`.
 
 ```js
 assert.strictEqual(sqrtDigitalExpansion(50), 19543);
 ```
 
-`sqrtDigitalExpansion(100)` should return `40886`.
+`sqrtDigitalExpansion(100)` debe devolver `40886`.
 
 ```js
 assert.strictEqual(sqrtDigitalExpansion(100), 40886);

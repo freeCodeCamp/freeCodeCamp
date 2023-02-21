@@ -1,6 +1,6 @@
 ---
 id: 589fc831f9fc0f352b528e77
-title: Authentication with Socket.IO
+title: Authentifizierung mit Socket.IO
 challengeType: 2
 forumTopicId: 301548
 dashedName: authentication-with-socket-io
@@ -10,7 +10,7 @@ dashedName: authentication-with-socket-io
 
 Currently, you cannot determine who is connected to your web socket. While `req.user` contains the user object, that's only when your user interacts with the web server, and with web sockets you have no `req` (request) and therefore no user data. One way to solve the problem of knowing who is connected to your web socket is by parsing and decoding the cookie that contains the passport session then deserializing it to obtain the user object. Luckily, there is a package on NPM just for this that turns a once complex task into something simple!
 
-`passport.socketio@~3.7.0`, `connect-mongo@~3.2.0`, and `cookie-parser@~1.4.5` have already been added as dependencies. Require them as `passportSocketIo`, `MongoStore`, and `cookieParser` respectively. Also, we need to initialize a new memory store, from `express-session` which we previously required. It should look like this:
+`passport.socketio@~3.7.0`, `connect-mongo@~3.2.0` und `cookie-parser@~1.4.5` wurden bereits als Abhängigkeiten hinzugefügt. Require them as `passportSocketIo`, `MongoStore`, and `cookieParser` respectively. Also, we need to initialize a new memory store, from `express-session` which we previously required. It should look like this:
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -65,11 +65,11 @@ console.log('user ' + socket.request.user.username + ' connected');
 
 It will log to the server console who has connected!
 
-Submit your page when you think you've got it right. If you're running into errors, you can  <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can  <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
 
 # --hints--
 
-`passport.socketio` should be a dependency.
+`passport.socketio` sollte eine Abhängigkeit sein.
 
 ```js
 async (getUserInput) => {
@@ -84,7 +84,7 @@ async (getUserInput) => {
 }
 ```
 
-`cookie-parser` should be a dependency.
+`cookie-parser` sollte eine Abhängigkeit sein.
 
 ```js
 async (getUserInput) => {
@@ -99,7 +99,7 @@ async (getUserInput) => {
 }
 ```
 
-passportSocketIo should be properly required.
+passportSocketIo sollte ordnungsgemäß angefordert werden.
 
 ```js
 async (getUserInput) => {

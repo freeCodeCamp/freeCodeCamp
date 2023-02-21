@@ -1,4 +1,5 @@
-export interface LinkProps {
+export interface LinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
   block?: boolean;
   to?: string;

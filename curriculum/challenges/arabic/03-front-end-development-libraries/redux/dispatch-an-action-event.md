@@ -19,7 +19,7 @@ store.dispatch({ type: 'LOGIN' });
 
 # --instructions--
 
-متجر Redux في محرر التعليمات البرمجية لديه حالة تهيئة تحتوي على كائن يحتوي على `login` خاصية محددة حاليا إلى `false`. هناك أيضا منشئ عمل يسمى `loginAction()` الذي ينتج إجراء من نوع `LOGIN`. إرسال إجراء `LOGIN` إلى متجر Redux عن طريق الاتصال بطريقة `dispatch`، و اجتاز الإجراء الذي أنشأه `loginAction()`.
+لدي متجر (store) من Redux في محرر الكود حالة (state) تهيئة تحتوي على كائن (object) يحتوي على خاصية (property) تسمى `login` بحالة `false` حالياً. هناك أيضا منشئ عمل يسمى `loginAction()` الذي ينتج إجراء من نوع `LOGIN`. إرسال إجراء `LOGIN` إلى متجر Redux عن طريق الاتصال بطريقة `dispatch`، و اجتاز الإجراء الذي أنشأه `loginAction()`.
 
 # --hints--
 

@@ -10,6 +10,11 @@ dashedName: probability-calculator
 
 Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode an diesem Projekt arbeiten</a>.
 
+-   Beginne mit dem Importieren des Projekts in Replit.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
+
+
 # --instructions--
 
 Angenommen, es gibt einen Hut mit 5 blauen Kugeln, 4 roten Kugeln und 2 grünen Kugeln. Was ist die Wahrscheinlichkeit, dass bei einer zufälligen Ziehung von 4 Kugeln mindestens 1 rote Kugel und 2 grüne Kugeln gezogen werden? Es wäre zwar möglich, die Wahrscheinlichkeit mit Hilfe fortgeschrittener Mathematik zu berechnen, aber einfacher ist es, ein Programm zu schreiben, das eine große Anzahl von Experimenten durchführt, um eine ungefähre Wahrscheinlichkeit zu schätzen.
@@ -30,10 +35,10 @@ Die `Hat`-Klasse sollte eine `draw`-Methode haben, die ein Argument akzeptiert, 
 
 Erstelle nun eine `experiment`-Funktion in `prob_calculator.py` (nicht innerhalb der `Hat`-Klasse). Diese Funktion sollte die folgenden Argumente akzeptieren:
 
-- `hat`: Ein Hut-Objekt, dass Kugeln enthält, die innerhalb der Funktion kopiert werden sollen.
-- `expected_balls`: Ein Objekt, dass die exakte Gruppe von Kugeln anzeigt, die aus dem Hut gezogen werden sollen. Zum Beispiel, wenn wir die Wahrscheinlichkeit bestimmen wollen, um 2 blaue Kugeln und 1 rote Kugel aus dem Hut zu ziehen. Setze dafür `expected_balls` zu `{"blue":2, "red":1}`.
-- `num_balls_drawn`: Die Anzahl der Kugeln, die in jedem Experiment aus dem Hut gezogen werden sollen.
-- `num_experiments`: Die Anzahl der durchzuführenden Experimente. (Je mehr Experimente durchgeführt werden, desto genauer wird die ungefähre Wahrscheinlichkeit sein.)
+- `hat`: Ein Hut-Objekt, das Bälle enthält, das innerhalb der Funktion kopiert werden soll.
+- `expected_balls`: Ein Objekt, das die genaue Gruppe von Bällen angibt, die für das Experiment aus dem Hut gezogen werden sollen. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
+- `num_balls_drawn`: Die Anzahl der Bälle, die in jedem Experiment aus dem Hut gezogen werden sollen.
+- `num_experiments`: Die Anzahl der durchzuführenden Experimente. (The more experiments performed, the more accurate the approximate probability will be.)
 
 Die `experiment`-Funktion sollte eine Wahrscheinlichkeit zurückgeben.
 

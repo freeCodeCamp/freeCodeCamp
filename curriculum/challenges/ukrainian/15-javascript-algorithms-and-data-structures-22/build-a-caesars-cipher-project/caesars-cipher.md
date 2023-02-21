@@ -18,25 +18,25 @@ dashedName: build-a-caesars-cipher
 
 # --hints--
 
-`rot13("SERR PBQR PNZC")` повинен декодувати рядок `FREE CODE CAMP`
+`rot13("SERR PBQR PNZC")` повинен розшифруватись як рядок `FREE CODE CAMP`
 
 ```js
 assert(rot13('SERR PBQR PNZC') === 'FREE CODE CAMP');
 ```
 
-`rot13("SERR CVMMN!")` повинен декодувати рядок `FREE PIZZA!`
+`rot13("SERR CVMMN!")` повинен розшифруватись як рядок `FREE PIZZA!`
 
 ```js
 assert(rot13('SERR CVMMN!') === 'FREE PIZZA!');
 ```
 
-`rot13("SERR YBIR?")` повинен декодувати рядок `FREE LOVE?`
+`rot13("SERR YBIR?")` повинен розшифруватись як рядок `FREE LOVE?`
 
 ```js
 assert(rot13('SERR YBIR?') === 'FREE LOVE?');
 ```
 
-`rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")` повинен декодувати рядок `THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.`
+`rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")` повинен розшифруватись як рядок `THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.`
 
 ```js
 assert(

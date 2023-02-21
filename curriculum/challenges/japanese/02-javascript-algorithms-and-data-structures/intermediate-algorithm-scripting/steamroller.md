@@ -42,7 +42,7 @@ assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
 ```
 
-Global variables should not be used.
+グローバル変数は使用しないでください。
 
 ```js
 steamrollArray([1, {}, [3, [[4]]]])

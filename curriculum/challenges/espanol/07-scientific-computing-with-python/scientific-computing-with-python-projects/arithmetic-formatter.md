@@ -10,6 +10,11 @@ dashedName: arithmetic-formatter
 
 Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
 Los estudiantes de primaria suelen colocar los problemas aritméticos en vertical para facilitar su resolución. Por ejemplo, "235 + 52" se convierte a:
@@ -58,16 +63,16 @@ Resultado:
 La función devolverá la conversión correcta si los problemas suministrados están correctamente formateados, de lo contrario, **devolverá** una **cadena** que describe un error significativo para el usuario.
 
 
-- Situaciones que devolverán un error:
-  - Si hay **demasiados problemas** suministrados a la función. El límite es **cinco**, cualquier cosa más regresará: `Error: Too many problems.`
-  - Los operadores apropiados que la función aceptará son **suma** y **resta**. La multiplicación y la división devolverán un error. Otros operadores que no se mencionan en este punto no tendrán que ser probados. El error devuelto será: `Error: Operator must be '+' or '-'.`
-  - Cada número (operando) debe contener solo dígitos. De lo contrario, la función devolverá: `Error: Numbers must only contain digits.`
-  - Cada operando (también conocido como número en cada lado del operador) tiene un máximo de cuatro dígitos de ancho. De lo contrario, la cadena de error devuelta será: `Error: Numbers cannot be more than four digits.`
-- Si el usuario proporcionó el formato correcto de los problemas, la conversión que devuelva seguirá estas reglas:
-  - Debe haber un solo espacio entre el operador y el más largo de los dos operandos, el operador estará en la misma línea que el segundo operando, ambos operandos estarán en el mismo orden proporcionado (el primero será el superior y el segundo el inferior).
-  - Los números deben estar alineados a la derecha.
-  - Debe haber cuatro espacios entre cada problema.
-  - Debe haber guiones en la parte inferior de cada problema. Los guiones deben recorrer toda la longitud de cada problema individualmente. (El ejemplo anterior muestra el aspecto que debe tener.)
+- Situations that will return an error:
+  - If there are **too many problems** supplied to the function. The limit is **five**, anything more will return: `Error: Too many problems.`
+  - The appropriate operators the function will accept are **addition** and **subtraction**. Multiplication and division will return an error. Other operators not mentioned in this bullet point will not need to be tested. The error returned will be: `Error: Operator must be '+' or '-'.`
+  - Each number (operand) should only contain digits. Otherwise, the function will return: `Error: Numbers must only contain digits.`
+  - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be: `Error: Numbers cannot be more than four digits.`
+- If the user supplied the correct format of problems, the conversion you return will follow these rules:
+  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
+  - Numbers should be right-aligned.
+  - There should be four spaces between each problem.
+  - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
 
 ## Desarrollo
 

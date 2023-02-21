@@ -2,11 +2,19 @@ import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
 import { empty, of } from 'rxjs';
-import { catchError, concat, retry, switchMap, tap } from 'rxjs/operators';
-
+import {
+  catchError,
+  concat,
+  retry,
+  switchMap,
+  tap,
+  mergeMap
+} from 'rxjs/operators';
+import { isChallenge } from '../../../utils/path-parsers';
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
+  allowBlockDonationRequests,
   submitComplete,
   updateComplete,
   updateFailed
@@ -16,12 +24,17 @@ import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import postUpdate$ from '../utils/post-update';
 import { actionTypes } from './action-types';
-import { closeModal, updateSolutionFormValues } from './actions';
+import {
+  closeModal,
+  updateSolutionFormValues,
+  setIsAdvancing
+} from './actions';
 import {
   challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
-  projectFormValuesSelector
+  projectFormValuesSelector,
+  isBlockNewlyCompletedSelector
 } from './selectors';
 
 function postChallenge(update, username) {
@@ -62,6 +75,7 @@ function submitModern(type, state) {
   const tests = challengeTestsSelector(state);
   if (
     challengeType === 11 ||
+    challengeType === 15 ||
     (tests.length > 0 && tests.every(test => test.pass && !test.err))
   ) {
     if (type === actionTypes.checkChallenge) {
@@ -151,8 +165,9 @@ export default function completionEpic(action$, state$) {
     ofType(actionTypes.submitChallenge),
     switchMap(({ type }) => {
       const state = state$.value;
-      const meta = challengeMetaSelector(state);
-      const { nextChallengePath, challengeType, superBlock } = meta;
+
+      const { nextChallengePath, challengeType, superBlock, block } =
+        challengeMetaSelector(state);
 
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
@@ -164,6 +179,7 @@ export default function completionEpic(action$, state$) {
             challengeType
         );
       }
+
       if (isSignedInSelector(state)) {
         submitter = submitters[submitTypes[challengeType]];
       }
@@ -172,7 +188,17 @@ export default function completionEpic(action$, state$) {
         return findPathToNavigateTo(nextChallengePath, superBlock);
       };
 
+      const canAllowDonationRequest = (state, action) =>
+        isBlockNewlyCompletedSelector(state) &&
+        action.type === submitActionTypes.submitComplete;
+
       return submitter(type, state).pipe(
+        concat(of(setIsAdvancing(isChallenge(pathToNavigateTo())))),
+        mergeMap(x =>
+          canAllowDonationRequest(state, x)
+            ? of(x, allowBlockDonationRequests({ superBlock, block }))
+            : of(x)
+        ),
         tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {
             navigate(pathToNavigateTo());

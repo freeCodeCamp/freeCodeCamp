@@ -12,15 +12,15 @@ dashedName: manage-state-locally-first
 
 # --instructions--
 
-أولا، في طريقة `render()`، يحتوي المكون على عنصر `input`، وعنصر `button`، وعنصر `ul`. عندما يتغير عنصر `input`، يجب أن يؤدي إلى طريقة `handleChange()`. أيضًا، يجب أن ينتج عنصر `input` قيمة `input` الموجودة في حالة المكون. يشغل عنصر `button` طريقة `submitMessage()` عند النقر عليه.
+أولا، في طريقة `render()`، يحتوي المكون على عنصر `input`، وعنصر `button`، وعنصر `ul`. عندما يتغير عنصر `input`، يجب أن يؤدي إلى طريقة `handleChange()`. أيضًا، يجب أن ينتج عنصر `input` قيمة `input` الموجودة في حالة المكون (component's state). يشغل عنصر `button` طريقة `submitMessage()` عند النقر عليه.
 
-ثانياً، كتابة هاتين الطريقتين. يجب أن تقوم طريقة `handleChange()` بتحديث `input` بما يكتبه المستخدم. يجب أن تتوافق طريقة `submitMessage()` مع الرسالة الحالية (المخزنة في `input`) إلى قائمة `messages` في الحالة المحلية، ومسح قيمة `input`.
+ثانياً، كتابة هاتين الطريقتين. يجب أن تقوم طريقة `handleChange()` بتحديث `input` بما يكتبه المستخدم. يجب أن تتوافق طريقة `submitMessage()` مع الرسالة الحالية (المخزنة في `input`) إلى قائمة `messages` في الحالة المحلية (local state)، ومسح قيمة `input`.
 
 أخيرا استخدم `ul` لترطيب قائمة `messages` ووضعها على الشاشة كقائمة من عناصر `li`.
 
 # --hints--
 
-يجب على مكون `DisplayMessages` تهيئته مع حالة تساوي `{ input: "", messages: [] }`.
+يجب على مكون `DisplayMessages` تهيئته مع حالة (state) تساوي `{ input: "", messages: [] }`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 assert(code.match(/this\.state\.messages\.map/g));
 ```
 
-يجب أن يجعل عنصر `input` قيمة `input` في الحالة المحلية.
+يجب أن يجعل عنصر `input` قيمة `input` في الحالة المحلية (local state).
 
 ```js
 () => {
@@ -79,7 +79,7 @@ assert(code.match(/this\.state\.messages\.map/g));
 };
 ```
 
-يحدث الاتصال بالطريقة `handleChange` قيمة `input` في الحالة إلى قيمة المدخل الحالي.
+يحدث الاتصال بالطريقة `handleChange` قيمة `input` في الحالة (state) إلى قيمة المدخل (input) الحالي.
 
 ```js
 () => {
@@ -100,7 +100,7 @@ assert(code.match(/this\.state\.messages\.map/g));
 };
 ```
 
-الضغط على زر `Add message` يجب أن يتصل بالطريقة `submitMessage` التي يجب أن تضيف `input` الحالة إلى قائمة `messages` في الحالة.
+الضغط على زر `Add message` يجب أن يتصل بالطريقة `submitMessage` التي يجب أن تضيف `input` الحالة (state) إلى قائمة (array) تسمى `messages` في الحالة (array).
 
 ```js
 () => {

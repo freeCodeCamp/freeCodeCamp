@@ -78,7 +78,8 @@ export const defaultSuperBlockOrder: SuperBlocks[] = [
   SuperBlocks.DataAnalysisPy,
   SuperBlocks.InfoSec,
   SuperBlocks.MachineLearningPy,
-  SuperBlocks.CodingInterviewPrep
+  SuperBlocks.CodingInterviewPrep,
+  SuperBlocks.TheOdinProject
 ];
 
 /*
@@ -124,7 +125,10 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.CodingInterviewPrep
         ],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
+        [SuperBlockStates.Upcoming]: [
+          SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.TheOdinProject
+        ],
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
@@ -137,7 +141,7 @@ export const superBlockOrder: SuperBlockOrder = {
   },
   [Languages.Espanol]: {
     [CurriculumMaps.Landing]: [
-      SuperBlocks.RespWebDesign,
+      SuperBlocks.RespWebDesignNew,
       SuperBlocks.JsAlgoDataStruct,
       SuperBlocks.FrontEndDevLibs,
       SuperBlocks.DataVis,
@@ -152,7 +156,7 @@ export const superBlockOrder: SuperBlockOrder = {
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
         [SuperBlockStates.Current]: [
-          SuperBlocks.RespWebDesign,
+          SuperBlocks.RespWebDesignNew,
           SuperBlocks.JsAlgoDataStruct,
           SuperBlocks.FrontEndDevLibs,
           SuperBlocks.DataVis,
@@ -163,18 +167,20 @@ export const superBlockOrder: SuperBlockOrder = {
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [],
-        [SuperBlockStates.Legacy]: []
+        [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
         [SuperBlockStates.Current]: [
-          SuperBlocks.RespWebDesignNew,
           SuperBlocks.RelationalDb,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
           SuperBlocks.CodingInterviewPrep
         ],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
+        [SuperBlockStates.Upcoming]: [
+          SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.TheOdinProject
+        ],
         [SuperBlockStates.Legacy]: []
       }
     }
@@ -217,7 +223,10 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.CodingInterviewPrep
         ],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
+        [SuperBlockStates.Upcoming]: [
+          SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.TheOdinProject
+        ],
         [SuperBlockStates.Legacy]: []
       }
     }
@@ -260,7 +269,10 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.CodingInterviewPrep
         ],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
+        [SuperBlockStates.Upcoming]: [
+          SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.TheOdinProject
+        ],
         [SuperBlockStates.Legacy]: []
       }
     }
@@ -302,7 +314,10 @@ export const superBlockOrder: SuperBlockOrder = {
       [TranslationStates.NotAudited]: {
         [SuperBlockStates.Current]: [],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
+        [SuperBlockStates.Upcoming]: [
+          SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.TheOdinProject
+        ],
         [SuperBlockStates.Legacy]: []
       }
     }
@@ -344,7 +359,10 @@ export const superBlockOrder: SuperBlockOrder = {
       [TranslationStates.NotAudited]: {
         [SuperBlockStates.Current]: [],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
+        [SuperBlockStates.Upcoming]: [
+          SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.TheOdinProject
+        ],
         [SuperBlockStates.Legacy]: []
       }
     }
@@ -385,14 +403,17 @@ export const superBlockOrder: SuperBlockOrder = {
       [TranslationStates.NotAudited]: {
         [SuperBlockStates.Current]: [SuperBlocks.CodingInterviewPrep],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
+        [SuperBlockStates.Upcoming]: [
+          SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.TheOdinProject
+        ],
         [SuperBlockStates.Legacy]: []
       }
     }
   },
   [Languages.Japanese]: {
     [CurriculumMaps.Landing]: [
-      SuperBlocks.RespWebDesign,
+      SuperBlocks.RespWebDesignNew,
       SuperBlocks.JsAlgoDataStruct,
       SuperBlocks.FrontEndDevLibs,
       SuperBlocks.DataVis,
@@ -407,6 +428,7 @@ export const superBlockOrder: SuperBlockOrder = {
     [CurriculumMaps.Learn]: {
       [TranslationStates.Audited]: {
         [SuperBlockStates.Current]: [
+          SuperBlocks.RespWebDesignNew,
           SuperBlocks.RespWebDesign,
           SuperBlocks.JsAlgoDataStruct,
           SuperBlocks.FrontEndDevLibs,
@@ -425,9 +447,12 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.Legacy]: []
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [SuperBlocks.RespWebDesignNew],
+        [SuperBlockStates.Current]: [],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
+        [SuperBlockStates.Upcoming]: [
+          SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.TheOdinProject
+        ],
         [SuperBlockStates.Legacy]: []
       }
     }
@@ -471,7 +496,10 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.CodingInterviewPrep
         ],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
+        [SuperBlockStates.Upcoming]: [
+          SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.TheOdinProject
+        ],
         [SuperBlockStates.Legacy]: []
       }
     }
@@ -514,7 +542,10 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.CodingInterviewPrep
         ],
         [SuperBlockStates.New]: [],
-        [SuperBlockStates.Upcoming]: [SuperBlocks.JsAlgoDataStructNew],
+        [SuperBlockStates.Upcoming]: [
+          SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.TheOdinProject
+        ],
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       }
     }
@@ -545,11 +576,17 @@ function shouldShowSuperblocks({
   return true;
 }
 
+type Config = {
+  language: string;
+  showNewCurriculum?: string;
+  showUpcomingChanges?: string;
+};
+
 export function getLearnSuperBlocks({
   language = 'english',
   showNewCurriculum = 'false',
   showUpcomingChanges = 'false'
-}) {
+}: Config): SuperBlocks[] {
   const learnSuperBlocks: SuperBlocks[] = [];
 
   Object.values(TranslationStates).forEach(translationState => {
@@ -577,7 +614,7 @@ export function getAuditedSuperBlocks({
   language = 'english',
   showNewCurriculum = 'false',
   showUpcomingChanges = 'false'
-}) {
+}: Config): SuperBlocks[] {
   const auditedSuperBlocks: SuperBlocks[] = [];
 
   Object.values(SuperBlockStates).forEach(superBlockState => {
@@ -603,7 +640,7 @@ export function getNotAuditedSuperBlocks({
   language = 'english',
   showNewCurriculum = 'false',
   showUpcomingChanges = 'false'
-}) {
+}: Config): SuperBlocks[] {
   const notAuditedSuperBlocks: SuperBlocks[] = [];
 
   Object.values(SuperBlockStates).forEach(superBlockState => {

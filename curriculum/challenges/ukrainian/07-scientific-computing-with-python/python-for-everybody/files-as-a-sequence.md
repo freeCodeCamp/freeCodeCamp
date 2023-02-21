@@ -14,25 +14,25 @@ dashedName: files-as-a-sequence
 
 Додаткові ресурси:
 
-\- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target="_blank" rel="noopener noreferrer nofollow">Вправа</a>
 
 # --question--
 
 ## --text--
 
-Що команда "continue" робить, якщо вона розташована всередині циклу?
+Що робить команда «continue», якщо вона розташована всередині циклу?
 
 ## --answers--
 
-Перехід до коду одразу після циклу.
+Переходить до коду одразу після циклу.
 
 ---
 
-Перехід до наступного рядка коду.
+Переходить до наступного рядка коду.
 
 ---
 
-Перехід до наступної ітерації циклу.
+Переходить до наступної ітерації циклу.
 
 ---
 

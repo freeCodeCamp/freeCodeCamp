@@ -1,6 +1,6 @@
 ---
 id: 5900f36e1000cf542c50fe80
-title: 'Aufgabe 1: Vielfaches von 3 und 5'
+title: 'Problem 1: Vielfaches von 3 und 5'
 challengeType: 1
 forumTopicId: 301722
 dashedName: problem-1-multiples-of-3-and-5

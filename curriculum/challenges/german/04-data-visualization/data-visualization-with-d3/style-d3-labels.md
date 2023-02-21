@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd3
-title: Style D3 Labels
+title: D3-Label gestalten
 challengeType: 6
 forumTopicId: 301492
 dashedName: style-d3-labels
@@ -8,21 +8,21 @@ dashedName: style-d3-labels
 
 # --description--
 
-D3 methods can add styles to the bar labels. The `fill` attribute sets the color of the text for a `text` node. The `style()` method sets CSS rules for other styles, such as `font-family` or `font-size`.
+D3-Methoden können Balkenbeschriftungen gestalten. So legt das `fill`-Attribut die Farbe des Texts eines `text`-Knotens fest. Die `style()` Methode legt CSS-Regeln für andere Gestaltungen fest, wie `font-family` oder `font-size`.
 
 # --instructions--
 
-Set the `font-size` of the `text` elements to `25px`, and the color of the text to red.
+Setze die `font-size` der `text`-Elemente auf `25px` und die Textfarbe auf Rot.
 
 # --hints--
 
-The labels should all have a `fill` color of red.
+Die `fill`-Farbe aller Beschriftungen sollte rot sein.
 
 ```js
 assert($('text').css('fill') == 'rgb(255, 0, 0)');
 ```
 
-The labels should all have a `font-size` of `25` pixels.
+Die `font-size` aller Beschriftungen sollte auf `25` Pixel gesetzt sein.
 
 ```js
 assert($('text').css('font-size') == '25px');

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244a9
-title: تهيئة المتغيرات باستخدام مشغل التعيين (Initializing Variables with the Assignment Operator)
+title: تهيئة المتغيرات باستخدام مشغل التعيين
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
 forumTopicId: 301171
@@ -9,7 +9,7 @@ dashedName: initializing-variables-with-the-assignment-operator
 
 # --description--
 
-من الشائع <dfn>تعيين</dfn> للمتغير قيمة أولية في نفس السطر المعلن عنه.
+من الشائع <dfn>تهيئة</dfn> قيمة أولية للمتغير في نفس السطر المعلن عنه.
 
 ```js
 var myVar = 0;
@@ -19,7 +19,7 @@ var myVar = 0;
 
 # --instructions--
 
-عرّف متغير `a` باستخدام `var` و عيّن له قيمة `9`.
+أعلن متغير `a` باستخدام `var` و هيئ له قيمة `9`.
 
 # --hints--
 

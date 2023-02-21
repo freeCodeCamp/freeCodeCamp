@@ -553,7 +553,7 @@
     "intro": [
       "在这之前，你只是在前端使用 JavaScript 来给页面添加交互、解决算法挑战，或构建一个 SPA（单页应用程序）。但 JavaScript 也可以用于后端或者服务器来构建整个 web 应用程序。",
       "今天，构建应用软件的广受欢迎的方法之一是微服务，这些微服务是一种小型模块化的应用，能够共同形成一个更大的整体。",
-      "在后端开发和 APIs 认证中，你将学习如何使用 Node.js 和 npm（Node 包管理工具）来写后端。你还将使用 Express 框架构建 web 应用程序，并使用 MongoDB 和 Mongoose 库构建一个 People Finder 微服务。"
+      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -784,6 +784,24 @@
           "完成下方来自欧拉计划的编程挑战，这将强化你的算法和数学知识。",
           "这些问题的难度很大，对于许多人来说，这是一个归纳性学习的过程。也就是说，通过解决一个问题，你将接触到一个新概念，然后你可以解决自己以前无法解决的问题。你能完成全部挑战吗？"
         ]
+      }
+    }
+  },
+  "the-odin-project": {
+    "title": "The Odin Project",
+    "intro": [
+      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
+      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
+      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
+    ],
+    "blocks": {
+      "top-learn-html-foundations": {
+        "title": "Learn HTML Foundations",
+        "intro": ["A description is to be determined"]
+      },
+      "top-build-a-recipe-project": {
+        "title": "Learn HTML Foundations by Building a Recipe Page",
+        "intro": ["A description is to be determined"]
       }
     }
   },

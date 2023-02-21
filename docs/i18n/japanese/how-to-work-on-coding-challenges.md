@@ -296,17 +296,17 @@ We track how long it takes for campers to solve challenges and use this informat
 
 チャレンジテストでは、Node.js と Chai.js アサーションライブラリを使用できます。 また、必要に応じて、`code` 変数からユーザーが生成したコードにアクセスすることもできます。 さらに、 `__helpers` オブジェクトは、テストを記述するプロセスを簡略化するいくつかの関数を公開します。 利用可能な関数は、_client/src/utils/curriculum-helpers.ts_ に定義されています。
 
-## シードコードの書式設定
+## Formatting seed code
 
-チャレンジシードコードの具体的なフォーマットガイドラインは、次のとおりです。
+Here are specific formatting guidelines for the challenge seed code:
 
-- 2つの空白を使用してインデントする
-- JavaScript ステートメントは、セミコロンで終了する
-- 適用できる場合は、二重引用符を使用する
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
-### シードコードコメント
+### Seed code comments
 
-[comment dictionary](/curriculum/dictionaries/english/comments.js) は、シードコード内で使用できるコメントのみを含みます。 辞書のコメントに記載されている正確な大文字と小文字の区別および語間を使用します。 コメント辞書は、開発チームとの事前議論なしに増やしてはいけません。
+We have a [comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) that contains the only comments that can be used within the seed code. 辞書のコメントに記載されている正確な大文字と小文字の区別および語間を使用します。 コメント辞書は、開発チームとの事前議論なしに増やしてはいけません。
 
 使用するコメントは、コメント文字とコメントそのものの間にスペースを入れる必要があります。 一般的に、コメントは控えめに使用します。 シードコードコメントの使用を避けられるのであれば、チャレンジの説明や指示を書き換えることを常に検討してください。
 
@@ -368,7 +368,7 @@ class MyComponent extends React.Component {
 
 ### シードコードコメントの翻訳
 
-各言語には、個別のコメント辞書があります。 [コメント辞書の英語版](/curriculum/dictionaries/english/comments.js) は、英語以外のバージョンファイルにある翻訳のベースになります。 英語以外のバージョン、例えば中国語のコメント辞書は、`/curriculum/dictionaries/chinese/comments.js` にあります。 それぞれの辞書は一意の `id` プロパティと `text` プロパティを持つオブジェクトの配列で構成されています。 `text` のみ、対応する英語のコメントの翻訳を含むように変更する必要があります。
+各言語には、個別のコメント辞書があります。 The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. それぞれの辞書は一意の `id` プロパティと `text` プロパティを持つオブジェクトの配列で構成されています。 `text` のみ、対応する英語のコメントの翻訳を含むように変更する必要があります。
 
 一部のコメントには、翻訳してはいけない単語 / フレーズが含まれています。 例えば、変数名や「React」のような固有ライブラリ名は翻訳しません。 例として以下のコメントをご覧ください。 `myGlobal` という単語は翻訳しません。
 

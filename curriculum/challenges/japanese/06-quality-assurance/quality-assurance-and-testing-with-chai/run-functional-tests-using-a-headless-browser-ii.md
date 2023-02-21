@@ -28,7 +28,7 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>

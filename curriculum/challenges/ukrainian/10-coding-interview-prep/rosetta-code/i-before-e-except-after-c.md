@@ -35,7 +35,7 @@ dashedName: i-before-e-except-after-c
 assert(typeof IBeforeExceptC == 'function');
 ```
 
-`IBeforeExceptC("receive")` має повертати логічне значення.
+`IBeforeExceptC("receive")` має повертати булеве значення.
 
 ```js
 assert(typeof IBeforeExceptC('receive') == 'boolean');

@@ -8,7 +8,7 @@ dashedName: use-a-ternary-expression-for-conditional-rendering
 
 # --description--
 
-قبل الانتقال إلى تقنيات العرض الديناميكي، هناك طريقة أخيرة لاستخدام اشتراطات JavaScript المدمجة لتقديم ما تريده, تسمى: <dfn>ternary operator</dfn>. غالباً ما يستخدم ternary operator كاختصار لتعبيرات `if/else` في JavaScript. إنها ليست قوية تماما مثل تعبيرات `if/else` التقليدية، لكنها تحظى بشعبية كبيرة بين مطوري React. أحد أسباب هذا هو بسبب كيفية تجميع JSX، أن `if/else` البيانات لا يمكن إدراجها قاصدًا في تعليمات البرمجية JSX. ربما كنت قد لاحظت هذا في تحديين السابقين - عندما يكون تعبير `if/else` مطلوب، كان دائماً *خارج* كلمة `return`. Ternary expressions يمكن أن تكون بديلا ممتازا إذا كنت تريد تنفيذ المنطق الشرط (conditional logic) داخل JSX. تذكر أن ternary operator له ثلاث أجزاء، ولكن يمكنك الجمع بين عدة ternary expressions. إليك الجملة الأساسية:
+قبل الانتقال إلى تقنيات العرض الديناميكي، هناك طريقة أخيرة لاستخدام اشتراطات JavaScript المدمجة لتقديم ما تريده, تسمى: <dfn>ternary operator</dfn>. غالباً ما يستخدم ternary operator كاختصار لتعبيرات `if/else` في JavaScript. إنها ليست قوية تماما مثل تعبيرات `if/else` التقليدية، لكنها تحظى بشعبية كبيرة بين مطوري React. أحد أسباب هذا هو بسبب كيفية تجميع JSX، أن تعبيرات `if/else` لا يمكن إدراجها في كود JSX مباشرة. ربما كنت قد لاحظت هذا في تحديين السابقين - عندما يكون تعبير `if/else` مطلوب، كان دائماً *خارج* كلمة `return`. Ternary expressions يمكن أن تكون بديلا ممتازا إذا كنت تريد تنفيذ المنطق الشرط (conditional logic) داخل JSX. تذكر أن ternary operator له ثلاث أجزاء، ولكن يمكنك الجمع بين عدة ternary expressions. إليك الجملة الأساسية:
 
 ```jsx
 condition ? expressionIfTrue : expressionIfFalse;
@@ -16,7 +16,7 @@ condition ? expressionIfTrue : expressionIfFalse;
 
 # --instructions--
 
-يحتوي محرر التعليمات البرمجية على ثلاث ثوابت تُعرف في مكون `CheckUserAge` داخل طريقة `render()`. يطلق عليهم `buttonOne`, و `buttonTwo`, و `buttonThree`. يتم تعيين كل من هذه عبارة JSX بسيطة تمثل عنصر الزر (button). أولا، تهيئة حالة `CheckUserAge` مع `input` و `userAge` وكلاهما مجموعة string بقيم فارغة.
+يحتوي محرر التعليمات البرمجية على ثلاث ثوابت تُعرف في مكون `CheckUserAge` داخل طريقة `render()`. يطلق عليهم `buttonOne`, و `buttonTwo`, و `buttonThree`. يتم تعيين كل من هذه عبارة JSX بسيطة تمثل عنصر الزر (button). أولا، هيّئ حالة (state) بقيمة `CheckUserAge` مع `input` و `userAge` وكلاهما مجموعة مقطع نصي (string) فارغة.
 
 وبمجرد أن يقدم المكون المعلومات إلى الصفحة، ينبغي أن يكون لدى المستخدمين طريقة للتفاعل معها. ضمن تعبير `return` للمكون، أنشئ ternary expression يطبق المنطق التالي: عند تحميل الصفحة أول مرة، يعرض زر الإرسال (submit button)، باسم `buttonOne`، إلى الصفحة. بعد ذلك، عندما يدخل المستخدم عمره وينقر على الزر، ينتج زر مختلف تبعاً لعمره. إذا دخل المستخدم رقماً أقل من `18`، أنشئ `buttonThree`. إذا دخل المستخدم رقما أكبر من أو يساوي `18`، أنشئ `buttonTwo`.
 
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-يجب تهيئة حالة المكون `CheckUserAge` بخاصية `userAge` وخاصية `input`، كل منما يحمل string بقيمة فارغة.
+يجب تهيئة حالة (state) المكون (component) مسمى `CheckUserAge` بخاصية `userAge` وخاصية `input`، كل منهما يحمل مقطع نصي (string) فارغ.
 
 ```js
 assert(
@@ -156,7 +156,7 @@ assert(
 })();
 ```
 
-يجب ألا يحتوي تعليماتك البرمجية على أي تعبيرات `if/else`.
+يجب ألا يحتوي كودك على أي تعبيرات `if/else`.
 
 ```js
 assert(

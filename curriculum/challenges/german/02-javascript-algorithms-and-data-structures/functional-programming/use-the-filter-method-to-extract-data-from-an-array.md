@@ -10,7 +10,7 @@ dashedName: use-the-filter-method-to-extract-data-from-an-array
 
 Eine weitere nützliche Array-Funktion ist `Array.prototype.filter()`, oder einfach `filter()`.
 
-`filter` ruft eine Funktion für jedes Element eines Arrays auf und gibt ein neues Array zurück, das nur die Elemente enthält, für die die Funktion `true` zurückgibt. Mit anderen Worten: Sie filtert das Array auf der Grundlage der übergebenen Funktion. Genau wie `map` macht sie das, ohne dass das ursprüngliche Array verändert werden muss.
+`filter` calls a function on each element of an array and returns a new array containing only the elements for which that function returns a truthy value - that is, a value which returns `true` if passed to the `Boolean()` constructor. Mit anderen Worten: Sie filtert das Array auf der Grundlage der übergebenen Funktion. Genau wie `map` macht sie das, ohne dass das ursprüngliche Array verändert werden muss.
 
 Die Callback-Funktion nimmt drei Argumente entgegen. Das erste Argument ist das aktuelle Element, das bearbeitet wird. Das zweite ist der Index dieses Elements und das dritte ist das Array, auf dem die Methode `filter` aufgerufen wurde.
 

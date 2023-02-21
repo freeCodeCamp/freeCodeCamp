@@ -213,9 +213,10 @@ export class CertificationSettings extends Component {
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         dataCy={projectTitle}
+        projectTitle={projectTitle}
         showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}
-        displayContext={'settings'}
+        displayContext='settings'
       ></SolutionDisplayWidget>
     );
   };
@@ -227,7 +228,7 @@ export class CertificationSettings extends Component {
       <FullWidthRow key={certName}>
         <Spacer />
         <h3 className='text-center' id={`cert-${certSlug}`}>
-          {certName}
+          {t(`certification.title.${certName}`, certName)}
         </h3>
         <Table>
           <thead>
@@ -265,7 +266,9 @@ export class CertificationSettings extends Component {
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8 col-xs-8'>
-            <Link to={link}>{title}</Link>
+            <Link to={link}>
+              {t(`certification.project.title.${title}`, title)}
+            </Link>
           </td>
           <td className='project-solution col-sm-4 col-xs-4'>
             {this.getProjectSolution(id, title)}
@@ -283,7 +286,8 @@ export class CertificationSettings extends Component {
               data-cy={`btn-for-${certSlug}`}
               onClick={createClickHandler(certSlug)}
             >
-              {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
+              {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}{' '}
+              <span className='sr-only'>{certName}</span>
             </Button>
           </td>
         </tr>
@@ -337,20 +341,30 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={certSlug}>
         <Spacer />
-        <h3 className='text-center'>Legacy Full Stack Certification</h3>
+        <h3 className='text-center'>
+          {t('certification.title.Legacy Full Stack Certification')}
+        </h3>
         <div>
           <p>
             {t('settings.claim-legacy', {
-              cert: 'Legacy Full Stack Certification'
+              cert: t('certification.title.Legacy Full Stack Certification')
             })}
           </p>
           <ul>
-            <li>Responsive Web Design</li>
-            <li>JavaScript Algorithms and Data Structures</li>
-            <li>Front End Development Libraries</li>
-            <li>Data Visualization</li>
-            <li>Back End Development and APIs</li>
-            <li>Legacy Information Security and Quality Assurance</li>
+            <li>{t('certification.title.Responsive Web Design')}</li>
+            <li>
+              {t(
+                'certification.title.JavaScript Algorithms and Data Structures'
+              )}
+            </li>
+            <li>{t('certification.title.Front End Development Libraries')}</li>
+            <li>{t('certification.title.Data Visualization')}</li>
+            <li>{t('certification.title.Back End Development and APIs')}</li>
+            <li>
+              {t(
+                'certification.title.Legacy Information Security and Quality Assurance'
+              )}
+            </li>
           </ul>
         </div>
 

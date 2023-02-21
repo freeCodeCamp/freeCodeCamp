@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c448eddfaeb5bdef
-title: العثور على طول مقطع نصي (Find the Length of a String)
+title: العثور عن عدد الرموز أو الطول لمقطع نصي
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvmqEAd'
 forumTopicId: 18182
@@ -9,23 +9,23 @@ dashedName: find-the-length-of-a-string
 
 # --description--
 
-يمكنك العثور على قيمة طول `String` بكتابة `.length` بعد متغير المقطع (string) أو المقطع النصي (string literal).
+يمكنك العثور على الطول أو عدد الرموز في `String` بكتابة `.length` بعد متغير المقطع النصي أو بعد مقطع حرفي (string literal).
 
 ```js
 console.log("Alan Peter".length);
 ```
 
-سوف يتم عرض القيمة `10` في وحدة التحكم. لاحظ أن رمز المسافة بين "Alan" و "Peter" يتم حسابه أيضا.
+سوف يتم عرض القيمة `10` في الكونسول. لاحظ أن رمز المسافة بين "Alan" و "Peter" يتم عدُّه أيضا.
 
-على سبيل المثال، إذا أنشئت متغير `const firstName = "Ada"`، يمكننا معرفة طول المقطع (string) الآتي `Ada` باستخدام `firstName.length`.
+على سبيل المثال، إذا أنشئت متغير `const firstName = "Ada"`، يمكننا معرفة طول المقطع النصي الآتي `Ada` باستخدام `firstName.length`.
 
 # --instructions--
 
-استخدم خاصية `.length` لتعيين `lastNameLength` إلى عدد الأحرف في `lastName`.
+استخدم خاصية `.length` لتعيين `lastNameLength` إلى عدد الرموز في `lastName`.
 
 # --hints--
 
-لا يجب عليك تغيير تعريفات المتغيرات في قسم `// Setup`.
+لا يجب عليك تغيير إعلانات المتغيرات في قسم `// Setup`.
 
 ```js
 assert(

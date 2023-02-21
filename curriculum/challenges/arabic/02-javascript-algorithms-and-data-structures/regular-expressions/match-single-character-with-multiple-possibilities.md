@@ -8,7 +8,7 @@ dashedName: match-single-character-with-multiple-possibilities
 
 # --description--
 
-تعلمت كيفية مطابقة الأنماط الحرفية (`/literal/`) و wildcard character (`/./`). هذه هي أقصى درجات التعبيرات النمطية، حيث يجد احدهم التطابقات الدقيقة والآخر يطابق كل شيء. وهناك خيارات تمثل توازنا بين الطرفين.
+تعلمت كيفية مطابقة الأنماط الحرفية (`/literal/`) و wildcard character (`/./`). هذه هي أقصى درجات العبارات النمطية، حيث يجد احدهم التطابقات الدقيقة والآخر يطابق كل شيء. وهناك خيارات تمثل توازنا بين الطرفين.
 
 يمكنك البحث عن نمط حرفي مع بعض المرونة باستخدام <dfn>character classes</dfn>. تتيح لك Character classes تعريف مجموعة من الأحرف التي ترغب في تطابقها عن طريق وضعها داخل الأقواس المربعة (`[` و `]`).
 
@@ -30,7 +30,7 @@ bogStr.match(bgRegex);
 
 # --instructions--
 
-استخدم character class مع حروف (`a`, `e`, `i`, `o`, `u`) في regex الخاص بك `vowelRegex` للعثور على جميع الـ vowels في السلسلة `quoteSample`.
+استخدم character class مع حروف (`a`, `e`, `i`, `o`, `u`) في regex الخاص بك `vowelRegex` للعثور على جميع الـ vowels في المقطع النصي `quoteSample`.
 
 **ملاحظة**: تأكد من مطابقة الـ vowels الكبيرة و الصغيرة.
 

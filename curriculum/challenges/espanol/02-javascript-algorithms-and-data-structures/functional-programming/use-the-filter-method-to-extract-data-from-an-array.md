@@ -10,7 +10,7 @@ dashedName: use-the-filter-method-to-extract-data-from-an-array
 
 Otra función útil de los arreglos es `Array.prototype.filter()` o simplemente `filter()`.
 
-`filter` llama a una función en cada elemento de un arreglo y devuelve un nuevo arreglo que contiene solo los elementos por lo que esa función devuelve `true`. En otras palabras, filtra el arreglo, basándose en la función que se le pasa. Al igual que `map`, hace esto sin necesidad de modificar el arreglo original.
+`filter` Llama a una función sobre cada elemento del arreglo y devuelve un nuevo arreglo, conteniendo solo los elementos para los cuales la función devolvió un valor de verdadero - Es decir, un valor que devuelve `true` si paso al constructor `Boolean()`. En otras palabras, filtra el arreglo, basándose en la función que se le pasa. Al igual que `map`, hace esto sin necesidad de modificar el arreglo original.
 
 La función callback acepta tres argumentos. El primer argumento es el elemento actual que se está procesando. El segundo es el índice de ese elemento y el tercero es el arreglo sobre el que se llamó al método `filter`.
 

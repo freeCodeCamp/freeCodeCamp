@@ -17,7 +17,7 @@ dashedName: data-cleaning-and-visualizations
 Додаткові ресурси:
 
 -  <a href="https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp" target="_blank" rel="noopener noreferrer nofollow">Блокноти на GitHub</a>
--  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub використовуючи Google Colab.</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub, використовуючи Google Colab.</a>
 
 # --question--
 
@@ -31,15 +31,15 @@ plt.subplot(1, 2, 1)
 
 ## --answers--
 
-Фігура матиме один стовпець, два рядки, а рисунок почнеться у першому (лівому) графіку.
+Фігура матиме один стовпчик, два рядки, а рисунок почнеться у першому (лівому) графіку.
 
 ---
 
-Рисунок почнеться у першому (лівому) графіку, фігура матиме два рядки, і один стовпець.
+Рисунок почнеться у першому (лівому) графіку, фігура матиме два рядки і один стовпчик.
 
 ---
 
-Фігура матиме один рядок, два стовпці, а рисунок почнеться у першому (лівому) графіку.
+Фігура матиме один рядок, два стовпчики, а рисунок почнеться у першому (лівому) графіку.
 
 ## --video-solution--
 

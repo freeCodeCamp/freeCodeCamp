@@ -20,7 +20,7 @@ dashedName: dictionaries-and-loops
 
 ## --text--
 
-Що буде виведено на екран після виконання наведеного нижче коду?:
+Що надрукує наведений код?:
 
 ```python
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}

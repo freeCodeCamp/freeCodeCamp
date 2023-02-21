@@ -8,20 +8,20 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Now you need to allow a new user on your site to register an account. In the `res.render` for the home page add a new variable to the object passed along - `showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file. This form is set up to **POST** on `/register`, so create that route and have it add the user object to the database by following the logic below.
+现在你需要允许你网站上的新用户注册一个账户。 在主页的 `res.render` 中，给传递的对象添加一个新的变量——`showRegistration: true`。 当你刷新页面时，你应该看到已经在 `index.pug` 文件中创建的注册表格。 这个表单被设置为在 `/register` 上使用 **POST** 方法，因此根据下面的逻辑创建路由并将用户对象添加到数据库中。
 
-The logic of the registration route should be as follows:
+注册路由的逻辑应如下：
 
-1. Register the new user
-2. Authenticate the new user
-3. Redirect to `/profile`
+1. 注册新用户
+2. 验证新用户
+3. 重定向到 `/profile`
 
-The logic of step 1 should be as follows:
+第 1 步的逻辑应如下：
 
-1. Query database with `findOne`
-2. If there is an error, call `next` with the error
-3. If a user is returned, redirect back to home
-4. If a user is not found and no errors occur, then `insertOne` into the database with the username and password. As long as no errors occur there, call `next` to go to step 2, authenticating the new user, which you already wrote the logic for in your `POST /login` route.
+1. 使用 `findOne` 查询数据库
+2. 如果出现错误，调用 `next` 并传入错误对象。
+3. 如果用户结果返回，则重定向至主页
+4. 如果找不到用户并且没有发生错误，那么使用 `insertOne` 在数据库中插入用户名和密码。 只要没有发生错误，就调用 `next` 进行第 2 步，认证新用户，即你已经在 `POST /login` 路由中编写的逻辑。
 
 ```js
 app.route('/register')
@@ -56,13 +56,13 @@ app.route('/register')
   );
 ```
 
-完成上述要求后，请提交你的页面链接。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成上述要求后，请提交你的页面链接。 如果你在运行时遇到错误，可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">查看已完成的项目</a>。
 
 **注意：**接下来的挑战可能会在运行 *picture-in-picture*（画中画）模式的浏览器中出现问题。 如果你使用的线上 IDE 提供在 IDE 内预览 app 的功能，请考虑打开新的标签页预览。
 
 # --hints--
 
-You should have a `/register` route and display a registration form on the home page.
+你应该有 `/register` 路由并在主页上显示注册表单。
 
 ```js
 async (getUserInput) => {

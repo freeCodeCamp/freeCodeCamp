@@ -33,7 +33,13 @@ Cypress テストもしくは「specs」の書き方については、Cypress �
 - 単一のテストを実行します。
 
   ```console
-  npm run cypress:dev:run -- --spec=cypress/pathToYourSpec/youSpecFileName.js
+  npm run cypress -- run --spec=cypress/<path_to_test_file>
+  ```
+
+  For example:
+
+  ```console
+  npm run cypress -- run --spec=cypress/e2e/default/landing.js
   ```
 
 - 開発ビルドを作成するには、開発サーバーを起動し、既存の cypress エンドツーエンドテストをすべて実行します。

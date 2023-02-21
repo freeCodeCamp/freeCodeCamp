@@ -8,13 +8,13 @@ dashedName: set-up-passport
 
 # --description--
 
-It's time to set up *Passport* so you can finally start allowing a user to register or log in to an account. In addition to Passport, you will use Express-session to handle sessions. Express-session has a ton of advanced features you can use, but for now you are just going to use the basics. Using this middleware saves the session id as a cookie in the client, and allows us to access the session data using that id on the server. This way, you keep personal account information out of the cookie used by the client to tell to your server clients are authenticated and keep the *key* to access the data stored on the server.
+现在我们来创建 *Passport*，最终我们需要用它来实现用户注册和登录。 除了 Passport，我们还会用 Express-session 来处理 session（会话）。 Express-session 有许多高级特性供你使用，但你暂时只需要了解其基础功能。 在客户端，我们可以用这个中间件把 session id 储存到 cookie。同时，我们可以在服务器上通过这个 id 访问 session 数据。 通过这种方式，你无需把用户的个人账号信息存到 cookie，来完成用户的验证。只需要用这个 id 作为 *key* 来访问服务器上用户的数据即可。
 
 `passport@~0.4.1` 和 `express-session@~1.17.1` 已经安装，并且在你的 `package.json` 文件中均被列为依赖项。
 
-You will need to set up the session settings and initialize Passport. First, create the variables `session` and `passport` to require `express-session` and `passport` respectively.
+现在，你需要配置 session 并初始化 Passport。 首先，创建变量 `session` 和 `passport` 以便分别请求 `express-session` 和 `passport`。
 
-Then, set up your Express app to use the session by defining the following options:
+然后，通过定义以下选项来设置你的 Express 应用程序来使用会话：
 
 ```javascript
 app.use(session({
@@ -25,15 +25,15 @@ app.use(session({
 }));
 ```
 
-Be sure to add `SESSION_SECRET` to your `.env` file, and give it a random value. This is used to compute the hash used to encrypt your cookie!
+请在 `.env` 文件中添加 `SESSION_SECRET`，并给它赋一个随机值。 这是用来计算用于加密你的 cookie 的哈希值的！
 
-After you do all that, tell your express app to **use** `passport.initialize()` and `passport.session()`.
+在你做了所有这些后，告诉你的 Express 应用程序**使用** `passport.initialize()` 和 `passport.session()`。
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-passport-3" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成后，提交你的页面链接。 如果你遇到错误，可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-passport-3" target="_blank" rel="noopener noreferrer nofollow">查看已完成的项目</a>。
 
 # --hints--
 
-Passport and Express-session should be dependencies.
+应添加 Passort 和 Express-session 作为依赖。
 
 ```js
 async (getUserInput) => {
@@ -53,7 +53,7 @@ async (getUserInput) => {
 }
 ```
 
-Dependencies should be correctly required.
+依赖应正确引入。
 
 ```js
 async (getUserInput) => {
@@ -73,7 +73,7 @@ async (getUserInput) => {
 }
 ```
 
-Express app should use new dependencies.
+Express app 可以使用新的依赖。
 
 ```js
 async (getUserInput) => {
@@ -85,7 +85,7 @@ async (getUserInput) => {
 }
 ```
 
-Session and session secret should be correctly set up.
+应正确设置 session 和 session secret。
 
 ```js
 async (getUserInput) => {

@@ -16,13 +16,31 @@ dashedName: implement-the-filter-method-on-a-prototype
 
 # --hints--
 
-`new_s` يجب أن يساوي `[23, 65, 5]`.
+يجب أن يساوي `[23, 65, 98, 5, 13].myFilter(item => item % 2)` قيمة `[23, 65, 5, 13]`.
 
 ```js
-assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]));
+const _test_s = [23, 65, 98, 5, 13];
+const _callback = item => item % 2;
+assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
 ```
 
-يجب ألا يستخدم الكود الخاص بك دالة `filter`.
+يجب أن ينتج `["naomi", "quincy", "camperbot"].myFilter(element => element === "naomi")` قائمة `["naomi"]`.
+
+```js
+const _test_s = ["naomi", "quincy", "camperbot"];
+const _callback = element => element === "naomi";
+assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
+```
+
+يجب أن ينتج `[1, 1, 2, 5, 2].myFilter((element, index, array) => array.indexOf(element) === index)` قائمة `[1, 2, 5]`.
+
+```js
+const _test_s = [1, 1, 2, 5, 2];
+const _callback = (element, index, array) => array.indexOf(element) === index;
+assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFilter(_callback)));
+```
+
+يجب ألا يستخدم كودك الطريقة (method) المسمى `filter`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?filter/g));
@@ -33,35 +51,27 @@ assert(!code.match(/\.?[\s\S]*?filter/g));
 ## --seed-contents--
 
 ```js
-// The global variable
-const s = [23, 65, 98, 5];
-
 Array.prototype.myFilter = function(callback) {
-  // Only change code below this line
   const newArray = [];
+  // Only change code below this line
+
   // Only change code above this line
   return newArray;
 };
-
-const new_s = s.myFilter(function(item) {
-  return item % 2 === 1;
-});
 ```
 
 # --solutions--
 
 ```js
-const s = [23, 65, 98, 5];
-
 Array.prototype.myFilter = function(callback) {
   const newArray = [];
   for (let i = 0; i < this.length; i++) {
-    if (callback(this[i])) newArray.push(this[i]);
+    if (callback(this[i], i, this)) newArray.push(this[i]);
   }
   return newArray;
 };
 
-const new_s = s.myFilter(function(item) {
-  return item % 2 === 1;
-});
+// Test case
+const s = [23, 65, 98, 5];
+const odd_s = s.myFilter(item => item % 2 === 1);
 ```

@@ -31,7 +31,7 @@ Verkette in der Route `app.get('/now', ...)` eine Middleware-Funktion und den fi
 
 # --hints--
 
-The /now endpoint should have mounted middleware
+Der /now-Endpunkt sollte über eine eingebundene Middleware verfügen
 
 ```js
 (getUserInput) =>

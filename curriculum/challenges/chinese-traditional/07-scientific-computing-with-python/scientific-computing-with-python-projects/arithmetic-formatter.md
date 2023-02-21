@@ -10,6 +10,11 @@ dashedName: arithmetic-formatter
 
 你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
 
+-   首先在 Replit 中導入項目。
+-   接着，你將看到一個 `.replit` 窗口。
+-   選擇 `Use run command` 並點擊 `Done` 按鈕。
+
+
 # --instructions--
 
 小學生經常把算術題垂直排列，這樣更容易解決。 例如，“235 + 52” 變成：
@@ -59,10 +64,10 @@ arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 
 
 - 會返回錯誤的情況：
-  - 如果提供給函數的 **問題過多**。 限制爲 **五個**，更多的將返回： `Error: Too many problems.`
-  - 函數可以接受的運算符是 **加法** 和 **減法** 。 乘法和除法將返回錯誤。 本要點中未提及的其他運算符將不需要進行測試。 返回的錯誤將是： `Error: Operator must be '+' or '-'.`
-  - 每個數字（操作數）應該只包含數字。 否則，該函數將返回： `Error: Numbers must only contain digits.`
-  - 每個操作數（也就是運算符兩側的數字）的寬度最多爲四位。 否則，返回的錯誤字符串將爲： `Error: Numbers cannot be more than four digits.`
+  - 如果提供給函數的**問題過多**。 限制爲**五個**，更多的將返回：`Error: Too many problems.`。
+  - 函數可以接受的運算符是**加法**和**減法**。 乘法和除法將返回錯誤。 本要點中未提及的其他運算符將不需要進行測試。 返回的錯誤將是：`Error: Operator must be '+' or '-'.`。
+  - 每個數字（操作數）應該只包含數字。 否則，該函數將返回：`Error: Numbers must only contain digits.`。
+  - 每個操作數（即運算符每一側的數字）的寬度最多爲四位數字。 否則，返回的錯誤字符串將爲：`Error: Numbers cannot be more than four digits.`。
 - 如果用戶提供了正確格式的問題，返回的轉換將遵循以下規則：
   - 操作符和兩個操作數中最長的一個之間應該有一個空格，操作符將與第二個操作數在同一行，兩個操作數的順序與提供的相同（第一個是上面的，第二個是下面的）。
   - 數字應該右對齊。

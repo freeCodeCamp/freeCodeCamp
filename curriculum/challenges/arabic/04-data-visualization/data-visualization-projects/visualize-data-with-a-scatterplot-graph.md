@@ -8,47 +8,47 @@ dashedName: visualize-data-with-a-scatterplot-graph
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://scatterplot-graph.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://scatterplot-graph.freecodecamp.rocks</a>.
+**متطلبات:** كم ببناء تطبيق يشبه في وظيفته <a href="https://scatterplot-graph.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://scatterplot-graph.freecodecamp.rocks</a>.
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
+يمكنك استخدام HTML و JavaScript و CSS و مكتبة التصوير المستندة D3. تطلب الاختبارات إنشاء المحاور (axes) باستخدام خاصية axis في D3، الذي يؤدي تِلْقائيًا إلى وضع علامات (ticks) على طول المحور. وهذه العلامات لازمة لاجتياز اختبارات D3, لأن مواقعها تُستخدم لتحديد محاذاة العناصر المرسومة بيانيٍ. ستجد معلومات حول إنشاء المحاور في <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Required DOM elements are queried on the moment of each test. إذا كنت تستخدم framework (مثل Vue على سبيل المثال)، قد تكون نتائج الاختبار غير دقيقة للمحتوى الديناميكي. ونأمل أن نستوعبها في المستقبل، ولكن هذه frameworks غير مدعومة حاليا لمشاريع D3.
 
-**User Story #1:** I can see a title element that has a corresponding `id="title"`.
+**قصة المستخدم 1:** يمكنني أن أرى عنصر title مع موافقه `id="title"`.
 
-**User Story #2:** I can see an x-axis that has a corresponding `id="x-axis"`.
+**قصة المستخدم 2:** يمكنني رؤية محور أفقي (x-axis) يحتوي على سمة `id="x-axis"`.
 
-**User Story #3:** I can see a y-axis that has a corresponding `id="y-axis"`.
+**قصة المستخدم 3:** يمكنني رؤية محور رئسي (y-axis) يحتوي على `id="y-axis"`.
 
-**User Story #4:** I can see dots, that each have a class of `dot`, which represent the data being plotted.
+**قصة المستخدم 4:** يمكنني أن أرى نقاط (dots) ولكل منها فئة (class) `dot`، التي تمثل البيانات التي يتم رسمها.
 
-**User Story #5:** Each dot should have the properties `data-xvalue` and `data-yvalue` containing their corresponding `x` and `y` values.
+**قصة المستخدم 5:** كل نقطة يجب أن تحتوي على الخصائص `data-xvalue` و `data-yvalue` التي توافق القيم `x` و `y`.
 
-**User Story #6:** The `data-xvalue` and `data-yvalue` of each dot should be within the range of the actual data and in the correct data format. For `data-xvalue`, integers (full years) or `Date` objects are acceptable for test evaluation. For `data-yvalue` (minutes), use `Date` objects.
+**قصة المستخدم 6:** يجب أن يضمن كل نقطة من `data-xvalue` و `data-yvalue` نطاق البيانات الفعلية وبتنسيق البيانات الصحيحة. في `data-xvalue`، يقبل تقييم الاختبارات الأرقام الصحيحة (السنوات الكاملة) أو كائنات `Date`. في `data-yvalue` (لدقائق)، استخدم كائنات `Date`.
 
-**User Story #7:** The `data-xvalue` and its corresponding dot should align with the corresponding point/value on the x-axis.
+**قصة المستخدم 7:** يجب أن تتوافق `data-xvalue` ونقطتها الموافقة مع النقطة/القيمة الموافقة على محور أفقي (x-axis).
 
-**User Story #8:** The `data-yvalue` and its corresponding dot should align with the corresponding point/value on the y-axis.
+**قصة المستخدم 8:** يجب أن توافق `data-yvalue` ونقطتها الموافقة مع النقطة/القيمة الموافقة على محور أفقي (y-axis).
 
-**User Story #9:** I can see multiple tick labels on the y-axis with `%M:%S` time format.
+**قصة المستخدم 9:** يمكننك رؤية تسميات علامة (tick) متعددة على المحور الرأسي (y-axis) مع تنسيق الوقت `%M:%S`.
 
-**User Story #10:** I can see multiple tick labels on the x-axis that show the year.
+**قصة المستخدم 10:** يمكننك رؤية تسميات علامة (tick) متعددة على المحور الأفقي (x-axis) الذي يظهر السنة.
 
-**User Story #11:** I can see that the range of the x-axis labels are within the range of the actual x-axis data.
+**قصة المستخدم 11:** يمكننك رؤية نطاق (range) تسميات (labels) المحور الأفقي (x-axis) يقع ضمن نطاق بيانات المحور الأفقي (x-axis) فعلاً.
 
-**User Story #12:** I can see that the range of the y-axis labels are within the range of the actual y-axis data.
+**قصة المستخدم 12:** يمكننك رؤية نطاق (range) تسميات (labels) المحور الرأسي (y-axis) تقع ضمن نطاق بيانات المحور الرأسي (y-axis) فعلاً.
 
-**User Story #13:** I can see a legend containing descriptive text that has `id="legend"`.
+**قصة المستخدم 13:** يمكننك رؤية legend تحتوي على نص وصفي وله سمة `id="legend"`.
 
-**User Story #14:** I can mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
+**قصة المستخدم 14:** عند تحريك الفأر (mouse) فوق منطقة سترى أدوات نصيحة (tooltip) لها سمة `id="tooltip"`، وهي تعرض المزيد من المعلومات عن المنطقة.
 
-**User Story #15:** My tooltip should have a `data-year` property that corresponds to the `data-xvalue` of the active area.
+**قصة المستخدم 15:** يجب أن تحتوي تلميح أدواتك (tooltip) على خاصية `data-year` التي تتوافق مع `data-xvalue` في المنطقة النشطة.
 
-Here is the dataset you will need to complete this project: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json`
+إليك مجموعة البيانات التي ستحتاج لإكمال هذا المشروع: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json`
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+يمكنك بناء مشروعك عن طريق <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">استخدام هذا نموذج CodePen</a> والنقر على `Save` لإنشاء pen خاص بك. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+بمجرد أن تنتهي، ارسل عنوان URL لمشروعك مع اجتياز جميع الاختبارات.
 
 # --solutions--
 

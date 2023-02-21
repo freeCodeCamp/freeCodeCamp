@@ -8,23 +8,23 @@ dashedName: how-to-use-passport-strategies
 
 # --description--
 
-In the `index.pug` file supplied, there is a login form. It is hidden because of the inline JavaScript `if showLogin` with the form indented after it.
+在提供的 `index.pug` 文件中，有一個登錄表格。 它被隱藏了，因爲內聯的 JavaScript `if showLogin` 和在它之後縮進的表單。
 
-In the `res.render` for that page, add a new variable to the object, `showLogin: true`. When you refresh your page, you should then see the form! This form is set up to **POST** on `/login`. So, this is where you should set up to accept the POST request and authenticate the user.
+在頁面的 `res.render` 中，爲對象添加一個新變量：`showLogin: true`。 當你刷新你的頁面時，應該能看到表單！ 此表單被設置爲 `/login` 上的 **POST**。 所以，你應該在這裏設置接受 POST 請求並認證用戶。
 
-For this challenge, you should add the route `/login` to accept a POST request. To authenticate on this route, you need to add a middleware to do so before then sending a response. This is done by just passing another argument with the middleware before with your response. The middleware to use is `passport.authenticate('local')`.
+對於這個挑戰，你應該添加路由 `/login` 來接受 POST 請求。 要驗證此路由，你需要添加一箇中間件，然後發送回覆。 這可以通過在你的響應之前向中間件傳遞另一個參數來實現。 要使用的中間件是 `passport.authenticate('local')`。
 
-`passport.authenticate` can also take some options as an argument such as `{ failureRedirect: '/' }` which is incredibly useful, so be sure to add that in as well. Add a response after using the middleware (which will only be called if the authentication middleware passes) that redirects the user to `/profile`. Add that route, as well, and make it render the view `profile.pug`.
+`passport.authenticate` 也可以把一些選項作爲參數，例如 `{ failureRedirect: '/' }`，這非常有用，因此也要確保增加這一點。 在使用中間件後添加一個響應（只有在認證中間件通過後纔會被調用），將用戶重定向到 `/profile`。 添加該路由，讓它呈現視圖 `profile.pug`。
 
-If the authentication was successful, the user object will be saved in `req.user`.
+如果認證成功，用戶對象將被保存在 `req.user`。
 
-At this point, if you enter a username and password in the form, it should redirect to the home page `/`, and the console of your server should display `'User {USERNAME} attempted to log in.'`, since we currently cannot login a user who isn't registered.
+現在，如果你在表單中輸入用戶名和密碼，它應該重定向到主頁 `/`，你的服務器的控制檯應該顯示 `'User {USERNAME} attempted to log in.'`，因爲目前未註冊的用戶無法登錄。
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-use-passport-strategies-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成後，提交你的頁面鏈接。 如果你在運行時遇到錯誤，可以<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-use-passport-strategies-7" target="_blank" rel="noopener noreferrer nofollow">查看已完成的項目</a>。
 
 # --hints--
 
-All steps should be correctly implemented in `server.js`.
+所有步驟都應該在 `server.js` 中正確實現。
 
 ```js
 async (getUserInput) => {
@@ -49,7 +49,7 @@ async (getUserInput) => {
 }
 ```
 
-A POST request to `/login` should correctly redirect to `/`.
+`/login` 的 POST 請求應該正確重定向到 `/`。
 
 ```js
 async (getUserInput) => {

@@ -230,9 +230,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       challenge => challenge.id === challengeId
     );
 
-    const breadcrumbs = document.querySelector('.breadcrumbs-demo');
-    showCodeAlly && breadcrumbs?.remove();
-
     return showCodeAlly ? (
       <LearnLayout>
         <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
@@ -240,7 +237,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
           className='codeally-frame'
           data-cy='codeally-frame'
           name={`codeAlly${Date.now()}`}
-          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
           src={`https://codeally.io/embed/?repoUrl=${url}&${goBackTo}&${envVariables}&${tempToken}&${date}`}
           title='Editor'
@@ -280,84 +276,77 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                   </Trans>
                 </div>
                 <Spacer />
-                {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
-                  <>
-                    <div className='ca-description'>
-                      {t('learn.complete-both-steps')}
-                    </div>
-                    <hr />
-                    <Spacer />
-                    <b>{t('learn.step-1')}</b>
-                    {(isPartiallyCompleted || isCompleted) && (
-                      <GreenPass
-                        style={{
-                          height: '15px',
-                          width: '15px',
-                          marginLeft: '7px'
-                        }}
-                      />
-                    )}
-                    <Spacer />
-                    <div className='ca-description'>
-                      {t('learn.runs-in-vm')}
-                    </div>
-                    <Spacer />
-                    <PrismFormatted text={instructions} />
-                    <Spacer />
-                  </>
-                )}
-                <div
-                  className={`ca-btn-padding ${
-                    !isSignedIn ||
-                    challengeType === challengeTypes.codeAllyPractice
-                      ? 'ca-btn-margin'
-                      : ''
-                  }`}
+                {isSignedIn &&
+                  challengeType === challengeTypes.codeAllyCert && (
+                    <>
+                      <div className='ca-description'>
+                        {t('learn.complete-both-steps')}
+                      </div>
+                      <hr />
+                      <Spacer />
+                      <b>{t('learn.step-1')}</b>
+                      {(isPartiallyCompleted || isCompleted) && (
+                        <GreenPass
+                          style={{
+                            height: '15px',
+                            width: '15px',
+                            marginInlineEnd: '7px'
+                          }}
+                        />
+                      )}
+                      <Spacer />
+                      <div className='ca-description'>
+                        {t('learn.runs-in-vm')}
+                      </div>
+                      <Spacer />
+                      <PrismFormatted text={instructions} />
+                      <Spacer />
+                    </>
+                  )}
+                <Alert id='codeally-cookie-warning' bsStyle='info'>
+                  <p>{t(`intro:misc-text.enable-cookies`)}</p>
+                </Alert>
+                <Button
+                  aria-describedby='codeally-cookie-warning'
+                  block={true}
+                  bsStyle='primary'
+                  data-cy='start-codeally'
+                  onClick={tryToShowCodeAlly}
                 >
-                  <Alert id='codeally-cookie-warning' bsStyle='info'>
-                    <p>{t(`intro:misc-text.enable-cookies`)}</p>
-                  </Alert>
-                  <Button
-                    aria-describedby='codeally-cookie-warning'
-                    block={true}
-                    bsStyle='primary'
-                    data-cy='start-codeally'
-                    onClick={tryToShowCodeAlly}
-                  >
-                    {challengeType === challengeTypes.codeAllyCert
-                      ? t('buttons.click-start-project')
-                      : t('buttons.click-start-course')}
-                  </Button>
-                </div>
-                {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
-                  <>
-                    <hr />
-                    <Spacer />
-                    <b>{t('learn.step-2')}</b>
-                    {isCompleted && (
-                      <GreenPass
-                        style={{
-                          height: '15px',
-                          width: '15px',
-                          marginLeft: '7px'
-                        }}
+                  {challengeType === challengeTypes.codeAllyCert
+                    ? t('buttons.click-start-project')
+                    : t('buttons.click-start-course')}
+                </Button>
+                {isSignedIn &&
+                  challengeType === challengeTypes.codeAllyCert && (
+                    <>
+                      <hr />
+                      <Spacer />
+                      <b>{t('learn.step-2')}</b>
+                      {isCompleted && (
+                        <GreenPass
+                          style={{
+                            height: '15px',
+                            width: '15px',
+                            marginInlineStart: '7px'
+                          }}
+                        />
+                      )}
+                      <Spacer />
+                      <div className='ca-description'>
+                        {t('learn.submit-public-url')}
+                      </div>
+                      <Spacer />
+                      <PrismFormatted text={notes} />
+                      <Spacer />
+                      <SolutionForm
+                        challengeType={challengeType}
+                        description={description}
+                        onSubmit={this.handleSubmit}
+                        updateSolutionForm={updateSolutionFormValues}
                       />
-                    )}
-                    <Spacer />
-                    <div className='ca-description'>
-                      {t('learn.submit-public-url')}
-                    </div>
-                    <Spacer />
-                    <PrismFormatted text={notes} />
-                    <Spacer />
-                    <SolutionForm
-                      challengeType={challengeType}
-                      description={description}
-                      onSubmit={this.handleSubmit}
-                      updateSolutionForm={updateSolutionFormValues}
-                    />
-                  </>
-                )}
+                    </>
+                  )}
                 <ProjectToolPanel />
                 <br />
                 <Spacer />

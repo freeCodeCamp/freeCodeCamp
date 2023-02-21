@@ -1,13 +1,13 @@
 ---
 id: 616d47bc9eedc4bc7f621bec
-title: Step 10
+title: Schritt 10
 challengeType: 0
 dashedName: step-10
 ---
 
 # --description--
 
-Next, within the `div`, add another `div` element and give it a class of `marker`.
+Next, within the `div` element, add another `div` element and give it a class of `marker`.
 
 # --hints--
 

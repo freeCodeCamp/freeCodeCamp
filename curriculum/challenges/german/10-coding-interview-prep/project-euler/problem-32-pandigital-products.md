@@ -8,47 +8,47 @@ dashedName: problem-32-pandigital-products
 
 # --description--
 
-We shall say that an `n`-digit number is pandigital if it makes use of all the digits 1 to `n` exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital.
+Wir sagen, dass eine `n`-stellige Zahl pandigital ist, wenn sie alle Ziffern 1 bis `n` genau einmal verwendet; zum Beispiel ist die 5-stellige Zahl 15234 von 1 bis 5 pandigital.
 
-The product 7254 is unusual, as the identity, 39 × 186 = 7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital.
+Das Produkt 7254 ist ungewöhnlich, da die Identität 39 × 186 = 7254, die Multiplikand, Multiplikator und Produkt enthält, 1 bis 9 pandigital ist.
 
-Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through `n` pandigital.
+Finde die Summe aller Produkte, deren Multiplikand/Multiplikator/Produkt-Identität als 1 durch `n` pandigital geschrieben werden kann.
 
-**Hint:** Some products can be obtained in more than one way so be sure to only include it once in your sum.
+**Hinweis:** Einige Produkte können auf mehr als eine Weise erhalten werden, also achte darauf darauf, dass du sie nur einmal in deine Summe miteinbeziehst.
 
 # --hints--
 
-`pandigitalProducts(4)` should return a number.
+`pandigitalProducts(4)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof pandigitalProducts(4) === 'number');
 ```
 
-`pandigitalProducts(4)` should return `12`.
+`pandigitalProducts(4)` sollte `12` zurückgeben.
 
 ```js
 assert.strictEqual(pandigitalProducts(4), 12);
 ```
 
-`pandigitalProducts(6)` should return `162`.
+`pandigitalProducts(6)` sollte `162` zurückgeben.
 
 ```js
 assert.strictEqual(pandigitalProducts(6), 162);
 ```
 
-`pandigitalProducts(7)` should return `0`.
+`pandigitalProducts(7)` sollte `0` zurückgeben.
 
 ```js
 assert.strictEqual(pandigitalProducts(7), 0);
 ```
 
-`pandigitalProducts(8)` should return `13458`.
+`pandigitalProducts(8)` sollte `13458` zurückgeben.
 
 ```js
 assert.strictEqual(pandigitalProducts(8), 13458);
 ```
 
-`pandigitalProducts(9)` should return `45228`.
+`pandigitalProducts(9)` sollte `45228` zurückgeben.
 
 ```js
 assert.strictEqual(pandigitalProducts(9), 45228);

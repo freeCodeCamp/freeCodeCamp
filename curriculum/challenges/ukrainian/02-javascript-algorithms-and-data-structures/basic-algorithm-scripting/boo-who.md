@@ -1,6 +1,6 @@
 ---
 id: a77dbc43c33f39daa4429b4f
-title: Хто такий Boo
+title: Бу, ти хто?
 challengeType: 1
 forumTopicId: 16000
 dashedName: boo-who
@@ -8,67 +8,67 @@ dashedName: boo-who
 
 # --description--
 
-Перевірте, чи значення відноситься булевого тиру (логічне значення). Функція має повертати `true` or `false`.
+Перевірте, чи значення належить до булевого примітивного. Поверніть `true` або `false`.
 
-Булеві примітиви - це коди `true` правда та `false` неправда.
+Булеві примітивні значення: `true` (правда) та `false` (брехня).
 
 # --hints--
 
-`booWho(true)` повинен повертати `true`.
+`booWho(true)` має повертати `true`.
 
 ```js
 assert.strictEqual(booWho(true), true);
 ```
 
-`booWho(false)` повинен повертати `true`.
+`booWho(false)` має повертати `true`.
 
 ```js
 assert.strictEqual(booWho(false), true);
 ```
 
-`booWho([1, 2, 3])` повинен повертати `false`.
+`booWho([1, 2, 3])` має повертати `false`.
 
 ```js
 assert.strictEqual(booWho([1, 2, 3]), false);
 ```
 
-`booWho([].slice)` повинен повертати `false`.
+`booWho([].slice)` має повертати `false`.
 
 ```js
 assert.strictEqual(booWho([].slice), false);
 ```
 
-`booWho({ "a": 1 })` повинен повертати `false`.
+`booWho({ "a": 1 })` має повертати `false`.
 
 ```js
 assert.strictEqual(booWho({ a: 1 }), false);
 ```
 
-`booWho(1)` повинен повертати `false`.
+`booWho(1)` має повертати `false`.
 
 ```js
 assert.strictEqual(booWho(1), false);
 ```
 
-`booWho(NaN)` повинен повертати `false`.
+`booWho(NaN)` має повертати `false`.
 
 ```js
 assert.strictEqual(booWho(NaN), false);
 ```
 
-`booWho("a")` повинен повертати `false`.
+`booWho("a")` має повертати `false`.
 
 ```js
 assert.strictEqual(booWho('a'), false);
 ```
 
-`booWho("true")` повинен повертати `false`.
+`booWho("true")` має повертати `false`.
 
 ```js
 assert.strictEqual(booWho('true'), false);
 ```
 
-`booWho("false")` повинен повертати `false`.
+`booWho("false")` має повертати `false`.
 
 ```js
 assert.strictEqual(booWho('false'), false);

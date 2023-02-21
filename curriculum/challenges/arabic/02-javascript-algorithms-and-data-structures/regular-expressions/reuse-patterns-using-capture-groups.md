@@ -28,7 +28,7 @@ repeatRegex.test(repeatStr); // Returns true
 repeatStr.match(repeatRegex); // Returns ["row row row", "row"]
 ```
 
-سيؤدي استخدام دالة `.match()` على string إلى ارجاع array بداخله الـ substring المطابق، جنبا إلى جنب مع الـ captured groups الخاصين به.
+سيؤدي استخدام طريقة `.match()` على مقطع (string) إلى أنتاج قائمة (array) بداخلها مقطع فرعي (substring) المطابق، جنبا إلى جنب مع المجموعات المستخدمة الخاصين بها.
 
 
 # --instructions--
@@ -96,6 +96,20 @@ reRegex.lastIndex = 0;
 assert(reRegex.test('10 10 10'));
 ```
 
+Your regex should not match the string `42\t42\t42`.
+
+```js
+reRegex.lastIndex = 0;
+assert(!reRegex.test('42\t42\t42'));
+```
+
+Your regex should not match the string `42  42  42`.
+
+```js
+reRegex.lastIndex = 0;
+assert(!reRegex.test('42  42  42'));
+```
+
 # --seed--
 
 ## --seed-contents--
@@ -110,6 +124,6 @@ let result = reRegex.test(repeatNum);
 
 ```js
 let repeatNum = "42 42 42";
-let reRegex = /^(\d+)\s\1\s\1$/;
+let reRegex = /^(\d+) \1 \1$/;
 let result = reRegex.test(repeatNum);
 ```

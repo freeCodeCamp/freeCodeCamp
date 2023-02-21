@@ -14,11 +14,11 @@ dashedName: use-regular-expressions-to-test-a-string
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Strings` スイート内の `#15` に分類されたテストにおいて、テストを合格にする (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.match` または `assert.notMatch` に変更してください。 アサートに渡された引数を変更しないでください。
+`tests/1_unit-tests.js` の中の、`Strings` スイート内の `#15` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.match` または `assert.notMatch` に変更してください。 アサートに渡された引数を変更しないでください。
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>

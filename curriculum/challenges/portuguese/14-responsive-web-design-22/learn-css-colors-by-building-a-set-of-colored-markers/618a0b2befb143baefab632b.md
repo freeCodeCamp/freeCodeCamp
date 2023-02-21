@@ -11,7 +11,7 @@ Observe que as cores vermelho e ciano estão muito brilhantes perto uma da outra
 
 É uma prática melhor escolher uma cor como a cor dominante e usar sua cor complementar como um destaque para chamar a atenção para certos conteúdos na página.
 
-Primeiro, na regra `h1`, use a função `rgb` para definir a cor de fundo como ciano.
+First, in the `h1` rule, use the `rgb` function to set its `background-color` to cyan.
 
 # --hints--
 

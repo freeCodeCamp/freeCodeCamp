@@ -5,10 +5,9 @@ import { Provider } from 'react-redux';
 
 import { i18nextCodes } from '../../../config/i18n';
 import i18nTestConfig from '../../i18n/config-for-tests';
-import { createStore } from '../redux/createStore';
+import { createStore } from '../redux/create-store';
 import AppMountNotifier from './app-mount-notifier';
 
-jest.mock('react-ga');
 jest.unmock('react-i18next');
 
 type Language = keyof typeof i18nextCodes;

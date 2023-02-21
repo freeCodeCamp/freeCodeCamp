@@ -8,23 +8,23 @@ dashedName: how-to-use-passport-strategies
 
 # --description--
 
-In the `index.pug` file supplied, there is a login form. It is hidden because of the inline JavaScript `if showLogin` with the form indented after it.
+En el archivo `index.pug` proporcionado, hay un formulario de inicio de sesion. Esta oculto debido al JavaScript en línea `if showLogin` con el formulatio indentado luego de este.
 
-In the `res.render` for that page, add a new variable to the object, `showLogin: true`. When you refresh your page, you should then see the form! This form is set up to **POST** on `/login`. So, this is where you should set up to accept the POST request and authenticate the user.
+En el `res.render` para esa página, agrega una nueva variable para el objeto `showLogin: true`. Cuando actualices tu página, entonces deberas ver el formulario! Este formulario est configurado para **POST** en `/login`. Así que, aquí es donde tu deberías configurar para aceptar la petición POST y autenticar al usuario.
 
-For this challenge, you should add the route `/login` to accept a POST request. To authenticate on this route, you need to add a middleware to do so before then sending a response. This is done by just passing another argument with the middleware before with your response. The middleware to use is `passport.authenticate('local')`.
+Para este desafío, tu debes agregar la ruta `/login` para aceptar una petición POST. Para autenticarse en esta ruta, se necesita agregar un middleware para hacer eso antes de enviar una respuesta. Esto se hace pasando otro argumento con el middleware antes que tu respuesta. El middleware para usar es `passport.authenticate('local')`.
 
-`passport.authenticate` can also take some options as an argument such as `{ failureRedirect: '/' }` which is incredibly useful, so be sure to add that in as well. Add a response after using the middleware (which will only be called if the authentication middleware passes) that redirects the user to `/profile`. Add that route, as well, and make it render the view `profile.pug`.
+`passport.authenticate` puede además tomar algunas opciones como argumento tales como `{ failureRedirect: '/' }` la cual es increiblemente útil, así que asegurate de agregarla también. Agrega una respuesta luego de usar el middleware (la cual solo sera llamada si pasa la autenticación del middleware) esta redirige al usuario a `/profile`. Agrega también esa ruta, y haz que renderice la vista `profile.pug`.
 
-If the authentication was successful, the user object will be saved in `req.user`.
+Si la autenticación es exitosa, el objeto usuario será guardado en `req.user`.
 
-At this point, if you enter a username and password in the form, it should redirect to the home page `/`, and the console of your server should display `'User {USERNAME} attempted to log in.'`, since we currently cannot login a user who isn't registered.
+En este punto, si ingresaste un nombre de usuario y contraseña en el formulario, esta debería redirigir a la página inicial `/`, y la consola de tu servidor debería mostrar `'User {USERNAME} attempted to log in.'`, ya que actualmento no podemos iniciar sesión a un usuario que no esta registrado.
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-use-passport-strategies-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Envía tu página cuando creas que esta correcta. Si te encuentras con errores, tu puedes <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-use-passport-strategies-7" target="_blank" rel="noopener noreferrer nofollow">comprueba el proyecto realizado hasta este punto</a>.
 
 # --hints--
 
-All steps should be correctly implemented in `server.js`.
+Todos los pasos deben ser correctamente implementados en `server.js`.
 
 ```js
 async (getUserInput) => {
@@ -49,7 +49,7 @@ async (getUserInput) => {
 }
 ```
 
-A POST request to `/login` should correctly redirect to `/`.
+Una solicitud POST `/login` debería redirigir correctamente a `/`.
 
 ```js
 async (getUserInput) => {

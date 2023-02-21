@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9c
-title: 'Обробка природної мови за допомогою рекурентних нейронних мереж: частина 2'
+title: 'Обробка природної мови за допомогою RNN: частина 2'
 challengeType: 11
 videoId: mUU9YXOFbZg
 bilibiliIds:

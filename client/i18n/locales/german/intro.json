@@ -553,7 +553,7 @@
     "intro": [
       "Bis zu diesem Punkt hast du JavaScript nur im Front-End verwendet, um einer Seite Interaktivität hinzuzufügen, Aufgaben mit Algorithmen zu lösen oder eine SPA zu bauen. Aber JavaScript kann auch im Back-End, also auf dem Server, verwendet werden, um ganze Webanwendungen zu erstellen.",
       "Heutzutage ist eine der beliebtesten Arten, Anwendungen zu erstellen, Microservices. Das sind kleine, modulare Anwendungen, die zusammenarbeiten und ein größeres Ganzes bilden.",
-      "In der Zertifizierung für Back-End-Entwicklung und APIs lernst du, wie du Back-End-Apps mit Node.js und npm (Node Package Manager) schreibst. Du wirst auch Webanwendungen mit dem Express-Framework erstellen und einen Personensuche-Microservice mit MongoDB und der Mongoose-Bibliothek bauen."
+      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -784,6 +784,24 @@
           "Vervollständige die untenstehenden Programmierherausforderungen aus den umfangreichen Archiven von Projekt Euler. Diese werden dein Algorithmus- und Mathematikwissen festigen.",
           "Diese Probleme haben einen unterschiedlichen Schwierigkeitsgrad und für viele ist die Erfahrung ein induktives Kettenlernen. Das bedeutet, dass du durch das Lösen eines Problems ein neues Konzept kennenlernst, das es dir ermöglicht, ein zuvor unzugängliches Problem in Angriff zu nehmen. Kannst du sie alle lösen?"
         ]
+      }
+    }
+  },
+  "the-odin-project": {
+    "title": "The Odin Project",
+    "intro": [
+      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
+      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
+      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
+    ],
+    "blocks": {
+      "top-learn-html-foundations": {
+        "title": "Learn HTML Foundations",
+        "intro": ["A description is to be determined"]
+      },
+      "top-build-a-recipe-project": {
+        "title": "Learn HTML Foundations by Building a Recipe Page",
+        "intro": ["A description is to be determined"]
       }
     }
   },

@@ -8,7 +8,7 @@ dashedName: problem-100-arranged-probability
 
 # --description--
 
-If a box contains twenty-one colored discs, composed of fifteen blue discs and six red discs, and two discs were taken at random, it can be seen that the probability of taking two blue discs.
+Si una caja contiene veintiún discos de colores, compuestos por quince discos azules y seis discos rojos, si dos discos son tomados al azar, podemos ver la probabilidad de tomar dos discos azules.
 
 $${P(BB)} = \frac{15}{21}×\frac{14}{20} = \frac{1}{2}$$
 

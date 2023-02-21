@@ -1,6 +1,6 @@
 ---
 id: 587d7fa7367417b2b2512bc4
-title: Work with Data in D3
+title: Mit Daten in D3 arbeiten
 challengeType: 6
 forumTopicId: 301497
 dashedName: work-with-data-in-d3
@@ -10,7 +10,7 @@ dashedName: work-with-data-in-d3
 
 Die D3-Bibliothek stützt sich auf einen datenbezogenen Ansatz. Hast du einen Datensatz, kannst du Methoden aus der D3-Bibliothek verwenden, um diesen auf der Seite anzuzeigen. Es gibt verschiedene Datenformate, diese Aufgabe aber behandelt einen einfachen Zahlen-Array.
 
-The first step is to make D3 aware of the data. Die Methode `data()` wird auf eine Auswahl von DOM-Elementen angewendet, um die Daten an diese Elemente anzuhängen. Der Datensatz wird anschließend als Argument an die Methode übergeben.
+In einem ersten Schritt weisen wir D3 auf die Daten hin. Die Methode `data()` wird auf eine Auswahl von DOM-Elementen angewendet, um die Daten an diese Elemente anzuhängen. Der Datensatz wird anschließend als Argument an die Methode übergeben.
 
 Ein häufig verwendetes Workflow-Muster ist es, für jeden im Datensatz vorhandenen Eintrag, ein neues Element im Dokument zu erstellen. Hierfür gibt es bei D3 die `enter()`-Methode.
 

@@ -1,5 +1,6 @@
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import { isEmpty } from 'lodash-es';
+import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -8,7 +9,7 @@ import { createSelector } from 'reselect';
 
 import envData from '../../../config/env.json';
 import { getLangCode } from '../../../config/i18n';
-import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
+import FreeCodeCampLogo from '../assets/icons/freecodecamp';
 import DonateForm from '../components/Donation/donate-form';
 
 import { createFlashMessage } from '../components/Flash/redux';
@@ -30,6 +31,7 @@ import certificateMissingMessage from '../utils/certificate-missing-message';
 import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
 import standardErrorMessage from '../utils/standard-error-message';
 
+import { PaymentContext } from '../../../config/donation-settings';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -153,12 +155,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     ) {
       setIsDonationDisplayed(true);
       executeGA({
-        type: 'event',
-        data: {
-          category: 'Donation View',
-          action: 'Displayed Certificate Donation',
-          nonInteraction: true
-        }
+        event: 'donationview',
+        action: 'Displayed Certificate Donation'
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -176,20 +174,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     setIsDonationClosed(true);
   };
 
-  const handleProcessing = (
-    duration: string,
-    amount: number,
-    action: string
-  ) => {
-    props.executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `certificate ${action}`,
-        label: duration,
-        value: amount
-      }
-    });
+  const handleProcessing = () => {
     setIsDonationSubmitted(true);
   };
 
@@ -269,6 +254,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             defaultTheme={Themes.Default}
             handleProcessing={handleProcessing}
             isMinimalForm={true}
+            paymentContext={PaymentContext.Certificate}
           />
         </Col>
       </Row>
@@ -346,7 +332,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
               </h1>
               <h3>placeholder</h3>
               <h1>
-                <strong>{{ title: certTitle }}</strong>
+                <strong>
+                  {{ title: t(`certification.title.${certTitle}`, certTitle) }}
+                </strong>
               </h1>
               <h4>{{ time: completionTime }}</h4>
             </Trans>
@@ -366,6 +354,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             </p>
             <p>{t('certification.executive')}</p>
           </div>
+          <span className='qr-wrap'>
+            <QRCodeSVG className='qr-code' value={certURL} />
+          </span>
           <Row>
             <p className='verify'>
               {t('certification.verify', { certURL: certURL })}

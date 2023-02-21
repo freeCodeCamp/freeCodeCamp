@@ -19,8 +19,10 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
+    "@types/js-yaml": "4.0.5",
     "debug": "4.3.2",
     "dotenv": "16.0.3",
+    "js-yaml": "4.1.0",
     "readdirp": "3.6.0"
   }
 }

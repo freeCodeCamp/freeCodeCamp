@@ -10,6 +10,11 @@ dashedName: medical-data-visualizer
 
 你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
 
+-   首先在 Replit 中导入项目。
+-   接着，你将看到一个 `.replit` 窗口。
+-   选择 `Use run command` 并点击 `Done` 按钮。
+
+
 我们仍在开发 Python 课程的交互式教学部分。 目前，你可以在 YouTube 上通过 freeCodeCamp.org 上传的一些视频学习这个项目相关的知识。
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">给所有人的 Python 课程</a>（14 小时）
@@ -47,9 +52,9 @@ dashedName: medical-data-visualizer
 
 在 `medical_data_visualizer.py` 中使用数据完成以下任务：
 
-- 给数据添加一列 `overweight`。 要确定一个人是否超重，首先通过将他们的体重（公斤）除以他们的身高（米）的平方来计算他们的 BMI。 如果该值 > 25，则此人超重。 使用值 0 表示不超重，使用值 1 表示超重。
+- 给数据添加一列 `overweight`。 要确定一个人是否超重，首先通过将他们的体重（公斤）除以他们的身高（米）的平方来计算他们的 BMI。 如果该值是 > 25，则此人超重。 使用值 0 表示不超重，使用值 1 表示超重。
 - 使用 0 表示好的和 1 表示坏，来规范化数据。 如果 `cholesterol` 或 `gluc` 的值为 1，则将值设为 0。 如果值大于 1，则将值设为 1。
-- 将数据转换为长格式并使用 seaborn 的 `catplot()` 创建一个显示分类特征值计数的图表。 数据集应按“Cardio”拆分，因此每个 `cardio` 值都有一个图表。 该图表应该看起来像 `examples/Figure_1.png`。
+- 将数据转换为长格式并使用 seaborn 的 `catplot()` 创建一个显示分类特征值计数的图表。 数据集应按 “Cardio” 拆分，因此每个 `cardio` 值都有一个图表。 该图表应该看起来像 `examples/Figure_1.png`。
 - 清理数据。 过滤掉以下代表不正确数据的患者段：
   - 舒张压高于收缩压（使用 `(df['ap_lo'] <= df['ap_hi'])` 保留正确的数据）
   - 高度小于第 2.5 个百分位数（使用 `(df['height'] >= df['height'].quantile(0.025))` 保留正确的数据）

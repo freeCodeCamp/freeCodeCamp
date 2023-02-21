@@ -11,7 +11,7 @@ Obsérvese que los colores rojo y cian son muy brillantes uno al lado del otro. 
 
 Es mejor práctica elegir un color como dominante, y usar su complementario como énfasis para dirigir la atención sobre cierto contenido de la página.
 
-Primero, en la regla `h1`, usa la función `rgb` para establecer el color de fondo a cian.
+First, in the `h1` rule, use the `rgb` function to set its `background-color` to cyan.
 
 # --hints--
 

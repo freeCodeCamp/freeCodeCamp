@@ -10,6 +10,11 @@ dashedName: probability-calculator
 
 Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
 
+-   Inizia importando il progetto su Replit.
+-   Poi vedrai una finestra `.replit`.
+-   Seleziona `Use run command` e clicca sul pulsante `Done`.
+
+
 # --instructions--
 
 Supponiamo che ci sia un cappello contenente 5 palline blu, 4 palline rosse e 2 palline verdi. Qual è la probabilità che una pescata casuale di 4 palline contenga almeno 1 pallina rossa e 2 palline verdi? Mentre sarebbe possibile calcolare la probabilità utilizzando la matematica avanzata, un modo più facile è quello di scrivere un programma per eseguire un gran numero di esperimenti per stimare una probabilità approssimativa.

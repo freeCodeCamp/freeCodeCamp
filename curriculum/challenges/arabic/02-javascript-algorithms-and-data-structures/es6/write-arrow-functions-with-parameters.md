@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b44
-title: Write Arrow Functions with Parameters
+title: أنشاء وظائف السهم (Arrow Functions) مع الوسائط
 challengeType: 1
 forumTopicId: 301223
 dashedName: write-arrow-functions-with-parameters
@@ -17,7 +17,7 @@ doubler(4);
 
 `doubler(4)` سوف يعيد القيمة `8`.
 
-إذا كان للـ arrow function معلمة واحدة، يمكن حذف الأقواس المرفقة بالمعلمة.
+إذا كان للوظيفة السهم وسيط واحدة، يمكن حذف الأقواس المرفقة للوسيط.
 
 ```js
 const doubler = item => item * 2;
@@ -41,16 +41,16 @@ multiplier(4, 2);
 يجب عليك استبدال كلمة `var`.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 `myConcat` يجب أن يكون متغير ثابت (باستخدام `const`).
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+myConcat/g));
+assert.match(code, /const\s+myConcat/g);
 ```
 
-`myConcat` يجب أن تكون arrow function مع معلمين (two parameters)
+يجب أن تكون `myConcat` وظيفة السهم (arrow function) مع وسيطين (parameters)
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
 لا ينبغي استخدام كلمة `function`.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/function/g));
+assert.notMatch(code, /function/g);
 ```
 
 # --seed--

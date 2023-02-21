@@ -8,7 +8,7 @@ dashedName: set-state-with-this-setstate
 
 # --description--
 
-التحديات السابقة غط المكون `state` وكيفية تهيئة الحالة في `constructor`. وهناك أيضا طريقة لتغيير `state` المكون. يوفر React طريقة لتحديث المكون `state` يسمى `setState`. يمكنك التواصل بطريقة `setState` داخل فئة المكون الخاص بك مثل: `this.setState()`، المرور في كائن مع أزواج القيمة الرئيسة. هُوِيَّات (keys) هي خصائص الحالة الخاصة بك والقيم بيانات الحالتهم المحدثة. على سبيل المثال، إذا كنا نخزن `username` في الحالة و أردنا تحديثه، فسيبدو كذلك:
+تحدثت التحديات السابقة عن `state` للمكون (component) وكيفية تهيئة الحالة (state) في `constructor`. وهناك أيضا طريقة لتغيير `state` المكون (component). يوفر React طريقة (method) لتحديث `state` المكون (component) تسمى `setState`. يمكنك التواصل بطريقة (method) تسمى `setState` داخل فئة مكونك (component class) مثل: `this.setState()`، وإرسال كائن (object) مع أزواج القيمة الرئيسة (key-value). تكون الهُوِيَّات (keys) حالة (state) خصائصك (properties) وقيم حالة البيانات المحدثة. على سبيل المثال، إذا خزنت `username` في الحالة (state) و أردنا تحديثه، فسيبدو كذلك:
 
 ```jsx
 this.setState({
@@ -16,17 +16,17 @@ this.setState({
 });
 ```
 
-React يتوقع منك عدم تعديل `state` قاصدًا، بدلاً من ذلك استخدم `this.setState()` دائماً عند حدوث تغييرات في الحالة. كما يجب أن تشير إلى أن React قد تركيب تحديث حالة متعدد من أجل تحسين الأداء. ما يعنيه هذا هو أن تحديثات الحالة بواسطة طريقة `setState` يمكن أن تكون غير متزامن. هناك صيغة بديلة لطريقة `setState` التي توفر طريقة حول هذه المشكلة. هذا نادراً ما تكون هناك حاجة إليه ولكن من الجيد أن معرفته! يرجى الرجوع إلى <a href="https://www.freecodecamp.org/news/what-is-state-in-react-explained-with-examples/" target="_blank" rel="noopener noreferrer nofollow">React Article</a> لمزيد من التفاصيل.
+يتوقع React منك عدم تعديل `state` قاصدًا، بدلاً من ذلك استخدم `this.setState()` دائماً عند حدوث تغييرات في الحالة (state). كما يجب أن تشير إلى أن React قد تركيب تحديث حالة (state) متعدد من أجل تحسين الأداء. ما يعنيه هذا هو أن تحديثات الحالة (state) بواسطة طريقة (method) تسمى `setState` يمكن أن تكون غير متزامن (asynchronous). هناك صيغة بديلة لطريقة `setState` التي توفر حل حول هذه المشكلة. هذا نادراً ما تكون هناك حاجة إليه ولكن من الجيد أن معرفته! يرجى الرجوع إلى <a href="https://www.freecodecamp.org/news/what-is-state-in-react-explained-with-examples/" target="_blank" rel="noopener noreferrer nofollow">مقال React</a> لمزيد من التفاصيل.
 
 # --instructions--
 
-هناك عنصر `button` في محرر التعليمات البرمجية له معالج `onClick()`. يتم تشغيل هذا المعالج عندما يستقبل `button` حدث النقر في المتصفح، يشغل الطريقة `handleClick` المعرَّفة في `MyComponent`. في إطار طريقة `handleClick` حدث المكون `state` باستخدام `this.setState()`. عيّن خاصية `name` في `state` لتساوي string باسم `React Rocks!`.
+هناك عنصر `button` في محرر التعليمات البرمجية له معالج `onClick()`. يتم تشغيل هذا المعالج عندما يستقبل `button` حدث النقر في المتصفح، يشغل الطريقة `handleClick` المعرَّفة في `MyComponent`. في حدود طريقة (method) المسمى `handleClick` حدث `state` للمكون (component) باستخدام `this.setState()`. عيّن خاصية (property) المسمى `name` في `state` لتساوي مقطع نصي (string) بقيمة `React Rocks!`.
 
-انقر على الزر (button) لمشاهدة تحديث الحالة التي تم تقديمها. لا تقلق إذا كنت لا تفهم تماما كيف يعمل رمز المعالج في هذه المرحلة. إنه مغطى في التحديات القادمة.
+انقر على الزر (button) وشاهد تحديث الحالة (state) المنشئة. لا تقلق إذا كنت لا تفهم تماما كيف يعمل رمز المعالج في هذه المرحلة. إنه مغطى في التحديات القادمة.
 
 # --hints--
 
-حالة `MyComponent` يجب أن تهيئ مع زوج القيمة الهُوِيَّة `{ name: Initial State }`.
+يجب أن تهيئ حالة `MyComponent` مع زوج القيمة الرئيسة `{ name: Initial State }`.
 
 ```js
 assert(
@@ -41,7 +41,7 @@ assert(
 assert(Enzyme.mount(React.createElement(MyComponent)).find('h1').length === 1);
 ```
 
-يجب أن يحتوي عنصر العنوان `h1` المُنتج على النص المقدم من حالة المكون.
+يجب أن يحتوي عنصر العنوان `h1` المُنتج على النص المقدم من حالة المكون (component's state).
 
 ```js
 async () => {
@@ -57,7 +57,7 @@ async () => {
 };
 ```
 
-أستدعي طريقة `handleClick` في `MyComponent` لتعيين خاصية الاسم في الحالة لتكون `React Rocks!`.
+فَعّيل الطريقة (method) المسمى `handleClick` في `MyComponent` لتعيين خاصية name في الحالة (state) لتساوي `React Rocks!`.
 
 ```js
 async () => {

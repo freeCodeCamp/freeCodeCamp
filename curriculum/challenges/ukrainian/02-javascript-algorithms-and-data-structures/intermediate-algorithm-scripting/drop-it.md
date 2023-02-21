@@ -1,6 +1,6 @@
 ---
 id: a5deed1811a43193f9f1c841
-title: Видалення елементів масиву
+title: Облиште
 challengeType: 1
 forumTopicId: 16010
 dashedName: drop-it
@@ -8,13 +8,13 @@ dashedName: drop-it
 
 # --description--
 
-Враховуючи масив `arr`, виконати ітерацію і видалення кожного елементу, починаючи з першого елементу (індекс 0), поки функція `func` не повертається як `true`, коли елемент пройшов ітерацію.
+Переберіть масив `arr` та вилучіть кожен елемент, починаючи з першого елемента (індекс 0), допоки функція `func` не поверне `true`, коли ітерований елемент пройде крізь.
 
-Потім повернути решту масиву, якщо умову виконано, в іншому випадку, `arr` повинен повертатися у вигляді пустого масиву.
+Потім поверніть решту масиву, якщо умову виконано. В іншому випадку `arr` має повертатися у вигляді порожнього масиву.
 
 # --hints--
 
-`dropElements([1, 2, 3, 4], function(n) {return n >= 3;})` повинен повертатися як `[3, 4]`.
+`dropElements([1, 2, 3, 4], function(n) {return n >= 3;})` має повертати `[3, 4]`.
 
 ```js
 assert.deepEqual(
@@ -25,7 +25,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([0, 1, 0, 1], function(n) {return n === 1;})` повинен повертатися як `[1, 0, 1]`.
+`dropElements([0, 1, 0, 1], function(n) {return n === 1;})` має повертати `[1, 0, 1]`.
 
 ```js
 assert.deepEqual(
@@ -36,7 +36,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3], function(n) {return n > 0;})` повинен повертатися як `[1, 2, 3]`.
+`dropElements([1, 2, 3], function(n) {return n > 0;})` має повертати `[1, 2, 3]`.
 
 ```js
 assert.deepEqual(
@@ -47,7 +47,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3, 4], function(n) {return n > 5;})` повинен повертатися як `[]`.
+`dropElements([1, 2, 3, 4], function(n) {return n > 5;})` має повертати `[]`.
 
 ```js
 assert.deepEqual(
@@ -58,7 +58,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})` повинен повертатися як `[7, 4]`.
+`dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})` має повертати `[7, 4]`.
 
 ```js
 assert.deepEqual(
@@ -69,7 +69,7 @@ assert.deepEqual(
 );
 ```
 
-`dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})` повинен повертатися як `[3, 9, 2]`.
+`dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})` має повертати `[3, 9, 2]`.
 
 ```js
 assert.deepEqual(

@@ -56,7 +56,7 @@ assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
 assert.deepStrictEqual(rangeOfNumbers(4, 4), [4]);
 ```
 
-Global variables should not be used to cache the array.
+配列をキャッシュするためにグローバル変数を使用しないでください。
 
 ```js
 rangeOfNumbers(1, 3)

@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c162
-title: 'Зчитування даних: CSV та TXT'
+title: Зчитування даних CSV та TXT
 challengeType: 11
 videoId: ViGEv0zOzUk
 bilibiliIds:
@@ -17,13 +17,13 @@ dashedName: reading-data-csv-and-txt
 Додаткові ресурси:
 
 -  <a href="https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas" target="_blank" rel="noopener noreferrer nofollow">Блокноти на GitHub</a>
--  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub використовуючи Google Colab.</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub, використовуючи Google Colab.</a>
 
 # --question--
 
 ## --text--
 
-Як, використовуючи модуль Pandas, можна імпортувати і зберегти у таблиці даних CSV файл `data.csv`?
+Як за допомогою модуля Pandas можна імпортувати і зберегти у таблиці даних CSV файл `data.csv`?
 
 ## --answers--
 

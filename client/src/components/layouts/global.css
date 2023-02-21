@@ -23,6 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  height: 100%;
 }
 
 .codeally-frame {
@@ -48,14 +49,28 @@ body {
   for those pages.
 */
 .overflow-fix {
-  margin-right: 0;
-  margin-left: 0;
+  margin-inline: 0;
 }
 
 .default-layout {
-  flex: 1 0 auto;
   margin-top: var(--header-height, 0);
   background: var(--secondary-background);
+}
+
+.default-layout:only-child {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+#content-start {
+  min-height: 0;
+  height: 100%;
+}
+
+#content-start > div {
+  height: 100%;
 }
 
 h1 {
@@ -304,7 +319,7 @@ fieldset[disabled] .btn-primary.focus {
   height: 100%;
   min-height: 20px;
   min-width: 16px;
-  margin-left: 5px;
+  margin-inline-start: 5px;
 }
 
 .link-btn:active {
@@ -453,6 +468,11 @@ hr {
 
 .dropdown-menu {
   background-color: var(--secondary-color);
+}
+
+.dropdown,
+.dropdown > .dropdown-menu {
+  width: 100%;
 }
 
 .dropdown-menu > li > a {
@@ -622,6 +642,10 @@ blockquote .small {
   background-color: #31708f;
   color: #d9edf7;
   border-color: #31708f;
+}
+
+.alert-dismissable .close {
+  top: 0;
 }
 
 .annual-donation-alert {

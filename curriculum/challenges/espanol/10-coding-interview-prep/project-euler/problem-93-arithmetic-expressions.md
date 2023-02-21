@@ -19,7 +19,7 @@ Por ejemplo,
   36 = 3 * 4 * (2 + 1)
 </div>
 
-Note that concatenations of the digits, like 12 + 34, are not allowed.
+Tenga en cuenta que no se permiten concatenaciones de dígitos, como 12 + 34.
 
 Using the set, {1, 2, 3, 4}, it is possible to obtain thirty-one different target numbers of which 36 is the maximum, and each of the numbers 1 to 28 can be obtained before encountering the first non-expressible number.
 

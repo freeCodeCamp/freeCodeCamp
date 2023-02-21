@@ -36,7 +36,7 @@ assert(logoutUser().type === 'LOGOUT');
 assert(store.getState().authenticated === false);
 ```
 
-إرسال `loginUser` يجب أن تحديث خاصية `login` في حالة المتجر إلى `true`.
+إرسال `loginUser` يجب أن تحديث خاصية `login` في حالة (state) المتجر (store) إلى `true`.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-إرسال `logoutUser` يجب أن تحديث خاصية `login` في حالة المتجر إلى `false`.
+إرسال `logoutUser` يجب أن تحديث خاصية `login` في حالة (state) المتجر (store) إلى `false`.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-يجب أن تتعامل وظيفة `authReducer` مع أنواع متعددة من الإجراءات مع تعبير switch.
+يجب أن تتعامل وظيفة `authReducer` مع أنواع متعددة من الإجراءات (actions) مع تعبير switch.
 
 ```js
 (getUserInput) =>

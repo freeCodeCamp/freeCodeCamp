@@ -6,8 +6,6 @@ import { bindActionCreators, Dispatch } from 'redux';
 
 import { openModal } from '../redux/actions';
 
-import './tool-panel.css';
-
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -24,13 +22,13 @@ interface ToolPanelProps {
   t: TFunction;
 }
 
-export function ToolPanel({
+function ToolPanel({
   guideUrl,
   openHelpModal,
   t
 }: ToolPanelProps): JSX.Element {
   return (
-    <div className='tool-panel-group project-tool-panel'>
+    <>
       {guideUrl && (
         <Button
           block={true}
@@ -50,7 +48,7 @@ export function ToolPanel({
       >
         {t('buttons.ask-for-help')}
       </Button>
-    </div>
+    </>
   );
 }
 

@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-Global variables should not be used to cache the array.
+配列をキャッシュするためにグローバル変数を使用しないでください。
 
 ```js
 countdown(1)

@@ -25,7 +25,7 @@ dashedName: build-a-product-landing-page
 1. Dentro il modulo, dovrebbe esserci un `input` per inviare il modulo con un corrispondente `id="submit"`
 1. Cliccando l'elemento `#submit`, l'email dovrebbe essere inviata a una pagina statica (usa l'URL non funzionante: `https://www.freecodecamp.com/email-submit`)
 1. La barra di navigazione dovrebbe essere sempre in cima al viewport
-1. La landing page dovrebbe avere almeno un media query
+1. La landing page dovrebbe avere almeno una media query
 1. La landing page dovrebbe utilizzare CSS flexbox almeno una volta
 
 Soddisfa le user story e supera tutti i test qui sotto per completare questo progetto. Usa il tuo stile personale. Buon divertimento!
@@ -154,7 +154,7 @@ const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-L'elemento `#email`dovrebbe avere un attributo `placeholder` con del testo segnaposto.
+L'elemento `#email` dovrebbe avere un attributo `placeholder` con del testo segnaposto.
 
 ```js
 const el = document.getElementById('email')

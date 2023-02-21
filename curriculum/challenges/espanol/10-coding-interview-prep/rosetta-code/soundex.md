@@ -8,60 +8,60 @@ dashedName: soundex
 
 # --description--
 
-**Soundex Algorithm** deals with the *intentions* of the words. It creates a representation for similar sounding words.
+**Soundex Algorithm** trata con la *intentions* de las palabras. Crea una representación para palabras de sonido similar.
 
-It is used for searching <em>names</em> and <em>addresses</em>. This means that the person who filled in the <em>name</em>, can focus on how it sounds instead of correcting the spelling of <em>names</em>.
+Es usada para buscar <em>names</em> y <em>addresses</em>. Esto significa que la persona que llenó el <em>name</em>, puede enfocarse en como suena en lugar de corregir la pronunciación de <em>names</em>.
 
-For example:
+Por ejemplo:
 
-If you are hearing the name `Quenci` for the first time, and misspelled it, you will get **Soundex** code `Q520`.
+Si estás escuchando el nombre `Quenci` por primera vez, y mal ingresado obtendrás el código **Soundex** `Q520`.
 
-When you spell the name `Quincy` correctly next time, you will still get the same code `Q520`, which means you can link multiple name pronunciations into the same <em>person</em> without the need for adding every spelling.
+Cuando deletreas correctamente el nombre `Quincy` la próxima vez, aún obtendrás el mismo código `Q520`, lo que significa que tu puedes enlazar multiples pronunciaciones de nombre sobre el mismo <em>person</em> sin la necesidad de agregar cada deletreo.
 
-Here is the rules: 
+Aquí están las reglas: 
 
 <ul>
-  <li>If a vowel (A, E, I, O, U) separates two consonants that have the same soundex code, the consonant to the right of the vowel is coded. Tymczak is coded as T-522 (T, 5 for the M, 2 for the C, Z ignored (see "Side-by-Side" rule above), 2 for the K). Since the vowel "A" separates the Z and K, the K is coded.</li>
-  <li>If "H" or "W" separate two consonants that have the same soundex code, the consonant to the right of the vowel is not coded. Example: Ashcraft is coded A-261 (A, 2 for the S, C ignored, 6 for the R, 1 for the F). It is not coded A-226.</li>
+  <li>Si una vocal (A, E, I, O, U) separa dos consonantes que tienen el mismo código soundex, la consonante a la derecha de la vocal es codificada. Tymczak es codificado como T-522 (T, 5 para la M, 2 para la C, Z es ignorada (Consulta en la parte superior la regla "Side-by-Side"), 2 para la K). Puesto que la vocal "A" separa la Z y K, la K is codificada.</li>
+  <li>Si la "H" o "W" separan dos consonantes que tienen el mismo código, la consonante a la derecha de la vocal no es codificada. Ejemplo: Ashcraft es codificado A-261 (A, 2 para la S, C es ignorado, 6 para la R, 1 para la F). No es codificado A-226.</li>
 </ul>
 
 # --instructions--
 
-Write a function that takes a string as a parameter and returns the encoded string.
+Escribe una función Write que tome una cadena como un parámetro y devuelva la cadena codificada.
 
 # --hints--
 
-`soundex` should be a function.
+`soundex` debe ser una función.
 
 ```js
 assert(typeof soundex == 'function');
 ```
 
-`soundex("Soundex")` should return a string.
+`soundex("Soundex")` debe devolver una cadena.
 
 ```js
 assert(typeof soundex('Soundex') == 'string');
 ```
 
-`soundex("Soundex")` should return `"S532"`.
+`soundex("Soundex")` debe devolver `"S532"`.
 
 ```js
 assert.equal(soundex('Soundex'), 'S532');
 ```
 
-`soundex("Example")` should return `"E251"`.
+`soundex("Example")` debe devolver `"E251"`.
 
 ```js
 assert.equal(soundex('Example'), 'E251');
 ```
 
-`soundex("Sownteks")` should return `"S532"`.
+`soundex("Sownteks")` deb retornar `"S532"`.
 
 ```js
 assert.equal(soundex('Sownteks'), 'S532');
 ```
 
-`soundex("Ekzampul")` should return `"E251"`.
+`soundex("Ekzampul")` debe devolver `"E251"`.
 
 ```js
 assert.equal(soundex('Ekzampul'), 'E251');

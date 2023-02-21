@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e2
-title: Caesars Cipher
+title: شفرة قيصر
 challengeType: 5
 forumTopicId: 16003
 dashedName: caesars-cipher
@@ -12,7 +12,7 @@ dashedName: caesars-cipher
 
 من الاستخدامات الحديثة الشائعة تشفير <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a> ، حيث يتم تبديل قيم الحروف بمقدار 13 مكانًا. وهكذا `A ↔ N`، `B ↔ O` وما إلى ذلك.
 
-اكتب دالة تأخذ سلسلة نصية مشفرة من نوع <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a> كمدخل وترجع سلسلة نصية مشفرة.
+اكتب وظيفة (function) تأخذ مقطع نصي (string) مشفر من نوع <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a> كمدخل وتنتج مقطع نصي غير مشفر.
 
 جميع الحروف ستكون كبيرة (uppercase). لا تغير أي حرف غير أبجدي (مثل المسافات وعلامات الترقيم)، ولكن مررها.
 

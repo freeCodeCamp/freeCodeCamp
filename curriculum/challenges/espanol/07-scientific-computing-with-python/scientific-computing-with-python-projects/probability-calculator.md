@@ -10,6 +10,11 @@ dashedName: probability-calculator
 
 Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 # --instructions--
 
 Supongamos que hay un sombrero que contiene 5 bolas azules, 4 bolas rojas y 2 bolas verdes. ¿Cuál es la probabilidad de que un sorteo aleatorio de 4 bolas contenga al menos 1 bola roja y 2 bolas verdes? Mientras que sería posible calcular la probabilidad usando matemáticas avanzadas, una manera más fácil es escribir un programa para realizar un gran número de experimentos para estimar una probabilidad aproximada.
@@ -30,10 +35,10 @@ La clase `Hat` debe tener un método `draw` que acepte un argumento que indique 
 
 A continuación, crea una función `experiment` en `prob_calculator.py` (no dentro de la clase `Hat`). Esta función debe aceptar los siguientes argumentos:
 
-- `hat`: Un objeto sombrero que contiene bolas que deben ser copiadas dentro de la función.
-- `expected_balls`: Un objeto que indica el grupo exacto de bolas para intentar sacar del sombrero para el experimento. Por ejemplo, para determinar la probabilidad de dibujar 2 bolas azules y 1 bola roja del sombrero, establece `expected_balls` a `{"blue":2, "red":1}`.
-- `num_balls_drawn`: El número de bolas a dibujar del sombrero en cada experimento.
-- `num_experiments`: El número de experimentos a realizar. (Cuantos más experimentos se realicen, más precisa será la probabilidad aproximada)
+- `hat`: A hat object containing balls that should be copied inside the function.
+- `expected_balls`: An object indicating the exact group of balls to attempt to draw from the hat for the experiment. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
+- `num_balls_drawn`: The number of balls to draw out of the hat in each experiment.
+- `num_experiments`: The number of experiments to perform. (The more experiments performed, the more accurate the approximate probability will be.)
 
 La función `experiment` debe devolver una probabilidad.
 

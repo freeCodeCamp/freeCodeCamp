@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08816
-title: Link to External Pages with Anchor Elements
+title: الربط بصفحات خارجية بواسطة العناصر Anchor
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EkncB'
 forumTopicId: 18226
@@ -11,13 +11,13 @@ dashedName: link-to-external-pages-with-anchor-elements
 
 You can use `a` (*anchor*) elements to link to content outside of your web page.
 
-`a` elements need a destination web address called an `href` attribute. They also need anchor text. Here's an example:
+عناصر `a` تتطلّب عنوان وب للوجهة يسمّى: `href`. وتتطلّب أيضا نصّ رابط anchor. Here's an example:
 
 ```html
 <a href="https://www.freecodecamp.org">this links to freecodecamp.org</a>
 ```
 
-Then your browser will display the text `this links to freecodecamp.org` as a link you can click. And that link will take you to the web address `https://www.freecodecamp.org`.
+ثم يعرض متصفّحك نص: `this links to freecodecamp.org` على هيئة رابط يمكنك النقر عليه. And that link will take you to the web address `https://www.freecodecamp.org`.
 
 # --instructions--
 
@@ -31,13 +31,13 @@ Your `a` element should have the anchor text of `cat photos`.
 assert(/cat photos/gi.test($('a').text()));
 ```
 
-You need an `a` element that links to `https://www.freecatphotoapp.com`
+تحتاج إلى عنصر `a` يربط بـعنوان `https://www.freecatphotoapp.com`
 
 ```js
 assert(/^https?:\/\/(www\.)?freecatphotoapp\.com\/?$/i.test($('a').attr('href')));
 ```
 
-Your `a` element should have a closing tag.
+عنصر `a` الخاص بك لا بد أن يكون له علامة إغلاق (closing tag).
 
 ```js
 assert(

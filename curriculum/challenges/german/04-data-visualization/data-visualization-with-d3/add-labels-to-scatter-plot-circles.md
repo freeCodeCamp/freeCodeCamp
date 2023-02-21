@@ -1,6 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bd9
-title: Add Labels to Scatter Plot Circles
+title: Füge Streudiagramm-Kreisen Beschriftungen hinzu
 challengeType: 6
 forumTopicId: 301477
 dashedName: add-labels-to-scatter-plot-circles
@@ -8,15 +8,15 @@ dashedName: add-labels-to-scatter-plot-circles
 
 # --description--
 
-You can add text to create labels for the points in a scatter plot.
+Du kannst durch das Hinzufügen von Text, Beschriftungen für die Punkte eines Streudiagramms erstellen.
 
-The goal is to display the comma-separated values for the first (`x`) and second (`y`) fields of each item in `dataset`.
+Ziel ist es, die kommaseparierten Werte des ersten (`x`)- und zweiten (`y`)-Felds eines jeden Elements im `dataset` darzustellen.
 
-Die `text`-Knoten benötigen die Attribute `x` und `y`, um sie auf dem SVG-Canvas zu positionieren. In dieser Aufgabe kann der `y`-Wert (der die Höhe bestimmt) denselben Wert verwenden, den der `circle`-Wert für sein `cy`-Attribut verwendet. The `x` value can be slightly larger than the `cx` value of the `circle`, so the label is visible. This will push the label to the right of the plotted point.
+Die `text`-Knoten benötigen die Attribute `x` und `y`, um sie auf dem SVG-Canvas zu positionieren. In dieser Aufgabe kann der `y`-Wert (der die Höhe bestimmt) denselben Wert verwenden, den der `circle`-Wert für sein `cy`-Attribut verwendet. Der `x`-Wert kann etwas größer sein als der `cx`-Wert des `circle`, damit die Bezeichnungen sichtbar ist. Dadurch wird die Beschriftung nach rechts vom dargestellten Punkt verschoben.
 
 # --instructions--
 
-Beschrifte jeden Punkt im Streudiagramm mithilfe der `text`-Elemente. The text of the label should be the two values separated by a comma and a space. For example, the label for the first point is `34, 78`. Set the `x` attribute so it's `5` units more than the value you used for the `cx` attribute on the `circle`. Set the `y` attribute the same way that's used for the `cy` value on the `circle`.
+Beschrifte jeden Punkt im Streudiagramm mithilfe der `text`-Elemente. Der Text der Bezeichnung sollte aus den beiden Werten bestehen, die durch ein Komma und ein Leerzeichen getrennt sind. Die Bezeichnung des ersten Punktes ist zum Beispiel `34, 78`. Setze den Wert des `x`-Attributs so, dass dieser `5` Einheiten über den Wert liegt, den du für das `cx`-Attribut des `circle` verwendet hast. Setze das `y`-Attribut auf den gleichen Wert, der für `cy` des `circle` verwendet wird.
 
 # --hints--
 
@@ -26,7 +26,7 @@ Dein Code sollte 10 `text`-Elemente enthalten.
 assert($('text').length == 10);
 ```
 
-The first label should have text of `34, 78`, an `x` value of `39`, and a `y` value of `422`.
+Die erste Beschriftung sollte aus dem Text `34, 78` bestehen sowie über einen `x`-Wert von `39` und einen `y`-Wert von `422` verfügen.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-The second label should have text of `109, 280`, an `x` value of `114`, and a `y` value of `220`.
+Die zweite Beschriftung sollte aus dem Text `109, 280` bestehen sowie über einen `x`-Wert von `114` und einen `y`-Wert von `220` verfügen.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-The third label should have text of `310, 120`, an `x` value of `315`, and a `y` value of `380`.
+Die dritte Beschriftung sollte aus dem Text `310, 120` bestehen sowie über einen `x`-Wert von `315` und einen `y`-Wert von `380` verfügen.
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-The fourth label should have text of `79, 411`, an `x` value of `84`, and a `y` value of `89`.
+Die vierte Beschriftung sollte aus dem Text `79, 411` bestehen sowie über einen `x`-Wert von `84` und einen `y`-Wert von `89` verfügen.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-The fifth label should have text of `420, 220`, an `x` value of `425`, and a `y` value of `280`.
+Die fünfte Beschriftung sollte aus dem Text `420, 220` bestehen sowie über einen `x`-Wert von `425` und einen `y`-Wert von `280` verfügen.
 
 ```js
 assert(
@@ -76,7 +76,7 @@ assert(
 );
 ```
 
-The sixth label should have text of `233, 145`, an `x` value of `238`, and a `y` value of `355`.
+Die sechste Beschriftung sollte aus dem Text `233, 145` bestehen sowie über einen `x`-Wert von `238` und einen `y`-Wert von `355` verfügen.
 
 ```js
 assert(
@@ -86,7 +86,7 @@ assert(
 );
 ```
 
-The seventh label should have text of `333, 96`, an `x` value of `338`, and a `y` value of `404`.
+Die siebte Beschriftung sollte aus dem Text `333, 96` bestehen sowie über einen `x`-Wert von `338` und einen `y`-Wert von `404` verfügen.
 
 ```js
 assert(
@@ -96,7 +96,7 @@ assert(
 );
 ```
 
-The eighth label should have text of `222, 333`, an `x` value of `227`, and a `y` value of `167`.
+Die achte Beschriftung sollte aus dem Text `222, 333` bestehen sowie über einen `x`-Wert von `227` und einen `y`-Wert von `167` verfügen.
 
 ```js
 assert(
@@ -106,7 +106,7 @@ assert(
 );
 ```
 
-The ninth label should have text of `78, 320`, an `x` value of `83`, and a `y` value of `180`.
+Die neunte Beschriftung sollte aus dem Text `78, 320` bestehen sowie über einen `x`-Wert von `83` und einen `y`-Wert von `180` verfügen.
 
 ```js
 assert(
@@ -116,7 +116,7 @@ assert(
 );
 ```
 
-The tenth label should have text of `21, 123`, an `x` value of `26`, and a `y` value of `377`.
+Die zehnte Beschriftung sollte aus dem Text `21, 123` bestehen sowie über einen `x`-Wert von `26` und einen `y`-Wert von `377` verfügen.
 
 ```js
 assert(

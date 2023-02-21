@@ -5,7 +5,7 @@ export type ButtonVariant = 'primary' | 'danger' | 'info';
 export type ButtonSize = 'small' | 'medium' | 'large';
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   children: React.ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
@@ -13,6 +13,7 @@ export interface ButtonProps
   type?: 'submit' | 'button';
   disabled?: boolean;
   block?: boolean;
-  to?: string;
+  href?: string;
+  download?: string;
   target?: React.HTMLAttributeAnchorTarget;
 }

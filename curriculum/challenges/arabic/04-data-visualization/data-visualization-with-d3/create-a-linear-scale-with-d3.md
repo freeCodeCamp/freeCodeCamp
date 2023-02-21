@@ -1,6 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bda
-title: Create a Linear Scale with D3
+title: إنشاء مقياس خطي مع D3
 challengeType: 6
 forumTopicId: 301483
 dashedName: create-a-linear-scale-with-d3
@@ -8,41 +8,41 @@ dashedName: create-a-linear-scale-with-d3
 
 # --description--
 
-The bar and scatter plot charts both plotted data directly onto the SVG canvas. However, if the height of a bar or one of the data points were larger than the SVG height or width values, it would go outside the SVG area.
+رَسَم البيانات كلا من المخطوطان, أعمدة وانسياب (النِّقَاط المبعثرة), مباشرا على لوحة SVG. ولكن إذا كان ارتفاع العمود أو إحدى نِقَاط البيانات أكبر من ارتفاع أو عرض مساحة SVG، سيقع خارج نطاق منطقة SVG.
 
-In D3, there are scales to help plot data. `scales` are functions that tell the program how to map a set of raw data points onto the pixels of the SVG canvas.
+في D3، هناك مقاييس (scales) للمساعدة في تخطيط البيانات. تكون `scales` وظائف (functions) تخبر البرنامَج كيفية ملأ مجموعة من نِقَاط البيانات الخام على عدد البكسلس (pixels) في لوحة SVG.
 
-For example, say you have a 100x500-sized SVG canvas and you want to plot Gross Domestic Product (GDP) for a number of countries. The set of numbers would be in the billion or trillion-dollar range. You provide D3 a type of scale to tell it how to place the large GDP values into that 100x500-sized area.
+على سبيل المثال، قل أن لديك لوحة SVG بحجم 100x500، وتريد رسم الناتج المحلي الإجمالي (Gross Domestic Product) لعدد من الدول. ومجموعة الأعداد ستكون في حدود المليار أو تريليون دولار. يمكنك توفير D3 من مقياس (scale) لمعرفة كيف توضع قيم الناتج المحلي الإجمالي (GDP) الكبيرة في تلك المساحة 100x500.
 
-It's unlikely you would plot raw data as-is. Before plotting it, you set the scale for your entire data set, so that the `x` and `y` values fit your canvas width and height.
+من غير المحتمل أن ترسم البيانات الخام كما هي. قبل الرسم، عيّن المقياس لكامل مجموعة البيانات. بحيث أن قيم `x` و `y` تتناسب مع عرض وطول اللوحة.
 
-D3 has several scale types. For a linear scale (usually used with quantitative data), there is the D3 method `scaleLinear()`:
+ولدى D3 عدة أنواع من المقاييس. للحصول على مقياس خطي (linear scale) (يستخدم عادة مع البيانات الكمية (quantitative data))، هناك طريقة في D3 تسمى `scaleLinear()`:
 
 ```js
 const scale = d3.scaleLinear()
 ```
 
-By default, a scale uses the identity relationship. The value of the input is the same as the value of the output. A separate challenge covers how to change this.
+بشكل افتراضي، يستخدم المقياس عَلاقة الهُوِيَّة (identity relationship). تطابق قيمة المدخل (input) قيمة المخرج (output). يشمل تحدي أخر كيفية تغيير ذلك.
 
 # --instructions--
 
-Change the `scale` variable to create a linear scale. Then set the `output` variable to the scale called with an input argument of `50`.
+غيّر المتغير `scale` لإنشاء مقياس خطي (linear scale). ثم عيّن متغير `output` إلى وظيفة scale, الذي فعَِلت بإدخال معطى بقيمة `50`.
 
 # --hints--
 
-The text in the `h2` should be `50`.
+يجب أن يكون النص في `h2` بقيمة `50`.
 
 ```js
 assert($('h2').text() == '50');
 ```
 
-Your code should use the `scaleLinear()` method.
+يجب أن يستخدم كودك طريقة `scaleLinear()`.
 
 ```js
 assert(code.match(/\.scaleLinear/g));
 ```
 
-The `output` variable should call `scale` with an argument of `50`.
+يجب أن يُفعَِل متغير `output` وظيفة `scale` مع معطى `50`.
 
 ```js
 assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g));

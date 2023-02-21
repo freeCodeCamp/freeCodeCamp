@@ -39,11 +39,12 @@ const upcomingTest = {
   [SuperBlocks.MachineLearningPy]: 10,
   [SuperBlocks.CodingInterviewPrep]: 11,
   [SuperBlocks.JsAlgoDataStructNew]: 12,
-  [SuperBlocks.RespWebDesign]: 13
+  [SuperBlocks.TheOdinProject]: 13,
+  [SuperBlocks.RespWebDesign]: 14
 };
 
 const espanolTest = {
-  [SuperBlocks.RespWebDesign]: 0,
+  [SuperBlocks.RespWebDesignNew]: 0,
   [SuperBlocks.JsAlgoDataStruct]: 1,
   [SuperBlocks.FrontEndDevLibs]: 2,
   [SuperBlocks.DataVis]: 3,
@@ -51,7 +52,7 @@ const espanolTest = {
   [SuperBlocks.QualityAssurance]: 5,
   [SuperBlocks.SciCompPy]: 6,
   [SuperBlocks.DataAnalysisPy]: 7,
-  [SuperBlocks.RespWebDesignNew]: 8,
+  [SuperBlocks.RespWebDesign]: 8,
   [SuperBlocks.RelationalDb]: 9,
   [SuperBlocks.InfoSec]: 10,
   [SuperBlocks.MachineLearningPy]: 11,
@@ -144,7 +145,7 @@ describe('getSuperOrder', () => {
     if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
       expect.assertions(13);
     } else {
-      expect.assertions(14);
+      expect.assertions(15);
     }
 
     expect(getSuperOrder(SuperBlocks.RespWebDesignNew)).toBe(0);
@@ -162,7 +163,8 @@ describe('getSuperOrder', () => {
 
     if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
       expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(12);
-      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(13);
+      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(13);
+      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(14);
     } else {
       expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(12);
     }
@@ -175,7 +177,7 @@ describe('getSuperBlockFromPath', () => {
   );
 
   it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(15);
+    expect.assertions(16);
 
     for (const directory of directories) {
       expect(() => getSuperBlockFromDir(directory)).not.toThrow();
@@ -183,7 +185,7 @@ describe('getSuperBlockFromPath', () => {
   });
 
   it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
-    expect.assertions(15);
+    expect.assertions(16);
 
     const superBlockPaths = directories.filter(x => x !== '00-certifications');
 

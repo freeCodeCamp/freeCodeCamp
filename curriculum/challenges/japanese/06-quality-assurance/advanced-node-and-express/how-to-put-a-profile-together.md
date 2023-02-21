@@ -12,7 +12,7 @@ Now that you can ensure the user accessing the `/profile` is authenticated, you 
 
 Pass an object containing the property `username` and value of `req.user.username` as the second argument for the `render` method of the profile view.
 
-Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
+次に、`profile.pug` ビューに移動し、既存の `h1` 要素の下に同レベルのインデントで次の行を追加してください。
 
 ```pug
 h2.center#welcome Welcome, #{username}!
@@ -26,7 +26,7 @@ Also, in `profile.pug`, add a link referring to the `/logout` route, which will 
 a(href='/logout') Logout
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-put-a-profile-together-9" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+正しいと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#how-to-put-a-profile-together-9" target="_blank" rel="noopener noreferrer nofollow">この時点までの完成形のコードをこちらで確認できます</a>。
 
 # --hints--
 

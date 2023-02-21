@@ -31,6 +31,7 @@ Certifications are already live in some major world languages like below:
 - [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn)
 - [Ukrainian (Українська)](https://www.freecodecamp.org/ukrainian/learn)
 - [Japanese (日本語)](https://www.freecodecamp.org/japanese/learn)
+- [German (Deutsch)](https://www.freecodecamp.org/german/learn)
 
 We encourage you to read the [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and share it with your friends to get them excited about this.
 

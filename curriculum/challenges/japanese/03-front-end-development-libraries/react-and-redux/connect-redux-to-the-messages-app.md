@@ -14,7 +14,7 @@ dashedName: connect-redux-to-the-messages-app
 
 # --instructions--
 
-コードエディターには、ここまでこのセクションで記述したすべてのコードがあります。 一つだけ、React コンポーネントの名前が `Presentational` に変更されています。 `Container` という定数に保持する新しいコンポーネントを作成してください。このコンポーネントは、`connect` を使用して `Presentational` コンポーネントを Redux に接続します。 次に、`AppWrapper` の中で React Redux の `Provider` コンポーネントをレンダーしてください。 `Provider` に Redux の `store` を prop として渡し、`Container` を子としてレンダーしてください。 Once everything is set up, you will see the messages app rendered to the page again.
+コードエディターには、ここまでこのセクションで記述したすべてのコードがあります。 一つだけ、React コンポーネントの名前が `Presentational` に変更されています。 `Container` という定数に保持する新しいコンポーネントを作成してください。このコンポーネントは、`connect` を使用して `Presentational` コンポーネントを Redux に接続します。 次に、`AppWrapper` の中で React Redux の `Provider` コンポーネントをレンダーしてください。 `Provider` に Redux の `store` を prop として渡し、`Container` を子としてレンダーしてください。 すべての設定が完了すると、再びメッセージアプリがページにレンダーされます。
 
 # --hints--
 

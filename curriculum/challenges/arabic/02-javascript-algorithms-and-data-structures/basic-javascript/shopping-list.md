@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244bc
-title: قائمة التسوق (Shopping List)
+title: قائمة التسوق
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9MEKHZ'
 forumTopicId: 18280
@@ -9,37 +9,37 @@ dashedName: shopping-list
 
 # --description--
 
-قم إنشاء قائمة تسوق في المتغير `myList`. وينبغي أن تكون القائمة multi-dimensional array (مصفوفة متعددة الأبعاد) تحتوي على عدة sub-arrays (مصفوفات فرعية).
+أنشئ قائمة تسوُّق في المتغير `myList`. وينبغي أن تكون القائمة متعددة الأبعاد (multi-dimensional array) تحتوي على عدة قائمات فرعية (sub-arrays).
 
-يجب أن يحتوي العنصر الأول في كل sub-array على string يحمل اسم الصنف. أما العنصر الثاني فيجب أن يكون رقماً يمثل الكمية مثل.
+يجب أن يحتوي العنصر الأول في كل قائمة فرعية (sub-array) على مقطع نصي (string) يحمل اسم الصنف. أما العنصر الثاني فيجب أن يكون رقماً يمثل الكمية، مثلا
 
 ```js
 ["Chocolate Bar", 15]
 ```
 
-وينبغي أن يكون في القائمة خمسة sub-arrays على الأقل.
+وينبغي أن يكون في القائمة خمسة قائمات فرعية (sub-arrays) على الأقل.
 
 # --hints--
 
-`myList` يجب أن تكون array.
+يجب أن تكون `myList` قائمة (array).
 
 ```js
 assert(isArray);
 ```
 
-العناصر الأولى في كل الـ sub-arrays الخاصة بك يجب أن تكون كلها strings.
+يجب أن تكون كلِّ العناصر الأولى في كل قوائمك الفرعية (sub-arrays) مقاطع نصية (strings).
 
 ```js
 assert(hasString);
 ```
 
-العناصر الثانية في كل الـ sub-arrays الخاصة بك يجب أن تكون كلها numbers.
+يجب أن تكون كل العناصر الثانية في كل قوائمك الفرعية (sub-arrays) أرقام.
 
 ```js
 assert(hasNumber);
 ```
 
-يجب أن يكون لديك 5 عناصر على الأقل في قائمتك.
+يجب أن يكون لديك 5 أصناف على الأقل في قائمتك.
 
 ```js
 assert(count > 4);

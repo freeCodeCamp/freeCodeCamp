@@ -8,7 +8,7 @@ dashedName: serve-an-html-file
 
 # --description--
 
-Du kannst auf Anfragen mit einer Datei antworten, indem du die Methode `res.sendFile(path)` verwendest. You can put it inside the `app.get('/', ...)` route handler. Behind the scenes, this method will set the appropriate headers to instruct your browser on how to handle the file you want to send, according to its type. Dann wird die Datei gelesen und gesendet. Diese Methode benötigt einen absoluten Dateipfad. Wir empfehlen dir, die globale Node-Variable `__dirname` zu verwenden, um den Pfad wie folgt zu berechnen:
+Du kannst auf Anfragen mit einer Datei antworten, indem du die Methode `res.sendFile(path)` verwendest. Du kannst sie im `app.get('/', ...)`-Route-Handler einfügen. Im Hintergrund setzt diese Methode die jeweiligen Header, um deinem Browser mitzuteilen, wie er die von dir gesendete Datei je nach Typ zu verarbeiten hat. Dann wird die Datei gelesen und gesendet. Diese Methode benötigt einen absoluten Dateipfad. Wir empfehlen dir, die globale Node-Variable `__dirname` zu verwenden, um den Pfad wie folgt zu berechnen:
 
 ```js
 absolutePath = __dirname + relativePath/file.ext
@@ -16,13 +16,13 @@ absolutePath = __dirname + relativePath/file.ext
 
 # --instructions--
 
-Sende die `/views/index.html`-Datei als Antwort auf GET-Anfragen an den `/`-Pfad. If you view your live app, you should see a big HTML heading (and a form that we will use later…), with no style applied.
+Sende die `/views/index.html`-Datei als Antwort auf GET-Anfragen an den `/`-Pfad. Siehst du dir deine laufende Anwendung an, solltest du eine große HTML-Überschrift ohne angewandten Stil sehen (und ein Formular, welches wir später verwenden werden...).
 
-**Note:** You can edit the solution of the previous challenge or create a new one. If you create a new solution, keep in mind that Express evaluates routes from top to bottom, and executes the handler for the first match. You have to comment out the preceding solution, or the server will keep responding with a string.
+**Hinweis:** Du kannst die Lösung der vorherigen Aufgabe bearbeiten oder eine neue erstellen. Wenn du eine neue Lösung erstellst, beachte, dass Express die Pfade von oben nach unten auswertet und den Handler für die erste Übereinstimmung ausführt. Du musst die vorangehende Lösung entkommentieren, sonst antwortet der Server weiterhin mit einem String.
 
 # --hints--
 
-Your app should serve the file views/index.html
+Die Anwendung sollte die Datei views/index.html bereitstellen
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8a
-title: 'Базові алгоритми навчання: Робота з даними'
+title: 'Базові алгоритми навчання: робота з даними'
 challengeType: 11
 videoId: u85IOSsJsPI
 bilibiliIds:
@@ -26,7 +26,7 @@ dashedName: core-learning-algorithms-working-with-data
 
 ---
 
-За замовчуванням, показує перші 5 рядків або елементів у кадрі даних.
+За замовчуванням показує перші 5 рядків або елементів у кадрі даних.
 
 ## --video-solution--
 

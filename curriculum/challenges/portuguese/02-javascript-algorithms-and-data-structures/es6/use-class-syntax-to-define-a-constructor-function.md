@@ -10,8 +10,6 @@ dashedName: use-class-syntax-to-define-a-constructor-function
 
 ES6 fornece uma nova sintaxe para criar objetos, usando a palavra-chave <dfn>class</dfn>.
 
-Deve ser notado que a sintaxe `class` é apenas sintaxe, um <dfn>syntatical sugar</dfn>. JavaScript ainda não oferece suporte completo ao paradigma orientado a objetos, ao contrário do que acontece em linguagens como Java, Python, Ruby, etc.
-
 No ES5, um objeto pode ser criado definindo uma função `constructor` e usando a palavra-chave `new` para instanciar o objeto.
 
 No ES6, uma declaração de `class` tem um método `constructor`, que é invocado com a palavra-chave `new`. Se o método `constructor` não for explicitamente definido, ele será definido implicitamente sem argumentos.

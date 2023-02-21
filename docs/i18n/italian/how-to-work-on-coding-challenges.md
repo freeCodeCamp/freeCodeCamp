@@ -296,7 +296,7 @@ Il nostro obbiettivo è comunicare il singolo punto che la sfida sta cercando di
 
 I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`. In aggiunta, l'oggetto `__helpers` mette a disposizione diverse funzioni che semplificano il processo di scrittura dei test. Le funzioni disponibili sono definite in _client/src/utils/curriculum-helpers.ts_.
 
-## Formattare codice di seed
+## Formattare codice seed
 
 Ecco linee guida specifiche di formattazione per il codice seed delle sfide:
 
@@ -306,7 +306,7 @@ Ecco linee guida specifiche di formattazione per il codice seed delle sfide:
 
 ### Commenti del codice seed
 
-Abbiamo un [dizionario dei commenti](/curriculum/dictionaries/english/comments.js) che contiene gli unici commenti che possono essere usati nel codice seed. I commenti devono essere usati esattamente in quel modo, ricopiando maiuscole, minuscole, e spazi. Il dizionario dei commenti non deve essere allargato senza previa discussione con il team di sviluppo.
+Abbiamo un [dizionario dei commenti](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) che contiene gli unici commenti che possono essere usati nel codice seed. I commenti devono essere usati esattamente in quel modo, ricopiando maiuscole, minuscole, e spazi. Il dizionario dei commenti non deve essere allargato senza previa discussione con il team di sviluppo.
 
 I commenti dovrebbero avere uno spazio tra il carattere del commento e il testo del commento. In generale, i commenti dovrebbero essere usati raramente. Considera sempre la possibilità di riscrivere la descrizione o le istruzioni di una sfida se questo ti permetterebbe di evitare l'uso di un commento nel codice seed.
 
@@ -368,7 +368,7 @@ class MyComponent extends React.Component {
 
 ### Traduzione dei commenti nel codice seed
 
-Ci sono directory separate per ogni lingua. La [versione inglese della directory dei commenti](/curriculum/dictionaries/english/comments.js) è  la base per le traduzioni trovate nelle corrispondenti versioni non-inglesi del file. La versione non-inglese della directory dei commenti cinese si trova in `/curriculum/dictionaries/chinese/comments.js`. Ogni directory consiste di un array di oggetti con una proprietà `id` unica e una proprietà `text` che contiene il testo del commento. Solo `text` dovrebbe essere modificato per includere la traduzione del corrispondente commento inglese.
+Ci sono directory separate per ogni lingua. La [versione inglese della directory dei commenti](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) è la base per le traduzioni trovate nelle corrispondenti versioni non-inglesi del file. La versione non-inglese della directory dei commenti cinese si trova in `/curriculum/dictionaries/chinese/comments.json`. Ogni directory consiste di un array di oggetti con una proprietà `id` unica e una proprietà `text` che contiene il testo del commento. Solo `text` dovrebbe essere modificato per includere la traduzione del corrispondente commento inglese.
 
 Alcuni commenti potrebbero contenere delle parole o frasi che non devono essere tradotte. Per esempio, nomi di variabili o nomi propri di librerie come "React" non dovrebbero essere tradotti. Vedi il commento seguente come esempio. La parola `myGlobal` non deve essere tradotta.
 

@@ -10,7 +10,7 @@ dashedName: create-a-custom-heading
 
 Haremos un encabezado simple para nuestro 'Cat Photo App' colocando el título y la imagen del gato relajándose en la misma fila.
 
-Recuerda que Bootstrap utiliza un sistema de cuadrícula responsivo, el cual hace más fácil poner elementos en filas y especificar el ancho relativo de cada elemento. La mayoría de las clases de Bootstrap pueden ser aplicadas a un elemento `div`.
+Recuerda que Bootstrap utiliza un sistema de cuadrícula adaptable, el cual hace más fácil poner elementos en filas y especificar el ancho relativo de cada elemento. La mayoría de las clases de Bootstrap pueden ser aplicadas a un elemento `div`.
 
 Anida tu primera imagen y tu elemento `h2` dentro de un solo elemento `<div class="row">`. Anida tu elemento `h2` dentro de `<div class="col-xs-8">` y tu imagen en un `<div class="col-xs-4">` para que estén en la misma línea.
 

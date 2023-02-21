@@ -38,13 +38,37 @@ fetch('/json/cats.json')
 
 # --hints--
 
-Щоб надіслати запит `GET`, використовуйте метод `fetch`.
+
+Your code should use the fetched data to replace the inner HTML
+
+```js
+const catData = "dummy data";
+const ref = fetch;
+fetch = () => Promise.resolve({ json: () => catData });
+async () => {
+  try {
+    document.getElementById("getMessage").click();
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    fetch = ref;
+    assert.equal(
+      document.getElementById("message").textContent,
+      JSON.stringify(catData)
+    );
+  }
+};
+```
+
+
+Your code should make a `GET` request with `fetch`.
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-Щоб конвертувати вхідні дані в JSON, використовуйте метод `then`.
+Your code should use `then` to convert the response to JSON.
 
 ```js
 assert(
@@ -54,13 +78,13 @@ assert(
 );
 ```
 
-Щоб обробити конвертовані дані JSON методом `then`, використайте `then` у коді двічі.
+Your code should use `then` to handle the data converted to JSON by the other `then`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-Щоб змінити внутрішній HTML на рядок з даними JSON, використовуйте у коді елемент з id `message`.
+Your code should get the element with id `message` and change its inner HTML to the string of JSON data.
 
 ```js
 assert(

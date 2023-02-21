@@ -38,6 +38,30 @@ Actualiza el código para crear y enviar una solicitud `GET` a la API de foto de
 
 # --hints--
 
+
+Tu código debe usar los datos obtenidos para reemplazar el HTML interno
+
+```js
+const catData = "dummy data";
+const ref = fetch;
+fetch = () => Promise.resolve({ json: () => catData });
+async () => {
+  try {
+    document.getElementById("getMessage").click();
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    fetch = ref;
+    assert.equal(
+      document.getElementById("message").textContent,
+      JSON.stringify(catData)
+    );
+  }
+};
+```
+
+
 Tu código debe hacer una solicitud `GET` con `fetch`.
 
 ```js
@@ -60,7 +84,7 @@ Tu código debe usar `then` para manejar los datos convertidos a JSON por el otr
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-Tu código debe obtener el elemento con id `message` y cambiar su HTML interno a la cadena de datos JSON.
+Tu código debe obtener el elemento con el id `message` y cambiar su HTML interno a la cadena de datos JSON.
 
 ```js
 assert(

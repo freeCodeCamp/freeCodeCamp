@@ -10,33 +10,27 @@ dashedName: mean-variance-standard-deviation-calculator
 
 Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator" target="_blank" rel="noopener noreferrer nofollow" mark="crwd-mark ">trabajando en este proyecto con nuestro código de inicio Replit</a>.
 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
+
+
 Todavía estamos desarrollando la parte interactiva del currículo de Python. Por ahora, aquí hay algunos videos en el canal de YouTube de freeCodeCamp.org que te enseñaran todo lo que necesitas saber para completar este proyecto:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso de video de Python para todos< /a>(14 horas)</p></li> 
-  
-  <li>
-    <p spaces-before="0">
-      <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">Cómo analizar datos con Python Pandas</a> (10 horas)
-    </p>
-  </li></ul>
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 hours)
 
-<h1 spaces-before="0">
-  --instructions--
-</h1>
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
-<p spaces-before="0">
-  Crea una función llamada <code>calculate()</code> en <code>mean_var_std.py</code> que usa Numpy para producir la media, varianza, desviación estándar, max, min, y suma de las filas, columnas y elementos en una matriz de 3 x 3.
-</p>
+# --instructions--
 
-<p spaces-before="0">
-  La entrada de la función debe ser una lista que contenga 9 dígitos. La función debe convertir la lista en una matriz numérica de 3 x 3, y luego devolver un diccionario que contenga la media, varianza, desviación estándar, max, min, y suma a lo largo de ambos ejes y para la matriz aplanada.
-</p>
+Crea una función llamada `calculate()` en `mean_var_std.py` que usa Numpy para producir la media, varianza, desviación estándar, max, min, y suma de las filas, columnas y elementos en una matriz de 3 x 3.
 
-<p spaces-before="0">
-  El diccionario retornado debería seguir este formato:
-</p>
+La entrada de la función debe ser una lista que contenga 9 dígitos. La función debe convertir la lista en una matriz numérica de 3 x 3, y luego devolver un diccionario que contenga la media, varianza, desviación estándar, max, min, y suma a lo largo de ambos ejes y para la matriz aplanada.
 
-<pre><code class="py">{
+El diccionario retornado debería seguir este formato:
+
+```py
+{
   'mean': [axis1, axis2, flattened],
   'variance': [axis1, axis2, flattened],
   'standard deviation': [axis1, axis2, flattened],
@@ -44,17 +38,14 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
   'min': [axis1, axis2, flattened],
   'sum': [axis1, axis2, flattened]
 }
-</code></pre>
+```
 
-<p spaces-before="0">
-  Si una lista que contiene menos de 9 elementos es pasada a la función, debería levantar una excepción de <code>ValueError</code> con el mensaje: "La lista debe contener nueve números". Los valores en el diccionario devuelto deben ser listas y no matrices Numpy.
-</p>
+Si una lista que contiene menos de 9 elementos es pasada a la función, debería levantar una excepción de `ValueError` con el mensaje: "La lista debe contener nueve números". Los valores en el diccionario devuelto deben ser listas y no matrices Numpy.
 
-<p spaces-before="0">
-  Por ejemplo, <code>calculate([0,1,2,3,4,5,6,7,8])</code> debe regresar:
-</p>
+Por ejemplo, `calculate([0,1,2,3,4,5,6,7,8])` debe regresar:
 
-<pre><code class="py">{
+```py
+{
   'mean': [[3.0, 4.0, 5.0], [1.0, 4.0, 7.0], 4.0],
   'variance': [[6.0, 6.0, 6.0], [0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 6.666666666666667],
   'standard deviation': [[2.449489742783178, 2.449489742783178, 2.449489742783178], [0.816496580927726, 0.816496580927726, 0.816496580927726], 2.581988897471611],
@@ -62,52 +53,34 @@ Todavía estamos desarrollando la parte interactiva del currículo de Python. Po
   'min': [[0, 1, 2], [0, 3, 6], 0],
   'sum': [[9, 12, 15], [3, 12, 21], 36]
 }
-</code></pre>
+```
 
-<p spaces-before="0">
-  Las pruebas unitarias para este proyecto están en <code>test_module.py</code>.
-</p>
+Las pruebas unitarias para este proyecto están en `test_module.py`.
 
-<h2 spaces-before="0">
-  Desarrollo
-</h2>
+## Desarrollo
 
-<p spaces-before="0">
-  Durante el desarrollo, puede usar <code>main.py</code> para probar su función <code>calculate()</code>. Haz clic en el botón "run" y se ejecutará <code>main.py</code>.
-</p>
+Durante el desarrollo, puede usar `main.py` para probar su función `calculate()`. Haz clic en el botón "run" y se ejecutará `main.py`.
 
-<h2 spaces-before="0">
-  Pruebas
-</h2>
+## Pruebas
 
-<p spaces-before="0">
-  Hemos importado las pruebas de <code>test_module.py</code> a <code>main.py</code> para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que pulses el botón "run".
-</p>
+Hemos importado las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que pulses el botón "run".
 
-<h2 spaces-before="0">
-  Envío
-</h2>
+## Envío
 
-<p spaces-before="0">
-  Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
-</p>
+Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
 
-<h1 spaces-before="0">
-  --hints--
-</h1>
+# --hints--
 
-<p spaces-before="0">
-  Debería pasar todas las pruebas de Python.
-</p>
+Debería pasar todas las pruebas de Python.
 
-<pre><code class="js">
-</code></pre>
+```js
 
-<h1 spaces-before="0">
-  --solutions--
-</h1>
+```
 
-<pre><code class="py">  # Python challenges don't need solutions,
+# --solutions--
+
+```py
+  # Python challenges don't need solutions,
   # because they would need to be tested against a full working project.
   # Please check our contributing guidelines to learn more.
-</code></pre>
+```

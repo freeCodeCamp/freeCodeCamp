@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b46
-title: تعيين المعلمات الافتراضية للدوال (Set Default Parameters for Your Functions)
+title: تعيين الوسائط (Parameters) الافتراضية للوظيفتك (Functions)
 challengeType: 1
 forumTopicId: 301209
 dashedName: set-default-parameters-for-your-functions
@@ -8,7 +8,7 @@ dashedName: set-default-parameters-for-your-functions
 
 # --description--
 
-من أجل مساعدتنا في إنشاء functions أكثر مرونة، يوفر ES6 الـ <dfn>default parameters</dfn> للـ functions.
+من أجل مساعدتنا في إنشاء وظائف (functions) أكثر مرونة، يوفر ES6 أمكانية وضع <dfn>وسائط أفتراضية (default parameters)</dfn> إلى الوظائف (functions).
 
 تحقق من هذا الكود:
 
@@ -21,11 +21,11 @@ console.log(greeting());
 
 ستعرض وحدة التحكم الـ strings الآتية `Hello John` و `Hello Anonymous`.
 
-يبدأ الـ default parameter في العمل عندما لا يتم تحديد الـ argument (عندما تكون undefined). كما ترون في المثال أعلاه، الـ parameter الآتي `name` سوف يتلقى القيمة الافتراضية `Anonymous` ، عندما لا تقدم قيمة للـ parameter. يمكنك إضافة القيم الافتراضية لاي عدد من الـ parameters كما تريد.
+يبدأ الوسيط الافتراضي (default parameter) في العمل عندما لا يتم تحديد المعطى argument (عندما تكون undefined). كما ترون في المثال أعلاه، سوف يتلقى الوسيط (parameter) المسمى `name` الآتي القيمة الافتراضية `Anonymous`، عندما لا تقدم قيمة للوسيط. يمكنك إضافة القيم الافتراضية لأي عدد من الوسائط (parameters) كما تريد.
 
 # --instructions--
 
-قم بتعديل الدالة `increment` بإضافة الـ default parameters بحيث تضيف 1 إلى `number` إذا لم يتم تحديد `value`.
+عدّل الوظيفة `increment` بإضافة الوسائط الافتراضية (default parameters) بحيث تضيف 1 إلى `number` إذا لم يتم تحديد `value`.
 
 # --hints--
 
@@ -41,7 +41,7 @@ assert(increment(5, 2) === 7);
 assert(increment(5) === 6);
 ```
 
-قيمة الـ default parameter لـ `1` يجب استخدامها لـ `value`.
+يجب استخدام قيمة `1` للوسائط الافتراضية (default parameter) في `value`.
 
 ```js
 assert(code.match(/value\s*=\s*1/g));

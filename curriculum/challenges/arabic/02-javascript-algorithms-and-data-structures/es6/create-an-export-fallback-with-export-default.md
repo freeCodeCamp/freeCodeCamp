@@ -26,11 +26,11 @@ export default function(x, y) {
 
 الأول هو named function، والثاني هو anonymous function.
 
-بما أن `export default` يستخدم لتعريف قيمة احتياطية لـ module أو ملف، يمكن أن يكون لديك قيمة واحدة فقط هي الـ default export في كل module أو ملف. بالإضافة إلى ذلك، لا يمكنك استخدام `export default` مع `var` أو `let` أو `const`
+لما كان `export default` يستخدم لإعلان القيمة الاحتياطية لـ module أو ملف، يمكن أن يكون لديك قيمة واحدة فقط هي الـ default export في كل module أو ملف. بالإضافة إلى ذلك، لا يمكنك استخدام `export default` مع `var` أو `let` أو `const`
 
 # --instructions--
 
-الدالة التالية يجب أن تكون القيمة الاحتياطية للـ module. الرجاء إضافة الكود اللازم للقيام بذلك.
+الوظيفة التالية يجب أن تكون القيمة الاحتياطية للـ module. الرجاء إضافة الكود اللازم للقيام بذلك.
 
 # --hints--
 

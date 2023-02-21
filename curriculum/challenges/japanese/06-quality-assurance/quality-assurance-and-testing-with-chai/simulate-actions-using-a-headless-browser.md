@@ -47,7 +47,7 @@ suiteSetup(function(done) {
 
 # --hints--
 
-すべてのテストに合格する必要があります。
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>

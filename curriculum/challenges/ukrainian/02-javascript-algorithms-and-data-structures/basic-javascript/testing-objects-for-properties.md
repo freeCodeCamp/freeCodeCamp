@@ -1,6 +1,6 @@
 ---
 id: 567af2437cbaa8c51670a16c
-title: Тестування властивостей об'єктів
+title: Перевірка властивостей об’єктів
 challengeType: 1
 forumTopicId: 18324
 dashedName: testing-objects-for-properties
@@ -8,9 +8,9 @@ dashedName: testing-objects-for-properties
 
 # --description--
 
-Іноді варто перевіряти чи даний об'єкт вже має певні властивості. Ми можемо використовувати метод об'єктів `.hasOwnProperty(propname)`, щоб визначити чи об'єкт має ім'я властивості. `.hasOwnProperty()` показує `true` чи `false`, в залежності чи властивість знайдена, чи ні.
+Іноді потрібно перевіряти, чи об'єкт має певну властивість. Ми можемо використати метод об'єктів `.hasOwnProperty(propname)`, щоб визначити, чи має цей об’єкт задану назву властивості. `.hasOwnProperty()` повертає `true` або `false`, якщо властивість знайдена чи не знайдена.
 
-**Наприклад**
+**Приклад**
 
 ```js
 const myObj = {
@@ -22,15 +22,15 @@ myObj.hasOwnProperty("top");
 myObj.hasOwnProperty("middle");
 ```
 
-Перший `hasOwnProperty` стає `true`, а другий - `false`.
+Перший `hasOwnProperty` повертає `true`, а другий повертає `false`.
 
 # --instructions--
 
-Змініть функцію `checkObj`, щоб перевірити чи об'єкт переданий до функції (`obj`) містить особливу властивість (`checkProp`). Якщо властивість знайдена, поверніть значення властивості. Якщо ні, поверніть `"Not Found"`.
+Змініть функцію `checkObj` так, щоб вона перевіряла, чи переданий до функції об’єкт (`obj`) містить певну властивість (`checkProp`). Якщо властивість знайдена, поверніть значення властивості. Якщо ні, поверніть `"Not Found"`.
 
 # --hints--
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift")` має повернути рядок `pony`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift")` має повертати рядок `pony`.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet")` має повернути рядок `kitten`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet")` має повертати рядок `kitten`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house")` має повернути рядок `Not Found`.
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house")` має повертати рядок `Not Found`.
 
 ```js
 assert(
@@ -55,19 +55,19 @@ assert(
 );
 ```
 
-`checkObj({city: "Seattle"}, "city")` має повернути рядок `Seattle`.
+`checkObj({city: "Seattle"}, "city")` має повертати рядок `Seattle`.
 
 ```js
 assert(checkObj({ city: 'Seattle' }, 'city') === 'Seattle');
 ```
 
-`checkObj({city: "Seattle"}, "district")` має повернути рядок `Not Found`.
+`checkObj({city: "Seattle"}, "district")` має повертати рядок `Not Found`.
 
 ```js
 assert(checkObj({ city: 'Seattle' }, 'district') === 'Not Found');
 ```
 
-`checkObj({pet: "kitten", bed: "sleigh"}, "gift")` має повернути рядок `Not Found`.
+`checkObj({pet: "kitten", bed: "sleigh"}, "gift")` має повертати рядок `Not Found`.
 
 ```js
 assert(checkObj({ pet: 'kitten', bed: 'sleigh' }, 'gift') === 'Not Found');

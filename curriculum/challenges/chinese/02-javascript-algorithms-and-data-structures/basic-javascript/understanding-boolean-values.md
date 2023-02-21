@@ -15,7 +15,7 @@ dashedName: understanding-boolean-values
 
 # --instructions--
 
-修改 `welcomeToBooleans` 函数，当 run 按钮点击时让它返回 `true` 而不是 `false`。
+Modify the `welcomeToBooleans` function so that it returns `true` instead of `false`.
 
 # --hints--
 

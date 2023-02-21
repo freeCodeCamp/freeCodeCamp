@@ -1,9 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const util = require('util');
-const assert = require('assert');
 const yaml = require('js-yaml');
-const { findIndex, isEmpty } = require('lodash');
+const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
 const { helpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
@@ -32,22 +31,9 @@ const COMMENT_TRANSLATIONS = createCommentMap(
   path.resolve(__dirname, 'dictionaries')
 );
 
-function getTranslatableComments(dictionariesDir) {
-  const COMMENTS_TO_TRANSLATE = require(path.resolve(
-    dictionariesDir,
-    'english',
-    'comments.json'
-  ));
-  return Object.values(COMMENTS_TO_TRANSLATE);
-}
-
-exports.getTranslatableComments = getTranslatableComments;
-
 function createCommentMap(dictionariesDir) {
   // get all the languages for which there are dictionaries.
-  const languages = fs
-    .readdirSync(dictionariesDir)
-    .filter(x => x !== 'english');
+  const languages = fs.readdirSync(dictionariesDir);
 
   // get all their dictionaries
   const dictionaries = languages.reduce(
@@ -164,9 +150,6 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
     { type: 'directories', depth: 0 },
     buildSuperBlocks
   );
-  Object.entries(curriculum).forEach(([name, superBlock]) => {
-    assert(!isEmpty(superBlock.blocks), `superblock ${name} has no blocks`);
-  });
   const cb = (file, curriculum) => buildChallenges(file, curriculum, lang);
   // fill the scaffold with the challenges
   return walk(
@@ -179,11 +162,15 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
 
 async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
   const metaPath = path.resolve(META_DIR, `${blockName}/meta.json`);
+  const isCertification = !fs.existsSync(metaPath);
+  if (isCertification && superBlock !== 'certifications')
+    throw Error(
+      `superblock ${superBlock} is missing meta.json for ${blockName}`
+    );
 
-  if (fs.existsSync(metaPath)) {
-    // try to read the file, if the meta path does not exist it should be a certification.
-    // As they do not have meta files.
-
+  if (isCertification) {
+    curriculum['certifications'].blocks[blockName] = { challenges: [] };
+  } else {
     const blockMeta = JSON.parse(fs.readFileSync(metaPath));
 
     const { isUpcomingChange } = blockMeta;
@@ -199,8 +186,6 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
       const blockInfo = { meta: blockMeta, challenges: [] };
       curriculum[superBlock].blocks[blockName] = blockInfo;
     }
-  } else {
-    curriculum['certifications'].blocks[blockName] = { challenges: [] };
   }
 }
 
@@ -234,14 +219,6 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   }
   const { meta } = challengeBlock;
   const isCert = path.extname(filePath) === '.yml';
-  // TODO: there's probably a better way, but this makes sure we don't build any
-  // of the new curriculum when we don't want it.
-  if (
-    !showUpcomingChanges &&
-    meta?.superBlock === '2022/javascript-algorithms-and-data-structures'
-  ) {
-    return;
-  }
   const createChallenge = generateChallengeCreator(CHALLENGES_DIR, lang);
   const challenge = isCert
     ? await createCertification(CHALLENGES_DIR, filePath, lang)
@@ -374,18 +351,18 @@ Challenges that have been already audited cannot fall back to their English vers
 
     await validate(filePath, meta.superBlock);
 
-    const useEnglish =
-      lang === 'english' ||
-      !isAuditedCert(lang, meta.superBlock) ||
-      !fs.existsSync(getFullPath(lang, filePath));
+    // We always try to translate comments (even English ones) to confirm that translations exist.
+    const translateComments =
+      isAuditedCert(lang, meta.superBlock) &&
+      fs.existsSync(getFullPath(lang, filePath));
 
-    const challenge = await (useEnglish
-      ? parseMD(getFullPath('english', filePath))
-      : parseTranslation(
+    const challenge = await (translateComments
+      ? parseTranslation(
           getFullPath(lang, filePath),
           COMMENT_TRANSLATIONS,
           lang
-        ));
+        )
+      : parseMD(getFullPath('english', filePath)));
 
     addMetaToChallenge(challenge, meta);
 
