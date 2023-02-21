@@ -1,6 +1,5 @@
 ---
 id: 637f4e4672c65bc8e73dfe25
-videoId: LGQuIIv2RVA
 title: Questão B sobre Entender listas ordenadas e não ordenadas
 challengeType: 15
 dashedName: understand-ordered-and-unordered-list-question-b

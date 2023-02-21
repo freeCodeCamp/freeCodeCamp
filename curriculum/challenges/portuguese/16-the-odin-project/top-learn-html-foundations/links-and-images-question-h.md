@@ -1,6 +1,5 @@
 ---
 id: 637f700b72c65bc8e73dfe2f
-videoId: 0xoztJCHpbQ
 title: Questão H de Links e imagens
 challengeType: 15
 dashedName: links-and-images-question-h
