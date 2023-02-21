@@ -1,7 +1,6 @@
 {
   "initial:before": {
-    "./middlewares/sentry-request-handler": {},
-    "./middlewares/sentry-tracing-handler": {}
+    "./middlewares/sentry-request-handler": {}
   },
   "initial": {
     "compression": {},

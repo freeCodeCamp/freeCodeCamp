@@ -1,6 +1,5 @@
 ---
 id: 637f4e1c72c65bc8e73dfe20
-videoId: V8UAEoOvqFg
 title: Questão A sobre o boilerplate do HTML
 challengeType: 15
 dashedName: html-boilerplate-question-a

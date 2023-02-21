@@ -11,7 +11,7 @@ dashedName: step-37
 
 选择一种颜色作为主要颜色， 并使用其补充颜色作为强调来提醒访问者注意页面上的某些内容，是一种更好的方式。
 
-首先，在 `h1` 规则中，使用 `rgb` 函数将其背景颜色设置为 cyan（蓝绿色）。
+First, in the `h1` rule, use the `rgb` function to set its `background-color` to cyan.
 
 # --hints--
 

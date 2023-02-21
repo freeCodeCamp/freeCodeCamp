@@ -164,7 +164,6 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
       return (
         <FullWidthRow>
           <Alert bsStyle='warning' closeLabel={t('buttons.close')}>
-            {/* how did changing alert affect this? */}
             {t('settings.username.unavailable')}
           </Alert>
         </FullWidthRow>
@@ -237,6 +236,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
         <FullWidthRow>
           <BlockSaveButton
             aria-disabled={isDisabled}
+            bgSize='lg'
             {...(isDisabled && { tabindex: -1 })}
           >
             {t('buttons.save')}{' '}

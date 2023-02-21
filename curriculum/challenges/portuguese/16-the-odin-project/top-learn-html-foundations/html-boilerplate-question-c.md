@@ -1,6 +1,5 @@
 ---
 id: 637f4e2f72c65bc8e73dfe22
-videoId: LGQuIIv2RVA
 title: Questão C sobre o boilerplate do HTML
 challengeType: 15
 dashedName: html-boilerplate-question-c
