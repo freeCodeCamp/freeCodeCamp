@@ -2,7 +2,7 @@
   display: grid;
   position: relative;
   padding: 0 1em 1em 0;
-  max-height: 300px;
+  max-height: 302px;
   border: 1px solid var(--secondary-color);
   gap: 1rem 1rem;
   grid-template-columns: repeat(3, 1fr);
@@ -12,6 +12,7 @@
   display: block;
   width: 300px;
   height: 300px;
+  object-fit: cover;
   grid-column: 1/ -1;
   grid-row: 1;
 }
@@ -51,14 +52,31 @@
   margin-left: 1rem;
 }
 
-@media (max-width: 990px) {
+@media (max-width: 994px) {
+  .portfolio-container p {
+    -webkit-line-clamp: 10;
+  }
+
   .portfolio-screen-shot {
     max-height: 300px;
   }
 
   .portfolio-container {
     max-height: 900px;
-    max-width: 300px;
+    max-width: 302px;
+  }
+
+  .portfolio-container h2 {
+    margin: 0.5rem;
+  }
+
+  .portfolio-container h3 {
+    justify-self: center;
+    width: 70%;
+  }
+
+  .portfolio-container p {
+    margin: 1rem;
   }
 }
 
@@ -91,15 +109,6 @@
 
 .portfolio-container a {
   text-decoration: none;
-}
-
-.portfolio-container a::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
 }
 
 .portfolio-container a:is(:hover, :focus, :focus-visible) {
