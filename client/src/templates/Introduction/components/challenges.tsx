@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { useState } from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -7,6 +7,7 @@ import type { Dispatch } from 'redux';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
+import DropDown from '../../../assets/icons/dropdown';
 import { executeGA } from '../../../redux/actions';
 import { SuperBlocks } from '../../../../../config/certification-settings';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
@@ -43,6 +44,25 @@ function Challenges({
     challenge => challenge.isCompleted
   );
 
+  // TEMP
+  const allTopics = ['Topic 1', 'Topic 2', 'Topic 3', 'Topic 4', 'Topic 5'];
+
+  const [activeTags, updateTags] = useState(allTopics);
+  const [isExpanded, toggleExpanded] = useState(false);
+
+  function handleRemoveTag(topic: string) {
+    const clone = [...activeTags];
+    const index = clone.indexOf(topic);
+    if (index !== -1) {
+      clone.splice(index, 1);
+      updateTags(clone);
+    }
+  }
+
+  function handleAddTag(topic: string) {
+    console.log(topic);
+  }
+
   return isGridMap ? (
     <>
       {firstIncompleteChallenge && (
@@ -58,6 +78,45 @@ function Challenges({
           </Link>
         </div>
       )}
+
+      <section className='topic-filter'>
+        <button
+          className={`topic-filter-button ${
+            isExpanded
+              ? 'topic-filter-button-open'
+              : 'topic-filter-button-closed'
+          }`}
+          onClick={() => toggleExpanded(!isExpanded)}
+        >
+          Filter
+          <DropDown />
+        </button>
+
+        <ul
+          className={`topic-filter-select ${isExpanded ? '' : 'filter-closed'}`}
+        >
+          {allTopics.map(topic => (
+            <li key={topic + '-master'}>
+              <button className='topic-select-btn' onClick={() => handleAddTag}>
+                {topic}
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        <div className='active-tags'>
+          {activeTags.map(topic => (
+            <button
+              key={topic}
+              className='topic-tag'
+              onClick={() => handleRemoveTag}
+            >
+              <span>{topic}</span>X
+            </button>
+          ))}
+        </div>
+      </section>
+
       <nav
         aria-label={
           blockTitle ? t('aria.steps-for', { blockTitle }) : t('aria.steps')

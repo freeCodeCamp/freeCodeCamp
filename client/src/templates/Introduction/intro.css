@@ -89,6 +89,80 @@ a.cert-tag:active {
   text-align: center;
 }
 
+.topic-filter {
+  padding-inline-start: 25px;
+  padding-inline-end: 25px;
+  margin-block-end: 25px;
+}
+
+.topic-filter-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--gray-00);
+}
+
+.topic-filter-button:hover {
+  background-color: var(--gray-15);
+  color: var(--gray-90);
+}
+
+.topic-filter-button-open > svg:first-child {
+  margin-inline-end: 25px;
+  transform: rotate(180deg) scale(1.5);
+}
+
+.topic-filter-button-closed > svg:first-child {
+  margin-inline-end: 25px;
+  transform: rotate(90deg) scale(1.5);
+}
+
+.topic-filter-select {
+  list-style: none;
+  padding-inline-start: 0;
+  margin-block-end: 0;
+}
+
+.filter-closed {
+  display: none;
+}
+
+.topic-select-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--gray-00);
+  border-block-start: 0;
+}
+
+.topic-select-btn:hover {
+  background-color: var(--gray-15);
+  color: var(--gray-90);
+}
+
+.active-tags {
+  margin-block-start: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12.5px;
+}
+
+.topic-tag {
+  background-color: var(--gray-00);
+}
+
+.topic-tag:hover {
+  background-color: var(--gray-15);
+  color: var(--gray-90);
+}
+
+.topic-tag > span {
+  padding-inline-end: 25px;
+}
+
 .course-title {
   display: flex;
   align-items: center;
