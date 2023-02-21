@@ -47,10 +47,13 @@ function Challenges({
   // TEMP
   const allTopics = ['Topic 1', 'Topic 2', 'Topic 3', 'Topic 4', 'Topic 5'];
 
-  const [activeTags, updateTags] = useState(allTopics);
+  const [activeTags, updateTags] = useState([]);
   const [isExpanded, toggleExpanded] = useState(false);
 
   function handleRemoveTag(topic: string) {
+    // Add to list
+
+    // Remove tag
     const clone = [...activeTags];
     const index = clone.indexOf(topic);
     if (index !== -1) {
@@ -60,7 +63,11 @@ function Challenges({
   }
 
   function handleAddTag(topic: string) {
-    console.log(topic);
+    // Remove from list
+
+    // Add tag
+    activeTags.unshift(topic);
+    updateTags(activeTags);
   }
 
   return isGridMap ? (
@@ -95,13 +102,20 @@ function Challenges({
         <ul
           className={`topic-filter-select ${isExpanded ? '' : 'filter-closed'}`}
         >
-          {allTopics.map(topic => (
-            <li key={topic + '-master'}>
-              <button className='topic-select-btn' onClick={() => handleAddTag}>
-                {topic}
-              </button>
-            </li>
-          ))}
+          {allTopics.map(topic => {
+            if (!activeTags.includes(topic)) {
+              return (
+                <li key={topic + '-master'}>
+                  <button
+                    className='topic-select-btn'
+                    onClick={() => handleAddTag(topic)}
+                  >
+                    {topic}
+                  </button>
+                </li>
+              );
+            }
+          })}
         </ul>
 
         <div className='active-tags'>
