@@ -1,4 +1,4 @@
-FROM ubtuntu:22.04
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-22.04
 
 RUN apt-get update && apt-get install -y sudo
 
@@ -31,6 +31,9 @@ ENV CHALLENGE_EDITOR_CLIENT_LOCATION=https://$CODESPACE_NAME-3300.$GITHUB_CODESP
 RUN mongod --dbpath /workspace/data &
 
 RUN cp sample.env .env
-RUN npm ci && npm run seed
-RUN npm run create:config && npm run build:curriculum
-RUN npm run develop
+
+RUN npm ci && \
+    npm run seed && \
+    npm run create:config && \
+    npm run build:curriculum && \
+    npm run develop;
