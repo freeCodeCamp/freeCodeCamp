@@ -109,7 +109,7 @@ function Challenges({
             <button
               key={topic}
               className='topic-tag'
-              onClick={() => handleRemoveTag}
+              onClick={() => handleRemoveTag(topic)}
             >
               <span>{topic}</span>X
             </button>
