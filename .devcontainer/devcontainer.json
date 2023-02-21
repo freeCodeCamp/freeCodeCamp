@@ -16,7 +16,7 @@
       "onAutoForward": "openPreview"
     }
   },
-  "postCreateCommand": "npm ci",
+  "postCreateCommand": "cp sample.env .env && npm ci",
   "postAttachCommand": "npm run develop",
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
