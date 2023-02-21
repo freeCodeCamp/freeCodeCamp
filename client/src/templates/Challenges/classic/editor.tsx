@@ -624,14 +624,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor) return;
     const domNode = createDescription(editor);
 
-    // make sure the overlayWidget has resized before using it to set the height
+    // make sure the content widget has resized before using it to set the height
 
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
     domNode.style.display = 'block';
     domNode.style.visibility = 'visible';
 
     // We have to wait for the viewZone to finish rendering before adjusting the
-    // position of the layout widget (i.e. trigger it via onDomNodeTop). If
+    // position of the content widget (i.e. trigger it via onDomNodeTop). If
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
       afterLineNumber: getLineBeforeEditableRegion(),
