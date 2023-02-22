@@ -9,7 +9,7 @@ dashedName: comparison-with-the-less-than-operator
 
 # --description--
 
-يقارن مشغل آلأصغر من (`<`) بين قيمتين رقمين. إذا كان الرَّقَم إلى اليسار أصغر من الرَّقَم إلى اليمين، فإنه يرجع `true`. خلاف ذلك، فإنه يرجع `false`. وعلى غرار المشغل المعني بالمساواة، يقوم المشغل أقل من بتحويل أنواع البيانات عند مقارنتها.
+يقارن مشغل الأصغر من (`<`) بين قيم رقمين. إذا كان الرَّقَم إلى اليسار أصغر من الرَّقَم إلى اليمين، فإنه يرجع `true`. خلاف ذلك، فإنه يرجع `false`. وعلى غرار مشغل المساواة، يقوم المشغل أقل من بتحويل أنواع البيانات عند مقارنتها.
 
 **مثال**
 
@@ -23,41 +23,41 @@ dashedName: comparison-with-the-less-than-operator
 
 # --instructions--
 
-أضف مشغل أقل من إلى الخطوط المشار إليها بحيث تكون تعبيرات مراجعة منطقية.
+أضف مشغل أقل من إلى الخطوط المشار إليها بحيث تكون تعبيرات return منطقية.
 
 # --hints--
 
-يجب أن ينتج `testLessThan(0)` مقطع `Under 25`
+يجب أن ينتج `testLessThan(0)` المقطع النصي `Under 25`
 
 ```js
 assert(testLessThan(0) === 'Under 25');
 ```
 
-يجب أن ينتج `testLessThan(24)` مقطع `Under 25`
+يجب أن ينتج `testLessThan(24)` المقطع النصي `Under 25`
 
 ```js
 assert(testLessThan(24) === 'Under 25');
 ```
 
-يجب أن ينتج `testLessThan(25)` مقطع `Under 55`
+يجب أن ينتج `testLessThan(25)` المقطع النصي `Under 55`
 
 ```js
 assert(testLessThan(25) === 'Under 55');
 ```
 
-يجب أن ينتج `testLessThan(54)` مقطع `Under 55`
+يجب أن ينتج `testLessThan(54)` المقطع النصي `Under 55`
 
 ```js
 assert(testLessThan(54) === 'Under 55');
 ```
 
-يجب أن ينتج `testLessThan(55)` مقطع `55 or Over`
+يجب أن ينتج `testLessThan(55)` المقطع النصي `55 or Over`
 
 ```js
 assert(testLessThan(55) === '55 or Over');
 ```
 
-يجب أن ينتج `testLessThan(99)` مقطع `55 or Over`
+يجب أن ينتج `testLessThan(99)` المقطع النصي `55 or Over`
 
 ```js
 assert(testLessThan(99) === '55 or Over');
