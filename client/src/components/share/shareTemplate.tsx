@@ -9,7 +9,7 @@ export const ShareTemplate = ({ handleClick }: { handleClick: () => void }) => {
       data-testid='share-template'
       onClick={handleClick}
     >
-      <span> {t('buttons.copy-link-to-share')} </span>
+      <span data-testid='copy-button'> {t('buttons.copy-link-to-share')} </span>
     </button>
   );
 };
