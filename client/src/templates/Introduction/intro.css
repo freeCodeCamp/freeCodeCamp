@@ -170,6 +170,10 @@ a.cert-tag:active {
   overflow-wrap: break-word;
 }
 
+.filtered-out {
+  opacity: 0.25;
+}
+
 .block-description pre {
   display: inline;
   padding: 0;

@@ -45,14 +45,12 @@ function Challenges({
   );
 
   // TEMP
-  const allTopics = ['Topic 1', 'Topic 2', 'Topic 3', 'Topic 4', 'Topic 5'];
+  const allTopics = ['step-1', 'step-2', 'step-25', 'step-30', 'step-45'];
 
   const [activeTags, updateTags] = useState([]);
   const [isExpanded, toggleExpanded] = useState(false);
 
   function handleRemoveTag(topic: string) {
-    // Add to list
-
     // Remove tag
     const clone = [...activeTags];
     const index = clone.indexOf(topic);
@@ -63,8 +61,6 @@ function Challenges({
   }
 
   function handleAddTag(topic: string) {
-    // Remove from list
-
     // Add tag
     activeTags.unshift(topic);
     updateTags(activeTags);
@@ -95,7 +91,7 @@ function Challenges({
           }`}
           onClick={() => toggleExpanded(!isExpanded)}
         >
-          Filter
+          Topics
           <DropDown />
         </button>
 
@@ -150,6 +146,11 @@ function Challenges({
                   to={challenge.fields.slug}
                   className={`map-grid-item ${
                     +challenge.isCompleted ? 'challenge-completed' : ''
+                  } ${
+                    activeTags.includes(challenge.dashedName) ||
+                    activeTags.length === 0
+                      ? ''
+                      : 'filtered-out'
                   }`}
                 >
                   <span className='sr-only'>{t('aria.step')}</span>
