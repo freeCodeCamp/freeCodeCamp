@@ -8,7 +8,7 @@
       ]
     }
   },
-  "dockerComposeFile": "docker-compose.yml",
+  "dockerFile": "Dockerfile",
   "forwardPorts": [3000, 8000],
   "portsAttributes": {
     "8000": {
@@ -17,7 +17,7 @@
     }
   },
   "postCreateCommand": "cp sample.env .env && npm ci",
+  "postStartCommand": "mongod",
   "postAttachCommand": "npm run develop",
-  "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
 }
