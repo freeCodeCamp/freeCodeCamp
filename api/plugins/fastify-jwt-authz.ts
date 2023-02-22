@@ -47,3 +47,9 @@ const fastifyJwtAuthz: FastifyPluginCallback = (fastify, _opts, done) => {
 };
 
 export default fastifyJwtAuthz;
+
+declare module 'fastify' {
+  interface FastifyRequest {
+    jwtAuthz: JwtAuthz;
+  }
+}
