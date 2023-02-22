@@ -1,16 +1,19 @@
-FROM mcr.microsoft.com/devcontainers/base:ubuntu-20.04
+ARG VARIANT=20.04
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-${VARIANT}
 
-RUN apt-get update && apt-get install -y sudo
+ARG NODE_VERSION=18
+ARG MONGODB_VERSION=6.0.4
 
-# Install Node LTS
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-RUN sudo apt-get install -y nodejs
-# Install MongoDB
-# Source: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu-tarball/#install-mongodb-community-edition
-RUN mkdir -p /tmp/mongodb && \
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y sudo && \
+    curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | sudo -E bash - && \
+    sudo apt-get install -y nodejs && \
+    sudo apt-get install -y libcurl4 openssl liblzma5 && \
+    mkdir -p /tmp/mongodb && \
     cd /tmp/mongodb && \
-    wget -qOmongodb.tgz https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.2.tgz && \
-    tar xf mongodb.tgz && \
+    wget -qOmongodb.tgz https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-${MONGODB_VERSION}.tgz && \
+    tar -zxvf mongodb.tgz && \
     cd mongodb-* && \
     sudo cp bin/* /usr/local/bin/ && \
     rm -rf /tmp/mongodb && \
