@@ -250,7 +250,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
                 <ReflexSplitter propagate={true} {...resizeProps} />
               )}
               {displayPreviewConsole && (
-                <ReflexElement flex={testsPane.flex} {...resizeProps}>
+                <ReflexElement
+                  {...(displayPreviewPane && { flex: testsPane.flex })}
+                  {...resizeProps}
+                >
                   {testOutput}
                 </ReflexElement>
               )}

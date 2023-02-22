@@ -11,7 +11,7 @@ Nota che i colori rosso e ciano sono molto luminosi uno accanto all'altro. Quest
 
 È bene scegliere un unico colore dominante e utilizzare il suo colore complementare come contrasto per attirare l'attenzione su determinati contenuti della pagina.
 
-Nella regola `h1`, utilizza la funzione `rgb` per impostare lo sfondo sul colore ciano.
+First, in the `h1` rule, use the `rgb` function to set its `background-color` to cyan.
 
 # --hints--
 

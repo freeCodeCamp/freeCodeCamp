@@ -508,13 +508,13 @@ npm run create:config && npm run build:curriculum && npm run build:server
 4. Avvia le istanze
 
 ```console
-pm2 start all --update-env && pm2 logs
-```
+cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
+   ```
 
 #### 2. Aggiornamenti continui - usati per cambiamenti logici al codice.
 
 ```console
-pm2 reload all --update-env && pm2 logs
+cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
 ```
 
 > [!NOTE] Gli update continui a codice e logica sono gestiti dalle pipeline. Non dovresti aver bisogno di eseguire questi comandi. Sono qui per documentazione.

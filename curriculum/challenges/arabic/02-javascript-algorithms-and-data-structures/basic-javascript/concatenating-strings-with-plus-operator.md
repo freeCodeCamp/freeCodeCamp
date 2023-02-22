@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b7
-title: ربط المقاطع النصية باستخدام مشغل الجمع (Concatenating Strings with Plus Operator)
+title: ربط المقاطع النصية باستخدام مشغل الجمع
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNpM8AN'
 forumTopicId: 16802
@@ -9,7 +9,7 @@ dashedName: concatenating-strings-with-plus-operator
 
 # --description--
 
-في JavaScript، عندما يستخدم مشغل `+` مع `String`، فإنه يسمى مشغل <dfn>سلسلة</dfn>. يمكنك بناء مقطع جديد من المقاطع الأخرى من طريق تجميع <dfn>السلسلة</dfn> بعضها مع بعض.
+في JavaScript، عندما يستخدم مشغل `+` مع `String`، فإنه يسمى مشغل <dfn>الضم</dfn>. يمكنك بناء مقطع نصي جديد من المقاطع الأخرى عن طريق <dfn>ضم</dfn> بعضها مع بعض.
 
 **مثال**
 
@@ -17,7 +17,7 @@ dashedName: concatenating-strings-with-plus-operator
 'My name is Alan,' + ' I concatenate.'
 ```
 
-**ملاحظة:** احترس من المسافات. لإن ربط السلسلة لا تضيف مسافات بين المقاطع الذي تم جمعها، لذا ستحتاج إلى إضافتها بنفسك.
+**ملاحظة:** احترس من المسافات. لإن مشغِّل الضم لا يضيف مسافات بين المقاطع الذي يجمعها، لذا ستحتاج إلى إضافتها بنفسك.
 
 مثال:
 
@@ -25,14 +25,14 @@ dashedName: concatenating-strings-with-plus-operator
 const ourStr = "I come first. " + "I come second.";
 ```
 
-المقطع الآتي `I come first. I come second.` سيتم عرضه في وحدة التحكم.
+سيعرض الكونسول المقطع الآتي `I come first. I come second.`.
 # --instructions--
 
 أنشئ `myStr` من المقاطع الآتية `This is the start.` و `This is the end.` باستخدام المشغل `+`. تيقن من تضمين مسافة بين المقاطع.
 
 # --hints--
 
-يجب أن يوجد حرف الفراغ واحد بين المقطعين في `myStr`.
+يجب أن يوجد حرف فراغ واحد بين المقطعين في `myStr`.
 
 ```js
 assert(/start\. This/.test(myStr));
@@ -56,7 +56,7 @@ assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 assert(/const\s+myStr/.test(code));
 ```
 
-يجب عليك تعيين النتيجة إلى متغير `myStr`.
+يجب عليك تعيين النتيجة إلى المتغير `myStr`.
 
 ```js
 assert(/myStr\s*=/.test(code));

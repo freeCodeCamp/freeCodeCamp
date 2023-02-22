@@ -43,7 +43,7 @@ myDataBase.findOneAndUpdate(
 
 You should be able to login to your app now. Try it!
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-iii-5" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-iii-5" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
@@ -61,7 +61,7 @@ async (getUserInput) => {
   );
   assert.match(
     data,
-    /GitHubStrategy[^]*return cb/gi,
+    /GitHubStrategy[^]*cb/gi,
     'Strategy should return the callback function "cb"'
   );
 }
