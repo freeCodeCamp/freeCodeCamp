@@ -1,4 +1,5 @@
 import { FastifyPluginCallback, FastifyRequest } from 'fastify';
+import fp from 'fastify-plugin';
 
 interface UserObject {
   scope: string;
@@ -46,10 +47,10 @@ const fastifyJwtAuthz: FastifyPluginCallback = (fastify, _opts, done) => {
   }
 };
 
-export default fastifyJwtAuthz;
-
 declare module 'fastify' {
   interface FastifyRequest {
     jwtAuthz: JwtAuthz;
   }
 }
+
+export default fp(fastifyJwtAuthz);
