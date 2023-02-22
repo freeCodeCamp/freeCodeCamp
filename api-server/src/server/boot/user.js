@@ -98,19 +98,16 @@ function createReadSessionUser(app) {
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
 
-    let encodedUserToken;
+    const userId = queryUser?.id;
+    const userToken = userId
+      ? await UserToken.findOne({
+          where: { userId }
+        })
+      : null;
 
-    if (queryUser && queryUser.id) {
-      // if queryUser is undefined, this returns the first document
-      const userToken = await UserToken.findOne({
-        where: { userId: queryUser.id }
-      });
-
-      // only encode if a userToken was found
-      if (userToken) {
-        encodedUserToken = encodeUserToken(userToken.id);
-      }
-    }
+    const encodedUserToken = userToken
+      ? encodeUserToken(userToken.id)
+      : undefined;
 
     const source =
       queryUser &&
