@@ -50,7 +50,7 @@ Invia la tua pagina quando pensi che sia tutto corretto. Se incontri degli error
 
 # --hints--
 
-You should serialize the user object correctly.
+Dovresti serializzare correttamente l'oggetto utente.
 
 ```js
 async (getUserInput) => {
@@ -70,7 +70,7 @@ async (getUserInput) => {
 }
 ```
 
-You should deserialize the user object correctly.
+Dovresti deserializzare correttamente l'oggetto utente.
 
 ```js
 async (getUserInput) => {
