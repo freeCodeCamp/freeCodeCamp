@@ -5,6 +5,8 @@ import middie from '@fastify/middie';
 import { testRoutes } from './routes/test';
 import { dbConnector } from './db';
 import { testMiddleware } from './middleware';
+import mongoosePlugin from './db/mongoose';
+import { mongooseRoute } from './routes/mongoose';
 
 const fastify = Fastify({
   logger: { level: process.env.NODE_ENV === 'development' ? 'debug' : 'fatal' }
@@ -21,7 +23,10 @@ const start = async () => {
   void fastify.use('/test', testMiddleware);
 
   void fastify.register(dbConnector);
+  void fastify.register(mongoosePlugin);
+
   void fastify.register(testRoutes);
+  void fastify.register(mongooseRoute);
 
   try {
     const port = Number(process.env.PORT) || 3000;
