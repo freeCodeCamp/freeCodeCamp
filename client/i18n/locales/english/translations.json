@@ -77,8 +77,7 @@
     "cancel-change": "Cancel Change",
     "resume-project": "Resume project",
     "start-project": "Start project",
-    "copy-link-to-share": "Copy link to share",
-    "copied-succesfully": "Copied succesfully!!!"
+    "copy-link-to-share": "Copy link to share"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -520,6 +519,7 @@
     "opens-new-window": "Opens in new window"
   },
   "flash": {
+    "copied-succesfully": "Copied succesfully!!!",
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
     "really-weird": "Something really weird happened, if it happens again, please consider raising an issue on https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "Something is not quite right. A report has been generated and the freeCodeCamp.org team have been notified",

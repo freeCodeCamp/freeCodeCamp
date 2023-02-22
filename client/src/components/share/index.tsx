@@ -1,15 +1,24 @@
 import React from 'react';
+import { createFlashMessage } from '../Flash/redux';
 import { ShareTemplate } from './shareTemplate';
 import useShare from './useShare';
 
-export const Share = ({
-  superBlock,
-  block
-}: {
+interface ShareProps {
   superBlock: string | null;
   block: string | null;
-}) => {
-  const { copyToClipboard, isCopied } = useShare({ superBlock, block });
+  createFlashMessage: typeof createFlashMessage;
+}
 
-  return <ShareTemplate handleClick={copyToClipboard} isCopied={isCopied} />;
+export const Share: React.FC<ShareProps> = ({
+  superBlock,
+  block,
+  createFlashMessage
+}) => {
+  const copyToClipboard = useShare({
+    superBlock,
+    block,
+    createFlashMessage
+  });
+
+  return <ShareTemplate handleClick={copyToClipboard} />;
 };

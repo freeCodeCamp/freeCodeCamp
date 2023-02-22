@@ -12,8 +12,10 @@ import { apiLocation } from '../../../../../config/env.json';
 import { ChallengeNode, ChallengeWithCompletedNode } from '../../../redux/prop-types';
 import { getChallengesList } from '../../../../../api-server/src/server/utils/get-curriculum';
 import { Share } from '../../../components/share';
+import { createFlashMessage } from '../../../components/Flash/redux';
 
 interface LowerJawProps {
+  createFlashMessage: typeof createFlashMessage;
   data?: { challengeNode: ChallengeNode };
   hint?: string;
   challengeIsCompleted: boolean;
@@ -29,6 +31,7 @@ interface LowerJawProps {
 }
 
 const LowerJaw = ({
+  createFlashMessage,
   data,
   openHelpModal,
   challengeIsCompleted,
@@ -220,6 +223,7 @@ const LowerJaw = ({
             <Share
               superBlock={data?.challengeNode.challenge.superBlock || ''}
               block={data?.challengeNode.challenge.block || ''}
+              createFlashMessage={createFlashMessage}
             />
           ) : (
             <button

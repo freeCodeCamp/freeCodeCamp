@@ -39,5 +39,6 @@ export enum FlashMessages {
   UserNotCertified = 'flash.user-not-certified',
   WrongName = 'flash.wrong-name',
   WrongUpdating = 'flash.wrong-updating',
-  WentWrong = 'flash.went-wrong'
+  WentWrong = 'flash.went-wrong',
+  Copied = 'flash.copied-succesfully'
 }

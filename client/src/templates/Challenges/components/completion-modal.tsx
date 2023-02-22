@@ -25,8 +25,10 @@ import {
   challengeMetaSelector
 } from '../redux/selectors';
 import { Share } from '../../../components/share';
-import CompletionModalBody from './completion-modal-body';
 import './completion-modal.css';
+import { createFlashMessage } from '../../../components/Flash/redux';
+import { CopiedMessage } from '../../../components/share/useShare';
+import CompletionModalBody from './completion-modal-body';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -60,6 +62,7 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = function (dispatch: Dispatch) {
   const dispatchers = {
+    createFlashMessage:()=>dispatch(createFlashMessage(CopiedMessage)),
     close: () => dispatch(closeModal('completion')),
     submitChallenge: () => {
       dispatch(submitChallenge());
@@ -105,6 +108,7 @@ function getCompletedChallengesInBlock(
 }
 
 interface CompletionModalsProps {
+  createFlashMessage:typeof createFlashMessage
   allowBlockDonationRequests: (arg0: string) => void;
   block: string;
   blockName: string;
@@ -239,6 +243,7 @@ class CompletionModalInner extends Component<
     const {
       block,
       close,
+      createFlashMessage,
       currentBlockIds,
       id,
       isOpen,
@@ -316,7 +321,8 @@ class CompletionModalInner extends Component<
           ) : null}
           {currentBlockIds &&
             currentBlockIds[currentBlockIds.length - 1] === id && (
-              <Share superBlock={superBlock} block={block} />
+              // <p onClick={createFlashMessage} > button </p>
+              <Share superBlock={superBlock} block={block}  createFlashMessage={createFlashMessage} />
             )}
         </Modal.Footer>
       </Modal>

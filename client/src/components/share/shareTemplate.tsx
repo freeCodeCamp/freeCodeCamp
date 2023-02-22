@@ -1,13 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-export const ShareTemplate = ({
-  handleClick,
-  isCopied
-}: {
-  handleClick: () => void;
-  isCopied: boolean;
-}) => {
+export const ShareTemplate = ({ handleClick }: { handleClick: () => Promise<void> }) => {
   const { t } = useTranslation();
   return (
     <button
@@ -15,11 +9,7 @@ export const ShareTemplate = ({
       data-testid='share-template'
       onClick={handleClick}
     >
-      {isCopied ? (
-        <span> {t('buttons.copied-succesfully')} </span>
-      ) : (
-        <span> {t('buttons.copy-link-to-share')} </span>
-      )}
+      <span> {t('buttons.copy-link-to-share')} </span>
     </button>
   );
 };
