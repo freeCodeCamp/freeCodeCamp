@@ -420,7 +420,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       store.set('monacoTabTrapped', trapped);
       ariaAlert(
         `${
-          trapped ? t('editor-alerts.tab-trapped') : t('editor-alerts.tab-free')
+          trapped
+            ? t('learn.editor-alerts.tab-trapped')
+            : t('learn.editor-alerts.tab-free')
         }`
       );
     };
