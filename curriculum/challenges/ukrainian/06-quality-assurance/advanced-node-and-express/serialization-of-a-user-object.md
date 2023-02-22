@@ -50,7 +50,7 @@ const { ObjectID } = require('mongodb');
 
 # --hints--
 
-Ви повинні правильно серіалізувати функцію користувача.
+You should serialize the user object correctly.
 
 ```js
 async (getUserInput) => {
@@ -70,7 +70,7 @@ async (getUserInput) => {
 }
 ```
 
-Ви повинні правильно десеріалізувати функцію користувача.
+You should deserialize the user object correctly.
 
 ```js
 async (getUserInput) => {

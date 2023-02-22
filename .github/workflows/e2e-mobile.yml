@@ -4,11 +4,14 @@ on:
   # push:
   #   paths-ignore:
   #     - 'docs/**'
-  #   branches-ignore:
-  #     - 'renovate/**'
+  #   branches:
+  #     - 'main'
   # pull_request:
   #   paths-ignore:
   #     - 'docs/**'
+  #   branches:
+  #     - 'main'
+  #     - 'next-**'
 
 jobs:
   mobile-test:

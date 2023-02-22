@@ -56,7 +56,7 @@ app.route('/register')
   );
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 **NOTE:** From this point onwards, issues can arise relating to the use of the *picture-in-picture* browser. If you are using an online IDE which offers a preview of the app within the editor, it is recommended to open this preview in a new tab.
 

@@ -19,7 +19,7 @@ dashedName: build-a-survey-form
 1. Innerhalb des Formular-Elements **musst** du deine E-Mail in ein `input`-Feld mit einer `id` von `email` eingeben
 1. Wenn du eine falsch formatierte E-Mail angibst, wird dir ein HTML5-Validierungsfehler ausgegeben
 1. Innerhalb des Formulars kannst du eine Zahl in das `input`-Feld, das die `id` von `number` hat, eingeben
-1. The number input should not accept non-numbers, either by preventing you from typing them or by showing an HTML5 validation error (depending on your browser).
+1. Das Nummernfeld sollte ausschließlich Nummern als Eingabewert akzeptieren – entweder, indem es dich davon abhält, andere Werte einzugeben, oder durch Ausgabe eines HTML5-Validierungsfehlers (abhängig vom Browser).
 1. Wenn du eine Nummer eingibst, die außerhalb des Bereichs der Zahleneingabe liegt, wird dir ein HTML5-Validierungsfehler ausgegeben. Der genannte Bereich wird durch die `min`- und `max`-Attribute festgelegt
 1. Für die Namen-, E-Mail- und Nummern-Eingabefelder findest du zugehörige `label`-Elemente im Formular, welches den Nutzen jedes Felds der folgenden IDs beschreibt: `id="name-label"`, `id="email-label"`, und `id="number-label"`
 1. Für die Namen-, E-Mail- und Nummern-Eingabefelder findest du einen Platzhalter-Text, der eine Beschreibung oder Anweisung für jedes Feld enthält

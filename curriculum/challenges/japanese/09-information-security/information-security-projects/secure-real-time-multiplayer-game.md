@@ -8,38 +8,38 @@ dashedName: secure-real-time-multiplayer-game
 
 # --description--
 
-Develop a 2D real time multiplayer game using the HTML Canvas API and Socket.io that is functionally similar to this: <a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a>. プロジェクトに取り組むにあたり、以下の方法のうち1つを用いてコードを記述します。
+HTML Canvas API と Socket.io を使用して、<a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a> と同じような機能を持つ 2D リアルタイムマルチプレイヤーゲームを開発します。 プロジェクトに取り組むにあたり、以下の方法のうち1つを用いてコードを記述します。
 
--   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
+-   <a href="https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でチャレンジを完了させる。
+-   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-If you use Replit, follow these steps to set up the project:
+Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   まず、Replit でプロジェクトをインポートします。
+-   すると、`.replit` ファイルのウィンドウが表示されます。
+-   `Use run command` を選択して `Done` ボタンをクリックします。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
-Create a secure multiplayer game in which each player can move their avatar, there is at least one collectible item, and the rank of the players is calculated based on their score.
+セキュアなマルチプレイヤーゲームを作成してください。このゲームでは、各プレイヤーがアバターを動かすことができます。また、少なくとも 1 つの収集可能なアイテムがあり、プレイヤーのランクが各自のスコアに基づいて計算されます。
 
-For details consult the tests below.
+詳細については、以下のテストを参照してください。
 
-Make sure that your game is secure! Include these security measures:
+ゲームは必ずセキュアにしてください！ 以下のセキュリティ対策を組み込んでください:
 
-- The client should not be able to guess/sniff the MIME type
-- Prevent XSS attacks
-- Do not cache anything from the website in the client
-- The headers say that the site is powered by `PHP 7.4.3`
+- クライアントが MIME タイプを推測またはスニッフィング (盗み見) できないようにする
+- XSS 攻撃を防止する
+- クライアントにウェブサイトから何もキャッシュさせないようにする
+- ヘッダーに、このサイトで `PHP 7.4.3` が使用されていることを記述する
 
-**Note**: `helmet@^3.21.3` is needed for the user stories. This means you will need to use the previous version of Helmet's docs, for information on how to achieve the user stories.
+**注**: このユーザーストーリーには `helmet@^3.21.3` が必要です。 そのため、ユーザーストーリーを実現するための情報として、Helmet の旧バージョンのドキュメントを参照する必要があります。
 
 # --hints--
 
-You can provide your own project, not the example URL.
+サンプルの URL ではなく、自分で作成したプロジェクトを提出してください。
 
 ```js
 (getUserInput) => {

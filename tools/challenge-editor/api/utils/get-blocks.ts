@@ -4,7 +4,12 @@ import { CHALLENGE_DIR, META_DIR } from '../configs/paths';
 
 import { PartialMeta } from '../interfaces/partial-meta';
 
-export const getBlocks = async (sup: string) => {
+type Block = {
+  name: string;
+  path: string;
+};
+
+export const getBlocks = async (sup: string): Promise<Block[]> => {
   const filePath = join(CHALLENGE_DIR, sup);
 
   const files = await readdir(filePath);

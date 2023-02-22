@@ -9,7 +9,7 @@ dashedName: global-vs--local-scope-in-functions
 
 # --description--
 
-من الممكن الحصول على متغيرات <dfn>محدودة (local)</dfn> و <dfn>شاملة (global)</dfn> بنفس الاسم. عندما تقوم ذلك، يكون المتغير المحدود (local) له الأسبقية على المتغير الشامل (global).
+من الممكن الحصول على متغيرات <dfn>محدودة (local)</dfn> و <dfn>شاملة (global)</dfn> بنفس الاسم. عندما تفعل ذلك، يكون المتغير المحدود (local) له الأسبقية على المتغير الشامل (global).
 
 وفي هذا المثال:
 
@@ -26,7 +26,7 @@ function myFun() {
 
 # --instructions--
 
-أضف متغير محدود (local) إلى وظيفة `myOutfit` لتجاوز قيمة `outerWear` بالمقطع النصي `sweater`.
+أضف متغير محدود (local) إلى وظيفة `myOutfit` لتجاوز قيمة `outerWear` الحالية بالمقطع النصي التالي `sweater`.
 
 # --hints--
 

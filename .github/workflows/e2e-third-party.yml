@@ -5,7 +5,7 @@ name: CI - E2E - 3rd party donation tests
 on:
   push:
     branches:
-      - 'prod-*'
+      - 'prod-**'
     paths-ignore:
       - 'docs/**'
 

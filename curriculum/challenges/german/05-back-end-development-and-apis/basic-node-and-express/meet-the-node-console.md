@@ -10,9 +10,9 @@ dashedName: meet-the-node-console
 
 Bei der Arbeit an diesen Aufgaben wirst du deinen Code mithilfe folgender Methoden schreiben:
 
-- Klone <a href="https://github.com/freeCodeCamp/boilerplate-express/" target="_blank" rel="noopener noreferrer nofollow">dieses GitHub-Repo</a> und schließe dein Projekt lokal ab.
+- Klone <a href="https://github.com/freeCodeCamp/boilerplate-express/" target="_blank" rel="noopener noreferrer nofollow">diese GitHub-Repo</a> und schließe dein Projekt lokal ab.
 - Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starterprojekt</a>, um die Aufgaben abzuschließen.
-- Verwende einen Site Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien aus unserem GitHub Repo zu integrieren.
+- Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
 
 Wenn du Replit verwendest, dann folge diesen Schritten, um das Projekt einzurichten:
 

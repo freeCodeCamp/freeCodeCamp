@@ -50,7 +50,7 @@ const { ObjectID } = require('mongodb');
 
 # --hints--
 
-应该正确地序列化用户函数。
+You should serialize the user object correctly.
 
 ```js
 async (getUserInput) => {
@@ -70,7 +70,7 @@ async (getUserInput) => {
 }
 ```
 
-应该正确地反序列化用户函数。
+You should deserialize the user object correctly.
 
 ```js
 async (getUserInput) => {

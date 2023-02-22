@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-export const ShareTemplate = ({ handleClick }: { handleClick: () => Promise<void> }) => {
+export const ShareTemplate = ({ handleClick }: { handleClick: () => void }) => {
   const { t } = useTranslation();
   return (
     <button

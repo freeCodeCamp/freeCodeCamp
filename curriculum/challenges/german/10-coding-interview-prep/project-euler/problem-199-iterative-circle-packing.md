@@ -8,13 +8,13 @@ dashedName: problem-199-iterative-circle-packing
 
 # --description--
 
-Three circles of equal radius are placed inside a larger circle such that each pair of circles is tangent to one another and the inner circles do not overlap. There are four uncovered "gaps" which are to be filled iteratively with more tangent circles.
+Drei Kreise mit gleichem Radius werden innerhalb eines größeren Kreises so angeordnet, dass jedes Kreispaar tangiert wird und sich die inneren Kreise nicht überschneiden. Es gibt vier unbedeckte "Lücken", die iterativ mit weiteren Kreistangenten gefüllt werden sollen.
 
-<img class="img-responsive center-block" alt="a diagram of non-overlapping circles" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="ein Diagramm aus sich nicht überschneidenden Kreisen" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
 
-At each iteration, a maximally sized circle is placed in each gap, which creates more gaps for the next iteration. After 3 iterations (pictured), there are 108 gaps and the fraction of the area which is not covered by circles is 0.06790342, rounded to eight decimal places.
+Bei jeder Iteration wird ein maximal großer Kreis in jede Lücke gesetzt, wodurch weitere Lücken für die nächste Iteration entstehen. Nach 3 Iterationen (siehe Bild) gibt es 108 Lücken und der Anteil der Fläche, die nicht von Kreisen bedeckt ist, beträgt 0,06790342, gerundet auf acht Dezimalstellen.
 
-What fraction of the area is not covered by circles after `n` iterations? Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
+Welcher Anteil der Fläche ist nach `n` Iterationen nicht von Kreisen bedeckt? Gib deine Antwort auf acht Dezimalstellen gerundet im Format x.xxxxxxxx an.
 
 # --hints--
 

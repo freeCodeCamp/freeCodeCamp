@@ -13,12 +13,20 @@ dashedName: finding-a-remainder-in-javascript
 
 **示例**
 
-<blockquote>5 % 2 = 1 因为<br>Math.floor(5 / 2) = 2 （商）<br>2 * 2 = 4<br>5 - 4 = 1 （余数）</blockquote>
+<pre>
+5 % 2 = 1
+5 / 2 = 2 remainder 1
+2 * 2 = 4
+5 - 4 = 1
+</pre>
 
-**用法**  
-在数学中，判断一个数是奇数还是偶数，只需要判断这个数除以 `2` 得到的余数是 0 还是 1。
+**Usage**  
+In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`. Even numbers have a remainder of `0`, while odd numbers a remainder of `1`.
 
-<blockquote>17 % 2 = 1（17 是奇数）<br>48 % 2 = 0（48 是偶数）</blockquote>
+<pre>
+17 % 2 = 1
+48 % 2 = 0
+</pre>
 
 **提示**余数运算符（<dfn>remainder</dfn>）有时被错误地称为“模数”运算符。 它与模数非常相似，但不能用于负数的运算。
 
@@ -51,7 +59,9 @@ assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
 ## --after-user-code--
 
 ```js
-(function(y){return 'remainder = '+y;})(remainder);
+(function (y) {
+  return 'remainder = ' + y;
+})(remainder);
 ```
 
 ## --seed-contents--

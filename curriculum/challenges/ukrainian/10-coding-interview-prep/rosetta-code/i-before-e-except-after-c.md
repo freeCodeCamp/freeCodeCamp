@@ -35,43 +35,43 @@ dashedName: i-before-e-except-after-c
 assert(typeof IBeforeExceptC == 'function');
 ```
 
-`IBeforeExceptC("receive")` повинен повертати булеве значення.
+`IBeforeExceptC("receive")` має повертати булеве значення.
 
 ```js
 assert(typeof IBeforeExceptC('receive') == 'boolean');
 ```
 
-`IBeforeExceptC("receive")` повинен повертати `true`.
+`IBeforeExceptC("receive")` має повертати `true`.
 
 ```js
 assert.equal(IBeforeExceptC('receive'), true);
 ```
 
-`IBeforeExceptC("science")` повинен повертати `false`.
+`IBeforeExceptC("science")` має повертати `false`.
 
 ```js
 assert.equal(IBeforeExceptC('science'), false);
 ```
 
-`IBeforeExceptC("imperceivable")` повинен повертати `true`.
+`IBeforeExceptC("imperceivable")` має повертати `true`.
 
 ```js
 assert.equal(IBeforeExceptC('imperceivable'), true);
 ```
 
-`IBeforeExceptC("inconceivable")` повинен повертати `true`.
+`IBeforeExceptC("inconceivable")` має повертати `true`.
 
 ```js
 assert.equal(IBeforeExceptC('inconceivable'), true);
 ```
 
-`IBeforeExceptC("insufficient")` повинен повертати `false`.
+`IBeforeExceptC("insufficient")` має повертати `false`.
 
 ```js
 assert.equal(IBeforeExceptC('insufficient'), false);
 ```
 
-`IBeforeExceptC("omniscient")` повинен повертати `false`.
+`IBeforeExceptC("omniscient")` має повертати `false`.
 
 ```js
 assert.equal(IBeforeExceptC('omniscient'), false);

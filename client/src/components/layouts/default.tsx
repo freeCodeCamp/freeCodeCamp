@@ -4,6 +4,7 @@ import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
@@ -16,17 +17,24 @@ import { isBrowser } from '../../../utils';
 import {
   fetchUser,
   onlineStatusChange,
-  serverStatusChange
+  serverStatusChange,
+  updateAllChallengesInfo
 } from '../../redux/actions';
 import {
   isSignedInSelector,
   userSelector,
   isOnlineSelector,
   isServerOnlineSelector,
+  showCodeAllySelector,
   userFetchStateSelector
 } from '../../redux/selectors';
 
-import { UserFetchState, User } from '../../redux/prop-types';
+import {
+  UserFetchState,
+  User,
+  AllChallengeNode,
+  CertificateNode
+} from '../../redux/prop-types';
 import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
@@ -49,6 +57,7 @@ const mapStateToProps = createSelector(
   isOnlineSelector,
   isServerOnlineSelector,
   userFetchStateSelector,
+  showCodeAllySelector,
   userSelector,
   (
     isSignedIn,
@@ -56,6 +65,7 @@ const mapStateToProps = createSelector(
     isOnline: boolean,
     isServerOnline: boolean,
     fetchState: UserFetchState,
+    showCodeAlly: boolean,
     user: User
   ) => ({
     isSignedIn,
@@ -65,6 +75,7 @@ const mapStateToProps = createSelector(
     isServerOnline,
     fetchState,
     theme: user.theme,
+    showCodeAlly,
     user
   })
 );
@@ -77,7 +88,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       fetchUser,
       removeFlashMessage,
       onlineStatusChange,
-      serverStatusChange
+      serverStatusChange,
+      updateAllChallengesInfo
     },
     dispatch
   );
@@ -90,6 +102,7 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   showFooter?: boolean;
   isChallenge?: boolean;
   block?: string;
+  showCodeAlly: boolean;
   superBlock?: string;
   t: TFunction;
 }
@@ -116,11 +129,15 @@ function DefaultLayout({
   superBlock,
   t,
   theme = Themes.Default,
+  showCodeAlly,
   user,
-  fetchUser
+  fetchUser,
+  updateAllChallengesInfo
 }: DefaultLayoutProps): JSX.Element {
+  const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
     // componentDidMount
+    updateAllChallengesInfo({ challengeEdges, certificateNodes });
     if (!isSignedIn) {
       fetchUser();
     }
@@ -206,7 +223,11 @@ function DefaultLayout({
           />
         </Helmet>
         <div className={`default-layout`}>
-          <Header fetchState={fetchState} user={user} />
+          <Header
+            fetchState={fetchState}
+            user={user}
+            skipButtonText={t('learn.skip-to-content')}
+          />
           <OfflineWarning
             isOnline={isOnline}
             isServerOnline={isServerOnline}
@@ -219,7 +240,7 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge && (
+          {isChallenge && !showCodeAlly && (
             <div className='breadcrumbs-demo'>
               <BreadCrumb
                 block={block as string}
@@ -236,6 +257,50 @@ function DefaultLayout({
     );
   }
 }
+
+// TODO: get challenge nodes directly rather than wrapped in edges
+const useGetAllBlockIds = () => {
+  const {
+    allChallengeNode: { edges: challengeEdges },
+    allCertificateNode: { nodes: certificateNodes }
+  }: {
+    allChallengeNode: AllChallengeNode;
+    allCertificateNode: { nodes: CertificateNode[] };
+  } = useStaticQuery(graphql`
+    query getBlockNode {
+      allChallengeNode(
+        sort: {
+          fields: [
+            challenge___superOrder
+            challenge___order
+            challenge___challengeOrder
+          ]
+        }
+      ) {
+        edges {
+          node {
+            challenge {
+              block
+              id
+            }
+          }
+        }
+      }
+      allCertificateNode {
+        nodes {
+          challenge {
+            certification
+            tests {
+              id
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  return { challengeEdges, certificateNodes };
+};
 
 DefaultLayout.displayName = 'DefaultLayout';
 

@@ -778,20 +778,30 @@
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>属性：Rosetta 代码</a>"
         ]
       },
-      "the-odin-project": {
-        "title": "The Odin Project",
-        "intro": ["A description is to be determined"]
-      },
-      "the-odin-project-projects": {
-        "title": "The Odin Project Projects",
-        "intro": ["A description is to be determined"]
-      },
       "project-euler": {
         "title": "欧拉计划",
         "intro": [
           "完成下方来自欧拉计划的编程挑战，这将强化你的算法和数学知识。",
           "这些问题的难度很大，对于许多人来说，这是一个归纳性学习的过程。也就是说，通过解决一个问题，你将接触到一个新概念，然后你可以解决自己以前无法解决的问题。你能完成全部挑战吗？"
         ]
+      }
+    }
+  },
+  "the-odin-project": {
+    "title": "The Odin Project",
+    "intro": [
+      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
+      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
+      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
+    ],
+    "blocks": {
+      "top-learn-html-foundations": {
+        "title": "Learn HTML Foundations",
+        "intro": ["A description is to be determined"]
+      },
+      "top-build-a-recipe-project": {
+        "title": "Learn HTML Foundations by Building a Recipe Page",
+        "intro": ["A description is to be determined"]
       }
     }
   },

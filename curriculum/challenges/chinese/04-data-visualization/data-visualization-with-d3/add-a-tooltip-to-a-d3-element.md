@@ -8,7 +8,7 @@ dashedName: add-a-tooltip-to-a-d3-element
 
 # --description--
 
-当用户在一个对象上悬停时，提示框可以显示关于这个对象更多的信息。 在可视化中有多种方法添加提示框，这个挑战将使用 SVG 的 `title` 元素。
+当用户在一个对象上悬停时，提示框可以显示关于这个对象更多的信息。 There are several ways to add a tooltip to a visualization. This challenge uses the SVG `title` element.
 
 `title` 和 `text()` 方法一起给每组动态添加数据。
 

@@ -8,11 +8,11 @@ import GreenPass from '../../../assets/icons/green-pass';
 
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
-
 import { ChallengeNode, ChallengeWithCompletedNode } from '../../../redux/prop-types';
 import { getChallengesList } from '../../../../../api-server/src/server/utils/get-curriculum';
 import { Share } from '../../../components/share';
 import { createFlashMessage } from '../../../components/Flash/redux';
+
 
 interface LowerJawProps {
   createFlashMessage: typeof createFlashMessage;
@@ -193,8 +193,8 @@ const LowerJaw = ({
       (currentAttempts >= testsLength || currentAttempts >= 3);
 
     const challengeOrder:ChallengeWithCompletedNode[] = getChallengesList({
-      userInputSuperBlock: data?.challengeNode.challenge.superBlock,
-      userInputBlock: data?.challengeNode.challenge.block
+      userInputSuperBlock: data?.challengeNode.challenge.superBlock || "",
+      userInputBlock: data?.challengeNode.challenge.block || ""
     });
     if (
       challengeOrder[challengeOrder.length - 1].id ===
