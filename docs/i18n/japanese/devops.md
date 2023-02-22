@@ -508,13 +508,13 @@ npm run create:config && npm run build:curriculum && npm run build:server
 4. インスタンスを開始します。
 
 ```console
-pm2 start all --update-env && pm2 logs
-```
+cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
+   ```
 
 #### 2. ローリング更新 - コードの論理的な変更に使用されます。
 
 ```console
-pm2 reload all --update-env && pm2 logs
+cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
 ```
 
 > [!NOTE] パイプライン経由で、コードやロジックの更新をロールリング処理しています。 これらのコマンドを実行する必要はありません。 ドキュメント用として、ここに記載されているだけです。

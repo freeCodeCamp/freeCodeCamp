@@ -508,13 +508,13 @@ npm run create:config && npm run build:curriculum && npm run build:server
 4. Starte Instanzen
 
 ```console
-pm2 start all --update-env && pm2 logs
-```
+cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
+   ```
 
 #### 2. Fortlaufende (Rolling) Updates - Werden für logische Änderungen am Code verwendet.
 
 ```console
-pm2 reload all --update-env && pm2 logs
+cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
 ```
 
 > [!NOTE] Wir führen fortlaufende Aktualisierungen des Codes, der Logik, mittels Pipelines durch. Du solltest diese Befehle nicht ausführen müssen. Sie dienen nur der Dokumentation.

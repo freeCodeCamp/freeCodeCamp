@@ -1,6 +1,5 @@
 ---
 id: 637633672724a688c04636e5
-videoId: LGQuIIv2RVA
 title: Questão D de Introdução ao HTML e ao CSS
 challengeType: 15
 dashedName: introduction-to-html-and-css-question-d

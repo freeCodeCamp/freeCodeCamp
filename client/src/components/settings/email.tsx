@@ -215,6 +215,7 @@ function EmailSettings({
           </div>
           <BlockSaveButton
             aria-disabled={isDisabled}
+            bgSize='lg'
             {...(isDisabled && { tabindex: -1 })}
           >
             {t('buttons.save')}{' '}

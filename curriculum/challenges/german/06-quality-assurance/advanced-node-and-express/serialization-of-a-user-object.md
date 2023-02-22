@@ -50,7 +50,7 @@ Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. 
 
 # --hints--
 
-You should serialize user function correctly.
+You should serialize the user object correctly.
 
 ```js
 async (getUserInput) => {
@@ -70,7 +70,7 @@ async (getUserInput) => {
 }
 ```
 
-You should deserialize user function correctly.
+You should deserialize the user object correctly.
 
 ```js
 async (getUserInput) => {
