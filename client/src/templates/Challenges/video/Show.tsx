@@ -296,7 +296,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Spacer size={2} />
+                <Spacer size={30} />
               </Col>
               <CompletionModal
                 block={block}
