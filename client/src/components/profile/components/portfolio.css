@@ -1,42 +1,51 @@
 .portfolio-container {
   display: grid;
   position: relative;
-  padding: 0 1em 1em 0;
-  max-height: 302px;
   border: 1px solid var(--secondary-color);
   gap: 1rem 1rem;
   grid-template-columns: repeat(3, 1fr);
+  margin-top: 1em;
+  margin-bottom: 3em;
 }
 
 .portfolio-screen-shot {
   display: block;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  grid-column: 1/ -1;
+  grid-column: 1/-1;
   grid-row: 1;
 }
 
-.portfolio-container h2 {
+.portfolio-container h3 {
   grid-column: 1/ -1;
   grid-row: 2;
+  margin-block: 1em;
 }
 
-.portfolio-container h3 {
+.portfolio-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   grid-column: 1/ -1;
   grid-row: 4;
   font-size: unset;
   justify-self: end;
   width: 60%;
+  background-color: var(--primary-color);
+  color: var(--primary-background);
+  padding: 0.5rem;
+  border-radius: 15px;
+  margin: 1em;
 }
 
 .portfolio-container a {
-  display: flex;
-  background-color: var(--primary-color);
-  color: var(--primary-background);
-  justify-content: center;
-  padding: 0.5rem;
-  border-radius: 15px;
+  text-decoration: none;
+}
+
+.portfolio-container a:is(:hover, :focus, :focus-visible) {
+  outline: 2px solid var(--blue-mid);
+  outline-offset: 2px;
 }
 
 .portfolio-container p {
@@ -45,7 +54,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   grid-column: 1/ -1;
-  grid-row: 3;
+  grid-row: 2;
 }
 
 #link-icon {
@@ -61,18 +70,8 @@
     max-height: 300px;
   }
 
-  .portfolio-container {
-    max-height: 900px;
-    max-width: 302px;
-  }
-
-  .portfolio-container h2 {
-    margin: 0.5rem;
-  }
-
   .portfolio-container h3 {
-    justify-self: center;
-    width: 70%;
+    margin: 0.5rem;
   }
 
   .portfolio-container p {
@@ -82,7 +81,7 @@
 
 @media (min-width: 995px) {
   .portfolio-container {
-    grid-template-rows: 75px 125px 100px;
+    grid-template-rows: minmax(75px, 1fr) minmax(125px, 1fr) 75px;
     grid-template-columns: 300px 1.2fr;
   }
 
@@ -91,7 +90,7 @@
     grid-row: 1 / -1;
   }
 
-  .portfolio-container h2 {
+  .portfolio-container h3 {
     grid-column: 2;
     grid-row: 1;
   }
@@ -101,19 +100,11 @@
     grid-row: 2;
   }
 
-  .portfolio-container h3 {
+  .portfolio-container a {
     grid-column: 2;
     grid-row: 3;
+    justify-self: unset;
   }
-}
-
-.portfolio-container a {
-  text-decoration: none;
-}
-
-.portfolio-container a:is(:hover, :focus, :focus-visible) {
-  outline: 2px solid var(--blue-mid);
-  outline-offset: 2px;
 }
 
 /* Timeline pagination */
