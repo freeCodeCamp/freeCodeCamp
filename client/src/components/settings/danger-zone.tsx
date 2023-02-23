@@ -45,7 +45,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
     <FullWidthRow className='danger-zone text-center'>
       <Panel bsStyle='danger'>
         <Panel.Heading>{t('settings.danger.heading')}</Panel.Heading>
-        <Spacer />
+        <Spacer paddingSize={15} />
         <p>{t('settings.danger.be-careful')}</p>
         <FullWidthRow>
           <Button
@@ -69,7 +69,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
           >
             {t('settings.danger.delete')}
           </Button>
-          <Spacer />
+          <Spacer paddingSize={15} />
         </FullWidthRow>
       </Panel>
 

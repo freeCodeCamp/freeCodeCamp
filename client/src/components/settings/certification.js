@@ -226,7 +226,7 @@ export class CertificationSettings extends Component {
     const { certSlug } = first(projectsMap[certName]);
     return (
       <FullWidthRow key={certName}>
-        <Spacer />
+        <Spacer paddingSize={15} />
         <h3 className='text-center' id={`cert-${certSlug}`}>
           {t(`certification.title.${certName}`, certName)}
         </h3>
@@ -340,7 +340,7 @@ export class CertificationSettings extends Component {
     };
     return (
       <FullWidthRow key={certSlug}>
-        <Spacer />
+        <Spacer paddingSize={15} />
         <h3 className='text-center'>
           {t('certification.title.Legacy Full Stack Certification')}
         </h3>
@@ -398,7 +398,7 @@ export class CertificationSettings extends Component {
             </Button>
           )}
         </div>
-        <Spacer />
+        <Spacer paddingSize={15} />
       </FullWidthRow>
     );
   };
