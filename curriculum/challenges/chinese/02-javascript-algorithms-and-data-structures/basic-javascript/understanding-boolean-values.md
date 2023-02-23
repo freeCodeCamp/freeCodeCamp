@@ -15,7 +15,7 @@ dashedName: understanding-boolean-values
 
 # --instructions--
 
-Modify the `welcomeToBooleans` function so that it returns `true` instead of `false`.
+修改 `welcomeToBooleans` 函数，让它返回 `true` 而不是 `false`。
 
 # --hints--
 

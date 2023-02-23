@@ -7,53 +7,53 @@ dashedName: step-18
 
 # --description--
 
-Below your `.text` element, create a new `section` element and give it a `class` of `text text-with-images`. Within that, create an `article` element with a `class` set to `brief-history`, and an `aside` element with the `class` set to `image-wrapper`.
+Erstelle unter deinem `.text`-Element ein neues `section`-Element und gib ihm eine `class` von `text text-with-images`. Within that, create an `article` element with a `class` set to `brief-history`, and an `aside` element with the `class` set to `image-wrapper`.
 
 # --hints--
 
-You should create a new `section` element.
+Du solltest ein neues `section`-Element erstellen.
 
 ```js
 assert(document.querySelectorAll('section')?.length === 3)
 ```
 
-Your new `section` element should come after your `.text` element.
+Dein neues `section`-Element sollte nach deinem `.text`-Element stehen.
 
 ```js
 assert(document.querySelectorAll('section')?.[2]?.previousElementSibling?.className === 'text')
 ```
 
-Your new `section` element should have the `class` set to `text text-with-images`.
+Dein neues `section`-Element sollte die `class` auf `text text-with-images` gesetzt haben.
 
 ```js
 assert(document.querySelectorAll('section')?.[2]?.className === 'text text-with-images')
 ```
 
-Your new `section` element should have an `article` element.
+Dein neues `section`-Element sollte ein `article`-Element haben.
 
 ```js
 assert.exists(document.querySelector('.text-with-images article'));
 ```
 
-Your new `section` element should have an `aside` element.
+Dein neues `section`-Element sollte ein `aside`-Element haben.
 
 ```js
 assert.exists(document.querySelector('.text-with-images aside'));
 ```
 
-The `article` element should come before the `aside` element.
+Dein `article`-Element sollte vor dem `aside`-Element stehen.
 
 ```js
 assert(document.querySelector('.text-with-images article')?.nextElementSibling?.localName === 'aside');
 ```
 
-Your `article` element should have the `class` set to `brief-history`.
+Dein `article`-Element sollte die `class` auf `brief-history` gesetzt haben.
 
 ```js
 assert(document.querySelector('.text-with-images article')?.className === 'brief-history');
 ```
 
-Your `aside` element should have the `class` set to `image-wrapper`.
+Dein `aside`-Element sollte die `class` auf `image-wrapper` gesetzt haben.
 
 ```js
 assert(document.querySelector('.text-with-images aside')?.className === 'image-wrapper');
