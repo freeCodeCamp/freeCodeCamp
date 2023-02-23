@@ -13,7 +13,7 @@ import isURL from 'validator/lib/isURL';
 
 import { hasProtocolRE } from '../../utils';
 
-import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
+import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
 
@@ -295,7 +295,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
-          <ButtonSpacer />
+          <Spacer size={5} />
           <Button
             block={true}
             bsSize='lg'
@@ -329,7 +329,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           </div>
         </FullWidthRow>
         <FullWidthRow>
-          <ButtonSpacer />
+          <Spacer size={5} />
           <Button
             block={true}
             bsSize='lg'

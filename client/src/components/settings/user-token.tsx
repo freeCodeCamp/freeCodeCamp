@@ -5,7 +5,7 @@ import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import { deleteUserToken } from '../../redux/actions';
-import { ButtonSpacer, FullWidthRow, Spacer } from '../helpers';
+import { FullWidthRow, Spacer } from '../helpers';
 
 import './user-token.css';
 
@@ -36,7 +36,7 @@ class UserToken extends Component<UserTokenProps> {
             <Spacer />
             <p>{t('user-token.delete-p1')}</p>
             <FullWidthRow>
-              <ButtonSpacer />
+              <Spacer size={5} />
               <Button
                 block={true}
                 bsSize='lg'

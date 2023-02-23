@@ -8,7 +8,7 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import IntroDescription from '../components/Intro/components/IntroDescription';
 import createRedirect from '../components/create-redirect';
-import { ButtonSpacer, Spacer, Loader } from '../components/helpers';
+import { Spacer, Loader } from '../components/helpers';
 import { apiLocation } from '../../../config/env.json';
 
 import { acceptTerms } from '../redux/actions';
@@ -94,7 +94,7 @@ function AcceptPrivacyTerms({
             >
               {t('buttons.yes-please')}
             </Button>
-            <ButtonSpacer />
+            <Spacer size={5} />
           </Col>
           <Col md={4} sm={5} xs={12}>
             <Button
@@ -106,14 +106,14 @@ function AcceptPrivacyTerms({
             >
               {t('buttons.no-thanks')}
             </Button>
-            <ButtonSpacer />
+            <Spacer size={5} />
           </Col>
         </Row>
       );
     } else {
       return (
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-          <ButtonSpacer />
+          <Spacer size={5} />
           <Button
             block={true}
             bsSize='lg'
@@ -123,7 +123,7 @@ function AcceptPrivacyTerms({
           >
             {t('buttons.sign-up-email-list')}
           </Button>
-          <ButtonSpacer />
+          <Spacer size={5} />
         </Col>
       );
     }

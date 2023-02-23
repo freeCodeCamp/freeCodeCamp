@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 
 import { deleteAccount, resetProgress } from '../../redux/settings/actions';
-import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
+import { FullWidthRow, Spacer } from '../helpers';
 import DeleteModal from './delete-modal';
 import ResetModal from './reset-modal';
 
@@ -58,7 +58,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
           >
             {t('settings.danger.reset')}
           </Button>
-          <ButtonSpacer />
+          <Spacer size={5} />
           <Button
             block={true}
             bsSize='lg'
