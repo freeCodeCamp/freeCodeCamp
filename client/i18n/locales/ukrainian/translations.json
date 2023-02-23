@@ -251,7 +251,7 @@
   },
   "learn": {
     "heading": "Ласкаво просимо до навчальної програми freeCodeCamp.",
-    "skip-to-content": "Skip to content",
+    "skip-to-content": "Перейти до змісту",
     "welcome-1": "З поверненням, {{name}}.",
     "welcome-2": "Ласкаво просимо до freeCodeCamp.org",
     "start-at-beginning": "Якщо ви новачок у програмуванні, ми рекомендуємо <0>почати з початку</0>.",
