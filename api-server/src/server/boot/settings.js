@@ -136,7 +136,7 @@ function updateMyPortfolio(...args) {
   createUpdateUserProperties(
     buildUpdate,
     validate,
-    'flash.portoflio-item-updated'
+    'flash.portfolio-item-updated'
   )(...args);
 }
 
