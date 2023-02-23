@@ -102,7 +102,7 @@ function Certificates({
                   username={username}
                 />
               ))}
-          <Spacer size={2} />
+          <Spacer size={30} />
         </div>
       ) : null}
       <hr />
