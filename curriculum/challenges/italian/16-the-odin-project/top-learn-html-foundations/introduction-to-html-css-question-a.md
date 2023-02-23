@@ -1,15 +1,15 @@
 ---
 id: 6374f208de18c50e48ba767b
-title: Introduction To HTML and CSS Question A
+title: Introduzione a HTML e CSS Domanda A
 challengeType: 15
 dashedName: introduction-to-html-and-css-question-a
 ---
 
 # --description--
 
-HTML and CSS are two languages that work together to create everything that you see when you look at something on the internet. HTML is the raw data that a webpage is built out of. All the text, links, cards, lists, and buttons are created in HTML. CSS is what adds style to those plain elements. HTML puts information on a webpage, and CSS positions that information, gives it color, changes the font, and makes it look great!
+HTML e CSS sono due linguaggi che lavorano insieme per creare tutto ciò che si vede quando si guarda qualcosa su internet. L'HTML è costituito dai dati grezzi di cui è fatta una pagina web. Tutto il testo, i collegamenti, le caselle, gli elenchi e i pulsanti sono creati in HTML. Il CSS è ciò che aggiunge stile a questi semplici elementi. L'HTML mette le informazioni su una pagina web e il CSS le posiziona, dà loro colore, ne cambia il carattere e le rende fantastiche!
 
-Many helpful resources out there keep referring to HTML and CSS as programming languages, but if you want to get technical, labeling them as such is not quite accurate. This is because they are only concerned with presenting information. They are not used to program logic. JavaScript, which you will learn in the next section, is a programming language because it’s used to make webpages do things. Yet, there is quite a lot you can do with just HTML and CSS, and you will definitely need them both. Throughout our curriculum, the following lessons focus on giving you the tools you need to succeed once you reach JavaScript content.
+Molte risorse utili in circolazione continuano a riferirsi a HTML e CSS come linguaggi di programmazione, ma se si vuole essere tecnici, etichettarli in questo modo non è molto accurato. Questo perché si occupano solo di presentare informazioni. Non sono utilizzati per programmare la logica. JavaScript, che imparerai nella prossima sezione, è un linguaggio di programmazione perché è usato per aggiungere funzionalità alle pagine web. Tuttavia, c'è un bel po' di roba che si può fare con solo HTML e CSS e avrai sicuramente bisogno di entrambi. Durante tutto il nostro curriculum, le seguenti lezioni si concentreranno sul darti gli strumenti necessari per farcela una volta raggiunto il contenuto JavaScript.
 
 # --question--
 
@@ -19,19 +19,19 @@ Read <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#W
 
 ## --text--
 
-Which of the following statements is true?
+Quale delle seguenti affermazioni è vera?
 
 ## --answers--
 
-CSS is used to create the basic structure of a webpage, and HTML is used to add style.
+Il CSS è usato per creare la struttura di base di una pagina web e l'HTML viene utilizzato per aggiungere stile.
 
 ---
 
-HTML is used to create the basic structure of a webpage, and CSS is used to add style.
+L'HTML viene utilizzato per creare la struttura di base di una pagina web e il CSS viene utilizzato per aggiungere stile.
 
 ---
 
-HTML and CSS are used to add style to a webpage, and JavaScript is used to create the basic structure.
+HTML e CSS vengono utilizzati per aggiungere stile a una pagina web e JavaScript viene utilizzato per creare la struttura di base.
 
 
 ## --video-solution--

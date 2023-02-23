@@ -11,7 +11,7 @@ dashedName: serve-an-html-file
 通过 `res.sendFile(path)` 方法给请求响应一个文件， 可以把它放到路由处理 `app.get('/', ...)` 中。 在后台，这个方法会根据你想发送的文件的类型，设置适当的消息头信息来告诉浏览器如何处理它， 然后读取并发送文件， 此方法需要文件的绝对路径。 建议使用 Node. js 的全局变量 `__dirname` 来计算出这个文件的绝对路径：
 
 ```js
-absolutePath = __dirname + relativePath/file.ext
+absolutePath = __dirname + '/relativePath/file.ext'
 ```
 
 # --instructions--

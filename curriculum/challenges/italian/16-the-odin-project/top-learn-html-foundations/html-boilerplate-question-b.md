@@ -1,17 +1,17 @@
 ---
 id: 637f4e2872c65bc8e73dfe21
-title: HTML Boilerplate Question B
+title: Boilerplate HTML Domanda B
 challengeType: 15
 dashedName: html-boilerplate-question-b
 ---
 
 # --description--
 
-After you declare the doctype, you need to provide an `<html>` element. This is what’s known as the root element of the document, meaning that every other element in the document will be a descendant of it.
+Dopo aver dichiarato il doctype, devi costituire l'elemento `<html>`. Si tratta di quello che è conosciuto come elemento radice (root) del documento, da cui discende ogni altro elemento.
 
-This becomes more important later on when you learn about manipulating HTML with JavaScript. For now, just know that the `html` element should be included on every HTML document.
+Ciò diventerà più importante in seguito quando imparerai a manipolare HTML con JavaScript. Per ora sappi che l'elemento `html` dovrebbe essere incluso in ogni documento HTML.
 
-Back in the `index.html` file, let’s add the `<html>` element by typing out its opening and closing tags, like so:
+Tornando al file `index.html`, aggiungi l'elemento `<html>` digitando i suoi tag di apertura e chiusura, in questo modo:
 
 ```html
 <!DOCTYPE html>
@@ -19,26 +19,26 @@ Back in the `index.html` file, let’s add the `<html>` element by typing out it
 </html>
 ```
 
-## What is the lang attribute?
-`lang` specifies the language of the text content in that element. This attribute is primarily used for improving accessibility of the webpage. It allows assistive technologies, for example screen readers, to adapt according to the language and invoke correct pronunciation.
+## Cos'è l'attributo lang?
+`lang` specifica la lingua del contenuto di testo dell'elemento. Questo attributo è utilizzato principalmente per migliorare l'accessibilità della pagina web. Permette alle tecnologie assistive, come i lettori di schermo, di adattarsi in base alla lingua e di utilizzare la pronuncia corretta.
 
 # --question--
 
 ## --text--
 
-What is the `html` element?
+Cos'è l'elemento `html`?
 
 ## --answers--
 
-It is the root element in the document and tells the browser which version of HTML it should use.
+È l'elemento radice del documento e dice al browser quale versione di HTML dovrebbe usare.
 
 ---
 
-It is the root element in the document and all other elements should descend from it.
+È l'elemento radice del documento e tutti gli altri elementi dovrebbero discendere da esso.
 
 ---
 
-It is the root element in the document and all other elements should come after it.
+È l'elemento radice del documento e tutti gli altri elementi dovrebbero essere posizionati dopo di esso.
 
 
 ## --video-solution--

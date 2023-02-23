@@ -1,16 +1,16 @@
 ---
 id: 637f4e3672c65bc8e73dfe23
 videoId: V8UAEoOvqFg
-title: HTML Boilerplate Question D
+title: Boilerplate HTML Domanda D
 challengeType: 15
 dashedName: html-boilerplate-question-d
 ---
 
 # --description--
 
-The final element needed to complete the HTML boilerplate is the `<body>` element. This is where all the content that will be displayed to users will go - the text, images, lists, links, and so on.
+L'ultimo elemento necessario per completare il boilerplate HTML è l'elemento `<body>`. È qui che si troverà tutto il contenuto da mostrare agli utenti - testo immagini, elenchi, link e via dicendo.
 
-To complete the boilerplate, add a `body` element to the `index.html` file. The `body` element also goes within the `html` element and is always below the `head` element, like so:
+Per completare il boilerplate, aggiungi un elemento `body` al file `index.html`. Anche l'elemento `body` va all'interno dell'elemento `html` e si trova sempre al di sotto dell'elemento `head`, così:
 
 # --question--
 
@@ -20,27 +20,27 @@ Watch and follow along to Kevin Powell’s brilliant Building your first web pag
 
 ---
 
-Build some muscle memory by deleting the contents of the `index.html` file and trying to write out all the boilerplate again from memory. Don’t worry if you have to peek at the lesson content the first few times if you get stuck. Just keep going until you can do it a couple of times from memory.
+Crea un po' di una memoria muscolare eliminando il contenuto del file `index.html` e cercando di scrivere di nuovo tutto il boilerplate a memoria. Non preoccuparti se devi sbirciare il contenuto della lezione se le prime volte resti bloccato. Continua finché non riesci a farlo un paio di volte a memoria.
 
 ---
 
-Run your boilerplate through this [HTML validator](https://www.freeformatter.com/html-validator.html). Validators ensure your markup is correct and are an excellent learning tool, as they provide feedback on syntax errors you may be making often and aren’t aware of, such as missing closing tags and extra spaces in your HTML.
+Controlla il tuo boilerplate con questo [validatore HTML](https://www.freeformatter.com/html-validator.html). I validatori garantiscono che il tuo markup sia corretto e sono uno strumento di apprendimento eccellente, in quanto forniscono un feedback sugli errori di sintassi che potresti commettere senza rendertene conto, come tag di chiusura mancanti e spazi aggiuntivi nel tuo HTML.
 
 ## --text--
 
-What is the purpose of the `body` element?
+Che cos'è l'elemento `body`?
 
 ## --answers--
 
-This is where all important information about the webpage is displayed such as the `title` and `meta` tags.
+È dove vengono visualizzate tutte le informazioni importanti di una pagina web come i tag `title` e `meta`.
 
 ---
 
-This is where you tell the browser how to render the webpage correctly.
+È il posto in cui dire al browser come renderizzare correttamente la pagina.
 
 ---
 
-This is where all content will be displayed on the page such images, text, and links.
+È dove tutti i contenuti come immagini, testi e link saranno mostrati sulla pagina.
 
 
 ## --video-solution--
