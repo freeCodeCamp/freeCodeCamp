@@ -1,6 +1,6 @@
 ---
 id: 61fdaf9ff894b6a084ecdc1b
-title: Step 33
+title: Schritt 33
 challengeType: 0
 dashedName: step-33
 ---

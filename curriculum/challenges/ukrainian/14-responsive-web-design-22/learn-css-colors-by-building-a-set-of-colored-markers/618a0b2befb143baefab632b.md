@@ -11,7 +11,7 @@ dashedName: step-37
 
 Краще вибрати один домінантний колір та використовувати його доповняльний колір як акцент, щоб привернути увагу до певного вмісту на сторінці.
 
-First, in the `h1` rule, use the `rgb` function to set its `background-color` to cyan.
+Спочатку використайте функцію `rgb` в правилі `h1`, щоб встановити `background-color` на блакитний.
 
 # --hints--
 
