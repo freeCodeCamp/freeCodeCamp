@@ -36,7 +36,7 @@
     "build": "tsc",
     "develop": "nodemon index.ts",
     "start": "NODE_ENV=production node index.js",
-    "test": "NODE_OPTIONS='--test-only' ts-node **/*.test.ts"
+    "test": "node --test -r ts-node/register **/*.test.ts"
   },
   "version": "0.0.1"
 }
