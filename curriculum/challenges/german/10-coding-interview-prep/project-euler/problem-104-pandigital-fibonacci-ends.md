@@ -1,6 +1,6 @@
 ---
 id: 5900f3d51000cf542c50fee6
-title: 'Problem 104: Pandigital Fibonacci ends'
+title: 'Problem 104: Pandigitale Fibonacci-Enden'
 challengeType: 1
 forumTopicId: 301728
 dashedName: problem-104-pandigital-fibonacci-ends
@@ -8,17 +8,17 @@ dashedName: problem-104-pandigital-fibonacci-ends
 
 # --description--
 
-The Fibonacci sequence is defined by the recurrence relation:
+Die Fibonacci-Folge ist durch die Rekursionsbeziehung definiert:
 
-$F_n = F_{n − 1} + F_{n − 2}$, where $F_1 = 1$ and $F_2 = 1$
+$F_n = F_{n - 1} + F_{n - 2}$, wobei $F_1 = 1$ und $F_2 = 1$
 
-It turns out that $F_{541}$, which contains 113 digits, is the first Fibonacci number for which the last nine digits are 1 - 9 pandigital (contain all the digits 1 to 9, but not necessarily in order). And $F_{2749}$, which contains 575 digits, is the first Fibonacci number for which the first nine digits are 1 - 9 pandigital.
+Es stellt sich heraus, dass $F_{541}$, das 113 Ziffern enthält, die erste Fibonacci-Zahl ist, bei der die letzten neun Ziffern 1 - 9 pandigital sind (alle Ziffern 1 bis 9 enthalten, aber nicht unbedingt in der richtigen Reihenfolge). Und $F_{2749}$, die 575 Ziffern enthält, ist die erste Fibonacci-Zahl, bei der die ersten neun Ziffern 1 - 9 pandigital sind.
 
-Given that $F_k$ is the first Fibonacci number for which the first nine digits AND the last nine digits are 1 - 9 pandigital, find `k`.
+Es ist gegeben, dass $F_k$ die erste Fibonacci-Zahl ist, bei der die ersten neun Ziffern UND die letzten neun Ziffern 1 - 9 pandigital sind, finde `k`.
 
 # --hints--
 
-`pandigitalFibonacciEnds()` should return `329468`.
+`pandigitalFibonacciEnds()` sollte `329468` zurückgeben.
 
 ```js
 assert.strictEqual(pandigitalFibonacciEnds(), 329468);

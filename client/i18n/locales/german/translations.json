@@ -251,6 +251,7 @@
   },
   "learn": {
     "heading": "Willkommen zum Studienplan von freeCodeCamp.",
+    "skip-to-content": "Skip to content",
     "welcome-1": "Willkommen zurück, {{name}}.",
     "welcome-2": "Willkommen auf freeCodeCamp.org",
     "start-at-beginning": "Wenn Programmieren ganz neu für dich ist, schlagen wir vor, <0>am Anfang zu beginnen</0>.",

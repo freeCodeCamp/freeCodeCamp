@@ -9,36 +9,31 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Las comillas no son los únicos caracteres que pueden ser <dfn>escapados</dfn> dentro de una cadena. Hay dos razones para usar caracteres de escape:
-
-1.  Para permitirte usar caracteres que de otra manera no se podrían representar dentro de una cadena, como el carácter nueva línea.
-2.  Para permitirte representar múltiples comillas en una cadena sin que JavaScript malinterprete lo que quieres decir.
-
-Esto lo aprendimos en el desafío anterior.
+Las comillas no son los únicos caracteres que pueden ser <dfn>escapados</dfn> dentro de una cadena. Escape sequences allow you to use characters you may not otherwise be able to use in a string.
 
 <table class='table table-striped'><thead><tr><th>Código</th><th>Resultado</th></tr></thead><tbody><tr><td><code>\'</code></td><td>comilla simple</td></tr><tr><td><code>\"</code></td><td>comilla doble</td></tr><tr><td><code>\\</code></td><td>barra invertida</td></tr><tr><td><code>\n</code></td><td>línea nueva</td></tr><tr><td><code>\t</code></td><td>tabulador</td></tr><tr><td><code>\r</code></td><td>retorno del carro</td></tr><tr><td><code>\b</code></td><td>límite de palabra</td></tr><tr><td><code>\f</code></td><td>fuente de formulario</td></tr></tbody></table>
 
-*Ten en cuenta que la barra invertida en sí debe ser escapada para poder mostrarla como una barra invertida.*
+*Note that the backslash itself must be escaped in order to display as a backslash.*
 
 # --instructions--
 
-Asigna las siguientes tres líneas de texto en la variable única `myStr` usando secuencias de escape.
+Assign the following three lines of text into the single variable `myStr` using escape sequences.
 
 <blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
 
-Necesitarás usar secuencias de escape para insertar correctamente los caracteres especiales. También necesitarás seguir el espaciado tal y como se ve arriba, sin espacios entre secuencias de escape o palabras.
+You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.
 
-**Nota:** La sangría para la segunda línea (`SecondLine`) se consigue con el carácter de escape de tabulación, no con espacios.
+**Note:** The indentation for `SecondLine` is achieved with the tab escape character, not spaces.
 
 # --hints--
 
-`myStr` no debe contener ningún espacio
+`myStr` should not contain any spaces
 
 ```js
 assert(!/ /.test(myStr));
 ```
 
-`myStr` debe contener las cadenas `FirstLine`, `SecondLine` y `ThirdLine` (recuerda la sensibilidad a mayúsculas y minúsculas)
+`myStr` should contain the strings `FirstLine`, `SecondLine` and `ThirdLine` (remember case sensitivity)
 
 ```js
 assert(
@@ -46,31 +41,31 @@ assert(
 );
 ```
 
-`FirstLine` debe ir seguido del carácter de línea nueva `\n`
+`FirstLine` should be followed by the newline character `\n`
 
 ```js
 assert(/FirstLine\n/.test(myStr));
 ```
 
-`myStr` debe contener un carácter de tabulación `\t` seguido de un carácter de línea nueva
+`myStr` should contain a tab character `\t` which follows a newline character
 
 ```js
 assert(/\n\t/.test(myStr));
 ```
 
-`SecondLine` debe estar precedida por el carácter de barra invertida `\`
+`SecondLine` should be preceded by the backslash character `\`
 
 ```js
 assert(/\\SecondLine/.test(myStr));
 ```
 
-Debe haber un carácter de línea nueva entre `SecondLine` y `ThirdLine`
+There should be a newline character between `SecondLine` and `ThirdLine`
 
 ```js
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` solo debe contener caracteres mostrados en las instrucciones
+`myStr` should only contain characters shown in the instructions
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');

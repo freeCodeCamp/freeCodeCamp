@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510044
-title: 'Problem 453: Lattice Quadrilaterals'
+title: 'Problematik 453: Quadrilaterale Gitter'
 challengeType: 1
 forumTopicId: 302126
 dashedName: problem-453-lattice-quadrilaterals
@@ -8,21 +8,21 @@ dashedName: problem-453-lattice-quadrilaterals
 
 # --description--
 
-A simple quadrilateral is a polygon that has four distinct vertices, has no straight angles and does not self-intersect.
+Ein einfaches Viereck ist ein Vieleck, das vier verschiedene Eckpunkte hat, keine geraden Winkel aufweist und sich nicht selbst schneidet.
 
-Let $Q(m, n)$ be the number of simple quadrilaterals whose vertices are lattice points with coordinates ($x$, $y$) satisfying $0 ≤ x ≤ m$ and $0 ≤ y ≤ n$.
+Lasse $Q(m, n)$ die Anzahl der einfachen Vierecke sein, deren Eckpunkte Gitterpunkte mit Koordinaten ($x$, $y$) sind, die $0 ≤ x ≤ m$ und $0 ≤ y ≤ n$ erfüllen.
 
-For example, $Q(2, 2) = 94$ as can be seen below:
+Zum Beispiel $Q(2, 2) = 94$, wie unten zu sehen ist:
 
-<img class="img-responsive center-block" alt="94 quadrilaterals whose vertices are lattice points with coordinates (x, y) satiffying 0 &le; x &le; m and 0 &le; y &le; n" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="94 Vierecke, deren Eckpunkte Gitterpunkte mit Koordinaten (x, y) sind, die 0 &le; x &le; m und 0 &le; y &le; n genügen" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px;" />
 
-It can also be verified that $Q(3, 7) = 39\\,590$, $Q(12, 3) = 309\\,000$ and $Q(123, 45) = 70\\,542\\,215\\,894\\,646$.
+Es lässt sich auch nachweisen, dass $Q(3, 7) = 39\\,590$, $Q(12, 3) = 309\\,000$ und $Q(123, 45) = 70\\,542\\,215\\,894\\,646$.
 
-Find $Q(12\\,345, 6\\,789)\bmod 135\\,707\\,531$.
+Finde $Q(12\\,345, 6\\,789)\bmod 135\\,707\\,531$.
 
 # --hints--
 
-`latticeQuadrilaterals()` should return `104354107`.
+`latticeQuadrilaterals()` sollte `104354107` zurückgeben.
 
 ```js
 assert.strictEqual(latticeQuadrilaterals(), 104354107);

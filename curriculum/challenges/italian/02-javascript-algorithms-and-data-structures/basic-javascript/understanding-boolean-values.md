@@ -15,7 +15,7 @@ Un altro tipo di dati è il <dfn>Boolean</dfn>. I valori booleani possono essere
 
 # --instructions--
 
-Modifica la funzione `welcomeToBooleans` in modo che restituisca `true` invece di `false` quando si fa clic sul pulsante per eseguire.
+Modifica la funzione `welcomeToBooleans` in modo che restituisca `true` invece di `false`.
 
 # --hints--
 

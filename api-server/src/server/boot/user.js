@@ -92,23 +92,23 @@ function deleteUserTokenResponse(req, res) {
 }
 
 function createReadSessionUser(app) {
-  const { Donation } = app.models;
+  const { Donation, UserToken } = app.models;
 
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
 
     let encodedUserToken;
     try {
-      const userTokenArr = await queryUser.userTokens({
-        userId: queryUser.id
-      });
-
-      const userToken = userTokenArr[0]?.id;
-
-      // only encode if a userToken was found
-      if (userToken) {
-        encodedUserToken = encodeUserToken(userToken);
-      }
+      const userId = queryUser?.id;
+      const userToken = userId
+        ? await UserToken.findOne({
+            where: { userId }
+          })
+        : null;
+  
+      encodedUserToken = userToken
+        ? encodeUserToken(userToken.id)
+        : undefined;
     } catch (e) {
       return next(e);
     }

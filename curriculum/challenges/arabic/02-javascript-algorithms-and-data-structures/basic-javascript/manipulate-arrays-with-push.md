@@ -9,7 +9,7 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-طريقة سهلة لإضافة البيانات إلى نهاية القائمة هي عن طريق وظيفة `push()`.
+يوجد طريقة سهلة لإضافة البيانات إلى نهاية القائمة و هي عن طريق وظيفة `push()`.
 
 تأخذ `.push()` واحد أو أكثر من <dfn>الوسائط</dfn> و "تدفعها" إلى نهاية القائمة.
 
@@ -23,11 +23,11 @@ const arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
-لدي `arr1` قيمة `[1, 2, 3, 4]` الآن ولدي `arr2` قيمة `["Stimpson", "J", "cat", ["happy", "joy"]]`.
+ألأن `arr1` لديه قيمة `[1, 2, 3, 4]` ولدي `arr2` قيمة `["Stimpson", "J", "cat", ["happy", "joy"]]`.
 
 # --instructions--
 
-اضف `["dog", 3]` إلي نهاية المتغير `myArray`.
+ضف `["dog", 3]` إلي نهاية المتغير `myArray`.
 
 # --hints--
 

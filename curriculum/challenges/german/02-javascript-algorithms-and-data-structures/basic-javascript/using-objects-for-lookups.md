@@ -34,7 +34,7 @@ const valueLookup = article[value];
 
 # --instructions--
 
-Wandle die switch-Anweisung in ein Objekt namens `lookup` um. Verwende sie, um `val` nachzuschlagen und den zugehörigen String der Variablen `result` zuzuweisen.
+Wandle die switch-Anweisung in ein Objekt namens `lookup` um. Verwende sie, um `val` nachzuschlagen und den zugehörigen String der Variable `result` zuzuweisen.
 
 # --hints--
 
