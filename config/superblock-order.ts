@@ -310,15 +310,14 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep,
-          SuperBlocks.ProjectEuler
+          SuperBlocks.CodingInterviewPrep
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [],
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
+        [SuperBlockStates.Current]: [SuperBlocks.ProjectEuler],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
@@ -356,15 +355,14 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep,
-          SuperBlocks.ProjectEuler
+          SuperBlocks.CodingInterviewPrep
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [],
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
+        [SuperBlockStates.Current]: [SuperBlocks.ProjectEuler],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
@@ -450,15 +448,14 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep,
-          SuperBlocks.ProjectEuler
+          SuperBlocks.CodingInterviewPrep
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [],
         [SuperBlockStates.Legacy]: []
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
+        [SuperBlockStates.Current]: [SuperBlocks.ProjectEuler],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
