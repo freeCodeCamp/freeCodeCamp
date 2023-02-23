@@ -1,14 +1,14 @@
 import React from 'react';
 
 interface SpacerProps {
-  size?: number;
+  paddingSize: number;
 }
 
-const Spacer = ({ size = 15 }: SpacerProps): JSX.Element =>
-  size === 0 ? (
-    <></>
-  ) : (
-    <div className='spacer' style={{ padding: `${size}px 0`, height: '1px' }} />
-  );
+const Spacer = ({ paddingSize }: SpacerProps): JSX.Element => (
+  <div
+    className='spacer'
+    style={{ padding: `${paddingSize}px 0`, height: '1px' }}
+  />
+);
 
 export default Spacer;
