@@ -79,7 +79,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
         >
           {t('signout.nevermind')}
         </Button>
-        <Spacer size={5} />
+        <Spacer paddingSize={5} />
         <Button
           block={true}
           bsStyle='danger'

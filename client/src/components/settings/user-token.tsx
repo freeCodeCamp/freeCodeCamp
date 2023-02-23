@@ -36,7 +36,7 @@ class UserToken extends Component<UserTokenProps> {
             <Spacer />
             <p>{t('user-token.delete-p1')}</p>
             <FullWidthRow>
-              <Spacer size={5} />
+              <Spacer paddingSize={5} />
               <Button
                 block={true}
                 bsSize='lg'

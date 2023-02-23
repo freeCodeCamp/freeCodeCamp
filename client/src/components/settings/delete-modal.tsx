@@ -52,7 +52,7 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         >
           {t('settings.danger.nevermind')}
         </Button>
-        <Spacer size={5} />
+        <Spacer paddingSize={5} />
         <Button
           block={true}
           bsSize='lg'

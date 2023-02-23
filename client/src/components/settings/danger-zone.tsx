@@ -58,7 +58,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
           >
             {t('settings.danger.reset')}
           </Button>
-          <Spacer size={5} />
+          <Spacer paddingSize={5} />
           <Button
             block={true}
             bsSize='lg'

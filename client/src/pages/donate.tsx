@@ -94,7 +94,7 @@ function DonatePage({
                   <DonateForm paymentContext={PaymentContext.DonatePage} />
                 </Col>
               </Row>
-              <Spacer size={45} />
+              <Spacer paddingSize={45} />
               <Row className='donate-support' id='FAQ'>
                 <Col className={'text-center'} xs={12}>
                   <hr />

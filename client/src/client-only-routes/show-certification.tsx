@@ -240,7 +240,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const donationSection = (
     <div className='donation-section'>
-      <Spacer size={30} />
+      <Spacer paddingSize={30} />
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
@@ -263,7 +263,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           {isDonationSubmitted && donationCloseBtn}
         </Col>
       </Row>
-      <Spacer size={30} />
+      <Spacer paddingSize={30} />
     </div>
   );
 
@@ -295,7 +295,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           {t('profile.add-twitter')}
         </Button>
       </Col>
-      <Spacer size={30} />
+      <Spacer paddingSize={30} />
     </Row>
   );
 
@@ -365,11 +365,11 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         </footer>
       </Row>
       <div className='row certificate-links'>
-        <Spacer size={30} />
+        <Spacer paddingSize={30} />
         {signedInUserName === username ? shareCertBtns : ''}
-        <Spacer size={30} />
+        <Spacer paddingSize={30} />
         <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
-        <Spacer size={30} />
+        <Spacer paddingSize={30} />
       </div>
     </Grid>
   );

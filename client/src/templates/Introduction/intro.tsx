@@ -67,11 +67,11 @@ function IntroductionPage({
           >
             {t('buttons.first-lesson')}
           </Link>
-          <Spacer size={5} />
+          <Spacer paddingSize={5} />
           <Link className='btn btn-lg btn-primary btn-block' to='/learn'>
             {t('buttons.view-curriculum')}
           </Link>
-          <Spacer size={5} />
+          <Spacer paddingSize={5} />
           <hr />
         </FullWidthRow>
         <FullWidthRow>

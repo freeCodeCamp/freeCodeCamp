@@ -295,7 +295,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
-          <Spacer size={5} />
+          <Spacer paddingSize={5} />
           <Button
             block={true}
             bsSize='lg'
@@ -329,7 +329,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           </div>
         </FullWidthRow>
         <FullWidthRow>
-          <Spacer size={5} />
+          <Spacer paddingSize={5} />
           <Button
             block={true}
             bsSize='lg'
@@ -341,7 +341,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             {t('buttons.add-portfolio')}
           </Button>
         </FullWidthRow>
-        <Spacer size={30} />
+        <Spacer paddingSize={30} />
         {portfolio.length ? portfolio.map(this.renderPortfolio) : null}
       </section>
     );

@@ -61,7 +61,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
           </Link>
         </Col>
       </Row>
-      <Spacer size={5} />
+      <Spacer paddingSize={5} />
     </>
   );
 }
@@ -102,7 +102,7 @@ function Certificates({
                   username={username}
                 />
               ))}
-          <Spacer size={30} />
+          <Spacer paddingSize={30} />
         </div>
       ) : null}
       <hr />
