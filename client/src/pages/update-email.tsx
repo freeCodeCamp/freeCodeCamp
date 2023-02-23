@@ -71,7 +71,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
       <Helmet>
         <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer />
+      <Spacer paddingSize={15} />
       <h2 className='text-center'>{t('misc.update-email-2')}</h2>
       <Grid>
         <Row>

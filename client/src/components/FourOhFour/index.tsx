@@ -16,12 +16,12 @@ const FourOhFour = (): JSX.Element => {
     <div className='notfound-page-wrapper'>
       <Helmet title={t('404.page-not-found') + '| freeCodeCamp'} />
       <img alt={t('404.not-found')} src={notFoundLogo} />
-      <Spacer />
+      <Spacer paddingSize={15} />
       <h1>{t('404.page-not-found')}.</h1>
-      <Spacer />
+      <Spacer paddingSize={15} />
       <div>
         <p>{t('404.heres-a-quote')}</p>
-        <Spacer />
+        <Spacer paddingSize={15} />
         <blockquote className='quote-wrapper'>
           <p className='quote'>
             <span>&#8220;</span>
