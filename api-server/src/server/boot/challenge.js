@@ -311,7 +311,7 @@ export async function modernChallengeCompleted(req, res, next) {
 
   const points = alreadyCompleted ? user.points : user.points + 1;
 
-  user.updateAttributes(updateData, (err, _updatedUser) => {
+  user.updateAttributes(updateData, err => {
     if (err) {
       return next(err);
     }
@@ -379,7 +379,7 @@ async function projectCompleted(req, res, next) {
     completedChallenge
   );
 
-  user.updateAttributes(updateData, (err, _updatedUser) => {
+  user.updateAttributes(updateData, err => {
     if (err) {
       return next(err);
     }
@@ -410,14 +410,14 @@ async function backendChallengeCompleted(req, res, next) {
     completedChallenge
   );
 
-  user.updateAttributes(updateData, (err, updatedUser) => {
+  user.updateAttributes(updateData, err => {
     if (err) {
       return next(err);
     }
 
     return res.json({
       alreadyCompleted,
-      points: alreadyCompleted ? updatedUser.points : updatedUser.points + 1,
+      points: alreadyCompleted ? user.points : user.points + 1,
       completedDate: completedChallenge.completedDate
     });
   });
@@ -462,7 +462,7 @@ async function saveChallenge(req, res, next) {
   if (!isEmpty($set)) updateData.$set = $set;
   if (!isEmpty($push)) updateData.$push = $push;
 
-  user.updateAttributes(updateData, (err, _updatedUser) => {
+  user.updateAttributes(updateData, err => {
     if (err) {
       return next(err);
     }
