@@ -17,7 +17,7 @@ const donateImageSize = {
 };
 
 const landingImageSize = {
-  spacerSize: 2,
+  spacerSize: 30,
   height: 442,
   width: 750
 };
