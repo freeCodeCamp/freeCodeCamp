@@ -23,7 +23,7 @@ function ShowUnsubscribed({
       <Grid>
         <main>
           <FullWidthRow>
-            <Spacer size={2} />
+            <Spacer size={30} />
             <Panel bsStyle='primary' className='text-center'>
               <Spacer />
               <h2>{t('misc.unsubscribed')}</h2>
@@ -42,7 +42,7 @@ function ShowUnsubscribed({
               </Button>
             </FullWidthRow>
           ) : null}
-          <Spacer size={2} />
+          <Spacer size={30} />
         </main>
       </Grid>
     </>
