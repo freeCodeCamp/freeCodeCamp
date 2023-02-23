@@ -179,16 +179,16 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
             username={username}
           />
-          <Spacer />
+          <Spacer paddingSize={15} />
           <Privacy />
-          <Spacer />
+          <Spacer paddingSize={15} />
           <Email
             email={email}
             isEmailVerified={isEmailVerified}
             sendQuincyEmail={sendQuincyEmail}
             updateQuincyEmail={updateQuincyEmail}
           />
-          <Spacer />
+          <Spacer paddingSize={15} />
           <Internet
             githubProfile={githubProfile}
             linkedin={linkedin}
@@ -196,12 +196,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             updateSocials={updateSocials}
             website={website}
           />
-          <Spacer />
+          <Spacer paddingSize={15} />
           {/* @ts-expect-error Portfolio types mismatch */}
           <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
-          <Spacer />
+          <Spacer paddingSize={15} />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
-          <Spacer />
+          <Spacer paddingSize={15} />
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
@@ -227,11 +227,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           />
           {userToken && (
             <>
-              <Spacer />
+              <Spacer paddingSize={15} />
               <UserToken />
             </>
           )}
-          <Spacer />
+          <Spacer paddingSize={15} />
           <DangerZone />
         </main>
       </Grid>
