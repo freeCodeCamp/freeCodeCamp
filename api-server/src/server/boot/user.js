@@ -105,10 +105,8 @@ function createReadSessionUser(app) {
             where: { userId }
           })
         : null;
-  
-      encodedUserToken = userToken
-        ? encodeUserToken(userToken.id)
-        : undefined;
+
+      encodedUserToken = userToken ? encodeUserToken(userToken.id) : undefined;
     } catch (e) {
       return next(e);
     }
