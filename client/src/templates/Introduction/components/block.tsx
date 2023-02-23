@@ -344,7 +344,7 @@ class Block extends Component<BlockProps> {
         {blockrenderer()}
         {(isNewResponsiveWebDesign || isNewJsAlgos) &&
         !isProjectBlock ? null : (
-          <Spacer />
+          <Spacer paddingSize={15} />
         )}
       </>
     );

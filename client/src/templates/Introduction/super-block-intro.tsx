@@ -197,7 +197,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
               </h2>
-              <Spacer />
+              <Spacer paddingSize={15} />
               <div className='block-ui'>
                 {defaultCurriculumNames.map(blockDashedName => (
                   <Fragment key={blockDashedName}>
@@ -235,7 +235,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               >
                 {t(`intro:misc-text.browse-other`)}
               </h3>
-              <Spacer />
+              <Spacer paddingSize={15} />
               <Map currentSuperBlock={superBlock} />
               <Spacer paddingSize={30} />
             </Col>
