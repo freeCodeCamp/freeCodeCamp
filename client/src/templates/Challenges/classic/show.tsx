@@ -471,13 +471,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
   render() {
     const {
-      block,
       challengeType,
       fields: { blockName },
       forumTopicId,
       hasEditableBoundaries,
-      superBlock,
-      certification,
       title,
       usesMultifileEditor,
       notes
@@ -553,12 +550,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               windowTitle={windowTitle}
             />
           </Media>
-          <CompletionModal
-            block={block}
-            blockName={blockName}
-            certification={certification}
-            superBlock={superBlock}
-          />
+          <CompletionModal />
           <HelpModal challengeTitle={title} challengeBlock={blockName} />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />

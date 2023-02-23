@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/react-bootstrap';
-
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -10,6 +9,7 @@ import Reset from '../../../assets/icons/reset';
 
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
+import ProgressBar from '../../../components/ProgressBar';
 
 interface LowerJawProps {
   hint?: string;
@@ -23,6 +23,7 @@ interface LowerJawProps {
   openResetModal: () => void;
   isSignedIn: boolean;
   updateContainer: () => void;
+  completedPercent: number;
 }
 
 const LowerJaw = ({
@@ -36,7 +37,8 @@ const LowerJaw = ({
   isEditorInFocus,
   openResetModal,
   isSignedIn,
-  updateContainer
+  updateContainer,
+  completedPercent
 }: LowerJawProps): JSX.Element => {
   const hintRef = React.useRef('');
   const [runningTests, setRunningTests] = useState(false);
@@ -107,11 +109,6 @@ const LowerJaw = ({
     if (runningTests) {
       return <span className='sr-only'>{t('aria.running-tests')}</span>;
     } else if (challengeIsCompleted) {
-      const submitKeyboardInstructions = isEditorInFocus ? (
-        <span className='sr-only'>{t('aria.submit')}</span>
-      ) : (
-        ''
-      );
       return (
         <div className='test-status fade-in' aria-hidden={isFeedbackHidden}>
           <div className='status-icon' aria-hidden='true'>
@@ -123,7 +120,12 @@ const LowerJaw = ({
             <h2>{t('learn.test')}</h2>
             <p className='status'>
               {t('learn.congratulations')}
-              {submitKeyboardInstructions}
+              <span className='sr-only'>
+                &#160;
+                {t('learn.percent-complete', {
+                  percent: completedPercent
+                })}
+              </span>
             </p>
           </div>
         </div>
@@ -187,6 +189,7 @@ const LowerJaw = ({
     return (
       <div>
         <hr />
+        {challengeIsCompleted && <ProgressBar />}
         <div className='lower-jaw-icon-bar'>
           <button
             className='btn fade-in'
