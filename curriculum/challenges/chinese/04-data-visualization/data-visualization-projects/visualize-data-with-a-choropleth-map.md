@@ -12,7 +12,7 @@ dashedName: visualize-data-with-a-choropleth-map
 
 完成以下需求，并且通过所有测试。 你可以使用你需要的任何库或 API。 赋予它你自己的个人风格。
 
-你可以使用 HTML、JavaScript、CSS、以及基于 svg 的 D3 可视化库来完成这个挑战。 Required DOM elements are queried on the moment of each test. 如果你使用了前端框架（例如 Vue），那么对于动态的内容测试结果可能不准确。 我们希望最终能够兼容这些框架，但 D3 项目目前还不支持它们。
+你可以使用 HTML、JavaScript、CSS、以及基于 svg 的 D3 可视化库来完成这个挑战。 要求的 DOM 元素在每次测试时都会被查询。 如果你使用了前端框架（例如 Vue），那么对于动态的内容测试结果可能不准确。 我们希望最终能够兼容这些框架，但 D3 项目目前还不支持它们。
 
 **需求 #1：** 等值区域图包含一个具有 `id="title"` 属性的标题。
 

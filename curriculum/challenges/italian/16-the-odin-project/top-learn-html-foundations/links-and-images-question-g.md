@@ -1,31 +1,31 @@
 ---
 id: 637f701572c65bc8e73dfe30
-title: Links and Images Question G
+title: Link e Immagini Domanda G
 challengeType: 15
 dashedName: links-and-images-question-g
 ---
 
 # --description--
 
-Websites would be fairly boring if they could only display text. Luckily HTML provides a wide variety of elements for displaying all sorts of different media. The most widely used of these is the image element.
+I siti web sarebbero abbastanza noiosi se si potesse visualizzare solo del testo. Fortunatamente l'HTML fornisce una grande varietà di elementi per la visualizzazione di contenuti di ogni sorta. Tra questi il più utilizzato è l'elemento immagine.
 
-To display an image in HTML you use the `<img>` element. Unlike the other elements you have encountered, the `<img>` element is self-closing. Empty, self-closing HTML elements do not need a closing tag.
+Per visualizzare un'immagine in HTML si utilizza l'elemento `<img>`. A differenza degli altri elementi che hai incontrato, l'elemento `<img>` è a chiusura automatica. Gli elementi HTML vuoti, o a chiusura automatica, non necessitano di un tag di chiusura.
 
-Instead of wrapping content with an opening and closing tag, it embeds an image into the page using a `src` attribute which tells the browser where the image file is located. The `src` attribute works much like the `href` attribute for anchor tags. It can embed an image using both absolute and relative paths.
+Invece di racchiudere il contenuto tra un tag di apertura e uno di chiusura, incorpora un'immagine nella pagina usando un attributo `src` che indica al browser dove si trova il file dell'immagine. L'attributo `src` funziona in modo simile all'attributo `href` per i tag di ancoraggio. Può incorporare un'immagine usando sia percorsi assoluti che relativi.
 
-For example, using an absolute path you can display an image located on The Odin Project site:
+Ad esempio, utilizzando un percorso assoluto è possibile visualizzare un'immagine situata sul sito di The Odin Project:
 
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/gORbExZ?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=gORbExZ&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_gORbExZ"></iframe>
 
-To use images that you have on your own websites, you can use a relative path.
+Per utilizzare le immagini che hai sui tuoi siti web, puoi usare un percorso relativo.
 
-- Create a new directory named `images` within the `odin-links-and-images` project.
+- Crea una nuova cartella chiamata `images` all'interno del progetto `odin-links-and-images`.
 
-- Next, download [this image](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) and move it into the images directory you just created.
+- Poi scarica [questa immagine](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) e spostala nella cartella images che hai appena creato.
 
-- Rename the image to `dog.jpg`.
+- Rinomina l'immagine in `dog.jpg`.
 
-Finally add the image to the `index.html` file:
+Infine aggiungi l'immagine al file `index.html`:
 
 ```html
 <body>
@@ -38,43 +38,43 @@ Finally add the image to the `index.html` file:
 </body>
 ```
 
-Save the `index.html` file and open it in a browser to view Charles in all his glory.
+Salva il file `index.html` e aprilo in un browser per vedere Charles in tutta la sua gloria.
 
 
-## Parent Directories
+## Cartelle genitori
 
-What if you want to use the dog image in the `about` page? You would first have to go up one level out of the pages directory into its parent directory so you could then access the images directory.
+E se volessi utilizzare l'immagine del cane nella pagina `about`? Dovresti salire di un livello dalla cartella pages fino alla sua cartella genitore in modo da poter accedere alla cartella images.
 
-To go to the parent directory you need to use two dots in the relative filepath like this: `../.` Let’s see this in action, within the `body` of the `about.html` file, add the following image below the heading you added earlier:
+Per passare alla cartella genitore devi usare due punti nel percorso relativo, così: `../.` Vediamo come funziona: all'interno del `body` del file `about.html`, aggiungi la seguente immagine sotto l'intestazione che hai aggiunto precedentemente:
 
 ```html
 <img src="../images/dog.jpg">
 ```
 
-To break this down:
+Analizziamo questo passaggio:
 
-- First, you are going to the parent directory of the pages directory which is `odin-links-and-images`.
+- Prima di tutto, stai passando alla cartella genitore della cartella pages, che è `odin-links-and-images`.
 
-- Then, from the parent directory, you can go into the `images` directory.
+- Poi, dalla cartella genitore puoi passare alla cartella `images`.
 
-- Finally, you can access the `dog.jpg` file.
+- Infine, puoi accedere al file `dog.jpg`.
 
-Using the metaphor we used earlier, using `../` in a filepath is kind of like stepping out from the room you are currently in to the main hallway so you can go to another room.
+Usando la metafora che abbiamo utilizzato prima, usare `../` nel percorso è un po' come uscire dalla stanza in cui ti trovi per andare nel corridoio e poter accedere a un'altra stanza.
 
-## Alt attribute
+## Attributo alt
 
-Besides the `src` attribute, every image element should also have an `alt` (alternative text) attribute.
+Oltre all'attributo `src`, ogni elemento di immagine dovrebbe avere anche un attributo `alt` (testo alternativo).
 
-The `alt` attribute is used to describe an image. It will be used in place of the image if it cannot be loaded. It is also used with screen readers to describe what the image is to visually impaired users.
+L'attributo `alt` viene usato per descrivere un'immagine. Viene usato al posto dell'immagine nel caso questa non possa essere caricata. Viene utilizzato anche dai lettori di schermo per descrivere l'immagine agli utenti ipovedenti.
 
-This is how the The Odin Project logo example you used earlier looks with an alt attribute included:
+Ecco come risulta l'esempio che hai usato precedentemente del logo di The Odin Project con un attributo alt incluso:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
 # --question--
 
 ## --text--
 
-How do you access a parent directory in a filepath?
+Come si accede a una cartella genitore in un percorso?
 
 ## --answers--
 

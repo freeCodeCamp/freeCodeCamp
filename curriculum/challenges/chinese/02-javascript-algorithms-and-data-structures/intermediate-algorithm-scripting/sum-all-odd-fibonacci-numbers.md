@@ -10,7 +10,7 @@ dashedName: sum-all-odd-fibonacci-numbers
 
 在这道题目中，我们需要写一个函数，参数为一个正整数 `num`，返回值为斐波那契数列中，小于或等于 `num` 的奇数之和。
 
-The first two numbers in the Fibonacci sequence are 0 and 1. 后面的每个数字由之前两数相加得出。 The first seven numbers of the Fibonacci sequence are 0, 1, 1, 2, 3, 5 and 8.
+斐波那契数列的前两个数字是 0 和 1。 后面的每个数字由之前两数相加得出。 斐波那契数列的前七个数字分别为：0、1、1、2、3、5、8。
 
 比如，`sumFibs(10)` 应该返回 `10`。 因为斐波那契数列中，比 `10` 小的数字只有 1、1、3、5。
 
