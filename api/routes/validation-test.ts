@@ -1,4 +1,5 @@
 import type { FastifyInstanceWithTypeProvider } from '..';
+import { schemaFragment } from './schema';
 
 export const testValidatedRoutes = (
   fastify: FastifyInstanceWithTypeProvider,
@@ -84,5 +85,22 @@ export const testValidatedRoutes = (
       return { foo, bar };
     }
   );
+
+  // The workaround (of sorts) is to pass around the bits of schema you want to
+  // compose. It's not as powerful as $ref, but it works.
+
+  fastify.get(
+    '/route-with-validation-shared-schema',
+    {
+      schema: {
+        querystring: schemaFragment
+      }
+    },
+    request => {
+      const { foo, bar } = request.query;
+      return { foo, bar };
+    }
+  );
+
   done();
 };
