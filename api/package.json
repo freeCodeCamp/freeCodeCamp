@@ -7,7 +7,8 @@
     "@fastify/middie": "8.1",
     "@fastify/mongodb": "6.1.0",
     "fastify": "4.9.2",
-    "fastify-plugin": "4.3.0"
+    "fastify-auth0-verify": "^1.0.0",
+    "fastify-plugin": "^4.3.0"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "engines": {
@@ -35,7 +36,7 @@
     "build": "tsc",
     "develop": "nodemon index.ts",
     "start": "NODE_ENV=production node index.js",
-    "test": "NODE_OPTIONS='--test-only' ts-node **/*.test.ts"
+    "test": "node --test -r ts-node/register **/*.test.ts"
   },
   "version": "0.0.1"
 }
