@@ -6,7 +6,6 @@
   "dependencies": {
     "@fastify/middie": "8.1",
     "@fastify/mongodb": "6.1.0",
-    "@fastify/type-provider-json-schema-to-ts": "^2.2.2",
     "fastify": "4.9.2",
     "fastify-auth0-verify": "^1.0.0",
     "fastify-plugin": "^4.3.0"
@@ -39,5 +38,8 @@
     "start": "NODE_ENV=production node index.js",
     "test": "node --test -r ts-node/register **/*.test.ts"
   },
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "devDependencies": {
+    "@fastify/type-provider-json-schema-to-ts": "^2.2.2"
+  }
 }
