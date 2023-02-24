@@ -54,7 +54,7 @@ Gli elementi sono reciprocamente genitori.
 
 ---
 
-The elements are each other's children.
+Gli elementi sono reciprocamente figli.
 
 ---
 

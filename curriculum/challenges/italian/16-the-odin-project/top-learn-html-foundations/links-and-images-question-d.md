@@ -89,7 +89,7 @@ In molti casi, sarà sufficiente; tuttavia, con questo approccio potresti ancora
 
 ## --assignment--
 
-Watch Kevin Powell’s HTML File Structure video above.
+Guarda il video HTML File Structure di Kevin Powell qui sopra.
 
 ## --text--
 
