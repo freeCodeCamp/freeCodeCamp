@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { Component, MutableRefObject } from 'react';
+import React, { useState, useEffect, MutableRefObject } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -120,12 +120,6 @@ interface ShowClassicProps {
   savedChallenges: CompletedChallenge[];
 }
 
-interface ShowClassicState {
-  layout: ReflexLayout;
-  resizing: boolean;
-  usingKeyboardInTablist: boolean;
-}
-
 interface ReflexLayout {
   codePane: { flex: number };
   editorPane: { flex: number };
@@ -160,41 +154,75 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 };
 
 // Component
-class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
-  static displayName: string;
-  containerRef: React.RefObject<HTMLElement>;
-  editorRef: React.RefObject<editor.IStandaloneCodeEditor | HTMLElement>;
-  instructionsPanelRef: React.RefObject<HTMLDivElement>;
-  resizeProps: ResizeProps;
+function ShowClassic({
+  data: {
+    challengeNode: {
+      challenge,
+      challenge: {
+        challengeFiles,
+        block,
+        title,
+        fields: { tests, blockName },
+        challengeType,
+        removeComments,
+        hasEditableBoundaries,
+        superBlock,
+        helpCategory,
+        forumTopicId,
+        certification,
+        usesMultifileEditor,
+        notes
+      }
+    }
+  },
+  pageContext: {
+    challengeMeta,
+    challengeMeta: { isFirstStep, nextChallengePath, prevChallengePath },
+    projectPreview: { challengeData, showProjectPreview }
+  },
+  createFiles,
+  cancelTests,
+  challengeMounted,
+  initConsole,
+  initTests,
+  updateChallengeMeta,
+  openModal,
+  setIsAdvancing,
+  savedChallenges,
+  t,
+  isChallengeCompleted,
+  output,
+  executeChallenge
+}: ShowClassicProps) {
+  const onStopResize = (event: HandlerProps) => {
+    const { name, flex } = event.component.props;
 
-  constructor(props: ShowClassicProps) {
-    super(props);
+    // Only interested in tracking layout updates for ReflexElement's
+    if (!name) {
+      setResizing(false);
+      return;
+    }
 
-    this.resizeProps = {
-      onStopResize: this.onStopResize.bind(this),
-      onResize: this.onResize.bind(this)
-    };
+    // Forcing a state update with the value of each panel since on stop resize
+    // is executed per each panel.
+    if (typeof layout === 'object')
+      setLayout({
+        ...layout,
+        [name]: { flex }
+      });
+    setResizing(false);
 
-    // layout: Holds the information of the panes sizes for desktop view
-    this.state = {
-      layout: this.getLayoutState(),
-      resizing: false,
-      usingKeyboardInTablist: false
-    };
+    store.set(REFLEX_LAYOUT, layout);
+  };
+  const onResize = () => {
+    setResizing(true);
+  };
+  const resizeProps: ResizeProps = {
+    onResize,
+    onStopResize
+  };
 
-    this.containerRef = React.createRef();
-    this.editorRef = React.createRef();
-    this.instructionsPanelRef = React.createRef();
-
-    this.updateUsingKeyboardInTablist =
-      this.updateUsingKeyboardInTablist.bind(this);
-  }
-
-  updateUsingKeyboardInTablist(usingKeyboardInTablist: boolean): void {
-    this.setState({ usingKeyboardInTablist });
-  }
-
-  getLayoutState(): ReflexLayout {
+  const getLayoutState = (): ReflexLayout => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const reflexLayout: ReflexLayout = store.get(REFLEX_LAYOUT);
 
@@ -210,48 +238,25 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     );
 
     return isValidLayout ? reflexLayout : BASE_LAYOUT;
-  }
+  };
 
-  onResize() {
-    this.setState(state => ({ ...state, resizing: true }));
-  }
+  // layout: Holds the information of the panes sizes for desktop view
+  const [layout, setLayout] = useState(getLayoutState());
+  const [resizing, setResizing] = useState(false);
+  const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
 
-  onStopResize(event: HandlerProps) {
-    const { name, flex } = event.component.props;
+  const containerRef = React.createRef<HTMLElement>();
+  const editorRef = React.createRef();
+  const instructionsPanelRef = React.createRef<HTMLDivElement>();
 
-    // Only interested in tracking layout updates for ReflexElement's
-    if (!name) {
-      this.setState(state => ({ ...state, resizing: false }));
-      return;
-    }
+  const updateUsingKeyboardInTablist = (
+    usingKeyboardInTablist: boolean
+  ): void => {
+    setUsingKeyboardInTablist(usingKeyboardInTablist);
+  };
 
-    // Forcing a state update with the value of each panel since on stop resize
-    // is executed per each panel.
-    const newLayout =
-      typeof this.state.layout === 'object'
-        ? {
-            ...this.state.layout,
-            [name]: { flex }
-          }
-        : this.state.layout;
-
-    this.setState({
-      layout: newLayout,
-      resizing: false
-    });
-
-    store.set(REFLEX_LAYOUT, this.state.layout);
-  }
-
-  componentDidMount() {
-    const {
-      data: {
-        challengeNode: {
-          challenge: { title }
-        }
-      }
-    } = this.props;
-    this.initializeComponent(title);
+  useEffect(() => {
+    initializeComponent(title);
     // Bug fix for the monaco content widget and touch devices/right mouse
     // click. (Issue #46166)
     document.addEventListener('mousedown', handleContentWidgetEvents, true);
@@ -259,60 +264,41 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     document.addEventListener('touchstart', handleContentWidgetEvents, true);
     document.addEventListener('touchmove', handleContentWidgetEvents, true);
     document.addEventListener('touchend', handleContentWidgetEvents, true);
-  }
 
-  componentDidUpdate(prevProps: ShowClassicProps) {
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            title: prevTitle,
-            fields: { tests: prevTests }
-          }
-        }
-      }
-    } = prevProps;
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            title: currentTitle,
-            fields: { tests: currTests }
-          }
-        }
-      }
-    } = this.props;
-    if (prevTitle !== currentTitle || prevTests !== currTests) {
-      this.initializeComponent(currentTitle);
-    }
-  }
+    return () => {
+      createFiles([]);
+      cancelTests();
+      document.removeEventListener(
+        'mousedown',
+        handleContentWidgetEvents,
+        true
+      );
+      document.removeEventListener(
+        'contextmenu',
+        handleContentWidgetEvents,
+        true
+      );
+      document.removeEventListener(
+        'touchstart',
+        handleContentWidgetEvents,
+        true
+      );
+      document.removeEventListener(
+        'touchmove',
+        handleContentWidgetEvents,
+        true
+      );
+      document.removeEventListener('touchend', handleContentWidgetEvents, true);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  initializeComponent(title: string) {
-    const {
-      challengeMounted,
-      createFiles,
-      initConsole,
-      initTests,
-      updateChallengeMeta,
-      openModal,
-      setIsAdvancing,
-      savedChallenges,
-      data: {
-        challengeNode: {
-          challenge: {
-            challengeFiles,
-            fields: { tests },
-            challengeType,
-            removeComments,
-            helpCategory
-          }
-        }
-      },
-      pageContext: {
-        challengeMeta,
-        projectPreview: { showProjectPreview }
-      }
-    } = this.props;
+  useEffect(() => {
+    initializeComponent(title);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tests, title]);
+
+  const initializeComponent = (title: string): void => {
     initConsole('');
 
     const savedChallenge = savedChallenges?.find(challenge => {
@@ -332,42 +318,31 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     });
     challengeMounted(challengeMeta.id);
     setIsAdvancing(false);
-  }
+  };
 
-  componentWillUnmount() {
-    const { createFiles, cancelTests } = this.props;
-    createFiles([]);
-    cancelTests();
-    document.removeEventListener('mousedown', handleContentWidgetEvents, true);
-    document.removeEventListener(
-      'contextmenu',
-      handleContentWidgetEvents,
-      true
-    );
-    document.removeEventListener('touchstart', handleContentWidgetEvents, true);
-    document.removeEventListener('touchmove', handleContentWidgetEvents, true);
-    document.removeEventListener('touchend', handleContentWidgetEvents, true);
-  }
+  const getChallenge = () => challenge;
 
-  getChallenge = () => this.props.data.challengeNode.challenge;
-
-  getBlockNameTitle(t: TFunction) {
-    const { block, superBlock, title } = this.getChallenge();
+  const getBlockNameTitle = (t: TFunction): string => {
+    const { block, superBlock, title } = getChallenge();
     return `${t(`intro:${superBlock}.blocks.${block}.title`)}: ${title}`;
-  }
+  };
 
-  getVideoUrl = () => this.getChallenge().videoUrl;
+  const getVideoUrl = () => getChallenge().videoUrl;
 
-  hasPreview() {
-    const { challengeType } = this.getChallenge();
+  const hasPreview = () => {
+    const { challengeType } = getChallenge();
     return (
       challengeType === challengeTypes.html ||
       challengeType === challengeTypes.modern ||
       challengeType === challengeTypes.multifileCertProject
     );
-  }
+  };
 
-  renderInstructionsPanel({ showToolPanel }: { showToolPanel: boolean }) {
+  const renderInstructionsPanel = ({
+    showToolPanel
+  }: {
+    showToolPanel: boolean;
+  }) => {
     const {
       block,
       description,
@@ -375,7 +350,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       instructions,
       title,
       translationPending
-    } = this.getChallenge();
+    } = getChallenge();
 
     return (
       <SidePanel
@@ -389,60 +364,50 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         }
         challengeTitle={
           <ChallengeTitle
-            isCompleted={this.props.isChallengeCompleted}
+            isCompleted={isChallengeCompleted}
             translationPending={translationPending}
           >
             {title}
           </ChallengeTitle>
         }
         guideUrl={getGuideUrl({ forumTopicId, title })}
-        instructionsPanelRef={this.instructionsPanelRef}
+        instructionsPanelRef={instructionsPanelRef}
         showToolPanel={showToolPanel}
-        videoUrl={this.getVideoUrl()}
+        videoUrl={getVideoUrl()}
       />
     );
-  }
+  };
 
-  renderEditor({ isMobileLayout, isUsingKeyboardInTablist }: RenderEditorArgs) {
-    const {
-      pageContext: {
-        projectPreview: { showProjectPreview }
-      },
-      challengeFiles,
-      data: {
-        challengeNode: {
-          challenge: {
-            fields: { tests },
-            usesMultifileEditor
-          }
-        }
-      }
-    } = this.props;
-    const { description, title } = this.getChallenge();
+  const renderEditor = ({
+    isMobileLayout,
+    isUsingKeyboardInTablist
+  }: RenderEditorArgs) => {
+    /* challengeFiles is pulled from data here instead of props*/
+
+    const { description, title } = getChallenge();
     return (
       challengeFiles && (
         <MultifileEditor
           challengeFiles={challengeFiles}
-          containerRef={this.containerRef}
+          containerRef={containerRef}
           description={description}
           // Try to remove unknown
           editorRef={
-            this.editorRef as MutableRefObject<editor.IStandaloneCodeEditor>
+            editorRef as MutableRefObject<editor.IStandaloneCodeEditor>
           }
           initialTests={tests}
           isMobileLayout={isMobileLayout}
           isUsingKeyboardInTablist={isUsingKeyboardInTablist}
-          resizeProps={this.resizeProps}
+          resizeProps={resizeProps}
           title={title}
           usesMultifileEditor={usesMultifileEditor}
           showProjectPreview={showProjectPreview}
         />
       )
     );
-  }
+  };
 
-  renderTestOutput() {
-    const { output, t } = this.props;
+  const renderTestOutput = () => {
     return (
       <Output
         defaultOutput={`
@@ -453,126 +418,103 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         output={output}
       />
     );
-  }
+  };
 
-  renderNotes(notes?: string) {
+  const renderNotes = (notes?: string) => {
     return <Notes notes={notes} />;
-  }
+  };
 
-  renderPreview() {
+  const renderPreview = () => {
     return (
       <Preview
         className='full-height'
-        disableIframe={this.state.resizing}
-        previewMounted={this.props.previewMounted}
+        disableIframe={resizing}
+        previewMounted={previewMounted}
       />
     );
-  }
+  };
 
-  render() {
-    const {
-      block,
-      challengeType,
-      fields: { blockName },
-      forumTopicId,
-      hasEditableBoundaries,
-      superBlock,
-      certification,
-      title,
-      usesMultifileEditor,
-      notes
-    } = this.getChallenge();
-    const {
-      executeChallenge,
-      pageContext: {
-        challengeMeta: { isFirstStep, nextChallengePath, prevChallengePath },
-        projectPreview: { challengeData, showProjectPreview }
-      },
-      challengeFiles,
-      t
-    } = this.props;
+  const blockNameTitle = getBlockNameTitle(t);
+  const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
-    const blockNameTitle = this.getBlockNameTitle(t);
-    const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-
-    return (
-      <Hotkeys
-        challengeType={challengeType}
-        editorRef={this.editorRef as React.RefObject<HTMLElement>}
-        executeChallenge={executeChallenge}
-        innerRef={this.containerRef}
-        instructionsPanelRef={this.instructionsPanelRef}
-        nextChallengePath={nextChallengePath}
-        prevChallengePath={prevChallengePath}
-        usesMultifileEditor={usesMultifileEditor}
-      >
-        <LearnLayout>
-          <Helmet title={windowTitle} />
-          <Media maxWidth={MAX_MOBILE_WIDTH}>
-            <MobileLayout
-              editor={this.renderEditor({
-                isMobileLayout: true,
-                isUsingKeyboardInTablist: this.state.usingKeyboardInTablist
-              })}
-              guideUrl={getGuideUrl({ forumTopicId, title })}
-              hasEditableBoundaries={hasEditableBoundaries}
-              hasNotes={!!notes}
-              hasPreview={this.hasPreview()}
-              instructions={this.renderInstructionsPanel({
-                showToolPanel: false
-              })}
-              notes={this.renderNotes(notes)}
-              preview={this.renderPreview()}
-              testOutput={this.renderTestOutput()}
-              // eslint-disable-next-line @typescript-eslint/unbound-method
-              updateUsingKeyboardInTablist={this.updateUsingKeyboardInTablist}
-              usesMultifileEditor={usesMultifileEditor}
-              videoUrl={this.getVideoUrl()}
-            />
-          </Media>
-          <Media minWidth={MAX_MOBILE_WIDTH + 1}>
-            <DesktopLayout
-              challengeFiles={challengeFiles}
-              challengeType={challengeType}
-              editor={this.renderEditor({
-                isMobileLayout: false,
-                isUsingKeyboardInTablist: this.state.usingKeyboardInTablist
-              })}
-              hasEditableBoundaries={hasEditableBoundaries}
-              hasNotes={!!notes}
-              hasPreview={this.hasPreview()}
-              instructions={this.renderInstructionsPanel({
-                showToolPanel: true
-              })}
-              isFirstStep={isFirstStep}
-              layoutState={this.state.layout}
-              notes={this.renderNotes(notes)}
-              preview={this.renderPreview()}
-              resizeProps={this.resizeProps}
-              testOutput={this.renderTestOutput()}
-              windowTitle={windowTitle}
-            />
-          </Media>
-          <CompletionModal
-            block={block}
-            blockName={blockName}
-            certification={certification}
-            superBlock={superBlock}
+  /* challengeFiles is pulled from data here instead of props*/
+  return (
+    <Hotkeys
+      challengeType={challengeType}
+      editorRef={editorRef as React.RefObject<HTMLElement>}
+      executeChallenge={executeChallenge}
+      innerRef={containerRef}
+      instructionsPanelRef={instructionsPanelRef}
+      nextChallengePath={nextChallengePath}
+      prevChallengePath={prevChallengePath}
+      usesMultifileEditor={usesMultifileEditor}
+    >
+      <LearnLayout>
+        <Helmet title={windowTitle} />
+        <Media maxWidth={MAX_MOBILE_WIDTH}>
+          <MobileLayout
+            editor={renderEditor({
+              isMobileLayout: true,
+              isUsingKeyboardInTablist: usingKeyboardInTablist
+            })}
+            guideUrl={getGuideUrl({ forumTopicId, title })}
+            hasEditableBoundaries={hasEditableBoundaries}
+            hasNotes={!!notes}
+            hasPreview={hasPreview()}
+            instructions={renderInstructionsPanel({
+              showToolPanel: false
+            })}
+            notes={renderNotes(notes)}
+            preview={renderPreview()}
+            testOutput={renderTestOutput()}
+            // eslint-disable-next-line @typescript-eslint/unbound-method
+            updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
+            usesMultifileEditor={usesMultifileEditor}
+            videoUrl={getVideoUrl()}
           />
-          <HelpModal challengeTitle={title} challengeBlock={blockName} />
-          <VideoModal videoUrl={this.getVideoUrl()} />
-          <ResetModal />
-          <ProjectPreviewModal
-            challengeData={challengeData}
-            closeText={t('buttons.start-coding')}
-            previewTitle={t('learn.project-preview-title')}
-            showProjectPreview={showProjectPreview}
+        </Media>
+        <Media minWidth={MAX_MOBILE_WIDTH + 1}>
+          <DesktopLayout
+            challengeFiles={challengeFiles}
+            challengeType={challengeType}
+            editor={renderEditor({
+              isMobileLayout: false,
+              isUsingKeyboardInTablist: usingKeyboardInTablist
+            })}
+            hasEditableBoundaries={hasEditableBoundaries}
+            hasNotes={!!notes}
+            hasPreview={hasPreview()}
+            instructions={renderInstructionsPanel({
+              showToolPanel: true
+            })}
+            isFirstStep={isFirstStep}
+            layoutState={layout}
+            notes={renderNotes(notes)}
+            preview={renderPreview()}
+            resizeProps={resizeProps}
+            testOutput={renderTestOutput()}
+            windowTitle={windowTitle}
           />
-          <ShortcutsModal />
-        </LearnLayout>
-      </Hotkeys>
-    );
-  }
+        </Media>
+        <CompletionModal
+          block={block}
+          blockName={blockName}
+          certification={certification}
+          superBlock={superBlock}
+        />
+        <HelpModal challengeTitle={title} challengeBlock={blockName} />
+        <VideoModal videoUrl={getVideoUrl()} />
+        <ResetModal />
+        <ProjectPreviewModal
+          challengeData={challengeData}
+          closeText={t('buttons.start-coding')}
+          previewTitle={t('learn.project-preview-title')}
+          showProjectPreview={showProjectPreview}
+        />
+        <ShortcutsModal />
+      </LearnLayout>
+    </Hotkeys>
+  );
 }
 
 ShowClassic.displayName = 'ShowClassic';
