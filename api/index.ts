@@ -3,6 +3,9 @@ config({ path: '../.env' });
 import fastifyAuth0 from 'fastify-auth0-verify';
 import Fastify from 'fastify';
 import middie from '@fastify/middie';
+import fastifySession from '@fastify/session';
+import fastifyCookie from '@fastify/cookie';
+import MongoStore from 'connect-mongo';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import { testRoutes } from './routes/test';
@@ -20,6 +23,15 @@ fastify.get('/', async (_request, _reply) => {
 const start = async () => {
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(middie);
+  await fastify.register(fastifyCookie, {
+    secret: process.env.COOKIE_SECRET
+  });
+  await fastify.register(fastifySession, {
+    secret: process.env.SESSION_SECRET ?? 'a_session_secret',
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGOHQ_URL
+    })
+  });
 
   // Auth0 plugin
   void fastify.register(fastifyAuth0, {
