@@ -7,7 +7,7 @@ import middie from '@fastify/middie';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import { testRoutes } from './routes/test';
 import { dbConnector } from './db';
-import { auth0Verify, testMiddleware } from './middleware';
+import { testMiddleware } from './middleware';
 
 const fastify = Fastify({
   logger: { level: process.env.NODE_ENV === 'development' ? 'debug' : 'fatal' }
@@ -31,7 +31,10 @@ const start = async () => {
   void fastify.use('/test', testMiddleware);
 
   // Hooks
-  void fastify.addHook('preValidation', auth0Verify);
+  void fastify.addHook(
+    'onRequest',
+    async (req, res) => await fastify.authenticate(req, res)
+  );
 
   void fastify.register(dbConnector);
   void fastify.register(testRoutes);
