@@ -9,6 +9,7 @@ import MongoStore from 'connect-mongo';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import { testRoutes } from './routes/test';
+import { auth0Routes } from './routes/auth0';
 import { dbConnector } from './db';
 import { testMiddleware } from './middleware';
 
@@ -42,14 +43,9 @@ const start = async () => {
 
   void fastify.use('/test', testMiddleware);
 
-  // Hooks
-  void fastify.addHook(
-    'onRequest',
-    async (req, res) => await fastify.authenticate(req, res)
-  );
-
   void fastify.register(dbConnector);
   void fastify.register(testRoutes);
+  void fastify.register(auth0Routes, { prefix: '/auth0' });
 
   try {
     const port = Number(process.env.PORT) || 3000;
