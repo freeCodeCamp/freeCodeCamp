@@ -157,11 +157,12 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 function ShowClassic({
   data: {
     challengeNode: {
-      challenge,
       challenge: {
         challengeFiles,
         block,
         title,
+        description,
+        instructions,
         fields: { tests, blockName },
         challengeType,
         removeComments,
@@ -171,7 +172,9 @@ function ShowClassic({
         forumTopicId,
         certification,
         usesMultifileEditor,
-        notes
+        notes,
+        videoUrl,
+        translationPending
       }
     }
   },
@@ -320,17 +323,11 @@ function ShowClassic({
     setIsAdvancing(false);
   };
 
-  const getChallenge = () => challenge;
-
   const getBlockNameTitle = (t: TFunction): string => {
-    const { block, superBlock, title } = getChallenge();
     return `${t(`intro:${superBlock}.blocks.${block}.title`)}: ${title}`;
   };
 
-  const getVideoUrl = () => getChallenge().videoUrl;
-
   const hasPreview = () => {
-    const { challengeType } = getChallenge();
     return (
       challengeType === challengeTypes.html ||
       challengeType === challengeTypes.modern ||
@@ -343,15 +340,6 @@ function ShowClassic({
   }: {
     showToolPanel: boolean;
   }) => {
-    const {
-      block,
-      description,
-      forumTopicId,
-      instructions,
-      title,
-      translationPending
-    } = getChallenge();
-
     return (
       <SidePanel
         block={block}
@@ -373,7 +361,7 @@ function ShowClassic({
         guideUrl={getGuideUrl({ forumTopicId, title })}
         instructionsPanelRef={instructionsPanelRef}
         showToolPanel={showToolPanel}
-        videoUrl={getVideoUrl()}
+        videoUrl={videoUrl}
       />
     );
   };
@@ -383,8 +371,6 @@ function ShowClassic({
     isUsingKeyboardInTablist
   }: RenderEditorArgs) => {
     /* challengeFiles is pulled from data here instead of props*/
-
-    const { description, title } = getChallenge();
     return (
       challengeFiles && (
         <MultifileEditor
@@ -470,7 +456,7 @@ function ShowClassic({
             // eslint-disable-next-line @typescript-eslint/unbound-method
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
-            videoUrl={getVideoUrl()}
+            videoUrl={videoUrl}
           />
         </Media>
         <Media minWidth={MAX_MOBILE_WIDTH + 1}>
@@ -503,7 +489,7 @@ function ShowClassic({
           superBlock={superBlock}
         />
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
-        <VideoModal videoUrl={getVideoUrl()} />
+        <VideoModal videoUrl={videoUrl} />
         <ResetModal />
         <ProjectPreviewModal
           challengeData={challengeData}
