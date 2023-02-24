@@ -49,7 +49,7 @@ Test 1
       </div>
       <div id="dessert-card-container"></div>
     </main>
-    <script src="./index.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
 ```
