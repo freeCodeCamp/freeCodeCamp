@@ -282,6 +282,6 @@ Un rapido richiamo ai comandi di cui avrai bisogno quando lavorerai localmente.
 | comando           | descrizione                                                          |
 | ----------------- | -------------------------------------------------------------------- |
 | `npm ci`          | Installa / reinstalla tutte le dipendenze e avvia i diversi servizi. |
-| `npm run seed`    | Creates authorized test users and inserts them into mongodb.         |
+| `npm run seed`    | Crea utenti di test autorizzati e li inserisce in mongodb.           |
 | `npm run develop` | Avvia il server API freeCodeCamp e le applicazioni client.           |
 | `npm run clean`   | Disistalla tutte le dipendenze e pulisce la cache.                   |

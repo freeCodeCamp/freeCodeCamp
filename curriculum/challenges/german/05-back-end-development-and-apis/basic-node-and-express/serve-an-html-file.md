@@ -11,7 +11,7 @@ dashedName: serve-an-html-file
 Du kannst auf Anfragen mit einer Datei antworten, indem du die Methode `res.sendFile(path)` verwendest. Du kannst sie im `app.get('/', ...)`-Route-Handler einfügen. Im Hintergrund setzt diese Methode die jeweiligen Header, um deinem Browser mitzuteilen, wie er die von dir gesendete Datei je nach Typ zu verarbeiten hat. Dann wird die Datei gelesen und gesendet. Diese Methode benötigt einen absoluten Dateipfad. Wir empfehlen dir, die globale Node-Variable `__dirname` zu verwenden, um den Pfad wie folgt zu berechnen:
 
 ```js
-absolutePath = __dirname + relativePath/file.ext
+absolutePath = __dirname + '/relativePath/file.ext'
 ```
 
 # --instructions--

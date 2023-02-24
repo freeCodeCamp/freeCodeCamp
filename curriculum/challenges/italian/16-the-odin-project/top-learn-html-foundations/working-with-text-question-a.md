@@ -1,14 +1,14 @@
 ---
 id: 637f4e5872c65bc8e73dfe27
 videoId: yqcd-XkxZNM
-title: Working With Text Question A
+title: Lavorare con il Testo Domanda A
 challengeType: 15
 dashedName: working-with-text-question-a
 ---
 
 # --description--
 
-What would you expect the following text to output on an HTML page?
+Cosa ti aspetteresti che il seguente testo dia come output in una pagina HTML?
 
 ```html
 <body>
@@ -20,15 +20,15 @@ What would you expect the following text to output on an HTML page?
 </body>
 ```
 
-It looks like two paragraphs of text, and so you might expect it to display in that way. However that is not the case, as you can see in the output below:
+Sembrano due paragrafi di testo, quindi potresti aspettarti che appariranno in questo modo. Tuttavia non è così, come si può vedere nell'output qui sotto:
 
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/xxrKqeV?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=xxrKqeV&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_xxrKqeV"></iframe>
 
-When the browser encounters new lines like this in your HTML, it will compress them down into one single space. The result of this compression is that all of the text is clumped together into one long line.
+Quando il browser incontra nuove righe come quella nel tuo HTML, le comprime in un unico spazio. Il risultato di questa compressione è che tutto il testo viene ammassato insieme in una sola lunga riga.
 
-If you want to create paragraphs in HTML, you need to use the paragraph element, which will add a newline after each of your paragraphs. A paragraph element is defined by wrapping text content with a `<p>` tag.
+Se vuoi creare dei paragrafi in HTML, devi utilizzare l'elemento paragrafo, che aggiungerà una nuova riga dopo ciascuno dei paragrafi. A paragraph element is defined by wrapping text content with a `<p>` tag.
 
-Changing our example from before to use paragraph elements fixes the issue:
+Cambiando l'esempio precedente in modo da utilizzare elementi di paragrafo si risolve il problema:
 
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/mdwbmdp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=mdwbmdp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_mdwbmdp"></iframe>
 
@@ -40,7 +40,7 @@ Watch and follow along to Kevin Powell’s HTML Paragraph and Headings Video abo
 
 ## --text--
 
-How do you create a paragraph in HTML?
+Come si crea un paragrafo in HTML?
 
 ## --answers--
 
