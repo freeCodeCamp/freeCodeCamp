@@ -50,8 +50,6 @@ import {
   setIsAdvancing
 } from '../redux/actions';
 import {
-  challengeFilesSelector,
-  challengeTestsSelector,
   consoleOutputSelector,
   isChallengeCompletedSelector
 } from '../redux/selectors';
@@ -66,8 +64,6 @@ import '../components/test-frame.css';
 
 // Redux Setup
 const mapStateToProps = createStructuredSelector({
-  challengeFiles: challengeFilesSelector,
-  tests: challengeTestsSelector,
   output: consoleOutputSelector,
   isChallengeCompleted: isChallengeCompletedSelector,
   savedChallenges: savedChallengesSelector
@@ -98,7 +94,6 @@ interface ShowClassicProps {
   createFiles: (arg0: ChallengeFiles | SavedChallengeFiles) => void;
   data: { challengeNode: ChallengeNode };
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
-  challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
@@ -111,7 +106,6 @@ interface ShowClassicProps {
     };
   };
   t: TFunction;
-  tests: Test[];
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
   setEditorFocusability: (canFocus: boolean) => void;
@@ -370,7 +364,6 @@ function ShowClassic({
     isMobileLayout,
     isUsingKeyboardInTablist
   }: RenderEditorArgs) => {
-    /* challengeFiles is pulled from data here instead of props*/
     return (
       challengeFiles && (
         <MultifileEditor
@@ -423,7 +416,6 @@ function ShowClassic({
   const blockNameTitle = getBlockNameTitle(t);
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
-  /* challengeFiles is pulled from data here instead of props*/
   return (
     <Hotkeys
       challengeType={challengeType}
