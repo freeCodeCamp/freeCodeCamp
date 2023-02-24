@@ -3,15 +3,21 @@ config({ path: '../.env' });
 import fastifyAuth0 from 'fastify-auth0-verify';
 import Fastify from 'fastify';
 import middie from '@fastify/middie';
+import { JsonSchemaToTsProvider } from '@fastify/type-provider-json-schema-to-ts';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import { testRoutes } from './routes/test';
 import { dbConnector } from './db';
 import { auth0Verify, testMiddleware } from './middleware';
+import { testValidatedRoutes } from './routes/validation-test';
 
 const fastify = Fastify({
   logger: { level: process.env.NODE_ENV === 'development' ? 'debug' : 'fatal' }
-});
+}).withTypeProvider<JsonSchemaToTsProvider>();
+
+// We could specify the type parameters of FastifyInstance to include the type
+// provider, but it's a chore and typeof works just as well.
+export type FastifyInstanceWithTypeProvider = typeof fastify;
 
 fastify.get('/', async (_request, _reply) => {
   return { hello: 'world' };
@@ -35,6 +41,7 @@ const start = async () => {
 
   void fastify.register(dbConnector);
   void fastify.register(testRoutes);
+  void fastify.register(testValidatedRoutes);
 
   try {
     const port = Number(process.env.PORT) || 3000;
