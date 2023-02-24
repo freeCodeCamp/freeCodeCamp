@@ -43,7 +43,7 @@ Vale la pena notare che è possibile utilizzare tag di ancoraggio per linkare qu
 
 ## --assignment--
 
-Watch Kevin Powell’s HTML Links video above.
+Guarda il video HTML links di Kevin Powell qui sopra.
 
 ## --text--
 

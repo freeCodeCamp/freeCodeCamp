@@ -7,7 +7,7 @@ dashedName: working-with-text-question-d
 
 # --description--
 
-L'elemento `em` fa sì che il testo sia in corsivo. Dà enfasi al testo anche semanticamente, influenzando anche in questo caso cose come i lettori di schermo. To define an emphasized element you wrap text content in a `<em>` tag.
+L'elemento `em` fa sì che il testo sia in corsivo. Dà enfasi al testo anche semanticamente, influenzando anche in questo caso cose come i lettori di schermo. Per definire un elemento di enfasi si racchiude il contenuto di testo in un tag `<em>`.
 
 Puoi usare `em` da solo:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_6" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/wvewqpp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=wvewqpp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_6" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_wvewqpp"></iframe>

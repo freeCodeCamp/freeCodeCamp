@@ -26,7 +26,7 @@ Le liste ordinate (ordered list) vengono create utilizzando l'elemento `<ol>`. O
 
 ## --assignment--
 
-Watch the first three minutes of Kevin Powell's video on Ordered and Unordered lists above.
+Guarda i primi tre minuti del video di Kevin Powell sulle liste ordinate e non ordinate qui sopra.
 
 ---
 
