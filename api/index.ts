@@ -3,7 +3,7 @@ config({ path: '../.env' });
 import fastifyAuth0 from 'fastify-auth0-verify';
 import Fastify from 'fastify';
 import middie from '@fastify/middie';
-import { JsonSchemaToTsProvider } from '@fastify/type-provider-json-schema-to-ts';
+import type { JsonSchemaToTsProvider } from '@fastify/type-provider-json-schema-to-ts';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import { testRoutes } from './routes/test';
