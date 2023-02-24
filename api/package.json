@@ -6,7 +6,7 @@
   "dependencies": {
     "@fastify/middie": "8.1",
     "@fastify/mongodb": "6.1.0",
-    "fastify": "4.9.2",
+    "fastify": "4.10.2",
     "fastify-auth0-verify": "^1.0.0",
     "fastify-plugin": "^4.3.0"
   },
