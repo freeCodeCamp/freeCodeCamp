@@ -282,6 +282,7 @@ export const query = graphql`
             }
             id
             block
+            tags
             challengeType
             title
             order

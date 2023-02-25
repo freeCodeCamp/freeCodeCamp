@@ -75,6 +75,7 @@ export type ChallengeWithCompletedNode = {
   block: string;
   challengeType: number;
   dashedName: string;
+  tags: string;
   fields: {
     slug: string;
   };
@@ -92,6 +93,7 @@ export type ChallengeNode = {
     challengeOrder: number;
     challengeType: number;
     dashedName: string;
+    tags: string;
     description: string;
     challengeFiles: ChallengeFiles;
     fields: Fields;
