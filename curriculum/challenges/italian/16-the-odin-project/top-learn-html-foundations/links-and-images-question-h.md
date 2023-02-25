@@ -74,7 +74,7 @@ Ecco come risulta l'esempio che hai usato precedentemente del logo di The Odin P
 
 ## --assignment--
 
-Read about the  <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">four main image formats</a> that can be used on the web.
+Leggi dei  <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">quattro principali formati immagine</a> che possono essere usati sul web.
 
 ## --text--
 

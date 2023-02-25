@@ -15,7 +15,7 @@ Molte risorse utili in circolazione continuano a riferirsi a HTML e CSS come lin
 
 ## --assignment--
 
-Read <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#What_is_HTML" target="_blank">the HTML vs CSS vs JavaScript article</a>. It is a quick overview of the relationships between HTML, CSS, and JavaScript.
+Leggi l'articolo <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#What_is_HTML" target="_blank">the HTML vs CSS vs JavaScript</a>. Si tratta di una rapida panoramica delle relazioni tra HTML, CSS e JavaScript.
 
 ## --text--
 

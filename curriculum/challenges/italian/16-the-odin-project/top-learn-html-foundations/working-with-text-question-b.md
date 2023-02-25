@@ -11,7 +11,7 @@ Le intestazioni sono diverse dagli altri elementi di testo HTML: vengono visuali
 
 Esistono 6 diversi livelli di intestazioni partendo da `<h1>` fino a `<h6>`. Il numero all'interno del tag di intestazione rappresenta il suo livello. L'intestazione più grande e più importante è `h1`, mentre `h6` è la più piccola, corrispondente al livello più basso.
 
-Le intestazioni sono definite come paragrafi. For example, to create an `h1` heading, we wrap our heading text in a `<h1>` tag.
+Le intestazioni sono definite come paragrafi. Ad esempio, per creare un'intestazione `h1`, racchiudiamo il testo di intestazione in un tag `<h1>`.
 
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_3" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/LYLPLbg?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=LYLPLbg&amp;user=TheOdinProjectExamples&amp;name=cp_embed_3" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_LYLPLbg"></iframe>
 

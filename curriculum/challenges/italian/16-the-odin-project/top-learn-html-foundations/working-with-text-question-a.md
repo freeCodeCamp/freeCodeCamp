@@ -26,7 +26,7 @@ Sembrano due paragrafi di testo, quindi potresti aspettarti che appariranno in q
 
 Quando il browser incontra nuove righe come quella nel tuo HTML, le comprime in un unico spazio. Il risultato di questa compressione è che tutto il testo viene ammassato insieme in una sola lunga riga.
 
-Se vuoi creare dei paragrafi in HTML, devi utilizzare l'elemento paragrafo, che aggiungerà una nuova riga dopo ciascuno dei paragrafi. A paragraph element is defined by wrapping text content with a `<p>` tag.
+Se vuoi creare dei paragrafi in HTML, devi utilizzare l'elemento paragrafo, che aggiungerà una nuova riga dopo ciascuno dei paragrafi. Un elemento di paragrafo è definito racchiudendo il contenuto di testo con un tag `<p>`.
 
 Cambiando l'esempio precedente in modo da utilizzare elementi di paragrafo si risolve il problema:
 
@@ -36,7 +36,7 @@ Cambiando l'esempio precedente in modo da utilizzare elementi di paragrafo si ri
 
 ## --assignment--
 
-Watch and follow along to Kevin Powell’s HTML Paragraph and Headings Video above.
+Guarda e segui il video HTML Paragraph and Headings di Kevin Powell qui sopra.
 
 ## --text--
 

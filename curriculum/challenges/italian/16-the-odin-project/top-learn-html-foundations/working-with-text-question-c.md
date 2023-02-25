@@ -8,7 +8,7 @@ dashedName: working-with-text-question-c
 
 # --description--
 
-L'elemento `<strong>` fa sì che il testo sia in grassetto. Contrassegna il testo come importante anche semanticamente; ciò influisce su strumenti, come i lettori di schermo, su cui gli utenti ipovedenti fanno affidamento per utilizzare un sito web. In alcuni lettori di schermo il tono della voce cambierà per comunicare l'importanza del testo all'interno di un elemento `strong`. To define a `strong` element you wrap text content in a `<strong>` tag.
+L'elemento `<strong>` fa sì che il testo sia in grassetto. Contrassegna il testo come importante anche semanticamente; ciò influisce su strumenti, come i lettori di schermo, su cui gli utenti ipovedenti fanno affidamento per utilizzare un sito web. In alcuni lettori di schermo il tono della voce cambierà per comunicare l'importanza del testo all'interno di un elemento `strong`. Per definire un elemento `strong` si racchiude il contenuto di testo in un tag `<strong>`.
 
 Puoi usare `strong` da solo:
 
@@ -24,7 +24,7 @@ A volte si vuole rendere il testo in grassetto senza dargli un significato impor
 
 ## --assignment--
 
-Watch Kevin Powell’s HTML Bold and Italic Text Video above.
+Guarda il video HTML Bold and Italic Text di Kevin Powell qui sopra.
 
 ## --text--
 
