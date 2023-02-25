@@ -11,10 +11,16 @@ A shopping cart does not serve much purpose without products. Declare a `product
 
 # --hints--
 
-Test 1
+You should declare a `products` variable with `const`.
 
 ```js
+assert.match(code, /const\s+products/);
+```
 
+You should set the `products` variable to an empty array.
+
+```js
+assert.match(code, /const\s+products\s*=\s*\[\s*\]/);
 ```
 
 # --seed--

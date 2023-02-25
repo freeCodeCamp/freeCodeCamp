@@ -11,10 +11,39 @@ Use the `.forEach()` method to loop through the `items` array. Pass an empty cal
 
 # --hints--
 
-Test 1
+You should use the `.forEach()` method on your `items` array.
 
 ```js
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /items\.forEach\(/);
+```
 
+Remember to use the `this` keyword to access the `items` array.
+
+```js
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /this\.items\.forEach\(/);
+```
+
+You should pass a callback function to the `.forEach()` method.
+
+```js
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /this\.items\.forEach\(\s*function\s*\(/);
+```
+
+Your callback function should take a single parameter.
+
+```js
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /this\.items\.forEach\(\s*function\s*\(\s*dessert\s*\)/);
+```
+
+Your callback function should be empty.
+
+```js
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /this\.items\.forEach\(\s*function\s*\(\s*dessert\s*\)\s*\{\s*\}/);
 ```
 
 # --seed--

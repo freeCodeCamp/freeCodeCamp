@@ -11,11 +11,34 @@ In your `forEach` callback, you need to update the `totalCountPerProduct` object
 
 # --hints--
 
-Test 1
+You should use dot notation to access the `id` property of `dessert`.
 
 ```js
-
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /dessert\.id/);
 ```
+
+You should use bracket notation to access the property of `totalCountPerProduct` that corresponds to `dessert.id`.
+
+```js
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]/);
+```
+
+You should use the assignment operator to update the value of the property of `totalCountPerProduct` that corresponds to `dessert.id`.
+
+```js
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=/);
+```
+
+You should update the value of `totalCountPerProduct` to be the current value plus one.
+
+```js
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\[\s*dessert\.id\s*\]\s*\+\s*1/);
+```
+
 
 # --seed--
 

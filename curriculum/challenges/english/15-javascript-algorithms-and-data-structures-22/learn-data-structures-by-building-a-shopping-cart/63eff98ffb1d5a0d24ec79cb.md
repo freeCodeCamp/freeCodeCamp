@@ -11,12 +11,43 @@ You haven't written the code to generate the HTML yet, but if a product has alre
 
 Use `.getElementById()` to get the matching element - you'll be setting the `id` value to `product-count-for-id${product.id}`, so use a template literal to query that value.
 
+Assign your query to a `currentProductCountSpan` variable.
+
 # --hints--
 
-Test 1
+You should declare a `currentProductCountSpan` variable.
 
 ```js
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /currentProductCountSpan\s*=/);
+```
 
+You should use `const` to declare `currentProductCountSpan`.
+
+```js
+const afterAdd = code.split("addItem")[1];
+assert.match(afterAdd, /const\s+currentProductCountSpan\s*=/);
+```
+
+You should use `document.getElementById()` to get the matching element.
+
+```js
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /document\.getElementById\(/);
+```
+
+You should use a template literal to query the `id` value.
+
+```js
+const afterAdd = code.split("addItem")[1];
+assert.match(afterAdd, /document\.getElementById\(\s*`product-count-for-id\$\{product\.id\}`\s*\)/);
+```
+
+You should assign the value of `document.getElementById()` to `currentProductCountSpan`.
+
+```js
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /currentProductCountSpan\s*=\s*document\.getElementById\(/);
 ```
 
 # --seed--
