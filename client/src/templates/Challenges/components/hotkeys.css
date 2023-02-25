@@ -1,4 +1,3 @@
 /* hide the outline for the HotKeys component */
-div[tabIndex='-1']:focus {
   outline: none;
 }
