@@ -8,6 +8,9 @@ declare global {
   interface Window {
     console: {
       log: () => void;
+      info: () => void;
+      warn: () => void;
+      error: () => void;
     };
     i18nContent: i18n;
   }
@@ -199,11 +202,40 @@ const updateProxyConsole =
       const oldLog = frameContext.window.console.log.bind(
         frameContext.window.console
       );
+      const oldInfo = frameContext.window.console.info.bind(
+        frameContext.window.console
+      );
+
+      const oldWarn = frameContext.window.console.warn.bind(
+        frameContext.window.console
+      );
+
+      const oldError = frameContext.window.console.error.bind(
+        frameContext.window.console
+      );
+
       frameContext.window.console.log = function proxyConsole(
         ...args: string[]
       ) {
         proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
         return oldLog(...(args as []));
+      };
+
+      frameContext.window.console.info = function proxyInfo(...args: string[]) {
+        proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
+        return oldInfo(...(args as []));
+      };
+
+      frameContext.window.console.warn = function proxyWarn(...args: string[]) {
+        proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
+        return oldWarn(...(args as []));
+      };
+
+      frameContext.window.console.error = function proxyWarn(
+        ...args: string[]
+      ) {
+        proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
+        return oldError(...(args as []));
       };
     }
 
