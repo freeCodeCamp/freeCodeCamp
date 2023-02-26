@@ -44,14 +44,25 @@ function Challenges({
     challenge => challenge.isCompleted
   );
 
-  // TEMP
-  const allTopics = ['step-1', 'step-2', 'step-25', 'step-30', 'step-45'];
-
+  const [allTopics, newTopic] = useState([]);
   const [activeTags, updateTags] = useState([]);
   const [isExpanded, toggleExpanded] = useState(false);
 
+  function getAllTopics() {
+    challengesWithCompleted.map(challenge => {
+      if (challenge.tags != null) {
+        const tagArr = challenge.tags.split(',');
+        tagArr.map(tag => {
+          if (!allTopics.includes(tag)) {
+            allTopics.unshift(tag);
+            newTopic(allTopics);
+          }
+        });
+      }
+    });
+  }
+
   function handleRemoveTag(topic: string) {
-    // Remove tag
     const clone = [...activeTags];
     const index = clone.indexOf(topic);
     if (index !== -1) {
@@ -61,10 +72,29 @@ function Challenges({
   }
 
   function handleAddTag(topic: string) {
-    // Add tag
     activeTags.unshift(topic);
     updateTags(activeTags);
   }
+
+  function filterByTag(challengeTags: string) {
+    if (activeTags.length == 0) {
+      return true;
+    }
+
+    if (challengeTags == null) {
+      return false;
+    }
+
+    const tagArr = challengeTags.split(',');
+    for (const tag of tagArr) {
+      if (activeTags.includes(tag)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  getAllTopics();
 
   return isGridMap ? (
     <>
@@ -101,7 +131,7 @@ function Challenges({
           {allTopics.map(topic => {
             if (!activeTags.includes(topic)) {
               return (
-                <li key={topic + '-master'}>
+                <li key={topic}>
                   <button
                     className='topic-select-btn'
                     onClick={() => handleAddTag(topic)}
@@ -146,12 +176,7 @@ function Challenges({
                   to={challenge.fields.slug}
                   className={`map-grid-item ${
                     +challenge.isCompleted ? 'challenge-completed' : ''
-                  } ${
-                    activeTags.includes(challenge.dashedName) ||
-                    activeTags.length === 0
-                      ? ''
-                      : 'filtered-out'
-                  }`}
+                  } ${filterByTag(challenge.tags) ? '' : 'filtered-out'}`}
                 >
                   <span className='sr-only'>{t('aria.step')}</span>
                   <span>{i + 1}</span>
