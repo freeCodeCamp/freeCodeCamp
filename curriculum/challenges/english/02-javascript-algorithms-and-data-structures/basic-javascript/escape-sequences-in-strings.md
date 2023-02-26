@@ -19,7 +19,7 @@ Quotes are not the only characters that can be <dfn>escaped</dfn> inside a strin
 
 Assign the following three lines of text into the single variable `myStr` using escape sequences.
 
-```
+<pre>
 FirstLine
     \SecondLine
 ThirdLine
