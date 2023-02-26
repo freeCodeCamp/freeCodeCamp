@@ -11,13 +11,13 @@ dashedName: assignment-with-a-returned-value
 
 <a href="/japanese/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">「代入演算子を使用して値を格納する」</a>で説明したように、等号の右側の部分はすべて、値が代入される前に解決されます。 つまり、関数の戻り値を受け取って変数に代入することができます。
 
-2 つの数値を足し算する関数 `sum` があらかじめ定義されているとします。次の
+Assume we have defined a function `sum` which adds two numbers together.
 
 ```js
 ourSum = sum(5, 12);
 ```
 
-は `sum` 関数を呼び出します。関数は `17` という値を返し、その値が `ourSum` 変数に代入されます。
+Calling the `sum` function with the arguments of `5` and `12` produces a return value of `17`. This return value is assigned to the `ourSum` variable.
 
 # --instructions--
 
