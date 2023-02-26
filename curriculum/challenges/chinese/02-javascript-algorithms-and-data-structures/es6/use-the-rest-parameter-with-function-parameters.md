@@ -67,7 +67,12 @@ assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
 ```js
 const sum = (x, y, z) => {
   const args = [x, y, z];
-  return args.reduce((a, b) => a + b, 0);
+  let total = 0;
+
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+  return total;
 }
 ```
 
@@ -75,6 +80,11 @@ const sum = (x, y, z) => {
 
 ```js
 const sum = (...args) => {
-  return args.reduce((a, b) => a + b, 0);
+let total = 0;
+
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+  return total;
 }
 ```
