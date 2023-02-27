@@ -40,7 +40,7 @@ You should use a template literal to query the `id` value.
 
 ```js
 const afterAdd = code.split("addItem")[1];
-assert.match(afterAdd, /document\.getElementById\(\s*`product-count-for-id\$\{product\.id\}`\s*\)/);
+assert.match(afterAdd, /document\.getElementById\(\s*`product-count-for-id\$\{(product\.)?id\}`\s*\)/);
 ```
 
 You should assign the value of `document.getElementById()` to `currentProductCountSpan`.
