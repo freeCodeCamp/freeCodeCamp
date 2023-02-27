@@ -1,25 +1,25 @@
 import React from 'react';
 
+const wrapper = {
+  display: 'grid',
+  placeItems: 'center',
+  position: 'relative',
+  padding: 'inherit'
+} as React.CSSProperties;
+
+const speechBubbleIcon = {
+  position: 'absolute'
+} as React.CSSProperties;
+
+const questionMarkIcon = {
+  position: 'absolute',
+  top: '-3px',
+  width: '9px'
+} as React.CSSProperties;
+
 function Help(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
-  const wrapper = {
-    display: 'grid',
-    placeItems: 'center',
-    position: 'relative',
-    padding: 'inherit'
-  } as React.CSSProperties;
-
-  const speechBubbleIcon = {
-    position: 'absolute'
-  } as React.CSSProperties;
-
-  const questionMarkIcon = {
-    position: 'absolute',
-    top: '-3px',
-    width: '9px'
-  } as React.CSSProperties;
-
   return (
     <>
       <div style={wrapper}>
