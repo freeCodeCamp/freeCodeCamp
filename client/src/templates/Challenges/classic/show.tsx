@@ -50,6 +50,7 @@ import {
   setIsAdvancing
 } from '../redux/actions';
 import {
+  challengeFilesSelector,
   consoleOutputSelector,
   isChallengeCompletedSelector
 } from '../redux/selectors';
@@ -64,6 +65,7 @@ import '../components/test-frame.css';
 
 // Redux Setup
 const mapStateToProps = createStructuredSelector({
+  challengeFiles: challengeFilesSelector,
   output: consoleOutputSelector,
   isChallengeCompleted: isChallengeCompletedSelector,
   savedChallenges: savedChallengesSelector
@@ -94,6 +96,7 @@ interface ShowClassicProps {
   createFiles: (arg0: ChallengeFiles | SavedChallengeFiles) => void;
   data: { challengeNode: ChallengeNode };
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
+  challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
@@ -149,6 +152,7 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 
 // Component
 function ShowClassic({
+  challengeFiles: reduxChallengeFiles,
   data: {
     challengeNode: {
       challenge: {
@@ -365,9 +369,9 @@ function ShowClassic({
     isUsingKeyboardInTablist
   }: RenderEditorArgs) => {
     return (
-      challengeFiles && (
+      reduxChallengeFiles && (
         <MultifileEditor
-          challengeFiles={challengeFiles}
+          challengeFiles={reduxChallengeFiles}
           containerRef={containerRef}
           description={description}
           // Try to remove unknown
@@ -453,7 +457,7 @@ function ShowClassic({
         </Media>
         <Media minWidth={MAX_MOBILE_WIDTH + 1}>
           <DesktopLayout
-            challengeFiles={challengeFiles}
+            challengeFiles={reduxChallengeFiles}
             challengeType={challengeType}
             editor={renderEditor({
               isMobileLayout: false,
