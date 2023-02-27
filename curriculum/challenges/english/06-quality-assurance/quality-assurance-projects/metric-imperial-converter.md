@@ -20,14 +20,14 @@ If you use Replit, follow these steps to set up the project:
 -   Next, you will see a `.replit` window. 
 -   Select `Use run command` and click the `Done` button. 
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field. If you submit your project link and all of your tests are not passing, you may need to try a different app hosting platform. <a href="https://render.com" target="_blank" rel="noopener noreferrer nofollow">Render.com</a>, <a href="https://cyclic.sh" target="_blank" rel="noopener noreferrer nofollow">Cyclic.sh</a>, <a href="https://railway.app" target="_blank" rel="noopener noreferrer nofollow">Railway.app</a>, and <a href="https://glitch.me" target="_blank" rel="noopener noreferrer nofollow">Glitch.me</a> are a few free alternatives. 
 
 # --instructions--
 
 - Complete the necessary conversion logic in `/controllers/convertHandler.js`
 - Complete the necessary routes in `/routes/api.js`
 - Copy the `sample.env` file to `.env` and set the variables appropriately
-- To run the tests uncomment `NODE_ENV=test` in your `.env` file
+- To run the tests uncomment `NODE_ENV=test` in your `.env` file (**Tests will not run properly without**)
 - To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
 Write the following tests in `tests/1_unit-tests.js`:
