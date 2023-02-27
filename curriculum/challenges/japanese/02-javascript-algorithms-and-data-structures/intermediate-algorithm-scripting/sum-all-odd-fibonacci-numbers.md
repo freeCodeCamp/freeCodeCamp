@@ -10,7 +10,7 @@ dashedName: sum-all-odd-fibonacci-numbers
 
 正の整数 `num` が与えられたときに、`num` 以下の奇数のフィボナッチ数の和を返してください。
 
-フィボナッチ数列の最初の 2 つの数字は 1 と 1 です。 数列内の他の数はすべて、前の 2 つの数の和になっています。 フィボナッチ数列の最初の 6 つの数字は、1、1、2、3、5、8 です。
+The first two numbers in the Fibonacci sequence are 0 and 1. 数列内の他の数はすべて、前の 2 つの数の和になっています。 The first seven numbers of the Fibonacci sequence are 0, 1, 1, 2, 3, 5 and 8.
 
 たとえば、`sumFibs(10)` は、`10` 以下のすべての奇数のフィボナッチ数が 1、1、3、5 なので、`10` を返す必要があります。
 

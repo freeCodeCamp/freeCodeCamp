@@ -279,9 +279,9 @@ If you have issues while installing it, check out the [troubleshooting section](
 
 A quick reference to the commands that you will need when working locally.
 
-| コマンド              | 説明                                                |
-| ----------------- | ------------------------------------------------- |
-| `npm ci`          | すべての依存関係をインストール / 再インストールし、異なるサービスをブートストラップします。   |
-| `npm run seed`    | すべてのチャレンジのマークダウンファイルを解析し、MongoDB に挿入します。          |
-| `npm run develop` | freeCodeCamp の API サーバーとクライアントアプリケーションを起動します。     |
-| `npm run clean`   | Uninstalls all dependencies and cleans up caches. |
+| コマンド              | 説明                                                           |
+| ----------------- | ------------------------------------------------------------ |
+| `npm ci`          | すべての依存関係をインストール / 再インストールし、異なるサービスをブートストラップします。              |
+| `npm run seed`    | Creates authorized test users and inserts them into mongodb. |
+| `npm run develop` | freeCodeCamp の API サーバーとクライアントアプリケーションを起動します。                |
+| `npm run clean`   | Uninstalls all dependencies and cleans up caches.            |

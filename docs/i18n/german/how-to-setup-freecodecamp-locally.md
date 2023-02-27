@@ -282,6 +282,6 @@ A quick reference to the commands that you will need when working locally.
 | Befehl            | Beschreibung                                                                          |
 | ----------------- | ------------------------------------------------------------------------------------- |
 | `npm ci`          | Installiert / reinstalliert alle Abhängigkeiten und bootet die verschiedenen Dienste. |
-| `npm run seed`    | Analysiert alle Aufgaben-Markdown-Dateien und fügt sie in MongoDB ein.                |
+| `npm run seed`    | Creates authorized test users and inserts them into mongodb.                          |
 | `npm run develop` | Startet den freeCodeCamp API Server und die Client-Anwendungen.                       |
 | `npm run clean`   | Uninstalls all dependencies and cleans up caches.                                     |

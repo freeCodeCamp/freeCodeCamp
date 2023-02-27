@@ -2,11 +2,19 @@ import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
 import { empty, of } from 'rxjs';
-import { catchError, concat, retry, switchMap, tap } from 'rxjs/operators';
+import {
+  catchError,
+  concat,
+  retry,
+  switchMap,
+  tap,
+  mergeMap
+} from 'rxjs/operators';
 import { isChallenge } from '../../../utils/path-parsers';
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
+  allowBlockDonationRequests,
   submitComplete,
   updateComplete,
   updateFailed
@@ -25,7 +33,8 @@ import {
   challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
-  projectFormValuesSelector
+  projectFormValuesSelector,
+  isBlockNewlyCompletedSelector
 } from './selectors';
 
 function postChallenge(update, username) {
@@ -156,8 +165,9 @@ export default function completionEpic(action$, state$) {
     ofType(actionTypes.submitChallenge),
     switchMap(({ type }) => {
       const state = state$.value;
-      const meta = challengeMetaSelector(state);
-      const { nextChallengePath, challengeType, superBlock } = meta;
+
+      const { nextChallengePath, challengeType, superBlock, block } =
+        challengeMetaSelector(state);
 
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
@@ -169,6 +179,7 @@ export default function completionEpic(action$, state$) {
             challengeType
         );
       }
+
       if (isSignedInSelector(state)) {
         submitter = submitters[submitTypes[challengeType]];
       }
@@ -177,8 +188,17 @@ export default function completionEpic(action$, state$) {
         return findPathToNavigateTo(nextChallengePath, superBlock);
       };
 
+      const canAllowDonationRequest = (state, action) =>
+        isBlockNewlyCompletedSelector(state) &&
+        action.type === submitActionTypes.submitComplete;
+
       return submitter(type, state).pipe(
         concat(of(setIsAdvancing(isChallenge(pathToNavigateTo())))),
+        mergeMap(x =>
+          canAllowDonationRequest(state, x)
+            ? of(x, allowBlockDonationRequests({ superBlock, block }))
+            : of(x)
+        ),
         tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {
             navigate(pathToNavigateTo());

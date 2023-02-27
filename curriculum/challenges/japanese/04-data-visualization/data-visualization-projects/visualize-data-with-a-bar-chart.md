@@ -12,7 +12,7 @@ dashedName: visualize-data-with-a-bar-chart
 
 以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなた独自のスタイルを加えましょう。
 
-HTML、JavaScript、CSS、および D3 の SVG ベースのビジュアライゼーションライブラリを使用できます。 テストでは、軸に沿って自動的に目盛り (tick) を生成する D3 軸プロパティを使用して軸を生成する必要があります。 グラフ化された要素の配置を調べるために目盛りの位置が使用されるので、D3 テストを成功させるためにはこの目盛りが必要です。 軸の生成については、<https://github.com/d3/d3/blob/master/API.md#axes-d3-axis> を参照してください。 必要な (非仮想) DOM 要素は、各テストの時にクエリされます。 フロントエンドフレームワーク (例えば Vue など) を使用した場合、動的なコンテンツではテスト結果が不正確になる可能性があります。 最終的には対応したいと考えていますが、現在の D3 プロジェクトではこれらのフレームワークはサポートされていません。
+HTML、JavaScript、CSS、および D3 の SVG ベースのビジュアライゼーションライブラリを使用できます。 テストでは、軸に沿って自動的に目盛り (tick) を生成する D3 軸プロパティを使用して軸を生成する必要があります。 グラフ化された要素の配置を調べるために目盛りの位置が使用されるので、D3 テストを成功させるためにはこの目盛りが必要です。 軸の生成については、<https://github.com/d3/d3/blob/master/API.md#axes-d3-axis> を参照してください。 Required DOM elements are queried on the moment of each test. フロントエンドフレームワーク (例えば Vue など) を使用した場合、動的なコンテンツではテスト結果が不正確になる可能性があります。 最終的には対応したいと考えていますが、現在の D3 プロジェクトではこれらのフレームワークはサポートされていません。
 
 **ユーザーストーリー #1:** 私のチャートには、タイトルとそれに対応する `id="title"` が必要です。
 
@@ -24,17 +24,17 @@ HTML、JavaScript、CSS、および D3 の SVG ベースのビジュアライゼ
 
 **ユーザーストーリー #5:** 私のチャートには、各データポイントに対して、`rect` 要素と、それに対応してデータを表示する `class="bar"` が必要です。
 
-**ユーザーストーリー #6:** 各バーには、`date` 値を格納している `data-date` プロパティと、`GDP` 値を格納している `data-gdp` プロパティが必要です。
+**User Story #6:** Each `.bar` should have the properties `data-date` and `data-gdp` containing `date` and `GDP` values.
 
-**ユーザーストーリー #7:** バー要素の `data-date` プロパティは、提供されたデータの順序と一致する必要があります。
+**User Story #7:** The `.bar` elements' `data-date` properties should match the order of the provided data.
 
-**ユーザーストーリー #8:** バー要素の `data-gdp` プロパティは、提供されたデータの順序と一致する必要があります。
+**User Story #8:** The `.bar` elements' `data-gdp` properties should match the order of the provided data.
 
-**ユーザーストーリー #9:** 各バーの要素の高さは、そのデータに対応する `GDP` を正確に表す必要があります。
+**User Story #9:** Each `.bar` element's height should accurately represent the data's corresponding `GDP`.
 
-**ユーザーストーリー #10:** `data-date` 属性とそれに対応するバー要素は、x 軸上の対応する値と一致している必要があります。
+**User Story #10:** The `data-date` attribute and its corresponding `.bar` element should align with the corresponding value on the x-axis.
 
-**ユーザーストーリー #11:** `data-gdp` 属性とそれに対応する bar 要素は、y 軸上の対応する値と一致している必要があります。
+**User Story #11:** The `data-gdp` attribute and its corresponding `.bar` element should align with the corresponding value on the y-axis.
 
 **ユーザーストーリー #12:** ある領域にマウスカーソルを合わせると、その領域の詳細情報を表示するための、対応する `id="tooltip"` を持つツールチップが表示されます。
 

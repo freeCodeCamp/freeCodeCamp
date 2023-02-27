@@ -241,26 +241,28 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
           />
           <Grid>
             <Row>
-              <Spacer />
-              <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-                <div className='video-wrapper'>
-                  {!this.state.videoIsLoaded ? (
-                    <div className='video-placeholder-loader'>
-                      <Loader />
-                    </div>
-                  ) : null}
-                  <VideoPlayer
-                    bilibiliIds={bilibiliIds}
-                    onVideoLoad={this.onVideoLoad}
-                    title={title}
-                    videoId={videoId}
-                    videoIsLoaded={this.state.videoIsLoaded}
-                    videoLocaleIds={videoLocaleIds}
-                  />
-                </div>
-                <Spacer />
-              </Col>
+              {videoId && (
+                <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
+                  <Spacer />
+                  <div className='video-wrapper'>
+                    {!this.state.videoIsLoaded ? (
+                      <div className='video-placeholder-loader'>
+                        <Loader />
+                      </div>
+                    ) : null}
+                    <VideoPlayer
+                      bilibiliIds={bilibiliIds}
+                      onVideoLoad={this.onVideoLoad}
+                      title={title}
+                      videoId={videoId}
+                      videoIsLoaded={this.state.videoIsLoaded}
+                      videoLocaleIds={videoLocaleIds}
+                    />
+                  </div>
+                </Col>
+              )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <Spacer />
                 <h2>{title}</h2>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer />

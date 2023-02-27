@@ -1,6 +1,5 @@
 ---
 id: 637f703572c65bc8e73dfe35
-videoId: tsEQgGjSmkM
 title: Links and Images Question B
 challengeType: 15
 dashedName: links-and-images-question-b
