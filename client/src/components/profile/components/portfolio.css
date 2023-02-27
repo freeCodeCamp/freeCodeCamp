@@ -38,10 +38,16 @@
   border-radius: 15px;
   padding-inline: 4rem;
   margin: 1em;
+  text-decoration: none;
 }
 
-.portfolio-container a {
-  text-decoration: none;
+.portfolio-container a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .portfolio-container a:is(:hover, :focus, :focus-visible) {
