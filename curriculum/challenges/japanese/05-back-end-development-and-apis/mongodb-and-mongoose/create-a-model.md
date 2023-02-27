@@ -40,7 +40,7 @@ favoriteFoods : array of strings (*)
 
 Mongoose の基本的なスキーマタイプを使用してください。 フィールドを追加したい場合は、required や unique といった単純なバリデーターを使用し、デフォルト値を設定してください。 <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">Mongoose の記事</a>を参照してください。
 
-次に、`personSchema` から `Person` というモデルを作成してください。
+次に、`personSchema` からモデルを作成し、それを既存の変数 `Person` に割り当てます。
 
 # --hints--
 
