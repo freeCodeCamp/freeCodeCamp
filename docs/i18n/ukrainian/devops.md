@@ -508,13 +508,13 @@ npm run create:config && npm run build:curriculum && npm run build:server
 4. Start Instances
 
 ```console
-pm2 start all --update-env && pm2 logs
-```
+cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
+   ```
 
 #### 2. Rolling updates - Used for logical changes to code.
 
 ```console
-pm2 reload all --update-env && pm2 logs
+cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
 ```
 
 > [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.

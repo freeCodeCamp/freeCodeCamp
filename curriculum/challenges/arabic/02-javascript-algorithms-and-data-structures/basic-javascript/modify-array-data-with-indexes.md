@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb8bdef
-title: تعديل بيانات القوائم بالترتيب (Modify Array Data With Indexes)
+title: تعديل بيانات القوائم برقم الترتيب
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/czQM4A8'
 forumTopicId: 18241
@@ -24,7 +24,7 @@ ourArray[0] = 15;
 
 # --instructions--
 
-عدل البيانات المخزنة في الترتيب `0` من `myArray` إلى قيمة `45`.
+عدل البيانات المخزنة في موقع الترتيب رَقَم `0` من `myArray` إلى قيمة `45`.
 
 # --hints--
 
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-يجب عليك استخدام الترتيب الصحيح لتعديل القيمة في `myArray`.
+يجب عليك استخدام رقم الترتيب الصحيح لتعديل القيمة في `myArray`.
 
 ```js
 assert(

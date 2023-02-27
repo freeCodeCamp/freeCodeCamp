@@ -22,7 +22,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --instructions--
 
-Add version `1.1.0` of the `@freecodecamp/example` package to the `dependencies` field of your `package.json` file.
+将 `@freecodecamp/example` 包的版本 `1.1.0` 添加到 `package.json` 文件的 `dependencies` 字段。
 
 **注意：** `@freecodecamp/example` 是一个用作学习工具的仿包。
 

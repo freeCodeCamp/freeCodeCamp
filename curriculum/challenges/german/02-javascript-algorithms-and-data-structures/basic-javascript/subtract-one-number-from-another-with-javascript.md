@@ -32,7 +32,7 @@ The variable `difference` should be equal to `12`.
 assert(difference === 12);
 ```
 
-You should only subtract one number from `45`.
+Du solltest nur eine Zahl von `45` abziehen.
 
 ```js
 assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));

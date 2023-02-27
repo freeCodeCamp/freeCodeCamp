@@ -38,7 +38,7 @@ passport.deserializeUser((id, done) => {
 });
 ```
 
-Add the two functions above to your server. The `ObjectID` class comes from the `mongodb` package. `mongodb@~3.6.0` has already been added as a dependency. Declare this class with:
+Add the two functions above to your server. The `ObjectID` class comes from the `mongodb` package. すでに `mongodb@~3.6.0` が依存関係として追加されています。 Declare this class with:
 
 ```javascript
 const { ObjectID } = require('mongodb');
@@ -46,11 +46,11 @@ const { ObjectID } = require('mongodb');
 
 The `deserializeUser` will throw an error until you set up the database connection. So, for now, comment out the `myDatabase.findOne` call, and just call `done(null, null)` in the `deserializeUser` callback function.
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#serialization-of-a-user-object-4" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+完成したと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#serialization-of-a-user-object-4" target="_blank" rel="noopener noreferrer nofollow">この時点までの完成形のコードをこちらで確認できます</a>。
 
 # --hints--
 
-You should serialize user function correctly.
+You should serialize the user object correctly.
 
 ```js
 async (getUserInput) => {
@@ -70,7 +70,7 @@ async (getUserInput) => {
 }
 ```
 
-You should deserialize user function correctly.
+You should deserialize the user object correctly.
 
 ```js
 async (getUserInput) => {
@@ -90,7 +90,7 @@ async (getUserInput) => {
 }
 ```
 
-MongoDB should be a dependency.
+MongoDB を依存関係にする必要があります。
 
 ```js
 async (getUserInput) => {
@@ -105,7 +105,7 @@ async (getUserInput) => {
 }
 ```
 
-Mongodb should be properly required including the ObjectId.
+ObjectId を含めて Mongodb を正しく require する必要があります。
 
 ```js
 async (getUserInput) => {

@@ -9,13 +9,13 @@ dashedName: compound-assignment-with-augmented-multiplication
 
 # --description--
 
-يقوم المشغل `*=` مضاعفة متغير في عدد.
+يقوم المشغل `*=` f بمضاعفة متغير في عدد.
 
 ```js
 myVar = myVar * 5;
 ```
 
-سوف تضاعف `myVar` في `5`. ويمكن إعادة كتابة هذا على النحو التالي:
+سيتم ضرب `myVar` في `5`. ويمكن إعادة كتابة هذا على النحو التالي:
 
 ```js
 myVar *= 5;
