@@ -49,29 +49,3 @@
 .btn-group .btn-primary:hover {
   border-color: var(--secondary-color);
 }
-
-.btn-group .btn + .btn {
-  margin-inline-start: -2px;
-}
-
-label.toggle-label {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (max-width: 550px) {
-  .btn:first-child > .tick {
-    left: 6px;
-  }
-
-  .btn:last-child > .tick {
-    right: 5px;
-  }
-}
-
-@media (max-width: 440px) {
-  .btn:first-child > .tick {
-    left: auto;
-    right: 5px;
-  }
-}
