@@ -40,7 +40,7 @@ favoriteFoods : array of strings (*)
 
 Use os tipos de schemas básicos de Mongoose. Se você quiser, também pode adicionar mais campos, usar validadores simples, como required ou unique, e definir valores padrão. Veja nosso <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">artigo sobre o Mongoose</a>.
 
-Agora, crie um modelo a partir do `personSchema` e atribua-o à variável existente `Person`.
+Agora, crie um modelo chamado `Person` do `personSchema`.
 
 # --hints--
 

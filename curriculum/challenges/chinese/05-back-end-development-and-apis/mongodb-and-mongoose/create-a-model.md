@@ -40,7 +40,7 @@ favoriteFoods : array of strings (*)
 
 采用 Mongoose 基础 schema 类型。 你如果还想添加更多的键，就请使用 required 或 unique 等简单的验证器（validators），并设置默认值。 查看我们的 <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">Mongoose 文章</a>。
 
-现在，从 `personSchema` 创建一个模型并将其分配给现有变量 `Person`。
+请从 `personSchema` 创建一个名为 `Person` 的 model。
 
 # --hints--
 
