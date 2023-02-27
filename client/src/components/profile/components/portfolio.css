@@ -31,11 +31,12 @@
   grid-row: 4;
   font-size: unset;
   justify-self: end;
-  width: 60%;
+  width: 40%;
   background-color: var(--primary-color);
   color: var(--primary-background);
   padding: 0.5rem;
   border-radius: 15px;
+  padding-inline: 4rem;
   margin: 1em;
 }
 
@@ -54,7 +55,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   grid-column: 1/ -1;
-  grid-row: 2;
+  grid-row: 3;
 }
 
 #link-icon {
@@ -103,7 +104,6 @@
   .portfolio-container a {
     grid-column: 2;
     grid-row: 3;
-    justify-self: unset;
   }
 }
 

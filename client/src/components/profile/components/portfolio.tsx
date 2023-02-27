@@ -23,10 +23,9 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
         <div className='portfolio-container' key={id}>
           <h3>{title}</h3>
           <a href={url} rel='nofollow noopener noreferrer'>
-            {t('buttons.follow-link')}
-            <div>
-              <FontAwesomeIcon id='link-icon' icon={faArrowUpRightFromSquare} />
-            </div>
+            {t('buttons.view')}
+            <span className='sr-only'>{title}</span>
+            <FontAwesomeIcon id='link-icon' icon={faArrowUpRightFromSquare} />
           </a>
 
           {image && (
