@@ -1,6 +1,5 @@
 import React, { MutableRefObject, RefObject, useRef } from 'react';
 import { connect } from 'react-redux';
-import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { editor } from 'monaco-editor';
 import {
@@ -12,13 +11,11 @@ import {
   consoleOutputSelector,
   visibleEditorsSelector
 } from '../redux/selectors';
-import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
 import {
   ChallengeFile,
   Dimensions,
   Ext,
-  FileKey,
   ResizeProps,
   Test
 } from '../../../redux/prop-types';
@@ -93,12 +90,6 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   // TODO: the tabs mess up the rendering (scroll doesn't work properly and
   // the in-editor description)
 
-  const reflexProps = {
-    propagateDimensions: true
-  };
-
-  const targetEditor = getTargetEditor(challengeFiles);
-
   // Only one editor should be focused and that should happen once, after it has
   // been mounted. This ref allows the editors to co-ordinate, without having to
   // resort to redux.
@@ -111,64 +102,27 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   if (stylescss) editorKeys.push('stylescss');
   if (scriptjs) editorKeys.push('scriptjs');
 
-  const editorAndSplitterKeys = editorKeys.reduce((acc: string[] | [], key) => {
-    if (acc.length === 0) {
-      return [key];
-    } else {
-      return [...acc, `${key}-splitter`, key];
-    }
-  }, []);
-
   return (
-    <ReflexContainer
-      orientation='horizontal'
-      {...reflexProps}
-      {...resizeProps}
-      className='editor-container'
-    >
-      <ReflexElement flex={10} {...reflexProps} {...resizeProps}>
-        <ReflexContainer orientation='vertical'>
-          {editorAndSplitterKeys.map(key => {
-            const isSplitter = key.endsWith('-splitter');
-            if (isSplitter) {
-              return (
-                <ReflexSplitter propagate={true} {...resizeProps} key={key} />
-              );
-            } else {
-              return (
-                <ReflexElement
-                  data-cy={`editor-container-${key}`}
-                  {...reflexProps}
-                  {...resizeProps}
-                  key={key}
-                >
-                  <Editor
-                    canFocusOnMountRef={canFocusOnMountRef}
-                    challengeFiles={challengeFiles}
-                    containerRef={containerRef}
-                    description={targetEditor === key ? description : ''}
-                    editorRef={editorRef}
-                    fileKey={key as FileKey}
-                    initialTests={initialTests}
-                    isMobileLayout={isMobileLayout}
-                    isUsingKeyboardInTablist={isUsingKeyboardInTablist}
-                    resizeProps={resizeProps}
-                    contents={props.contents ?? ''}
-                    dimensions={props.dimensions ?? { height: 0, width: 0 }}
-                    ext={props.ext ?? 'html'}
-                    initialEditorContent={props.initialEditorContent ?? ''}
-                    initialExt={props.initialExt ?? ''}
-                    title={title}
-                    usesMultifileEditor={usesMultifileEditor}
-                    showProjectPreview={showProjectPreview}
-                  />
-                </ReflexElement>
-              );
-            }
-          })}
-        </ReflexContainer>
-      </ReflexElement>
-    </ReflexContainer>
+    <Editor
+      canFocusOnMountRef={canFocusOnMountRef}
+      challengeFiles={challengeFiles}
+      containerRef={containerRef}
+      description={description}
+      editorRef={editorRef}
+      fileKey={'indexhtml'}
+      initialTests={initialTests}
+      isMobileLayout={isMobileLayout}
+      isUsingKeyboardInTablist={isUsingKeyboardInTablist}
+      resizeProps={resizeProps}
+      contents={props.contents ?? ''}
+      dimensions={props.dimensions ?? { height: 0, width: 0 }}
+      ext={props.ext ?? 'html'}
+      initialEditorContent={props.initialEditorContent ?? ''}
+      initialExt={props.initialExt ?? ''}
+      title={title}
+      usesMultifileEditor={usesMultifileEditor}
+      showProjectPreview={showProjectPreview}
+    />
   );
 };
 
