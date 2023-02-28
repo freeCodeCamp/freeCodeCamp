@@ -34,6 +34,7 @@ const schema = Joi.object()
     __commentCounts: Joi.object(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
+    tags: Joi.string().allow(''),
     description: Joi.when('challengeType', {
       is: [challengeTypes.step, challengeTypes.video],
       then: Joi.string().allow(''),
