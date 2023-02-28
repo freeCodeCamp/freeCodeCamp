@@ -114,8 +114,10 @@ New RWD project challenge
 sections that need to stay left to right
 */
 
-/* Code snippet*/
+/* special cases in steps */
+[dir='rtl'] :has(#learn-app-wrapper) table,
 [dir='rtl'] :has(#learn-app-wrapper) pre,
+/* Code snippet*/
 [dir='rtl'] code,
 /* trending articles */
 [dir='rtl'] .trending-guides .trending-guides-row div a,
