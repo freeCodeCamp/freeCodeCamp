@@ -218,4 +218,40 @@ describe('fastify-jwt-authz', { only: true }, () => {
     assert.strictEqual(res.statusCode, 200);
     assert.strictEqual(resData.foo, 'bar');
   });
+
+  it('should throw an error when there is no callback', async () => {
+    const fastify = Fastify();
+    await fastify.register(jwtAuthz);
+
+    fastify.get(
+      '/test7',
+      {
+        preHandler: function (request, _reply, done) {
+          request.user = {
+            name: 'sample',
+            scope: 123
+          };
+
+          request.jwtAuthz(['baz']);
+          done();
+        }
+      },
+      function () {
+        return { foo: 'bar' };
+      }
+    );
+
+    fastify.listen({ port: 0 }, function () {
+      fastify.server.unref();
+    });
+
+    const res = await fastify.inject({
+      method: 'GET',
+      url: '/test7'
+    });
+    const resData: ErrorResponse = res.json();
+
+    assert.strictEqual(res.statusCode, 500);
+    assert.strictEqual(resData.message, 'request.user.scope must be a string');
+  });
 });
