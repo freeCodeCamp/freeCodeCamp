@@ -254,4 +254,39 @@ describe('fastify-jwt-authz', { only: true }, () => {
     assert.strictEqual(res.statusCode, 500);
     assert.strictEqual(resData.message, 'request.user.scope must be a string');
   });
+
+  it('should verify user scope when there is no callback', async () => {
+    const fastify = Fastify();
+    await fastify.register(jwtAuthz);
+
+    fastify.get(
+      '/test8',
+      {
+        preHandler: function (request, _reply, done) {
+          request.user = {
+            name: 'sample',
+            scope: 'user manager'
+          };
+          request.jwtAuthz(['user']);
+          done();
+        }
+      },
+      function () {
+        return { foo: 'bar' };
+      }
+    );
+
+    fastify.listen({ port: 0 }, function () {
+      fastify.server.unref();
+    });
+
+    const res = await fastify.inject({
+      method: 'GET',
+      url: '/test8'
+    });
+    const resData: { foo: string } = res.json();
+
+    assert.strictEqual(res.statusCode, 200);
+    assert.strictEqual(resData.foo, 'bar');
+  });
 });
