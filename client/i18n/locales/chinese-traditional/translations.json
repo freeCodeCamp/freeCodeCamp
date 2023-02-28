@@ -224,7 +224,6 @@
     "total-points_plural": "{{count}} 總分",
     "points": "{{date}} 獲得 {{count}} 分",
     "points_plural": "{{date}} 獲得 {{count}} 分",
-    "screen-shot": "{{title}} 截圖",
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁"
   },
   "footer": {

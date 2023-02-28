@@ -19,7 +19,11 @@ Le virgolette non sono gli unici caratteri dei quali si può fare l'<dfn>escapin
 
 Assegna le seguenti tre righe di testo in una sola variabile `myStr` usando le sequenze di escape.
 
-<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
+<pre>
+FirstLine
+    \SecondLine
+ThirdLine
+</pre>
 
 Dovrai usare le sequenze di escape per inserire i caratteri speciali correttamente. Dovrai seguire anche la spaziatura come sopra, senza spazi tra sequenze di escape o le parole.
 

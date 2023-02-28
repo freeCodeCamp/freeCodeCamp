@@ -224,7 +224,6 @@
     "total-points_plural": "合計 {{count}} ポイント",
     "points": "{{count}} ポイント ({{date}})",
     "points_plural": "{{count}} ポイント ({{date}})",
-    "screen-shot": "{{title}} のスクリーンショット",
     "page-number": "{{pageNumber}} / {{totalPages}}"
   },
   "footer": {

@@ -1,6 +1,6 @@
 ---
 id: 5900f49b1000cf542c50ffae
-title: 'Problem 303: Multiples with small digits'
+title: 'Problem 303: Vielfache mit kleinen Ziffern'
 challengeType: 1
 forumTopicId: 301957
 dashedName: problem-303-multiples-with-small-digits
@@ -8,17 +8,17 @@ dashedName: problem-303-multiples-with-small-digits
 
 # --description--
 
-For a positive integer $n$, define $f(n)$ as the least positive multiple of $n$ that, written in base 10, uses only digits $≤ 2$.
+Definiere für einen positiven Integer $n$ $f(n)$ als das kleinste positive Vielfache von $n$, das, zur Basis 10 geschrieben, nur Ziffern $≤ 2$ enthält.
 
-Thus $f(2) = 2$, $f(3) = 12$, $f(7) = 21$, $f(42) = 210$, $f(89) = 1\\,121\\,222$.
+Also $f(2) = 2$, $f(3) = 12$, $f(7) = 21$, $f(42) = 210$, $f(89) = 1\,121\,222$.
 
-Also, $\displaystyle\sum_{n = 1}^{100} \frac{f(n)}{n} = 11\\,363\\,107$.
+Außerdem ist $\displaystyle\sum_{n = 1}^{100} \frac{f(n)}{n} = 11\\,363\\,107$.
 
-Find $\displaystyle\sum_{n = 1}^{10\\,000} \frac{f(n)}{n}$.
+Finde $\displaystyle\sum_{n = 1}^{10\\,000} \frac{f(n)}{n}$.
 
 # --hints--
 
-`multiplesWithSmallDigits()` should return `1111981904675169`.
+`multiplesWithSmallDigits()` sollte `1111981904675169` zurückgeben.
 
 ```js
 assert.strictEqual(multiplesWithSmallDigits(), 1111981904675169);

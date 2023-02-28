@@ -24,11 +24,11 @@ switch (lowercaseLetter) {
 }
 ```
 
-يتم اختبار قيم `case` مساواة تامة strict equality (`===`). كلمة `break` تخبر JavaScript بالتوقف عن تنفيذ العبارات. إذا تم حذف كلمة `break`, سيتم تنفيذ العبارة التالية.
+تستخدم اختبارات القيم في `case` المساواة الصارمة (`===`). كلمة `break` تخبر JavaScript بالتوقف عن تنفيذ العبارات. إذا تم حذف كلمة `break`, سيتم تنفيذ العبارة التالية.
 
 # --instructions--
 
-اكتب عبارة switch تختبر `val` وتعين `answer` للشروط التالية:  
+اكتب عبارة switch لتختبر قيمة `val` وتعين المتغير `answer` للشروط التالية:  
 `1` - `alpha`  
 `2` - `beta`  
 `3` - `gamma`  
@@ -36,25 +36,25 @@ switch (lowercaseLetter) {
 
 # --hints--
 
-`caseInSwitch(1)` يجب أن يكون له قيمة المقطع (string) النصي `alpha`
+`caseInSwitch(1)` يجب أن يكون له قيمة المقطع النصي (string) `alpha`
 
 ```js
 assert(caseInSwitch(1) === 'alpha');
 ```
 
-`caseInSwitch(2)` يجب أن يكون له قيمة المقطع (string) النصي `beta`
+`caseInSwitch(2)` يجب أن يكون له قيمة المقطع النصي `beta`
 
 ```js
 assert(caseInSwitch(2) === 'beta');
 ```
 
-`caseInSwitch(3)` يجب أن يكون له قيمة المقطع (string) النصي `gamma`
+`caseInSwitch(3)` يجب أن يكون له قيمة المقطع النصي `gamma`
 
 ```js
 assert(caseInSwitch(3) === 'gamma');
 ```
 
-`caseInSwitch(4)` يجب أن يكون له قيمة المقطع (string) النصي `delta`
+`caseInSwitch(4)` يجب أن يكون له قيمة المقطع النصي `delta`
 
 ```js
 assert(caseInSwitch(4) === 'delta');
