@@ -44,9 +44,9 @@ function Challenges({
     challenge => challenge.isCompleted
   );
 
-  const [allTopics, newTopic] = useState([]);
-  const [activeTags, updateTags] = useState([]);
-  const [isExpanded, toggleExpanded] = useState(false);
+  const [allTopics, newTopic] = useState<string[]>([]);
+  const [activeTags, updateTags] = useState<string[]>([]);
+  const [isExpanded, toggleExpanded] = useState<boolean>(false);
 
   function getAllTopics() {
     challengesWithCompleted.map(challenge => {
@@ -55,7 +55,7 @@ function Challenges({
         tagArr.map(tag => {
           if (!allTopics.includes(tag)) {
             allTopics.unshift(tag);
-            newTopic(allTopics);
+            newTopic(allTopics.sort());
           }
         });
       }
@@ -86,12 +86,7 @@ function Challenges({
     }
 
     const tagArr = challengeTags.split(',');
-    for (const tag of tagArr) {
-      if (activeTags.includes(tag)) {
-        return true;
-      }
-    }
-    return false;
+    return activeTags.every(tag => tagArr.includes(tag));
   }
 
   getAllTopics();
