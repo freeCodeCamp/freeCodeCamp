@@ -806,33 +806,33 @@
     ],
     "blocks": {
       "project-euler-problem-1-100": {
-        "title": "Project Euler Problem 1 to 100",
+        "title": "Project Euler Problems 1 to 100",
         "intro": [
-          "In this part, you will dive into solving Project Euler problems, which are designed to help you improve your problem-solving and coding skills."
+          "In this first set of challenges, you will use mathematical concepts like the Fibonacci sequence, prime number theory, and combinatorics to write efficient algorithms to solve these problems."
         ]
       },
       "project-euler-problem-101-200": {
         "title": "Project Euler Problem 101 to 200",
         "intro": [
-          "You will build upon the skills learned in the first part of the course and introduce more advanced mathematical and programming concepts."
+          "In this set of challenges, you'll build upon the skills you learned in the first part of the course and use more advanced concepts like vector computation, Pascal's pyramid, and the RSA algorithm to solve these problems efficiently."
         ]
       },
       "project-euler-problem-201-300": {
         "title": "Project Euler Problem 201 to 300",
         "intro": [
-          "You will learn how to use algorithms and data structures to solve problems more effectively."
+          "In this set of challenges, you'll continue to build upon the skills you learned earlier and use concepts like the binomial theorem, Hamming numbers, and the Collatz sequence to further develop your math and problem solving skills."
         ]
       },
       "project-euler-problem-301-400": {
         "title": "Project Euler Problem 301 to 400",
         "intro": [
-          "You will tackle some of the most challenging Project Euler problems and develop your problem-solving skills."
+          "Here you will continue to flex your mathematical and algorithmic skills as you use concepts such as combinatorial game theory, bitwise operations, and Golomb's self-describing sequence to develop efficient solutions to these problems."
         ]
       },
       "project-euler-problem-401-480": {
         "title": "Project Euler Problem 401 to 480",
         "intro": [
-          "You will work on projects that involve multiple Project Euler problems and apply the techniques you have learned to solve complex problems."
+          "In this final set of challenges, you will need draw upon everything you learned up to this point and use advanced concepts like unitary divisors, the Kaprekar routine, and much more to solve these complex problems."
         ]
       }
     }
