@@ -1,5 +1,11 @@
 import { graphql } from 'gatsby';
-import React, { useState, useEffect, MutableRefObject } from 'react';
+import React, {
+  useState,
+  useEffect,
+  MutableRefObject,
+  RefObject,
+  useRef
+} from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -246,9 +252,11 @@ function ShowClassic({
   const [resizing, setResizing] = useState(false);
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
 
-  const containerRef = React.createRef<HTMLElement>();
-  const editorRef = React.createRef();
-  const instructionsPanelRef = React.createRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLElement>() as RefObject<HTMLElement>;
+  const editorRef =
+    useRef<editor.IStandaloneCodeEditor>() as MutableRefObject<editor.IStandaloneCodeEditor>;
+  const instructionsPanelRef =
+    useRef<HTMLDivElement>() as RefObject<HTMLDivElement>;
 
   const updateUsingKeyboardInTablist = (
     usingKeyboardInTablist: boolean
@@ -375,9 +383,7 @@ function ShowClassic({
           containerRef={containerRef}
           description={description}
           // Try to remove unknown
-          editorRef={
-            editorRef as MutableRefObject<editor.IStandaloneCodeEditor>
-          }
+          editorRef={editorRef}
           initialTests={tests}
           isMobileLayout={isMobileLayout}
           isUsingKeyboardInTablist={isUsingKeyboardInTablist}
@@ -423,7 +429,7 @@ function ShowClassic({
   return (
     <Hotkeys
       challengeType={challengeType}
-      editorRef={editorRef as React.RefObject<HTMLElement>}
+      editorRef={editorRef}
       executeChallenge={executeChallenge}
       innerRef={containerRef}
       instructionsPanelRef={instructionsPanelRef}
