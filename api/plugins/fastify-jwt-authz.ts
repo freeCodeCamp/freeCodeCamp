@@ -26,10 +26,10 @@ import { FastifyPluginCallback, FastifyRequest } from 'fastify';
 import fp from 'fastify-plugin';
 
 interface UserObject {
-  scope: string;
+  scope?: string;
 }
 
-export interface JwtAuthz {
+interface JwtAuthz {
   (scopes: string[], callback?: (err?: Error) => void): void;
 }
 
@@ -45,9 +45,7 @@ const fastifyJwtAuthz: FastifyPluginCallback = (fastify, _opts, done) => {
       return Error('request.user.scope must be a string');
 
     const userScopes = user.scope.split(' ');
-    const sufficientScope = scopes.some(scope => {
-      return userScopes.indexOf(scope) !== -1;
-    });
+    const sufficientScope = scopes.some(scope => userScopes.includes(scope));
 
     if (!sufficientScope) return Error('Insufficient scope');
   }
