@@ -11,6 +11,7 @@ const __utils = (() => {
   const MAX_LOGS_SIZE = 64 * 1024;
 
   let logs: string[] = [];
+
   function flushLogs() {
     if (logs.length) {
       ctx.postMessage({
@@ -21,43 +22,35 @@ const __utils = (() => {
     }
   }
 
-  const oldLog = ctx.console.log.bind(ctx.console);
-  function proxyLog(...args: string[]) {
+  function pushLogs(logs: string[], args: string[]) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     logs.push(args.map(arg => __format(arg)).join(' '));
     if (logs.join('\n').length > MAX_LOGS_SIZE) {
       flushLogs();
     }
+  }
+
+  const oldLog = ctx.console.log.bind(ctx.console);
+  function proxyLog(...args: string[]) {
+    pushLogs(logs, args);
     return oldLog(...args);
   }
 
   const oldInfo = ctx.console.info.bind(ctx.console);
   function proxyInfo(...args: string[]) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    logs.push(args.map(arg => __format(arg)).join(' '));
-    if (logs.join('\n').length > MAX_LOGS_SIZE) {
-      flushLogs();
-    }
+    pushLogs(logs, args);
     return oldInfo(...args);
   }
 
   const oldWarn = ctx.console.warn.bind(ctx.console);
   function proxyWarn(...args: string[]) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    logs.push(args.map(arg => __format(arg)).join(' '));
-    if (logs.join('\n').length > MAX_LOGS_SIZE) {
-      flushLogs();
-    }
+    pushLogs(logs, args);
     return oldWarn(...args);
   }
 
   const oldError = ctx.console.error.bind(ctx.console);
   function proxyError(...args: string[]) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    logs.push(args.map(arg => __format(arg)).join(' '));
-    if (logs.join('\n').length > MAX_LOGS_SIZE) {
-      flushLogs();
-    }
+    pushLogs(logs, args);
     return oldError(...args);
   }
 
