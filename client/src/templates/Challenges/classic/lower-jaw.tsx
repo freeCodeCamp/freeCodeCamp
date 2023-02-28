@@ -23,7 +23,6 @@ interface LowerJawProps {
   openResetModal: () => void;
   isSignedIn: boolean;
   updateContainer: () => void;
-  completedPercent: number;
 }
 
 const LowerJaw = ({
@@ -37,8 +36,7 @@ const LowerJaw = ({
   isEditorInFocus,
   openResetModal,
   isSignedIn,
-  updateContainer,
-  completedPercent
+  updateContainer
 }: LowerJawProps): JSX.Element => {
   const hintRef = React.useRef('');
   const [runningTests, setRunningTests] = useState(false);
@@ -118,15 +116,7 @@ const LowerJaw = ({
           </div>
           <div className='test-status-description'>
             <h2>{t('learn.test')}</h2>
-            <p className='status'>
-              {t('learn.congratulations')}
-              <span className='sr-only'>
-                &#160;
-                {t('learn.percent-complete', {
-                  percent: completedPercent
-                })}
-              </span>
-            </p>
+            <p className='status'>{t('learn.congratulations')}</p>
           </div>
         </div>
       );

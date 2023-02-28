@@ -178,15 +178,12 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       data: {
         challengeNode: {
           challenge: {
-            block,
-            certification,
             challengeType,
             description,
             fields: { blockName },
             id: challengeId,
             instructions,
             notes,
-            superBlock,
             title,
             translationPending,
             url
@@ -351,12 +348,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                 <br />
                 <Spacer />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>

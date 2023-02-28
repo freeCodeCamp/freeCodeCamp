@@ -198,7 +198,6 @@ class BackEnd extends Component<BackEndProps> {
             description,
             instructions,
             translationPending,
-            certification,
             superBlock,
             block
           }
@@ -264,12 +263,7 @@ class BackEnd extends Component<BackEndProps> {
                 <TestSuite tests={tests} />
                 <Spacer />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>

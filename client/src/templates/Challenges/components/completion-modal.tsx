@@ -5,7 +5,6 @@ import { noop } from 'lodash-es';
 import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { dasherize } from '../../../../../utils/slugs';
@@ -57,30 +56,19 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = function (dispatch: Dispatch) {
-  const dispatchers = {
-    close: () => dispatch(closeModal('completion')),
-    submitChallenge: () => {
-      dispatch(submitChallenge());
-    },
-    executeGA
-  };
-  return () => dispatchers;
+const mapDispatchToProps = {
+  close: () => closeModal('completion'),
+  submitChallenge,
+  executeGA
 };
 
-interface CompletionModalsProps {
+type StateProps = ReturnType<typeof mapStateToProps>;
+
+interface CompletionModalsProps extends StateProps {
   close: () => void;
-  completedChallengesIds: string[];
   executeGA: () => void;
-  challengeFiles: ChallengeFiles;
-  id: string;
-  isOpen: boolean;
-  isSignedIn: boolean;
-  allChallengesInfo: AllChallengesInfo;
-  message: string;
   submitChallenge: () => void;
   t: TFunction;
-  title: string;
 }
 
 interface CompletionModalState {

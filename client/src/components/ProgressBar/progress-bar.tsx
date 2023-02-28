@@ -82,4 +82,4 @@ function ProgressBar({
 
 ProgressBar.displayName = 'ProgressBar';
 
-export default connect(mapStateToProps, null)(withTranslation()(ProgressBar));
+export default connect(mapStateToProps)(withTranslation()(ProgressBar));
