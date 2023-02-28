@@ -20,7 +20,7 @@ dashedName: implement-insertion-sort
 assert(typeof insertionSort == 'function');
 ```
 
-`insertionSort` має повернути впорядкований масив (від меншого до більшого).
+`insertionSort` має повернути впорядкований масив (від найменшого до найбільшого).
 
 ```js
 assert(

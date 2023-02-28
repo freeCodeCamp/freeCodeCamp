@@ -11,13 +11,13 @@ dashedName: assignment-with-a-returned-value
 
 Якщо пригадати з нашої розмови про <a href="/ukrainian/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">збереження значень за допомогою оператора присвоєння</a>, все, що знаходиться праворуч від знака рівності вирішено ще до того, як значення буде присвоєне. Це означає, що ми можемо взяти повернене значення функції та присвоїти його змінній.
 
-Assume we have defined a function `sum` which adds two numbers together.
+Припустимо, що ми визначили функцію `sum`, яка додає два числа.
 
 ```js
 ourSum = sum(5, 12);
 ```
 
-Calling the `sum` function with the arguments of `5` and `12` produces a return value of `17`. This return value is assigned to the `ourSum` variable.
+Виклик функції `sum` з аргументами `5` та `12` призведе до поверненого значення `17`. Це повернене значення присвоюється до змінної `ourSum`.
 
 # --instructions--
 
