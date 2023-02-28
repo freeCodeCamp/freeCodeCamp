@@ -7,23 +7,23 @@ dashedName: step-47
 
 # --description--
 
-Add an `h2` element in the new section and give it the text `Desserts`.
+Füge ein `h2`-Element in den neuen Abschnitt hinzu und gib ihm den Text `Desserts`.
 
 # --hints--
 
-You should not change your existing `section` element.
+Du solltest nicht das vorhandene `section`-Element ändern.
 
 ```js
 assert($('section').length === 2);
 ```
 
-You should add an `h2` element in your second `section` element.
+Du solltest ein `h2`-Element innerhalb des zweiten `section`-Elements verschachteln.
 
 ```js
 assert($('section')[1].children[0].tagName === 'H2');
 ```
 
-Your new `h2` element should have the text `Desserts`.
+Dein neues `h2`-Element sollte den Text `Desserts` haben.
 
 ```js
 assert($('h2')[1].innerText.match(/Desserts/i));
