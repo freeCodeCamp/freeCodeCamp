@@ -1,6 +1,6 @@
 ---
 id: 5900f4a21000cf542c50ffb5
-title: 'Problem 310: Nim Square'
+title: 'Problem 310: Nim Quadrat'
 challengeType: 1
 forumTopicId: 301966
 dashedName: problem-310-nim-square
@@ -8,19 +8,19 @@ dashedName: problem-310-nim-square
 
 # --description--
 
-Alice and Bob play the game Nim Square.
+Alice und Bob spielen das Spiel Nim Quadrat.
 
-Nim Square is just like ordinary three-heap normal play Nim, but the players may only remove a square number of stones from a heap.
+Nim Square ist genau wie das normale Nim-Spiel mit drei Haufen, aber die Spieler dürfen nur eine quadratische Anzahl von Steinen von einem Haufen entfernen.
 
-The number of stones in the three heaps is represented by the ordered triple ($a$, $b$, $c$).
+Die Anzahl der Steine in den drei Haufen wird durch das geordnete Tripel ($a$, $b$, $c$) dargestellt.
 
-If $0 ≤ a ≤ b ≤ c ≤ 29$ then the number of losing positions for the next player is 1160.
+Wenn $0 ≤ a ≤ b ≤ c ≤ 29$, dann ist die Anzahl der Verlustpositionen für den nächsten Spieler 1160.
 
-Find the number of losing positions for the next player if $0 ≤ a ≤ b ≤ c ≤ 100\\,000$.
+Finde die Anzahl der Verlustpositionen für den nächsten Spieler, wenn $0 ≤ a ≤ b ≤ c ≤ 100\\.000$.
 
 # --hints--
 
-`nimSquare()` should return `2586528661783`.
+`nimSquare()` sollte `2586528661783` zurückgeben.
 
 ```js
 assert.strictEqual(nimSquare(), 2586528661783);

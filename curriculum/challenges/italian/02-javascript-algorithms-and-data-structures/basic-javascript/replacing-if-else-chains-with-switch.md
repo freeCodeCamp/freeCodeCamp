@@ -60,43 +60,43 @@ Dovresti avere almeno quattro istruzioni `break`
 assert(code.match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` dovrebbe essere la stringa `Marley`
+`chainToSwitch("bob")` should return the string `Marley`
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` dovrebbe essere la stringa `The Answer`
+`chainToSwitch(42)` should return the string `The Answer`
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` dovrebbe essere la stringa `There is no #1`
+`chainToSwitch(1)` should return the string `There is no #1`
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)` dovrebbe essere la stringa `Missed me by this much!`
+`chainToSwitch(99)` should return the string `Missed me by this much!`
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` dovrebbe essere la stringa `Ate Nine`
+`chainToSwitch(7)` should return the string `Ate Nine`
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` dovrebbe essere `""` (stringa vuota)
+`chainToSwitch("John")` should return `""` (empty string)
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` dovrebbe essere `""` (stringa vuota)
+`chainToSwitch(156)` should return `""` (empty string)
 
 ```js
 assert(chainToSwitch(156) === '');

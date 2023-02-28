@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-`messageReducer` повинно бути функцією.
+`messageReducer` має бути функцією.
 
 ```js
 assert(typeof messageReducer === 'function');
