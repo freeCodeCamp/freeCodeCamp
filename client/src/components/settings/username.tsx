@@ -237,7 +237,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
           <BlockSaveButton
             aria-disabled={isDisabled}
             bgSize='lg'
-            {...(isDisabled && { tabindex: -1 })}
+            {...(isDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save')}{' '}
             <span className='sr-only'>{t('settings.labels.username')}</span>

@@ -15,8 +15,8 @@
     "show-cert": "Mostra la Certificazione",
     "claim-cert": "Richiedi la Certificazione",
     "save-progress": "Salva l'avanzamento",
-    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
-    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
+    "accepted-honesty": "Hai accettato la nostra Politica di Onestà Accademica.",
+    "agree-honesty": "Accetto la Politica di Onestà Accademica di freeCodeCamp.",
     "save-portfolio": "Salva questo elemento del portfolio",
     "remove-portfolio": "Rimuovi questo elemento del portfolio",
     "add-portfolio": "Aggiungi un nuovo elemento nel portfolio",
@@ -159,7 +159,7 @@
       "internet": "La Tua presenza su Internet",
       "portfolio": "Impostazioni Portfolio",
       "privacy": "Impostazioni Privacy",
-      "personal-info": "Personal Information"
+      "personal-info": "Informazioni personali"
     },
     "danger": {
       "heading": "Zona di Pericolo",
@@ -251,7 +251,7 @@
   },
   "learn": {
     "heading": "Benvenuti nel curriculum di freeCodeCamp.",
-    "skip-to-content": "Skip to content",
+    "skip-to-content": "Vai al contenuto",
     "welcome-1": "Bentornato, {{name}}.",
     "welcome-2": "Benvenuto su freeCodeCamp.org",
     "start-at-beginning": "Se sei nuovo alla programmazione, ti consigliamo di <0>iniziare dall'inizio</0>.",
@@ -275,9 +275,9 @@
     "add-subtitles": "Aiuta a migliorare o aggiungi sottotitoli",
     "wrong-answer": "Siamo spiacenti, non è la risposta giusta. Vuoi riprovare?",
     "check-answer": "Fai clic sul pulsante qui sotto per controllare la tua risposta.",
-    "assignment-not-complete": "Please finish the assignments",
-    "assignments": "Assignments",
-    "question": "Question",
+    "assignment-not-complete": "Per favore completa le attività",
+    "assignments": "Attività",
+    "question": "Domande",
     "solution-link": "Link alla soluzione",
     "github-link": "Link GitHub",
     "submit-and-go": "Invia e vai alla prossima sfida",
@@ -518,7 +518,7 @@
     "opens-new-window": "Apri in una nuova finestra"
   },
   "flash": {
-    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
+    "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
     "really-weird": "È successo qualcosa di veramente strano, se succede di nuovo, ti preghiamo di considerare di sollevare un problema su https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "Qualcosa non è del tutto giusto. Un rapporto è stato generato e il team freeCodeCamp.org è stato avvisato",
     "went-wrong": "Qualcosa è andato storto, controlla e riprova",
