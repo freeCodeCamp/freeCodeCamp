@@ -1,6 +1,6 @@
 ---
 id: 5900f4a11000cf542c50ffb3
-title: 'Problem 308: An amazing Prime-generating Automaton'
+title: 'Problem 308: Ein erstaunlicher Primzahlen generierender Roboter'
 challengeType: 1
 forumTopicId: 301962
 dashedName: problem-308-an-amazing-prime-generating-automaton
@@ -8,27 +8,27 @@ dashedName: problem-308-an-amazing-prime-generating-automaton
 
 # --description--
 
-A program written in the programming language Fractran consists of a list of fractions.
+Ein in der Programmiersprache Fractran geschriebenes Programm besteht aus einer Liste von Brüchen.
 
-The internal state of the Fractran Virtual Machine is a positive integer, which is initially set to a seed value. Each iteration of a Fractran program multiplies the state integer by the first fraction in the list which will leave it an integer.
+Der interne Zustand der virtuellen Maschine von Fractran ist ein positiver Integer, der anfangs auf einen Startwert gesetzt wird. Bei jeder Iteration eines Fractran-Programms wird der Zustand der ganzen Zahl mit dem ersten Bruch in der Liste multipliziert, so dass eine ganze Zahl übrig bleibt.
 
-For example, one of the Fractran programs that John Horton Conway wrote for prime-generation consists of the following 14 fractions:
+Eines der Fractran-Programme, das John Horton Conway für die erste Generation geschrieben hat, besteht zum Beispiel aus den folgenden 14 Brüchen:
 
 $$\frac{17}{91}, \frac{78}{85}, \frac{19}{51}, \frac{23}{38}, \frac{29}{33}, \frac{77}{29}, \frac{95}{23}, \frac{77}{19}, \frac{1}{17}, \frac{11}{13}, \frac{13}{11}, \frac{15}{2}, \frac{1}{7}, \frac{55}{1}$$
 
-Starting with the seed integer 2, successive iterations of the program produce the sequence:
+Ausgehend von der Startzahl 2 ergeben die aufeinanderfolgenden Iterationen des Programms die Sequenz:
 
 $$15, 825, 725, 1925, 2275, 425, \ldots, 68, \mathbf{4}, 30, \ldots, 136, \mathbf{8}, 60, \ldots, 544, \mathbf{32}, 240, \ldots$$
 
-The powers of 2 that appear in this sequence are $2^2, 2^3, 2^5, \ldots$.
+Die Potenzen von 2, die in dieser Folge erscheinen, sind $2^2, 2^3, 2^5, \ldots$.
 
-It can be shown that all the powers of 2 in this sequence have prime exponents and that all the primes appear as exponents of powers of 2, in proper order!
+Es kann gezeigt werden, dass alle 2er-Potenzen in dieser Folge Primzahl-Exponenten haben und dass alle Primzahlen als Exponenten von 2er-Potenzen in der richtigen Reihenfolge auftreten!
 
-If someone uses the above Fractran program to solve Project Euler Problem 7 (find the ${10001}^{\text{st}}$ prime), how many iterations would be needed until the program produces $2^{10001^{\text{st}}\text{ prime}}$?
+Wenn jemand das obige Fractran-Programm verwendet, um das Projekt Euler-Problem 7 zu lösen (finde die ${10001}^{\text{st}}$-Primzahl), wie viele Iterationen wären dann nötig, bis das Programm $2^{10001^{\text{st}}\text{ prime}}$ liefert?
 
 # --hints--
 
-`primeGeneratingAutomation()` should return `1539669807660924`.
+`primeGeneratingAutomation()` sollte `1539669807660924` zurückgeben.
 
 ```js
 assert.strictEqual(primeGeneratingAutomation(), 1539669807660924);

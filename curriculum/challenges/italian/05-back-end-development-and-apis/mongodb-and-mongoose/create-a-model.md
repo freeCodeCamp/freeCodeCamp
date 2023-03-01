@@ -28,19 +28,15 @@ const someFunc = function(done) {
 
 # --instructions--
 
-Crea uno schema persona chiamato `personSchema` con questo prototipo:
+Create a person schema called `personSchema` with the following shape:
 
-```markup
-- Person Prototype -
---------------------
-name : string [required]
-age :  number
-favoriteFoods : array of strings (*)
-```
+* A required `name` field of type `String`
+* An `age` field of type `Number`
+* A `favouriteFoods` field of type `[String]`
 
 Utilizzare i tipi di schema base di Mongoose. Se vuoi puoi anche aggiungere più campi, utilizzare semplici validatori come required o unique, e impostare dei valori predefiniti. Vedi il nostro <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">articolo su Mongoose</a>.
 
-Ora, crea un modello chiamato `Person` da `personSchema`.
+Now, create a model from the `personSchema` and assign it to the existing variable `Person`.
 
 # --hints--
 

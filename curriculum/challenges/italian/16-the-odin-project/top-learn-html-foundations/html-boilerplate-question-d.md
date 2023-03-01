@@ -16,7 +16,7 @@ Per completare il boilerplate, aggiungi un elemento `body` al file `index.html`.
 
 ## --assignment--
 
-Watch and follow along to Kevin Powell’s brilliant Building your first web page video above.
+Guarda e segui passo passo il fantastico video di Kevin Powell Building your first web page.
 
 ---
 

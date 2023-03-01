@@ -26,7 +26,7 @@ The const `state` має бути порожнім масивом.
 assert(Array.isArray(state) && state.length === 0);
 ```
 
-`mapStateToProps` повинна бути функцією.
+`mapStateToProps` має бути функцією.
 
 ```js
 assert(typeof mapStateToProps === 'function');

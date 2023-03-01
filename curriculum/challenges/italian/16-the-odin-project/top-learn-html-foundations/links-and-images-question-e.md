@@ -75,7 +75,7 @@ Ecco come risulta l'esempio che hai usato precedentemente del logo di The Odin P
 
 ## --assignment--
 
-Watch Kevin Powell’s HTML Images Video above.
+Guarda il video HTML Images di Kevin Powell qui sopra.
 
 ## --text--
 

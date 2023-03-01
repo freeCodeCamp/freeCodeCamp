@@ -25,7 +25,7 @@ console.log(duck.numLegs);
 console.log(canary.numLegs);
 ```
 
-Оскільки всі екземпляри автоматично мають властивості `prototype`, подумайти про `prototype` як "рецепт" для створення об'єктів. Зверніть увагу, що`prototype` `duck` і `canary` є частиною конструктора `Bird` як `Bird.prototype`. Майже кожен об'єкт в JavaScript має властивість`prototype`, яка є частиною створеної функції конструктора.
+Оскільки всі екземпляри автоматично мають властивості `prototype`, подумайти про `prototype` як "рецепт" для створення об'єктів. Зверніть увагу, що`prototype` `duck` і `canary` є частиною конструктора `Bird` як `Bird.prototype`.
 
 # --instructions--
 

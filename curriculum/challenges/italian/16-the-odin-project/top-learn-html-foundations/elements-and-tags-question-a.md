@@ -30,7 +30,7 @@ L'utilizzo degli elementi corretti per il contenuto è chiamato HTML semantico. 
 
 ## --assignment--
 
-Watch Kevin Powell’s [Introduction to HTML video](https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-)
+Guarda il video di Kevin Powell [Introduction to HTML](https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-)
 
 ## --text--
 
