@@ -178,7 +178,7 @@ We appreciate responsible disclosure of vulnerabilities that might impact the in
 
 > #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
 
-### Contributing =D
+### Contributing
 
 The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
 
@@ -197,4 +197,4 @@ The content of this repository is bound by the following licenses:
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
 - The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories thereon are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) license.
 
-[⬆ Back to top](#open-source-codebase-and-curriculum)<br>
+[⬆ Back to top](#codebase-and-curriculum)<br>
