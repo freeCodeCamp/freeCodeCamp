@@ -1,6 +1,6 @@
 ---
 id: 5900f53a1000cf542c51004c
-title: 'Problem 461: Almost Pi'
+title: 'Problem 461: Fast Pi'
 challengeType: 1
 forumTopicId: 302136
 dashedName: problem-461-almost-pi
@@ -8,43 +8,43 @@ dashedName: problem-461-almost-pi
 
 # --description--
 
-Let `f(k, n)` = $e^\frac{k}{n} - 1$, for all non-negative integers `k`.
+Lass `f(k, n)` = $e^\frac{k}{n} - 1$, für alle nicht negativen Integer `k`.
 
-Remarkably, `f(6, 200) + f(75, 200) + f(89, 200) + f(226, 200)` = 3.1415926… ≈ π.
+Bemerkenswert,`f(6, 200) + f(75, 200) + f(89, 200) + f(226, 200)` = 3.1415926… ≈ π.
 
-In fact, it is the best approximation of π of the form `f(a, 200) + f(b, 200) + f(c, 200) + f(d, 200)`.
+Tatsächlich ist es die beste Annäherung von π der Formel `f(a, 200) + f(b, 200) + f(c, 200) + f(d, 200)`.
 
-Let `almostPi(n)` = a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup> + d<sup>2</sup> for a, b, c, d that minimize the error: $\lvert f(a,n) + f(b,n) + f(c,n) + f(d,n) - \Pi\rvert$
+Lass `almostPi(n)` = a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup> + d<sup>2</sup> für a, b, c, d, das den Fehler minimiert: $\lvert f(a,n) + f(b,n) + f(c,n) + f(d,n) - \Pi\rvert$
 
-You are given `almostPi(200)` = 6<sup>2</sup> + 75<sup>2</sup> + 89<sup>2</sup> + 226<sup>2</sup> = 64658.
+Dir wird `almostPi(200)` = 6<sup>2</sup> + 75<sup>2</sup> + 89<sup>2</sup> + 226<sup>2</sup> = 64658 gegeben.
 
 # --hints--
 
-`almostPi` should be a function.
+`almostPi` sollte eine Funktion sein.
 
 ```js
 assert(typeof almostPi === 'function')
 ```
 
-`almostPi` should return a number.
+`almostPi` sollte eine Zahl zurückgeben.
 
 ```js
 assert.strictEqual(typeof almostPi(10), 'number');
 ```
 
-`almostPi(29)` should return `1208`.
+`almostPi(29)` sollte `1208` zurückgeben.
 
 ```js
 assert.strictEqual(almostPi(29), 1208);
 ```
 
-`almostPi(50)` should return `4152`.
+`almostPi(50)` sollte `4152` zurückgeben.
 
 ```js
 assert.strictEqual(almostPi(50), 4152);
 ```
 
-`almostPi(200)` should return `64658`.
+`almostPi(200)` sollte `64658` zurückgeben.
 
 ```js
 assert.strictEqual(almostPi(200), 64658);

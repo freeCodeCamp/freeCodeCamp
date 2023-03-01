@@ -28,7 +28,7 @@ dashedName: combinations
 
 # --hints--
 
-`combinations` мають бути функцією.
+`combinations` має бути функцією.
 
 ```js
 assert(typeof combinations === 'function');

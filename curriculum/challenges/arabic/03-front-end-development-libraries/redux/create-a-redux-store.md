@@ -20,7 +20,7 @@ Redux هو framework لإدارة الحالة (state) التي يمكن است�
 
 إعلان متغير `store` عيينه إلى طريقة `createStore()`، مرورا في `reducer` كحجة.
 
-**ملاحظة:** الكود في المحرر يستخدم بناء الجملة الافتراضي في ES6 لتهيئة هذه الحالة (reducer) للاحتفاظ بقيمة `5`. إذا لم تكن على دراية بالحجج الافتراضية (default arguments)، يمكنك الرجوع إلى قسم <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener noreferrer nofollow">ES6 في المنهج الدراسي</a> الذي يغطي هذا الموضوع.
+**ملاحظة:** الكود في المحرر يستخدم بناء الجملة الافتراضي في ES6 لتهيئة هذه الحالة (reducer) للاحتفاظ بقيمة `5`. إذا لم تكن على دراية بالمعطيات الافتراضية (default arguments)، يمكنك الرجوع إلى قسم <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener noreferrer nofollow">ES6 في المنهج الدراسي</a> الذي يغطي هذا الموضوع.
 
 # --hints--
 

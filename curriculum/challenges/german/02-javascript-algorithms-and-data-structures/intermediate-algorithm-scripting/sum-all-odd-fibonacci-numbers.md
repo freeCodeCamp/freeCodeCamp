@@ -10,7 +10,7 @@ dashedName: sum-all-odd-fibonacci-numbers
 
 Gib für eine positive ganze Zahl `num` die Summe aller ungeraden Fibonacci-Zahlen zurück, die kleiner oder gleich `num` sind.
 
-Die ersten beiden Zahlen in der Fibonacci Sequenz sind 1 und 1. Jede zusätzliche Zahl in der Sequenz ist die Summe der beiden vorherigen Zahlen. Die ersten sechs Zahlen der Fibonacci Sequenz sind 1, 1, 2, 3, 5 und 8.
+The first two numbers in the Fibonacci sequence are 0 and 1. Jede zusätzliche Zahl in der Sequenz ist die Summe der beiden vorherigen Zahlen. The first seven numbers of the Fibonacci sequence are 0, 1, 1, 2, 3, 5 and 8.
 
 Zum Beispiel sollte `sumFibs(10)`, `10` zurückgeben, da alle ungeraden Fibonacci Zahlen kleiner oder gleich `10` 1, 1, 3 und 5 sind.
 

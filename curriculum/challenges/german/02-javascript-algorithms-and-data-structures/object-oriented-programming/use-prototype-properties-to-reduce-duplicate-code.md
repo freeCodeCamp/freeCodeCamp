@@ -25,7 +25,7 @@ console.log(duck.numLegs);
 console.log(canary.numLegs);
 ```
 
-Da alle Instanzen automatisch die Eigenschaften des Prototypen(`prototype`) besitzen, kannst du dir einen Prototypen(`prototype`) wie ein "Rezept" für die Erstellung von Objekten vorstellen. Beachte, dass der `prototype` für `duck` und `canary` Teil des Konstruktors von `Bird` als `Bird.prototype` ist. Fast jedes Objekt in JavaScript hat eine Eigenschaft `prototype`, die Teil der Konstruktorfunktion ist, die es erstellt hat.
+Da alle Instanzen automatisch die Eigenschaften des Prototypen(`prototype`) besitzen, kannst du dir einen Prototypen(`prototype`) wie ein "Rezept" für die Erstellung von Objekten vorstellen. Beachte, dass der `prototype` für `duck` und `canary` Teil des Konstruktors von `Bird` als `Bird.prototype` ist.
 
 # --instructions--
 

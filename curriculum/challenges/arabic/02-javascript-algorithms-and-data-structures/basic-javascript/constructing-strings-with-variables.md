@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b9
-title: بناء المقاطع النصية باستخدام المتغيرات (Constructing Strings with Variables)
+title: بناء المقاطع النصية باستخدام المتغيرات
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cqk8rf4'
 forumTopicId: 16805
@@ -9,7 +9,7 @@ dashedName: constructing-strings-with-variables
 
 # --description--
 
-أحيانا قد تحتاج إلي إنشاء مقطع. في أثناء استخدام مشغل التسلسل الآتي (`+`)، يمكنك إدخال متغير واحد أو أكثر في مقطع الذي تقوم ببنائه.
+أحيانا قد تحتاج إلي إنشاء مقطع نصي. باستخدام مشغل الضم الآتي (`+`)، يمكنك إدخال متغير واحد أو أكثر في المقطع الذي تقوم ببنائه.
 
 مثال:
 
@@ -22,17 +22,17 @@ const ourStr = "Hello, our name is " + ourName + ", how are you?";
 
 # --instructions--
 
-عيّن `myName` إلى مقطع مساوي لأسمك وأبني `myStr` بقيمة `myName` بين المقطعين الآتيين `My name is` و `and I am well!`
+عيّن `myName` إلى مقطع مساوي لأسمك وأبني `myStr` واضعاً `myName` بين المقطعين الآتيين `My name is` و `and I am well!`
 
 # --hints--
 
-يجب تعيين `myName` كمقطع يحتوي 3 رموز في الأقل.
+يجب تعيين `myName` كمقطع نصي يحتوي 3 رموز في الأقل.
 
 ```js
 assert(typeof myName !== 'undefined' && myName.length > 2);
 ```
 
-يجب عليك استخدام مشغلين اثنين من `+` لبناء `myStr` يحتوي `myName` داخله.
+يجب عليك استخدام `+` مرتين لبناء `myStr` باحتواء `myName` داخله.
 
 ```js
 assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);

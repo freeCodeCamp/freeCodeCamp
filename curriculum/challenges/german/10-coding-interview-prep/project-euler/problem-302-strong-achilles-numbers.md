@@ -1,6 +1,6 @@
 ---
 id: 5900f49b1000cf542c50ffad
-title: 'Problem 302: Strong Achilles Numbers'
+title: 'Problem 302: Starke Achilles-Zahlen'
 challengeType: 1
 forumTopicId: 301956
 dashedName: problem-302-strong-achilles-numbers
@@ -8,23 +8,23 @@ dashedName: problem-302-strong-achilles-numbers
 
 # --description--
 
-A positive integer $n$ is powerful if $p^2$ is a divisor of $n$ for every prime factor $p$ in $n$.
+Eine positiver Integer $n$ ist mächtig, wenn $p^2$ ein Teiler von $n$ für jeden Primfaktor $p$ in $n$ ist.
 
-A positive integer $n$ is a perfect power if $n$ can be expressed as a power of another positive integer.
+Ein positiver Integer $n$ ist eine vollkommene Potenz, wenn $n$ als Potenz eines anderen positiven Integers ausgedrückt werden kann.
 
-A positive integer $n$ is an Achilles number if $n$ is powerful but not a perfect power. For example, 864 and 1800 are Achilles numbers: $864 = 2^5 \times 3^3$ and $1800 = 2^3 \times 3^2 \times 5^2$.
+Ein positiver Integer $n$ ist eine Achilleszahl, wenn $n$ zwar mächtig, aber keine vollkommene Potenz ist. Zum Beispiel sind 864 und 1800 Achilleszahlen: $864 = 2^5 \mal 3^3$ und $1800 = 2^3 \mal 3^2 \mal 5^2$.
 
-We shall call a positive integer $S$ a Strong Achilles number if both $S$ and $φ(S)$ are Achilles numbers. $φ$ denotes Euler's totient function.
+Wir nennen einen positiven Integer $S$ eine starke Achilleszahl, wenn sowohl $S$ als auch $φ(S)$ Achilleszahlen sind. $φ$ bezeichnet die Eulersche Totalitätsfunktion.
 
-For example, 864 is a Strong Achilles number: $φ(864) = 288 = 2^5 \times 3^2$. However, 1800 isn't a Strong Achilles number because: $φ(1800) = 480 = 2^5 \times 3^1 \times 5^1$.
+Zum Beispiel ist 864 eine starke Achilleszahl: $φ(864) = 288 = 2^5 \mal 3^2$. Allerdings ist 1800 keine starke Achilleszahl, denn: $φ(1800) = 480 = 2^5 \mal 3^1 \mal 5^1$.
 
-There are 7 Strong Achilles numbers below ${10}^4$ and 656 below ${10}^8$.
+Es gibt 7 starke Achilleszahlen unter ${10}^4$ und 656 unter ${10}^8$.
 
-How many Strong Achilles numbers are there below ${10}^{18}$?
+Wie viele starke Achilleszahlen gibt es unter ${10}^{18}$?
 
 # --hints--
 
-`strongAchillesNumbers()` should return `1170060`.
+`strongAchillesNumbers()` sollte `1170060` zurückgeben.
 
 ```js
 assert.strictEqual(strongAchillesNumbers(), 1170060);

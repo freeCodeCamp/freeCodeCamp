@@ -9,7 +9,7 @@ dashedName: chaining-if-else-statements
 
 # --description--
 
-يمكن تسلسل -ربط- عدة تعبيرات `if/else` معًا في السياقات المنطقية المعقدة. إليك مثال من <dfn>pseudocode</dfn> أو ما يسمى بالتعليمات البرمجية الزائفة -وهن التعليمات الغير مرتبط بلغة برمجة معينة ولكنه قريب من لغة الإنسان- لعدة تعبير `if` و `else if`:
+يمكن تسلسل -ربط- عدة تعبيرات `if/else` معًا في السياقات المنطقية المعقدة. إليك <dfn>pseudocode</dfn> أو ما يسمى بالتعليمات البرمجية الزائفة -وهن التعليمات الغير مرتبطة بلغة برمجة واحدة ولكنها قريبة من لغة الإنسان- لعدة عبارات `if` و `else if` مسلسلة:
 
 ```js
 if (condition1) {
@@ -26,7 +26,7 @@ if (condition1) {
 
 # --instructions--
 
-اكتب تعبيرات متسلسلة `if`/`else if` للتحقق من الشروط التالية:
+اكتب تعبيرات متسلسلة `if`/`else if` لتقَّضي الشروط التالية:
 
 `num < 5` - تنتج (return) `Tiny`  
 `num < 10` - تنتج (return) `Small`  
@@ -48,67 +48,67 @@ assert(code.match(/else/g).length > 3);
 assert(code.match(/if/g).length > 3);
 ```
 
-يجب أن يكون لديك في الأقل تعبير `return`
+يجب أن يكون لديك في الأقل تعبير واحد `return`
 
 ```js
 assert(code.match(/return/g).length >= 1);
 ```
 
-`testSize(0)` يجب ان تنتج (return) المقطع (string) `Tiny`
+`testSize(0)` يجب أن تنتج المقطع النصي `Tiny`
 
 ```js
 assert(testSize(0) === 'Tiny');
 ```
 
-`testSize(4)` يجب ان تنتج (return) المقطع (string) `Tiny`
+`testSize(4)` يجب أن تنتج المقطع النصي `Tiny`
 
 ```js
 assert(testSize(4) === 'Tiny');
 ```
 
-`testSize(5)` يجب ان تنتج (return) المقطع (string) `Small`
+`testSize(5)` يجب أن تنتج المقطع النصي `Small`
 
 ```js
 assert(testSize(5) === 'Small');
 ```
 
-`testSize(8)` يجب ان تنتج (return) المقطع (string) `Small`
+`testSize(8)` يجب أن تنتج المقطع النصي `Small`
 
 ```js
 assert(testSize(8) === 'Small');
 ```
 
-`testSize(10)` يجب ان تنتج (return) المقطع (string) `Medium`
+`testSize(10)` يجب أن تنتج المقطع النصي `Medium`
 
 ```js
 assert(testSize(10) === 'Medium');
 ```
 
-`testSize(14)` يجب ان تنتج (return) المقطع (string) `Medium`
+`testSize(14)` يجب أن تنتج المقطع النصي `Medium`
 
 ```js
 assert(testSize(14) === 'Medium');
 ```
 
-`testSize(15)` يجب ان تنتج (return) المقطع (string) `Large`
+`testSize(15)` يجب أن تنتج المقطع النصي `Large`
 
 ```js
 assert(testSize(15) === 'Large');
 ```
 
-`testSize(17)` يجب ان تنتج (return) المقطع (string) `Large`
+`testSize(17)` يجب أن تنتج المقطع النصي `Large`
 
 ```js
 assert(testSize(17) === 'Large');
 ```
 
-`testSize(20)` يجب ان تنتج (return) المقطع (string) `Huge`
+`testSize(20)` يجب أن تنتج المقطع النصي `Huge`
 
 ```js
 assert(testSize(20) === 'Huge');
 ```
 
-`testSize(25)` يجب ان تنتج (return) المقطع (string) `Huge`
+`testSize(25)` يجب أن تنتج المقطع النصي `Huge`
 
 ```js
 assert(testSize(25) === 'Huge');

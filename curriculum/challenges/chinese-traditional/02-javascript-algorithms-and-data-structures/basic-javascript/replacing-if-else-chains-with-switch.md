@@ -60,43 +60,43 @@ assert(!/if/g.test(code));
 assert(code.match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` 應該是字符串 `Marley`
+`chainToSwitch("bob")` should return the string `Marley`
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` 應該是字符串 `The Answer`
+`chainToSwitch(42)` should return the string `The Answer`
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` 應該是字符串 `There is no #1`
+`chainToSwitch(1)` should return the string `There is no #1`
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)`應該爲 `Missed me by this much!`。
+`chainToSwitch(99)` should return the string `Missed me by this much!`
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` 應該是字符串 `Ate Nine`
+`chainToSwitch(7)` should return the string `Ate Nine`
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` 應該爲 `""` (empty string)。
+`chainToSwitch("John")` should return `""` (empty string)
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` 應該爲 `""` (empty string)。
+`chainToSwitch(156)` should return `""` (empty string)
 
 ```js
 assert(chainToSwitch(156) === '');

@@ -788,20 +788,20 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project",
+    "title": "Проєкт «Odin»",
     "intro": [
-      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
-      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
-      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
+      "Проєкт «Odin» є одним з тих ресурсів, про які хотіли б дізнатися ще коли навчались. ",
+      "Не кожен має доступ до технологічної освіти або коштів, необхідних для відвідування інтенсивної школи. Однак це не остаточне рішення для тих, хто хоче вчитися.",
+      "Цей проєкт розроблений, щоб заповнити прогалину для людей, які намагаються вчитись самостійно, але все ж таки хочуть високоякісну освіту."
     ],
     "blocks": {
       "top-learn-html-foundations": {
-        "title": "Learn HTML Foundations",
-        "intro": ["A description is to be determined"]
+        "title": "Вивчіть основи HTML",
+        "intro": ["Опис буде надано пізніше"]
       },
       "top-build-a-recipe-project": {
-        "title": "Learn HTML Foundations by Building a Recipe Page",
-        "intro": ["A description is to be determined"]
+        "title": "Вивчіть основи HTML, побудувавши сторінку з рецептами",
+        "intro": ["Опис буде надано пізніше"]
       }
     }
   },

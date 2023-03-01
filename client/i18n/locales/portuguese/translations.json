@@ -15,8 +15,8 @@
     "show-cert": "Exibir certificado",
     "claim-cert": "Solicitar certificação",
     "save-progress": "Salvar progresso",
-    "accepted-honesty": "Você aceitou nossa política de honestidade acadêmica.",
-    "agree": "Aceitar",
+    "accepted-honesty": "Você concordou com nossa política de honestidade acadêmica.",
+    "agree-honesty": "Concordo com a Política de Honestidade Acadêmica do FreeCodeCamp.",
     "save-portfolio": "Salvar esse item de portfólio",
     "remove-portfolio": "Remover este item de portfólio",
     "add-portfolio": "Adicionar um novo item de portfólio",
@@ -224,7 +224,6 @@
     "total-points_plural": "{{count}} pontos no total",
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
-    "screen-shot": "Uma captura de tela de {{title}}",
     "page-number": "{{pageNumber}} de {{totalPages}}"
   },
   "footer": {
@@ -251,6 +250,7 @@
   },
   "learn": {
     "heading": "Boas-vindas ao currículo do freeCodeCamp.",
+    "skip-to-content": "Ir para o conteúdo",
     "welcome-1": "Bem-vindo(a) de volta, {{name}}.",
     "welcome-2": "Boas-vindas ao freeCodeCamp.org",
     "start-at-beginning": "Se você é novo em programação, recomendamos que você <0>comece no início</0>.",
@@ -517,7 +517,7 @@
     "opens-new-window": "Abre em uma nova janela"
   },
   "flash": {
-    "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",
+    "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",
     "really-weird": "Algo realmente estranho aconteceu. Se acontecer novamente, considere apresentar um problema pelo endereço https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "Algo não está certo. Um relatório foi gerado e a equipe do freeCodeCamp.org foi notificada",
     "went-wrong": "Algo deu errado. Verifique e tente novamente",

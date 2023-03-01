@@ -1,6 +1,6 @@
 ---
 id: 5900f54c1000cf542c51005e
-title: 'Problem 478: Mixtures'
+title: 'Problem 478: Mischungen'
 challengeType: 1
 forumTopicId: 302155
 dashedName: problem-478-mixtures
@@ -8,29 +8,29 @@ dashedName: problem-478-mixtures
 
 # --description--
 
-Let us consider mixtures of three substances: $A$, $B$ and $C$. A mixture can be described by a ratio of the amounts of $A$, $B$, and $C$ in it, i.e., $(a : b : c)$. For example, a mixture described by the ratio (2 : 3 : 5) contains 20% $A$, 30% $B$ and 50% $C$.
+Wir betrachten Gemische aus drei Stoffen: $A$, $B$ und $C$. Ein Gemisch kann durch ein Verhältnis der Mengen von $A$, $B$ und $C$ zusammengesetzt werden, d. h. $(a : b : c)$. Ein Gemisch, das durch das Verhältnis (2 : 3 : 5) beschrieben wird, enthält beispielsweise 20% $A$, 30% $B$ und 50% $C$.
 
-For the purposes of this problem, we cannot separate the individual components from a mixture. However, we can combine different amounts of different mixtures to form mixtures with new ratios.
+Für diesen Zweck können wir die einzelnen Bestandteile eines Gemischs nicht trennen. Wir können jedoch unterschiedliche Mengen verschiedener Gemische kombinieren, um Gemische mit neuen Verhältnissen zu bilden.
 
-For example, say we have three mixtures with ratios (3 : 0 : 2), (3 : 6 : 11) and (3 : 3 : 4). By mixing 10 units of the first, 20 units of the second and 30 units of the third, we get a new mixture with ratio (6 : 5 : 9), since: ($10 \times \frac{3}{5} + 20 \times \frac{3}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{0}{5} + 20 \times \frac{6}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{2}{5} + 20 \times \frac{11}{20} + 30 \times \frac{4}{10}$) = (18 : 15 : 27) = (6 : 5 : 9)
+Nehmen wir zum Beispiel an, wir haben drei Gemische mit den Verhältnissen (3 : 0 : 2), (3 : 6 : 11) und (3 : 3 : 4). Wenn man 10 Einheiten des ersten, 20 Einheiten des zweiten und 30 Einheiten des dritten Stoffes mischt, erhält man eine neue Mischung im Verhältnis (6 : 5 : 9), denn: ($10 \times \frac{3}{5} + 20 \times \frac{3}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{0}{5} + 20 \times \frac{6}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{2}{5} + 20 \times \frac{11}{20} + 30 \times \frac{4}{10}$) = (18 : 15 : 27) = (6 : 5 : 9)
 
-However, with the same three mixtures, it is impossible to form the ratio (3 : 2 : 1), since the amount of $B$ is always less than the amount of $C$.
+Mit denselben drei Gemischen ist es jedoch unmöglich, das Verhältnis (3 : 2 : 1) zu bilden, da die Menge von $B$ immer kleiner ist als die Menge von $C$.
 
-Let $n$ be a positive integer. Suppose that for every triple of integers $(a, b, c)$ with $0 ≤ a, b, c ≤ n$ and $gcd(a, b, c) = 1$, we have a mixture with ratio $(a : b : c)$. Let $M(n)$ be the set of all such mixtures.
+Lasse $n$ eine positive ganze Zahl sein. Angenommen, für jedes Tripel der Integer $(a, b, c)$ mit $0 ≤ a, b, c ≤ n$ und $gcd(a, b, c) = 1$ gibt es eine Mischung mit dem Verhältnis $(a : b : c)$. Lasse $M(n)$ die Menge aller solcher Mischungen sein.
 
-For example, $M(2)$ contains the 19 mixtures with the following ratios:
+Zum Beispiel enthält $M(2)$ die 19 Gemische mit den folgenden Verhältnissen:
 
 {(0 : 0 : 1), (0 : 1 : 0), (0 : 1 : 1), (0 : 1 : 2), (0 : 2 : 1), (1 : 0 : 0), (1 : 0 : 1), (1 : 0 : 2), (1 : 1 : 0), (1 : 1 : 1), (1 : 1 : 2), (1 : 2 : 0), (1 : 2 : 1), (1 : 2 : 2), (2 : 0 : 1), (2 : 1 : 0), (2 : 1 : 1), (2 : 1 : 2), (2 : 2 : 1)}.
 
-Let $E(n)$ be the number of subsets of $M(n)$ which can produce the mixture with ratio (1 : 1 : 1), i.e., the mixture with equal parts $A$, $B$ and $C$.
+Lasse $E(n)$ die Anzahl der Teilmengen von $M(n)$ sein, die das Gemisch mit dem Verhältnis (1 : 1 : 1), d.h. das Gemisch mit gleichen Anteilen $A$, $B$ und $C$, ergeben können.
 
-We can verify that $E(1) = 103$, $E(2) = 520\\,447$, $E(10)\bmod {11}^8 = 82\\,608\\,406$ and $E(500)\bmod {11}^8 = 13\\,801\\,403$.
+Wir können überprüfen, dass $E(1) = 103$, $E(2) = 520\\,447$, $E(10)\bmod {11}^8 = 82\\,608\\,406$ und $E(500)\bmod {11}^8 = 13\\,801\\,403$.
 
-Find $E(10\\,000\\,000)\bmod {11}^8$.
+Finde $E(10\\,000\\,000)\bmod {11}^8$.
 
 # --hints--
 
-`mixtures()` should return `59510340`.
+`mixtures()` sollte `59510340` zurückgeben.
 
 ```js
 assert.strictEqual(mixtures(), 59510340);

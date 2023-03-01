@@ -44,6 +44,8 @@ for (const [id, title] of idToTitle) {
   }
 }
 
-export const getCertIds = () => idToPath.keys();
-export const getPathFromID = (id: string) => idToPath.get(id);
-export const getTitleFromId = (id: string) => idToTitle.get(id);
+export const getCertIds = (): IterableIterator<string> => idToPath.keys();
+export const getPathFromID = (id: string): string | undefined =>
+  idToPath.get(id);
+export const getTitleFromId = (id: string): string | undefined =>
+  idToTitle.get(id);

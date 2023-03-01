@@ -1,6 +1,6 @@
 ---
 id: 5900f48f1000cf542c50ffa1
-title: 'Problem 290: Digital Signature'
+title: 'Problem 290: Digitale Signatur'
 challengeType: 1
 forumTopicId: 301942
 dashedName: problem-290-digital-signature
@@ -8,11 +8,11 @@ dashedName: problem-290-digital-signature
 
 # --description--
 
-How many integers $0 ≤ n &lt; {10}^{18}$ have the property that the sum of the digits of $n$ equals the sum of digits of $137n$?
+Wie viele ganze Zahlen $0 ≤ n &lt; {10}^{18}$ haben die Eigenschaft, dass die Summe der Ziffern von $n$ gleich der Summe der Ziffern von $137n$ ist?
 
 # --hints--
 
-`digitalSignature()` should return `20444710234716470`.
+`digitalSignature()` sollte `20444710234716470` zurückgeben.
 
 ```js
 assert.strictEqual(digitalSignature(), 20444710234716470);
