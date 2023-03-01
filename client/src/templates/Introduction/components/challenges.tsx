@@ -109,7 +109,7 @@ function Challenges({
 
       <section className='topic-filter'>
         <button
-          className={`topic-filter-button ${
+          className={`btn topic-filter-button ${
             isExpanded
               ? 'topic-filter-button-open'
               : 'topic-filter-button-closed'
@@ -128,7 +128,7 @@ function Challenges({
               return (
                 <li key={topic}>
                   <button
-                    className='topic-select-btn'
+                    className='btn topic-select-btn'
                     onClick={() => handleAddTag(topic)}
                   >
                     {topic}
@@ -143,7 +143,7 @@ function Challenges({
           {activeTags.map(topic => (
             <button
               key={topic}
-              className='topic-tag'
+              className='btn topic-tag'
               onClick={() => handleRemoveTag(topic)}
             >
               <span>{topic}</span>X
