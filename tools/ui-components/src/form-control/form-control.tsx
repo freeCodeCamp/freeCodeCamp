@@ -9,7 +9,6 @@ import { FormControlProps } from './types';
 
 const FormControl = ({
   className,
-  id,
   testId,
   onChange,
   value,
@@ -20,26 +19,22 @@ const FormControl = ({
   type,
   ...restProps
 }: FormControlProps): JSX.Element => {
-  let defaultClasses =
+  const defaultClasses =
     'outline-0 block w-full py-1.5 px-2.5 text-md text-foreground-primary ' +
     'bg-background-primary bg-none rounded-none border-1 border-solid ' +
     'border-background-quaternary shadow-none ' +
     'transition ease-in-out duration-150 focus:border-foreground-tertiary';
-  const as = componentClass;
-  const Component = as || 'input';
+  const Component = componentClass || 'input';
   let variantClass;
-  if (Component === React.Component<'textarea'>) variantClass = 'h-auto';
-  else defaultClasses += 'h-8';
+  if (Component !== 'textarea') variantClass = 'h-8';
 
   //row and componentClass
   const classes = [defaultClasses, variantClass, className].join(' ');
 
   return (
     <Component
-      id={id}
       data-testid={testId}
       className={classes}
-      as={componentClass}
       value={value}
       required={required}
       onChange={onChange}
