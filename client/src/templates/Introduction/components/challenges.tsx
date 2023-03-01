@@ -72,6 +72,7 @@ function Challenges({
   }
 
   function handleAddTag(topic: string) {
+    toggleExpanded(false);
     activeTags.unshift(topic);
     updateTags(activeTags);
   }
