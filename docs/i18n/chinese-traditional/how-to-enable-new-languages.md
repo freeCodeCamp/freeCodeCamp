@@ -53,7 +53,7 @@ First, visit the `config/i18n.ts` file to add the language to the list of availa
 
 - `Languages`: Add the new language to `Languages` enum, similar to the others. The string value here will be used in the `.env` file to set a build language later.
 - `availableLangs`: Add the new property from the `Languages` enum to both the `client` and `curriculum` arrays.
-- `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
+- `i18nextCodes`：這些是每種語言的 ISO 語言代碼。 You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
 - `LangNames`: These are the display names for the language selector in the navigation menu.
 - `LangCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
 - `hiddenLangs`: These languages will not be displayed in the navigation menu. This is used for languages that are not yet ready for release.

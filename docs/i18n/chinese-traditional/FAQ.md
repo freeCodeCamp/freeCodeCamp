@@ -12,43 +12,43 @@ Yes - You can contribute to any of the 30+ languages we have enabled on our tran
 
 We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
-If you are interested in contributing to translations please make sure you [read this guide](how-to-translate-files.md) first.
+如果你對參與翻譯貢獻有興趣，請務必首先[閱讀本指南](how-to-translate-files.md)。
 
 ### Can I contribute articles to freeCodeCamp News or videos to freeCodeCamp's YouTube channel?
 
 Yes - you can contribute to our publication blog and YouTube channel.
 
-If you're interested in writing articles for freeCodeCamp News, please visit this [publication guide](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/). In addition, please read our [style guide](https://www.freecodecamp.org/news/developer-news-style-guide/) as this will help you write stronger and more effective articles.
+如果你有興趣爲 freeCodeCamp News 撰寫文章，請訪問此 [專欄寫作指南](https://www.freecodecamp.org/chinese/news/developer-news-style-guide/)。 In addition, please read our [style guide](https://www.freecodecamp.org/news/developer-news-style-guide/) as this will help you write stronger and more effective articles.
 
 To help us make educational videos for our YouTube channel, you can follow the [YouTube channel guide here](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/).
 
-### How can I report a new bug?
+### 我如何報告一個新的 bug？
 
 If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
 
-If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
+如果你確信這是一個新的bug，請創建一個新的 GitHub issue。 請務必包含儘可能多的信息，以便我們能夠重現 bug。 我們有預設的 issue 模版來幫助你提交 GitHub issue。
 
-Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
+請注意，這些 GitHub issues 僅爲了代碼庫相關的問題和討論，而不是爲了獲得編程學習方面的幫助。 當你有疑問時，應該在創建一個 GitHub issue 前[在論壇上尋求幫助](https://forum.freecodecamp.org)。
 
-### How can I report a security issue?
+### 我如何報告一個安全問題？
 
-Please don't create GitHub issues for security issues. Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
+請不要爲安全問題來創建 GitHub issue。 反之，請 [遵循我們的安全政策](https://contribute.freecodecamp.org/#/security)。
 
-### I am a student. Can I work on a feature for academic credits?
+### 我是一名學生。 我可以爲學術學分參與一個功能開發嗎？
 
-Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions from volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
+可以的。 請注意，我們無法承諾你的學院或大學可能要求的任何時間表或文書工作。 我們收到了許多來自於志願開發者的推送請求以及代碼貢獻，並且我們尊重他們的時間與勞動。 出於對我們所有其他貢獻者的尊重，我們不會僅僅因爲與學校有關而給予任何優先考慮。
 
-We request you to plan ahead and work on code contributions with this in mind.
+我們請求你提前計劃，並在貢獻代碼時知曉這一點。
 
-### What do these different labels that are tagged on issues mean?
+### 這些不同的在問題上標籤意味着什麼？
 
-The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
+代碼維護人員會根據優先級、嚴重程度和其他因素對 issue 和 pull request 進行[分類](https://en.wikipedia.org/wiki/Software_bug#Bug_management)。  你可以在這裏找到[其含義的完整詞彙表](https://github.com/freecodecamp/freecodecamp/labels).
 
-### Where do I start if I want to work on an issue?
+### 如果我想就一個問題開展工作，我將從哪裏開始？
 
-You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
+你應該瀏覽標註有 [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) 或 [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) 的 issue，以快速瞭解可供你貢獻的內容。
 
-> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. However, issues with the **`first timers only`** label are special issues that are designed for people who have not contributed to the freeCodeCamp codebase before.
+> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. 然而，具有 **`first timers only`** 標籤的 issue 是特別爲以前沒有爲 freeCodeCodeCamp 代碼庫貢獻的人設計的任務。
 
 ### I found a typo. Should I report an issue before I can make a pull request?
 
@@ -63,8 +63,8 @@ We typically do not assign issues to anyone other than long-time contributors. I
 1. We are most likely to merge the first pull request that addresses the issue.
 2. In the case of multiple contributors opening a pull request for the same issue at around the same time, we will give priority to the pull request that best addresses the issue. Some of the things we consider:
    - Did you include tests?
-   - Did you catch all use cases?
-   - Did you ensure all tests pass, and confirm everything works locally?
+   - 你是否考慮了所有用例？
+   - 你是否確保通過所有測試，並確認所有東西在本地正常運行？
 3. Finally, we give priority to pull requests which follow our recommended guidelines.
    - Did you follow the pull request checklist?
    - Did you give your pull request a meaningful title?
@@ -81,7 +81,7 @@ Here are some recommended paths for some of our platforms:
 - To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even giving feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
 - To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
 
-Altogether, be respectful to others. We are humans from all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
+Altogether, be respectful to others. 我們是來自世界各地的人。 With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
 
 If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. Open source work is voluntary work and our time is limited. We acknowledge that this is probably true in your case as well. So we emphasize being **consistent** rather than engaging in the community 24/7.
 
@@ -100,6 +100,6 @@ Thanks in advance for being polite and patient. Remember – this community is r
 
 ### Additional Assistance
 
-If you have queries about the stack, architecture of the codebase, translations, or anything else, feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
+如果你對技術棧、代碼庫的架構、翻譯或其他方面有疑問，請隨時[在論壇上](https://forum.freecodecamp.org/g/team)與我們的員工團隊聯繫。
 
-**You can email our developer staff at: `dev[at]freecodecamp.org`**
+**你可以發郵件到 `dev[at]freecodecamp.org` 以聯繫我們團隊的開發者。**
