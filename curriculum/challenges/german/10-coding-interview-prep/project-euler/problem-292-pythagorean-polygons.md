@@ -1,6 +1,6 @@
 ---
 id: 5900f4911000cf542c50ffa3
-title: 'Problem 292: Pythagorean Polygons'
+title: 'Problem 292: Pythagoras Vielecke'
 challengeType: 1
 forumTopicId: 301944
 dashedName: problem-292-pythagorean-polygons
@@ -8,24 +8,24 @@ dashedName: problem-292-pythagorean-polygons
 
 # --description--
 
-We shall define a pythagorean polygon to be a convex polygon with the following properties:
+Wir definieren ein pythagoreisches Vieleck als ein konvexes Vieleck mit den folgenden Eigenschaften:
 
-- there are at least three vertices,
-- no three vertices are aligned,
-- each vertex has integer coordinates,
-- each edge has integer length.
+- es gibt mindestens drei Scheitelpunkte,
+- es sind keine drei Scheitelpunkte aufeinander ausgerichtet,
+- jeder Scheitelpunkt hat ganzzahlige Koordinaten,
+- jede Kante hat eine ganzzahlige Länge.
 
-For a given integer $n$, define $P(n)$ as the number of distinct pythagorean polygons for which the perimeter is $≤ n$.
+Definiere für eine gegebene ganze Zahl $n$ $P(n)$ als die Anzahl der verschiedenen pythagoreische Vielecke, deren Umfang $≤ n$ ist.
 
-Pythagorean polygons should be considered distinct as long as none is a translation of another.
+Pythagoreische Vielecke sollten als verschieden betrachtet werden, solange keines eine Übersetzung eines anderen ist.
 
-You are given that $P(4) = 1$, $P(30) = 3655$ and $P(60) = 891045$.
+Es ist gegeben, dass $P(4) = 1$, $P(30) = 3655$ und $P(60) = 891045$.
 
-Find $P(120)$.
+Finde $P(120)$.
 
 # --hints--
 
-`pythagoreanPolygons()` should return `3600060866`.
+`pythagoreanPolygons()` sollte `3600060866` zurückgeben.
 
 ```js
 assert.strictEqual(pythagoreanPolygons(), 3600060866);

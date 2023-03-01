@@ -9,7 +9,7 @@ dashedName: adding-a-default-option-in-switch-statements
 
 # --description--
 
-في عبارة `switch` قد لا تكون قادراً على تحديد جميع القيم المحتملة كعبارات `case`. بدلاً من ذلك، يمكنك إضافة عبارة `default` التي سيتم تنفيذها إذا لم يتم العثور على عبارات `case` مطابقة. فكر بالأمر مثل العبارة `else` في `if/else`.
+في عبارة `switch` قد لا تكون قادراً على تحديد جميع القيم المحتملة كعبارات `case`. بدلاً من ذلك، يمكنك إضافة عبارة `default` التي سيتم تنفيذها إذا لم يتم العثور على عبارات `case` مطابقة. وكأنها مثل آخر عبارة `else` في `if/else`.
 
 يجب أن تكون عبارة `default` آخر حالة.
 
@@ -38,31 +38,31 @@ switch (num) {
 
 # --hints--
 
-`switchOfStuff("a")` يجب أن يعيد مقطع نصي (string) باسم `apple`
+يجب أن ينتج `switchOfStuff("a")` مقطع نصي (string) بقيمة `apple`
 
 ```js
 assert(switchOfStuff('a') === 'apple');
 ```
 
-`switchOfStuff("b")` يجب أن ينتج مقطع نصي (string) باسم `bird`
+يجب أن ينتج `switchOfStuff("b")` مقطع نصي بقيمة `bird`
 
 ```js
 assert(switchOfStuff('b') === 'bird');
 ```
 
-`switchOfStuff("c")` يجب أن ينتج مقطع نصي (string) باسم `cat`
+يجب أن ينتج `switchOfStuff("c")` مقطع نصي بقيمة `cat`
 
 ```js
 assert(switchOfStuff('c') === 'cat');
 ```
 
-`switchOfStuff("d")` يجب أن ينتج مقطع نصي (string) باسم `stuff`
+يجب أن ينتج `switchOfStuff("d")`مقطع نصي بقيمة `stuff`
 
 ```js
 assert(switchOfStuff('d') === 'stuff');
 ```
 
-`switchOfStuff(4)` يجب أن ينتج مقطع نصي (string) باسم `stuff`
+يجب أن ينتج `switchOfStuff(4)` مقطع نصي بقيمة `stuff`
 
 ```js
 assert(switchOfStuff(4) === 'stuff');

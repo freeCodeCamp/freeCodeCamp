@@ -15,13 +15,13 @@ O operador de <dfn>resto</dfn> `%` retorna o resto da divisão de dois números.
 
 <pre>
 5 % 2 = 1
-5 / 2 = 2 remainder 1
+5 / 2 = 2 resto 1
 2 * 2 = 4
 5 - 4 = 1
 </pre>
 
-**Usage**  
-In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`. Even numbers have a remainder of `0`, while odd numbers a remainder of `1`.
+**Uso**  
+Na matemática, um número pode ser verificado como par ou ímpar por meio do resto da divisão do número por `2`. Números pares têm um resto de `0`, enquanto números ímpares têm um resto de `1`.
 
 <pre>
 17 % 2 = 1

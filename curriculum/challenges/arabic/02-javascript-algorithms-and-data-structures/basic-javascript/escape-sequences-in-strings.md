@@ -19,7 +19,11 @@ dashedName: escape-sequences-in-strings
 
 عيّن المقاطع الثلاثة في السطور التالية في المتغير الوحيد `myStr` باستخدام تسلسلات التخريج (escape sequences).
 
-<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
+<pre>
+FirstLine
+    \SecondLine
+ThirdLine
+</pre>
 
 سوف تحتاج إلى استخدام تسلسلات التخريج لإدراج الرموز الخاصة (special characters) بشكل صحيح. ستحتاج أيضًا إلى اتباع التباعد كما هو موضح أعلاه، دون مسافات بين تسلسلات التخريج escape sequences أو الكلمات.
 

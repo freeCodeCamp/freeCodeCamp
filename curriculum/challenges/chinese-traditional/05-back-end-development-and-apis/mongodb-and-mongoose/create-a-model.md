@@ -28,19 +28,15 @@ const someFunc = function(done) {
 
 # --instructions--
 
-按下面的原型信息創建一個名爲 `personSchema` 的 schema：
+Create a person schema called `personSchema` with the following shape:
 
-```markup
-- Person Prototype -
---------------------
-name : string [required]
-age :  number
-favoriteFoods : array of strings (*)
-```
+* A required `name` field of type `String`
+* An `age` field of type `Number`
+* A `favouriteFoods` field of type `[String]`
 
 採用 Mongoose 基礎 schema 類型。 你如果還想添加更多的鍵，就請使用 required 或 unique 等簡單的驗證器（validators），並設置默認值。 查看我們的 <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">Mongoose 文章</a>。
 
-請從 `personSchema` 創建一個名爲 `Person` 的 model。
+Now, create a model from the `personSchema` and assign it to the existing variable `Person`.
 
 # --hints--
 

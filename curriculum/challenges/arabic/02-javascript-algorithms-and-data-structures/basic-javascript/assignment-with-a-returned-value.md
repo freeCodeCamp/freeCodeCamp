@@ -11,13 +11,13 @@ dashedName: assignment-with-a-returned-value
 
 إذا كنت تتذكر من مناقشتنا حول <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">تخزين القيم مع مشغل التعيين (=)</a>، يتم عزم كل شيء لاحق لعلامة المساواة قبل تعيين القيمة. وهذا يعني أنه يمكننا أخذ القيمة الناتجة من وظيفة وتعيينها إلى متغير.
 
-افترض أن لدينا وظيفة معرفة من قبل تدعي `sum`، وهي تضيف رقمين معا، ثم:
+Assume we have defined a function `sum` which adds two numbers together.
 
 ```js
 ourSum = sum(5, 12);
 ```
 
-تُفعَّل الوظيفة `sum` التي ترجع قيمة `17` وتعيينها إلى متغير `ourSum`.
+Calling the `sum` function with the arguments of `5` and `12` produces a return value of `17`. This return value is assigned to the `ourSum` variable.
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f5451000cf542c510057
-title: 'Problem 472: Comfortable Distance II'
+title: 'Problem 472: Angenehmer Abstand II'
 challengeType: 1
 forumTopicId: 302149
 dashedName: problem-472-comfortable-distance-ii
@@ -8,29 +8,29 @@ dashedName: problem-472-comfortable-distance-ii
 
 # --description--
 
-There are $N$ seats in a row. $N$ people come one after another to fill the seats according to the following rules:
+Es gibt $N$ Sitze in einer Reihe. $N$ Personen kommen nacheinander, um die Plätze nach den folgenden Regeln zu besetzen:
 
-1. No person sits beside another.
-1. The first person chooses any seat.
-1. Each subsequent person chooses the seat furthest from anyone else already seated, as long as it does not violate rule 1. If there is more than one choice satisfying this condition, then the person chooses the leftmost choice.
+1. Keine Person sitzt neben einer anderen.
+1. Die erste Person wählt einen beliebigen Platz.
+1. Jede weitere Person wählt den Sitz, der am weitesten von den bereits sitzenden Personen entfernt ist, sofern dies nicht gegen Regel 1 verstößt. Gibt es mehr als eine Wahlmöglichkeit, die diese Bedingung erfüllt, wählt die Person die Wahlmöglichkeit ganz links.
 
-Note that due to rule 1, some seats will surely be left unoccupied, and the maximum number of people that can be seated is less than $N$ (for $N > 1$).
+Beachte, dass aufgrund von Regel 1 sicherlich einige Plätze unbesetzt bleiben werden und die maximale Anzahl von Personen, die sitzen können, kleiner ist als $N$ (für $N > 1$).
 
-Here are the possible seating arrangements for $N = 15$:
+Hier sind die möglichen Sitzordnungen für $N = 15$:
 
-<img class="img-responsive center-block" alt="seating arrangements for N = 15" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Sitzordnung für N = 15" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px;" />
 
-We see that if the first person chooses correctly, the 15 seats can seat up to 7 people. We can also see that the first person has 9 choices to maximize the number of people that may be seated.
+Wir sehen, dass, wenn die erste Person richtig wählt, die 15 Plätze bis zu 7 Personen aufnehmen können. Wir können auch sehen, dass die erste Person 9 Auswahlmöglichkeiten hat, um die Anzahl der Personen zu maximieren, die Platz nehmen können.
 
-Let $f(N)$ be the number of choices the first person has to maximize the number of occupants for $N$ seats in a row. Thus, $f(1) = 1$, $f(15) = 9$, $f(20) = 6$, and $f(500) = 16$.
+Lasse $f(N)$ die Anzahl der Wahlmöglichkeiten sein, die die erste Person hat, um die Anzahl der Plätze für $N$ Sitze in einer Reihe zu maximieren. Somit ist $f(1) = 1$, $f(15) = 9$, $f(20) = 6$ und $f(500) = 16$.
 
-Also, $\sum f(N) = 83$ for $1 ≤ N ≤ 20$ and $\sum f(N) = 13\\,343$ for $1 ≤ N ≤ 500$.
+Außerdem ist $\sum f(N) = 83$ für $1 ≤ N ≤ 20$ und $\sum f(N) = 13\\,343$ für $1 ≤ N ≤ 500$.
 
-Find $\sum f(N)$ for $1 ≤ N ≤ {10}^{12}$. Give the last 8 digits of your answer.
+Finde $\sum f(N)$ für $1 ≤ N ≤ {10}^{12}$. Gib die letzten 8 Ziffern deiner Antwort an.
 
 # --hints--
 
-`comfortableDistanceTwo()` should return `73811586`.
+`comfortableDistanceTwo()` sollte `73811586` zurückgeben.
 
 ```js
 assert.strictEqual(comfortableDistanceTwo(), 73811586);

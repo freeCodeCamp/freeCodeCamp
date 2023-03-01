@@ -1,6 +1,6 @@
 ---
 id: 5900f4b51000cf542c50ffc8
-title: 'Problem 329: Prime Frog'
+title: 'Problem 329: Primzahl-Frosch'
 challengeType: 1
 forumTopicId: 301986
 dashedName: problem-329-prime-frog
@@ -8,27 +8,27 @@ dashedName: problem-329-prime-frog
 
 # --description--
 
-Susan has a prime frog.
+Susan hat einen Primzahl-Frosch.
 
-Her frog is jumping around over 500 squares numbered 1 to 500.
+Dein Frosch springt über 500 Quadrate, die mit 1 bis 500 nummeriert sind.
 
-He can only jump one square to the left or to the right, with equal probability, and he cannot jump outside the range [1;500]. (if it lands at either end, it automatically jumps to the only available square on the next move.)
+Er kann nur ein Quadrat nach links oder rechts springen, mit gleicher Wahrscheinlichkeit, und er kann nicht außerhalb der Reichweite von [1;500] springen. (wenn er an einem der beiden Enden landet, springt er automatisch auf das einzige verfügbare Quadrat beim nächsten Schritt.)
 
-When he is on a square with a prime number on it, he croaks 'P' (PRIME) with probability $\frac{2}{3}$ or 'N' (NOT PRIME) with probability $\frac{1}{3}$ just before jumping to the next square. When he is on a square with a number on it that is not a prime he croaks 'P' with probability $\frac{1}{3}$ or 'N' with probability $\frac{2}{3}$ just before jumping to the next square.
+Wenn er auf einem Feld mit einer Primzahl steht, quakt er "P" (PRIMZAHL) mit der Wahrscheinlichkeit $\frac{2}{3}$ oder "N" (KEINE PRIMZAHL) mit der Wahrscheinlichkeit $\frac{1}{3}$, bevor er zum nächsten Feld springt. Wenn er auf einem Feld steht, auf dem eine Zahl steht, die keine Primzahl ist, quakt er "P" mit der Wahrscheinlichkeit $\frac{1}{3}$ oder "N" mit der Wahrscheinlichkeit $\frac{2}{3}$, bevor er zum nächsten Feld springt.
 
-Given that the frog's starting position is random with the same probability for every square, and given that she listens to his first 15 croaks, what is the probability that she hears the sequence PPPPNNPPPNPPNPN?
+Angesichts der Tatsache, dass die Startposition des Frosches mit gleicher Wahrscheinlichkeit für jedes Quadrat zufällig ist und hinsichtlich dessen, dass sie auf seine ersten 15 Quak-Geräusche achtet, was ist die Wahrscheinlichkeit, dass sie die Sequenz PPPPNNPPPNPPNPN hört?
 
-Give your answer as a string as a fraction `p/q` in reduced form.
+Gib deine Antwort in Form eines Strings als Bruch `p/q` in reduzierter Form an.
 
 # --hints--
 
-`primeFrog()` should return a string.
+`primeFrog()` sollte einen String zurückgeben.
 
 ```js
 assert(typeof primeFrog() === 'string');
 ```
 
-`primeFrog()` should return the string `199740353/29386561536000`.
+`primeFrog()` sollte den String `199740353/29386561536000` zurückgeben.
 
 ```js
 assert.strictEqual(primeFrog(), '199740353/29386561536000');
