@@ -61,14 +61,15 @@ function ProgressBar({
   });
 
   const totalChallengesInBlock = currentBlockIds?.length ?? 0;
-  const meta = isCertificationProject
-    ? t('learn.project-complete', {
-        completedChallengesInBlock,
-        totalChallengesInBlock
-      })
-    : t('learn.percent-complete', {
-        percent: completedPercent
-      });
+  const meta =
+    isCertificationProject && totalChallengesInBlock > 0
+      ? t('learn.project-complete', {
+          completedChallengesInBlock,
+          totalChallengesInBlock
+        })
+      : t('learn.percent-complete', {
+          percent: completedPercent
+        });
   return (
     <div className='progress-bar-container'>
       <ProgressBarInner
