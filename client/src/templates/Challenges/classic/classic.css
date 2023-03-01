@@ -65,15 +65,7 @@
 
 #mobile-layout .tab-content {
   display: grid;
-}
-
-#mobile-layout .tab-content .react-monaco-editor-container {
-  height: auto !important;
-}
-
-.monaco-editor .overflow-guard {
-  position: unset !important;
-  height: auto !important;
+  grid-template-rows: 1fr auto;
 }
 
 #mobile-layout .nav-tabs {
