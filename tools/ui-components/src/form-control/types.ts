@@ -20,6 +20,7 @@ type ChangibleValues =
     };
 
 export type FormControlProps = React.HTMLAttributes<FormControlElement> & {
+  id?: string;
   className?: string;
   testId?: string;
   componentClass?: 'textarea' | 'input';

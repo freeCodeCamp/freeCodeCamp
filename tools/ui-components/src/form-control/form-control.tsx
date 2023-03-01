@@ -8,6 +8,7 @@ import { FormControlProps } from './types';
 // type Only relevant if componentClass is 'input'.
 
 const FormControl = ({
+  id,
   className,
   testId,
   onChange,
@@ -33,6 +34,7 @@ const FormControl = ({
 
   return (
     <Component
+      id={id}
       data-testid={testId}
       className={classes}
       value={value}
