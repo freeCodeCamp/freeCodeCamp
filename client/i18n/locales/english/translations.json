@@ -596,7 +596,8 @@
     "editor-url": "Remember to submit the Live App URL.",
     "http-url": "An unsecure (http) URL cannot be used.",
     "own-work-url": "Remember to submit your own work.",
-    "publicly-visible-url": "Remember to submit a publicly visible app URL."
+    "publicly-visible-url": "Remember to submit a publicly visible app URL.",
+    "endpoint-url": "You probably do not mean to submit a URL including an endpoint."
   },
   "certification": {
     "executive": "Executive Director, freeCodeCamp.org",

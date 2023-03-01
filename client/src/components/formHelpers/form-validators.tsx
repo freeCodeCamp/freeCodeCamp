@@ -9,6 +9,18 @@ const fCCRegex =
 const localhostRegex = /localhost:/;
 const httpRegex = /http(?!s|([^s]+?localhost))/;
 
+function hasEndpoint(urlString: string): boolean {
+  try {
+    const url = new URL(urlString);
+    if (url.pathname && url.pathname !== '/') {
+      return true;
+    }
+  } catch (_e) {
+    return false;
+  }
+  return false;
+}
+
 export const editorValidator = (value: string): React.ReactElement | null =>
   editorRegex.test(value) ? <Trans>validation.editor-url</Trans> : null;
 
@@ -22,6 +34,9 @@ export const localhostValidator = (value: string): React.ReactElement | null =>
 
 export const httpValidator = (value: string): React.ReactElement | null =>
   httpRegex.test(value) ? <Trans>validation.http-url</Trans> : null;
+
+export const endpointValidator = (value: string): React.ReactElement | null =>
+  hasEndpoint(value) ? <Trans>validation.endpoint-url</Trans> : null;
 
 type Validator = (value: string) => React.ReactElement | null;
 export function composeValidators(...validators: (Validator | null)[]) {
