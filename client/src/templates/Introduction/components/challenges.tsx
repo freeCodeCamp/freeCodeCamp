@@ -4,7 +4,9 @@ import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import DropDown from '../../../assets/icons/dropdown';
@@ -147,7 +149,8 @@ function Challenges({
               className='btn topic-tag'
               onClick={() => handleRemoveTag(topic)}
             >
-              <span>{topic}</span>X
+              <span>{topic}</span>
+              <FontAwesomeIcon icon={faXmark} />
             </button>
           ))}
         </div>
