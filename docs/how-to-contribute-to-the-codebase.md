@@ -204,7 +204,7 @@ A quick reference to the commands that you will need when working.
 
 | command                                                        | description                                                                         |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `pnpm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
 | `pnpm run test-client`                                          | Run the client test suite.                                                          |
 | `pnpm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
 | `FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum`       | Test a specific Block.                                                              |

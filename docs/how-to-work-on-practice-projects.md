@@ -71,7 +71,7 @@ A one-off script that will automatically add the next step based on the last ste
 #### How to run script:
 
 1. Change to the directory of the project.
-2. Run the following npm command:
+2. Run the following command:
 
 ```bash
 pnpm run create-next-step
@@ -86,7 +86,7 @@ A one-off script that automatically adds a specified number of steps. The challe
 #### How to run script:
 
 1. Change to the directory of the project.
-2. Run the following npm command:
+2. Run the following command:
 
 ```bash
 pnpm run create-empty-steps X # where X is the number of steps to create.
@@ -101,7 +101,7 @@ A one-off script that automatically adds a new step at a specified position, inc
 #### How to run script:
 
 1. Change to the directory of the project.
-2. Run the following npm command:
+2. Run the following command:
 
 ```bash
 pnpm run insert-step X # where X is the position to insert the new step.
@@ -116,7 +116,7 @@ A one-off script that deletes an existing step, decrementing all subsequent step
 #### How to run script
 
 1. Change to the directory of the project.
-2. Run the following npm command:
+2. Run the following command:
 
 ```bash
 pnpm run delete-step X # where X is the step number to be deleted.
@@ -129,7 +129,7 @@ A one-off script that automatically updates the frontmatter in a project's markd
 #### How to run script
 
 1. Change to the directory of the project.
-2. Run the following npm command:
+2. Run the following command:
 
 ```bash
 pnpm run update-step-titles
