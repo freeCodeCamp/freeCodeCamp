@@ -97,7 +97,8 @@ pnpm run test-ui-components
 We restrict adding new packages to the UI Components to help with the project's maintainability. In the rare chance that you think a dependency is needed, please check with the maintainers first and then use the following command to add a package:
 
 ```bash
-npm i -w=tools/ui-components package_name
+cd tools/ui-components 
+pnpm add package_name
 ```
 
 ### Useful links
