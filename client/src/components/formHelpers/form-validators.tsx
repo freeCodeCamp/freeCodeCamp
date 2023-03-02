@@ -11,14 +11,10 @@ const httpRegex = /http(?!s|([^s]+?localhost))/;
 
 function hasEndpoint(urlString: string): boolean {
   try {
-    const url = new URL(urlString);
-    if (url.pathname && url.pathname !== '/') {
-      return true;
-    }
-  } catch (_e) {
+    return new URL(urlString).pathname !== '/';
+  } catch {
     return false;
   }
-  return false;
 }
 
 export const editorValidator = (value: string): React.ReactElement | null =>
