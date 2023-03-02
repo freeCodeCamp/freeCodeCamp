@@ -16,7 +16,7 @@ import {
   composeValidators,
   fCCValidator,
   httpValidator,
-  endpointValidator
+  pathValidator
 } from './form-validators';
 
 export type FormOptions = {
@@ -64,7 +64,7 @@ function FormFields(props: FormFieldsProps): JSX.Element {
       fCCValidator,
       httpValidator,
       isLocalLinkAllowed ? null : localhostValidator,
-      endpointValidator
+      pathValidator
     )(value);
     const message: string = (error ||
       validationError ||
