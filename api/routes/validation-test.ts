@@ -1,30 +1,13 @@
 import { Type } from '@sinclair/typebox';
 
 import type { FastifyInstanceWithTypeProvider } from '..';
-
-// The schema that TypeBox generates is compatible with ajv, e.g. the
-// Type.Object call below puts the following object into subSchema.
-/*
-{
-  type: 'object',
-  properties: {
-    bat: { type: 'number' },
-    baz: { type: 'string' }
-  },
-  required: ['bat', 'baz']
-}
-  */
-
-const subSchema = Type.Object({
-  bat: Type.Integer(),
-  baz: Type.String()
-});
+import { responseSchema, subSchema } from '../schemas/example';
 
 export const testValidatedRoutes = (
   fastify: FastifyInstanceWithTypeProvider,
   _options: never,
   done: (err?: Error) => void
-) => {
+): void => {
   fastify.get(
     '/route-with-validation',
     {
@@ -53,12 +36,24 @@ export const testValidatedRoutes = (
           foo: Type.Number(),
           bar: Type.String(),
           sub: subSchema
-        })
+        }),
+        response: {
+          200: responseSchema
+        }
       }
     },
     request => {
-      const { foo, bar, sub } = request.body;
-      return { foo, bar, sub };
+      const { foo, bar } = request.body;
+      // The TypeProvider constrains this by requiring value: string and
+      // otherValue: boolean. Anything else is a type error. 'ignored' is
+      // neither type checked nor returned, so it's safe. 'optional' is
+      // self-explanatory.
+      return {
+        value: bar,
+        otherValue: !foo,
+        ignored: 'not in reply',
+        ...(foo == 2 && { optional: 'optional' })
+      };
     }
   );
 
