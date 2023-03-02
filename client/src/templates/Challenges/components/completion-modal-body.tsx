@@ -91,6 +91,7 @@ export class CompletionModalBody extends PureComponent<
         (project: { id: string }) => project.id === currentChallengeId
       );
     });
+
     return (
       <>
         <div className='completion-challenge-details'>
@@ -130,7 +131,7 @@ export class CompletionModalBody extends PureComponent<
               </div>
             </div>
           </div>
-          {isCertificationProject && (
+          {isCertificationProject && totalChallengesInBlock > 0 && (
             <output>
               {t('learn.project-complete', {
                 completedChallengesInBlock,

@@ -1,6 +1,6 @@
 ---
 id: 618a0b2befb143baefab632b
-title: Step 37
+title: Schritt 37
 challengeType: 0
 dashedName: step-37
 ---

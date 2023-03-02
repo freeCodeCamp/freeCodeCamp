@@ -12,7 +12,7 @@ dashedName: visualize-data-with-a-treemap-diagram
 
 完成以下需求，並且通過所有測試。 使用你需要的任何庫或 API。 賦予它你自己的個人風格。
 
-你可以使用 HTML、JavaScript、CSS、以及基於 svg 的 D3 可視化庫來完成這個挑戰。 該任務需要使用 D3 的座標軸屬性生成座標軸，這個屬性會自動生成沿軸的刻度。 這些刻度是通過 D3 測試所必需的，因爲它們的位置是用來確定圖表元素的對齊方式。 你可以在這裏 <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis> 獲取關於生成座標軸的信息。 Required DOM elements are queried on the moment of each test. 如果你使用了前端框架（例如 Vue），那麼對於動態的內容測試結果可能不準確。 我們希望最終能夠兼容這些框架，但 D3 項目目前還不支持它們。
+你可以使用 HTML、JavaScript、CSS、以及基於 svg 的 D3 可視化庫來完成這個挑戰。 該任務需要使用 D3 的座標軸屬性生成座標軸，這個屬性會自動生成沿軸的刻度。 這些刻度是通過 D3 測試所必需的，因爲它們的位置是用來確定圖表元素的對齊方式。 你可以在這裏 <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis> 獲取關於生成座標軸的信息。 要求的 DOM 元素在每次測試時都會被查詢。 如果你使用了前端框架（例如 Vue），那麼對於動態的內容測試結果可能不準確。 我們希望最終能夠兼容這些框架，但 D3 項目目前還不支持它們。
 
 **需求 #1：** 矩陣樹圖包含一個具有 `id="title"` 屬性的標題。
 
