@@ -291,7 +291,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <BlockSaveButton
             aria-disabled={isDisabled}
             bgSize='lg'
-            {...(isDisabled && { tabindex: -1 })}
+            {...(isDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>

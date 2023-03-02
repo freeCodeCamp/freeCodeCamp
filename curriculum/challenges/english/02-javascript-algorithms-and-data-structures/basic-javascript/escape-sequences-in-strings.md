@@ -19,7 +19,11 @@ Quotes are not the only characters that can be <dfn>escaped</dfn> inside a strin
 
 Assign the following three lines of text into the single variable `myStr` using escape sequences.
 
-<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
+<pre>
+FirstLine
+    \SecondLine
+ThirdLine
+</pre>
 
 You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.
 

@@ -224,7 +224,6 @@
     "total-points_plural": "{{count}} pontos no total",
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
-    "screen-shot": "Uma captura de tela de {{title}}",
     "page-number": "{{pageNumber}} de {{totalPages}}"
   },
   "footer": {

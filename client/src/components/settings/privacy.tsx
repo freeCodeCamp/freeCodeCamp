@@ -153,7 +153,7 @@ function PrivacySettings({
             data-cy='save-privacy-settings'
             block={true}
             aria-disabled={!madeChanges}
-            {...(!madeChanges && { tabindex: -1 })}
+            {...(!madeChanges && { tabIndex: -1 })}
           >
             {t('buttons.save')}{' '}
             <span className='sr-only'>{t('settings.headings.privacy')}</span>

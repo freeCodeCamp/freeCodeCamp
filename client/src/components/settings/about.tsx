@@ -262,7 +262,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             <BlockSaveButton
               aria-disabled={this.isFormPristine()}
               bgSize='lg'
-              {...(this.isFormPristine() && { tabindex: -1 })}
+              {...(this.isFormPristine() && { tabIndex: -1 })}
             >
               {t('buttons.save')}{' '}
               <span className='sr-only'>

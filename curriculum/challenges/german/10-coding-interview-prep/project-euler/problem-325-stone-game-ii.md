@@ -1,6 +1,6 @@
 ---
 id: 5900f4b11000cf542c50ffc4
-title: 'Problem 325: Stone Game II'
+title: 'Problem 325: Steinspiel II'
 challengeType: 1
 forumTopicId: 301982
 dashedName: problem-325-stone-game-ii
@@ -8,23 +8,23 @@ dashedName: problem-325-stone-game-ii
 
 # --description--
 
-A game is played with two piles of stones and two players. On each player's turn, the player may remove a number of stones from the larger pile. The number of stones removes must be a positive multiple of the number of stones in the smaller pile.
+Ein Spiel wird mit zwei Steinhaufen und zwei Spielern gespielt. Wenn ein Spieler an der Reihe ist, darf er eine bestimmte Anzahl von Steinen vom größeren Haufen nehmen. Die Anzahl der entfernten Steine muss ein positives Vielfaches der Anzahl der Steine im kleineren Stapel sein.
 
-E.g., let the ordered pair (6,14) describe a configuration with 6 stones in the smaller pile and 14 stones in the larger pile, then the first player can remove 6 or 12 stones from the larger pile.
+Wenn z.B. das geordnete Paar (6,14) eine Konfiguration mit 6 Steinen im kleineren Haufen und 14 Steinen im größeren Stapel beschreibt, dann kann der erste Spieler 6 oder 12 Steine vom größeren Haufen entfernen.
 
-The player taking all the stones from a pile wins the game.
+Der Spieler, der alle Steine von einem Haufen genommen hat, gewinnt das Spiel.
 
-A winning configuration is one where the first player can force a win. For example, (1,5), (2,6) and (3,12) are winning configurations because the first player can immediately remove all stones in the second pile.
+Eine gewinnende Variante ist eine, bei der der erste Spieler einen Sieg erzwingen kann. Zum Beispiel sind (1,5), (2,6) und (3,12) Gewinnkombinationen, weil der erste Spieler sofort alle Steine des zweiten Haufens entnehmen kann.
 
-A losing configuration is one where the second player can force a win, no matter what the first player does. For example, (2,3) and (3,4) are losing configurations: any legal move leaves a winning configuration for the second player.
+Eine verlierende Kombinationen wäre, wenn der zweite Spieler einen Sieg erzwingen kann, egal was der erste Spieler tut. Zum Beispiel sind (2,3) und (3,4) Verliererkombinationen: Jeder legale Zug führt zu einem Gewinn des zweiten Spielers.
 
-Define $S(N)$ as the sum of ($x_i + y_i$) for all losing configurations ($x_i$, $y_i$), $0 &lt; x_i &lt; y_i ≤ N$. We can verify that $S(10) = 211$ and $S({10}^4) = 230\\,312\\,207\\,313$.
+Definiere $S(N)$ als die Summe von ($x_i + y_i$) für alle Verlustkombinationen ($x_i$, $y_i$), $0 &lt; x_i &lt; y_i ≤ N$. Wir können überprüfen, dass $S(10) = 211$ und $S({10}^4) = 230\\,312\\,207\\,313$.
 
-Find $S({10}^{16})\bmod 7^{10}$.
+Finde $S({10}^{16})\bmod 7^{10}$.
 
 # --hints--
 
-`stoneGameTwo()` should return `54672965`.
+`stoneGameTwo()` sollte `54672965` zurückgeben.
 
 ```js
 assert.strictEqual(stoneGameTwo(), 54672965);

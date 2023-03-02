@@ -23,7 +23,7 @@ let inventory = foods[selectedFood];
 
 # --hints--
 
-`checkInventory` повинен бути функцією.
+`checkInventory` має бути функцією.
 
 ```js
 assert.strictEqual(typeof checkInventory, 'function');

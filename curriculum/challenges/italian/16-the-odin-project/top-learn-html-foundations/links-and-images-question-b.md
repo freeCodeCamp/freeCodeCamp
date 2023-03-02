@@ -1,52 +1,52 @@
 ---
 id: 637f703572c65bc8e73dfe35
-title: Links and Images Question B
+title: Link e Immagini Domanda B
 challengeType: 15
 dashedName: links-and-images-question-b
 ---
 
 # --description--
 
-To get some practice using links and images throughout this lesson you need an HTML project to work with.
+Per prendere la mano con l'utilizzo di link e immagini, in questa lezione avrai bisogno di un progetto HTML su cui lavorare.
 
-- Create a new directory named `odin-links-and-images`.
+- Crea una nuova cartella chiamata `odin-links-and-images`.
 
-- Within that directory, create a new file named `index.html`.
+- All'interno di questa cartella crea un nuovo file chiamato `index.html`.
 
-- Fill in the usual HTML boilerplate.
+- Inserisci il solito boilerplate HTML.
 
-- finally, add the following `h1` to the `body`: `<h1>Homepage</h1>`
+- infine, aggiungi il seguente `h1` al `body`: `<h1>Homepage</h1>`
 
-## Anchor Elements
-To create a link in HTML, you use the anchor element. An anchor element is defined by wrapping the text or another HTML element you want to be a link with an `<a>` tag. Add the following to the `body` of the `index.html` page you created and open it in the browser:
+## Elementi di ancoraggio
+Per creare un link in HTML, si utilizza l'elemento di ancoraggio. Un elemento di ancoraggio viene definito racchiudendo in un tag `<a>` il testo o un altro elemento HTML che si desidera trasformare in un link. Aggiungi quanto segue al `body` della pagina `index.html` che hai creato e aprila nel browser:
 
 ```html
 <a>click me</a>
 ```
 
-You may have noticed that clicking this link doesn’t do anything. This is because an anchor tag on its own won’t know where you want to link to. You have to tell it a destination to go to. You do this by using an HTML attribute. An HTML attribute gives additional information to an HTML element and always goes in the element’s opening tag. An attribute is usually made up of two parts: a name, and a value; however, not all attributes require a value. In your case, you need to add a `href` (hyperlink reference) attribute to the opening anchor tag. The value of the `href` attribute is the destination you want your link to go to. Add the following `href` attribute to the anchor element you created previously and try clicking it again, don’t forget to refresh the browser so the new changes can be applied.
+Potresti aver notato che se fai clic su questo link non accade nulla. Questo perché un tag di ancoraggio da solo non sa a cosa vuoi collegarti. Occorre fornirgli una destinazione verso cui andare. E lo si fa utilizzando un attributo HTML. Un attributo HTML fornisce informazioni aggiuntive a un elemento HTML e va sempre nel tag di apertura dell'elemento. Di solito, un attributo è composto da due parti: un nome e un valore; tuttavia, non tutti gli attributi richiedono un valore. Nel tuo caso, devi aggiungere un attributo `href` (hyperlink reference) al tag di ancoraggio di apertura. Il valore dell'attributo `href` corrisponde alla destinazione del collegamento. Aggiungi il seguente attributo `href` all'elemento di ancoraggio che hai creato in precedenza e riprova a cliccarlo, non dimenticare di aggiornare il browser in modo che le nuove modifiche possano essere applicate.
 
 ```html
 <a href="https://www.theodinproject.com/about">click me</a>
 ```
 
-By default, any text wrapped with an anchor tag without a `href` attribute will look like plain text. If the `href` attribute is present, the browser will give the text a blue color and underline it to signify it is a link. It’s worth noting you can use anchor tags to link to any kind of resource on the internet, not just other HTML documents. You can link to videos, pdf files, images, and so on, but for the most part, you will be linking to other HTML documents.
+Per impostazione predefinita, qualsiasi testo avvolto con un tag di ancoraggio senza un attributo `href` apparirà come del testo semplice. Se l'attributo `href` è presente, il browser darà al testo un colore blu e lo sottolineerà per indicare che è un link. Vale la pena notare che è possibile utilizzare tag di ancoraggio per linkare qualsiasi tipo di risorsa su internet, non solo altri documenti HTML. È possibile linkare video, file pdf, immagini e così via, ma per la maggior parte dei casi avrai a che fare con altri documenti HTML.
 
 # --question--
 ## --text--
 
-What is an attribute?
+Cos'è un attributo?
 ## --answers--
 
-An HTML attribute gives additional information to an HTML element and always goes in the element’s closing tag.
+Un attributo HTML fornisce informazioni aggiuntive a un elemento HTML e va sempre nel tag di chiusura dell'elemento.
 
 ---
 
-An HTML attribute is used to tell the browser what the element contains.
+Un attributo HTML viene utilizzato per dire al browser cosa contiene l'elemento.
 
 ---
 
-An HTML attribute gives additional information to an HTML element and always goes in the element’s opening tag.
+Un attributo HTML fornisce informazioni aggiuntive a un elemento HTML e va sempre nel tag di apertura dell'elemento.
 
 
 ## --video-solution--

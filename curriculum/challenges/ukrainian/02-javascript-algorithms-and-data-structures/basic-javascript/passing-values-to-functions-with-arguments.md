@@ -27,7 +27,7 @@ function testFun(param1, param2) {
 
 # --hints--
 
-`functionWithArgs` повинна бути функцією.
+`functionWithArgs` має бути функцією.
 
 ```js
 assert(typeof functionWithArgs === 'function');
