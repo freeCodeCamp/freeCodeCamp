@@ -37,7 +37,7 @@ jobs:
         run: |
           if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 0 ]
           then
-            echo -e 'Error: found too package-lock files in the repository.\nWe use pnpm workspaces to manage packages so all dependencies should be added via pnpm add'
+            echo -e 'Error: found package-lock files in the repository.\nWe use pnpm workspaces to manage packages so all dependencies should be added via pnpm add'
             exit 1
           fi
 
