@@ -284,7 +284,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       notes: String
       url: String
       assignments: [String]
-      tags: String
+      tags: [String]
     }
     type FileContents {
       fileKey: String

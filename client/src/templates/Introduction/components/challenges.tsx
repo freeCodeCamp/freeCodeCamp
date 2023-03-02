@@ -53,8 +53,7 @@ function Challenges({
   function getAllTopics() {
     challengesWithCompleted.map(challenge => {
       if (challenge.tags != null) {
-        const tagArr = challenge.tags.split(',');
-        tagArr.map(tag => {
+        challenge.tags.map(tag => {
           if (!allTopics.includes(tag)) {
             allTopics.unshift(tag);
             newTopic(allTopics.sort());
@@ -79,7 +78,7 @@ function Challenges({
     updateTags(activeTags);
   }
 
-  function filterByTag(challengeTags: string) {
+  function filterByTag(challengeTags: string[]) {
     if (activeTags.length == 0) {
       return true;
     }
@@ -88,8 +87,7 @@ function Challenges({
       return false;
     }
 
-    const tagArr = challengeTags.split(',');
-    return activeTags.every(tag => tagArr.includes(tag));
+    return activeTags.every(tag => challengeTags.includes(tag));
   }
 
   getAllTopics();

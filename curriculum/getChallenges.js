@@ -328,6 +328,9 @@ Challenges that have been already audited cannot fall back to their English vers
     challenge.translationPending =
       lang !== 'english' && !isAuditedCert(lang, meta.superBlock);
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
+    if (challenge.tags != null) {
+      challenge.tags = challenge.tags.split(',');
+    }
     if (challenge.challengeFiles) {
       // The client expects the challengeFiles to be an array of polyvinyls
       challenge.challengeFiles = challengeFilesToPolys(
