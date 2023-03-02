@@ -27,7 +27,7 @@ const FormControl = ({
     'transition ease-in-out duration-150 focus:border-foreground-tertiary';
   const Component = componentClass || 'input';
   let variantClass;
-  if (Component !== 'textarea') variantClass = 'h-8';
+  if (Component !== 'textarea') variantClass = ' h-8';
 
   //row and componentClass
   const classes = [defaultClasses, variantClass, className].join(' ');
