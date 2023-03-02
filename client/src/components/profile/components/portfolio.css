@@ -57,22 +57,13 @@
 
 .portfolio-container p {
   display: -webkit-box;
-  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   grid-column: 1/ -1;
   grid-row: 3;
 }
 
-#link-icon {
-  margin-left: 1rem;
-}
-
 @media (max-width: 994px) {
-  .portfolio-container p {
-    -webkit-line-clamp: 10;
-  }
-
   .portfolio-screen-shot {
     max-height: 300px;
   }
