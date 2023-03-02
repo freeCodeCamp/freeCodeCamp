@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import type { Portfolio as PortfolioData } from '../../../redux/prop-types';
 import { FullWidthRow } from '../../helpers';
 
@@ -23,7 +25,10 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
           <p>{description}</p>
           <a href={url} rel='nofollow noopener noreferrer' target='_blank'>
             {t('buttons.view')}
-            <span className='sr-only'>{title}</span>
+            <span className='sr-only'>
+              {t('aria.opens-project-new-window', { project: title })}
+            </span>
+            <FontAwesomeIcon id='link-icon' icon={faArrowUpRightFromSquare} />
           </a>
 
           {image && (
