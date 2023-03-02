@@ -26,7 +26,7 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
           <a href={url} rel='nofollow noopener noreferrer' target='_blank'>
             {t('buttons.view')}
             <span className='sr-only'>
-              {t('aria.opens-project-new-window', { project: title })}
+              {title}, {t('aria.opens-new-window')}
             </span>
             <FontAwesomeIcon id='link-icon' icon={faArrowUpRightFromSquare} />
           </a>
