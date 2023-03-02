@@ -110,7 +110,7 @@ setup()
   .catch(err => handleRejection(err));
 
 async function setup() {
-  if (process.env.npm_config_superblock && process.env.npm_config_block) {
+  if (process.env.FCC_SUPERBLOCK && process.env.FCC_BLOCK) {
     throw new Error(`Please do not use both a block and superblock as input.`);
   }
 
@@ -152,9 +152,9 @@ async function setup() {
   ];
 
   // the next few statements will filter challenges based on command variables
-  if (process.env.npm_config_superblock) {
+  if (process.env.FCC_SUPERBLOCK) {
     const filter = stringSimilarity.findBestMatch(
-      process.env.npm_config_superblock,
+      process.env.FCC_SUPERBLOCK,
       targetSuperBlockStrings
     ).bestMatch.target;
 
@@ -168,9 +168,9 @@ async function setup() {
     }
   }
 
-  if (process.env.npm_config_block) {
+  if (process.env.FCC_BLOCK) {
     const filter = stringSimilarity.findBestMatch(
-      process.env.npm_config_block,
+      process.env.FCC_BLOCK,
       targetBlockStrings
     ).bestMatch.target;
 
@@ -241,7 +241,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
-  if (!process.env.npm_config_block) {
+  if (!process.env.FCC_BLOCK) {
     describe('Assert meta order', function () {
       /** This array can be used to skip a superblock - we'll use this
        * when we are working on the new project-based curriculum for

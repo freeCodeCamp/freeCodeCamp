@@ -1,6 +1,6 @@
 describe('Email input field', () => {
   beforeEach(() => {
-    cy.exec('npm run seed');
+    cy.exec('pnpm run seed');
     cy.login();
     cy.visit('/settings');
   });

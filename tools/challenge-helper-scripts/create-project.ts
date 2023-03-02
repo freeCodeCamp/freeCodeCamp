@@ -262,6 +262,6 @@ void prompt([
   )
   .then(() =>
     console.log(
-      'All set.  Now use npm run clean:client in the root and it should be good to go.'
+      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
     )
   );

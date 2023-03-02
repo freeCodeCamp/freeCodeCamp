@@ -8,7 +8,8 @@
     "@fastify/mongodb": "6.2.0",
     "fastify": "4.13.0",
     "fastify-auth0-verify": "^1.0.0",
-    "fastify-plugin": "^4.3.0"
+    "fastify-plugin": "^4.3.0",
+    "nodemon": "2.0.20"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "engines": {
