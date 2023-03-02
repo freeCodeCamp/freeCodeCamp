@@ -457,17 +457,17 @@ Before you [create a pull request](how-to-open-a-pull-request.md) for your chang
 1. To test all challenges run the below command from the root directory
 
 ```
-npm run test:curriculum
+pnpm run test:curriculum
 ```
 
 2. You can also test a block or a superblock of challenges with these commands
 
 ```
-npm run test:curriculum --block='Basic HTML and HTML5'
+FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 ```
 
 ```
-npm run test:curriculum --superblock=responsive-web-design
+FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
 You are also able to test one challenge individually by performing the following steps:
@@ -481,7 +481,7 @@ You are also able to test one challenge individually by performing the following
 2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
 
    ```
-   npm run test -- -g challenge-title-goes-here
+   pnpm run test -- -g challenge-title-goes-here
    ```
 
 Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](how-to-open-a-pull-request.md).

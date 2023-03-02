@@ -9,7 +9,7 @@ dashedName: introducing-else-statements
 
 # --description--
 
-عندما يكون شرط العبارة `if` صحيحًا، يتم تنفيذ كتلة التعليمات البرمجية التي تليها. ماذا عن عندما يكون هذا الشرط خطأ؟ عادة لن يحدث شيء. باستخدام عبارة `else`، يمكن تنفيذ كتلة بديلة من التعليمات البرمجية.
+عندما يكون شرط العبارة `if` صحيحًا، يتم تنفيذ كتلة التعليمات البرمجية التي تليها. ماذا عن عندما يكون هذا الشرط خطأ؟ عادة لن يحدث شيء. ولكن باستخدام عبارة `else`، يمكن تنفيذ مجموعة مختلفة من الكود.
 
 ```js
 if (num > 10) {
@@ -37,25 +37,25 @@ assert(code.match(/if/g).length === 1);
 assert(/else/g.test(code));
 ```
 
-يجب أن تنتج `testElse(4)` مقطع `5 or Smaller`
+يجب أن تنتج `testElse(4)` المقطع النصي `5 or Smaller`
 
 ```js
 assert(testElse(4) === '5 or Smaller');
 ```
 
-يجب أن تنتج `testElse(5)` مقطع `5 or Smaller`
+يجب أن تنتج `testElse(5)` المقطع النصي `5 or Smaller`
 
 ```js
 assert(testElse(5) === '5 or Smaller');
 ```
 
-يجب أن تنتج `testElse(6)` مقطع `Bigger than 5`
+يجب أن تنتج `testElse(6)` المقطع النصي`Bigger than 5`
 
 ```js
 assert(testElse(6) === 'Bigger than 5');
 ```
 
-يجب أن تنتج `testElse(10)` مقطع `Bigger than 5`
+يجب أن تنتج `testElse(10)` المقطع النصي`Bigger than 5`
 
 ```js
 assert(testElse(10) === 'Bigger than 5');

@@ -28,19 +28,15 @@ const someFunc = function(done) {
 
 # --instructions--
 
-次のプロトタイプを持つ `personSchema` というパーソンスキーマを作成してください。
+Create a person schema called `personSchema` with the following shape:
 
-```markup
-- Person Prototype -
---------------------
-name : string [required]
-age :  number
-favoriteFoods : array of strings (*)
-```
+* A required `name` field of type `String`
+* An `age` field of type `Number`
+* A `favouriteFoods` field of type `[String]`
 
 Mongoose の基本的なスキーマタイプを使用してください。 フィールドを追加したい場合は、required や unique といった単純なバリデーターを使用し、デフォルト値を設定してください。 <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">Mongoose の記事</a>を参照してください。
 
-次に、`personSchema` から `Person` というモデルを作成してください。
+Now, create a model from the `personSchema` and assign it to the existing variable `Person`.
 
 # --hints--
 

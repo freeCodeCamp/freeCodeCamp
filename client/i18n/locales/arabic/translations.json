@@ -224,7 +224,6 @@
     "total-points_plural": "مُجمل النقاط {{count}}",
     "points": "{{count}} نقطة في {{date}}",
     "points_plural": "{{count}} نقاط في {{date}}",
-    "screen-shot": "لقطة شاشة لـ{{title}}",
     "page-number": "{{pageNumber}} من {{totalPages}}"
   },
   "footer": {

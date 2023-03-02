@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c4
-title: نمط الإنشاء المبكر للوظائف (Return Early Pattern for Functions)
+title: نمط return المبكر للوظائف
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272
@@ -9,7 +9,7 @@ dashedName: return-early-pattern-for-functions
 
 # --description--
 
-عندما يتم الوصول إلى `return`، يتوقف تنفيذ الوظيفة الحالي ويعود التحكم إلى مكان الاستدعاء.
+عندما يتم الوصول إلى عبارة `return`، يتوقف تنفيذ الوظيفة الحالية ويعود التحكم إلى مكان الاستدعاء.
 
 **مثال**
 
@@ -22,14 +22,14 @@ function myFun() {
 myFun();
 ```
 
-سيتم عرض مقطع `Hello` في وحدة التحكم، وإنشاء مقطع `World`. لن يعرض مقطع `byebye` في وحدة التحكم أبدا، لأن الوظيفة تنتج عند `return`.
+سيتم عرض مقطع `Hello` في وحدة التحكم، وإنشاء مقطع `World`. لن يعرض المقطع `byebye` في وحدة التحكم أبدا، لأن الوظيفة تنتهي عند عبارة `return`.
 
 # --instructions--
 
-عدّل الوظيفة `abTest` بحيث إذا كان `a` أو `b` أقل من `0` ستنتج الوظيفة قيمة `undefined` فوراً.
+عدّل الوظيفة `abTest` بحيث إذا كان `a` أو `b` أقل من `0` ستنتهي الوظيفة مع إنتاج قيمة `undefined` فوراً.
 
 **تلميح**  
-تذكر أن <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow">تكون <code>undefined</code> مصطلح </a> وليست مقطع نصي.
+تذكر أن <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow"> <code>undefined</code> مصطلح </a> وليست مقطع نصي.
 
 # --hints--
 

@@ -1,7 +1,7 @@
-import { Media } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import type { Portfolio as PortfolioData } from '../../../redux/prop-types';
 import { FullWidthRow } from '../../helpers';
 
@@ -20,25 +20,19 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
     <FullWidthRow>
       <h2 className='text-center'>{t('profile.portfolio')}</h2>
       {portfolio.map(({ title, url, image, description, id }) => (
-        <Media key={id}>
-          <Media.Left id='profile-portfolio-image' align='middle'>
-            {image && (
-              <img
-                alt={t('profile.screen-shot', { title: title })}
-                className='portfolio-screen-shot'
-                src={image}
-              />
-            )}
-          </Media.Left>
-          <Media.Body>
-            <Media.Heading className='portfolio-heading'>
-              <a href={url} rel='nofollow noopener noreferrer'>
-                {title}
-              </a>
-            </Media.Heading>
-            <p>{description}</p>
-          </Media.Body>
-        </Media>
+        <div className='portfolio-container' key={id}>
+          <h3>{title}</h3>
+          <a href={url} rel='nofollow noopener noreferrer'>
+            {t('buttons.view')}
+            <span className='sr-only'>{title}</span>
+            <FontAwesomeIcon id='link-icon' icon={faArrowUpRightFromSquare} />
+          </a>
+
+          {image && (
+            <img alt='' className='portfolio-screen-shot' src={image} />
+          )}
+          <p>{description}</p>
+        </div>
       ))}
       <hr />
     </FullWidthRow>

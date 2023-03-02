@@ -35,11 +35,16 @@ jobs:
 
       - name: Check number of lockfiles
         run: |
-          if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 1 ]
+          if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 0 ]
           then
-            echo -e 'Error: found too many lockfiles in the repository.\nWe use npm workspaces to manage packages so all dependencies should be added to the root package-lock.json'
+            echo -e 'Error: found package-lock files in the repository.\nWe use pnpm workspaces to manage packages so all dependencies should be added via pnpm add'
             exit 1
           fi
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
@@ -56,13 +61,13 @@ jobs:
       # currently, built as workspaces.
       - name: Lint Source Files
         run: |
-          echo npm version $(npm -v)
-          npm ci
-          npm run create:config
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
           npm i --prefix=curriculum-server
           npm i --prefix=web
-          npm run build:curriculum
-          npm run lint
+          pnpm run build:curriculum
+          pnpm run lint
 
   test:
     name: Test
@@ -78,6 +83,11 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
@@ -90,13 +100,13 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          echo npm version $(npm -v)
-          npm ci
-          npm run create:config
-          npm run build:curriculum
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Run Tests
-        run: npm test
+        run: pnpm test
 
   test-upcoming:
     name: Test Upcoming Changes
@@ -112,6 +122,11 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
@@ -125,13 +140,13 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          echo npm version $(npm -v)
-          npm ci
-          npm run create:config
-          npm run build:curriculum
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Run Tests
-        run: npm test
+        run: pnpm test
 
   test-localization:
     name: Localize
@@ -148,6 +163,11 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
@@ -163,13 +183,13 @@ jobs:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
-          echo npm version $(npm -v)
-          npm ci
-          npm run create:config
-          npm run build:curriculum
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Run Tests
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
-        run: npm test
+        run: pnpm test

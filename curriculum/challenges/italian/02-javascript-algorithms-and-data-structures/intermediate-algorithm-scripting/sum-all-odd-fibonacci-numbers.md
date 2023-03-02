@@ -10,7 +10,7 @@ dashedName: sum-all-odd-fibonacci-numbers
 
 Dato un numero intero positivo `num`, restituisci la somma di tutti i numeri di Fibonacci dispari che sono minori o uguali a `num`.
 
-The first two numbers in the Fibonacci sequence are 0 and 1. Ogni numero aggiuntivo nella sequenza è la somma dei due numeri precedenti. The first seven numbers of the Fibonacci sequence are 0, 1, 1, 2, 3, 5 and 8.
+I primi due numeri nella sequenza di Fibonacci sono 0 e 1. Ogni numero aggiuntivo nella sequenza è la somma dei due numeri precedenti. I primi sette numeri della sequenza di Fibonacci sono 0, 1, 1, 2, 3, 5 e 8.
 
 Ad esempio, `sumFibs(10)` dovrebbe restituire `10` perché tutti i numeri dispari di Fibonacci minori o uguali a `10` sono 1, 1, 3 e 5.
 

@@ -96,14 +96,14 @@ reRegex.lastIndex = 0;
 assert(reRegex.test('10 10 10'));
 ```
 
-Your regex should not match the string `42\t42\t42`.
+你的正則表達式不應匹配字符串 `42\t42\t42`。
 
 ```js
 reRegex.lastIndex = 0;
 assert(!reRegex.test('42\t42\t42'));
 ```
 
-Your regex should not match the string `42  42  42`.
+你的正則表達式不應匹配字符串 `42  42  42`。
 
 ```js
 reRegex.lastIndex = 0;

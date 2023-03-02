@@ -26,7 +26,7 @@ interface UniversalNavProps {
   searchBarRef?: React.RefObject<HTMLDivElement>;
   showMenu: () => void;
   hideMenu: () => void;
-  showLanguageMenu: (elementToFocus: HTMLButtonElement) => void;
+  showLanguageMenu: (elementToFocus: HTMLButtonElement | null) => void;
   hideLanguageMenu: () => void;
   user?: User;
 }

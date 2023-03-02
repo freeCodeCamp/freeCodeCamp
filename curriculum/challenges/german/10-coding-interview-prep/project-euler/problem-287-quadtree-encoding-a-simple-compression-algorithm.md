@@ -1,6 +1,6 @@
 ---
 id: 5900f48b1000cf542c50ff9e
-title: 'Problem 287: Quadtree encoding (a simple compression algorithm)'
+title: 'Problem 287: Quadtree-Kodierung (ein einfacher Kompressionsalgorithmus)'
 challengeType: 1
 forumTopicId: 301938
 dashedName: problem-287-quadtree-encoding-a-simple-compression-algorithm
@@ -8,32 +8,32 @@ dashedName: problem-287-quadtree-encoding-a-simple-compression-algorithm
 
 # --description--
 
-The quadtree encoding allows us to describe a $2^N×2^N$ black and white image as a sequence of bits (0 and 1). Those sequences are to be read from left to right like this:
+Die Quadtree-Kodierung ermöglicht es uns, ein $2^N×2^N$-Schwarzweißbild als eine Folge von Bits (0 und 1) zu beschreiben. Diese Sequenzen sind von links nach rechts wie folgt zu lesen:
 
-- the first bit deals with the complete $2^N×2^N$ region;
-- "0" denotes a split:
-  - the current $2^n×2^n$ region is divided into 4 sub-regions of dimension $2^{n - 1}×2^{n - 1}$,
-  - the next bits contains the description of the top left, top right, bottom left and bottom right sub-regions - in that order;
-- "10" indicates that the current region contains only black pixels;
-- "11" indicates that the current region contains only white pixels.
+- der erste Teil betrifft die gesamte Region $2^N×2^N$;
+- "0" bedeutet eine Aufteilung:
+  - die aktuelle Region $2^n×2^n$ wird in 4 Unterregionen der Dimension $2^{n - 1}×2^{n - 1}$ unterteilt,
+  - die nächsten Bits enthalten die Beschreibung der Unterregionen oben links, oben rechts, unten links und unten rechts - in dieser Reihenfolge;
+- "10" gibt an, dass die aktuelle Region nur schwarze Pixel enthält;
+- "11" gibt an, dass die aktuelle Region nur weiße Pixel enthält.
 
-Consider the following 4×4 image (colored marks denote places where a split can occur):
+Betrachte das folgende 4×4-Bild (farbige Markierungen kennzeichnen die Stellen, an denen eine Teilung auftreten kann):
 
-<img class="img-responsive center-block" alt="4x4 image with colored marks denoting place where split can occur" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="4x4-Bild mit farbigen Markierungen, die die Stellen kennzeichnen, an denen eine Teilung auftreten kann" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px;" />
 
-This image can be described by several sequences, for example : "<strong><span style="color: red">0</span></strong><strong><span style="color: blue">0</span></strong>10101010<strong><span style="color: green">0</span></strong>1011111011<strong><span style="color: orange">0</span></strong>10101010", of length 30, or "<strong><span style="color: red">0</span></strong>10<strong><span style="color: green">0</span></strong>101111101110", of length 16, which is the minimal sequence for this image.
+Dieses Bild kann durch mehrere Folgen beschrieben werden, zum Beispiel: "<strong><span style="color: red">0</span></strong><strong><span style="color: blue">0</span></strong>10101010<strong><span style="color: green">0</span></strong>1011111011<strong><span style="color: orange">0</span></strong>10101010", der Länge 30, oder "<strong><span style="color: red">0</span></strong>10<strong><span style="color: green">0</span></strong>101111101110", der Länge 16, welches die minimale Folge für dieses Bild ist.
 
-For a positive integer $N$, define $D_N$ as the $2^N×2^N$ image with the following coloring scheme:
+Für einen positven Integer $N$ definiere $D_N$ als das $2^N×2^N$-Bild mit dem folgenden Färbungsschema:
 
-- the pixel with coordinates $x = 0$, $y = 0$ corresponds to the bottom left pixel,
-- if ${(x - 2^{N - 1})}^2 + {(y - 2^{N - 1})}^2 ≤ 2^{2N - 2}$ then the pixel is black,
-- otherwise the pixel is white.
+- pixel mit den Koordinaten $x = 0$, $y = 0$ entspricht dem unteren linken Pixel,
+- wenn ${(x - 2^{N - 1})}^2 + {(y - 2^{N - 1})}^2 ≤ 2^{2N - 2}$, dann ist das Pixel schwarz,
+- andernfalls ist das Pixel weiß.
 
-What is the length of the minimal sequence describing $D_{24}$?
+Was ist die Länge der minimalen Sequentz, die $D_{24} $ beschreibt?
 
 # --hints--
 
-`quadtreeEncoding()` should return `313135496`.
+`quadtreeEncoding()` sollte `313135496` zurückgeben.
 
 ```js
 assert.strictEqual(quadtreeEncoding(), 313135496);
