@@ -335,6 +335,10 @@
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprenda programação funcional criando uma planilha",
         "intro": ["", ""]
+      },
+      "learn-advanced-array-methods-by-building-a-statistics-calculator": {
+        "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
+        "intro": ["", ""]
       }
     }
   },
