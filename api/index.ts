@@ -29,6 +29,14 @@ const start = async () => {
   });
   await fastify.register(fastifySession, {
     secret: process.env.SESSION_SECRET ?? 'a_session_secret',
+    cookieName: 'jwt_access_token',
+    cookiePrefix: 's:',
+    rolling: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60,
+      secure: false
+    },
     store: MongoStore.create({
       mongoUrl: process.env.MONGOHQ_URL
     })

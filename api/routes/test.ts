@@ -3,6 +3,14 @@ import { FastifyPluginCallback } from 'fastify';
 export const testRoutes: FastifyPluginCallback = (fastify, _options, done) => {
   const collection = fastify.mongo.db?.collection('user');
 
+  fastify.addHook('onRequest', (req, res, done) => {
+    if (req.session.user === undefined) {
+      res.statusCode = 401;
+      void res.send({ msg: 'Unauthorized' });
+    }
+    done();
+  });
+
   fastify.get('/test', async (_request, _reply) => {
     if (!collection) {
       return { error: 'No collection' };
@@ -34,7 +42,7 @@ export const testRoutes: FastifyPluginCallback = (fastify, _options, done) => {
         sendQuincyEmail: !!quincyEmails
       };
 
-      console.log(req.session.user.id);
+      // console.log(req.session.user);
 
       return collection
         ?.updateOne({ email: 'bar@bar.com' }, { $set: update })
