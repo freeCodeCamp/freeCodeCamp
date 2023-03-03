@@ -36,6 +36,7 @@ export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
     const user = await collection?.findOne({ email });
     console.log(user!._id.toString());
     req.session.user = { id: user!._id.toString() };
+    await req.session.save();
 
     return {};
   });
