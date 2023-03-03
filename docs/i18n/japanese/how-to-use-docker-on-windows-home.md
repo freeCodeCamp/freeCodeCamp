@@ -12,4 +12,4 @@ Docker が正常に動作していることを確認したら、freeCodeCamp リ
 bash: change_volumes_owner.sh: No such file or directory
 ```
 
-`npm run docker:init` が原因である可能性があります。
+when you `pnpm run docker:init` this is likely the culprit.
