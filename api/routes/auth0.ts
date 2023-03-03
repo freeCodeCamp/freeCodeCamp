@@ -1,5 +1,4 @@
 import { FastifyPluginCallback } from 'fastify';
-import { UserObject } from '../plugins/fastify-jwt-authz';
 
 declare module 'fastify' {
   interface Session {
@@ -17,12 +16,12 @@ export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   const collection = fastify.mongo.db?.collection('user');
 
   fastify.get('/callback', async (req, _res) => {
-    const authUser = req.user as UserObject;
     const auth0Res = await fetch(
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       `https://${process.env.AUTH0_DOMAIN!}/userinfo`,
       {
         headers: {
-          Authorization: req.headers.authorization!
+          Authorization: req.headers.authorization ?? ''
         }
       }
     );
@@ -34,8 +33,12 @@ export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
 
     const { email } = (await auth0Res.json()) as { email: string };
     const user = await collection?.findOne({ email });
-    console.log(user!._id.toString());
-    req.session.user = { id: user!._id.toString() };
+    if (user) {
+      req.session.user = { id: user._id.toString() };
+    } else {
+      const DBRes = await collection?.insertOne({ email });
+      req.session.user = { id: DBRes?.insertedId.toString() ?? '' };
+    }
     await req.session.save();
 
     return {};

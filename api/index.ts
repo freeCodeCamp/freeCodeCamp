@@ -34,7 +34,7 @@ const start = async () => {
     rolling: false,
     saveUninitialized: false,
     cookie: {
-      maxAge: 1000 * 60,
+      maxAge: 1000 * 60 * 5, // 5 minutes
       secure: false
     },
     store: MongoStore.create({

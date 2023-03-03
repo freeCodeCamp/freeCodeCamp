@@ -1,3 +1,4 @@
+import { ObjectId } from '@fastify/mongodb';
 import { FastifyPluginCallback } from 'fastify';
 
 export const testRoutes: FastifyPluginCallback = (fastify, _options, done) => {
@@ -11,11 +12,12 @@ export const testRoutes: FastifyPluginCallback = (fastify, _options, done) => {
     done();
   });
 
-  fastify.get('/test', async (_request, _reply) => {
+  fastify.get('/test', async (request, _reply) => {
     if (!collection) {
       return { error: 'No collection' };
     }
-    const user = await collection?.findOne({ email: 'bar@bar.com' });
+    const userId = new ObjectId(request.session.user.id);
+    const user = await collection?.findOne({ _id: userId });
     return { user };
   });
 
@@ -42,10 +44,10 @@ export const testRoutes: FastifyPluginCallback = (fastify, _options, done) => {
         sendQuincyEmail: !!quincyEmails
       };
 
-      // console.log(req.session.user);
+      const userId = new ObjectId(req.session.user.id);
 
       return collection
-        ?.updateOne({ email: 'bar@bar.com' }, { $set: update })
+        ?.updateOne({ _id: userId }, { $set: update })
         .then(() => {
           void res.code(200).send({ msg: 'Successfully updated' });
         })
