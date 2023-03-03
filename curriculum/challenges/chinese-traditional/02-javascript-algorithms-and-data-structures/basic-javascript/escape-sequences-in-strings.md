@@ -19,7 +19,11 @@ dashedName: escape-sequences-in-strings
 
 使用轉義字符把下面三行文本賦值給一個變量 `myStr`。
 
-<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
+<pre>
+FirstLine
+    \SecondLine
+ThirdLine
+</pre>
 
 你需要使用轉義字符正確地插入特殊字符。 你也需要確保間距與上面文本一致，並且單詞或轉義字符之間沒有空格。
 

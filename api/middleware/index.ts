@@ -7,7 +7,7 @@ export function testMiddleware(
   req: MiddieRequest,
   res: MiddieResponse,
   next: NextFunction
-) {
+): void {
   console.log('Test middleware running');
   console.log(req.headers);
   console.log(req.query);

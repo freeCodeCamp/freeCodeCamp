@@ -22,6 +22,7 @@ module.exports = {
   },
   pathPrefix: pathPrefix,
   plugins: [
+    'gatsby-plugin-pnpm',
     {
       resolve: '@sentry/gatsby',
       options: {

@@ -25,7 +25,7 @@ console.log(duck.numLegs);
 console.log(canary.numLegs);
 ```
 
-بما أن جميع ال instances تحتوي تلقائياً على الخصائص في الـ `prototype`، فكر في `prototype` كـ "وصفة" لإنشاء الـ objects. لاحظ أن الـ `prototype` لـ `duck` و `canary` هو جزء من constructor الـ`Bird` كـ `Bird.prototype`. كل object تقريبا في جافا سكريبت لديه خاصية `prototype` التي هي جزء من الـ constructor function التي أنشأتها.
+بما أن جميع ال instances تحتوي تلقائياً على الخصائص في الـ `prototype`، فكر في `prototype` كـ "وصفة" لإنشاء الـ objects. لاحظ أن الـ `prototype` لـ `duck` و `canary` هو جزء من constructor الـ`Bird` كـ `Bird.prototype`.
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 import { randomBytes, createHash } from 'crypto';
 
-export function base64URLEncode(buf: Buffer) {
+export function base64URLEncode(buf: Buffer): string {
   return buf
     .toString('base64')
     .replace(/\+/g, '-')

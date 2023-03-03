@@ -37,6 +37,11 @@ jobs:
           repository: freeCodeCamp/client-config
           path: client-config
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
@@ -52,10 +57,10 @@ jobs:
 
       - name: Install and Build
         run: |
-          npm ci
-          npm run build
+          pnpm install
+          pnpm run build
       - name: Seed Database
-        run: npm run seed
+        run: pnpm run seed
       - name: Move serve.json to Public Folder
         run: cp client-config/serve.json client/public/serve.json
 
@@ -63,7 +68,7 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
-          start: npm run start-ci
+          start: pnpm run start-ci
           wait-on: http://localhost:8000
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
