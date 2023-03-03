@@ -1,4 +1,4 @@
-import { FastifyPluginCallback, FastifyRequest } from 'fastify';
+import { FastifyPluginCallback } from 'fastify';
 
 export const testRoutes: FastifyPluginCallback = (fastify, _options, done) => {
   const collection = fastify.mongo.db?.collection('user');
@@ -11,20 +11,12 @@ export const testRoutes: FastifyPluginCallback = (fastify, _options, done) => {
     return { user };
   });
 
-  fastify.put(
+  fastify.put<{ Body: { quincyEmails: boolean } }>(
     '/update-privacy-terms',
     {
-      preHandler: [
-        function (
-          req: FastifyRequest<{ Body: { quincyEmails: boolean } }>,
-          _res,
-          done
-        ) {
-          void req.jwtAuthz(['write:user'], done);
-        }
-      ],
       schema: {
         body: {
+          type: 'object',
           required: ['quincyEmails'],
           properties: {
             quincyEmails: { type: 'boolean' }
@@ -41,6 +33,8 @@ export const testRoutes: FastifyPluginCallback = (fastify, _options, done) => {
         acceptedPrivacyTerms: true,
         sendQuincyEmail: !!quincyEmails
       };
+
+      console.log(req.session.user.id);
 
       return collection
         ?.updateOne({ email: 'bar@bar.com' }, { $set: update })

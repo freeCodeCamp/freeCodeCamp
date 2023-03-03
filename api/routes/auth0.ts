@@ -1,6 +1,14 @@
 import { FastifyPluginCallback } from 'fastify';
 import { UserObject } from '../plugins/fastify-jwt-authz';
 
+declare module 'fastify' {
+  interface Session {
+    user: {
+      id: string;
+    };
+  }
+}
+
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   void fastify.addHook(
     'onRequest',
@@ -26,8 +34,10 @@ export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
 
     const { email } = (await auth0Res.json()) as { email: string };
     const user = await collection?.findOne({ email });
+    console.log(user!._id.toString());
+    req.session.user = { id: user!._id.toString() };
 
-    return { user };
+    return {};
   });
   done();
 };
