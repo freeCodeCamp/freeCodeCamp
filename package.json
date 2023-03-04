@@ -112,7 +112,7 @@
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "27.5.2",
     "@types/lodash": "4.14.191",
-    "@types/node": "18.14.2",
+    "@types/node": "18.14.6",
     "@types/store": "2.0.2",
     "babel-eslint": "10.1.0",
     "babel-plugin-transform-imports": "2.0.0",
