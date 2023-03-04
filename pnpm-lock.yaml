@@ -116,14 +116,14 @@ importers:
       fastify: 4.13.0
       fastify-auth0-verify: ^1.0.0
       fastify-plugin: ^4.3.0
-      nodemon: 2.0.20
+      nodemon: 2.0.21
     dependencies:
       '@fastify/middie': 8.1.0
       '@fastify/mongodb': 6.2.0
       fastify: 4.13.0
       fastify-auth0-verify: 1.0.0
       fastify-plugin: 4.5.0
-      nodemon: 2.0.20
+      nodemon: 2.0.21
 
   api-server:
     specifiers:
@@ -21926,8 +21926,8 @@ packages:
       update-notifier: 5.1.0
     dev: true
 
-  /nodemon/2.0.20:
-    resolution: {integrity: sha512-Km2mWHKKY5GzRg6i1j5OxOHQtuvVsgskLfigG25yTtbyfRGn/GNvIbRyOf1PSCKJ2aT/58TiuUsuOU5UToVViw==}
+  /nodemon/2.0.21:
+    resolution: {integrity: sha512-djN/n2549DUtY33S7o1djRCd7dEm0kBnj9c7S9XVXqRUbuggN1MZH/Nqa+5RFQr63Fbefq37nFXAE9VU86yL1A==}
     engines: {node: '>=8.10.0'}
     hasBin: true
     dependencies:
