@@ -298,7 +298,7 @@ importers:
       '@types/react-instantsearch-dom': 6.12.3
       '@types/react-redux': 7.1.25
       '@types/react-responsive': 8.0.5
-      '@types/react-scrollable-anchor': 0.6.0
+      '@types/react-scrollable-anchor': 0.6.1
       '@types/react-spinkit': 3.0.7
       '@types/react-test-renderer': 16.9.5
       '@types/react-transition-group': 4.4.5
@@ -524,7 +524,7 @@ importers:
       '@types/react-instantsearch-dom': 6.12.3
       '@types/react-redux': 7.1.25
       '@types/react-responsive': 8.0.5
-      '@types/react-scrollable-anchor': 0.6.0
+      '@types/react-scrollable-anchor': 0.6.1
       '@types/react-spinkit': 3.0.7
       '@types/react-test-renderer': 16.9.5
       '@types/react-transition-group': 4.4.5
@@ -8137,8 +8137,8 @@ packages:
       '@types/react': 16.14.35
     dev: true
 
-  /@types/react-scrollable-anchor/0.6.0:
-    resolution: {integrity: sha512-oVHslt+VBrlgdR3cv2aOnhQk75afLA2lqzCRSC21FzEd6s6q33WUnO+dJUxDsWpgb9e8S63F0vyfgA19huIkYQ==}
+  /@types/react-scrollable-anchor/0.6.1:
+    resolution: {integrity: sha512-ExstDPDHD0oC8WxHErnZhtdaCmGncBxRu24yRk8BNym7tCoR9BEpDACVp2SWPMttIAfUTv1/5yk3hsIL5R5VCQ==}
     dependencies:
       '@types/react': 16.14.35
     dev: true
@@ -9629,7 +9629,7 @@ packages:
   /axios/0.21.4_debug@3.2.7:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2_debug@3.2.7
     transitivePeerDependencies:
       - debug
 
@@ -9643,7 +9643,7 @@ packages:
   /axios/0.22.0_debug@2.2.0:
     resolution: {integrity: sha512-Z0U3uhqQeg1oNcihswf4ZD57O3NrR1+ZXhxaROaWpDmsDTx7T2HNBV2ulBtie2hwJptu8UvgnJoK+BIqdzh/1w==}
     dependencies:
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2_debug@2.2.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -9651,7 +9651,7 @@ packages:
   /axios/0.23.0_debug@2.2.0:
     resolution: {integrity: sha512-NmvAE4i0YAv5cKq8zlDoPd1VLKAqX5oLuZKs8xkJa4qi6RGn0uhCYFjWtHHC9EM/MwOwYWOs53W+V0aqEXq1sg==}
     dependencies:
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2_debug@2.2.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -11331,7 +11331,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -15548,6 +15548,29 @@ packages:
         optional: true
     dev: false
 
+  /follow-redirects/1.15.2_debug@2.2.0:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 2.2.0
+    dev: false
+
+  /follow-redirects/1.15.2_debug@3.2.7:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 3.2.7
+
   /follow-redirects/1.15.2_debug@4.3.4:
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
     engines: {node: '>=4.0'}
@@ -17570,7 +17593,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2_debug@3.2.7
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -23958,6 +23981,17 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
+    dev: true
+
+  /promise-inflight/1.0.1_bluebird@3.7.2:
+    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
+    peerDependencies:
+      bluebird: '*'
+    peerDependenciesMeta:
+      bluebird:
+        optional: true
+    dependencies:
+      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.6:
