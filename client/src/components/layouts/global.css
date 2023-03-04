@@ -187,6 +187,10 @@ button.close:focus {
   background-color: transparent;
 }
 
+:focus {
+  outline: var(--focus-outline-color) solid 2px;
+}
+
 .modal-content {
   background-color: var(--secondary-background);
   border-radius: 0;
