@@ -261,8 +261,8 @@ importers:
       '@babel/runtime': ^7.20.13
       '@babel/standalone': 7.20.15
       '@babel/types': 7.20.7
-      '@codesee/babel-plugin-instrument': 0.523.0
-      '@codesee/tracker': 0.523.0
+      '@codesee/babel-plugin-instrument': 0.525.0
+      '@codesee/tracker': 0.525.0
       '@fortawesome/fontawesome-svg-core': 6.3.0
       '@fortawesome/free-brands-svg-icons': 6.3.0
       '@fortawesome/free-solid-svg-icons': 6.3.0
@@ -504,8 +504,8 @@ importers:
       validator: 13.9.0
     devDependencies:
       '@babel/types': 7.20.7
-      '@codesee/babel-plugin-instrument': 0.523.0_@babel+core@7.20.12
-      '@codesee/tracker': 0.523.0
+      '@codesee/babel-plugin-instrument': 0.525.0_@babel+core@7.20.12
+      '@codesee/tracker': 0.525.0
       '@testing-library/react': 12.1.5_wcqkhtmu7mswc6yz4uyexck3ty
       '@types/chai': 4.3.4
       '@types/enzyme': 3.10.12
@@ -2613,7 +2613,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.20.2
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.20.7_@babel+core@7.12.9
     dev: true
@@ -4335,8 +4335,8 @@ packages:
       minimist: 1.2.8
     dev: true
 
-  /@codesee/babel-plugin-instrument/0.523.0_@babel+core@7.20.12:
-    resolution: {integrity: sha512-1KHQX318dwwhHBheN1G9ULKm0HceSZRo1wdDLHd2cVPsAt/dZ2ZFMmSbtVDA5KNBRWXFPrXgz8+8dic2OjnRNQ==}
+  /@codesee/babel-plugin-instrument/0.525.0_@babel+core@7.20.12:
+    resolution: {integrity: sha512-/cmObLEQRgexpQ1Eq91rns+Qi9TlPXJ6D4sSvsCaeDF49jF0raL7Yd2TzyCzkzYFLMGzXUHmeWIfcRzEqpy0dQ==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -4351,8 +4351,8 @@ packages:
       - supports-color
     dev: true
 
-  /@codesee/tracker/0.523.0:
-    resolution: {integrity: sha512-qTxQf7J9W4j90XwSqUB514xFNtCmq44/drjrJ4B8Vx63Jl2H+gc3sR+9EFt+L19So7SYH53vQLguqTZ0QjXo0Q==}
+  /@codesee/tracker/0.525.0:
+    resolution: {integrity: sha512-FNxEjTLKNbL3Bd//MapAji5IB8J0eK0u9v55q5ikhaZqzZ70muEJTF8PPvjBXcqEoWbdVAHxUa7DmGUv/AaGbA==}
     dev: true
 
   /@colors/colors/1.5.0:
