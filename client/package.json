@@ -152,7 +152,7 @@
     "@types/prismjs": "^1.26.0",
     "@types/reach__router": "1.3.11",
     "@types/react": "16.14.35",
-    "@types/react-dom": "16.9.17",
+    "@types/react-dom": "16.9.18",
     "@types/react-gtm-module": "2.0.1",
     "@types/react-helmet": "6.1.6",
     "@types/react-instantsearch-core": "6.26.3",

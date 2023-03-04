@@ -291,7 +291,7 @@ importers:
       '@types/prismjs': ^1.26.0
       '@types/reach__router': 1.3.11
       '@types/react': 16.14.35
-      '@types/react-dom': 16.9.17
+      '@types/react-dom': 16.9.18
       '@types/react-gtm-module': 2.0.1
       '@types/react-helmet': 6.1.6
       '@types/react-instantsearch-core': 6.26.3
@@ -517,7 +517,7 @@ importers:
       '@types/prismjs': 1.26.0
       '@types/reach__router': 1.3.11
       '@types/react': 16.14.35
-      '@types/react-dom': 16.9.17
+      '@types/react-dom': 16.9.18
       '@types/react-gtm-module': 2.0.1
       '@types/react-helmet': 6.1.6
       '@types/react-instantsearch-core': 6.26.3
@@ -642,7 +642,7 @@ importers:
       '@testing-library/react': 12.1.5
       '@testing-library/user-event': 13.5.0
       '@types/codemirror': 5.60.7
-      '@types/react': 16.14.0
+      '@types/react': 16.14.35
       '@types/react-dom': ^16.9.17
       codemirror: '5'
       cross-env: 7.0.3
@@ -667,7 +667,7 @@ importers:
       typescript: 4.9.5
     devDependencies:
       '@types/codemirror': 5.60.7
-      '@types/react': 16.14.0
+      '@types/react': 16.14.35
       '@types/react-dom': 16.9.17
       cross-env: 7.0.3
       eslint-plugin-react-hooks: 4.6.0_eslint@8.35.0
@@ -7650,7 +7650,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.0
       '@testing-library/dom': 8.20.0
-      '@types/react-dom': 16.9.17
+      '@types/react-dom': 16.9.18
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
 
@@ -8096,6 +8096,12 @@ packages:
     resolution: {integrity: sha512-qSRyxEsrm5btPXnowDOs5jSkgT8ldAA0j6Qp+otHUh+xHzy3sXmgNfyhucZjAjkgpdAUw9rJe0QRtX/l+yaS4g==}
     dependencies:
       '@types/react': 16.14.35
+    dev: true
+
+  /@types/react-dom/16.9.18:
+    resolution: {integrity: sha512-lmNARUX3+rNF/nmoAFqasG0jAA7q6MeGZK/fdeLwY3kAA4NPgHHrG5bNQe2B5xmD4B+x6Z6h0rEJQ7MEEgQxsw==}
+    dependencies:
+      '@types/react': 16.14.35
 
   /@types/react-gtm-module/2.0.1:
     resolution: {integrity: sha512-T/DN9gAbCYk5wJ1nxf4pSwmXz4d1iVjM++OoG+mwMfz9STMAotGjSb65gJHOS5bPvl6vLSsJnuC+y/43OQrltg==}
@@ -8159,13 +8165,6 @@ packages:
     resolution: {integrity: sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==}
     dependencies:
       '@types/react': 16.14.35
-    dev: true
-
-  /@types/react/16.14.0:
-    resolution: {integrity: sha512-jJjHo1uOe+NENRIBvF46tJimUvPnmbQ41Ax0pEm7pRvhPg+wuj8VMOHHiMvaGmZRzRrCtm7KnL5OOE/6kHPK8w==}
-    dependencies:
-      '@types/prop-types': 15.7.5
-      csstype: 3.1.1
     dev: true
 
   /@types/react/16.14.35:
@@ -9629,7 +9628,7 @@ packages:
   /axios/0.21.4_debug@3.2.7:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2_debug@3.2.7
     transitivePeerDependencies:
       - debug
 
@@ -9643,7 +9642,7 @@ packages:
   /axios/0.22.0_debug@2.2.0:
     resolution: {integrity: sha512-Z0U3uhqQeg1oNcihswf4ZD57O3NrR1+ZXhxaROaWpDmsDTx7T2HNBV2ulBtie2hwJptu8UvgnJoK+BIqdzh/1w==}
     dependencies:
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2_debug@2.2.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -9651,7 +9650,7 @@ packages:
   /axios/0.23.0_debug@2.2.0:
     resolution: {integrity: sha512-NmvAE4i0YAv5cKq8zlDoPd1VLKAqX5oLuZKs8xkJa4qi6RGn0uhCYFjWtHHC9EM/MwOwYWOs53W+V0aqEXq1sg==}
     dependencies:
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2_debug@2.2.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -11331,7 +11330,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -15548,6 +15547,29 @@ packages:
         optional: true
     dev: false
 
+  /follow-redirects/1.15.2_debug@2.2.0:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 2.2.0
+    dev: false
+
+  /follow-redirects/1.15.2_debug@3.2.7:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 3.2.7
+
   /follow-redirects/1.15.2_debug@4.3.4:
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
     engines: {node: '>=4.0'}
@@ -17570,7 +17592,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2_debug@3.2.7
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -23958,6 +23980,17 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
+    dev: true
+
+  /promise-inflight/1.0.1_bluebird@3.7.2:
+    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
+    peerDependencies:
+      bluebird: '*'
+    peerDependenciesMeta:
+      bluebird:
+        optional: true
+    dependencies:
+      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.6:
