@@ -9,8 +9,8 @@ const story = {
     controls: {
       include: [
         'children',
-        'variant',
-        'size',
+        'bsStyle',
+        'bsSize',
         'disabled',
         'checked',
         'onChange',
@@ -20,10 +20,10 @@ const story = {
     }
   },
   argTypes: {
-    variant: {
-      options: ['primary', 'danger']
+    bsStyle: {
+      options: ['primary']
     },
-    size: {
+    bsSize: {
       options: ['small', 'medium', 'large']
     },
     disabled: {
@@ -60,12 +60,6 @@ Checked.args = {
   checked: true,
   children: 'On',
   value: 'Value'
-};
-
-export const Danger = Template.bind({});
-Danger.args = {
-  bsStyle: 'danger',
-  children: 'Off'
 };
 
 export const Large = Template.bind({});

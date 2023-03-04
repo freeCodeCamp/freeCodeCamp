@@ -97,7 +97,6 @@ module.exports = {
   plugins: [
     plugin(({ addVariant }) => {
       addVariant('aria-disabled', '&[aria-disabled="true"]');
-    }),
-    require('@headlessui/tailwindcss')
+    })
   ]
 };
