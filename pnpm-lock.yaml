@@ -113,14 +113,14 @@ importers:
     specifiers:
       '@fastify/middie': '8.1'
       '@fastify/mongodb': 6.2.0
-      fastify: 4.13.0
+      fastify: 4.14.0
       fastify-auth0-verify: ^1.0.0
       fastify-plugin: ^4.3.0
       nodemon: 2.0.21
     dependencies:
       '@fastify/middie': 8.1.0
       '@fastify/mongodb': 6.2.0
-      fastify: 4.13.0
+      fastify: 4.14.0
       fastify-auth0-verify: 1.0.0
       fastify-plugin: 4.5.0
       nodemon: 2.0.21
@@ -15255,8 +15255,8 @@ packages:
     resolution: {integrity: sha512-79ak0JxddO0utAXAQ5ccKhvs6vX2MGyHHMMsmZkBANrq3hXc1CHzvNPHOcvTsVMEPl5I+NT+RO4YKMGehOfSIg==}
     dev: false
 
-  /fastify/4.13.0:
-    resolution: {integrity: sha512-p9ibdFWH3pZ7KPgmfHPKGUy2W4EWU2TEpwlcu58w4CwGyU3ARFfh2kwq6zpZ5W2ZGVbufi4tZbqHIHAlX/9Z/A==}
+  /fastify/4.14.0:
+    resolution: {integrity: sha512-oJSHlM/XbGdJpe2MKMJBsrvrkPDrHDZlAB9qzuUJIpnBtpDE394bzdFsH4KnsUI1e8zxzFl+GNBEXC64N/IPuw==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.2.0
