@@ -1,6 +1,6 @@
 ---
 id: 637633672724a688c04636e5
-title: Introduction To HTML and CSS Question D
+title: Вступ до HTML та CSS. Запитання D
 challengeType: 15
 dashedName: introduction-to-html-and-css-question-d
 ---

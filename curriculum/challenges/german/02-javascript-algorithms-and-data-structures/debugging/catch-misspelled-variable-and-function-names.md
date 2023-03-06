@@ -24,7 +24,7 @@ Korrigiere die beiden Rechtschreibfehler im Code, damit die Berechnung des `netW
 assert(netWorkingCapital === 2);
 ```
 
-There should be no instances of misspelled variables in the code.
+Es sollten keine falsch geschriebenen Variablen im Code vorkommen.
 
 ```js
 assert(!code.match(/recievables/g));
@@ -36,7 +36,7 @@ Die Variable `receivables` sollte im Code richtig deklariert und verwendet werde
 assert(code.match(/receivables/g).length == 2);
 ```
 
-There should be no instances of misspelled variables in the code.
+Es sollten keine falsch geschriebenen Variablen im Code vorkommen.
 
 ```js
 assert(!code.match(/payable;/g));
