@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-Global variables should not be used to cache the array.
+Globale Variablen sollten nicht zum Zwischenspeichern des Arrays verwendet werden.
 
 ```js
 countdown(1)

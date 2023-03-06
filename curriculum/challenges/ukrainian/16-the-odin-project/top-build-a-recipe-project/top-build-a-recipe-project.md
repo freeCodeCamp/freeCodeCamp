@@ -1,40 +1,40 @@
 ---
 id: 6391d1a4f7ac71efd0621380
-title: Build a Recipe Page Project
+title: Побудуйте сторінку з рецептами
 challengeType: 14
 dashedName: top-build-a-recipe-project
 ---
 
 # --description--
 
-The website will consist of a main index page which will have links to a few recipes. The website won’t look very pretty by the time you’ve finished.
+Вебсайт міститиме головну проіндексовану сторінку, яка матиме посилання на декілька рецептів. Коли ви закінчите, вебсайт не виглядатиме дуже красиво.
 
-**User Stories:**
+**Історія користувача:**
 
-1. Your recipe page should contain a `DOCTYPE` tag.
-1. Your recipe page should include an `html` element with a `head` and `body` element as children.
-1. You should have a `title` element within the `head` element with the text `The Odin Recipes`.
-1. You should see an `h1` element that has the text `Creamy Chocolate Fudge`.
-1. You should see an image with the url `*placeholder-fcc-cdn*` with a fitting `alt` text.
-1. There should be an `h2` element with the text `Description` under the image.
-1. You should see a couple of paragraphs under `Description` that describe the recipe.
-1. There should be an `h2` element with the text `Ingredients`
-1. Under the `Ingredients` heading there should be an unordered list with the ingredients needed for the recipe.
-1. Under the list of ingredients add another heading called `Steps`.
-1. You should see an ordered list with a couple of steps needed to complete the recipe.
-1. Under the steps there should be an `h2` element with the text `More Recipes`
-1. You should see a couple of links to other recipes inside an unordered list which has a couple of list items with anchor elements within.
-1. These anchor elements should have `href` attribute with the value set to `#`
+1. Ваша сторінка з рецептами повинна містити тег `DOCTYPE`.
+1. Ваша сторінка з рецептами повинна містити елемент `html` з дочірніми елементами `head` та `body`.
+1. Ви повинні мати елемент `title` в межах елемента `head` з текстом `The Odin Recipes`.
+1. Ви повинні бачити елемент `h1`, який має текст `Creamy Chocolate Fudge`.
+1. Ви повинні бачити зображення з url `*placeholder-fcc-cdn*` з відповідним текстом `alt`.
+1. Під зображенням повинен бути елемент `h2` з текстом `Description`.
+1. Під `Description` повинно бути декілька абзаців, які описують рецепт.
+1. Ви повинні мати елемент `h2` з текстом `Ingredients`.
+1. Під заголовком `Ingredients` повинен бути невпорядкований список інгредієнтів, необхідних для рецепта.
+1. Ви повинні додати ще один заголовок під назвою `Steps` після інгредієнтів.
+1. Ви повинні бачити невпорядкований список з парою кроків, необхідних для приготування.
+1. Під кроками повинен бути елемент `h2` з текстом `More Recipes`.
+1. Ви повинні бачити декілька посилань на інші рецепти всередині невпорядкованого списку, який має кілька елементів списку з елементами посилання.
+1. Ці елементи посилання повинні мати атрибут `href` зі значенням `#`.
 
 # --hints--
 
-You should have a `DOCTYPE` tag.
+Ви повинні мати тег `DOCTYPE`.
 
 ```js
 assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi));
 ```
 
-You should have a `html` element with `head` and `body` element.
+Ви повинні мати елемент `html` з елементами `head` та `body`.
 
 ```js
 const html = document.querySelectorAll('html')[0];
@@ -44,19 +44,19 @@ const body = document.querySelectorAll('html > body')[0];
 assert(html && head && body);
 ```
 
-You should have a `title` element within the `head` element that contains the text `The Odin Recipes`.
+Ви повинні мати елемент `title` з елементом `head`, який містить текст `The Odin Recipes`.
 
 ```js
 assert(document.querySelectorAll('HEAD > TITLE')[0].innerText == 'The Odin Recipes');
 ```
 
-You should have a `h1` element within your `body` element that contains the text `Creamy Chocolate Fudge`.
+Ви повинні мати елемент `h1` в межах елемента `body`, який містить текст `Creamy Chocolate Fudge`.
 
 ```js
 assert(document.querySelectorAll('BODY > H1')[0].innerText == 'Creamy Chocolate Fudge');
 ```
 
-You should have an image with the url `*placeholder-fcc-cdn*` with an `alt` attribute that has a fitting text.
+Ви повинні мати зображення з url `*placeholder-fcc-cdn*` з атрибутом `alt`, який має відповідний текст.
 
 ```js
 const img = document.querySelectorAll('IMG')[0];
@@ -64,7 +64,7 @@ const img = document.querySelectorAll('IMG')[0];
 assert(img && img.alt !='' && img.src === 'https://i.imgur.com/p0J5baJ.jpg')
 ```
 
-You should have an `h2` element with the text `Description`.
+Ви повинні мати елемент `h2` з текстом `Description`.
 
 ```js
 const h2 = document.querySelectorAll('H2')[0];
@@ -72,7 +72,7 @@ const h2 = document.querySelectorAll('H2')[0];
 assert(h2.innerText == 'Description');
 ```
 
-You should have at least two `p` elements describing the recipe.
+Ви повинні мати принаймні два елементи `p` з описом рецепту.
 
 ```js
 const paragraphs = document.querySelectorAll('P');
@@ -80,7 +80,7 @@ const paragraphs = document.querySelectorAll('P');
 assert(paragraphs.length > 1);
 ```
 
-You should have an `h2` element with the text `Ingredients`.
+Ви повинні мати елемент `h2` з текстом `Ingredients`.
 
 ```js
 const h2 = document.querySelectorAll('H2')[1];
@@ -88,7 +88,7 @@ const h2 = document.querySelectorAll('H2')[1];
 assert(h2.innerText == 'Ingredients');
 ```
 
-You should have an unordered list `<ul>` with some ingredients as the list items `<li>`.
+Ви повинні мати невпорядкований список `<ul>` з декількома інгредієнтами у вигляді елементів списку `<li>`.
 
 ```js
 const unorderedList = document.querySelectorAll('UL')[0];
@@ -97,7 +97,7 @@ const listItems = document.querySelectorAll('UL > LI');
 assert(unorderedList && listItems && listItems.length > 1);
 ```
 
-You should have an `h2` element with the text `Steps`.
+Ви повинні мати елемент `h2` з текстом `Steps`.
 
 ```js
 const h2 = document.querySelectorAll('H2')[2];
@@ -105,7 +105,7 @@ const h2 = document.querySelectorAll('H2')[2];
 assert(h2.innerText == 'Steps');
 ```
 
-You should have a `<ol>` with the the steps as the list items `<li>`.
+Ви повинні мати `<ol>` з кроками приготування у вигляді елементів списку `<li>`.
 
 ```js
 const orderedList = document.querySelectorAll('OL')[0];
@@ -114,7 +114,7 @@ const listItems = document.querySelectorAll('OL > LI');
 assert(orderedList && listItems && listItems.length > 1);
 ```
 
-You should have an `h2` element with the text `More Recipes`.
+Ви повинні мати елемент `h2` з текстом `More Recipes`.
 
 ```js
 const h2 = document.querySelectorAll('H2')[3];
@@ -122,7 +122,7 @@ const h2 = document.querySelectorAll('H2')[3];
 assert(h2.innerText == 'More Recipes');
 ```
 
-You should have an unordered list `<ul>` element with list items `<li>` that contain `<a>` tags which lead to other recipes.
+Ви повинні мати елемент невпорядкованого списку `<ul>` з елементами списку `<li>`, які містять теги `<a>`, що ведуть до інших рецептів.
 
 ```js
 const unorderedList = document.querySelectorAll('UL')[1];
@@ -137,7 +137,7 @@ const containsAnchors =  [...listItems].every(function(listItem) {
 assert(unorderedList && allAreListItems && containsAnchors && listItems.length > 1);
 ```
 
-Your anchor tags linking to the recipes should have a `href` attribute with the value set to `#`
+Теги посилання, що ведуть до рецептів, повинні мати атрибут `href` зі значенням `#`.
 
 ```js
 const anchorTags = document.querySelectorAll("a");

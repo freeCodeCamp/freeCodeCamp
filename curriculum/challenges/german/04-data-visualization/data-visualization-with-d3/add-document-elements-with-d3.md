@@ -16,11 +16,11 @@ Die `select()`-Methode wählt ein Element aus dem Dokument aus. Sie nimmt ein Ar
 const anchor = d3.select("a");
 ```
 
-The above example finds the first anchor tag on the page and saves an HTML node for it in the variable `anchor`. Du kannst die Auswahl mit anderen Methoden verwenden. The `d3` part of the example is a reference to the D3 object, which is how you access D3 methods.
+Im obigen Beispiel wird das erste Anker-Tag auf der Seite gefunden und ein HTML-Knoten für dieses in der Variable `anchor` gespeichert. Du kannst die Auswahl mit anderen Methoden verwenden. The `d3` part of the example is a reference to the D3 object, which is how you access D3 methods.
 
-Two other useful methods are `append()` and `text()`.
+Zwei weitere nützliche Methoden sind `append()` und `text()`.
 
-The `append()` method takes an argument for the element you want to add to the document. It appends an HTML node to a selected item, and returns a handle to that node.
+Die `append()`-Methode akzeptiert das Element, welches du dem Dokument hinzufügen möchtest, als Argument. Es fügt einen HTML-Knoten einem bestimmten Element hinzu und gibt ein Handle zu diesem Knoten zurück.
 
 Die `text()`-Methode legt entweder den Text des ausgewählten Knotens fest oder ruft den aktuellen Text ab. To set the value, you pass a string as an argument inside the parentheses of the method.
 
@@ -32,21 +32,21 @@ d3.select("ul")
   .text("Very important item");
 ```
 
-D3 allows you to chain several methods together with periods to perform a number of actions in a row.
+Mit D3 kannst du mithilfe von Punkten mehrere Methoden „verketten“, um verschiedene Aktionen hintereinander auszuführen.
 
 # --instructions--
 
-Use the `select` method to select the `body` tag in the document. Then `append` an `h1` tag to it, and add the text `Learning D3` into the `h1` element.
+Verwende die `select`-Methode, um das `body`-Tag im Dokument auszuwählen. Then `append` an `h1` tag to it, and add the text `Learning D3` into the `h1` element.
 
 # --hints--
 
-The `body` should have one `h1` element.
+Der `body` sollte über ein `h1`-Element verfügen.
 
 ```js
 assert($('body').children('h1').length == 1);
 ```
 
-The `h1` element should have the text `Learning D3` in it.
+Das `h1`-Element sollte den Text `Learning D3` enthalten.
 
 ```js
 assert($('h1').text() == 'Learning D3');

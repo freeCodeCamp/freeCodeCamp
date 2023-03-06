@@ -1,52 +1,52 @@
 ---
 id: 637f4e0e72c65bc8e73dfe1e
 videoId: LGQuIIv2RVA
-title: Elements and Tags Question A
+title: Елементи та теги. Запитання А
 challengeType: 15
 dashedName: elements-and-tags-question-a
 ---
 
 # --description--
 
-Almost all elements on an HTML page are just pieces of content wrapped in opening and closing HTML tags.
+Майже всі елементи на сторінці HTML насправді є простим вмістом у початкових та кінцевих тегах HTML.
 
-Opening tags tell the browser this is the start of an HTML element. They are comprised of a keyword enclosed in angle brackets `<>`. For example, an opening paragraph tag looks like this: `<p>`.
+Початкові теги повідомляють браузеру про початок елемента HTML. Вони складаються з ключового слова, взятого в кутові дужки `<>`. Наприклад, початковий тег абзацу буде таким: `<p>`.
 
-Closing tags tell the browser where an element ends. They are almost the same as opening tags; the only difference is that they have a forward slash before the keyword. For example, a closing paragraph tag looks like this: `</p>`.
+Кінцеві теги повідомляють браузеру про кінець елемента. Вони майже такі самі, як і початкові теги. Єдина відмінність полягає в тому, що вони мають скісну риску перед ключовим словом. Наприклад, кінцевий тег абзацу буде таким: `</p>`.
 
-A full paragraph element looks like this:
+Повний елемент абзацу виглядає так:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="element diagram" />
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="діаграма елемента" />
 
-You can think of elements as containers for content. The opening and closing tags tell the browser what content the element contains. The browser can then use that information to determine how it should interpret and format the content.
+Елементи можна вважати контейнерами вмісту. Початкові та кінцеві теги повідомляють браузеру вміст, який містить елемент. Браузер використовує цю інформацію, щоб знати, як інтерпретувати та форматувати вміст.
 
-There are some HTML elements that do not have a closing tag. These elements often look like this: `<br />` or `<img/>`, but some can also be used without the closing forward slash such as `<br>` or `<img>`. These are known as self-closing tags or empty elements because they don’t wrap any content. You will encounter a few of these in later lessons, but for the most part, elements will have both opening and closing tags.
+Деякі елементи HTML не мають кінцевих тегів. Ці елементи часто виглядають так: `<br />` або `<img/>`, але деякі також можна використовувати без кінцевої скісної риски, наприклад `<br>` або `<img>`. Вони відомі як самозакриваючі теги або порожні елементи, оскільки вони не обгортають жоден вміст. З деякими ви зустрінетесь у наступних завданнях, але здебільшого ви використовуватимете і початковий, і кінцевий теги.
 
-HTML has a vast list of predefined tags that you can use to create all kinds of different elements. It is important to use the correct tags for content. Using the correct tags can have a big impact on two aspects of your sites: how they are ranked in search engines; and how accessible they are to users who rely on assistive technologies, like screen readers, to use the internet.
+HTML має великий список стандартних тегів, які можна використовувати для створення будь-яких елементів. Важливо використовувати правильні теги для вмісту. Правильні теги впливають на два аспекти: рейтинг сайтів у пошукових системах і їхня доступність для користувачів, які покладаються на допоміжні технології, щоб користуватися інтернетом (наприклад, читачі екрана).
 
-Using the correct elements for content is called semantic HTML. You will explore this in much more depth later on in the curriculum.
+Використання правильних елементів для вмісту називається семантичною версткою, або семантичним HTML. Про це ви дізнаєтесь пізніше.
 
 # --question--
 
 ## --assignment--
 
-Watch Kevin Powell’s [Introduction to HTML video](https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-)
+Перегляньте відео Кевіна Павелла про [вступ до HTML](https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-)
 
 ## --text--
 
-What are HTML tags?
+Що таке теги у HTML?
 
 ## --answers--
 
-HTML tags tell the browser what content an element contains.
+Теги у HTML повідомляють браузеру, який вміст містить елемент.
 
 ---
 
-HTML tags tell the browser when to load its content.
+Теги у HTML повідомляють браузеру, коли завантажувати вміст.
 
 ---
 
-HTML tags tell the browser what content the next element contains.
+Теги у HTML повідомляють браузеру, який вміст містить наступний елемент.
 
 
 ## --video-solution--
