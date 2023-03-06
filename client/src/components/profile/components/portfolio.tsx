@@ -22,16 +22,18 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
       {portfolio.map(({ title, url, image, description, id }) => (
         <div className='portfolio-container' key={id}>
           <h3>{title}</h3>
-          <a href={url} rel='nofollow noopener noreferrer'>
+          <p>{description}</p>
+          <a href={url} rel='nofollow noopener noreferrer' target='_blank'>
             {t('buttons.view')}
-            <span className='sr-only'>{title}</span>
+            <span className='sr-only'>
+              {title}, {t('aria.opens-new-window')}
+            </span>
             <FontAwesomeIcon id='link-icon' icon={faArrowUpRightFromSquare} />
           </a>
 
           {image && (
             <img alt='' className='portfolio-screen-shot' src={image} />
           )}
-          <p>{description}</p>
         </div>
       ))}
       <hr />
