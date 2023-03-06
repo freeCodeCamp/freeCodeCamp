@@ -53,8 +53,7 @@
 
 /* in the old Editor, JavaScript course, we will need to have this value otherwise the console will be out of view */
 .reflex-container > .reflex-element {
-  /* need to set a dynamic height, it work with 85vh, but need to be reduced when zoomed in and need to be 70vh when the width is lower than 700 */
-  height: auto;
+  height: 100vh;
 }
 
 #mobile-layout {
@@ -66,6 +65,7 @@
 
 #mobile-layout .tab-content {
   display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 #mobile-layout .nav-tabs {
@@ -89,8 +89,8 @@
 }
 
 #mobile-layout-pane-editor {
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
 }
 
 #mobile-layout #mobile-layout-pane-instructions {
