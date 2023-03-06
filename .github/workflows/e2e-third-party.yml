@@ -59,10 +59,15 @@ jobs:
         run: |
           pnpm install
           pnpm run build
+
       - name: Seed Database
         run: pnpm run seed
+
       - name: Move serve.json to Public Folder
         run: cp client-config/serve.json client/public/serve.json
+
+      - name: Install pm2
+        run: pnpm add -g pm2
 
       - name: Cypress run
         uses: cypress-io/github-action@v4

@@ -140,6 +140,9 @@ jobs:
           pnpm run build:curriculum
           pnpm run build:server
 
+      - name: Install pm2
+        run: pnpm add -g pm2
+
       - name: Seed Database
         run: pnpm run seed
 
