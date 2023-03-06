@@ -596,7 +596,8 @@
     "editor-url": "Не забудьте відправити Live App URL-адресу.",
     "http-url": "Не можна використовувати ненадійну (http) URL-адресу.",
     "own-work-url": "Не забудьте відправити власну роботу.",
-    "publicly-visible-url": "Не забудьте відправити загальнодоступну URL-адресу додатку."
+    "publicly-visible-url": "Не забудьте відправити загальнодоступну URL-адресу додатку.",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "Виконавчий директор, freeCodeCamp.org",
