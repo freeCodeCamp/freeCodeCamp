@@ -596,7 +596,8 @@
     "editor-url": "Lembre-se de enviar o URL do aplicativo em produção.",
     "http-url": "Não é possível usar um URL (http) inseguro.",
     "own-work-url": "Lembre-se de enviar o seu próprio trabalho.",
-    "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível."
+    "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível.",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "Diretor executivo, freeCodeCamp.org",

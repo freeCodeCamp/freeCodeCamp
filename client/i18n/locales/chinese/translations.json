@@ -596,7 +596,8 @@
     "editor-url": "记得要提交Live App的URL",
     "http-url": "不能使用不安全的（http）URL。",
     "own-work-url": "记住要提交你自己的作业",
-    "publicly-visible-url": "记得要提交一个公开可见的app URL"
+    "publicly-visible-url": "记得要提交一个公开可见的app URL",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "执行董事，freeCodeCamp.org",
