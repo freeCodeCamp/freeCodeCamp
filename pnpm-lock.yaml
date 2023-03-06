@@ -298,7 +298,7 @@ importers:
       '@types/react-instantsearch-dom': 6.12.3
       '@types/react-redux': 7.1.25
       '@types/react-responsive': 8.0.5
-      '@types/react-scrollable-anchor': 0.6.0
+      '@types/react-scrollable-anchor': 0.6.1
       '@types/react-spinkit': 3.0.7
       '@types/react-test-renderer': 16.9.5
       '@types/react-transition-group': 4.4.5
@@ -524,7 +524,7 @@ importers:
       '@types/react-instantsearch-dom': 6.12.3
       '@types/react-redux': 7.1.25
       '@types/react-responsive': 8.0.5
-      '@types/react-scrollable-anchor': 0.6.0
+      '@types/react-scrollable-anchor': 0.6.1
       '@types/react-spinkit': 3.0.7
       '@types/react-test-renderer': 16.9.5
       '@types/react-transition-group': 4.4.5
@@ -8146,8 +8146,8 @@ packages:
       '@types/react': 16.14.35
     dev: true
 
-  /@types/react-scrollable-anchor/0.6.0:
-    resolution: {integrity: sha512-oVHslt+VBrlgdR3cv2aOnhQk75afLA2lqzCRSC21FzEd6s6q33WUnO+dJUxDsWpgb9e8S63F0vyfgA19huIkYQ==}
+  /@types/react-scrollable-anchor/0.6.1:
+    resolution: {integrity: sha512-ExstDPDHD0oC8WxHErnZhtdaCmGncBxRu24yRk8BNym7tCoR9BEpDACVp2SWPMttIAfUTv1/5yk3hsIL5R5VCQ==}
     dependencies:
       '@types/react': 16.14.35
     dev: true
