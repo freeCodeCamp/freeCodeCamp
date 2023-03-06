@@ -450,12 +450,16 @@ sudo apt install build-essential
 
 Provisioning VMs with the Code
 
-1. Install Node LTS.
-
-2. Install `pnpm` globally.
+1. Install `pnpm` globally.
 
    ```console
    curl -fsSL https://get.pnpm.io/install.sh | sh -
+   ```
+
+2. Install node globally. This is necessary because pm2 uses npm to install global packages.
+
+   ```console
+   pnpm env use -g lts
    ```
 
 3. Clone freeCodeCamp, setup env and keys.
