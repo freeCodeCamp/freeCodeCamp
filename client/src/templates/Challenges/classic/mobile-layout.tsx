@@ -98,11 +98,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             title={i18next.t('learn.editor-tabs.code')}
             {...editorTabPaneProps}
           >
-            {usesMultifileEditor && (
-              <div className='monaco-editor-tabs'>
-                <EditorTabs />
-              </div>
-            )}
+            {usesMultifileEditor && <EditorTabs />}
             {editor}
           </TabPane>
           <TabPane

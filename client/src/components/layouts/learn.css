@@ -1,5 +1,12 @@
+#learn-app-wrapper,
+#learn-app-wrapper .desktop-layout,
+#learn-app-wrapper .reflex-container.vertical {
+  height: 100%;
+}
+
 #learn-app-wrapper .desktop-layout {
   display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter,
