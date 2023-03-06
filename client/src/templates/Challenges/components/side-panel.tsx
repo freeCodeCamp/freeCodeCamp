@@ -6,7 +6,7 @@ import { Test } from '../../../redux/prop-types';
 import { mathJaxScriptLoader } from '../../../utils/script-loaders';
 import { challengeTestsSelector } from '../redux/selectors';
 import TestSuite from './test-suite';
-// import ToolPanel from './tool-panel';
+import ToolPanel from './tool-panel';
 
 import './side-panel.css';
 
@@ -31,12 +31,12 @@ export function SidePanel({
   block,
   challengeDescription,
   challengeTitle,
-  // guideUrl,
+  guideUrl,
   instructionsPanelRef,
-  // showToolPanel = false,
-  tests
-}: // videoUrl
-SidePanelProps): JSX.Element {
+  showToolPanel = false,
+  tests,
+  videoUrl
+}: SidePanelProps): JSX.Element {
   useEffect(() => {
     const MathJax = global.MathJax;
     const mathJaxMountPoint = document.querySelector('#mathjax');
@@ -78,7 +78,7 @@ SidePanelProps): JSX.Element {
     >
       {challengeTitle}
       {challengeDescription}
-      {/* {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />} */}
+      {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}
       <TestSuite tests={tests} />
     </div>
   );

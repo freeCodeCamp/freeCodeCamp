@@ -2,7 +2,7 @@ import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
 import React, { Component, ReactElement } from 'react';
 
-// import ToolPanel from '../components/tool-panel';
+import ToolPanel from '../components/tool-panel';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
@@ -60,8 +60,8 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       hasPreview,
       notes,
       preview,
-      // guideUrl,
-      // videoUrl,
+      guideUrl,
+      videoUrl,
       usesMultifileEditor
     } = this.props;
 
@@ -128,7 +128,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               {preview}
             </TabPane>
           )}
-          {/* <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} /> */}
+          <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
         </Tabs>
       </>
     );
