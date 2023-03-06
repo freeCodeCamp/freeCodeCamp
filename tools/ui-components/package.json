@@ -8,7 +8,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "npm": ">=8"
+    "pnpm": "7"
   },
   "repository": {
     "type": "git",
@@ -43,6 +43,9 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
     "@types/jest": "27.5.2",
+    "@types/react": "16.14.35",
+    "@types/react-dom": "^16.9.17",
+    "@types/testing-library__jest-dom": "^5",
     "autoprefixer": "10.4.13",
     "babel-loader": "8.3.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
@@ -57,7 +60,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "storybook:theming": "npm run storybook --no-manager-cache",
+    "storybook:theming": "pnpm run storybook --no-manager-cache",
     "build-storybook": "build-storybook",
     "build": "cross-env NODE_ENV=production rollup -c",
     "build:css": "npx tailwindcss -i ./src/base.css -o ./dist/base.css --minify",

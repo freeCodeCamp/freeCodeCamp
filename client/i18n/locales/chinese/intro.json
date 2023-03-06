@@ -335,6 +335,10 @@
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "通过构建电子表格学习函数式编程",
         "intro": ["", ""]
+      },
+      "learn-advanced-array-methods-by-building-a-statistics-calculator": {
+        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "intro": ["", ""]
       }
     }
   },

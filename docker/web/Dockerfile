@@ -10,7 +10,7 @@ ARG DOPPLER_TOKEN
 RUN \
   doppler secrets download doppler.encrypted.json &&\
   # Install and donot ignore the scripts for sharp
-  npm ci --no-progress --ignore-scripts=false &&\
+  pnpm install --no-progress --ignore-scripts=false &&\
   doppler run --fallback=doppler.encrypted.json --command="npm run create:config" &&\
   doppler run --fallback=doppler.encrypted.json --command="npm run build:curriculum" &&\
   doppler run --fallback=doppler.encrypted.json --command="npm run build:client"

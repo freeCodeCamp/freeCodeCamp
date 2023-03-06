@@ -33,7 +33,10 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
-
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
@@ -48,12 +51,12 @@ jobs:
 
       - name: Lint Source Files
         run: |
-          npm ci
-          npm run create:config
+          pnpm install
+          pnpm run create:config
           npm i --prefix=curriculum-server
           npm i --prefix=web
-          npm run build:curriculum
-          npm run lint
+          pnpm run build:curriculum
+          pnpm run lint
 
   test:
     name: Test
@@ -68,7 +71,10 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
-
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
@@ -83,9 +89,9 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm ci
-          npm run create:config
-          npm run build:curriculum
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Run Tests
-        run: npm test
+        run: pnpm test
