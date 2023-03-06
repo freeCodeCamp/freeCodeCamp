@@ -52,11 +52,6 @@ a.cert-tag:active {
   margin: 0 25px 25px;
 }
 
-.block-grid .challenge-jump-link a:focus {
-  outline: 3px solid var(--blue-mid);
-  outline-offset: 0;
-}
-
 .block-grid .challenge-jump-link a:focus:not(:focus-visible) {
   outline: none;
 }
@@ -429,7 +424,7 @@ button.map-title {
   padding: 25px;
 }
 
-/* this margin is used to center the element. 
+/* this margin is used to center the element.
 ToDo: find out why, and remove the need for it */
 .block-grid .map-title > svg {
   margin-bottom: 4px;

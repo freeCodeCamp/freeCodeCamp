@@ -188,7 +188,8 @@ button.close:focus {
 }
 
 :focus-visible {
-  outline: var(--focus-outline-color) solid 2px;
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: 0;
 }
 
 .modal-content {

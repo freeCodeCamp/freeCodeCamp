@@ -109,13 +109,12 @@
 }
 
 #mobile-layout-pane-instructions:focus-visible {
-  outline: 3px solid var(--blue-mid);
   outline-offset: -2px;
 }
 
 @supports not selector(:focus-visible) {
   #mobile-layout-pane-instructions:focus {
-    outline: 3px solid var(--blue-mid);
+    outline: 3px solid var(--focus-outline-color);
     outline-offset: -2px;
   }
 }
