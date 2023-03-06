@@ -34,7 +34,7 @@ const schema = Joi.object()
     __commentCounts: Joi.object(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
-    tags: Joi.string().allow(''),
+    tags: Joi.array().items(Joi.string().trim()),
     description: Joi.when('challengeType', {
       is: [challengeTypes.step, challengeTypes.video],
       then: Joi.string().allow(''),
@@ -123,5 +123,5 @@ const schema = Joi.object()
   .xor('helpCategory', 'isPrivate');
 
 exports.challengeSchemaValidator = () => {
-  return challenge => schema.validate(challenge);
+  return challenge => schema.validate(challenge, { convert: false });
 };
