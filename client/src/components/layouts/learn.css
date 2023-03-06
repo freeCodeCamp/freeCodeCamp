@@ -5,8 +5,8 @@
 }
 
 #learn-app-wrapper .desktop-layout {
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter,

@@ -51,10 +51,6 @@
   margin: 0 auto;
 }
 
-/* in the old Editor, JavaScript course, we will need to have this value otherwise the console will be out of view */
-.reflex-container > .reflex-element {
-  height: 100%;
-}
 #mobile-layout {
   display: grid;
   height: 100%;
