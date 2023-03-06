@@ -9,6 +9,11 @@
   flex-direction: column;
 }
 
+#learn-app-wrapper .reflex-container.vertical {
+  min-height: 0;
+  flex-grow: 1;
+}
+
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter,
 #learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
   background-color: var(--quaternary-background);
