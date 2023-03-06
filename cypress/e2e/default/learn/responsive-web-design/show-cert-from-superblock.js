@@ -29,7 +29,7 @@ const projects = {
 
 describe('Front End Development Libraries Superblock', () => {
   before(() => {
-    cy.exec('npm run seed');
+    cy.exec('pnpm run seed');
     cy.login();
     cy.visit('/learn/front-end-development-libraries');
   });
@@ -41,7 +41,7 @@ describe('Front End Development Libraries Superblock', () => {
   });
   describe('After submitting all 5 projects', () => {
     before(() => {
-      cy.exec('npm run seed');
+      cy.exec('pnpm run seed');
       cy.login();
       cy.visit('/settings');
       cy.setPrivacyTogglesToPublic();

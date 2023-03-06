@@ -75,7 +75,7 @@ Alguns membros da comunidade também desenvolvem no Windows nativamente com o Gi
 | Pré-requisito                                                                                       | Versão  | Observações                                                                                 |
 | --------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                        | `18.x`  | Usamos a versão "Active LTS". Consulte [Agenda LTS](https://nodejs.org/en/about/releases/). |
-| npm (vem junto com o Node)                                                                          | `8.x`   | Usamos a versão que vem com o Node.js Active LTS.                                           |
+| [pnpm](https://pnpm.io/installation)                                                                | `7.x`   | -                                                                                           |
 | [Servidor da Comunidade MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                           |
 
 > [!ATTENTION] Se você tem uma versão diferente, instale a versão recomendada. Só podemos dar suporte a problemas de instalação para versões recomendadas. Veja [solução de problemas](#troubleshooting) para detalhes.
@@ -84,7 +84,7 @@ Se o Node.js já estiver instalado em sua máquina, execute os comandos a seguir
 
 ```console
 node -v
-npm -v
+pnpm -v
 ```
 
 > [!TIP] É altamente recomendável atualizar para o mais atual lançamento estável do software listado acima, também conhecido como Lançamentos de Suporte de Longo Prazo (LTS).
@@ -214,7 +214,7 @@ As chaves no arquivo `.env` _ não _ precisam ser alteradas para executar o apli
 Esta etapa vai instalar as dependências necessárias para a execução do aplicativo:
 
 ```console
-npm ci
+pnpm install
 ```
 
 #### Etapa 3: Iniciar o MongoDB e criar o banco de dados
@@ -252,7 +252,7 @@ Certifique-se de substituir `3.6` pela versão que você instalou
 Em seguida, vamos criar o banco de dados. Nesta etapa, executamos o comando abaixo que preenche o servidor MongoDB com alguns conjuntos de dados iniciais que são requeridos pelos serviços. Dentre outras coisas, incluem alguns esquemas.
 
 ```console
-npm run seed
+pnpm run seed
 ```
 
 #### Etapa 4: Iniciar o aplicativo client do freeCodeCamp e o servidor de API
@@ -260,7 +260,7 @@ npm run seed
 Agora você pode iniciar o servidor de API e os aplicativos do client.
 
 ```console
-npm run develop
+pnpm run develop
 ```
 
 Este único comando vai disparar todos os serviços, incluindo o servidor API e os aplicativos do cliente disponíveis para você trabalhar.
@@ -271,7 +271,7 @@ A API serve os endpoints em `http://localhost:3000`. O aplicativo Gatsby atende 
 
 Quando estiver conectado, se você visitar <http://localhost:3000/explorer> poderá ver as APIs disponíveis.
 
-> [!WARNING] Limpar seus cookies ou executar `npm run seed:certified-user` desconectará você e será preciso fazer o login novamente.
+> [!WARNING] Limpar seus cookies ou executar `pnpm run seed:certified-user` desconectará você e será preciso fazer o login novamente.
 
 Se você tiver problemas durante a instalação, confira a [seção de solução de problemas](troubleshooting-development-issues.md)
 
@@ -279,9 +279,9 @@ Se você tiver problemas durante a instalação, confira a [seção de solução
 
 Uma rápida referência aos comandos que você precisará ao trabalhar localmente.
 
-| comando           | descrição                                                                      |
-| ----------------- | ------------------------------------------------------------------------------ |
-| `npm ci`          | Instala / reinstala todas as dependências e inicializa os diferentes serviços. |
-| `npm run seed`    | Cria usuários de testes autorizados e os insere no mongodb.                    |
-| `npm run develop` | Inicia o servidor de API freeCodeCamp e aplicativos Cliente.                   |
-| `npm run clean`   | Desinstala todas as dependências e limpa os caches.                            |
+| comando            | descrição                                                                      |
+| ------------------ | ------------------------------------------------------------------------------ |
+| `pnpm install`     | Instala / reinstala todas as dependências e inicializa os diferentes serviços. |
+| `pnpm run seed`    | Cria usuários de testes autorizados e os insere no mongodb.                    |
+| `pnpm run develop` | Inicia o servidor de API freeCodeCamp e aplicativos Cliente.                   |
+| `pnpm run clean`   | Desinstala todas as dependências e limpa os caches.                            |

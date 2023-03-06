@@ -5,7 +5,7 @@ export async function auth0Verify(
   this: FastifyInstance,
   request: FastifyRequest,
   reply: FastifyReply
-) {
+): Promise<void> {
   await this.authenticate(request, reply);
 }
 
@@ -16,7 +16,7 @@ export function testMiddleware(
   req: MiddieRequest,
   res: MiddieResponse,
   next: NextFunction
-) {
+): void {
   console.log('Test middleware running');
   console.log(req.headers);
   console.log(req.query);

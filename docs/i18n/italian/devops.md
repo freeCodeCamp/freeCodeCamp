@@ -91,7 +91,7 @@ Attualmente, solo i membri del team di sviluppo possono fare il push sui branch 
 4. Conferma di essere in grado di fare il build del repository localmente.
 
    ```
-   npm run clean-and-develop
+   pnpm run clean-and-develop
    ```
 
 5. Sposta cambiamenti da `main` a `prod-staging` con un merge fast-forward
@@ -453,13 +453,13 @@ Fare il provisioning delle VM con il codice
 6. Installa dipendenze
 
    ```console
-   npm ci
+   pnpm install
    ```
 
 7. Fai il build del server
 
    ```console
-   npm run prebuild && npm run build:curriculum && npm run build:server
+   pnpm run prebuild && pnpm run build:curriculum && pnpm run build:server
    ```
 
 8. Avvia le istanze
@@ -496,13 +496,13 @@ pm2 stop all
 2. Installa dipendenze
 
 ```console
-npm ci
+pnpm install
 ```
 
 3. Fai il build del server
 
 ```console
-npm run create:config && npm run build:curriculum && npm run build:server
+pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
 ```
 
 4. Avvia le istanze
@@ -788,8 +788,8 @@ Fai ssh nella VM (hosted su Digital Ocean).
 ```console
 cd tools
 git pull origin master
-npm ci
-npm run build
+pnpm install
+pnpm run build
 pm2 restart contribute-app
 ```
 

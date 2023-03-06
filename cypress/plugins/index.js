@@ -22,7 +22,7 @@ module.exports = (on, config) => {
   config.env = config.env || {};
   on('before:run', () => {
     if (!existsSync('../../config/curriculum.json')) {
-      execSync('npm run build:curriculum');
+      execSync('pnpm run build:curriculum');
     }
   });
 

@@ -44,44 +44,44 @@ const testArray = [
 assert(typeof binarySearch == 'function');
 ```
 
-`binarySearch(testArray, 0)` should return `[13, 5, 2, 0]`.
+`binarySearch(testArray, 0)` має повернути `[13, 5, 2, 0]`.
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 0), [13, 5, 2, 0]);
 ```
 
-`binarySearch(testArray, 1)` should return `[13, 5, 2, 0, 1]`.
+`binarySearch(testArray, 1)` має повернути `[13, 5, 2, 0, 1]`.
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 1), [13, 5, 2, 0, 1]);
 ```
 
 
-`binarySearch(testArray, 2)` should return `[13, 5, 2]`.
+`binarySearch(testArray, 2)` має повернути `[13, 5, 2]`.
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 2), [13, 5, 2]);
 ```
 
-`binarySearch(testArray, 6)` should return the string `Value Not Found`.
+`binarySearch(testArray, 6)` має повернути рядок `Value Not Found`.
 
 ```js
 assert.strictEqual(binarySearch(_testArray, 6), 'Value Not Found');
 ```
 
-`binarySearch(testArray, 11)` should return `[13, 5, 10, 11]`.
+`binarySearch(testArray, 11)` має повернути `[13, 5, 10, 11]`.
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 11), [13, 5, 10, 11])
 ```
 
-`binarySearch(testArray, 13)` should return `[13]`.
+`binarySearch(testArray, 13)` має повернути `[13]`.
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 13), [13]);
 ```
 
-`binarySearch(testArray, 70)` should return `[13, 19, 22, 49, 70]`.
+`binarySearch(testArray, 70)` має повернути `[13, 19, 22, 49, 70]`.
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 70), [13, 19, 22, 49, 70]);

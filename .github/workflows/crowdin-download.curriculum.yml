@@ -276,6 +276,10 @@ jobs:
 
       # Validate the Download #
       # All languages should go ABOVE this. #
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
@@ -290,15 +294,15 @@ jobs:
 
       - name: Build Source Files
         run: |
-          echo npm version $(npm -v)
-          npm ci
-          npm run create:config
-          npm run build:curriculum
-          npm run build:server
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
+          pnpm run build:server
 
       - name: Lint and Format Files
         run: |
-          npm run format:curriculum
+          pnpm run format:curriculum
 
       # We do not need to run tests because they are run after the PR is created.
 

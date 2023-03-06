@@ -224,7 +224,6 @@
     "total-points_plural": "Всього балів: {{count}}",
     "points": "{{count}}х балів станом на {{date}}",
     "points_plural": "{{count}}х балів станом на {{date}}",
-    "screen-shot": "Знімок екрану {{title}}",
     "page-number": "{{pageNumber}} з {{totalPages}}"
   },
   "footer": {

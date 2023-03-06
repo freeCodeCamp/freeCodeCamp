@@ -201,15 +201,15 @@ Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a
 
 Uma rápida referência aos comandos que você precisará ao trabalhar.
 
-| comando                                                        | descrição                                                                                       |
-| -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `npm test`                                                     | Executa todos os testes JS no sistema, incluindo cliente, servidor, lint e testes dos desafios. |
-| `npm run test-client`                                          | Executa o conjunto de testes do cliente.                                                        |
-| `npm run test:curriculum`                                      | Executa o conjunto de teste de currículo.                                                       |
-| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Testa um bloco específico.                                                                      |
-| `npm run test:curriculum --superblock='responsive-web-design'` | Testa um super bloco específico.                                                                |
-| `npm run test-curriculum-full-output`                          | Executa o ocnjunto de teste de currículo, sem parar após o primeiro erro                        |
-| `npm run test-server`                                          | Executa o conjunto de testes de servidor.                                                       |
-| `npm run e2e`                                                  | Executa os testes de ponta a ponta do Cypress.                                                  |
-| `npm run clean`                                                | Desinstala todas as dependências e limpa os caches.                                             |
-| `npm run storybook`                                            | Inicia o Storybook para o desenvolvimento da biblioteca de componentes.                         |
+| comando                                                           | descrição                                                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `pnpm test`                                                       | Executa todos os testes JS no sistema, incluindo cliente, servidor, lint e testes dos desafios. |
+| `pnpm run test-client`                                            | Executa o conjunto de testes do cliente.                                                        |
+| `pnpm run test:curriculum`                                        | Executa o conjunto de teste de currículo.                                                       |
+| `FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum`       | Testa um bloco específico.                                                                      |
+| `FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum` | Testa um super bloco específico.                                                                |
+| `pnpm run test-curriculum-full-output`                            | Executa o ocnjunto de teste de currículo, sem parar após o primeiro erro                        |
+| `pnpm run test-server`                                            | Executa o conjunto de testes de servidor.                                                       |
+| `pnpm run e2e`                                                    | Executa os testes de ponta a ponta do Cypress.                                                  |
+| `pnpm run clean`                                                  | Desinstala todas as dependências e limpa os caches.                                             |
+| `pnpm run storybook`                                              | Inicia o Storybook para o desenvolvimento da biblioteca de componentes.                         |
