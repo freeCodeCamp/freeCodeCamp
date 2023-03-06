@@ -27,25 +27,25 @@ Para executar testes usando compilações de produção, substitua `dev` por `pr
 - Para executar todos os testes no diretório `./cypress`:
 
   ```console
-  npm run cypress:dev:run
+  pnpm run cypress:dev:run
   ```
 
 - Para executar um único teste:
 
   ```console
-  npm run cypress -- run --spec=cypress/<path_to_test_file>
+  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
   ```
 
   Por exemplo:
 
   ```console
-  npm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
   ```
 
 - Para criar uma versão de compilação, inicie o servidor de desenvolvimento e execute todos os testes cypress contínuos e funcionais existentes:
 
   ```console
-  npm run e2e:dev:run
+  pnpm run e2e:dev:run
   ```
 
 ## Configuração do Cypress-GitPod
@@ -63,19 +63,19 @@ mongod
 - Crie a base de dados
 
 ```console
-npm run seed
+pnpm run seed
 ```
 
 - Desenvolva o servidor e o client
 
 ```console
-npm run develop
+pnpm run develop
 ```
 
 ### 2. Instale as ferramentas de compilação do Cypress
 
 ```console
-npm run cypress:install-build-tools
+pnpm run cypress:install-build-tools
 ```
 
 - Quando solicitado no terminal, selecione o layout do seu teclado por idioma/área
