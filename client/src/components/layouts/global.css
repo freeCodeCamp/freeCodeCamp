@@ -187,7 +187,7 @@ button.close:focus {
   background-color: transparent;
 }
 
-:focus {
+:focus-visible {
   outline: var(--focus-outline-color) solid 2px;
 }
 
