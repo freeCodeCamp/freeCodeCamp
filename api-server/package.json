@@ -22,7 +22,8 @@
     "babel-dev-server": "babel-node --inspect=0.0.0.0 ./src/server/index.js",
     "build": "babel src --out-dir lib --ignore '/**/*.test.js' --copy-files --no-copy-ignored",
     "develop": "node src/development-start.js",
-    "start": "cross-env DEBUG=fcc* node lib/production-start.js"
+    "start": "cross-env DEBUG=fcc* node lib/production-start.js",
+    "start-pm2": "pm2 start ecosystem.config.js"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
@@ -68,6 +69,7 @@
     "passport-auth0": "1.4.2",
     "passport-local": "1.0.0",
     "passport-mock-strategy": "2.0.0",
+    "pm2": "^5.2.2",
     "query-string": "6.14.0",
     "rate-limit-mongo": "^2.3.2",
     "rx": "4.1.0",
