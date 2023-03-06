@@ -91,7 +91,7 @@ Currently, only members on the developer team can push to the production branche
 4. Confirm that you are able to build the repository locally.
 
    ```
-   npm run clean-and-develop
+   pnpm run clean-and-develop
    ```
 
 5. Move changes from `main` to `prod-staging` via a fast-forward merge
@@ -453,13 +453,13 @@ Provisioning VMs with the Code
 6. Install dependencies
 
    ```console
-   npm ci
+   pnpm install
    ```
 
 7. Build the server
 
    ```console
-   npm run prebuild && npm run build:curriculum && npm run build:server
+   pnpm run prebuild && pnpm run build:curriculum && pnpm run build:server
    ```
 
 8. Start Instances
@@ -496,13 +496,13 @@ pm2 stop all
 2. Install dependencies
 
 ```console
-npm ci
+pnpm install
 ```
 
 3. Build the server
 
 ```console
-npm run create:config && npm run build:curriculum && npm run build:server
+pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
 ```
 
 4. Start Instances
@@ -788,8 +788,8 @@ ssh into the VM (hosted on Digital Ocean).
 ```console
 cd tools
 git pull origin master
-npm ci
-npm run build
+pnpm install
+pnpm run build
 pm2 restart contribute-app
 ```
 

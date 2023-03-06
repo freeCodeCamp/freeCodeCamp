@@ -27,25 +27,25 @@ To run tests against production builds, replace `dev` with `prd` below.
 - To run all tests in the `./cypress` directory:
 
   ```console
-  npm run cypress:dev:run
+  pnpm run cypress:dev:run
   ```
 
 - To run a single test:
 
   ```console
-  npm run cypress -- run --spec=cypress/<path_to_test_file>
+  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
   ```
 
   For example:
 
   ```console
-  npm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
   ```
 
 - To create a development build, start the development server, and run all existing cypress end-to-end tests:
 
   ```console
-  npm run e2e:dev:run
+  pnpm run e2e:dev:run
   ```
 
 ## Cypress-GitPod Setup
@@ -63,19 +63,19 @@ mongod
 - Seed the database
 
 ```console
-npm run seed
+pnpm run seed
 ```
 
 - Develop the server and client
 
 ```console
-npm run develop
+pnpm run develop
 ```
 
 ### 2. Install Cypress Build Tools
 
 ```console
-npm run cypress:install-build-tools
+pnpm run cypress:install-build-tools
 ```
 
 - When prompted in the terminal, select your keyboard layout by language/area

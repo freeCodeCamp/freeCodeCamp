@@ -8,22 +8,22 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 # --description--
 
-Functional programming is all about creating and using non-mutating functions.
+Bei funktionalem Programmieren geht es um das Erstellen und Nutzen von nicht verändernden Funktionen.
 
-In der letzten Aufgabe wurde die `concat`-Methode als eine Möglichkeit vorgestellt, Arrays zu einem neuen Array zusammenzuführen, ohne die ursprünglichen Arrays zu verändern. Vergleiche die `concat`- mit der `push`-Methode. `push` adds items to the end of the same array it is called on, which mutates that array. Hier ist ein Beispiel:
+In der letzten Aufgabe wurde die `concat`-Methode als eine Möglichkeit vorgestellt, Arrays zu einem neuen Array zusammenzuführen, ohne die ursprünglichen Arrays zu verändern. Vergleiche die `concat`- mit der `push`-Methode. `push` fügt Elemente dem Ende des aufgerufenen Arrays hinzu, wodurch sich das Array verändert. Hier ist ein Beispiel:
 
 ```js
 const arr = [1, 2, 3];
 arr.push(4, 5, 6);
 ```
 
-`arr` would have a modified value of `[1, 2, 3, 4, 5, 6]`, which is not the functional programming way.
+`arr` hätte nun den modifizierten Wert `[1, 2, 3, 4, 5, 6]`, was nicht dem funktionalen Programmierweg entspricht.
 
-`concat` offers a way to merge new items to the end of an array without any mutating side effects.
+`concat` bietet die Möglichkeit, neue Elemente dem Ende eines Arrays zuzufügen, ohne dass dieses verändert wird. Stattdessen wird ein neues Array zurückgegeben.
 
 # --instructions--
 
-Change the `nonMutatingPush` function so it uses `concat` to merge `newItem` to the end of `original` without mutating `original` or `newItem` arrays. Die Funktion sollte ein Array zurückgeben.
+Ändere die `nonMutatingPush`-Funktion so, dass sie `concat` verwendet, um `newItem` dem Ende von `original` hinzuzufügen, ohne dabei die Arrays `original` und `newItem` zu verändern. Die Funktion sollte ein Array zurückgeben.
 
 # --hints--
 
@@ -39,13 +39,13 @@ Dein Code sollte nicht die `push`-Methode verwenden.
 assert(!code.match(/\.?[\s\S]*?push/g));
 ```
 
-The `first` array should not change.
+Das `first`-Array sollte sich nicht verändern.
 
 ```js
 assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
 ```
 
-The `second` array should not change.
+Das `second`-Array sollte sich nicht verändern.
 
 ```js
 assert(JSON.stringify(second) === JSON.stringify([4, 5]));

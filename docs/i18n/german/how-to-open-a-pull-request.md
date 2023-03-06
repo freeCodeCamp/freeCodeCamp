@@ -188,14 +188,14 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
 4. Behebe alle Konflikte, bereinige, installiere Abhängigkeiten und führe Tests durch
 
    ```console
-   npm run clean
+   pnpm run clean
 
-   npm ci
-   npm run test:curriculum --superblock=<superblock-name>
+   pnpm install
+   FCC_SUPERBLOCK='<superblock-name>' pnpm run test:curriculum 
 
-   # Beispiel:
+   # example:
 
-   # npm run test:curriculum --superblock=python-for-everyone
+   # FCC_SUPERBLOCK='python-for-everybody' pnpm run test:curriculum
 
    ```
 
