@@ -456,13 +456,7 @@ Provisioning VMs with the Code
    curl -fsSL https://get.pnpm.io/install.sh | sh -
    ```
 
-2. Install node globally. This is necessary because pm2 uses npm to install global packages.
-
-   ```console
-   pnpm env use -g lts
-   ```
-
-3. Clone freeCodeCamp, setup env and keys.
+2. Clone freeCodeCamp, setup env and keys.
 
    ```console
    git clone https://github.com/freeCodeCamp/freeCodeCamp.git
@@ -470,34 +464,33 @@ Provisioning VMs with the Code
    git checkout prod-current # or any other branch to be deployed
    ```
 
-4. Create the `.env` from the secure credentials storage.
+3. Create the `.env` from the secure credentials storage.
 
-5. Create the `google-credentials.json` from the secure credentials storage.
+4. Create the `google-credentials.json` from the secure credentials storage.
 
-6. Install dependencies
+5. Install dependencies
 
    ```console
    pnpm install
    ```
 
-7. Setup pm2 `logrotate` and startup on boot
+6. Setup pm2 `logrotate` and startup on boot
   
    ```console
    pnpm pm2 install pm2-logrotate
    pnpm pm2 startup
    ```
 
-8. Build the server
+7. Build the server
 
    ```console
-   pnpm run prebuild && pnpm run build:curriculum && pnpm run build:server
+   pnpm prebuild && pnpm build:curriculum && pnpm build:server
    ```
 
-9.  Start Instances
+8.  Start Instances
 
    ```console
-   cd api-server
-   pnpm start-pm2
+   pnpm start:server
    ```
 
 ### Logging and Monitoring
@@ -542,13 +535,13 @@ pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
 4. Start Instances
 
 ```console
-cd api-server && pnpm start-pm2 && cd .. && pnpm pm2 logs
+pnpm start:server && pnpm pm2 logs
 ```
 
 #### 2. Rolling updates - Used for logical changes to code.
 
 ```console
-cd api-server && pnpm pm2 reload ecosystem.config.js && cd .. && pnpm pm2 logs
+pnpm pm2 reload ecosystem.config.js && pnpm pm2 logs
 ```
 
 > [!NOTE] We are handling rolling updates to code, logic, via pipelines. You

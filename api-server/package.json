@@ -69,7 +69,6 @@
     "passport-auth0": "1.4.2",
     "passport-local": "1.0.0",
     "passport-mock-strategy": "2.0.0",
-    "pm2": "^5.2.2",
     "query-string": "6.14.0",
     "rate-limit-mongo": "^2.3.2",
     "rx": "4.1.0",
