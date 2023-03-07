@@ -24,9 +24,7 @@ fastify.get('/', async (_request, _reply) => {
 const start = async () => {
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(middie);
-  await fastify.register(fastifyCookie, {
-    secret: process.env.COOKIE_SECRET
-  });
+  await fastify.register(fastifyCookie);
   await fastify.register(fastifySession, {
     secret: process.env.SESSION_SECRET ?? 'a_session_secret',
     cookieName: 'jwt_access_token',
