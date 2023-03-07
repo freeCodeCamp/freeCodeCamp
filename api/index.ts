@@ -27,7 +27,6 @@ const start = async () => {
   await fastify.register(fastifyCookie);
   await fastify.register(fastifySession, {
     secret: process.env.SESSION_SECRET ?? 'a_session_secret',
-    cookieName: 'jwt_access_token',
     rolling: false,
     saveUninitialized: false,
     cookie: {
