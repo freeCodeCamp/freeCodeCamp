@@ -1,39 +1,38 @@
 ---
 id: 5f490b3bd7fa89604fa0bdee
 title: Example pyodide
-challengeType: 12
+challengeType: 16
 isHidden: false
+dashedName: example-pyodide
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 An example of a challenge using pyodide to run python code in the browser
-</section>
 
-## Instructions
 
-<section id='instructions'>
+# --instructions--
+
 Instructions about what exactly needs to be done.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>a</code> should have a value of 15.
-    testString: assert(self.pyodide.pyimport('a') === 15);
-  - text: <code>b</code> should have a value of 16.
-    testString: assert(self.pyodide.pyimport('b') === 16);
+
+`a` should have a value of 15.
+
+```js
+assert(self.pyodide.pyimport('a') === 15);
 ```
 
-</section>
+`b` should have a value of 16.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(self.pyodide.pyimport('b') === 16);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -44,31 +43,7 @@ b = 13
 
 ```
 
-</div>
-
-### Before Test
-<div id='js-setup'>
-
-```js
-
-```
-
-</div>
-
-### After Test
-<div id='js-teardown'>
-
-```js
-
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var a;
@@ -77,4 +52,3 @@ a = 7;
 b = a;
 ```
 
-</section>
