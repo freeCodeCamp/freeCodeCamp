@@ -43,6 +43,8 @@
   padding-inline: 4rem;
   margin: 1em;
   text-decoration: none;
+  /* prevent line breaks in Chinese/Japanese/Korean */
+  word-break: keep-all;
 }
 
 .portfolio-container a::after {

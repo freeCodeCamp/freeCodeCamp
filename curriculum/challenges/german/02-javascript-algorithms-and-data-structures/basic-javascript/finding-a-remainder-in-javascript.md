@@ -15,13 +15,13 @@ Der <dfn>Rest</dfn>-Operator `%` gibt den Rest der Division von zwei Zahlen an.
 
 <pre>
 5 % 2 = 1
-5 / 2 = 2 remainder 1
+5 / 2 = 2 Restwert 1
 2 * 2 = 4
 5 - 4 = 1
 </pre>
 
-**Usage**  
-In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`. Even numbers have a remainder of `0`, while odd numbers a remainder of `1`.
+**Verwendung**  
+In der Mathematik kann man prüfen, ob eine Zahl gerade oder ungerade ist, indem man den Rest der Division der Zahl durch `2` kontrolliert. Gerade Zahlen haben einen Restwert von `0`, während ungerade Zahlen einen Restwert von `1` besitzen.
 
 <pre>
 17 % 2 = 1

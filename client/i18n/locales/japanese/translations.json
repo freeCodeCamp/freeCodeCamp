@@ -596,7 +596,8 @@
     "editor-url": "動作可能なアプリの URL を提出してください。",
     "http-url": "安全でない (http) URL は使用できません。",
     "own-work-url": "あなた自身の作品を提出してください。",
-    "publicly-visible-url": "公開されたアプリの URL を提出してください。"
+    "publicly-visible-url": "公開されたアプリの URL を提出してください。",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",

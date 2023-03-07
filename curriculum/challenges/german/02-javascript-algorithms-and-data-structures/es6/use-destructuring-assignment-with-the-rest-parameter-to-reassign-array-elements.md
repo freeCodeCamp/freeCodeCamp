@@ -30,7 +30,7 @@ Use a destructuring assignment with the rest syntax to emulate the behavior of `
 
 # --hints--
 
-`removeFirstTwo([1, 2, 3, 4, 5])` should be `[3, 4, 5]`
+`removeFirstTwo([1, 2, 3, 4, 5])` sollte `[3, 4, 5]` ergeben
 
 ```js
 const testArr_ = [1, 2, 3, 4, 5];
@@ -38,7 +38,7 @@ const testArrWORemoved_ = removeFirstTwo(testArr_);
 assert(testArrWORemoved_.every((e, i) => e === i + 3) && testArrWORemoved_.length === 3);
 ```
 
-`removeFirstTwo()` should not modify `list`
+`removeFirstTwo()` sollte `list` nicht verändern
 
 ```js
 const testArr_ = [1, 2, 3, 4, 5];
