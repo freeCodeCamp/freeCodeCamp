@@ -460,17 +460,17 @@ Antes de que tu [hagas un pull request](how-to-open-a-pull-request.md) para tus 
 1. Para testear todos los desafíos, ejecuta el siguiente comando desde el directorio raíz
 
 ````
-npm run test:curriculum
+pnpm run test:curriculum
 ```
 
 2. También puedes probar un bloque o un superbloque de desafíos con estos comandos
 
 ```
-npm run test:curriculum --block='Basic HTML and HTML5'
+FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 ```
 
 ```
-npm run test:curriculum --superblock=responsive-web-design
+FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
 También puedes probar un desafío individualmente realizando los siguientes pasos:
@@ -484,7 +484,7 @@ También puedes probar un desafío individualmente realizando los siguientes pas
 2. Ejecute lo siguiente para cada archivo de desafío para el que haya cambiado (sustituyendo "el-titulo-del-desafio-va-aqui" por el título completo del desafío):
 
    ```
-   npm run test -- -g el-titulo-del-desafio-va-aqui ```
+   pnpm run test -- -g challenge-title-goes-here ```
 
 Una vez que haya verificado que cada desafío en el que ha trabajado supera las pruebas, [cree una solicitud de extracción](how-to-open-a-pull-request.md).
 

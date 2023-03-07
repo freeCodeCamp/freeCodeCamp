@@ -32,7 +32,7 @@ Create a person schema called `personSchema` with the following shape:
 
 * A required `name` field of type `String`
 * An `age` field of type `Number`
-* A `favouriteFoods` field of type `[String]`
+* A `favoriteFoods` field of type `[String]`
 
 Mongoose の基本的なスキーマタイプを使用してください。 フィールドを追加したい場合は、required や unique といった単純なバリデーターを使用し、デフォルト値を設定してください。 <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">Mongoose の記事</a>を参照してください。
 

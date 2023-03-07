@@ -10,7 +10,7 @@ dashedName: logging-a-user-out
 
 Creating the logout logic is easy. The route should just unauthenticate the user, and redirect to the home page instead of rendering any view.
 
-In passport, unauthenticating a user is as easy as just calling `req.logout()` before redirecting. Add this `/logout` route to do that:
+In passport, unauthenticating a user is as easy as just calling `req.logout()` before redirecting. Füge diese `/logout`-Route hinzu, um dies zu tun:
 
 ```js
 app.route('/logout')
@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-You may have noticed that you are not handling missing pages (404). The common way to handle this in Node is with the following middleware. Go ahead and add this in after all your other routes:
+You may have noticed that you are not handling missing pages (404). Der übliche Weg, dies in Node zu handhaben, ist mithilfe folgender Middleware. Füge dies nach all deinen anderen Routen ein:
 
 ```js
 app.use((req, res, next) => {
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 });
 ```
 
-Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#logging-a-user-out-10" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. Wenn du auf Fehler stößt, kannst du <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#logging-a-user-out-10" target="_blank" rel="noopener noreferrer nofollow">das bis zu diesem Punkt abgeschlossene Projekt überprüfen</a>.
 
 # --hints--
 
@@ -49,7 +49,7 @@ async (getUserInput) => {
 }
 ```
 
-`/logout` should redirect to the home page.
+`/logout` sollte auf die Startseite umleiten.
 
 ```js
 async (getUserInput) => {

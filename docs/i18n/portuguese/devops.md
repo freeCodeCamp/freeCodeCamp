@@ -91,7 +91,7 @@ Atualmente, somente membros da equipe de desenvolvedores podem dar push nas bran
 4. Confirme se você consegue compilar o repositório localmente.
 
    ```
-   npm run clean-and-develop
+   pnpm run clean-and-develop
    ```
 
 5. Mova as alterações da `main` para a `production-staging` através de um fast-forward merge
@@ -453,13 +453,13 @@ Provisionando MVs com o código
 6. Instale dependências
 
    ```console
-   npm ci
+   pnpm install
    ```
 
 7. Compile o servidor
 
    ```console
-   npm run prebuild && npm run build:curriculum && npm run build:server
+   pnpm run prebuild && pnpm run build:curriculum && pnpm run build:server
    ```
 
 8. Inicie instâncias
@@ -496,13 +496,13 @@ pm2 stop all
 2. Instale dependências
 
 ```console
-npm ci
+pnpm install
 ```
 
 3. Compile o servidor
 
 ```console
-npm run create:config && npm run build:curriculum && npm run build:server
+pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
 ```
 
 4. Inicie instâncias
@@ -788,8 +788,8 @@ ssh na VM (hospedada na Digital Ocean).
 ```console
 cd tools
 git pull origin master
-npm ci
-npm run build
+pnpm install
+pnpm run build
 pm2 restart contribute-app
 ```
 
