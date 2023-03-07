@@ -40,8 +40,6 @@ export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
       req.session.user = { id: DBRes?.insertedId.toString() ?? '' };
     }
     await req.session.save();
-
-    return {};
   });
   done();
 };
