@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cc
-title: Manipulate Arrays With pop Method
+title: Маніпулювання масивами за допомогою методу pop
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236
@@ -30,7 +30,7 @@ console.log(threeArr);
 
 # --hints--
 
-`myArray` повинен містити лише `[["John", 23]]`.
+`myArray` має містити лише `[["John", 23]]`.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code));
 ```
 
-`removedFromMyArray` повинен містити лише `["cat", 2]`.
+`removedFromMyArray` має містити лише `["cat", 2]`.
 
 ```js
 assert(

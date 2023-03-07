@@ -11,7 +11,11 @@ export default function rateLimitMiddleware() {
     max: 10,
     standardHeaders: true,
     legacyHeaders: false,
+    keyGenerator: req => {
+      return req.headers['x-forwarded-for'] || 'localhost';
+    },
     store: new MongoStore({
+      collectionName: 'UserRateLimit',
       uri: url,
       expireTimeMs: 15 * 60 * 1000
     })

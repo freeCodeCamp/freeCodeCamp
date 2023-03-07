@@ -1,6 +1,6 @@
 ---
 id: 5900f49f1000cf542c50ffb1
-title: 'Problem 306: Paper-strip Game'
+title: 'Problem 306: Papierstreifen-Spiel'
 challengeType: 1
 forumTopicId: 301960
 dashedName: problem-306-paper-strip-game
@@ -8,27 +8,27 @@ dashedName: problem-306-paper-strip-game
 
 # --description--
 
-The following game is a classic example of Combinatorial Game Theory:
+Das folgende Spiel ist ein klassisches Beispiel für die kombinatorische Spieltheorie:
 
-Two players start with a strip of $n$ white squares and they take alternate turns. On each turn, a player picks two contiguous white squares and paints them black. The first player who cannot make a move loses.
+Zwei Spieler beginnen mit einem Streifen aus $n$ weißen Feldern und wechseln sich ab. In jedem Zug wählt ein Spieler zwei zusammenhängende weiße Quadrate aus und malt sie schwarz an. Der erste Spieler, der keinen Zug machen kann, hat verloren.
 
-- $n = 1$: No valid moves, so the first player loses automatically.
-- $n = 2$: Only one valid move, after which the second player loses.
-- $n = 3$: Two valid moves, but both leave a situation where the second player loses.
-- $n = 4$: There are three valid moves for the first player; who is able to win the game by painting the two middle squares.
-- $n = 5$: Four valid moves for the first player (shown below in red); but no matter what the player does, the second player (blue) wins.
+- $n = 1$: Keine gültigen Züge, also verliert der erste Spieler automatisch.
+- $n = 2$: Nur ein gültiger Zug, nach dem der zweite Spieler verliert.
+- $n = 3$: Zwei gültige Züge, aber beide führen zu einer Situation, in der der zweite Spieler verliert.
+- $n = 4$: Es gibt drei gültige Züge für den ersten Spieler; er kann das Spiel gewinnen, indem er die beiden mittleren Felder anmalt.
+- $n = 5$: Vier gültige Züge für den ersten Spieler (unten in rot dargestellt); aber egal, was der Spieler macht, der zweite Spieler (blau) gewinnt.
 
-<img class="img-responsive center-block" alt="valid starting moves for strip with 5 squares" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="gültige Startzüge für Streifen mit 5 Feldern" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;" />
 
-So, for $1 ≤ n ≤ 5$, there are 3 values of $n$ for which the first player can force a win.
+Für $1 ≤ n ≤ 5$ gibt es also 3 Werte von $n$, für die der erste Spieler einen Sieg erzwingen kann.
 
-Similarly, for $1 ≤ n ≤ 50$, there are 40 values of $n$ for which the first player can force a win.
+Analog dazu gibt es für $1 ≤ n ≤ 50$ 40 Werte von $n$, für die der erste Spieler einen Sieg erzwingen kann.
 
-For $1 ≤ n ≤ 1\\,000\\,000$, how many values of $n$ are there for which the first player can force a win?
+Für $1 ≤ n ≤ 1\\,000\\,000$, wie viele Werte von $n$ gibt es, für die der erste Spieler einen Sieg erzwingen kann?
 
 # --hints--
 
-`paperStripGame()` should return `852938`.
+`paperStripGame()` sollte `852938` zurückgeben.
 
 ```js
 assert.strictEqual(paperStripGame(), 852938);

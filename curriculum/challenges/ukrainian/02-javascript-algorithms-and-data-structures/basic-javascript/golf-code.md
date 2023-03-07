@@ -19,67 +19,67 @@ dashedName: golf-code
 
 # --hints--
 
-`golfScore(4, 1)` повинен повертати рядок `Hole-in-one!`
+`golfScore(4, 1)` має повертати рядок `Hole-in-one!`
 
 ```js
 assert(golfScore(4, 1) === 'Hole-in-one!');
 ```
 
-`golfScore(4, 2)` повинен повертати рядок `Eagle`
+`golfScore(4, 2)` має повертати рядок `Eagle`
 
 ```js
 assert(golfScore(4, 2) === 'Eagle');
 ```
 
-`golfScore(5, 2)` повинен повертати рядок `Eagle`
+`golfScore(5, 2)` має повертати рядок `Eagle`
 
 ```js
 assert(golfScore(5, 2) === 'Eagle');
 ```
 
-`golfScore(4, 3)` повинен повертати рядок `Birdie`
+`golfScore(4, 3)` має повертати рядок `Birdie`
 
 ```js
 assert(golfScore(4, 3) === 'Birdie');
 ```
 
-`golfScore(4, 4)` повинен повертати рядок `Par`
+`golfScore(4, 4)` має повертати рядок `Par`
 
 ```js
 assert(golfScore(4, 4) === 'Par');
 ```
 
-`golfScore(1, 1)` повинен повертати рядок `Hole-in-one!`
+`golfScore(1, 1)` має повертати рядок `Hole-in-one!`
 
 ```js
 assert(golfScore(1, 1) === 'Hole-in-one!');
 ```
 
-`golfScore(5, 5)` повинен повертати рядок `Par`
+`golfScore(5, 5)` має повертати рядок `Par`
 
 ```js
 assert(golfScore(5, 5) === 'Par');
 ```
 
-`golfScore(4, 5)` повинен повертати рядок `Bogey`
+`golfScore(4, 5)` має повертати рядок `Bogey`
 
 ```js
 assert(golfScore(4, 5) === 'Bogey');
 ```
 
-`golfScore(4, 6)` повинен повертати рядок `Double Bogey`
+`golfScore(4, 6)` має повертати рядок `Double Bogey`
 
 ```js
 assert(golfScore(4, 6) === 'Double Bogey');
 ```
 
-`golfScore(4, 7)` повинен повертати рядок `Go Home!`
+`golfScore(4, 7)` має повертати рядок `Go Home!`
 
 ```js
 assert(golfScore(4, 7) === 'Go Home!');
 ```
 
-`golfScore(5, 9)` повинен повертати рядок `Go Home!`
+`golfScore(5, 9)` має повертати рядок `Go Home!`
 
 ```js
 assert(golfScore(5, 9) === 'Go Home!');

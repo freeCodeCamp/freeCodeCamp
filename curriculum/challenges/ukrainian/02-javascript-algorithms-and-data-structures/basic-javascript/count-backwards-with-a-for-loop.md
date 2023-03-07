@@ -43,7 +43,7 @@ assert(/for\s*\([^)]+?\)/.test(code));
 assert(code.match(/myArray.push/));
 ```
 
-`myArray` повинен дорівнювати `[9, 7, 5, 3, 1]`.
+`myArray` має дорівнювати `[9, 7, 5, 3, 1]`.
 
 ```js
 assert.deepEqual(myArray, [9, 7, 5, 3, 1]);

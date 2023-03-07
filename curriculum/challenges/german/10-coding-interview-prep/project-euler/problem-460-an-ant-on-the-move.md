@@ -1,6 +1,6 @@
 ---
 id: 5900f5381000cf542c51004b
-title: 'Problem 460: An ant on the move'
+title: 'Problem 460: Ein Ameise auf dem Weg'
 challengeType: 1
 forumTopicId: 302135
 dashedName: problem-460-an-ant-on-the-move
@@ -8,30 +8,30 @@ dashedName: problem-460-an-ant-on-the-move
 
 # --description--
 
-On the Euclidean plane, an ant travels from point $A(0, 1)$ to point $B(d, 1)$ for an integer $d$.
+Auf der euklidischen Ebene reist eine Ameise vom Punkt $A(0, 1)$ zum Punkt $B(d, 1)$ mit dem Integer $d$.
 
-In each step, the ant at point ($x_0$, $y_0$) chooses one of the lattice points ($x_1$, $y_1$) which satisfy $x_1 ≥ 0$ and $y_1 ≥ 1$ and goes straight to ($x_1$, $y_1$) at a constant velocity $v$. The value of $v$ depends on $y_0$ and $y_1$ as follows:
+In jedem Schritt wählt die Ameise am Punkt ($x_0$, $y_0$) einen der Gitterpunkte ($x_1$, $y_1$), die die Bedingungen $x_1 ≥ 0$ und $y_1 ≥ 1$ erfüllen, und läuft mit einer konstanten Geschwindigkeit $v$ direkt zu ($x_1$, $y_1$). Der Wert von $v$ hängt von $y_0$ und $y_1$ wie folgt ab:
 
-- If $y_0 = y_1$, the value of $v$ equals $y_0$.
-- If $y_0 ≠ y_1$, the value of $v$ equals $\frac{y_1 - y_0}{\ln y_1 - \ln y_0}$.
+- Wenn $y_0 = y_1$, ist der Wert von $v$ gleich $y_0$.
+- Wenn $y_0 ≠ y_1$, ist der Wert von $v$ gleich $\frac{y_1 - y_0}{\ln y_1 - \ln y_0}$.
 
-The left image is one of the possible paths for $d = 4$. First the ant goes from $A(0, 1)$ to $P_1(1, 3)$ at velocity $\frac{3 - 1}{\ln 3 - \ln 1} ≈ 1.8205$. Then the required time is $\frac{\sqrt{5}}{1.820} ≈ 1.2283$.
+Das linke Bild ist einer der möglichen Pfade für $d = 4$. Zunächst bewegt sich die Ameise von $A(0, 1)$ nach $P_1(1, 3)$ mit der Geschwindigkeit $\frac{3 - 1}{\ln 3 - \ln 1} ≈ 1,8205$. Dann ist die benötigte Zeit $\frac{\sqrt{5}}{1.820} ≈ 1.2283$.
 
-From $P_1(1, 3)$ to $P_2(3, 3)$ the ant travels at velocity 3 so the required time is $\frac{2}{3} ≈ 0.6667$. From $P_2(3, 3)$ to $B(4, 1)$ the ant travels at velocity $\frac{1 - 3}{\ln 1 - \ln 3} ≈ 1.8205$ so the required time is $\frac{\sqrt{5}}{1.8205} ≈ 1.2283$.
+Von $P_1(1, 3)$ bis $P_2(3, 3)$ bewegt sich die Ameise mit der Geschwindigkeit 3, so dass die benötigte Zeit $\frac{2}{3} ≈ 0,6667$ beträgt. Von $P_2(3, 3)$ nach $B(4, 1)$ bewegt sich die Ameise mit der Geschwindigkeit $\frac{1 - 3}{\ln 1 - \ln 3} ≈ 1,8205$, so dass die benötigte Zeit $\frac{\sqrt{5}}{1,8205} ≈ 1,2283$ beträgt.
 
-Thus the total required time is $1.2283 + 0.6667 + 1.2283 = 3.1233$.
+Die benötigte Gesamtzeit beträgt also $1,2283 + 0,6667 + 1,2283 = 3,1233$.
 
-The right image is another path. The total required time is calculated as $0.98026 + 1 + 0.98026 = 2.96052$. It can be shown that this is the quickest path for $d = 4$.
+Das rechte Bild ist ein anderer Pfad. Die benötigte Gesamtzeit errechnet sich aus $0.98026 + 1 + 0.98026 = 2.96052$. Man kann zeigen, dass dies der schnellste Weg für $d = 4$ ist.
 
-<img class="img-responsive center-block" alt="two possible paths for d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="zwei mögliche Wege für d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px;" />
 
-Let $F(d)$ be the total required time if the ant chooses the quickest path. For example, $F(4) ≈ 2.960\\,516\\,287$. We can verify that $F(10) ≈ 4.668\\,187\\,834$ and $F(100) ≈ 9.217\\,221\\,972$.
+Lasse $F(d)$ die insgesamt benötigte Zeit sein, wenn die Ameise den schnellsten Weg wählt. Zum Beispiel: $F(4) ≈ 2,960\\,516\,287$. Wir können nachweisen, dass $F(10) ≈ 4,668\\,187\,834$ und $F(100) ≈ 9,217\\,221\,972$.
 
-Find $F(10\\,000)$. Give your answer rounded to nine decimal places.
+Finde $F(10\\,000)$. Gib deine Antwort auf neun Dezimalstellen gerundet an.
 
 # --hints--
 
-`antOnTheMove()` should return `18.420738199`.
+`antOnTheMove()` sollte `18.420738199` zurückgeben.
 
 ```js
 assert.strictEqual(antOnTheMove(), 18.420738199);

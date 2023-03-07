@@ -1,6 +1,6 @@
 ---
 id: 5900f4971000cf542c50ffaa
-title: 'Problem 299: Three similar triangles'
+title: 'Problem 299: Drei ähnliche Dreiecke'
 challengeType: 1
 forumTopicId: 301951
 dashedName: problem-299-three-similar-triangles
@@ -8,29 +8,29 @@ dashedName: problem-299-three-similar-triangles
 
 # --description--
 
-Four points with integer coordinates are selected:
+Es werden vier Punkte mit ganzzahligen Koordinaten ausgewählt:
 
-$A(a, 0)$, $B(b, 0)$, $C(0, c)$ and $D(0, d)$, with $0 &lt; a &lt; b$ and $0 &lt; c &lt; d$.
+$A(a, 0)$, $B(b, 0)$, $C(0, c)$ und $D(0, d)$, mit $0 &lt; a &lt; b$ und $0 &lt; c &lt; d$.
 
-Point $P$, also with integer coordinates, is chosen on the line $AC$ so that the three triangles $ABP$, $CDP$ and $BDP$ are all similar.
+Der Punkt $P$, ebenfalls mit ganzzahligen Koordinaten, wird auf der Geraden $AC$ so gewählt, dass die drei Dreiecke $ABP$, $CDP$ und $BDP$ alle ähnlich sind.
 
-<img class="img-responsive center-block" alt="points A, B, C, D and P creating three triangles: ABP, CDP, and BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="die Punkte A, B, C, D und P bilden drei Dreiecke: ABP, CDP und BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px;" />
 
-It is easy to prove that the three triangles can be similar, only if $a = c$.
+Es ist leicht zu beweisen, dass die drei Dreiecke nur ähnlich sein können, wenn $a = c$.
 
-So, given that $a = c$, we are looking for triplets ($a$, $b$, $d$) such that at least one point $P$ (with integer coordinates) exists on $AC$, making the three triangles $ABP$, $CDP$ and $BDP$ all similar.
+Gesetzt den Fall, dass $a = c$ ist, suchen wir also nach Tripletts ($a$, $b$, $d$), die so beschaffen sind, dass mindestens ein Punkt $P$ (mit ganzzahligen Koordinaten) auf $AC$ existiert, wodurch die drei Dreiecke $ABP$, $CDP$ und $BDP$ alle ähnlich sind.
 
-For example, if $(a, b, d) = (2, 3, 4)$, it can be easily verified that point $P(1, 1)$ satisfies the above condition. Note that the triplets (2,3,4) and (2,4,3) are considered as distinct, although point $P(1, 1)$ is common for both.
+Ist beispielsweise $(a, b, d) = (2, 3, 4)$, so lässt sich leicht überprüfen, ob der Punkt $P(1, 1)$ die obige Bedingung erfüllt. Man beachte, dass die Tripletts (2,3,4) und (2,4,3) als unterschiedlich betrachtet werden, obwohl $P(1, 1)$ ein gemeinsamer Punkt ist.
 
-If $b + d &lt; 100$, there are 92 distinct triplets ($a$, $b$, $d$) such that point $P$ exists.
+Wenn $b + d &lt; 100$, gibt es 92 verschiedene Tripel ($a$, $b$, $d$), sodass der Punkt $P$ existiert.
 
-If $b + d &lt; 100\\,000$, there are 320471 distinct triplets ($a$, $b$, $d$) such that point $P$ exists.
+Wenn $b + d &lt; 100\\,000$, gibt es 320471 verschiedene Tripel ($a$, $b$, $d$), sodass der Punkt $P$ existiert.
 
-If $b + d &lt; 100\\,000\\,000$, how many distinct triplets ($a$, $b$, $d$) are there such that point $P$ exists?
+Wenn $b + d &lt; 100\\,000\\,000$ ist, wie viele verschiedene Dreiergruppen ($a$, $b$, $d$) gibt es dann, sodass der Punkt $P$ existiert?
 
 # --hints--
 
-`threeSimilarTriangles()` should return `549936643`.
+`threeSimilarTriangles()` sollte `549936643` zurückgeben.
 
 ```js
 assert.strictEqual(threeSimilarTriangles(), 549936643);

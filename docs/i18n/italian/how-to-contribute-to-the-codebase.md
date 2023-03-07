@@ -201,15 +201,15 @@ Dopo aver fatto il commit delle tue modifiche, controlla qui [come aprire una Pu
 
 Un rapido richiamo ai comandi di cui avrai bisogno lavorando.
 
-| comando                                                        | descrizione                                                                         |
-| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `npm test`                                                     | Esegue tutti i test JS del sistema inclusi client, server, lint e test delle sfide. |
-| `npm run test-client`                                          | Esegue la test suite del client.                                                    |
-| `npm run test:curriculum`                                      | Esegue la test suite del curriculum.                                                |
-| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Esegue i test di uno specifico blocco.                                              |
-| `npm run test:curriculum --superblock='responsive-web-design'` | Esegue i test di uno specifico superblocco.                                         |
-| `npm run test-curriculum-full-output`                          | Esegue la suite di test del curriculum, senza arrestarsi dopo il primo errore       |
-| `npm run test-server`                                          | Esegue la suite di test del server.                                                 |
-| `npm run e2e`                                                  | Esegue i test di Cypress end to end.                                                |
-| `npm run clean`                                                | Disinstalla tutte le dipendenze e pulisce la cache.                                 |
-| `npm run storybook`                                            | Esegue Storybook per sviluppo dei componenti di library.                            |
+| comando                                                           | descrizione                                                                         |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `pnpm test`                                                       | Esegue tutti i test JS del sistema inclusi client, server, lint e test delle sfide. |
+| `pnpm run test-client`                                            | Esegue la test suite del client.                                                    |
+| `pnpm run test:curriculum`                                        | Esegue la test suite del curriculum.                                                |
+| `FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum`       | Esegue i test di uno specifico blocco.                                              |
+| `FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum` | Esegue i test di uno specifico superblocco.                                         |
+| `pnpm run test-curriculum-full-output`                            | Esegue la suite di test del curriculum, senza arrestarsi dopo il primo errore       |
+| `pnpm run test-server`                                            | Esegue la suite di test del server.                                                 |
+| `pnpm run e2e`                                                    | Esegue i test di Cypress end to end.                                                |
+| `pnpm run clean`                                                  | Disinstalla tutte le dipendenze e pulisce la cache.                                 |
+| `pnpm run storybook`                                              | Esegue Storybook per sviluppo dei componenti di library.                            |

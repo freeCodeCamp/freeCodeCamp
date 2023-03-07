@@ -14,7 +14,7 @@ dashedName: create-a-controlled-input
 
 يحتوي محرر التعليمات البرمجية على الهيكل العظمي لمكون يسمى `ControlledInput` لإنشاء عنصر `input` المتحكم بيه. تم فعلًا تهيئة `state` للمكون (component) مع خاصية (property) تسمى `input` التي تحتوي على مقطع نصي (string) فارغة. هذه القيمة تمثل نوع النص المستخدم في حقل `input`.
 
-أولا، إنشاء طريقة تسمى `handleChange()` تحتوي على الوسيطة تسمى `event`. عندما يتم تسمية الطريقة، فإنها تتلقى كائن `event` يحتوي على سلسلة من النص من عنصر `input`. يمكنك الوصول إلى هذه السلسلة باستخدام `event.target.value` داخل الطريقة. حديث خاصية (property) تسمى `input` في `state` للمكون (component) مع هذا المقطع النصي (string) الجديدة.
+أولا، إنشاء طريقة تسمى `handleChange()` تحتوي على وسيط يسمى `event`. عندما يتم تسمية الطريقة، فإنها تتلقى كائن `event` يحتوي على سلسلة من النص من عنصر `input`. يمكنك الوصول إلى هذه السلسلة باستخدام `event.target.value` داخل الطريقة. حديث خاصية (property) تسمى `input` في `state` للمكون (component) مع هذا المقطع النصي (string) الجديدة.
 
 في طريقة `render`، أنشئ عنصر `input` فوق علامة `h4`. أضف سمة (attribute) تسمى `value` تساوي خاصية (property) تسمى `input` في `state` للمكون (component). ثم أضف معالج الحدث `onChange()` إلى طريقة `handleChange()`.
 

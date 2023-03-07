@@ -22,11 +22,11 @@ const myVar = 12 - 6;
 لدي `myVar` قيمة `6` الآن.
 # --instructions--
 
-غيّر `0` بحيث يكون الفرق `12`.
+غيّر `0` بحيث يكون الفرق (difference) `12`.
 
 # --hints--
 
-يجب أن يساوى المتغير `difference` لقيمة `12`.
+يجب أن يساوي المتغير `difference` قيمة `12`.
 
 ```js
 assert(difference === 12);

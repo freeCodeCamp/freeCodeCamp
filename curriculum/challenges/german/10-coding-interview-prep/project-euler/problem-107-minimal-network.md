@@ -1,6 +1,6 @@
 ---
 id: 5900f3d91000cf542c50feea
-title: 'Problem 107: Minimal network'
+title: 'Problem 107: Minimales Netz'
 challengeType: 1
 forumTopicId: 301731
 dashedName: problem-107-minimal-network
@@ -8,11 +8,11 @@ dashedName: problem-107-minimal-network
 
 # --description--
 
-The following undirected network consists of seven vertices and twelve edges with a total weight of 243.
+Das folgende ungekreuzte Netz besteht aus sieben Knoten und zwölf Kanten mit einem Gesamtgewicht von 243.
 
-<img class="img-responsive center-block" alt="Network with seven vertices and twelve edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Netz mit sieben Knoten und zwölf Kanten" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
 
-The same network can be represented by the matrix below.
+Das gleiche Netz kann durch die folgende Matrix dargestellt werden.
 
 |   | A  | B  | C  | D  | E  | F  | G  |
 | - | -- | -- | -- | -- | -- | -- | -- |
@@ -25,15 +25,15 @@ The same network can be represented by the matrix below.
 | G | -  | -  | -  | 23 | 11 | 27 | -  |
 
 
-However, it is possible to optimise the network by removing some edges and still ensure that all points on the network remain connected. The network which achieves the maximum saving is shown below. It has a weight of 93, representing a saving of 243 − 93 = 150 from the original network.
+Es ist jedoch möglich, das Netz zu optimieren, indem man einige Kanten entfernt und trotzdem sicherstellt, dass alle Punkte des Netzes verbunden bleiben. Das Netz, das die maximale Reduzierung erreicht, ist unten dargestellt. Es hat ein Gewicht von 93, was eine Einsparung von 243 - 93 = 150 gegenüber dem ursprünglichen Netz bedeutet.
 
-<img class="img-responsive center-block" alt="Network with seven vertices and left six edges: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Netzwerk mit sieben Knoten und links sechs Kanten: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
 
-Using `network`, an 2D array representing network in matrix form, find the maximum saving which can be achieved by removing redundant edges whilst ensuring that the network remains connected. Vertices not having connection will be represented with `-1`.
+Finde mit Hilfe von `network`, einer 2D-Anordnung, das das Netz in Form einer Matrix darstellt, die maximale Einsparung, die durch das Entfernen überflüssiger Kanten erreicht werden kann, während das Netz verbunden bleibt. Eckpunkte, die keine Verbindung haben, werden mit `-1` dargestellt.
 
 # --hints--
 
-`minimalNetwork(testNetwork)` should return `259679`.
+`minimalNetwork(testNetwork)` sollte `259679` zurückgeben.
 
 ```js
 assert.strictEqual(minimalNetwork(_testNetwork), 259679);

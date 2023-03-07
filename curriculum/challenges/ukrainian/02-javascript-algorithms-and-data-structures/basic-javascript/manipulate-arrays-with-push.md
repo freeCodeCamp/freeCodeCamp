@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cb
-title: Manipulate Arrays With push Method
+title: Маніпулювання масивами за допомогою методу push
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237
@@ -31,7 +31,7 @@ arr2.push(["happy", "joy"]);
 
 # --hints--
 
-Тепер `myArray` повинен дорівнювати `[["John", 23], ["cat", 2], ["dog", 3]]`.
+Тепер `myArray` має дорівнювати `[["John", 23], ["cat", 2], ["dog", 3]]`.
 
 ```js
 assert(

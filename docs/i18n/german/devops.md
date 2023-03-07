@@ -91,7 +91,7 @@ Derzeit können nur Mitglieder des Entwicklerteams in die Produktionsbranches pu
 4. Bestätige dass du in der Lage bist, das Repository lokal zu erstellen.
 
    ```
-   npm run clean-and-develop
+   pnpm run clean-and-develop
    ```
 
 5. Verschieben von Änderungen von `main` nach `prod-staging` über ein Fast-Forward-Merge
@@ -453,13 +453,13 @@ Bereitstellung von VMs mit dem Code
 6. Installiere Abhängigkeiten
 
    ```console
-   npm ci
+   pnpm install
    ```
 
 7. Errichte den Server.
 
    ```console
-   npm run prebuild && npm run build:curriculum && npm run build:server
+   pnpm run prebuild && pnpm run build:curriculum && pnpm run build:server
    ```
 
 8. Starte Instanzen
@@ -496,25 +496,25 @@ pm2 stop all
 2. Installiere Abhängigkeiten
 
 ```console
-npm ci
+pnpm install
 ```
 
 3. Errichte den Server
 
 ```console
-npm run create:config && npm run build:curriculum && npm run build:server
+pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
 ```
 
 4. Starte Instanzen
 
 ```console
-pm2 start all --update-env && pm2 logs
-```
+cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
+   ```
 
 #### 2. Fortlaufende (Rolling) Updates - Werden für logische Änderungen am Code verwendet.
 
 ```console
-pm2 reload all --update-env && pm2 logs
+cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
 ```
 
 > [!NOTE] Wir führen fortlaufende Aktualisierungen des Codes, der Logik, mittels Pipelines durch. Du solltest diese Befehle nicht ausführen müssen. Sie dienen nur der Dokumentation.
@@ -788,8 +788,8 @@ ssh in die VM (gehostet auf Digital Ocean).
 ```console
 cd tools
 git pull origin master
-npm ci
-npm run build
+pnpm install
+pnpm run build
 pm2 restart contribute-app
 ```
 

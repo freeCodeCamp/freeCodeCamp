@@ -335,6 +335,10 @@
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprenda programação funcional criando uma planilha",
         "intro": ["", ""]
+      },
+      "learn-advanced-array-methods-by-building-a-statistics-calculator": {
+        "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
+        "intro": ["", ""]
       }
     }
   },
@@ -778,16 +782,30 @@
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
       },
-      "the-odin-project": {
-        "title": "The Odin Project",
-        "intro": ["Uma descrição deve ser determinada"]
-      },
       "project-euler": {
         "title": "Projeto Euler",
         "intro": [
           "Complete os desafios de programação abaixo, diretamente dos grandes arquivos do Projeto Euler. Isso fortalecerá seu conhecimento de algoritmos e de matemática.",
           "Esses problemas variam em dificuldade e, para muitos, a experiência é uma aprendizagem em sequência indutiva. Ou seja, ao resolver um problema, você será exposto a um novo conceito que permite a você resolver um problema que antes era inacessível. Você consegue concluir todos eles?"
         ]
+      }
+    }
+  },
+  "the-odin-project": {
+    "title": "The Odin Project",
+    "intro": [
+      "The Odin Project é um daqueles recursos do tipo \"O que eu gostaria de ter visto quando estava aprendendo\". ",
+      "Nem todas as pessoas têm acesso à educação em ciência da computação ou aos fundos necessários para frequentar uma escola de programação intensiva. De qualquer modo, não necessariamente, essas duas sejam a solução final para todos que queiram aprender.",
+      "Este projeto destina-se a preencher a lacuna para aquelas pessoas que tentam buscar suas próprias soluções, mas que continuam procurando uma educação de alta qualidade."
+    ],
+    "blocks": {
+      "top-learn-html-foundations": {
+        "title": "Aprenda o básico de HTML",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-build-a-recipe-project": {
+        "title": "Aprenda o básico de HTML criando uma página de receitas",
+        "intro": ["Uma descrição deve ser determinada"]
       }
     }
   },

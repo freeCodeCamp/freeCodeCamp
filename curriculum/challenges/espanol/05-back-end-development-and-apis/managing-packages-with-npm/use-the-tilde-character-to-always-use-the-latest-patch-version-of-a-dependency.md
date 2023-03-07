@@ -10,7 +10,7 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 En el último desafío, le dijiste a npm que sólo incluyera una versión específica de un paquete. Es una forma útil de congelar tus dependencias si necesitas asegurarte de que las diferentes partes de tu proyecto permanezcan compatibles entre sí. Pero en la mayoría de los casos, no querrás perderte las correcciones de errores, ya que a menudo incluyen importantes parches de seguridad y (con suerte) no rompen cosas al hacerlo.
 
-Para permitir que una dependencia de npm se actualice a la última versión de PATCH, puedes prefijar la versión de la dependencia con el carácter tilde (`~`). Aquí hay un ejemplo de cómo permitir actualizaciones a cualquier versión 1.3.x.
+Para permitir que una dependencia de npm se actualice a la última versión de PATCH, puedes prefijar la versión de la dependencia con el carácter tilde (`~`). Here's an example of how to allow updates to any `1.3.x` version.
 
 ```json
 "package": "~1.3.8"
@@ -18,7 +18,7 @@ Para permitir que una dependencia de npm se actualice a la última versión de P
 
 # --instructions--
 
-En el archivo package.json, tu regla actual para como npm puede actualizar `@freecodecamp/example` es utilizando específicamente la versión (1.2.13). Pero ahora quieres permitir la última versión 1.2.x.
+In the package.json file, your current rule for how npm may upgrade `@freecodecamp/example` is to use a specific version (`1.2.13`). But now, you want to allow the latest `1.2.x` version.
 
 Usa el carácter tilde (`~`) para fijar la versión de `@freecodecamp/example` en tus dependencias y permitir a npm actualizarla a cualquier nuevo lanzamiento de _patch_.
 

@@ -16,37 +16,37 @@ dashedName: smallest-common-multiple
 
 # --hints--
 
-`smallestCommons([1, 5])` повинен повертати число.
+`smallestCommons([1, 5])` має повертати число.
 
 ```js
 assert.deepEqual(typeof smallestCommons([1, 5]), 'number');
 ```
 
-`smallestCommons([1, 5])` повинен повертати 60.
+`smallestCommons([1, 5])` має повертати 60.
 
 ```js
 assert.deepEqual(smallestCommons([1, 5]), 60);
 ```
 
-`smallestCommons([5, 1])` повинен повертати 60.
+`smallestCommons([5, 1])` має повертати 60.
 
 ```js
 assert.deepEqual(smallestCommons([5, 1]), 60);
 ```
 
-`smallestCommons([2, 10])` повинен повертати 2520.
+`smallestCommons([2, 10])` має повертати 2520.
 
 ```js
 assert.deepEqual(smallestCommons([2, 10]), 2520);
 ```
 
-`smallestCommons([1, 13])` повинен повертати 360360.
+`smallestCommons([1, 13])` має повертати 360360.
 
 ```js
 assert.deepEqual(smallestCommons([1, 13]), 360360);
 ```
 
-`smallestCommons([23, 18])` повинен повертати 6056820.
+`smallestCommons([23, 18])` має повертати 6056820.
 
 ```js
 assert.deepEqual(smallestCommons([23, 18]), 6056820);

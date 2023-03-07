@@ -14,25 +14,25 @@ dashedName: reverse-a-string
 
 # --hints--
 
-`reverseString("hello")` повинен повертати рядок.
+`reverseString("hello")` має повертати рядок.
 
 ```js
 assert(typeof reverseString('hello') === 'string');
 ```
 
-`reverseString("hello")` повинен повертати рядок `olleh`.
+`reverseString("hello")` має повертати рядок `olleh`.
 
 ```js
 assert(reverseString('hello') === 'olleh');
 ```
 
-`reverseString("Howdy")` повинен повертати рядок `ydwoH`.
+`reverseString("Howdy")` має повертати рядок `ydwoH`.
 
 ```js
 assert(reverseString('Howdy') === 'ydwoH');
 ```
 
-`reverseString("Greetings from Earth")` повинен повертати рядок `htraE morf sgniteerG`.
+`reverseString("Greetings from Earth")` має повертати рядок `htraE morf sgniteerG`.
 
 ```js
 assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');

@@ -12,7 +12,7 @@ dashedName: visualize-data-with-a-bar-chart
 
 Soddisfa le user story qui sotto e supera tutti i test. Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
-Puoi usare HTML, JavaScript, CSS e la libreria di visualizzazione basata su svg D3. I test richiedono la generazione degli assi con la proprietà axis di D3, che crea automaticamente le tacche sugli assi. Queste tacche sono richieste per superare i test perché la loro posizione è usata per determinale l'allineamento degli elementi del grafico. Puoi trovare informazioni su come generare gli assi su <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Gli elementi del DOM (non-virtuale) richiesti sono selezionati al momento di ogni test. Se usi un framework frontend (come Vue per esempio) i risultati dei test potrebbero essere inaccurati per il contenuto dinamico. Speriamo di supportarli prima o poi, ma al momento non lo sono per i progetti D3.
+Puoi usare HTML, JavaScript, CSS e la libreria di visualizzazione basata su svg D3. I test richiedono la generazione degli assi con la proprietà axis di D3, che crea automaticamente le tacche sugli assi. Queste tacche sono richieste per superare i test perché la loro posizione è usata per determinale l'allineamento degli elementi del grafico. Puoi trovare informazioni su come generare gli assi su <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Gli elementi del DOM richiesti sono selezionati al momento di ogni test. Se usi un framework frontend (come Vue per esempio) i risultati dei test potrebbero essere inaccurati per il contenuto dinamico. Speriamo di supportarli prima o poi, ma al momento non lo sono per i progetti D3.
 
 **User Story #1:** Il mio grafico dovrebbe avere un titolo con corrispondente `id="title"`.
 
@@ -24,17 +24,17 @@ Puoi usare HTML, JavaScript, CSS e la libreria di visualizzazione basata su svg 
 
 **User Story #5:** Il mio grafico dovrebbe avere un elemento `rect` che mostra i dati di ogni data point con una corrispondente `class="bar"`.
 
-**User Story #6:** Ogni bar dovrebbe avere le proprietà `data-date` e `data-gdp` contenenti i valori `date` e `GDP`.
+**User Story #6:** Ogni`.bar` dovrebbe avere le proprietà `data-date` e `data-gdp` contenenti i valori `date` e `GDP`.
 
-**User Story #7:** Le proprietà `data-date` degli elementi bar dovrebbero corrispondere all'ordine dei dati messi a disposizione.
+**User Story #7:** Le proprietà `data-date` degli elementi `.bar` dovrebbero corrispondere all'ordine dei dati forniti.
 
-**User Story #8:** Le proprietà `data-gdp` degli elementi bar dovrebbero corrispondere all'ordine dei dati messi a disposizione.
+**User Story #8:** Le proprietà `data-gdp` degli elementi `.bar` dovrebbero corrispondere all'ordine dei dati forniti.
 
-**User Story #9:** L'altezza di ogni barra dovrebbe rappresentare accuratamente il corrispondente dato `GDP`.
+**User Story #9:** L'altezza di ogni elemento `.bar` dovrebbe rappresentare accuratamente il corrispondente dato `GDP`.
 
-**User Story #10:** L'attributo `data-date` e il suo corrispondente elemento bar dovrebbero allinearsi con il corrispondente valore dell'asse x.
+**User Story #10:** L'attributo `data-date` e il suo corrispondente elemento `.bar` dovrebbero allinearsi con il corrispondente valore dell'asse x.
 
-**User Story #11:** L'attributo `data-gdp` e il suo corrispondente elemento bar dovrebbero allinerasi con il corrispondente valore dell'asse y.
+**User Story #11:** L'attributo `data-gdp` e il suo corrispondente elemento `.bar` dovrebbero allinearsi con il corrispondente valore dell'asse y.
 
 **User Story #12:** Posso passare con il mouse su un'area e vedere un tooltip con un corrispondente `id="tooltip"` che mostra maggiori informazioni sull'area.
 

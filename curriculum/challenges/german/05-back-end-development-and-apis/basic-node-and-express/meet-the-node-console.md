@@ -10,9 +10,9 @@ dashedName: meet-the-node-console
 
 Bei der Arbeit an diesen Aufgaben wirst du deinen Code mithilfe folgender Methoden schreiben:
 
-- Klone <a href="https://github.com/freeCodeCamp/boilerplate-express/" target="_blank" rel="noopener noreferrer nofollow">dieses GitHub-Repo</a> und schließe dein Projekt lokal ab.
+- Klone <a href="https://github.com/freeCodeCamp/boilerplate-express/" target="_blank" rel="noopener noreferrer nofollow">diese GitHub-Repo</a> und schließe dein Projekt lokal ab.
 - Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-express" target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starterprojekt</a>, um die Aufgaben abzuschließen.
-- Verwende einen Site Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien aus unserem GitHub Repo zu integrieren.
+- Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
 
 Wenn du Replit verwendest, dann folge diesen Schritten, um das Projekt einzurichten:
 
@@ -24,9 +24,9 @@ Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projek
 
 Während des Entwicklungsprozesses ist es wichtig, überprüfen zu können, was in deinem Code passiert.
 
-Node ist nur eine JavaScript-Umgebung. Like client side JavaScript, you can use the console to display useful debug information. Auf deinem lokalen Rechner würdest du die Konsolenausgabe in einem Terminal sehen. Bei Replit ist im rechten Fensterbereich standardmäßig ein Terminal geöffnet.
+Node ist nur eine JavaScript-Umgebung. Wie bei JavaScript auf der Clientenseite kannst du die Konsole verwenden, um nützliche Debug-Informationen anzuzeigen. Auf deinem lokalen Rechner würdest du die Konsolenausgabe in einem Terminal sehen. Bei Replit ist im rechten Fensterbereich standardmäßig ein Terminal geöffnet.
 
-We recommend to keep the terminal open while working at these challenges. Wenn du die Ausgabe im Terminal liest, kannst du eventuell auftretende Fehler erkennen.
+Wir empfehlen, das Terminal während der Arbeit an diesen Aufgaben geöffnet zu lassen. Wenn du die Ausgabe im Terminal liest, kannst du eventuell auftretende Fehler erkennen.
 
 # --instructions--
 

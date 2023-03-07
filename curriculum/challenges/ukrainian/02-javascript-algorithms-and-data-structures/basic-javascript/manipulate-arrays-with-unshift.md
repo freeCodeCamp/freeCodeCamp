@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392ce
-title: Manipulate Arrays With unshift Method
+title: Маніпулювання масивами за допомогою методу unshift
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckNDESv'
 forumTopicId: 18239
@@ -9,7 +9,7 @@ dashedName: manipulate-arrays-with-unshift
 
 # --description--
 
-Ви можете не лише перемістити (`shift`) елементи з початку масиву, але й змістити (`unshift`) їх на початок масиву, тобто додати елементи перед масивом.
+Ви можете не лише перемістити (`shift`) елементи з початку масиву, але й змістити (`unshift`) їх на початок масиву, тобто додати елементи спочатку.
 
 `.unshift()` працює в точності як `.push()`, але замість додавання елемента в кінець масиву, `unshift()` додає елемент на початку масиву.
 
@@ -29,7 +29,7 @@ ourArray.unshift("Happy");
 
 # --hints--
 
-Тепер `myArray` повинен мати `[["Paul", 35], ["dog", 3]]`.
+Тепер `myArray` має дорівнювати `[["Paul", 35], ["dog", 3]]`.
 
 ```js
 assert(

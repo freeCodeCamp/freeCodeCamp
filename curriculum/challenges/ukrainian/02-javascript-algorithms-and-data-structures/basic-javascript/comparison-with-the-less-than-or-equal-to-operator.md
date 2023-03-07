@@ -27,43 +27,43 @@ dashedName: comparison-with-the-less-than-or-equal-to-operator
 
 # --hints--
 
-`testLessOrEqual(0)` повинен повертати рядок `Smaller Than or Equal to 12`
+`testLessOrEqual(0)` має повертати рядок `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(0) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(11)` повинен повертати рядок `Smaller Than or Equal to 12`
+`testLessOrEqual(11)` має повертати рядок `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(11) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(12)` повинен повертати рядок `Smaller Than or Equal to 12`
+`testLessOrEqual(12)` має повертати рядок `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(12) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(23)` повинен повертати рядок `Smaller Than or Equal to 24`
+`testLessOrEqual(23)` має повертати рядок `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(23) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(24)` повинен повертати рядок `Smaller Than or Equal to 24`
+`testLessOrEqual(24)` має повертати рядок `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(24) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(25)` повинен повертати рядок `More Than 24`
+`testLessOrEqual(25)` має повертати рядок `More Than 24`
 
 ```js
 assert(testLessOrEqual(25) === 'More Than 24');
 ```
 
-`testLessOrEqual(55)` повинен повертати рядок `More Than 24`
+`testLessOrEqual(55)` має повертати рядок `More Than 24`
 
 ```js
 assert(testLessOrEqual(55) === 'More Than 24');

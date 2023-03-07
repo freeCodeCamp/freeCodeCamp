@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-// @ts-nocheck
 import {
   faCheckSquare,
   faHeart,
@@ -11,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component, Fragment, createRef } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import envData from '../../../../../config/env.json';
+import { clientLocale, radioLocation } from '../../../../../config/env.json';
 import {
   availableLangs,
   LangNames,
@@ -25,14 +22,6 @@ import { Link } from '../../helpers';
 import { Themes } from '../../settings/theme';
 import LanguageGlobe from '../../../assets/icons/language-globe';
 import { User } from '../../../redux/prop-types';
-
-interface NavigationLocationApi {
-  clientLocale: string;
-  radioLocation: string;
-  apiLocation: string;
-}
-
-const { clientLocale, radioLocation } = envData as NavigationLocationApi;
 
 const locales = availableLangs.client.filter(
   lang => !hiddenLangs.includes(lang)
@@ -50,10 +39,10 @@ interface NavLinksProps {
   t: TFunction;
   showMenu: () => void;
   hideMenu: () => void;
-  toggleNightMode: (theme: Themes) => void;
+  toggleNightMode: (theme: Themes) => Themes;
   user?: User;
   navigate?: (location: string) => void;
-  showLanguageMenu: (elementToFocus: HTMLButtonElement) => void;
+  showLanguageMenu: (elementToFocus: HTMLButtonElement | null) => void;
   hideLanguageMenu: () => void;
   menuButtonRef: React.RefObject<HTMLButtonElement>;
   openSignoutModal: () => void;
@@ -95,11 +84,14 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     );
   }
 
-  getPreviousMenuItem(target: HTMLButtonElement): HTMLButtonElement {
+  getPreviousMenuItem(target: HTMLButtonElement | null) {
     const { menuButtonRef } = this.props;
     const previousSibling =
       target?.closest('.nav-list > li')?.previousElementSibling;
-    return previousSibling?.querySelector('a, button') ?? menuButtonRef.current;
+    const previousButton = previousSibling?.querySelector<
+      HTMLButtonElement | HTMLAnchorElement
+    >('a, button');
+    return previousButton ?? menuButtonRef.current;
   }
 
   handleLanguageChange = (event: React.MouseEvent<HTMLButtonElement>): void => {
@@ -144,7 +136,9 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     }
   };
 
-  handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
+  handleMenuKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
     const { menuButtonRef, hideMenu } = this.props;
     if (event.key === 'Escape') {
       menuButtonRef.current?.focus();
@@ -153,7 +147,7 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     }
   };
 
-  handleLanguageButtonClick = (): void => {
+  handleLanguageButtonClick = () => {
     const { isLanguageMenuDisplayed, hideLanguageMenu, showLanguageMenu } =
       this.props;
     if (isLanguageMenuDisplayed) {
@@ -163,38 +157,72 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     }
   };
 
+  handleSignOutKeys = (
+    event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
+    const { menuButtonRef, hideMenu } = this.props;
+    const DoKeyPress = new Map<string, { select: () => void }>([
+      [
+        'Escape',
+        {
+          select: () => {
+            menuButtonRef.current?.focus();
+            hideMenu();
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'Tab',
+        {
+          select: () => {
+            const camperPressedTheShiftKey = event.shiftKey;
+            if (!camperPressedTheShiftKey) {
+              hideMenu();
+            }
+          }
+        }
+      ]
+    ]);
+    DoKeyPress.get(event.key)?.select();
+  };
   handleLanguageButtonKeyDown = (
     event: React.KeyboardEvent<HTMLButtonElement>
   ): void => {
     const { menuButtonRef, showLanguageMenu, hideMenu } = this.props;
 
-    interface DoKeyPressProp {
-      Escape: () => void;
-      ArrowDown: () => void;
-      ArrowUp: () => void;
-    }
-
-    // eslint naming convention should be ignored in key press function, because following the name convention harms accessiblity.
-
-    const DoKeyPress: DoKeyPressProp = {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      Escape: () => {
-        menuButtonRef.current?.focus();
-        hideMenu();
-        event.preventDefault();
-      },
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      ArrowDown: () => {
-        showLanguageMenu(this.firstLangOptionRef.current);
-        event.preventDefault();
-      },
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      ArrowUp: () => {
-        showLanguageMenu(this.lastLangOptionRef.current);
-        event.preventDefault();
-      }
-    };
-    DoKeyPress[event.key]?.();
+    // the strings in map need to start with a Capital latter, because event.key preduce a string that starts with a capital latter
+    const DoKeyPress = new Map<string, { select: () => void }>([
+      [
+        'Escape',
+        {
+          select: () => {
+            menuButtonRef.current?.focus();
+            hideMenu();
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'ArrowDown',
+        {
+          select: () => {
+            showLanguageMenu(this.firstLangOptionRef.current);
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'ArrowUp',
+        {
+          select: () => {
+            showLanguageMenu(this.lastLangOptionRef.current);
+            event.preventDefault();
+          }
+        }
+      ]
+    ]);
+    DoKeyPress.get(event.key)?.select();
   };
 
   handleLanguageMenuKeyDown = (
@@ -209,70 +237,93 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
       this.lastLangOptionRef.current?.focus();
       event.preventDefault();
     };
-    const DoKeyPress = {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      Tab: () => {
-        if (!event.shiftKey) {
-          // Let the Tab work as normal.
-          hideLanguageMenu();
-          // Close the menu if focus is now outside of the menu. This will
-          // happen when there is no Sign Out menu item.
-          setTimeout(() => {
-            const currentlyFocusedElement = document.activeElement;
-            if (
-              currentlyFocusedElement &&
-              !currentlyFocusedElement.closest('.nav-list')
-            ) {
-              hideMenu();
+    const DoKeyPress = new Map<string, { select: () => void }>([
+      [
+        'Tab',
+        {
+          select: () => {
+            if (!event.shiftKey) {
+              // Let the Tab work as normal.
+              hideLanguageMenu();
+              // Close the menu if focus is now outside of the menu. This will
+              // happen when there is no Sign Out menu item.
+              setTimeout(() => {
+                const currentlyFocusedElement = document.activeElement;
+                if (
+                  currentlyFocusedElement &&
+                  !currentlyFocusedElement.closest('.nav-list')
+                ) {
+                  hideMenu();
+                }
+              }, 200);
+              return;
             }
-          }, 200);
-          return;
+            // Because FF adds an extra Tab stop to the lang menu (because it
+            // is scrollable) we need to manually focus the previous menu item.
+            const currentButton = this.langButtonRef.current;
+            this.getPreviousMenuItem(currentButton)?.focus();
+            hideLanguageMenu();
+            event.preventDefault();
+          }
         }
-        // Because FF adds an extra Tab stop to the lang menu (because it
-        // is scrollable) we need to manually focus the previous menu item.
-        this.getPreviousMenuItem(this.langButtonRef.current).focus();
-        hideLanguageMenu();
-        event.preventDefault();
-      },
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      ArrowUp: () => {
-        const ArrowUpItemToFocus =
-          event.target === this.firstLangOptionRef.current
-            ? this.lastLangOptionRef.current
-            : (event.currentTarget.parentNode?.previousSibling
-                ?.firstChild as HTMLElement);
-        ArrowUpItemToFocus?.focus();
-        event.preventDefault();
-      },
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      ArrowDown: () => {
-        const ArrowDownItemToFocus =
-          event.target === this.lastLangOptionRef.current
-            ? this.firstLangOptionRef.current
-            : (event.currentTarget.parentNode?.nextSibling
-                ?.firstChild as HTMLElement);
-        ArrowDownItemToFocus?.focus();
-        event.preventDefault();
-      },
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      Escape: () => {
-        // Set focus to language button first so we don't lose focus
-        // for screen readers.
-        this.langButtonRef.current?.focus();
-        hideLanguageMenu();
-        event.preventDefault();
-      },
-      Home: focusFirstLanguageMenuItem,
-      PageUp: focusFirstLanguageMenuItem,
-      End: focusLastLanguageMenuItem,
-      PageDown: focusLastLanguageMenuItem
-    };
-    DoKeyPress[event.key]?.();
+      ],
+      [
+        'Escape',
+        {
+          select: () => {
+            this.langButtonRef.current?.focus();
+            hideLanguageMenu();
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'ArrowDown',
+        {
+          select: () => {
+            const isFocusOnLastLanguageOption =
+              event.target === this.lastLangOptionRef.current;
+            const selectCancelButton = this.firstLangOptionRef.current?.focus();
+            const selectNextLanguage = (
+              event.currentTarget.parentNode?.nextSibling
+                ?.firstChild as HTMLButtonElement
+            )?.focus();
+            isFocusOnLastLanguageOption
+              ? selectCancelButton
+              : selectNextLanguage;
+            event.preventDefault();
+          }
+        }
+      ],
+      [
+        'ArrowUp',
+        {
+          select: () => {
+            const isFocusOnCancelButton =
+              event.target === this.firstLangOptionRef.current;
+            const selectLastLanguage = this.lastLangOptionRef.current?.focus();
+            // selectPreviousLanguage is a childNode and doesn't have focus property but it still works somehow,
+            // IDK how it works, and how to please TypeScript, for now I am lying to TypeScript
+            const selectPreviousLanguage = (
+              event.currentTarget.parentNode?.previousSibling
+                ?.firstChild as HTMLButtonElement
+            )?.focus();
+            isFocusOnCancelButton ? selectLastLanguage : selectPreviousLanguage;
+            event.preventDefault();
+          }
+        }
+      ],
+      ['Home', { select: focusFirstLanguageMenuItem }],
+      ['PageUp', { select: focusFirstLanguageMenuItem }],
+      ['End', { select: focusLastLanguageMenuItem }],
+      ['PageDown', { select: focusLastLanguageMenuItem }]
+    ]);
+    DoKeyPress.get(event.key)?.select();
   };
 
   // Added to the last item in the nav menu. Will close the menu if
   // the user Tabs out of the menu.
-  handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
+  handleBlur = (event: React.FocusEvent<HTMLButtonElement>) => {
     const { hideMenu, menuButtonRef } = this.props;
     if (
       event.relatedTarget &&
@@ -296,9 +347,11 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
       fetchState,
       t,
       toggleNightMode,
-      user: { isDonating = false, username, theme }
+      user
     }: NavLinksProps = this.props;
-
+    const currentUserDonating = user?.isDonating;
+    const currentUserName = user?.username;
+    const currentUserTheme = user?.theme;
     const { pending } = fetchState;
 
     return pending ? (
@@ -310,7 +363,7 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
           isLanguageMenuDisplayed ? ' display-lang-menu' : ''
         }`}
       >
-        {isDonating ? (
+        {currentUserDonating ? (
           <li key='donate'>
             <div className='nav-link nav-link-flex nav-link-header'>
               <span>{t('donate.thanks')}</span>
@@ -338,14 +391,14 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             {t('buttons.curriculum')}
           </Link>
         </li>
-        {username && (
-          <Fragment key='profile-settings'>
+        {currentUserName && (
+          <>
             <li key='profile'>
               <Link
                 className='nav-link'
                 onKeyDown={this.handleMenuKeyDown}
                 sameTab={false}
-                to={`/${username as string}`}
+                to={`/${currentUserName}`}
               >
                 {t('buttons.profile')}
               </Link>
@@ -360,7 +413,7 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
                 {t('buttons.settings')}
               </Link>
             </li>
-          </Fragment>
+          </>
         )}
         <li key='forum' className='nav-line'>
           <Link
@@ -400,23 +453,24 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
         </li>
         <li className='nav-line' key='theme'>
           <button
-            {...(!username && { 'aria-describedby': 'theme-sign-in' })}
-            aria-disabled={!username}
-            aria-pressed={theme === Themes.Night ? 'true' : 'false'}
+            {...(!currentUserName && { 'aria-describedby': 'theme-sign-in' })}
+            aria-disabled={!currentUserName}
+            aria-pressed={currentUserTheme === Themes.Night ? 'true' : 'false'}
             className={
-              'nav-link nav-link-flex' + (!username ? ' nav-link-header' : '')
+              'nav-link nav-link-flex' +
+              (!currentUserName ? ' nav-link-header' : '')
             }
             onClick={() => {
-              if (username) {
-                this.toggleTheme(String(theme) as Themes, toggleNightMode);
+              if (currentUserName) {
+                this.toggleTheme(currentUserTheme, toggleNightMode);
               }
             }}
             onKeyDown={this.handleMenuKeyDown}
           >
-            {username ? (
+            {currentUserName ? (
               <>
                 <span>{t('settings.labels.night-mode')}</span>
-                {theme === Themes.Night ? (
+                {currentUserTheme === Themes.Night ? (
                   <FontAwesomeIcon icon={faCheckSquare} />
                 ) : (
                   <FontAwesomeIcon icon={faSquare} />
@@ -439,6 +493,13 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
           </button>
         </li>
         <li key='lang-menu'>
+          {/* 
+           The div existences create edge case in which camper skips the change language,
+           when they press "shift+tab" on signout button whenever signout focus events uses `getPreviousMenuItem`.
+           To fix this we need to remove `div`, but this creates a bug which close the menu when someone interact with it any other way except the keyboard.
+           This is a complexy and footgun that can break the site without notices and we shouldn't carry,
+           to sort this we need to remove the div and make focus events simpler, but that's a ToDo for later.
+          */}
           <div className='nav-lang' key='language-dropdown'>
             <button
               aria-controls='nav-lang-menu'
@@ -456,7 +517,9 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             </button>
             <ul
               aria-labelledby='nav-lang-button'
-              className={'nav-lang-menu' + (username ? ' logged-in' : '')}
+              className={
+                'nav-lang-menu' + (currentUserName ? ' logged-in' : '')
+              }
               id='nav-lang-menu'
               role='menu'
             >
@@ -468,7 +531,7 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
                   onKeyDown={this.handleLanguageMenuKeyDown}
                   ref={this.firstLangOptionRef}
                   role='menuitem'
-                  tabIndex='-1'
+                  tabIndex={-1}
                 >
                   {t('buttons.cancel-change')}
                 </button>
@@ -488,7 +551,7 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
                       ref: this.lastLangOptionRef
                     })}
                     role='menuitem'
-                    tabIndex='-1'
+                    tabIndex={-1}
                   >
                     {LangNames[lang]}
                   </button>
@@ -497,19 +560,17 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             </ul>
           </div>
         </li>
-        {username && (
-          <Fragment key='signout-frag'>
-            <li className='nav-line' key='sign-out'>
-              <button
-                className='nav-link nav-link-signout'
-                data-value='sign-out-button'
-                onClick={this.handleSignOutClick}
-                onKeyDown={this.handleLanguageMenuKeyDown}
-              >
-                {t('buttons.sign-out')}
-              </button>
-            </li>
-          </Fragment>
+        {currentUserName && (
+          <li className='nav-line' key='sign-out'>
+            <button
+              className='nav-link nav-link-signout'
+              data-value='sign-out-button'
+              onClick={this.handleSignOutClick}
+              onKeyDown={this.handleSignOutKeys}
+            >
+              {t('buttons.sign-out')}
+            </button>
+          </li>
         )}
       </ul>
     );
@@ -518,4 +579,7 @@ class NavLinks extends Component<NavLinksProps, NavlinkStates> {
 
 NavLinks.displayName = 'NavLinks';
 
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+//@ts-ignore
+// to please TypeScript, action.js needs to be migrated to TypeScript
 export default connect(null, mapDispatchToProps)(withTranslation()(NavLinks));

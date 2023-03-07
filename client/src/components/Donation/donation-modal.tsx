@@ -23,10 +23,12 @@ import { playTone } from '../../utils/tone';
 import { Spacer } from '../helpers';
 import DonateForm from './donate-form';
 
+type RecentlyClaimedBlock = null | { block: string; superBlock: string };
+
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
   recentlyClaimedBlockSelector,
-  (show: boolean, recentlyClaimedBlock: string) => ({
+  (show: boolean, recentlyClaimedBlock: RecentlyClaimedBlock) => ({
     show,
     recentlyClaimedBlock
   })
@@ -46,7 +48,7 @@ type DonateModalProps = {
   closeDonationModal: typeof closeDonationModal;
   executeGA: typeof executeGA;
   location?: WindowLocation;
-  recentlyClaimedBlock: string;
+  recentlyClaimedBlock: RecentlyClaimedBlock;
   show: boolean;
 };
 
@@ -70,13 +72,13 @@ function DonateModal({
       executeGA({
         event: 'donationview',
         action: `Displayed ${
-          recentlyClaimedBlock ? 'Block' : 'Progress'
+          recentlyClaimedBlock !== null ? 'Block' : 'Progress'
         } Donation Modal`
       });
     }
   }, [show, recentlyClaimedBlock, executeGA]);
 
-  const getDonationText = () => {
+  const getCommonDonationText = () => {
     const donationDuration = modalDefaultDonation.donationDuration;
     switch (donationDuration) {
       case 'one-time':
@@ -95,32 +97,28 @@ function DonateModal({
     }
   };
 
-  const blockDonationText = (
+  const donationText = (
     <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
-        <Cup className='donation-icon' />
-      </div>
-      <Row>
-        {!closeLabel && (
-          <Col sm={10} smOffset={1} xs={12}>
-            <b>{t('donate.nicely-done', { block: recentlyClaimedBlock })}</b>
-            <br />
-            {getDonationText()}
-          </Col>
+        {recentlyClaimedBlock !== null ? (
+          <Cup className='donation-icon' />
+        ) : (
+          <Heart className='donation-icon' />
         )}
-      </Row>
-    </div>
-  );
-
-  const progressDonationText = (
-    <div className='text-center progress-modal-text'>
-      <div className='donation-icon-container'>
-        <Heart className='donation-icon' />
       </div>
       <Row>
         {!closeLabel && (
           <Col sm={10} smOffset={1} xs={12}>
-            {getDonationText()}
+            {recentlyClaimedBlock !== null && (
+              <b>
+                {t('donate.nicely-done', {
+                  block: t(
+                    `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
+                  )
+                })}
+              </b>
+            )}
+            {getCommonDonationText()}
           </Col>
         )}
       </Row>
@@ -135,7 +133,7 @@ function DonateModal({
       show={show}
     >
       <Modal.Body>
-        {recentlyClaimedBlock ? blockDonationText : progressDonationText}
+        {donationText}
         <Spacer />
         <Row>
           <Col xs={12}>

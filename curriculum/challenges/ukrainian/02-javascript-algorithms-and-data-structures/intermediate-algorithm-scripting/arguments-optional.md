@@ -10,7 +10,7 @@ dashedName: arguments-optional
 
 Створіть функцію, яка додає два аргументи. Якщо вказано лише один аргумент, то поверніть функцію, яка очікує один аргумент і повертає суму.
 
-Наприклад, `addTogether(2, 3)` повинен повертати `5`, а `addTogether(2)` повинен повертати функцію.
+Наприклад, `addTogether(2, 3)` має повертати `5`, а `addTogether(2)` має повертати функцію.
 
 Якщо викликати функцію, повернуту з одним аргументом, то повернеться сума:
 
@@ -24,49 +24,49 @@ var sumTwoAnd = addTogether(2);
 
 # --hints--
 
-`addTogether(2, 3)` повинен повертати 5.
+`addTogether(2, 3)` має повертати 5.
 
 ```js
 assert.deepEqual(addTogether(2, 3), 5);
 ```
 
-`addTogether(23, 30)` повинен повертати 53.
+`addTogether(23, 30)` має повертати 53.
 
 ```js
 assert.deepEqual(addTogether(23, 30), 53);
 ```
 
-`addTogether(5)(7)` повинен повертати 12.
+`addTogether(5)(7)` має повертати 12.
 
 ```js
 assert.deepEqual(addTogether(5)(7), 12);
 ```
 
-`addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")` повинен повертати `undefined`.
+`addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")` має повертати `undefined`.
 
 ```js
 assert.isUndefined(addTogether('https://www.youtube.com/watch?v=dQw4w9WgXcQ'));
 ```
 
-`addTogether(2, "3")` повинен повертати `undefined`.
+`addTogether(2, "3")` має повертати `undefined`.
 
 ```js
 assert.isUndefined(addTogether(2, '3'));
 ```
 
-`addTogether(2)([3])` повинен повертати `undefined`.
+`addTogether(2)([3])` має повертати `undefined`.
 
 ```js
 assert.isUndefined(addTogether(2)([3]));
 ```
 
-`addTogether("2", 3)` повинен повертати `undefined`.
+`addTogether("2", 3)` має повертати `undefined`.
 
 ```js
 assert.isUndefined(addTogether('2', 3));
 ```
 
-`addTogether(5, undefined)` повинен повертати `undefined`.
+`addTogether(5, undefined)` має повертати `undefined`.
 
 ```js
 assert.isUndefined(addTogether(5, undefined));

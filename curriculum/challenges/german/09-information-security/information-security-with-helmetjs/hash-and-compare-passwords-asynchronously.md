@@ -43,7 +43,7 @@ bcrypt.hash('passw0rd!', 13, (err, hash) => {
 
 ```
 
-Submit your page when you think you've got it right.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben.
 
 # --hints--
 

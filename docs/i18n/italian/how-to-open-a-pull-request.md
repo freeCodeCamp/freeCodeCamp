@@ -188,14 +188,14 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
 4. Risolvi eventuali conflitti, fai pulizia, installa le dipendenze ed esegui i test
 
    ```console
-   npm run clean
+   pnpm run clean
 
-   npm ci
-   npm run test:curriculum --superblock=<superblock-name>
+   pnpm install
+   FCC_SUPERBLOCK='<superblock-name>' pnpm run test:curriculum 
 
    # example:
 
-   # npm run test:curriculum --superblock=python-for-everybody
+   # FCC_SUPERBLOCK='python-for-everybody' pnpm run test:curriculum
 
    ```
 

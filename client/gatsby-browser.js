@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 
 import i18n from './i18n/config';
 import AppMountNotifier from './src/components/app-mount-notifier';
-import { createStore } from './src/redux/createStore';
+import { createStore } from './src/redux/create-store';
 import layoutSelector from './utils/gatsby/layout-selector';
 import GrowthBookProvider from './src/components/growth-book/growth-book-wrapper';
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd4
-title: أضف تأثير عند تحرك المستخدم فوق عنصر (Hover Effect) إلى عنصر D3
+title: أضف تأثير عندما يحوم الماوس فوق عنصر (Hover Effect) D3
 challengeType: 6
 forumTopicId: 301469
 dashedName: add-a-hover-effect-to-a-d3-element
@@ -8,7 +8,7 @@ dashedName: add-a-hover-effect-to-a-d3-element
 
 # --description--
 
-من الممكن إضافة التأثيرات (effects) التي توضح العمود (bar) عندما يتحرك المستخدم فوقه (hovers) بالفأرة. حتى الآن، طبقت تصميم (style) لمستطيلات بواسطة طرق (methods) في D3 و SVG الموجودة داخلهم، ولكن يمكنك استعمال CSS أيضا.
+من الممكن إضافة التأثيرات (effects) التي توضح العمود (bar) عندما يحوم الماوس فوقه (hovers). حتى الآن، طبقت تصميم (style) المستطيلات بواسطة طرق مدمجة (built-in methods) في D3 و SVG، ولكن يمكنك استعمال CSS أيضا.
 
 يمكنك تعيين فئة (class) من CSS إلى عناصر SVG مع طريقة (method) تسمى `attr()`. ثم تحتوي فئة الزائفة (pseudo-class) المسمى `:hover` على قواعد التصميم (style) الجديدة لأي تأثيرات عند تحرك المستخدم فوق عنصر (hover).
 

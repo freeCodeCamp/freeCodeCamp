@@ -60,43 +60,43 @@ assert(!/if/g.test(code));
 assert(code.match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` は文字列 `Marley` になる必要があります。
+`chainToSwitch("bob")` should return the string `Marley`
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` は文字列 `The Answer` になる必要があります。
+`chainToSwitch(42)` should return the string `The Answer`
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` は文字列 `There is no #1` になる必要があります。
+`chainToSwitch(1)` should return the string `There is no #1`
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)` は文字列 `Missed me by this much!` になる必要があります。
+`chainToSwitch(99)` should return the string `Missed me by this much!`
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` は文字列 `Ate Nine` になる必要があります。
+`chainToSwitch(7)` should return the string `Ate Nine`
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` は `""` (空文字列) になる必要があります。
+`chainToSwitch("John")` should return `""` (empty string)
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` は `""` (空文字列) になる必要があります。
+`chainToSwitch(156)` should return `""` (empty string)
 
 ```js
 assert(chainToSwitch(156) === '');

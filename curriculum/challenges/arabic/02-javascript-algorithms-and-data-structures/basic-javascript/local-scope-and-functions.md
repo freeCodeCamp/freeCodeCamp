@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244bf
-title: النطاق المحلي والوظائف (Local Scope and Functions)
+title: النطاق المحدود والوظائف
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd62NhM'
 forumTopicId: 18227
@@ -9,7 +9,7 @@ dashedName: local-scope-and-functions
 
 # --description--
 
-المتغيرات التي أعلنة داخل وظيفة (function)، وكذلك الوسائط (parameters) للوظيفة لديها مجال <dfn>محدود (local)</dfn>. وهذا يعني أنها لا تبد مرئية إلا في إطار الوظيفة.
+المتغيرات التي أعلنت داخل وظيفة (function)، وكذلك الوسائط (parameters) للوظيفة لديها مجال <dfn>محدود (local)</dfn>. وهذا يعني أنها لا تكون ظاهرة (أو معروفة) إلا في نطاق الوظيفة.
 
 هذه وظيفة `myTest` مع متغير محدود يسمى `loc`.
 
@@ -23,17 +23,17 @@ myTest();
 console.log(loc);
 ```
 
-استدعاء الوظيفة `myTest()` ستعرض المقطع `foo` في وحدة التحكم. سيؤدي سطر `console.log(loc)` (خارج وظيفة `myTest`) إلى ظهور خطأ، حيث إن `loc` لم يتم تعريفها خارج الوظيفة.
+تفعيل وظيفة `myTest()` سيعرض مقطع `foo` في الكونسول. سيؤدي سطر `console.log(loc)` (خارج وظيفة `myTest`) إلى ظهور خطأ، حيث إن `loc` لم يتم تعريفها خارج الوظيفة.
 
 # --instructions--
 
-يحتوي المحرر على اثنين `console.log` لمساعدتك على رؤية ما يحدث. تحقق من وحدة التحكم خلال كتابة الكود لترى كيف يتغير. اعلن متغير محدود اسمه `myVar` داخل `myLocalScope` وفعّل الاختبارات.
+يحتوي المحرر على سطرين `console.log` لمساعدتك على رؤية ما يحدث. تحقق على الكونسول خلال كتابة الكود لترى كيف يتغير. اعلن متغير محدود اسمه `myVar` داخل `myLocalScope` وشغِّل الاختبارات.
 
-**ملاحظة:** وحدة التحكم ستظل تعرض `ReferenceError: myVar is not defined`، ولكن هذا لن يتسبب في فشل الاختبارات.
+**ملاحظة:** الكونسول سيظل بعرض `ReferenceError: myVar is not defined`، ولكن هذا لن يتسبب في فشل الاختبارات.
 
 # --hints--
 
-لا ينبغي أن يحتوي الكود على متغير شامل يدعي `myVar`.
+لا ينبغي أن يحتوي الكود على متغير شامل يدعى `myVar`.
 
 ```js
 function declared() {
@@ -43,7 +43,7 @@ function declared() {
 assert.throws(declared, ReferenceError);
 ```
 
-يجب عليك إضافة متغير محدود يدعي `myVar`.
+يجب عليك إضافة متغير محدود يدعى `myVar`.
 
 ```js
 assert(

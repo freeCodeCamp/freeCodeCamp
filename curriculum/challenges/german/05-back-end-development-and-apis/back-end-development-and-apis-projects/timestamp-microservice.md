@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bdef
-title: Timestamp Microservice
+title: Zeitstempel-Mikroservice
 challengeType: 4
 forumTopicId: 301508
 dashedName: timestamp-microservice
@@ -12,7 +12,7 @@ Erstelle eine vollständige JavaScript-Anwendung, die eine ähnliche Funktionali
 
 -   Klone <a href="https://github.com/freeCodeCamp/boilerplate-project-timestamp/"  target="_blank" rel="noopener noreferrer nofollow">dieses GitHub-Repo</a> und schließe dein Projekt lokal ab.
 -   Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp"  target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starter-Projekt</a>, um dein Projekt fertigzustellen.
--   Verwende einen Site-Builder deiner Wahl, um das Projekt fertigzustellen. Be sure to incorporate all the files from our GitHub repo.
+-   Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
 
 If you use Replit, follow these steps to set up the project:
 

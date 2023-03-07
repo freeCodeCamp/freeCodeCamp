@@ -15,7 +15,7 @@ dashedName: understanding-boolean-values
 
 # --instructions--
 
-Змініть функцію `welcomeToBooleans` так, щоб вона повертала `true` замість `false`, коли натискається кнопка запуску.
+Змініть функцію `welcomeToBooleans` так, щоб вона повертала `true` замість `false`.
 
 # --hints--
 
@@ -25,7 +25,7 @@ dashedName: understanding-boolean-values
 assert(typeof welcomeToBooleans() === 'boolean');
 ```
 
-`welcomeToBooleans()` повинна повертати `true`.
+`welcomeToBooleans()` має повертати `true`.
 
 ```js
 assert(welcomeToBooleans() === true);

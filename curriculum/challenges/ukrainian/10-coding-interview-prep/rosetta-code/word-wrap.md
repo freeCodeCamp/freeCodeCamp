@@ -22,7 +22,7 @@ dashedName: word-wrap
 
 # --hints--
 
-перенесення має бути функцією.
+wrap має бути функцією.
 
 ```js
 assert.equal(typeof wrap, 'function');

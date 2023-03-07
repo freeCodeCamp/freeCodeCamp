@@ -188,14 +188,14 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 4. Resolve any conflicts, cleanup, install dependencies and run tests
 
    ```console
-   npm run clean
+   pnpm run clean
 
-   npm ci
-   npm run test:curriculum --superblock=<superblock-name>
+   pnpm install
+   FCC_SUPERBLOCK='<superblock-name>' pnpm run test:curriculum 
 
-   # приклад:
+   # example:
 
-   # npm run test:curriculum --superblock=python-for-everybody
+   # FCC_SUPERBLOCK='python-for-everybody' pnpm run test:curriculum
 
    ```
 
