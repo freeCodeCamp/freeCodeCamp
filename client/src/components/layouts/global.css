@@ -450,10 +450,6 @@ hr {
   border-top: 1px solid var(--quaternary-background);
 }
 
-.panel-default {
-  background: var(--secondary-background);
-}
-
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary,
