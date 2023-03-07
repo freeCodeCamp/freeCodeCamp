@@ -9,7 +9,7 @@ import Timeline from './components/time-line';
 import Camper from './components/camper';
 import Certifications from './components/certifications';
 import HeatMap from './components/heat-map';
-import Portfolio from './components/portfolio';
+import { PortfolioProjects } from './components/portfolio-porjects';
 
 interface ProfileProps {
   isSessionUser: boolean;
@@ -61,7 +61,6 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
       showPortfolio = false,
       showTimeLine = false
     },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     calendar,
     completedChallenges,
     githubProfile,
@@ -74,7 +73,7 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
     location,
     points,
     picture,
-    portfolio,
+    portfolioProjects,
     about,
     yearsTopContributor,
     isDonating
@@ -96,10 +95,11 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
-      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
-      {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
+      {showPortfolio ? (
+        <PortfolioProjects portfolioProjects={portfolioProjects} />
+      ) : null}
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}

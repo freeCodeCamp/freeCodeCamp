@@ -207,7 +207,7 @@ export type User = {
   name: string;
   picture: string;
   points: number;
-  portfolio: Portfolio[];
+  portfolioProjects: PortfolioProjectData[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
@@ -300,7 +300,7 @@ export type ChallengeMeta = {
   helpCategory: string;
 };
 
-export type Portfolio = {
+export type PortfolioProjectData = {
   id: string;
   title?: string;
   url?: string;
