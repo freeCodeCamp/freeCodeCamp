@@ -9,7 +9,7 @@ declare module 'fastify' {
 }
 
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
-  void fastify.addHook(
+  fastify.addHook(
     'onRequest',
     async (req, res) => await fastify.authenticate(req, res)
   );
