@@ -7,6 +7,9 @@
   "time": "15 hours",
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
+    [ "5f490b3bd7fa89604fa0bdee",
+      "Example pyodide"
+    ],
     [
       "5e6a54a558d3af90110a60a0",
       "Introduction: Why Program?"
