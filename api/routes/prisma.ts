@@ -1,7 +1,6 @@
-import { FastifyInstance } from 'fastify';
+import { FastifyPluginCallback } from 'fastify';
 
-// eslint-disable-next-line @typescript-eslint/require-await
-export async function prismaRoute(fastify: FastifyInstance) {
+export const prismaRoute: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.get('/test-prisma', async (_request, _reply) => {
     const user = await fastify.prisma.user.findFirst({
       where: { email: 'bar@bar.com' },
@@ -9,4 +8,5 @@ export async function prismaRoute(fastify: FastifyInstance) {
     });
     return { completed: user?.completedChallenges, isCheater: user?.isCheater };
   });
-}
+  done();
+};
