@@ -114,7 +114,6 @@
 
 @supports not selector(:focus-visible) {
   #mobile-layout-pane-instructions:focus {
-    outline: 3px solid var(--focus-outline-color);
     outline-offset: -2px;
   }
 }

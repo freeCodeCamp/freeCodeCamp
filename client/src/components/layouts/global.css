@@ -192,6 +192,13 @@ button.close:focus {
   outline-offset: 0;
 }
 
+@supports not selector(:focus-visible) {
+  :focus {
+    outline: 3px solid var(--focus-outline-color);
+    outline-offset: 0;
+  }
+}
+
 .modal-content {
   background-color: var(--secondary-background);
   border-radius: 0;
