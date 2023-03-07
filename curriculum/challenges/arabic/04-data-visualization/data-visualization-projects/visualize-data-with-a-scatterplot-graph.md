@@ -12,7 +12,7 @@ dashedName: visualize-data-with-a-scatterplot-graph
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-يمكنك استخدام HTML و JavaScript و CSS و مكتبة التصوير المستندة D3. تطلب الاختبارات إنشاء المحاور (axes) باستخدام خاصية axis في D3، الذي يؤدي تِلْقائيًا إلى وضع علامات (ticks) على طول المحور. وهذه العلامات لازمة لاجتياز اختبارات D3, لأن مواقعها تُستخدم لتحديد محاذاة العناصر المرسومة بيانيٍ. ستجد معلومات حول إنشاء المحاور في <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. يتم الاستفسار عن العناصر المطلوبة DOM (non-virtual) في لحظة إجراء كل اختبار. إذا كنت تستخدم framework (مثل Vue على سبيل المثال)، قد تكون نتائج الاختبار غير دقيقة للمحتوى الديناميكي. ونأمل أن نستوعبها في المستقبل، ولكن هذه frameworks غير مدعومة حاليا لمشاريع D3.
+يمكنك استخدام HTML و JavaScript و CSS و مكتبة التصوير المستندة D3. تطلب الاختبارات إنشاء المحاور (axes) باستخدام خاصية axis في D3، الذي يؤدي تِلْقائيًا إلى وضع علامات (ticks) على طول المحور. وهذه العلامات لازمة لاجتياز اختبارات D3, لأن مواقعها تُستخدم لتحديد محاذاة العناصر المرسومة بيانيٍ. ستجد معلومات حول إنشاء المحاور في <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Required DOM elements are queried on the moment of each test. إذا كنت تستخدم framework (مثل Vue على سبيل المثال)، قد تكون نتائج الاختبار غير دقيقة للمحتوى الديناميكي. ونأمل أن نستوعبها في المستقبل، ولكن هذه frameworks غير مدعومة حاليا لمشاريع D3.
 
 **قصة المستخدم 1:** يمكنني أن أرى عنصر title مع موافقه `id="title"`.
 

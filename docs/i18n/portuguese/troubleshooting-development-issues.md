@@ -17,10 +17,10 @@ Se você está em um sistema operacional diferente ou se ainda está encontrando
 Quando você fizer a build no client, o Gatsby armazenará em cache as fontes, as strings de idioma e a interface do usuário. Se um deles não estiver em cache, execute o seguinte:
 
 ```console
-npm run clean
-npm ci
-npm run seed
-npm run develop
+pnpm run clean
+pnpm install
+pnpm run seed
+pnpm run develop
 ```
 
 OU
@@ -28,7 +28,7 @@ OU
 Use o atalho
 
 ```
-npm run clean-and-develop
+pnpm run clean-and-develop
 ```
 
 Se você continua enfrentando problemas com a compilação, é recomendável limpar o espaço de trabalho.
@@ -78,7 +78,7 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 Enquanto estiver em desenvolvimento, sua sessão é armazenada como cookies. Limpar os cookies os retirará de sua conta de desenvolvimento.
 
-Executar `npm run seed:certified-user` também deslogará você. Isso sobrescreverá o usuário de desenvolvimento em seu banco de dados local.
+Executar `pnpm run seed:certified-user` também deslogará você. Isso sobrescreverá o usuário de desenvolvimento em seu banco de dados local.
 
 ### Problema de obter 404 ao navegar na página de perfil
 

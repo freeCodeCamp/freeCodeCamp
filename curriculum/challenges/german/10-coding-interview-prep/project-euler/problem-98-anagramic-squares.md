@@ -1,6 +1,6 @@
 ---
 id: 5900f3cf1000cf542c50fee1
-title: 'Problem 98: Anagramic squares'
+title: 'Problem 98: Anagrammische Quadrate'
 challengeType: 1
 forumTopicId: 302215
 dashedName: problem-98-anagramic-squares
@@ -8,35 +8,35 @@ dashedName: problem-98-anagramic-squares
 
 # --description--
 
-By replacing each of the letters in the word CARE with 1, 2, 9, and 6 respectively, we form a square number: $1296 = 36^2$. What is remarkable is that, by using the same digital substitutions, the anagram, RACE, also forms a square number: $9216 = 96^2$. We shall call CARE (and RACE) a square anagram word pair and specify further that leading zeroes are not permitted, neither may a different letter have the same digital value as another letter.
+Ersetzt man die einzelnen Buchstaben des Wortes CARE durch 1, 2, 9 bzw. 6, erhält man eine quadratische Zahl: $1296 = 36^2$. Bemerkenswert ist, dass das Anagramm RACE mit denselben digitalen Substitutionen auch eine Quadratzahl bildet: $9216 = 96^2$. Wir nennen CARE (und RACE) ein quadratisches Anagramm-Wortpaar und legen fest, dass führende Nullen nicht erlaubt sind und dass ein anderer Buchstabe nicht den gleichen digitalen Wert wie ein anderer Buchstabe haben darf.
 
-Using the `words` array, find all the square anagram word pairs (a palindromic word is NOT considered to be an anagram of itself).
+Benutze das `words`-Array, um alle quadratischen Anagramm-Wortpaare zu finden (ein palindromisches Wort gilt NICHT als Anagramm seiner selbst).
 
-What is the largest square number formed by any member of such a pair?
+Wie groß ist die größte Quadratzahl, die von einem beliebigen Mitglied eines solchen Paares gebildet wird?
 
-**Note:** All anagrams formed must be contained in the given `words` array.
+**Hinweis:** Alle gebildeten Anagramme müssen in dem angegebenen `words`-Array enthalten sein.
 
 # --hints--
 
-`anagramicSquares(['CARE', 'RACE'])` should return a number.
+`anagramicSquares(['CARE', 'RACE'])` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof anagramicSquares(['CARE', 'RACE']) === 'number');
 ```
 
-`anagramicSquares(['CARE', 'RACE'])` should return `9216`.
+`anagramicSquares(['CARE', 'RACE'])` sollte `9216` zurückgeben.
 
 ```js
 assert.strictEqual(anagramicSquares(['CARE', 'RACE']), 9216);
 ```
 
-`anagramicSquares(testWords1)` should return `4761`.
+`anagramicSquares(testWords1)` sollte `4761` zurückgeben.
 
 ```js
 assert.strictEqual(anagramicSquares(_testWords1), 4761);
 ```
 
-`anagramicSquares(testWords2)` should return `18769`.
+`anagramicSquares(testWords2)` sollte `18769` zurückgeben.
 
 ```js
 assert.strictEqual(anagramicSquares(_testWords2), 18769);

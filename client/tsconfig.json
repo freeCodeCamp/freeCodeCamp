@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": ["WebWorker", "DOM", "DOM.Iterable", "ES2020"],
+    "target": "es2020",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "jsx": "react",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
+  },
+  "include": ["i18n/**/*", "plugins/**/*", "src/**/*", "utils/**/*"]
+}

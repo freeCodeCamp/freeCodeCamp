@@ -11,7 +11,7 @@ dashedName: step-37
 
 من الأفضل اختيار لون واحد باعتباره اللون السائد، واستخدام لونه التكميلي كلكنة للفت الانتباه إلى محتوى معين على الصفحة.
 
-أولاً، في قاعدة `h1`، استخدم الدالة `rgb` لتعيين لون الخلفية الخاص بها إلى cyan.
+First, in the `h1` rule, use the `rgb` function to set its `background-color` to cyan.
 
 # --hints--
 

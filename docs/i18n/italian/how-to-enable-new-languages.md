@@ -293,9 +293,9 @@ Una volta che avrai i file, li dovrai mettere nelle cartelle giuste. Per le sfid
 
 Aggiorna il file `.env` in modo da poter utilizzare la tua lingua per `CLIENT_LOCALE` e `CURRICULUM_LOCALE`.
 
-Una volta che questi saranno in posizione, dovresti essere in grado di eseguire `npm run develop` per vedere la versione tradotta di freeCodeCamp.
+Once these are in place, you should be able to run `pnpm run develop` to view your translated version of freeCodeCamp.
 
-> [!TIP] Se costruisci il client in una lingua e poi vuoi costruirlo in una lingua diversa, dovrai usare il comando `npm run clean-and-develop` dopo aver cambiato il file `.env`, dato che Gatsby memorizzerà nella cache la prima lingua.
+> [!TIP] If you build the client in one language and then want to build it in a different language, you will need to use the command `pnpm run clean-and-develop` after changing the `.env` file, as Gatsby will cache the first language.
 
 > [!ATTENTION] Anche se puoi farei delle traduzioni localmente per i test, ricordiamo che le traduzioni _non_ devono essere inviate attraverso GitHub ma solo tramite Crowdin. Assicurati di resettare il tuo codebase locale dopo che avrai finito con i test.
 

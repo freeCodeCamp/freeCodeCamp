@@ -13,12 +13,20 @@ Der <dfn>Rest</dfn>-Operator `%` gibt den Rest der Division von zwei Zahlen an.
 
 **Beispiel**
 
-<blockquote>5 % 2 = 1 weil<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Rest)</blockquote>
+<pre>
+5 % 2 = 1
+5 / 2 = 2 Restwert 1
+2 * 2 = 4
+5 - 4 = 1
+</pre>
 
 **Verwendung**  
-In der Mathematik kann man prüfen, ob eine Zahl gerade oder ungerade ist, indem man den Rest der Division der Zahl durch `2` prüft.
+In der Mathematik kann man prüfen, ob eine Zahl gerade oder ungerade ist, indem man den Rest der Division der Zahl durch `2` kontrolliert. Gerade Zahlen haben einen Restwert von `0`, während ungerade Zahlen einen Restwert von `1` besitzen.
 
-<blockquote>17 % 2 = 1 (17 ist ungerade)<br>48 % 2 = 0 (48 ist gerade)</blockquote>
+<pre>
+17 % 2 = 1
+48 % 2 = 0
+</pre>
 
 **Hinweis:** Der <dfn>Rest</dfn>-Operator wird manchmal fälschlicherweise als Modulus-Operator bezeichnet. Es ist dem Modulus sehr ähnlich, funktioniert aber nicht richtig mit negativen Zahlen.
 
@@ -51,7 +59,9 @@ assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
 ## --after-user-code--
 
 ```js
-(function(y){return 'remainder = '+y;})(remainder);
+(function (y) {
+  return 'remainder = ' + y;
+})(remainder);
 ```
 
 ## --seed-contents--

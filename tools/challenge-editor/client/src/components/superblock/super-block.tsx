@@ -54,7 +54,7 @@ const SuperBlock = () => {
       <p>
         Want to create a new project? Open your terminal, point to the{' '}
         <code>tools/challenge-helper-scripts</code> directory, and run{' '}
-        <code>npm run create-project</code>
+        <code>pnpm run create-project</code>
       </p>
     </div>
   );

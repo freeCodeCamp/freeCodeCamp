@@ -1,0 +1,216 @@
+{
+  "name": "Learn Advanced Array Methods by Building a Statistics Calculator",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-advanced-array-methods-by-building-a-statistics-calculator",
+  "order": 10,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superOrder": 4,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "635060a5c03c950f46174cb5",
+      "Step 1"
+    ],
+    [
+      "63507b5ac8a55134223374c7",
+      "Step 2"
+    ],
+    [
+      "63507bcbfe4ede356e624395",
+      "Step 3"
+    ],
+    [
+      "63507c19151201368ee3e16c",
+      "Step 4"
+    ],
+    [
+      "63507c4b63731437227b0134",
+      "Step 5"
+    ],
+    [
+      "63507d810f1a2e38f1908fd8",
+      "Step 6"
+    ],
+    [
+      "63507e4562cdde3a28e8de1b",
+      "Step 7"
+    ],
+    [
+      "63507ebb0c50ce3b9d669cd9",
+      "Step 8"
+    ],
+    [
+      "63507fc6cc29083cc44df2fb",
+      "Step 9"
+    ],
+    [
+      "6350805fe0fe283dd347b0dc",
+      "Step 10"
+    ],
+    [
+      "635080d80b72803e973841da",
+      "Step 11"
+    ],
+    [
+      "6350854411ffb73feb6bb84e",
+      "Step 12"
+    ],
+    [
+      "63508577f69f41409275f877",
+      "Step 13"
+    ],
+    [
+      "635085da54fc2041e0303e75",
+      "Step 14"
+    ],
+    [
+      "635085f80bd9b5429faa40c4",
+      "Step 15"
+    ],
+    [
+      "6350866cce4c6d43bdf607c8",
+      "Step 16"
+    ],
+    [
+      "63508750f040a348a440a0bf",
+      "Step 17"
+    ],
+    [
+      "635089e3bd3e144f2db4094f",
+      "Step 18"
+    ],
+    [
+      "63508abbff1c4c5210d68cc5",
+      "Step 19"
+    ],
+    [
+      "63508bb4afb069534e81f33b",
+      "Step 20"
+    ],
+    [
+      "63508c898d753754757bd5e3",
+      "Step 21"
+    ],
+    [
+      "635090f47eb6d9563a6fed05",
+      "Step 22"
+    ],
+    [
+      "635091f8dbf554575fb5aa0c",
+      "Step 23"
+    ],
+    [
+      "6352e79d15aae30fac58f48e",
+      "Step 24"
+    ],
+    [
+      "6352e80e024e89111600edfb",
+      "Step 25"
+    ],
+    [
+      "6352e93db104661305c5f658",
+      "Step 26"
+    ],
+    [
+      "6352e96d2604f813c656750b",
+      "Step 27"
+    ],
+    [
+      "6352ea3a5b79e614ee2282fd",
+      "Step 28"
+    ],
+    [
+      "6352ebd3ab962c168a122e85",
+      "Step 29"
+    ],
+    [
+      "6352ec8b9c70fd17b8c7ba3f",
+      "Step 30"
+    ],
+    [
+      "6352ecef9f045519063da9b3",
+      "Step 31"
+    ],
+    [
+      "6352edee8a4de01ad693f0e4",
+      "Step 32"
+    ],
+    [
+      "6352ee566a59d31d24bde74b",
+      "Step 33"
+    ],
+    [
+      "6352f09b1e53a420e7873344",
+      "Step 34"
+    ],
+    [
+      "6352f179bdca23221298a5ba",
+      "Step 35"
+    ],
+    [
+      "6352f2526dccb523150b64fb",
+      "Step 36"
+    ],
+    [
+      "6352f2a24eb71b24284ca2b6",
+      "Step 37"
+    ],
+    [
+      "6352faf71a9db52631864634",
+      "Step 38"
+    ],
+    [
+      "6352fbb93a91a8272f838d42",
+      "Step 39"
+    ],
+    [
+      "6352fcb156834128001ea945",
+      "Step 40"
+    ],
+    [
+      "6352fce75b2d3b2924930f1e",
+      "Step 41"
+    ],
+    [
+      "6352fe473d53592a40ae403b",
+      "Step 42"
+    ],
+    [
+      "6352fed209792d2b89e92ea1",
+      "Step 43"
+    ],
+    [
+      "6352ff27e0e51b2c7dce0010",
+      "Step 44"
+    ],
+    [
+      "6352ffe4cfafa72d595a0007",
+      "Step 45"
+    ],
+    [
+      "6353004b235d7a2e0b913f2b",
+      "Step 46"
+    ],
+    [
+      "6353024f5eab012fa2f57eec",
+      "Step 47"
+    ],
+    [
+      "6353028147d3c7309017216a",
+      "Step 48"
+    ],
+    [
+      "635302be760d6031d11a06cd",
+      "Step 49"
+    ],
+    [
+      "6374249d3fbf2a5b079ba036",
+      "Step 50"
+    ]
+  ]
+}

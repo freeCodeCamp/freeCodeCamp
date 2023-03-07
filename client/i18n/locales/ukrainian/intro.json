@@ -335,6 +335,10 @@
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Вивчіть функційне програмування, створивши електронну таблицю",
         "intro": ["", ""]
+      },
+      "learn-advanced-array-methods-by-building-a-statistics-calculator": {
+        "title": "Вивчіть передові методи масиву, створивши статистичний калькулятор",
+        "intro": ["", ""]
       }
     }
   },

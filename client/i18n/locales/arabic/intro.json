@@ -335,6 +335,10 @@
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "تعلم البرمجة الوظيفية عن طريق بناء Spreadsheet",
         "intro": ["", ""]
+      },
+      "learn-advanced-array-methods-by-building-a-statistics-calculator": {
+        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "intro": ["", ""]
       }
     }
   },

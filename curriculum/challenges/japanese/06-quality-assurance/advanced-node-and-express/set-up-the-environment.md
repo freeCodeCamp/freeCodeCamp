@@ -19,7 +19,7 @@ const io = require('socket.io')(http);
 
 *http* サーバーを *Express アプリ*にマウントしたので、*http* サーバーからリッスンする必要があります。 `app.listen` の行を `http.listen` に変更します。
 
-最初の処理として、クライアントからの新しい接続をリッスンします。 <dfn>on</dfn> キーワードがその処理を行い、特定のイベントがないかリッスンします。 It requires 2 arguments: a string containing the title of the event that's emitted, and a function with which the data is passed through. In the case of our connection listener, use `socket` to define the data in the second argument. ソケットとは、接続している個々のクライアントのことです。
+最初の処理として、クライアントからの新しい接続をリッスンします。 <dfn>on</dfn> キーワードがその処理を行い、特定のイベントがないかリッスンします。 ここでは、エミットされたイベントのタイトルを含む文字列と、データを渡すための関数の、2 つの引数が必要です。 In the case of our connection listener, use `socket` to define the data in the second argument. ソケットとは、接続している個々のクライアントのことです。
 
 サーバーへの接続をリッスンするには、データベース接続の中に次を追加します。
 
@@ -42,7 +42,7 @@ Now try loading up your app and authenticate and you should see in your server c
 
 **注:** `io()` は、同じ url またはサーバー上でホストされているソケットに接続している場合にのみ動作します。 他の場所でホストされている外部ソケットに接続するには、`io.connect('URL');` を使用します。
 
-正しいと思ったら、ページを送信してください。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-the-environment-6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+正しいと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#set-up-the-environment-6" target="_blank" rel="noopener noreferrer nofollow">この時点までの完成形のコードをこちらで確認できます</a>。
 
 # --hints--
 

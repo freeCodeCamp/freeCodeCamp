@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c441eddfaeb5bdef
-title: فهم الحالات المنطقية
+title: فهم القيم المنطقية
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9Me8t4'
 forumTopicId: 301176
@@ -9,23 +9,23 @@ dashedName: understanding-boolean-values
 
 # --description--
 
-نوع آخر من البيانات هو <dfn>حالة المنطقية</dfn>. يمكن أن يكون للحالات المنطقية حالة واحدة فقط من حالتين: `true` أو `false`. إنها في الأساس كمفاتيح تشغيل صغيرة لإيقاف وبدء التشغيل، حيث إن `true` يبدأ التشغيل و `false` يوقفه. وهاتان الحالتان تستبعد إحداهما الأخرى.
+نوع آخر من البيانات هو القيم المنطقية المطلق عليها إسم <dfn>Boolean</dfn>. يمكن أن يكون للقيم المنطقية (booleans) حالة واحدة فقط من حالتين: `true` أو `false`. إنهم في الأساس كمفاتيح تشغيل صغيرة لبدء أو إيقاف التشغيل، حيث إن `true` يبدأ التشغيل و `false` يوقفه. والحالتان يستبعدان بعضهن البعض (mutually-exclusive).
 
-**ملاحظة:** القيم الحالة المنطقية لا تكتب أبدا باستخدام علامات الاقتباس. المقطعين `"true"` و `"false"` ليست حالتي منطقية وليس لها معنى خاص في JavaScript.
+**ملاحظة:** القيم المنطقية لا تكتب أبدا باستخدام علامات الاقتباس. المقطعين `"true"` و `"false"` ليسوا بقيم منطقية وليس لهم معنى خاص في JavaScript.
 
 # --instructions--
 
-عدّل الوظيفة `welcomeToBooleans` بحيث ترجع `true` بدلاً من `false` عند النقر على زر التشغيل.
+Modify the `welcomeToBooleans` function so that it returns `true` instead of `false`.
 
 # --hints--
 
-يجب أن تقوم الوظيفة `welcomeToBooleans()` بإرجاع حالة منطقية (`true`, أو `false`).
+يجب أن تقوم الوظيفة `welcomeToBooleans()` بإنتاج قيمة منطقية (`true`, أو `false`).
 
 ```js
 assert(typeof welcomeToBooleans() === 'boolean');
 ```
 
-يجب أن يرجع `welcomeToBooleans()` حالة `true`.
+`welcomeToBooleans()` يجب أن ينتج `true`.
 
 ```js
 assert(welcomeToBooleans() === true);

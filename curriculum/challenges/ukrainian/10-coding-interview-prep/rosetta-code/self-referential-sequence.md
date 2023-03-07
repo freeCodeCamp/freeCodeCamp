@@ -30,7 +30,7 @@ dashedName: self-referential-sequence
 
 # --hints--
 
-`selfReferential`має бути функцією.
+`selfReferential` має бути функцією.
 
 ```js
 assert(typeof selfReferential === 'function');
