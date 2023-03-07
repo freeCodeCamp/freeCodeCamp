@@ -541,7 +541,7 @@ pnpm start:server && pnpm pm2 logs
 #### 2. Rolling updates - Used for logical changes to code.
 
 ```console
-pnpm pm2 reload ecosystem.config.js && pnpm pm2 logs
+pnpm pm2 reload api-server/ecosystem.config.js && pnpm pm2 logs
 ```
 
 > [!NOTE] We are handling rolling updates to code, logic, via pipelines. You
