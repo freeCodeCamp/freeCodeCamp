@@ -17,9 +17,6 @@ jobs:
   mobile-test:
     name: Test curriculum for mobile app
     runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        node-version: [18.x]
 
     steps:
       - name: Checkout Source Files
@@ -35,11 +32,6 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 7
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
-        with:
-          node-version: ${{ matrix.node-version }}
 
       - name: Setup Flutter 3.3.x
         uses: subosito/flutter-action@dbf1fa04f4d2e52c33185153d06cdb5443aa189d # tag=v2

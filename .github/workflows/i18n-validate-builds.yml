@@ -8,9 +8,6 @@ jobs:
   ci:
     name: Validate i18n Builds
     runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        node-version: [18.x]
 
     steps:
       - name: Checkout Source Files
@@ -19,10 +16,6 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 7
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
-        with:
-          node-version: ${{ matrix.node-version }}
 
       - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env
