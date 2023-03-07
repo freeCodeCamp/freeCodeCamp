@@ -36,7 +36,6 @@
 }
 
 .challenge-title-breadcrumbs ol a:focus {
-  outline: 2px solid var(--secondary-color);
   background-color: inherit;
 }
 
