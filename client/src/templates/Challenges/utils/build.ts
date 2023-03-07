@@ -1,6 +1,6 @@
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
-import pyTestEvaluatorData from '../../../../config/pyodide-runner.json';
+import pyTestEvaluatorData from '../../../../../config/client/pyodide-runner.json';
 
 import { challengeTypes } from '../../../../utils/challenge-types';
 import {
@@ -136,7 +136,8 @@ const testRunners = {
   [challengeTypes.html]: getDOMTestRunner,
   [challengeTypes.backend]: getDOMTestRunner,
   [challengeTypes.pythonProject]: getDOMTestRunner,
-  [challengeTypes.multifileCertProject]: getDOMTestRunner
+  [challengeTypes.multifileCertProject]: getDOMTestRunner,
+  [challengeTypes.pyodide]: getPyodideTestRunner
 };
 // TODO: Figure out and (hopefully) simplify the return type.
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -153,6 +154,11 @@ export function getTestRunner(
   throw new Error(`Cannot get test runner for challenge type ${challengeType}`);
 }
 
+interface TestWorker extends ReturnType<typeof createWorker> {
+  on: (event: string, listener: (...args: string[]) => void) => void;
+  done: () => void;
+}
+
 function getJSTestRunner(
   { build, sources }: BuildChallengeData,
   { proxyLogger, removeComments }: TestRunnerConfig
@@ -163,13 +169,6 @@ function getJSTestRunner(
   };
 
   const testWorker = createWorker(testEvaluator, { terminateWorker: true });
-
-  type CreateWorker = ReturnType<typeof createWorker>;
-
-  interface TestWorker extends CreateWorker {
-    on: (event: string, listener: (...args: string[]) => void) => void;
-    done: () => void;
-  }
 
   return (testString: string, testTimeout: number, firstTest = true) => {
     const result = testWorker.execute(
@@ -184,16 +183,23 @@ function getJSTestRunner(
 
 function getPyodideTestRunner(
   { build, sources }: BuildChallengeData,
-  proxyLogger: TestRunnerConfig
+  { proxyLogger }: TestRunnerConfig
 ) {
-  const code = sources && 'index' in sources ? sources['index'] : '';
+  const code = {
+    contents: sources.index,
+    editableContents: sources.editableContents
+  };
 
   const testWorker = createWorker(pyTestEvaluator, { terminateWorker: true });
   console.log('create pyodide worker');
   return (testString: string, testTimeout: number, firstTest = true) => {
-    return testWorker
-      .execute({ build, testString, code, sources, firstTest }, testTimeout)
-      .on('LOG', proxyLogger).done;
+    const result = testWorker.execute(
+      { build, testString, code, sources, firstTest },
+      testTimeout
+    ) as TestWorker;
+
+    result.on('LOG', proxyLogger);
+    return result.done;
   };
 }
 
@@ -293,11 +299,11 @@ export function buildPyodideChallenge(
       challengeType: challengeTypes.pyodide,
       build: challengeFiles
         .reduce(
-          (body, challengeFiles) => [
+          (body, challengeFile) => [
             ...body,
-            challengeFiles.head,
-            challengeFiles.contents,
-            challengeFiles.tail
+            challengeFile.head,
+            challengeFile.contents,
+            challengeFile.tail
           ],
           [] as string[]
         )
