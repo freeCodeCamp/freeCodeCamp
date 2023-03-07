@@ -9,7 +9,7 @@ import Timeline from './components/time-line';
 import Camper from './components/camper';
 import Certifications from './components/certifications';
 import HeatMap from './components/heat-map';
-import { PortfolioProjects } from './components/portfolio-porjects';
+import { PortfolioProjects } from './components/portfolio-projects';
 
 interface ProfileProps {
   isSessionUser: boolean;
