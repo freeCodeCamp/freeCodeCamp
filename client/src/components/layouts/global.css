@@ -563,10 +563,6 @@ pre {
   margin-bottom: 0;
 }
 
-.solution-viewer {
-  border-color: var(--primary-color);
-}
-
 .has-success .help-block,
 .has-success .control-label,
 .has-success .radio,
