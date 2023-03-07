@@ -16,7 +16,7 @@ Aber zuerst wollen wir ein paar funktionale Begriffe klären:
 
 <dfn>Callbacks</dfn> sind die Funktionen, die in eine andere Funktion eingeschleust oder übergeben werden, um den Aufruf dieser Funktion zu bestimmen. Du hast sie vielleicht schon an andere Methoden weitergegeben, zum Beispiel in `filter`. Die Callback-Funktion teilt JavaScript die Kriterien mit, nach denen ein Array gefiltert werden soll.
 
-Funktionen, die einer Variablen zugewiesen, an eine andere Funktion übergeben oder von einer anderen Funktion zurückgegeben werden können, werden <dfn>Funktionen erster Klasse</dfn> genannt. Alle Funktionen in JavaScript sind Funktionen erster Klasse.
+Funktionen, die einer Variable zugewiesen, an eine andere Funktion übergeben oder von einer anderen Funktion zurückgegeben werden können, werden <dfn>Funktionen erster Klasse</dfn> genannt. Alle Funktionen in JavaScript sind Funktionen erster Klasse.
 
 The functions that take a function as an argument, or return a function as a return value, are called <dfn>higher order</dfn> functions.
 

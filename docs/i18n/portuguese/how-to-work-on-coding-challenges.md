@@ -460,17 +460,17 @@ Antes de [criar um pull request](how-to-open-a-pull-request.md) para suas modifi
 1. Para testar todos os desafios, execute o comando abaixo a partir do diretório raiz
 
 ````
-npm run test:curriculum
+pnpm run test:curriculum
 ```
 
 2. Você também pode testar um bloco ou superbloco de desafios com esses comandos
 
 ```
-npm run test:curriculum --block='Basic HTML and HTML5'
+FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 ```
 
 ```
-npm run test:curriculum --superblock=responsive-web-design
+FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
 Você também é capaz de testar um desafio individualmente seguindo as seguintes etapas:
@@ -484,7 +484,7 @@ Você também é capaz de testar um desafio individualmente seguindo as seguinte
 2. Execute o comando a seguir para cada arquivo de desafio no qual você fez alteraçõess (substituindo `challenge-title-goes-here` com o título completo do desafio):
 
    ```
-   npm run test -- -g challenge-title-goes-here ```
+   pnpm run test -- -g challenge-title-goes-here ```
 
 Quando você verificar que cada desafio modificado passou nos testes, [crie um pull request](how-to-open-a-pull-request.md).
 

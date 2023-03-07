@@ -132,7 +132,10 @@ function EmailSettings({
     state: confirmEmailValidation,
     message: confirmEmailValidationMessage
   } = getValidationForConfirmEmail();
-
+  const isDisabled =
+    newEmailValidation !== 'success' ||
+    confirmEmailValidation !== 'success' ||
+    isPristine;
   if (!currentEmail) {
     return (
       <div>
@@ -170,43 +173,54 @@ function EmailSettings({
         </FullWidthRow>
       )}
       <FullWidthRow>
-        <form id='form-update-email' onSubmit={handleSubmit}>
+        <form
+          id='form-update-email'
+          {...(!isDisabled
+            ? { onSubmit: handleSubmit }
+            : { onSubmit: e => e.preventDefault() })}
+        >
           <FormGroup controlId='current-email'>
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
             <FormControl.Static>{currentEmail}</FormControl.Static>
           </FormGroup>
-          <FormGroup controlId='new-email' validationState={newEmailValidation}>
-            <ControlLabel>{t('settings.email.new')}</ControlLabel>
-            <FormControl
-              onChange={createHandleEmailFormChange('newEmail')}
-              type='email'
-              value={newEmail}
-            />
-            {newEmailValidationMessage ? (
-              <HelpBlock>{newEmailValidationMessage}</HelpBlock>
-            ) : null}
-          </FormGroup>
-          <FormGroup
-            controlId='confirm-email'
-            validationState={confirmEmailValidation}
-          >
-            <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
-            <FormControl
-              onChange={createHandleEmailFormChange('confirmNewEmail')}
-              type='email'
-              value={confirmNewEmail}
-            />
-            {confirmEmailValidationMessage ? (
-              <HelpBlock>{confirmEmailValidationMessage}</HelpBlock>
-            ) : null}
-          </FormGroup>
+          <div role='group' aria-label={t('settings.email.heading')}>
+            <FormGroup
+              controlId='new-email'
+              validationState={newEmailValidation}
+            >
+              <ControlLabel>{t('settings.email.new')}</ControlLabel>
+              <FormControl
+                onChange={createHandleEmailFormChange('newEmail')}
+                type='email'
+                value={newEmail}
+              />
+              {newEmailValidationMessage ? (
+                <HelpBlock>{newEmailValidationMessage}</HelpBlock>
+              ) : null}
+            </FormGroup>
+            <FormGroup
+              controlId='confirm-email'
+              validationState={confirmEmailValidation}
+            >
+              <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
+              <FormControl
+                onChange={createHandleEmailFormChange('confirmNewEmail')}
+                type='email'
+                value={confirmNewEmail}
+              />
+              {confirmEmailValidationMessage ? (
+                <HelpBlock>{confirmEmailValidationMessage}</HelpBlock>
+              ) : null}
+            </FormGroup>
+          </div>
           <BlockSaveButton
-            disabled={
-              newEmailValidation !== 'success' ||
-              confirmEmailValidation !== 'success' ||
-              isPristine
-            }
-          />
+            aria-disabled={isDisabled}
+            bgSize='lg'
+            {...(isDisabled && { tabIndex: -1 })}
+          >
+            {t('buttons.save')}{' '}
+            <span className='sr-only'>{t('settings.email.heading')}</span>
+          </BlockSaveButton>
         </form>
       </FullWidthRow>
       <Spacer />

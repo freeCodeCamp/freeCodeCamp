@@ -28,19 +28,19 @@ dashedName: comparison-with-the-strict-equality-operator
 
 # --hints--
 
-`testStrict(10)` повинен повертати рядок `Not Equal`
+`testStrict(10)` має повертати рядок `Not Equal`
 
 ```js
 assert(testStrict(10) === 'Not Equal');
 ```
 
-`testStrict(7)` повинен повертати рядок `Equal`
+`testStrict(7)` має повертати рядок `Equal`
 
 ```js
 assert(testStrict(7) === 'Equal');
 ```
 
-`testStrict("7")` повинен повертати рядок `Not Equal`
+`testStrict("7")` має повертати рядок `Not Equal`
 
 ```js
 assert(testStrict('7') === 'Not Equal');

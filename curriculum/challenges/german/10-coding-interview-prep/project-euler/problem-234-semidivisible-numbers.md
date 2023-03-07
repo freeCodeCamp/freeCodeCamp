@@ -1,6 +1,6 @@
 ---
 id: 5900f4571000cf542c50ff69
-title: 'Problem 234: Semidivisible numbers'
+title: 'Problem 234: Halbteilbare Zahlen'
 challengeType: 1
 forumTopicId: 301878
 dashedName: problem-234-semidivisible-numbers
@@ -8,19 +8,19 @@ dashedName: problem-234-semidivisible-numbers
 
 # --description--
 
-For an integer $n ≥ 4$, we define the lower prime square root of $n$, denoted by $lps(n)$, as the $\text{largest prime} ≤ \sqrt{n}$ and the upper prime square root of $n$, $ups(n)$, as the $\text{smallest prime} ≥ \sqrt{n}$.
+Für eine ganze Zahl $n ≥ 4$ definieren wir die untere Primzahlwurzel von $n$, bezeichnet mit $lps(n)$, als den $\text{größte Primzahl} ≤ \sqrt{n}$ und die obere Primzahlwurzel von $n$, $ups(n)$, als den $\text{kleinste Primzahl} ≥ \sqrt{n}$.
 
-So, for example, $lps(4) = 2 = ups(4)$, $lps(1000) = 31$, $ups(1000) = 37$.
+So ist zum Beispiel $lps(4) = 2 = ups(4)$, $lps(1000) = 31$, $ups(1000) = 37$.
 
-Let us call an integer $n ≥ 4$ semidivisible, if one of $lps(n)$ and $ups(n)$ divides $n$, but not both.
+Wir nennen eine ganze Zahl $n ≥ 4$ halbteilbar, wenn eine von $lps(n)$ und $ups(n)$ $ $n$ teilt, aber nicht beide.
 
-The sum of the semidivisible numbers not exceeding 15 is 30, the numbers are 8, 10 and 12. 15 is not semidivisible because it is a multiple of both $lps(15) = 3$ and $ups(15) = 5$. As a further example, the sum of the 92 semidivisible numbers up to 1000 is 34825.
+Die Summe der halbteilbaren Zahlen, die 15 nicht überschreiten, ist 30. Die Zahlen sind 8, 10 und 12. 15 ist nicht halb teilbar, weil es ein Vielfaches von $lps(15) = 3$ und $ups(15) = 5$ ist. Ein weiteres Beispiel: Die Summe der 92 halbteilbaren Zahlen bis 1000 ist 34825.
 
-What is the sum of all semidivisible numbers not exceeding 999966663333?
+Was ist die Summe aller halbteilbaren Zahlen, die 999966663333 nicht überschreiten?
 
 # --hints--
 
-`semidivisibleNumbers()` should return `1259187438574927000`.
+`semidivisibleNumbers()` sollte `1259187438574927000` zurückgeben.
 
 ```js
 assert.strictEqual(semidivisibleNumbers(), 1259187438574927000);

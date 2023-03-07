@@ -15,7 +15,7 @@ dashedName: find-the-length-of-a-string
 console.log("Alan Peter".length);
 ```
 
-На консолі відображатиметься значення `10`. Зауважте, що пробіл між «Alan» та «Peter» також враховується.
+Консоль показуватиме значення `10`. Зауважте, що пробіл між «Alan» та «Peter» також враховується.
 
 Наприклад, якби ми створили змінну `const firstName = "Ada"`, ми б змогли визначити довжину рядка `Ada` за допомогою властивості `firstName.length`.
 
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-`lastNameLength` повинна дорівнювати 8.
+`lastNameLength` має дорівнювати 8.
 
 ```js
 assert(typeof lastNameLength !== 'undefined' && lastNameLength === 8);

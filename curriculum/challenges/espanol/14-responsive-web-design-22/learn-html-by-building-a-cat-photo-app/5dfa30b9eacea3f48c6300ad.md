@@ -7,11 +7,13 @@ dashedName: step-15
 
 # --description--
 
-Convierte la imagen en un enlace rodeándola con las etiquetas correctas. Utiliza `https://freecatphotoapp.com` como valor del atributo `href` del elemento archor.
+In previous steps you used an anchor element to turn text into a link. Other types of content can also be turned into a link by wrapping it in anchor tags.
+
+Turn the image into a link by surrounding it with necessary element tags. Use `https://freecatphotoapp.com` as the anchor's `href` attribute value.
 
 # --hints--
 
-Debes tener un elemento `img` cuyo valor del atributo `src` debe ser `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Puede que lo hayas borrado accidentalmente.
+You should have an `img` element with an `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. You may have accidentally deleted it.
 
 ```js
 assert(
@@ -21,37 +23,37 @@ assert(
 );
 ```
 
-Tu elemento (`a`) debe tener una etiqueta de apertura. Las etiquetas de apertura tienen esta sintaxis: `<elementName>`.
+Your anchor (`a`) element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
 ```js
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-Solo debes añadir una etiqueta de apertura del elemento anchor (`a`). Elimina cualquier extra.
+You should only add one opening anchor (`a`) tag. Please remove any extras.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);
 ```
 
-Tu elemento anchor (`a`) debe tener una etiqueta de cierre. Las etiquetas de cierre tienen una `/` inmediatamente después del carácter `<`.
+Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
 ```js
 assert(code.match(/<\/a>/g).length >= 2);
 ```
 
-Solo debes añadir una etiqueta de cierre del elemento anchor (`a`). Elimina cualquier extra.
+You should only add one closing anchor (`a`) tag. Please remove any extras.
 
 ```js
 assert(code.match(/<\/a>/g).length === 2);
 ```
 
-Tu elemento anchor (`a`) no tiene un atributo `href`. Comprueba que hay un espacio después del nombre de la etiqueta de apertura y/o que hay espacios antes de todos los nombres de los atributos.
+Your anchor (`a`) element does not have an `href` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
 
 ```js
 assert(document.querySelector('a').hasAttribute('href'));
 ```
 
-Tu elemento anchor (`a`) te debe de llevar a `https://freecatphotoapp.com`. Probablemente no has añadido la URL o tienes un error tipográfico.
+Your anchor (`a`) element should link to `https://freecatphotoapp.com`. You have either omitted the URL or have a typo.
 
 ```js
 assert(
@@ -60,7 +62,7 @@ assert(
 );
 ```
 
-Tu elemento `img` debe estar anidado dentro del elemento anchor (`a`). Todo el elemento `img` debe estar entre las etiquetas de apertura y cierre del elemento anchor (`a`).
+Your `img` element should be nested within the anchor (`a`) element. The entire `img` element should be inside the opening and closing tags of the anchor (`a`) element.
 
 ```js
 assert(document.querySelector('img').parentNode.nodeName === 'A');

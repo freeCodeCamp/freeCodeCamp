@@ -90,6 +90,7 @@
 }
 
 html,
+div.system,
 div.light {
   --foreground-primary: var(--gray90);
   --foreground-secondary: var(--gray85);
@@ -125,4 +126,24 @@ div.dark {
   --background-info: var(--blue30);
 
   --focus-outline-color: var(--blue50);
+}
+
+@media (prefers-color-scheme: dark) {
+  div.system {
+    --foreground-primary: var(--gray00);
+    --foreground-secondary: var(--gray05);
+    --foreground-tertiary: var(--gray10);
+    --foreground-quaternary: var(--gray15);
+    --foreground-danger: var(--red90);
+    --foreground-info: var(--blue90);
+
+    --background-primary: var(--gray90);
+    --background-secondary: var(--gray85);
+    --background-tertiary: var(--gray80);
+    --background-quaternary: var(--gray75);
+    --background-danger: var(--red15);
+    --background-info: var(--blue30);
+
+    --focus-outline-color: var(--blue50);
+  }
 }

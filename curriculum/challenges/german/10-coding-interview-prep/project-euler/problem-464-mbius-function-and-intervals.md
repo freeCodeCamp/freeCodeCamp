@@ -1,6 +1,6 @@
 ---
 id: 5900f53d1000cf542c51004f
-title: 'Problem 464: Möbius function and intervals'
+title: 'Problem 464: Möbius-Funktion und Intervalle'
 challengeType: 1
 forumTopicId: 302139
 dashedName: problem-464-mbius-function-and-intervals
@@ -8,30 +8,30 @@ dashedName: problem-464-mbius-function-and-intervals
 
 # --description--
 
-The Möbius function, denoted $μ(n)$, is defined as:
+Die Möbius-Funktion, bezeichnet mit $μ(n)$, ist definiert als:
 
-- $μ(n) = (-1)^{ω(n)}$ if $n$ is squarefree (where $ω(n)$ is the number of distinct prime factors of $n$)
-- $μ(n) = 0$ if $n$ is not squarefree.
+- $μ(n) = (-1)^{ω(n)}$ falls $n$ eckfrei ist (wobei $ω(n)$ die Nummer verschiedener Hauptfaktoren von $n$ ist)
+- $μ(n) = 0$ falls $n$ nicht eckfrei ist.
 
-Let $P(a, b)$ be the number of integers $n$ in the interval $[a, b]$ such that $μ(n) = 1$.
+Lasse $P(a, b)$ die Anzahl der Integer $n$ im Intervall $[a, b]$ sein, so dass $μ(n) = 1$ gilt.
 
-Let $N(a, b)$ be the number of integers $n$ in the interval $[a, b]$ such that $μ(n) = -1$.
+Lasse $N(a, b)$ die Anzahl der Integer $n$ im Intervall $[a, b]$ sein, so dass $μ(n) = -1$.
 
-For example, $P(2, 10) = 2$ and $N(2, 10) = 4$.
+Zum Beispiel $P(2, 10) = 2$ und $N(2, 10) = 4$.
 
-Let $C(n)$ be the number of integer pairs $(a, b)$ such that:
+Lasse $C(n)$ die Anzahl an Paaren der Integer $(a, b)$ sein, so dass:
 
 - $1 ≤ a ≤ b ≤ n$,
-- $99 \times N(a, b) ≤ 100 \times P(a, b)$, and
+- $99 \times N(a, b) ≤ 100 \times P(a, b)$, und
 - $99 \times P(a, b) ≤ 100 \times N(a, b)$.
 
-For example, $C(10) = 13$, $C(500) = 16\\,676$ and $C(10\\,000) = 20\\,155\\,319$.
+Zum Beispiel $C(10) = 13$, $C(500) = 16\\,676$ und $C(10\\,000) = 20\\,155\\,319$.
 
-Find $C(20\\,000\\,000)$.
+Finde $C(20\\,000\\,000)$.
 
 # --hints--
 
-`mobiusFunctionAndIntervals()` should return `198775297232878`.
+`mobiusFunctionAndIntervals()` sollte `198775297232878` zurückgeben.
 
 ```js
 assert.strictEqual(mobiusFunctionAndIntervals(), 198775297232878);

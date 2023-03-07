@@ -8,6 +8,9 @@ declare global {
   interface Window {
     console: {
       log: () => void;
+      info: () => void;
+      warn: () => void;
+      error: () => void;
     };
     i18nContent: i18n;
   }
@@ -132,11 +135,15 @@ const createHeader = (id = mainPreviewId) => `
   </script>
 `;
 
+type TestResult =
+  | { pass: boolean }
+  | { err: { message: string; stack?: string } };
+
 export const runTestInTestFrame = async function (
   document: Document,
   test: string,
   timeout: number
-) {
+): Promise<TestResult | undefined> {
   const { contentDocument: frame } = document.getElementById(
     testId
   ) as HTMLIFrameElement;
@@ -195,11 +202,40 @@ const updateProxyConsole =
       const oldLog = frameContext.window.console.log.bind(
         frameContext.window.console
       );
+      const oldInfo = frameContext.window.console.info.bind(
+        frameContext.window.console
+      );
+
+      const oldWarn = frameContext.window.console.warn.bind(
+        frameContext.window.console
+      );
+
+      const oldError = frameContext.window.console.error.bind(
+        frameContext.window.console
+      );
+
       frameContext.window.console.log = function proxyConsole(
         ...args: string[]
       ) {
         proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
         return oldLog(...(args as []));
+      };
+
+      frameContext.window.console.info = function proxyInfo(...args: string[]) {
+        proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
+        return oldInfo(...(args as []));
+      };
+
+      frameContext.window.console.warn = function proxyWarn(...args: string[]) {
+        proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
+        return oldWarn(...(args as []));
+      };
+
+      frameContext.window.console.error = function proxyWarn(
+        ...args: string[]
+      ) {
+        proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
+        return oldError(...(args as []));
       };
     }
 
@@ -309,7 +345,7 @@ export const createMainPreviewFramer = (
   document: Document,
   proxyLogger: ProxyLogger,
   frameTitle: string
-) =>
+): ((args: Context) => void) =>
   createFramer(
     document,
     mainPreviewId,
@@ -322,7 +358,7 @@ export const createMainPreviewFramer = (
 export const createProjectPreviewFramer = (
   document: Document,
   frameTitle: string
-) =>
+): ((args: Context) => void) =>
   createFramer(
     document,
     projectPreviewId,
@@ -336,7 +372,8 @@ export const createTestFramer = (
   document: Document,
   proxyLogger: ProxyLogger,
   frameReady: () => void
-) => createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
+): ((args: Context) => void) =>
+  createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
 
 const createFramer = (
   document: Document,

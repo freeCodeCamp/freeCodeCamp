@@ -15,8 +15,8 @@
     "show-cert": "顯示認證",
     "claim-cert": "申請認證",
     "save-progress": "保存進度",
-    "accepted-honesty": "你已接受我們的《學術誠信條例》",
-    "agree": "同意",
+    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
+    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
     "save-portfolio": "保存這個作品集項目",
     "remove-portfolio": "移除這個作品集項目",
     "add-portfolio": "增加一個新的作品集項目",
@@ -53,7 +53,7 @@
     "check-code": "檢查您的代碼 (Ctrl + Enter)",
     "check-code-2": "檢查你的代碼",
     "reset": "重置",
-    "reset-code": "重置所有代碼",
+    "reset-step": "Reset This Step",
     "help": "幫助",
     "get-help": "獲得幫助",
     "watch-video": "觀看視頻",
@@ -158,7 +158,8 @@
       "honesty": "學術誠信條例",
       "internet": "你在各平臺的賬號",
       "portfolio": "作品集設置",
-      "privacy": "隱私設置"
+      "privacy": "隱私設置",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "危險區域",
@@ -223,7 +224,6 @@
     "total-points_plural": "{{count}} 總分",
     "points": "{{date}} 獲得 {{count}} 分",
     "points_plural": "{{date}} 獲得 {{count}} 分",
-    "screen-shot": "{{title}} 截圖",
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁"
   },
   "footer": {
@@ -250,6 +250,7 @@
   },
   "learn": {
     "heading": "歡迎學習 freeCodeCamp 的課程。",
+    "skip-to-content": "Skip to content",
     "welcome-1": "歡迎回來，{{name}}。",
     "welcome-2": "歡迎來到 freeCodeCamp.org",
     "start-at-beginning": "如果你剛開始學習編程，我們建議你<0>從頭開始</0>。",
@@ -273,6 +274,9 @@
     "add-subtitles": "幫助我們完善或添加字幕",
     "wrong-answer": "抱歉，這個答案不正確。再試一次？",
     "check-answer": "點擊下方按鈕，查看你的答案。",
+    "assignment-not-complete": "Please finish the assignments",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "解決方案鏈接",
     "github-link": "GitHub 鏈接",
     "submit-and-go": "提交併訪問下一個挑戰",
@@ -298,7 +302,6 @@
       "certs": "{{title}} 認證"
     },
     "editor-tabs": {
-      "info": "信息",
       "code": "編程",
       "tests": "測試",
       "restart": "重啓",
@@ -514,7 +517,7 @@
     "opens-new-window": "Opens in new window"
   },
   "flash": {
-    "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",
+    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "出現了一些奇怪的情況。如果再出現這種情況，請考慮在 https://github.com/freeCodeCamp/freeCodeCamp/issues/new 提交 issue。",
     "not-right": "有些不對勁。已生成報告，通知 freeCodeCamp.org 團隊。",
     "went-wrong": "出了點問題，請檢查並重試。",
@@ -593,7 +596,8 @@
     "editor-url": "記得要提交Live App的URL",
     "http-url": "不能使用不安全的（http）URL。",
     "own-work-url": "記住要提交你自己的作業",
-    "publicly-visible-url": "記得要提交一個公開可見的app URL"
+    "publicly-visible-url": "記得要提交一個公開可見的app URL",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "執行董事，freeCodeCamp.org",

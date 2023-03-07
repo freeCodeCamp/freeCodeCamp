@@ -62,13 +62,13 @@ assert.strictEqual(permAlone('zzzzzzzz'), 0);
 assert.strictEqual(permAlone('a'), 1);
 ```
 
-`permAlone("aaab")` має повертати 0.
+`permAlone("aaab")` має повернути 0.
 
 ```js
 assert.strictEqual(permAlone('aaab'), 0);
 ```
 
-`permAlone("aaabb")` має повертати 12.
+`permAlone("aaabb")` має повернути 12.
 
 ```js
 assert.strictEqual(permAlone('aaabb'), 12);

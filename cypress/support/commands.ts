@@ -21,7 +21,7 @@ const setPrivacyTogglesToPublic = () => {
     });
   cy.get('[data-cy=save-privacy-settings]').click();
   cy.get('#honesty-policy').find('button').click();
-  cy.contains('You have accepted our Academic Honesty Policy');
+  cy.contains('You have agreed to our Academic Honesty Policy');
 };
 
 const goToSettings = () => {
@@ -69,7 +69,7 @@ declare namespace Cypress {
     preserveSession: typeof preserveSession;
     setPrivacyTogglesToPublic: typeof setPrivacyTogglesToPublic;
     goToSettings: typeof goToSettings;
-    typeUsername: typeof typeUsername;
+    typeUsername(username: string): Chainable<JQuery<HTMLElement>>;
     resetUsername: typeof resetUsername;
   }
 }

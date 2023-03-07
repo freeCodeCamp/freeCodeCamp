@@ -39,7 +39,7 @@ dashedName: use-if-and-else-to-add-logic-to-your-styles
 
 # --instructions--
 
-إنشاء mixin يسمى `border-stroke` التي تأخذ حَجَّة `$val`. يجب على mixin التحقق من الشروط التالية باستخدام `@if`، و `@else if`، و `@else`:
+إنشاء mixin يسمى `border-stroke` التي تأخذ وسيط `$val`. يجب على mixin التحقق من الشروط التالية باستخدام `@if`، و `@else if`، و `@else`:
 
 ```scss
 light - 1px solid black
@@ -51,7 +51,7 @@ heavy - 6px solid black
 
 # --hints--
 
-يجب أن تعلن التعليمات البرمجية الخاصة بك mixin اسمه `border-stroke` يحتوي على حِجَّة اسمها `$val`.
+يجب أن يعلن الكود الخاص بك mixin اسمه `border-stroke` يحتوي على وسيط اسمه `$val`.
 
 ```js
 assert(code.match(/@mixin\s+?border-stroke\s*?\(\s*?\$val\s*?\)\s*?{/gi));

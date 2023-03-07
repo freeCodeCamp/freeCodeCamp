@@ -42,6 +42,8 @@
   "algorithms": "JavaScript",
   "data-structures": "JavaScript",
   "take-home-projects": "JavaScript",
+  "top-learn-html-foundations": "HTML-CSS",
+  "top-build-a-recipe-project": "HTML-CSS",
   "rosetta-code": "JavaScript",
   "project-euler": "JavaScript",
   "scientific-computing-with-python": "Python",
@@ -100,4 +102,5 @@
   "build-a-roman-numeral-converter-project": "JavaScript",
   "build-a-telephone-number-validator-project": "JavaScript",
   "learn-modern-javascript-methods-by-building-sports-team-cards": "JavaScript"
+  "learn-advanced-array-methods-by-building-a-statistics-calculator": "JavaScript"
 }

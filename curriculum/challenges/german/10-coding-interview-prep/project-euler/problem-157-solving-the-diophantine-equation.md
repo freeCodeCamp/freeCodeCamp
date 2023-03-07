@@ -1,6 +1,6 @@
 ---
 id: 5900f4091000cf542c50ff1c
-title: 'Problem 157: Solving the diophantine equation'
+title: 'Problem 157: Lösen der Diophantischen Gleichung'
 challengeType: 1
 forumTopicId: 301788
 dashedName: problem-157-solving-the-diophantine-equation

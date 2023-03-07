@@ -282,7 +282,7 @@ async (getUserInput) => {
 };
 ```
 
-Todas las 24 pruebas unitarias estan completas y pasan. Consulta `/tests/1_unit-tests.js` para el comportamiento esperado para el que deberías escribir pruebas.
+All 24 unit tests are complete and passing.
 
 ```js
 async (getUserInput) => {
@@ -307,7 +307,7 @@ async (getUserInput) => {
 };
 ```
 
-Todas las 6 pruebas funcionales estan completas y pasan. Consulta `/tests/2_functional-tests.js` para la funcionalidad a la que deberías escribir pruebas.
+All 6 functional tests are complete and passing.
 
 ```js
 async (getUserInput) => {

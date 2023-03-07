@@ -12,7 +12,7 @@ dashedName: chunky-monkey
 
 # --hints--
 
-`chunkArrayInGroups(["a", "b", "c", "d"], 2)` повинен повертати `[["a", "b"], ["c", "d"]]`.
+`chunkArrayInGroups(["a", "b", "c", "d"], 2)` має повертати `[["a", "b"], ["c", "d"]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups(['a', 'b', 'c', 'd'], 2), [
@@ -21,7 +21,7 @@ assert.deepEqual(chunkArrayInGroups(['a', 'b', 'c', 'd'], 2), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)` повинен повертати `[[0, 1, 2], [3, 4, 5]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)` має повертати `[[0, 1, 2], [3, 4, 5]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [
@@ -30,7 +30,7 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)` повинен повертати `[[0, 1], [2, 3], [4, 5]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)` має повертати `[[0, 1], [2, 3], [4, 5]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [
@@ -40,7 +40,7 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)` повинен повертати `[[0, 1, 2, 3], [4, 5]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)` має повертати `[[0, 1, 2, 3], [4, 5]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), [
@@ -49,7 +49,7 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)` повинен повертати `[[0, 1, 2], [3, 4, 5], [6]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)` має повертати `[[0, 1, 2], [3, 4, 5], [6]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [
@@ -59,7 +59,7 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)` повинен повертати `[[0, 1, 2, 3], [4, 5, 6, 7], [8]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)` має повертати `[[0, 1, 2, 3], [4, 5, 6, 7], [8]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [
@@ -69,7 +69,7 @@ assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [
 ]);
 ```
 
-`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)` повинен повертати `[[0, 1], [2, 3], [4, 5], [6, 7], [8]]`.
+`chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)` має повертати `[[0, 1], [2, 3], [4, 5], [6, 7], [8]]`.
 
 ```js
 assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2), [

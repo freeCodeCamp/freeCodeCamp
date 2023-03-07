@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c452eddfaeb5bdef
-title: استخدم علامات الأقواس للعثور على رمز معين قبل الأخر في المقطع النصي
+title: استخدم علامات الأقواس للعثور على رمز معين قبل الأخير في المقطع النصي
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cw4vkh9'
 forumTopicId: 18344
@@ -9,7 +9,7 @@ dashedName: use-bracket-notation-to-find-the-nth-to-last-character-in-a-string
 
 # --description--
 
-يمكنك استخدام نفس المبدأ الذي استخدمناه للتو لاسترداد الحرف الأخير في مقطع لاسترداد الحرف ما قبل أخر حرف.
+يمكنك استخدام نفس المبدأ الذي استخدمناه لاسترداد آخر حرف في مقطع نصي لتسترد أي حرف ما قبل الحرف الأخير.
 
 على سبيل المثال يمكنك الحصول على قيمة الحرف الثالث إلى الأخير من مقطع `const firstName = "Augusta"` باستخدام `firstName[firstName.length - 3]`
 
@@ -20,7 +20,7 @@ const firstName = "Augusta";
 const thirdToLastLetter = firstName[firstName.length - 3];
 ```
 
-سيحتوي `thirdToLastLetter` قيمة من المقطع `s`.
+سيحتوي `thirdToLastLetter` قيمة `s` من المقطع النصي.
 
 # --instructions--
 
@@ -36,7 +36,7 @@ const thirdToLastLetter = firstName[firstName.length - 3];
 assert(secondToLastLetterOfLastName === 'c');
 ```
 
-يجب عليك استخدام `.length` للحصول على الحرف الثاني الأخير.
+يجب عليك استخدام `.length` للحصول على الحرف الثاني إلى الأخير.
 
 ```js
 assert(code.match(/\.length/g).length > 0);

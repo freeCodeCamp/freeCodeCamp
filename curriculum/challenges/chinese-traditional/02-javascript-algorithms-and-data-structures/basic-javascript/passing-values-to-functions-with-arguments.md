@@ -23,7 +23,7 @@ function testFun(param1, param2) {
 
 # --instructions--
 
-<ol><li>創建一個名爲 <code>functionWithArgs</code> 的函數，它可以接收兩個參數，計算參數的和，將結果輸出到控制檯。</li><li>用兩個數字作爲參數調用函數。</li></ol>
+<ol><li>創建一個名爲 <code>functionWithArgs</code> 的函數，它可以接收兩個參數，計算參數的和，將結果輸出到控制檯。</li><li>自己指定兩個數字作爲參數，運行函數 functionWithArgs。</li></ol>
 
 # --hints--
 

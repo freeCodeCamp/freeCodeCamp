@@ -30,7 +30,7 @@ bogStr.match(bgRegex);
 
 # --instructions--
 
-استخدم character class مع حروف (`a`, `e`, `i`, `o`, `u`) في regex الخاص بك `vowelRegex` للعثور على جميع الـ vowels في السلسلة `quoteSample`.
+استخدم character class مع حروف (`a`, `e`, `i`, `o`, `u`) في regex الخاص بك `vowelRegex` للعثور على جميع الـ vowels في المقطع النصي `quoteSample`.
 
 **ملاحظة**: تأكد من مطابقة الـ vowels الكبيرة و الصغيرة.
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3cc1000cf542c50fedf
-title: 'Problem 96: Su Doku'
+title: 'Problem 96: Sudoku'
 challengeType: 1
 forumTopicId: 302213
 dashedName: problem-96-su-doku
@@ -8,7 +8,7 @@ dashedName: problem-96-su-doku
 
 # --description--
 
-Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
+Sudoku (japanisch für *Zahlenort*) ist die Bezeichnung für ein beliebtes Rätsel. Sein Ursprung ist unklar, aber man sollte ihn Leonhard Euler zuschreiben, der ein ähnliches, aber viel schwierigeres Rätsel namens Lateinische Quadrate erfunden hat. Das Ziel von Sudoku-Rätseln ist es jedoch, die Leerstellen (oder Nullen) in einem 9 x 9-Gitter so zu ersetzen, dass jede Zeile, jede Spalte und jedes 3 x 3-Feld jede der Ziffern 1 bis 9 enthält. Unten siehst du ein Beispiel für ein typisches Start- und Lösungsraster.
 
 <div style="margin: auto; background-color: white; padding: 10px; width: 80%; text-align: center;">
   <table border="0" cellpadding="0" cellspacing="0" align="center">
@@ -100,27 +100,27 @@ Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle 
   </table>
 </div>
 
-A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
+Ein gut konstruiertes Sudoku Rätsel hat eine eindeutige Lösung und kann mit Logik gelöst werden, auch wenn es notwendig sein kann, die "Raten und Testen"-Methoden anzuwenden, um Optionen auszuschließen (darüber gibt es viele kontroverse Meinungen). Die Komplexität der Suche bestimmt die Schwierigkeit des Puzzles; das obige Beispiel wird als einfach angesehen, da es durch direkte Schlussfolgerung gelöst werden kann.
 
-The `puzzlesArr` array contains different Su Doku puzzle strings ranging in difficulty, but all with unique solutions.
+Das `puzzlesArr`-Array enthält verschiedene Sudoku-Puzzle-Strings mit unterschiedlichen Schwierigkeitsgraden, aber alle mit einzigartigen Lösungen.
 
-By solving all puzzles in `puzzlesArr`, find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
+Indem du alle Aufgaben in `puzzlesArr` löst, finde die Summe der dreistelligen Zahlen, die du in der linken oberen Ecke jedes Lösungsrasters finden kannst; zum Beispiel 483 ist die 3-stellige Nummer in der oberen linken Ecke des oben zu sehenden Lösungsrasters.
 
 # --hints--
 
-`suDoku(testPuzzles1)` should return a number.
+`suDoku(testPuzzles1)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof suDoku(_testPuzzles1) === 'number');
 ```
 
-`suDoku(testPuzzles1)` should return `1190`.
+`suDoku(testPuzzles1)` sollte `1190` zurückgeben.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles1), 1190);
 ```
 
-`suDoku(testPuzzles2)` should return `24702`.
+`suDoku(testPuzzles2)` sollte `24702` zurückgeben.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles2), 24702);

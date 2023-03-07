@@ -12,7 +12,7 @@ dashedName: use-a-template-engines-powers
 
 Pug ファイルでは変数を使用することができます。それには、変数名を `#{variable_name}` として参照し、要素上の他のテキストとともにインラインで記述します。または、要素に対して `p=variable_name` のように空白を付けずに等号を使用します (この例では変数の値が p 要素のテキストに割り当てられます)。
 
-Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site.
+Pug は、空白とタブを使用してネストされた要素を表し、少ないコード量で美しいサイトを作成しようとするものです。
 
 Take the following Pug code for example:
 
@@ -52,11 +52,11 @@ res.render('index', { title: 'Hello', message: 'Please log in' });
 
 Now refresh your page, and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">project completed up to this point</a>.
+完成したと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#use-a-template-engines-power-2" target="_blank" rel="noopener noreferrer nofollow">この時点までの完成形のコードをこちらで確認できます</a>。
 
 # --hints--
 
-Pug should correctly render variables.
+Pug で変数を正しくレンダーする必要があります。
 
 ```js
 async (getUserInput) => {

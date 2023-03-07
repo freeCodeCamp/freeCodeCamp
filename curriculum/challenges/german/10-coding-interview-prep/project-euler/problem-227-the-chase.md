@@ -8,23 +8,23 @@ dashedName: problem-227-the-chase
 
 # --description--
 
-"The Chase" is a game played with two dice and an even number of players.
+"The Chase" ist ein Spiel, das mit zwei Würfeln und einer geraden Anzahl an Spielern gespielt wird.
 
-The players sit around a table; the game begins with two opposite players having one die each. On each turn, the two players with a die roll it.
+Die Spieler sitzen an einem Tisch – das Spiel beginnt mit zwei gegenübersitzenden Spielern, die jeweils einen Würfel haben. In jedem Zug würfeln die beiden Spieler mit einem Würfel.
 
-If the player rolls a 1, he passes the die to his neighbour on the left.
+Wirft der Spieler eine 1, gibt er den Würfel an seinen Nachbarn auf der linken Seite weiter.
 
-If the player rolls a 6, he passes the die to his neighbour on the right.
+Wirft der Spieler eine 6, gibt er den Würfel an seinen Nachbarn auf der rechten Seite weiter.
 
-Otherwise, he keeps the die for the next turn.
+Ansonsten behält er den Würfel bis zum nächsten Zug.
 
-The game ends when one player has both dice after they have been rolled and passed; that player has then lost.
+Das Spiel endet, wenn ein Spieler beide Würfel hat, nachdem gewürfelt wurde und sie weitergegeben wurden; dieser Spieler hat dann verloren.
 
-In a game with 100 players, what is the expected number of turns the game lasts? Give your answer rounded to ten significant digits.
+Was wäre die voraussichtliche Anzahl von Spielzügen bei einem Spiel mit 100 Spielern? Runde deine Antwort bis auf die letzten zehn relevanten Ziffern ab.
 
 # --hints--
 
-`theChase()` should return `3780.618622`.
+`theChase()` sollte `3780.618622` zurückgeben.
 
 ```js
 assert.strictEqual(theChase(), 3780.618622);

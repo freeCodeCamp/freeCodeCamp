@@ -8,27 +8,27 @@ dashedName: problem-269-polynomials-with-at-least-one-integer-root
 
 # --description--
 
-A root or zero of a polynomial $P(x)$ is a solution to the equation $P(x) = 0$.
+Eine Wurzel oder Nullstelle eines Polynoms $P(x)$ ist eine Lösung der Gleichung $P(x) = 0$.
 
-Define $P_n$ as the polynomial whose coefficients are the digits of $n$.
+Definiere $P_n$ als das Polynom, dessen Koeffizienten die Ziffern von $n$ sind.
 
-For example, $P_{5703}(x) = 5x^3 + 7x^2 + 3$.
+Zum Beispiel: $P_{5703}(x) = 5x^3 + 7x^2 + 3$.
 
-We can see that:
+Das können wir sehen:
 
-- $P_n(0)$ is the last digit of $n$,
-- $P_n(1)$ is the sum of the digits of $n$,
-- $Pn(10)$ is $n$ itself.
+- $P_n(0)$ ist die letzte Ziffer von $n$,
+- $P_n(1)$ ist die Summe der Ziffern von $n$,
+- $Pn(10)$ ist $n$ selbst.
 
-Define $Z(k)$ as the number of positive integers, $n$, not exceeding $k$ for which the polynomial $P_n$ has at least one integer root.
+Definiere $Z(k)$ als die Anzahl der positiven ganzen Zahlen $n$, die nicht größer als $k$ sind und für die das Polynom $P_n$ mindestens eine ganzzahlige Wurzel hat.
 
-It can be verified that $Z(100\\,000)$ is 14696.
+Es kann überprüft werden, dass $Z(100\\,000)$ 14696 ist.
 
-What is $Z({10}^{16})$?
+Was ist $Z({10}^{16})$?
 
 # --hints--
 
-`polynomialsWithOneIntegerRoot()` should return `1311109198529286`.
+`polynomialsWithOneIntegerRoot()` sollte `1311109198529286` zurückgeben.
 
 ```js
 assert.strictEqual(polynomialsWithOneIntegerRoot(), 1311109198529286);

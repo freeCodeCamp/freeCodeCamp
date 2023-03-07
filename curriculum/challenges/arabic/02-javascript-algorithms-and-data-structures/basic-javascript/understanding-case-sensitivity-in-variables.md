@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ab
-title: فهم حساسية الحالة الحروف في المتغيرات (Understanding Case Sensitivity in Variables)
+title: فهم حساسية الحالة الحروف في المتغيرات
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd6GDcD'
 forumTopicId: 18334
@@ -39,7 +39,7 @@ var thisVariableNameIsSoLong;
 assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
 ```
 
-يجب أن يتم تعريف`properCamelCase` وأن تكون له قيمة `A String` بنوع مقطع.
+يجب أن يتم تعريف`properCamelCase` وأن تكون له قيمة المقطع النصي `A String`.
 
 ```js
 assert(

@@ -15,8 +15,8 @@
     "show-cert": "Zertifikat anzeigen",
     "claim-cert": "Zertifizierung anfordern",
     "save-progress": "Fortschritt speichern",
-    "accepted-honesty": "Du hast unsere Akademische Ehrlichkeitsrichtlinie akzeptiert.",
-    "agree": "Zustimmen",
+    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
+    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
     "save-portfolio": "Dieses Portfolioelement speichern",
     "remove-portfolio": "Dieses Portfolioelement entfernen",
     "add-portfolio": "Neues Portfolioelement hinzufügen",
@@ -53,7 +53,7 @@
     "check-code": "Überprüfe deinen Code (Strg + Enter)",
     "check-code-2": "Prüfe deinen Code",
     "reset": "Zurücksetzen",
-    "reset-code": "Den Quellcode zurücksetzen",
+    "reset-step": "Reset This Step",
     "help": "Hilfe",
     "get-help": "Hilfe bekommen",
     "watch-video": "Ein Video ansehen",
@@ -158,7 +158,8 @@
       "honesty": "Akademischer Ehrlichkeitskodex",
       "internet": "Dein Internetauftritt",
       "portfolio": "Portfolio-Einstellungen",
-      "privacy": "Privatsphäre-Einstellungen"
+      "privacy": "Privatsphäre-Einstellungen",
+      "personal-info": "Personal Information"
     },
     "danger": {
       "heading": "Gefahrenzone",
@@ -223,7 +224,6 @@
     "total-points_plural": "{{count}} Gesamtpunkte",
     "points": "{{count}} Punkt am {{date}}",
     "points_plural": "{{count}} Punkte am {{date}}",
-    "screen-shot": "Eine Bildschirmaufnahme von {{title}}",
     "page-number": "{{pageNumber}} von {{totalPages}}"
   },
   "footer": {
@@ -250,6 +250,7 @@
   },
   "learn": {
     "heading": "Willkommen zum Studienplan von freeCodeCamp.",
+    "skip-to-content": "Skip to content",
     "welcome-1": "Willkommen zurück, {{name}}.",
     "welcome-2": "Willkommen auf freeCodeCamp.org",
     "start-at-beginning": "Wenn Programmieren ganz neu für dich ist, schlagen wir vor, <0>am Anfang zu beginnen</0>.",
@@ -273,6 +274,9 @@
     "add-subtitles": "Hilf mit Untertitel hinzuzufügen oder zu verbessern",
     "wrong-answer": "Sorry, das ist nicht die richtige Antwort. Möchtest du noch einen Anlauf wagen?",
     "check-answer": "Klick unten auf den Button, um deine Antwort zu überprüfen.",
+    "assignment-not-complete": "Please finish the assignments",
+    "assignments": "Assignments",
+    "question": "Question",
     "solution-link": "Lösungs-Link",
     "github-link": "GitHub Link",
     "submit-and-go": "Absenden und zur nächsten Herausforderung gehen",
@@ -298,7 +302,6 @@
       "certs": "{{title}} Zertifizierung"
     },
     "editor-tabs": {
-      "info": "Informationen",
       "code": "Code",
       "tests": "Tests",
       "restart": "Neustart",
@@ -514,7 +517,7 @@
     "opens-new-window": "Opens in new window"
   },
   "flash": {
-    "honest-first": "Um eine Zertifizierung zu erlangen, musst du zunächst unsere Richtlinie zur akademischen Ehrlichkeit akzeptieren",
+    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "Etwas wirklich Seltsames ist passiert. Wenn es wieder passiert, erwäge bitte, einen Fehler auf https://github.com/freeCodeCamp/freeCodeCamp/issues/new zu melden.",
     "not-right": "Irgendetwas ist nicht in Ordnung. Es wurde ein Bericht erstellt und das freeCodeCamp.org Team wurde benachrichtigt",
     "went-wrong": "Etwas ist schief gelaufen, bitte überprüfe und versuche es erneut",
@@ -593,7 +596,8 @@
     "editor-url": "Denke daran, die Live App URL einzureichen.",
     "http-url": "Eine unsichere (http) URL kann nicht verwendet werden.",
     "own-work-url": "Denke daran, deine eigene Arbeit einzureichen.",
-    "publicly-visible-url": "Denke daran, eine öffentlich sichtbare App-URL einzureichen."
+    "publicly-visible-url": "Denke daran, eine öffentlich sichtbare App-URL einzureichen.",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "Geschäftsführender Direktor, freeCodeCamp.org",

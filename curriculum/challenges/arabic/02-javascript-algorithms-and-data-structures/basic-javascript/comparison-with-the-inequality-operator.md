@@ -9,7 +9,7 @@ dashedName: comparison-with-the-inequality-operator
 
 # --description--
 
-مشغل لا مساواة (`!=`) هو يخالف مشغل المساواة. وهذا يعني لا مساواة يرجع `false` عندما ترجع المساواة `true` و*العكس كذلك*. وعلى غرار المشغل المعني بالمساواة، فإن مشغل لا مساواة سيحول أنواع البيانات من القيم عند مقارنتها.
+مشغل لا مساواة (`!=`) هو يخالف مشغل المساواة. وهذا يعني أنَّ لا مساواة يرجع `false` فحين ترجع المساواة `true` و*العكس كذلك*. وعلى غرار مشغل المساواة، فإن مشغل لا مساواة سيحول أنواع قيم البيانات عند مقارنتها.
 
 **على سبيل المثال**
 
@@ -23,35 +23,35 @@ dashedName: comparison-with-the-inequality-operator
 
 # --instructions--
 
-أضف مشغل لا مساواة `!=` في `if` بحيث تقوم الوظيفة بإنشاء مقطع الآتي `Not Equal` عندما لا يساوي `val` القيمة `99`.
+أضف مشغل لا مساواة `!=` في `if` بحيث تقوم الوظيفة بإنشاء مقطع الآتي `Not Equal` عندما لا يساوي `val` عدد `99`.
 
 # --hints--
 
-يجب أن ينتج `testNotEqual(99)` مقطع `Equal`
+يجب أن ينتج `testNotEqual(99)` المقطع النصي `Equal`
 
 ```js
 assert(testNotEqual(99) === 'Equal');
 ```
 
-يجب أن ينتج `testNotEqual("99")` مقطع `Equal`
+يجب أن ينتج `testNotEqual("99")` المقطع النصي `Equal`
 
 ```js
 assert(testNotEqual('99') === 'Equal');
 ```
 
-يجب أن ينتج `testNotEqual(12)` مقطع `Not Equal`
+يجب أن ينتج `testNotEqual(12)` المقطع النصي `Not Equal`
 
 ```js
 assert(testNotEqual(12) === 'Not Equal');
 ```
 
-يجب أن ينتج `testNotEqual("12")` مقطع `Not Equal`
+يجب أن ينتج `testNotEqual("12")` المقطع النصي `Not Equal`
 
 ```js
 assert(testNotEqual('12') === 'Not Equal');
 ```
 
-يجب أن ينتج `testNotEqual("bob")` مقطع `Not Equal`
+يجب أن ينتج `testNotEqual("bob")` المقطع `Not Equal`
 
 ```js
 assert(testNotEqual('bob') === 'Not Equal');

@@ -17,10 +17,23 @@ interface SiteData {
   };
 }
 
+interface Item {
+  '@type': 'Course';
+  url: string;
+  name: string;
+  description?: string;
+  provider: {
+    '@type': 'Organization';
+    name: string;
+    sameAs: string;
+    nonprofitStatus: string;
+  };
+}
+
 interface ListItem {
   '@type': 'ListItem';
   position: number;
-  item: object;
+  item: Item;
 }
 
 interface StructuredData {

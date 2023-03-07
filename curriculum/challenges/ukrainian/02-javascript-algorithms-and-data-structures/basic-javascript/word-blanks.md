@@ -27,7 +27,7 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 
 # --hints--
 
-`wordBlanks` повинен бути рядком.
+`wordBlanks` має бути рядком.
 
 ```js
 assert(typeof wordBlanks === 'string');
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-`wordBlanks` повинен містити всі слова, присвоєні до змінних `myNoun`, `myVerb`, `myAdjective` та `myAdverb`, розділені розділовим знаком (та додаткові слова на ваш вибір).
+`wordBlanks` має містити всі слова, присвоєні до змінних `myNoun`, `myVerb`, `myAdjective` та `myAdverb`, розділені розділовим знаком (та додаткові слова на ваш вибір).
 
 ```js
 assert(

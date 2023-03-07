@@ -29,7 +29,7 @@ The Look and say sequence is a recursively defined sequence of numbers.
 
 # --hints--
 
-`lookAndSay` повинен бути функцією.
+`lookAndSay` має бути функцією.
 
 ```js
 assert(typeof lookAndSay == 'function');

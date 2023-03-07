@@ -91,7 +91,7 @@ Atualmente, somente membros da equipe de desenvolvedores podem dar push nas bran
 4. Confirme se você consegue compilar o repositório localmente.
 
    ```
-   npm run clean-and-develop
+   pnpm run clean-and-develop
    ```
 
 5. Mova as alterações da `main` para a `production-staging` através de um fast-forward merge
@@ -453,13 +453,13 @@ Provisionando MVs com o código
 6. Instale dependências
 
    ```console
-   npm ci
+   pnpm install
    ```
 
 7. Compile o servidor
 
    ```console
-   npm run prebuild && npm run build:curriculum && npm run build:server
+   pnpm run prebuild && pnpm run build:curriculum && pnpm run build:server
    ```
 
 8. Inicie instâncias
@@ -496,25 +496,25 @@ pm2 stop all
 2. Instale dependências
 
 ```console
-npm ci
+pnpm install
 ```
 
 3. Compile o servidor
 
 ```console
-npm run create:config && npm run build:curriculum && npm run build:server
+pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
 ```
 
 4. Inicie instâncias
 
 ```console
-pm2 start all --update-env && pm2 logs
-```
+cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
+   ```
 
 #### 2. Atualizações contínuas - Usado par mudanças lógicas no código.
 
 ```console
-pm2 reload all --update-env && pm2 logs
+cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
 ```
 
 > [!NOTE] Nós estamos lidando com atualizações contínuas no código, lógico, via pipelines. Você não deve executar estes comandos. Eles estão aqui para a documentação.
@@ -788,8 +788,8 @@ ssh na VM (hospedada na Digital Ocean).
 ```console
 cd tools
 git pull origin master
-npm ci
-npm run build
+pnpm install
+pnpm run build
 pm2 restart contribute-app
 ```
 

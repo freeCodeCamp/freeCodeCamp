@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b60
-title: تعديل المتغيرات العالمية (Global Variables) لأخراجهم من الوظائف (Functions)
+title: تعديل المتغيرات الشاملة (Global Variables) لأخراجهم من الوظائف (Functions)
 challengeType: 1
 forumTopicId: 301235
 dashedName: refactor-global-variables-out-of-functions
@@ -12,7 +12,7 @@ dashedName: refactor-global-variables-out-of-functions
 
 1) لا تغير متغير (variable) أو كائن (object) - أنشئ متغيرات و كائنات (objects) جديدة و منشئا من الوظيفة (function) إذا لزم الأمر. تلميح: باستخدام شيء مثل `const newArr = arrVar`، حيث `arrVar` هو array، سوف يقوم ببساطة بإنشاء مرجع إلى المتغير الحالي وليس نسخة. لذا فإن تغيير قيمة في `newArr` سيغير القيمة في `arrVar`.
 
-2) إعلان وسائط الوظيفة (function parameters) - يعتمد حسابات داخل الوظيفة (function) فقط على المعطيات (arguments) التي تمر إلى الوظيفة (function)، ولا تعتمد على أي كائن (object) أو متغير (variable) عام (global).
+2) أعلن وسائط الوظيفة (function parameters) - تعتمد الحسابات داخل الوظيفة (function) فقط على المعطيات (arguments) التي تعطى إلى الوظيفة (function)، ولا تعتمد على أي كائن (object) أو متغير (variable) شامل (global).
 
 إن إضافة واحد إلى رقما ليس مثيراً جداً، ولكن يمكننا تطبيق هذه المبادئ عند العمل مع arrays أو objects أكثر تعقيداً.
 

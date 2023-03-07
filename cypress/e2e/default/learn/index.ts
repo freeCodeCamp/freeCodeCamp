@@ -1,10 +1,10 @@
-const selectors = {
+const challengerSelector = {
   challengeMap: "[data-test-label='learn-curriculum-map']"
-};
+} as const;
 
-const locations = {
+const learnUrl = {
   index: '/learn'
-};
+} as const;
 
 const superBlockNames = [
   '(New) Responsive Web Design Certification',
@@ -24,7 +24,7 @@ const superBlockNames = [
 
 describe('Learn Landing page (not logged in)', () => {
   it('Should render', () => {
-    cy.visit(locations.index);
+    cy.visit(learnUrl.index);
 
     cy.title().should(
       'eq',
@@ -33,15 +33,15 @@ describe('Learn Landing page (not logged in)', () => {
   });
 
   it('Has the correct heading for an unauthenticated User', () => {
-    cy.visit(locations.index);
+    cy.visit(learnUrl.index);
 
     cy.contains('h1', "Welcome to freeCodeCamp's curriculum.");
   });
 
   it('Should render a curriculum map', () => {
     cy.document().then(document => {
-      const superBlocks = document.querySelectorAll(
-        `${selectors.challengeMap} > li > a`
+      const superBlocks = document.querySelectorAll<HTMLAnchorElement>(
+        `${challengerSelector.challengeMap} > li > a`
       );
       expect(superBlocks).to.have.length(13);
 
@@ -76,7 +76,7 @@ describe('Superblocks and Blocks', () => {
   });
 
   it('Has all superblocks visible', () => {
-    cy.wrap(superBlockNames.slice(1)).each(name => {
+    cy.wrap(superBlockNames.slice(1)).each((name: string) => {
       cy.contains(name).should('be.visible');
     });
   });

@@ -39,17 +39,17 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
   };
 
-  switchTab = (tab: Tab) => {
+  switchTab = (tab: Tab): void => {
     this.setState({
       currentTab: tab
     });
   };
 
-  handleKeyDown = () => this.props.updateUsingKeyboardInTablist(true);
+  handleKeyDown = (): void => this.props.updateUsingKeyboardInTablist(true);
 
-  handleClick = () => this.props.updateUsingKeyboardInTablist(false);
+  handleClick = (): void => this.props.updateUsingKeyboardInTablist(false);
 
-  render() {
+  render(): JSX.Element {
     const { currentTab } = this.state;
     const {
       hasEditableBoundaries,
@@ -87,14 +87,14 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           {!hasEditableBoundaries && (
             <TabPane
               eventKey={Tab.Instructions}
-              title={i18next.t('learn.editor-tabs.info')}
+              title={i18next.t('learn.editor-tabs.instructions')}
+              tabIndex={0}
             >
               {instructions}
             </TabPane>
           )}
           <TabPane
             eventKey={Tab.Editor}
-            tabIndex='0'
             title={i18next.t('learn.editor-tabs.code')}
             {...editorTabPaneProps}
           >
@@ -103,7 +103,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           </TabPane>
           <TabPane
             eventKey={Tab.Console}
-            title={i18next.t('learn.editor-tabs.tests')}
+            title={i18next.t('learn.editor-tabs.console')}
             {...editorTabPaneProps}
           >
             {testOutput}

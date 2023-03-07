@@ -1,10 +1,10 @@
-import React, { Component, ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
-// import TagManager from 'react-gtm-module';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
@@ -17,16 +17,24 @@ import { isBrowser } from '../../../utils';
 import {
   fetchUser,
   onlineStatusChange,
-  serverStatusChange
+  serverStatusChange,
+  updateAllChallengesInfo
 } from '../../redux/actions';
 import {
   isSignedInSelector,
   userSelector,
   isOnlineSelector,
   isServerOnlineSelector,
+  showCodeAllySelector,
   userFetchStateSelector
 } from '../../redux/selectors';
-import { UserFetchState, User } from '../../redux/prop-types';
+
+import {
+  UserFetchState,
+  User,
+  AllChallengeNode,
+  CertificateNode
+} from '../../redux/prop-types';
 import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
@@ -41,6 +49,7 @@ import './fonts.css';
 import './global.css';
 import './variables.css';
 import './rtl-layout.css';
+import { Themes } from '../settings/theme';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -48,6 +57,7 @@ const mapStateToProps = createSelector(
   isOnlineSelector,
   isServerOnlineSelector,
   userFetchStateSelector,
+  showCodeAllySelector,
   userSelector,
   (
     isSignedIn,
@@ -55,6 +65,7 @@ const mapStateToProps = createSelector(
     isOnline: boolean,
     isServerOnline: boolean,
     fetchState: UserFetchState,
+    showCodeAlly: boolean,
     user: User
   ) => ({
     isSignedIn,
@@ -64,6 +75,7 @@ const mapStateToProps = createSelector(
     isServerOnline,
     fetchState,
     theme: user.theme,
+    showCodeAlly,
     user
   })
 );
@@ -76,7 +88,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       fetchUser,
       removeFlashMessage,
       onlineStatusChange,
-      serverStatusChange
+      serverStatusChange,
+      updateAllChallengesInfo
     },
     dispatch
   );
@@ -89,6 +102,7 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   showFooter?: boolean;
   isChallenge?: boolean;
   block?: string;
+  showCodeAlly: boolean;
   superBlock?: string;
   t: TFunction;
 }
@@ -100,55 +114,55 @@ const getSystemTheme = () =>
       : 'light-palette'
   }`;
 
-class DefaultLayout extends Component<DefaultLayoutProps> {
-  static displayName = 'DefaultLayout';
-
-  componentDidMount() {
-    const { isSignedIn, fetchUser } = this.props;
+function DefaultLayout({
+  children,
+  hasMessage,
+  fetchState,
+  flashMessage,
+  isOnline,
+  isServerOnline,
+  isSignedIn,
+  removeFlashMessage,
+  showFooter = true,
+  isChallenge = false,
+  block,
+  superBlock,
+  t,
+  theme = Themes.Default,
+  showCodeAlly,
+  user,
+  fetchUser,
+  updateAllChallengesInfo
+}: DefaultLayoutProps): JSX.Element {
+  const { challengeEdges, certificateNodes } = useGetAllBlockIds();
+  useEffect(() => {
+    // componentDidMount
+    updateAllChallengesInfo({ challengeEdges, certificateNodes });
     if (!isSignedIn) {
       fetchUser();
     }
-    window.addEventListener('online', this.updateOnlineStatus);
-    window.addEventListener('offline', this.updateOnlineStatus);
-  }
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
 
-  componentWillUnmount() {
-    window.removeEventListener('online', this.updateOnlineStatus);
-    window.removeEventListener('offline', this.updateOnlineStatus);
-  }
+    return () => {
+      // componentWillUnmount.
+      window.removeEventListener('online', updateOnlineStatus);
+      window.removeEventListener('offline', updateOnlineStatus);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  updateOnlineStatus = () => {
-    const { onlineStatusChange } = this.props;
+  const updateOnlineStatus = () => {
     const isOnline =
       isBrowser() && 'navigator' in window ? window.navigator.onLine : null;
     return typeof isOnline === 'boolean' ? onlineStatusChange(isOnline) : null;
   };
 
-  render() {
-    const {
-      children,
-      hasMessage,
-      fetchState,
-      flashMessage,
-      isOnline,
-      isServerOnline,
-      isSignedIn,
-      removeFlashMessage,
-      showFooter = true,
-      isChallenge = false,
-      block,
-      superBlock,
-      t,
-      theme = 'default',
-      user
-    } = this.props;
+  const useSystemTheme = fetchState.complete && isSignedIn === false;
 
-    const useSystemTheme = fetchState.complete && isSignedIn === false;
-
-    if (fetchState.pending) {
-      return <Loader fullScreen={true} messageDelay={5000} />;
-    }
-
+  if (fetchState.pending) {
+    return <Loader fullScreen={true} messageDelay={5000} />;
+  } else {
     return (
       <div className='page-wrapper'>
         <Helmet
@@ -209,7 +223,11 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
           />
         </Helmet>
         <div className={`default-layout`}>
-          <Header fetchState={fetchState} user={user} />
+          <Header
+            fetchState={fetchState}
+            user={user}
+            skipButtonText={t('learn.skip-to-content')}
+          />
           <OfflineWarning
             isOnline={isOnline}
             isServerOnline={isServerOnline}
@@ -222,7 +240,7 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
             />
           ) : null}
           <SignoutModal />
-          {isChallenge && (
+          {isChallenge && !showCodeAlly && (
             <div className='breadcrumbs-demo'>
               <BreadCrumb
                 block={block as string}
@@ -239,6 +257,52 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
     );
   }
 }
+
+// TODO: get challenge nodes directly rather than wrapped in edges
+const useGetAllBlockIds = () => {
+  const {
+    allChallengeNode: { edges: challengeEdges },
+    allCertificateNode: { nodes: certificateNodes }
+  }: {
+    allChallengeNode: AllChallengeNode;
+    allCertificateNode: { nodes: CertificateNode[] };
+  } = useStaticQuery(graphql`
+    query getBlockNode {
+      allChallengeNode(
+        sort: {
+          fields: [
+            challenge___superOrder
+            challenge___order
+            challenge___challengeOrder
+          ]
+        }
+      ) {
+        edges {
+          node {
+            challenge {
+              block
+              id
+            }
+          }
+        }
+      }
+      allCertificateNode {
+        nodes {
+          challenge {
+            certification
+            tests {
+              id
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  return { challengeEdges, certificateNodes };
+};
+
+DefaultLayout.displayName = 'DefaultLayout';
 
 export default connect(
   mapStateToProps,

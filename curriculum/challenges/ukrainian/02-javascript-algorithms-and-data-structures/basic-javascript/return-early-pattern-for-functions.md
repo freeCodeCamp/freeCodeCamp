@@ -33,43 +33,43 @@ myFun();
 
 # --hints--
 
-`abTest(2, 2)` повинна повертати число
+`abTest(2, 2)` має повертати число
 
 ```js
 assert(typeof abTest(2, 2) === 'number');
 ```
 
-`abTest(2, 2)` повинна повертати `8`
+`abTest(2, 2)` має повертати `8`
 
 ```js
 assert(abTest(2, 2) === 8);
 ```
 
-`abTest(-2, 2)` повинна повертати `undefined`
+`abTest(-2, 2)` має повертати `undefined`
 
 ```js
 assert(abTest(-2, 2) === undefined);
 ```
 
-`abTest(2, -2)` повинна повертати `undefined`
+`abTest(2, -2)` має повертати `undefined`
 
 ```js
 assert(abTest(2, -2) === undefined);
 ```
 
-`abTest(2, 8)` повинна повертати `18`
+`abTest(2, 8)` має повертати `18`
 
 ```js
 assert(abTest(2, 8) === 18);
 ```
 
-`abTest(3, 3)` повинна повертати `12`
+`abTest(3, 3)` має повертати `12`
 
 ```js
 assert(abTest(3, 3) === 12);
 ```
 
-`abTest(0, 0)` повинна повертати `0`
+`abTest(0, 0)` має повертати `0`
 
 ```js
 assert(abTest(0, 0) === 0);
