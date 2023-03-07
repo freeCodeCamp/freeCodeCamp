@@ -27,7 +27,7 @@ export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
     );
 
     if (!auth0Res.ok) {
-      console.log(auth0Res);
+      fastify.log.error(auth0Res);
       throw new Error('Invalid Auth0 Access Token');
     }
 
