@@ -6,6 +6,7 @@ import fastifyCookie from '@fastify/cookie';
 import MongoStore from 'connect-mongo';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
+import sessionAuth from './plugins/session-auth';
 import { testRoutes } from './routes/test';
 import { auth0Routes } from './routes/auth0';
 import { dbConnector } from './db';
@@ -43,6 +44,7 @@ const start = async () => {
     audience: AUTH0_AUDIENCE
   });
   void fastify.register(jwtAuthz);
+  void fastify.register(sessionAuth);
 
   void fastify.use('/test', testMiddleware);
 

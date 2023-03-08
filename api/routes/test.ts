@@ -4,13 +4,9 @@ import { FastifyPluginCallback } from 'fastify';
 export const testRoutes: FastifyPluginCallback = (fastify, _options, done) => {
   const collection = fastify.mongo.db?.collection('user');
 
-  fastify.addHook('onRequest', (req, res, done) => {
-    if (req.session.user === undefined) {
-      res.statusCode = 401;
-      void res.send({ msg: 'Unauthorized' });
-    }
-    done();
-  });
+  fastify.addHook('onRequest', (req, res, done) =>
+    fastify.authenticateSession(req, res, done)
+  );
 
   fastify.get('/test', async (request, _reply) => {
     if (!collection) {
