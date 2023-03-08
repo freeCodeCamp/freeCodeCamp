@@ -1,23 +1,12 @@
 import React from 'react';
-import { CloseButton } from '../close-button';
 
 type AlertVariant = 'success' | 'info' | 'warning' | 'danger';
-
-type DismissableAlertProps =
-  | {
-      closeLabel?: never;
-      onDismiss?: never;
-    }
-  | {
-      closeLabel: string;
-      onDismiss: () => void;
-    };
 
 export type AlertProps = {
   children: React.ReactNode;
   className?: string;
   variant: AlertVariant;
-} & DismissableAlertProps;
+};
 
 const variantClasses = {
   success: 'text-green-700 bg-green-50 border-green-100',
@@ -34,12 +23,9 @@ const variantClasses = {
 export const Alert = ({
   children,
   className,
-  closeLabel,
-  onDismiss,
   variant
-}: AlertProps) => {
+}: AlertProps): JSX.Element => {
   const variantClass = variantClasses[variant];
-  const canDismiss = !!onDismiss;
   const classes = [
     'p-4 mb-6 border border-transparent break-words',
     variantClass,
@@ -48,7 +34,6 @@ export const Alert = ({
 
   return (
     <div className={classes} role='alert'>
-      {canDismiss && <CloseButton onClick={onDismiss} label={closeLabel} />}
       {children}
     </div>
   );

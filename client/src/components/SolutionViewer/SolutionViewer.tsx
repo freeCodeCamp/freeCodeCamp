@@ -27,6 +27,7 @@ function SolutionViewer({ challengeFiles, solution }: Props): JSX.Element {
       {solutions.map(({ fileKey, ext, contents }) => (
         <Panel bsStyle='primary' className='solution-viewer' key={fileKey}>
           <Panel.Heading>{ext.toUpperCase()}</Panel.Heading>
+          <p>here is a test string</p>
           <Panel.Body>
             <pre>
               <code
