@@ -597,7 +597,7 @@
     "http-url": "Non è possibile utilizzare un URL non sicuro (http).",
     "own-work-url": "Ricordati di inviare il tuo lavoro.",
     "publicly-visible-url": "Ricorda di inviare un URL dell'app visibile pubblicamente.",
-    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
+    "path-url": "Probabilmente vuoi inviare il percorso root, ovvero https://example.com, non https://example.com/percorso"
   },
   "certification": {
     "executive": "Direttore esecutivo, freeCodeCamp.org",

@@ -7,7 +7,7 @@ export const ControlLabel = ({
   htmlFor,
   srOnly,
   ...props
-}: ControlLabelProps) => {
+}: ControlLabelProps): JSX.Element => {
   const { controlId } = useContext(FormContext);
   const screenOnlyClass = srOnly ? 'sr-only ' : '';
   return (

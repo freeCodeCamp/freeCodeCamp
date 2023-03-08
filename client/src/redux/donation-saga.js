@@ -14,7 +14,7 @@ import {
   postChargeStripe,
   postChargeStripeCard
 } from '../utils/ajax';
-import { stringifyDonationEvents } from '../utils/analyticsStrings';
+import { stringifyDonationEvents } from '../utils/analytics-strings';
 import { PaymentProvider } from '../../../config/donation-settings';
 import { actionTypes as appTypes } from './action-types';
 import {
