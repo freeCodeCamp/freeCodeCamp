@@ -14,7 +14,7 @@ const sessionAuth: FastifyPluginCallback = (fastify, _opts, done) => {
     res: FastifyReply,
     done: DoneFuncWithErrOrRes
   ) {
-    if (req.session.user === undefined) {
+    if (!req.session.user) {
       res.statusCode = 401;
       return res.send({ msg: 'Unauthorized' });
     }
