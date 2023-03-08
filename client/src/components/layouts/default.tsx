@@ -223,7 +223,11 @@ function DefaultLayout({
           />
         </Helmet>
         <div className={`default-layout`}>
-          <Header fetchState={fetchState} user={user} />
+          <Header
+            fetchState={fetchState}
+            user={user}
+            skipButtonText={t('learn.skip-to-content')}
+          />
           <OfflineWarning
             isOnline={isOnline}
             isServerOnline={isServerOnline}

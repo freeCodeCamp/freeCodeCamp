@@ -81,7 +81,7 @@ assert.deepEqual(binarySearch(_testArray, 11), [13, 5, 10, 11])
 assert.deepEqual(binarySearch(_testArray, 13), [13]);
 ```
 
-`binarySearch(testArray, 70)` should return `[13, 19, 22, 49, 70]`.
+`binarySearch(testArray, 70)` は `[13, 19, 22, 49, 70]` を返す必要があります。
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 70), [13, 19, 22, 49, 70]);

@@ -11,13 +11,13 @@ dashedName: assignment-with-a-returned-value
 
 如果你还记得我们在这一节<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">使用赋值运算符存储值</a>中的讨论，赋值之前，先完成等号右边的操作。 这意味着我们可以获取函数的返回值，并将其赋值给一个变量。
 
-假设我们有一个预先定义的函数 `sum` ，它将两个数相加，然后：
+Assume we have defined a function `sum` which adds two numbers together.
 
 ```js
 ourSum = sum(5, 12);
 ```
 
-将调用 `sum` 函数，该函数返回 `17` 的值并将其分配给 `ourSum` 变量。
+Calling the `sum` function with the arguments of `5` and `12` produces a return value of `17`. This return value is assigned to the `ourSum` variable.
 
 # --instructions--
 

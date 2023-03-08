@@ -1,6 +1,5 @@
 ---
 id: 637f4e7972c65bc8e73dfe2b
-videoId: gW6cBZLUk6M
 title: Working With Text Question E
 challengeType: 15
 dashedName: working-with-text-question-e

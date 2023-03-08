@@ -11,7 +11,7 @@ cd ../curriculum-server
 npm i
 cd ../web
 npm i
-npm run dev
+pnpm run dev
 ```
 
 Now the server should be running on port 3000 and the client on port 8000.

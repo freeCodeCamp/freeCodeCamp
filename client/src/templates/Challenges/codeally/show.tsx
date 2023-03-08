@@ -237,7 +237,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
           className='codeally-frame'
           data-cy='codeally-frame'
           name={`codeAlly${Date.now()}`}
-          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
           src={`https://codeally.io/embed/?repoUrl=${url}&${goBackTo}&${envVariables}&${tempToken}&${date}`}
           title='Editor'
@@ -304,29 +303,20 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       <Spacer />
                     </>
                   )}
-                <div
-                  className={`ca-btn-padding ${
-                    !isSignedIn ||
-                    challengeType === challengeTypes.codeAllyPractice
-                      ? 'ca-btn-margin'
-                      : ''
-                  }`}
+                <Alert id='codeally-cookie-warning' bsStyle='info'>
+                  <p>{t(`intro:misc-text.enable-cookies`)}</p>
+                </Alert>
+                <Button
+                  aria-describedby='codeally-cookie-warning'
+                  block={true}
+                  bsStyle='primary'
+                  data-cy='start-codeally'
+                  onClick={tryToShowCodeAlly}
                 >
-                  <Alert id='codeally-cookie-warning' bsStyle='info'>
-                    <p>{t(`intro:misc-text.enable-cookies`)}</p>
-                  </Alert>
-                  <Button
-                    aria-describedby='codeally-cookie-warning'
-                    block={true}
-                    bsStyle='primary'
-                    data-cy='start-codeally'
-                    onClick={tryToShowCodeAlly}
-                  >
-                    {challengeType === challengeTypes.codeAllyCert
-                      ? t('buttons.click-start-project')
-                      : t('buttons.click-start-course')}
-                  </Button>
-                </div>
+                  {challengeType === challengeTypes.codeAllyCert
+                    ? t('buttons.click-start-project')
+                    : t('buttons.click-start-course')}
+                </Button>
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (
                     <>

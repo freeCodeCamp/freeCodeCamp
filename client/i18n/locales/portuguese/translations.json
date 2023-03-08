@@ -224,7 +224,6 @@
     "total-points_plural": "{{count}} pontos no total",
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
-    "screen-shot": "Uma captura de tela de {{title}}",
     "page-number": "{{pageNumber}} de {{totalPages}}"
   },
   "footer": {
@@ -251,6 +250,7 @@
   },
   "learn": {
     "heading": "Boas-vindas ao currículo do freeCodeCamp.",
+    "skip-to-content": "Ir para o conteúdo",
     "welcome-1": "Bem-vindo(a) de volta, {{name}}.",
     "welcome-2": "Boas-vindas ao freeCodeCamp.org",
     "start-at-beginning": "Se você é novo em programação, recomendamos que você <0>comece no início</0>.",
@@ -596,7 +596,8 @@
     "editor-url": "Lembre-se de enviar o URL do aplicativo em produção.",
     "http-url": "Não é possível usar um URL (http) inseguro.",
     "own-work-url": "Lembre-se de enviar o seu próprio trabalho.",
-    "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível."
+    "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível.",
+    "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path"
   },
   "certification": {
     "executive": "Diretor executivo, freeCodeCamp.org",

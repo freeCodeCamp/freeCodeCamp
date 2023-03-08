@@ -11,7 +11,7 @@ dashedName: comparisons-with-the-logical-and-operator
 
 ستحتاج أحيانًا إلى اختبار أكثر من شيء في وقت واحد. مشغل <dfn>الإضافة المنطقي</dfn> ورمزه (`&&`) يرجع `true` فقط إذا كان <dfn>المعاملتين</dfn> إلى اليسار واليمين صحيحين.
 
-ويمكن تحقيق نفس التأثير عن طريق أدخال if statement داخل if أخري:
+ويمكن تحقيق نفس التأثير عن طريق وضع عبارة if داخل if أخري:
 
 ```js
 if (num > 5) {
@@ -33,7 +33,7 @@ return "No";
 
 # --instructions--
 
-استبدل بيانين if إلى if statement واحدة، باستخدام المشغل `&&`، الذي سوف يعيد المقطع `Yes` إذا كان `val` أقل من أو يساوي `50` وأكثر من أو يساوي `25`. خلاف ذلك، سوف يعيد المقطع `No`.
+استبدل العبارتان if إلى if واحدة، باستخدام المشغل `&&`، الذي سوف يعيد المقطع `Yes` إذا كان `val` أقل من أو يساوي `50` وأكثر من أو يساوي `25`. خلاف ذلك، سوف يعيد المقطع `No`.
 
 # --hints--
 
@@ -43,55 +43,55 @@ return "No";
 assert(code.match(/&&/g).length === 1);
 ```
 
-يجب أن يكون لديك بيان `if` واحد فقط
+يجب أن يكون لديك عبارة `if` واحد فقط
 
 ```js
 assert(code.match(/if/g).length === 1);
 ```
 
-يجب أن ينتج `testLogicalAnd(0)` مقطع `No`
+يجب أن ينتج `testLogicalAnd(0)` المقطع النصي `No`
 
 ```js
 assert(testLogicalAnd(0) === 'No');
 ```
 
-يجب أن ينتج `testLogicalAnd(24)` المقطع `No`
+يجب أن ينتج `testLogicalAnd(24)` المقطع النصي `No`
 
 ```js
 assert(testLogicalAnd(24) === 'No');
 ```
 
-يجب أن ينتج `testLogicalAnd(25)` المقطع `Yes`
+يجب أن ينتج `testLogicalAnd(25)` المقطع النصي `Yes`
 
 ```js
 assert(testLogicalAnd(25) === 'Yes');
 ```
 
-يجب أن ينتج `testLogicalAnd(30)` المقطع `Yes`
+يجب أن ينتج `testLogicalAnd(30)` المقطع النصي `Yes`
 
 ```js
 assert(testLogicalAnd(30) === 'Yes');
 ```
 
-يجب أن ينتج `testLogicalAnd(50)` المقطع `Yes`
+يجب أن ينتج `testLogicalAnd(50)` المقطع النصي `Yes`
 
 ```js
 assert(testLogicalAnd(50) === 'Yes');
 ```
 
-يجب أن ينتج `testLogicalAnd(51)` المقطع `No`
+يجب أن ينتج `testLogicalAnd(51)` المقطع النصي `No`
 
 ```js
 assert(testLogicalAnd(51) === 'No');
 ```
 
-يجب أن ينتج `testLogicalAnd(75)` المقطع `No`
+يجب أن ينتج `testLogicalAnd(75)` المقطع النصي `No`
 
 ```js
 assert(testLogicalAnd(75) === 'No');
 ```
 
-يجب أن ينتج `testLogicalAnd(80)` المقطع `No`
+يجب أن ينتج `testLogicalAnd(80)` المقطع النصي `No`
 
 ```js
 assert(testLogicalAnd(80) === 'No');

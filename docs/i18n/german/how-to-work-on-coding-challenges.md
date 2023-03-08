@@ -456,17 +456,17 @@ Bevor du [einen Pull-Request](how-to-open-a-pull-request.md) für deine Änderun
 1. Um alle Aufgaben zu testen, führe den folgenden Befehl im Stammverzeichnis aus
 
 ````
-npm run test:curriculum
+pnpm run test:curriculum
 ```
 
 2. Du kannst auch einen Block oder einen Superblock von Aufgaben mit diesen Befehlen testen
 
 ```
-npm run test:curriculum --block='Basic HTML and HTML5'
+FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 ```
 
 ```
-npm run test:curriculum --superblock=responsive-web-design
+FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
 Du kannst eine Aufgabe auch einzeln testen, indem du die folgenden Schritte ausführst:
@@ -480,7 +480,7 @@ Du kannst eine Aufgabe auch einzeln testen, indem du die folgenden Schritte ausf
 2. Führe das Folgende für jede Aufgabendatei aus, für die du Änderungen vorgenommen hast (ersetze dabei `Aufgabentitel hier eintragen` durch den vollständigen Titel der Aufgabe):
 
    ```
-   npm run test -- -g Aufgabentitel hier eintragen ```
+   pnpm run test -- -g challenge-title-goes-here ```
 
 Sobald du sichergestellt hast, dass jede Aufgabe, an der du gearbeitet hast, die Tests besteht, [erstelle bitte einen Pull-Request](how-to-open-a-pull-request.md).
 

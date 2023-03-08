@@ -1,5 +1,5 @@
 module.exports = {
-  testPathIgnorePatterns: ['/node_modules/'],
+  testPathIgnorePatterns: ['/node_modules/', 'api/'],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|svg|woff|woff2)$':
       '<rootDir>/client/src/__mocks__/file-mock.ts',

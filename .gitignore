@@ -221,3 +221,6 @@ client/src/components/Donation/types.js
 
 ### UI Components ###
 tools/ui-components/dist
+
+### API ###
+api/**/*.js

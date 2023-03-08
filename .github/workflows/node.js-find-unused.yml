@@ -22,7 +22,10 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
-
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
@@ -35,6 +38,6 @@ jobs:
 
       - name: Run Checks
         run: |
-          echo npm version $(npm -v)
-          npm ci
-          npm run knip
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run knip
