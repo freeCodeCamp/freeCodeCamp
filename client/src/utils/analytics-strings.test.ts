@@ -1,4 +1,4 @@
-import { stringifyDonationEvents } from './analyticsStrings';
+import { stringifyDonationEvents } from './analytics-strings';
 
 describe('Analytics donation strings', () => {
   it('Should return correct string for modal patreon payment', () => {
