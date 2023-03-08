@@ -1,5 +1,7 @@
 import { FastifyPluginCallback } from 'fastify';
 
+import { AUTH0_DOMAIN } from '../utils/env';
+
 declare module 'fastify' {
   interface Session {
     user: {
@@ -15,7 +17,7 @@ export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.get('/callback', async (req, _res) => {
     const auth0Res = await fetch(
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      `https://${process.env.AUTH0_DOMAIN!}/userinfo`,
+      `https://${AUTH0_DOMAIN}/userinfo`,
       {
         headers: {
           Authorization: req.headers.authorization ?? ''

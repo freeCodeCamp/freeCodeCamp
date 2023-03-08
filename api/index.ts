@@ -11,7 +11,14 @@ import { testRoutes } from './routes/test';
 import { auth0Routes } from './routes/auth0';
 import { dbConnector } from './db';
 import { testMiddleware } from './middleware';
-import { AUTH0_AUDIENCE, AUTH0_DOMAIN, NODE_ENV, PORT } from './utils/env';
+import {
+  AUTH0_AUDIENCE,
+  AUTH0_DOMAIN,
+  NODE_ENV,
+  PORT,
+  MONGOHQ_URL,
+  SESSION_SECRET
+} from './utils/env';
 
 const fastify = Fastify({
   logger: { level: NODE_ENV === 'development' ? 'debug' : 'fatal' }
@@ -26,7 +33,7 @@ const start = async () => {
   await fastify.register(middie);
   await fastify.register(fastifyCookie);
   await fastify.register(fastifySession, {
-    secret: process.env.SESSION_SECRET ?? 'a_session_secret',
+    secret: SESSION_SECRET,
     rolling: false,
     saveUninitialized: false,
     cookie: {
@@ -34,7 +41,7 @@ const start = async () => {
       secure: NODE_ENV !== 'development'
     },
     store: MongoStore.create({
-      mongoUrl: process.env.MONGOHQ_URL
+      mongoUrl: MONGOHQ_URL
     })
   });
 
