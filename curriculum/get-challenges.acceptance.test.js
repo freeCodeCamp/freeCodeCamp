@@ -5,7 +5,7 @@
 // const path = require('path');
 
 // const { parseMarkdown } = require('../tools/challenge-parser');
-// const { parseTranslation } = require('./getChallenges');
+// const { parseTranslation } = require('./get-challenges');
 
 // /* eslint-disable max-len */
 // const {
