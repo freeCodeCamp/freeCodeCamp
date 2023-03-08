@@ -3,7 +3,7 @@ const debug = require('debug');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const { MongoClient, ObjectId } = require('mongodb');
 const defaultUserImage = require('../../../config/misc').defaultUserImage;
-const fullyCertifiedUser = require('./certifiedUserData');
+const fullyCertifiedUser = require('./certified-user-data');
 
 const envVariables = process.argv;
 
@@ -25,7 +25,7 @@ function handleError(err, client) {
   }
 }
 
-const authUser = {
+const demoUser = {
   _id: ObjectId('5bd30e0f1caf6ac3ddddddb5'),
   email: 'foo@bar.com',
   emailVerified: true,
@@ -166,7 +166,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
     });
   };
 
-  if (process.argv[2] === 'certUser') {
+  if (process.argv[2] === 'certified-user') {
     dropUserTokens();
     user.deleteMany(
       {
@@ -208,7 +208,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
         handleError(err, client);
 
         try {
-          user.insertOne(authUser);
+          user.insertOne(demoUser);
           user.insertOne(blankUser);
         } catch (e) {
           handleError(e, client);
