@@ -282,6 +282,12 @@ jobs:
         with:
           version: 7
 
+      - name: Override node version
+        shell: bash
+        if: ${{ matrix.node-version != 'default' }}
+        run: |
+          echo "use-node-version=${{ matrix.node-version }}" >> .npmrc
+
       - name: Get pnpm store directory
         shell: bash
         run: |
