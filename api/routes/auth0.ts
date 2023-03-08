@@ -9,10 +9,7 @@ declare module 'fastify' {
 }
 
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
-  fastify.addHook(
-    'onRequest',
-    async (req, res) => await fastify.authenticate(req, res)
-  );
+  fastify.addHook('onRequest', fastify.authenticate);
   const collection = fastify.mongo.db?.collection('user');
 
   fastify.get('/callback', async (req, _res) => {
