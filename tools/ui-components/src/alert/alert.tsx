@@ -26,6 +26,7 @@ export const Alert = ({
   variant
 }: AlertProps): JSX.Element => {
   const variantClass = variantClasses[variant];
+  
   const classes = [
     'p-4 mb-6 border border-transparent break-words',
     variantClass,
