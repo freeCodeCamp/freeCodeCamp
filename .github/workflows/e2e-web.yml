@@ -62,6 +62,8 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
+          pnpm node -v
+          cat .npmrc
           pnpm run build
 
       - name: Move serve.json to Public Folder
@@ -167,6 +169,8 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
+          pnpm node -v
+          cat .npmrc
           pnpm run create:config
           pnpm run build:curriculum
           pnpm run build:server

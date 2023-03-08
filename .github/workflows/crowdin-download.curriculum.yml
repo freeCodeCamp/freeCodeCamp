@@ -311,6 +311,8 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+          pnpm node -v
+          cat .npmrc
           pnpm run create:config
           pnpm run build:curriculum
           pnpm run build:server

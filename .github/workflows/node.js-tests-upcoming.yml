@@ -68,6 +68,8 @@ jobs:
       - name: Lint Source Files
         run: |
           pnpm install
+          pnpm node -v
+          cat .npmrc
           pnpm run create:config
           npm i --prefix=curriculum-server
           npm i --prefix=web
@@ -121,6 +123,8 @@ jobs:
       - name: Install Dependencies
         run: |
           pnpm install
+          pnpm node -v
+          cat .npmrc
           pnpm run create:config
           pnpm run build:curriculum
 

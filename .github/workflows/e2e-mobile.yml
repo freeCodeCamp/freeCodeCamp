@@ -72,6 +72,8 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
+          pnpm node -v
+          cat .npmrc
           pnpm run create:config
           pnpm run build:curriculum
 

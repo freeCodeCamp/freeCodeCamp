@@ -78,6 +78,8 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+          pnpm node -v
+          cat .npmrc
           pnpm run create:config
           npm i --prefix=curriculum-server
           npm i --prefix=web
@@ -131,6 +133,8 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+          pnpm node -v
+          cat .npmrc
           pnpm run create:config
           pnpm run build:curriculum
 
@@ -185,6 +189,8 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+          pnpm node -v
+          cat .npmrc
           pnpm run create:config
           pnpm run build:curriculum
 
@@ -243,6 +249,8 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+          pnpm node -v
+          cat .npmrc
           pnpm run create:config
           pnpm run build:curriculum
 

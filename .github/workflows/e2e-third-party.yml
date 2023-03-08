@@ -75,6 +75,8 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
+          pnpm node -v
+          cat .npmrc
           pnpm run build
       - name: Seed Database
         run: pnpm run seed
