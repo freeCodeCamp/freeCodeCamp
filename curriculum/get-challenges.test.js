@@ -4,7 +4,7 @@ const {
   generateChallengeCreator,
   hasEnglishSource,
   createCommentMap
-} = require('./getChallenges');
+} = require('./get-challenges');
 
 const EXISTING_CHALLENGE_PATH = 'challenge.md';
 const MISSING_CHALLENGE_PATH = 'no/challenge.md';
