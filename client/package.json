@@ -142,6 +142,7 @@
     "@codesee/tracker": "0.525.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
+    "@total-typescript/ts-reset": "^0.3.7",
     "@types/chai": "^4.3.4",
     "@types/enzyme": "^3.10.12",
     "@types/enzyme-adapter-react-16": "1.0.6",
