@@ -8,7 +8,7 @@ const envPath = resolve(__dirname, '../../.env');
 config({ path: envPath });
 
 import { availableLangs } from '../../config/i18n';
-import { getChallengesForLang } from '../../curriculum/getChallenges';
+import { getChallengesForLang } from '../../curriculum/get-challenges';
 import { SuperBlocks } from '../../config/certification-settings';
 import { getAuditedSuperBlocks } from '../../config/superblock-order';
 

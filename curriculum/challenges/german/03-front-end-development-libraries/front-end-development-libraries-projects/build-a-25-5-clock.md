@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd0f
-title: Build a 25 + 5 Clock
+title: Erstelle eine „25 + 5“-Uhr
 challengeType: 3
 forumTopicId: 301373
 dashedName: build-a-25--5-clock

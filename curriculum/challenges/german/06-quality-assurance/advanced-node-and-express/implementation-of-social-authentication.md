@@ -35,7 +35,7 @@ Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. 
 
 # --hints--
 
-Route `/auth/github` should be correct.
+Die Route `/auth/github` sollte korrekt sein.
 
 ```js
 async (getUserInput) => {
@@ -66,7 +66,7 @@ async (getUserInput) => {
 }
 ```
 
-Route `/auth/github/callback` should be correct.
+Die Route `/auth/github/callback` sollte korrekt sein.
 
 ```js
 async (getUserInput) => {

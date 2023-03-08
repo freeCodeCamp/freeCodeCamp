@@ -24,9 +24,9 @@ Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projek
 
 Während des Entwicklungsprozesses ist es wichtig, überprüfen zu können, was in deinem Code passiert.
 
-Node ist nur eine JavaScript-Umgebung. Like client side JavaScript, you can use the console to display useful debug information. Auf deinem lokalen Rechner würdest du die Konsolenausgabe in einem Terminal sehen. Bei Replit ist im rechten Fensterbereich standardmäßig ein Terminal geöffnet.
+Node ist nur eine JavaScript-Umgebung. Wie bei JavaScript auf der Clientenseite kannst du die Konsole verwenden, um nützliche Debug-Informationen anzuzeigen. Auf deinem lokalen Rechner würdest du die Konsolenausgabe in einem Terminal sehen. Bei Replit ist im rechten Fensterbereich standardmäßig ein Terminal geöffnet.
 
-We recommend to keep the terminal open while working at these challenges. Wenn du die Ausgabe im Terminal liest, kannst du eventuell auftretende Fehler erkennen.
+Wir empfehlen, das Terminal während der Arbeit an diesen Aufgaben geöffnet zu lassen. Wenn du die Ausgabe im Terminal liest, kannst du eventuell auftretende Fehler erkennen.
 
 # --instructions--
 

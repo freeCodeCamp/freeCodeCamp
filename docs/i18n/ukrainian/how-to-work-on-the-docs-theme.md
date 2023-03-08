@@ -50,13 +50,13 @@ Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodec
 #### Обслужити та запустити лише документаційний сайт
 
 ```console
-npm run docs:serve
+pnpm run docs:serve
 ```
 
 #### Обслужити документаційний сайт поряд з freeCodeCamp локально:
 
 ```console
-npm run develop
+pnpm run develop
 ```
 
 > Сайт документації повинен бути доступним на <http://localhost:3400>

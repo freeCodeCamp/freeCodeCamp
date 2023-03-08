@@ -21,7 +21,7 @@ Assign the following three lines of text into the single variable `myStr` using 
 
 <pre>
 FirstLine
-    \SecondLine
+  \SecondLine
 ThirdLine
 </pre>
 

@@ -596,7 +596,8 @@
     "editor-url": "Ricordati di inviare l'URL della Live App.",
     "http-url": "Non è possibile utilizzare un URL non sicuro (http).",
     "own-work-url": "Ricordati di inviare il tuo lavoro.",
-    "publicly-visible-url": "Ricorda di inviare un URL dell'app visibile pubblicamente."
+    "publicly-visible-url": "Ricorda di inviare un URL dell'app visibile pubblicamente.",
+    "path-url": "Probabilmente vuoi inviare il percorso root, ovvero https://example.com, non https://example.com/percorso"
   },
   "certification": {
     "executive": "Direttore esecutivo, freeCodeCamp.org",
