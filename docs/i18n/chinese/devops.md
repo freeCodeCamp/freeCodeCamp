@@ -427,18 +427,13 @@ sudo apt install build-essential
 
 Provisioning VMs with the Code
 
-1. Install Node LTS.
-
-2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
+1. Install `pnpm` globally.
 
    ```console
-   npm i -g npm@8
-   npm i -g pm2
-   pm2 install pm2-logrotate
-   pm2 startup
+   curl -fsSL https://get.pnpm.io/install.sh | sh -
    ```
 
-3. Clone freeCodeCamp, setup env and keys.
+2. Clone freeCodeCamp, setup env and keys.
 
    ```console
    git clone https://github.com/freeCodeCamp/freeCodeCamp.git
@@ -446,37 +441,43 @@ Provisioning VMs with the Code
    git checkout prod-current # or any other branch to be deployed
    ```
 
-4. Create the `.env` from the secure credentials storage.
+3. Create the `.env` from the secure credentials storage.
 
-5. Create the `google-credentials.json` from the secure credentials storage.
+4. Create the `google-credentials.json` from the secure credentials storage.
 
-6. Install dependencies
+5. Install dependencies
 
    ```console
    pnpm install
    ```
 
+6. Setup pm2 `logrotate` and startup on boot
+
+   ```console
+   pnpm pm2 install pm2-logrotate
+   pnpm pm2 startup
+   ```
+
 7. Build the server
 
    ```console
-   pnpm run prebuild && pnpm run build:curriculum && pnpm run build:server
+   pnpm prebuild && pnpm build:curriculum && pnpm build:server
    ```
 
-8. Start Instances
+8.  Start Instances
 
    ```console
-   cd api-server
-   pm2 reload ecosystem.config.js
+   pnpm start:server
    ```
 
 ### Logging and Monitoring
 
 ```console
-pm2 logs
+pnpm pm2 logs
 ```
 
 ```console
-pm2 monit
+pnpm pm2 monit
 ```
 
 ### Updating Instances (Maintenance)
@@ -490,7 +491,7 @@ Code changes need to be deployed to the API instances from time to time. It can 
 1. Stop all instances
 
 ```console
-pm2 stop all
+pnpm pm2 stop all
 ```
 
 2. Install dependencies
@@ -508,13 +509,13 @@ pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
 4. Start Instances
 
 ```console
-cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
-   ```
+pnpm start:server && pnpm pm2 logs
+```
 
 #### 2. Rolling updates - Used for logical changes to code.
 
 ```console
-cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
+pnpm pm2 reload api-server/ecosystem.config.js && pnpm pm2 logs
 ```
 
 > [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
