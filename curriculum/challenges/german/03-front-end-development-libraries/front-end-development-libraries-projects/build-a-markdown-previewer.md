@@ -1,6 +1,6 @@
 ---
 id: bd7157d8c242eddfaeb5bd13
-title: Build a Markdown Previewer
+title: Erstelle einen Markdown-Previewer
 challengeType: 3
 forumTopicId: 301372
 dashedName: build-a-markdown-previewer
@@ -8,7 +8,7 @@ dashedName: build-a-markdown-previewer
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://markdown-previewer.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://markdown-previewer.freecodecamp.rocks/</a>.
+**Aufgabe:** Erstelle eine Anwendung, die eine ähnliche Funktionalität wie <a href="https://markdown-previewer.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://markdown-previewer.freecodecamp.rocks/</a> aufweist.
 
 Erfülle die folgenden User Stories und bestehe alle Tests. Verwende Bibliotheken und APIs deiner Wahl. Gib dem Ganzen deinen persönlichen Stil.
 
@@ -26,7 +26,7 @@ Du kannst jede Mischung aus HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux
 
 **User Story #6:** Wenn mein Markdown-Previewer zum ersten Mal geladen wird, sollte das Standard-Markdown im `#editor`-Feld als HTML im `#preview`-Element dargestellt werden.
 
-**Optional Bonus (you do not need to make this test pass):** My markdown previewer interprets carriage returns and renders them as `br` (line break) elements.
+**Optionaler Bonus (du musst diesen Test nicht bestehen):** Mein Markdown-Previewer interpretiert Zeilenumbrüche und gibt sie als `br`-(Zeilenumbruch) Elemente aus.
 
 Du kannst dein Projekt aufbauen, indem du <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">diese CodePen-Vorlage</a> verwendest und auf `Save` klickst, um deinen eigenen Pen zu erstellen. Oder du kannst diesen CDN-Link verwenden, um die Tests in jeder beliebigen Umgebung auszuführen: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 

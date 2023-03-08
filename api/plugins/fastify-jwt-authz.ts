@@ -26,49 +26,41 @@ import { FastifyPluginCallback, FastifyRequest } from 'fastify';
 import fp from 'fastify-plugin';
 
 interface UserObject {
-  scope: string;
+  scope?: string;
 }
 
-export interface JwtAuthz {
-  (scopes: string[], callback: (err?: Error) => void): Promise<void>;
+interface JwtAuthz {
+  (scopes: string[], callback?: (err?: Error) => void): void;
 }
 
 const fastifyJwtAuthz: FastifyPluginCallback = (fastify, _opts, done) => {
-  fastify.decorateRequest('jwtAuthz', checkScopes);
+  fastify.decorateRequest('jwtAuthz', jwtAuthz);
 
-  done();
+  function checkScopes(user: UserObject, scopes: string[]) {
+    if (scopes.length === 0) return Error('Scopes cannot be empty');
 
-  function checkScopes(
-    this: FastifyRequest,
-    scopes: string[],
-    callback: (err?: Error) => void
-  ) {
-    if (callback === undefined) {
-      return new Promise((resolve, reject) => {
-        void this.jwtAuthz(scopes, function (err) {
-          return err ? reject(err) : resolve(null);
-        });
-      });
-    }
+    if (!user) return Error('request.user does not exist');
 
-    if (scopes.length === 0) {
-      return callback(new Error('Scopes cannot be empty'));
-    }
-    const user = this.user as UserObject;
-    if (!user) {
-      return callback(new Error('request.user does not exist'));
-    }
-    if (typeof user.scope !== 'string') {
-      return callback(new Error('request.user.scope must be a string'));
-    }
+    if (typeof user.scope !== 'string')
+      return Error('request.user.scope must be a string');
 
     const userScopes = user.scope.split(' ');
-    const allowed = scopes.some(scope => {
-      return userScopes.indexOf(scope) !== -1;
-    });
+    const sufficientScope = scopes.some(scope => userScopes.includes(scope));
 
-    return callback(allowed ? undefined : new Error('Insufficient scope'));
+    if (!sufficientScope) return Error('Insufficient scope');
   }
+
+  function jwtAuthz(
+    this: FastifyRequest,
+    scopes: string[],
+    callback?: (err?: Error) => void
+  ) {
+    const err = checkScopes(this.user as UserObject, scopes);
+    if (callback) return callback(err);
+    if (err) throw err;
+  }
+
+  done();
 };
 
 declare module 'fastify' {

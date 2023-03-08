@@ -596,7 +596,8 @@
     "editor-url": "Denke daran, die Live App URL einzureichen.",
     "http-url": "Eine unsichere (http) URL kann nicht verwendet werden.",
     "own-work-url": "Denke daran, deine eigene Arbeit einzureichen.",
-    "publicly-visible-url": "Denke daran, eine öffentlich sichtbare App-URL einzureichen."
+    "publicly-visible-url": "Denke daran, eine öffentlich sichtbare App-URL einzureichen.",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "Geschäftsführender Direktor, freeCodeCamp.org",

@@ -2,12 +2,12 @@ import fastifyPlugin from 'fastify-plugin';
 import fastifyMongo from '@fastify/mongodb';
 import { FastifyInstance } from 'fastify';
 
-const URI = process.env.MONGOHQ_URL || 'mongodb://localhost:27017/freecodecamp';
+import { MONGOHQ_URL } from '../utils/env';
 
 async function connect(fastify: FastifyInstance) {
-  fastify.log.info(`Connecting to : ${URI}`);
+  fastify.log.info(`Connecting to Mongodb`);
   await fastify.register(fastifyMongo, {
-    url: URI
+    url: MONGOHQ_URL
   });
 }
 

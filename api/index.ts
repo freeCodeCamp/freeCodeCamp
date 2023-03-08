@@ -1,5 +1,3 @@
-import { config } from 'dotenv';
-config({ path: '../.env' });
 import fastifyAuth0 from 'fastify-auth0-verify';
 import Fastify from 'fastify';
 import middie from '@fastify/middie';
@@ -8,9 +6,10 @@ import jwtAuthz from './plugins/fastify-jwt-authz';
 import { testRoutes } from './routes/test';
 import { dbConnector } from './db';
 import { auth0Verify, testMiddleware } from './middleware';
+import { AUTH0_AUDIENCE, AUTH0_DOMAIN, NODE_ENV, PORT } from './utils/env';
 
 const fastify = Fastify({
-  logger: { level: process.env.NODE_ENV === 'development' ? 'debug' : 'fatal' }
+  logger: { level: NODE_ENV === 'development' ? 'debug' : 'fatal' }
 });
 
 fastify.get('/', async (_request, _reply) => {
@@ -23,8 +22,8 @@ const start = async () => {
 
   // Auth0 plugin
   void fastify.register(fastifyAuth0, {
-    domain: process.env.AUTH0_DOMAIN,
-    audience: process.env.AUTH0_AUDIENCE
+    domain: AUTH0_DOMAIN,
+    audience: AUTH0_AUDIENCE
   });
   void fastify.register(jwtAuthz);
 
@@ -37,7 +36,7 @@ const start = async () => {
   void fastify.register(testRoutes);
 
   try {
-    const port = Number(process.env.PORT) || 3000;
+    const port = Number(PORT);
     fastify.log.info(`Starting server on port ${port}`);
     await fastify.listen({ port });
   } catch (err) {

@@ -1,33 +1,33 @@
 ---
 id: 637f4e2f72c65bc8e73dfe22
-title: HTML Boilerplate Question C
+title: Шаблонний код HTML. Запитання C
 challengeType: 15
 dashedName: html-boilerplate-question-c
 ---
 
 # --description--
 
-The `<head>` element is where you put important meta-information about your webpages, and stuff required for your webpages to render correctly in the browser. Inside the `<head>`, you should not use any element that displays content on the webpage.
+В елементі `<head>` розміщується вся важлива метаінформація про вебсторінки, а також все інше, необхідне для правильного відтворення вебсторінок у браузері. Всередині `<head>` не можна використовувати елементи, які показують вміст на сторінці.
 
-## The Charset Meta Element
-You should always have the `meta` tag for the charset encoding of the webpage in the head element: `<meta charset="utf-8">`.
+## Елемент meta charset
+Ви завжди повинні мати тег `meta` для відтворення символів вебсторінки в голові документа: `<meta charset="utf-8">`.
 
-Setting the encoding is very important because it ensures that the webpage will display special symbols and characters from different languages correctly in the browser.
+Налаштувати кодування символів надзвичайно важливо, оскільки це гарантує, що вебсторінка правильно показуватиме спеціальні символи різних мов.
 
-## Title Element
-Another element you should always include in the head of an HTML document is the `title` element:
+## Елемент title
+Ще одним елементом, який завжди повинен бути в голові документа HTML, є елемент `title`:
 
 ```html
 <title>My First Webpage</title>
 ```
 
-The `title` element is used to give webpages a human-readable title which is displayed in your webpage’s browser tab.
+Елемент `title` надає вебсторінкам заголовок, який можуть прочитати люди та який показано на вкладці вебсторінки.
 
-If you didn’t include a `title` element, the webpage’s title would default to its file name. In your case that would be `index.html`, which isn’t very meaningful for users; this would make it very difficult to find your webpage if the user has many browser tabs open.
+Якщо ви не надасте елемент `title`, заголовком вебсторінки за замовчуванням буде назва файлу. У нашому випадку заголовком би був `index.html`, що не дуже змістовно для користувачів. Через це користувачу було б важко найти вебсторінку, якщо відкрито багато вкладок.
 
-There are many more elements that can go within the `head` of an HTML document. However, for now it’s only crucial to know about the two elements you have covered here. You will introduce more elements that go into the `head` throughout the rest of the curriculum.
+У `head` документа HTML можна помістити багато інших елементів. Наразі важливо знати про два елементи, які ми розглянули. Пізніше ви дізнаєтесь про більше елементів, які розміщуються в `head`.
 
-Back in `index.html` file, let’s add a `head` element with a `charset` `meta` element and a `title` within it. The head element goes within the HTML element and should always be the first element under the opening `<html>` tag:
+Назад до файлу `index.html`: додайте елемент `head`, який має всередині елемент `meta` `charset` та `title`. Елемент head входить до елемента HTML та завжди повинен бути першим елементом знизу початкового тегу `<html>`:
 
 
 ```html
@@ -45,19 +45,19 @@ Back in `index.html` file, let’s add a `head` element with a `charset` `meta` 
 
 ## --text--
 
-What is the purpose of the `head` element?
+Яка суть елемента `head`?
 
 ## --answers--
 
-The `head` element is used to display all elements that are displayed on the webpage.
+Елемент `head` використовується для відображення всіх елементів, які відображаються на вебсторінці.
 
 ---
 
-The `head` element is used to display important information about your webpage and is used to render web pages correctly with `meta` elements.
+Елемент `head` використовується для відображення важливої інформації вебсторінки та правильного відтворення вебсторінок за допомогою елементів `meta`.
 
 ---
 
-The `head` element is used to display the header content on top of the webpage.
+Елемент `head` використовується для відображення вмісту заголовка у верхній частині вебсторінки.
 
 
 ## --video-solution--

@@ -8,15 +8,15 @@ dashedName: use-model-findbyid-to-search-your-database-by-id
 
 # --description--
 
-When saving a document, MongoDB automatically adds the field `_id`, and set it to a unique alphanumeric key. Searching by `_id` is an extremely frequent operation, so Mongoose provides a dedicated method for it.
+When saving a document, MongoDB automatically adds the field `_id`, and set it to a unique alphanumeric key. Die Suche nach `_id` ist eine extrem häufige Anwendung, daher bietet Mongoose eine eigene Methode dafür an.
 
 # --instructions--
 
-Modify the `findPersonById` to find the only person having a given `_id`, using `Model.findById() -> Person`. Use the function argument `personId` as the search key.
+Modify the `findPersonById` to find the only person having a given `_id`, using `Model.findById() -> Person`. Verwende das Funktionsargument `personId` als Suchbegriff.
 
 # --hints--
 
-Find an item by Id should succeed
+Die Suche nach einem Element anhand der Id sollte erfolgreich sein
 
 ```js
 (getUserInput) =>

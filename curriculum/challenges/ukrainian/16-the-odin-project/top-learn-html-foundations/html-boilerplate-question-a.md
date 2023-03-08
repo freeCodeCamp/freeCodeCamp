@@ -1,52 +1,52 @@
 ---
 id: 637f4e1c72c65bc8e73dfe20
-title: HTML Boilerplate Question A
+title: Шаблонний код HTML. Запитання A
 challengeType: 15
 dashedName: html-boilerplate-question-a
 ---
 
 # --description--
 
-To demonstrate an HTML boilerplate, you first need an HTML file to work with.
+Щоб продемонструвати шаблонний код HTML, нам потрібен файл HTML.
 
-Create a new folder on your computer and name it `html-boilerplate`. Within that folder create a new file and name it `index.html`.
+Створіть нову папку на своєму комп’ютері та назвіть її `html-boilerplate`. Створіть новий файл у цій папці та назвіть його `index.html`.
 
-You’re probably already familiar with a lot of different types of files, for example doc, pdf, and image files.
+Мабуть, ви знайомі з різними типами файлів (наприклад, .doc, .pdf чи зображення).
 
-To let the computer know you want to create an HTML file, you need to append the filename with the `.html` extension as you have done when creating the `index.html` file.
+Щоб комп’ютер знав, що ви хочете створити файл HTML, потрібно додати розширення `.html` до назви файлу, як ви робили при створенні файлу `index.html`.
 
-It is worth noting that you named your HTML file index. You should always name the HTML file that will contain the homepage of your websites `index.html`. This is because web servers will by default look for an index.html page when users land on your websites - and not having one will cause big problems.
+Важливо зазначити, що ви назвали свій файл HTML «index». Файл HTML, який міститиме домашню сторінку вебсайту, завжди потрібно називати `index.html`. Причина в тому, що вебсервери за замовчуванням шукатимуть сторінку index.html, коли користувачі заходять на ваш сайт. Відсутність сторінки з такою назвою може спричинити проблеми.
 
-## The DOCTYPE
+## DOCTYPE
 
-Every HTML page starts with a doctype declaration. The doctype’s purpose is to tell the browser what version of HTML it should use to render the document. The latest version of HTML is HTML5, and the doctype for that version is simply `<!DOCTYPE html>`.
+Кожна сторінка HTML починається з оголошення doctype. Мета doctype — повідомити браузеру, яку версію HTML потрібно використовувати, щоб відтворити документ. Найновішою версією HTML є HTML5, а оголошенням цієї версії є `<!DOCTYPE html>`.
 
-The doctypes for older versions of HTML were a bit more complicated. For example, this is the doctype declaration for HTML4:
+Оголошення doctype для старіших версій HTML складніше. Наприклад, оголошення doctype для HTML4:
 
 ```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 ```
 
-However, you probably won’t ever want to be using an older version of HTML, and so you’ll always use `<!DOCTYPE html>`.
+Ви, швидше за все, не будете використовувати старіші версії HTML, тому завжди використовуватимете `<!DOCTYPE html>`.
 
-Open the `index.html` file created earlier in your text editor and add `<!DOCTYPE html>` to the very first line.
+Відкрийте створений раніше файл `index.html` у текстовому редакторі та додайте `<!DOCTYPE html>` у перший рядок.
 
 # --question--
 ## --text--
 
-What is the purpose of the `DOCTYPE` declaration?
+Яка суть оголошення `DOCTYPE`?
 
 ## --answers--
 
-It tells the browser which version of HTML to use to render the document.
+Воно повідомляє браузеру, яку версію HTML використовувати для відтворення документа.
 
 ---
 
-It tells the browser that this document uses JavaScript.
+Воно повідомляє браузеру, що цей документ використовує JavaScript.
 
 ---
 
-It tells the browser the title of the document.
+Воно повідомляє браузеру заголовок документа.
 
 
 ## --video-solution--
