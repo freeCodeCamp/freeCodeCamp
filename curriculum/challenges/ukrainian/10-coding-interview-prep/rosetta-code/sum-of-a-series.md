@@ -16,7 +16,7 @@ Compute the **n**<sup>th</sup> term of a <em>series</em>, i.e. the sum of the **
 
 # --hints--
 
-`sum` має бути функцію.
+`sum` має бути функцією.
 
 ```js
 assert(typeof sum == 'function');

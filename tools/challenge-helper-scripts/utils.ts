@@ -17,7 +17,7 @@ const createStepFile = ({
   stepNum,
   projectPath = getProjectPath(),
   challengeSeeds = {}
-}: Options) => {
+}: Options): ObjectID => {
   const challengeId = new ObjectID();
 
   const template = getStepTemplate({
@@ -36,7 +36,7 @@ interface InsertOptions {
   stepId: ObjectID;
 }
 
-function insertStepIntoMeta({ stepNum, stepId }: InsertOptions) {
+function insertStepIntoMeta({ stepNum, stepId }: InsertOptions): void {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
   oldOrder.splice(stepNum - 1, 0, [stepId.toString()]);
@@ -49,7 +49,7 @@ function insertStepIntoMeta({ stepNum, stepId }: InsertOptions) {
   updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-function deleteStepFromMeta({ stepNum }: { stepNum: number }) {
+function deleteStepFromMeta({ stepNum }: { stepNum: number }): void {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
   oldOrder.splice(stepNum - 1, 1);
@@ -62,7 +62,7 @@ function deleteStepFromMeta({ stepNum }: { stepNum: number }) {
   updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-const updateStepTitles = () => {
+const updateStepTitles = (): void => {
   const meta = getMetaData();
 
   const fileNames: string[] = [];

@@ -374,6 +374,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
+  const isTabTrapped = () => !!(store.get('monacoTabTrapped') ?? true);
+
+  // Monaco uses the contextKey 'editorTabMovesFocus' to control how it
+  // reacts to the Tab key. Setting it to true allows the user to tab
+  // out of the editor. False keeps it inside the editor and creates a tab.
+  const setMonacoTabTrapped = (trapped: boolean) =>
+    dataRef.current.editor?.createContextKey('editorTabMovesFocus', !trapped);
+
   const editorDidMount = (
     editor: editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
@@ -407,18 +415,14 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility;
     };
 
-    const isTabTrapped = () => !!(store.get('monacoTabTrapped') ?? true);
-
     const setTabTrapped = (trapped: boolean) => {
-      // Monaco uses the contextKey 'editorTabMovesFocus' to control how it
-      // reacts to the tab key. Setting this to true allows the user to tab
-      // outside of the editor. If it is false, tab will act inside the editor
-      // (i.e. create spaces).
-      editor.createContextKey('editorTabMovesFocus', !trapped);
+      setMonacoTabTrapped(trapped);
       store.set('monacoTabTrapped', trapped);
       ariaAlert(
         `${
-          trapped ? t('editor-alerts.tab-trapped') : t('editor-alerts.tab-free')
+          trapped
+            ? t('learn.editor-alerts.tab-trapped')
+            : t('learn.editor-alerts.tab-free')
         }`
       );
     };
@@ -813,12 +817,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     // has changed or if content is dragged between regions)
 
     const coveringRange = getLinesCoveringEditableRegion();
-    const editableRegionBoundaries =
-      (coveringRange && [
-        coveringRange.startLineNumber - 1,
-        coveringRange.endLineNumber + 1
-      ]) ??
-      undefined;
+    const editableRegionBoundaries = coveringRange
+      ? [coveringRange.startLineNumber - 1, coveringRange.endLineNumber + 1]
+      : [];
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (player.current.sampler?.loaded && player.current.shouldPlay) {
@@ -1061,7 +1062,6 @@ const Editor = (props: EditorProps): JSX.Element => {
           updateEditableRegion(coveringRange, { model });
         }
       };
-
       // If the content has changed, the zones may need moving. Rather than
       // working out if they have to for a particular content change, we simply
       // ask monaco to update regardless.
@@ -1188,6 +1188,11 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     const editor = dataRef.current.editor;
     editor?.layout();
+    // layout() resets the monaco tab trapping back to default (true), so we
+    // need to untrap it if the user had it set to false.
+    if (!isTabTrapped()) {
+      setMonacoTabTrapped(false);
+    }
     if (hasEditableRegion()) {
       updateDescriptionZone();
       updateOutputZone();

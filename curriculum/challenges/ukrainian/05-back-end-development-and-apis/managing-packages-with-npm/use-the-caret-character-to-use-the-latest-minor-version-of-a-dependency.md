@@ -10,13 +10,13 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 Подібно до символу тильда, про який ми дізналися в останньому завданні та який дозволяє npm встановити найновіший PATCH для залежності, символ карет (`^`) також дозволяє npm встановлювати майбутні оновлення. Відмінність полягає в тому, що символ карет дозволяє оновлення і MINOR, і PATCH.
 
-Your current version of `@freecodecamp/example` should be `~1.2.13` which allows npm to install to the latest `1.2.x` version. If you were to use the caret (^) as a version prefix instead, npm would be allowed to update to any `1.x.x` version.
+Поточною версією `@freecodecamp/example` повинна бути `~1.2.13`, що дозволяє npm встановлювати останню версію `1.2.x`. Якби ви використали символ (^) як префікс версії, npm було б дозволено оновлюватись до будь-якої версії `1.x.x`.
 
 ```json
 "package": "^1.3.8"
 ```
 
-This would allow updates to any `1.x.x` version of the package.
+Це дозволить оновлюватися до будь-якої `1.x.x` версії пакету.
 
 # --instructions--
 

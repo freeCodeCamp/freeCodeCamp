@@ -9,26 +9,25 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Le virgolette non sono gli unici caratteri dei quali si può fare l'<dfn>escaping</dfn> all'interno di una stringa. Ci sono due motivi per usare i caratteri di escaping:
-
-1.  Per permetterti di utilizzare caratteri che potresti non essere altrimenti in grado di digitare, come ad esempio un carattere nuova riga.
-2.  Per permetterti di rappresentare più virgolette in una stringa senza JavaScript interpretare erroneamente ciò che intendi.
-
-Lo abbiamo imparato nella sfida precedente.
+Le virgolette non sono gli unici caratteri dei quali si può fare l'<dfn>escaping</dfn> all'interno di una stringa. Le sequenze di escape ti permettono di usare caratteri che altrimenti non saresti in grado di usare in una stringa.
 
 <table class='table table-striped'><thead><tr><th>Codice</th><th>Output</th></tr></thead><tbody><tr><td><code>\'</code></td><td>virgoletta singola</td></tr><tr><td><code>\"</code></td><td>doppia citazione</td></tr><tr><td><code>\\</code></td><td>barra rovesciata</td></tr><tr><td><code>\n</code></td><td>nuova riga</td></tr><tr><td><code>\t</code></td><td>tabulazione</td></tr><tr><td><code>\r</code></td><td>ritorno a capo</td></tr><tr><td><code>\b</code></td><td>delimitatore di parola</td></tr><tr><td><code>\f</code></td><td>avanzamento carta (form feed)</td></tr></tbody></table>
 
-*Nota che la barra rovesciata necessita di escaping perché appaia come barra rovesciata.*
+*Nota che la barra rovesciata necessita di escaping perché appaia come una barra rovesciata.*
 
 # --instructions--
 
-Assegna le seguenti tre linee di testo in una sola variabile `myStr` usando le seguenze di escape.
+Assegna le seguenti tre righe di testo in una sola variabile `myStr` usando le sequenze di escape.
 
-<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
+<pre>
+FirstLine
+    \SecondLine
+ThirdLine
+</pre>
 
-Dovrai usare le sequenze di escape per inserire i caratteri speciali. Dovrai seguire anche la spaziatura come sopra, senza spazi tra sequenze di escape o le parole.
+Dovrai usare le sequenze di escape per inserire i caratteri speciali correttamente. Dovrai seguire anche la spaziatura come sopra, senza spazi tra sequenze di escape o le parole.
 
-**Note:** L'indentazione per `SecondLine` si ottiene con il carattere di escape di tabulazione, non con gli spazi.
+**Nota:** l'indentazione per `SecondLine` si ottiene con il carattere di escape di tabulazione, non con gli spazi.
 
 # --hints--
 
@@ -46,7 +45,7 @@ assert(
 );
 ```
 
-`FirstLine` dovrebbe essere seguito dal carattere newline `\n`
+`FirstLine` dovrebbe essere seguito dal carattere nuova riga `\n`
 
 ```js
 assert(/FirstLine\n/.test(myStr));
@@ -58,7 +57,7 @@ assert(/FirstLine\n/.test(myStr));
 assert(/\n\t/.test(myStr));
 ```
 
-`SecondLine` dovrebbe essere preceduto dal carattere backslash `\`
+`SecondLine` dovrebbe essere preceduto dal carattere barra rovesciata `\`
 
 ```js
 assert(/\\SecondLine/.test(myStr));

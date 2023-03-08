@@ -6,7 +6,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import FourOhFourPage from '../../src/pages/404';
 import Certification from '../../src/pages/certification';
 import Learn from '../../src/pages/learn';
-import { createStore } from '../../src/redux/createStore';
+import { createStore } from '../../src/redux/create-store';
 import layoutSelector from './layout-selector';
 
 jest.mock('../../src/analytics');

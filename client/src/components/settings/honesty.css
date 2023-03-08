@@ -7,11 +7,6 @@
   padding-top: 15px;
 }
 
-.honesty-policy .disabled-agreed p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 .honesty-panel .btn-invert {
   color: var(--primary-background);
 }

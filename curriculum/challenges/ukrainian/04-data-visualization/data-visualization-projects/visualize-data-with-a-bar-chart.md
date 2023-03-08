@@ -12,7 +12,7 @@ dashedName: visualize-data-with-a-bar-chart
 
 Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
-Ви можете скористатися HTML, JavaScript, CSS та бібліотекою візуалізації, що базується на D3 svg. Для тестів потрібно згенерувати осі, використовуючи властивість осі D3, що автоматично створює відмітки вздовж осі. Ці відмітки потрібні для проходження D3 тестів, тому що їх положення використовуються для визначення вирівнювання зображених елементів. Ви можете знайти інформацію про генерування осей тут <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Необхідні (невіртуальні) DOM-елементи запитуються під час кожного тесту. Якщи ви використовуєте фронтенд-фреймворк (як-от, наприклад, Vue), результати тестів можуть бути неточними для динамічного контенту. Ми сподіваємося скоро їх налагодити, однак наразі ці фреймворки не підтримуються для проєктів D3.
+Ви можете скористатися HTML, JavaScript, CSS та бібліотекою візуалізації, що базується на D3 svg. Для тестів потрібно згенерувати осі, використовуючи властивість осі D3, що автоматично створює відмітки вздовж осі. Ці відмітки потрібні для проходження D3 тестів, тому що їх положення використовуються для визначення вирівнювання зображених елементів. Ви можете знайти інформацію про генерування осей тут <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Required DOM elements are queried on the moment of each test. Якщи ви використовуєте фронтенд-фреймворк (як-от, наприклад, Vue), результати тестів можуть бути неточними для динамічного контенту. Ми сподіваємося скоро їх налагодити, однак наразі ці фреймворки не підтримуються для проєктів D3.
 
 **User Story #1:** Моя діаграма повинна мати назву з відповідним `id="title"`.
 
@@ -24,17 +24,17 @@ dashedName: visualize-data-with-a-bar-chart
 
 **User Story #5:** Моя діаграма повинна мати елемент `rect` для кожної точки даних з відповідним `class="bar"`, що відображає дані.
 
-**User Story #6:** Кожна діаграма повинна мати властивості `data-date` та `data-gdp`, які містять значення `date` та `GDP`.
+**User Story #6:** Each `.bar` should have the properties `data-date` and `data-gdp` containing `date` and `GDP` values.
 
-**User Story #7:** Властивості `data-date` елементів діаграми повинні відповідати послідовності наданих даних.
+**User Story #7:** The `.bar` elements' `data-date` properties should match the order of the provided data.
 
-**User Story #8:** Властивості `data-gdp` елементів діаграми повинні відповідати послідовності наданих даних.
+**User Story #8:** The `.bar` elements' `data-gdp` properties should match the order of the provided data.
 
-**User Story #9:** Висота кожного елемента діаграми повинна точно відображати відповідні дані `GDP`.
+**User Story #9:** Each `.bar` element's height should accurately represent the data's corresponding `GDP`.
 
-**User Story #10:** Атрибут `data-date` та його відповідний елемент діаграми повинні бути на рівні з відповідним значенням на осі Х.
+**User Story #10:** The `data-date` attribute and its corresponding `.bar` element should align with the corresponding value on the x-axis.
 
-**User Story #11:** Атрибут `data-gdp` та його відповідний елемент діаграми повинні бути на рівні з відповідним значенням на осі Y.
+**User Story #11:** The `data-gdp` attribute and its corresponding `.bar` element should align with the corresponding value on the y-axis.
 
 **User Story #12:** Я можу навести курсор на область і побачити спливаючу підказку з відповідним `id="tooltip"`, що відображає більше інформації про область.
 

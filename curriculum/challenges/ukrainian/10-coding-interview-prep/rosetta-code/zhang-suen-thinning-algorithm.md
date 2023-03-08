@@ -85,7 +85,7 @@ $$\begin{array}{|c|c|c|} \\hline P9 & P2              & P3\\\\ \\hline P8 & \bol
 
 # --hints--
 
-`thinImage` повинно бути функцією.
+`thinImage` має бути функцією.
 
 ```js
 assert.equal(typeof thinImage, 'function');

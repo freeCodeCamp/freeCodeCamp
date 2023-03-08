@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 
 import readdirp from 'readdirp';
+// TODO: remove chai and use jest's assertion errors
 import { AssertionError } from 'chai';
 import envData from '../../../config/env.json';
 import { SuperBlocks } from '../../../config/certification-settings';
@@ -82,10 +83,16 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
       const dashedNames = orderedSuperBlockInfo.map(
         ({ dashedName }) => dashedName
       );
+
+      const isUpcoming = [
+        '2022/javascript-algorithms-and-data-structures',
+        'the-odin-project'
+      ];
+
       // TODO: this is a hack, we should have a single source of truth for the
       // list of superblocks that are available.
       const publicSuperBlockNames = Object.values(SuperBlocks).filter(
-        x => x !== '2022/javascript-algorithms-and-data-structures'
+        x => !isUpcoming.includes(x)
       );
 
       expect(dashedNames).toEqual(

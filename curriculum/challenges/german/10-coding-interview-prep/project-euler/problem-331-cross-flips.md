@@ -8,25 +8,25 @@ dashedName: problem-331-cross-flips
 
 # --description--
 
-N×N disks are placed on a square game board. Each disk has a black side and white side.
+N×N Scheiben werden auf ein quadratisches Spielbrett gelegt. Jede Scheibe hat eine schwarze und eine weiße Seite.
 
-At each turn, you may choose a disk and flip all the disks in the same row and the same column as this disk: thus $2 × N - 1$ disks are flipped. The game ends when all disks show their white side. The following example shows a game on a 5×5 board.
+In jedem Zug darf man sich eine Scheibe aussuchen und alle Scheiben umdrehen, die sich in der gleichen Zeile und Spalte wie diese Scheibe befinden: Es werden also $2 × N - 1$ Scheiben umgedreht. Das Spiel endet, wenn von allen Scheiben die weisse Seite zu sehen ist. Das folgende Beispiel zeigt ein Spiel auf einem 5×5-Brett.
 
-<img class="img-responsive center-block" alt="animation showing game on 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Animation eines Spiels auf einem 5x5-Brett" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
 
-It can be proven that 3 is the minimal number of turns to finish this game.
+Es kann bewiesen werden, dass 3 die minimale Anzahl von Zügen ist, um dieses Spiel zu beenden.
 
-The bottom left disk on the $N×N$ board has coordinates (0, 0); the bottom right disk has coordinates ($N - 1$,$0$) and the top left disk has coordinates ($0$,$N - 1$).
+Die untere linke Scheibe auf dem $N×N$-Brett hat die Koordinaten (0, 0); die untere rechte Scheibe hat die Koordinaten ($N - 1$,$0$) und die obere linke Scheibe hat die Koordinaten ($0$,$N - 1$).
 
-Let $C_N$ be the following configuration of a board with $N × N$ disks: A disk at ($x$, $y$) satisfying $N - 1 \le \sqrt{x^2 + y^2} \lt N$, shows its black side; otherwise, it shows its white side. $C_5$ is shown above.
+Lasse $C_N$ die folgende Konfiguration eines Brettes mit $N × N$ Scheiben sein: Eine Scheibe bei ($x$, $y$), erfüllt die Bedingung $N - 1 \le \sqrt{x^2 + y^2} \lt N$, zeigt ihre schwarze Seite; andernfalls zeigt sie ihre weisse Seite. $C_5$ ist oben dargestellt.
 
-Let $T(N)$ be the minimal number of turns to finish a game starting from configuration $C_N$ or 0 if configuration $C_N$ is unsolvable. We have shown that $T(5) = 3$. You are also given that $T(10) = 29$ and $T(1\\,000) = 395\\,253$.
+Lasse $T(N)$ die minimale Anzahl von Zügen sein, um ein Spiel ausgehend von der Konfiguration $C_N$ zu beenden oder 0, wenn die Konfiguration $C_N$ unlösbar ist. Wir haben gezeigt, dass $T(5) = 3$. Dir wird ebenfalls angegeben, dass $T(10) = 29$ und $T(1\\,000) = 395\\,253$.
 
-Find $\displaystyle \sum_{i = 3}^{31} T(2^i - i)$.
+Finde $\displaystyle \sum_{i = 3}^{31} T(2^i - i)$.
 
 # --hints--
 
-`crossFlips()` should return `467178235146843500`.
+`crossFlips()` sollte `467178235146843500` zurückgeben.
 
 ```js
 assert.strictEqual(crossFlips(), 467178235146843500);

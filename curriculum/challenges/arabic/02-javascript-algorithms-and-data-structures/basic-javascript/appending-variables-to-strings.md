@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ed
-title: إلحاق المتغيرات بالمقاطع النصية (Appending Variables to Strings)
+title: إلحاق المتغيرات بالمقاطع النصية
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmZfa'
 forumTopicId: 16656
@@ -9,7 +9,7 @@ dashedName: appending-variables-to-strings
 
 # --description--
 
-تماما كما يمكننا بناء مقطع نصي (string) مكونة من عدة سطور باستخدام <dfn>الاحرف مقطع نصي (string literals)</dfn>، يمكننا أيضا إلحاق المتغيرات في مقطع نصي (string) معينة باستخدام (`+=`).
+تماما كما نستطيع أن نبني مقطع نصي (string) مكون من عدة سطور باستخدام <dfn>مقاطع نصية حرفية (string literals)</dfn>، يمكننا أيضا إلحاق المتغيرات في مقطع نصي (string) معين باستخدام المشغل (`+=`).
 
 على سبيل المثال:
 
@@ -19,11 +19,11 @@ let ourStr = "freeCodeCamp is ";
 ourStr += anAdjective;
 ```
 
-المتغير `ourStr` ستكون قيمته النهائية `freeCodeCamp is awesome!`.
+قيمة المتغير `ourStr` النهائية ستكون `freeCodeCamp is awesome!`.
 
 # --instructions--
 
-عرف متغير جديد `someAdjective` بحيث يكون string قيمته مكون من 3 أحرف في الأقل, ثم إلحاقه بمتغير آخر `myStr` باستخدام `+=`.
+حدد قيمة المتغير `someAdjective` بحيث يكون مقطع نصي مكون من 3 أحرف في الأقل, ثم ضفه في نهاية المتغير `myStr` باستخدام `+=`.
 
 # --hints--
 

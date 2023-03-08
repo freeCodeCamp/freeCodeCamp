@@ -1,6 +1,6 @@
 ---
 id: 5efada803cbd2bbdab94e332
-title: Step 29
+title: Schritt 29
 challengeType: 0
 dashedName: step-29
 ---

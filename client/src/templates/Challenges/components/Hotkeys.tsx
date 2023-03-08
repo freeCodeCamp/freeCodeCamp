@@ -4,12 +4,14 @@ import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { ChallengeFiles, Test, User } from '../../../redux/prop-types';
+import { isChallenge } from '../../../utils/path-parsers';
 
 import { userSelector } from '../../../redux/selectors';
 import {
   setEditorFocusability,
   submitChallenge,
-  openModal
+  openModal,
+  setIsAdvancing
 } from '../redux/actions';
 import {
   canFocusEditorSelector,
@@ -40,7 +42,8 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   setEditorFocusability,
   submitChallenge,
-  openShortcutsModal: () => openModal('shortcuts')
+  openShortcutsModal: () => openModal('shortcuts'),
+  setIsAdvancing
 };
 
 const keyMap = {
@@ -66,6 +69,7 @@ interface HotkeysProps {
   nextChallengePath: string;
   prevChallengePath: string;
   setEditorFocusability: (arg0: boolean) => void;
+  setIsAdvancing: (arg0: boolean) => void;
   tests: Test[];
   usesMultifileEditor?: boolean;
   openShortcutsModal: () => void;
@@ -83,6 +87,7 @@ function Hotkeys({
   nextChallengePath,
   prevChallengePath,
   setEditorFocusability,
+  setIsAdvancing,
   submitChallenge,
   tests,
   usesMultifileEditor,
@@ -130,10 +135,16 @@ function Hotkeys({
           },
           navigationMode: () => setEditorFocusability(false),
           navigatePrev: () => {
-            if (!canFocusEditor) void navigate(prevChallengePath);
+            if (!canFocusEditor) {
+              if (isChallenge(prevChallengePath)) setIsAdvancing(true);
+              void navigate(prevChallengePath);
+            }
           },
           navigateNext: () => {
-            if (!canFocusEditor) void navigate(nextChallengePath);
+            if (!canFocusEditor) {
+              if (isChallenge(nextChallengePath)) setIsAdvancing(true);
+              void navigate(nextChallengePath);
+            }
           },
           showShortcuts: (e: React.KeyboardEvent) => {
             if (!canFocusEditor && e.shiftKey && e.key === '?') {

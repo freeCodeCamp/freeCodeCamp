@@ -18,7 +18,7 @@ dashedName: zeckendorf-number-representation
 
 # --hints--
 
-`zeckendorf` повинен бути функцією.
+`zeckendorf` має бути функцією.
 
 ```js
 assert.equal(typeof zeckendorf, 'function');

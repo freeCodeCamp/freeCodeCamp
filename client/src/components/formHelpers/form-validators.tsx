@@ -9,6 +9,14 @@ const fCCRegex =
 const localhostRegex = /localhost:/;
 const httpRegex = /http(?!s|([^s]+?localhost))/;
 
+function isPathRoot(urlString: string): boolean {
+  try {
+    return new URL(urlString).pathname !== '/';
+  } catch {
+    return false;
+  }
+}
+
 export const editorValidator = (value: string): React.ReactElement | null =>
   editorRegex.test(value) ? <Trans>validation.editor-url</Trans> : null;
 
@@ -22,6 +30,9 @@ export const localhostValidator = (value: string): React.ReactElement | null =>
 
 export const httpValidator = (value: string): React.ReactElement | null =>
   httpRegex.test(value) ? <Trans>validation.http-url</Trans> : null;
+
+export const pathValidator = (value: string): React.ReactElement | null =>
+  isPathRoot(value) ? <Trans>validation.path-url</Trans> : null;
 
 type Validator = (value: string) => React.ReactElement | null;
 export function composeValidators(...validators: (Validator | null)[]) {

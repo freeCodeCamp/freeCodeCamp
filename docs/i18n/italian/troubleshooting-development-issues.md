@@ -17,10 +17,10 @@ Se sei su un sistema operativo diverso o continui ad avere dei problemi, visita 
 Quando viene fatto il build del client, Gatsby memorizzerà nella cache i font, le stringhe di lingua e l'interfaccia utente. Se uno di loro non è memorizzato nella cache, esegui quanto segue:
 
 ```console
-npm run clean
-npm ci
-npm run seed
-npm run develop
+pnpm run clean
+pnpm install
+pnpm run seed
+pnpm run develop
 ```
 
 O
@@ -28,7 +28,7 @@ O
 Usa la scorciatoia
 
 ```
-npm run clean-and-develop
+pnpm run clean-and-develop
 ```
 
 Se continui a incontrare problemi con il build, è consigliato ripulire lo spazio di lavoro.
@@ -78,7 +78,7 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 Durante lo sviluppo, la sessione viene memorizzata come cookie. Cancellarli ti farà uscire dal tuo account di sviluppo.
 
-Ti disconnetterai anche eseguendo `npm run seed:certified-user`. Sovrascriverà l'utente di sviluppo nel database locale.
+Running `pnpm run seed:certified-user` will log you out, too. Sovrascriverà l'utente di sviluppo nel database locale.
 
 ### Ottenere 404 navigando sulla pagina del profilo
 

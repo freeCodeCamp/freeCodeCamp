@@ -8,8 +8,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "strict": true,
-    "noEmit": true,
-    "typeRoots": ["../../node_modules/@types"]
+    "noEmit": true
   },
   "ts-node": {
     "compilerOptions": {

@@ -13,6 +13,7 @@ import './header.css';
 interface HeaderProps {
   fetchState: { pending: boolean };
   user: User;
+  skipButtonText: string;
 }
 export class Header extends React.Component<
   HeaderProps,
@@ -71,9 +72,9 @@ export class Header extends React.Component<
   }
 
   // elementToFocus must be a link in the language menu
-  showLanguageMenu(elementToFocus: HTMLButtonElement): void {
+  showLanguageMenu(elementToFocus: HTMLButtonElement | null): void {
     this.setState({ isLanguageMenuDisplayed: true }, () =>
-      elementToFocus.focus()
+      elementToFocus?.focus()
     );
   }
 
@@ -83,7 +84,7 @@ export class Header extends React.Component<
 
   render(): JSX.Element {
     const { displayMenu, isLanguageMenuDisplayed } = this.state;
-    const { fetchState, user } = this.props;
+    const { fetchState, user, skipButtonText } = this.props;
     return (
       <>
         <Helmet>
@@ -95,7 +96,7 @@ export class Header extends React.Component<
         </Helmet>
         <header>
           <a href='#content-start' className='skip-to-content-button'>
-            Skip To Content
+            {skipButtonText}
           </a>
           <UniversalNav
             displayMenu={displayMenu}

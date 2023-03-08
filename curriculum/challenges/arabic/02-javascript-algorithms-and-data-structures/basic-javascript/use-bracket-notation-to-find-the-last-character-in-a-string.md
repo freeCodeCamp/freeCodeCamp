@@ -11,7 +11,7 @@ dashedName: use-bracket-notation-to-find-the-last-character-in-a-string
 
 للحصول على آخر حرف من المقطع النصي (String)، يمكنك طرح واحد من طوله.
 
-على سبيل المثال، إذا `const firstName = "Ada"`، يمكنك الحصول على قيمة الحرف الأخير من السلسلة باستخدام `firstName[firstName.length - 1]`.
+على سبيل المثال، إذا `const firstName = "Ada"`، يمكنك الحصول على قيمة الحرف الأخير من المقطع باستخدام `firstName[firstName.length - 1]`.
 
 مثال:
 
@@ -20,7 +20,7 @@ const firstName = "Ada";
 const lastLetter = firstName[firstName.length - 1];
 ```
 
-`lastLetter` سيكون لها قيمة تساوي السلسلة `a`.
+سيكون قيمة `lastLetter` تساوي المقطع النصي `a`.
 
 # --instructions--
 
@@ -30,7 +30,7 @@ const lastLetter = firstName[firstName.length - 1];
 
 # --hints--
 
-`lastLetterOfLastName` يجب أن يكون الحرف `e`.
+يجب أن يكون `lastLetterOfLastName` الحرف `e`.
 
 ```js
 assert(lastLetterOfLastName === 'e');

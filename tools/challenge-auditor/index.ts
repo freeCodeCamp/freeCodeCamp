@@ -8,10 +8,23 @@ const envPath = resolve(__dirname, '../../.env');
 config({ path: envPath });
 
 import { availableLangs } from '../../config/i18n';
-import { getChallengesForLang } from '../../curriculum/getChallenges';
+import { getChallengesForLang } from '../../curriculum/get-challenges';
 import { SuperBlocks } from '../../config/certification-settings';
-import { ChallengeNode } from '../../client/src/redux/prop-types';
 import { getAuditedSuperBlocks } from '../../config/superblock-order';
+
+// TODO: re-organise the types to a common 'types' folder that can be shared
+// between the workspaces so we don't have to declare ChallengeNode here and in
+// the client.
+
+// This cannot be imported from the client, without causing tsc to attempt to
+// compile the client (something it cannot do)
+type ChallengeNode = {
+  block: string;
+  dashedName: string;
+  superBlock: SuperBlocks;
+  id: string;
+  challengeType: number;
+};
 
 const superBlockFolderMap = {
   'responsive-web-design': '01-responsive-web-design',
@@ -29,7 +42,8 @@ const superBlockFolderMap = {
   'relational-database': '13-relational-database',
   '2022/responsive-web-design': '14-responsive-web-design-22',
   '2022/javascript-algorithms-and-data-structures':
-    '15-javascript-algorithms-and-data-structures-22'
+    '15-javascript-algorithms-and-data-structures-22',
+  'the-odin-project': '16-the-odin-project'
 };
 
 // These blocks are in the incorrect superblock. They should be moved but, for
@@ -52,7 +66,7 @@ const getChallenges = async (lang: string) => {
         key => superBlock[key].challenges
       );
       return [...challengeArray, ...flatten(challengesForBlock)];
-    }, []) as unknown as ChallengeNode['challenge'][];
+    }, []) as unknown as ChallengeNode[];
 };
 
 /* eslint-enable @typescript-eslint/no-unsafe-return */

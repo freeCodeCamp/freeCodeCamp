@@ -26,7 +26,7 @@ The value of the `for` attribute must be the same as the value of the `id` attri
 
 # --instructions--
 
-Camper Cat expects a lot of interest in his thoughtful blog posts and wants to include an email sign up form. Add a `for` attribute on the email `label` that matches the `id` on its `input` field.
+تنتظر Camper Cat الكثير من الاهتمام في مشاركاته المدونة المدروسة وترغب في تضمين نموذج تسجيل البريد الإلكتروني. Add a `for` attribute on the email `label` that matches the `id` on its `input` field.
 
 # --hints--
 

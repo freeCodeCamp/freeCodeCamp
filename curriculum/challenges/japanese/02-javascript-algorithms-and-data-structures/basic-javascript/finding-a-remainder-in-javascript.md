@@ -13,12 +13,20 @@ dashedName: finding-a-remainder-in-javascript
 
 **例**
 
-<blockquote>5 % 2 = 1 なぜならば<br>Math.floor(5 / 2) = 2 (割り算の商)<br>2 * 2 = 4<br>5 - 4 = 1 (割り算の余り)</blockquote>
+<pre>
+5 % 2 = 1
+5 / 2 = 2 remainder 1
+2 * 2 = 4
+5 - 4 = 1
+</pre>
 
-**使用例**  
-数学では、ある数が偶数か奇数かを求めるために、その数を `2` で割った余りを調べることができます。
+**Usage**  
+In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`. Even numbers have a remainder of `0`, while odd numbers a remainder of `1`.
 
-<blockquote>17 % 2 = 1 (17 は奇数)<br>48 % 2 = 0 (48 は偶数)</blockquote>
+<pre>
+17 % 2 = 1
+48 % 2 = 0
+</pre>
 
 **注:** <dfn>剰余</dfn>演算子はしばしばモジュロ演算子と混同されることがあります。 剰余はモジュロと非常によく似ていますが、負数では正しく機能しません。
 
@@ -51,7 +59,9 @@ assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
 ## --after-user-code--
 
 ```js
-(function(y){return 'remainder = '+y;})(remainder);
+(function (y) {
+  return 'remainder = ' + y;
+})(remainder);
 ```
 
 ## --seed-contents--

@@ -27,25 +27,25 @@ Cypress テストもしくは「specs」の書き方については、Cypress �
 - `./cypress` ディレクトリで、すべてのテストを実行します。
 
   ```console
-  npm run cypress:dev:run
+  pnpm run cypress:dev:run
   ```
 
 - 単一のテストを実行します。
 
   ```console
-  npm run cypress -- run --spec=cypress/<path_to_test_file>
+  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
   ```
 
   For example:
 
   ```console
-  npm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
   ```
 
 - 開発ビルドを作成するには、開発サーバーを起動し、既存の cypress エンドツーエンドテストをすべて実行します。
 
   ```console
-  npm run e2e:dev:run
+  pnpm run e2e:dev:run
   ```
 
 ## Cypress と GitPod の設定
@@ -63,19 +63,19 @@ mongod
 - データベースをシードします。
 
 ```console
-npm run seed
+pnpm run seed
 ```
 
 - サーバーとクライアントを構築します。
 
 ```console
-npm run develop
+pnpm run develop
 ```
 
 ### 2. Cypress ビルドツールをインストールする
 
 ```console
-npm run cypress:install-build-tools
+pnpm run cypress:install-build-tools
 ```
 
 - 端末でプロンプトが表示されたら、言語/エリアでキーボードのレイアウトを選択してください。

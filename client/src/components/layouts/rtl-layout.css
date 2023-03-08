@@ -114,11 +114,13 @@ New RWD project challenge
 sections that need to stay left to right
 */
 
+/* special cases in steps */
+[dir='rtl'] :has(#learn-app-wrapper) table,
+[dir='rtl'] :has(#learn-app-wrapper) pre,
 /* Code snippet*/
 [dir='rtl'] code,
 /* trending articles */
 [dir='rtl'] .trending-guides .trending-guides-row div a,
-[dir='rtl'] .quote-partial,
 [dir='rtl'] .overflow-guard,
 [dir='rtl'] .challenge-preview,
 /* timeline*/
@@ -129,6 +131,12 @@ sections that need to stay left to right
 [dir='rtl'] code {
   word-break: normal;
   unicode-bidi: isolate;
+}
+
+/* bootstrap display block breaks the code elements when they are stacked on top of each other to sort this, we remove it for display: grid  */
+
+[dir='rtl'] pre[class*='language-']:has(code) {
+  display: grid;
 }
 
 [dir='rtl'] .description-container,

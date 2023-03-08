@@ -4,11 +4,14 @@ on:
   # push:
   #   paths-ignore:
   #     - 'docs/**'
-  #   branches-ignore:
-  #     - 'renovate/**'
+  #   branches:
+  #     - 'main'
   # pull_request:
   #   paths-ignore:
   #     - 'docs/**'
+  #   branches:
+  #     - 'main'
+  #     - 'next-**'
 
 jobs:
   mobile-test:
@@ -27,6 +30,11 @@ jobs:
         with:
           repository: freeCodeCamp/mobile
           path: mobile
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
@@ -47,9 +55,9 @@ jobs:
 
       - name: Install and Build
         run: |
-          npm ci
-          npm run create:config
-          npm run build:curriculum
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Generate mobile test files
         run: |

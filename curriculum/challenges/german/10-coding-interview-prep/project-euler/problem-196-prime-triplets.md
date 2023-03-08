@@ -1,6 +1,6 @@
 ---
 id: 5900f4301000cf542c50ff42
-title: 'Problem 196: Primzahl-Tripletts'
+title: 'Problem 196: Primzahldrillinge'
 challengeType: 1
 forumTopicId: 301834
 dashedName: problem-196-prime-triplets
@@ -26,7 +26,7 @@ In der zweiten Reihe beispielsweise sind die Primzahlen 2 und 3 Elemente eines P
 
 Wenn die Reihe 8 berücksichtigt wird, enthält es zwei Primzahlen, die Elemente eines Primzahltripels sind, nämlich 29 und 31. Betrachtet man die Zeile 9, so enthält sie nur eine Primzahl, die ein Element eines Primzahltripletts ist: 37.
 
-Definiere $S(n)$ als Summe der Primzahlen in Reihe $n$, die Elemente eines beliebigen Primzahltriplets sind. Dann gilt $S(8) = 60$ und $S(9) = 37$.
+Definiere $S(n)$ als Summe der Primzahlen in Reihe $n$, die Elemente eines beliebigen Primzahldrillings sind. Dann gilt $S(8) = 60$ und $S(9) = 37$.
 
 Gegeben ist, dass Folgendes gilt: $S(10000) = 950007619$.
 

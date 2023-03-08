@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "npm": ">=8"
+    "pnpm": "7"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,8 @@
   },
   "dependencies": {
     "@freecodecamp/loopback-component-passport": "1.2.0",
-    "@sentry/node": "6.19.7",
+    "@sentry/node": "7.37.1",
+    "@sentry/tracing": "7.37.1",
     "accepts": "1.3.8",
     "axios": "0.23.0",
     "bad-words": "3.0.4",
@@ -45,6 +46,7 @@
     "dedent": "0.7.0",
     "dotenv": "6.2.0",
     "express-flash": "0.0.2",
+    "express-rate-limit": "^6.7.0",
     "express-session": "1.17.3",
     "express-validator": "6.14.1",
     "helmet": "3.23.3",
@@ -60,12 +62,14 @@
     "mongodb": "3.6.9",
     "morgan": "1.10.0",
     "nanoid": "3.3.4",
+    "node-fetch": "^2.6.7",
     "nodemailer-ses-transport": "1.5.1",
     "passport": "0.4.1",
     "passport-auth0": "1.4.2",
     "passport-local": "1.0.0",
     "passport-mock-strategy": "2.0.0",
     "query-string": "6.14.0",
+    "rate-limit-mongo": "^2.3.2",
     "rx": "4.1.0",
     "stripe": "8.205.0",
     "uuid": "3.4.0",

@@ -15,7 +15,7 @@ Screen reader users have various options for what type of content their device r
 
 # --instructions--
 
-The link text that Camper Cat is using is not very descriptive without the surrounding context. انقل علامات الرابط (`a`) بحيث تلتف حول النص `information about batteries` بدلاً من `Click here`.
+نص الرابط الذي يستخدمه Camper Cat ليس وصفياً جداً بدون السياق المحيط. انقل علامات الرابط (`a`) بحيث تلتف حول النص `information about batteries` بدلاً من `Click here`.
 
 # --hints--
 
