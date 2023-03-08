@@ -5,9 +5,10 @@ const sessionAuth: FastifyPluginCallback = (fastify, _opts, done) => {
   const authenticateSession: onRequestHookHandler = (req, res, done) => {
     if (!req.session.user) {
       res.statusCode = 401;
-      return res.send({ msg: 'Unauthorized' });
+      void res.send({ msg: 'Unauthorized' });
+    } else {
+      done();
     }
-    done();
   };
 
   fastify.decorate('authenticateSession', authenticateSession);
