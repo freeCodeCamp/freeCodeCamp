@@ -15,6 +15,11 @@ jobs:
   i18n-download-curriculum-translations:
     name: Curriculum
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        # allowed values: default and full node versions (e.g. 18.14.2)
+        node-version: [default, 19.7.0]
+      fail-fast: true
 
     steps:
       - name: Checkout Source Files

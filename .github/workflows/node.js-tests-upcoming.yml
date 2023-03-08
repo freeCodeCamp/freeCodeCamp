@@ -25,6 +25,12 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        # allowed values: default and full node versions (e.g. 18.14.2)
+        node-version: [default, 19.7.0]
+      fail-fast: true
+
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
@@ -66,6 +72,12 @@ jobs:
     name: Test
     needs: lint
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        # allowed values: default and full node versions (e.g. 18.14.2)
+        node-version: [default, 19.7.0]
+      fail-fast: true
+
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3

@@ -10,6 +10,11 @@ jobs:
     # run only on PRs that camperbot opens with title that matches the curriculum sync
     if: ${{ github.event.pull_request.user.login == 'camperbot' && contains(github.event.pull_request.title, 'chore(i18n,learn)') }}
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        # allowed values: default and full node versions (e.g. 18.14.2)
+        node-version: [default, 19.7.0]
+      fail-fast: true
 
     steps:
       - name: Checkout Source Files

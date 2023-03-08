@@ -15,6 +15,10 @@ jobs:
   i18n-download-client-ui-translations:
     name: Client
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [default, 19.x]
+      fail-fast: true
 
     steps:
       - name: Checkout Source Files
