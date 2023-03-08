@@ -4,9 +4,7 @@ import { FastifyPluginCallback } from 'fastify';
 export const testRoutes: FastifyPluginCallback = (fastify, _options, done) => {
   const collection = fastify.mongo.db?.collection('user');
 
-  fastify.addHook('onRequest', (req, res, done) =>
-    fastify.authenticateSession(req, res, done)
-  );
+  fastify.addHook('onRequest', fastify.authenticateSession);
 
   fastify.get('/test', async (request, _reply) => {
     if (!collection) {
