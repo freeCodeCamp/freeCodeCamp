@@ -40,7 +40,7 @@
     "@babel/preset-env": "7.20.2",
     "@babel/preset-react": "7.18.6",
     "@babel/runtime": "^7.20.13",
-    "@babel/standalone": "7.20.15",
+    "@babel/standalone": "7.21.2",
     "@fortawesome/fontawesome-svg-core": "6.3.0",
     "@fortawesome/free-brands-svg-icons": "6.3.0",
     "@fortawesome/free-solid-svg-icons": "6.3.0",
@@ -137,7 +137,7 @@
     "validator": "13.9.0"
   },
   "devDependencies": {
-    "@babel/types": "7.20.7",
+    "@babel/types": "7.21.2",
     "@codesee/babel-plugin-instrument": "0.525.0",
     "@codesee/tracker": "0.525.0",
     "@testing-library/jest-dom": "5.16.5",
