@@ -32,7 +32,7 @@ Create a person schema called `personSchema` with the following shape:
 
 * A required `name` field of type `String`
 * An `age` field of type `Number`
-* A `favouriteFoods` field of type `[String]`
+* A `favoriteFoods` field of type `[String]`
 
 采用 Mongoose 基础 schema 类型。 你如果还想添加更多的键，就请使用 required 或 unique 等简单的验证器（validators），并设置默认值。 查看我们的 <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">Mongoose 文章</a>。
 

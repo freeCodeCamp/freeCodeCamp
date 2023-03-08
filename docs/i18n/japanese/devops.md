@@ -91,7 +91,7 @@
 4. リポジトリをローカルにビルドできることを確認します。
 
    ```
-   npm run clean-and-develop
+   pnpm run clean-and-develop
    ```
 
 5. 早送りマージにより、変更を `main` から `prod-staging` に移行します。
@@ -453,13 +453,13 @@ sudo apt install build-essential
 6. 依存関係をインストールします。
 
    ```console
-   npm ci
+   pnpm install
    ```
 
 7. サーバーを構築します。
 
    ```console
-   npm run prebuild && npm run build:curriculum && npm run build:server
+   pnpm run prebuild && pnpm run build:curriculum && pnpm run build:server
    ```
 
 8. インスタンスを開始します。
@@ -496,13 +496,13 @@ pm2 stop all
 2. 依存関係をインストールします。
 
 ```console
-npm ci
+pnpm install
 ```
 
 3. サーバーを構築します。
 
 ```console
-npm run create:config && npm run build:curriculum && npm run build:server
+pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
 ```
 
 4. インスタンスを開始します。
@@ -788,8 +788,8 @@ NGINX インスタンスへの設定変更は、GitHub 上でメンテナンス�
 ```console
 cd tools
 git pull origin master
-npm ci
-npm run build
+pnpm install
+pnpm run build
 pm2 restart contribute-app
 ```
 

@@ -1,52 +1,52 @@
 ---
 id: 637f4e3e72c65bc8e73dfe24
 videoId: kcHKFZBVtf4
-title: Understand Ordered and Unordered List Question A
+title: Впорядкований та невпорядкований список. Запитання A
 challengeType: 15
 dashedName: understand-ordered-and-unordered-list-question-a
 ---
 
 # --description--
 
-If you want to have a list of items where the order doesn’t matter, like a shopping list of items that can be bought in any order, then you can use an unordered list.
+Якщо ви хочете мати список елементів, порядок яких не має значення (наприклад, список покупок із товарами, які можна купити в будь-якому порядку), можна використати невпорядкований список.
 
-Unordered lists are created using the `<ul>` element, and each item within the list is created using the list item element `<li>`.
+Невпорядковані списки створені за допомогою елемента `<ul>`, а кожен елемент списку створений за допомогою елемента списку `<li>`.
 
-Each list item in an unordered list begins with a bullet point:
+Елементи невпорядкованого списку починаються з маркера списку:
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/powjajd?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=powjajd&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_powjajd"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/powjajd?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=powjajd&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_powjajd"></iframe>
 
-If you instead want to create a list of items where the order does matter, like step-by-step instructions for a recipe, or your top 10 favorite TV shows, then you can use an ordered list.
+Якщо ви хочете мати список елементів, порядок яких має значення (наприклад, покроковий рецепт або 10 улюблених телешоу), можна використати впорядкований список.
 
-Ordered lists are created using the `<ol>` element. Each individual item in them is again created using the list item element `<li>`. However, each list item in an ordered list begins with a number instead:
+Впорядковані списки створені за допомогою елемента `<ol>`. Кожен елемент списку також створений за допомогою елемента списку `<li>`. Однак елементи впорядкованого списку починаються з числа:
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/yLXYvYp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=yLXYvYp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_yLXYvYp"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/yLXYvYp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=yLXYvYp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_yLXYvYp"></iframe>
 
 # --question--
 
 ## --assignment--
 
-Watch the first three minutes of Kevin Powell's video on Ordered and Unordered lists above.
+Перегляньте перші три хвилини відео Кевіна Павелла про впорядковані та невпорядковані списки.
 
 ---
 
-Make an unordered shopping list of your favorite foods.
+Зробіть невпорядкований список їжі, яку потрібно купити.
 
 ---
 
-Make an ordered list of todo’s you need to get done today.
+Зробіть впорядкований список справ, які потрібно виконати сьогодні.
 
 ---
 
-Make an unordered list of places you’d like to visit someday.
+Зробіть невпорядкований список місць, які ви хочете відвідати.
 
 ---
 
-Make an ordered list of your all time top 5 favorite video games or movies.
+Зробіть впорядкований список 5 улюблених відеоігор або фільмів.
 
 ## --text--
 
-What HTML tag is used to create an unordered list?
+Який тег потрібно використати, щоб створити невпорядкований список у HTML?
 
 ## --answers--
 

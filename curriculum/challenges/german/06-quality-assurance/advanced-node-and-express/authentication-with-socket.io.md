@@ -8,9 +8,9 @@ dashedName: authentication-with-socket-io
 
 # --description--
 
-Currently, you cannot determine who is connected to your web socket. While `req.user` contains the user object, that's only when your user interacts with the web server, and with web sockets you have no `req` (request) and therefore no user data. One way to solve the problem of knowing who is connected to your web socket is by parsing and decoding the cookie that contains the passport session then deserializing it to obtain the user object. Luckily, there is a package on NPM just for this that turns a once complex task into something simple!
+Noch kannst du nicht feststellen, wer mit deinem Websocket verbunden ist. Zwar enthält `req.user` für gewöhnlich das Nutzerobjekt – allerdings nur, wenn dein Nutzer mit dem Webserver interagiert. Mit Websockets hast du keine `req` (Request, zu Deutsch „Anfrage“) und folglich keine Nutzerdaten. One way to solve the problem of knowing who is connected to your web socket is by parsing and decoding the cookie that contains the passport session then deserializing it to obtain the user object. Glücklicherweise gibt es ein NPM-Paket, das diesen einst komplexen Vorgang stark vereinfacht!
 
-`passport.socketio@~3.7.0`, `connect-mongo@~3.2.0` und `cookie-parser@~1.4.5` wurden bereits als Abhängigkeiten hinzugefügt. Require them as `passportSocketIo`, `MongoStore`, and `cookieParser` respectively. Also, we need to initialize a new memory store, from `express-session` which we previously required. It should look like this:
+`passport.socketio@~3.7.0`, `connect-mongo@~3.2.0` und `cookie-parser@~1.4.5` wurden bereits als Abhängigkeiten hinzugefügt. Fordere sie jeweils als `passportSocketIo`, `MongoStore` und `cookieParser` an. Zudem müssen wir mithilfe von `express-session`, das wir zuvor angefordert haben, einen neuen Speicher initialisieren. So sollte das aussehen:
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -18,7 +18,7 @@ const URI = process.env.MONGO_URI;
 const store = new MongoStore({ url: URI });
 ```
 
-Now we just have to tell Socket.IO to use it and set the options. Be sure this is added before the existing socket code and not in the existing connection listener. For your server, it should look like this:
+Jetzt müssen wir Socket.IO nur noch mitteilen, diesen zu verwenden und Optionen festlegen. Be sure this is added before the existing socket code and not in the existing connection listener. Für deinen Server sollte das so aussehen:
 
 ```js
 io.use(
@@ -33,15 +33,15 @@ io.use(
 );
 ```
 
-Note that configuring Passport authentication for Socket.IO is very similar to the way we configured the `session` middleware for the API. This is because they are meant to use the same authentication method — get the session id from a cookie and validate it.
+Die Konfiguration einer Passport-Authentifizierung für Socket.IO ähnelt der Art, wie wir die `session`-Middleware für die API konfiguriert haben, übrigens sehr. This is because they are meant to use the same authentication method — get the session id from a cookie and validate it.
 
-Previously, when we configured the `session` middleware, we didn't explicitly set the cookie name for session (`key`). This is because the `session` package was using the default value. Now that we've added another package which needs access to the same value from the cookies, we need to explicitly set the `key` value in both configuration objects.
+Zuvor haben wir bei der Konfiguration der `session`-Middleware den Cookie-Namen für die Sitzung (`key`) nicht explizit festgelegt. This is because the `session` package was using the default value. Nun, da wir ein weiteres Paket hinzugefügt haben, welches Zugriff auf denselben Wert der Cookies benötigt, müssen wir explizit den `key`-Wert in beiden Konfigurationsobjekten setzen.
 
-Be sure to add the `key` with the cookie name to the `session` middleware that matches the Socket.IO key. Also, add the `store` reference to the options, near where we set `saveUninitialized: true`. This is necessary to tell Socket.IO which session to relate to.
+Achte darauf, den `key` mit dem Cookie-Namen zur `session`-Middleware hinzuzufügen, die zum Socket.IO-Schlüssel passt. Also, add the `store` reference to the options, near where we set `saveUninitialized: true`. Das ist notwendig, um Socket.IO mitzuteilen, auf welche Sitzung es sich zu beziehen hat.
 
 <hr />
 
-Now, define the `success`, and `fail` callback functions:
+Definiere nun die `success`- und `fail`-Callback-Funktionen:
 
 ```js
 function onAuthorizeSuccess(data, accept) {
@@ -57,15 +57,15 @@ function onAuthorizeFail(data, message, error, accept) {
 }
 ```
 
-The user object is now accessible on your socket object as `socket.request.user`. For example, now you can add the following:
+Das Nutzerobjekt steht deinem Socket-Objekt nun als `socket.request.user` zur Verfügung. Jetzt kannst du zum Beispiel folgendes hinzufügen:
 
 ```js
 console.log('user ' + socket.request.user.username + ' connected');
 ```
 
-It will log to the server console who has connected!
+Dadurch wird in der Serverkonsole protokolliert, wer eine Verbindung hergestellt hat.
 
-Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can  <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. Wenn du auf Fehler stößt, kannst du <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">das Projekt bis zu diesem Punkt überprüfen</a>.
 
 # --hints--
 

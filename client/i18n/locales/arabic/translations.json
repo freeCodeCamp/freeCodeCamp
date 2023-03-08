@@ -596,7 +596,8 @@
     "editor-url": "تذكر أن تقدم رابط التطبيق المباشر.",
     "http-url": "لا يمكن استخدام عنوان URL غير آمن (http).",
     "own-work-url": "تذكر أن تقدم عملك الخاص.",
-    "publicly-visible-url": "تذكر أن ترسل عنوان URL للتطبيق متاح للجميع."
+    "publicly-visible-url": "تذكر أن ترسل عنوان URL للتطبيق متاح للجميع.",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "المدير التنفيذي، freeCodeCamp.org",

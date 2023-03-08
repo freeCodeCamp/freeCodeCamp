@@ -1,25 +1,25 @@
 ---
 id: 637f4e6e72c65bc8e73dfe2a
-title: Working With Text Question D
+title: Робота з текстом. Запитання D
 challengeType: 15
 dashedName: working-with-text-question-d
 ---
 
 # --description--
 
-The `em` element makes text italic. It also semantically places emphasis on the text, which again may affect things like screen readers. To define an emphasized element you wrap text content in a `<em>` tag.
+Елемент `em` робить текст курсивним. Він також робить акцент на тексті, що може вплинути на читачів екрана. Щоб визначити елемент, загорніть текст в тег `<em>`.
 
-To use `em` on its own:
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_6" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/wvewqpp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=wvewqpp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_6" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_wvewqpp"></iframe>
+Ви можете використовувати `em` окремо:
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_6" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/wvewqpp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=wvewqpp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_6" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_wvewqpp"></iframe>
 
-Again, like the `strong` element, you will find yourself mostly using the `em` element with other text elements:
+Як і елемент `strong`, частіше ви будете використовувати елемент `em` у поєднанні з іншими текстовими елементами:
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_7" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/VwWZzyj?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=VwWZzyj&amp;user=TheOdinProjectExamples&amp;name=cp_embed_7" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_VwWZzyj"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_7" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/VwWZzyj?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=VwWZzyj&amp;user=TheOdinProjectExamples&amp;name=cp_embed_7" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_VwWZzyj"></iframe>
 
 # --question--
 ## --text--
 
-What element should you use to make text italicized to add emphasis?
+Який елемент потрібно використати, щоб зробити текст курсивним?
 
 ## --answers--
 
