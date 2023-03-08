@@ -31,7 +31,7 @@ const start = async () => {
     saveUninitialized: false,
     cookie: {
       maxAge: 1000 * 60 * 5, // 5 minutes
-      secure: process.env.NODE_ENV !== 'development'
+      secure: NODE_ENV !== 'development'
     },
     store: MongoStore.create({
       mongoUrl: process.env.MONGOHQ_URL
