@@ -78,7 +78,7 @@ jobs:
         node-version: [18.x]
         include:
           - browsers: electron
-            spec: cypress/e2e/default/learn/challenges/projects.js
+            spec: cypress/e2e/default/learn/challenges/projects.ts
           - browsers: chrome
             spec: cypress/e2e/default/**/*.{js,ts}
           - browsers: firefox
