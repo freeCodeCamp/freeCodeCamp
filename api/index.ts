@@ -13,7 +13,6 @@ import { auth0Routes } from './routes/auth0';
 import { testValidatedRoutes } from './routes/validation-test';
 import { testMiddleware } from './middleware';
 
-
 import {
   AUTH0_AUDIENCE,
   AUTH0_DOMAIN,
