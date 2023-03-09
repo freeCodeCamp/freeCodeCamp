@@ -24,7 +24,7 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
       <SectionHeader>{t('settings.headings.honesty')}</SectionHeader>
       <FullWidthRow>
         <Panel className='honesty-panel'>
-          <HonestyPolicy />
+          <HonestyPolicy t={t} />
         </Panel>
         <Button
           block={true}

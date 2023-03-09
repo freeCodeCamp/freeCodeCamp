@@ -1,10 +1,8 @@
 import React from 'react';
-import { Trans, useTranslation } from 'react-i18next';
+import { TFunction, Trans } from 'react-i18next';
+const email = 'support@freecodecamp.org';
 
-const HonestyPolicy = (): JSX.Element => {
-  const { t } = useTranslation();
-  const email = 'support@freecodecamp.org';
-
+const HonestyPolicy = ({ t }: { t: TFunction }): JSX.Element => {
   return (
     <>
       <p key={1}>{t('settings.honesty.p1')}</p>
@@ -16,7 +14,6 @@ const HonestyPolicy = (): JSX.Element => {
       <p key={7}>
         <Trans i18nKey='settings.honesty.p7'>
           <a href={`mailto:${email}`}>{{ email }}</a>
-          <h1>test</h1>
         </Trans>
       </p>
     </>
