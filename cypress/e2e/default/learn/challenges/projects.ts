@@ -4,17 +4,19 @@ interface Meta {
   challengeOrder: string[][];
 }
 
-interface Solution {
+interface File {
   contents: unknown;
   fileKey: string;
 }
+
+type Solution = File[];
 
 interface Challenge {
   title: string;
   block: string;
   superBlock: string;
   dashedName: string;
-  solutions: Solution[][];
+  solutions: Solution[];
   isPrivate?: boolean;
 }
 
