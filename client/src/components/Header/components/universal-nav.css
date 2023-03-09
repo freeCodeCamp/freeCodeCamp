@@ -32,6 +32,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  height: 100%;
   letter-spacing: 0.4px;
   white-space: nowrap;
   -ms-overflow-scrolling: touch;
@@ -70,7 +71,7 @@
   display: block;
   width: auto;
   height: 24px;
-  margin: 7px 0;
+  margin: 4px;
 }
 
 .nav-list {
@@ -578,7 +579,6 @@ button.nav-link[aria-disabled='true'] {
     display: block;
     width: auto;
     height: 18px;
-    margin: 10px 0;
   }
 }
 
@@ -606,6 +606,5 @@ button.nav-link[aria-disabled='true'] {
     display: block;
     width: auto;
     height: 24px;
-    margin: 7px 0;
   }
 }
