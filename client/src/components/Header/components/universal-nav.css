@@ -25,7 +25,7 @@
   z-index: 2000;
 }
 
-.universal-nav-middle {
+#universal-nav-logo {
   display: flex;
   align-items: center;
   flex: 1 0 33%;
@@ -507,7 +507,7 @@ button.nav-link[aria-disabled='true'] {
 }
 
 @media (max-width: 980px) {
-  .universal-nav-middle {
+  #universal-nav-logo {
     flex: none;
   }
 
