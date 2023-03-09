@@ -283,6 +283,7 @@ importers:
       '@stripe/stripe-js': 1.48.0
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/react': 12.1.5
+      '@total-typescript/ts-reset': ^0.3.7
       '@types/chai': ^4.3.4
       '@types/enzyme': ^3.10.12
       '@types/enzyme-adapter-react-16': 1.0.6
@@ -509,6 +510,7 @@ importers:
       '@codesee/babel-plugin-instrument': 0.525.0_@babel+core@7.20.12
       '@codesee/tracker': 0.525.0
       '@testing-library/react': 12.1.5_wcqkhtmu7mswc6yz4uyexck3ty
+      '@total-typescript/ts-reset': 0.3.7
       '@types/chai': 4.3.4
       '@types/enzyme': 3.10.12
       '@types/enzyme-adapter-react-16': 1.0.6
@@ -7764,6 +7766,10 @@ packages:
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
+
+  /@total-typescript/ts-reset/0.3.7:
+    resolution: {integrity: sha512-yXt2BRRVCJVvzWaxac5n0nCXzIrQEBE/MeYlNQ8/Iq7UeelNmm/AdnUAu18ilSS893mbEQ4u6whPt/HvOPc4rw==}
+    dev: true
 
   /@trysound/sax/0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
