@@ -133,7 +133,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       linkedin,
       twitter,
       website,
-      portfolio
+      portfolioProjects
     },
     navigate,
     showLoading,
@@ -197,8 +197,10 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             website={website}
           />
           <Spacer />
-          {/* @ts-expect-error Portfolio types mismatch */}
-          <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
+          <Portfolio
+            portfolio={portfolioProjects}
+            updatePortfolio={updatePortfolio}
+          />
           <Spacer />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer />

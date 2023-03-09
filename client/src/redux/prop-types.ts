@@ -302,10 +302,10 @@ export type ChallengeMeta = {
 
 export type PortfolioProjectData = {
   id: string;
-  title?: string;
-  url?: string;
-  image?: string;
-  description?: string;
+  title: string;
+  url: string;
+  image: string;
+  description: string;
 };
 
 type FileKeyChallenge = {
