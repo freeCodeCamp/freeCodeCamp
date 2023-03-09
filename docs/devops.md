@@ -529,7 +529,7 @@ pnpm install
 3. Build the server
 
 ```console
-pnpm create:config && pnpm build:curriculum && pnpm build:server
+pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
 4. Start Instances
