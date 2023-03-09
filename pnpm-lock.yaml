@@ -113,15 +113,21 @@ importers:
 
   api:
     specifiers:
+      '@fastify/cookie': ^8.3.0
       '@fastify/middie': '8.1'
       '@fastify/mongodb': 6.2.0
+      '@fastify/session': ^10.1.1
+      connect-mongo: ^4.6.0
       fastify: 4.14.0
       fastify-auth0-verify: ^1.0.0
       fastify-plugin: ^4.3.0
       nodemon: 2.0.21
     dependencies:
+      '@fastify/cookie': 8.3.0
       '@fastify/middie': 8.1.0
       '@fastify/mongodb': 6.2.0
+      '@fastify/session': 10.1.1
+      connect-mongo: 4.6.0_lw7oj3533zfvrhxigrep3g2fam
       fastify: 4.14.0
       fastify-auth0-verify: 1.0.0
       fastify-plugin: 4.5.0
@@ -283,6 +289,7 @@ importers:
       '@stripe/stripe-js': 1.48.0
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/react': 12.1.5
+      '@total-typescript/ts-reset': ^0.3.7
       '@types/chai': ^4.3.4
       '@types/enzyme': ^3.10.12
       '@types/enzyme-adapter-react-16': 1.0.6
@@ -509,6 +516,7 @@ importers:
       '@codesee/babel-plugin-instrument': 0.525.0_@babel+core@7.20.12
       '@codesee/tracker': 0.525.0
       '@testing-library/react': 12.1.5_wcqkhtmu7mswc6yz4uyexck3ty
+      '@total-typescript/ts-reset': 0.3.7
       '@types/chai': 4.3.4
       '@types/enzyme': 3.10.12
       '@types/enzyme-adapter-react-16': 1.0.6
@@ -4695,6 +4703,13 @@ packages:
       - aws-crt
     dev: false
 
+  /@fastify/session/10.1.1:
+    resolution: {integrity: sha512-8pKDTL9MuqU1FCTca6XNd1E4quZ/ipik69AHXqkANia9Z4xPFS5OSKIwmCClIdaMYD32/tPu4G/6wGgK5Buj5g==}
+    dependencies:
+      fastify-plugin: 4.5.0
+      safe-stable-stringify: 2.4.2
+    dev: false
+
   /@fortawesome/fontawesome-common-types/6.3.0:
     resolution: {integrity: sha512-4BC1NMoacEBzSXRwKjZ/X/gmnbp/HU5Qqat7E8xqorUtBFZS+bwfGH5/wqOC2K6GV0rgEobp3OjGRMa5fK9pFg==}
     engines: {node: '>=6'}
@@ -7764,6 +7779,10 @@ packages:
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
+
+  /@total-typescript/ts-reset/0.3.7:
+    resolution: {integrity: sha512-yXt2BRRVCJVvzWaxac5n0nCXzIrQEBE/MeYlNQ8/Iq7UeelNmm/AdnUAu18ilSS893mbEQ4u6whPt/HvOPc4rw==}
+    dev: true
 
   /@trysound/sax/0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -12216,6 +12235,21 @@ packages:
       - mongodb-client-encryption
       - mongodb-extjson
       - snappy
+    dev: false
+
+  /connect-mongo/4.6.0_lw7oj3533zfvrhxigrep3g2fam:
+    resolution: {integrity: sha512-8new4Z7NLP3CGP65Aw6ls3xDBeKVvHRSh39CXuDZTQsvpeeU9oNMzfFgvqmHqZ6gWpxIl663RyoVEmCAGf1yOg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      express-session: ^1.17.1
+      mongodb: ^4.1.0
+    dependencies:
+      debug: 4.3.4
+      express-session: 1.17.3
+      kruptein: 3.0.6
+      mongodb: 4.14.0
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /connect/3.7.0:
@@ -19914,6 +19948,13 @@ packages:
   /klona/2.0.6:
     resolution: {integrity: sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==}
     engines: {node: '>= 8'}
+
+  /kruptein/3.0.6:
+    resolution: {integrity: sha512-EQJjTwAJfQkC4NfdQdo3HXM2a9pmBm8oidzH270cYu1MbgXPNPMJuldN7OPX+qdhPO5rw4X3/iKz0BFBfkXGKA==}
+    engines: {node: '>8'}
+    dependencies:
+      asn1.js: 5.4.1
+    dev: false
 
   /labeled-stream-splicer/2.0.2:
     resolution: {integrity: sha512-Ca4LSXFFZUjPScRaqOcFxneA0VpKZr4MMYCljyQr4LIewTLb3Y0IUTIsnBBsVubIeEfxeSZpSjSsRM8APEQaAw==}
