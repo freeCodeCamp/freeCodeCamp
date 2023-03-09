@@ -452,7 +452,6 @@ Provisioning VMs with the Code
 
 1. Install Node LTS.
 
-
 2. Install pnpm globally.
 
 ```console
@@ -547,6 +546,16 @@ pnpm reload:server && pnpm pm2 logs
 
 > [!NOTE] We are handling rolling updates to code, logic, via pipelines. You
 > should not need to run these commands. These are here for documentation.
+
+#### 3. Updating Node
+
+1. Install new Node version
+
+2. Update pm2 to use the new version
+
+```console
+pnpm pm2 update
+```
 
 ## Work on Client Instances
 
