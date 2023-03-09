@@ -4,8 +4,8 @@ const testLocations = {
   chalChallenge:
     // eslint-disable-next-line max-len
     '/challenges/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements',
-  learnSuper: '/learn/responsive-web-design',
-  learnBlock: '/learn/responsive-web-design/basic-html-and-html5',
+  learnSuper: '/learn/responsive-web-design/',
+  learnBlock: '/learn/responsive-web-design/basic-html-and-html5/',
   learnChallenge:
     // eslint-disable-next-line max-len
     '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
