@@ -452,11 +452,6 @@ Provisioning VMs with the Code
 
 1. Install Node LTS.
 
-```console
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-# close and reopen terminal
-nvm install --lts --default
-```
 
 2. Install pnpm globally.
 
