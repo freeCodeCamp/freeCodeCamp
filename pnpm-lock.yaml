@@ -10224,7 +10224,7 @@ packages:
     dependencies:
       '@babel/core': 7.20.12
       '@babel/runtime': 7.21.0
-      '@babel/types': 7.20.7
+      '@babel/types': 7.21.2
       gatsby: 3.15.0_bndpv2qqi2df32omx3wxqfylve
       gatsby-core-utils: 2.15.0
 
