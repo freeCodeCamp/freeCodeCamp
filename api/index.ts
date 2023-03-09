@@ -21,8 +21,6 @@ import {
   SESSION_SECRET
 } from './utils/env';
 
-import { prismaRoute } from './routes/prisma';
-
 import prismaPlugin from './db/prisma';
 
 const fastify = Fastify({
@@ -63,7 +61,6 @@ const start = async () => {
   void fastify.register(dbConnector);
   void fastify.register(prismaPlugin);
   void fastify.register(testRoutes);
-  void fastify.register(prismaRoute);
   void fastify.register(auth0Routes, { prefix: '/auth0' });
 
   try {

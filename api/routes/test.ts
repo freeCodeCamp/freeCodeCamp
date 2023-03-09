@@ -6,15 +6,6 @@ export const testRoutes: FastifyPluginCallback = (fastify, _options, done) => {
 
   fastify.addHook('onRequest', fastify.authenticateSession);
 
-  fastify.get('/test', async (request, _reply) => {
-    if (!collection) {
-      return { error: 'No collection' };
-    }
-    const userId = new ObjectId(request.session.user.id);
-    const user = await collection?.findOne({ _id: userId });
-    return { user };
-  });
-
   fastify.put<{ Body: { quincyEmails: boolean } }>(
     '/update-privacy-terms',
     {
