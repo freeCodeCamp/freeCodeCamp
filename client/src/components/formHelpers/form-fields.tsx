@@ -59,12 +59,23 @@ function FormFields(props: FormFieldsProps): JSX.Element {
         validationError = (err as { message?: string })?.message;
       }
     }
+
+    // If editor link is not allowed, use editor validator
+    // If local link is not allowed, use local validator
+    // If local link is allowed, use path validator
+    // Always used fCCValidator and httpValidator
+    const validators = new Set([fCCValidator, httpValidator]);
+    if (name !== 'githubLink' && !isEditorLinkAllowed) {
+      validators.add(editorValidator);
+      if (isLocalLinkAllowed) {
+        validators.add(pathValidator);
+      }
+    }
+    if (!isLocalLinkAllowed) {
+      validators.add(localhostValidator);
+    }
     const validationWarning = composeValidators(
-      name === 'githubLink' || isEditorLinkAllowed ? null : editorValidator,
-      fCCValidator,
-      httpValidator,
-      isLocalLinkAllowed ? null : localhostValidator,
-      pathValidator
+      ...Array.from(validators.values())
     )(value);
     const message: string = (error ||
       validationError ||
