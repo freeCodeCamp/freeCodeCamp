@@ -117,6 +117,48 @@
   accent-color: var(--secondary-color);
 }
 
+.toggle-radio-group {
+  display: flex;
+  align-items: start;
+}
+
+.toggle-radio-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: last baseline;
+  border-radius: 0.25rem;
+}
+
+/* for FF since it doesn't support :has yet */
+.toggle-radio-group label:focus-within {
+  outline: 3px solid var(--blue-mid);
+  outline-offset: 5px;
+}
+
+@supports (selector(:has(input))) {
+  .toggle-radio-group label:focus-within {
+    outline: none;
+    outline-offset: unset;
+  }
+  .toggle-radio-group label:has(input:focus-visible) {
+    outline: 3px solid var(--blue-mid);
+    outline-offset: 5px;
+  }
+}
+
+.toggle-radio-group label[data-checked='false']:hover,
+.toggle-radio-group label[data-checked='false'] input:hover {
+  cursor: pointer;
+}
+
+.toggle-radio-group label + label {
+  margin-left: 1rem;
+}
+
+.toggle-radio-group input {
+  margin-right: 0.25rem;
+}
+
 @media (max-width: 35rem) {
   .toggle-setting-container fieldset {
     flex-direction: column;
