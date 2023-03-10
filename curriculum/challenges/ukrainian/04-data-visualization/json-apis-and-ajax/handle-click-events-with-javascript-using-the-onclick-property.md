@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-Ви можете вставити обробники подій у функцію `DOMContentLoaded`. За допомогою такого коду використайте обробник подій `onclick`, що запускається під час кліку користувача на елемент з id `getMessage`:
+Ви можете вставити обробники подій у функцію `DOMContentLoaded`. You can implement an `onclick` event handler which triggers when the user clicks on the `#getMessage` element, by adding the following code:
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
@@ -28,7 +28,7 @@ document.getElementById('getMessage').onclick = function(){};
 
 # --hints--
 
-Щоб обрати елемент `getMessage`, використайте у коді метод `document.getElementById`.
+Your code should use the `document.getElementById` method to select the element whose id is `getMessage`.
 
 ```js
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));

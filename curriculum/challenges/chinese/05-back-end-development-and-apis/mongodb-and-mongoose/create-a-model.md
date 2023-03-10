@@ -28,15 +28,15 @@ const someFunc = function(done) {
 
 # --instructions--
 
-Create a person schema called `personSchema` with the following shape:
+按下面的信息创建一个名为 `personSchema` 的人员模式：
 
-* A required `name` field of type `String`
-* An `age` field of type `Number`
-* A `favoriteFoods` field of type `[String]`
+* 必需的 `name` 字段，类型为 `String`
+* `age` 字段，类型为 `Number`
+* `favoriteFoods` 字段，类型为 `[String]`
 
 采用 Mongoose 基础 schema 类型。 你如果还想添加更多的键，就请使用 required 或 unique 等简单的验证器（validators），并设置默认值。 查看我们的 <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">Mongoose 文章</a>。
 
-Now, create a model from the `personSchema` and assign it to the existing variable `Person`.
+现在，从 `personSchema` 创建一个模型，并将它分配给现有变量 `Person`。
 
 # --hints--
 

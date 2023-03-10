@@ -427,56 +427,57 @@ sudo apt install build-essential
 
 Provisionando MVs com o código
 
-1. Instale Node LTS.
-
-2. Atualize o `npm` instale o PM2 e a configuração `logrotate` e inicie no boot
+1. Instale o `pnpm` globalmente.
 
    ```console
-   npm i -g npm@8
-   npm i -g pm2
-   pm2 install pm2-logrotate
-   pm2 startup
+   curl -fsSL https://get.pnpm.io/install.sh | sh -
    ```
 
-3. Clone freeCodeCamp, configuração env e chaves.
+2. Faça a clonagem do freeCodeCamp, configure env e as chaves.
 
    ```console
    git clone https://github.com/freeCodeCamp/freeCodeCamp.git
    cd freeCodeCamp
-   git checkout prod-current # or any other branch to be deployed
+   git checkout prod-current # ou qualquer outra branch a ser implementada
    ```
 
-4. Crie o `.env` a partir do armazenamento seguro de credenciais.
+3. Crie o `.env` a partir do armazenamento seguro de credenciais.
 
-5. Crie o `google-credentials.json` a partir do armazenamento seguro de credenciais.
+4. Crie o `google-credentials.json` a partir do armazenamento seguro de credenciais.
 
-6. Instale dependências
+5. Instale dependências
 
    ```console
    pnpm install
    ```
 
+6. Configure o pm2 `logrotate` e inicialize no boot
+
+   ```console
+   pnpm pm2 install pm2-logrotate
+   pnpm pm2 startup
+   ```
+
 7. Compile o servidor
 
    ```console
-   pnpm run prebuild && pnpm run build:curriculum && pnpm run build:server
+   pnpm prebuild && pnpm build:curriculum && pnpm build:server
    ```
 
-8. Inicie instâncias
+8.  Inicie instâncias
 
    ```console
-   cd api-server
-   pm2 reload ecosystem.config.js
+   pnpm start:server
    ```
 
 ### Registro e monitoramento
 
 ```console
-pm2 logs
+pnpm pm2 logs
 ```
 
 ```console
-pm2 monit
+pnpm pm2 monit
 ```
 
 ### Atualizando instâncias (Manutenção)
@@ -490,7 +491,7 @@ Mudanças no código devem ser implementadas na instância da API de tempos em t
 1. Pare todas as instâncias
 
 ```console
-pm2 stop all
+pnpm pm2 stop all
 ```
 
 2. Instale dependências
@@ -508,13 +509,13 @@ pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
 4. Inicie instâncias
 
 ```console
-cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
-   ```
+pnpm start:server && pnpm pm2 logs
+```
 
 #### 2. Atualizações contínuas - Usado par mudanças lógicas no código.
 
 ```console
-cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
+pnpm pm2 reload api-server/ecosystem.config.js && pnpm pm2 logs
 ```
 
 > [!NOTE] Nós estamos lidando com atualizações contínuas no código, lógico, via pipelines. Você não deve executar estes comandos. Eles estão aqui para a documentação.

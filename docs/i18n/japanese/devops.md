@@ -427,18 +427,13 @@ sudo apt install build-essential
 
 コードを使用して VM をプロビジョニング
 
-1. ノード LTS をインストールします。
-
-2. `npm` を更新して PM2 をインストールし、`logrotate` を設定して起動します。
+1. Install `pnpm` globally.
 
    ```console
-   npm i -g npm@8
-   npm i -g pm2
-   pm2 install pm2-logrotate
-   pm2 startup
+   curl -fsSL https://get.pnpm.io/install.sh | sh -
    ```
 
-3. freeCodeCamp をクローンし、env とキーをセットアップします。
+2. Clone freeCodeCamp, setup env and keys.
 
    ```console
    git clone https://github.com/freeCodeCamp/freeCodeCamp.git
@@ -446,37 +441,43 @@ sudo apt install build-essential
    git checkout prod-current # or any other branch to be deployed
    ```
 
-4. セキュア認証情報ストレージから `.env` を作成します。
+3. Create the `.env` from the secure credentials storage.
 
-5. セキュア認証ストレージから `google-credentials.json` を作成します。
+4. Create the `google-credentials.json` from the secure credentials storage.
 
-6. 依存関係をインストールします。
+5. Install dependencies
 
    ```console
    pnpm install
    ```
 
+6. Setup pm2 `logrotate` and startup on boot
+
+   ```console
+   pnpm pm2 install pm2-logrotate
+   pnpm pm2 startup
+   ```
+
 7. サーバーを構築します。
 
    ```console
-   pnpm run prebuild && pnpm run build:curriculum && pnpm run build:server
+   pnpm prebuild && pnpm build:curriculum && pnpm build:server
    ```
 
-8. インスタンスを開始します。
+8.  インスタンスを開始します。
 
    ```console
-   cd api-server
-   pm2 reload ecosystem.config.js
+   pnpm start:server
    ```
 
 ### ログとモニタリング
 
 ```console
-pm2 logs
+pnpm pm2 logs
 ```
 
 ```console
-pm2 monit
+pnpm pm2 monit
 ```
 
 ### インスタンスの更新 (メンテナンス)
@@ -490,7 +491,7 @@ pm2 monit
 1. すべてのインスタンスを停止します。
 
 ```console
-pm2 stop all
+pnpm pm2 stop all
 ```
 
 2. 依存関係をインストールします。
@@ -508,13 +509,13 @@ pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
 4. インスタンスを開始します。
 
 ```console
-cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
-   ```
+pnpm start:server && pnpm pm2 logs
+```
 
 #### 2. ローリング更新 - コードの論理的な変更に使用されます。
 
 ```console
-cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
+pnpm pm2 reload api-server/ecosystem.config.js && pnpm pm2 logs
 ```
 
 > [!NOTE] パイプライン経由で、コードやロジックの更新をロールリング処理しています。 これらのコマンドを実行する必要はありません。 ドキュメント用として、ここに記載されているだけです。

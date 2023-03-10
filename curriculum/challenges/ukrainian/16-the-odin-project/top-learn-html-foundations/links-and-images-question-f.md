@@ -59,34 +59,34 @@ dashedName: links-and-images-question-f
 
 - Вкінці ви можете отримати доступ до файлу `dog.jpg`.
 
-Using the metaphor we used earlier, using `../` in a filepath is kind of like stepping out from the room you are currently in to the main hallway so you can go to another room.
+Використаємо метафору: `../` у шляху нагадує вихід з кімнати до коридору, щоб перейти до іншої кімнати.
 
-## Alt attribute
+## Атрибут alt
 
 Окрім атрибута `src`, кожному елементу зображення потрібний атрибут `alt` (alternative text).
 
 Атрибут `alt` використовується для опису зображення. Він буде використаний на місці зображення, яке не завантажується. Його також використовують читачі екрана, щоб описати зображення для користувачів з порушенням зору.
 
-This is how the The Odin Project logo example you used earlier looks with an alt attribute included:
+Ось так виглядає логотип The Odin Project з атрибутом alt:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
 # --question--
 
 ## --text--
 
-What two attributes do images always need to have?
+Які атрибути повинні мати зображення?
 
 ## --answers--
 
-`href` and `alt`
+`href` та `alt`
 
 ---
 
-`name` and `href`
+`name` та `href`
 
 ---
 
-`alt` and `src`
+`alt` та `src`
 
 ## --video-solution--
 

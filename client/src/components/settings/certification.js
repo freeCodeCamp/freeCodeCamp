@@ -42,6 +42,7 @@ const propTypes = {
   isBackEndCert: PropTypes.bool,
   isDataAnalysisPyCertV7: PropTypes.bool,
   isDataVisCert: PropTypes.bool,
+  isCollegeAlgebraPyCertV8: PropTypes.bool,
   isFrontEndCert: PropTypes.bool,
   isFrontEndLibsCert: PropTypes.bool,
   isFullStackCert: PropTypes.bool,
@@ -82,7 +83,8 @@ const isCertSelector = ({
   isSciCompPyCertV7,
   isDataAnalysisPyCertV7,
   isMachineLearningPyCertV7,
-  isRelationalDatabaseCertV8
+  isRelationalDatabaseCertV8,
+  isCollegeAlgebraPyCertV8
 }) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -99,7 +101,8 @@ const isCertSelector = ({
   isSciCompPyCertV7,
   isDataAnalysisPyCertV7,
   isMachineLearningPyCertV7,
-  isRelationalDatabaseCertV8
+  isRelationalDatabaseCertV8,
+  isCollegeAlgebraPyCertV8
 });
 
 const isCertMapSelector = createSelector(
@@ -119,7 +122,8 @@ const isCertMapSelector = createSelector(
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
-    isRelationalDatabaseCertV8
+    isRelationalDatabaseCertV8,
+    isCollegeAlgebraPyCertV8
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
@@ -132,6 +136,7 @@ const isCertMapSelector = createSelector(
     'Data Analysis with Python': isDataAnalysisPyCertV7,
     'Machine Learning with Python': isMachineLearningPyCertV7,
     'Relational Database': isRelationalDatabaseCertV8,
+    'College Algebra with Python': isCollegeAlgebraPyCertV8,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,

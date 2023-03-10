@@ -1,0 +1,15 @@
+{
+  "name": "Build a Graphing Calculator",
+  "isUpcomingChange": true,
+  "dashedName": "build-a-graphing-calculator",
+  "order": 11,
+  "time": "150 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    [
+      "63d83ffd39c73468b059cd40",
+      "Graphing Calculator"
+    ]
+  ]}

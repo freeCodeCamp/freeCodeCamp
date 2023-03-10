@@ -244,6 +244,7 @@ const defaultTestProps = {
   isDataAnalysisPyCertV7: false,
   isMachineLearningPyCertV7: false,
   isRelationalDatabaseCertV8: false,
+  isCollegeAlgebraPyCertV8: false,
   username: 'developmentuser',
   verifyCert: () => {},
   errors: {},
