@@ -1,0 +1,24 @@
+{
+  "name": "Learn Linear Functions",
+  "isUpcomingChange": true,
+  "dashedName": "learn-linear-functions",
+  "order": 4,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    [
+      "6331d291b51aeedd1a2bd651",
+      "Slope"
+    ],
+    [
+      "6331d28ab51aeedd1a2bd650",
+      "Linear Equations"
+    ],
+    [
+      "6331d283b51aeedd1a2bd64f",
+      "Linear Functions: Extra"
+    ]
+  ]
+}

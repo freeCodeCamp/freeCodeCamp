@@ -1,0 +1,16 @@
+{
+  "name": "Learn Common Factors and Square Roots",
+  "isUpcomingChange": true,
+  "dashedName": "learn-common-factors-and-square-roots",
+  "order": 5,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    [
+      "6331d251b51aeedd1a2bd648",
+      "Factoring"
+    ]
+  ]
+}

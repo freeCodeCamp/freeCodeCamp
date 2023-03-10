@@ -17,7 +17,11 @@ import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
+import {
+  isCollegeAlgebraPyCert,
+  isNewJsCert,
+  isNewRespCert
+} from '../../../utils/is-a-cert';
 import {
   isCodeAllyPractice,
   isFinalProject
@@ -99,6 +103,8 @@ class Block extends Component<BlockProps> {
 
     const isNewResponsiveWebDesign = isNewRespCert(superBlock);
     const isNewJsAlgos = isNewJsCert(superBlock);
+    const isOdinProject = blockDashedName == 'the-odin-project';
+    const isCollegeAlgebraPy = isCollegeAlgebraPyCert(superBlock);
 
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(({ challenge }) => {
@@ -332,17 +338,19 @@ class Block extends Component<BlockProps> {
     );
 
     const blockrenderer = () => {
-      if (isProjectBlock)
-        return isNewResponsiveWebDesign || isNewJsAlgos
+      if (isProjectBlock && !isOdinProject)
+        return isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy
           ? GridProjectBlock
           : ProjectBlock;
-      return isNewResponsiveWebDesign || isNewJsAlgos ? GridBlock : Block;
+      return isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy
+        ? GridBlock
+        : Block;
     };
 
     return (
       <>
         {blockrenderer()}
-        {(isNewResponsiveWebDesign || isNewJsAlgos) &&
+        {(isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy) &&
         !isProjectBlock ? null : (
           <Spacer />
         )}
