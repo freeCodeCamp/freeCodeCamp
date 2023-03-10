@@ -559,7 +559,6 @@ button.nav-link[aria-disabled='true'] {
   #universal-nav-logo {
     padding-top: 0.35em;
   }
-  }
 }
 
 @media (max-width: 450px) {
