@@ -42,7 +42,7 @@
     "develop": "nodemon index.ts",
     "start": "NODE_ENV=production node index.js",
     "test": "node --test -r ts-node/register **/*.test.ts",
-    "prisma": "MONGOHQ_URL='mongodb://localhost:27017/freecodecamp' prisma",
+    "prisma": "MONGOHQ_URL=mongodb://anyuser:anypassword@localhost:27017/freecodecamp?replicaSet=replicaset prisma",
     "postinstall": "prisma generate"
   },
   "version": "0.0.1",
