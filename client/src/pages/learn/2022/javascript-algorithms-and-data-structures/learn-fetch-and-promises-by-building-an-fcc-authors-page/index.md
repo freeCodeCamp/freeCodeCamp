@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn Fetch and Promises By Building An Fcc Authors Page
 block: learn-fetch-and-promises-by-building-an-fcc-authors-page
-superBlock: Responsive Web Design
+superBlock: JavaScript Algorithms and Data Structures
 isBeta: true
 ---
 

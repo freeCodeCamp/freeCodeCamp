@@ -6,7 +6,7 @@ dashedName: step-13
 ---
 
 # --description--
-Now we need to show the author name and the author image. But first, let's show the author's name.
+Now, you need to show the author name and the author image. But first, let's show the author's name.
 
 Create an `h2` tag with the class `author-name`, then interpolate the `author` you destructure inside the `h2` tag. This is the author's name.
 

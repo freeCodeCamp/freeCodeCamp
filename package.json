@@ -138,7 +138,7 @@
     "husky": "8.0.3",
     "jest": "27.5.1",
     "js-yaml": "3.14.1",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "^13.2.0",
     "lodash": "4.17.21",
     "markdownlint": "0.27.0",
     "mock-fs": "5.2.0",
