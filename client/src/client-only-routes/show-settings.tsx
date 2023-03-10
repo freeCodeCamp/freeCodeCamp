@@ -133,7 +133,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       linkedin,
       twitter,
       website,
-      portfolioProjects
+      portfolio
     },
     navigate,
     showLoading,
@@ -197,10 +197,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             website={website}
           />
           <Spacer />
-          <Portfolio
-            portfolio={portfolioProjects}
-            updatePortfolio={updatePortfolio}
-          />
+          <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
           <Spacer />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer />

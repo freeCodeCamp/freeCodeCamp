@@ -73,7 +73,7 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
     location,
     points,
     picture,
-    portfolioProjects,
+    portfolio,
     about,
     yearsTopContributor,
     isDonating
@@ -98,7 +98,7 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? (
-        <PortfolioProjects portfolioProjects={portfolioProjects} />
+        <PortfolioProjects portfolioProjects={portfolio} />
       ) : null}
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
