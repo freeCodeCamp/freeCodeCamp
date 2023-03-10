@@ -559,10 +559,6 @@ button.nav-link[aria-disabled='true'] {
   #universal-nav-logo {
     padding-top: 0.35em;
   }
-  #universal-nav-logo svg {
-    display: block;
-    width: auto;
-    height: 18px;
   }
 }
 
