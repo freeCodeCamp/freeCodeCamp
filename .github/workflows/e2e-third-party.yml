@@ -68,6 +68,10 @@ jobs:
       - name: Move serve.json to Public Folder
         run: cp client-config/serve.json client/public/serve.json
 
+      # start-ci uses pm2, so it needs to be installed globally
+      - name: Install pm2
+        run: npm i -g pm2
+
         # In our cypress config, we default to the cypress/e2e/default directory.
         # We need to change this to cypress/e2e/ for the specific tests we are running
         # in this workflow.
