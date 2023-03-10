@@ -337,7 +337,7 @@
         "intro": ["", ""]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
-        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "title": "通過構建統計計算器學習高級數組方法",
         "intro": ["", ""]
       }
     }
@@ -557,7 +557,7 @@
     "intro": [
       "在這之前，你只是在前端使用 JavaScript 來給頁面添加交互、解決算法挑戰，或構建一個 SPA（單頁應用程序）。但 JavaScript 也可以用於後端或者服務器來構建整個 web 應用程序。",
       "今天，構建應用軟件的廣受歡迎的方法之一是微服務，這些微服務是一種小型模塊化的應用，能夠共同形成一個更大的整體。",
-      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "在後端開發和 APIs 認證中，你將學習如何使用 Node.js 和 npm 編寫後端應用程序。你還將使用 Express 框架構建 Web 應用程序，並使用 MongoDB 和 Mongoose 庫構建一個 People Finder 微服務。"
     ],
     "note": "",
     "blocks": {
@@ -745,6 +745,140 @@
       }
     }
   },
+  "college-algebra-with-python": {
+    "title": "College Algebra with Python",
+    "intro": [
+      "This course is designed as a one-semester college course. It consists of instructional videos, with Google Colaboratory notebooks to follow along interactively, assignments, and challenging projects.",
+      "As you go through each part of this course in sequence, you will gain a full understanding of Algebra and how to write Python code to solve Algebra problems.",
+      "Throughout this course, you will also build your own Algebra Colab notebook that you will be able to use as your custom calculator. This course (and the code you write here) will give you the foundation for a deeper math and data science understanding."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-ratios-and-proportions": {
+        "title": "Learn Ratios and Proportions",
+        "intro": [
+          "Your journey begins here as you learn how to set up a Colab Notebook that can run Python code. Then, use the notebook to follow along with the videos to learn ratios and proportions using Python."
+        ]
+      },
+      "learn-how-to-solve-for-x": {
+        "title": "Learn How to Solve for X",
+        "intro": [
+          "This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code."
+        ]
+      },
+      "learn-fractions-and-decimals": {
+        "title": "Learn Fractions and Decimals",
+        "intro": [
+          "This unit will focus on converting decimals to fractions and percents."
+        ]
+      },
+      "learn-functions-and-graphing": {
+        "title": "Learn Functions and Graphing",
+        "intro": ["This unit will teach you about math functions."]
+      },
+      "learn-linear-functions": {
+        "title": "Learn Linear Functions",
+        "intro": [
+          "This unit will show you how to develop linear equations from two points."
+        ]
+      },
+      "learn-common-factors-and-square-roots": {
+        "title": "Learn Common Factors and Square Roots",
+        "intro": [
+          "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
+        ]
+      },
+      "build-a-multi-function-calculator": {
+        "title": "Build a Multi-Function Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a multi-function calculator."
+        ]
+      },
+      "learn-how-to-graph-systems-of-equations": {
+        "title": "Learn How to Graph Systems of Equations",
+        "intro": [
+          "This unit will focus on graphing two equations on the same coordinate plane, so that you can see where the lines intersect."
+        ]
+      },
+      "learn-how-to-solve-systems-of-equations": {
+        "title": "Learn How to Solve Systems of Equations",
+        "intro": [
+          "In this unit, you will learn how to solve a system of two equations (with two variables) without graphing. You will see how you can factor an equation and solve for a certain variable in Python. By the end of this unit, you will be able to solve and graph the system with one block of code."
+        ]
+      },
+      "learn-applications-of-linear-systems": {
+        "title": "Learn Applications of Linear Systems",
+        "intro": [
+          "In this unit, you will see how you can use the algebra you learned so far to solve real world problems."
+        ]
+      },
+      "learn-quadratic-equations": {
+        "title": "Learn Quadratic Equations",
+        "intro": [
+          "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
+        ]
+      },
+      "build-a-graphing-calculator": {
+        "title": "Build a Graphing Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a graphing calculator."
+        ]
+      },
+      "learn-parent-graphs-and-polynomials": {
+        "title": "Learn Parent Graphs and Polynomials",
+        "intro": [
+          "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
+        ]
+      },
+      "build-three-math-games": {
+        "title": "Build Three Math Games",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build three math games."
+        ]
+      },
+      "learn-business-applications-of-college-algebra": {
+        "title": "Learn Business Applications of College Algebra",
+        "intro": [
+          "This unit will show you how to apply your solving and graphing skills to find cost, revenue, and profit. You will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other."
+        ]
+      },
+      "learn-simple-and-compound-interest": {
+        "title": "Learn Simple and Compound Interest",
+        "intro": [
+          "This unit will show you how to calculate interest, loan payments, and the estimated value of investments. You will see the math formula and turn that into code. Because these formulas tend to get complicated, you will appreciate having the code where you can just modify a few values."
+        ]
+      },
+      "learn-exponents-and-logarithms": {
+        "title": "Learn Exponents and Logarithms",
+        "intro": [
+          "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
+        ]
+      },
+      "build-a-financial-calculator": {
+        "title": "Build a Financial Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a financial calculator."
+        ]
+      },
+      "college-algebra-with-python-conclusion": {
+        "title": "College Algebra with Python: Conclusion",
+        "intro": [
+          "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
+        ]
+      },
+      "build-a-data-graph-explorer": {
+        "title": "Build a Data Graph Explorer",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a data graph explorer."
+        ]
+      }
+    }
+  },
   "coding-interview-prep": {
     "title": "面試攻略",
     "intro": [
@@ -792,20 +926,20 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project",
+    "title": "Odin 項目",
     "intro": [
-      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
-      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
-      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
+      "Odin 項目就是那種“我在學習的時候渴求擁有的”資源之一。 ",
+      "並非每個人都能獲得計算機科學專業教育，或是有資金接受編程進階教學，這兩種教育方式也並不適合所有人。",
+      "該項目旨在幫助那些試圖自行打破差距且依然希望接受高質量教育的人填補空白。"
     ],
     "blocks": {
       "top-learn-html-foundations": {
-        "title": "Learn HTML Foundations",
-        "intro": ["A description is to be determined"]
+        "title": "學習 HTML 基礎",
+        "intro": ["詳細描述待確定"]
       },
       "top-build-a-recipe-project": {
-        "title": "Learn HTML Foundations by Building a Recipe Page",
-        "intro": ["A description is to be determined"]
+        "title": "通過搭建食譜頁面學習 HTML 基礎",
+        "intro": ["詳細描述待確定"]
       }
     }
   },
