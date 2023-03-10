@@ -113,7 +113,7 @@ describe('donation-saga', () => {
 
     const patreonAnalyticsDataMock = analyticsDataMock;
     patreonAnalyticsDataMock.action = 'Donate Page Patreon Payment Redirection';
-    patreonAnalyticsDataMock.event = 'donationrelated';
+    patreonAnalyticsDataMock.event = 'donation_related';
     return expectSaga(postChargeSaga, patreonDataMock)
       .not.call.fn(addDonation)
       .not.call.fn(postChargeStripeCard)
