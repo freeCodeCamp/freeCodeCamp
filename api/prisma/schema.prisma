@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-  url      = env("MONGOHQ_URL")
+  url      = env("NEW_API_MONGOHQ_URL")
 }
 
 type DonationStartDate {

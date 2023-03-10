@@ -25,11 +25,11 @@ assert.ok(process.env.SESSION_SECRET);
 
 if (process.env.NODE_ENV !== 'development') {
   assert.ok(process.env.PORT);
-  assert.ok(process.env.MONGOHQ_URL);
+  assert.ok(process.env.NEW_API_MONGOHQ_URL);
 }
 
-export const MONGOHQ_URL =
-  process.env.MONGOHQ_URL || 'mongodb://localhost:27017/freecodecamp';
+export const NEW_API_MONGOHQ_URL =
+  process.env.NEW_API_MONGOHQ_URL || 'mongodb://localhost:27017/freecodecamp';
 export const NODE_ENV = process.env.NODE_ENV;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
 export const AUTH0_AUDIENCE = process.env.AUTH0_AUDIENCE;
