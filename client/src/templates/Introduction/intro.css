@@ -429,7 +429,7 @@ button.map-title {
   padding: 25px;
 }
 
-/* this margin is used to center the element. 
+/* this margin is used to center the element.
 ToDo: find out why, and remove the need for it */
 .block-grid .map-title > svg {
   margin-bottom: 4px;
