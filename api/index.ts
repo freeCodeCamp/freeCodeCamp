@@ -9,7 +9,6 @@ import jwtAuthz from './plugins/fastify-jwt-authz';
 import sessionAuth from './plugins/session-auth';
 import { testRoutes } from './routes/test';
 import { auth0Routes } from './routes/auth0';
-import { dbConnector } from './db';
 import { testMiddleware } from './middleware';
 
 import {
@@ -58,8 +57,8 @@ const start = async () => {
 
   void fastify.use('/test', testMiddleware);
 
-  void fastify.register(dbConnector);
   void fastify.register(prismaPlugin);
+
   void fastify.register(testRoutes);
   void fastify.register(auth0Routes, { prefix: '/auth0' });
 
