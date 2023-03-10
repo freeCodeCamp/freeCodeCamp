@@ -34,7 +34,7 @@
     "clean-and-develop": "pnpm run clean && pnpm install && pnpm run develop",
     "clean:client": "cd ./client && pnpm run clean",
     "clean:curriculum": "rimraf ./config/curriculum.json",
-    "clean:packages": "rimraf ./**/node_modules node_modules",
+    "clean:packages": "rimraf ./node_modules ./**/node_modules",
     "clean:server": "rimraf ./api-server/lib",
     "create:config": "tsc -p config && pnpm run ensure-env && pnpm run download-trending",
     "create:utils": "tsc -p utils",
