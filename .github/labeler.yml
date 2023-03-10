@@ -9,6 +9,8 @@
 
 'platform: api':
   - api-server/**/*
+
+'platform: next-api':
   - api/**/*
 
 'scope: tools/scripts':
