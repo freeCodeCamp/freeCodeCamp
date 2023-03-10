@@ -74,9 +74,9 @@ describe('Front End Development Libraries Superblock', () => {
         cy.contains("I've completed this challenge")
           .should('not.be.disabled')
           .click();
-        cy.intercept(`${Cypress.env('API_LOCATION')}/project-completed`).as(
-          'challengeCompleted'
-        );
+        cy.intercept(
+          `${String(Cypress.env('API_LOCATION'))}/project-completed`
+        ).as('challengeCompleted');
         cy.contains('Submit and go to next challenge').click();
         cy.wait('@challengeCompleted')
           .its('response.statusCode')
