@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { FormContext } from '../form-context';
+import { ProvideContext } from '../provide-context';
 
 import { ControlLabelProps } from './types';
 
@@ -8,7 +8,7 @@ export const ControlLabel = ({
   srOnly,
   ...props
 }: ControlLabelProps): JSX.Element => {
-  const { controlId } = useContext(FormContext);
+  const { data: controlId } = useContext(ProvideContext);
   const screenOnlyClass = srOnly ? 'sr-only ' : '';
   return (
     <label
