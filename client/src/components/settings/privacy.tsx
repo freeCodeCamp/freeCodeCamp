@@ -13,7 +13,7 @@ import { submitProfileUI } from '../../redux/settings/actions';
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
 import SectionHeader from './section-header';
-import ToggleSetting from './toggle-setting';
+import { RadioSetting } from './radio-setting';
 
 const mapStateToProps = createSelector(userSelector, user => ({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -30,6 +30,30 @@ type PrivacyProps = {
     profileUI: ProfileUI;
     username: string;
   };
+};
+
+type PrivacyRadioButtonsProps = {
+  value: string;
+  inputLabel: string;
+  pressed: boolean;
+  onChange: () => void;
+};
+
+const PrivacyRadioButtons = ({
+  value,
+  inputLabel,
+  pressed,
+  onChange
+}: PrivacyRadioButtonsProps) => {
+  return (
+    <fieldset onChange={onChange}>
+      <legend style={{ visibility: 'hidden' }}>
+        Select your {value} option
+      </legend>
+      <input aria-checked={pressed} type='radio' name={value} value={value} />
+      <label htmlFor={value}>{inputLabel}</label>
+    </fieldset>
+  );
 };
 
 function PrivacySettings({
@@ -60,8 +84,11 @@ function PrivacySettings({
       <FullWidthRow>
         <p>{t('settings.privacy')}</p>
         <Form inline={true} onSubmit={submitNewProfileSettings}>
-          <div role='group' aria-label={t('settings.headings.privacy')}>
-            <ToggleSetting
+          <fieldset>
+            <legend style={{ visibility: 'hidden' }}>
+              {t('settings.headings.privacy')}
+            </legend>
+            <RadioSetting
               action={t('settings.labels.my-profile')}
               explain={t('settings.disabled')}
               flag={privacyValues['isLocked']}
@@ -70,7 +97,7 @@ function PrivacySettings({
               onLabel={t('buttons.private')}
               toggleFlag={toggleFlag('isLocked')}
             />
-            <ToggleSetting
+            <RadioSetting
               action={t('settings.labels.my-name')}
               explain={t('settings.private-name')}
               flag={!privacyValues['showName']}
@@ -79,7 +106,7 @@ function PrivacySettings({
               onLabel={t('buttons.private')}
               toggleFlag={toggleFlag('showName')}
             />
-            <ToggleSetting
+            <RadioSetting
               action={t('settings.labels.my-location')}
               flag={!privacyValues['showLocation']}
               flagName='showLocation'
@@ -87,7 +114,7 @@ function PrivacySettings({
               onLabel={t('buttons.private')}
               toggleFlag={toggleFlag('showLocation')}
             />
-            <ToggleSetting
+            <RadioSetting
               action={t('settings.labels.my-about')}
               flag={!privacyValues['showAbout']}
               flagName='showAbout'
@@ -95,7 +122,7 @@ function PrivacySettings({
               onLabel={t('buttons.private')}
               toggleFlag={toggleFlag('showAbout')}
             />
-            <ToggleSetting
+            <RadioSetting
               action={t('settings.labels.my-points')}
               flag={!privacyValues['showPoints']}
               flagName='showPoints'
@@ -103,7 +130,7 @@ function PrivacySettings({
               onLabel={t('buttons.private')}
               toggleFlag={toggleFlag('showPoints')}
             />
-            <ToggleSetting
+            <RadioSetting
               action={t('settings.labels.my-heatmap')}
               flag={!privacyValues['showHeatMap']}
               flagName='showHeatMap'
@@ -111,7 +138,7 @@ function PrivacySettings({
               onLabel={t('buttons.private')}
               toggleFlag={toggleFlag('showHeatMap')}
             />
-            <ToggleSetting
+            <RadioSetting
               action={t('settings.labels.my-certs')}
               explain={t('settings.disabled')}
               flag={!privacyValues['showCerts']}
@@ -120,7 +147,7 @@ function PrivacySettings({
               onLabel={t('buttons.private')}
               toggleFlag={toggleFlag('showCerts')}
             />
-            <ToggleSetting
+            <RadioSetting
               action={t('settings.labels.my-portfolio')}
               flag={!privacyValues['showPortfolio']}
               flagName='showPortfolio'
@@ -128,7 +155,7 @@ function PrivacySettings({
               onLabel={t('buttons.private')}
               toggleFlag={toggleFlag('showPortfolio')}
             />
-            <ToggleSetting
+            <RadioSetting
               action={t('settings.labels.my-timeline')}
               explain={t('settings.disabled')}
               flag={!privacyValues['showTimeLine']}
@@ -137,7 +164,7 @@ function PrivacySettings({
               onLabel={t('buttons.private')}
               toggleFlag={toggleFlag('showTimeLine')}
             />
-            <ToggleSetting
+            <RadioSetting
               action={t('settings.labels.my-donations')}
               flag={!privacyValues['showDonation']}
               flagName='showPortfolio'
@@ -145,7 +172,13 @@ function PrivacySettings({
               onLabel={t('buttons.private')}
               toggleFlag={toggleFlag('showDonation')}
             />
-          </div>
+            <PrivacyRadioButtons
+              inputLabel={t('settings.labels.my-donations')}
+              pressed={!privacyValues['showDonation']}
+              value='showPortfolio'
+              onChange={toggleFlag('showDonation')}
+            />
+          </fieldset>
           <Button
             type='submit'
             bsSize='lg'
