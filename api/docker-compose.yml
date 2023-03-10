@@ -4,6 +4,7 @@ services:
     image: mongo
     container_name: mongodb
     command: mongod --replSet rs0
+    restart: unless-stopped
     ports:
       - 27018:27017
     volumes:
@@ -13,7 +14,12 @@ services:
     depends_on:
       - db
     restart: on-failure
-    entrypoint: ['bash', '-c', "mongosh --host db:27017 --eval 'rs.initiate()'"]
+    entrypoint: [
+        'bash',
+        '-c',
+        # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
+        'mongosh --host db:27017 --eval ''try {rs.initiate();} catch (err) { if(err.codeName !== "AlreadyInitialized") throw err };'''
+      ]
 
 volumes:
   db-data:
