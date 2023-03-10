@@ -427,31 +427,31 @@ sudo apt install build-essential
 
 Provisionando MVs com o código
 
-1. Install `pnpm` globally.
+1. Instale o `pnpm` globalmente.
 
    ```console
    curl -fsSL https://get.pnpm.io/install.sh | sh -
    ```
 
-2. Clone freeCodeCamp, setup env and keys.
+2. Faça a clonagem do freeCodeCamp, configure env e as chaves.
 
    ```console
    git clone https://github.com/freeCodeCamp/freeCodeCamp.git
    cd freeCodeCamp
-   git checkout prod-current # or any other branch to be deployed
+   git checkout prod-current # ou qualquer outra branch a ser implementada
    ```
 
-3. Create the `.env` from the secure credentials storage.
+3. Crie o `.env` a partir do armazenamento seguro de credenciais.
 
-4. Create the `google-credentials.json` from the secure credentials storage.
+4. Crie o `google-credentials.json` a partir do armazenamento seguro de credenciais.
 
-5. Install dependencies
+5. Instale dependências
 
    ```console
    pnpm install
    ```
 
-6. Setup pm2 `logrotate` and startup on boot
+6. Configure o pm2 `logrotate` e inicialize no boot
 
    ```console
    pnpm pm2 install pm2-logrotate
