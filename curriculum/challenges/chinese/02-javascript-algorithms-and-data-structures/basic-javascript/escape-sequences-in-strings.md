@@ -21,7 +21,7 @@ dashedName: escape-sequences-in-strings
 
 <pre>
 FirstLine
-    \SecondLine
+    \SecondLine
 ThirdLine
 </pre>
 

@@ -11,7 +11,7 @@ dashedName: step-37
 
 選擇一種顏色作爲主要顏色， 並使用其補充顏色作爲強調來提醒訪問者注意頁面上的某些內容，是一種更好的方式。
 
-First, in the `h1` rule, use the `rgb` function to set its `background-color` to cyan.
+首先，在 `h1` 規則中，使用 `rgb` 函數將其 `background-color` 設置爲 cyan（藍綠色）。
 
 # --hints--
 
