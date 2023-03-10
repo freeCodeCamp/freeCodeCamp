@@ -64,19 +64,17 @@ function FormFields(props: FormFieldsProps): JSX.Element {
     // If local link is not allowed, use local validator
     // If local link is allowed, use path validator
     // Always used fCCValidator and httpValidator
-    const validators = new Set([fCCValidator, httpValidator]);
+    const validators = [fCCValidator, httpValidator];
     if (name !== 'githubLink' && !isEditorLinkAllowed) {
-      validators.add(editorValidator);
+      validators.push(editorValidator);
       if (isLocalLinkAllowed) {
-        validators.add(pathValidator);
+        validators.push(pathValidator);
       }
     }
     if (!isLocalLinkAllowed) {
-      validators.add(localhostValidator);
+      validators.push(localhostValidator);
     }
-    const validationWarning = composeValidators(
-      ...Array.from(validators.values())
-    )(value);
+    const validationWarning = composeValidators(...validators)(value);
     const message: string = (error ||
       validationError ||
       validationWarning) as string;
