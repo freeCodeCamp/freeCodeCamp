@@ -27,4 +27,3 @@ For this challenge, you need to create three math games using Python that do the
 
 Once you're done, submit the URL to the public Colab notebook on your Google drive.
 
-## --hints--

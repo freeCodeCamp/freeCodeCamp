@@ -26,4 +26,3 @@ If you are struggling, you can follow the <a href="https://www.youtube.com/embed
 
 Once you're done, submit the URL to the public Colab notebook on your Google drive.
 
-## --hints--

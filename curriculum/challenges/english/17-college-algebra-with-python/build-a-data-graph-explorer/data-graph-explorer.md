@@ -28,4 +28,3 @@ For this challenge, you need to create a multi-function calculator using Python 
 
 Once you're done, submit the URL to the public Colab notebook on your Google drive.
 
-## --hints--
