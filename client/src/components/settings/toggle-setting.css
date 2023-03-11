@@ -53,6 +53,11 @@
   grid-template-columns: 1fr 1em;
 }
 
+.toggle-button-group button:focus {
+  position: relative;
+  z-index: 9999;
+}
+
 .toggle-button-group button[aria-pressed='true'] {
   background-color: var(--secondary-color);
   color: var(--secondary-background);
