@@ -1,15 +1,15 @@
 ---
-id: 64061a98f704a014b44afdb2
-title: Step 1
+id: 6406adbca6b41d3d7cef85ab
+title: Step 5
 challengeType: 0
-dashedName: step-1
+dashedName: step-5
 ---
 
 # --description--
 
-In this project, you will be building a number sorter. The HTML and CSS have been provided for you. Feel free to explore them.
+You need to get the values from your `select` elements. Since they all have the class `values-dropdown`, you can query them all at once.
 
-When you are ready, declare a `sortButton` variable and assign it the value of `.getElementById()` with the argument `sort`.
+Use `document.querySelectorAll()` to get all the elements with the class `values-dropdown`. Assign that to an `inputValues` variable.
 
 # --hints--
 
@@ -289,7 +289,15 @@ button {
 ```
 
 ```js
---fcc-editable-region--
+const sortButton = document.getElementById("sort");
 
 --fcc-editable-region--
+const sortInputArray = (event) => {
+  event.preventDefault();
+
+
+}
+--fcc-editable-region--
+
+sortButton.addEventListener("click", sortInputArray);
 ```
