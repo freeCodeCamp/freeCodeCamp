@@ -97,7 +97,7 @@ RadioUnchecked.args = {
   name: 'radio'
 };
 
-export const InsideToggleGroup = () => {
+export const InsideToggleGroup = (): JSX.Element => {
   const [checked, setChecked] = useState(true);
 
   return (

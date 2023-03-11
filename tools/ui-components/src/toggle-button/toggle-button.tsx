@@ -79,7 +79,7 @@ export const ToggleButton = ({
   onChange,
   value,
   name
-}: ToggleButtonProps) => {
+}: ToggleButtonProps): JSX.Element => {
   const classNames = computeClassNames({ bsSize, disabled, checked });
 
   const handleChange = () => {
