@@ -352,7 +352,7 @@ importers:
       gatsby-transformer-remark: 4.12.0
       i18next: 20.6.1
       jest-json-schema-extended: 1.0.1
-      jquery: 3.6.3
+      jquery: 3.6.4
       lodash: 4.17.21
       lodash-es: 4.17.21
       monaco-editor: 0.28.1
@@ -463,7 +463,7 @@ importers:
       gatsby-source-filesystem: 3.15.0_gatsby@3.15.0
       gatsby-transformer-remark: 4.12.0_gatsby@3.15.0
       i18next: 20.6.1
-      jquery: 3.6.3
+      jquery: 3.6.4
       lodash: 4.17.21
       lodash-es: 4.17.21
       monaco-editor: 0.28.1
@@ -19651,8 +19651,8 @@ packages:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  /jquery/3.6.3:
-    resolution: {integrity: sha512-bZ5Sy3YzKo9Fyc8wH2iIQK4JImJ6R0GWI9kL1/k7Z91ZBNgkRXE6U0JfHIizZbort8ZunhSI3jw9I6253ahKfg==}
+  /jquery/3.6.4:
+    resolution: {integrity: sha512-v28EW9DWDFpzcD9O5iyJXg3R3+q+mET5JhnjJzQUZMHOv67bpSIHq81GEYpPNZHG+XXHsfSme3nxp/hndKEcsQ==}
     dev: false
 
   /js-git/0.7.8:
