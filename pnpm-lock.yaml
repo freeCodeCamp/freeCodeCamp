@@ -118,7 +118,7 @@ importers:
       '@fastify/mongodb': 6.2.0
       '@fastify/session': ^10.1.1
       connect-mongo: ^4.6.0
-      fastify: 4.14.0
+      fastify: 4.14.1
       fastify-auth0-verify: ^1.0.0
       fastify-plugin: ^4.3.0
       nodemon: 2.0.21
@@ -128,7 +128,7 @@ importers:
       '@fastify/mongodb': 6.2.0
       '@fastify/session': 10.1.1
       connect-mongo: 4.6.0_lw7oj3533zfvrhxigrep3g2fam
-      fastify: 4.14.0
+      fastify: 4.14.1
       fastify-auth0-verify: 1.0.0
       fastify-plugin: 4.5.0
       nodemon: 2.0.21
@@ -15493,8 +15493,8 @@ packages:
     resolution: {integrity: sha512-79ak0JxddO0utAXAQ5ccKhvs6vX2MGyHHMMsmZkBANrq3hXc1CHzvNPHOcvTsVMEPl5I+NT+RO4YKMGehOfSIg==}
     dev: false
 
-  /fastify/4.14.0:
-    resolution: {integrity: sha512-oJSHlM/XbGdJpe2MKMJBsrvrkPDrHDZlAB9qzuUJIpnBtpDE394bzdFsH4KnsUI1e8zxzFl+GNBEXC64N/IPuw==}
+  /fastify/4.14.1:
+    resolution: {integrity: sha512-yjrDeXe77j9gRlSV2UJry8mcFWbD0NQ5JYjnPi4tkFjHZVaG3/BD5wxOmRzGnHPC0YvaBJ0XWrIfFPl2IHRa1w==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.2.0
