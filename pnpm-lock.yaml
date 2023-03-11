@@ -377,7 +377,7 @@ importers:
       react-instantsearch-dom: 6.39.0
       react-monaco-editor: 0.40.0
       react-redux: 5.1.2
-      react-reflex: 4.0.9
+      react-reflex: 4.0.12
       react-responsive: 6.1.2
       react-scrollable-anchor: 0.6.1
       react-spinkit: 3.0.0
@@ -487,7 +487,7 @@ importers:
       react-instantsearch-dom: 6.39.0_gs3zfk3gapw7ycemojzf55dqlq
       react-monaco-editor: 0.40.0_o6svdx7ptmmnoxx4yhzc5bzi5y
       react-redux: 5.1.2_react@16.14.0+redux@4.2.1
-      react-reflex: 4.0.9_wcqkhtmu7mswc6yz4uyexck3ty
+      react-reflex: 4.0.12_wcqkhtmu7mswc6yz4uyexck3ty
       react-responsive: 6.1.2_react@16.14.0
       react-scrollable-anchor: 0.6.1_wcqkhtmu7mswc6yz4uyexck3ty
       react-spinkit: 3.0.0
@@ -25240,8 +25240,8 @@ packages:
       redux: 4.2.1
     dev: false
 
-  /react-reflex/4.0.9_wcqkhtmu7mswc6yz4uyexck3ty:
-    resolution: {integrity: sha512-XFTNRekFK4ul8mzVd1lniKT/SI0FvNYhXyLNl5gagS1i3iW9QKlpFYcRfVhZlxxaYHb8UyLOs3+H4Ay5cjtbxQ==}
+  /react-reflex/4.0.12_wcqkhtmu7mswc6yz4uyexck3ty:
+    resolution: {integrity: sha512-sYgX0rW7xuGcs99WwXB/fPlPLzr3kiZhlTF+5Oijz+e2Hh64WlxIJdbrXMr4yA+vtn9Zi4vN/jF2CP7drWAAAQ==}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:

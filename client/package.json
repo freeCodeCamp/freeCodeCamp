@@ -111,7 +111,7 @@
     "react-instantsearch-dom": "6.39.0",
     "react-monaco-editor": "0.40.0",
     "react-redux": "5.1.2",
-    "react-reflex": "4.0.9",
+    "react-reflex": "4.0.12",
     "react-responsive": "6.1.2",
     "react-scrollable-anchor": "0.6.1",
     "react-spinkit": "3.0.0",
