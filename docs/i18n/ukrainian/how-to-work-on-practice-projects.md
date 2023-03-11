@@ -1,77 +1,77 @@
-# How to Work on Practice Projects
+# Робота над практичними проєктами
 
-Our practice projects use a step-based approach to teach concepts to campers. A project will consist of multiple files, which we refer to as **"steps"**. These files are named by the challenge ID, to avoid issues with the translation flow. Unfortunately, this makes it difficult to find the file associated with a specific step.
+Для практичних проєктів ми використовуємо покроковий підхід, щоб кемпери вивчили основи. Проєкт складається з декількох файлів, які ми називаємо **кроками**. Ці файли називаються ідентифікаторами завдання, щоб уникнути проблем із перекладом. На жаль, через це важко знайти файл, пов’язаний з певним кроком.
 
-We've built a challenge editor tool that helps remedy this. This tool allows you to navigate the available projects, and the steps for each project (in order). There's also an embedded code editor you can use to work on the files directly.
+Ми створили редактор завдань, який допомагає розв’язати цю проблему. Цей інструмент дозволяє орієнтуватись на доступні проєкти та кроки (за порядком). Існує також вбудований редактор коду, який можна використовувати для безпосередньої роботи з файлами.
 
-## Using the Challenge Editor
+## Використання редактора завдань
 
-These instructions will tell you how to use our challenge editor tool to work on the practice projects.
+У цих інструкціях ви дізнаєтесь, як працювати над практичними проєктами за допомогою нашого редактора завдань.
 
-### Starting the Editor
+### Запуск редактора
 
-To start the editor, make sure you are in the root freecodecamp directory. Then, run `pnpm run challenge-editor` to start both the client and the API that powers the editor.
+Щоб запустити редактор, переконайтесь, що знаходитесь у кореневому каталозі freeCodeCamp. Потім запустіть `pnpm run challenge-editor`, щоб запустити клієнта та API, який підтримує редактор.
 
-The client will run on port `3300`, so you can access it at `http://localhost:3300`. The API runs on port `3200`, to avoid conflicts with the learn client and server. This will allow you to run the freeCodeCamp application at the same time as the editor, so you can test your changes locally.
+Клієнт запуститься через порт `3300`, тому доступ можна отримати на `http://localhost:3300`. API запуститься через порт `3200`, щоб уникнути конфліктів з навчальним клієнтом та сервером. Це дозволить запустити програму freeCodeCamp одночасно з редактором, щоб ви могли перевірити свої зміни локально.
 
-### Navigating the Editor
+### Навігація по редактору
 
-The default view will list the available `superblocks` - these are the certifications. Click on the certification link you want to work on.
+За замовчуванням ви побачите доступні `superblocks` — це сертифікації. Натисніть посилання сертифікації, над якою хочете працювати.
 
-This will take you to the list of blocks. These are the practice projects. Click on the project link you want to work on.
+Ви перейдете до списку блоків. Це практичні проєкти. Натисніть посилання проєкту, над яким хочете працювати.
 
-This will take you to a list of steps for the project. If you are working on an existing step, you can click on the step link to open the editor. If you are adding or removing steps, click the `Use the step tools` link to switch to the step tools for that challenge.
+Ви перейдете до списку кроків проєкту. Якщо ви працюєте над наявним кроком, можна натиснути посилання кроку, щоб відкрити редактор. Якщо ви додаєте чи вилучаєте кроки, натисніть посилання `Use the step tools`, щоб перейти до інструментів для цього завдання.
 
-### Editing Steps
+### Редагування кроків
 
-When you click on a step, you'll be taken to the editor. This is a basic text editor that offers syntax highlighting.
+Якщо натиснути на крок, ви перейдете до редактора. Це базовий текстовий редактор, який пропонує підсвічування синтаксису.
 
-After you have made your changes, click the `Save Changes` button to save your changes. You will get a browser alert letting you know that your changes are ready to commit. Note that you'll need to use `git` manually to stage and commit your files - this tool will not do that for you.
+Після того, як ви застосували зміни, натисніть кнопку `Save Changes`, щоб зберегти зміни. Ви отримаєте сповіщення браузера про те, що ваші зміни готові до внесення. Зауважте, що вам потрібно буде вручну використати `git` для зміни та внесення файлів — інструмент не зробить цього.
 
-### Step Tools
+### Інструменти для кроків
 
-When you click the `Use the step tools` link, you'll be taken to the step tools page. This allows you to add or remove steps from the project.
+Якщо натиснути посилання `Use the step tools`, ви перейдете до сторінки з інструментами кроку. Це дозволить додавати чи вилучати кроки проєкту.
 
-#### Create Next Step
+#### Створення наступного кроку
 
-Clicking this button will add a new step at the end of the project. This step will use the previous step's code as the seed.
+Натисніть цю кнопку, щоб додати новий крок в кінці проєкту. У цьому кроці використовуватиметься код попереднього кроку як зерно.
 
-#### Create Empty Steps
+#### Створення порожнього кроку
 
-Enter the number of steps you want to add in the input. Then, clicking the button will create that many empty steps at the end of the project.
+Введіть кількість кроків, які хочете додати. Потім натисніть кнопку, що створить задану кількість кроків в кінці проєкту.
 
-#### Insert Step
+#### Додавання кроку
 
-Enter the step number that you want to add. Then, click the `Insert Step` button to add the step. The following steps will be re-ordered.
+Введіть номер кроку, який хочете додати. Потім натисніть кнопку `Insert Step`, щоб додати крок. Порядок наступних кроків буде змінено.
 
-#### Delete Step
+#### Видалення кроку
 
-Enter the step number you want to delete. Then click the `Delete Step` button to remove that step. This will automatically update the step numbers for the remaining steps.
+Введіть номер кроку, який хочете видалити. Потім натисніть кнопку `Delete Step`, щоб видалити крок. Номери наступних кроків автоматично оновляться.
 
-#### Update Step Titles
+#### Оновлення заголовків кроку
 
-You should not have to use this tool unless you've manually deleted or added steps. This tool will reorder the step numbers.
+Використовуйте цей інструмент лише тоді, коли додали чи вилучили крок вручну. Цей інструмент змінить порядок номерів кроків.
 
-## Using the Scripts Manually
+## Використання скриптів вручну
 
-If you want to work on the steps manually, in your local IDE, you can run the step management scripts directly.
+Якщо ви хочете працювати над кроками вручну у локальному IDE, ви можете запустити скрипти керування кроками.
 
-The `tools/challenge-helper-scripts` folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
+Папка `tools/challenge-helper-scripts` містить інструменти, які допоможуть зі створенням та обслуговуванням проєктноорієнтованої навчальної програми freeCodeCamp.
 
-### Create a new project
+### Створіть новий проєкт
 
-Run `pnpm run create-project` from the root directory. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+Запустіть `pnpm run create-project` у кореневому каталозі. Ця команда відкриє інтерфейс командного рядка, який допомагатиме. Після цього в англомовній навчальній програмі має з’явитися нове завдання, яке можна використовувати як перший крок проєкту. Наприклад, якщо ви створили проєкт під назвою `test-project` у сертифікації з адаптивного вебдизайну, завдання з’явиться у `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
-If you want to create new steps, the following tools simplify that process.
+Якщо ви хочете створити нові кроки, наступні інструменти допоможуть.
 
 ### create-next-step
 
 A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
 
-#### How to run script:
+#### Як запустити скрипт:
 
-1. Change to the directory of the project.
-2. Run the following command:
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
 
 ```bash
 pnpm run create-next-step
@@ -81,12 +81,12 @@ pnpm run create-next-step
 
 A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Примітка:** цей скрипт також запускає [update-step-titles](#update-step-titles).
 
-#### How to run script:
+#### Як запустити скрипт:
 
-1. Change to the directory of the project.
-2. Run the following command:
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
 
 ```bash
 pnpm run create-empty-steps X # where X is the number of steps to create.
@@ -96,40 +96,40 @@ pnpm run create-empty-steps X # where X is the number of steps to create.
 
 A one-off script that automatically adds a new step at a specified position, incrementing all subsequent steps (both their titles and in their meta.json). The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Примітка:** цей скрипт також запускає [update-step-titles](#update-step-titles).
 
-#### How to run script:
+#### Як запустити скрипт:
 
-1. Change to the directory of the project.
-2. Run the following command:
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
 
 ```bash
-pnpm run insert-step X # where X is the position to insert the new step.
+pnpm run insert-step X # де X є місцем, куди потрібно вставити новий крок.
 ```
 
 ### delete-step
 
 A one-off script that deletes an existing step, decrementing all subsequent steps (both their titles and in their meta.json)
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Примітка:** цей скрипт також запускає [update-step-titles](#update-step-titles).
 
-#### How to run script
+#### Як запустити скрипт:
 
-1. Change to the directory of the project.
-2. Run the following command:
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
 
 ```bash
-pnpm run delete-step X # where X is the step number to be deleted.
+pnpm run delete-step X # де X є номером кроку, який потрібно видалити.
 ```
 
 ### update-step-titles
 
 A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
 
-#### How to run script
+#### Як запустити скрипт:
 
-1. Change to the directory of the project.
-2. Run the following command:
+1. Перейдіть до каталогу проєкту.
+2. Виконайте наступну команду:
 
 ```bash
 pnpm run update-step-titles
