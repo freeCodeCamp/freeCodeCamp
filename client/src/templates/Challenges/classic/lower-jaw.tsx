@@ -11,11 +11,12 @@ import { apiLocation } from '../../../../../config/env.json';
 import { ChallengeNode, ChallengeWithCompletedNode } from '../../../redux/prop-types';
 import { getChallengesList } from '../../../../../api-server/src/server/utils/get-curriculum';
 import { Share } from '../../../components/share';
-import { createFlashMessage } from '../../../components/Flash/redux';
+import Help from '../../../assets/icons/help';
+import Reset from '../../../assets/icons/reset';
 
 
 interface LowerJawProps {
-  createFlashMessage: typeof createFlashMessage;
+  completedPercent:number,
   data?: { challengeNode: ChallengeNode };
   hint?: string;
   challengeIsCompleted: boolean;
@@ -31,7 +32,7 @@ interface LowerJawProps {
 }
 
 const LowerJaw = ({
-  createFlashMessage,
+  completedPercent,
   data,
   openHelpModal,
   challengeIsCompleted,
@@ -205,37 +206,36 @@ const LowerJaw = ({
     return (
       <div>
         <hr />
-        <div>
+        <div className='lower-jaw-icon-bar'>
+          <button
+            className='btn fade-in'
+            title={t('buttons.reset-step')}
+            aria-label={t('buttons.reset-step')}
+            data-cy='reset-code-button'
+            onClick={openResetModal}
+          >
+            <Reset />
+          </button>
+          {challengeIsCompleted && endOfProject.current && (
+            <Share
+              completedPercent={completedPercent}
+              superBlock={data?.challengeNode.challenge.superBlock || ''}
+              block={data?.challengeNode.challenge.block || ''}
+            />
+          )}
+
           {isAttemptsLargerThanTest && !challengeIsCompleted ? (
             <button
-              className='btn-block btn .m15'
+              className='btn fade-in'
               id='get-help-button'
               title={t('buttons.get-help')}
               aria-label={t('buttons.get-help')}
               data-cy='get-help-button'
               onClick={openHelpModal}
             >
-              {t('buttons.ask-for-help')}
+              <Help />
             </button>
           ) : null}
-
-          {challengeIsCompleted && endOfProject.current ? (
-            <Share
-              superBlock={data?.challengeNode.challenge.superBlock || ''}
-              block={data?.challengeNode.challenge.block || ''}
-              createFlashMessage={createFlashMessage}
-            />
-          ) : (
-            <button
-              className='btn-block btn'
-              title={t('buttons.reset-step')}
-              aria-label={t('buttons.reset-step')}
-              data-cy='reset-code-button'
-              onClick={openResetModal}
-            >
-              {t('buttons.reset-lesson')}
-            </button>
-          )}
         </div>
       </div>
     );

@@ -1,38 +1,33 @@
-import { createFlashMessage } from '../Flash/redux';
-import { FlashMessages } from '../Flash/redux/flash-messages';
+import i18next from 'i18next';
 
-export interface UseShareProps {
-  superBlock: string | null;
-  block: string | null;
-  createFlashMessage: typeof createFlashMessage;
+interface ShareTemplateProps {
+  superBlock: String;
+  block: String;
+  completedPercent: number;
 }
 
-export const CopiedMessage = {
-  type: 'info',
-  message: FlashMessages.Copied
-};
-const freeCodeCampBaseUrl = 'https://www.freecodecamp.org/learn';
+export const space = '%20';
+export const hastag = '%23';
+export const nextLine = '%0A';
+export const action = 'intent/tweet';
+export const twitterDomain = 'twitter.com';
+export const freecodecampLearnDomainURL = 'www.freecodecamp.org/learn';
+export const twitterDevelpoerDomainURL = 'https://developer.twitter.com';
 
-const useShare = ({ superBlock, block, createFlashMessage }: UseShareProps) => {
-  const modifyUrl = (superBlock: string | null, block: string | null) => {
-    if (superBlock && block) {
-      return freeCodeCampBaseUrl + '/' + superBlock + '/' + block;
-    } else if (superBlock) {
-      return freeCodeCampBaseUrl + '/' + superBlock;
-    } else {
-      return freeCodeCampBaseUrl;
-    }
+export const useShare = ({
+  superBlock,
+  block,
+  completedPercent
+}: ShareTemplateProps) => {
+  const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomainURL}/${superBlock}/${block}`;
+  const i18nSupportedBlock =
+    i18next.t(`intro:${superBlock}.blocks.${block}.title`) || block;
+
+  const tweetMessage = `I${space}have${space}completed${space}${completedPercent}٪${space}of${space}${i18nSupportedBlock}${space}${hastag}freecodecamp`;
+  const redirectURL = `https://${twitterDomain}/${action}?original_referer=${twitterDevelpoerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
+
+  const handleRedirectToTwitter = () => {
+    window.open(redirectURL, '_blank');
   };
-
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(modifyUrl(superBlock, block));
-      createFlashMessage(CopiedMessage);
-    } catch (err) {
-      await navigator.clipboard.writeText(freeCodeCampBaseUrl);
-    }
-  };
-
-  return copyToClipboard;
+  return { handleRedirectToTwitter, redirectURL };
 };
-export default useShare;

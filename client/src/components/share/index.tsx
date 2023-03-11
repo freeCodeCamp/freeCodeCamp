@@ -1,24 +1,22 @@
 import React from 'react';
-import { createFlashMessage } from '../Flash/redux';
 import { ShareTemplate } from './shareTemplate';
-import useShare from './useShare';
+import { useShare } from './useShare';
 
 interface ShareProps {
-  superBlock: string | null;
-  block: string | null;
-  createFlashMessage: typeof createFlashMessage;
+  superBlock: string;
+  block: string;
+  completedPercent: number;
 }
 
 export const Share: React.FC<ShareProps> = ({
   superBlock,
   block,
-  createFlashMessage
+  completedPercent
 }) => {
-  const copyToClipboard = useShare({
+  const {handleRedirectToTwitter} = useShare({
     superBlock,
     block,
-    createFlashMessage
+    completedPercent
   });
-
-  return <ShareTemplate handleClick={copyToClipboard} />;
+  return <ShareTemplate handleRedirectToTwitter={handleRedirectToTwitter} />;
 };

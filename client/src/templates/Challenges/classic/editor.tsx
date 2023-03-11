@@ -65,7 +65,8 @@ import {
   challengeTestsSelector,
   isResettingSelector,
   isProjectPreviewModalOpenSelector,
-  isChallengeCompletedSelector
+  isChallengeCompletedSelector,
+  completedPercentageSelector
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
 import { enhancePrismAccessibility } from '../utils/index';
@@ -77,6 +78,7 @@ import './editor.css';
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
+  completedPercent:number,
   createFlashMessage: typeof createFlashMessage;
   data?: { challengeNode: ChallengeNode };
   attempts: number;
@@ -152,6 +154,7 @@ const mapStateToProps = createSelector(
   userSelector,
   challengeTestsSelector,
   isChallengeCompletedSelector,
+  completedPercentageSelector,
   (
     attempts: number,
     canFocus: boolean,
@@ -163,7 +166,8 @@ const mapStateToProps = createSelector(
     isSignedIn: boolean,
     { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }],
-    isChallengeCompleted: boolean
+    isChallengeCompleted: boolean,
+    completedPercent:number
   ) => ({
     attempts,
     canFocus: open ? false : canFocus,
@@ -174,7 +178,8 @@ const mapStateToProps = createSelector(
     output,
     theme,
     tests,
-    isChallengeCompleted
+    isChallengeCompleted,
+    completedPercent
   })
 );
 
@@ -676,7 +681,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     ReactDOM.render(
       <LowerJaw
-        createFlashMessage={props?.createFlashMessage}
+        completedPercent={props.completedPercent}
         data={props.data}
         openHelpModal={props.openHelpModal}
         openResetModal={props.openResetModal}

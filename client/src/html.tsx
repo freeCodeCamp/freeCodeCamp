@@ -36,20 +36,6 @@ export default function HTML({
           content='width=device-width, initial-scale=1.0, shrink-to-fit=no'
           name='viewport'
         />
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:site' content='@freecodecamp' />
-        <meta
-          name='twitter:title'
-          content='Learn to Code — For Free — Coding Courses for Busy People'
-        />
-        <meta
-          name='twitter:description'
-          content='Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including: google, apple, microsoft, spotify and amazon'
-        />
-        <meta
-          name='twitter:image'
-          content='https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png'
-        />
         {headComponents}
       </head>
       <body {...bodyAttributes}>

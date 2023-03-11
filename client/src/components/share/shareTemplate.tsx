@@ -1,15 +1,17 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const ShareTemplate = ({ handleClick }: { handleClick: () => void }) => {
-  const { t } = useTranslation();
+export interface ShareTemplateProps {
+  handleRedirectToTwitter: () => void;
+}
+
+export const ShareTemplate: React.FC<ShareTemplateProps> = ({
+  handleRedirectToTwitter
+}) => {
   return (
-    <button
-      className='btn-block btn'
-      data-testid='share-template'
-      onClick={handleClick}
-    >
-      <span data-testid='copy-button'> {t('buttons.copy-link-to-share')} </span>
+    <button data-testid="ShareTemplateWrapperTestID" className='btn fade-in' onClick={handleRedirectToTwitter}>
+      <FontAwesomeIcon title="twitterIcon" icon={faTwitter} size='1x' />
     </button>
   );
 };
