@@ -318,7 +318,7 @@ importers:
       '@types/validator': ^13.7.12
       algoliasearch: 4.15.0
       assert: 2.0.0
-      autoprefixer: 10.4.13
+      autoprefixer: 10.4.14
       babel-loader: 8.3.0
       babel-plugin-preval: 5.1.0
       babel-plugin-prismjs: 2.1.0
@@ -543,7 +543,7 @@ importers:
       '@types/store': 2.0.2
       '@types/testing-library__jest-dom': 5.14.5
       '@types/validator': 13.7.12
-      autoprefixer: 10.4.13_postcss@8.4.21
+      autoprefixer: 10.4.14_postcss@8.4.21
       babel-plugin-transform-imports: 2.0.0
       chokidar: 3.5.3
       copy-webpack-plugin: 9.1.0_webpack@5.75.0
@@ -832,7 +832,7 @@ importers:
       '@types/react': 16.14.35
       '@types/react-dom': ^16.9.17
       '@types/testing-library__jest-dom': ^5
-      autoprefixer: 10.4.13
+      autoprefixer: 10.4.14
       babel-loader: 8.3.0
       babel-plugin-transform-react-remove-prop-types: 0.4.24
       cross-env: 7.0.3
@@ -873,7 +873,7 @@ importers:
       '@types/react': 16.14.35
       '@types/react-dom': 16.9.17
       '@types/testing-library__jest-dom': 5.14.5
-      autoprefixer: 10.4.13_postcss@8.4.21
+      autoprefixer: 10.4.14_postcss@8.4.21
       babel-loader: 8.3.0_la66t7xldg4uecmyawueag5wkm
       babel-plugin-transform-react-remove-prop-types: 0.4.24
       cross-env: 7.0.3
@@ -9699,15 +9699,15 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /autoprefixer/10.4.13_postcss@8.4.21:
-    resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==}
+  /autoprefixer/10.4.14_postcss@8.4.21:
+    resolution: {integrity: sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001458
+      caniuse-lite: 1.0.30001464
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -9719,7 +9719,7 @@ packages:
     hasBin: true
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001458
+      caniuse-lite: 1.0.30001464
       normalize-range: 0.1.2
       num2fraction: 1.2.2
       picocolors: 0.2.1
@@ -11343,7 +11343,7 @@ packages:
     resolution: {integrity: sha512-WHVocJYavUwVgVViC0ORikPHQquXwVh939TaelZ4WDqpWgTX/FsGhl/+P4qBUAGcRvtOgDgC+xftNWWp2RUTAQ==}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001458
+      caniuse-lite: 1.0.30001464
       electron-to-chromium: 1.4.315
     dev: true
 
@@ -11352,7 +11352,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001458
+      caniuse-lite: 1.0.30001464
       electron-to-chromium: 1.4.315
       escalade: 3.1.1
       node-releases: 1.1.77
@@ -11362,7 +11362,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001458
+      caniuse-lite: 1.0.30001464
       electron-to-chromium: 1.4.315
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10_browserslist@4.21.5
@@ -11628,12 +11628,12 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001458
+      caniuse-lite: 1.0.30001464
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
-  /caniuse-lite/1.0.30001458:
-    resolution: {integrity: sha512-lQ1VlUUq5q9ro9X+5gOEyH7i3vm+AYVT1WDCVB69XOZ17KZRhnZ9J0Sqz7wTHQaLBJccNCHq8/Ww5LlOIZbB0w==}
+  /caniuse-lite/1.0.30001464:
+    resolution: {integrity: sha512-oww27MtUmusatpRpCGSOneQk2/l5czXANDSFvsc7VuOQ86s3ANhZetpwXNf1zY/zdfP63Xvjz325DAdAoES13g==}
 
   /canonical-json/0.0.4:
     resolution: {integrity: sha512-2sW7x0m/P7dqEnO0O87U7RTVQAaa7MELcd+Jd9FA6CYgYtwJ1TlDWIYMD8nuMkH1KoThsJogqgLyklrt9d/Azw==}
@@ -16644,7 +16644,7 @@ packages:
       '@vercel/webpack-asset-relocator-loader': 1.7.3
       address: 1.1.2
       anser: 2.1.1
-      autoprefixer: 10.4.13_postcss@8.4.21
+      autoprefixer: 10.4.14_postcss@8.4.21
       axios: 0.21.4_debug@3.2.7
       babel-loader: 8.3.0_la66t7xldg4uecmyawueag5wkm
       babel-plugin-add-module-exports: 1.0.4
@@ -24195,7 +24195,7 @@ packages:
       '@csstools/postcss-text-decoration-shorthand': 1.0.0_postcss@8.4.21
       '@csstools/postcss-trigonometric-functions': 1.0.2_postcss@8.4.21
       '@csstools/postcss-unset-value': 1.0.2_postcss@8.4.21
-      autoprefixer: 10.4.13_postcss@8.4.21
+      autoprefixer: 10.4.14_postcss@8.4.21
       browserslist: 4.21.5
       css-blank-pseudo: 3.0.3_postcss@8.4.21
       css-has-pseudo: 3.0.4_postcss@8.4.21
