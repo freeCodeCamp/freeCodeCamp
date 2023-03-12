@@ -20,7 +20,7 @@ test('useShare testing', () => {
 
   const freecodecampLearnDomain = 'www.freecodecamp.org/learn';
   const tweetMessage = `I${space}have${space}completed${space}${completedPercent}٪${space}of${space}${block}${space}%23freecodecamp`;
-  const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomain}/${superBlock}/${block}`;
+  const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomain}/${superBlock}/#${block}`;
   expect(redirectURL).toBe(
     `https://${twitterDomain}/${action}?original_referer=${twitterDevelpoerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`
   );

@@ -1,9 +1,14 @@
 import i18next from 'i18next';
 
 interface ShareTemplateProps {
-  superBlock: String;
-  block: String;
+  superBlock: string;
+  block: string;
   completedPercent: number;
+}
+
+interface ShareTemplateReturnProps {
+  handleRedirectToTwitter: () => void;
+  redirectURL: string;
 }
 
 export const space = '%20';
@@ -18,8 +23,8 @@ export const useShare = ({
   superBlock,
   block,
   completedPercent
-}: ShareTemplateProps) => {
-  const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomainURL}/${superBlock}/${block}`;
+}: ShareTemplateProps): ShareTemplateReturnProps => {
+  const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomainURL}/${superBlock}/#${block}`;
   const i18nSupportedBlock =
     i18next.t(`intro:${superBlock}.blocks.${block}.title`) || block;
 

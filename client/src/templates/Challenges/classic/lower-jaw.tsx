@@ -8,15 +8,17 @@ import GreenPass from '../../../assets/icons/green-pass';
 
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
-import { ChallengeNode, ChallengeWithCompletedNode } from '../../../redux/prop-types';
+import {
+  ChallengeNode,
+  ChallengeWithCompletedNode
+} from '../../../redux/prop-types';
 import { getChallengesList } from '../../../../../api-server/src/server/utils/get-curriculum';
 import { Share } from '../../../components/share';
 import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
 
-
 interface LowerJawProps {
-  completedPercent:number,
+  completedPercent: number;
   data?: { challengeNode: ChallengeNode };
   hint?: string;
   challengeIsCompleted: boolean;
@@ -193,10 +195,10 @@ const LowerJaw = ({
       testsLength &&
       (currentAttempts >= testsLength || currentAttempts >= 3);
 
-    const challengeOrder:ChallengeWithCompletedNode[] = getChallengesList({
-      userInputSuperBlock: data?.challengeNode.challenge.superBlock || "",
-      userInputBlock: data?.challengeNode.challenge.block || ""
-    });
+    const challengeOrder: ChallengeWithCompletedNode[] = getChallengesList({
+      userInputSuperBlock: data?.challengeNode.challenge.superBlock || '',
+      userInputBlock: data?.challengeNode.challenge.block || ''
+    }) as ChallengeWithCompletedNode[];
     if (
       challengeOrder[challengeOrder.length - 1].id ===
       data?.challengeNode.challenge.id
@@ -223,7 +225,6 @@ const LowerJaw = ({
               block={data?.challengeNode.challenge.block || ''}
             />
           )}
-
           {isAttemptsLargerThanTest && !challengeIsCompleted ? (
             <button
               className='btn fade-in'
