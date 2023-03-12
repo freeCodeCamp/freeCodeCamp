@@ -26,7 +26,7 @@ importers:
       docsify-cli: 4.4.4
       dotenv: 16.0.3
       eslint: 7.32.0
-      eslint-config-prettier: 8.6.0
+      eslint-config-prettier: 8.7.0
       eslint-plugin-import: 2.27.5
       eslint-plugin-jest-dom: 3.9.4
       eslint-plugin-jsx-a11y: 6.7.1
@@ -82,7 +82,7 @@ importers:
       cypress-plugin-tab: 1.0.5
       docsify-cli: 4.4.4
       eslint: 7.32.0
-      eslint-config-prettier: 8.6.0_eslint@7.32.0
+      eslint-config-prettier: 8.7.0_eslint@7.32.0
       eslint-plugin-import: 2.27.5_eslint@7.32.0
       eslint-plugin-jest-dom: 3.9.4_eslint@7.32.0
       eslint-plugin-jsx-a11y: 6.7.1_eslint@7.32.0
@@ -14247,8 +14247,8 @@ packages:
     optionalDependencies:
       source-map: 0.6.1
 
-  /eslint-config-prettier/8.6.0_eslint@7.32.0:
-    resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
+  /eslint-config-prettier/8.7.0_eslint@7.32.0:
+    resolution: {integrity: sha512-HHVXLSlVUhMSmyW4ZzEuvjpwqamgmlfkutD53cYXLikh4pt/modINRcCIApJ84czDxM4GZInwUrromsDdTImTA==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
