@@ -2,17 +2,11 @@ import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { ShareTemplate } from './shareTemplate';
 
-let handleRedirectToTwitter = jest.fn();
-
-const shareTemplateWrapper = () => {
-  return render(
-    <ShareTemplate handleRedirectToTwitter={handleRedirectToTwitter} />
-  );
-};
+const handleRedirectToTwitter = jest.fn();
 
 describe('Share Template Testing', () => {
   beforeEach(() => {
-    shareTemplateWrapper();
+    render(<ShareTemplate handleRedirectToTwitter={handleRedirectToTwitter} />);
   });
 
   test('Share template snapshot', () => {
