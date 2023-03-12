@@ -280,7 +280,7 @@ importers:
       '@freecodecamp/react-bootstrap': 0.32.3
       '@freecodecamp/react-calendar-heatmap': 1.1.0
       '@freecodecamp/strip-comments': 3.0.1
-      '@growthbook/growthbook-react': 0.12.0
+      '@growthbook/growthbook-react': 0.13.0
       '@loadable/component': 5.15.3
       '@reach/router': 1.3.4
       '@redux-saga/core': ^1.2.2
@@ -426,7 +426,7 @@ importers:
       '@freecodecamp/react-bootstrap': 0.32.3_wcqkhtmu7mswc6yz4uyexck3ty
       '@freecodecamp/react-calendar-heatmap': 1.1.0_react@16.14.0
       '@freecodecamp/strip-comments': 3.0.1
-      '@growthbook/growthbook-react': 0.12.0_react@16.14.0
+      '@growthbook/growthbook-react': 0.13.0_react@16.14.0
       '@loadable/component': 5.15.3_react@16.14.0
       '@reach/router': 1.3.4_wcqkhtmu7mswc6yz4uyexck3ty
       '@redux-saga/core': 1.2.2
@@ -4993,8 +4993,8 @@ packages:
     dependencies:
       graphql: 15.8.0
 
-  /@growthbook/growthbook-react/0.12.0_react@16.14.0:
-    resolution: {integrity: sha512-Oo2cbGpM8thaAmwEccKFy/uRU3bqU4r4xcpKaLEHPeGARCkccFi1tdq2GPYEoO6cyeo7/Wc9eHqhtazg340orA==}
+  /@growthbook/growthbook-react/0.13.0_react@16.14.0:
+    resolution: {integrity: sha512-CnLjzg4+DCqkiEj1cUp0E8URdC2MYrGenaxsiQEB+vpQ4x1155G6yt6mB9E27cbdvj8kCeWib4rRsEQbzTE4cQ==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16.8.0-0 || ^17.0.0-0 || ^18.0.0-0
