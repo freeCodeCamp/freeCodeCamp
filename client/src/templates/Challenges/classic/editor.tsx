@@ -78,7 +78,7 @@ import './editor.css';
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
-  completedPercent:number,
+  completedPercent: number;
   createFlashMessage: typeof createFlashMessage;
   data?: { challengeNode: ChallengeNode };
   attempts: number;
@@ -167,7 +167,7 @@ const mapStateToProps = createSelector(
     { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }],
     isChallengeCompleted: boolean,
-    completedPercent:number
+    completedPercent: number
   ) => ({
     attempts,
     canFocus: open ? false : canFocus,

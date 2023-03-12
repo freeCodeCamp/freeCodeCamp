@@ -13,7 +13,7 @@ export const Share: React.FC<ShareProps> = ({
   block,
   completedPercent
 }) => {
-  const {handleRedirectToTwitter} = useShare({
+  const { handleRedirectToTwitter } = useShare({
     superBlock,
     block,
     completedPercent
