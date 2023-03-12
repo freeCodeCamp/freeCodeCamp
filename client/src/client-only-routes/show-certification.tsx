@@ -155,7 +155,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     ) {
       setIsDonationDisplayed(true);
       executeGA({
-        event: 'donationview',
+        event: 'donation_view',
         action: 'Displayed Certificate Donation'
       });
     }

@@ -105,7 +105,7 @@ export function* postChargeSaga({
       executeGA({
         event:
           paymentProvider === PaymentProvider.Patreon
-            ? 'donationrelated'
+            ? 'donation_related'
             : 'donation',
         action: stringifyDonationEvents(paymentContext, paymentProvider),
         duration,
