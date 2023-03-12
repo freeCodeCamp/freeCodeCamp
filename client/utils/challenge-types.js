@@ -15,6 +15,7 @@ const codeAllyPractice = 12;
 const codeAllyCert = 13;
 const multifileCertProject = 14;
 const theOdinProject = 15;
+const colab = 16;
 
 // individual exports
 exports.backend = backend;
@@ -22,6 +23,7 @@ exports.frontEndProject = frontEndProject;
 exports.backEndProject = backEndProject;
 exports.pythonProject = pythonProject;
 exports.codeAllyCert = codeAllyCert;
+exports.colab = colab;
 
 exports.challengeTypes = {
   html,
@@ -40,7 +42,8 @@ exports.challengeTypes = {
   codeAllyPractice,
   codeAllyCert,
   multifileCertProject,
-  theOdinProject
+  theOdinProject,
+  colab
 };
 
 exports.isFinalProject = challengeType => {
@@ -78,7 +81,8 @@ exports.viewTypes = {
   [codeAllyPractice]: 'codeAlly',
   [codeAllyCert]: 'codeAlly',
   [multifileCertProject]: 'classic',
-  [theOdinProject]: 'odin'
+  [theOdinProject]: 'odin',
+  [colab]: 'frontend'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -101,7 +105,8 @@ exports.submitTypes = {
   [video]: 'tests',
   [codeAllyCert]: 'project.frontEnd',
   [multifileCertProject]: 'tests',
-  [theOdinProject]: 'tests'
+  [theOdinProject]: 'tests',
+  [colab]: 'project.backEnd'
 };
 
 // determine which help forum questions should be posted to

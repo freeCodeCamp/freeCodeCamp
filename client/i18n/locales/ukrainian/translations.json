@@ -596,7 +596,8 @@
     "editor-url": "Не забудьте відправити Live App URL-адресу.",
     "http-url": "Не можна використовувати ненадійну (http) URL-адресу.",
     "own-work-url": "Не забудьте відправити власну роботу.",
-    "publicly-visible-url": "Не забудьте відправити загальнодоступну URL-адресу додатку."
+    "publicly-visible-url": "Не забудьте відправити загальнодоступну URL-адресу додатку.",
+    "path-url": "Можливо, ви хочете надіслати кореневий шлях, тобто https://example.com, а не https://example.com/path"
   },
   "certification": {
     "executive": "Виконавчий директор, freeCodeCamp.org",
@@ -710,6 +711,8 @@
       "information-security-v7": "Сертифікація «Інформаційна безпека»",
       "Machine Learning with Python": "Машинне навчання з Python",
       "machine-learning-with-python-v7": "Сертифікація «Машинне навчання з Python»",
+      "College Algebra with Python": "College Algebra with Python",
+      "college-algebra-with-python-v8": "College Algebra with Python Certification",
       "Legacy Front End": "Застарілий Front End",
       "legacy-front-end": "Сертифікація «Front End»",
       "Legacy Back End": "Застарілий Back End",

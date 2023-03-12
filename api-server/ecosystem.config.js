@@ -3,13 +3,14 @@ const path = require('path');
 
 const dotenv = require('dotenv');
 
-const filePath = path.resolve('..', '.env');
+const filePath = path.resolve(__dirname, '..', '.env');
 const env = dotenv.parse(fs.readFileSync(filePath));
 
 module.exports = {
   apps: [
     {
       script: `./lib/production-start.js`,
+      cwd: __dirname,
       env,
       max_memory_restart: '600M',
       instances: 'max',

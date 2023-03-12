@@ -14,12 +14,12 @@ Se você possui muitas opções pra escolher, use uma instrução <dfn>switch</d
 Aqui está um exemplo de uma instrução `switch`:
 
 ```js
-switch (lowercaseLetter) {
-  case "a":
-    console.log("A");
+switch (fruit) {
+  case "apple":
+    console.log("The fruit is an apple");
     break;
-  case "b":
-    console.log("B");
+  case "orange":
+    console.log("The fruit is an orange");
     break;
 }
 ```

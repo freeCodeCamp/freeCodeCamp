@@ -91,7 +91,7 @@ Derzeit können nur Mitglieder des Entwicklerteams in die Produktionsbranches pu
 4. Bestätige dass du in der Lage bist, das Repository lokal zu erstellen.
 
    ```
-   npm run clean-and-develop
+   pnpm run clean-and-develop
    ```
 
 5. Verschieben von Änderungen von `main` nach `prod-staging` über ein Fast-Forward-Merge
@@ -427,18 +427,13 @@ sudo apt install build-essential
 
 Bereitstellung von VMs mit dem Code
 
-1. Installiere Node LTS.
-
-2. Aktualisiere `npm` und installiere PM2 und richte `logrotate` und Start beim Booten ein
+1. Install `pnpm` globally.
 
    ```console
-   npm i -g npm@8
-   npm i -g pm2
-   pm2 install pm2-logrotate
-   pm2 startup
+   curl -fsSL https://get.pnpm.io/install.sh | sh -
    ```
 
-3. Klone freeCodeCamp, richte die Umgebungsvariablen (env) und Schlüssel ein.
+2. Clone freeCodeCamp, setup env and keys.
 
    ```console
    git clone https://github.com/freeCodeCamp/freeCodeCamp.git
@@ -446,37 +441,43 @@ Bereitstellung von VMs mit dem Code
    git checkout prod-current # or any other branch to be deployed
    ```
 
-4. Erstelle die `.env` aus dem geschützten Speicher für Anmeldeinformationen.
+3. Create the `.env` from the secure credentials storage.
 
-5. Erstelle die `google-credentials.json` aus dem geschützten Speicher für die Anmeldedaten.
+4. Create the `google-credentials.json` from the secure credentials storage.
 
-6. Installiere Abhängigkeiten
+5. Install dependencies
 
    ```console
-   npm ci
+   pnpm install
+   ```
+
+6. Setup pm2 `logrotate` and startup on boot
+
+   ```console
+   pnpm pm2 install pm2-logrotate
+   pnpm pm2 startup
    ```
 
 7. Errichte den Server.
 
    ```console
-   npm run prebuild && npm run build:curriculum && npm run build:server
+   pnpm prebuild && pnpm build:curriculum && pnpm build:server
    ```
 
-8. Starte Instanzen
+8.  Starte Instanzen
 
    ```console
-   cd api-server
-   pm2 reload ecosystem.config.js
+   pnpm start:server
    ```
 
 ### Logging und Monitoring
 
 ```console
-pm2 logs
+pnpm pm2 logs
 ```
 
 ```console
-pm2 monit
+pnpm pm2 monit
 ```
 
 ### Aktualisieren von Instanzen (Wartung)
@@ -490,31 +491,31 @@ Codeänderungen müssen von Zeit zu Zeit auf die API-Instanzen übertragen werde
 1. Stoppe alle Instanzen
 
 ```console
-pm2 stop all
+pnpm pm2 stop all
 ```
 
 2. Installiere Abhängigkeiten
 
 ```console
-npm ci
+pnpm install
 ```
 
 3. Errichte den Server
 
 ```console
-npm run create:config && npm run build:curriculum && npm run build:server
+pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
 ```
 
 4. Starte Instanzen
 
 ```console
-cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
-   ```
+pnpm start:server && pnpm pm2 logs
+```
 
 #### 2. Fortlaufende (Rolling) Updates - Werden für logische Änderungen am Code verwendet.
 
 ```console
-cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
+pnpm pm2 reload api-server/ecosystem.config.js && pnpm pm2 logs
 ```
 
 > [!NOTE] Wir führen fortlaufende Aktualisierungen des Codes, der Logik, mittels Pipelines durch. Du solltest diese Befehle nicht ausführen müssen. Sie dienen nur der Dokumentation.
@@ -788,8 +789,8 @@ ssh in die VM (gehostet auf Digital Ocean).
 ```console
 cd tools
 git pull origin master
-npm ci
-npm run build
+pnpm install
+pnpm run build
 pm2 restart contribute-app
 ```
 

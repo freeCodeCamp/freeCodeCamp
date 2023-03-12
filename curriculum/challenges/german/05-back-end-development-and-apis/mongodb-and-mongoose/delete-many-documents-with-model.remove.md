@@ -8,13 +8,13 @@ dashedName: delete-many-documents-with-model-remove
 
 # --description--
 
-`Model.remove()` is useful to delete all the documents matching given criteria.
+`Model.remove()` eignet sich zur Löschung von Dokumenten anhand bestimmter Kriterien.
 
 # --instructions--
 
-Modify the `removeManyPeople` function to delete all the people whose name is within the variable `nameToRemove`, using `Model.remove()`. Pass it to a query document with the `name` field set, and a callback.
+Ändere die `removeManyPeople`-Funktion so, dass sie mithilfe von `Model.remove()` alle Personen löscht, deren Namen in der Variable `nameToRemove` enthalten sind. Pass it to a query document with the `name` field set, and a callback.
 
-**Note:** The `Model.remove()` doesn’t return the deleted document, but a JSON object containing the outcome of the operation, and the number of items affected. Don’t forget to pass it to the `done()` callback, since we use it in tests.
+**Hinweis:** Das `Model.remove()` gibt nicht das gelöschte Dokument zurück, sondern ein JSON-Objekt, das das Ergebnis des Vorgangs und die Anzahl der betroffenen Elemente enthält. Vergiss nicht, ihn an den `done()`-Callback zu übergeben, da wir ihn in Tests verwenden.
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: communicate-by-emitting
 
 # --description--
 
-<dfn>Emit</dfn> is the most common way of communicating you will use. When you emit something from the server to 'io', you send an event's name and data to all the connected sockets. A good example of this concept would be emitting the current count of connected users each time a new user connects!
+<dfn>Emit</dfn> ist die häufigste Art der Kommunikation, die du verwenden wirst. Wenn du etwas vom Server an 'io' sendest, sendest du den Namen und die Daten eines Ereignisses an alle verbundenen Sockets. Ein gutes Beispiel für dieses Konzept wäre, jedes Mal, wenn sich ein neuer Benutzer anmeldet, die aktuelle Anzahl der verbundenen Benutzer auszugeben!
 
 Start by adding a variable to keep track of the users, just before where you are currently listening for connections.
 
@@ -22,13 +22,13 @@ Now, when someone connects, you should increment the count before emitting the c
 ++currentUsers;
 ```
 
-Finally, after incrementing the count, you should emit the event (still within the connection listener). The event should be named 'user count', and the data should just be the `currentUsers`.
+Finally, after incrementing the count, you should emit the event (still within the connection listener). Das Ereignis sollte 'user count' heißen und die Daten sollten einfach `currentUsers` sein.
 
 ```js
 io.emit('user count', currentUsers);
 ```
 
-Now, you can implement a way for your client to listen for this event! Similar to listening for a connection on the server, you will use the `on` keyword.
+Jetzt kannst du deinem Client die Möglichkeit geben, auf dieses Ereignis zu warten! Ähnlich wie beim Warten auf eine Verbindung zum Server, verwendest du das keyword `on`.
 
 ```js
 socket.on('user count', function(data) {
@@ -36,13 +36,13 @@ socket.on('user count', function(data) {
 });
 ```
 
-Now, try loading up your app, authenticate, and you should see in your client console '1' representing the current user count! Try loading more clients up, and authenticating to see the number go up.
+Versuche nun, deine App zu laden, authentifiziere dich, und du solltest in deiner Client-Konsole eine '1' sehen, die die aktuelle Anzahl der Benutzer darstellt! Versuche mehr Clients zu laden und zu authentifizieren, um zu sehen, ob die Nummer ansteigt.
 
-Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#communicate-by-emitting-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. Wenn du auf Fehler stößt, kannst du <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#communicate-by-emitting-7" target="_blank" rel="noopener noreferrer nofollow">das bis zu diesem Punkt abgeschlossene Projekt überprüfen</a>.
 
 # --hints--
 
-`currentUsers` should be defined.
+`currentUsers` sollte definiert werden.
 
 ```js
 async (getUserInput) => {
@@ -57,7 +57,7 @@ async (getUserInput) => {
 }
 ```
 
-Server should emit the current user count at each new connection.
+Der Server soll die aktuelle Benutzeranzahl bei jeder neuen Verbindung ausgeben.
 
 ```js
 async (getUserInput) => {

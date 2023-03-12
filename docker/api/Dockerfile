@@ -9,7 +9,7 @@ COPY --chown=node:node . .
 ARG DOPPLER_TOKEN
 RUN \
   doppler secrets download doppler.encrypted.json &&\
-  npm ci --no-progress --ignore-scripts &&\
+  pnpm install --no-progress --ignore-scripts &&\
   doppler run --fallback=doppler.encrypted.json --command="npm run create:config" &&\
   doppler run --fallback=doppler.encrypted.json --command="npm run build:curriculum" &&\
   doppler run --fallback=doppler.encrypted.json --command="npm run build:server"
@@ -18,7 +18,7 @@ FROM node:16-alpine as depends
 USER node
 WORKDIR /home/node/depends
 COPY --chown=node:node . .
-RUN npm ci --production --workspace=api-server --no-progress --ignore-scripts
+RUN pnpm install --production --workspace=api-server --no-progress --ignore-scripts
 
 FROM node:16-alpine
 RUN npm i -g pm2@4

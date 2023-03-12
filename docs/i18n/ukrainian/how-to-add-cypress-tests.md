@@ -27,25 +27,25 @@
 - Щоб запустити всі тести у директорії `./cypress`:
 
   ```console
-  npm run cypress:dev:run
+  pnpm run cypress:dev:run
   ```
 
 - Для запуску одного тесту:
 
   ```console
-  npm run cypress -- run --spec=cypress/<path_to_test_file>
+  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
   ```
 
   Наприклад:
 
   ```console
-  npm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
   ```
 
 - Щоб створити збірку розробки, запустіть сервер розробки і виконайте всі наявні тести cypress:
 
   ```console
-  npm run e2e:dev:run
+  pnpm run e2e:dev:run
   ```
 
 ## Налаштування Cypress-GitPod
@@ -63,19 +63,19 @@ mongod
 - Заповніть базу даних
 
 ```console
-npm run seed
+pnpm run seed
 ```
 
 - Розробіть сервер та клієнта
 
 ```console
-npm run develop
+pnpm run develop
 ```
 
 ### 2. Встановіть інструменти збірки Cypress
 
 ```console
-npm run cypress:install-build-tools
+pnpm run cypress:install-build-tools
 ```
 
 - Якщо керований в терміналі, виберіть розкладку клавіатури за мовою/регіоном

@@ -159,7 +159,7 @@ describe('Language menu keyboard accessibility', () => {
 describe('Authenticated Navigation Menu', () => {
   before(() => {
     cy.clearCookies();
-    cy.exec('npm run seed');
+    cy.exec('pnpm run seed');
     cy.login();
     cy.get(selectors['toggle-button']).should('be.visible').click();
   });
@@ -181,7 +181,7 @@ describe('Authenticated Navigation Menu', () => {
 describe('Authenticated User Sign Out', () => {
   before(() => {
     cy.clearCookies();
-    cy.exec('npm run seed');
+    cy.exec('pnpm run seed');
   });
   beforeEach(() => {
     cy.login();
@@ -207,7 +207,7 @@ describe('Authenticated User Sign Out', () => {
 describe('Donor Navigation Menu', () => {
   before(() => {
     cy.clearCookies();
-    cy.exec('npm run seed -- --donor');
+    cy.exec('pnpm run seed -- --donor');
     cy.login();
     cy.visit('/donate');
   });
