@@ -252,7 +252,7 @@ function ShowClassic({
   const [resizing, setResizing] = useState(false);
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
 
-  const containerRef = useRef<HTMLElement>() as RefObject<HTMLElement>;
+  const containerRef = useRef<HTMLElement>();
   const editorRef =
     useRef<editor.IStandaloneCodeEditor>() as MutableRefObject<editor.IStandaloneCodeEditor>;
   const instructionsPanelRef =

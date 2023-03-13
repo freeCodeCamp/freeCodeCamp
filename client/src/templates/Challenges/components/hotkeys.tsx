@@ -65,7 +65,7 @@ interface HotkeysProps {
   editorRef?: MutableRefObject<editor.IStandaloneCodeEditor>;
   executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
   submitChallenge: () => void;
-  innerRef: React.Ref<HTMLElement>;
+  innerRef: MutableRefObject<HTMLElement | undefined>;
   instructionsPanelRef?: React.RefObject<HTMLElement>;
   nextChallengePath: string;
   prevChallengePath: string;

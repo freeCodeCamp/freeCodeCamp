@@ -1,4 +1,4 @@
-import React, { MutableRefObject, RefObject, useRef } from 'react';
+import React, { MutableRefObject, useRef } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
@@ -31,7 +31,7 @@ type VisibleEditors = {
 interface MultifileEditorProps {
   canFocus?: boolean;
   challengeFiles: ChallengeFile[];
-  containerRef: RefObject<HTMLElement>;
+  containerRef: MutableRefObject<HTMLElement | undefined>;
   contents?: string;
   description: string;
   dimensions?: Dimensions;
