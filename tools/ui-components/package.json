@@ -46,7 +46,7 @@
     "@types/react": "16.14.35",
     "@types/react-dom": "^16.9.17",
     "@types/testing-library__jest-dom": "^5",
-    "autoprefixer": "10.4.13",
+    "autoprefixer": "10.4.14",
     "babel-loader": "8.3.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
