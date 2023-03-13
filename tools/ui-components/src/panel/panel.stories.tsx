@@ -10,7 +10,7 @@ const story = {
   component: Panel,
   parameters: {
     controls: {
-      include: ['className', 'bsStyle']
+      include: ['className']
     }
   },
   argType: {
@@ -19,17 +19,37 @@ const story = {
   }
 };
 
-const Template: Story<PanelProps> = ({ bsStyle, className }) => {
+const Child = () => {
   return (
-    <Panel bsStyle={bsStyle} className={className}>
+    <>
       <PanelHeading>
         <PanelTitle>Here is panel Heading</PanelTitle>
       </PanelHeading>
       <PanelBody>Here is Panel body</PanelBody>
-    </Panel>
+    </>
   );
 };
 
+const Template: Story<PanelProps> = args => <Panel {...args} />;
+
 export const Default = Template.bind({});
+
+export const Primary = Template.bind({});
+Primary.args = {
+  children: <Child />,
+  bsStyle: 'primary'
+};
+
+export const Info = Template.bind({});
+Info.args = {
+  children: <Child />,
+  bsStyle: 'info'
+};
+
+export const Danger = Template.bind({});
+Danger.args = {
+  children: <Child />,
+  bsStyle: 'danger'
+};
 
 export default story;
