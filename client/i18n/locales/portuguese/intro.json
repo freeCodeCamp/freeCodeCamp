@@ -746,18 +746,18 @@
     }
   },
   "college-algebra-with-python": {
-    "title": "College Algebra with Python",
+    "title": "Álgebra para o ensino superior com Python",
     "intro": [
-      "This course is designed as a one-semester college course. It consists of instructional videos, with Google Colaboratory notebooks to follow along interactively, assignments, and challenging projects.",
-      "As you go through each part of this course in sequence, you will gain a full understanding of Algebra and how to write Python code to solve Algebra problems.",
-      "Throughout this course, you will also build your own Algebra Colab notebook that you will be able to use as your custom calculator. This course (and the code you write here) will give you the foundation for a deeper math and data science understanding."
+      "Este curso foi projetado como um curso universitário de um semestre. Ele consiste em vídeos instrutivos, com os notebooks do Google Colaboratory para acompanhar os desafios e projetos de modo interativo.",
+      "À medida que você passa por cada parte do curso em sequência, você vai entender a álgebra e como escrever códigos em Python para resolver problemas de álgebra.",
+      "Ao longo deste curso, você também criará seu próprio notebook de álgebra no Colaboratory, que poderá usar como uma calculadora personalizada. Este curso (e o código que você escreve aqui) dará a você a base para uma compreensão mais profunda da matemática e da ciência de dados."
     ],
     "note": "",
     "blocks": {
       "learn-ratios-and-proportions": {
-        "title": "Learn Ratios and Proportions",
+        "title": "Aprenda razões e proporções",
         "intro": [
-          "Your journey begins here as you learn how to set up a Colab Notebook that can run Python code. Then, use the notebook to follow along with the videos to learn ratios and proportions using Python."
+          "Sua jornada começa aqui enquanto você aprende como configurar um notebook do Colaboratory que pode executar código em Python. Então, use o notebook para acompanhar os vídeos para aprender razões e proporções usando Python."
         ]
       },
       "learn-how-to-solve-for-x": {
