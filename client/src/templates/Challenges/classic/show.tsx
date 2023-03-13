@@ -7,7 +7,7 @@ import React, {
   useRef
 } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import { TFunction, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { HandlerProps } from 'react-reflex';
 import Media from 'react-responsive';
@@ -114,7 +114,6 @@ interface ShowClassicProps {
       showProjectPreview: boolean;
     };
   };
-  t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
   setEditorFocusability: (canFocus: boolean) => void;
@@ -196,11 +195,11 @@ function ShowClassic({
   openModal,
   setIsAdvancing,
   savedChallenges,
-  t,
   isChallengeCompleted,
   output,
   executeChallenge
 }: ShowClassicProps) {
+  const { t } = useTranslation();
   const onStopResize = (event: HandlerProps) => {
     const { name, flex } = event.component.props;
 
@@ -456,7 +455,6 @@ function ShowClassic({
             notes={renderNotes(notes)}
             preview={renderPreview()}
             testOutput={renderTestOutput()}
-            // eslint-disable-next-line @typescript-eslint/unbound-method
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
             videoUrl={videoUrl}
@@ -508,10 +506,7 @@ function ShowClassic({
 
 ShowClassic.displayName = 'ShowClassic';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(ShowClassic));
+export default connect(mapStateToProps, mapDispatchToProps)(ShowClassic);
 
 export const query = graphql`
   query ClassicChallenge($slug: String!) {
