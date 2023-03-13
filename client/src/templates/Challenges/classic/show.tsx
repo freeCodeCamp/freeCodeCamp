@@ -212,11 +212,12 @@ function ShowClassic({
 
     // Forcing a state update with the value of each panel since on stop resize
     // is executed per each panel.
-    if (typeof layout === 'object')
+    if (typeof layout === 'object') {
       setLayout({
         ...layout,
         [name]: { flex }
       });
+    }
     setResizing(false);
 
     store.set(REFLEX_LAYOUT, layout);
