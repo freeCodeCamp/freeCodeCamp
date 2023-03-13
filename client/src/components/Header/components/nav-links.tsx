@@ -5,7 +5,7 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { Fragment, RefObject, useRef } from 'react';
+import React, { Fragment, useRef } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { clientLocale, radioLocation } from '../../../../../config/env.json';
@@ -65,12 +65,9 @@ function NavLinks({
   user,
   navigate
 }: NavLinksProps) {
-  const langButtonRef =
-    useRef<HTMLButtonElement>() as RefObject<HTMLButtonElement>;
-  const firstLangOptionRef =
-    useRef<HTMLButtonElement>() as RefObject<HTMLButtonElement>;
-  const lastLangOptionRef =
-    useRef<HTMLButtonElement>() as RefObject<HTMLButtonElement>;
+  const langButtonRef = useRef<HTMLButtonElement>(null);
+  const firstLangOptionRef = useRef<HTMLButtonElement>(null);
+  const lastLangOptionRef = useRef<HTMLButtonElement>(null);
 
   const toggleTheme = (
     currentTheme = Themes.Default,
