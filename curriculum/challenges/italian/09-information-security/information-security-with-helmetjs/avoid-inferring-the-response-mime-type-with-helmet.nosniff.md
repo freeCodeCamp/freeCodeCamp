@@ -8,7 +8,7 @@ dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
 
 # --description--
 
-Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonato da <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. I browser possono usare lo sniffing del contenuto o del MIME per sovrascrivere le intestazioni `Content-Type` per indovinare ed elaborare i dati utilizzando un tipo di contenuto implicito. Anche se questo può essere conveniente in alcuni scenari, può anche portare ad alcuni attacchi pericolosi. Questo middleware imposta l'intestazione X-Content-Type-Options a `nosniff`, istruendo il browser di non bypassare il tipo di contenuto fornito `Content-Type`.
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonato da <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. Browsers can use content or MIME sniffing to override the `Content-Type` header of a response to guess and process the data using an implicit content type. Anche se questo può essere conveniente in alcuni scenari, può anche portare ad alcuni attacchi pericolosi. This middleware sets the `X-Content-Type-Options` header to `nosniff`, instructing the browser to not bypass the provided `Content-Type`.
 
 # --instructions--
 
