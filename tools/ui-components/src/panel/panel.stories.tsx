@@ -31,8 +31,5 @@ const Template: Story<PanelProps> = ({ bsStyle, className }) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {
-  // default props go here
-};
 
 export default story;

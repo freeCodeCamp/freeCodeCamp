@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { PanelContext } from './panel';
 
-const primaryHeadingStyle = 'text-background-primary';
+const primaryHeadingStyle = 'text-foreground-primary';
 const infoHeadingStyle = 'bg-sky-200 text-sky-500';
 const dangerHeadingStyle = 'text-background-danger bg-foreground-danger';
 

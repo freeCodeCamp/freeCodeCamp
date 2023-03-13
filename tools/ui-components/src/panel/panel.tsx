@@ -15,13 +15,13 @@ export const Panel = ({
   className,
   bsStyle
 }: PanelProps): JSX.Element => {
-  const buttonStyles = styles;
   const context = useMemo(() => ({ bsStyle }), [bsStyle]);
-  if (bsStyle === 'primary') [buttonStyles].concat(primaryStyle).join(' ');
-  else if (bsStyle === 'danger') [buttonStyles].concat(dangerStyle).join(' ');
-  else if (bsStyle === 'info') [buttonStyles].concat(infoStyle).join(' ');
 
-  const panelClassed = [buttonStyles, className].join(' ');
+  if (bsStyle === 'primary') [styles].concat(primaryStyle).join(' ');
+  else if (bsStyle === 'danger') [styles].concat(dangerStyle).join(' ');
+  else if (bsStyle === 'info') [styles].concat(infoStyle).join(' ');
+
+  const panelClassed = [styles, className].join(' ');
   return (
     <PanelContext.Provider value={context}>
       <div className={panelClassed}>{children}</div>
