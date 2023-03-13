@@ -22,7 +22,6 @@ import { certSlugTypeMap } from '../../../../config/certification-settings';
 
 import './certification.css';
 import {
-  ChallengeFiles,
   ClaimedCertifications,
   CompletedChallenge,
   User
@@ -135,7 +134,9 @@ type CertificationSettingsProps = {
 
 function CertificationSettings(props: CertificationSettingsProps) {
   const [projectTitle, setProjectTitle] = useState('');
-  const [challengeFiles, setChallengeFiles] = useState<ChallengeFiles>(null);
+  const [challengeFiles, setChallengeFiles] = useState<
+    CompletedChallenge['challengeFiles'] | null
+  >(null);
   const [challengeData, setChallengeData] = useState<CompletedChallenge | null>(
     null
   );
@@ -147,12 +148,6 @@ function CertificationSettings(props: CertificationSettingsProps) {
     setSolution(null);
     setIsOpen(false);
   }
-
-  const createHandleLinkButtonClick =
-    (to: string) => (e: MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
-      return navigate(to);
-    };
 
   const handleSolutionModalHide = () => initialiseState();
 
@@ -171,9 +166,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     const { solution, challengeFiles } = completedProject;
     const showUserCode = () => {
       setProjectTitle(projectTitle);
-      if (challengeFiles) {
-        setChallengeFiles(challengeFiles);
-      }
+      setChallengeFiles(challengeFiles);
       setSolution(solution);
       setIsOpen(true);
     };
@@ -206,11 +199,14 @@ function CertificationSettings(props: CertificationSettingsProps) {
     );
   };
 
-  function renderCertifications<
-    T extends typeof legacyProjectMap | typeof projectMap
-  >(certName: keyof typeof projectsMap, projectsMap: T) {
+  function renderCertifications(
+    certName: keyof typeof projectsMap,
+    projectsMap: typeof legacyProjectMap | typeof projectMap
+  ) {
     const { t } = props;
-    const { certSlug } = first(projectsMap[certName]);
+    const project = projectsMap[certName];
+
+    const { certSlug } = first(project);
     return (
       <FullWidthRow key={certName}>
         <Spacer size='medium' />
@@ -235,10 +231,10 @@ function CertificationSettings(props: CertificationSettingsProps) {
       </FullWidthRow>
     );
   }
-  function renderProjectsFor<T>(
-    certName: keyof T,
+  function renderProjectsFor(
+    certName: keyof typeof projectsMap,
     isCert: boolean,
-    projectsMap: T
+    projectsMap: typeof legacyProjectMap | typeof projectMap
   ) {
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
     const { certSlug } = first(projectsMap[certName]);

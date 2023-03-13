@@ -40,7 +40,7 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 
 // TODO: generate this automatically in a separate file
 // from the md/meta.json files for each cert and projects
-const legacyProjectMap = [
+const legacyCertMap = [
   {
     id: '561add10cb82ac38a17513be',
     title: 'Legacy Front End',
@@ -295,7 +295,7 @@ const legacyFullStack = {
   // Requirements are other certs and is
   // handled elsewhere
 };
-const projectMap = [
+const certMap = [
   {
     id: '561add10cb82ac38a17513bc',
     title: 'Responsive Web Design',
@@ -336,7 +336,6 @@ const projectMap = [
       }
     ]
   },
-
   {
     id: '561abd10cb81ac38a17513bc',
     title: 'JavaScript Algorithms and Data Structures',
@@ -719,7 +718,7 @@ const projectMap = [
     ]
   }
 ] as const;
-const upcomingChangesMap = [
+const upcomingCertMap = [
   {
     id: '61531b20cc9dfa2741a5b800',
     title: 'College Algebra with Python',
@@ -770,11 +769,31 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const certMap = Array.of(
-  ...upcomingChangesMap,
-  ...legacyProjectMap,
+const fullCertMap = Array.of(
+  ...upcomingCertMap,
+  ...legacyCertMap,
   legacyFullStack,
-  ...projectMap
+  ...certMap
 );
 
-export { certMap, legacyProjectMap, projectMap };
+const projectMap = certMap.reduce((curr, acc) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+});
+const legacyProjectMap = legacyCertMap.reduce((curr, acc) => {
+  return {
+    ...acc,
+    [curr.title]: curr.projects
+  };
+});
+
+export {
+  fullCertMap,
+  certMap,
+  legacyCertMap,
+  upcomingCertMap,
+  projectMap,
+  legacyProjectMap
+};
