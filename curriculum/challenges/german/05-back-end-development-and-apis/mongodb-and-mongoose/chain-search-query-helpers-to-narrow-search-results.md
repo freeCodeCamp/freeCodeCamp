@@ -8,11 +8,11 @@ dashedName: chain-search-query-helpers-to-narrow-search-results
 
 # --description--
 
-If you don’t pass the callback as the last argument to `Model.find()` (or to the other search methods), the query is not executed. You can store the query in a variable for later use. This kind of object enables you to build up a query using chaining syntax. The actual db search is executed when you finally chain the method `.exec()`. You always need to pass your callback to this last method. There are many query helpers, here we'll use the most commonly used.
+Wenn du den Callback nicht als letztes Argument an `Model.find()` (oder an die anderen Suchmethoden) übergibst, wird die Abfrage nicht ausgeführt. Du kannst die Abfrage zur späteren Verwendung in einer Variablen speichern. Diese Art von Objekt ermöglicht es dir, eine Abfrage mit Hilfe einer Verkettungssyntax zu erstellen. Die eigentliche Datenbanksuche wird ausgeführt, wenn du schließlich die Methode `.exec()` verkettest. An diese letzte Methode musst du immer deinen Callback übermitteln. There are many query helpers, here we'll use the most commonly used.
 
 # --instructions--
 
-Modify the `queryChain` function to find people who like the food specified by the variable named `foodToSearch`. Sort them by `name`, limit the results to two documents, and hide their age. Chain `.find()`, `.sort()`, `.limit()`, `.select()`, and then `.exec()`. Pass the `done(err, data)` callback to `exec()`.
+Modify the `queryChain` function to find people who like the food specified by the variable named `foodToSearch`. Sortiere sie nach `name`, beschränke die Ergebnisse auf zwei Dokumente und blende ihr Alter aus. Chain `.find()`, `.sort()`, `.limit()`, `.select()`, and then `.exec()`. Übergebe den `done(err, data)`-Callback an `exec()`.
 
 # --hints--
 

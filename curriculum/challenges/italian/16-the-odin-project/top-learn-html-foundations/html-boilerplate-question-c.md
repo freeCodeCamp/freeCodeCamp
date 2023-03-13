@@ -10,7 +10,7 @@ dashedName: html-boilerplate-question-c
 L'elemento `<head>` contiene importanti metadati sulle pagine web e le cose necessarie per renderizzarle correttamente nel browser. All'interno dell'`<head>`, non dovresti usare nessun elemento che mostri del contenuto nella pagina web.
 
 ## L'elemento meta charset
-Il tag `meta` per la codifica dei caratteri della pagina web dovrebbe sempre essere nell'elemento head: `<meta charset="utf-8">`.
+You should always have the `meta` tag for the `charset` encoding of the webpage in the `head` element: `<meta charset="utf-8">`.
 
 Impostare la codifica è molto importante perché assicura che la pagina web mostri correttamente nel browser simboli speciali e caratteri provenienti da lingue diverse.
 

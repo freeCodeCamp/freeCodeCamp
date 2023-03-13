@@ -188,14 +188,14 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
 4. Resolva os conflitos, faça a limpeza, instale as dependências e execute os testes
 
    ```console
-   npm run clean
+   pnpm run clean
 
-   npm ci
-   npm run test:curriculum --superblock=<superblock-nome>
+   pnpm install
+   FCC_SUPERBLOCK='<superblock-name>' pnpm run test:curriculum 
 
    # exemplo:
 
-   # npm run test:curriculum --superblock=python-for-everybody
+   # FCC_SUPERBLOCK='python-for-everybody' pnpm run test:curriculum
 
    ```
 

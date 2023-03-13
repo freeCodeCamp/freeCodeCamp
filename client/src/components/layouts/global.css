@@ -450,10 +450,6 @@ hr {
   border-top: 1px solid var(--quaternary-background);
 }
 
-.panel-default {
-  background: var(--secondary-background);
-}
-
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary,
@@ -561,10 +557,6 @@ pre {
 .solution-viewer,
 .solution-viewer pre {
   margin-bottom: 0;
-}
-
-.solution-viewer {
-  border-color: var(--primary-color);
 }
 
 .has-success .help-block,

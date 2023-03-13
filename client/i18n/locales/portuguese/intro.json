@@ -335,6 +335,10 @@
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprenda programação funcional criando uma planilha",
         "intro": ["", ""]
+      },
+      "learn-advanced-array-methods-by-building-a-statistics-calculator": {
+        "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
+        "intro": ["", ""]
       }
     }
   },
@@ -737,6 +741,140 @@
         "title": "Projetos de aprendizagem de máquina com Python",
         "intro": [
           "A aprendizagem de máquina tem muitas aplicações práticas. Ao completar estes projetos de programação gratuitos e desafiadores, você vai demonstrar que tem um bom conhecimento nos fundamentos de aprendizagem de máquina, além de se qualificar para sua certificação em aprendizagem de máquina com Python."
+        ]
+      }
+    }
+  },
+  "college-algebra-with-python": {
+    "title": "Álgebra para o ensino superior com Python",
+    "intro": [
+      "Este curso foi projetado como um curso universitário de um semestre. Ele consiste em vídeos instrutivos, com os notebooks do Google Colaboratory para acompanhar os desafios e projetos de modo interativo.",
+      "À medida que você passa por cada parte do curso em sequência, você vai entender a álgebra e como escrever códigos em Python para resolver problemas de álgebra.",
+      "Ao longo deste curso, você também criará seu próprio notebook de álgebra no Colaboratory, que poderá usar como uma calculadora personalizada. Este curso (e o código que você escreve aqui) dará a você a base para uma compreensão mais profunda da matemática e da ciência de dados."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-ratios-and-proportions": {
+        "title": "Aprenda razões e proporções",
+        "intro": [
+          "Sua jornada começa aqui enquanto você aprende como configurar um notebook do Colaboratory que pode executar código em Python. Então, use o notebook para acompanhar os vídeos para aprender razões e proporções usando Python."
+        ]
+      },
+      "learn-how-to-solve-for-x": {
+        "title": "Learn How to Solve for X",
+        "intro": [
+          "This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code."
+        ]
+      },
+      "learn-fractions-and-decimals": {
+        "title": "Learn Fractions and Decimals",
+        "intro": [
+          "This unit will focus on converting decimals to fractions and percents."
+        ]
+      },
+      "learn-functions-and-graphing": {
+        "title": "Learn Functions and Graphing",
+        "intro": ["This unit will teach you about math functions."]
+      },
+      "learn-linear-functions": {
+        "title": "Learn Linear Functions",
+        "intro": [
+          "This unit will show you how to develop linear equations from two points."
+        ]
+      },
+      "learn-common-factors-and-square-roots": {
+        "title": "Learn Common Factors and Square Roots",
+        "intro": [
+          "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
+        ]
+      },
+      "build-a-multi-function-calculator": {
+        "title": "Build a Multi-Function Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a multi-function calculator."
+        ]
+      },
+      "learn-how-to-graph-systems-of-equations": {
+        "title": "Learn How to Graph Systems of Equations",
+        "intro": [
+          "This unit will focus on graphing two equations on the same coordinate plane, so that you can see where the lines intersect."
+        ]
+      },
+      "learn-how-to-solve-systems-of-equations": {
+        "title": "Learn How to Solve Systems of Equations",
+        "intro": [
+          "In this unit, you will learn how to solve a system of two equations (with two variables) without graphing. You will see how you can factor an equation and solve for a certain variable in Python. By the end of this unit, you will be able to solve and graph the system with one block of code."
+        ]
+      },
+      "learn-applications-of-linear-systems": {
+        "title": "Learn Applications of Linear Systems",
+        "intro": [
+          "In this unit, you will see how you can use the algebra you learned so far to solve real world problems."
+        ]
+      },
+      "learn-quadratic-equations": {
+        "title": "Learn Quadratic Equations",
+        "intro": [
+          "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
+        ]
+      },
+      "build-a-graphing-calculator": {
+        "title": "Build a Graphing Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a graphing calculator."
+        ]
+      },
+      "learn-parent-graphs-and-polynomials": {
+        "title": "Learn Parent Graphs and Polynomials",
+        "intro": [
+          "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
+        ]
+      },
+      "build-three-math-games": {
+        "title": "Build Three Math Games",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build three math games."
+        ]
+      },
+      "learn-business-applications-of-college-algebra": {
+        "title": "Learn Business Applications of College Algebra",
+        "intro": [
+          "This unit will show you how to apply your solving and graphing skills to find cost, revenue, and profit. You will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other."
+        ]
+      },
+      "learn-simple-and-compound-interest": {
+        "title": "Learn Simple and Compound Interest",
+        "intro": [
+          "This unit will show you how to calculate interest, loan payments, and the estimated value of investments. You will see the math formula and turn that into code. Because these formulas tend to get complicated, you will appreciate having the code where you can just modify a few values."
+        ]
+      },
+      "learn-exponents-and-logarithms": {
+        "title": "Learn Exponents and Logarithms",
+        "intro": [
+          "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
+        ]
+      },
+      "build-a-financial-calculator": {
+        "title": "Build a Financial Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a financial calculator."
+        ]
+      },
+      "college-algebra-with-python-conclusion": {
+        "title": "College Algebra with Python: Conclusion",
+        "intro": [
+          "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
+        ]
+      },
+      "build-a-data-graph-explorer": {
+        "title": "Build a Data Graph Explorer",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a data graph explorer."
         ]
       }
     }

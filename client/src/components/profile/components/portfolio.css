@@ -23,6 +23,10 @@
   margin-block: 1em;
 }
 
+#link-icon {
+  margin-inline-start: 1em;
+}
+
 .portfolio-container a {
   display: flex;
   align-items: center;
@@ -39,6 +43,8 @@
   padding-inline: 4rem;
   margin: 1em;
   text-decoration: none;
+  /* prevent line breaks in Chinese/Japanese/Korean */
+  word-break: keep-all;
 }
 
 .portfolio-container a::after {
@@ -57,22 +63,13 @@
 
 .portfolio-container p {
   display: -webkit-box;
-  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   grid-column: 1/ -1;
   grid-row: 3;
 }
 
-#link-icon {
-  margin-left: 1rem;
-}
-
 @media (max-width: 994px) {
-  .portfolio-container p {
-    -webkit-line-clamp: 10;
-  }
-
   .portfolio-screen-shot {
     max-height: 300px;
   }

@@ -1,0 +1,20 @@
+{
+  "name": "Learn How to Solve Systems of Equations",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-solve-systems-of-equations",
+  "order": 8,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    [
+      "6331d2b0b51aeedd1a2bd655",
+      "Solving Systems"
+    ],
+    [
+      "6331d2a9b51aeedd1a2bd654",
+      "Solving Systems of Equations: Extra"
+    ]
+  ]
+}

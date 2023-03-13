@@ -8,17 +8,17 @@ dashedName: create-many-records-with-model-create
 
 # --description--
 
-Manchmal ist es notwendig, viele Instanzen deiner Modelle zu erstellen, z.B. wenn du eine Datenbank mit Anfangsdaten versorgst. `Model.create()` takes an array of objects like `[{name: 'John', ...}, {...}, ...]` as the first argument, and saves them all in the db.
+Manchmal ist es notwendig, viele Instanzen deiner Modelle zu erstellen, z.B. wenn du eine Datenbank mit Anfangsdaten versorgst. `Model.create()` akzeptiert ein Array mit Objekten wie `[{name: 'John', ...}, {...}, ...]` als erstes Argument und speichert diese dann alle in der Datenbank.
 
 # --instructions--
 
-Modify the `createManyPeople` function to create many people using `Model.create()` with the argument `arrayOfPeople`.
+Verändere die `createManyPeople`-Funktion so, dass mehrere Personen – mit `Model.create()` und `arrayOfPeople` als Argument – erstellt werden.
 
 **Hinweis:** Du kannst das Modell, das du in der vorherigen Übung instanziiert hast, wiederverwenden.
 
 # --hints--
 
-Creating many db items at once should succeed
+Das gleichzeitige Anlegen vieler Datenbankeinträge sollte funktionieren
 
 ```js
 (getUserInput) =>

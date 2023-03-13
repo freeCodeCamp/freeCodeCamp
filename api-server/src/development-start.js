@@ -30,7 +30,7 @@ if (process.env.WEBHOOK_PROXY_URL) {
 nodemon({
   ext: 'js json',
   // --silent squashes an ELIFECYCLE error when the server exits
-  exec: 'npm run --silent babel-dev-server',
+  exec: 'pnpm run --silent babel-dev-server',
   watch: path.resolve(__dirname, './server'),
   spawn: true,
   env: {
