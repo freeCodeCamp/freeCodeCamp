@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const panelTitle = (children: React.ReactNode): JSX.Element => {
+export const PanelTitle = (children: React.ReactNode): JSX.Element => {
   return <h3 className='text-inherit mb-0 text-xl'>{children}</h3>;
 };
