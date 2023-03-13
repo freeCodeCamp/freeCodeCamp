@@ -776,18 +776,34 @@ const fullCertMap = Array.of(
   ...certMap
 );
 
-const projectMap = certMap.reduce((curr, acc) => {
+type ProjectMap = Record<
+  (typeof certMap)[number]['title'],
+  (typeof certMap)[number]['projects']
+>;
+
+const projectMap = certMap.reduce<ProjectMap>((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
   };
-});
-const legacyProjectMap = legacyCertMap.reduce((curr, acc) => {
+}, {} as ProjectMap);
+
+type LegacyProjectMap = Record<
+  (typeof legacyCertMap)[number]['title'],
+  (typeof legacyCertMap)[number]['projects']
+>;
+
+const legacyProjectMap = legacyCertMap.reduce<
+  Record<
+    (typeof legacyCertMap)[number]['title'],
+    (typeof legacyCertMap)[number]['projects']
+  >
+>((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
   };
-});
+}, {} as LegacyProjectMap);
 
 export {
   fullCertMap,
