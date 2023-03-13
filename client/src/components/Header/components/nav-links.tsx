@@ -50,7 +50,6 @@ const mapDispatchToProps = {
   openSignoutModal
 };
 
-
 function NavLinks({
   menuButtonRef,
   hideLanguageMenu,
