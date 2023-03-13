@@ -235,7 +235,7 @@ export type ProfileUI = {
   showTimeLine: boolean;
 };
 
-type ClaimedCertifications = {
+export type ClaimedCertifications = {
   is2018DataVisCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;

@@ -40,7 +40,7 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 
 // TODO: generate this automatically in a separate file
 // from the md/meta.json files for each cert and projects
-const certMap = [
+const legacyProjectMap = [
   {
     id: '561add10cb82ac38a17513be',
     title: 'Legacy Front End',
@@ -177,14 +177,7 @@ const certMap = [
       }
     ]
   },
-  {
-    id: '561add10cb82ac38a17213bd',
-    title: 'Legacy Full Stack',
-    certSlug: 'full-stack',
-    flag: 'isFullStackCert'
-    // Requirements are other certs and is
-    // handled elsewhere
-  },
+
   {
     id: '561add10cb82ac39a17513bc',
     title: 'Legacy Data Visualization',
@@ -292,7 +285,17 @@ const certMap = [
         certSlug: 'information-security-and-quality-assurance'
       }
     ]
-  },
+  }
+] as const;
+const legacyFullStack = {
+  id: '561add10cb82ac38a17213bd',
+  title: 'Legacy Full Stack',
+  certSlug: 'full-stack',
+  flag: 'isFullStackCert'
+  // Requirements are other certs and is
+  // handled elsewhere
+};
+const projectMap = [
   {
     id: '561add10cb82ac38a17513bc',
     title: 'Responsive Web Design',
@@ -714,7 +717,9 @@ const certMap = [
         certSlug: 'machine-learning-with-python-v7'
       }
     ]
-  },
+  }
+] as const;
+const upcomingChangesMap = [
   {
     id: '61531b20cc9dfa2741a5b800',
     title: 'College Algebra with Python',
@@ -765,23 +770,11 @@ function getJavaScriptAlgoPath(project: string) {
     : `${jsAlgoBase}/${project}`;
 }
 
-const titles = certMap.map(({ title }) => title);
-type Title = (typeof titles)[number];
-const legacyProjectMap: Partial<Record<Title, unknown>> = {};
-const projectMap: Partial<Record<Title, unknown>> = {};
-
-certMap.forEach(cert => {
-  // Filter out Legacy Full Stack so inputs for project
-  // URLs aren't rendered on the settings page
-  if (cert.title !== 'Legacy Full Stack') {
-    if (cert.title.startsWith('Legacy')) {
-      legacyProjectMap[cert.title] = cert.projects;
-      // temporary hiding of certs from settings page
-      // should do suggestion on line 33 and use front matter to hide it
-    } else if (!cert.title.startsWith('College Algebra')) {
-      projectMap[cert.title] = cert.projects;
-    }
-  }
-});
+const certMap = Array.of(
+  ...upcomingChangesMap,
+  ...legacyProjectMap,
+  legacyFullStack,
+  ...projectMap
+);
 
 export { certMap, legacyProjectMap, projectMap };
