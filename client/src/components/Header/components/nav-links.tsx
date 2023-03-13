@@ -50,7 +50,6 @@ const mapDispatchToProps = {
   openSignoutModal
 };
 
-// type NavlinkProps = <NavLinksProps, NavlinkStates>
 
 function NavLinks({
   menuButtonRef,
