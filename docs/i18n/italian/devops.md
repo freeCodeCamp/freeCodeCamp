@@ -427,48 +427,48 @@ sudo apt install build-essential
 
 Fare il provisioning delle VM con il codice
 
-1. Install `pnpm` globally.
+1. Install Node LTS.
 
-   ```console
-   curl -fsSL https://get.pnpm.io/install.sh | sh -
-   ```
+2. Install pnpm globally.
 
-2. Clone freeCodeCamp, setup env and keys.
+```console
+npm install -g pnpm
+```
 
-   ```console
-   git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-   cd freeCodeCamp
-   git checkout prod-current # or any other branch to be deployed
-   ```
+3. Clone freeCodeCamp, setup env and keys.
 
-3. Create the `.env` from the secure credentials storage.
+```console
+git clone https://github.com/freeCodeCamp/freeCodeCamp.git
+cd freeCodeCamp
+git checkout prod-current # or any other branch to be deployed
+```
 
-4. Create the `google-credentials.json` from the secure credentials storage.
+4. Create the `.env` from the secure credentials storage.
 
 5. Install dependencies
 
-   ```console
-   pnpm install
-   ```
+```console
+pnpm install
+```
 
 6. Setup pm2 `logrotate` and startup on boot
 
-   ```console
-   pnpm pm2 install pm2-logrotate
-   pnpm pm2 startup
-   ```
+```console
+pnpm pm2 install pm2-logrotate
+pnpm pm2 startup
+```
 
-7. Fai il build del server
+7. Build the server
 
-   ```console
-   pnpm prebuild && pnpm build:curriculum && pnpm build:server
-   ```
+```console
+pnpm prebuild && pnpm build:curriculum && pnpm build:server
+```
 
-8.  Avvia le istanze
+8.  Start Instances
 
-   ```console
-   pnpm start:server
-   ```
+```console
+pnpm start:server
+```
 
 ### Log e monitoraggio
 
@@ -488,25 +488,25 @@ Ogni tanto devono essere fatti dei deployment dei cambiamenti al codice alle ist
 
 #### 1. Aggiornamenti manuali - Usati per aggiornare dipendenze, variabili env.
 
-1. Ferma tutte le istanze
+1. Stop all instances
 
 ```console
 pnpm pm2 stop all
 ```
 
-2. Installa dipendenze
+2. Install dependencies
 
 ```console
 pnpm install
 ```
 
-3. Fai il build del server
+3. Build the server
 
 ```console
-pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
+pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
-4. Avvia le istanze
+4. Start Instances
 
 ```console
 pnpm start:server && pnpm pm2 logs
@@ -515,14 +515,24 @@ pnpm start:server && pnpm pm2 logs
 #### 2. Aggiornamenti continui - usati per cambiamenti logici al codice.
 
 ```console
-pnpm pm2 reload api-server/ecosystem.config.js && pnpm pm2 logs
+pnpm reload:server && pnpm pm2 logs
 ```
 
 > [!NOTE] Gli update continui a codice e logica sono gestiti dalle pipeline. Non dovresti aver bisogno di eseguire questi comandi. Sono qui per documentazione.
 
+#### 3. Updating Node
+
+1. Install new Node version
+
+2. Update pm2 to use the new version
+
+```console
+pnpm pm2 update
+```
+
 ## Lavora sulle istanze del client
 
-1. Installa strumenti di generazione per i binari di node (`node-gyp`) ecc.
+1. Install build tools for node binaries (`node-gyp`) etc.
 
 ```console
 sudo apt install build-essential
@@ -532,9 +542,9 @@ sudo apt install build-essential
 
 Fare provisioning delle VM con il codice
 
-1. Installare Node LTS.
+1. Install Node LTS.
 
-2. Aggiorna `npm` e installa PM2 e fai il setup di `logrotate` e avvio all'accensione
+2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
    npm i -g npm@8
@@ -544,16 +554,16 @@ Fare provisioning delle VM con il codice
    pm2 startup
    ```
 
-3. Clona la configurazione del client, l'env di configurazione e le chiavi.
+3. Clone client config, setup env and keys.
 
    ```console
    git clone https://github.com/freeCodeCamp/client-config.git client
    cd client
    ```
 
-   Avvia le istanze placeholder per il web client, queste verranno aggiornate con artefatti dalla pipeline Azure.
+   Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipeline.
 
-   > Todo: questo setup deve essere spostato a S3 o Azure Blob storage 
+   > Todo: This setup needs to move to S3 or Azure Blob storage 
    > 
    > ```console
    >    echo "serve -c ../serve.json -p 50505 www" > client-start-primary.sh
@@ -582,23 +592,23 @@ Ogni tanto devono essere fatti dei deployment dei cambiamenti al codice alle ist
 
 > [!ATTENTION] Le pipeline automatizzate al momento non gestiscono l'aggiornamento delle dipendenze. Dobbiamo fare un aggiornamento manuale prima di ogni esecuzione della pipeline di deployment.
 
-#### 1. Aggiornamenti manuali - Usati per aggiornare dipendenze, variabili env.
+#### 1. Manual Updates - Used for updating dependencies, env variables.
 
-1. Ferma tutte le istanze
+1. Stop all instances
 
    ```console
    pm2 stop all
    ```
 
-2. Installa o aggiorna le dipendenze
+2. Install or update dependencies
 
-3. Avvia le istanze
+3. Start Instances
 
    ```console
    pm2 start all --update-env && pm2 logs
    ```
 
-#### 2. Aggiornamenti continui - usati per cambiamenti logici al codice.
+#### 2. Rolling updates - Used for logical changes to code.
 
 ```console
 pm2 reload all --update-env && pm2 logs
@@ -618,7 +628,7 @@ Fare provisioning delle VM con il codice
 
 **Cluster NGINX:**
 
-1. Installa NGINX e configuralo dal repository.
+1. Install NGINX and configure from repository.
 
    ```console
    sudo su
@@ -633,13 +643,13 @@ Fare provisioning delle VM con il codice
    cd /etc/nginx
    ```
 
-2. Installa i certificati di origine di Cloudflare e la configurazione dell'applicazione di upstream.
+2. Install Cloudflare origin certificates and upstream application config.
 
-   Ottieni il certificati di origine di Cloudflare dallo storage sicuro e installa nelle posizioni richieste.
+   Get the Cloudflare origin certificates from the secure storage and install at required locations.
 
-   **O**
+   **OR**
 
-   Sposta i certificati esistenti:
+   Move over existing certificates:
 
    ```console
    # Local
@@ -651,34 +661,34 @@ Fare provisioning delle VM con il codice
    mv /tmp/ssl ./
    ```
 
-   Aggiorna le configurazioni di upstream:
+   Update Upstream Configurations:
 
    ```console
    vi configs/upstreams.conf
    ```
 
-   Aggiungi/aggiorna gli indirizzi IP source/origin dell'applicazione.
+   Add/update the source/origin application IP addresses.
 
-3. Fai il setup di network e firewall.
+3. Setup networking and firewalls.
 
-   Configura i firewall di Azure e `ufw` come necessario per indirizzi di origine d'ingresso.
+   Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
 
-4. Aggiungi la VM al pool del load balancer del backend.
+4. Add the VM to the load balancer backend pool.
 
-   Configura e aggiungi regole al load balancer se necessario. Potresti anche aver bisogno di aggiungere le VM al pool del load balancer del backend.
+   Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
 
 **Cluster Docker:**
 
-1. Installa Docker e configura dal repository
+1. Install Docker and configure from the repository
 
    ```console
    git clone https://github.com/freeCodeCamp/chat-config.git chat
    cd chat
    ```
 
-2. Configura le variabili d'ambiente (env) richieste e gli indirizzi IP delle istanze.
+2. Configure the required environment variables and instance IP addresses.
 
-3. Avvia il server rocket-chat
+3. Run rocket-chat server
 
    ```console
    docker-compose config
@@ -687,13 +697,13 @@ Fare provisioning delle VM con il codice
 
 ### Logging e monitoraggio
 
-1. Controlla lo stato dei servizi NGINX usando i comandi seguenti:
+1. Check status for NGINX service using the below command:
 
    ```console
    sudo systemctl status nginx
    ```
 
-2. Controlla lo stato delle istanze docker in esecuzione con:
+2. Check status for running docker instances with:
 
    ```console
    docker ps
@@ -705,13 +715,13 @@ Fare provisioning delle VM con il codice
 
 Le modifiche di configurazione alle nostre istanze NGINX sono mantenute su GitHub, queste dovrebbero essere distribuite su ogni istanza in questo modo:
 
-1. SSH nell'istanza ed entra con sudo
+1. SSH into the instance and enter sudo
 
    ```console
    sudo su
    ```
 
-2. Ottieni il codice di configurazione più recente.
+2. Get the latest config code.
 
    ```console
    cd /etc/nginx
@@ -719,7 +729,7 @@ Le modifiche di configurazione alle nostre istanze NGINX sono mantenute su GitHu
    git reset --hard origin/main
    ```
 
-3. Testa e ricarica la configurazione [con Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
+3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
 
    ```console
    nginx -t
@@ -728,38 +738,38 @@ Le modifiche di configurazione alle nostre istanze NGINX sono mantenute su GitHu
 
 **Cluster Docker:**
 
-1. SSH nell'istanza e naviga al percorso di configurazione della chat
+1. SSH into the instance and navigate to the chat config path
 
    ```console
    cd ~/chat
    ```
 
-2. Ottieni il codice di configurazione più recente.
+2. Get the latest config code.
 
    ```console
    git fetch --all --prune
    git reset --hard origin/main
    ```
 
-3. Ottieni l'immagine docker più recente da Rocket.Chat
+3. Pull down the latest docker image for Rocket.Chat
 
    ```console
    docker-compose pull
    ```
 
-4. Aggiorna le istanze in esecuzione
+4. Update the running instances
 
    ```console
    docker-compose up -d
    ```
 
-5. Verifica che le istanze siano in funzione
+5. Validate the instances are up
 
    ```console
    docker ps
    ```
 
-6. Pulisci risorse estranee
+6. Cleanup extraneous resources
 
    ```console
    docker system prune --volumes
@@ -778,7 +788,7 @@ Le modifiche di configurazione alle nostre istanze NGINX sono mantenute su GitHu
    Are you sure you want to continue? [y/N] y
    ```
 
-   Seleziona yes (y) per rimuovere tutto quello che non è in uso. Questo rimuoverà tutti i contenitori che sono stati arrestati, tutti i network e volumi che non sono utilizzati da almeno un container, e le cache di immagini e build scollegate.
+   Select yes (y) to remove everything that is not in use. This will remove all stopped containers, all networks and volumes not used by at least one container, and all dangling images and build caches.
 
 ## Lavorare sugli strumenti dei contributori
 
@@ -880,32 +890,32 @@ Vai su [Azure Devops](https://dev.azure.com/freeCodeCamp-org) e registra l'agent
 
 Attualmente aggiornare gli agent richiede che siano rimossi e riconfigurati. Questo è richiesto perché possano ottenere valori `PATH` e altre variabili d'ambiente di sistema. Dobbiame farlo per aggiornare Node.js sulle VM target di deployment.
 
-1. Naviga e controlla lo status del servizio
+1. Navigate and check status of the service
 
    ```console
    cd ~/azagent
    sudo ./svc.sh status
    ```
 
-2. Ferma il servizio
+2. Stop the service
 
    ```console
    sudo ./svc.sh stop
    ```
 
-3. Disinstalla il servizio
+3. Uninstall the service
 
    ```console
    sudo ./svc.sh uninstall
    ```
 
-4. Rimuovi l'agente dal pool della pipeline
+4. Remove the agent from the pipeline pool
 
    ```console
    ./config.sh remove
    ```
 
-5. Rimuovi i file di config
+5. Remove the config files
 
    ```console
    cd ~
@@ -918,32 +928,32 @@ Una volta completati gli step precedenti potrai ripetere gli stesi passi per ins
 
 Usiamo uno [strumento CLI](https://github.com/freecodecamp/sendgrid-email-blast) per inviare la nostra newsletter settimanale. Per avviare e iniziare il processo:
 
-1. Entra in DigitalOcean e avvia nuovi droplet sotto il progetto `Sendgrid`. Usa lo snapshot di Ubuntu Sendgrid con la data più recente. Questo viene pre-caricato con lo strumento CLI e lo script per ottenere le email dal database. Con il volume corrente, tre droplet sono sufficienti per mandare le email in un tempo decente.
+1. Sign in to DigitalOcean, and spin up new droplets under the `Sendgrid` project. Use the Ubuntu Sendgrid snapshot with the most recent date. This comes pre-loaded with the CLI tool and the script to fetch emails from the database. With the current volume, three droplets are sufficient to send the emails in a timely manner.
 
-2. Setta lo script per ottenere la lista delle email.
+2. Set up the script to fetch the email list.
 
    ```console
    cd /home/freecodecamp/scripts/emails
    cp sample.env .env
    ```
 
-   Avrai bisogno di sostituire i valori segnaposto nel file `.env` con le tue credenziali.
+   You will need to replace the placeholder values in the `.env` file with your credentials.
 
-3. Esegui lo script.
+3. Run the script.
 
    ```console
    node get-emails.js emails.csv
    ```
 
-   Questo salverà la lista delle email in un file `emails.csv`.
+   This will save the email list in an `emails.csv` file.
 
-4. Separa le email in più file a seconda del numero di droplet di cui hai bisogno. Questo è più facile da fare usando `scp` per copiare la lista in locale e usare il tuo editor di testi preferito per separarle in file multipli. Ogni file avrà bisogno del header `email,unsubscribeId`.
+4. Break the emails down into multiple files, depending on the number of droplets you need. This is easiest to do by using `scp` to pull the email list locally and using your preferred text editor to split them into multiple files. Each file will need the `email,unsubscribeId` header.
 
-5. Spostati alla directory CLI con `cd /home/sendgrid-email-blast` e configura lo strumento [seguendo la documentazione](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
+5. Switch to the CLI directory with `cd /home/sendgrid-email-blast` and configure the tool [per the documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
 
-6. Esegui lo strumento per mandare le email, seguendo la [documentazione d'uso](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
+6. Run the tool to send the emails, following the [usage documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
 
-7. Quando il email blast è completato, verifica che nessuna email abbia fallito prima di distruggere i droplet.
+7. When the email blast is complete, verify that no emails have failed before destroying the droplets.
 
 # Manuale di Volo - Aggiunta di istanze della pubblicazione per nuove lingue
 
@@ -951,12 +961,12 @@ Usiamo uno [strumento CLI](https://github.com/freecodecamp/sendgrid-email-blast)
 
 Utilizziamo un [tema](https://github.com/freeCodeCamp/news-theme) personalizzato per la nostra pubblicazione. L'aggiunta delle seguenti modifiche al tema consente l'aggiunta di nuove lingue.
 
-1. Includere una espressione `else if` per il nuovo [codice ISO della lingua](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [`setup-local.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
-2. Crea una cartella di configurazione iniziale duplicando la cartella [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) e cambiando il suo nome con il codice della nuova lingua. (`en` —> `es` per Spagnolo)
-3. Dentro la nuova cartella, cambia i nomi delle variabili in `main.js` e `footer.js` con il codice della nuova lingua (`enMain` —> `esMain` per spagnolo)
-4. Duplica [`locals/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) e rinominalo con il codice della nuova lingua.
-5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), aggiungi gli script per i file config appena creati.
-6. Aggiungi lo script `day.js` della lingua da [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) a [freecodecamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
+1. Include an `else if` statement for the new [ISO language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
+2. Create an initial config folder by duplicating the [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) folder and changing its name to the new language code. (`en` —> `es` for Spanish)
+3. Inside the new language folder, change the variable names in `main.js` and `footer.js` to the relevant language short code (`enMain` —> `esMain` for Spanish)
+4. Duplicate the [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) and rename it to the new language code.
+5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), add scripts for the newly created config files.
+6. Add the related language `day.js` script from [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) to the [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
 
 ### Modifiche alla dashboard di Ghost
 
