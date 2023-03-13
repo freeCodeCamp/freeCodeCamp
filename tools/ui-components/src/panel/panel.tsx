@@ -3,14 +3,12 @@ import React, { createContext, useMemo } from 'react';
 import { PanelProps } from './types';
 
 type PanelContextProps = Pick<PanelProps, 'bsStyle'>;
-const PanelContext = createContext<PanelContextProps>({});
+export const PanelContext = createContext<PanelContextProps>({});
 
 const styles = 'border border-solid border-foreground-primary shadow-sm mb-6';
 const primaryStyle = 'border-background-primary';
 const dangerStyle = 'border-foreground-danger';
 const infoStyle = 'border-sky-300';
-// const primaryHeadingStyle = 'text-background-primary'
-// const infoHeadingStyle = 'bg-sky-200 text-sky-500'
 
 export const Panel = ({
   children,
