@@ -16,7 +16,7 @@ import {
   AUTH0_DOMAIN,
   NODE_ENV,
   PORT,
-  NEW_API_MONGOHQ_URL,
+  MONGOHQ_URL,
   SESSION_SECRET
 } from './utils/env';
 
@@ -43,7 +43,7 @@ const start = async () => {
       secure: NODE_ENV !== 'development'
     },
     store: MongoStore.create({
-      mongoUrl: NEW_API_MONGOHQ_URL
+      mongoUrl: MONGOHQ_URL
     })
   });
 
