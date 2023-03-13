@@ -1,9 +1,9 @@
 {
   "name": "Build a Financial Calculator",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "build-a-financial-calculator",
   "order": 17,
-  "time": "150 hours",
+  "time": "30 hours",
   "template": "",
   "required": [],
   "superBlock": "college-algebra-with-python",
