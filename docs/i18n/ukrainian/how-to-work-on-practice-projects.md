@@ -34,7 +34,7 @@
 
 #### Створення наступного кроку
 
-Натисніть цю кнопку, щоб додати новий крок в кінці проєкту. У цьому кроці використовуватиметься код попереднього кроку як зерно.
+Натисніть цю кнопку, щоб додати новий крок в кінці проєкту. У цьому кроці використовуватиметься код попереднього кроку як зразок.
 
 #### Створення порожнього кроку
 
@@ -66,7 +66,7 @@
 
 ### create-next-step
 
-A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
+Це разовий скрипт, який автоматично додасть наступний крок на основі останнього кроку проєкту. Початковий код завдання використовуватиме початковий код попереднього кроку.
 
 #### Як запустити скрипт:
 
@@ -79,7 +79,7 @@ pnpm run create-next-step
 
 ### create-empty-steps
 
-A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
+Це разовий скрипт, який автоматично додасть вказану кількість кроків. Початковий код буде порожнім для всіх створених кроків.
 
 **Примітка:** цей скрипт також запускає [update-step-titles](#update-step-titles).
 
@@ -89,12 +89,12 @@ A one-off script that automatically adds a specified number of steps. The challe
 2. Виконайте наступну команду:
 
 ```bash
-pnpm run create-empty-steps X # where X is the number of steps to create.
+pnpm run create-empty-steps X # де X є кількістю кроків, які потрібно створити.
 ```
 
 ### insert-step
 
-A one-off script that automatically adds a new step at a specified position, incrementing all subsequent steps (both their titles and in their meta.json). The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
+Це разовий скрипт, який автоматично додає новий крок у визначеному місці, збільшуючи наступні кроки (їхні заголовки та meta.json). Початковий код завдання використовуватиме початковий код попереднього кроку, вилучивши маркери редагованих регіонів (ERM).
 
 **Примітка:** цей скрипт також запускає [update-step-titles](#update-step-titles).
 
@@ -109,7 +109,7 @@ pnpm run insert-step X # де X є місцем, куди потрібно вс�
 
 ### delete-step
 
-A one-off script that deletes an existing step, decrementing all subsequent steps (both their titles and in their meta.json)
+Це разовий скрипт, який видаляє наявний крок, зменшуючи наступні кроки (їхні заголовки та meta.json)
 
 **Примітка:** цей скрипт також запускає [update-step-titles](#update-step-titles).
 
@@ -124,7 +124,7 @@ pnpm run delete-step X # де X є номером кроку, який потр�
 
 ### update-step-titles
 
-A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
+Це разовий скрипт, який автоматично оновлює початковий матеріал у файлах розмітки проєкту, щоб вони відповідали meta.json. Він гарантує, що заголовки кроків (та dashedName) відповідають challengeOrder.
 
 #### Як запустити скрипт:
 

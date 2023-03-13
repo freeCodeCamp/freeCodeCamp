@@ -91,7 +91,7 @@ Una volta che hai configurato Docker Desktop per lavorare con WSL2, segui questi
 
 4. Ora puoi accedere al servizio sia da Windows che da Ubuntu da `mongodb://localhost:27017`.
 
-## Installing Node.js and pnpm
+## Installazione di Node.js e pnpm
 
 Raccomandiamo di installare la release LTS di Node.js con un gestore di versioni di node (node version manager): [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
@@ -111,7 +111,7 @@ nvm install 14
 nvm use 12
 ```
 
-Node.js comes bundled with `npm`, which you can use to install `pnpm`:
+Node.js ha in dotazione `npm`, che puoi usare per installare `pnpm`:
 
 ```console
 npm install -g pnpm
