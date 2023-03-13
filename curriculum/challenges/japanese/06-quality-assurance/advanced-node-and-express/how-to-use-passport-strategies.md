@@ -8,7 +8,7 @@ dashedName: how-to-use-passport-strategies
 
 # --description--
 
-In the `index.pug` file supplied, there is a login form. It is hidden because of the inline JavaScript `if showLogin` with the form indented after it.
+`index.pug` ファイルには、ログインフォームがあります。 It is hidden because of the inline JavaScript `if showLogin` with the form indented after it.
 
 In the `res.render` for that page, add a new variable to the object, `showLogin: true`. ページを更新すると、フォームが表示されます！ This form is set up to **POST** on `/login`. So, this is where you should set up to accept the POST request and authenticate the user.
 
