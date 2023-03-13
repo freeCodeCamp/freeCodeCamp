@@ -1,14 +1,16 @@
 import {
   faCheckSquare,
-  faHeart,
   faSquare,
-  faExternalLinkAlt
+  faExternalLinkAlt,
+  faHeart
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Fragment, useRef } from 'react';
+import Media from 'react-responsive';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { clientLocale, radioLocation } from '../../../../../config/env.json';
+import { DONATE_NAV_EXPOSED_WIDTH } from '../../../../../config/misc';
 import {
   availableLangs,
   LangNames,
@@ -335,17 +337,32 @@ function NavLinks({
           </div>
         </li>
       ) : (
-        <li key='donate'>
-          <Link
-            className='nav-link'
-            onKeyDown={handleMenuKeyDown}
-            sameTab={false}
-            to='/donate'
-          >
-            {t('buttons.donate')}
-          </Link>
-        </li>
+        <Media maxWidth={DONATE_NAV_EXPOSED_WIDTH}>
+          <li key='donate'>
+            <Link
+              className='nav-link'
+              onKeyDown={handleMenuKeyDown}
+              sameTab={false}
+              to='/donate'
+              data-test-label='dropdown-donate-button'
+              nav-donate-button
+            >
+              {t('buttons.donate')}
+            </Link>
+          </li>
+        </Media>
       )}
+      <li key='learn'>
+        <Link
+          className='nav-link'
+          onKeyDown={handleMenuKeyDown}
+          sameTab={false}
+          to='/donate'
+        >
+          {t('buttons.donate')}
+        </Link>
+      </li>
+
       <li key='learn'>
         <Link className='nav-link' onKeyDown={handleMenuKeyDown} to='/learn'>
           {t('buttons.curriculum')}
