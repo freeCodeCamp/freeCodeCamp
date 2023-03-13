@@ -41,4 +41,5 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+          pnpm run create:config
           pnpm run knip

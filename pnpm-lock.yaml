@@ -332,6 +332,7 @@ importers:
       core-js: 2.6.12
       crypto-browserify: 3.12.0
       date-fns: 2.29.3
+      dotenv: 16.0.3
       enzyme: 3.11.0
       enzyme-adapter-react-16: 1.15.7
       eslint: '7'
@@ -548,6 +549,7 @@ importers:
       chokidar: 3.5.3
       copy-webpack-plugin: 9.1.0_webpack@5.76.1
       core-js: 2.6.12
+      dotenv: 16.0.3
       gatsby-plugin-webpack-bundle-analyser-v2: 1.1.30_gatsby@3.15.0
       jest-json-schema-extended: 1.0.1
       monaco-editor-webpack-plugin: 4.2.0_iq5jyfjbskrhrr45x6xdwyuq74
@@ -560,7 +562,12 @@ importers:
       webpack-cli: 4.10.0_webpack@5.76.1
 
   client/plugins/fcc-source-challenges:
-    specifiers: {}
+    specifiers:
+      chokidar: 3.5.3
+      readdirp: 3.6.0
+    devDependencies:
+      chokidar: 3.5.3
+      readdirp: 3.6.0
 
   client/plugins/gatsby-remark-node-identity:
     specifiers: {}
@@ -715,11 +722,11 @@ importers:
       js-yaml: 3.14.1
       lodash: 4.17.21
       mdast-builder: 1.1.1
-      mdast-util-from-markdown: 0.8.5
-      mdast-util-gfm: 0.1.2
+      mdast-util-directive: 1.0.1
       mdast-util-gfm-strikethrough: 0.2.3
       mdast-util-gfm-table: 0.1.6
       mdast-util-to-hast: 9.1.2
+      mdast-util-to-markdown: 0.6.5
       micromark-extension-gfm-strikethrough: 0.6.5
       micromark-extension-gfm-table: 0.4.3
       remark: 13.0.0
@@ -746,11 +753,11 @@ importers:
       js-yaml: 3.14.1
       lodash: 4.17.21
       mdast-builder: 1.1.1
-      mdast-util-from-markdown: 0.8.5
-      mdast-util-gfm: 0.1.2
+      mdast-util-directive: 1.0.1
       mdast-util-gfm-strikethrough: 0.2.3
       mdast-util-gfm-table: 0.1.6
       mdast-util-to-hast: 9.1.2
+      mdast-util-to-markdown: 0.6.5
       micromark-extension-gfm-strikethrough: 0.6.5
       micromark-extension-gfm-table: 0.4.3
       remark: 13.0.0
