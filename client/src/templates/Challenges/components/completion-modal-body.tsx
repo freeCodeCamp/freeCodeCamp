@@ -2,7 +2,7 @@ import BezierEasing from 'bezier-easing';
 import React, { PureComponent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import GreenPass from '../../../assets/icons/green-pass';
-import { certMap } from '../../../resources/cert-and-project-map';
+import { fullCertMap } from '../../../resources/cert-and-project-map';
 
 interface CompletionModalBodyProps {
   block: string;
@@ -84,7 +84,7 @@ export class CompletionModalBody extends PureComponent<
       t
     } = this.props;
     const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-    const isCertificationProject = certMap.some(cert => {
+    const isCertificationProject = fullCertMap.some(cert => {
       // @ts-expect-error If `projects` does not exist, no consequences
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
       return cert.projects?.some(

@@ -18,7 +18,7 @@ import {
 } from '../../../redux/selectors';
 import { User, Steps } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings/actions';
-import { certMap } from '../../../resources/cert-and-project-map';
+import { fullCertMap } from '../../../resources/cert-and-project-map';
 
 interface CertChallengeProps {
   // TODO: create enum/reuse SuperBlocks enum somehow
@@ -34,7 +34,7 @@ interface CertChallengeProps {
   currentCerts: Steps['currentCerts'];
   superBlock: SuperBlocks;
   t: TFunction;
-  title: (typeof certMap)[number]['title'];
+  title: (typeof fullCertMap)[number]['title'];
   user: User;
   verifyCert: typeof verifyCert;
 }
@@ -81,7 +81,7 @@ const CertChallenge = ({
   const [userLoaded, setUserLoaded] = useState(false);
 
   // @ts-expect-error Typescript is confused
-  const certSlug = certMap.find(x => x.title === title).certSlug;
+  const certSlug = fullCertMap.find(x => x.title === title).certSlug;
 
   useEffect(() => {
     const { pending, complete } = fetchState;

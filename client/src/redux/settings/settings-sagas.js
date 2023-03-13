@@ -14,7 +14,7 @@ import {
   certTypes
 } from '../../../../config/certification-settings';
 import { createFlashMessage } from '../../components/Flash/redux';
-import { certMap } from '../../resources/cert-and-project-map';
+import { fullCertMap } from '../../resources/cert-and-project-map';
 import {
   getUsernameExists,
   putUpdateMyAbout,
@@ -171,7 +171,7 @@ function* validateUsernameSaga({ payload }) {
 
 function* verifyCertificationSaga({ payload }) {
   // check redux if can claim cert before calling backend
-  const currentCert = certMap.find(cert => cert.certSlug === payload);
+  const currentCert = fullCertMap.find(cert => cert.certSlug === payload);
   const completedChallenges = yield select(completedChallengesSelector);
   const certTitle = currentCert?.title || payload;
 
