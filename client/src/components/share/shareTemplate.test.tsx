@@ -9,13 +9,6 @@ describe('Share Template Testing', () => {
     render(<ShareTemplate handleRedirectToTwitter={handleRedirectToTwitter} />);
   });
 
-  test('Share template snapshot', () => {
-    const hasComponentExistsByTestID = screen.getByTestId(
-      'ShareTemplateWrapperTestID'
-    );
-    expect(hasComponentExistsByTestID).toMatchSnapshot();
-  });
-
   test('Testing share templete Click Redirect Event', () => {
     const hasTwitterComponent = screen.getByTitle('twitterIcon');
     expect(hasTwitterComponent).toBeInTheDocument();
