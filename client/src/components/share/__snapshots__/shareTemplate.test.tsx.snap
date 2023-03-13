@@ -6,7 +6,7 @@ exports[`Share Template Testing Share template snapshot 1`] = `
   data-testid="ShareTemplateWrapperTestID"
 >
   <svg
-    aria-labelledby="svg-inline--fa-title-xsSSUhYRvkLJ"
+    aria-labelledby="svg-inline--fa-title-7SzxhRn3gnu5"
     class="svg-inline--fa fa-twitter fa-1x "
     data-icon="twitter"
     data-prefix="fab"
@@ -15,7 +15,7 @@ exports[`Share Template Testing Share template snapshot 1`] = `
     xmlns="http://www.w3.org/2000/svg"
   >
     <title
-      id="svg-inline--fa-title-xsSSUhYRvkLJ"
+      id="svg-inline--fa-title-7SzxhRn3gnu5"
     >
       twitterIcon
     </title>
