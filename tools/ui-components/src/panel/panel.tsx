@@ -5,7 +5,7 @@ import { PanelProps } from './types';
 type PanelContextProps = Pick<PanelProps, 'bsStyle'>;
 export const PanelContext = createContext<PanelContextProps>({});
 
-const styles = 'border-3 border-solid border-foreground-primary shadow-sm mb-6';
+const styles = 'border-1 border-solid border-foreground-primary shadow-sm mb-6';
 const primaryStyle = 'border-background-primary';
 const dangerStyle = 'border-foreground-danger';
 const infoStyle = 'border-sky-300';
