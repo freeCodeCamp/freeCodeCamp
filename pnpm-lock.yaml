@@ -323,6 +323,7 @@ importers:
       assert: 2.0.0
       autoprefixer: 10.4.14
       babel-loader: 8.3.0
+      babel-plugin-macros: 3.1.0
       babel-plugin-preval: 5.1.0
       babel-plugin-prismjs: 2.1.0
       babel-plugin-transform-imports: 2.0.0
@@ -549,6 +550,7 @@ importers:
       '@types/testing-library__jest-dom': 5.14.5
       '@types/validator': 13.7.12
       autoprefixer: 10.4.14_postcss@8.4.21
+      babel-plugin-macros: 3.1.0
       babel-plugin-transform-imports: 2.0.0
       chokidar: 3.5.3
       copy-webpack-plugin: 9.1.0_webpack@5.76.1
