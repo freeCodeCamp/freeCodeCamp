@@ -6,9 +6,9 @@
   "dependencies": {
     "@fastify/cookie": "^8.3.0",
     "@fastify/middie": "8.1",
-    "@fastify/mongodb": "6.2.0",
     "@fastify/session": "^10.1.1",
-    "connect-mongo": "^4.6.0",
+    "@prisma/client": "4.10.1",
+    "connect-mongo": "4.6.0",
     "fastify": "4.14.1",
     "fastify-auth0-verify": "^1.0.0",
     "fastify-plugin": "^4.3.0",
@@ -40,7 +40,12 @@
     "build": "tsc",
     "develop": "nodemon index.ts",
     "start": "NODE_ENV=production node index.js",
-    "test": "node --test -r ts-node/register **/*.test.ts"
+    "test": "node --test -r ts-node/register **/*.test.ts",
+    "prisma": "MONGOHQ_URL=mongodb://localhost:27017/freecodecamp?directConnection=true prisma",
+    "postinstall": "prisma generate"
   },
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "devDependencies": {
+    "prisma": "4.10.1"
+  }
 }
