@@ -800,8 +800,14 @@ const legacyProjectMap = legacyCertMap.reduce((acc, curr) => {
   };
 }, {} as LegacyProjectMap);
 
+const fullProjectMap = {
+  ...legacyProjectMap,
+  ...projectMap
+};
+
 export {
   fullCertMap,
+  fullProjectMap,
   certMap,
   legacyCertMap,
   upcomingCertMap,

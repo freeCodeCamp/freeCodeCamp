@@ -12,7 +12,8 @@ import ProjectPreviewModal from '../../templates/Challenges/components/project-p
 import { openModal } from '../../templates/Challenges/redux/actions';
 import {
   projectMap,
-  legacyProjectMap
+  legacyProjectMap,
+  fullProjectMap
 } from '../../resources/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
@@ -199,18 +200,10 @@ function CertificationSettings(props: CertificationSettingsProps) {
     );
   };
 
-  type ProjectsMap =
-    | {
-        certName: keyof typeof projectMap;
-        projectsMap: typeof projectMap;
-      }
-    | {
-        certName: keyof typeof legacyProjectMap;
-        projectsMap: typeof legacyProjectMap;
-      };
-  function renderCertifications({ certName, projectsMap }: ProjectsMap) {
+  type CertName = keyof typeof projectMap | keyof typeof legacyProjectMap;
+  function renderCertifications(certName: CertName) {
     const { t } = props;
-    const { certSlug } = projectsMap[certName][0];
+    const { certSlug } = fullProjectMap[certName][0];
     return (
       <FullWidthRow key={certName}>
         <Spacer size='medium' />
@@ -227,8 +220,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
           <tbody>
             {renderProjectsFor({
               certName,
-              isCert: getUserIsCertMap()[certName],
-              projectsMap
+              isCert: getUserIsCertMap()[certName]
             })}
           </tbody>
         </Table>
@@ -237,11 +229,13 @@ function CertificationSettings(props: CertificationSettingsProps) {
   }
   function renderProjectsFor({
     certName,
-    isCert,
-    projectsMap
-  }: ProjectsMap & { isCert: boolean }) {
+    isCert
+  }: {
+    certName: CertName;
+    isCert: boolean;
+  }) {
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
-    const { certSlug } = projectsMap[certName][0];
+    const { certSlug } = fullProjectMap[certName][0];
     const certLocation = `/certification/${username}/${certSlug}`;
     const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
@@ -252,7 +246,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
-    return projectsMap[certName]
+    return fullProjectMap[certName]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8 col-xs-8'>
@@ -401,14 +395,10 @@ function CertificationSettings(props: CertificationSettingsProps) {
     <ScrollableAnchor id='certification-settings'>
       <section className='certification-settings'>
         <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-        {certifications.map(certName =>
-          renderCertifications({ certName, projectsMap: projectMap })
-        )}
+        {certifications.map(certName => renderCertifications(certName))}
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
         {renderLegacyFullStack()}
-        {legacyCertifications.map(certName =>
-          renderCertifications({ certName, projectsMap: legacyProjectMap })
-        )}
+        {legacyCertifications.map(certName => renderCertifications(certName))}
         <ProjectModal
           {...{
             projectTitle,
