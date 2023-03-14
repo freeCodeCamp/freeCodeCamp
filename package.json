@@ -30,7 +30,7 @@
     "challenge-editor": "npm-run-all -p challenge-editor:*",
     "challenge-editor:client": "cd ./tools/challenge-editor/client && pnpm start",
     "challenge-editor:server": "cd ./tools/challenge-editor/api && pnpm start",
-    "clean": "npm-run-all -p clean:*",
+    "clean": "npm-run-all -p clean:client clean:server clean:curriculum --serial clean:packages",
     "clean-and-develop": "pnpm run clean && pnpm install && pnpm run develop",
     "clean:client": "cd ./client && pnpm run clean",
     "clean:curriculum": "rimraf ./config/curriculum.json",
@@ -117,6 +117,7 @@
     "@types/node": "18.15.0",
     "@types/store": "2.0.2",
     "babel-eslint": "10.1.0",
+    "babel-jest": "29.5.0",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
     "cypress": "10.11.0",
@@ -142,7 +143,6 @@
     "markdownlint": "0.27.0",
     "mock-fs": "5.2.0",
     "npm-run-all": "4.1.5",
-    "ora": "5.4.1",
     "prettier": "^2.8.0",
     "prismjs": "1.29.0",
     "process": "0.11.10",
@@ -151,6 +151,7 @@
     "store": "2.0.12",
     "ts-node": "10.9.1",
     "typescript": "4.9.5",
-    "webpack-bundle-analyzer": "4.8.0"
+    "webpack-bundle-analyzer": "4.8.0",
+    "yargs": "17.7.1"
   }
 }
