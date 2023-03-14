@@ -13,7 +13,9 @@ import { openModal } from '../../templates/Challenges/redux/actions';
 import {
   projectMap,
   legacyProjectMap,
-  fullProjectMap
+  fullProjectMap,
+  ProjectMap,
+  LegacyProjectMap
 } from '../../resources/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
@@ -39,13 +41,11 @@ const mapDispatchToProps = {
 
 // Safety: projectMap definitely has projectMap keys,
 // and we are only interested in these keys
-const certifications = Object.keys(projectMap) as Array<
-  keyof typeof projectMap
->;
+const certifications = Object.keys(projectMap) as Array<keyof ProjectMap>;
 // Safety: legacyProjectMap definitely has legacyProjectMap keys,
 // and we are only interested in these keys
 const legacyCertifications = Object.keys(legacyProjectMap) as Array<
-  keyof typeof legacyProjectMap
+  keyof LegacyProjectMap
 >;
 const isCertSelector = ({
   is2018DataVisCert,
@@ -204,7 +204,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     );
   };
 
-  type CertName = keyof typeof projectMap | keyof typeof legacyProjectMap;
+  type CertName = keyof ProjectMap | keyof LegacyProjectMap;
   function renderCertifications(certName: CertName) {
     const { t } = props;
     const { certSlug } = fullProjectMap[certName][0];

@@ -776,7 +776,7 @@ const fullCertMap = Array.of(
   ...certMap
 );
 
-type ProjectMap = Record<
+export type ProjectMap = Record<
   (typeof certMap)[number]['title'],
   (typeof certMap)[number]['projects']
 >;
@@ -788,7 +788,7 @@ const projectMap = certMap.reduce((acc, curr) => {
   };
 }, {} as ProjectMap);
 
-type LegacyProjectMap = Record<
+export type LegacyProjectMap = Record<
   (typeof legacyCertMap)[number]['title'],
   (typeof legacyCertMap)[number]['projects']
 >;
