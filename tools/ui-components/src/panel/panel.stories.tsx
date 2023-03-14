@@ -33,6 +33,9 @@ const Child = () => {
 const Template: Story<PanelProps> = args => <Panel {...args} />;
 
 export const Default = Template.bind({});
+Default.args = {
+  children: <Child />
+};
 
 export const Primary = Template.bind({});
 Primary.args = {
