@@ -16,12 +16,14 @@ const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
     { className, validationState, controlId, as, ...props },
     ref
   ): JSX.Element => {
-    const defaultClasses = 'mb-3.5';
     const context = useMemo(() => ({ controlId }), [controlId]);
+
     const componentClass = as;
     const Component = componentClass || 'div';
 
+    const defaultClasses = 'mb-3.5';
     const classes = [defaultClasses, className].join(' ');
+
     return (
       <FormContext.Provider value={context}>
         <Component
