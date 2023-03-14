@@ -143,7 +143,6 @@
     "markdownlint": "0.27.0",
     "mock-fs": "5.2.0",
     "npm-run-all": "4.1.5",
-    "ora": "5.4.1",
     "prettier": "^2.8.0",
     "prismjs": "1.29.0",
     "process": "0.11.10",
