@@ -4,7 +4,7 @@ import {
   legacyProjectMap,
   projectMap
 } from '../../resources/cert-and-project-map';
-import { CertificationSettings } from './certification';
+import CertificationSettings from './certification';
 
 const props = { t: val => val };
 
