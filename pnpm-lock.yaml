@@ -56,6 +56,7 @@ importers:
       ts-node: 10.9.1
       typescript: 4.9.5
       webpack-bundle-analyzer: 4.8.0
+      yargs: 17.7.1
     dependencies:
       dotenv: 16.0.3
       invariant: 2.2.4
@@ -110,6 +111,7 @@ importers:
       ts-node: 10.9.1_lwgqdwokjtwlohdqtbb6s252kq
       typescript: 4.9.5
       webpack-bundle-analyzer: 4.8.0
+      yargs: 17.7.1
 
   api:
     specifiers:
@@ -262,6 +264,7 @@ importers:
     specifiers:
       '@babel/plugin-proposal-export-default-from': 7.18.10
       '@babel/plugin-proposal-function-bind': 7.18.9
+      '@babel/plugin-syntax-dynamic-import': 7.8.3
       '@babel/plugin-transform-runtime': ^7.19.6
       '@babel/polyfill': 7.12.1
       '@babel/preset-env': 7.20.2
@@ -513,6 +516,7 @@ importers:
       uuid: 8.3.2
       validator: 13.9.0
     devDependencies:
+      '@babel/plugin-syntax-dynamic-import': 7.8.3_@babel+core@7.20.12
       '@babel/types': 7.20.7
       '@codesee/babel-plugin-instrument': 0.531.0_@babel+core@7.20.12
       '@codesee/tracker': 0.531.0
@@ -589,6 +593,7 @@ importers:
       chai: 4.3.7
       cross-env: 7.0.3
       css: 3.0.0
+      glob: 8.1.0
       invariant: 2.2.4
       joi: 17.8.3
       joi-objectid: 3.0.1
@@ -617,6 +622,7 @@ importers:
       chai: 4.3.7
       cross-env: 7.0.3
       css: 3.0.0
+      glob: 8.1.0
       invariant: 2.2.4
       joi: 17.8.3
       joi-objectid: 3.0.1
@@ -11968,6 +11974,15 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
+
+  /cliui/8.0.1:
+    resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+      wrap-ansi: 7.0.0
+    dev: true
 
   /clone-deep/4.0.1:
     resolution: {integrity: sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==}
@@ -30531,10 +30546,15 @@ packages:
   /yargs-parser/20.2.4:
     resolution: {integrity: sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA==}
     engines: {node: '>=10'}
+    dev: true
 
   /yargs-parser/20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
     engines: {node: '>=10'}
+
+  /yargs-parser/21.1.1:
+    resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
+    engines: {node: '>=12'}
     dev: true
 
   /yargs-unparser/2.0.0:
@@ -30573,7 +30593,20 @@ packages:
       require-directory: 2.1.1
       string-width: 4.2.3
       y18n: 5.0.8
-      yargs-parser: 20.2.4
+      yargs-parser: 20.2.9
+
+  /yargs/17.7.1:
+    resolution: {integrity: sha512-cwiTb08Xuv5fqF4AovYacTFNxk62th7LKJ6BL9IGUpTJrWoU7/7WdQGTP2SjKf1dUNBGzDd28p/Yfs/GI6JrLw==}
+    engines: {node: '>=12'}
+    dependencies:
+      cliui: 8.0.1
+      escalade: 3.1.1
+      get-caller-file: 2.0.5
+      require-directory: 2.1.1
+      string-width: 4.2.3
+      y18n: 5.0.8
+      yargs-parser: 21.1.1
+    dev: true
 
   /yauzl/2.10.0:
     resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
