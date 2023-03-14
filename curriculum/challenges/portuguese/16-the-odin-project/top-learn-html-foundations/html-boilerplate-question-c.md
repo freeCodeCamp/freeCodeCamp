@@ -1,6 +1,5 @@
 ---
 id: 637f4e2f72c65bc8e73dfe22
-videoId: LGQuIIv2RVA
 title: Questão C sobre o boilerplate do HTML
 challengeType: 15
 dashedName: html-boilerplate-question-c
@@ -11,7 +10,7 @@ dashedName: html-boilerplate-question-c
 O elemento `<head>` é onde você coloca as metainformações importantes sobre suas páginas da web, além de coisas necessárias para que suas páginas da web sejam renderizadas corretamente no navegador. Dentro de `<head>`, você não deve usar elementos que exibam conteúdo na página.
 
 ## O elemento meta charset
-Você deve sempre ter a tag `meta` para a codificação de conjunto de caracteres (charset) da página no elemento head: `<meta charset="utf-8">`.
+You should always have the `meta` tag for the `charset` encoding of the webpage in the `head` element: `<meta charset="utf-8">`.
 
 Definir a codificação é muito importante, pois garante que a página da web exibirá símbolos especiais e caracteres de diferentes idiomas corretamente no navegador.
 

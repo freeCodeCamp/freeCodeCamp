@@ -1,6 +1,5 @@
 ---
 id: 637f703072c65bc8e73dfe34
-videoId: tsEQgGjSmkM
 title: Questão C de Links e imagens
 challengeType: 15
 dashedName: links-and-images-question-c

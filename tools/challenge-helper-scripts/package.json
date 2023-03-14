@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "npm": ">=8"
+    "pnpm": "7"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,12 @@
     "create-project": "ts-node create-project"
   },
   "devDependencies": {
+    "@types/glob": "^8.0.1",
+    "@types/inquirer": "^8.2.5",
     "@types/mock-fs": "4.13.1",
     "bson-objectid": "2.0.4",
     "cross-env": "7.0.3",
+    "glob": "^8.1.0",
     "gray-matter": "4.0.3",
     "inquirer": "8.2.5",
     "prettier": "2.8.4",

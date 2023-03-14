@@ -1,6 +1,6 @@
 describe('Report User', () => {
   beforeEach(() => {
-    cy.exec('npm run seed');
+    cy.exec('pnpm run seed');
     cy.login();
   });
   it('should be possible to report a user from their profile page', () => {

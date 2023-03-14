@@ -9,19 +9,19 @@ dashedName: assignment-with-a-returned-value
 
 # --description--
 
-إذا كنت ستتذكر من مناقشتنا حول <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">تخزين القيم مع مشغل التعيين (=)</a>، يتم عزم كل شيء لحق الإشارة المتساوية قبل تعيين القيمة. وهذا يعني أنه يمكننا أخذ قيمة الناتجة من وظيفة وتعيينها إلى متغير.
+إذا كنت تتذكر من مناقشتنا حول <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">تخزين القيم مع مشغل التعيين (=)</a>، يتم عزم كل شيء لاحق لعلامة المساواة قبل تعيين القيمة. وهذا يعني أنه يمكننا أخذ القيمة الناتجة من وظيفة وتعيينها إلى متغير.
 
-افترض أن لدينا وظيفة معرف سلفًا يدعي `sum`، التي تضيف رقمين معا، ثم:
+Assume we have defined a function `sum` which adds two numbers together.
 
 ```js
 ourSum = sum(5, 12);
 ```
 
-يستعي الوظيفة `sum` التي ترجع قيمة `17` وتعيينها إلى متغير `ourSum`.
+Calling the `sum` function with the arguments of `5` and `12` produces a return value of `17`. This return value is assigned to the `ourSum` variable.
 
 # --instructions--
 
-استدعي الوظيفة `processArg` باستخدام حَجَّة بقيمة `7`, وعيّن قيمة إرجاع لوظيفة للمتغير `processed`.
+فعِّل الوظيفة `processArg` باستخدام معطى قيمته `7`, وعيّن المنتج من الوظيفة إلى قيمة المتغير `processed`.
 
 # --hints--
 

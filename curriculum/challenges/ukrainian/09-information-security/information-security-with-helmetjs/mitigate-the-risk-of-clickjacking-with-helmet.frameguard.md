@@ -10,7 +10,7 @@ dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 
 Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-Ваша сторінка може бути розміщена в `<frame>` або `<iframe>` без вашої згоди. Це може призвести до клікджекінгу, не враховуючи інших атак. Клікджекінг – це техніка обману користувача, при якій він взаємодіє не з тією сторінкою, про яку думає. Цього можна досягти завдяки оформленню вашої сторінки у зловмисному контексті, тобто iframing. Під контекстом мається на увазі, що хакер розміщує поверх вашої сторінки невидимий шар. Невидимі кнопки запускають ворожий скрипт. Це проміжне програмне забезпечення встановлює заголовок X-Frame-Options. Він обмежує дії хакерів, які можуть перенаправити вашу сторінку. Доступні три режими: DENY, SAMEORIGIN і ALLOW-FROM.
+Ваша сторінка може бути розміщена в `<frame>` або `<iframe>` без вашої згоди. Це може призвести до клікджекінгу, не враховуючи інших атак. Клікджекінг – це техніка обману користувача, при якій він взаємодіє не з тією сторінкою, про яку думає. This can be obtained by executing your page in a malicious context, by means of iframing. In that context, a hacker can put a hidden layer over your page. Невидимі кнопки запускають ворожий скрипт. Це проміжне програмне забезпечення встановлює заголовок X-Frame-Options. Він обмежує дії хакерів, які можуть перенаправити вашу сторінку. Доступні три режими: DENY, SAMEORIGIN і ALLOW-FROM.
 
 Немає потреби перенаправляти наш додаток.
 

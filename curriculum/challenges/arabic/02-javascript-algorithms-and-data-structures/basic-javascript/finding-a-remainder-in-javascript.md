@@ -13,12 +13,20 @@ dashedName: finding-a-remainder-in-javascript
 
 **مثال**
 
-<blockquote>5 % 2 = 1 لأن <br>Math.floor(5 / 2) = 2 (الناتج)<br>2 * 2 = 4<br>5 - 4 = 1 (المتبقي)</blockquote>
+<pre>
+5 % 2 = 1
+5 / 2 = 2 remainder 1
+2 * 2 = 4
+5 - 4 = 1
+</pre>
 
-**الاستخدام**  
-في الرياضيات، يمكن التحقق من أن الرَّقَم زوجي أو فردي عن طريق التحقق من بقية قسمة العدد على `2`.
+**Usage**  
+In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`. Even numbers have a remainder of `0`, while odd numbers a remainder of `1`.
 
-<blockquote>17 % 2 = 1 (17 فردي)<br>48 % 2 = 0 (48 زوجي)</blockquote>
+<pre>
+17 % 2 = 1
+48 % 2 = 0
+</pre>
 
 **ملاحظة:** مشغل <dfn>المتبقي</dfn> يشار إليه أحياناً بشكل غير صحيح على أنه مشغل بالمائة (modulus operator). إنه شبيه جداً بالـمائه (modulus)، ولكنه لا يعمل بشكل صحيح مع الأعداد السالبة.
 
@@ -51,7 +59,9 @@ assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
 ## --after-user-code--
 
 ```js
-(function(y){return 'remainder = '+y;})(remainder);
+(function (y) {
+  return 'remainder = ' + y;
+})(remainder);
 ```
 
 ## --seed-contents--

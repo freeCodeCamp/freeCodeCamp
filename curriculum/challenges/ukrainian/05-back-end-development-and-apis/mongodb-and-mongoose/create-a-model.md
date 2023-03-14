@@ -28,19 +28,15 @@ const someFunc = function(done) {
 
 # --instructions--
 
-Створіть особисту схему під назвою `personSchema`, яка має такий прототип:
+Створіть схему під назвою `personSchema` за наступним зразком:
 
-```markup
-- Person Prototype -
---------------------
-name : string [required]
-age :  number
-favoriteFoods : array of strings (*)
-```
+* Обов‘язкове поле `name` типу `String`
+* Поле `age` типу `Number`
+* Поле `favoriteFoods` типу `[String]`
 
 Використайте основні типи схем Mongoose. Якщо ви хочете, то також можете додати більше полів, використати прості валідатори (наприклад, обов’язкові або унікальні) і встановити значення за замовчуванням. Див. нашу <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">публікацію про Mongoose</a>.
 
-Тепер створіть модель під назвою `Person` з `personSchema`.
+Тепер створіть модель з `personSchema` та призначте її до наявної змінної `Person`.
 
 # --hints--
 

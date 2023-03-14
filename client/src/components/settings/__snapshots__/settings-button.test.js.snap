@@ -9,7 +9,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -149,7 +148,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -289,7 +287,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -429,7 +426,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -569,7 +565,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -709,7 +704,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -849,7 +843,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -989,7 +982,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -1129,7 +1121,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -1269,7 +1260,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -1409,7 +1399,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -1554,7 +1543,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -1774,7 +1762,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -1994,7 +1981,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -2214,7 +2200,6 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        className="spacer"
         style={
           Object {
             "height": "1px",

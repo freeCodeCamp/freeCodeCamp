@@ -42,61 +42,61 @@ switch (val) {
 
 # --hints--
 
-不要使用 `else` 表达式。
+不要使用 `else` 表达式
 
 ```js
 assert(!/else/g.test(code));
 ```
 
-不要使用 `if` 表达式。
+不要使用 `if` 表达式
 
 ```js
 assert(!/if/g.test(code));
 ```
 
-你应该有至少 4 个 `break` 表达式。
+你应该有至少 4 个 `break` 表达式
 
 ```js
 assert(code.match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` 应该是字符串 `Marley`
+`chainToSwitch("bob")` 应该返回字符串 `Marley`
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` 应该是字符串 `The Answer`
+`chainToSwitch(42)` 应该返回字符串 `The Answer`
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` 应该是字符串 `There is no #1`
+`chainToSwitch(1)` 应该返回字符串 `There is no #1`
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)`应该为 `Missed me by this much!`。
+`chainToSwitch(99)`应该返回字符串 `Missed me by this much!`
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` 应该是字符串 `Ate Nine`
+`chainToSwitch(7)` 应该返回字符串 `Ate Nine`
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` 应该为 `""` (empty string)。
+`chainToSwitch("John")` 应该返回 `""`（空字符串）
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` 应该为 `""` (empty string)。
+`chainToSwitch(156)` 应该返回 `""`（空字符串）
 
 ```js
 assert(chainToSwitch(156) === '');

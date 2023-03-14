@@ -25,7 +25,7 @@ console.log(duck.numLegs);
 console.log(canary.numLegs);
 ```
 
-由於所有的實例都可以繼承 `prototype` 上的屬性，所以可以把 `prototype` 看作是創建對象的 "配方"。 請注意：`duck` 和 `canary` 的 `prototype` 屬於 `Bird` 的構造函數，即 Bird 的原型 `Bird.prototype`。 JavaScript 中幾乎所有的對象都有一個 `prototype` 屬性，這個屬性是屬於它所在的構造函數。
+由於所有的實例都可以繼承 `prototype` 上的屬性，所以可以把 `prototype` 看作是創建對象的 "配方"。 請注意：`duck` 和 `canary` 的 `prototype` 屬於 `Bird` 的構造函數，即 Bird 的原型 `Bird.prototype`。
 
 # --instructions--
 

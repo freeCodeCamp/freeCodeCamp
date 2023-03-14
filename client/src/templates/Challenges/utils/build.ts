@@ -104,7 +104,8 @@ const buildFunctions = {
   [challengeTypes.backend]: buildBackendChallenge,
   [challengeTypes.backEndProject]: buildBackendChallenge,
   [challengeTypes.pythonProject]: buildBackendChallenge,
-  [challengeTypes.multifileCertProject]: buildDOMChallenge
+  [challengeTypes.multifileCertProject]: buildDOMChallenge,
+  [challengeTypes.colab]: buildBackendChallenge
 };
 
 export function canBuildChallenge(challengeData: BuildChallengeData): boolean {

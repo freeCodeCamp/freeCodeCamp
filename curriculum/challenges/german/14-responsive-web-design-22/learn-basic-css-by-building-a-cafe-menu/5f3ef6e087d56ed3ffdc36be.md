@@ -1,6 +1,6 @@
 ---
 id: 5f3ef6e087d56ed3ffdc36be
-title: Step 61
+title: Schritt 61
 challengeType: 0
 dashedName: step-61
 ---
@@ -24,7 +24,7 @@ const established = $('.established');
 assert(established[0].innerText.match(/Est\.\s2020/i));
 ```
 
-Your `established` class element should have italic text.
+Dein `established`-Klassen-Element sollte einen kursiven Text haben.
 
 ```js
 assert($('.established').css('font-style') === 'italic');

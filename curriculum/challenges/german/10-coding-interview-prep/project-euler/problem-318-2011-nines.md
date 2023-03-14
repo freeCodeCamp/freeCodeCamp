@@ -1,6 +1,6 @@
 ---
 id: 5900f4ab1000cf542c50ffbd
-title: 'Problem 318: 2011 nines'
+title: 'Problem 318: 2011 Neunen'
 challengeType: 1
 forumTopicId: 301974
 dashedName: problem-318-2011-nines
@@ -8,9 +8,9 @@ dashedName: problem-318-2011-nines
 
 # --description--
 
-Consider the real number $\sqrt{2} + \sqrt{3}$.
+Betrachte die reelle Zahl $\sqrt{2} + \sqrt{3}$.
 
-When we calculate the even powers of $\sqrt{2} + \sqrt{3}$ we get:
+Wenn wir die gleichen Kräfte von $\sqrt{2} + \sqrt{3}$ berechnen, erhalten wir:
 
 $$\begin{align}   & {(\sqrt{2} + \sqrt{3})}^2 = 9.898979485566356\ldots \\\\
   & {(\sqrt{2} + \sqrt{3})}^4 = 97.98979485566356\ldots \\\\   & {(\sqrt{2} + \sqrt{3})}^6 = 969.998969071069263\ldots \\\\
@@ -18,19 +18,19 @@ $$\begin{align}   & {(\sqrt{2} + \sqrt{3})}^2 = 9.898979485566356\ldots \\\\
   & {(\sqrt{2} + \sqrt{3})}^{12} = 940897.9999989371855\ldots \\\\   & {(\sqrt{2} + \sqrt{3})}^{14} = 9313929.99999989263\ldots \\\\
   & {(\sqrt{2} + \sqrt{3})}^{16} = 92198401.99999998915\ldots \\\\ \end{align}$$
 
-It looks like that the number of consecutive nines at the beginning of the fractional part of these powers is non-decreasing. In fact it can be proven that the fractional part of ${(\sqrt{2} + \sqrt{3})}^{2n}$ approaches 1 for large $n$.
+Es sieht so aus, als ob die Anzahl der aufeinanderfolgenden Neunen am Anfang des gebrochenen Teils dieser Potenzen nicht abnehmend ist. Tatsächlich kann nachgewiesen werden, dass für große $n$ der Bruchteil von ${(\sqrt{2} + \sqrt{3})}^{2n}$ sich 1 nähert.
 
-Consider all real numbers of the form $\sqrt{p} + \sqrt{q}$ with $p$ and $q$ positive integers and $p &lt; q$, such that the fractional part of ${(\sqrt{p} + \sqrt{q})}^{2n}$ approaches 1 for large $n$.
+Betrachte alle realen Zahlen der Form $\sqrt{p} + \sqrt{q}$ mit $p$ und $q$ positiven Integern und $p &lt; q$ so, dass der Bruchteil von ${(\sqrt{p} + \sqrt{q})}^{2n}$ sich 1 annähert für große $n$.
 
-Let $C(p,q,n)$ be the number of consecutive nines at the beginning of the fractional part of ${(\sqrt{p} + \sqrt{q})}^{2n}$.
+Lasse $C(p,q,n)$ die Anzahl der aufeinanderfolgenden Neunen am Anfang des Bruchteils von ${(\sqrt{p} + \sqrt{q})}^{2n}$ sein.
 
-Let $N(p,q)$ be the minimal value of $n$ such that $C(p,q,n) ≥ 2011$.
+Lasse $N(p,q)$ der minimale Wert von $n$ sein, sodass $C(p,q,n) ≥ 2011$ ist.
 
-Find $\sum N(p,q)$ for $p + q ≤ 2011$.
+Finde $\sum N(p,q)$ für $p + q ≤ 2011$.
 
 # --hints--
 
-`twoThousandElevenNines()` should return `709313889`.
+`twoThousandElevenNines()` sollte `709313889` zurückgeben.
 
 ```js
 assert.strictEqual(twoThousandElevenNines(), 709313889);

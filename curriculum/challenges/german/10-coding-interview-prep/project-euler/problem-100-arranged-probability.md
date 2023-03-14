@@ -1,6 +1,6 @@
 ---
 id: 5900f3d01000cf542c50fee3
-title: 'Problem 100: Arranged probability'
+title: 'Problem 100: Arrangierte Wahrscheinlichkeit'
 challengeType: 1
 forumTopicId: 301724
 dashedName: problem-100-arranged-probability
@@ -8,47 +8,47 @@ dashedName: problem-100-arranged-probability
 
 # --description--
 
-If a box contains twenty-one colored discs, composed of fifteen blue discs and six red discs, and two discs were taken at random, it can be seen that the probability of taking two blue discs.
+Wenn eine Schachtel einundzwanzig farbige Scheiben enthält, die sich aus fünfzehn blauen und sechs roten Scheiben zusammensetzen, und zwei Scheiben nach dem Zufallsprinzip entnommen werden, zeigt sich, dass die Wahrscheinlichkeit, zwei blaue Scheiben zu entnehmen, sehr groß ist.
 
 $${P(BB)} = \frac{15}{21}×\frac{14}{20} = \frac{1}{2}$$
 
-The next such arrangement, for which there is exactly a 50% chance of taking two blue discs at random, is a box containing eighty-five blue discs and thirty-five red discs.
+Die nächste Anordnung, bei der die Wahrscheinlichkeit, zwei blaue Scheiben zufällig zu nehmen, genau 50 % beträgt, gibt es eine Schachtel mit fünfundachtzig blauen Scheiben und fünfunddreißig roten Scheiben.
 
-By finding the first arrangement to contain over `limit` discs in total, determine the number of blue discs that the box would contain.
+Indem du die erste Anordnung findest, die mehr als `limit` Scheiben enthält, bestimmst du die Anzahl der blauen Scheiben, die die Schachtel enthalten würde.
 
 # --hints--
 
-`arrangedProbability(20)` should return a number.
+`arrangedProbability(20)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof arrangedProbability(10) === 'number');
 ```
 
-`arrangedProbability(20)` should return `15`.
+`arrangedProbability(20)` sollte `15` zurückgeben.
 
 ```js
 assert.strictEqual(arrangedProbability(20), 15);
 ```
 
-`arrangedProbability(100)` should return `85`.
+`arrangedProbability(100)` sollte `85` zurückgeben.
 
 ```js
 assert.strictEqual(arrangedProbability(100), 85);
 ```
 
-`arrangedProbability(100000)` should return `97513`.
+`arrangedProbability(100000)` sollte `97513` zurückgeben.
 
 ```js
 assert.strictEqual(arrangedProbability(100000), 97513);
 ```
 
-`arrangedProbability(1000000000)` should return `3822685023`.
+`arrangedProbability(1000000000)` sollte `3822685023` zurückgeben.
 
 ```js
 assert.strictEqual(arrangedProbability(1000000000), 3822685023);
 ```
 
-`arrangedProbability(1000000000000)` should return `756872327473`.
+`arrangedProbability(1000000000000)` sollte `756872327473` zurückgeben.
 
 ```js
 assert.strictEqual(arrangedProbability(1000000000000), 756872327473);

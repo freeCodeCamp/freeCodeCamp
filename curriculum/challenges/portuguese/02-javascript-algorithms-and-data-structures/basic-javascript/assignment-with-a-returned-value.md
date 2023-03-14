@@ -11,13 +11,13 @@ dashedName: assignment-with-a-returned-value
 
 Se você se lembrar de nossa discussão sobre como <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">armazenar valores com o operador de atribuição</a>, tudo à direita do sinal de igual é resolvido antes de o valor ser atribuído. Isso significa que podemos pegar o valor de retorno de uma função e atribuí-lo a uma variável.
 
-Assuma que temos uma função predefinida chamada `sum`, que soma dois números. Então:
+Assuma que temos uma função definida chamada `sum`, que soma dois números.
 
 ```js
 ourSum = sum(5, 12);
 ```
 
-chamará a função `sum`, a qual retorna o valor `17` e então atribui este valor à variável `ourSum`.
+Chamar a função `sum` com os argumentos `5` e `12` produz um valor de retorno de `17`. Esse valor de retorno é atribuído à variável `ourSum`.
 
 # --instructions--
 

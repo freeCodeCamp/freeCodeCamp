@@ -224,7 +224,6 @@
     "total-points_plural": "合計 {{count}} ポイント",
     "points": "{{count}} ポイント ({{date}})",
     "points_plural": "{{count}} ポイント ({{date}})",
-    "screen-shot": "{{title}} のスクリーンショット",
     "page-number": "{{pageNumber}} / {{totalPages}}"
   },
   "footer": {
@@ -251,6 +250,7 @@
   },
   "learn": {
     "heading": "freeCodeCamp のカリキュラムへようこそ。",
+    "skip-to-content": "Skip to content",
     "welcome-1": "{{name}} さん、おかえりなさい。",
     "welcome-2": "freeCodeCamp.org へようこそ",
     "start-at-beginning": "コーディングが初めての場合は、<0>最初から開始する</0> ことをお勧めします。",
@@ -596,7 +596,8 @@
     "editor-url": "動作可能なアプリの URL を提出してください。",
     "http-url": "安全でない (http) URL は使用できません。",
     "own-work-url": "あなた自身の作品を提出してください。",
-    "publicly-visible-url": "公開されたアプリの URL を提出してください。"
+    "publicly-visible-url": "公開されたアプリの URL を提出してください。",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",
@@ -710,6 +711,8 @@
       "information-security-v7": "情報セキュリティ認定証",
       "Machine Learning with Python": "Python を用いた機械学習",
       "machine-learning-with-python-v7": "Python を用いた機械学習認定証",
+      "College Algebra with Python": "College Algebra with Python",
+      "college-algebra-with-python-v8": "College Algebra with Python Certification",
       "Legacy Front End": "(レガシー) フロントエンド",
       "legacy-front-end": "フロントエンド認定証",
       "Legacy Back End": "(レガシー) バックエンド",

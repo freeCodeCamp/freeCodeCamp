@@ -24,22 +24,22 @@ Replit を使用する場合は、下記の手順でプロジェクトをセッ�
 
 # --instructions--
 
-Create a secure multiplayer game in which each player can move their avatar, there is at least one collectible item, and the rank of the players is calculated based on their score.
+セキュアなマルチプレイヤーゲームを作成してください。このゲームでは、各プレイヤーがアバターを動かすことができます。また、少なくとも 1 つの収集可能なアイテムがあり、プレイヤーのランクが各自のスコアに基づいて計算されます。
 
-For details consult the tests below.
+詳細については、以下のテストを参照してください。
 
-Make sure that your game is secure! Include these security measures:
+ゲームは必ずセキュアにしてください！ 以下のセキュリティ対策を組み込んでください:
 
-- The client should not be able to guess/sniff the MIME type
-- Prevent XSS attacks
-- Do not cache anything from the website in the client
-- The headers say that the site is powered by `PHP 7.4.3`
+- クライアントが MIME タイプを推測またはスニッフィング (盗み見) できないようにする
+- XSS 攻撃を防止する
+- クライアントにウェブサイトから何もキャッシュさせないようにする
+- ヘッダーに、このサイトで `PHP 7.4.3` が使用されていることを記述する
 
-**Note**: `helmet@^3.21.3` is needed for the user stories. This means you will need to use the previous version of Helmet's docs, for information on how to achieve the user stories.
+**注**: このユーザーストーリーには `helmet@^3.21.3` が必要です。 そのため、ユーザーストーリーを実現するための情報として、Helmet の旧バージョンのドキュメントを参照する必要があります。
 
 # --hints--
 
-You can provide your own project, not the example URL.
+サンプルの URL ではなく、自分で作成したプロジェクトを提出してください。
 
 ```js
 (getUserInput) => {

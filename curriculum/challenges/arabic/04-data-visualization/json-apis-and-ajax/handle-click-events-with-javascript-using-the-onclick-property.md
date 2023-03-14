@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-يمكنك تنفيذ معالجات الأحداث (event handlers) التي تحدث داخل وظيفة `DOMContentLoaded`. يمكنك تفعيل معالج الحدث `onclick` الذي يُفَعل عندما ينقر المستخدم على العنصر مع معرف `getMessage`، عن طريق إضافة الرمز التالي:
+يمكنك تنفيذ معالجات الأحداث (event handlers) التي تحدث داخل وظيفة `DOMContentLoaded`. You can implement an `onclick` event handler which triggers when the user clicks on the `#getMessage` element, by adding the following code:
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
@@ -28,7 +28,7 @@ document.getElementById('getMessage').onclick = function(){};
 
 # --hints--
 
-يجب أن يستخدم كودك طريقة `document.getElementById` لتحديد عنصر `getMessage`.
+Your code should use the `document.getElementById` method to select the element whose id is `getMessage`.
 
 ```js
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
