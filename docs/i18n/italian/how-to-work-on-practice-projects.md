@@ -10,7 +10,7 @@ Queste istruzioni ti diranno come utilizzare il nostro strumento editor per le s
 
 ### Avviare l'editor
 
-Per avviare l'editor, assicurati di essere nella cartella principale freeCodeCamp. Then, run `pnpm run challenge-editor` to start both the client and the API that powers the editor.
+Per avviare l'editor, assicurati di essere nella cartella principale freeCodeCamp. Poi esegui `pnpm run challenge-editor` per avviare sia il client che l'API di cui fa uso l'editor.
 
 Il client verrà avviato sulla porta `3300`, così puoi accedervi su `http://localhost:3300`. L'API gira sulla porta `3200`, per evitare conflitti con il client learn e con il server. Questo ti permetterà di eseguire l'applicazione freeCodeCamp contemporaneamente all'editor, in modo che tu possa testare le tue modifiche localmente.
 
@@ -60,7 +60,7 @@ La cartella `tools/challenge-helper-scripts` contiene strumenti per aiutare a fa
 
 ### Creare un nuovo progetto
 
-Run `pnpm run create-project` from the root directory. Questo apre un'interfaccia utente a linea di comando che ti guida attraverso il processo. Una volta finito, dovrebbe esserci una nuova sfida nel curriculum inglese che puoi usare come primo passo del progetto. Ad esempio, se hai creato un progetto chiamato `test-project` nella certificazione Web Design Responsivo, sarebbe in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+Esegui `pnpm run create-project` dalla cartella root. Questo apre un'interfaccia utente a linea di comando che ti guida attraverso il processo. Una volta finito, dovrebbe esserci una nuova sfida nel curriculum inglese che puoi usare come primo passo del progetto. Ad esempio, se hai creato un progetto chiamato `test-project` nella certificazione Web Design Responsivo, sarebbe in `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
 Se vuoi creare nuovi step, i seguenti strumenti semplificano il processo.
 
@@ -71,7 +71,7 @@ Uno script una tantum che aggiungerà automaticamente lo step successivo in base
 #### Come eseguire lo script:
 
 1. Vai alla directory del progetto.
-2. Run the following command:
+2. Esegui il seguente comando:
 
 ```bash
 pnpm run create-next-step
@@ -86,10 +86,10 @@ Uno script eseguito una sola volta che aggiunge automaticamente un determinato n
 #### Come eseguire lo script:
 
 1. Vai alla directory del progetto.
-2. Run the following command:
+2. Esegui il seguente comando:
 
 ```bash
-pnpm run create-empty-steps X # where X is the number of steps to create.
+pnpm run create-empty-steps X # dove X è il numero di step da creare.
 ```
 
 ### insert-step
@@ -101,10 +101,10 @@ Uno script una tantum che aggiunge automaticamente un nuovo step in una posizion
 #### Come eseguire lo script:
 
 1. Vai alla directory del progetto.
-2. Run the following command:
+2. Esegui il seguente comando:
 
 ```bash
-pnpm run insert-step X # where X is the position to insert the new step.
+pnpm run insert-step X # dove X è la posizione in cui inserire il nuovo step.
 ```
 
 ### delete-step
@@ -116,10 +116,10 @@ Uno script una tantum che rimuove uno step esistente, decrementando tutti gli st
 #### Come eseguire lo script
 
 1. Vai alla directory del progetto.
-2. Run the following command:
+2. Esegui il seguente comando:
 
 ```bash
-pnpm run delete-step X # where X is the step number to be deleted.
+pnpm run delete-step X # dove X è il numero dello step da eliminare.
 ```
 
 ### update-step-titles
@@ -129,7 +129,7 @@ Uno script una tantum che aggiorna automaticamente il frontmatter nei file di ma
 #### Come eseguire lo script
 
 1. Vai alla directory del progetto.
-2. Run the following command:
+2. Esegui il seguente comando:
 
 ```bash
 pnpm run update-step-titles
