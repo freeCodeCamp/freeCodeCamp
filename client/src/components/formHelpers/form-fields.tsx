@@ -65,7 +65,7 @@ function FormFields(props: FormFieldsProps): JSX.Element {
     // If local link is allowed, use path validator
     // Always used fCCValidator and httpValidator
     const validators = [fCCValidator, httpValidator];
-    const isSolutionLink = name !== 'githubLink'
+    const isSolutionLink = name !== 'githubLink';
     if (isSolutionLink && !isEditorLinkAllowed) {
       validators.push(editorValidator);
       if (isLocalLinkAllowed) {
