@@ -2,6 +2,7 @@ import React from 'react';
 import { Story } from '@storybook/react';
 import { FormControl } from '../form-control';
 
+import { ControlLabel } from '../control-label';
 import { FormGroup, FormGroupProps } from '.';
 
 const story = {
@@ -12,34 +13,47 @@ const story = {
     className: { control: { type: 'text' } },
     controlId: { control: { type: 'text' } },
     as: { control: { type: 'text' } },
-    validationState: { options: ['success', 'warning', 'error'] }
+    validationState: { options: ['success', 'warning', 'error', null] }
   }
 };
 
-const Template: Story<FormGroupProps> = ({
-  controlId,
-  className,
-  as,
-  validationState
-}) => {
+const Child = () => {
   return (
-    <FormGroup
-      controlId={controlId}
-      className={className}
-      validationState={validationState}
-      as={as}
-    >
+    <>
+      <ControlLabel>Label</ControlLabel>
       <FormControl type={'text'} placeholder='Hello World'>
         {' '}
         HelloWorld
       </FormControl>
-    </FormGroup>
+    </>
   );
+};
+
+const Template: Story<FormGroupProps> = args => {
+  return <FormGroup {...args} />;
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  children: 'FormGroup'
+  children: <Child />
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  children: <Child />,
+  validationState: 'success'
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  children: <Child />,
+  validationState: 'error'
+};
+
+export const warning = Template.bind({});
+warning.args = {
+  children: <Child />,
+  validationState: 'warning'
 };
 
 export default story;

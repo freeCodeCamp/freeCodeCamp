@@ -13,7 +13,7 @@ const story = {
   argType: {
     className: { control: { type: 'text' } },
     htmlFor: { control: { type: 'text' } },
-    srOnly: { control: { type: 'text' } }
+    srOnly: { options: ['srOnly', ''] }
   }
 };
 
