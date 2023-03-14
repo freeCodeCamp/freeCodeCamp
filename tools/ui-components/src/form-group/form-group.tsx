@@ -8,12 +8,9 @@ export type FormContextProps = Pick<
 export const FormContext = createContext<FormContextProps>({});
 
 let variantClass = '';
-const hasSuccess =
-  "[&_span:has[data-testid='help-block']]: text-foreground-info [&_label]: text-foreground-info";
-const hasWarning =
-  "[&_span:has[data-testid='help-block']]: text-foreground-warning [&_label]: text-foreground-warning";
-const hasError =
-  "[&_span:has[data-testid='help-block']]: text-foreground-danger [&_label]: text-foreground-danger";
+const hasSuccess = '[&_label]: text-foreground-info';
+const hasWarning = '[&_label]: text-foreground-warning';
+const hasError = '[&_label]: text-foreground-danger';
 
 const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
   (
