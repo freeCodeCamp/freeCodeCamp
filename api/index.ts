@@ -12,6 +12,7 @@ import { testRoutes } from './routes/test';
 import { auth0Routes } from './routes/auth0';
 import { testValidatedRoutes } from './routes/validation-test';
 import { testMiddleware } from './middleware';
+import prismaPlugin from './db/prisma';
 
 import {
   AUTH0_AUDIENCE,
@@ -22,10 +23,24 @@ import {
   SESSION_SECRET
 } from './utils/env';
 
-import prismaPlugin from './db/prisma';
+const envToLogger = {
+  development: {
+    transport: {
+      target: 'pino-pretty',
+      options: {
+        translateTime: 'HH:MM:ss Z',
+        ignore: 'pid,hostname'
+      }
+    },
+    level: 'debug'
+  },
+  // TODO: is this the right level for production or should we use 'error'?
+  production: { level: 'fatal' },
+  test: false
+};
 
 const fastify = Fastify({
-  logger: { level: NODE_ENV === 'development' ? 'debug' : 'fatal' }
+  logger: envToLogger[NODE_ENV]
 }).withTypeProvider<TypeBoxTypeProvider>();
 
 export type FastifyInstanceWithTypeProvider = typeof fastify;
