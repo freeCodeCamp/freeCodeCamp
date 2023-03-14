@@ -30,7 +30,7 @@
     "challenge-editor": "npm-run-all -p challenge-editor:*",
     "challenge-editor:client": "cd ./tools/challenge-editor/client && pnpm start",
     "challenge-editor:server": "cd ./tools/challenge-editor/api && pnpm start",
-    "clean": "npm-run-all -p clean:*",
+    "clean": "npm-run-all -p clean:client clean:server clean:curriculum --serial clean:packages",
     "clean-and-develop": "pnpm run clean && pnpm install && pnpm run develop",
     "clean:client": "cd ./client && pnpm run clean",
     "clean:curriculum": "rimraf ./config/curriculum.json",
