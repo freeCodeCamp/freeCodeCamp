@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, createContext } from 'react';
+import React, { useMemo, createContext } from 'react';
 import { FormGroupProps } from './types';
 
 export type FormContextProps = Pick<
@@ -7,10 +7,9 @@ export type FormContextProps = Pick<
 >;
 export const FormContext = createContext<FormContextProps>({});
 
-let variantClass = '';
-const hasSuccess = '[&_label]: text-foreground-info';
-const hasWarning = '[&_label]: text-foreground-warning';
-const hasError = '[&_label]: text-foreground-danger';
+// const hasSuccess = '[&_label]: text-foreground-info';
+// const hasWarning = '[&_label]: text-foreground-warning';
+// const hasError = '[&_label]: text-foreground-danger';
 
 const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
   (
@@ -22,18 +21,7 @@ const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
     const componentClass = as;
     const Component = componentClass || 'div';
 
-    useEffect(() => {
-      if (validationState !== null) {
-        const setDefaultClass = (validValue?: string) => {
-          if (validValue === 'success') return (variantClass = hasSuccess);
-          else if (validValue === 'warning') return (variantClass = hasWarning);
-          else if (validValue === 'error') return (variantClass = hasError);
-        };
-        setDefaultClass(validationState);
-      }
-    }, [validationState]);
-
-    const classes = [defaultClasses, variantClass, className].join(' ');
+    const classes = [defaultClasses, className].join(' ');
     return (
       <FormContext.Provider value={context}>
         <Component
