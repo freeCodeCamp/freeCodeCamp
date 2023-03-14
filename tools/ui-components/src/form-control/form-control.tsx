@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
+import { FormContext } from '../form-group/form-group';
 
-import { FormContext } from '../form-context';
 import { FormControlFeedback as Feedback } from './form-control-feedback';
 import { FormControlStatic as Static } from './form-control-static';
 import { FormControlProps, FormControlElement } from './types';

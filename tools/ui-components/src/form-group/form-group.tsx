@@ -1,6 +1,11 @@
-import React, { useEffect, useMemo } from 'react';
-import { FormContext } from '../form-context';
+import React, { useEffect, useMemo, createContext } from 'react';
 import { FormGroupProps } from './types';
+
+export type FormContextProps = Pick<
+  FormGroupProps,
+  'controlId' | 'validationState'
+>;
+export const FormContext = createContext<FormContextProps>({});
 
 let variantClass = '';
 const hasSuccess =
