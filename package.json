@@ -98,6 +98,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "babel-jest": "29.5.0",
     "dotenv": "16.0.3",
     "invariant": "2.2.4",
     "pm2": "^5.2.2"
