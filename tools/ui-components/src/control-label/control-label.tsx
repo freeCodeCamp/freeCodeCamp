@@ -22,8 +22,8 @@ export const ControlLabel = ({
       ? hasError
       : validationState === 'warning'
       ? hasWarning
-      : '';
-  const screenOnlyClass = srOnly ? 'sr-only' : '';
+      : undefined;
+  const screenOnlyClass = srOnly ? 'sr-only' : undefined;
   const defaultClasses = [labelStyle, screenOnlyClass, className].join(' ');
 
   return (
