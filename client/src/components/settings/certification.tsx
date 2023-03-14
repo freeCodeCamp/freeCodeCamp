@@ -37,9 +37,13 @@ const mapDispatchToProps = {
   openModal
 };
 
+// Safety: projectMap definitely has projectMap keys,
+// and we are only interested in these keys
 const certifications = Object.keys(projectMap) as Array<
   keyof typeof projectMap
 >;
+// Safety: legacyProjectMap definitely has legacyProjectMap keys,
+// and we are only interested in these keys
 const legacyCertifications = Object.keys(legacyProjectMap) as Array<
   keyof typeof legacyProjectMap
 >;
