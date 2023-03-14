@@ -1,6 +1,5 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { FormGroup } from '../form-group';
 import { ControlLabel, ControlLabelProps } from '.';
 
 const story = {
@@ -19,16 +18,12 @@ const story = {
 };
 
 const Template: Story<ControlLabelProps> = args => {
-  return (
-    <FormGroup validationState='success'>
-      <ControlLabel {...args} />
-    </FormGroup>
-  );
+  return <ControlLabel {...args} />;
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  // default props go here
+  children: 'Control Label'
 };
 
 export default story;
