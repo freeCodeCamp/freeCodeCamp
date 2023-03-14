@@ -12,10 +12,15 @@ const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
     { className, validationState, controlId, as, ...props },
     ref
   ): JSX.Element => {
-    const context = useMemo(
-      () => ({ controlId, validationState }),
-      [controlId, validationState]
+    const controlIdContext = useMemo(() => controlId, [controlId]);
+    const validationStateContext = useMemo(
+      () => validationState,
+      [validationState]
     );
+    const context = {
+      controlId: controlIdContext,
+      validationState: validationStateContext
+    };
 
     const componentClass = as;
     const Component = componentClass || 'div';
