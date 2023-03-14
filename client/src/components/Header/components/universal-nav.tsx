@@ -2,6 +2,7 @@ import Loadable from '@loadable/component';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Media from 'react-responsive';
+import { useFeature } from '@growthbook/growthbook-react';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
 import {
@@ -47,6 +48,8 @@ export const UniversalNav = ({
   const { pending } = fetchState;
   const { t } = useTranslation();
 
+  const exposeDonateButton = useFeature('expose_donate_button').on;
+
   const search =
     typeof window !== `undefined` && isLanding(window.location.pathname) ? (
       <SearchBarOptimized innerRef={searchBarRef} />
@@ -77,7 +80,7 @@ export const UniversalNav = ({
           </div>
         ) : (
           <>
-            {!user?.isDonating && (
+            {!user?.isDonating && exposeDonateButton && (
               <Media minWidth={DONATE_NAV_EXPOSED_WIDTH + 1}>
                 {' '}
                 <Link
