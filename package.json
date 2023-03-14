@@ -98,7 +98,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "babel-jest": "29.5.0",
     "dotenv": "16.0.3",
     "invariant": "2.2.4",
     "pm2": "^5.2.2"
@@ -118,6 +117,7 @@
     "@types/node": "18.15.0",
     "@types/store": "2.0.2",
     "babel-eslint": "10.1.0",
+    "babel-jest": "29.5.0",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
     "cypress": "10.11.0",
