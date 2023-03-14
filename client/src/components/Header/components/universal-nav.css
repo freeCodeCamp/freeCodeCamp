@@ -557,7 +557,7 @@ button.nav-link[aria-disabled='true'] {
     padding: 2px 8px;
   }
   #universal-nav-logo {
-    padding-top: 0.35em;
+    padding-block: 0.15em;
   }
 }
 
