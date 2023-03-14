@@ -1,6 +1,6 @@
 import { Table, Button } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
-import { find, first } from 'lodash-es';
+import { find } from 'lodash-es';
 import React, { MouseEvent, useState } from 'react';
 import { withTranslation, TFunction } from 'react-i18next';
 import { createSelector } from 'reselect';
@@ -199,14 +199,18 @@ function CertificationSettings(props: CertificationSettingsProps) {
     );
   };
 
-  function renderCertifications(
-    certName: keyof typeof projectsMap,
-    projectsMap: typeof legacyProjectMap | typeof projectMap
-  ) {
+  type ProjectsMap =
+    | {
+        certName: keyof typeof projectMap;
+        projectsMap: typeof projectMap;
+      }
+    | {
+        certName: keyof typeof legacyProjectMap;
+        projectsMap: typeof legacyProjectMap;
+      };
+  function renderCertifications({ certName, projectsMap }: ProjectsMap) {
     const { t } = props;
-    const project = projectsMap[certName];
-
-    const { certSlug } = first(project);
+    const { certSlug } = projectsMap[certName][0];
     return (
       <FullWidthRow key={certName}>
         <Spacer size='medium' />
@@ -221,34 +225,33 @@ function CertificationSettings(props: CertificationSettingsProps) {
             </tr>
           </thead>
           <tbody>
-            {renderProjectsFor(
+            {renderProjectsFor({
               certName,
-              getUserIsCertMap()[certName],
+              isCert: getUserIsCertMap()[certName],
               projectsMap
-            )}
+            })}
           </tbody>
         </Table>
       </FullWidthRow>
     );
   }
-  function renderProjectsFor(
-    certName: keyof typeof projectsMap,
-    isCert: boolean,
-    projectsMap: typeof legacyProjectMap | typeof projectMap
-  ) {
+  function renderProjectsFor({
+    certName,
+    isCert,
+    projectsMap
+  }: ProjectsMap & { isCert: boolean }) {
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
-    const { certSlug } = first(projectsMap[certName]);
+    const { certSlug } = projectsMap[certName][0];
     const certLocation = `/certification/${username}/${certSlug}`;
-    const createClickHandler =
-      certSlug => (e: MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        if (isCert) {
-          return navigate(certLocation);
-        }
-        return isHonest
-          ? verifyCert(certSlug)
-          : createFlashMessage(honestyInfoMessage);
-      };
+    const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      if (isCert) {
+        return navigate(certLocation);
+      }
+      return isHonest
+        ? verifyCert(certSlug)
+        : createFlashMessage(honestyInfoMessage);
+    };
     return projectsMap[certName]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
@@ -271,7 +274,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
               className={'col-xs-12'}
               href={certLocation}
               data-cy={`btn-for-${certSlug}`}
-              onClick={createClickHandler(certSlug)}
+              onClick={clickHandler}
             >
               {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}{' '}
               <span className='sr-only'>{certName}</span>
@@ -399,12 +402,12 @@ function CertificationSettings(props: CertificationSettingsProps) {
       <section className='certification-settings'>
         <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
         {certifications.map(certName =>
-          renderCertifications(certName, projectMap)
+          renderCertifications({ certName, projectsMap: projectMap })
         )}
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
         {renderLegacyFullStack()}
         {legacyCertifications.map(certName =>
-          renderCertifications(certName, legacyProjectMap)
+          renderCertifications({ certName, projectsMap: legacyProjectMap })
         )}
         <ProjectModal
           {...{

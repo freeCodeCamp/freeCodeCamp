@@ -781,7 +781,7 @@ type ProjectMap = Record<
   (typeof certMap)[number]['projects']
 >;
 
-const projectMap = certMap.reduce<ProjectMap>((acc, curr) => {
+const projectMap = certMap.reduce((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
@@ -793,12 +793,7 @@ type LegacyProjectMap = Record<
   (typeof legacyCertMap)[number]['projects']
 >;
 
-const legacyProjectMap = legacyCertMap.reduce<
-  Record<
-    (typeof legacyCertMap)[number]['title'],
-    (typeof legacyCertMap)[number]['projects']
-  >
->((acc, curr) => {
+const legacyProjectMap = legacyCertMap.reduce((acc, curr) => {
   return {
     ...acc,
     [curr.title]: curr.projects
