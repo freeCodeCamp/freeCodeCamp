@@ -161,7 +161,7 @@ function PrivacySettings({
         </Form>
       </FullWidthRow>
       <FullWidthRow>
-        <Spacer />
+        <Spacer paddingSize={15} />
         <p>{t('settings.data')}</p>
         <Button
           block={true}

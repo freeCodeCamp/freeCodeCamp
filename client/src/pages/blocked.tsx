@@ -10,11 +10,11 @@ function BlockedPage(): JSX.Element {
     <>
       <Helmet title={`Access Denied | freeCodeCamp.org`} />
       <Grid className='text-center'>
-        <Spacer size={2} />
+        <Spacer paddingSize={30} />
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
             <h1>We can&apos;t log you in.</h1>
-            <Spacer size={2} />
+            <Spacer paddingSize={30} />
             <Col lg={10} lgOffset={1} sm={10} smOffset={1} xs={12}>
               <div className='text-left blocked-body'>
                 <p>
@@ -33,7 +33,7 @@ function BlockedPage(): JSX.Element {
             </Col>
           </Col>
         </Row>
-        <Spacer size={2} />
+        <Spacer paddingSize={30} />
       </Grid>
     </>
   );
