@@ -460,7 +460,7 @@ Before you [create a pull request](how-to-open-a-pull-request.md) for your chang
 pnpm run test:curriculum
 ```
 
-2. You can also test a block or a superblock of challenges with these commands
+2. You can also test a block or a superblock of challenges by passing the environment variable `FCC_BLOCK` or `FCC_SUPERBLOCK` respectively. For example, on 'nix systems:
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
