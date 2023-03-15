@@ -95,7 +95,7 @@ function ShowUser({
               <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
                 <Login block={true}>{t('buttons.click-here')}</Login>
               </Col>
-              <Spacer paddingSize={45} />
+              <Spacer size='exLarge' />
             </Panel.Body>
           </Panel>
         </FullWidthRow>
