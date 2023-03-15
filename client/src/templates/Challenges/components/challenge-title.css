@@ -40,7 +40,7 @@
 }
 
 .challenge-title-breadcrumbs ol a:focus:not(:focus-visible) {
-  outline: none;
+  outline-color: transparent;
 }
 
 .challenge-title-breadcrumbs ol a:hover {

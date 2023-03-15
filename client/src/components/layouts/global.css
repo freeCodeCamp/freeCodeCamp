@@ -313,7 +313,7 @@ fieldset[disabled] .btn-primary.focus {
   text-decoration: underline;
   background: transparent;
   padding: 0;
-  outline: 0;
+  outline-color: transparent;
 }
 .btn-link:hover,
 .btn-link:focus:active {
@@ -426,7 +426,7 @@ strong {
 }
 
 input {
-  outline: none;
+  outline-color: transparent;
   border-color: var(--quaternary-background);
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;

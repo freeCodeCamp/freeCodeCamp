@@ -139,5 +139,5 @@
 }
 
 .nav-tabs [role='tab']:focus:not(:focus-visible) {
-  outline: none;
+  outline-color: transparent;
 }

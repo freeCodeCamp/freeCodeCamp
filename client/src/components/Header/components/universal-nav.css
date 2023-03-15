@@ -110,7 +110,7 @@
   text-decoration: none;
   background-color: var(--gray-10);
   cursor: pointer;
-  outline: none !important;
+  outline-color: transparent !important;
 }
 
 li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
@@ -156,7 +156,7 @@ button.nav-link:focus {
 button.nav-link:focus:not(:focus-visible) {
   background-color: inherit;
   color: #fff;
-  outline: none;
+  outline-color: transparent;
 }
 
 button.nav-link:not([aria-disabled='true']):hover {
@@ -467,7 +467,7 @@ button.nav-link[aria-disabled='true'] {
 }
 
 .ais-SearchBox-submit:focus:not(:focus-visible) {
-  outline: none;
+  outline-color: transparent;
 }
 
 #toggle-button-nav .menu-btn-text,

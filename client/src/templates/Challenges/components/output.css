@@ -19,5 +19,5 @@ pre.output-text code {
 }
 
 .output-text:focus:not(:focus-visible) {
-  outline: none;
+  outline-color: transparent;
 }

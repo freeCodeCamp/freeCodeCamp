@@ -51,7 +51,7 @@ a.cert-tag:active {
 }
 
 .block-grid .challenge-jump-link a:focus:not(:focus-visible) {
-  outline: none;
+  outline-color: transparent;
 }
 
 .block-title-translation-cta {
@@ -258,7 +258,7 @@ button.map-title {
 }
 
 .map-challenges-grid .map-challenge-title a:focus:not(:focus-visible) {
-  outline: none;
+  outline-color: transparent;
 }
 
 .map-challenges-grid {
