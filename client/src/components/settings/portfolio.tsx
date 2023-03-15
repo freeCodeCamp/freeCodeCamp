@@ -327,9 +327,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         </form>
         {index + 1 !== arr.length && (
           <>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
             <hr />
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
           </>
         )}
       </FullWidthRow>
