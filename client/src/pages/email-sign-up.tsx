@@ -139,7 +139,7 @@ function AcceptPrivacyTerms({
       <Grid>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
             <IntroDescription />
             <hr />
           </Col>
@@ -147,13 +147,13 @@ function AcceptPrivacyTerms({
         <Row className='email-sign-up' data-cy='email-sign-up'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <strong>{t('misc.quincy')}</strong>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
             <p>{t('misc.email-blast')}</p>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
           </Col>
           {renderEmailListOptin(isSignedIn, showLoading)}
           <Col xs={12}>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
           </Col>
         </Row>
       </Grid>
