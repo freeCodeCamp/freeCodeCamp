@@ -65,7 +65,7 @@
     "build": "cross-env NODE_ENV=production rollup -c",
     "build:css": "pnpm dlx tailwindcss -i ./src/base.css -o ./dist/base.css --minify",
     "dev": "cross-env NODE_ENV=development rollup -c -w",
-    "clean": "rimraf dist/*",
+    "clean": "rm -rf dist/*",
     "gen-component": "ts-node ./utils/gen-component-script"
   }
 }
