@@ -61,7 +61,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
           </Link>
         </Col>
       </Row>
-      <Spacer paddingSize={5} />
+      <Spacer size='small' />
     </>
   );
 }

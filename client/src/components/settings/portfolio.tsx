@@ -314,7 +314,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
-          <Spacer paddingSize={5} />
+          <Spacer size='small' />
           <Button
             block={true}
             bsSize='lg'
@@ -348,7 +348,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           </div>
         </FullWidthRow>
         <FullWidthRow>
-          <Spacer paddingSize={5} />
+          <Spacer size='small' />
           <Button
             block={true}
             bsSize='lg'

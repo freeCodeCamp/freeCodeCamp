@@ -94,7 +94,7 @@ function AcceptPrivacyTerms({
             >
               {t('buttons.yes-please')}
             </Button>
-            <Spacer paddingSize={5} />
+            <Spacer size='small' />
           </Col>
           <Col md={4} sm={5} xs={12}>
             <Button
@@ -106,14 +106,14 @@ function AcceptPrivacyTerms({
             >
               {t('buttons.no-thanks')}
             </Button>
-            <Spacer paddingSize={5} />
+            <Spacer size='small' />
           </Col>
         </Row>
       );
     } else {
       return (
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-          <Spacer paddingSize={5} />
+          <Spacer size='small' />
           <Button
             block={true}
             bsSize='lg'
@@ -123,7 +123,7 @@ function AcceptPrivacyTerms({
           >
             {t('buttons.sign-up-email-list')}
           </Button>
-          <Spacer paddingSize={5} />
+          <Spacer size='small' />
         </Col>
       );
     }
