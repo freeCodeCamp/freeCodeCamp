@@ -243,11 +243,6 @@ const initialData: EditorProperties = {
   outputZoneTop: 0
 };
 
-const preferDarkScheme = window.matchMedia(
-  '(prefers-color-scheme: dark)'
-).matches;
-const editorSystemTheme = preferDarkScheme ? 'vs-dark-custom' : 'vs-custom';
-
 const Editor = (props: EditorProps): JSX.Element => {
   const { t } = useTranslation();
   const { editorRef, initTests, resetAttempts } = props;
@@ -1214,6 +1209,11 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   const { theme } = props;
+
+  const preferDarkScheme = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
+  const editorSystemTheme = preferDarkScheme ? 'vs-dark-custom' : 'vs-custom';
   const editorTheme =
     theme === Themes.Night
       ? 'vs-dark-custom'
