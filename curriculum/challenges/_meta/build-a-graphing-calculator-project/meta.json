@@ -1,7 +1,6 @@
 {
-  "name": "Build a Graphing Calculator",
+  "name": "Build a Graphing Calculator Project",
   "isUpcomingChange": false,
-  "dashedName": "build-a-graphing-calculator",
   "order": 11,
   "time": "30 hours",
   "template": "",
@@ -10,6 +9,6 @@
   "challengeOrder": [
     [
       "63d83ffd39c73468b059cd40",
-      "Graphing Calculator"
+      "Build a Graphing Calculator"
     ]
   ]}

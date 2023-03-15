@@ -1,7 +1,6 @@
 {
-  "name": "Build a Multi-Function Calculator",
+  "name": "Build a Multi-Function Calculator Project",
   "isUpcomingChange": false,
-  "dashedName": "build-a-multi-function-calculator",
   "order": 6,
   "time": "30 hours",
   "template": "",
@@ -10,6 +9,6 @@
   "challengeOrder": [
     [
       "63d83ff239c73468b059cd3f",
-      "Multi-Function Calculator"
+      "Build a Multi-Function Calculator"
     ]
   ]}

@@ -1,7 +1,6 @@
 {
-  "name": "Build Three Math Games",
+  "name": "Build Three Math Games Project",
   "isUpcomingChange": false,
-  "dashedName": "build-three-math-games",
   "order": 13,
   "time": "30 hours",
   "template": "",
@@ -10,6 +9,6 @@
   "challengeOrder": [
     [
       "63d8401039c73468b059cd41",
-      "Three Math Games"
+      "Build Three Math Games"
     ]
   ]}

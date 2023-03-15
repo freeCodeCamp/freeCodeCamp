@@ -1,7 +1,6 @@
 {
-  "name": "Build a Financial Calculator",
+  "name": "Build a Financial Calculator Project",
   "isUpcomingChange": false,
-  "dashedName": "build-a-financial-calculator",
   "order": 17,
   "time": "30 hours",
   "template": "",
@@ -10,6 +9,6 @@
   "challengeOrder": [
     [
       "63d8401e39c73468b059cd42",
-      "Financial Calculator"
+      "Build a Financial Calculator"
     ]
   ]}

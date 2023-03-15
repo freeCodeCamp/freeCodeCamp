@@ -1,8 +1,8 @@
 ---
 id: 63d8401039c73468b059cd41
-title: "Three Math Games"
+title: "Build Three Math Games"
 challengeType: 10
-dashedName: three-math-games
+dashedName: build-three-math-games
 ---
 
 # --description--

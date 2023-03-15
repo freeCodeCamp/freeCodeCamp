@@ -1,7 +1,6 @@
 {
-  "name": "Build a Data Graph Explorer",
+  "name": "Build a Data Graph Explorer Project",
   "isUpcomingChange": false,
-  "dashedName": "build-a-data-graph-explorer",
   "order": 19,
   "time": "30 hours",
   "template": "",
@@ -10,6 +9,6 @@
   "challengeOrder": [
     [
       "63d8402e39c73468b059cd43",
-      "Data Graph Explorer"
+      "Build a Data Graph Explorer"
     ]
   ]}

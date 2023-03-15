@@ -785,8 +785,8 @@
           "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
         ]
       },
-      "build-a-multi-function-calculator": {
-        "title": "Build a Multi-Function Calculator",
+      "build-a-multi-function-calculator-project": {
+        "title": "Multi-Function Calculator",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a multi-function calculator."
@@ -816,8 +816,8 @@
           "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
         ]
       },
-      "build-a-graphing-calculator": {
-        "title": "Build a Graphing Calculator",
+      "build-a-graphing-calculator-project": {
+        "title": "Graphing Calculator",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a graphing calculator."
@@ -829,8 +829,8 @@
           "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
         ]
       },
-      "build-three-math-games": {
-        "title": "Build Three Math Games",
+      "build-three-math-games-project": {
+        "title": "Three Math Games",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build three math games."
@@ -854,8 +854,8 @@
           "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
         ]
       },
-      "build-a-financial-calculator": {
-        "title": "Build a Financial Calculator",
+      "build-a-financial-calculator-project": {
+        "title": "Financial Calculator",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a financial calculator."
@@ -867,8 +867,8 @@
           "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
         ]
       },
-      "build-a-data-graph-explorer": {
-        "title": "Build a Data Graph Explorer",
+      "build-a-data-graph-explorer-project": {
+        "title": "Data Graph Explorer",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a data graph explorer."

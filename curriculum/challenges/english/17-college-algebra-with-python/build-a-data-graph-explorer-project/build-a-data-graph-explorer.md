@@ -1,8 +1,8 @@
 ---
 id: 63d8402e39c73468b059cd43
-title: "Data Graph Explorer"
+title: "Build a Data Graph Explorer"
 challengeType: 10
-dashedName: data-graph-explorer
+dashedName: build-a-data-graph-explorer
 ---
 
 # --description--
