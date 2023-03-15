@@ -107,12 +107,10 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   t: TFunction;
 }
 
-const getSystemTheme = () =>
-  `${
-    window.matchMedia('(prefers-color-scheme: dark)').matches === true
-      ? 'dark-palette'
-      : 'light-palette'
-  }`;
+const isDarkSystemTheme = window.matchMedia(
+  '(prefers-color-scheme: dark)'
+).matches;
+const systemTheme = isDarkSystemTheme ? 'dark-palette' : 'light-palette';
 
 function DefaultLayout({
   children,
@@ -168,7 +166,7 @@ function DefaultLayout({
         <Helmet
           bodyAttributes={{
             class: useSystemTheme
-              ? getSystemTheme()
+              ? systemTheme
               : `${theme === 'night' ? 'dark' : 'light'}-palette`
           }}
           meta={[
