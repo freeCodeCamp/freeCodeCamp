@@ -25,7 +25,7 @@ function ShowUnsubscribed({
           <FullWidthRow>
             <Spacer paddingSize={30} />
             <Panel bsStyle='primary' className='text-center'>
-              <Spacer paddingSize={15} />
+              <Spacer size='medium' />
               <h2>{t('misc.unsubscribed')}</h2>
               <p>{t('misc.keep-coding')}</p>
             </Panel>

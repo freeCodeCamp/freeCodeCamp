@@ -135,7 +135,7 @@ function ShowUser({
             <Button block={true} bsStyle='primary' type='submit'>
               {t('report.submit')}
             </Button>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
           </form>
         </Col>
       </Row>

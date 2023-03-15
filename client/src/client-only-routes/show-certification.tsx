@@ -281,7 +281,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         >
           {t('profile.add-linkedin')}
         </Button>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <Button
           block={true}
           bsSize='lg'
