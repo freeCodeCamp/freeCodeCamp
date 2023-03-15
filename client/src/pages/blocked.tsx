@@ -3,7 +3,6 @@ import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import { Spacer } from '../components/helpers';
-import './blocked.css';
 
 function BlockedPage(): JSX.Element {
   return (
