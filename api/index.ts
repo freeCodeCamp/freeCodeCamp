@@ -4,11 +4,13 @@ import middie from '@fastify/middie';
 import fastifySession from '@fastify/session';
 import fastifyCookie from '@fastify/cookie';
 import MongoStore from 'connect-mongo';
+import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import sessionAuth from './plugins/session-auth';
 import { testRoutes } from './routes/test';
 import { auth0Routes } from './routes/auth0';
+import { testValidatedRoutes } from './routes/validation-test';
 import { testMiddleware } from './middleware';
 
 import {
@@ -24,7 +26,9 @@ import prismaPlugin from './db/prisma';
 
 const fastify = Fastify({
   logger: { level: NODE_ENV === 'development' ? 'debug' : 'fatal' }
-});
+}).withTypeProvider<TypeBoxTypeProvider>();
+
+export type FastifyInstanceWithTypeProvider = typeof fastify;
 
 fastify.get('/', async (_request, _reply) => {
   return { hello: 'world' };
@@ -61,6 +65,7 @@ const start = async () => {
 
   void fastify.register(testRoutes);
   void fastify.register(auth0Routes, { prefix: '/auth0' });
+  void fastify.register(testValidatedRoutes);
 
   try {
     const port = Number(PORT);

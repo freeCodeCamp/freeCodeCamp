@@ -9,6 +9,7 @@
     "@fastify/session": "^10.1.1",
     "@prisma/client": "4.10.1",
     "connect-mongo": "4.6.0",
+    "@sinclair/typebox": "0.25.24",
     "fastify": "4.14.1",
     "fastify-auth0-verify": "^1.0.0",
     "fastify-plugin": "^4.3.0",
@@ -46,6 +47,7 @@
   },
   "version": "0.0.1",
   "devDependencies": {
-    "prisma": "4.10.1"
+    "prisma": "4.10.1",
+    "@fastify/type-provider-typebox": "2.4.0"
   }
 }
