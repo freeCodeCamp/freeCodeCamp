@@ -66,7 +66,7 @@ const mapStateToProps = createSelector(
     canFocus: boolean,
     output: string[],
     open,
-    { theme = Themes.Default }: { theme: Themes }
+    { theme }: { theme: Themes }
   ) => ({
     visibleEditors,
     canFocus: open ? false : canFocus,
