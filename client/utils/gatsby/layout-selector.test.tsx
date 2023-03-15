@@ -7,7 +7,7 @@ import FourOhFourPage from '../../src/pages/404';
 import Certification from '../../src/pages/certification';
 import Learn from '../../src/pages/learn';
 import { createStore } from '../../src/redux/create-store';
-import layoutSelector from './layout-selector';
+import { LayoutSelector } from './layout-selector';
 
 jest.mock('../../src/analytics');
 
@@ -23,15 +23,15 @@ function getComponentNameAndProps(
 ): NameAndProps {
   // eslint-disable-next-line testing-library/render-result-naming-convention
   const shallow = ShallowRenderer.createRenderer();
-  const LayoutReactComponent = layoutSelector({
-    element: { type: elementType, props: {}, key: '' },
-    props: {
-      location: {
-        pathname
-      }
-    }
-  });
-  shallow.render(<Provider store={store}>{LayoutReactComponent}</Provider>);
+
+  shallow.render(
+    <Provider store={store}>
+      <LayoutSelector
+        element={{ type: elementType, props: {}, key: '' }}
+        pathname={pathname}
+      />
+    </Provider>
+  );
   const view = shallow.getRenderOutput();
   return {
     props: view.props as Record<string, unknown>,

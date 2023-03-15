@@ -7,19 +7,14 @@ import { isChallenge } from '../../src/utils/path-parsers';
 
 interface LayoutSelectorProps {
   element: JSX.Element;
-  props: {
-    location: { pathname: string };
-    pageContext?: { challengeMeta?: { block?: string; superBlock?: string } };
-  };
+  pathname: string;
+  pageContext?: { challengeMeta?: { block?: string; superBlock?: string } };
 }
-export default function layoutSelector({
+export const LayoutSelector = ({
   element,
-  props
-}: LayoutSelectorProps): JSX.Element {
-  const {
-    location: { pathname }
-  } = props;
-
+  pathname,
+  pageContext
+}: LayoutSelectorProps): JSX.Element => {
   if (element.type === FourOhFourPage) {
     return (
       <DefaultLayout pathname={pathname} showFooter={true}>
@@ -36,8 +31,8 @@ export default function layoutSelector({
         pathname={pathname}
         showFooter={false}
         isChallenge={true}
-        block={props.pageContext?.challengeMeta?.block}
-        superBlock={props.pageContext?.challengeMeta?.superBlock}
+        block={pageContext?.challengeMeta?.block}
+        superBlock={pageContext?.challengeMeta?.superBlock}
       >
         {element}
       </DefaultLayout>
@@ -49,4 +44,4 @@ export default function layoutSelector({
       </DefaultLayout>
     );
   }
-}
+};
