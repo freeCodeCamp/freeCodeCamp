@@ -22,7 +22,7 @@ console.log(howMany("string", null, [1, 2, 3], { }));
 
 La console mostrerà le stringhe `You have passed 3 arguments.` e `You have passed 4 arguments.`.
 
-The rest parameter eliminates the need to use the `arguments` object and allows us to use array methods on the array of parameters passed to the function `howMany`.
+Il parametro resto elimina la necessità di usare l'oggetto `arguments` e consente di usare metodi di array sull'array dei parametri passati alla funzione `howMany`.
 
 # --instructions--
 
