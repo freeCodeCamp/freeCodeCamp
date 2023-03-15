@@ -78,6 +78,7 @@ export const defaultSuperBlockOrder: SuperBlocks[] = [
   SuperBlocks.DataAnalysisPy,
   SuperBlocks.InfoSec,
   SuperBlocks.MachineLearningPy,
+  SuperBlocks.CollegeAlgebraPy,
   SuperBlocks.CodingInterviewPrep,
   SuperBlocks.TheOdinProject
 ];
@@ -127,6 +128,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
@@ -179,6 +181,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -225,6 +228,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -271,6 +275,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -316,6 +321,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -361,6 +367,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -405,6 +412,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -451,6 +459,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -498,6 +507,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: []
@@ -544,6 +554,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
+          SuperBlocks.CollegeAlgebraPy,
           SuperBlocks.TheOdinProject
         ],
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]

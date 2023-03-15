@@ -58,5 +58,9 @@ export const superBlockList = [
   {
     name: 'The Odin Project',
     path: '16-the-odin-project'
+  },
+  {
+    name: 'College Algebra with Python',
+    path: '17-college-algebra-with-python'
   }
 ];

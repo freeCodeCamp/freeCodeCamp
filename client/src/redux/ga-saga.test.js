@@ -10,7 +10,7 @@ describe('ga-saga', () => {
       action: 'Learn Donation Alert Click',
       amount: 500,
       duration: 'month',
-      event: 'donationrelated'
+      event: 'donation_related'
     };
     return (
       expectSaga(createGaSaga, actionTypes)

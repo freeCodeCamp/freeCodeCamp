@@ -34,6 +34,7 @@
     "@babel/preset-env": "7.20.2",
     "@babel/preset-typescript": "7.18.6",
     "@babel/register": "7.18.9",
+    "@compodoc/live-server": "^1.2.3",
     "babel-plugin-dynamic-import-node": "2.3.3",
     "babel-plugin-lodash": "3.3.4",
     "babel-plugin-transform-runtime": "6.23.0",
@@ -43,6 +44,7 @@
     "chai": "4.3.7",
     "cross-env": "7.0.3",
     "css": "3.0.0",
+    "glob": "8.1.0",
     "invariant": "2.2.4",
     "joi": "17.8.3",
     "joi-objectid": "3.0.1",
@@ -51,10 +53,10 @@
     "lodash": "4.17.21",
     "mocha": "10.2.0",
     "mock-require": "3.0.3",
+    "ora": "5.4.1",
     "puppeteer": "10.4.0",
     "readdirp": "3.6.0",
     "string-similarity": "4.0.4",
-    "unist-util-visit": "2.0.3",
-    "@compodoc/live-server": "^1.2.3"
+    "unist-util-visit": "2.0.3"
   }
 }
