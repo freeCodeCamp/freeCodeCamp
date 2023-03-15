@@ -82,7 +82,6 @@ export const UniversalNav = ({
           <>
             {!user?.isDonating && exposeDonateButton && (
               <Media minWidth={DONATE_NAV_EXPOSED_WIDTH + 1}>
-                {' '}
                 <Link
                   sameTab={false}
                   to='/donate'

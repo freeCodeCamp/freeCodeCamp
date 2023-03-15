@@ -59,39 +59,55 @@ interface DonateButtonProps {
   t: TFunction;
 }
 
+type DonateItemProps = Pick<DonateButtonProps, 'handleMenuKeyDown'> & {
+  donateText: string;
+};
+
+const DonateItem = ({ handleMenuKeyDown, donateText }: DonateItemProps) => (
+  <li key='donate'>
+    <Link
+      className='nav-link'
+      onKeyDown={handleMenuKeyDown}
+      sameTab={false}
+      to='/donate'
+      data-test-label='dropdown-donate-button'
+      nav-donate-button
+    >
+      {donateText}
+    </Link>
+  </li>
+);
+
+const ThankYouMessage = ({ message }: { message: string }) => (
+  <li className='nav-link nav-link-flex nav-link-header' key='donate'>
+    {message}
+    <FontAwesomeIcon icon={faHeart} />
+  </li>
+);
+
 const DonateButton = ({
   isUserDonating,
   handleMenuKeyDown,
   t
 }: DonateButtonProps) => {
   const exposeUniversalDonateButton = useFeature('expose_donate_button').on;
-  const donateItem = (
-    <li key='donate'>
-      <Link
-        className='nav-link'
-        onKeyDown={handleMenuKeyDown}
-        sameTab={false}
-        to='/donate'
-        data-test-label='dropdown-donate-button'
-        nav-donate-button
-      >
-        {t('buttons.donate')}
-      </Link>
-    </li>
-  );
-  const thankYouItem = (
-    <li key='donate'>
-      <div className='nav-link nav-link-flex nav-link-header'>
-        <span>{t('donate.thanks')}</span>
-        <FontAwesomeIcon icon={faHeart} />
-      </div>
-    </li>
-  );
-
-  if (isUserDonating) return thankYouItem;
+  if (isUserDonating) return <ThankYouMessage message={t('donate.thanks')} />;
   else if (exposeUniversalDonateButton)
-    return <Media maxWidth={DONATE_NAV_EXPOSED_WIDTH}>{donateItem}</Media>;
-  else return donateItem;
+    return (
+      <Media maxWidth={DONATE_NAV_EXPOSED_WIDTH}>
+        <DonateItem
+          handleMenuKeyDown={handleMenuKeyDown}
+          donateText={t('buttons.donate')}
+        />
+      </Media>
+    );
+  else
+    return (
+      <DonateItem
+        handleMenuKeyDown={handleMenuKeyDown}
+        donateText={t('buttons.donate')}
+      />
+    );
 };
 
 function NavLinks({
