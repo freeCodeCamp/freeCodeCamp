@@ -1,4 +1,4 @@
-import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
+import { legacy_createStore as reduxCreateStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
 import { createEpicMiddleware } from 'redux-observable';
 import createSagaMiddleware from 'redux-saga';
