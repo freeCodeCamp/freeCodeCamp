@@ -27,7 +27,7 @@ const FourOhFour = (): JSX.Element => {
           <p className='author'>- {quote.author}</p>
         </blockquote>
       </div>
-      <Spacer paddingSize={30} />
+      <Spacer size='large' />
       <Link className='btn btn-cta' to='/learn'>
         {t('buttons.view-curriculum')}
       </Link>

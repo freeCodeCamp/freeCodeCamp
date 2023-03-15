@@ -358,7 +358,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Spacer paddingSize={30} />
+                <Spacer size='large' />
               </Col>
               <CompletionModal
                 block={block}

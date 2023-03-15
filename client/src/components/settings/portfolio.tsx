@@ -360,7 +360,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             {t('buttons.add-portfolio')}
           </Button>
         </FullWidthRow>
-        <Spacer paddingSize={30} />
+        <Spacer size='large' />
         {portfolio.length ? portfolio.map(this.renderPortfolio) : null}
       </section>
     );
