@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Media from 'react-responsive';
 import wideImg from '../../../assets/images/landing/wide-image.png';
-import { LazyImage } from '../../helpers';
 
 const LARGE_SCREEN_SIZE = 1200;
 
@@ -28,9 +27,10 @@ function CampersImage({ pageName }: CampersImageProps): JSX.Element {
   return (
     <Media minWidth={LARGE_SCREEN_SIZE}>
       <figure style={figureSize}>
-        <LazyImage
+        <img
           alt={t('landing.hero-img-description')}
           className='landing-page-image'
+          loading='eager'
           src={wideImg}
         />
         <figcaption className='caption'>
