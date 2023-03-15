@@ -1,6 +1,6 @@
 ---
 id: 5900f5481000cf542c51005b
-title: 'Problem 476: Circle Packing II'
+title: 'Problem 476: Kreisförmige Verpackung II'
 challengeType: 1
 forumTopicId: 302153
 dashedName: problem-476-circle-packing-ii
@@ -8,17 +8,17 @@ dashedName: problem-476-circle-packing-ii
 
 # --description--
 
-Let $R(a, b, c)$ be the maximum area covered by three non-overlapping circles inside a triangle with edge lengths $a$, $b$ and $c$.
+Lasse $R(a, b, c)$ die maximale Fläche sein, die von drei sich nicht überschneidenden Kreisen innerhalb eines Dreiecks mit den Kantenlängen $a$, $b$ und $c$ bedeckt wird.
 
-Let $S(n)$ be the average value of $R(a, b, c)$ over all integer triplets $(a, b, c)$ such that $1 ≤ a ≤ b ≤ c &lt; a + b ≤ n$.
+Lasse $S(n)$ der Mittelwert von $R(a, b, c)$ über alle ganzzahligen Tripel $(a, b, c)$ sein, für die gilt: $1 ≤ a ≤ b ≤ c &lt; a + b ≤ n$.
 
-You are given $S(2) = R(1, 1, 1) ≈ 0.31998$, $S(5) ≈ 1.25899$.
+Du erhältst $S(2) = R(1, 1, 1) ≈ 0,31998$, $S(5) ≈ 1,25899$.
 
-Find $S(1803)$ rounded to 5 decimal places behind the decimal point.
+Finde $S(1803)$ gerundet auf 5 Nachkommastellen.
 
 # --hints--
 
-`circlePackingTwo()` should return `110242.87794`.
+`circlePackingTwo()` sollte `110242.87794` zurückgeben.
 
 ```js
 assert.strictEqual(circlePackingTwo(), 110242.87794);

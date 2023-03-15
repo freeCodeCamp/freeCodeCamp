@@ -70,7 +70,7 @@ function DonateModal({
       void playTone('donation');
       executeGA({ event: 'pageview', pagePath: '/donation-modal' });
       executeGA({
-        event: 'donationview',
+        event: 'donation_view',
         action: `Displayed ${
           recentlyClaimedBlock !== null ? 'Block' : 'Progress'
         } Donation Modal`

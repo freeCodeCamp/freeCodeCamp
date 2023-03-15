@@ -1,0 +1,144 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGOHQ_URL")
+}
+
+type DonationStartDate {
+  date DateTime @map("_date") @db.Date
+  when String   @map("_when")
+}
+
+type UserBadges {
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  coreTeam Json?
+}
+
+type UserCompletedChallenges {
+  completedDate Float
+  id            String
+}
+
+type UserProfileUi {
+  isLocked      Boolean
+  showAbout     Boolean
+  showCerts     Boolean
+  showDonation  Boolean
+  showHeatMap   Boolean
+  showLocation  Boolean
+  showName      Boolean
+  showPoints    Boolean
+  showPortfolio Boolean
+  showTimeLine  Boolean
+}
+
+model AccessToken {
+  id      String   @id @map("_id")
+  created DateTime @db.Date
+  /// Multiple data types found: Float: 70.3%, Int: 29.7% out of 118 sampled entries
+  ttl     Json
+  userId  String   @db.ObjectId
+}
+
+model AuthToken {
+  id      String   @id @map("_id")
+  created DateTime @db.Date
+  ttl     Int
+  userId  String   @db.ObjectId
+}
+
+model Donation {
+  id             String            @id @default(auto()) @map("_id") @db.ObjectId
+  amount         Int
+  customerId     String
+  duration       String
+  email          String
+  provider       String
+  startDate      DonationStartDate
+  subscriptionId String
+  userId         String            @db.ObjectId
+}
+
+model UserToken {
+  id      String   @id @map("_id")
+  created DateTime @db.Date
+  ttl     Float
+  userId  String   @db.ObjectId
+}
+
+model WebhookToken {
+  id      String   @id @map("_id")
+  created DateTime @db.Date
+  ttl     Float
+  userId  String   @db.ObjectId
+}
+
+model expressRateRecords {
+  id             String @id @default(auto()) @map("_id") @db.ObjectId
+  /// Field referred in an index, but found no data to define the type.
+  expirationDate Json?
+
+  @@index([expirationDate], map: "expirationDate_1")
+}
+
+model sessions {
+  id      String   @id @map("_id")
+  expires DateTime @db.Date
+  session String
+
+  @@index([expires], map: "expires_1")
+}
+
+model user {
+  id                         String                    @id @default(auto()) @map("_id") @db.ObjectId
+  about                      String
+  acceptedPrivacyTerms       Boolean
+  badges                     UserBadges
+  completedChallenges        UserCompletedChallenges[]
+  currentChallengeId         String
+  email                      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  emailAuthLinkTTL           Json?
+  emailVerified              Boolean
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  emailVerifyTTL             Json?
+  is2018DataVisCert          Boolean
+  is2018FullStackCert        Boolean
+  isApisMicroservicesCert    Boolean
+  isBackEndCert              Boolean
+  isBanned                   Boolean
+  isCheater                  Boolean
+  isDataAnalysisPyCertV7     Boolean
+  isDataVisCert              Boolean
+  isDonating                 Boolean
+  isFrontEndCert             Boolean
+  isFrontEndLibsCert         Boolean
+  isFullStackCert            Boolean
+  isHonest                   Boolean
+  isInfosecCertV7            Boolean
+  isInfosecQaCert            Boolean
+  isJsAlgoDataStructCert     Boolean
+  isMachineLearningPyCertV7  Boolean
+  isQaCertV7                 Boolean
+  isRelationalDatabaseCertV8 Boolean
+  isRespWebDesignCert        Boolean
+  isSciCompPyCertV7          Boolean
+  keyboardShortcuts          Boolean?
+  location                   String
+  name                       String
+  picture                    String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  portfolio                  Json?
+  profileUI                  UserProfileUi
+  progressTimestamps         Float[]
+  rand                       Float
+  sendQuincyEmail            Boolean
+  theme                      String
+  username                   String
+  usernameDisplay            String?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  yearsTopContributor        Json?
+}

@@ -216,7 +216,7 @@ function EmailSettings({
           <BlockSaveButton
             aria-disabled={isDisabled}
             bgSize='lg'
-            {...(isDisabled && { tabindex: -1 })}
+            {...(isDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save')}{' '}
             <span className='sr-only'>{t('settings.email.heading')}</span>

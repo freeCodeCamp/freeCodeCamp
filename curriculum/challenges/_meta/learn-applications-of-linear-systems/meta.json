@@ -1,0 +1,20 @@
+{
+  "name": "Learn Applications of Linear Systems",
+  "isUpcomingChange": true,
+  "dashedName": "learn-applications-of-linear-systems",
+  "order": 9,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    [
+      "6363d2019078df117ce4c3fe",
+      "Word Problems"
+    ],
+    [
+      "6363d23a9078df117ce4c3ff",
+      "Applications of Linear Systems: Extra"
+    ]
+  ]
+}

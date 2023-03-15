@@ -8,19 +8,19 @@ dashedName: problem-479-roots-on-the-rise
 
 # --description--
 
-Let $a_k$, $b_k$, and $c_k$ represent the three solutions (real or complex numbers) to the expression $\frac{1}{x} = {\left(\frac{k}{x} \right)}^2 (k + x^2) - kx$.
+Lasse $a_k$, $b_k$ und $c_k$ die drei Lösungen (reelle oder komplexe Zahlen) des Ausdrucks $\frac{1}{x} = {\left(\frac{k}{x} \right)}^2 (k + x^2) - kx$ sein.
 
-For instance, for $k = 5$, we see that $\\{a_5, b_5, c_5\\}$ is approximately $\\{5.727244, -0.363622 + 2.057397i, -0.363622 - 2.057397i\\}$.
+Für $k = 5$ sehen wir zum Beispiel, dass $\\{a_5, b_5, c_5\\}$ ungefähr $\\{5.727244, -0.363622 + 2.057397i, -0.363622 - 2.057397i\\\}$ ist.
 
-Let $S(n) = \displaystyle\sum_{p = 1}^n \sum_{k = 1}^n {(a_k + b_k)}^p {(b_k + c_k)}^p {(c_k + a_k)}^p$ for all integers $p$, $k$ such that $1 ≤ p, k ≤ n$.
+Lasse t $S(n) = \displaystyle\sum_{p = 1}^n \sum_{k = 1}^n {(a_k + b_k)}^p {(b_k + c_k)}^p {(c_k + a_k)}^p$ für alle Integer $p$, $k$ sein, so dass $1 ≤ p, k ≤ n$ ist.
 
-Interestingly, $S(n)$ is always an integer. For example, $S(4) = 51\\,160$.
+Interessanterweise ist $S(n)$ immer ein Integer. Zum Beispiel $S(4) = 51\\,160$.
 
-Find $S({10}^6) \text{ modulo } 1\\,000\\,000\\,007$.
+Finde $S({10}^6) \text{ modulo } 1\\,000\\,000\\,007$.
 
 # --hints--
 
-`rootsOnTheRise()` should return `191541795`.
+`rootsOnTheRise()` sollte `191541795` zurückgeben.
 
 ```js
 assert.strictEqual(rootsOnTheRise(), 191541795);

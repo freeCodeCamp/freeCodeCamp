@@ -7,13 +7,13 @@ dashedName: step-15
 
 # --description--
 
-In previous steps you used an anchor element to turn text into a link. Other types of content can also be turned into a link by wrapping it in anchor tags.
+在之前的步骤中，你使用了锚点元素将文本转换为链接。 也可以把其他类型的内容放在锚标签中，将其转换成一个链接。
 
-Turn the image into a link by surrounding it with necessary element tags. Use `https://freecatphotoapp.com` as the anchor's `href` attribute value.
+用必要的元素标签包裹图片，把它变成一个链接。 使用 `https://freecatphotoapp.com` 作为锚点元素中 `href` 属性的值。
 
 # --hints--
 
-You should have an `img` element with an `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. You may have accidentally deleted it.
+`img` 元素的 `src` 属性值应为 `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`。 你可能不小心删除了它。
 
 ```js
 assert(
@@ -23,37 +23,37 @@ assert(
 );
 ```
 
-Your anchor (`a`) element should have an opening tag. Opening tags have this syntax: `<elementName>`.
+你的锚点元素（`a`）应该有一个开始标签。 开始标签的语法是：`<elementName>`。
 
 ```js
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-You should only add one opening anchor (`a`) tag. Please remove any extras.
+你应该只添加一个锚点（`a`）开始标签。 请删除多余的。
 
 ```js
 assert(document.querySelectorAll('a').length === 2);
 ```
 
-Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
+你的锚点元素（`a`）应该有一个结束标签。 结束标签在 `<` 字符后面要有一个 `/`。
 
 ```js
 assert(code.match(/<\/a>/g).length >= 2);
 ```
 
-You should only add one closing anchor (`a`) tag. Please remove any extras.
+你应该只添加一个锚点（`a`）结束标签。 请删除多余的。
 
 ```js
 assert(code.match(/<\/a>/g).length === 2);
 ```
 
-Your anchor (`a`) element does not have an `href` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+你的锚点元素（`a`）缺少 `href` 属性。 请检查确认在开始标签的名称后面要有一个空格，且所有的属性名称前面也要有一个空格。
 
 ```js
 assert(document.querySelector('a').hasAttribute('href'));
 ```
 
-Your anchor (`a`) element should link to `https://freecatphotoapp.com`. You have either omitted the URL or have a typo.
+你的锚点元素（`a`）应该链接到 `https://freecatphotoapp.com`。 你可能省略了这个 URL 或者有拼写错误。
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Your `img` element should be nested within the anchor (`a`) element. The entire `img` element should be inside the opening and closing tags of the anchor (`a`) element.
+你的 `img` 元素应该被嵌套在锚点元素（`a`）之中。 整个 `img` 元素应该置于锚点元素（`a`）的开始标签和结束标签之间。
 
 ```js
 assert(document.querySelector('img').parentNode.nodeName === 'A');

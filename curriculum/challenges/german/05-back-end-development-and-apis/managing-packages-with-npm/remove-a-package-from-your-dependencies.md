@@ -10,7 +10,7 @@ dashedName: remove-a-package-from-your-dependencies
 
 Du hast nun einige Möglichkeiten ausprobiert, wie du Abhängigkeiten deines Projekts mithilfe des Abschnitts "dependencies" in der package.json verwalten kannst. Du hast auch externe Pakete eingebunden, indem du sie der Datei zugefügt und npm sogar mitgeteilt hast, welche Arten von Versionen du haben möchtest, indem du Sonderzeichen wie die Tilde oder das Caret verwendet hast.
 
-Aber was passiert, wenn du ein externes Paket entfernen möchtest, das du nicht länger benötigst? You might already have guessed it, just remove the corresponding key-value pair for that package from your dependencies.
+Aber was passiert, wenn du ein externes Paket entfernen möchtest, das du nicht länger benötigst? Du hast es vielleicht schon erraten, entferne einfach das entsprechende Schlüssel-Wert-Paar (key-value pair) für dieses Paket aus deinen Abhängigkeiten (dependencies).
 
 Dieselbe Methode gilt auch für das Entfernen anderer Felder in deiner package.json.
 

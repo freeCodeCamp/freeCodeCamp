@@ -83,7 +83,7 @@ function LearnPage({
 
   const onDonationAlertClick = () => {
     executeGA({
-      event: 'donationrelated',
+      event: 'donation_related',
       action: `Learn Donation Alert Click`,
       duration: defaultDonation.donationDuration,
       amount: defaultDonation.donationAmount

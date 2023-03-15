@@ -55,7 +55,7 @@ function DonatePage({
 }: DonatePageProps) {
   useEffect(() => {
     executeGA({
-      event: 'donationview',
+      event: 'donation_view',
       action: `Displayed Donate Page`
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
