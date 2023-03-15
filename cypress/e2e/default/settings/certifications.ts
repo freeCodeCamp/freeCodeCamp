@@ -10,7 +10,7 @@ describe('Settings certifications area', () => {
     it('Should render the default settings page', () => {
       cy.visit('/settings/');
       cy.findAllByText('Claim Certification').should($btns => {
-        expect($btns).to.have.length(16);
+        expect($btns).to.have.length(17);
       });
       cy.findByText('Show Certification').should('not.exist');
       cy.contains(`I agree to freeCodeCamp's Academic Honesty Policy.`);
