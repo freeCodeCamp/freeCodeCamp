@@ -55,9 +55,7 @@ const mapDispatchToProps = {
 
 interface DonateButtonProps {
   isUserDonating: boolean | undefined;
-  handleMenuKeyDown: (
-    event: React.KeyboardEvent<HTMLButtonElement | HTMLAnchorElement>
-  ) => void;
+  handleMenuKeyDown: (event: React.KeyboardEvent<HTMLAnchorElement>) => void;
   t: TFunction;
 }
 
