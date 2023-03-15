@@ -161,7 +161,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <Grid>
         <main>
-          <Spacer paddingSize={30} />
+          <Spacer size='large' />
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
             {t('settings.for', { username: username })}
           </h1>

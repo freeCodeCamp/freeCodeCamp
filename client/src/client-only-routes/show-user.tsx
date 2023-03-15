@@ -83,7 +83,7 @@ function ShowUser({
     return (
       <main>
         <FullWidthRow>
-          <Spacer paddingSize={30} />
+          <Spacer size='large' />
           <Panel bsStyle='info' className='text-center'>
             <Panel.Heading>
               <Panel.Title componentClass='h3'>
@@ -91,7 +91,7 @@ function ShowUser({
               </Panel.Title>
             </Panel.Heading>
             <Panel.Body className='text-center'>
-              <Spacer paddingSize={30} />
+              <Spacer size='large' />
               <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
                 <Login block={true}>{t('buttons.click-here')}</Login>
               </Col>
@@ -108,7 +108,7 @@ function ShowUser({
       <Helmet>
         <title>{t('report.portfolio')} | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer paddingSize={30} />
+      <Spacer size='large' />
       <Row className='text-center overflow-fix'>
         <Col sm={8} smOffset={2} xs={12}>
           <h2>{t('report.portfolio-2', { username: username })}</h2>
