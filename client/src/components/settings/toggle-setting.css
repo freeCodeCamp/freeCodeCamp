@@ -55,7 +55,7 @@
 
 .toggle-button-group button:focus {
   position: relative;
-  z-index: 9999;
+  z-index: 100;
 }
 
 .toggle-button-group button[aria-pressed='true'] {
