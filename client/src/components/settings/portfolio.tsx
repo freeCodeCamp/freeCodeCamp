@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import {
   Button,
   FormGroup,
@@ -177,6 +178,56 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       : { state: 'warning', message: t('validation.use-valid-url') };
   }
 
+  formCorrect(portfolio: PortfolioItem) {
+    const { id, title, description, url, image } = portfolio;
+
+    const { state: titleState, message: titleMessage } =
+      this.getTitleValidation(title);
+    const { state: urlState, message: urlMessage } = this.getUrlValidation(url);
+    const { state: descriptionState, message: descriptionMessage } =
+      this.getDescriptionValidation(description);
+    const { state: imageState, message: imageMessage } = this.getUrlValidation(
+      image,
+      true
+    );
+    const pristine = this.isFormPristine(id);
+
+    const urlIsValid = !isURL(url, {
+      protocols: ['http', 'https'],
+      require_tld: true,
+      require_protocol: true
+    });
+
+    const isButtonDisabled = [
+      titleState,
+      urlState,
+      descriptionState,
+      imageState,
+      urlIsValid
+    ].some(state => state === 'error' || false);
+
+    return {
+      isButtonDisabled,
+      title: {
+        titleState,
+        titleMessage
+      },
+      url: {
+        urlState,
+        urlMessage
+      },
+      image: {
+        imageState,
+        imageMessage
+      },
+      desc: {
+        descriptionState,
+        descriptionMessage
+      },
+      pristine
+    };
+  }
+
   renderPortfolio = (
     portfolio: PortfolioItem,
     index: number,
@@ -184,33 +235,18 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
   ) => {
     const { t } = this.props;
     const { id, title, description, url, image } = portfolio;
-    const pristine = this.isFormPristine(id);
-    const { state: titleState, message: titleMessage } =
-      this.getTitleValidation(title);
-    const { state: urlState, message: urlMessage } = this.getUrlValidation(url);
-
-    const { state: imageState, message: imageMessage } = this.getUrlValidation(
-      image,
-      true
-    );
-    const { state: descriptionState, message: descriptionMessage } =
-      this.getDescriptionValidation(description);
-
-    const isDisabled =
-      pristine ||
-      !title ||
-      !isURL(url, {
-        protocols: ['http', 'https'],
-        /* eslint-disable camelcase, @typescript-eslint/naming-convention */
-        require_tld: true,
-        require_protocol: true
-        /* eslint-enable camelcase, @typescript-eslint/naming-convention */
-      }) ||
-      description.length > 288;
+    const {
+      isButtonDisabled,
+      title: { titleState, titleMessage },
+      url: { urlState, urlMessage },
+      image: { imageState, imageMessage },
+      desc: { descriptionState, descriptionMessage },
+      pristine
+    } = this.formCorrect(portfolio);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
       e.preventDefault();
-      if (isDisabled) return null;
+      if (isButtonDisabled) return null;
       return this.updateItem(id);
     };
 
@@ -272,9 +308,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             ) : null}
           </FormGroup>
           <BlockSaveButton
-            aria-disabled={isDisabled}
+            aria-disabled={isButtonDisabled}
             bgSize='lg'
-            {...(isDisabled && { tabIndex: -1 })}
+            {...(isButtonDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
