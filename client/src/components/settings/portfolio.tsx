@@ -120,25 +120,6 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     return isEqual(original, edited);
   };
 
-  // TODO: Check if this function is required or not
-  // isFormValid = id => {
-  //   const { portfolio } = this.state;
-  //   const toValidate = find(portfolio, createFindById(id));
-  //   if (!toValidate) {
-  //     return false;
-  //   }
-  //   const { title, url, image, description } = toValidate;
-
-  //   const { state: titleState } = this.getTitleValidation(title);
-  //   const { state: urlState } = this.getUrlValidation(url);
-  //   const { state: imageState } = this.getUrlValidation(image, true);
-  //   const { state: descriptionState } =
-  //     this.getDescriptionValidation(description);
-  //   return [titleState, imageState, urlState, descriptionState]
-  //     .filter(Boolean)
-  //     .every(state => state === 'success');
-  // };
-
   getDescriptionValidation(description: string) {
     const { t } = this.props;
     const len = description.length;
@@ -207,6 +188,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const { state: titleState, message: titleMessage } =
       this.getTitleValidation(title);
     const { state: urlState, message: urlMessage } = this.getUrlValidation(url);
+
     const { state: imageState, message: imageMessage } = this.getUrlValidation(
       image,
       true
@@ -223,7 +205,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         require_tld: true,
         require_protocol: true
         /* eslint-enable camelcase, @typescript-eslint/naming-convention */
-      });
+      }) ||
+      description.length > 288;
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
       e.preventDefault();
