@@ -1,8 +1,8 @@
 ---
 id: 6401d5ee876ad54baacb8ffb
-title: Step 20
+title: Step 22
 challengeType: 0
-dashedName: step-20
+dashedName: step-22
 ---
 
 # --description--
@@ -139,6 +139,7 @@ fetch('https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json')
 
 const fetchMoreAuthors = () => {
 --fcc-editable-region--
+
 
 --fcc-editable-region--
 };

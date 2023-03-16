@@ -1,32 +1,13 @@
 ---
 id: 63ff7f1fa497db1ef87bac1d
-title: Step 9
+title: Step 10
 challengeType: 0
-dashedName: step-9
+dashedName: step-10
 ---
 
 # --description--
 
-Now, you need to take what you need from each of the author object. This is called destructuring. Inside each object in the array are `author`, `image`, `url`, and `bio` items. You will need all of them to populate the author info on the UI.
-
-This is how you can destructure in JavaScript:
-
-```js
-const freeCodeCamp = {
-  founder: 'Quincy Larson',
-  type: 'Non-profit',
-  funding: 'Donations',
-};
-
-const { founder, type } = freeCodeCamp;
-
-console.log(founder) // Quincy Larson
-console.log(type) // Non-profit
-```
-
-That means I took out the `founder` and `type` items from the object.
-
-Inside your `forEach`, destructure the `author`, `image`, `url`, and `bio` items. You don't need to assign them to anything as done in the example, just put them in a curly brace inside the `forEach`.
+Inside your `forEach`, destructure the `author`, `image`, `url`, and `bio` items. You don't need to assign them to anything, just put them in a curly brace inside the `forEach`.
 
 Also, put an `index` parameter inside the `forEach`, but it should be outside of the destructuring. This `index` will represent the position of each authors. It'll be useful for fetching just what you want and paginating the authors. 
 
