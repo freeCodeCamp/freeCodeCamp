@@ -18,7 +18,14 @@ if (error) {
   `);
 }
 
+function isAllowedEnv(
+  env: string
+): env is 'development' | 'production' | 'test' {
+  return ['development', 'production', 'test'].includes(env);
+}
+
 assert.ok(process.env.NODE_ENV);
+assert.ok(isAllowedEnv(process.env.NODE_ENV));
 assert.ok(process.env.AUTH0_DOMAIN);
 assert.ok(process.env.AUTH0_AUDIENCE);
 assert.ok(process.env.API_LOCATION);
