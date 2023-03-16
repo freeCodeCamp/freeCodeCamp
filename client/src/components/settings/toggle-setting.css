@@ -1,49 +1,139 @@
+.toggle-setting-container {
+  margin-bottom: 15px;
+}
+
 .toggle-setting-container .form-group {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
 }
 
-.toggle-setting-container .toggle-label {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.toggle-setting-container .btn-group {
-  padding-inline: 5px;
-}
-
 .toggle-setting-container > .form-group > * {
   flex: 1 1 0;
 }
 
-.toggle-setting-container .btn-group {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+.toggle-description {
+  max-width: 50%;
 }
 
-@media (max-width: 440px) {
-  .toggle-setting-container .form-group {
+.toggle-description > p:first-child {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.toggle-description > p:not(:first-child) {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.toggle-setting-container fieldset {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle-setting-container .toggle-button-group {
+  display: flex;
+  align-items: start;
+}
+
+.toggle-button-group button {
+  padding: 5px 2rem;
+  border: 3px solid var(--secondary-color);
+  white-space: nowrap;
+}
+
+.toggle-button-group button:focus {
+  position: relative;
+  z-index: 100;
+}
+
+.toggle-button-group button[aria-pressed='true'] {
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+}
+
+.toggle-button-group button span {
+  position: relative;
+}
+
+.toggle-button-group button span span {
+  display: none;
+}
+
+.toggle-button-group button[aria-pressed='true'] span .tick {
+  display: inline;
+  position: absolute;
+  right: -1.35rem;
+  top: 0;
+}
+
+.toggle-button-group button[aria-pressed='true']:first-child span .tick {
+  right: unset;
+  left: -1.25rem;
+}
+
+.toggle-button-group button[aria-pressed='true']:hover {
+  cursor: default;
+}
+
+.toggle-radio-group {
+  display: flex;
+  align-items: start;
+}
+
+.toggle-radio-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: last baseline;
+  border-radius: 0.25rem;
+}
+
+/* for FF since it doesn't support :has yet */
+.toggle-radio-group label:focus-within {
+  outline: 3px solid var(--blue-mid);
+  outline-offset: 5px;
+}
+
+@supports (selector(:has(input))) {
+  .toggle-radio-group label:focus-within {
+    outline: none;
+    outline-offset: unset;
+  }
+  .toggle-radio-group label:has(input:focus-visible) {
+    outline: 3px solid var(--blue-mid);
+    outline-offset: 5px;
+  }
+}
+
+.toggle-radio-group label[data-checked='false']:hover,
+.toggle-radio-group label[data-checked='false'] input:hover {
+  cursor: pointer;
+}
+
+.toggle-radio-group label + label {
+  margin-left: 1rem;
+}
+
+.toggle-radio-group input {
+  margin-right: 0.25rem;
+  accent-color: var(--secondary-color);
+}
+
+@media (max-width: 35rem) {
+  .toggle-setting-container fieldset {
     flex-direction: column;
+    margin-bottom: 1rem;
   }
 
-  .toggle-setting-container > .form-group > * {
+  .toggle-setting-container > fieldset > * {
     flex: 0 1 auto;
   }
 
-  .toggle-setting-container .toggle-label {
-    justify-content: flex-start;
+  .toggle-description {
+    max-width: none;
   }
 
-  .toggle-setting-container .help-block {
-    margin-bottom: 0px;
-  }
-
-  .toggle-setting-container .btn-group {
-    justify-content: flex-start;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  .toggle-description > p:not(:first-child) {
+    margin-bottom: 0.5rem;
   }
 }
