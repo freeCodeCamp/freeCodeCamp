@@ -50,13 +50,13 @@ Installa freeCodeCamp localmente ([vedi la guida di installazione locale](how-to
 #### Servire e avviare solo il sito di documentazione
 
 ```console
-npm run docs:serve
+pnpm run docs:serve
 ```
 
 #### Servire il sito di documentazione accanto a freeCodeCamp localmente:
 
 ```console
-npm run develop
+pnpm run develop
 ```
 
 > Il sito di documentazione dovrebbe essere disponibile su <http://localhost:3400>

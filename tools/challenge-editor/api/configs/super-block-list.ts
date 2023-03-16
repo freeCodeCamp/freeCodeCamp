@@ -60,7 +60,11 @@ export const superBlockList = [
     path: '16-the-odin-project'
   },
   {
+    name: 'College Algebra with Python',
+    path: '17-college-algebra-with-python'
+  },
+  {
     name: 'Project Euler',
-    path: '17-project-euler'
+    path: '18-project-euler'
   }
 ];

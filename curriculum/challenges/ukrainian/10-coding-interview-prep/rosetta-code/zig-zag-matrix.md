@@ -26,7 +26,7 @@ A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the
 
 # --hints--
 
-Зигзагоподібна матриця має бути функцією.
+ZigZagMatrix має бути функцією.
 
 ```js
 assert.equal(typeof ZigZagMatrix, 'function');

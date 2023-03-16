@@ -25,7 +25,7 @@ dashedName: last-letter-first-letter
 
 # --hints--
 
-`findLongestChain` повинен бути функцією.
+`findLongestChain` має бути функцією.
 
 ```js
 assert(typeof findLongestChain == 'function');

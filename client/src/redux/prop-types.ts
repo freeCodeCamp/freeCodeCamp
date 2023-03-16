@@ -142,6 +142,19 @@ export type ChallengeNode = {
   };
 };
 
+export type CertificateNode = {
+  challenge: {
+    // TODO: use enum
+    certification: string;
+    tests: { id: string }[];
+  };
+};
+
+export type AllChallengesInfo = {
+  challengeEdges: { node: ChallengeNode }[];
+  certificateNodes: CertificateNode[];
+};
+
 export type AllChallengeNode = {
   edges: [
     {
@@ -228,6 +241,7 @@ type ClaimedCertifications = {
   isBackEndCert: boolean;
   isDataVisCert: boolean;
   isEmailVerified: boolean;
+  isCollegeAlgebraPyCertV8: boolean;
   isFrontEndCert: boolean;
   isFrontEndLibsCert: boolean;
   isFullStackCert: boolean;

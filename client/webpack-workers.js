@@ -62,7 +62,7 @@ module.exports = (env = {}) => {
     },
     plugins: [
       new CopyWebpackPlugin({
-        patterns: ['../node_modules/sass.js/dist/sass.sync.js']
+        patterns: ['./node_modules/sass.js/dist/sass.sync.js']
       }),
       new webpack.ProvidePlugin({
         process: 'process/browser'

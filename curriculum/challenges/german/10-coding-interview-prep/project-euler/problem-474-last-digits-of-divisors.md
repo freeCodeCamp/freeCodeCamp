@@ -1,6 +1,6 @@
 ---
 id: 5900f5471000cf542c510059
-title: 'Problem 474: Last digits of divisors'
+title: 'Problem 474: Letzte Ziffern von Divisoren'
 challengeType: 1
 forumTopicId: 302151
 dashedName: problem-474-last-digits-of-divisors
@@ -8,17 +8,17 @@ dashedName: problem-474-last-digits-of-divisors
 
 # --description--
 
-For a positive integer $n$ and digits $d$, we define $F(n, d)$ as the number of the divisors of $n$ whose last digits equal $d$.
+Für einen positiven Integer $n$ und Ziffern $d$ definieren wir $F(n, d)$ als die Anzahl der Teiler von $n$, deren letzte Ziffern gleich $d$ sind.
 
-For example, $F(84, 4) = 3$. Among the divisors of 84 (1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84), three of them (4, 14, 84) have the last digit 4.
+Zum Beispiel, $F(84, 4) = 3$. Unter den Teilern von 84 (1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84) haben drei von ihnen (4, 14, 84) die letzte Ziffer 4.
 
-We can also verify that $F(12!, 12) = 11$ and $F(50!, 123) = 17\\,888$.
+Wir können auch überprüfen, dass $F(12!, 12) = 11$ und $F(50!, 123) = 17\\,888$.
 
-Find $F({10}^6!, 65\\,432) \text{ modulo } ({10}^{16} + 61)$.
+Finde $F({10}^6!, 65\\,432) \text{ modulo } ({10}^{16} + 61)$.
 
 # --hints--
 
-`lastDigitsOfDivisors()` should return `9690646731515010`.
+`lastDigitsOfDivisors()` sollte `9690646731515010` zurückgeben.
 
 ```js
 assert.strictEqual(lastDigitsOfDivisors(), 9690646731515010);

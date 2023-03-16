@@ -283,14 +283,12 @@ export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
     takeLatest(
-      [
-        types.updateFile,
-        types.previewMounted,
-        types.challengeMounted,
-        types.resetChallenge
-      ],
+      [types.updateFile, types.challengeMounted, types.resetChallenge],
       previewChallengeSaga
     ),
+    takeLatest(types.previewMounted, previewChallengeSaga, {
+      flushLogs: false
+    }),
     takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];
 }

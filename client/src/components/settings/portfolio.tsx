@@ -13,7 +13,7 @@ import isURL from 'validator/lib/isURL';
 
 import { hasProtocolRE } from '../../utils';
 
-import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
+import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
 
@@ -83,11 +83,6 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         return { portfolio: mutablePortfolio };
       });
     };
-
-  handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
-    e.preventDefault();
-    this.updateItem(id);
-  };
 
   updateItem = (id: string) => {
     const { portfolio, unsavedItemId } = this.state;
@@ -218,9 +213,27 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     );
     const { state: descriptionState, message: descriptionMessage } =
       this.getDescriptionValidation(description);
+
+    const isDisabled =
+      pristine ||
+      !title ||
+      !isURL(url, {
+        protocols: ['http', 'https'],
+        /* eslint-disable camelcase, @typescript-eslint/naming-convention */
+        require_tld: true,
+        require_protocol: true
+        /* eslint-enable camelcase, @typescript-eslint/naming-convention */
+      });
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
+      e.preventDefault();
+      if (isDisabled) return null;
+      return this.updateItem(id);
+    };
+
     return (
       <FullWidthRow key={id}>
-        <form onSubmit={e => this.handleSubmit(e, id)}>
+        <form onSubmit={e => handleSubmit(e, id)} id='portfolio-items'>
           <FormGroup
             controlId={`${id}-title`}
             validationState={
@@ -276,21 +289,13 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             ) : null}
           </FormGroup>
           <BlockSaveButton
-            disabled={
-              pristine ||
-              !title ||
-              !isURL(url, {
-                protocols: ['http', 'https'],
-                /* eslint-disable camelcase, @typescript-eslint/naming-convention */
-                require_tld: true,
-                require_protocol: true
-                /* eslint-enable camelcase, @typescript-eslint/naming-convention */
-              })
-            }
+            aria-disabled={isDisabled}
+            bgSize='lg'
+            {...(isDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
-          <ButtonSpacer />
+          <Spacer paddingSize={5} />
           <Button
             block={true}
             bsSize='lg'
@@ -303,9 +308,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         </form>
         {index + 1 !== arr.length && (
           <>
-            <Spacer />
+            <Spacer paddingSize={15} />
             <hr />
-            <Spacer />
+            <Spacer paddingSize={15} />
           </>
         )}
       </FullWidthRow>
@@ -324,7 +329,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           </div>
         </FullWidthRow>
         <FullWidthRow>
-          <ButtonSpacer />
+          <Spacer paddingSize={5} />
           <Button
             block={true}
             bsSize='lg'
@@ -336,7 +341,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             {t('buttons.add-portfolio')}
           </Button>
         </FullWidthRow>
-        <Spacer size={2} />
+        <Spacer paddingSize={30} />
         {portfolio.length ? portfolio.map(this.renderPortfolio) : null}
       </section>
     );

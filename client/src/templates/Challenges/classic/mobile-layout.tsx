@@ -39,17 +39,17 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
   };
 
-  switchTab = (tab: Tab) => {
+  switchTab = (tab: Tab): void => {
     this.setState({
       currentTab: tab
     });
   };
 
-  handleKeyDown = () => this.props.updateUsingKeyboardInTablist(true);
+  handleKeyDown = (): void => this.props.updateUsingKeyboardInTablist(true);
 
-  handleClick = () => this.props.updateUsingKeyboardInTablist(false);
+  handleClick = (): void => this.props.updateUsingKeyboardInTablist(false);
 
-  render() {
+  render(): JSX.Element {
     const { currentTab } = this.state;
     const {
       hasEditableBoundaries,

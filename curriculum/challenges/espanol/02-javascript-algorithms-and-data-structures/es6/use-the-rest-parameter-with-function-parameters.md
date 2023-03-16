@@ -22,7 +22,7 @@ console.log(howMany("string", null, [1, 2, 3], { }));
 
 La consola mostrará las cadenas `You have passed 3 arguments.` y `You have passed 4 arguments.`.
 
-El parámetro rest elimina la necesidad de comprobar el arreglo `args` y nos permite aplicar `map()`, `filter()` y `reduce()` en el arreglo de parámetros.
+The rest parameter eliminates the need to use the `arguments` object and allows us to use array methods on the array of parameters passed to the function `howMany`.
 
 # --instructions--
 
@@ -67,7 +67,11 @@ assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
 ```js
 const sum = (x, y, z) => {
   const args = [x, y, z];
-  return args.reduce((a, b) => a + b, 0);
+  let total = 0;
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+  return total;
 }
 ```
 
@@ -75,6 +79,10 @@ const sum = (x, y, z) => {
 
 ```js
 const sum = (...args) => {
-  return args.reduce((a, b) => a + b, 0);
+  let total = 0;
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+  return total;
 }
 ```

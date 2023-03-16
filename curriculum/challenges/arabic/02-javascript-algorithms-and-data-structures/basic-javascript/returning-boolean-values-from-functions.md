@@ -1,6 +1,6 @@
 ---
 id: 5679ceb97cbaa8c51670a16b
-title: عودة القيم المنطقية من الوظيفة (Returning Boolean Values from Functions)
+title: إنتاج القيم المنطقية من الوظائف
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp62qAQ'
 forumTopicId: 18273
@@ -9,7 +9,7 @@ dashedName: returning-boolean-values-from-functions
 
 # --description--
 
-قد تتذكر من <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener noreferrer nofollow">المقارنات باستخدام عملية المساواة (==)</a> أن جميع مشغلي المقارنات يرجعون حالة منطقية (boolean) سواء `true` أو `false`.
+قد تتذكر من <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener noreferrer nofollow">المقارنة باستخدام مشغِّل المساواة (==)</a> أن جميع مشغلي المقارنات ينتجون قيمة منطقية (boolean) سواء `true` أو `false`.
 
 في بعض الأحيان يستخدم الناس `if/else` لإجراء المقارنة، مثلا:
 
@@ -37,13 +37,13 @@ function isEqual(a, b) {
 
 # --hints--
 
-يجب أن يرجع `isLess(10, 15)` حالة `true`
+يجب أن ينتج `isLess(10, 15)` حالة `true`
 
 ```js
 assert(isLess(10, 15) === true);
 ```
 
-يجب أن يرجع `isLess(15, 10)` حالة `false`
+يجب أن ينتج `isLess(15, 10)` حالة `false`
 
 ```js
 assert(isLess(15, 10) === false);

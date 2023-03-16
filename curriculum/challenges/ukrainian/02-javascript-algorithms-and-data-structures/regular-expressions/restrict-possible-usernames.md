@@ -26,28 +26,28 @@ dashedName: restrict-possible-usernames
 
 # --hints--
 
-Регулярний вираз повинен мати збіг з рядком `JACK`
+Ваш регулярний вираз повинен збігатися з рядком `JACK`
 
 ```js
 userCheck.lastIndex = 0;
 assert(userCheck.test('JACK'));
 ```
 
-Регулярний вираз не повинен мати збігів з рядком `J`
+Ваш регулярний вираз не повинен збігатися з рядком `J`
 
 ```js
 userCheck.lastIndex = 0;
 assert(!userCheck.test('J'));
 ```
 
-Регулярний вираз повинен мати збіг з рядком `Jo`
+Ваш регулярний вираз повинен збігатися з рядком `Jo`
 
 ```js
 userCheck.lastIndex = 0;
 assert(userCheck.test('Jo'));
 ```
 
-Регулярний вираз повинен мати збіг з рядком `Oceans11`
+Ваш регулярний вираз повинен збігатися з рядком `Oceans11`
 
 ```js
 userCheck.lastIndex = 0;
@@ -68,28 +68,28 @@ userCheck.lastIndex = 0;
 assert(!userCheck.test('007'));
 ```
 
-Регулярний вираз не повинен мати збігів з рядком `9`
+Ваш регулярний вираз не повинен збігатися з рядком `9`
 
 ```js
 userCheck.lastIndex = 0;
 assert(!userCheck.test('9'));
 ```
 
-Регулярний вираз не повинен мати збігів з рядком `A1`
+Ваш регулярний вираз не повинен збігатися з рядком `A1`
 
 ```js
 userCheck.lastIndex = 0;
 assert(!userCheck.test('A1'));
 ```
 
-Регулярний вираз не повинен мати збігів з рядком `BadUs3rnam3`
+Ваш регулярний вираз не повинен збігатися з рядком `BadUs3rnam3`
 
 ```js
 userCheck.lastIndex = 0;
 assert(!userCheck.test('BadUs3rnam3'));
 ```
 
-Регулярний вираз повинен мати збіг з рядком `Z97`
+Ваш регулярний вираз повинен збігатися з рядком `Z97`
 
 ```js
 userCheck.lastIndex = 0;
@@ -103,14 +103,14 @@ userCheck.lastIndex = 0;
 assert(!userCheck.test('c57bT3'));
 ```
 
-Регулярний вираз повинен мати збіг з рядком `AB1`
+Ваш регулярний вираз повинен збігатися з рядком `AB1`
 
 ```js
 userCheck.lastIndex = 0;
 assert(userCheck.test('AB1'));
 ```
 
-Регулярний вираз не повинен мати збігів з рядком `J%4`
+Ваш регулярний вираз не повинен збігатися з рядком `J%4`
 
 ```js
 userCheck.lastIndex = 0;

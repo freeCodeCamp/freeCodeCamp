@@ -13,12 +13,20 @@ O operador de <dfn>resto</dfn> `%` retorna o resto da divisão de dois números.
 
 **Exemplo**
 
-<blockquote>5 % 2 = 1 porque<br>Math.floor(5 / 2) = 2 (Quociente)<br> 2 * 2 = 4<br>5 - 4 = 1 (Resto)</blockquote>
+<pre>
+5 % 2 = 1
+5 / 2 = 2 resto 1
+2 * 2 = 4
+5 - 4 = 1
+</pre>
 
 **Uso**  
-Na matemática, um número pode ser verificado como par ou ímpar por meio do resto da divisão do número por `2`.
+Na matemática, um número pode ser verificado como par ou ímpar por meio do resto da divisão do número por `2`. Números pares têm um resto de `0`, enquanto números ímpares têm um resto de `1`.
 
-<blockquote>17 % 2 = 1 (17 é Ímpar)<br>48 % 2 = 0 (48 é Par)</blockquote>
+<pre>
+17 % 2 = 1
+48 % 2 = 0
+</pre>
 
 **Observação:** o operador de <dfn>resto</dfn> às vezes é referido incorretamente como o operador de módulo. É muito semelhante ao módulo, mas não funciona adequadamente com números negativos.
 
@@ -51,7 +59,9 @@ assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
 ## --after-user-code--
 
 ```js
-(function(y){return 'remainder = '+y;})(remainder);
+(function (y) {
+  return 'remainder = ' + y;
+})(remainder);
 ```
 
 ## --seed-contents--

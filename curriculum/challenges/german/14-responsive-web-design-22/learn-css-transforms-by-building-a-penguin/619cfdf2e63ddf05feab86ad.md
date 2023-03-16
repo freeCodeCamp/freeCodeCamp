@@ -1,6 +1,6 @@
 ---
 id: 619cfdf2e63ddf05feab86ad
-title: Step 47
+title: Schritt 47
 challengeType: 0
 dashedName: step-47
 ---
@@ -11,7 +11,7 @@ Position the `.face` elements so that they are `15%` from the top.
 
 # --hints--
 
-You should give `.face` a `top` property.
+Du solltest `.face` eine `top`-Eigenschaft geben.
 
 ```js
 assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.top);

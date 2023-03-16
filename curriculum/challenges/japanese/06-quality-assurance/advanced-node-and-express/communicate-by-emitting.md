@@ -38,7 +38,7 @@ socket.on('user count', function(data) {
 
 ここで、アプリを読み込んで認証を実行してみてください。クライアントコンソールに、現在のユーザー数である「1」が表示されるはずです。 より多くのクライアントを読み込んで認証し、数字が増えるのを確認してください。
 
-正しいと思ったら、ページを送信してください。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#communicate-by-emitting-7" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+正しいと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#communicate-by-emitting-7" target="_blank" rel="noopener noreferrer nofollow">この時点までの完成形のコードをこちらで確認できます</a>。
 
 # --hints--
 

@@ -15,8 +15,8 @@
     "show-cert": "認定証を表示",
     "claim-cert": "認定証を取得",
     "save-progress": "進行状況を保存",
-    "accepted-honesty": "学問的誠実性ポリシーに同意しました。",
-    "agree": "同意する",
+    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
+    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
     "save-portfolio": "このポートフォリオアイテムを保存",
     "remove-portfolio": "このポートフォリオアイテムを削除",
     "add-portfolio": "新規ポートフォリオアイテムを追加",
@@ -224,7 +224,6 @@
     "total-points_plural": "合計 {{count}} ポイント",
     "points": "{{count}} ポイント ({{date}})",
     "points_plural": "{{count}} ポイント ({{date}})",
-    "screen-shot": "{{title}} のスクリーンショット",
     "page-number": "{{pageNumber}} / {{totalPages}}"
   },
   "footer": {
@@ -251,6 +250,7 @@
   },
   "learn": {
     "heading": "freeCodeCamp のカリキュラムへようこそ。",
+    "skip-to-content": "Skip to content",
     "welcome-1": "{{name}} さん、おかえりなさい。",
     "welcome-2": "freeCodeCamp.org へようこそ",
     "start-at-beginning": "コーディングが初めての場合は、<0>最初から開始する</0> ことをお勧めします。",
@@ -302,7 +302,6 @@
       "certs": "{{title}} 認定講座"
     },
     "editor-tabs": {
-      "info": "詳細",
       "code": "コード",
       "tests": "テスト",
       "restart": "リスタート",
@@ -518,7 +517,7 @@
     "opens-new-window": "新しいウィンドウで開く"
   },
   "flash": {
-    "honest-first": "認定証を請求するには、まず学問的誠実性ポリシーに同意する必要があります。",
+    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "予期しない問題が発生しました。この問題が何度も発生するようであれば、https://github.com/freeCodeCamp/freeCodeCamp/issues/new への Issue 登録をご検討ください。",
     "not-right": "問題が発生しました。レポートが生成され、freeCodeCamp.org チームへ通知されました。",
     "went-wrong": "問題が発生しました。ご確認の上もう一度お試しください。",
@@ -597,7 +596,8 @@
     "editor-url": "動作可能なアプリの URL を提出してください。",
     "http-url": "安全でない (http) URL は使用できません。",
     "own-work-url": "あなた自身の作品を提出してください。",
-    "publicly-visible-url": "公開されたアプリの URL を提出してください。"
+    "publicly-visible-url": "公開されたアプリの URL を提出してください。",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",
@@ -711,6 +711,8 @@
       "information-security-v7": "情報セキュリティ認定証",
       "Machine Learning with Python": "Python を用いた機械学習",
       "machine-learning-with-python-v7": "Python を用いた機械学習認定証",
+      "College Algebra with Python": "College Algebra with Python",
+      "college-algebra-with-python-v8": "College Algebra with Python Certification",
       "Legacy Front End": "(レガシー) フロントエンド",
       "legacy-front-end": "フロントエンド認定証",
       "Legacy Back End": "(レガシー) バックエンド",

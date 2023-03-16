@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 
 import { deleteAccount, resetProgress } from '../../redux/settings/actions';
-import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
+import { FullWidthRow, Spacer } from '../helpers';
 import DeleteModal from './delete-modal';
 import ResetModal from './reset-modal';
 
@@ -45,7 +45,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
     <FullWidthRow className='danger-zone text-center'>
       <Panel bsStyle='danger'>
         <Panel.Heading>{t('settings.danger.heading')}</Panel.Heading>
-        <Spacer />
+        <Spacer paddingSize={15} />
         <p>{t('settings.danger.be-careful')}</p>
         <FullWidthRow>
           <Button
@@ -58,7 +58,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
           >
             {t('settings.danger.reset')}
           </Button>
-          <ButtonSpacer />
+          <Spacer paddingSize={5} />
           <Button
             block={true}
             bsSize='lg'
@@ -69,7 +69,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
           >
             {t('settings.danger.delete')}
           </Button>
-          <Spacer />
+          <Spacer paddingSize={15} />
         </FullWidthRow>
       </Panel>
 

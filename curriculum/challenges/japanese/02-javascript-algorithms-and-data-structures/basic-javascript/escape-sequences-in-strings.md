@@ -9,12 +9,7 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-文字列の中で<dfn>エスケープ</dfn>できる文字は引用符だけではありません。 エスケープ文字を使用するのには 2 つ理由があります。
-
-1.  改行のように、他の方法では入力できない文字を使用できるようにするため。
-2.  文字列中で複数種類の引用符を使用する場合に、JavaScript が正しく解釈できるようにするため。
-
-前のチャレンジでは次のことを学習しました。
+文字列の中で<dfn>エスケープ</dfn>できる文字は引用符だけではありません。 エスケープシーケンスを使用すると、文字列で通常は使用できない文字を使用できます。
 
 <table class='table table-striped'><thead><tr><th>コード</th><th>出力</th></tr></thead><tbody><tr><td><code>\'</code></td><td>シングルクォート</td></tr><tr><td><code>\"</code></td><td>ダブルクォート</td></tr><tr><td><code>\\</code></td><td>バックスラッシュ (日本語では円記号)</td></tr><tr><td><code>\n</code></td><td>改行</td></tr><tr><td><code>\t</code></td><td>タブ</td></tr><tr><td><code>\r</code></td><td>キャリッジリターン</td></tr><tr><td><code>\b</code></td><td>単語境界</td></tr><tr><td><code>\f</code></td><td>改ページ</td></tr></tbody></table>
 
@@ -24,7 +19,11 @@ dashedName: escape-sequences-in-strings
 
 エスケープシーケンスを使用して、単一の変数 `myStr` に次の 3 行のテキストを代入してください。
 
-<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
+<pre>
+FirstLine
+    \SecondLine
+ThirdLine
+</pre>
 
 特殊文字を正しく挿入するにはエスケープシーケンスを使用する必要があります。 また、エスケープシーケンスや単語の間にスペースを入れず、上記のとおりに表示する必要があります。
 
@@ -32,13 +31,13 @@ dashedName: escape-sequences-in-strings
 
 # --hints--
 
-`myStr` にはスペースを含めない必要があります。
+`myStr` にスペースを含めてはいけません
 
 ```js
 assert(!/ /.test(myStr));
 ```
 
-`myStr` には文字列 `FirstLine`、 `SecondLine`、および `ThirdLine` を含める必要があります (大文字小文字を正しく区別してください)。
+`myStr` には文字列 `FirstLine`、`SecondLine`、および `ThirdLine` を含める必要があります (大文字小文字を正しく区別してください)
 
 ```js
 assert(
@@ -46,31 +45,31 @@ assert(
 );
 ```
 
-`FirstLine` の直後に改行文字 `\n` を付ける必要があります。
+`FirstLine` の直後に改行文字 `\n` を付ける必要があります
 
 ```js
 assert(/FirstLine\n/.test(myStr));
 ```
 
-`myStr` にはタブ文字 `\t` を含め、直後に改行文字を付ける必要があります。
+`myStr` には改行文字に続けてタブ文字 `\t` を含める必要があります
 
 ```js
 assert(/\n\t/.test(myStr));
 ```
 
-`SecondLine` の前にバックスラッシュ文字 `\` を付ける必要があります。
+`SecondLine` の前にバックスラッシュ文字 `\` を付ける必要があります
 
 ```js
 assert(/\\SecondLine/.test(myStr));
 ```
 
-`SecondLine` と `ThirdLine` の間に改行文字を入れる必要があります。
+`SecondLine` と `ThirdLine` の間に改行文字を入れる必要があります
 
 ```js
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` には手順で示した文字だけを含める必要があります。
+`myStr` には指示された文字だけを含める必要があります
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');

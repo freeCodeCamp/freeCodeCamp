@@ -65,7 +65,7 @@ console.log('user ' + socket.request.user.username + ' connected');
 
 接続したサーバーコンソールにログインします！
 
-正しいと思ったら、ページを送信してください。 If you're running into errors, you can  <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
+正しいと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#authentication-with-socketio-9" target="_blank" rel="noopener noreferrer nofollow">この時点までのコードをこちらで確認できます</a>。
 
 # --hints--
 

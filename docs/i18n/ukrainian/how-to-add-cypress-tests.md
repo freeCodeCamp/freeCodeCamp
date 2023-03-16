@@ -6,9 +6,9 @@
 
 ## Куди додати тест
 
-- Тести Cypress знаходяться у директорії `./cypress`.
+- Тести Cypress знаходяться в каталозі `./cypress`.
 
-- Тести Cypress для модуля навчальної програми знаходяться у відповідній директорії навчальної програми, тобто `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
+- Тести Cypress для модуля навчальної програми знаходяться у відповідному каталозі навчальної програми, тобто `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
 
 ## Як проводити тести
 
@@ -22,37 +22,37 @@
 
 ### 2. Запустіть тести cypress
 
-Щоб запустити тести продакшн збірок, замініть `dev` на `prd` нижче.
+Щоб запустити тести кінцевої збірки, замініть `dev` на `prd` нижче.
 
-- Щоб запустити всі тести у директорії `./cypress`:
+- Щоб запустити всі тести в каталозі `./cypress`:
 
   ```console
-  npm run cypress:dev:run
+  pnpm run cypress:dev:run
   ```
 
-- Для запуску одного тесту:
+- Щоб запустити один тест:
 
   ```console
-  npm run cypress -- run --spec=cypress/<path_to_test_file>
+  pnpm run cypress -- run --spec=cypress/<path_to_test_file>
   ```
 
   Наприклад:
 
   ```console
-  npm run cypress -- run --spec=cypress/e2e/default/landing.js
+  pnpm run cypress -- run --spec=cypress/e2e/default/landing.js
   ```
 
 - Щоб створити збірку розробки, запустіть сервер розробки і виконайте всі наявні тести cypress:
 
   ```console
-  npm run e2e:dev:run
+  pnpm run e2e:dev:run
   ```
 
 ## Налаштування Cypress-GitPod
 
 ### 1. Переконайтеся, що середовище розробки запущене
 
-Якщо запуск середовища GitPod не призвів до автоматичної розробки середовища:
+Якщо запуск середовища GitPod не розробив середовище автоматично:
 
 - Запустіть базу даних
 
@@ -63,19 +63,19 @@ mongod
 - Заповніть базу даних
 
 ```console
-npm run seed
+pnpm run seed
 ```
 
 - Розробіть сервер та клієнта
 
 ```console
-npm run develop
+pnpm run develop
 ```
 
 ### 2. Встановіть інструменти збірки Cypress
 
 ```console
-npm run cypress:install-build-tools
+pnpm run cypress:install-build-tools
 ```
 
 - Якщо керований в терміналі, виберіть розкладку клавіатури за мовою/регіоном

@@ -9,7 +9,7 @@ dashedName: comparison-with-the-less-than-or-equal-to-operator
 
 # --description--
 
-مشغل اصغر من أو يساوي، (`<=`) يقارن بين قيم رقمين. إذا كان الرَّقَم إلى اليسار أقل من أو يساوي الرَّقَم إلى اليمين، فإنه يعيد `true`. إذا كان الرَّقَم الموجود على اليسار أكبر من الرَّقَم الموجود على اليمين، فإنه يعيد `false`. وعلى غرار المشغل المعني بالمساواة، يحول مشغل اصغر من أو يساوي أنواع البيانات من القيم عند مقارنتها.
+مشغل اصغر من أو يساوي، (`<=`) يقارن بين قيم رقمين. إذا كان الرَّقَم إلى اليسار أقل من أو يساوي الرَّقَم إلى اليمين، فإنه يعيد `true`. إذا كان الرَّقَم الموجود على اليسار أكبر من الرَّقَم الموجود على اليمين، فإنه يعيد `false`. وعلى غرار مشغل المساواة، يحول مشغل اصغر من أو يساوي أنواع البيانات عند مقارنتها.
 
 **مثال**
 
@@ -23,47 +23,47 @@ dashedName: comparison-with-the-less-than-or-equal-to-operator
 
 # --instructions--
 
-أضف مشغل اصغر من أو يساوي إلى السطور المشار إليها بحيث تكون تعبيرات المراجعة منطقية.
+أضف مشغل اصغر من أو يساوي إلى السطور المشار إليها بحيث تكون تعبيرات return منطقية.
 
 # --hints--
 
-يجب أن ينتج `testLessOrEqual(0)` المقطع `Smaller Than or Equal to 12`
+يجب أن ينتج `testLessOrEqual(0)` المقطع النصي `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(0) === 'Smaller Than or Equal to 12');
 ```
 
-يجب أن ينتج `testLessOrEqual(11)` مقطع `Smaller Than or Equal to 12`
+يجب أن ينتج `testLessOrEqual(11)` المقطع النصي `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(11) === 'Smaller Than or Equal to 12');
 ```
 
-يجب أن ينتج `testLessOrEqual(12)` مقطع `Smaller Than or Equal to 12`
+يجب أن ينتج `testLessOrEqual(12)` المقطع النصي `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(12) === 'Smaller Than or Equal to 12');
 ```
 
-يجب أن ينتج `testLessOrEqual(23)` مقطع `Smaller Than or Equal to 24`
+يجب أن ينتج `testLessOrEqual(23)` المقطع النصي `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(23) === 'Smaller Than or Equal to 24');
 ```
 
-يجب أن ينتج `testLessOrEqual(24)` مقطع `Smaller Than or Equal to 24`
+يجب أن ينتج `testLessOrEqual(24)` المقطع النصي `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(24) === 'Smaller Than or Equal to 24');
 ```
 
-يجب أن ينتج `testLessOrEqual(25)` مقطع `More Than 24`
+يجب أن ينتج `testLessOrEqual(25)` المقطع النصي `More Than 24`
 
 ```js
 assert(testLessOrEqual(25) === 'More Than 24');
 ```
 
-يجب أن ينتج `testLessOrEqual(55)` مقطع `More Than 24`
+يجب أن ينتج `testLessOrEqual(55)` المقطع النصي `More Than 24`
 
 ```js
 assert(testLessOrEqual(55) === 'More Than 24');

@@ -1,0 +1,16 @@
+{
+  "name": "Learn Quadratic Equations",
+  "isUpcomingChange": true,
+  "dashedName": "learn-quadratic-equations",
+  "order": 10,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    [
+      "6363d2429078df117ce4c400",
+      "Quadratics"
+    ]
+  ]
+}

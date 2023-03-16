@@ -172,7 +172,7 @@ class Project extends Component<ProjectProps> {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer />
+                <Spacer paddingSize={15} />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
@@ -194,7 +194,7 @@ class Project extends Component<ProjectProps> {
                   guideUrl={getGuideUrl({ forumTopicId, title })}
                 />
                 <br />
-                <Spacer />
+                <Spacer paddingSize={15} />
               </Col>
               <CompletionModal
                 block={block}

@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Destructuring via rest elements
+  Destrukturierung über Rest-Elemente
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-
@@ -22,7 +22,7 @@ console.log(arr);
 
 Die Konsole würde die Werte `1, 2` und `[3, 4, 5, 7]` anzeigen.
 
-Die Variablen `a` und `b` entnehmen den ersten und zweiten Wert aus dem Array. After that, because of the rest syntax presence, `arr` gets the rest of the values in the form of an array. Das Rest-Element funktioniert nur als letzte Variable in der Liste richtig. As in, you cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
+Die Variablen `a` und `b` entnehmen den ersten und zweiten Wert aus dem Array. Danach erhält `arr` aufgrund des Vorhandenseins der Rest-Syntax die restlichen Werte in Form eines Arrays. Das Rest-Element funktioniert nur als letzte Variable in der Liste richtig. As in, you cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
 
 # --instructions--
 
@@ -30,7 +30,7 @@ Use a destructuring assignment with the rest syntax to emulate the behavior of `
 
 # --hints--
 
-`removeFirstTwo([1, 2, 3, 4, 5])` should be `[3, 4, 5]`
+`removeFirstTwo([1, 2, 3, 4, 5])` sollte `[3, 4, 5]` ergeben
 
 ```js
 const testArr_ = [1, 2, 3, 4, 5];
@@ -38,7 +38,7 @@ const testArrWORemoved_ = removeFirstTwo(testArr_);
 assert(testArrWORemoved_.every((e, i) => e === i + 3) && testArrWORemoved_.length === 3);
 ```
 
-`removeFirstTwo()` should not modify `list`
+`removeFirstTwo()` sollte `list` nicht verändern
 
 ```js
 const testArr_ = [1, 2, 3, 4, 5];

@@ -8,7 +8,7 @@ dashedName: problem-203-squarefree-binomial-coefficients
 
 # --description--
 
-The binomial coefficients $\displaystyle\binom{n}{k}$ can be arranged in triangular form, Pascal's triangle, like this:
+Die Binomialkoeffizienten $\displaystyle\binom{n}{k}$ können in Dreiecksform, dem Pascalschen Dreieck, wie folgt angeordnet werden:
 
 $$\begin{array}{ccccccccccccccc}    &   &   &   &    &    &    &  1 &    &    &    &   &   &   &   \\\\
    &   &   &   &    &    &  1 &    & 1  &    &    &   &   &   &   \\\\    &   &   &   &    &  1 &    &  2 &    &  1 &    &   &   &   &   \\\\
@@ -16,15 +16,15 @@ $$\begin{array}{ccccccccccccccc}    &   &   &   &    &    &    &  1 &    &    & 
    &   & 1 &   &  5 &    & 10 &    & 10 &    &  5 &   & 1 &   &   \\\\    & 1 &   & 6 &    & 15 &    & 20 &    & 15 &    & 6 &   & 1 &   \\\\
  1 &   & 7 &   & 21 &    & 35 &    & 35 &    & 21 &   & 7 &   & 1 \\\\ &   &   &   &    &    &    & \ldots \end{array}$$
 
-It can be seen that the first eight rows of Pascal's triangle contain twelve distinct numbers: 1, 2, 3, 4, 5, 6, 7, 10, 15, 20, 21 and 35.
+Man sieht, dass die ersten acht Zeilen des Pascalschen Dreiecks zwölf verschiedene Zahlen enthalten: 1, 2, 3, 4, 5, 6, 7, 10, 15, 20, 21 und 35.
 
-A positive integer n is called squarefree if no square of a prime divides n. Of the twelve distinct numbers in the first eight rows of Pascal's triangle, all except 4 and 20 are squarefree. The sum of the distinct squarefree numbers in the first eight rows is 105.
+Eine positive ganze Zahl n wird als quadratfrei bezeichnet, wenn kein Quadrat einer Primzahl n teilt. Von den zwölf verschiedenen Zahlen in den ersten acht Zeilen des Pascalschen Dreiecks sind alle außer 4 und 20 quadratfrei. Die Summe der eindeutigen quadratfreien Zahlen in den ersten acht Zeilen ist 105.
 
-Find the sum of the distinct squarefree numbers in the first 51 rows of Pascal's triangle.
+Finde die Summe der verschiedenen quadratfreien Zahlen in den ersten 51 Zeilen des Pascalschen Dreiecks.
 
 # --hints--
 
-`squarefreeBinomialCoefficients()` should return `34029210557338`.
+`squarefreeBinomialCoefficients()` sollte `34029210557338` zurückgeben.
 
 ```js
 assert.strictEqual(squarefreeBinomialCoefficients(), 34029210557338);

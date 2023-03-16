@@ -39,8 +39,8 @@ const upcomingTest = {
   [SuperBlocks.InfoSec]: 9,
   [SuperBlocks.MachineLearningPy]: 10,
   [SuperBlocks.CodingInterviewPrep]: 11,
-  [SuperBlocks.ProjectEuler]: 12,
-  [SuperBlocks.JsAlgoDataStructNew]: 13,
+  [SuperBlocks.JsAlgoDataStructNew]: 12,
+  [SuperBlocks.CollegeAlgebraPy]: 13,
   [SuperBlocks.TheOdinProject]: 14,
   [SuperBlocks.RespWebDesign]: 15
 };
@@ -167,7 +167,8 @@ describe('getSuperOrder', () => {
     expect(getSuperOrder(SuperBlocks.ProjectEuler)).toBe(12);
 
     if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
-      expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(13);
+      expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(12);
+      expect(getSuperOrder(SuperBlocks.CollegeAlgebraPy)).toBe(13);
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(14);
       expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(15);
     } else {

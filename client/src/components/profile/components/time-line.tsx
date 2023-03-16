@@ -8,13 +8,9 @@ import { connect } from 'react-redux';
 
 import envData from '../../../../../config/env.json';
 import { getLangCode } from '../../../../../config/i18n';
-import {
-  getCertIds,
-  getPathFromID,
-  getTitleFromId
-} from '../../../../../utils';
+import { getCertIds, getPathFromID } from '../../../../../utils';
 import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
-import CertificationIcon from '../../../assets/icons/certification-icon';
+import CertificationIcon from '../../../assets/icons/certification';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
@@ -254,13 +250,11 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   `);
   const idToNameMap = new Map();
   for (const id of getCertIds()) {
-    const challengeTitle = getTitleFromId(id);
+    const certPath = getPathFromID(id);
+    const certName = t(`certification.title.${certPath}`);
     idToNameMap.set(id, {
-      challengeTitle: `${t(
-        `certification.title.${challengeTitle}`,
-        challengeTitle
-      )} Certification`,
-      certPath: getPathFromID(id)
+      challengeTitle: certName,
+      certPath: certPath
     });
   }
   edges.forEach(
