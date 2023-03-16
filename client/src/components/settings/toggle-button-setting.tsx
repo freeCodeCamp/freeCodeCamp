@@ -36,6 +36,10 @@ export default function ToggleButtonSetting({
         </div>
         <div className='toggle-button-group'>
           <button
+<<<<<<< HEAD
+=======
+            ref={firstButtonRef}
+>>>>>>> fe68a35ab1 (refactor: remove unnecessary ternary)
             aria-pressed={flag}
             {...(!flag && { onClick: toggleFlag })}
             value='1'
@@ -45,6 +49,10 @@ export default function ToggleButtonSetting({
             {flag ? <ToggleCheck style={checkIconStyle} /> : <div />}
           </button>
           <button
+<<<<<<< HEAD
+=======
+            ref={secondButtonRef}
+>>>>>>> fe68a35ab1 (refactor: remove unnecessary ternary)
             aria-pressed={!flag}
             {...(flag && { onClick: toggleFlag })}
             value='2'
