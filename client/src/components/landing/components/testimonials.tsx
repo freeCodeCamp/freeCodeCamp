@@ -4,6 +4,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import emmaImg from '../../../assets/images/landing/Emma.png';
 import sarahImg from '../../../assets/images/landing/Sarah.png';
 import shawnImg from '../../../assets/images/landing/Shawn.png';
+import { LazyImage } from '../../helpers';
 
 const Testimonials = (): JSX.Element => {
   const { t } = useTranslation();
@@ -16,7 +17,7 @@ const Testimonials = (): JSX.Element => {
       <div className='testimonials-row' data-test-label='testimonial-cards'>
         <div className='testimonial-card'>
           <div className='testimonial-card-header'>
-            <img
+            <LazyImage
               alt='Shawn Wang'
               className='testimonial-image'
               src={shawnImg}
@@ -43,7 +44,7 @@ const Testimonials = (): JSX.Element => {
 
         <div className='testimonial-card'>
           <div className='testimonial-card-header'>
-            <img
+            <LazyImage
               alt='Sarah Chima'
               className='testimonial-image'
               src={sarahImg}
@@ -70,7 +71,7 @@ const Testimonials = (): JSX.Element => {
 
         <div className='testimonial-card'>
           <div className='testimonial-card-header'>
-            <img
+            <LazyImage
               alt='Emma Bostian'
               className='testimonial-image'
               src={emmaImg}
