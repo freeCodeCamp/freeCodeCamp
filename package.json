@@ -86,6 +86,7 @@
     "test": "run-s create:* build:curriculum build-workers test:*",
     "test:source": "jest",
     "test:curriculum": "cd ./curriculum && pnpm test",
+    "test-api": "cd api && jest",
     "test-curriculum-full-output": "cd ./curriculum && pnpm run test:full-output",
     "test-client": "jest client",
     "test-config": "jest config",
