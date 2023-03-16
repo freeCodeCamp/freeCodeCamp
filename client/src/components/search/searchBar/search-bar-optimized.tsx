@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import Magnifier from '../../../assets/icons/magnifier';
+import Magnifier from '../../../assets/icons/Magnifier';
 import InputReset from '../../../assets/icons/input-reset';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 
