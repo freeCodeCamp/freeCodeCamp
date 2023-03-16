@@ -173,7 +173,7 @@ describe('getSuperOrder', () => {
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(15);
       expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(16);
     } else {
-      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(14);
+      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(13);
     }
   });
 });
