@@ -4,7 +4,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
-import ButtonSpacer from '../../components/helpers/button-spacer';
+import Spacer from '../../components/helpers/spacer';
 import FullWidthRow from '../../components/helpers/full-width-row';
 import LearnLayout from '../../components/layouts/learn';
 import {
@@ -67,11 +67,11 @@ function IntroductionPage({
           >
             {t('buttons.first-lesson')}
           </Link>
-          <ButtonSpacer />
+          <Spacer paddingSize={5} />
           <Link className='btn btn-lg btn-primary btn-block' to='/learn'>
             {t('buttons.view-curriculum')}
           </Link>
-          <ButtonSpacer />
+          <Spacer paddingSize={5} />
           <hr />
         </FullWidthRow>
         <FullWidthRow>

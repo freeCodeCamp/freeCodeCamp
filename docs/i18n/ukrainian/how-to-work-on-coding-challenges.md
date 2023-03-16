@@ -1,22 +1,22 @@
-# How to work on coding challenges
+# Як працювати над завданнями з програмуванням
 
-Our goal is to develop a fun and clear interactive learning experience.
+Нашою метою є розробити веселе та зрозуміле інтерактивне навчання.
 
-Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+Розробити інтерактивні завдання для програмування — важко. Було б набагато простіше написати довге пояснення чи створити відеоурок. Але для нашої основної навчальної програми ми використовуємо те, що найкраще працює для більшості людей — інтерактив, схожий на відеогру.
 
-We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
+Ми хочемо, щоб кемпери досягли стану потоку. Ми хочемо, щоб вони наростили темп та пройшли навчальну програму з мінімальною кількістю помилок. Ми хочемо, щоб вони впевнено виконували проєкти та ознайомились з багатьма поняттями програмування.
 
-Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
+Зауважте, що для версії 7.0 навчальної програми freeCodeCamp ми переходимо до [проєктноорієнтованої моделі з багатьма повтореннями](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
-Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
+Ці завдання вимагають креативності та уваги до деталей. Ви не залишитесь без допомоги. Вас підтримуватиме ціла команда помічників, з якими можна поділитись власними ідеями та завданнями.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+І як завжди, не соромтесь ставити запитання [на форумі у категорії «Contributors»](https://forum.freecodecamp.org/c/contributors) або [у чаті](https://discord.gg/PRyKn3Vbay).
 
-With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+Завдяки вашій допомозі ми створюємо інтерактивну навчальну програму для програмування, що допоможе мільйонам людей навчитися писати код.
 
-The content for each challenge is stored in its markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
+Вміст кожного завдання зберігається у файлі markdown. Потім, щоб створити інтерактивну вебсторінку, цей файл конвертується у HTML за допомогою наших інструментів.
 
-You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges) directory.
+Ви можете знайти весь навчальний матеріал freeCodeCamp.org у каталозі [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges).
 
 ## Set up the tooling for the curriculum
 
@@ -146,15 +146,15 @@ The question text goes here.
 
 ## --answers--
 
-Answer 1
+Відповідь 1
 
 ---
 
-Answer 2
+Відповідь 2
 
 ---
 
-More answers
+Інші відповіді
 
 ## --video-solution--
 

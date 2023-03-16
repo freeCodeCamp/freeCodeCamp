@@ -14,7 +14,8 @@ export const certTypes = {
   dataAnalysisPyV7: 'isDataAnalysisPyCertV7',
   machineLearningPyV7: 'isMachineLearningPyCertV7',
   fullStack: 'isFullStackCert',
-  relationalDatabaseV8: 'isRelationalDatabaseCertV8'
+  relationalDatabaseV8: 'isRelationalDatabaseCertV8',
+  collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8'
 } as const;
 
 export enum SuperBlocks {
@@ -32,7 +33,8 @@ export enum SuperBlocks {
   InfoSec = 'information-security',
   MachineLearningPy = 'machine-learning-with-python',
   CodingInterviewPrep = 'coding-interview-prep',
-  TheOdinProject = 'the-odin-project'
+  TheOdinProject = 'the-odin-project',
+  CollegeAlgebraPy = 'college-algebra-with-python'
 }
 
 export const certIds = {
@@ -51,7 +53,8 @@ export const certIds = {
   sciCompPyV7Id: '5e44431b903586ffb414c951',
   dataAnalysisPyV7Id: '5e46fc95ac417301a38fb934',
   machineLearningPyV7Id: '5e46fc95ac417301a38fb935',
-  relationalDatabaseV8Id: '606243f50267e718b1e755f4'
+  relationalDatabaseV8Id: '606243f50267e718b1e755f4',
+  collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800'
 };
 
 export const completionHours = {
@@ -70,7 +73,8 @@ export const completionHours = {
   [certTypes.sciCompPyV7]: 300,
   [certTypes.dataAnalysisPyV7]: 300,
   [certTypes.machineLearningPyV7]: 300,
-  [certTypes.relationalDatabaseV8]: 300
+  [certTypes.relationalDatabaseV8]: 300,
+  [certTypes.collegeAlgebraPyV8]: 300
 };
 
 export const certSlugTypeMap = {
@@ -96,7 +100,8 @@ export const certSlugTypeMap = {
   'scientific-computing-with-python-v7': certTypes.sciCompPyV7,
   'data-analysis-with-python-v7': certTypes.dataAnalysisPyV7,
   'machine-learning-with-python-v7': certTypes.machineLearningPyV7,
-  'relational-database-v8': certTypes.relationalDatabaseV8
+  'relational-database-v8': certTypes.relationalDatabaseV8,
+  'college-algebra-with-python-v8': certTypes.collegeAlgebraPyV8
 };
 
 export const superBlockCertTypeMap = {
@@ -119,6 +124,7 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.DataAnalysisPy]: certTypes.dataAnalysisPyV7,
   [SuperBlocks.MachineLearningPy]: certTypes.machineLearningPyV7,
   [SuperBlocks.RelationalDb]: certTypes.relationalDatabaseV8,
+  [SuperBlocks.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
 
   // post-modern
   // TODO: use enum
@@ -142,7 +148,8 @@ export const certTypeIdMap = {
   [certTypes.sciCompPyV7]: certIds.sciCompPyV7Id,
   [certTypes.dataAnalysisPyV7]: certIds.dataAnalysisPyV7Id,
   [certTypes.machineLearningPyV7]: certIds.machineLearningPyV7Id,
-  [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id
+  [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
+  [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id
 };
 
 export const certTypeTitleMap = {
@@ -161,7 +168,8 @@ export const certTypeTitleMap = {
   [certTypes.sciCompPyV7]: 'Scientific Computing with Python',
   [certTypes.dataAnalysisPyV7]: 'Data Analysis with Python',
   [certTypes.machineLearningPyV7]: 'Machine Learning with Python',
-  [certTypes.relationalDatabaseV8]: 'Relational Database'
+  [certTypes.relationalDatabaseV8]: 'Relational Database',
+  [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';

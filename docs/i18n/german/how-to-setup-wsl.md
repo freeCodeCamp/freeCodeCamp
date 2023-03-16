@@ -91,7 +91,7 @@ Sobald du Docker Desktop für die Zusammenarbeit mit WSL2 konfiguriert hast, bef
 
 4. Du kannst jetzt sowohl von Windows als auch von Ubuntu aus auf den Dienst unter `mongodb://localhost:27017` zugreifen.
 
-## Installiere Node.js und npm
+## Installing Node.js and pnpm
 
 Wir empfehlen dir, die LTS-Version für Node.js mit einem Node-Versionsmanager zu installieren - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
@@ -111,10 +111,10 @@ nvm install 14
 nvm use 12
 ```
 
-Node.js wird mit `npm` ausgeliefert. Du kannst wie folgt auf die neuesten Versionen von `npm` aktualisieren:
+Node.js comes bundled with `npm`, which you can use to install `pnpm`:
 
 ```console
-npm install -g npm@latest
+npm install -g pnpm
 ```
 
 ## FreeCodeCamp lokal einrichten

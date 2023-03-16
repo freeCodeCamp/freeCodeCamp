@@ -1,8 +1,7 @@
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
-import HonestyPolicy from '../../resources/honesty-policy';
 import { FullWidthRow } from '../helpers';
 import SectionHeader from './section-header';
 
@@ -13,6 +12,7 @@ type HonestyProps = {
   updateIsHonest: (obj: { isHonest: boolean }) => void;
 };
 
+const email = 'support@freecodecamp.org';
 const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
   const { t } = useTranslation();
   const buttonText = isHonest
@@ -24,7 +24,17 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
       <SectionHeader>{t('settings.headings.honesty')}</SectionHeader>
       <FullWidthRow>
         <Panel className='honesty-panel'>
-          <HonestyPolicy />
+          <p>{t('settings.honesty.p1')}</p>
+          <p>{t('settings.honesty.p2')}</p>
+          <p>{t('settings.honesty.p3')}</p>
+          <p>{t('settings.honesty.p4')}</p>
+          <p>{t('settings.honesty.p5')}</p>
+          <p>{t('settings.honesty.p6')}</p>
+          <p>
+            <Trans i18nKey='settings.honesty.p7'>
+              <a href={`mailto:${email}`}>{{ email }}</a>
+            </Trans>
+          </p>
         </Panel>
         <Button
           block={true}

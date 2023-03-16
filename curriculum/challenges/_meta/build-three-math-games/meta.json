@@ -1,0 +1,15 @@
+{
+  "name": "Build Three Math Games",
+  "isUpcomingChange": true,
+  "dashedName": "build-three-math-games",
+  "order": 13,
+  "time": "150 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    [
+      "63d8401039c73468b059cd41",
+      "Three Math Games"
+    ]
+  ]}

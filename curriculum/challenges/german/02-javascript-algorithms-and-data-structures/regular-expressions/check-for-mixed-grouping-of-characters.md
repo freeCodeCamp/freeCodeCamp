@@ -72,13 +72,13 @@ myRegex.lastIndex = 0;
 assert(!myRegex.test('EleanorRoosevelt'));
 ```
 
-You should use `.test()` to test the regex.
+Du solltest `.test()` verwenden, um den regulären Ausdruck zu testen.
 
 ```js
 assert(code.match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
-Your result should return `true`.
+Dein Ergebnis sollte `true` zurückgeben.
 
 ```js
 assert(result === true);

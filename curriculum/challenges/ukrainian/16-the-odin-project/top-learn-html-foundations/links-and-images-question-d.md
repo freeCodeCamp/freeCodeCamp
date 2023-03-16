@@ -1,7 +1,7 @@
 ---
 id: 637f702872c65bc8e73dfe33
 videoId: ta3Oxx7Yqbo
-title: Links and Images Question D
+title: Посилання та зображення. Запитання D
 challengeType: 15
 dashedName: links-and-images-question-d
 ---
@@ -9,26 +9,26 @@ dashedName: links-and-images-question-d
 # --description--
 
 
-Generally, there are two kinds of links you will create:
+Загалом існує два типи посилань, які ви створите:
 
-- Links to pages on other websites on the internet
+- Посилання на сторінки інших вебсайтів в інтернеті
 
-- Links to pages located on your own websites
+- Посилання на сторінки ваших вебсайтів
 
 
-## Absolute Links
-Links to pages on other websites on the internet are called absolute links. A typical absolute link will be made up of the following parts: `protocol://domain/path`. An absolute link will always contain the protocol and domain of the destination.
+## Абсолютні посилання
+Посилання на сторінки інших вебсайтів в інтернеті називаються абсолютними посиланнями. Зазвичай абсолютне посилання складається з наступних частин: `protocol://domain/path`. Абсолютне посилання завжди міститиме протокол та домен місця призначення.
 
-You’ve already seen an absolute link in action. The link you created to The Odin Project’s About page earlier was an absolute link as it contains the protocol and domain.
+Ви вже бачили абсолютне посилання в дії. Посилання на головну сторінку проєкту Odin є абсолютним посиланням, оскільки воно містить протокол та домен.
 
 `https://www.theodinproject.com/about`
 
-## Relative Links
-Links to other pages within your own website are called relative links. Relative links do not include the domain name, since it is another page on the same site, it assumes the domain name will be the same as the page you created the link on.
+## Відносні посилання
+Посилання на іншу сторінку власних вебсайтів називаються відносними посиланнями. Відносні посилання не містять домену, оскільки це інша сторінка на тому ж сайті, тому назва домену буде одинаковою.
 
-Relative links only include the file path to the other page, relative to the page you are creating the link on. This is quite abstract, let’s see this in action using an example.
+Відносні посилання містять лише шлях до файлу до іншої сторінки відносно сторінки, на яку ви посилаєте. Це досить абстрактно, тому розглянемо приклад.
 
-Within the `odin-links-and-images` directory, create another HTML file named `about.html` and paste the following code into it:
+В межах каталогу `odin-links-and-images` створіть ще один файл HTML під назвою `about.html` та вставте у нього наступний код:
 
 ```html
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ Within the `odin-links-and-images` directory, create another HTML file named `ab
 </html>
 ```
 
-Back in the `index` page, add the following anchor element to create a link to the `about` page:
+Назад до сторінки `index`: додайте наступний елемент посилання, щоб створити посилання на сторінку `about`:
 
 ```html
 <body>
@@ -55,17 +55,17 @@ Back in the `index` page, add the following anchor element to create a link to t
 </body>
 ```
 
-Open the `index.html` file in a browser and click on the about link to make sure it is all wired together correctly. Clicking the link should go to the `about` page you just created.
+Відкрийте файл `index.html` у браузері та натисніть на посилання, щоб перевірити, що все працює правильно. Натиснувши на посилання, ви повинні перейти на щойно створену сторінку `about`.
 
-This works because the `index` and `about` page are in the same directory. That means you can simply use its name (`about.html`) as the link’s `href` value.
+Все працює, оскільки `index` та сторінка `about` знаходяться в одному каталозі. Це означає, що ви можете використати назву (`about.html`) як значення `href`.
 
-But you will usually want to organize your website directories a little better. Normally you would only have the `index.html` at the root directory and all other HTML files in their own directory.
+Однак зазвичай потрібно організувати каталоги кращим способом. Зазвичай ви б мали тільки `index.html` у кореневому каталозі, а всі інші файли HTML мали власні каталоги.
 
-Create a directory named `pages` within the `odin-links-and-images` directory and move the `about.html` file into this new directory.
+Створіть новий каталог під назвою `pages` в межах каталогу `odin-links-and-images` та перемістіть файл `about.html` до нового каталогу.
 
-Refresh the `index` page in the browser and then click on the `about` link. It will now be broken. This is because the location of the `about` page file has changed.
+Оновіть сторінку `index` у браузері та натисніть посилання `about`. Зараз воно буде недійсним. Причина в тому, що змінилось розташування сторінки `about`.
 
-To fix this, you just need to update the `about` link `href` value to include the `pages/` directory since that is the new location of the `about.html` file relative to the `index.html` file.
+Щоб виправити це, вам просто потрібно оновити значення `href` посилання `about`, щоб включити каталог `pages/`, оскільки це нове розташування файлу `about.html` відносно файлу `index.html`.
 
 ```html
 <body>
@@ -74,9 +74,9 @@ To fix this, you just need to update the `about` link `href` value to include th
 </body>
 ```
 
-Refresh the `index` page in the browser and try clicking the `about` link again, it should now be back in working order.
+Оновіть сторінку `index` у браузері та спробуйте знову натиснути посилання `about`, зараз воно має працювати.
 
-In many cases, this will work just fine; however, you can still run into unexpected issues with this approach. Prepending `./` before the link will in most cases prevent such issues. By adding `./` you are specifying to your code that it should start looking for the file/directory relative to the **current** directory.
+У більшості випадків все працюватиме. Однак іноді ви можете натрапити на непередбачувані проблеми. Якщо додати `./` перед посиланням, проблем можна уникнути. Додаючи `./` ви вказуєте коду, що він повинен шукати файл/каталог, відносно до **поточного** каталогу.
 
 ```html
 <body>
@@ -89,23 +89,23 @@ In many cases, this will work just fine; however, you can still run into unexpec
 
 ## --assignment--
 
-Watch Kevin Powell’s HTML File Structure video above.
+Перегляньте відео Кевіна Павелла про структуру файлів у HTML.
 
 ## --text--
 
-What is the difference between an absolute and a relative link?
+Яка різниця між абсолютним та відносним посиланням?
 
 ## --answers--
 
-An absolute link is a link to another page on the current website. A relative link is a link to another website.
+Абсолютне посилання — посилання на іншу сторінку поточного вебсайту. Відносне посилання — посилання на інший вебсайт.
 
 ---
 
-An absolute link is a link to another website. A relative link is a link another page on the current website.
+Абсолютне посилання — посилання на інший вебсайт. Відносне посилання — посилання на іншу сторінку поточного вебсайту.
 
 ---
 
-There is no difference between absolute and relative links.
+Між абсолютним та відносним посиланням немає різниці.
 
 ## --video-solution--
 

@@ -13,7 +13,7 @@ import isURL from 'validator/lib/isURL';
 
 import { hasProtocolRE } from '../../utils';
 
-import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
+import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
 
@@ -295,7 +295,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
-          <ButtonSpacer />
+          <Spacer paddingSize={5} />
           <Button
             block={true}
             bsSize='lg'
@@ -308,9 +308,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         </form>
         {index + 1 !== arr.length && (
           <>
-            <Spacer />
+            <Spacer paddingSize={15} />
             <hr />
-            <Spacer />
+            <Spacer paddingSize={15} />
           </>
         )}
       </FullWidthRow>
@@ -329,7 +329,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           </div>
         </FullWidthRow>
         <FullWidthRow>
-          <ButtonSpacer />
+          <Spacer paddingSize={5} />
           <Button
             block={true}
             bsSize='lg'
@@ -341,7 +341,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             {t('buttons.add-portfolio')}
           </Button>
         </FullWidthRow>
-        <Spacer size={2} />
+        <Spacer paddingSize={30} />
         {portfolio.length ? portfolio.map(this.renderPortfolio) : null}
       </section>
     );
