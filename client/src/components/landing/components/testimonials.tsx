@@ -19,7 +19,6 @@ const Testimonials = (): JSX.Element => {
             <img
               alt='Shawn Wang'
               className='testimonial-image'
-              loading='eager'
               src={shawnImg}
             />
           </div>
@@ -47,7 +46,6 @@ const Testimonials = (): JSX.Element => {
             <img
               alt='Sarah Chima'
               className='testimonial-image'
-              loading='eager'
               src={sarahImg}
             />
           </div>
@@ -75,7 +73,6 @@ const Testimonials = (): JSX.Element => {
             <img
               alt='Emma Bostian'
               className='testimonial-image'
-              loading='eager'
               src={emmaImg}
             />
           </div>
