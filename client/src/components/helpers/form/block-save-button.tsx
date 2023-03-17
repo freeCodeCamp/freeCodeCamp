@@ -9,7 +9,6 @@ function BlockSaveButton({
 }: {
   children?: React.ReactNode;
   disabled?: boolean;
-  dataLabel?: string;
   bgSize?: string;
 }): JSX.Element {
   const { t } = useTranslation();
