@@ -30,7 +30,7 @@ A new component can be created using the following command from the root directo
 ```bash
 cd tools/ui-components
 
-npm run gen-component MyComponent
+pnpm run gen-component MyComponent
 ```
 
 The command will generate a new folder inside the `ui-components` directory, with the following files:
@@ -61,7 +61,7 @@ Generally when using colors in a component, you should choose semantic variables
 
 > [!NOTE] Color definition can be found in the [`colors.css` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). A color is only available for use if it is added to the [`tailwind.config.js` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) under the `colors` property.
 
-### Useful links
+### Корисні посилання
 
 - [Tailwind CSS Configuration](https://tailwindcss.com/docs/configuration)
 - [React Bootstrap v0.33 Docs](https://react-bootstrap-v3.netlify.app)
@@ -76,7 +76,7 @@ Use cases of the component should be added to the Storybook file (`.stories.tsx`
 To start Storybook, run the following command from the root directory:
 
 ```bash
-npm run storybook
+pnpm run storybook
 ```
 
 The Storybook page is available on [http://localhost:6006](http://localhost:6006).
@@ -88,7 +88,7 @@ We use [React Testing Library](https://testing-library.com/docs/react-testing-li
 To run tests against the component library, run the following command from the root directory:
 
 ```bash
-npm run test-ui-components
+pnpm run test-ui-components
 ```
 
 ## Adding packages to the UI-Component library
@@ -96,10 +96,11 @@ npm run test-ui-components
 We restrict adding new packages to the UI Components to help with the project's maintainability. In the rare chance that you think a dependency is needed, please check with the maintainers first and then use the following command to add a package:
 
 ```bash
-npm i -w=tools/ui-components package_name
+cd tools/ui-components 
+pnpm add package_name
 ```
 
-### Useful links
+### Корисні посилання
 
 - [Testing for Accessibility](https://testing-library.com/docs/dom-testing-library/api-accessibility)
 - [Order of priority of React Testing Library's queries](https://testing-library.com/docs/queries/about/#priority)

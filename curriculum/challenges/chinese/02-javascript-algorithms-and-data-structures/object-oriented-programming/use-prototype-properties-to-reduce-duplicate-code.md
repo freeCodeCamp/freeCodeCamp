@@ -25,7 +25,7 @@ console.log(duck.numLegs);
 console.log(canary.numLegs);
 ```
 
-由于所有的实例都可以继承 `prototype` 上的属性，所以可以把 `prototype` 看作是创建对象的 "配方"。 请注意：`duck` 和 `canary` 的 `prototype` 属于 `Bird` 的构造函数，即 Bird 的原型 `Bird.prototype`。 JavaScript 中几乎所有的对象都有一个 `prototype` 属性，这个属性是属于它所在的构造函数。
+由于所有的实例都可以继承 `prototype` 上的属性，所以可以把 `prototype` 看作是创建对象的 "配方"。 请注意：`duck` 和 `canary` 的 `prototype` 属于 `Bird` 的构造函数，即 Bird 的原型 `Bird.prototype`。
 
 # --instructions--
 

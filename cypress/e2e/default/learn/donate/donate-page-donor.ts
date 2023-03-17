@@ -1,6 +1,6 @@
 describe('Donate page', () => {
   beforeEach(() => {
-    cy.exec('npm run seed -- --donor');
+    cy.exec('pnpm run seed -- --donor');
     cy.login();
   });
 

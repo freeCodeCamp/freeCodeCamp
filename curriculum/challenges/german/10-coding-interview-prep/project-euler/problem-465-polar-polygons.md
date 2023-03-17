@@ -1,6 +1,6 @@
 ---
 id: 5900f53d1000cf542c510050
-title: 'Problem 465: Polar polygons'
+title: 'Problem 465: Polare Polygone'
 challengeType: 1
 forumTopicId: 302140
 dashedName: problem-465-polar-polygons
@@ -8,27 +8,27 @@ dashedName: problem-465-polar-polygons
 
 # --description--
 
-The kernel of a polygon is defined by the set of points from which the entire polygon's boundary is visible. We define a polar polygon as a polygon for which the origin is strictly contained inside its kernel.
+Der Kern eines Polygons wird durch die Menge der Punkte definiert, von denen aus der gesamte Rand des Polygons sichtbar ist. Wir definieren ein polares Polygon als ein Polygon, bei dem der Ursprung genau in seinem Kern enthalten ist.
 
-For this problem, a polygon can have collinear consecutive vertices. However, a polygon still cannot have self-intersection and cannot have zero area.
+Bei diesem Problem kann ein Polygon kollinear aufeinanderfolgende Scheitelpunkte haben. Ein Polygon kann sich jedoch weder selbst schneiden noch eine Fläche von Null haben.
 
-For example, only the first of the following is a polar polygon (the kernels of the second, third, and fourth do not strictly contain the origin, and the fifth does not have a kernel at all):
+Zum Beispiel ist nur die erste der folgenden Abbildungen ein polares Polygon (die Kerne der zweiten, dritten und vierten enthalten nicht unbedingt den Ursprung und die fünfte hat überhaupt keinen Kern):
 
-<img class="img-responsive center-block" alt="five example polygons" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="fünf Beispielpolygone" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px;" />
 
-Notice that the first polygon has three consecutive collinear vertices.
+Beachte, dass das erste Polygon drei aufeinanderfolgende kollineare Scheitelpunkte hat.
 
-Let $P(n)$ be the number of polar polygons such that the vertices $(x, y)$ have integer coordinates whose absolute values are not greater than $n$.
+Lasse $P(n)$ die Anzahl der polaren Vielecke sein, bei denen die Eckpunkte $(x, y)$ ganzzahlige Koordinaten haben, deren Absolutwerte nicht größer als $n$ sind.
 
-Note that polygons should be counted as different if they have different set of edges, even if they enclose the same area. For example, the polygon with vertices [(0,0), (0,3), (1,1), (3,0)] is distinct from the polygon with vertices [(0,0), (0,3), (1,1), (3,0), (1,0)].
+Beachte, dass Polygone als unterschiedlich gezählt werden sollten, wenn sie unterschiedliche Kanten haben, auch wenn sie dieselbe Fläche umschließen. So unterscheidet sich beispielsweise das Polygon mit den Eckpunkten [(0,0), (0,3), (1,1), (3,0)] von dem Polygon mit den Eckpunkten [(0,0), (0,3), (1,1), (3,0), (1,0)].
 
-For example, $P(1) = 131$, $P(2) = 1\\,648\\,531$, $P(3) = 1\\,099\\,461\\,296\\,175$ and $P(343)\bmod 1\\,000\\,000\\,007 = 937\\,293\\,740$.
+Zum Beispiel $P(1) = 131$, $P(2) = 1\\,648\\,531$, $P(3) = 1\\,099\\,461\\,296\\,175$ und $P(343)\bmod 1\\,000\\,000\\,007 = 937\\,293\\,740$.
 
-Find $P(7^{13})\bmod 1\\,000\\,000\\,007$.
+Finde $P(7^{13})\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 
-`polarPolygons()` should return `585965659`.
+`polarPolygons()` sollte `585965659` zurückgeben.
 
 ```js
 assert.strictEqual(polarPolygons(), 585965659);

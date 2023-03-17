@@ -224,7 +224,6 @@
     "total-points_plural": "{{count}} total points",
     "points": "{{count}} point on {{date}}",
     "points_plural": "{{count}} points on {{date}}",
-    "screen-shot": "A screen shot of {{title}}",
     "page-number": "{{pageNumber}} of {{totalPages}}"
   },
   "footer": {
@@ -251,6 +250,7 @@
   },
   "learn": {
     "heading": "Welcome to freeCodeCamp's curriculum.",
+    "skip-to-content": "Skip to content",
     "welcome-1": "Welcome back, {{name}}.",
     "welcome-2": "Welcome to freeCodeCamp.org",
     "start-at-beginning": "If you are new to coding, we recommend you <0>start at the beginning</0>.",
@@ -596,7 +596,8 @@
     "editor-url": "Remember to submit the Live App URL.",
     "http-url": "An unsecure (http) URL cannot be used.",
     "own-work-url": "Remember to submit your own work.",
-    "publicly-visible-url": "Remember to submit a publicly visible app URL."
+    "publicly-visible-url": "Remember to submit a publicly visible app URL.",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "Executive Director, freeCodeCamp.org",
@@ -710,6 +711,8 @@
       "information-security-v7": "Information Security Certification",
       "Machine Learning with Python": "Machine Learning with Python",
       "machine-learning-with-python-v7": "Machine Learning with Python Certification",
+      "College Algebra with Python": "College Algebra with Python",
+      "college-algebra-with-python-v8": "College Algebra with Python Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Front End Certification",
       "Legacy Back End": "Legacy Back End",

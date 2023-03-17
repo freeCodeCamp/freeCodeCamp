@@ -10,7 +10,7 @@ export function concatHtml({
   required = [],
   template,
   contents
-}: ConcatHTMLOptions) {
+}: ConcatHTMLOptions): string {
   const embedSource = template
     ? _template(template)
     : ({ source }: { source: ConcatHTMLOptions['contents'] }) => source;

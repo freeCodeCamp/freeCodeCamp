@@ -17,10 +17,10 @@ If you are on a different OS or are still facing issues, see [getting help](#get
 When you build the client, Gatsby will cache the Fonts, language strings and UI. If one of them isn't cached, run the following:
 
 ```console
-npm run clean
-npm ci
-npm run seed
-npm run develop
+pnpm run clean
+pnpm install
+pnpm run seed
+pnpm run develop
 ```
 
 OR
@@ -28,7 +28,7 @@ OR
 Use the shortcut
 
 ```
-npm run clean-and-develop
+pnpm run clean-and-develop
 ```
 
 If you continue to face issues with the build, cleaning up the workspace is recommend.
@@ -78,7 +78,7 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 While in development, your session is stored as cookies. Clearing them will sign you out of your development account.
 
-Running `npm run seed:certified-user` will log you out, too. It will overwrite the development user in your local database.
+Running `pnpm run seed:certified-user` will log you out, too. It will overwrite the development user in your local database.
 
 ### Issue getting 404 when navigating profile page
 

@@ -8,23 +8,23 @@ dashedName: problem-470-super-ramvok
 
 # --description--
 
-Consider a single game of Ramvok:
+Nehmen wir ein einziges Spiel Ramvok:
 
-Let $t$ represent the maximum number of turns the game lasts. If $t = 0$, then the game ends immediately. Otherwise, on each turn $i$, the player rolls a die. After rolling, if $i &lt; t$ the player can either stop the game and receive a prize equal to the value of the current roll, or discard the roll and try again next turn. If $i = t$, then the roll cannot be discarded and the prize must be accepted. Before the game begins, $t$ is chosen by the player, who must then pay an up-front cost $ct$ for some constant $c$. For $c = 0$, $t$ can be chosen to be infinite (with an up-front cost of 0). Let $R(d, c)$ be the expected profit (i.e. net gain) that the player receives from a single game of optimally-played Ramvok, given a fair $d$-sided die and cost constant $c$. For example, $R(4, 0.2) = 2.65$. Assume that the player has sufficient funds for paying any/all up-front costs.
+Lasse $t$ die maximale Anzahl an Spielzügen sein, die das Spiel dauert. Wenn $t = 0$, dann endet das Spiel sofort. Andernfalls würfelt der Spieler in jeder Runde $i$ einen Würfel. Wenn $i &lt; t$ gewürfelt wurde, kann der Spieler entweder das Spiel beenden und einen Preis in Höhe des aktuellen Wurfes erhalten, oder den Wurf verwerfen und es in der nächsten Runde erneut versuchen. Ist $i = t$, so kann der Wurf nicht verworfen werden und der Gewinn muss angenommen werden. Bevor das Spiel beginnt, wird $t$ vom Spieler gewählt, der dann für eine gewisse Konstante $c$ eine Vorauszahlung $ct$ leisten muss. Für $c = 0$ kann $t$ unendlich groß gewählt werden (mit Vorlaufkosten von 0). Lasse $R(d, c)$ der erwartete Gewinn (d.h. der Nettogewinn) sein, den der Spieler aus einem einzigen optimal gespielten Ramvok-Spiel erhält, wenn er einen fairen Würfel mit $d$-Seiten und eine Kostenkonstante $c$ hat. Zum Beispiel, $R(4, 0.2) = 2.65$. Es wird davon ausgegangen, dass der Spieler über ausreichende finanzielle Mittel verfügt, um alle Vorabkosten zu bezahlen.
 
-Now consider a game of Super Ramvok:
+Betrachte nun eine Partie Super Ramvok:
 
-In Super Ramvok, the game of Ramvok is played repeatedly, but with a slight modification. After each game, the die is altered. The alteration process is as follows: The die is rolled once, and if the resulting face has its pips visible, then that face is altered to be blank instead. If the face is already blank, then it is changed back to its original value. After the alteration is made, another game of Ramvok can begin (and during such a game, at each turn, the die is rolled until a face with a value on it appears). The player knows which faces are blank and which are not at all times. The game of Super Ramvok ends once all faces of the die are blank.
+In Super Ramvok wird das Spiel Ramvok wiederholt, aber mit einer leichten Abwandlung gespielt. Nach jedem Spiel wird der Würfel verändert. Der Veränderungsprozess läuft folgendermaßen ab: Der Würfel wird einmal gewürfelt, und wenn die resultierende Seite die Punkte sichtbar macht, wird diese Seite in eine leere Seite umgewandelt. Wenn die Fläche bereits leer ist, wird sie auf ihren ursprünglichen Wert zurückgesetzt. Nachdem die Änderung vorgenommen wurde, kann eine neue Partie Ramvok beginnen (und während einer solchen Partie wird der Würfel bei jedem Zug geworfen, bis eine Seite mit einem Wert darauf erscheint). Der Spieler weiß zu jeder Zeit, welche Flächen leer sind und welche nicht. Das Spiel Super Ramvok endet, wenn alle Seiten des Würfels leer sind.
 
-Let $S(d, c)$ be the expected profit that the player receives from an optimally-played game of Super Ramvok, given a fair $d$-sided die to start (with all sides visible), and cost constant $c$. For example, $S(6, 1) = 208.3$.
+Lasse $S(d, c)$ der erwartete Gewinn sein, den der Spieler bei einer optimal gespielten Partie Super-Ramvok erhält, wenn er mit einem fairen Würfel mit $d$ Seiten (alle Seiten sichtbar) beginnt und die Kostenkonstante $c$ hat. Zum Beispiel $S(6, 1) = 208.3$.
 
-Let $F(n) = \sum_{4 ≤ d ≤ n} \sum_{0 ≤ c ≤ n} S(d, c)$.
+Lasse $F(n) = \sum_{4 ≤ d ≤ n} \sum_{0 ≤ c ≤ n} S(d, c)$ sein.
 
-Calculate $F(20)$, rounded to the nearest integer.
+Berechne $F(20)$, gerundet auf den nächsten Integer.
 
 # --hints--
 
-`superRamvok()` should return `147668794`.
+`superRamvok()` sollte `147668794` zurückgeben.
 
 ```js
 assert.strictEqual(superRamvok(), 147668794);

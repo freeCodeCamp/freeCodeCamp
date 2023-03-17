@@ -80,8 +80,22 @@ export const paypalConfigTypes = {
   }
 };
 
+type DonationAmount = 500 | 1000 | 2000 | 3000 | 4000 | 5000;
+
+interface OneTimeConfig {
+  amount: DonationAmount;
+  duration: 'one-time';
+  planId: null;
+}
+
+interface SubscriptionConfig {
+  amount: DonationAmount;
+  duration: 'month';
+  planId: string;
+}
+
 export const paypalConfigurator = (
-  donationAmount: 500 | 1000 | 2000 | 3000 | 4000 | 5000,
+  donationAmount: DonationAmount,
   donationDuration: 'one-time' | 'month',
   paypalConfig: {
     month: {
@@ -93,7 +107,7 @@ export const paypalConfigurator = (
       5000: { planId: string };
     };
   }
-) => {
+): OneTimeConfig | SubscriptionConfig => {
   if (donationDuration === 'one-time') {
     return { amount: donationAmount, duration: donationDuration, planId: null };
   }

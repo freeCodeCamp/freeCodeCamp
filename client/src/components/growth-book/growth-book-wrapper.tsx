@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import React, { ReactNode, useEffect } from 'react';
 import sha1 from 'sha-1';
 import {
@@ -16,7 +17,22 @@ const { clientLocale, growthbookUri } = envData as {
   growthbookUri: string | null;
 };
 
-const growthbook = new GrowthBook();
+declare global {
+  interface Window {
+    dataLayer: [Record<string, number | string>];
+  }
+}
+
+const growthbook = new GrowthBook({
+  trackingCallback: (experiment, result) => {
+    window?.dataLayer.push({
+      event: 'experiment_viewed',
+      event_category: 'experiment',
+      experiment_id: experiment.key,
+      variation_id: result.variationId
+    });
+  }
+});
 
 const mapStateToProps = createSelector(
   isSignedInSelector,

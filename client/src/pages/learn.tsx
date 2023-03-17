@@ -91,7 +91,7 @@ function LearnPage({
 
   const onDonationAlertClick = () => {
     executeGA({
-      event: 'donationrelated',
+      event: 'donation_related',
       action: `Learn Donation Alert Click`,
       duration: defaultDonation.donationDuration,
       amount: defaultDonation.donationAmount
@@ -123,7 +123,7 @@ function LearnPage({
             )}
             <h2 className='sr-only'>{t('settings.headings.certs')}</h2>
             <Map />
-            <Spacer size={2} />
+            <Spacer paddingSize={30} />
           </Col>
         </Row>
       </Grid>

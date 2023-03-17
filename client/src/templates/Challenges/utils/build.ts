@@ -104,14 +104,17 @@ const buildFunctions = {
   [challengeTypes.backend]: buildBackendChallenge,
   [challengeTypes.backEndProject]: buildBackendChallenge,
   [challengeTypes.pythonProject]: buildBackendChallenge,
-  [challengeTypes.multifileCertProject]: buildDOMChallenge
+  [challengeTypes.multifileCertProject]: buildDOMChallenge,
+  [challengeTypes.colab]: buildBackendChallenge
 };
 
-export function canBuildChallenge(challengeData: BuildChallengeData) {
+export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
   const { challengeType } = challengeData;
   return Object.prototype.hasOwnProperty.call(buildFunctions, challengeType);
 }
 
+// TODO: Figure out and (hopefully) simplify the return type.
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export async function buildChallenge(
   challengeData: BuildChallengeData,
   options: BuildOptions
@@ -131,6 +134,8 @@ const testRunners = {
   [challengeTypes.pythonProject]: getDOMTestRunner,
   [challengeTypes.multifileCertProject]: getDOMTestRunner
 };
+// TODO: Figure out and (hopefully) simplify the return type.
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function getTestRunner(
   buildData: BuildChallengeData,
   runnerConfig: TestRunnerConfig,
@@ -185,10 +190,16 @@ async function getDOMTestRunner(
     runTestInTestFrame(document, testString, testTimeout);
 }
 
+type BuildResult = {
+  challengeType: number;
+  build: string;
+  sources: Source | undefined;
+};
+
 export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
   { usesTestRunner } = { usesTestRunner: false }
-) {
+): Promise<BuildResult> | undefined {
   const finalRequires = [...required];
   if (usesTestRunner) finalRequires.push(...frameRunner);
 
@@ -225,7 +236,7 @@ export function buildDOMChallenge(
 export function buildJSChallenge(
   { challengeFiles }: { challengeFiles: ChallengeFiles },
   options: BuildOptions
-) {
+): Promise<BuildResult> | undefined {
   const pipeLine = composeFunctions(...getTransformers(options));
 
   const finalFiles = challengeFiles?.map(pipeLine);
@@ -262,7 +273,7 @@ export function updatePreview(
   buildData: BuildChallengeData,
   document: Document,
   proxyLogger: ProxyLogger
-) {
+): void {
   if (
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multifileCertProject
@@ -293,7 +304,7 @@ function getDocumentTitle(buildData: BuildChallengeData) {
 export function updateProjectPreview(
   buildData: BuildChallengeData,
   document: Document
-) {
+): void {
   if (
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multifileCertProject
@@ -309,7 +320,7 @@ export function updateProjectPreview(
   }
 }
 
-export function challengeHasPreview({ challengeType }: ChallengeMeta) {
+export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
   return (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
@@ -317,13 +328,15 @@ export function challengeHasPreview({ challengeType }: ChallengeMeta) {
   );
 }
 
-export function isJavaScriptChallenge({ challengeType }: ChallengeMeta) {
+export function isJavaScriptChallenge({
+  challengeType
+}: ChallengeMeta): boolean {
   return (
     challengeType === challengeTypes.js ||
     challengeType === challengeTypes.jsProject
   );
 }
 
-export function isLoopProtected(challengeMeta: ChallengeMeta) {
+export function isLoopProtected(challengeMeta: ChallengeMeta): boolean {
   return challengeMeta.superBlock !== 'coding-interview-prep';
 }

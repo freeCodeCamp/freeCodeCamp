@@ -4,11 +4,14 @@ on:
   # push:
   #   paths-ignore:
   #     - 'docs/**'
-  #   branches-ignore:
-  #     - 'renovate/**'
+  #   branches:
+  #     - 'main'
   # pull_request:
   #   paths-ignore:
   #     - 'docs/**'
+  #   branches:
+  #     - 'main'
+  #     - 'next-**'
 
 jobs:
   mobile-test:
@@ -28,10 +31,17 @@ jobs:
           repository: freeCodeCamp/mobile
           path: mobile
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
+          # cypress-io/github-action caches the store, so we should not cache it
+          # here.
 
       - name: Setup Flutter 3.3.x
         uses: subosito/flutter-action@dbf1fa04f4d2e52c33185153d06cdb5443aa189d # tag=v2
@@ -47,9 +57,9 @@ jobs:
 
       - name: Install and Build
         run: |
-          npm ci
-          npm run create:config
-          npm run build:curriculum
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
 
       - name: Generate mobile test files
         run: |

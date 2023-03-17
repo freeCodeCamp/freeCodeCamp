@@ -12,7 +12,7 @@ In dieser Aufgabe musst du einen Datensatz für ein Modell erstellen und speiche
 
 # --instructions--
 
-Within the `createAndSavePerson` function, create a document instance using the `Person` model constructor you built before. Pass to the constructor an object having the fields `name`, `age`, and `favoriteFoods`. Their types must conform to the ones in the `personSchema`. Then, call the method `document.save()` on the returned document instance. Pass to it a callback using the Node convention. This is a common pattern; all the following CRUD methods take a callback function like this as the last argument.
+Erstelle eine Dokumentinstanz innerhalb der `createAndSavePerson`-Funktion, unter Verwendung des Modell-Konstruktors `Person`, den du zuvor erstellt hast. Übergebe dem Konstruktor ein Objekt mit den Feldern `name`, `age`, und `favoriteFoods`. Deren Typen müssen mit denen in `personSchema` übereinstimmen. Rufe anschließend die Methode `document.save()` in der zurückgegebenen Dokumentinstanz auf. Übergib dieser einen Callback unter Verwendung der Node-Konvention. Das ist ein gängiges Muster; alle folgenden CRUD-Methoden akzeptieren eine Callback-Funktion wie diese als letztes Argument.
 
 ```js
 /* Example */

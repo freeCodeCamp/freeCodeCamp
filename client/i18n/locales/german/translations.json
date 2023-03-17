@@ -224,7 +224,6 @@
     "total-points_plural": "{{count}} Gesamtpunkte",
     "points": "{{count}} Punkt am {{date}}",
     "points_plural": "{{count}} Punkte am {{date}}",
-    "screen-shot": "Eine Bildschirmaufnahme von {{title}}",
     "page-number": "{{pageNumber}} von {{totalPages}}"
   },
   "footer": {
@@ -251,6 +250,7 @@
   },
   "learn": {
     "heading": "Willkommen zum Studienplan von freeCodeCamp.",
+    "skip-to-content": "Skip to content",
     "welcome-1": "Willkommen zurück, {{name}}.",
     "welcome-2": "Willkommen auf freeCodeCamp.org",
     "start-at-beginning": "Wenn Programmieren ganz neu für dich ist, schlagen wir vor, <0>am Anfang zu beginnen</0>.",
@@ -596,7 +596,8 @@
     "editor-url": "Denke daran, die Live App URL einzureichen.",
     "http-url": "Eine unsichere (http) URL kann nicht verwendet werden.",
     "own-work-url": "Denke daran, deine eigene Arbeit einzureichen.",
-    "publicly-visible-url": "Denke daran, eine öffentlich sichtbare App-URL einzureichen."
+    "publicly-visible-url": "Denke daran, eine öffentlich sichtbare App-URL einzureichen.",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "Geschäftsführender Direktor, freeCodeCamp.org",
@@ -710,6 +711,8 @@
       "information-security-v7": "Information Security Certification",
       "Machine Learning with Python": "Machine Learning with Python",
       "machine-learning-with-python-v7": "Machine Learning with Python Certification",
+      "College Algebra with Python": "College Algebra with Python",
+      "college-algebra-with-python-v8": "College Algebra with Python Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Front End Certification",
       "Legacy Back End": "Legacy Back End",

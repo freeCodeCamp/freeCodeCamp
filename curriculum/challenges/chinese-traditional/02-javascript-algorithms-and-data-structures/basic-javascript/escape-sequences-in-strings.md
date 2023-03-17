@@ -9,24 +9,23 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-引號不是字符串中唯一可以被轉義（<dfn>escaped</dfn>）的字符。 使用轉義字符有兩個原因：
-
-1.  首先是可以讓你使用無法輸入的字符，例如換行。
-2.  其次是可以讓你在一個字符串中表示多個引號，而不會出錯。
-
-我們在之前的挑戰中學到了這個。
+引號不是字符串中唯一可以被轉義（<dfn>escaped</dfn>）的字符。 轉義字符允許你使用可能無法在字符串中使用的字符。
 
 <table class='table table-striped'><thead><tr><th>代碼</th><th>輸出</th></tr></thead><tbody><tr><td><code>\'</code></td><td>單引號</td></tr><tr><td><code>\"</code></td><td>雙引號</td></tr><tr><td><code>\\</code></td><td>反斜槓</td></tr><tr><td><code>\n</code></td><td>換行符</td></tr><tr><td><code>\t</code></td><td>製表符</td></tr><tr><td><code>\r</code></td><td>回車</td></tr><tr><td><code>\b</code></td><td>退格</td></tr><tr><td><code>\f</code></td><td>換頁符</td></tr></tbody></table>
 
-*請注意，必須對反斜槓本身進行轉義，它才能顯示爲反斜槓。*
+*請注意，反斜線本身必須被轉義，才能顯示爲反斜線。*
 
 # --instructions--
 
-使用轉義序列把下面三行文本賦值給一個變量 `myStr`。
+使用轉義字符把下面三行文本賦值給一個變量 `myStr`。
 
-<blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
+<pre>
+FirstLine
+    \SecondLine
+ThirdLine
+</pre>
 
-你需要使用轉義字符正確地插入特殊字符。 確保間距與上面文本一致，並且單詞或轉義字符之間沒有空格。
+你需要使用轉義字符正確地插入特殊字符。 你也需要確保間距與上面文本一致，並且單詞或轉義字符之間沒有空格。
 
 **注意：**`SecondLine` 前面的空白是製表符，而不是空格。
 

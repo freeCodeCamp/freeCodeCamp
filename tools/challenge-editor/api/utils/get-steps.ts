@@ -10,7 +10,13 @@ const getFileOrder = (id: string, meta: PartialMeta) => {
   return meta.challengeOrder.findIndex(([f]) => f === id);
 };
 
-export const getSteps = async (sup: string, block: string) => {
+type Step = {
+  name: string;
+  id: string;
+  path: string;
+};
+
+export const getSteps = async (sup: string, block: string): Promise<Step[]> => {
   const filePath = join(CHALLENGE_DIR, sup, block);
 
   const metaPath = join(META_DIR, block, 'meta.json');

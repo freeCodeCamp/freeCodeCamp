@@ -230,9 +230,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       challenge => challenge.id === challengeId
     );
 
-    const breadcrumbs = document.querySelector('.breadcrumbs-demo');
-    showCodeAlly && breadcrumbs?.remove();
-
     return showCodeAlly ? (
       <LearnLayout>
         <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
@@ -240,7 +237,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
           className='codeally-frame'
           data-cy='codeally-frame'
           name={`codeAlly${Date.now()}`}
-          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
           src={`https://codeally.io/embed/?repoUrl=${url}&${goBackTo}&${envVariables}&${tempToken}&${date}`}
           title='Editor'
@@ -257,16 +253,16 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer />
+                <Spacer paddingSize={15} />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
                 >
                   {title}
                 </ChallengeTitle>
-                <Spacer />
+                <Spacer paddingSize={15} />
                 <PrismFormatted text={description} />
-                <Spacer />
+                <Spacer paddingSize={15} />
                 <div className='ca-description'>
                   <Trans i18nKey='learn.github-required'>
                     <a
@@ -279,7 +275,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                     </a>
                   </Trans>
                 </div>
-                <Spacer />
+                <Spacer paddingSize={15} />
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (
                     <>
@@ -287,7 +283,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                         {t('learn.complete-both-steps')}
                       </div>
                       <hr />
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <b>{t('learn.step-1')}</b>
                       {(isPartiallyCompleted || isCompleted) && (
                         <GreenPass
@@ -298,43 +294,34 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                           }}
                         />
                       )}
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <div className='ca-description'>
                         {t('learn.runs-in-vm')}
                       </div>
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <PrismFormatted text={instructions} />
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                     </>
                   )}
-                <div
-                  className={`ca-btn-padding ${
-                    !isSignedIn ||
-                    challengeType === challengeTypes.codeAllyPractice
-                      ? 'ca-btn-margin'
-                      : ''
-                  }`}
+                <Alert id='codeally-cookie-warning' bsStyle='info'>
+                  <p>{t(`intro:misc-text.enable-cookies`)}</p>
+                </Alert>
+                <Button
+                  aria-describedby='codeally-cookie-warning'
+                  block={true}
+                  bsStyle='primary'
+                  data-cy='start-codeally'
+                  onClick={tryToShowCodeAlly}
                 >
-                  <Alert id='codeally-cookie-warning' bsStyle='info'>
-                    <p>{t(`intro:misc-text.enable-cookies`)}</p>
-                  </Alert>
-                  <Button
-                    aria-describedby='codeally-cookie-warning'
-                    block={true}
-                    bsStyle='primary'
-                    data-cy='start-codeally'
-                    onClick={tryToShowCodeAlly}
-                  >
-                    {challengeType === challengeTypes.codeAllyCert
-                      ? t('buttons.click-start-project')
-                      : t('buttons.click-start-course')}
-                  </Button>
-                </div>
+                  {challengeType === challengeTypes.codeAllyCert
+                    ? t('buttons.click-start-project')
+                    : t('buttons.click-start-course')}
+                </Button>
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (
                     <>
                       <hr />
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <b>{t('learn.step-2')}</b>
                       {isCompleted && (
                         <GreenPass
@@ -345,13 +332,13 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                           }}
                         />
                       )}
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <div className='ca-description'>
                         {t('learn.submit-public-url')}
                       </div>
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <PrismFormatted text={notes} />
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <SolutionForm
                         challengeType={challengeType}
                         description={description}
@@ -362,7 +349,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                   )}
                 <ProjectToolPanel />
                 <br />
-                <Spacer />
+                <Spacer paddingSize={15} />
               </Col>
               <CompletionModal
                 block={block}

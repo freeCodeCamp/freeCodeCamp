@@ -7,7 +7,7 @@ dashedName: step-10
 
 # --description--
 
-Después, dentro del `div`, añade otro elemento `div` con la clase (class) `marker`.
+Next, within the `div` element, add another `div` element and give it a class of `marker`.
 
 # --hints--
 

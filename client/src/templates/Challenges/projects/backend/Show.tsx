@@ -6,7 +6,8 @@ import { Col, Grid, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -231,7 +232,7 @@ class BackEnd extends Component<BackEndProps> {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer />
+                <Spacer paddingSize={15} />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
@@ -262,7 +263,7 @@ class BackEnd extends Component<BackEndProps> {
                   output={output}
                 />
                 <TestSuite tests={tests} />
-                <Spacer />
+                <Spacer paddingSize={15} />
               </Col>
               <CompletionModal
                 block={block}

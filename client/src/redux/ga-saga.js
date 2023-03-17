@@ -4,14 +4,14 @@ import TagManager from '../analytics';
 function* callGaType({
   payload: { action, duration, amount, event, pagePath }
 }) {
-  if (event === 'pageview') {
+  if (event === 'page_view') {
     yield call(TagManager.dataLayer, {
       dataLayer: {
         event,
         pagePath
       }
     });
-  } else if (event === 'donationview') {
+  } else if (event === 'donation_view') {
     yield call(TagManager.dataLayer, {
       dataLayer: {
         event,
@@ -19,7 +19,7 @@ function* callGaType({
       }
     });
   } else {
-    // donation and donationrelated
+    // donation and donation_related
     yield call(TagManager.dataLayer, {
       dataLayer: {
         event,

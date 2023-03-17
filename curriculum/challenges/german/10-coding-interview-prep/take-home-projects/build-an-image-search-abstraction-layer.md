@@ -8,7 +8,7 @@ dashedName: build-an-image-search-abstraction-layer
 
 # --description--
 
-Build a full stack JavaScript app that allows you to search for images like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10</a> and browse recent search queries like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/recent/" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/recent/</a>. Use a site builder of your choice to complete the project.
+Build a full stack JavaScript app that allows you to search for images like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10</a> and browse recent search queries like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/recent/" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/recent/</a>. Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen.
 
 Here are the specific user stories you should implement for this project:
 

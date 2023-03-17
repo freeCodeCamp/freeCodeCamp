@@ -1,6 +1,6 @@
 ---
 id: 5900f37f1000cf542c50fe92
-title: 'Problem 19: Counting Sundays'
+title: 'Problem 19: Sonntage zählen'
 challengeType: 1
 forumTopicId: 301827
 dashedName: problem-19-counting-sundays
@@ -8,15 +8,15 @@ dashedName: problem-19-counting-sundays
 
 # --description--
 
-You are given the following information, but you may prefer to do some research for yourself.
+Wir stellen dir folgende Informationen bereit, vielleicht möchtest du aber auch selbst recherchieren.
 
 <ul>
   <li>Der 1. Januar 1900 war ein Montag.</li>
-  <li>Thirty days has September,<br>April, June and November.<br>All the rest have thirty-one,<br>Saving February alone,<br>Which has twenty-eight, rain or shine.<br>And on leap years, twenty-nine.</li>
-  <li>A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.</li>
+  <li>September, April, Juni<br>und November haben dreizig Tage.<br>Alle anderen einunddreißig,<br>nur der Februar hat, bei<br>jedem Wetter, achtundzwanzig.<br>Und in Schaltjahren neunundzwanzig.</li>
+  <li>Jedes, glatt durch 4 teilbares Jahr ist ein Schaltjahr – es sei denn, es handelt sich bei dem Jahr um den Anfang eines Jahrhunderts, dann muss die Zahl durch 400 teilbar sein.</li>
 </ul>
 
-How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+Wie viele Sonntage fielen im zwanzigsten Jahrhundert (1. Januar 1901 bis 31. Dezember 2000) auf den Ersten des Monats?
 
 # --hints--
 
@@ -26,7 +26,7 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 assert(typeof countingSundays(1943, 1946) === 'number');
 ```
 
-`countingSundays(1943, 1946)` should return 6.
+`countingSundays(1943, 1946)` sollte 6 zurückgeben.
 
 ```js
 assert.strictEqual(countingSundays(1943, 1946), 6);

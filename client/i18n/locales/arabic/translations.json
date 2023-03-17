@@ -15,8 +15,8 @@
     "show-cert": "عرض الشهادة",
     "claim-cert": "المطالبة بالشهادة",
     "save-progress": "حفظ التقدم",
-    "accepted-honesty": "You have agreed to our Academic Honesty Policy.",
-    "agree-honesty": "I agree to freeCodeCamp's Academic Honesty Policy.",
+    "accepted-honesty": "لقد وافقت على سياستنا للصدق الأكاديمي.",
+    "agree-honesty": "أوافق على سياسة freeCodeCamp للصدق الأكاديمي.",
     "save-portfolio": "حفظ عنصر الحافظة هذا",
     "remove-portfolio": "إزالة عنصر الحافظة هذا",
     "add-portfolio": "إضافة عنصر حافظة جديد",
@@ -224,7 +224,6 @@
     "total-points_plural": "مُجمل النقاط {{count}}",
     "points": "{{count}} نقطة في {{date}}",
     "points_plural": "{{count}} نقاط في {{date}}",
-    "screen-shot": "لقطة شاشة لـ{{title}}",
     "page-number": "{{pageNumber}} من {{totalPages}}"
   },
   "footer": {
@@ -251,6 +250,7 @@
   },
   "learn": {
     "heading": "مرحباً بكم في منهج freeCodeCamp.",
+    "skip-to-content": "Skip to content",
     "welcome-1": "مرحباً بعودتك، {{name}}.",
     "welcome-2": "مرحباً بك في freeCodeCamp.org",
     "start-at-beginning": "إذا كنت جديداً على البرمجة، ننصحك على <0>البدء من البداية</0>.",
@@ -517,7 +517,7 @@
     "opens-new-window": "فتح في نافذة جديدة"
   },
   "flash": {
-    "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
+    "honest-first": "للمطالبة بشهادة، يجب عليك أولاً الموافقة على سياسة للصدق الأكاديمي",
     "really-weird": "حدث شيء غريب حقاً، إذا حدث مرة أخرى، يرجى النظر في الإبلاغ عنها على https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "not-right": "يبدو ان هناك خطأ ما. لقد تم إنشاء تقرير وتم إخطار فريق freeCodeCamp.org",
     "went-wrong": "حدث خطأ ما، الرجاء التحقق والمحاولة مرة أخرى",
@@ -596,7 +596,8 @@
     "editor-url": "تذكر أن تقدم رابط التطبيق المباشر.",
     "http-url": "لا يمكن استخدام عنوان URL غير آمن (http).",
     "own-work-url": "تذكر أن تقدم عملك الخاص.",
-    "publicly-visible-url": "تذكر أن ترسل عنوان URL للتطبيق متاح للجميع."
+    "publicly-visible-url": "تذكر أن ترسل عنوان URL للتطبيق متاح للجميع.",
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
   },
   "certification": {
     "executive": "المدير التنفيذي، freeCodeCamp.org",
@@ -710,6 +711,8 @@
       "information-security-v7": "شهادة امن المعلومات",
       "Machine Learning with Python": "تعلم الآلة باستخدام Python",
       "machine-learning-with-python-v7": "مشاريع تعلم الآله باستخدام Python",
+      "College Algebra with Python": "College Algebra with Python",
+      "college-algebra-with-python-v8": "College Algebra with Python Certification",
       "Legacy Front End": "الواجهة الأمامية التراثية",
       "legacy-front-end": "شهادة الواجهة الأمامية التراثية",
       "Legacy Back End": "الواجهة الخلفية التراثية",

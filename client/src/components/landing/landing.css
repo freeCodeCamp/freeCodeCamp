@@ -26,14 +26,14 @@
 }
 
 .landing-page h1,
-.landing-page h2,
-.landing-page p {
-  font-family: 'Lato', sans-serif;
+.landing-page h2 {
+  font-family: var(--font-family-sans-serif);
 }
 
-p.caption {
+figcaption.caption {
   margin: 10px 0 0;
-  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
   color: var(--quaternary-color);
 }
 
@@ -119,7 +119,6 @@ p.caption {
 
 .testimonials p,
 .testimonials strong {
-  font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
   margin: 0;
   color: var(--quaternary-color);

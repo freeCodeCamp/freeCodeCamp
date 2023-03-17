@@ -1,6 +1,6 @@
 ---
 id: 612eaf56b7ba3257fdbfb0db
-title: Step 21
+title: Schritt 21
 challengeType: 0
 dashedName: step-21
 ---
