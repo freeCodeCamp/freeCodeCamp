@@ -1,9 +1,5 @@
 import React from 'react';
 
-interface SpacerProps {
-  size: string;
-}
-
 const Padding = Object.freeze({
   small: 5,
   medium: 15,
@@ -13,7 +9,7 @@ const Padding = Object.freeze({
 
 type PaddingKeys = keyof typeof Padding;
 interface SpacerProps {
-  size: PaddingKeys ;
+  size: PaddingKeys;
 }
 
 const Spacer = ({ size }: SpacerProps): JSX.Element => (
