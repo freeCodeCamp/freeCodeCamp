@@ -27,7 +27,7 @@ import DonateCompletion from './donate-completion';
 import PatreonButton from './patreon-button';
 import PaypalButton from './paypal-button';
 import StripeCardForm from './stripe-card-form';
-import WalletsWrapper from './walletsButton';
+import WalletsWrapper from './wallets-button';
 import SecurityLockIcon from './security-lock-icon';
 import {
   PaymentProvider,

@@ -5,7 +5,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import { Link, Spacer } from '../components/helpers';
-import ProjectModal from '../components/SolutionViewer/ProjectModal';
+import ProjectModal from '../components/SolutionViewer/project-modal';
 import { CompletedChallenge, User } from '../redux/prop-types';
 import {
   legacyProjectMap,

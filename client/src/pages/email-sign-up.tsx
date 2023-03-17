@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import IntroDescription from '../components/Intro/components/IntroDescription';
+import IntroDescription from '../components/Intro/components/intro-description';
 import createRedirect from '../components/create-redirect';
 import { Spacer, Loader } from '../components/helpers';
 import { apiLocation } from '../../../config/env.json';
