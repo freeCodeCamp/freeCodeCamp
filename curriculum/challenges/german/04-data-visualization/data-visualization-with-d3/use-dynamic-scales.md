@@ -10,11 +10,11 @@ dashedName: use-dynamic-scales
 
 Die D3-Methoden `min()` und `max()` erleichtern das Festlegen eines Maßstabs.
 
-Bei komplexen Datensätzen ist die Festlegung eines passenden Maßstabs wichtig. Mit diesem wird die Visualisierung an die Breite und Höhe des SVG-Containers angepasst. Du möchtest, dass alle Daten innerhalb des SVG-Canvas dargestellt werden. So sind diese auf der Webseite sichtbar.
+Bei komplexen Datensätzen ist die Festlegung eines passenden Maßstabs wichtig. Mit diesem wird die Visualisierung an die Breite und Höhe des SVG-Containers angepasst. You want all the data plotted inside the SVG so it's visible on the web page.
 
 Im folgenden Beispiel wird die Skala der x-Achse für Streudiagrammdaten festgelegt. Die `domain()`-Methode übergibt der Skala Informationen zu den Rohwerten des Diagramms. Die `range()`-Methode gibt wiederum Auskunft über vorhandenen, tatsächlichen Platz für die Visualiserung auf der Webseite.
 
-In diesem Beispiel wird für die Domain-Methode ein Wert zwischen 0 und dem Maximalwert im Datensatz verwendet. Sie verwendet die `max()`-Methode mit einer Callback-Funktion, die auf den x-Werten in den Arrays basiert. Der Bereich verwendet die Breite der SVG-Canvas (`w`), berücksichtigt dabei aber auch eine gewisse Padding-Einheit. So wird Platz zwischen den Punkten im Streudiagramm und dem Rand des SVG-Canvas geschaffen.
+In diesem Beispiel wird für die Domain-Methode ein Wert zwischen 0 und dem Maximalwert im Datensatz verwendet. Sie verwendet die `max()`-Methode mit einer Callback-Funktion, die auf den x-Werten in den Arrays basiert. The range uses the SVG's width (`w`), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG.
 
 ```js
 const dataset = [
@@ -38,7 +38,7 @@ const xScale = d3.scaleLinear()
   .range([padding, w - padding]);
 ```
 
-Das Padding kann zunächst verwirrend sein. Stelle dir die x-Achse als horizontale Linie von 0 bis 500 (der Breite des SVG-Canvas) vor. Durch die in der `range()`-Methode berücksichtigten Abstände wird das Diagramm gezwungen, an jener Linie mit 30 (statt 0) anzufangen und bei 470 (statt 500) zu enden.
+Das Padding kann zunächst verwirrend sein. Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG). Durch die in der `range()`-Methode berücksichtigten Abstände wird das Diagramm gezwungen, an jener Linie mit 30 (statt 0) anzufangen und bei 470 (statt 500) zu enden.
 
 # --instructions--
 
@@ -89,7 +89,7 @@ assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]));
     const w = 500;
     const h = 500;
 
-    // Padding between the SVG canvas boundary and the plot
+    // Padding between the SVG boundary and the plot
     const padding = 30;
 
     // Create an x and y scale
