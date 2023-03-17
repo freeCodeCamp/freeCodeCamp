@@ -5,7 +5,7 @@ const { challengeTypes, viewTypes } = require('../challenge-types');
 
 const backend = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/projects/backend/Show.tsx'
+  '../../src/templates/Challenges/projects/backend/show.tsx'
 );
 const classic = path.resolve(
   __dirname,
@@ -13,7 +13,7 @@ const classic = path.resolve(
 );
 const frontend = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/projects/frontend/Show.tsx'
+  '../../src/templates/Challenges/projects/frontend/show.tsx'
 );
 const codeAlly = path.resolve(
   __dirname,
@@ -29,12 +29,12 @@ const superBlockIntro = path.resolve(
 );
 const video = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/video/Show.tsx'
+  '../../src/templates/Challenges/video/show.tsx'
 );
 
 const odin = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/odin/Show.tsx'
+  '../../src/templates/Challenges/odin/show.tsx'
 );
 
 const views = {
