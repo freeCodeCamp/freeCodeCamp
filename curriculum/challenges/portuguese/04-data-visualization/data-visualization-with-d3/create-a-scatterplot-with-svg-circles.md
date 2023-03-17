@@ -14,7 +14,7 @@ O SVG tem uma tag `circle` para criar a forma do círculo. Funciona muito pareci
 
 # --instructions--
 
-Use os métodos `data()`, `enter()` e `append()` para associar o `dataset` aos novos elementos de `circle` que são incluídos no canvas do SVG.
+Use the `data()`, `enter()`, and `append()` methods to bind `dataset` to new `circle` elements that are appended to the SVG.
 
 **Observação:** os círculos não serão visíveis porque ainda não definimos seus atributos. Faremos isso no próximo desafio.
 

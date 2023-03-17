@@ -10,11 +10,11 @@ dashedName: use-dynamic-scales
 
 I metodi D3 `min()` e `max()` sono utili per impostare la scala.
 
-Dato un insieme di dati complesso, una priorità è quella di impostare la scala in modo che la visualizzazione si adatti alla larghezza e all'altezza del contenitore SVG. Vogliamo che tutti i dati siano tracciati all'interno della tela SVG in modo da essere visibili sulla pagina web.
+Dato un insieme di dati complesso, una priorità è quella di impostare la scala in modo che la visualizzazione si adatti alla larghezza e all'altezza del contenitore SVG. You want all the data plotted inside the SVG so it's visible on the web page.
 
 L'esempio qui sotto imposta la scala dell'asse x per i dati del grafico a dispersione. Il metodo `domain()` passa le informazioni alla scala sui valori dei dati grezzi per il grafico. Il metodo `range()` fornisce informazioni sullo spazio effettivo nella pagina web per la visualizzazione.
 
-Nell'esempio, il dominio va da 0 al massimo nel set di dati. Usa il metodo `max()` con una funzione di callback basata sui valori x negli array. L'intervallo utilizza la larghezza della tela SVG (`w`), ma include anche un po' di padding. Questo mette dello spazio tra i punti della del grafico a dispersione e il bordo della tela SVG.
+Nell'esempio, il dominio va da 0 al massimo nel set di dati. Usa il metodo `max()` con una funzione di callback basata sui valori x negli array. The range uses the SVG's width (`w`), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG.
 
 ```js
 const dataset = [
@@ -38,7 +38,7 @@ const xScale = d3.scaleLinear()
   .range([padding, w - padding]);
 ```
 
-Il padding inizialmente può confondere. Immagine l'asse X come una linea orizzontale che va da 0 a 500 (il valore di larghezza della tela SVG). Includendo il padding nel metodo `range()` costringiamo il grafico a partire da 30 lungo quella linea (invece che da 0), e terminare a 470 (invece che a 500).
+Il padding inizialmente può confondere. Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG). Includendo il padding nel metodo `range()` costringiamo il grafico a partire da 30 lungo quella linea (invece che da 0), e terminare a 470 (invece che a 500).
 
 # --instructions--
 
@@ -89,7 +89,7 @@ assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]));
     const w = 500;
     const h = 500;
 
-    // Padding between the SVG canvas boundary and the plot
+    // Padding between the SVG boundary and the plot
     const padding = 30;
 
     // Create an x and y scale

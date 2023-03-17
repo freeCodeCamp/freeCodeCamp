@@ -14,7 +14,7 @@ SVG 用 `circle` 标签来创建圆形。 它和之前用来构建条形图的 `
 
 # --instructions--
 
-使用 `data()`、`enter()`、`append()` 方法将 `dataset` 和新添加到 SVG 画布上的 `circle` 元素绑定起来。
+Use the `data()`, `enter()`, and `append()` methods to bind `dataset` to new `circle` elements that are appended to the SVG.
 
 **注意：** 圆形并不可见，因为我们还没有设置它们的属性。 我们会在下一个挑战中设置属性。
 

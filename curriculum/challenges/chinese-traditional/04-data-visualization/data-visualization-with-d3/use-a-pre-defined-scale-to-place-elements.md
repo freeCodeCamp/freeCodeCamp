@@ -8,7 +8,7 @@ dashedName: use-a-pre-defined-scale-to-place-elements
 
 # --description--
 
-當比例尺建立好後，是時候重新映射散點圖了。 比例尺就像操作函數一樣，將 `x` 和 `y` 的原數據值變爲適合並可在 SVG 畫布上正確渲染的值。 它們使數據在屏幕的佈局區域內部。
+當比例尺建立好後，是時候重新映射散點圖了。 The scales are like processing functions that turn the `x` and `y` raw data into values that fit and render correctly on the SVG. 它們使數據在屏幕的佈局區域內部。
 
 用比例尺函數爲 SVG 圖形設置座標屬性值。 這包括 `rect` 或者 `text` 元素的 `x` 和 `y` 屬性，或者 `circles` 的 `cx` 和 `cy`。 以下是一個例子：
 
@@ -17,11 +17,11 @@ shape
   .attr("x", (d) => xScale(d[0]))
 ```
 
-比例尺設置圖形座標屬性來將數據點放置在 SVG 畫布上。 當你顯示實際數據值時，不用使用比例尺，例如，在提示框或標籤中的 `text()` 方法。
+Scales set shape coordinate attributes to place the data points onto the SVG. 當你顯示實際數據值時，不用使用比例尺，例如，在提示框或標籤中的 `text()` 方法。
 
 # --instructions--
 
-使用 `xScale` 和 `yScale` 將 `circle` 和 `text` 圖形放置在 SVG 畫布上。 對於 `circles`，使用比例尺設置 `cx` 和 `cy` 屬性， 半徑爲 `5` 個單位。
+Use `xScale` and `yScale` to position both the `circle` and `text` shapes onto the SVG. 對於 `circles`，使用比例尺設置 `cx` 和 `cy` 屬性， 半徑爲 `5` 個單位。
 
 對於 `text` 元素，使用比例尺設置 `x` 和 `y` 屬性。 標籤應該標註在點的右邊， 爲此，在將 `x` 數據值傳遞給 `xScale` 之前，要給它加上 `10` 個單位。
 
