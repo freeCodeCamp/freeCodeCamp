@@ -1,4 +1,4 @@
-import React, { useMemo, createContext } from 'react';
+import React, { createContext } from 'react';
 import { FormGroupProps } from './types';
 
 export type FormContextProps = Pick<
@@ -12,14 +12,9 @@ const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
     { className, validationState, controlId, as, ...props },
     ref
   ): JSX.Element => {
-    const controlIdContext = useMemo(() => controlId, [controlId]);
-    const validationStateContext = useMemo(
-      () => validationState,
-      [validationState]
-    );
     const context = {
-      controlId: controlIdContext,
-      validationState: validationStateContext
+      controlId,
+      validationState
     };
 
     const componentClass = as;
