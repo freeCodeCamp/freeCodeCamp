@@ -308,7 +308,7 @@ importers:
       '@redux-saga/core': ^1.2.2
       '@sentry/gatsby': 6.19.7
       '@stripe/react-stripe-js': 1.16.5
-      '@stripe/stripe-js': 1.48.0
+      '@stripe/stripe-js': 1.49.0
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/react': 12.1.5
       '@total-typescript/ts-reset': ^0.4.0
@@ -455,8 +455,8 @@ importers:
       '@reach/router': 1.3.4_wcqkhtmu7mswc6yz4uyexck3ty
       '@redux-saga/core': 1.2.2
       '@sentry/gatsby': 6.19.7_npvjkum7rldhx2pv6a4sw5kkuu
-      '@stripe/react-stripe-js': 1.16.5_ogiq7gz5ebo2xuab5dinhzh4hm
-      '@stripe/stripe-js': 1.48.0
+      '@stripe/react-stripe-js': 1.16.5_ajiwb7gxqgcf7zf3u6apxjxq7a
+      '@stripe/stripe-js': 1.49.0
       '@testing-library/jest-dom': 5.16.5
       algoliasearch: 4.15.0
       assert: 2.0.0
@@ -8830,21 +8830,21 @@ packages:
       resolve-from: 5.0.0
     dev: true
 
-  /@stripe/react-stripe-js/1.16.5_ogiq7gz5ebo2xuab5dinhzh4hm:
+  /@stripe/react-stripe-js/1.16.5_ajiwb7gxqgcf7zf3u6apxjxq7a:
     resolution: {integrity: sha512-lVPW3IfwdacyS22pP+nBB6/GNFRRhT/4jfgAK6T2guQmtzPwJV1DogiGGaBNhiKtSY18+yS8KlHSu+PvZNclvQ==}
     peerDependencies:
       '@stripe/stripe-js': ^1.44.1
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@stripe/stripe-js': 1.48.0
+      '@stripe/stripe-js': 1.49.0
       prop-types: 15.8.1
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
     dev: false
 
-  /@stripe/stripe-js/1.48.0:
-    resolution: {integrity: sha512-Kw2BRXk6z/wnTU9m2IJOhxJNrx9xzmpFSbk6D/Z0x6LJntMafiHeHFag2PvSF30O2quMb1UUdWsnZqGVDruZww==}
+  /@stripe/stripe-js/1.49.0:
+    resolution: {integrity: sha512-wcXxHtfb3hkwQnOfLzu4fO3J+1laWjrxE9Jfyvpk+fCUAxs8Rif9WrsSZ8m6BRFazQqGoGKvqzXB7gsVB5phJw==}
     dev: false
 
   /@surma/rollup-plugin-off-main-thread/2.2.3:
