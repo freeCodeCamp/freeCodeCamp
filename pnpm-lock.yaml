@@ -291,8 +291,8 @@ importers:
       '@babel/runtime': ^7.20.13
       '@babel/standalone': 7.20.15
       '@babel/types': 7.20.7
-      '@codesee/babel-plugin-instrument': 0.531.0
-      '@codesee/tracker': 0.531.0
+      '@codesee/babel-plugin-instrument': 0.536.0
+      '@codesee/tracker': 0.536.0
       '@fortawesome/fontawesome-svg-core': 6.3.0
       '@fortawesome/free-brands-svg-icons': 6.3.0
       '@fortawesome/free-solid-svg-icons': 6.3.0
@@ -538,8 +538,8 @@ importers:
     devDependencies:
       '@babel/plugin-syntax-dynamic-import': 7.8.3_@babel+core@7.20.12
       '@babel/types': 7.20.7
-      '@codesee/babel-plugin-instrument': 0.531.0_@babel+core@7.20.12
-      '@codesee/tracker': 0.531.0
+      '@codesee/babel-plugin-instrument': 0.536.0_@babel+core@7.20.12
+      '@codesee/tracker': 0.536.0
       '@testing-library/react': 12.1.5_wcqkhtmu7mswc6yz4uyexck3ty
       '@total-typescript/ts-reset': 0.4.2
       '@types/chai': 4.3.4
@@ -4379,8 +4379,8 @@ packages:
       minimist: 1.2.8
     dev: true
 
-  /@codesee/babel-plugin-instrument/0.531.0_@babel+core@7.20.12:
-    resolution: {integrity: sha512-5Goq+q5vNoZpkN2+O5KyzsixCbrZdpuOQUbpLSCxZXXzgLjx1MhwopyAquMfrLhCm5hRhU6Fan+I+krIuKXWow==}
+  /@codesee/babel-plugin-instrument/0.536.0_@babel+core@7.20.12:
+    resolution: {integrity: sha512-f+W/lTZNAMLNNHhYiIOLsHgeq7tGkZOjTzsN9+J9Qw9X+/aqWuI9S3Vtm0ARP1t0QMTiqwBPGZTegsyH7areJg==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -4395,8 +4395,8 @@ packages:
       - supports-color
     dev: true
 
-  /@codesee/tracker/0.531.0:
-    resolution: {integrity: sha512-ZlYIWk8cvsFTvyI/07jB047rf3ujgCNFoo5kt8kN1oatUhwBREBiM8qEn/0vGB2Dd8YWo629sZpWJebrWfL0PQ==}
+  /@codesee/tracker/0.536.0:
+    resolution: {integrity: sha512-7LybXx1SYyDwflw4YM07rvz4sAGduh+1V2TfDtAMXkeFnkTOkHyQVSUbQvhAgnltDRSV092Rf9QV7hiAttLF0A==}
     dev: true
 
   /@colors/colors/1.5.0:
