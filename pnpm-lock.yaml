@@ -616,7 +616,7 @@ importers:
       css: 3.0.0
       glob: 8.1.0
       invariant: 2.2.4
-      joi: 17.8.3
+      joi: 17.8.4
       joi-objectid: 3.0.1
       js-yaml: 4.0.0
       jsdom: 16.7.0
@@ -646,7 +646,7 @@ importers:
       css: 3.0.0
       glob: 8.1.0
       invariant: 2.2.4
-      joi: 17.8.3
+      joi: 17.8.4
       joi-objectid: 3.0.1
       js-yaml: 4.0.0
       jsdom: 16.7.0
@@ -817,7 +817,7 @@ importers:
       chai: 4.3.7
       debug: 4.3.4
       dotenv: 16.0.3
-      joi: 17.7.0
+      joi: 17.8.4
       js-yaml: 4.1.0
       node-fetch: 2.6.9
       readdirp: 3.6.0
@@ -827,7 +827,7 @@ importers:
       chai: 4.3.7
       debug: 4.3.4
       dotenv: 16.0.3
-      joi: 17.7.0
+      joi: 17.8.4
       js-yaml: 4.1.0
       node-fetch: 2.6.9
       readdirp: 3.6.0
@@ -17867,7 +17867,7 @@ packages:
       fastq: 1.15.0
       gatsby: 3.15.0_vp6e6hytgradgjytsoegoc2epq
       graphql: 15.8.0
-      joi: 17.8.3
+      joi: 17.8.4
 
   /gatsby-plugin-webpack-bundle-analyser-v2/1.1.30_gatsby@3.15.0:
     resolution: {integrity: sha512-dvUA1O9mPWO4stZFaTv+gn9JvGEach3Mzg6NL7UzYTrEnXtc/utdO1z/DAPNZTUBQ7Tvm+I0eHwvOaHJDQHTLA==}
@@ -21534,18 +21534,17 @@ packages:
     resolution: {integrity: sha512-V/3hbTlGpvJ03Me6DJbdBI08hBTasFOmipsauOsxOSnsF1blxV537WTl1zPwbfcKle4AK0Ma4OPnzMH4LlvTpQ==}
     dev: true
 
-  /joi/17.7.0:
-    resolution: {integrity: sha512-1/ugc8djfn93rTE3WRKdCzGGt/EtiYKxITMO4Wiv6q5JL1gl9ePt4kBsl1S499nbosspfctIQTpYIhSmHA3WAg==}
+  /joi/17.8.3:
+    resolution: {integrity: sha512-q5Fn6Tj/jR8PfrLrx4fpGH4v9qM6o+vDUfD4/3vxxyg34OmKcNqYZ1qn2mpLza96S8tL0p0rIw2gOZX+/cTg9w==}
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
       '@sideway/address': 4.1.4
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
-    dev: true
 
-  /joi/17.8.3:
-    resolution: {integrity: sha512-q5Fn6Tj/jR8PfrLrx4fpGH4v9qM6o+vDUfD4/3vxxyg34OmKcNqYZ1qn2mpLza96S8tL0p0rIw2gOZX+/cTg9w==}
+  /joi/17.8.4:
+    resolution: {integrity: sha512-jjdRHb5WtL+KgSHvOULQEPPv4kcl+ixd1ybOFQq3rWLgEEqc03QMmilodL0GVJE14U/SQDXkUhQUSZANGDH/AA==}
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
@@ -31575,7 +31574,7 @@ packages:
     hasBin: true
     dependencies:
       axios: 0.27.2_debug@4.3.4
-      joi: 17.8.3
+      joi: 17.8.4
       lodash: 4.17.21
       minimist: 1.2.8
       rxjs: 7.8.0
