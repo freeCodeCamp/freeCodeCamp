@@ -6,9 +6,11 @@ const infoHeadingStyle = 'bg-sky-200 text-sky-500';
 const dangerHeadingStyle = 'text-background-danger bg-foreground-danger';
 
 export const PanelHeading = ({
-  children
+  children,
+  props
 }: {
   children: React.ReactNode;
+  props?: React.ComponentProps<'div'>;
 }): JSX.Element => {
   const { bsStyle } = useContext(PanelContext);
   const styles =
@@ -20,5 +22,9 @@ export const PanelHeading = ({
       ? dangerHeadingStyle
       : undefined;
 
-  return <div className={styles}>{children}</div>;
+  return (
+    <div className={styles} {...props}>
+      {children}
+    </div>
+  );
 };
