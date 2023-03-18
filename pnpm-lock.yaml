@@ -412,7 +412,7 @@ importers:
       redux-devtools-extension: 2.13.9
       redux-mock-store: 1.5.4
       redux-observable: 1.2.0
-      redux-saga: 1.2.2
+      redux-saga: 1.2.3
       redux-saga-test-plan: 4.0.6
       reselect: 4.1.7
       rxjs: 6.6.7
@@ -520,7 +520,7 @@ importers:
       redux-actions: 2.6.5
       redux-devtools-extension: 2.13.9_redux@4.2.1
       redux-observable: 1.2.0_redux@4.2.1+rxjs@6.6.7
-      redux-saga: 1.2.2
+      redux-saga: 1.2.3
       reselect: 4.1.7
       rxjs: 6.6.7
       sanitize-html: 2.10.0
@@ -578,7 +578,7 @@ importers:
       monaco-editor-webpack-plugin: 4.2.0_acdgplvgjqgyl437zc3cj5xopq
       react-test-renderer: 16.14.0_react@16.14.0
       redux-mock-store: 1.5.4
-      redux-saga-test-plan: 4.0.6_tlage3qdcuqorohv7fwdat2izu
+      redux-saga-test-plan: 4.0.6_5q4vfa7yksn2vx5sejlvyent3e
       serve: 13.0.4
       ts-node: 10.9.1_cbfmry4sbbh4vatmdrsmatfg5a
       webpack: 5.76.2_webpack-cli@4.10.0
@@ -6055,6 +6055,19 @@ packages:
 
   /@redux-saga/core/1.2.2:
     resolution: {integrity: sha512-0qr5oleOAmI5WoZLRA6FEa30M4qKZcvx+ZQOQw+RqFeH8t20bvhE329XSPsNfTVP8C6qyDsXOSjuoV+g3+8zkg==}
+    dependencies:
+      '@babel/runtime': 7.21.0
+      '@redux-saga/deferred': 1.2.1
+      '@redux-saga/delay-p': 1.2.1
+      '@redux-saga/is': 1.1.3
+      '@redux-saga/symbols': 1.1.3
+      '@redux-saga/types': 1.2.1
+      redux: 4.2.1
+      typescript-tuple: 2.2.1
+    dev: false
+
+  /@redux-saga/core/1.2.3:
+    resolution: {integrity: sha512-U1JO6ncFBAklFTwoQ3mjAeQZ6QGutsJzwNBjgVLSWDpZTRhobUzuVDS1qH3SKGJD8fvqoaYOjp6XJ3gCmeZWgA==}
     dependencies:
       '@babel/runtime': 7.21.0
       '@redux-saga/deferred': 1.2.1
@@ -26586,7 +26599,7 @@ packages:
       rxjs: 6.6.7
     dev: false
 
-  /redux-saga-test-plan/4.0.6_tlage3qdcuqorohv7fwdat2izu:
+  /redux-saga-test-plan/4.0.6_5q4vfa7yksn2vx5sejlvyent3e:
     resolution: {integrity: sha512-ESdbFoDWCeJ/EiFdUNSCGtA2CC9tnuvHDm6k06gVFa98EIeR2hpzFkGk9kJ1/hpMUnYFp+OOEEITIrZeDYBfFg==}
     peerDependencies:
       '@redux-saga/is': ^1.0.1
@@ -26598,13 +26611,13 @@ packages:
       fsm-iterator: 1.1.0
       lodash.isequal: 4.5.0
       lodash.ismatch: 4.4.0
-      redux-saga: 1.2.2
+      redux-saga: 1.2.3
     dev: true
 
-  /redux-saga/1.2.2:
-    resolution: {integrity: sha512-6xAHWgOqRP75MFuLq88waKK9/+6dCdMQjii2TohDMARVHeQ6HZrZoJ9HZ3dLqMWCZ9kj4iuS6CDsujgnovn11A==}
+  /redux-saga/1.2.3:
+    resolution: {integrity: sha512-HDe0wTR5nhd8Xr5xjGzoyTbdAw6rjy1GDplFt3JKtKN8/MnkQSRqK/n6aQQhpw5NI4ekDVOaW+w4sdxPBaCoTQ==}
     dependencies:
-      '@redux-saga/core': 1.2.2
+      '@redux-saga/core': 1.2.3
 
   /redux-thunk/2.4.2_redux@4.2.1:
     resolution: {integrity: sha512-+P3TjtnP0k/FEjcBL5FZpoovtvrTNT/UXd4/sluaSyrURlSlhLSzEdfsTBW7WsKB6yPvgd7q/iZPICFjW4o57Q==}
