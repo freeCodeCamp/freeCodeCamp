@@ -14,7 +14,7 @@ SVG має теґ `circle` для створення форми кола. Він
 
 # --instructions--
 
-Використовуйте методи `data()`, `enter()` та `append()`, щоб прив'язати `dataset` до нового елемента `circle`, що є доданими до полотен SVG.
+Use the `data()`, `enter()`, and `append()` methods to bind `dataset` to new `circle` elements that are appended to the SVG.
 
 **Примітка:** Кола будуть невидимими, так як ви ще не маєте набору їх атрибутів. Ми зробимо це у наступному завданні.
 

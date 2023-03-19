@@ -13,7 +13,7 @@ import { TFunction, Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import Login from '../components/Header/components/Login';
+import Login from '../components/Header/components/login';
 
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 import { reportUser } from '../redux/actions';
