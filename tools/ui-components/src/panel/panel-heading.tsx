@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
 import { PanelContext } from './panel';
 
-const primaryHeadingStyle = 'text-foreground-primary';
+const defaultHeadingStyle =
+  'border-b-1 border-solid border-background-tertiary';
+const primaryHeadingStyle =
+  'border-b-1 border-solid border-foreground-primary text-foreground-primary';
 const infoHeadingStyle = 'text-background-info bg-foreground-info';
 const dangerHeadingStyle = 'text-background-danger bg-foreground-danger';
 
@@ -20,7 +23,7 @@ export const PanelHeading = ({
       ? infoHeadingStyle
       : bsStyle === 'danger'
       ? dangerHeadingStyle
-      : undefined;
+      : defaultHeadingStyle;
 
   return (
     <div className={styles} {...props}>

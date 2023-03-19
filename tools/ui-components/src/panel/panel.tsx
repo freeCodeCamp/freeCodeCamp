@@ -6,8 +6,8 @@ type PanelContextProps = Pick<PanelProps, 'bsStyle'>;
 export const PanelContext = createContext<PanelContextProps>({});
 
 const styles = ['border-1', 'border-solid', 'shadow-sm', 'mb-6'];
-const defaultBorder = 'border-foreground-primary';
-const primaryBorder = 'border-background-primary';
+const defaultBorder = 'border-background-tertiary';
+const primaryBorder = 'border-foreground-primary';
 const dangerBorder = 'border-foreground-danger';
 const infoBorder = 'border-foreground-info';
 
