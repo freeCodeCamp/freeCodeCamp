@@ -16,7 +16,7 @@ import {
   legacyProjectMap
 } from '../../resources/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
-import ProjectModal from '../SolutionViewer/ProjectModal';
+import ProjectModal from '../SolutionViewer/project-modal';
 import { FullWidthRow, Spacer } from '../helpers';
 import { SolutionDisplayWidget } from '../solution-display-widget';
 import SectionHeader from './section-header';
