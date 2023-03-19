@@ -11,7 +11,7 @@ describe('<Panel />', () => {
 
   it('PanelHead should inherit bsStyle', () => {
     render(
-      <Panel bsStyle='primary'>
+      <Panel role='article' bsStyle='primary'>
         <PanelHeading>Test</PanelHeading>
       </Panel>
     );
