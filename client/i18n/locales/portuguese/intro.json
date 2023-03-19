@@ -746,135 +746,135 @@
     }
   },
   "college-algebra-with-python": {
-    "title": "College Algebra with Python",
+    "title": "Álgebra para o ensino superior com Python",
     "intro": [
-      "This course is designed as a one-semester college course. It consists of instructional videos, with Google Colaboratory notebooks to follow along interactively, assignments, and challenging projects.",
-      "As you go through each part of this course in sequence, you will gain a full understanding of Algebra and how to write Python code to solve Algebra problems.",
-      "Throughout this course, you will also build your own Algebra Colab notebook that you will be able to use as your custom calculator. This course (and the code you write here) will give you the foundation for a deeper math and data science understanding."
+      "Este curso foi projetado como um curso universitário de um semestre. Ele consiste em vídeos instrutivos, com os notebooks do Google Colaboratory para acompanhar os desafios e projetos de modo interativo.",
+      "À medida que você passa por cada parte do curso em sequência, você vai entender a álgebra e como escrever códigos em Python para resolver problemas de álgebra.",
+      "Ao longo deste curso, você também criará seu próprio notebook de álgebra no Colaboratory, que poderá usar como uma calculadora personalizada. Este curso (e o código que você escreve aqui) dará a você a base para uma compreensão mais profunda da matemática e da ciência de dados."
     ],
     "note": "",
     "blocks": {
       "learn-ratios-and-proportions": {
-        "title": "Learn Ratios and Proportions",
+        "title": "Aprenda razões e proporções",
         "intro": [
-          "Your journey begins here as you learn how to set up a Colab Notebook that can run Python code. Then, use the notebook to follow along with the videos to learn ratios and proportions using Python."
+          "Sua jornada começa aqui enquanto você aprende como configurar um notebook do Colaboratory que pode executar código em Python. Então, use o notebook para acompanhar os vídeos para aprender razões e proporções usando Python."
         ]
       },
       "learn-how-to-solve-for-x": {
-        "title": "Learn How to Solve for X",
+        "title": "Aprenda a resolver para X",
         "intro": [
-          "This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code."
+          "Esta unidade se concentrará em como resolver um número desconhecido (geralmente chamado de \"x\") usando código escrito em Python e álgebra."
         ]
       },
       "learn-fractions-and-decimals": {
-        "title": "Learn Fractions and Decimals",
+        "title": "Aprenda frações e números decimais",
         "intro": [
-          "This unit will focus on converting decimals to fractions and percents."
+          "Esta unidade se concentrará na conversão de números decimais em frações e porcentagens."
         ]
       },
       "learn-functions-and-graphing": {
-        "title": "Learn Functions and Graphing",
-        "intro": ["This unit will teach you about math functions."]
+        "title": "Aprenda funções e gráficos",
+        "intro": ["Esta unidade ensinará você sobre as funções matemáticas."]
       },
       "learn-linear-functions": {
-        "title": "Learn Linear Functions",
+        "title": "Aprenda funções lineares",
         "intro": [
-          "This unit will show you how to develop linear equations from two points."
+          "Esta unidade mostrará para você como desenvolver equações lineares a partir de dois pontos."
         ]
       },
       "learn-common-factors-and-square-roots": {
-        "title": "Learn Common Factors and Square Roots",
+        "title": "Aprenda fatores comuns e raízes quadradas",
         "intro": [
-          "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
+          "Nesta unidade, você aprenderá a encontrar fatores comuns e a dividi-los. Isto será útil na simplificação de frações e fatoração de raízes quadradas."
         ]
       },
       "build-a-multi-function-calculator": {
-        "title": "Build a Multi-Function Calculator",
+        "title": "Crie uma calculadora multifunção",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a multi-function calculator."
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma calculadora multifunção."
         ]
       },
       "learn-how-to-graph-systems-of-equations": {
-        "title": "Learn How to Graph Systems of Equations",
+        "title": "Aprenda a criar sistemas gráficos de equações",
         "intro": [
-          "This unit will focus on graphing two equations on the same coordinate plane, so that you can see where the lines intersect."
+          "Esta unidade se concentrará em construir o gráfico de duas equações no mesmo plano de coordenadas, para que você possa ver onde as linhas se cruzam."
         ]
       },
       "learn-how-to-solve-systems-of-equations": {
-        "title": "Learn How to Solve Systems of Equations",
+        "title": "Aprenda a resolver sistemas de equações",
         "intro": [
-          "In this unit, you will learn how to solve a system of two equations (with two variables) without graphing. You will see how you can factor an equation and solve for a certain variable in Python. By the end of this unit, you will be able to solve and graph the system with one block of code."
+          "Nesta unidade, você aprenderá a resolver um sistema de duas equações (com duas variáveis) sem gráfico. Você verá como pode fatorar uma equação e resolver para uma determinada variável em Python. Ao final desta unidade, você será capaz de resolver e criar o gráfico do sistema com um bloco de código."
         ]
       },
       "learn-applications-of-linear-systems": {
-        "title": "Learn Applications of Linear Systems",
+        "title": "Aprenda aplicações de sistemas lineares",
         "intro": [
-          "In this unit, you will see how you can use the algebra you learned so far to solve real world problems."
+          "Nesta unidade, você verá como usar a álgebra que aprendeu até agora para resolver problemas do mundo real."
         ]
       },
       "learn-quadratic-equations": {
-        "title": "Learn Quadratic Equations",
+        "title": "Aprenda equações quadráticas",
         "intro": [
-          "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
+          "Esta unidade vai além das equações lineares, para trabalhar com expoentes e parábolas em gráfico. Você aprenderá a encontrar pontos-chave nas parábolas e a resolver equações do segundo grau."
         ]
       },
       "build-a-graphing-calculator": {
-        "title": "Build a Graphing Calculator",
+        "title": "Criar uma calculadora gráfica",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a graphing calculator."
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma calculadora gráfica."
         ]
       },
       "learn-parent-graphs-and-polynomials": {
-        "title": "Learn Parent Graphs and Polynomials",
+        "title": "Aprenda gráficos e polinômios pais",
         "intro": [
-          "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
+          "Esta unidade vai mostrar para você muitos tipos diferentes de gráficos \"pai\", os padrões básicos que criam gráficos mais complicados. Os polinômios são expressões matemáticas com \"várias coisas\" – as equações mais complicadas que são construídas com padrões básicos. Você verá como esses gráficos se parecem, como modificá-los e como fazer tudo isso com código em Python."
         ]
       },
       "build-three-math-games": {
-        "title": "Build Three Math Games",
+        "title": "Crie três jogos de matemática",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build three math games."
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará três jogos de matemática."
         ]
       },
       "learn-business-applications-of-college-algebra": {
-        "title": "Learn Business Applications of College Algebra",
+        "title": "Aprenda aplicações de negócios com álgebra do ensino superior",
         "intro": [
-          "This unit will show you how to apply your solving and graphing skills to find cost, revenue, and profit. You will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other."
+          "Esta unidade mostrará a você como aplicar as habilidades de resolução e criação de gráficos para encontrar custo, receita e lucro. Você escreverá um código para desenvolver uma função de demanda a partir de dois pontos. Você verá como o preço afeta o gráfico de lucros e como todas essas equações se relacionam entre si."
         ]
       },
       "learn-simple-and-compound-interest": {
-        "title": "Learn Simple and Compound Interest",
+        "title": "Aprenda juros simples e compostos",
         "intro": [
-          "This unit will show you how to calculate interest, loan payments, and the estimated value of investments. You will see the math formula and turn that into code. Because these formulas tend to get complicated, you will appreciate having the code where you can just modify a few values."
+          "Esta unidade mostrará a você como calcular juros, pagamentos de empréstimos e o valor estimado dos investimentos. Você verá a fórmula matemática e a transformará em código. Como essas fórmulas tendem a ficar complicadas, você vai gostar de ter o código onde você pode apenas modificar alguns valores."
         ]
       },
       "learn-exponents-and-logarithms": {
-        "title": "Learn Exponents and Logarithms",
+        "title": "Aprenda expoentes e logaritmos",
         "intro": [
-          "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
+          "Esta unidade vai mostrar a você como expoentes e logaritmos são funções inversas e como você pode usar essas funções em várias aplicações."
         ]
       },
       "build-a-financial-calculator": {
-        "title": "Build a Financial Calculator",
+        "title": "Criar uma calculadora financeira",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a financial calculator."
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma calculadora financeira."
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "College Algebra with Python: Conclusion",
+        "title": "Álgebra do ensino superior com Python: conclusão",
         "intro": [
-          "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
+          "Esta será a última unidade deste curso. Vamos ver como você pode conectar seus conhecimentos matemáticos e Python a dados externos."
         ]
       },
       "build-a-data-graph-explorer": {
-        "title": "Build a Data Graph Explorer",
+        "title": "Crie um explorador de gráfico de dados",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a data graph explorer."
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma explorador de gráfico de dados."
         ]
       }
     }

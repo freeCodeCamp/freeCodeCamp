@@ -2,7 +2,7 @@ import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
-import SolutionViewer from './SolutionViewer';
+import SolutionViewer from './solution-viewer';
 
 type ProjectModalProps = {
   challengeFiles: CompletedChallenge['challengeFiles'] | null;

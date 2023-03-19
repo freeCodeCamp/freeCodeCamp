@@ -5,7 +5,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 
-import { ButtonSpacer } from '../helpers';
+import { Spacer } from '../helpers';
 import TB from '../helpers/toggle-button';
 
 import './toggle-setting.css';
@@ -48,7 +48,7 @@ export default function ToggleSetting({
           />
         </FormGroup>
       </div>
-      <ButtonSpacer />
+      <Spacer paddingSize={5} />
     </>
   );
 }

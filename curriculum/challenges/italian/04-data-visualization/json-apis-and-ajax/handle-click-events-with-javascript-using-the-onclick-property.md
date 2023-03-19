@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-Puoi implementare i gestori di eventi che vanno all'interno della funzione `DOMContentLoaded`. You can implement an `onclick` event handler which triggers when the user clicks on the `#getMessage` element, by adding the following code:
+Puoi implementare i gestori di eventi che vanno all'interno della funzione `DOMContentLoaded`. Puoi implementare un gestore di eventi `onclick` che si attiva quando l'utente fa click sull'elemento `#getMessage`, aggiungendo il seguente codice:
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
@@ -28,7 +28,7 @@ Aggiungi un gestore di eventi click all'interno della funzione `DOMContentLoaded
 
 # --hints--
 
-Your code should use the `document.getElementById` method to select the element whose id is `getMessage`.
+Il tuo codice dovrebbe utilizzare il metodo `document.getElementById` per selezionare l'elemento con l'id `getMessage`.
 
 ```js
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));

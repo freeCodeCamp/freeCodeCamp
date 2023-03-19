@@ -5,7 +5,7 @@ import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import { deleteUserToken } from '../../redux/actions';
-import { ButtonSpacer, FullWidthRow, Spacer } from '../helpers';
+import { FullWidthRow, Spacer } from '../helpers';
 
 import './user-token.css';
 
@@ -33,10 +33,10 @@ class UserToken extends Component<UserTokenProps> {
         <FullWidthRow>
           <Panel className='user-panel'>
             <Panel.Heading>{t('user-token.title')}</Panel.Heading>
-            <Spacer />
+            <Spacer paddingSize={15} />
             <p>{t('user-token.delete-p1')}</p>
             <FullWidthRow>
-              <ButtonSpacer />
+              <Spacer paddingSize={5} />
               <Button
                 block={true}
                 bsSize='lg'
@@ -48,7 +48,7 @@ class UserToken extends Component<UserTokenProps> {
               >
                 {t('user-token.delete')}
               </Button>
-              <Spacer />
+              <Spacer paddingSize={15} />
             </FullWidthRow>
           </Panel>
         </FullWidthRow>

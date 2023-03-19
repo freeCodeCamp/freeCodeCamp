@@ -8,7 +8,7 @@ dashedName: use-a-pre-defined-scale-to-place-elements
 
 # --description--
 
-Com as escalas configuradas, é hora de mapear novamente o diagrama de dispersão. As escalas são como funções de processamento que transformam os valores `x` e `y` dos dados brutos em valores que se ajustem e que sejam renderizados corretamente no canvas do SVG. Eles mantêm os dados dentro da área de plotagem da tela.
+Com as escalas configuradas, é hora de mapear novamente o diagrama de dispersão. The scales are like processing functions that turn the `x` and `y` raw data into values that fit and render correctly on the SVG. Eles mantêm os dados dentro da área de plotagem da tela.
 
 Você define os valores dos atributos das coordenadas para uma forma do SVG com a função de dimensionamento. Isso inclui os atributos `x` e `y` para `rect`, elementos `text`, ou `cx` e `cy` para `circles`. Exemplo:
 
@@ -17,11 +17,11 @@ shape
   .attr("x", (d) => xScale(d[0]))
 ```
 
-As escalas definem atributos de coordenadas de forma a colocar os pontos de dados no canvas do SVG. Você não precisa aplicar as escalas quando exibir o valor real dos dados, por exemplo, no método `text()` para uma dica ou etiqueta.
+Scales set shape coordinate attributes to place the data points onto the SVG. Você não precisa aplicar as escalas quando exibir o valor real dos dados, por exemplo, no método `text()` para uma dica ou etiqueta.
 
 # --instructions--
 
-Use `xScale` e `yScale` para posicionar ambas as formas, `circle` e `text`, no canvas do SVG. Para os `circles`, aplique as escalas para definir os atributos `cx` e `cy`. Dê a elas um raio de `5` unidades, também.
+Use `xScale` and `yScale` to position both the `circle` and `text` shapes onto the SVG. Para os `circles`, aplique as escalas para definir os atributos `cx` e `cy`. Dê a elas um raio de `5` unidades, também.
 
 Para os elementos `text`, aplique as escalas para definir os atributos `x` e `y`. As etiquetas devem ser deslocadas para a direita dos pontos. Para fazer isso, adicione `10` unidades ao valor de `x` dos dados antes de passá-lo para `xScale`.
 

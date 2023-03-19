@@ -427,48 +427,48 @@ sudo apt install build-essential
 
 コードを使用して VM をプロビジョニング
 
-1. Install `pnpm` globally.
+1. Install Node LTS.
 
-   ```console
-   curl -fsSL https://get.pnpm.io/install.sh | sh -
-   ```
+2. Install pnpm globally.
 
-2. Clone freeCodeCamp, setup env and keys.
+```console
+npm install -g pnpm
+```
 
-   ```console
-   git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-   cd freeCodeCamp
-   git checkout prod-current # or any other branch to be deployed
-   ```
+3. Clone freeCodeCamp, setup env and keys.
 
-3. Create the `.env` from the secure credentials storage.
+```console
+git clone https://github.com/freeCodeCamp/freeCodeCamp.git
+cd freeCodeCamp
+git checkout prod-current # or any other branch to be deployed
+```
 
-4. Create the `google-credentials.json` from the secure credentials storage.
+4. Create the `.env` from the secure credentials storage.
 
 5. Install dependencies
 
-   ```console
-   pnpm install
-   ```
+```console
+pnpm install
+```
 
 6. Setup pm2 `logrotate` and startup on boot
 
-   ```console
-   pnpm pm2 install pm2-logrotate
-   pnpm pm2 startup
-   ```
+```console
+pnpm pm2 install pm2-logrotate
+pnpm pm2 startup
+```
 
-7. サーバーを構築します。
+7. Build the server
 
-   ```console
-   pnpm prebuild && pnpm build:curriculum && pnpm build:server
-   ```
+```console
+pnpm prebuild && pnpm build:curriculum && pnpm build:server
+```
 
-8.  インスタンスを開始します。
+8.  Start Instances
 
-   ```console
-   pnpm start:server
-   ```
+```console
+pnpm start:server
+```
 
 ### ログとモニタリング
 
@@ -488,25 +488,25 @@ pnpm pm2 monit
 
 #### 1. 手動更新 - 依存関係や env 変数の更新に使用します。
 
-1. すべてのインスタンスを停止します。
+1. Stop all instances
 
 ```console
 pnpm pm2 stop all
 ```
 
-2. 依存関係をインストールします。
+2. Install dependencies
 
 ```console
 pnpm install
 ```
 
-3. サーバーを構築します。
+3. Build the server
 
 ```console
-pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
+pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
-4. インスタンスを開始します。
+4. Start Instances
 
 ```console
 pnpm start:server && pnpm pm2 logs
@@ -515,14 +515,24 @@ pnpm start:server && pnpm pm2 logs
 #### 2. ローリング更新 - コードの論理的な変更に使用されます。
 
 ```console
-pnpm pm2 reload api-server/ecosystem.config.js && pnpm pm2 logs
+pnpm reload:server && pnpm pm2 logs
 ```
 
 > [!NOTE] パイプライン経由で、コードやロジックの更新をロールリング処理しています。 これらのコマンドを実行する必要はありません。 ドキュメント用として、ここに記載されているだけです。
 
+#### 3. Updating Node
+
+1. Install new Node version
+
+2. Update pm2 to use the new version
+
+```console
+pnpm pm2 update
+```
+
 ## クライアントインスタンスでの作業
 
-1. ノードバイナリのビルドツール (`node-gyp`) をインストールします。
+1. Install build tools for node binaries (`node-gyp`) etc.
 
 ```console
 sudo apt install build-essential
@@ -532,9 +542,9 @@ sudo apt install build-essential
 
 コードを使用して VM をプロビジョニング
 
-1. ノード LTS をインストールします。
+1. Install Node LTS.
 
-2. `npm` を更新して PM2 をインストールし、`logrotate` を設定して起動します。
+2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
    npm i -g npm@8
@@ -544,16 +554,16 @@ sudo apt install build-essential
    pm2 startup
    ```
 
-3. クライアントの設定をクローンし、envとキーをセットアップします。
+3. Clone client config, setup env and keys.
 
    ```console
    git clone https://github.com/freeCodeCamp/client-config.git client
    cd client
    ```
 
-   Web クライアントのプレイスホルダーインスタンスを開始します。これらは、Azure パイプラインのアーティファクトで更新されます。
+   Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipeline.
 
-   > Todo: この設定は S3 または Azure Blob ストレージに移動する必要があります。 
+   > Todo: This setup needs to move to S3 or Azure Blob storage 
    > 
    > ```console
    >    echo "serve -c ../serve.json -p 50505 www" > client-start-primary.sh
@@ -582,23 +592,23 @@ pm2 monit
 
 > [!ATTENTION] 自動パイプラインは、分単位で依存関係の更新を処理していません。 デプロイパイプラインが実行される前に、手動で更新する必要があります。
 
-#### 1. 手動更新 - 依存関係、env 変数の更新に使用します。
+#### 1. Manual Updates - Used for updating dependencies, env variables.
 
-1. すべてのインスタンスを停止します。
+1. Stop all instances
 
    ```console
    pm2 stop all
    ```
 
-2. 依存関係をインストールまたは更新します。
+2. Install or update dependencies
 
-3. インスタンスを開始します。
+3. Start Instances
 
    ```console
    pm2 start all --update-env && pm2 logs
    ```
 
-#### 2. ローリング更新 - コードの論理的な変更に使用されます。
+#### 2. Rolling updates - Used for logical changes to code.
 
 ```console
 pm2 reload all --update-env && pm2 logs
@@ -618,7 +628,7 @@ Rocket.Chat クラスタの前で、負荷分散型 (Azure ロードバランサ
 
 **NGINX クラスタ:**
 
-1. NGINX をインストールし、リポジトリから設定します。
+1. Install NGINX and configure from repository.
 
    ```console
    sudo su
@@ -633,13 +643,13 @@ Rocket.Chat クラスタの前で、負荷分散型 (Azure ロードバランサ
    cd /etc/nginx
    ```
 
-2. Cloudflare のオリジン証明書とアップストリームアプリケーション設定をインストールします。
+2. Install Cloudflare origin certificates and upstream application config.
 
-   安全なストレージから Cloudflare のオリジン証明書を取得し、 必要な場所にインストールします。
+   Get the Cloudflare origin certificates from the secure storage and install at required locations.
 
-   **または**
+   **OR**
 
-   既存の証明書を移動させます。
+   Move over existing certificates:
 
    ```console
    # Local
@@ -651,34 +661,34 @@ Rocket.Chat クラスタの前で、負荷分散型 (Azure ロードバランサ
    mv /tmp/ssl ./
    ```
 
-   アップストリーム設定を更新します。
+   Update Upstream Configurations:
 
    ```console
    vi configs/upstreams.conf
    ```
 
-   ソース / オリジンアプリケーションの IP アドレスを追加 / 更新します。
+   Add/update the source/origin application IP addresses.
 
-3. ネットワーキングとファイアウォールを設定します。
+3. Setup networking and firewalls.
 
-   必要に応じて、イングレスオリジンアドレスに Azure ファイアウォールと `ufw` を設定します。
+   Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
 
-4. VM をロードバランサーバックエンドプールに追加します。
+4. Add the VM to the load balancer backend pool.
 
-   必要に応じて、ロードバランサーにルールを設定し追加します。 バランサーバックエンドプールをロードするために、VM を追加する必要があるかもしれません。
+   Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
 
 **Docker クラスタ:**
 
-1. Docker をインストールし、リポジトリから設定します。
+1. Install Docker and configure from the repository
 
    ```console
    git clone https://github.com/freeCodeCamp/chat-config.git chat
    cd chat
    ```
 
-2. 必要な環境変数とインスタンス IP アドレスを設定します。
+2. Configure the required environment variables and instance IP addresses.
 
-3. Rocket-chat サーバーを実行します。
+3. Run rocket-chat server
 
    ```console
    docker-compose config
@@ -687,13 +697,13 @@ Rocket.Chat クラスタの前で、負荷分散型 (Azure ロードバランサ
 
 ### ログとモニタリング
 
-1. 以下のコマンドを使用して NGINX サービスのステータスを確認します。
+1. Check status for NGINX service using the below command:
 
    ```console
    sudo systemctl status nginx
    ```
 
-2. docker インスタンスの実行ステータスを確認します。
+2. Check status for running docker instances with:
 
    ```console
    docker ps
@@ -705,13 +715,13 @@ Rocket.Chat クラスタの前で、負荷分散型 (Azure ロードバランサ
 
 NGINX インスタンスへの設定変更は、GitHub 上でメンテナンスされています。これらは、以下のように各インスタンスにデプロイされる必要があります。
 
-1. SSH でインスタンスに接続し、sudo と入力します。
+1. SSH into the instance and enter sudo
 
    ```console
    sudo su
    ```
 
-2. 最新の設定コードを取得します。
+2. Get the latest config code.
 
    ```console
    cd /etc/nginx
@@ -719,7 +729,7 @@ NGINX インスタンスへの設定変更は、GitHub 上でメンテナンス�
    git reset --hard origin/main
    ```
 
-3. 設定をテストし、[シグナルを使用して](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx)リロードします。
+3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
 
    ```console
    nginx -t
@@ -728,44 +738,44 @@ NGINX インスタンスへの設定変更は、GitHub 上でメンテナンス�
 
 **Docker クラスタ:**
 
-1. インスタンスに SSH で接続し、チャット設定パスに移動します。
+1. SSH into the instance and navigate to the chat config path
 
    ```console
    cd ~/chat
    ```
 
-2. 最新の設定コードを取得します。
+2. Get the latest config code.
 
    ```console
    git fetch --all --prune
    git reset --hard origin/main
    ```
 
-3. Rocket.Chat の最新 docker イメージをプルダウンします。
+3. Pull down the latest docker image for Rocket.Chat
 
    ```console
    docker-compose pull
    ```
 
-4. 実行中のインスタンスを更新します。
+4. Update the running instances
 
    ```console
    docker-compose up -d
    ```
 
-5. インスタンスが起動していることを検証します。
+5. Validate the instances are up
 
    ```console
    docker ps
    ```
 
-6. 不要なリソースをクリーンアップします。
+6. Cleanup extraneous resources
 
    ```console
    docker system prune --volumes
    ```
 
-   出力:
+   Output:
 
    ```console
    WARNING! This will remove:
@@ -778,7 +788,7 @@ NGINX インスタンスへの設定変更は、GitHub 上でメンテナンス�
    Are you sure you want to continue? [y/N] y
    ```
 
-   使用していないものをすべて削除するには、「はい」(y) を選択しします。 これにより、停止されたコンテナ、コンテナによって使用されていないネットワークとボリューム、および宙ぶらりんイメージ (dangling image) とビルドキャッシュを削除します。
+   Select yes (y) to remove everything that is not in use. This will remove all stopped containers, all networks and volumes not used by at least one container, and all dangling images and build caches.
 
 ## Contributor ツールでの作業
 
@@ -880,32 +890,32 @@ https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens から入手でき�
 
 現在、エージェントを更新するには、エージェントを削除して再設定する必要があります。 これは、`PATH` の値や他のシステム環境変数を正しく取り出すために必要です。 デプロイターゲット VM 上で、Node.js を更新する場合は、以下を実行する必要があります。
 
-1. 移動して、サービスのステータスを確認します。
+1. Navigate and check status of the service
 
    ```console
    cd ~/azagent
    sudo ./svc.sh status
    ```
 
-2. サービスを停止します。
+2. Stop the service
 
    ```console
    sudo ./svc.sh stop
    ```
 
-3. サービスをアンインストールします。
+3. Uninstall the service
 
    ```console
    sudo ./svc.sh uninstall
    ```
 
-4. パイプラインプールからエージェントを削除します。
+4. Remove the agent from the pipeline pool
 
    ```console
    ./config.sh remove
    ```
 
-5. 設定ファイルを削除します。
+5. Remove the config files
 
    ```console
    cd ~
@@ -918,32 +928,32 @@ https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens から入手でき�
 
 [CLIツール](https://github.com/freecodecamp/sendgrid-email-blast) で、ウィークリーニュースレターを送信します。 プロセスは次のとおりです。
 
-1. DigitalOcean にサインインし、`Sendgrid` プロジェクトの下に新しい droplet を作成してください。 最新の日付の Ubuntu Sendgrid スナップショットを使用します。 これには データベースからメールをフェッチするスクリプトと CLI ツールがあらかじめロードされています。 現在の容量では、3 つの droplet でメールをタイムリーに送信できます。
+1. Sign in to DigitalOcean, and spin up new droplets under the `Sendgrid` project. Use the Ubuntu Sendgrid snapshot with the most recent date. This comes pre-loaded with the CLI tool and the script to fetch emails from the database. With the current volume, three droplets are sufficient to send the emails in a timely manner.
 
-2. メールリストをフェッチするスクリプトを設定します。
+2. Set up the script to fetch the email list.
 
    ```console
    cd /home/freecodecamp/scripts/emails
    cp sample.env .env
    ```
 
-   `.env` ファイルのプレイスホルダー値を認証情報に置き換える必要があります。
+   You will need to replace the placeholder values in the `.env` file with your credentials.
 
-3. スクリプトを実行します。
+3. Run the script.
 
    ```console
    node get-emails.js emails.csv
    ```
 
-   `emails.csv` ファイルにメールリストを保存します。
+   This will save the email list in an `emails.csv` file.
 
-4. 必要な droplet の数に応じて、メールを複数のファイルに分割します。 `scp` を使用してローカルにメールリストをプルし、お好みのテキストエディターを使用して複数のファイルに分割するのが最も簡単な方法です。 各ファイルに、`email,unsubscribeId` ヘッダーが必要です。
+4. Break the emails down into multiple files, depending on the number of droplets you need. This is easiest to do by using `scp` to pull the email list locally and using your preferred text editor to split them into multiple files. Each file will need the `email,unsubscribeId` header.
 
-5. `cd /home/sendgrid-email-blast` で CLI ディレクトリに切り替え、[ドキュメントに従って](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md) ツールを構成します。
+5. Switch to the CLI directory with `cd /home/sendgrid-email-blast` and configure the tool [per the documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
 
-6. [使用ドキュメント](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md) に従って、ツールを実行してメールを送信します。
+6. Run the tool to send the emails, following the [usage documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
 
-7. メールの一斉配信が完了したら、droplet を破棄する前に、メール送信に問題がなかったかどうかを確認します。
+7. When the email blast is complete, verify that no emails have failed before destroying the droplets.
 
 # フライトマニュアル - 新規言語の新しいインスタンスの追加
 
@@ -951,12 +961,12 @@ https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens から入手でき�
 
 ニュースの掲載には、カスタム [テーマ](https://github.com/freeCodeCamp/news-theme) を使用します。 テーマに以下の変更を加えることで、新しい言語の追加が可能になります。
 
-1. 新規 [ISO 言語コード](https://www.loc.gov/standards/iso639-2/php/code_list.php) の `else if` ステートメントを [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js) に含めます。
-2. [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) フォルダをコピーし、フォルダ名を新規言語コードに変更して、初期設定フォルダを作成します。 (スペイン語の場合は、`en` —> `es` となります)。
-3. 新規言語フォルダ内で、`main.js` と `footer.js` の変数名を、該当言語のショートコードに変更します  (スペイン語の場合は、`enMain` —> `esMain` となります)。
-4. [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) をコピーして、新規言語コード名に変更します。
-5. [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs) で、新たに作成された設定ファイルのスクリプトを追加します。
-6. 関連する言語 `day.js` スクリプトを [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) から [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale) に追加します。
+1. Include an `else if` statement for the new [ISO language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
+2. Create an initial config folder by duplicating the [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) folder and changing its name to the new language code. (`en` —> `es` for Spanish)
+3. Inside the new language folder, change the variable names in `main.js` and `footer.js` to the relevant language short code (`enMain` —> `esMain` for Spanish)
+4. Duplicate the [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) and rename it to the new language code.
+5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), add scripts for the newly created config files.
+6. Add the related language `day.js` script from [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) to the [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
 
 ### Ghost ダッシュボードの変更
 

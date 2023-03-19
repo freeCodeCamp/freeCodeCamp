@@ -14,7 +14,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/labeler@5c7539237e04b714afd8ad9b4aed733815b9fab4 # tag=v4
+      - uses: actions/labeler@ba790c862c380240c6d5e7427be5ace9a05c754b # v4
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           sync-labels: true

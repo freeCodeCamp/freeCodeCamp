@@ -12,7 +12,7 @@ Por padrão, as escalas usam a relação de identidade. Isso significa que o val
 
 Digamos que um conjunto de dados tenha valores em um intervalo de 50 a 480. Esta é a informação de entrada para uma escala, também conhecida como o <dfn>domínio</dfn>.
 
-Você deseja mapear esses pontos sobre o eixo `x` no canvas do SVG, entre 10 e 500 unidades. Esta é a informação de saída, também conhecida como o <dfn>imagem</dfn>.
+You want to map those points along the `x` axis on the SVG, between 10 units and 500 units. Esta é a informação de saída, também conhecida como o <dfn>imagem</dfn>.
 
 Os métodos `domain()` e `range()` definem esses valores para a escala. Os dois métodos recebem um array de pelo menos dois elementos como argumento. Exemplo:
 

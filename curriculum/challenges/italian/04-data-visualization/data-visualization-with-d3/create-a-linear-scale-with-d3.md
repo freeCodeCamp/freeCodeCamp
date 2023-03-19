@@ -8,13 +8,13 @@ dashedName: create-a-linear-scale-with-d3
 
 # --description--
 
-I diagrammi a barre e a dispersione tracciavano i dati direttamente sulla tela SVG. Tuttavia, se l'altezza di una barra o di uno dei punti dati era maggiore dell'altezza o della larghezza della tela, sarebbero andati al di fuori dell'area SVG.
+The bar and scatter plot charts both plotted data directly onto the SVG. Tuttavia, se l'altezza di una barra o di uno dei punti dati era maggiore dell'altezza o della larghezza della tela, sarebbero andati al di fuori dell'area SVG.
 
-In D3 le scale aiutano a tracciare i dati. Le `scales` sono funzioni che dicono al programma come mappare un insieme di punti dati sui pixel della tela SVG.
+In D3 le scale aiutano a tracciare i dati. `scales` are functions that tell the program how to map a set of raw data points onto the pixels of the SVG.
 
-Ad esempio, diciamo di avere una tela SVG di dimensioni 100x500 e di voler tracciare il prodotto interno lordo (PIL) per un certo numero di paesi. La serie di numeri sarà dell'ordine del miliardo o triliardo di dollari. Puoi fornire a D3 un tipo di scala per dirgli come collocare i grandi valori del PIL in quell'area di dimensioni 100x500.
+For example, say you have a 100x500-sized SVG and you want to plot Gross Domestic Product (GDP) for a number of countries. La serie di numeri sarà dell'ordine del miliardo o triliardo di dollari. Puoi fornire a D3 un tipo di scala per dirgli come collocare i grandi valori del PIL in quell'area di dimensioni 100x500.
 
-È improbabile che si traccino i dati grezzi così come sono. Prima di tracciarli, si imposta la scala per l'intero set di dati, in modo che i valori `x` e `y` si adattino alla larghezza e all'altezza della superficie.
+È improbabile che si traccino i dati grezzi così come sono. Before plotting it, you set the scale for your entire data set, so that the `x` and `y` values fit your SVG width and height.
 
 D3 ha diversi tipi di scala. Per una scala lineare (di solito utilizzata con dati quantitativi), c'è il metodo D3 `scaleLinear()`:
 

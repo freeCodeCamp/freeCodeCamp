@@ -19,13 +19,13 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "dependencies": {
-    "@babel/preset-typescript": "7.18.6",
+    "@babel/preset-typescript": "7.21.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@babel/core": "7.20.12",
+    "@babel/core": "7.21.3",
     "@babel/preset-env": "7.20.2",
     "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-commonjs": "19.0.2",
@@ -46,13 +46,12 @@
     "@types/react": "16.14.35",
     "@types/react-dom": "^16.9.17",
     "@types/testing-library__jest-dom": "^5",
-    "autoprefixer": "10.4.13",
+    "autoprefixer": "10.4.14",
     "babel-loader": "8.3.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
     "postcss": "8.4.21",
     "postcss-import": "14.1.0",
-    "rimraf": "3.0.2",
     "rollup": "2.79.1",
     "rollup-plugin-postcss": "4.0.2",
     "rollup-plugin-terser": "7.0.2",
@@ -63,9 +62,9 @@
     "storybook:theming": "pnpm run storybook --no-manager-cache",
     "build-storybook": "build-storybook",
     "build": "cross-env NODE_ENV=production rollup -c",
-    "build:css": "npx tailwindcss -i ./src/base.css -o ./dist/base.css --minify",
+    "build:css": "pnpm dlx tailwindcss -i ./src/base.css -o ./dist/base.css --minify",
     "dev": "cross-env NODE_ENV=development rollup -c -w",
-    "clean": "rimraf dist/*",
+    "clean": "rm -rf dist/*",
     "gen-component": "ts-node ./utils/gen-component-script"
   }
 }

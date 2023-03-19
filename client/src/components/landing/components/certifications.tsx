@@ -19,9 +19,9 @@ const Certifications = ({
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
         <h1 className='big-heading'>{t('landing.certification-heading')}</h1>
         <Map forLanding={true} />
-        <Spacer />
+        <Spacer paddingSize={15} />
         <BigCallToAction pageName={pageName} />
-        <Spacer />
+        <Spacer paddingSize={15} />
       </Col>
     </Row>
   );

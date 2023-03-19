@@ -6,7 +6,6 @@
   color: var(--tertiary-color);
   background: var(--tertiary-background);
   line-height: 1.6;
-  font-family: 'Lato', sans-serif;
 }
 
 .footer-container {
@@ -19,7 +18,6 @@
 .footer-container p {
   margin: 0 0 1.45rem;
   line-height: 30px;
-  font-family: 'Lato', sans-serif;
   font-size: 16px;
 }
 
@@ -39,7 +37,6 @@
   text-align: center;
   padding: 0 15px 15px;
   margin-bottom: 0;
-  font-family: Lato, sans-serif;
 }
 
 .footer-row {
