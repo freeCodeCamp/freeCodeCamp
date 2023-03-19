@@ -5,16 +5,11 @@ import { PanelProps } from './types';
 type PanelContextProps = Pick<PanelProps, 'bsStyle'>;
 export const PanelContext = createContext<PanelContextProps>({});
 
-const styles = [
-  'border-1',
-  'border-solid',
-  'border-foreground-primary',
-  'shadow-sm',
-  'mb-6'
-];
-const primaryStyle = 'border-background-primary';
-const dangerStyle = 'border-foreground-danger';
-const infoStyle = 'border-sky-300';
+const styles = ['border-1', 'border-solid', 'shadow-sm', 'mb-6'];
+const defaultBorder = 'border-foreground-primary';
+const primaryBorder = 'border-background-primary';
+const dangerBorder = 'border-foreground-danger';
+const infoBorder = 'border-foreground-info';
 
 export const Panel = ({
   children,
@@ -25,12 +20,12 @@ export const Panel = ({
 
   const bsStyleClass =
     bsStyle === 'primary'
-      ? primaryStyle
+      ? primaryBorder
       : bsStyle === 'danger'
-      ? dangerStyle
+      ? dangerBorder
       : bsStyle === 'info'
-      ? infoStyle
-      : undefined;
+      ? infoBorder
+      : defaultBorder;
   const panelStyles = bsStyleClass
     ? styles.concat(bsStyleClass).join(' ')
     : styles.join(' ');
