@@ -15,8 +15,7 @@ describe('<Panel />', () => {
         <PanelHeading>Test</PanelHeading>
       </Panel>
     );
-    expect(screen.getByText('Test')).toHaveAttribute(
-      'className',
+    expect(screen.getByText('Test')).toHaveClass(
       'border-b-1 border-solid border-foreground-primary text-foreground-primary'
     );
   });
