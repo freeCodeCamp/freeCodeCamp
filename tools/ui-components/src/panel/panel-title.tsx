@@ -4,7 +4,7 @@ export const PanelTitle = ({
   children,
   props
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   props?: React.ComponentProps<'h3'>;
 }): JSX.Element => {
   return (

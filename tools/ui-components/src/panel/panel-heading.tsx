@@ -12,7 +12,7 @@ export const PanelHeading = ({
   children,
   props
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   props?: React.ComponentProps<'div'>;
 }): JSX.Element => {
   const { bsStyle } = useContext(PanelContext);
