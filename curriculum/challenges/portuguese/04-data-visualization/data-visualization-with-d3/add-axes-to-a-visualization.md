@@ -16,7 +16,7 @@ O D3 tem dois métodos, `axisLeft()` e `axisBottom()`, para renderizar o eixo y 
 const xAxis = d3.axisBottom(xScale);
 ```
 
-The next step is to render the axis on the SVG. Para fazer isso, você pode usar um componente SVG geral, o elemento `g`. O `g` representa o grupo. Ao contrário de `rect`, `circle` e `text`, um eixo é apenas uma linha reta quando é renderizado. Por ser uma forma simples, usar `g` funciona. The last step is to apply a `transform` attribute to position the axis on the SVG in the right place. Otherwise, the line would render along the border of the SVG and wouldn't be visible. O SVG suporta diferentes tipos de `transforms`, mas posicionar um eixo precisa de `translate`. Quando aplicado ao elemento `g`, ele move o grupo inteiro para cima e para baixo pelos valores indicados. Exemplo:
+O próximo passo é renderizar o eixo no SVG. Para fazer isso, você pode usar um componente SVG geral, o elemento `g`. O `g` representa o grupo. Ao contrário de `rect`, `circle` e `text`, um eixo é apenas uma linha reta quando é renderizado. Por ser uma forma simples, usar `g` funciona. O último passo é aplicar um atributo `transform` para posicionar o eixo no lugar certo no SVG. Caso contrário, a linha seria renderizada ao longo da borda do SVG e não seria visível. O SVG suporta diferentes tipos de `transforms`, mas posicionar um eixo precisa de `translate`. Quando aplicado ao elemento `g`, ele move o grupo inteiro para cima e para baixo pelos valores indicados. Exemplo:
 
 ```js
 const xAxis = d3.axisBottom(xScale);
@@ -26,7 +26,7 @@ svg.append("g")
    .call(xAxis);
 ```
 
-The above code places the x-axis at the bottom of the SVG. Então, ele é passado como um argumento para o método `call()`. O eixo y funciona da mesma forma, exceto pelo fato de o argumento `translate` estar no formato `(x, 0)`. Como `translate` é uma string no método `attr()` acima, você pode usar a concatenação para incluir valores de variáveis para seus argumentos.
+O código acima coloca o eixo x na parte inferior do SVG. Então, ele é passado como um argumento para o método `call()`. O eixo y funciona da mesma forma, exceto pelo fato de o argumento `translate` estar no formato `(x, 0)`. Como `translate` é uma string no método `attr()` acima, você pode usar a concatenação para incluir valores de variáveis para seus argumentos.
 
 # --instructions--
 
