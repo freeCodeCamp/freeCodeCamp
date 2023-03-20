@@ -60,10 +60,6 @@ function FormFields(props: FormFieldsProps): JSX.Element {
       }
     }
 
-    // If editor link is not allowed, use editor validator
-    // If local link is not allowed, use local validator
-    // If local link is allowed, use path validator
-    // Always used fCCValidator and httpValidator
     const validators = [fCCValidator, httpValidator];
     const isSolutionLink = name !== 'githubLink';
     if (isSolutionLink && !isEditorLinkAllowed) {
