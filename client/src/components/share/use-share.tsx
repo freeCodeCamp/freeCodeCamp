@@ -22,7 +22,7 @@ export const useShare = ({
   superBlock,
   block
 }: ShareTemplateProps): ShareTemplateReturnProps => {
-  const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomainURL}/${superBlock}/#${block}`;
+  const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomainURL}/${superBlock}/${hastag}${block}`;
   const i18nSupportedBlock =
     i18next.t(`intro:${superBlock}.blocks.${block}.title`) || block;
 

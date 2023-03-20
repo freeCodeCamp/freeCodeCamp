@@ -205,6 +205,10 @@ const LowerJaw = ({
     ) {
       endOfProject.current = true;
     }
+    const showShareButton =
+      challengeIsCompleted &&
+      endOfProject.current &&
+      completedPercent === isBlockCompleted;
     return (
       <div>
         <hr />
@@ -218,14 +222,12 @@ const LowerJaw = ({
           >
             <Reset />
           </button>
-          {challengeIsCompleted &&
-            endOfProject.current &&
-            completedPercent === isBlockCompleted && (
-              <Share
-                superBlock={data?.challengeNode.challenge.superBlock || ''}
-                block={data?.challengeNode.challenge.block || ''}
-              />
-            )}
+          {showShareButton && (
+            <Share
+              superBlock={data?.challengeNode.challenge.superBlock || ''}
+              block={data?.challengeNode.challenge.block || ''}
+            />
+          )}
           {isAttemptsLargerThanTest && !challengeIsCompleted ? (
             <button
               className='btn fade-in'
