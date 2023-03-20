@@ -13,7 +13,7 @@ Depois de acessar o link, crie uma cópia do notebook em sua conta pessoal ou lo
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+Para este desafio, você precisará criar uma calculadora multifuncional usando Python que receberá entradas e fará o seguinte:
 
 - Get a .csv file in three ways
   - uploading it from the local computer
