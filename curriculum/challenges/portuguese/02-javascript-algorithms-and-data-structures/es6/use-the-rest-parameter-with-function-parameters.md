@@ -22,7 +22,7 @@ console.log(howMany("string", null, [1, 2, 3], { }));
 
 O console exibiria as strings `You have passed 3 arguments` e `You have passed 4 arguments.</codde>.</p>
 
-<p spaces-before="0">O parâmetro rest elimina a necessidade de verificar o array <code>args` e nos permite usar `map()`, `filter()` e `reduce()` no array de parâmetros.
+<p spaces-before="0">O parâmetro rest elimina a necessidade de usar o objeto <code>arguments` e nos permite usar métodos de array no array de parâmetros passados para a função `howMany`.
 
 # --instructions--
 

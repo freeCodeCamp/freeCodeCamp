@@ -2,7 +2,7 @@ import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { ButtonSpacer } from '../helpers';
+import { Spacer } from '../helpers';
 
 import './danger-zone.css';
 
@@ -52,7 +52,7 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         >
           {t('settings.danger.nevermind')}
         </Button>
-        <ButtonSpacer />
+        <Spacer paddingSize={5} />
         <Button
           block={true}
           bsSize='lg'

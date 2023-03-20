@@ -124,7 +124,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
             &gt;
           </button>
         </Row>
-        <Spacer />
+        <Spacer paddingSize={15} />
 
         <CalendarHeatMap
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -164,7 +164,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
         />
         <ReactTooltip className='react-tooltip' effect='solid' html={true} />
 
-        <Spacer />
+        <Spacer paddingSize={15} />
         <Row>
           <div className='streak-container'>
             <span className='streak' data-testid='longest-streak'>

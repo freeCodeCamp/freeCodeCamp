@@ -6,7 +6,7 @@ import { createSelector } from 'reselect';
 
 import { certificatesByNameSelector } from '../../../redux/selectors';
 import type { CurrentCert } from '../../../redux/prop-types';
-import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
+import { FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
 
 const mapStateToProps = (
@@ -61,7 +61,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
           </Link>
         </Col>
       </Row>
-      <ButtonSpacer />
+      <Spacer paddingSize={5} />
     </>
   );
 }
@@ -102,7 +102,7 @@ function Certificates({
                   username={username}
                 />
               ))}
-          <Spacer size={2} />
+          <Spacer paddingSize={30} />
         </div>
       ) : null}
       <hr />

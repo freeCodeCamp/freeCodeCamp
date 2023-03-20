@@ -26,7 +26,7 @@ You can find the up-to-date build schedules and status here: https://github.com/
 
 ## Як вказати автора перекладеної статті
 
-Автор та оригінал статті прив'язуються автоматично, коли цей код додано до Code Injection -> головна секція в налаштуваннях чернеток на ghost.
+The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
 
 ```html
 <script>
@@ -34,7 +34,7 @@ You can find the up-to-date build schedules and status here: https://github.com/
 </script>
 ```
 
-Де `link` – посилання на оригінал статті.
+With `link` being the link of the original article.
 
 ## How to update trending articles
 

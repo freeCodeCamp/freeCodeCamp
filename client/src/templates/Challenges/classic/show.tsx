@@ -23,9 +23,9 @@ import {
   Test
 } from '../../../redux/prop-types';
 import { isContained } from '../../../utils/is-contained';
-import ChallengeDescription from '../components/Challenge-Description';
-import Hotkeys from '../components/Hotkeys';
-import ResetModal from '../components/ResetModal';
+import ChallengeDescription from '../components/challenge-description';
+import Hotkeys from '../components/hotkeys';
+import ResetModal from '../components/reset-modal';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
