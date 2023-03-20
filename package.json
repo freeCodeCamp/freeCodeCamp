@@ -113,7 +113,6 @@
     "@types/lodash": "4.14.191",
     "@types/node": "18.15.3",
     "@types/store": "2.0.2",
-    "babel-eslint": "10.1.0",
     "babel-jest": "29.5.0",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
