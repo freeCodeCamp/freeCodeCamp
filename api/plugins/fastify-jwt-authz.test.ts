@@ -22,9 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import assert from 'node:assert';
-// eslint-disable-next-line import/no-unresolved
-import { describe, it } from 'node:test';
 import Fastify from 'fastify';
 import jwtAuthz from './fastify-jwt-authz';
 
@@ -34,13 +31,14 @@ interface ErrorResponse {
   message: string;
 }
 
-describe('fastify-jwt-authz', { only: true }, () => {
-  it('should decorate request instance with jwtAuthz method', async () => {
+describe('fastify-jwt-authz', () => {
+  test('should decorate request instance with jwtAuthz method', async () => {
     const fastify = Fastify();
     await fastify.register(jwtAuthz);
 
-    fastify.get('/test', function (request) {
-      assert(request.jwtAuthz);
+    fastify.get('/', req => {
+      expect(req).toHaveProperty('jwtAuthz');
+      expect(req.jwtAuthz).toBeInstanceOf(Function);
       return { foo: 'bar' };
     });
 
@@ -50,13 +48,13 @@ describe('fastify-jwt-authz', { only: true }, () => {
 
     const res = await fastify.inject({
       method: 'GET',
-      url: '/test'
+      url: '/'
     });
 
-    assert.strictEqual(res.statusCode, 200);
+    expect(res.statusCode).toEqual(200);
   });
 
-  it('should throw an error "Scopes cannot be empty" with an empty scopes parameter', async () => {
+  test('should throw an error "Scopes cannot be empty" with an empty scopes parameter', async () => {
     const fastify = Fastify();
     await fastify.register(jwtAuthz);
 
@@ -82,11 +80,11 @@ describe('fastify-jwt-authz', { only: true }, () => {
     });
     const resData: ErrorResponse = res.json();
 
-    assert.strictEqual(res.statusCode, 500);
-    assert.strictEqual(resData.message, 'Scopes cannot be empty');
+    expect(res.statusCode).toEqual(500);
+    expect(resData.message).toEqual('Scopes cannot be empty');
   });
 
-  it('should throw an error "request.user does not exist" non existing request.user', async () => {
+  test('should throw an error "request.user does not exist" non existing request.user', async () => {
     const fastify = Fastify();
     await fastify.register(jwtAuthz);
 
@@ -112,11 +110,11 @@ describe('fastify-jwt-authz', { only: true }, () => {
     });
     const resData: ErrorResponse = res.json();
 
-    assert.strictEqual(res.statusCode, 500);
-    assert.strictEqual(resData.message, 'request.user does not exist');
+    expect(res.statusCode).toEqual(500);
+    expect(resData.message).toEqual('request.user does not exist');
   });
 
-  it('should throw an error "request.user.scope must be a string"', async () => {
+  test('should throw an error "request.user.scope must be a string"', async () => {
     const fastify = Fastify();
     await fastify.register(jwtAuthz);
 
@@ -146,11 +144,11 @@ describe('fastify-jwt-authz', { only: true }, () => {
     });
     const resData: ErrorResponse = res.json();
 
-    assert.strictEqual(res.statusCode, 500);
-    assert.strictEqual(resData.message, 'request.user.scope must be a string');
+    expect(res.statusCode).toEqual(500);
+    expect(resData.message).toEqual('request.user.scope must be a string');
   });
 
-  it('should throw an error "Insufficient scope"', async () => {
+  test('should throw an error "Insufficient scope"', async () => {
     const fastify = Fastify();
     await fastify.register(jwtAuthz);
 
@@ -180,11 +178,11 @@ describe('fastify-jwt-authz', { only: true }, () => {
     });
     const resData: ErrorResponse = res.json();
 
-    assert.strictEqual(res.statusCode, 500);
-    assert.strictEqual(resData.message, 'Insufficient scope');
+    expect(res.statusCode).toEqual(500);
+    expect(resData.message).toEqual('Insufficient scope');
   });
 
-  it('should verify user scope', async () => {
+  test('should verify user scope', async () => {
     const fastify = Fastify();
     await fastify.register(jwtAuthz);
 
@@ -215,11 +213,11 @@ describe('fastify-jwt-authz', { only: true }, () => {
 
     const resData: { foo: string } = res.json();
 
-    assert.strictEqual(res.statusCode, 200);
-    assert.strictEqual(resData.foo, 'bar');
+    expect(res.statusCode).toEqual(200);
+    expect(resData.foo).toEqual('bar');
   });
 
-  it('should throw an error when there is no callback', async () => {
+  test('should throw an error when there is no callback', async () => {
     const fastify = Fastify();
     await fastify.register(jwtAuthz);
 
@@ -251,11 +249,11 @@ describe('fastify-jwt-authz', { only: true }, () => {
     });
     const resData: ErrorResponse = res.json();
 
-    assert.strictEqual(res.statusCode, 500);
-    assert.strictEqual(resData.message, 'request.user.scope must be a string');
+    expect(res.statusCode).toEqual(500);
+    expect(resData.message).toEqual('request.user.scope must be a string');
   });
 
-  it('should verify user scope when there is no callback', async () => {
+  test('should verify user scope when there is no callback', async () => {
     const fastify = Fastify();
     await fastify.register(jwtAuthz);
 
@@ -286,7 +284,7 @@ describe('fastify-jwt-authz', { only: true }, () => {
     });
     const resData: { foo: string } = res.json();
 
-    assert.strictEqual(res.statusCode, 200);
-    assert.strictEqual(resData.foo, 'bar');
+    expect(res.statusCode).toEqual(200);
+    expect(resData.foo).toEqual('bar');
   });
 });

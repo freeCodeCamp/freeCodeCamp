@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -25,6 +25,7 @@ jobs:
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
 
       - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env

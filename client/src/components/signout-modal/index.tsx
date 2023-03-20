@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { ButtonSpacer } from '../helpers';
+import { Spacer } from '../helpers';
 import { hardGoTo as navigate, closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
 import { apiLocation } from '../../../../config/env.json';
@@ -79,7 +79,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
         >
           {t('signout.nevermind')}
         </Button>
-        <ButtonSpacer />
+        <Spacer paddingSize={5} />
         <Button
           block={true}
           bsStyle='danger'

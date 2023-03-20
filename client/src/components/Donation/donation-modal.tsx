@@ -70,7 +70,7 @@ function DonateModal({
       void playTone('donation');
       executeGA({ event: 'pageview', pagePath: '/donation-modal' });
       executeGA({
-        event: 'donationview',
+        event: 'donation_view',
         action: `Displayed ${
           recentlyClaimedBlock !== null ? 'Block' : 'Progress'
         } Donation Modal`
@@ -134,7 +134,7 @@ function DonateModal({
     >
       <Modal.Body>
         {donationText}
-        <Spacer />
+        <Spacer paddingSize={15} />
         <Row>
           <Col xs={12}>
             <DonateForm
@@ -144,7 +144,7 @@ function DonateModal({
             />
           </Col>
         </Row>
-        <Spacer />
+        <Spacer paddingSize={15} />
         <Row>
           <Col sm={4} smOffset={4} xs={8} xsOffset={2}>
             <Button

@@ -27,7 +27,7 @@ import DonateCompletion from './donate-completion';
 import PatreonButton from './patreon-button';
 import PaypalButton from './paypal-button';
 import StripeCardForm from './stripe-card-form';
-import WalletsWrapper from './walletsButton';
+import WalletsWrapper from './wallets-button';
 import SecurityLockIcon from './security-lock-icon';
 import {
   PaymentProvider,
@@ -273,7 +273,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
         <b className={isMinimalForm ? 'donation-label-modal' : ''}>
           {this.getDonationButtonLabel()}:
         </b>
-        <Spacer />
+        <Spacer paddingSize={15} />
         <fieldset className={'donate-btn-group security-legend'}>
           <legend>
             <SecurityLockIcon />

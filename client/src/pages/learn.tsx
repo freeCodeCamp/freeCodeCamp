@@ -83,7 +83,7 @@ function LearnPage({
 
   const onDonationAlertClick = () => {
     executeGA({
-      event: 'donationrelated',
+      event: 'donation_related',
       action: `Learn Donation Alert Click`,
       duration: defaultDonation.donationDuration,
       amount: defaultDonation.donationAmount
@@ -106,7 +106,7 @@ function LearnPage({
               isDonating={isDonating}
             />
             <Map />
-            <Spacer size={2} />
+            <Spacer paddingSize={30} />
           </Col>
         </Row>
       </Grid>

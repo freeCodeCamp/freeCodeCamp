@@ -16,7 +16,7 @@ D3 ha due metodi, `axisLeft()` e `axisBottom()`, per tracciare rispettivamente l
 const xAxis = d3.axisBottom(xScale);
 ```
 
-Il passo successivo è quello di disegnare l'asse sulla tela SVG. Per farlo, è possibile utilizzare un componente SVG generale, l'elemento `g`. La `g` sta per gruppo. A differenza di `rect`, `circle`, e `text`, un asse è solo una linea retta quando è disegnato. Poiché è una forma semplice, usare `g` funziona. L'ultimo passo è quello di applicare un attributo `transform` per posizionare l'asse sulla tela SVG nel posto giusto. In caso contrario, la linea verrebbe disegnata lungo il bordo della tela SVG e non sarebbe visibile. SVG supporta diversi tipi di trasformazioni (`transforms`), ma il posizionamento di un asse necessita di traslare (`translate`). Quando viene applicato all'elemento `g`, esso sposta l'intero gruppo sopra e verso il basso in base alle quantità indicate. Ecco un esempio:
+The next step is to render the axis on the SVG. Per farlo, è possibile utilizzare un componente SVG generale, l'elemento `g`. La `g` sta per gruppo. A differenza di `rect`, `circle`, e `text`, un asse è solo una linea retta quando è disegnato. Poiché è una forma semplice, usare `g` funziona. The last step is to apply a `transform` attribute to position the axis on the SVG in the right place. Otherwise, the line would render along the border of the SVG and wouldn't be visible. SVG supporta diversi tipi di trasformazioni (`transforms`), ma il posizionamento di un asse necessita di traslare (`translate`). Quando viene applicato all'elemento `g`, esso sposta l'intero gruppo sopra e verso il basso in base alle quantità indicate. Ecco un esempio:
 
 ```js
 const xAxis = d3.axisBottom(xScale);
@@ -26,7 +26,7 @@ svg.append("g")
    .call(xAxis);
 ```
 
-Il codice sopra posiziona l'asse X nella parte inferiore della superficie di disegno SVG. Quindi è passato come argomento al metodo `call()`. L'asse y funziona allo stesso modo, a parte il fatto che l'argomento `translate` è nella forma `(x, 0)`. Poiché `translate` è una stringa nel metodo `attr()` scritto sopra, puoi usare la concatenazione per includere valori variabili nei suoi argomenti.
+The above code places the x-axis at the bottom of the SVG. Quindi è passato come argomento al metodo `call()`. L'asse y funziona allo stesso modo, a parte il fatto che l'argomento `translate` è nella forma `(x, 0)`. Poiché `translate` è una stringa nel metodo `attr()` scritto sopra, puoi usare la concatenazione per includere valori variabili nei suoi argomenti.
 
 # --instructions--
 

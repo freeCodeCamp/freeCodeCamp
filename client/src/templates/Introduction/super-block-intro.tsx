@@ -13,7 +13,7 @@ import { createSelector } from 'reselect';
 import { SuperBlocks } from '../../../../config/certification-settings';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import DonateModal from '../../components/Donation/donation-modal';
-import Login from '../../components/Header/components/Login';
+import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
 import { tryToShowDonationModal } from '../../redux/actions';
@@ -190,14 +190,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
         <main>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size={2} />
+              <Spacer paddingSize={30} />
               <LegacyLinks superBlock={superBlock} />
               <SuperBlockIntro superBlock={superBlock} />
-              <Spacer size={2} />
+              <Spacer paddingSize={30} />
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
               </h2>
-              <Spacer />
+              <Spacer paddingSize={15} />
               <div className='block-ui'>
                 {defaultCurriculumNames.map(blockDashedName => (
                   <Fragment key={blockDashedName}>
@@ -224,20 +224,20 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               </div>
               {!isSignedIn && !signInLoading && (
                 <div>
-                  <Spacer size={2} />
+                  <Spacer paddingSize={30} />
                   <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
                 </div>
               )}
-              <Spacer size={2} />
+              <Spacer paddingSize={30} />
               <h3
                 className='text-center big-block-title'
                 style={{ whiteSpace: 'pre-line' }}
               >
                 {t(`intro:misc-text.browse-other`)}
               </h3>
-              <Spacer />
+              <Spacer paddingSize={15} />
               <Map currentSuperBlock={superBlock} />
-              <Spacer size={2} />
+              <Spacer paddingSize={30} />
             </Col>
           </Row>
         </main>

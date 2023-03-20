@@ -13,6 +13,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
       className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"
     >
       <div
+        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -27,6 +28,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
           learn.read-this.heading
         </strong>
         <div
+          className="spacer"
           style={
             Object {
               "height": "1px",
@@ -95,6 +97,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         misc.quincy
       </strong>
       <div
+        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -106,6 +109,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         misc.email-blast
       </p>
       <div
+        className="spacer"
         style={
           Object {
             "height": "1px",
@@ -118,9 +122,10 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
       className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"
     >
       <div
-        className="button-spacer"
+        className="spacer"
         style={
           Object {
+            "height": "1px",
             "padding": "5px 0",
           }
         }
@@ -134,9 +139,10 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         buttons.sign-up-email-list
       </a>
       <div
-        className="button-spacer"
+        className="spacer"
         style={
           Object {
+            "height": "1px",
             "padding": "5px 0",
           }
         }
@@ -146,6 +152,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
       className="col-xs-12"
     >
       <div
+        className="spacer"
         style={
           Object {
             "height": "1px",

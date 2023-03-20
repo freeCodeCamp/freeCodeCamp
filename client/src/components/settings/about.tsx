@@ -208,7 +208,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     return (
       <>
         <UsernameSettings username={username} />
-        <Spacer />
+        <Spacer paddingSize={15} />
         <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
@@ -271,7 +271,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
             </BlockSaveButton>
           </form>
         </FullWidthRow>
-        <Spacer />
+        <Spacer paddingSize={15} />
         <FullWidthRow>
           <ThemeSettings
             currentTheme={currentTheme}
