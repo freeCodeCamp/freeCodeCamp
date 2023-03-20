@@ -112,6 +112,7 @@ export const ToggleButton = ({
       aria-disabled={disabled}
       className={classNames}
       onClick={handleChange}
+      className=' hover:bg-gray-100 hover:text-white'
     >
       {children}
     </button>
