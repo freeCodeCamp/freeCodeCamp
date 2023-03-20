@@ -31,6 +31,8 @@
 
 .quote-wrapper .quote::before {
   content: open-quote;
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .quote-wrapper .author {
