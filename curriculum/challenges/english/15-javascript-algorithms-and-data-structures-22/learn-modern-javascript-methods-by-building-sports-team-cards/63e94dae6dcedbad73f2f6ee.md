@@ -7,7 +7,7 @@ dashedName: step-27
 
 # --description--
 
-The `arr` contains a series of objects that each contain a `name`, `position`, `number`, `isCaptain` and `nickname` property. In order to access each of those properties inside our callback function, you will need to use object destructuring.
+The `arr` contains a series of objects that each contain a `name`, `position`, `number`, `isCaptain` and `nickname` property. In order to access each of those properties inside the callback function, you will need to use object destructuring.
 
 Here is an example.
 
@@ -23,9 +23,12 @@ Inside the parameter list in the callback function for the `map` method, list ou
 
 # --hints--
 
-Test 1
+You will need to add all five object properties from the `arr` using object destructuring.
 
 ```js
+
+assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
+
 
 ```
 
