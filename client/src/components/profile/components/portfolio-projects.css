@@ -3,9 +3,12 @@
   position: relative;
   border: 1px solid var(--secondary-color);
   gap: 1rem 1rem;
-  grid-template-columns: repeat(3, 1fr);
   margin-top: 1em;
   margin-bottom: 3em;
+}
+
+.portfolio-container:has(.portfolio-screen-shot) {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .portfolio-screen-shot {
@@ -18,6 +21,10 @@
 }
 
 .portfolio-container h3 {
+  margin: 1em;
+}
+
+.portfolio-container:has(.portfolio-screen-shot) h3 {
   grid-column: 1/ -1;
   grid-row: 2;
   margin-block: 1em;
@@ -31,8 +38,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  grid-column: 1/ -1;
-  grid-row: 4;
   font-size: unset;
   justify-self: end;
   width: 40%;
@@ -45,6 +50,11 @@
   text-decoration: none;
   /* prevent line breaks in Chinese/Japanese/Korean */
   word-break: keep-all;
+}
+
+.portfolio-container:has(.portfolio-screen-shot) a {
+  grid-column: 1/ -1;
+  grid-row: 4;
 }
 
 .portfolio-container a::after {
@@ -64,6 +74,10 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  margin-inline: 1rem;
+}
+
+.portfolio-container:has(.portfolio-screen-shot) p {
   grid-column: 1/ -1;
   grid-row: 3;
 }
@@ -83,8 +97,11 @@
 }
 
 @media (min-width: 995px) {
-  .portfolio-container {
-    grid-template-rows: minmax(75px, 1fr) minmax(125px, 1fr) 75px;
+  .portfolio-container:has(p, .portfolio-screen-shot) {
+    grid-template-rows: minmax(65px, 0.1fr) minmax(125px, 1fr) 75px;
+  }
+
+  .portfolio-container:has(.portfolio-screen-shot) {
     grid-template-columns: 300px 1.2fr;
   }
 
@@ -93,17 +110,17 @@
     grid-row: 1 / -1;
   }
 
-  .portfolio-container h3 {
+  .portfolio-container:has(.portfolio-screen-shot) h3 {
     grid-column: 2;
     grid-row: 1;
   }
 
-  .portfolio-container p {
+  .portfolio-container:has(.portfolio-screen-shot) p {
     grid-column: 2;
     grid-row: 2;
   }
 
-  .portfolio-container a {
+  .portfolio-container:has(.portfolio-screen-shot) a {
     grid-column: 2;
     grid-row: 3;
   }
@@ -145,4 +162,19 @@
   width: auto;
   margin-inline-start: 10px;
   position: absolute;
+}
+
+@supports not (selector(:has)) {
+  .portfolio-container h3 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .portfolio-screen-shot {
+    max-height: 300px;
+  }
+
+  .portfolio-container a {
+    grid-row: 4;
+  }
 }
