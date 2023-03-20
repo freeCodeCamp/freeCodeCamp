@@ -2,7 +2,6 @@ import debugFactory from 'debug';
 import dedent from 'dedent';
 import { body } from 'express-validator';
 import { pick } from 'lodash';
-import { Observable } from 'rx';
 
 import {
   fixCompletedChallengeItem,
@@ -98,84 +97,77 @@ function createReadSessionUser(app) {
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
 
-    const userId = queryUser?.id;
-    const userToken = userId
-      ? await UserToken.findOne({
-          where: { userId }
-        })
-      : null;
-
-    const encodedUserToken = userToken
-      ? encodeUserToken(userToken.id)
-      : undefined;
-
-    const source =
-      queryUser &&
-      Observable.forkJoin(
-        queryUser.getCompletedChallenges$(),
-        queryUser.getPartiallyCompletedChallenges$(),
-        queryUser.getSavedChallenges$(),
-        queryUser.getPoints$(),
-        Donation.getCurrentActiveDonationCount$(),
-        (
-          completedChallenges,
-          partiallyCompletedChallenges,
-          savedChallenges,
-          progressTimestamps,
-          activeDonations
-        ) => ({
-          activeDonations,
-          completedChallenges,
-          partiallyCompletedChallenges,
-          progress: getProgress(progressTimestamps, queryUser.timezone),
-          savedChallenges
-        })
-      );
-    Observable.if(
-      () => !queryUser,
-      Observable.of({ user: {}, result: '' }),
-      Observable.defer(() => source)
-        .map(
-          ({
-            activeDonations,
-            completedChallenges,
-            partiallyCompletedChallenges,
-            progress,
-            savedChallenges
-          }) => ({
-            user: {
-              ...queryUser.toJSON(),
-              ...progress,
-              completedChallenges: completedChallenges.map(
-                fixCompletedChallengeItem
-              ),
-              partiallyCompletedChallenges: partiallyCompletedChallenges.map(
-                fixPartiallyCompletedChallengeItem
-              ),
-              savedChallenges: savedChallenges.map(fixSavedChallengeItem)
-            },
-            sessionMeta: { activeDonations }
+    let encodedUserToken;
+    try {
+      const userId = queryUser?.id;
+      const userToken = userId
+        ? await UserToken.findOne({
+            where: { userId }
           })
-        )
-        .map(({ user, sessionMeta }) => ({
-          user: {
-            [user.username]: {
-              ...pick(user, userPropsForSession),
-              username: user.usernameDisplay || user.username,
-              isEmailVerified: !!user.emailVerified,
-              isGithub: !!user.githubProfile,
-              isLinkedIn: !!user.linkedin,
-              isTwitter: !!user.twitter,
-              isWebsite: !!user.website,
-              ...normaliseUserFields(user),
-              joinDate: user.id.getTimestamp(),
-              userToken: encodedUserToken
-            }
-          },
-          sessionMeta,
-          result: user.username
-        }))
-    ).subscribe(user => res.json(user), next);
+        : null;
+
+      encodedUserToken = userToken ? encodeUserToken(userToken.id) : undefined;
+    } catch (e) {
+      return next(e);
+    }
+
+    if (!queryUser || !queryUser.toJSON().username) {
+      // TODO: This should return an error status
+      return res.json({ user: {}, result: '' });
+    }
+
+    try {
+      const [
+        activeDonations,
+        completedChallenges,
+        partiallyCompletedChallenges,
+        progressTimestamps,
+        savedChallenges
+      ] = await Promise.all(
+        [
+          Donation.getCurrentActiveDonationCount$(),
+          queryUser.getCompletedChallenges$(),
+          queryUser.getPartiallyCompletedChallenges$(),
+          queryUser.getPoints$(),
+          queryUser.getSavedChallenges$()
+        ].map(obs => obs.toPromise())
+      );
+
+      const progress = getProgress(progressTimestamps, queryUser.timezone);
+      const user = {
+        ...queryUser.toJSON(),
+        ...progress,
+        completedChallenges: completedChallenges.map(fixCompletedChallengeItem),
+        partiallyCompletedChallenges: partiallyCompletedChallenges.map(
+          fixPartiallyCompletedChallengeItem
+        ),
+        savedChallenges: savedChallenges.map(fixSavedChallengeItem)
+      };
+      const response = {
+        user: {
+          [user.username]: {
+            ...pick(user, userPropsForSession),
+            username: user.usernameDisplay || user.username,
+            isEmailVerified: !!user.emailVerified,
+            isGithub: !!user.githubProfile,
+            isLinkedIn: !!user.linkedin,
+            isTwitter: !!user.twitter,
+            isWebsite: !!user.website,
+            ...normaliseUserFields(user),
+            joinDate: user.id.getTimestamp(),
+            userToken: encodedUserToken
+          }
+        },
+        sessionMeta: {
+          activeDonations
+        },
+        result: user.username
+      };
+      return res.json(response);
+    } catch (e) {
+      // TODO: This should return an error status
+      return res.json({ user: {}, result: '' });
+    }
   };
 }
 

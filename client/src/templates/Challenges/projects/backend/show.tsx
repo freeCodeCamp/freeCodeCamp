@@ -19,8 +19,8 @@ import {
   ChallengeNode,
   Test
 } from '../../../../redux/prop-types';
-import ChallengeDescription from '../../components/Challenge-Description';
-import Hotkeys from '../../components/Hotkeys';
+import ChallengeDescription from '../../components/challenge-description';
+import Hotkeys from '../../components/hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/help-modal';
@@ -232,7 +232,7 @@ class BackEnd extends Component<BackEndProps> {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer />
+                <Spacer paddingSize={15} />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
@@ -263,7 +263,7 @@ class BackEnd extends Component<BackEndProps> {
                   output={output}
                 />
                 <TestSuite tests={tests} />
-                <Spacer />
+                <Spacer paddingSize={15} />
               </Col>
               <CompletionModal
                 block={block}

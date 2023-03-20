@@ -16,7 +16,7 @@ D3 hat zwei Methoden, `axisLeft()` und `axisBottom()`, um jeweils die y-und x-Ac
 const xAxis = d3.axisBottom(xScale);
 ```
 
-Der nächste Schritt ist, die Achse auf dem SVG-Canvas darzustellen. Dafür kannst du eine allgemeine SVG-Komponente, das `g` Element, verwenden. Das `g` steht für Gruppe. Anders als `rect`, `circle`, und `text`, ist eine Achse nur eine geradlinige Linie, wenn sie gerendert wird. Da sie eine einfache Form ist, funktioniert `g`. Der letzte Schritt besteht darin, das `transform`-Attribut anzuwenden, um die Achse auf die richtige Position auf dem SVG-Canvas zu bringen. Andernfalls würde die Linie entlang der Grenze der SVG Leinwand rendern und wäre für uns nicht sichtbar. SVG unterstützt verschiedene Arten von `transforms`, aber die Positionierung einer Achse benötigt `translate`. Wenn es auf das `g`-Element angewandt wird, wird die gesamte Gruppe um die angegebenen Beträge nach oben und unten verschoben. Hier ist ein Beispiel:
+The next step is to render the axis on the SVG. Dafür kannst du eine allgemeine SVG-Komponente, das `g` Element, verwenden. Das `g` steht für Gruppe. Anders als `rect`, `circle`, und `text`, ist eine Achse nur eine geradlinige Linie, wenn sie gerendert wird. Da sie eine einfache Form ist, funktioniert `g`. The last step is to apply a `transform` attribute to position the axis on the SVG in the right place. Otherwise, the line would render along the border of the SVG and wouldn't be visible. SVG unterstützt verschiedene Arten von `transforms`, aber die Positionierung einer Achse benötigt `translate`. Wenn es auf das `g`-Element angewandt wird, wird die gesamte Gruppe um die angegebenen Beträge nach oben und unten verschoben. Hier ist ein Beispiel:
 
 ```js
 const xAxis = d3.axisBottom(xScale);
@@ -26,7 +26,7 @@ svg.append("g")
    .call(xAxis);
 ```
 
-Der obige Code platziert die x-Achse am unteren Ende des SVG-Canvas. Dann wird es als Argument an die `call()`-Methode übergeben. Die y-Achse funktioniert ähnlich, außer dass das `translate` Argument in der Form `(x, 0)` ist. Da `translate` ein String in der oben gennanten `attr()`- Methode ist, kannst du die Verkettung verwenden, um variable Werte für die Argumente einzuschließen.
+The above code places the x-axis at the bottom of the SVG. Dann wird es als Argument an die `call()`-Methode übergeben. Die y-Achse funktioniert ähnlich, außer dass das `translate` Argument in der Form `(x, 0)` ist. Da `translate` ein String in der oben gennanten `attr()`- Methode ist, kannst du die Verkettung verwenden, um variable Werte für die Argumente einzuschließen.
 
 # --instructions--
 

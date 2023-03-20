@@ -13,7 +13,7 @@ import { TFunction, Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import Login from '../components/Header/components/Login';
+import Login from '../components/Header/components/login';
 
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 import { reportUser } from '../redux/actions';
@@ -83,7 +83,7 @@ function ShowUser({
     return (
       <main>
         <FullWidthRow>
-          <Spacer size={2} />
+          <Spacer paddingSize={30} />
           <Panel bsStyle='info' className='text-center'>
             <Panel.Heading>
               <Panel.Title componentClass='h3'>
@@ -91,11 +91,11 @@ function ShowUser({
               </Panel.Title>
             </Panel.Heading>
             <Panel.Body className='text-center'>
-              <Spacer size={2} />
+              <Spacer paddingSize={30} />
               <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
                 <Login block={true}>{t('buttons.click-here')}</Login>
               </Col>
-              <Spacer size={3} />
+              <Spacer paddingSize={45} />
             </Panel.Body>
           </Panel>
         </FullWidthRow>
@@ -108,7 +108,7 @@ function ShowUser({
       <Helmet>
         <title>{t('report.portfolio')} | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer size={2} />
+      <Spacer paddingSize={30} />
       <Row className='text-center overflow-fix'>
         <Col sm={8} smOffset={2} xs={12}>
           <h2>{t('report.portfolio-2', { username: username })}</h2>
@@ -135,7 +135,7 @@ function ShowUser({
             <Button block={true} bsStyle='primary' type='submit'>
               {t('report.submit')}
             </Button>
-            <Spacer />
+            <Spacer paddingSize={15} />
           </form>
         </Col>
       </Row>

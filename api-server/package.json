@@ -72,6 +72,7 @@
     "rate-limit-mongo": "^2.3.2",
     "rx": "4.1.0",
     "stripe": "8.205.0",
+    "strong-error-handler": "3.5.0",
     "uuid": "3.4.0",
     "validator": "13.7.0"
   },

@@ -6,7 +6,7 @@ html {
 
 body {
   height: 100%;
-  font-family: 'Hack-ZeroSlash', monospace;
+  font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
   background: var(--secondary-background);
 }
@@ -77,22 +77,28 @@ h1 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: 'Hack-ZeroSlash', monospace;
+  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.25rem;
-  font-family: 'Hack-ZeroSlash', monospace;
+  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.1rem;
-  font-family: 'Hack-ZeroSlash', monospace;
+  font-family: var(--font-family-monospace);
   margin: 0 0 0.6rem;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-monospace);
 }
 
 h4,
@@ -104,7 +110,6 @@ th {
   color: var(--secondary-color);
   font-weight: 400;
   font-size: 1rem;
-  font-family: 'Hack-ZeroSlash', monospace;
   margin: 0 0 1.2rem;
 }
 
@@ -433,7 +438,7 @@ code {
   background-color: var(--quaternary-background);
   color: var(--tertiary-color);
   border-radius: 0;
-  font-family: 'Hack-ZeroSlash', monospace;
+  font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
 }
 

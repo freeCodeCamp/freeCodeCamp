@@ -31,7 +31,6 @@
 
 .quote-wrapper .quote::before {
   content: open-quote;
-}
 
 .quote-wrapper .author {
   text-align: right;

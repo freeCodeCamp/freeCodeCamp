@@ -1,6 +1,6 @@
-# Як відкрити запит на пул (PR)
+# Як відкрити запит на злиття (PR)
 
-Запит на пул (PR) дозволяє надсилати зміни зі свого форку на GitHub до головного репозиторію freeCodeCamp.org. Як тільки ви закінчите вносити зміни до коду, дотримуйтесь цих рекомендацій, щоб відкрити запит на пул.
+Запит на злиття (PR) дозволяє надсилати зміни зі свого форку на GitHub до головного репозиторію freeCodeCamp.org. Як тільки ви закінчите вносити зміни до коду, дотримуйтесь цих рекомендацій, щоб відкрити PR.
 
 Ми очікуємо, що наші помічники обізнані щодо процесу проєкту. Ви отримаєте повагу тих, хто відповідає за технічне обслуговування, і заощадите час, дотримуючись цих вказівок.
 
@@ -53,9 +53,9 @@
 - `fix(api,client): prevent CORS errors on form submission`
 - `docs(i18n): fix links to be relative instead of absolute`
 
-## Proposing a Pull Request
+## Запропонуйте PR
 
-1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
+1. Як тільки зміни будуть збережені, вам буде запропоновано створити PR на сторінці вашої гілки GitHub.
 
    <details>
    <summary>Переглянути знімок екрану</summary>
@@ -64,9 +64,9 @@
 
    </details>
 
-2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
+2. Усі PR потрібно надсилати до головного репозиторію freeCodeCamp — гілки `main`.
 
-   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
+   Переконайтеся, що значення base fork встановлено на freeCodeCamp/freeCodeCamp під час створення PR.
 
    <details>
    <summary>Переглянути знімок екрану</summary>
@@ -75,11 +75,11 @@
 
    </details>
 
-3. Submit the pull request from your branch to freeCodeCamp's `main` branch.
+3. Надішліть PR зі своєї гілки до гілки freeCodeCamp `main`.
 
-4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
+4. У тілі свого PR вкажіть детальну інформацію про внесені зміни та чим вони корисні.
 
-   - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
+   - Вам буде надано шаблон PR. Це список, якого потрібно дотримуватись перед відкриттям PR.
 
    - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 

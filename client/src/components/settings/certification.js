@@ -16,7 +16,7 @@ import {
   legacyProjectMap
 } from '../../resources/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
-import ProjectModal from '../SolutionViewer/ProjectModal';
+import ProjectModal from '../SolutionViewer/project-modal';
 import { FullWidthRow, Spacer } from '../helpers';
 import { SolutionDisplayWidget } from '../solution-display-widget';
 import SectionHeader from './section-header';
@@ -231,7 +231,7 @@ export class CertificationSettings extends Component {
     const { certSlug } = first(projectsMap[certName]);
     return (
       <FullWidthRow key={certName}>
-        <Spacer />
+        <Spacer paddingSize={15} />
         <h3 className='text-center' id={`cert-${certSlug}`}>
           {t(`certification.title.${certName}`, certName)}
         </h3>
@@ -345,7 +345,7 @@ export class CertificationSettings extends Component {
     };
     return (
       <FullWidthRow key={certSlug}>
-        <Spacer />
+        <Spacer paddingSize={15} />
         <h3 className='text-center'>
           {t('certification.title.Legacy Full Stack Certification')}
         </h3>
@@ -403,7 +403,7 @@ export class CertificationSettings extends Component {
             </Button>
           )}
         </div>
-        <Spacer />
+        <Spacer paddingSize={15} />
       </FullWidthRow>
     );
   };

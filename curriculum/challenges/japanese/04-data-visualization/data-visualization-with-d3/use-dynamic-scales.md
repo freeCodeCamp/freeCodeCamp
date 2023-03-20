@@ -10,11 +10,11 @@ dashedName: use-dynamic-scales
 
 D3 の `min()` メソッドと `max()` メソッドは、スケールを設定する際に便利です。
 
-複雑なデータセットが与えられた場合、優先事項の一つは、可視化されたものが SVG コンテナーの幅と高さに合うようにスケールを設定することです。 すべてのデータがウェブページに表示されるように、SVG キャンバス内にデータをプロットしましょう。
+複雑なデータセットが与えられた場合、優先事項の一つは、可視化されたものが SVG コンテナーの幅と高さに合うようにスケールを設定することです。 You want all the data plotted inside the SVG so it's visible on the web page.
 
 下の例は、散布図データの x 軸スケールを設定します。 `domain()` メソッドは、プロットされる生データ値に関する情報をスケールに渡します。 `range()` メソッドは、ウェブページ上で可視化に使用される実際のスペースに関する情報をスケールに提供します。
 
-この例では、ドメインはセット内の 0 から最大値までです。 配列内の x 値に基づいて、コールバック関数で `max()` メソッドを使用します。 レンジには SVG キャンバスの幅 (`w`) を使用しますが、いくらかのパディングも含めます。 これにより、散布図のドットと SVG キャンバスの端との間に余白が作られます。
+この例では、ドメインはセット内の 0 から最大値までです。 配列内の x 値に基づいて、コールバック関数で `max()` メソッドを使用します。 The range uses the SVG's width (`w`), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG.
 
 ```js
 const dataset = [
@@ -38,7 +38,7 @@ const xScale = d3.scaleLinear()
   .range([padding, w - padding]);
 ```
 
-最初はパディングというものが分かりづらいかもしれません。 X 軸を、0 ～ 500 (SVG キャンバスの幅の値) の値を持つ横線と考えてください。 `range()` メソッドにパディングを含めると、プロットはその線に沿って (0 ではなく) 30 から開始し、(500 ではなく) 470 で終了します。
+最初はパディングというものが分かりづらいかもしれません。 Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG). `range()` メソッドにパディングを含めると、プロットはその線に沿って (0 ではなく) 30 から開始し、(500 ではなく) 470 で終了します。
 
 # --instructions--
 
@@ -89,7 +89,7 @@ assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]));
     const w = 500;
     const h = 500;
 
-    // Padding between the SVG canvas boundary and the plot
+    // Padding between the SVG boundary and the plot
     const padding = 30;
 
     // Create an x and y scale
