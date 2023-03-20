@@ -12,7 +12,7 @@ dashedName: add-labels-to-scatter-plot-circles
 
 L'obiettivo è quello di visualizzare i valori separati da virgole per il primo campo (`x`) e il secondo campo (`y`) di ogni elemento nel `dataset`.
 
-I nodi `text` hanno bisogno di attributi `x` e `y` per essere posizionati sulla tela SVG. In questa sfida, il valore `y` (che determina l'altezza) può usare lo stesso valore che il `circle` utilizza per il suo attributo `cy`. Il valore `x` può essere leggermente più grande del valore `cx` del `circle`, in modo che l'etichetta sia visibile. Questo sposterà l'etichetta a destra del punto tracciato.
+The `text` nodes need `x` and `y` attributes to position it on the SVG. In questa sfida, il valore `y` (che determina l'altezza) può usare lo stesso valore che il `circle` utilizza per il suo attributo `cy`. Il valore `x` può essere leggermente più grande del valore `cx` del `circle`, in modo che l'etichetta sia visibile. Questo sposterà l'etichetta a destra del punto tracciato.
 
 # --instructions--
 

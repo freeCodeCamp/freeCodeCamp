@@ -8,7 +8,7 @@ dashedName: use-a-pre-defined-scale-to-place-elements
 
 # --description--
 
-Con las escalas configuradas, es tiempo de trazar el diagrama de dispersión nuevamente. Las escalas son como funciones procesadoras que transforman los datos iniciales de `x` e `y` a valores que encajan y se renderizan correctamente en el lienzo SVG. Mantienen los datos dentro del área de trazado de la pantalla.
+Con las escalas configuradas, es tiempo de trazar el diagrama de dispersión nuevamente. The scales are like processing functions that turn the `x` and `y` raw data into values that fit and render correctly on the SVG. Mantienen los datos dentro del área de trazado de la pantalla.
 
 Establece los valores de los atributos de coordenada para una forma SVG con la función escaladora. Esto incluye los atributos `x` e `y` para `rect` o elementos `text`, o `cx` y `cy` para `circles`. He aquí un ejemplo:
 
@@ -17,11 +17,11 @@ shape
   .attr("x", (d) => xScale(d[0]))
 ```
 
-Las escalas establecen atributos de coordenada de las formas para colocar los puntos de datos en el lienzo SVG. No necesitas aplicar escalas cuando muestras el valor del dato real, por ejemplo, en el método `text()` para una descripción o una etiqueta.
+Scales set shape coordinate attributes to place the data points onto the SVG. No necesitas aplicar escalas cuando muestras el valor del dato real, por ejemplo, en el método `text()` para una descripción o una etiqueta.
 
 # --instructions--
 
-Usa `xScale` e `yScale` para posicionar ambas formas `circle` y `text` en el lienzo SVG. Para los `circles`, aplica las escalas para establecer los atributos `cx` y `cy`. También, dales un radio de `5` unidades.
+Use `xScale` and `yScale` to position both the `circle` and `text` shapes onto the SVG. Para los `circles`, aplica las escalas para establecer los atributos `cx` y `cy`. También, dales un radio de `5` unidades.
 
 Para los elementos `text`, aplica las escalas para establecer los atributos `x` e `y`. Las etiquetas deben ser desplazadas a la derecha de los puntos. Para ello, agrega `10` unidades al valor de datos `x` antes de pasarlo a `xScale`.
 

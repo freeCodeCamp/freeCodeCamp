@@ -1,173 +1,85 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
-import { Col, Grid, Row } from '@freecodecamp/react-bootstrap';
+import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import { withTranslation } from 'react-i18next';
-import type { TFunction } from 'i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
-import { isSignedInSelector } from '../../../../redux/selectors';
-import {
-  ChallengeMeta,
-  ChallengeNode,
-  Test
-} from '../../../../redux/prop-types';
-import ChallengeDescription from '../../components/Challenge-Description';
-import Hotkeys from '../../components/Hotkeys';
+import { ChallengeNode, ChallengeMeta } from '../../../../redux/prop-types';
+import ChallengeDescription from '../../components/challenge-description';
+import Hotkeys from '../../components/hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/help-modal';
-import Output from '../../components/output';
-import TestSuite from '../../components/test-suite';
 import {
   challengeMounted,
-  executeChallenge,
-  initConsole,
-  initTests,
   updateChallengeMeta,
+  openModal,
   updateSolutionFormValues
 } from '../../redux/actions';
-import {
-  challengeTestsSelector,
-  consoleOutputSelector,
-  isChallengeCompletedSelector
-} from '../../redux/selectors';
+import { isChallengeCompletedSelector } from '../../redux/selectors';
 import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
 
-import '../../components/test-frame.css';
-
 // Redux Setup
 const mapStateToProps = createSelector(
-  consoleOutputSelector,
-  challengeTestsSelector,
   isChallengeCompletedSelector,
-  isSignedInSelector,
-  (
-    output: string[],
-    tests: Test[],
-    isChallengeCompleted: boolean,
-    isSignedIn: boolean
-  ) => ({
-    tests,
-    output,
-    isChallengeCompleted,
-    isSignedIn
+  (isChallengeCompleted: boolean) => ({
+    isChallengeCompleted
   })
 );
 
-const mapDispatchToActions = {
-  challengeMounted,
-  executeChallenge,
-  initConsole,
-  initTests,
-  updateChallengeMeta,
-  updateSolutionFormValues
-};
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators(
+    {
+      updateChallengeMeta,
+      challengeMounted,
+      updateSolutionFormValues,
+      openCompletionModal: () => openModal('completion')
+    },
+    dispatch
+  );
 
 // Types
-interface BackEndProps {
+interface ProjectProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
-  description: string;
-  executeChallenge: (options: { showCompletionModal: boolean }) => void;
-  forumTopicId: number;
-  id: string;
-  initConsole: () => void;
-  initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
-  isSignedIn: boolean;
-  output: string[];
+  openCompletionModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
   t: TFunction;
-  tests: Test[];
-  title: string;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
 }
 
 // Component
-class BackEnd extends Component<BackEndProps> {
+class Project extends Component<ProjectProps> {
   static displayName: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private _container: any;
-  constructor(props: BackEndProps) {
+  private _container: HTMLElement | null = null;
+
+  constructor(props: ProjectProps) {
     super(props);
-    this.state = {};
-    this.updateDimensions = this.updateDimensions.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   componentDidMount() {
-    this.initializeComponent();
-    window.addEventListener('resize', () => this.updateDimensions());
-    this._container.focus();
-  }
-
-  updateDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', () => this.updateDimensions());
-  }
-
-  componentDidUpdate(prevProps: BackEndProps) {
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            title: prevTitle,
-            fields: { tests: prevTests }
-          }
-        }
-      }
-    } = prevProps;
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            title: currentTitle,
-            fields: { tests: currTests }
-          }
-        }
-      }
-    } = this.props;
-    if (prevTitle !== currentTitle || prevTests !== currTests) {
-      this.initializeComponent();
-    }
-  }
-
-  initializeComponent() {
     const {
       challengeMounted,
-      initConsole,
-      initTests,
-      updateChallengeMeta,
       data: {
         challengeNode: {
-          challenge: {
-            fields: { tests },
-            title,
-            challengeType,
-            helpCategory
-          }
+          challenge: { title, challengeType, helpCategory }
         }
       },
-      pageContext: { challengeMeta }
+      pageContext: { challengeMeta },
+      updateChallengeMeta
     } = this.props;
-    initConsole();
-    initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -175,6 +87,36 @@ class BackEnd extends Component<BackEndProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
+    this._container?.focus();
+  }
+
+  componentDidUpdate(prevProps: ProjectProps): void {
+    const {
+      data: {
+        challengeNode: {
+          challenge: { title: prevTitle }
+        }
+      }
+    } = prevProps;
+    const {
+      challengeMounted,
+      data: {
+        challengeNode: {
+          challenge: { title: currentTitle, challengeType, helpCategory }
+        }
+      },
+      pageContext: { challengeMeta },
+      updateChallengeMeta
+    } = this.props;
+    if (prevTitle !== currentTitle) {
+      updateChallengeMeta({
+        ...challengeMeta,
+        title: currentTitle,
+        challengeType,
+        helpCategory
+      });
+      challengeMounted(challengeMeta.id);
+    }
   }
 
   handleSubmit({
@@ -182,9 +124,9 @@ class BackEnd extends Component<BackEndProps> {
   }: {
     showCompletionModal: boolean;
   }): void {
-    this.props.executeChallenge({
-      showCompletionModal
-    });
+    if (showCompletionModal) {
+      this.props.openCompletionModal();
+    }
   }
 
   render() {
@@ -192,26 +134,24 @@ class BackEnd extends Component<BackEndProps> {
       data: {
         challengeNode: {
           challenge: {
-            fields: { blockName },
             challengeType,
+            fields: { blockName },
             forumTopicId,
             title,
             description,
             instructions,
-            translationPending,
-            certification,
             superBlock,
-            block
+            certification,
+            block,
+            translationPending
           }
         }
       },
       isChallengeCompleted,
-      output,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
       t,
-      tests,
       updateSolutionFormValues
     } = this.props;
 
@@ -245,6 +185,7 @@ class BackEnd extends Component<BackEndProps> {
                 />
                 <SolutionForm
                   challengeType={challengeType}
+                  description={description}
                   // eslint-disable-next-line @typescript-eslint/unbound-method
                   onSubmit={this.handleSubmit}
                   updateSolutionForm={updateSolutionFormValues}
@@ -253,16 +194,6 @@ class BackEnd extends Component<BackEndProps> {
                   guideUrl={getGuideUrl({ forumTopicId, title })}
                 />
                 <br />
-                <Output
-                  defaultOutput={`/**
-*
-* ${t('learn.test-output')}
-*
-*
-*/`}
-                  output={output}
-                />
-                <TestSuite tests={tests} />
                 <Spacer paddingSize={15} />
               </Col>
               <CompletionModal
@@ -280,15 +211,15 @@ class BackEnd extends Component<BackEndProps> {
   }
 }
 
-BackEnd.displayName = 'BackEnd';
+Project.displayName = 'Project';
 
 export default connect(
   mapStateToProps,
-  mapDispatchToActions
-)(withTranslation()(BackEnd));
+  mapDispatchToProps
+)(withTranslation()(Project));
 
 export const query = graphql`
-  query BackendChallenge($slug: String!) {
+  query ProjectChallenge($slug: String!) {
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
         forumTopicId
@@ -297,17 +228,13 @@ export const query = graphql`
         instructions
         challengeType
         helpCategory
-        certification
         superBlock
+        certification
         block
         translationPending
         fields {
           blockName
           slug
-          tests {
-            text
-            testString
-          }
         }
       }
     }

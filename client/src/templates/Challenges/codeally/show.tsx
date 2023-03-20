@@ -18,7 +18,7 @@ import { challengeTypes } from '../../../../utils/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';
-import Hotkeys from '../components/Hotkeys';
+import Hotkeys from '../components/hotkeys';
 import { hideCodeAlly, tryToShowCodeAlly } from '../../../redux/actions';
 import {
   completedChallengesSelector,

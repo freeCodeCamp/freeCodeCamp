@@ -16,7 +16,7 @@ D3 tiene dos métodos, `axisLeft()` y `axisBottom()`, para representar el eje "y
 const xAxis = d3.axisBottom(xScale);
 ```
 
-El siguiente paso es renderizar el eje en el lienzo SVG. Para hacerlo, puedes utilizar un componente SVG general, el elemento `g`. El `g` significa grupo. A diferencia de `rect`, `circle` y `text`, un eje es solo una línea recta cuando se representa. Debido a que es una forma simple, el uso de `g` funciona. El último paso es aplicar un atributo `transform` para colocar el eje en el lienzo SVG en el lugar correcto. De lo contrario, la línea se representaría a lo largo del borde del lienzo SVG y no sería visible. SVG admite diferentes tipos de `transforms`, pero el posicionamiento de un eje necesita `translate`. Cuando se aplica al elemento `g`, mueve todo el grupo hacia arriba y hacia abajo en las cantidades dadas. He aquí un ejemplo:
+The next step is to render the axis on the SVG. Para hacerlo, puedes utilizar un componente SVG general, el elemento `g`. El `g` significa grupo. A diferencia de `rect`, `circle` y `text`, un eje es solo una línea recta cuando se representa. Debido a que es una forma simple, el uso de `g` funciona. The last step is to apply a `transform` attribute to position the axis on the SVG in the right place. Otherwise, the line would render along the border of the SVG and wouldn't be visible. SVG admite diferentes tipos de `transforms`, pero el posicionamiento de un eje necesita `translate`. Cuando se aplica al elemento `g`, mueve todo el grupo hacia arriba y hacia abajo en las cantidades dadas. He aquí un ejemplo:
 
 ```js
 const xAxis = d3.axisBottom(xScale);
@@ -26,7 +26,7 @@ svg.append("g")
    .call(xAxis);
 ```
 
-El código anterior coloca el eje "x" en la parte inferior del lienzo SVG. Luego se pasa como argumento al método `call()`. El eje "y" funciona de la misma manera, excepto que el argumento `translate` tiene el formato `(x, 0)`. Debido a que `translate` es una cadena en el método `attr()` anterior, puedes usar la concatenación para incluir valores de variable para sus argumentos.
+The above code places the x-axis at the bottom of the SVG. Luego se pasa como argumento al método `call()`. El eje "y" funciona de la misma manera, excepto que el argumento `translate` tiene el formato `(x, 0)`. Debido a que `translate` es una cadena en el método `attr()` anterior, puedes usar la concatenación para incluir valores de variable para sus argumentos.
 
 # --instructions--
 

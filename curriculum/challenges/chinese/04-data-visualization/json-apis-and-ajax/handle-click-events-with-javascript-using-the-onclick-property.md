@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-你可以在`DOMContentLoaded`函数内部添加事件处理方法。 You can implement an `onclick` event handler which triggers when the user clicks on the `#getMessage` element, by adding the following code:
+你可以在`DOMContentLoaded`函数内部添加事件处理方法。 你可以通过添加以下代码来添加 `onclick` 事件处理器，当用户点击 id 为`#getMessage` 的元素时会触发事件：
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
@@ -28,7 +28,7 @@ document.getElementById('getMessage').onclick = function(){};
 
 # --hints--
 
-Your code should use the `document.getElementById` method to select the element whose id is `getMessage`.
+你的代码应该用 `document.getElementById` 方法来选择 id 为 `getMessage` 的元素。
 
 ```js
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
