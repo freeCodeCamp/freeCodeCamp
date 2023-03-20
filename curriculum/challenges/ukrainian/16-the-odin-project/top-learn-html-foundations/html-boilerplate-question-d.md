@@ -1,46 +1,46 @@
 ---
 id: 637f4e3672c65bc8e73dfe23
 videoId: V8UAEoOvqFg
-title: HTML Boilerplate Question D
+title: Шаблонний код HTML. Запитання D
 challengeType: 15
 dashedName: html-boilerplate-question-d
 ---
 
 # --description--
 
-The final element needed to complete the HTML boilerplate is the `<body>` element. This is where all the content that will be displayed to users will go - the text, images, lists, links, and so on.
+Останній елемент, необхідний для шаблонного коду HTML — елемент `<body>`. У ньому розміщується весь вміст, який побачать користувачі: текст, зображення, посилання, списки тощо.
 
-To complete the boilerplate, add a `body` element to the `index.html` file. The `body` element also goes within the `html` element and is always below the `head` element, like so:
+Щоб закінчити шаблонний код, додайте елемент `body` до файлу `index.html`. Елемент `body` завжди розташований в елементі `html` та завжди знизу елемента `head`:
 
 # --question--
 
 ## --assignment--
 
-Watch and follow along to Kevin Powell’s brilliant Building your first web page video above.
+Перегляньте чудове відео Кевіна Павелла про побудову першої вебсторінки.
 
 ---
 
-Build some muscle memory by deleting the contents of the `index.html` file and trying to write out all the boilerplate again from memory. Don’t worry if you have to peek at the lesson content the first few times if you get stuck. Just keep going until you can do it a couple of times from memory.
+Потренуйте пам’ять, видаливши весь вміст файлу `index.html` та спробуйте написати шаблонний код ще раз. Не хвилюйтесь, якщо перші рази вам потрібно переглянути матеріал. Продовжуйте, поки не зможете написати код з пам’яті.
 
 ---
 
-Run your boilerplate through this [HTML validator](https://www.freeformatter.com/html-validator.html). Validators ensure your markup is correct and are an excellent learning tool, as they provide feedback on syntax errors you may be making often and aren’t aware of, such as missing closing tags and extra spaces in your HTML.
+Запустіть свій шаблонний код через [валідатор HTML](https://www.freeformatter.com/html-validator.html). Валідатори гарантують, що розмітка є правильною. Це чудові інструменти для навчання, оскільки вони надають відгуки про синтаксичні помилки, які ви можете час від часу допускати, навіть не здогадуючись про них (наприклад, відсутність кінцевих тегів або додавання додаткових пробілів).
 
 ## --text--
 
-What is the purpose of the `body` element?
+Яка суть елемента `body`?
 
 ## --answers--
 
-This is where all important information about the webpage is displayed such as the `title` and `meta` tags.
+Тут розміщена вся важлива інформація про вебсторінку (наприклад, теги `title` та `meta`).
 
 ---
 
-This is where you tell the browser how to render the webpage correctly.
+Тут вказується браузеру, як правильно відтворити вебсторінку.
 
 ---
 
-This is where all content will be displayed on the page such images, text, and links.
+Тут розміщений весь вміст, який буде показано (наприклад, зображення, текст та посилання).
 
 
 ## --video-solution--

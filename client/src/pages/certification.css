@@ -1,9 +1,3 @@
-@font-face {
-  font-family: 'Sax Mono';
-  src: url('/fonts/saxmono.ttf') format('truetype');
-  font-display: fallback;
-}
-
 .certification-namespace * {
   margin: 0;
   padding: 0;
@@ -28,10 +22,6 @@
 
 .certification-namespace .col-sm-12 {
   padding: 0;
-}
-
-.certification-namespace.certificate-wrapper {
-  font-family: 'Sax Mono', monospace;
 }
 
 /* center the certificate vertically */
@@ -63,11 +53,6 @@
   background-color: var(--gray-15);
   border-color: var(--quaternary-color);
   color: var(--quaternary-color);
-}
-
-.certificate-outer-wrapper .donation-section,
-.certificate-outer-wrapper .donation-section p {
-  font-family: 'Lato', sans-serif;
 }
 
 .certification-namespace header {

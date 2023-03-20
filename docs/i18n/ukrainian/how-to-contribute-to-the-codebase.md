@@ -1,20 +1,20 @@
-Follow these guidelines to contribute to the codebase. This is highly recommended if you want to contribute regularly.
+Дотримуйтесь цих вказівок, щоб зробити внесок до кодової бази. Особливо рекомендовано, якщо ви хочете робити внесок регулярно.
 
-Ignoring these steps may soil your copy which makes the contributing, maintaining, and reviewing processes difficult.
+Ігнорування цих кроків може призвести до того, що ви ускладните свій внесок, обслуговування та перегляд.
 
-## Contributing to the Codebase
+## Внесок до кодової бази
 
-You can now make changes to files and commit your changes to your fork, which you can prepare by reading [how to set up freecodecamp](how-to-setup-freecodecamp-locally.md).
+Тепер ви можете робити зміни у файлах та затверджувати їх, прочитавши [як налаштувати freeCodeCamp](how-to-setup-freecodecamp-locally.md).
 
-Follow these steps:
+Дотримуйтеся цих вказівок:
 
-1. Validate that you are on the `main` branch:
+1. Переконайтесь, що ви на гілці `main`:
 
    ```console
    git status
    ```
 
-   You should get an output like this:
+   Ви повинні отримати такий вивід:
 
    ```console
    On branch main
@@ -23,7 +23,7 @@ Follow these steps:
    nothing to commit, working directory clean
    ```
 
-   If you got different message, then you aren't on main or your working directory isn't clean, resolve any outstanding files/commits and checkout `main`:
+   Якщо ви отримали інше повідомлення, значить ви працюєте десь інше або робочий каталог не очищений. Розв’яжіть питання щодо файлів/комітів та перевірте `main`:
 
    ```console
    git checkout main
@@ -201,15 +201,15 @@ After you've committed your changes, check here for [how to open a Pull Request]
 
 A quick reference to the commands that you will need when working.
 
-| команда                                                        | опис                                                                                |
-| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `npm run test-client`                                          | Run the client test suite.                                                          |
-| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
-| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
-| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
-| `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
-| `npm run test-server`                                          | Run the server test suite.                                                          |
-| `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
-| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
-| `npm run storybook`                                            | Starts Storybook for component library development.                                 |
+| команда                                                           | опис                                                                                |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `pnpm test`                                                       | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `pnpm run test-client`                                            | Run the client test suite.                                                          |
+| `pnpm run test:curriculum`                                        | Run the curriculum test suite.                                                      |
+| `FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum`       | Test a specific Block.                                                              |
+| `FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum` | Test a specific SuperBlock.                                                         |
+| `pnpm run test-curriculum-full-output`                            | Run the curriculum test suite, without bailing after the first error                |
+| `pnpm run test-server`                                            | Run the server test suite.                                                          |
+| `pnpm run e2e`                                                    | Run the Cypress end to end tests.                                                   |
+| `pnpm run clean`                                                  | Uninstalls all dependencies and cleans up caches.                                   |
+| `pnpm run storybook`                                              | Starts Storybook for component library development.                                 |

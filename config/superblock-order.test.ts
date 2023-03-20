@@ -150,6 +150,7 @@ describe("'superBlockOrder' helper functions", () => {
       SuperBlocks.MachineLearningPy,
       SuperBlocks.CodingInterviewPrep,
       SuperBlocks.JsAlgoDataStructNew,
+      SuperBlocks.CollegeAlgebraPy,
       SuperBlocks.TheOdinProject,
       SuperBlocks.RespWebDesign
     ];
@@ -190,6 +191,7 @@ describe("'superBlockOrder' helper functions", () => {
       SuperBlocks.MachineLearningPy,
       SuperBlocks.CodingInterviewPrep,
       SuperBlocks.JsAlgoDataStructNew,
+      SuperBlocks.CollegeAlgebraPy,
       SuperBlocks.TheOdinProject
     ];
     expect(notAuditedSuperBlocks).toStrictEqual(test);

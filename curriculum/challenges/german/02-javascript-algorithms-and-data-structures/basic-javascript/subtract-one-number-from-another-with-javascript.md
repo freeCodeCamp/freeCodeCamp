@@ -26,7 +26,7 @@ const myVar = 12 - 6;
 
 # --hints--
 
-The variable `difference` should be equal to `12`.
+Die Variable `difference` sollte auf `12` gesetzt sein.
 
 ```js
 assert(difference === 12);

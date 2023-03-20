@@ -32,7 +32,7 @@ Create a person schema called `personSchema` with the following shape:
 
 * A required `name` field of type `String`
 * An `age` field of type `Number`
-* A `favouriteFoods` field of type `[String]`
+* A `favoriteFoods` field of type `[String]`
 
 Usa los tipos básicos de esquemas de Mongoose. Si quieres también puedes añadir más campos, utilizar validadores sencillos como required o unique, y establecer valores por defecto. Mira nuestro <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">artículo sobre Mongoose </a>.
 

@@ -15,13 +15,13 @@ dashedName: finding-a-remainder-in-javascript
 
 <pre>
 5 % 2 = 1
-5 / 2 = 2 remainder 1
+5 / 2 = 2 余り1
 2 * 2 = 4
 5 - 4 = 1
 </pre>
 
-**Usage**  
-In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`. Even numbers have a remainder of `0`, while odd numbers a remainder of `1`.
+**使用例**  
+数学では、ある数が偶数か奇数かを求めるために、その数を `2` で割った余りを調べることができます。 偶数は `0` の余りを持ち、奇数は `1` の余りを持ちます。
 
 <pre>
 17 % 2 = 1

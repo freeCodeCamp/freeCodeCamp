@@ -60,43 +60,43 @@ Du solltest mindestens vier `break`-Anweisungen verwenden
 assert(code.match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` should return the string `Marley`
+`chainToSwitch("bob")` sollte den String `Marley` zurückgeben
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` should return the string `The Answer`
+`chainToSwitch(42)` sollte den String `The Answer` zurückgeben
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` should return the string `There is no #1`
+`chainToSwitch(1)` sollte den String `There is no #1` zurückgeben
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)` should return the string `Missed me by this much!`
+`chainToSwitch(99)` sollte den String `Missed me by this much!` zurückgeben
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` should return the string `Ate Nine`
+`chainToSwitch(7)` sollte den String `Ate Nine` zurückgeben
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` should return `""` (empty string)
+`chainToSwitch("John")` sollte `""` (leerer String) zurückgeben
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` should return `""` (empty string)
+`chainToSwitch(156)` sollte `""` (leerer String) zurückgeben
 
 ```js
 assert(chainToSwitch(156) === '');

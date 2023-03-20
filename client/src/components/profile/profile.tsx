@@ -29,7 +29,7 @@ function renderMessage(
       <FullWidthRow>
         <p className='alert alert-info'>{t('profile.you-change-privacy')}</p>
       </FullWidthRow>
-      <Spacer />
+      <Spacer paddingSize={15} />
     </>
   ) : (
     <>
@@ -43,7 +43,7 @@ function renderMessage(
           {t('profile.username-change-privacy', { username: username })}
         </p>
       </FullWidthRow>
-      <Spacer />
+      <Spacer paddingSize={15} />
     </>
   );
 }
@@ -103,7 +103,7 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}
-      <Spacer />
+      <Spacer paddingSize={15} />
     </>
   );
 }
@@ -120,9 +120,9 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
       <Helmet>
         <title>{t('buttons.profile')} | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer />
+      <Spacer paddingSize={15} />
       <Grid>
-        <Spacer />
+        <Spacer paddingSize={15} />
         {isLocked ? renderMessage(isSessionUser, username, t) : null}
         {!isLocked || isSessionUser ? renderProfile(user) : null}
         {isSessionUser ? null : (
@@ -132,7 +132,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
             </Link>
           </Row>
         )}
-        <Spacer />
+        <Spacer paddingSize={15} />
       </Grid>
     </>
   );

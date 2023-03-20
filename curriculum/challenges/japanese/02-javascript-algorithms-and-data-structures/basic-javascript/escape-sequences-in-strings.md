@@ -9,15 +9,15 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-文字列の中で<dfn>エスケープ</dfn>できる文字は引用符だけではありません。 Escape sequences allow you to use characters you may not otherwise be able to use in a string.
+文字列の中で<dfn>エスケープ</dfn>できる文字は引用符だけではありません。 エスケープシーケンスを使用すると、文字列で通常は使用できない文字を使用できます。
 
 <table class='table table-striped'><thead><tr><th>コード</th><th>出力</th></tr></thead><tbody><tr><td><code>\'</code></td><td>シングルクォート</td></tr><tr><td><code>\"</code></td><td>ダブルクォート</td></tr><tr><td><code>\\</code></td><td>バックスラッシュ (日本語では円記号)</td></tr><tr><td><code>\n</code></td><td>改行</td></tr><tr><td><code>\t</code></td><td>タブ</td></tr><tr><td><code>\r</code></td><td>キャリッジリターン</td></tr><tr><td><code>\b</code></td><td>単語境界</td></tr><tr><td><code>\f</code></td><td>改ページ</td></tr></tbody></table>
 
-*Note that the backslash itself must be escaped in order to display as a backslash.*
+*バックスラッシュ自体をバックスラッシュとして表示するためにはエスケープする必要があります。*
 
 # --instructions--
 
-Assign the following three lines of text into the single variable `myStr` using escape sequences.
+エスケープシーケンスを使用して、単一の変数 `myStr` に次の 3 行のテキストを代入してください。
 
 <pre>
 FirstLine
@@ -25,19 +25,19 @@ FirstLine
 ThirdLine
 </pre>
 
-You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.
+特殊文字を正しく挿入するにはエスケープシーケンスを使用する必要があります。 また、エスケープシーケンスや単語の間にスペースを入れず、上記のとおりに表示する必要があります。
 
-**Note:** The indentation for `SecondLine` is achieved with the tab escape character, not spaces.
+**注:** `SecondLine` にインデントを付けるには、スペースではなくタブエスケープ文字を使用します。
 
 # --hints--
 
-`myStr` should not contain any spaces
+`myStr` にスペースを含めてはいけません
 
 ```js
 assert(!/ /.test(myStr));
 ```
 
-`myStr` should contain the strings `FirstLine`, `SecondLine` and `ThirdLine` (remember case sensitivity)
+`myStr` には文字列 `FirstLine`、`SecondLine`、および `ThirdLine` を含める必要があります (大文字小文字を正しく区別してください)
 
 ```js
 assert(
@@ -45,31 +45,31 @@ assert(
 );
 ```
 
-`FirstLine` should be followed by the newline character `\n`
+`FirstLine` の直後に改行文字 `\n` を付ける必要があります
 
 ```js
 assert(/FirstLine\n/.test(myStr));
 ```
 
-`myStr` should contain a tab character `\t` which follows a newline character
+`myStr` には改行文字に続けてタブ文字 `\t` を含める必要があります
 
 ```js
 assert(/\n\t/.test(myStr));
 ```
 
-`SecondLine` should be preceded by the backslash character `\`
+`SecondLine` の前にバックスラッシュ文字 `\` を付ける必要があります
 
 ```js
 assert(/\\SecondLine/.test(myStr));
 ```
 
-There should be a newline character between `SecondLine` and `ThirdLine`
+`SecondLine` と `ThirdLine` の間に改行文字を入れる必要があります
 
 ```js
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` should only contain characters shown in the instructions
+`myStr` には指示された文字だけを含める必要があります
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');
