@@ -7,36 +7,33 @@ export type FormContextProps = Pick<
 >;
 export const FormContext = createContext<FormContextProps>({});
 
-const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>(
-  (
-    { className, validationState, controlId, as, ...props },
-    ref
-  ): JSX.Element => {
-    const context = {
-      controlId,
-      validationState
-    };
+export const FormGroup = ({
+  className,
+  validationState,
+  controlId,
+  as,
+  ...props
+}: FormGroupProps): JSX.Element => {
+  const context = {
+    controlId,
+    validationState
+  };
 
-    const componentClass = as;
-    const Component = componentClass || 'div';
+  const componentClass = as;
+  const Component = componentClass || 'div';
 
-    const defaultClasses = 'mb-3.5';
-    const classes = [defaultClasses, className].join(' ');
+  const defaultClasses = 'mb-3.5';
+  const classes = [defaultClasses, className].join(' ');
 
-    return (
-      <FormContext.Provider value={context}>
-        <Component
-          ref={ref}
-          className={classes}
-          as={as}
-          id={controlId}
-          {...props}
-          validationstate={validationState}
-        />
-      </FormContext.Provider>
-    );
-  }
-);
-
-FormGroup.displayName = 'FormGroup';
-export { FormGroup };
+  return (
+    <FormContext.Provider value={context}>
+      <Component
+        className={classes}
+        as={as}
+        id={controlId}
+        {...props}
+        validationstate={validationState}
+      />
+    </FormContext.Provider>
+  );
+};
