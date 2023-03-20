@@ -1,6 +1,6 @@
 import React from 'react';
-import { ShareTemplate } from './shareTemplate';
-import { useShare } from './useShare';
+import { ShareTemplate } from './share-template';
+import { useShare } from './use-share';
 
 interface ShareProps {
   superBlock: string;

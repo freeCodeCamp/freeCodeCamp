@@ -5,7 +5,7 @@ import {
   twitterDevelpoerDomainURL,
   twitterDomain,
   useShare
-} from './useShare';
+} from './use-share';
 
 test('useShare testing', () => {
   const superBlock = 'testSuperBlock';
@@ -14,8 +14,7 @@ test('useShare testing', () => {
 
   const { redirectURL } = useShare({
     superBlock: superBlock,
-    block: block,
-    completedPercent: completedPercent
+    block: block
   });
 
   const freecodecampLearnDomain = 'www.freecodecamp.org/learn';

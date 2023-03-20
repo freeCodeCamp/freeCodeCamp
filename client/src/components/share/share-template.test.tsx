@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import { ShareTemplate } from './shareTemplate';
+import { ShareTemplate } from './share-template';
 
 const handleRedirectToTwitter = jest.fn();
 
