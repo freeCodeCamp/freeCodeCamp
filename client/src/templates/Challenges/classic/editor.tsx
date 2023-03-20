@@ -70,7 +70,6 @@ import {
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
 import { enhancePrismAccessibility } from '../utils/index';
-import { createFlashMessage } from '../../../components/Flash/redux';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
@@ -79,7 +78,6 @@ const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
   completedPercent: number;
-  createFlashMessage: typeof createFlashMessage;
   data?: { challengeNode: ChallengeNode };
   attempts: number;
   canFocus: boolean;
@@ -186,7 +184,6 @@ const mapStateToProps = createSelector(
 // type ActionDispatchGeneric<P, T> = (payload: P) => ({type: T, payload: P});
 
 const mapDispatchToProps = {
-  createFlashMessage,
   executeChallenge,
   saveChallenge,
   saveEditorContent,
