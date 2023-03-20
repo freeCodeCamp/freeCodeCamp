@@ -5,18 +5,12 @@ import { useShare } from './useShare';
 interface ShareProps {
   superBlock: string;
   block: string;
-  completedPercent: number;
 }
 
-export const Share: React.FC<ShareProps> = ({
-  superBlock,
-  block,
-  completedPercent
-}) => {
+export const Share: React.FC<ShareProps> = ({ superBlock, block }) => {
   const { handleRedirectToTwitter } = useShare({
     superBlock,
-    block,
-    completedPercent
+    block
   });
   return <ShareTemplate handleRedirectToTwitter={handleRedirectToTwitter} />;
 };

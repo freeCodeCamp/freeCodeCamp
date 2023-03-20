@@ -3,7 +3,6 @@ import i18next from 'i18next';
 interface ShareTemplateProps {
   superBlock: string;
   block: string;
-  completedPercent: number;
 }
 
 interface ShareTemplateReturnProps {
@@ -21,14 +20,13 @@ export const twitterDevelpoerDomainURL = 'https://developer.twitter.com';
 
 export const useShare = ({
   superBlock,
-  block,
-  completedPercent
+  block
 }: ShareTemplateProps): ShareTemplateReturnProps => {
   const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomainURL}/${superBlock}/#${block}`;
   const i18nSupportedBlock =
     i18next.t(`intro:${superBlock}.blocks.${block}.title`) || block;
 
-  const tweetMessage = `I${space}have${space}completed${space}${completedPercent}٪${space}of${space}${i18nSupportedBlock}${space}${hastag}freecodecamp`;
+  const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}${hastag}freecodecamp`;
   const redirectURL = `https://${twitterDomain}/${action}?original_referer=${twitterDevelpoerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
 
   const handleRedirectToTwitter = () => {

@@ -177,7 +177,7 @@ const LowerJaw = ({
       return null;
     }
   };
-
+  const isBlockCompleted = 100;
   const sentencePicker = () => {
     const sentenceArray = [
       'learn.sorry-try-again',
@@ -218,13 +218,14 @@ const LowerJaw = ({
           >
             <Reset />
           </button>
-          {challengeIsCompleted && endOfProject.current && (
-            <Share
-              completedPercent={completedPercent}
-              superBlock={data?.challengeNode.challenge.superBlock || ''}
-              block={data?.challengeNode.challenge.block || ''}
-            />
-          )}
+          {challengeIsCompleted &&
+            endOfProject.current &&
+            completedPercent === isBlockCompleted && (
+              <Share
+                superBlock={data?.challengeNode.challenge.superBlock || ''}
+                block={data?.challengeNode.challenge.block || ''}
+              />
+            )}
           {isAttemptsLargerThanTest && !challengeIsCompleted ? (
             <button
               className='btn fade-in'
