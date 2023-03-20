@@ -14,7 +14,8 @@ const infoBorder = 'border-foreground-info';
 export const Panel = ({
   children,
   className,
-  bsStyle
+  bsStyle,
+  ...restProps
 }: PanelProps): JSX.Element => {
   const context = useMemo(() => ({ bsStyle }), [bsStyle]);
 
@@ -33,7 +34,9 @@ export const Panel = ({
 
   return (
     <PanelContext.Provider value={context}>
-      <div className={panelClassed}>{children}</div>
+      <div className={panelClassed} {...restProps}>
+        {children}
+      </div>
     </PanelContext.Provider>
   );
 };
