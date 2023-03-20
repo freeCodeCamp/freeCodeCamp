@@ -7,6 +7,8 @@ export type FormContextProps = Pick<
 >;
 export const FormContext = createContext<FormContextProps>({});
 
+const defaultClasses = 'mb-3.5';
+
 export const FormGroup = ({
   className,
   validationState,
@@ -18,13 +20,10 @@ export const FormGroup = ({
     controlId,
     validationState
   };
-
   const componentClass = as;
   const Component = componentClass || 'div';
 
-  const defaultClasses = 'mb-3.5';
   const classes = [defaultClasses, className].join(' ');
-
   return (
     <FormContext.Provider value={context}>
       <Component
