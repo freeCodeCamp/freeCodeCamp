@@ -1,15 +1,15 @@
 ---
 id: 63d8402e39c73468b059cd43
-title: "Data Graph Explorer"
+title: "Explorador de gráfico de dados"
 challengeType: 10
 dashedName: data-graph-explorer
 ---
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-cat-and-dog-image-classifier/blob/master/fcc_cat_dog.ipynb" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+Você vai <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-cat-and-dog-image-classifier/blob/master/fcc_cat_dog.ipynb" target="_blank" rel="noopener noreferrer nofollow">trabalhar neste projeto com o Google Colaboratory</a>.
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Depois de acessar o link, crie uma cópia do notebook em sua conta pessoal ou localmente. Depois que você completar o projeto e ele passar no teste (incluído naquele link), envie o link do seu projeto abaixo. Se você estiver enviando um link do Google Colaboratory, certifique-se de ativar o compartilhamento de links para "qualquer um com o link".
 
 # --instructions--
 

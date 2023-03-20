@@ -18,7 +18,7 @@ import { challengeTypes } from '../../../../utils/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';
-import Hotkeys from '../components/Hotkeys';
+import Hotkeys from '../components/hotkeys';
 import { hideCodeAlly, tryToShowCodeAlly } from '../../../redux/actions';
 import {
   completedChallengesSelector,
@@ -253,16 +253,16 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer />
+                <Spacer paddingSize={15} />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
                 >
                   {title}
                 </ChallengeTitle>
-                <Spacer />
+                <Spacer paddingSize={15} />
                 <PrismFormatted text={description} />
-                <Spacer />
+                <Spacer paddingSize={15} />
                 <div className='ca-description'>
                   <Trans i18nKey='learn.github-required'>
                     <a
@@ -275,7 +275,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                     </a>
                   </Trans>
                 </div>
-                <Spacer />
+                <Spacer paddingSize={15} />
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (
                     <>
@@ -283,7 +283,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                         {t('learn.complete-both-steps')}
                       </div>
                       <hr />
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <b>{t('learn.step-1')}</b>
                       {(isPartiallyCompleted || isCompleted) && (
                         <GreenPass
@@ -294,13 +294,13 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                           }}
                         />
                       )}
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <div className='ca-description'>
                         {t('learn.runs-in-vm')}
                       </div>
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <PrismFormatted text={instructions} />
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                     </>
                   )}
                 <Alert id='codeally-cookie-warning' bsStyle='info'>
@@ -321,7 +321,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                   challengeType === challengeTypes.codeAllyCert && (
                     <>
                       <hr />
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <b>{t('learn.step-2')}</b>
                       {isCompleted && (
                         <GreenPass
@@ -332,13 +332,13 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                           }}
                         />
                       )}
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <div className='ca-description'>
                         {t('learn.submit-public-url')}
                       </div>
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <PrismFormatted text={notes} />
-                      <Spacer />
+                      <Spacer paddingSize={15} />
                       <SolutionForm
                         challengeType={challengeType}
                         description={description}
@@ -349,7 +349,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                   )}
                 <ProjectToolPanel />
                 <br />
-                <Spacer />
+                <Spacer paddingSize={15} />
               </Col>
               <CompletionModal
                 block={block}

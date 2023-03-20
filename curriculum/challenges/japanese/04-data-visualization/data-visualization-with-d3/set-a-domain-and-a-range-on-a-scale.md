@@ -12,7 +12,7 @@ dashedName: set-a-domain-and-a-range-on-a-scale
 
 データセットの値の範囲を 50 ～ 480 とします。 これはスケールの入力情報であり、<dfn>ドメイン</dfn> とも呼ばれます。
 
-これらの点を SVG キャンバス上の `x` 軸に沿って、10 単位から 500 単位の間でマッピングするとします。 これは出力情報であり、<dfn>レンジ</dfn> とも呼ばれます。
+You want to map those points along the `x` axis on the SVG, between 10 units and 500 units. これは出力情報であり、<dfn>レンジ</dfn> とも呼ばれます。
 
 `domain()` メソッドと `range()` メソッドは、これらの値をスケールに設定します。 両方のメソッドは少なくとも 2 つの要素の配列を引数として取ります。 以下がその例です。
 

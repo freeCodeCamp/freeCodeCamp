@@ -61,7 +61,7 @@ Generally when using colors in a component, you should choose semantic variables
 
 > [!NOTE] Color definition can be found in the [`colors.css` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). A color is only available for use if it is added to the [`tailwind.config.js` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) under the `colors` property.
 
-### Useful links
+### Корисні посилання
 
 - [Tailwind CSS Configuration](https://tailwindcss.com/docs/configuration)
 - [React Bootstrap v0.33 Docs](https://react-bootstrap-v3.netlify.app)
@@ -100,7 +100,7 @@ cd tools/ui-components
 pnpm add package_name
 ```
 
-### Useful links
+### Корисні посилання
 
 - [Testing for Accessibility](https://testing-library.com/docs/dom-testing-library/api-accessibility)
 - [Order of priority of React Testing Library's queries](https://testing-library.com/docs/queries/about/#priority)

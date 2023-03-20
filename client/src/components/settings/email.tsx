@@ -223,7 +223,7 @@ function EmailSettings({
           </BlockSaveButton>
         </form>
       </FullWidthRow>
-      <Spacer />
+      <Spacer paddingSize={15} />
       <FullWidthRow>
         <form id='form-quincy-email' onSubmit={handleSubmit}>
           <ToggleSetting
