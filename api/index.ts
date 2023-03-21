@@ -5,6 +5,8 @@ import fastifySession from '@fastify/session';
 import fastifyCookie from '@fastify/cookie';
 import MongoStore from 'connect-mongo';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
+import fastifySwagger from '@fastify/swagger';
+import fastifySwaggerUI from '@fastify/swagger-ui';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import sessionAuth from './plugins/session-auth';
@@ -65,6 +67,27 @@ const start = async () => {
       mongoUrl: MONGOHQ_URL
     })
   });
+
+  // Swagger plugin
+  void fastify.register(fastifySwagger, {
+    openapi: {
+      info: {
+        title: 'freeCodeCamp API',
+        version: '1.0.0' // API version
+      },
+      components: {
+        securitySchemes: {
+          session: {
+            type: 'apiKey',
+            name: 'sessionId',
+            in: 'cookie'
+          }
+        }
+      },
+      security: [{ session: [] }]
+    }
+  });
+  void fastify.register(fastifySwaggerUI);
 
   // Auth0 plugin
   void fastify.register(fastifyAuth0, {
