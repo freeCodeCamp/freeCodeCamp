@@ -21,10 +21,7 @@ const Child = () => {
   return (
     <>
       <ControlLabel>Label</ControlLabel>
-      <FormControl type={'text'} placeholder='Hello World'>
-        {' '}
-        HelloWorld
-      </FormControl>
+      <FormControl type={'text'} placeholder='Hello World' />
     </>
   );
 };
