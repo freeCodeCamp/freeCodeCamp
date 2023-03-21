@@ -171,7 +171,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       : { state: 'warning', message: t('validation.use-valid-url') };
   }
 
-  formCorrect(portfolio: PortfolioItem) {
+  formCorrect(portfolio: PortfolioProjectData) {
     const { id, title, description, url, image } = portfolio;
 
     const { state: titleState, message: titleMessage } =
