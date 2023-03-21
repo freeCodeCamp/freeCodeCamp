@@ -61,11 +61,6 @@ const standardErrorMessage = {
   message: 'flash.wrong-updating'
 };
 
-const standardSuccessMessage = {
-  type: 'success',
-  message: 'flash.updated-preferences'
-};
-
 const createStandardHandler = (req, res, next) => err => {
   if (err) {
     res.status(500).json(standardErrorMessage);
