@@ -42,7 +42,7 @@ dashedName: build-a-drum-machine
 
 Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">використовуючи цей шаблон CodePen</a> і натиснувши `Save`. Або ж ви можете скористатися цим посиланням на CDN, щоб запустити тести в будь-якому середовищі: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Після того, як ви закінчите, надішліть URL-адресу свого робочого проєкту з усіма його пройденими тестами.
+Як тільки закінчите, надайте посилання на свій проєкт з усіма пройденими тестами.
 
 # --solutions--
 
