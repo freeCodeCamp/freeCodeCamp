@@ -3,7 +3,7 @@ import React from 'react';
 import { TabPaneProps } from './types';
 
 const defaultClasses =
-  'block relative mr-1 border-1 border-solid border-background-tertiary border-b-transparent';
+  'block relative mr-[2px] border-1 border-solid border-background-tertiary border-b-transparent';
 
 export const TabPane = ({
   id,
