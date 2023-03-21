@@ -940,31 +940,31 @@
       "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
     ],
     "blocks": {
-      "project-euler-problem-1-100": {
-        "title": "Project Euler Problems 1 to 100",
+      "project-euler-problem-1-to-100": {
+        "title": "Project Euler Problem 1 to 100",
         "intro": [
           "In this first set of challenges, you will use mathematical concepts like the Fibonacci sequence, prime number theory, and combinatorics to write efficient algorithms to solve these problems."
         ]
       },
-      "project-euler-problem-101-200": {
+      "project-euler-problem-101-to-200": {
         "title": "Project Euler Problem 101 to 200",
         "intro": [
           "In this set of challenges, you'll build upon the skills you learned in the first part of the course and use more advanced concepts like vector computation, Pascal's pyramid, and the RSA algorithm to solve these problems efficiently."
         ]
       },
-      "project-euler-problem-201-300": {
+      "project-euler-problem-201-to-300": {
         "title": "Project Euler Problem 201 to 300",
         "intro": [
           "In this set of challenges, you'll continue to build upon the skills you learned earlier and use concepts like the binomial theorem, Hamming numbers, and the Collatz sequence to further develop your math and problem solving skills."
         ]
       },
-      "project-euler-problem-301-400": {
+      "project-euler-problem-301-to-400": {
         "title": "Project Euler Problem 301 to 400",
         "intro": [
           "Here you will continue to flex your mathematical and algorithmic skills as you use concepts such as combinatorial game theory, bitwise operations, and Golomb's self-describing sequence to develop efficient solutions to these problems."
         ]
       },
-      "project-euler-problem-401-480": {
+      "project-euler-problem-401-to-480": {
         "title": "Project Euler Problem 401 to 480",
         "intro": [
           "In this final set of challenges, you will need draw upon everything you learned up to this point and use advanced concepts like unitary divisors, the Kaprekar routine, and much more to solve these complex problems."

@@ -41,7 +41,7 @@
     "precypress": "node ./cypress-install.js",
     "cypress": "cypress",
     "cypress:dev:run": "pnpm run cypress -- run --spec cypress/e2e/default/**/*.js",
-    "cypress:dev:watch": "pnpm run cypress -- open",
+    "cypress:dev:watch": "pnpm run cypress open",
     "cypress:prd:run": "pnpm run cypress -- run --spec cypress/e2e/default/**/*.js",
     "cypress:prd:watch": "pnpm run cypress -- open",
     "cypress:install": "cypress install && echo 'for use with ./cypress-install.js'",
