@@ -243,7 +243,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             <Row>
               {videoId && (
                 <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-                  <Spacer paddingSize={15} />
+                  <Spacer size='medium' />
                   <div className='video-wrapper'>
                     {!this.state.videoIsLoaded ? (
                       <div className='video-placeholder-loader'>
@@ -262,10 +262,10 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 </Col>
               )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <h2>{title}</h2>
                 <PrismFormatted className={'line-numbers'} text={description} />
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
@@ -291,11 +291,11 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                               className={'video-quiz-option'}
                               text={assignment}
                             />
-                            <Spacer paddingSize={15} />
+                            <Spacer size='medium' />
                           </label>
                         ))}
                       </div>{' '}
-                      <Spacer paddingSize={15} />
+                      <Spacer size='medium' />
                     </>
                   )}
 
@@ -326,7 +326,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     ))}
                   </div>
                 </ObserveKeys>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <div
                   style={{
                     textAlign: 'center'
@@ -343,7 +343,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                       </>
                     )}
                 </div>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <Button
                   block={true}
                   bsSize='large'
@@ -358,7 +358,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Spacer paddingSize={30} />
+                <Spacer size='large' />
               </Col>
               <CompletionModal
                 block={block}

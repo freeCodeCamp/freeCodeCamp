@@ -314,7 +314,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
-          <Spacer paddingSize={5} />
+          <Spacer size='small' />
           <Button
             block={true}
             bsSize='lg'
@@ -327,9 +327,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         </form>
         {index + 1 !== arr.length && (
           <>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
             <hr />
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
           </>
         )}
       </FullWidthRow>
@@ -348,7 +348,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           </div>
         </FullWidthRow>
         <FullWidthRow>
-          <Spacer paddingSize={5} />
+          <Spacer size='small' />
           <Button
             block={true}
             bsSize='lg'
@@ -360,7 +360,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             {t('buttons.add-portfolio')}
           </Button>
         </FullWidthRow>
-        <Spacer paddingSize={30} />
+        <Spacer size='large' />
         {portfolio.length ? portfolio.map(this.renderPortfolio) : null}
       </section>
     );
