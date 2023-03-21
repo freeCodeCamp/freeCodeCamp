@@ -12,7 +12,8 @@ export const ${name} = (props: ${name}Props):JSX.Element => {
 // types.ts
 export const type = (name: string): string => `
 export interface ${name}Props {
-  className?: string
+  className?: string;
+  children?: string;
 }
 `;
 
@@ -20,14 +21,15 @@ export interface ${name}Props {
 export const test = (name: string): string => `
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 
 import { ${name} } from '.';
 
 describe('<${name} />', () => {
   it('should render ${name} correctly', () => {
-    render<${name}>Test</${name}>;
+    render(<${name}>Test</${name}>);
     expect(screen.getByText('Test')).toBeInTheDocument();
+  });
 });
 `;
 
@@ -35,7 +37,7 @@ describe('<${name} />', () => {
 export const story = (name: string): string => `
 import React from 'react';
 import { Story } from '@storybook/react';
-import { ${name}, ${name}Props } from '.';
+import type { ${name}, ${name}Props } from '.';
 
 const story = {
   title: 'Example/${name}',
