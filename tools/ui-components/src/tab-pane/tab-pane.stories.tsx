@@ -4,7 +4,14 @@ import { TabPane, TabPaneProps } from '.';
 
 const story = {
   title: 'Example/TabPane',
-  component: TabPane
+  component: TabPane,
+  parameters: {
+    controls: { include: ['title', 'eventKey'] }
+  },
+  argType: {
+    title: { control: { type: 'text' } },
+    eventKey: { control: { type: 'text' } }
+  }
 };
 
 const Template: Story<TabPaneProps> = args => {
@@ -13,7 +20,7 @@ const Template: Story<TabPaneProps> = args => {
 
 export const Default = Template.bind({});
 Default.args = {
-  // default props go here
+  id: 'test'
 };
 
 export default story;
