@@ -4,8 +4,8 @@ import React from 'react';
 
 import { ${name}Props } from './types';
 
-export const ${name} = ({}: ${name}Props) => {
-  return <div>Hello, I am a ${name} component</div>;
+export const ${name} = (props: ${name}Props):JSX.Element => {
+  return <div {...props}>Hello, I am a ${name} component</div>;
 };
 `;
 
@@ -25,7 +25,9 @@ import userEvent from '@testing-library/user-event';
 import { ${name} } from '.';
 
 describe('<${name} />', () => {
-  it('should render correctly', () => {});
+  it('should render ${name} correctly', () => {
+    render<${name}>Test</${name}>;
+    expect(screen.getByText('Test')).toBeInTheDocument();
 });
 `;
 
@@ -37,7 +39,15 @@ import { ${name}, ${name}Props } from '.';
 
 const story = {
   title: 'Example/${name}',
-  component: ${name}
+  component: ${name},
+  parameters: {
+    controls: {
+      include: ['className']
+    }
+  },
+  argType: {
+    className: { control: { type: 'text' } },
+  }
 };
 
 const Template: Story<${name}Props> = args => {
