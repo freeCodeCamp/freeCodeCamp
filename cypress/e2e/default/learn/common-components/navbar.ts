@@ -48,7 +48,7 @@ describe('Navbar Logged in', () => {
   it(
     'Should take user to learn page when clicked on ' + 'the freeCodeCamp logo',
     () => {
-      cy.get('.universal-nav-middle').within(() => {
+      cy.get('#universal-nav-logo').within(() => {
         cy.get('svg').click();
       });
       cy.url().should('include', '/learn');
