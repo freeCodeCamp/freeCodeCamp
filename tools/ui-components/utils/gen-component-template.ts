@@ -37,7 +37,7 @@ describe('<${name} />', () => {
 export const story = (name: string): string => `
 import React from 'react';
 import { Story } from '@storybook/react';
-import type { ${name}, ${name}Props } from '.';
+import { ${name}, ${name}Props } from '.';
 
 const story = {
   title: 'Example/${name}',
