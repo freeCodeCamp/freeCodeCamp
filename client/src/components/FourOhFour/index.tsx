@@ -23,10 +23,7 @@ const FourOhFour = (): JSX.Element => {
         <p>{t('404.heres-a-quote')}</p>
         <Spacer paddingSize={15} />
         <blockquote className='quote-wrapper'>
-          <p className='quote'>
-            <span>&#8220;</span>
-            {quote.quote}
-          </p>
+          <p className='quote'>{quote.quote}</p>
           <p className='author'>- {quote.author}</p>
         </blockquote>
       </div>
