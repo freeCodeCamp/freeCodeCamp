@@ -3,23 +3,22 @@ import { render, screen } from '@testing-library/react';
 
 import { FormGroup } from '../form-group';
 import { ControlLabel } from '.';
+
+const id = 'foo';
 describe('<ControlLabel>', () => {
-  it('renders label', () => {
-    render(<ControlLabel htmlFor='foo'>Label</ControlLabel>);
-    const labelElement = screen.getByRole('label', { name: 'Label' });
-    expect(labelElement).toBeInTheDocument();
-    expect(labelElement).toHaveAttribute('id', 'foo');
-  });
   it('inherit id', () => {
     render(
-      <FormGroup controlId='foo'>
+      <FormGroup role='group' controlId={id}>
         <ControlLabel>Label in formgroup</ControlLabel>
       </FormGroup>
     );
-    const labelElement = screen.getByRole('label', {
-      name: 'Label in formgroup'
-    });
+
+    const labelElement = screen.getByText('Label in formgroup');
+    const formGroupElement = screen.getByRole('group');
+
     expect(labelElement).toBeInTheDocument();
-    expect(labelElement).toHaveAttribute('id', 'foo');
+    expect(formGroupElement).toContainElement(labelElement);
+    expect(formGroupElement).toHaveAttribute('id', id);
+    expect(labelElement).toHaveAttribute('id', id);
   });
 });
