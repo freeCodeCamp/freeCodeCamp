@@ -240,7 +240,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const donationSection = (
     <div className='donation-section'>
-      <Spacer paddingSize={30} />
+      <Spacer size='large' />
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
@@ -263,7 +263,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           {isDonationSubmitted && donationCloseBtn}
         </Col>
       </Row>
-      <Spacer paddingSize={30} />
+      <Spacer size='large' />
     </div>
   );
 
@@ -281,7 +281,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         >
           {t('profile.add-linkedin')}
         </Button>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <Button
           block={true}
           bsSize='lg'
@@ -295,7 +295,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           {t('profile.add-twitter')}
         </Button>
       </Col>
-      <Spacer paddingSize={30} />
+      <Spacer size='large' />
     </Row>
   );
 
@@ -365,11 +365,11 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         </footer>
       </Row>
       <div className='row certificate-links'>
-        <Spacer paddingSize={30} />
+        <Spacer size='large' />
         {signedInUserName === username ? shareCertBtns : ''}
-        <Spacer paddingSize={30} />
+        <Spacer size='large' />
         <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
-        <Spacer paddingSize={30} />
+        <Spacer size='large' />
       </div>
     </Grid>
   );

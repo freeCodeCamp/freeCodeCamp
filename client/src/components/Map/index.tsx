@@ -107,7 +107,7 @@ function renderLearnMap(currentSuperBlock: MapProps['currentSuperBlock']) {
             >
               {i18next.t('learn.help-translate-link')}
             </Link>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
           </div>
         </>
       )}

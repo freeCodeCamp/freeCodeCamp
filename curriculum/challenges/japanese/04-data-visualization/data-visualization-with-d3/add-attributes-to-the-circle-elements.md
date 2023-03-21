@@ -8,11 +8,11 @@ dashedName: add-attributes-to-the-circle-elements
 
 # --description--
 
-前回のチャレンジでは、`dataset` 内の各点に `circle` 要素を作成し、それらを SVG キャンバスに追加しました。 しかし D3 でこれらを正しく表示するには、各 `circle` の位置とサイズに関する詳細情報が必要です。
+The last challenge created the `circle` elements for each point in the `dataset`, and appended them to the SVG. しかし D3 でこれらを正しく表示するには、各 `circle` の位置とサイズに関する詳細情報が必要です。
 
-SVG の `circle` には主要な 3 つの属性があります。 `cx` と `cy` 属性は座標です。 これらは、SVG キャンバスのどこに図形の *center* を配置するかを指定します。 半径 (`r` 属性) は、`circle` の大きさを指定します。
+SVG の `circle` には主要な 3 つの属性があります。 `cx` と `cy` 属性は座標です。 They tell D3 where to position the *center* of the shape on the SVG. 半径 (`r` 属性) は、`circle` の大きさを指定します。
 
-`rect` `y` 座標と同様に、`circle` の `cy` 属性は SVG キャンバスの最下部からではなく最上部から測定します。
+Just like the `rect` `y` coordinate, the `cy` attribute for a `circle` is measured from the top of the SVG, not from the bottom.
 
 3 つの属性はすべてコールバック関数を使用して動的に値を設定できます。 留意点として、`data(dataset)` の後にチェーンされたすべてのメソッドは、`dataset` 内のアイテムごとに 1 回実行されます。 コールバック関数の `d` パラメータは、それぞれの点の配列である `dataset` 内の現在のアイテムを参照します。 `d[0]` のような角括弧表記を使用して、配列内の値にアクセスします。
 

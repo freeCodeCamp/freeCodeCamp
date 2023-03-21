@@ -18,16 +18,16 @@
 
 Ви можете знайти весь навчальний матеріал freeCodeCamp.org у каталозі [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges).
 
-## Set up the tooling for the curriculum
+## Налаштування інструментів для навчальної програми
 
-Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
+Перш ніж працювати над навчальною програмою, потрібно налаштувати деякі інструменти, які допоможуть перевіряти ваші зміни. Ви можете використовувати будь-який варіант нижче:
 
-- You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
-- Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
+- Ви можете [налаштувати freeCodeCamp локально](how-to-setup-freecodecamp-locally.md). Це **рекомендовано** для регулярних/повторних внесків. Це налаштування дозволяє працювати над змінами та перевіряти їх.
+- Використовуйте безоплатне онлайн середовище Gitpod. Натисніть на кнопку нижче, щоб запустити готове середовище розробки для freeCodeCamp у своєму браузері. Це займе лише кілька хвилин.
 
-  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+  [![Відкрити у Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
+- Редагуйте файли на GitHub, натиснувши на значок олівця для відповідного файлу. Хоча це найшвидший спосіб, він **нерекомендований**, оскільки ви не можете перевірити свої зміни на GitHub. Якщо технічна підтримка вирішить, що ваші зміни потрібно перевірити локально, вам потрібно буде дотримуватись методів, описаних вище.
 
 ### How to work on practice projects
 
@@ -214,11 +214,11 @@ Here are some example challenge names:
 - Condense arrays with .reduce
 - Use Bracket Notation to Find the First Character in a String
 
-## Challenge descriptions/instructions
+## Опис/інструкції завдань
 
-Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
+Речення повинні бути зрозумілими і стислими, з мінімальною кількістю жаргону. Якщо жаргон все-таки був використаний, то його потрібно пояснити звичайною мовою.
 
-Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
+Надавайте перевагу коротким абзацам (1-4 речення). Найімовірніше, люди прочитають декілька коротких абзаців, а не суцільний текст.
 
 Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
@@ -489,7 +489,7 @@ Once you have verified that each challenge you've worked on passes the tests, [p
 > 
 > The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-### Useful Links
+### Корисні посилання
 
 Creating and Editing Challenges:
 

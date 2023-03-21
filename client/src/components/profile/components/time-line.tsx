@@ -19,7 +19,7 @@ import { SolutionDisplayWidget } from '../../solution-display-widget';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(
-  () => import('../../SolutionViewer/SolutionViewer')
+  () => import('../../SolutionViewer/solution-viewer')
 );
 
 const mapDispatchToProps = {

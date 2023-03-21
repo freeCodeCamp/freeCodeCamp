@@ -22,7 +22,7 @@ console.log(howMany("string", null, [1, 2, 3], { }));
 
 控制檯將顯示字符串 `You have passed 3 arguments.` 和 `You have passed 4 arguments.`。
 
-The rest parameter eliminates the need to use the `arguments` object and allows us to use array methods on the array of parameters passed to the function `howMany`.
+rest 參數使我們不需要使用 `arguments` 對象，允許我們對傳遞給函數 `howMany` 的參數數組使用數組方法。
 
 # --instructions--
 
