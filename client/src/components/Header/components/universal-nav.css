@@ -315,8 +315,8 @@ button.nav-link[aria-disabled='true'] {
 
 .exposed-button-nav:hover,
 .exposed-button-nav:hover:focus {
-  background-color: var(--gray-00);
-  color: var(--gray-90);
+  background-color: var(--gray-75);
+  color: #fff;
   border: 1px solid var(--gray-00);
 }
 
