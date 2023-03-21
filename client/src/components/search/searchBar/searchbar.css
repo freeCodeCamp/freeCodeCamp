@@ -1,7 +1,6 @@
 .fcc_searchBar {
   flex-grow: 1;
   max-height: 33px;
-  font-family: 'Lato', sans-serif;
 }
 
 .fcc_searchBar strong,

@@ -8,11 +8,11 @@ dashedName: add-attributes-to-the-circle-elements
 
 # --description--
 
-L'ultima sfida ha creato gli elementi `circle` per ogni punto nel `dataset` e li ha aggiunti alla tela SVG. Ma D3 ha bisogno di ulteriori informazioni sulla posizione e la dimensione di ogni `circle` per visualizzarli correttamente.
+The last challenge created the `circle` elements for each point in the `dataset`, and appended them to the SVG. Ma D3 ha bisogno di ulteriori informazioni sulla posizione e la dimensione di ogni `circle` per visualizzarli correttamente.
 
-Un `circle` in SVG ha tre attributi principali. Gli attributi `cx` e `cy` sono le coordinate. Essi dicono a D3 dove posizionare il *centro* della forma sulla tela SVG. Il raggio (attributo`r`) dà la dimensione del `circle`.
+Un `circle` in SVG ha tre attributi principali. Gli attributi `cx` e `cy` sono le coordinate. They tell D3 where to position the *center* of the shape on the SVG. Il raggio (attributo`r`) dà la dimensione del `circle`.
 
-Proprio come la coordinata `y` del `rect`, l'attributo `cy` per un `circle` è misurato dalla parte superiore della tela SVG, non dal basso.
+Just like the `rect` `y` coordinate, the `cy` attribute for a `circle` is measured from the top of the SVG, not from the bottom.
 
 Tutti e tre gli attributi possono usare una funzione callback per impostare dinamicamente i loro valori. Ricorda che tutti i metodi concatenati dopo `data(dataset)` vengono eseguiti una volta per ogni elemento del `dataset`. Il parametro `d` nella funzione callback si riferisce all'elemento corrente del `dataset`, che è un array per ogni punto. Si utilizza la notazione parentesi, come `d[0]`, per accedere ai valori in quell'array.
 

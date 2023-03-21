@@ -12,7 +12,7 @@ Per impostazione predefinita, le scale usano la relazione identità. Questo sign
 
 Diciamo che un set di dati ha valori che vanno da 50 a 480. Queste sono le informazioni di input per una scala, noto anche come il <dfn>dominio</dfn>.
 
-Si desidera mappare quei punti lungo l'asse `x` sulla tela SVG, tra 10 unità e 500 unità. Queste sono le informazioni di output, note anche come <dfn>l'intervallo</dfn>.
+You want to map those points along the `x` axis on the SVG, between 10 units and 500 units. Queste sono le informazioni di output, note anche come <dfn>l'intervallo</dfn>.
 
 I metodi `domain()` e `range()` impostano questi valori per la scala. Entrambi i metodi prendono un array di almeno due elementi come argomento. Ecco un esempio:
 
