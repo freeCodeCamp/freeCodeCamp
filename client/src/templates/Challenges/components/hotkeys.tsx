@@ -62,7 +62,7 @@ interface HotkeysProps {
   challengeFiles: ChallengeFiles;
   challengeType?: number;
   children: React.ReactElement;
-  editorRef?: MutableRefObject<editor.IStandaloneCodeEditor>;
+  editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
   submitChallenge: () => void;
   innerRef: MutableRefObject<HTMLElement | undefined>;

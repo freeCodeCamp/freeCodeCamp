@@ -79,7 +79,7 @@ interface EditorProps {
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
-  containerRef: RefObject<HTMLElement | undefined>;
+  containerRef: MutableRefObject<HTMLElement | undefined>;
   contents: string;
   description: string;
   dimensions: Dimensions;

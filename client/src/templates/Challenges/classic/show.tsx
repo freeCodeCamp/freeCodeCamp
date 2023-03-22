@@ -1,11 +1,5 @@
 import { graphql } from 'gatsby';
-import React, {
-  useState,
-  useEffect,
-  MutableRefObject,
-  RefObject,
-  useRef
-} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -253,10 +247,8 @@ function ShowClassic({
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
 
   const containerRef = useRef<HTMLElement>();
-  const editorRef =
-    useRef<editor.IStandaloneCodeEditor>() as MutableRefObject<editor.IStandaloneCodeEditor>;
-  const instructionsPanelRef =
-    useRef<HTMLDivElement>() as RefObject<HTMLDivElement>;
+  const editorRef = useRef<editor.IStandaloneCodeEditor>();
+  const instructionsPanelRef = useRef<HTMLDivElement>(null);
 
   const updateUsingKeyboardInTablist = (
     usingKeyboardInTablist: boolean
@@ -429,13 +421,13 @@ function ShowClassic({
   return (
     <Hotkeys
       challengeType={challengeType}
-      editorRef={editorRef}
       executeChallenge={executeChallenge}
       innerRef={containerRef}
       instructionsPanelRef={instructionsPanelRef}
       nextChallengePath={nextChallengePath}
       prevChallengePath={prevChallengePath}
       usesMultifileEditor={usesMultifileEditor}
+      {...(editorRef && { editorRef: editorRef })}
     >
       <LearnLayout>
         <Helmet title={windowTitle} />
