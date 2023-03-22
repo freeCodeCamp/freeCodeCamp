@@ -198,6 +198,6 @@ print(height/3)
 
 Більше прикладів ви можете побачити в markdown-файлах даного відеокурсу. Всі завдання вже мають запитання: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Відкрийте пул реквест
+## Відкрийте запит на злиття
 
-Після створення одного чи більше запитань, ви можете зафіксувати зміни в новій гілці та [відкрити пул реквест](how-to-open-a-pull-request.md).
+Після створення одного чи більше запитань, ви можете зафіксувати зміни в новій гілці та [відкрити запит на злиття](how-to-open-a-pull-request.md).
