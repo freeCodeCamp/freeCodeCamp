@@ -1,15 +1,24 @@
 import request, { Response } from 'supertest';
 
-import { API_LOCATION as api } from './utils/env';
+import { build } from './app';
 
 describe('GET /', () => {
   let res: undefined | Response;
+  let fastify: undefined | Awaited<ReturnType<typeof build>>;
 
   beforeAll(async () => {
-    res = await request(api).get('/');
+    fastify = await build();
+    await fastify.ready();
   });
 
-  test('have a 200 response', () => {
+  afterAll(async () => {
+    // Due to a prisma bug, this is not enough, we need to --force-exit jest:
+    // https://github.com/prisma/prisma/issues/18146
+    await fastify?.close();
+  });
+
+  test('have a 200 response', async () => {
+    res = await request(fastify?.server).get('/');
     expect(res?.statusCode).toBe(200);
   });
 
