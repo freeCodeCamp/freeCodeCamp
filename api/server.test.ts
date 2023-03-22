@@ -1,4 +1,5 @@
 import request, { Response } from 'supertest';
+
 import { API_LOCATION as api } from './utils/env';
 
 describe('GET /', () => {
