@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should check certification button consistency 1`] = `
-Array [
+[
   <div
     className="row"
   >
@@ -9,8 +9,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -148,8 +149,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -287,8 +289,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -426,8 +429,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -565,8 +569,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -704,8 +709,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -843,8 +849,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -982,8 +989,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1121,8 +1129,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1260,8 +1269,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1399,8 +1409,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1535,7 +1546,7 @@ Array [
 `;
 
 exports[`should check legacy certification button consistency 1`] = `
-Array [
+[
   <div
     className="row"
   >
@@ -1543,8 +1554,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1762,8 +1774,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1981,8 +1994,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -2200,8 +2214,9 @@ Array [
       className="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
+        className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }

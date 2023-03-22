@@ -16,7 +16,7 @@ D3 には、y 軸と x 軸のそれぞれをレンダリングするための 2 
 const xAxis = d3.axisBottom(xScale);
 ```
 
-次のステップでは、SVG キャンバス上で軸をレンダリングします。 これには、一般的な SVG コンポーネントである `g` 要素を使用できます。 `g` はグループを表します。 `rect`、`circle`、および `text` とは異なり、レンダリングされた軸は単なる直線です。 シンプルな形なので、`g` を使って作業できます。 最後のステップでは `transform` 属性を適用し、軸を SVG キャンバス上に正しく配置します。 そうしないと、直線は SVG キャンバスの境界線に沿ってレンダリングされて見えなくなります。 SVG は各種の `transforms` をサポートしていますが、軸の配置には `translate` が必要です。 それが `g` 要素に適用されると、与えられた量だけグループ全体が移動します。 次に例を示します。
+The next step is to render the axis on the SVG. これには、一般的な SVG コンポーネントである `g` 要素を使用できます。 `g` はグループを表します。 `rect`、`circle`、および `text` とは異なり、レンダリングされた軸は単なる直線です。 シンプルな形なので、`g` を使って作業できます。 The last step is to apply a `transform` attribute to position the axis on the SVG in the right place. Otherwise, the line would render along the border of the SVG and wouldn't be visible. SVG は各種の `transforms` をサポートしていますが、軸の配置には `translate` が必要です。 それが `g` 要素に適用されると、与えられた量だけグループ全体が移動します。 次に例を示します。
 
 ```js
 const xAxis = d3.axisBottom(xScale);
@@ -26,7 +26,7 @@ svg.append("g")
    .call(xAxis);
 ```
 
-上のコードは SVG キャンバスの最下部に x 軸を配置します。 次に、それが `call()` メソッドに引数として渡されます。 Y 軸も、`translate` 引数が `(x, 0)` の形式であること以外は同じように動作します。 `translate` は上の `attr()` メソッドの文字列なので、連結によって引数に変数値を含めることができます。
+The above code places the x-axis at the bottom of the SVG. 次に、それが `call()` メソッドに引数として渡されます。 Y 軸も、`translate` 引数が `(x, 0)` の形式であること以外は同じように動作します。 `translate` は上の `attr()` メソッドの文字列なので、連結によって引数に変数値を含めることができます。
 
 # --instructions--
 

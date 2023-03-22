@@ -452,54 +452,55 @@ Provisioning VMs with the Code
 
 1. Install Node LTS.
 
-2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
+2. Install pnpm globally.
 
-   ```console
-   npm i -g npm@8
-   npm i -g pm2
-   pm2 install pm2-logrotate
-   pm2 startup
-   ```
+```console
+npm install -g pnpm
+```
 
 3. Clone freeCodeCamp, setup env and keys.
 
-   ```console
-   git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-   cd freeCodeCamp
-   git checkout prod-current # or any other branch to be deployed
-   ```
+```console
+git clone https://github.com/freeCodeCamp/freeCodeCamp.git
+cd freeCodeCamp
+git checkout prod-current # or any other branch to be deployed
+```
 
 4. Create the `.env` from the secure credentials storage.
 
-5. Create the `google-credentials.json` from the secure credentials storage.
+5. Install dependencies
 
-6. Install dependencies
+```console
+pnpm install
+```
 
-   ```console
-   pnpm install
-   ```
+6. Setup pm2 `logrotate` and startup on boot
+  
+```console
+pnpm pm2 install pm2-logrotate
+pnpm pm2 startup
+```
 
 7. Build the server
 
-   ```console
-   pnpm run prebuild && pnpm run build:curriculum && pnpm run build:server
-   ```
+```console
+pnpm prebuild && pnpm build:curriculum && pnpm build:server
+```
 
-8. Start Instances
+8.  Start Instances
 
-   ```console
-   cd api-server
-   pm2 reload ecosystem.config.js
-   ```
+```console
+pnpm start:server
+```
 
 ### Logging and Monitoring
 
 ```console
-pm2 logs
+pnpm pm2 logs
 ```
 
 ```console
-pm2 monit
+pnpm pm2 monit
 ```
 
 ### Updating Instances (Maintenance)
@@ -516,7 +517,7 @@ dependencies or adding environment variables.
 1. Stop all instances
 
 ```console
-pm2 stop all
+pnpm pm2 stop all
 ```
 
 2. Install dependencies
@@ -528,23 +529,33 @@ pnpm install
 3. Build the server
 
 ```console
-pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
+pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
 4. Start Instances
 
 ```console
-cd api-server && pm2 start ecosystem.config.js && cd .. && pm2 logs
-   ```
+pnpm start:server && pnpm pm2 logs
+```
 
 #### 2. Rolling updates - Used for logical changes to code.
 
 ```console
-cd api-server && pm2 reload ecosystem.config.js && cd .. && pm2 logs
+pnpm reload:server && pnpm pm2 logs
 ```
 
 > [!NOTE] We are handling rolling updates to code, logic, via pipelines. You
 > should not need to run these commands. These are here for documentation.
+
+#### 3. Updating Node
+
+1. Install new Node version
+
+2. Update pm2 to use the new version
+
+```console
+pnpm pm2 update
+```
 
 ## Work on Client Instances
 

@@ -117,6 +117,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isDataAnalysisPyCertV7,
       isMachineLearningPyCertV7,
       isRelationalDatabaseCertV8,
+      isCollegeAlgebraPyCertV8,
       isEmailVerified,
       isHonest,
       sendQuincyEmail,
@@ -160,7 +161,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <Grid>
         <main>
-          <Spacer size={2} />
+          <Spacer size='large' />
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
             {t('settings.for', { username: username })}
           </h1>
@@ -179,16 +180,16 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
             username={username}
           />
-          <Spacer />
+          <Spacer size='medium' />
           <Privacy />
-          <Spacer />
+          <Spacer size='medium' />
           <Email
             email={email}
             isEmailVerified={isEmailVerified}
             sendQuincyEmail={sendQuincyEmail}
             updateQuincyEmail={updateQuincyEmail}
           />
-          <Spacer />
+          <Spacer size='medium' />
           <Internet
             githubProfile={githubProfile}
             linkedin={linkedin}
@@ -196,12 +197,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             updateSocials={updateSocials}
             website={website}
           />
-          <Spacer />
+          <Spacer size='medium' />
           {/* @ts-expect-error Portfolio types mismatch */}
           <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
-          <Spacer />
+          <Spacer size='medium' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
-          <Spacer />
+          <Spacer size='medium' />
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
@@ -210,6 +211,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isBackEndCert={isBackEndCert}
             isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
             isDataVisCert={isDataVisCert}
+            isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
             isFrontEndCert={isFrontEndCert}
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}
@@ -227,11 +229,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           />
           {userToken && (
             <>
-              <Spacer />
+              <Spacer size='medium' />
               <UserToken />
             </>
           )}
-          <Spacer />
+          <Spacer size='medium' />
           <DangerZone />
         </main>
       </Grid>

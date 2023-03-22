@@ -9,7 +9,7 @@ import { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { dasherize } from '../../../../../utils/slugs';
-import Login from '../../../components/Header/components/Login';
+import Login from '../../../components/Header/components/login';
 import { executeGA } from '../../../redux/actions';
 import {
   isSignedInSelector,

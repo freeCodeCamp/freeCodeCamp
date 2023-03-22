@@ -25,7 +25,7 @@ SOFTWARE.
 import { FastifyPluginCallback, FastifyRequest } from 'fastify';
 import fp from 'fastify-plugin';
 
-interface UserObject {
+export interface UserObject {
   scope?: string;
 }
 

@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: flex-start;
   font-size: 18px;
-  font-family: 'Lato', sans-serif;
   height: var(--header-height);
   background: var(--theme-color);
   position: fixed;
@@ -25,15 +24,12 @@
   z-index: 2000;
 }
 
-.universal-nav-middle {
+#universal-nav-logo {
   display: flex;
   align-items: center;
-  flex: 1 0 33%;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
+  max-inline-size: max-content;
   -webkit-overflow-scrolling: touch;
-  letter-spacing: 0.4px;
-  white-space: nowrap;
   -ms-overflow-scrolling: touch;
 }
 
@@ -46,31 +42,13 @@
   height: var(--header-height);
 }
 
-#universal-nav-logo {
-  flex-shrink: 0;
-  display: block;
-  margin: 0 auto;
-  color: var(--gray-00);
-  font-size: 1.7rem;
-  line-height: 1em;
-  font-weight: bold;
-  letter-spacing: -0.5px;
-}
-
-#universal-nav-logo:hover {
-  text-decoration: none;
-  background-color: var(--theme-color);
-}
-
+#universal-nav-logo:hover,
 #universal-nav-logo:focus {
   background-color: inherit;
 }
 
 #universal-nav-logo svg {
-  display: block;
-  width: auto;
-  height: 24px;
-  margin: 7px 0;
+  margin: 4px;
 }
 
 .nav-list {
@@ -323,10 +301,9 @@ button.nav-link[aria-disabled='true'] {
   margin-inline-end: 25px;
 }
 
-.toggle-button-nav {
+.exposed-button-nav {
   padding: 2px 14px;
   border: 1px solid var(--gray-00);
-  font-family: 'lato', sans-serif;
   font-size: 18px;
   color: var(--gray-00);
   background-color: var(--theme-color);
@@ -336,18 +313,21 @@ button.nav-link[aria-disabled='true'] {
   align-items: center;
 }
 
-.toggle-button-nav:hover {
-  background-color: var(--theme-color);
-  color: var(--gray-00);
+.exposed-button-nav:hover,
+.exposed-button-nav:hover:focus {
+  background-color: var(--gray-00);
+  color: var(--gray-90);
   border: 1px solid var(--gray-00);
 }
 
-.toggle-button-nav:focus {
+.exposed-button-nav:focus {
   outline: 3px solid var(--blue-mid);
   outline-offset: 0;
+  background-color: var(--gray-90);
+  color: var(--gray-00);
 }
 
-.toggle-button-nav:focus:not(:focus-visible) {
+.exposed-button-nav:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -411,12 +391,12 @@ button.nav-link[aria-disabled='true'] {
   display: none;
 }
 
-.reverse-toggle-color {
+.exposed-button-nav.reverse-toggle-color {
   background-color: var(--gray-00);
   color: var(--theme-color);
 }
 
-.reverse-toggle-color:hover {
+.exposed-button-nav.reverse-toggle-color:hover {
   background-color: var(--gray-00);
   color: var(--theme-color);
 }
@@ -436,7 +416,6 @@ button.nav-link[aria-disabled='true'] {
   max-height: calc(var(--header-height) - 6px);
   padding: 4px 12px;
   margin-inline-start: 2px;
-  font-family: 'Hack-ZeroSlash', monospace;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -505,11 +484,14 @@ button.nav-link[aria-disabled='true'] {
   display: none;
 }
 
-@media (max-width: 980px) {
-  .universal-nav-middle {
-    flex: none;
+@media (min-width: 980px) {
+  #universal-nav-logo {
+    height: 100%;
+    margin-inline: 1em;
   }
+}
 
+@media (max-width: 980px) {
   .display-search {
     display: initial;
   }
@@ -527,7 +509,7 @@ button.nav-link[aria-disabled='true'] {
   #universal-nav-logo {
     display: flex;
     position: absolute;
-    left: 17px;
+    padding-top: 0.2em;
     top: 0;
   }
 
@@ -571,14 +553,11 @@ button.nav-link[aria-disabled='true'] {
   #universal-nav .login-btn-icon {
     display: inline-block;
   }
-  .toggle-button-nav {
+  .exposed-button-nav {
     padding: 2px 8px;
   }
-  #universal-nav-logo svg {
-    display: block;
-    width: auto;
-    height: 18px;
-    margin: 10px 0;
+  #universal-nav-logo {
+    padding-block: 0.2em 0.1em;
   }
 }
 
@@ -591,21 +570,5 @@ button.nav-link[aria-disabled='true'] {
   }
   .nav-link-sign-in {
     display: flex;
-  }
-  #universal-nav-logo {
-    left: 8px;
-  }
-}
-
-@media (max-width: 300px) {
-  #universal-nav-logo {
-    max-width: none;
-    left: -170px;
-  }
-  #universal-nav-logo svg {
-    display: block;
-    width: auto;
-    height: 24px;
-    margin: 7px 0;
   }
 }

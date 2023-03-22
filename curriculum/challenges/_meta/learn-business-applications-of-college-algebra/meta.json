@@ -1,0 +1,20 @@
+{
+  "name": "Learn Business Applications of College Algebra",
+  "isUpcomingChange": true,
+  "dashedName": "learn-business-applications-of-college-algebra",
+  "order": 14,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    [
+      "6363d2649078df117ce4c404",
+      "Demand and Revenue"
+    ],
+    [
+      "63dbd0375d93712ff177d969",
+      "Business Applications of College Algebra: Extra"
+    ]
+  ]
+}

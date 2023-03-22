@@ -271,7 +271,7 @@ Il server API serve gli endpoint su `http://localhost:3000`. L'app Gatsby serve 
 
 Mentre hai effettuato l'accesso, se visiti <http://localhost:3000/explorer> dovresti vedere le API disponibili.
 
-> [!WARNING] Clearing your cookies or running `pnpm run seed:certified-user` will log you out, and you will have to sign in again.
+> [!WARNING] Se pulisci i cookie o esegui `pnpm run seed:certified-user` perderai l'accesso e dovrai fare di nuovo l'accesso.
 
 Se hai problemi durante l'installazione, consulta la sezione [risoluzione dei problemi](troubleshooting-development-issues.md)
 

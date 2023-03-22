@@ -374,7 +374,7 @@ exports[`should check certification page consistency 1`] = `
         <li
           className="timeline-pagination_list_item"
           style={
-            Object {
+            {
               "visibility": "hidden",
             }
           }
@@ -390,7 +390,7 @@ exports[`should check certification page consistency 1`] = `
         <li
           className="timeline-pagination_list_item"
           style={
-            Object {
+            {
               "visibility": "hidden",
             }
           }
@@ -411,7 +411,7 @@ exports[`should check certification page consistency 1`] = `
         <li
           className="timeline-pagination_list_item"
           style={
-            Object {
+            {
               "visibility": "unset",
             }
           }
@@ -427,7 +427,7 @@ exports[`should check certification page consistency 1`] = `
         <li
           className="timeline-pagination_list_item"
           style={
-            Object {
+            {
               "visibility": "unset",
             }
           }

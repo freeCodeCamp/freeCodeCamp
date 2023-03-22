@@ -241,6 +241,7 @@ type ClaimedCertifications = {
   isBackEndCert: boolean;
   isDataVisCert: boolean;
   isEmailVerified: boolean;
+  isCollegeAlgebraPyCertV8: boolean;
   isFrontEndCert: boolean;
   isFrontEndLibsCert: boolean;
   isFullStackCert: boolean;

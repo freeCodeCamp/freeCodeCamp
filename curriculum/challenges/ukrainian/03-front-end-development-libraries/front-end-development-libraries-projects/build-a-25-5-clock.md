@@ -72,7 +72,7 @@ dashedName: build-a-25--5-clock
 
 Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">використовуючи цей шаблон CodePen</a> і натиснувши `Save`. Або ж ви можете скористатися посиланням CDN, щоб запустити тест в будь-якому середовищі, наприклад: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Як тільки ви закінчите, надішліть URL-адресу вашого робочого проєкту з усіма пройденими тестами.
+Як тільки закінчите, надайте посилання на свій проєкт з усіма пройденими тестами.
 
 # --solutions--
 
