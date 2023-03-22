@@ -7,16 +7,28 @@ dashedName: step-5
 
 # --description--
 
-You need to get the values from your `select` elements. Since they all have the class `values-dropdown`, you can query them all at once.
+Back in your `sortInputArray` function, you need to get the values from your `select` elements. Since they all have the class `values-dropdown`, you can query them all at once.
 
 Use `document.querySelectorAll()` to get all the elements with the class `values-dropdown`. Assign that to an `inputValues` variable.
 
 # --hints--
 
-Test 1
+You should use `document.querySelectorAll()` to get all the elements with the class `values-dropdown`.
 
 ```js
+assert.match(sortInputArray.toString(), /document\.querySelectorAll\(\s*('|"|`)\.values-dropdown\1\s*\)/);
+```
 
+You should assign the result of `document.querySelectorAll()` to a variable named `inputValues`.
+
+```js
+assert.match(sortInputArray.toString(), /inputValues\s*=\s*document\.querySelectorAll\(\s*('|"|`)\.values-dropdown\1\s*\)/);
+```
+
+You should use `const` to declare `inputValues`.
+
+```js
+assert.match(code, /const\s+inputValues\s*=\s*document\.querySelectorAll\(\s*('|"|`)\.values-dropdown\1\s*\)/);
 ```
 
 # --seed--
