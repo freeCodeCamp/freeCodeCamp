@@ -7,7 +7,7 @@ interface ShareProps {
   block: string;
 }
 
-export const Share: React.FC<ShareProps> = ({ superBlock, block }) => {
+export const Share = ({ superBlock, block }: ShareProps): JSX.Element => {
   const { handleRedirectToTwitter } = useShare({
     superBlock,
     block

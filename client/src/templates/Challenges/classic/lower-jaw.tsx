@@ -58,6 +58,7 @@ const LowerJaw = ({
   const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
   const endOfProject = React.useRef<boolean>(false);
+  const isBlockCompleted = 100;
 
   useEffect(() => {
     // prevent unnecessary updates:
@@ -177,7 +178,7 @@ const LowerJaw = ({
       return null;
     }
   };
-  const isBlockCompleted = 100;
+
   const sentencePicker = () => {
     const sentenceArray = [
       'learn.sorry-try-again',
