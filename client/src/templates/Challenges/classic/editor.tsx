@@ -9,13 +9,7 @@ import type {
 } from 'monaco-editor/esm/vs/editor/editor.api';
 import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
-import React, {
-  useEffect,
-  Suspense,
-  RefObject,
-  MutableRefObject,
-  useRef
-} from 'react';
+import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -79,11 +73,11 @@ interface EditorProps {
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
-  containerRef: RefObject<HTMLElement>;
+  containerRef: MutableRefObject<HTMLElement | undefined>;
   contents: string;
   description: string;
   dimensions: Dimensions;
-  editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
+  editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   ext: Ext;
   fileKey: FileKey;
