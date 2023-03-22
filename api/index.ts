@@ -69,25 +69,27 @@ const start = async () => {
   });
 
   // Swagger plugin
-  void fastify.register(fastifySwagger, {
-    openapi: {
-      info: {
-        title: 'freeCodeCamp API',
-        version: '1.0.0' // API version
-      },
-      components: {
-        securitySchemes: {
-          session: {
-            type: 'apiKey',
-            name: 'sessionId',
-            in: 'cookie'
+  if (NODE_ENV === 'development') {
+    void fastify.register(fastifySwagger, {
+      openapi: {
+        info: {
+          title: 'freeCodeCamp API',
+          version: '1.0.0' // API version
+        },
+        components: {
+          securitySchemes: {
+            session: {
+              type: 'apiKey',
+              name: 'sessionId',
+              in: 'cookie'
+            }
           }
-        }
-      },
-      security: [{ session: [] }]
-    }
-  });
-  void fastify.register(fastifySwaggerUI);
+        },
+        security: [{ session: [] }]
+      }
+    });
+    void fastify.register(fastifySwaggerUI);
+  }
 
   // Auth0 plugin
   void fastify.register(fastifyAuth0, {
