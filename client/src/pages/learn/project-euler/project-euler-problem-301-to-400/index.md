@@ -1,7 +1,6 @@
 ---
 title: Project Euler
-superBlock: project-euler
-certification: project-euler
+block: Project Euler Problems 301 to 400
 ---
 
 ## Project Euler
