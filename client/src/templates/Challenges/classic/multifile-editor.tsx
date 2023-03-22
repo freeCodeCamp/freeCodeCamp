@@ -35,7 +35,7 @@ interface MultifileEditorProps {
   contents?: string;
   description: string;
   dimensions?: Dimensions;
-  editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
+  editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   ext?: Ext;
   fileKey?: string;
   initialEditorContent?: string;
