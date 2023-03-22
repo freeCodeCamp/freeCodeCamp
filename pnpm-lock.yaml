@@ -119,6 +119,7 @@ importers:
       '@fastify/type-provider-typebox': 2.4.0
       '@prisma/client': 4.11.0
       '@sinclair/typebox': 0.25.24
+      '@types/express-session': 1.17.7
       '@types/supertest': 2.0.12
       connect-mongo: 4.6.0
       fastify: 4.14.1
@@ -143,6 +144,7 @@ importers:
       nodemon: 2.0.21
     devDependencies:
       '@fastify/type-provider-typebox': 2.4.0_naatsb2dmwxq3j32xoqzjtyzqm
+      '@types/express-session': 1.17.7
       '@types/supertest': 2.0.12
       jest: 29.5.0
       pino-pretty: 10.0.0
@@ -9264,6 +9266,12 @@ packages:
       '@types/node': 18.15.3
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
+
+  /@types/express-session/1.17.7:
+    resolution: {integrity: sha512-L25080PBYoRLu472HY/HNCxaXY8AaGgqGC8/p/8+BYMhG0RDOLQ1wpXOpAzr4Gi5TGozTKyJv5BVODM5UNyVMw==}
+    dependencies:
+      '@types/express': 4.17.17
+    dev: true
 
   /@types/express/4.17.17:
     resolution: {integrity: sha512-Q4FmmuLGBG58btUnfS1c1r/NQdlp3DMfGDGig8WhfpA2YRUtEkxAjkZb0yvplJGYdF1fsQ81iMDcH24sSCNC/Q==}
