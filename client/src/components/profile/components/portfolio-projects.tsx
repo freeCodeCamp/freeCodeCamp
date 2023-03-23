@@ -2,24 +2,26 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import type { Portfolio as PortfolioData } from '../../../redux/prop-types';
+import type { PortfolioProjectData } from '../../../redux/prop-types';
 import { FullWidthRow } from '../../helpers';
 
-import './portfolio.css';
+import './portfolio-projects.css';
 
-interface PortfolioProps {
-  portfolio: PortfolioData[];
+interface PortfolioProjectsProps {
+  portfolioProjects: PortfolioProjectData[];
 }
 
-function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
+export const PortfolioProjects = ({
+  portfolioProjects
+}: PortfolioProjectsProps): JSX.Element | null => {
   const { t } = useTranslation();
-  if (!portfolio.length) {
+  if (!portfolioProjects.length) {
     return null;
   }
   return (
     <FullWidthRow>
       <h2 className='text-center'>{t('profile.portfolio')}</h2>
-      {portfolio.map(({ title, url, image, description, id }) => (
+      {portfolioProjects.map(({ title, url, image, description, id }) => (
         <div className='portfolio-container' key={id}>
           <h3>{title}</h3>
           <p>{description}</p>
@@ -39,8 +41,4 @@ function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
       <hr />
     </FullWidthRow>
   );
-}
-
-Portfolio.displayName = 'Portfolio';
-
-export default Portfolio;
+};

@@ -8,7 +8,7 @@ dashedName: use-the-javascript-console-to-check-the-value-of-a-variable
 
 # --description--
 
-І Chrome, і Firefox мають чудові консолі, також відомі як DevTools, які використовують для налагодження роботи JavaScript.
+Chrome та Firefox мають чудові консолі, також відомі як DevTools, які використовують для налагодження роботи JavaScript.
 
 Ви можете знайти інструменти розробника у меню Chrome або вебконсоль у меню Firefox. Якщо ви використовуєте інший браузер або мобільний телефон, ми наполегливо радимо вам перейти на комп’ютерну версію Firefox або Chrome.
 

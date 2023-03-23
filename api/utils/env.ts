@@ -32,9 +32,14 @@ assert.ok(process.env.API_LOCATION);
 assert.ok(process.env.SESSION_SECRET);
 assert.ok(process.env.FCC_ENABLE_SWAGGER_UI);
 
-if (process.env.NODE_ENV !== 'development') {
+if (process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test') {
   assert.ok(process.env.PORT);
   assert.ok(process.env.MONGOHQ_URL);
+  assert.notEqual(
+    process.env.SESSION_SECRET,
+    'a_thirty_two_plus_character_session_secret',
+    'The session secret should be changed from the default value.'
+  );
 }
 
 export const MONGOHQ_URL =

@@ -26,7 +26,7 @@ dashedName: build-a-recipe-box
 
 **Підказка:** Вам слід вказувати префікс локальних ключів зберігання на CodePen, а саме - `_username_recipes`
 
-Коли ви завершили, додайте посилання на ваш проєкт на CodePen та натисніть кнопку "Я виконав це завдання".
+Коли закінчите, надайте посилання на свій проєкт на CodePen та натисніть кнопку «Я виконав(-ла) це завдання».
 
 Ви можете отримати фідбек до свого проєкту, поділившись ним на <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">форумі freeCodeCamp</a>.
 
