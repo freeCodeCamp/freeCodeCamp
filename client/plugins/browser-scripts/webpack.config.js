@@ -5,19 +5,20 @@ const webpack = require('webpack');
 
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
-  const staticPath = path.join(__dirname, './static/js');
-  const configPath = path.join(__dirname, '../config/client');
+  const staticPath = path.join(__dirname, '../../static/js');
+  const configPath = path.join(__dirname, '../../../config/client');
   return {
     cache: __DEV__ ? { type: 'filesystem' } : false,
     mode: __DEV__ ? 'development' : 'production',
     entry: {
-      'frame-runner': './src/client/frame-runner.ts',
-      'sass-compile': './src/client/workers/sass-compile.ts',
-      'test-evaluator': './src/client/workers/test-evaluator.ts'
+      'frame-runner': './frame-runner.ts',
+      'sass-compile': './sass-compile.ts',
+      'test-evaluator': './test-evaluator.ts'
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
       publicPath: '/js/',
+      // @ts-expect-error I'm okay with this being 'any' for now
       filename: chunkData => {
         // construct and output the filename here, so the client can use the
         // json to find the file.

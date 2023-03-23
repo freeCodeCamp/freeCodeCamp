@@ -57,6 +57,7 @@
       "parserOptions": {
         "project": [
           "./client/tsconfig.json",
+          "./client/bundling/tsconfig.json",
           "./tsconfig.json",
           "./api/tsconfig.json",
           "./config/tsconfig.json",
