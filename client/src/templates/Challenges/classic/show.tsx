@@ -346,6 +346,7 @@ function ShowClassic({
             block={block}
             description={description}
             instructions={instructions}
+            superBlock={superBlock}
           />
         }
         challengeTitle={
@@ -359,6 +360,7 @@ function ShowClassic({
         guideUrl={getGuideUrl({ forumTopicId, title })}
         instructionsPanelRef={instructionsPanelRef}
         showToolPanel={showToolPanel}
+        superBlock={superBlock}
         videoUrl={videoUrl}
       />
     );
