@@ -1,5 +1,12 @@
 import fastifyAuth0 from 'fastify-auth0-verify';
-import Fastify from 'fastify';
+import Fastify, {
+  FastifyBaseLogger,
+  FastifyHttpOptions,
+  FastifyInstance,
+  RawReplyDefaultExpression,
+  RawRequestDefaultExpression,
+  RawServerDefault
+} from 'fastify';
 import middie from '@fastify/middie';
 import fastifySession from '@fastify/session';
 import fastifyCookie from '@fastify/cookie';
@@ -18,38 +25,26 @@ import {
   AUTH0_AUDIENCE,
   AUTH0_DOMAIN,
   NODE_ENV,
-  PORT,
   MONGOHQ_URL,
   SESSION_SECRET
 } from './utils/env';
 
-const envToLogger = {
-  development: {
-    transport: {
-      target: 'pino-pretty',
-      options: {
-        translateTime: 'HH:MM:ss Z',
-        ignore: 'pid,hostname'
-      }
-    },
-    level: 'debug'
-  },
-  // TODO: is this the right level for production or should we use 'error'?
-  production: { level: 'fatal' },
-  test: false
-};
+export type FastifyInstanceWithTypeProvider = FastifyInstance<
+  RawServerDefault,
+  RawRequestDefaultExpression,
+  RawReplyDefaultExpression,
+  FastifyBaseLogger,
+  TypeBoxTypeProvider
+>;
 
-const fastify = Fastify({
-  logger: envToLogger[NODE_ENV]
-}).withTypeProvider<TypeBoxTypeProvider>();
+export const build = async (
+  options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {}
+): Promise<FastifyInstanceWithTypeProvider> => {
+  const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
 
-export type FastifyInstanceWithTypeProvider = typeof fastify;
-
-fastify.get('/', async (_request, _reply) => {
-  return { hello: 'world' };
-});
-
-const start = async () => {
+  fastify.get('/', async (_request, _reply) => {
+    return { hello: 'world' };
+  });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(middie);
   await fastify.register(fastifyCookie);
@@ -83,15 +78,5 @@ const start = async () => {
   void fastify.register(testRoutes);
   void fastify.register(auth0Routes, { prefix: '/auth0' });
   void fastify.register(testValidatedRoutes);
-
-  try {
-    const port = Number(PORT);
-    fastify.log.info(`Starting server on port ${port}`);
-    await fastify.listen({ port });
-  } catch (err) {
-    fastify.log.error(err);
-    process.exit(1);
-  }
+  return fastify;
 };
-
-void start();

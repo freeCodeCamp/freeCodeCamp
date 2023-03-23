@@ -80,6 +80,7 @@ export const defaultSuperBlockOrder: SuperBlocks[] = [
   SuperBlocks.MachineLearningPy,
   SuperBlocks.CollegeAlgebraPy,
   SuperBlocks.CodingInterviewPrep,
+  SuperBlocks.ProjectEuler,
   SuperBlocks.TheOdinProject
 ];
 
@@ -123,7 +124,8 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
@@ -176,7 +178,8 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.RelationalDb,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
@@ -223,7 +226,8 @@ export const superBlockOrder: SuperBlockOrder = {
       [TranslationStates.NotAudited]: {
         [SuperBlockStates.Current]: [
           SuperBlocks.RelationalDb,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
@@ -270,7 +274,8 @@ export const superBlockOrder: SuperBlockOrder = {
       [TranslationStates.NotAudited]: {
         [SuperBlockStates.Current]: [
           SuperBlocks.RelationalDb,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
@@ -317,7 +322,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
+        [SuperBlockStates.Current]: [SuperBlocks.ProjectEuler],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
@@ -363,7 +368,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
+        [SuperBlockStates.Current]: [SuperBlocks.ProjectEuler],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
@@ -408,7 +413,10 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [SuperBlocks.CodingInterviewPrep],
+        [SuperBlockStates.Current]: [
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
+        ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
@@ -455,7 +463,7 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.Legacy]: []
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [],
+        [SuperBlockStates.Current]: [SuperBlocks.ProjectEuler],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
@@ -502,7 +510,8 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
@@ -549,7 +558,8 @@ export const superBlockOrder: SuperBlockOrder = {
           SuperBlocks.DataAnalysisPy,
           SuperBlocks.InfoSec,
           SuperBlocks.MachineLearningPy,
-          SuperBlocks.CodingInterviewPrep
+          SuperBlocks.CodingInterviewPrep,
+          SuperBlocks.ProjectEuler
         ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
