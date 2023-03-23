@@ -1,13 +1,21 @@
 import React from 'react';
 
+const Padding = Object.freeze({
+  small: 5,
+  medium: 15,
+  large: 30,
+  exLarge: 45
+});
+
+type PaddingKeys = keyof typeof Padding;
 interface SpacerProps {
-  paddingSize: number;
+  size: PaddingKeys;
 }
 
-const Spacer = ({ paddingSize }: SpacerProps): JSX.Element => (
+const Spacer = ({ size }: SpacerProps): JSX.Element => (
   <div
     className='spacer'
-    style={{ padding: `${paddingSize}px 0`, height: '1px' }}
+    style={{ padding: `${Padding[size]}px 0`, height: '1px' }}
   />
 );
 

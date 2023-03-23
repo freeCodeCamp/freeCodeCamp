@@ -53,6 +53,8 @@ const start = async () => {
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(middie);
   await fastify.register(fastifyCookie);
+  // @ts-expect-error - @fastify/session's types are not, yet, compatible with
+  // express-session's types
   await fastify.register(fastifySession, {
     secret: SESSION_SECRET,
     rolling: false,

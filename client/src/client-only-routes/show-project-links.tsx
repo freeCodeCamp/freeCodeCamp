@@ -160,7 +160,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
           : 'certification.project.heading',
         { user: name }
       )}
-      <Spacer paddingSize={15} />
+      <Spacer size='medium' />
       <Table striped>
         <thead>
           <tr>
@@ -170,7 +170,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         </thead>
         <tbody>{renderProjectsFor(certName)}</tbody>
       </Table>
-      <Spacer paddingSize={15} />
+      <Spacer size='medium' />
       <ProjectModal
         challengeFiles={completedChallenge?.challengeFiles ?? null}
         handleSolutionModalHide={handleSolutionModalHide}

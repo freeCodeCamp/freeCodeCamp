@@ -12,7 +12,7 @@ function IntroDescription(): JSX.Element {
   return (
     <div className='intro-description'>
       <strong>{t('learn.read-this.heading')}</strong>
-      <Spacer paddingSize={15} />
+      <Spacer size='medium' />
       <p>{t('learn.read-this.p1')}</p>
       <p>{t('learn.read-this.p2')}</p>
       <p>{t('learn.read-this.p3')}</p>
