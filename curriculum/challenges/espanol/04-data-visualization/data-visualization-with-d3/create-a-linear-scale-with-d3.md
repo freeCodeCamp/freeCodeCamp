@@ -8,13 +8,13 @@ dashedName: create-a-linear-scale-with-d3
 
 # --description--
 
-La barra y los diagramas de dispersión dibujan los datos directamente en el lienzo SVG. Sin embargo, si la altura de una barra o uno de los puntos de dato fuesen mayores que los valores de ancho (width) o largo (height) del SVG, se irían fuera del área del SVG.
+The bar and scatter plot charts both plotted data directly onto the SVG. Sin embargo, si la altura de una barra o uno de los puntos de dato fuesen mayores que los valores de ancho (width) o largo (height) del SVG, se irían fuera del área del SVG.
 
-En D3, hay escalas para ayudar a trazar datos. `scales` son funciones que le dicen al programa cómo asignar un conjunto de puntos de datos en bruto, a los píxeles del lienzo SVG.
+En D3, hay escalas para ayudar a trazar datos. `scales` are functions that tell the program how to map a set of raw data points onto the pixels of the SVG.
 
-Por ejemplo, digamos que tienes un lienzo SVG de 100x500 y quieres trazar el Producto Bruto Interno(PBI) para una cantidad de países. El conjunto de números estaría en el rango de miles de millones o billones de dólares. Tú le provees a D3 un tipo de escala para decirle cómo colocar los grandes valores de PBI en esa área de tamaño 100x500.
+For example, say you have a 100x500-sized SVG and you want to plot Gross Domestic Product (GDP) for a number of countries. El conjunto de números estaría en el rango de miles de millones o billones de dólares. Tú le provees a D3 un tipo de escala para decirle cómo colocar los grandes valores de PBI en esa área de tamaño 100x500.
 
-Es muy poco probable que traces los datos en bruto tal como son. Antes de trazarlo, estableces la escala para todo tu conjunto de datos(data set), para que los valores de `x` e `y` vayan dentro del alto y ancho de tu lienzo.
+Es muy poco probable que traces los datos en bruto tal como son. Before plotting it, you set the scale for your entire data set, so that the `x` and `y` values fit your SVG width and height.
 
 D3 tiene varios tipos de escalas. Para una escala lineal (usualmente usada con datos cuantitativos), existe el método de D3 `scaleLinear()`:
 

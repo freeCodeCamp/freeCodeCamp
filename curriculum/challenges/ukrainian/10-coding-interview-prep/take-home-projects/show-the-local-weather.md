@@ -22,7 +22,7 @@ dashedName: show-the-local-weather
 
 **Примітка:** Тепер багато інтернет-браузерів вимагають безпечне HTTP з'єднання (`https://`), щоб отримати місцеперебування користувача через геолокацію HTML5. For this reason, we recommend using HTML5 Geolocation to get user location and then use the freeCodeCamp Weather API <a href="https://weather-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://weather-proxy.freecodecamp.rocks/</a> which uses an HTTP Secure connection for the weather. Also, be sure to connect to <a href="https://codepen.io" target="_blank" rel="noopener noreferrer nofollow">CodePen.io</a> via `https://`.
 
-Після завершення додайте посилання на ваш проєкт на CodePen та натисніть на кнопку "Завдання виконано".
+Коли закінчите, надайте посилання на свій проєкт на CodePen та натисніть кнопку «Я виконав(-ла) це завдання».
 
 Ви можете отримати фідбек до свого проєкту, поділившись ним на <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">форумі freeCodeCamp</a>.
 

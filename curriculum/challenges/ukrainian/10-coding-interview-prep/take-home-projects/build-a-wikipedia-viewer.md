@@ -20,7 +20,7 @@ Using the MediaWiki API, replicate the search function and random article functi
 
 **User Story:** I can click a button to see a random Wikipedia entry.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Коли закінчите, надайте посилання на свій проєкт на CodePen та натисніть кнопку «Я виконав(-ла) це завдання».
 
 Ви можете отримати фідбек до свого проєкту, поділившись ним на <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">форумі freeCodeCamp</a>.
 

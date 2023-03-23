@@ -161,7 +161,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <Grid>
         <main>
-          <Spacer paddingSize={30} />
+          <Spacer size='large' />
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
             {t('settings.for', { username: username })}
           </h1>
@@ -180,16 +180,16 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
             username={username}
           />
-          <Spacer paddingSize={15} />
+          <Spacer size='medium' />
           <Privacy />
-          <Spacer paddingSize={15} />
+          <Spacer size='medium' />
           <Email
             email={email}
             isEmailVerified={isEmailVerified}
             sendQuincyEmail={sendQuincyEmail}
             updateQuincyEmail={updateQuincyEmail}
           />
-          <Spacer paddingSize={15} />
+          <Spacer size='medium' />
           <Internet
             githubProfile={githubProfile}
             linkedin={linkedin}
@@ -197,12 +197,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             updateSocials={updateSocials}
             website={website}
           />
-          <Spacer paddingSize={15} />
-          {/* @ts-expect-error Portfolio types mismatch */}
+          <Spacer size='medium' />
           <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
-          <Spacer paddingSize={15} />
+          <Spacer size='medium' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
-          <Spacer paddingSize={15} />
+          <Spacer size='medium' />
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
@@ -229,11 +228,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           />
           {userToken && (
             <>
-              <Spacer paddingSize={15} />
+              <Spacer size='medium' />
               <UserToken />
             </>
           )}
-          <Spacer paddingSize={15} />
+          <Spacer size='medium' />
           <DangerZone />
         </main>
       </Grid>

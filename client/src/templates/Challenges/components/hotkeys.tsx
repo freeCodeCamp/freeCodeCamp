@@ -1,8 +1,9 @@
 import { navigate } from 'gatsby';
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { editor } from 'monaco-editor';
 import { ChallengeFiles, Test, User } from '../../../redux/prop-types';
 import { isChallenge } from '../../../utils/path-parsers';
 
@@ -61,10 +62,10 @@ interface HotkeysProps {
   challengeFiles: ChallengeFiles;
   challengeType?: number;
   children: React.ReactElement;
-  editorRef?: React.RefObject<HTMLElement>;
+  editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
   submitChallenge: () => void;
-  innerRef: React.Ref<HTMLElement>;
+  innerRef: MutableRefObject<HTMLElement | undefined>;
   instructionsPanelRef?: React.RefObject<HTMLElement>;
   nextChallengePath: string;
   prevChallengePath: string;

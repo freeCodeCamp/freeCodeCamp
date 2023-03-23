@@ -24,7 +24,7 @@ The Twitch API is a RESTful API that lets developers build creative integrations
 
 **UPDATE:** Через зміни в умовах користування API Twitch.tv вимагає ключ доступу API, але ми створили спосіб його обійти. Use <a href="https://twitch-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://twitch-proxy.freecodecamp.rocks/</a> instead of Twitch's API base URL and you'll still be able to get account information, without needing to sign up for an API key.
 
-Після завершення додайте посилання на ваш проєкт на CodePen та натисніть на кнопку "Завдання виконано".
+Коли закінчите, надайте посилання на свій проєкт на CodePen та натисніть кнопку «Я виконав(-ла) це завдання».
 
 Ви можете отримати фідбек до свого проєкту, поділившись ним на <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">форумі freeCodeCamp</a>.
 

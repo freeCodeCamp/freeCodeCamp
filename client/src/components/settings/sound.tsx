@@ -65,7 +65,7 @@ export default function SoundSettings({
         className='soundbar'
         onInput={handleVolumeChange}
       />
-      <Spacer paddingSize={15}></Spacer>
+      <Spacer size='medium'></Spacer>
     </Form>
   );
 }

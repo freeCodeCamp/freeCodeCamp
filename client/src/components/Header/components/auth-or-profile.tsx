@@ -3,7 +3,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, AvatarRenderer } from '../../helpers';
-import Login from './Login';
+import Login from './login';
 
 interface AuthOrProfileProps {
   user?: Record<string, unknown>;

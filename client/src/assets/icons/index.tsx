@@ -13,6 +13,7 @@ import PythonIcon from './python';
 import ResponsiveDesign from './responsive-design';
 import Shield from './shield';
 import VikingHelmet from './viking-helmet';
+import Graduation from './graduation';
 import CollegeAlgebra from './college-algebra';
 
 const iconMap = {
@@ -31,6 +32,7 @@ const iconMap = {
   [SuperBlocks.MachineLearningPy]: TensorflowIcon,
   [SuperBlocks.CodingInterviewPrep]: Algorithm,
   [SuperBlocks.TheOdinProject]: VikingHelmet,
+  [SuperBlocks.ProjectEuler]: Graduation,
   [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra
 };
 
