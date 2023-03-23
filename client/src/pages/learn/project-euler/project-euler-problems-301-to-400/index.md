@@ -1,6 +1,7 @@
 ---
-title: Project Euler
-block: Project Euler Problems 101 to 200
+title: Project Euler Problems 301 to 400
+block: Project Euler Problems 301 to 400
+superBlock: Project Euler
 ---
 
 ## Project Euler
