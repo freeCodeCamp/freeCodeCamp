@@ -43,9 +43,8 @@ const upcomingTest = {
   [SuperBlocks.CodingInterviewPrep]: 12,
   [SuperBlocks.ProjectEuler]: 13,
   [SuperBlocks.JsAlgoDataStructNew]: 14,
-  [SuperBlocks.CollegeAlgebraPy]: 15,
-  [SuperBlocks.TheOdinProject]: 16,
-  [SuperBlocks.RespWebDesign]: 17
+  [SuperBlocks.TheOdinProject]: 15,
+  [SuperBlocks.RespWebDesign]: 16
 };
 
 const espanolTest = {
