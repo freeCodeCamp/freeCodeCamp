@@ -1,15 +1,14 @@
 {
-  "name": "Build a Data Graph Explorer",
-  "isUpcomingChange": true,
-  "dashedName": "build-a-data-graph-explorer",
+  "name": "Build a Data Graph Explorer Project",
+  "isUpcomingChange": false,
   "order": 19,
-  "time": "150 hours",
+  "time": "30 hours",
   "template": "",
   "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
     [
       "63d8402e39c73468b059cd43",
-      "Data Graph Explorer"
+      "Build a Data Graph Explorer"
     ]
   ]}
