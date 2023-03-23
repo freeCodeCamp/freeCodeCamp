@@ -56,9 +56,7 @@ function ProgressBar({
   const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
   const isCertificationProject = certMap.some(cert => {
     if ('projects' in cert) {
-      return cert.projects.some(
-        (project: { id: string }) => project.id === id
-      );
+      return cert.projects.some((project: { id: string }) => project.id === id);
     }
   });
 

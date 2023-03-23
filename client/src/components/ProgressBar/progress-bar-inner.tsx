@@ -63,7 +63,11 @@ function ProgressBarInner({
   return (
     <>
       <div className='completion-block-name'>{title}</div>
-      <div className='progress-bar-wrap' aria-hidden='true' ref={progressBarInnerWrap}>
+      <div
+        className='progress-bar-wrap'
+        aria-hidden='true'
+        ref={progressBarInnerWrap}
+      >
         <div className='progress-bar-background'></div>
         <div
           className='progress-bar-percent'
