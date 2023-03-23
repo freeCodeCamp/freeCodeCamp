@@ -1,0 +1,136 @@
+{
+  "name": "Learn Fetch and Promises By Building an fCC Authors Page",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-fetch-and-promises-by-building-an-fcc-authors-page",
+  "order": 42,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superOrder": 4,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "63fc85d4cc971ca3ecd547f2",
+      "Step 1"
+    ],
+    [
+      "63fc93935f0331b591cc65e8",
+      "Step 2"
+    ],
+    [
+      "63ff5850cd098f1796b5e9fa",
+      "Step 3"
+    ],
+    [
+      "6419aa46a11acb514e1731e6",
+      "Step 4"
+    ],
+    [
+      "63ff70d3ee568219332868f3",
+      "Step 5"
+    ],
+    [
+      "63ff732ad5c56c1a497c7f16",
+      "Step 6"
+    ],
+    [
+      "63ff75fd4b20c31c23f8802e",
+      "Step 7"
+    ],
+    [
+      "63ff7976f760fe1d0b0fba4a",
+      "Step 8"
+    ],
+    [
+      "63ff7c3430a5d21ddc1466e6",
+      "Step 9"
+    ],
+    [
+      "63ff7f1fa497db1ef87bac1d",
+      "Step 10"
+    ],
+    [
+      "63ff855e57d1b220fd53b4b0",
+      "Step 11"
+    ],
+    [
+      "63ff88f9aef19222075ea48f",
+      "Step 12"
+    ],
+    [
+      "63ff8f70dd32bc239b77a627",
+      "Step 13"
+    ],
+    [
+      "63ffa818da72e82dbe4ba0cb",
+      "Step 14"
+    ],
+    [
+      "6400a995af420c3d19d690ae",
+      "Step 15"
+    ],
+    [
+      "6419b2f3d28cd7553fbdfffc",
+      "Step 16"
+    ],
+    [
+      "6400aa9c399ec53d971c368b",
+      "Step 17"
+    ],
+    [
+      "63ffaa0504eb762e6f9132c5",
+      "Step 18"
+    ],
+    [
+      "63ffaae20e576b2ef02806b1",
+      "Step 19"
+    ],
+    [
+      "6400a55edf5e733b47fb7c46",
+      "Step 20"
+    ],
+    [
+      "6401cceab4b39e4639d177e4",
+      "Step 21"
+    ],
+    [
+      "6401d5ee876ad54baacb8ffb",
+      "Step 22"
+    ],
+    [
+      "6401d73eba6cdb4c42f9b134",
+      "Step 23"
+    ],
+    [
+      "6401d7d41d61f94ca4211b7f",
+      "Step 24"
+    ],
+    [
+      "6401db0f08030e4db8b40516",
+      "Step 25"
+    ],
+    [
+      "6401e154de0c834ffe2106c5",
+      "Step 26"
+    ],
+    [
+      "6401e1d482d85c505c6d9b15",
+      "Step 27"
+    ],
+    [
+      "6401e30d5f45345120a267a3",
+      "Step 28"
+    ],
+    [
+      "6401e6feb8d7fa528629d939",
+      "Step 29"
+    ],
+    [
+      "64072eaffe181c2d2332604c",
+      "Step 30"
+    ]
+  ]
+}
