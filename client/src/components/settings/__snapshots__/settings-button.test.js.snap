@@ -1551,7 +1551,7 @@ exports[`should check certification button consistency 1`] = `
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
