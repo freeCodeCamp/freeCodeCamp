@@ -193,7 +193,7 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
    pnpm install
    FCC_SUPERBLOCK='<superblock-name>' pnpm run test:curriculum 
 
-   # example:
+   # esempio:
 
    # FCC_SUPERBLOCK='python-for-everybody' pnpm run test:curriculum
 

@@ -1,10 +1,8 @@
 .super-block-intro-page p {
-  font-family: 'Lato', sans-serif;
   font-size: 1.17rem;
 }
 
 .super-block-intro-page .alert p {
-  font-family: inherit;
   font-size: inherit;
 }
 
@@ -358,11 +356,6 @@ button.map-title {
   margin-top: 1.45rem;
 }
 
-.intro-layout p,
-.intro-layout li {
-  font-family: 'Lato', sans-serif;
-}
-
 .intro-toc .list-group-item {
   margin: 5px auto;
 }
@@ -429,7 +422,7 @@ button.map-title {
   padding: 25px;
 }
 
-/* this margin is used to center the element. 
+/* this margin is used to center the element.
 ToDo: find out why, and remove the need for it */
 .block-grid .map-title > svg {
   margin-bottom: 4px;
@@ -451,6 +444,7 @@ ToDo: find out why, and remove the need for it */
 .block-grid .progress-wrapper {
   width: 100%;
   text-align: left;
+  font-family: var(--font-family-sans-serif);
   display: flex;
   align-items: center;
   margin-top: 18px;

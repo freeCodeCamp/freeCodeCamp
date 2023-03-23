@@ -121,7 +121,8 @@ const directoryToSuperblock = {
   '14-responsive-web-design-22': '2022/responsive-web-design',
   '15-javascript-algorithms-and-data-structures-22':
     '2022/javascript-algorithms-and-data-structures',
-  '16-the-odin-project': 'the-odin-project'
+  '16-the-odin-project': 'the-odin-project',
+  '17-college-algebra-with-python': 'college-algebra-with-python'
 };
 
 function getSuperBlockFromDir(dir) {

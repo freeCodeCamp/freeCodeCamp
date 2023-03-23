@@ -35,6 +35,7 @@ module.exports = {
   isDataAnalysisPyCertV7: true,
   isMachineLearningPyCertV7: true,
   isRelationalDatabaseCertV8: true,
+  isCollegeAlgebraPyCertV8: true,
   completedChallenges: [
     { id: 'bd7123c8c441eddfaeb5bdef', completedDate: 1475094716730, files: [] },
     { id: '5895f70bf9fc0f352b528e64', completedDate: 1537207306322, files: [] },

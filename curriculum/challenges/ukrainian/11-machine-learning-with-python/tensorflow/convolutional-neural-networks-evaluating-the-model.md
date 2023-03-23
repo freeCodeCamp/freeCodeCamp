@@ -18,7 +18,7 @@ dashedName: convolutional-neural-networks-evaluating-the-model
 
 ## --answers--
 
-Збільшувати об'єм вже існуючих даних.
+Збільшувати об’єм вже існуючих даних.
 
 ---
 

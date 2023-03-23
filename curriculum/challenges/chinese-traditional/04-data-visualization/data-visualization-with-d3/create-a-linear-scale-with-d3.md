@@ -8,13 +8,13 @@ dashedName: create-a-linear-scale-with-d3
 
 # --description--
 
-條形圖和散點圖都直接在 SVG 畫布上繪製數據。 但是，如果一組的高或者其中一個數據點比 SVG 的高或寬更大，它將跑到 SVG 區域外。
+The bar and scatter plot charts both plotted data directly onto the SVG. 但是，如果一組的高或者其中一個數據點比 SVG 的高或寬更大，它將跑到 SVG 區域外。
 
-D3 中，比例尺可幫助佈局數據。 `scales` 是函數，它告訴程序如何將一組原始數據點映射到 SVG 畫布上。
+D3 中，比例尺可幫助佈局數據。 `scales` are functions that tell the program how to map a set of raw data points onto the pixels of the SVG.
 
-例如，假設你有一個 100x500 大小的 SVG 畫布，你想爲許多國家繪製國內生產總值（GDP）的圖表。 這組數據將在十億美元或萬億美元的範圍內。 你給 D3 提供一種縮放方法，告訴它如何將大的 GDP 值放置在 100x500 大小的區域。
+For example, say you have a 100x500-sized SVG and you want to plot Gross Domestic Product (GDP) for a number of countries. 這組數據將在十億美元或萬億美元的範圍內。 你給 D3 提供一種縮放方法，告訴它如何將大的 GDP 值放置在 100x500 大小的區域。
 
-你不太可能按數據原本的大小來繪製圖表。 在繪製之前，將整個數據集縮放，讓 `x` 和 `y` 值適合畫布的寬高。
+你不太可能按數據原本的大小來繪製圖表。 Before plotting it, you set the scale for your entire data set, so that the `x` and `y` values fit your SVG width and height.
 
 D3 有幾種縮放類型。 對於線性縮放（通常使用於定量數據），使用 D3 的 `scaleLinear()` 方法：
 
