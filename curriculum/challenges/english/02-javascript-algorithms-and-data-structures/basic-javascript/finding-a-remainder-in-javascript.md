@@ -6,7 +6,7 @@ videoUrl: 'https://scrimba.com/c/cWP24Ub'
 forumTopicId: 18184
 dashedName: finding-a-remainder-in-javascript
 ---
-
+<!-- We can add some more tests in this task, people can go other ways in here -->
 # --description--
 
 The <dfn>remainder</dfn> operator `%` gives the remainder of the division of two numbers.
