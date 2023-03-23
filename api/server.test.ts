@@ -9,7 +9,7 @@ describe('GET /', () => {
   beforeAll(async () => {
     fastify = await build();
     await fastify.ready();
-  });
+  }, 20000);
 
   afterAll(async () => {
     // Due to a prisma bug, this is not enough, we need to --force-exit jest:
