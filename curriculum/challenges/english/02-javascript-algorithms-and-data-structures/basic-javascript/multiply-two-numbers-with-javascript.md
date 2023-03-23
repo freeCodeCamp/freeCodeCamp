@@ -6,7 +6,7 @@ videoUrl: 'https://scrimba.com/c/cP3y3Aq'
 forumTopicId: 18243
 dashedName: multiply-two-numbers-with-javascript
 ---
-
+<!-- We can add some more tests in this task, people can go other ways in here -->
 # --description--
 
 We can also multiply one number by another.
