@@ -68,7 +68,6 @@ jobs:
       fail-fast: false
       matrix:
         node-version: [18.x]
-        mongodb-version: [6.0]
 
     steps:
       - name: Checkout Source Files
@@ -93,7 +92,7 @@ jobs:
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@1.9.0
         with:
-          mongodb-version: ${{ matrix.mongodb-version }}
+          mongodb-version: 6.0
           mongodb-replica-set: test-rs
           mongodb-port: 27017
 
