@@ -68,6 +68,7 @@ jobs:
       fail-fast: false
       matrix:
         node-version: [18.x]
+        mongodb-version: [6.0]
 
     steps:
       - name: Checkout Source Files
@@ -88,6 +89,13 @@ jobs:
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
           echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
+
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.9.0
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
 
       - name: Install Dependencies
         run: |
