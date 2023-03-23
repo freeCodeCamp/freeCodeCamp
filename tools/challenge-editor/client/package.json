@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "5.16.5",
-    "@testing-library/react": "12.1.5",
     "@testing-library/user-event": "13.5.0",
     "codemirror": "5.65.11",
     "react": "16.14.0",
@@ -41,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "12.1.5",
     "@types/codemirror": "5.60.7",
     "@types/react": "16.14.35",
     "@types/react-dom": "^16.9.17",
