@@ -41,7 +41,7 @@ myDataBase.findOneAndUpdate(
 
 `findOneAndUpdate` では、オブジェクトを検索して更新することができます。 オブジェクトが存在しない場合は、そのオブジェクトが挿入され、コールバック関数で使用できるようになります。 この例では、`last_login` を常に設定し、`login_count` を `1` 増やして、新しいオブジェクト (新規ユーザー) が挿入された場合にのみ、フィールドの大部分を設定します。 デフォルト値の使用に注意してください。 場合によっては、返されるプロファイルに必ずしもすべての情報が設定されていなかったり、ユーザーがプロファイルを非公開にしていたりします。 そのような場合は、エラーを防ぐための処理を実行します。
 
-You should be able to login to your app now. Try it!
+これでアプリにログインできるはずです。 試してみましょう！
 
 正しいと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-iii-5" target="_blank" rel="noopener noreferrer nofollow">この時点までの完成形のコードをこちらで確認できます</a>。
 

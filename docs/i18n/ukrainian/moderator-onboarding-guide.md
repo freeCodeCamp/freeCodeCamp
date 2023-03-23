@@ -1,50 +1,50 @@
-# The Official freeCodeCamp Moderator Onboarding Guide
+# Офіційний посібник з адаптації модератора freeCodeCamp
 
-This guide will help new moderators get up and running with the processes and procedures followed by experienced moderators on the freeCodeCamp community forum and other official communities that we foster.
+Цей посібник допоможе новим модераторам розібратись з підходами, яких дотримуються досвідчені модератори форуму freeCodeCamp та інших офіційних спільнот, за якими ми доглядаємо.
 
-> [!NOTE] If you haven't read [The Moderator Handbook](https://contribute.freecodecamp.org/#/moderator-handbook) yet, you should start there first.
+> [!NOTE] Якщо ви не прочитали [Довідник модератора](https://contribute.freecodecamp.org/#/moderator-handbook), почніть з нього.
 
-## The Forum
+## Форум
 
-### First Steps
+### Перші кроки
 
-The first thing you may notice after being given moderator status on the forum is that your interface will look somewhat different, with new admin tools to explore and access to the Mod-Team subforum.
+Після надання статусу модератора ви помітите, що інтерфейс виглядає по-іншому, оскільки з’являться нові інструменти та доступ до підфоруму команди модераторів.
 
-Some of the new tools will appear inside a new menu item that looks like a wrench. Some will appear as new tabs or buttons, or even new enabled options within the forum menus.
+Деякі з нових інструментів будуть відображатися в новому меню, яке виглядає як гайковий ключ. Деякі будуть представлені новими вкладками та кнопками, або навіть опціями у меню форуму.
 
-To get familiar with the new tools and powers, you can combine one or more of the following methods during your first week with this elevated role:
+Щоб ознайомитись з новими інструментами та можливостями, дотримуйтесь наведених методів протягом першого тижня:
 
-> [!TIP] The first two are the most important.
+> [!TIP] Перші два є найважливішими.
 
-### Become Familiar with the Discourse Admin Tools
+### Ознайомтесь з інструментами адміністратора на Discourse
 
-The freeCodeCamp forum is actually a Discourse forum and follows many of the same guidelines of other forums built on Discourse. To begin to get familiar with Discourse and the moderation role, start by reading Discourse's [new user guide](https://meta.discourse.org/t/discourse-new-user-guide/96331) and Discourse's [new moderator guide](https://meta.discourse.org/t/discourse-moderation-guide/63116).
+Насправді форум freeCodeCamp є форумом Discourse, тому ми дотримуємось правил інших форумів, створених на Discourse. Щоб ознайомитись з Discourse та модераторством, прочитайте [довідник нового користувача Discourse](https://meta.discourse.org/t/discourse-new-user-guide/96331) та [довідник нового модератора Discourse](https://meta.discourse.org/t/discourse-moderation-guide/63116).
 
-### Shadow a Mod
+### Стежте за іншими модераторами
 
-All moderator actions can be followed by reviewing the [action logs](https://forum.freecodecamp.org/admin/logs/staff_action_logs). The actions taken by automated tools like `akistmet` or `system` can mostly be ignored until they result in a post that needs to be reviewed. Posts to be reviewed will show up in the [Review](https://forum.freecodecamp.org/review) area of the forum.
+Усі дії модераторів можна переглянути у [журналі дій](https://forum.freecodecamp.org/admin/logs/staff_action_logs). Дії автоматичних інструментів (наприклад, `akistmet` чи `system`) можна ігнорувати, якщо вони не стосуються допису, який потрібно переглянути. Дописи, які потрібно переглянути, розміщені на форумі у розділі [Review](https://forum.freecodecamp.org/review).
 
-For the first week or so you will want to pay attention to what is getting flagged and what is being reviewed, and compare that to the actions being taken upon the flagged posts. You may see the system account flag a post because the user created it too quickly. In many cases, the moderators will unflag the post by clicking on the "Approve Post" button or mark it as "Not Spam" (depending on the flag type).
+Протягом першого тижня звертайте увагу на те, які дописи позначаються прапорцем та розглядаються, а також на застосовані до них дії. Ви можете побачити, що системний обліковий запис позначає публікацію, оскільки користувач створив її надто швидко. У багатьох випадках модератори заберуть прапорець, натиснувши кнопку «Approve Post» або позначивши допис як «Not Spam» (залежно від типу прапорця).
 
-Commonly, spam flags can also be raised by members or moderators. Common duplicitous behaviour would involve opening an account, making a post that seems harmless, then editing that post later on to add a link to an external site for the purpose of advertising it. In this case, usually the member account is fairly new and has only made this one post thus far, which indicates that the account was opened for the sole purpose of spamming the community. The decision should be made to delete the account after the first offence in this case. The same applies for accounts whose first post is deemed to be spam.
+Прапорці спаму можуть використовувати користувачі та модератори. Досить часто створюють обліковий запис, пишуть допис, а потім редагують його, додаючи посилання на зовнішній сайт з метою реклами. Такий обліковий запис відносно новий та створив лише один допис, що вказує на те, що обліковий запис створили для спаму. У такому разі доцільно прийняти рішення про видалення облікового запису після першого порушення. Це також стосується облікових записів, перше повідомлення яких вважається спамом.
 
-You may notice moderators performing a procedure called 'split topic'. This may be a case where a moderator has split a post that was made erroneously on an existing topic into a new topic, or a moderator merged duplicate topics that a single user has created for the same question. Watching this procedure will highlight different actions and their causes.
+Ви можете помітити, що модератори виконують дію під назвою «розділення теми» (split topic). Це може бути випадок, коли модератор перемістив допис, який було створено у наявному дописі, у новий допис, або модератор об’єднав повторювані дописи, створені одним користувачем для того самого запитання. Подивившись на цю процедуру, можна виділити різні дії та причини.
 
-Another useful feature that becomes enabled for all moderators is the ability to post a "Canned Reply" which is a pre-written response that was worked out with the mod team in order to quickly respond to some well-known and repetitive scenarios. These include:
+Іншою корисною функцією є заготовлені відповіді (canned reply), тобто попередньо написані відповіді, які створила команда модераторів для того, щоб швидко відповідати на повторювані дописи. До них належать:
 
-- Welcoming a new forum member who has posted code without a question -> "Welcome - remind question"
-- Reminding members not to post code solutions but to provide hints and tips instead -> "Solutions Instead of Help"
-- Responding to a situation where someone's code works for you but not for them -> "Browser Issues"
-- Encouraging members to open GitHub issues when a possible bug is found -> "Bug Report"
+- Привітання нового користувача форуму, який опублікував код без запитання -> "Welcome - remind question"
+- Нагадування користувачам не публікувати розв’язок коду, а ділитись підказками та порадами -> "Solutions Instead of Help"
+- Відповідь на випадок, якщо код працює для вас, але не для інших -> "Browser Issues"
+- Заохочення користувачів відкрити проблеми на GitHub, якщо знайдено можливу помилку -> "Bug Report"
 
-There are more, which you can read through to become familiar with their respective uses. You can also find discussion around the templates in the mod-team subforum, and you are welcome to ask questions if you aren't sure how a template should be used.
+Існує й багато інших функцій, які потрібно прочитати для ознайомлення. Ви також можете знайти обговорення шаблонів у підфорумі mod-team, і можете ставити запитання, якщо не знаєте, як використовувати шаблон.
 
-### Read Mod-Team Subforum Posts
+### Прочитайте дописи на підфорумі Mod-Team
 
-The Mod-Team subforum contains a number of posts from past and current moderators discussing the different requirements and/or challenges of moderating the forum.
+Підфорум Mod-Team містить деякі дописи від старих та нових модераторів, де обговорюються різні вимоги та/або проблеми модерації форуму.
 
-Reading back through these posts can help to uncover some of the underlying goals and processes that concern forum moderators. Some of the threads may also shed some light on handling of spam and inappropriate content on the forum.
+Ці дописи допоможуть зрозуміти приховані цілі та процеси, які стосуються модераторів форуму. Деякі треди пояснять, що робити зі спамом та неприпустимим вмістом.
 
-## Where to Ask for Help
+## Де просити про допомогу
 
-To get help dealing with a situation that you are either uncomfortable with or unsure of how to handle, discuss with your fellow moderators on either the [Mod-Team Subforum](https://forum.freecodecamp.org/c/mod-team/4) or the [#mod-chat](https://discord.com/channels/692816967895220344/693157007418720277) on Discord.
+Щоб отримати допомогу щодо незручної чи незрозумілої ситуації, порадьтесь з іншими модераторами на [підфорумі Mod-Team](https://forum.freecodecamp.org/c/mod-team/4) або в [#mod-chat](https://discord.com/channels/692816967895220344/693157007418720277) на дискорді.

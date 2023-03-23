@@ -427,48 +427,48 @@ sudo apt install build-essential
 
 Provisioning VMs with the Code
 
-1. Install `pnpm` globally.
+1. Install Node LTS.
 
-   ```console
-   curl -fsSL https://get.pnpm.io/install.sh | sh -
-   ```
+2. Install pnpm globally.
 
-2. Clone freeCodeCamp, setup env and keys.
+```console
+npm install -g pnpm
+```
 
-   ```console
-   git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-   cd freeCodeCamp
-   git checkout prod-current # or any other branch to be deployed
-   ```
+3. Clone freeCodeCamp, setup env and keys.
 
-3. Create the `.env` from the secure credentials storage.
+```console
+git clone https://github.com/freeCodeCamp/freeCodeCamp.git
+cd freeCodeCamp
+git checkout prod-current # or any other branch to be deployed
+```
 
-4. Create the `google-credentials.json` from the secure credentials storage.
+4. Create the `.env` from the secure credentials storage.
 
 5. Install dependencies
 
-   ```console
-   pnpm install
-   ```
+```console
+pnpm install
+```
 
 6. Setup pm2 `logrotate` and startup on boot
 
-   ```console
-   pnpm pm2 install pm2-logrotate
-   pnpm pm2 startup
-   ```
+```console
+pnpm pm2 install pm2-logrotate
+pnpm pm2 startup
+```
 
 7. Build the server
 
-   ```console
-   pnpm prebuild && pnpm build:curriculum && pnpm build:server
-   ```
+```console
+pnpm prebuild && pnpm build:curriculum && pnpm build:server
+```
 
 8.  Start Instances
 
-   ```console
-   pnpm start:server
-   ```
+```console
+pnpm start:server
+```
 
 ### Logging and Monitoring
 
@@ -503,7 +503,7 @@ pnpm install
 3. Build the server
 
 ```console
-pnpm run create:config && pnpm run build:curriculum && pnpm run build:server
+pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
 4. Start Instances
@@ -515,10 +515,20 @@ pnpm start:server && pnpm pm2 logs
 #### 2. Rolling updates - Used for logical changes to code.
 
 ```console
-pnpm pm2 reload api-server/ecosystem.config.js && pnpm pm2 logs
+pnpm reload:server && pnpm pm2 logs
 ```
 
 > [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
+
+#### 3. Updating Node
+
+1. Install new Node version
+
+2. Update pm2 to use the new version
+
+```console
+pnpm pm2 update
+```
 
 ## Work on Client Instances
 

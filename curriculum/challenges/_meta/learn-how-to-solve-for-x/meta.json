@@ -1,0 +1,20 @@
+{
+  "name": "Learn How to Solve for X",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-solve-for-x",
+  "order": 1,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    [
+      "6331d23eb51aeedd1a2bd646",
+      "Solving for X"
+    ],
+    [
+      "6331d233b51aeedd1a2bd645",
+      "How to Solve for X: Extra"
+    ]
+  ]
+}

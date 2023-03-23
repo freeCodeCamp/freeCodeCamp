@@ -32,7 +32,7 @@ Replit を使用する場合は、下記の手順でプロジェクトをセッ�
 
 ** 注: **Replit を使用している場合は、`.env` ファイルを作成することはできません。 代わりに、組み込みの <dfn>SECRETS</dfn> タブを使用して変数を追加してください。 <em>SECRETS</em> タブを使用する場合は、値を引用符で<em>囲まないで</em>ください。
 
-完了したら、次の構文を使用してデータベースに接続してください。
+When you are done, connect to the database by calling the `connect` method within your `myApp.js` file by using the following syntax:
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });

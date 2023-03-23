@@ -78,7 +78,7 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 Durante lo sviluppo, la sessione viene memorizzata come cookie. Cancellarli ti farà uscire dal tuo account di sviluppo.
 
-Running `pnpm run seed:certified-user` will log you out, too. Sovrascriverà l'utente di sviluppo nel database locale.
+Ti disconnetterai anche eseguendo `pnpm run seed:certified-user`. Sovrascriverà l'utente di sviluppo nel database locale.
 
 ### Ottenere 404 navigando sulla pagina del profilo
 

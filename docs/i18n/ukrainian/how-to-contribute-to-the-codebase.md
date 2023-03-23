@@ -1,20 +1,20 @@
-Follow these guidelines to contribute to the codebase. This is highly recommended if you want to contribute regularly.
+Дотримуйтесь цих вказівок, щоб зробити внесок до кодової бази. Особливо рекомендовано, якщо ви хочете робити внесок регулярно.
 
-Ignoring these steps may soil your copy which makes the contributing, maintaining, and reviewing processes difficult.
+Ігнорування цих кроків може призвести до того, що ви ускладните свій внесок, обслуговування та перегляд.
 
-## Contributing to the Codebase
+## Внесок до кодової бази
 
-You can now make changes to files and commit your changes to your fork, which you can prepare by reading [how to set up freecodecamp](how-to-setup-freecodecamp-locally.md).
+Тепер ви можете робити зміни у файлах та затверджувати їх, прочитавши [як налаштувати freeCodeCamp](how-to-setup-freecodecamp-locally.md).
 
-Follow these steps:
+Дотримуйтеся цих вказівок:
 
-1. Validate that you are on the `main` branch:
+1. Переконайтесь, що ви на гілці `main`:
 
    ```console
    git status
    ```
 
-   You should get an output like this:
+   Ви повинні отримати такий вивід:
 
    ```console
    On branch main
@@ -23,7 +23,7 @@ Follow these steps:
    nothing to commit, working directory clean
    ```
 
-   If you got different message, then you aren't on main or your working directory isn't clean, resolve any outstanding files/commits and checkout `main`:
+   Якщо ви отримали інше повідомлення, значить ви працюєте десь інше або робочий каталог не очищений. Розв’яжіть питання щодо файлів/комітів та перевірте `main`:
 
    ```console
    git checkout main

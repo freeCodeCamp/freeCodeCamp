@@ -10,13 +10,13 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 Similar a cómo la tilde que aprendimos en el último desafío permite a npm instalar la última PATCH para una dependencia, el caret (`^`) permite a npm instalar futuras actualizaciones también. La diferencia es que el caret permitirá tanto actualizaciones MINOR como PATCHes.
 
-Your current version of `@freecodecamp/example` should be `~1.2.13` which allows npm to install to the latest `1.2.x` version. If you were to use the caret (^) as a version prefix instead, npm would be allowed to update to any `1.x.x` version.
+Su versión actual de `@freecodecamp/example` debería ser `~1.2.13` que permite a npm instalar a la última versión `1.2.x`. Si tuvieras que usar el caret (^) como prefijo de versión, npm podría actualizarse a cualquier versión `1.x.x`.
 
 ```json
 "package": "^1.3.8"
 ```
 
-This would allow updates to any `1.x.x` version of the package.
+Esto permitiría actualizaciones a cualquier versión `1.x.x` del paquete.
 
 # --instructions--
 

@@ -86,6 +86,7 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
 
       const isUpcoming = [
         '2022/javascript-algorithms-and-data-structures',
+        'college-algebra-with-python',
         'the-odin-project'
       ];
 

@@ -4,13 +4,16 @@ import middie from '@fastify/middie';
 import fastifySession from '@fastify/session';
 import fastifyCookie from '@fastify/cookie';
 import MongoStore from 'connect-mongo';
+import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import sessionAuth from './plugins/session-auth';
 import { testRoutes } from './routes/test';
 import { auth0Routes } from './routes/auth0';
-import { dbConnector } from './db';
+import { testValidatedRoutes } from './routes/validation-test';
 import { testMiddleware } from './middleware';
+import prismaPlugin from './db/prisma';
+
 import {
   AUTH0_AUDIENCE,
   AUTH0_DOMAIN,
@@ -20,9 +23,27 @@ import {
   SESSION_SECRET
 } from './utils/env';
 
+const envToLogger = {
+  development: {
+    transport: {
+      target: 'pino-pretty',
+      options: {
+        translateTime: 'HH:MM:ss Z',
+        ignore: 'pid,hostname'
+      }
+    },
+    level: 'debug'
+  },
+  // TODO: is this the right level for production or should we use 'error'?
+  production: { level: 'fatal' },
+  test: false
+};
+
 const fastify = Fastify({
-  logger: { level: NODE_ENV === 'development' ? 'debug' : 'fatal' }
-});
+  logger: envToLogger[NODE_ENV]
+}).withTypeProvider<TypeBoxTypeProvider>();
+
+export type FastifyInstanceWithTypeProvider = typeof fastify;
 
 fastify.get('/', async (_request, _reply) => {
   return { hello: 'world' };
@@ -32,6 +53,8 @@ const start = async () => {
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(middie);
   await fastify.register(fastifyCookie);
+  // @ts-expect-error - @fastify/session's types are not, yet, compatible with
+  // express-session's types
   await fastify.register(fastifySession, {
     secret: SESSION_SECRET,
     rolling: false,
@@ -55,9 +78,11 @@ const start = async () => {
 
   void fastify.use('/test', testMiddleware);
 
-  void fastify.register(dbConnector);
+  void fastify.register(prismaPlugin);
+
   void fastify.register(testRoutes);
   void fastify.register(auth0Routes, { prefix: '/auth0' });
+  void fastify.register(testValidatedRoutes);
 
   try {
     const port = Number(PORT);

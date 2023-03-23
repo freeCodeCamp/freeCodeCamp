@@ -11,7 +11,13 @@ dashedName: word-blanks
 
 Вам надано речення з пропущеними словами: іменниками, дієсловами, прикметниками та прислівниками. Потім ви заповнюєте пропуски словами так, щоб завершене речення мало сенс.
 
-Розгляньте речення «It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**». У цьому реченні відсутні три слова: прикметник, дієслово та прислівник; ми можемо додати вибрані слова, щоб завершити речення. Потім ми можемо присвоїти завершене речення змінній наступним чином:
+Consider this sentence:
+
+```md
+It was really ____, and we ____ ourselves ____.
+```
+
+This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -19,21 +25,21 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 
 # --instructions--
 
-У цьому завданні вам надано іменник, дієслово, прикметник та прислівник. Ви повинні завершити речення, використовуючи слова на власний вибір, а також надані нами.
+In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.
 
-Ви повинні використати оператор конкатенації `+`, щоб побудувати новий рядок, використовуючи надані змінні: `myNoun`, `myAdjective`, `myVerb` та `myAdverb`. Потім ви присвоїте сформований рядок до змінної `wordBlanks`. Ви не повинні змінювати слова, присвоєні зміннім.
+You will need to use the string concatenation operator `+` to build a new string, using the provided variables: `myNoun`, `myAdjective`, `myVerb`, and `myAdverb`. You will then assign the formed string to the `wordBlanks` variable. You should not change the words assigned to the variables.
 
-Вам також потрібно врахувати пропуски у рядку, щоб завершене речення містило пробіли між усіма словами. Результатом повинне бути завершене речення.
+You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.
 
 # --hints--
 
-`wordBlanks` має бути рядком.
+`wordBlanks` should be a string.
 
 ```js
 assert(typeof wordBlanks === 'string');
 ```
 
-Ви не повинні змінювати значення, присвоєні до `myNoun`, `myVerb`, `myAdjective` або `myAdverb`.
+You should not change the values assigned to `myNoun`, `myVerb`, `myAdjective` or `myAdverb`.
 
 ```js
 assert(
@@ -44,7 +50,7 @@ assert(
 );
 ```
 
-Ви не повинні напряму використовувати значення `dog`, `ran`, `big` або `quickly`, щоб створити `wordBlanks`.
+You should not directly use the values `dog`, `ran`, `big`, or `quickly` to create `wordBlanks`.
 
 ```js
 const newCode = removeAssignments(code);
@@ -56,7 +62,7 @@ assert(
 );
 ```
 
-`wordBlanks` має містити всі слова, присвоєні до змінних `myNoun`, `myVerb`, `myAdjective` та `myAdverb`, розділені розділовим знаком (та додаткові слова на ваш вибір).
+`wordBlanks` should contain all of the words assigned to the variables `myNoun`, `myVerb`, `myAdjective` and `myAdverb` separated by non-word characters (and any additional words of your choice).
 
 ```js
 assert(

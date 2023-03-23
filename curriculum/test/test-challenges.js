@@ -42,7 +42,7 @@ const testEvaluator =
 const { getLines } = require('../../utils/get-lines');
 
 const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
-const { challengeSchemaValidator } = require('../schema/challengeSchema');
+const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
