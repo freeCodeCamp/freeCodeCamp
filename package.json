@@ -149,5 +149,13 @@
     "typescript": "4.9.5",
     "webpack-bundle-analyzer": "4.8.0",
     "yargs": "17.7.1"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "react-scrollable-anchor>react": "17",
+        "react-scrollable-anchor>react-dom": "17"
+      }
+    }
   }
 }
