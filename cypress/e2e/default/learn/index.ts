@@ -45,7 +45,7 @@ describe('Learn Landing page (not logged in)', () => {
       const superBlocks = document.querySelectorAll<HTMLAnchorElement>(
         `${challengerSelector.challengeMap} > li > a`
       );
-      expect(superBlocks).to.have.length(14);
+      expect(superBlocks).to.have.length(15);
 
       superBlocks.forEach((superBlock, idx) => {
         expect(superBlock.innerText).to.have.string(superBlockNames[idx]);
