@@ -291,7 +291,6 @@ export const query = graphql`
         instructions
         challengeType
         helpCategory
-        certification
         superBlock
         block
         translationPending

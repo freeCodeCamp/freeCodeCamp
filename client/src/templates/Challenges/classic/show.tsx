@@ -510,7 +510,6 @@ export const query = graphql`
         helpCategory
         videoUrl
         superBlock
-        certification
         translationPending
         forumTopicId
         fields {

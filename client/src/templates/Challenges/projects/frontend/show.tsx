@@ -223,7 +223,6 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
-        certification
         block
         translationPending
         fields {

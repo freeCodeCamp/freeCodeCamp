@@ -370,8 +370,6 @@ export const query = graphql`
   query CodeAllyChallenge($slug: String!) {
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
-        block
-        certification
         challengeType
         description
         fields {
@@ -381,7 +379,6 @@ export const query = graphql`
         id
         instructions
         notes
-        superBlock
         title
         translationPending
         url

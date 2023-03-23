@@ -394,10 +394,8 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
-        certification
         block
         fields {
-          blockName
           slug
         }
         question {
