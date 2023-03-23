@@ -374,7 +374,7 @@ importers:
       gatsby-remark-prismjs: 5.12.0
       gatsby-source-filesystem: 3.15.0
       gatsby-transformer-remark: 4.12.0
-      i18next: 20.6.1
+      i18next: 22.4.13
       jest-environment-jsdom: 29.5.0
       jest-json-schema-extended: 1.0.1
       jquery: 3.6.4
@@ -487,7 +487,7 @@ importers:
       gatsby-remark-prismjs: 5.12.0_prlzojkiwwcxhngpg45vu7s7bm
       gatsby-source-filesystem: 3.15.0_gatsby@3.15.0
       gatsby-transformer-remark: 4.12.0_gatsby@3.15.0
-      i18next: 20.6.1
+      i18next: 22.4.13
       jquery: 3.6.4
       lodash: 4.17.21
       lodash-es: 4.17.21
@@ -507,7 +507,7 @@ importers:
       react-gtm-module: 2.0.11
       react-helmet: 6.1.0_react@16.14.0
       react-hotkeys: 2.0.0_react@16.14.0
-      react-i18next: 11.18.6_q4h3j6mg5zpuu7pmg7l4zeng6i
+      react-i18next: 11.18.6_bx3kjmr3t3xyx7ifgcvmd5vcjm
       react-instantsearch-core: 6.39.0_gjtvagtimr5fxubqnaetkkst2y
       react-instantsearch-dom: 6.39.0_gs3zfk3gapw7ycemojzf55dqlq
       react-monaco-editor: 0.40.0_o6svdx7ptmmnoxx4yhzc5bzi5y
@@ -14554,7 +14554,6 @@ packages:
         optional: true
     dependencies:
       ms: 0.7.1
-    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -19505,8 +19504,8 @@ packages:
     resolution: {integrity: sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==}
     dev: false
 
-  /i18next/20.6.1:
-    resolution: {integrity: sha512-yCMYTMEJ9ihCwEQQ3phLo7I/Pwycf8uAx+sRHwwk5U9Aui/IZYgQRyMqXafQOw5QQ7DM1Z+WyEXWIqSuJHhG2A==}
+  /i18next/22.4.13:
+    resolution: {integrity: sha512-GX7flMHRRqQA0I1yGLmaZ4Hwt1JfLqagk8QPDPZsqekbKtXsuIngSVWM/s3SLgNkrEXjA+0sMGNuOEkkmyqmWg==}
     dependencies:
       '@babel/runtime': 7.21.0
     dev: false
@@ -23989,7 +23988,6 @@ packages:
 
   /ms/0.7.1:
     resolution: {integrity: sha512-lRLiIR9fSNpnP6TC4v8+4OU7oStC01esuNowdQ34L+Gk8e5Puoc88IqJ+XAY/B3Mn2ZKis8l8HX90oU8ivzUHg==}
-    dev: false
 
   /ms/2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
@@ -27198,7 +27196,7 @@ packages:
       react: 16.14.0
     dev: false
 
-  /react-i18next/11.18.6_q4h3j6mg5zpuu7pmg7l4zeng6i:
+  /react-i18next/11.18.6_bx3kjmr3t3xyx7ifgcvmd5vcjm:
     resolution: {integrity: sha512-yHb2F9BiT0lqoQDt8loZ5gWP331GwctHz9tYQ8A2EIEUu+CcEdjBLQWli1USG3RdWQt3W+jqQLg/d4rrQR96LA==}
     peerDependencies:
       i18next: '>= 19.0.0'
@@ -27213,7 +27211,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.0
       html-parse-stringify: 3.0.1
-      i18next: 20.6.1
+      i18next: 22.4.13
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
     dev: false
@@ -29145,7 +29143,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       base: 0.11.2
-      debug: 2.6.9
+      debug: 2.2.0
       define-property: 0.2.5
       extend-shallow: 2.0.1
       map-cache: 0.2.2
