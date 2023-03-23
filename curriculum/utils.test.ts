@@ -153,7 +153,7 @@ describe('getSuperOrder', () => {
     if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
       expect.assertions(15);
     } else {
-      expect.assertions(18);
+      expect.assertions(17);
     }
 
     expect(getSuperOrder(SuperBlocks.RespWebDesignNew)).toBe(0);
@@ -173,9 +173,8 @@ describe('getSuperOrder', () => {
 
     if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
       expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(14);
-      expect(getSuperOrder(SuperBlocks.CollegeAlgebraPy)).toBe(15);
-      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(16);
-      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(17);
+      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(15);
+      expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(16);
     } else {
       expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(14);
     }
