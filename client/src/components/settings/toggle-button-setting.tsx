@@ -4,9 +4,20 @@ import type { ToggleSettingProps } from './toggle-radio-setting';
 import '../helpers/toggle-button.css';
 import './toggle-setting.css';
 
+<<<<<<< HEAD
 const checkIconStyle = {
   height: '1rem',
   width: '1.25rem'
+=======
+type ToggleButtonSettingProps = {
+  action: string;
+  explain?: string;
+  flag: boolean;
+  flagName: string;
+  toggleFlag: () => void;
+  offLabel: string;
+  onLabel: string;
+>>>>>>> a5f3c39064 (fix: remove random id generation)
 };
 
 export default function ToggleButtonSetting({
@@ -16,7 +27,30 @@ export default function ToggleButtonSetting({
   flagName,
   toggleFlag,
   ...restProps
+<<<<<<< HEAD
 }: ToggleSettingProps): JSX.Element {
+=======
+}: ToggleButtonSettingProps): JSX.Element {
+  const firstButtonRef = useRef<HTMLButtonElement>(null);
+  const secondButtonRef = useRef<HTMLButtonElement>(null);
+  const checkIconStyle = {
+    height: '1rem',
+    width: '1.25rem'
+  };
+
+  // Make the buttons the same width
+  useEffect(() => {
+    const firstWidth = firstButtonRef?.current?.offsetWidth;
+    const secondWidth = secondButtonRef?.current?.offsetWidth;
+    if (firstWidth && secondWidth) {
+      const width = Math.max(firstWidth, secondWidth);
+      firstButtonRef.current.style.width = `${width}px`;
+      secondButtonRef.current.style.width = `${width}px`;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+>>>>>>> a5f3c39064 (fix: remove random id generation)
   return (
     <div className='toggle-setting-container'>
       <fieldset
