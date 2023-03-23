@@ -49,9 +49,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "develop": "nodemon index.ts",
-    "start": "NODE_ENV=production node index.ts",
-    "test": "node --test -r ts-node/register **/*.test.ts",
+    "develop": "nodemon server.ts",
+    "start": "NODE_ENV=production node server.js",
+    "test": "jest --force-exit",
     "prisma": "MONGOHQ_URL=mongodb://localhost:27017/freecodecamp?directConnection=true prisma",
     "postinstall": "prisma generate"
   },

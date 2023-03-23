@@ -100,6 +100,13 @@ jobs:
           cp sample.env .env
           cat .env
 
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
+
       - name: Install Dependencies
         run: |
           echo pnpm version $(pnpm -v)
@@ -141,6 +148,13 @@ jobs:
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
           cat .env
 
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
+
       - name: Install Dependencies
         run: |
           echo pnpm version $(pnpm -v)
@@ -181,6 +195,13 @@ jobs:
         run: |
           cp sample.env .env
           cat .env
+
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
 
       - name: Install Dependencies
         env:

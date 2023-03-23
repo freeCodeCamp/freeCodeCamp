@@ -89,6 +89,13 @@ jobs:
           echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.9.0
+        with:
+          mongodb-version: 6.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
+
       - name: Install Dependencies
         run: |
           pnpm install
