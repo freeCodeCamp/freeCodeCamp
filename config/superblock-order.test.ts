@@ -149,6 +149,7 @@ describe("'superBlockOrder' helper functions", () => {
       SuperBlocks.InfoSec,
       SuperBlocks.MachineLearningPy,
       SuperBlocks.CodingInterviewPrep,
+      SuperBlocks.ProjectEuler,
       SuperBlocks.JsAlgoDataStructNew,
       SuperBlocks.CollegeAlgebraPy,
       SuperBlocks.TheOdinProject,
@@ -190,6 +191,7 @@ describe("'superBlockOrder' helper functions", () => {
       SuperBlocks.InfoSec,
       SuperBlocks.MachineLearningPy,
       SuperBlocks.CodingInterviewPrep,
+      SuperBlocks.ProjectEuler,
       SuperBlocks.JsAlgoDataStructNew,
       SuperBlocks.CollegeAlgebraPy,
       SuperBlocks.TheOdinProject

@@ -9,15 +9,15 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Las comillas no son los únicos caracteres que pueden ser <dfn>escapados</dfn> dentro de una cadena. Escape sequences allow you to use characters you may not otherwise be able to use in a string.
+Las comillas no son los únicos caracteres que pueden ser <dfn>escapados</dfn> dentro de una cadena. Las secuencias de escape le permiten utilizar caracteres que de otro modo no podrías usar en una cadena.
 
 <table class='table table-striped'><thead><tr><th>Código</th><th>Resultado</th></tr></thead><tbody><tr><td><code>\'</code></td><td>comilla simple</td></tr><tr><td><code>\"</code></td><td>comilla doble</td></tr><tr><td><code>\\</code></td><td>barra invertida</td></tr><tr><td><code>\n</code></td><td>línea nueva</td></tr><tr><td><code>\t</code></td><td>tabulador</td></tr><tr><td><code>\r</code></td><td>retorno del carro</td></tr><tr><td><code>\b</code></td><td>límite de palabra</td></tr><tr><td><code>\f</code></td><td>fuente de formulario</td></tr></tbody></table>
 
-*Note that the backslash itself must be escaped in order to display as a backslash.*
+*Ten en cuenta que la barra invertida debe escaparse para que aparezca como tal.*
 
 # --instructions--
 
-Assign the following three lines of text into the single variable `myStr` using escape sequences.
+Asigna las siguientes tres líneas de texto a la variable única `myStr` utilizando secuencias de escape.
 
 <pre>
 FirstLine
@@ -25,19 +25,19 @@ FirstLine
 ThirdLine
 </pre>
 
-You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.
+Deberás utilizar secuencias de escape para insertar correctamente caracteres especiales. También tendrás que seguir el espaciado tal y como se ve arriba, sin espacios entre secuencias de escape o palabras.
 
-**Note:** The indentation for `SecondLine` is achieved with the tab escape character, not spaces.
+**Note:** La sangría para `SecondLine` se consigue con el carácter de escape tabulador, no con espacios.
 
 # --hints--
 
-`myStr` should not contain any spaces
+`myStr` no debe contener espacios
 
 ```js
 assert(!/ /.test(myStr));
 ```
 
-`myStr` should contain the strings `FirstLine`, `SecondLine` and `ThirdLine` (remember case sensitivity)
+`myStr` debe contener las cadenas `FirstLine`, `SecondLine` y `ThirdLine` (recuerda distinguir entre mayúsculas y minúsculas)
 
 ```js
 assert(
@@ -45,31 +45,31 @@ assert(
 );
 ```
 
-`FirstLine` should be followed by the newline character `\n`
+`FirstLine` debe ir seguido del carácter de nueva línea `\n`
 
 ```js
 assert(/FirstLine\n/.test(myStr));
 ```
 
-`myStr` should contain a tab character `\t` which follows a newline character
+`myStr` debe contener un carácter de tabulación `\t` que sigue a un carácter de nueva línea
 
 ```js
 assert(/\n\t/.test(myStr));
 ```
 
-`SecondLine` should be preceded by the backslash character `\`
+`SecondLine` debe ir precedido del carácter de barra invertida `\`
 
 ```js
 assert(/\\SecondLine/.test(myStr));
 ```
 
-There should be a newline character between `SecondLine` and `ThirdLine`
+Debe haber un carácter de nueva línea entre `SecondLine` y `ThirdLine`
 
 ```js
 assert(/SecondLine\nThirdLine/.test(myStr));
 ```
 
-`myStr` should only contain characters shown in the instructions
+`myStr` sólo debe contener los caracteres mostrados en las instrucciones
 
 ```js
 assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');
