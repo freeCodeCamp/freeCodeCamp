@@ -206,6 +206,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal);
         }}
+        // @ts-expect-error TODO: fix the ref types.
         innerRef={(c: HTMLElement | null) => (this._container = c)}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}

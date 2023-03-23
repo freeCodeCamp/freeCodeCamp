@@ -161,6 +161,7 @@ class Project extends Component<ProjectProps> {
 
     return (
       <Hotkeys
+        // @ts-expect-error TODO: fix the ref types.
         innerRef={(c: HTMLElement | null) => (this._container = c)}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}

@@ -231,6 +231,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal, assignments);
         }}
+        // @ts-expect-error TODO: fix the ref types.
         innerRef={(c: HTMLElement | null) => (this._container = c)}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
