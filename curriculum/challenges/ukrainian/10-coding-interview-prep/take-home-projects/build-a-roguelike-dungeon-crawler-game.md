@@ -30,7 +30,7 @@ dashedName: build-a-roguelike-dungeon-crawler-game
 
 **Історія користувача:** Гра має бути складною, але залишати шанс на перемогу.
 
-Після виконання завдання, прикріпіть посилання на Ваш проєкт на CodePen і натисніть на кнопку "Я виконав(ла) це завдання".
+Коли закінчите, надайте посилання на свій проєкт на CodePen та натисніть кнопку «Я виконав(-ла) це завдання».
 
 Ви можете отримати фідбек до свого проєкту, поділившись ним на <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">форумі freeCodeCamp</a>.
 
