@@ -218,7 +218,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "Hi,\n\nIt looks like the localization tests have failed. This is normal when there are significant curriculum changes in the English version.\n\nPlease check with the dev-team on [Discord]() or our [forums](https://forum.freecodecamp.org) if this means a Crowdin sync is required to address the scenario. They will confirm and take over helping you through the PR.\n\nThanks for your understanding and contribution."
+              body: "Hi,\n\nIt looks like the localization tests have failed. This is normal when there are significant curriculum changes in the English version.\n\nPlease check with the dev-team on [Discord](https://discord.gg/KVUmVXA) or our [forums](https://forum.freecodecamp.org) if this means a Crowdin sync is required to address the scenario. They will confirm and take over helping you through the PR.\n\nThanks for your understanding and contribution."
             })
           } else if (isDev.status === 200) {
             core.setFailed('This PR appears to touch translated curriculum files, but since you are on the dev team there is no message.');
