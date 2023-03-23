@@ -55,7 +55,7 @@ To run tests against production builds, replace `dev` with `prd` below.
 
 If starting the GitPod environment did not automatically develop the environment:
 
-- Follow their installment guide in [here](https://www.mongodb.com/basics/get-started).
+- Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
 - Create a config file.
 
 ```console
