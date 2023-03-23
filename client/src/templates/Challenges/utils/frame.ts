@@ -1,20 +1,10 @@
 import { toString, flow } from 'lodash-es';
-import i18next, { i18n } from 'i18next';
+import i18next, { type i18n } from 'i18next';
+
 import { format } from '../../../utils/format';
+import type { FrameDocument } from '../../../../../tools/client-plugins/browser-scripts';
 
 const utilsFormat: <T>(x: T) => string = format;
-
-declare global {
-  interface Window {
-    console: {
-      log: () => void;
-      info: () => void;
-      warn: () => void;
-      error: () => void;
-    };
-    i18nContent: i18n;
-  }
-}
 
 export interface Source {
   index: string;
@@ -24,8 +14,8 @@ export interface Source {
 }
 
 export interface Context {
-  window: Window;
-  document: Document;
+  window?: Window & typeof globalThis & { i18nContent?: i18n };
+  document?: FrameDocument;
   element: HTMLIFrameElement;
   build: string;
   sources: Source;
@@ -144,9 +134,10 @@ export const runTestInTestFrame = async function (
   test: string,
   timeout: number
 ): Promise<TestResult | undefined> {
-  const { contentDocument: frame } = document.getElementById(
+  const { contentDocument } = document.getElementById(
     testId
   ) as HTMLIFrameElement;
+  const frame = contentDocument as FrameDocument;
   if (frame !== null) {
     return await Promise.race([
       new Promise<
@@ -257,7 +248,7 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
       // provide the file name and get the original source
       const getUserInput = (fileName: string) =>
         toString(sources[fileName as keyof typeof sources]);
-      await frameContext.document.__initTestFrame({
+      await frameContext.document?.__initTestFrame({
         code: sources,
         getUserInput,
         loadEnzyme
@@ -278,20 +269,22 @@ const initMainFrame =
         // after the frame is ready. It has to be overwritten, as proxyLogger cannot
         // be added as part of createHeader.
 
-        frameContext.window.onerror = function (msg) {
-          if (typeof msg === 'string') {
-            const string = msg.toLowerCase();
-            if (string.includes('script error')) {
-              msg = 'Error, open your browser console to learn more.';
+        if (frameContext.window) {
+          frameContext.window.onerror = function (msg) {
+            if (typeof msg === 'string') {
+              const string = msg.toLowerCase();
+              if (string.includes('script error')) {
+                msg = 'Error, open your browser console to learn more.';
+              }
+              if (proxyLogger) {
+                proxyLogger(msg);
+              }
             }
-            if (proxyLogger) {
-              proxyLogger(msg);
-            }
-          }
-          // let the error propagate so it appears in the browser console, otherwise
-          // an error from a cross origin script just appears as 'Script error.'
-          return false;
-        };
+            // let the error propagate so it appears in the browser console, otherwise
+            // an error from a cross origin script just appears as 'Script error.'
+            return false;
+          };
+        }
       })
       .catch(handleDocumentNotFound);
     return frameContext;
@@ -317,7 +310,7 @@ const waitForFrame = (frameContext: Context) => {
   });
 };
 
-function writeToFrame(content: string, frame: Document | null) {
+function writeToFrame(content: string, frame?: FrameDocument) {
   // it's possible, if the preview is rapidly opened and closed, for the frame
   // to be null at this point.
   if (frame) {

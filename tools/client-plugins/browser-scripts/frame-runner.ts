@@ -1,35 +1,13 @@
 import jQuery from 'jquery';
 import * as helpers from '@freecodecamp/curriculum-helpers';
 
-declare global {
-  interface Window {
-    $: JQueryStatic;
-  }
-  interface Document {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    __initTestFrame: (e: InitTestFrameArg) => Promise<void>;
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    __runTest: (
-      testString: string
-    ) => Promise<
-      { pass: boolean } | { err: { message: string; stack?: string } }
-    >;
-  }
-}
+import type { FrameDocument, FrameWindow, InitTestFrameArg } from '.';
 
-window.$ = jQuery;
+(window as FrameWindow).$ = jQuery;
 
-document.__initTestFrame = initTestFrame;
+const frameDocument = document as FrameDocument;
 
-interface InitTestFrameArg {
-  code: {
-    contents?: string;
-    editableContents?: string;
-    original?: { [id: string]: string };
-  };
-  getUserInput?: (fileName: string) => string;
-  loadEnzyme?: () => void;
-}
+frameDocument.__initTestFrame = initTestFrame;
 
 async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   const code = (e.code.contents || '').slice();
@@ -44,12 +22,12 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   // __testEditable allows test authors to run tests against a transitory dom
   // element built using only the code in the editable region.
   const __testEditable = (cb: () => () => unknown) => {
-    const div = document.createElement('div');
+    const div = frameDocument.createElement('div');
     div.id = 'editable-only';
     div.innerHTML = editableContents;
-    document.body.appendChild(div);
+    frameDocument.body.appendChild(div);
     const out = cb();
-    document.body.removeChild(div);
+    frameDocument.body.removeChild(div);
     return out;
   };
 
@@ -100,7 +78,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     /* eslint-enable prefer-const */
   }
 
-  document.__runTest = async function runTests(testString: string) {
+  frameDocument.__runTest = async function runTests(testString: string) {
     // uncomment the following line to inspect
     // the frame-runner as it runs tests
     // make sure the dev tools console is open
@@ -111,7 +89,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
       // i.e. function() { assert(true, 'happy coding'); }
       const testPromise = new Promise((resolve, reject) =>
         // To avoid race conditions, we have to run the test in a final
-        // document ready:
+        // frameDocument ready:
         $(() => {
           try {
             const test: unknown = eval(testString);

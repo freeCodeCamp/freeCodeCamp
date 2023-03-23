@@ -70,6 +70,7 @@
           "./api/tsconfig.json",
           "./config/tsconfig.json",
           "./tools/ui-components/tsconfig.json",
+          "./tools/client-plugins/browser-scripts/tsconfig.json",
           "./utils/tsconfig.json",
           "./web/tsconfig.json",
           "./curriculum-server/tsconfig.json",

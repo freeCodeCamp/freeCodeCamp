@@ -1,7 +1,7 @@
 import chai from 'chai';
 import { toString as __toString } from 'lodash-es';
 import * as helpers from '@freecodecamp/curriculum-helpers';
-import { format as __format } from '../../utils/format';
+import { format as __format } from './utils/format';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
   typeof globalThis;
