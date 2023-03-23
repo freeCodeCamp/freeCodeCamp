@@ -34,6 +34,7 @@ export enum SuperBlocks {
   MachineLearningPy = 'machine-learning-with-python',
   CodingInterviewPrep = 'coding-interview-prep',
   TheOdinProject = 'the-odin-project',
+  ProjectEuler = 'project-euler',
   CollegeAlgebraPy = 'college-algebra-with-python'
 }
 
