@@ -327,7 +327,10 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [SuperBlocks.CollegeAlgebraPy, SuperBlocks.ProjectEuler],
+        [SuperBlockStates.Current]: [
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.ProjectEuler
+        ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
@@ -373,7 +376,10 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.Legacy]: [SuperBlocks.RespWebDesign]
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [SuperBlocks.CollegeAlgebraPy, SuperBlocks.ProjectEuler],
+        [SuperBlockStates.Current]: [
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.ProjectEuler
+        ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
@@ -469,7 +475,10 @@ export const superBlockOrder: SuperBlockOrder = {
         [SuperBlockStates.Legacy]: []
       },
       [TranslationStates.NotAudited]: {
-        [SuperBlockStates.Current]: [SuperBlocks.CollegeAlgebraPy, SuperBlocks.ProjectEuler],
+        [SuperBlockStates.Current]: [
+          SuperBlocks.CollegeAlgebraPy,
+          SuperBlocks.ProjectEuler
+        ],
         [SuperBlockStates.New]: [],
         [SuperBlockStates.Upcoming]: [
           SuperBlocks.JsAlgoDataStructNew,
