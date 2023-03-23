@@ -22,7 +22,9 @@ import {
   NODE_ENV,
   PORT,
   MONGOHQ_URL,
-  SESSION_SECRET
+  SESSION_SECRET,
+  FCC_ENABLE_SWAGGER_UI,
+  API_LOCATION
 } from './utils/env';
 
 const envToLogger = {
@@ -69,7 +71,7 @@ const start = async () => {
   });
 
   // Swagger plugin
-  if (NODE_ENV === 'development') {
+  if (FCC_ENABLE_SWAGGER_UI) {
     void fastify.register(fastifySwagger, {
       openapi: {
         info: {
@@ -89,6 +91,7 @@ const start = async () => {
       }
     });
     void fastify.register(fastifySwaggerUI);
+    fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
   // Auth0 plugin
