@@ -1,6 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 
+/* This can be used to create NGINX redirects, after running this function somewhere
+   build-curriculum.ts, it should be generated and visible in the file tree.
+*/
+
 export function createRedirectMap(): void {
   const basePath = '../../../curriculum/challenges/english/18-project-euler';
   const directories = fs.readdirSync(path.resolve(__dirname, basePath));
