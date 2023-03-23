@@ -32,7 +32,7 @@ dashedName: install-and-set-up-mongoose
 
 **Примітка:** якщо ви використовуєте Replit, ви не можете створити файл `.env`. Замість цього використайте вбудовану вкладку <dfn>SECRETS</dfn> для додавання змінної. <em>Не</em> беріть значення в лапки під час використання вкладки <em>SECRETS</em>.
 
-When you are done, connect to the database by calling the `connect` method within your `myApp.js` file by using the following syntax:
+Коли закінчите, приєднайтесь до бази даних, викликавши метод `connect` в межах файлу `myApp.js`, використавши наступний синтаксис:
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });

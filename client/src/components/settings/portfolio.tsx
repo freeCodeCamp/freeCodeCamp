@@ -11,6 +11,7 @@ import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
+import { PortfolioProjectData } from '../../redux/prop-types';
 
 import { hasProtocolRE } from '../../utils';
 
@@ -18,28 +19,20 @@ import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
 
-type PortfolioItem = {
-  id: string;
-  description: string;
-  image: string;
-  title: string;
-  url: string;
-};
-
 type PortfolioProps = {
   picture?: string;
-  portfolio: PortfolioItem[];
+  portfolio: PortfolioProjectData[];
   t: TFunction;
-  updatePortfolio: (obj: { portfolio: PortfolioItem[] }) => void;
+  updatePortfolio: (obj: { portfolio: PortfolioProjectData[] }) => void;
   username?: string;
 };
 
 type PortfolioState = {
-  portfolio: PortfolioItem[];
+  portfolio: PortfolioProjectData[];
   unsavedItemId: string | null;
 };
 
-function createEmptyPortfolioItem(): PortfolioItem {
+function createEmptyPortfolioItem(): PortfolioProjectData {
   return {
     id: nanoid(),
     title: '',
@@ -50,7 +43,7 @@ function createEmptyPortfolioItem(): PortfolioItem {
 }
 
 function createFindById(id: string) {
-  return (p: PortfolioItem) => p.id === id;
+  return (p: PortfolioProjectData) => p.id === id;
 }
 
 class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
@@ -178,7 +171,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       : { state: 'warning', message: t('validation.use-valid-url') };
   }
 
-  formCorrect(portfolio: PortfolioItem) {
+  formCorrect(portfolio: PortfolioProjectData) {
     const { id, title, description, url, image } = portfolio;
 
     const { state: titleState, message: titleMessage } =
@@ -229,9 +222,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
   }
 
   renderPortfolio = (
-    portfolio: PortfolioItem,
+    portfolio: PortfolioProjectData,
     index: number,
-    arr: PortfolioItem[]
+    arr: PortfolioProjectData[]
   ) => {
     const { t } = this.props;
     const { id, title, description, url, image } = portfolio;

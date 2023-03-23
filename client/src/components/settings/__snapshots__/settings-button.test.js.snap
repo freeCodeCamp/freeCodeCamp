@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should check certification button consistency 1`] = `
-Array [
+[
   <div
     className="row"
   >
@@ -11,7 +11,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -151,7 +151,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -291,7 +291,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -431,7 +431,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -571,7 +571,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -711,7 +711,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -851,7 +851,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -991,7 +991,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1131,7 +1131,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1271,7 +1271,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1411,7 +1411,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1546,7 +1546,7 @@ Array [
 `;
 
 exports[`should check legacy certification button consistency 1`] = `
-Array [
+[
   <div
     className="row"
   >
@@ -1556,7 +1556,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1776,7 +1776,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -1996,7 +1996,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
@@ -2216,7 +2216,7 @@ Array [
       <div
         className="spacer"
         style={
-          Object {
+          {
             "height": "1px",
             "padding": "15px 0",
           }
