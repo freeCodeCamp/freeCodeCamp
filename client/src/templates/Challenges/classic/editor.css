@@ -175,7 +175,6 @@ textarea.inputarea {
 }
 
 .lower-jaw-icon-bar {
-  overflow: hidden;
   display: flex;
   gap: 10px;
   flex-direction: row;
