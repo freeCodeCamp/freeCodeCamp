@@ -153,7 +153,7 @@
     "@types/lodash-es": "^4.17.6",
     "@types/prismjs": "^1.26.0",
     "@types/react": "17.0.53",
-    "@types/react-dom": "16.9.18",
+    "@types/react-dom": "17.0.19",
     "@types/react-gtm-module": "2.0.1",
     "@types/react-helmet": "6.1.6",
     "@types/react-instantsearch-core": "6.26.3",

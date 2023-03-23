@@ -321,7 +321,7 @@ importers:
       '@types/lodash-es': ^4.17.6
       '@types/prismjs': ^1.26.0
       '@types/react': 17.0.53
-      '@types/react-dom': 16.9.18
+      '@types/react-dom': 17.0.19
       '@types/react-gtm-module': 2.0.1
       '@types/react-helmet': 6.1.6
       '@types/react-instantsearch-core': 6.26.3
@@ -551,7 +551,7 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/prismjs': 1.26.0
       '@types/react': 17.0.53
-      '@types/react-dom': 16.9.18
+      '@types/react-dom': 17.0.19
       '@types/react-gtm-module': 2.0.1
       '@types/react-helmet': 6.1.6
       '@types/react-instantsearch-core': 6.26.3
@@ -9073,7 +9073,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.0
       '@testing-library/dom': 8.20.0
-      '@types/react-dom': 16.9.18
+      '@types/react-dom': 17.0.19
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: true
@@ -9588,6 +9588,13 @@ packages:
     resolution: {integrity: sha512-lmNARUX3+rNF/nmoAFqasG0jAA7q6MeGZK/fdeLwY3kAA4NPgHHrG5bNQe2B5xmD4B+x6Z6h0rEJQ7MEEgQxsw==}
     dependencies:
       '@types/react': 16.14.35
+    dev: false
+
+  /@types/react-dom/17.0.19:
+    resolution: {integrity: sha512-PiYG40pnQRdPHnlf7tZnp0aQ6q9tspYr72vD61saO6zFCybLfMqwUCN0va1/P+86DXn18ZWeW30Bk7xlC5eEAQ==}
+    dependencies:
+      '@types/react': 17.0.53
+    dev: true
 
   /@types/react-gtm-module/2.0.1:
     resolution: {integrity: sha512-T/DN9gAbCYk5wJ1nxf4pSwmXz4d1iVjM++OoG+mwMfz9STMAotGjSb65gJHOS5bPvl6vLSsJnuC+y/43OQrltg==}
@@ -14596,6 +14603,7 @@ packages:
         optional: true
     dependencies:
       ms: 0.7.1
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -24005,6 +24013,7 @@ packages:
 
   /ms/0.7.1:
     resolution: {integrity: sha512-lRLiIR9fSNpnP6TC4v8+4OU7oStC01esuNowdQ34L+Gk8e5Puoc88IqJ+XAY/B3Mn2ZKis8l8HX90oU8ivzUHg==}
+    dev: false
 
   /ms/2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
@@ -29215,7 +29224,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       base: 0.11.2
-      debug: 2.2.0
+      debug: 2.6.9
       define-property: 0.2.5
       extend-shallow: 2.0.1
       map-cache: 0.2.2
