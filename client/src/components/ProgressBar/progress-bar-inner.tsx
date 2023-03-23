@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import BezierEasing from 'bezier-easing';
 
 interface ProgressBarInnerProps {
@@ -53,19 +53,17 @@ function ProgressBarInner({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [completedPercent]);
 
-  const progressBarInnerWrap = document.querySelector(
-    '.progress-bar-wrap'
-  ) as HTMLElement;
+  const progressBarInnerWrap = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (progressBarInnerWrap)
-      setProgressBarInnerWidth(progressBarInnerWrap.offsetWidth);
+    if (progressBarInnerWrap.current)
+      setProgressBarInnerWidth(progressBarInnerWrap.current.offsetWidth);
   }, [progressBarInnerWrap]);
 
   return (
     <>
       <div className='completion-block-name'>{title}</div>
-      <div className='progress-bar-wrap' aria-hidden='true'>
+      <div className='progress-bar-wrap' aria-hidden='true' ref={progressBarInnerWrap}>
         <div className='progress-bar-background'></div>
         <div
           className='progress-bar-percent'

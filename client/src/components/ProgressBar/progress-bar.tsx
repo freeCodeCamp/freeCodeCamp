@@ -55,9 +55,11 @@ function ProgressBar({
 }: ProgressBarProps): JSX.Element {
   const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
   const isCertificationProject = certMap.some(cert => {
-    // @ts-expect-error If `projects` does not exist, no consequences
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-    return cert.projects?.some((project: { id: string }) => project.id === id);
+    if ('projects' in cert) {
+      return cert.projects.some(
+        (project: { id: string }) => project.id === id
+      );
+    }
   });
 
   const totalChallengesInBlock = currentBlockIds?.length ?? 0;
