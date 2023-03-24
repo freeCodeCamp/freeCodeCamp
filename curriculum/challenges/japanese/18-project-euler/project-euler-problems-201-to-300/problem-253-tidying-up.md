@@ -17,25 +17,25 @@ As the caterpillar is built up in this way, it forms distinct segments that grad
 For example:
 
 | Piece Placed | Segments So Far |
-| -------------|-----------------|
-|       12     |        1        |
-|        4     |        2        |
-|       29     |        3        |
-|        6     |        4        |
-|       34     |        5        |
-|        5     |        4        |
-|       35     |        4        |
-|       …      |        …        |
+| ------------ | --------------- |
+| 12           | 1               |
+| 4            | 2               |
+| 29           | 3               |
+| 6            | 4               |
+| 34           | 5               |
+| 5            | 4               |
+| 35           | 4               |
+| …            | …               |
 
 Let $M$ be the maximum number of segments encountered during a random tidy-up of the caterpillar. For a caterpillar of ten pieces, the number of possibilities for each $M$ is
 
 | M | Possibilities |
-|---|---------------|
-| 1 |      512      |
-| 2 |     250912    |
-| 3 |    1815264    |
-| 4 |    1418112    |
-| 5 |     144000    |
+| - | ------------- |
+| 1 | 512           |
+| 2 | 250912        |
+| 3 | 1815264       |
+| 4 | 1418112       |
+| 5 | 144000        |
 
 so the most likely value of $M$ is 3 and the average value is $\frac{385\\,643}{113\\,400} = 3.400732$, rounded to six decimal places.
 

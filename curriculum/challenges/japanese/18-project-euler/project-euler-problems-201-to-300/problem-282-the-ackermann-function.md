@@ -10,12 +10,8 @@ dashedName: problem-282-the-ackermann-function
 
 For non-negative integers $m$, $n$, the Ackermann function $A(m, n)$ is defined as follows:
 
-$$A(m, n) =
-\begin{cases}
-n + 1                 & \text{if $m = 0$}             \\\\
-A(m - 1, 1)           & \text{if $m > 0$ and $n = 0$} \\\\
-A(m - 1, A(m, n - 1)) & \text{if $m > 0$ and $n > 0$}
-\end{cases}$$
+$$A(m, n) = \begin{cases} n + 1                 & \text{if $m = 0$}             \\\\
+A(m - 1, 1)           & \text{if $m > 0$ and $n = 0$} \\\\ A(m - 1, A(m, n - 1)) & \text{if $m > 0$ and $n > 0$} \end{cases}$$
 
 For example $A(1, 0) = 2$, $A(2, 2) = 7$ and $A(3, 4) = 125$.
 

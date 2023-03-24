@@ -10,17 +10,13 @@ dashedName: problem-443-gcd-sequence
 
 Let $g(n)$ be a sequence defined as follows:
 
-$$\begin{align}
-  & g(4) = 13, \\\\
-  & g(n) = g(n-1) + gcd(n, g(n - 1)) \text{ for } n > 4.
-\end{align}$$
+$$\begin{align}   & g(4) = 13, \\\\
+  & g(n) = g(n-1) + gcd(n, g(n - 1)) \text{ for } n > 4. \end{align}$$
 
 The first few values are:
 
-$$\begin{array}{l}
-  n    & 4  & 5  & 6  & 7  & 8  & 9  & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & \ldots \\\\
-  g(n) & 13 & 14 & 16 & 17 & 18 & 27 & 28 & 29 & 30 & 31 & 32 & 33 & 34 & 51 & 54 & 55 & 60 & \ldots
-\end{array}$$
+$$\begin{array}{l}   n    & 4  & 5  & 6  & 7  & 8  & 9  & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & \ldots \\\\
+  g(n) & 13 & 14 & 16 & 17 & 18 & 27 & 28 & 29 & 30 & 31 & 32 & 33 & 34 & 51 & 54 & 55 & 60 & \ldots \end{array}$$
 
 You are given that $g(1\\,000) = 2\\,524$ and $g(1\\,000\\,000) = 2\\,624\\,152$.
 
