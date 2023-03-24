@@ -788,8 +788,8 @@
           "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
         ]
       },
-      "build-a-multi-function-calculator": {
-        "title": "Build a Multi-Function Calculator",
+      "build-a-multi-function-calculator-project": {
+        "title": "Multi-Function Calculator",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a multi-function calculator."
@@ -819,8 +819,8 @@
           "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
         ]
       },
-      "build-a-graphing-calculator": {
-        "title": "Build a Graphing Calculator",
+      "build-a-graphing-calculator-project": {
+        "title": "Graphing Calculator",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a graphing calculator."
@@ -832,8 +832,8 @@
           "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
         ]
       },
-      "build-three-math-games": {
-        "title": "Build Three Math Games",
+      "build-three-math-games-project": {
+        "title": "Three Math Games",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build three math games."
@@ -857,8 +857,8 @@
           "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
         ]
       },
-      "build-a-financial-calculator": {
-        "title": "Build a Financial Calculator",
+      "build-a-financial-calculator-project": {
+        "title": "Financial Calculator",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a financial calculator."
@@ -870,8 +870,8 @@
           "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
         ]
       },
-      "build-a-data-graph-explorer": {
-        "title": "Build a Data Graph Explorer",
+      "build-a-data-graph-explorer-project": {
+        "title": "Data Graph Explorer",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a data graph explorer."
@@ -885,7 +885,7 @@
       "如果你正在尋找免費的編程訓練來幫你爲下一個工作面試做準備，我們已經幫你準備好了。",
       "這一部分包含了大量編程挑戰，可以測試你的算法、數據結構和數學知識。這裏還有一些你可以在家慢慢做的項目，用於提升你的技術，或者豐富你的作品集。"
     ],
-    "note": "",
+    "note": "The Project Euler Project has been moved to it's own course. Go back to curriculum to see the list of courses we offer.",
     "blocks": {
       "algorithms": {
         "title": "算法",
@@ -915,13 +915,6 @@
           "這些挑戰可能很困難，但是它們會將進一步提升你的算法邏輯。",
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>屬性：Rosetta 代碼</a>"
         ]
-      },
-      "project-euler": {
-        "title": "歐拉計劃",
-        "intro": [
-          "完成下方來自歐拉計劃的編程挑戰，這將強化你的算法和數學知識。",
-          "這些問題的難度很大，對於許多人來說，這是一個歸納性學習的過程。也就是說，通過解決一個問題，你將接觸到一個新概念，然後你可以解決自己以前無法解決的問題。你能完成全部挑戰嗎？"
-        ]
       }
     }
   },
@@ -940,6 +933,45 @@
       "top-build-a-recipe-project": {
         "title": "通過搭建食譜頁面學習 HTML 基礎",
         "intro": ["詳細描述待確定"]
+      }
+    }
+  },
+  "project-euler": {
+    "title": "Project Euler",
+    "intro": [
+      "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
+      "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+    ],
+    "blocks": {
+      "project-euler-problems-1-to-100": {
+        "title": "Project Euler Problems 1 to 100",
+        "intro": [
+          "In this first set of challenges, you will use mathematical concepts like the Fibonacci sequence, prime number theory, and combinatorics to write efficient algorithms to solve these problems."
+        ]
+      },
+      "project-euler-problems-101-to-200": {
+        "title": "Project Euler Problems 101 to 200",
+        "intro": [
+          "In this set of challenges, you'll build upon the skills you learned in the first part of the course and use more advanced concepts like vector computation, Pascal's pyramid, and the RSA algorithm to solve these problems efficiently."
+        ]
+      },
+      "project-euler-problems-201-to-300": {
+        "title": "Project Euler Problems 201 to 300",
+        "intro": [
+          "In this set of challenges, you'll continue to build upon the skills you learned earlier and use concepts like the binomial theorem, Hamming numbers, and the Collatz sequence to further develop your math and problem solving skills."
+        ]
+      },
+      "project-euler-problems-301-to-400": {
+        "title": "Project Euler Problems 301 to 400",
+        "intro": [
+          "Here you will continue to flex your mathematical and algorithmic skills as you use concepts such as combinatorial game theory, bitwise operations, and Golomb's self-describing sequence to develop efficient solutions to these problems."
+        ]
+      },
+      "project-euler-problems-401-to-480": {
+        "title": "Project Euler Problems 401 to 480",
+        "intro": [
+          "In this final set of challenges, you will need draw upon everything you learned up to this point and use advanced concepts like unitary divisors, the Kaprekar routine, and much more to solve these complex problems."
+        ]
       }
     }
   },
