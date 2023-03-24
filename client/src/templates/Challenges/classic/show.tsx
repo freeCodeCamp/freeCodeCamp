@@ -372,7 +372,6 @@ function ShowClassic({
   }: RenderEditorArgs) => {
     return (
       reduxChallengeFiles && (
-        // here lies the type issue
         <MultifileEditor
           challengeFiles={reduxChallengeFiles}
           containerRef={containerRef}

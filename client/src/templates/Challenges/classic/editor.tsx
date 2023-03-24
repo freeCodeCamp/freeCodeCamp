@@ -82,8 +82,8 @@ export interface EditorProps {
   ext?: Ext;
   fileKey: FileKey;
   canFocusOnMountRef: MutableRefObject<boolean>;
-  initialEditorContent: string;
-  initialExt: string;
+  initialEditorContent?: string;
+  initialExt?: string;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isMobileLayout: boolean;

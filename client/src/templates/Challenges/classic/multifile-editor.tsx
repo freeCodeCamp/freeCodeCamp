@@ -31,13 +31,14 @@ export type MultifileEditorProps = Pick<
   | 'initialTests'
   | 'editorRef'
   | 'containerRef'
-  | 'ext'
-  | 'canFocus'
   | 'challengeFiles'
-  | 'contents'
   | 'description'
-  | 'initialEditorContent'
+  // This types aren't passed in show.tsx, properly through redux.
+  // ToDo: find where how they're passed, and remove the props below
   | 'initialExt'
+  | 'initialEditorContent'
+  | 'contents'
+  | 'ext'
 > & {
   visibleEditors: {
     indexhtml?: boolean;
