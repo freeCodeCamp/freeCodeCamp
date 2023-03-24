@@ -12,6 +12,8 @@ import fastifySession from '@fastify/session';
 import fastifyCookie from '@fastify/cookie';
 import MongoStore from 'connect-mongo';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
+import fastifySwagger from '@fastify/swagger';
+import fastifySwaggerUI from '@fastify/swagger-ui';
 
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import sessionAuth from './plugins/session-auth';
@@ -26,7 +28,9 @@ import {
   AUTH0_DOMAIN,
   NODE_ENV,
   MONGOHQ_URL,
-  SESSION_SECRET
+  SESSION_SECRET,
+  FCC_ENABLE_SWAGGER_UI,
+  API_LOCATION
 } from './utils/env';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
@@ -62,6 +66,30 @@ export const build = async (
       mongoUrl: MONGOHQ_URL
     })
   });
+
+  // Swagger plugin
+  if (FCC_ENABLE_SWAGGER_UI) {
+    void fastify.register(fastifySwagger, {
+      openapi: {
+        info: {
+          title: 'freeCodeCamp API',
+          version: '1.0.0' // API version
+        },
+        components: {
+          securitySchemes: {
+            session: {
+              type: 'apiKey',
+              name: 'sessionId',
+              in: 'cookie'
+            }
+          }
+        },
+        security: [{ session: [] }]
+      }
+    });
+    void fastify.register(fastifySwaggerUI);
+    fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
+  }
 
   // Auth0 plugin
   void fastify.register(fastifyAuth0, {

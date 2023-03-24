@@ -54,10 +54,11 @@ Para executar testes usando compilações de produção, substitua `dev` por `pr
 
 Se o ambiente GitPod não foi criado automaticamente:
 
-- Inicie a base de dados
+- Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
+- Create a config file.
 
 ```console
-mongod
+pnpm run create:config
 ```
 
 - Crie a base de dados

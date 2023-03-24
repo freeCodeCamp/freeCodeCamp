@@ -116,6 +116,8 @@ importers:
       '@fastify/cookie': ^8.3.0
       '@fastify/middie': '8.1'
       '@fastify/session': ^10.1.1
+      '@fastify/swagger': ^8.3.1
+      '@fastify/swagger-ui': ^1.5.0
       '@fastify/type-provider-typebox': 2.4.0
       '@prisma/client': 4.11.0
       '@sinclair/typebox': 0.25.24
@@ -135,6 +137,8 @@ importers:
       '@fastify/cookie': 8.3.0
       '@fastify/middie': 8.1.0
       '@fastify/session': 10.1.1
+      '@fastify/swagger': 8.3.1
+      '@fastify/swagger-ui': 1.5.0
       '@prisma/client': 4.11.0_prisma@4.11.0
       '@sinclair/typebox': 0.25.24
       connect-mongo: 4.6.0_lw7oj3533zfvrhxigrep3g2fam
@@ -5667,6 +5671,11 @@ packages:
     resolution: {integrity: sha512-JXdzbRiWclLVoD8sNUjR443VVlYqiYmDVT6rGUEIEHU5YJW0gaVZwV2xgM7D4arkvASqD0IlLUVjHiFuxaftRw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
+  /@fastify/accept-negotiator/1.1.0:
+    resolution: {integrity: sha512-OIHZrb2ImZ7XG85HXOONLcJWGosv7sIvM2ifAPQVhg9Lv7qdmMBNVaai4QTdyuaqbKM5eO6sLSQOYI7wEQeCJQ==}
+    engines: {node: '>=14'}
+    dev: false
+
   /@fastify/ajv-compiler/3.5.0:
     resolution: {integrity: sha512-ebbEtlI7dxXF5ziNdr05mOY8NnDiPB1XvAlLHctRt/Rc+C3LCOVW5imUVX+mhvUhnNzmPBHewUkOFgGlCxgdAA==}
     dependencies:
@@ -5710,11 +5719,55 @@ packages:
       reusify: 1.0.4
     dev: false
 
+  /@fastify/send/2.0.1:
+    resolution: {integrity: sha512-8jdouu0o5d0FMq1+zCKeKXc1tmOQ5tTGYdQP3MpyF9+WWrZT1KCBdh6hvoEYxOm3oJG/akdE9BpehLiJgYRvGw==}
+    dependencies:
+      '@lukeed/ms': 2.0.1
+      escape-html: 1.0.3
+      fast-decode-uri-component: 1.0.1
+      http-errors: 2.0.0
+      mime: 3.0.0
+    dev: false
+
   /@fastify/session/10.1.1:
     resolution: {integrity: sha512-8pKDTL9MuqU1FCTca6XNd1E4quZ/ipik69AHXqkANia9Z4xPFS5OSKIwmCClIdaMYD32/tPu4G/6wGgK5Buj5g==}
     dependencies:
       fastify-plugin: 4.5.0
       safe-stable-stringify: 2.4.2
+    dev: false
+
+  /@fastify/static/6.9.0:
+    resolution: {integrity: sha512-9SBVNJi2+KTnfiW1WjiVXDsmUxliNI54OF1eOiaop264dh8FwXSuLmO62JXvx7+VD0vQXEqsyRbFCYUJ9aJxng==}
+    dependencies:
+      '@fastify/accept-negotiator': 1.1.0
+      '@fastify/send': 2.0.1
+      content-disposition: 0.5.4
+      fastify-plugin: 4.5.0
+      glob: 8.1.0
+      p-limit: 3.1.0
+      readable-stream: 4.3.0
+    dev: false
+
+  /@fastify/swagger-ui/1.5.0:
+    resolution: {integrity: sha512-wumG3RcYhhRpn0wjPMqOC96WNRVAj2lA4V4yDLqwC/hzwIinXzfuwSma+uAe2DhqoHHirk/dAannupsycrp1PA==}
+    dependencies:
+      '@fastify/static': 6.9.0
+      fastify-plugin: 4.5.0
+      openapi-types: 12.1.0
+      rfdc: 1.3.0
+      yaml: 2.2.1
+    dev: false
+
+  /@fastify/swagger/8.3.1:
+    resolution: {integrity: sha512-S9suS5WlRyADwobkrlcNeICkVyHFxKKdsimRsoO7h27KS86c+pE/s/8WvU793p5Ftk9QnApoilT9izJ0j3I8GA==}
+    dependencies:
+      fastify-plugin: 4.5.0
+      json-schema-resolver: 2.0.0
+      openapi-types: 12.1.0
+      rfdc: 1.3.0
+      yaml: 2.2.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@fastify/type-provider-typebox/2.4.0_naatsb2dmwxq3j32xoqzjtyzqm:
@@ -18527,7 +18580,6 @@ packages:
       inherits: 2.0.4
       minimatch: 5.1.6
       once: 1.4.0
-    dev: true
 
   /global-dirs/2.1.0:
     resolution: {integrity: sha512-MG6kdOUh/xBnyo9cJFeIKkLEc1AyFq42QTU4XiX51i2NEdxLxLWXIjEjmqKeSuKR7pAZjTqUVoT2b2huxVLgYQ==}
@@ -21847,6 +21899,17 @@ packages:
   /json-parse-even-better-errors/2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
 
+  /json-schema-resolver/2.0.0:
+    resolution: {integrity: sha512-pJ4XLQP4Q9HTxl6RVDLJ8Cyh1uitSs0CzDBAz1uoJ4sRD/Bk7cFSXL1FUXDW3zJ7YnfliJx6eu8Jn283bpZ4Yg==}
+    engines: {node: '>=10'}
+    dependencies:
+      debug: 4.3.4
+      rfdc: 1.3.0
+      uri-js: 4.4.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /json-schema-traverse/0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
 
@@ -23598,6 +23661,12 @@ packages:
     engines: {node: '>=4.0.0'}
     hasBin: true
 
+  /mime/3.0.0:
+    resolution: {integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    dev: false
+
   /mimic-fn/2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
@@ -24644,6 +24713,10 @@ packages:
       define-lazy-prop: 2.0.0
       is-docker: 2.2.1
       is-wsl: 2.2.0
+
+  /openapi-types/12.1.0:
+    resolution: {integrity: sha512-XpeCy01X6L5EpP+6Hc3jWN7rMZJ+/k1lwki/kTmWzbVhdPie3jd5O2ZtedEx8Yp58icJ0osVldLMrTB/zslQXA==}
+    dev: false
 
   /opencollective-postinstall/2.0.3:
     resolution: {integrity: sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==}
@@ -32700,7 +32773,6 @@ packages:
   /yaml/2.2.1:
     resolution: {integrity: sha512-e0WHiYql7+9wr4cWMx3TVQrNwejKaEe7/rHNmQmqRjazfOP5W8PB6Jpebb5o6fIapbz9o9+2ipcaTM2ZwDI6lw==}
     engines: {node: '>= 14'}
-    dev: true
 
   /yamljs/0.3.0:
     resolution: {integrity: sha512-C/FsVVhht4iPQYXOInoxUM/1ELSf9EsgKH34FofQOp6hwCPrW4vG4w5++TED3xRUo8gD7l0P1J1dLlDYzODsTQ==}
