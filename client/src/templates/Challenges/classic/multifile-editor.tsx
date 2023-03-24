@@ -39,6 +39,7 @@ export type MultifileEditorProps = Pick<
   | 'initialEditorContent'
   | 'contents'
   | 'ext'
+  | 'dimensions'
 > & {
   visibleEditors: {
     indexhtml?: boolean;
@@ -146,7 +147,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     isUsingKeyboardInTablist={isUsingKeyboardInTablist}
                     resizeProps={resizeProps}
                     contents={props.contents ?? ''}
-                    dimensions={{ height: 0, width: 0 }}
+                    dimensions={props.dimensions ?? { height: 0, width: 0 }}
                     ext={props.ext ?? 'html'}
                     initialEditorContent={props.initialEditorContent ?? ''}
                     initialExt={props.initialExt ?? ''}
