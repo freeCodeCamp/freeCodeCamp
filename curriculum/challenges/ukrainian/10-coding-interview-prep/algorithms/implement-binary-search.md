@@ -1,6 +1,6 @@
 ---
 id: 61abc7ebf3029b56226de5b6
-title: Implement Binary Search
+title: Реалізуйте двійковий пошук
 challengeType: 1
 forumTopicId: 487618
 dashedName: implement-binary-search
