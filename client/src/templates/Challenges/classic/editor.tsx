@@ -28,7 +28,6 @@ import {
 import {
   ChallengeFiles,
   Dimensions,
-  Ext,
   FileKey,
   ResizeProps,
   Test
@@ -78,11 +77,8 @@ export interface EditorProps {
   dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
-  ext?: Ext;
   fileKey: FileKey;
   canFocusOnMountRef: MutableRefObject<boolean>;
-  initialEditorContent?: string;
-  initialExt?: string;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isMobileLayout: boolean;

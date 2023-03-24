@@ -35,9 +35,6 @@ type MultifileEditorProps = Pick<
   | 'description'
   // This types aren't passed in show.tsx, properly through redux.
   // ToDo: find where how they're passed, and remove the props below
-  | 'initialExt'
-  | 'initialEditorContent'
-  | 'ext'
   | 'dimensions'
 > & {
   visibleEditors: {
@@ -146,9 +143,6 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     isUsingKeyboardInTablist={isUsingKeyboardInTablist}
                     resizeProps={resizeProps}
                     dimensions={props.dimensions ?? { height: 0, width: 0 }}
-                    ext={props.ext ?? 'html'}
-                    initialEditorContent={props.initialEditorContent ?? ''}
-                    initialExt={props.initialExt ?? ''}
                     title={title}
                     usesMultifileEditor={usesMultifileEditor}
                     showProjectPreview={showProjectPreview}
