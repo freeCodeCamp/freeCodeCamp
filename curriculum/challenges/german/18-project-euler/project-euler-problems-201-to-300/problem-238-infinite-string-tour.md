@@ -10,10 +10,8 @@ dashedName: problem-238-infinite-string-tour
 
 Create a sequence of numbers using the "Blum Blum Shub" pseudo-random number generator:
 
-$$
-s_0 = 14025256 \\\\
-s_{n + 1} = {s_n}^2 \\; mod \\; 20\\,300\\,713
-$$
+$$ s_0 = 14025256 \\\\
+s_{n + 1} = {s_n}^2 \\; mod \\; 20\\,300\\,713 $$
 
 Concatenate these numbers $s_0s_1s_2\ldots$ to create a string $w$ of infinite length. Then, $w = 14025256741014958470038053646\ldots$
 

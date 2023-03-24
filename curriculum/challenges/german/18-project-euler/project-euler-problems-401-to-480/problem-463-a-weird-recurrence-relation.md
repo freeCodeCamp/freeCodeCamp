@@ -10,13 +10,9 @@ dashedName: problem-463-a-weird-recurrence-relation
 
 The function $f$ is defined for all positive integers as follows:
 
-$$\begin{align}
-  & f(1) = 1 \\\\
-  & f(3) = 3 \\\\
-  & f(2n) = f(n) \\\\
-  & f(4n + 1) = 2f(2n + 1) - f(n) \\\\
-  & f(4n + 3) = 3f(2n + 1) - 2f(n)
-\end{align}$$
+$$\begin{align}   & f(1) = 1 \\\\
+  & f(3) = 3 \\\\   & f(2n) = f(n) \\\\
+  & f(4n + 1) = 2f(2n + 1) - f(n) \\\\ & f(4n + 3) = 3f(2n + 1) - 2f(n) \end{align}$$
 
 The function $S(n)$ is defined as $\sum_{i=1}^{n} f(i)$.
 

@@ -14,13 +14,13 @@ For this problem we shall be concerned with values of $x$ for which $A_G(x)$ is 
 
 The corresponding values of $x$ for the first five natural numbers are shown below.
 
-| $x$                         | $A_G(x)$ |
-|-----------------------------|----------|
+| $x$                           | $A_G(x)$ |
+| ----------------------------- | -------- |
 | $\frac{\sqrt{5} − 1}{4}$    | $1$      |
-| $\frac{2}{5}$               | $2$      |
+| $\frac{2}{5}$                | $2$      |
 | $\frac{\sqrt{22} − 2}{6}$   | $3$      |
 | $\frac{\sqrt{137} − 5}{14}$ | $4$      |
-| $\frac{1}{2}$               | $5$      |
+| $\frac{1}{2}$                | $5$      |
 
 We shall call $A_G(x)$ a golden nugget if $x$ is rational because they become increasingly rarer; for example, the 20th golden nugget is 211345365. Find the sum of the first thirty golden nuggets.
 

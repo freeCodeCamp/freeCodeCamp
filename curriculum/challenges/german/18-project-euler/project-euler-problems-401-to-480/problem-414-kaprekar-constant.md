@@ -16,18 +16,14 @@ This also works with numbers that have less than 4 digits if we pad the number w
 
 E.g. let's start with the number 0837:
 
-$$\begin{align}
-  & 8730 - 0378 = 8352 \\\\
-  & 8532 - 2358 = 6174
-\end{align}$$
+$$\begin{align}   & 8730 - 0378 = 8352 \\\\
+  & 8532 - 2358 = 6174 \end{align}$$
 
 6174 is called the Kaprekar constant. The process of sorting and subtracting and repeating this until either 0 or the Kaprekar constant is reached is called the Kaprekar routine.
 
 We can consider the Kaprekar routine for other bases and number of digits. Unfortunately, it is not guaranteed a Kaprekar constant exists in all cases; either the routine can end up in a cycle for some input numbers or the constant the routine arrives at can be different for different input numbers. However, it can be shown that for 5 digits and a base $b = 6t + 3 ≠ 9$, a Kaprekar constant exists.
 
-E.g.
-base 15: ${(10, 4, 14, 9, 5)}\_{15}$
-base 21: $(14, 6, 20, 13, 7)\_{21}$
+E.g. base 15: ${(10, 4, 14, 9, 5)}\_{15}$ base 21: $(14, 6, 20, 13, 7)\_{21}$
 
 Define $C_b$ to be the Kaprekar constant in base $b$ for 5 digits. Define the function $sb(i)$ to be:
 
