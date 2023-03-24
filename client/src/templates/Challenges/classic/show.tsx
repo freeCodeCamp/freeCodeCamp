@@ -372,12 +372,13 @@ function ShowClassic({
   }: RenderEditorArgs) => {
     return (
       reduxChallengeFiles && (
+        // here lies the type issue
         <MultifileEditor
           challengeFiles={reduxChallengeFiles}
           containerRef={containerRef}
           description={description}
           // Try to remove unknown
-          editorRef={editorRef}
+          {...(editorRef && { editorRef: editorRef })}
           initialTests={tests}
           isMobileLayout={isMobileLayout}
           isUsingKeyboardInTablist={isUsingKeyboardInTablist}

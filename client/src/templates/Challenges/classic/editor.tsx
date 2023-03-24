@@ -68,18 +68,18 @@ import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
-interface EditorProps {
+export interface EditorProps {
   attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
   containerRef: MutableRefObject<HTMLElement | undefined>;
-  contents: string;
+  contents?: string;
   description: string;
-  dimensions: Dimensions;
-  editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
+  dimensions?: Dimensions;
+  editorRef?: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
-  ext: Ext;
+  ext?: Ext;
   fileKey: FileKey;
   canFocusOnMountRef: MutableRefObject<boolean>;
   initialEditorContent: string;
@@ -382,7 +382,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   ) => {
     const { isMobileLayout, isUsingKeyboardInTablist } = props;
     // TODO this should *probably* be set on focus
-    editorRef.current = editor;
+    if (editorRef) editorRef.current = editor;
     dataRef.current.editor = editor;
 
     if (hasEditableRegion()) {
