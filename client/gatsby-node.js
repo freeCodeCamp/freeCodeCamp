@@ -163,6 +163,42 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
           )
         );
 
+        const blocksWithIntros = result.data.allMarkdownRemark.edges
+          .filter(
+            ({ node }) => node.fields.nodeIdentity === 'blockIntroMarkdown'
+          )
+          .map(({ node }) => node.frontmatter.block);
+
+        if (!blocks.every(block => blocksWithIntros.includes(block))) {
+          throw Error(`Not all blocks have intro pages.
+Blocks without intro pages are:
+${blocks.filter(block => !blocksWithIntros.includes(block)).join(', ')}
+To create an intro page for /learn/super-block-name/block-name, create a file at:
+client/src/pages/learn/super-block-name/block-name/index.md
+`);
+        }
+
+        const superblocksWithIntros = result.data.allMarkdownRemark.edges
+          .filter(
+            ({ node }) => node.fields.nodeIdentity === 'superBlockIntroMarkdown'
+          )
+          .map(({ node }) => node.frontmatter.superBlock);
+
+        if (
+          !superBlocks.every(superBlock =>
+            superblocksWithIntros.includes(superBlock)
+          )
+        ) {
+          throw Error(`Not all superBlocks have intro pages.
+SuperBlocks without intro pages are:
+${superBlocks
+  .filter(superBlock => !superblocksWithIntros.includes(superBlock))
+  .join(', ')}
+To create an intro page for /learn/super-block-name, create a file at:
+client/src/pages/learn/super-block-name/index.md.
+`);
+        }
+
         // Create intro pages
         // TODO: Remove allMarkdownRemark (populate from elsewhere)
         result.data.allMarkdownRemark.edges.forEach(edge => {
