@@ -74,10 +74,9 @@ export interface EditorProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   containerRef: MutableRefObject<HTMLElement | undefined>;
-  contents?: string;
   description: string;
   dimensions?: Dimensions;
-  editorRef?: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
+  editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   ext?: Ext;
   fileKey: FileKey;
@@ -382,7 +381,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   ) => {
     const { isMobileLayout, isUsingKeyboardInTablist } = props;
     // TODO this should *probably* be set on focus
-    if (editorRef) editorRef.current = editor;
+    editorRef.current = editor;
     dataRef.current.editor = editor;
 
     if (hasEditableRegion()) {

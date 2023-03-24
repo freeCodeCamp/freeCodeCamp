@@ -377,7 +377,7 @@ function ShowClassic({
           containerRef={containerRef}
           description={description}
           // Try to remove unknown
-          {...(editorRef && { editorRef: editorRef })}
+          editorRef={editorRef}
           initialTests={tests}
           isMobileLayout={isMobileLayout}
           isUsingKeyboardInTablist={isUsingKeyboardInTablist}

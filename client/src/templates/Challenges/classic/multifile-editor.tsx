@@ -20,7 +20,7 @@ import Editor, { type EditorProps } from './editor';
 type VisibleEditors = {
   [key: string]: boolean;
 };
-export type MultifileEditorProps = Pick<
+type MultifileEditorProps = Pick<
   EditorProps,
   | 'usesMultifileEditor'
   | 'showProjectPreview'
@@ -37,7 +37,6 @@ export type MultifileEditorProps = Pick<
   // ToDo: find where how they're passed, and remove the props below
   | 'initialExt'
   | 'initialEditorContent'
-  | 'contents'
   | 'ext'
   | 'dimensions'
 > & {
@@ -146,7 +145,6 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     isMobileLayout={isMobileLayout}
                     isUsingKeyboardInTablist={isUsingKeyboardInTablist}
                     resizeProps={resizeProps}
-                    contents={props.contents ?? ''}
                     dimensions={props.dimensions ?? { height: 0, width: 0 }}
                     ext={props.ext ?? 'html'}
                     initialEditorContent={props.initialEditorContent ?? ''}
