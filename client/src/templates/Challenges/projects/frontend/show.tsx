@@ -14,7 +14,7 @@ import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/challenge-description';
-import Hotkeys from '../../components/hotkeys';
+import Hotkeys, { type HotkeysProps } from '../../components/hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/help-modal';
@@ -65,7 +65,7 @@ interface ProjectProps {
 // Component
 class Project extends Component<ProjectProps> {
   static displayName: string;
-  private _container: HTMLElement | null = null;
+  private _container: HotkeysProps['containerRef'] | undefined;
 
   constructor(props: ProjectProps) {
     super(props);
@@ -89,7 +89,8 @@ class Project extends Component<ProjectProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+    this._container = React.createRef();
+    this._container?.current?.focus();
   }
 
   componentDidUpdate(prevProps: ProjectProps): void {
@@ -162,7 +163,7 @@ class Project extends Component<ProjectProps> {
 
     return (
       <Hotkeys
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        containerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

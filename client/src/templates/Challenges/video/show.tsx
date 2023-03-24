@@ -19,7 +19,7 @@ import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import ChallengeDescription from '../components/challenge-description';
-import Hotkeys from '../components/hotkeys';
+import Hotkeys, { type HotkeysProps } from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
@@ -83,7 +83,7 @@ interface ShowVideoState {
 // Component
 class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
   static displayName: string;
-  private _container: HTMLElement | null | undefined;
+  private _container: HotkeysProps['containerRef'] | undefined;
 
   constructor(props: ShowVideoProps) {
     super(props);
@@ -117,7 +117,8 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+    this._container = React.createRef();
+    this._container?.current?.focus();
   }
 
   componentDidUpdate(prevProps: ShowVideoProps): void {
@@ -213,7 +214,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal);
         }}
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        containerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

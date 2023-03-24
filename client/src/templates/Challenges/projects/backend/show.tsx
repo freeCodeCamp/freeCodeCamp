@@ -21,7 +21,7 @@ import {
   Test
 } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/challenge-description';
-import Hotkeys from '../../components/hotkeys';
+import Hotkeys, { type HotkeysProps } from '../../components/hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/help-modal';
@@ -100,8 +100,7 @@ interface BackEndProps {
 // Component
 class BackEnd extends Component<BackEndProps> {
   static displayName: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private _container: any;
+  private _container: HotkeysProps['containerRef'] | undefined;
   constructor(props: BackEndProps) {
     super(props);
     this.state = {};
@@ -112,7 +111,8 @@ class BackEnd extends Component<BackEndProps> {
   componentDidMount() {
     this.initializeComponent();
     window.addEventListener('resize', () => this.updateDimensions());
-    this._container.focus();
+    this._container = React.createRef();
+    this._container?.current?.focus();
   }
 
   updateDimensions() {
@@ -221,7 +221,7 @@ class BackEnd extends Component<BackEndProps> {
 
     return (
       <Hotkeys
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        containerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

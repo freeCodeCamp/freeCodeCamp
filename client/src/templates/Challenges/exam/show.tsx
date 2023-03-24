@@ -179,6 +179,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     });
     challengeMounted(challengeMeta.id);
 
+    this._container = React.createRef();
     this._container?.current?.focus();
   }
 
@@ -513,7 +514,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       </Container>
     ) : (
       <Hotkeys
-        innerRef={this._container}
+        containerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

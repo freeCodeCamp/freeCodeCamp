@@ -1,7 +1,7 @@
 // Package Utilities
 import { Alert, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import React, { Component, RefObject } from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
@@ -20,7 +20,7 @@ import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';
-import Hotkeys from '../components/hotkeys';
+import Hotkeys, { type HotkeysProps } from '../components/hotkeys';
 import { hideCodeAlly, tryToShowCodeAlly } from '../../../redux/actions';
 import {
   completedChallengesSelector,
@@ -113,7 +113,7 @@ interface ShowCodeAllyProps {
 
 class ShowCodeAlly extends Component<ShowCodeAllyProps> {
   static displayName: string;
-  private _container: RefObject<HTMLElement> | undefined;
+  private _container: HotkeysProps['containerRef'] | undefined;
 
   componentDidMount(): void {
     const {
@@ -133,7 +133,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-
+    this._container = React.createRef();
     this._container?.current?.focus();
   }
 
@@ -237,7 +237,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       challenge => challenge.id === challengeId
     );
     const titleContext = t('learn.github-link');
-
     return showCodeAlly ? (
       <LearnLayout>
         <Helmet title={windowTitle} />
@@ -252,7 +251,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       </LearnLayout>
     ) : (
       <Hotkeys
-        innerRef={this._container}
+        containerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
