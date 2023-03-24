@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Learn More About CSS Pseudo Selectors By Building A Balance Sheet
-block: learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet
+block: Learn More About CSS Pseudo Selectors By Building A Balance Sheet
 superBlock: Responsive Web Design
 ---
 

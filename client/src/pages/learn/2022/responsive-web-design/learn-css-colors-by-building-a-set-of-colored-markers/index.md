@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Learn CSS Colors by Building a Set of Colored Markers Project
-block: learn-css-colors-by-building-a-set-of-colored-markers
+block: Learn CSS Colors by Building a Set of Colored Markers
 superBlock: Responsive Web Design
 ---
 

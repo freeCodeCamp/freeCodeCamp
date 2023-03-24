@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Learn CSS Transforms by Building a Penguin
-block: learn-css-transforms-by-building-a-penguin
+block: Learn CSS Transforms by Building a Penguin
 superBlock: Responsive Web Design
 ---
 
