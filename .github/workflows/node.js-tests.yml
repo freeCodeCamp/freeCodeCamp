@@ -207,19 +207,19 @@ jobs:
       - uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975 # v6
         with:
           github-token: ${{ secrets.CAMPERBOT_NO_TRANSLATE }}
-        script: |
-          const isDev = await github.rest.teams.getMembershipForUserInOrg({
-            org: "freeCodeCamp",
-            team_slug: "dev-team",
-            username: context.payload.pull_request.user.login
-          }).catch(() => ({status: 404}));
-          if (context.payload.pull_request.user.login !== "camperbot" && isDev.status !== 200) {
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: "Hi,\n\nIt looks like the localization tests have failed. This is normal when there are significant curriculum changes in the English version.\n\nPlease check with the dev-team on [Discord](https://discord.gg/KVUmVXA) or our [forums](https://forum.freecodecamp.org) if this means a Crowdin sync is required to address the scenario. They will confirm and take over helping you through the PR.\n\nThanks for your understanding and contribution."
-            })
-          } else if (isDev.status === 200) {
-            core.setFailed('This PR appears to touch translated curriculum files, but since you are on the dev team there is no message.');
-          }
+          script: |
+            const isDev = await github.rest.teams.getMembershipForUserInOrg({
+              org: "freeCodeCamp",
+              team_slug: "dev-team",
+              username: context.payload.pull_request.user.login
+            }).catch(() => ({status: 404}));
+            if (context.payload.pull_request.user.login !== "camperbot" && isDev.status !== 200) {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: "Hi,\n\nIt looks like the localization tests have failed. This is expected when there are significant curriculum changes in the English version.\n\nThis could mean a Crowdin sync is required to address the scenario. Please check with our staff developer team, either on [Discord](https://discord.gg/KVUmVXA) or our [forums](https://forum.freecodecamp.org). They will confirm and take over helping you through the PR.\n\nThanks for your understanding and contribution."
+              })
+            } else if (isDev.status === 200) {
+              core.setFailed('This PR appears to touch translated curriculum files, but since you are on the dev team there is no message.');
+            }
