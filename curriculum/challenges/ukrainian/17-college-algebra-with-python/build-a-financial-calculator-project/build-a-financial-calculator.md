@@ -1,8 +1,8 @@
 ---
 id: 63d8401e39c73468b059cd42
-title: "Financial Calculator"
+title: "Build a Financial Calculator"
 challengeType: 10
-dashedName: financial-calculator
+dashedName: build-a-financial-calculator
 ---
 
 # --description--

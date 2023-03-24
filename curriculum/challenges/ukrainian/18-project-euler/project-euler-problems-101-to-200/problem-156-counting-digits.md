@@ -15,7 +15,7 @@ Starting from zero the natural numbers are written down in base 10 like this:
 Consider the digit $d = 1$. After we write down each number n, we will update the number of ones that have occurred and call this number $f(n, 1)$. The first values for $f(n, 1)$, then, are as follows:
 
 | $n$ | $f(n, 1)$ |
-|-----|-----------|
+| --- | --------- |
 | 0   | 0         |
 | 1   | 1         |
 | 2   | 1         |

@@ -1,8 +1,8 @@
 ---
 id: 63d83ffd39c73468b059cd40
-title: "Graphing Calculator"
+title: "Build a Graphing Calculator"
 challengeType: 10
-dashedName: graphing-calculator
+dashedName: build-a-graphing-calculator
 ---
 
 # --description--
