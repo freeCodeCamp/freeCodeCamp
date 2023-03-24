@@ -1,7 +1,8 @@
 import { Button } from '@freecodecamp/react-bootstrap';
 import { navigate } from 'gatsby-link';
 import React, { useState, useEffect, MouseEvent } from 'react';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
