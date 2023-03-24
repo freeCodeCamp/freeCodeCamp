@@ -5,7 +5,7 @@ import { PanelProps } from './types';
 type PanelContextProps = Pick<PanelProps, 'bsStyle'>;
 const PanelContext = createContext<PanelContextProps>({});
 
-const styles = ['border-1', 'border-solid', 'shadow-sm', 'mb-6'];
+const styles = 'border-1 border-solid shadow-sm mb-6';
 const defaultBorder = 'border-background-tertiary';
 const primaryBorder = 'border-foreground-primary';
 const dangerBorder = 'border-foreground-danger';
@@ -16,6 +16,9 @@ const primaryHeadingStyle =
   'border-b-1 border-solid border-foreground-primary text-foreground-primary';
 const infoHeadingStyle = 'text-background-info bg-foreground-info';
 const dangerHeadingStyle = 'text-background-danger bg-foreground-danger';
+
+let bsStyleClass = defaultBorder;
+let headingStyles = defaultHeadingStyle;
 
 const Body = ({
   children,
@@ -39,17 +42,12 @@ export const Heading = ({
   props?: React.ComponentProps<'div'>;
 }): JSX.Element => {
   const { bsStyle } = useContext(PanelContext);
-  const styles =
-    bsStyle === 'primary'
-      ? primaryHeadingStyle
-      : bsStyle === 'info'
-      ? infoHeadingStyle
-      : bsStyle === 'danger'
-      ? dangerHeadingStyle
-      : defaultHeadingStyle;
+  if (bsStyle === 'primary') headingStyles = primaryHeadingStyle;
+  else if (bsStyle === 'danger') headingStyles = dangerHeadingStyle;
+  else if (bsStyle === 'info') headingStyles = infoHeadingStyle;
 
   return (
-    <div className={styles} {...props}>
+    <div className={headingStyles} {...props}>
       {children}
     </div>
   );
@@ -75,18 +73,11 @@ export const Panel = ({
   bsStyle,
   ...restProps
 }: PanelProps): JSX.Element => {
-  const bsStyleClass =
-    bsStyle === 'primary'
-      ? primaryBorder
-      : bsStyle === 'danger'
-      ? dangerBorder
-      : bsStyle === 'info'
-      ? infoBorder
-      : defaultBorder;
-  const panelStyles = bsStyleClass
-    ? styles.concat(bsStyleClass).join(' ')
-    : styles.join(' ');
-  const panelClassed = [panelStyles, className].join(' ');
+  if (bsStyle === 'primary') bsStyleClass = primaryBorder;
+  else if (bsStyle === 'danger') bsStyleClass = dangerBorder;
+  else if (bsStyle === 'info') bsStyleClass = infoBorder;
+
+  const panelClassed = [styles, bsStyleClass, className].join(' ');
 
   return (
     <PanelContext.Provider value={{ bsStyle }}>
