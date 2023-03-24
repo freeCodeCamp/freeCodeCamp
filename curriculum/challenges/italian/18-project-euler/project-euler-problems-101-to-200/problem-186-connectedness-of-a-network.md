@@ -11,11 +11,11 @@ dashedName: problem-186-connectedness-of-a-network
 Here are the records from a busy telephone system with one million users:
 
 | RecNr | Caller | Called |
-|-------|--------|--------|
-|   1   | 200007 | 100053 |
-|   2   | 600183 | 500439 |
-|   3   | 600863 | 701497 |
-|  ...  |  ...   |  ...   |
+| ----- | ------ | ------ |
+| 1     | 200007 | 100053 |
+| 2     | 600183 | 500439 |
+| 3     | 600863 | 701497 |
+| ...   | ...    | ...    |
 
 The telephone number of the caller and the called number in record $n$ are $Caller(n) = S_{2n - 1}$ and $Called(n) = S_{2n}$ where ${S}_{1,2,3,\ldots}$ come from the "Lagged Fibonacci Generator":
 
