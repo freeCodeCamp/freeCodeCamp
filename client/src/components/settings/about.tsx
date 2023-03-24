@@ -7,7 +7,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
 
-import { TFunction } from 'i18next';
+import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import { FullWidthRow, Spacer } from '../helpers';

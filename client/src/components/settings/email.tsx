@@ -8,7 +8,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
-import { TFunction } from 'i18next';
+import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
