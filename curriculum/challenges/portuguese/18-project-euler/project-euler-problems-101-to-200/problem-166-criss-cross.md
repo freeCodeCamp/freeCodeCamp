@@ -12,12 +12,9 @@ A 4x4 grid is filled with digits $d$, $0 ≤ d ≤ 9$.
 
 It can be seen that in the grid
 
-$$\begin{array}{}
-  6 & 3 & 3 & 0 \\\\
-  5 & 0 & 4 & 3 \\\\
-  0 & 7 & 1 & 4 \\\\
-  1 & 2 & 4 & 5
-\end{array}$$
+$$\begin{array}{}   6 & 3 & 3 & 0 \\\\
+  5 & 0 & 4 & 3 \\\\   0 & 7 & 1 & 4 \\\\
+  1 & 2 & 4 & 5 \end{array}$$
 
 the sum of each row and each column has the value 12. Moreover the sum of each diagonal is also 12.
 

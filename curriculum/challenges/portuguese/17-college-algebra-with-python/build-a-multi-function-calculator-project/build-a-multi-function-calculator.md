@@ -1,8 +1,8 @@
 ---
 id: 63d83ff239c73468b059cd3f
-title: "Multi-Function Calculator"
+title: "Build a Multi-Function Calculator"
 challengeType: 10
-dashedName: multi-function-calculator
+dashedName: build-a-multi-function-calculator
 ---
 
 # --description--

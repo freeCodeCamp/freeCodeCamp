@@ -19,7 +19,7 @@ So $M(4, 1) = 3$ is the maximum number of repeated digits for a 4-digit prime wh
 In the same way we obtain the following results for 4-digit primes.
 
 | Digit, d | $M(4, d)$ | $N(4, d)$ | $S(4, d)$ |
-|----------|-----------|-----------|-----------|
+| -------- | --------- | --------- | --------- |
 | 0        | 2         | 13        | 67061     |
 | 1        | 3         | 9         | 22275     |
 | 2        | 3         | 1         | 2221      |
