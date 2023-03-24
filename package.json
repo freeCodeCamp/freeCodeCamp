@@ -32,6 +32,7 @@
     "challenge-editor:server": "cd ./tools/challenge-editor/api && pnpm start",
     "clean": "npm-run-all -p clean:client clean:server clean:curriculum --serial clean:packages",
     "clean-and-develop": "pnpm run clean && pnpm install && pnpm run develop",
+    "clean:api": "cd api && pnpm clean",
     "clean:client": "cd ./client && pnpm run clean",
     "clean:curriculum": "rm -rf ./config/curriculum.json",
     "clean:packages": "rm -rf ./node_modules ./**/node_modules",
