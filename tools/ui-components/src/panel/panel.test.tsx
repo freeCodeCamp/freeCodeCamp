@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { Panel, PanelHeading } from '.';
+import { Panel } from '.';
 
 describe('<Panel />', () => {
   it('PanelHead should inherit bsStyle', () => {
     render(
       <Panel role='article' bsStyle='primary'>
-        <PanelHeading>Test</PanelHeading>
+        <Panel.Heading>Test</Panel.Heading>
       </Panel>
     );
     expect(screen.getByRole('article')).toBeInTheDocument();

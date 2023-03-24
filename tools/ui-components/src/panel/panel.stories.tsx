@@ -1,8 +1,5 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { PanelHeading } from './panel-heading';
-import { PanelTitle } from './panel-title';
-import { PanelBody } from './panel-body';
 import { Panel, PanelProps } from '.';
 
 const story = {
@@ -22,10 +19,10 @@ const story = {
 const Child = () => {
   return (
     <>
-      <PanelHeading>
-        <PanelTitle>Here is panel Heading</PanelTitle>
-      </PanelHeading>
-      <PanelBody>Here is Panel body</PanelBody>
+      <Panel.Heading>
+        <Panel.Title>Here is panel Heading</Panel.Title>
+      </Panel.Heading>
+      <Panel.Body>Here is Panel body</Panel.Body>
     </>
   );
 };
