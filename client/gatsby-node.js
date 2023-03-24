@@ -177,26 +177,28 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
           if (slug.includes('LICENCE')) {
             return;
           }
-          try {
-            if (nodeIdentity === 'blockIntroMarkdown') {
-              if (!blocks.includes(frontmatter.block)) {
-                return;
-              }
-            } else if (!superBlocks.includes(frontmatter.superBlock)) {
-              return;
+
+          if (nodeIdentity === 'blockIntroMarkdown') {
+            if (!blocks.includes(frontmatter.block)) {
+              throw Error(`Block "${
+                frontmatter.block
+              }" in page "${slug} not found in list of allowed blocks.
+If the 'block' part of the frontmatter is correct (see: client/src/pages${slug}index.md),
+then there probably are no challenges with this block.
+Blocks with challenges are:
+${blocks.join(', ')}`);
             }
-            const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
-            pageBuilder(edge);
-          } catch (e) {
-            console.log(e);
-            console.log(`
-            ident: ${nodeIdentity} does not belong to a function
-
-            ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
-
-
-            `);
+          } else if (!superBlocks.includes(frontmatter.superBlock)) {
+            throw Error(`SuperBlock "${
+              frontmatter.superBlock
+            }" in page "${slug} not found in list of allowed superBlocks.
+If the 'superBlock' part of the frontmatter is correct (see: client/src/pages${slug}index.md),
+then there probably are no challenges in this superBlock.
+SuperBlocks with challenges are:
+${superBlocks.join(', ')}`);
           }
+          const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
+          pageBuilder(edge);
         });
 
         return null;
