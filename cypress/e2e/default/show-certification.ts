@@ -9,6 +9,12 @@ describe('A certification,', function () {
     beforeEach(() => {
       cy.login();
     });
+
+    it('should not contain the footer', () => {
+      cy.visit(certifiedUser);
+      cy.get('.site-footer').should('not.exist');
+    });
+
     it('should render a LinkedIn button', function () {
       cy.visit(certifiedUser);
       cy.contains('Add this certification to my LinkedIn profile')
