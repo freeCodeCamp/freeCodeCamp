@@ -3,7 +3,7 @@ import Loadable from '@loadable/component';
 import { graphql, useStaticQuery } from 'gatsby';
 import { reverse, sortBy } from 'lodash-es';
 import React, { useMemo, useState } from 'react';
-import { TFunction } from 'i18next';
+import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 

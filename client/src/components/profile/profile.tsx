@@ -1,7 +1,7 @@
 import { Grid, Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import Helmet from 'react-helmet';
-import { TFunction } from 'i18next';
+import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
 import { FullWidthRow, Link, Spacer } from '../helpers';

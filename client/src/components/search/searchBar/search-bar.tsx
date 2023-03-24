@@ -1,7 +1,7 @@
 import { isEqual } from 'lodash-es';
 import React, { Component } from 'react';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
-import { TFunction } from 'i18next';
+import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { Hit } from 'react-instantsearch-core';
 import { SearchBox } from 'react-instantsearch-dom';

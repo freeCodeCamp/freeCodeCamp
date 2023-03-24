@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction } from 'i18next';
+import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
