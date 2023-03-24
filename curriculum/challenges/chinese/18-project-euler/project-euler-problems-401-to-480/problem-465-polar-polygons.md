@@ -14,7 +14,7 @@ For this problem, a polygon can have collinear consecutive vertices. However, a 
 
 For example, only the first of the following is a polar polygon (the kernels of the second, third, and fourth do not strictly contain the origin, and the fifth does not have a kernel at all):
 
-<img class="img-responsive center-block" alt="five example polygons" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="five example polygons" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px;" />
 
 Notice that the first polygon has three consecutive collinear vertices.
 
