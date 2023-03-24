@@ -343,6 +343,10 @@
       "learn-data-structures-by-building-a-shopping-cart": {
         "title": "Learn Data Structures By Building A Shopping Cart",
         "intro": ["", ""]
+      },
+      "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
+        "title": "Learn Fetch and Promises By Building An Fcc Authors Page",
+        "intro": ["", ""]
       }
     }
   },
