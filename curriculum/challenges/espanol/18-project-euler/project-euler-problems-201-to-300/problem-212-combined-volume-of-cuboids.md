@@ -12,14 +12,10 @@ An axis-aligned cuboid, specified by parameters $\{ (x_0,y_0,z_0), (dx,dy,dz) \}
 
 Let $C_1, \ldots, C_{50000}$ be a collection of 50000 axis-aligned cuboids such that $C_n$ has parameters
 
-$$\begin{align}
-  & x_0 = S_{6n - 5} \\; \text{modulo} \\; 10000    \\\\
-  & y_0 = S_{6n - 4} \\; \text{modulo} \\; 10000    \\\\
-  & z_0 = S_{6n - 3} \\; \text{modulo} \\; 10000    \\\\
-  & dx = 1 + (S_{6n - 2} \\; \text{modulo} \\; 399) \\\\
-  & dy = 1 + (S_{6n - 1} \\; \text{modulo} \\; 399) \\\\
-  & dz = 1 + (S_{6n} \\; \text{modulo} \\; 399)     \\\\
-\end{align}$$
+$$\begin{align}   & x_0 = S_{6n - 5} \\; \text{modulo} \\; 10000    \\\\
+  & y_0 = S_{6n - 4} \\; \text{modulo} \\; 10000    \\\\   & z_0 = S_{6n - 3} \\; \text{modulo} \\; 10000    \\\\
+  & dx = 1 + (S_{6n - 2} \\; \text{modulo} \\; 399) \\\\   & dy = 1 + (S_{6n - 1} \\; \text{modulo} \\; 399) \\\\
+  & dz = 1 + (S_{6n} \\; \text{modulo} \\; 399)     \\\\ \end{align}$$
 
 where $S_1, \ldots, S_{300000}$ come from the "Lagged Fibonacci Generator":
 

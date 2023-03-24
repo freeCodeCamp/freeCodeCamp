@@ -24,7 +24,7 @@ For this problem we would like you to find the positions of the remaining $N$ in
 
 E.g. here is a picture of the solution for $N = 10$:
 
-<img class="img-responsive center-block" alt="solution for N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="solution for N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
 
 The area occupied by the red cells for $N = 10$ rounded to 10 digits behind the decimal point is 3.3469640797.
 
