@@ -3,7 +3,8 @@ import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, Trans, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -229,6 +230,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const isCompleted = completedChallenges.some(
       challenge => challenge.id === challengeId
     );
+    const titleContext = t('learn.github-link');
 
     return showCodeAlly ? (
       <LearnLayout>
@@ -269,7 +271,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       href='https://github.com/join'
                       rel='noopener noreferrer'
                       target='_blank'
-                      title={t('learn.github-link')}
+                      title={titleContext}
                     >
                       placeholder
                     </a>
