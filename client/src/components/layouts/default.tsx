@@ -1,6 +1,7 @@
 import React, { ReactNode, useEffect } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -160,6 +161,9 @@ function DefaultLayout({
 
   const useSystemTheme = fetchState.complete && isSignedIn === false;
 
+  const content = t('metaTags:description');
+  const keywards = t('metaTags:keywords');
+
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
@@ -174,9 +178,9 @@ function DefaultLayout({
           meta={[
             {
               name: 'description',
-              content: t('metaTags:description')
+              content
             },
-            { name: 'keywords', content: t('metaTags:keywords') }
+            { name: 'keywords', content: keywards }
           ]}
         >
           <link
