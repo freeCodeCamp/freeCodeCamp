@@ -735,7 +735,7 @@ importers:
       glob: ^8.1.0
       gray-matter: 4.0.3
       inquirer: 8.2.5
-      prettier: 2.8.4
+      prettier: 2.8.7
       ts-node: 10.9.1
       typescript: 4.9.5
     devDependencies:
@@ -747,7 +747,7 @@ importers:
       glob: 8.1.0
       gray-matter: 4.0.3
       inquirer: 8.2.5
-      prettier: 2.8.4
+      prettier: 2.8.7
       ts-node: 10.9.1_cbfmry4sbbh4vatmdrsmatfg5a
       typescript: 4.9.5
 
@@ -18054,7 +18054,7 @@ packages:
       mkdirp: 0.5.6
       node-fetch: 2.6.9
       pkg-dir: 4.2.0
-      prettier: 2.8.4
+      prettier: 2.8.7
       prop-types: 15.8.1
       remark-mdx: 2.3.0
       remark-mdxjs: 2.0.0-next.8
@@ -26518,6 +26518,12 @@ packages:
 
   /prettier/2.8.4:
     resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /prettier/2.8.7:
+    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
 
