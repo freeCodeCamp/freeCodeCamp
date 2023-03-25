@@ -7,6 +7,8 @@
     "@fastify/cookie": "^8.3.0",
     "@fastify/middie": "8.1",
     "@fastify/session": "^10.1.1",
+    "@fastify/swagger": "^8.3.1",
+    "@fastify/swagger-ui": "^1.5.0",
     "@prisma/client": "4.11.0",
     "@sinclair/typebox": "0.25.24",
     "connect-mongo": "4.6.0",
