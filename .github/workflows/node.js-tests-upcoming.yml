@@ -32,7 +32,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -71,7 +71,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -90,7 +90,7 @@ jobs:
           cat .env
 
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.9.0
+        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
         with:
           mongodb-version: 6.0
           mongodb-replica-set: test-rs
