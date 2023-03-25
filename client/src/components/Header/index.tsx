@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/unbound-method */
-import React from 'react';
+import React, { useState } from 'react';
+import Helmet from 'react-helmet';
 import { User } from '../../redux/prop-types';
 
 import UniversalNav from './components/universal-nav';
@@ -14,41 +11,44 @@ interface HeaderProps {
   user: User;
   skipButtonText: string;
 }
-export class Header extends React.Component<
-  HeaderProps,
-  { displayMenu: boolean }
-> {
-  menuButtonRef: React.RefObject<HTMLButtonElement>;
-  searchBarRef: React.RefObject<any>;
-  static displayName: string;
-  constructor(props: HeaderProps) {
-    super(props);
-    this.state = {
-      displayMenu: false
-    };
-    this.menuButtonRef = React.createRef();
-    this.searchBarRef = React.createRef();
-    this.handleClickOutside = this.handleClickOutside.bind(this);
-    this.showMenu = this.showMenu.bind(this);
-    this.hideMenu = this.hideMenu.bind(this);
-  }
+export const Header = ({
+  fetchState,
+  user,
+  skipButtonText
+}: HeaderProps): JSX.Element => {
+  const [displayMenu, setDisplayMenu] = useState(false);
+  const menuButtonRef = React.useRef<HTMLButtonElement>(null);
+  const searchBarRef = React.useRef<HTMLDivElement>(null);
 
-  handleClickOutside(event: globalThis.MouseEvent): void {
-    const eventTarget = event.target as HTMLElement;
+  const hideMenu = (): void => {
+    setDisplayMenu(false);
+    document.removeEventListener('click', handleClickOutside);
+    hideLanguageMenu();
+  };
+
+  const showMenu = (): void => {
+    setDisplayMenu(true);
+    document.addEventListener('click', handleClickOutside);
+  };
+
+  const handleClickOutside = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    const eventTarget = event.target;
     if (
-      this.state.displayMenu &&
-      this.menuButtonRef.current &&
-      !this.menuButtonRef.current.contains(eventTarget) &&
+      displayMenu &&
+      menuButtonRef.current &&
+      !menuButtonRef.current.contains(eventTarget) &&
       // since the search bar is part of the menu on small screens, clicks on
       // the search bar should not toggle the menu
-      this.searchBarRef.current &&
-      !this.searchBarRef.current.contains(eventTarget) &&
+      searchBarRef.current &&
+      !searchBarRef.current.contains(eventTarget) &&
       // don't count clicks on searcn bar inputs reset button
       !eventTarget.closest('.ais-SearchBox-reset') &&
       // don't count clicks on disabled elements
       !eventTarget.closest('[aria-disabled="true"]')
     ) {
-      this.hideMenu();
+      hideMenu();
     }
   }
 
