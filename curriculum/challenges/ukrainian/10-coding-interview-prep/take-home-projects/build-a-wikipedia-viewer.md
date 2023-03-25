@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd19
-title: Створіть переглядач Вікіпедії
+title: Створіть переглядач вікіпедії
 challengeType: 3
 forumTopicId: 302360
 dashedName: build-a-wikipedia-viewer
@@ -8,17 +8,17 @@ dashedName: build-a-wikipedia-viewer
 
 # --description--
 
-**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/wGqEga/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/wGqEga/</a>.
+**Мета:** створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/wGqEga/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/wGqEga/</a>.
 
-The MediaWiki software powers Wikipedia, and it helps you collect and organize knowledge and make it available to people.
+Вікіпедія працює завдяки програмному забезпеченню MediaWiki, а це допомагає збирати й систематизувати інформацію та робити її доступною для людей.
 
-Using the MediaWiki API, replicate the search function and random article function, similar to the example app above. You can use Wikipedia as your data source.
+Використовуючи API MediaWiki, відтворіть функцію пошуку та функцію випадкової статті, подібно до прикладу застосунку вище. Ви можете використовувати вікіпедію як джерело даних.
 
 Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
-**User Story:** I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.
+**Історія користувача:** я можу здійснювати пошук у вікіпедії за допомогою пошукового поля та бачити статті, що відповідають запиту.
 
-**User Story:** I can click a button to see a random Wikipedia entry.
+**Історія користувача:** я можу натиснути кнопку, щоб побачити випадкову статтю у вікіпедії.
 
 Коли закінчите, надайте посилання на свій проєкт на CodePen та натисніть кнопку «Я виконав(-ла) це завдання».
 
