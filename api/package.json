@@ -15,7 +15,7 @@
     "fastify": "4.14.1",
     "fastify-auth0-verify": "^1.0.0",
     "fastify-plugin": "^4.3.0",
-    "nodemon": "2.0.21"
+    "nodemon": "2.0.22"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {

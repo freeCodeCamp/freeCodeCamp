@@ -128,7 +128,7 @@ importers:
       fastify-auth0-verify: ^1.0.0
       fastify-plugin: ^4.3.0
       jest: 29.5.0
-      nodemon: 2.0.21
+      nodemon: 2.0.22
       pino-pretty: 10.0.0
       prisma: 4.11.0
       supertest: 6.3.3
@@ -145,7 +145,7 @@ importers:
       fastify: 4.14.1
       fastify-auth0-verify: 1.0.0
       fastify-plugin: 4.5.0
-      nodemon: 2.0.21
+      nodemon: 2.0.22
     devDependencies:
       '@fastify/type-provider-typebox': 2.4.0_naatsb2dmwxq3j32xoqzjtyzqm
       '@types/express-session': 1.17.7
@@ -24393,8 +24393,8 @@ packages:
       update-notifier: 5.1.0
     dev: true
 
-  /nodemon/2.0.21:
-    resolution: {integrity: sha512-djN/n2549DUtY33S7o1djRCd7dEm0kBnj9c7S9XVXqRUbuggN1MZH/Nqa+5RFQr63Fbefq37nFXAE9VU86yL1A==}
+  /nodemon/2.0.22:
+    resolution: {integrity: sha512-B8YqaKMmyuCO7BowF1Z1/mkPqLk6cs/l63Ojtd6otKjMx47Dq1utxfRxcavH1I7VSaL8n5BUaoutadnsX3AAVQ==}
     engines: {node: '>=8.10.0'}
     hasBin: true
     dependencies:
