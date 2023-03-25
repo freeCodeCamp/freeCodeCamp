@@ -788,11 +788,11 @@
           "Nesta unidade, você aprenderá a encontrar fatores comuns e a dividi-los. Isto será útil na simplificação de frações e fatoração de raízes quadradas."
         ]
       },
-      "build-a-multi-function-calculator": {
-        "title": "Crie uma calculadora multifunção",
+      "build-a-multi-function-calculator-project": {
+        "title": "Multi-Function Calculator",
         "intro": [
-          "Este é um dos projetos necessários para obter sua certificação.",
-          "Para este projeto, você criará uma calculadora multifunção."
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a multi-function calculator."
         ]
       },
       "learn-how-to-graph-systems-of-equations": {
@@ -819,11 +819,11 @@
           "Esta unidade vai além das equações lineares, para trabalhar com expoentes e parábolas em gráfico. Você aprenderá a encontrar pontos-chave nas parábolas e a resolver equações do segundo grau."
         ]
       },
-      "build-a-graphing-calculator": {
-        "title": "Criar uma calculadora gráfica",
+      "build-a-graphing-calculator-project": {
+        "title": "Graphing Calculator",
         "intro": [
-          "Este é um dos projetos necessários para obter sua certificação.",
-          "Para este projeto, você criará uma calculadora gráfica."
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a graphing calculator."
         ]
       },
       "learn-parent-graphs-and-polynomials": {
@@ -832,11 +832,11 @@
           "Esta unidade vai mostrar para você muitos tipos diferentes de gráficos \"pai\", os padrões básicos que criam gráficos mais complicados. Os polinômios são expressões matemáticas com \"várias coisas\" – as equações mais complicadas que são construídas com padrões básicos. Você verá como esses gráficos se parecem, como modificá-los e como fazer tudo isso com código em Python."
         ]
       },
-      "build-three-math-games": {
-        "title": "Crie três jogos de matemática",
+      "build-three-math-games-project": {
+        "title": "Three Math Games",
         "intro": [
-          "Este é um dos projetos necessários para obter sua certificação.",
-          "Para este projeto, você criará três jogos de matemática."
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build three math games."
         ]
       },
       "learn-business-applications-of-college-algebra": {
@@ -857,11 +857,11 @@
           "Esta unidade vai mostrar a você como expoentes e logaritmos são funções inversas e como você pode usar essas funções em várias aplicações."
         ]
       },
-      "build-a-financial-calculator": {
-        "title": "Criar uma calculadora financeira",
+      "build-a-financial-calculator-project": {
+        "title": "Financial Calculator",
         "intro": [
-          "Este é um dos projetos necessários para obter sua certificação.",
-          "Para este projeto, você criará uma calculadora financeira."
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a financial calculator."
         ]
       },
       "college-algebra-with-python-conclusion": {
@@ -870,11 +870,11 @@
           "Esta será a última unidade deste curso. Vamos ver como você pode conectar seus conhecimentos matemáticos e Python a dados externos."
         ]
       },
-      "build-a-data-graph-explorer": {
-        "title": "Crie um explorador de gráfico de dados",
+      "build-a-data-graph-explorer-project": {
+        "title": "Data Graph Explorer",
         "intro": [
-          "Este é um dos projetos necessários para obter sua certificação.",
-          "Para este projeto, você criará uma explorador de gráfico de dados."
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a data graph explorer."
         ]
       }
     }
@@ -885,7 +885,7 @@
       "Se estiver procurando exercícios gratuitos de programação para se preparar para sua próxima entrevista de emprego, nós temos o que você precisa.",
       "Esta seção contém centenas de desafios de programação que testam seu conhecimento de algoritmos, estruturas de dados e matemática. Ela também possui vários projetos adicionais, que você pode usar para fortalecer suas habilidades ou adicionar ao seu portfólio."
     ],
-    "note": "",
+    "note": "The Project Euler Project has been moved to it's own course. Go back to curriculum to see the list of courses we offer.",
     "blocks": {
       "algorithms": {
         "title": "Algoritmos",
@@ -915,13 +915,6 @@
           "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares.",
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
-      },
-      "project-euler": {
-        "title": "Projeto Euler",
-        "intro": [
-          "Complete os desafios de programação abaixo, diretamente dos grandes arquivos do Projeto Euler. Isso fortalecerá seu conhecimento de algoritmos e de matemática.",
-          "Esses problemas variam em dificuldade e, para muitos, a experiência é uma aprendizagem em sequência indutiva. Ou seja, ao resolver um problema, você será exposto a um novo conceito que permite a você resolver um problema que antes era inacessível. Você consegue concluir todos eles?"
-        ]
       }
     }
   },
@@ -940,6 +933,45 @@
       "top-build-a-recipe-project": {
         "title": "Aprenda o básico de HTML criando uma página de receitas",
         "intro": ["Uma descrição deve ser determinada"]
+      }
+    }
+  },
+  "project-euler": {
+    "title": "Project Euler",
+    "intro": [
+      "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
+      "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+    ],
+    "blocks": {
+      "project-euler-problems-1-to-100": {
+        "title": "Project Euler Problems 1 to 100",
+        "intro": [
+          "In this first set of challenges, you will use mathematical concepts like the Fibonacci sequence, prime number theory, and combinatorics to write efficient algorithms to solve these problems."
+        ]
+      },
+      "project-euler-problems-101-to-200": {
+        "title": "Project Euler Problems 101 to 200",
+        "intro": [
+          "In this set of challenges, you'll build upon the skills you learned in the first part of the course and use more advanced concepts like vector computation, Pascal's pyramid, and the RSA algorithm to solve these problems efficiently."
+        ]
+      },
+      "project-euler-problems-201-to-300": {
+        "title": "Project Euler Problems 201 to 300",
+        "intro": [
+          "In this set of challenges, you'll continue to build upon the skills you learned earlier and use concepts like the binomial theorem, Hamming numbers, and the Collatz sequence to further develop your math and problem solving skills."
+        ]
+      },
+      "project-euler-problems-301-to-400": {
+        "title": "Project Euler Problems 301 to 400",
+        "intro": [
+          "Here you will continue to flex your mathematical and algorithmic skills as you use concepts such as combinatorial game theory, bitwise operations, and Golomb's self-describing sequence to develop efficient solutions to these problems."
+        ]
+      },
+      "project-euler-problems-401-to-480": {
+        "title": "Project Euler Problems 401 to 480",
+        "intro": [
+          "In this final set of challenges, you will need draw upon everything you learned up to this point and use advanced concepts like unitary divisors, the Kaprekar routine, and much more to solve these complex problems."
+        ]
       }
     }
   },

@@ -7,7 +7,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Fragment, useRef } from 'react';
 import Media from 'react-responsive';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
 import { clientLocale, radioLocation } from '../../../../../config/env.json';
