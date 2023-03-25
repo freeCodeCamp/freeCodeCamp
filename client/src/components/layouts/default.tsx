@@ -1,7 +1,6 @@
 import React, { ReactNode, useEffect } from 'react';
 import Helmet from 'react-helmet';
-import type { TFunction } from 'i18next';
-import { withTranslation } from 'react-i18next';
+import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -105,7 +104,6 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   block?: string;
   showCodeAlly: boolean;
   superBlock?: string;
-  t: TFunction;
 }
 
 const getSystemTheme = () =>
@@ -128,13 +126,13 @@ function DefaultLayout({
   isChallenge = false,
   block,
   superBlock,
-  t,
   theme = Themes.Default,
   showCodeAlly,
   user,
   fetchUser,
   updateAllChallengesInfo
 }: DefaultLayoutProps): JSX.Element {
+  const { t } = useTranslation();
   const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
     // componentDidMount
@@ -161,9 +159,6 @@ function DefaultLayout({
 
   const useSystemTheme = fetchState.complete && isSignedIn === false;
 
-  const content = t('metaTags:description');
-  const keywards = t('metaTags:keywords');
-
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
@@ -178,9 +173,9 @@ function DefaultLayout({
           meta={[
             {
               name: 'description',
-              content
+              content: t('metaTags:description')
             },
-            { name: 'keywords', content: keywards }
+            { name: 'keywords', content: t('metaTags:keywords') }
           ]}
         >
           <link
