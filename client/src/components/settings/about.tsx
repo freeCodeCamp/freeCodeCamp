@@ -27,7 +27,7 @@ type FormValues = {
   about: string;
 };
 
-type AboutProps = Omit<
+type AboutProps = FormValues & Omit<
   CamperProps,
   | 'linkedin'
   | 'joinDate'
