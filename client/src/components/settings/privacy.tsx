@@ -1,7 +1,6 @@
 import { Button, Form } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
-import { TFunction } from 'i18next';
-import { withTranslation } from 'react-i18next';
+import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -26,18 +25,14 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 type PrivacyProps = {
   submitProfileUI: (profileUI: ProfileUI) => void;
-  t: TFunction;
   user: {
     profileUI: ProfileUI;
     username: string;
   };
 };
 
-function PrivacySettings({
-  submitProfileUI,
-  t,
-  user
-}: PrivacyProps): JSX.Element {
+function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
+  const { t } = useTranslation();
   const [privacyValues, setPrivacyValues] = useState({ ...user.profileUI });
 
   const [madeChanges, setMadeChanges] = useState(false);
@@ -55,23 +50,16 @@ function PrivacySettings({
     setMadeChanges(false);
   }
 
-  const ariaLabel = t('settings.headings.privacy');
-  const explainContext = new Map([
-    ['isLocked', t('settings.disabled')],
-    ['showName', t('settings.private-name')],
-    ['showCerts', t('settings.disabled')],
-    ['showTimeLine', t('settings.disabled')]
-  ]);
   return (
     <div className='privacy-settings' id='privacy-settings'>
       <SectionHeader>{t('settings.headings.privacy')}</SectionHeader>
       <FullWidthRow>
         <p>{t('settings.privacy')}</p>
         <Form inline={true} onSubmit={submitNewProfileSettings}>
-          <div role='group' aria-label={ariaLabel}>
+          <div role='group' aria-label={t('settings.headings.privacy')}>
             <ToggleSetting
               action={t('settings.labels.my-profile')}
-              explain={explainContext.get('isLocked')}
+              explain={t('settings.disabled')}
               flag={privacyValues['isLocked']}
               flagName='isLocked'
               offLabel={t('buttons.public')}
@@ -80,7 +68,7 @@ function PrivacySettings({
             />
             <ToggleSetting
               action={t('settings.labels.my-name')}
-              explain={explainContext.get('showName')}
+              explain={t('settings.private-name')}
               flag={!privacyValues['showName']}
               flagName='name'
               offLabel={t('buttons.public')}
@@ -121,7 +109,7 @@ function PrivacySettings({
             />
             <ToggleSetting
               action={t('settings.labels.my-certs')}
-              explain={explainContext.get('showCerts')}
+              explain={t('settings.disabled')}
               flag={!privacyValues['showCerts']}
               flagName='showCerts'
               offLabel={t('buttons.public')}
@@ -138,7 +126,7 @@ function PrivacySettings({
             />
             <ToggleSetting
               action={t('settings.labels.my-timeline')}
-              explain={explainContext.get('showTimeLine')}
+              explain={t('settings.disabled')}
               flag={!privacyValues['showTimeLine']}
               flagName='showTimeLine'
               offLabel={t('buttons.public')}
