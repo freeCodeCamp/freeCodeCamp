@@ -14,7 +14,7 @@ import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import type { CamperProps } from '../profile/components/camper';
 import SoundSettings from './sound';
-import ThemeSettings, { Themes } from './theme';
+import ThemeSettings, { type ThemeProps } from './theme';
 import UsernameSettings from './username';
 import KeyboardShortcutsSettings from './keyboard-shortcuts';
 import SectionHeader from './section-header';
@@ -27,7 +27,7 @@ type FormValues = {
   about: string;
 };
 
-type AboutProps = Omit<
+type AboutProps = ThemeProps & Omit<
   CamperProps,
   | 'linkedin'
   | 'joinDate'
@@ -37,12 +37,10 @@ type AboutProps = Omit<
   | 'website'
   | 'yearsTopContributor'
 > & {
-  currentTheme: Themes;
   sound: boolean;
   keyboardShortcuts: boolean;
   submitNewAbout: (formValues: FormValues) => void;
   t: TFunction;
-  toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
 };
