@@ -402,8 +402,8 @@ importers:
       react-helmet: 6.1.0
       react-hotkeys: 2.0.0
       react-i18next: 11.18.6
-      react-instantsearch-core: 6.39.0
-      react-instantsearch-dom: 6.39.0
+      react-instantsearch-core: 6.39.1
+      react-instantsearch-dom: 6.39.1
       react-monaco-editor: 0.40.0
       react-redux: 5.1.2
       react-reflex: 4.0.12
@@ -512,8 +512,8 @@ importers:
       react-helmet: 6.1.0_react@16.14.0
       react-hotkeys: 2.0.0_react@16.14.0
       react-i18next: 11.18.6_bx3kjmr3t3xyx7ifgcvmd5vcjm
-      react-instantsearch-core: 6.39.0_gjtvagtimr5fxubqnaetkkst2y
-      react-instantsearch-dom: 6.39.0_gs3zfk3gapw7ycemojzf55dqlq
+      react-instantsearch-core: 6.39.1_gjtvagtimr5fxubqnaetkkst2y
+      react-instantsearch-dom: 6.39.1_gs3zfk3gapw7ycemojzf55dqlq
       react-monaco-editor: 0.40.0_o6svdx7ptmmnoxx4yhzc5bzi5y
       react-redux: 5.1.2_react@16.14.0+redux@4.2.1
       react-reflex: 4.0.12_wcqkhtmu7mswc6yz4uyexck3ty
@@ -27309,8 +27309,8 @@ packages:
       react: 16.14.0
     dev: true
 
-  /react-instantsearch-core/6.39.0_gjtvagtimr5fxubqnaetkkst2y:
-    resolution: {integrity: sha512-UROe0jjXI56pu1uHuP5lDhyXMIrodkDBISBv5pLU9/1LIYMNF3o4C9FllTdfia3Jz3lDDsSEcPpc/77so2x3Ww==}
+  /react-instantsearch-core/6.39.1_gjtvagtimr5fxubqnaetkkst2y:
+    resolution: {integrity: sha512-rvzOoNGBT2O28mmcpXfcN4pVF+p07jlDMbEKB1TRdW3jE9dm8U6uCS/X6DWqigYLr8svVRcG/Ez+wzYK+yuPZw==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 5'
       react: '>= 16.3.0 < 19'
@@ -27323,8 +27323,8 @@ packages:
       react-fast-compare: 3.2.0
     dev: false
 
-  /react-instantsearch-dom/6.39.0_gs3zfk3gapw7ycemojzf55dqlq:
-    resolution: {integrity: sha512-wdFGDFugoCpO9buxjybyLTs7cblQ6g+NIiYIsZ9ua0FLUIdoeawXQYDV83dDzcNgbml5RTiKJsAFxlne8gguMg==}
+  /react-instantsearch-dom/6.39.1_gs3zfk3gapw7ycemojzf55dqlq:
+    resolution: {integrity: sha512-lfTHQZ3ILwlQeDsd+GqvVCVLyOzK8FYMtICJvc0PXANhcXXMM+7WvqJGlDclcnujPPSDuQl6MmKTHcTNVapQoA==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 5'
       react: '>= 16.3.0 < 19'
@@ -27338,7 +27338,7 @@ packages:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-fast-compare: 3.2.0
-      react-instantsearch-core: 6.39.0_gjtvagtimr5fxubqnaetkkst2y
+      react-instantsearch-core: 6.39.1_gjtvagtimr5fxubqnaetkkst2y
     dev: false
 
   /react-is/16.13.1:
