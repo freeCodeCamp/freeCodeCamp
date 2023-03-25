@@ -1,27 +1,12 @@
-import { FastifyPluginCallback } from 'fastify';
+import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { Type } from '@sinclair/typebox';
 
-export const settingRoutes: FastifyPluginCallback = (
+export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
   done
 ) => {
-  fastify.put<{
-    Body: {
-      profileUI: {
-        isLocked: boolean;
-        showAbout: boolean;
-        showCerts: boolean;
-        showDonation: boolean;
-        showHeatMap: boolean;
-        showLocation: boolean;
-        showName: boolean;
-        showPoints: boolean;
-        showPortfolio: boolean;
-        showTimeLine: boolean;
-      };
-    };
-  }>(
+  fastify.put(
     '/update-my-profileui',
     {
       schema: {
