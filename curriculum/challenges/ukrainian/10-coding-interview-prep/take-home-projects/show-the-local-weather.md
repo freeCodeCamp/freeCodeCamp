@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd10
-title: Показати місцеву погоду
+title: Покажіть місцеву погоду
 challengeType: 3
 forumTopicId: 302368
 dashedName: show-the-local-weather
@@ -8,19 +8,19 @@ dashedName: show-the-local-weather
 
 # --description--
 
-**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/bELRjV" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/bELRjV</a>.
+**Мета:** створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/bELRjV" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/bELRjV</a>.
 
-**Правило #1:** Не дивіться на приклад коду проєкту. Визначте його самі.
+**Правило №1:** не дивіться на код проєкту в прикладі. Напишіть його власноруч.
 
 **Правило №2:** виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
-**Історія користувача:** Я можу побачити погоду у своєму поточному місцеперебуванні.
+**Історія користувача:** я можу побачити погоду у своєму поточному місцеперебуванні.
 
-**User Story:** Я можу бачити іншу піктограму або інше фонове зображення (наприклад, засніжена гора, спекотна пустеля) залежно від погоди.
+**Історія користувача:** я можу побачити іншу піктограму або інше фонове зображення (наприклад, засніжена гора, спекотна пустеля) залежно від погоди.
 
-**Історія користувача:** Я можу натиснути кнопку для перемикання між Фаренгейтом та Цельсієм.
+**Історія користувача:** я можу натиснути кнопку для перемикання між Фаренгейтом та Цельсієм.
 
-**Примітка:** Тепер багато інтернет-браузерів вимагають безпечне HTTP з'єднання (`https://`), щоб отримати місцеперебування користувача через геолокацію HTML5. For this reason, we recommend using HTML5 Geolocation to get user location and then use the freeCodeCamp Weather API <a href="https://weather-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://weather-proxy.freecodecamp.rocks/</a> which uses an HTTP Secure connection for the weather. Also, be sure to connect to <a href="https://codepen.io" target="_blank" rel="noopener noreferrer nofollow">CodePen.io</a> via `https://`.
+**Примітка:** багато інтернет-браузерів тепер вимагають безпечне з’єднання HTTP (`https://`), щоб отримати місцеперебування користувача через геолокацію HTML5. Через це ми рекомендуємо використовувати HTML5 Geolocation для того, щоб отримати локацію користувача, а потім використовувати API погоди freeCodeCamp <a href="https://weather-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://weather-proxy.freecodecamp.rocks/</a>, який використовує безпечне з’єднання HTTP для погоди. Також переконайтесь, що з’єднання з <a href="https://codepen.io" target="_blank" rel="noopener noreferrer nofollow">CodePen.io</a> відбувається через `https://`.
 
 Коли закінчите, надайте посилання на свій проєкт на CodePen та натисніть кнопку «Я виконав(-ла) це завдання».
 
