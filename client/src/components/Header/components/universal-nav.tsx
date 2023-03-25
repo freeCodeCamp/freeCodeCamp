@@ -20,7 +20,10 @@ const SearchBarOptimized = Loadable(
   () => import('../../search/searchBar/search-bar-optimized')
 );
 
-type UniversalNavProps = Omit<NavLinksProps, 'navigate' | 'toggleNightMode'> & {
+type UniversalNavProps = Omit<
+  NavLinksProps,
+  'navigate' | 'toggleNightMode' | 'openSignoutModal'
+> & {
   searchBarRef?: React.RefObject<HTMLDivElement>;
 };
 export const UniversalNav = ({

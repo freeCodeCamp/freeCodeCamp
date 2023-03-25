@@ -42,6 +42,7 @@ export interface NavLinksProps {
   showLanguageMenu: (elementToFocus: HTMLButtonElement | null) => void;
   hideLanguageMenu: () => void;
   menuButtonRef: React.RefObject<HTMLButtonElement>;
+  openSignoutModal: () => void;
 }
 
 const mapDispatchToProps = {
@@ -118,6 +119,7 @@ const toggleTheme = (
 function NavLinks({
   menuButtonRef,
   hideLanguageMenu,
+  openSignoutModal,
   hideMenu,
   showLanguageMenu,
   isLanguageMenuDisplayed,
