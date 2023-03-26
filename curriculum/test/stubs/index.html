@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <style>
+        * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #1b1b32;
+}
+.title {
+    font-family: 'Lato', sans-serif;
+  font-size: clamp(1rem, 10vw, 15rem);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #f5f6f7;
+  padding: 0 clamp(1rem, 2vw, 3rem);
+  border-radius: 10px;
+}
+.title:hover {
+  background-color: #fffafa;
+  color: #101010;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 data-value="open-source" class="title">FREECODECAMP</h1>
+      </div>
+</body>
+<script>// ---- ---- ---- ---- ---- //
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let interval = null;
+    
+    document.querySelector('.title').onmouseover = (event) => {
+      let iteration = 0;
+    
+      clearInterval(interval);
+    
+      interval = setInterval(() => {
+        event.target.innerText = event.target.innerText
+          .split('')
+          .map((letter, index) => {
+            if (index < iteration) {
+              return event.target.dataset.value[index];
+            }
+            return letters[Math.floor(Math.random() * 26)];
+          })
+          .join('');
+        if (iteration >= event.target.dataset.value.length) {
+          clearInterval(interval);
+        }
+        iteration += 1 / 3;
+      }, 50);
+    };
+    </script>
+</html>
