@@ -124,7 +124,7 @@ importers:
       '@types/express-session': 1.17.7
       '@types/supertest': 2.0.12
       connect-mongo: 4.6.0
-      fastify: 4.14.1
+      fastify: 4.15.0
       fastify-auth0-verify: ^1.0.0
       fastify-plugin: ^4.3.0
       jest: 29.5.0
@@ -142,12 +142,12 @@ importers:
       '@prisma/client': 4.11.0_prisma@4.11.0
       '@sinclair/typebox': 0.25.24
       connect-mongo: 4.6.0_lw7oj3533zfvrhxigrep3g2fam
-      fastify: 4.14.1
+      fastify: 4.15.0
       fastify-auth0-verify: 1.0.0
       fastify-plugin: 4.5.0
       nodemon: 2.0.22
     devDependencies:
-      '@fastify/type-provider-typebox': 2.4.0_naatsb2dmwxq3j32xoqzjtyzqm
+      '@fastify/type-provider-typebox': 2.4.0_muhe4ir55wkfmccycsmpffns5q
       '@types/express-session': 1.17.7
       '@types/supertest': 2.0.12
       jest: 29.5.0
@@ -5770,14 +5770,14 @@ packages:
       - supports-color
     dev: false
 
-  /@fastify/type-provider-typebox/2.4.0_naatsb2dmwxq3j32xoqzjtyzqm:
+  /@fastify/type-provider-typebox/2.4.0_muhe4ir55wkfmccycsmpffns5q:
     resolution: {integrity: sha512-dP8KnpfyBD1FT1UxNWCRqSpKG69xYAK53q6MqUjuwYL7xvogXBbH/tpAMc1kZkKmgAHPT0migy9DaYtnkTbIIQ==}
     peerDependencies:
       '@sinclair/typebox': ^0.25.9
       fastify: ^4.0.0
     dependencies:
       '@sinclair/typebox': 0.25.24
-      fastify: 4.14.1
+      fastify: 4.15.0
     dev: true
 
   /@fortawesome/fontawesome-common-types/6.3.0:
@@ -17050,8 +17050,8 @@ packages:
     resolution: {integrity: sha512-79ak0JxddO0utAXAQ5ccKhvs6vX2MGyHHMMsmZkBANrq3hXc1CHzvNPHOcvTsVMEPl5I+NT+RO4YKMGehOfSIg==}
     dev: false
 
-  /fastify/4.14.1:
-    resolution: {integrity: sha512-yjrDeXe77j9gRlSV2UJry8mcFWbD0NQ5JYjnPi4tkFjHZVaG3/BD5wxOmRzGnHPC0YvaBJ0XWrIfFPl2IHRa1w==}
+  /fastify/4.15.0:
+    resolution: {integrity: sha512-m/CaRN8nf5uyYdrDe2qqq+0z3oGyE+A++qlKQoLJTI4WI0nWK9D6R3FxXQ3MVwt/md977GMR4F43pE9oqrS2zw==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.2.0
@@ -17059,7 +17059,7 @@ packages:
       abstract-logging: 2.0.1
       avvio: 8.2.1
       fast-content-type-parse: 1.0.0
-      find-my-way: 7.5.0
+      find-my-way: 7.6.0
       light-my-request: 5.9.1
       pino: 8.11.0
       process-warning: 2.1.0
@@ -17283,8 +17283,8 @@ packages:
       make-dir: 3.1.0
       pkg-dir: 4.2.0
 
-  /find-my-way/7.5.0:
-    resolution: {integrity: sha512-3ehydSBhGcS0TtMA/BYEyMAKi9Sv0MqF8aqiMO5oGBXyCcSlyEJyfGWsbNxAx7BekTNWUwD1ttLJLURni2vmJg==}
+  /find-my-way/7.6.0:
+    resolution: {integrity: sha512-H7berWdHJ+5CNVr4ilLWPai4ml7Y2qAsxjw3pfeBxPigZmaDTzF0wjJLj90xRCmGcWYcyt050yN+34OZDJm1eQ==}
     engines: {node: '>=14'}
     dependencies:
       fast-deep-equal: 3.1.3
