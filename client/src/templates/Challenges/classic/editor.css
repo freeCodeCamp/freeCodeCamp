@@ -59,7 +59,6 @@ textarea.inputarea {
 
 .description-container h1 {
   color: var(--secondary-color);
-  font-family: Hack-ZeroSlash, monospace;
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.1;
@@ -119,7 +118,6 @@ textarea.inputarea {
 
 .test-feedback p {
   margin: 0.45rem 0 0;
-  font-family: 'Lato', sans-serif;
 }
 
 .test-feedback h2 {
@@ -177,17 +175,12 @@ textarea.inputarea {
 }
 
 .lower-jaw-icon-bar {
-  overflow: hidden;
   display: flex;
   gap: 10px;
   flex-direction: row;
 }
 .lower-jaw-icon-bar > button {
   line-height: 0;
-}
-
-.lower-jaw-icon-bar > button:focus {
-  outline: 2px solid var(--blue-mid);
 }
 
 .lower-jaw-icon-bar > button:last-child {

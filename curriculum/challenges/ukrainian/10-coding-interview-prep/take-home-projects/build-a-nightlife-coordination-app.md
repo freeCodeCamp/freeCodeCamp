@@ -12,17 +12,17 @@ dashedName: build-a-nightlife-coordination-app
 
 Тут наведено конкретні історії користувача, які варто імплементувати в даний проєкт:
 
-**User Story:** As an unauthenticated user, you can view all bars in your area.
+**Історія користувача:** як неавторизований користувач, ви можете переглянути всі бари неподалік.
 
-**User Story:** As an authenticated user, you can add yourself to a bar to indicate you are going there tonight.
+**Історія користувача:** як неавторизований користувач, ви можете додати себе в бар, щоб вказати, що ви збираєтесь туди ввечері.
 
-**User Story:** As an authenticated user, you can remove yourself from a bar if you no longer want to go there.
+**Історія користувача:** як неавторизований користувач, ви можете видалити себе з бару, якщо ви більше не хочете туди йти.
 
-**Історія користувача:** Як неавторизований користувач, коли ви входите в систему, вам не треба виконувати пошук знову.
+**Історія користувача:** як неавторизований користувач, коли ви входите в систему, вам не потрібно виконувати пошук знову.
 
-**Hint:** Try using the Yelp API to find venues in the cities your users search for. Якщо ви використовуєте Yelp API, не забудьте вказати це у вашому додатку.
+**Підказка:** спробуйте використати Yelp API, щоб знайти заклади в містах, які шукають ваші користувачі. Якщо ви використовуєте Yelp API, не забудьте вказати це у вашому додатку.
 
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту в полі «Посилання на рішення». За бажанням введіть посилання на початковий код проєкту в полі «Посилання на GitHub».
 
 # --solutions--
 

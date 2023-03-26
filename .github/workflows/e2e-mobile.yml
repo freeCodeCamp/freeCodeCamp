@@ -23,10 +23,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
 
       - name: Checkout mobile
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
         with:
           repository: freeCodeCamp/mobile
           path: mobile
@@ -40,9 +40,11 @@ jobs:
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
+          # cypress-io/github-action caches the store, so we should not cache it
+          # here.
 
       - name: Setup Flutter 3.3.x
-        uses: subosito/flutter-action@dbf1fa04f4d2e52c33185153d06cdb5443aa189d # tag=v2
+        uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa # v2
         with:
           flutter-version: '3.3.x'
           channel: 'stable'

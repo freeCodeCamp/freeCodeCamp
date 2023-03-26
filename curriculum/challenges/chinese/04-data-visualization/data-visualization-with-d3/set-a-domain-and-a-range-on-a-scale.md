@@ -12,7 +12,7 @@ dashedName: set-a-domain-and-a-range-on-a-scale
 
 假设有一个数据集范围为 50 到 480， 这是缩放的输入信息，也被称为<dfn>域</dfn>。
 
-你想沿着 `x` 轴将这些点映射到 SVG 画布上，位置介于 10 个单位到 500 个单位之间。 这是输出信息，也被称为<dfn>范围</dfn>。
+You want to map those points along the `x` axis on the SVG, between 10 units and 500 units. 这是输出信息，也被称为<dfn>范围</dfn>。
 
 `domain()` 和 `range()` 方法设置比例尺的值， 它们都接受一个至少有两个元素的数组作为参数。 下面是一个例子：
 

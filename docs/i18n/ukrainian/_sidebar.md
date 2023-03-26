@@ -8,7 +8,7 @@
 - **Внесок до коду**
   - [Налаштування freeCodeCamp](how-to-setup-freecodecamp-locally.md)
   - [Передові практики написання коду](codebase-best-practices.md)
-  - [Відкриття пул реквеста](how-to-open-a-pull-request.md)
+  - [Відкриття запиту на злиття](how-to-open-a-pull-request.md)
   - [Робота над кодовою базою](how-to-contribute-to-the-codebase.md)
   - [Робота над завданнями з кодом](how-to-work-on-coding-challenges.md)
   - [Робота над компонентною бібліотекою](how-to-work-on-the-component-library.md)

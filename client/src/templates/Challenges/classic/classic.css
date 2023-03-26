@@ -109,13 +109,11 @@
 }
 
 #mobile-layout-pane-instructions:focus-visible {
-  outline: 3px solid var(--blue-mid);
   outline-offset: -2px;
 }
 
 @supports not selector(:focus-visible) {
   #mobile-layout-pane-instructions:focus {
-    outline: 3px solid var(--blue-mid);
     outline-offset: -2px;
   }
 }
@@ -137,7 +135,6 @@
 
 /* Focus indicator for tab panel */
 .nav-tabs [role='tab']:focus {
-  outline: 2px solid var(--blue-mid);
   outline-offset: -2px;
 }
 

@@ -59,38 +59,38 @@ dashedName: links-and-images-question-h
 
 - Вкінці ви можете отримати доступ до файлу `dog.jpg`.
 
-Using the metaphor we used earlier, using `../` in a filepath is kind of like stepping out from the room you are currently in to the main hallway so you can go to another room.
+Використаємо метафору: `../` у шляху нагадує вихід з кімнати до коридору, щоб перейти до іншої кімнати.
 
-## Alt attribute
+## Атрибут alt
 
 Окрім атрибута `src`, кожному елементу зображення потрібний атрибут `alt` (alternative text).
 
 Атрибут `alt` використовується для опису зображення. Він буде використаний на місці зображення, яке не завантажується. Його також використовують читачі екрана, щоб описати зображення для користувачів з порушенням зору.
 
-This is how the The Odin Project logo example you used earlier looks with an alt attribute included:
+Ось так виглядає логотип The Odin Project з атрибутом alt:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
 # --question--
 
 ## --assignment--
 
-Read about the  <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">four main image formats</a> that can be used on the web.
+Прочитайте про  <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">чотири головні формати зображення</a>, які можна використовувати на вебсайтах.
 
 ## --text--
 
-What are the four main image formats that you can use for images on the web?
+Які чотири головні формати зображення можна використовувати на вебсайтах?
 
 ## --answers--
 
-TIFF, GIF, PNG, and SVG.
+TIFF, GIF, PNG та SVG.
 
 ---
 
-JPG, PNG, GIF, and SVG.
+JPG, PNG, GIF та SVG.
 
 ---
 
-JPG, PDF, SVG, and GIF.
+JPG, PDF, SVG та GIF.
 
 ## --video-solution--
 

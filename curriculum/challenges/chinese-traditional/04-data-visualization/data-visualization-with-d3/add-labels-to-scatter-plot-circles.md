@@ -12,7 +12,7 @@ dashedName: add-labels-to-scatter-plot-circles
 
 目標是顯示 `dataset` 中每個對象的第一個（`x`）和第二個（`y`）字段中通過逗號分隔的值。
 
-`text` 節點需要 `x` 和 `y` 屬性來指定放置在 SVG 畫布中的位置。 在這個挑戰中，`y` 值（決定高度）可以用和 `circle` 的 `cy` 屬性相同的值， `x` 值可以比 `circle` 的 `cx` 值稍微大一些，這樣標籤纔可見， 並且被放置在散點的右邊。
+The `text` nodes need `x` and `y` attributes to position it on the SVG. 在這個挑戰中，`y` 值（決定高度）可以用和 `circle` 的 `cy` 屬性相同的值， `x` 值可以比 `circle` 的 `cx` 值稍微大一些，這樣標籤纔可見， 並且被放置在散點的右邊。
 
 # --instructions--
 

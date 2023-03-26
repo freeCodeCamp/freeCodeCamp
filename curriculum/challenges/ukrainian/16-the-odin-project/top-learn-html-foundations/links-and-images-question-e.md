@@ -60,7 +60,7 @@ dashedName: links-and-images-question-e
 
 - Вкінці ви можете отримати доступ до файлу `dog.jpg`.
 
-Using the metaphor we used earlier, using `../` in a filepath is kind of like stepping out from the room you are currently in to the main hallway so you can go to another room.
+Використаємо метафору: `../` у шляху нагадує вихід з кімнати до коридору, щоб перейти до іншої кімнати.
 
 ## Атрибут `alt`
 
@@ -79,7 +79,7 @@ Using the metaphor we used earlier, using `../` in a filepath is kind of like st
 
 ## --text--
 
-Which tag is used to display an image?
+За допомогою якого тега показують зображення?
 
 ## --answers--
 

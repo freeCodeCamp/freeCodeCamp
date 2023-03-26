@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Login from '../../Header/components/Login';
+import Login from '../../Header/components/login';
 
 interface BigCallToActionProps {
   pageName: string;

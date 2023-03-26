@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-你可以在`DOMContentLoaded`函數內部添加事件處理方法。 你可以添加`onclick`事件處理器，當用戶點擊 id 爲`getMessage`的元素時會觸發事件。 添加以下代碼：
+你可以在`DOMContentLoaded`函數內部添加事件處理方法。 你可以通過添加以下代碼來添加 `onclick` 事件處理器，當用戶點擊 id 爲`#getMessage` 的元素時會觸發事件：
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
@@ -28,7 +28,7 @@ document.getElementById('getMessage').onclick = function(){};
 
 # --hints--
 
-你的代碼應該用`document.getElementById`方法來選擇`getMessage`元素。
+你的代碼應該用 `document.getElementById` 方法來選擇 id 爲 `getMessage` 的元素。
 
 ```js
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));

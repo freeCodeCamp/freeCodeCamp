@@ -6,6 +6,7 @@ import {
   backend,
   backEndProject,
   codeAllyCert,
+  colab,
   frontEndProject,
   pythonProject
 } from '../../../../utils/challenge-types';
@@ -96,6 +97,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
         break;
 
       case pythonProject:
+      case colab:
         formFields = solutionField;
         options.isEditorLinkAllowed = true;
         solutionLink =

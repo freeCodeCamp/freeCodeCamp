@@ -30,7 +30,7 @@ dashedName: build-a-markdown-previewer
 
 Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">використовуючи цей шаблон CodePen</a> і натиснувши `Save`. Або ви можете використати це посилання CDN для запуску тестів у будь-якому середовищі, яке вам подобається: ` https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js `
 
-Після того, як ви закінчите, надішліть URL-адресу свого робочого проєкт з усіма його тестами.
+Як тільки закінчите, надайте посилання на свій проєкт з усіма пройденими тестами.
 
 # --solutions--
 

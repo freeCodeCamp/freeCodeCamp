@@ -7,31 +7,31 @@ dashedName: introduction-to-html-and-css-question-a
 
 # --description--
 
-HTML and CSS are two languages that work together to create everything that you see when you look at something on the internet. HTML is the raw data that a webpage is built out of. All the text, links, cards, lists, and buttons are created in HTML. CSS is what adds style to those plain elements. HTML puts information on a webpage, and CSS positions that information, gives it color, changes the font, and makes it look great!
+HTML та CSS — це дві мови, які працюють разом, щоб створити все, що ви бачите в інтернеті. HTML — це необроблені дані, на яких побудована вебсторінка. Весь текст, посилання, картки, списки та кнопки створюються в HTML. CSS надає стилю цим звичайним елементам. HTML розміщує інформацію на вебсторінці, а CSS робить її красивою, надаючи кольору та змінюючи шрифт.
 
-Many helpful resources out there keep referring to HTML and CSS as programming languages, but if you want to get technical, labeling them as such is not quite accurate. This is because they are only concerned with presenting information. They are not used to program logic. JavaScript, which you will learn in the next section, is a programming language because it’s used to make webpages do things. Yet, there is quite a lot you can do with just HTML and CSS, and you will definitely need them both. Throughout our curriculum, the following lessons focus on giving you the tools you need to succeed once you reach JavaScript content.
+Багато ресурсів продовжують називати HTML та CSS мовами програмування, але, якщо розібратися з технічної точки зору, це не зовсім правильно. Причина в тому, що їх використовують лише для представлення інформації. Вони не використовуються для створення логіки програми. JavaScript, який ви вивчите в наступному розділі, є мовою програмування, оскільки його використовують для того, щоб вебсторінки виконували певні дії. Однак багато чого можна зробити, використовуючи лише HTML та CSS, тому вони обов’язково знадобляться. Наступні уроки нашої навчальної програми зосереджені на інструментах, які необхідно осягнути перед тим, як перейти до JavaScript.
 
 # --question--
 
 ## --assignment--
 
-Read <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#What_is_HTML" target="_blank">the HTML vs CSS vs JavaScript article</a>. It is a quick overview of the relationships between HTML, CSS, and JavaScript.
+Прочитайте публікацію <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#What_is_HTML" target="_blank">HTML vs CSS vs JavaScript</a> (англійською мовою). Це короткий огляд відносин між HTML, CSS та JavaScript.
 
 ## --text--
 
-Which of the following statements is true?
+Яке з тверджень є правильним?
 
 ## --answers--
 
-CSS is used to create the basic structure of a webpage, and HTML is used to add style.
+CSS використовують для створення базової структури вебсторінки, а HTML для додавання стилів.
 
 ---
 
-HTML is used to create the basic structure of a webpage, and CSS is used to add style.
+HTML використовують для створення базової структури вебсторінки, а CSS для додавання стилів.
 
 ---
 
-HTML and CSS are used to add style to a webpage, and JavaScript is used to create the basic structure.
+HTML та CSS використовують для додавання стилів, а JavaScript для створення базової структури вебсторінки.
 
 
 ## --video-solution--
