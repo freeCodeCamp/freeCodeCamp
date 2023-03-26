@@ -1,3 +1,4 @@
-export interface TabsProps {
-  className?: string;
+export interface TabsProps extends React.HTMLAttributes<HTMLUListElement> {
+  activeKey?: string;
+  defaultActiveKey?: string;
 }

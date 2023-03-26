@@ -7,13 +7,19 @@ const story = {
   component: Tabs
 };
 
+const Child = () => (
+  <div>
+    <p>Child1</p>
+    <p>Child2</p>
+  </div>
+);
 const Template: Story<TabsProps> = args => {
   return <Tabs {...args} />;
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  // default props go here
+  children: <Child />
 };
 
 export default story;

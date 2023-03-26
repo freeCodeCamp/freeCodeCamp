@@ -2,6 +2,18 @@ import React from 'react';
 
 import { TabsProps } from './types';
 
-export const Tabs = ({ className }: TabsProps): JSX.Element => {
-  return <div className={className}>Hello, I am a Tabs component</div>;
+const defaultClass =
+  'border-b border-solid border-background-quaternary mb-0 pl-0 list-none mt-0';
+
+export const Tabs = ({
+  className,
+  children,
+  ...props
+}: TabsProps): JSX.Element => {
+  const styles = [defaultClass, className].join(' ');
+  return (
+    <ul role='tablist' className={styles} {...props}>
+      {children}
+    </ul>
+  );
 };
