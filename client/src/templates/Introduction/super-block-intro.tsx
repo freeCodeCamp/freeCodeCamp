@@ -181,6 +181,12 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
   const defaultCurriculumNames = blockDashedNames;
 
+  const superblockWithoutCert = [
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.ProjectEuler
+  ];
+
   return (
     <>
       <Helmet>
@@ -190,14 +196,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
         <main>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer paddingSize={30} />
+              <Spacer size='large' />
               <LegacyLinks superBlock={superBlock} />
               <SuperBlockIntro superBlock={superBlock} />
-              <Spacer paddingSize={30} />
+              <Spacer size='large' />
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
               </h2>
-              <Spacer paddingSize={15} />
+              <Spacer size='medium' />
               <div className='block-ui'>
                 {defaultCurriculumNames.map(blockDashedName => (
                   <Fragment key={blockDashedName}>
@@ -210,34 +216,33 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                     />
                   </Fragment>
                 ))}
-                {superBlock !== SuperBlocks.CodingInterviewPrep &&
-                  superBlock !== SuperBlocks.TheOdinProject && (
-                    <div>
-                      <CertChallenge
-                        certification={certification}
-                        superBlock={superBlock}
-                        title={title}
-                        user={user}
-                      />
-                    </div>
-                  )}
+                {!superblockWithoutCert.includes(superBlock) && (
+                  <div>
+                    <CertChallenge
+                      certification={certification}
+                      superBlock={superBlock}
+                      title={title}
+                      user={user}
+                    />
+                  </div>
+                )}
               </div>
               {!isSignedIn && !signInLoading && (
                 <div>
-                  <Spacer paddingSize={30} />
+                  <Spacer size='large' />
                   <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
                 </div>
               )}
-              <Spacer paddingSize={30} />
+              <Spacer size='large' />
               <h3
                 className='text-center big-block-title'
                 style={{ whiteSpace: 'pre-line' }}
               >
                 {t(`intro:misc-text.browse-other`)}
               </h3>
-              <Spacer paddingSize={15} />
+              <Spacer size='medium' />
               <Map currentSuperBlock={superBlock} />
-              <Spacer paddingSize={30} />
+              <Spacer size='large' />
             </Col>
           </Row>
         </main>

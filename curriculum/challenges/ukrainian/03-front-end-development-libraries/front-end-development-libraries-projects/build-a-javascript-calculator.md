@@ -53,7 +53,7 @@ dashedName: build-a-javascript-calculator
 
 Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">використовуючи цей шаблон CodePen</a> і натиснувши `Save`. Або ж ви можете скористатися посиланням Мережі Доправлення Контенту, аби пройти тестування в будь-якому операційному середовищу, яке вам до вподоби: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Після того як ви завершили, прикріпіть URL до вашому проєкту, над яким ви працюєте, з усіма пройденими тестами.
+Як тільки закінчите, надайте посилання на свій проєкт з усіма пройденими тестами.
 
 # --solutions--
 

@@ -1,40 +1,31 @@
 {
-  "$schema": "https://unpkg.com/knip@next/schema.json",
+  "$schema": "https://unpkg.com/knip@1/schema.json",
 
   "ignore": "**/*.d.ts",
-  "ignoreBinaries": ["cd", "echo", "sh"],
 
   // Only workspaces with a configuration below are analyzed by Knip
   "workspaces": {
     ".": {
+      // No custom entry/project files in root workspace to not interfere with workspaces that are not set up yet
       "entry": [],
-      // Configuration options can be overridden individually (necessary here as the default is `cypress/e2e/**/*.cy.{js,jsx,ts,tsx}`).
-      "cypress": ["cypress.config.js", "cypress/e2e/**/*.{js,ts}"]
+      "cypress": {
+        // Override all Cypress entry patterns as (only) spec paths don't match the default
+        "entry": [
+          "cypress.config.js",
+          "cypress/e2e/**/*.{js,ts}",
+          "cypress/support/*.ts",
+          "cypress/plugins/index.js"
+        ]
+      }
     },
     "client": {
-      // Files used by Gatsby are handled by Knip's Gatsby plugin (https://github.com/webpro/knip/blob/next/src/plugins/gatsby/README.md)
-      // The rest are `webpack.entry` files.
-      "entry": [],
-      "project": ["**/*.{js,ts,tsx}"],
-      "webpack": {
-        "config": "webpack-workers.js",
-        "entry": [
-          "src/client/frame-runner.ts",
-          "src/client/workers/sass-compile.ts",
-          "src/client/workers/test-evaluator.ts"
-        ]
-      },
-      "ignore": ["i18n/schema-validation.*", "**/__mocks__", "**/__fixtures__"]
+      "webpack": "webpack-workers.js",
+      "ignore": ["**/__mocks__"]
     },
     "client/plugins/*": {
       "entry": "gatsby-node.js"
     },
-    // This monospace gives a few unused files, so as not to make the node.js-find-unused workflow fail this is still commented out
-    // Also try --production to find more unused files.
-    // "tools/ui-components": {
-    //   "entry": ["src/index.ts!", "utils/gen-component-script.ts"],
-    //   "project": ["src/**/*.{ts,tsx}!", "utils/*.ts"]
-    // },
+    // "tools/ui-components": {},
     "tools/scripts/build": {
       "entry": ["*.ts"]
     }

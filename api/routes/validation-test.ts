@@ -1,6 +1,6 @@
 import { Type } from '@sinclair/typebox';
 
-import type { FastifyInstanceWithTypeProvider } from '..';
+import type { FastifyInstanceWithTypeProvider } from '../app';
 import { responseSchema, subSchema } from '../schemas/example';
 
 export const testValidatedRoutes = (

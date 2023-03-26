@@ -216,7 +216,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
           />
           <Grid>
             <Row>
-              <Spacer paddingSize={15} />
+              <Spacer size='medium' />
               <ChallengeTitle
                 isCompleted={isChallengeCompleted}
                 translationPending={translationPending}
@@ -244,7 +244,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
                 <PrismFormatted className={'line-numbers'} text={text} />
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <ObserveKeys>
                   <div className='video-quiz-options'>
                     {answers.map((option, index) => (
@@ -273,7 +273,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                     ))}
                   </div>
                 </ObserveKeys>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <div
                   style={{
                     textAlign: 'center'
@@ -285,7 +285,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                     <span>{t('learn.check-answer')}</span>
                   )}
                 </div>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <Button
                   block={true}
                   bsSize='large'
@@ -296,7 +296,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Spacer paddingSize={30} />
+                <Spacer size='large' />
               </Col>
               <CompletionModal
                 block={block}
