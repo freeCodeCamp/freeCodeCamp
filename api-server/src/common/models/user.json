@@ -216,6 +216,11 @@
       "description": "Camper is relational database certified",
       "default": false
     },
+    "isCollegeAlgebraPyCertV8": {
+      "type": "boolean",
+      "description": "Camper is college algebra with Python certified",
+      "default": false
+    },
     "completedChallenges": {
       "type": [
         {

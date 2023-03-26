@@ -25,6 +25,7 @@ const dataAnalysisPyBase =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects';
 const machineLearningPyBase =
   '/learn/machine-learning-with-python/machine-learning-with-python-projects';
+const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
@@ -713,11 +714,53 @@ const certMap = [
         certSlug: 'machine-learning-with-python-v7'
       }
     ]
+  },
+  {
+    id: '61531b20cc9dfa2741a5b800',
+    title: 'College Algebra with Python',
+    certSlug: 'college-algebra-with-python-v8',
+    flag: 'isCollegeAlgebraPyCertV8',
+    projects: [
+      {
+        id: '63d83ff239c73468b059cd3f',
+        title: 'Build a Multi-Function Calculator',
+        link: getCollegeAlgebraPyPath('build-a-multi-function-calculator'),
+        certSlug: 'college-algebra-with-python-v8'
+      },
+      {
+        id: '63d83ffd39c73468b059cd40',
+        title: 'Build a Graphing Calculator',
+        link: getCollegeAlgebraPyPath('build-a-graphing-calculator'),
+        certSlug: 'college-algebra-with-python-v8'
+      },
+      {
+        id: '63d8401039c73468b059cd41',
+        title: 'Build Three Math Games',
+        link: getCollegeAlgebraPyPath('build-three-math-games'),
+        certSlug: 'college-algebra-with-python-v8'
+      },
+      {
+        id: '63d8401e39c73468b059cd42',
+        title: 'Build a Financial Calculator',
+        link: getCollegeAlgebraPyPath('build-a-financial-calculator'),
+        certSlug: 'college-algebra-with-python-v8'
+      },
+      {
+        id: '63d8402e39c73468b059cd43',
+        title: 'Build a Data Graph Explorer',
+        link: getCollegeAlgebraPyPath('build-a-data-graph-explorer'),
+        certSlug: 'college-algebra-with-python-v8'
+      }
+    ]
   }
 ] as const;
 
 function getResponsiveWebDesignPath(project: string) {
   return `${responsiveWeb22Base}/${project}-project/${project}`;
+}
+
+function getCollegeAlgebraPyPath(project: string) {
+  return `${collegeAlgebraPyBase}/${project}-project/${project}`;
 }
 
 function getJavaScriptAlgoPath(project: string) {
@@ -737,6 +780,8 @@ certMap.forEach(cert => {
   if (cert.title !== 'Legacy Full Stack') {
     if (cert.title.startsWith('Legacy')) {
       legacyProjectMap[cert.title] = cert.projects;
+      // temporary hiding of certs from settings page
+      // should do suggestion on line 33 and use front matter to hide it
     } else {
       projectMap[cert.title] = cert.projects;
     }

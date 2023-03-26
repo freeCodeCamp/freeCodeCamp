@@ -481,7 +481,7 @@ Puoi anche testare una sfida singola con i seguenti step:
 2. Esegui i seguenti comandi per ogni singolo file in cui hai fatto cambiamenti (rimpiazziando `challenge-title-goes-here`  con il titolo intero della sfida):
 
    ```
-   pnpm run test -- -g challenge-title-goes-here ```
+   pnpm run test -- -g titolo-sfida-qui ```
 
 Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, [per favore crea una pull request](how-to-open-a-pull-request.md).
 

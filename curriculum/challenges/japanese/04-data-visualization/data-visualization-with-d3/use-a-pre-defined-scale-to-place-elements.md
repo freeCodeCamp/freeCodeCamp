@@ -8,7 +8,7 @@ dashedName: use-a-pre-defined-scale-to-place-elements
 
 # --description--
 
-スケールの設定ができたので、散布図を再びマッピングしましょう。 スケールとは、`x` と `y` の生データを、SVG キャンバス上に正しく収めて表示するための値に変換する処理関数のようなものです。 スケールにより、データが常に画面のプロット領域内に収められます。
+スケールの設定ができたので、散布図を再びマッピングしましょう。 The scales are like processing functions that turn the `x` and `y` raw data into values that fit and render correctly on the SVG. スケールにより、データが常に画面のプロット領域内に収められます。
 
 スケーリング関数を使用して、SVG 図形の座標属性値を設定します。 これには `rect` 要素か `text` 要素の `x` 属性と `y` 属性、または、`circles` 要素の `cx` 属性と `cy` 属性が含まれます。 次に例を示します。
 
@@ -17,11 +17,11 @@ shape
   .attr("x", (d) => xScale(d[0]))
 ```
 
-スケールで図形座標属性を設定して、データポイントを SVG キャンバス上に配置します。 ツールチップやラベルの `text()` メソッド内などで、実際のデータ値を表示するときにスケールを適用する必要はありません。
+Scales set shape coordinate attributes to place the data points onto the SVG. ツールチップやラベルの `text()` メソッド内などで、実際のデータ値を表示するときにスケールを適用する必要はありません。
 
 # --instructions--
 
-`xScale` と `yScale` を使用して、`circle` 図形と `text` 図形の両方を SVG キャンバスに配置してください。 `circles` については、スケールを適用して `cx` 属性と `cy` 属性を設定します。 また、これらに `5` 単位の半径を指定します。
+Use `xScale` and `yScale` to position both the `circle` and `text` shapes onto the SVG. `circles` については、スケールを適用して `cx` 属性と `cy` 属性を設定します。 また、これらに `5` 単位の半径を指定します。
 
 `text` 要素については、スケールを適用して `x` 属性と `y` 属性を設定します。 ラベルはドットの右側にオフセットされている必要があります。 これを行うには、`x` のデータ値に `10` 単位を追加してからデータ値を `xScale` に渡します。
 

@@ -2,8 +2,13 @@ import Loadable from '@loadable/component';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Media from 'react-responsive';
+import { useFeature } from '@growthbook/growthbook-react';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
+import {
+  SEARCH_EXPOSED_WIDTH,
+  DONATE_NAV_EXPOSED_WIDTH
+} from '../../../../../config/misc';
 import { User } from '../../../redux/prop-types';
 import MenuButton from './menu-button';
 import NavLinks from './nav-links';
@@ -15,8 +20,6 @@ const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
   () => import('../../search/searchBar/search-bar-optimized')
 );
-
-const MAX_MOBILE_WIDTH = 980;
 
 interface UniversalNavProps {
   displayMenu: boolean;
@@ -45,6 +48,8 @@ export const UniversalNav = ({
   const { pending } = fetchState;
   const { t } = useTranslation();
 
+  const exposeDonateButton = useFeature('expose_donate_button').on;
+
   const search =
     typeof window !== `undefined` && isLanding(window.location.pathname) ? (
       <SearchBarOptimized innerRef={searchBarRef} />
@@ -61,13 +66,11 @@ export const UniversalNav = ({
       <div
         className={`universal-nav-left${displayMenu ? ' display-search' : ''}`}
       >
-        <Media minWidth={MAX_MOBILE_WIDTH + 1}>{search}</Media>
+        <Media minWidth={SEARCH_EXPOSED_WIDTH + 1}>{search}</Media>
       </div>
-      <div className='universal-nav-middle'>
-        <Link id='universal-nav-logo' to='/learn'>
-          <NavLogo />
-        </Link>
-      </div>
+      <Link id='universal-nav-logo' to='/learn'>
+        <NavLogo />
+      </Link>
       <div className='universal-nav-right main-nav'>
         {pending ? (
           <div className='nav-skeleton'>
@@ -75,6 +78,18 @@ export const UniversalNav = ({
           </div>
         ) : (
           <>
+            {!user?.isDonating && exposeDonateButton && (
+              <Media minWidth={DONATE_NAV_EXPOSED_WIDTH + 1}>
+                <Link
+                  sameTab={false}
+                  to='/donate'
+                  data-test-label='nav-donate-button'
+                  className='exposed-button-nav'
+                >
+                  {t('buttons.donate')}
+                </Link>
+              </Media>
+            )}
             <MenuButton
               displayMenu={displayMenu}
               hideMenu={hideMenu}
@@ -82,7 +97,7 @@ export const UniversalNav = ({
               showMenu={showMenu}
               user={user}
             />
-            <Media maxWidth={MAX_MOBILE_WIDTH}>{search}</Media>
+            <Media maxWidth={SEARCH_EXPOSED_WIDTH}>{search}</Media>
             <NavLinks
               displayMenu={displayMenu}
               fetchState={fetchState}

@@ -15,3 +15,7 @@ export function isNewJsCert(superBlock: string): boolean {
 export function isRelationalDbCert(superBlock: string): boolean {
   return superBlock === SuperBlocks.RelationalDb;
 }
+
+export function isCollegeAlgebraPyCert(superBlock: string): boolean {
+  return superBlock === SuperBlocks.CollegeAlgebraPy;
+}

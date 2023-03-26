@@ -3,12 +3,14 @@
 exports[`<Profile/> renders correctly 1`] = `
 <div>
   <div
+    class="spacer"
     style="padding: 15px 0px; height: 1px;"
   />
   <div
     class="container"
   >
     <div
+      class="spacer"
       style="padding: 15px 0px; height: 1px;"
     />
     <div>
@@ -273,6 +275,7 @@ exports[`<Profile/> renders correctly 1`] = `
       <br />
     </div>
     <div
+      class="spacer"
       style="padding: 15px 0px; height: 1px;"
     />
     <div
@@ -285,6 +288,7 @@ exports[`<Profile/> renders correctly 1`] = `
       </a>
     </div>
     <div
+      class="spacer"
       style="padding: 15px 0px; height: 1px;"
     />
   </div>
