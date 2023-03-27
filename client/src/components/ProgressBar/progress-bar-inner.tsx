@@ -7,6 +7,11 @@ interface ProgressBarInnerProps {
   meta: string;
 }
 
+const easing = BezierEasing(0.2, 0.5, 0.4, 1);
+const intervalLength = 10;
+let percent = 0;
+let applyAnimation = true;
+
 function ProgressBarInner({
   completedPercent,
   title,
@@ -15,17 +20,15 @@ function ProgressBarInner({
   const [shownPercent, setShownPercent] = useState(0);
   const [progressInterval, setProgressInterval] = useState(0);
   const [progressBarInnerWidth, setProgressBarInnerWidth] = useState(0);
-  const animateProgressBarInner = (completedPercent: number) => {
-    const easing = BezierEasing(0.2, 0.5, 0.4, 1);
+  const progressBarInnerWrap = useRef<HTMLDivElement>(null);
 
+  const animateProgressBarInner = (completedPercent: number) => {
     if (completedPercent > 100) completedPercent = 100;
     if (completedPercent < 0) completedPercent = 0;
 
     const transitionLength = completedPercent * 10 + 750;
-    const intervalLength = 10;
     const intervalsToFinish = transitionLength / intervalLength;
     const amountPerInterval = completedPercent / intervalsToFinish;
-    let percent = 0;
 
     const myInterval = window.setInterval(() => {
       percent += amountPerInterval;
@@ -41,8 +44,6 @@ function ProgressBarInner({
     setProgressInterval(myInterval);
   };
   useEffect(() => {
-    let applyAnimation = true;
-
     if (applyAnimation) animateProgressBarInner(completedPercent);
     return () => {
       if (progressInterval !== null) {
