@@ -129,9 +129,7 @@ class Block extends Component<BlockProps> {
       );
     });
 
-    const blockTitle = [
-      t(`intro:${superBlock}.blocks.${blockDashedName}.title`)
-    ];
+    const blockTitle = t(`intro:${superBlock}.blocks.${blockDashedName}.title`);
     const blockIntroArr = [
       t(`intro:${superBlock}.blocks.${blockDashedName}.intro`)
     ];
@@ -293,7 +291,7 @@ class Block extends Component<BlockProps> {
                 challengesWithCompleted={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
                 superBlock={superBlock}
-                blockTitle={blockTitle.join(' ')}
+                blockTitle={blockTitle}
               />
             )}
           </div>
