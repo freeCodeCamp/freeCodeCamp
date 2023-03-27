@@ -56,7 +56,7 @@ app.route('/register')
   );
 ```
 
-正しいと思ったら、ページを送信してください。 If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
+正しいと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#registration-of-new-users-11" target="_blank" rel="noopener noreferrer nofollow">この時点までの完成形のコードをこちらで確認できます</a>。
 
 **注:** これ以降、*ピクチャー・イン・ピクチャー*対応ブラウザーの使用に関連する問題が生じる可能性があります。 エディター内でアプリのプレビューができるオンライン IDE を使用している場合は、新しいタブでこのプレビューを開くことを推奨します。
 

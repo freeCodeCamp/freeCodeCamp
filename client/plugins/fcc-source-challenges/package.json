@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "npm": ">=8"
+    "pnpm": "7"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,9 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
-  "main": "none"
+  "main": "none",
+  "devDependencies": {
+    "chokidar": "3.5.3",
+    "readdirp": "3.6.0"
+  }
 }

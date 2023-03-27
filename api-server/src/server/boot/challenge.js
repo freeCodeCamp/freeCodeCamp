@@ -11,7 +11,6 @@ import debug from 'debug';
 import dedent from 'dedent';
 import { isEmpty, pick, omit, uniqBy } from 'lodash';
 import { ObjectID } from 'mongodb';
-import { Observable } from 'rx';
 import isNumeric from 'validator/lib/isNumeric';
 import isURL from 'validator/lib/isURL';
 
@@ -273,63 +272,60 @@ export function isValidChallengeCompletion(req, res, next) {
   return next();
 }
 
-export function modernChallengeCompleted(req, res, next) {
+export async function modernChallengeCompleted(req, res, next) {
   const user = req.user;
-  return user
-    .getCompletedChallenges$()
-    .flatMap(() => {
-      const completedDate = Date.now();
-      const { id, files, challengeType } = req.body;
 
-      const completedChallenge = {
-        id,
-        files,
-        completedDate
-      };
+  try {
+    // This is an ugly way to update `user.completedChallenges`
+    await user.getCompletedChallenges$().toPromise();
+  } catch (e) {
+    return next(e);
+  }
 
-      // if multifile cert project
-      if (challengeType === 14) {
-        completedChallenge.isManuallyApproved = false;
-        user.needsModeration = true;
-      }
+  const completedDate = Date.now();
+  const { id, files, challengeType } = req.body;
 
-      // We only need to know the challenge type if it's a project. If it's a
-      // step or normal challenge we can avoid storing in the database.
-      if (
-        jsCertProjectIds.includes(id) ||
-        multifileCertProjectIds.includes(id)
-      ) {
-        completedChallenge.challengeType = challengeType;
-      }
+  const completedChallenge = {
+    id,
+    files,
+    completedDate
+  };
 
-      const { alreadyCompleted, savedChallenges, updateData } = buildUserUpdate(
-        user,
-        id,
-        completedChallenge
-      );
+  // if multifile cert project
+  if (challengeType === 14) {
+    completedChallenge.isManuallyApproved = false;
+    user.needsModeration = true;
+  }
 
-      const points = alreadyCompleted ? user.points : user.points + 1;
-      const updatePromise = new Promise((resolve, reject) =>
-        user.updateAttributes(updateData, err => {
-          if (err) {
-            return reject(err);
-          }
-          return resolve();
-        })
-      );
-      return Observable.fromPromise(updatePromise).map(() => {
-        return res.json({
-          points,
-          alreadyCompleted,
-          completedDate,
-          savedChallenges
-        });
-      });
-    })
-    .subscribe(() => {}, next);
+  // We only need to know the challenge type if it's a project. If it's a
+  // step or normal challenge we can avoid storing in the database.
+  if (jsCertProjectIds.includes(id) || multifileCertProjectIds.includes(id)) {
+    completedChallenge.challengeType = challengeType;
+  }
+
+  const { alreadyCompleted, savedChallenges, updateData } = buildUserUpdate(
+    user,
+    id,
+    completedChallenge
+  );
+
+  const points = alreadyCompleted ? user.points : user.points + 1;
+
+  user.updateAttributes(updateData, err => {
+    if (err) {
+      return next(err);
+    }
+
+    return res.json({
+      points,
+      alreadyCompleted,
+      completedDate,
+      savedChallenges
+    });
+  });
 }
 
-function projectCompleted(req, res, next) {
+async function projectCompleted(req, res, next) {
   const { user, body = {} } = req;
 
   const completedChallenge = pick(body, [
@@ -370,69 +366,64 @@ function projectCompleted(req, res, next) {
     }
   }
 
-  return user
-    .getCompletedChallenges$()
-    .flatMap(() => {
-      const { alreadyCompleted, updateData } = buildUserUpdate(
-        user,
-        completedChallenge.id,
-        completedChallenge
-      );
+  try {
+    // This is an ugly hack to update `user.completedChallenges`
+    await user.getCompletedChallenges$().toPromise();
+  } catch (e) {
+    return next(e);
+  }
 
-      const updatePromise = new Promise((resolve, reject) =>
-        user.updateAttributes(updateData, err => {
-          if (err) {
-            return reject(err);
-          }
-          return resolve();
-        })
-      );
-      return Observable.fromPromise(updatePromise).doOnNext(() => {
-        return res.json({
-          alreadyCompleted,
-          points: alreadyCompleted ? user.points : user.points + 1,
-          completedDate: completedChallenge.completedDate
-        });
-      });
-    })
-    .subscribe(() => {}, next);
+  const { alreadyCompleted, updateData } = buildUserUpdate(
+    user,
+    completedChallenge.id,
+    completedChallenge
+  );
+
+  user.updateAttributes(updateData, err => {
+    if (err) {
+      return next(err);
+    }
+
+    return res.json({
+      alreadyCompleted,
+      points: alreadyCompleted ? user.points : user.points + 1,
+      completedDate: completedChallenge.completedDate
+    });
+  });
 }
 
-function backendChallengeCompleted(req, res, next) {
+async function backendChallengeCompleted(req, res, next) {
   const { user, body = {} } = req;
 
   const completedChallenge = pick(body, ['id', 'solution']);
   completedChallenge.completedDate = Date.now();
 
-  return user
-    .getCompletedChallenges$()
-    .flatMap(() => {
-      const { alreadyCompleted, updateData } = buildUserUpdate(
-        user,
-        completedChallenge.id,
-        completedChallenge
-      );
+  try {
+    await user.getCompletedChallenges$().toPromise();
+  } catch (e) {
+    return next(e);
+  }
 
-      const updatePromise = new Promise((resolve, reject) =>
-        user.updateAttributes(updateData, err => {
-          if (err) {
-            return reject(err);
-          }
-          return resolve();
-        })
-      );
-      return Observable.fromPromise(updatePromise).doOnNext(() => {
-        return res.json({
-          alreadyCompleted,
-          points: alreadyCompleted ? user.points : user.points + 1,
-          completedDate: completedChallenge.completedDate
-        });
-      });
-    })
-    .subscribe(() => {}, next);
+  const { alreadyCompleted, updateData } = buildUserUpdate(
+    user,
+    completedChallenge.id,
+    completedChallenge
+  );
+
+  user.updateAttributes(updateData, err => {
+    if (err) {
+      return next(err);
+    }
+
+    return res.json({
+      alreadyCompleted,
+      points: alreadyCompleted ? user.points : user.points + 1,
+      completedDate: completedChallenge.completedDate
+    });
+  });
 }
 
-function saveChallenge(req, res, next) {
+async function saveChallenge(req, res, next) {
   const user = req.user;
   const { savedChallenges = [] } = user;
   const { id: challengeId, files = [] } = req.body;
@@ -449,42 +440,37 @@ function saveChallenge(req, res, next) {
     )
   };
 
-  return user
-    .getSavedChallenges$()
-    .flatMap(() => {
-      const savedIndex = savedChallenges.findIndex(
-        ({ id }) => challengeId === id
-      );
-      const $push = {},
-        $set = {};
+  try {
+    await user.getSavedChallenges$().toPromise();
+  } catch (e) {
+    return next(e);
+  }
 
-      if (savedIndex >= 0) {
-        $set[`savedChallenges.${savedIndex}`] = challengeToSave;
-        savedChallenges[savedIndex] = challengeToSave;
-      } else {
-        $push.savedChallenges = challengeToSave;
-        savedChallenges.push(challengeToSave);
-      }
+  const savedIndex = savedChallenges.findIndex(({ id }) => challengeId === id);
+  const $push = {},
+    $set = {};
 
-      const updateData = {};
-      if (!isEmpty($set)) updateData.$set = $set;
-      if (!isEmpty($push)) updateData.$push = $push;
+  if (savedIndex >= 0) {
+    $set[`savedChallenges.${savedIndex}`] = challengeToSave;
+    savedChallenges[savedIndex] = challengeToSave;
+  } else {
+    $push.savedChallenges = challengeToSave;
+    savedChallenges.push(challengeToSave);
+  }
 
-      const updatePromise = new Promise((resolve, reject) =>
-        user.updateAttributes(updateData, err => {
-          if (err) {
-            return reject(err);
-          }
-          return resolve();
-        })
-      );
-      return Observable.fromPromise(updatePromise).doOnNext(() => {
-        return res.json({
-          savedChallenges
-        });
-      });
-    })
-    .subscribe(() => {}, next);
+  const updateData = {};
+  if (!isEmpty($set)) updateData.$set = $set;
+  if (!isEmpty($push)) updateData.$push = $push;
+
+  user.updateAttributes(updateData, err => {
+    if (err) {
+      return next(err);
+    }
+
+    return res.json({
+      savedChallenges
+    });
+  });
 }
 
 const codeRoadChallenges = getChallenges().filter(

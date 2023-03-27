@@ -11,7 +11,7 @@ dashedName: install-and-set-up-mongoose
 Bei der Arbeit an diesen Aufgaben wirst du deinen Code mithilfe folgender Methoden schreiben:
 
 - Klone <a href="https://github.com/freeCodeCamp/boilerplate-mongomongoose/" target="_blank" rel="noopener noreferrer nofollow">diese GitHub-Repo</a> und schließe dein Projekt lokal ab.
-- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
+- Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starter-Projekt</a>, um diese Aufgaben abzuschließen.
 - Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
 
 If you use Replit, follow these steps to set up the project:
@@ -32,7 +32,7 @@ Follow <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas
 
 **Note:** If you are using Replit, you cannot create a `.env` file. Instead, use the built-in <dfn>SECRETS</dfn> tab to add the variable. <em>Do not</em> surround the values with quotes when using the <em>SECRETS</em> tab.
 
-When you are done, connect to the database using the following syntax:
+When you are done, connect to the database by calling the `connect` method within your `myApp.js` file by using the following syntax:
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });

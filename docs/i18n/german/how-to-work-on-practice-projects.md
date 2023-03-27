@@ -10,7 +10,7 @@ In dieser Anleitung erfährst du, wie du mit unserem Aufgaben-Editor an den Übu
 
 ### Starten des Editors
 
-Um den Editor zu starten, stelle sicher, dass du dich im Stammverzeichnis von freeCodeCamp befindest. Führe dann `npm run challenge-editor` aus, um sowohl den Client als auch die API zu starten, die der Editor verwendet.
+Um den Editor zu starten, stelle sicher, dass du dich im Stammverzeichnis von freeCodeCamp befindest. Then, run `pnpm run challenge-editor` to start both the client and the API that powers the editor.
 
 Der Client läuft auf Port `3300`, so dass du ihn unter `http://localhost:3300` erreichen kannst. Die API läuft auf Port `3200`, um Konflikte mit dem Lernclient und dem Server zu vermeiden. Dies ermöglicht es dir, die freeCodeCamp-Anwendung gleichzeitig mit dem Editor laufen zu lassen, so dass du deine Änderungen lokal testen kannst.
 
@@ -60,7 +60,7 @@ The `tools/challenge-helper-scripts` folder contains tools to help facilitate th
 
 ### Create a new project
 
-Run `npm run create-project` from the root directory. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+Run `pnpm run create-project` from the root directory. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
 If you want to create new steps, the following tools simplify that process.
 
@@ -71,10 +71,10 @@ A one-off script that will automatically add the next step based on the last ste
 #### How to run script:
 
 1. Wechsle in das Verzeichnis des Projekts.
-2. Führe den folgenden npm-Befehl aus:
+2. Run the following command:
 
 ```bash
-npm run create-next-step
+pnpm run create-next-step
 ```
 
 ### create-empty-steps
@@ -86,10 +86,10 @@ A one-off script that automatically adds a specified number of steps. The challe
 #### How to run script:
 
 1. Wechsle in das Verzeichnis des Projekts.
-2. Führe den folgenden npm-Befehl aus:
+2. Run the following command:
 
 ```bash
-npm run create-empty-steps X # wobei X die Anzahl der zu erstellenden Schritte ist.
+pnpm run create-empty-steps X # where X is the number of steps to create.
 ```
 
 ### insert-step
@@ -101,10 +101,10 @@ A one-off script that automatically adds a new step at a specified position, inc
 #### How to run script:
 
 1. Wechsle in das Verzeichnis des Projekts.
-2. Führe den folgenden npm-Befehl aus:
+2. Run the following command:
 
 ```bash
-npm run insert-step X # wobei X die Position ist, an der der neue Schritt eingefügt werden soll.
+pnpm run insert-step X # where X is the position to insert the new step.
 ```
 
 ### delete-step
@@ -116,10 +116,10 @@ A one-off script that deletes an existing step, decrementing all subsequent step
 #### How to run script
 
 1. Wechsle in das Verzeichnis des Projekts.
-2. Führe den folgenden npm-Befehl aus:
+2. Run the following command:
 
 ```bash
-npm run delete-step X # wobei X die Schrittnummer ist, die gelöscht werden soll.
+pnpm run delete-step X # where X is the step number to be deleted.
 ```
 
 ### update-step-titles
@@ -129,8 +129,8 @@ A one-off script that automatically updates the frontmatter in a project's markd
 #### How to run script
 
 1. Wechsle in das Verzeichnis des Projekts.
-2. Führe den folgenden npm-Befehl aus:
+2. Run the following command:
 
 ```bash
-npm run update-step-titles
+pnpm run update-step-titles
 ```

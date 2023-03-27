@@ -8,11 +8,11 @@ dashedName: create-new-middleware
 
 # --description--
 
-As is, any user can just go to `/profile` whether they have authenticated or not by typing in the URL. You want to prevent this by checking if the user is authenticated first before rendering the profile page. Dies ist das perfekte Beispiel für die Erstellung einer Middleware.
+So wie es ist, kann jeder Benutzer einfach zu `/profile` gehen, egal ob er sich authentifiziert hat oder nicht, indem er die URL eintippt. Du möchtest dies verhindern, indem du zuerst prüfst, ob der Benutzer authentifiziert ist, bevor die Profilseite angezeigt wird. Dies ist das perfekte Beispiel für die Erstellung einer Middleware.
 
-The challenge here is creating the middleware function `ensureAuthenticated(req, res, next)`, which will check if a user is authenticated by calling Passport's `isAuthenticated` method on the `request` which checks if `req.user` is defined. If it is, then `next()` should be called. Otherwise, you can just respond to the request with a redirect to your homepage to login.
+The challenge here is creating the middleware function `ensureAuthenticated(req, res, next)`, which will check if a user is authenticated by calling Passport's `isAuthenticated` method on the `request` which checks if `req.user` is defined. Wenn ja, dann sollte `next()` aufgerufen werden. Otherwise, you can just respond to the request with a redirect to your homepage to login.
 
-An implementation of this middleware is:
+Eine Implementierung dieser Middleware ist:
 
 ```javascript
 function ensureAuthenticated(req, res, next) {

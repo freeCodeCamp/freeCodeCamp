@@ -1,6 +1,5 @@
 ---
 id: 637f4e5172c65bc8e73dfe26
-videoId: LGQuIIv2RVA
 title: Understand Ordered and Unordered List Question C
 challengeType: 15
 dashedName: understand-ordered-and-unordered-list-question-c

@@ -1,6 +1,5 @@
 ---
 id: 637f4e1672c65bc8e73dfe1f
-videoId: LGQuIIv2RVA
 title: Elements and Tags Question B
 challengeType: 15
 dashedName: elements-and-tags-question-b

@@ -20,7 +20,7 @@ OAuth を使用したストラテジーでは、少なくとも*クライアン�
 
 Follow <a href="https://www.freecodecamp.org/news/how-to-set-up-a-github-oauth-application/" target="_blank" rel="noopener noreferrer nofollow">these instructions</a> to obtain your *Client ID and Secret* from GitHub. Set the homepage URL to your Replit homepage (**not the project code's URL**), and set the callback URL to the same homepage URL with `/auth/github/callback` appended to the end. Save the client ID and your client secret in your project's `.env` file as `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
 
-In your `routes.js` file, add `showSocialAuth: true` to the homepage route, after `showRegistration: true`. Now, create 2 routes accepting GET requests: `/auth/github` and `/auth/github/callback`. The first should only call passport to authenticate `'github'`. The second should call passport to authenticate `'github'` with a failure redirect to `/`, and then if that is successful redirect to `/profile` (similar to your last project).
+`routes.js` ファイルで、`showRegistration: true` の後に、`showSocialAuth: true` をホームページルートに追加します。 そして GET リクエストを受け付けるルートを 2 つ作成します。`/auth/github` と `/auth/github/callback` です。 1 つ目は、Passport を呼び出して `'github'` を認証するだけです。 The second should call passport to authenticate `'github'` with a failure redirect to `/`, and then if that is successful redirect to `/profile` (similar to your last project).
 
 An example of how `/auth/github/callback` should look is similar to how you handled a normal login:
 
@@ -31,11 +31,11 @@ app.route('/login')
   });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-3" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
+完成したと思ったら、ページを送信してください。 エラーが発生している場合、<a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-3" target="_blank" rel="noopener noreferrer nofollow">この時点までのコードをこちらで確認できます</a>。
 
 # --hints--
 
-Route `/auth/github` should be correct.
+ルート `/auth/github` が正確である必要があります。
 
 ```js
 async (getUserInput) => {
@@ -66,7 +66,7 @@ async (getUserInput) => {
 }
 ```
 
-Route `/auth/github/callback` should be correct.
+ルート `/auth/github/callback` が正確である必要があります。
 
 ```js
 async (getUserInput) => {

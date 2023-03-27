@@ -335,6 +335,10 @@
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprenda programação funcional criando uma planilha",
         "intro": ["", ""]
+      },
+      "learn-advanced-array-methods-by-building-a-statistics-calculator": {
+        "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
+        "intro": ["", ""]
       }
     }
   },
@@ -741,13 +745,147 @@
       }
     }
   },
+  "college-algebra-with-python": {
+    "title": "Álgebra para o ensino superior com Python",
+    "intro": [
+      "Este curso foi projetado como um curso universitário de um semestre. Ele consiste em vídeos instrutivos, com os notebooks do Google Colaboratory para acompanhar os desafios e projetos de modo interativo.",
+      "À medida que você passa por cada parte do curso em sequência, você vai entender a álgebra e como escrever códigos em Python para resolver problemas de álgebra.",
+      "Ao longo deste curso, você também criará seu próprio notebook de álgebra no Colaboratory, que poderá usar como uma calculadora personalizada. Este curso (e o código que você escreve aqui) dará a você a base para uma compreensão mais profunda da matemática e da ciência de dados."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-ratios-and-proportions": {
+        "title": "Aprenda razões e proporções",
+        "intro": [
+          "Sua jornada começa aqui enquanto você aprende como configurar um notebook do Colaboratory que pode executar código em Python. Então, use o notebook para acompanhar os vídeos para aprender razões e proporções usando Python."
+        ]
+      },
+      "learn-how-to-solve-for-x": {
+        "title": "Aprenda a resolver para X",
+        "intro": [
+          "Esta unidade se concentrará em como resolver um número desconhecido (geralmente chamado de \"x\") usando código escrito em Python e álgebra."
+        ]
+      },
+      "learn-fractions-and-decimals": {
+        "title": "Aprenda frações e números decimais",
+        "intro": [
+          "Esta unidade se concentrará na conversão de números decimais em frações e porcentagens."
+        ]
+      },
+      "learn-functions-and-graphing": {
+        "title": "Aprenda funções e gráficos",
+        "intro": ["Esta unidade ensinará você sobre as funções matemáticas."]
+      },
+      "learn-linear-functions": {
+        "title": "Aprenda funções lineares",
+        "intro": [
+          "Esta unidade mostrará para você como desenvolver equações lineares a partir de dois pontos."
+        ]
+      },
+      "learn-common-factors-and-square-roots": {
+        "title": "Aprenda fatores comuns e raízes quadradas",
+        "intro": [
+          "Nesta unidade, você aprenderá a encontrar fatores comuns e a dividi-los. Isto será útil na simplificação de frações e fatoração de raízes quadradas."
+        ]
+      },
+      "build-a-multi-function-calculator-project": {
+        "title": "Multi-Function Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a multi-function calculator."
+        ]
+      },
+      "learn-how-to-graph-systems-of-equations": {
+        "title": "Aprenda a criar sistemas gráficos de equações",
+        "intro": [
+          "Esta unidade se concentrará em construir o gráfico de duas equações no mesmo plano de coordenadas, para que você possa ver onde as linhas se cruzam."
+        ]
+      },
+      "learn-how-to-solve-systems-of-equations": {
+        "title": "Aprenda a resolver sistemas de equações",
+        "intro": [
+          "Nesta unidade, você aprenderá a resolver um sistema de duas equações (com duas variáveis) sem gráfico. Você verá como pode fatorar uma equação e resolver para uma determinada variável em Python. Ao final desta unidade, você será capaz de resolver e criar o gráfico do sistema com um bloco de código."
+        ]
+      },
+      "learn-applications-of-linear-systems": {
+        "title": "Aprenda aplicações de sistemas lineares",
+        "intro": [
+          "Nesta unidade, você verá como usar a álgebra que aprendeu até agora para resolver problemas do mundo real."
+        ]
+      },
+      "learn-quadratic-equations": {
+        "title": "Aprenda equações quadráticas",
+        "intro": [
+          "Esta unidade vai além das equações lineares, para trabalhar com expoentes e parábolas em gráfico. Você aprenderá a encontrar pontos-chave nas parábolas e a resolver equações do segundo grau."
+        ]
+      },
+      "build-a-graphing-calculator-project": {
+        "title": "Graphing Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a graphing calculator."
+        ]
+      },
+      "learn-parent-graphs-and-polynomials": {
+        "title": "Aprenda gráficos e polinômios pais",
+        "intro": [
+          "Esta unidade vai mostrar para você muitos tipos diferentes de gráficos \"pai\", os padrões básicos que criam gráficos mais complicados. Os polinômios são expressões matemáticas com \"várias coisas\" – as equações mais complicadas que são construídas com padrões básicos. Você verá como esses gráficos se parecem, como modificá-los e como fazer tudo isso com código em Python."
+        ]
+      },
+      "build-three-math-games-project": {
+        "title": "Three Math Games",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build three math games."
+        ]
+      },
+      "learn-business-applications-of-college-algebra": {
+        "title": "Aprenda aplicações de negócios com álgebra do ensino superior",
+        "intro": [
+          "Esta unidade mostrará a você como aplicar as habilidades de resolução e criação de gráficos para encontrar custo, receita e lucro. Você escreverá um código para desenvolver uma função de demanda a partir de dois pontos. Você verá como o preço afeta o gráfico de lucros e como todas essas equações se relacionam entre si."
+        ]
+      },
+      "learn-simple-and-compound-interest": {
+        "title": "Aprenda juros simples e compostos",
+        "intro": [
+          "Esta unidade mostrará a você como calcular juros, pagamentos de empréstimos e o valor estimado dos investimentos. Você verá a fórmula matemática e a transformará em código. Como essas fórmulas tendem a ficar complicadas, você vai gostar de ter o código onde você pode apenas modificar alguns valores."
+        ]
+      },
+      "learn-exponents-and-logarithms": {
+        "title": "Aprenda expoentes e logaritmos",
+        "intro": [
+          "Esta unidade vai mostrar a você como expoentes e logaritmos são funções inversas e como você pode usar essas funções em várias aplicações."
+        ]
+      },
+      "build-a-financial-calculator-project": {
+        "title": "Financial Calculator",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a financial calculator."
+        ]
+      },
+      "college-algebra-with-python-conclusion": {
+        "title": "Álgebra do ensino superior com Python: conclusão",
+        "intro": [
+          "Esta será a última unidade deste curso. Vamos ver como você pode conectar seus conhecimentos matemáticos e Python a dados externos."
+        ]
+      },
+      "build-a-data-graph-explorer-project": {
+        "title": "Data Graph Explorer",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a data graph explorer."
+        ]
+      }
+    }
+  },
   "coding-interview-prep": {
     "title": "Preparação para entrevistas de programação",
     "intro": [
       "Se estiver procurando exercícios gratuitos de programação para se preparar para sua próxima entrevista de emprego, nós temos o que você precisa.",
       "Esta seção contém centenas de desafios de programação que testam seu conhecimento de algoritmos, estruturas de dados e matemática. Ela também possui vários projetos adicionais, que você pode usar para fortalecer suas habilidades ou adicionar ao seu portfólio."
     ],
-    "note": "",
+    "note": "The Project Euler Project has been moved to it's own course. Go back to curriculum to see the list of courses we offer.",
     "blocks": {
       "algorithms": {
         "title": "Algoritmos",
@@ -777,13 +915,6 @@
           "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares.",
           "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
-      },
-      "project-euler": {
-        "title": "Projeto Euler",
-        "intro": [
-          "Complete os desafios de programação abaixo, diretamente dos grandes arquivos do Projeto Euler. Isso fortalecerá seu conhecimento de algoritmos e de matemática.",
-          "Esses problemas variam em dificuldade e, para muitos, a experiência é uma aprendizagem em sequência indutiva. Ou seja, ao resolver um problema, você será exposto a um novo conceito que permite a você resolver um problema que antes era inacessível. Você consegue concluir todos eles?"
-        ]
       }
     }
   },
@@ -802,6 +933,45 @@
       "top-build-a-recipe-project": {
         "title": "Aprenda o básico de HTML criando uma página de receitas",
         "intro": ["Uma descrição deve ser determinada"]
+      }
+    }
+  },
+  "project-euler": {
+    "title": "Project Euler",
+    "intro": [
+      "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
+      "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+    ],
+    "blocks": {
+      "project-euler-problems-1-to-100": {
+        "title": "Project Euler Problems 1 to 100",
+        "intro": [
+          "In this first set of challenges, you will use mathematical concepts like the Fibonacci sequence, prime number theory, and combinatorics to write efficient algorithms to solve these problems."
+        ]
+      },
+      "project-euler-problems-101-to-200": {
+        "title": "Project Euler Problems 101 to 200",
+        "intro": [
+          "In this set of challenges, you'll build upon the skills you learned in the first part of the course and use more advanced concepts like vector computation, Pascal's pyramid, and the RSA algorithm to solve these problems efficiently."
+        ]
+      },
+      "project-euler-problems-201-to-300": {
+        "title": "Project Euler Problems 201 to 300",
+        "intro": [
+          "In this set of challenges, you'll continue to build upon the skills you learned earlier and use concepts like the binomial theorem, Hamming numbers, and the Collatz sequence to further develop your math and problem solving skills."
+        ]
+      },
+      "project-euler-problems-301-to-400": {
+        "title": "Project Euler Problems 301 to 400",
+        "intro": [
+          "Here you will continue to flex your mathematical and algorithmic skills as you use concepts such as combinatorial game theory, bitwise operations, and Golomb's self-describing sequence to develop efficient solutions to these problems."
+        ]
+      },
+      "project-euler-problems-401-to-480": {
+        "title": "Project Euler Problems 401 to 480",
+        "intro": [
+          "In this final set of challenges, you will need draw upon everything you learned up to this point and use advanced concepts like unitary divisors, the Kaprekar routine, and much more to solve these complex problems."
+        ]
       }
     }
   },

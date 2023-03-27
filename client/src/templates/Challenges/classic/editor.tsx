@@ -9,13 +9,7 @@ import type {
 } from 'monaco-editor/esm/vs/editor/editor.api';
 import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
-import React, {
-  useEffect,
-  Suspense,
-  RefObject,
-  MutableRefObject,
-  useRef
-} from 'react';
+import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -79,11 +73,11 @@ interface EditorProps {
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
-  containerRef: RefObject<HTMLElement>;
+  containerRef: MutableRefObject<HTMLElement | undefined>;
   contents: string;
   description: string;
   dimensions: Dimensions;
-  editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
+  editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   ext: Ext;
   fileKey: FileKey;
@@ -374,6 +368,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
+  const isTabTrapped = () => !!(store.get('monacoTabTrapped') ?? true);
+
+  // Monaco uses the contextKey 'editorTabMovesFocus' to control how it
+  // reacts to the Tab key. Setting it to true allows the user to tab
+  // out of the editor. False keeps it inside the editor and creates a tab.
+  const setMonacoTabTrapped = (trapped: boolean) =>
+    dataRef.current.editor?.createContextKey('editorTabMovesFocus', !trapped);
+
   const editorDidMount = (
     editor: editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
@@ -407,18 +409,14 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility;
     };
 
-    const isTabTrapped = () => !!(store.get('monacoTabTrapped') ?? true);
-
     const setTabTrapped = (trapped: boolean) => {
-      // Monaco uses the contextKey 'editorTabMovesFocus' to control how it
-      // reacts to the tab key. Setting this to true allows the user to tab
-      // outside of the editor. If it is false, tab will act inside the editor
-      // (i.e. create spaces).
-      editor.createContextKey('editorTabMovesFocus', !trapped);
+      setMonacoTabTrapped(trapped);
       store.set('monacoTabTrapped', trapped);
       ariaAlert(
         `${
-          trapped ? t('editor-alerts.tab-trapped') : t('editor-alerts.tab-free')
+          trapped
+            ? t('learn.editor-alerts.tab-trapped')
+            : t('learn.editor-alerts.tab-free')
         }`
       );
     };
@@ -1058,7 +1056,6 @@ const Editor = (props: EditorProps): JSX.Element => {
           updateEditableRegion(coveringRange, { model });
         }
       };
-
       // If the content has changed, the zones may need moving. Rather than
       // working out if they have to for a particular content change, we simply
       // ask monaco to update regardless.
@@ -1185,6 +1182,11 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     const editor = dataRef.current.editor;
     editor?.layout();
+    // layout() resets the monaco tab trapping back to default (true), so we
+    // need to untrap it if the user had it set to false.
+    if (!isTabTrapped()) {
+      setMonacoTabTrapped(false);
+    }
     if (hasEditableRegion()) {
       updateDescriptionZone();
       updateOutputZone();

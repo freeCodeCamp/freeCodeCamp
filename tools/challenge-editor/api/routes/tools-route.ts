@@ -9,19 +9,19 @@ const asyncExec = promisify(exec);
 
 const toolsSwitch: ToolsSwitch = {
   'create-next-step': directory => {
-    return asyncExec(`cd ${directory} && npm run create-next-step`);
+    return asyncExec(`cd ${directory} && pnpm run create-next-step`);
   },
   'create-empty-steps': (directory, num) => {
-    return asyncExec(`cd ${directory} && npm run create-empty-steps ${num}`);
+    return asyncExec(`cd ${directory} && pnpm run create-empty-steps ${num}`);
   },
   'insert-step': (directory, num) => {
-    return asyncExec(`cd ${directory} && npm run insert-step ${num}`);
+    return asyncExec(`cd ${directory} && pnpm run insert-step ${num}`);
   },
   'delete-step': (directory, num) => {
-    return asyncExec(`cd ${directory} && npm run delete-step ${num}`);
+    return asyncExec(`cd ${directory} && pnpm run delete-step ${num}`);
   },
   'update-step-titles': directory => {
-    return asyncExec(`cd ${directory} && npm run update-step-titles`);
+    return asyncExec(`cd ${directory} && pnpm run update-step-titles`);
   }
 };
 

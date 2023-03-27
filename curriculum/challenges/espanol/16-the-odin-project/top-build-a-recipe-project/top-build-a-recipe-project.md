@@ -1,20 +1,20 @@
 ---
 id: 6391d1a4f7ac71efd0621380
-title: Build a Recipe Page Project
+title: Construir un proyecto de página de recetas
 challengeType: 14
 dashedName: top-build-a-recipe-project
 ---
 
 # --description--
 
-The website will consist of a main index page which will have links to a few recipes. The website won’t look very pretty by the time you’ve finished.
+El sitio web constará de una página de índice principal que tendrá enlaces a algunas recetas. La página web no será muy bonita para cuando haya terminado.
 
-**User Stories:**
+**Historias de usuario:**
 
-1. Your recipe page should contain a `DOCTYPE` tag.
-1. Your recipe page should include an `html` element with a `head` and `body` element as children.
-1. You should have a `title` element within the `head` element with the text `The Odin Recipes`.
-1. You should see an `h1` element that has the text `Creamy Chocolate Fudge`.
+1. La página de tu receta debe contener una etiqueta `DOCTYPE`.
+1. Tu página de receta debe incluir un elemento `html` con un elemento `head` y `body` como hijos.
+1. Debes tener un elemento `title` dentro del elemento `head` con el texto <codeThe Odin Recipes</code>.
+1. Deberías ver un elemento `h1` que tiene el texto `Creamy Chocolate Fudge`.
 1. You should see an image with the url `*placeholder-fcc-cdn*` with a fitting `alt` text.
 1. There should be an `h2` element with the text `Description` under the image.
 1. You should see a couple of paragraphs under `Description` that describe the recipe.

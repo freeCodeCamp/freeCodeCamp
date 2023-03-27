@@ -1,14 +1,14 @@
 ---
 id: 637f4e5872c65bc8e73dfe27
 videoId: yqcd-XkxZNM
-title: Working With Text Question A
+title: Робота з текстом. Запитання A
 challengeType: 15
 dashedName: working-with-text-question-a
 ---
 
 # --description--
 
-What would you expect the following text to output on an HTML page?
+Що ви очікуєте від наступного тексту на сторінці HTML?
 
 ```html
 <body>
@@ -20,27 +20,27 @@ What would you expect the following text to output on an HTML page?
 </body>
 ```
 
-It looks like two paragraphs of text, and so you might expect it to display in that way. However that is not the case, as you can see in the output below:
+Текст має вигляд двох абзаців, і ви можете очікувати, що він зобразиться так само. Однак вивід буде іншим, як показано нижче:
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/xxrKqeV?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=xxrKqeV&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_xxrKqeV"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/xxrKqeV?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=xxrKqeV&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_xxrKqeV"></iframe>
 
-When the browser encounters new lines like this in your HTML, it will compress them down into one single space. The result of this compression is that all of the text is clumped together into one long line.
+Якщо браузер стикається з новими рядками, схожими на цей приклад HTML, він стисне їх в один рядок. У результаті стиснення весь текст стане одним довгим рядком.
 
-If you want to create paragraphs in HTML, you need to use the paragraph element, which will add a newline after each of your paragraphs. A paragraph element is defined by wrapping text content with a `<p>` tag.
+Якщо ви хочете створити абзаци в HTML, вам потрібно використати елемент абзацу, який додаватиме новий рядок після кожного абзацу. Елемент абзацу визначається обтіканням текстового вмісту тегом `<p>`.
 
-Changing our example from before to use paragraph elements fixes the issue:
+Якщо використати елементи абзацу на нашому прикладі, проблема буде розв’язана:
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/mdwbmdp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=mdwbmdp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_mdwbmdp"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/mdwbmdp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=mdwbmdp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_mdwbmdp"></iframe>
 
 # --question--
 
 ## --assignment--
 
-Watch and follow along to Kevin Powell’s HTML Paragraph and Headings Video above.
+Перегляньте відео Кевіна Павелла про абзаци та заголовки у HTML.
 
 ## --text--
 
-How do you create a paragraph in HTML?
+Як створити абзац у HTML?
 
 ## --answers--
 

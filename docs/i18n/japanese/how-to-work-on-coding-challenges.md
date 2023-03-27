@@ -457,17 +457,17 @@ function myFunc() {
 1. すべてのチャレンジをテストするには、ルートディレクトリから以下のコマンドを実行してください。
 
 ````
-npm run test:curriculum
+pnpm run test:curriculum
 ```
 
 2. 次のコマンドでチャレンジのブロックやスーパーブロックをテストすることもできます。
 
 ```
-npm run test:curriculum --block='Basic HTML and HTML5'
+FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 ```
 
 ```
-npm run test:curriculum --superblock=responsive-web-design
+FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
 次の手順を実行することで、1 つのチャレンジを個別にテストすることもできます。
@@ -481,7 +481,7 @@ npm run test:curriculum --superblock=responsive-web-design
 2. 変更したチャレンジファイルごとに以下を実行します ( `challenge-title-goes-here` を正式なチャレンジのタイトルに置き換えてください)。
 
    ```
-   npm run test -- -g challenge-title-goes-here ```
+   pnpm run test -- -g challenge-title-goes-here ```
 
 各チャレンジがテストに合格したことを確認したら、[プルリクエストを作成](how-to-open-a-pull-request.md) してください。
 

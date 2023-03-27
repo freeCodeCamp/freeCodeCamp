@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
         with:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
@@ -276,11 +276,16 @@ jobs:
 
       # Validate the Download #
       # All languages should go ABOVE this. #
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
 
       - name: Set Environment variables
         run: |
@@ -290,15 +295,15 @@ jobs:
 
       - name: Build Source Files
         run: |
-          echo npm version $(npm -v)
-          npm ci
-          npm run create:config
-          npm run build:curriculum
-          npm run build:server
+          echo pnpm version $(pnpm -v)
+          pnpm install
+          pnpm run create:config
+          pnpm run build:curriculum
+          pnpm run build:server
 
       - name: Lint and Format Files
         run: |
-          npm run format:curriculum
+          pnpm run format:curriculum
 
       # We do not need to run tests because they are run after the PR is created.
 

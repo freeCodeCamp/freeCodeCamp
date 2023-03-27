@@ -11,7 +11,13 @@ dashedName: word-blanks
 
 给你一些不完整的句子，这些句子会缺少一些例如名词、动词、形容词或者副词之类的字词。 然后你需要使用你选择的词语去填补这些缺失的地方，使得这个句子变得完整且有意义。
 
-思考一下这个句子：它真的非常**\_\_\_\_**，我们**\_\_\_\_**我们自己**\_\_\_\_**。 这个句子有三处缺失：一个形容词、一个动词和一个副词。我们可以将选择的词语加进去完成它。 然后我们可以将完成的句子赋给一个变量，如下所示：
+Consider this sentence:
+
+```md
+It was really ____, and we ____ ourselves ____.
+```
+
+This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -19,21 +25,21 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 
 # --instructions--
 
-在这个挑战中，我们会提供给你一个名词、一个动词、一个形容词和一个副词。 你需要在我们提供的词语中，选择你要使用的词语来使这个句子变得完整。
+In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.
 
-你需要使用字符串连接操作符 `+` 和提供的变量 `myNoun`、`myAdjective`、`myVerb` 和 `myAdverb` 来构建一个新的字符串。 然后，将这个改好的新字符串赋值给 `wordBlanks` 变量。 不要去更改已经赋值给这些变量的单词。
+You will need to use the string concatenation operator `+` to build a new string, using the provided variables: `myNoun`, `myAdjective`, `myVerb`, and `myAdverb`. You will then assign the formed string to the `wordBlanks` variable. You should not change the words assigned to the variables.
 
-你还需要确认字符串里的空格，以确保最后的句子里的每个单词之间都有空格。 最后的结果应该是一个完整的句子。
+You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.
 
 # --hints--
 
-`wordBlanks` 应该是一个字符串.
+`wordBlanks` should be a string.
 
 ```js
 assert(typeof wordBlanks === 'string');
 ```
 
-不要改变赋值给 `myNoun`, `myVerb`、`myAdjective` 或者`myAdverb` 这些变量的值。
+You should not change the values assigned to `myNoun`, `myVerb`, `myAdjective` or `myAdverb`.
 
 ```js
 assert(
@@ -44,7 +50,7 @@ assert(
 );
 ```
 
-不要直接使用 `dog`、`ran`、`big` 或者 `quickly` 的值去创建 `wordBlanks`。
+You should not directly use the values `dog`, `ran`, `big`, or `quickly` to create `wordBlanks`.
 
 ```js
 const newCode = removeAssignments(code);
@@ -56,7 +62,7 @@ assert(
 );
 ```
 
-`wordBlanks` 应该包含分配给变量 `myNoun`、`myVerb`、`myAdjective` 和 `myAdverb` 的所有单词，用非单词字符（和你选择的任何其他单词）分隔。
+`wordBlanks` should contain all of the words assigned to the variables `myNoun`, `myVerb`, `myAdjective` and `myAdverb` separated by non-word characters (and any additional words of your choice).
 
 ```js
 assert(

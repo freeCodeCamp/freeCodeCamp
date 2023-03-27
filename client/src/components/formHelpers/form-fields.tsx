@@ -15,7 +15,8 @@ import {
   localhostValidator,
   composeValidators,
   fCCValidator,
-  httpValidator
+  httpValidator,
+  pathValidator
 } from './form-validators';
 
 export type FormOptions = {
@@ -58,12 +59,19 @@ function FormFields(props: FormFieldsProps): JSX.Element {
         validationError = (err as { message?: string })?.message;
       }
     }
-    const validationWarning = composeValidators(
-      name === 'githubLink' || isEditorLinkAllowed ? null : editorValidator,
-      fCCValidator,
-      httpValidator,
-      isLocalLinkAllowed ? null : localhostValidator
-    )(value);
+
+    const validators = [fCCValidator, httpValidator];
+    const isSolutionLink = name !== 'githubLink';
+    if (isSolutionLink && !isEditorLinkAllowed) {
+      validators.push(editorValidator);
+      if (isLocalLinkAllowed) {
+        validators.push(pathValidator);
+      }
+    }
+    if (!isLocalLinkAllowed) {
+      validators.push(localhostValidator);
+    }
+    const validationWarning = composeValidators(...validators)(value);
     const message: string = (error ||
       validationError ||
       validationWarning) as string;

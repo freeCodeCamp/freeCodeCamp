@@ -60,43 +60,43 @@ assert(!/if/g.test(code));
 assert(code.match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` має бути рядком `Marley`
+`chainToSwitch("bob")` має повертати рядок `Marley`
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` має бути рядком `The Answer`
+`chainToSwitch(42)` має повертати рядок `The Answer`
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` має бути рядком `There is no #1`
+`chainToSwitch(1)` має повертати рядок `There is no #1`
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)` має бути рядком `Missed me by this much!`
+`chainToSwitch(99)` має повертати рядок `Missed me by this much!`
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` має бути рядком `Ate Nine`
+`chainToSwitch(7)` має повертати рядок `Ate Nine`
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` має бути `""` (пустим рядком)
+`chainToSwitch("John")` має повертати `""` (порожній рядок)
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` має бути `""` (пустим рядком)
+`chainToSwitch(156)` має повертати `""` (порожній рядок)
 
 ```js
 assert(chainToSwitch(156) === '');

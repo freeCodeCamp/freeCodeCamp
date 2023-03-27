@@ -91,7 +91,7 @@ Atualmente, somente membros da equipe de desenvolvedores podem dar push nas bran
 4. Confirme se você consegue compilar o repositório localmente.
 
    ```
-   npm run clean-and-develop
+   pnpm run clean-and-develop
    ```
 
 5. Mova as alterações da `main` para a `production-staging` através de um fast-forward merge
@@ -427,56 +427,57 @@ sudo apt install build-essential
 
 Provisionando MVs com o código
 
-1. Instale Node LTS.
+1. Instale o Node LTS.
 
-2. Atualize o `npm` instale o PM2 e a configuração `logrotate` e inicie no boot
+2. Instale o pnpm globalmente.
 
-   ```console
-   npm i -g npm@8
-   npm i -g pm2
-   pm2 install pm2-logrotate
-   pm2 startup
-   ```
+```console
+npm install -g pnpm
+```
 
-3. Clone freeCodeCamp, configuração env e chaves.
+3. Faça a clonagem do freeCodeCamp, configure env e as chaves.
 
-   ```console
-   git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-   cd freeCodeCamp
-   git checkout prod-current # or any other branch to be deployed
-   ```
+```console
+git clone https://github.com/freeCodeCamp/freeCodeCamp.git
+cd freeCodeCamp
+git checkout prod-current # ou qualquer outra branch a ser implementada
+```
 
 4. Crie o `.env` a partir do armazenamento seguro de credenciais.
 
-5. Crie o `google-credentials.json` a partir do armazenamento seguro de credenciais.
+5. Instale as dependências
 
-6. Instale dependências
+```console
+pnpm install
+```
 
-   ```console
-   npm ci
-   ```
+6. Configure o pm2 `logrotate` e inicialize no boot
+
+```console
+pnpm pm2 install pm2-logrotate
+pnpm pm2 startup
+```
 
 7. Compile o servidor
 
-   ```console
-   npm run prebuild && npm run build:curriculum && npm run build:server
-   ```
+```console
+pnpm prebuild && pnpm build:curriculum && pnpm build:server
+```
 
-8. Inicie instâncias
+8.  Inicie as instâncias
 
-   ```console
-   cd api-server
-   pm2 reload ecosystem.config.js
-   ```
+```console
+pnpm start:server
+```
 
 ### Registro e monitoramento
 
 ```console
-pm2 logs
+pnpm pm2 logs
 ```
 
 ```console
-pm2 monit
+pnpm pm2 monit
 ```
 
 ### Atualizando instâncias (Manutenção)
@@ -490,38 +491,48 @@ Mudanças no código devem ser implementadas na instância da API de tempos em t
 1. Pare todas as instâncias
 
 ```console
-pm2 stop all
+pnpm pm2 stop all
 ```
 
-2. Instale dependências
+2. Instale as dependências
 
 ```console
-npm ci
+pnpm install
 ```
 
 3. Compile o servidor
 
 ```console
-npm run create:config && npm run build:curriculum && npm run build:server
+pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
-4. Inicie instâncias
+4. Inicie as instâncias
 
 ```console
-pm2 start all --update-env && pm2 logs
+pnpm start:server && pnpm pm2 logs
 ```
 
 #### 2. Atualizações contínuas - Usado par mudanças lógicas no código.
 
 ```console
-pm2 reload all --update-env && pm2 logs
+pnpm reload:server && pnpm pm2 logs
 ```
 
 > [!NOTE] Nós estamos lidando com atualizações contínuas no código, lógico, via pipelines. Você não deve executar estes comandos. Eles estão aqui para a documentação.
 
+#### 3. Atualizando o Node
+
+1. Instale a nova versão do Node
+
+2. Atualize o pm2 para que ele use a nova versão
+
+```console
+pnpm pm2 update
+```
+
 ## Trabalhe em instâncias de cliente
 
-1. Instale ferramentas de compilação para binários node (`node-gyp`), etc.
+1. Instale ferramentas de compilação para os binários do node (`node-gyp` e outros).
 
 ```console
 sudo apt install build-essential
@@ -531,7 +542,7 @@ sudo apt install build-essential
 
 Provisionando MVs com o código
 
-1. Instale Node LTS.
+1. Instale o Node LTS.
 
 2. Atualize o `npm` e instale o PM2 e configure `logrotate` e inicie quando reiniciar
 
@@ -543,7 +554,7 @@ Provisionando MVs com o código
    pm2 startup
    ```
 
-3. Clone a configuração de cliente, env e chaves.
+3. Faça a clonagem do client, configure env e as chaves.
 
    ```console
    git clone https://github.com/freeCodeCamp/client-config.git client
@@ -589,9 +600,9 @@ As alterações no código precisam ser implementadas para as instâncias de API
    pm2 stop all
    ```
 
-2. Instale ou atualize dependências
+2. Instale ou atualize as dependências
 
-3. Inicie instâncias
+3. Inicie as instâncias
 
    ```console
    pm2 start all --update-env && pm2 logs
@@ -641,16 +652,16 @@ Provisionando MVs com código
    Mova os certificados existentes:
 
    ```console
-   # Localmente
+   # Local
    scp -r username@source-server-public-ip:/etc/nginx/ssl ./
    scp -pr ./ssl username@target-server-public-ip:/tmp/
 
-   # Remotamente
+   # Remote
    rm -rf ./ssl
    mv /tmp/ssl ./
    ```
 
-   Atualize as configurações Upstream:
+   Atualize as configurações upstream:
 
    ```console
    vi configs/upstreams.conf
@@ -658,9 +669,9 @@ Provisionando MVs com código
 
    Adicione/atualize os endereços IP do aplicativo fonte/origem.
 
-3. Configure a rede e o firewall.
+3. Configure a rede e os firewalls.
 
-   Configure o firewall da Azure e `ufw` conforme necessário para entrar os endereços de origem.
+   Configure os firewalls da Azure e `ufw` conforme necessário para entrar os endereços de origem.
 
 4. Adicione a MV ao pool de back-end do balanceador de carga.
 
@@ -677,7 +688,7 @@ Provisionando MVs com código
 
 2. Configure as variáveis de ambiente necessárias e as instâncias dos endereços de IP.
 
-3. Execute rocket-chat server
+3. Execute o servidor do rocket-chat
 
    ```console
    docker-compose config
@@ -704,7 +715,7 @@ Provisionando MVs com código
 
 As alterações na configuração das nossas instâncias NGINX são mantidas no GitHub, elas devem ser implantadas em cada instância assim:
 
-1. SSH na instância e digite sudo
+1. Use o SSH na instância e digite sudo
 
    ```console
    sudo su
@@ -727,7 +738,7 @@ As alterações na configuração das nossas instâncias NGINX são mantidas no 
 
 **Cluster do Docker:**
 
-1. SSH na instância e vá para onde está o arquivo de configuração do chat
+1. Use SSH na instância e vá para onde está o arquivo de configuração do chat
 
    ```console
    cd ~/chat
@@ -767,17 +778,17 @@ As alterações na configuração das nossas instâncias NGINX são mantidas no 
    Resultado:
 
    ```console
-   AVISO! Isso removerá
-     - todos os containers parados
-     - todas as redes que não estão sendo usadas por pelo menos um container
-     - todos os volumes que não estão sendo usados por pelo menos um container
-     - todas as imagens pendentes
-     - todos os caches de compilação pendentes
+   WARNING! This will remove:
+     - all stopped containers
+     - all networks not used by at least one container
+     - all volumes not used by at least one container
+     - all dangling images
+     - all dangling build cache
 
-   Tem certeza que deseja continuar? [y/N] y
+   Are you sure you want to continue? [y/N] y
    ```
 
-   Selecione sim (y) para remover tudo que não está sendo usado. Isso vai remover todos os containers parados, todas as redes e volumes não usados por pelo menos um container e imagens pendentes e caches de compilação.
+   Selecione yes (y) para remover tudo que não está sendo usado. Isso vai remover todos os contêineres parados, todas as redes e volumes não usados por pelo menos um contêiner e imagens pendentes e caches de compilação.
 
 ## Trabalho com as ferramentas do colaborador
 
@@ -788,8 +799,8 @@ ssh na VM (hospedada na Digital Ocean).
 ```console
 cd tools
 git pull origin master
-npm ci
-npm run build
+pnpm install
+pnpm run build
 pm2 restart contribute-app
 ```
 
@@ -826,7 +837,7 @@ nvm alias default 16
 (Opcional) Desinstale versões antigas
 
 ```console
-nvm uninstall <version>
+nvm uninstall <versão>
 ```
 
 > [!ATTENTION] Para aplicações de client, o shell script não pode ser revivido entre versões do Node.js com `pm2 resurrect`. Implante processos de zero ao invés disso. Isso deve melhorar quando mudarmos para uma configuração baseada em docker.
@@ -898,7 +909,7 @@ Atualmente, atualizar os agentes requer que sejam removidos e reconfigurados. Is
    sudo ./svc.sh uninstall
    ```
 
-4. Remova o agente da piscina pipeline
+4. Remova o agente do pool do pipeline
 
    ```console
    ./config.sh remove
@@ -955,7 +966,7 @@ Usamos um [tema personalizado](https://github.com/freeCodeCamp/news-theme) para 
 3. Dentro da pasta do novo idioma, altere os nomes das variáveis no `main.js` e no `footer.js` para o código curto de idioma relevante (`enMain` —> `esMain` para o espanhol)
 4. Duplique o [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) e renomeie-o para o código do novo idioma.
 5. Em [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), adicione scripts para arquivos de configuração recém-criados.
-6. Adicionar o script `day.js` do idioma relacionado [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) ao [CDN do freeCodeCamp](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
+6. Adicione o script `day.js` do idioma relacionado [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) ao [CDN do freeCodeCamp](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
 
 ### Alterações do painel do Ghost
 
