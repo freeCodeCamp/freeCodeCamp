@@ -16,7 +16,7 @@ const primaryHeadingStyle =
   'border-b-1 border-solid border-foreground-primary text-foreground-primary';
 const infoHeadingStyle = 'text-background-info bg-foreground-info';
 const dangerHeadingStyle = 'text-background-danger bg-foreground-danger';
-const headingPadding = 'px-1 py-[10px] ';
+const headingPadding = 'px-2.5 py-3.5 ';
 
 let bsStyleClass = defaultBorder;
 let headingStyles = headingPadding + defaultHeadingStyle;
