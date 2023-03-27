@@ -7,12 +7,12 @@ const story = {
   component: Panel,
   parameters: {
     controls: {
-      include: ['className']
+      include: ['className', 'bsStyle']
     }
   },
   argType: {
     className: { control: { type: 'text' } },
-    bsStyle: { control: { type: 'text' } }
+    bsStyle: { option: ['primary', 'danger', 'info', undefined] }
   }
 };
 
