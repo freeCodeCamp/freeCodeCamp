@@ -74,63 +74,61 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     // but still needs a way to switch between the different tabs.
 
     return (
-      <>
-        <Tabs
-          activeKey={currentTab}
-          defaultActiveKey={currentTab}
-          id='mobile-layout'
-          onKeyDown={this.handleKeyDown}
-          onMouseDown={this.handleClick}
-          onSelect={this.switchTab}
-          onTouchStart={this.handleClick}
+      <Tabs
+        activeKey={currentTab}
+        defaultActiveKey={currentTab}
+        id='mobile-layout'
+        onKeyDown={this.handleKeyDown}
+        onMouseDown={this.handleClick}
+        onSelect={this.switchTab}
+        onTouchStart={this.handleClick}
+      >
+        {!hasEditableBoundaries && (
+          <TabPane
+            eventKey={Tab.Instructions}
+            title={i18next.t('learn.editor-tabs.instructions')}
+            tabIndex={0}
+          >
+            {instructions}
+          </TabPane>
+        )}
+        <TabPane
+          eventKey={Tab.Editor}
+          title={i18next.t('learn.editor-tabs.code')}
+          {...editorTabPaneProps}
         >
-          {!hasEditableBoundaries && (
-            <TabPane
-              eventKey={Tab.Instructions}
-              title={i18next.t('learn.editor-tabs.instructions')}
-              tabIndex={0}
-            >
-              {instructions}
-            </TabPane>
+          {usesMultifileEditor && (
+            <div className='monaco-editor-tabs'>
+              <EditorTabs />
+            </div>
           )}
+          {editor}
+        </TabPane>
+        <TabPane
+          eventKey={Tab.Console}
+          title={i18next.t('learn.editor-tabs.console')}
+          {...editorTabPaneProps}
+        >
+          {testOutput}
+        </TabPane>
+        {hasNotes && usesMultifileEditor && (
           <TabPane
-            eventKey={Tab.Editor}
-            title={i18next.t('learn.editor-tabs.code')}
-            {...editorTabPaneProps}
+            eventKey={Tab.Notes}
+            title={i18next.t('learn.editor-tabs.notes')}
           >
-            {usesMultifileEditor && (
-              <div className='monaco-editor-tabs'>
-                <EditorTabs />
-              </div>
-            )}
-            {editor}
+            {notes}
           </TabPane>
+        )}
+        {hasPreview && (
           <TabPane
-            eventKey={Tab.Console}
-            title={i18next.t('learn.editor-tabs.console')}
-            {...editorTabPaneProps}
+            eventKey={Tab.Preview}
+            title={i18next.t('learn.editor-tabs.preview')}
           >
-            {testOutput}
+            {preview}
           </TabPane>
-          {hasNotes && usesMultifileEditor && (
-            <TabPane
-              eventKey={Tab.Notes}
-              title={i18next.t('learn.editor-tabs.notes')}
-            >
-              {notes}
-            </TabPane>
-          )}
-          {hasPreview && (
-            <TabPane
-              eventKey={Tab.Preview}
-              title={i18next.t('learn.editor-tabs.preview')}
-            >
-              {preview}
-            </TabPane>
-          )}
-          <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
-        </Tabs>
-      </>
+        )}
+        <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
+      </Tabs>
     );
   }
 }
