@@ -54,8 +54,6 @@ function ProgressBarInner({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [completedPercent]);
 
-  const progressBarInnerWrap = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (progressBarInnerWrap.current)
       setProgressBarInnerWidth(progressBarInnerWrap.current.offsetWidth);
