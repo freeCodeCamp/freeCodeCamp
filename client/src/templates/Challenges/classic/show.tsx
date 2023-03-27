@@ -167,7 +167,6 @@ function ShowClassic({
         superBlock,
         helpCategory,
         forumTopicId,
-        certification,
         usesMultifileEditor,
         notes,
         videoUrl,
@@ -477,12 +476,7 @@ function ShowClassic({
             windowTitle={windowTitle}
           />
         </Media>
-        <CompletionModal
-          block={block}
-          blockName={blockName}
-          certification={certification}
-          superBlock={superBlock}
-        />
+        <CompletionModal />
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal />
@@ -518,7 +512,6 @@ export const query = graphql`
         helpCategory
         videoUrl
         superBlock
-        certification
         translationPending
         forumTopicId
         fields {
