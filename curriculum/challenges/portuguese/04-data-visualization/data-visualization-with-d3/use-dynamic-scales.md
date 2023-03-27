@@ -10,11 +10,11 @@ dashedName: use-dynamic-scales
 
 Os métodos `min()` e `max()` do D3 são úteis para definir a escala.
 
-Dado um conjunto de dados complexos, uma prioridade é definir a escala para que a visualização se encaixe na largura e na altura do contêiner do SVG. You want all the data plotted inside the SVG so it's visible on the web page.
+Dado um conjunto de dados complexos, uma prioridade é definir a escala para que a visualização se encaixe na largura e na altura do contêiner do SVG. Você quer todos os dados plotados dentro do SVG para que sejam visíveis na página da web.
 
 O exemplo abaixo define a escala do eixo x para dados do diagrama de dispersão. O método `domain()` passa informações para a escala sobre os valores dos dados brutos para a plotagem. O método `range()` dá a ela informações sobre o espaço real na página da web para a visualização.
 
-No exemplo, o domínio vai de 0 ao valor máximo do conjunto. Ele usa o método `max()` com uma função de callback baseada nos valores de x nos arrays. The range uses the SVG's width (`w`), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG.
+No exemplo, o domínio vai de 0 ao valor máximo do conjunto. Ele usa o método `max()` com uma função de callback baseada nos valores de x nos arrays. A imagem (range) usa a largura do SVG (`w`), mas também inclui algum preenchimento. Isso coloca o espaço entre os pontos do diagrama de dispersão e a borda do SVG.
 
 ```js
 const dataset = [
@@ -38,7 +38,7 @@ const xScale = d3.scaleLinear()
   .range([padding, w - padding]);
 ```
 
-O preenchimento pode ser confuso no começo. Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG). Incluir o preenchimento no método `range()` força o gráfico a começar de 30 ao longo dessa linha (em vez de 0) e terminar em 470 (em vez de 500).
+O preenchimento pode ser confuso no começo. Imagine o eixo x como uma linha horizontal de 0 a 500 (o valor de largura para o SVG). Incluir o preenchimento no método `range()` força o gráfico a começar de 30 ao longo dessa linha (em vez de 0) e terminar em 470 (em vez de 500).
 
 # --instructions--
 

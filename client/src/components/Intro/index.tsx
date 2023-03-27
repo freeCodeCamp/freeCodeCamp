@@ -34,22 +34,22 @@ const Intro = ({
   if (pending && !complete) {
     return (
       <>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <Loader />
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
       </>
     );
   } else if (isSignedIn) {
     const { quote, author } = randomQuote();
     return (
       <>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <h1 className='text-center'>
           {name
             ? `${t('learn.welcome-1', { name: name })}`
             : `${t('learn.welcome-2')}`}
         </h1>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <div className='text-center quote-partial'>
           <blockquote className='blockquote'>
             <span>
@@ -66,7 +66,7 @@ const Intro = ({
         />
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (
           <div className='intro-description'>
-            <Spacer paddingSize={15} />
+            <Spacer size='medium' />
             <p>
               <Trans i18nKey='learn.start-at-beginning'>
                 <Link to={slug} />
@@ -81,13 +81,13 @@ const Intro = ({
   } else {
     return (
       <>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <h1>{t('learn.heading')}</h1>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <IntroDescription />
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
       </>
     );
   }

@@ -26,9 +26,9 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
   return (
     <>
       <h1 className='text-center big-heading'>{i18nSuperBlock}</h1>
-      <Spacer paddingSize={15} />
+      <Spacer size='medium' />
       {generateIconComponent(superBlock, 'cert-header-icon')}
-      <Spacer paddingSize={15} />
+      <Spacer size='medium' />
       {superBlockIntroText.map((str, i) => (
         <p key={i}>{str}</p>
       ))}

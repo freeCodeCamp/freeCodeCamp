@@ -134,7 +134,7 @@ function DonateModal({
     >
       <Modal.Body>
         {donationText}
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <Row>
           <Col xs={12}>
             <DonateForm
@@ -144,7 +144,7 @@ function DonateModal({
             />
           </Col>
         </Row>
-        <Spacer paddingSize={15} />
+        <Spacer size='medium' />
         <Row>
           <Col sm={4} smOffset={4} xs={8} xsOffset={2}>
             <Button

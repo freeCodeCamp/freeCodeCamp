@@ -199,7 +199,6 @@ class BackEnd extends Component<BackEndProps> {
             description,
             instructions,
             translationPending,
-            certification,
             superBlock,
             block
           }
@@ -232,7 +231,7 @@ class BackEnd extends Component<BackEndProps> {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
@@ -263,14 +262,9 @@ class BackEnd extends Component<BackEndProps> {
                   output={output}
                 />
                 <TestSuite tests={tests} />
-                <Spacer paddingSize={15} />
+                <Spacer size='medium' />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
+              <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
@@ -297,7 +291,6 @@ export const query = graphql`
         instructions
         challengeType
         helpCategory
-        certification
         superBlock
         block
         translationPending

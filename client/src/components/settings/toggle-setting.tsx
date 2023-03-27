@@ -48,7 +48,7 @@ export default function ToggleSetting({
           />
         </FormGroup>
       </div>
-      <Spacer paddingSize={5} />
+      <Spacer size='small' />
     </>
   );
 }
